@@ -1,0 +1,11 @@
+{
+   "PATO": "http://purl.obolibrary.org/obo/PATO_",
+   "ak_schema": "https://w3id.org/airr-knowledge/ak-schema/",
+   "biolink": "https://w3id.org/biolink/",
+   "example": "https://example.org/",
+   "linkml": "https://w3id.org/linkml/",
+   "schema": "http://schema.org/",
+   "NamedThing": {
+      "@id": "schema:Thing"
+   }
+}

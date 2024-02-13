@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/linkml/linkml-project-cookiecutter",
+  "commit": "07462f015a240ff3a68f52e25df027b33b364b1b",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "ak-schema",
+      "__project_slug": "ak_schema",
+      "github_org": "airr-knowledge",
+      "__source_path": "src/ak_schema/schema/ak_schema.yaml",
+      "project_description": "AK Schema",
+      "full_name": "Scott Christley",
+      "email": "scott.christley@utsouthwestern.edu",
+      "__author": "Scott Christley <scott.christley@utsouthwestern.edu>",
+      "license": "GNU GPL v3.0",
+      "main_schema_class": "Investigation",
+      "create_python_classes": "Yes",
+      "use_schemasheets": "No",
+      "google_sheet_id": "1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ",
+      "google_sheet_tabs": "personinfo enums",
+      "__google_sheet_module": "personinfo_enums",
+      "github_token_for_pypi_deployment": "PYPI_PASSWORD",
+      "_template": "https://github.com/linkml/linkml-project-cookiecutter"
+    }
+  },
+  "directory": null
+}
