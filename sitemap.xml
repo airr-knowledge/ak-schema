@@ -2,172 +2,172 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Boolean/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Curie/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Date/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/DateOrDatetime/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Datetime/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Decimal/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Double/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Float/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Integer/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Investigation/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/InvestigationCollection/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Jsonpath/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Jsonpointer/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/NamedThing/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Ncname/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Nodeidentifier/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Objectidentifier/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/PersonStatus/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Sparqlpath/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/String/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Time/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Uri/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Uriorcurie/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/about/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/age_in_years/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/ak-schema/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/birth_date/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/description/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/entries/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/id/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/name/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/primary_email/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/vital_status/</loc>
-         <lastmod>2024-02-13</lastmod>
+         <lastmod>2024-02-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
