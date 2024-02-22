@@ -1,10 +1,10 @@
 # ak-schema
 
-AK Schema
+AIRR Knowledge Data Model
 
 ## Website
 
-[https://airr-knowledge.github.io/ak-schema](https://airr-knowledge.github.io/ak-schema)
+[https://airr-knowledge.github.com/ak-schema](https://airr-knowledge.github.com/ak-schema)
 
 ## Repository Structure
 
@@ -20,12 +20,17 @@ AK Schema
 
 ## Developer Documentation
 
-<details>
-Use the `make` command to generate project artefacts:
+Use the docker container to have a consistent development environment.
 
-* `make all`: make everything
-* `make deploy`: deploys site
-</details>
+* `docker pull airrknowledge/ak-schema:tag`: pull published container for specific tagged version.
+* `docker pull airrknowledge/ak-schema`: pull published container with latest code.
+* `docker build . -t airrknowledge/ak-schema`: build container with local code.
+* `docker run -v $PWD:/work -it airrknowledge/ak-schema bash`: run container shell with local code mounted at /work.
+
+With the container shell, use the `make` command to generate project artefacts:
+
+* `make`: display help with available make targets
+* `make all`: generates all the project artefacts
 
 ## Credits
 
