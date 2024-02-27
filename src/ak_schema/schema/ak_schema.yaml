@@ -13,8 +13,21 @@ prefixes:
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
+  dc: http://purl.org/dc/elements/1.1/
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  DOID: http://purl.obolibrary.org/obo/DOID_
+  GAZ: http://purl.obolibrary.org/obo/GAZ_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  OGMS: http://purl.obolibrary.org/obo/OGMS_
+  OMRSE: http://purl.obolibrary.org/obo/OMRSE_
   PATO: http://purl.obolibrary.org/obo/PATO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  VO: http://purl.obolibrary.org/obo/VO_
+  ONTIE: https://ontology.iedb.org/ontology/ONTIE_
   example: https://example.org/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 default_prefix: ak_schema
 default_range: string
 
@@ -24,73 +37,476 @@ imports:
 classes:
 
   NamedThing:
+    abstract: true
     description: >-
-      A generic grouping for any identifiable entity
+      Anything we want to identify, name, and describe.
     slots:
       - id
       - name
       - description
-    class_uri: schema:Thing
 
-  Investigation:
-    is_a: NamedThing
-    description: >-
-      Represents a Investigation
-    slots:
-      - primary_email
-      - birth_date
-      - age_in_years
-      - vital_status
-    slot_usage:
-      primary_email:
-        pattern: "^\\S+@[\\S+\\.]+\\S+"
-
-  InvestigationCollection:
+  Container:
     tree_root: true
     description: >-
-      A holder for Investigation objects
+      A container for instances of multiple classes.
     attributes:
-      entries:
+      investigations:
         range: Investigation
         multivalued: true
         inlined: true
+      arms:
+        range: Arm
+        multivalued: true
+        inlined: true
+      study_events:
+        range: StudyEvent
+        multivalued: true
+        inlined: true
+      participant:
+        range: Participant
+        multivalued: true
+        inlined: true
+      life_events:
+        range: LifeEvent
+        multivalued: true
+        inlined: true
+      immune_exposures:
+        range: ImmuneExposure
+        multivalued: true
+        inlined: true
+      assessments:
+        range: Assessment
+        multivalued: true
+        inlined: true
+      specimens:
+        range: Specimen
+        multivalued: true
+        inlined: true
+      assays:
+        range: Assay
+        multivalued: true
+        inlined: true
+      datasets:
+        range: Dataset
+        multivalued: true
+        inlined: true
+      conclusions:
+        range: Conclusion
+        multivalued: true
+        inlined: true
+
+  Investigation:
+    is_a: NamedThing
+    class_uri: OBI:0000066 # investigation
+    description: >-
+      A scientific investigation.
+
+  Reference:
+    class_uri: IAO:0000310 # document
+    # See https://schema.org/ScholarlyArticle
+    description: >-
+      A document about an investigation.
+    slots:
+      - id
+      - sources
+      - investigations
+      - title
+      - authors
+      - issue
+      - journal
+      - month
+      - year
+      - pages
+
+  Arm:
+    is_a: NamedThing
+    class_uri: OBI:0000181 # population
+    # has role some OBI:0000174 study group role
+    description: >-
+      A population of participants of an investigation.
+    slots:
+      - investigation
+
+  Participant:
+    is_a: NamedThing
+    class_uri: OBI:0100026 # organism
+    description: >-
+      A participant in an investigation.
+    slots:
+      - arm
+      - species
+      - biological_sex
+      - race
+      - ethnicity
+      - geolocation # at birth
+      
+  StudyEvent:
+    is_a: NamedThing
+    class_uri: BFO:0000015 # process
+    description: >-
+      An event that is part of the study design of an investigation.
+    slots:
+      - arms
+    
+  LifeEvent:
+    is_a: NamedThing
+    class_uri: BFO:0000015 # process
+    description: >-
+      An event in which a study participant participates.
+    slots:
+      - participant
+      - study_event
+      - life_event_type
+      - geolocation
+      - t0_event
+      - t0_event_type
+      - start
+      - duration
+      - time_unit
+
+  ImmuneExposure:
+    is_a: NamedThing
+    class_uri: BFO:0000015 # process
+    description: >-
+      An event involving the immune system of a study participant.
+    slots:
+      - life_event
+      - exposure_material
+      - disease
+      - disease_stage
+      - disease_severity
+
+  Assessment:
+    # is_a: LifeEvent
+    is_a: NamedThing
+    class_uri: OBI:0002441 # physical examination of an organism
+    slots:
+      - life_event
+      - assessment_type
+      - target_entity_type
+      - value
+      - unit
+
+  Specimen:
+    is_a: NamedThing
+    class_uri: OBI:0100051 # specimen
+    slots:
+      - life_event
+      - specimen_type
+      - tissue
+      - process
+
+  Assay:
+    is_a: NamedThing
+    class_uri: OBI:0000070 # assay
+    slots:
+      - specimen
+      - assay_type
+      - target_entity_type
+      - value
+      - unit
+
+  Dataset:
+    is_a: NamedThing
+    class_uri: IAO:0000100 # data set
+    slots:
+      - assessments
+      - assays
+
+  Conclusion:
+    is_a: NamedThing
+    class_uri: OBI:0001909 # conclusion based on data
+    slots:
+      - investigations
+      - datasets
+      - result
+      - data_location_type
+      - data_location_value
+      - organism
+      - experiment_type
 
 slots:
   id:
+    description: A unique identifier for a thing
     identifier: true
+    required: true
     slot_uri: schema:identifier
     range: uriorcurie
-    description: A unique identifier for a thing
   name:
-    slot_uri: schema:name
     description: A human-readable name for a thing
+    slot_uri: schema:name
   description:
-    slot_uri: schema:description
     description: A human-readable description for a thing
-  primary_email:
-    slot_uri: schema:email
-    description: The main email address of a person
-  birth_date:
-    slot_uri: schema:birthDate
-    range: date
-    description: Date on which a person is born
-  age_in_years:
+    slot_uri: schema:description
+  sources:
+    description: The source URLs for a reference
+    slot_uri: schema:identifier
+    range: uriorcurie
+  title:
+    description: The title of a reference
+    slot_uri: schema:name
+  authors:
+    description: The authors of a reference
+    slot_uri: schema:author
+    multivalued: true
+  journal:
+    description: The journal in which a reference was published
+  issue:
+    description: The issue of the journal in which a reference was published
+    slot_uri: schema:issueNumber
+  month:
+    description: The month of the issue of the journal in which a reference was published
+  year:
+    description: The year of the issue of the journal in which a reference was published
     range: integer
-    description: Number of years since birth
-  vital_status:
-    range: PersonStatus
-    description: living or dead status
+    pattern: "19\\d\\d|20\\d\\d"
+  pages:
+    description: The pages of the issue of the journal in which a reference was published
+  investigation:
+    description: The investigation in which an arm participates
+    slot_uri: RO:0000056 # participates in
+    range: Investigation
+  investigations:
+    description: The investigations that a reference or conclusion are about
+    slot_uri: IAO:0000136 # is about
+    range: Investigation
+    multivalued: true
+  arm:
+    description: The arm that a participant is a member of
+    slot_uri: RO:0002350 # member of
+    range: Arm
+  arms:
+    description: The arms that are relevant for a study event
+    range: Arm
+    multivalued: true
+  participant:
+    description: The participant of a life event
+    slot_uri: RO:0000057 # has participant
+    range: Participant
+  species:
+    description: The species of a participant
+    slot_uri: rdf:type
+    range: Species
+  biological_sex:
+    description: The biological sex of a participant
+    range: BiologicalSex
+    slot_uri: RO:0000053 # has_characteristic
+  race:
+    description: The race of a participant
+    range: Race
+  ethnicity:
+    description: The ethnicity of a participant
+    range: Ethnicity
+  geolocation:
+    description: The geolocation of a participant at birth
+    range: Geolocation
+    slot_uri: RO:0001025 # located in
+  study_event:
+    description: The study event corresponding to a life event
+    range: StudyEvent
+  life_event:
+    description: The life event corresponding to an immune exposure
+    range: LifeEvent
+  specimen:
+    description: The specimen that was input for an assay
+    range: Specimen
+  assays:
+    description: The assays that a dataset is about
+    slot_uri: IAO:0000136 # is about
+    range: Assay
+    multivalued: true
+  assessments:
+    description: The assessment that a dataset is about
+    slot_uri: IAO:0000136 # is about
+    range: Assessment
+    multivalued: true
+  datasets:
+    description: The datasets that support a conclusion
+    # input of a drawing a conclusion process
+    range: Dataset
+    multivalued: true
+  exposure_material:
+    description: The material relevant to an immune exposure
+    slot_uri: RO:0000057 # has participant
+    range: ExposureMaterial
+  disease:
+    description: The disease relevant to an immune exposure
+    range: Disease
+  disease_stage:
+    description: The stage of the disease relevant to an immune exposure
+    range: DiseaseStage
+  disease_severity:
+    description: The severity of the disease relevant to an immune exposure
+    # TODO: range: DiseaseSeverity
+  life_event_type:
+    description: The specific type of a life event
+    slot_uri: rdf:type
+    # TODO: enum
+  t0_event:
+    description: The T0 event used to specify the time of this life event
+  t0_event_type:
+    description: The type of the T0 event used to specify the time of this life event
+  start:
+    description: The start time of this life event, relative to the T0 event
+    range: decimal
+  duration:
+    description: The duration of this life event
+    range: decimal
+  time_unit:
+    description: The time unit used to measure the start and duration of this life event
+    # TODO: time unit enum
+  assessment_type:
+    description: The specific type of an assessment
+    slot_uri: rdf:type
+  assay_type:
+    description: The specific type of an assay
+    slot_uri: rdf:type
+    # TODO: enum
+  target_entity_type:
+    description: The type of the entity being measured
+  value:
+    description: The measurement result value
+  unit:
+    description: The measurement result value unit
+  specimen_type: # TODO: enum
+    description: The type of this specimen
+    slot_uri: rdf:type
+  tissue: # TODO: enum
+    description: The tissue from which this specimen was taken
+    # specified input to process
+  process: # TODO: enum
+    description: The type of specimen collection process that resulted in this specimen
+  result:
+    description: The content of the conclusion
+  data_location_type:
+    description: The type of location where data was found, e.g. figure, table
+  data_location_value:
+    description: An identifier for the location of the data, e.g. figure 2
+  organism:
+    description: The type of organism that the conclusion is about
+    slot_uri: IAO:0000136 # is about
+  experiment_type:
+    description: The type of experiment that supports the conclusion
 
 enums:
-  PersonStatus:
+  Species:
     permissible_values:
-      ALIVE:
-        description: the person is living
-        meaning: PATO:0001421
-      DEAD:
-        description: the person is deceased
-        meaning: PATO:0001422
-      UNKNOWN:
-        description: the vital status is not known
-        todos:
-          - map this to an ontology
+      human:
+        meaning: NCBITaxon:9606
+      mouse:
+        meaning: NCBITaxon:10090
+  BiologicalSex:
+    permissible_values:
+      female:
+        meaning: PATO:0020002
+      male:
+        meaning: PATO:0020001
+  Race:
+    permissible_values:
+      American Indian or Alaska Native:
+        meaning: OMRSE:00000215
+      Asian:
+        meaning: OMRSE:00000216
+      Black or African American:
+        meaning: OMRSE:00000217
+      Native Hawaiian or Other Pacific Islander:
+        meaning: OMRSE:00000218
+      White:
+        meaning: OMRSE:00000219
+      Other:
+        meaning: OMRSE:00000214
+  Ethnicity:
+    permissible_values:
+      Hispanic or Latino:
+        meaning: OMRSE:00000207
+      Not Hispanic or Latino:
+        meaning: OMRSE:00000208
+      Other:
+        meaning: OMRSE:00000206
+  Geolocation:
+    permissible_values:
+      "US: New York":
+        meaning: GAZ:00002514
+      "US: California":
+        meaning: GAZ:00002461
+      "US: Connecticut":
+        meaning: GAZ:00002591
+      "US: Georgia":
+        meaning: GAZ:00002611
+      "US: Texas":
+        meaning: GAZ:00002580
+      Canada:
+        meaning: GAZ:00002560
+      Nicaragua:
+        meaning: GAZ:00002978
+      "US: Maryland":
+        meaning: GAZ:00002519
+      "US: Minnesota":
+        meaning: GAZ:00002539
+      United States of America:
+        meaning: GAZ:00002459
+      Uganda:
+        meaning: GAZ:00001102
+      China:
+        meaning: GAZ:00002845
+      England:
+        meaning: GAZ:00002641
+      India:
+        meaning: GAZ:00002839
+      "US: Massachusetts":
+        meaning: GAZ:00002537
+      "US: Colorado":
+        meaning: GAZ:00006254
+      Gambia:
+        meaning: GAZ:00000907
+      Papua New Guinea:
+        meaning: GAZ:00003922
+      Metropolitan France:
+        meaning: GAZ:00003940
+      Sri Lanka:
+        meaning: GAZ:00003924
+      Switzerland:
+        meaning: GAZ:00002941
+      "US: Washington":
+        meaning: GAZ:00002553
+      geographic location:
+        meaning: GAZ:00000448
+      Colombia:
+        meaning: GAZ:00002929
+      "US: Florida":
+        meaning: GAZ:00002888
+      "US: Kansas":
+        meaning: GAZ:00004435
+  ExposureMaterial:
+    permissible_values:
+      Mycobacterium tuberculosis:
+        meaning: NCBITaxon:1773
+      Plasmodium falciparum:
+        meaning: NCBITaxon:5833
+      Diphtheria-Tetanus-Pertussis vaccine:
+        meaning: VO:0000738
+      Dryvax:
+        meaning: VO:0000035
+      # TODO: more values
+  Disease:
+    permissible_values:
+      COVID-19:
+        meaning: DOID:0080600
+      Plasmodium falciparum malaria:
+        meaning: DOID:14067
+      dengue hemorrhagic fever:
+        meaning: DOID:12206
+      # TODO: more values
+  DiseaseStage:
+    permissible_values:
+      acute disease course:
+        meaning: OGMS:0000094
+      post disease course:
+        meaning: ONTIE:0003544
+      unknown disease course:
+        meaning: ONTIE:0003545
+      chronic disease course:
+        meaning: OGMS:0000064
+      other disease course:
+        meaning: ONTIE:0003547
+      # TODO: more values
