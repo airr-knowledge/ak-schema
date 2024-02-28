@@ -1,11 +1,57 @@
 {
+   "BFO": "http://purl.obolibrary.org/obo/BFO_",
+   "DOID": "http://purl.obolibrary.org/obo/DOID_",
+   "GAZ": "http://purl.obolibrary.org/obo/GAZ_",
+   "IAO": "http://purl.obolibrary.org/obo/IAO_",
+   "NCBITaxon": "http://purl.obolibrary.org/obo/NCBITaxon_",
+   "OBI": "http://purl.obolibrary.org/obo/OBI_",
+   "OGMS": "http://purl.obolibrary.org/obo/OGMS_",
+   "OMRSE": "http://purl.obolibrary.org/obo/OMRSE_",
+   "ONTIE": "https://ontology.iedb.org/ontology/ONTIE_",
    "PATO": "http://purl.obolibrary.org/obo/PATO_",
+   "RO": "http://purl.obolibrary.org/obo/RO_",
+   "VO": "http://purl.obolibrary.org/obo/VO_",
    "ak_schema": "https://w3id.org/airr-knowledge/ak-schema/",
    "biolink": "https://w3id.org/biolink/",
+   "dc": "http://purl.org/dc/elements/1.1/",
    "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
+   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
    "schema": "http://schema.org/",
-   "NamedThing": {
-      "@id": "schema:Thing"
+   "Arm": {
+      "@id": "OBI:0000181"
+   },
+   "Assay": {
+      "@id": "OBI:0000070"
+   },
+   "Assessment": {
+      "@id": "OBI:0002441"
+   },
+   "Conclusion": {
+      "@id": "OBI:0001909"
+   },
+   "Dataset": {
+      "@id": "IAO:0000100"
+   },
+   "ImmuneExposure": {
+      "@id": "BFO:0000015"
+   },
+   "Investigation": {
+      "@id": "OBI:0000066"
+   },
+   "LifeEvent": {
+      "@id": "BFO:0000015"
+   },
+   "Participant": {
+      "@id": "OBI:0100026"
+   },
+   "Reference": {
+      "@id": "IAO:0000310"
+   },
+   "Specimen": {
+      "@id": "OBI:0100051"
+   },
+   "StudyEvent": {
+      "@id": "BFO:0000015"
    }
 }
