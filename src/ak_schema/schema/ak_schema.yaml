@@ -54,6 +54,10 @@ classes:
         range: Investigation
         multivalued: true
         inlined: true
+      references:
+        range: Reference
+        multivalued: true
+        inlined: true
       arms:
         range: Arm
         multivalued: true
@@ -62,7 +66,7 @@ classes:
         range: StudyEvent
         multivalued: true
         inlined: true
-      participant:
+      participants:
         range: Participant
         multivalued: true
         inlined: true
@@ -147,6 +151,7 @@ classes:
       An event that is part of the study design of an investigation.
     slots:
       - arms
+      # TODO: add more slots for study event timing and order
     
   LifeEvent:
     is_a: NamedThing
@@ -242,6 +247,7 @@ slots:
     description: The source URLs for a reference
     slot_uri: schema:identifier
     range: uriorcurie
+    multivalued: true
   title:
     description: The title of a reference
     slot_uri: schema:name
@@ -310,6 +316,7 @@ slots:
   specimen:
     description: The specimen that was input for an assay
     range: Specimen
+    slot_uri: OBI:0000293 # has specified input
   assays:
     description: The assays that a dataset is about
     slot_uri: IAO:0000136 # is about
@@ -340,6 +347,7 @@ slots:
     # TODO: range: DiseaseSeverity
   life_event_type:
     description: The specific type of a life event
+    range: LifeEventProcess
     slot_uri: rdf:type
     # TODO: enum
   t0_event:
@@ -384,16 +392,27 @@ slots:
     description: An identifier for the location of the data, e.g. figure 2
   organism:
     description: The type of organism that the conclusion is about
+    range: Species
     slot_uri: IAO:0000136 # is about
   experiment_type:
     description: The type of experiment that supports the conclusion
 
 enums:
+  LifeEventProcess:
+    permissible_values:
+      Documented exposure without evidence for disease:
+        meaning: ONTIE:0003305
+      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
+        meaning: ONTIE:0003308
+      Exposure with existing immune reactivity without evidence for disease:
+        meaning: OBI:1110061
+      specimen collection:
+        meaning: OBI:0000659
   Species:
     permissible_values:
-      human:
+      Homo sapiens (human):
         meaning: NCBITaxon:9606
-      mouse:
+      Mus musculus (mouse):
         meaning: NCBITaxon:10090
   BiologicalSex:
     permissible_values:
@@ -479,10 +498,16 @@ enums:
         meaning: GAZ:00004435
   ExposureMaterial:
     permissible_values:
+      Influenza A virus:
+        meaning: NCBITaxon:11320
       Mycobacterium tuberculosis:
         meaning: NCBITaxon:1773
       Plasmodium falciparum:
         meaning: NCBITaxon:5833
+      Human gammaherpesvirus 4:
+        meaning: NCBITaxon:10376
+      Human betaherpesvirus 5:
+        meaning: NCBITaxon:10359
       Diphtheria-Tetanus-Pertussis vaccine:
         meaning: VO:0000738
       Dryvax:
@@ -490,6 +515,8 @@ enums:
       # TODO: more values
   Disease:
     permissible_values:
+      healthy:
+        meaning: ONTIE:000342
       COVID-19:
         meaning: DOID:0080600
       Plasmodium falciparum malaria:
