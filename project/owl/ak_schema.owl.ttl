@@ -1,143 +1,1289 @@
+@prefix BFO: <http://purl.obolibrary.org/obo/BFO_> .
+@prefix DOID: <http://purl.obolibrary.org/obo/DOID_> .
+@prefix GAZ: <http://purl.obolibrary.org/obo/GAZ_> .
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix OBI: <http://purl.obolibrary.org/obo/OBI_> .
+@prefix OGMS: <http://purl.obolibrary.org/obo/OGMS_> .
+@prefix OMRSE: <http://purl.obolibrary.org/obo/OMRSE_> .
+@prefix ONTIE: <https://ontology.iedb.org/ontology/ONTIE_> .
 @prefix PATO: <http://purl.obolibrary.org/obo/PATO_> .
+@prefix VO: <http://purl.obolibrary.org/obo/VO_> .
 @prefix ak_schema: <https://w3id.org/airr-knowledge/ak-schema/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix linkml: <https://w3id.org/linkml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema1: <http://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ak_schema:InvestigationCollection a owl:Class,
+ak_schema:Container a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "InvestigationCollection" ;
+    rdfs:label "Container" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Participant ;
+            owl:onProperty ak_schema:participants ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Assay ;
+            owl:onProperty ak_schema:assays ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Arm ;
+            owl:onProperty ak_schema:arms ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Investigation ;
-            owl:onProperty ak_schema:entries ],
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Assessment ;
+            owl:onProperty ak_schema:assessments ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:entries ] ;
-    skos:definition "A holder for Investigation objects" ;
+            owl:onProperty ak_schema:participants ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEvent ;
+            owl:onProperty ak_schema:life_events ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:references ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:datasets ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:specimens ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Reference ;
+            owl:onProperty ak_schema:references ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_events ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:arms ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Conclusion ;
+            owl:onProperty ak_schema:conclusions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Dataset ;
+            owl:onProperty ak_schema:datasets ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:conclusions ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:StudyEvent ;
+            owl:onProperty ak_schema:study_events ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assays ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assessments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:ImmuneExposure ;
+            owl:onProperty ak_schema:immune_exposures ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Specimen ;
+            owl:onProperty ak_schema:specimens ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:study_events ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:immune_exposures ] ;
+    skos:definition "A container for instances of multiple classes." ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-ak_schema:Investigation a owl:Class,
+ak_schema:Conclusion a owl:Class,
         linkml:ClassDefinition ;
-    rdfs:label "Investigation" ;
+    rdfs:label "Conclusion" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Date ;
-            owl:onProperty ak_schema:birth_date ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:birth_date ],
+            owl:onProperty ak_schema:experiment_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:age_in_years ],
+            owl:onProperty ak_schema:experiment_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:age_in_years ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Integer ;
-            owl:onProperty ak_schema:age_in_years ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom [ a rdfs:Datatype ;
-                    owl:onDatatype xsd:string ;
-                    owl:withRestrictions ( [ xsd:pattern "^\\S+@[\\S+\\.]+\\S+" ] ) ] ;
-            owl:onProperty ak_schema:primary_email ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:primary_email ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:primary_email ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:vital_status ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:PersonStatus ;
-            owl:onProperty ak_schema:vital_status ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:vital_status ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:birth_date ],
-        ak_schema:NamedThing ;
-    skos:definition "Represents a Investigation" ;
-    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
-
-ak_schema:NamedThing a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "NamedThing" ;
-    rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty ak_schema:description ],
+            owl:onProperty ak_schema:data_location_value ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:data_location_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Dataset ;
+            owl:onProperty ak_schema:datasets ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:result ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:data_location_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:result ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:data_location_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:data_location_value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:datasets ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:data_location_value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Species ;
+            owl:onProperty ak_schema:organism ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:result ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Investigation ;
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:experiment_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:organism ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:organism ],
+        ak_schema:NamedThing ;
+    skos:exactMatch OBI:0001909 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:ImmuneExposure a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ImmuneExposure" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:DiseaseStage ;
+            owl:onProperty ak_schema:disease_stage ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:exposure_material ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:exposure_material ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:disease ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:ExposureMaterial ;
+            owl:onProperty ak_schema:exposure_material ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:disease_stage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:disease_severity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEvent ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:disease_severity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:disease_stage ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Disease ;
+            owl:onProperty ak_schema:disease ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:disease_severity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:disease ],
+        ak_schema:NamedThing ;
+    skos:definition "An event involving the immune system of a study participant." ;
+    skos:exactMatch BFO:0000015 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Reference a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Reference" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:sources ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:month ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:journal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:title ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:month ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:issue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:authors ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:authors ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:month ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:journal ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
             owl:onProperty ak_schema:id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:description ],
+            owl:onProperty ak_schema:pages ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:name ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:id ],
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty ak_schema:sources ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:description ],
+            owl:onProperty ak_schema:year ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:name ],
+            owl:onProperty ak_schema:pages ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
-            owl:onProperty ak_schema:name ] ;
-    skos:definition "A generic grouping for any identifiable entity" ;
-    skos:exactMatch schema1:Thing ;
+            owl:onProperty ak_schema:issue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty ak_schema:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom [ a rdfs:Datatype ;
+                    owl:intersectionOf ( linkml:Integer [ a rdfs:Datatype ;
+                                owl:onDatatype xsd:string ;
+                                owl:withRestrictions ( [ xsd:pattern "19\\d\\d|20\\d\\d" ] ) ] ) ] ;
+            owl:onProperty ak_schema:year ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:year ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Investigation ;
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:journal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:pages ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:issue ] ;
+    skos:definition "A document about an investigation." ;
+    skos:exactMatch IAO:0000310 ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-PATO:0001421 a owl:Class,
-        ak_schema:PersonStatus ;
-    rdfs:label "ALIVE" ;
-    rdfs:subClassOf ak_schema:PersonStatus .
+DOID:0080600 a owl:Class,
+        ak_schema:Disease ;
+    rdfs:label "COVID-19" ;
+    rdfs:subClassOf ak_schema:Disease .
 
-PATO:0001422 a owl:Class,
-        ak_schema:PersonStatus ;
-    rdfs:label "DEAD" ;
-    rdfs:subClassOf ak_schema:PersonStatus .
+DOID:12206 a owl:Class,
+        ak_schema:Disease ;
+    rdfs:label "dengue hemorrhagic fever" ;
+    rdfs:subClassOf ak_schema:Disease .
 
-<https://w3id.org/airr-knowledge/ak-schema/PersonStatus#UNKNOWN> a owl:Class,
-        ak_schema:PersonStatus ;
-    rdfs:label "UNKNOWN" ;
-    rdfs:subClassOf ak_schema:PersonStatus .
+DOID:14067 a owl:Class,
+        ak_schema:Disease ;
+    rdfs:label "Plasmodium falciparum malaria" ;
+    rdfs:subClassOf ak_schema:Disease .
 
-ak_schema:entries a owl:ObjectProperty,
+GAZ:00000448 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "geographic location" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00000907 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Gambia" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00001102 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Uganda" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002459 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "United States of America" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002461 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: California" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002514 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: New York" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002519 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Maryland" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002537 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Massachusetts" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002539 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Minnesota" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002553 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Washington" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002560 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Canada" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002580 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Texas" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002591 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Connecticut" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002611 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Georgia" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002641 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "England" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002839 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "India" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002845 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "China" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002888 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Florida" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002929 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Colombia" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002941 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Switzerland" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00002978 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Nicaragua" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00003922 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Papua New Guinea" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00003924 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Sri Lanka" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00003940 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "Metropolitan France" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00004435 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Kansas" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+GAZ:00006254 a owl:Class,
+        ak_schema:Geolocation ;
+    rdfs:label "US: Colorado" ;
+    rdfs:subClassOf ak_schema:Geolocation .
+
+NCBITaxon:10090 a owl:Class,
+        ak_schema:Species ;
+    rdfs:label "Mus musculus (mouse)" ;
+    rdfs:subClassOf ak_schema:Species .
+
+NCBITaxon:10359 a owl:Class,
+        ak_schema:ExposureMaterial ;
+    rdfs:label "Human betaherpesvirus 5" ;
+    rdfs:subClassOf ak_schema:ExposureMaterial .
+
+NCBITaxon:10376 a owl:Class,
+        ak_schema:ExposureMaterial ;
+    rdfs:label "Human gammaherpesvirus 4" ;
+    rdfs:subClassOf ak_schema:ExposureMaterial .
+
+NCBITaxon:11320 a owl:Class,
+        ak_schema:ExposureMaterial ;
+    rdfs:label "Influenza A virus" ;
+    rdfs:subClassOf ak_schema:ExposureMaterial .
+
+NCBITaxon:1773 a owl:Class,
+        ak_schema:ExposureMaterial ;
+    rdfs:label "Mycobacterium tuberculosis" ;
+    rdfs:subClassOf ak_schema:ExposureMaterial .
+
+NCBITaxon:5833 a owl:Class,
+        ak_schema:ExposureMaterial ;
+    rdfs:label "Plasmodium falciparum" ;
+    rdfs:subClassOf ak_schema:ExposureMaterial .
+
+NCBITaxon:9606 a owl:Class,
+        ak_schema:Species ;
+    rdfs:label "Homo sapiens (human)" ;
+    rdfs:subClassOf ak_schema:Species .
+
+OBI:0000659 a owl:Class,
+        ak_schema:LifeEventProcess ;
+    rdfs:label "specimen collection" ;
+    rdfs:subClassOf ak_schema:LifeEventProcess .
+
+OBI:1110061 a owl:Class,
+        ak_schema:LifeEventProcess ;
+    rdfs:label "Exposure with existing immune reactivity without evidence for disease" ;
+    rdfs:subClassOf ak_schema:LifeEventProcess .
+
+OGMS:0000064 a owl:Class,
+        ak_schema:DiseaseStage ;
+    rdfs:label "chronic disease course" ;
+    rdfs:subClassOf ak_schema:DiseaseStage .
+
+OGMS:0000094 a owl:Class,
+        ak_schema:DiseaseStage ;
+    rdfs:label "acute disease course" ;
+    rdfs:subClassOf ak_schema:DiseaseStage .
+
+OMRSE:00000206 a owl:Class,
+        ak_schema:Ethnicity ;
+    rdfs:label "Other" ;
+    rdfs:subClassOf ak_schema:Ethnicity .
+
+OMRSE:00000207 a owl:Class,
+        ak_schema:Ethnicity ;
+    rdfs:label "Hispanic or Latino" ;
+    rdfs:subClassOf ak_schema:Ethnicity .
+
+OMRSE:00000208 a owl:Class,
+        ak_schema:Ethnicity ;
+    rdfs:label "Not Hispanic or Latino" ;
+    rdfs:subClassOf ak_schema:Ethnicity .
+
+OMRSE:00000214 a owl:Class,
+        ak_schema:Race ;
+    rdfs:label "Other" ;
+    rdfs:subClassOf ak_schema:Race .
+
+OMRSE:00000215 a owl:Class,
+        ak_schema:Race ;
+    rdfs:label "American Indian or Alaska Native" ;
+    rdfs:subClassOf ak_schema:Race .
+
+OMRSE:00000216 a owl:Class,
+        ak_schema:Race ;
+    rdfs:label "Asian" ;
+    rdfs:subClassOf ak_schema:Race .
+
+OMRSE:00000217 a owl:Class,
+        ak_schema:Race ;
+    rdfs:label "Black or African American" ;
+    rdfs:subClassOf ak_schema:Race .
+
+OMRSE:00000218 a owl:Class,
+        ak_schema:Race ;
+    rdfs:label "Native Hawaiian or Other Pacific Islander" ;
+    rdfs:subClassOf ak_schema:Race .
+
+OMRSE:00000219 a owl:Class,
+        ak_schema:Race ;
+    rdfs:label "White" ;
+    rdfs:subClassOf ak_schema:Race .
+
+PATO:0020001 a owl:Class,
+        ak_schema:BiologicalSex ;
+    rdfs:label "male" ;
+    rdfs:subClassOf ak_schema:BiologicalSex .
+
+PATO:0020002 a owl:Class,
+        ak_schema:BiologicalSex ;
+    rdfs:label "female" ;
+    rdfs:subClassOf ak_schema:BiologicalSex .
+
+VO:0000035 a owl:Class,
+        ak_schema:ExposureMaterial ;
+    rdfs:label "Dryvax" ;
+    rdfs:subClassOf ak_schema:ExposureMaterial .
+
+VO:0000738 a owl:Class,
+        ak_schema:ExposureMaterial ;
+    rdfs:label "Diphtheria-Tetanus-Pertussis vaccine" ;
+    rdfs:subClassOf ak_schema:ExposureMaterial .
+
+ONTIE:0003305 a owl:Class,
+        ak_schema:LifeEventProcess ;
+    rdfs:label "Documented exposure without evidence for disease" ;
+    rdfs:subClassOf ak_schema:LifeEventProcess .
+
+ONTIE:0003308 a owl:Class,
+        ak_schema:LifeEventProcess ;
+    rdfs:label "Environmental exposure to endemic/ubiquitous agent without evidence for disease" ;
+    rdfs:subClassOf ak_schema:LifeEventProcess .
+
+ONTIE:000342 a owl:Class,
+        ak_schema:Disease ;
+    rdfs:label "healthy" ;
+    rdfs:subClassOf ak_schema:Disease .
+
+ONTIE:0003544 a owl:Class,
+        ak_schema:DiseaseStage ;
+    rdfs:label "post disease course" ;
+    rdfs:subClassOf ak_schema:DiseaseStage .
+
+ONTIE:0003545 a owl:Class,
+        ak_schema:DiseaseStage ;
+    rdfs:label "unknown disease course" ;
+    rdfs:subClassOf ak_schema:DiseaseStage .
+
+ONTIE:0003547 a owl:Class,
+        ak_schema:DiseaseStage ;
+    rdfs:label "other disease course" ;
+    rdfs:subClassOf ak_schema:DiseaseStage .
+
+ak_schema:authors a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "entries" ;
+    rdfs:label "authors" ;
+    skos:definition "The authors of a reference" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-ak_schema:age_in_years a owl:ObjectProperty,
+ak_schema:conclusions a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "age_in_years" ;
-    rdfs:range linkml:Integer ;
-    skos:definition "Number of years since birth" ;
+    rdfs:label "conclusions" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-ak_schema:birth_date a owl:ObjectProperty,
+ak_schema:immune_exposures a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "birth_date" ;
-    rdfs:range linkml:Date ;
-    skos:definition "Date on which a person is born" ;
+    rdfs:label "immune_exposures" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:life_events a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "life_events" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:participants a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "participants" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:references a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "references" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:sources a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sources" ;
+    rdfs:range linkml:Uriorcurie ;
+    skos:definition "The source URLs for a reference" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:specimens a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specimens" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:study_events a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "study_events" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Assay a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Assay" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:assay_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:specimen ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Specimen ;
+            owl:onProperty ak_schema:specimen ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assay_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:assay_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:specimen ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:target_entity_type ],
+        ak_schema:NamedThing ;
+    skos:exactMatch OBI:0000070 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Assessment a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Assessment" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:assessment_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assessment_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:assessment_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEvent ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:value ],
+        ak_schema:NamedThing ;
+    skos:exactMatch OBI:0002441 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Dataset a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Dataset" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assessments ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assays ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Assessment ;
+            owl:onProperty ak_schema:assessments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Assay ;
+            owl:onProperty ak_schema:assays ],
+        ak_schema:NamedThing ;
+    skos:exactMatch IAO:0000100 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Participant a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Participant" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Ethnicity ;
+            owl:onProperty ak_schema:ethnicity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:biological_sex ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:species ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Geolocation ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:arm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:BiologicalSex ;
+            owl:onProperty ak_schema:biological_sex ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:race ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:biological_sex ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:ethnicity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Race ;
+            owl:onProperty ak_schema:race ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:race ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Species ;
+            owl:onProperty ak_schema:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:arm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Arm ;
+            owl:onProperty ak_schema:arm ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:ethnicity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:geolocation ],
+        ak_schema:NamedThing ;
+    skos:definition "A participant in an investigation." ;
+    skos:exactMatch OBI:0100026 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Specimen a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Specimen" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:process ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:process ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:tissue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEvent ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:specimen_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:specimen_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:tissue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:specimen_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:process ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:tissue ],
+        ak_schema:NamedThing ;
+    skos:exactMatch OBI:0100051 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:StudyEvent a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "StudyEvent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Arm ;
+            owl:onProperty ak_schema:arms ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:arms ],
+        ak_schema:NamedThing ;
+    skos:definition "An event that is part of the study design of an investigation." ;
+    skos:exactMatch BFO:0000015 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:arm a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "arm" ;
+    rdfs:range ak_schema:Arm ;
+    skos:definition "The arm that a participant is a member of" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:assay_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assay_type" ;
+    skos:definition "The specific type of an assay" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:assessment_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assessment_type" ;
+    skos:definition "The specific type of an assessment" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:biological_sex a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "biological_sex" ;
+    rdfs:range ak_schema:BiologicalSex ;
+    skos:definition "The biological sex of a participant" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:data_location_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "data_location_type" ;
+    skos:definition "The type of location where data was found, e.g. figure, table" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:data_location_value a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "data_location_value" ;
+    skos:definition "An identifier for the location of the data, e.g. figure 2" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
 ak_schema:description a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "description" ;
     skos:definition "A human-readable description for a thing" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:disease a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "disease" ;
+    rdfs:range ak_schema:Disease ;
+    skos:definition "The disease relevant to an immune exposure" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:disease_severity a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "disease_severity" ;
+    skos:definition "The severity of the disease relevant to an immune exposure" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:disease_stage a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "disease_stage" ;
+    rdfs:range ak_schema:DiseaseStage ;
+    skos:definition "The stage of the disease relevant to an immune exposure" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:duration a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "duration" ;
+    rdfs:range linkml:Decimal ;
+    skos:definition "The duration of this life event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:ethnicity a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "ethnicity" ;
+    rdfs:range ak_schema:Ethnicity ;
+    skos:definition "The ethnicity of a participant" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:experiment_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "experiment_type" ;
+    skos:definition "The type of experiment that supports the conclusion" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:exposure_material a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "exposure_material" ;
+    rdfs:range ak_schema:ExposureMaterial ;
+    skos:definition "The material relevant to an immune exposure" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:investigation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "investigation" ;
+    rdfs:range ak_schema:Investigation ;
+    skos:definition "The investigation in which an arm participates" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:issue a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "issue" ;
+    skos:definition "The issue of the journal in which a reference was published" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:journal a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "journal" ;
+    skos:definition "The journal in which a reference was published" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:life_event_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "life_event_type" ;
+    rdfs:range ak_schema:LifeEventProcess ;
+    skos:definition "The specific type of a life event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:month a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "month" ;
+    skos:definition "The month of the issue of the journal in which a reference was published" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "name" ;
+    skos:definition "A human-readable name for a thing" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:organism a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "organism" ;
+    rdfs:range ak_schema:Species ;
+    skos:definition "The type of organism that the conclusion is about" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:pages a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "pages" ;
+    skos:definition "The pages of the issue of the journal in which a reference was published" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:participant a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "participant" ;
+    rdfs:range ak_schema:Participant ;
+    skos:definition "The participant of a life event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:process a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "process" ;
+    skos:definition "The type of specimen collection process that resulted in this specimen" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:race a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "race" ;
+    rdfs:range ak_schema:Race ;
+    skos:definition "The race of a participant" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:result a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "result" ;
+    skos:definition "The content of the conclusion" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:species a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "species" ;
+    rdfs:range ak_schema:Species ;
+    skos:definition "The species of a participant" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:specimen a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specimen" ;
+    rdfs:range ak_schema:Specimen ;
+    skos:definition "The specimen that was input for an assay" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:specimen_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "specimen_type" ;
+    skos:definition "The type of this specimen" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:start a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "start" ;
+    rdfs:range linkml:Decimal ;
+    skos:definition "The start time of this life event, relative to the T0 event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:study_event a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "study_event" ;
+    rdfs:range ak_schema:StudyEvent ;
+    skos:definition "The study event corresponding to a life event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:t0_event a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "t0_event" ;
+    skos:definition "The T0 event used to specify the time of this life event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:t0_event_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "t0_event_type" ;
+    skos:definition "The type of the T0 event used to specify the time of this life event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:time_unit a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "time_unit" ;
+    skos:definition "The time unit used to measure the start and duration of this life event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:tissue a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "tissue" ;
+    skos:definition "The tissue from which this specimen was taken" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:title a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "title" ;
+    skos:definition "The title of a reference" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:year a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "year" ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:intersectionOf ( linkml:Integer [ a rdfs:Datatype ;
+                        owl:onDatatype xsd:string ;
+                        owl:withRestrictions ( [ xsd:pattern "19\\d\\d|20\\d\\d" ] ) ] ) ] ;
+    skos:definition "The year of the issue of the journal in which a reference was published" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:arms a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "arms" ;
+    rdfs:range ak_schema:Arm ;
+    skos:definition "The arms that are relevant for a study event" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:assays a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assays" ;
+    rdfs:range ak_schema:Assay ;
+    skos:definition "The assays that a dataset is about" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:assessments a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "assessments" ;
+    rdfs:range ak_schema:Assessment ;
+    skos:definition "The assessment that a dataset is about" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:datasets a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "datasets" ;
+    rdfs:range ak_schema:Dataset ;
+    skos:definition "The datasets that support a conclusion" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Arm a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Arm" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:investigation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:investigation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Investigation ;
+            owl:onProperty ak_schema:investigation ],
+        ak_schema:NamedThing ;
+    skos:definition "A population of participants of an investigation." ;
+    skos:exactMatch OBI:0000181 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:LifeEvent a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "LifeEvent" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Decimal ;
+            owl:onProperty ak_schema:start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:study_event ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Decimal ;
+            owl:onProperty ak_schema:duration ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:time_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:duration ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:time_unit ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Participant ;
+            owl:onProperty ak_schema:participant ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Geolocation ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:participant ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:t0_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:participant ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:t0_event_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:t0_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:start ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:study_event ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:StudyEvent ;
+            owl:onProperty ak_schema:study_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:t0_event_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:duration ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEventProcess ;
+            owl:onProperty ak_schema:life_event_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:t0_event_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:t0_event ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:time_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_event_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:life_event_type ],
+        ak_schema:NamedThing ;
+    skos:definition "An event in which a study participant participates." ;
+    skos:exactMatch BFO:0000015 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:BiologicalSex a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( PATO:0020002 PATO:0020001 ) ;
+    linkml:permissible_values PATO:0020001,
+        PATO:0020002 .
+
+ak_schema:Investigation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Investigation" ;
+    rdfs:subClassOf ak_schema:NamedThing ;
+    skos:definition "A scientific investigation." ;
+    skos:exactMatch OBI:0000066 ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:geolocation a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "geolocation" ;
+    rdfs:range ak_schema:Geolocation ;
+    skos:definition "The geolocation of a participant at birth" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
 ak_schema:id a owl:ObjectProperty,
@@ -147,31 +1293,159 @@ ak_schema:id a owl:ObjectProperty,
     skos:definition "A unique identifier for a thing" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-ak_schema:name a owl:ObjectProperty,
+ak_schema:investigations a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "name" ;
-    skos:definition "A human-readable name for a thing" ;
+    rdfs:label "investigations" ;
+    rdfs:range ak_schema:Investigation ;
+    skos:definition "The investigations that a reference or conclusion are about" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-ak_schema:primary_email a owl:ObjectProperty,
+ak_schema:target_entity_type a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "primary_email" ;
-    skos:definition "The main email address of a person" ;
+    rdfs:label "target_entity_type" ;
+    skos:definition "The type of the entity being measured" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-ak_schema:vital_status a owl:ObjectProperty,
+ak_schema:unit a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "vital_status" ;
-    rdfs:range ak_schema:PersonStatus ;
-    skos:definition "living or dead status" ;
+    rdfs:label "unit" ;
+    skos:definition "The measurement result value unit" ;
     skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
 
-ak_schema:PersonStatus a owl:Class,
+ak_schema:value a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "value" ;
+    skos:definition "The measurement result value" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Ethnicity a owl:Class,
         linkml:EnumDefinition ;
-    owl:unionOf ( PATO:0001421 PATO:0001422 <https://w3id.org/airr-knowledge/ak-schema/PersonStatus#UNKNOWN> ) ;
-    linkml:permissible_values PATO:0001421,
-        PATO:0001422,
-        <https://w3id.org/airr-knowledge/ak-schema/PersonStatus#UNKNOWN> .
+    owl:unionOf ( OMRSE:00000207 OMRSE:00000208 OMRSE:00000206 ) ;
+    linkml:permissible_values OMRSE:00000206,
+        OMRSE:00000207,
+        OMRSE:00000208 .
+
+ak_schema:Species a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( NCBITaxon:9606 NCBITaxon:10090 ) ;
+    linkml:permissible_values NCBITaxon:10090,
+        NCBITaxon:9606 .
+
+ak_schema:life_event a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "life_event" ;
+    rdfs:range ak_schema:LifeEvent ;
+    skos:definition "The life event corresponding to an immune exposure" ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:Disease a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( ONTIE:000342 DOID:0080600 DOID:14067 DOID:12206 ) ;
+    linkml:permissible_values DOID:0080600,
+        DOID:12206,
+        DOID:14067,
+        ONTIE:000342 .
+
+ak_schema:LifeEventProcess a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( ONTIE:0003305 ONTIE:0003308 OBI:1110061 OBI:0000659 ) ;
+    linkml:permissible_values OBI:0000659,
+        OBI:1110061,
+        ONTIE:0003305,
+        ONTIE:0003308 .
+
+ak_schema:NamedThing a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "NamedThing" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:description ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty ak_schema:id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ak_schema:id ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty ak_schema:description ] ;
+    skos:definition "Anything we want to identify, name, and describe." ;
+    skos:inScheme <https://w3id.org/airr-knowledge/ak-schema> .
+
+ak_schema:DiseaseStage a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( OGMS:0000094 ONTIE:0003544 ONTIE:0003545 OGMS:0000064 ONTIE:0003547 ) ;
+    linkml:permissible_values OGMS:0000064,
+        OGMS:0000094,
+        ONTIE:0003544,
+        ONTIE:0003545,
+        ONTIE:0003547 .
+
+ak_schema:Race a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( OMRSE:00000215 OMRSE:00000216 OMRSE:00000217 OMRSE:00000218 OMRSE:00000219 OMRSE:00000214 ) ;
+    linkml:permissible_values OMRSE:00000214,
+        OMRSE:00000215,
+        OMRSE:00000216,
+        OMRSE:00000217,
+        OMRSE:00000218,
+        OMRSE:00000219 .
+
+ak_schema:ExposureMaterial a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( NCBITaxon:11320 NCBITaxon:1773 NCBITaxon:5833 NCBITaxon:10376 NCBITaxon:10359 VO:0000738 VO:0000035 ) ;
+    linkml:permissible_values NCBITaxon:10359,
+        NCBITaxon:10376,
+        NCBITaxon:11320,
+        NCBITaxon:1773,
+        NCBITaxon:5833,
+        VO:0000035,
+        VO:0000738 .
+
+ak_schema:Geolocation a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( GAZ:00002514 GAZ:00002461 GAZ:00002591 GAZ:00002611 GAZ:00002580 GAZ:00002560 GAZ:00002978 GAZ:00002519 GAZ:00002539 GAZ:00002459 GAZ:00001102 GAZ:00002845 GAZ:00002641 GAZ:00002839 GAZ:00002537 GAZ:00006254 GAZ:00000907 GAZ:00003922 GAZ:00003940 GAZ:00003924 GAZ:00002941 GAZ:00002553 GAZ:00000448 GAZ:00002929 GAZ:00002888 GAZ:00004435 ) ;
+    linkml:permissible_values GAZ:00000448,
+        GAZ:00000907,
+        GAZ:00001102,
+        GAZ:00002459,
+        GAZ:00002461,
+        GAZ:00002514,
+        GAZ:00002519,
+        GAZ:00002537,
+        GAZ:00002539,
+        GAZ:00002553,
+        GAZ:00002560,
+        GAZ:00002580,
+        GAZ:00002591,
+        GAZ:00002611,
+        GAZ:00002641,
+        GAZ:00002839,
+        GAZ:00002845,
+        GAZ:00002888,
+        GAZ:00002929,
+        GAZ:00002941,
+        GAZ:00002978,
+        GAZ:00003922,
+        GAZ:00003924,
+        GAZ:00003940,
+        GAZ:00004435,
+        GAZ:00006254 .
 
 <https://w3id.org/airr-knowledge/ak-schema> a owl:Ontology ;
     rdfs:label "ak-schema" ;
