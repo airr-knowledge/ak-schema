@@ -1,0 +1,2 @@
+id	name	description	investigations	datasets	result	data_location_type	data_location_value	organism	experiment_type
+example:conclusion-3480642	conclusion 1 about assay 3480642	conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480642	['example:investigation_1031861']	['example:dataset-3480642']	Positive		Figures 1 and extended data figure 4	Homo sapiens (human)	OBI:1110179

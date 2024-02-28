@@ -1,0 +1,117 @@
+@prefix BFO: <http://purl.obolibrary.org/obo/BFO_> .
+@prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
+@prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
+@prefix OBI: <http://purl.obolibrary.org/obo/OBI_> .
+@prefix ONTIE: <https://ontology.iedb.org/ontology/ONTIE_> .
+@prefix RO: <http://purl.obolibrary.org/obo/RO_> .
+@prefix ak_schema: <https://w3id.org/airr-knowledge/ak-schema/> .
+@prefix example: <https://example.org/> .
+@prefix schema1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+example:conclusion-3480642 a OBI:0001909 ;
+    IAO:0000136 NCBITaxon:9606,
+        example:investigation_1031861 ;
+    schema1:description "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480642" ;
+    schema1:name "conclusion 1 about assay 3480642" ;
+    ak_schema:data_location_value "Figures 1 and extended data figure 4" ;
+    ak_schema:datasets example:dataset-3480642 ;
+    ak_schema:experiment_type "OBI:1110179" ;
+    ak_schema:result "Positive" .
+
+example:immune_exposure-3480642 a BFO:0000015 ;
+    RO:0000057 NCBITaxon:10376 ;
+    schema1:description "participant 1 of assay 3480642 participated in this 1st in vivo immune exposure event, with these details" ;
+    schema1:name "details of 1st in vivo immune exposure event of assay 3480642" ;
+    ak_schema:disease ONTIE:000342 ;
+    ak_schema:life_event example:life_event-3480642-1 .
+
+example:reference_1031861 a IAO:0000310 ;
+    IAO:0000136 example:investigation_1031861 ;
+    schema1:author "Alessandro Sette",
+        "Allison Nau",
+        "Arnold Han",
+        "Cecilia S Lindestam Arlehamn",
+        "Christina Pettus",
+        "Florian Rubelt",
+        "Huang Huang",
+        "Jacob Glanville",
+        "Lisa E Wagar",
+        "Mark M Davis",
+        "Nikhil Haas",
+        "Olivia Hatton",
+        "Olivia M Martinez",
+        "Scott D Boyd",
+        "Sheri M Krams",
+        "Thomas J Scriba",
+        "Xuhuai Ji" ;
+    schema1:identifier "PMID:28636589"^^xsd:anyURI ;
+    schema1:name "Identifying specificity groups in the T cell receptor repertoire." ;
+    ak_schema:journal "Nature" ;
+    ak_schema:year 2017 .
+
+example:arm-3480642 a OBI:0000181 ;
+    RO:0000056 example:investigation_1031861 ;
+    schema1:description "study arm for assay 3480642" ;
+    schema1:name "arm 1 of 3480642" .
+
+example:assay-3480642 a OBI:0000070,
+        "OBI:1110179" ;
+    OBI:0000293 example:specimen-3480642 ;
+    schema1:description "assay 3480642 has specified input specimen 1" ;
+    schema1:name "assay 3480642" ;
+    ak_schema:target_entity_type "qualitative binding" ;
+    ak_schema:value "Positive" .
+
+example:dataset-3480642 a IAO:0000100 ;
+    IAO:0000136 example:assay-3480642 ;
+    schema1:description "dataset 1 is about assay 3480642" ;
+    schema1:name "dataset 1 about assay 3480642" .
+
+example:life_event-3480642-1 a BFO:0000015,
+        ONTIE:0003305 ;
+    RO:0000057 example:participant-3480642 ;
+    schema1:description "participant 1 of assay 3480642 participated in this 1st in vivo immune exposure event" ;
+    schema1:name "1st in vivo immune exposure event of assay 3480642" .
+
+example:life_event-3480642-2 a BFO:0000015,
+        OBI:0000659 ;
+    RO:0000057 example:participant-3480642 ;
+    schema1:description "specimen 1 was collected from participant 1 of assay 3480642 in this event" ;
+    schema1:name "specimen collection event of assay 3480642" ;
+    ak_schema:study_event example:study_event-3480642 .
+
+example:specimen-3480642 a OBI:0100051 ;
+    schema1:description "specimen 1 from participant 1 of assay 3480642" ;
+    schema1:name "specimen 1 of assay 3480642" ;
+    ak_schema:life_event example:life_event-3480642-2 ;
+    ak_schema:tissue "Blood" .
+
+example:study_event-3480642 a BFO:0000015 ;
+    schema1:description "" ;
+    schema1:name "" ;
+    ak_schema:arms example:arm-3480642 .
+
+example:participant-3480642 a NCBITaxon:9606,
+        OBI:0100026 ;
+    schema1:description "study participant for assay 3480642" ;
+    schema1:name "participant 1 of 3480642" .
+
+example:investigation_1031861 a OBI:0000066 ;
+    schema1:name "Identifying specificity groups in the T cell receptor repertoire." .
+
+[] a ak_schema:Container ;
+    ak_schema:arms example:arm-3480642 ;
+    ak_schema:assays example:assay-3480642 ;
+    ak_schema:conclusions example:conclusion-3480642 ;
+    ak_schema:datasets example:dataset-3480642 ;
+    ak_schema:immune_exposures example:immune_exposure-3480642 ;
+    ak_schema:investigations example:investigation_1031861 ;
+    ak_schema:life_events example:life_event-3480642-1,
+        example:life_event-3480642-2 ;
+    ak_schema:participants example:participant-3480642 ;
+    ak_schema:references example:reference_1031861 ;
+    ak_schema:specimens example:specimen-3480642 ;
+    ak_schema:study_events example:study_event-3480642 .
+
+
