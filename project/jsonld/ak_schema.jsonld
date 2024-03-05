@@ -1,19 +1,16 @@
 {
   "name": "ak-schema",
-  "description": "AK Schema",
-  "title": "ak-schema",
+  "description": "Common data model schema for the AIRR Knowledge Commons",
+  "title": "AIRR Knowledge Schema",
   "see_also": [
-    "https://airr-knowledge.github.io/ak-schema"
+    "https://airr-knowledge.org"
   ],
-  "id": "https://w3id.org/airr-knowledge/ak-schema",
-  "imports": [
-    "linkml:types"
-  ],
+  "id": "https://github.com/airr-knowledge/ak-schema",
   "license": "GNU GPL v3.0",
   "prefixes": [
     {
       "prefix_prefix": "ak_schema",
-      "prefix_reference": "https://w3id.org/airr-knowledge/ak-schema/"
+      "prefix_reference": "https://github.com/airr-knowledge/ak-schema/"
     },
     {
       "prefix_prefix": "linkml",
@@ -86,6 +83,14 @@
     {
       "prefix_prefix": "rdf",
       "prefix_reference": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    },
+    {
+      "prefix_prefix": "xsd",
+      "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
+    },
+    {
+      "prefix_prefix": "shex",
+      "prefix_reference": "http://www.w3.org/ns/shex#"
     }
   ],
   "default_prefix": "ak_schema",
@@ -93,13 +98,12 @@
   "types": [
     {
       "name": "string",
-      "definition_uri": "https://w3id.org/linkml/String",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/String",
       "description": "A character string",
       "notes": [
         "In RDF serializations, a slot with range of string is treated as a literal or type xsd:string.   If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"string\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "exact_mappings": [
         "schema:Text"
       ],
@@ -109,13 +113,12 @@
     },
     {
       "name": "integer",
-      "definition_uri": "https://w3id.org/linkml/Integer",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Integer",
       "description": "An integer",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"integer\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "exact_mappings": [
         "schema:Integer"
       ],
@@ -125,13 +128,12 @@
     },
     {
       "name": "boolean",
-      "definition_uri": "https://w3id.org/linkml/Boolean",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Boolean",
       "description": "A binary (true or false) value",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"boolean\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "exact_mappings": [
         "schema:Boolean"
       ],
@@ -142,13 +144,12 @@
     },
     {
       "name": "float",
-      "definition_uri": "https://w3id.org/linkml/Float",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Float",
       "description": "A real number that conforms to the xsd:float specification",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"float\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "exact_mappings": [
         "schema:Float"
       ],
@@ -158,13 +159,12 @@
     },
     {
       "name": "double",
-      "definition_uri": "https://w3id.org/linkml/Double",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Double",
       "description": "A real number that conforms to the xsd:double specification",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"double\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "close_mappings": [
         "schema:Float"
       ],
@@ -174,13 +174,12 @@
     },
     {
       "name": "decimal",
-      "definition_uri": "https://w3id.org/linkml/Decimal",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Decimal",
       "description": "A real number with arbitrary precision that conforms to the xsd:decimal specification",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"decimal\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "broad_mappings": [
         "schema:Number"
       ],
@@ -190,14 +189,13 @@
     },
     {
       "name": "time",
-      "definition_uri": "https://w3id.org/linkml/Time",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Time",
       "description": "A time object represents a (local) time of day, independent of any particular day",
       "notes": [
         "URI is dateTime because OWL reasoners do not work with straight date or time",
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"time\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "exact_mappings": [
         "schema:Time"
       ],
@@ -208,14 +206,13 @@
     },
     {
       "name": "date",
-      "definition_uri": "https://w3id.org/linkml/Date",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Date",
       "description": "a date (year, month and day) in an idealized calendar",
       "notes": [
         "URI is dateTime because OWL reasoners don't work with straight date or time",
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "exact_mappings": [
         "schema:Date"
       ],
@@ -226,13 +223,12 @@
     },
     {
       "name": "datetime",
-      "definition_uri": "https://w3id.org/linkml/Datetime",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Datetime",
       "description": "The combination of a date and time",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"datetime\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "exact_mappings": [
         "schema:DateTime"
       ],
@@ -243,13 +239,12 @@
     },
     {
       "name": "date_or_datetime",
-      "definition_uri": "https://w3id.org/linkml/DateOrDatetime",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DateOrDatetime",
       "description": "Either a date or a datetime",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"date_or_datetime\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "str",
       "uri": "https://w3id.org/linkml/DateOrDatetime",
       "repr": "str",
@@ -257,13 +252,12 @@
     },
     {
       "name": "uriorcurie",
-      "definition_uri": "https://w3id.org/linkml/Uriorcurie",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Uriorcurie",
       "description": "a URI or a CURIE",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"uriorcurie\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "URIorCURIE",
       "uri": "http://www.w3.org/2001/XMLSchema#anyURI",
       "repr": "str",
@@ -271,7 +265,7 @@
     },
     {
       "name": "curie",
-      "definition_uri": "https://w3id.org/linkml/Curie",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Curie",
       "conforms_to": "https://www.w3.org/TR/curie/",
       "description": "a compact URI",
       "notes": [
@@ -281,8 +275,7 @@
         "in RDF serializations this MUST be expanded to a URI",
         "in non-RDF serializations MAY be serialized as the compact representation"
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "Curie",
       "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
@@ -290,7 +283,7 @@
     },
     {
       "name": "uri",
-      "definition_uri": "https://w3id.org/linkml/Uri",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Uri",
       "conforms_to": "https://www.ietf.org/rfc/rfc3987.txt",
       "description": "a complete URI",
       "notes": [
@@ -299,8 +292,7 @@
       "comments": [
         "in RDF serializations a slot with range of uri is treated as a literal or type xsd:anyURI unless it is an identifier or a reference to an identifier, in which case it is translated directly to a node"
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "close_mappings": [
         "schema:URL"
       ],
@@ -311,13 +303,12 @@
     },
     {
       "name": "ncname",
-      "definition_uri": "https://w3id.org/linkml/Ncname",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Ncname",
       "description": "Prefix part of CURIE",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"ncname\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "NCName",
       "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
@@ -325,7 +316,7 @@
     },
     {
       "name": "objectidentifier",
-      "definition_uri": "https://w3id.org/linkml/Objectidentifier",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Objectidentifier",
       "description": "A URI or CURIE that represents an object in the model.",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"objectidentifier\"."
@@ -333,8 +324,7 @@
       "comments": [
         "Used for inheritance and type checking"
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "ElementIdentifier",
       "uri": "http://www.w3.org/ns/shex#iri",
       "repr": "str",
@@ -342,13 +332,12 @@
     },
     {
       "name": "nodeidentifier",
-      "definition_uri": "https://w3id.org/linkml/Nodeidentifier",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Nodeidentifier",
       "description": "A URI, CURIE or BNODE that represents a node in a model.",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"nodeidentifier\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "NodeIdentifier",
       "uri": "http://www.w3.org/ns/shex#nonLiteral",
       "repr": "str",
@@ -356,14 +345,13 @@
     },
     {
       "name": "jsonpointer",
-      "definition_uri": "https://w3id.org/linkml/Jsonpointer",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Jsonpointer",
       "conforms_to": "https://datatracker.ietf.org/doc/html/rfc6901",
       "description": "A string encoding a JSON Pointer. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to a valid object within the current instance document when encoded in tree form.",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpointer\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "str",
       "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
@@ -371,14 +359,13 @@
     },
     {
       "name": "jsonpath",
-      "definition_uri": "https://w3id.org/linkml/Jsonpath",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Jsonpath",
       "conforms_to": "https://www.ietf.org/archive/id/draft-goessner-dispatch-jsonpath-00.html",
       "description": "A string encoding a JSON Path. The value of the string MUST conform to JSON Point syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded in tree form.",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"jsonpath\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "str",
       "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
@@ -386,14 +373,13 @@
     },
     {
       "name": "sparqlpath",
-      "definition_uri": "https://w3id.org/linkml/Sparqlpath",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Sparqlpath",
       "conforms_to": "https://www.w3.org/TR/sparql11-query/#propertypaths",
       "description": "A string encoding a SPARQL Property Path. The value of the string MUST conform to SPARQL syntax and SHOULD dereference to zero or more valid objects within the current instance document when encoded as RDF.",
       "notes": [
         "If you are authoring schemas in LinkML YAML, the type is referenced with the lower case \"sparqlpath\"."
       ],
-      "from_schema": "https://w3id.org/linkml/types",
-      "imported_from": "linkml:types",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "base": "str",
       "uri": "http://www.w3.org/2001/XMLSchema#string",
       "repr": "str",
@@ -403,8 +389,8 @@
   "enums": [
     {
       "name": "LifeEventProcess",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/LifeEventProcess",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEventProcess",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "Documented exposure without evidence for disease",
@@ -426,8 +412,8 @@
     },
     {
       "name": "Species",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Species",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Species",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "Homo sapiens (human)",
@@ -441,8 +427,8 @@
     },
     {
       "name": "BiologicalSex",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/BiologicalSex",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/BiologicalSex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "female",
@@ -456,8 +442,8 @@
     },
     {
       "name": "Race",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Race",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Race",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "American Indian or Alaska Native",
@@ -487,8 +473,8 @@
     },
     {
       "name": "Ethnicity",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Ethnicity",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Ethnicity",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "Hispanic or Latino",
@@ -506,8 +492,8 @@
     },
     {
       "name": "Geolocation",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Geolocation",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Geolocation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "US: New York",
@@ -617,8 +603,8 @@
     },
     {
       "name": "ExposureMaterial",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/ExposureMaterial",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExposureMaterial",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "Influenza A virus",
@@ -652,8 +638,8 @@
     },
     {
       "name": "Disease",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Disease",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Disease",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "healthy",
@@ -675,8 +661,8 @@
     },
     {
       "name": "DiseaseStage",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/DiseaseStage",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseStage",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
           "text": "acute disease course",
@@ -704,18 +690,18 @@
   "slots": [
     {
       "name": "id",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/id",
       "description": "A unique identifier for a thing",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://schema.org/identifier"
       ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "Reference",
+      "owner": "NamedThing",
       "domain_of": [
-        "NamedThing",
-        "Reference"
+        "Reference",
+        "NamedThing"
       ],
       "range": "uriorcurie",
       "required": true,
@@ -723,9 +709,9 @@
     },
     {
       "name": "name",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/name",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/name",
       "description": "A human-readable name for a thing",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://schema.org/name"
       ],
@@ -739,9 +725,9 @@
     },
     {
       "name": "description",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/description",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/description",
       "description": "A human-readable description for a thing",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://schema.org/description"
       ],
@@ -754,312 +740,25 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "sources",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/sources",
-      "description": "The source URLs for a reference",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://schema.org/identifier"
-      ],
-      "slot_uri": "http://schema.org/identifier",
-      "multivalued": true,
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "uriorcurie",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "title",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/title",
-      "description": "The title of a reference",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://schema.org/name"
-      ],
-      "slot_uri": "http://schema.org/name",
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "authors",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/authors",
-      "description": "The authors of a reference",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://schema.org/author"
-      ],
-      "slot_uri": "http://schema.org/author",
-      "multivalued": true,
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "journal",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/journal",
-      "description": "The journal in which a reference was published",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/journal",
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "issue",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/issue",
-      "description": "The issue of the journal in which a reference was published",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://schema.org/issueNumber"
-      ],
-      "slot_uri": "http://schema.org/issueNumber",
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "month",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/month",
-      "description": "The month of the issue of the journal in which a reference was published",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/month",
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "year",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/year",
-      "description": "The year of the issue of the journal in which a reference was published",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/year",
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "integer",
-      "pattern": "19\\d\\d|20\\d\\d",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "pages",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/pages",
-      "description": "The pages of the issue of the journal in which a reference was published",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/pages",
-      "owner": "Reference",
-      "domain_of": [
-        "Reference"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "investigation",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/investigation",
-      "description": "The investigation in which an arm participates",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000056"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000056",
-      "owner": "Arm",
-      "domain_of": [
-        "Arm"
-      ],
-      "range": "Investigation",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "investigations",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/investigations",
-      "description": "The investigations that a reference or conclusion are about",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000136"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
-      "multivalued": true,
-      "owner": "Conclusion",
-      "domain_of": [
-        "Reference",
-        "Conclusion"
-      ],
-      "range": "Investigation",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "arm",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/arm",
-      "description": "The arm that a participant is a member of",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0002350"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0002350",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "Arm",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "arms",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/arms",
-      "description": "The arms that are relevant for a study event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/arms",
-      "multivalued": true,
-      "owner": "StudyEvent",
-      "domain_of": [
-        "StudyEvent"
-      ],
-      "range": "Arm",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "participant",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/participant",
-      "description": "The participant of a life event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000057"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "Participant",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "species",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/species",
-      "description": "The species of a participant",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "Species",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "biological_sex",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/biological_sex",
-      "description": "The biological sex of a participant",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000053"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000053",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "BiologicalSex",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "race",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/race",
-      "description": "The race of a participant",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/race",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "Race",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ethnicity",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/ethnicity",
-      "description": "The ethnicity of a participant",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/ethnicity",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "Ethnicity",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "geolocation",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/geolocation",
-      "description": "The geolocation of a participant at birth",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0001025"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0001025",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "Participant",
-        "LifeEvent"
-      ],
-      "range": "Geolocation",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "study_event",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/study_event",
-      "description": "The study event corresponding to a life event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/study_event",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "StudyEvent",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "life_event",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/life_event",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/life_event",
       "description": "The life event corresponding to an immune exposure",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/life_event",
-      "owner": "Specimen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_event",
+      "owner": "ImmuneExposure",
       "domain_of": [
-        "ImmuneExposure",
+        "Specimen",
         "Assessment",
-        "Specimen"
+        "ImmuneExposure"
       ],
       "range": "LifeEvent",
       "@type": "SlotDefinition"
     },
     {
       "name": "specimen",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/specimen",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen",
       "description": "The specimen that was input for an assay",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://purl.obolibrary.org/obo/OBI_0000293"
       ],
@@ -1073,9 +772,9 @@
     },
     {
       "name": "assays",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/assays",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assays",
       "description": "The assays that a dataset is about",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000136"
       ],
@@ -1090,9 +789,9 @@
     },
     {
       "name": "assessments",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/assessments",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessments",
       "description": "The assessment that a dataset is about",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000136"
       ],
@@ -1107,10 +806,10 @@
     },
     {
       "name": "datasets",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/datasets",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
       "description": "The datasets that support a conclusion",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/datasets",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
       "multivalued": true,
       "owner": "Conclusion",
       "domain_of": [
@@ -1120,162 +819,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "exposure_material",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/exposure_material",
-      "description": "The material relevant to an immune exposure",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000057"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "ExposureMaterial",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/disease",
-      "description": "The disease relevant to an immune exposure",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/disease",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "Disease",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease_stage",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/disease_stage",
-      "description": "The stage of the disease relevant to an immune exposure",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/disease_stage",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "DiseaseStage",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease_severity",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/disease_severity",
-      "description": "The severity of the disease relevant to an immune exposure",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/disease_severity",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "life_event_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/life_event_type",
-      "description": "The specific type of a life event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "LifeEventProcess",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "t0_event",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/t0_event",
-      "description": "The T0 event used to specify the time of this life event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/t0_event",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "t0_event_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/t0_event_type",
-      "description": "The type of the T0 event used to specify the time of this life event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/t0_event_type",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "start",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/start",
-      "description": "The start time of this life event, relative to the T0 event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/start",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "decimal",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "duration",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/duration",
-      "description": "The duration of this life event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/duration",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "decimal",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "time_unit",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/time_unit",
-      "description": "The time unit used to measure the start and duration of this life event",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/time_unit",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "assessment_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/assessment_type",
-      "description": "The specific type of an assessment",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Assessment",
-      "domain_of": [
-        "Assessment"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "assay_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/assay_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assay_type",
       "description": "The specific type of an assay",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
@@ -1289,51 +836,51 @@
     },
     {
       "name": "target_entity_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/target_entity_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/target_entity_type",
       "description": "The type of the entity being measured",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/target_entity_type",
-      "owner": "Assay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/target_entity_type",
+      "owner": "Assessment",
       "domain_of": [
-        "Assessment",
-        "Assay"
+        "Assay",
+        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
       "name": "value",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/value",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/value",
       "description": "The measurement result value",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/value",
-      "owner": "Assay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/value",
+      "owner": "Assessment",
       "domain_of": [
-        "Assessment",
-        "Assay"
+        "Assay",
+        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
       "name": "unit",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/unit",
       "description": "The measurement result value unit",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/unit",
-      "owner": "Assay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/unit",
+      "owner": "Assessment",
       "domain_of": [
-        "Assessment",
-        "Assay"
+        "Assay",
+        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
       "name": "specimen_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/specimen_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_type",
       "description": "The type of this specimen",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
@@ -1347,10 +894,10 @@
     },
     {
       "name": "tissue",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/tissue",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
       "description": "The tissue from which this specimen was taken",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/tissue",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
       "owner": "Specimen",
       "domain_of": [
         "Specimen"
@@ -1360,10 +907,10 @@
     },
     {
       "name": "process",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/process",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/process",
       "description": "The type of specimen collection process that resulted in this specimen",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/process",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/process",
       "owner": "Specimen",
       "domain_of": [
         "Specimen"
@@ -1373,10 +920,10 @@
     },
     {
       "name": "result",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/result",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/result",
       "description": "The content of the conclusion",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/result",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/result",
       "owner": "Conclusion",
       "domain_of": [
         "Conclusion"
@@ -1386,10 +933,10 @@
     },
     {
       "name": "data_location_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/data_location_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_location_type",
       "description": "The type of location where data was found, e.g. figure, table",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/data_location_type",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/data_location_type",
       "owner": "Conclusion",
       "domain_of": [
         "Conclusion"
@@ -1399,10 +946,10 @@
     },
     {
       "name": "data_location_value",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/data_location_value",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_location_value",
       "description": "An identifier for the location of the data, e.g. figure 2",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/data_location_value",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/data_location_value",
       "owner": "Conclusion",
       "domain_of": [
         "Conclusion"
@@ -1412,9 +959,9 @@
     },
     {
       "name": "organism",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/organism",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/organism",
       "description": "The type of organism that the conclusion is about",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://purl.obolibrary.org/obo/IAO_0000136"
       ],
@@ -1428,10 +975,10 @@
     },
     {
       "name": "experiment_type",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/experiment_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/experiment_type",
       "description": "The type of experiment that supports the conclusion",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/experiment_type",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/experiment_type",
       "owner": "Conclusion",
       "domain_of": [
         "Conclusion"
@@ -1440,9 +987,448 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "sources",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sources",
+      "description": "The source URLs for a reference",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://schema.org/identifier"
+      ],
+      "slot_uri": "http://schema.org/identifier",
+      "multivalued": true,
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "title",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/title",
+      "description": "The title of a reference",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://schema.org/name"
+      ],
+      "slot_uri": "http://schema.org/name",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "authors",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/authors",
+      "description": "The authors of a reference",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://schema.org/author"
+      ],
+      "slot_uri": "http://schema.org/author",
+      "multivalued": true,
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "journal",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/journal",
+      "description": "The journal in which a reference was published",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/journal",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "issue",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/issue",
+      "description": "The issue of the journal in which a reference was published",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://schema.org/issueNumber"
+      ],
+      "slot_uri": "http://schema.org/issueNumber",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "month",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/month",
+      "description": "The month of the issue of the journal in which a reference was published",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/month",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "year",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/year",
+      "description": "The year of the issue of the journal in which a reference was published",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/year",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "integer",
+      "pattern": "19\\d\\d|20\\d\\d",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pages",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/pages",
+      "description": "The pages of the issue of the journal in which a reference was published",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/pages",
+      "owner": "Reference",
+      "domain_of": [
+        "Reference"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "investigation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/investigation",
+      "description": "The investigation in which an arm participates",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000056"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000056",
+      "owner": "Arm",
+      "domain_of": [
+        "Arm"
+      ],
+      "range": "Investigation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "investigations",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/investigations",
+      "description": "The investigations that a reference or conclusion are about",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000136"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
+      "multivalued": true,
+      "owner": "Reference",
+      "domain_of": [
+        "Conclusion",
+        "Reference"
+      ],
+      "range": "Investigation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "arm",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/arm",
+      "description": "The arm that a participant is a member of",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0002350"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0002350",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "Arm",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "arms",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/arms",
+      "description": "The arms that are relevant for a study event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/arms",
+      "multivalued": true,
+      "owner": "StudyEvent",
+      "domain_of": [
+        "StudyEvent"
+      ],
+      "range": "Arm",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "participant",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/participant",
+      "description": "The participant of a life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000057"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "Participant",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/species",
+      "description": "The species of a participant",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "Species",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "biological_sex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/biological_sex",
+      "description": "The biological sex of a participant",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000053"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000053",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "BiologicalSex",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "race",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/race",
+      "description": "The race of a participant",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/race",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "Race",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ethnicity",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ethnicity",
+      "description": "The ethnicity of a participant",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/ethnicity",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "Ethnicity",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "geolocation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/geolocation",
+      "description": "The geolocation of a participant at birth",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0001025"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0001025",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "Participant",
+        "LifeEvent"
+      ],
+      "range": "Geolocation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_event",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_event",
+      "description": "The study event corresponding to a life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/study_event",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "StudyEvent",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exposure_material",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/exposure_material",
+      "description": "The material relevant to an immune exposure",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000057"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
+      "owner": "ImmuneExposure",
+      "domain_of": [
+        "ImmuneExposure"
+      ],
+      "range": "ExposureMaterial",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease",
+      "description": "The disease relevant to an immune exposure",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease",
+      "owner": "ImmuneExposure",
+      "domain_of": [
+        "ImmuneExposure"
+      ],
+      "range": "Disease",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_stage",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
+      "description": "The stage of the disease relevant to an immune exposure",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
+      "owner": "ImmuneExposure",
+      "domain_of": [
+        "ImmuneExposure"
+      ],
+      "range": "DiseaseStage",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_severity",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_severity",
+      "description": "The severity of the disease relevant to an immune exposure",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_severity",
+      "owner": "ImmuneExposure",
+      "domain_of": [
+        "ImmuneExposure"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "life_event_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/life_event_type",
+      "description": "The specific type of a life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "LifeEventProcess",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "t0_event",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/t0_event",
+      "description": "The T0 event used to specify the time of this life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/t0_event",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "t0_event_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/t0_event_type",
+      "description": "The type of the T0 event used to specify the time of this life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/t0_event_type",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "start",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/start",
+      "description": "The start time of this life event, relative to the T0 event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/start",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "decimal",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "duration",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/duration",
+      "description": "The duration of this life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/duration",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "decimal",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "time_unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/time_unit",
+      "description": "The time unit used to measure the start and duration of this life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/time_unit",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "assessment_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessment_type",
+      "description": "The specific type of an assessment",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "owner": "Assessment",
+      "domain_of": [
+        "Assessment"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "container__investigations",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/investigations",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/investigations",
       "multivalued": true,
       "alias": "investigations",
       "owner": "Container",
@@ -1455,8 +1441,8 @@
     },
     {
       "name": "container__references",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/references",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/references",
       "multivalued": true,
       "alias": "references",
       "owner": "Container",
@@ -1469,8 +1455,8 @@
     },
     {
       "name": "container__arms",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/arms",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/arms",
       "multivalued": true,
       "alias": "arms",
       "owner": "Container",
@@ -1483,8 +1469,8 @@
     },
     {
       "name": "container__study_events",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/study_events",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/study_events",
       "multivalued": true,
       "alias": "study_events",
       "owner": "Container",
@@ -1497,8 +1483,8 @@
     },
     {
       "name": "container__participants",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/participants",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/participants",
       "multivalued": true,
       "alias": "participants",
       "owner": "Container",
@@ -1511,8 +1497,8 @@
     },
     {
       "name": "container__life_events",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/life_events",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_events",
       "multivalued": true,
       "alias": "life_events",
       "owner": "Container",
@@ -1525,8 +1511,8 @@
     },
     {
       "name": "container__immune_exposures",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/immune_exposures",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/immune_exposures",
       "multivalued": true,
       "alias": "immune_exposures",
       "owner": "Container",
@@ -1539,8 +1525,8 @@
     },
     {
       "name": "container__assessments",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/assessments",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/assessments",
       "multivalued": true,
       "alias": "assessments",
       "owner": "Container",
@@ -1553,8 +1539,8 @@
     },
     {
       "name": "container__specimens",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/specimens",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/specimens",
       "multivalued": true,
       "alias": "specimens",
       "owner": "Container",
@@ -1567,8 +1553,8 @@
     },
     {
       "name": "container__assays",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/assays",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/assays",
       "multivalued": true,
       "alias": "assays",
       "owner": "Container",
@@ -1581,8 +1567,8 @@
     },
     {
       "name": "container__datasets",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/datasets",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
       "multivalued": true,
       "alias": "datasets",
       "owner": "Container",
@@ -1595,8 +1581,8 @@
     },
     {
       "name": "container__conclusions",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "slot_uri": "https://w3id.org/airr-knowledge/ak-schema/conclusions",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/conclusions",
       "multivalued": true,
       "alias": "conclusions",
       "owner": "Container",
@@ -1610,135 +1596,118 @@
   ],
   "classes": [
     {
-      "name": "NamedThing",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/NamedThing",
-      "description": "Anything we want to identify, name, and describe.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "abstract": true,
+      "name": "Specimen",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Specimen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0100051"
+      ],
+      "is_a": "NamedThing",
       "slots": [
         "id",
         "name",
-        "description"
+        "description",
+        "life_event",
+        "specimen_type",
+        "tissue",
+        "process"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/airr-knowledge/ak-schema/NamedThing",
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0100051",
       "@type": "ClassDefinition"
     },
     {
-      "name": "Container",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Container",
-      "description": "A container for instances of multiple classes.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "name": "Assay",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Assay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0000070"
+      ],
+      "is_a": "NamedThing",
       "slots": [
-        "container__investigations",
-        "container__references",
-        "container__arms",
-        "container__study_events",
-        "container__participants",
-        "container__life_events",
-        "container__immune_exposures",
-        "container__assessments",
-        "container__specimens",
-        "container__assays",
-        "container__datasets",
-        "container__conclusions"
+        "id",
+        "name",
+        "description",
+        "specimen",
+        "assay_type",
+        "target_entity_type",
+        "value",
+        "unit"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "investigations",
-          "multivalued": true,
-          "range": "Investigation",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "references",
-          "multivalued": true,
-          "range": "Reference",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "arms",
-          "multivalued": true,
-          "range": "Arm",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "study_events",
-          "multivalued": true,
-          "range": "StudyEvent",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "participants",
-          "multivalued": true,
-          "range": "Participant",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "life_events",
-          "multivalued": true,
-          "range": "LifeEvent",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "immune_exposures",
-          "multivalued": true,
-          "range": "ImmuneExposure",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "assessments",
-          "multivalued": true,
-          "range": "Assessment",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "specimens",
-          "multivalued": true,
-          "range": "Specimen",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "assays",
-          "multivalued": true,
-          "range": "Assay",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "datasets",
-          "multivalued": true,
-          "range": "Dataset",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        },
-        {
-          "name": "conclusions",
-          "multivalued": true,
-          "range": "Conclusion",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        }
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000070",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Dataset",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Dataset",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "IAO:0000100"
       ],
-      "class_uri": "https://w3id.org/airr-knowledge/ak-schema/Container",
-      "tree_root": true,
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description",
+        "assessments",
+        "assays"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000100",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Conclusion",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Conclusion",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0001909"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description",
+        "investigations",
+        "datasets",
+        "result",
+        "data_location_type",
+        "data_location_value",
+        "organism",
+        "experiment_type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0001909",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Assessment",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Assessment",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0002441"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description",
+        "life_event",
+        "assessment_type",
+        "target_entity_type",
+        "value",
+        "unit"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0002441",
       "@type": "ClassDefinition"
     },
     {
       "name": "Investigation",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Investigation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Investigation",
       "description": "A scientific investigation.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "OBI:0000066"
       ],
@@ -1754,9 +1723,9 @@
     },
     {
       "name": "Reference",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Reference",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Reference",
       "description": "A document about an investigation.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "IAO:0000310"
       ],
@@ -1778,9 +1747,9 @@
     },
     {
       "name": "Arm",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Arm",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Arm",
       "description": "A population of participants of an investigation.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "OBI:0000181"
       ],
@@ -1797,9 +1766,9 @@
     },
     {
       "name": "Participant",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Participant",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Participant",
       "description": "A participant in an investigation.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "OBI:0100026"
       ],
@@ -1821,9 +1790,9 @@
     },
     {
       "name": "StudyEvent",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/StudyEvent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StudyEvent",
       "description": "An event that is part of the study design of an investigation.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "BFO:0000015"
       ],
@@ -1840,9 +1809,9 @@
     },
     {
       "name": "LifeEvent",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/LifeEvent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEvent",
       "description": "An event in which a study participant participates.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "BFO:0000015"
       ],
@@ -1867,9 +1836,9 @@
     },
     {
       "name": "ImmuneExposure",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/ImmuneExposure",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneExposure",
       "description": "An event involving the immune system of a study participant.",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "BFO:0000015"
       ],
@@ -1889,125 +1858,153 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "Assessment",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Assessment",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "OBI:0002441"
-      ],
-      "is_a": "NamedThing",
+      "name": "NamedThing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/NamedThing",
+      "description": "Anything we want to identify, name, and describe.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "abstract": true,
       "slots": [
         "id",
         "name",
-        "description",
-        "life_event",
-        "assessment_type",
-        "target_entity_type",
-        "value",
-        "unit"
+        "description"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_0002441",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/NamedThing",
       "@type": "ClassDefinition"
     },
     {
-      "name": "Specimen",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Specimen",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "OBI:0100051"
-      ],
-      "is_a": "NamedThing",
+      "name": "Container",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Container",
+      "description": "A container for instances of multiple classes.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slots": [
-        "id",
-        "name",
-        "description",
-        "life_event",
-        "specimen_type",
-        "tissue",
-        "process"
+        "container__investigations",
+        "container__references",
+        "container__arms",
+        "container__study_events",
+        "container__participants",
+        "container__life_events",
+        "container__immune_exposures",
+        "container__assessments",
+        "container__specimens",
+        "container__assays",
+        "container__datasets",
+        "container__conclusions"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_0100051",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "Assay",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Assay",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "OBI:0000070"
+      "attributes": [
+        {
+          "name": "investigations",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Investigation",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "references",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Reference",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "arms",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Arm",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "study_events",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "StudyEvent",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "participants",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Participant",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "life_events",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "LifeEvent",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "immune_exposures",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "ImmuneExposure",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "assessments",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Assessment",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "specimens",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Specimen",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "assays",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Assay",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "datasets",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Dataset",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "conclusions",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "multivalued": true,
+          "range": "Conclusion",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
       ],
-      "is_a": "NamedThing",
-      "slots": [
-        "id",
-        "name",
-        "description",
-        "specimen",
-        "assay_type",
-        "target_entity_type",
-        "value",
-        "unit"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000070",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "Dataset",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Dataset",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "IAO:0000100"
-      ],
-      "is_a": "NamedThing",
-      "slots": [
-        "id",
-        "name",
-        "description",
-        "assessments",
-        "assays"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000100",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "Conclusion",
-      "definition_uri": "https://w3id.org/airr-knowledge/ak-schema/Conclusion",
-      "from_schema": "https://w3id.org/airr-knowledge/ak-schema",
-      "mappings": [
-        "OBI:0001909"
-      ],
-      "is_a": "NamedThing",
-      "slots": [
-        "id",
-        "name",
-        "description",
-        "investigations",
-        "datasets",
-        "result",
-        "data_location_type",
-        "data_location_value",
-        "organism",
-        "experiment_type"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_0001909",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/Container",
+      "tree_root": true,
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-02-28T15:30:06",
-  "source_file_size": 14531,
-  "generation_date": "2024-02-28T15:43:32",
+  "source_file_date": "2024-03-05T23:47:01",
+  "source_file_size": 31379,
+  "generation_date": "2024-03-05T23:47:04",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
-    "https://w3id.org/linkml/types.context.jsonld",
     {
-      "@base": "https://w3id.org/airr-knowledge/ak-schema/"
+      "@base": "https://github.com/airr-knowledge/ak-schema/"
     }
   ]
 }
