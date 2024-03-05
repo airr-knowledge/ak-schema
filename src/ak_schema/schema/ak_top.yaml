@@ -1,0 +1,52 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+title: AIRR Knowledge Schema
+description: |-
+  Common data model schema for the AIRR Knowledge Commons
+license: GNU GPL v3.0
+see_also:
+  - https://airr-knowledge.org
+
+prefixes:
+  ak_schema: https://github.com/airr-knowledge/ak-schema/
+  linkml: https://w3id.org/linkml/
+  biolink: https://w3id.org/biolink/
+  schema: http://schema.org/
+  dc: http://purl.org/dc/elements/1.1/
+  BFO: http://purl.obolibrary.org/obo/BFO_
+  DOID: http://purl.obolibrary.org/obo/DOID_
+  GAZ: http://purl.obolibrary.org/obo/GAZ_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  OGMS: http://purl.obolibrary.org/obo/OGMS_
+  OMRSE: http://purl.obolibrary.org/obo/OMRSE_
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  RO: http://purl.obolibrary.org/obo/RO_
+  VO: http://purl.obolibrary.org/obo/VO_
+  ONTIE: https://ontology.iedb.org/ontology/ONTIE_
+  example: https://example.org/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+default_prefix: ak_schema
+default_range: string
+
+imports:
+  - linkml:types
+  - ak_core
+  - ak_study_design
+  - ak_specimens
+
+slots:
+  id:
+    description: A unique identifier for a thing
+    identifier: true
+    required: true
+    slot_uri: schema:identifier
+    range: uriorcurie
+  name:
+    description: A human-readable name for a thing
+    slot_uri: schema:name
+  description:
+    description: A human-readable description for a thing
+    slot_uri: schema:description

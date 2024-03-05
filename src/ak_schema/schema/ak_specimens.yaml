@@ -1,0 +1,108 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  Specimen:
+    is_a: NamedThing
+    class_uri: OBI:0100051 # specimen
+    slots:
+      - life_event
+      - specimen_type
+      - tissue
+      - process
+
+  Assay:
+    is_a: NamedThing
+    class_uri: OBI:0000070 # assay
+    slots:
+      - specimen
+      - assay_type
+      - target_entity_type
+      - value
+      - unit
+
+  Dataset:
+    is_a: NamedThing
+    class_uri: IAO:0000100 # data set
+    slots:
+      - assessments
+      - assays
+
+  Conclusion:
+    is_a: NamedThing
+    class_uri: OBI:0001909 # conclusion based on data
+    slots:
+      - investigations
+      - datasets
+      - result
+      - data_location_type
+      - data_location_value
+      - organism
+      - experiment_type
+
+  Assessment:
+    # is_a: LifeEvent
+    is_a: NamedThing
+    class_uri: OBI:0002441 # physical examination of an organism
+    slots:
+      - life_event
+      - assessment_type
+      - target_entity_type
+      - value
+      - unit
+
+slots:
+  life_event:
+    description: The life event corresponding to an immune exposure
+    range: LifeEvent
+  specimen:
+    description: The specimen that was input for an assay
+    range: Specimen
+    slot_uri: OBI:0000293 # has specified input
+  assays:
+    description: The assays that a dataset is about
+    slot_uri: IAO:0000136 # is about
+    range: Assay
+    multivalued: true
+  assessments:
+    description: The assessment that a dataset is about
+    slot_uri: IAO:0000136 # is about
+    range: Assessment
+    multivalued: true
+  datasets:
+    description: The datasets that support a conclusion
+    # input of a drawing a conclusion process
+    range: Dataset
+    multivalued: true
+  assay_type:
+    description: The specific type of an assay
+    slot_uri: rdf:type
+    # TODO: enum
+  target_entity_type:
+    description: The type of the entity being measured
+  value:
+    description: The measurement result value
+  unit:
+    description: The measurement result value unit
+  specimen_type: # TODO: enum
+    description: The type of this specimen
+    slot_uri: rdf:type
+  tissue: # TODO: enum
+    description: The tissue from which this specimen was taken
+    # specified input to process
+  process: # TODO: enum
+    description: The type of specimen collection process that resulted in this specimen
+  result:
+    description: The content of the conclusion
+  data_location_type:
+    description: The type of location where data was found, e.g. figure, table
+  data_location_value:
+    description: An identifier for the location of the data, e.g. figure 2
+  organism:
+    description: The type of organism that the conclusion is about
+    range: Species
+    slot_uri: IAO:0000136 # is about
+  experiment_type:
+    description: The type of experiment that supports the conclusion
