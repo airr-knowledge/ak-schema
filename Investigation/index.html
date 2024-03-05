@@ -205,27 +205,17 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-investigation">Class: Investigation</h1>
-<p><em>Represents a Investigation</em></p>
-<p>URI: <a href="https://w3id.org/airr-knowledge/ak-schema/Investigation">ak_schema:Investigation</a></p>
+<p><em>A scientific investigation.</em></p>
+<p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0000066">OBI:0000066</a></p>
 <div class="mermaid"> classDiagram
     class Investigation
       NamedThing &lt;|-- Investigation
-
-      Investigation : age_in_years
-
-      Investigation : birth_date
 
       Investigation : description
 
       Investigation : id
 
       Investigation : name
-
-      Investigation : primary_email
-
-      Investigation : vital_status
-
-          Investigation --&gt; PersonStatus : vital_status
 
 
 </div>
@@ -247,30 +237,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../primary_email/">primary_email</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The main email address of a person</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../birth_date/">birth_date</a></td>
-<td>0..1 <br/> <a href="../Date/">Date</a></td>
-<td>Date on which a person is born</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../age_in_years/">age_in_years</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Number of years since birth</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../vital_status/">vital_status</a></td>
-<td>0..1 <br/> <a href="../PersonStatus/">PersonStatus</a></td>
-<td>living or dead status</td>
-<td>direct</td>
-</tr>
 <tr>
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
@@ -303,8 +269,26 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../InvestigationCollection/">InvestigationCollection</a></td>
-<td><a href="../entries/">entries</a></td>
+<td><a href="../Container/">Container</a></td>
+<td><a href="../investigations/">investigations</a></td>
+<td>range</td>
+<td><a href="./">Investigation</a></td>
+</tr>
+<tr>
+<td><a href="../Reference/">Reference</a></td>
+<td><a href="../investigations/">investigations</a></td>
+<td>range</td>
+<td><a href="./">Investigation</a></td>
+</tr>
+<tr>
+<td><a href="../Arm/">Arm</a></td>
+<td><a href="../investigation/">investigation</a></td>
+<td>range</td>
+<td><a href="./">Investigation</a></td>
+</tr>
+<tr>
+<td><a href="../Conclusion/">Conclusion</a></td>
+<td><a href="../investigations/">investigations</a></td>
 <td>range</td>
 <td><a href="./">Investigation</a></td>
 </tr>
@@ -326,7 +310,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:Investigation</td>
+<td>OBI:0000066</td>
 </tr>
 <tr>
 <td>native</td>
@@ -339,79 +323,20 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Investigation
-description: Represents a Investigation
+description: A scientific investigation.
 from_schema: https://w3id.org/airr-knowledge/ak-schema
 is_a: NamedThing
-slots:
-- primary_email
-- birth_date
-- age_in_years
-- vital_status
-slot_usage:
-  primary_email:
-    name: primary_email
-    domain_of:
-    - Investigation
-    pattern: ^\S+@[\S+\.]+\S+
+class_uri: OBI:0000066
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Investigation
-description: Represents a Investigation
+description: A scientific investigation.
 from_schema: https://w3id.org/airr-knowledge/ak-schema
 is_a: NamedThing
-slot_usage:
-  primary_email:
-    name: primary_email
-    domain_of:
-    - Investigation
-    pattern: ^\S+@[\S+\.]+\S+
 attributes:
-  primary_email:
-    name: primary_email
-    description: The main email address of a person
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:email
-    alias: primary_email
-    owner: Investigation
-    domain_of:
-    - Investigation
-    range: string
-    pattern: ^\S+@[\S+\.]+\S+
-  birth_date:
-    name: birth_date
-    description: Date on which a person is born
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:birthDate
-    alias: birth_date
-    owner: Investigation
-    domain_of:
-    - Investigation
-    range: date
-  age_in_years:
-    name: age_in_years
-    description: Number of years since birth
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
-    alias: age_in_years
-    owner: Investigation
-    domain_of:
-    - Investigation
-    range: integer
-  vital_status:
-    name: vital_status
-    description: living or dead status
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
-    alias: vital_status
-    owner: Investigation
-    domain_of:
-    - Investigation
-    range: PersonStatus
   id:
     name: id
     description: A unique identifier for a thing
@@ -423,6 +348,7 @@ attributes:
     owner: Investigation
     domain_of:
     - NamedThing
+    - Reference
     range: uriorcurie
     required: true
   name:
@@ -447,6 +373,7 @@ attributes:
     domain_of:
     - NamedThing
     range: string
+class_uri: OBI:0000066
 
 </code></pre>
 </details>
