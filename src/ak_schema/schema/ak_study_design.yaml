@@ -1,103 +1,8 @@
 ---
-id: https://w3id.org/airr-knowledge/ak-schema
+id: https://github.com/airr-knowledge/ak-schema
 name: ak-schema
-title: ak-schema
-description: |-
-  AK Schema
-license: GNU GPL v3.0
-see_also:
-  - https://airr-knowledge.github.io/ak-schema
-
-prefixes:
-  ak_schema: https://w3id.org/airr-knowledge/ak-schema/
-  linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/
-  schema: http://schema.org/
-  dc: http://purl.org/dc/elements/1.1/
-  BFO: http://purl.obolibrary.org/obo/BFO_
-  DOID: http://purl.obolibrary.org/obo/DOID_
-  GAZ: http://purl.obolibrary.org/obo/GAZ_
-  IAO: http://purl.obolibrary.org/obo/IAO_
-  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
-  OBI: http://purl.obolibrary.org/obo/OBI_
-  OGMS: http://purl.obolibrary.org/obo/OGMS_
-  OMRSE: http://purl.obolibrary.org/obo/OMRSE_
-  PATO: http://purl.obolibrary.org/obo/PATO_
-  RO: http://purl.obolibrary.org/obo/RO_
-  VO: http://purl.obolibrary.org/obo/VO_
-  ONTIE: https://ontology.iedb.org/ontology/ONTIE_
-  example: https://example.org/
-  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-default_prefix: ak_schema
-default_range: string
-
-imports:
-  - linkml:types
 
 classes:
-
-  NamedThing:
-    abstract: true
-    description: >-
-      Anything we want to identify, name, and describe.
-    slots:
-      - id
-      - name
-      - description
-
-  Container:
-    tree_root: true
-    description: >-
-      A container for instances of multiple classes.
-    attributes:
-      investigations:
-        range: Investigation
-        multivalued: true
-        inlined: true
-      references:
-        range: Reference
-        multivalued: true
-        inlined: true
-      arms:
-        range: Arm
-        multivalued: true
-        inlined: true
-      study_events:
-        range: StudyEvent
-        multivalued: true
-        inlined: true
-      participants:
-        range: Participant
-        multivalued: true
-        inlined: true
-      life_events:
-        range: LifeEvent
-        multivalued: true
-        inlined: true
-      immune_exposures:
-        range: ImmuneExposure
-        multivalued: true
-        inlined: true
-      assessments:
-        range: Assessment
-        multivalued: true
-        inlined: true
-      specimens:
-        range: Specimen
-        multivalued: true
-        inlined: true
-      assays:
-        range: Assay
-        multivalued: true
-        inlined: true
-      datasets:
-        range: Dataset
-        multivalued: true
-        inlined: true
-      conclusions:
-        range: Conclusion
-        multivalued: true
-        inlined: true
 
   Investigation:
     is_a: NamedThing
@@ -181,68 +86,8 @@ classes:
       - disease_stage
       - disease_severity
 
-  Assessment:
-    # is_a: LifeEvent
-    is_a: NamedThing
-    class_uri: OBI:0002441 # physical examination of an organism
-    slots:
-      - life_event
-      - assessment_type
-      - target_entity_type
-      - value
-      - unit
-
-  Specimen:
-    is_a: NamedThing
-    class_uri: OBI:0100051 # specimen
-    slots:
-      - life_event
-      - specimen_type
-      - tissue
-      - process
-
-  Assay:
-    is_a: NamedThing
-    class_uri: OBI:0000070 # assay
-    slots:
-      - specimen
-      - assay_type
-      - target_entity_type
-      - value
-      - unit
-
-  Dataset:
-    is_a: NamedThing
-    class_uri: IAO:0000100 # data set
-    slots:
-      - assessments
-      - assays
-
-  Conclusion:
-    is_a: NamedThing
-    class_uri: OBI:0001909 # conclusion based on data
-    slots:
-      - investigations
-      - datasets
-      - result
-      - data_location_type
-      - data_location_value
-      - organism
-      - experiment_type
 
 slots:
-  id:
-    description: A unique identifier for a thing
-    identifier: true
-    required: true
-    slot_uri: schema:identifier
-    range: uriorcurie
-  name:
-    description: A human-readable name for a thing
-    slot_uri: schema:name
-  description:
-    description: A human-readable description for a thing
-    slot_uri: schema:description
   sources:
     description: The source URLs for a reference
     slot_uri: schema:identifier
@@ -313,25 +158,6 @@ slots:
   life_event:
     description: The life event corresponding to an immune exposure
     range: LifeEvent
-  specimen:
-    description: The specimen that was input for an assay
-    range: Specimen
-    slot_uri: OBI:0000293 # has specified input
-  assays:
-    description: The assays that a dataset is about
-    slot_uri: IAO:0000136 # is about
-    range: Assay
-    multivalued: true
-  assessments:
-    description: The assessment that a dataset is about
-    slot_uri: IAO:0000136 # is about
-    range: Assessment
-    multivalued: true
-  datasets:
-    description: The datasets that support a conclusion
-    # input of a drawing a conclusion process
-    range: Dataset
-    multivalued: true
   exposure_material:
     description: The material relevant to an immune exposure
     slot_uri: RO:0000057 # has participant
@@ -366,36 +192,6 @@ slots:
   assessment_type:
     description: The specific type of an assessment
     slot_uri: rdf:type
-  assay_type:
-    description: The specific type of an assay
-    slot_uri: rdf:type
-    # TODO: enum
-  target_entity_type:
-    description: The type of the entity being measured
-  value:
-    description: The measurement result value
-  unit:
-    description: The measurement result value unit
-  specimen_type: # TODO: enum
-    description: The type of this specimen
-    slot_uri: rdf:type
-  tissue: # TODO: enum
-    description: The tissue from which this specimen was taken
-    # specified input to process
-  process: # TODO: enum
-    description: The type of specimen collection process that resulted in this specimen
-  result:
-    description: The content of the conclusion
-  data_location_type:
-    description: The type of location where data was found, e.g. figure, table
-  data_location_value:
-    description: An identifier for the location of the data, e.g. figure 2
-  organism:
-    description: The type of organism that the conclusion is about
-    range: Species
-    slot_uri: IAO:0000136 # is about
-  experiment_type:
-    description: The type of experiment that supports the conclusion
 
 enums:
   LifeEventProcess:

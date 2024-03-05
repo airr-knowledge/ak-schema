@@ -1,0 +1,82 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  NamedThing:
+    abstract: true
+    description: >-
+      Anything we want to identify, name, and describe.
+    slots:
+      - id
+      - name
+      - description
+
+  Container:
+    tree_root: true
+    description: >-
+      A container for instances of multiple classes.
+    attributes:
+      investigations:
+        range: Investigation
+        multivalued: true
+        inlined: true
+      references:
+        range: Reference
+        multivalued: true
+        inlined: true
+      arms:
+        range: Arm
+        multivalued: true
+        inlined: true
+      study_events:
+        range: StudyEvent
+        multivalued: true
+        inlined: true
+      participants:
+        range: Participant
+        multivalued: true
+        inlined: true
+      life_events:
+        range: LifeEvent
+        multivalued: true
+        inlined: true
+      immune_exposures:
+        range: ImmuneExposure
+        multivalued: true
+        inlined: true
+      assessments:
+        range: Assessment
+        multivalued: true
+        inlined: true
+      specimens:
+        range: Specimen
+        multivalued: true
+        inlined: true
+      assays:
+        range: Assay
+        multivalued: true
+        inlined: true
+      datasets:
+        range: Dataset
+        multivalued: true
+        inlined: true
+      conclusions:
+        range: Conclusion
+        multivalued: true
+        inlined: true
+
+slots:
+  id:
+    description: A unique identifier for a thing
+    identifier: true
+    required: true
+    slot_uri: schema:identifier
+    range: uriorcurie
+  name:
+    description: A human-readable name for a thing
+    slot_uri: schema:name
+  description:
+    description: A human-readable description for a thing
+    slot_uri: schema:description
