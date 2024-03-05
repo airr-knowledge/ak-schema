@@ -107,6 +107,9 @@ update-linkml:
 create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
+$(SOURCE_SCHEMA_PATH): src/ak_schema/schema/ak_top.yaml
+	gen-linkml -f yaml --no-materialize-attributes $< > $@
+
 all: site
 site: gen-project gendoc
 %.yaml: gen-project
@@ -121,7 +124,7 @@ gen-examples:
 
 # generates all project files
 
-gen-project: $(PYMODEL)
+gen-project: $(SOURCE_SCHEMA_PATH) $(PYMODEL)
 	$(RUN) gen-project ${CONFIG_YAML} -d $(DEST) $(SOURCE_SCHEMA_PATH) && mv $(DEST)/*.py $(PYMODEL)
 
 
