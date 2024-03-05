@@ -1281,7 +1281,7 @@
             "type": "object"
         }
     },
-    "$id": "https://w3id.org/airr-knowledge/ak-schema",
+    "$id": "https://github.com/airr-knowledge/ak-schema",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": true,
     "description": "A container for instances of multiple classes.",
