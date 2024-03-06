@@ -57,25 +57,19 @@ slots:
   life_event:
     description: The life event corresponding to an immune exposure
     range: LifeEvent
+  specimen_type: # TODO: enum
+    description: The type of this specimen
+    slot_uri: rdf:type
+  tissue: # TODO: enum
+    description: The tissue from which this specimen was taken
+    # specified input to process
+  process: # TODO: enum
+    description: The type of specimen collection process that resulted in this specimen
+
   specimen:
     description: The specimen that was input for an assay
     range: Specimen
     slot_uri: OBI:0000293 # has specified input
-  assays:
-    description: The assays that a dataset is about
-    slot_uri: IAO:0000136 # is about
-    range: Assay
-    multivalued: true
-  assessments:
-    description: The assessment that a dataset is about
-    slot_uri: IAO:0000136 # is about
-    range: Assessment
-    multivalued: true
-  datasets:
-    description: The datasets that support a conclusion
-    # input of a drawing a conclusion process
-    range: Dataset
-    multivalued: true
   assay_type:
     description: The specific type of an assay
     slot_uri: rdf:type
@@ -86,14 +80,23 @@ slots:
     description: The measurement result value
   unit:
     description: The measurement result value unit
-  specimen_type: # TODO: enum
-    description: The type of this specimen
-    slot_uri: rdf:type
-  tissue: # TODO: enum
-    description: The tissue from which this specimen was taken
-    # specified input to process
-  process: # TODO: enum
-    description: The type of specimen collection process that resulted in this specimen
+
+  assessments:
+    description: The assessment that a dataset is about
+    slot_uri: IAO:0000136 # is about
+    range: Assessment
+    multivalued: true
+  assays:
+    description: The assays that a dataset is about
+    slot_uri: IAO:0000136 # is about
+    range: Assay
+    multivalued: true
+
+  datasets:
+    description: The datasets that support a conclusion
+    # input of a drawing a conclusion process
+    range: Dataset
+    multivalued: true
   result:
     description: The content of the conclusion
   data_location_type:
@@ -106,3 +109,7 @@ slots:
     slot_uri: IAO:0000136 # is about
   experiment_type:
     description: The type of experiment that supports the conclusion
+
+  assessment_type:
+    description: The specific type of an assessment
+    slot_uri: rdf:type
