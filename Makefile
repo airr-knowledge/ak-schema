@@ -143,7 +143,7 @@ endif
 
 test: test-schema test-python test-examples
 
-test-schema:
+test-schema: $(SOURCE_SCHEMA_PATH)
 	$(RUN) gen-project ${CONFIG_YAML} -d tmp $(SOURCE_SCHEMA_PATH)
 
 test-python:
