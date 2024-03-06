@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-05T23:47:05
+# Generation date: 2024-03-06T00:31:38
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -277,8 +277,8 @@ class Reference(YAMLRoot):
     investigations: Optional[Union[Union[str, InvestigationId], List[Union[str, InvestigationId]]]] = empty_list()
     title: Optional[str] = None
     authors: Optional[Union[str, List[str]]] = empty_list()
-    issue: Optional[str] = None
     journal: Optional[str] = None
+    issue: Optional[str] = None
     month: Optional[str] = None
     year: Optional[int] = None
     pages: Optional[str] = None
@@ -304,11 +304,11 @@ class Reference(YAMLRoot):
             self.authors = [self.authors] if self.authors is not None else []
         self.authors = [v if isinstance(v, str) else str(v) for v in self.authors]
 
-        if self.issue is not None and not isinstance(self.issue, str):
-            self.issue = str(self.issue)
-
         if self.journal is not None and not isinstance(self.journal, str):
             self.journal = str(self.journal)
+
+        if self.issue is not None and not isinstance(self.issue, str):
+            self.issue = str(self.issue)
 
         if self.month is not None and not isinstance(self.month, str):
             self.month = str(self.month)
@@ -830,31 +830,6 @@ class Container(YAMLRoot):
 
 
 # Enumerations
-class LifeEventProcess(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="LifeEventProcess",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Documented exposure without evidence for disease",
-            PermissibleValue(
-                text="Documented exposure without evidence for disease",
-                meaning=ONTIE["0003305"]))
-        setattr(cls, "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
-            PermissibleValue(
-                text="Environmental exposure to endemic/ubiquitous agent without evidence for disease",
-                meaning=ONTIE["0003308"]))
-        setattr(cls, "Exposure with existing immune reactivity without evidence for disease",
-            PermissibleValue(
-                text="Exposure with existing immune reactivity without evidence for disease",
-                meaning=OBI["1110061"]))
-        setattr(cls, "specimen collection",
-            PermissibleValue(
-                text="specimen collection",
-                meaning=OBI["0000659"]))
-
 class Species(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -1042,6 +1017,31 @@ class Geolocation(EnumDefinitionImpl):
                 text="US: Kansas",
                 meaning=GAZ["00004435"]))
 
+class LifeEventProcess(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="LifeEventProcess",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Documented exposure without evidence for disease",
+            PermissibleValue(
+                text="Documented exposure without evidence for disease",
+                meaning=ONTIE["0003305"]))
+        setattr(cls, "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
+            PermissibleValue(
+                text="Environmental exposure to endemic/ubiquitous agent without evidence for disease",
+                meaning=ONTIE["0003308"]))
+        setattr(cls, "Exposure with existing immune reactivity without evidence for disease",
+            PermissibleValue(
+                text="Exposure with existing immune reactivity without evidence for disease",
+                meaning=OBI["1110061"]))
+        setattr(cls, "specimen collection",
+            PermissibleValue(
+                text="specimen collection",
+                meaning=OBI["0000659"]))
+
 class ExposureMaterial(EnumDefinitionImpl):
 
     Dryvax = PermissibleValue(
@@ -1137,29 +1137,20 @@ class DiseaseStage(EnumDefinitionImpl):
 class slots:
     pass
 
-slots.id = Slot(uri=SCHEMA.identifier, name="id", curie=SCHEMA.curie('identifier'),
-                   model_uri=AK_SCHEMA.id, domain=None, range=URIRef)
-
-slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
-                   model_uri=AK_SCHEMA.name, domain=None, range=Optional[str])
-
-slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEMA.curie('description'),
-                   model_uri=AK_SCHEMA.description, domain=None, range=Optional[str])
-
 slots.life_event = Slot(uri=AK_SCHEMA.life_event, name="life_event", curie=AK_SCHEMA.curie('life_event'),
                    model_uri=AK_SCHEMA.life_event, domain=None, range=Optional[Union[str, LifeEventId]])
 
+slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
+
+slots.tissue = Slot(uri=AK_SCHEMA.tissue, name="tissue", curie=AK_SCHEMA.curie('tissue'),
+                   model_uri=AK_SCHEMA.tissue, domain=None, range=Optional[str])
+
+slots.process = Slot(uri=AK_SCHEMA.process, name="process", curie=AK_SCHEMA.curie('process'),
+                   model_uri=AK_SCHEMA.process, domain=None, range=Optional[str])
+
 slots.specimen = Slot(uri=OBI['0000293'], name="specimen", curie=OBI.curie('0000293'),
                    model_uri=AK_SCHEMA.specimen, domain=None, range=Optional[Union[str, SpecimenId]])
-
-slots.assays = Slot(uri=IAO['0000136'], name="assays", curie=IAO.curie('0000136'),
-                   model_uri=AK_SCHEMA.assays, domain=None, range=Optional[Union[Union[str, AssayId], List[Union[str, AssayId]]]])
-
-slots.assessments = Slot(uri=IAO['0000136'], name="assessments", curie=IAO.curie('0000136'),
-                   model_uri=AK_SCHEMA.assessments, domain=None, range=Optional[Union[Union[str, AssessmentId], List[Union[str, AssessmentId]]]])
-
-slots.datasets = Slot(uri=AK_SCHEMA.datasets, name="datasets", curie=AK_SCHEMA.curie('datasets'),
-                   model_uri=AK_SCHEMA.datasets, domain=None, range=Optional[Union[Union[str, DatasetId], List[Union[str, DatasetId]]]])
 
 slots.assay_type = Slot(uri=RDF.type, name="assay_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assay_type, domain=None, range=Optional[str])
@@ -1173,14 +1164,14 @@ slots.value = Slot(uri=AK_SCHEMA.value, name="value", curie=AK_SCHEMA.curie('val
 slots.unit = Slot(uri=AK_SCHEMA.unit, name="unit", curie=AK_SCHEMA.curie('unit'),
                    model_uri=AK_SCHEMA.unit, domain=None, range=Optional[str])
 
-slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
+slots.assessments = Slot(uri=IAO['0000136'], name="assessments", curie=IAO.curie('0000136'),
+                   model_uri=AK_SCHEMA.assessments, domain=None, range=Optional[Union[Union[str, AssessmentId], List[Union[str, AssessmentId]]]])
 
-slots.tissue = Slot(uri=AK_SCHEMA.tissue, name="tissue", curie=AK_SCHEMA.curie('tissue'),
-                   model_uri=AK_SCHEMA.tissue, domain=None, range=Optional[str])
+slots.assays = Slot(uri=IAO['0000136'], name="assays", curie=IAO.curie('0000136'),
+                   model_uri=AK_SCHEMA.assays, domain=None, range=Optional[Union[Union[str, AssayId], List[Union[str, AssayId]]]])
 
-slots.process = Slot(uri=AK_SCHEMA.process, name="process", curie=AK_SCHEMA.curie('process'),
-                   model_uri=AK_SCHEMA.process, domain=None, range=Optional[str])
+slots.datasets = Slot(uri=AK_SCHEMA.datasets, name="datasets", curie=AK_SCHEMA.curie('datasets'),
+                   model_uri=AK_SCHEMA.datasets, domain=None, range=Optional[Union[Union[str, DatasetId], List[Union[str, DatasetId]]]])
 
 slots.result = Slot(uri=AK_SCHEMA.result, name="result", curie=AK_SCHEMA.curie('result'),
                    model_uri=AK_SCHEMA.result, domain=None, range=Optional[str])
@@ -1197,8 +1188,14 @@ slots.organism = Slot(uri=IAO['0000136'], name="organism", curie=IAO.curie('0000
 slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_type", curie=AK_SCHEMA.curie('experiment_type'),
                    model_uri=AK_SCHEMA.experiment_type, domain=None, range=Optional[str])
 
+slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
+
 slots.sources = Slot(uri=SCHEMA.identifier, name="sources", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.sources, domain=None, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
+
+slots.investigations = Slot(uri=IAO['0000136'], name="investigations", curie=IAO.curie('0000136'),
+                   model_uri=AK_SCHEMA.investigations, domain=None, range=Optional[Union[Union[str, InvestigationId], List[Union[str, InvestigationId]]]])
 
 slots.title = Slot(uri=SCHEMA.name, name="title", curie=SCHEMA.curie('name'),
                    model_uri=AK_SCHEMA.title, domain=None, range=Optional[str])
@@ -1225,17 +1222,8 @@ slots.pages = Slot(uri=AK_SCHEMA.pages, name="pages", curie=AK_SCHEMA.curie('pag
 slots.investigation = Slot(uri=RO['0000056'], name="investigation", curie=RO.curie('0000056'),
                    model_uri=AK_SCHEMA.investigation, domain=None, range=Optional[Union[str, InvestigationId]])
 
-slots.investigations = Slot(uri=IAO['0000136'], name="investigations", curie=IAO.curie('0000136'),
-                   model_uri=AK_SCHEMA.investigations, domain=None, range=Optional[Union[Union[str, InvestigationId], List[Union[str, InvestigationId]]]])
-
 slots.arm = Slot(uri=RO['0002350'], name="arm", curie=RO.curie('0002350'),
                    model_uri=AK_SCHEMA.arm, domain=None, range=Optional[Union[str, ArmId]])
-
-slots.arms = Slot(uri=AK_SCHEMA.arms, name="arms", curie=AK_SCHEMA.curie('arms'),
-                   model_uri=AK_SCHEMA.arms, domain=None, range=Optional[Union[Union[str, ArmId], List[Union[str, ArmId]]]])
-
-slots.participant = Slot(uri=RO['0000057'], name="participant", curie=RO.curie('0000057'),
-                   model_uri=AK_SCHEMA.participant, domain=None, range=Optional[Union[str, ParticipantId]])
 
 slots.species = Slot(uri=RDF.type, name="species", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.species, domain=None, range=Optional[Union[str, "Species"]])
@@ -1252,20 +1240,14 @@ slots.ethnicity = Slot(uri=AK_SCHEMA.ethnicity, name="ethnicity", curie=AK_SCHEM
 slots.geolocation = Slot(uri=RO['0001025'], name="geolocation", curie=RO.curie('0001025'),
                    model_uri=AK_SCHEMA.geolocation, domain=None, range=Optional[Union[str, "Geolocation"]])
 
+slots.arms = Slot(uri=AK_SCHEMA.arms, name="arms", curie=AK_SCHEMA.curie('arms'),
+                   model_uri=AK_SCHEMA.arms, domain=None, range=Optional[Union[Union[str, ArmId], List[Union[str, ArmId]]]])
+
+slots.participant = Slot(uri=RO['0000057'], name="participant", curie=RO.curie('0000057'),
+                   model_uri=AK_SCHEMA.participant, domain=None, range=Optional[Union[str, ParticipantId]])
+
 slots.study_event = Slot(uri=AK_SCHEMA.study_event, name="study_event", curie=AK_SCHEMA.curie('study_event'),
                    model_uri=AK_SCHEMA.study_event, domain=None, range=Optional[Union[str, StudyEventId]])
-
-slots.exposure_material = Slot(uri=RO['0000057'], name="exposure_material", curie=RO.curie('0000057'),
-                   model_uri=AK_SCHEMA.exposure_material, domain=None, range=Optional[Union[str, "ExposureMaterial"]])
-
-slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curie('disease'),
-                   model_uri=AK_SCHEMA.disease, domain=None, range=Optional[Union[str, "Disease"]])
-
-slots.disease_stage = Slot(uri=AK_SCHEMA.disease_stage, name="disease_stage", curie=AK_SCHEMA.curie('disease_stage'),
-                   model_uri=AK_SCHEMA.disease_stage, domain=None, range=Optional[Union[str, "DiseaseStage"]])
-
-slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
-                   model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
 
 slots.life_event_type = Slot(uri=RDF.type, name="life_event_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.life_event_type, domain=None, range=Optional[Union[str, "LifeEventProcess"]])
@@ -1285,8 +1267,26 @@ slots.duration = Slot(uri=AK_SCHEMA.duration, name="duration", curie=AK_SCHEMA.c
 slots.time_unit = Slot(uri=AK_SCHEMA.time_unit, name="time_unit", curie=AK_SCHEMA.curie('time_unit'),
                    model_uri=AK_SCHEMA.time_unit, domain=None, range=Optional[str])
 
-slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
+slots.exposure_material = Slot(uri=RO['0000057'], name="exposure_material", curie=RO.curie('0000057'),
+                   model_uri=AK_SCHEMA.exposure_material, domain=None, range=Optional[Union[str, "ExposureMaterial"]])
+
+slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curie('disease'),
+                   model_uri=AK_SCHEMA.disease, domain=None, range=Optional[Union[str, "Disease"]])
+
+slots.disease_stage = Slot(uri=AK_SCHEMA.disease_stage, name="disease_stage", curie=AK_SCHEMA.curie('disease_stage'),
+                   model_uri=AK_SCHEMA.disease_stage, domain=None, range=Optional[Union[str, "DiseaseStage"]])
+
+slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
+                   model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
+
+slots.id = Slot(uri=SCHEMA.identifier, name="id", curie=SCHEMA.curie('identifier'),
+                   model_uri=AK_SCHEMA.id, domain=None, range=URIRef)
+
+slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
+                   model_uri=AK_SCHEMA.name, domain=None, range=Optional[str])
+
+slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEMA.curie('description'),
+                   model_uri=AK_SCHEMA.description, domain=None, range=Optional[str])
 
 slots.container__investigations = Slot(uri=AK_SCHEMA.investigations, name="container__investigations", curie=AK_SCHEMA.curie('investigations'),
                    model_uri=AK_SCHEMA.container__investigations, domain=None, range=Optional[Union[Dict[Union[str, InvestigationId], Union[dict, Investigation]], List[Union[dict, Investigation]]]])

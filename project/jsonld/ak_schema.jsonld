@@ -388,29 +388,6 @@
   ],
   "enums": [
     {
-      "name": "LifeEventProcess",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEventProcess",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "permissible_values": [
-        {
-          "text": "Documented exposure without evidence for disease",
-          "meaning": "ONTIE:0003305"
-        },
-        {
-          "text": "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
-          "meaning": "ONTIE:0003308"
-        },
-        {
-          "text": "Exposure with existing immune reactivity without evidence for disease",
-          "meaning": "OBI:1110061"
-        },
-        {
-          "text": "specimen collection",
-          "meaning": "OBI:0000659"
-        }
-      ]
-    },
-    {
       "name": "Species",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Species",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -602,6 +579,29 @@
       ]
     },
     {
+      "name": "LifeEventProcess",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEventProcess",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "permissible_values": [
+        {
+          "text": "Documented exposure without evidence for disease",
+          "meaning": "ONTIE:0003305"
+        },
+        {
+          "text": "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
+          "meaning": "ONTIE:0003308"
+        },
+        {
+          "text": "Exposure with existing immune reactivity without evidence for disease",
+          "meaning": "OBI:1110061"
+        },
+        {
+          "text": "specimen collection",
+          "meaning": "OBI:0000659"
+        }
+      ]
+    },
+    {
       "name": "ExposureMaterial",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExposureMaterial",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -689,57 +689,6 @@
   ],
   "slots": [
     {
-      "name": "id",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/id",
-      "description": "A unique identifier for a thing",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://schema.org/identifier"
-      ],
-      "slot_uri": "http://schema.org/identifier",
-      "identifier": true,
-      "owner": "NamedThing",
-      "domain_of": [
-        "Reference",
-        "NamedThing"
-      ],
-      "range": "uriorcurie",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "name",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/name",
-      "description": "A human-readable name for a thing",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://schema.org/name"
-      ],
-      "slot_uri": "http://schema.org/name",
-      "owner": "NamedThing",
-      "domain_of": [
-        "NamedThing"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "description",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/description",
-      "description": "A human-readable description for a thing",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://schema.org/description"
-      ],
-      "slot_uri": "http://schema.org/description",
-      "owner": "NamedThing",
-      "domain_of": [
-        "NamedThing"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "life_event",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/life_event",
       "description": "The life event corresponding to an immune exposure",
@@ -752,6 +701,48 @@
         "ImmuneExposure"
       ],
       "range": "LifeEvent",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "specimen_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_type",
+      "description": "The type of this specimen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "owner": "Specimen",
+      "domain_of": [
+        "Specimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tissue",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
+      "description": "The tissue from which this specimen was taken",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
+      "owner": "Specimen",
+      "domain_of": [
+        "Specimen"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "process",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/process",
+      "description": "The type of specimen collection process that resulted in this specimen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/process",
+      "owner": "Specimen",
+      "domain_of": [
+        "Specimen"
+      ],
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -768,54 +759,6 @@
         "Assay"
       ],
       "range": "Specimen",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "assays",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assays",
-      "description": "The assays that a dataset is about",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000136"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
-      "multivalued": true,
-      "owner": "Dataset",
-      "domain_of": [
-        "Dataset"
-      ],
-      "range": "Assay",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "assessments",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessments",
-      "description": "The assessment that a dataset is about",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000136"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
-      "multivalued": true,
-      "owner": "Dataset",
-      "domain_of": [
-        "Dataset"
-      ],
-      "range": "Assessment",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "datasets",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
-      "description": "The datasets that support a conclusion",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
-      "multivalued": true,
-      "owner": "Conclusion",
-      "domain_of": [
-        "Conclusion"
-      ],
-      "range": "Dataset",
       "@type": "SlotDefinition"
     },
     {
@@ -877,45 +820,51 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "specimen_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_type",
-      "description": "The type of this specimen",
+      "name": "assessments",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessments",
+      "description": "The assessment that a dataset is about",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        "http://purl.obolibrary.org/obo/IAO_0000136"
       ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Specimen",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
+      "multivalued": true,
+      "owner": "Dataset",
       "domain_of": [
-        "Specimen"
+        "Dataset"
       ],
-      "range": "string",
+      "range": "Assessment",
       "@type": "SlotDefinition"
     },
     {
-      "name": "tissue",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
-      "description": "The tissue from which this specimen was taken",
+      "name": "assays",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assays",
+      "description": "The assays that a dataset is about",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
-      "owner": "Specimen",
-      "domain_of": [
-        "Specimen"
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000136"
       ],
-      "range": "string",
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
+      "multivalued": true,
+      "owner": "Dataset",
+      "domain_of": [
+        "Dataset"
+      ],
+      "range": "Assay",
       "@type": "SlotDefinition"
     },
     {
-      "name": "process",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/process",
-      "description": "The type of specimen collection process that resulted in this specimen",
+      "name": "datasets",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
+      "description": "The datasets that support a conclusion",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/process",
-      "owner": "Specimen",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
+      "multivalued": true,
+      "owner": "Conclusion",
       "domain_of": [
-        "Specimen"
+        "Conclusion"
       ],
-      "range": "string",
+      "range": "Dataset",
       "@type": "SlotDefinition"
     },
     {
@@ -987,6 +936,22 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "assessment_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessment_type",
+      "description": "The specific type of an assessment",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+      ],
+      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+      "owner": "Assessment",
+      "domain_of": [
+        "Assessment"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "sources",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sources",
       "description": "The source URLs for a reference",
@@ -1001,6 +966,24 @@
         "Reference"
       ],
       "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "investigations",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/investigations",
+      "description": "The investigations that a reference or conclusion are about",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/IAO_0000136"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
+      "multivalued": true,
+      "owner": "Reference",
+      "domain_of": [
+        "Conclusion",
+        "Reference"
+      ],
+      "range": "Investigation",
       "@type": "SlotDefinition"
     },
     {
@@ -1122,24 +1105,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "investigations",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/investigations",
-      "description": "The investigations that a reference or conclusion are about",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000136"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
-      "multivalued": true,
-      "owner": "Reference",
-      "domain_of": [
-        "Conclusion",
-        "Reference"
-      ],
-      "range": "Investigation",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "arm",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/arm",
       "description": "The arm that a participant is a member of",
@@ -1153,36 +1118,6 @@
         "Participant"
       ],
       "range": "Arm",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "arms",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/arms",
-      "description": "The arms that are relevant for a study event",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/arms",
-      "multivalued": true,
-      "owner": "StudyEvent",
-      "domain_of": [
-        "StudyEvent"
-      ],
-      "range": "Arm",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "participant",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/participant",
-      "description": "The participant of a life event",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000057"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "Participant",
       "@type": "SlotDefinition"
     },
     {
@@ -1261,6 +1196,36 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "arms",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/arms",
+      "description": "The arms that are relevant for a study event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/arms",
+      "multivalued": true,
+      "owner": "StudyEvent",
+      "domain_of": [
+        "StudyEvent"
+      ],
+      "range": "Arm",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "participant",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/participant",
+      "description": "The participant of a life event",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000057"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
+      "owner": "LifeEvent",
+      "domain_of": [
+        "LifeEvent"
+      ],
+      "range": "Participant",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "study_event",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_event",
       "description": "The study event corresponding to a life event",
@@ -1271,61 +1236,6 @@
         "LifeEvent"
       ],
       "range": "StudyEvent",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "exposure_material",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/exposure_material",
-      "description": "The material relevant to an immune exposure",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000057"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "ExposureMaterial",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease",
-      "description": "The disease relevant to an immune exposure",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "Disease",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease_stage",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
-      "description": "The stage of the disease relevant to an immune exposure",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "DiseaseStage",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease_severity",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_severity",
-      "description": "The severity of the disease relevant to an immune exposure",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_severity",
-      "owner": "ImmuneExposure",
-      "domain_of": [
-        "ImmuneExposure"
-      ],
-      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -1410,17 +1320,107 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "assessment_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessment_type",
-      "description": "The specific type of an assessment",
+      "name": "exposure_material",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/exposure_material",
+      "description": "The material relevant to an immune exposure",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        "http://purl.obolibrary.org/obo/RO_0000057"
       ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Assessment",
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
+      "owner": "ImmuneExposure",
       "domain_of": [
-        "Assessment"
+        "ImmuneExposure"
+      ],
+      "range": "ExposureMaterial",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease",
+      "description": "The disease relevant to an immune exposure",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease",
+      "owner": "ImmuneExposure",
+      "domain_of": [
+        "ImmuneExposure"
+      ],
+      "range": "Disease",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_stage",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
+      "description": "The stage of the disease relevant to an immune exposure",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
+      "owner": "ImmuneExposure",
+      "domain_of": [
+        "ImmuneExposure"
+      ],
+      "range": "DiseaseStage",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_severity",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_severity",
+      "description": "The severity of the disease relevant to an immune exposure",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_severity",
+      "owner": "ImmuneExposure",
+      "domain_of": [
+        "ImmuneExposure"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/id",
+      "description": "A unique identifier for a thing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://schema.org/identifier"
+      ],
+      "slot_uri": "http://schema.org/identifier",
+      "identifier": true,
+      "owner": "NamedThing",
+      "domain_of": [
+        "Reference",
+        "NamedThing"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "name",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/name",
+      "description": "A human-readable name for a thing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://schema.org/name"
+      ],
+      "slot_uri": "http://schema.org/name",
+      "owner": "NamedThing",
+      "domain_of": [
+        "NamedThing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "description",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/description",
+      "description": "A human-readable description for a thing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://schema.org/description"
+      ],
+      "slot_uri": "http://schema.org/description",
+      "owner": "NamedThing",
+      "domain_of": [
+        "NamedThing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1735,8 +1735,8 @@
         "investigations",
         "title",
         "authors",
-        "issue",
         "journal",
+        "issue",
         "month",
         "year",
         "pages"
@@ -1997,9 +1997,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-03-05T23:47:01",
-  "source_file_size": 31379,
-  "generation_date": "2024-03-05T23:47:04",
+  "source_file_date": "2024-03-06T00:31:34",
+  "source_file_size": 31378,
+  "generation_date": "2024-03-06T00:31:36",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

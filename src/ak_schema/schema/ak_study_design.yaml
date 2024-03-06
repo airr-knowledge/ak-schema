@@ -21,8 +21,8 @@ classes:
       - investigations
       - title
       - authors
-      - issue
       - journal
+      - issue
       - month
       - year
       - pages
@@ -93,6 +93,11 @@ slots:
     slot_uri: schema:identifier
     range: uriorcurie
     multivalued: true
+  investigations:
+    description: The investigations that a reference or conclusion are about
+    slot_uri: IAO:0000136 # is about
+    range: Investigation
+    multivalued: true
   title:
     description: The title of a reference
     slot_uri: schema:name
@@ -113,27 +118,16 @@ slots:
     pattern: "19\\d\\d|20\\d\\d"
   pages:
     description: The pages of the issue of the journal in which a reference was published
+
   investigation:
     description: The investigation in which an arm participates
     slot_uri: RO:0000056 # participates in
     range: Investigation
-  investigations:
-    description: The investigations that a reference or conclusion are about
-    slot_uri: IAO:0000136 # is about
-    range: Investigation
-    multivalued: true
+
   arm:
     description: The arm that a participant is a member of
     slot_uri: RO:0002350 # member of
     range: Arm
-  arms:
-    description: The arms that are relevant for a study event
-    range: Arm
-    multivalued: true
-  participant:
-    description: The participant of a life event
-    slot_uri: RO:0000057 # has participant
-    range: Participant
   species:
     description: The species of a participant
     slot_uri: rdf:type
@@ -152,25 +146,19 @@ slots:
     description: The geolocation of a participant at birth
     range: Geolocation
     slot_uri: RO:0001025 # located in
+
+  arms:
+    description: The arms that are relevant for a study event
+    range: Arm
+    multivalued: true
+
+  participant:
+    description: The participant of a life event
+    slot_uri: RO:0000057 # has participant
+    range: Participant
   study_event:
     description: The study event corresponding to a life event
     range: StudyEvent
-  life_event:
-    description: The life event corresponding to an immune exposure
-    range: LifeEvent
-  exposure_material:
-    description: The material relevant to an immune exposure
-    slot_uri: RO:0000057 # has participant
-    range: ExposureMaterial
-  disease:
-    description: The disease relevant to an immune exposure
-    range: Disease
-  disease_stage:
-    description: The stage of the disease relevant to an immune exposure
-    range: DiseaseStage
-  disease_severity:
-    description: The severity of the disease relevant to an immune exposure
-    # TODO: range: DiseaseSeverity
   life_event_type:
     description: The specific type of a life event
     range: LifeEventProcess
@@ -189,21 +177,25 @@ slots:
   time_unit:
     description: The time unit used to measure the start and duration of this life event
     # TODO: time unit enum
-  assessment_type:
-    description: The specific type of an assessment
-    slot_uri: rdf:type
+
+  life_event:
+    description: The life event corresponding to an immune exposure
+    range: LifeEvent
+  exposure_material:
+    description: The material relevant to an immune exposure
+    slot_uri: RO:0000057 # has participant
+    range: ExposureMaterial
+  disease:
+    description: The disease relevant to an immune exposure
+    range: Disease
+  disease_stage:
+    description: The stage of the disease relevant to an immune exposure
+    range: DiseaseStage
+  disease_severity:
+    description: The severity of the disease relevant to an immune exposure
+    # TODO: range: DiseaseSeverity
 
 enums:
-  LifeEventProcess:
-    permissible_values:
-      Documented exposure without evidence for disease:
-        meaning: ONTIE:0003305
-      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
-        meaning: ONTIE:0003308
-      Exposure with existing immune reactivity without evidence for disease:
-        meaning: OBI:1110061
-      specimen collection:
-        meaning: OBI:0000659
   Species:
     permissible_values:
       Homo sapiens (human):
@@ -292,6 +284,16 @@ enums:
         meaning: GAZ:00002888
       "US: Kansas":
         meaning: GAZ:00004435
+  LifeEventProcess:
+    permissible_values:
+      Documented exposure without evidence for disease:
+        meaning: ONTIE:0003305
+      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
+        meaning: ONTIE:0003308
+      Exposure with existing immune reactivity without evidence for disease:
+        meaning: OBI:1110061
+      specimen collection:
+        meaning: OBI:0000659
   ExposureMaterial:
     permissible_values:
       Influenza A virus:
