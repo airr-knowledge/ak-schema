@@ -108,7 +108,7 @@ create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
 $(SOURCE_SCHEMA_PATH): src/ak_schema/schema/ak_top.yaml
-	gen-linkml -f yaml --no-materialize-attributes $< > $@
+	$(RUN) gen-linkml -f yaml --no-materialize-attributes $< > $@
 
 all: site
 site: gen-project gendoc
