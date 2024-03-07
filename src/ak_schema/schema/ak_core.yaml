@@ -13,6 +13,19 @@ classes:
       - name
       - description
 
+# Separate our processes from our plans
+  PlannedProcess:
+    abstract: true
+    is_a: NamedThing
+    description: >-
+      A process to realize a plan.
+
+  PlanSpecification:
+    abstract: true
+    is_a: NamedThing
+    description: >-
+      A plan with specified actions to meet some objectives.
+
   Container:
     tree_root: true
     description: >-
