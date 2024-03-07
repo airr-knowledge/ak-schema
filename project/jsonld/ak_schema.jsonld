@@ -846,9 +846,10 @@
       ],
       "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
       "multivalued": true,
-      "owner": "Dataset",
+      "owner": "Investigation",
       "domain_of": [
-        "Dataset"
+        "Dataset",
+        "Investigation"
       ],
       "range": "Assay",
       "@type": "SlotDefinition"
@@ -949,6 +950,107 @@
         "Assessment"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_arms",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_arms",
+      "description": "The protocols for gathering the populations being investigated",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/BFO_0000051"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/BFO_0000051",
+      "multivalued": true,
+      "owner": "StudyDesign",
+      "domain_of": [
+        "StudyDesign"
+      ],
+      "range": "StudyArm",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "inclusion_criteria",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/inclusion_criteria",
+      "description": "Participants in an investigation must meet this criteria",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/inclusion_criteria",
+      "owner": "StudyArm",
+      "domain_of": [
+        "StudyArm"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "exclusion_criteria",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/exclusion_criteria",
+      "description": "Participants are excluded from an investigation if they meet this criteria",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/exclusion_criteria",
+      "owner": "StudyArm",
+      "domain_of": [
+        "StudyArm"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "study_design",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_design",
+      "description": "The plan for the investigation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/study_design",
+      "owner": "Investigation",
+      "domain_of": [
+        "Investigation"
+      ],
+      "range": "StudyDesign",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "participants",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/participants",
+      "description": "The participants involved with the investigation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/RO_0000057"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000057",
+      "multivalued": true,
+      "owner": "Investigation",
+      "domain_of": [
+        "Investigation"
+      ],
+      "range": "Participant",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "documents",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/documents",
+      "description": "The documents produced by the investigation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/documents",
+      "multivalued": true,
+      "owner": "Investigation",
+      "domain_of": [
+        "Investigation"
+      ],
+      "range": "Reference",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "conclusions",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/conclusions",
+      "description": "The conclusions from the investigation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/conclusions",
+      "multivalued": true,
+      "owner": "Investigation",
+      "domain_of": [
+        "Investigation"
+      ],
+      "range": "Conclusion",
       "@type": "SlotDefinition"
     },
     {
@@ -1704,6 +1806,45 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "StudyDesign",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StudyDesign",
+      "description": "A plan for a scientific investigation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0500000"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description",
+        "study_arms"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0500000",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "StudyArm",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StudyArm",
+      "description": "A protocol that specifies a population for investigation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0000272"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description",
+        "inclusion_criteria",
+        "exclusion_criteria"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000272",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Investigation",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Investigation",
       "description": "A scientific investigation.",
@@ -1715,7 +1856,12 @@
       "slots": [
         "id",
         "name",
-        "description"
+        "description",
+        "study_design",
+        "participants",
+        "documents",
+        "assays",
+        "conclusions"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0000066",
@@ -1997,9 +2143,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-03-06T00:31:34",
-  "source_file_size": 31378,
-  "generation_date": "2024-03-06T00:31:36",
+  "source_file_date": "2024-03-07T13:09:47",
+  "source_file_size": 33457,
+  "generation_date": "2024-03-07T13:09:50",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

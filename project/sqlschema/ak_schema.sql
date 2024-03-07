@@ -39,13 +39,6 @@ CREATE TABLE "Dataset" (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE "Investigation" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
-);
-
 CREATE TABLE "Reference" (
 	id TEXT NOT NULL, 
 	investigations TEXT, 
@@ -58,6 +51,13 @@ CREATE TABLE "Reference" (
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE "StudyDesign" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	PRIMARY KEY (id)
+);
+
 CREATE TABLE "StudyEvent" (
 	id TEXT NOT NULL, 
 	name TEXT, 
@@ -66,13 +66,28 @@ CREATE TABLE "StudyEvent" (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE "Arm" (
+CREATE TABLE "Investigation" (
 	id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
-	investigation TEXT, 
+	study_design TEXT, 
+	participants TEXT, 
+	documents TEXT, 
+	assays TEXT, 
+	conclusions TEXT, 
 	PRIMARY KEY (id), 
-	FOREIGN KEY(investigation) REFERENCES "Investigation" (id)
+	FOREIGN KEY(study_design) REFERENCES "StudyDesign" (id)
+);
+
+CREATE TABLE "StudyArm" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	inclusion_criteria TEXT, 
+	exclusion_criteria TEXT, 
+	"StudyDesign_id" TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("StudyDesign_id") REFERENCES "StudyDesign" (id)
 );
 
 CREATE TABLE "Reference_sources" (
@@ -87,6 +102,15 @@ CREATE TABLE "Reference_authors" (
 	authors TEXT, 
 	PRIMARY KEY (backref_id, authors), 
 	FOREIGN KEY(backref_id) REFERENCES "Reference" (id)
+);
+
+CREATE TABLE "Arm" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	investigation TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(investigation) REFERENCES "Investigation" (id)
 );
 
 CREATE TABLE "Participant" (

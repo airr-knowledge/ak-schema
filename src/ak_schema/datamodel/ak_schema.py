@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-06T00:31:38
+# Generation date: 2024-03-07T13:09:52
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -233,6 +233,14 @@ class ConclusionId(NamedThingId):
 
 
 class AssessmentId(NamedThingId):
+    pass
+
+
+class StudyDesignId(NamedThingId):
+    pass
+
+
+class StudyArmId(NamedThingId):
     pass
 
 
@@ -550,6 +558,65 @@ class Assessment(NamedThing):
 
 
 @dataclass
+class StudyDesign(NamedThing):
+    """
+    A plan for a scientific investigation
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0500000"]
+    class_class_curie: ClassVar[str] = "OBI:0500000"
+    class_name: ClassVar[str] = "StudyDesign"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.StudyDesign
+
+    id: Union[str, StudyDesignId] = None
+    study_arms: Optional[Union[Union[str, StudyArmId], List[Union[str, StudyArmId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, StudyDesignId):
+            self.id = StudyDesignId(self.id)
+
+        if not isinstance(self.study_arms, list):
+            self.study_arms = [self.study_arms] if self.study_arms is not None else []
+        self.study_arms = [v if isinstance(v, StudyArmId) else StudyArmId(v) for v in self.study_arms]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class StudyArm(NamedThing):
+    """
+    A protocol that specifies a population for investigation
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0000272"]
+    class_class_curie: ClassVar[str] = "OBI:0000272"
+    class_name: ClassVar[str] = "StudyArm"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.StudyArm
+
+    id: Union[str, StudyArmId] = None
+    inclusion_criteria: Optional[str] = None
+    exclusion_criteria: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, StudyArmId):
+            self.id = StudyArmId(self.id)
+
+        if self.inclusion_criteria is not None and not isinstance(self.inclusion_criteria, str):
+            self.inclusion_criteria = str(self.inclusion_criteria)
+
+        if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
+            self.exclusion_criteria = str(self.exclusion_criteria)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
 class Investigation(NamedThing):
     """
     A scientific investigation.
@@ -562,12 +629,36 @@ class Investigation(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     id: Union[str, InvestigationId] = None
+    study_design: Optional[Union[str, StudyDesignId]] = None
+    participants: Optional[Union[Union[str, ParticipantId], List[Union[str, ParticipantId]]]] = empty_list()
+    documents: Optional[Union[Union[str, ReferenceId], List[Union[str, ReferenceId]]]] = empty_list()
+    assays: Optional[Union[Union[str, AssayId], List[Union[str, AssayId]]]] = empty_list()
+    conclusions: Optional[Union[Union[str, ConclusionId], List[Union[str, ConclusionId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.id):
             self.MissingRequiredField("id")
         if not isinstance(self.id, InvestigationId):
             self.id = InvestigationId(self.id)
+
+        if self.study_design is not None and not isinstance(self.study_design, StudyDesignId):
+            self.study_design = StudyDesignId(self.study_design)
+
+        if not isinstance(self.participants, list):
+            self.participants = [self.participants] if self.participants is not None else []
+        self.participants = [v if isinstance(v, ParticipantId) else ParticipantId(v) for v in self.participants]
+
+        if not isinstance(self.documents, list):
+            self.documents = [self.documents] if self.documents is not None else []
+        self.documents = [v if isinstance(v, ReferenceId) else ReferenceId(v) for v in self.documents]
+
+        if not isinstance(self.assays, list):
+            self.assays = [self.assays] if self.assays is not None else []
+        self.assays = [v if isinstance(v, AssayId) else AssayId(v) for v in self.assays]
+
+        if not isinstance(self.conclusions, list):
+            self.conclusions = [self.conclusions] if self.conclusions is not None else []
+        self.conclusions = [v if isinstance(v, ConclusionId) else ConclusionId(v) for v in self.conclusions]
 
         super().__post_init__(**kwargs)
 
@@ -1190,6 +1281,27 @@ slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_typ
 
 slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
+
+slots.study_arms = Slot(uri=BFO['0000051'], name="study_arms", curie=BFO.curie('0000051'),
+                   model_uri=AK_SCHEMA.study_arms, domain=None, range=Optional[Union[Union[str, StudyArmId], List[Union[str, StudyArmId]]]])
+
+slots.inclusion_criteria = Slot(uri=AK_SCHEMA.inclusion_criteria, name="inclusion_criteria", curie=AK_SCHEMA.curie('inclusion_criteria'),
+                   model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[str])
+
+slots.exclusion_criteria = Slot(uri=AK_SCHEMA.exclusion_criteria, name="exclusion_criteria", curie=AK_SCHEMA.curie('exclusion_criteria'),
+                   model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[str])
+
+slots.study_design = Slot(uri=AK_SCHEMA.study_design, name="study_design", curie=AK_SCHEMA.curie('study_design'),
+                   model_uri=AK_SCHEMA.study_design, domain=None, range=Optional[Union[str, StudyDesignId]])
+
+slots.participants = Slot(uri=RO['0000057'], name="participants", curie=RO.curie('0000057'),
+                   model_uri=AK_SCHEMA.participants, domain=None, range=Optional[Union[Union[str, ParticipantId], List[Union[str, ParticipantId]]]])
+
+slots.documents = Slot(uri=AK_SCHEMA.documents, name="documents", curie=AK_SCHEMA.curie('documents'),
+                   model_uri=AK_SCHEMA.documents, domain=None, range=Optional[Union[Union[str, ReferenceId], List[Union[str, ReferenceId]]]])
+
+slots.conclusions = Slot(uri=AK_SCHEMA.conclusions, name="conclusions", curie=AK_SCHEMA.curie('conclusions'),
+                   model_uri=AK_SCHEMA.conclusions, domain=None, range=Optional[Union[Union[str, ConclusionId], List[Union[str, ConclusionId]]]])
 
 slots.sources = Slot(uri=SCHEMA.identifier, name="sources", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.sources, domain=None, range=Optional[Union[Union[str, URIorCURIE], List[Union[str, URIorCURIE]]]])
