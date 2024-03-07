@@ -1,0 +1,14 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  Cell:
+    is_a: NamedThing
+    class_uri: CL:0000000 # cell
+
+  Tissue:
+    is_a: NamedThing
+    class_uri: UBERON:0000479 # tissue
+
