@@ -4,11 +4,32 @@ name: ak-schema
 
 classes:
 
+  StudyDesign:
+    is_a: NamedThing
+    class_uri: OBI:0500000 # study design
+    description: A plan for a scientific investigation
+    slots:
+      - study_arms
+
+  StudyArm:
+    is_a: NamedThing
+    class_uri: OBI:0000272 # protocol
+    description: A protocol that specifies a population for investigation
+    slots:
+      - inclusion_criteria
+      - exclusion_criteria
+
   Investigation:
     is_a: NamedThing
     class_uri: OBI:0000066 # investigation
     description: >-
       A scientific investigation.
+    slots:
+      - study_design
+      - participants
+      - documents
+      - assays
+      - conclusions
 
   Reference:
     class_uri: IAO:0000310 # document
@@ -88,6 +109,38 @@ classes:
 
 
 slots:
+  study_arms:
+    description: The protocols for gathering the populations being investigated
+    slot_uri: BFO:0000051 # has part
+    range: StudyArm
+    multivalued: true
+
+  inclusion_criteria:
+    description: Participants in an investigation must meet this criteria
+    range: string
+  exclusion_criteria:
+    description: Participants are excluded from an investigation if they meet this criteria
+    range: string
+
+  study_design:
+    description: The plan for the investigation
+    range: StudyDesign
+
+  participants:
+    description: The participants involved with the investigation
+    slot_uri: RO:0000057 # has participant
+    range: Participant
+    multivalued: true
+  documents:
+    description: The documents produced by the investigation
+    # slot_uri? No inverse of is about?
+    range: Reference
+    multivalued: true
+  conclusions:
+    description: The conclusions from the investigation
+    range: Conclusion
+    multivalued: true
+
   sources:
     description: The source URLs for a reference
     slot_uri: schema:identifier

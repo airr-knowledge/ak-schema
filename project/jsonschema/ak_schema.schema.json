@@ -745,9 +745,30 @@
             "additionalProperties": false,
             "description": "A scientific investigation.",
             "properties": {
+                "assays": {
+                    "description": "The assays that a dataset is about",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "conclusions": {
+                    "description": "The conclusions from the investigation",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": "string"
+                },
+                "documents": {
+                    "description": "The documents produced by the investigation",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "id": {
                     "description": "A unique identifier for a thing",
@@ -755,6 +776,17 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "participants": {
+                    "description": "The participants involved with the investigation",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "study_design": {
+                    "description": "The plan for the investigation",
                     "type": "string"
                 }
             },
@@ -768,9 +800,30 @@
             "additionalProperties": false,
             "description": "A scientific investigation.",
             "properties": {
+                "assays": {
+                    "description": "The assays that a dataset is about",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "conclusions": {
+                    "description": "The conclusions from the investigation",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": "string"
+                },
+                "documents": {
+                    "description": "The documents produced by the investigation",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "id": {
                     "description": "A unique identifier for a thing",
@@ -778,6 +831,17 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "participants": {
+                    "description": "The participants involved with the investigation",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "study_design": {
+                    "description": "The plan for the investigation",
                     "type": "string"
                 }
             },
@@ -1220,6 +1284,67 @@
             },
             "required": [],
             "title": "Specimen",
+            "type": "object"
+        },
+        "StudyArm": {
+            "additionalProperties": false,
+            "description": "A protocol that specifies a population for investigation",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "exclusion_criteria": {
+                    "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "inclusion_criteria": {
+                    "description": "Participants in an investigation must meet this criteria",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "StudyArm",
+            "type": "object"
+        },
+        "StudyDesign": {
+            "additionalProperties": false,
+            "description": "A plan for a scientific investigation",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "study_arms": {
+                    "description": "The protocols for gathering the populations being investigated",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "StudyDesign",
             "type": "object"
         },
         "StudyEvent": {
