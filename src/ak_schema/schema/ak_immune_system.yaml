@@ -1,0 +1,9 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  ImmuneSystem:
+    is_a: NamedThing
+    class_uri: UBERON:0002405 # immune system

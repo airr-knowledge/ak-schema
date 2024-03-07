@@ -16,6 +16,7 @@ prefixes:
   dc: http://purl.org/dc/elements/1.1/
   APOLLO_SV: http://purl.obolibrary.org/obo/APOLLO_SV_
   BFO: http://purl.obolibrary.org/obo/BFO_
+  CL: http://purl.obolibrary.org/obo/CL_
   DOID: http://purl.obolibrary.org/obo/DOID_
   EXO: http://purl.obolibrary.org/obo/EXO_
   GAZ: http://purl.obolibrary.org/obo/GAZ_
@@ -27,6 +28,7 @@ prefixes:
   PATO: http://purl.obolibrary.org/obo/PATO_
   RO: http://purl.obolibrary.org/obo/RO_
   SBO: http://purl.obolibrary.org/obo/SBO_
+  UBERON: http://purl.obolibrary.org/obo/UBERON_
   VO: http://purl.obolibrary.org/obo/VO_
   ONTIE: https://ontology.iedb.org/ontology/ONTIE_
   example: https://example.org/
@@ -39,4 +41,6 @@ imports:
   - ak_core
   - ak_study_design
   - ak_specimens
+  - ak_biology
+  - ak_immune_system
   - ak_simulations
