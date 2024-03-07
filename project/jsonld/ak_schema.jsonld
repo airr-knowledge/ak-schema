@@ -29,12 +29,24 @@
       "prefix_reference": "http://purl.org/dc/elements/1.1/"
     },
     {
+      "prefix_prefix": "APOLLO_SV",
+      "prefix_reference": "http://purl.obolibrary.org/obo/APOLLO_SV_"
+    },
+    {
       "prefix_prefix": "BFO",
       "prefix_reference": "http://purl.obolibrary.org/obo/BFO_"
     },
     {
+      "prefix_prefix": "CL",
+      "prefix_reference": "http://purl.obolibrary.org/obo/CL_"
+    },
+    {
       "prefix_prefix": "DOID",
       "prefix_reference": "http://purl.obolibrary.org/obo/DOID_"
+    },
+    {
+      "prefix_prefix": "EXO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/EXO_"
     },
     {
       "prefix_prefix": "GAZ",
@@ -67,6 +79,14 @@
     {
       "prefix_prefix": "RO",
       "prefix_reference": "http://purl.obolibrary.org/obo/RO_"
+    },
+    {
+      "prefix_prefix": "SBO",
+      "prefix_reference": "http://purl.obolibrary.org/obo/SBO_"
+    },
+    {
+      "prefix_prefix": "UBERON",
+      "prefix_reference": "http://purl.obolibrary.org/obo/UBERON_"
     },
     {
       "prefix_prefix": "VO",
@@ -1698,6 +1718,156 @@
   ],
   "classes": [
     {
+      "name": "Model",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Model",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "EXO:0000072"
+      ],
+      "is_a": "NamedThing",
+      "abstract": true,
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/EXO_0000072",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ConceptualModel",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ConceptualModel",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "EXO:0000073"
+      ],
+      "is_a": "Model",
+      "abstract": true,
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/EXO_0000073",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "CommunicativeModel",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CommunicativeModel",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Model",
+      "abstract": true,
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/CommunicativeModel",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ModelSpecification",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ModelSpecification",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "PlanSpecification",
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/ModelSpecification",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ModelingFramework",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ModelingFramework",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "SBO:0000004"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/SBO_0000004",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Simulation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Simulation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "APOLLO_SV:00000070"
+      ],
+      "is_a": "PlannedProcess",
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/APOLLO_SV_00000070",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ImmuneSystem",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneSystem",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "UBERON:0002405"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/UBERON_0002405",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Cell",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Cell",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "CL:0000000"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/CL_0000000",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Tissue",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Tissue",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "UBERON:0000479"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/UBERON_0000479",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Specimen",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Specimen",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -2019,6 +2189,38 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "PlannedProcess",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PlannedProcess",
+      "description": "A process to realize a plan.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "NamedThing",
+      "abstract": true,
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PlannedProcess",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PlanSpecification",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PlanSpecification",
+      "description": "A plan with specified actions to meet some objectives.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "NamedThing",
+      "abstract": true,
+      "slots": [
+        "id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PlanSpecification",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Container",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Container",
       "description": "A container for instances of multiple classes.",
@@ -2143,9 +2345,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-03-07T13:09:47",
-  "source_file_size": 33457,
-  "generation_date": "2024-03-07T13:09:50",
+  "source_file_date": "2024-03-07T16:13:47",
+  "source_file_size": 35675,
+  "generation_date": "2024-03-07T16:13:50",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

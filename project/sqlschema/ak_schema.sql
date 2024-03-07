@@ -1,5 +1,12 @@
 
 
+CREATE TABLE "Cell" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	PRIMARY KEY (id)
+);
+
 CREATE TABLE "Conclusion" (
 	id TEXT NOT NULL, 
 	name TEXT, 
@@ -39,6 +46,27 @@ CREATE TABLE "Dataset" (
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE "ImmuneSystem" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE "ModelingFramework" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE "ModelSpecification" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	PRIMARY KEY (id)
+);
+
 CREATE TABLE "Reference" (
 	id TEXT NOT NULL, 
 	investigations TEXT, 
@@ -48,6 +76,13 @@ CREATE TABLE "Reference" (
 	month TEXT, 
 	year INTEGER, 
 	pages TEXT, 
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE "Simulation" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
 	PRIMARY KEY (id)
 );
 
@@ -63,6 +98,13 @@ CREATE TABLE "StudyEvent" (
 	name TEXT, 
 	description TEXT, 
 	arms TEXT, 
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE "Tissue" (
+	id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
 	PRIMARY KEY (id)
 );
 
