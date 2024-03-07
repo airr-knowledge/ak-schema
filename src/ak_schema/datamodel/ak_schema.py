@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-03-07T13:09:52
+# Generation date: 2024-03-07T16:13:52
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -30,8 +30,11 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+APOLLO_SV = CurieNamespace('APOLLO_SV', 'http://purl.obolibrary.org/obo/APOLLO_SV_')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
+CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
 DOID = CurieNamespace('DOID', 'http://purl.obolibrary.org/obo/DOID_')
+EXO = CurieNamespace('EXO', 'http://purl.obolibrary.org/obo/EXO_')
 GAZ = CurieNamespace('GAZ', 'http://purl.obolibrary.org/obo/GAZ_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
 NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
@@ -41,6 +44,8 @@ OMRSE = CurieNamespace('OMRSE', 'http://purl.obolibrary.org/obo/OMRSE_')
 ONTIE = CurieNamespace('ONTIE', 'https://ontology.iedb.org/ontology/ONTIE_')
 PATO = CurieNamespace('PATO', 'http://purl.obolibrary.org/obo/PATO_')
 RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
+SBO = CurieNamespace('SBO', 'http://purl.obolibrary.org/obo/SBO_')
+UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
 VO = CurieNamespace('VO', 'http://purl.obolibrary.org/obo/VO_')
 AK_SCHEMA = CurieNamespace('ak_schema', 'https://github.com/airr-knowledge/ak-schema/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
@@ -216,6 +221,34 @@ class NamedThingId(URIorCURIE):
     pass
 
 
+class ModelId(NamedThingId):
+    pass
+
+
+class ConceptualModelId(ModelId):
+    pass
+
+
+class CommunicativeModelId(ModelId):
+    pass
+
+
+class ModelingFrameworkId(NamedThingId):
+    pass
+
+
+class ImmuneSystemId(NamedThingId):
+    pass
+
+
+class CellId(NamedThingId):
+    pass
+
+
+class TissueId(NamedThingId):
+    pass
+
+
 class SpecimenId(NamedThingId):
     pass
 
@@ -265,6 +298,22 @@ class LifeEventId(NamedThingId):
 
 
 class ImmuneExposureId(NamedThingId):
+    pass
+
+
+class PlannedProcessId(NamedThingId):
+    pass
+
+
+class SimulationId(PlannedProcessId):
+    pass
+
+
+class PlanSpecificationId(NamedThingId):
+    pass
+
+
+class ModelSpecificationId(PlanSpecificationId):
     pass
 
 
@@ -357,6 +406,119 @@ class NamedThing(YAMLRoot):
 
         if self.description is not None and not isinstance(self.description, str):
             self.description = str(self.description)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Model(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EXO["0000072"]
+    class_class_curie: ClassVar[str] = "EXO:0000072"
+    class_name: ClassVar[str] = "Model"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Model
+
+    id: Union[str, ModelId] = None
+
+@dataclass
+class ConceptualModel(Model):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = EXO["0000073"]
+    class_class_curie: ClassVar[str] = "EXO:0000073"
+    class_name: ClassVar[str] = "ConceptualModel"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ConceptualModel
+
+    id: Union[str, ConceptualModelId] = None
+
+@dataclass
+class CommunicativeModel(Model):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CommunicativeModel"]
+    class_class_curie: ClassVar[str] = "ak_schema:CommunicativeModel"
+    class_name: ClassVar[str] = "CommunicativeModel"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CommunicativeModel
+
+    id: Union[str, CommunicativeModelId] = None
+
+@dataclass
+class ModelingFramework(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = SBO["0000004"]
+    class_class_curie: ClassVar[str] = "SBO:0000004"
+    class_name: ClassVar[str] = "ModelingFramework"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ModelingFramework
+
+    id: Union[str, ModelingFrameworkId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ModelingFrameworkId):
+            self.id = ModelingFrameworkId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class ImmuneSystem(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = UBERON["0002405"]
+    class_class_curie: ClassVar[str] = "UBERON:0002405"
+    class_name: ClassVar[str] = "ImmuneSystem"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneSystem
+
+    id: Union[str, ImmuneSystemId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ImmuneSystemId):
+            self.id = ImmuneSystemId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Cell(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = CL["0000000"]
+    class_class_curie: ClassVar[str] = "CL:0000000"
+    class_name: ClassVar[str] = "Cell"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Cell
+
+    id: Union[str, CellId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, CellId):
+            self.id = CellId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class Tissue(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = UBERON["0000479"]
+    class_class_curie: ClassVar[str] = "UBERON:0000479"
+    class_name: ClassVar[str] = "Tissue"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Tissue
+
+    id: Union[str, TissueId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, TissueId):
+            self.id = TissueId(self.id)
 
         super().__post_init__(**kwargs)
 
@@ -863,6 +1025,74 @@ class ImmuneExposure(NamedThing):
 
         if self.disease_severity is not None and not isinstance(self.disease_severity, str):
             self.disease_severity = str(self.disease_severity)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PlannedProcess(NamedThing):
+    """
+    A process to realize a plan.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PlannedProcess"]
+    class_class_curie: ClassVar[str] = "ak_schema:PlannedProcess"
+    class_name: ClassVar[str] = "PlannedProcess"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PlannedProcess
+
+    id: Union[str, PlannedProcessId] = None
+
+@dataclass
+class Simulation(PlannedProcess):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = APOLLO_SV["00000070"]
+    class_class_curie: ClassVar[str] = "APOLLO_SV:00000070"
+    class_name: ClassVar[str] = "Simulation"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Simulation
+
+    id: Union[str, SimulationId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, SimulationId):
+            self.id = SimulationId(self.id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass
+class PlanSpecification(NamedThing):
+    """
+    A plan with specified actions to meet some objectives.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PlanSpecification"]
+    class_class_curie: ClassVar[str] = "ak_schema:PlanSpecification"
+    class_name: ClassVar[str] = "PlanSpecification"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PlanSpecification
+
+    id: Union[str, PlanSpecificationId] = None
+
+@dataclass
+class ModelSpecification(PlanSpecification):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ModelSpecification"]
+    class_class_curie: ClassVar[str] = "ak_schema:ModelSpecification"
+    class_name: ClassVar[str] = "ModelSpecification"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ModelSpecification
+
+    id: Union[str, ModelSpecificationId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.id):
+            self.MissingRequiredField("id")
+        if not isinstance(self.id, ModelSpecificationId):
+            self.id = ModelSpecificationId(self.id)
 
         super().__post_init__(**kwargs)
 

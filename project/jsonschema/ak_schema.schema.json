@@ -229,6 +229,29 @@
             "title": "BiologicalSex",
             "type": "string"
         },
+        "Cell": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Cell",
+            "type": "object"
+        },
         "Conclusion": {
             "additionalProperties": false,
             "description": "",
@@ -741,6 +764,29 @@
             "title": "ImmuneExposure",
             "type": "object"
         },
+        "ImmuneSystem": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ImmuneSystem",
+            "type": "object"
+        },
         "Investigation": {
             "additionalProperties": false,
             "description": "A scientific investigation.",
@@ -976,6 +1022,52 @@
             "title": "LifeEvent",
             "type": "object"
         },
+        "ModelSpecification": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ModelSpecification",
+            "type": "object"
+        },
+        "ModelingFramework": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "ModelingFramework",
+            "type": "object"
+        },
         "Participant": {
             "additionalProperties": false,
             "description": "A participant in an investigation.",
@@ -1201,6 +1293,29 @@
             "title": "Reference",
             "type": "object"
         },
+        "Simulation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Simulation",
+            "type": "object"
+        },
         "Species": {
             "description": "",
             "enum": [
@@ -1403,6 +1518,29 @@
             },
             "required": [],
             "title": "StudyEvent",
+            "type": "object"
+        },
+        "Tissue": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Tissue",
             "type": "object"
         }
     },
