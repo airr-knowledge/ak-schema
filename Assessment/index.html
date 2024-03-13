@@ -326,7 +326,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -352,7 +352,7 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Assessment
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
 - life_event
@@ -367,25 +367,25 @@ class_uri: OBI:0002441
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Assessment
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
   life_event:
     name: life_event
     description: The life event corresponding to an immune exposure
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: life_event
     owner: Assessment
     domain_of:
     - ImmuneExposure
-    - Assessment
     - Specimen
+    - Assessment
     range: LifeEvent
   assessment_type:
     name: assessment_type
     description: The specific type of an assessment
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: rdf:type
     alias: assessment_type
@@ -396,40 +396,40 @@ attributes:
   target_entity_type:
     name: target_entity_type
     description: The type of the entity being measured
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: target_entity_type
     owner: Assessment
     domain_of:
-    - Assessment
     - Assay
+    - Assessment
     range: string
   value:
     name: value
     description: The measurement result value
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: value
     owner: Assessment
     domain_of:
-    - Assessment
     - Assay
+    - Assessment
     range: string
   unit:
     name: unit
     description: The measurement result value unit
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: unit
     owner: Assessment
     domain_of:
-    - Assessment
     - Assay
+    - Assessment
     range: string
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -443,7 +443,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -454,7 +454,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

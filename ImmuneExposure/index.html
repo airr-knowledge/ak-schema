@@ -327,7 +327,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -354,7 +354,7 @@
 <details>
 <pre><code class="language-yaml">name: ImmuneExposure
 description: An event involving the immune system of a study participant.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
 - life_event
@@ -370,25 +370,25 @@ class_uri: BFO:0000015
 <details>
 <pre><code class="language-yaml">name: ImmuneExposure
 description: An event involving the immune system of a study participant.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
   life_event:
     name: life_event
     description: The life event corresponding to an immune exposure
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: life_event
     owner: ImmuneExposure
     domain_of:
     - ImmuneExposure
-    - Assessment
     - Specimen
+    - Assessment
     range: LifeEvent
   exposure_material:
     name: exposure_material
     description: The material relevant to an immune exposure
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: RO:0000057
     alias: exposure_material
@@ -399,7 +399,7 @@ attributes:
   disease:
     name: disease
     description: The disease relevant to an immune exposure
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: disease
     owner: ImmuneExposure
@@ -409,7 +409,7 @@ attributes:
   disease_stage:
     name: disease_stage
     description: The stage of the disease relevant to an immune exposure
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: disease_stage
     owner: ImmuneExposure
@@ -419,7 +419,7 @@ attributes:
   disease_severity:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: disease_severity
     owner: ImmuneExposure
@@ -429,7 +429,7 @@ attributes:
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -443,7 +443,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -454,7 +454,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

@@ -196,7 +196,7 @@
 </a>
 <h1 id="class-container">Class: Container</h1>
 <p><em>A container for instances of multiple classes.</em></p>
-<p>URI: <a href="https://w3id.org/airr-knowledge/ak-schema/Container">ak_schema:Container</a></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/Container">ak_schema:Container</a></p>
 <div class="mermaid"> classDiagram
     class Container
       Container : arms
@@ -338,7 +338,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -365,84 +365,82 @@
 <details>
 <pre><code class="language-yaml">name: Container
 description: A container for instances of multiple classes.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
   investigations:
     name: investigations
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     range: Investigation
     inlined: true
   references:
     name: references
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     range: Reference
     inlined: true
   arms:
     name: arms
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     range: Arm
     inlined: true
   study_events:
     name: study_events
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     range: StudyEvent
     inlined: true
   participants:
     name: participants
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     range: Participant
     inlined: true
   life_events:
     name: life_events
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     range: LifeEvent
     inlined: true
   immune_exposures:
     name: immune_exposures
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     range: ImmuneExposure
     inlined: true
   assessments:
     name: assessments
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     range: Assessment
     inlined: true
   specimens:
     name: specimens
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     range: Specimen
     inlined: true
   assays:
     name: assays
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     range: Assay
     inlined: true
   datasets:
     name: datasets
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     range: Dataset
     inlined: true
   conclusions:
     name: conclusions
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     range: Conclusion
     inlined: true
@@ -454,11 +452,11 @@ tree_root: true
 <details>
 <pre><code class="language-yaml">name: Container
 description: A container for instances of multiple classes.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
   investigations:
     name: investigations
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     alias: investigations
     owner: Container
@@ -470,7 +468,7 @@ attributes:
     inlined: true
   references:
     name: references
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     alias: references
@@ -481,7 +479,7 @@ attributes:
     inlined: true
   arms:
     name: arms
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     alias: arms
     owner: Container
@@ -492,7 +490,7 @@ attributes:
     inlined: true
   study_events:
     name: study_events
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     alias: study_events
@@ -503,18 +501,18 @@ attributes:
     inlined: true
   participants:
     name: participants
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     alias: participants
     owner: Container
     domain_of:
     - Container
+    - Investigation
     range: Participant
     inlined: true
   life_events:
     name: life_events
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     alias: life_events
@@ -525,7 +523,7 @@ attributes:
     inlined: true
   immune_exposures:
     name: immune_exposures
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     alias: immune_exposures
@@ -536,7 +534,7 @@ attributes:
     inlined: true
   assessments:
     name: assessments
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     alias: assessments
     owner: Container
@@ -547,7 +545,7 @@ attributes:
     inlined: true
   specimens:
     name: specimens
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     multivalued: true
     alias: specimens
@@ -558,18 +556,19 @@ attributes:
     inlined: true
   assays:
     name: assays
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     alias: assays
     owner: Container
     domain_of:
     - Container
+    - Investigation
     - Dataset
     range: Assay
     inlined: true
   datasets:
     name: datasets
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     alias: datasets
     owner: Container
@@ -580,13 +579,13 @@ attributes:
     inlined: true
   conclusions:
     name: conclusions
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
-    rank: 1000
+    from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
     alias: conclusions
     owner: Container
     domain_of:
     - Container
+    - Investigation
     range: Conclusion
     inlined: true
 tree_root: true

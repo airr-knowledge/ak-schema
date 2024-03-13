@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ak-schema" class="md-skip">
+        <a href="#airr-knowledge-schema" class="md-skip">
           Skip to content
         </a>
       
@@ -379,9 +379,9 @@
   </a>
 
 
-<h1 id="ak-schema">ak-schema</h1>
-<p>AK Schema</p>
-<p>URI: https://w3id.org/airr-knowledge/ak-schema</p>
+<h1 id="airr-knowledge-schema">AIRR Knowledge Schema</h1>
+<p>Common data model schema for the AIRR Knowledge Commons</p>
+<p>URI: https://github.com/airr-knowledge/ak-schema</p>
 <p>Name: ak-schema</p>
 <h2 id="classes">Classes</h2>
 <table>
@@ -413,6 +413,10 @@
 <td>None</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Cell/">Cell</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Conclusion/">Conclusion</a></td>
 <td>None</td>
 </tr>
@@ -425,6 +429,10 @@
 <td>An event involving the immune system of a study participant.</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ImmuneSystem/">ImmuneSystem</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Investigation/">Investigation</a></td>
 <td>A scientific investigation.</td>
 </tr>
@@ -433,16 +441,60 @@
 <td>An event in which a study participant participates.</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Model/">Model</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CommunicativeModel/">CommunicativeModel</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ConceptualModel/">ConceptualModel</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ModelingFramework/">ModelingFramework</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Participant/">Participant</a></td>
 <td>A participant in an investigation.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PlannedProcess/">PlannedProcess</a></td>
+<td>A process to realize a plan.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Simulation/">Simulation</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PlanSpecification/">PlanSpecification</a></td>
+<td>A plan with specified actions to meet some objectives.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ModelSpecification/">ModelSpecification</a></td>
+<td>None</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Specimen/">Specimen</a></td>
 <td>None</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StudyArm/">StudyArm</a></td>
+<td>A protocol that specifies a population for investigation</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StudyDesign/">StudyDesign</a></td>
+<td>A plan for a scientific investigation</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StudyEvent/">StudyEvent</a></td>
 <td>An event that is part of the study design of an investigation.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Tissue/">Tissue</a></td>
+<td>None</td>
 </tr>
 <tr>
 <td><a href="Reference/">Reference</a></td>
@@ -493,7 +545,7 @@
 </tr>
 <tr>
 <td><a href="conclusions/">conclusions</a></td>
-<td></td>
+<td>The conclusions from the investigation</td>
 </tr>
 <tr>
 <td><a href="data_location_type/">data_location_type</a></td>
@@ -524,12 +576,20 @@
 <td>The stage of the disease relevant to an immune exposure</td>
 </tr>
 <tr>
+<td><a href="documents/">documents</a></td>
+<td>The documents produced by the investigation</td>
+</tr>
+<tr>
 <td><a href="duration/">duration</a></td>
 <td>The duration of this life event</td>
 </tr>
 <tr>
 <td><a href="ethnicity/">ethnicity</a></td>
 <td>The ethnicity of a participant</td>
+</tr>
+<tr>
+<td><a href="exclusion_criteria/">exclusion_criteria</a></td>
+<td>Participants are excluded from an investigation if they meet this criteria</td>
 </tr>
 <tr>
 <td><a href="experiment_type/">experiment_type</a></td>
@@ -550,6 +610,10 @@
 <tr>
 <td><a href="immune_exposures/">immune_exposures</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="inclusion_criteria/">inclusion_criteria</a></td>
+<td>Participants in an investigation must meet this criteria</td>
 </tr>
 <tr>
 <td><a href="investigation/">investigation</a></td>
@@ -601,7 +665,7 @@
 </tr>
 <tr>
 <td><a href="participants/">participants</a></td>
-<td></td>
+<td>The participants involved with the investigation</td>
 </tr>
 <tr>
 <td><a href="process/">process</a></td>
@@ -642,6 +706,14 @@
 <tr>
 <td><a href="start/">start</a></td>
 <td>The start time of this life event, relative to the T0 event</td>
+</tr>
+<tr>
+<td><a href="study_arms/">study_arms</a></td>
+<td>The protocols for gathering the populations being investigated</td>
+</tr>
+<tr>
+<td><a href="study_design/">study_design</a></td>
+<td>The plan for the investigation</td>
 </tr>
 <tr>
 <td><a href="study_event/">study_event</a></td>

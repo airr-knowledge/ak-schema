@@ -204,20 +204,29 @@
 <ul>
 <li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
 </ul>
-<p>URI: <a href="https://w3id.org/airr-knowledge/ak-schema/NamedThing">ak_schema:NamedThing</a></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/NamedThing">ak_schema:NamedThing</a></p>
 <div class="mermaid"> classDiagram
     class NamedThing
+      NamedThing &lt;|-- PlannedProcess
+      NamedThing &lt;|-- PlanSpecification
+      NamedThing &lt;|-- StudyDesign
+      NamedThing &lt;|-- StudyArm
       NamedThing &lt;|-- Investigation
       NamedThing &lt;|-- Arm
       NamedThing &lt;|-- Participant
       NamedThing &lt;|-- StudyEvent
       NamedThing &lt;|-- LifeEvent
       NamedThing &lt;|-- ImmuneExposure
-      NamedThing &lt;|-- Assessment
       NamedThing &lt;|-- Specimen
       NamedThing &lt;|-- Assay
       NamedThing &lt;|-- Dataset
       NamedThing &lt;|-- Conclusion
+      NamedThing &lt;|-- Assessment
+      NamedThing &lt;|-- Cell
+      NamedThing &lt;|-- Tissue
+      NamedThing &lt;|-- ImmuneSystem
+      NamedThing &lt;|-- Model
+      NamedThing &lt;|-- ModelingFramework
 
       NamedThing : description
 
@@ -230,17 +239,26 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><strong>NamedThing</strong><ul>
+<li><a href="../PlannedProcess/">PlannedProcess</a></li>
+<li><a href="../PlanSpecification/">PlanSpecification</a></li>
+<li><a href="../StudyDesign/">StudyDesign</a></li>
+<li><a href="../StudyArm/">StudyArm</a></li>
 <li><a href="../Investigation/">Investigation</a></li>
 <li><a href="../Arm/">Arm</a></li>
 <li><a href="../Participant/">Participant</a></li>
 <li><a href="../StudyEvent/">StudyEvent</a></li>
 <li><a href="../LifeEvent/">LifeEvent</a></li>
 <li><a href="../ImmuneExposure/">ImmuneExposure</a></li>
-<li><a href="../Assessment/">Assessment</a></li>
 <li><a href="../Specimen/">Specimen</a></li>
 <li><a href="../Assay/">Assay</a></li>
 <li><a href="../Dataset/">Dataset</a></li>
 <li><a href="../Conclusion/">Conclusion</a></li>
+<li><a href="../Assessment/">Assessment</a></li>
+<li><a href="../Cell/">Cell</a></li>
+<li><a href="../Tissue/">Tissue</a></li>
+<li><a href="../ImmuneSystem/">ImmuneSystem</a></li>
+<li><a href="../Model/">Model</a></li>
+<li><a href="../ModelingFramework/">ModelingFramework</a></li>
 </ul>
 </li>
 </ul>
@@ -278,7 +296,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -305,7 +323,7 @@
 <details>
 <pre><code class="language-yaml">name: NamedThing
 description: Anything we want to identify, name, and describe.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 abstract: true
 slots:
 - id
@@ -318,13 +336,13 @@ slots:
 <details>
 <pre><code class="language-yaml">name: NamedThing
 description: Anything we want to identify, name, and describe.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 abstract: true
 attributes:
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -338,7 +356,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -349,7 +367,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

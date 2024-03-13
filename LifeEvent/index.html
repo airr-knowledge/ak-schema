@@ -361,13 +361,13 @@
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
-<td><a href="../Assessment/">Assessment</a></td>
+<td><a href="../Specimen/">Specimen</a></td>
 <td><a href="../life_event/">life_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
-<td><a href="../Specimen/">Specimen</a></td>
+<td><a href="../Assessment/">Assessment</a></td>
 <td><a href="../life_event/">life_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
@@ -377,7 +377,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -404,7 +404,7 @@
 <details>
 <pre><code class="language-yaml">name: LifeEvent
 description: An event in which a study participant participates.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
 - participant
@@ -424,13 +424,13 @@ class_uri: BFO:0000015
 <details>
 <pre><code class="language-yaml">name: LifeEvent
 description: An event in which a study participant participates.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
   participant:
     name: participant
     description: The participant of a life event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: RO:0000057
     alias: participant
@@ -441,7 +441,7 @@ attributes:
   study_event:
     name: study_event
     description: The study event corresponding to a life event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: study_event
     owner: LifeEvent
@@ -451,7 +451,7 @@ attributes:
   life_event_type:
     name: life_event_type
     description: The specific type of a life event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: rdf:type
     alias: life_event_type
@@ -462,7 +462,7 @@ attributes:
   geolocation:
     name: geolocation
     description: The geolocation of a participant at birth
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: RO:0001025
     alias: geolocation
@@ -474,7 +474,7 @@ attributes:
   t0_event:
     name: t0_event
     description: The T0 event used to specify the time of this life event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: t0_event
     owner: LifeEvent
@@ -484,7 +484,7 @@ attributes:
   t0_event_type:
     name: t0_event_type
     description: The type of the T0 event used to specify the time of this life event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: t0_event_type
     owner: LifeEvent
@@ -494,7 +494,7 @@ attributes:
   start:
     name: start
     description: The start time of this life event, relative to the T0 event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: start
     owner: LifeEvent
@@ -504,7 +504,7 @@ attributes:
   duration:
     name: duration
     description: The duration of this life event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: duration
     owner: LifeEvent
@@ -515,7 +515,7 @@ attributes:
     name: time_unit
     description: The time unit used to measure the start and duration of this life
       event
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: time_unit
     owner: LifeEvent
@@ -525,7 +525,7 @@ attributes:
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -539,7 +539,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -550,7 +550,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

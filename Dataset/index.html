@@ -304,7 +304,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -330,7 +330,7 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Dataset
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
 - assessments
@@ -342,13 +342,13 @@ class_uri: IAO:0000100
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Dataset
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
   assessments:
     name: assessments
     description: The assessment that a dataset is about
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: IAO:0000136
     multivalued: true
@@ -361,7 +361,7 @@ attributes:
   assays:
     name: assays
     description: The assays that a dataset is about
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: IAO:0000136
     multivalued: true
@@ -369,12 +369,13 @@ attributes:
     owner: Dataset
     domain_of:
     - Container
+    - Investigation
     - Dataset
     range: Assay
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -388,7 +389,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -399,7 +400,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

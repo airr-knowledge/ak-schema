@@ -211,11 +211,31 @@
     class Investigation
       NamedThing &lt;|-- Investigation
 
+      Investigation : assays
+
+          Investigation --&gt; Assay : assays
+
+      Investigation : conclusions
+
+          Investigation --&gt; Conclusion : conclusions
+
       Investigation : description
+
+      Investigation : documents
+
+          Investigation --&gt; Reference : documents
 
       Investigation : id
 
       Investigation : name
+
+      Investigation : participants
+
+          Investigation --&gt; Participant : participants
+
+      Investigation : study_design
+
+          Investigation --&gt; StudyDesign : study_design
 
 
 </div>
@@ -237,6 +257,36 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../study_design/">study_design</a></td>
+<td>0..1 <br/> <a href="../StudyDesign/">StudyDesign</a></td>
+<td>The plan for the investigation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../participants/">participants</a></td>
+<td>0..* <br/> <a href="../Participant/">Participant</a></td>
+<td>The participants involved with the investigation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../documents/">documents</a></td>
+<td>0..* <br/> <a href="../Reference/">Reference</a></td>
+<td>The documents produced by the investigation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../assays/">assays</a></td>
+<td>0..* <br/> <a href="../Assay/">Assay</a></td>
+<td>The assays that a dataset is about</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../conclusions/">conclusions</a></td>
+<td>0..* <br/> <a href="../Conclusion/">Conclusion</a></td>
+<td>The conclusions from the investigation</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../id/">id</a></td>
 <td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
@@ -297,7 +347,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -324,8 +374,14 @@
 <details>
 <pre><code class="language-yaml">name: Investigation
 description: A scientific investigation.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
+slots:
+- study_design
+- participants
+- documents
+- assays
+- conclusions
 class_uri: OBI:0000066
 
 </code></pre>
@@ -334,13 +390,73 @@ class_uri: OBI:0000066
 <details>
 <pre><code class="language-yaml">name: Investigation
 description: A scientific investigation.
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
+  study_design:
+    name: study_design
+    description: The plan for the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: study_design
+    owner: Investigation
+    domain_of:
+    - Investigation
+    range: StudyDesign
+  participants:
+    name: participants
+    description: The participants involved with the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: RO:0000057
+    multivalued: true
+    alias: participants
+    owner: Investigation
+    domain_of:
+    - Container
+    - Investigation
+    range: Participant
+  documents:
+    name: documents
+    description: The documents produced by the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    multivalued: true
+    alias: documents
+    owner: Investigation
+    domain_of:
+    - Investigation
+    range: Reference
+  assays:
+    name: assays
+    description: The assays that a dataset is about
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: IAO:0000136
+    multivalued: true
+    alias: assays
+    owner: Investigation
+    domain_of:
+    - Container
+    - Investigation
+    - Dataset
+    range: Assay
+  conclusions:
+    name: conclusions
+    description: The conclusions from the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    multivalued: true
+    alias: conclusions
+    owner: Investigation
+    domain_of:
+    - Container
+    - Investigation
+    range: Conclusion
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -354,7 +470,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -365,7 +481,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:description
     alias: description

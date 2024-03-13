@@ -317,7 +317,8 @@
 
 
 <h1 id="slot-conclusions">Slot: conclusions</h1>
-<p>URI: <a href="https://w3id.org/airr-knowledge/ak-schema/conclusions">ak_schema:conclusions</a></p>
+<p><em>The conclusions from the investigation</em></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/conclusions">ak_schema:conclusions</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -330,6 +331,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../Investigation/">Investigation</a></td>
+<td>A scientific investigation</td>
+<td>no</td>
+</tr>
 <tr>
 <td><a href="../Container/">Container</a></td>
 <td>A container for instances of multiple classes</td>
@@ -349,21 +355,21 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: conclusions
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+description: The conclusions from the investigation
+from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 multivalued: true
 alias: conclusions
-owner: Container
 domain_of:
 - Container
+- Investigation
 range: Conclusion
-inlined: true
 
 </code></pre>
 

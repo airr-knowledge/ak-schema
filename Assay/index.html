@@ -316,6 +316,12 @@
 <td><a href="./">Assay</a></td>
 </tr>
 <tr>
+<td><a href="../Investigation/">Investigation</a></td>
+<td><a href="../assays/">assays</a></td>
+<td>range</td>
+<td><a href="./">Assay</a></td>
+</tr>
+<tr>
 <td><a href="../Dataset/">Dataset</a></td>
 <td><a href="../assays/">assays</a></td>
 <td>range</td>
@@ -326,7 +332,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/airr-knowledge/ak-schema</li>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -352,7 +358,7 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: Assay
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
 - specimen
@@ -367,13 +373,13 @@ class_uri: OBI:0000070
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: Assay
-from_schema: https://w3id.org/airr-knowledge/ak-schema
+from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
   specimen:
     name: specimen
     description: The specimen that was input for an assay
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: OBI:0000293
     alias: specimen
@@ -384,7 +390,7 @@ attributes:
   assay_type:
     name: assay_type
     description: The specific type of an assay
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: rdf:type
     alias: assay_type
@@ -395,40 +401,40 @@ attributes:
   target_entity_type:
     name: target_entity_type
     description: The type of the entity being measured
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: target_entity_type
     owner: Assay
     domain_of:
-    - Assessment
     - Assay
+    - Assessment
     range: string
   value:
     name: value
     description: The measurement result value
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: value
     owner: Assay
     domain_of:
-    - Assessment
     - Assay
+    - Assessment
     range: string
   unit:
     name: unit
     description: The measurement result value unit
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: unit
     owner: Assay
     domain_of:
-    - Assessment
     - Assay
+    - Assessment
     range: string
   id:
     name: id
     description: A unique identifier for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
@@ -442,7 +448,7 @@ attributes:
   name:
     name: name
     description: A human-readable name for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -453,7 +459,7 @@ attributes:
   description:
     name: description
     description: A human-readable description for a thing
-    from_schema: https://w3id.org/airr-knowledge/ak-schema
+    from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:description
     alias: description
