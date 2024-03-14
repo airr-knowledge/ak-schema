@@ -7,9 +7,8 @@ classes:
   NamedThing:
     abstract: true
     description: >-
-      Anything we want to identify, name, and describe.
+      Anything we want to name and describe.
     slots:
-      - id
       - name
       - description
 
