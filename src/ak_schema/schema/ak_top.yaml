@@ -22,6 +22,7 @@ prefixes:
   GAZ: http://purl.obolibrary.org/obo/GAZ_
   IAO: http://purl.obolibrary.org/obo/IAO_
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
   OBI: http://purl.obolibrary.org/obo/OBI_
   OGMS: http://purl.obolibrary.org/obo/OGMS_
   OMRSE: http://purl.obolibrary.org/obo/OMRSE_
