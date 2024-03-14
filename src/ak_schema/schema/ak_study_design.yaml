@@ -4,32 +4,23 @@ name: ak-schema
 
 classes:
 
-  StudyDesign:
-    is_a: NamedThing
-    class_uri: OBI:0500000 # study design
-    description: A plan for a scientific investigation
-    slots:
-      - study_arms
-
-  StudyArm:
-    is_a: NamedThing
-    class_uri: OBI:0000272 # protocol
-    description: A protocol that specifies a population for investigation
-    slots:
-      - inclusion_criteria
-      - exclusion_criteria
-
   Investigation:
     is_a: NamedThing
     class_uri: OBI:0000066 # investigation
     description: >-
       A scientific investigation.
     slots:
-      - study_design
-      - participants
-      - documents
-      - assays
-      - conclusions
+      - investigation_id
+      - archival_id
+      - study_type
+      - inclusion_criteria
+      - exclusion_criteria
+      - release_date
+      - update_date
+      # has participants
+      # has document
+      # has assays
+      # has conclusions
 
   Reference:
     class_uri: IAO:0000310 # document
@@ -56,6 +47,8 @@ classes:
       A population of participants of an investigation.
     slots:
       - investigation
+      - inclusion_criteria
+      - exclusion_criteria
 
   Participant:
     is_a: NamedThing
@@ -114,37 +107,33 @@ classes:
 
 
 slots:
-  study_arms:
-    description: The protocols for gathering the populations being investigated
-    slot_uri: BFO:0000051 # has part
-    range: StudyArm
-    multivalued: true
-
+  investigation_id:
+    description: A unique AKC identifier for an investigation
+    identifier: true
+    required: true
+    slot_uri: schema:identifier
+    range: uriorcurie
+  archival_id:
+    description: Identifier for external archival resource for the investigation, e.g., BioProject
+    required: true
+    slot_uri: schema:identifier
+    range: uriorcurie
+  study_type:
+    description: Type of study design
+    slot_uri: rdf:type
+    range: StudyType
   inclusion_criteria:
     description: Participants in an investigation must meet this criteria
     range: string
   exclusion_criteria:
     description: Participants are excluded from an investigation if they meet this criteria
     range: string
-
-  study_design:
-    description: The plan for the investigation
-    range: StudyDesign
-
-  participants:
-    description: The participants involved with the investigation
-    slot_uri: RO:0000057 # has participant
-    range: Participant
-    multivalued: true
-  documents:
-    description: The documents produced by the investigation
-    # slot_uri? No inverse of is about?
-    range: Reference
-    multivalued: true
-  conclusions:
-    description: The conclusions from the investigation
-    range: Conclusion
-    multivalued: true
+  release_date:
+    description: Initial release of the investigation and its data
+    range: datetime
+  update_date:
+    description: Subsequence updates to the investigation or its data
+    range: datetime
 
   sources:
     description: The source URLs for a reference
@@ -268,6 +257,15 @@ slots:
     # TODO: range: DiseaseSeverity
 
 enums:
+  StudyType:
+    reachable_from:
+      source_ontology: obo:ncit
+      source_nodes:
+        - NCIT:C63536 ## study
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
   Species:
     permissible_values:
       Homo sapiens (human):
