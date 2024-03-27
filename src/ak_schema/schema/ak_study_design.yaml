@@ -296,10 +296,7 @@ enums:
       Other:
         meaning: OMRSE:00000214
       African American:
-      American Indian or Alaska Native:
       Asian or Pacific Islander:
-      Asian:
-      Black or African American:
       Black:
       Brazilian:
       Chinese:
@@ -315,10 +312,8 @@ enums:
       Mixed:
       NR:
       Native American or Alaska Native:
-      Native Hawaiian or Other Pacific Islander:
       Native:
       Unknown racial group:
-      White:
       White, Asian:
       White, Asian, Black:
       White, Caucasian:
