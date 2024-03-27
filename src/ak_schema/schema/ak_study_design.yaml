@@ -206,7 +206,7 @@ slots:
     range: Geolocation
     slot_uri: RO:0001025 # located in
   strain:
-    description: The of the participant (non-human study participants)
+    description: The strain of the participant (non-human study participants)
     range: Strain
 
   arms:
