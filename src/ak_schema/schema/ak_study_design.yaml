@@ -67,6 +67,11 @@ classes:
       - species
       - biological_sex # IEDB gathers this
       - phenotypic_sex # AIRR gathers this
+      - age # AIRR gathers this
+      - age_unit # AIRR gathers this
+      - age_event # AIRR gathers this
+      - linked_particpant_id # AIRR gathers this
+      - linked_particpant_type # AIRR gather this
       - race # For human organisms
       - ethnicity # For human organisms
       - geolocation # at birth
@@ -195,6 +200,13 @@ slots:
     description: The phenotypic sex of a participant
     range: PhenotypicSex
     slot_uri: RO:0000053 # has_characteristic
+  age:
+    description: The age of a participant relative to age_event
+  age_unit:
+    description: Units used to describe the age
+  age_event:
+    description: The event to which the age is relative
+    range: LifeEvent
   race:
     description: The race of a participant
     range: Race
