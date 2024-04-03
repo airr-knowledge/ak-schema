@@ -70,8 +70,6 @@ classes:
       - age # AIRR gathers this
       - age_unit # AIRR gathers this
       - age_event # AIRR gathers this
-      - linked_particpant_id # AIRR gathers this
-      - linked_particpant_type # AIRR gather this
       - race # For human organisms
       - ethnicity # For human organisms
       - geolocation # at birth
