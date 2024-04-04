@@ -17,10 +17,10 @@ classes:
       - exclusion_criteria
       - release_date
       - update_date
-      # has participants
-      # has document
-      # has assays
-      # has conclusions
+      - participants
+      - documents
+      - assays
+      - conclusions
 
   Reference:
     class_uri: IAO:0000310 # document
@@ -134,6 +134,20 @@ slots:
   update_date:
     description: Subsequence updates to the investigation or its data
     range: datetime
+  participants:
+    description: The participants involved with the investigation
+    slot_uri: RO:0000057 # has participant
+    range: Participant
+    multivalued: true
+  documents:
+    description: The documents produced by the investigation
+    # slot_uri? No inverse of is about?
+    range: Reference
+    multivalued: true
+  conclusions:
+    description: The conclusions from the investigation
+    range: Conclusion
+    multivalued: true
 
   sources:
     description: The source URLs for a reference
