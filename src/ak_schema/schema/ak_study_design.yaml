@@ -58,10 +58,15 @@ classes:
     slots:
       - arm
       - species
-      - biological_sex
-      - race
-      - ethnicity
+      - biological_sex # IEDB gathers this
+      - phenotypic_sex # AIRR gathers this
+      - age # AIRR gathers this
+      - age_unit # AIRR gathers this
+      - age_event # AIRR gathers this
+      - race # For human organisms
+      - ethnicity # For human organisms
       - geolocation # at birth
+      - strain # For non-human organisms
       
   StudyEvent:
     is_a: NamedThing
@@ -178,6 +183,17 @@ slots:
     description: The biological sex of a participant
     range: BiologicalSex
     slot_uri: RO:0000053 # has_characteristic
+  phenotypic_sex:
+    description: The phenotypic sex of a participant
+    range: PhenotypicSex
+    slot_uri: RO:0000053 # has_characteristic
+  age:
+    description: The age of a participant relative to age_event
+  age_unit:
+    description: Units used to describe the age
+  age_event:
+    description: The event to which the age is relative
+    range: LifeEvent
   race:
     description: The race of a participant
     range: Race
@@ -188,6 +204,9 @@ slots:
     description: The geolocation of a participant at birth
     range: Geolocation
     slot_uri: RO:0001025 # located in
+  strain:
+    description: The strain of the participant (non-human study participants)
+    range: Strain
 
   arms:
     description: The arms that are relevant for a study event
@@ -259,6 +278,17 @@ enums:
         meaning: PATO:0020002
       male:
         meaning: PATO:0020001
+  PhenotypicSex:
+    permissible_values:
+      female:
+        meaning: PATO:0000383
+      male:
+        meaning: PATO:0000384
+      hermaphrodite: #AIRR
+        meaning: PATO:0001340
+      intersex: # AIRR
+      pooled: # AIRR
+      not collected: # AIRR
   Race:
     permissible_values:
       American Indian or Alaska Native:
@@ -273,6 +303,29 @@ enums:
         meaning: OMRSE:00000219
       Other:
         meaning: OMRSE:00000214
+      African American:
+      Asian or Pacific Islander:
+      Black:
+      Brazilian:
+      Chinese:
+      German/East Indian:
+      Hispanic or Latino:
+      Hispanic:
+      Indian:
+      Indian- Irish- French- polish:
+      Korean:
+      Middle Eastern European:
+      Middle Eastern:
+      Mixed racial group:
+      Mixed:
+      NR:
+      Native American or Alaska Native:
+      Native:
+      Unknown racial group:
+      White, Asian:
+      White, Asian, Black:
+      White, Caucasian:
+      White-British:
   Ethnicity:
     permissible_values:
       Hispanic or Latino:
@@ -281,6 +334,26 @@ enums:
         meaning: OMRSE:00000208
       Other:
         meaning: OMRSE:00000206
+      African:
+      African-American:
+      Arab:
+      Arabigan:
+      Asian:
+      Black or Black British - African:
+      Black:
+      Caucasian:
+      Declined:
+      Han:
+      Hispanic:
+      Italian:
+      Latin:
+      NR:
+      Non-Hispanic or Latino:
+      Non-Hispanic:
+      Other - Not Stated:
+      SE Asian:
+      Unknown Ethnicity:
+      White:
   Geolocation:
     permissible_values:
       "US: New York":
@@ -335,6 +408,17 @@ enums:
         meaning: GAZ:00002888
       "US: Kansas":
         meaning: GAZ:00004435
+  Strain:
+    permissible_values:
+      1D2beta:
+      BALB/cByJ:
+      Balb/c:
+      C57BL/6:
+      C57BL/6J:
+      JHD-/- MRL/MpJ-Faslp:
+      LDLR+/+:
+      LDLR-/-:
+      pet shop mouse:
   LifeEventProcess:
     permissible_values:
       Documented exposure without evidence for disease:
