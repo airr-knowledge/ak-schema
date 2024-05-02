@@ -25,3 +25,10 @@ RUN mkdir /ak-schema
 COPY . /ak-schema
 
 RUN cd /ak-schema && make install
+
+# Install these two packages required for schema-automator.
+# Notes: This downgrades the urllib3 version to urllib3-1.26.18
+# poetry.lock states that it requires urllib3 = ">=1.21.1,<3"
+# so this should be fine.
+RUN pip install appengine-python-standard
+RUN pip install quantulum3[classifier]
