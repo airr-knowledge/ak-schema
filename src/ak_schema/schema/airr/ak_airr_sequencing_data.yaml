@@ -1,0 +1,53 @@
+sequencing_data_id:
+    name: sequencing_data_id
+    description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
+    range: string
+
+file_type:
+    name: file_type
+    description: File format for the raw reads or sequences
+    range: FileType
+    enum_values: fasta,fastq,null
+
+filename:
+    name: filename
+    description: File name for the raw reads or sequences. The first file in paired-read sequencing.
+    range: string
+
+read_direction:
+    name: read_direction
+    description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
+    range: ReadDirection
+    enum_values: forward,reverse,mixed,null
+
+read_length:
+    name: read_length
+    description: Read length in bases for the first file in paired-read sequencing
+    range: integer
+
+paired_filename:
+    name: paired_filename
+    description: File name for the second file in paired-read sequencing
+    range: string
+
+paired_read_direction:
+    name: paired_read_direction
+    description: Read direction for the second file in paired-read sequencing
+    range: PairedReadDirection
+    enum_values: forward,reverse,mixed,null
+
+paired_read_length:
+    name: paired_read_length
+    description: Read length in bases for the second file in paired-read sequencing
+    range: integer
+
+index_filename:
+    name: index_filename
+    description: File name for the index file
+    range: string
+
+index_length:
+    name: index_length
+    description: Read length in bases for the index file
+    range: integer
+

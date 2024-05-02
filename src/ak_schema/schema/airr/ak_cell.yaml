@@ -1,0 +1,45 @@
+cell_id:
+    name: cell_id
+    description: Identifier defining the cell of origin for the query sequence.
+    range: string
+
+rearrangements:
+    name: rearrangements
+    description: Array of sequence identifiers defined for the Rearrangement object
+    range: string
+
+receptors:
+    name: receptors
+    description: Array of receptor identifiers defined for the Receptor object
+    range: string
+
+repertoire_id:
+    name: repertoire_id
+    description: Identifier to the associated repertoire in study metadata.
+    range: string
+
+data_processing_id:
+    name: data_processing_id
+    description: Identifier of the data processing object in the repertoire metadata for this clone.
+    range: string
+
+expression_study_method:
+    name: expression_study_method
+    description: Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary.
+    range: string
+
+expression_raw_doi:
+    name: expression_raw_doi
+    description: DOI of raw data set containing the current event
+    range: string
+
+expression_index:
+    name: expression_index
+    description: Index addressing the current event within the raw data set.
+    range: string
+
+virtual_pairing:
+    name: virtual_pairing
+    description: boolean to indicate if pairing was inferred.
+    range: boolean
+
