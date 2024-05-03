@@ -12,7 +12,7 @@ from airr.schema import Schema
 
 def processField(field, field_spec, block, required_fields, field_path,
                     airr_class, airr_api_query, airr_api_response,
-                    labels, table, verbose):
+                    labels, table, verbose, recursive=False):
 
         # Get the required fields for this schema object
         if verbose:
@@ -57,9 +57,19 @@ def processField(field, field_spec, block, required_fields, field_path,
         # and we don't want to add this field to our final field table. If it an array
         # of basic types (integer, string) then we do want to add it to the field table.
         if 'type' in field_spec and field_spec['type'] == 'array':
-            if ('$ref' in field_spec['items'] or 'allOf' in field_spec['items'] or 
-                ('type' in field_spec['items'] and field_spec['items']['type'] == 'object')):
-                append = False
+            if '$ref' in field_spec['items']:
+                if recursive:
+                    append = False
+                else:
+                    field_dict['airr_is_array'] = True
+                    append = True
+                if verbose:
+                    print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
+            elif 'allOf' in field_spec['items'] or ('type' in field_spec['items'] and field_spec['items']['type'] == 'object'):
+                if recursive:
+                    append = False
+                else:
+                    append = True
                 if verbose:
                     print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
             else:
@@ -101,13 +111,19 @@ def processField(field, field_spec, block, required_fields, field_path,
             if k == 'x-airr':
                 # Iterated over the x-airr schema objects.
                 for xairr_k, xairr_v in v.items():
-                    # If it is an ontology object, we don't record anything.
+                    # If it is an ontology object, record the ID and label
                     if xairr_k == 'ontology':
-                        label = 'airr_ontology_top'
+                        label = 'airr_ontology_top_id'
                         if not label in labels:
                             labels.append(label)
                         # Add the value of this field to the column.
                         field_dict[label] = xairr_v['top_node']['id']
+
+                        label = 'airr_ontology_top_label'
+                        if not label in labels:
+                            labels.append(label)
+                        # Add the value of this field to the column.
+                        field_dict[label] = xairr_v['top_node']['label']
                     # The miairr tag is a controlled vocabulary of "essential",
                     # "important", or "defined". It controls the setting of two
                     # columns in the mapping, airr_miairr and airr_required.
@@ -184,10 +200,11 @@ def processField(field, field_spec, block, required_fields, field_path,
                         # We recurse on the new schema block, making sure that we track
                         # that we are processing a new object and that the API field 
                         # references need to reference the hierarchy correctly. 
-                        #labels, table = extractBlock(new_schema_name, airr_class,
-                        #                     airr_api_query+field_dict['airr']+'.',
-                        #                     airr_api_response+field_dict['airr']+'.',
-                        #                     labels, table, verbose)
+                        if recursive:
+                            labels, table = extractBlock(new_schema_name, airr_class,
+                                             airr_api_query+field_dict['airr']+'.',
+                                             airr_api_response+field_dict['airr']+'.',
+                                             labels, table, verbose, recursive)
                 elif k == 'items':
                     # Handle a list of items, meaning we have an array. In the AIRR
                     # specification we can have an array of $ref objects or an
@@ -208,7 +225,7 @@ def processField(field, field_spec, block, required_fields, field_path,
                                                       airr_class,
                                                       airr_api_query+field+".",
                                                       airr_api_response+field+".0.",
-                                                      labels, table, verbose)
+                                                      labels, table, verbose, recursive)
                     for item_key, item_value in v.items():
                         if item_key == '$ref':
                             # The item is a $ref, get the sub-object and process it.
@@ -216,10 +233,11 @@ def processField(field, field_spec, block, required_fields, field_path,
                             new_schema_name = ref_array[1]
                             # Note the API response has a .0. in it because this
                             # is an array.
-                            #labels, table = extractBlock(new_schema_name, airr_class,
-                            #                airr_api_query+field_dict['airr']+'.',
-                            #                airr_api_response+field_dict['airr']+'.0.',
-                            #                labels, table, verbose)
+                            if recursive:
+                                labels, table = extractBlock(new_schema_name, airr_class,
+                                            airr_api_query+field_dict['airr']+'.',
+                                            airr_api_response+field_dict['airr']+'.0.',
+                                            labels, table, verbose, recursive)
                         elif item_key == 'allOf':
                             # The item is an allOf so process each element.
                             for ref_dict in item_value:
@@ -229,13 +247,14 @@ def processField(field, field_spec, block, required_fields, field_path,
                                     new_schema_name = ref_array[1]
                                     # Note the API response has a .0. in it because
                                     # this is an array.
-                                    labels, table = extractBlock(new_schema_name,
+                                    if recursive:
+                                        labels, table = extractBlock(new_schema_name,
                                                airr_class,
                                                airr_api_query+field_dict['airr']+'.',
                                                airr_api_response+field_dict['airr']+'.0.',
-                                               labels, table, verbose)
+                                               labels, table, verbose, recursive)
                         elif item_key == 'type':
-                            # This is the special ase of handling a "type" for an "array". 
+                            # This is the special case of handling a "type" for an "array". 
                             # The only arrays that have a type are array fields. If this
                             # is the case, we want to set the type of the array field.
                             # First add it to the labels if we don't already have it.
@@ -297,7 +316,7 @@ def processField(field, field_spec, block, required_fields, field_path,
                                                   airr_class,
                                                   airr_api_query+field+".",
                                                   airr_api_response+field+".",
-                                                  labels, table, verbose)
+                                                  labels, table, verbose, recursive)
                 else:
                     if verbose:
                         print("**** processField: key, value = %s,%s\n"%(k,v))
@@ -343,12 +362,20 @@ def processField(field, field_spec, block, required_fields, field_path,
 # - table: An array of dictionaries, based on the table provided but with
 # new rows added as per the fields that were found in the current object.
 
-def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, table, verbose):
+def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, table, verbose, recursive=False):
 
     if verbose:
         print("#### extractBlock %s\n"%(block))
     # Use the AIRR library to get an AIRR Schema block for the current block.
-    schema = Schema(block)
+    try:
+        schema = Schema(block)
+    except Exception as e:
+        print(e)
+        # Return an empty set of labels and an empty dictionary.
+        return [],{}
+
+    if verbose:
+        print("#### got a schema\n")
 
     # Get the required fields for this schema object
     required_fields = schema.required
@@ -362,7 +389,7 @@ def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, t
             print("#### extractBlock: field spec %s\n"%(field_spec))
         labels, table = processField(field, field_spec, block, required_fields,"",
                                      airr_class, airr_api_query, airr_api_response,
-                                     labels, table, verbose)
+                                     labels, table, verbose, recursive)
 
     # We are done, return the labels and the table.
     return labels, table
@@ -376,6 +403,18 @@ def getArguments():
 
     # The block to process
     parser.add_argument("airr_block")
+    # Flag as to whether to process the block recursively
+    parser.add_argument(
+        "-r",
+        "--recursive",
+        action="store_true",
+        help="Process internally referenced objects recursively.")
+    # Flag as to whether we generate enums or the basic slots
+    parser.add_argument(
+        "-e",
+        "--enums",
+        action="store_true",
+        help="Generate LinkML enums rather than slots.")
     # Verbosity flag for debugging
     parser.add_argument(
         "-v",
@@ -408,7 +447,8 @@ if __name__ == "__main__":
     # Recursively process the block provided. This will recursively process any
     # $ref entries in the YAML and build correct entries for each field.
     labels, table = extractBlock(options.airr_block, options.airr_block,
-                                 '', '', labels, table, options.verbose)
+                                 '', '', labels, table,
+                                 options.verbose, options.recursive)
 
     # We need to do some special processing for our ontologies. The _id field of 
     # the ontology does not have an entry in the spec, so we need to copy a bunch
@@ -464,19 +504,40 @@ if __name__ == "__main__":
     for field, field_dict in table.items():
         # For each row, generate a LinkML specification for the field
         if 'airr' in field_dict:
-            print('%s:'%(field_dict['airr']))
-            print('    name: %s'%(field_dict['airr']))
-            if 'airr_description' in field_dict:
-                print('    description: %s'%(field_dict['airr_description']))
-            if 'airr_ontology_top' in field_dict:
-                print('    range: %s'%(convertCamelCase(field_dict['airr'])))
-                print('    top_node: %s'%(field_dict['airr_ontology_top']))
-            elif 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
-                print('    range: %s'%(convertCamelCase(field_dict['airr'])))
-                if 'airr_enum' in field_dict:
-                    print('    enum_values: %s'%(field_dict['airr_enum']))
-            elif 'airr_type' in field_dict:
-                print('    range: %s'%(field_dict['airr_type']))
+            if options.enums:
+                range_name = convertCamelCase(field_dict['airr'])
+                if 'airr_enum' in field_dict and 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
+                    print('%s:'%(range_name))
+                    print('  name: %s'%(range_name))
+                    print('  permissible_values:')
+
+                    enum_array = field_dict['airr_enum'].split(',')
+                    for enum_str in enum_array:
+                        print('    %s:'%(enum_str))
+                        print('      text: %s'%(enum_str))
+                if 'airr_ontology_top_id' in field_dict:
+                    print('%s:'%(range_name))
+                    print('  name: %s'%(range_name))
+                    print('  permissible_values:')
+                    print('    %s:'%(field_dict['airr_ontology_top_label']))
+                    print('      text: %s'%(field_dict['airr_ontology_top_label']))
+                    print('      meaning: %s'%(field_dict['airr_ontology_top_id']))
+            else:
+                print('%s:'%(field_dict['airr']))
+                print('  name: %s'%(field_dict['airr']))
+                if 'airr_description' in field_dict:
+                    print('  description: %s'%(field_dict['airr_description']))
+                if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
+                    print('  range: %s'%(convertCamelCase(field_dict['airr'])))
+                elif 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
+                    range_name = convertCamelCase(field_dict['airr'])
+                    print('  range: %s'%(range_name))
+                elif 'airr_is_array' in field_dict and field_dict['airr_is_array'] == True:
+                    print('  range: %s'%('ClassNameGoesHere'))
+                    print('  multivalued: true')
+                elif 'airr_type' in field_dict:
+                    print('  range: %s'%(field_dict['airr_type']))
+                print('')
 
         
         #for label in labels:
@@ -487,8 +548,6 @@ if __name__ == "__main__":
         #        print(field_dict[label], end='\t')
         #    else:
         #        print("", end='\t')
-        # End of row, print a new line character.
-        print("")
 
     # We are done, return success
     sys.exit(0)
