@@ -13,7 +13,7 @@ cell: Cell Expression Reactivity
 
 receptor: Receptor
 
-germline: GermlineSet
+germline: GermlineSet AlleleDescription SequenceDelineationV RearrangedSequence UnrearrangedSequence
 
 Study:
 	python $(SCRIPT_DIR)/airr2akc.py Study > $(AIRR_SCHEMA_DIR)/ak_slot_Study.yaml
@@ -90,4 +90,16 @@ Receptor:
 GermlineSet:
 	python $(SCRIPT_DIR)/airr2akc.py GermlineSet > $(AIRR_SCHEMA_DIR)/ak_slot_GermlineSet.yaml
 	python $(SCRIPT_DIR)/airr2akc.py -e GermlineSet > $(AIRR_SCHEMA_DIR)/ak_enum_GermlineSet.yaml
+AlleleDescription:
+	python $(SCRIPT_DIR)/airr2akc.py AlleleDescription > $(AIRR_SCHEMA_DIR)/ak_slot_AlleleDescription.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e AlleleDescription > $(AIRR_SCHEMA_DIR)/ak_enum_AlleleDescription.yaml
+RearrangedSequence:
+	python $(SCRIPT_DIR)/airr2akc.py RearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_slot_RearrangedSequence.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e RearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_enum_RearrangedSequence.yaml
+UnrearrangedSequence:
+	python $(SCRIPT_DIR)/airr2akc.py UnrearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_slot_UnrearrangedSequence.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e UnrearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_enum_UnrearrangedSequence.yaml
+SequenceDelineationV:
+	python $(SCRIPT_DIR)/airr2akc.py SequenceDelineationV > $(AIRR_SCHEMA_DIR)/ak_slot_SequenceDelineationV.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e SequenceDelineationV > $(AIRR_SCHEMA_DIR)/ak_enum_SequenceDelineationV.yaml
 
