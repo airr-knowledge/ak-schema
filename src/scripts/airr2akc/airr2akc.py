@@ -522,13 +522,20 @@ if __name__ == "__main__":
                     for enum_str in enum_array:
                         print('    %s:'%(enum_str))
                         print('      text: %s'%(enum_str))
-                if 'airr_ontology_top_id' in field_dict:
+                if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
                     print('%s:'%(range_name))
                     print('  name: %s'%(range_name))
                     print('  permissible_values:')
-                    print('    %s:'%(field_dict['airr_ontology_top_label']))
-                    print('      text: %s'%(field_dict['airr_ontology_top_label']))
-                    print('      meaning: %s'%(field_dict['airr_ontology_top_id']))
+                    if 'airr_ontology_top_id' in field_dict:
+                        print('    %s:'%(field_dict['airr_ontology_top_label']))
+                        print('      text: %s'%(field_dict['airr_ontology_top_label']))
+                        print('      meaning: %s'%(field_dict['airr_ontology_top_id']))
+                    elif 'airr_example' in field_dict:
+                        ontology_example_array = field_dict['airr_example'].split(',')
+                        print('    %s:'%(ontology_example_array[1]))
+                        print('      text: %s'%(ontology_example_array[1]))
+                        print('      meaning: %s'%(ontology_example_array[0]))
+
             else:
                 print('%s:'%(field_dict['airr']))
                 print('  name: %s'%(field_dict['airr']))

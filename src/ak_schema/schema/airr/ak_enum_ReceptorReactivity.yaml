@@ -1,3 +1,9 @@
+Antigen:
+  name: Antigen
+  permissible_values:
+     Circumsporozoite protein:
+      text:  Circumsporozoite protein
+      meaning: UNIPROT:P19597
 AntigenSourceSpecies:
   name: AntigenSourceSpecies
   permissible_values:
