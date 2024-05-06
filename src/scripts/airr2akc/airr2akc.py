@@ -307,9 +307,9 @@ def processField(field, field_spec, block, required_fields, field_path,
                             # enum value.
                             if enum_val is None:
                                 enum_val = 'null'
-                            value = value + ',' + enum_val
+                            value = value + ',' + str(enum_val)
                         else:
-                            value = enum_val
+                            value = str(enum_val)
                         count = count + 1
                     field_dict[label] = value
                 elif k == 'properties':
@@ -379,7 +379,7 @@ def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, t
     except Exception as e:
         print(e)
         # Return an empty set of labels and an empty dictionary.
-        return [],{}
+        sys.exit(1)
 
     if verbose:
         print("#### got a schema\n")
