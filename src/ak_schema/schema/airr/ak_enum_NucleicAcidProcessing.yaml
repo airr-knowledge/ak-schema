@@ -1,0 +1,62 @@
+TemplateClass:
+  name: TemplateClass
+  permissible_values:
+    DNA:
+      text: DNA
+    RNA:
+      text: RNA
+TemplateAmountUnit:
+  name: TemplateAmountUnit
+  permissible_values:
+    physical quantity:
+      text: physical quantity
+      meaning: UO:0000002
+LibraryGenerationMethod:
+  name: LibraryGenerationMethod
+  permissible_values:
+    PCR:
+      text: PCR
+    RT(RHP)+PCR:
+      text: RT(RHP)+PCR
+    RT(oligo-dT)+PCR:
+      text: RT(oligo-dT)+PCR
+    RT(oligo-dT)+TS+PCR:
+      text: RT(oligo-dT)+TS+PCR
+    RT(oligo-dT)+TS(UMI)+PCR:
+      text: RT(oligo-dT)+TS(UMI)+PCR
+    RT(specific)+PCR:
+      text: RT(specific)+PCR
+    RT(specific)+TS+PCR:
+      text: RT(specific)+TS+PCR
+    RT(specific)+TS(UMI)+PCR:
+      text: RT(specific)+TS(UMI)+PCR
+    RT(specific+UMI)+PCR:
+      text: RT(specific+UMI)+PCR
+    RT(specific+UMI)+TS+PCR:
+      text: RT(specific+UMI)+TS+PCR
+    RT(specific)+TS:
+      text: RT(specific)+TS
+    other:
+      text: other
+CompleteSequences:
+  name: CompleteSequences
+  permissible_values:
+    partial:
+      text: partial
+    complete:
+      text: complete
+    complete+untemplated:
+      text: complete+untemplated
+    mixed:
+      text: mixed
+PhysicalLinkage:
+  name: PhysicalLinkage
+  permissible_values:
+    none:
+      text: none
+    hetero_head-head:
+      text: hetero_head-head
+    hetero_tail-head:
+      text: hetero_tail-head
+    hetero_prelinked:
+      text: hetero_prelinked

@@ -1,0 +1,27 @@
+Species:
+  name: Species
+  permissible_values:
+    Gnathostomata:
+      text: Gnathostomata
+      meaning: NCBITAXON:7776
+Sex:
+  name: Sex
+  permissible_values:
+    male:
+      text: male
+    female:
+      text: female
+    pooled:
+      text: pooled
+    hermaphrodite:
+      text: hermaphrodite
+    intersex:
+      text: intersex
+    null:
+      text: null
+AgeUnit:
+  name: AgeUnit
+  permissible_values:
+    time unit:
+      text: time unit
+      meaning: UO:0000003
