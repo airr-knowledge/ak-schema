@@ -73,11 +73,11 @@ Cell:
 	python $(SCRIPT_DIR)/airr2akc.py Cell > $(AIRR_SCHEMA_DIR)/ak_slot_Cell.yaml
 	python $(SCRIPT_DIR)/airr2akc.py -e Cell > $(AIRR_SCHEMA_DIR)/ak_enum_Cell.yaml
 Expression:
-	python $(SCRIPT_DIR)/airr2akc.py Expression > $(AIRR_SCHEMA_DIR)/ak_slot_Expression.yaml
-	python $(SCRIPT_DIR)/airr2akc.py -e Expression > $(AIRR_SCHEMA_DIR)/ak_enum_Expression.yaml
+	python $(SCRIPT_DIR)/airr2akc.py CellExpression > $(AIRR_SCHEMA_DIR)/ak_slot_CellExpression.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e CellExpression > $(AIRR_SCHEMA_DIR)/ak_enum_CellExpression.yaml
 Reactivity:
-	python $(SCRIPT_DIR)/airr2akc.py Reactivity > $(AIRR_SCHEMA_DIR)/ak_slot_Reactivity.yaml
-	python $(SCRIPT_DIR)/airr2akc.py -e Reactivity > $(AIRR_SCHEMA_DIR)/ak_enum_Reactivity.yaml
+	python $(SCRIPT_DIR)/airr2akc.py ReceptorReactivity > $(AIRR_SCHEMA_DIR)/ak_slot_ReceptorReactivity.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e ReceptorReactivity > $(AIRR_SCHEMA_DIR)/ak_enum_ReceptorReactivity.yaml
 #
 # Rearrangement rules
 # 
