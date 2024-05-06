@@ -1,0 +1,35 @@
+expression_id:
+  name: expression_id
+  description: Identifier of this expression property measurement.
+  range: string
+
+cell_id:
+  name: cell_id
+  description: Identifier of the cell to which this expression data is related.
+  range: string
+
+repertoire_id:
+  name: repertoire_id
+  description: Identifier for the associated repertoire in study metadata.
+  range: string
+
+data_processing_id:
+  name: data_processing_id
+  description: Identifier of the data processing object in the repertoire metadata for this clone.
+  range: string
+
+property_type:
+  name: property_type
+  description: Keyword describing the property type and detection method used to measure the property value. The following keywords are recommended, but custom property types are also valid: "mrna_expression_by_read_count", "protein_expression_by_fluorescence_intensity", "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count" and "antigen_bait_binding_by_dna_barcode_count".
+  range: string
+
+property:
+  name: property
+  description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
+  range: Property
+
+value:
+  name: value
+  description: Level at which the property was observed in the experiment (non-normalized).
+  range: number
+

@@ -1,0 +1,75 @@
+ligand_type:
+  name: ligand_type
+  description: Classification of ligand binding to receptor
+  range: string
+
+antigen_type:
+  name: antigen_type
+  description: The type of antigen before processing by the immune system.
+  range: string
+
+antigen:
+  name: antigen
+  description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
+  range: Antigen
+
+antigen_source_species:
+  name: antigen_source_species
+  description: The species from which the antigen was isolated
+  range: AntigenSourceSpecies
+
+peptide_start:
+  name: peptide_start
+  description: Start position of the peptide within the reference protein sequence
+  range: integer
+
+peptide_end:
+  name: peptide_end
+  description: End position of the peptide within the reference protein sequence
+  range: integer
+
+mhc_class:
+  name: mhc_class
+  description: Class of MHC molecule, only present for MHC:x ligand types
+  range: string
+
+mhc_gene_1:
+  name: mhc_gene_1
+  description: The MHC gene to which the mhc_allele_1 belongs
+  range: MhcGene1
+
+mhc_allele_1:
+  name: mhc_allele_1
+  description: Allele designation of the MHC alpha chain
+  range: string
+
+mhc_gene_2:
+  name: mhc_gene_2
+  description: The MHC gene to which the mhc_allele_2 belongs
+  range: MhcGene2
+
+mhc_allele_2:
+  name: mhc_allele_2
+  description: Allele designation of the MHC class II beta chain or the invariant beta2-microglobin chain
+  range: string
+
+reactivity_method:
+  name: reactivity_method
+  description: The methodology used to assess expression (assay implemented in experiment)
+  range: string
+
+reactivity_readout:
+  name: reactivity_readout
+  description: Reactivity measurement read-out
+  range: string
+
+reactivity_value:
+  name: reactivity_value
+  description: The absolute (processed) value of the measurement
+  range: number
+
+reactivity_unit:
+  name: reactivity_unit
+  description: The unit of the measurement
+  range: string
+
