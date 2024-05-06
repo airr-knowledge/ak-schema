@@ -62,6 +62,13 @@ def processField(field, field_spec, block, required_fields, field_path,
                     append = False
                 else:
                     field_dict['airr_is_array'] = True
+                    label = 'airr_array_schema'
+                    if not label in labels:
+                        labels.append(label)
+                    # Add the value of the $ref object to the dictionary
+                    schema_ref = field_spec['items']['$ref']
+                    schema = schema_ref.split('/')[1]
+                    field_dict[label] = schema
                     append = True
                 if verbose:
                     print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
@@ -533,7 +540,8 @@ if __name__ == "__main__":
                     range_name = convertCamelCase(field_dict['airr'])
                     print('  range: %s'%(range_name))
                 elif 'airr_is_array' in field_dict and field_dict['airr_is_array'] == True:
-                    print('  range: %s'%('ClassNameGoesHere'))
+                    if 'airr_array_schema' in field_dict:
+                        print('  range: %s'%(field_dict['airr_array_schema']))
                     print('  multivalued: true')
                 elif 'airr_type' in field_dict:
                     print('  range: %s'%(field_dict['airr_type']))
