@@ -45,6 +45,9 @@ prefixes:
   NCBITaxon:
     prefix_prefix: NCBITaxon
     prefix_reference: http://purl.obolibrary.org/obo/NCBITaxon_
+  NCIT:
+    prefix_prefix: NCIT
+    prefix_reference: http://purl.obolibrary.org/obo/NCIT_
   OBI:
     prefix_prefix: OBI
     prefix_reference: http://purl.obolibrary.org/obo/OBI_
@@ -318,6 +321,16 @@ types:
     uri: xsd:string
     repr: str
 enums:
+  StudyType:
+    name: StudyType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_ontology: obo:ncit
+      source_nodes:
+      - NCIT:C63536
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   Species:
     name: Species
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -338,6 +351,25 @@ enums:
       male:
         text: male
         meaning: PATO:0020001
+  PhenotypicSex:
+    name: PhenotypicSex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      female:
+        text: female
+        meaning: PATO:0000383
+      male:
+        text: male
+        meaning: PATO:0000384
+      hermaphrodite:
+        text: hermaphrodite
+        meaning: PATO:0001340
+      intersex:
+        text: intersex
+      pooled:
+        text: pooled
+      not collected:
+        text: not collected
   Race:
     name: Race
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -360,6 +392,52 @@ enums:
       Other:
         text: Other
         meaning: OMRSE:00000214
+      African American:
+        text: African American
+      Asian or Pacific Islander:
+        text: Asian or Pacific Islander
+      Black:
+        text: Black
+      Brazilian:
+        text: Brazilian
+      Chinese:
+        text: Chinese
+      German/East Indian:
+        text: German/East Indian
+      Hispanic or Latino:
+        text: Hispanic or Latino
+      Hispanic:
+        text: Hispanic
+      Indian:
+        text: Indian
+      Indian- Irish- French- polish:
+        text: Indian- Irish- French- polish
+      Korean:
+        text: Korean
+      Middle Eastern European:
+        text: Middle Eastern European
+      Middle Eastern:
+        text: Middle Eastern
+      Mixed racial group:
+        text: Mixed racial group
+      Mixed:
+        text: Mixed
+      NR:
+        text: NR
+      Native American or Alaska Native:
+        text: Native American or Alaska Native
+      Native:
+        text: Native
+      Unknown racial group:
+        text: Unknown racial group
+      White, Asian:
+        text: White, Asian
+      White, Asian, Black:
+        text: White, Asian, Black
+      White, Caucasian:
+        text: White, Caucasian
+      White-British:
+        text: White-British
   Ethnicity:
     name: Ethnicity
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -373,6 +451,46 @@ enums:
       Other:
         text: Other
         meaning: OMRSE:00000206
+      African:
+        text: African
+      African-American:
+        text: African-American
+      Arab:
+        text: Arab
+      Arabigan:
+        text: Arabigan
+      Asian:
+        text: Asian
+      Black or Black British - African:
+        text: Black or Black British - African
+      Black:
+        text: Black
+      Caucasian:
+        text: Caucasian
+      Declined:
+        text: Declined
+      Han:
+        text: Han
+      Hispanic:
+        text: Hispanic
+      Italian:
+        text: Italian
+      Latin:
+        text: Latin
+      NR:
+        text: NR
+      Non-Hispanic or Latino:
+        text: Non-Hispanic or Latino
+      Non-Hispanic:
+        text: Non-Hispanic
+      Other - Not Stated:
+        text: Other - Not Stated
+      SE Asian:
+        text: SE Asian
+      Unknown Ethnicity:
+        text: Unknown Ethnicity
+      White:
+        text: White
   Geolocation:
     name: Geolocation
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -455,6 +573,28 @@ enums:
       'US: Kansas':
         text: 'US: Kansas'
         meaning: GAZ:00004435
+  Strain:
+    name: Strain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      1D2beta:
+        text: 1D2beta
+      BALB/cByJ:
+        text: BALB/cByJ
+      Balb/c:
+        text: Balb/c
+      C57BL/6:
+        text: C57BL/6
+      C57BL/6J:
+        text: C57BL/6J
+      JHD-/- MRL/MpJ-Faslp:
+        text: JHD-/- MRL/MpJ-Faslp
+      LDLR+/+:
+        text: LDLR+/+
+      LDLR-/-:
+        text: LDLR-/-
+      pet shop mouse:
+        text: pet shop mouse
   LifeEventProcess:
     name: LifeEventProcess
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -533,31 +673,100 @@ enums:
         text: other disease course
         meaning: ONTIE:0003547
 slots:
-  id:
-    name: id
-    description: A unique identifier for a thing
+  life_event:
+    name: life_event
+    description: The life event corresponding to an immune exposure
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: LifeEvent
+  specimen_type:
+    name: specimen_type
+    description: The type of this specimen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+  tissue:
+    name: tissue
+    description: The tissue from which this specimen was taken
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  process:
+    name: process
+    description: The type of specimen collection process that resulted in this specimen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  specimen:
+    name: specimen
+    description: The specimen that was input for an assay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: OBI:0000293
+    range: Specimen
+  assay_type:
+    name: assay_type
+    description: The specific type of an assay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+  target_entity_type:
+    name: target_entity_type
+    description: The type of the entity being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  value:
+    name: value
+    description: The measurement result value
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  unit:
+    name: unit
+    description: The measurement result value unit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  assessments:
+    name: assessments
+    description: The assessment that a dataset is about
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: IAO:0000136
+    multivalued: true
+    range: Assessment
+  datasets:
+    name: datasets
+    description: The datasets that support a conclusion
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    multivalued: true
+    range: Dataset
+  result:
+    name: result
+    description: The content of the conclusion
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  data_location_type:
+    name: data_location_type
+    description: The type of location where data was found, e.g. figure, table
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  data_location_value:
+    name: data_location_value
+    description: An identifier for the location of the data, e.g. figure 2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  organism:
+    name: organism
+    description: The type of organism that the conclusion is about
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: IAO:0000136
+    range: Species
+  experiment_type:
+    name: experiment_type
+    description: The type of experiment that supports the conclusion
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  assessment_type:
+    name: assessment_type
+    description: The specific type of an assessment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+  archival_id:
+    name: archival_id
+    description: Identifier for external archival resource for the investigation,
+      e.g., BioProject
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: schema:identifier
-    identifier: true
     range: uriorcurie
-    required: true
-  name:
-    name: name
-    description: A human-readable name for a thing
+  study_type:
+    name: study_type
+    description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: schema:name
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: schema:description
-  study_arms:
-    name: study_arms
-    description: The protocols for gathering the populations being investigated
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: BFO:0000051
-    multivalued: true
-    range: StudyArm
+    slot_uri: rdf:type
+    range: StudyType
   inclusion_criteria:
     name: inclusion_criteria
     description: Participants in an investigation must meet this criteria
@@ -569,11 +778,16 @@ slots:
       criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  study_design:
-    name: study_design
-    description: The plan for the investigation
+  release_date:
+    name: release_date
+    description: Initial release of the investigation and its data
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: StudyDesign
+    range: datetime
+  update_date:
+    name: update_date
+    description: Subsequence updates to the investigation or its data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: datetime
   participants:
     name: participants
     description: The participants involved with the investigation
@@ -581,6 +795,18 @@ slots:
     slot_uri: RO:0000057
     multivalued: true
     range: Participant
+  assays:
+    name: assays
+    description: The assays performed by the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    multivalued: true
+    range: Assay
+  simulations:
+    name: simulations
+    description: The simulations performed by the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    multivalued: true
+    range: Simulation
   documents:
     name: documents
     description: The documents produced by the investigation
@@ -643,16 +869,16 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
   investigation:
     name: investigation
-    description: The investigation in which an arm participates
+    description: An investigation in which the study arm participates
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0000056
     range: Investigation
-  arm:
-    name: arm
-    description: The arm that a participant is a member of
+  study_arm:
+    name: study_arm
+    description: The study arm that a participant is a member of
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0002350
-    range: Arm
+    range: StudyArm
   species:
     name: species
     description: The species of a participant
@@ -665,6 +891,25 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0000053
     range: BiologicalSex
+  phenotypic_sex:
+    name: phenotypic_sex
+    description: The phenotypic sex of a participant
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: RO:0000053
+    range: PhenotypicSex
+  age:
+    name: age
+    description: The age of a participant relative to age_event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  age_unit:
+    name: age_unit
+    description: Units used to describe the age
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  age_event:
+    name: age_event
+    description: The event to which the age is relative
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: LifeEvent
   race:
     name: race
     description: The race of a participant
@@ -681,12 +926,17 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0001025
     range: Geolocation
-  arms:
-    name: arms
-    description: The arms that are relevant for a study event
+  strain:
+    name: strain
+    description: The strain of the participant (non-human study participants)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Strain
+  study_arms:
+    name: study_arms
+    description: The study arms that are relevant for a study event
     from_schema: https://github.com/airr-knowledge/ak-schema
     multivalued: true
-    range: Arm
+    range: StudyArm
   participant:
     name: participant
     description: The participant of a life event
@@ -727,11 +977,6 @@ slots:
     description: The time unit used to measure the start and duration of this life
       event
     from_schema: https://github.com/airr-knowledge/ak-schema
-  life_event:
-    name: life_event
-    description: The life event corresponding to an immune exposure
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: LifeEvent
   exposure_material:
     name: exposure_material
     description: The material relevant to an immune exposure
@@ -752,291 +997,79 @@ slots:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
-  specimen_type:
-    name: specimen_type
-    description: The type of this specimen
+  akc_id:
+    name: akc_id
+    description: A unique identifier for a thing in the AKC.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: rdf:type
-  tissue:
-    name: tissue
-    description: The tissue from which this specimen was taken
+    slot_uri: schema:identifier
+    identifier: true
+    range: uriorcurie
+    required: true
+  source_uri:
+    name: source_uri
+    description: AKC reference to a foreign thing.
     from_schema: https://github.com/airr-knowledge/ak-schema
-  process:
-    name: process
-    description: The type of specimen collection process that resulted in this specimen
+    slot_uri: schema:identifier
+    identifier: true
+    range: uriorcurie
+    required: true
+  name:
+    name: name
+    description: A human-readable name for a thing
     from_schema: https://github.com/airr-knowledge/ak-schema
-  specimen:
-    name: specimen
-    description: The specimen that was input for an assay
+    slot_uri: schema:name
+  description:
+    name: description
+    description: A human-readable description for a thing
     from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: OBI:0000293
-    range: Specimen
-  assay_type:
-    name: assay_type
-    description: The specific type of an assay
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: rdf:type
-  target_entity_type:
-    name: target_entity_type
-    description: The type of the entity being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  value:
-    name: value
-    description: The measurement result value
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  unit:
-    name: unit
-    description: The measurement result value unit
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  assessments:
-    name: assessments
-    description: The assessment that a dataset is about
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: IAO:0000136
-    multivalued: true
-    range: Assessment
-  assays:
-    name: assays
-    description: The assays that a dataset is about
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: IAO:0000136
-    multivalued: true
-    range: Assay
-  datasets:
-    name: datasets
-    description: The datasets that support a conclusion
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
-    range: Dataset
-  result:
-    name: result
-    description: The content of the conclusion
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  data_location_type:
-    name: data_location_type
-    description: The type of location where data was found, e.g. figure, table
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  data_location_value:
-    name: data_location_value
-    description: An identifier for the location of the data, e.g. figure 2
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  organism:
-    name: organism
-    description: The type of organism that the conclusion is about
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: IAO:0000136
-    range: Species
-  experiment_type:
-    name: experiment_type
-    description: The type of experiment that supports the conclusion
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  assessment_type:
-    name: assessment_type
-    description: The specific type of an assessment
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: rdf:type
+    slot_uri: schema:description
 classes:
-  NamedThing:
-    name: NamedThing
-    description: Anything we want to identify, name, and describe.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    abstract: true
-    slots:
-    - id
-    - name
-    - description
-  PlannedProcess:
-    name: PlannedProcess
-    description: A process to realize a plan.
+  Model:
+    name: Model
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
     abstract: true
-  PlanSpecification:
-    name: PlanSpecification
-    description: A plan with specified actions to meet some objectives.
+    class_uri: EXO:0000072
+  ConceptualModel:
+    name: ConceptualModel
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: Model
     abstract: true
-  Container:
-    name: Container
-    description: A container for instances of multiple classes.
+    class_uri: EXO:0000073
+  CommunicativeModel:
+    name: CommunicativeModel
     from_schema: https://github.com/airr-knowledge/ak-schema
-    attributes:
-      investigations:
-        name: investigations
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Investigation
-        inlined: true
-      references:
-        name: references
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Reference
-        inlined: true
-      arms:
-        name: arms
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Arm
-        inlined: true
-      study_events:
-        name: study_events
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: StudyEvent
-        inlined: true
-      participants:
-        name: participants
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Participant
-        inlined: true
-      life_events:
-        name: life_events
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: LifeEvent
-        inlined: true
-      immune_exposures:
-        name: immune_exposures
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: ImmuneExposure
-        inlined: true
-      assessments:
-        name: assessments
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Assessment
-        inlined: true
-      specimens:
-        name: specimens
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Specimen
-        inlined: true
-      assays:
-        name: assays
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Assay
-        inlined: true
-      datasets:
-        name: datasets
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Dataset
-        inlined: true
-      conclusions:
-        name: conclusions
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        multivalued: true
-        range: Conclusion
-        inlined: true
-    tree_root: true
-  StudyDesign:
-    name: StudyDesign
-    description: A plan for a scientific investigation
+    is_a: Model
+    abstract: true
+  ModelSpecification:
+    name: ModelSpecification
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: PlanSpecification
+  ModelingFramework:
+    name: ModelingFramework
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
-    slots:
-    - study_arms
-    class_uri: OBI:0500000
-  StudyArm:
-    name: StudyArm
-    description: A protocol that specifies a population for investigation
+    class_uri: SBO:0000004
+  Simulation:
+    name: Simulation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: PlannedProcess
+    class_uri: APOLLO_SV:00000070
+  ImmuneSystem:
+    name: ImmuneSystem
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
-    slots:
-    - inclusion_criteria
-    - exclusion_criteria
-    class_uri: OBI:0000272
-  Investigation:
-    name: Investigation
-    description: A scientific investigation.
+    class_uri: UBERON:0002405
+  Cell:
+    name: Cell
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
-    slots:
-    - study_design
-    - participants
-    - documents
-    - assays
-    - conclusions
-    class_uri: OBI:0000066
-  Reference:
-    name: Reference
-    description: A document about an investigation.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slots:
-    - id
-    - sources
-    - investigations
-    - title
-    - authors
-    - journal
-    - issue
-    - month
-    - year
-    - pages
-    class_uri: IAO:0000310
-  Arm:
-    name: Arm
-    description: A population of participants of an investigation.
+    class_uri: CL:0000000
+  Tissue:
+    name: Tissue
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
-    slots:
-    - investigation
-    class_uri: OBI:0000181
-  Participant:
-    name: Participant
-    description: A participant in an investigation.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    slots:
-    - arm
-    - species
-    - biological_sex
-    - race
-    - ethnicity
-    - geolocation
-    class_uri: OBI:0100026
-  StudyEvent:
-    name: StudyEvent
-    description: An event that is part of the study design of an investigation.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    slots:
-    - arms
-    class_uri: BFO:0000015
-  LifeEvent:
-    name: LifeEvent
-    description: An event in which a study participant participates.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    slots:
-    - participant
-    - study_event
-    - life_event_type
-    - geolocation
-    - t0_event
-    - t0_event_type
-    - start
-    - duration
-    - time_unit
-    class_uri: BFO:0000015
-  ImmuneExposure:
-    name: ImmuneExposure
-    description: An event involving the immune system of a study participant.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    slots:
-    - life_event
-    - exposure_material
-    - disease
-    - disease_stage
-    - disease_severity
-    class_uri: BFO:0000015
+    class_uri: UBERON:0000479
   Specimen:
     name: Specimen
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1047,6 +1080,13 @@ classes:
     - tissue
     - process
     class_uri: OBI:0100051
+  SpecimenCollection:
+    name: SpecimenCollection
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: PlannedProcess
+    slots:
+    - specimen
+    class_uri: OBI:0000659
   Assay:
     name: Assay
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1090,50 +1130,221 @@ classes:
     - value
     - unit
     class_uri: OBI:0002441
-  Cell:
-    name: Cell
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    class_uri: CL:0000000
-  Tissue:
-    name: Tissue
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    class_uri: UBERON:0000479
-  ImmuneSystem:
-    name: ImmuneSystem
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    class_uri: UBERON:0002405
-  Model:
-    name: Model
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    abstract: true
-    class_uri: EXO:0000072
-  ConceptualModel:
-    name: ConceptualModel
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: Model
-    abstract: true
-    class_uri: EXO:0000073
-  CommunicativeModel:
-    name: CommunicativeModel
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: Model
-    abstract: true
-  ModelSpecification:
-    name: ModelSpecification
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlanSpecification
-  ModelingFramework:
-    name: ModelingFramework
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    class_uri: SBO:0000004
-  Simulation:
-    name: Simulation
+  Investigation:
+    name: Investigation
+    description: A scientific investigation.
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: PlannedProcess
-    class_uri: APOLLO_SV:00000070
+    slots:
+    - study_type
+    - archival_id
+    - inclusion_criteria
+    - exclusion_criteria
+    - release_date
+    - update_date
+    - participants
+    - assays
+    - simulations
+    - documents
+    - conclusions
+    class_uri: OBI:0000066
+  Reference:
+    name: Reference
+    description: A document about an investigation.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ForeignObject
+    slots:
+    - sources
+    - investigations
+    - title
+    - authors
+    - journal
+    - issue
+    - month
+    - year
+    - pages
+    class_uri: IAO:0000310
+  StudyArm:
+    name: StudyArm
+    description: A population of participants of an investigation.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - investigation
+    - inclusion_criteria
+    - exclusion_criteria
+    class_uri: OBI:0000181
+  Participant:
+    name: Participant
+    description: A participant in an investigation.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - study_arm
+    - species
+    - biological_sex
+    - phenotypic_sex
+    - age
+    - age_unit
+    - age_event
+    - race
+    - ethnicity
+    - geolocation
+    - strain
+    class_uri: OBI:0100026
+  StudyEvent:
+    name: StudyEvent
+    description: An event that is part of the study design of an investigation.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - study_arms
+    class_uri: BFO:0000015
+  LifeEvent:
+    name: LifeEvent
+    description: An event in which a study participant participates.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - participant
+    - study_event
+    - life_event_type
+    - geolocation
+    - t0_event
+    - t0_event_type
+    - start
+    - duration
+    - time_unit
+    class_uri: BFO:0000015
+  ImmuneExposure:
+    name: ImmuneExposure
+    description: An event involving the immune system of a study participant.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - life_event
+    - exposure_material
+    - disease
+    - disease_stage
+    - disease_severity
+    class_uri: BFO:0000015
+  AKObject:
+    name: AKObject
+    description: Anything uniquely identifiable in the AKC.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
+    slots:
+    - akc_id
+  ForeignObject:
+    name: ForeignObject
+    description: An object held outside of the AK.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
+    slots:
+    - source_uri
+  NamedThing:
+    name: NamedThing
+    description: Name and description for AKC things.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    abstract: true
+    slots:
+    - name
+    - description
+  PlannedProcess:
+    name: PlannedProcess
+    description: A process to realize a plan.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    abstract: true
+  PlanSpecification:
+    name: PlanSpecification
+    description: A plan with specified actions to meet some objectives.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    abstract: true
+  AIRRKnowledgeCommons:
+    name: AIRRKnowledgeCommons
+    description: A container for instances of multiple classes.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      investigations:
+        name: investigations
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Investigation
+        inlined: true
+      references:
+        name: references
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Reference
+        inlined: true
+      study_arms:
+        name: study_arms
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: StudyArm
+        inlined: true
+      study_events:
+        name: study_events
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: StudyEvent
+        inlined: true
+      participants:
+        name: participants
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Participant
+        inlined: true
+      life_events:
+        name: life_events
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: LifeEvent
+        inlined: true
+      immune_exposures:
+        name: immune_exposures
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: ImmuneExposure
+        inlined: true
+      assessments:
+        name: assessments
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Assessment
+        inlined: true
+      specimens:
+        name: specimens
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Specimen
+        inlined: true
+      specimen_collections:
+        name: specimen_collections
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: SpecimenCollection
+        inlined: true
+      assays:
+        name: assays
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Assay
+        inlined: true
+      datasets:
+        name: datasets
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Dataset
+        inlined: true
+      conclusions:
+        name: conclusions
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        multivalued: true
+        range: Conclusion
+        inlined: true
+    tree_root: true
 source_file: src/ak_schema/schema/ak_top.yaml

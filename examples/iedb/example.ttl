@@ -64,9 +64,9 @@ example:assay-3480642 a OBI:0000070,
     ak_schema:value "Positive" .
 
 example:dataset-3480642 a IAO:0000100 ;
-    IAO:0000136 example:assay-3480642 ;
     schema1:description "dataset 1 is about assay 3480642" ;
-    schema1:name "dataset 1 about assay 3480642" .
+    schema1:name "dataset 1 about assay 3480642" ;
+    ak_schema:assays example:assay-3480642 .
 
 example:life_event-3480642-1 a BFO:0000015,
         ONTIE:0003305 ;
@@ -90,7 +90,7 @@ example:specimen-3480642 a OBI:0100051 ;
 example:study_event-3480642 a BFO:0000015 ;
     schema1:description "" ;
     schema1:name "" ;
-    ak_schema:arms example:arm-3480642 .
+    ak_schema:study_arms example:arm-3480642 .
 
 example:participant-3480642 a NCBITaxon:9606,
         OBI:0100026 ;
@@ -100,8 +100,7 @@ example:participant-3480642 a NCBITaxon:9606,
 example:investigation_1031861 a OBI:0000066 ;
     schema1:name "Identifying specificity groups in the T cell receptor repertoire." .
 
-[] a ak_schema:Container ;
-    ak_schema:arms example:arm-3480642 ;
+[] a ak_schema:AIRRKnowledgeCommons ;
     ak_schema:assays example:assay-3480642 ;
     ak_schema:conclusions example:conclusion-3480642 ;
     ak_schema:datasets example:dataset-3480642 ;
@@ -112,6 +111,7 @@ example:investigation_1031861 a OBI:0000066 ;
     ak_schema:participants example:participant-3480642 ;
     ak_schema:references example:reference_1031861 ;
     ak_schema:specimens example:specimen-3480642 ;
+    ak_schema:study_arms example:arm-3480642 ;
     ak_schema:study_events example:study_event-3480642 .
 
 

@@ -5,30 +5,30 @@ name: ak-schema
 classes:
 
   Investigation:
-    is_a: NamedThing
+    is_a: PlannedProcess
     class_uri: OBI:0000066 # investigation
     description: >-
       A scientific investigation.
     slots:
-      - investigation_id
-      - archival_id
       - study_type
+      - archival_id
       - inclusion_criteria
       - exclusion_criteria
       - release_date
       - update_date
       - participants
-      - documents
       - assays
+      - simulations
+      - documents
       - conclusions
 
   Reference:
+    is_a: ForeignObject
     class_uri: IAO:0000310 # document
     # See https://schema.org/ScholarlyArticle
     description: >-
       A document about an investigation.
     slots:
-      - id
       - sources
       - investigations
       - title
@@ -39,7 +39,7 @@ classes:
       - year
       - pages
 
-  Arm:
+  StudyArm:
     is_a: NamedThing
     class_uri: OBI:0000181 # population
     # has role some OBI:0000174 study group role
@@ -56,7 +56,7 @@ classes:
     description: >-
       A participant in an investigation.
     slots:
-      - arm
+      - study_arm
       - species
       - biological_sex # IEDB gathers this
       - phenotypic_sex # AIRR gathers this
@@ -67,16 +67,15 @@ classes:
       - ethnicity # For human organisms
       - geolocation # at birth
       - strain # For non-human organisms
-      
+
   StudyEvent:
     is_a: NamedThing
     class_uri: BFO:0000015 # process
     description: >-
       An event that is part of the study design of an investigation.
     slots:
-      - arms
-      # TODO: add more slots for study event timing and order
-    
+      - study_arms
+
   LifeEvent:
     is_a: NamedThing
     class_uri: BFO:0000015 # process
@@ -107,15 +106,8 @@ classes:
 
 
 slots:
-  investigation_id:
-    description: A unique AKC identifier for an investigation
-    identifier: true
-    required: true
-    slot_uri: schema:identifier
-    range: uriorcurie
   archival_id:
     description: Identifier for external archival resource for the investigation, e.g., BioProject
-    required: true
     slot_uri: schema:identifier
     range: uriorcurie
   study_type:
@@ -138,6 +130,14 @@ slots:
     description: The participants involved with the investigation
     slot_uri: RO:0000057 # has participant
     range: Participant
+    multivalued: true
+  assays:
+    description: The assays performed by the investigation
+    range: Assay
+    multivalued: true
+  simulations:
+    description: The simulations performed by the investigation
+    range: Simulation
     multivalued: true
   documents:
     description: The documents produced by the investigation
@@ -181,14 +181,14 @@ slots:
     description: The pages of the issue of the journal in which a reference was published
 
   investigation:
-    description: The investigation in which an arm participates
+    description: An investigation in which the study arm participates
     slot_uri: RO:0000056 # participates in
     range: Investigation
 
-  arm:
-    description: The arm that a participant is a member of
+  study_arm:
+    description: The study arm that a participant is a member of
     slot_uri: RO:0002350 # member of
-    range: Arm
+    range: StudyArm
   species:
     description: The species of a participant
     slot_uri: rdf:type
@@ -222,9 +222,9 @@ slots:
     description: The strain of the participant (non-human study participants)
     range: Strain
 
-  arms:
-    description: The arms that are relevant for a study event
-    range: Arm
+  study_arms:
+    description: The study arms that are relevant for a study event
+    range: StudyArm
     multivalued: true
 
   participant:

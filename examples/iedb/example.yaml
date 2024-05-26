@@ -1,10 +1,10 @@
 investigations:
   example:investigation_1031861:
-    id: example:investigation_1031861
+    akc_id: example:investigation_1031861
     name: Identifying specificity groups in the T cell receptor repertoire.
 references:
   example:reference_1031861:
-    id: example:reference_1031861
+    source_uri: example:reference_1031861
     sources:
     - PMID:28636589
     investigations:
@@ -30,35 +30,35 @@ references:
     - Mark M Davis
     journal: Nature
     year: 2017
-arms:
+study_arms:
   example:arm-3480642:
-    id: example:arm-3480642
+    akc_id: example:arm-3480642
     name: arm 1 of 3480642
     description: study arm for assay 3480642
     investigation: example:investigation_1031861
 study_events:
   example:study_event-3480642:
-    id: example:study_event-3480642
+    akc_id: example:study_event-3480642
     name: ''
     description: ''
-    arms:
+    study_arms:
     - example:arm-3480642
 participants:
   example:participant-3480642:
-    id: example:participant-3480642
+    akc_id: example:participant-3480642
     name: participant 1 of 3480642
     description: study participant for assay 3480642
     species: Homo sapiens (human)
 life_events:
   example:life_event-3480642-1:
-    id: example:life_event-3480642-1
+    akc_id: example:life_event-3480642-1
     name: 1st in vivo immune exposure event of assay 3480642
     description: participant 1 of assay 3480642 participated in this 1st in vivo immune
       exposure event
     participant: example:participant-3480642
     life_event_type: Documented exposure without evidence for disease
   example:life_event-3480642-2:
-    id: example:life_event-3480642-2
+    akc_id: example:life_event-3480642-2
     name: specimen collection event of assay 3480642
     description: specimen 1 was collected from participant 1 of assay 3480642 in this
       event
@@ -67,7 +67,7 @@ life_events:
     life_event_type: specimen collection
 immune_exposures:
   example:immune_exposure-3480642:
-    id: example:immune_exposure-3480642
+    akc_id: example:immune_exposure-3480642
     name: details of 1st in vivo immune exposure event of assay 3480642
     description: participant 1 of assay 3480642 participated in this 1st in vivo immune
       exposure event, with these details
@@ -76,14 +76,14 @@ immune_exposures:
     disease: healthy
 specimens:
   example:specimen-3480642:
-    id: example:specimen-3480642
+    akc_id: example:specimen-3480642
     name: specimen 1 of assay 3480642
     description: specimen 1 from participant 1 of assay 3480642
     life_event: example:life_event-3480642-2
     tissue: Blood
 assays:
   example:assay-3480642:
-    id: example:assay-3480642
+    akc_id: example:assay-3480642
     name: assay 3480642
     description: assay 3480642 has specified input specimen 1
     specimen: example:specimen-3480642
@@ -92,14 +92,14 @@ assays:
     value: Positive
 datasets:
   example:dataset-3480642:
-    id: example:dataset-3480642
+    akc_id: example:dataset-3480642
     name: dataset 1 about assay 3480642
     description: dataset 1 is about assay 3480642
     assays:
     - example:assay-3480642
 conclusions:
   example:conclusion-3480642:
-    id: example:conclusion-3480642
+    akc_id: example:conclusion-3480642
     name: conclusion 1 about assay 3480642
     description: conclusion 1 about investigation 1031861 was drawn from dataset 1
       of assay 3480642
