@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/study_design/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/phenotypic_sex/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: study_design - ak-schema</title>
+        <title>Slot: phenotypic_sex - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-study_design" class="md-skip">
+        <a href="#slot-phenotypic_sex" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: study_design
+              Slot: phenotypic_sex
             
           </span>
         </div>
@@ -310,15 +310,15 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/study_design.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/phenotypic_sex.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-study_design">Slot: study_design</h1>
-<p><em>The plan for the investigation</em></p>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/study_design">ak_schema:study_design</a></p>
+<h1 id="slot-phenotypic_sex">Slot: phenotypic_sex</h1>
+<p><em>The phenotypic sex of a participant</em></p>
+<p>URI: <a href="http://purl.obolibrary.org/obo/RO_0000053">RO:0000053</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -332,15 +332,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Investigation/">Investigation</a></td>
-<td>A scientific investigation</td>
+<td><a href="../Participant/">Participant</a></td>
+<td>A participant in an investigation</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../StudyDesign/">StudyDesign</a></li>
+<li>Range: <a href="../PhenotypicSex/">PhenotypicSex</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -350,14 +350,15 @@
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: study_design
-description: The plan for the investigation
+<pre><code class="language-yaml">name: phenotypic_sex
+description: The phenotypic sex of a participant
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-alias: study_design
+slot_uri: RO:0000053
+alias: phenotypic_sex
 domain_of:
-- Investigation
-range: StudyDesign
+- Participant
+range: PhenotypicSex
 
 </code></pre>
 

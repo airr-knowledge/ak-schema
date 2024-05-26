@@ -205,19 +205,23 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-studyarm">Class: StudyArm</h1>
-<p><em>A protocol that specifies a population for investigation</em></p>
-<p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0000272">OBI:0000272</a></p>
+<p><em>A population of participants of an investigation.</em></p>
+<p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0000181">OBI:0000181</a></p>
 <div class="mermaid"> classDiagram
     class StudyArm
       NamedThing &lt;|-- StudyArm
+
+      StudyArm : akc_id
 
       StudyArm : description
 
       StudyArm : exclusion_criteria
 
-      StudyArm : id
-
       StudyArm : inclusion_criteria
+
+      StudyArm : investigation
+
+          StudyArm --&gt; Investigation : investigation
 
       StudyArm : name
 
@@ -225,8 +229,11 @@
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><strong>StudyArm</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -242,6 +249,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../investigation/">investigation</a></td>
+<td>0..1 <br/> <a href="../Investigation/">Investigation</a></td>
+<td>An investigation in which the study arm participates</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../inclusion_criteria/">inclusion_criteria</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Participants in an investigation must meet this criteria</td>
@@ -254,12 +267,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
@@ -270,6 +277,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../akc_id/">akc_id</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>A unique identifier for a thing in the AKC</td>
+<td><a href="../AKObject/">AKObject</a></td>
 </tr>
 </tbody>
 </table>
@@ -285,7 +298,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../StudyDesign/">StudyDesign</a></td>
+<td><a href="../Participant/">Participant</a></td>
+<td><a href="../study_arm/">study_arm</a></td>
+<td>range</td>
+<td><a href="./">StudyArm</a></td>
+</tr>
+<tr>
+<td><a href="../StudyEvent/">StudyEvent</a></td>
+<td><a href="../study_arms/">study_arms</a></td>
+<td>range</td>
+<td><a href="./">StudyArm</a></td>
+</tr>
+<tr>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td><a href="../study_arms/">study_arms</a></td>
 <td>range</td>
 <td><a href="./">StudyArm</a></td>
@@ -308,7 +333,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>OBI:0000272</td>
+<td>OBI:0000181</td>
 </tr>
 <tr>
 <td>native</td>
@@ -321,23 +346,35 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: StudyArm
-description: A protocol that specifies a population for investigation
+description: A population of participants of an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
+- investigation
 - inclusion_criteria
 - exclusion_criteria
-class_uri: OBI:0000272
+class_uri: OBI:0000181
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: StudyArm
-description: A protocol that specifies a population for investigation
+description: A population of participants of an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
+  investigation:
+    name: investigation
+    description: An investigation in which the study arm participates
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: RO:0000056
+    alias: investigation
+    owner: StudyArm
+    domain_of:
+    - StudyArm
+    range: Investigation
   inclusion_criteria:
     name: inclusion_criteria
     description: Participants in an investigation must meet this criteria
@@ -346,6 +383,7 @@ attributes:
     alias: inclusion_criteria
     owner: StudyArm
     domain_of:
+    - Investigation
     - StudyArm
     range: string
   exclusion_criteria:
@@ -357,22 +395,9 @@ attributes:
     alias: exclusion_criteria
     owner: StudyArm
     domain_of:
+    - Investigation
     - StudyArm
     range: string
-  id:
-    name: id
-    description: A unique identifier for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
-    owner: StudyArm
-    domain_of:
-    - NamedThing
-    - Reference
-    range: uriorcurie
-    required: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -395,7 +420,20 @@ attributes:
     domain_of:
     - NamedThing
     range: string
-class_uri: OBI:0000272
+  akc_id:
+    name: akc_id
+    description: A unique identifier for a thing in the AKC.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: schema:identifier
+    identifier: true
+    alias: akc_id
+    owner: StudyArm
+    domain_of:
+    - AKObject
+    range: uriorcurie
+    required: true
+class_uri: OBI:0000181
 
 </code></pre>
 </details>

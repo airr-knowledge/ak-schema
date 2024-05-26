@@ -210,6 +210,8 @@
     class Dataset
       NamedThing &lt;|-- Dataset
 
+      Dataset : akc_id
+
       Dataset : assays
 
           Dataset --&gt; Assay : assays
@@ -220,16 +222,17 @@
 
       Dataset : description
 
-      Dataset : id
-
       Dataset : name
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><strong>Dataset</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -253,14 +256,8 @@
 <tr>
 <td><a href="../assays/">assays</a></td>
 <td>0..* <br/> <a href="../Assay/">Assay</a></td>
-<td>The assays that a dataset is about</td>
+<td>The assays performed by the investigation</td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -273,6 +270,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../akc_id/">akc_id</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>A unique identifier for a thing in the AKC</td>
+<td><a href="../AKObject/">AKObject</a></td>
 </tr>
 </tbody>
 </table>
@@ -288,13 +291,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Container/">Container</a></td>
+<td><a href="../Conclusion/">Conclusion</a></td>
 <td><a href="../datasets/">datasets</a></td>
 <td>range</td>
 <td><a href="./">Dataset</a></td>
 </tr>
 <tr>
-<td><a href="../Conclusion/">Conclusion</a></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td><a href="../datasets/">datasets</a></td>
 <td>range</td>
 <td><a href="./">Dataset</a></td>
@@ -355,37 +358,22 @@ attributes:
     alias: assessments
     owner: Dataset
     domain_of:
-    - Container
     - Dataset
+    - AIRRKnowledgeCommons
     range: Assessment
   assays:
     name: assays
-    description: The assays that a dataset is about
+    description: The assays performed by the investigation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: IAO:0000136
     multivalued: true
     alias: assays
     owner: Dataset
     domain_of:
-    - Container
-    - Investigation
     - Dataset
+    - Investigation
+    - AIRRKnowledgeCommons
     range: Assay
-  id:
-    name: id
-    description: A unique identifier for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
-    owner: Dataset
-    domain_of:
-    - NamedThing
-    - Reference
-    range: uriorcurie
-    required: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -408,6 +396,19 @@ attributes:
     domain_of:
     - NamedThing
     range: string
+  akc_id:
+    name: akc_id
+    description: A unique identifier for a thing in the AKC.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: schema:identifier
+    identifier: true
+    alias: akc_id
+    owner: Dataset
+    domain_of:
+    - AKObject
+    range: uriorcurie
+    required: true
 class_uri: IAO:0000100
 
 </code></pre>

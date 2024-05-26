@@ -205,9 +205,9 @@
     class ModelSpecification
       PlanSpecification &lt;|-- ModelSpecification
 
-      ModelSpecification : description
+      ModelSpecification : akc_id
 
-      ModelSpecification : id
+      ModelSpecification : description
 
       ModelSpecification : name
 
@@ -215,9 +215,12 @@
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../PlanSpecification/">PlanSpecification</a><ul>
 <li><strong>ModelSpecification</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -235,12 +238,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
@@ -251,6 +248,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../akc_id/">akc_id</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>A unique identifier for a thing in the AKC</td>
+<td><a href="../AKObject/">AKObject</a></td>
 </tr>
 </tbody>
 </table>
@@ -294,20 +297,6 @@ is_a: PlanSpecification
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: PlanSpecification
 attributes:
-  id:
-    name: id
-    description: A unique identifier for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
-    owner: ModelSpecification
-    domain_of:
-    - NamedThing
-    - Reference
-    range: uriorcurie
-    required: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -330,6 +319,19 @@ attributes:
     domain_of:
     - NamedThing
     range: string
+  akc_id:
+    name: akc_id
+    description: A unique identifier for a thing in the AKC.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: schema:identifier
+    identifier: true
+    alias: akc_id
+    owner: ModelSpecification
+    domain_of:
+    - AKObject
+    range: uriorcurie
+    required: true
 
 </code></pre>
 </details>

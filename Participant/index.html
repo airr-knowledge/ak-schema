@@ -211,9 +211,15 @@
     class Participant
       NamedThing &lt;|-- Participant
 
-      Participant : arm
+      Participant : age
 
-          Participant --&gt; Arm : arm
+      Participant : age_event
+
+          Participant --&gt; LifeEvent : age_event
+
+      Participant : age_unit
+
+      Participant : akc_id
 
       Participant : biological_sex
 
@@ -229,9 +235,11 @@
 
           Participant --&gt; Geolocation : geolocation
 
-      Participant : id
-
       Participant : name
+
+      Participant : phenotypic_sex
+
+          Participant --&gt; PhenotypicSex : phenotypic_sex
 
       Participant : race
 
@@ -241,12 +249,23 @@
 
           Participant --&gt; Species : species
 
+      Participant : strain
+
+          Participant --&gt; Strain : strain
+
+      Participant : study_arm
+
+          Participant --&gt; StudyArm : study_arm
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><strong>Participant</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -262,9 +281,9 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../arm/">arm</a></td>
-<td>0..1 <br/> <a href="../Arm/">Arm</a></td>
-<td>The arm that a participant is a member of</td>
+<td><a href="../study_arm/">study_arm</a></td>
+<td>0..1 <br/> <a href="../StudyArm/">StudyArm</a></td>
+<td>The study arm that a participant is a member of</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -277,6 +296,30 @@
 <td><a href="../biological_sex/">biological_sex</a></td>
 <td>0..1 <br/> <a href="../BiologicalSex/">BiologicalSex</a></td>
 <td>The biological sex of a participant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../phenotypic_sex/">phenotypic_sex</a></td>
+<td>0..1 <br/> <a href="../PhenotypicSex/">PhenotypicSex</a></td>
+<td>The phenotypic sex of a participant</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../age/">age</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The age of a participant relative to age_event</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../age_unit/">age_unit</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Units used to describe the age</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../age_event/">age_event</a></td>
+<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
+<td>The event to which the age is relative</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -298,10 +341,10 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../strain/">strain</a></td>
+<td>0..1 <br/> <a href="../Strain/">Strain</a></td>
+<td>The strain of the participant (non-human study participants)</td>
+<td>direct</td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -314,6 +357,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../akc_id/">akc_id</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>A unique identifier for a thing in the AKC</td>
+<td><a href="../AKObject/">AKObject</a></td>
 </tr>
 </tbody>
 </table>
@@ -329,12 +378,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Container/">Container</a></td>
-<td><a href="../participants/">participants</a></td>
-<td>range</td>
-<td><a href="./">Participant</a></td>
-</tr>
-<tr>
 <td><a href="../Investigation/">Investigation</a></td>
 <td><a href="../participants/">participants</a></td>
 <td>range</td>
@@ -343,6 +386,12 @@
 <tr>
 <td><a href="../LifeEvent/">LifeEvent</a></td>
 <td><a href="../participant/">participant</a></td>
+<td>range</td>
+<td><a href="./">Participant</a></td>
+</tr>
+<tr>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../participants/">participants</a></td>
 <td>range</td>
 <td><a href="./">Participant</a></td>
 </tr>
@@ -381,12 +430,17 @@ description: A participant in an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
-- arm
+- study_arm
 - species
 - biological_sex
+- phenotypic_sex
+- age
+- age_unit
+- age_event
 - race
 - ethnicity
 - geolocation
+- strain
 class_uri: OBI:0100026
 
 </code></pre>
@@ -398,17 +452,17 @@ description: A participant in an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 attributes:
-  arm:
-    name: arm
-    description: The arm that a participant is a member of
+  study_arm:
+    name: study_arm
+    description: The study arm that a participant is a member of
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: RO:0002350
-    alias: arm
+    alias: study_arm
     owner: Participant
     domain_of:
     - Participant
-    range: Arm
+    range: StudyArm
   species:
     name: species
     description: The species of a participant
@@ -431,6 +485,47 @@ attributes:
     domain_of:
     - Participant
     range: BiologicalSex
+  phenotypic_sex:
+    name: phenotypic_sex
+    description: The phenotypic sex of a participant
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: RO:0000053
+    alias: phenotypic_sex
+    owner: Participant
+    domain_of:
+    - Participant
+    range: PhenotypicSex
+  age:
+    name: age
+    description: The age of a participant relative to age_event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: age
+    owner: Participant
+    domain_of:
+    - Participant
+    range: string
+  age_unit:
+    name: age_unit
+    description: Units used to describe the age
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: age_unit
+    owner: Participant
+    domain_of:
+    - Participant
+    range: string
+  age_event:
+    name: age_event
+    description: The event to which the age is relative
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: age_event
+    owner: Participant
+    domain_of:
+    - Participant
+    range: LifeEvent
   race:
     name: race
     description: The race of a participant
@@ -463,20 +558,16 @@ attributes:
     - Participant
     - LifeEvent
     range: Geolocation
-  id:
-    name: id
-    description: A unique identifier for a thing
+  strain:
+    name: strain
+    description: The strain of the participant (non-human study participants)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
+    alias: strain
     owner: Participant
     domain_of:
-    - NamedThing
-    - Reference
-    range: uriorcurie
-    required: true
+    - Participant
+    range: Strain
   name:
     name: name
     description: A human-readable name for a thing
@@ -499,6 +590,19 @@ attributes:
     domain_of:
     - NamedThing
     range: string
+  akc_id:
+    name: akc_id
+    description: A unique identifier for a thing in the AKC.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: schema:identifier
+    identifier: true
+    alias: akc_id
+    owner: Participant
+    domain_of:
+    - AKObject
+    range: uriorcurie
+    required: true
 class_uri: OBI:0100026
 
 </code></pre>

@@ -317,8 +317,8 @@
 
 
 <h1 id="slot-study_arms">Slot: study_arms</h1>
-<p><em>The protocols for gathering the populations being investigated</em></p>
-<p>URI: <a href="http://purl.obolibrary.org/obo/BFO_0000051">BFO:0000051</a></p>
+<p><em>The study arms that are relevant for a study event</em></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/study_arms">ak_schema:study_arms</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -332,8 +332,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../StudyDesign/">StudyDesign</a></td>
-<td>A plan for a scientific investigation</td>
+<td><a href="../StudyEvent/">StudyEvent</a></td>
+<td>An event that is part of the study design of an investigation</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td>A container for instances of multiple classes</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -356,14 +361,14 @@
 <details>
 
 <pre><code class="language-yaml">name: study_arms
-description: The protocols for gathering the populations being investigated
+description: The study arms that are relevant for a study event
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-slot_uri: BFO:0000051
 multivalued: true
 alias: study_arms
 domain_of:
-- StudyDesign
+- StudyEvent
+- AIRRKnowledgeCommons
 range: StudyArm
 
 </code></pre>

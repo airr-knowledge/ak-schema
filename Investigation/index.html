@@ -209,7 +209,11 @@
 <p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0000066">OBI:0000066</a></p>
 <div class="mermaid"> classDiagram
     class Investigation
-      NamedThing &lt;|-- Investigation
+      PlannedProcess &lt;|-- Investigation
+
+      Investigation : akc_id
+
+      Investigation : archival_id
 
       Investigation : assays
 
@@ -225,7 +229,9 @@
 
           Investigation --&gt; Reference : documents
 
-      Investigation : id
+      Investigation : exclusion_criteria
+
+      Investigation : inclusion_criteria
 
       Investigation : name
 
@@ -233,16 +239,30 @@
 
           Investigation --&gt; Participant : participants
 
-      Investigation : study_design
+      Investigation : release_date
 
-          Investigation --&gt; StudyDesign : study_design
+      Investigation : simulations
+
+          Investigation --&gt; Simulation : simulations
+
+      Investigation : study_type
+
+          Investigation --&gt; StudyType : study_type
+
+      Investigation : update_date
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
+<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>Investigation</strong></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -258,9 +278,39 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../study_design/">study_design</a></td>
-<td>0..1 <br/> <a href="../StudyDesign/">StudyDesign</a></td>
-<td>The plan for the investigation</td>
+<td><a href="../study_type/">study_type</a></td>
+<td>0..1 <br/> <a href="../StudyType/">StudyType</a></td>
+<td>Type of study design</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../archival_id/">archival_id</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Identifier for external archival resource for the investigation, e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../inclusion_criteria/">inclusion_criteria</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Participants in an investigation must meet this criteria</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../exclusion_criteria/">exclusion_criteria</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Participants are excluded from an investigation if they meet this criteria</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../release_date/">release_date</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>Initial release of the investigation and its data</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../update_date/">update_date</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>Subsequence updates to the investigation or its data</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -270,15 +320,21 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../documents/">documents</a></td>
-<td>0..* <br/> <a href="../Reference/">Reference</a></td>
-<td>The documents produced by the investigation</td>
+<td><a href="../assays/">assays</a></td>
+<td>0..* <br/> <a href="../Assay/">Assay</a></td>
+<td>The assays performed by the investigation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../assays/">assays</a></td>
-<td>0..* <br/> <a href="../Assay/">Assay</a></td>
-<td>The assays that a dataset is about</td>
+<td><a href="../simulations/">simulations</a></td>
+<td>0..* <br/> <a href="../Simulation/">Simulation</a></td>
+<td>The simulations performed by the investigation</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../documents/">documents</a></td>
+<td>0..* <br/> <a href="../Reference/">Reference</a></td>
+<td>The documents produced by the investigation</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -286,12 +342,6 @@
 <td>0..* <br/> <a href="../Conclusion/">Conclusion</a></td>
 <td>The conclusions from the investigation</td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -304,6 +354,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
 <td><a href="../NamedThing/">NamedThing</a></td>
+</tr>
+<tr>
+<td><a href="../akc_id/">akc_id</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>A unique identifier for a thing in the AKC</td>
+<td><a href="../AKObject/">AKObject</a></td>
 </tr>
 </tbody>
 </table>
@@ -319,7 +375,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Container/">Container</a></td>
+<td><a href="../Conclusion/">Conclusion</a></td>
 <td><a href="../investigations/">investigations</a></td>
 <td>range</td>
 <td><a href="./">Investigation</a></td>
@@ -331,13 +387,13 @@
 <td><a href="./">Investigation</a></td>
 </tr>
 <tr>
-<td><a href="../Arm/">Arm</a></td>
+<td><a href="../StudyArm/">StudyArm</a></td>
 <td><a href="../investigation/">investigation</a></td>
 <td>range</td>
 <td><a href="./">Investigation</a></td>
 </tr>
 <tr>
-<td><a href="../Conclusion/">Conclusion</a></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td><a href="../investigations/">investigations</a></td>
 <td>range</td>
 <td><a href="./">Investigation</a></td>
@@ -375,12 +431,18 @@
 <pre><code class="language-yaml">name: Investigation
 description: A scientific investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: PlannedProcess
 slots:
-- study_design
+- study_type
+- archival_id
+- inclusion_criteria
+- exclusion_criteria
+- release_date
+- update_date
 - participants
-- documents
 - assays
+- simulations
+- documents
 - conclusions
 class_uri: OBI:0000066
 
@@ -391,18 +453,74 @@ class_uri: OBI:0000066
 <pre><code class="language-yaml">name: Investigation
 description: A scientific investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: PlannedProcess
 attributes:
-  study_design:
-    name: study_design
-    description: The plan for the investigation
+  study_type:
+    name: study_type
+    description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: study_design
+    slot_uri: rdf:type
+    alias: study_type
     owner: Investigation
     domain_of:
     - Investigation
-    range: StudyDesign
+    range: StudyType
+  archival_id:
+    name: archival_id
+    description: Identifier for external archival resource for the investigation,
+      e.g., BioProject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: schema:identifier
+    alias: archival_id
+    owner: Investigation
+    domain_of:
+    - Investigation
+    range: uriorcurie
+  inclusion_criteria:
+    name: inclusion_criteria
+    description: Participants in an investigation must meet this criteria
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: inclusion_criteria
+    owner: Investigation
+    domain_of:
+    - Investigation
+    - StudyArm
+    range: string
+  exclusion_criteria:
+    name: exclusion_criteria
+    description: Participants are excluded from an investigation if they meet this
+      criteria
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: exclusion_criteria
+    owner: Investigation
+    domain_of:
+    - Investigation
+    - StudyArm
+    range: string
+  release_date:
+    name: release_date
+    description: Initial release of the investigation and its data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: release_date
+    owner: Investigation
+    domain_of:
+    - Investigation
+    range: datetime
+  update_date:
+    name: update_date
+    description: Subsequence updates to the investigation or its data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: update_date
+    owner: Investigation
+    domain_of:
+    - Investigation
+    range: datetime
   participants:
     name: participants
     description: The participants involved with the investigation
@@ -413,9 +531,33 @@ attributes:
     alias: participants
     owner: Investigation
     domain_of:
-    - Container
     - Investigation
+    - AIRRKnowledgeCommons
     range: Participant
+  assays:
+    name: assays
+    description: The assays performed by the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    multivalued: true
+    alias: assays
+    owner: Investigation
+    domain_of:
+    - Dataset
+    - Investigation
+    - AIRRKnowledgeCommons
+    range: Assay
+  simulations:
+    name: simulations
+    description: The simulations performed by the investigation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    multivalued: true
+    alias: simulations
+    owner: Investigation
+    domain_of:
+    - Investigation
+    range: Simulation
   documents:
     name: documents
     description: The documents produced by the investigation
@@ -427,20 +569,6 @@ attributes:
     domain_of:
     - Investigation
     range: Reference
-  assays:
-    name: assays
-    description: The assays that a dataset is about
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: IAO:0000136
-    multivalued: true
-    alias: assays
-    owner: Investigation
-    domain_of:
-    - Container
-    - Investigation
-    - Dataset
-    range: Assay
   conclusions:
     name: conclusions
     description: The conclusions from the investigation
@@ -450,23 +578,9 @@ attributes:
     alias: conclusions
     owner: Investigation
     domain_of:
-    - Container
     - Investigation
+    - AIRRKnowledgeCommons
     range: Conclusion
-  id:
-    name: id
-    description: A unique identifier for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
-    owner: Investigation
-    domain_of:
-    - NamedThing
-    - Reference
-    range: uriorcurie
-    required: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -489,6 +603,19 @@ attributes:
     domain_of:
     - NamedThing
     range: string
+  akc_id:
+    name: akc_id
+    description: A unique identifier for a thing in the AKC.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: schema:identifier
+    identifier: true
+    alias: akc_id
+    owner: Investigation
+    domain_of:
+    - AKObject
+    range: uriorcurie
+    required: true
 class_uri: OBI:0000066
 
 </code></pre>

@@ -200,37 +200,38 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-namedthing">Class: NamedThing</h1>
-<p><em>Anything we want to identify, name, and describe.</em></p>
+<p><em>Name and description for AKC things.</em></p>
 <ul>
 <li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
 </ul>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/NamedThing">ak_schema:NamedThing</a></p>
 <div class="mermaid"> classDiagram
     class NamedThing
-      NamedThing &lt;|-- PlannedProcess
-      NamedThing &lt;|-- PlanSpecification
-      NamedThing &lt;|-- StudyDesign
-      NamedThing &lt;|-- StudyArm
-      NamedThing &lt;|-- Investigation
-      NamedThing &lt;|-- Arm
-      NamedThing &lt;|-- Participant
-      NamedThing &lt;|-- StudyEvent
-      NamedThing &lt;|-- LifeEvent
-      NamedThing &lt;|-- ImmuneExposure
+      AKObject &lt;|-- NamedThing
+
+
+      NamedThing &lt;|-- Model
+      NamedThing &lt;|-- ModelingFramework
+      NamedThing &lt;|-- ImmuneSystem
+      NamedThing &lt;|-- Cell
+      NamedThing &lt;|-- Tissue
       NamedThing &lt;|-- Specimen
       NamedThing &lt;|-- Assay
       NamedThing &lt;|-- Dataset
       NamedThing &lt;|-- Conclusion
       NamedThing &lt;|-- Assessment
-      NamedThing &lt;|-- Cell
-      NamedThing &lt;|-- Tissue
-      NamedThing &lt;|-- ImmuneSystem
-      NamedThing &lt;|-- Model
-      NamedThing &lt;|-- ModelingFramework
+      NamedThing &lt;|-- StudyArm
+      NamedThing &lt;|-- Participant
+      NamedThing &lt;|-- StudyEvent
+      NamedThing &lt;|-- LifeEvent
+      NamedThing &lt;|-- ImmuneExposure
+      NamedThing &lt;|-- PlannedProcess
+      NamedThing &lt;|-- PlanSpecification
+
+
+      NamedThing : akc_id
 
       NamedThing : description
-
-      NamedThing : id
 
       NamedThing : name
 
@@ -238,27 +239,27 @@
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
+<li><a href="../AKObject/">AKObject</a><ul>
 <li><strong>NamedThing</strong><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a></li>
-<li><a href="../PlanSpecification/">PlanSpecification</a></li>
-<li><a href="../StudyDesign/">StudyDesign</a></li>
-<li><a href="../StudyArm/">StudyArm</a></li>
-<li><a href="../Investigation/">Investigation</a></li>
-<li><a href="../Arm/">Arm</a></li>
-<li><a href="../Participant/">Participant</a></li>
-<li><a href="../StudyEvent/">StudyEvent</a></li>
-<li><a href="../LifeEvent/">LifeEvent</a></li>
-<li><a href="../ImmuneExposure/">ImmuneExposure</a></li>
+<li><a href="../Model/">Model</a></li>
+<li><a href="../ModelingFramework/">ModelingFramework</a></li>
+<li><a href="../ImmuneSystem/">ImmuneSystem</a></li>
+<li><a href="../Cell/">Cell</a></li>
+<li><a href="../Tissue/">Tissue</a></li>
 <li><a href="../Specimen/">Specimen</a></li>
 <li><a href="../Assay/">Assay</a></li>
 <li><a href="../Dataset/">Dataset</a></li>
 <li><a href="../Conclusion/">Conclusion</a></li>
 <li><a href="../Assessment/">Assessment</a></li>
-<li><a href="../Cell/">Cell</a></li>
-<li><a href="../Tissue/">Tissue</a></li>
-<li><a href="../ImmuneSystem/">ImmuneSystem</a></li>
-<li><a href="../Model/">Model</a></li>
-<li><a href="../ModelingFramework/">ModelingFramework</a></li>
+<li><a href="../StudyArm/">StudyArm</a></li>
+<li><a href="../Participant/">Participant</a></li>
+<li><a href="../StudyEvent/">StudyEvent</a></li>
+<li><a href="../LifeEvent/">LifeEvent</a></li>
+<li><a href="../ImmuneExposure/">ImmuneExposure</a></li>
+<li><a href="../PlannedProcess/">PlannedProcess</a></li>
+<li><a href="../PlanSpecification/">PlanSpecification</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -274,12 +275,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
@@ -290,6 +285,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../akc_id/">akc_id</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>A unique identifier for a thing in the AKC</td>
+<td><a href="../AKObject/">AKObject</a></td>
 </tr>
 </tbody>
 </table>
@@ -322,11 +323,11 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: NamedThing
-description: Anything we want to identify, name, and describe.
+description: Name and description for AKC things.
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AKObject
 abstract: true
 slots:
-- id
 - name
 - description
 
@@ -335,24 +336,11 @@ slots:
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: NamedThing
-description: Anything we want to identify, name, and describe.
+description: Name and description for AKC things.
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AKObject
 abstract: true
 attributes:
-  id:
-    name: id
-    description: A unique identifier for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: id
-    owner: NamedThing
-    domain_of:
-    - NamedThing
-    - Reference
-    range: uriorcurie
-    required: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -375,6 +363,19 @@ attributes:
     domain_of:
     - NamedThing
     range: string
+  akc_id:
+    name: akc_id
+    description: A unique identifier for a thing in the AKC.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: schema:identifier
+    identifier: true
+    alias: akc_id
+    owner: NamedThing
+    domain_of:
+    - AKObject
+    range: uriorcurie
+    required: true
 
 </code></pre>
 </details>
