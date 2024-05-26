@@ -1,2 +1,2 @@
-id	name	description	arm	species	biological_sex	race	ethnicity	geolocation
-example:participant-3480642	participant 1 of 3480642	study participant for assay 3480642		Homo sapiens (human)				
+akc_id	name	description	study_arm	species	biological_sex	phenotypic_sex	age	age_unit	age_event	race	ethnicity	geolocation	strain
+example:participant-3480642	participant 1 of 3480642	study participant for assay 3480642		Homo sapiens (human)									

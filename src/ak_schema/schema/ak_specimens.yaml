@@ -13,6 +13,12 @@ classes:
       - tissue
       - process
 
+  SpecimenCollection:
+    is_a: PlannedProcess
+    class_uri: OBI:0000659 # specimen collection
+    slots:
+      - specimen
+
   Assay:
     is_a: NamedThing
     class_uri: OBI:0000070 # assay
@@ -85,11 +91,6 @@ slots:
     description: The assessment that a dataset is about
     slot_uri: IAO:0000136 # is about
     range: Assessment
-    multivalued: true
-  assays:
-    description: The assays that a dataset is about
-    slot_uri: IAO:0000136 # is about
-    range: Assay
     multivalued: true
 
   datasets:

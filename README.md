@@ -31,6 +31,8 @@ With the container shell, use the `make` command to generate project artefacts:
 
 * `make`: display help with available make targets
 * `make all`: generates all the project artefacts
+* `make test`: run tests
+* `make docker`: builds docker image
 
 ## Credits
 

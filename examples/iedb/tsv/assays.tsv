@@ -1,2 +1,2 @@
-id	name	description	specimen	assay_type	target_entity_type	value	unit
+akc_id	name	description	specimen	assay_type	target_entity_type	value	unit
 example:assay-3480642	assay 3480642	assay 3480642 has specified input specimen 1	example:specimen-3480642	OBI:1110179	qualitative binding	Positive	
