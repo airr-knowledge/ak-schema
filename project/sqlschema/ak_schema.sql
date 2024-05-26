@@ -1,14 +1,51 @@
 
 
-CREATE TABLE "Cell" (
-	id TEXT NOT NULL, 
+CREATE TABLE "AIRRKnowledgeCommons" (
+	investigations TEXT, 
+	"references" TEXT, 
+	study_arms TEXT, 
+	study_events TEXT, 
+	participants TEXT, 
+	life_events TEXT, 
+	immune_exposures TEXT, 
+	assessments TEXT, 
+	specimens TEXT, 
+	specimen_collections TEXT, 
+	assays TEXT, 
+	datasets TEXT, 
+	conclusions TEXT
+);
+
+CREATE TABLE "Assay" (
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
-	PRIMARY KEY (id)
+	specimen TEXT, 
+	assay_type TEXT, 
+	target_entity_type TEXT, 
+	value TEXT, 
+	unit TEXT
+);
+
+CREATE TABLE "Assessment" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	life_event TEXT, 
+	assessment_type TEXT, 
+	target_entity_type TEXT, 
+	value TEXT, 
+	unit TEXT
+);
+
+CREATE TABLE "Cell" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT
 );
 
 CREATE TABLE "Conclusion" (
-	id TEXT NOT NULL, 
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
 	investigations TEXT, 
@@ -17,160 +54,53 @@ CREATE TABLE "Conclusion" (
 	data_location_type TEXT, 
 	data_location_value TEXT, 
 	organism VARCHAR(20), 
-	experiment_type TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "Container" (
-	investigations TEXT, 
-	"references" TEXT, 
-	arms TEXT, 
-	study_events TEXT, 
-	participants TEXT, 
-	life_events TEXT, 
-	immune_exposures TEXT, 
-	assessments TEXT, 
-	specimens TEXT, 
-	assays TEXT, 
-	datasets TEXT, 
-	conclusions TEXT, 
-	PRIMARY KEY (investigations, "references", arms, study_events, participants, life_events, immune_exposures, assessments, specimens, assays, datasets, conclusions)
+	experiment_type TEXT
 );
 
 CREATE TABLE "Dataset" (
-	id TEXT NOT NULL, 
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
 	assessments TEXT, 
-	assays TEXT, 
-	PRIMARY KEY (id)
+	assays TEXT
+);
+
+CREATE TABLE "ImmuneExposure" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	life_event TEXT, 
+	exposure_material VARCHAR(36), 
+	disease VARCHAR(29), 
+	disease_stage VARCHAR(22), 
+	disease_severity TEXT
 );
 
 CREATE TABLE "ImmuneSystem" (
-	id TEXT NOT NULL, 
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "ModelingFramework" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "ModelSpecification" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "Reference" (
-	id TEXT NOT NULL, 
-	investigations TEXT, 
-	title TEXT, 
-	journal TEXT, 
-	issue TEXT, 
-	month TEXT, 
-	year INTEGER, 
-	pages TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "Simulation" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "StudyDesign" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "StudyEvent" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	arms TEXT, 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "Tissue" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	PRIMARY KEY (id)
+	description TEXT
 );
 
 CREATE TABLE "Investigation" (
-	id TEXT NOT NULL, 
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
-	study_design TEXT, 
-	participants TEXT, 
-	documents TEXT, 
-	assays TEXT, 
-	conclusions TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(study_design) REFERENCES "StudyDesign" (id)
-);
-
-CREATE TABLE "StudyArm" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
+	study_type VARCHAR, 
+	archival_id TEXT, 
 	inclusion_criteria TEXT, 
 	exclusion_criteria TEXT, 
-	"StudyDesign_id" TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY("StudyDesign_id") REFERENCES "StudyDesign" (id)
-);
-
-CREATE TABLE "Reference_sources" (
-	backref_id TEXT, 
-	sources TEXT, 
-	PRIMARY KEY (backref_id, sources), 
-	FOREIGN KEY(backref_id) REFERENCES "Reference" (id)
-);
-
-CREATE TABLE "Reference_authors" (
-	backref_id TEXT, 
-	authors TEXT, 
-	PRIMARY KEY (backref_id, authors), 
-	FOREIGN KEY(backref_id) REFERENCES "Reference" (id)
-);
-
-CREATE TABLE "Arm" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	investigation TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(investigation) REFERENCES "Investigation" (id)
-);
-
-CREATE TABLE "Participant" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	arm TEXT, 
-	species VARCHAR(20), 
-	biological_sex VARCHAR(6), 
-	race VARCHAR(41), 
-	ethnicity VARCHAR(22), 
-	geolocation VARCHAR(24), 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(arm) REFERENCES "Arm" (id)
+	release_date DATETIME, 
+	update_date DATETIME, 
+	participants TEXT, 
+	assays TEXT, 
+	simulations TEXT, 
+	documents TEXT, 
+	conclusions TEXT
 );
 
 CREATE TABLE "LifeEvent" (
-	id TEXT NOT NULL, 
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
 	participant TEXT, 
@@ -181,59 +111,92 @@ CREATE TABLE "LifeEvent" (
 	t0_event_type TEXT, 
 	start TEXT, 
 	duration TEXT, 
-	time_unit TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(participant) REFERENCES "Participant" (id), 
-	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (id)
+	time_unit TEXT
 );
 
-CREATE TABLE "Assessment" (
-	id TEXT NOT NULL, 
+CREATE TABLE "ModelingFramework" (
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
-	description TEXT, 
-	life_event TEXT, 
-	assessment_type TEXT, 
-	target_entity_type TEXT, 
-	value TEXT, 
-	unit TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (id)
+	description TEXT
 );
 
-CREATE TABLE "ImmuneExposure" (
-	id TEXT NOT NULL, 
+CREATE TABLE "ModelSpecification" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT
+);
+
+CREATE TABLE "Participant" (
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
-	life_event TEXT, 
-	exposure_material VARCHAR(36), 
-	disease VARCHAR(29), 
-	disease_stage VARCHAR(22), 
-	disease_severity TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (id)
+	study_arm TEXT, 
+	species VARCHAR(20), 
+	biological_sex VARCHAR(6), 
+	phenotypic_sex VARCHAR(13), 
+	age TEXT, 
+	age_unit TEXT, 
+	age_event TEXT, 
+	race VARCHAR(41), 
+	ethnicity VARCHAR(32), 
+	geolocation VARCHAR(24), 
+	strain VARCHAR(20)
+);
+
+CREATE TABLE "Reference" (
+	source_uri TEXT NOT NULL, 
+	sources TEXT, 
+	investigations TEXT, 
+	title TEXT, 
+	authors TEXT, 
+	journal TEXT, 
+	issue TEXT, 
+	month TEXT, 
+	year INTEGER, 
+	pages TEXT
+);
+
+CREATE TABLE "Simulation" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT
 );
 
 CREATE TABLE "Specimen" (
-	id TEXT NOT NULL, 
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
 	life_event TEXT, 
 	specimen_type TEXT, 
 	tissue TEXT, 
-	process TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (id)
+	process TEXT
 );
 
-CREATE TABLE "Assay" (
-	id TEXT NOT NULL, 
+CREATE TABLE "SpecimenCollection" (
+	akc_id TEXT NOT NULL, 
 	name TEXT, 
 	description TEXT, 
-	specimen TEXT, 
-	assay_type TEXT, 
-	target_entity_type TEXT, 
-	value TEXT, 
-	unit TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (id)
+	specimen TEXT
+);
+
+CREATE TABLE "StudyArm" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	investigation TEXT, 
+	inclusion_criteria TEXT, 
+	exclusion_criteria TEXT
+);
+
+CREATE TABLE "StudyEvent" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT, 
+	study_arms TEXT
+);
+
+CREATE TABLE "Tissue" (
+	akc_id TEXT NOT NULL, 
+	name TEXT, 
+	description TEXT
 );

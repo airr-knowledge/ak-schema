@@ -22,5 +22,6 @@ generator_args:
     mergeimports: true
   sqlddl:
     mergeimports: true
+    direct_mapping: true
 
-...
+

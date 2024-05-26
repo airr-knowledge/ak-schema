@@ -1,2 +1,2 @@
-id	name	description	life_event	exposure_material	disease	disease_stage	disease_severity
+akc_id	name	description	life_event	exposure_material	disease	disease_stage	disease_severity
 example:immune_exposure-3480642	details of 1st in vivo immune exposure event of assay 3480642	participant 1 of assay 3480642 participated in this 1st in vivo immune exposure event, with these details	example:life_event-3480642-1	Human gammaherpesvirus 4	healthy		

@@ -61,15 +61,23 @@ endif
 # when the user types "make" they should get help info
 help: status
 	@echo ""
+	@echo "Setup:"
 	@echo "make setup -- initial setup (run this first)"
-	@echo "make site -- makes site locally"
 	@echo "make install -- install dependencies"
+	@echo "make update -- updates linkml version"
+	@echo "make help -- show this help"
+	@echo "make status -- project status"
+	@echo ""
+	@echo "Build:"
+	@echo "make all -- generates all project artefacts"
+	@echo "make site -- makes site locally"
+	@echo "make docker -- build docker image"
+	@echo ""
+	@echo "Testing:"
 	@echo "make test -- runs tests"
 	@echo "make lint -- perform linting"
 	@echo "make testdoc -- builds docs and runs local test server"
 	@echo "make deploy -- deploys site"
-	@echo "make update -- updates linkml version"
-	@echo "make help -- show this help"
 	@echo ""
 
 status: check-config
@@ -83,6 +91,11 @@ setup: check-config git-init install gen-project gen-examples gendoc git-add git
 install:
 	poetry install
 .PHONY: install
+
+# build docker image
+docker:
+	docker build . -t airrknowledge/ak-schema
+.PHONY: docker
 
 # ---
 # Project Synchronization
