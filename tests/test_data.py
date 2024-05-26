@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from ak_schema.datamodel.ak_schema import Container
+from ak_schema.datamodel.ak_schema import AIRRKnowledgeCommons
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "examples", "iedb")
@@ -18,5 +18,5 @@ class TestData(unittest.TestCase):
     def test_data(self):
         """Data test."""
         for path in EXAMPLE_FILES:
-            obj = yaml_loader.load(path, target_class=Container)
+            obj = yaml_loader.load(path, target_class=AIRRKnowledgeCommons)
             assert obj
