@@ -19,6 +19,7 @@ RUN pip install "poetry==$POETRY_VERSION"
 WORKDIR /work
 
 RUN pip install schema-automator
+RUN pip install appengine-python-standard
 RUN pip install cruft
 
 RUN mkdir /ak-schema
