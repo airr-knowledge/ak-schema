@@ -1,0 +1,60 @@
+data_processing_id:
+  name: data_processing_id
+  description: Identifier for the data processing object.
+  range: string
+
+primary_annotation:
+  name: primary_annotation
+  description: If true, indicates this is the primary or default data processing for the repertoire and its rearrangements. If false, indicates this is a secondary or additional data processing.
+  range: boolean
+
+software_versions:
+  name: software_versions
+  description: Version number and / or date, include company pipelines
+  range: string
+
+paired_reads_assembly:
+  name: paired_reads_assembly
+  description: How paired end reads were assembled into a single receptor sequence
+  range: string
+
+quality_thresholds:
+  name: quality_thresholds
+  description: How/if sequences were removed from (4) based on base quality scores
+  range: string
+
+primer_match_cutoffs:
+  name: primer_match_cutoffs
+  description: How primers were identified in the sequences, were they removed/masked/etc?
+  range: string
+
+collapsing_method:
+  name: collapsing_method
+  description: The method used for combining multiple sequences from (4) into a single sequence in (5)
+  range: string
+
+data_processing_protocols:
+  name: data_processing_protocols
+  description: General description of how QC is performed
+  range: string
+
+data_processing_files:
+  name: data_processing_files
+  description: Array of file names for data produced by this data processing.
+  multivalued: true
+
+germline_database:
+  name: germline_database
+  description: Source of germline V(D)J genes with version number or date accessed.
+  range: string
+
+germline_set_ref:
+  name: germline_set_ref
+  description: Unique identifier of the germline set and version, in standardized form (Repo:Label:Version)
+  range: string
+
+analysis_provenance_id:
+  name: analysis_provenance_id
+  description: Identifier for machine-readable PROV model of analysis provenance
+  range: string
+
