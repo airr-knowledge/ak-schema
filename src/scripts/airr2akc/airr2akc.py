@@ -508,7 +508,20 @@ if __name__ == "__main__":
             print(label,end='\t')
         print("")
 
-    # Now print out each row.
+    # Now print out the definition of the object and its slots
+    if not options.enums:
+        print('%s:'%(options.airr_block))
+        print('  is_a: NamedThing')
+        print('  slots:')
+        for field, field_dict in table.items():
+            if 'airr' in field_dict:
+                if not options.enums:
+                    print('    - %s:'%(field_dict['airr']))
+
+        print('')
+        print('slots:')
+                
+    # Now print out the definition for each slot
     for field, field_dict in table.items():
         # For each row, generate a LinkML specification for the field
         if 'airr' in field_dict:
@@ -540,31 +553,31 @@ if __name__ == "__main__":
             else:
                 if options.verbose:
                     print(field_dict)
-                print('%s:'%(field_dict['airr']))
-                print('  name: %s'%(field_dict['airr']))
+                print('  %s:'%(field_dict['airr']))
+                print('    name: %s'%(field_dict['airr']))
                 if 'airr_description' in field_dict:
-                    print('  description: %s'%(field_dict['airr_description']))
+                    print('    description: %s'%(field_dict['airr_description']))
 
                 # Handle the range, this is a bit complex depending on the field.
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
-                    print('  range: %s'%(convertCamelCase(field_dict['airr'])))
+                    print('    range: %s'%(convertCamelCase(field_dict['airr'])))
                 elif 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
                     range_name = convertCamelCase(field_dict['airr'])
-                    print('  range: %s'%(range_name))
+                    print('    range: %s'%(range_name))
                 elif 'airr_is_array' in field_dict and field_dict['airr_is_array'] == True:
                     if 'airr_array_schema' in field_dict:
-                        print('  range: %s'%(field_dict['airr_array_schema']))
+                        print('    range: %s'%(field_dict['airr_array_schema']))
                     print('  multivalued: true')
                 elif 'airr_type' in field_dict:
-                    print('  range: %s'%(field_dict['airr_type']))
+                    print('    range: %s'%(field_dict['airr_type']))
 
                 # Print out some x-airr attributes if required.
                 if 'airr_required' in field_dict:
-                    print('  required: %s'%(field_dict['airr_required']))
+                    print('    required: %s'%(field_dict['airr_required']))
                 if 'airr_nullable' in field_dict:
-                    print('  nullable: %s'%(field_dict['airr_nullable']))
+                    print('    nullable: %s'%(field_dict['airr_nullable']))
                 if 'airr_identifier' in field_dict:
-                    print('  identifier: %s'%(field_dict['airr_identifier']))
+                    print('    identifier: %s'%(field_dict['airr_identifier']))
                 print('')
 
         
