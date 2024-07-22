@@ -2,119 +2,168 @@ clone_id:
   name: clone_id
   description: Identifier for the clone.
   range: string
+  required: True
+  nullable: True
+  identifier: True
 
 repertoire_id:
   name: repertoire_id
   description: Identifier to the associated repertoire in study metadata.
   range: string
+  required: False
+  nullable: True
 
 data_processing_id:
   name: data_processing_id
   description: Identifier of the data processing object in the repertoire metadata for this clone.
   range: string
+  required: False
+  nullable: True
 
 sequences:
   name: sequences
   description: List sequence_id strings that act as keys to the Rearrangement records for members of the clone.
   multivalued: true
+  required: False
+  nullable: True
 
 v_call:
   name: v_call
   description: V gene with allele of the inferred ancestral of the clone. For example, IGHV4-59*01.
   range: string
+  required: False
+  nullable: True
 
 d_call:
   name: d_call
   description: D gene with allele of the inferred ancestor of the clone. For example, IGHD3-10*01.
   range: string
+  required: False
+  nullable: True
 
 j_call:
   name: j_call
   description: J gene with allele of the inferred ancestor of the clone. For example, IGHJ4*02.
   range: string
+  required: False
+  nullable: True
 
 junction:
   name: junction
   description: Nucleotide sequence for the junction region of the inferred ancestor of the clone, where the junction is defined as the CDR3 plus the two flanking conserved codons.
   range: string
+  required: False
+  nullable: True
 
 junction_aa:
   name: junction_aa
   description: Amino acid translation of the junction.
   range: string
+  required: False
+  nullable: True
 
 junction_length:
   name: junction_length
   description: Number of nucleotides in the junction.
   range: integer
+  required: False
+  nullable: True
 
 junction_aa_length:
   name: junction_aa_length
   description: Number of amino acids in junction_aa.
   range: integer
+  required: False
+  nullable: True
 
 germline_alignment:
   name: germline_alignment
   description: Assembled, aligned, full-length inferred ancestor of the clone spanning the same region as the sequence_alignment field of nodes (typically the V(D)J region) and including the same set of corrections and spacers (if any).
   range: string
+  required: True
+  nullable: True
 
 germline_alignment_aa:
   name: germline_alignment_aa
   description: Amino acid translation of germline_alignment.
   range: string
+  required: False
+  nullable: True
 
 v_alignment_start:
   name: v_alignment_start
   description: Start position in the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 v_alignment_end:
   name: v_alignment_end
   description: End position in the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 d_alignment_start:
   name: d_alignment_start
   description: Start position of the D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 d_alignment_end:
   name: d_alignment_end
   description: End position of the D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 j_alignment_start:
   name: j_alignment_start
   description: Start position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 j_alignment_end:
   name: j_alignment_end
   description: End position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 junction_start:
   name: junction_start
   description: Junction region start position in the alignment (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 junction_end:
   name: junction_end
   description: Junction region end position in the alignment (1-based closed interval).
   range: integer
+  required: False
+  nullable: True
 
 umi_count:
   name: umi_count
   description: Number of distinct UMIs observed across all sequences (Rearrangement records) in this clone.
   range: integer
+  required: False
+  nullable: True
 
 clone_count:
   name: clone_count
   description: Absolute count of the size (number of members) of this clone in the repertoire. This could simply be the number of sequences (Rearrangement records) observed in this clone, the number of distinct cell barcodes (unique cell_id values), or a more sophisticated calculation appropriate to the experimental protocol. Absolute count is provided versus a frequency so that downstream analysis tools can perform their own normalization.
   range: integer
+  required: False
+  nullable: True
 
 seed_id:
   name: seed_id
   description: sequence_id of the seed sequence. Empty string (or null) if there is no seed sequence.
   range: string
+  required: False
+  nullable: True
 

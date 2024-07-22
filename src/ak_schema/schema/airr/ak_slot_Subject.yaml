@@ -2,84 +2,119 @@ subject_id:
   name: subject_id
   description: Subject ID assigned by submitter, unique within study. If possible, a persistent subject ID linked to an INSDC or similar repository study should be used.
   range: string
+  required: True
+  nullable: True
+  identifier: True
 
 synthetic:
   name: synthetic
   description: TRUE for libraries in which the diversity has been synthetically generated (e.g. phage display)
   range: boolean
+  required: True
+  nullable: False
 
 species:
   name: species
   description: Binomial designation of subject's species
   range: Species
+  required: True
+  nullable: False
 
 organism:
   name: organism
   description: Binomial designation of subject's species
   range: ontology
+  required: False
+  nullable: True
 
 sex:
   name: sex
   description: Biological sex of subject
   range: Sex
+  required: True
+  nullable: True
 
 age_min:
   name: age_min
   description: Specific age or lower boundary of age range.
   range: number
+  required: True
+  nullable: True
 
 age_max:
   name: age_max
   description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
   range: number
+  required: True
+  nullable: True
 
 age_unit:
   name: age_unit
   description: Unit of age range
   range: AgeUnit
+  required: True
+  nullable: True
 
 age_event:
   name: age_event
   description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
   range: string
+  required: True
+  nullable: True
 
 age:
   name: age
   range: string
+  required: False
+  nullable: True
 
 ancestry_population:
   name: ancestry_population
   description: Broad geographic origin of ancestry (continent)
   range: string
+  required: True
+  nullable: True
 
 ethnicity:
   name: ethnicity
   description: Ethnic group of subject (defined as cultural/language-based membership)
   range: string
+  required: True
+  nullable: True
 
 race:
   name: race
   description: Racial group of subject (as defined by NIH)
   range: string
+  required: True
+  nullable: True
 
 strain_name:
   name: strain_name
   description: Non-human designation of the strain or breed of animal used
   range: string
+  required: True
+  nullable: True
 
 linked_subjects:
   name: linked_subjects
   description: Subject ID to which `Relation type` refers
   range: string
+  required: True
+  nullable: True
 
 link_type:
   name: link_type
   description: Relation between subject and `linked_subjects`, can be genetic or environmental (e.g.exposure)
   range: string
+  required: True
+  nullable: True
 
 diagnosis:
   name: diagnosis
   description: Diagnosis information for subject
   range: Diagnosis
   multivalued: true
+  required: False
+  nullable: False
 
