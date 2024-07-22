@@ -26,7 +26,7 @@ slots:
     name: mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
     range: MHCAllele
-  multivalued: true
+    multivalued: true
     required: True
     nullable: True
 

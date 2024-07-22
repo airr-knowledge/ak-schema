@@ -128,7 +128,7 @@ slots:
   alignment_labels:
     name: alignment_labels
     description: One string for each codon in the aligned_sequence indicating the label of that codon according to  the numbering of the delineation scheme if it provides one.
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 

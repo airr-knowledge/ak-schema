@@ -34,7 +34,7 @@ slots:
     name: sample
     description: List of Sample Processing objects
     range: SampleProcessing
-  multivalued: true
+    multivalued: true
     required: True
     nullable: False
 
@@ -42,7 +42,7 @@ slots:
     name: data_processing
     description: List of Data Processing objects
     range: DataProcessing
-  multivalued: true
+    multivalued: true
     required: True
     nullable: False
 

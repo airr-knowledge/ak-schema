@@ -53,7 +53,7 @@ slots:
     name: acknowledgements
     description: List of individuals whose contribution to the germline set should be acknowledged
     range: Acknowledgement
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
@@ -130,7 +130,7 @@ slots:
     name: allele_descriptions
     description: list of allele_descriptions in the germline set
     range: AlleleDescription
-  multivalued: true
+    multivalued: true
     required: True
     nullable: True
 

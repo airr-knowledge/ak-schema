@@ -76,7 +76,7 @@ slots:
   data_processing_files:
     name: data_processing_files
     description: Array of file names for data produced by this data processing.
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 

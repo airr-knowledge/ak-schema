@@ -28,7 +28,7 @@ slots:
     name: documented_alleles
     description: List of alleles documented in reference set(s)
     range: DocumentedAllele
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
@@ -36,7 +36,7 @@ slots:
     name: undocumented_alleles
     description: List of alleles inferred to be present and not documented in an identified GermlineSet
     range: UndocumentedAllele
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
@@ -44,7 +44,7 @@ slots:
     name: deleted_genes
     description: Array of genes identified as being deleted in this genotype
     range: DeletedGene
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 

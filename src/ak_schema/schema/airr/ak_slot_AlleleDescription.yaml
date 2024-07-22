@@ -80,7 +80,7 @@ slots:
     name: acknowledgements
     description: List of individuals whose contribution to the gene description should be acknowledged
     range: Acknowledgement
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
@@ -136,7 +136,7 @@ slots:
   aliases:
     name: aliases
     description: Alternative names for this sequence
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
@@ -373,28 +373,28 @@ slots:
   v_gene_delineations:
     name: v_gene_delineations
     range: SequenceDelineationV
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
   unrearranged_support:
     name: unrearranged_support
     range: UnrearrangedSequence
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
   rearranged_support:
     name: rearranged_support
     range: RearrangedSequence
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
   paralogs:
     name: paralogs
     description: Gene symbols of any paralogs
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
@@ -408,7 +408,7 @@ slots:
   curational_tags:
     name: curational_tags
     description: Controlled-vocabulary tags applied to this description
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 

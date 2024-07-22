@@ -567,7 +567,7 @@ if __name__ == "__main__":
                 elif 'airr_is_array' in field_dict and field_dict['airr_is_array'] == True:
                     if 'airr_array_schema' in field_dict:
                         print('    range: %s'%(field_dict['airr_array_schema']))
-                    print('  multivalued: true')
+                    print('    multivalued: true')
                 elif 'airr_type' in field_dict:
                     print('    range: %s'%(field_dict['airr_type']))
 

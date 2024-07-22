@@ -23,14 +23,14 @@ slots:
   rearrangements:
     name: rearrangements
     description: Array of sequence identifiers defined for the Rearrangement object
-  multivalued: true
+    multivalued: true
     required: True
     nullable: True
 
   receptors:
     name: receptors
     description: Array of receptor identifiers defined for the Receptor object
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 

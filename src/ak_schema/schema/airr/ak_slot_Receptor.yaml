@@ -65,7 +65,7 @@ slots:
   receptor_ref:
     name: receptor_ref
     description: Array of receptor identifiers defined for the Receptor object
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
@@ -73,7 +73,7 @@ slots:
     name: reactivity_measurements
     description: Records of reactivity measurement
     range: ReceptorReactivity
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 

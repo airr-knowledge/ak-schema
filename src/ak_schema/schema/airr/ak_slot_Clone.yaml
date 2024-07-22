@@ -52,7 +52,7 @@ slots:
   sequences:
     name: sequences
     description: List sequence_id strings that act as keys to the Rearrangement records for members of the clone.
-  multivalued: true
+    multivalued: true
     required: False
     nullable: True
 
