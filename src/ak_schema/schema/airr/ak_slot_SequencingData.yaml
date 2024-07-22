@@ -1,71 +1,86 @@
-sequencing_data_id:
-  name: sequencing_data_id
-  description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
-  range: string
-  required: True
-  nullable: True
-  identifier: True
+SequencingData:
+  is_a: NamedThing
+  slots:
+    - sequencing_data_id
+    - file_type
+    - filename
+    - read_direction
+    - read_length
+    - paired_filename
+    - paired_read_direction
+    - paired_read_length
+    - index_filename
+    - index_length
 
-file_type:
-  name: file_type
-  description: File format for the raw reads or sequences
-  range: FileType
-  required: True
-  nullable: True
+slots:
+  sequencing_data_id:
+    name: sequencing_data_id
+    description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
+    range: string
+    required: True
+    nullable: True
+    identifier: True
 
-filename:
-  name: filename
-  description: File name for the raw reads or sequences. The first file in paired-read sequencing.
-  range: string
-  required: True
-  nullable: True
+  file_type:
+    name: file_type
+    description: File format for the raw reads or sequences
+    range: FileType
+    required: True
+    nullable: True
 
-read_direction:
-  name: read_direction
-  description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
-  range: ReadDirection
-  required: True
-  nullable: True
+  filename:
+    name: filename
+    description: File name for the raw reads or sequences. The first file in paired-read sequencing.
+    range: string
+    required: True
+    nullable: True
 
-read_length:
-  name: read_length
-  description: Read length in bases for the first file in paired-read sequencing
-  range: integer
-  required: True
-  nullable: True
+  read_direction:
+    name: read_direction
+    description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
+    range: ReadDirection
+    required: True
+    nullable: True
 
-paired_filename:
-  name: paired_filename
-  description: File name for the second file in paired-read sequencing
-  range: string
-  required: True
-  nullable: True
+  read_length:
+    name: read_length
+    description: Read length in bases for the first file in paired-read sequencing
+    range: integer
+    required: True
+    nullable: True
 
-paired_read_direction:
-  name: paired_read_direction
-  description: Read direction for the second file in paired-read sequencing
-  range: PairedReadDirection
-  required: True
-  nullable: True
+  paired_filename:
+    name: paired_filename
+    description: File name for the second file in paired-read sequencing
+    range: string
+    required: True
+    nullable: True
 
-paired_read_length:
-  name: paired_read_length
-  description: Read length in bases for the second file in paired-read sequencing
-  range: integer
-  required: True
-  nullable: True
+  paired_read_direction:
+    name: paired_read_direction
+    description: Read direction for the second file in paired-read sequencing
+    range: PairedReadDirection
+    required: True
+    nullable: True
 
-index_filename:
-  name: index_filename
-  description: File name for the index file
-  range: string
-  required: False
-  nullable: True
+  paired_read_length:
+    name: paired_read_length
+    description: Read length in bases for the second file in paired-read sequencing
+    range: integer
+    required: True
+    nullable: True
 
-index_length:
-  name: index_length
-  description: Read length in bases for the index file
-  range: integer
-  required: False
-  nullable: True
+  index_filename:
+    name: index_filename
+    description: File name for the index file
+    range: string
+    required: False
+    nullable: True
+
+  index_length:
+    name: index_length
+    description: Read length in bases for the index file
+    range: integer
+    required: False
+    nullable: True
 

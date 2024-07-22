@@ -1,77 +1,93 @@
-tissue_processing:
-  name: tissue_processing
-  description: Enzymatic digestion and/or physical methods used to isolate cells from sample
-  range: string
-  required: True
-  nullable: True
+CellProcessing:
+  is_a: NamedThing
+  slots:
+    - tissue_processing
+    - cell_subset
+    - cell_phenotype
+    - cell_species
+    - single_cell
+    - cell_number
+    - cells_per_reaction
+    - cell_storage
+    - cell_quality
+    - cell_isolation
+    - cell_processing_protocol
 
-cell_subset:
-  name: cell_subset
-  description: Commonly-used designation of isolated cell population
-  range: CellSubset
-  required: True
-  nullable: True
+slots:
+  tissue_processing:
+    name: tissue_processing
+    description: Enzymatic digestion and/or physical methods used to isolate cells from sample
+    range: string
+    required: True
+    nullable: True
 
-cell_phenotype:
-  name: cell_phenotype
-  description: List of cellular markers and their expression levels used to isolate the cell population
-  range: string
-  required: True
-  nullable: True
+  cell_subset:
+    name: cell_subset
+    description: Commonly-used designation of isolated cell population
+    range: CellSubset
+    required: True
+    nullable: True
 
-cell_species:
-  name: cell_species
-  description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
-  range: CellSpecies
-  required: False
-  nullable: True
+  cell_phenotype:
+    name: cell_phenotype
+    description: List of cellular markers and their expression levels used to isolate the cell population
+    range: string
+    required: True
+    nullable: True
 
-single_cell:
-  name: single_cell
-  description: TRUE if single cells were isolated into separate compartments
-  range: boolean
-  required: True
-  nullable: True
+  cell_species:
+    name: cell_species
+    description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
+    range: CellSpecies
+    required: False
+    nullable: True
 
-cell_number:
-  name: cell_number
-  description: Total number of cells that went into the experiment
-  range: integer
-  required: True
-  nullable: True
+  single_cell:
+    name: single_cell
+    description: TRUE if single cells were isolated into separate compartments
+    range: boolean
+    required: True
+    nullable: True
 
-cells_per_reaction:
-  name: cells_per_reaction
-  description: Number of cells for each biological replicate
-  range: integer
-  required: True
-  nullable: True
+  cell_number:
+    name: cell_number
+    description: Total number of cells that went into the experiment
+    range: integer
+    required: True
+    nullable: True
 
-cell_storage:
-  name: cell_storage
-  description: TRUE if cells were cryo-preserved between isolation and further processing
-  range: boolean
-  required: True
-  nullable: True
+  cells_per_reaction:
+    name: cells_per_reaction
+    description: Number of cells for each biological replicate
+    range: integer
+    required: True
+    nullable: True
 
-cell_quality:
-  name: cell_quality
-  description: Relative amount of viable cells after preparation and (if applicable) thawing
-  range: string
-  required: True
-  nullable: True
+  cell_storage:
+    name: cell_storage
+    description: TRUE if cells were cryo-preserved between isolation and further processing
+    range: boolean
+    required: True
+    nullable: True
 
-cell_isolation:
-  name: cell_isolation
-  description: Description of the procedure used for marker-based isolation or enrich cells
-  range: string
-  required: True
-  nullable: True
+  cell_quality:
+    name: cell_quality
+    description: Relative amount of viable cells after preparation and (if applicable) thawing
+    range: string
+    required: True
+    nullable: True
 
-cell_processing_protocol:
-  name: cell_processing_protocol
-  description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
-  range: string
-  required: True
-  nullable: True
+  cell_isolation:
+    name: cell_isolation
+    description: Description of the procedure used for marker-based isolation or enrich cells
+    range: string
+    required: True
+    nullable: True
+
+  cell_processing_protocol:
+    name: cell_processing_protocol
+    description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
+    range: string
+    required: True
+    nullable: True
 
