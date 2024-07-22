@@ -109,7 +109,7 @@ def processField(field, field_spec, block, required_fields, field_path,
             # specifications in a custom x-airr object. This custom object has things
             # about the MiAIRR standard and the ADC API. We have to handle both.
 
-            # All fields are by defauly nullable so we set xairr_nullable here.
+            # All fields are by default nullable so we set xairr_nullable here.
             field_dict['airr_nullable'] = True
             # Make sure it is in the labels.
             if not 'airr_nullable' in labels:
@@ -435,6 +435,7 @@ def getArguments():
     return options
 
 def convertCamelCase(word):
+    # Change _ to camel case as per LinkML naming. _ _ replaced with _
     new_word = ''.join('_' if x == '' else x.capitalize() for x in word.split('_'))
     return new_word
 
@@ -537,10 +538,14 @@ if __name__ == "__main__":
                         print('      meaning: %s'%(ontology_example_array[0]))
 
             else:
+                if options.verbose:
+                    print(field_dict)
                 print('%s:'%(field_dict['airr']))
                 print('  name: %s'%(field_dict['airr']))
                 if 'airr_description' in field_dict:
                     print('  description: %s'%(field_dict['airr_description']))
+
+                # Handle the range, this is a bit complex depending on the field.
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
                     print('  range: %s'%(convertCamelCase(field_dict['airr'])))
                 elif 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
@@ -552,6 +557,14 @@ if __name__ == "__main__":
                     print('  multivalued: true')
                 elif 'airr_type' in field_dict:
                     print('  range: %s'%(field_dict['airr_type']))
+
+                # Print out some x-airr attributes if required.
+                if 'airr_required' in field_dict:
+                    print('  required: %s'%(field_dict['airr_required']))
+                if 'airr_nullable' in field_dict:
+                    print('  nullable: %s'%(field_dict['airr_nullable']))
+                if 'airr_identifier' in field_dict:
+                    print('  identifier: %s'%(field_dict['airr_identifier']))
                 print('')
 
         
