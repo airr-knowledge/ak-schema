@@ -516,7 +516,7 @@ if __name__ == "__main__":
         for field, field_dict in table.items():
             if 'airr' in field_dict:
                 if not options.enums:
-                    print('    - %s:'%(field_dict['airr']))
+                    print('    - %s'%(field_dict['airr']))
 
         print('')
         print('slots:')
