@@ -435,7 +435,7 @@ def getArguments():
     return options
 
 def convertCamelCase(word):
-    new_word = ''.join(x.capitalize() or '_' for x in word.split('_'))
+    new_word = ''.join('_' if x == '' else x.capitalize() for x in word.split('_'))
     return new_word
 
 if __name__ == "__main__":
