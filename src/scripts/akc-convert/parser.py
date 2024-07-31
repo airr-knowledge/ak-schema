@@ -138,7 +138,7 @@ class Parser:
     def getRepositoryChunkSize(self):
         return self.repository_chunk
 
-    # Utility method to return the verbose boolena flag - all parsers need this.
+    # Utility method to return the verbose boolean flag - all parsers need this.
     def verbose(self):
         return self.verbose_level
 
