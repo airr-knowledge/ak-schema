@@ -8,6 +8,8 @@ import re
 import os
 import pandas as pd
 import numpy as np
+from ak_schema import *
+
 
 
 class Parser:
@@ -589,35 +591,38 @@ class Parser:
     # a leaf node is a bit complex and specialized based on both the AIRR spec and how
     # they are represented in the iReceptor repository.
     def akc_flatten(self, key, value, dictionary, key_path, airr_class):
-        airr_class = self.getAIRRMap().getRepertoireClass()
         column = self.getAIRRTag()
         # If it is an integer, float, or bool we just use the key value pair.
         if isinstance(value, (int, float, bool)):
             if self.validAIRRFieldType(key, value, False):
-                #rep_key = self.fieldToRepository(key, airr_class)
-                #rep_value = self.valueToRepository(key, column, value, airr_class)
-                akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field")
+                # Map the field and if it exists as an akc_field, process it.
+                akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                 if not akc_field is None and value != '':
+                    # For each field we create a dictionary that has the value,
+                    # the AKC class/object, and the AKC field name.
                     field_dict = dict()
                     field_dict['value'] = value
                     field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class")
+                                                  "airr", "akc_class", airr_class)
                     field_dict['akc_field'] = akc_field
+                    # Store the field dictionary keyed on the key.
                     dictionary[key] = field_dict
             else:
                 raise TypeError("AIRR type error for " + key)
         # If it is a string we just use the key value pair.
         elif isinstance(value, str):
             if self.validAIRRFieldType(key, value, False):
-                #rep_key = self.fieldToRepository(key, airr_class)
-                #rep_value = self.valueToRepository(key, column, value, airr_class)
-                akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field")
+                # Map the field and if it exists as an akc_field, process it.
+                akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                 if not akc_field is None and value != '':
+                    # For each field we create a dictionary that has the value,
+                    # the AKC class/object, and the AKC field name.
                     field_dict = dict()
                     field_dict['value'] = value
                     field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class")
+                                                  "airr", "akc_class", airr_class)
                     field_dict['akc_field'] = akc_field
+                    # Store the field dictionary keyed on the key.
                     dictionary[key] = field_dict
             else:
                 raise TypeError("AIRR type error for " + key)
@@ -635,46 +640,24 @@ class Parser:
                 # add to the dictionary.
                 if (self.validAIRRFieldType(value_key, value['label'], False) and
                             self.validAIRRFieldType(id_key, value['id'], False)):
-                    akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field")
+                    # Map the field and if it exists as an akc_field, process it.
+                    akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                     if not akc_field is None and value != '':
+                        # For each field we create a dictionary that has the value,
+                        # the AKC class/object, and the AKC field name.
                         field_dict = dict()
                         field_dict['value'] = value
                         field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class")
+                                                  "airr", "akc_class", airr_class)
                         field_dict['akc_field'] = akc_field
+                        # Store the field dictionary keyed on the key.
                         dictionary[key] = field_dict
-
-                    #rep_value = self.valueToRepository(value_key, column,
-                    #                                   value['label'], airr_class)
-                    #dictionary[self.fieldToRepository(value_key,airr_class)] = rep_value
-                    #rep_value = self.valueToRepository(id_key, column,
-                    #                                   value['id'], airr_class)
-                    #dictionary[self.fieldToRepository(id_key, airr_class)] = rep_value
                 else:
                     raise TypeError(key)
             else:
-                repo_key = self.getAIRRMap().getMapping(key_path,
-                                              "ir_adc_api_query", "ir_repository")
-                repo_type = self.getAIRRMap().getMapping(key_path,
-                                              "ir_adc_api_query","ir_repository_type")
-                airr_type = self.getAIRRMap().getMapping(key_path,
-                                              "ir_adc_api_query","airr_type")
-                # If the AIRR field from the file is marked for storage as an object
-                # and the repository can accept the object as an object, then we
-                # can save the object directly as an object.
-                if (repo_type == "object" and airr_type == "object"):
-                    print("Info: Storing field %s as object %s (%s,%s, %s)"%(key, repo_key, airr_type, repo_type, key_path))
-                    #if self.validAIRRFieldType(key, value, False):
-                    #    rep_key = self.fieldToRepository(key, rep_class)
-                    #    rep_value = self.valueToRepository(key, column, value, rep_class)
-                    #    dictionary[rep_key] = rep_value
-                    #else:
-                    #    raise TypeError(key)
-                    dictionary[key] = value
-                else:
-                    # If we aren't storing as an object, we continue to flatten
-                    for sub_key, sub_value in value.items():
-                        self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
+                # If we aren't processing an ontology term, we recursively flatten
+                for sub_key, sub_value in value.items():
+                    self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
         elif isinstance(value, list):
             # There are currently three possible list situations in the spec.
             # - keywords_study, data_processing_files: An array of strings
@@ -690,17 +673,18 @@ class Parser:
                 # TODO: Need to implement type checking on this field...
 
                 if self.validAIRRFieldType(key, value, False):
-                    akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field")
+                    # Map the field and if it exists as an akc_field, process it.
+                    akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                     if not akc_field is None and value != '':
+                        # For each field we create a dictionary that has the value,
+                        # the AKC class/object, and the AKC field name.
                         field_dict = dict()
                         field_dict['value'] = value
                         field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class")
+                                                  "airr", "akc_class", airr_class)
                         field_dict['akc_field'] = akc_field
+                        # Store the field dictionary keyed on the key.
                         dictionary[key] = field_dict
-                    #rep_key = self.fieldToRepository(key, airr_class)
-                    #rep_value = self.valueToRepository(key, column, value, airr_class)
-                    #dictionary[rep_key] = rep_value
                 else:
                     raise TypeError(key)
             else:
@@ -730,32 +714,19 @@ class Parser:
                         for sub_key, sub_value in value[0].items():
                             self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
                 else:
-                    repo_type = self.getAIRRMap().getMapping(key,
-                                                  self.getAIRRTag(), "ir_repository_type")
-                    airr_type = self.getAIRRMap().getMapping(key,
-                                                  self.getAIRRTag(), "airr_type")
-                    # If the AIRR field from the file is marked for storage as an object
-                    # and the repository can accept the object as an object, then we
-                    # can save the object directly as an object.
-                    if (repo_type == "object" and airr_type == "object"):
-                        print("Info: Storing field %s as an array of objects (%s,%s)"%(key, airr_type, repo_type))
-                        #if self.validAIRRFieldType(key, value, False):
-                        #    rep_key = self.fieldToRepository(key, rep_class)
-                        #    rep_value = self.valueToRepository(key, column, value, rep_class)
-                        #    dictionary[rep_key] = rep_value
-                        #else:
-                        #    raise TypeError(key)
-                        dictionary[key] = value
-                    else:
-                        # In the general case, iReceptor only supports a single instance in
-                        # array subtypes. If this occurs, we generate an error message and
-                        # stop processing by raising an exception on this key.
-                        if len(value) > 1:
-                            print("ERROR: Found a repertoire list for %s > 1 (%d)."%
-                                  (key, len(value)))
-                            print("ERROR: iReceptor only supports arrays of objects with one element.")
-                            raise TypeError(key)
-                        for sub_key, sub_value in value[0].items():
+                    # In the general case, iReceptor only supports a single instance in
+                    # array subtypes. If this occurs, we generate an error message and
+                    # stop processing by raising an exception on this key.
+                    #if len(value) > 1:
+                    #    print("ERROR: Found a repertoire list for %s > 1 (%d)."%
+                    #          (key, len(value)))
+                    #    print("ERROR: iReceptor only supports arrays of objects with one element.")
+                    #    raise TypeError(key)
+
+                    if len(value) > 1:
+                        print("Info: Processing multi element array key %s."%(key))
+                    for element in value:
+                        for sub_key, sub_value in element.items():
                             self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
         return dictionary
 
