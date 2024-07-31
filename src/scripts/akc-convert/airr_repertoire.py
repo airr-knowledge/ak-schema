@@ -1,12 +1,8 @@
 #!/usr/bin/python3
 
-import pandas as pd
-import json
 import os
-from datetime import datetime
-from datetime import timezone
-from repertoire import Repertoire
 import airr
+from repertoire import Repertoire
 
 class AIRRRepertoire(Repertoire):
     
@@ -41,51 +37,38 @@ class AIRRRepertoire(Repertoire):
         # Get the fields to use for finding repertoire IDs, either using those IDs
         # directly or by looking for a repertoire ID based on a rearrangement file
         # name.
-        repertoire_id_field = self.getRepertoireLinkIDField()
-        repertoire_file_field = self.getRepertoireFileField()
+        #repertoire_id_field = self.getRepertoireLinkIDField()
+        #repertoire_file_field = self.getRepertoireFileField()
 
         # The 'Repertoire' contains a dictionary for each repertoire.
         repertoire_list = []
         rep_class = self.getAIRRMap().getRepertoireClass()
+        # For each repertoire, process it.
         for repertoire in data['Repertoire']:
+            # Create a dictionary to contain all the AKC info for this repertoire.
             repertoire_dict = dict()
+            # For each field, process it
             for key, value in repertoire.items():
+                # Our processing is to flatten the data recursively. This populates
+                # the dictionary with an AKC representation of the repertoire data.
                 try:
                     self.akc_flatten(key, value, repertoire_dict, key, rep_class)
                 except TypeError as error:
                     print("ERROR: %s"%(error))
                     return False
 
-            # Ensure that we have a correct file name to link fields. If we can't find it 
-            # this is a fatal error as we can not link any data to this set repertoire,
-            # so there is no point adding the repertoire...
-            repository_file_field = self.getAIRRMap().getMapping(repertoire_file_field,
-                                                    ireceptor_tag, repository_tag)
-            # If we can't find a mapping for this field in the repository mapping, then
-            # we might still be OK if the metadata spreadsheet has the field. If the fails, 
-            # then we should exit.
-            if repository_file_field is None or len(repository_file_field) == 0:
-                print("Warning: No repository mapping for the rearrangement file field (%s)"
-                      %(repertoire_file_field))
-                repository_file_field = repertoire_file_field
-    
-            # If we can't find the file field for the rearrangement field in the repository, then
-            # abort, as we won't be able to link the repertoire to the rearrangement.
-            #if not repository_file_field in repertoire_dict:
-            #    print("ERROR: Could not find a repertoire file field in the metadata (%s)"
-            #          %(repertoire_file_field))
-            #    print("ERROR: Will not be able to link repertoire to rearrangement annotations")
-            #    return False
-
+            # Append the dictionary for this repertoire to the list.
             repertoire_list.append(repertoire_dict)
                 
-        # Iterate over the list and load records. Note that this code inserts all data
-        # that was read in. That is, all of the non MiAIRR fileds that exist
-        # are stored in the repository. So if the provided file has lots of extra fields
-        # they will exist in the repository.
-        # TODO: Ensure that all records are written as the correct type for the repository.
+        # Exttract the AIRR Map akc_class column, drop any NaN values
+        # and return a list of the unique classes from the AKC. 
+        akc_class_column = self.getAIRRMap().getRepertoireMapColumn('akc_class')
+        akc_class_list = akc_class_column.dropna().unique()
+        print('Info: Processing AKC classes: %s'%(akc_class_list))
+
+        # Iterate over the repertoire list and process each repertoire. 
         for r in repertoire_list:
-            if self.generateAKCRepertoire(r) is None: 
+            if self.generateAKCRepertoire(r, akc_class_list) is None: 
                 return False
 
         # If we made it here we are DONE!
