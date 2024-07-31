@@ -69,6 +69,16 @@ class AIRRMap:
             print("ERROR: Could not find required ir_class field in AIRR Mapping")
             return False
 
+        # We need the akc_class column to be in the AIRR Mapping.
+        if not "akc_class" in self.airr_mappings:
+            print("ERROR: Could not find required akc_class field in AIRR Mapping")
+            return False
+
+        # We need the akc_field column to be in the AIRR Mapping.
+        if not "akc_field" in self.airr_mappings:
+            print("ERROR: Could not find required akc_field field in AIRR Mapping")
+            return False
+
         # Write some diagnostics about the file read in
         if self.verbose:
             print("Info: Successfully read in %d mapping columns from %s" %
