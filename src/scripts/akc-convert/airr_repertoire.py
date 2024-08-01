@@ -7,8 +7,8 @@ from repertoire import Repertoire
 class AIRRRepertoire(Repertoire):
     
     # Constructor - call the parent class constructor.
-    def __init__(self, verbose, repository_tag, repository_chunk, airr_map, repository):
-        Repertoire.__init__(self, verbose, repository_tag, repository_chunk, airr_map, repository) 
+    def __init__(self, verbose, airr_map):
+        Repertoire.__init__(self, verbose, airr_map) 
 
     def process(self, filename):
 
@@ -20,8 +20,8 @@ class AIRRRepertoire(Repertoire):
         # Get the column tag for the iReceptor mapping
         ireceptor_tag = self.getiReceptorTag()
 
-        # Get the column tag for the iReceptor mapping
-        repository_tag = self.getRepositoryTag()
+        # Get the column tag for the AKC mapping
+        akc_tag = self.getAKCTag()
 
         # Check the validity of the repertoires from an AIRR perspective
         try:

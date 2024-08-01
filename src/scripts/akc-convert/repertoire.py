@@ -12,8 +12,8 @@ from ak_schema import *
 
 class Repertoire(Parser):
     
-    def __init__(self, verbose, repository_tag, repository_chunk, airr_map, repository):
-        Parser.__init__(self, verbose, repository_tag, repository_chunk, airr_map, repository)
+    def __init__(self, verbose, airr_map):
+        Parser.__init__(self, verbose, airr_map)
 
     # Hide the impementation of AKC data model from the other classes. 
     def generateAKCRepertoire(self, repertoire_dict, akc_class_list):

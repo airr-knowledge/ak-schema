@@ -15,31 +15,25 @@ from ak_schema import *
 class Parser:
 
     # Class constructor
-    def __init__(self, verbose, repository_tag, repository_chunk, airr_map, repository):
+    def __init__(self, verbose, airr_map):
 
         # Keep track of the verbosity level
         self.verbose_level = verbose
 
-        # The tag in the map file to use for the repository
-        self.repository_tag = repository_tag
-
         # The tag in the map file to use for iReceptor specific fields
         self.ireceptor_tag = "ir_id" 
 
-        # The tag in the map file to use for iReceptor specific fields
+        # The tag in the map file to use for AIRR specific fields
         self.airr_tag = "airr" 
 
-        # The size of each data chunk to load in the parser, when loading large files.
-        self.repository_chunk = repository_chunk
+        # The tag in the map file to use for AKC specific fields
+        self.akc_tag = "akc_field" 
 
         # A helper variable that parser's can use if they need to create a scratch
         # folder for storing temporary data in it. The folder name is guaranteed to
         # be unique to the process being run, as it uses the process id in the folder
         # name.
         self.scratchFolder = ""
-
-        # Manage the repository 
-        self.repository = repository
 
         # Save the AIRR Mapping object
         self.airr_map = airr_map
@@ -96,8 +90,11 @@ class Parser:
         if not self.airr_map.hasColumn(self.ireceptor_tag):
             print("ERROR: Could not find required iReceptor column in AIRR Mapping")
             return False
-        if not self.airr_map.hasColumn(self.repository_tag):
-            print("ERROR: Could not find required Repository column in AIRR Mapping")
+        if not self.airr_map.hasColumn(self.airr_tag):
+            print("ERROR: Could not find required AIRR column in AIRR Mapping")
+            return False
+        if not self.airr_map.hasColumn(self.akc_tag):
+            print("ERROR: Could not find required AKC column in AIRR Mapping")
             return False
         return True
 
@@ -123,20 +120,15 @@ class Parser:
     def getAnnotationLinkIDField(self):
         return self.annotation_linkid_field
 
-    # Utility method to return the tag used by the mapping for the repository.
-    def getRepositoryTag(self):
-        return self.repository_tag
+    # Utility method to return the tag used by the mapping for the AKC.
+    def getAKCTag(self):
+        return self.akc_tag
     # Utility method to return the tag used by the mapping for the iReceptor fields.
     def getiReceptorTag(self):
         return self.ireceptor_tag
     # Utility method to return the tag used by the mapping for the AIRR fields.
     def getAIRRTag(self):
         return self.airr_tag
-
-    # Utility method to return the size of the data set chunks to load in
-    # the repository. 
-    def getRepositoryChunkSize(self):
-        return self.repository_chunk
 
     # Utility method to return the verbose boolean flag - all parsers need this.
     def verbose(self):
@@ -147,8 +139,8 @@ class Parser:
        return self.airr_map
 
     # Utility function to map a key of a specific value to the correct field for
-    # the repository. Possible to limit the mapping to a class in the mapping.
-    def fieldToRepository(self, field, map_class=None):
+    # the AKC. Possible to limit the mapping to a class in the mapping.
+    def fieldToAKC(self, field, map_class=None):
 
         # Check to see if the field is in the AIRR mapping, if not warn.
         airr_field = self.getAIRRMap().getMapping(field, self.airr_tag,
@@ -156,15 +148,15 @@ class Parser:
         if airr_field is None:
             print("Warning: Could not find %s in AIRR mapping"%(field))
 
-        # Check to see if the field can be mapped to a field in the repository, if not warn.
-        repo_field = self.getAIRRMap().getMapping(field, self.airr_tag,
-                                                  self.repository_tag, map_class)
-        if repo_field is None:
-            repo_field = field
-            print("Warning: Could not find repository mapping for %s, storing as is"%(field))
+        # Check to see if the field can be mapped to a field in the AKC, if not warn.
+        akc_field = self.getAIRRMap().getMapping(field, self.airr_tag,
+                                                 self.akc_tag, map_class)
+        if akc_field is None:
+            akc_field = field
+            print("Warning: Could not find AKC mapping for %s, storing as is"%(field))
 
         # Return the mapping.
-        return repo_field
+        return akc_field
 
     @staticmethod
     def len_null_to_0(value):
@@ -390,19 +382,19 @@ class Parser:
 
 
     # Utility function to map a key of a specific value to the correct type for
-    # the repository. 
-    def valueToRepository(self, field, field_column, value, map_class=None):
+    # the AKC. 
+    def valueToAKC(self, field, field_column, value, map_class=None):
         # Define the columns to use for the mappings
         airr_type_tag = "airr_type"
         airr_nullable_tag = "airr_nullable"
         airr_array_tag = "airr_is_array"
-        repository_type_tag = "ir_repository_type"
+        akc_type_tag = "akc_type"
 
-        # Get the types of the fields, both the AIRR type and the repository type
+        # Get the types of the fields, both the AIRR type and the AKC type
         airr_field_type = self.getAIRRMap().getMapping(field, field_column,
                                                 airr_type_tag, map_class)
-        repository_field_type = self.getAIRRMap().getMapping(field, field_column,
-                                                repository_type_tag, map_class)
+        akc_field_type = self.getAIRRMap().getMapping(field, field_column,
+                                                akc_type_tag, map_class)
         field_nullable = self.getAIRRMap().getMapping(field, field_column,
                                                 airr_nullable_tag, map_class)
         is_array = self.getAIRRMap().getMapping(field, field_column,
@@ -416,10 +408,10 @@ class Parser:
             raise TypeError("Null value for AIRR non nullable field " + field)
 
         # Do a default the conversion for the value
-        rep_value = value
+        akc_value = value
 
         #print("Info: Converting field %s %s"%(field, value))
-        #print("Info:    field type %s %s"%(airr_field_type, repository_field_type))
+        #print("Info:    field type %s %s"%(airr_field_type, akc_field_type))
         #print("Info:    nullable %s"%(str(field_nullable)))
         #print("Info:    is_array %s"%(str(is_array)))
 
@@ -428,56 +420,56 @@ class Parser:
         if is_array:
             # Handle arrays, a null value is OK...
             if value is None:
-                rep_value = None
+                akc_value = None
             elif isinstance(value, list):
                 # Currently, the spec only supports arrays of strings. If any of the
                 # elements are not string, raise a type error.
                 for item in value:
                     self.valueToRepository(field, field_column, item, map_class)
                 # Otherwise, return the array of strings...
-                rep_value = value
+                akc_value = value
             elif isinstance(value, str):
                 # Assume a comma separated list of strings, create the array and return it.
-                rep_value = value.split(',')
-                if isinstance(rep_value, list):
-                    rep_value = [x.strip() for x in rep_value]
+                akc_value = value.split(',')
+                if isinstance(akc_value, list):
+                    akc_value = [x.strip() for x in akc_value]
                 else:
                     raise TypeError("Unable to convert a ',' separated string to an array (" +
                                      value + ")")
             else:
                 if self.verbose():
                     print("Info: Unable to convert field %s = %s (%s, %s, %s), not converted"%
-                          (field, value, airr_field_type, repository_field_type, type(value)))
-        elif repository_field_type == "string":
+                          (field, value, airr_field_type, akc_field_type, type(value)))
+        elif akc_field_type == "string":
             # We don't want null strings, we want empty strings.
             if value is None:
-                rep_value = None 
+                akc_value = None 
             else:
-                rep_value = str(value)
-        elif repository_field_type == "boolean":
+                akc_value = str(value)
+        elif akc_field_type == "boolean":
             # Even though python does not allow boolean values to be null
             # (e.g. bool(None) == False), JSON and data repositories often do,
             # so in this case we don't want to return False for a None value. 
             # We want to return None...
             if value is None:
-                rep_value = None
+                akc_value = None
             elif isinstance(value,(str)):
-                rep_value = Parser.str_to_bool(value)
+                akc_value = Parser.str_to_bool(value)
                 #if value in ["T","t","True","TRUE","true"]:
-                #    rep_value = True
+                #    akc_value = True
                 #elif value in ["F","f","False","FALSE","false"]:
-                #    rep_value = False
+                #    akc_value = False
                 #else:
                 #    raise TypeError("Invalid boolean value " + value + " for field " + field)
             elif isinstance(value,(int)):
-                rep_value = Parser.int_to_bool(value)
+                akc_value = Parser.int_to_bool(value)
             else:
-                rep_value = bool(value)
-        elif repository_field_type == "integer":
+                akc_value = bool(value)
+        elif akc_field_type == "integer":
             # We allow integers to be null, as we don't know what to replace them
             # with.
             if value is None:
-                rep_value = None
+                akc_value = None
             else:
                 # This is a complex case... We are converting a boolean AIRR field to
                 # an integer representation of that boolean value. The problem is that
@@ -486,22 +478,22 @@ class Parser:
                 # all of these cases.
                 if airr_field_type == "boolean":
                     if isinstance(value, (int)):
-                        if value == 1: rep_value = 1
-                        elif value == 0: rep_value = 0
+                        if value == 1: akc_value = 1
+                        elif value == 0: akc_value = 0
                         else:
                             raise TypeError("Invalid boolean value " + str(value) +
                                             " for field " + field)
                     elif isinstance(value, (str)):
                         if value in ["T","t","True","TRUE","true"]:
-                            rep_value = 1
+                            akc_value = 1
                         elif value in ["F","f","False","FALSE","false"]:
-                            rep_value = 0
+                            akc_value = 0
                         else:
                             raise TypeError("Invalid boolean value " + value +
                                             " for field " + field)
                     elif isinstance(value, (bool)):
-                        if value == True: rep_value = 1
-                        elif value == False: rep_value = 0
+                        if value == True: akc_value = 1
+                        elif value == False: akc_value = 0
                         else:
                             raise TypeError("Invalid boolean value " + str(value) +
                                             " for field " + field)
@@ -511,21 +503,21 @@ class Parser:
 
                 else:
                     # This is the base case - we convert an integer to an integer...
-                    rep_value = int(value)
-        elif repository_field_type == "number":
+                    akc_value = int(value)
+        elif akc_field_type == "number":
             # We allow floats to be null, as we don't know what to replace them
             # with.
             if value is None:
-                rep_value = None
+                akc_value = None
             else:
-                rep_value = float(value)
+                akc_value = float(value)
         else:
             if self.verbose():
                 print("Info: Unable to convert field %s = %s (%s, %s, %s), not converted"%
-                      (field, value, airr_field_type, repository_field_type, type(value)))
+                      (field, value, airr_field_type, akc_field_type, type(value)))
          
-        #print("Info: Converting field %s (%s -> %s)"%(field, value, rep_value))
-        return rep_value
+        #print("Info: Converting field %s (%s -> %s)"%(field, value, akc_value))
+        return akc_value
 
     # Utility function to check to see if a given value is a valid type for a specific
     # AIRR field.  If doing strict AIRR checks, if the field is not an AIRR field then
@@ -589,7 +581,7 @@ class Parser:
     # the value is not a compoud object (not a dict or a list). If it is not a leaf node
     # then the fucntion recurses on all of the elements in the dict or list. Note that
     # a leaf node is a bit complex and specialized based on both the AIRR spec and how
-    # they are represented in the iReceptor repository.
+    # they are represented in the AKC.
     def akc_flatten(self, key, value, dictionary, key_path, airr_class):
         column = self.getAIRRTag()
         # If it is an integer, float, or bool we just use the key value pair.
@@ -631,8 +623,7 @@ class Parser:
             # their dictionary, a value and an id.
             if 'label' in value and 'id' in value:
                 # In an ontology, the dictionary contains two fields, a value and an id.
-                # We store this in the repository as the value field being the key and
-                # the id field as having an _id suffix added to the key
+                # We store this in the AKC as is for now.
                 value_key = key
                 id_key = key+"_id"
 
@@ -730,28 +721,6 @@ class Parser:
                             self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
         return dictionary
 
-
-    #####################################################################################
-    # Hide the repository implementation from the Parser subclasses.
-    #####################################################################################
-
-    # Look for the file_name given in the repertoire collection in the file_field field
-    # in the repository. Return an array of integers which are the sample IDs where the
-    # file_name was found in the field field_name.
-    def repositoryGetRepertoireIDs(self, search_field, search_name):
-        # Get the field the repository is using to linke repertoires and rearrangements.
-        # That is the field we want to use to generate the repertoire IDs
-        link_field = self.airr_map.getMapping(self.getRepertoireLinkIDField(),
-                                              self.getiReceptorTag(),
-                                              self.getRepositoryTag())
-        # Ask the repository to do the search and return the results.
-        return self.repository.getRepertoireIDs(link_field, search_field, search_name)
-
-    # Look for the field given in the repertoire collection in the repository.
-    # Return an array of repertoires which match the search criteria 
-    def repositoryGetRepertoires(self, search_field, search_name):
-        # Ask the repository to do the search and return the results.
-        return self.repository.getRepertoires(search_field, search_name)
 
     #####################################################################################
     # Hide the internal use of temporary folders from the subclasses
