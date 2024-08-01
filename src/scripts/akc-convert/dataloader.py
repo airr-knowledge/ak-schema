@@ -91,23 +91,6 @@ if __name__ == "__main__":
     # Get the command line arguments.
     options = getArguments()
 
-    # Create the repository object, which establishes the repository connection.
-    #repository = Repository(options.user, options.password,
-                            #options.host, options.port,
-                            #options.database,
-                            #options.repertoire_collection,
-                            #options.rearrangement_collection,
-                            #options.clone_collection,
-                            #options.cell_collection,
-                            #options.expression_collection,
-                            #options.skipload, options.update,
-                            #options.verbose)
-    # Check on the successful creation of the repository
-    #if repository is None or not repository:
-        #sys.exit(1)
-    # For now, we won't use the repository.
-    repository = None
-
     # Create the AIRR mapping object, which has the mapping of fields between
     # the various components. This is essentially a mapping between the AIRR
     # standard fields, the fields in the input file being parsed, and the fields
