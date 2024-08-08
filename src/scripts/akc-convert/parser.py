@@ -589,16 +589,16 @@ class Parser:
             if self.validAIRRFieldType(key, value, False):
                 # Map the field and if it exists as an akc_field, process it.
                 akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
+                field_dict = dict()
+                field_dict['value'] = value
                 if not akc_field is None and value != '':
                     # For each field we create a dictionary that has the value,
                     # the AKC class/object, and the AKC field name.
-                    field_dict = dict()
-                    field_dict['value'] = value
                     field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                     field_dict['akc_field'] = akc_field
                     # Store the field dictionary keyed on the key.
-                    dictionary[key] = field_dict
+                dictionary[key] = field_dict
             else:
                 raise TypeError("AIRR type error for " + key)
         # If it is a string we just use the key value pair.
@@ -606,16 +606,16 @@ class Parser:
             if self.validAIRRFieldType(key, value, False):
                 # Map the field and if it exists as an akc_field, process it.
                 akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
+                field_dict = dict()
+                field_dict['value'] = value
                 if not akc_field is None and value != '':
                     # For each field we create a dictionary that has the value,
                     # the AKC class/object, and the AKC field name.
-                    field_dict = dict()
-                    field_dict['value'] = value
                     field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                     field_dict['akc_field'] = akc_field
                     # Store the field dictionary keyed on the key.
-                    dictionary[key] = field_dict
+                dictionary[key] = field_dict
             else:
                 raise TypeError("AIRR type error for " + key)
         elif isinstance(value, dict):
@@ -633,16 +633,16 @@ class Parser:
                             self.validAIRRFieldType(id_key, value['id'], False)):
                     # Map the field and if it exists as an akc_field, process it.
                     akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
+                    field_dict = dict()
+                    field_dict['value'] = value
                     if not akc_field is None and value != '':
                         # For each field we create a dictionary that has the value,
                         # the AKC class/object, and the AKC field name.
-                        field_dict = dict()
-                        field_dict['value'] = value
                         field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                         field_dict['akc_field'] = akc_field
                         # Store the field dictionary keyed on the key.
-                        dictionary[key] = field_dict
+                    dictionary[key] = field_dict
                 else:
                     raise TypeError(key)
             else:
@@ -666,16 +666,16 @@ class Parser:
                 if self.validAIRRFieldType(key, value, False):
                     # Map the field and if it exists as an akc_field, process it.
                     akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
+                    field_dict = dict()
+                    field_dict['value'] = value
                     if not akc_field is None and value != '':
                         # For each field we create a dictionary that has the value,
                         # the AKC class/object, and the AKC field name.
-                        field_dict = dict()
-                        field_dict['value'] = value
                         field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                         field_dict['akc_field'] = akc_field
                         # Store the field dictionary keyed on the key.
-                        dictionary[key] = field_dict
+                    dictionary[key] = field_dict
                 else:
                     raise TypeError(key)
             else:

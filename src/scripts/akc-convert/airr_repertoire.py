@@ -3,6 +3,8 @@
 import os
 import airr
 from repertoire import Repertoire
+from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
+
 
 class AIRRRepertoire(Repertoire):
     
@@ -67,9 +69,12 @@ class AIRRRepertoire(Repertoire):
         print('Info: Processing AKC classes: %s'%(akc_class_list))
 
         # Iterate over the repertoire list and process each repertoire. 
+        investigation_dict = dict()
         for r in repertoire_list:
-            if self.generateAKCRepertoire(r, akc_class_list) is None: 
-                return False
+            investigation_dict = self.generateAKCInvestigation(r, investigation_dict, akc_class_list) 
+            #if self.generateAKCRepertoire(r, akc_class_list) is None: 
+            #    return False
+        print(json_dumper.dumps(investigation_dict))
 
         # If we made it here we are DONE!
         return True

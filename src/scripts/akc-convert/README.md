@@ -16,6 +16,10 @@ Get a set of repertoires, 8 in this case from covid19-1.ireceptor.org
 
 curl -d '{"size":8}' https://covid19-1.ireceptor.org/airr/v1/repertoire > covid19-1-8.json
 
+or all the repertoires from a given study from vdjserver.org
+
+curl -H 'content-type: application/json' -d '{"filters":{"op":"=", "content": {"field":"study.study_id", "value":"PRJNA300878"}}}' https://vdjserver.org/airr/v1/repertoire > vdjserver-PRJNA300878.json
+
 Convert the data to LinkML using the AKC schema.
 
 python dataloader.py -v --repertoire -f covid19-1-8.json   --mapfile AIRR-iReceptorMapping-v1.4-2024-07-30.txt
