@@ -149,13 +149,13 @@ class Repertoire(Parser):
         if 'sample_processing_id' in repertoire_dict:
             sample_processing_id = repertoire_dict['sample_processing_id']['value']
         else:
-            print('Warning: Could not find sample_processing_id field, skipping')
+            print('Warning: Could not find sample_processing_id field')
             sample_processing_id = None
 
         if 'data_processing_id' in repertoire_dict:
             data_processing_id = repertoire_dict['data_processing_id']['value']
         else:
-            print('Warning: Could not find data_processing_id field, skipping')
+            print('Warning: Could not find data_processing_id field')
             data_processing_id = None
 
         if 'study_id' in repertoire_dict:
@@ -203,13 +203,13 @@ class Repertoire(Parser):
             elif akc_class == 'Participant':
                 airr_link_field = 'subject_id'
             elif akc_class == 'Specimen':
-                airr_link_field = 'sample_id'
+                airr_link_field = 'sample_processing_id'
             else:
-                print('ERROR: Could not link class %s, skipping'%(akc_class))
+                print('Warning: Could not link class %s, skipping'%(akc_class))
                 continue
                 
             if not airr_link_field in repertoire_dict:
-                print('ERROR: Could not find link field %s, skipping'%(airr_link_field))
+                print('Warning: Could not find link field %s for class %s, skipping'%(airr_link_field, akc_class))
                 continue
 
             airr_link_value = repertoire_dict[airr_link_field]['value']
@@ -227,8 +227,33 @@ class Repertoire(Parser):
                 # If the current field is of the class we are parsing,
                 # process it.
                 if 'akc_class' in value and value['akc_class'] == akc_class:
-                    akc_object[value['akc_field']] = value['value']
-                    print('Info: processing class %s, airr = %s, akc = %s, value = %s'%(akc_class, key, value['akc_field'],value['value']))
+                    # Check to see if the field exists. If so then check the
+                    # value. They should be the same. If not generate an error message.
+                    # Because we are mapping ADC to AKC, ADC is not normalized. So in
+                    # a sense we are normalizing the ADC data. In this case, for example
+                    # the study fields (title, publications, etc) should be the same
+                    # across all repertoires from the same study. Similarly, all of the 
+                    # subject fields (age, subject id, sex, etc) should be the same for
+                    # the same subject across all repertoires. This is performing a 
+                    # sanity check on the ADC data and generates a warning when data
+                    # differes when it presumably should nopt.
+                    if (value['akc_field'] in akc_object 
+                       and akc_object[value['akc_field']] != None):
+                        if akc_object[value['akc_field']] != value['value']:
+                            print('Warning: Value for "%s" field exists and is not the same (%s vs %s)'%(value['akc_field'],akc_object[value['akc_field']],value['value']))
+                        else:
+                            # In this case the field already exists and we have
+                            # confirmed that the field hasn't changed as it should.
+                            if self.verbose():
+                                print('Info: Field %s matches'%(value['akc_field']))
+                    else:
+                        # In this case we are creating a new field in the object
+                        if self.verbose():
+                            print('Info: Creating new field %s, value = %s'%(value['akc_field'],value['value']))
+                        akc_object[value['akc_field']] = value['value']
+
+                    # Add a bunch of extra fields to track the key ADC fields that 
+                    # might be needed later to link AKC objects together.
                     if akc_class == 'Investigation':
                         akc_object['adc_repertoire_id'] = repertoire_id
                         akc_object['adc_sample_processing_id'] = sample_processing_id
