@@ -77,6 +77,13 @@ def getArguments():
         default="",
         help="Name of the file to load."
     )
+    path_group.add_argument(
+        "-o",
+        "--output",
+        dest="output_filename",
+        default="",
+        help="Name of the file to store the output in."
+    )
 
     options = parser.parse_args()
 
@@ -101,6 +108,16 @@ if __name__ == "__main__":
     # Start timing the file loading
     t_start = time.perf_counter()
 
+    # Open the output file if provided, otherwise use stdout
+    # If we can't open the output file exit.
+    out_file = sys.stdout
+    if len(options.output_filename) > 0:
+        try:
+            out_file = open(options.output_filename, "w")
+        except:
+            print("ERROR: Could not open output file %s"%(options.output_filename))
+            sys.exit(4)
+
     if options.type == "AIRR Repertoire":
         # process AIRR Repertoire metadata
         print("Info: Processing AIRR repertoire metadata file: {}".format(options.filename))
@@ -111,12 +128,12 @@ if __name__ == "__main__":
 
     # Check for a valid parser.
     if not parser.checkValidity():
-        print("ERROR: Parser not contructed correctly, exiting...")
+        print("ERROR: Parser not constructed correctly, exiting...")
         sys.exit(4)
 
     # Parse the file
-    parse_ok = parser.process(options.filename)
-    operation = "loaded"
+    parse_ok = parser.process(options.filename, out_file)
+    operation = "processed"
     if options.update:
         operation = "updated"
     if parse_ok:
@@ -127,6 +144,9 @@ if __name__ == "__main__":
     # time end
     t_end = time.perf_counter()
     print("Info: Finished processing in {:.2f} mins".format((t_end - t_start) / 60))
+
+    # Close the output file
+    out_file.close()
 
     # Return success
     if parse_ok:

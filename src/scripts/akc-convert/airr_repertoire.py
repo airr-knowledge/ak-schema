@@ -12,7 +12,7 @@ class AIRRRepertoire(Repertoire):
     def __init__(self, verbose, airr_map):
         Repertoire.__init__(self, verbose, airr_map) 
 
-    def process(self, filename):
+    def process(self, filename, out_file):
 
         # Check to see if we have a file    
         if not os.path.isfile(filename):
@@ -74,7 +74,7 @@ class AIRRRepertoire(Repertoire):
             investigation_dict = self.generateAKCInvestigation(r, investigation_dict, akc_class_list) 
             #if self.generateAKCRepertoire(r, akc_class_list) is None: 
             #    return False
-        print(json_dumper.dumps(investigation_dict))
+        print(json_dumper.dumps(investigation_dict), file=out_file)
 
         # If we made it here we are DONE!
         return True
