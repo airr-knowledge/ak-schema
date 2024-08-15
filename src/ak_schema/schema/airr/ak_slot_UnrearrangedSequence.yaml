@@ -1,16 +1,20 @@
-UnrearrangedSequence:
-  is_a: NamedThing
-  slots:
-    - sequence_id
-    - sequence
-    - curation
-    - repository_name
-    - repository_ref
-    - patch_no
-    - gff_seqid
-    - gff_start
-    - gff_end
-    - strand
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  UnrearrangedSequence:
+    is_a: NamedThing
+    slots:
+      - sequence_id
+      - sequence
+      - curation
+      - repository_name
+      - repository_ref
+      - patch_no
+      - gff_seqid
+      - gff_start
+      - gff_end
+      - strand
 
 slots:
   sequence_id:

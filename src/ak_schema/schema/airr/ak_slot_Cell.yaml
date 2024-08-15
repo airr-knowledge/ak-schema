@@ -1,15 +1,19 @@
-Cell:
-  is_a: NamedThing
-  slots:
-    - cell_id
-    - rearrangements
-    - receptors
-    - repertoire_id
-    - data_processing_id
-    - expression_study_method
-    - expression_raw_doi
-    - expression_index
-    - virtual_pairing
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Cell:
+    is_a: NamedThing
+    slots:
+      - cell_id
+      - rearrangements
+      - receptors
+      - repertoire_id
+      - data_processing_id
+      - expression_study_method
+      - expression_raw_doi
+      - expression_index
+      - virtual_pairing
 
 slots:
   cell_id:

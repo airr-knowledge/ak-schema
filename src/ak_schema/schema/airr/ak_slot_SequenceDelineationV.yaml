@@ -1,22 +1,26 @@
-SequenceDelineationV:
-  is_a: NamedThing
-  slots:
-    - sequence_delineation_id
-    - delineation_scheme
-    - unaligned_sequence
-    - aligned_sequence
-    - fwr1_start
-    - fwr1_end
-    - cdr1_start
-    - cdr1_end
-    - fwr2_start
-    - fwr2_end
-    - cdr2_start
-    - cdr2_end
-    - fwr3_start
-    - fwr3_end
-    - cdr3_start
-    - alignment_labels
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  SequenceDelineationV:
+    is_a: NamedThing
+    slots:
+      - sequence_delineation_id
+      - delineation_scheme
+      - unaligned_sequence
+      - aligned_sequence
+      - fwr1_start
+      - fwr1_end
+      - cdr1_start
+      - cdr1_end
+      - fwr2_start
+      - fwr2_end
+      - cdr2_start
+      - cdr2_end
+      - fwr3_start
+      - fwr3_end
+      - cdr3_start
+      - alignment_labels
 
 slots:
   sequence_delineation_id:

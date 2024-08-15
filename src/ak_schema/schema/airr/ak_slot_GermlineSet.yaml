@@ -1,23 +1,27 @@
-GermlineSet:
-  is_a: NamedThing
-  slots:
-    - germline_set_id
-    - author
-    - lab_name
-    - lab_address
-    - acknowledgements
-    - release_version
-    - release_description
-    - release_date
-    - germline_set_name
-    - germline_set_ref
-    - pub_ids
-    - species
-    - species_subgroup
-    - species_subgroup_type
-    - locus
-    - allele_descriptions
-    - curation
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  GermlineSet:
+    is_a: NamedThing
+    slots:
+      - germline_set_id
+      - author
+      - lab_name
+      - lab_address
+      - acknowledgements
+      - release_version
+      - release_description
+      - release_date
+      - germline_set_name
+      - germline_set_ref
+      - pub_ids
+      - species
+      - species_subgroup
+      - species_subgroup_type
+      - locus
+      - allele_descriptions
+      - curation
 
 slots:
   germline_set_id:

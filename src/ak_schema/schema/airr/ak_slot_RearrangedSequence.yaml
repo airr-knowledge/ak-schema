@@ -1,16 +1,20 @@
-RearrangedSequence:
-  is_a: NamedThing
-  slots:
-    - sequence_id
-    - sequence
-    - derivation
-    - observation_type
-    - curation
-    - repository_name
-    - repository_ref
-    - deposited_version
-    - sequence_start
-    - sequence_end
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  RearrangedSequence:
+    is_a: NamedThing
+    slots:
+      - sequence_id
+      - sequence
+      - derivation
+      - observation_type
+      - curation
+      - repository_name
+      - repository_ref
+      - deposited_version
+      - sequence_start
+      - sequence_end
 
 slots:
   sequence_id:

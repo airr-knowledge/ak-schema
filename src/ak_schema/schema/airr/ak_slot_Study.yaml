@@ -1,21 +1,25 @@
-Study:
-  is_a: NamedThing
-  slots:
-    - study_id
-    - study_title
-    - study_type
-    - study_description
-    - inclusion_exclusion_criteria
-    - grants
-    - study_contact
-    - collected_by
-    - lab_name
-    - lab_address
-    - submitted_by
-    - pub_ids
-    - keywords_study
-    - adc_publish_date
-    - adc_update_date
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Study:
+    is_a: NamedThing
+    slots:
+      - study_id
+      - study_title
+      - study_type
+      - study_description
+      - inclusion_exclusion_criteria
+      - grants
+      - study_contact
+      - collected_by
+      - lab_name
+      - lab_address
+      - submitted_by
+      - pub_ids
+      - keywords_study
+      - adc_publish_date
+      - adc_update_date
 
 slots:
   study_id:

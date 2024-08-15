@@ -1,17 +1,21 @@
-CellProcessing:
-  is_a: NamedThing
-  slots:
-    - tissue_processing
-    - cell_subset
-    - cell_phenotype
-    - cell_species
-    - single_cell
-    - cell_number
-    - cells_per_reaction
-    - cell_storage
-    - cell_quality
-    - cell_isolation
-    - cell_processing_protocol
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  CellProcessing:
+    is_a: NamedThing
+    slots:
+      - tissue_processing
+      - cell_subset
+      - cell_phenotype
+      - cell_species
+      - single_cell
+      - cell_number
+      - cells_per_reaction
+      - cell_storage
+      - cell_quality
+      - cell_isolation
+      - cell_processing_protocol
 
 slots:
   tissue_processing:

@@ -1,15 +1,19 @@
-Receptor:
-  is_a: NamedThing
-  slots:
-    - receptor_id
-    - receptor_hash
-    - receptor_type
-    - receptor_variable_domain_1_aa
-    - receptor_variable_domain_1_locus
-    - receptor_variable_domain_2_aa
-    - receptor_variable_domain_2_locus
-    - receptor_ref
-    - reactivity_measurements
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Receptor:
+    is_a: NamedThing
+    slots:
+      - receptor_id
+      - receptor_hash
+      - receptor_type
+      - receptor_variable_domain_1_aa
+      - receptor_variable_domain_1_locus
+      - receptor_variable_domain_2_aa
+      - receptor_variable_domain_2_locus
+      - receptor_ref
+      - reactivity_measurements
 
 slots:
   receptor_id:

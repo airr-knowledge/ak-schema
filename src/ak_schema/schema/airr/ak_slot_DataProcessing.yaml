@@ -1,18 +1,22 @@
-DataProcessing:
-  is_a: NamedThing
-  slots:
-    - data_processing_id
-    - primary_annotation
-    - software_versions
-    - paired_reads_assembly
-    - quality_thresholds
-    - primer_match_cutoffs
-    - collapsing_method
-    - data_processing_protocols
-    - data_processing_files
-    - germline_database
-    - germline_set_ref
-    - analysis_provenance_id
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  DataProcessing:
+    is_a: NamedThing
+    slots:
+      - data_processing_id
+      - primary_annotation
+      - software_versions
+      - paired_reads_assembly
+      - quality_thresholds
+      - primer_match_cutoffs
+      - collapsing_method
+      - data_processing_protocols
+      - data_processing_files
+      - germline_database
+      - germline_set_ref
+      - analysis_provenance_id
 
 slots:
   data_processing_id:

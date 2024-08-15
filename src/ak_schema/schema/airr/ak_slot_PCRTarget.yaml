@@ -1,9 +1,13 @@
-PCRTarget:
-  is_a: NamedThing
-  slots:
-    - pcr_target_locus
-    - forward_pcr_primer_target_location
-    - reverse_pcr_primer_target_location
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  PCRTarget:
+    is_a: NamedThing
+    slots:
+      - pcr_target_locus
+      - forward_pcr_primer_target_location
+      - reverse_pcr_primer_target_location
 
 slots:
   pcr_target_locus:

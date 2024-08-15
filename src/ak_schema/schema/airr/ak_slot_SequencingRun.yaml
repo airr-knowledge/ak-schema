@@ -1,12 +1,16 @@
-SequencingRun:
-  is_a: NamedThing
-  slots:
-    - sequencing_run_id
-    - total_reads_passing_qc_filter
-    - sequencing_platform
-    - sequencing_facility
-    - sequencing_run_date
-    - sequencing_kit
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  SequencingRun:
+    is_a: NamedThing
+    slots:
+      - sequencing_run_id
+      - total_reads_passing_qc_filter
+      - sequencing_platform
+      - sequencing_facility
+      - sequencing_run_date
+      - sequencing_kit
 
 slots:
   sequencing_run_id:

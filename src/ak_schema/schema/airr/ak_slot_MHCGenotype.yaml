@@ -1,10 +1,14 @@
-MHCGenotype:
-  is_a: NamedThing
-  slots:
-    - mhc_genotype_id
-    - mhc_class
-    - mhc_alleles
-    - mhc_genotyping_method
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  MHCGenotype:
+    is_a: NamedThing
+    slots:
+      - mhc_genotype_id
+      - mhc_class
+      - mhc_alleles
+      - mhc_genotyping_method
 
 slots:
   mhc_genotype_id:

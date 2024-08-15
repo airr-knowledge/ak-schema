@@ -1,16 +1,20 @@
-NucleicAcidProcessing:
-  is_a: NamedThing
-  slots:
-    - template_class
-    - template_quality
-    - template_amount
-    - template_amount_unit
-    - library_generation_method
-    - library_generation_protocol
-    - library_generation_kit_version
-    - pcr_target
-    - complete_sequences
-    - physical_linkage
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  NucleicAcidProcessing:
+    is_a: NamedThing
+    slots:
+      - template_class
+      - template_quality
+      - template_amount
+      - template_amount_unit
+      - library_generation_method
+      - library_generation_protocol
+      - library_generation_kit_version
+      - pcr_target
+      - complete_sequences
+      - physical_linkage
 
 slots:
   template_class:

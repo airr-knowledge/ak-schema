@@ -1,13 +1,17 @@
-CellExpression:
-  is_a: NamedThing
-  slots:
-    - expression_id
-    - cell_id
-    - repertoire_id
-    - data_processing_id
-    - property_type
-    - property
-    - value
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  CellExpression:
+    is_a: NamedThing
+    slots:
+      - expression_id
+      - cell_id
+      - repertoire_id
+      - data_processing_id
+      - property_type
+      - property
+      - value
 
 slots:
   expression_id:

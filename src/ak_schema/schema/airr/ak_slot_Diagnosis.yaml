@@ -1,14 +1,18 @@
-Diagnosis:
-  is_a: NamedThing
-  slots:
-    - study_group_description
-    - disease_diagnosis
-    - disease_length
-    - disease_stage
-    - prior_therapies
-    - immunogen
-    - intervention
-    - medical_history
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Diagnosis:
+    is_a: NamedThing
+    slots:
+      - study_group_description
+      - disease_diagnosis
+      - disease_length
+      - disease_stage
+      - prior_therapies
+      - immunogen
+      - intervention
+      - medical_history
 
 slots:
   study_group_description:

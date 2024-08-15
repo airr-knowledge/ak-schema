@@ -1,23 +1,27 @@
-Subject:
-  is_a: NamedThing
-  slots:
-    - subject_id
-    - synthetic
-    - species
-    - organism
-    - sex
-    - age_min
-    - age_max
-    - age_unit
-    - age_event
-    - age
-    - ancestry_population
-    - ethnicity
-    - race
-    - strain_name
-    - linked_subjects
-    - link_type
-    - diagnosis
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Subject:
+    is_a: NamedThing
+    slots:
+      - subject_id
+      - synthetic
+      - species
+      - organism
+      - sex
+      - age_min
+      - age_max
+      - age_unit
+      - age_event
+      - age
+      - ancestry_population
+      - ethnicity
+      - race
+      - strain_name
+      - linked_subjects
+      - link_type
+      - diagnosis
 
 slots:
   subject_id:

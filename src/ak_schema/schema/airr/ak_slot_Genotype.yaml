@@ -1,12 +1,16 @@
-Genotype:
-  is_a: NamedThing
-  slots:
-    - receptor_genotype_id
-    - locus
-    - documented_alleles
-    - undocumented_alleles
-    - deleted_genes
-    - inference_process
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Genotype:
+    is_a: NamedThing
+    slots:
+      - receptor_genotype_id
+      - locus
+      - documented_alleles
+      - undocumented_alleles
+      - deleted_genes
+      - inference_process
 
 slots:
   receptor_genotype_id:

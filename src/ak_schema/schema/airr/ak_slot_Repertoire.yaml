@@ -1,11 +1,15 @@
-Repertoire:
-  is_a: NamedThing
-  slots:
-    - repertoire_id
-    - repertoire_name
-    - repertoire_description
-    - sample
-    - data_processing
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Repertoire:
+    is_a: NamedThing
+    slots:
+      - repertoire_id
+      - repertoire_name
+      - repertoire_description
+      - sample
+      - data_processing
 
 slots:
   repertoire_id:

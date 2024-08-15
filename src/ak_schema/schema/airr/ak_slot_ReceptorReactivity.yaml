@@ -1,21 +1,25 @@
-ReceptorReactivity:
-  is_a: NamedThing
-  slots:
-    - ligand_type
-    - antigen_type
-    - antigen
-    - antigen_source_species
-    - peptide_start
-    - peptide_end
-    - mhc_class
-    - mhc_gene_1
-    - mhc_allele_1
-    - mhc_gene_2
-    - mhc_allele_2
-    - reactivity_method
-    - reactivity_readout
-    - reactivity_value
-    - reactivity_unit
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  ReceptorReactivity:
+    is_a: NamedThing
+    slots:
+      - ligand_type
+      - antigen_type
+      - antigen
+      - antigen_source_species
+      - peptide_start
+      - peptide_end
+      - mhc_class
+      - mhc_gene_1
+      - mhc_allele_1
+      - mhc_gene_2
+      - mhc_allele_2
+      - reactivity_method
+      - reactivity_readout
+      - reactivity_value
+      - reactivity_unit
 
 slots:
   ligand_type:

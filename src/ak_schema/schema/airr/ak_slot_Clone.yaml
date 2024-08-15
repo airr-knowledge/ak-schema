@@ -1,30 +1,34 @@
-Clone:
-  is_a: NamedThing
-  slots:
-    - clone_id
-    - repertoire_id
-    - data_processing_id
-    - sequences
-    - v_call
-    - d_call
-    - j_call
-    - junction
-    - junction_aa
-    - junction_length
-    - junction_aa_length
-    - germline_alignment
-    - germline_alignment_aa
-    - v_alignment_start
-    - v_alignment_end
-    - d_alignment_start
-    - d_alignment_end
-    - j_alignment_start
-    - j_alignment_end
-    - junction_start
-    - junction_end
-    - umi_count
-    - clone_count
-    - seed_id
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Clone:
+    is_a: NamedThing
+    slots:
+      - clone_id
+      - repertoire_id
+      - data_processing_id
+      - sequences
+      - v_call
+      - d_call
+      - j_call
+      - junction
+      - junction_aa
+      - junction_length
+      - junction_aa_length
+      - germline_alignment
+      - germline_alignment_aa
+      - v_alignment_start
+      - v_alignment_end
+      - d_alignment_start
+      - d_alignment_end
+      - j_alignment_start
+      - j_alignment_end
+      - junction_start
+      - junction_end
+      - umi_count
+      - clone_count
+      - seed_id
 
 slots:
   clone_id:

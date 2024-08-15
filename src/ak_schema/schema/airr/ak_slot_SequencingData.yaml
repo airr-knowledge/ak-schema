@@ -1,16 +1,20 @@
-SequencingData:
-  is_a: NamedThing
-  slots:
-    - sequencing_data_id
-    - file_type
-    - filename
-    - read_direction
-    - read_length
-    - paired_filename
-    - paired_read_direction
-    - paired_read_length
-    - index_filename
-    - index_length
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  SequencingData:
+    is_a: NamedThing
+    slots:
+      - sequencing_data_id
+      - file_type
+      - filename
+      - read_direction
+      - read_length
+      - paired_filename
+      - paired_read_direction
+      - paired_read_length
+      - index_filename
+      - index_length
 
 slots:
   sequencing_data_id:
