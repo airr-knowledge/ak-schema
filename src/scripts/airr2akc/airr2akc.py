@@ -510,13 +510,17 @@ if __name__ == "__main__":
 
     # Now print out the definition of the object and its slots
     if not options.enums:
-        print('%s:'%(options.airr_block))
-        print('  is_a: NamedThing')
-        print('  slots:')
+        print('id: https://github.com/airr-knowledge/ak-schema')
+        print('name: ak-schema')
+        print('')
+        print('classes:')
+        print('  %s:'%(options.airr_block))
+        print('    is_a: NamedThing')
+        print('    slots:')
         for field, field_dict in table.items():
             if 'airr' in field_dict:
                 if not options.enums:
-                    print('    - %s'%(field_dict['airr']))
+                    print('      - %s'%(field_dict['airr']))
 
         print('')
         print('slots:')
