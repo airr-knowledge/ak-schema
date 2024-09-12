@@ -7,3 +7,135 @@ classes:
   ImmuneSystem:
     is_a: NamedThing
     class_uri: UBERON:0002405 # immune system
+
+  Chain:
+    is_a: NamedThing
+    slots:
+      - sequence
+      - sequence_aa
+      - chain_type
+      - v_call
+      - d_call
+      - j_call
+      - c_call
+      - junction_aa
+      - cdr1_aa
+      - cdr2_aa
+      - cdr3_aa
+      - cdr1_start
+      - cdr1_end
+      - cdr2_start
+      - cdr2_end
+      - cdr3_start
+      - cdr3_end
+      - isotype
+
+  Receptor:
+    is_a: NamedThing
+    slots:
+      - chain1
+      - chain2
+
+slots:
+  sequence:
+    name: sequence
+    description: Nucleotide sequence.
+    range: string
+
+  sequence_aa:
+    name: sequence_aa
+    description: Amino acid sequence.
+    range: string
+
+  chain_type:
+    name: locus
+    description: Gene locus (chain type).
+    range: Locus
+
+  v_call:
+    name: v_call
+    description: V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).
+    range: string
+
+
+  d_call:
+    name: d_call
+    description: First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
+    range: string
+
+  j_call:
+    name: j_call
+    description: J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).
+    range: string
+
+  c_call:
+    name: c_call
+    description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+    range: string
+
+  junction_aa:
+    name: junction_aa
+    description: Amino acid form of the junction.
+    range: string
+
+  cdr1_aa:
+    name: cdr1_aa
+    description: Amino acid translation of the cdr1 field.
+    range: string
+
+  cdr2_aa:
+    name: cdr2_aa
+    description: Amino acid translation of the cdr2 field.
+    range: string
+
+  cdr3_aa:
+    name: cdr3_aa
+    description: Amino acid translation of the cdr3 field.
+    range: string
+
+  cdr1_start:
+    name: cdr1_start
+    description: CDR1 start position in the query sequence (1-based closed interval).
+    range: integer
+
+  cdr1_end:
+    name: cdr1_end
+    description: CDR1 end position in the query sequence (1-based closed interval).
+    range: integer
+
+  cdr2_start:
+    name: cdr2_start
+    description: CDR2 start position in the query sequence (1-based closed interval).
+    range: integer
+
+  cdr2_end:
+    name: cdr2_end
+    description: CDR2 end position in the query sequence (1-based closed interval).
+    range: integer
+
+  cdr3_start:
+    name: cdr3_start
+    description: CDR3 start position in the query sequence (1-based closed interval).
+    range: integer
+
+  cdr3_end:
+    name: cdr3_end
+    description: CDR3 end position in the query sequence (1-based closed interval).
+    range: integer
+
+  isotype:
+    name: isotype
+    description: The isotype of the chain
+    range: string
+
+  chain1:
+    name: chain1
+    description: The first chain of a paired receptor chain
+    range: Chain
+
+  chain2:
+    name: chain2
+    description: The second chain of a paired receptor chain
+    range: Chain
+
+
