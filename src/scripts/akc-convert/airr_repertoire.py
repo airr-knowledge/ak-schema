@@ -70,8 +70,8 @@ class AIRRRepertoire(Repertoire):
 
         # Iterate over the repertoire list and process each repertoire. 
         investigation_dict = dict()
-        for r in repertoire_list:
-            investigation_dict = self.generateAKCInvestigation(r, investigation_dict, akc_class_list) 
+        for repertoire_dict in repertoire_list:
+            investigation_dict = self.generateAKCInvestigation(repertoire_dict, investigation_dict, akc_class_list) 
             #if self.generateAKCRepertoire(r, akc_class_list) is None: 
             #    return False
         print(json_dumper.dumps(investigation_dict), file=out_file)
