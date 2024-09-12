@@ -579,9 +579,20 @@ class Parser:
     # object and recursively flattens the values adding each element to the dictionary
     # as it finds a "leaf node". Note a leaf node in general is a key value pair where
     # the value is not a compoud object (not a dict or a list). If it is not a leaf node
-    # then the fucntion recurses on all of the elements in the dict or list. Note that
+    # then the function recurses on all of the elements in the dict or list. Note that
     # a leaf node is a bit complex and specialized based on both the AIRR spec and how
     # they are represented in the AKC.
+    #
+    # Each leaf node for a field is represented in the repertoire dictionary as follows:
+    # {
+    #   "study_id":
+    #   {
+    #     "value":"PRJNA628125",
+    #     "airr_subclass":"Study",
+    #     "akc_class":"Investigation",
+    #     "akc_field":"archival_id"
+    #   }
+    # }
     def akc_flatten(self, key, value, dictionary, key_path, airr_class):
         column = self.getAIRRTag()
         # If it is an integer, float, or bool we just use the key value pair.
@@ -591,6 +602,8 @@ class Parser:
                 akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                 field_dict = dict()
                 field_dict['value'] = value
+                field_dict['airr_subclass'] = self.getAIRRMap().getMapping(key,
+                                                  "airr", "ir_subclass", airr_class)
                 if not akc_field is None and value != '':
                     # For each field we create a dictionary that has the value,
                     # the AKC class/object, and the AKC field name.
@@ -608,6 +621,8 @@ class Parser:
                 akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                 field_dict = dict()
                 field_dict['value'] = value
+                field_dict['airr_subclass'] = self.getAIRRMap().getMapping(key,
+                                                  "airr", "ir_subclass", airr_class)
                 if not akc_field is None and value != '':
                     # For each field we create a dictionary that has the value,
                     # the AKC class/object, and the AKC field name.
@@ -635,6 +650,8 @@ class Parser:
                     akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                     field_dict = dict()
                     field_dict['value'] = value
+                    field_dict['airr_subclass'] = self.getAIRRMap().getMapping(key,
+                                                      "airr", "ir_subclass", airr_class)
                     if not akc_field is None and value != '':
                         # For each field we create a dictionary that has the value,
                         # the AKC class/object, and the AKC field name.
@@ -668,6 +685,8 @@ class Parser:
                     akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
                     field_dict = dict()
                     field_dict['value'] = value
+                    field_dict['airr_subclass'] = self.getAIRRMap().getMapping(key,
+                                                      "airr", "ir_subclass", airr_class)
                     if not akc_field is None and value != '':
                         # For each field we create a dictionary that has the value,
                         # the AKC class/object, and the AKC field name.
