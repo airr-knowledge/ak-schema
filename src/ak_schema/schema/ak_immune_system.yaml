@@ -48,15 +48,14 @@ slots:
     range: string
 
   chain_type:
-    name: locus
+    name: chain_type
     description: Gene locus (chain type).
-    range: Locus
+    range: ChainType
 
   v_call:
     name: v_call
     description: V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).
     range: string
-
 
   d_call:
     name: d_call
@@ -138,4 +137,25 @@ slots:
     description: The second chain of a paired receptor chain
     range: Chain
 
-
+enums:
+  ChainType:
+    name: ChainType
+    permissible_values:
+      IGH:
+        text: IGH
+      IGI:
+        text: IGI
+      IGK:
+        text: IGK
+      IGL:
+        text: IGL
+      TRA:
+        text: TRA
+      TRB:
+        text: TRB
+      TRD:
+        text: TRD
+      TRG:
+        text: TRG
+      null:
+        text: null
