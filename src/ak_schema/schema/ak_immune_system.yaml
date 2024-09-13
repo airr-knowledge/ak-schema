@@ -28,7 +28,6 @@ classes:
       - cdr2_end
       - cdr3_start
       - cdr3_end
-      - isotype
 
   Receptor:
     is_a: NamedThing
