@@ -8,17 +8,11 @@ Sex:
   name: Sex
   permissible_values:
     male:
-      text: male
     female:
-      text: female
     pooled:
-      text: pooled
     hermaphrodite:
-      text: hermaphrodite
     intersex:
-      text: intersex
     null:
-      text: null
 AgeUnit:
   name: AgeUnit
   permissible_values:

@@ -539,7 +539,6 @@ if __name__ == "__main__":
                     enum_array = field_dict['airr_enum'].split(',')
                     for enum_str in enum_array:
                         print('    %s:'%(enum_str))
-                        print('      text: %s'%(enum_str))
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
                     print('%s:'%(range_name))
                     print('  name: %s'%(range_name))

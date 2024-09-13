@@ -2,30 +2,19 @@ FileType:
   name: FileType
   permissible_values:
     fasta:
-      text: fasta
     fastq:
-      text: fastq
     null:
-      text: null
 ReadDirection:
   name: ReadDirection
   permissible_values:
     forward:
-      text: forward
     reverse:
-      text: reverse
     mixed:
-      text: mixed
     null:
-      text: null
 PairedReadDirection:
   name: PairedReadDirection
   permissible_values:
     forward:
-      text: forward
     reverse:
-      text: reverse
     mixed:
-      text: mixed
     null:
-      text: null

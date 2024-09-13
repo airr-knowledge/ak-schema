@@ -2,27 +2,16 @@ Locus:
   name: Locus
   permissible_values:
     IGH:
-      text: IGH
     IGI:
-      text: IGI
     IGK:
-      text: IGK
     IGL:
-      text: IGL
     TRA:
-      text: TRA
     TRB:
-      text: TRB
     TRD:
-      text: TRD
     TRG:
-      text: TRG
 InferenceProcess:
   name: InferenceProcess
   permissible_values:
     genomic_sequencing:
-      text: genomic_sequencing
     repertoire_sequencing:
-      text: repertoire_sequencing
     null:
-      text: null
