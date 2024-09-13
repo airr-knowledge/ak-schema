@@ -263,7 +263,7 @@ class Repertoire(Parser):
                             if len(current_value) > 0:
                                 # If we have a value check to see if it is different
                                 if (current_value.sort() != [value['value']].sort()):
-                                    print('Warning: Lists for field "%s" field (%s) exists and are not the same (%s vs %s)'%(value['akc_field'],akc_class,akc_object[value['akc_field']],value['value']))
+                                    print('Warning: Lists for field "%s" field (%s=%s) exists and are not the same (%s vs %s)'%(value['akc_field'],akc_class,airr_link_value,akc_object[value['akc_field']],value['value']))
                             else:
                                 # If no value, create an empty list with the value.
                                 if self.verbose():
@@ -274,7 +274,7 @@ class Repertoire(Parser):
                             # print out a warning.
                             if current_value != None:
                                 if current_value != value['value']:
-                                    print('Warning: Value for "%s" field (%s) exists and is not the same (%s vs %s)'%(value['akc_field'],akc_class,akc_object[value['akc_field']],value['value']))
+                                    print('Warning: Value for "%s" field (%s=%s) exists and is not the same (%s vs %s)'%(value['akc_field'],akc_class,airr_link_value,akc_object[value['akc_field']],value['value']))
                                 else:
                                     # In this case the field already exists and we have
                                     # confirmed that the field hasn't changed as it should.
