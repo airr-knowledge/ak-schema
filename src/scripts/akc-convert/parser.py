@@ -724,17 +724,10 @@ class Parser:
                         for sub_key, sub_value in value[0].items():
                             self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
                 else:
-                    # In the general case, iReceptor only supports a single instance in
-                    # array subtypes. If this occurs, we generate an error message and
-                    # stop processing by raising an exception on this key.
-                    #if len(value) > 1:
-                    #    print("ERROR: Found a repertoire list for %s > 1 (%d)."%
-                    #          (key, len(value)))
-                    #    print("ERROR: iReceptor only supports arrays of objects with one element.")
-                    #    raise TypeError(key)
-
+                    # Process the array of objects as indivdual objects.
                     if len(value) > 1:
-                        print("Info: Processing multi element array key %s."%(key))
+                        if self.verbose():
+                            print("Info: Processing multi element array key %s."%(key))
                     for element in value:
                         for sub_key, sub_value in element.items():
                             self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
