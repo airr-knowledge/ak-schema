@@ -66,7 +66,6 @@ class Repertoire(Parser):
                 airr_link_value = repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
         elif akc_class == 'LifeEvent':
             if 'subject_id' in repertoire_dict:
-                print(field_dict)
                 airr_link_value = 'LifeEvent_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value']
         elif akc_class == 'ImmuneExposure':
             if 'sample_id' in repertoire_dict:
