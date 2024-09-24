@@ -519,7 +519,6 @@ if __name__ == "__main__":
         print('')
         print('classes:')
         print('  %s:'%(options.airr_block))
-        print('    is_a: NamedThing')
         print('    slots:')
         for field, field_dict in table.items():
             if 'airr' in field_dict:
