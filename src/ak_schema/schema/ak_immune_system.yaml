@@ -8,7 +8,7 @@ classes:
     is_a: NamedThing
     class_uri: UBERON:0002405 # immune system
 
-  Chain:
+  airr-Chain:
     is_a: NamedThing
     slots:
       - sequence
@@ -32,8 +32,14 @@ classes:
   Receptor:
     is_a: NamedThing
     slots:
-      - chain1
-      - chain2
+      - IGH_chain
+      - IGI_chain
+      - IGK_chain
+      - IGL_chain
+      - TRA_chain
+      - TRB_chain
+      - TRD_chain
+      - TRG_chain
 
 slots:
   sequence:
@@ -126,15 +132,37 @@ slots:
     description: The isotype of the chain
     range: string
 
-  chain1:
-    name: chain1
-    description: The first chain of a paired receptor chain
-    range: Chain
+  IGH_chain:
+    description: IG heavy chain
+    range: airr-Chain
 
-  chain2:
-    name: chain2
-    description: The second chain of a paired receptor chain
-    range: Chain
+  IGL_chain:
+    description: IG lambda light chain
+    range: airr-Chain
+
+  IGK_chain:
+    description: IG kappa light chain
+    range: airr-Chain
+
+  IGI_chain:
+    description: IG intermediate chain
+    range: airr-Chain
+
+  TRA_chain:
+    description: T cell receptor alpha chain
+    range: airr-Chain
+
+  TRB_chain:
+    description: T cell receptor beta chain
+    range: airr-Chain
+
+  TRD_chain:
+    description: T cell receptor delta chain
+    range: airr-Chain
+
+  TRG_chain:
+    description: T cell receptor gamma chain
+    range: airr-Chain
 
 enums:
   ChainType:
