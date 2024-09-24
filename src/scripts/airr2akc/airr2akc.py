@@ -527,7 +527,12 @@ if __name__ == "__main__":
 
         print('')
         print('slots:')
-                
+    else:
+        print('id: https://github.com/airr-knowledge/ak-schema')
+        print('name: ak-schema')
+        print('')
+        print('enums:')
+
     # Now print out the definition for each slot
     for field, field_dict in table.items():
         # For each row, generate a LinkML specification for the field
@@ -543,14 +548,17 @@ if __name__ == "__main__":
                     for enum_str in enum_array:
                         print('    %s:'%(enum_str))
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
-                    print('%s:'%(range_name))
-                    print('  name: %s'%(range_name))
-                    print('  permissible_values:')
+                    print('  %s:'%(range_name))
+                    print('    name: %s'%(range_name))
                     if 'airr_ontology_top_id' in field_dict:
-                        print('    %s:'%(field_dict['airr_ontology_top_label']))
-                        print('      text: %s'%(field_dict['airr_ontology_top_label']))
-                        print('      meaning: %s'%(field_dict['airr_ontology_top_id']))
+                        print('    reachable_from:')
+                        print('      source_nodes:')
+                        print('        - %s'%(field_dict['airr_ontology_top_id']))
+                        print('      include_self: true')
+                        print('      relationship_types:')
+                        print('        - rdfs:subClassOf')
                     elif 'airr_example' in field_dict:
+                        print('  permissible_values:')
                         ontology_example_array = field_dict['airr_example'].split(',')
                         print('    %s:'%(ontology_example_array[1]))
                         print('      text: %s'%(ontology_example_array[1]))
