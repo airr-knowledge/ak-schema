@@ -581,7 +581,8 @@ if __name__ == "__main__":
                 if 'airr_required' in field_dict:
                     print('    required: %s'%(field_dict['airr_required']))
                 if 'airr_nullable' in field_dict:
-                    print('    nullable: %s'%(field_dict['airr_nullable']))
+                    print('    annotations:')
+                    print('      nullable: %s'%(field_dict['airr_nullable']))
                 if 'airr_identifier' in field_dict:
                     print('    identifier: %s'%(field_dict['airr_identifier']))
                 print('')
