@@ -8,6 +8,8 @@ classes:
       - repertoire_id
       - repertoire_name
       - repertoire_description
+      - study
+      - subject
       - sample
       - data_processing
 
@@ -33,6 +35,20 @@ slots:
     range: string
     required: False
     nullable: True
+
+  study:
+    name: study
+    description: Study object
+    range: Study
+    required: True
+    nullable: False
+
+  subject:
+    name: subject
+    description: Subject object
+    range: Subject
+    required: True
+    nullable: False
 
   sample:
     name: sample

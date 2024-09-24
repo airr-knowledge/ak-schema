@@ -49,7 +49,11 @@ def processField(field, field_spec, block, required_fields, field_path,
         # case to this is if the $ref is to the AIRR Ontology object, for which we
         # have to do some special processing.
         if '$ref' in field_spec and not field_spec['$ref'] == "#/Ontology":
-            append = False
+            append = True
+            label = 'airr_type'
+            schema_ref = field_spec['$ref']
+            schema = schema_ref.split('/')[1]
+            field_dict[label] = schema
             if verbose:
                 print("**** processField: No append for $ref - %s\n"%(field_tag))
         # If the field is an array of objects (the items for the array contain
