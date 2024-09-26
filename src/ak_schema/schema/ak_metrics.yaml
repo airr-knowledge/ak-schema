@@ -1,0 +1,45 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  SimilarityCalculation:
+    is_a: AKObject
+    class_uri: OBI:0200113
+    slots:
+      - chain_domain
+      - chain_codomain
+
+  ChainSimilarity:
+    is_a: SimilarityCalculation
+    slots:
+      - chain_similarity_type
+
+
+
+slots:
+
+  chain_domain:
+    description: Immune receptor chain element in binary relation domain
+    range: Chain
+
+  chain_codomain:
+    description: Immune receptor chain element in binary relation codomain
+    range: Chain
+
+  chain_similarity_type:
+    description: Type of similarity calculation between two immune receptor chains
+    slot_uri: rdf:type
+    range: ChainSimilarityType
+
+
+enums:
+
+  ChainSimilarityType:
+    permissible_values:
+      exact_match:
+      exact_aa_match:
+      cdr3_exact_match:
+      cdr3_exact_aa_match:
+      cdr3_exact_aa_and_vj_match:
