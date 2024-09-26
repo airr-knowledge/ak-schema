@@ -20,6 +20,7 @@ prefixes:
   DOID: http://purl.obolibrary.org/obo/DOID_
   EXO: http://purl.obolibrary.org/obo/EXO_
   GAZ: http://purl.obolibrary.org/obo/GAZ_
+  GO: http://purl.obolibrary.org/obo/GO_
   IAO: http://purl.obolibrary.org/obo/IAO_
   NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
