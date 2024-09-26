@@ -29,17 +29,30 @@ classes:
       - cdr3_start
       - cdr3_end
 
-  Receptor:
+  TCellReceptor:
+    is_a: NamedThing
+    class_uri: GO:0042101
+
+  AlphaBetaTCR:
+    is_a: TCellReceptor
+    class_uri: GO:0042105
+    slots:
+      - TRA_chain
+      - TRB_chain
+
+  GammaDeltaTCR:
+    is_a: TCellReceptor
+    class_uri: GO:0042106
+    slots:
+      - TRG_chain
+      - TRD_chain
+
+  BCellReceptor:
     is_a: NamedThing
     slots:
       - IGH_chain
-      - IGI_chain
       - IGK_chain
       - IGL_chain
-      - TRA_chain
-      - TRB_chain
-      - TRD_chain
-      - TRG_chain
 
 slots:
   sequence:
@@ -144,10 +157,6 @@ slots:
     description: IG kappa light chain
     range: Chain
 
-  IGI_chain:
-    description: IG intermediate chain
-    range: Chain
-
   TRA_chain:
     description: T cell receptor alpha chain
     range: Chain
@@ -169,11 +178,9 @@ enums:
     name: ChainType
     permissible_values:
       IGH:
-      IGI:
       IGK:
       IGL:
       TRA:
       TRB:
       TRD:
       TRG:
-      null:
