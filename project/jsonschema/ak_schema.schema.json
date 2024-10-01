@@ -15,7 +15,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "assessments": {
                     "additionalProperties": {
@@ -28,7 +31,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "conclusions": {
                     "additionalProperties": {
@@ -41,7 +47,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "datasets": {
                     "additionalProperties": {
@@ -54,7 +63,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "immune_exposures": {
                     "additionalProperties": {
@@ -67,7 +79,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "investigations": {
                     "additionalProperties": {
@@ -80,7 +95,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "life_events": {
                     "additionalProperties": {
@@ -93,7 +111,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "participants": {
                     "additionalProperties": {
@@ -106,7 +127,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "references": {
                     "additionalProperties": {
@@ -119,7 +143,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "specimen_collections": {
                     "additionalProperties": {
@@ -132,7 +159,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "specimens": {
                     "additionalProperties": {
@@ -145,7 +175,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "study_arms": {
                     "additionalProperties": {
@@ -158,7 +191,10 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 },
                 "study_events": {
                     "additionalProperties": {
@@ -171,10 +207,56 @@
                             }
                         ]
                     },
-                    "type": "object"
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 }
             },
             "title": "AIRRKnowledgeCommons",
+            "type": "object"
+        },
+        "AlphaBetaTCR": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "TRA_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TRB_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AlphaBetaTCR",
             "type": "object"
         },
         "Assay": {
@@ -187,31 +269,52 @@
                 },
                 "assay_type": {
                     "description": "The specific type of an assay",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "unit": {
                     "description": "The measurement result value unit",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "value": {
                     "description": "The measurement result value",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -230,31 +333,52 @@
                 },
                 "assay_type": {
                     "description": "The specific type of an assay",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "unit": {
                     "description": "The measurement result value unit",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "value": {
                     "description": "The measurement result value",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -271,31 +395,52 @@
                 },
                 "assessment_type": {
                     "description": "The specific type of an assessment",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "unit": {
                     "description": "The measurement result value unit",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "value": {
                     "description": "The measurement result value",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -314,35 +459,106 @@
                 },
                 "assessment_type": {
                     "description": "The specific type of an assessment",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "unit": {
                     "description": "The measurement result value unit",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "value": {
                     "description": "The measurement result value",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
             "title": "Assessment",
+            "type": "object"
+        },
+        "BCellReceptor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "IGH_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "IGK_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "IGL_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "BCellReceptor",
             "type": "object"
         },
         "BiologicalSex": {
@@ -364,11 +580,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -376,6 +598,210 @@
             ],
             "title": "Cell",
             "type": "object"
+        },
+        "Chain": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_end": {
+                    "description": "CDR1 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr1_start": {
+                    "description": "CDR1 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_end": {
+                    "description": "CDR2 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_start": {
+                    "description": "CDR2 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_end": {
+                    "description": "CDR3 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_start": {
+                    "description": "CDR3 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "chain_type": {
+                    "$ref": "#/$defs/ChainType",
+                    "description": "Gene locus (chain type)."
+                },
+                "d_call": {
+                    "description": "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "description": "J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid form of the junction.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_call": {
+                    "description": "V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "Chain",
+            "type": "object"
+        },
+        "ChainSimilarity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "chain_codomain": {
+                    "description": "Immune receptor chain element in binary relation codomain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "chain_domain": {
+                    "description": "Immune receptor chain element in binary relation domain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "chain_similarity_type": {
+                    "$ref": "#/$defs/ChainSimilarityType",
+                    "description": "Type of similarity calculation between two immune receptor chains"
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "ChainSimilarity",
+            "type": "object"
+        },
+        "ChainSimilarityType": {
+            "description": "",
+            "enum": [
+                "exact_match",
+                "exact_aa_match",
+                "cdr3_exact_match",
+                "cdr3_exact_aa_match",
+                "cdr3_exact_aa_and_vj_match"
+            ],
+            "title": "ChainSimilarityType",
+            "type": "string"
+        },
+        "ChainType": {
+            "description": "",
+            "enum": [
+                "IGH",
+                "IGK",
+                "IGL",
+                "TRA",
+                "TRB",
+                "TRD",
+                "TRG"
+            ],
+            "title": "ChainType",
+            "type": "string"
         },
         "Conclusion": {
             "additionalProperties": false,
@@ -387,37 +813,58 @@
                 },
                 "data_location_type": {
                     "description": "The type of location where data was found, e.g. figure, table",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "data_location_value": {
                     "description": "An identifier for the location of the data, e.g. figure 2",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "datasets": {
                     "description": "The datasets that support a conclusion",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "experiment_type": {
                     "description": "The type of experiment that supports the conclusion",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "investigations": {
                     "description": "The investigations that a reference or conclusion are about",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "organism": {
                     "$ref": "#/$defs/Species",
@@ -425,7 +872,10 @@
                 },
                 "result": {
                     "description": "The content of the conclusion",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -444,37 +894,58 @@
                 },
                 "data_location_type": {
                     "description": "The type of location where data was found, e.g. figure, table",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "data_location_value": {
                     "description": "An identifier for the location of the data, e.g. figure 2",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "datasets": {
                     "description": "The datasets that support a conclusion",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "experiment_type": {
                     "description": "The type of experiment that supports the conclusion",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "investigations": {
                     "description": "The investigations that a reference or conclusion are about",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "organism": {
                     "$ref": "#/$defs/Species",
@@ -482,7 +953,10 @@
                 },
                 "result": {
                     "description": "The content of the conclusion",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -502,22 +976,34 @@
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "assessments": {
                     "description": "The assessment that a dataset is about",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -539,22 +1025,34 @@
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "assessments": {
                     "description": "The assessment that a dataset is about",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -628,6 +1126,49 @@
             "title": "ExposureMaterial",
             "type": "string"
         },
+        "GammaDeltaTCR": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "TRD_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TRG_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "GammaDeltaTCR",
+            "type": "object"
+        },
         "Geolocation": {
             "description": "",
             "enum": [
@@ -671,7 +1212,10 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease": {
                     "$ref": "#/$defs/Disease",
@@ -679,7 +1223,10 @@
                 },
                 "disease_severity": {
                     "description": "The severity of the disease relevant to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease_stage": {
                     "$ref": "#/$defs/DiseaseStage",
@@ -691,11 +1238,17 @@
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -714,7 +1267,10 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease": {
                     "$ref": "#/$defs/Disease",
@@ -722,7 +1278,10 @@
                 },
                 "disease_severity": {
                     "description": "The severity of the disease relevant to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease_stage": {
                     "$ref": "#/$defs/DiseaseStage",
@@ -734,11 +1293,17 @@
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -755,11 +1320,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -778,63 +1349,96 @@
                 },
                 "archival_id": {
                     "description": "Identifier for external archival resource for the investigation, e.g., BioProject",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "assays": {
                     "description": "The assays performed by the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "conclusions": {
                     "description": "The conclusions from the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "documents": {
                     "description": "The documents produced by the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "participants": {
                     "description": "The participants involved with the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "release_date": {
                     "description": "Initial release of the investigation and its data",
                     "format": "date-time",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "simulations": {
                     "description": "The simulations performed by the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "study_type": {
                     "$ref": "#/$defs/StudyType",
@@ -843,7 +1447,10 @@
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",
                     "format": "date-time",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -862,63 +1469,96 @@
                 },
                 "archival_id": {
                     "description": "Identifier for external archival resource for the investigation, e.g., BioProject",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "assays": {
                     "description": "The assays performed by the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "conclusions": {
                     "description": "The conclusions from the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "documents": {
                     "description": "The documents produced by the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "participants": {
                     "description": "The participants involved with the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "release_date": {
                     "description": "Initial release of the investigation and its data",
                     "format": "date-time",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "simulations": {
                     "description": "The simulations performed by the investigation",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "study_type": {
                     "$ref": "#/$defs/StudyType",
@@ -927,7 +1567,10 @@
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",
                     "format": "date-time",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -944,11 +1587,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "duration": {
                     "description": "The duration of this life event",
-                    "type": "number"
+                    "type": [
+                        "number",
+                        "null"
+                    ]
                 },
                 "geolocation": {
                     "$ref": "#/$defs/Geolocation",
@@ -960,31 +1609,52 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "participant": {
                     "description": "The participant of a life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "start": {
                     "description": "The start time of this life event, relative to the T0 event",
-                    "type": "number"
+                    "type": [
+                        "number",
+                        "null"
+                    ]
                 },
                 "study_event": {
                     "description": "The study event corresponding to a life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "t0_event": {
                     "description": "The T0 event used to specify the time of this life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "t0_event_type": {
                     "description": "The type of the T0 event used to specify the time of this life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "time_unit": {
                     "description": "The time unit used to measure the start and duration of this life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1014,11 +1684,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "duration": {
                     "description": "The duration of this life event",
-                    "type": "number"
+                    "type": [
+                        "number",
+                        "null"
+                    ]
                 },
                 "geolocation": {
                     "$ref": "#/$defs/Geolocation",
@@ -1030,31 +1706,52 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "participant": {
                     "description": "The participant of a life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "start": {
                     "description": "The start time of this life event, relative to the T0 event",
-                    "type": "number"
+                    "type": [
+                        "number",
+                        "null"
+                    ]
                 },
                 "study_event": {
                     "description": "The study event corresponding to a life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "t0_event": {
                     "description": "The T0 event used to specify the time of this life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "t0_event_type": {
                     "description": "The type of the T0 event used to specify the time of this life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "time_unit": {
                     "description": "The time unit used to measure the start and duration of this life event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -1071,11 +1768,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1094,11 +1797,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1113,15 +1822,24 @@
             "properties": {
                 "age": {
                     "description": "The age of a participant relative to age_event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "age_event": {
                     "description": "The event to which the age is relative",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "age_unit": {
                     "description": "Units used to describe the age",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
@@ -1133,7 +1851,10 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "ethnicity": {
                     "$ref": "#/$defs/Ethnicity",
@@ -1145,7 +1866,10 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "phenotypic_sex": {
                     "$ref": "#/$defs/PhenotypicSex",
@@ -1165,7 +1889,10 @@
                 },
                 "study_arm": {
                     "description": "The study arm that a participant is a member of",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1180,15 +1907,24 @@
             "properties": {
                 "age": {
                     "description": "The age of a participant relative to age_event",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "age_event": {
                     "description": "The event to which the age is relative",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "age_unit": {
                     "description": "Units used to describe the age",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
@@ -1200,7 +1936,10 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "ethnicity": {
                     "$ref": "#/$defs/Ethnicity",
@@ -1212,7 +1951,10 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "phenotypic_sex": {
                     "$ref": "#/$defs/PhenotypicSex",
@@ -1232,7 +1974,10 @@
                 },
                 "study_arm": {
                     "description": "The study arm that a participant is a member of",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -1297,30 +2042,48 @@
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "investigations": {
                     "description": "The investigations that a reference or conclusion are about",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "issue": {
                     "description": "The issue of the journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "journal": {
                     "description": "The journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "month": {
                     "description": "The month of the issue of the journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "pages": {
                     "description": "The pages of the issue of the journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "source_uri": {
                     "description": "AKC reference to a foreign thing.",
@@ -1331,16 +2094,25 @@
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "title": {
                     "description": "The title of a reference",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "year": {
                     "description": "The year of the issue of the journal in which a reference was published",
                     "pattern": "19\\d\\d|20\\d\\d",
-                    "type": "integer"
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1358,30 +2130,48 @@
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "investigations": {
                     "description": "The investigations that a reference or conclusion are about",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "issue": {
                     "description": "The issue of the journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "journal": {
                     "description": "The journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "month": {
                     "description": "The month of the issue of the journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "pages": {
                     "description": "The pages of the issue of the journal in which a reference was published",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "source_uri": {
                     "description": "AKC reference to a foreign thing.",
@@ -1392,20 +2182,58 @@
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "title": {
                     "description": "The title of a reference",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "year": {
                     "description": "The year of the issue of the journal in which a reference was published",
                     "pattern": "19\\d\\d|20\\d\\d",
-                    "type": "integer"
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
                 }
             },
             "required": [],
             "title": "Reference",
+            "type": "object"
+        },
+        "SimilarityCalculation": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "chain_codomain": {
+                    "description": "Immune receptor chain element in binary relation codomain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "chain_domain": {
+                    "description": "Immune receptor chain element in binary relation domain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "SimilarityCalculation",
             "type": "object"
         },
         "Simulation": {
@@ -1418,11 +2246,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1450,27 +2284,45 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "process": {
                     "description": "The type of specimen collection process that resulted in this specimen",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "specimen_type": {
                     "description": "The type of this specimen",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "tissue": {
                     "description": "The tissue from which this specimen was taken",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1489,15 +2341,24 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1516,15 +2377,24 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -1541,27 +2411,45 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "process": {
                     "description": "The type of specimen collection process that resulted in this specimen",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "specimen_type": {
                     "description": "The type of this specimen",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "tissue": {
                     "description": "The tissue from which this specimen was taken",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -1594,23 +2482,38 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "investigation": {
                     "description": "An investigation in which the study arm participates",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1629,23 +2532,38 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "investigation": {
                     "description": "An investigation in which the study arm participates",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -1662,18 +2580,27 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "study_arms": {
                     "description": "The study arms that are relevant for a study event",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1692,18 +2619,27 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "study_arms": {
                     "description": "The study arms that are relevant for a study event",
                     "items": {
                         "type": "string"
                     },
-                    "type": "array"
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -1715,6 +2651,35 @@
             "title": "StudyType",
             "type": "string"
         },
+        "TCellReceptor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "TCellReceptor",
+            "type": "object"
+        },
         "Tissue": {
             "additionalProperties": false,
             "description": "",
@@ -1725,11 +2690,17 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -1756,7 +2727,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "assessments": {
             "additionalProperties": {
@@ -1769,7 +2743,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "conclusions": {
             "additionalProperties": {
@@ -1782,7 +2759,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "datasets": {
             "additionalProperties": {
@@ -1795,7 +2775,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "immune_exposures": {
             "additionalProperties": {
@@ -1808,7 +2791,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "investigations": {
             "additionalProperties": {
@@ -1821,7 +2807,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "life_events": {
             "additionalProperties": {
@@ -1834,7 +2823,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "participants": {
             "additionalProperties": {
@@ -1847,7 +2839,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "references": {
             "additionalProperties": {
@@ -1860,7 +2855,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "specimen_collections": {
             "additionalProperties": {
@@ -1873,7 +2871,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "specimens": {
             "additionalProperties": {
@@ -1886,7 +2887,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "study_arms": {
             "additionalProperties": {
@@ -1899,7 +2903,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         },
         "study_events": {
             "additionalProperties": {
@@ -1912,7 +2919,10 @@
                     }
                 ]
             },
-            "type": "object"
+            "type": [
+                "object",
+                "null"
+            ]
         }
     },
     "title": "ak-schema",

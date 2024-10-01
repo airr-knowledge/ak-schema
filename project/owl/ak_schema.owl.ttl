@@ -4,6 +4,7 @@
 @prefix DOID: <http://purl.obolibrary.org/obo/DOID_> .
 @prefix EXO: <http://purl.obolibrary.org/obo/EXO_> .
 @prefix GAZ: <http://purl.obolibrary.org/obo/GAZ_> .
+@prefix GO: <http://purl.obolibrary.org/obo/GO_> .
 @prefix IAO: <http://purl.obolibrary.org/obo/IAO_> .
 @prefix NCBITaxon: <http://purl.obolibrary.org/obo/NCBITaxon_> .
 @prefix OBI: <http://purl.obolibrary.org/obo/OBI_> .
@@ -28,52 +29,28 @@ ak_schema:AIRRKnowledgeCommons a owl:Class,
     rdfs:label "AIRRKnowledgeCommons" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:participants ],
+            owl:onProperty ak_schema:study_events ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:specimen_collections ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assays ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Investigation ;
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Specimen ;
+            owl:onProperty ak_schema:specimens ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:references ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:ImmuneExposure ;
             owl:onProperty ak_schema:immune_exposures ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:datasets ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Specimen ;
-            owl:onProperty ak_schema:specimens ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:LifeEvent ;
-            owl:onProperty ak_schema:life_events ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:study_arms ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:life_events ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ak_schema:investigations ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:study_events ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Investigation ;
-            owl:onProperty ak_schema:investigations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:StudyArm ;
-            owl:onProperty ak_schema:study_arms ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:references ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:StudyEvent ;
-            owl:onProperty ak_schema:study_events ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:assessments ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:specimens ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Dataset ;
             owl:onProperty ak_schema:datasets ],
@@ -82,29 +59,111 @@ ak_schema:AIRRKnowledgeCommons a owl:Class,
             owl:onProperty ak_schema:references ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:assays ],
+            owl:onProperty ak_schema:datasets ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Conclusion ;
-            owl:onProperty ak_schema:conclusions ],
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:specimens ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:immune_exposures ],
         [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:StudyArm ;
+            owl:onProperty ak_schema:study_arms ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:conclusions ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Assay ;
             owl:onProperty ak_schema:assays ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Participant ;
+            owl:onProperty ak_schema:participants ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:study_arms ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:StudyEvent ;
+            owl:onProperty ak_schema:study_events ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assessments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEvent ;
+            owl:onProperty ak_schema:life_events ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Assessment ;
+            owl:onProperty ak_schema:assessments ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Conclusion ;
+            owl:onProperty ak_schema:conclusions ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:SpecimenCollection ;
             owl:onProperty ak_schema:specimen_collections ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:conclusions ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Participant ;
             owl:onProperty ak_schema:participants ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Assessment ;
-            owl:onProperty ak_schema:assessments ] ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_events ] ;
     skos:definition "A container for instances of multiple classes." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:AlphaBetaTCR a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "AlphaBetaTCR" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:TRB_chain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:TRA_chain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:TRA_chain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:TRA_chain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:TRB_chain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:TRB_chain ],
+        ak_schema:TCellReceptor ;
+    skos:exactMatch GO:0042105 ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:BCellReceptor a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "BCellReceptor" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:IGL_chain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:IGK_chain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:IGK_chain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:IGH_chain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:IGK_chain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:IGL_chain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:IGH_chain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:IGL_chain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:IGH_chain ],
+        ak_schema:NamedThing ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:Cell a owl:Class,
@@ -112,6 +171,21 @@ ak_schema:Cell a owl:Class,
     rdfs:label "Cell" ;
     rdfs:subClassOf ak_schema:NamedThing ;
     skos:exactMatch CL:0000000 ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:ChainSimilarity a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "ChainSimilarity" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:ChainSimilarityType ;
+            owl:onProperty ak_schema:chain_similarity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:chain_similarity_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:chain_similarity_type ],
+        ak_schema:SimilarityCalculation ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:CommunicativeModel a owl:Class,
@@ -125,6 +199,31 @@ ak_schema:ConceptualModel a owl:Class,
     rdfs:label "ConceptualModel" ;
     rdfs:subClassOf ak_schema:Model ;
     skos:exactMatch EXO:0000073 ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:GammaDeltaTCR a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "GammaDeltaTCR" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:TRD_chain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:TRD_chain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:TRG_chain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:TRG_chain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:TRD_chain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:TRG_chain ],
+        ak_schema:TCellReceptor ;
+    skos:exactMatch GO:0042106 ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:ImmuneSystem a owl:Class,
@@ -154,32 +253,24 @@ ak_schema:Tissue a owl:Class,
     skos:exactMatch UBERON:0000479 ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
-ak_schema:AKObject a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "AKObject" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:uriorcurie ;
-            owl:onProperty ak_schema:akc_id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ak_schema:akc_id ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:akc_id ] ;
-    skos:definition "Anything uniquely identifiable in the AKC." ;
+ak_schema:isotype a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "isotype" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "The isotype of the chain" ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:ForeignObject a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ForeignObject" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty ak_schema:source_uri ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:uriorcurie ;
             owl:onProperty ak_schema:source_uri ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:source_uri ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
             owl:onProperty ak_schema:source_uri ] ;
     skos:definition "An object held outside of the AK." ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
@@ -188,17 +279,14 @@ ak_schema:ImmuneExposure a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "ImmuneExposure" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:exposure_material ],
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:disease_severity ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty ak_schema:disease ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:life_event ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:disease_severity ],
+            owl:allValuesFrom ak_schema:DiseaseStage ;
+            owl:onProperty ak_schema:disease_stage ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Disease ;
             owl:onProperty ak_schema:disease ],
@@ -206,32 +294,35 @@ ak_schema:ImmuneExposure a owl:Class,
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:disease_stage ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:life_event ],
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:disease_severity ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:exposure_material ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:disease_severity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ak_schema:disease ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:disease_severity ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:LifeEvent ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
             owl:onProperty ak_schema:life_event ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:ExposureMaterial ;
             owl:onProperty ak_schema:exposure_material ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:disease_stage ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:DiseaseStage ;
-            owl:onProperty ak_schema:disease_stage ],
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:exposure_material ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:disease_severity ],
         ak_schema:NamedThing ;
     skos:definition "An event involving the immune system of a study participant." ;
     skos:exactMatch BFO:0000015 ;
@@ -244,14 +335,39 @@ ak_schema:PlanSpecification a owl:Class,
     skos:definition "A plan with specified actions to meet some objectives." ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
+ak_schema:SimilarityCalculation a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "SimilarityCalculation" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:chain_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:chain_codomain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Chain ;
+            owl:onProperty ak_schema:chain_codomain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:chain_codomain ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:chain_domain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:chain_domain ],
+        ak_schema:AKObject ;
+    skos:exactMatch OBI:0200113 ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
 ak_schema:SpecimenCollection a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "SpecimenCollection" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:minCardinality 0 ;
             owl:onProperty ak_schema:specimen ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:specimen ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Specimen ;
@@ -633,6 +749,81 @@ VO:0000738 a owl:Class,
     rdfs:label "Diphtheria-Tetanus-Pertussis vaccine" ;
     rdfs:subClassOf ak_schema:ExposureMaterial .
 
+ak_schema:AKObject a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "AKObject" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:uriorcurie ;
+            owl:onProperty ak_schema:akc_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty ak_schema:akc_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:akc_id ] ;
+    skos:definition "Anything uniquely identifiable in the AKC." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+<https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_aa_and_vj_match> a owl:Class,
+        ak_schema:ChainSimilarityType ;
+    rdfs:label "cdr3_exact_aa_and_vj_match" ;
+    rdfs:subClassOf ak_schema:ChainSimilarityType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_aa_match> a owl:Class,
+        ak_schema:ChainSimilarityType ;
+    rdfs:label "cdr3_exact_aa_match" ;
+    rdfs:subClassOf ak_schema:ChainSimilarityType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_match> a owl:Class,
+        ak_schema:ChainSimilarityType ;
+    rdfs:label "cdr3_exact_match" ;
+    rdfs:subClassOf ak_schema:ChainSimilarityType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#exact_aa_match> a owl:Class,
+        ak_schema:ChainSimilarityType ;
+    rdfs:label "exact_aa_match" ;
+    rdfs:subClassOf ak_schema:ChainSimilarityType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#exact_match> a owl:Class,
+        ak_schema:ChainSimilarityType ;
+    rdfs:label "exact_match" ;
+    rdfs:subClassOf ak_schema:ChainSimilarityType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainType#IGH> a owl:Class,
+        ak_schema:ChainType ;
+    rdfs:label "IGH" ;
+    rdfs:subClassOf ak_schema:ChainType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainType#IGK> a owl:Class,
+        ak_schema:ChainType ;
+    rdfs:label "IGK" ;
+    rdfs:subClassOf ak_schema:ChainType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainType#IGL> a owl:Class,
+        ak_schema:ChainType ;
+    rdfs:label "IGL" ;
+    rdfs:subClassOf ak_schema:ChainType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainType#TRA> a owl:Class,
+        ak_schema:ChainType ;
+    rdfs:label "TRA" ;
+    rdfs:subClassOf ak_schema:ChainType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainType#TRB> a owl:Class,
+        ak_schema:ChainType ;
+    rdfs:label "TRB" ;
+    rdfs:subClassOf ak_schema:ChainType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainType#TRD> a owl:Class,
+        ak_schema:ChainType ;
+    rdfs:label "TRD" ;
+    rdfs:subClassOf ak_schema:ChainType .
+
+<https://github.com/airr-knowledge/ak-schema/ChainType#TRG> a owl:Class,
+        ak_schema:ChainType ;
+    rdfs:label "TRG" ;
+    rdfs:subClassOf ak_schema:ChainType .
+
 <https://github.com/airr-knowledge/ak-schema/Ethnicity#African> a owl:Class,
         ak_schema:Ethnicity ;
     rdfs:label "African" ;
@@ -925,6 +1116,13 @@ ak_schema:Simulation a owl:Class,
 ak_schema:StudyType a owl:Class,
         linkml:EnumDefinition .
 
+ak_schema:TCellReceptor a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "TCellReceptor" ;
+    rdfs:subClassOf ak_schema:NamedThing ;
+    skos:exactMatch GO:0042101 ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
 ak_schema:authors a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "authors" ;
@@ -1021,50 +1219,50 @@ ak_schema:Assessment a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Assessment" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:LifeEvent ;
             owl:onProperty ak_schema:life_event ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:target_entity_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:target_entity_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:assessment_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:target_entity_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:assessment_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:unit ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:life_event ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:assessment_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:value ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:life_event ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:target_entity_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:value ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:assessment_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:unit ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:unit ],
         ak_schema:NamedThing ;
     skos:exactMatch OBI:0002441 ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
@@ -1073,62 +1271,62 @@ ak_schema:Conclusion a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Conclusion" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:data_location_type ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:data_location_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:result ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:data_location_type ],
+            owl:allValuesFrom ak_schema:Investigation ;
+            owl:onProperty ak_schema:investigations ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:organism ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:organism ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:data_location_value ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Dataset ;
             owl:onProperty ak_schema:datasets ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:data_location_type ],
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:investigations ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
+            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:experiment_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Species ;
             owl:onProperty ak_schema:organism ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:organism ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ak_schema:result ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
+            owl:minCardinality 0 ;
             owl:onProperty ak_schema:data_location_type ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
+            owl:minCardinality 0 ;
             owl:onProperty ak_schema:experiment_type ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:investigations ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:data_location_value ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:experiment_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:datasets ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Investigation ;
-            owl:onProperty ak_schema:investigations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:data_location_value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
+            owl:minCardinality 0 ;
             owl:onProperty ak_schema:result ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:experiment_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:data_location_value ],
         ak_schema:NamedThing ;
     skos:exactMatch OBI:0001909 ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
@@ -1137,19 +1335,40 @@ ak_schema:Dataset a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Dataset" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Assessment ;
-            owl:onProperty ak_schema:assessments ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:assays ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom ak_schema:Assessment ;
             owl:onProperty ak_schema:assessments ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Assay ;
             owl:onProperty ak_schema:assays ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assessments ],
         ak_schema:NamedThing ;
     skos:exactMatch IAO:0000100 ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:IGH_chain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "IGH_chain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "IG heavy chain" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:IGK_chain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "IGK_chain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "IG kappa light chain" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:IGL_chain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "IGL_chain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "IG lambda light chain" ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:PlannedProcess a owl:Class,
@@ -1163,23 +1382,44 @@ ak_schema:Reference a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Reference" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:pages ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:investigations ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:title ],
+            owl:onProperty ak_schema:year ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:issue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:authors ],
+            owl:onProperty ak_schema:investigations ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:journal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:month ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:month ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:sources ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:title ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:journal ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:month ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:uriorcurie ;
+            owl:onProperty ak_schema:sources ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:pages ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:authors ],
         [ a owl:Restriction ;
             owl:allValuesFrom [ a rdfs:Datatype ;
                     owl:intersectionOf ( ak_schema:integer [ a rdfs:Datatype ;
@@ -1190,53 +1430,32 @@ ak_schema:Reference a owl:Class,
             owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:issue ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:issue ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:pages ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:title ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:uriorcurie ;
-            owl:onProperty ak_schema:sources ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:month ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:journal ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:pages ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:pages ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:year ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:journal ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:sources ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:journal ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:year ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:month ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Investigation ;
-            owl:onProperty ak_schema:investigations ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:authors ],
         [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:year ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:issue ],
+            owl:onProperty ak_schema:title ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:title ],
+            owl:onProperty ak_schema:pages ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:journal ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Investigation ;
+            owl:onProperty ak_schema:investigations ],
         ak_schema:ForeignObject ;
     skos:definition "A document about an investigation." ;
     skos:exactMatch IAO:0000310 ;
@@ -1246,14 +1465,42 @@ ak_schema:StudyEvent a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "StudyEvent" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom ak_schema:StudyArm ;
             owl:onProperty ak_schema:study_arms ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:StudyArm ;
+            owl:minCardinality 0 ;
             owl:onProperty ak_schema:study_arms ],
         ak_schema:NamedThing ;
     skos:definition "An event that is part of the study design of an investigation." ;
     skos:exactMatch BFO:0000015 ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:TRA_chain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "TRA_chain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "T cell receptor alpha chain" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:TRB_chain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "TRB_chain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "T cell receptor beta chain" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:TRD_chain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "TRD_chain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "T cell receptor delta chain" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:TRG_chain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "TRG_chain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "T cell receptor gamma chain" ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:age a owl:ObjectProperty,
@@ -1306,6 +1553,111 @@ ak_schema:biological_sex a owl:ObjectProperty,
     rdfs:label "biological_sex" ;
     rdfs:range ak_schema:BiologicalSex ;
     skos:definition "The biological sex of a participant" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:c_call a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "c_call" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr1_aa a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr1_aa" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "Amino acid translation of the cdr1 field." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr1_end a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr1_end" ;
+    rdfs:range ak_schema:integer ;
+    skos:definition "CDR1 end position in the query sequence (1-based closed interval)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr1_start a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr1_start" ;
+    rdfs:range ak_schema:integer ;
+    skos:definition "CDR1 start position in the query sequence (1-based closed interval)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr2_aa a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr2_aa" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "Amino acid translation of the cdr2 field." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr2_end a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr2_end" ;
+    rdfs:range ak_schema:integer ;
+    skos:definition "CDR2 end position in the query sequence (1-based closed interval)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr2_start a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr2_start" ;
+    rdfs:range ak_schema:integer ;
+    skos:definition "CDR2 start position in the query sequence (1-based closed interval)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr3_aa a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr3_aa" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "Amino acid translation of the cdr3 field." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr3_end a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr3_end" ;
+    rdfs:range ak_schema:integer ;
+    skos:definition "CDR3 end position in the query sequence (1-based closed interval)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:cdr3_start a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "cdr3_start" ;
+    rdfs:range ak_schema:integer ;
+    skos:definition "CDR3 start position in the query sequence (1-based closed interval)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:chain_codomain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "chain_codomain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "Immune receptor chain element in binary relation codomain" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:chain_domain a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "chain_domain" ;
+    rdfs:range ak_schema:Chain ;
+    skos:definition "Immune receptor chain element in binary relation domain" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:chain_similarity_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "chain_similarity_type" ;
+    rdfs:range ak_schema:ChainSimilarityType ;
+    skos:definition "Type of similarity calculation between two immune receptor chains" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:chain_type a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "chain_type" ;
+    rdfs:range ak_schema:ChainType ;
+    skos:definition "Gene locus (chain type)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:d_call a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "d_call" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB)." ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:data_location_type a owl:ObjectProperty,
@@ -1373,13 +1725,6 @@ ak_schema:exposure_material a owl:ObjectProperty,
     skos:definition "The material relevant to an immune exposure" ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
-ak_schema:integer a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange ak_schema:integer ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
-
 ak_schema:investigation a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "investigation" ;
@@ -1393,10 +1738,24 @@ ak_schema:issue a owl:ObjectProperty,
     skos:definition "The issue of the journal in which a reference was published" ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
+ak_schema:j_call a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "j_call" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
 ak_schema:journal a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "journal" ;
     skos:definition "The journal in which a reference was published" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:junction_aa a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "junction_aa" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "Amino acid form of the junction." ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:life_event_type a owl:ObjectProperty,
@@ -1469,6 +1828,20 @@ ak_schema:result a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "result" ;
     skos:definition "The content of the conclusion" ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:sequence a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sequence" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "Nucleotide sequence." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+ak_schema:sequence_aa a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sequence_aa" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "Amino acid sequence." ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
 ak_schema:source_uri a owl:ObjectProperty,
@@ -1563,6 +1936,13 @@ ak_schema:update_date a owl:ObjectProperty,
     skos:definition "Subsequence updates to the investigation or its data" ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
 
+ak_schema:v_call a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "v_call" ;
+    rdfs:range ak_schema:string ;
+    skos:definition "V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB)." ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
 ak_schema:year a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "year" ;
@@ -1577,50 +1957,50 @@ ak_schema:Assay a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Assay" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:specimen ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:value ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:assay_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:assay_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:assay_type ],
+            owl:onProperty ak_schema:specimen ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:target_entity_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:unit ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Specimen ;
             owl:onProperty ak_schema:specimen ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:target_entity_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:assay_type ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:unit ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:specimen ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:specimen ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:value ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:target_entity_type ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:target_entity_type ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:value ],
         ak_schema:NamedThing ;
     skos:exactMatch OBI:0000070 ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
@@ -1629,38 +2009,38 @@ ak_schema:Specimen a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Specimen" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:life_event ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:specimen_type ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:life_event ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:process ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:process ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:specimen_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:LifeEvent ;
             owl:onProperty ak_schema:life_event ],
         [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:tissue ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:process ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:process ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:process ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:tissue ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:tissue ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:process ],
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:specimen_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:tissue ],
+            owl:onProperty ak_schema:specimen_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:specimen_type ],
@@ -1708,103 +2088,103 @@ ak_schema:Participant a owl:Class,
     rdfs:label "Participant" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:biological_sex ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Ethnicity ;
-            owl:onProperty ak_schema:ethnicity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:race ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:age_unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:geolocation ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:geolocation ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:age_unit ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:phenotypic_sex ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:study_arm ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:species ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:ethnicity ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:LifeEvent ;
-            owl:onProperty ak_schema:age_event ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Geolocation ;
-            owl:onProperty ak_schema:geolocation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:age_unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:ethnicity ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:strain ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:phenotypic_sex ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:biological_sex ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:PhenotypicSex ;
-            owl:onProperty ak_schema:phenotypic_sex ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:age ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:age_event ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Strain ;
-            owl:onProperty ak_schema:strain ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:strain ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:age_event ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:StudyArm ;
-            owl:onProperty ak_schema:study_arm ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Species ;
-            owl:onProperty ak_schema:species ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:age ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:BiologicalSex ;
-            owl:onProperty ak_schema:biological_sex ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:study_arm ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:race ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ak_schema:species ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Race ;
             owl:onProperty ak_schema:race ],
         [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:phenotypic_sex ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:StudyArm ;
+            owl:onProperty ak_schema:study_arm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Geolocation ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:age ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:age ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:age_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:species ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:phenotypic_sex ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:race ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:ethnicity ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:study_arm ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:age_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:study_arm ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:age_event ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:biological_sex ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:race ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:age_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:age_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:ethnicity ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Ethnicity ;
+            owl:onProperty ak_schema:ethnicity ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEvent ;
+            owl:onProperty ak_schema:age_event ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Species ;
+            owl:onProperty ak_schema:species ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:biological_sex ],
+        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:age ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:strain ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Strain ;
+            owl:onProperty ak_schema:strain ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:BiologicalSex ;
+            owl:onProperty ak_schema:biological_sex ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:PhenotypicSex ;
+            owl:onProperty ak_schema:phenotypic_sex ],
         ak_schema:NamedThing ;
     skos:definition "A participant in an investigation." ;
     skos:exactMatch OBI:0100026 ;
@@ -1817,12 +2197,6 @@ ak_schema:StudyArm a owl:Class,
             owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:inclusion_criteria ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:exclusion_criteria ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:investigation ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:inclusion_criteria ],
         [ a owl:Restriction ;
@@ -1830,15 +2204,21 @@ ak_schema:StudyArm a owl:Class,
             owl:onProperty ak_schema:investigation ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:inclusion_criteria ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:exclusion_criteria ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:investigation ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:exclusion_criteria ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:inclusion_criteria ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:investigation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:exclusion_criteria ],
         ak_schema:NamedThing ;
     skos:definition "A population of participants of an investigation." ;
@@ -1869,47 +2249,56 @@ ak_schema:Investigation a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Investigation" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:uriorcurie ;
+            owl:onProperty ak_schema:archival_id ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:update_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:datetime ;
+            owl:onProperty ak_schema:release_date ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Simulation ;
+            owl:onProperty ak_schema:simulations ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:participants ],
+            owl:onProperty ak_schema:documents ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:update_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Reference ;
             owl:onProperty ak_schema:documents ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:archival_id ],
+            owl:onProperty ak_schema:simulations ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:study_type ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:exclusion_criteria ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:inclusion_criteria ],
+            owl:allValuesFrom ak_schema:Participant ;
+            owl:onProperty ak_schema:participants ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom ak_schema:Conclusion ;
             owl:onProperty ak_schema:conclusions ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:update_date ],
+            owl:onProperty ak_schema:release_date ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:inclusion_criteria ],
+            owl:onProperty ak_schema:study_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:exclusion_criteria ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:assays ],
+            owl:onProperty ak_schema:release_date ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:datetime ;
             owl:onProperty ak_schema:update_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:documents ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:archival_id ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Simulation ;
-            owl:onProperty ak_schema:simulations ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Participant ;
-            owl:onProperty ak_schema:participants ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
             owl:onProperty ak_schema:inclusion_criteria ],
@@ -1917,41 +2306,32 @@ ak_schema:Investigation a owl:Class,
             owl:allValuesFrom ak_schema:Assay ;
             owl:onProperty ak_schema:assays ],
         [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:uriorcurie ;
-            owl:onProperty ak_schema:archival_id ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:exclusion_criteria ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:conclusions ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:assays ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:archival_id ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:participants ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:inclusion_criteria ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:StudyType ;
             owl:onProperty ak_schema:study_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:study_type ],
+            owl:onProperty ak_schema:archival_id ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:release_date ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:datetime ;
-            owl:onProperty ak_schema:release_date ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:release_date ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:simulations ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:exclusion_criteria ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:study_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Conclusion ;
-            owl:onProperty ak_schema:conclusions ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:update_date ],
+            owl:onProperty ak_schema:inclusion_criteria ],
         ak_schema:PlannedProcess ;
     skos:definition "A scientific investigation." ;
     skos:exactMatch OBI:0000066 ;
@@ -2021,85 +2401,85 @@ ak_schema:LifeEvent a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "LifeEvent" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:time_unit ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:t0_event_type ],
-        [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:duration ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:Participant ;
             owl:onProperty ak_schema:participant ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:study_event ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:time_unit ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:t0_event ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:study_event ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:Geolocation ;
             owl:onProperty ak_schema:geolocation ],
         [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:time_unit ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:time_unit ],
+        [ a owl:Restriction ;
             owl:minCardinality 0 ;
+            owl:onProperty ak_schema:duration ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:t0_event ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:t0_event_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:time_unit ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:study_event ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:LifeEventProcess ;
             owl:onProperty ak_schema:life_event_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:t0_event_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:geolocation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:life_event_type ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:participant ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:t0_event ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty ak_schema:participant ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:decimal ;
-            owl:onProperty ak_schema:duration ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:life_event_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:duration ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:LifeEventProcess ;
-            owl:onProperty ak_schema:life_event_type ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:Participant ;
-            owl:onProperty ak_schema:participant ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:geolocation ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:start ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:time_unit ],
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:life_event_type ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:duration ],
+            owl:onProperty ak_schema:study_event ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:geolocation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
-            owl:onProperty ak_schema:t0_event ],
+            owl:onProperty ak_schema:t0_event_type ],
         [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:StudyEvent ;
             owl:onProperty ak_schema:study_event ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:start ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty ak_schema:t0_event_type ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
             owl:onProperty ak_schema:t0_event ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:t0_event_type ],
-        [ a owl:Restriction ;
             owl:allValuesFrom ak_schema:decimal ;
+            owl:onProperty ak_schema:duration ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:start ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
             owl:onProperty ak_schema:start ],
         ak_schema:NamedThing ;
     skos:definition "An event in which a study participant participates." ;
@@ -2142,6 +2522,15 @@ ak_schema:LifeEventProcess a owl:Class,
         ONTIE:0003305,
         ONTIE:0003308 .
 
+ak_schema:ChainSimilarityType a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#exact_match> <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#exact_aa_match> <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_match> <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_aa_match> <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_aa_and_vj_match> ) ;
+    linkml:permissible_values <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_aa_and_vj_match>,
+        <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_aa_match>,
+        <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#cdr3_exact_match>,
+        <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#exact_aa_match>,
+        <https://github.com/airr-knowledge/ak-schema/ChainSimilarityType#exact_match> .
+
 ak_schema:DiseaseStage a owl:Class,
         linkml:EnumDefinition ;
     owl:unionOf ( OGMS:0000094 ONTIE:0003544 ONTIE:0003545 OGMS:0000064 ONTIE:0003547 ) ;
@@ -2161,6 +2550,24 @@ ak_schema:PhenotypicSex a owl:Class,
         <https://github.com/airr-knowledge/ak-schema/PhenotypicSex#not+collected>,
         <https://github.com/airr-knowledge/ak-schema/PhenotypicSex#pooled> .
 
+ak_schema:integer a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange ak_schema:integer ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
+
+ak_schema:ChainType a owl:Class,
+        linkml:EnumDefinition ;
+    owl:unionOf ( <https://github.com/airr-knowledge/ak-schema/ChainType#IGH> <https://github.com/airr-knowledge/ak-schema/ChainType#IGK> <https://github.com/airr-knowledge/ak-schema/ChainType#IGL> <https://github.com/airr-knowledge/ak-schema/ChainType#TRA> <https://github.com/airr-knowledge/ak-schema/ChainType#TRB> <https://github.com/airr-knowledge/ak-schema/ChainType#TRD> <https://github.com/airr-knowledge/ak-schema/ChainType#TRG> ) ;
+    linkml:permissible_values <https://github.com/airr-knowledge/ak-schema/ChainType#IGH>,
+        <https://github.com/airr-knowledge/ak-schema/ChainType#IGK>,
+        <https://github.com/airr-knowledge/ak-schema/ChainType#IGL>,
+        <https://github.com/airr-knowledge/ak-schema/ChainType#TRA>,
+        <https://github.com/airr-knowledge/ak-schema/ChainType#TRB>,
+        <https://github.com/airr-knowledge/ak-schema/ChainType#TRD>,
+        <https://github.com/airr-knowledge/ak-schema/ChainType#TRG> .
+
 ak_schema:ExposureMaterial a owl:Class,
         linkml:EnumDefinition ;
     owl:unionOf ( NCBITaxon:11320 NCBITaxon:1773 NCBITaxon:5833 NCBITaxon:10376 NCBITaxon:10359 VO:0000738 VO:0000035 ) ;
@@ -2172,33 +2579,192 @@ ak_schema:ExposureMaterial a owl:Class,
         VO:0000035,
         VO:0000738 .
 
+ak_schema:Chain a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "Chain" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:d_call ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:integer ;
+            owl:onProperty ak_schema:cdr3_end ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr2_aa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:cdr2_aa ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:sequence_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr1_start ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr3_end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr1_aa ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr1_end ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:j_call ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:cdr3_aa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:d_call ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr3_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:d_call ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:j_call ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:c_call ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:v_call ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:c_call ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:junction_aa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:c_call ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:chain_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:v_call ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:ChainType ;
+            owl:onProperty ak_schema:chain_type ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr1_end ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr2_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:junction_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:integer ;
+            owl:onProperty ak_schema:cdr1_end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:sequence_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr2_aa ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr1_start ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr2_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:sequence_aa ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr2_end ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:integer ;
+            owl:onProperty ak_schema:cdr1_start ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:j_call ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:integer ;
+            owl:onProperty ak_schema:cdr2_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:sequence ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr2_end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:junction_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr3_aa ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr3_start ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr1_aa ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:chain_type ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:v_call ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:cdr3_start ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
+            owl:onProperty ak_schema:cdr1_aa ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:integer ;
+            owl:onProperty ak_schema:cdr2_end ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:cdr3_end ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:sequence ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:integer ;
+            owl:onProperty ak_schema:cdr3_start ],
+        ak_schema:NamedThing ;
+    skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
+
+linkml:topValue a owl:DatatypeProperty ;
+    rdfs:label "value" .
+
 ak_schema:NamedThing a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "NamedThing" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:maxCardinality 1 ;
+            owl:onProperty ak_schema:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:name ],
         [ a owl:Restriction ;
-            owl:minCardinality 0 ;
+            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:description ],
         [ a owl:Restriction ;
             owl:maxCardinality 1 ;
-            owl:onProperty ak_schema:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:name ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
-            owl:onProperty ak_schema:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom ak_schema:string ;
             owl:onProperty ak_schema:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty ak_schema:name ],
         ak_schema:AKObject ;
     skos:definition "Name and description for AKC things." ;
     skos:inScheme <https://github.com/airr-knowledge/ak-schema> .
-
-linkml:topValue a owl:DatatypeProperty ;
-    rdfs:label "value" .
 
 ak_schema:Strain a owl:Class,
         linkml:EnumDefinition ;
@@ -2212,13 +2778,6 @@ ak_schema:Strain a owl:Class,
         <https://github.com/airr-knowledge/ak-schema/Strain#LDLR+/+>,
         <https://github.com/airr-knowledge/ak-schema/Strain#LDLR-/->,
         <https://github.com/airr-knowledge/ak-schema/Strain#pet+shop+mouse> .
-
-ak_schema:string a owl:Class,
-        linkml:TypeDefinition ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange ak_schema:string ;
-            owl:onProperty linkml:topValue ;
-            owl:qualifiedCardinality 1 ] .
 
 ak_schema:Ethnicity a owl:Class,
         linkml:EnumDefinition ;
@@ -2276,6 +2835,13 @@ ak_schema:Geolocation a owl:Class,
         GAZ:00003940,
         GAZ:00004435,
         GAZ:00006254 .
+
+ak_schema:string a owl:Class,
+        linkml:TypeDefinition ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange ak_schema:string ;
+            owl:onProperty linkml:topValue ;
+            owl:qualifiedCardinality 1 ] .
 
 ak_schema:Race a owl:Class,
         linkml:EnumDefinition ;
