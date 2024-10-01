@@ -208,7 +208,9 @@
 <p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0001909">OBI:0001909</a></p>
 <div class="mermaid"> classDiagram
     class Conclusion
+    click Conclusion href "../Conclusion"
       NamedThing &lt;|-- Conclusion
+        click NamedThing href "../NamedThing"
 
       Conclusion : akc_id
 
@@ -218,7 +220,12 @@
 
       Conclusion : datasets
 
-          Conclusion --&gt; Dataset : datasets
+
+
+
+    Conclusion --&gt; "*" Dataset : datasets
+    click Dataset href "../Dataset"
+
 
       Conclusion : description
 
@@ -226,13 +233,23 @@
 
       Conclusion : investigations
 
-          Conclusion --&gt; Investigation : investigations
+
+
+
+    Conclusion --&gt; "*" Investigation : investigations
+    click Investigation href "../Investigation"
+
 
       Conclusion : name
 
       Conclusion : organism
 
-          Conclusion --&gt; Species : organism
+
+
+
+    Conclusion --&gt; "0..1" Species : organism
+    click Species href "../Species"
+
 
       Conclusion : result
 
@@ -261,13 +278,13 @@
 <tbody>
 <tr>
 <td><a href="../investigations/">investigations</a></td>
-<td>0..* <br/> <a href="../Investigation/">Investigation</a></td>
+<td>* <br/> <a href="../Investigation/">Investigation</a></td>
 <td>The investigations that a reference or conclusion are about</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../datasets/">datasets</a></td>
-<td>0..* <br/> <a href="../Dataset/">Dataset</a></td>
+<td>* <br/> <a href="../Dataset/">Dataset</a></td>
 <td>The datasets that support a conclusion</td>
 <td>direct</td>
 </tr>
@@ -315,7 +332,7 @@
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
 </tr>
@@ -333,13 +350,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Investigation/">Investigation</a></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td><a href="../conclusions/">conclusions</a></td>
 <td>range</td>
 <td><a href="./">Conclusion</a></td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../Investigation/">Investigation</a></td>
 <td><a href="../conclusions/">conclusions</a></td>
 <td>range</td>
 <td><a href="./">Conclusion</a></td>
@@ -401,26 +418,26 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: IAO:0000136
-    multivalued: true
     alias: investigations
     owner: Conclusion
     domain_of:
-    - Conclusion
-    - Reference
     - AIRRKnowledgeCommons
+    - Reference
+    - Conclusion
     range: Investigation
+    multivalued: true
   datasets:
     name: datasets
     description: The datasets that support a conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: datasets
     owner: Conclusion
     domain_of:
-    - Conclusion
     - AIRRKnowledgeCommons
+    - Conclusion
     range: Dataset
+    multivalued: true
   result:
     name: result
     description: The content of the conclusion
@@ -536,5 +553,7 @@ class_uri: OBI:0001909
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

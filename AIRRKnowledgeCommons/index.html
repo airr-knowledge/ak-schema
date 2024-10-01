@@ -199,57 +199,123 @@
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/AIRRKnowledgeCommons">ak_schema:AIRRKnowledgeCommons</a></p>
 <div class="mermaid"> classDiagram
     class AIRRKnowledgeCommons
+    click AIRRKnowledgeCommons href "../AIRRKnowledgeCommons"
       AIRRKnowledgeCommons : assays
 
-          AIRRKnowledgeCommons --&gt; Assay : assays
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Assay : assays
+    click Assay href "../Assay"
+
 
       AIRRKnowledgeCommons : assessments
 
-          AIRRKnowledgeCommons --&gt; Assessment : assessments
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Assessment : assessments
+    click Assessment href "../Assessment"
+
 
       AIRRKnowledgeCommons : conclusions
 
-          AIRRKnowledgeCommons --&gt; Conclusion : conclusions
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Conclusion : conclusions
+    click Conclusion href "../Conclusion"
+
 
       AIRRKnowledgeCommons : datasets
 
-          AIRRKnowledgeCommons --&gt; Dataset : datasets
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Dataset : datasets
+    click Dataset href "../Dataset"
+
 
       AIRRKnowledgeCommons : immune_exposures
 
-          AIRRKnowledgeCommons --&gt; ImmuneExposure : immune_exposures
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" ImmuneExposure : immune_exposures
+    click ImmuneExposure href "../ImmuneExposure"
+
 
       AIRRKnowledgeCommons : investigations
 
-          AIRRKnowledgeCommons --&gt; Investigation : investigations
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Investigation : investigations
+    click Investigation href "../Investigation"
+
 
       AIRRKnowledgeCommons : life_events
 
-          AIRRKnowledgeCommons --&gt; LifeEvent : life_events
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" LifeEvent : life_events
+    click LifeEvent href "../LifeEvent"
+
 
       AIRRKnowledgeCommons : participants
 
-          AIRRKnowledgeCommons --&gt; Participant : participants
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Participant : participants
+    click Participant href "../Participant"
+
 
       AIRRKnowledgeCommons : references
 
-          AIRRKnowledgeCommons --&gt; Reference : references
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Reference : references
+    click Reference href "../Reference"
+
 
       AIRRKnowledgeCommons : specimen_collections
 
-          AIRRKnowledgeCommons --&gt; SpecimenCollection : specimen_collections
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" SpecimenCollection : specimen_collections
+    click SpecimenCollection href "../SpecimenCollection"
+
 
       AIRRKnowledgeCommons : specimens
 
-          AIRRKnowledgeCommons --&gt; Specimen : specimens
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Specimen : specimens
+    click Specimen href "../Specimen"
+
 
       AIRRKnowledgeCommons : study_arms
 
-          AIRRKnowledgeCommons --&gt; StudyArm : study_arms
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" StudyArm : study_arms
+    click StudyArm href "../StudyArm"
+
 
       AIRRKnowledgeCommons : study_events
 
-          AIRRKnowledgeCommons --&gt; StudyEvent : study_events
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" StudyEvent : study_events
+    click StudyEvent href "../StudyEvent"
+
 
 
 </div>
@@ -267,79 +333,79 @@
 <tbody>
 <tr>
 <td><a href="../investigations/">investigations</a></td>
-<td>0..* <br/> <a href="../Investigation/">Investigation</a></td>
+<td>* <br/> <a href="../Investigation/">Investigation</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../references/">references</a></td>
-<td>0..* <br/> <a href="../Reference/">Reference</a></td>
+<td>* <br/> <a href="../Reference/">Reference</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../study_arms/">study_arms</a></td>
-<td>0..* <br/> <a href="../StudyArm/">StudyArm</a></td>
+<td>* <br/> <a href="../StudyArm/">StudyArm</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../study_events/">study_events</a></td>
-<td>0..* <br/> <a href="../StudyEvent/">StudyEvent</a></td>
+<td>* <br/> <a href="../StudyEvent/">StudyEvent</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../participants/">participants</a></td>
-<td>0..* <br/> <a href="../Participant/">Participant</a></td>
+<td>* <br/> <a href="../Participant/">Participant</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../life_events/">life_events</a></td>
-<td>0..* <br/> <a href="../LifeEvent/">LifeEvent</a></td>
+<td>* <br/> <a href="../LifeEvent/">LifeEvent</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../immune_exposures/">immune_exposures</a></td>
-<td>0..* <br/> <a href="../ImmuneExposure/">ImmuneExposure</a></td>
+<td>* <br/> <a href="../ImmuneExposure/">ImmuneExposure</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../assessments/">assessments</a></td>
-<td>0..* <br/> <a href="../Assessment/">Assessment</a></td>
+<td>* <br/> <a href="../Assessment/">Assessment</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../specimens/">specimens</a></td>
-<td>0..* <br/> <a href="../Specimen/">Specimen</a></td>
+<td>* <br/> <a href="../Specimen/">Specimen</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../specimen_collections/">specimen_collections</a></td>
-<td>0..* <br/> <a href="../SpecimenCollection/">SpecimenCollection</a></td>
+<td>* <br/> <a href="../SpecimenCollection/">SpecimenCollection</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../assays/">assays</a></td>
-<td>0..* <br/> <a href="../Assay/">Assay</a></td>
+<td>* <br/> <a href="../Assay/">Assay</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../datasets/">datasets</a></td>
-<td>0..* <br/> <a href="../Dataset/">Dataset</a></td>
+<td>* <br/> <a href="../Dataset/">Dataset</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../conclusions/">conclusions</a></td>
-<td>0..* <br/> <a href="../Conclusion/">Conclusion</a></td>
+<td>* <br/> <a href="../Conclusion/">Conclusion</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -380,86 +446,121 @@ attributes:
   investigations:
     name: investigations
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Reference
+    - Conclusion
     range: Investigation
+    multivalued: true
     inlined: true
   references:
     name: references
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
     range: Reference
+    multivalued: true
     inlined: true
   study_arms:
     name: study_arms
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
+    - StudyEvent
     range: StudyArm
+    multivalued: true
     inlined: true
   study_events:
     name: study_events
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
     range: StudyEvent
+    multivalued: true
     inlined: true
   participants:
     name: participants
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Investigation
     range: Participant
+    multivalued: true
     inlined: true
   life_events:
     name: life_events
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
     range: LifeEvent
+    multivalued: true
     inlined: true
   immune_exposures:
     name: immune_exposures
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
     range: ImmuneExposure
+    multivalued: true
     inlined: true
   assessments:
     name: assessments
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Dataset
     range: Assessment
+    multivalued: true
     inlined: true
   specimens:
     name: specimens
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
     range: Specimen
+    multivalued: true
     inlined: true
   specimen_collections:
     name: specimen_collections
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
     range: SpecimenCollection
+    multivalued: true
     inlined: true
   assays:
     name: assays
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Investigation
+    - Dataset
     range: Assay
+    multivalued: true
     inlined: true
   datasets:
     name: datasets
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Conclusion
     range: Dataset
+    multivalued: true
     inlined: true
   conclusions:
     name: conclusions
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Investigation
     range: Conclusion
+    multivalued: true
     inlined: true
 tree_root: true
 
@@ -474,147 +575,147 @@ attributes:
   investigations:
     name: investigations
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
     alias: investigations
     owner: AIRRKnowledgeCommons
     domain_of:
-    - Conclusion
-    - Reference
     - AIRRKnowledgeCommons
+    - Reference
+    - Conclusion
     range: Investigation
+    multivalued: true
     inlined: true
   references:
     name: references
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: references
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
     range: Reference
+    multivalued: true
     inlined: true
   study_arms:
     name: study_arms
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
     alias: study_arms
     owner: AIRRKnowledgeCommons
     domain_of:
-    - StudyEvent
     - AIRRKnowledgeCommons
+    - StudyEvent
     range: StudyArm
+    multivalued: true
     inlined: true
   study_events:
     name: study_events
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: study_events
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
     range: StudyEvent
+    multivalued: true
     inlined: true
   participants:
     name: participants
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
     alias: participants
     owner: AIRRKnowledgeCommons
     domain_of:
-    - Investigation
     - AIRRKnowledgeCommons
+    - Investigation
     range: Participant
+    multivalued: true
     inlined: true
   life_events:
     name: life_events
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: life_events
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
     range: LifeEvent
+    multivalued: true
     inlined: true
   immune_exposures:
     name: immune_exposures
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: immune_exposures
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
     range: ImmuneExposure
+    multivalued: true
     inlined: true
   assessments:
     name: assessments
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
     alias: assessments
     owner: AIRRKnowledgeCommons
     domain_of:
-    - Dataset
     - AIRRKnowledgeCommons
+    - Dataset
     range: Assessment
+    multivalued: true
     inlined: true
   specimens:
     name: specimens
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: specimens
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
     range: Specimen
+    multivalued: true
     inlined: true
   specimen_collections:
     name: specimen_collections
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: specimen_collections
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
     range: SpecimenCollection
+    multivalued: true
     inlined: true
   assays:
     name: assays
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
     alias: assays
     owner: AIRRKnowledgeCommons
     domain_of:
-    - Dataset
-    - Investigation
     - AIRRKnowledgeCommons
+    - Investigation
+    - Dataset
     range: Assay
+    multivalued: true
     inlined: true
   datasets:
     name: datasets
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
     alias: datasets
     owner: AIRRKnowledgeCommons
     domain_of:
-    - Conclusion
     - AIRRKnowledgeCommons
+    - Conclusion
     range: Dataset
+    multivalued: true
     inlined: true
   conclusions:
     name: conclusions
     from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
     alias: conclusions
     owner: AIRRKnowledgeCommons
     domain_of:
-    - Investigation
     - AIRRKnowledgeCommons
+    - Investigation
     range: Conclusion
+    multivalued: true
     inlined: true
 tree_root: true
 
@@ -645,5 +746,7 @@ tree_root: true
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

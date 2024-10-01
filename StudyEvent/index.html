@@ -209,7 +209,9 @@
 <p>URI: <a href="http://purl.obolibrary.org/obo/BFO_0000015">BFO:0000015</a></p>
 <div class="mermaid"> classDiagram
     class StudyEvent
+    click StudyEvent href "../StudyEvent"
       NamedThing &lt;|-- StudyEvent
+        click NamedThing href "../NamedThing"
 
       StudyEvent : akc_id
 
@@ -219,7 +221,12 @@
 
       StudyEvent : study_arms
 
-          StudyEvent --&gt; StudyArm : study_arms
+
+
+
+    StudyEvent --&gt; "*" StudyArm : study_arms
+    click StudyArm href "../StudyArm"
+
 
 
 </div>
@@ -246,7 +253,7 @@
 <tbody>
 <tr>
 <td><a href="../study_arms/">study_arms</a></td>
-<td>0..* <br/> <a href="../StudyArm/">StudyArm</a></td>
+<td>* <br/> <a href="../StudyArm/">StudyArm</a></td>
 <td>The study arms that are relevant for a study event</td>
 <td>direct</td>
 </tr>
@@ -264,7 +271,7 @@
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
 </tr>
@@ -282,14 +289,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-<td><a href="../study_event/">study_event</a></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../study_events/">study_events</a></td>
 <td>range</td>
 <td><a href="./">StudyEvent</a></td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td><a href="../study_events/">study_events</a></td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+<td><a href="../study_event/">study_event</a></td>
 <td>range</td>
 <td><a href="./">StudyEvent</a></td>
 </tr>
@@ -345,13 +352,13 @@ attributes:
     description: The study arms that are relevant for a study event
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: study_arms
     owner: StudyEvent
     domain_of:
-    - StudyEvent
     - AIRRKnowledgeCommons
+    - StudyEvent
     range: StudyArm
+    multivalued: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -416,5 +423,7 @@ class_uri: BFO:0000015
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

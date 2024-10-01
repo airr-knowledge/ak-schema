@@ -290,6 +290,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -332,13 +339,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Investigation/">Investigation</a></td>
-<td>A scientific investigation</td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td>A container for instances of multiple classes</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td>A container for instances of multiple classes</td>
+<td><a href="../Investigation/">Investigation</a></td>
+<td>A scientific investigation</td>
 <td>no</td>
 </tr>
 </tbody>
@@ -357,6 +364,25 @@
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>RO:0000057</td>
+</tr>
+<tr>
+<td>native</td>
+<td>ak_schema:participants</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
@@ -365,12 +391,12 @@ description: The participants involved with the investigation
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 slot_uri: RO:0000057
-multivalued: true
 alias: participants
 domain_of:
-- Investigation
 - AIRRKnowledgeCommons
+- Investigation
 range: Participant
+multivalued: true
 
 </code></pre>
 

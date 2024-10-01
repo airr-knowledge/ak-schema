@@ -209,13 +209,20 @@
 <p>URI: <a href="http://purl.obolibrary.org/obo/IAO_0000310">IAO:0000310</a></p>
 <div class="mermaid"> classDiagram
     class Reference
+    click Reference href "../Reference"
       ForeignObject &lt;|-- Reference
+        click ForeignObject href "../ForeignObject"
 
       Reference : authors
 
       Reference : investigations
 
-          Reference --&gt; Investigation : investigations
+
+
+
+    Reference --&gt; "*" Investigation : investigations
+    click Investigation href "../Investigation"
+
 
       Reference : issue
 
@@ -255,13 +262,13 @@
 <tbody>
 <tr>
 <td><a href="../sources/">sources</a></td>
-<td>0..* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>* <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>The source URLs for a reference</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../investigations/">investigations</a></td>
-<td>0..* <br/> <a href="../Investigation/">Investigation</a></td>
+<td>* <br/> <a href="../Investigation/">Investigation</a></td>
 <td>The investigations that a reference or conclusion are about</td>
 <td>direct</td>
 </tr>
@@ -273,7 +280,7 @@
 </tr>
 <tr>
 <td><a href="../authors/">authors</a></td>
-<td>0..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>The authors of a reference</td>
 <td>direct</td>
 </tr>
@@ -309,7 +316,7 @@
 </tr>
 <tr>
 <td><a href="../source_uri/">source_uri</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>AKC reference to a foreign thing</td>
 <td><a href="../ForeignObject/">ForeignObject</a></td>
 </tr>
@@ -327,14 +334,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Investigation/">Investigation</a></td>
-<td><a href="../documents/">documents</a></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../references/">references</a></td>
 <td>range</td>
 <td><a href="./">Reference</a></td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td><a href="../references/">references</a></td>
+<td><a href="../Investigation/">Investigation</a></td>
+<td><a href="../documents/">documents</a></td>
 <td>range</td>
 <td><a href="./">Reference</a></td>
 </tr>
@@ -399,26 +406,26 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:identifier
-    multivalued: true
     alias: sources
     owner: Reference
     domain_of:
     - Reference
     range: uriorcurie
+    multivalued: true
   investigations:
     name: investigations
     description: The investigations that a reference or conclusion are about
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: IAO:0000136
-    multivalued: true
     alias: investigations
     owner: Reference
     domain_of:
-    - Conclusion
-    - Reference
     - AIRRKnowledgeCommons
+    - Reference
+    - Conclusion
     range: Investigation
+    multivalued: true
   title:
     name: title
     description: The title of a reference
@@ -436,12 +443,12 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: schema:author
-    multivalued: true
     alias: authors
     owner: Reference
     domain_of:
     - Reference
     range: string
+    multivalued: true
   journal:
     name: journal
     description: The journal in which a reference was published
@@ -536,5 +543,7 @@ class_uri: IAO:0000310
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

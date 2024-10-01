@@ -290,6 +290,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -351,18 +358,37 @@
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>ak_schema:life_events</td>
+</tr>
+<tr>
+<td>native</td>
+<td>ak_schema:life_events</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
 <pre><code class="language-yaml">name: life_events
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-multivalued: true
 alias: life_events
 owner: AIRRKnowledgeCommons
 domain_of:
 - AIRRKnowledgeCommons
 range: LifeEvent
+multivalued: true
 inlined: true
 
 </code></pre>

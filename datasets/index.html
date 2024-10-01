@@ -290,6 +290,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -332,13 +339,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Conclusion/">Conclusion</a></td>
-<td></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td>A container for instances of multiple classes</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td>A container for instances of multiple classes</td>
+<td><a href="../Conclusion/">Conclusion</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -357,6 +364,25 @@
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>ak_schema:datasets</td>
+</tr>
+<tr>
+<td>native</td>
+<td>ak_schema:datasets</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
@@ -364,12 +390,12 @@
 description: The datasets that support a conclusion
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-multivalued: true
 alias: datasets
 domain_of:
-- Conclusion
 - AIRRKnowledgeCommons
+- Conclusion
 range: Dataset
+multivalued: true
 
 </code></pre>
 

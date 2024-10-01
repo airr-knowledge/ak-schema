@@ -290,6 +290,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mappings" class="md-nav__link">
+    Mappings
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -332,8 +339,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Specimen/">Specimen</a></td>
-<td></td>
+<td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
+<td>An event involving the immune system of a study participant</td>
 <td>no</td>
 </tr>
 <tr>
@@ -342,8 +349,8 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
-<td>An event involving the immune system of a study participant</td>
+<td><a href="../Specimen/">Specimen</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -357,6 +364,25 @@
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>ak_schema:life_event</td>
+</tr>
+<tr>
+<td>native</td>
+<td>ak_schema:life_event</td>
+</tr>
+</tbody>
+</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
@@ -366,9 +392,9 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: life_event
 domain_of:
+- ImmuneExposure
 - Specimen
 - Assessment
-- ImmuneExposure
 range: LifeEvent
 
 </code></pre>

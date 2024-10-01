@@ -209,7 +209,9 @@
 <p>URI: <a href="http://purl.obolibrary.org/obo/BFO_0000015">BFO:0000015</a></p>
 <div class="mermaid"> classDiagram
     class LifeEvent
+    click LifeEvent href "../LifeEvent"
       NamedThing &lt;|-- LifeEvent
+        click NamedThing href "../NamedThing"
 
       LifeEvent : akc_id
 
@@ -219,23 +221,43 @@
 
       LifeEvent : geolocation
 
-          LifeEvent --&gt; Geolocation : geolocation
+
+
+
+    LifeEvent --&gt; "0..1" Geolocation : geolocation
+    click Geolocation href "../Geolocation"
+
 
       LifeEvent : life_event_type
 
-          LifeEvent --&gt; LifeEventProcess : life_event_type
+
+
+
+    LifeEvent --&gt; "0..1" LifeEventProcess : life_event_type
+    click LifeEventProcess href "../LifeEventProcess"
+
 
       LifeEvent : name
 
       LifeEvent : participant
 
-          LifeEvent --&gt; Participant : participant
+
+
+
+    LifeEvent --&gt; "0..1" Participant : participant
+    click Participant href "../Participant"
+
 
       LifeEvent : start
 
       LifeEvent : study_event
 
-          LifeEvent --&gt; StudyEvent : study_event
+
+
+
+    LifeEvent --&gt; "0..1" StudyEvent : study_event
+    click StudyEvent href "../StudyEvent"
+
 
       LifeEvent : t0_event
 
@@ -334,7 +356,7 @@
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
 </tr>
@@ -352,14 +374,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Specimen/">Specimen</a></td>
-<td><a href="../life_event/">life_event</a></td>
-<td>range</td>
-<td><a href="./">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../Assessment/">Assessment</a></td>
-<td><a href="../life_event/">life_event</a></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../life_events/">life_events</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
 </tr>
@@ -376,8 +392,14 @@
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td><a href="../life_events/">life_events</a></td>
+<td><a href="../Specimen/">Specimen</a></td>
+<td><a href="../life_event/">life_event</a></td>
+<td>range</td>
+<td><a href="./">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Assessment/">Assessment</a></td>
+<td><a href="../life_event/">life_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
 </tr>
@@ -595,5 +617,7 @@ class_uri: BFO:0000015
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

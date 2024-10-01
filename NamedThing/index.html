@@ -207,26 +207,51 @@
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/NamedThing">ak_schema:NamedThing</a></p>
 <div class="mermaid"> classDiagram
     class NamedThing
+    click NamedThing href "../NamedThing"
       AKObject &lt;|-- NamedThing
+        click AKObject href "../AKObject"
 
 
-      NamedThing &lt;|-- Model
-      NamedThing &lt;|-- ModelingFramework
-      NamedThing &lt;|-- ImmuneSystem
-      NamedThing &lt;|-- Cell
-      NamedThing &lt;|-- Tissue
-      NamedThing &lt;|-- Specimen
-      NamedThing &lt;|-- Assay
-      NamedThing &lt;|-- Dataset
-      NamedThing &lt;|-- Conclusion
-      NamedThing &lt;|-- Assessment
-      NamedThing &lt;|-- StudyArm
-      NamedThing &lt;|-- Participant
-      NamedThing &lt;|-- StudyEvent
-      NamedThing &lt;|-- LifeEvent
-      NamedThing &lt;|-- ImmuneExposure
       NamedThing &lt;|-- PlannedProcess
+        click PlannedProcess href "../PlannedProcess"
       NamedThing &lt;|-- PlanSpecification
+        click PlanSpecification href "../PlanSpecification"
+      NamedThing &lt;|-- StudyArm
+        click StudyArm href "../StudyArm"
+      NamedThing &lt;|-- Participant
+        click Participant href "../Participant"
+      NamedThing &lt;|-- StudyEvent
+        click StudyEvent href "../StudyEvent"
+      NamedThing &lt;|-- LifeEvent
+        click LifeEvent href "../LifeEvent"
+      NamedThing &lt;|-- ImmuneExposure
+        click ImmuneExposure href "../ImmuneExposure"
+      NamedThing &lt;|-- Specimen
+        click Specimen href "../Specimen"
+      NamedThing &lt;|-- Assay
+        click Assay href "../Assay"
+      NamedThing &lt;|-- Dataset
+        click Dataset href "../Dataset"
+      NamedThing &lt;|-- Conclusion
+        click Conclusion href "../Conclusion"
+      NamedThing &lt;|-- Assessment
+        click Assessment href "../Assessment"
+      NamedThing &lt;|-- Cell
+        click Cell href "../Cell"
+      NamedThing &lt;|-- Tissue
+        click Tissue href "../Tissue"
+      NamedThing &lt;|-- ImmuneSystem
+        click ImmuneSystem href "../ImmuneSystem"
+      NamedThing &lt;|-- Chain
+        click Chain href "../Chain"
+      NamedThing &lt;|-- TCellReceptor
+        click TCellReceptor href "../TCellReceptor"
+      NamedThing &lt;|-- BCellReceptor
+        click BCellReceptor href "../BCellReceptor"
+      NamedThing &lt;|-- Model
+        click Model href "../Model"
+      NamedThing &lt;|-- ModelingFramework
+        click ModelingFramework href "../ModelingFramework"
 
 
       NamedThing : akc_id
@@ -241,23 +266,26 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><strong>NamedThing</strong><ul>
-<li><a href="../Model/">Model</a></li>
-<li><a href="../ModelingFramework/">ModelingFramework</a></li>
-<li><a href="../ImmuneSystem/">ImmuneSystem</a></li>
-<li><a href="../Cell/">Cell</a></li>
-<li><a href="../Tissue/">Tissue</a></li>
-<li><a href="../Specimen/">Specimen</a></li>
-<li><a href="../Assay/">Assay</a></li>
-<li><a href="../Dataset/">Dataset</a></li>
-<li><a href="../Conclusion/">Conclusion</a></li>
-<li><a href="../Assessment/">Assessment</a></li>
+<li><a href="../PlannedProcess/">PlannedProcess</a></li>
+<li><a href="../PlanSpecification/">PlanSpecification</a></li>
 <li><a href="../StudyArm/">StudyArm</a></li>
 <li><a href="../Participant/">Participant</a></li>
 <li><a href="../StudyEvent/">StudyEvent</a></li>
 <li><a href="../LifeEvent/">LifeEvent</a></li>
 <li><a href="../ImmuneExposure/">ImmuneExposure</a></li>
-<li><a href="../PlannedProcess/">PlannedProcess</a></li>
-<li><a href="../PlanSpecification/">PlanSpecification</a></li>
+<li><a href="../Specimen/">Specimen</a></li>
+<li><a href="../Assay/">Assay</a></li>
+<li><a href="../Dataset/">Dataset</a></li>
+<li><a href="../Conclusion/">Conclusion</a></li>
+<li><a href="../Assessment/">Assessment</a></li>
+<li><a href="../Cell/">Cell</a></li>
+<li><a href="../Tissue/">Tissue</a></li>
+<li><a href="../ImmuneSystem/">ImmuneSystem</a></li>
+<li><a href="../Chain/">Chain</a></li>
+<li><a href="../TCellReceptor/">TCellReceptor</a></li>
+<li><a href="../BCellReceptor/">BCellReceptor</a></li>
+<li><a href="../Model/">Model</a></li>
+<li><a href="../ModelingFramework/">ModelingFramework</a></li>
 </ul>
 </li>
 </ul>
@@ -288,7 +316,7 @@
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
 </tr>
@@ -404,5 +432,7 @@ attributes:
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

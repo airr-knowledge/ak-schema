@@ -209,7 +209,9 @@
 <p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0000066">OBI:0000066</a></p>
 <div class="mermaid"> classDiagram
     class Investigation
+    click Investigation href "../Investigation"
       PlannedProcess &lt;|-- Investigation
+        click PlannedProcess href "../PlannedProcess"
 
       Investigation : akc_id
 
@@ -217,17 +219,32 @@
 
       Investigation : assays
 
-          Investigation --&gt; Assay : assays
+
+
+
+    Investigation --&gt; "*" Assay : assays
+    click Assay href "../Assay"
+
 
       Investigation : conclusions
 
-          Investigation --&gt; Conclusion : conclusions
+
+
+
+    Investigation --&gt; "*" Conclusion : conclusions
+    click Conclusion href "../Conclusion"
+
 
       Investigation : description
 
       Investigation : documents
 
-          Investigation --&gt; Reference : documents
+
+
+
+    Investigation --&gt; "*" Reference : documents
+    click Reference href "../Reference"
+
 
       Investigation : exclusion_criteria
 
@@ -237,17 +254,32 @@
 
       Investigation : participants
 
-          Investigation --&gt; Participant : participants
+
+
+
+    Investigation --&gt; "*" Participant : participants
+    click Participant href "../Participant"
+
 
       Investigation : release_date
 
       Investigation : simulations
 
-          Investigation --&gt; Simulation : simulations
+
+
+
+    Investigation --&gt; "*" Simulation : simulations
+    click Simulation href "../Simulation"
+
 
       Investigation : study_type
 
-          Investigation --&gt; StudyType : study_type
+
+
+
+    Investigation --&gt; "0..1" StudyType : study_type
+    click StudyType href "../StudyType"
+
 
       Investigation : update_date
 
@@ -315,31 +347,31 @@
 </tr>
 <tr>
 <td><a href="../participants/">participants</a></td>
-<td>0..* <br/> <a href="../Participant/">Participant</a></td>
+<td>* <br/> <a href="../Participant/">Participant</a></td>
 <td>The participants involved with the investigation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../assays/">assays</a></td>
-<td>0..* <br/> <a href="../Assay/">Assay</a></td>
+<td>* <br/> <a href="../Assay/">Assay</a></td>
 <td>The assays performed by the investigation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../simulations/">simulations</a></td>
-<td>0..* <br/> <a href="../Simulation/">Simulation</a></td>
+<td>* <br/> <a href="../Simulation/">Simulation</a></td>
 <td>The simulations performed by the investigation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../documents/">documents</a></td>
-<td>0..* <br/> <a href="../Reference/">Reference</a></td>
+<td>* <br/> <a href="../Reference/">Reference</a></td>
 <td>The documents produced by the investigation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../conclusions/">conclusions</a></td>
-<td>0..* <br/> <a href="../Conclusion/">Conclusion</a></td>
+<td>* <br/> <a href="../Conclusion/">Conclusion</a></td>
 <td>The conclusions from the investigation</td>
 <td>direct</td>
 </tr>
@@ -357,7 +389,7 @@
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
 </tr>
@@ -375,7 +407,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Conclusion/">Conclusion</a></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td><a href="../investigations/">investigations</a></td>
 <td>range</td>
 <td><a href="./">Investigation</a></td>
@@ -393,7 +425,7 @@
 <td><a href="./">Investigation</a></td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../Conclusion/">Conclusion</a></td>
 <td><a href="../investigations/">investigations</a></td>
 <td>range</td>
 <td><a href="./">Investigation</a></td>
@@ -527,60 +559,60 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     slot_uri: RO:0000057
-    multivalued: true
     alias: participants
     owner: Investigation
     domain_of:
-    - Investigation
     - AIRRKnowledgeCommons
+    - Investigation
     range: Participant
+    multivalued: true
   assays:
     name: assays
     description: The assays performed by the investigation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: assays
     owner: Investigation
     domain_of:
-    - Dataset
-    - Investigation
     - AIRRKnowledgeCommons
+    - Investigation
+    - Dataset
     range: Assay
+    multivalued: true
   simulations:
     name: simulations
     description: The simulations performed by the investigation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: simulations
     owner: Investigation
     domain_of:
     - Investigation
     range: Simulation
+    multivalued: true
   documents:
     name: documents
     description: The documents produced by the investigation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: documents
     owner: Investigation
     domain_of:
     - Investigation
     range: Reference
+    multivalued: true
   conclusions:
     name: conclusions
     description: The conclusions from the investigation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    multivalued: true
     alias: conclusions
     owner: Investigation
     domain_of:
-    - Investigation
     - AIRRKnowledgeCommons
+    - Investigation
     range: Conclusion
+    multivalued: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -645,5 +677,7 @@ class_uri: OBI:0000066
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>

@@ -209,7 +209,9 @@
 <p>URI: <a href="http://purl.obolibrary.org/obo/BFO_0000015">BFO:0000015</a></p>
 <div class="mermaid"> classDiagram
     class ImmuneExposure
+    click ImmuneExposure href "../ImmuneExposure"
       NamedThing &lt;|-- ImmuneExposure
+        click NamedThing href "../NamedThing"
 
       ImmuneExposure : akc_id
 
@@ -217,21 +219,41 @@
 
       ImmuneExposure : disease
 
-          ImmuneExposure --&gt; Disease : disease
+
+
+
+    ImmuneExposure --&gt; "0..1" Disease : disease
+    click Disease href "../Disease"
+
 
       ImmuneExposure : disease_severity
 
       ImmuneExposure : disease_stage
 
-          ImmuneExposure --&gt; DiseaseStage : disease_stage
+
+
+
+    ImmuneExposure --&gt; "0..1" DiseaseStage : disease_stage
+    click DiseaseStage href "../DiseaseStage"
+
 
       ImmuneExposure : exposure_material
 
-          ImmuneExposure --&gt; ExposureMaterial : exposure_material
+
+
+
+    ImmuneExposure --&gt; "0..1" ExposureMaterial : exposure_material
+    click ExposureMaterial href "../ExposureMaterial"
+
 
       ImmuneExposure : life_event
 
-          ImmuneExposure --&gt; LifeEvent : life_event
+
+
+
+    ImmuneExposure --&gt; "0..1" LifeEvent : life_event
+    click LifeEvent href "../LifeEvent"
+
 
       ImmuneExposure : name
 
@@ -302,7 +324,7 @@
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
 </tr>
@@ -384,9 +406,9 @@ attributes:
     alias: life_event
     owner: ImmuneExposure
     domain_of:
+    - ImmuneExposure
     - Specimen
     - Assessment
-    - ImmuneExposure
     range: LifeEvent
   exposure_material:
     name: exposure_material
@@ -493,5 +515,7 @@ class_uri: BFO:0000015
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
 <script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
-<script src="https://unpkg.com/mermaid@8.8.0/dist/mermaid.min.js"></script><script>mermaid.initialize({});</script></body>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>
