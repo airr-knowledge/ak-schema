@@ -95,7 +95,7 @@ web = ["pyyaml", "rdflib", "rdflib-jsonld", "rdflib-endpoint", "flask (<2.2.4)",
 name = "cachetools"
 version = "5.3.2"
 description = "Extensible memoizing collections and decorators"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -122,7 +122,7 @@ rdflib = ">=0.4.2"
 name = "chardet"
 version = "5.2.0"
 description = "Universal encoding detector for Python 3"
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.7"
 
@@ -197,14 +197,6 @@ wrapt = ">=1.10,<2"
 dev = ["tox", "pytest", "pytest-cov", "bump2version (<1)", "sphinx (<2)"]
 
 [[package]]
-name = "distlib"
-version = "0.3.8"
-description = "Distribution utilities"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "editorconfig"
 version = "0.12.4"
 description = "EditorConfig File Locator and Interpreter for Python"
@@ -230,19 +222,6 @@ python-versions = ">=3.7"
 
 [package.extras]
 test = ["pytest (>=6)"]
-
-[[package]]
-name = "filelock"
-version = "3.13.1"
-description = "A platform independent file lock."
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.extras]
-docs = ["furo (>=2023.9.10)", "sphinx-autodoc-typehints (>=1.24)", "sphinx (>=7.2.6)"]
-testing = ["covdefaults (>=2.3)", "coverage (>=7.3.2)", "diff-cover (>=8)", "pytest-cov (>=4.1)", "pytest-mock (>=3.12)", "pytest-timeout (>=2.2)", "pytest (>=7.4.3)"]
-typing = ["typing-extensions (>=4.8)"]
 
 [[package]]
 name = "fqdn"
@@ -623,11 +602,11 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "linkml"
-version = "1.7.3"
+version = "1.8.3"
 description = "Linked Open Data Modeling Language"
 category = "dev"
 optional = false
-python-versions = ">=3.8.1,<4.0.0"
+python-versions = "<4.0.0,>=3.8.1"
 
 [package.dependencies]
 antlr4-python3-runtime = ">=4.9.0,<4.10"
@@ -639,11 +618,11 @@ jinja2 = ">=3.1.0"
 jsonasobj2 = ">=1.0.3,<2.0.0"
 jsonschema = {version = ">=4.0.0", extras = ["format"]}
 linkml-dataops = "*"
-linkml-runtime = ">=1.7.0"
+linkml-runtime = ">=1.8.1,<2.0.0"
 openpyxl = "*"
 parse = "*"
 prefixcommons = ">=0.1.7"
-prefixmaps = ">=0.1.3"
+prefixmaps = ">=0.2.2"
 pydantic = ">=1.0.0,<3.0.0"
 pyjsg = ">=0.11.6"
 pyshex = ">=0.7.20"
@@ -654,6 +633,11 @@ rdflib = ">=6.0.0"
 requests = ">=2.22"
 sqlalchemy = ">=1.4.31"
 watchdog = ">=0.9.0"
+
+[package.extras]
+black = ["black (>=24.0.0)"]
+tests = ["black (>=24.0.0)", "pyshacl (>=0.25.0,<0.26.0)"]
+shacl = ["pyshacl (>=0.25.0,<0.26.0)"]
 
 [[package]]
 name = "linkml-dataops"
@@ -672,11 +656,11 @@ linkml-runtime = ">=1.1.6"
 
 [[package]]
 name = "linkml-runtime"
-version = "1.7.0"
+version = "1.8.2"
 description = "Runtime environment for LinkML, the Linked open data modeling language"
 category = "main"
 optional = false
-python-versions = ">=3.7.6,<4.0.0"
+python-versions = "<4.0,>=3.8"
 
 [package.dependencies]
 click = "*"
@@ -779,20 +763,21 @@ python-versions = ">=3.8"
 
 [[package]]
 name = "mkdocs-mermaid2-plugin"
-version = "0.6.0"
+version = "1.1.1"
 description = "A MkDocs plugin for including mermaid graphs in markdown sources"
 category = "dev"
 optional = false
-python-versions = ">=3.5"
+python-versions = ">=3.6"
 
 [package.dependencies]
 beautifulsoup4 = ">=4.6.3"
 jsbeautifier = "*"
 mkdocs = ">=1.0.4"
-mkdocs-material = "*"
 pymdown-extensions = ">=8.0"
-pyyaml = "*"
 requests = "*"
+
+[package.extras]
+test = ["mkdocs-material"]
 
 [[package]]
 name = "more-click"
@@ -878,7 +863,7 @@ python-versions = ">=3.8"
 name = "platformdirs"
 version = "4.2.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "main"
+category = "dev"
 optional = false
 python-versions = ">=3.8"
 
@@ -922,22 +907,15 @@ requests = ">=2.28.1,<3.0.0"
 
 [[package]]
 name = "prefixmaps"
-version = "0.2.1"
+version = "0.2.5"
 description = "A python library for retrieving semantic prefix maps"
 category = "main"
 optional = false
-python-versions = ">=3.9,<4.0"
+python-versions = "<4.0,>=3.8"
 
 [package.dependencies]
-click = ">=8.1.3"
 curies = ">=0.5.3"
-pydantic = ">=2.5,<3.0"
 pyyaml = ">=5.3.1"
-tox = ">=4.11.3,<5.0.0"
-
-[package.extras]
-docs = ["Sphinx[docs] (>=7.2.6,<8.0.0)", "myst-parser[docs] (>=2.0.0,<3.0.0)", "sphinx-autodoc-typehints[docs] (>=1.23.4,<2.0.0)", "sphinx-click[docs] (>=4.3.0,<5.0.0)", "sphinx-rtd-theme[docs] (>=1.0.0,<2.0.0)"]
-refresh = ["bioregistry[refresh] (>=0.10.65,<0.11.0)", "rdflib[refresh] (>=6.2.0,<7.0.0)", "requests[refresh] (>=2.28.1,<3.0.0)"]
 
 [[package]]
 name = "protobuf"
@@ -1042,22 +1020,6 @@ python-versions = ">=3.6.8"
 
 [package.extras]
 diagrams = ["railroad-diagrams", "jinja2"]
-
-[[package]]
-name = "pyproject-api"
-version = "1.6.1"
-description = "API to interact with the python pyproject.toml based projects"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.dependencies]
-packaging = ">=23.1"
-tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
-
-[package.extras]
-docs = ["furo (>=2023.8.19)", "sphinx-autodoc-typehints (>=1.24)", "sphinx (<7.2)"]
-testing = ["covdefaults (>=2.3)", "pytest-cov (>=4.1)", "pytest-mock (>=3.11.1)", "pytest (>=7.4)", "setuptools (>=68.1.2)", "wheel (>=0.41.2)"]
 
 [[package]]
 name = "pyshex"
@@ -1494,30 +1456,6 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
-name = "tox"
-version = "4.12.1"
-description = "tox is a generic virtualenv management and test command line tool"
-category = "main"
-optional = false
-python-versions = ">=3.8"
-
-[package.dependencies]
-cachetools = ">=5.3.2"
-chardet = ">=5.2"
-colorama = ">=0.4.6"
-filelock = ">=3.13.1"
-packaging = ">=23.2"
-platformdirs = ">=4.1"
-pluggy = ">=1.3"
-pyproject-api = ">=1.6.1"
-tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
-virtualenv = ">=20.25"
-
-[package.extras]
-docs = ["furo (>=2023.9.10)", "sphinx-argparse-cli (>=1.11.1)", "sphinx-autodoc-typehints (>=1.25.2)", "sphinx-copybutton (>=0.5.2)", "sphinx-inline-tabs (>=2023.4.21)", "sphinx (>=7.2.6)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=23.11)"]
-testing = ["build[virtualenv] (>=1.0.3)", "covdefaults (>=2.3)", "detect-test-pollution (>=1.2)", "devpi-process (>=1)", "diff-cover (>=8.0.2)", "distlib (>=0.3.8)", "flaky (>=3.7)", "hatch-vcs (>=0.4)", "hatchling (>=1.21)", "psutil (>=5.9.7)", "pytest-cov (>=4.1)", "pytest-mock (>=3.12)", "pytest-xdist (>=3.5)", "pytest (>=7.4.4)", "re-assert (>=1.1)", "time-machine (>=2.13)", "wheel (>=0.42)"]
-
-[[package]]
 name = "tqdm"
 version = "4.66.2"
 description = "Fast, Extensible Progress Meter"
@@ -1584,23 +1522,6 @@ socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
-name = "virtualenv"
-version = "20.25.0"
-description = "Virtual Python Environment builder"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-distlib = ">=0.3.7,<1"
-filelock = ">=3.12.2,<4"
-platformdirs = ">=3.9.1,<5"
-
-[package.extras]
-docs = ["furo (>=2023.7.26)", "proselint (>=0.13)", "sphinx-argparse (>=0.4)", "sphinx (>=7.1.2)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=23.6)"]
-test = ["covdefaults (>=2.3)", "coverage-enable-subprocess (>=1)", "coverage (>=7.2.7)", "flaky (>=3.7)", "packaging (>=23.1)", "pytest-env (>=0.8.2)", "pytest-freezer (>=0.4.8)", "pytest-mock (>=3.11.1)", "pytest-randomly (>=3.12)", "pytest-timeout (>=2.1)", "pytest (>=7.4)", "setuptools (>=68)", "time-machine (>=2.10)"]
-
-[[package]]
 name = "watchdog"
 version = "4.0.0"
 description = "Filesystem events monitoring"
@@ -1649,7 +1570,7 @@ docs = []
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "45ab0641686b3572e070cc39ae4a66ac504af0e079ac7e36c12fdaee200a1f11"
+content-hash = "8d2a641fb8d4cb45fe6bbe1aab901c5da2bb7c8221b360188b57f015b9b64d59"
 
 [metadata.files]
 annotated-types = []
@@ -1668,11 +1589,9 @@ colorama = []
 curies = []
 daff = []
 deprecated = []
-distlib = []
 editorconfig = []
 et-xmlfile = []
 exceptiongroup = []
-filelock = []
 fqdn = []
 ghp-import = []
 google = []
@@ -1734,7 +1653,6 @@ pygments = []
 pyjsg = []
 pymdown-extensions = []
 pyparsing = []
-pyproject-api = []
 pyshex = []
 pyshexc = []
 pystow = []
@@ -1768,14 +1686,12 @@ strenum = []
 tabulate = []
 termcolor = []
 tomli = []
-tox = []
 tqdm = []
 types-python-dateutil = []
 typing-extensions = []
 uri-template = []
 uritemplate = []
 urllib3 = []
-virtualenv = []
 watchdog = []
 webcolors = []
 wrapt = []
