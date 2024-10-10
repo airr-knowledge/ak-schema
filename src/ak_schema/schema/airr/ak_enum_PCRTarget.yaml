@@ -1,0 +1,12 @@
+PcrTargetLocus:
+  name: PcrTargetLocus
+  permissible_values:
+    IGH:
+    IGI:
+    IGK:
+    IGL:
+    TRA:
+    TRB:
+    TRD:
+    TRG:
+    null:

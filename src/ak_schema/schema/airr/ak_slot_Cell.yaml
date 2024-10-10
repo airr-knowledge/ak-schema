@@ -1,0 +1,82 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Cell:
+    is_a: NamedThing
+    slots:
+      - cell_id
+      - rearrangements
+      - receptors
+      - repertoire_id
+      - data_processing_id
+      - expression_study_method
+      - expression_raw_doi
+      - expression_index
+      - virtual_pairing
+
+slots:
+  cell_id:
+    name: cell_id
+    description: Identifier defining the cell of origin for the query sequence.
+    range: string
+    required: True
+    nullable: False
+    identifier: True
+
+  rearrangements:
+    name: rearrangements
+    description: Array of sequence identifiers defined for the Rearrangement object
+    multivalued: true
+    required: True
+    nullable: True
+
+  receptors:
+    name: receptors
+    description: Array of receptor identifiers defined for the Receptor object
+    multivalued: true
+    required: False
+    nullable: True
+
+  repertoire_id:
+    name: repertoire_id
+    description: Identifier to the associated repertoire in study metadata.
+    range: string
+    required: True
+    nullable: True
+
+  data_processing_id:
+    name: data_processing_id
+    description: Identifier of the data processing object in the repertoire metadata for this clone.
+    range: string
+    required: False
+    nullable: True
+
+  expression_study_method:
+    name: expression_study_method
+    description: Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary.
+    range: string
+    required: False
+    nullable: True
+
+  expression_raw_doi:
+    name: expression_raw_doi
+    description: DOI of raw data set containing the current event
+    range: string
+    required: False
+    nullable: True
+
+  expression_index:
+    name: expression_index
+    description: Index addressing the current event within the raw data set.
+    range: string
+    required: False
+    nullable: True
+
+  virtual_pairing:
+    name: virtual_pairing
+    description: boolean to indicate if pairing was inferred.
+    range: boolean
+    required: True
+    nullable: True
+

@@ -1,0 +1,68 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Repertoire:
+    is_a: NamedThing
+    slots:
+      - repertoire_id
+      - repertoire_name
+      - repertoire_description
+      - study
+      - subject
+      - sample
+      - data_processing
+
+slots:
+  repertoire_id:
+    name: repertoire_id
+    description: Identifier for the repertoire object. This identifier should be globally unique so that repertoires from multiple studies can be combined together without conflict. The repertoire_id is used to link other AIRR data to a Repertoire. Specifically, the Rearrangements Schema includes repertoire_id for referencing the specific Repertoire for that Rearrangement.
+    range: string
+    required: False
+    nullable: True
+    identifier: True
+
+  repertoire_name:
+    name: repertoire_name
+    description: Short generic display name for the repertoire
+    range: string
+    required: False
+    nullable: True
+
+  repertoire_description:
+    name: repertoire_description
+    description: Generic repertoire description
+    range: string
+    required: False
+    nullable: True
+
+  study:
+    name: study
+    description: Study object
+    range: Study
+    required: True
+    nullable: False
+
+  subject:
+    name: subject
+    description: Subject object
+    range: Subject
+    required: True
+    nullable: False
+
+  sample:
+    name: sample
+    description: List of Sample Processing objects
+    range: SampleProcessing
+    multivalued: true
+    required: True
+    nullable: False
+
+  data_processing:
+    name: data_processing
+    description: List of Data Processing objects
+    range: DataProcessing
+    multivalued: true
+    required: True
+    nullable: False
+

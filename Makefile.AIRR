@@ -1,0 +1,105 @@
+AIRR_SCHEMA_DIR=src/ak_schema/schema/airr
+SCRIPT_DIR=src/scripts/airr2akc
+
+airr: repertoire rearrangement clone cell receptor germline
+
+repertoire: Study Subject Diagnosis Genotype MHCGenotype Sample PCRTarget CellProcessing NucleicAcidProcessing SequencingRun SequencingData DataProcessing Repertoire
+
+rearrangement: Rearrangement
+
+clone: Clone
+
+cell: Cell Expression Reactivity
+
+receptor: Receptor
+
+germline: GermlineSet AlleleDescription SequenceDelineationV RearrangedSequence UnrearrangedSequence
+
+Study:
+	python $(SCRIPT_DIR)/airr2akc.py Study > $(AIRR_SCHEMA_DIR)/ak_slot_Study.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Study > $(AIRR_SCHEMA_DIR)/ak_enum_Study.yaml
+Subject:
+	python $(SCRIPT_DIR)/airr2akc.py Subject > $(AIRR_SCHEMA_DIR)/ak_slot_Subject.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Subject > $(AIRR_SCHEMA_DIR)/ak_enum_Subject.yaml
+Diagnosis:
+	python $(SCRIPT_DIR)/airr2akc.py Diagnosis > $(AIRR_SCHEMA_DIR)/ak_slot_Diagnosis.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Diagnosis > $(AIRR_SCHEMA_DIR)/ak_enum_Diagnosis.yaml
+Genotype:
+	python $(SCRIPT_DIR)/airr2akc.py Genotype > $(AIRR_SCHEMA_DIR)/ak_slot_Genotype.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Genotype > $(AIRR_SCHEMA_DIR)/ak_enum_Genotype.yaml
+MHCGenotype:
+	python $(SCRIPT_DIR)/airr2akc.py MHCGenotype > $(AIRR_SCHEMA_DIR)/ak_slot_MHCGenotype.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e MHCGenotype > $(AIRR_SCHEMA_DIR)/ak_enum_MHCGenotype.yaml
+Sample:
+	python $(SCRIPT_DIR)/airr2akc.py Sample > $(AIRR_SCHEMA_DIR)/ak_slot_Sample.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Sample > $(AIRR_SCHEMA_DIR)/ak_enum_Sample.yaml
+PCRTarget:
+	python $(SCRIPT_DIR)/airr2akc.py PCRTarget > $(AIRR_SCHEMA_DIR)/ak_slot_PCRTarget.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e PCRTarget > $(AIRR_SCHEMA_DIR)/ak_enum_PCRTarget.yaml
+CellProcessing:
+	python $(SCRIPT_DIR)/airr2akc.py CellProcessing > $(AIRR_SCHEMA_DIR)/ak_slot_CellProcessing.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e CellProcessing > $(AIRR_SCHEMA_DIR)/ak_enum_CellProcessing.yaml
+NucleicAcidProcessing:
+	python $(SCRIPT_DIR)/airr2akc.py NucleicAcidProcessing > $(AIRR_SCHEMA_DIR)/ak_slot_NucleicAcidProcessing.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e NucleicAcidProcessing > $(AIRR_SCHEMA_DIR)/ak_enum_NucleicAcidProcessing.yaml
+SequencingRun:
+	python $(SCRIPT_DIR)/airr2akc.py SequencingRun > $(AIRR_SCHEMA_DIR)/ak_slot_SequencingRun.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e SequencingRun > $(AIRR_SCHEMA_DIR)/ak_enum_SequencingRun.yaml
+SequencingData:
+	python $(SCRIPT_DIR)/airr2akc.py SequencingData > $(AIRR_SCHEMA_DIR)/ak_slot_SequencingData.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e SequencingData > $(AIRR_SCHEMA_DIR)/ak_enum_SequencingData.yaml
+DataProcessing:
+	python $(SCRIPT_DIR)/airr2akc.py DataProcessing > $(AIRR_SCHEMA_DIR)/ak_slot_DataProcessing.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e DataProcessing > $(AIRR_SCHEMA_DIR)/ak_enum_DataProcessing.yaml
+Repertoire:
+	python $(SCRIPT_DIR)/airr2akc.py Repertoire > $(AIRR_SCHEMA_DIR)/ak_slot_Repertoire.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Repertoire > $(AIRR_SCHEMA_DIR)/ak_enum_Repertoire.yaml
+#
+# Rearrangement rules
+# 
+Rearrangement:
+	python $(SCRIPT_DIR)/airr2akc.py Rearrangement > $(AIRR_SCHEMA_DIR)/ak_slot_Rearrangement.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Rearrangement > $(AIRR_SCHEMA_DIR)/ak_enum_Rearrangement.yaml
+#
+# Clone rules
+# 
+Clone:
+	python $(SCRIPT_DIR)/airr2akc.py Clone > $(AIRR_SCHEMA_DIR)/ak_slot_Clone.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Clone > $(AIRR_SCHEMA_DIR)/ak_enum_Clone.yaml
+#
+# Cell rules
+# 
+Cell:
+	python $(SCRIPT_DIR)/airr2akc.py Cell > $(AIRR_SCHEMA_DIR)/ak_slot_Cell.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Cell > $(AIRR_SCHEMA_DIR)/ak_enum_Cell.yaml
+Expression:
+	python $(SCRIPT_DIR)/airr2akc.py CellExpression > $(AIRR_SCHEMA_DIR)/ak_slot_CellExpression.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e CellExpression > $(AIRR_SCHEMA_DIR)/ak_enum_CellExpression.yaml
+Reactivity:
+	python $(SCRIPT_DIR)/airr2akc.py ReceptorReactivity > $(AIRR_SCHEMA_DIR)/ak_slot_ReceptorReactivity.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e ReceptorReactivity > $(AIRR_SCHEMA_DIR)/ak_enum_ReceptorReactivity.yaml
+#
+# Rearrangement rules
+# 
+Receptor:
+	python $(SCRIPT_DIR)/airr2akc.py Receptor > $(AIRR_SCHEMA_DIR)/ak_slot_Receptor.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e Receptor > $(AIRR_SCHEMA_DIR)/ak_enum_Receptor.yaml
+#
+# Germline rules
+# 
+GermlineSet:
+	python $(SCRIPT_DIR)/airr2akc.py GermlineSet > $(AIRR_SCHEMA_DIR)/ak_slot_GermlineSet.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e GermlineSet > $(AIRR_SCHEMA_DIR)/ak_enum_GermlineSet.yaml
+AlleleDescription:
+	python $(SCRIPT_DIR)/airr2akc.py AlleleDescription > $(AIRR_SCHEMA_DIR)/ak_slot_AlleleDescription.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e AlleleDescription > $(AIRR_SCHEMA_DIR)/ak_enum_AlleleDescription.yaml
+RearrangedSequence:
+	python $(SCRIPT_DIR)/airr2akc.py RearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_slot_RearrangedSequence.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e RearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_enum_RearrangedSequence.yaml
+UnrearrangedSequence:
+	python $(SCRIPT_DIR)/airr2akc.py UnrearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_slot_UnrearrangedSequence.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e UnrearrangedSequence > $(AIRR_SCHEMA_DIR)/ak_enum_UnrearrangedSequence.yaml
+SequenceDelineationV:
+	python $(SCRIPT_DIR)/airr2akc.py SequenceDelineationV > $(AIRR_SCHEMA_DIR)/ak_slot_SequenceDelineationV.yaml
+	python $(SCRIPT_DIR)/airr2akc.py -e SequenceDelineationV > $(AIRR_SCHEMA_DIR)/ak_enum_SequenceDelineationV.yaml
+

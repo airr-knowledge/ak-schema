@@ -1,0 +1,20 @@
+FileType:
+  name: FileType
+  permissible_values:
+    fasta:
+    fastq:
+    null:
+ReadDirection:
+  name: ReadDirection
+  permissible_values:
+    forward:
+    reverse:
+    mixed:
+    null:
+PairedReadDirection:
+  name: PairedReadDirection
+  permissible_values:
+    forward:
+    reverse:
+    mixed:
+    null:

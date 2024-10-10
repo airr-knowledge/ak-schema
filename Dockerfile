@@ -22,6 +22,9 @@ RUN pip install schema-automator
 RUN pip install appengine-python-standard
 RUN pip install cruft
 
+# AIRR requirements
+RUN pip install airr
+
 RUN mkdir /ak-schema
 COPY . /ak-schema
 

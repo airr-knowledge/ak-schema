@@ -1,0 +1,925 @@
+{
+  "PRJNA300878": {
+    "Investigation": {
+      "PRJNA300878": {
+        "akc_id": "",
+        "name": "Individual heritable differences result in unique cell lymphocyte receptor repertoires of naive and antigen-experienced cells",
+        "description": "The adaptive immune system's capability to protect the body requires a highly diverse lymphocyte antigen receptor repertoire. However, the influence of individual genetic and epigenetic differences on these repertoires is not typically measured. By leveraging the unique characteristics of B, CD4+ T, and CD8+ T lymphocyte subsets isolated from monozygotic twins, we have quantified the impact of heritable factors on both the V(D)J recombination process and thymic selection in the case of T cell receptors, and show that the repertoires of both naive and antigen experienced cells are subject to biases resulting from differences in recombination. We show that biases in V(D)J usage, as well as biased N/P additions, contribute to significant variation in the CDR3 region. Moreover, we show that the relative usage of V and J gene segments is chromosomally biased, with approximately 1.5 times as many rearrangements originating from a single chromosome. These data refine our understanding of the heritable mechanisms affecting the repertoire, and show that biases are evident on a chromosome-wide level.",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "archival_id": "PRJNA300878",
+        "inclusion_criteria": " ",
+        "release_date": "2019-09-03T17:01:10.226-05:00",
+        "update_date": "2022-12-16T20:42:08.879Z",
+        "adc_repertoire_id": "3566285896953696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007"
+      }
+    },
+    "Reference": {
+      "PRJNA300878": {
+        "source_uri": "",
+        "sources": "PMID:27005435",
+        "adc_repertoire_id": "3566285896953696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878"
+      }
+    },
+    "Participant": {
+      "TW01A": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "female",
+        "age": 27,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "2649009731546976746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01A"
+      },
+      "TW01B": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "female",
+        "age": 27,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "2750242110713696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01B"
+      },
+      "TW02A": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "female",
+        "age": 25,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "2839362682105696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02A"
+      },
+      "TW02B": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "female",
+        "age": 25,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "2939134772391776746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02B"
+      },
+      "TW03A": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "male",
+        "age": 24,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "3040581899923296746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03A"
+      },
+      "TW03B": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "male",
+        "age": 24,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "3129659521642336746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03B"
+      },
+      "TW04A": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "male",
+        "age": 22,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "3231879743287136746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04A"
+      },
+      "TW04B": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "male",
+        "age": 22,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "3347242564857696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04B"
+      },
+      "TW05A": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "male",
+        "age": 27,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "3463550279233376746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05A"
+      },
+      "TW05B": {
+        "akc_id": "",
+        "species": {
+          "id": "NCBITAXON:9606",
+          "label": "Homo sapiens"
+        },
+        "biological_sex": "male",
+        "age": 27,
+        "age_unit": {
+          "id": "UO:0000036",
+          "label": "year"
+        },
+        "adc_repertoire_id": "3566285896953696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05B"
+      }
+    },
+    "Specimen": {
+      "TW01A_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2564613624180576746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01A",
+        "adc_sample_id": "TW01A_B_naive"
+      },
+      "TW01A_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2586732705754976746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01A",
+        "adc_sample_id": "TW01A_B_memory"
+      },
+      "TW01A_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2603354229190496746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01A",
+        "adc_sample_id": "TW01A_T_naive_CD4"
+      },
+      "TW01A_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2618085967015776746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01A",
+        "adc_sample_id": "TW01A_T_naive_CD8"
+      },
+      "TW01A_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2633633748627296746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01A",
+        "adc_sample_id": "TW01A_T_memory_CD4"
+      },
+      "TW01A_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2649009731546976746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01A",
+        "adc_sample_id": "TW01A_T_memory_CD8"
+      },
+      "TW01B_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2663612620353376746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01B",
+        "adc_sample_id": "TW01B_B_naive"
+      },
+      "TW01B_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2679503999348576746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01B",
+        "adc_sample_id": "TW01B_B_memory"
+      },
+      "TW01B_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2700892936482656746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01B",
+        "adc_sample_id": "TW01B_T_naive_CD4"
+      },
+      "TW01B_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2721379930484576746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01B",
+        "adc_sample_id": "TW01B_T_naive_CD8"
+      },
+      "TW01B_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2735510372888416746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01B",
+        "adc_sample_id": "TW01B_T_memory_CD4"
+      },
+      "TW01B_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2750242110713696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW01B",
+        "adc_sample_id": "TW01B_T_memory_CD8"
+      },
+      "TW02A_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2767207231532896746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02A",
+        "adc_sample_id": "TW02A_B_naive"
+      },
+      "TW02A_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2782540264779616746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02A",
+        "adc_sample_id": "TW02A_B_memory"
+      },
+      "TW02A_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2797057254240096746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02A",
+        "adc_sample_id": "TW02A_T_naive_CD4"
+      },
+      "TW02A_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2812347337813856746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02A",
+        "adc_sample_id": "TW02A_T_naive_CD8"
+      },
+      "TW02A_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2825404038393696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02A",
+        "adc_sample_id": "TW02A_T_memory_CD4"
+      },
+      "TW02A_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2839362682105696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02A",
+        "adc_sample_id": "TW02A_T_memory_CD8"
+      },
+      "TW02B_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2857873991151456746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02B",
+        "adc_sample_id": "TW02B_B_naive"
+      },
+      "TW02B_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2875139759681376746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02B",
+        "adc_sample_id": "TW02B_B_memory"
+      },
+      "TW02B_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2888625956990816746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02B",
+        "adc_sample_id": "TW02B_T_naive_CD4"
+      },
+      "TW02B_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2906922517671776746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02B",
+        "adc_sample_id": "TW02B_T_naive_CD8"
+      },
+      "TW02B_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2924317135220576746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02B",
+        "adc_sample_id": "TW02B_T_memory_CD4"
+      },
+      "TW02B_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2939134772391776746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW02B",
+        "adc_sample_id": "TW02B_T_memory_CD8"
+      },
+      "TW03A_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2955498597789536746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03A",
+        "adc_sample_id": "TW03A_B_naive"
+      },
+      "TW03A_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2971905372860256746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03A",
+        "adc_sample_id": "TW03A_B_memory"
+      },
+      "TW03A_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "2987539053817696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03A",
+        "adc_sample_id": "TW03A_T_naive_CD4"
+      },
+      "TW03A_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3005449067442016746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03A",
+        "adc_sample_id": "TW03A_T_naive_CD8"
+      },
+      "TW03A_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3025420665368416746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03A",
+        "adc_sample_id": "TW03A_T_memory_CD4"
+      },
+      "TW03A_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3040581899923296746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03A",
+        "adc_sample_id": "TW03A_T_memory_CD8"
+      },
+      "TW03B_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3055614285459296746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03B",
+        "adc_sample_id": "TW03B_B_naive"
+      },
+      "TW03B_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3070131274919776746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03B",
+        "adc_sample_id": "TW03B_B_memory"
+      },
+      "TW03B_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3085335459147616746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03B",
+        "adc_sample_id": "TW03B_T_naive_CD4"
+      },
+      "TW03B_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3100410794356576746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03B",
+        "adc_sample_id": "TW03B_T_naive_CD8"
+      },
+      "TW03B_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3115228431527776746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03B",
+        "adc_sample_id": "TW03B_T_memory_CD4"
+      },
+      "TW03B_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3129659521642336746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW03B",
+        "adc_sample_id": "TW03B_T_memory_CD8"
+      },
+      "TW04A_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3144949605216096746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04A",
+        "adc_sample_id": "TW04A_B_naive"
+      },
+      "TW04A_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3159294795984736746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04A",
+        "adc_sample_id": "TW04A_B_memory"
+      },
+      "TW04A_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3173124590677856746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04A",
+        "adc_sample_id": "TW04A_T_naive_CD4"
+      },
+      "TW04A_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3187727479484256746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04A",
+        "adc_sample_id": "TW04A_T_naive_CD8"
+      },
+      "TW04A_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3207913825775456746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04A",
+        "adc_sample_id": "TW04A_T_memory_CD4"
+      },
+      "TW04A_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3231879743287136746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04A",
+        "adc_sample_id": "TW04A_T_memory_CD8"
+      },
+      "TW04B_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3252882133364576746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04B",
+        "adc_sample_id": "TW04B_B_naive"
+      },
+      "TW04B_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3272424234561376746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04B",
+        "adc_sample_id": "TW04B_B_memory"
+      },
+      "TW04B_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3293727272349536746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04B",
+        "adc_sample_id": "TW04B_T_naive_CD4"
+      },
+      "TW04B_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3309790450036576746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04B",
+        "adc_sample_id": "TW04B_T_naive_CD8"
+      },
+      "TW04B_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3325853627723616746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04B",
+        "adc_sample_id": "TW04B_T_memory_CD4"
+      },
+      "TW04B_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3347242564857696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW04B",
+        "adc_sample_id": "TW04B_T_memory_CD8"
+      },
+      "TW05A_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3366741716381536746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05A",
+        "adc_sample_id": "TW05A_B_naive"
+      },
+      "TW05A_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3381860001263456746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05A",
+        "adc_sample_id": "TW05A_B_memory"
+      },
+      "TW05A_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3400500159328096746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05A",
+        "adc_sample_id": "TW05A_T_naive_CD4"
+      },
+      "TW05A_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3421287801040736746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05A",
+        "adc_sample_id": "TW05A_T_naive_CD8"
+      },
+      "TW05A_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3442547889155936746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05A",
+        "adc_sample_id": "TW05A_T_memory_CD4"
+      },
+      "TW05A_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3463550279233376746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05A",
+        "adc_sample_id": "TW05A_T_memory_CD8"
+      },
+      "TW05B_B_naive": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3480429500706656746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05B",
+        "adc_sample_id": "TW05B_B_naive"
+      },
+      "TW05B_B_memory": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3495719584280416746-242ac113-0001-012",
+        "adc_data_processing_id": "6414d653-edd2-4d26-be1d-98a82f5e9c98-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05B",
+        "adc_sample_id": "TW05B_B_memory"
+      },
+      "TW05B_T_naive_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3515991829917536746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05B",
+        "adc_sample_id": "TW05B_T_naive_CD4"
+      },
+      "TW05B_T_naive_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3530895366434656746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05B",
+        "adc_sample_id": "TW05B_T_naive_CD8"
+      },
+      "TW05B_T_memory_CD4": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3549191927115616746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05B",
+        "adc_sample_id": "TW05B_T_memory_CD4"
+      },
+      "TW05B_T_memory_CD8": {
+        "akc_id": "",
+        "tissue": {
+          "id": "UBERON:0013756",
+          "label": "venous blood"
+        },
+        "adc_repertoire_id": "3566285896953696746-242ac113-0001-012",
+        "adc_data_processing_id": "d097e851-c2ac-4bc9-89ca-93845f3cfbc0-007",
+        "adc_study_id": "PRJNA300878",
+        "adc_subject_id": "TW05B",
+        "adc_sample_id": "TW05B_T_memory_CD8"
+      }
+    }
+  },
+  "@type": "dict"
+}
