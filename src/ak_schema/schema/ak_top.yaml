@@ -35,6 +35,9 @@ prefixes:
   ONTIE: https://ontology.iedb.org/ontology/ONTIE_
   example: https://example.org/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+
+  AKC: https://airr-knowledge.org/akc/api/v1/id/
+
 default_prefix: ak_schema
 default_range: string
 
