@@ -1,0 +1,33 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  PCRTarget:
+    is_a: NamedThing
+    slots:
+      - pcr_target_locus
+      - forward_pcr_primer_target_location
+      - reverse_pcr_primer_target_location
+
+slots:
+  pcr_target_locus:
+    name: pcr_target_locus
+    description: Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
+    range: PcrTargetLocus
+    required: True
+    nullable: True
+
+  forward_pcr_primer_target_location:
+    name: forward_pcr_primer_target_location
+    description: Position of the most distal nucleotide templated by the forward primer or primer mix
+    range: string
+    required: True
+    nullable: True
+
+  reverse_pcr_primer_target_location:
+    name: reverse_pcr_primer_target_location
+    description: Position of the most proximal nucleotide templated by the reverse primer or primer mix
+    range: string
+    required: True
+    nullable: True
+

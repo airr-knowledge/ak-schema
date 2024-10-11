@@ -1,0 +1,24 @@
+Antigen:
+  name: Antigen
+  permissible_values:
+     Circumsporozoite protein:
+      text:  Circumsporozoite protein
+      meaning: UNIPROT:P19597
+AntigenSourceSpecies:
+  name: AntigenSourceSpecies
+  permissible_values:
+    root:
+      text: root
+      meaning: NCBITAXON:1
+MhcGene1:
+  name: MhcGene1
+  permissible_values:
+    MHC gene:
+      text: MHC gene
+      meaning: MRO:0000004
+MhcGene2:
+  name: MhcGene2
+  permissible_values:
+    MHC gene:
+      text: MHC gene
+      meaning: MRO:0000004

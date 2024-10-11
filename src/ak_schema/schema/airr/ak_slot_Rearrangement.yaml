@@ -1,0 +1,1255 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+  Rearrangement:
+    is_a: NamedThing
+    slots:
+      - sequence_id
+      - sequence
+      - quality
+      - sequence_aa
+      - rev_comp
+      - productive
+      - vj_in_frame
+      - stop_codon
+      - complete_vdj
+      - locus
+      - v_call
+      - d_call
+      - d2_call
+      - j_call
+      - c_call
+      - sequence_alignment
+      - quality_alignment
+      - sequence_alignment_aa
+      - germline_alignment
+      - germline_alignment_aa
+      - junction
+      - junction_aa
+      - np1
+      - np1_aa
+      - np2
+      - np2_aa
+      - np3
+      - np3_aa
+      - cdr1
+      - cdr1_aa
+      - cdr2
+      - cdr2_aa
+      - cdr3
+      - cdr3_aa
+      - fwr1
+      - fwr1_aa
+      - fwr2
+      - fwr2_aa
+      - fwr3
+      - fwr3_aa
+      - fwr4
+      - fwr4_aa
+      - v_score
+      - v_identity
+      - v_support
+      - v_cigar
+      - d_score
+      - d_identity
+      - d_support
+      - d_cigar
+      - d2_score
+      - d2_identity
+      - d2_support
+      - d2_cigar
+      - j_score
+      - j_identity
+      - j_support
+      - j_cigar
+      - c_score
+      - c_identity
+      - c_support
+      - c_cigar
+      - v_sequence_start
+      - v_sequence_end
+      - v_germline_start
+      - v_germline_end
+      - v_alignment_start
+      - v_alignment_end
+      - d_sequence_start
+      - d_sequence_end
+      - d_germline_start
+      - d_germline_end
+      - d_alignment_start
+      - d_alignment_end
+      - d2_sequence_start
+      - d2_sequence_end
+      - d2_germline_start
+      - d2_germline_end
+      - d2_alignment_start
+      - d2_alignment_end
+      - j_sequence_start
+      - j_sequence_end
+      - j_germline_start
+      - j_germline_end
+      - j_alignment_start
+      - j_alignment_end
+      - c_sequence_start
+      - c_sequence_end
+      - c_germline_start
+      - c_germline_end
+      - c_alignment_start
+      - c_alignment_end
+      - cdr1_start
+      - cdr1_end
+      - cdr2_start
+      - cdr2_end
+      - cdr3_start
+      - cdr3_end
+      - fwr1_start
+      - fwr1_end
+      - fwr2_start
+      - fwr2_end
+      - fwr3_start
+      - fwr3_end
+      - fwr4_start
+      - fwr4_end
+      - v_sequence_alignment
+      - v_sequence_alignment_aa
+      - d_sequence_alignment
+      - d_sequence_alignment_aa
+      - d2_sequence_alignment
+      - d2_sequence_alignment_aa
+      - j_sequence_alignment
+      - j_sequence_alignment_aa
+      - c_sequence_alignment
+      - c_sequence_alignment_aa
+      - v_germline_alignment
+      - v_germline_alignment_aa
+      - d_germline_alignment
+      - d_germline_alignment_aa
+      - d2_germline_alignment
+      - d2_germline_alignment_aa
+      - j_germline_alignment
+      - j_germline_alignment_aa
+      - c_germline_alignment
+      - c_germline_alignment_aa
+      - junction_length
+      - junction_aa_length
+      - np1_length
+      - np2_length
+      - np3_length
+      - n1_length
+      - n2_length
+      - n3_length
+      - p3v_length
+      - p5d_length
+      - p3d_length
+      - p5d2_length
+      - p3d2_length
+      - p5j_length
+      - v_frameshift
+      - j_frameshift
+      - d_frame
+      - d2_frame
+      - consensus_count
+      - duplicate_count
+      - umi_count
+      - cell_id
+      - clone_id
+      - repertoire_id
+      - sample_processing_id
+      - data_processing_id
+      - rearrangement_id
+      - rearrangement_set_id
+      - germline_database
+
+slots:
+  sequence_id:
+    name: sequence_id
+    description: Unique query sequence identifier for the Rearrangement. Most often this will be the input sequence header or a substring thereof, but may also be a custom identifier defined by the tool in cases where query sequences have been combined in some fashion prior to alignment. When downloaded from an AIRR Data Commons repository, this will usually be a universally unique record locator for linking with other objects in the AIRR Data Model.
+    range: string
+    required: True
+    nullable: True
+    identifier: True
+
+  sequence:
+    name: sequence
+    description: The query nucleotide sequence. Usually, this is the unmodified input sequence, which may be reverse complemented if necessary. In some cases, this field may contain consensus sequences or other types of collapsed input sequences if these steps are performed prior to alignment.
+    range: string
+    required: True
+    nullable: True
+
+  quality:
+    name: quality
+    description: The Sanger/Phred quality scores for assessment of sequence quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by Illumina from v1.8.)
+    range: string
+    required: False
+    nullable: True
+
+  sequence_aa:
+    name: sequence_aa
+    description: Amino acid translation of the query nucleotide sequence.
+    range: string
+    required: False
+    nullable: True
+
+  rev_comp:
+    name: rev_comp
+    description: True if the alignment is on the opposite strand (reverse complemented) with respect to the query sequence. If True then all output data, such as alignment coordinates and sequences, are based on the reverse complement of 'sequence'.
+    range: boolean
+    required: True
+    nullable: True
+
+  productive:
+    name: productive
+    description: True if the V(D)J sequence is predicted to be productive.
+    range: boolean
+    required: True
+    nullable: True
+
+  vj_in_frame:
+    name: vj_in_frame
+    description: True if the V and J gene alignments are in-frame.
+    range: boolean
+    required: False
+    nullable: True
+
+  stop_codon:
+    name: stop_codon
+    description: True if the aligned sequence contains a stop codon.
+    range: boolean
+    required: False
+    nullable: True
+
+  complete_vdj:
+    name: complete_vdj
+    description: True if the sequence alignment spans the entire V(D)J region. Meaning, sequence_alignment includes both the first V gene codon that encodes the mature polypeptide chain (i.e., after the leader sequence) and the last complete codon of the J gene (i.e., before the J-C splice site). This does not require an absence of deletions within the internal FWR and CDR regions of the alignment.
+    range: boolean
+    required: False
+    nullable: True
+
+  locus:
+    name: locus
+    description: Gene locus (chain type). Note that this field uses a controlled vocabulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
+    range: Locus
+    required: False
+    nullable: True
+
+  v_call:
+    name: v_call
+    description: V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).
+    range: string
+    required: True
+    nullable: True
+
+  d_call:
+    name: d_call
+    description: First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
+    range: string
+    required: True
+    nullable: True
+
+  d2_call:
+    name: d2_call
+    description: Second D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
+    range: string
+    required: False
+    nullable: True
+
+  j_call:
+    name: j_call
+    description: J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).
+    range: string
+    required: True
+    nullable: True
+
+  c_call:
+    name: c_call
+    description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+    range: string
+    required: False
+    nullable: True
+
+  sequence_alignment:
+    name: sequence_alignment
+    description: Aligned portion of query sequence, including any indel corrections or numbering spacers, such as IMGT-gaps. Typically, this will include only the V(D)J region, but that is not a requirement.
+    range: string
+    required: True
+    nullable: True
+
+  quality_alignment:
+    name: quality_alignment
+    description: Sanger/Phred quality scores for assessment of sequence_alignment quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by Illumina from v1.8.)
+    range: string
+    required: False
+    nullable: True
+
+  sequence_alignment_aa:
+    name: sequence_alignment_aa
+    description: Amino acid translation of the aligned query sequence.
+    range: string
+    required: False
+    nullable: True
+
+  germline_alignment:
+    name: germline_alignment
+    description: Assembled, aligned, full-length inferred germline sequence spanning the same region as the sequence_alignment field (typically the V(D)J region) and including the same set of corrections and spacers (if any).
+    range: string
+    required: True
+    nullable: True
+
+  germline_alignment_aa:
+    name: germline_alignment_aa
+    description: Amino acid translation of the assembled germline sequence.
+    range: string
+    required: False
+    nullable: True
+
+  junction:
+    name: junction
+    description: Junction region nucleotide sequence, where the junction is defined as the CDR3 plus the two flanking conserved codons.
+    range: string
+    required: True
+    nullable: True
+
+  junction_aa:
+    name: junction_aa
+    description: Amino acid translation of the junction.
+    range: string
+    required: True
+    nullable: True
+
+  np1:
+    name: np1
+    description: Nucleotide sequence of the combined N/P region between the V gene and first D gene alignment or between the V gene and J gene alignments.
+    range: string
+    required: False
+    nullable: True
+
+  np1_aa:
+    name: np1_aa
+    description: Amino acid translation of the np1 field.
+    range: string
+    required: False
+    nullable: True
+
+  np2:
+    name: np2
+    description: Nucleotide sequence of the combined N/P region between either the first D gene and J gene alignments or the first D gene and second D gene alignments.
+    range: string
+    required: False
+    nullable: True
+
+  np2_aa:
+    name: np2_aa
+    description: Amino acid translation of the np2 field.
+    range: string
+    required: False
+    nullable: True
+
+  np3:
+    name: np3
+    description: Nucleotide sequence of the combined N/P region between the second D gene and J gene alignments.
+    range: string
+    required: False
+    nullable: True
+
+  np3_aa:
+    name: np3_aa
+    description: Amino acid translation of the np3 field.
+    range: string
+    required: False
+    nullable: True
+
+  cdr1:
+    name: cdr1
+    description: Nucleotide sequence of the aligned CDR1 region.
+    range: string
+    required: False
+    nullable: True
+
+  cdr1_aa:
+    name: cdr1_aa
+    description: Amino acid translation of the cdr1 field.
+    range: string
+    required: False
+    nullable: True
+
+  cdr2:
+    name: cdr2
+    description: Nucleotide sequence of the aligned CDR2 region.
+    range: string
+    required: False
+    nullable: True
+
+  cdr2_aa:
+    name: cdr2_aa
+    description: Amino acid translation of the cdr2 field.
+    range: string
+    required: False
+    nullable: True
+
+  cdr3:
+    name: cdr3
+    description: Nucleotide sequence of the aligned CDR3 region.
+    range: string
+    required: False
+    nullable: True
+
+  cdr3_aa:
+    name: cdr3_aa
+    description: Amino acid translation of the cdr3 field.
+    range: string
+    required: False
+    nullable: True
+
+  fwr1:
+    name: fwr1
+    description: Nucleotide sequence of the aligned FWR1 region.
+    range: string
+    required: False
+    nullable: True
+
+  fwr1_aa:
+    name: fwr1_aa
+    description: Amino acid translation of the fwr1 field.
+    range: string
+    required: False
+    nullable: True
+
+  fwr2:
+    name: fwr2
+    description: Nucleotide sequence of the aligned FWR2 region.
+    range: string
+    required: False
+    nullable: True
+
+  fwr2_aa:
+    name: fwr2_aa
+    description: Amino acid translation of the fwr2 field.
+    range: string
+    required: False
+    nullable: True
+
+  fwr3:
+    name: fwr3
+    description: Nucleotide sequence of the aligned FWR3 region.
+    range: string
+    required: False
+    nullable: True
+
+  fwr3_aa:
+    name: fwr3_aa
+    description: Amino acid translation of the fwr3 field.
+    range: string
+    required: False
+    nullable: True
+
+  fwr4:
+    name: fwr4
+    description: Nucleotide sequence of the aligned FWR4 region.
+    range: string
+    required: False
+    nullable: True
+
+  fwr4_aa:
+    name: fwr4_aa
+    description: Amino acid translation of the fwr4 field.
+    range: string
+    required: False
+    nullable: True
+
+  v_score:
+    name: v_score
+    description: Alignment score for the V gene.
+    range: number
+    required: False
+    nullable: True
+
+  v_identity:
+    name: v_identity
+    description: Fractional identity for the V gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  v_support:
+    name: v_support
+    description: V gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the V gene assignment as defined by the alignment tool.
+    range: number
+    required: False
+    nullable: True
+
+  v_cigar:
+    name: v_cigar
+    description: CIGAR string for the V gene alignment.
+    range: string
+    required: True
+    nullable: True
+
+  d_score:
+    name: d_score
+    description: Alignment score for the first or only D gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  d_identity:
+    name: d_identity
+    description: Fractional identity for the first or only D gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  d_support:
+    name: d_support
+    description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the first or only D gene as defined by the alignment tool.
+    range: number
+    required: False
+    nullable: True
+
+  d_cigar:
+    name: d_cigar
+    description: CIGAR string for the first or only D gene alignment.
+    range: string
+    required: True
+    nullable: True
+
+  d2_score:
+    name: d2_score
+    description: Alignment score for the second D gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  d2_identity:
+    name: d2_identity
+    description: Fractional identity for the second D gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  d2_support:
+    name: d2_support
+    description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the second D gene as defined by the alignment tool.
+    range: number
+    required: False
+    nullable: True
+
+  d2_cigar:
+    name: d2_cigar
+    description: CIGAR string for the second D gene alignment.
+    range: string
+    required: False
+    nullable: True
+
+  j_score:
+    name: j_score
+    description: Alignment score for the J gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  j_identity:
+    name: j_identity
+    description: Fractional identity for the J gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  j_support:
+    name: j_support
+    description: J gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the J gene assignment as defined by the alignment tool.
+    range: number
+    required: False
+    nullable: True
+
+  j_cigar:
+    name: j_cigar
+    description: CIGAR string for the J gene alignment.
+    range: string
+    required: True
+    nullable: True
+
+  c_score:
+    name: c_score
+    description: Alignment score for the C gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  c_identity:
+    name: c_identity
+    description: Fractional identity for the C gene alignment.
+    range: number
+    required: False
+    nullable: True
+
+  c_support:
+    name: c_support
+    description: C gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the C gene assignment as defined by the alignment tool.
+    range: number
+    required: False
+    nullable: True
+
+  c_cigar:
+    name: c_cigar
+    description: CIGAR string for the C gene alignment.
+    range: string
+    required: False
+    nullable: True
+
+  v_sequence_start:
+    name: v_sequence_start
+    description: Start position of the V gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  v_sequence_end:
+    name: v_sequence_end
+    description: End position of the V gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  v_germline_start:
+    name: v_germline_start
+    description: Alignment start position in the V gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  v_germline_end:
+    name: v_germline_end
+    description: Alignment end position in the V gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  v_alignment_start:
+    name: v_alignment_start
+    description: Start position of the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  v_alignment_end:
+    name: v_alignment_end
+    description: End position of the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d_sequence_start:
+    name: d_sequence_start
+    description: Start position of the first or only D gene in the query sequence. (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d_sequence_end:
+    name: d_sequence_end
+    description: End position of the first or only D gene in the query sequence. (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d_germline_start:
+    name: d_germline_start
+    description: Alignment start position in the D gene reference sequence for the first or only D gene (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d_germline_end:
+    name: d_germline_end
+    description: Alignment end position in the D gene reference sequence for the first or only D gene (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d_alignment_start:
+    name: d_alignment_start
+    description: Start position of the first or only D gene in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d_alignment_end:
+    name: d_alignment_end
+    description: End position of the first or only D gene in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d2_sequence_start:
+    name: d2_sequence_start
+    description: Start position of the second D gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d2_sequence_end:
+    name: d2_sequence_end
+    description: End position of the second D gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d2_germline_start:
+    name: d2_germline_start
+    description: Alignment start position in the second D gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d2_germline_end:
+    name: d2_germline_end
+    description: Alignment end position in the second D gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d2_alignment_start:
+    name: d2_alignment_start
+    description: Start position of the second D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  d2_alignment_end:
+    name: d2_alignment_end
+    description: End position of the second D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  j_sequence_start:
+    name: j_sequence_start
+    description: Start position of the J gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  j_sequence_end:
+    name: j_sequence_end
+    description: End position of the J gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  j_germline_start:
+    name: j_germline_start
+    description: Alignment start position in the J gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  j_germline_end:
+    name: j_germline_end
+    description: Alignment end position in the J gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  j_alignment_start:
+    name: j_alignment_start
+    description: Start position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  j_alignment_end:
+    name: j_alignment_end
+    description: End position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  c_sequence_start:
+    name: c_sequence_start
+    description: Start position of the C gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  c_sequence_end:
+    name: c_sequence_end
+    description: End position of the C gene in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  c_germline_start:
+    name: c_germline_start
+    description: Alignment start position in the C gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  c_germline_end:
+    name: c_germline_end
+    description: Alignment end position in the C gene reference sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  c_alignment_start:
+    name: c_alignment_start
+    description: Start position of the C gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  c_alignment_end:
+    name: c_alignment_end
+    description: End position of the C gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  cdr1_start:
+    name: cdr1_start
+    description: CDR1 start position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  cdr1_end:
+    name: cdr1_end
+    description: CDR1 end position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  cdr2_start:
+    name: cdr2_start
+    description: CDR2 start position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  cdr2_end:
+    name: cdr2_end
+    description: CDR2 end position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  cdr3_start:
+    name: cdr3_start
+    description: CDR3 start position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  cdr3_end:
+    name: cdr3_end
+    description: CDR3 end position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr1_start:
+    name: fwr1_start
+    description: FWR1 start position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr1_end:
+    name: fwr1_end
+    description: FWR1 end position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr2_start:
+    name: fwr2_start
+    description: FWR2 start position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr2_end:
+    name: fwr2_end
+    description: FWR2 end position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr3_start:
+    name: fwr3_start
+    description: FWR3 start position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr3_end:
+    name: fwr3_end
+    description: FWR3 end position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr4_start:
+    name: fwr4_start
+    description: FWR4 start position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  fwr4_end:
+    name: fwr4_end
+    description: FWR4 end position in the query sequence (1-based closed interval).
+    range: integer
+    required: False
+    nullable: True
+
+  v_sequence_alignment:
+    name: v_sequence_alignment
+    description: Aligned portion of query sequence assigned to the V gene, including any indel corrections or numbering spacers.
+    range: string
+    required: False
+    nullable: True
+
+  v_sequence_alignment_aa:
+    name: v_sequence_alignment_aa
+    description: Amino acid translation of the v_sequence_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  d_sequence_alignment:
+    name: d_sequence_alignment
+    description: Aligned portion of query sequence assigned to the first or only D gene, including any indel corrections or numbering spacers.
+    range: string
+    required: False
+    nullable: True
+
+  d_sequence_alignment_aa:
+    name: d_sequence_alignment_aa
+    description: Amino acid translation of the d_sequence_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  d2_sequence_alignment:
+    name: d2_sequence_alignment
+    description: Aligned portion of query sequence assigned to the second D gene, including any indel corrections or numbering spacers.
+    range: string
+    required: False
+    nullable: True
+
+  d2_sequence_alignment_aa:
+    name: d2_sequence_alignment_aa
+    description: Amino acid translation of the d2_sequence_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  j_sequence_alignment:
+    name: j_sequence_alignment
+    description: Aligned portion of query sequence assigned to the J gene, including any indel corrections or numbering spacers.
+    range: string
+    required: False
+    nullable: True
+
+  j_sequence_alignment_aa:
+    name: j_sequence_alignment_aa
+    description: Amino acid translation of the j_sequence_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  c_sequence_alignment:
+    name: c_sequence_alignment
+    description: Aligned portion of query sequence assigned to the constant region, including any indel corrections or numbering spacers.
+    range: string
+    required: False
+    nullable: True
+
+  c_sequence_alignment_aa:
+    name: c_sequence_alignment_aa
+    description: Amino acid translation of the c_sequence_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  v_germline_alignment:
+    name: v_germline_alignment
+    description: Aligned V gene germline sequence spanning the same region as the v_sequence_alignment field and including the same set of corrections and spacers (if any).
+    range: string
+    required: False
+    nullable: True
+
+  v_germline_alignment_aa:
+    name: v_germline_alignment_aa
+    description: Amino acid translation of the v_germline_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  d_germline_alignment:
+    name: d_germline_alignment
+    description: Aligned D gene germline sequence spanning the same region as the d_sequence_alignment field and including the same set of corrections and spacers (if any).
+    range: string
+    required: False
+    nullable: True
+
+  d_germline_alignment_aa:
+    name: d_germline_alignment_aa
+    description: Amino acid translation of the d_germline_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  d2_germline_alignment:
+    name: d2_germline_alignment
+    description: Aligned D gene germline sequence spanning the same region as the d2_sequence_alignment field and including the same set of corrections and spacers (if any).
+    range: string
+    required: False
+    nullable: True
+
+  d2_germline_alignment_aa:
+    name: d2_germline_alignment_aa
+    description: Amino acid translation of the d2_germline_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  j_germline_alignment:
+    name: j_germline_alignment
+    description: Aligned J gene germline sequence spanning the same region as the j_sequence_alignment field and including the same set of corrections and spacers (if any).
+    range: string
+    required: False
+    nullable: True
+
+  j_germline_alignment_aa:
+    name: j_germline_alignment_aa
+    description: Amino acid translation of the j_germline_alignment field.
+    range: string
+    required: False
+    nullable: True
+
+  c_germline_alignment:
+    name: c_germline_alignment
+    description: Aligned constant region germline sequence spanning the same region as the c_sequence_alignment field and including the same set of corrections and spacers (if any).
+    range: string
+    required: False
+    nullable: True
+
+  c_germline_alignment_aa:
+    name: c_germline_alignment_aa
+    description: Amino acid translation of the c_germline_aligment field.
+    range: string
+    required: False
+    nullable: True
+
+  junction_length:
+    name: junction_length
+    description: Number of nucleotides in the junction sequence.
+    range: integer
+    required: False
+    nullable: True
+
+  junction_aa_length:
+    name: junction_aa_length
+    description: Number of amino acids in the junction sequence.
+    range: integer
+    required: False
+    nullable: True
+
+  np1_length:
+    name: np1_length
+    description: Number of nucleotides between the V gene and first D gene alignments or between the V gene and J gene alignments.
+    range: integer
+    required: False
+    nullable: True
+
+  np2_length:
+    name: np2_length
+    description: Number of nucleotides between either the first D gene and J gene alignments or the first D gene and second D gene alignments.
+    range: integer
+    required: False
+    nullable: True
+
+  np3_length:
+    name: np3_length
+    description: Number of nucleotides between the second D gene and J gene alignments.
+    range: integer
+    required: False
+    nullable: True
+
+  n1_length:
+    name: n1_length
+    description: Number of untemplated nucleotides 5' of the first or only D gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  n2_length:
+    name: n2_length
+    description: Number of untemplated nucleotides 3' of the first or only D gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  n3_length:
+    name: n3_length
+    description: Number of untemplated nucleotides 3' of the second D gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  p3v_length:
+    name: p3v_length
+    description: Number of palindromic nucleotides 3' of the V gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  p5d_length:
+    name: p5d_length
+    description: Number of palindromic nucleotides 5' of the first or only D gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  p3d_length:
+    name: p3d_length
+    description: Number of palindromic nucleotides 3' of the first or only D gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  p5d2_length:
+    name: p5d2_length
+    description: Number of palindromic nucleotides 5' of the second D gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  p3d2_length:
+    name: p3d2_length
+    description: Number of palindromic nucleotides 3' of the second D gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  p5j_length:
+    name: p5j_length
+    description: Number of palindromic nucleotides 5' of the J gene alignment.
+    range: integer
+    required: False
+    nullable: True
+
+  v_frameshift:
+    name: v_frameshift
+    description: True if the V gene in the query nucleotide sequence contains a translational frameshift relative to the frame of the V gene reference sequence.
+    range: boolean
+    required: False
+    nullable: True
+
+  j_frameshift:
+    name: j_frameshift
+    description: True if the J gene in the query nucleotide sequence contains a translational frameshift relative to the frame of the J gene reference sequence.
+    range: boolean
+    required: False
+    nullable: True
+
+  d_frame:
+    name: d_frame
+    description: Numerical reading frame (1, 2, 3) of the first or only D gene in the query nucleotide sequence, where frame 1 is relative to the first codon of D gene reference sequence.
+    range: integer
+    required: False
+    nullable: True
+
+  d2_frame:
+    name: d2_frame
+    description: Numerical reading frame (1, 2, 3) of the second D gene in the query nucleotide sequence, where frame 1 is relative to the first codon of D gene reference sequence.
+    range: integer
+    required: False
+    nullable: True
+
+  consensus_count:
+    name: consensus_count
+    description: Number of reads contributing to the UMI consensus or contig assembly for this sequence. For example, the sum of the number of reads for all UMIs that contribute to the query sequence.
+    range: integer
+    required: False
+    nullable: True
+
+  duplicate_count:
+    name: duplicate_count
+    description: Copy number or number of duplicate observations for the query sequence. For example, the number of identical reads observed for this sequence.
+    range: integer
+    required: False
+    nullable: True
+
+  umi_count:
+    name: umi_count
+    description: Number of distinct UMIs represented by this sequence. For example, the total number of UMIs that contribute to the contig assembly for the query sequence.
+    range: integer
+    required: False
+    nullable: True
+
+  cell_id:
+    name: cell_id
+    description: Identifier defining the cell of origin for the query sequence.
+    range: string
+    required: False
+    nullable: True
+    identifier: True
+
+  clone_id:
+    name: clone_id
+    description: Clonal cluster assignment for the query sequence.
+    range: string
+    required: False
+    nullable: True
+    identifier: True
+
+  repertoire_id:
+    name: repertoire_id
+    description: Identifier to the associated repertoire in study metadata.
+    range: string
+    required: False
+    nullable: True
+    identifier: True
+
+  sample_processing_id:
+    name: sample_processing_id
+    description: Identifier to the sample processing object in the repertoire metadata for this rearrangement. If the repertoire has a single sample then this field may be empty or missing. If the repertoire has multiple samples then this field may be empty or missing if the sample cannot be differentiated or the relationship is not maintained by the data processing.
+    range: string
+    required: False
+    nullable: True
+    identifier: True
+
+  data_processing_id:
+    name: data_processing_id
+    description: Identifier to the data processing object in the repertoire metadata for this rearrangement. If this field is empty than the primary data processing object is assumed.
+    range: string
+    required: False
+    nullable: True
+    identifier: True
+
+  rearrangement_id:
+    name: rearrangement_id
+    description: Identifier for the Rearrangement object. May be identical to sequence_id, but will usually be a universally unique record locator for database applications.
+    range: string
+    required: False
+    nullable: True
+
+  rearrangement_set_id:
+    name: rearrangement_set_id
+    description: Identifier for grouping Rearrangement objects.
+    range: string
+    required: False
+    nullable: True
+
+  germline_database:
+    name: germline_database
+    description: Source of germline V(D)J genes with version number or date accessed.
+    range: string
+    required: False
+    nullable: True
+

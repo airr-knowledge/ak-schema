@@ -1,0 +1,17 @@
+Locus:
+  name: Locus
+  permissible_values:
+    IGH:
+    IGI:
+    IGK:
+    IGL:
+    TRA:
+    TRB:
+    TRD:
+    TRG:
+InferenceProcess:
+  name: InferenceProcess
+  permissible_values:
+    genomic_sequencing:
+    repertoire_sequencing:
+    null:
