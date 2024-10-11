@@ -18,6 +18,7 @@ class AIRRMap:
         self.ir_clone_class = "IR_Clone"
         self.ir_cell_class = "IR_Cell"
         self.ir_expression_class = "IR_Expression"
+        self.ir_akc_class = "AKC_Metadata"
 
         # Keep track of the mapfile being used.
         self.mapfile = ""
@@ -154,6 +155,14 @@ class AIRRMap:
         # Get all of the rows that have the AIRR and IR repertoire class labels.
         self.ir_repertoire_map = self.airr_mappings.loc[labels]
 
+        #
+        # AKC mappings
+        #
+        # Get the labels for all of the fields that are in the AKC class.
+        labels = self.airr_mappings['ir_class'].isin([self.ir_akc_class])
+        # Get all of the rows that have the AKC class labels.
+        self.ir_akc_map = self.airr_mappings.loc[labels]
+
         # Return success if we get here.
         return True
 
@@ -163,6 +172,9 @@ class AIRRMap:
 
     def getIRRepertoireClass(self):
         return self.ir_repertoire_class
+
+    def getIRAKCClass(self):
+        return self.ir_akc_class
 
     def getRearrangementClass(self):
         return self.rearrangement_class
@@ -221,6 +233,8 @@ class AIRRMap:
            mapping = self.ir_cell_map
         elif map_class == self.ir_expression_class: 
            mapping = self.ir_expression_map
+        elif map_class == self.ir_akc_class: 
+           mapping = self.ir_akc_map
         else:
             print("Warning: Invalid maping class %s"%(map_class))
             return None
@@ -396,3 +410,17 @@ class AIRRMap:
     # repertoire table size.
     def getIRRepertoireRows(self, extract_flags):
         return self.ir_repertoire_map.loc[extract_flags]
+
+    # Return a full column of the AKC mapping based on the name given.
+    # Return None if the column is not in the mapping.
+    def getIRAKCMapColumn(self, column_name):
+        if column_name in self.ir_akc_map:
+            return self.ir_akc_map[column_name]
+        else:
+            return None
+
+    # Return the rows in the AKC table that are marked as true in the 
+    # boolean array provided. The boolean array must be the same size as the
+    # repertoire table size.
+    def getIRAKCRows(self, extract_flags):
+        return self.ir_akc_map.loc[extract_flags]
