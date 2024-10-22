@@ -12,7 +12,7 @@ from airr.schema import Schema
 
 def processField(field, field_spec, block, required_fields, field_path,
                     airr_class, airr_api_query, airr_api_response,
-                    labels, table, verbose, recursive=False):
+                    labels, table, verbose):
 
         # Get the required fields for this schema object
         if verbose:
@@ -62,47 +62,29 @@ def processField(field, field_spec, block, required_fields, field_path,
         # of basic types (integer, string) then we do want to add it to the field table.
         if 'type' in field_spec and field_spec['type'] == 'array':
             if '$ref' in field_spec['items']:
-                if recursive:
-                    append = False
-                else:
-                    field_dict['airr_is_array'] = True
-                    label = 'airr_array_schema'
-                    if not label in labels:
-                        labels.append(label)
-                    # Add the value of the $ref object to the dictionary
-                    schema_ref = field_spec['items']['$ref']
-                    schema = schema_ref.split('/')[1]
-                    field_dict[label] = schema
-                    append = True
+                append = True
+                field_dict['airr_is_array'] = True
+                label = 'airr_array_schema'
+                if not label in labels:
+                    labels.append(label)
+                # Add the value of the $ref object to the dictionary
+                schema_ref = field_spec['items']['$ref']
+                schema = schema_ref.split('/')[1]
+                field_dict[label] = schema
                 if verbose:
                     print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
             elif 'allOf' in field_spec['items'] or ('type' in field_spec['items'] and field_spec['items']['type'] == 'object'):
-                if recursive:
-                    append = False
-                else:
-                    append = True
-                if verbose:
-                    print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
+                append = True
             else:
+                append = True
                 field_dict['airr_is_array'] = True
+
         # If the field is an object then we recurse on the object's fields and we don't
         # want to add this field to our field table.
         if 'type' in field_spec and field_spec['type'] == 'object':
             append = False
             if verbose:
                 print("**** processField: No append for objects - %s\n"%(field_tag))
-
-        # Finally, if append == True then we are processing a field and we need to add
-        # it to the field table.
-        if append:    
-            # Add the field to the table.
-            if verbose:
-                print("**** processField: Adding dict for field_tag = %s\n"%(field_tag))
-                print("**** processField: Adding dict for ir_adc_api_query = %s\n"%(field_dict['ir_adc_api_query']))
-            table[field_tag] = field_dict
-        else:
-            if verbose:
-                print("**** processField: NOT Adding dict for field_tag = %s\n"%(field_tag))
 
         # Iterate over the fields specs as required to set the fields attributes.
         for k,v in field_spec.items():
@@ -175,47 +157,15 @@ def processField(field, field_spec, block, required_fields, field_path,
             else:
                 # We are processing normal YAML spec fields.
                 if k == '$ref':
-                    # Handle a $ref field to another object
+                    # If the $ref is to an Ontology, mark the type as ontology.
+                    # If the $ref is to another object we don't do anything here.
                     if v == "#/Ontology":
-                        # If the $ref is to an Ontology, mark the type as ontology.
                         field_dict["airr_type"] = "ontology"
                         # We want to add on a .value qualifier to the ADC API variable
                         # names as we return the value component of the ontology in
                         # the API.
                         field_dict['ir_adc_api_query'] = field_dict['ir_adc_api_query'] + '.label'
                         field_dict['ir_adc_api_response'] = field_dict['ir_adc_api_response'] + '.label'
-                        # For ontology fields, we need to create a second entry for
-                        # the id component of the ontology.
-                        # Create a new dictionary entry for the id field.
-                        #id_dict = dict()
-                        # Set up the basic field mappings for the iReceptor fields.
-                        #id_dict['airr'] = field + "_id"
-                        #id_dict['ir_class'] = airr_class
-                        #id_dict['ir_subclass'] = block
-                        # Create the .id qualifier for the API names.
-                        #id_dict['ir_adc_api_query'] = airr_api_query + field + ".id"
-                        #id_dict['ir_adc_api_response'] = airr_api_response + field + ".id"
-                        #id_dict['airr_is_array'] = False
-                        #id_dict['airr_type'] = "string"
-                        #id_field_tag = id_dict['airr']+airr_class+block
-                        #id_field_tag = id_dict['ir_adc_api_query']+"_"+airr_class+"_"+block
-                        #if verbose:
-                        #    print("**** processField: Adding dict for field_tag = %s\n"%(field_tag))
-                        #    print("**** processField: Adding dict for ir_adc_api_query = %s\n"%(id_dict['ir_adc_api_query']))
-                        #table[id_field_tag] = id_dict
-                    else:
-                        # If the $ref is to another object, then handle that object by
-                        # recursion. We get the object to use from the name.
-                        ref_array = v.split("/")
-                        new_schema_name = ref_array[1]
-                        # We recurse on the new schema block, making sure that we track
-                        # that we are processing a new object and that the API field 
-                        # references need to reference the hierarchy correctly. 
-                        if recursive:
-                            labels, table = extractBlock(new_schema_name, airr_class,
-                                             airr_api_query+field_dict['airr']+'.',
-                                             airr_api_response+field_dict['airr']+'.',
-                                             labels, table, verbose, recursive)
                 elif k == 'items':
                     # Handle a list of items, meaning we have an array. In the AIRR
                     # specification we can have an array of $ref objects or an
@@ -236,35 +186,9 @@ def processField(field, field_spec, block, required_fields, field_path,
                                                       airr_class,
                                                       airr_api_query+field+".",
                                                       airr_api_response+field+".0.",
-                                                      labels, table, verbose, recursive)
+                                                      labels, table, verbose)
                     for item_key, item_value in v.items():
-                        if item_key == '$ref':
-                            # The item is a $ref, get the sub-object and process it.
-                            ref_array = item_value.split("/")
-                            new_schema_name = ref_array[1]
-                            # Note the API response has a .0. in it because this
-                            # is an array.
-                            if recursive:
-                                labels, table = extractBlock(new_schema_name, airr_class,
-                                            airr_api_query+field_dict['airr']+'.',
-                                            airr_api_response+field_dict['airr']+'.0.',
-                                            labels, table, verbose, recursive)
-                        elif item_key == 'allOf':
-                            # The item is an allOf so process each element.
-                            for ref_dict in item_value:
-                                # The item is a $ref, get the sub-object and process it.
-                                if '$ref' in ref_dict:
-                                    ref_array = ref_dict['$ref'].split("/")
-                                    new_schema_name = ref_array[1]
-                                    # Note the API response has a .0. in it because
-                                    # this is an array.
-                                    if recursive:
-                                        labels, table = extractBlock(new_schema_name,
-                                               airr_class,
-                                               airr_api_query+field_dict['airr']+'.',
-                                               airr_api_response+field_dict['airr']+'.0.',
-                                               labels, table, verbose, recursive)
-                        elif item_key == 'type':
+                        if item_key == 'type':
                             # This is the special case of handling a "type" for an "array". 
                             # The only arrays that have a type are array fields. If this
                             # is the case, we want to set the type of the array field.
@@ -327,7 +251,7 @@ def processField(field, field_spec, block, required_fields, field_path,
                                                   airr_class,
                                                   airr_api_query+field+".",
                                                   airr_api_response+field+".",
-                                                  labels, table, verbose, recursive)
+                                                  labels, table, verbose)
                 else:
                     if verbose:
                         print("**** processField: key, value = %s,%s\n"%(k,v))
@@ -342,12 +266,24 @@ def processField(field, field_spec, block, required_fields, field_path,
                         value = v.strip()
                     field_dict[label] = value
 
+        # Finally, if append == True then we are processing a field and we need to add
+        # it to the field table.
+        if append:    
+            # Add the field to the table.
+            if verbose:
+                print("**** processField: Adding dict for field_tag = %s\n"%(field_tag))
+                print("**** processField: Adding dict for ir_adc_api_query = %s\n"%(field_dict['ir_adc_api_query']))
+            table[field_tag] = field_dict
+        else:
+            if verbose:
+                print("**** processField: NOT Adding dict for field_tag = %s\n"%(field_tag))
+                
         # We are done, return the labels and the table.
         return labels, table
 
-# Recursive function to extract fields from a AIRR YAML specification into a
-# flat table. The function processes all $ref objects recursively to build up
-# a table of entries with all fields from all sub-objects in the YAML definition.
+# Function to extract fields from a AIRR YAML specification into a
+# flat table. The function processes all $ref objects to build up
+# a table of entries with all fields in the YAML definition.
 #
 # Parameters:
 # - block: The schema block to extract.
@@ -373,7 +309,7 @@ def processField(field, field_spec, block, required_fields, field_path,
 # - table: An array of dictionaries, based on the table provided but with
 # new rows added as per the fields that were found in the current object.
 
-def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, table, verbose, recursive=False):
+def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, table, verbose):
 
     if verbose:
         print("#### extractBlock %s\n"%(block))
@@ -381,8 +317,8 @@ def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, t
     try:
         schema = Schema(block)
     except Exception as e:
+        # Print an error message and exit
         print(e)
-        # Return an empty set of labels and an empty dictionary.
         sys.exit(1)
 
     if verbose:
@@ -400,7 +336,7 @@ def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, t
             print("#### extractBlock: field spec %s\n"%(field_spec))
         labels, table = processField(field, field_spec, block, required_fields,"",
                                      airr_class, airr_api_query, airr_api_response,
-                                     labels, table, verbose, recursive)
+                                     labels, table, verbose)
 
     # We are done, return the labels and the table.
     return labels, table
@@ -414,12 +350,6 @@ def getArguments():
 
     # The block to process
     parser.add_argument("airr_block")
-    # Flag as to whether to process the block recursively
-    parser.add_argument(
-        "-r",
-        "--recursive",
-        action="store_true",
-        help="Process internally referenced objects recursively.")
     # Flag as to whether we generate enums or the basic slots
     parser.add_argument(
         "-e",
@@ -456,11 +386,11 @@ if __name__ == "__main__":
               'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
     initial_labels = ['airr', 'ir_class', 'ir_subclass',
                       'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
-    # Recursively process the block provided. This will recursively process any
+    # Process the block provided. This will process any
     # $ref entries in the YAML and build correct entries for each field.
     labels, table = extractBlock(options.airr_block, options.airr_block,
                                  '', '', labels, table,
-                                 options.verbose, options.recursive)
+                                 options.verbose)
 
     # We need to do some special processing for our ontologies. The _id field of 
     # the ontology does not have an entry in the spec, so we need to copy a bunch
