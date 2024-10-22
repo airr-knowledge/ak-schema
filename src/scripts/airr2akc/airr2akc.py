@@ -381,75 +381,41 @@ if __name__ == "__main__":
     # that is processed.
     table = collections.OrderedDict()
     # Create an initial set of lables for the mapping file. These are mappings
-    # that don't exist in the YAML file but are needed in the mapping file.
+    # that don't exist in the YAML file but are needed for translation.
+    # TODO: Some of the labels below are not required for AKC LinkML generation,
+    # some of these are holdovers from the original akc_flatten code. Labels that
+    # are no longer needed can be removed.
     labels = ['airr', 'airr_spec', 'airr_required', 'ir_class', 'ir_subclass',
               'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
     initial_labels = ['airr', 'ir_class', 'ir_subclass',
                       'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
     # Process the block provided. This will process any
     # $ref entries in the YAML and build correct entries for each field.
+    # After completion, the labels array will be expanded with any new attribute
+    # labels, and the table will be an array of key, value pairs, one for each
+    # field/slot with the value a dictionary that contains relevant info to 
+    # generate the AKC LinkML slots and enums.
     labels, table = extractBlock(options.airr_block, options.airr_block,
-                                 '', '', labels, table,
-                                 options.verbose)
+                                 '', '', labels, table, options.verbose)
 
-    # We need to do some special processing for our ontologies. The _id field of 
-    # the ontology does not have an entry in the spec, so we need to copy a bunch
-    # of values from the _value field to the _id field.
-    for field, field_dict in table.items():
-        #if field_dict['airr_type'] == 'ontology':
-        if False:
-            # Get the field name and generate the ontology id field name
-            field = field_dict['airr']
-            id_field = field + "_id"
-            label_base_tag = field_dict['ir_adc_api_query']
-            id_base_tag = label_base_tag.replace("label", "id")
-            id_field_tag = id_base_tag+"_"+field_dict['ir_class']+"_"+field_dict['ir_subclass']
-            if options.verbose:
-                print("$$$$ Ontology term %s, %s, %s"%(field, id_field, id_field_tag))
-                #print(table)
-            # We want this field to be type string not ontology.
-            field_dict['airr_type'] = 'string'
-            # If the id field is in the table, update the id fields column values
-            if id_field_tag in table:
-                if options.verbose:
-                    print("$$$$ Ontology ID field %s"%(id_field))
-                # Get the dictionary for the id_field
-                id_dict = table[id_field_tag]
-                # For each column in the value field, copy it to the id field. Note
-                # we do this for all of the generated fields from the spec, not the
-                # special fields that are generated.
-                for column in field_dict:
-                    # Initial labels contains the special fields, we don't want
-                    # to overwrite these.
-                    if not column in initial_labels:
-                        id_dict[column] = field_dict[column]
-                        # We want to add some info to the ID description/name/title fields.
-                        if column == "airr_description" or column == "airr_name" or column == "airr_title":
-                            id_dict[column] = id_dict[column] + " (Ontology ID)"
-                # We want the type of the id field to be string.
-                id_dict['airr_type'] = 'string'
-                # We want the airr_spec field to be TRUE.
-                id_dict['airr_spec'] = True
-                # Finally, we store the updated dict in the table.
-                if options.verbose:
-                    print("$$$$ Updating dict for field_tag = %s\n"%(id_field_tag))
-                table[id_field_tag] = id_dict
-
-    # Once we have our table built, we need to print it out.
     if options.verbose:
-        # Print out the header labels.
+        # Print out the header labels if in verbose mode.
         for label in labels:
             print(label,end='\t')
         print("")
 
-    # Now print out the definition of the object and its slots
+    # Print out the AKC LinkML header
+    print('id: https://github.com/airr-knowledge/ak-schema')
+    print('name: ak-schema')
+    print('')
+
+    # Print out the appropriate class or enum block.
     if not options.enums:
-        print('id: https://github.com/airr-knowledge/ak-schema')
-        print('name: ak-schema')
-        print('')
         print('classes:')
+        # Class block has a list of the slots, which are the AIRR fields.
         print('  %s:'%(options.airr_block))
         print('    slots:')
+        # Iterate over the fields and print them out
         for field, field_dict in table.items():
             if 'airr' in field_dict:
                 if not options.enums:
@@ -458,17 +424,26 @@ if __name__ == "__main__":
         print('')
         print('slots:')
     else:
-        print('id: https://github.com/airr-knowledge/ak-schema')
-        print('name: ak-schema')
-        print('')
         print('enums:')
 
-    # Now print out the definition for each slot
+    # Now print out the definition for each slot by iterating over the table.
     for field, field_dict in table.items():
         # For each row, generate a LinkML specification for the field
+        # Each field has a dictionary that is structured as follows.
+        # {'airr': 'study_id', 'airr_spec': True, 'airr_required': True, 'ir_class': 'Study',
+        #  'ir_subclass': 'Study', 'ir_adc_api_query': 'study_id', 'ir_adc_api_response': 'study_id',
+        #  'airr_is_array': False, 'airr_nullable': True, 'airr_type': 'string',
+        #  'airr_description': 'Unique ID assigned by study registry ...', 'airr_title': 'Study ID',
+        #  'airr_example': 'PRJNA001', 'airr_identifier': True, 'airr_miairr': True,
+        #  'airr_adc-query-support': True, 'airr_set': 1, 'airr_subset': 'study', 'airr_name': 'Study ID'}
+        #
+        # This should be sufficient for each field to build an appropriate AKC LinkML object.
         if 'airr' in field_dict:
+            # Handle the enum output case
             if options.enums:
+                # Convert the field to a camel case name as per LinkML standards
                 range_name = convertCamelCase(field_dict['airr'])
+                # If the field is an enum field with a controlled vocabulary, generate the enum
                 if 'airr_enum' in field_dict and 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
                     print('%s:'%(range_name))
                     print('  name: %s'%(range_name))
@@ -477,6 +452,7 @@ if __name__ == "__main__":
                     enum_array = field_dict['airr_enum'].split(',')
                     for enum_str in enum_array:
                         print('    %s:'%(enum_str))
+                # If the field is an onotology field generate the enum using the LinkML ontology description.
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
                     print('  %s:'%(range_name))
                     print('    name: %s'%(range_name))
@@ -494,9 +470,11 @@ if __name__ == "__main__":
                         print('      text: %s'%(ontology_example_array[1]))
                         print('      meaning: %s'%(ontology_example_array[0]))
 
+            # Handle the slot output case.
             else:
                 if options.verbose:
                     print(field_dict)
+                # Slot name and description fields
                 print('  %s:'%(field_dict['airr']))
                 print('    name: %s'%(field_dict['airr']))
                 if 'airr_description' in field_dict:
@@ -504,18 +482,22 @@ if __name__ == "__main__":
 
                 # Handle the range, this is a bit complex depending on the field.
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
+                    # Ontologies have the enum camel case object as the range
                     print('    range: %s'%(convertCamelCase(field_dict['airr'])))
                 elif 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
+                    # Controlled vocabularies have the enum camel case object as the range
                     range_name = convertCamelCase(field_dict['airr'])
                     print('    range: %s'%(range_name))
                 elif 'airr_is_array' in field_dict and field_dict['airr_is_array'] == True:
+                    # Arrays can have an object and require the multivalued attribute
                     if 'airr_array_schema' in field_dict:
                         print('    range: %s'%(field_dict['airr_array_schema']))
                     print('    multivalued: true')
                 elif 'airr_type' in field_dict:
+                    # Just a normal field, range is the type
                     print('    range: %s'%(field_dict['airr_type']))
 
-                # Print out some x-airr attributes if required.
+                # Print out some x-airr attributes such as required, nullable, and identifier
                 if 'airr_required' in field_dict:
                     print('    required: %s'%(field_dict['airr_required']))
                 if 'airr_nullable' in field_dict:
@@ -526,15 +508,6 @@ if __name__ == "__main__":
                 print('')
 
         
-        #for label in labels:
-        #    # If the label is in the row, print the info, otherwise print an
-        #    # empty tab column. The end of our print isn't a new line, it is a
-        #    # tab character, so we stay on the same row.
-        #    if label in field_dict:
-        #        print(field_dict[label], end='\t')
-        #    else:
-        #        print("", end='\t')
-
     # We are done, return success
     sys.exit(0)
 
