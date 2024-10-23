@@ -24,8 +24,20 @@ classes:
     class_uri: OBI:0000070 # assay
     slots:
       - specimen
+      - type
       - assay_type
       - target_entity_type
+      - value
+      - unit
+
+  TCellReceptorEpitopeBindingAssay:
+    is_a: Assay
+    class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
+    slots:
+      - specimen
+      - assay_type
+      - epitope
+      - tcell_receptors
       - value
       - unit
 
@@ -60,6 +72,10 @@ classes:
       - unit
 
 slots:
+  type:
+    designates_type: true
+    range: string
+
   life_event:
     description: The life event corresponding to an immune exposure
     range: LifeEvent
@@ -82,6 +98,13 @@ slots:
     # TODO: enum
   target_entity_type:
     description: The type of the entity being measured
+  epitope:
+    description: The epitope being measured
+    range: Epitope
+  tcell_receptors:
+    description: The T cell receptors being measured
+    range: TCellReceptor
+    multivalued: true
   value:
     description: The measurement result value
   unit:
