@@ -78,6 +78,18 @@ prefixes:
   ONTIE:
     prefix_prefix: ONTIE
     prefix_reference: https://ontology.iedb.org/ontology/ONTIE_
+  iedb_reference:
+    prefix_prefix: iedb_reference
+    prefix_reference: http://www.iedb.org/reference/
+  iedb_epitope:
+    prefix_prefix: iedb_epitope
+    prefix_reference: http://www.iedb.org/epitope/
+  iedb_assay:
+    prefix_prefix: iedb_assay
+    prefix_reference: http://www.iedb.org/assay/
+  iedb_receptor:
+    prefix_prefix: iedb_receptor
+    prefix_reference: http://www.iedb.org/receptor/
   example:
     prefix_prefix: example
     prefix_reference: https://example.org/
@@ -982,6 +994,11 @@ slots:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    designates_type: true
+    range: string
   specimen_type:
     name: specimen_type
     description: The type of this specimen
@@ -1010,6 +1027,17 @@ slots:
     name: target_entity_type
     description: The type of the entity being measured
     from_schema: https://github.com/airr-knowledge/ak-schema
+  epitope:
+    name: epitope
+    description: The epitope being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Epitope
+  tcell_receptors:
+    name: tcell_receptors
+    description: The T cell receptors being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TCellReceptor
+    multivalued: true
   value:
     name: value
     description: The measurement result value
@@ -1191,6 +1219,14 @@ slots:
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
+  source_protein:
+    name: source_protein
+    description: The protein that this epitope comes from
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  source_organism:
+    name: source_organism
+    description: The organism that the source protein comes from
+    from_schema: https://github.com/airr-knowledge/ak-schema
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain
@@ -1326,6 +1362,24 @@ classes:
         range: Conclusion
         multivalued: true
         inlined: true
+      chains:
+        name: chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: true
+        inlined: true
+      tcell_receptors:
+        name: tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: TCellReceptor
+        multivalued: true
+        inlined: true
+      epitopes:
+        name: epitopes
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Epitope
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation
@@ -1448,11 +1502,24 @@ classes:
     is_a: NamedThing
     slots:
     - specimen
+    - type
     - assay_type
     - target_entity_type
     - value
     - unit
     class_uri: OBI:0000070
+  TCellReceptorEpitopeBindingAssay:
+    name: TCellReceptorEpitopeBindingAssay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Assay
+    slots:
+    - specimen
+    - assay_type
+    - epitope
+    - tcell_receptors
+    - value
+    - unit
+    class_uri: OBI:1110037
   Dataset:
     name: Dataset
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1526,6 +1593,8 @@ classes:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
+    slots:
+    - type
     class_uri: GO:0042101
   AlphaBetaTCR:
     name: AlphaBetaTCR
@@ -1551,6 +1620,20 @@ classes:
     - IGH_chain
     - IGK_chain
     - IGL_chain
+  Epitope:
+    name: Epitope
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - type
+  PeptidicEpitope:
+    name: PeptidicEpitope
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Epitope
+    slots:
+    - sequence_aa
+    - source_protein
+    - source_organism
   Model:
     name: Model
     from_schema: https://github.com/airr-knowledge/ak-schema

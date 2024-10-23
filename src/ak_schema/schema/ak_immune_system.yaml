@@ -32,6 +32,8 @@ classes:
   TCellReceptor:
     is_a: NamedThing
     class_uri: GO:0042101
+    slots:
+      - type
 
   AlphaBetaTCR:
     is_a: TCellReceptor
@@ -53,6 +55,18 @@ classes:
       - IGH_chain
       - IGK_chain
       - IGL_chain
+
+  Epitope:
+    is_a: NamedThing
+    slots:
+      - type
+
+  PeptidicEpitope:
+    is_a: Epitope
+    slots:
+      - sequence_aa
+      - source_protein
+      - source_organism
 
 slots:
   sequence:
@@ -172,6 +186,13 @@ slots:
   TRG_chain:
     description: T cell receptor gamma chain
     range: Chain
+
+  source_protein:
+    description: The protein that this epitope comes from
+
+  source_organism:
+    description: The organism that the source protein comes from
+
 
 enums:
   ChainType:

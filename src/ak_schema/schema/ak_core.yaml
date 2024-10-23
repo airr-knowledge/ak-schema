@@ -97,6 +97,18 @@ classes:
         range: Conclusion
         multivalued: true
         inlined: true
+      chains:
+        range: Chain
+        multivalued: true
+        inlined: true
+      tcell_receptors:
+        range: TCellReceptor
+        multivalued: true
+        inlined: true
+      epitopes:
+        range: Epitope
+        multivalued: true
+        inlined: true
 
 slots:
   akc_id:
