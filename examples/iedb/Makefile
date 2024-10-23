@@ -8,8 +8,8 @@ tsv/:
 ak_schema.py: ../../project/linkml/ak_schema.yaml
 	gen-python $< > $@
 
-example.yaml: ak_schema.py convert.py tcell.tsv | tsv/
-	python $(wordlist 2,3,$^) $@
+example.yaml: ak_schema.py convert.py tcell.tsv tcr.tsv | tsv/
+	python $(wordlist 2,4,$^) $@
 
 example.json: ../../project/linkml/ak_schema.yaml example.yaml
 	linkml-convert -s $< -C AIRRKnowledgeCommons -t json $(word 2,$^) > $@
