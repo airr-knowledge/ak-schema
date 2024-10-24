@@ -1,6 +1,12 @@
-DiseaseDiagnosis:
-  name: DiseaseDiagnosis
-  permissible_values:
-    disease:
-      text: disease
-      meaning: DOID:4
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+enums:
+  DiseaseDiagnosis:
+    name: DiseaseDiagnosis
+    reachable_from:
+      source_nodes:
+        - DOID:4
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

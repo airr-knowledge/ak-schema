@@ -3,7 +3,6 @@ name: ak-schema
 
 classes:
   Repertoire:
-    is_a: NamedThing
     slots:
       - repertoire_id
       - repertoire_name
@@ -19,7 +18,8 @@ slots:
     description: Identifier for the repertoire object. This identifier should be globally unique so that repertoires from multiple studies can be combined together without conflict. The repertoire_id is used to link other AIRR data to a Repertoire. Specifically, the Rearrangements Schema includes repertoire_id for referencing the specific Repertoire for that Rearrangement.
     range: string
     required: False
-    nullable: True
+    annotations:
+      nullable: True
     identifier: True
 
   repertoire_name:
@@ -27,28 +27,32 @@ slots:
     description: Short generic display name for the repertoire
     range: string
     required: False
-    nullable: True
+    annotations:
+      nullable: True
 
   repertoire_description:
     name: repertoire_description
     description: Generic repertoire description
     range: string
     required: False
-    nullable: True
+    annotations:
+      nullable: True
 
   study:
     name: study
     description: Study object
     range: Study
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   subject:
     name: subject
     description: Subject object
     range: Subject
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   sample:
     name: sample
@@ -56,7 +60,8 @@ slots:
     range: SampleProcessing
     multivalued: true
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   data_processing:
     name: data_processing
@@ -64,5 +69,6 @@ slots:
     range: DataProcessing
     multivalued: true
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 

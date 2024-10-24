@@ -3,7 +3,6 @@ name: ak-schema
 
 classes:
   MHCGenotype:
-    is_a: NamedThing
     slots:
       - mhc_genotype_id
       - mhc_class
@@ -16,7 +15,8 @@ slots:
     description: A unique identifier for this MHCGenotype, assumed to be unique in the context of the study
     range: string
     required: True
-    nullable: True
+    annotations:
+      nullable: True
     identifier: True
 
   mhc_class:
@@ -24,7 +24,8 @@ slots:
     description: Class of MHC alleles described by the MHCGenotype
     range: MhcClass
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   mhc_alleles:
     name: mhc_alleles
@@ -32,12 +33,14 @@ slots:
     range: MHCAllele
     multivalued: true
     required: True
-    nullable: True
+    annotations:
+      nullable: True
 
   mhc_genotyping_method:
     name: mhc_genotyping_method
     description: Information on how the genotype was determined. The content of this field should come from a list of recommended terms provided in the AIRR Schema documentation.
     range: string
     required: False
-    nullable: True
+    annotations:
+      nullable: True
 

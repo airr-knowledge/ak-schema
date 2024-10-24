@@ -1,6 +1,12 @@
-StudyType:
-  name: StudyType
-  permissible_values:
-    Study:
-      text: Study
-      meaning: NCIT:C63536
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+enums:
+  StudyType:
+    name: StudyType
+    reachable_from:
+      source_nodes:
+        - NCIT:C63536
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

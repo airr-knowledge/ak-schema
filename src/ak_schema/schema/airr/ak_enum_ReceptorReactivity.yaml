@@ -1,24 +1,34 @@
-Antigen:
-  name: Antigen
-  permissible_values:
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+enums:
+  Antigen:
+    name: Antigen
+    permissible_values:
      Circumsporozoite protein:
       text:  Circumsporozoite protein
       meaning: UNIPROT:P19597
-AntigenSourceSpecies:
-  name: AntigenSourceSpecies
-  permissible_values:
-    root:
-      text: root
-      meaning: NCBITAXON:1
-MhcGene1:
-  name: MhcGene1
-  permissible_values:
-    MHC gene:
-      text: MHC gene
-      meaning: MRO:0000004
-MhcGene2:
-  name: MhcGene2
-  permissible_values:
-    MHC gene:
-      text: MHC gene
-      meaning: MRO:0000004
+  AntigenSourceSpecies:
+    name: AntigenSourceSpecies
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:1
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  MhcGene1:
+    name: MhcGene1
+    reachable_from:
+      source_nodes:
+        - MRO:0000004
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  MhcGene2:
+    name: MhcGene2
+    reachable_from:
+      source_nodes:
+        - MRO:0000004
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

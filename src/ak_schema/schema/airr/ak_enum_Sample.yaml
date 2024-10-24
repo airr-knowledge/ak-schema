@@ -1,12 +1,20 @@
-Tissue:
-  name: Tissue
-  permissible_values:
-    multicellular anatomical structure:
-      text: multicellular anatomical structure
-      meaning: UBERON:0010000
-CollectionTimePointRelativeUnit:
-  name: CollectionTimePointRelativeUnit
-  permissible_values:
-    time unit:
-      text: time unit
-      meaning: UO:0000003
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+enums:
+  Tissue:
+    name: Tissue
+    reachable_from:
+      source_nodes:
+        - UBERON:0010000
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  CollectionTimePointRelativeUnit:
+    name: CollectionTimePointRelativeUnit
+    reachable_from:
+      source_nodes:
+        - UO:0000003
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

@@ -3,7 +3,6 @@ name: ak-schema
 
 classes:
   Receptor:
-    is_a: NamedThing
     slots:
       - receptor_id
       - receptor_hash
@@ -21,7 +20,8 @@ slots:
     description: ID of the current Receptor object, unique within the local repository.
     range: string
     required: True
-    nullable: False
+    annotations:
+      nullable: False
     identifier: True
 
   receptor_hash:
@@ -29,49 +29,56 @@ slots:
     description: The SHA256 hash of the receptor amino acid sequence, calculated on the concatenated ``receptor_variable_domain_*_aa`` sequences and represented as base16-encoded string.
     range: string
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   receptor_type:
     name: receptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
     range: string
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   receptor_variable_domain_1_aa:
     name: receptor_variable_domain_1_aa
     description: Complete amino acid sequence of the mature variable domain of the Ig heavy, TCR beta or TCR delta chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.
     range: string
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   receptor_variable_domain_1_locus:
     name: receptor_variable_domain_1_locus
     description: Locus from which the variable domain in receptor_variable_domain_1_aa originates
     range: string
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   receptor_variable_domain_2_aa:
     name: receptor_variable_domain_2_aa
     description: Complete amino acid sequence of the mature variable domain of the Ig light, TCR alpha or TCR gamma chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.
     range: string
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   receptor_variable_domain_2_locus:
     name: receptor_variable_domain_2_locus
     description: Locus from which the variable domain in receptor_variable_domain_2_aa originates
     range: string
     required: True
-    nullable: False
+    annotations:
+      nullable: False
 
   receptor_ref:
     name: receptor_ref
     description: Array of receptor identifiers defined for the Receptor object
     multivalued: true
     required: False
-    nullable: True
+    annotations:
+      nullable: True
 
   reactivity_measurements:
     name: reactivity_measurements
@@ -79,5 +86,6 @@ slots:
     range: ReceptorReactivity
     multivalued: true
     required: False
-    nullable: True
+    annotations:
+      nullable: True
 

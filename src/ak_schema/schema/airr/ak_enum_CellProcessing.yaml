@@ -1,12 +1,20 @@
-CellSubset:
-  name: CellSubset
-  permissible_values:
-    lymphocyte:
-      text: lymphocyte
-      meaning: CL:0000542
-CellSpecies:
-  name: CellSpecies
-  permissible_values:
-    Gnathostomata:
-      text: Gnathostomata
-      meaning: NCBITAXON:7776
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+enums:
+  CellSubset:
+    name: CellSubset
+    reachable_from:
+      source_nodes:
+        - CL:0000542
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  CellSpecies:
+    name: CellSpecies
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

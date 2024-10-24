@@ -1,3 +1,7 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+enums:
 FileType:
   name: FileType
   permissible_values:

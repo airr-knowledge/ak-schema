@@ -1,14 +1,20 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+enums:
 TemplateClass:
   name: TemplateClass
   permissible_values:
     DNA:
     RNA:
-TemplateAmountUnit:
-  name: TemplateAmountUnit
-  permissible_values:
-    physical quantity:
-      text: physical quantity
-      meaning: UO:0000002
+  TemplateAmountUnit:
+    name: TemplateAmountUnit
+    reachable_from:
+      source_nodes:
+        - UO:0000002
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
 LibraryGenerationMethod:
   name: LibraryGenerationMethod
   permissible_values:
