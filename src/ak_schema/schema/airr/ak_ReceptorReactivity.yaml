@@ -1,0 +1,157 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+classes:
+  ReceptorReactivity:
+    slots:
+      - ligand_type
+      - antigen_type
+      - antigen
+      - antigen_source_species
+      - peptide_start
+      - peptide_end
+      - mhc_class
+      - mhc_gene_1
+      - mhc_allele_1
+      - mhc_gene_2
+      - mhc_allele_2
+      - reactivity_method
+      - reactivity_readout
+      - reactivity_value
+      - reactivity_unit
+slots:
+  ligand_type:
+    name: ligand_type
+    description: Classification of ligand binding to receptor
+    range: string
+    required: true
+    annotations:
+      nullable: false
+  antigen_type:
+    name: antigen_type
+    description: The type of antigen before processing by the immune system.
+    range: string
+    required: true
+    annotations:
+      nullable: false
+  antigen:
+    name: antigen
+    description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
+    range: Antigen
+    required: true
+    annotations:
+      nullable: false
+  antigen_source_species:
+    name: antigen_source_species
+    description: The species from which the antigen was isolated
+    range: AntigenSourceSpecies
+    required: false
+    annotations:
+      nullable: true
+  peptide_start:
+    name: peptide_start
+    description: Start position of the peptide within the reference protein sequence
+    range: integer
+    required: false
+    annotations:
+      nullable: true
+  peptide_end:
+    name: peptide_end
+    description: End position of the peptide within the reference protein sequence
+    range: integer
+    required: false
+    annotations:
+      nullable: true
+  mhc_class:
+    name: mhc_class
+    description: Class of MHC molecule, only present for MHC:x ligand types
+    range: string
+    required: false
+    annotations:
+      nullable: true
+  mhc_gene_1:
+    name: mhc_gene_1
+    description: The MHC gene to which the mhc_allele_1 belongs
+    range: MhcGene1
+    required: false
+    annotations:
+      nullable: true
+  mhc_allele_1:
+    name: mhc_allele_1
+    description: Allele designation of the MHC alpha chain
+    range: string
+    required: false
+    annotations:
+      nullable: true
+  mhc_gene_2:
+    name: mhc_gene_2
+    description: The MHC gene to which the mhc_allele_2 belongs
+    range: MhcGene2
+    required: false
+    annotations:
+      nullable: true
+  mhc_allele_2:
+    name: mhc_allele_2
+    description: Allele designation of the MHC class II beta chain or the invariant beta2-microglobin chain
+    range: string
+    required: false
+    annotations:
+      nullable: true
+  reactivity_method:
+    name: reactivity_method
+    description: The methodology used to assess expression (assay implemented in experiment)
+    range: string
+    required: true
+    annotations:
+      nullable: false
+  reactivity_readout:
+    name: reactivity_readout
+    description: Reactivity measurement read-out
+    range: string
+    required: true
+    annotations:
+      nullable: false
+  reactivity_value:
+    name: reactivity_value
+    description: The absolute (processed) value of the measurement
+    range: number
+    required: true
+    annotations:
+      nullable: false
+  reactivity_unit:
+    name: reactivity_unit
+    description: The unit of the measurement
+    range: string
+    required: true
+    annotations:
+      nullable: false
+enums:
+  Antigen:
+    name: Antigen
+    permissible_values:
+      Circumsporozoite protein:
+        text: Circumsporozoite protein
+        meaning: UNIPROT:P19597
+  AntigenSourceSpecies:
+    name: AntigenSourceSpecies
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:1
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  MhcGene1:
+    name: MhcGene1
+    reachable_from:
+      source_nodes:
+        - MRO:0000004
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  MhcGene2:
+    name: MhcGene2
+    reachable_from:
+      source_nodes:
+        - MRO:0000004
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

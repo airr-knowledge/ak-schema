@@ -1,0 +1,176 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+classes:
+  Subject:
+    slots:
+      - subject_id
+      - synthetic
+      - species
+      - organism
+      - sex
+      - age_min
+      - age_max
+      - age_unit
+      - age_event
+      - age
+      - ancestry_population
+      - ethnicity
+      - race
+      - strain_name
+      - linked_subjects
+      - link_type
+      - diagnosis
+      - genotype
+slots:
+  subject_id:
+    name: subject_id
+    description: Subject ID assigned by submitter, unique within study. If possible, a persistent subject ID linked to an INSDC or similar repository study should be used.
+    range: string
+    required: true
+    annotations: true
+  synthetic:
+    name: synthetic
+    description: TRUE for libraries in which the diversity has been synthetically generated (e.g. phage display)
+    range: boolean
+    required: true
+    annotations:
+      nullable: false
+  species:
+    name: species
+    description: Binomial designation of subject's species
+    range: Species
+    required: true
+    annotations:
+      nullable: false
+  organism:
+    name: organism
+    description: Binomial designation of subject's species
+    range: ontology
+    required: false
+    annotations:
+      nullable: true
+  sex:
+    name: sex
+    description: Biological sex of subject
+    range: Sex
+    required: true
+    annotations:
+      nullable: true
+  age_min:
+    name: age_min
+    description: Specific age or lower boundary of age range.
+    range: number
+    required: true
+    annotations:
+      nullable: true
+  age_max:
+    name: age_max
+    description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
+    range: number
+    required: true
+    annotations:
+      nullable: true
+  age_unit:
+    name: age_unit
+    description: Unit of age range
+    range: AgeUnit
+    required: true
+    annotations:
+      nullable: true
+  age_event:
+    name: age_event
+    description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  age:
+    name: age
+    description: ''
+    range: string
+    required: false
+    annotations:
+      nullable: true
+  ancestry_population:
+    name: ancestry_population
+    description: Broad geographic origin of ancestry (continent)
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  ethnicity:
+    name: ethnicity
+    description: Ethnic group of subject (defined as cultural/language-based membership)
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  race:
+    name: race
+    description: Racial group of subject (as defined by NIH)
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  strain_name:
+    name: strain_name
+    description: Non-human designation of the strain or breed of animal used
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  linked_subjects:
+    name: linked_subjects
+    description: Subject ID to which `Relation type` refers
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  link_type:
+    name: link_type
+    description: Relation between subject and `linked_subjects`, can be genetic or environmental (e.g.exposure)
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  diagnosis:
+    name: diagnosis
+    description: Diagnosis information for subject
+    range: Diagnosis
+    multivalued: true
+    required: false
+    annotations:
+      nullable: false
+  genotype:
+    name: genotype
+    description: ''
+    range: SubjectGenotype
+    required: false
+    annotations:
+      nullable: true
+enums:
+  Species:
+    name: Species
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  Sex:
+    name: Sex
+    permissible_values:
+      male:
+      female:
+      pooled:
+      hermaphrodite:
+      intersex:
+      'null':
+  AgeUnit:
+    name: AgeUnit
+    reachable_from:
+      source_nodes:
+        - UO:0000003
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf

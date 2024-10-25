@@ -1,0 +1,61 @@
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+classes:
+  SequencingRun:
+    slots:
+      - sequencing_run_id
+      - total_reads_passing_qc_filter
+      - sequencing_platform
+      - sequencing_facility
+      - sequencing_run_date
+      - sequencing_kit
+      - sequencing_files
+slots:
+  sequencing_run_id:
+    name: sequencing_run_id
+    description: ID of sequencing run assigned by the sequencing facility
+    range: string
+    required: true
+    annotations: true
+  total_reads_passing_qc_filter:
+    name: total_reads_passing_qc_filter
+    description: Number of usable reads for analysis
+    range: integer
+    required: true
+    annotations:
+      nullable: true
+  sequencing_platform:
+    name: sequencing_platform
+    description: Designation of sequencing instrument used
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  sequencing_facility:
+    name: sequencing_facility
+    description: Name and address of sequencing facility
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  sequencing_run_date:
+    name: sequencing_run_date
+    description: Date of sequencing run
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  sequencing_kit:
+    name: sequencing_kit
+    description: Name, manufacturer, order and lot numbers of sequencing kit
+    range: string
+    required: true
+    annotations:
+      nullable: true
+  sequencing_files:
+    name: sequencing_files
+    description: Set of sequencing files produced by the sequencing run
+    range: SequencingData
+    required: false
+    annotations:
+      nullable: false

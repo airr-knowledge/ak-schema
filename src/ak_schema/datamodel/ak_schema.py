@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-09T17:20:22
+# Generation date: 2024-10-25T10:30:10
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema

@@ -1,6 +1,0 @@
-MhcClass:
-  name: MhcClass
-  permissible_values:
-    MHC-I:
-    MHC-II:
-    MHC-nonclassical:
