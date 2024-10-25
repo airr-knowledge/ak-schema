@@ -16,7 +16,9 @@ slots:
     description: Identifier of this expression property measurement.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: false
+      identifier: true
   cell_id:
     name: cell_id
     description: Identifier of the cell to which this expression data is related.

@@ -18,7 +18,9 @@ slots:
     description: Identifier defining the cell of origin for the query sequence.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: false
+      identifier: true
   rearrangements:
     name: rearrangements
     description: Array of sequence identifiers defined for the Rearrangement object

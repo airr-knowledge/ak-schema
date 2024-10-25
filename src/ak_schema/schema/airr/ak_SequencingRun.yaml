@@ -16,7 +16,9 @@ slots:
     description: ID of sequencing run assigned by the sequencing facility
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   total_reads_passing_qc_filter:
     name: total_reads_passing_qc_filter
     description: Number of usable reads for analysis

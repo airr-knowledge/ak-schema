@@ -21,13 +21,17 @@ slots:
     description: Identifier for the data processing object.
     range: string
     required: false
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   primary_annotation:
     name: primary_annotation
     description: If true, indicates this is the primary or default data processing for the repertoire and its rearrangements. If false, indicates this is a secondary or additional data processing.
     range: boolean
     required: false
-    annotations: true
+    annotations:
+      nullable: false
+      identifier: true
   software_versions:
     name: software_versions
     description: Version number and / or date, include company pipelines

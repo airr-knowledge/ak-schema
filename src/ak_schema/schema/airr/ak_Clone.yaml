@@ -33,7 +33,9 @@ slots:
     description: Identifier for the clone.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   repertoire_id:
     name: repertoire_id
     description: Identifier to the associated repertoire in study metadata.

@@ -27,7 +27,9 @@ slots:
     description: Subject ID assigned by submitter, unique within study. If possible, a persistent subject ID linked to an INSDC or similar repository study should be used.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   synthetic:
     name: synthetic
     description: TRUE for libraries in which the diversity has been synthetically generated (e.g. phage display)

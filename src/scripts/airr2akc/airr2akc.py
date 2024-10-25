@@ -454,10 +454,18 @@ def getSlot(field_dict):
         slot_params['required'] = field_dict['airr_required']
 
     if 'airr_nullable' in field_dict:
-        slot_params['annotations'] = {'nullable': field_dict['airr_nullable']}
+        nullable_dict = {'nullable': field_dict['airr_nullable']}
+        if 'annotations' not in slot_params:
+            slot_params['annotations'] = nullable_dict
+        else:
+            slot_params['annotations'].update(nullable_dict)
 
     if 'airr_identifier' in field_dict:
-        slot_params['annotations'] = field_dict['airr_identifier']
+        airr_id_dict = {'identifier': field_dict['airr_identifier']}
+        if 'annotations' not in slot_params:
+            slot_params['annotations'] = airr_id_dict
+        else:
+            slot_params['annotations'].update(airr_id_dict)
 
     return {field_dict['airr']: slot_params}
 

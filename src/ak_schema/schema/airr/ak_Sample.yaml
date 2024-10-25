@@ -18,7 +18,9 @@ slots:
     description: Sample ID assigned by submitter, unique within study. If possible, a persistent sample ID linked to INSDC or similar repository study should be used.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   sample_type:
     name: sample_type
     description: The way the sample was obtained, e.g. fine-needle aspirate, organ harvest, peripheral venous puncture

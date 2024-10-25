@@ -19,7 +19,9 @@ slots:
     description: unique identifier of this UnrearrangedSequence within the file
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   sequence:
     name: sequence
     description: Sequence of interest described in this record. Typically, this will include gene and promoter region.

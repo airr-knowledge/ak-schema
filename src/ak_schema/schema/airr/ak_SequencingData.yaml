@@ -19,7 +19,9 @@ slots:
     description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   file_type:
     name: file_type
     description: File format for the raw reads or sequences

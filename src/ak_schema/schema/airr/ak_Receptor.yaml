@@ -18,7 +18,9 @@ slots:
     description: ID of the current Receptor object, unique within the local repository.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: false
+      identifier: true
   receptor_hash:
     name: receptor_hash
     description: The SHA256 hash of the receptor amino acid sequence, calculated on the concatenated ``receptor_variable_domain_*_aa`` sequences and represented as base16-encoded string.

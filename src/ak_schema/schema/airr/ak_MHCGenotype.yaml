@@ -13,7 +13,9 @@ slots:
     description: A unique identifier for this MHCGenotype, assumed to be unique in the context of the study
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   mhc_class:
     name: mhc_class
     description: Class of MHC alleles described by the MHCGenotype

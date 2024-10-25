@@ -164,7 +164,9 @@ slots:
     description: Unique query sequence identifier for the Rearrangement. Most often this will be the input sequence header or a substring thereof, but may also be a custom identifier defined by the tool in cases where query sequences have been combined in some fashion prior to alignment. When downloaded from an AIRR Data Commons repository, this will usually be a universally unique record locator for linking with other objects in the AIRR Data Model.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   sequence:
     name: sequence
     description: The query nucleotide sequence. Usually, this is the unmodified input sequence, which may be reverse complemented if necessary. In some cases, this field may contain consensus sequences or other types of collapsed input sequences if these steps are performed prior to alignment.
@@ -1192,31 +1194,41 @@ slots:
     description: Identifier defining the cell of origin for the query sequence.
     range: string
     required: false
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   clone_id:
     name: clone_id
     description: Clonal cluster assignment for the query sequence.
     range: string
     required: false
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   repertoire_id:
     name: repertoire_id
     description: Identifier to the associated repertoire in study metadata.
     range: string
     required: false
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   sample_processing_id:
     name: sample_processing_id
     description: Identifier to the sample processing object in the repertoire metadata for this rearrangement. If the repertoire has a single sample then this field may be empty or missing. If the repertoire has multiple samples then this field may be empty or missing if the sample cannot be differentiated or the relationship is not maintained by the data processing.
     range: string
     required: false
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   data_processing_id:
     name: data_processing_id
     description: Identifier to the data processing object in the repertoire metadata for this rearrangement. If this field is empty than the primary data processing object is assumed.
     range: string
     required: false
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   rearrangement_id:
     name: rearrangement_id
     description: Identifier for the Rearrangement object. May be identical to sequence_id, but will usually be a universally unique record locator for database applications.

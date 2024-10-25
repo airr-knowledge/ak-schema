@@ -24,7 +24,9 @@ slots:
     description: Unique ID assigned by study registry such as one of the International Nucleotide Sequence Database Collaboration (INSDC) repositories.
     range: string
     required: true
-    annotations: true
+    annotations:
+      nullable: true
+      identifier: true
   study_title:
     name: study_title
     description: Descriptive study title
