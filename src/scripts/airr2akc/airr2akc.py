@@ -433,13 +433,18 @@ def getAllSlotsList(table):
 def getRange(field_dict):
     if 'airr_format' in field_dict and field_dict['airr_format'] in ('ontology', 'controlled_vocabulary'):
         # Ontologies & controlled vocabularies have the enum camel case object as the range
-        return convertCamelCase(field_dict['airr'])
+        range = convertCamelCase(field_dict['airr'])
     elif 'airr_array_schema' in field_dict:
-        return field_dict['airr_array_schema']
+        range = field_dict['airr_array_schema']
     elif 'airr_type' in field_dict:
-        return field_dict['airr_type']
+        range = field_dict['airr_type']
     else:
         raise ValueError(f"Could not identify range for field dict: {field_dict}")
+
+    range = "float" if range == "number" else range
+
+    return range
+
 
 
 def getSlot(field_dict):

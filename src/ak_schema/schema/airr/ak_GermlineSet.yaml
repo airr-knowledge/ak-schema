@@ -61,7 +61,7 @@ slots:
   release_version:
     name: release_version
     description: Version number of this record, allocated automatically
-    range: number
+    range: float
     required: true
     annotations:
       nullable: true

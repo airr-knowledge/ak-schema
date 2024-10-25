@@ -457,21 +457,21 @@ slots:
   v_score:
     name: v_score
     description: Alignment score for the V gene.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   v_identity:
     name: v_identity
     description: Fractional identity for the V gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   v_support:
     name: v_support
     description: V gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the V gene assignment as defined by the alignment tool.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
@@ -485,21 +485,21 @@ slots:
   d_score:
     name: d_score
     description: Alignment score for the first or only D gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   d_identity:
     name: d_identity
     description: Fractional identity for the first or only D gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   d_support:
     name: d_support
     description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the first or only D gene as defined by the alignment tool.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
@@ -513,21 +513,21 @@ slots:
   d2_score:
     name: d2_score
     description: Alignment score for the second D gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   d2_identity:
     name: d2_identity
     description: Fractional identity for the second D gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   d2_support:
     name: d2_support
     description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the second D gene as defined by the alignment tool.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
@@ -541,21 +541,21 @@ slots:
   j_score:
     name: j_score
     description: Alignment score for the J gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   j_identity:
     name: j_identity
     description: Fractional identity for the J gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   j_support:
     name: j_support
     description: J gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the J gene assignment as defined by the alignment tool.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
@@ -569,21 +569,21 @@ slots:
   c_score:
     name: c_score
     description: Alignment score for the C gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   c_identity:
     name: c_identity
     description: Fractional identity for the C gene alignment.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true
   c_support:
     name: c_support
     description: C gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the C gene assignment as defined by the alignment tool.
-    range: number
+    range: float
     required: false
     annotations:
       nullable: true

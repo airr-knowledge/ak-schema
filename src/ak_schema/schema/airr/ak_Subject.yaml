@@ -61,14 +61,14 @@ slots:
   age_min:
     name: age_min
     description: Specific age or lower boundary of age range.
-    range: number
+    range: float
     required: true
     annotations:
       nullable: true
   age_max:
     name: age_max
     description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
-    range: number
+    range: float
     required: true
     annotations:
       nullable: true

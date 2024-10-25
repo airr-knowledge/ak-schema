@@ -57,7 +57,7 @@ slots:
   value:
     name: value
     description: Level at which the property was observed in the experiment (non-normalized).
-    range: number
+    range: float
     required: true
     annotations:
       nullable: true

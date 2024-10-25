@@ -52,7 +52,7 @@ slots:
   collection_time_point_relative:
     name: collection_time_point_relative
     description: Time point at which sample was taken, relative to `Collection time event`
-    range: number
+    range: float
     required: true
     annotations:
       nullable: true

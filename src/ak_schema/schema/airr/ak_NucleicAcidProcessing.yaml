@@ -31,7 +31,7 @@ slots:
   template_amount:
     name: template_amount
     description: Amount of template that went into the process
-    range: number
+    range: float
     required: true
     annotations:
       nullable: true
