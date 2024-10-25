@@ -9,8 +9,9 @@ classes:
     class_uri: UBERON:0002405 # immune system
 
   Chain:
-    is_a: NamedThing
+    is_a: AKObject
     slots:
+      - complete_vdj
       - sequence
       - sequence_aa
       - chain_type
@@ -30,7 +31,8 @@ classes:
       - cdr3_end
 
   TCellReceptor:
-    is_a: NamedThing
+    abstract: true
+    is_a: AKObject
     class_uri: GO:0042101
 
   AlphaBetaTCR:
@@ -48,13 +50,18 @@ classes:
       - TRD_chain
 
   BCellReceptor:
-    is_a: NamedThing
+    is_a: AKObject
     slots:
       - IGH_chain
       - IGK_chain
       - IGL_chain
 
 slots:
+  complete_vdj:
+    name: complete_vdj
+    description: Complete VDJ flag.
+    range: boolean
+
   sequence:
     name: sequence
     description: Nucleotide sequence.
