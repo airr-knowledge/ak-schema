@@ -4,5 +4,4 @@ name: ak-schema
 
 
 imports:
-  - airr/ak_slot_Study
-  - airr/ak_enum_Study
+  - airr/ak_Study
