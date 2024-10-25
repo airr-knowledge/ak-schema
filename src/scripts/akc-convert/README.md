@@ -22,7 +22,7 @@ curl -H 'content-type: application/json' -d '{"filters":{"op":"=", "content": {"
 
 Convert the data to LinkML using the AKC schema.
 
-python dataloader.py -v --repertoire -f covid19-1-8.json   --mapfile AIRR-iReceptorMapping-v1.4-2024-07-30.txt
+python dataloader.py -v --repertoire -f ADC/covid19-1-1.json --mapfile ./config/AIRR-iReceptorMapping.txt
 
 AIRR mapping file is custom at the moment from the AKC branch in github.
 
