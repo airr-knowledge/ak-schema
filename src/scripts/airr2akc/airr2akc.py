@@ -424,13 +424,6 @@ def getEnumDict(field_dict):
     return enum_dict
 
 
-def getAllEnumsDict(table):
-    enums_dict = dict()
-
-    for field_dict in table.values():
-        enums_dict.update(getEnumDict(field_dict))
-
-    return enums_dict if len(enums_dict) > 0 else None
 
 
 def getAllSlotsList(table):
@@ -469,24 +462,22 @@ def getSlot(field_dict):
     return {field_dict['airr']: slot_params}
 
 
-def getAllSlotsDict(table):  # todo if all in one file, combine this with getAllEnumsDict
-    slots_dict = dict()
-
-    for field_dict in table.values():
-        slots_dict.update(getSlot(field_dict))
-
-    return slots_dict
-
-
 def constructYamlOutputDict(table):
     yaml_output_dict = {"id": "https://github.com/airr-knowledge/ak-schema",
                    "name": "ak-schema"}
 
-    yaml_output_dict["classes"] = {options.airr_block: {"slots": getAllSlotsList(table)}}
-    yaml_output_dict["slots"] = getAllSlotsDict(table)
+    slots_list = getAllSlotsList(table)
+    slots_dict = dict()
+    enums_dict = dict()
 
-    enums_dict = getAllEnumsDict(table)
-    if enums_dict is not None:
+    for field_dict in table.values():
+        slots_dict.update(getSlot(field_dict))
+        enums_dict.update(getEnumDict(field_dict))
+
+    yaml_output_dict["classes"] = {options.airr_block: {"slots": slots_list}}
+    yaml_output_dict["slots"] = slots_dict
+
+    if len(enums_dict) > 0:
         yaml_output_dict["enums"] = enums_dict
 
     return yaml_output_dict
