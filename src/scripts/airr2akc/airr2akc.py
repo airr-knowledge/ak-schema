@@ -12,7 +12,7 @@ from airr.schema import Schema
 
 def processField(field, field_spec, block, required_fields, field_path,
                     airr_class, airr_api_query, airr_api_response,
-                    labels, table, verbose, recursive=False):
+                    labels, table, verbose):
 
         # Get the required fields for this schema object
         if verbose:
@@ -62,47 +62,29 @@ def processField(field, field_spec, block, required_fields, field_path,
         # of basic types (integer, string) then we do want to add it to the field table.
         if 'type' in field_spec and field_spec['type'] == 'array':
             if '$ref' in field_spec['items']:
-                if recursive:
-                    append = False
-                else:
-                    field_dict['airr_is_array'] = True
-                    label = 'airr_array_schema'
-                    if not label in labels:
-                        labels.append(label)
-                    # Add the value of the $ref object to the dictionary
-                    schema_ref = field_spec['items']['$ref']
-                    schema = schema_ref.split('/')[1]
-                    field_dict[label] = schema
-                    append = True
+                append = True
+                field_dict['airr_is_array'] = True
+                label = 'airr_array_schema'
+                if not label in labels:
+                    labels.append(label)
+                # Add the value of the $ref object to the dictionary
+                schema_ref = field_spec['items']['$ref']
+                schema = schema_ref.split('/')[1]
+                field_dict[label] = schema
                 if verbose:
                     print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
             elif 'allOf' in field_spec['items'] or ('type' in field_spec['items'] and field_spec['items']['type'] == 'object'):
-                if recursive:
-                    append = False
-                else:
-                    append = True
-                if verbose:
-                    print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
+                append = True
             else:
+                append = True
                 field_dict['airr_is_array'] = True
+
         # If the field is an object then we recurse on the object's fields and we don't
         # want to add this field to our field table.
         if 'type' in field_spec and field_spec['type'] == 'object':
             append = False
             if verbose:
                 print("**** processField: No append for objects - %s\n"%(field_tag))
-
-        # Finally, if append == True then we are processing a field and we need to add
-        # it to the field table.
-        if append:    
-            # Add the field to the table.
-            if verbose:
-                print("**** processField: Adding dict for field_tag = %s\n"%(field_tag))
-                print("**** processField: Adding dict for ir_adc_api_query = %s\n"%(field_dict['ir_adc_api_query']))
-            table[field_tag] = field_dict
-        else:
-            if verbose:
-                print("**** processField: NOT Adding dict for field_tag = %s\n"%(field_tag))
 
         # Iterate over the fields specs as required to set the fields attributes.
         for k,v in field_spec.items():
@@ -175,47 +157,15 @@ def processField(field, field_spec, block, required_fields, field_path,
             else:
                 # We are processing normal YAML spec fields.
                 if k == '$ref':
-                    # Handle a $ref field to another object
+                    # If the $ref is to an Ontology, mark the type as ontology.
+                    # If the $ref is to another object we don't do anything here.
                     if v == "#/Ontology":
-                        # If the $ref is to an Ontology, mark the type as ontology.
                         field_dict["airr_type"] = "ontology"
                         # We want to add on a .value qualifier to the ADC API variable
                         # names as we return the value component of the ontology in
                         # the API.
                         field_dict['ir_adc_api_query'] = field_dict['ir_adc_api_query'] + '.label'
                         field_dict['ir_adc_api_response'] = field_dict['ir_adc_api_response'] + '.label'
-                        # For ontology fields, we need to create a second entry for
-                        # the id component of the ontology.
-                        # Create a new dictionary entry for the id field.
-                        #id_dict = dict()
-                        # Set up the basic field mappings for the iReceptor fields.
-                        #id_dict['airr'] = field + "_id"
-                        #id_dict['ir_class'] = airr_class
-                        #id_dict['ir_subclass'] = block
-                        # Create the .id qualifier for the API names.
-                        #id_dict['ir_adc_api_query'] = airr_api_query + field + ".id"
-                        #id_dict['ir_adc_api_response'] = airr_api_response + field + ".id"
-                        #id_dict['airr_is_array'] = False
-                        #id_dict['airr_type'] = "string"
-                        #id_field_tag = id_dict['airr']+airr_class+block
-                        #id_field_tag = id_dict['ir_adc_api_query']+"_"+airr_class+"_"+block
-                        #if verbose:
-                        #    print("**** processField: Adding dict for field_tag = %s\n"%(field_tag))
-                        #    print("**** processField: Adding dict for ir_adc_api_query = %s\n"%(id_dict['ir_adc_api_query']))
-                        #table[id_field_tag] = id_dict
-                    else:
-                        # If the $ref is to another object, then handle that object by
-                        # recursion. We get the object to use from the name.
-                        ref_array = v.split("/")
-                        new_schema_name = ref_array[1]
-                        # We recurse on the new schema block, making sure that we track
-                        # that we are processing a new object and that the API field 
-                        # references need to reference the hierarchy correctly. 
-                        if recursive:
-                            labels, table = extractBlock(new_schema_name, airr_class,
-                                             airr_api_query+field_dict['airr']+'.',
-                                             airr_api_response+field_dict['airr']+'.',
-                                             labels, table, verbose, recursive)
                 elif k == 'items':
                     # Handle a list of items, meaning we have an array. In the AIRR
                     # specification we can have an array of $ref objects or an
@@ -236,35 +186,9 @@ def processField(field, field_spec, block, required_fields, field_path,
                                                       airr_class,
                                                       airr_api_query+field+".",
                                                       airr_api_response+field+".0.",
-                                                      labels, table, verbose, recursive)
+                                                      labels, table, verbose)
                     for item_key, item_value in v.items():
-                        if item_key == '$ref':
-                            # The item is a $ref, get the sub-object and process it.
-                            ref_array = item_value.split("/")
-                            new_schema_name = ref_array[1]
-                            # Note the API response has a .0. in it because this
-                            # is an array.
-                            if recursive:
-                                labels, table = extractBlock(new_schema_name, airr_class,
-                                            airr_api_query+field_dict['airr']+'.',
-                                            airr_api_response+field_dict['airr']+'.0.',
-                                            labels, table, verbose, recursive)
-                        elif item_key == 'allOf':
-                            # The item is an allOf so process each element.
-                            for ref_dict in item_value:
-                                # The item is a $ref, get the sub-object and process it.
-                                if '$ref' in ref_dict:
-                                    ref_array = ref_dict['$ref'].split("/")
-                                    new_schema_name = ref_array[1]
-                                    # Note the API response has a .0. in it because
-                                    # this is an array.
-                                    if recursive:
-                                        labels, table = extractBlock(new_schema_name,
-                                               airr_class,
-                                               airr_api_query+field_dict['airr']+'.',
-                                               airr_api_response+field_dict['airr']+'.0.',
-                                               labels, table, verbose, recursive)
-                        elif item_key == 'type':
+                        if item_key == 'type':
                             # This is the special case of handling a "type" for an "array". 
                             # The only arrays that have a type are array fields. If this
                             # is the case, we want to set the type of the array field.
@@ -327,7 +251,7 @@ def processField(field, field_spec, block, required_fields, field_path,
                                                   airr_class,
                                                   airr_api_query+field+".",
                                                   airr_api_response+field+".",
-                                                  labels, table, verbose, recursive)
+                                                  labels, table, verbose)
                 else:
                     if verbose:
                         print("**** processField: key, value = %s,%s\n"%(k,v))
@@ -342,12 +266,24 @@ def processField(field, field_spec, block, required_fields, field_path,
                         value = v.strip()
                     field_dict[label] = value
 
+        # Finally, if append == True then we are processing a field and we need to add
+        # it to the field table.
+        if append:    
+            # Add the field to the table.
+            if verbose:
+                print("**** processField: Adding dict for field_tag = %s\n"%(field_tag))
+                print("**** processField: Adding dict for ir_adc_api_query = %s\n"%(field_dict['ir_adc_api_query']))
+            table[field_tag] = field_dict
+        else:
+            if verbose:
+                print("**** processField: NOT Adding dict for field_tag = %s\n"%(field_tag))
+                
         # We are done, return the labels and the table.
         return labels, table
 
-# Recursive function to extract fields from a AIRR YAML specification into a
-# flat table. The function processes all $ref objects recursively to build up
-# a table of entries with all fields from all sub-objects in the YAML definition.
+# Function to extract fields from a AIRR YAML specification into a
+# flat table. The function processes all $ref objects to build up
+# a table of entries with all fields in the YAML definition.
 #
 # Parameters:
 # - block: The schema block to extract.
@@ -373,7 +309,7 @@ def processField(field, field_spec, block, required_fields, field_path,
 # - table: An array of dictionaries, based on the table provided but with
 # new rows added as per the fields that were found in the current object.
 
-def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, table, verbose, recursive=False):
+def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, table, verbose):
 
     if verbose:
         print("#### extractBlock %s\n"%(block))
@@ -381,8 +317,8 @@ def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, t
     try:
         schema = Schema(block)
     except Exception as e:
+        # Print an error message and exit
         print(e)
-        # Return an empty set of labels and an empty dictionary.
         sys.exit(1)
 
     if verbose:
@@ -400,7 +336,7 @@ def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, t
             print("#### extractBlock: field spec %s\n"%(field_spec))
         labels, table = processField(field, field_spec, block, required_fields,"",
                                      airr_class, airr_api_query, airr_api_response,
-                                     labels, table, verbose, recursive)
+                                     labels, table, verbose)
 
     # We are done, return the labels and the table.
     return labels, table
@@ -414,12 +350,6 @@ def getArguments():
 
     # The block to process
     parser.add_argument("airr_block")
-    # Flag as to whether to process the block recursively
-    parser.add_argument(
-        "-r",
-        "--recursive",
-        action="store_true",
-        help="Process internally referenced objects recursively.")
     # Flag as to whether we generate enums or the basic slots
     parser.add_argument(
         "-e",
@@ -451,75 +381,41 @@ if __name__ == "__main__":
     # that is processed.
     table = collections.OrderedDict()
     # Create an initial set of lables for the mapping file. These are mappings
-    # that don't exist in the YAML file but are needed in the mapping file.
+    # that don't exist in the YAML file but are needed for translation.
+    # TODO: Some of the labels below are not required for AKC LinkML generation,
+    # some of these are holdovers from the original akc_flatten code. Labels that
+    # are no longer needed can be removed.
     labels = ['airr', 'airr_spec', 'airr_required', 'ir_class', 'ir_subclass',
               'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
     initial_labels = ['airr', 'ir_class', 'ir_subclass',
                       'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
-    # Recursively process the block provided. This will recursively process any
+    # Process the block provided. This will process any
     # $ref entries in the YAML and build correct entries for each field.
+    # After completion, the labels array will be expanded with any new attribute
+    # labels, and the table will be an array of key, value pairs, one for each
+    # field/slot with the value a dictionary that contains relevant info to 
+    # generate the AKC LinkML slots and enums.
     labels, table = extractBlock(options.airr_block, options.airr_block,
-                                 '', '', labels, table,
-                                 options.verbose, options.recursive)
+                                 '', '', labels, table, options.verbose)
 
-    # We need to do some special processing for our ontologies. The _id field of 
-    # the ontology does not have an entry in the spec, so we need to copy a bunch
-    # of values from the _value field to the _id field.
-    for field, field_dict in table.items():
-        #if field_dict['airr_type'] == 'ontology':
-        if False:
-            # Get the field name and generate the ontology id field name
-            field = field_dict['airr']
-            id_field = field + "_id"
-            label_base_tag = field_dict['ir_adc_api_query']
-            id_base_tag = label_base_tag.replace("label", "id")
-            id_field_tag = id_base_tag+"_"+field_dict['ir_class']+"_"+field_dict['ir_subclass']
-            if options.verbose:
-                print("$$$$ Ontology term %s, %s, %s"%(field, id_field, id_field_tag))
-                #print(table)
-            # We want this field to be type string not ontology.
-            field_dict['airr_type'] = 'string'
-            # If the id field is in the table, update the id fields column values
-            if id_field_tag in table:
-                if options.verbose:
-                    print("$$$$ Ontology ID field %s"%(id_field))
-                # Get the dictionary for the id_field
-                id_dict = table[id_field_tag]
-                # For each column in the value field, copy it to the id field. Note
-                # we do this for all of the generated fields from the spec, not the
-                # special fields that are generated.
-                for column in field_dict:
-                    # Initial labels contains the special fields, we don't want
-                    # to overwrite these.
-                    if not column in initial_labels:
-                        id_dict[column] = field_dict[column]
-                        # We want to add some info to the ID description/name/title fields.
-                        if column == "airr_description" or column == "airr_name" or column == "airr_title":
-                            id_dict[column] = id_dict[column] + " (Ontology ID)"
-                # We want the type of the id field to be string.
-                id_dict['airr_type'] = 'string'
-                # We want the airr_spec field to be TRUE.
-                id_dict['airr_spec'] = True
-                # Finally, we store the updated dict in the table.
-                if options.verbose:
-                    print("$$$$ Updating dict for field_tag = %s\n"%(id_field_tag))
-                table[id_field_tag] = id_dict
-
-    # Once we have our table built, we need to print it out.
     if options.verbose:
-        # Print out the header labels.
+        # Print out the header labels if in verbose mode.
         for label in labels:
             print(label,end='\t')
         print("")
 
-    # Now print out the definition of the object and its slots
+    # Print out the AKC LinkML header
+    print('id: https://github.com/airr-knowledge/ak-schema')
+    print('name: ak-schema')
+    print('')
+
+    # Print out the appropriate class or enum block.
     if not options.enums:
-        print('id: https://github.com/airr-knowledge/ak-schema')
-        print('name: ak-schema')
-        print('')
         print('classes:')
+        # Class block has a list of the slots, which are the AIRR fields.
         print('  %s:'%(options.airr_block))
         print('    slots:')
+        # Iterate over the fields and print them out
         for field, field_dict in table.items():
             if 'airr' in field_dict:
                 if not options.enums:
@@ -528,17 +424,26 @@ if __name__ == "__main__":
         print('')
         print('slots:')
     else:
-        print('id: https://github.com/airr-knowledge/ak-schema')
-        print('name: ak-schema')
-        print('')
         print('enums:')
 
-    # Now print out the definition for each slot
+    # Now print out the definition for each slot by iterating over the table.
     for field, field_dict in table.items():
         # For each row, generate a LinkML specification for the field
+        # Each field has a dictionary that is structured as follows.
+        # {'airr': 'study_id', 'airr_spec': True, 'airr_required': True, 'ir_class': 'Study',
+        #  'ir_subclass': 'Study', 'ir_adc_api_query': 'study_id', 'ir_adc_api_response': 'study_id',
+        #  'airr_is_array': False, 'airr_nullable': True, 'airr_type': 'string',
+        #  'airr_description': 'Unique ID assigned by study registry ...', 'airr_title': 'Study ID',
+        #  'airr_example': 'PRJNA001', 'airr_identifier': True, 'airr_miairr': True,
+        #  'airr_adc-query-support': True, 'airr_set': 1, 'airr_subset': 'study', 'airr_name': 'Study ID'}
+        #
+        # This should be sufficient for each field to build an appropriate AKC LinkML object.
         if 'airr' in field_dict:
+            # Handle the enum output case
             if options.enums:
+                # Convert the field to a camel case name as per LinkML standards
                 range_name = convertCamelCase(field_dict['airr'])
+                # If the field is an enum field with a controlled vocabulary, generate the enum
                 if 'airr_enum' in field_dict and 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
                     print('%s:'%(range_name))
                     print('  name: %s'%(range_name))
@@ -547,6 +452,7 @@ if __name__ == "__main__":
                     enum_array = field_dict['airr_enum'].split(',')
                     for enum_str in enum_array:
                         print('    %s:'%(enum_str))
+                # If the field is an onotology field generate the enum using the LinkML ontology description.
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
                     print('  %s:'%(range_name))
                     print('    name: %s'%(range_name))
@@ -564,9 +470,11 @@ if __name__ == "__main__":
                         print('      text: %s'%(ontology_example_array[1]))
                         print('      meaning: %s'%(ontology_example_array[0]))
 
+            # Handle the slot output case.
             else:
                 if options.verbose:
                     print(field_dict)
+                # Slot name and description fields
                 print('  %s:'%(field_dict['airr']))
                 print('    name: %s'%(field_dict['airr']))
                 if 'airr_description' in field_dict:
@@ -574,18 +482,22 @@ if __name__ == "__main__":
 
                 # Handle the range, this is a bit complex depending on the field.
                 if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
+                    # Ontologies have the enum camel case object as the range
                     print('    range: %s'%(convertCamelCase(field_dict['airr'])))
                 elif 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
+                    # Controlled vocabularies have the enum camel case object as the range
                     range_name = convertCamelCase(field_dict['airr'])
                     print('    range: %s'%(range_name))
                 elif 'airr_is_array' in field_dict and field_dict['airr_is_array'] == True:
+                    # Arrays can have an object and require the multivalued attribute
                     if 'airr_array_schema' in field_dict:
                         print('    range: %s'%(field_dict['airr_array_schema']))
                     print('    multivalued: true')
                 elif 'airr_type' in field_dict:
+                    # Just a normal field, range is the type
                     print('    range: %s'%(field_dict['airr_type']))
 
-                # Print out some x-airr attributes if required.
+                # Print out some x-airr attributes such as required, nullable, and identifier
                 if 'airr_required' in field_dict:
                     print('    required: %s'%(field_dict['airr_required']))
                 if 'airr_nullable' in field_dict:
@@ -596,15 +508,6 @@ if __name__ == "__main__":
                 print('')
 
         
-        #for label in labels:
-        #    # If the label is in the row, print the info, otherwise print an
-        #    # empty tab column. The end of our print isn't a new line, it is a
-        #    # tab character, so we stay on the same row.
-        #    if label in field_dict:
-        #        print(field_dict[label], end='\t')
-        #    else:
-        #        print("", end='\t')
-
     # We are done, return success
     sys.exit(0)
 

@@ -4,6 +4,7 @@ import numpy as np
 import json
 import os
 import sys
+import uuid
 from datetime import datetime
 from datetime import timezone
 from parser import Parser
@@ -245,6 +246,7 @@ class Repertoire(Parser):
                         akc_object = akc_dict[airr_link_value]
                     else:
                         akc_object = globals()[akc_class]('')
+                        akc_object['akc_id'] = str(uuid.uuid4())
 
                     # Check to see if the field exists. If so then check the
                     # value. They should be the same. If not generate an error message.
