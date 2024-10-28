@@ -78,32 +78,91 @@ class AIRRRepertoire(Repertoire):
             investigation_dict = self.generateAKCInvestigation(repertoire_dict, investigation_dict, akc_class_list) 
 
         
+        # Now we need to resolve the cross references between objects.
+
         # Get the column of values from the akc_type column. We only want the
         # Repertoire related fields.
         type_column = self.getAIRRMap().getIRAKCMapColumn('akc_form')
         # Get a boolean column that flags columns of interest. Exclude nulls.
+        # We want only those rows where the type_column is "Class" as this
+        # indicates that the field is a reference field to another class of object
         fields_of_interest = np.where(type_column == 'Class',True, False)
-        # Afer the following airr_fields contains N columns (e.g. iReceptor, AIRR)
-        # that contain the AIRR Repertoire mappings.
-        mymap = {"Participant":"adc_study_id", "LifeEvent":"adc_sample_id"}
+        # Afer the following akc_class_fields contains N columns (e.g. iReceptor, AIRR)
+        # that contain the AKC class fields.
         akc_class_fields = self.getAIRRMap().getIRAKCRows(fields_of_interest)
+        # A utility mapping dictionary that tells us which ADC field we use to link
+        # AKC objects to their reference objects.
+        class_map = {
+                "Investigation" : {
+                    "participants" : {"class" : "Participant", "field" : "adc_study_id"},
+                    "documents" : {"class" : "Reference", "field" : "adc_study_id"},
+                    "assays" : {"class" : "Assay", "field" : "adc_study_id"},
+                    "conclusions" : {"class" : "Conclusion", "field" : "adc_study_id"},
+                    "simulations" : {"class" : "Simulation", "field" : "adc_study_id"}
+                    },
+                "LifeEvent" : {
+                    "participant" : {"class" : "Participant", "field" : "adc_subject_id"},
+                    },
+                "Specimen" : {
+                    "life_event" : {"class" : "LifeEvent", "field" : "adc_sample_id"},
+                    }
+                }
+        # For every field that refers to another class, process the field.
+        # For example, the particpants field in the Investigation class is an
+        # array of IDs that point to the participants in the Investigation. We
+        # need to build this array of IDs.
         for index, row in akc_class_fields.iterrows():
-            print('class = %s, field = %s, form = %s, type = %s, array = %s'%(
-                    row['akc_class'], row['akc_field'], row['akc_form'], row['akc_type'], row['akc_is_array']))
+            if self.verbose():
+                print('**** Processing class row: class = %s, field = %s, form = %s, type = %s, array = %s'%(
+                        row['akc_class'], row['akc_field'], row['akc_form'], row['akc_type'], row['akc_is_array']))
+            # Source class is the class of object where the ID comes from (e.g. Participant).
             akc_source_class = row['akc_type']
+            # Change class is the class of object that the ID reference is added to (e.g. Investigation).
             akc_change_class = row['akc_class']
+            # Get the field we are changing
+            akc_change_field = row['akc_field']
+            print("AKC Change Class = %s, Change Field = %s, Source Class = %s"%(akc_change_class, akc_change_field, akc_source_class))
+            # For each investigation in the top level investigation dictionary, process the investigation.
             for adc_study_id, akc_investigation in investigation_dict.items():
-                akc_change_class_dict = akc_investigation[akc_change_class]
-                # If our investigation has the source class, process it.
-                if akc_source_class in akc_investigation:
+                if self.verbose():
+                    print('Processing investigation: %s'%(adc_study_id))
+                # If our investigation has the change class and the source class, process it.
+                if akc_change_class in akc_investigation and akc_source_class in akc_investigation:
+                    if self.verbose():
+                        print('Change class %s and source class %s in investigation: %s'%(akc_change_class, akc_source_class, adc_study_id))
+                    # Get the dictionary for the class we are changing.
+                    akc_change_class_dict = akc_investigation[akc_change_class]
+                    # Get the dictionary for the class the link is coming from.
                     akc_source_class_dict = akc_investigation[akc_source_class]
-                    for adc_id, class_instance in akc_source_class_dict.items():
-                        link_key = mymap[akc_source_class]
-                        link_value = class_instance[link_key]
-                        print('Setting %s field %s in %s to %s'%(akc_change_class, row['akc_field'],link_value,class_instance['akc_id']))
-                        if link_value in akc_change_class_dict:
-                            akc_change_class_instance = akc_change_class_dict[link_value]
-                            akc_change_class_instance[row['akc_field']] = class_instance['akc_id']
+                    
+                    # For each instance that might need to be changed, process it.
+                    for change_adc_id, change_class_instance in akc_change_class_dict.items():
+                        # If we have a mapping for these classes and fields, continue
+                        if akc_change_class in class_map and akc_change_field in class_map[akc_change_class]:
+                            if self.verbose():
+                                print("    Processing change class instance = %s"%(change_adc_id))
+                            link_info = class_map[akc_change_class][akc_change_field]
+                            link_key = link_info['field']
+                            link_value = change_class_instance[link_key]
+                            if self.verbose():
+                                print("    Got a class map, link field = %s"%(link_key))
+                                print("    Got a class map, link value = %s"%(link_value))
+                            #if link_key in source_class_instance:
+                            # For each potential source of change, process it.
+                            for source_adc_id, source_class_instance in akc_source_class_dict.items():
+                                if self.verbose():
+                                    print("        Processing source class instance = %s"%(source_adc_id))
+                                # If the link key is in the source class, and the source class link key is
+                                # the same as the current link value, then we need to set the field.
+                                if link_key in source_class_instance and source_class_instance[link_key] == link_value:
+
+                                    print('        Setting %s field %s in %s to %s (from %s,%s), multivalue = %s'%(akc_change_class, row['akc_field'],change_adc_id,source_class_instance['akc_id'],akc_source_class, source_adc_id, row['akc_is_array']))
+                                    if row['akc_is_array'] == True:
+                                        change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
+                                    else:
+                                        change_class_instance[row['akc_field']] = source_class_instance['akc_id']
+                        else:
+                            print("Warning: No mapping for %s/%s"%(akc_change_class, akc_change_field))
                     
                 
 
