@@ -55,19 +55,19 @@ class Repertoire(Parser):
         airr_link_value = None
         if akc_class == 'Investigation':
             if 'study_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['study_id']['value']
+                airr_link_value = 'Investigation_' + field_dict['airr_subclass'] + '_' + repertoire_dict['study_id']['value']
         elif akc_class == 'Reference':
             if 'study_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['study_id']['value']
+                airr_link_value = 'Reference_' + field_dict['airr_subclass'] + '_' + repertoire_dict['study_id']['value']
         elif akc_class == 'Participant':
             if 'subject_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['subject_id']['value']
+                airr_link_value = 'Participant_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value']
         elif akc_class == 'Specimen':
             if 'sample_id' in repertoire_dict and 'subject_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
+                airr_link_value = 'Specimen_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
         elif akc_class == 'LifeEvent':
             if 'subject_id' in repertoire_dict:
-                airr_link_value = 'LifeEvent_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value']
+                airr_link_value = 'LifeEvent_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
         elif akc_class == 'ImmuneExposure':
             if 'sample_id' in repertoire_dict:
                 airr_link_value = 'ImmuneExposure_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value']
