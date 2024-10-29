@@ -728,9 +728,16 @@ class Parser:
                     if len(value) > 1:
                         if self.verbose():
                             print("Info: Processing multi element array key %s."%(key))
-                    for element in value:
-                        for sub_key, sub_value in element.items():
-                            self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
+                    # We should only have arrays of objects here. Special case AIRR
+                    # arrays are handled above. So we should only have an array of 
+                    # dictionaries here.
+                    if isinstance(value[0], dict):
+                        for element in value:
+                            for sub_key, sub_value in element.items():
+                                self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
+                    else:
+                        print("Warning: Skipping non-AIRR multi element array %s."%(key))
+
         return dictionary
 
 
