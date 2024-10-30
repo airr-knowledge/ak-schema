@@ -102,11 +102,21 @@ class AIRRRepertoire(Repertoire):
                     "conclusions" : {"class" : "Conclusion", "field" : "adc_study_id"},
                     "simulations" : {"class" : "Simulation", "field" : "adc_study_id"}
                     },
+                "Reference" : {
+                    "investigations" : {"class" : "Investigation", "field" : "adc_study_id"},
+                    },
+                "StudyArm" : {
+                    "investigation" : {"class" : "Investigation", "field" : "adc_study_id"},
+                    },
                 "Participant" : {
                     "age_event" : {"class" : "LifeEvent", "field" : "adc_subject_id"},
+                    "study_arm" : {"class" : "StudyArm", "field" : "adc_study_group_description"},
                     },
                 "LifeEvent" : {
                     "participant" : {"class" : "Participant", "field" : "adc_subject_id"},
+                    },
+                "ImmuneExposure" : {
+                    "life_event" : {"class" : "LifeEvent", "field" : "adc_subject_id"},
                     },
                 "Specimen" : {
                     "life_event" : {"class" : "LifeEvent", "field" : "adc_sample_id"},
@@ -162,7 +172,7 @@ class AIRRRepertoire(Repertoire):
                                 # the same as the current link value, then we need to set the field.
                                 if link_key in source_class_instance and source_class_instance[link_key] == link_value:
 
-                                    print('        Setting %s field %s in %s to %s (from %s,%s), link value = %s,  multivalue = %s'%(akc_change_class, row['akc_field'],change_adc_id,source_class_instance['akc_id'],akc_source_class, source_adc_id, link_value, row['akc_is_array']))
+                                    print('        %s.%s in %s = %s (from %s,%s), link=%s'%(akc_change_class, row['akc_field'],change_adc_id,source_class_instance['akc_id'],akc_source_class, source_adc_id, link_value))
                                     if row['akc_is_array'] == True:
                                         change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
                                     else:

@@ -53,7 +53,8 @@ class Repertoire(Parser):
         # Get the link/key fields for the AKC classes.
         # TODO: This should be in the config file and not hardcoded here
         airr_link_value = None
-        prefix = akc_class + '_' + airr_class
+        #prefix = akc_class + '_' + airr_class
+        prefix = akc_class 
         if akc_class == 'Investigation':
             if 'study_id' in repertoire_dict:
                 airr_link_value = prefix + '_' + repertoire_dict['study_id']['value']
@@ -70,8 +71,11 @@ class Repertoire(Parser):
             if 'subject_id' in repertoire_dict:
                 airr_link_value = prefix + '_' + repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
         elif akc_class == 'ImmuneExposure':
-            if 'sample_id' in repertoire_dict:
+            if 'subject_id' in repertoire_dict:
                 airr_link_value = prefix + '_' + repertoire_dict['subject_id']['value']
+        elif akc_class == 'StudyArm':
+            if 'study_group_description' in repertoire_dict:
+                airr_link_value = prefix + '_' + repertoire_dict['study_group_description']['value']
             
         if airr_link_value == None:
             print('Warning: Could not link class %s, skipping'%(akc_class))
@@ -206,6 +210,12 @@ class Repertoire(Parser):
             print('ERROR: Could not find subject_id field, skipping')
             return investigation_dict
 
+        if 'study_group_description' in repertoire_dict:
+            study_group_description = repertoire_dict['study_group_description']['value']
+        else:
+            print('ERROR: Could not find study_group_description field, skipping')
+            return investigation_dict
+
 
         # Check to see if the Investigation with that ID is in the dictionary.
         if study_id in investigation_dict:
@@ -288,73 +298,39 @@ class Repertoire(Parser):
                                     print('Info: Creating new field %s.%s, value = %s'%(akc_class,value['akc_field'],value['value']))
                                 akc_object[value['akc_field']] = value['value']
 
-                    #if value['akc_form'] == "Class": 
-                    #    class_link_value = self.getAIRRUniqueLink(repertoire_dict, value['airr_subclass'], value['akc_type'])
-                    #    akc_class_dict = investigation[value['akc_type']]
-                    #    # Check to see if we have seen instance labeled with airr_link_value
-                    #    # before. If not, create a new object with the link value as the label.
-                    #    if class_link_value in akc_class_dict:
-                    #        akc_class_object = akc_dict[airr_link_value]
-                    #    else:
-                    #        akc_class_object = globals()[akc_class]('')
-                    #        akc_class_object['akc_id'] = str(uuid.uuid4())
-                    #        akc_class_object['adc_repertoire_id'] = repertoire_id
-                    #        akc_class_object['adc_sample_processing_id'] = sample_processing_id
-                    #        akc_class_object['adc_data_processing_id'] = data_processing_id
-                    #        akc_class_object['adc_study_id'] = study_id
-                    #        akc_class_object['adc_subject_id'] = subject_id
-                    #        akc_class_object['adc_sample_id'] = sample_id
-                    #        akc_class_object['adc_link_tag'] = class_link_value
-                    #        akc_class_dict[class_link_value] = akc_class_object
+                    if value['akc_form'] == "Class": 
+                        class_link_value = self.getAIRRUniqueLink(repertoire_dict, value['airr_subclass'], value['akc_type'])
+                        akc_class_dict = investigation[value['akc_type']]
+                        # Check to see if we have seen instance labeled with airr_link_value
+                        # before. If not, create a new object with the link value as the label.
+                        if class_link_value in akc_class_dict:
+                            akc_class_object = akc_dict[airr_link_value]
+                        else:
+                            akc_class_object = globals()[akc_class]('')
+                            akc_class_object['akc_id'] = str(uuid.uuid4())
+                            akc_class_object['adc_repertoire_id'] = repertoire_id
+                            akc_class_object['adc_sample_processing_id'] = sample_processing_id
+                            akc_class_object['adc_data_processing_id'] = data_processing_id
+                            akc_class_object['adc_study_id'] = study_id
+                            akc_class_object['adc_subject_id'] = subject_id
+                            akc_class_object['adc_sample_id'] = sample_id
+                            akc_object['adc_study_group_description'] = study_group_description
+                            akc_class_object['adc_link_tag'] = class_link_value
+                            akc_class_dict[class_link_value] = akc_class_object
 
-                    #        if self.verbose():
-                    #            print('Info: Creating an empty Class reference, field = %s, value = %s, type = %s, link = %s'%(value['akc_field'],value['value'], value['akc_type'], class_link_value))
+                            if self.verbose():
+                                print('Info: Creating an empty Class reference, field = %s, value = %s, type = %s, link = %s'%(value['akc_field'],value['value'], value['akc_type'], class_link_value))
                         
                     # Add a bunch of extra fields to track the key ADC fields that 
                     # might be needed later to link AKC objects together.
-                    if akc_class == 'Investigation':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_link_tag'] = airr_link_value
-                    if akc_class == 'Reference':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_link_tag'] = airr_link_value
-                    if akc_class == 'Participant':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                        akc_object['adc_link_tag'] = airr_link_value
-                    if akc_class == 'LifeEvent':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                        akc_object['adc_sample_id'] = sample_id
-                        akc_object['adc_link_tag'] = airr_link_value
-                    if akc_class == 'ImmuneExposure':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                        akc_object['adc_sample_id'] = sample_id
-                        akc_object['adc_link_tag'] = airr_link_value
-                    if akc_class == 'Specimen':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                        akc_object['adc_sample_id'] = sample_id
-                        akc_object['adc_link_tag'] = airr_link_value
+                    akc_object['adc_repertoire_id'] = repertoire_id
+                    akc_object['adc_sample_processing_id'] = sample_processing_id
+                    akc_object['adc_data_processing_id'] = data_processing_id
+                    akc_object['adc_study_id'] = study_id
+                    akc_object['adc_subject_id'] = subject_id
+                    akc_object['adc_sample_id'] = sample_id
+                    akc_object['adc_study_group_description'] = study_group_description
+                    akc_object['adc_link_tag'] = airr_link_value
                     akc_dict[airr_link_value] = akc_object
 
             # Once processing done for this investigation, reassign the investigation dictionary
