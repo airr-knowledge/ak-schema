@@ -88,7 +88,9 @@ class AIRRRepertoire(Repertoire):
         # indicates that the field is a reference field to another class of object
         fields_of_interest = np.where(type_column == 'Class',True, False)
         # Afer the following akc_class_fields contains N columns (e.g. iReceptor, AIRR)
-        # that contain the AKC class fields.
+        # that contain the AKC class fields. Note these are the fields tagged with
+        # AKC_Metadata in the ir_class column. This does not iterate over the normal
+        # AIRR mapping columns.
         akc_class_fields = self.getAIRRMap().getIRAKCRows(fields_of_interest)
         # A utility mapping dictionary that tells us which ADC field we use to link
         # AKC objects to their reference objects.
@@ -99,6 +101,9 @@ class AIRRRepertoire(Repertoire):
                     "assays" : {"class" : "Assay", "field" : "adc_study_id"},
                     "conclusions" : {"class" : "Conclusion", "field" : "adc_study_id"},
                     "simulations" : {"class" : "Simulation", "field" : "adc_study_id"}
+                    },
+                "Participant" : {
+                    "age_event" : {"class" : "LifeEvent", "field" : "adc_subject_id"},
                     },
                 "LifeEvent" : {
                     "participant" : {"class" : "Participant", "field" : "adc_subject_id"},
@@ -152,11 +157,12 @@ class AIRRRepertoire(Repertoire):
                             for source_adc_id, source_class_instance in akc_source_class_dict.items():
                                 if self.verbose():
                                     print("        Processing source class instance = %s"%(source_adc_id))
+                                #self.getAIRRUniqueLink(repertoire_dict, row['airr_subclass'],row['akc_class'])
                                 # If the link key is in the source class, and the source class link key is
                                 # the same as the current link value, then we need to set the field.
                                 if link_key in source_class_instance and source_class_instance[link_key] == link_value:
 
-                                    print('        Setting %s field %s in %s to %s (from %s,%s), multivalue = %s'%(akc_change_class, row['akc_field'],change_adc_id,source_class_instance['akc_id'],akc_source_class, source_adc_id, row['akc_is_array']))
+                                    print('        Setting %s field %s in %s to %s (from %s,%s), link value = %s,  multivalue = %s'%(akc_change_class, row['akc_field'],change_adc_id,source_class_instance['akc_id'],akc_source_class, source_adc_id, link_value, row['akc_is_array']))
                                     if row['akc_is_array'] == True:
                                         change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
                                     else:
