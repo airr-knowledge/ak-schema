@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 import os
+import sys
 import airr
+import uuid
 import numpy as np
 from repertoire import Repertoire
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
@@ -109,7 +111,7 @@ class AIRRRepertoire(Repertoire):
                     "investigation" : {"class" : "Investigation", "field" : "adc_study_id"},
                     },
                 "Participant" : {
-                    "age_event" : {"class" : "LifeEvent", "field" : "adc_subject_id"},
+                    "age_event" : {"class" : "LifeEvent", "field" : "adc_link_tag"},
                     "study_arm" : {"class" : "StudyArm", "field" : "adc_study_group_description"},
                     },
                 "LifeEvent" : {
@@ -119,7 +121,7 @@ class AIRRRepertoire(Repertoire):
                     "life_event" : {"class" : "LifeEvent", "field" : "adc_subject_id"},
                     },
                 "Specimen" : {
-                    "life_event" : {"class" : "LifeEvent", "field" : "adc_sample_id"},
+                    "life_event" : {"class" : "LifeEvent", "field" : "adc_repertoire_id"},
                     }
                 }
         # For every field that refers to another class, process the field.
@@ -151,32 +153,71 @@ class AIRRRepertoire(Repertoire):
                     akc_source_class_dict = akc_investigation[akc_source_class]
                     
                     # For each instance that might need to be changed, process it.
-                    for change_adc_id, change_class_instance in akc_change_class_dict.items():
+                    for change_akc_key, change_class_instance in akc_change_class_dict.items():
                         # If we have a mapping for these classes and fields, continue
                         if akc_change_class in class_map and akc_change_field in class_map[akc_change_class]:
                             if self.verbose():
-                                print("    Processing change class instance = %s"%(change_adc_id))
+                                print("    Processing change class instance = %s"%(change_akc_key))
                             link_info = class_map[akc_change_class][akc_change_field]
                             link_key = link_info['field']
                             link_value = change_class_instance[link_key]
                             if self.verbose():
                                 print("    Got a class map, link field = %s"%(link_key))
                                 print("    Got a class map, link value = %s"%(link_value))
-                            #if link_key in source_class_instance:
+                            repertoire_dict = dict()
+                            if 'adc_study_id' in change_class_instance:
+                                repertoire_dict['study_id'] = {'value':change_class_instance['adc_study_id']}
+                            if 'adc_sample_id' in change_class_instance:
+                                repertoire_dict['sample_id'] = {'value':change_class_instance['adc_sample_id']}
+                            if 'adc_subject_id' in change_class_instance:
+                                repertoire_dict['subject_id'] = {'value':change_class_instance['adc_subject_id']}
+                            if 'adc_study_group_description' in change_class_instance:
+                                repertoire_dict['study_group_description'] = {'value':change_class_instance['adc_study_group_description']}
+                            change_link_tag = self.getAIRRUniqueLink(repertoire_dict, akc_source_class, akc_change_class)
+
                             # For each potential source of change, process it.
-                            for source_adc_id, source_class_instance in akc_source_class_dict.items():
+                            for source_akc_key, source_class_instance in akc_source_class_dict.items():
                                 if self.verbose():
-                                    print("        Processing source class instance = %s"%(source_adc_id))
-                                #self.getAIRRUniqueLink(repertoire_dict, row['airr_subclass'],row['akc_class'])
+                                    print("        Processing source class instance = %s"%(source_akc_key))
+                                #print(source_class_instance['adc_subject_id'])
+                                #print(source_class_instance)
+                                repertoire_dict = dict()
+                                if 'adc_study_id' in source_class_instance:
+                                    repertoire_dict['study_id'] = {'value':source_class_instance['adc_study_id']}
+                                if 'adc_sample_id' in source_class_instance:
+                                    repertoire_dict['sample_id'] = {'value':source_class_instance['adc_sample_id']}
+                                if 'adc_subject_id' in source_class_instance:
+                                    repertoire_dict['subject_id'] = {'value':source_class_instance['adc_subject_id']}
+                                if 'adc_study_group_description' in source_class_instance:
+                                    repertoire_dict['study_group_description'] = {'value':source_class_instance['adc_study_group_description']}
+                                #link_tag = self.getAIRRUniqueLink(repertoire_dict, akc_change_class, akc_source_class)
+                                #print(link_tag)
+                                source_link_tag = self.getAIRRUniqueLink(repertoire_dict, akc_source_class, akc_change_class)
+                                print(source_link_tag)
+                                print(change_link_tag)
+                                if source_link_tag == change_link_tag: 
+                                    print("        BINGO link tag = %s, source_akc_key = %s, change_akc_key = %s"%(source_link_tag, source_akc_key, change_akc_key))
+                                    print('        BINGO %s.%s in %s = %s (from %s,%s), link=%s'%(akc_change_class, row['akc_field'],change_akc_key,source_class_instance['akc_id'],akc_source_class, source_akc_key, link_value))
                                 # If the link key is in the source class, and the source class link key is
                                 # the same as the current link value, then we need to set the field.
                                 if link_key in source_class_instance and source_class_instance[link_key] == link_value:
 
-                                    print('        %s.%s in %s = %s (from %s,%s), link=%s'%(akc_change_class, row['akc_field'],change_adc_id,source_class_instance['akc_id'],akc_source_class, source_adc_id, link_value))
-                                    if row['akc_is_array'] == True:
-                                        change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
-                                    else:
-                                        change_class_instance[row['akc_field']] = source_class_instance['akc_id']
+                                    print('        %s.%s in %s = %s (from %s,%s), link=%s'%(akc_change_class, row['akc_field'],change_akc_key,source_class_instance['akc_id'],akc_source_class, source_akc_key, link_value))
+                                    akc_link_class = akc_source_class + '_' + akc_change_class
+                                    if not akc_link_class in akc_investigation:
+                                        # Add the new class
+                                        akc_investigation[akc_link_class] = dict()
+                                    link_id = str(uuid.uuid4())
+                                    link_dict = dict()
+                                    link_dict[akc_source_class] = source_class_instance['akc_id']
+                                    link_dict[akc_change_class] = change_class_instance['akc_id']
+                                    link_dict[akc_source_class+'_Link'] = source_class_instance['adc_link_tag']
+                                    link_dict[akc_change_class+'_Link'] = change_class_instance['adc_link_tag']
+                                    akc_investigation[akc_link_class][link_id] = link_dict
+                                    #if row['akc_is_array'] == True:
+                                    #    change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
+                                    #else:
+                                    #    change_class_instance[row['akc_field']] = source_class_instance['akc_id']
                         else:
                             print("Warning: No mapping for %s/%s"%(akc_change_class, akc_change_field))
                     
