@@ -49,12 +49,17 @@ class Repertoire(Parser):
 
         return True
 
-    def getAIRRUniqueLink(self, repertoire_dict, airr_class, akc_class):
+    def getAIRRUniqueLink(self, repertoire_dict, link_class, akc_class):
         # Get the link/key fields for the AKC classes.
         # TODO: This should be in the config file and not hardcoded here
+        link_classes = ['LifeEvent', 'StudyEvent']
+        #print('getAIRRUniqueLink - akc_class = %s, link_class = %s'%(akc_class, link_class))
         airr_link_value = None
-        #prefix = akc_class + '_' + airr_class
-        prefix = akc_class 
+        if akc_class in link_classes:
+            prefix = akc_class + '_' + link_class
+        else:
+            prefix = akc_class 
+        #prefix = akc_class 
         if akc_class == 'Investigation':
             if 'study_id' in repertoire_dict:
                 airr_link_value = prefix + '_' + repertoire_dict['study_id']['value']
@@ -66,6 +71,15 @@ class Repertoire(Parser):
                 airr_link_value = prefix + '_' + repertoire_dict['subject_id']['value']
         elif akc_class == 'Specimen':
             if 'sample_id' in repertoire_dict and 'subject_id' in repertoire_dict:
+                airr_link_value = prefix + '_' + repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
+        elif akc_class == 'LifeEvent' and link_class == 'Participant':
+            if 'subject_id' in repertoire_dict:
+                airr_link_value = prefix + '_' + repertoire_dict['subject_id']['value'] 
+        elif akc_class == 'LifeEvent' and link_class == 'ImmuneExposure':
+            if 'subject_id' in repertoire_dict:
+                airr_link_value = prefix + '_' + repertoire_dict['subject_id']['value'] 
+        elif akc_class == 'LifeEvent' and link_class == 'Specimen':
+            if 'subject_id' in repertoire_dict:
                 airr_link_value = prefix + '_' + repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
         elif akc_class == 'LifeEvent':
             if 'subject_id' in repertoire_dict:
@@ -79,6 +93,7 @@ class Repertoire(Parser):
             
         if airr_link_value == None:
             print('Warning: Could not link class %s, skipping'%(akc_class))
+        #print('getAIRRUniqueLink - %s'%(airr_link_value))
 
         return airr_link_value
 
@@ -248,13 +263,25 @@ class Repertoire(Parser):
                 if 'akc_class' in value and value['akc_class'] == akc_class:
                     # Get the value that identifies an object from this repertoire
                     # of this class type and for the given key and value
-                    airr_link_value = self.getAIRRUniqueLink(repertoire_dict, value['airr_subclass'], akc_class)
+                    #if value['akc_form'] == "Class": 
+                    #    class_type = value['akc_type']
+                    #else:
+                    #    class_type = ''
+                    class_map = {'Subject':'Participant','SampleProcessing':'Specimen','Diagnosis':'ImmuneExposure'}
+                    class_type = ''
+                    if value['airr_subclass'] in class_map:
+                        class_type = class_map[value['airr_subclass']]
+                    #if 'akc_type' in value and not value['akc_type'] is None:
+                    #    class_type = value['akc_type']
+                    #airr_link_value = self.getAIRRUniqueLink(repertoire_dict, value['airr_subclass'], akc_class)
+                    airr_link_value = self.getAIRRUniqueLink(repertoire_dict, class_type, akc_class)
                 
                     # Check to see if we have seen instance labeled with airr_link_value
                     # before. If not, create a new object with the link value as the label.
                     if airr_link_value in akc_dict:
                         akc_object = akc_dict[airr_link_value]
                     else:
+                        print('Info: Create instance %s, field = %s, value = %s, class = %s, type = %s, airr class = %s'%(airr_link_value, value['akc_field'],value['value'], akc_class, value['akc_type'],value['airr_subclass']))
                         akc_object = globals()[akc_class]('')
                         akc_object['akc_id'] = str(uuid.uuid4())
 
@@ -299,13 +326,19 @@ class Repertoire(Parser):
                                 akc_object[value['akc_field']] = value['value']
 
                     if value['akc_form'] == "Class": 
-                        class_link_value = self.getAIRRUniqueLink(repertoire_dict, value['airr_subclass'], value['akc_type'])
+                        class_type = value['akc_type']
+                        class_link_value = self.getAIRRUniqueLink(repertoire_dict, akc_class, value['akc_type'])
+                        #class_link_value = self.getAIRRUniqueLink(repertoire_dict, class_type, value['akc_type'])
+                        #class_link_value = self.getAIRRUniqueLink(repertoire_dict, value['airr_subclass'], value['akc_type'])
                         akc_class_dict = investigation[value['akc_type']]
                         # Check to see if we have seen instance labeled with airr_link_value
                         # before. If not, create a new object with the link value as the label.
                         if class_link_value in akc_class_dict:
                             akc_class_object = akc_dict[airr_link_value]
                         else:
+                            if self.verbose():
+                                print('Info: Create instance %s(empty Class), field = %s, value = %s, type = %s'%(class_link_value, value['akc_field'],value['value'], value['akc_type']))
+                            print('Info: Create instance %s(empty Class), field = %s, value = %s, type = %s'%(class_link_value, value['akc_field'],value['value'], value['akc_type']))
                             akc_class_object = globals()[akc_class]('')
                             akc_class_object['akc_id'] = str(uuid.uuid4())
                             akc_class_object['adc_repertoire_id'] = repertoire_id
@@ -318,8 +351,6 @@ class Repertoire(Parser):
                             akc_class_object['adc_link_tag'] = class_link_value
                             akc_class_dict[class_link_value] = akc_class_object
 
-                            if self.verbose():
-                                print('Info: Creating an empty Class reference, field = %s, value = %s, type = %s, link = %s'%(value['akc_field'],value['value'], value['akc_type'], class_link_value))
                         
                     # Add a bunch of extra fields to track the key ADC fields that 
                     # might be needed later to link AKC objects together.
