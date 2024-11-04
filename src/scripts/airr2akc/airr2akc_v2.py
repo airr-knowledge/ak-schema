@@ -9,7 +9,7 @@ def getArguments():
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description="")
 
     # The block to process
-    parser.add_argument("-a", "--airr_schema_yaml", type=str, default="airr-schema-openapi3.yaml",)
+    parser.add_argument("-a", "--airr_schema_yaml", type=str, default="/Users/lscheffer/PycharmProjects/ak-schema/src/scripts/airr2akc/airr-schema-openapi3.yaml")
     parser.add_argument("-o", "--output_folder", type=str, default="../../ak_schema/schema/airr")
     parser.add_argument("-k", "--keywords_to_parse", type=str, nargs="+")
 
@@ -123,7 +123,7 @@ def getClosedVocabularyEnum(name, slot_yaml):
 
 def getEnum(name, slot_yaml):
     if "type" in slot_yaml and slot_yaml["type"] == "array":
-        getEnum(name, slot_yaml["items"])
+        return getEnum(name, slot_yaml["items"])
 
     if "$ref" in slot_yaml and slot_yaml["$ref"] == "#/Ontology":
         return getOntologyEnum(name, slot_yaml)
@@ -214,10 +214,10 @@ def main(parsed_args):
 
     skip_keywords = ["Info", "Ontology", "CURIEMap", "InformationProvider", "Attributes", "FileObject", "DataSet",
                      "Manifest", "DataFile", "InfoObject"]
-    skip_keywords += ["SampleProcessing"]  # todo custom case
+    skip_keywords += ["SampleProcessing"]  # todo special case
 
-    keywords_to_process = airr_yaml.keys()
-    # keywords_to_process = ["GermlineSet"]
+    # keywords_to_process = airr_yaml.keys()
+    keywords_to_process = parsed_args.keywords_to_parse
 
     for keyword in keywords_to_process:
         if keyword not in skip_keywords:
