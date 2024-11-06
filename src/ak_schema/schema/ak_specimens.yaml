@@ -19,11 +19,18 @@ classes:
     slots:
       - specimen
 
+  SpecimenProcessing:
+    is_a: PlannedProcess
+    class_uri: OBI:0000094 # material processing
+    slots:
+      - specimen
+
   Assay:
-    is_a: NamedThing
+    is_a: PlannedProcess
     class_uri: OBI:0000070 # assay
     slots:
       - specimen
+      - specimen_processing
       - assay_type
       - target_entity_type
       - value
@@ -49,8 +56,7 @@ classes:
       - experiment_type
 
   Assessment:
-    # is_a: LifeEvent
-    is_a: NamedThing
+    is_a: PlannedProcess
     class_uri: OBI:0002441 # physical examination of an organism
     slots:
       - life_event
@@ -76,6 +82,11 @@ slots:
     description: The specimen that was input for an assay
     range: Specimen
     slot_uri: OBI:0000293 # has specified input
+  specimen_processing:
+    description: A series of zero or more specimen processing steps that precede an assay
+    range: SpecimenProcessing
+    slot_uri: BFO:0000051 # has part
+    multivalued: true
   assay_type:
     description: The specific type of an assay
     slot_uri: rdf:type
