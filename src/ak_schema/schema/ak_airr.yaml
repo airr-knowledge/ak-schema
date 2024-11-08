@@ -1,0 +1,2162 @@
+---
+
+id: https://github.com/airr-knowledge/ak-schema
+
+name: ak-schema
+
+classes:
+  AirrV1_5_TimePoint:
+    slots:
+      - label
+      - value
+      - unit
+  AirrV1_5_Acknowledgement:
+    slots:
+      - acknowledgement_id
+      - name
+      - institution_name
+      - orcid_id
+  AirrV1_5_RearrangedSequence:
+    slots:
+      - sequence_id
+      - sequence
+      - derivation
+      - observation_type
+      - curation
+      - repository_name
+      - repository_ref
+      - deposited_version
+      - sequence_start
+      - sequence_end
+  AirrV1_5_UnrearrangedSequence:
+    slots:
+      - sequence_id
+      - sequence
+      - curation
+      - repository_name
+      - repository_ref
+      - patch_no
+      - gff_seqid
+      - gff_start
+      - gff_end
+      - strand
+  AirrV1_5_SequenceDelineationV:
+    slots:
+      - sequence_delineation_id
+      - delineation_scheme
+      - unaligned_sequence
+      - aligned_sequence
+      - fwr1_start
+      - fwr1_end
+      - cdr1_start
+      - cdr1_end
+      - fwr2_start
+      - fwr2_end
+      - cdr2_start
+      - cdr2_end
+      - fwr3_start
+      - fwr3_end
+      - cdr3_start
+      - alignment_labels
+  AirrV1_5_AlleleDescription:
+    slots:
+      - allele_description_id
+      - allele_description_ref
+      - maintainer
+      - acknowledgements
+      - lab_address
+      - release_version
+      - release_date
+      - release_description
+      - label
+      - sequence
+      - coding_sequence
+      - aliases
+      - locus
+      - chromosome
+      - sequence_type
+      - functional
+      - inference_type
+      - species
+      - species_subgroup
+      - species_subgroup_type
+      - status
+      - subgroup_designation
+      - gene_designation
+      - allele_designation
+      - allele_similarity_cluster_designation
+      - allele_similarity_cluster_member_id
+      - j_codon_frame
+      - gene_start
+      - gene_end
+      - utr_5_prime_start
+      - utr_5_prime_end
+      - leader_1_start
+      - leader_1_end
+      - leader_2_start
+      - leader_2_end
+      - v_rs_start
+      - v_rs_end
+      - d_rs_3_prime_start
+      - d_rs_3_prime_end
+      - d_rs_5_prime_start
+      - d_rs_5_prime_end
+      - j_cdr3_end
+      - j_rs_start
+      - j_rs_end
+      - j_donor_splice
+      - v_gene_delineations
+      - unrearranged_support
+      - rearranged_support
+      - paralogs
+      - curation
+      - curational_tags
+  AirrV1_5_GermlineSet:
+    slots:
+      - germline_set_id
+      - author
+      - lab_name
+      - lab_address
+      - acknowledgements
+      - release_version
+      - release_description
+      - release_date
+      - germline_set_name
+      - germline_set_ref
+      - pub_ids
+      - species
+      - species_subgroup
+      - species_subgroup_type
+      - locus
+      - allele_descriptions
+      - curation
+  AirrV1_5_GenotypeSet:
+    slots:
+      - receptor_genotype_set_id
+      - genotype_class_list
+  AirrV1_5_Genotype:
+    slots:
+      - receptor_genotype_id
+      - locus
+      - documented_alleles
+      - undocumented_alleles
+      - deleted_genes
+      - inference_process
+  AirrV1_5_DocumentedAllele:
+    slots:
+      - label
+      - germline_set_ref
+      - phasing
+  AirrV1_5_UndocumentedAllele:
+    slots:
+      - allele_name
+      - sequence
+      - phasing
+  AirrV1_5_DeletedGene:
+    slots:
+      - label
+      - germline_set_ref
+      - phasing
+  AirrV1_5_MHCGenotypeSet:
+    slots:
+      - mhc_genotype_set_id
+      - mhc_genotype_list
+  AirrV1_5_MHCGenotype:
+    slots:
+      - mhc_genotype_id
+      - mhc_class
+      - mhc_alleles
+      - mhc_genotyping_method
+  AirrV1_5_MHCAllele:
+    slots:
+      - allele_designation
+      - gene
+      - reference_set_ref
+  AirrV1_5_SubjectGenotype:
+    slots:
+      - receptor_genotype_set
+      - mhc_genotype_set
+  AirrV1_5_Study:
+    slots:
+      - study_id
+      - study_title
+      - study_type
+      - study_description
+      - inclusion_exclusion_criteria
+      - grants
+      - study_contact
+      - collected_by
+      - lab_name
+      - lab_address
+      - submitted_by
+      - pub_ids
+      - keywords_study
+      - adc_publish_date
+      - adc_update_date
+  AirrV1_5_Subject:
+    slots:
+      - subject_id
+      - synthetic
+      - species
+      - sex
+      - age_min
+      - age_max
+      - age_unit
+      - age_event
+      - ancestry_population
+      - ethnicity
+      - race
+      - strain_name
+      - linked_subjects
+      - link_type
+      - diagnosis
+      - genotype
+  AirrV1_5_Diagnosis:
+    slots:
+      - study_group_description
+      - disease_diagnosis
+      - disease_length
+      - disease_stage
+      - prior_therapies
+      - immunogen
+      - intervention
+      - medical_history
+  AirrV1_5_Sample:
+    slots:
+      - sample_id
+      - sample_type
+      - tissue
+      - anatomic_site
+      - disease_state_sample
+      - collection_time_point_relative
+      - collection_time_point_relative_unit
+      - collection_time_point_reference
+      - biomaterial_provider
+  AirrV1_5_CellProcessing:
+    slots:
+      - tissue_processing
+      - cell_subset
+      - cell_phenotype
+      - cell_species
+      - single_cell
+      - cell_number
+      - cells_per_reaction
+      - cell_storage
+      - cell_quality
+      - cell_isolation
+      - cell_processing_protocol
+  AirrV1_5_PCRTarget:
+    slots:
+      - pcr_target_locus
+      - forward_pcr_primer_target_location
+      - reverse_pcr_primer_target_location
+  AirrV1_5_NucleicAcidProcessing:
+    slots:
+      - template_class
+      - template_quality
+      - template_amount
+      - template_amount_unit
+      - library_generation_method
+      - library_generation_protocol
+      - library_generation_kit_version
+      - pcr_target
+      - complete_sequences
+      - physical_linkage
+  AirrV1_5_SequencingRun:
+    slots:
+      - sequencing_run_id
+      - total_reads_passing_qc_filter
+      - sequencing_platform
+      - sequencing_facility
+      - sequencing_run_date
+      - sequencing_kit
+      - sequencing_files
+  AirrV1_5_SequencingData:
+    slots:
+      - sequencing_data_id
+      - file_type
+      - filename
+      - read_direction
+      - read_length
+      - paired_filename
+      - paired_read_direction
+      - paired_read_length
+      - index_filename
+      - index_length
+  AirrV1_5_DataProcessing:
+    slots:
+      - data_processing_id
+      - primary_annotation
+      - software_versions
+      - paired_reads_assembly
+      - quality_thresholds
+      - primer_match_cutoffs
+      - collapsing_method
+      - data_processing_protocols
+      - data_processing_files
+      - germline_database
+      - germline_set_ref
+      - analysis_provenance_id
+  AirrV1_5_Repertoire:
+    slots:
+      - repertoire_id
+      - repertoire_name
+      - repertoire_description
+      - study
+      - subject
+      - sample
+      - data_processing
+  AirrV1_5_RepertoireGroup:
+    slots:
+      - repertoire_group_id
+      - repertoire_group_name
+      - repertoire_group_description
+      - repertoires
+  AirrV1_5_Alignment:
+    slots:
+      - sequence_id
+      - segment
+      - rev_comp
+      - call
+      - score
+      - identity
+      - support
+      - cigar
+      - sequence_start
+      - sequence_end
+      - germline_start
+      - germline_end
+      - rank
+      - data_processing_id
+  AirrV1_5_Rearrangement:
+    slots:
+      - sequence_id
+      - sequence
+      - quality
+      - sequence_aa
+      - rev_comp
+      - productive
+      - vj_in_frame
+      - stop_codon
+      - complete_vdj
+      - locus
+      - v_call
+      - d_call
+      - d2_call
+      - j_call
+      - c_call
+      - sequence_alignment
+      - quality_alignment
+      - sequence_alignment_aa
+      - germline_alignment
+      - germline_alignment_aa
+      - junction
+      - junction_aa
+      - np1
+      - np1_aa
+      - np2
+      - np2_aa
+      - np3
+      - np3_aa
+      - cdr1
+      - cdr1_aa
+      - cdr2
+      - cdr2_aa
+      - cdr3
+      - cdr3_aa
+      - fwr1
+      - fwr1_aa
+      - fwr2
+      - fwr2_aa
+      - fwr3
+      - fwr3_aa
+      - fwr4
+      - fwr4_aa
+      - v_score
+      - v_identity
+      - v_support
+      - v_cigar
+      - d_score
+      - d_identity
+      - d_support
+      - d_cigar
+      - d2_score
+      - d2_identity
+      - d2_support
+      - d2_cigar
+      - j_score
+      - j_identity
+      - j_support
+      - j_cigar
+      - c_score
+      - c_identity
+      - c_support
+      - c_cigar
+      - v_sequence_start
+      - v_sequence_end
+      - v_germline_start
+      - v_germline_end
+      - v_alignment_start
+      - v_alignment_end
+      - d_sequence_start
+      - d_sequence_end
+      - d_germline_start
+      - d_germline_end
+      - d_alignment_start
+      - d_alignment_end
+      - d2_sequence_start
+      - d2_sequence_end
+      - d2_germline_start
+      - d2_germline_end
+      - d2_alignment_start
+      - d2_alignment_end
+      - j_sequence_start
+      - j_sequence_end
+      - j_germline_start
+      - j_germline_end
+      - j_alignment_start
+      - j_alignment_end
+      - c_sequence_start
+      - c_sequence_end
+      - c_germline_start
+      - c_germline_end
+      - c_alignment_start
+      - c_alignment_end
+      - cdr1_start
+      - cdr1_end
+      - cdr2_start
+      - cdr2_end
+      - cdr3_start
+      - cdr3_end
+      - fwr1_start
+      - fwr1_end
+      - fwr2_start
+      - fwr2_end
+      - fwr3_start
+      - fwr3_end
+      - fwr4_start
+      - fwr4_end
+      - v_sequence_alignment
+      - v_sequence_alignment_aa
+      - d_sequence_alignment
+      - d_sequence_alignment_aa
+      - d2_sequence_alignment
+      - d2_sequence_alignment_aa
+      - j_sequence_alignment
+      - j_sequence_alignment_aa
+      - c_sequence_alignment
+      - c_sequence_alignment_aa
+      - v_germline_alignment
+      - v_germline_alignment_aa
+      - d_germline_alignment
+      - d_germline_alignment_aa
+      - d2_germline_alignment
+      - d2_germline_alignment_aa
+      - j_germline_alignment
+      - j_germline_alignment_aa
+      - c_germline_alignment
+      - c_germline_alignment_aa
+      - junction_length
+      - junction_aa_length
+      - np1_length
+      - np2_length
+      - np3_length
+      - n1_length
+      - n2_length
+      - n3_length
+      - p3v_length
+      - p5d_length
+      - p3d_length
+      - p5d2_length
+      - p3d2_length
+      - p5j_length
+      - v_frameshift
+      - j_frameshift
+      - d_frame
+      - d2_frame
+      - consensus_count
+      - duplicate_count
+      - umi_count
+      - cell_id
+      - clone_id
+      - repertoire_id
+      - sample_processing_id
+      - data_processing_id
+  AirrV1_5_Clone:
+    slots:
+      - clone_id
+      - repertoire_id
+      - data_processing_id
+      - sequences
+      - v_call
+      - d_call
+      - j_call
+      - junction
+      - junction_aa
+      - junction_length
+      - junction_aa_length
+      - germline_alignment
+      - germline_alignment_aa
+      - v_alignment_start
+      - v_alignment_end
+      - d_alignment_start
+      - d_alignment_end
+      - j_alignment_start
+      - j_alignment_end
+      - junction_start
+      - junction_end
+      - umi_count
+      - clone_count
+      - seed_id
+  AirrV1_5_Tree:
+    slots:
+      - tree_id
+      - clone_id
+      - newick
+      - nodes
+  AirrV1_5_Node:
+    slots:
+      - sequence_id
+      - sequence_alignment
+      - junction
+      - junction_aa
+  AirrV1_5_Cell:
+    slots:
+      - cell_id
+      - rearrangements
+      - receptors
+      - repertoire_id
+      - data_processing_id
+      - expression_study_method
+      - expression_raw_doi
+      - expression_index
+      - virtual_pairing
+  AirrV1_5_CellExpression:
+    slots:
+      - expression_id
+      - cell_id
+      - repertoire_id
+      - data_processing_id
+      - property_type
+      - property
+      - value
+  AirrV1_5_Receptor:
+    slots:
+      - receptor_id
+      - receptor_hash
+      - receptor_type
+      - receptor_variable_domain_1_aa
+      - receptor_variable_domain_1_locus
+      - receptor_variable_domain_2_aa
+      - receptor_variable_domain_2_locus
+      - receptor_ref
+      - reactivity_measurements
+  AirrV1_5_ReceptorReactivity:
+    slots:
+      - ligand_type
+      - antigen_type
+      - antigen
+      - antigen_source_species
+      - peptide_start
+      - peptide_end
+      - mhc_class
+      - mhc_gene_1
+      - mhc_allele_1
+      - mhc_gene_2
+      - mhc_allele_2
+      - reactivity_method
+      - reactivity_readout
+      - reactivity_value
+      - reactivity_unit
+  AirrV1_5_SampleProcessing:
+    slots:
+      - sequencing_run_id
+      - total_reads_passing_qc_filter
+      - sequencing_platform
+      - sequencing_facility
+      - sequencing_run_date
+      - sequencing_kit
+      - sequencing_files
+
+slots:
+  label:
+    name: label
+    range: string
+  value:
+    name: value
+    range: float
+  unit:
+    name: unit
+    range: AirrV1_5_Unit
+  acknowledgement_id:
+    name: acknowledgement_id
+    range: string
+  name:
+    name: name
+    range: string
+  institution_name:
+    name: institution_name
+    range: string
+  orcid_id:
+    name: orcid_id
+    range: string
+  sequence_id:
+    name: sequence_id
+    range: string
+  sequence:
+    name: sequence
+    range: string
+  derivation:
+    name: derivation
+    range: AirrV1_5_Derivation
+  observation_type:
+    name: observation_type
+    range: AirrV1_5_ObservationType
+  curation:
+    name: curation
+    range: string
+  repository_name:
+    name: repository_name
+    range: string
+  repository_ref:
+    name: repository_ref
+    range: string
+  deposited_version:
+    name: deposited_version
+    range: string
+  sequence_start:
+    name: sequence_start
+    range: integer
+  sequence_end:
+    name: sequence_end
+    range: integer
+  patch_no:
+    name: patch_no
+    range: string
+  gff_seqid:
+    name: gff_seqid
+    range: string
+  gff_start:
+    name: gff_start
+    range: integer
+  gff_end:
+    name: gff_end
+    range: integer
+  strand:
+    name: strand
+    range: AirrV1_5_Strand
+  sequence_delineation_id:
+    name: sequence_delineation_id
+    range: string
+  delineation_scheme:
+    name: delineation_scheme
+    range: string
+  unaligned_sequence:
+    name: unaligned_sequence
+    range: string
+  aligned_sequence:
+    name: aligned_sequence
+    range: string
+  fwr1_start:
+    name: fwr1_start
+    range: integer
+  fwr1_end:
+    name: fwr1_end
+    range: integer
+  cdr1_start:
+    name: cdr1_start
+    range: integer
+  cdr1_end:
+    name: cdr1_end
+    range: integer
+  fwr2_start:
+    name: fwr2_start
+    range: integer
+  fwr2_end:
+    name: fwr2_end
+    range: integer
+  cdr2_start:
+    name: cdr2_start
+    range: integer
+  cdr2_end:
+    name: cdr2_end
+    range: integer
+  fwr3_start:
+    name: fwr3_start
+    range: integer
+  fwr3_end:
+    name: fwr3_end
+    range: integer
+  cdr3_start:
+    name: cdr3_start
+    range: integer
+  alignment_labels:
+    name: alignment_labels
+    range: string
+    multivalued: true
+  allele_description_id:
+    name: allele_description_id
+    range: string
+  allele_description_ref:
+    name: allele_description_ref
+    range: string
+  maintainer:
+    name: maintainer
+    range: string
+  acknowledgements:
+    name: acknowledgements
+    range: AirrV1_5_Acknowledgement
+    multivalued: true
+  lab_address:
+    name: lab_address
+    range: string
+  release_version:
+    name: release_version
+    range: float
+  release_date:
+    name: release_date
+    range: string
+  release_description:
+    name: release_description
+    range: string
+  coding_sequence:
+    name: coding_sequence
+    range: string
+  aliases:
+    name: aliases
+    range: string
+    multivalued: true
+  locus:
+    name: locus
+    range: AirrV1_5_Locus
+  chromosome:
+    name: chromosome
+    range: integer
+  sequence_type:
+    name: sequence_type
+    range: AirrV1_5_SequenceType
+  functional:
+    name: functional
+    range: boolean
+  inference_type:
+    name: inference_type
+    range: AirrV1_5_InferenceType
+  species:
+    name: species
+    range: AirrV1_5_Species
+  species_subgroup:
+    name: species_subgroup
+    range: string
+  species_subgroup_type:
+    name: species_subgroup_type
+    range: AirrV1_5_SpeciesSubgroupType
+  status:
+    name: status
+    range: AirrV1_5_Status
+  subgroup_designation:
+    name: subgroup_designation
+    range: string
+  gene_designation:
+    name: gene_designation
+    range: string
+  allele_designation:
+    name: allele_designation
+    range: string
+  allele_similarity_cluster_designation:
+    name: allele_similarity_cluster_designation
+    range: string
+  allele_similarity_cluster_member_id:
+    name: allele_similarity_cluster_member_id
+    range: string
+  j_codon_frame:
+    name: j_codon_frame
+    range: AirrV1_5_JCodonFrame
+  gene_start:
+    name: gene_start
+    range: integer
+  gene_end:
+    name: gene_end
+    range: integer
+  utr_5_prime_start:
+    name: utr_5_prime_start
+    range: integer
+  utr_5_prime_end:
+    name: utr_5_prime_end
+    range: integer
+  leader_1_start:
+    name: leader_1_start
+    range: integer
+  leader_1_end:
+    name: leader_1_end
+    range: integer
+  leader_2_start:
+    name: leader_2_start
+    range: integer
+  leader_2_end:
+    name: leader_2_end
+    range: integer
+  v_rs_start:
+    name: v_rs_start
+    range: integer
+  v_rs_end:
+    name: v_rs_end
+    range: integer
+  d_rs_3_prime_start:
+    name: d_rs_3_prime_start
+    range: integer
+  d_rs_3_prime_end:
+    name: d_rs_3_prime_end
+    range: integer
+  d_rs_5_prime_start:
+    name: d_rs_5_prime_start
+    range: integer
+  d_rs_5_prime_end:
+    name: d_rs_5_prime_end
+    range: integer
+  j_cdr3_end:
+    name: j_cdr3_end
+    range: integer
+  j_rs_start:
+    name: j_rs_start
+    range: integer
+  j_rs_end:
+    name: j_rs_end
+    range: integer
+  j_donor_splice:
+    name: j_donor_splice
+    range: integer
+  v_gene_delineations:
+    name: v_gene_delineations
+    range: AirrV1_5_SequenceDelineationV
+    multivalued: true
+  unrearranged_support:
+    name: unrearranged_support
+    range: AirrV1_5_UnrearrangedSequence
+    multivalued: true
+  rearranged_support:
+    name: rearranged_support
+    range: AirrV1_5_RearrangedSequence
+    multivalued: true
+  paralogs:
+    name: paralogs
+    range: string
+    multivalued: true
+  curational_tags:
+    name: curational_tags
+    range: AirrV1_5_CurationalTags
+    multivalued: true
+  germline_set_id:
+    name: germline_set_id
+    range: string
+  author:
+    name: author
+    range: string
+  lab_name:
+    name: lab_name
+    range: string
+  germline_set_name:
+    name: germline_set_name
+    range: string
+  germline_set_ref:
+    name: germline_set_ref
+    range: string
+  pub_ids:
+    name: pub_ids
+    range: string
+  allele_descriptions:
+    name: allele_descriptions
+    range: AirrV1_5_AlleleDescription
+    multivalued: true
+  receptor_genotype_set_id:
+    name: receptor_genotype_set_id
+    range: string
+  genotype_class_list:
+    name: genotype_class_list
+    range: AirrV1_5_Genotype
+    multivalued: true
+  receptor_genotype_id:
+    name: receptor_genotype_id
+    range: string
+  documented_alleles:
+    name: documented_alleles
+    range: AirrV1_5_DocumentedAllele
+    multivalued: true
+  undocumented_alleles:
+    name: undocumented_alleles
+    range: AirrV1_5_UndocumentedAllele
+    multivalued: true
+  deleted_genes:
+    name: deleted_genes
+    range: AirrV1_5_DeletedGene
+    multivalued: true
+  inference_process:
+    name: inference_process
+    range: AirrV1_5_InferenceProcess
+  phasing:
+    name: phasing
+    range: integer
+  allele_name:
+    name: allele_name
+    range: string
+  mhc_genotype_set_id:
+    name: mhc_genotype_set_id
+    range: string
+  mhc_genotype_list:
+    name: mhc_genotype_list
+    range: AirrV1_5_MHCGenotype
+    multivalued: true
+  mhc_genotype_id:
+    name: mhc_genotype_id
+    range: string
+  mhc_class:
+    name: mhc_class
+    range: AirrV1_5_MhcClass
+  mhc_alleles:
+    name: mhc_alleles
+    range: AirrV1_5_MHCAllele
+    multivalued: true
+  mhc_genotyping_method:
+    name: mhc_genotyping_method
+    range: string
+  gene:
+    name: gene
+    range: AirrV1_5_Gene
+  reference_set_ref:
+    name: reference_set_ref
+    range: string
+  receptor_genotype_set:
+    name: receptor_genotype_set
+    range: AirrV1_5_GenotypeSet
+  mhc_genotype_set:
+    name: mhc_genotype_set
+    range: AirrV1_5_MHCGenotypeSet
+  study_id:
+    name: study_id
+    range: string
+  study_title:
+    name: study_title
+    range: string
+  study_type:
+    name: study_type
+    range: AirrV1_5_StudyType
+  study_description:
+    name: study_description
+    range: string
+  inclusion_exclusion_criteria:
+    name: inclusion_exclusion_criteria
+    range: string
+  grants:
+    name: grants
+    range: string
+  study_contact:
+    name: study_contact
+    range: string
+  collected_by:
+    name: collected_by
+    range: string
+  submitted_by:
+    name: submitted_by
+    range: string
+  keywords_study:
+    name: keywords_study
+    range: AirrV1_5_KeywordsStudy
+    multivalued: true
+  adc_publish_date:
+    name: adc_publish_date
+    range: string
+  adc_update_date:
+    name: adc_update_date
+    range: string
+  subject_id:
+    name: subject_id
+    range: string
+  synthetic:
+    name: synthetic
+    range: boolean
+  sex:
+    name: sex
+    range: AirrV1_5_Sex
+  age_min:
+    name: age_min
+    range: float
+  age_max:
+    name: age_max
+    range: float
+  age_unit:
+    name: age_unit
+    range: AirrV1_5_AgeUnit
+  age_event:
+    name: age_event
+    range: string
+  ancestry_population:
+    name: ancestry_population
+    range: string
+  ethnicity:
+    name: ethnicity
+    range: string
+  race:
+    name: race
+    range: string
+  strain_name:
+    name: strain_name
+    range: string
+  linked_subjects:
+    name: linked_subjects
+    range: string
+  link_type:
+    name: link_type
+    range: string
+  diagnosis:
+    name: diagnosis
+    range: AirrV1_5_Diagnosis
+    multivalued: true
+  genotype:
+    name: genotype
+    range: AirrV1_5_SubjectGenotype
+  study_group_description:
+    name: study_group_description
+    range: string
+  disease_diagnosis:
+    name: disease_diagnosis
+    range: AirrV1_5_DiseaseDiagnosis
+  disease_length:
+    name: disease_length
+    range: string
+  disease_stage:
+    name: disease_stage
+    range: string
+  prior_therapies:
+    name: prior_therapies
+    range: string
+  immunogen:
+    name: immunogen
+    range: string
+  intervention:
+    name: intervention
+    range: string
+  medical_history:
+    name: medical_history
+    range: string
+  sample_id:
+    name: sample_id
+    range: string
+  sample_type:
+    name: sample_type
+    range: string
+  tissue:
+    name: tissue
+    range: AirrV1_5_Tissue
+  anatomic_site:
+    name: anatomic_site
+    range: string
+  disease_state_sample:
+    name: disease_state_sample
+    range: string
+  collection_time_point_relative:
+    name: collection_time_point_relative
+    range: float
+  collection_time_point_relative_unit:
+    name: collection_time_point_relative_unit
+    range: AirrV1_5_CollectionTimePointRelativeUnit
+  collection_time_point_reference:
+    name: collection_time_point_reference
+    range: string
+  biomaterial_provider:
+    name: biomaterial_provider
+    range: string
+  tissue_processing:
+    name: tissue_processing
+    range: string
+  cell_subset:
+    name: cell_subset
+    range: AirrV1_5_CellSubset
+  cell_phenotype:
+    name: cell_phenotype
+    range: string
+  cell_species:
+    name: cell_species
+    range: AirrV1_5_CellSpecies
+  single_cell:
+    name: single_cell
+    range: boolean
+  cell_number:
+    name: cell_number
+    range: integer
+  cells_per_reaction:
+    name: cells_per_reaction
+    range: integer
+  cell_storage:
+    name: cell_storage
+    range: boolean
+  cell_quality:
+    name: cell_quality
+    range: string
+  cell_isolation:
+    name: cell_isolation
+    range: string
+  cell_processing_protocol:
+    name: cell_processing_protocol
+    range: string
+  pcr_target_locus:
+    name: pcr_target_locus
+    range: AirrV1_5_PcrTargetLocus
+  forward_pcr_primer_target_location:
+    name: forward_pcr_primer_target_location
+    range: string
+  reverse_pcr_primer_target_location:
+    name: reverse_pcr_primer_target_location
+    range: string
+  template_class:
+    name: template_class
+    range: AirrV1_5_TemplateClass
+  template_quality:
+    name: template_quality
+    range: string
+  template_amount:
+    name: template_amount
+    range: float
+  template_amount_unit:
+    name: template_amount_unit
+    range: AirrV1_5_TemplateAmountUnit
+  library_generation_method:
+    name: library_generation_method
+    range: AirrV1_5_LibraryGenerationMethod
+  library_generation_protocol:
+    name: library_generation_protocol
+    range: string
+  library_generation_kit_version:
+    name: library_generation_kit_version
+    range: string
+  pcr_target:
+    name: pcr_target
+    range: AirrV1_5_PCRTarget
+    multivalued: true
+  complete_sequences:
+    name: complete_sequences
+    range: AirrV1_5_CompleteSequences
+  physical_linkage:
+    name: physical_linkage
+    range: AirrV1_5_PhysicalLinkage
+  sequencing_run_id:
+    name: sequencing_run_id
+    range: string
+  total_reads_passing_qc_filter:
+    name: total_reads_passing_qc_filter
+    range: integer
+  sequencing_platform:
+    name: sequencing_platform
+    range: string
+  sequencing_facility:
+    name: sequencing_facility
+    range: string
+  sequencing_run_date:
+    name: sequencing_run_date
+    range: string
+  sequencing_kit:
+    name: sequencing_kit
+    range: string
+  sequencing_files:
+    name: sequencing_files
+    range: AirrV1_5_SequencingData
+  sequencing_data_id:
+    name: sequencing_data_id
+    range: string
+  file_type:
+    name: file_type
+    range: AirrV1_5_FileType
+  filename:
+    name: filename
+    range: string
+  read_direction:
+    name: read_direction
+    range: AirrV1_5_ReadDirection
+  read_length:
+    name: read_length
+    range: integer
+  paired_filename:
+    name: paired_filename
+    range: string
+  paired_read_direction:
+    name: paired_read_direction
+    range: AirrV1_5_PairedReadDirection
+  paired_read_length:
+    name: paired_read_length
+    range: integer
+  index_filename:
+    name: index_filename
+    range: string
+  index_length:
+    name: index_length
+    range: integer
+  data_processing_id:
+    name: data_processing_id
+    range: string
+  primary_annotation:
+    name: primary_annotation
+    range: boolean
+  software_versions:
+    name: software_versions
+    range: string
+  paired_reads_assembly:
+    name: paired_reads_assembly
+    range: string
+  quality_thresholds:
+    name: quality_thresholds
+    range: string
+  primer_match_cutoffs:
+    name: primer_match_cutoffs
+    range: string
+  collapsing_method:
+    name: collapsing_method
+    range: string
+  data_processing_protocols:
+    name: data_processing_protocols
+    range: string
+  data_processing_files:
+    name: data_processing_files
+    range: string
+    multivalued: true
+  germline_database:
+    name: germline_database
+    range: string
+  analysis_provenance_id:
+    name: analysis_provenance_id
+    range: string
+  repertoire_id:
+    name: repertoire_id
+    range: string
+  repertoire_name:
+    name: repertoire_name
+    range: string
+  repertoire_description:
+    name: repertoire_description
+    range: string
+  study:
+    name: study
+    range: AirrV1_5_Study
+  subject:
+    name: subject
+    range: AirrV1_5_Subject
+  sample:
+    name: sample
+    range: AirrV1_5_SampleProcessing
+    multivalued: true
+  data_processing:
+    name: data_processing
+    range: AirrV1_5_DataProcessing
+    multivalued: true
+  repertoire_group_id:
+    name: repertoire_group_id
+    range: string
+  repertoire_group_name:
+    name: repertoire_group_name
+    range: string
+  repertoire_group_description:
+    name: repertoire_group_description
+    range: string
+  repertoires:
+    name: repertoires
+    multivalued: true
+  segment:
+    name: segment
+    range: string
+  rev_comp:
+    name: rev_comp
+    range: boolean
+  call:
+    name: call
+    range: string
+  score:
+    name: score
+    range: float
+  identity:
+    name: identity
+    range: float
+  support:
+    name: support
+    range: float
+  cigar:
+    name: cigar
+    range: string
+  germline_start:
+    name: germline_start
+    range: integer
+  germline_end:
+    name: germline_end
+    range: integer
+  rank:
+    name: rank
+    range: integer
+  quality:
+    name: quality
+    range: string
+  sequence_aa:
+    name: sequence_aa
+    range: string
+  productive:
+    name: productive
+    range: boolean
+  vj_in_frame:
+    name: vj_in_frame
+    range: boolean
+  stop_codon:
+    name: stop_codon
+    range: boolean
+  complete_vdj:
+    name: complete_vdj
+    range: boolean
+  v_call:
+    name: v_call
+    range: string
+  d_call:
+    name: d_call
+    range: string
+  d2_call:
+    name: d2_call
+    range: string
+  j_call:
+    name: j_call
+    range: string
+  c_call:
+    name: c_call
+    range: string
+  sequence_alignment:
+    name: sequence_alignment
+    range: string
+  quality_alignment:
+    name: quality_alignment
+    range: string
+  sequence_alignment_aa:
+    name: sequence_alignment_aa
+    range: string
+  germline_alignment:
+    name: germline_alignment
+    range: string
+  germline_alignment_aa:
+    name: germline_alignment_aa
+    range: string
+  junction:
+    name: junction
+    range: string
+  junction_aa:
+    name: junction_aa
+    range: string
+  np1:
+    name: np1
+    range: string
+  np1_aa:
+    name: np1_aa
+    range: string
+  np2:
+    name: np2
+    range: string
+  np2_aa:
+    name: np2_aa
+    range: string
+  np3:
+    name: np3
+    range: string
+  np3_aa:
+    name: np3_aa
+    range: string
+  cdr1:
+    name: cdr1
+    range: string
+  cdr1_aa:
+    name: cdr1_aa
+    range: string
+  cdr2:
+    name: cdr2
+    range: string
+  cdr2_aa:
+    name: cdr2_aa
+    range: string
+  cdr3:
+    name: cdr3
+    range: string
+  cdr3_aa:
+    name: cdr3_aa
+    range: string
+  fwr1:
+    name: fwr1
+    range: string
+  fwr1_aa:
+    name: fwr1_aa
+    range: string
+  fwr2:
+    name: fwr2
+    range: string
+  fwr2_aa:
+    name: fwr2_aa
+    range: string
+  fwr3:
+    name: fwr3
+    range: string
+  fwr3_aa:
+    name: fwr3_aa
+    range: string
+  fwr4:
+    name: fwr4
+    range: string
+  fwr4_aa:
+    name: fwr4_aa
+    range: string
+  v_score:
+    name: v_score
+    range: float
+  v_identity:
+    name: v_identity
+    range: float
+  v_support:
+    name: v_support
+    range: float
+  v_cigar:
+    name: v_cigar
+    range: string
+  d_score:
+    name: d_score
+    range: float
+  d_identity:
+    name: d_identity
+    range: float
+  d_support:
+    name: d_support
+    range: float
+  d_cigar:
+    name: d_cigar
+    range: string
+  d2_score:
+    name: d2_score
+    range: float
+  d2_identity:
+    name: d2_identity
+    range: float
+  d2_support:
+    name: d2_support
+    range: float
+  d2_cigar:
+    name: d2_cigar
+    range: string
+  j_score:
+    name: j_score
+    range: float
+  j_identity:
+    name: j_identity
+    range: float
+  j_support:
+    name: j_support
+    range: float
+  j_cigar:
+    name: j_cigar
+    range: string
+  c_score:
+    name: c_score
+    range: float
+  c_identity:
+    name: c_identity
+    range: float
+  c_support:
+    name: c_support
+    range: float
+  c_cigar:
+    name: c_cigar
+    range: string
+  v_sequence_start:
+    name: v_sequence_start
+    range: integer
+  v_sequence_end:
+    name: v_sequence_end
+    range: integer
+  v_germline_start:
+    name: v_germline_start
+    range: integer
+  v_germline_end:
+    name: v_germline_end
+    range: integer
+  v_alignment_start:
+    name: v_alignment_start
+    range: integer
+  v_alignment_end:
+    name: v_alignment_end
+    range: integer
+  d_sequence_start:
+    name: d_sequence_start
+    range: integer
+  d_sequence_end:
+    name: d_sequence_end
+    range: integer
+  d_germline_start:
+    name: d_germline_start
+    range: integer
+  d_germline_end:
+    name: d_germline_end
+    range: integer
+  d_alignment_start:
+    name: d_alignment_start
+    range: integer
+  d_alignment_end:
+    name: d_alignment_end
+    range: integer
+  d2_sequence_start:
+    name: d2_sequence_start
+    range: integer
+  d2_sequence_end:
+    name: d2_sequence_end
+    range: integer
+  d2_germline_start:
+    name: d2_germline_start
+    range: integer
+  d2_germline_end:
+    name: d2_germline_end
+    range: integer
+  d2_alignment_start:
+    name: d2_alignment_start
+    range: integer
+  d2_alignment_end:
+    name: d2_alignment_end
+    range: integer
+  j_sequence_start:
+    name: j_sequence_start
+    range: integer
+  j_sequence_end:
+    name: j_sequence_end
+    range: integer
+  j_germline_start:
+    name: j_germline_start
+    range: integer
+  j_germline_end:
+    name: j_germline_end
+    range: integer
+  j_alignment_start:
+    name: j_alignment_start
+    range: integer
+  j_alignment_end:
+    name: j_alignment_end
+    range: integer
+  c_sequence_start:
+    name: c_sequence_start
+    range: integer
+  c_sequence_end:
+    name: c_sequence_end
+    range: integer
+  c_germline_start:
+    name: c_germline_start
+    range: integer
+  c_germline_end:
+    name: c_germline_end
+    range: integer
+  c_alignment_start:
+    name: c_alignment_start
+    range: integer
+  c_alignment_end:
+    name: c_alignment_end
+    range: integer
+  cdr3_end:
+    name: cdr3_end
+    range: integer
+  fwr4_start:
+    name: fwr4_start
+    range: integer
+  fwr4_end:
+    name: fwr4_end
+    range: integer
+  v_sequence_alignment:
+    name: v_sequence_alignment
+    range: string
+  v_sequence_alignment_aa:
+    name: v_sequence_alignment_aa
+    range: string
+  d_sequence_alignment:
+    name: d_sequence_alignment
+    range: string
+  d_sequence_alignment_aa:
+    name: d_sequence_alignment_aa
+    range: string
+  d2_sequence_alignment:
+    name: d2_sequence_alignment
+    range: string
+  d2_sequence_alignment_aa:
+    name: d2_sequence_alignment_aa
+    range: string
+  j_sequence_alignment:
+    name: j_sequence_alignment
+    range: string
+  j_sequence_alignment_aa:
+    name: j_sequence_alignment_aa
+    range: string
+  c_sequence_alignment:
+    name: c_sequence_alignment
+    range: string
+  c_sequence_alignment_aa:
+    name: c_sequence_alignment_aa
+    range: string
+  v_germline_alignment:
+    name: v_germline_alignment
+    range: string
+  v_germline_alignment_aa:
+    name: v_germline_alignment_aa
+    range: string
+  d_germline_alignment:
+    name: d_germline_alignment
+    range: string
+  d_germline_alignment_aa:
+    name: d_germline_alignment_aa
+    range: string
+  d2_germline_alignment:
+    name: d2_germline_alignment
+    range: string
+  d2_germline_alignment_aa:
+    name: d2_germline_alignment_aa
+    range: string
+  j_germline_alignment:
+    name: j_germline_alignment
+    range: string
+  j_germline_alignment_aa:
+    name: j_germline_alignment_aa
+    range: string
+  c_germline_alignment:
+    name: c_germline_alignment
+    range: string
+  c_germline_alignment_aa:
+    name: c_germline_alignment_aa
+    range: string
+  junction_length:
+    name: junction_length
+    range: integer
+  junction_aa_length:
+    name: junction_aa_length
+    range: integer
+  np1_length:
+    name: np1_length
+    range: integer
+  np2_length:
+    name: np2_length
+    range: integer
+  np3_length:
+    name: np3_length
+    range: integer
+  n1_length:
+    name: n1_length
+    range: integer
+  n2_length:
+    name: n2_length
+    range: integer
+  n3_length:
+    name: n3_length
+    range: integer
+  p3v_length:
+    name: p3v_length
+    range: integer
+  p5d_length:
+    name: p5d_length
+    range: integer
+  p3d_length:
+    name: p3d_length
+    range: integer
+  p5d2_length:
+    name: p5d2_length
+    range: integer
+  p3d2_length:
+    name: p3d2_length
+    range: integer
+  p5j_length:
+    name: p5j_length
+    range: integer
+  v_frameshift:
+    name: v_frameshift
+    range: boolean
+  j_frameshift:
+    name: j_frameshift
+    range: boolean
+  d_frame:
+    name: d_frame
+    range: integer
+  d2_frame:
+    name: d2_frame
+    range: integer
+  consensus_count:
+    name: consensus_count
+    range: integer
+  duplicate_count:
+    name: duplicate_count
+    range: integer
+  umi_count:
+    name: umi_count
+    range: integer
+  cell_id:
+    name: cell_id
+    range: string
+  clone_id:
+    name: clone_id
+    range: string
+  sample_processing_id:
+    name: sample_processing_id
+    range: string
+  sequences:
+    name: sequences
+    range: string
+    multivalued: true
+  junction_start:
+    name: junction_start
+    range: integer
+  junction_end:
+    name: junction_end
+    range: integer
+  clone_count:
+    name: clone_count
+    range: integer
+  seed_id:
+    name: seed_id
+    range: string
+  tree_id:
+    name: tree_id
+    range: string
+  newick:
+    name: newick
+    range: string
+  nodes:
+    name: nodes
+  rearrangements:
+    name: rearrangements
+    range: string
+    multivalued: true
+  receptors:
+    name: receptors
+    range: string
+    multivalued: true
+  expression_study_method:
+    name: expression_study_method
+    range: AirrV1_5_ExpressionStudyMethod
+  expression_raw_doi:
+    name: expression_raw_doi
+    range: string
+  expression_index:
+    name: expression_index
+    range: string
+  virtual_pairing:
+    name: virtual_pairing
+    range: boolean
+  expression_id:
+    name: expression_id
+    range: string
+  property_type:
+    name: property_type
+    range: string
+  property:
+    name: property
+    range: AirrV1_5_Property
+  receptor_id:
+    name: receptor_id
+    range: string
+  receptor_hash:
+    name: receptor_hash
+    range: string
+  receptor_type:
+    name: receptor_type
+    range: AirrV1_5_ReceptorType
+  receptor_variable_domain_1_aa:
+    name: receptor_variable_domain_1_aa
+    range: string
+  receptor_variable_domain_1_locus:
+    name: receptor_variable_domain_1_locus
+    range: AirrV1_5_ReceptorVariableDomain1Locus
+  receptor_variable_domain_2_aa:
+    name: receptor_variable_domain_2_aa
+    range: string
+  receptor_variable_domain_2_locus:
+    name: receptor_variable_domain_2_locus
+    range: AirrV1_5_ReceptorVariableDomain2Locus
+  receptor_ref:
+    name: receptor_ref
+    range: string
+    multivalued: true
+  reactivity_measurements:
+    name: reactivity_measurements
+    range: AirrV1_5_ReceptorReactivity
+    multivalued: true
+  ligand_type:
+    name: ligand_type
+    range: AirrV1_5_LigandType
+  antigen_type:
+    name: antigen_type
+    range: AirrV1_5_AntigenType
+  antigen:
+    name: antigen
+    range: AirrV1_5_Antigen
+  antigen_source_species:
+    name: antigen_source_species
+    range: AirrV1_5_AntigenSourceSpecies
+  peptide_start:
+    name: peptide_start
+    range: integer
+  peptide_end:
+    name: peptide_end
+    range: integer
+  mhc_gene_1:
+    name: mhc_gene_1
+    range: AirrV1_5_MhcGene1
+  mhc_allele_1:
+    name: mhc_allele_1
+    range: string
+  mhc_gene_2:
+    name: mhc_gene_2
+    range: AirrV1_5_MhcGene2
+  mhc_allele_2:
+    name: mhc_allele_2
+    range: string
+  reactivity_method:
+    name: reactivity_method
+    range: AirrV1_5_ReactivityMethod
+  reactivity_readout:
+    name: reactivity_readout
+    range: AirrV1_5_ReactivityReadout
+  reactivity_value:
+    name: reactivity_value
+    range: float
+  reactivity_unit:
+    name: reactivity_unit
+    range: string
+
+enums:
+  AirrV1_5_Unit:
+    name: AirrV1_5_Unit
+    reachable_from:
+      source_nodes:
+        - UO:0000003
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_Derivation:
+    name: AirrV1_5_Derivation
+    permissible_values:
+      DNA:
+      RNA:
+      'null':
+  AirrV1_5_ObservationType:
+    name: AirrV1_5_ObservationType
+    permissible_values:
+      direct_sequencing:
+      inference_from_repertoire:
+  AirrV1_5_Strand:
+    name: AirrV1_5_Strand
+    permissible_values:
+      +:
+      '-':
+      'null':
+  AirrV1_5_Locus:
+    name: AirrV1_5_Locus
+    permissible_values:
+      IGH:
+      IGI:
+      IGK:
+      IGL:
+      TRA:
+      TRB:
+      TRD:
+      TRG:
+      'null':
+  AirrV1_5_SequenceType:
+    name: AirrV1_5_SequenceType
+    permissible_values:
+      V:
+      D:
+      J:
+      C:
+  AirrV1_5_InferenceType:
+    name: AirrV1_5_InferenceType
+    permissible_values:
+      genomic_and_rearranged:
+      genomic_only:
+      rearranged_only:
+      'null':
+  AirrV1_5_Species:
+    name: AirrV1_5_Species
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_SpeciesSubgroupType:
+    name: AirrV1_5_SpeciesSubgroupType
+    permissible_values:
+      breed:
+      strain:
+      inbred:
+      outbred:
+      locational:
+      'null':
+  AirrV1_5_Status:
+    name: AirrV1_5_Status
+    permissible_values:
+      active:
+      draft:
+      retired:
+      withdrawn:
+      'null':
+  AirrV1_5_JCodonFrame:
+    name: AirrV1_5_JCodonFrame
+    permissible_values:
+      1:
+      2:
+      3:
+      'null':
+  AirrV1_5_CurationalTags:
+    name: AirrV1_5_CurationalTags
+    permissible_values:
+      likely_truncated:
+      likely_full_length:
+  AirrV1_5_InferenceProcess:
+    name: AirrV1_5_InferenceProcess
+    permissible_values:
+      genomic_sequencing:
+      repertoire_sequencing:
+      'null':
+  AirrV1_5_MhcClass:
+    name: AirrV1_5_MhcClass
+    permissible_values:
+      MHC-I:
+      MHC-II:
+      MHC-nonclassical:
+      'null':
+  AirrV1_5_Gene:
+    name: AirrV1_5_Gene
+    reachable_from:
+      source_nodes:
+        - MRO:0000004
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_StudyType:
+    name: AirrV1_5_StudyType
+    reachable_from:
+      source_nodes:
+        - NCIT:C63536
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_KeywordsStudy:
+    name: AirrV1_5_KeywordsStudy
+    permissible_values:
+      contains_ig:
+      contains_tr:
+      contains_paired_chain:
+      contains_schema_rearrangement:
+      contains_schema_clone:
+      contains_schema_cell:
+      contains_schema_receptor:
+  AirrV1_5_Sex:
+    name: AirrV1_5_Sex
+    permissible_values:
+      male:
+      female:
+      pooled:
+      hermaphrodite:
+      intersex:
+      'null':
+  AirrV1_5_AgeUnit:
+    name: AirrV1_5_AgeUnit
+    reachable_from:
+      source_nodes:
+        - UO:0000003
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_DiseaseDiagnosis:
+    name: AirrV1_5_DiseaseDiagnosis
+    reachable_from:
+      source_nodes:
+        - DOID:4
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_Tissue:
+    name: AirrV1_5_Tissue
+    reachable_from:
+      source_nodes:
+        - UBERON:0010000
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_CollectionTimePointRelativeUnit:
+    name: AirrV1_5_CollectionTimePointRelativeUnit
+    reachable_from:
+      source_nodes:
+        - UO:0000003
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_CellSubset:
+    name: AirrV1_5_CellSubset
+    reachable_from:
+      source_nodes:
+        - CL:0000542
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_CellSpecies:
+    name: AirrV1_5_CellSpecies
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_PcrTargetLocus:
+    name: AirrV1_5_PcrTargetLocus
+    permissible_values:
+      IGH:
+      IGI:
+      IGK:
+      IGL:
+      TRA:
+      TRB:
+      TRD:
+      TRG:
+      'null':
+  AirrV1_5_TemplateClass:
+    name: AirrV1_5_TemplateClass
+    permissible_values:
+      DNA:
+      RNA:
+  AirrV1_5_TemplateAmountUnit:
+    name: AirrV1_5_TemplateAmountUnit
+    reachable_from:
+      source_nodes:
+        - UO:0000002
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_LibraryGenerationMethod:
+    name: AirrV1_5_LibraryGenerationMethod
+    permissible_values:
+      PCR:
+      RT(RHP)+PCR:
+      RT(oligo-dT)+PCR:
+      RT(oligo-dT)+TS+PCR:
+      RT(oligo-dT)+TS(UMI)+PCR:
+      RT(specific)+PCR:
+      RT(specific)+TS+PCR:
+      RT(specific)+TS(UMI)+PCR:
+      RT(specific+UMI)+PCR:
+      RT(specific+UMI)+TS+PCR:
+      RT(specific)+TS:
+      other:
+  AirrV1_5_CompleteSequences:
+    name: AirrV1_5_CompleteSequences
+    permissible_values:
+      partial:
+      complete:
+      complete+untemplated:
+      mixed:
+  AirrV1_5_PhysicalLinkage:
+    name: AirrV1_5_PhysicalLinkage
+    permissible_values:
+      none:
+      hetero_head-head:
+      hetero_tail-head:
+      hetero_prelinked:
+  AirrV1_5_FileType:
+    name: AirrV1_5_FileType
+    permissible_values:
+      fasta:
+      fastq:
+      'null':
+  AirrV1_5_ReadDirection:
+    name: AirrV1_5_ReadDirection
+    permissible_values:
+      forward:
+      reverse:
+      mixed:
+      'null':
+  AirrV1_5_PairedReadDirection:
+    name: AirrV1_5_PairedReadDirection
+    permissible_values:
+      forward:
+      reverse:
+      mixed:
+      'null':
+  AirrV1_5_ExpressionStudyMethod:
+    name: AirrV1_5_ExpressionStudyMethod
+    permissible_values:
+      flow_cytometry:
+      single-cell_transcriptome:
+      'null':
+  AirrV1_5_Property:
+    name: AirrV1_5_Property
+  AirrV1_5_ReceptorType:
+    name: AirrV1_5_ReceptorType
+    permissible_values:
+      Ig:
+      TCR:
+  AirrV1_5_ReceptorVariableDomain1Locus:
+    name: AirrV1_5_ReceptorVariableDomain1Locus
+    permissible_values:
+      IGH:
+      TRB:
+      TRD:
+  AirrV1_5_ReceptorVariableDomain2Locus:
+    name: AirrV1_5_ReceptorVariableDomain2Locus
+    permissible_values:
+      IGI:
+      IGK:
+      IGL:
+      TRA:
+      TRG:
+  AirrV1_5_LigandType:
+    name: AirrV1_5_LigandType
+    permissible_values:
+      MHC:peptide:
+      MHC:non-peptide:
+      protein:
+      peptide:
+      non-peptidic:
+  AirrV1_5_AntigenType:
+    name: AirrV1_5_AntigenType
+    permissible_values:
+      protein:
+      peptide:
+      non-peptidic:
+  AirrV1_5_Antigen:
+    name: AirrV1_5_Antigen
+  AirrV1_5_AntigenSourceSpecies:
+    name: AirrV1_5_AntigenSourceSpecies
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:1
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_MhcGene1:
+    name: AirrV1_5_MhcGene1
+    reachable_from:
+      source_nodes:
+        - MRO:0000004
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_MhcGene2:
+    name: AirrV1_5_MhcGene2
+    reachable_from:
+      source_nodes:
+        - MRO:0000004
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  AirrV1_5_ReactivityMethod:
+    name: AirrV1_5_ReactivityMethod
+    permissible_values:
+      SPR:
+      ITC:
+      ELISA:
+      cytometry:
+      biological_activity:
+  AirrV1_5_ReactivityReadout:
+    name: AirrV1_5_ReactivityReadout
+    permissible_values:
+      binding_strength:
+      cytokine_release:
+      dissociation_constant_kd:
+      on_rate:
+      off_rate:
+      pathogen_inhibition:
