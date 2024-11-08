@@ -216,6 +216,3719 @@
             "title": "AIRRKnowledgeCommons",
             "type": "object"
         },
+        "AirrV15Acknowledgement": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "acknowledgement_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "institution_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "orcid_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Acknowledgement",
+            "type": "object"
+        },
+        "AirrV15AgeUnit": {
+            "description": "",
+            "title": "AirrV15AgeUnit",
+            "type": "string"
+        },
+        "AirrV15Alignment": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cigar": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "data_processing_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "germline_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "identity": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "rank": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "rev_comp": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "score": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "segment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequence_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "support": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Alignment",
+            "type": "object"
+        },
+        "AirrV15AlleleDescription": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "acknowledgements": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15Acknowledgement"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "aliases": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "allele_description_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "allele_description_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "allele_designation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "allele_similarity_cluster_designation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "allele_similarity_cluster_member_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "chromosome": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "coding_sequence": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "curation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "curational_tags": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15CurationalTags"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "d_rs_3_prime_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_rs_3_prime_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_rs_5_prime_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_rs_5_prime_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "functional": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "gene_designation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "gene_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "gene_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "inference_type": {
+                    "$ref": "#/$defs/AirrV15InferenceType"
+                },
+                "j_cdr3_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_codon_frame": {
+                    "$ref": "#/$defs/AirrV15JCodonFrame"
+                },
+                "j_donor_splice": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_rs_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_rs_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "lab_address": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "leader_1_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "leader_1_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "leader_2_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "leader_2_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/AirrV15Locus"
+                },
+                "maintainer": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paralogs": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "rearranged_support": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15RearrangedSequence"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "release_date": {
+                    "description": "Initial release of the investigation and its data",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "release_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "release_version": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_type": {
+                    "$ref": "#/$defs/AirrV15SequenceType"
+                },
+                "species": {
+                    "$ref": "#/$defs/Species",
+                    "description": "The species of a participant"
+                },
+                "species_subgroup": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species_subgroup_type": {
+                    "$ref": "#/$defs/AirrV15SpeciesSubgroupType"
+                },
+                "status": {
+                    "$ref": "#/$defs/AirrV15Status"
+                },
+                "subgroup_designation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "unrearranged_support": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15UnrearrangedSequence"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "utr_5_prime_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "utr_5_prime_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_gene_delineations": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15SequenceDelineationV"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "v_rs_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_rs_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15AlleleDescription",
+            "type": "object"
+        },
+        "AirrV15Antigen": {
+            "description": "",
+            "title": "AirrV15Antigen",
+            "type": "string"
+        },
+        "AirrV15AntigenSourceSpecies": {
+            "description": "",
+            "title": "AirrV15AntigenSourceSpecies",
+            "type": "string"
+        },
+        "AirrV15AntigenType": {
+            "description": "",
+            "enum": [
+                "protein",
+                "peptide",
+                "non-peptidic"
+            ],
+            "title": "AirrV15AntigenType",
+            "type": "string"
+        },
+        "AirrV15Cell": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "cell_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "data_processing_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expression_index": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expression_raw_doi": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expression_study_method": {
+                    "$ref": "#/$defs/AirrV15ExpressionStudyMethod"
+                },
+                "rearrangements": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "receptors": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "virtual_pairing": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Cell",
+            "type": "object"
+        },
+        "AirrV15CellExpression": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "cell_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "data_processing_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expression_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "property": {
+                    "$ref": "#/$defs/AirrV15Property"
+                },
+                "property_type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15CellExpression",
+            "type": "object"
+        },
+        "AirrV15CellProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "cell_isolation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_number": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cell_phenotype": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_processing_protocol": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_quality": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_species": {
+                    "$ref": "#/$defs/AirrV15CellSpecies"
+                },
+                "cell_storage": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "cell_subset": {
+                    "$ref": "#/$defs/AirrV15CellSubset"
+                },
+                "cells_per_reaction": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "single_cell": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "tissue_processing": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15CellProcessing",
+            "type": "object"
+        },
+        "AirrV15CellSpecies": {
+            "description": "",
+            "title": "AirrV15CellSpecies",
+            "type": "string"
+        },
+        "AirrV15CellSubset": {
+            "description": "",
+            "title": "AirrV15CellSubset",
+            "type": "string"
+        },
+        "AirrV15Clone": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "clone_count": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "clone_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "description": "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "data_processing_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "description": "J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid form of the junction.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "junction_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "junction_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "junction_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "seed_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequences": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "umi_count": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_call": {
+                    "description": "V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Clone",
+            "type": "object"
+        },
+        "AirrV15CollectionTimePointRelativeUnit": {
+            "description": "",
+            "title": "AirrV15CollectionTimePointRelativeUnit",
+            "type": "string"
+        },
+        "AirrV15CompleteSequences": {
+            "description": "",
+            "enum": [
+                "partial",
+                "complete",
+                "complete+untemplated",
+                "mixed"
+            ],
+            "title": "AirrV15CompleteSequences",
+            "type": "string"
+        },
+        "AirrV15CurationalTags": {
+            "description": "",
+            "enum": [
+                "likely_truncated",
+                "likely_full_length"
+            ],
+            "title": "AirrV15CurationalTags",
+            "type": "string"
+        },
+        "AirrV15DataProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "analysis_provenance_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "collapsing_method": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "data_processing_files": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "data_processing_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "data_processing_protocols": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_database": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_set_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_reads_assembly": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "primary_annotation": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "primer_match_cutoffs": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "quality_thresholds": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "software_versions": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15DataProcessing",
+            "type": "object"
+        },
+        "AirrV15DeletedGene": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "germline_set_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "phasing": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15DeletedGene",
+            "type": "object"
+        },
+        "AirrV15Derivation": {
+            "description": "",
+            "enum": [
+                "DNA",
+                "RNA",
+                "null"
+            ],
+            "title": "AirrV15Derivation",
+            "type": "string"
+        },
+        "AirrV15Diagnosis": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "disease_diagnosis": {
+                    "$ref": "#/$defs/AirrV15DiseaseDiagnosis"
+                },
+                "disease_length": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "disease_stage": {
+                    "$ref": "#/$defs/DiseaseStage",
+                    "description": "The stage of the disease relevant to an immune exposure"
+                },
+                "immunogen": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "intervention": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "medical_history": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "prior_therapies": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_group_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Diagnosis",
+            "type": "object"
+        },
+        "AirrV15DiseaseDiagnosis": {
+            "description": "",
+            "title": "AirrV15DiseaseDiagnosis",
+            "type": "string"
+        },
+        "AirrV15DocumentedAllele": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "germline_set_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "phasing": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15DocumentedAllele",
+            "type": "object"
+        },
+        "AirrV15ExpressionStudyMethod": {
+            "description": "",
+            "enum": [
+                "flow_cytometry",
+                "single-cell_transcriptome",
+                "null"
+            ],
+            "title": "AirrV15ExpressionStudyMethod",
+            "type": "string"
+        },
+        "AirrV15FileType": {
+            "description": "",
+            "enum": [
+                "fasta",
+                "fastq",
+                "null"
+            ],
+            "title": "AirrV15FileType",
+            "type": "string"
+        },
+        "AirrV15Gene": {
+            "description": "",
+            "title": "AirrV15Gene",
+            "type": "string"
+        },
+        "AirrV15Genotype": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "deleted_genes": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15DeletedGene"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "documented_alleles": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15DocumentedAllele"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "inference_process": {
+                    "$ref": "#/$defs/AirrV15InferenceProcess"
+                },
+                "locus": {
+                    "$ref": "#/$defs/AirrV15Locus"
+                },
+                "receptor_genotype_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "undocumented_alleles": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15UndocumentedAllele"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Genotype",
+            "type": "object"
+        },
+        "AirrV15GenotypeSet": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "genotype_class_list": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15Genotype"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "receptor_genotype_set_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15GenotypeSet",
+            "type": "object"
+        },
+        "AirrV15GermlineSet": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "acknowledgements": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15Acknowledgement"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "allele_descriptions": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15AlleleDescription"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "author": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "curation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_set_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_set_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_set_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "lab_address": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "lab_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/AirrV15Locus"
+                },
+                "pub_ids": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "release_date": {
+                    "description": "Initial release of the investigation and its data",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "release_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "release_version": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/Species",
+                    "description": "The species of a participant"
+                },
+                "species_subgroup": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species_subgroup_type": {
+                    "$ref": "#/$defs/AirrV15SpeciesSubgroupType"
+                }
+            },
+            "title": "AirrV15GermlineSet",
+            "type": "object"
+        },
+        "AirrV15InferenceProcess": {
+            "description": "",
+            "enum": [
+                "genomic_sequencing",
+                "repertoire_sequencing",
+                "null"
+            ],
+            "title": "AirrV15InferenceProcess",
+            "type": "string"
+        },
+        "AirrV15InferenceType": {
+            "description": "",
+            "enum": [
+                "genomic_and_rearranged",
+                "genomic_only",
+                "rearranged_only",
+                "null"
+            ],
+            "title": "AirrV15InferenceType",
+            "type": "string"
+        },
+        "AirrV15JCodonFrame": {
+            "description": "",
+            "enum": [
+                "1",
+                "2",
+                "3",
+                "null"
+            ],
+            "title": "AirrV15JCodonFrame",
+            "type": "string"
+        },
+        "AirrV15KeywordsStudy": {
+            "description": "",
+            "enum": [
+                "contains_ig",
+                "contains_tr",
+                "contains_paired_chain",
+                "contains_schema_rearrangement",
+                "contains_schema_clone",
+                "contains_schema_cell",
+                "contains_schema_receptor"
+            ],
+            "title": "AirrV15KeywordsStudy",
+            "type": "string"
+        },
+        "AirrV15LibraryGenerationMethod": {
+            "description": "",
+            "enum": [
+                "PCR",
+                "RT(RHP)+PCR",
+                "RT(oligo-dT)+PCR",
+                "RT(oligo-dT)+TS+PCR",
+                "RT(oligo-dT)+TS(UMI)+PCR",
+                "RT(specific)+PCR",
+                "RT(specific)+TS+PCR",
+                "RT(specific)+TS(UMI)+PCR",
+                "RT(specific+UMI)+PCR",
+                "RT(specific+UMI)+TS+PCR",
+                "RT(specific)+TS",
+                "other"
+            ],
+            "title": "AirrV15LibraryGenerationMethod",
+            "type": "string"
+        },
+        "AirrV15LigandType": {
+            "description": "",
+            "enum": [
+                "MHC:peptide",
+                "MHC:non-peptide",
+                "protein",
+                "peptide",
+                "non-peptidic"
+            ],
+            "title": "AirrV15LigandType",
+            "type": "string"
+        },
+        "AirrV15Locus": {
+            "description": "",
+            "enum": [
+                "IGH",
+                "IGI",
+                "IGK",
+                "IGL",
+                "TRA",
+                "TRB",
+                "TRD",
+                "TRG",
+                "null"
+            ],
+            "title": "AirrV15Locus",
+            "type": "string"
+        },
+        "AirrV15MHCAllele": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "allele_designation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "gene": {
+                    "$ref": "#/$defs/AirrV15Gene"
+                },
+                "reference_set_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15MHCAllele",
+            "type": "object"
+        },
+        "AirrV15MHCGenotype": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "mhc_alleles": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15MHCAllele"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mhc_class": {
+                    "$ref": "#/$defs/AirrV15MhcClass"
+                },
+                "mhc_genotype_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc_genotyping_method": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15MHCGenotype",
+            "type": "object"
+        },
+        "AirrV15MHCGenotypeSet": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "mhc_genotype_list": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15MHCGenotype"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "mhc_genotype_set_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15MHCGenotypeSet",
+            "type": "object"
+        },
+        "AirrV15MhcClass": {
+            "description": "",
+            "enum": [
+                "MHC-I",
+                "MHC-II",
+                "MHC-nonclassical",
+                "null"
+            ],
+            "title": "AirrV15MhcClass",
+            "type": "string"
+        },
+        "AirrV15MhcGene1": {
+            "description": "",
+            "title": "AirrV15MhcGene1",
+            "type": "string"
+        },
+        "AirrV15MhcGene2": {
+            "description": "",
+            "title": "AirrV15MhcGene2",
+            "type": "string"
+        },
+        "AirrV15Node": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "junction": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid form of the junction.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Node",
+            "type": "object"
+        },
+        "AirrV15NucleicAcidProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "complete_sequences": {
+                    "$ref": "#/$defs/AirrV15CompleteSequences"
+                },
+                "library_generation_kit_version": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "library_generation_method": {
+                    "$ref": "#/$defs/AirrV15LibraryGenerationMethod"
+                },
+                "library_generation_protocol": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pcr_target": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15PCRTarget"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "physical_linkage": {
+                    "$ref": "#/$defs/AirrV15PhysicalLinkage"
+                },
+                "template_amount": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "template_amount_unit": {
+                    "$ref": "#/$defs/AirrV15TemplateAmountUnit"
+                },
+                "template_class": {
+                    "$ref": "#/$defs/AirrV15TemplateClass"
+                },
+                "template_quality": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15NucleicAcidProcessing",
+            "type": "object"
+        },
+        "AirrV15ObservationType": {
+            "description": "",
+            "enum": [
+                "direct_sequencing",
+                "inference_from_repertoire"
+            ],
+            "title": "AirrV15ObservationType",
+            "type": "string"
+        },
+        "AirrV15PCRTarget": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "forward_pcr_primer_target_location": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pcr_target_locus": {
+                    "$ref": "#/$defs/AirrV15PcrTargetLocus"
+                },
+                "reverse_pcr_primer_target_location": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15PCRTarget",
+            "type": "object"
+        },
+        "AirrV15PairedReadDirection": {
+            "description": "",
+            "enum": [
+                "forward",
+                "reverse",
+                "mixed",
+                "null"
+            ],
+            "title": "AirrV15PairedReadDirection",
+            "type": "string"
+        },
+        "AirrV15PcrTargetLocus": {
+            "description": "",
+            "enum": [
+                "IGH",
+                "IGI",
+                "IGK",
+                "IGL",
+                "TRA",
+                "TRB",
+                "TRD",
+                "TRG",
+                "null"
+            ],
+            "title": "AirrV15PcrTargetLocus",
+            "type": "string"
+        },
+        "AirrV15PhysicalLinkage": {
+            "description": "",
+            "enum": [
+                "none",
+                "hetero_head-head",
+                "hetero_tail-head",
+                "hetero_prelinked"
+            ],
+            "title": "AirrV15PhysicalLinkage",
+            "type": "string"
+        },
+        "AirrV15Property": {
+            "description": "",
+            "title": "AirrV15Property",
+            "type": "string"
+        },
+        "AirrV15ReactivityMethod": {
+            "description": "",
+            "enum": [
+                "SPR",
+                "ITC",
+                "ELISA",
+                "cytometry",
+                "biological_activity"
+            ],
+            "title": "AirrV15ReactivityMethod",
+            "type": "string"
+        },
+        "AirrV15ReactivityReadout": {
+            "description": "",
+            "enum": [
+                "binding_strength",
+                "cytokine_release",
+                "dissociation_constant_kd",
+                "on_rate",
+                "off_rate",
+                "pathogen_inhibition"
+            ],
+            "title": "AirrV15ReactivityReadout",
+            "type": "string"
+        },
+        "AirrV15ReadDirection": {
+            "description": "",
+            "enum": [
+                "forward",
+                "reverse",
+                "mixed",
+                "null"
+            ],
+            "title": "AirrV15ReadDirection",
+            "type": "string"
+        },
+        "AirrV15RearrangedSequence": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "curation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "deposited_version": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "derivation": {
+                    "$ref": "#/$defs/AirrV15Derivation"
+                },
+                "observation_type": {
+                    "$ref": "#/$defs/AirrV15ObservationType"
+                },
+                "repository_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repository_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequence_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15RearrangedSequence",
+            "type": "object"
+        },
+        "AirrV15Rearrangement": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "c_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "c_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "c_cigar": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "c_germline_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "c_germline_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "c_germline_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "c_germline_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "c_identity": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "c_score": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "c_sequence_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "c_sequence_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "c_sequence_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "c_sequence_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "c_support": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "cdr1": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_end": {
+                    "description": "CDR1 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr1_start": {
+                    "description": "CDR1 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_end": {
+                    "description": "CDR2 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_start": {
+                    "description": "CDR2 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_end": {
+                    "description": "CDR3 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_start": {
+                    "description": "CDR3 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cell_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "clone_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "complete_vdj": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "consensus_count": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d2_cigar": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d2_frame": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_germline_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d2_germline_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d2_germline_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_germline_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_identity": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "d2_score": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "d2_sequence_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d2_sequence_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d2_sequence_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_sequence_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d2_support": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "d_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "description": "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d_cigar": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d_frame": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_germline_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d_germline_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d_germline_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_germline_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_identity": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "d_score": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "d_sequence_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d_sequence_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "d_sequence_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_sequence_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "d_support": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "data_processing_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "duplicate_count": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr1": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr1_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr1_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr1_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr2": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr2_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr2_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr2_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr3": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr3_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr3_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr3_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr4": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr4_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr4_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr4_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "germline_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "germline_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "description": "J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_cigar": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_frameshift": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "j_germline_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_germline_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_germline_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_germline_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_identity": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "j_score": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "j_sequence_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_sequence_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_sequence_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_sequence_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "j_support": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "junction": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid form of the junction.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "junction_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/AirrV15Locus"
+                },
+                "n1_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "n2_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "n3_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "np1": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "np1_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "np1_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "np2": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "np2_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "np2_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "np3": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "np3_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "np3_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "p3d2_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "p3d_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "p3v_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "p5d2_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "p5d_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "p5j_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "productive": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "quality": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "quality_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "rev_comp": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "sample_processing_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "stop_codon": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "umi_count": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_alignment_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_alignment_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_call": {
+                    "description": "V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_cigar": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_frameshift": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "v_germline_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_germline_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_germline_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_germline_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_identity": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "v_score": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "v_sequence_alignment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_sequence_alignment_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_sequence_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_sequence_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "v_support": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "vj_in_frame": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Rearrangement",
+            "type": "object"
+        },
+        "AirrV15Receptor": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "reactivity_measurements": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15ReceptorReactivity"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "receptor_hash": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor_ref": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "receptor_type": {
+                    "$ref": "#/$defs/AirrV15ReceptorType"
+                },
+                "receptor_variable_domain_1_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor_variable_domain_1_locus": {
+                    "$ref": "#/$defs/AirrV15ReceptorVariableDomain1Locus"
+                },
+                "receptor_variable_domain_2_aa": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor_variable_domain_2_locus": {
+                    "$ref": "#/$defs/AirrV15ReceptorVariableDomain2Locus"
+                }
+            },
+            "title": "AirrV15Receptor",
+            "type": "object"
+        },
+        "AirrV15ReceptorReactivity": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "antigen": {
+                    "$ref": "#/$defs/AirrV15Antigen"
+                },
+                "antigen_source_species": {
+                    "$ref": "#/$defs/AirrV15AntigenSourceSpecies"
+                },
+                "antigen_type": {
+                    "$ref": "#/$defs/AirrV15AntigenType"
+                },
+                "ligand_type": {
+                    "$ref": "#/$defs/AirrV15LigandType"
+                },
+                "mhc_allele_1": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc_allele_2": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc_class": {
+                    "$ref": "#/$defs/AirrV15MhcClass"
+                },
+                "mhc_gene_1": {
+                    "$ref": "#/$defs/AirrV15MhcGene1"
+                },
+                "mhc_gene_2": {
+                    "$ref": "#/$defs/AirrV15MhcGene2"
+                },
+                "peptide_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "peptide_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "reactivity_method": {
+                    "$ref": "#/$defs/AirrV15ReactivityMethod"
+                },
+                "reactivity_readout": {
+                    "$ref": "#/$defs/AirrV15ReactivityReadout"
+                },
+                "reactivity_unit": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "reactivity_value": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15ReceptorReactivity",
+            "type": "object"
+        },
+        "AirrV15ReceptorType": {
+            "description": "",
+            "enum": [
+                "Ig",
+                "TCR"
+            ],
+            "title": "AirrV15ReceptorType",
+            "type": "string"
+        },
+        "AirrV15ReceptorVariableDomain1Locus": {
+            "description": "",
+            "enum": [
+                "IGH",
+                "TRB",
+                "TRD"
+            ],
+            "title": "AirrV15ReceptorVariableDomain1Locus",
+            "type": "string"
+        },
+        "AirrV15ReceptorVariableDomain2Locus": {
+            "description": "",
+            "enum": [
+                "IGI",
+                "IGK",
+                "IGL",
+                "TRA",
+                "TRG"
+            ],
+            "title": "AirrV15ReceptorVariableDomain2Locus",
+            "type": "string"
+        },
+        "AirrV15Repertoire": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "data_processing": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15DataProcessing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "repertoire_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sample": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15SampleProcessing"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "study": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AirrV15Study"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "subject": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AirrV15Subject"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "AirrV15Repertoire",
+            "type": "object"
+        },
+        "AirrV15RepertoireGroup": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "repertoire_group_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_group_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_group_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoires": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15RepertoireGroup",
+            "type": "object"
+        },
+        "AirrV15Sample": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "anatomic_site": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "biomaterial_provider": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "collection_time_point_reference": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "collection_time_point_relative": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "collection_time_point_relative_unit": {
+                    "$ref": "#/$defs/AirrV15CollectionTimePointRelativeUnit"
+                },
+                "disease_state_sample": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sample_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sample_type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tissue": {
+                    "description": "The tissue from which this specimen was taken",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Sample",
+            "type": "object"
+        },
+        "AirrV15SampleProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "sequencing_facility": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_files": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AirrV15SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "sequencing_kit": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_platform": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "total_reads_passing_qc_filter": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15SampleProcessing",
+            "type": "object"
+        },
+        "AirrV15SequenceDelineationV": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "aligned_sequence": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "alignment_labels": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "cdr1_end": {
+                    "description": "CDR1 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr1_start": {
+                    "description": "CDR1 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_end": {
+                    "description": "CDR2 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_start": {
+                    "description": "CDR2 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_start": {
+                    "description": "CDR3 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "delineation_scheme": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "fwr1_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr1_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr2_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr2_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr3_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "fwr3_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequence_delineation_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "unaligned_sequence": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15SequenceDelineationV",
+            "type": "object"
+        },
+        "AirrV15SequenceType": {
+            "description": "",
+            "enum": [
+                "V",
+                "D",
+                "J",
+                "C"
+            ],
+            "title": "AirrV15SequenceType",
+            "type": "string"
+        },
+        "AirrV15SequencingData": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "file_type": {
+                    "$ref": "#/$defs/AirrV15FileType"
+                },
+                "filename": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "index_filename": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "index_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "paired_filename": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_read_direction": {
+                    "$ref": "#/$defs/AirrV15PairedReadDirection"
+                },
+                "paired_read_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "read_direction": {
+                    "$ref": "#/$defs/AirrV15ReadDirection"
+                },
+                "read_length": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequencing_data_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15SequencingData",
+            "type": "object"
+        },
+        "AirrV15SequencingRun": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "sequencing_facility": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_files": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AirrV15SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "sequencing_kit": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_platform": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "total_reads_passing_qc_filter": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15SequencingRun",
+            "type": "object"
+        },
+        "AirrV15Sex": {
+            "description": "",
+            "enum": [
+                "male",
+                "female",
+                "pooled",
+                "hermaphrodite",
+                "intersex",
+                "null"
+            ],
+            "title": "AirrV15Sex",
+            "type": "string"
+        },
+        "AirrV15Species": {
+            "description": "",
+            "title": "AirrV15Species",
+            "type": "string"
+        },
+        "AirrV15SpeciesSubgroupType": {
+            "description": "",
+            "enum": [
+                "breed",
+                "strain",
+                "inbred",
+                "outbred",
+                "locational",
+                "null"
+            ],
+            "title": "AirrV15SpeciesSubgroupType",
+            "type": "string"
+        },
+        "AirrV15Status": {
+            "description": "",
+            "enum": [
+                "active",
+                "draft",
+                "retired",
+                "withdrawn",
+                "null"
+            ],
+            "title": "AirrV15Status",
+            "type": "string"
+        },
+        "AirrV15Strand": {
+            "description": "",
+            "enum": [
+                "+",
+                "-",
+                "null"
+            ],
+            "title": "AirrV15Strand",
+            "type": "string"
+        },
+        "AirrV15Study": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "adc_publish_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "adc_update_date": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "collected_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "grants": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "inclusion_exclusion_criteria": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "keywords_study": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15KeywordsStudy"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "lab_address": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "lab_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "pub_ids": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_contact": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_title": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "study_type": {
+                    "$ref": "#/$defs/StudyType",
+                    "description": "Type of study design"
+                },
+                "submitted_by": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Study",
+            "type": "object"
+        },
+        "AirrV15StudyType": {
+            "description": "",
+            "title": "AirrV15StudyType",
+            "type": "string"
+        },
+        "AirrV15Subject": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "age_event": {
+                    "description": "The event to which the age is relative",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "age_max": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "age_min": {
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "age_unit": {
+                    "description": "Units used to describe the age",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "ancestry_population": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "diagnosis": {
+                    "items": {
+                        "$ref": "#/$defs/AirrV15Diagnosis"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "ethnicity": {
+                    "$ref": "#/$defs/Ethnicity",
+                    "description": "The ethnicity of a participant"
+                },
+                "genotype": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AirrV15SubjectGenotype"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "link_type": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "linked_subjects": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "race": {
+                    "$ref": "#/$defs/Race",
+                    "description": "The race of a participant"
+                },
+                "sex": {
+                    "$ref": "#/$defs/AirrV15Sex"
+                },
+                "species": {
+                    "$ref": "#/$defs/Species",
+                    "description": "The species of a participant"
+                },
+                "strain_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "subject_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "synthetic": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Subject",
+            "type": "object"
+        },
+        "AirrV15SubjectGenotype": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "mhc_genotype_set": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AirrV15MHCGenotypeSet"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "receptor_genotype_set": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AirrV15GenotypeSet"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "AirrV15SubjectGenotype",
+            "type": "object"
+        },
+        "AirrV15TemplateAmountUnit": {
+            "description": "",
+            "title": "AirrV15TemplateAmountUnit",
+            "type": "string"
+        },
+        "AirrV15TemplateClass": {
+            "description": "",
+            "enum": [
+                "DNA",
+                "RNA"
+            ],
+            "title": "AirrV15TemplateClass",
+            "type": "string"
+        },
+        "AirrV15TimePoint": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "unit": {
+                    "description": "The measurement result value unit",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15TimePoint",
+            "type": "object"
+        },
+        "AirrV15Tissue": {
+            "description": "",
+            "title": "AirrV15Tissue",
+            "type": "string"
+        },
+        "AirrV15Tree": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "clone_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "newick": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "nodes": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tree_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15Tree",
+            "type": "object"
+        },
+        "AirrV15UndocumentedAllele": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "allele_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "phasing": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "AirrV15UndocumentedAllele",
+            "type": "object"
+        },
+        "AirrV15Unit": {
+            "description": "",
+            "title": "AirrV15Unit",
+            "type": "string"
+        },
+        "AirrV15UnrearrangedSequence": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "curation": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "gff_end": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "gff_seqid": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "gff_start": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "patch_no": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repository_name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repository_ref": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "strand": {
+                    "$ref": "#/$defs/AirrV15Strand"
+                }
+            },
+            "title": "AirrV15UnrearrangedSequence",
+            "type": "object"
+        },
         "AlphaBetaTCR": {
             "additionalProperties": false,
             "description": "",

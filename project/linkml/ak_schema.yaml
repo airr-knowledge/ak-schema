@@ -693,6 +693,530 @@ enums:
         text: TRD
       TRG:
         text: TRG
+  AirrV1_5_Unit:
+    name: AirrV1_5_Unit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000003
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_Derivation:
+    name: AirrV1_5_Derivation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      DNA:
+        text: DNA
+      RNA:
+        text: RNA
+      'null':
+        text: 'null'
+  AirrV1_5_ObservationType:
+    name: AirrV1_5_ObservationType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      direct_sequencing:
+        text: direct_sequencing
+      inference_from_repertoire:
+        text: inference_from_repertoire
+  AirrV1_5_Strand:
+    name: AirrV1_5_Strand
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      +:
+        text: +
+      '-':
+        text: '-'
+      'null':
+        text: 'null'
+  AirrV1_5_Locus:
+    name: AirrV1_5_Locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGH:
+        text: IGH
+      IGI:
+        text: IGI
+      IGK:
+        text: IGK
+      IGL:
+        text: IGL
+      TRA:
+        text: TRA
+      TRB:
+        text: TRB
+      TRD:
+        text: TRD
+      TRG:
+        text: TRG
+      'null':
+        text: 'null'
+  AirrV1_5_SequenceType:
+    name: AirrV1_5_SequenceType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      V:
+        text: V
+      D:
+        text: D
+      J:
+        text: J
+      C:
+        text: C
+  AirrV1_5_InferenceType:
+    name: AirrV1_5_InferenceType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      genomic_and_rearranged:
+        text: genomic_and_rearranged
+      genomic_only:
+        text: genomic_only
+      rearranged_only:
+        text: rearranged_only
+      'null':
+        text: 'null'
+  AirrV1_5_Species:
+    name: AirrV1_5_Species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_SpeciesSubgroupType:
+    name: AirrV1_5_SpeciesSubgroupType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      breed:
+        text: breed
+      strain:
+        text: strain
+      inbred:
+        text: inbred
+      outbred:
+        text: outbred
+      locational:
+        text: locational
+      'null':
+        text: 'null'
+  AirrV1_5_Status:
+    name: AirrV1_5_Status
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      active:
+        text: active
+      draft:
+        text: draft
+      retired:
+        text: retired
+      withdrawn:
+        text: withdrawn
+      'null':
+        text: 'null'
+  AirrV1_5_JCodonFrame:
+    name: AirrV1_5_JCodonFrame
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      '1':
+        text: '1'
+      '2':
+        text: '2'
+      '3':
+        text: '3'
+      'null':
+        text: 'null'
+  AirrV1_5_CurationalTags:
+    name: AirrV1_5_CurationalTags
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      likely_truncated:
+        text: likely_truncated
+      likely_full_length:
+        text: likely_full_length
+  AirrV1_5_InferenceProcess:
+    name: AirrV1_5_InferenceProcess
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      genomic_sequencing:
+        text: genomic_sequencing
+      repertoire_sequencing:
+        text: repertoire_sequencing
+      'null':
+        text: 'null'
+  AirrV1_5_MhcClass:
+    name: AirrV1_5_MhcClass
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      MHC-I:
+        text: MHC-I
+      MHC-II:
+        text: MHC-II
+      MHC-nonclassical:
+        text: MHC-nonclassical
+      'null':
+        text: 'null'
+  AirrV1_5_Gene:
+    name: AirrV1_5_Gene
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - MRO:0000004
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_StudyType:
+    name: AirrV1_5_StudyType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCIT:C63536
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_KeywordsStudy:
+    name: AirrV1_5_KeywordsStudy
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      contains_ig:
+        text: contains_ig
+      contains_tr:
+        text: contains_tr
+      contains_paired_chain:
+        text: contains_paired_chain
+      contains_schema_rearrangement:
+        text: contains_schema_rearrangement
+      contains_schema_clone:
+        text: contains_schema_clone
+      contains_schema_cell:
+        text: contains_schema_cell
+      contains_schema_receptor:
+        text: contains_schema_receptor
+  AirrV1_5_Sex:
+    name: AirrV1_5_Sex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      male:
+        text: male
+      female:
+        text: female
+      pooled:
+        text: pooled
+      hermaphrodite:
+        text: hermaphrodite
+      intersex:
+        text: intersex
+      'null':
+        text: 'null'
+  AirrV1_5_AgeUnit:
+    name: AirrV1_5_AgeUnit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000003
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_DiseaseDiagnosis:
+    name: AirrV1_5_DiseaseDiagnosis
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - DOID:4
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_Tissue:
+    name: AirrV1_5_Tissue
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UBERON:0010000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_CollectionTimePointRelativeUnit:
+    name: AirrV1_5_CollectionTimePointRelativeUnit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000003
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_CellSubset:
+    name: AirrV1_5_CellSubset
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - CL:0000542
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_CellSpecies:
+    name: AirrV1_5_CellSpecies
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_PcrTargetLocus:
+    name: AirrV1_5_PcrTargetLocus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGH:
+        text: IGH
+      IGI:
+        text: IGI
+      IGK:
+        text: IGK
+      IGL:
+        text: IGL
+      TRA:
+        text: TRA
+      TRB:
+        text: TRB
+      TRD:
+        text: TRD
+      TRG:
+        text: TRG
+      'null':
+        text: 'null'
+  AirrV1_5_TemplateClass:
+    name: AirrV1_5_TemplateClass
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      DNA:
+        text: DNA
+      RNA:
+        text: RNA
+  AirrV1_5_TemplateAmountUnit:
+    name: AirrV1_5_TemplateAmountUnit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000002
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_LibraryGenerationMethod:
+    name: AirrV1_5_LibraryGenerationMethod
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      PCR:
+        text: PCR
+      RT(RHP)+PCR:
+        text: RT(RHP)+PCR
+      RT(oligo-dT)+PCR:
+        text: RT(oligo-dT)+PCR
+      RT(oligo-dT)+TS+PCR:
+        text: RT(oligo-dT)+TS+PCR
+      RT(oligo-dT)+TS(UMI)+PCR:
+        text: RT(oligo-dT)+TS(UMI)+PCR
+      RT(specific)+PCR:
+        text: RT(specific)+PCR
+      RT(specific)+TS+PCR:
+        text: RT(specific)+TS+PCR
+      RT(specific)+TS(UMI)+PCR:
+        text: RT(specific)+TS(UMI)+PCR
+      RT(specific+UMI)+PCR:
+        text: RT(specific+UMI)+PCR
+      RT(specific+UMI)+TS+PCR:
+        text: RT(specific+UMI)+TS+PCR
+      RT(specific)+TS:
+        text: RT(specific)+TS
+      other:
+        text: other
+  AirrV1_5_CompleteSequences:
+    name: AirrV1_5_CompleteSequences
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      partial:
+        text: partial
+      complete:
+        text: complete
+      complete+untemplated:
+        text: complete+untemplated
+      mixed:
+        text: mixed
+  AirrV1_5_PhysicalLinkage:
+    name: AirrV1_5_PhysicalLinkage
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      none:
+        text: none
+      hetero_head-head:
+        text: hetero_head-head
+      hetero_tail-head:
+        text: hetero_tail-head
+      hetero_prelinked:
+        text: hetero_prelinked
+  AirrV1_5_FileType:
+    name: AirrV1_5_FileType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      fasta:
+        text: fasta
+      fastq:
+        text: fastq
+      'null':
+        text: 'null'
+  AirrV1_5_ReadDirection:
+    name: AirrV1_5_ReadDirection
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      forward:
+        text: forward
+      reverse:
+        text: reverse
+      mixed:
+        text: mixed
+      'null':
+        text: 'null'
+  AirrV1_5_PairedReadDirection:
+    name: AirrV1_5_PairedReadDirection
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      forward:
+        text: forward
+      reverse:
+        text: reverse
+      mixed:
+        text: mixed
+      'null':
+        text: 'null'
+  AirrV1_5_ExpressionStudyMethod:
+    name: AirrV1_5_ExpressionStudyMethod
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      flow_cytometry:
+        text: flow_cytometry
+      single-cell_transcriptome:
+        text: single-cell_transcriptome
+      'null':
+        text: 'null'
+  AirrV1_5_Property:
+    name: AirrV1_5_Property
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  AirrV1_5_ReceptorType:
+    name: AirrV1_5_ReceptorType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      Ig:
+        text: Ig
+      TCR:
+        text: TCR
+  AirrV1_5_ReceptorVariableDomain1Locus:
+    name: AirrV1_5_ReceptorVariableDomain1Locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGH:
+        text: IGH
+      TRB:
+        text: TRB
+      TRD:
+        text: TRD
+  AirrV1_5_ReceptorVariableDomain2Locus:
+    name: AirrV1_5_ReceptorVariableDomain2Locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGI:
+        text: IGI
+      IGK:
+        text: IGK
+      IGL:
+        text: IGL
+      TRA:
+        text: TRA
+      TRG:
+        text: TRG
+  AirrV1_5_LigandType:
+    name: AirrV1_5_LigandType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      MHC:peptide:
+        text: MHC:peptide
+      MHC:non-peptide:
+        text: MHC:non-peptide
+      protein:
+        text: protein
+      peptide:
+        text: peptide
+      non-peptidic:
+        text: non-peptidic
+  AirrV1_5_AntigenType:
+    name: AirrV1_5_AntigenType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      protein:
+        text: protein
+      peptide:
+        text: peptide
+      non-peptidic:
+        text: non-peptidic
+  AirrV1_5_Antigen:
+    name: AirrV1_5_Antigen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  AirrV1_5_AntigenSourceSpecies:
+    name: AirrV1_5_AntigenSourceSpecies
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:1
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_MhcGene1:
+    name: AirrV1_5_MhcGene1
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - MRO:0000004
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_MhcGene2:
+    name: AirrV1_5_MhcGene2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - MRO:0000004
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  AirrV1_5_ReactivityMethod:
+    name: AirrV1_5_ReactivityMethod
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      SPR:
+        text: SPR
+      ITC:
+        text: ITC
+      ELISA:
+        text: ELISA
+      cytometry:
+        text: cytometry
+      biological_activity:
+        text: biological_activity
+  AirrV1_5_ReactivityReadout:
+    name: AirrV1_5_ReactivityReadout
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      binding_strength:
+        text: binding_strength
+      cytokine_release:
+        text: cytokine_release
+      dissociation_constant_kd:
+        text: dissociation_constant_kd
+      on_rate:
+        text: on_rate
+      off_rate:
+        text: off_rate
+      pathogen_inhibition:
+        text: pathogen_inhibition
   ChainSimilarityType:
     name: ChainSimilarityType
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1191,6 +1715,1535 @@ slots:
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
+  label:
+    name: label
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  acknowledgement_id:
+    name: acknowledgement_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  institution_name:
+    name: institution_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  orcid_id:
+    name: orcid_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequence_id:
+    name: sequence_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  derivation:
+    name: derivation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Derivation
+  observation_type:
+    name: observation_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ObservationType
+  curation:
+    name: curation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repository_name:
+    name: repository_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repository_ref:
+    name: repository_ref
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  deposited_version:
+    name: deposited_version
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequence_start:
+    name: sequence_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  sequence_end:
+    name: sequence_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  patch_no:
+    name: patch_no
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  gff_seqid:
+    name: gff_seqid
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  gff_start:
+    name: gff_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  gff_end:
+    name: gff_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  strand:
+    name: strand
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Strand
+  sequence_delineation_id:
+    name: sequence_delineation_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  delineation_scheme:
+    name: delineation_scheme
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  unaligned_sequence:
+    name: unaligned_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  aligned_sequence:
+    name: aligned_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr1_start:
+    name: fwr1_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr1_end:
+    name: fwr1_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr2_start:
+    name: fwr2_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr2_end:
+    name: fwr2_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr3_start:
+    name: fwr3_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr3_end:
+    name: fwr3_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  alignment_labels:
+    name: alignment_labels
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  allele_description_id:
+    name: allele_description_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  allele_description_ref:
+    name: allele_description_ref
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  maintainer:
+    name: maintainer
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  acknowledgements:
+    name: acknowledgements
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Acknowledgement
+    multivalued: true
+  lab_address:
+    name: lab_address
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  release_version:
+    name: release_version
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  release_description:
+    name: release_description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  coding_sequence:
+    name: coding_sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  aliases:
+    name: aliases
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  locus:
+    name: locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Locus
+  chromosome:
+    name: chromosome
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  sequence_type:
+    name: sequence_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_SequenceType
+  functional:
+    name: functional
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  inference_type:
+    name: inference_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_InferenceType
+  species_subgroup:
+    name: species_subgroup
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  species_subgroup_type:
+    name: species_subgroup_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_SpeciesSubgroupType
+  status:
+    name: status
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Status
+  subgroup_designation:
+    name: subgroup_designation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  gene_designation:
+    name: gene_designation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  allele_designation:
+    name: allele_designation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  allele_similarity_cluster_designation:
+    name: allele_similarity_cluster_designation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  allele_similarity_cluster_member_id:
+    name: allele_similarity_cluster_member_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  j_codon_frame:
+    name: j_codon_frame
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_JCodonFrame
+  gene_start:
+    name: gene_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  gene_end:
+    name: gene_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  utr_5_prime_start:
+    name: utr_5_prime_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  utr_5_prime_end:
+    name: utr_5_prime_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  leader_1_start:
+    name: leader_1_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  leader_1_end:
+    name: leader_1_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  leader_2_start:
+    name: leader_2_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  leader_2_end:
+    name: leader_2_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_rs_start:
+    name: v_rs_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_rs_end:
+    name: v_rs_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_rs_3_prime_start:
+    name: d_rs_3_prime_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_rs_3_prime_end:
+    name: d_rs_3_prime_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_rs_5_prime_start:
+    name: d_rs_5_prime_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_rs_5_prime_end:
+    name: d_rs_5_prime_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_cdr3_end:
+    name: j_cdr3_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_rs_start:
+    name: j_rs_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_rs_end:
+    name: j_rs_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_donor_splice:
+    name: j_donor_splice
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_gene_delineations:
+    name: v_gene_delineations
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_SequenceDelineationV
+    multivalued: true
+  unrearranged_support:
+    name: unrearranged_support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_UnrearrangedSequence
+    multivalued: true
+  rearranged_support:
+    name: rearranged_support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_RearrangedSequence
+    multivalued: true
+  paralogs:
+    name: paralogs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  curational_tags:
+    name: curational_tags
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_CurationalTags
+    multivalued: true
+  germline_set_id:
+    name: germline_set_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  author:
+    name: author
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  lab_name:
+    name: lab_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  germline_set_name:
+    name: germline_set_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  germline_set_ref:
+    name: germline_set_ref
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  pub_ids:
+    name: pub_ids
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  allele_descriptions:
+    name: allele_descriptions
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_AlleleDescription
+    multivalued: true
+  receptor_genotype_set_id:
+    name: receptor_genotype_set_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  genotype_class_list:
+    name: genotype_class_list
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Genotype
+    multivalued: true
+  receptor_genotype_id:
+    name: receptor_genotype_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  documented_alleles:
+    name: documented_alleles
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_DocumentedAllele
+    multivalued: true
+  undocumented_alleles:
+    name: undocumented_alleles
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_UndocumentedAllele
+    multivalued: true
+  deleted_genes:
+    name: deleted_genes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_DeletedGene
+    multivalued: true
+  inference_process:
+    name: inference_process
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_InferenceProcess
+  phasing:
+    name: phasing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  allele_name:
+    name: allele_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  mhc_genotype_set_id:
+    name: mhc_genotype_set_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  mhc_genotype_list:
+    name: mhc_genotype_list
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_MHCGenotype
+    multivalued: true
+  mhc_genotype_id:
+    name: mhc_genotype_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  mhc_class:
+    name: mhc_class
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_MhcClass
+  mhc_alleles:
+    name: mhc_alleles
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_MHCAllele
+    multivalued: true
+  mhc_genotyping_method:
+    name: mhc_genotyping_method
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  gene:
+    name: gene
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Gene
+  reference_set_ref:
+    name: reference_set_ref
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  receptor_genotype_set:
+    name: receptor_genotype_set
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_GenotypeSet
+  mhc_genotype_set:
+    name: mhc_genotype_set
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_MHCGenotypeSet
+  study_id:
+    name: study_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  study_title:
+    name: study_title
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  study_description:
+    name: study_description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  inclusion_exclusion_criteria:
+    name: inclusion_exclusion_criteria
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  grants:
+    name: grants
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  study_contact:
+    name: study_contact
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  collected_by:
+    name: collected_by
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  submitted_by:
+    name: submitted_by
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  keywords_study:
+    name: keywords_study
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_KeywordsStudy
+    multivalued: true
+  adc_publish_date:
+    name: adc_publish_date
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  adc_update_date:
+    name: adc_update_date
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  subject_id:
+    name: subject_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  synthetic:
+    name: synthetic
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  sex:
+    name: sex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Sex
+  age_min:
+    name: age_min
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  age_max:
+    name: age_max
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  ancestry_population:
+    name: ancestry_population
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  strain_name:
+    name: strain_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  linked_subjects:
+    name: linked_subjects
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  link_type:
+    name: link_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  diagnosis:
+    name: diagnosis
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Diagnosis
+    multivalued: true
+  genotype:
+    name: genotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_SubjectGenotype
+  study_group_description:
+    name: study_group_description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  disease_diagnosis:
+    name: disease_diagnosis
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_DiseaseDiagnosis
+  disease_length:
+    name: disease_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  prior_therapies:
+    name: prior_therapies
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  immunogen:
+    name: immunogen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  intervention:
+    name: intervention
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  medical_history:
+    name: medical_history
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sample_id:
+    name: sample_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sample_type:
+    name: sample_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  anatomic_site:
+    name: anatomic_site
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  disease_state_sample:
+    name: disease_state_sample
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  collection_time_point_relative:
+    name: collection_time_point_relative
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  collection_time_point_relative_unit:
+    name: collection_time_point_relative_unit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_CollectionTimePointRelativeUnit
+  collection_time_point_reference:
+    name: collection_time_point_reference
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  biomaterial_provider:
+    name: biomaterial_provider
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  tissue_processing:
+    name: tissue_processing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  cell_subset:
+    name: cell_subset
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_CellSubset
+  cell_phenotype:
+    name: cell_phenotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  cell_species:
+    name: cell_species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_CellSpecies
+  single_cell:
+    name: single_cell
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  cell_number:
+    name: cell_number
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cells_per_reaction:
+    name: cells_per_reaction
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cell_storage:
+    name: cell_storage
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  cell_quality:
+    name: cell_quality
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  cell_isolation:
+    name: cell_isolation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  cell_processing_protocol:
+    name: cell_processing_protocol
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  pcr_target_locus:
+    name: pcr_target_locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_PcrTargetLocus
+  forward_pcr_primer_target_location:
+    name: forward_pcr_primer_target_location
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  reverse_pcr_primer_target_location:
+    name: reverse_pcr_primer_target_location
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  template_class:
+    name: template_class
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_TemplateClass
+  template_quality:
+    name: template_quality
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  template_amount:
+    name: template_amount
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  template_amount_unit:
+    name: template_amount_unit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_TemplateAmountUnit
+  library_generation_method:
+    name: library_generation_method
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_LibraryGenerationMethod
+  library_generation_protocol:
+    name: library_generation_protocol
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  library_generation_kit_version:
+    name: library_generation_kit_version
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  pcr_target:
+    name: pcr_target
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_PCRTarget
+    multivalued: true
+  complete_sequences:
+    name: complete_sequences
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_CompleteSequences
+  physical_linkage:
+    name: physical_linkage
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_PhysicalLinkage
+  sequencing_run_id:
+    name: sequencing_run_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  total_reads_passing_qc_filter:
+    name: total_reads_passing_qc_filter
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  sequencing_platform:
+    name: sequencing_platform
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequencing_facility:
+    name: sequencing_facility
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequencing_run_date:
+    name: sequencing_run_date
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequencing_kit:
+    name: sequencing_kit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequencing_files:
+    name: sequencing_files
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_SequencingData
+  sequencing_data_id:
+    name: sequencing_data_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  file_type:
+    name: file_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_FileType
+  filename:
+    name: filename
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  read_direction:
+    name: read_direction
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ReadDirection
+  read_length:
+    name: read_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  paired_filename:
+    name: paired_filename
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  paired_read_direction:
+    name: paired_read_direction
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_PairedReadDirection
+  paired_read_length:
+    name: paired_read_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  index_filename:
+    name: index_filename
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  index_length:
+    name: index_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  data_processing_id:
+    name: data_processing_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  primary_annotation:
+    name: primary_annotation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  software_versions:
+    name: software_versions
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  paired_reads_assembly:
+    name: paired_reads_assembly
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  quality_thresholds:
+    name: quality_thresholds
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  primer_match_cutoffs:
+    name: primer_match_cutoffs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  collapsing_method:
+    name: collapsing_method
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  data_processing_protocols:
+    name: data_processing_protocols
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  data_processing_files:
+    name: data_processing_files
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  germline_database:
+    name: germline_database
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  analysis_provenance_id:
+    name: analysis_provenance_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repertoire_id:
+    name: repertoire_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repertoire_name:
+    name: repertoire_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repertoire_description:
+    name: repertoire_description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  study:
+    name: study
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Study
+  subject:
+    name: subject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Subject
+  sample:
+    name: sample
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_SampleProcessing
+    multivalued: true
+  data_processing:
+    name: data_processing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_DataProcessing
+    multivalued: true
+  repertoire_group_id:
+    name: repertoire_group_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repertoire_group_name:
+    name: repertoire_group_name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repertoire_group_description:
+    name: repertoire_group_description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repertoires:
+    name: repertoires
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    multivalued: true
+  segment:
+    name: segment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  rev_comp:
+    name: rev_comp
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  call:
+    name: call
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  score:
+    name: score
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  identity:
+    name: identity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  support:
+    name: support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  cigar:
+    name: cigar
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  germline_start:
+    name: germline_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  germline_end:
+    name: germline_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  rank:
+    name: rank
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  quality:
+    name: quality
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  productive:
+    name: productive
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  vj_in_frame:
+    name: vj_in_frame
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  stop_codon:
+    name: stop_codon
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  complete_vdj:
+    name: complete_vdj
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  d2_call:
+    name: d2_call
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequence_alignment:
+    name: sequence_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  quality_alignment:
+    name: quality_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequence_alignment_aa:
+    name: sequence_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  germline_alignment:
+    name: germline_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  germline_alignment_aa:
+    name: germline_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  junction:
+    name: junction
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  np1:
+    name: np1
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  np1_aa:
+    name: np1_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  np2:
+    name: np2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  np2_aa:
+    name: np2_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  np3:
+    name: np3
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  np3_aa:
+    name: np3_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  cdr1:
+    name: cdr1
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  cdr2:
+    name: cdr2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  cdr3:
+    name: cdr3
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr1:
+    name: fwr1
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr1_aa:
+    name: fwr1_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr2:
+    name: fwr2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr2_aa:
+    name: fwr2_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr3:
+    name: fwr3
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr3_aa:
+    name: fwr3_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr4:
+    name: fwr4
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  fwr4_aa:
+    name: fwr4_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  v_score:
+    name: v_score
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  v_identity:
+    name: v_identity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  v_support:
+    name: v_support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  v_cigar:
+    name: v_cigar
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d_score:
+    name: d_score
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  d_identity:
+    name: d_identity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  d_support:
+    name: d_support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  d_cigar:
+    name: d_cigar
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d2_score:
+    name: d2_score
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  d2_identity:
+    name: d2_identity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  d2_support:
+    name: d2_support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  d2_cigar:
+    name: d2_cigar
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  j_score:
+    name: j_score
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  j_identity:
+    name: j_identity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  j_support:
+    name: j_support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  j_cigar:
+    name: j_cigar
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  c_score:
+    name: c_score
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  c_identity:
+    name: c_identity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  c_support:
+    name: c_support
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  c_cigar:
+    name: c_cigar
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  v_sequence_start:
+    name: v_sequence_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_sequence_end:
+    name: v_sequence_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_germline_start:
+    name: v_germline_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_germline_end:
+    name: v_germline_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_alignment_start:
+    name: v_alignment_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_alignment_end:
+    name: v_alignment_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_sequence_start:
+    name: d_sequence_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_sequence_end:
+    name: d_sequence_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_germline_start:
+    name: d_germline_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_germline_end:
+    name: d_germline_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_alignment_start:
+    name: d_alignment_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d_alignment_end:
+    name: d_alignment_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d2_sequence_start:
+    name: d2_sequence_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d2_sequence_end:
+    name: d2_sequence_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d2_germline_start:
+    name: d2_germline_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d2_germline_end:
+    name: d2_germline_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d2_alignment_start:
+    name: d2_alignment_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d2_alignment_end:
+    name: d2_alignment_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_sequence_start:
+    name: j_sequence_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_sequence_end:
+    name: j_sequence_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_germline_start:
+    name: j_germline_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_germline_end:
+    name: j_germline_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_alignment_start:
+    name: j_alignment_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  j_alignment_end:
+    name: j_alignment_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  c_sequence_start:
+    name: c_sequence_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  c_sequence_end:
+    name: c_sequence_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  c_germline_start:
+    name: c_germline_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  c_germline_end:
+    name: c_germline_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  c_alignment_start:
+    name: c_alignment_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  c_alignment_end:
+    name: c_alignment_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr4_start:
+    name: fwr4_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr4_end:
+    name: fwr4_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_sequence_alignment:
+    name: v_sequence_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  v_sequence_alignment_aa:
+    name: v_sequence_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d_sequence_alignment:
+    name: d_sequence_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d_sequence_alignment_aa:
+    name: d_sequence_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d2_sequence_alignment:
+    name: d2_sequence_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d2_sequence_alignment_aa:
+    name: d2_sequence_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  j_sequence_alignment:
+    name: j_sequence_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  j_sequence_alignment_aa:
+    name: j_sequence_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  c_sequence_alignment:
+    name: c_sequence_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  c_sequence_alignment_aa:
+    name: c_sequence_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  v_germline_alignment:
+    name: v_germline_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  v_germline_alignment_aa:
+    name: v_germline_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d_germline_alignment:
+    name: d_germline_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d_germline_alignment_aa:
+    name: d_germline_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d2_germline_alignment:
+    name: d2_germline_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d2_germline_alignment_aa:
+    name: d2_germline_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  j_germline_alignment:
+    name: j_germline_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  j_germline_alignment_aa:
+    name: j_germline_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  c_germline_alignment:
+    name: c_germline_alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  c_germline_alignment_aa:
+    name: c_germline_alignment_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  junction_length:
+    name: junction_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  junction_aa_length:
+    name: junction_aa_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  np1_length:
+    name: np1_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  np2_length:
+    name: np2_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  np3_length:
+    name: np3_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  n1_length:
+    name: n1_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  n2_length:
+    name: n2_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  n3_length:
+    name: n3_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  p3v_length:
+    name: p3v_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  p5d_length:
+    name: p5d_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  p3d_length:
+    name: p3d_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  p5d2_length:
+    name: p5d2_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  p3d2_length:
+    name: p3d2_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  p5j_length:
+    name: p5j_length
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  v_frameshift:
+    name: v_frameshift
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  j_frameshift:
+    name: j_frameshift
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  d_frame:
+    name: d_frame
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  d2_frame:
+    name: d2_frame
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  consensus_count:
+    name: consensus_count
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  duplicate_count:
+    name: duplicate_count
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  umi_count:
+    name: umi_count
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cell_id:
+    name: cell_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  clone_id:
+    name: clone_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sample_processing_id:
+    name: sample_processing_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sequences:
+    name: sequences
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  junction_start:
+    name: junction_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  junction_end:
+    name: junction_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  clone_count:
+    name: clone_count
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  seed_id:
+    name: seed_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  tree_id:
+    name: tree_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  newick:
+    name: newick
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  nodes:
+    name: nodes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  rearrangements:
+    name: rearrangements
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  receptors:
+    name: receptors
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  expression_study_method:
+    name: expression_study_method
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ExpressionStudyMethod
+  expression_raw_doi:
+    name: expression_raw_doi
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  expression_index:
+    name: expression_index
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  virtual_pairing:
+    name: virtual_pairing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  expression_id:
+    name: expression_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  property_type:
+    name: property_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  property:
+    name: property
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Property
+  receptor_id:
+    name: receptor_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  receptor_hash:
+    name: receptor_hash
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  receptor_type:
+    name: receptor_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ReceptorType
+  receptor_variable_domain_1_aa:
+    name: receptor_variable_domain_1_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  receptor_variable_domain_1_locus:
+    name: receptor_variable_domain_1_locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ReceptorVariableDomain1Locus
+  receptor_variable_domain_2_aa:
+    name: receptor_variable_domain_2_aa
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  receptor_variable_domain_2_locus:
+    name: receptor_variable_domain_2_locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ReceptorVariableDomain2Locus
+  receptor_ref:
+    name: receptor_ref
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    multivalued: true
+  reactivity_measurements:
+    name: reactivity_measurements
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ReceptorReactivity
+    multivalued: true
+  ligand_type:
+    name: ligand_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_LigandType
+  antigen_type:
+    name: antigen_type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_AntigenType
+  antigen:
+    name: antigen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_Antigen
+  antigen_source_species:
+    name: antigen_source_species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_AntigenSourceSpecies
+  peptide_start:
+    name: peptide_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  peptide_end:
+    name: peptide_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  mhc_gene_1:
+    name: mhc_gene_1
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_MhcGene1
+  mhc_allele_1:
+    name: mhc_allele_1
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  mhc_gene_2:
+    name: mhc_gene_2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_MhcGene2
+  mhc_allele_2:
+    name: mhc_allele_2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  reactivity_method:
+    name: reactivity_method
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ReactivityMethod
+  reactivity_readout:
+    name: reactivity_readout
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AirrV1_5_ReactivityReadout
+  reactivity_value:
+    name: reactivity_value
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  reactivity_unit:
+    name: reactivity_unit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain
@@ -1582,6 +3635,654 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: PlannedProcess
     class_uri: APOLLO_SV:00000070
+  AirrV1_5_TimePoint:
+    name: AirrV1_5_TimePoint
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - label
+    - value
+    - unit
+  AirrV1_5_Acknowledgement:
+    name: AirrV1_5_Acknowledgement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - acknowledgement_id
+    - name
+    - institution_name
+    - orcid_id
+  AirrV1_5_RearrangedSequence:
+    name: AirrV1_5_RearrangedSequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence
+    - derivation
+    - observation_type
+    - curation
+    - repository_name
+    - repository_ref
+    - deposited_version
+    - sequence_start
+    - sequence_end
+  AirrV1_5_UnrearrangedSequence:
+    name: AirrV1_5_UnrearrangedSequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence
+    - curation
+    - repository_name
+    - repository_ref
+    - patch_no
+    - gff_seqid
+    - gff_start
+    - gff_end
+    - strand
+  AirrV1_5_SequenceDelineationV:
+    name: AirrV1_5_SequenceDelineationV
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_delineation_id
+    - delineation_scheme
+    - unaligned_sequence
+    - aligned_sequence
+    - fwr1_start
+    - fwr1_end
+    - cdr1_start
+    - cdr1_end
+    - fwr2_start
+    - fwr2_end
+    - cdr2_start
+    - cdr2_end
+    - fwr3_start
+    - fwr3_end
+    - cdr3_start
+    - alignment_labels
+  AirrV1_5_AlleleDescription:
+    name: AirrV1_5_AlleleDescription
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - allele_description_id
+    - allele_description_ref
+    - maintainer
+    - acknowledgements
+    - lab_address
+    - release_version
+    - release_date
+    - release_description
+    - label
+    - sequence
+    - coding_sequence
+    - aliases
+    - locus
+    - chromosome
+    - sequence_type
+    - functional
+    - inference_type
+    - species
+    - species_subgroup
+    - species_subgroup_type
+    - status
+    - subgroup_designation
+    - gene_designation
+    - allele_designation
+    - allele_similarity_cluster_designation
+    - allele_similarity_cluster_member_id
+    - j_codon_frame
+    - gene_start
+    - gene_end
+    - utr_5_prime_start
+    - utr_5_prime_end
+    - leader_1_start
+    - leader_1_end
+    - leader_2_start
+    - leader_2_end
+    - v_rs_start
+    - v_rs_end
+    - d_rs_3_prime_start
+    - d_rs_3_prime_end
+    - d_rs_5_prime_start
+    - d_rs_5_prime_end
+    - j_cdr3_end
+    - j_rs_start
+    - j_rs_end
+    - j_donor_splice
+    - v_gene_delineations
+    - unrearranged_support
+    - rearranged_support
+    - paralogs
+    - curation
+    - curational_tags
+  AirrV1_5_GermlineSet:
+    name: AirrV1_5_GermlineSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - germline_set_id
+    - author
+    - lab_name
+    - lab_address
+    - acknowledgements
+    - release_version
+    - release_description
+    - release_date
+    - germline_set_name
+    - germline_set_ref
+    - pub_ids
+    - species
+    - species_subgroup
+    - species_subgroup_type
+    - locus
+    - allele_descriptions
+    - curation
+  AirrV1_5_GenotypeSet:
+    name: AirrV1_5_GenotypeSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_genotype_set_id
+    - genotype_class_list
+  AirrV1_5_Genotype:
+    name: AirrV1_5_Genotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_genotype_id
+    - locus
+    - documented_alleles
+    - undocumented_alleles
+    - deleted_genes
+    - inference_process
+  AirrV1_5_DocumentedAllele:
+    name: AirrV1_5_DocumentedAllele
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - label
+    - germline_set_ref
+    - phasing
+  AirrV1_5_UndocumentedAllele:
+    name: AirrV1_5_UndocumentedAllele
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - allele_name
+    - sequence
+    - phasing
+  AirrV1_5_DeletedGene:
+    name: AirrV1_5_DeletedGene
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - label
+    - germline_set_ref
+    - phasing
+  AirrV1_5_MHCGenotypeSet:
+    name: AirrV1_5_MHCGenotypeSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - mhc_genotype_set_id
+    - mhc_genotype_list
+  AirrV1_5_MHCGenotype:
+    name: AirrV1_5_MHCGenotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - mhc_genotype_id
+    - mhc_class
+    - mhc_alleles
+    - mhc_genotyping_method
+  AirrV1_5_MHCAllele:
+    name: AirrV1_5_MHCAllele
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - allele_designation
+    - gene
+    - reference_set_ref
+  AirrV1_5_SubjectGenotype:
+    name: AirrV1_5_SubjectGenotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_genotype_set
+    - mhc_genotype_set
+  AirrV1_5_Study:
+    name: AirrV1_5_Study
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - study_id
+    - study_title
+    - study_type
+    - study_description
+    - inclusion_exclusion_criteria
+    - grants
+    - study_contact
+    - collected_by
+    - lab_name
+    - lab_address
+    - submitted_by
+    - pub_ids
+    - keywords_study
+    - adc_publish_date
+    - adc_update_date
+  AirrV1_5_Subject:
+    name: AirrV1_5_Subject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - subject_id
+    - synthetic
+    - species
+    - sex
+    - age_min
+    - age_max
+    - age_unit
+    - age_event
+    - ancestry_population
+    - ethnicity
+    - race
+    - strain_name
+    - linked_subjects
+    - link_type
+    - diagnosis
+    - genotype
+  AirrV1_5_Diagnosis:
+    name: AirrV1_5_Diagnosis
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - study_group_description
+    - disease_diagnosis
+    - disease_length
+    - disease_stage
+    - prior_therapies
+    - immunogen
+    - intervention
+    - medical_history
+  AirrV1_5_Sample:
+    name: AirrV1_5_Sample
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sample_id
+    - sample_type
+    - tissue
+    - anatomic_site
+    - disease_state_sample
+    - collection_time_point_relative
+    - collection_time_point_relative_unit
+    - collection_time_point_reference
+    - biomaterial_provider
+  AirrV1_5_CellProcessing:
+    name: AirrV1_5_CellProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - tissue_processing
+    - cell_subset
+    - cell_phenotype
+    - cell_species
+    - single_cell
+    - cell_number
+    - cells_per_reaction
+    - cell_storage
+    - cell_quality
+    - cell_isolation
+    - cell_processing_protocol
+  AirrV1_5_PCRTarget:
+    name: AirrV1_5_PCRTarget
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - pcr_target_locus
+    - forward_pcr_primer_target_location
+    - reverse_pcr_primer_target_location
+  AirrV1_5_NucleicAcidProcessing:
+    name: AirrV1_5_NucleicAcidProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - template_class
+    - template_quality
+    - template_amount
+    - template_amount_unit
+    - library_generation_method
+    - library_generation_protocol
+    - library_generation_kit_version
+    - pcr_target
+    - complete_sequences
+    - physical_linkage
+  AirrV1_5_SequencingRun:
+    name: AirrV1_5_SequencingRun
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequencing_run_id
+    - total_reads_passing_qc_filter
+    - sequencing_platform
+    - sequencing_facility
+    - sequencing_run_date
+    - sequencing_kit
+    - sequencing_files
+  AirrV1_5_SequencingData:
+    name: AirrV1_5_SequencingData
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequencing_data_id
+    - file_type
+    - filename
+    - read_direction
+    - read_length
+    - paired_filename
+    - paired_read_direction
+    - paired_read_length
+    - index_filename
+    - index_length
+  AirrV1_5_DataProcessing:
+    name: AirrV1_5_DataProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - data_processing_id
+    - primary_annotation
+    - software_versions
+    - paired_reads_assembly
+    - quality_thresholds
+    - primer_match_cutoffs
+    - collapsing_method
+    - data_processing_protocols
+    - data_processing_files
+    - germline_database
+    - germline_set_ref
+    - analysis_provenance_id
+  AirrV1_5_Repertoire:
+    name: AirrV1_5_Repertoire
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - repertoire_id
+    - repertoire_name
+    - repertoire_description
+    - study
+    - subject
+    - sample
+    - data_processing
+  AirrV1_5_RepertoireGroup:
+    name: AirrV1_5_RepertoireGroup
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - repertoire_group_id
+    - repertoire_group_name
+    - repertoire_group_description
+    - repertoires
+  AirrV1_5_Alignment:
+    name: AirrV1_5_Alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - segment
+    - rev_comp
+    - call
+    - score
+    - identity
+    - support
+    - cigar
+    - sequence_start
+    - sequence_end
+    - germline_start
+    - germline_end
+    - rank
+    - data_processing_id
+  AirrV1_5_Rearrangement:
+    name: AirrV1_5_Rearrangement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence
+    - quality
+    - sequence_aa
+    - rev_comp
+    - productive
+    - vj_in_frame
+    - stop_codon
+    - complete_vdj
+    - locus
+    - v_call
+    - d_call
+    - d2_call
+    - j_call
+    - c_call
+    - sequence_alignment
+    - quality_alignment
+    - sequence_alignment_aa
+    - germline_alignment
+    - germline_alignment_aa
+    - junction
+    - junction_aa
+    - np1
+    - np1_aa
+    - np2
+    - np2_aa
+    - np3
+    - np3_aa
+    - cdr1
+    - cdr1_aa
+    - cdr2
+    - cdr2_aa
+    - cdr3
+    - cdr3_aa
+    - fwr1
+    - fwr1_aa
+    - fwr2
+    - fwr2_aa
+    - fwr3
+    - fwr3_aa
+    - fwr4
+    - fwr4_aa
+    - v_score
+    - v_identity
+    - v_support
+    - v_cigar
+    - d_score
+    - d_identity
+    - d_support
+    - d_cigar
+    - d2_score
+    - d2_identity
+    - d2_support
+    - d2_cigar
+    - j_score
+    - j_identity
+    - j_support
+    - j_cigar
+    - c_score
+    - c_identity
+    - c_support
+    - c_cigar
+    - v_sequence_start
+    - v_sequence_end
+    - v_germline_start
+    - v_germline_end
+    - v_alignment_start
+    - v_alignment_end
+    - d_sequence_start
+    - d_sequence_end
+    - d_germline_start
+    - d_germline_end
+    - d_alignment_start
+    - d_alignment_end
+    - d2_sequence_start
+    - d2_sequence_end
+    - d2_germline_start
+    - d2_germline_end
+    - d2_alignment_start
+    - d2_alignment_end
+    - j_sequence_start
+    - j_sequence_end
+    - j_germline_start
+    - j_germline_end
+    - j_alignment_start
+    - j_alignment_end
+    - c_sequence_start
+    - c_sequence_end
+    - c_germline_start
+    - c_germline_end
+    - c_alignment_start
+    - c_alignment_end
+    - cdr1_start
+    - cdr1_end
+    - cdr2_start
+    - cdr2_end
+    - cdr3_start
+    - cdr3_end
+    - fwr1_start
+    - fwr1_end
+    - fwr2_start
+    - fwr2_end
+    - fwr3_start
+    - fwr3_end
+    - fwr4_start
+    - fwr4_end
+    - v_sequence_alignment
+    - v_sequence_alignment_aa
+    - d_sequence_alignment
+    - d_sequence_alignment_aa
+    - d2_sequence_alignment
+    - d2_sequence_alignment_aa
+    - j_sequence_alignment
+    - j_sequence_alignment_aa
+    - c_sequence_alignment
+    - c_sequence_alignment_aa
+    - v_germline_alignment
+    - v_germline_alignment_aa
+    - d_germline_alignment
+    - d_germline_alignment_aa
+    - d2_germline_alignment
+    - d2_germline_alignment_aa
+    - j_germline_alignment
+    - j_germline_alignment_aa
+    - c_germline_alignment
+    - c_germline_alignment_aa
+    - junction_length
+    - junction_aa_length
+    - np1_length
+    - np2_length
+    - np3_length
+    - n1_length
+    - n2_length
+    - n3_length
+    - p3v_length
+    - p5d_length
+    - p3d_length
+    - p5d2_length
+    - p3d2_length
+    - p5j_length
+    - v_frameshift
+    - j_frameshift
+    - d_frame
+    - d2_frame
+    - consensus_count
+    - duplicate_count
+    - umi_count
+    - cell_id
+    - clone_id
+    - repertoire_id
+    - sample_processing_id
+    - data_processing_id
+  AirrV1_5_Clone:
+    name: AirrV1_5_Clone
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - clone_id
+    - repertoire_id
+    - data_processing_id
+    - sequences
+    - v_call
+    - d_call
+    - j_call
+    - junction
+    - junction_aa
+    - junction_length
+    - junction_aa_length
+    - germline_alignment
+    - germline_alignment_aa
+    - v_alignment_start
+    - v_alignment_end
+    - d_alignment_start
+    - d_alignment_end
+    - j_alignment_start
+    - j_alignment_end
+    - junction_start
+    - junction_end
+    - umi_count
+    - clone_count
+    - seed_id
+  AirrV1_5_Tree:
+    name: AirrV1_5_Tree
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - tree_id
+    - clone_id
+    - newick
+    - nodes
+  AirrV1_5_Node:
+    name: AirrV1_5_Node
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence_alignment
+    - junction
+    - junction_aa
+  AirrV1_5_Cell:
+    name: AirrV1_5_Cell
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - cell_id
+    - rearrangements
+    - receptors
+    - repertoire_id
+    - data_processing_id
+    - expression_study_method
+    - expression_raw_doi
+    - expression_index
+    - virtual_pairing
+  AirrV1_5_CellExpression:
+    name: AirrV1_5_CellExpression
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - expression_id
+    - cell_id
+    - repertoire_id
+    - data_processing_id
+    - property_type
+    - property
+    - value
+  AirrV1_5_Receptor:
+    name: AirrV1_5_Receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_id
+    - receptor_hash
+    - receptor_type
+    - receptor_variable_domain_1_aa
+    - receptor_variable_domain_1_locus
+    - receptor_variable_domain_2_aa
+    - receptor_variable_domain_2_locus
+    - receptor_ref
+    - reactivity_measurements
+  AirrV1_5_ReceptorReactivity:
+    name: AirrV1_5_ReceptorReactivity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - ligand_type
+    - antigen_type
+    - antigen
+    - antigen_source_species
+    - peptide_start
+    - peptide_end
+    - mhc_class
+    - mhc_gene_1
+    - mhc_allele_1
+    - mhc_gene_2
+    - mhc_allele_2
+    - reactivity_method
+    - reactivity_readout
+    - reactivity_value
+    - reactivity_unit
+  AirrV1_5_SampleProcessing:
+    name: AirrV1_5_SampleProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequencing_run_id
+    - total_reads_passing_qc_filter
+    - sequencing_platform
+    - sequencing_facility
+    - sequencing_run_date
+    - sequencing_kit
+    - sequencing_files
   SimilarityCalculation:
     name: SimilarityCalculation
     from_schema: https://github.com/airr-knowledge/ak-schema
