@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/conclusions/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/type/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: conclusions - ak-schema</title>
+        <title>Slot: type - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-conclusions" class="md-skip">
+        <a href="#slot-type" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: conclusions
+              Slot: type
             
           </span>
         </div>
@@ -317,15 +317,14 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/conclusions.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/type.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-conclusions">Slot: conclusions</h1>
-<p><em>The conclusions from the investigation</em></p>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/conclusions">ak_schema:conclusions</a></p>
+<h1 id="slot-type">Slot: type</h1>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/type">ak_schema:type</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,25 +338,45 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Investigation/">Investigation</a></td>
-<td>A scientific investigation</td>
+<td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
+<td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td>A container for instances of multiple classes</td>
+<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../TCellReceptor/">TCellReceptor</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PeptidicEpitope/">PeptidicEpitope</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Assay/">Assay</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Epitope/">Epitope</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>
-<p>Range: <a href="../Conclusion/">Conclusion</a></p>
-</li>
-<li>
-<p>Multivalued: True</p>
-</li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -375,27 +394,27 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:conclusions</td>
+<td>ak_schema:type</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:conclusions</td>
+<td>ak_schema:type</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: conclusions
-description: The conclusions from the investigation
+<pre><code class="language-yaml">name: type
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-alias: conclusions
+designates_type: true
+alias: type
 domain_of:
-- AIRRKnowledgeCommons
-- Investigation
-range: Conclusion
-multivalued: true
+- Assay
+- TCellReceptor
+- Epitope
+range: string
 
 </code></pre>
 

@@ -212,6 +212,11 @@
       NamedThing &lt;|-- Assay
         click NamedThing href "../NamedThing"
 
+
+      Assay &lt;|-- TCellReceptorEpitopeBindingAssay
+        click TCellReceptorEpitopeBindingAssay href "../TCellReceptorEpitopeBindingAssay"
+
+
       Assay : akc_id
 
       Assay : assay_type
@@ -231,6 +236,8 @@
 
       Assay : target_entity_type
 
+      Assay : type
+
       Assay : unit
 
       Assay : value
@@ -241,7 +248,10 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><strong>Assay</strong></li>
+<li><strong>Assay</strong><ul>
+<li><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -262,6 +272,12 @@
 <td><a href="../specimen/">specimen</a></td>
 <td>0..1 <br/> <a href="../Specimen/">Specimen</a></td>
 <td>The specimen that was input for an assay</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -372,6 +388,7 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
 - specimen
+- type
 - assay_type
 - target_entity_type
 - value
@@ -397,7 +414,20 @@ attributes:
     domain_of:
     - SpecimenCollection
     - Assay
+    - TCellReceptorEpitopeBindingAssay
     range: Specimen
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: Assay
+    domain_of:
+    - Assay
+    - TCellReceptor
+    - Epitope
+    range: string
   assay_type:
     name: assay_type
     description: The specific type of an assay
@@ -408,6 +438,7 @@ attributes:
     owner: Assay
     domain_of:
     - Assay
+    - TCellReceptorEpitopeBindingAssay
     range: string
   target_entity_type:
     name: target_entity_type
@@ -429,6 +460,7 @@ attributes:
     owner: Assay
     domain_of:
     - Assay
+    - TCellReceptorEpitopeBindingAssay
     - Assessment
     range: string
   unit:
@@ -440,6 +472,7 @@ attributes:
     owner: Assay
     domain_of:
     - Assay
+    - TCellReceptorEpitopeBindingAssay
     - Assessment
     range: string
   name:

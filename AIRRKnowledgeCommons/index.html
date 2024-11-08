@@ -218,6 +218,15 @@
     click Assessment href "../Assessment"
 
 
+      AIRRKnowledgeCommons : chains
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Chain : chains
+    click Chain href "../Chain"
+
+
       AIRRKnowledgeCommons : conclusions
 
 
@@ -234,6 +243,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" Dataset : datasets
     click Dataset href "../Dataset"
+
+
+      AIRRKnowledgeCommons : epitopes
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" Epitope : epitopes
+    click Epitope href "../Epitope"
 
 
       AIRRKnowledgeCommons : immune_exposures
@@ -315,6 +333,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" StudyEvent : study_events
     click StudyEvent href "../StudyEvent"
+
+
+      AIRRKnowledgeCommons : tcell_receptors
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" TCellReceptor : tcell_receptors
+    click TCellReceptor href "../TCellReceptor"
 
 
 
@@ -406,6 +433,24 @@
 <tr>
 <td><a href="../conclusions/">conclusions</a></td>
 <td>* <br/> <a href="../Conclusion/">Conclusion</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../chains/">chains</a></td>
+<td>* <br/> <a href="../Chain/">Chain</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tcell_receptors/">tcell_receptors</a></td>
+<td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../epitopes/">epitopes</a></td>
+<td>* <br/> <a href="../Epitope/">Epitope</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -562,6 +607,33 @@ attributes:
     range: Conclusion
     multivalued: true
     inlined: true
+  chains:
+    name: chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: Chain
+    multivalued: true
+    inlined: true
+  tcell_receptors:
+    name: tcell_receptors
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    domain_of:
+    - AIRRKnowledgeCommons
+    - TCellReceptorEpitopeBindingAssay
+    range: TCellReceptor
+    multivalued: true
+    inlined: true
+  epitopes:
+    name: epitopes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: Epitope
+    multivalued: true
+    inlined: true
 tree_root: true
 
 </code></pre>
@@ -715,6 +787,39 @@ attributes:
     - AIRRKnowledgeCommons
     - Investigation
     range: Conclusion
+    multivalued: true
+    inlined: true
+  chains:
+    name: chains
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: chains
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: Chain
+    multivalued: true
+    inlined: true
+  tcell_receptors:
+    name: tcell_receptors
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    alias: tcell_receptors
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    - TCellReceptorEpitopeBindingAssay
+    range: TCellReceptor
+    multivalued: true
+    inlined: true
+  epitopes:
+    name: epitopes
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: epitopes
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: Epitope
     multivalued: true
     inlined: true
 tree_root: true

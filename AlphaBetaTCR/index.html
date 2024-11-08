@@ -231,6 +231,8 @@
     click Chain href "../Chain"
 
 
+      AlphaBetaTCR : type
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -268,6 +270,12 @@
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>T cell receptor beta chain</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../TCellReceptor/">TCellReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -353,6 +361,18 @@ attributes:
     domain_of:
     - AlphaBetaTCR
     range: Chain
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: AlphaBetaTCR
+    domain_of:
+    - Assay
+    - TCellReceptor
+    - Epitope
+    range: string
   name:
     name: name
     description: A human-readable name for a thing
