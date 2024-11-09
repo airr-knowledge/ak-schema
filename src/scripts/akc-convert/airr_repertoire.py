@@ -79,7 +79,6 @@ class AIRRRepertoire(Repertoire):
         for repertoire_dict in repertoire_list:
             investigation_dict = self.generateAKCInvestigation(repertoire_dict, investigation_dict, akc_class_list) 
 
-        
         # Now we need to resolve the cross references between objects.
 
         # Get the column of values from the akc_type column. We only want the
@@ -96,32 +95,37 @@ class AIRRRepertoire(Repertoire):
         akc_class_fields = self.getAIRRMap().getIRAKCRows(fields_of_interest)
         # A utility mapping dictionary that tells us which ADC field we use to link
         # AKC objects to their reference objects.
+        class_class_map = {
+                "Participant" : {
+                    "Investigation" : { "classes" : ["Investigation"], "fields" : ["adc_study_id"] }
+                    }
+                }
         class_map = {
                 "Investigation" : {
-                    "participants" : {"class" : "Participant", "field" : "adc_study_id"},
-                    "documents" : {"class" : "Reference", "field" : "adc_study_id"},
-                    "assays" : {"class" : "Assay", "field" : "adc_study_id"},
-                    "conclusions" : {"class" : "Conclusion", "field" : "adc_study_id"},
-                    "simulations" : {"class" : "Simulation", "field" : "adc_study_id"}
+                    "participants" : {"lookup" : "forward", "class" : "Participant", "field" : "adc_study_id", "source" : "Investigation"},
+                    "documents" : {"lookup" : "forward", "class" : "Reference", "field" : "adc_study_id", "source" : "Investigation"},
+                    "assays" : {"lookup" : "forward", "class" : "Assay", "field" : "adc_study_id", "source" : "Investigation"},
+                    "conclusions" : {"lookup" : "forward", "class" : "Conclusion", "field" : "adc_study_id", "source" : "Investigation"},
+                    "simulations" : {"lookup" : "forward", "class" : "Simulation", "field" : "adc_study_id", "source" : "Investigation"}
                     },
                 "Reference" : {
-                    "investigations" : {"class" : "Investigation", "field" : "adc_study_id"},
+                    "investigations" : {"lookup" : "forward", "class" : "Investigation", "field" : "adc_study_id", "source" : "Investigation"},
                     },
                 "StudyArm" : {
-                    "investigation" : {"class" : "Investigation", "field" : "adc_study_id"},
+                    "investigation" : {"lookup" : "forward", "class" : "Investigation", "field" : "adc_study_id", "source" : "Investigation"},
                     },
                 "Participant" : {
-                    "age_event" : {"class" : "LifeEvent", "field" : "adc_link_tag"},
-                    "study_arm" : {"class" : "StudyArm", "field" : "adc_study_group_description"},
+                    "age_event" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_link_tag", "source" : "Investigation"},
+                    "study_arm" : {"lookup" : "reverse", "class" : "StudyArm", "field" : "adc_study_group_description", "source" : "Investigation"},
                     },
                 "LifeEvent" : {
-                    "participant" : {"class" : "Participant", "field" : "adc_subject_id"},
+                    "participant" : {"lookup" : "reverse", "class" : "Participant", "field" : "adc_subject_id", "source" : "Investigation"},
                     },
                 "ImmuneExposure" : {
-                    "life_event" : {"class" : "LifeEvent", "field" : "adc_subject_id"},
+                    "life_event" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_subject_id"},
                     },
                 "Specimen" : {
-                    "life_event" : {"class" : "LifeEvent", "field" : "adc_repertoire_id"},
+                    "life_event" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Investigation"},
                     }
                 }
         # For every field that refers to another class, process the field.
@@ -140,6 +144,8 @@ class AIRRRepertoire(Repertoire):
             akc_change_field = row['akc_field']
             print("AKC Change Class = %s, Change Field = %s, Source Class = %s"%(akc_change_class, akc_change_field, akc_source_class))
             # For each investigation in the top level investigation dictionary, process the investigation.
+            # Hack for skipping this:
+            # for adc_study_id, akc_investigation in dict():
             for adc_study_id, akc_investigation in investigation_dict.items():
                 if self.verbose():
                     print('Processing investigation: %s'%(adc_study_id))
@@ -152,8 +158,52 @@ class AIRRRepertoire(Repertoire):
                     # Get the dictionary for the class the link is coming from.
                     akc_source_class_dict = akc_investigation[akc_source_class]
                     
+                    for source_akc_key, source_class_instance in akc_source_class_dict.items():
+                        if self.verbose():
+                            print("    Processing source class instance = %s"%(source_akc_key))
+                        for change_akc_key, change_class_instance in akc_change_class_dict.items():
+                            #if source_link_tag in akc_change_class_dict:
+                            if akc_change_class in class_map and akc_change_field in class_map[akc_change_class]:
+                                if self.verbose:
+                                    print("    Change AKC key = %s, Source AKC key = %s"%(change_akc_key, source_akc_key))
+                                # Get the tag of the class we are changing.
+                                change_link_tag = self.getAKCUniqueLink(change_class_instance, akc_change_class, akc_source_class)
+                                field_info = class_map[akc_change_class][akc_change_field]
+                                if field_info['lookup'] == 'forward':
+                                    change_link_tag = self.getAKCUniqueLink(change_class_instance, akc_change_class, akc_source_class)
+                                    if self.verbose():
+                                        #print("    Source link tag = %s"%(source_link_tag))
+                                        print("    Change link tag = %s, Checking %s (Forward lookup)"%(change_link_tag, change_akc_key))
+                                    if change_link_tag == change_akc_key:
+                                        print("    Found %s in change dictionary"%(change_link_tag))
+                                        #change_class_instance = akc_change_class_dict[change_link_tag]
+                                        if row['akc_is_array'] == True:
+                                            change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
+                                        else:
+                                            change_class_instance[row['akc_field']] = source_class_instance['akc_id']
+                                        print('        %s.%s in %s = %s (from %s,%s)'%(akc_change_class, row['akc_field'], change_akc_key, source_class_instance['akc_id'],akc_source_class, source_akc_key))
+                                elif field_info['lookup'] == 'reverse':
+                                    lookup_link_tag = self.getAKCUniqueLink(change_class_instance, akc_source_class, akc_change_class)
+                                    if self.verbose():
+                                        #print("    Source link tag = %s"%(source_link_tag))
+                                        print("    Change link tag = %s, Checking %s (Reverse lookup)"%(lookup_link_tag, source_akc_key))
+                                    if lookup_link_tag == source_akc_key:
+                                        print("    Found %s in source dictionary"%(lookup_link_tag))
+                                        #change_class_instance = akc_change_class_dict[change_link_tag]
+                                        if row['akc_is_array'] == True:
+                                            change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
+                                        else:
+                                            change_class_instance[row['akc_field']] = source_class_instance['akc_id']
+                                        print('        %s.%s in %s = %s (from %s,%s)'%(akc_change_class, row['akc_field'], change_akc_key, source_class_instance['akc_id'],akc_source_class, source_akc_key))
+                                else:
+                                    print("ERROR: No lookup direction for %s.%s"%(akc_change_class, row['akc_field']))
+
+                            #change_link_tag = self.getAKCUniqueLink(change_class_instance, akc_source_class, '')
+
+
                     # For each instance that might need to be changed, process it.
-                    for change_akc_key, change_class_instance in akc_change_class_dict.items():
+                    #for change_akc_key, change_class_instance in akc_change_class_dict.items():
+                    for change_akc_key, change_class_instance in dict():
                         # If we have a mapping for these classes and fields, continue
                         if akc_change_class in class_map and akc_change_field in class_map[akc_change_class]:
                             if self.verbose():
@@ -193,8 +243,8 @@ class AIRRRepertoire(Repertoire):
                                 #link_tag = self.getAIRRUniqueLink(repertoire_dict, akc_change_class, akc_source_class)
                                 #print(link_tag)
                                 source_link_tag = self.getAIRRUniqueLink(repertoire_dict, akc_source_class, akc_change_class)
-                                print(source_link_tag)
-                                print(change_link_tag)
+                                #print(source_link_tag)
+                                #print(change_link_tag)
                                 if source_link_tag == change_link_tag: 
                                     print("        BINGO link tag = %s, source_akc_key = %s, change_akc_key = %s"%(source_link_tag, source_akc_key, change_akc_key))
                                     print('        BINGO %s.%s in %s = %s (from %s,%s), link=%s'%(akc_change_class, row['akc_field'],change_akc_key,source_class_instance['akc_id'],akc_source_class, source_akc_key, link_value))
@@ -214,10 +264,10 @@ class AIRRRepertoire(Repertoire):
                                     link_dict[akc_source_class+'_Link'] = source_class_instance['adc_link_tag']
                                     link_dict[akc_change_class+'_Link'] = change_class_instance['adc_link_tag']
                                     akc_investigation[akc_link_class][link_id] = link_dict
-                                    #if row['akc_is_array'] == True:
-                                    #    change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
-                                    #else:
-                                    #    change_class_instance[row['akc_field']] = source_class_instance['akc_id']
+                                    if row['akc_is_array'] == True:
+                                        change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
+                                    else:
+                                        change_class_instance[row['akc_field']] = source_class_instance['akc_id']
                         else:
                             print("Warning: No mapping for %s/%s"%(akc_change_class, akc_change_field))
                     
