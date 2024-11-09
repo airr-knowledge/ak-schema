@@ -86,7 +86,10 @@ class Repertoire(Parser):
             # Iterate over the fields and add them to the instance name
             for field in class_name_fields:
                 # print('getAIRRUniqueLink - adding field %s = %s'%(field, repertoire_dict[field]['value']))
-                airr_link_value = airr_link_value + '_' + repertoire_dict[field]['value']
+                if field in repertoire_dict:
+                    airr_link_value = airr_link_value + '_' + repertoire_dict[field]['value']
+                else:
+                    print('Warning: mapped field %s not in AIRR repertoire'%(field))
         else:
             print('Warning: Could not link class %s, skipping'%(akc_class))
 
@@ -116,7 +119,7 @@ class Repertoire(Parser):
                 if 'adc_' + field in akc_class_instance:
                     airr_link_value = airr_link_value + '_' + akc_class_instance['adc_' + field]
                 else:
-                    print('Warning: mapped field %s not in AKC class mapping'%(field))
+                    print('Warning: mapped field %s not in AKC class instance.'%(field))
         else:
             print('Warning: Could not link class %s, skipping'%(akc_class))
 
