@@ -19,6 +19,12 @@ classes:
     slots:
       - specimen
 
+  SpecimenProcessing:
+    is_a: PlannedProcess
+    class_uri: OBI:0000094 # material processing
+    slots:
+      - specimen
+
   Assay:
     is_a: PlannedProcess
     class_uri: OBI:0000070 # assay
