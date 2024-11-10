@@ -52,7 +52,7 @@ classes:
     is_a: ReceptorRepertoireSequencingAssay
     class_uri: OBI:0002991
   TCellReceptorRepertoireSequencingAssay:
-    is_a: CellReceptorRepertoireSequencingAssay
+    is_a: ReceptorRepertoireSequencingAssay
     class_uri: OBI:0002990
 
   PCRTarget:
