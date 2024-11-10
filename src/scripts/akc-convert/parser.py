@@ -455,12 +455,6 @@ class Parser:
                 akc_value = None
             elif isinstance(value,(str)):
                 akc_value = Parser.str_to_bool(value)
-                #if value in ["T","t","True","TRUE","true"]:
-                #    akc_value = True
-                #elif value in ["F","f","False","FALSE","false"]:
-                #    akc_value = False
-                #else:
-                #    raise TypeError("Invalid boolean value " + value + " for field " + field)
             elif isinstance(value,(int)):
                 akc_value = Parser.int_to_bool(value)
             else:
@@ -726,7 +720,8 @@ class Parser:
                             for sub_key, sub_value in element.items():
                                 self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
                             got_primary = True
-                            print("Info: Found a primary annotation, using it.")
+                            if self.verbose():
+                                print("Info: Found a primary annotation, using it.")
                             break
                     # If we didn't find the primary, then use the first one as a best guess.
                     if not got_primary:
