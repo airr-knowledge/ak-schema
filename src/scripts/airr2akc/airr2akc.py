@@ -3,13 +3,15 @@
 
 import argparse
 import yaml
+import sys
 
 def get_arguments():
     # Set up the command line parser
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description="")
 
     # The block to process
-    parser.add_argument("-a", "--airr_schema_yaml", type=str, default="/Users/lscheffer/PycharmProjects/ak-schema/src/scripts/airr2akc/airr-schema-openapi3.yaml")
+    # parser.add_argument("-a", "--airr_schema_yaml", type=str, default="/Users/lscheffer/PycharmProjects/ak-schema/src/scripts/airr2akc/airr-schema-openapi3.yaml")
+    parser.add_argument("-a", "--airr_schema_yaml", type=str, default="/Users/lscheffer/PycharmProjects/ak-schema/src/scripts/airr2akc/airr-schema.yaml")
     parser.add_argument("-o", "--output_file", type=str, default="../../ak_schema/schema/ak_airr.yaml")
     # parser.add_argument("-k", "--keywords_to_parse", type=str, nargs="+")
 
@@ -40,7 +42,7 @@ def get_slot_range(slot_name, slot_yaml, prefix):
     elif "type" in slot_yaml and slot_yaml["type"] == "object":
         # todo only occurs once in RepertoireGroup
         slot_range = slot_yaml["type"]
-        print(f"Cannot determine range for slot '{slot_name}', omitting range...")
+        print(f"Cannot determine range for slot '{slot_name}', omitting range...", file=sys.stderr)
         slot_range = None
     else:
         raise NotImplementedError(slot_yaml)
@@ -126,7 +128,7 @@ def get_ontology_enum(name, slot_yaml, prefix):
         # todo bug report: 'Property' ontology does not follow the same format
         print(f"Ontology '{name}' does not follow the correct formatting.\n"
               f"  Expected to find the field: x-airr/ontology/top_node/id\n"
-              f"  Instead found these fields: {slot_yaml}")
+              f"  Instead found these fields: {slot_yaml}", file=sys.stderr)
         return {"name": f"{prefix}{name}"}
 
 def get_closed_vocabulary_enum(name, slot_yaml, prefix):
@@ -173,21 +175,12 @@ def get_all_enums(keyword_yaml, prefix):
 #     return additional_keywords
 
 def get_yaml_output_for_keyword(airr_yaml, keyword, prefix):
-    # yaml_output_dict = {"classes": dict(),
-    #                     "slots": dict(),
-    #                     "enums": dict()}
-
     keyword_yaml = airr_yaml[keyword]
     output_slots = get_all_slots(keyword_yaml, prefix)
 
     yaml_output_dict = {"classes": {f"{prefix}{keyword}": {"slots": list(output_slots.keys())}},
                         "slots": output_slots,
                         "enums": get_all_enums(keyword_yaml, prefix)}
-
-
-    # yaml_output_dict["slots"].update(output_slots)
-    # yaml_output_dict["classes"] = {keyword: {"slots": list(output_slots.keys())}}
-    # yaml_output_dict["enums"] = getAllEnums(keyword_yaml)
 
     return yaml_output_dict
 
@@ -206,7 +199,7 @@ def check_can_safely_add(existing_yaml, new_yaml):
         if key in existing_yaml:
             if new_yaml[key] != existing_yaml[key]:
                 print(f"Issue when attempting to add slot '{key}'. Same slot was already found with different content:\n"
-                      f"  Existing: {new_yaml[key]}\n  New: {existing_yaml[key]}")
+                      f"  Existing: {new_yaml[key]}\n  New:      {existing_yaml[key]}", file=sys.stderr)
             # assert new_yaml[key] == existing_yaml[key]
 
 
@@ -287,10 +280,6 @@ def main(parsed_args):
     # keywords_to_process = parsed_args.keywords_to_parse
     keywords_to_process = get_simple_keywords_to_process(airr_yaml)
 
-    # keywords_to_process = ["SampleProcessing"]
-
-    # todo add all t one output file
-
     # Simple keywords: add classes, slots and enums
     for keyword in keywords_to_process:
         if keyword not in skip_keywords:
@@ -323,4 +312,6 @@ if __name__ == "__main__":
     parsed_args = get_arguments()
 
     main(parsed_args)
+
+
 
