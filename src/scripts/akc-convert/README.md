@@ -35,16 +35,20 @@ AIRR mapping file is custom at the moment from the AKC branch in github.
 
 https://github.com/sfu-ireceptor/config/tree/AKC
 
-Needs to be run in the docker container as documented here:
+# Running
+
+This code needs to be run in the docker container as documented here:
 
 https://github.com/airr-knowledge/ak-schema/blob/main/README.md
 ```
 sudo docker run -v $PWD:/work -it airrknowledge/ak-schema bash
 ```
-If you need to build the container:
+If you need to build the container, in the root directory of this github repo do:
 ```
 sudo docker build -f Dockerfile -t airrknowledge/ak-schema:latest .
 ```
+You will need a current version of the ak_schema file in the local directory, in order to generate
+from the current schema perform the following from the root directory of this github repository:
 ```
-gen-python project/linkml/ak_schema.yaml > src/scripts/akc-convert/ak_schema.py\
+gen-python project/linkml/ak_schema.yaml > src/scripts/akc-convert/ak_schema.py
 ```
