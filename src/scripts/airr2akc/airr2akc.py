@@ -268,7 +268,7 @@ def write_yaml_output(yaml_output_dict, yaml_outfile):
 def main(parsed_args):
     airr_yaml = get_airr_yaml(parsed_args.airr_schema_yaml)
     airr_version = airr_yaml["Info"]["version"]
-    version_prefix = f"V{str(airr_version).replace('.', '_')}_"
+    version_prefix = f"V{str(airr_version).replace('.', 'p')}_"
 
 
     skip_keywords = ["Info", "Ontology", "CURIEMap", "InformationProvider", "Attributes", "FileObject", "DataSet",

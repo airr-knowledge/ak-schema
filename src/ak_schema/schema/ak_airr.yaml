@@ -5,25 +5,25 @@ id: https://github.com/airr-knowledge/ak-schema
 name: ak-schema
 
 classes:
-  V1_4_TimePoint:
+  V1p4_TimePoint:
     slots:
       - time_pointlabel
       - time_pointvalue
       - time_pointunit
-  V1_4_TimeInterval:
+  V1p4_TimeInterval:
     slots:
       - time_intervalmin
       - time_intervalmax
       - time_intervalunit
-  V1_4_PhysicalQuantity:
+  V1p4_PhysicalQuantity:
     slots:
       - physical_quantityquantity
       - physical_quantityunit
-  V1_4_TimeQuantity:
+  V1p4_TimeQuantity:
     slots:
       - time_quantityquantity
       - time_quantityunit
-  V1_4_Contributor:
+  V1p4_Contributor:
     slots:
       - contributorcontributor_id
       - contributorname
@@ -31,11 +31,11 @@ classes:
       - contributoraffiliation
       - contributoraffiliation_department
       - contributorcontributions
-  V1_4_ContributorContribution:
+  V1p4_ContributorContribution:
     slots:
       - contributor_contributionrole
       - contributor_contributiondegree
-  V1_4_RearrangedSequence:
+  V1p4_RearrangedSequence:
     slots:
       - rearranged_sequencesequence_id
       - rearranged_sequencesequence
@@ -47,7 +47,7 @@ classes:
       - rearranged_sequencedeposited_version
       - rearranged_sequencesequence_start
       - rearranged_sequencesequence_end
-  V1_4_UnrearrangedSequence:
+  V1p4_UnrearrangedSequence:
     slots:
       - unrearranged_sequencesequence_id
       - unrearranged_sequencesequence
@@ -59,7 +59,7 @@ classes:
       - unrearranged_sequencegff_start
       - unrearranged_sequencegff_end
       - unrearranged_sequencestrand
-  V1_4_SequenceDelineationV:
+  V1p4_SequenceDelineationV:
     slots:
       - sequence_delineation_vsequence_delineation_id
       - sequence_delineation_vdelineation_scheme
@@ -77,7 +77,7 @@ classes:
       - sequence_delineation_vfwr3_end
       - sequence_delineation_vcdr3_start
       - sequence_delineation_valignment_labels
-  V1_4_AlleleDescription:
+  V1p4_AlleleDescription:
     slots:
       - allele_descriptionallele_description_id
       - allele_descriptionallele_description_ref
@@ -128,7 +128,7 @@ classes:
       - allele_descriptionparalogs
       - allele_descriptioncuration
       - allele_descriptioncurational_tags
-  V1_4_GermlineSet:
+  V1p4_GermlineSet:
     slots:
       - germline_setgermline_set_id
       - germline_setacknowledgements
@@ -144,11 +144,11 @@ classes:
       - germline_setlocus
       - germline_setallele_descriptions
       - germline_setcuration
-  V1_4_GenotypeSet:
+  V1p4_GenotypeSet:
     slots:
       - genotype_setreceptor_genotype_set_id
       - genotype_setgenotype_class_list
-  V1_4_Genotype:
+  V1p4_Genotype:
     slots:
       - genotypereceptor_genotype_id
       - genotypelocus
@@ -156,41 +156,41 @@ classes:
       - genotypeundocumented_alleles
       - genotypedeleted_genes
       - genotypeinference_process
-  V1_4_DocumentedAllele:
+  V1p4_DocumentedAllele:
     slots:
       - documented_allelelabel
       - documented_allelegermline_set_ref
       - documented_allelephasing
-  V1_4_UndocumentedAllele:
+  V1p4_UndocumentedAllele:
     slots:
       - undocumented_alleleallele_name
       - undocumented_allelesequence
       - undocumented_allelephasing
-  V1_4_DeletedGene:
+  V1p4_DeletedGene:
     slots:
       - deleted_genelabel
       - deleted_genegermline_set_ref
       - deleted_genephasing
-  V1_4_MHCGenotypeSet:
+  V1p4_MHCGenotypeSet:
     slots:
       - m_h_c_genotype_setmhc_genotype_set_id
       - m_h_c_genotype_setmhc_genotype_list
-  V1_4_MHCGenotype:
+  V1p4_MHCGenotype:
     slots:
       - m_h_c_genotypemhc_genotype_id
       - m_h_c_genotypemhc_class
       - m_h_c_genotypemhc_alleles
       - m_h_c_genotypemhc_genotyping_method
-  V1_4_MHCAllele:
+  V1p4_MHCAllele:
     slots:
       - m_h_c_alleleallele_designation
       - m_h_c_allelegene
       - m_h_c_allelereference_set_ref
-  V1_4_SubjectGenotype:
+  V1p4_SubjectGenotype:
     slots:
       - subject_genotypereceptor_genotype_set
       - subject_genotypemhc_genotype_set
-  V1_4_Study:
+  V1p4_Study:
     slots:
       - studystudy_id
       - studystudy_title
@@ -203,7 +203,7 @@ classes:
       - studykeywords_study
       - studyadc_publish_date
       - studyadc_update_date
-  V1_4_Subject:
+  V1p4_Subject:
     slots:
       - subjectsubject_id
       - subjectsynthetic
@@ -220,7 +220,7 @@ classes:
       - subjectlink_type
       - subjectdiagnosis
       - subjectgenotype
-  V1_4_Diagnosis:
+  V1p4_Diagnosis:
     slots:
       - diagnosisstudy_group_description
       - diagnosisdiagnosis_timepoint
@@ -231,7 +231,7 @@ classes:
       - diagnosisimmunogen
       - diagnosisintervention
       - diagnosismedical_history
-  V1_4_Sample:
+  V1p4_Sample:
     slots:
       - samplesample_id
       - samplesample_type
@@ -241,7 +241,7 @@ classes:
       - samplecollection_time_point_relative
       - samplecollection_location
       - samplebiomaterial_provider
-  V1_4_CellProcessing:
+  V1p4_CellProcessing:
     slots:
       - cell_processingtissue_processing
       - cell_processingcell_subset
@@ -255,12 +255,12 @@ classes:
       - cell_processingcell_quality
       - cell_processingcell_isolation
       - cell_processingcell_processing_protocol
-  V1_4_PCRTarget:
+  V1p4_PCRTarget:
     slots:
       - p_c_r_targetpcr_target_locus
       - p_c_r_targetforward_pcr_primer_target_location
       - p_c_r_targetreverse_pcr_primer_target_location
-  V1_4_NucleicAcidProcessing:
+  V1p4_NucleicAcidProcessing:
     slots:
       - nucleic_acid_processingtemplate_class
       - nucleic_acid_processingtemplate_quality
@@ -271,7 +271,7 @@ classes:
       - nucleic_acid_processingpcr_target
       - nucleic_acid_processingcomplete_sequences
       - nucleic_acid_processingphysical_linkage
-  V1_4_SequencingRun:
+  V1p4_SequencingRun:
     slots:
       - sequencing_runsequencing_run_id
       - sequencing_runtotal_reads_passing_qc_filter
@@ -280,7 +280,7 @@ classes:
       - sequencing_runsequencing_run_date
       - sequencing_runsequencing_kit
       - sequencing_runsequencing_files
-  V1_4_SequencingData:
+  V1p4_SequencingData:
     slots:
       - sequencing_datasequencing_data_id
       - sequencing_datafile_type
@@ -292,7 +292,7 @@ classes:
       - sequencing_datapaired_read_length
       - sequencing_dataindex_filename
       - sequencing_dataindex_length
-  V1_4_DataProcessing:
+  V1p4_DataProcessing:
     slots:
       - data_processingdata_processing_id
       - data_processingprimary_annotation
@@ -306,7 +306,7 @@ classes:
       - data_processinggermline_database
       - data_processinggermline_set_ref
       - data_processinganalysis_provenance_id
-  V1_4_Repertoire:
+  V1p4_Repertoire:
     slots:
       - repertoirerepertoire_id
       - repertoirerepertoire_name
@@ -315,13 +315,13 @@ classes:
       - repertoiresubject
       - repertoiresample
       - repertoiredata_processing
-  V1_4_RepertoireGroup:
+  V1p4_RepertoireGroup:
     slots:
       - repertoire_grouprepertoire_group_id
       - repertoire_grouprepertoire_group_name
       - repertoire_grouprepertoire_group_description
       - repertoire_grouprepertoires
-  V1_4_Alignment:
+  V1p4_Alignment:
     slots:
       - alignmentsequence_id
       - alignmentsegment
@@ -337,7 +337,7 @@ classes:
       - alignmentgermline_end
       - alignmentrank
       - alignmentdata_processing_id
-  V1_4_Rearrangement:
+  V1p4_Rearrangement:
     slots:
       - rearrangementsequence_id
       - rearrangementsequence
@@ -494,7 +494,7 @@ classes:
       - rearrangementrepertoire_id
       - rearrangementsample_processing_id
       - rearrangementdata_processing_id
-  V1_4_Clone:
+  V1p4_Clone:
     slots:
       - cloneclone_id
       - clonerepertoire_id
@@ -520,19 +520,19 @@ classes:
       - cloneumi_count
       - cloneclone_count
       - cloneseed_id
-  V1_4_Tree:
+  V1p4_Tree:
     slots:
       - treetree_id
       - treeclone_id
       - treenewick
       - treenodes
-  V1_4_Node:
+  V1p4_Node:
     slots:
       - nodesequence_id
       - nodesequence_alignment
       - nodejunction
       - nodejunction_aa
-  V1_4_Cell:
+  V1p4_Cell:
     slots:
       - cellcell_id
       - cellrepertoire_id
@@ -542,7 +542,7 @@ classes:
       - cellcell_phenotype
       - cellcell_label
       - cellvirtual_pairing
-  V1_4_Expression:
+  V1p4_Expression:
     slots:
       - expressionexpression_id
       - expressioncell_id
@@ -551,7 +551,7 @@ classes:
       - expressionproperty_type
       - expressionproperty
       - expressionvalue
-  V1_4_Receptor:
+  V1p4_Receptor:
     slots:
       - receptorreceptor_id
       - receptorreceptor_hash
@@ -561,7 +561,7 @@ classes:
       - receptorreceptor_variable_domain_2_aa
       - receptorreceptor_variable_domain_2_locus
       - receptorreceptor_ref
-  V1_4_Reactivity:
+  V1p4_Reactivity:
     slots:
       - reactivityreactivity_id
       - reactivitycell_id
@@ -584,7 +584,7 @@ classes:
       - reactivityreactivity_value
       - reactivityreactivity_unit
       - reactivityreactivity_ref
-  V1_4_SampleProcessing:
+  V1p4_SampleProcessing:
     slots:
       - sequencing_runsequencing_run_id
       - sequencing_runtotal_reads_passing_qc_filter
@@ -612,7 +612,7 @@ slots:
   time_pointunit:
     name: time_pointunit
     description: Unit of the time point
-    range: V1_4_Unit
+    range: V1p4_Unit
     required: false
     annotations:
       nullable: false
@@ -633,7 +633,7 @@ slots:
   time_intervalunit:
     name: time_intervalunit
     description: Unit of the time interval
-    range: V1_4_Unit
+    range: V1p4_Unit
     required: false
     annotations:
       nullable: false
@@ -647,7 +647,7 @@ slots:
   physical_quantityunit:
     name: physical_quantityunit
     description: Unit of physical quantity
-    range: V1_4_Unit
+    range: V1p4_Unit
     required: false
     annotations:
       nullable: false
@@ -661,7 +661,7 @@ slots:
   time_quantityunit:
     name: time_quantityunit
     description: Unit of time
-    range: V1_4_Unit
+    range: V1p4_Unit
     required: false
     annotations:
       nullable: false
@@ -682,14 +682,14 @@ slots:
   contributororcid_id:
     name: contributororcid_id
     description: ORCID identifier of the contributor. Note that if present, the label of the ORCID record should take precedence over the name reported in the `name` property.
-    range: V1_4_OrcidId
+    range: V1p4_OrcidId
     required: false
     annotations:
       nullable: true
   contributoraffiliation:
     name: contributoraffiliation
     description: ROR of the contributor's primary affiliation. Note that ROR are only minted for institutions, not from individuals institutes, divisions or departments.
-    range: V1_4_Affiliation
+    range: V1p4_Affiliation
     required: false
     annotations:
       nullable: true
@@ -703,7 +703,7 @@ slots:
   contributorcontributions:
     name: contributorcontributions
     description: List of all roles the contributor had in a project
-    range: V1_4_ContributorContribution
+    range: V1p4_ContributorContribution
     multivalued: true
     required: false
     annotations:
@@ -711,14 +711,14 @@ slots:
   contributor_contributionrole:
     name: contributor_contributionrole
     description: Role according to CRediT taxonomy
-    range: V1_4_Role
+    range: V1p4_Role
     required: true
     annotations:
       nullable: false
   contributor_contributiondegree:
     name: contributor_contributiondegree
     description: Optional specification of the degree of contribution, should be used if multiple individuals serve the same role.
-    range: V1_4_Degree
+    range: V1p4_Degree
     required: false
     annotations:
       nullable: true
@@ -739,14 +739,14 @@ slots:
   rearranged_sequencederivation:
     name: rearranged_sequencederivation
     description: The class of nucleic acid that was used as primary starting material
-    range: V1_4_Derivation
+    range: V1p4_Derivation
     required: true
     annotations:
       nullable: true
   rearranged_sequenceobservation_type:
     name: rearranged_sequenceobservation_type
     description: The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.
-    range: V1_4_ObservationType
+    range: V1p4_ObservationType
     required: true
     annotations:
       nullable: false
@@ -858,7 +858,7 @@ slots:
   unrearranged_sequencestrand:
     name: unrearranged_sequencestrand
     description: sense (+ or -)
-    range: V1_4_Strand
+    range: V1p4_Strand
     required: true
     annotations:
       nullable: true
@@ -992,7 +992,7 @@ slots:
   allele_descriptionacknowledgements:
     name: allele_descriptionacknowledgements
     description: List of individuals whose contribution to the gene description should be acknowledged. Note that these are not necessarily identical with the authors on an associated manuscript or other scholarly communication. Further note that typically at least the three CRediT contributor roles "supervision", "investigation" and "data curation" should be assigned. The current maintainer should be listed first.
-    range: V1_4_Contributor
+    range: V1p4_Contributor
     multivalued: true
     required: true
     annotations:
@@ -1050,7 +1050,7 @@ slots:
   allele_descriptionlocus:
     name: allele_descriptionlocus
     description: Gene locus
-    range: V1_4_Locus
+    range: V1p4_Locus
     required: true
     annotations:
       nullable: false
@@ -1064,7 +1064,7 @@ slots:
   allele_descriptionsequence_type:
     name: allele_descriptionsequence_type
     description: Sequence type (V, D, J, C)
-    range: V1_4_SequenceType
+    range: V1p4_SequenceType
     required: true
     annotations:
       nullable: false
@@ -1078,14 +1078,14 @@ slots:
   allele_descriptioninference_type:
     name: allele_descriptioninference_type
     description: Type of inference(s) from which this gene sequence was inferred
-    range: V1_4_InferenceType
+    range: V1p4_InferenceType
     required: true
     annotations:
       nullable: true
   allele_descriptionspecies:
     name: allele_descriptionspecies
     description: Binomial designation of subject's species
-    range: V1_4_Species
+    range: V1p4_Species
     required: true
     annotations:
       nullable: false
@@ -1099,14 +1099,14 @@ slots:
   allele_descriptionspecies_subgroup_type:
     name: allele_descriptionspecies_subgroup_type
     description: ''
-    range: V1_4_SpeciesSubgroupType
+    range: V1p4_SpeciesSubgroupType
     required: false
     annotations:
       nullable: true
   allele_descriptionstatus:
     name: allele_descriptionstatus
     description: Status of record, assumed active if the field is not present
-    range: V1_4_Status
+    range: V1p4_Status
     required: false
     annotations:
       nullable: true
@@ -1148,7 +1148,7 @@ slots:
   allele_descriptionj_codon_frame:
     name: allele_descriptionj_codon_frame
     description: Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing.
-    range: V1_4_JCodonFrame
+    range: V1p4_JCodonFrame
     required: false
     annotations:
       nullable: true
@@ -1281,7 +1281,7 @@ slots:
   allele_descriptionv_gene_delineations:
     name: allele_descriptionv_gene_delineations
     description: ''
-    range: V1_4_SequenceDelineationV
+    range: V1p4_SequenceDelineationV
     multivalued: true
     required: false
     annotations:
@@ -1289,7 +1289,7 @@ slots:
   allele_descriptionunrearranged_support:
     name: allele_descriptionunrearranged_support
     description: ''
-    range: V1_4_UnrearrangedSequence
+    range: V1p4_UnrearrangedSequence
     multivalued: true
     required: false
     annotations:
@@ -1297,7 +1297,7 @@ slots:
   allele_descriptionrearranged_support:
     name: allele_descriptionrearranged_support
     description: ''
-    range: V1_4_RearrangedSequence
+    range: V1p4_RearrangedSequence
     multivalued: true
     required: false
     annotations:
@@ -1320,7 +1320,7 @@ slots:
   allele_descriptioncurational_tags:
     name: allele_descriptioncurational_tags
     description: Controlled-vocabulary tags applied to this description
-    range: V1_4_CurationalTags
+    range: V1p4_CurationalTags
     multivalued: true
     required: false
     annotations:
@@ -1335,7 +1335,7 @@ slots:
   germline_setacknowledgements:
     name: germline_setacknowledgements
     description: List of individuals whose contribution to the germline set should be acknowledged. Note that these are not necessarily identical with the authors on an associated manuscript or other scholarly communication. Further note that typically at least the three CRediT contributor roles "supervision", "investigation" and "data curation" should be assigned. The coresponding author should be listed last.
-    range: V1_4_Contributor
+    range: V1p4_Contributor
     multivalued: true
     required: true
     annotations:
@@ -1386,7 +1386,7 @@ slots:
   germline_setspecies:
     name: germline_setspecies
     description: Binomial designation of subject's species
-    range: V1_4_Species
+    range: V1p4_Species
     required: true
     annotations:
       nullable: false
@@ -1400,21 +1400,21 @@ slots:
   germline_setspecies_subgroup_type:
     name: germline_setspecies_subgroup_type
     description: ''
-    range: V1_4_SpeciesSubgroupType
+    range: V1p4_SpeciesSubgroupType
     required: false
     annotations:
       nullable: true
   germline_setlocus:
     name: germline_setlocus
     description: Gene locus
-    range: V1_4_Locus
+    range: V1p4_Locus
     required: true
     annotations:
       nullable: false
   germline_setallele_descriptions:
     name: germline_setallele_descriptions
     description: list of allele_descriptions in the germline set
-    range: V1_4_AlleleDescription
+    range: V1p4_AlleleDescription
     multivalued: true
     required: true
     annotations:
@@ -1436,7 +1436,7 @@ slots:
   genotype_setgenotype_class_list:
     name: genotype_setgenotype_class_list
     description: List of Genotypes included in this Receptor Genotype Set.
-    range: V1_4_Genotype
+    range: V1p4_Genotype
     multivalued: true
     required: false
     annotations:
@@ -1451,14 +1451,14 @@ slots:
   genotypelocus:
     name: genotypelocus
     description: Gene locus
-    range: V1_4_Locus
+    range: V1p4_Locus
     required: true
     annotations:
       nullable: false
   genotypedocumented_alleles:
     name: genotypedocumented_alleles
     description: List of alleles documented in reference set(s)
-    range: V1_4_DocumentedAllele
+    range: V1p4_DocumentedAllele
     multivalued: true
     required: false
     annotations:
@@ -1466,7 +1466,7 @@ slots:
   genotypeundocumented_alleles:
     name: genotypeundocumented_alleles
     description: List of alleles inferred to be present and not documented in an identified GermlineSet
-    range: V1_4_UndocumentedAllele
+    range: V1p4_UndocumentedAllele
     multivalued: true
     required: false
     annotations:
@@ -1474,7 +1474,7 @@ slots:
   genotypedeleted_genes:
     name: genotypedeleted_genes
     description: Array of genes identified as being deleted in this genotype
-    range: V1_4_DeletedGene
+    range: V1p4_DeletedGene
     multivalued: true
     required: false
     annotations:
@@ -1482,7 +1482,7 @@ slots:
   genotypeinference_process:
     name: genotypeinference_process
     description: Information on how the genotype was acquired. Controlled vocabulary.
-    range: V1_4_InferenceProcess
+    range: V1p4_InferenceProcess
     required: false
     annotations:
       nullable: true
@@ -1559,7 +1559,7 @@ slots:
   m_h_c_genotype_setmhc_genotype_list:
     name: m_h_c_genotype_setmhc_genotype_list
     description: List of MHCGenotypes included in this set
-    range: V1_4_MHCGenotype
+    range: V1p4_MHCGenotype
     multivalued: true
     required: true
     annotations:
@@ -1574,14 +1574,14 @@ slots:
   m_h_c_genotypemhc_class:
     name: m_h_c_genotypemhc_class
     description: Class of MHC alleles described by the MHCGenotype
-    range: V1_4_MhcClass
+    range: V1p4_MhcClass
     required: true
     annotations:
       nullable: false
   m_h_c_genotypemhc_alleles:
     name: m_h_c_genotypemhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
-    range: V1_4_MHCAllele
+    range: V1p4_MHCAllele
     multivalued: true
     required: true
     annotations:
@@ -1603,7 +1603,7 @@ slots:
   m_h_c_allelegene:
     name: m_h_c_allelegene
     description: The MHC gene to which the described allele belongs
-    range: V1_4_Gene
+    range: V1p4_Gene
     required: false
     annotations:
       nullable: true
@@ -1617,14 +1617,14 @@ slots:
   subject_genotypereceptor_genotype_set:
     name: subject_genotypereceptor_genotype_set
     description: Immune receptor genotype set for this subject.
-    range: V1_4_GenotypeSet
+    range: V1p4_GenotypeSet
     required: false
     annotations:
       nullable: true
   subject_genotypemhc_genotype_set:
     name: subject_genotypemhc_genotype_set
     description: MHC genotype set for this subject.
-    range: V1_4_MHCGenotypeSet
+    range: V1p4_MHCGenotypeSet
     required: false
     annotations:
       nullable: true
@@ -1645,7 +1645,7 @@ slots:
   studystudy_type:
     name: studystudy_type
     description: Type of study design
-    range: V1_4_StudyType
+    range: V1p4_StudyType
     required: true
     annotations:
       nullable: true
@@ -1673,7 +1673,7 @@ slots:
   studycontributors:
     name: studycontributors
     description: List of individuals who contributed to the study. Note that these are not necessarily identical with the authors on an associated manuscript or other scholarly communication. Further note that typically at least the three CRediT contributor roles "supervision", "investigation" and "data curation" should be assigned. The coresponding author should be listed last.
-    range: V1_4_Contributor
+    range: V1p4_Contributor
     multivalued: true
     required: true
     annotations:
@@ -1689,7 +1689,7 @@ slots:
   studykeywords_study:
     name: studykeywords_study
     description: Keywords describing properties of one or more data sets in a study. "contains_schema" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that "contains_paired_chain" but does not "contains_schema_cell").
-    range: V1_4_KeywordsStudy
+    range: V1p4_KeywordsStudy
     multivalued: true
     required: true
     annotations:
@@ -1725,21 +1725,21 @@ slots:
   subjectspecies:
     name: subjectspecies
     description: Binomial designation of subject's species
-    range: V1_4_Species
+    range: V1p4_Species
     required: true
     annotations:
       nullable: false
   subjectsex:
     name: subjectsex
     description: Biological sex of subject
-    range: V1_4_Sex
+    range: V1p4_Sex
     required: true
     annotations:
       nullable: true
   subjectage:
     name: subjectage
     description: Age of subject expressed as a time interval. If singular time point then min == max in the time interval.
-    range: V1_4_TimeInterval
+    range: V1p4_TimeInterval
     required: true
     annotations:
       nullable: true
@@ -1753,14 +1753,14 @@ slots:
   subjectancestry_population:
     name: subjectancestry_population
     description: Broad geographic origin of ancestry (continent)
-    range: V1_4_AncestryPopulation
+    range: V1p4_AncestryPopulation
     required: true
     annotations:
       nullable: true
   subjectlocation_birth:
     name: subjectlocation_birth
     description: Self-reported location of birth of the subject, preferred granularity is country-level
-    range: V1_4_LocationBirth
+    range: V1p4_LocationBirth
     required: false
     annotations:
       nullable: true
@@ -1802,7 +1802,7 @@ slots:
   subjectdiagnosis:
     name: subjectdiagnosis
     description: Diagnosis information for subject
-    range: V1_4_Diagnosis
+    range: V1p4_Diagnosis
     multivalued: true
     required: false
     annotations:
@@ -1810,7 +1810,7 @@ slots:
   subjectgenotype:
     name: subjectgenotype
     description: ''
-    range: V1_4_SubjectGenotype
+    range: V1p4_SubjectGenotype
     required: false
     annotations:
       nullable: true
@@ -1824,21 +1824,21 @@ slots:
   diagnosisdiagnosis_timepoint:
     name: diagnosisdiagnosis_timepoint
     description: Time point for the diagnosis
-    range: V1_4_TimePoint
+    range: V1p4_TimePoint
     required: false
     annotations:
       nullable: true
   diagnosisdisease_diagnosis:
     name: diagnosisdisease_diagnosis
     description: Diagnosis of subject
-    range: V1_4_DiseaseDiagnosis
+    range: V1p4_DiseaseDiagnosis
     required: true
     annotations:
       nullable: true
   diagnosisdisease_length:
     name: diagnosisdisease_length
     description: Time duration between initial diagnosis and current intervention
-    range: V1_4_TimeQuantity
+    range: V1p4_TimeQuantity
     required: true
     annotations:
       nullable: true
@@ -1894,7 +1894,7 @@ slots:
   sampletissue:
     name: sampletissue
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
-    range: V1_4_Tissue
+    range: V1p4_Tissue
     required: true
     annotations:
       nullable: true
@@ -1915,14 +1915,14 @@ slots:
   samplecollection_time_point_relative:
     name: samplecollection_time_point_relative
     description: Time point at which sample was taken, relative to `label` event
-    range: V1_4_TimePoint
+    range: V1p4_TimePoint
     required: true
     annotations:
       nullable: true
   samplecollection_location:
     name: samplecollection_location
     description: Location where the sample was taken, preferred granularity is country-level
-    range: V1_4_CollectionLocation
+    range: V1p4_CollectionLocation
     required: false
     annotations:
       nullable: true
@@ -1943,7 +1943,7 @@ slots:
   cell_processingcell_subset:
     name: cell_processingcell_subset
     description: Commonly-used designation of isolated cell population
-    range: V1_4_CellSubset
+    range: V1p4_CellSubset
     required: true
     annotations:
       nullable: true
@@ -1964,7 +1964,7 @@ slots:
   cell_processingcell_species:
     name: cell_processingcell_species
     description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
-    range: V1_4_CellSpecies
+    range: V1p4_CellSpecies
     required: false
     annotations:
       nullable: true
@@ -2020,7 +2020,7 @@ slots:
   p_c_r_targetpcr_target_locus:
     name: p_c_r_targetpcr_target_locus
     description: Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
-    range: V1_4_PcrTargetLocus
+    range: V1p4_PcrTargetLocus
     required: true
     annotations:
       nullable: true
@@ -2041,7 +2041,7 @@ slots:
   nucleic_acid_processingtemplate_class:
     name: nucleic_acid_processingtemplate_class
     description: The class of nucleic acid that was used as primary starting material for the following procedures
-    range: V1_4_TemplateClass
+    range: V1p4_TemplateClass
     required: true
     annotations:
       nullable: false
@@ -2055,14 +2055,14 @@ slots:
   nucleic_acid_processingtemplate_amount:
     name: nucleic_acid_processingtemplate_amount
     description: Amount of template that went into the process
-    range: V1_4_PhysicalQuantity
+    range: V1p4_PhysicalQuantity
     required: true
     annotations:
       nullable: true
   nucleic_acid_processinglibrary_generation_method:
     name: nucleic_acid_processinglibrary_generation_method
     description: Generic type of library generation
-    range: V1_4_LibraryGenerationMethod
+    range: V1p4_LibraryGenerationMethod
     required: true
     annotations:
       nullable: false
@@ -2083,7 +2083,7 @@ slots:
   nucleic_acid_processingpcr_target:
     name: nucleic_acid_processingpcr_target
     description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
-    range: V1_4_PCRTarget
+    range: V1p4_PCRTarget
     multivalued: true
     required: false
     annotations:
@@ -2091,14 +2091,14 @@ slots:
   nucleic_acid_processingcomplete_sequences:
     name: nucleic_acid_processingcomplete_sequences
     description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
-    range: V1_4_CompleteSequences
+    range: V1p4_CompleteSequences
     required: true
     annotations:
       nullable: false
   nucleic_acid_processingphysical_linkage:
     name: nucleic_acid_processingphysical_linkage
     description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
-    range: V1_4_PhysicalLinkage
+    range: V1p4_PhysicalLinkage
     required: true
     annotations:
       nullable: false
@@ -2147,7 +2147,7 @@ slots:
   sequencing_runsequencing_files:
     name: sequencing_runsequencing_files
     description: Set of sequencing files produced by the sequencing run
-    range: V1_4_SequencingData
+    range: V1p4_SequencingData
     required: false
     annotations:
       nullable: false
@@ -2161,7 +2161,7 @@ slots:
   sequencing_datafile_type:
     name: sequencing_datafile_type
     description: File format for the raw reads or sequences
-    range: V1_4_FileType
+    range: V1p4_FileType
     required: true
     annotations:
       nullable: true
@@ -2175,7 +2175,7 @@ slots:
   sequencing_dataread_direction:
     name: sequencing_dataread_direction
     description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
-    range: V1_4_ReadDirection
+    range: V1p4_ReadDirection
     required: true
     annotations:
       nullable: true
@@ -2196,7 +2196,7 @@ slots:
   sequencing_datapaired_read_direction:
     name: sequencing_datapaired_read_direction
     description: Read direction for the second file in paired-read sequencing
-    range: V1_4_PairedReadDirection
+    range: V1p4_PairedReadDirection
     required: true
     annotations:
       nullable: true
@@ -2330,21 +2330,21 @@ slots:
   repertoirestudy:
     name: repertoirestudy
     description: Study object
-    range: V1_4_Study
+    range: V1p4_Study
     required: true
     annotations:
       nullable: false
   repertoiresubject:
     name: repertoiresubject
     description: Subject object
-    range: V1_4_Subject
+    range: V1p4_Subject
     required: true
     annotations:
       nullable: false
   repertoiresample:
     name: repertoiresample
     description: List of Sample Processing objects
-    range: V1_4_SampleProcessing
+    range: V1p4_SampleProcessing
     multivalued: true
     required: true
     annotations:
@@ -2352,7 +2352,7 @@ slots:
   repertoiredata_processing:
     name: repertoiredata_processing
     description: List of Data Processing objects
-    range: V1_4_DataProcessing
+    range: V1p4_DataProcessing
     multivalued: true
     required: true
     annotations:
@@ -2549,14 +2549,14 @@ slots:
   rearrangementlocus:
     name: rearrangementlocus
     description: Gene locus (chain type). Note that this field uses a controlled vocabulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
-    range: V1_4_Locus
+    range: V1p4_Locus
     required: false
     annotations:
       nullable: true
   rearrangementlocus_species:
     name: rearrangementlocus_species
     description: Binomial designation of the species from which the locus originates. Typically, this value should be identical to `organism`, if which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g. transgenic animal models. If set, this key will overwrite the `organism` information for all lower layers of the schema.
-    range: V1_4_LocusSpecies
+    range: V1p4_LocusSpecies
     required: false
     annotations:
       nullable: true
@@ -3824,7 +3824,7 @@ slots:
   cellcell_subset:
     name: cellcell_subset
     description: Commonly-used designation of isolated cell population.
-    range: V1_4_CellSubset
+    range: V1p4_CellSubset
     required: false
     annotations:
       nullable: true
@@ -3887,7 +3887,7 @@ slots:
   expressionproperty:
     name: expressionproperty
     description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
-    range: V1_4_Property
+    range: V1p4_Property
     required: true
     annotations:
       nullable: true
@@ -3915,7 +3915,7 @@ slots:
   receptorreceptor_type:
     name: receptorreceptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
-    range: V1_4_ReceptorType
+    range: V1p4_ReceptorType
     required: true
     annotations:
       nullable: false
@@ -3929,7 +3929,7 @@ slots:
   receptorreceptor_variable_domain_1_locus:
     name: receptorreceptor_variable_domain_1_locus
     description: Locus from which the variable domain in receptor_variable_domain_1_aa originates
-    range: V1_4_ReceptorVariableDomain1Locus
+    range: V1p4_ReceptorVariableDomain1Locus
     required: true
     annotations:
       nullable: false
@@ -3943,7 +3943,7 @@ slots:
   receptorreceptor_variable_domain_2_locus:
     name: receptorreceptor_variable_domain_2_locus
     description: Locus from which the variable domain in receptor_variable_domain_2_aa originates
-    range: V1_4_ReceptorVariableDomain2Locus
+    range: V1p4_ReceptorVariableDomain2Locus
     required: true
     annotations:
       nullable: false
@@ -3986,28 +3986,28 @@ slots:
   reactivityligand_type:
     name: reactivityligand_type
     description: Classification of ligand binding to the cell
-    range: V1_4_LigandType
+    range: V1p4_LigandType
     required: true
     annotations:
       nullable: false
   reactivityantigen_type:
     name: reactivityantigen_type
     description: The type of antigen before processing by the immune system.
-    range: V1_4_AntigenType
+    range: V1p4_AntigenType
     required: true
     annotations:
       nullable: false
   reactivityantigen:
     name: reactivityantigen
     description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
-    range: V1_4_Antigen
+    range: V1p4_Antigen
     required: true
     annotations:
       nullable: false
   reactivityantigen_source_species:
     name: reactivityantigen_source_species
     description: The species from which the antigen was isolated
-    range: V1_4_AntigenSourceSpecies
+    range: V1p4_AntigenSourceSpecies
     required: false
     annotations:
       nullable: true
@@ -4035,14 +4035,14 @@ slots:
   reactivitymhc_class:
     name: reactivitymhc_class
     description: Class of MHC molecule, only present for MHC:x ligand types
-    range: V1_4_MhcClass
+    range: V1p4_MhcClass
     required: false
     annotations:
       nullable: true
   reactivitymhc_gene_1:
     name: reactivitymhc_gene_1
     description: The MHC gene to which the mhc_allele_1 belongs
-    range: V1_4_MhcGene1
+    range: V1p4_MhcGene1
     required: false
     annotations:
       nullable: true
@@ -4056,7 +4056,7 @@ slots:
   reactivitymhc_gene_2:
     name: reactivitymhc_gene_2
     description: The MHC gene to which the mhc_allele_2 belongs
-    range: V1_4_MhcGene2
+    range: V1p4_MhcGene2
     required: false
     annotations:
       nullable: true
@@ -4105,20 +4105,20 @@ slots:
       nullable: true
 
 enums:
-  V1_4_Unit:
-    name: V1_4_Unit
+  V1p4_Unit:
+    name: V1p4_Unit
     reachable_from:
       source_nodes:
         - UO:0000003
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_OrcidId:
-    name: V1_4_OrcidId
-  V1_4_Affiliation:
-    name: V1_4_Affiliation
-  V1_4_Role:
-    name: V1_4_Role
+  V1p4_OrcidId:
+    name: V1p4_OrcidId
+  V1p4_Affiliation:
+    name: V1p4_Affiliation
+  V1p4_Role:
+    name: V1p4_Role
     permissible_values:
       conceptualization:
       data curation:
@@ -4134,31 +4134,31 @@ enums:
       visualization:
       writing - original draft:
       writing - review & editing:
-  V1_4_Degree:
-    name: V1_4_Degree
+  V1p4_Degree:
+    name: V1p4_Degree
     permissible_values:
       lead:
       equal:
       supporting:
-  V1_4_Derivation:
-    name: V1_4_Derivation
+  V1p4_Derivation:
+    name: V1p4_Derivation
     permissible_values:
       DNA:
       RNA:
       'null':
-  V1_4_ObservationType:
-    name: V1_4_ObservationType
+  V1p4_ObservationType:
+    name: V1p4_ObservationType
     permissible_values:
       direct_sequencing:
       inference_from_repertoire:
-  V1_4_Strand:
-    name: V1_4_Strand
+  V1p4_Strand:
+    name: V1p4_Strand
     permissible_values:
       +:
       '-':
       'null':
-  V1_4_Locus:
-    name: V1_4_Locus
+  V1p4_Locus:
+    name: V1p4_Locus
     permissible_values:
       IGH:
       IGI:
@@ -4169,30 +4169,30 @@ enums:
       TRD:
       TRG:
       'null':
-  V1_4_SequenceType:
-    name: V1_4_SequenceType
+  V1p4_SequenceType:
+    name: V1p4_SequenceType
     permissible_values:
       V:
       D:
       J:
       C:
-  V1_4_InferenceType:
-    name: V1_4_InferenceType
+  V1p4_InferenceType:
+    name: V1p4_InferenceType
     permissible_values:
       genomic_and_rearranged:
       genomic_only:
       rearranged_only:
       'null':
-  V1_4_Species:
-    name: V1_4_Species
+  V1p4_Species:
+    name: V1p4_Species
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_SpeciesSubgroupType:
-    name: V1_4_SpeciesSubgroupType
+  V1p4_SpeciesSubgroupType:
+    name: V1p4_SpeciesSubgroupType
     permissible_values:
       breed:
       strain:
@@ -4200,57 +4200,57 @@ enums:
       outbred:
       locational:
       'null':
-  V1_4_Status:
-    name: V1_4_Status
+  V1p4_Status:
+    name: V1p4_Status
     permissible_values:
       active:
       draft:
       retired:
       withdrawn:
       'null':
-  V1_4_JCodonFrame:
-    name: V1_4_JCodonFrame
+  V1p4_JCodonFrame:
+    name: V1p4_JCodonFrame
     permissible_values:
       1:
       2:
       3:
       'null':
-  V1_4_CurationalTags:
-    name: V1_4_CurationalTags
+  V1p4_CurationalTags:
+    name: V1p4_CurationalTags
     permissible_values:
       likely_truncated:
       likely_full_length:
-  V1_4_InferenceProcess:
-    name: V1_4_InferenceProcess
+  V1p4_InferenceProcess:
+    name: V1p4_InferenceProcess
     permissible_values:
       genomic_sequencing:
       repertoire_sequencing:
       'null':
-  V1_4_MhcClass:
-    name: V1_4_MhcClass
+  V1p4_MhcClass:
+    name: V1p4_MhcClass
     permissible_values:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
       'null':
-  V1_4_Gene:
-    name: V1_4_Gene
+  V1p4_Gene:
+    name: V1p4_Gene
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_StudyType:
-    name: V1_4_StudyType
+  V1p4_StudyType:
+    name: V1p4_StudyType
     reachable_from:
       source_nodes:
         - NCIT:C63536
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_KeywordsStudy:
-    name: V1_4_KeywordsStudy
+  V1p4_KeywordsStudy:
+    name: V1p4_KeywordsStudy
     permissible_values:
       contains_ig:
       contains_tr:
@@ -4261,8 +4261,8 @@ enums:
       contains_schema_receptor:
       contains_schema_cellexpression:
       contains_schema_receptorreactivity:
-  V1_4_Sex:
-    name: V1_4_Sex
+  V1p4_Sex:
+    name: V1p4_Sex
     permissible_values:
       male:
       female:
@@ -4270,64 +4270,64 @@ enums:
       hermaphrodite:
       intersex:
       'null':
-  V1_4_AncestryPopulation:
-    name: V1_4_AncestryPopulation
+  V1p4_AncestryPopulation:
+    name: V1p4_AncestryPopulation
     reachable_from:
       source_nodes:
         - GAZ:00000448
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_LocationBirth:
-    name: V1_4_LocationBirth
+  V1p4_LocationBirth:
+    name: V1p4_LocationBirth
     reachable_from:
       source_nodes:
         - GAZ:00000448
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_DiseaseDiagnosis:
-    name: V1_4_DiseaseDiagnosis
+  V1p4_DiseaseDiagnosis:
+    name: V1p4_DiseaseDiagnosis
     reachable_from:
       source_nodes:
         - DOID:4
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_Tissue:
-    name: V1_4_Tissue
+  V1p4_Tissue:
+    name: V1p4_Tissue
     reachable_from:
       source_nodes:
         - UBERON:0010000
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_CollectionLocation:
-    name: V1_4_CollectionLocation
+  V1p4_CollectionLocation:
+    name: V1p4_CollectionLocation
     reachable_from:
       source_nodes:
         - GAZ:00000448
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_CellSubset:
-    name: V1_4_CellSubset
+  V1p4_CellSubset:
+    name: V1p4_CellSubset
     reachable_from:
       source_nodes:
         - CL:0000542
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_CellSpecies:
-    name: V1_4_CellSpecies
+  V1p4_CellSpecies:
+    name: V1p4_CellSpecies
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_PcrTargetLocus:
-    name: V1_4_PcrTargetLocus
+  V1p4_PcrTargetLocus:
+    name: V1p4_PcrTargetLocus
     permissible_values:
       IGH:
       IGI:
@@ -4338,13 +4338,13 @@ enums:
       TRD:
       TRG:
       'null':
-  V1_4_TemplateClass:
-    name: V1_4_TemplateClass
+  V1p4_TemplateClass:
+    name: V1p4_TemplateClass
     permissible_values:
       DNA:
       RNA:
-  V1_4_LibraryGenerationMethod:
-    name: V1_4_LibraryGenerationMethod
+  V1p4_LibraryGenerationMethod:
+    name: V1p4_LibraryGenerationMethod
     permissible_values:
       PCR:
       RT(RHP)+PCR:
@@ -4358,103 +4358,103 @@ enums:
       RT(specific+UMI)+TS+PCR:
       RT(specific)+TS:
       other:
-  V1_4_CompleteSequences:
-    name: V1_4_CompleteSequences
+  V1p4_CompleteSequences:
+    name: V1p4_CompleteSequences
     permissible_values:
       partial:
       complete:
       complete+untemplated:
       mixed:
-  V1_4_PhysicalLinkage:
-    name: V1_4_PhysicalLinkage
+  V1p4_PhysicalLinkage:
+    name: V1p4_PhysicalLinkage
     permissible_values:
       none:
       hetero_head-head:
       hetero_tail-head:
       hetero_prelinked:
-  V1_4_FileType:
-    name: V1_4_FileType
+  V1p4_FileType:
+    name: V1p4_FileType
     permissible_values:
       fasta:
       fastq:
       'null':
-  V1_4_ReadDirection:
-    name: V1_4_ReadDirection
+  V1p4_ReadDirection:
+    name: V1p4_ReadDirection
     permissible_values:
       forward:
       reverse:
       mixed:
       'null':
-  V1_4_PairedReadDirection:
-    name: V1_4_PairedReadDirection
+  V1p4_PairedReadDirection:
+    name: V1p4_PairedReadDirection
     permissible_values:
       forward:
       reverse:
       mixed:
       'null':
-  V1_4_LocusSpecies:
-    name: V1_4_LocusSpecies
+  V1p4_LocusSpecies:
+    name: V1p4_LocusSpecies
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_Property:
-    name: V1_4_Property
-  V1_4_ReceptorType:
-    name: V1_4_ReceptorType
+  V1p4_Property:
+    name: V1p4_Property
+  V1p4_ReceptorType:
+    name: V1p4_ReceptorType
     permissible_values:
       Ig:
       TCR:
-  V1_4_ReceptorVariableDomain1Locus:
-    name: V1_4_ReceptorVariableDomain1Locus
+  V1p4_ReceptorVariableDomain1Locus:
+    name: V1p4_ReceptorVariableDomain1Locus
     permissible_values:
       IGH:
       TRB:
       TRD:
-  V1_4_ReceptorVariableDomain2Locus:
-    name: V1_4_ReceptorVariableDomain2Locus
+  V1p4_ReceptorVariableDomain2Locus:
+    name: V1p4_ReceptorVariableDomain2Locus
     permissible_values:
       IGI:
       IGK:
       IGL:
       TRA:
       TRG:
-  V1_4_LigandType:
-    name: V1_4_LigandType
+  V1p4_LigandType:
+    name: V1p4_LigandType
     permissible_values:
       MHC:peptide:
       MHC:non-peptide:
       protein:
       peptide:
       non-peptidic:
-  V1_4_AntigenType:
-    name: V1_4_AntigenType
+  V1p4_AntigenType:
+    name: V1p4_AntigenType
     permissible_values:
       protein:
       peptide:
       non-peptidic:
-  V1_4_Antigen:
-    name: V1_4_Antigen
-  V1_4_AntigenSourceSpecies:
-    name: V1_4_AntigenSourceSpecies
+  V1p4_Antigen:
+    name: V1p4_Antigen
+  V1p4_AntigenSourceSpecies:
+    name: V1p4_AntigenSourceSpecies
     reachable_from:
       source_nodes:
         - NCBITAXON:1
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_MhcGene1:
-    name: V1_4_MhcGene1
+  V1p4_MhcGene1:
+    name: V1p4_MhcGene1
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1_4_MhcGene2:
-    name: V1_4_MhcGene2
+  V1p4_MhcGene2:
+    name: V1p4_MhcGene2
     reachable_from:
       source_nodes:
         - MRO:0000004

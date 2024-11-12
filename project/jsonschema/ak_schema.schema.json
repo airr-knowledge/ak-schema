@@ -3473,12 +3473,12 @@
             "title": "Tissue",
             "type": "object"
         },
-        "V14Affiliation": {
+        "V1p4Affiliation": {
             "description": "",
-            "title": "V14Affiliation",
+            "title": "V1p4Affiliation",
             "type": "string"
         },
-        "V14Alignment": {
+        "V1p4Alignment": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -3573,17 +3573,17 @@
                 "alignmentscore",
                 "alignmentcigar"
             ],
-            "title": "V14Alignment",
+            "title": "V1p4Alignment",
             "type": "object"
         },
-        "V14AlleleDescription": {
+        "V1p4AlleleDescription": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "allele_descriptionacknowledgements": {
                     "description": "List of individuals whose contribution to the gene description should be acknowledged. Note that these are not necessarily identical with the authors on an associated manuscript or other scholarly communication. Further note that typically at least the three CRediT contributor roles \"supervision\", \"investigation\" and \"data curation\" should be assigned. The current maintainer should be listed first.",
                     "items": {
-                        "$ref": "#/$defs/V14Contributor"
+                        "$ref": "#/$defs/V1p4Contributor"
                     },
                     "type": "array"
                 },
@@ -3650,7 +3650,7 @@
                 "allele_descriptioncurational_tags": {
                     "description": "Controlled-vocabulary tags applied to this description",
                     "items": {
-                        "$ref": "#/$defs/V14CurationalTags"
+                        "$ref": "#/$defs/V1p4CurationalTags"
                     },
                     "type": [
                         "array",
@@ -3711,7 +3711,7 @@
                     ]
                 },
                 "allele_descriptioninference_type": {
-                    "$ref": "#/$defs/V14InferenceType",
+                    "$ref": "#/$defs/V1p4InferenceType",
                     "description": "Type of inference(s) from which this gene sequence was inferred"
                 },
                 "allele_descriptionj_cdr3_end": {
@@ -3722,7 +3722,7 @@
                     ]
                 },
                 "allele_descriptionj_codon_frame": {
-                    "$ref": "#/$defs/V14JCodonFrame",
+                    "$ref": "#/$defs/V1p4JCodonFrame",
                     "description": "Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing."
                 },
                 "allele_descriptionj_donor_splice": {
@@ -3782,7 +3782,7 @@
                     ]
                 },
                 "allele_descriptionlocus": {
-                    "$ref": "#/$defs/V14Locus",
+                    "$ref": "#/$defs/V1p4Locus",
                     "description": "Gene locus"
                 },
                 "allele_descriptionparalogs": {
@@ -3798,7 +3798,7 @@
                 "allele_descriptionrearranged_support": {
                     "description": "",
                     "items": {
-                        "$ref": "#/$defs/V14RearrangedSequence"
+                        "$ref": "#/$defs/V1p4RearrangedSequence"
                     },
                     "type": [
                         "array",
@@ -3822,11 +3822,11 @@
                     "type": "string"
                 },
                 "allele_descriptionsequence_type": {
-                    "$ref": "#/$defs/V14SequenceType",
+                    "$ref": "#/$defs/V1p4SequenceType",
                     "description": "Sequence type (V, D, J, C)"
                 },
                 "allele_descriptionspecies": {
-                    "$ref": "#/$defs/V14Species",
+                    "$ref": "#/$defs/V1p4Species",
                     "description": "Binomial designation of subject's species"
                 },
                 "allele_descriptionspecies_subgroup": {
@@ -3837,11 +3837,11 @@
                     ]
                 },
                 "allele_descriptionspecies_subgroup_type": {
-                    "$ref": "#/$defs/V14SpeciesSubgroupType",
+                    "$ref": "#/$defs/V1p4SpeciesSubgroupType",
                     "description": ""
                 },
                 "allele_descriptionstatus": {
-                    "$ref": "#/$defs/V14Status",
+                    "$ref": "#/$defs/V1p4Status",
                     "description": "Status of record, assumed active if the field is not present"
                 },
                 "allele_descriptionsubgroup_designation": {
@@ -3854,7 +3854,7 @@
                 "allele_descriptionunrearranged_support": {
                     "description": "",
                     "items": {
-                        "$ref": "#/$defs/V14UnrearrangedSequence"
+                        "$ref": "#/$defs/V1p4UnrearrangedSequence"
                     },
                     "type": [
                         "array",
@@ -3878,7 +3878,7 @@
                 "allele_descriptionv_gene_delineations": {
                     "description": "",
                     "items": {
-                        "$ref": "#/$defs/V14SequenceDelineationV"
+                        "$ref": "#/$defs/V1p4SequenceDelineationV"
                     },
                     "type": [
                         "array",
@@ -3914,35 +3914,35 @@
                 "allele_descriptioninference_type",
                 "allele_descriptionspecies"
             ],
-            "title": "V14AlleleDescription",
+            "title": "V1p4AlleleDescription",
             "type": "object"
         },
-        "V14AncestryPopulation": {
+        "V1p4AncestryPopulation": {
             "description": "",
-            "title": "V14AncestryPopulation",
+            "title": "V1p4AncestryPopulation",
             "type": "string"
         },
-        "V14Antigen": {
+        "V1p4Antigen": {
             "description": "",
-            "title": "V14Antigen",
+            "title": "V1p4Antigen",
             "type": "string"
         },
-        "V14AntigenSourceSpecies": {
+        "V1p4AntigenSourceSpecies": {
             "description": "",
-            "title": "V14AntigenSourceSpecies",
+            "title": "V1p4AntigenSourceSpecies",
             "type": "string"
         },
-        "V14AntigenType": {
+        "V1p4AntigenType": {
             "description": "",
             "enum": [
                 "protein",
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "V14AntigenType",
+            "title": "V1p4AntigenType",
             "type": "string"
         },
-        "V14Cell": {
+        "V1p4Cell": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -3965,7 +3965,7 @@
                     ]
                 },
                 "cellcell_subset": {
-                    "$ref": "#/$defs/V14CellSubset",
+                    "$ref": "#/$defs/V1p4CellSubset",
                     "description": "Commonly-used designation of isolated cell population."
                 },
                 "celldata_processing_id": {
@@ -3999,10 +3999,10 @@
                 "cellrepertoire_id",
                 "cellvirtual_pairing"
             ],
-            "title": "V14Cell",
+            "title": "V1p4Cell",
             "type": "object"
         },
-        "V14CellProcessing": {
+        "V1p4CellProcessing": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -4034,7 +4034,7 @@
                     "type": "string"
                 },
                 "cell_processingcell_species": {
-                    "$ref": "#/$defs/V14CellSpecies",
+                    "$ref": "#/$defs/V1p4CellSpecies",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "cell_processingcell_storage": {
@@ -4042,7 +4042,7 @@
                     "type": "boolean"
                 },
                 "cell_processingcell_subset": {
-                    "$ref": "#/$defs/V14CellSubset",
+                    "$ref": "#/$defs/V1p4CellSubset",
                     "description": "Commonly-used designation of isolated cell population"
                 },
                 "cell_processingcells_per_reaction": {
@@ -4070,20 +4070,20 @@
                 "cell_processingcell_isolation",
                 "cell_processingcell_processing_protocol"
             ],
-            "title": "V14CellProcessing",
+            "title": "V1p4CellProcessing",
             "type": "object"
         },
-        "V14CellSpecies": {
+        "V1p4CellSpecies": {
             "description": "",
-            "title": "V14CellSpecies",
+            "title": "V1p4CellSpecies",
             "type": "string"
         },
-        "V14CellSubset": {
+        "V1p4CellSubset": {
             "description": "",
-            "title": "V14CellSubset",
+            "title": "V1p4CellSubset",
             "type": "string"
         },
-        "V14Clone": {
+        "V1p4Clone": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -4257,15 +4257,15 @@
                 "cloneclone_id",
                 "clonegermline_alignment"
             ],
-            "title": "V14Clone",
+            "title": "V1p4Clone",
             "type": "object"
         },
-        "V14CollectionLocation": {
+        "V1p4CollectionLocation": {
             "description": "",
-            "title": "V14CollectionLocation",
+            "title": "V1p4CollectionLocation",
             "type": "string"
         },
-        "V14CompleteSequences": {
+        "V1p4CompleteSequences": {
             "description": "",
             "enum": [
                 "partial",
@@ -4273,15 +4273,15 @@
                 "complete+untemplated",
                 "mixed"
             ],
-            "title": "V14CompleteSequences",
+            "title": "V1p4CompleteSequences",
             "type": "string"
         },
-        "V14Contributor": {
+        "V1p4Contributor": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "contributoraffiliation": {
-                    "$ref": "#/$defs/V14Affiliation",
+                    "$ref": "#/$defs/V1p4Affiliation",
                     "description": "ROR of the contributor's primary affiliation. Note that ROR are only minted for institutions, not from individuals institutes, divisions or departments."
                 },
                 "contributoraffiliation_department": {
@@ -4294,7 +4294,7 @@
                 "contributorcontributions": {
                     "description": "List of all roles the contributor had in a project",
                     "items": {
-                        "$ref": "#/$defs/V14ContributorContribution"
+                        "$ref": "#/$defs/V1p4ContributorContribution"
                     },
                     "type": [
                         "array",
@@ -4310,7 +4310,7 @@
                     "type": "string"
                 },
                 "contributororcid_id": {
-                    "$ref": "#/$defs/V14OrcidId",
+                    "$ref": "#/$defs/V1p4OrcidId",
                     "description": "ORCID identifier of the contributor. Note that if present, the label of the ORCID record should take precedence over the name reported in the `name` property."
                 }
             },
@@ -4318,38 +4318,38 @@
                 "contributorcontributor_id",
                 "contributorname"
             ],
-            "title": "V14Contributor",
+            "title": "V1p4Contributor",
             "type": "object"
         },
-        "V14ContributorContribution": {
+        "V1p4ContributorContribution": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "contributor_contributiondegree": {
-                    "$ref": "#/$defs/V14Degree",
+                    "$ref": "#/$defs/V1p4Degree",
                     "description": "Optional specification of the degree of contribution, should be used if multiple individuals serve the same role."
                 },
                 "contributor_contributionrole": {
-                    "$ref": "#/$defs/V14Role",
+                    "$ref": "#/$defs/V1p4Role",
                     "description": "Role according to CRediT taxonomy"
                 }
             },
             "required": [
                 "contributor_contributionrole"
             ],
-            "title": "V14ContributorContribution",
+            "title": "V1p4ContributorContribution",
             "type": "object"
         },
-        "V14CurationalTags": {
+        "V1p4CurationalTags": {
             "description": "",
             "enum": [
                 "likely_truncated",
                 "likely_full_length"
             ],
-            "title": "V14CurationalTags",
+            "title": "V1p4CurationalTags",
             "type": "string"
         },
-        "V14DataProcessing": {
+        "V1p4DataProcessing": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -4429,20 +4429,20 @@
                 "data_processingdata_processing_protocols",
                 "data_processinggermline_database"
             ],
-            "title": "V14DataProcessing",
+            "title": "V1p4DataProcessing",
             "type": "object"
         },
-        "V14Degree": {
+        "V1p4Degree": {
             "description": "",
             "enum": [
                 "lead",
                 "equal",
                 "supporting"
             ],
-            "title": "V14Degree",
+            "title": "V1p4Degree",
             "type": "string"
         },
-        "V14DeletedGene": {
+        "V1p4DeletedGene": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -4466,27 +4466,27 @@
                 "deleted_genelabel",
                 "deleted_genegermline_set_ref"
             ],
-            "title": "V14DeletedGene",
+            "title": "V1p4DeletedGene",
             "type": "object"
         },
-        "V14Derivation": {
+        "V1p4Derivation": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA",
                 "null"
             ],
-            "title": "V14Derivation",
+            "title": "V1p4Derivation",
             "type": "string"
         },
-        "V14Diagnosis": {
+        "V1p4Diagnosis": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "diagnosisdiagnosis_timepoint": {
                     "anyOf": [
                         {
-                            "$ref": "#/$defs/V14TimePoint"
+                            "$ref": "#/$defs/V1p4TimePoint"
                         },
                         {
                             "type": "null"
@@ -4495,11 +4495,11 @@
                     "description": "Time point for the diagnosis"
                 },
                 "diagnosisdisease_diagnosis": {
-                    "$ref": "#/$defs/V14DiseaseDiagnosis",
+                    "$ref": "#/$defs/V1p4DiseaseDiagnosis",
                     "description": "Diagnosis of subject"
                 },
                 "diagnosisdisease_length": {
-                    "$ref": "#/$defs/V14TimeQuantity",
+                    "$ref": "#/$defs/V1p4TimeQuantity",
                     "description": "Time duration between initial diagnosis and current intervention"
                 },
                 "diagnosisdisease_stage": {
@@ -4537,15 +4537,15 @@
                 "diagnosisintervention",
                 "diagnosismedical_history"
             ],
-            "title": "V14Diagnosis",
+            "title": "V1p4Diagnosis",
             "type": "object"
         },
-        "V14DiseaseDiagnosis": {
+        "V1p4DiseaseDiagnosis": {
             "description": "",
-            "title": "V14DiseaseDiagnosis",
+            "title": "V1p4DiseaseDiagnosis",
             "type": "string"
         },
-        "V14DocumentedAllele": {
+        "V1p4DocumentedAllele": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -4569,10 +4569,10 @@
                 "documented_allelelabel",
                 "documented_allelegermline_set_ref"
             ],
-            "title": "V14DocumentedAllele",
+            "title": "V1p4DocumentedAllele",
             "type": "object"
         },
-        "V14Expression": {
+        "V1p4Expression": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -4589,7 +4589,7 @@
                     "type": "string"
                 },
                 "expressionproperty": {
-                    "$ref": "#/$defs/V14Property",
+                    "$ref": "#/$defs/V1p4Property",
                     "description": "Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody)."
                 },
                 "expressionproperty_type": {
@@ -4614,32 +4614,32 @@
                 "expressionproperty",
                 "expressionvalue"
             ],
-            "title": "V14Expression",
+            "title": "V1p4Expression",
             "type": "object"
         },
-        "V14FileType": {
+        "V1p4FileType": {
             "description": "",
             "enum": [
                 "fasta",
                 "fastq",
                 "null"
             ],
-            "title": "V14FileType",
+            "title": "V1p4FileType",
             "type": "string"
         },
-        "V14Gene": {
+        "V1p4Gene": {
             "description": "",
-            "title": "V14Gene",
+            "title": "V1p4Gene",
             "type": "string"
         },
-        "V14Genotype": {
+        "V1p4Genotype": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "genotypedeleted_genes": {
                     "description": "Array of genes identified as being deleted in this genotype",
                     "items": {
-                        "$ref": "#/$defs/V14DeletedGene"
+                        "$ref": "#/$defs/V1p4DeletedGene"
                     },
                     "type": [
                         "array",
@@ -4649,7 +4649,7 @@
                 "genotypedocumented_alleles": {
                     "description": "List of alleles documented in reference set(s)",
                     "items": {
-                        "$ref": "#/$defs/V14DocumentedAllele"
+                        "$ref": "#/$defs/V1p4DocumentedAllele"
                     },
                     "type": [
                         "array",
@@ -4657,11 +4657,11 @@
                     ]
                 },
                 "genotypeinference_process": {
-                    "$ref": "#/$defs/V14InferenceProcess",
+                    "$ref": "#/$defs/V1p4InferenceProcess",
                     "description": "Information on how the genotype was acquired. Controlled vocabulary."
                 },
                 "genotypelocus": {
-                    "$ref": "#/$defs/V14Locus",
+                    "$ref": "#/$defs/V1p4Locus",
                     "description": "Gene locus"
                 },
                 "genotypereceptor_genotype_id": {
@@ -4671,7 +4671,7 @@
                 "genotypeundocumented_alleles": {
                     "description": "List of alleles inferred to be present and not documented in an identified GermlineSet",
                     "items": {
-                        "$ref": "#/$defs/V14UndocumentedAllele"
+                        "$ref": "#/$defs/V1p4UndocumentedAllele"
                     },
                     "type": [
                         "array",
@@ -4683,17 +4683,17 @@
                 "genotypereceptor_genotype_id",
                 "genotypelocus"
             ],
-            "title": "V14Genotype",
+            "title": "V1p4Genotype",
             "type": "object"
         },
-        "V14GenotypeSet": {
+        "V1p4GenotypeSet": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "genotype_setgenotype_class_list": {
                     "description": "List of Genotypes included in this Receptor Genotype Set.",
                     "items": {
-                        "$ref": "#/$defs/V14Genotype"
+                        "$ref": "#/$defs/V1p4Genotype"
                     },
                     "type": [
                         "array",
@@ -4708,24 +4708,24 @@
             "required": [
                 "genotype_setreceptor_genotype_set_id"
             ],
-            "title": "V14GenotypeSet",
+            "title": "V1p4GenotypeSet",
             "type": "object"
         },
-        "V14GermlineSet": {
+        "V1p4GermlineSet": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "germline_setacknowledgements": {
                     "description": "List of individuals whose contribution to the germline set should be acknowledged. Note that these are not necessarily identical with the authors on an associated manuscript or other scholarly communication. Further note that typically at least the three CRediT contributor roles \"supervision\", \"investigation\" and \"data curation\" should be assigned. The coresponding author should be listed last.",
                     "items": {
-                        "$ref": "#/$defs/V14Contributor"
+                        "$ref": "#/$defs/V1p4Contributor"
                     },
                     "type": "array"
                 },
                 "germline_setallele_descriptions": {
                     "description": "list of allele_descriptions in the germline set",
                     "items": {
-                        "$ref": "#/$defs/V14AlleleDescription"
+                        "$ref": "#/$defs/V1p4AlleleDescription"
                     },
                     "type": "array"
                 },
@@ -4749,7 +4749,7 @@
                     "type": "string"
                 },
                 "germline_setlocus": {
-                    "$ref": "#/$defs/V14Locus",
+                    "$ref": "#/$defs/V1p4Locus",
                     "description": "Gene locus"
                 },
                 "germline_setpub_ids": {
@@ -4775,7 +4775,7 @@
                     "type": "number"
                 },
                 "germline_setspecies": {
-                    "$ref": "#/$defs/V14Species",
+                    "$ref": "#/$defs/V1p4Species",
                     "description": "Binomial designation of subject's species"
                 },
                 "germline_setspecies_subgroup": {
@@ -4786,7 +4786,7 @@
                     ]
                 },
                 "germline_setspecies_subgroup_type": {
-                    "$ref": "#/$defs/V14SpeciesSubgroupType",
+                    "$ref": "#/$defs/V1p4SpeciesSubgroupType",
                     "description": ""
                 }
             },
@@ -4802,20 +4802,20 @@
                 "germline_setlocus",
                 "germline_setallele_descriptions"
             ],
-            "title": "V14GermlineSet",
+            "title": "V1p4GermlineSet",
             "type": "object"
         },
-        "V14InferenceProcess": {
+        "V1p4InferenceProcess": {
             "description": "",
             "enum": [
                 "genomic_sequencing",
                 "repertoire_sequencing",
                 "null"
             ],
-            "title": "V14InferenceProcess",
+            "title": "V1p4InferenceProcess",
             "type": "string"
         },
-        "V14InferenceType": {
+        "V1p4InferenceType": {
             "description": "",
             "enum": [
                 "genomic_and_rearranged",
@@ -4823,10 +4823,10 @@
                 "rearranged_only",
                 "null"
             ],
-            "title": "V14InferenceType",
+            "title": "V1p4InferenceType",
             "type": "string"
         },
-        "V14JCodonFrame": {
+        "V1p4JCodonFrame": {
             "description": "",
             "enum": [
                 "1",
@@ -4834,10 +4834,10 @@
                 "3",
                 "null"
             ],
-            "title": "V14JCodonFrame",
+            "title": "V1p4JCodonFrame",
             "type": "string"
         },
-        "V14KeywordsStudy": {
+        "V1p4KeywordsStudy": {
             "description": "",
             "enum": [
                 "contains_ig",
@@ -4850,10 +4850,10 @@
                 "contains_schema_cellexpression",
                 "contains_schema_receptorreactivity"
             ],
-            "title": "V14KeywordsStudy",
+            "title": "V1p4KeywordsStudy",
             "type": "string"
         },
-        "V14LibraryGenerationMethod": {
+        "V1p4LibraryGenerationMethod": {
             "description": "",
             "enum": [
                 "PCR",
@@ -4869,10 +4869,10 @@
                 "RT(specific)+TS",
                 "other"
             ],
-            "title": "V14LibraryGenerationMethod",
+            "title": "V1p4LibraryGenerationMethod",
             "type": "string"
         },
-        "V14LigandType": {
+        "V1p4LigandType": {
             "description": "",
             "enum": [
                 "MHC:peptide",
@@ -4881,15 +4881,15 @@
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "V14LigandType",
+            "title": "V1p4LigandType",
             "type": "string"
         },
-        "V14LocationBirth": {
+        "V1p4LocationBirth": {
             "description": "",
-            "title": "V14LocationBirth",
+            "title": "V1p4LocationBirth",
             "type": "string"
         },
-        "V14Locus": {
+        "V1p4Locus": {
             "description": "",
             "enum": [
                 "IGH",
@@ -4902,15 +4902,15 @@
                 "TRG",
                 "null"
             ],
-            "title": "V14Locus",
+            "title": "V1p4Locus",
             "type": "string"
         },
-        "V14LocusSpecies": {
+        "V1p4LocusSpecies": {
             "description": "",
-            "title": "V14LocusSpecies",
+            "title": "V1p4LocusSpecies",
             "type": "string"
         },
-        "V14MHCAllele": {
+        "V1p4MHCAllele": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -4922,7 +4922,7 @@
                     ]
                 },
                 "m_h_c_allelegene": {
-                    "$ref": "#/$defs/V14Gene",
+                    "$ref": "#/$defs/V1p4Gene",
                     "description": "The MHC gene to which the described allele belongs"
                 },
                 "m_h_c_allelereference_set_ref": {
@@ -4933,22 +4933,22 @@
                     ]
                 }
             },
-            "title": "V14MHCAllele",
+            "title": "V1p4MHCAllele",
             "type": "object"
         },
-        "V14MHCGenotype": {
+        "V1p4MHCGenotype": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "m_h_c_genotypemhc_alleles": {
                     "description": "List of MHC alleles of the indicated mhc_class identified in an individual",
                     "items": {
-                        "$ref": "#/$defs/V14MHCAllele"
+                        "$ref": "#/$defs/V1p4MHCAllele"
                     },
                     "type": "array"
                 },
                 "m_h_c_genotypemhc_class": {
-                    "$ref": "#/$defs/V14MhcClass",
+                    "$ref": "#/$defs/V1p4MhcClass",
                     "description": "Class of MHC alleles described by the MHCGenotype"
                 },
                 "m_h_c_genotypemhc_genotype_id": {
@@ -4968,17 +4968,17 @@
                 "m_h_c_genotypemhc_class",
                 "m_h_c_genotypemhc_alleles"
             ],
-            "title": "V14MHCGenotype",
+            "title": "V1p4MHCGenotype",
             "type": "object"
         },
-        "V14MHCGenotypeSet": {
+        "V1p4MHCGenotypeSet": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "m_h_c_genotype_setmhc_genotype_list": {
                     "description": "List of MHCGenotypes included in this set",
                     "items": {
-                        "$ref": "#/$defs/V14MHCGenotype"
+                        "$ref": "#/$defs/V1p4MHCGenotype"
                     },
                     "type": "array"
                 },
@@ -4991,10 +4991,10 @@
                 "m_h_c_genotype_setmhc_genotype_set_id",
                 "m_h_c_genotype_setmhc_genotype_list"
             ],
-            "title": "V14MHCGenotypeSet",
+            "title": "V1p4MHCGenotypeSet",
             "type": "object"
         },
-        "V14MhcClass": {
+        "V1p4MhcClass": {
             "description": "",
             "enum": [
                 "MHC-I",
@@ -5002,20 +5002,20 @@
                 "MHC-nonclassical",
                 "null"
             ],
-            "title": "V14MhcClass",
+            "title": "V1p4MhcClass",
             "type": "string"
         },
-        "V14MhcGene1": {
+        "V1p4MhcGene1": {
             "description": "",
-            "title": "V14MhcGene1",
+            "title": "V1p4MhcGene1",
             "type": "string"
         },
-        "V14MhcGene2": {
+        "V1p4MhcGene2": {
             "description": "",
-            "title": "V14MhcGene2",
+            "title": "V1p4MhcGene2",
             "type": "string"
         },
-        "V14Node": {
+        "V1p4Node": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -5048,15 +5048,15 @@
             "required": [
                 "nodesequence_id"
             ],
-            "title": "V14Node",
+            "title": "V1p4Node",
             "type": "object"
         },
-        "V14NucleicAcidProcessing": {
+        "V1p4NucleicAcidProcessing": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "nucleic_acid_processingcomplete_sequences": {
-                    "$ref": "#/$defs/V14CompleteSequences",
+                    "$ref": "#/$defs/V1p4CompleteSequences",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "nucleic_acid_processinglibrary_generation_kit_version": {
@@ -5064,7 +5064,7 @@
                     "type": "string"
                 },
                 "nucleic_acid_processinglibrary_generation_method": {
-                    "$ref": "#/$defs/V14LibraryGenerationMethod",
+                    "$ref": "#/$defs/V1p4LibraryGenerationMethod",
                     "description": "Generic type of library generation"
                 },
                 "nucleic_acid_processinglibrary_generation_protocol": {
@@ -5074,7 +5074,7 @@
                 "nucleic_acid_processingpcr_target": {
                     "description": "If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.",
                     "items": {
-                        "$ref": "#/$defs/V14PCRTarget"
+                        "$ref": "#/$defs/V1p4PCRTarget"
                     },
                     "type": [
                         "array",
@@ -5082,15 +5082,15 @@
                     ]
                 },
                 "nucleic_acid_processingphysical_linkage": {
-                    "$ref": "#/$defs/V14PhysicalLinkage",
+                    "$ref": "#/$defs/V1p4PhysicalLinkage",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "nucleic_acid_processingtemplate_amount": {
-                    "$ref": "#/$defs/V14PhysicalQuantity",
+                    "$ref": "#/$defs/V1p4PhysicalQuantity",
                     "description": "Amount of template that went into the process"
                 },
                 "nucleic_acid_processingtemplate_class": {
-                    "$ref": "#/$defs/V14TemplateClass",
+                    "$ref": "#/$defs/V1p4TemplateClass",
                     "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
                 },
                 "nucleic_acid_processingtemplate_quality": {
@@ -5108,24 +5108,24 @@
                 "nucleic_acid_processingcomplete_sequences",
                 "nucleic_acid_processingphysical_linkage"
             ],
-            "title": "V14NucleicAcidProcessing",
+            "title": "V1p4NucleicAcidProcessing",
             "type": "object"
         },
-        "V14ObservationType": {
+        "V1p4ObservationType": {
             "description": "",
             "enum": [
                 "direct_sequencing",
                 "inference_from_repertoire"
             ],
-            "title": "V14ObservationType",
+            "title": "V1p4ObservationType",
             "type": "string"
         },
-        "V14OrcidId": {
+        "V1p4OrcidId": {
             "description": "",
-            "title": "V14OrcidId",
+            "title": "V1p4OrcidId",
             "type": "string"
         },
-        "V14PCRTarget": {
+        "V1p4PCRTarget": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -5134,7 +5134,7 @@
                     "type": "string"
                 },
                 "p_c_r_targetpcr_target_locus": {
-                    "$ref": "#/$defs/V14PcrTargetLocus",
+                    "$ref": "#/$defs/V1p4PcrTargetLocus",
                     "description": "Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature."
                 },
                 "p_c_r_targetreverse_pcr_primer_target_location": {
@@ -5147,10 +5147,10 @@
                 "p_c_r_targetforward_pcr_primer_target_location",
                 "p_c_r_targetreverse_pcr_primer_target_location"
             ],
-            "title": "V14PCRTarget",
+            "title": "V1p4PCRTarget",
             "type": "object"
         },
-        "V14PairedReadDirection": {
+        "V1p4PairedReadDirection": {
             "description": "",
             "enum": [
                 "forward",
@@ -5158,10 +5158,10 @@
                 "mixed",
                 "null"
             ],
-            "title": "V14PairedReadDirection",
+            "title": "V1p4PairedReadDirection",
             "type": "string"
         },
-        "V14PcrTargetLocus": {
+        "V1p4PcrTargetLocus": {
             "description": "",
             "enum": [
                 "IGH",
@@ -5174,10 +5174,10 @@
                 "TRG",
                 "null"
             ],
-            "title": "V14PcrTargetLocus",
+            "title": "V1p4PcrTargetLocus",
             "type": "string"
         },
-        "V14PhysicalLinkage": {
+        "V1p4PhysicalLinkage": {
             "description": "",
             "enum": [
                 "none",
@@ -5185,10 +5185,10 @@
                 "hetero_tail-head",
                 "hetero_prelinked"
             ],
-            "title": "V14PhysicalLinkage",
+            "title": "V1p4PhysicalLinkage",
             "type": "string"
         },
-        "V14PhysicalQuantity": {
+        "V1p4PhysicalQuantity": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -5200,32 +5200,32 @@
                     ]
                 },
                 "physical_quantityunit": {
-                    "$ref": "#/$defs/V14Unit",
+                    "$ref": "#/$defs/V1p4Unit",
                     "description": "Unit of physical quantity"
                 }
             },
-            "title": "V14PhysicalQuantity",
+            "title": "V1p4PhysicalQuantity",
             "type": "object"
         },
-        "V14Property": {
+        "V1p4Property": {
             "description": "",
-            "title": "V14Property",
+            "title": "V1p4Property",
             "type": "string"
         },
-        "V14Reactivity": {
+        "V1p4Reactivity": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "reactivityantigen": {
-                    "$ref": "#/$defs/V14Antigen",
+                    "$ref": "#/$defs/V1p4Antigen",
                     "description": "The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule."
                 },
                 "reactivityantigen_source_species": {
-                    "$ref": "#/$defs/V14AntigenSourceSpecies",
+                    "$ref": "#/$defs/V1p4AntigenSourceSpecies",
                     "description": "The species from which the antigen was isolated"
                 },
                 "reactivityantigen_type": {
-                    "$ref": "#/$defs/V14AntigenType",
+                    "$ref": "#/$defs/V1p4AntigenType",
                     "description": "The type of antigen before processing by the immune system."
                 },
                 "reactivitycell_id": {
@@ -5240,7 +5240,7 @@
                     ]
                 },
                 "reactivityligand_type": {
-                    "$ref": "#/$defs/V14LigandType",
+                    "$ref": "#/$defs/V1p4LigandType",
                     "description": "Classification of ligand binding to the cell"
                 },
                 "reactivitymhc_allele_1": {
@@ -5258,15 +5258,15 @@
                     ]
                 },
                 "reactivitymhc_class": {
-                    "$ref": "#/$defs/V14MhcClass",
+                    "$ref": "#/$defs/V1p4MhcClass",
                     "description": "Class of MHC molecule, only present for MHC:x ligand types"
                 },
                 "reactivitymhc_gene_1": {
-                    "$ref": "#/$defs/V14MhcGene1",
+                    "$ref": "#/$defs/V1p4MhcGene1",
                     "description": "The MHC gene to which the mhc_allele_1 belongs"
                 },
                 "reactivitymhc_gene_2": {
-                    "$ref": "#/$defs/V14MhcGene2",
+                    "$ref": "#/$defs/V1p4MhcGene2",
                     "description": "The MHC gene to which the mhc_allele_2 belongs"
                 },
                 "reactivitypeptide_end": {
@@ -5339,10 +5339,10 @@
                 "reactivityreactivity_value",
                 "reactivityreactivity_unit"
             ],
-            "title": "V14Reactivity",
+            "title": "V1p4Reactivity",
             "type": "object"
         },
-        "V14ReadDirection": {
+        "V1p4ReadDirection": {
             "description": "",
             "enum": [
                 "forward",
@@ -5350,10 +5350,10 @@
                 "mixed",
                 "null"
             ],
-            "title": "V14ReadDirection",
+            "title": "V1p4ReadDirection",
             "type": "string"
         },
-        "V14RearrangedSequence": {
+        "V1p4RearrangedSequence": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -5369,11 +5369,11 @@
                     "type": "string"
                 },
                 "rearranged_sequencederivation": {
-                    "$ref": "#/$defs/V14Derivation",
+                    "$ref": "#/$defs/V1p4Derivation",
                     "description": "The class of nucleic acid that was used as primary starting material"
                 },
                 "rearranged_sequenceobservation_type": {
-                    "$ref": "#/$defs/V14ObservationType",
+                    "$ref": "#/$defs/V1p4ObservationType",
                     "description": "The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data."
                 },
                 "rearranged_sequencerepository_name": {
@@ -5418,10 +5418,10 @@
                 "rearranged_sequencerepository_name",
                 "rearranged_sequencedeposited_version"
             ],
-            "title": "V14RearrangedSequence",
+            "title": "V1p4RearrangedSequence",
             "type": "object"
         },
-        "V14Rearrangement": {
+        "V1p4Rearrangement": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -6126,11 +6126,11 @@
                     ]
                 },
                 "rearrangementlocus": {
-                    "$ref": "#/$defs/V14Locus",
+                    "$ref": "#/$defs/V1p4Locus",
                     "description": "Gene locus (chain type). Note that this field uses a controlled vocabulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature."
                 },
                 "rearrangementlocus_species": {
-                    "$ref": "#/$defs/V14LocusSpecies",
+                    "$ref": "#/$defs/V1p4LocusSpecies",
                     "description": "Binomial designation of the species from which the locus originates. Typically, this value should be identical to `organism`, if which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g. transgenic animal models. If set, this key will overwrite the `organism` information for all lower layers of the schema."
                 },
                 "rearrangementn1_length": {
@@ -6479,10 +6479,10 @@
                 "rearrangementd_cigar",
                 "rearrangementj_cigar"
             ],
-            "title": "V14Rearrangement",
+            "title": "V1p4Rearrangement",
             "type": "object"
         },
-        "V14Receptor": {
+        "V1p4Receptor": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -6505,7 +6505,7 @@
                     ]
                 },
                 "receptorreceptor_type": {
-                    "$ref": "#/$defs/V14ReceptorType",
+                    "$ref": "#/$defs/V1p4ReceptorType",
                     "description": "The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR)."
                 },
                 "receptorreceptor_variable_domain_1_aa": {
@@ -6513,7 +6513,7 @@
                     "type": "string"
                 },
                 "receptorreceptor_variable_domain_1_locus": {
-                    "$ref": "#/$defs/V14ReceptorVariableDomain1Locus",
+                    "$ref": "#/$defs/V1p4ReceptorVariableDomain1Locus",
                     "description": "Locus from which the variable domain in receptor_variable_domain_1_aa originates"
                 },
                 "receptorreceptor_variable_domain_2_aa": {
@@ -6521,7 +6521,7 @@
                     "type": "string"
                 },
                 "receptorreceptor_variable_domain_2_locus": {
-                    "$ref": "#/$defs/V14ReceptorVariableDomain2Locus",
+                    "$ref": "#/$defs/V1p4ReceptorVariableDomain2Locus",
                     "description": "Locus from which the variable domain in receptor_variable_domain_2_aa originates"
                 }
             },
@@ -6534,29 +6534,29 @@
                 "receptorreceptor_variable_domain_2_aa",
                 "receptorreceptor_variable_domain_2_locus"
             ],
-            "title": "V14Receptor",
+            "title": "V1p4Receptor",
             "type": "object"
         },
-        "V14ReceptorType": {
+        "V1p4ReceptorType": {
             "description": "",
             "enum": [
                 "Ig",
                 "TCR"
             ],
-            "title": "V14ReceptorType",
+            "title": "V1p4ReceptorType",
             "type": "string"
         },
-        "V14ReceptorVariableDomain1Locus": {
+        "V1p4ReceptorVariableDomain1Locus": {
             "description": "",
             "enum": [
                 "IGH",
                 "TRB",
                 "TRD"
             ],
-            "title": "V14ReceptorVariableDomain1Locus",
+            "title": "V1p4ReceptorVariableDomain1Locus",
             "type": "string"
         },
-        "V14ReceptorVariableDomain2Locus": {
+        "V1p4ReceptorVariableDomain2Locus": {
             "description": "",
             "enum": [
                 "IGI",
@@ -6565,17 +6565,17 @@
                 "TRA",
                 "TRG"
             ],
-            "title": "V14ReceptorVariableDomain2Locus",
+            "title": "V1p4ReceptorVariableDomain2Locus",
             "type": "string"
         },
-        "V14Repertoire": {
+        "V1p4Repertoire": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "repertoiredata_processing": {
                     "description": "List of Data Processing objects",
                     "items": {
-                        "$ref": "#/$defs/V14DataProcessing"
+                        "$ref": "#/$defs/V1p4DataProcessing"
                     },
                     "type": "array"
                 },
@@ -6603,16 +6603,16 @@
                 "repertoiresample": {
                     "description": "List of Sample Processing objects",
                     "items": {
-                        "$ref": "#/$defs/V14SampleProcessing"
+                        "$ref": "#/$defs/V1p4SampleProcessing"
                     },
                     "type": "array"
                 },
                 "repertoirestudy": {
-                    "$ref": "#/$defs/V14Study",
+                    "$ref": "#/$defs/V1p4Study",
                     "description": "Study object"
                 },
                 "repertoiresubject": {
-                    "$ref": "#/$defs/V14Subject",
+                    "$ref": "#/$defs/V1p4Subject",
                     "description": "Subject object"
                 }
             },
@@ -6622,10 +6622,10 @@
                 "repertoiresample",
                 "repertoiredata_processing"
             ],
-            "title": "V14Repertoire",
+            "title": "V1p4Repertoire",
             "type": "object"
         },
-        "V14RepertoireGroup": {
+        "V1p4RepertoireGroup": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -6659,10 +6659,10 @@
                 "repertoire_grouprepertoire_group_id",
                 "repertoire_grouprepertoires"
             ],
-            "title": "V14RepertoireGroup",
+            "title": "V1p4RepertoireGroup",
             "type": "object"
         },
-        "V14Role": {
+        "V1p4Role": {
             "description": "",
             "enum": [
                 "conceptualization",
@@ -6680,10 +6680,10 @@
                 "writing - original draft",
                 "writing - review & editing"
             ],
-            "title": "V14Role",
+            "title": "V1p4Role",
             "type": "string"
         },
-        "V14Sample": {
+        "V1p4Sample": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -6696,11 +6696,11 @@
                     "type": "string"
                 },
                 "samplecollection_location": {
-                    "$ref": "#/$defs/V14CollectionLocation",
+                    "$ref": "#/$defs/V1p4CollectionLocation",
                     "description": "Location where the sample was taken, preferred granularity is country-level"
                 },
                 "samplecollection_time_point_relative": {
-                    "$ref": "#/$defs/V14TimePoint",
+                    "$ref": "#/$defs/V1p4TimePoint",
                     "description": "Time point at which sample was taken, relative to `label` event"
                 },
                 "sampledisease_state_sample": {
@@ -6716,7 +6716,7 @@
                     "type": "string"
                 },
                 "sampletissue": {
-                    "$ref": "#/$defs/V14Tissue",
+                    "$ref": "#/$defs/V1p4Tissue",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 }
             },
@@ -6729,10 +6729,10 @@
                 "samplecollection_time_point_relative",
                 "samplebiomaterial_provider"
             ],
-            "title": "V14Sample",
+            "title": "V1p4Sample",
             "type": "object"
         },
-        "V14SampleProcessing": {
+        "V1p4SampleProcessing": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -6743,7 +6743,7 @@
                 "sequencing_runsequencing_files": {
                     "anyOf": [
                         {
-                            "$ref": "#/$defs/V14SequencingData"
+                            "$ref": "#/$defs/V1p4SequencingData"
                         },
                         {
                             "type": "null"
@@ -6780,10 +6780,10 @@
                 "sequencing_runsequencing_run_date",
                 "sequencing_runsequencing_kit"
             ],
-            "title": "V14SampleProcessing",
+            "title": "V1p4SampleProcessing",
             "type": "object"
         },
-        "V14SequenceDelineationV": {
+        "V1p4SequenceDelineationV": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -6879,10 +6879,10 @@
                 "sequence_delineation_vfwr3_end",
                 "sequence_delineation_vcdr3_start"
             ],
-            "title": "V14SequenceDelineationV",
+            "title": "V1p4SequenceDelineationV",
             "type": "object"
         },
-        "V14SequenceType": {
+        "V1p4SequenceType": {
             "description": "",
             "enum": [
                 "V",
@@ -6890,15 +6890,15 @@
                 "J",
                 "C"
             ],
-            "title": "V14SequenceType",
+            "title": "V1p4SequenceType",
             "type": "string"
         },
-        "V14SequencingData": {
+        "V1p4SequencingData": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "sequencing_datafile_type": {
-                    "$ref": "#/$defs/V14FileType",
+                    "$ref": "#/$defs/V1p4FileType",
                     "description": "File format for the raw reads or sequences"
                 },
                 "sequencing_datafilename": {
@@ -6924,7 +6924,7 @@
                     "type": "string"
                 },
                 "sequencing_datapaired_read_direction": {
-                    "$ref": "#/$defs/V14PairedReadDirection",
+                    "$ref": "#/$defs/V1p4PairedReadDirection",
                     "description": "Read direction for the second file in paired-read sequencing"
                 },
                 "sequencing_datapaired_read_length": {
@@ -6932,7 +6932,7 @@
                     "type": "integer"
                 },
                 "sequencing_dataread_direction": {
-                    "$ref": "#/$defs/V14ReadDirection",
+                    "$ref": "#/$defs/V1p4ReadDirection",
                     "description": "Read direction for the raw reads or sequences. The first file in paired-read sequencing."
                 },
                 "sequencing_dataread_length": {
@@ -6954,10 +6954,10 @@
                 "sequencing_datapaired_read_direction",
                 "sequencing_datapaired_read_length"
             ],
-            "title": "V14SequencingData",
+            "title": "V1p4SequencingData",
             "type": "object"
         },
-        "V14SequencingRun": {
+        "V1p4SequencingRun": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -6968,7 +6968,7 @@
                 "sequencing_runsequencing_files": {
                     "anyOf": [
                         {
-                            "$ref": "#/$defs/V14SequencingData"
+                            "$ref": "#/$defs/V1p4SequencingData"
                         },
                         {
                             "type": "null"
@@ -7005,10 +7005,10 @@
                 "sequencing_runsequencing_run_date",
                 "sequencing_runsequencing_kit"
             ],
-            "title": "V14SequencingRun",
+            "title": "V1p4SequencingRun",
             "type": "object"
         },
-        "V14Sex": {
+        "V1p4Sex": {
             "description": "",
             "enum": [
                 "male",
@@ -7018,15 +7018,15 @@
                 "intersex",
                 "null"
             ],
-            "title": "V14Sex",
+            "title": "V1p4Sex",
             "type": "string"
         },
-        "V14Species": {
+        "V1p4Species": {
             "description": "",
-            "title": "V14Species",
+            "title": "V1p4Species",
             "type": "string"
         },
-        "V14SpeciesSubgroupType": {
+        "V1p4SpeciesSubgroupType": {
             "description": "",
             "enum": [
                 "breed",
@@ -7036,10 +7036,10 @@
                 "locational",
                 "null"
             ],
-            "title": "V14SpeciesSubgroupType",
+            "title": "V1p4SpeciesSubgroupType",
             "type": "string"
         },
-        "V14Status": {
+        "V1p4Status": {
             "description": "",
             "enum": [
                 "active",
@@ -7048,20 +7048,20 @@
                 "withdrawn",
                 "null"
             ],
-            "title": "V14Status",
+            "title": "V1p4Status",
             "type": "string"
         },
-        "V14Strand": {
+        "V1p4Strand": {
             "description": "",
             "enum": [
                 "+",
                 "-",
                 "null"
             ],
-            "title": "V14Strand",
+            "title": "V1p4Strand",
             "type": "string"
         },
-        "V14Study": {
+        "V1p4Study": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -7082,7 +7082,7 @@
                 "studycontributors": {
                     "description": "List of individuals who contributed to the study. Note that these are not necessarily identical with the authors on an associated manuscript or other scholarly communication. Further note that typically at least the three CRediT contributor roles \"supervision\", \"investigation\" and \"data curation\" should be assigned. The coresponding author should be listed last.",
                     "items": {
-                        "$ref": "#/$defs/V14Contributor"
+                        "$ref": "#/$defs/V1p4Contributor"
                     },
                     "type": "array"
                 },
@@ -7097,7 +7097,7 @@
                 "studykeywords_study": {
                     "description": "Keywords describing properties of one or more data sets in a study. \"contains_schema\" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that \"contains_paired_chain\" but does not \"contains_schema_cell\").",
                     "items": {
-                        "$ref": "#/$defs/V14KeywordsStudy"
+                        "$ref": "#/$defs/V1p4KeywordsStudy"
                     },
                     "type": "array"
                 },
@@ -7124,7 +7124,7 @@
                     "type": "string"
                 },
                 "studystudy_type": {
-                    "$ref": "#/$defs/V14StudyType",
+                    "$ref": "#/$defs/V1p4StudyType",
                     "description": "Type of study design"
                 }
             },
@@ -7138,20 +7138,20 @@
                 "studypub_ids",
                 "studykeywords_study"
             ],
-            "title": "V14Study",
+            "title": "V1p4Study",
             "type": "object"
         },
-        "V14StudyType": {
+        "V1p4StudyType": {
             "description": "",
-            "title": "V14StudyType",
+            "title": "V1p4StudyType",
             "type": "string"
         },
-        "V14Subject": {
+        "V1p4Subject": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "subjectage": {
-                    "$ref": "#/$defs/V14TimeInterval",
+                    "$ref": "#/$defs/V1p4TimeInterval",
                     "description": "Age of subject expressed as a time interval. If singular time point then min == max in the time interval."
                 },
                 "subjectage_event": {
@@ -7159,13 +7159,13 @@
                     "type": "string"
                 },
                 "subjectancestry_population": {
-                    "$ref": "#/$defs/V14AncestryPopulation",
+                    "$ref": "#/$defs/V1p4AncestryPopulation",
                     "description": "Broad geographic origin of ancestry (continent)"
                 },
                 "subjectdiagnosis": {
                     "description": "Diagnosis information for subject",
                     "items": {
-                        "$ref": "#/$defs/V14Diagnosis"
+                        "$ref": "#/$defs/V1p4Diagnosis"
                     },
                     "type": [
                         "array",
@@ -7179,7 +7179,7 @@
                 "subjectgenotype": {
                     "anyOf": [
                         {
-                            "$ref": "#/$defs/V14SubjectGenotype"
+                            "$ref": "#/$defs/V1p4SubjectGenotype"
                         },
                         {
                             "type": "null"
@@ -7196,7 +7196,7 @@
                     "type": "string"
                 },
                 "subjectlocation_birth": {
-                    "$ref": "#/$defs/V14LocationBirth",
+                    "$ref": "#/$defs/V1p4LocationBirth",
                     "description": "Self-reported location of birth of the subject, preferred granularity is country-level"
                 },
                 "subjectrace": {
@@ -7204,11 +7204,11 @@
                     "type": "string"
                 },
                 "subjectsex": {
-                    "$ref": "#/$defs/V14Sex",
+                    "$ref": "#/$defs/V1p4Sex",
                     "description": "Biological sex of subject"
                 },
                 "subjectspecies": {
-                    "$ref": "#/$defs/V14Species",
+                    "$ref": "#/$defs/V1p4Species",
                     "description": "Binomial designation of subject's species"
                 },
                 "subjectstrain_name": {
@@ -7238,17 +7238,17 @@
                 "subjectlinked_subjects",
                 "subjectlink_type"
             ],
-            "title": "V14Subject",
+            "title": "V1p4Subject",
             "type": "object"
         },
-        "V14SubjectGenotype": {
+        "V1p4SubjectGenotype": {
             "additionalProperties": false,
             "description": "",
             "properties": {
                 "subject_genotypemhc_genotype_set": {
                     "anyOf": [
                         {
-                            "$ref": "#/$defs/V14MHCGenotypeSet"
+                            "$ref": "#/$defs/V1p4MHCGenotypeSet"
                         },
                         {
                             "type": "null"
@@ -7259,7 +7259,7 @@
                 "subject_genotypereceptor_genotype_set": {
                     "anyOf": [
                         {
-                            "$ref": "#/$defs/V14GenotypeSet"
+                            "$ref": "#/$defs/V1p4GenotypeSet"
                         },
                         {
                             "type": "null"
@@ -7268,19 +7268,19 @@
                     "description": "Immune receptor genotype set for this subject."
                 }
             },
-            "title": "V14SubjectGenotype",
+            "title": "V1p4SubjectGenotype",
             "type": "object"
         },
-        "V14TemplateClass": {
+        "V1p4TemplateClass": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA"
             ],
-            "title": "V14TemplateClass",
+            "title": "V1p4TemplateClass",
             "type": "string"
         },
-        "V14TimeInterval": {
+        "V1p4TimeInterval": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -7299,14 +7299,14 @@
                     ]
                 },
                 "time_intervalunit": {
-                    "$ref": "#/$defs/V14Unit",
+                    "$ref": "#/$defs/V1p4Unit",
                     "description": "Unit of the time interval"
                 }
             },
-            "title": "V14TimeInterval",
+            "title": "V1p4TimeInterval",
             "type": "object"
         },
-        "V14TimePoint": {
+        "V1p4TimePoint": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -7318,7 +7318,7 @@
                     ]
                 },
                 "time_pointunit": {
-                    "$ref": "#/$defs/V14Unit",
+                    "$ref": "#/$defs/V1p4Unit",
                     "description": "Unit of the time point"
                 },
                 "time_pointvalue": {
@@ -7329,10 +7329,10 @@
                     ]
                 }
             },
-            "title": "V14TimePoint",
+            "title": "V1p4TimePoint",
             "type": "object"
         },
-        "V14TimeQuantity": {
+        "V1p4TimeQuantity": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -7344,19 +7344,19 @@
                     ]
                 },
                 "time_quantityunit": {
-                    "$ref": "#/$defs/V14Unit",
+                    "$ref": "#/$defs/V1p4Unit",
                     "description": "Unit of time"
                 }
             },
-            "title": "V14TimeQuantity",
+            "title": "V1p4TimeQuantity",
             "type": "object"
         },
-        "V14Tissue": {
+        "V1p4Tissue": {
             "description": "",
-            "title": "V14Tissue",
+            "title": "V1p4Tissue",
             "type": "string"
         },
-        "V14Tree": {
+        "V1p4Tree": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -7385,10 +7385,10 @@
                 "treeclone_id",
                 "treenewick"
             ],
-            "title": "V14Tree",
+            "title": "V1p4Tree",
             "type": "object"
         },
-        "V14UndocumentedAllele": {
+        "V1p4UndocumentedAllele": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -7412,15 +7412,15 @@
                 "undocumented_alleleallele_name",
                 "undocumented_allelesequence"
             ],
-            "title": "V14UndocumentedAllele",
+            "title": "V1p4UndocumentedAllele",
             "type": "object"
         },
-        "V14Unit": {
+        "V1p4Unit": {
             "description": "",
-            "title": "V14Unit",
+            "title": "V1p4Unit",
             "type": "string"
         },
-        "V14UnrearrangedSequence": {
+        "V1p4UnrearrangedSequence": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -7470,7 +7470,7 @@
                     "type": "string"
                 },
                 "unrearranged_sequencestrand": {
-                    "$ref": "#/$defs/V14Strand",
+                    "$ref": "#/$defs/V1p4Strand",
                     "description": "sense (+ or -)"
                 }
             },
@@ -7483,7 +7483,7 @@
                 "unrearranged_sequencegff_end",
                 "unrearranged_sequencestrand"
             ],
-            "title": "V14UnrearrangedSequence",
+            "title": "V1p4UnrearrangedSequence",
             "type": "object"
         }
     },
