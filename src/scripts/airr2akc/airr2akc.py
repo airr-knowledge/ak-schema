@@ -72,7 +72,7 @@ def is_array(slot_yaml):
     return "type" in slot_yaml and slot_yaml["type"] == "array"
 
 def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
-    pr_slot_name = f"{camel_to_snake_case(cls_keyword)}{orig_slot_name}"
+    pr_slot_name = f"{camel_to_snake_case(cls_keyword)}__{orig_slot_name}"
 
     if is_deprecated(slot_yaml):
         return dict()
@@ -299,16 +299,25 @@ def main(parsed_args):
     for keyword in get_composition_keywords_to_process(airr_yaml):
         if keyword not in skip_keywords:
             keyword_yaml = airr_yaml[keyword]
-            for class_yaml in keyword_yaml["allOf"]:
-                all_slots = []
+            # all_slots = []
+            composition_yaml = {"classes": {f"{version_prefix}{keyword}": {"slots": []}},
+                                "slots": {},
+                                "enums": {}}
 
+            for class_yaml in keyword_yaml["allOf"]:
                 if "$ref" in class_yaml:
                     super_class_name = class_yaml["$ref"].lstrip("/#")
-                    all_slots.extend(output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"])
+                    composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"])
                 else:
-                    all_slots.extend(list(class_yaml["properties"].keys()))
+                    new_slots = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
+                    new_enums = get_all_enums(class_yaml, version_prefix)
+                    composition_yaml["slots"].update(new_slots)
+                    composition_yaml["enums"].update(new_enums)
 
-            safe_update_yaml(output_yaml, {"classes": {f"{version_prefix}{keyword}": {"slots": all_slots}}})
+                    composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(list(new_slots.keys()))
+
+
+            safe_update_yaml(output_yaml, composition_yaml)
 
     write_yaml_output(output_yaml, parsed_args.output_file)
 
