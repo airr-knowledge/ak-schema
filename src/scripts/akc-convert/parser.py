@@ -455,12 +455,6 @@ class Parser:
                 akc_value = None
             elif isinstance(value,(str)):
                 akc_value = Parser.str_to_bool(value)
-                #if value in ["T","t","True","TRUE","true"]:
-                #    akc_value = True
-                #elif value in ["F","f","False","FALSE","false"]:
-                #    akc_value = False
-                #else:
-                #    raise TypeError("Invalid boolean value " + value + " for field " + field)
             elif isinstance(value,(int)):
                 akc_value = Parser.int_to_bool(value)
             else:
@@ -587,10 +581,12 @@ class Parser:
     # {
     #   "study_id":
     #   {
-    #     "value":"PRJNA628125",
-    #     "airr_subclass":"Study",
-    #     "akc_class":"Investigation",
-    #     "akc_field":"archival_id"
+    #     "value":"enrollment",
+    #     "airr_subclass":"Subject",
+    #     "akc_class":"Participant",
+    #     "akc_field":"age_event"
+    #     "akc_form":"Class"
+    #     "akc_type":"LifeEvent"
     #   }
     # }
     def akc_flatten(self, key, value, dictionary, key_path, airr_class):
@@ -610,7 +606,9 @@ class Parser:
                     field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                     field_dict['akc_field'] = akc_field
-                    # Store the field dictionary keyed on the key.
+                    field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
+                    field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                # Store the field dictionary keyed on the key.
                 dictionary[key] = field_dict
             else:
                 raise TypeError("AIRR type error for " + key)
@@ -629,7 +627,9 @@ class Parser:
                     field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                     field_dict['akc_field'] = akc_field
-                    # Store the field dictionary keyed on the key.
+                    field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
+                    field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                # Store the field dictionary keyed on the key.
                 dictionary[key] = field_dict
             else:
                 raise TypeError("AIRR type error for " + key)
@@ -658,7 +658,9 @@ class Parser:
                         field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                         field_dict['akc_field'] = akc_field
-                        # Store the field dictionary keyed on the key.
+                        field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
+                        field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                    # Store the field dictionary keyed on the key.
                     dictionary[key] = field_dict
                 else:
                     raise TypeError(key)
@@ -693,7 +695,9 @@ class Parser:
                         field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "akc_class", airr_class)
                         field_dict['akc_field'] = akc_field
-                        # Store the field dictionary keyed on the key.
+                        field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
+                        field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                    # Store the field dictionary keyed on the key.
                     dictionary[key] = field_dict
                 else:
                     raise TypeError(key)
@@ -716,7 +720,8 @@ class Parser:
                             for sub_key, sub_value in element.items():
                                 self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
                             got_primary = True
-                            print("Info: Found a primary annotation, using it.")
+                            if self.verbose():
+                                print("Info: Found a primary annotation, using it.")
                             break
                     # If we didn't find the primary, then use the first one as a best guess.
                     if not got_primary:
@@ -728,9 +733,16 @@ class Parser:
                     if len(value) > 1:
                         if self.verbose():
                             print("Info: Processing multi element array key %s."%(key))
-                    for element in value:
-                        for sub_key, sub_value in element.items():
-                            self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
+                    # We should only have arrays of objects here. Special case AIRR
+                    # arrays are handled above. So we should only have an array of 
+                    # dictionaries here.
+                    if isinstance(value[0], dict):
+                        for element in value:
+                            for sub_key, sub_value in element.items():
+                                self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
+                    else:
+                        print("Warning: Skipping non-AIRR multi element array %s."%(key))
+
         return dictionary
 
 

@@ -1,6 +1,10 @@
 # set base image (host OS)
 FROM python:3.9
 
+# Install jq so we can process JSON
+RUN apt-get update
+RUN apt-get install jq -y
+
 # https://stackoverflow.com/questions/53835198/integrating-python-poetry-with-docker
 ENV YOUR_ENV=${YOUR_ENV} \
   PYTHONFAULTHANDLER=1 \

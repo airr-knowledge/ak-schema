@@ -8,7 +8,14 @@
                     "additionalProperties": {
                         "anyOf": [
                             {
-                                "$ref": "#/$defs/Assay__identifier_optional"
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/$defs/Assay__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/TCellReceptorEpitopeBindingAssay__identifier_optional"
+                                    }
+                                ]
                             },
                             {
                                 "type": "null"
@@ -25,6 +32,22 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/Assessment__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Chain__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -57,6 +80,29 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/Dataset__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "epitopes": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/$defs/Epitope__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/PeptidicEpitope__identifier_optional"
+                                    }
+                                ]
                             },
                             {
                                 "type": "null"
@@ -211,6 +257,32 @@
                         "object",
                         "null"
                     ]
+                },
+                "tcell_receptors": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/$defs/TCellReceptor__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
                 }
             },
             "title": "AIRRKnowledgeCommons",
@@ -251,11 +323,70 @@
                         "string",
                         "null"
                     ]
+                },
+                "type": {
+                    "enum": [
+                        "AlphaBetaTCR"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
                 "akc_id"
             ],
+            "title": "AlphaBetaTCR",
+            "type": "object"
+        },
+        "AlphaBetaTCR__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "TRA_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TRB_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AlphaBetaTCR"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
             "title": "AlphaBetaTCR",
             "type": "object"
         },
@@ -297,6 +428,15 @@
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "Assay"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -361,6 +501,15 @@
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "Assay"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -803,6 +952,149 @@
             "title": "ChainType",
             "type": "string"
         },
+        "Chain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_end": {
+                    "description": "CDR1 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr1_start": {
+                    "description": "CDR1 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_end": {
+                    "description": "CDR2 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_start": {
+                    "description": "CDR2 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_end": {
+                    "description": "CDR3 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_start": {
+                    "description": "CDR3 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "chain_type": {
+                    "$ref": "#/$defs/ChainType",
+                    "description": "Gene locus (chain type)."
+                },
+                "d_call": {
+                    "description": "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "description": "J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid form of the junction.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_call": {
+                    "description": "V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "Chain",
+            "type": "object"
+        },
         "Conclusion": {
             "additionalProperties": false,
             "description": "",
@@ -1082,6 +1374,80 @@
             "title": "DiseaseStage",
             "type": "string"
         },
+        "Epitope": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "Epitope"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "Epitope",
+            "type": "object"
+        },
+        "Epitope__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "Epitope"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "Epitope",
+            "type": "object"
+        },
         "Ethnicity": {
             "description": "",
             "enum": [
@@ -1161,11 +1527,70 @@
                         "string",
                         "null"
                     ]
+                },
+                "type": {
+                    "enum": [
+                        "GammaDeltaTCR"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
                 "akc_id"
             ],
+            "title": "GammaDeltaTCR",
+            "type": "object"
+        },
+        "GammaDeltaTCR__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "TRD_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TRG_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "GammaDeltaTCR"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
             "title": "GammaDeltaTCR",
             "type": "object"
         },
@@ -1984,6 +2409,122 @@
             "title": "Participant",
             "type": "object"
         },
+        "PeptidicEpitope": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_organism": {
+                    "description": "The organism that the source protein comes from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_protein": {
+                    "description": "The protein that this epitope comes from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "PeptidicEpitope"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "PeptidicEpitope",
+            "type": "object"
+        },
+        "PeptidicEpitope__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_organism": {
+                    "description": "The organism that the source protein comes from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_protein": {
+                    "description": "The protein that this epitope comes from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "PeptidicEpitope"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "PeptidicEpitope",
+            "type": "object"
+        },
         "PhenotypicSex": {
             "description": "",
             "enum": [
@@ -2672,11 +3213,234 @@
                         "string",
                         "null"
                     ]
+                },
+                "type": {
+                    "enum": [
+                        "TCellReceptor"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
                 "akc_id"
             ],
+            "title": "TCellReceptor",
+            "type": "object"
+        },
+        "TCellReceptorEpitopeBindingAssay": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "description": "The specific type of an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "The epitope being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "target_entity_type": {
+                    "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tcell_receptors": {
+                    "description": "The T cell receptors being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "TCellReceptorEpitopeBindingAssay"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "unit": {
+                    "description": "The measurement result value unit",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "TCellReceptorEpitopeBindingAssay",
+            "type": "object"
+        },
+        "TCellReceptorEpitopeBindingAssay__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "description": "The specific type of an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "The epitope being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "target_entity_type": {
+                    "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tcell_receptors": {
+                    "description": "The T cell receptors being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "TCellReceptorEpitopeBindingAssay"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "unit": {
+                    "description": "The measurement result value unit",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "TCellReceptorEpitopeBindingAssay",
+            "type": "object"
+        },
+        "TCellReceptor__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "TCellReceptor"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
             "title": "TCellReceptor",
             "type": "object"
         },
@@ -6733,7 +7497,14 @@
             "additionalProperties": {
                 "anyOf": [
                     {
-                        "$ref": "#/$defs/Assay__identifier_optional"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Assay__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/TCellReceptorEpitopeBindingAssay__identifier_optional"
+                            }
+                        ]
                     },
                     {
                         "type": "null"
@@ -6750,6 +7521,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Assessment__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/Chain__identifier_optional"
                     },
                     {
                         "type": "null"
@@ -6782,6 +7569,29 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Dataset__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "epitopes": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Epitope__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/PeptidicEpitope__identifier_optional"
+                            }
+                        ]
                     },
                     {
                         "type": "null"
@@ -6926,6 +7736,32 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/StudyEvent__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "tcell_receptors": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TCellReceptor__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
+                            }
+                        ]
                     },
                     {
                         "type": "null"
