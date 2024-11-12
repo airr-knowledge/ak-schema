@@ -23,13 +23,11 @@ curl -H 'content-type: application/json' -d '{"filters":{"op":"=", "content": {"
 Convert the data to LinkML using the AKC schema.
 ```
 python dataloader.py -v --repertoire -f ADC/covid19-1-1.json --mapfile ./config/AIRR-iReceptorMapping.txt
-
+```
 Convert a study from the ADC into AKC LinkML. In this case, the script will search the
 ADC repository `t1d-2.ireceptor.org`, download the ADC JSON for that study, and convert
 it to AKC LinkML JSON. The output of both the ADC and AKC data will be stored in the `studies` directory
 in this case in files named `t1d-2.ireceptor.org_IR-T1D-000003_ADC.json` and `t1d-2.ireceptor.org_IR-T1D-000003_AKC.json`.
-```
-Convert a study from the ADC into AKC LinkML
 ```
 bash akc-convert-study.sh t1d-2.ireceptor.org IR-T1D-000003 studies
 ```
