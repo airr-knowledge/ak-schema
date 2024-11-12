@@ -51,8 +51,10 @@ classes:
       - physical_linkage
   BCellReceptorRepertoireSequencingAssay:
     is_a: ReceptorRepertoireSequencingAssay
+    class_uri: OBI:0002991
   TCellReceptorRepertoireSequencingAssay:
     is_a: ReceptorRepertoireSequencingAssay
+    class_uri: OBI:0002990
 
   PCRTarget:
     is_a: NamedThing
