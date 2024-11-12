@@ -1,0 +1,863 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://airr-knowledge.github.io/ak-schema/V1p4Reactivity/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: V1p4Reactivity - ak-schema</title>
+<link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-v1p4reactivity">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="ak-schema" class="md-header__button md-logo" data-md-component="logo" href=".." title="ak-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            ak-schema
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: V1p4Reactivity
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/airr-knowledge/ak-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="ak-schema" class="md-nav__button md-logo" data-md-component="logo" href=".." title="ak-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    ak-schema
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/airr-knowledge/ak-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+    Schema Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+    Induced
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/V1p4Reactivity.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="class-v1p4reactivity">Class: V1p4Reactivity</h1>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/V1p4Reactivity">ak_schema:V1p4Reactivity</a></p>
+<div class="mermaid"> classDiagram
+    class V1p4Reactivity
+    click V1p4Reactivity href "../V1p4Reactivity"
+      V1p4Reactivity : reactivityantigen
+
+
+
+
+    V1p4Reactivity --&gt; "1" V1p4Antigen : reactivityantigen
+    click V1p4Antigen href "../V1p4Antigen"
+
+
+      V1p4Reactivity : reactivityantigen_source_species
+
+
+
+
+    V1p4Reactivity --&gt; "0..1" V1p4AntigenSourceSpecies : reactivityantigen_source_species
+    click V1p4AntigenSourceSpecies href "../V1p4AntigenSourceSpecies"
+
+
+      V1p4Reactivity : reactivityantigen_type
+
+
+
+
+    V1p4Reactivity --&gt; "1" V1p4AntigenType : reactivityantigen_type
+    click V1p4AntigenType href "../V1p4AntigenType"
+
+
+      V1p4Reactivity : reactivitycell_id
+
+      V1p4Reactivity : reactivitydata_processing_id
+
+      V1p4Reactivity : reactivityligand_type
+
+
+
+
+    V1p4Reactivity --&gt; "1" V1p4LigandType : reactivityligand_type
+    click V1p4LigandType href "../V1p4LigandType"
+
+
+      V1p4Reactivity : reactivitymhc_allele_1
+
+      V1p4Reactivity : reactivitymhc_allele_2
+
+      V1p4Reactivity : reactivitymhc_class
+
+
+
+
+    V1p4Reactivity --&gt; "0..1" V1p4MhcClass : reactivitymhc_class
+    click V1p4MhcClass href "../V1p4MhcClass"
+
+
+      V1p4Reactivity : reactivitymhc_gene_1
+
+
+
+
+    V1p4Reactivity --&gt; "0..1" V1p4MhcGene1 : reactivitymhc_gene_1
+    click V1p4MhcGene1 href "../V1p4MhcGene1"
+
+
+      V1p4Reactivity : reactivitymhc_gene_2
+
+
+
+
+    V1p4Reactivity --&gt; "0..1" V1p4MhcGene2 : reactivitymhc_gene_2
+    click V1p4MhcGene2 href "../V1p4MhcGene2"
+
+
+      V1p4Reactivity : reactivitypeptide_end
+
+      V1p4Reactivity : reactivitypeptide_sequence_aa
+
+      V1p4Reactivity : reactivitypeptide_start
+
+      V1p4Reactivity : reactivityreactivity_id
+
+      V1p4Reactivity : reactivityreactivity_method
+
+      V1p4Reactivity : reactivityreactivity_readout
+
+      V1p4Reactivity : reactivityreactivity_ref
+
+      V1p4Reactivity : reactivityreactivity_unit
+
+      V1p4Reactivity : reactivityreactivity_value
+
+      V1p4Reactivity : reactivityrepertoire_id
+
+
+</div>
+<!-- no inheritance hierarchy -->
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../reactivityreactivity_id/">reactivityreactivity_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Identifier for the Reactivity object</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitycell_id/">reactivitycell_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Identifier of the Cell in the context of which the reactivity measurement was...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityrepertoire_id/">reactivityrepertoire_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier for the associated repertoire in study metadata</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitydata_processing_id/">reactivitydata_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier of the data processing object in the repertoire metadata for this ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityligand_type/">reactivityligand_type</a></td>
+<td>1 <br/> <a href="../V1p4LigandType/">V1p4LigandType</a></td>
+<td>Classification of ligand binding to the cell</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityantigen_type/">reactivityantigen_type</a></td>
+<td>1 <br/> <a href="../V1p4AntigenType/">V1p4AntigenType</a></td>
+<td>The type of antigen before processing by the immune system</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityantigen/">reactivityantigen</a></td>
+<td>1 <br/> <a href="../V1p4Antigen/">V1p4Antigen</a></td>
+<td>The substance against which the receptor was tested</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityantigen_source_species/">reactivityantigen_source_species</a></td>
+<td>0..1 <br/> <a href="../V1p4AntigenSourceSpecies/">V1p4AntigenSourceSpecies</a></td>
+<td>The species from which the antigen was isolated</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitypeptide_start/">reactivitypeptide_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the peptide within the reference protein sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitypeptide_end/">reactivitypeptide_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the peptide within the reference protein sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitypeptide_sequence_aa/">reactivitypeptide_sequence_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The actual peptide sequence against which the receptor reactivity was measure...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitymhc_class/">reactivitymhc_class</a></td>
+<td>0..1 <br/> <a href="../V1p4MhcClass/">V1p4MhcClass</a></td>
+<td>Class of MHC molecule, only present for MHC:x ligand types</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitymhc_gene_1/">reactivitymhc_gene_1</a></td>
+<td>0..1 <br/> <a href="../V1p4MhcGene1/">V1p4MhcGene1</a></td>
+<td>The MHC gene to which the mhc_allele_1 belongs</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitymhc_allele_1/">reactivitymhc_allele_1</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Allele designation of the MHC alpha chain</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitymhc_gene_2/">reactivitymhc_gene_2</a></td>
+<td>0..1 <br/> <a href="../V1p4MhcGene2/">V1p4MhcGene2</a></td>
+<td>The MHC gene to which the mhc_allele_2 belongs</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivitymhc_allele_2/">reactivitymhc_allele_2</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Allele designation of the MHC class II beta chain or the invariant beta2-micr...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityreactivity_method/">reactivityreactivity_method</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The methodology used to assess/classify reactivity</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityreactivity_readout/">reactivityreactivity_readout</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Reactivity measurement read-out</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityreactivity_value/">reactivityreactivity_value</a></td>
+<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>The absolute (processed) value of the measurement</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityreactivity_unit/">reactivityreactivity_unit</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The unit of the measurement</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../reactivityreactivity_ref/">reactivityreactivity_ref</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Array of cross references to external epitope reactivity records</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>ak_schema:V1p4Reactivity</td>
+</tr>
+<tr>
+<td>native</td>
+<td>ak_schema:V1p4Reactivity</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: V1p4_Reactivity
+from_schema: https://github.com/airr-knowledge/ak-schema
+slots:
+- reactivityreactivity_id
+- reactivitycell_id
+- reactivityrepertoire_id
+- reactivitydata_processing_id
+- reactivityligand_type
+- reactivityantigen_type
+- reactivityantigen
+- reactivityantigen_source_species
+- reactivitypeptide_start
+- reactivitypeptide_end
+- reactivitypeptide_sequence_aa
+- reactivitymhc_class
+- reactivitymhc_gene_1
+- reactivitymhc_allele_1
+- reactivitymhc_gene_2
+- reactivitymhc_allele_2
+- reactivityreactivity_method
+- reactivityreactivity_readout
+- reactivityreactivity_value
+- reactivityreactivity_unit
+- reactivityreactivity_ref
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: V1p4_Reactivity
+from_schema: https://github.com/airr-knowledge/ak-schema
+attributes:
+  reactivityreactivity_id:
+    name: reactivityreactivity_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Identifier for the Reactivity object. This identifier must be unique
+      within  a given study, but it is recommended that it be a universally unique
+      record locator to enable database applications.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityreactivity_id
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: true
+  reactivitycell_id:
+    name: reactivitycell_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier of the Cell in the context of which the reactivity measurement
+      was conducted.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitycell_id
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: true
+  reactivityrepertoire_id:
+    name: reactivityrepertoire_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier for the associated repertoire in study metadata.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityrepertoire_id
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: false
+  reactivitydata_processing_id:
+    name: reactivitydata_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier of the data processing object in the repertoire metadata
+      for this cell.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitydata_processing_id
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: false
+  reactivityligand_type:
+    name: reactivityligand_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Classification of ligand binding to the cell
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityligand_type
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: V1p4_LigandType
+    required: true
+  reactivityantigen_type:
+    name: reactivityantigen_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The type of antigen before processing by the immune system.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityantigen_type
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: V1p4_AntigenType
+    required: true
+  reactivityantigen:
+    name: reactivityantigen
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The substance against which the receptor was tested. This can be
+      any substance that stimulates an adaptive immune response in the host, either
+      through antibody production or by T cell activation after presentation via an
+      MHC molecule.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityantigen
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: V1p4_Antigen
+    required: true
+  reactivityantigen_source_species:
+    name: reactivityantigen_source_species
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The species from which the antigen was isolated
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityantigen_source_species
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: V1p4_AntigenSourceSpecies
+    required: false
+  reactivitypeptide_start:
+    name: reactivitypeptide_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the peptide within the reference protein sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitypeptide_start
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: integer
+    required: false
+  reactivitypeptide_end:
+    name: reactivitypeptide_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the peptide within the reference protein sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitypeptide_end
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: integer
+    required: false
+  reactivitypeptide_sequence_aa:
+    name: reactivitypeptide_sequence_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The actual peptide sequence against which the receptor reactivity
+      was measured. This field should be used as a convenience for antigens of antigen_type
+      `protein` or `peptide`.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitypeptide_sequence_aa
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: false
+  reactivitymhc_class:
+    name: reactivitymhc_class
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Class of MHC molecule, only present for MHC:x ligand types
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitymhc_class
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: V1p4_MhcClass
+    required: false
+  reactivitymhc_gene_1:
+    name: reactivitymhc_gene_1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The MHC gene to which the mhc_allele_1 belongs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitymhc_gene_1
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: V1p4_MhcGene1
+    required: false
+  reactivitymhc_allele_1:
+    name: reactivitymhc_allele_1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Allele designation of the MHC alpha chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitymhc_allele_1
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: false
+  reactivitymhc_gene_2:
+    name: reactivitymhc_gene_2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The MHC gene to which the mhc_allele_2 belongs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitymhc_gene_2
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: V1p4_MhcGene2
+    required: false
+  reactivitymhc_allele_2:
+    name: reactivitymhc_allele_2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Allele designation of the MHC class II beta chain or the invariant
+      beta2-microglobin chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivitymhc_allele_2
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: false
+  reactivityreactivity_method:
+    name: reactivityreactivity_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: 'The methodology used to assess/classify reactivity. This should
+      be either the assay utlizied in the experiment, delineated as "annotated" if
+      annotated from an external source (e.g. IEDB), or inferred if imputed using
+      a computational method. In future versions we anticipate this field being an
+      enumerated type, and it is strongly recommended that users utilize one of the
+      following keywords in this field if appropriate: native_protein, MHC_peptide_multimer,
+      annotated, inferred.'
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityreactivity_method
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: true
+  reactivityreactivity_readout:
+    name: reactivityreactivity_readout
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: 'Reactivity measurement read-out. For physical assays, this should
+      describe what was measured. For inferred and annotated methods this should indicate
+      a confidence/quality level for the inference/annotation. In future versions
+      we anticipate this field being an enumerated type, and it is strongly recommended
+      that users utilize one of the following keywords in this field if appropriate:
+      fluorescence_intensity, barcode_count, confidence.'
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityreactivity_readout
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: true
+  reactivityreactivity_value:
+    name: reactivityreactivity_value
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The absolute (processed) value of the measurement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityreactivity_value
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: float
+    required: true
+  reactivityreactivity_unit:
+    name: reactivityreactivity_unit
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The unit of the measurement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityreactivity_unit
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: true
+  reactivityreactivity_ref:
+    name: reactivityreactivity_ref
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of cross references to external epitope reactivity records
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: reactivityreactivity_ref
+    owner: V1p4_Reactivity
+    domain_of:
+    - V1p4_Reactivity
+    range: string
+    required: false
+    multivalued: true
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
