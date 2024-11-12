@@ -29,9 +29,10 @@ classes:
     is_a: PlannedProcess
     class_uri: OBI:0000070 # assay
     slots:
-      - specimen
-      - specimen_processing
-      - assay_type
+      - specimen # Specimen that the assay is applied to
+      - specimen_processing # Chain of specimen processing applied to specimen before assay is performed 
+      - type # Name of type of Assay class e.g. TCellReceptorEpitopeBindingAssay
+      - assay_type # CURIE of OBI name for assay e.g. OBI:1110179
       - target_entity_type
 
   ReceptorRepertoireSequencingAssay:
@@ -50,10 +51,8 @@ classes:
       - physical_linkage
   BCellReceptorRepertoireSequencingAssay:
     is_a: ReceptorRepertoireSequencingAssay
-    class_uri: OBI:0002991
   TCellReceptorRepertoireSequencingAssay:
     is_a: ReceptorRepertoireSequencingAssay
-    class_uri: OBI:0002990
 
   PCRTarget:
     is_a: NamedThing
