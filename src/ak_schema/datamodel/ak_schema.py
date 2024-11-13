@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-23T14:41:28
+# Generation date: 2024-11-13T21:26:25
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -276,7 +276,15 @@ class SpecimenCollectionAkcId(PlannedProcessAkcId):
     pass
 
 
-class AssayAkcId(NamedThingAkcId):
+class SpecimenProcessingAkcId(PlannedProcessAkcId):
+    pass
+
+
+class AssayAkcId(PlannedProcessAkcId):
+    pass
+
+
+class ReceptorRepertoireSequencingAssayAkcId(AssayAkcId):
     pass
 
 
@@ -292,7 +300,7 @@ class ConclusionAkcId(NamedThingAkcId):
     pass
 
 
-class AssessmentAkcId(NamedThingAkcId):
+class AssessmentAkcId(PlannedProcessAkcId):
     pass
 
 
@@ -957,7 +965,31 @@ class SpecimenCollection(PlannedProcess):
 
 
 @dataclass(repr=False)
-class Assay(NamedThing):
+class SpecimenProcessing(PlannedProcess):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0000094"]
+    class_class_curie: ClassVar[str] = "OBI:0000094"
+    class_name: ClassVar[str] = "SpecimenProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SpecimenProcessing
+
+    akc_id: Union[str, SpecimenProcessingAkcId] = None
+    specimen: Optional[Union[str, SpecimenAkcId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, SpecimenProcessingAkcId):
+            self.akc_id = SpecimenProcessingAkcId(self.akc_id)
+
+        if self.specimen is not None and not isinstance(self.specimen, SpecimenAkcId):
+            self.specimen = SpecimenAkcId(self.specimen)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Assay(PlannedProcess):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000070"]
@@ -967,11 +999,10 @@ class Assay(NamedThing):
 
     akc_id: Union[str, AssayAkcId] = None
     specimen: Optional[Union[str, SpecimenAkcId]] = None
+    specimen_processing: Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]] = empty_list()
     type: Optional[str] = None
     assay_type: Optional[str] = None
     target_entity_type: Optional[str] = None
-    value: Optional[str] = None
-    unit: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -982,6 +1013,10 @@ class Assay(NamedThing):
         if self.specimen is not None and not isinstance(self.specimen, SpecimenAkcId):
             self.specimen = SpecimenAkcId(self.specimen)
 
+        if not isinstance(self.specimen_processing, list):
+            self.specimen_processing = [self.specimen_processing] if self.specimen_processing is not None else []
+        self.specimen_processing = [v if isinstance(v, SpecimenProcessingAkcId) else SpecimenProcessingAkcId(v) for v in self.specimen_processing]
+
         self.type = str(self.class_name)
 
         if self.assay_type is not None and not isinstance(self.assay_type, str):
@@ -989,12 +1024,6 @@ class Assay(NamedThing):
 
         if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
             self.target_entity_type = str(self.target_entity_type)
-
-        if self.value is not None and not isinstance(self.value, str):
-            self.value = str(self.value)
-
-        if self.unit is not None and not isinstance(self.unit, str):
-            self.unit = str(self.unit)
 
         super().__post_init__(**kwargs)
 
@@ -1017,6 +1046,68 @@ class Assay(NamedThing):
 
 
 @dataclass(repr=False)
+class ReceptorRepertoireSequencingAssay(Assay):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0600047"]
+    class_class_curie: ClassVar[str] = "OBI:0600047"
+    class_name: ClassVar[str] = "ReceptorRepertoireSequencingAssay"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorRepertoireSequencingAssay
+
+    akc_id: Union[str, ReceptorRepertoireSequencingAssayAkcId] = None
+    template_class: Optional[str] = None
+    template_quality: Optional[str] = None
+    template_amount: Optional[str] = None
+    template_amount_unit: Optional[str] = None
+    library_generation_method: Optional[str] = None
+    library_generation_protocol: Optional[str] = None
+    library_generation_kit_version: Optional[str] = None
+    pcr_target: Optional[Union[str, List[str]]] = empty_list()
+    complete_sequences: Optional[str] = None
+    physical_linkage: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, ReceptorRepertoireSequencingAssayAkcId):
+            self.akc_id = ReceptorRepertoireSequencingAssayAkcId(self.akc_id)
+
+        if self.template_class is not None and not isinstance(self.template_class, str):
+            self.template_class = str(self.template_class)
+
+        if self.template_quality is not None and not isinstance(self.template_quality, str):
+            self.template_quality = str(self.template_quality)
+
+        if self.template_amount is not None and not isinstance(self.template_amount, str):
+            self.template_amount = str(self.template_amount)
+
+        if self.template_amount_unit is not None and not isinstance(self.template_amount_unit, str):
+            self.template_amount_unit = str(self.template_amount_unit)
+
+        if self.library_generation_method is not None and not isinstance(self.library_generation_method, str):
+            self.library_generation_method = str(self.library_generation_method)
+
+        if self.library_generation_protocol is not None and not isinstance(self.library_generation_protocol, str):
+            self.library_generation_protocol = str(self.library_generation_protocol)
+
+        if self.library_generation_kit_version is not None and not isinstance(self.library_generation_kit_version, str):
+            self.library_generation_kit_version = str(self.library_generation_kit_version)
+
+        if not isinstance(self.pcr_target, list):
+            self.pcr_target = [self.pcr_target] if self.pcr_target is not None else []
+        self.pcr_target = [v if isinstance(v, str) else str(v) for v in self.pcr_target]
+
+        if self.complete_sequences is not None and not isinstance(self.complete_sequences, str):
+            self.complete_sequences = str(self.complete_sequences)
+
+        if self.physical_linkage is not None and not isinstance(self.physical_linkage, str):
+            self.physical_linkage = str(self.physical_linkage)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
 class TCellReceptorEpitopeBindingAssay(Assay):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1026,8 +1117,6 @@ class TCellReceptorEpitopeBindingAssay(Assay):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCellReceptorEpitopeBindingAssay
 
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
-    specimen: Optional[Union[str, SpecimenAkcId]] = None
-    assay_type: Optional[str] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
     value: Optional[str] = None
@@ -1038,12 +1127,6 @@ class TCellReceptorEpitopeBindingAssay(Assay):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, TCellReceptorEpitopeBindingAssayAkcId):
             self.akc_id = TCellReceptorEpitopeBindingAssayAkcId(self.akc_id)
-
-        if self.specimen is not None and not isinstance(self.specimen, SpecimenAkcId):
-            self.specimen = SpecimenAkcId(self.specimen)
-
-        if self.assay_type is not None and not isinstance(self.assay_type, str):
-            self.assay_type = str(self.assay_type)
 
         if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
             self.epitope = EpitopeAkcId(self.epitope)
@@ -1143,7 +1226,7 @@ class Conclusion(NamedThing):
 
 
 @dataclass(repr=False)
-class Assessment(NamedThing):
+class Assessment(PlannedProcess):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0002441"]
@@ -2298,11 +2381,44 @@ slots.process = Slot(uri=AK_SCHEMA.process, name="process", curie=AK_SCHEMA.curi
 slots.specimen = Slot(uri=OBI['0000293'], name="specimen", curie=OBI.curie('0000293'),
                    model_uri=AK_SCHEMA.specimen, domain=None, range=Optional[Union[str, SpecimenAkcId]])
 
+slots.specimen_processing = Slot(uri=BFO['0000051'], name="specimen_processing", curie=BFO.curie('0000051'),
+                   model_uri=AK_SCHEMA.specimen_processing, domain=None, range=Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]])
+
 slots.assay_type = Slot(uri=RDF.type, name="assay_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assay_type, domain=None, range=Optional[str])
 
 slots.target_entity_type = Slot(uri=AK_SCHEMA.target_entity_type, name="target_entity_type", curie=AK_SCHEMA.curie('target_entity_type'),
                    model_uri=AK_SCHEMA.target_entity_type, domain=None, range=Optional[str])
+
+slots.template_class = Slot(uri=AK_SCHEMA.template_class, name="template_class", curie=AK_SCHEMA.curie('template_class'),
+                   model_uri=AK_SCHEMA.template_class, domain=None, range=Optional[str])
+
+slots.template_quality = Slot(uri=AK_SCHEMA.template_quality, name="template_quality", curie=AK_SCHEMA.curie('template_quality'),
+                   model_uri=AK_SCHEMA.template_quality, domain=None, range=Optional[str])
+
+slots.template_amount = Slot(uri=AK_SCHEMA.template_amount, name="template_amount", curie=AK_SCHEMA.curie('template_amount'),
+                   model_uri=AK_SCHEMA.template_amount, domain=None, range=Optional[str])
+
+slots.template_amount_unit = Slot(uri=AK_SCHEMA.template_amount_unit, name="template_amount_unit", curie=AK_SCHEMA.curie('template_amount_unit'),
+                   model_uri=AK_SCHEMA.template_amount_unit, domain=None, range=Optional[str])
+
+slots.library_generation_method = Slot(uri=AK_SCHEMA.library_generation_method, name="library_generation_method", curie=AK_SCHEMA.curie('library_generation_method'),
+                   model_uri=AK_SCHEMA.library_generation_method, domain=None, range=Optional[str])
+
+slots.library_generation_protocol = Slot(uri=AK_SCHEMA.library_generation_protocol, name="library_generation_protocol", curie=AK_SCHEMA.curie('library_generation_protocol'),
+                   model_uri=AK_SCHEMA.library_generation_protocol, domain=None, range=Optional[str])
+
+slots.library_generation_kit_version = Slot(uri=AK_SCHEMA.library_generation_kit_version, name="library_generation_kit_version", curie=AK_SCHEMA.curie('library_generation_kit_version'),
+                   model_uri=AK_SCHEMA.library_generation_kit_version, domain=None, range=Optional[str])
+
+slots.pcr_target = Slot(uri=AK_SCHEMA.pcr_target, name="pcr_target", curie=AK_SCHEMA.curie('pcr_target'),
+                   model_uri=AK_SCHEMA.pcr_target, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.complete_sequences = Slot(uri=AK_SCHEMA.complete_sequences, name="complete_sequences", curie=AK_SCHEMA.curie('complete_sequences'),
+                   model_uri=AK_SCHEMA.complete_sequences, domain=None, range=Optional[str])
+
+slots.physical_linkage = Slot(uri=AK_SCHEMA.physical_linkage, name="physical_linkage", curie=AK_SCHEMA.curie('physical_linkage'),
+                   model_uri=AK_SCHEMA.physical_linkage, domain=None, range=Optional[str])
 
 slots.epitope = Slot(uri=AK_SCHEMA.epitope, name="epitope", curie=AK_SCHEMA.curie('epitope'),
                    model_uri=AK_SCHEMA.epitope, domain=None, range=Optional[Union[str, EpitopeAkcId]])

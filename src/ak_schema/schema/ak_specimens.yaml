@@ -49,19 +49,6 @@ classes:
       - pcr_target
       - complete_sequences
       - physical_linkage
-  BCellReceptorRepertoireSequencingAssay:
-    is_a: ReceptorRepertoireSequencingAssay
-    class_uri: OBI:0002991
-  TCellReceptorRepertoireSequencingAssay:
-    is_a: ReceptorRepertoireSequencingAssay
-    class_uri: OBI:0002990
-
-  PCRTarget:
-    is_a: NamedThing
-    slots:
-      - pcr_target_locus
-      - forward_pcr_primer_target_location
-      - reverse_pcr_primer_target_location
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
@@ -152,8 +139,7 @@ slots:
   library_generation_kit_version:
     description: When using a library generation protocol from a commercial provider, provide the protocol version number
   pcr_target:
-    description: 
-    range: PCRTarget
+    description: Target locus for PCR
     multivalued: true
   complete_sequences:
     description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
@@ -161,13 +147,6 @@ slots:
   physical_linkage:
     description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
     # TODO: enum
-
-  pcr_target_locus:
-    description: Target locus for PCR
-  forward_pcr_primer_target_location:
-    description: Forward PCR primer target location
-  reverse_pcr_primer_target_location:
-    description: Reverse PCR primer target location
 
   epitope:
     description: The epitope being measured
