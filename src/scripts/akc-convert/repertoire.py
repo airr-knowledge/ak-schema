@@ -26,7 +26,8 @@ class Repertoire(Parser):
             "Participant" : { "classes" : ["Participant"], "fields" : ["subject_id"] },
             "Specimen" : { "classes" : ["Specimen"], "fields" : ["subject_id", "sample_id"] },
             "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
-            "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id"] }
+            "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id"] },
+            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id"] }
         }
         # Classes that perform a special link function between other classes
         # TODO: This should be in a config file and not harcoded here.
@@ -135,7 +136,8 @@ class Repertoire(Parser):
                 "Participant" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id','subject_id', 'sample_id', 'study_group_description'],
                 "LifeEvent" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id']
+                "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id']
                 }
         #print('addADCData: akc_class = %s'%(akc_class))
         if akc_class in class_adc_map:
