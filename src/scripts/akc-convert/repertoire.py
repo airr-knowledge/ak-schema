@@ -304,6 +304,8 @@ class Repertoire(Parser):
                     # Check to see if we have seen instance labeled with airr_link_value
                     # before. If not, create a new object with the link value as the label.
                     if airr_link_value in akc_dict:
+                        #if self.verbose():
+                        #    print('Info: Found instance %s'%(airr_link_value))
                         akc_object = akc_dict[airr_link_value]
                     else:
                         if self.verbose():
@@ -373,24 +375,27 @@ class Repertoire(Parser):
                             else:
                                 # If no value, create an empty list with the value.
                                 if self.verbose():
-                                    print('Info: Creating new field %s.%s, value = %s'%(akc_class,value['akc_field'],value['value']))
+                                    print('Info:     Creating new array field %s.%s, value = %s'%(airr_link_value, value['akc_field'], value['value']))
                                 akc_object[value['akc_field']] = [value['value']]
                         else:
                             # If the field exists (it isn't None) and the value is different
                             # print out a warning.
                             if current_value != None:
                                 if current_value != value['value']:
-                                    print('Warning: Value for "%s" field (%s=%s) exists and is not the same (%s vs %s)'%(value['akc_field'],akc_class,airr_link_value,akc_object[value['akc_field']],value['value']))
+                                    print('Warning: Value for "%s.%s" field exists and is not the same (%s vs %s)'%(airr_link_value, value['akc_field'], akc_object[value['akc_field']], value['value']))
                                 else:
                                     # In this case the field already exists and we have
                                     # confirmed that the field hasn't changed as it should.
                                     if self.verbose():
-                                        print('Info: Field %s.%s matches'%(akc_class, value['akc_field']))
+                                        print('Info:     Field %s.%s matches (%s)'%(airr_link_value, value['akc_field'], current_value))
                             else:
                                 # If there is no value, add the value to the object.
                                 if self.verbose():
-                                    print('Info: Creating new field %s.%s, value = %s'%(akc_class,value['akc_field'],value['value']))
+                                    print('Info:     Creating new field %s.%s, value = %s'%(airr_link_value, value['akc_field'], value['value']))
                                 akc_object[value['akc_field']] = value['value']
+                                #print(akc_object[value['akc_field']])
+                                #print(json_dumper.dumps(akc_object))
+
 
                     # If the current field is a "link field" (the akc_form column is of type Class)
                     # we need to check to see if the referenced Class object has been created yet.
@@ -419,7 +424,7 @@ class Repertoire(Parser):
                             akc_class_dict[class_link_value] = akc_class_object
 
                         
-                    # Add a bunch of extra fields to track the key ADC fields that 
+                    # Add the object the dictionary
                     akc_dict[airr_link_value] = akc_object
 
             # Once processing done for this investigation, reassign the investigation dictionary
