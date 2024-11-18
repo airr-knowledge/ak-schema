@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/Datetime/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/specimen_processing/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Type: Datetime - ak-schema</title>
+        <title>Slot: specimen_processing - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#type-datetime" class="md-skip">
+        <a href="#slot-specimen_processing" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Type: Datetime
+              Slot: specimen_processing
             
           </span>
         </div>
@@ -256,6 +256,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    Applicable Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#identifier-and-mapping-information" class="md-nav__link">
     Identifier and Mapping Information
   </a>
@@ -282,6 +296,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linkml-source" class="md-nav__link">
+    LinkML Source
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -296,24 +317,51 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/Datetime.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/specimen_processing.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="type-datetime">Type: Datetime</h1>
-<p><em>The combination of a date and time</em></p>
-<p>URI: <a href="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a></p>
+<h1 id="slot-specimen_processing">Slot: specimen_processing</h1>
+<p><em>A series of zero or more specimen processing steps that precede an assay</em></p>
+<p>URI: <a href="http://purl.obolibrary.org/obo/BFO_0000051">BFO:0000051</a></p>
+<!-- no inheritance hierarchy -->
+
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../ReceptorRepertoireSequencingAssay/">ReceptorRepertoireSequencingAssay</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Assay/">Assay</a></td>
+<td></td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p><a href="https://w3id.org/linkml/base">base</a>: XSDDateTime</p>
+<p>Range: <a href="../SpecimenProcessing/">SpecimenProcessing</a></p>
 </li>
 <li>
-<p><a href="https://w3id.org/linkml/uri">uri</a>: xsd:dateTime</p>
-</li>
-<li>
-<p><a href="https://w3id.org/linkml/repr">repr</a>: str</p>
+<p>Multivalued: True</p>
 </li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -332,18 +380,31 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>xsd:dateTime</td>
+<td>BFO:0000051</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:datetime</td>
-</tr>
-<tr>
-<td>exact</td>
-<td>schema:DateTime</td>
+<td>ak_schema:specimen_processing</td>
 </tr>
 </tbody>
 </table>
+<h2 id="linkml-source">LinkML Source</h2>
+<details>
+
+<pre><code class="language-yaml">name: specimen_processing
+description: A series of zero or more specimen processing steps that precede an assay
+from_schema: https://github.com/airr-knowledge/ak-schema
+rank: 1000
+slot_uri: BFO:0000051
+alias: specimen_processing
+domain_of:
+- Assay
+range: SpecimenProcessing
+multivalued: true
+
+</code></pre>
+
+</details>
 
 
 

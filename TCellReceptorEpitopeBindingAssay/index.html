@@ -233,6 +233,15 @@
     click Specimen href "../Specimen"
 
 
+      TCellReceptorEpitopeBindingAssay : specimen_processing
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "*" SpecimenProcessing : specimen_processing
+    click SpecimenProcessing href "../SpecimenProcessing"
+
+
       TCellReceptorEpitopeBindingAssay : target_entity_type
 
       TCellReceptorEpitopeBindingAssay : tcell_receptors
@@ -256,8 +265,11 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
+<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><a href="../Assay/">Assay</a><ul>
 <li><strong>TCellReceptorEpitopeBindingAssay</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -276,18 +288,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../specimen/">specimen</a></td>
-<td>0..1 <br/> <a href="../Specimen/">Specimen</a></td>
-<td>The specimen that was input for an assay</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../assay_type/">assay_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The specific type of an assay</td>
-<td>direct</td>
-</tr>
 <tr>
 <td><a href="../epitope/">epitope</a></td>
 <td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
@@ -313,9 +313,27 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../specimen/">specimen</a></td>
+<td>0..1 <br/> <a href="../Specimen/">Specimen</a></td>
+<td>The specimen that was input for an assay</td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../specimen_processing/">specimen_processing</a></td>
+<td>* <br/> <a href="../SpecimenProcessing/">SpecimenProcessing</a></td>
+<td>A series of zero or more specimen processing steps that precede an assay</td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
 <td><a href="../type/">type</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
+<td><a href="../Assay/">Assay</a></td>
+</tr>
+<tr>
+<td><a href="../assay_type/">assay_type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The specific type of an assay</td>
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
@@ -376,8 +394,6 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
 slots:
-- specimen
-- assay_type
 - epitope
 - tcell_receptors
 - value
@@ -392,31 +408,6 @@ class_uri: OBI:1110037
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
 attributes:
-  specimen:
-    name: specimen
-    description: The specimen that was input for an assay
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: OBI:0000293
-    alias: specimen
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - SpecimenCollection
-    - Assay
-    - TCellReceptorEpitopeBindingAssay
-    range: Specimen
-  assay_type:
-    name: assay_type
-    description: The specific type of an assay
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: rdf:type
-    alias: assay_type
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - Assay
-    - TCellReceptorEpitopeBindingAssay
-    range: string
   epitope:
     name: epitope
     description: The epitope being measured
@@ -447,7 +438,6 @@ attributes:
     alias: value
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
-    - Assay
     - TCellReceptorEpitopeBindingAssay
     - Assessment
     range: string
@@ -459,10 +449,35 @@ attributes:
     alias: unit
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
-    - Assay
     - TCellReceptorEpitopeBindingAssay
     - Assessment
     range: string
+  specimen:
+    name: specimen
+    description: The specimen that was input for an assay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: OBI:0000293
+    alias: specimen
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - SpecimenCollection
+    - SpecimenProcessing
+    - Assay
+    range: Specimen
+  specimen_processing:
+    name: specimen_processing
+    description: A series of zero or more specimen processing steps that precede an
+      assay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: BFO:0000051
+    alias: specimen_processing
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - Assay
+    range: SpecimenProcessing
+    multivalued: true
   type:
     name: type
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -474,6 +489,17 @@ attributes:
     - Assay
     - TCellReceptor
     - Epitope
+    range: string
+  assay_type:
+    name: assay_type
+    description: The specific type of an assay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: rdf:type
+    alias: assay_type
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - Assay
     range: string
   target_entity_type:
     name: target_entity_type

@@ -209,10 +209,12 @@
 <div class="mermaid"> classDiagram
     class Assay
     click Assay href "../Assay"
-      NamedThing &lt;|-- Assay
-        click NamedThing href "../NamedThing"
+      PlannedProcess &lt;|-- Assay
+        click PlannedProcess href "../PlannedProcess"
 
 
+      Assay &lt;|-- ReceptorRepertoireSequencingAssay
+        click ReceptorRepertoireSequencingAssay href "../ReceptorRepertoireSequencingAssay"
       Assay &lt;|-- TCellReceptorEpitopeBindingAssay
         click TCellReceptorEpitopeBindingAssay href "../TCellReceptorEpitopeBindingAssay"
 
@@ -234,13 +236,18 @@
     click Specimen href "../Specimen"
 
 
+      Assay : specimen_processing
+
+
+
+
+    Assay --&gt; "*" SpecimenProcessing : specimen_processing
+    click SpecimenProcessing href "../SpecimenProcessing"
+
+
       Assay : target_entity_type
 
       Assay : type
-
-      Assay : unit
-
-      Assay : value
 
 
 </div>
@@ -248,8 +255,12 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
+<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>Assay</strong><ul>
+<li><a href="../ReceptorRepertoireSequencingAssay/">ReceptorRepertoireSequencingAssay</a></li>
 <li><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -275,6 +286,12 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../specimen_processing/">specimen_processing</a></td>
+<td>* <br/> <a href="../SpecimenProcessing/">SpecimenProcessing</a></td>
+<td>A series of zero or more specimen processing steps that precede an assay</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../type/">type</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
@@ -290,18 +307,6 @@
 <td><a href="../target_entity_type/">target_entity_type</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The type of the entity being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The measurement result value</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../unit/">unit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The measurement result value unit</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -385,14 +390,13 @@
 <details>
 <pre><code class="language-yaml">name: Assay
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: PlannedProcess
 slots:
 - specimen
+- specimen_processing
 - type
 - assay_type
 - target_entity_type
-- value
-- unit
 class_uri: OBI:0000070
 
 </code></pre>
@@ -401,7 +405,7 @@ class_uri: OBI:0000070
 <details>
 <pre><code class="language-yaml">name: Assay
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: PlannedProcess
 attributes:
   specimen:
     name: specimen
@@ -413,9 +417,22 @@ attributes:
     owner: Assay
     domain_of:
     - SpecimenCollection
+    - SpecimenProcessing
     - Assay
-    - TCellReceptorEpitopeBindingAssay
     range: Specimen
+  specimen_processing:
+    name: specimen_processing
+    description: A series of zero or more specimen processing steps that precede an
+      assay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: BFO:0000051
+    alias: specimen_processing
+    owner: Assay
+    domain_of:
+    - Assay
+    range: SpecimenProcessing
+    multivalued: true
   type:
     name: type
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -438,7 +455,6 @@ attributes:
     owner: Assay
     domain_of:
     - Assay
-    - TCellReceptorEpitopeBindingAssay
     range: string
   target_entity_type:
     name: target_entity_type
@@ -449,30 +465,6 @@ attributes:
     owner: Assay
     domain_of:
     - Assay
-    - Assessment
-    range: string
-  value:
-    name: value
-    description: The measurement result value
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: value
-    owner: Assay
-    domain_of:
-    - Assay
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    range: string
-  unit:
-    name: unit
-    description: The measurement result value unit
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: unit
-    owner: Assay
-    domain_of:
-    - Assay
-    - TCellReceptorEpitopeBindingAssay
     - Assessment
     range: string
   name:
