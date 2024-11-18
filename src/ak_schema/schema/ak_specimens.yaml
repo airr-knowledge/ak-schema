@@ -24,6 +24,36 @@ classes:
     class_uri: OBI:0000094 # material processing
     slots:
       - specimen
+  CellIsolationProcessing:
+    is_a: SpecimenProcessing
+    class_uri: OBI:00000512 # cell isolation processing
+    slots:
+      - tissue_processing # From ADC CellProcessing
+      - cell_subset 
+      - cell_phenotype
+      - cell_species
+      - single_cell
+      - cell_number
+      - cells_per_reaction
+      - cell_storage
+      - cell_quality
+      - cell_isolation
+      - cell_processing_protocol
+  NucleicAcidProcessing:
+    is_a: SpecimenProcessing
+    class_uri: OBI:00001902 # sample preparation for sequencing assay
+    slots:
+      - template_class # From ADC NucleicAcidProcessing
+      - template_quality
+      - template_amount
+      - template_amount_unit
+  LibrayPreparationProcessing:
+    is_a: SpecimenProcessing
+    class_uri: OBI:00001902 # library preparation
+    slots:
+      - library_generation_method # From ADC NucleicAcidProcessing
+      - library_generation_protocol
+      - library_generation_kit_version
 
   Assay:
     is_a: PlannedProcess
@@ -39,13 +69,6 @@ classes:
     is_a: Assay
     class_uri: OBI:0600047
     slots:
-      - template_class
-      - template_quality
-      - template_amount
-      - template_amount_unit
-      - library_generation_method
-      - library_generation_protocol
-      - library_generation_kit_version
       - pcr_target
       - complete_sequences
       - physical_linkage
@@ -104,6 +127,33 @@ slots:
     # specified input to process
   process: # TODO: enum
     description: The type of specimen collection process that resulted in this specimen
+
+  tissue_processing:
+    description: Enzymatic digestion and/or physical methods used to isolate cells from sample
+  cell_subset:
+    description: Commonly-used designation of isolated cell population
+  cell_phenotype:
+    description: List of cellular markers and their expression levels used to isolate the cell population
+  cell_species:
+    description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should
+ be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in
+ which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for a
+ll lower layers of the schema.
+  single_cell:
+    description: TRUE if single cells were isolated into separate compartments
+  cell_number:
+    description: Total number of cells that went into the experiment
+  cells_per_reaction:
+    description: Number of cells for each biological replicate
+  cell_storage:
+    description: TRUE if cells were cryo-preserved between isolation and further processing
+  cell_quality:
+    description: Relative amount of viable cells after preparation and (if applicable) thawing
+  cell_isolation:
+    description: Description of the procedure used for marker-based isolation or enrich cells
+  cell_processing_protocol:
+    description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nuc
+leic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
 
   specimen:
     description: The specimen that was input for an assay
