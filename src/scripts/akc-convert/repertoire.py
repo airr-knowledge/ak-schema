@@ -344,7 +344,10 @@ class Repertoire(Parser):
                                 # If no value, create an empty list with the value.
                                 if self.verbose():
                                     print('Info:     Creating new array field %s.%s, value = %s'%(airr_link_value, value['akc_field'], value['value']))
-                                akc_object[value['akc_field']] = [value['value']]
+                                if value['akc_is_array']:
+                                    akc_object[value['akc_field']] = value['value']
+                                else:
+                                    print('Warning: Got array when not expecting array for field %s'%(value['akc_field']))
                         else:
                             # If the field exists (it isn't None) and the value is different
                             # print out a warning.
