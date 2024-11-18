@@ -640,7 +640,6 @@ class Parser:
                     # of a field in a single repertoire except in append mode (array).
                     if append:
                         field_dict['value'].append(value)
-                        print('Info: Appending array field %s = %s'%(key, field_dict['value']))
                     else:
                         print('Warning: Field %s already in dictionary, ignoring %s'%(key, value))
                 else:
@@ -649,7 +648,6 @@ class Parser:
                     # with one element, otherwise just assign the value.
                     if append:
                         field_dict['value'] = [value]
-                        print('Info: New array field %s = %s'%(key, field_dict['value']))
                     else:
                         field_dict['value'] = value
 
@@ -764,7 +762,7 @@ class Parser:
                 # So an array of pcr_targets with pcr_target_locus of TRA and TRB 
                 # becomes pcr_target_locus ['TRA','TRB']
                 if self.verbose():
-                    print("Info: Found a PCRTarget array.")
+                    print("Info: Found a PCRTarget array, flatenning.")
                 for element in value:
                     for sub_key, sub_value in element.items():
                         self.akc_flatten(sub_key, sub_value, dictionary,
