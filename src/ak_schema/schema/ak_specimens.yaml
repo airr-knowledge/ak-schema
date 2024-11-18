@@ -49,7 +49,7 @@ classes:
       - template_amount_unit
   LibrayPreparationProcessing:
     is_a: SpecimenProcessing
-    class_uri: OBI:00001902 # library preparation
+    class_uri: OBI:00000711 # library preparation
     slots:
       - library_generation_method # From ADC NucleicAcidProcessing
       - library_generation_protocol
