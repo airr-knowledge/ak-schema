@@ -7,6 +7,7 @@
 # fetch it from Google Sheets:
 #
 #     curl -L -o examples/iedb/tcell.tsv "https://docs.google.com/spreadsheets/d/1oQYrlF7yxG_rjH_fNzMCK8bJMtcY6Xajhr9qGE6VYEk/export?format=tsv&gid=883146061"
+#     curl -L -o examples/iedb/tcr.tsv "https://docs.google.com/spreadsheets/d/1oQYrlF7yxG_rjH_fNzMCK8bJMtcY6Xajhr9qGE6VYEk/export?format=tsv&gid=2131098483"
 
 import dataclasses
 import click
@@ -20,6 +21,7 @@ prefixes = {
     'iedb_reference': 'http://www.iedb.org/reference/',
     'iedb_epitope': 'http://www.iedb.org/epitope/',
     'iedb_assay': 'http://www.iedb.org/assay/',
+    'iedb_receptor': 'http://www.iedb.org/receptor/',
     'OBI': 'http://purl.obolibrary.org/obo/OBI_',
 }
 
@@ -40,17 +42,12 @@ def id(input):
     return input
 
 
-@click.command()
-@click.argument('input')
-@click.argument('output')
-def convert(input, output):
-    """Convert an input TCell TSV file to YAML."""
-
-    # First read the TCell table into a list
-    # of two-level dictionaries
-    # using the first and second header rows.
+def read_double_header(path):
+    """Read a TSV file with two header rows,
+    and return a list of dictionaries:
+    row[header1][header2] = value"""
     rows = []
-    with open(input) as t:
+    with open(path) as t:
         rs = csv.reader(t, delimiter='\t')
         header1 = list(next(rs))
         header2 = list(next(rs))
@@ -64,24 +61,77 @@ def convert(input, output):
                     value = None
                 row[header1[c]][header2[c]] = value
             rows.append(row)
+    return rows
 
-    ref_id = id(rows[0]['Reference']['IEDB IRI'])
+chain_types = {
+    'alpha': 'TRA',
+    'beta': 'TRB',
+    'gamma': 'TRG',
+    'delta': 'TRD',
+}
+
+def make_chain(row, chain_name):
+    '''Given a row dictionary and a chain name ("Chain 1" or "Chain 2"),
+    return a new Chain object.
+    Prefer Calculated columns to Curated columns.'''
+    tcr_curie = curie(row['Receptor']['Group IRI'])
+    chain = row[chain_name]
+    junction_aa = None
+    cdr3 = chain['CDR3 Calculated'] or chain['CDR3 Curated']
+    if cdr3 and cdr3.startswith('C') and (cdr3.endswith('F') or cdr3.endswith('W')):
+        junction_aa = cdr3
+    return Chain(
+        tcr_curie + '-' + chain['Type'],
+        sequence=chain['Nucleotide Sequence'],
+        sequence_aa=chain['Protein Sequence'],
+        chain_type=chain_types[chain['Type']],
+        v_call=chain['Calculated V Gene'] or chain['Curated V Gene'],
+        d_call=chain['Calculated D Gene'] or chain['Curated D Gene'],
+        j_call=chain['Calculated J Gene'] or chain['Curated J Gene'],
+        # c_call='',
+        junction_aa=junction_aa,
+        cdr1_aa=chain['CDR1 Calculated'] or chain['CDR1 Curated'],
+        cdr2_aa=chain['CDR2 Calculated'] or chain['CDR2 Curated'],
+        cdr3_aa=chain['CDR3 Calculated'] or chain['CDR3 Curated'],
+        cdr1_start=chain['CDR1 Start Calculated'] or chain['CDR1 Start Curated'],
+        cdr1_end=chain['CDR1 End Calculated'] or chain['CDR1 End Curated'],
+        cdr2_start=chain['CDR2 Start Calculated'] or chain['CDR2 Start Curated'],
+        cdr2_end=chain['CDR2 End Calculated'] or chain['CDR2 End Curated'],
+        cdr3_start=chain['CDR3 Start Calculated'] or chain['CDR3 Start Curated'],
+        cdr3_end=chain['CDR3 End Calculated'] or chain['CDR3 End Curated']
+    )
+
+
+@click.command()
+@click.argument('tcell_path')
+@click.argument('tcr_path')
+@click.argument('yaml_path')
+def convert(tcell_path, tcr_path, yaml_path):
+    """Convert an input TCell and TCR TSV file to YAML."""
+
+    # First read the TCell table into a list
+    # of two-level dictionaries
+    # using the first and second header rows.
+    tcell_rows = read_double_header(tcell_path)
+    tcr_rows = read_double_header(tcr_path)
+
+    ref_id = id(tcell_rows[0]['Reference']['IEDB IRI'])
 
     investigation = Investigation(
         f'example:investigation_{ref_id}',
-        name=row['Reference']['Title'],
+        name=tcell_rows[0]['Reference']['Title'],
         description=None
     )
     reference = Reference(
         f'example:reference_{ref_id}',
-        sources=[f"PMID:{rows[0]['Reference']['PMID']}"],
+        sources=[f"PMID:{tcell_rows[0]['Reference']['PMID']}"],
         investigations=[investigation.akc_id],
-        title=rows[0]['Reference']['Title'],
-        authors=rows[0]['Reference']['Authors'].split('; '),
+        title=tcell_rows[0]['Reference']['Title'],
+        authors=tcell_rows[0]['Reference']['Authors'].split('; '),
         issue=None,
-        journal=rows[0]['Reference']['Journal'],
+        journal=tcell_rows[0]['Reference']['Journal'],
         month=None,
-        year=rows[0]['Reference']['Date'],
+        year=tcell_rows[0]['Reference']['Date'],
         pages=None,
     )
     container = AIRRKnowledgeCommons(
@@ -98,9 +148,12 @@ def convert(input, output):
     # 0 assessments
     # 1 specimen
     # 1 assay
+    # 1 epitope
+    # 1+ t cell receptors
+    # 2 chains per TCR
     # 1 dataset
     # 1 conclusion
-    for row in rows:
+    for row in tcell_rows:
         assay_id = row['Assay ID']['IEDB IRI'].split('/')[-1]
         arm = StudyArm(
             f'example:arm-{assay_id}',
@@ -173,13 +226,53 @@ def convert(input, output):
             tissue=row['Effector Cell']['Source Tissue'],
             process=None
         )
-        assay = Assay(
+        epitope = PeptidicEpitope(
+            curie(row['Epitope']['IEDB IRI']),
+            sequence_aa=row['Epitope']['Name'],
+            source_protein=curie(row['Epitope']['Molecule Parent IRI']),
+            source_organism=curie(row['Epitope']['Source Organism IRI'])
+        )
+        # For each row in the TCR table that matches this assay ID, generate:
+        # 2 chains
+        # 1 receptor: AlphaBetaTCR or GammaDeltaTCR
+        chains = []
+        tcell_receptors = []
+        for tcr_row in tcr_rows:
+            if tcr_row['Assay']['IEDB IDs'] != assay_id:
+                continue
+            tcr_curie = curie(tcr_row['Receptor']['Group IRI'])
+            chain_1 = None
+            chain_2 = None
+            if tcr_row['Chain 1']['Type']:
+                chain_1 = make_chain(tcr_row, 'Chain 1')
+                chains.append(chain_1)
+            if tcr_row['Chain 2']['Type']:
+                chain_2 = make_chain(tcr_row, 'Chain 2')
+                chains.append(chain_2)
+            if tcr_row['Receptor']['Type'] == 'alphabeta':
+                tcr = AlphaBetaTCR(
+                    tcr_curie,
+                    TRA_chain=chain_1.akc_id if chain_1 else None,
+                    TRB_chain=chain_2.akc_id if chain_2 else None,
+                )
+                tcell_receptors.append(tcr)
+            elif tcr_row['Receptor']['Type'] == 'gammadelta':
+                tcr = GammaDeltaTCR(
+                    tcr_curie,
+                    TRG_chain=chain_1.akc_id if chain_1 else None,
+                    TRD_chain=chain_2.akc_id if chain_2 else None,
+                )
+                tcell_receptors.append(tcr)
+            else:
+                raise Exception(f"Unknown TCR type {tcr_row['Receptor']['Type']}")
+        assay = TCellReceptorEpitopeBindingAssay(
             f'example:assay-{assay_id}',
             name=f'assay {assay_id}',
             description=f'assay {assay_id} has specified input specimen 1',
             specimen=specimen.akc_id,
             assay_type=curie(row['Assay']['IRI']), # TODO: use label
-            target_entity_type=row['Assay']['Response measured'],
+            epitope=epitope.akc_id,
+            tcell_receptors=[t.akc_id for t in tcell_receptors],
             value=row['Assay']['Qualitative Measurement'],
             unit=None
         )
@@ -214,10 +307,15 @@ def convert(input, output):
         container.assays[assay.akc_id] = assay
         container.datasets[dataset.akc_id] = dataset
         container.conclusions[conclusion.akc_id] = conclusion
-
+        container.epitopes[epitope.akc_id] = epitope
+        for chain in chains:
+            container.chains[chain.akc_id] = chain
+        for tcell_receptor in tcell_receptors:
+            container.tcell_receptors[tcell_receptor.akc_id] = tcell_receptor
+            
         break
 
-    yaml_dumper.dump(container, output)
+    yaml_dumper.dump(container, yaml_path)
 
     # Write everything to TSV
     container_fields = [x.name for x in dataclasses.fields(container)]

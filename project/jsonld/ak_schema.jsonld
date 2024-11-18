@@ -105,6 +105,22 @@
       "prefix_reference": "https://ontology.iedb.org/ontology/ONTIE_"
     },
     {
+      "prefix_prefix": "iedb_reference",
+      "prefix_reference": "http://www.iedb.org/reference/"
+    },
+    {
+      "prefix_prefix": "iedb_epitope",
+      "prefix_reference": "http://www.iedb.org/epitope/"
+    },
+    {
+      "prefix_prefix": "iedb_assay",
+      "prefix_reference": "http://www.iedb.org/assay/"
+    },
+    {
+      "prefix_prefix": "iedb_receptor",
+      "prefix_reference": "http://www.iedb.org/receptor/"
+    },
+    {
       "prefix_prefix": "example",
       "prefix_reference": "https://example.org/"
     },
@@ -1707,6 +1723,21 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/type",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/type",
+      "designates_type": true,
+      "owner": "Epitope",
+      "domain_of": [
+        "Assay",
+        "TCellReceptor",
+        "Epitope"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "specimen_type",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_type",
       "description": "The type of this specimen",
@@ -1760,9 +1791,27 @@
       "owner": "Assay",
       "domain_of": [
         "SpecimenCollection",
+        "SpecimenProcessing",
         "Assay"
       ],
       "range": "Specimen",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "specimen_processing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_processing",
+      "description": "A series of zero or more specimen processing steps that precede an assay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/BFO_0000051"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/BFO_0000051",
+      "owner": "Assay",
+      "domain_of": [
+        "Assay"
+      ],
+      "range": "SpecimenProcessing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1796,6 +1845,164 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "template_class",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_class",
+      "description": "The class of nucleic acid that was used as primary starting material for the following procedures",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_class",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "template_quality",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_quality",
+      "description": "Description and results of the quality control performed on the template material",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_quality",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "template_amount",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_amount",
+      "description": "Amount of template that went into the process",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_amount",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "template_amount_unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_amount_unit",
+      "description": "Unit of template amount",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_amount_unit",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "library_generation_method",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_method",
+      "description": "Generic type of library generation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_method",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "library_generation_protocol",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_protocol",
+      "description": "Description of processes applied to substrate to obtain a library that is ready for sequencing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_protocol",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "library_generation_kit_version",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_kit_version",
+      "description": "When using a library generation protocol from a commercial provider, provide the protocol version number",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_kit_version",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pcr_target",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/pcr_target",
+      "description": "Target locus for PCR",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/pcr_target",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "complete_sequences",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/complete_sequences",
+      "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/complete_sequences",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "physical_linkage",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/physical_linkage",
+      "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/physical_linkage",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "epitope",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
+      "description": "The epitope being measured",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
+      "owner": "TCellReceptorEpitopeBindingAssay",
+      "domain_of": [
+        "TCellReceptorEpitopeBindingAssay"
+      ],
+      "range": "Epitope",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tcell_receptors",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptors",
+      "description": "The T cell receptors being measured",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptors",
+      "owner": "TCellReceptorEpitopeBindingAssay",
+      "domain_of": [
+        "TCellReceptorEpitopeBindingAssay"
+      ],
+      "range": "TCellReceptor",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "value",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/value",
       "description": "The measurement result value",
@@ -1803,7 +2010,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/value",
       "owner": "Assessment",
       "domain_of": [
-        "Assay",
+        "TCellReceptorEpitopeBindingAssay",
         "Assessment"
       ],
       "range": "string",
@@ -1817,7 +2024,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/unit",
       "owner": "Assessment",
       "domain_of": [
-        "Assay",
+        "TCellReceptorEpitopeBindingAssay",
         "Assessment"
       ],
       "range": "string",
@@ -1957,9 +2164,10 @@
       "description": "Amino acid sequence.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_aa",
-      "owner": "Chain",
+      "owner": "PeptidicEpitope",
       "domain_of": [
-        "Chain"
+        "Chain",
+        "PeptidicEpitope"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -2260,6 +2468,32 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "source_protein",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_protein",
+      "description": "The protein that this epitope comes from",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_protein",
+      "owner": "PeptidicEpitope",
+      "domain_of": [
+        "PeptidicEpitope"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "source_organism",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
+      "description": "The organism that the source protein comes from",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
+      "owner": "PeptidicEpitope",
+      "domain_of": [
+        "PeptidicEpitope"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "chain_domain",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/chain_domain",
       "description": "Immune receptor chain element in binary relation domain",
@@ -2482,6 +2716,48 @@
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/chains",
+      "alias": "chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Chain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__tcell_receptors",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptors",
+      "alias": "tcell_receptors",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "TCellReceptor",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__epitopes",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitopes",
+      "alias": "epitopes",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Epitope",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -2577,7 +2853,10 @@
         "aIRRKnowledgeCommons__specimen_collections",
         "aIRRKnowledgeCommons__assays",
         "aIRRKnowledgeCommons__datasets",
-        "aIRRKnowledgeCommons__conclusions"
+        "aIRRKnowledgeCommons__conclusions",
+        "aIRRKnowledgeCommons__chains",
+        "aIRRKnowledgeCommons__tcell_receptors",
+        "aIRRKnowledgeCommons__epitopes"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2681,6 +2960,30 @@
           "name": "conclusions",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "Conclusion",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Chain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "tcell_receptors",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "TCellReceptor",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "epitopes",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Epitope",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -2903,25 +3206,101 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "SpecimenProcessing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SpecimenProcessing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0000094"
+      ],
+      "is_a": "PlannedProcess",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000094",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Assay",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Assay",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "OBI:0000070"
       ],
-      "is_a": "NamedThing",
+      "is_a": "PlannedProcess",
       "slots": [
         "akc_id",
         "name",
         "description",
         "specimen",
+        "specimen_processing",
+        "type",
+        "assay_type",
+        "target_entity_type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000070",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReceptorRepertoireSequencingAssay",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorRepertoireSequencingAssay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0600047"
+      ],
+      "is_a": "Assay",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen",
+        "specimen_processing",
+        "type",
         "assay_type",
         "target_entity_type",
+        "template_class",
+        "template_quality",
+        "template_amount",
+        "template_amount_unit",
+        "library_generation_method",
+        "library_generation_protocol",
+        "library_generation_kit_version",
+        "pcr_target",
+        "complete_sequences",
+        "physical_linkage"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0600047",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TCellReceptorEpitopeBindingAssay",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TCellReceptorEpitopeBindingAssay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:1110037"
+      ],
+      "is_a": "Assay",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen",
+        "specimen_processing",
+        "type",
+        "assay_type",
+        "target_entity_type",
+        "epitope",
+        "tcell_receptors",
         "value",
         "unit"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000070",
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_1110037",
       "@type": "ClassDefinition"
     },
     {
@@ -2974,7 +3353,7 @@
       "mappings": [
         "OBI:0002441"
       ],
-      "is_a": "NamedThing",
+      "is_a": "PlannedProcess",
       "slots": [
         "akc_id",
         "name",
@@ -3082,7 +3461,8 @@
       "slots": [
         "akc_id",
         "name",
-        "description"
+        "description",
+        "type"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042101",
@@ -3100,6 +3480,7 @@
         "akc_id",
         "name",
         "description",
+        "type",
         "TRA_chain",
         "TRB_chain"
       ],
@@ -3119,6 +3500,7 @@
         "akc_id",
         "name",
         "description",
+        "type",
         "TRG_chain",
         "TRD_chain"
       ],
@@ -3141,6 +3523,39 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Epitope",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Epitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "NamedThing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "type"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/Epitope",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PeptidicEpitope",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PeptidicEpitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "Epitope",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "type",
+        "sequence_aa",
+        "source_protein",
+        "source_organism"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PeptidicEpitope",
       "@type": "ClassDefinition"
     },
     {
@@ -3277,9 +3692,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-10-09T17:20:19",
-  "source_file_size": 49132,
-  "generation_date": "2024-10-09T17:20:21",
+  "source_file_date": "2024-11-13T21:26:21",
+  "source_file_size": 55991,
+  "generation_date": "2024-11-13T21:26:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

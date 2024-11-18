@@ -16,66 +16,109 @@ class Repertoire(Parser):
     def __init__(self, verbose, airr_map):
         Parser.__init__(self, verbose, airr_map)
 
-    # Hide the impementation of AKC data model from the other classes. 
-    # repertoire_dict: Keyed on the AIRR field name, contains three attributes:
-    #     value: the value of the AIRR field
-    #     akc_field: the field name for the field in the AKC data model
-    #     akc_class: the AKC class/object the field belongs to in the AKC data model
-    def generateAKCRepertoire(self, repertoire_dict, akc_class_list):
-        
-        # Create a dictionary that contains the AKC class objects, keyed on
-        # AKC class name. We iterate over the list of class names provided.
-        akc_class_dict = dict()
-        for akc_class in akc_class_list:
-            # Our classes are in the global scope, so we can instantiate
-            # a class using the globals function with the class name as key.
-            akc_class_dict[akc_class] = globals()[akc_class]('')
+        # Map that tells how to build the name of a class instance based
+        # on the classes and fields that it is composed of.
+        # TODO: This should be in a config file and not hardcoded here
+        self.class_name_map = {
+            "Investigation" : { "classes" : ["Investigation"], "fields" : ["study_id"] },
+            "Reference" : { "classes" : ["Reference"], "fields" : ["study_id"] },
+            "StudyArm" : { "classes" : ["StudyArm"], "fields" : ["study_group_description"] },
+            "Participant" : { "classes" : ["Participant"], "fields" : ["subject_id"] },
+            "Specimen" : { "classes" : ["Specimen"], "fields" : ["subject_id", "sample_id"] },
+            "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
+            "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id"] },
+            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id"] }
+        }
+        # Classes that perform a special link function between other classes
+        # TODO: This should be in a config file and not harcoded here.
+        self.link_classes = ['LifeEvent', 'StudyEvent']
 
-        # For each class, we traverse each field to see if it belongs in
-        # the class, if so we set the field in the class to be the
-        # appropriate value.
-        for class_key, class_value in akc_class_dict.items():
-            print('Info: Processing class %s'%(class_key))
-            # Iterate over the fields in the repertoire
-            for key, value in repertoire_dict.items():
-                # If the field has an akc_class and it is the current
-                # class that we are processing, then set the field (value['akc_field'])
-                # in the class (akc_class_dict[class_key]) to be the correct
-                # value (value['value'])
-                if 'akc_class' in value and value['akc_class'] == class_key:
-                    akc_class_dict[class_key][value['akc_field']] = value['value']
-        #print(yaml_dumper.dumps(akc_class_dict))
-        print(json_dumper.dumps(akc_class_dict))
-
-        return True
-
-    def getAIRRUniqueLink(self, repertoire_dict, airr_field, field_dict, akc_class):
-        # Get the link/key fields for the AKC classes.
-        # TODO: This should be in the config file and not hardcoded here
+    def getAIRRUniqueLink(self, repertoire_dict, link_class, akc_class):
+        # Get the link name for a class instance. Default to None
         airr_link_value = None
-        if akc_class == 'Investigation':
-            if 'study_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['study_id']['value']
-        elif akc_class == 'Reference':
-            if 'study_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['study_id']['value']
-        elif akc_class == 'Participant':
-            if 'subject_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['subject_id']['value']
-        elif akc_class == 'Specimen':
-            if 'sample_id' in repertoire_dict and 'subject_id' in repertoire_dict:
-                airr_link_value = repertoire_dict['subject_id']['value'] + '_' + repertoire_dict['sample_id']['value']
-        elif akc_class == 'LifeEvent':
-            if 'subject_id' in repertoire_dict:
-                airr_link_value = 'LifeEvent_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value']
-        elif akc_class == 'ImmuneExposure':
-            if 'sample_id' in repertoire_dict:
-                airr_link_value = 'ImmuneExposure_' + field_dict['airr_subclass'] + '_' + repertoire_dict['subject_id']['value']
-            
-        if airr_link_value == None:
+        # Link classes are special as they play an intermediate
+        # role that link two other classes. As such, there instance
+        # names need to have both the source and destination classes
+        # in their names. 
+        # print('getAIRRUniqueLink - akc_class = %s, link_class = %s'%(akc_class, link_class))
+        if akc_class in self.link_classes:
+            airr_link_value = akc_class + '_' + link_class
+        else:
+            airr_link_value = akc_class 
+
+        # If the class is in the class map, process it, else generate a warning.
+        if akc_class in self.class_name_map:
+            # Get the fields that this class needs to make it unique
+            class_name_fields = self.class_name_map[akc_class]['fields']
+            # Iterate over the fields and add them to the instance name
+            for field in class_name_fields:
+                # print('getAIRRUniqueLink - adding field %s = %s'%(field, repertoire_dict[field]['value']))
+                if field in repertoire_dict:
+                    airr_link_value = airr_link_value + '_' + repertoire_dict[field]['value']
+                else:
+                    print('Warning: mapped field %s not in AIRR repertoire'%(field))
+        else:
             print('Warning: Could not link class %s, skipping'%(akc_class))
 
+        # print('getAIRRUniqueLink - %s'%(airr_link_value))
         return airr_link_value
+
+    def getAKCUniqueLink(self, akc_class_instance, akc_class, link_class):
+        # Get the link name for a class instance. Default to None
+        airr_link_value = None
+        # Link classes are special as they play an intermediate
+        # role that link two other classes. As such, there instance
+        # names need to have both the source and destination classes
+        # in their names. 
+        #print('getAKCUniqueLink - akc_class = %s, link_class = %s'%(akc_class, link_class))
+        if akc_class in self.link_classes:
+            airr_link_value = akc_class + '_' + link_class
+        else:
+            airr_link_value = akc_class 
+
+        # If the class is in the class map, process it, else generate a warning.
+        if akc_class in self.class_name_map:
+            # Get the fields that this class needs to make it unique
+            class_name_fields = self.class_name_map[akc_class]['fields']
+            # Iterate over the fields and add them to the instance name
+            for field in class_name_fields:
+                #print('getAKCUniqueLink - adding field %s = %s'%(field, akc_class_instance['adc_' + field]))
+                if 'adc_' + field in akc_class_instance:
+                    airr_link_value = airr_link_value + '_' + akc_class_instance['adc_' + field]
+                else:
+                    print('Warning: mapped field %s not in AKC class instance.'%(field))
+        else:
+            print('Warning: Could not link class %s, skipping'%(akc_class))
+
+        #print('getAKCUniqueLink - %s'%(airr_link_value))
+        return airr_link_value
+
+    def addADCData(self, akc_object, akc_class, repertoire_dict):
+
+        class_adc_map = {
+                "Investigation" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
+                "Reference" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
+                "StudyArm" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'study_group_description'],
+                "Participant" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id','subject_id', 'sample_id', 'study_group_description'],
+                "LifeEvent" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id']
+                }
+        #print('addADCData: akc_class = %s'%(akc_class))
+        if akc_class in class_adc_map:
+            fields = class_adc_map[akc_class]
+            #print('addADCData: fields = %s'%(fields))
+            for field in fields:
+                if field in repertoire_dict:
+                    akc_object['adc_' + field] = repertoire_dict[field]['value']
+                    #print('addADCData: adding %s = %s'%('adc_' + field, repertoire_dict[field]['value']))
+                else:
+                    print('Warning: Could not find field %s in repertoire'%(field))
+        else:
+            print('Warning: Could not find class %s in ADC class map'%(akc_class))
+
+        return akc_object
 
     # Given a flattented repertoire, add it to the investigation dict as required.
     # If the repertoire doesn't belong to the investigation, it is ignored. This
@@ -161,72 +204,55 @@ class Repertoire(Parser):
     #}
     def generateAKCInvestigation(self, repertoire_dict, investigation_dict, akc_class_list):
         
-        # Check to make sure we have an AIRR Study ID.
+        # Keep track of instances where we need to generate explicit "link"
+        # classes for some of the more complex objects in the AKC data model.
+        # TODO: This should be in a config file, not hardcoded here.
+        akc_link_classes = {
+                'ImmuneExposure': {'link_class' : 'LifeEvent', 'link_target':'Particpant'},
+                'Specimen': {'link_class' : 'LifeEvent', 'link_target':'Particpant'},
+                'Participant': {'link_class' : 'LifeEvent', 'link_target':'Particpant'}
+                }
+
         # TODO: This should be in the config file and not hardcoded here
         airr_study_field = 'study_id'
+        # Check to make sure we have an AIRR Study ID.
         if not airr_study_field in repertoire_dict:
             print('ERROR: Could not find AIRR study field %s in Repertoire'%(airr_study_field))
             return investigation_dict
-        # Get the repertoirem study, subject, and sample ID fields from the AIRR world
-        # TODO: This should be in the config file and not hardcoded here
-        if 'repertoire_id' in repertoire_dict:
-            repertoire_id = repertoire_dict['repertoire_id']['value']
-        else:
-            print('ERROR: Could not find repertoire_id field, skipping')
-            return investigation_dict
-
-        if 'sample_processing_id' in repertoire_dict:
-            sample_processing_id = repertoire_dict['sample_processing_id']['value']
-        else:
-            print('Warning: Could not find sample_processing_id field')
-            sample_processing_id = None
-
-        if 'data_processing_id' in repertoire_dict:
-            data_processing_id = repertoire_dict['data_processing_id']['value']
-        else:
-            print('Warning: Could not find data_processing_id field')
-            data_processing_id = None
-
-        if 'study_id' in repertoire_dict:
-            study_id = repertoire_dict['study_id']['value']
-        else:
-            print('ERROR: Could not find study_id field, skipping')
-            return investigation_dict
-
-        if 'sample_id' in repertoire_dict:
-            sample_id = repertoire_dict['sample_id']['value']
-        else:
-            print('ERROR: Could not find sample_id field, skipping')
-            return investigation_dict
-
-        if 'subject_id' in repertoire_dict:
-            subject_id = repertoire_dict['subject_id']['value']
-        else:
-            print('ERROR: Could not find subject_id field, skipping')
-            return investigation_dict
-
 
         # Check to see if the Investigation with that ID is in the dictionary.
-        if study_id in investigation_dict:
+        if airr_study_field in investigation_dict:
             # If it does, we need to keep track of it
-            investigation = investigation_dict[study_id]
+            investigation = investigation_dict[airr_study_field]
         else:
             # If it doesn't exist we need to create a dict for this study.
             investigation = dict()
             # For each class type, create a keyed array of class instances,
-            # an empty array for now.
+            # an empty object for now.
             for akc_class in akc_class_list:
                 investigation[akc_class] = dict()
 
             # Record the investigation for later use.
-            investigation_dict[study_id] = investigation
+            investigation_dict[airr_study_field] = investigation
+
+        # Get the column of values from the akc_type column. We only want the
+        # Repertoire related fields.
+        type_column = self.getAIRRMap().getIRAKCMapColumn('akc_form')
+        # Get a boolean column that flags columns of interest. Exclude nulls.
+        # We want only those rows where the type_column is "Class" as this
+        # indicates that the field is a reference field to another class of object
+        fields_of_interest = np.where(type_column == 'Class',True, False)
+        # Afer the following akc_class_fields contains N columns (e.g. iReceptor, AIRR)
+        # that contain the AKC class fields. Note these are the fields tagged with
+        # AKC_Metadata in the ir_class column. This does not iterate over the normal
+        # AIRR mapping columns.
+        akc_ref_fields = self.getAIRRMap().getIRAKCRows(fields_of_interest)
 
         # Iterate over the AKC classes and build the objects we need
         for akc_class in akc_class_list:
 
             # Get the dictionary for this class
             akc_dict = investigation[akc_class]
-
 
             # Iterate over the Repertoire and process any fields that are of
             # the current AKC class.
@@ -237,16 +263,64 @@ class Repertoire(Parser):
                 if 'akc_class' in value and value['akc_class'] == akc_class:
                     # Get the value that identifies an object from this repertoire
                     # of this class type and for the given key and value
-                    airr_link_value = self.getAIRRUniqueLink(repertoire_dict, key,
-                                                             value, akc_class)
+                    class_map = {'Subject':'Participant','SampleProcessing':'Specimen','Diagnosis':'ImmuneExposure'}
+                    class_type = ''
+                    if value['airr_subclass'] in class_map:
+                        class_type = class_map[value['airr_subclass']]
+                    airr_link_value = self.getAIRRUniqueLink(repertoire_dict, class_type, akc_class)
                 
                     # Check to see if we have seen instance labeled with airr_link_value
                     # before. If not, create a new object with the link value as the label.
                     if airr_link_value in akc_dict:
+                        #if self.verbose():
+                        #    print('Info: Found instance %s'%(airr_link_value))
                         akc_object = akc_dict[airr_link_value]
                     else:
+                        if self.verbose():
+                            print('Info: Create instance %s, field = %s, value = %s, class = %s, type = %s, airr class = %s'%(airr_link_value, value['akc_field'],value['value'], akc_class, value['akc_type'],value['airr_subclass']))
                         akc_object = globals()[akc_class]('')
+                        # Generate a unique ID for this object, add the link tag and related
+                        # other info we might need to link objects together later.
                         akc_object['akc_id'] = str(uuid.uuid4())
+                        akc_object['adc_link_tag'] = airr_link_value
+                        akc_object = self.addADCData(akc_object, akc_class, repertoire_dict)
+                        # Some classes (akc_link_classes) require the creation of other classes
+                        # when they are created. This is because they are not in the AIRR data
+                        # model directly. In this case they will not have any fields associated
+                        # with them and therefore will not be generated. A common example is a
+                        # AIRR Diagnosis, which doesn't have any time information. As such, a 
+                        # LifeEvent won't be created, but this is needed to link the AKC
+                        # ImmuneExposure to a Participant.
+                        #
+                        # We therefore need to create these classes explicitly from te akc_link_classes
+                        # dictionary.
+                        #
+                        # First we check to see if the current class is such a class.
+                        if akc_class in akc_link_classes:
+                            # If so get the info required to create the class.
+                            link_class_info = akc_link_classes[akc_class]
+                            link_class = link_class_info['link_class']
+                            # Generate the unique link ID for the class instance
+                            class_link_value = self.getAIRRUniqueLink(repertoire_dict, akc_class, link_class)
+                            # Get the dictionary of objects of the type of class we are creating. This is often
+                            # a LifeEvent as it is these objects that often fall into this category.
+                            class_link_dict = investigation[link_class]
+                            # Check to see if the instance already exists. If so we don't need to do anything.
+                            # If it doesn't exist, we just create an empty one.
+                            if not class_link_value in class_link_dict:
+                                if self.verbose():
+                                    print('Info: Create instance %s (link Class), link class = %s, target_class = %s'%(class_link_value, link_class, link_class_info['link_target']))
+                                # Create the class instance required.
+                                akc_link_object = globals()[link_class]('')
+                                # Generate a unique ID for this object, add the link tag and related
+                                # other info we might need to link objects together later.
+                                akc_link_object['akc_id'] = str(uuid.uuid4())
+                                akc_link_object['adc_link_tag'] = class_link_value
+                                akc_link_object = self.addADCData(akc_link_object, link_class, repertoire_dict)
+                                # Store the new object in the class dictionary
+                                class_link_dict[class_link_value] = akc_link_object
+                                # Update the class dictionary in the investigation.
+                                investigation[link_class] = class_link_dict
 
                     # Check to see if the field exists. If so then check the
                     # value. They should be the same. If not generate an error message.
@@ -257,7 +331,7 @@ class Repertoire(Parser):
                     # subject fields (age, subject id, sex, etc) should be the same for
                     # the same subject across all repertoires. This is performing a 
                     # sanity check on the ADC data and generates a warning when data
-                    # differes when it presumably should not.
+                    # differs when it presumably should not.
                     if value['akc_field'] in akc_object: 
                         # The field already exists in the object, get the existing value.
                         current_value = akc_object[value['akc_field']]
@@ -269,64 +343,59 @@ class Repertoire(Parser):
                             else:
                                 # If no value, create an empty list with the value.
                                 if self.verbose():
-                                    print('Info: Creating new field %s.%s, value = %s'%(akc_class,value['akc_field'],value['value']))
-                                akc_object[value['akc_field']] = [value['value']]
+                                    print('Info:     Creating new array field %s.%s, value = %s'%(airr_link_value, value['akc_field'], value['value']))
+                                if value['akc_is_array']:
+                                    akc_object[value['akc_field']] = value['value']
+                                else:
+                                    print('Warning: Got array when not expecting array for field %s'%(value['akc_field']))
                         else:
                             # If the field exists (it isn't None) and the value is different
                             # print out a warning.
                             if current_value != None:
                                 if current_value != value['value']:
-                                    print('Warning: Value for "%s" field (%s=%s) exists and is not the same (%s vs %s)'%(value['akc_field'],akc_class,airr_link_value,akc_object[value['akc_field']],value['value']))
+                                    print('Warning: Value for "%s.%s" field exists and is not the same (%s vs %s)'%(airr_link_value, value['akc_field'], akc_object[value['akc_field']], value['value']))
                                 else:
                                     # In this case the field already exists and we have
                                     # confirmed that the field hasn't changed as it should.
                                     if self.verbose():
-                                        print('Info: Field %s matches'%(value['akc_field']))
+                                        print('Info:     Field %s.%s matches (%s)'%(airr_link_value, value['akc_field'], current_value))
                             else:
                                 # If there is no value, add the value to the object.
                                 if self.verbose():
-                                    print('Info: Creating new field %s.%s, value = %s'%(akc_class,value['akc_field'],value['value']))
+                                    print('Info:     Creating new field %s.%s, value = %s'%(airr_link_value, value['akc_field'], value['value']))
                                 akc_object[value['akc_field']] = value['value']
+                                #print(akc_object[value['akc_field']])
+                                #print(json_dumper.dumps(akc_object))
 
-                    # Add a bunch of extra fields to track the key ADC fields that 
-                    # might be needed later to link AKC objects together.
-                    if akc_class == 'Investigation':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                    if akc_class == 'Reference':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                    if akc_class == 'Participant':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                    if akc_class == 'LifeEvent':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                        akc_object['adc_sample_id'] = sample_id
-                    if akc_class == 'ImmuneExposure':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                        akc_object['adc_sample_id'] = sample_id
-                    if akc_class == 'Specimen':
-                        akc_object['adc_repertoire_id'] = repertoire_id
-                        akc_object['adc_sample_processing_id'] = sample_processing_id
-                        akc_object['adc_data_processing_id'] = data_processing_id
-                        akc_object['adc_study_id'] = study_id
-                        akc_object['adc_subject_id'] = subject_id
-                        akc_object['adc_sample_id'] = sample_id
+
+                    # If the current field is a "link field" (the akc_form column is of type Class)
+                    # we need to check to see if the referenced Class object has been created yet.
+                    # This is necessary since some object might not have any fields so these instances
+                    # would not be created.
+                    if value['akc_form'] == "Class": 
+                        # Get the link value that identifies this object.
+                        class_type = value['akc_type']
+                        class_link_value = self.getAIRRUniqueLink(repertoire_dict, akc_class, value['akc_type'])
+                        # Get the dictionary that holds the objecst of this class.
+                        akc_class_dict = investigation[value['akc_type']]
+                        # Check to see if we have seen instance labeled with class_link_value
+                        # before. If not, create a new object with the link value as the label.
+                        if class_link_value in akc_class_dict:
+                            akc_class_object = akc_class_dict[class_link_value]
+                        else:
+                            if self.verbose():
+                                print('Info: Create instance %s (empty Class), field = %s, value = %s, type = %s'%(class_link_value, value['akc_field'],value['value'], value['akc_type']))
+                            # Create the object, set its ID, add its link tag
+                            akc_class_object = globals()[akc_class]('')
+                            akc_class_object['akc_id'] = str(uuid.uuid4())
+                            akc_class_object['adc_link_tag'] = class_link_value
+                            # Add approrpiate extra ADC related data for this type of object.
+                            akc_class_object = self.addADCData(akc_class_object, akc_class, repertoire_dict)
+                            # Add the object to the dictionary.
+                            akc_class_dict[class_link_value] = akc_class_object
+
+                        
+                    # Add the object the dictionary
                     akc_dict[airr_link_value] = akc_object
 
             # Once processing done for this investigation, reassign the investigation dictionary

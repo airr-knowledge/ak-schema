@@ -78,6 +78,18 @@ prefixes:
   ONTIE:
     prefix_prefix: ONTIE
     prefix_reference: https://ontology.iedb.org/ontology/ONTIE_
+  iedb_reference:
+    prefix_prefix: iedb_reference
+    prefix_reference: http://www.iedb.org/reference/
+  iedb_epitope:
+    prefix_prefix: iedb_epitope
+    prefix_reference: http://www.iedb.org/epitope/
+  iedb_assay:
+    prefix_prefix: iedb_assay
+    prefix_reference: http://www.iedb.org/assay/
+  iedb_receptor:
+    prefix_prefix: iedb_receptor
+    prefix_reference: http://www.iedb.org/receptor/
   example:
     prefix_prefix: example
     prefix_reference: https://example.org/
@@ -982,6 +994,11 @@ slots:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    designates_type: true
+    range: string
   specimen_type:
     name: specimen_type
     description: The type of this specimen
@@ -1001,6 +1018,14 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: OBI:0000293
     range: Specimen
+  specimen_processing:
+    name: specimen_processing
+    description: A series of zero or more specimen processing steps that precede an
+      assay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: BFO:0000051
+    range: SpecimenProcessing
+    multivalued: true
   assay_type:
     name: assay_type
     description: The specific type of an assay
@@ -1010,6 +1035,81 @@ slots:
     name: target_entity_type
     description: The type of the entity being measured
     from_schema: https://github.com/airr-knowledge/ak-schema
+  template_class:
+    name: template_class
+    description: The class of nucleic acid that was used as primary starting material
+      for the following procedures
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  template_quality:
+    name: template_quality
+    description: Description and results of the quality control performed on the template
+      material
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  template_amount:
+    name: template_amount
+    description: Amount of template that went into the process
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  template_amount_unit:
+    name: template_amount_unit
+    description: Unit of template amount
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  library_generation_method:
+    name: library_generation_method
+    description: Generic type of library generation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  library_generation_protocol:
+    name: library_generation_protocol
+    description: Description of processes applied to substrate to obtain a library
+      that is ready for sequencing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  library_generation_kit_version:
+    name: library_generation_kit_version
+    description: When using a library generation protocol from a commercial provider,
+      provide the protocol version number
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  pcr_target:
+    name: pcr_target
+    description: Target locus for PCR
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    multivalued: true
+  complete_sequences:
+    name: complete_sequences
+    description: To be considered `complete`, the procedure used for library construction
+      MUST generate sequences that 1) include the first V gene codon that encodes
+      the mature polypeptide chain (i.e. after the leader sequence) and 2) include
+      the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site)
+      and 3) provide sequence information for all positions between 1) and 2). To
+      be considered `complete & untemplated`, the sections of the sequences defined
+      in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT
+      overlap with the primers used in library preparation. `mixed` should only be
+      used if the procedure used for library construction will likely produce multiple
+      categories of sequences in the given experiment. It SHOULD NOT be used as a
+      replacement of a NULL value.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  physical_linkage:
+    name: physical_linkage
+    description: In case an experimental setup is used that physically links nucleic
+      acids derived from distinct `Rearrangements` before library preparation, this
+      field describes the mode of that linkage. All `hetero_*` terms indicate that
+      in case of paired-read sequencing, the two reads should be expected to map to
+      distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends
+      of transcripts in a single-cell context. `*_tail-head` refers to techniques
+      that link the 3' end of one transcript to the 5' end of another one in a single-cell
+      context. This term does not provide any information whether a continuous reading-frame
+      between the two is generated. `*_prelinked` refers to constructs in which the
+      linkage was already present on the DNA level (e.g. scFv).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  epitope:
+    name: epitope
+    description: The epitope being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Epitope
+  tcell_receptors:
+    name: tcell_receptors
+    description: The T cell receptors being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TCellReceptor
+    multivalued: true
   value:
     name: value
     description: The measurement result value
@@ -1191,6 +1291,14 @@ slots:
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
+  source_protein:
+    name: source_protein
+    description: The protein that this epitope comes from
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  source_organism:
+    name: source_organism
+    description: The organism that the source protein comes from
+    from_schema: https://github.com/airr-knowledge/ak-schema
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain
@@ -1326,6 +1434,24 @@ classes:
         range: Conclusion
         multivalued: true
         inlined: true
+      chains:
+        name: chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: true
+        inlined: true
+      tcell_receptors:
+        name: tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: TCellReceptor
+        multivalued: true
+        inlined: true
+      epitopes:
+        name: epitopes
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Epitope
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation
@@ -1442,17 +1568,50 @@ classes:
     slots:
     - specimen
     class_uri: OBI:0000659
+  SpecimenProcessing:
+    name: SpecimenProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: PlannedProcess
+    slots:
+    - specimen
+    class_uri: OBI:0000094
   Assay:
     name: Assay
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: PlannedProcess
     slots:
     - specimen
+    - specimen_processing
+    - type
     - assay_type
     - target_entity_type
+    class_uri: OBI:0000070
+  ReceptorRepertoireSequencingAssay:
+    name: ReceptorRepertoireSequencingAssay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Assay
+    slots:
+    - template_class
+    - template_quality
+    - template_amount
+    - template_amount_unit
+    - library_generation_method
+    - library_generation_protocol
+    - library_generation_kit_version
+    - pcr_target
+    - complete_sequences
+    - physical_linkage
+    class_uri: OBI:0600047
+  TCellReceptorEpitopeBindingAssay:
+    name: TCellReceptorEpitopeBindingAssay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Assay
+    slots:
+    - epitope
+    - tcell_receptors
     - value
     - unit
-    class_uri: OBI:0000070
+    class_uri: OBI:1110037
   Dataset:
     name: Dataset
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1477,7 +1636,7 @@ classes:
   Assessment:
     name: Assessment
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: PlannedProcess
     slots:
     - life_event
     - assessment_type
@@ -1526,6 +1685,8 @@ classes:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
+    slots:
+    - type
     class_uri: GO:0042101
   AlphaBetaTCR:
     name: AlphaBetaTCR
@@ -1551,6 +1712,20 @@ classes:
     - IGH_chain
     - IGK_chain
     - IGL_chain
+  Epitope:
+    name: Epitope
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - type
+  PeptidicEpitope:
+    name: PeptidicEpitope
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Epitope
+    slots:
+    - sequence_aa
+    - source_protein
+    - source_organism
   Model:
     name: Model
     from_schema: https://github.com/airr-knowledge/ak-schema
