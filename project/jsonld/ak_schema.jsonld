@@ -1788,13 +1788,30 @@
         "http://purl.obolibrary.org/obo/OBI_0000293"
       ],
       "slot_uri": "http://purl.obolibrary.org/obo/OBI_0000293",
-      "owner": "TCellReceptorEpitopeBindingAssay",
+      "owner": "Assay",
       "domain_of": [
         "SpecimenCollection",
-        "Assay",
-        "TCellReceptorEpitopeBindingAssay"
+        "SpecimenProcessing",
+        "Assay"
       ],
       "range": "Specimen",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "specimen_processing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_processing",
+      "description": "A series of zero or more specimen processing steps that precede an assay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "http://purl.obolibrary.org/obo/BFO_0000051"
+      ],
+      "slot_uri": "http://purl.obolibrary.org/obo/BFO_0000051",
+      "owner": "Assay",
+      "domain_of": [
+        "Assay"
+      ],
+      "range": "SpecimenProcessing",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1806,10 +1823,9 @@
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "TCellReceptorEpitopeBindingAssay",
+      "owner": "Assay",
       "domain_of": [
-        "Assay",
-        "TCellReceptorEpitopeBindingAssay"
+        "Assay"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1824,6 +1840,137 @@
       "domain_of": [
         "Assay",
         "Assessment"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "template_class",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_class",
+      "description": "The class of nucleic acid that was used as primary starting material for the following procedures",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_class",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "template_quality",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_quality",
+      "description": "Description and results of the quality control performed on the template material",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_quality",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "template_amount",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_amount",
+      "description": "Amount of template that went into the process",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_amount",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "template_amount_unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/template_amount_unit",
+      "description": "Unit of template amount",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_amount_unit",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "library_generation_method",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_method",
+      "description": "Generic type of library generation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_method",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "library_generation_protocol",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_protocol",
+      "description": "Description of processes applied to substrate to obtain a library that is ready for sequencing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_protocol",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "library_generation_kit_version",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_kit_version",
+      "description": "When using a library generation protocol from a commercial provider, provide the protocol version number",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_kit_version",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "pcr_target",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/pcr_target",
+      "description": "Target locus for PCR",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/pcr_target",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "complete_sequences",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/complete_sequences",
+      "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/complete_sequences",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "physical_linkage",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/physical_linkage",
+      "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/physical_linkage",
+      "owner": "ReceptorRepertoireSequencingAssay",
+      "domain_of": [
+        "ReceptorRepertoireSequencingAssay"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -1863,7 +2010,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/value",
       "owner": "Assessment",
       "domain_of": [
-        "Assay",
         "TCellReceptorEpitopeBindingAssay",
         "Assessment"
       ],
@@ -1878,7 +2024,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/unit",
       "owner": "Assessment",
       "domain_of": [
-        "Assay",
         "TCellReceptorEpitopeBindingAssay",
         "Assessment"
       ],
@@ -3061,26 +3206,75 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "SpecimenProcessing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SpecimenProcessing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0000094"
+      ],
+      "is_a": "PlannedProcess",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000094",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Assay",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Assay",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "OBI:0000070"
       ],
-      "is_a": "NamedThing",
+      "is_a": "PlannedProcess",
       "slots": [
         "akc_id",
         "name",
         "description",
         "specimen",
+        "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type",
-        "value",
-        "unit"
+        "target_entity_type"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0000070",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "ReceptorRepertoireSequencingAssay",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorRepertoireSequencingAssay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0600047"
+      ],
+      "is_a": "Assay",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen",
+        "specimen_processing",
+        "type",
+        "assay_type",
+        "target_entity_type",
+        "template_class",
+        "template_quality",
+        "template_amount",
+        "template_amount_unit",
+        "library_generation_method",
+        "library_generation_protocol",
+        "library_generation_kit_version",
+        "pcr_target",
+        "complete_sequences",
+        "physical_linkage"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0600047",
       "@type": "ClassDefinition"
     },
     {
@@ -3095,10 +3289,11 @@
         "akc_id",
         "name",
         "description",
-        "type",
-        "target_entity_type",
         "specimen",
+        "specimen_processing",
+        "type",
         "assay_type",
+        "target_entity_type",
         "epitope",
         "tcell_receptors",
         "value",
@@ -3158,7 +3353,7 @@
       "mappings": [
         "OBI:0002441"
       ],
-      "is_a": "NamedThing",
+      "is_a": "PlannedProcess",
       "slots": [
         "akc_id",
         "name",
@@ -3497,9 +3692,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-10-23T14:41:26",
-  "source_file_size": 51537,
-  "generation_date": "2024-10-23T14:41:27",
+  "source_file_date": "2024-11-13T21:26:21",
+  "source_file_size": 55991,
+  "generation_date": "2024-11-13T21:26:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
