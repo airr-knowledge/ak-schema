@@ -286,6 +286,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/ReceptorRepertoireSequencingAssay/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Reference/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
@@ -317,6 +322,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/SpecimenCollection/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/SpecimenProcessing/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -536,6 +546,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/complete_sequences/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/conclusions/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
@@ -671,6 +686,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/library_generation_kit_version/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/library_generation_method/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/library_generation_protocol/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/life_event/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
@@ -716,7 +746,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/pcr_target/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/phenotypic_sex/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/physical_linkage/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -796,6 +836,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/specimen_processing/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/specimen_type/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
@@ -857,6 +902,26 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/tcell_receptors/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/template_amount/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/template_amount_unit/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/template_class/</loc>
+         <lastmod>2024-11-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/template_quality/</loc>
          <lastmod>2024-11-18</lastmod>
          <changefreq>daily</changefreq>
     </url>

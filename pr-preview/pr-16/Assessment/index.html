@@ -209,8 +209,8 @@
 <div class="mermaid"> classDiagram
     class Assessment
     click Assessment href "../Assessment"
-      NamedThing &lt;|-- Assessment
-        click NamedThing href "../NamedThing"
+      PlannedProcess &lt;|-- Assessment
+        click PlannedProcess href "../PlannedProcess"
 
       Assessment : akc_id
 
@@ -241,7 +241,10 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
+<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>Assessment</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -363,7 +366,7 @@
 <details>
 <pre><code class="language-yaml">name: Assessment
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: PlannedProcess
 slots:
 - life_event
 - assessment_type
@@ -378,7 +381,7 @@ class_uri: OBI:0002441
 <details>
 <pre><code class="language-yaml">name: Assessment
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: PlannedProcess
 attributes:
   life_event:
     name: life_event
@@ -422,7 +425,6 @@ attributes:
     alias: value
     owner: Assessment
     domain_of:
-    - Assay
     - TCellReceptorEpitopeBindingAssay
     - Assessment
     range: string
@@ -434,7 +436,6 @@ attributes:
     alias: unit
     owner: Assessment
     domain_of:
-    - Assay
     - TCellReceptorEpitopeBindingAssay
     - Assessment
     range: string

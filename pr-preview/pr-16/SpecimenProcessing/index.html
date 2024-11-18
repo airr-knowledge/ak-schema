@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://airr-knowledge.github.io/ak-schema/TCellReceptorEpitopeBindingAssay/" rel="canonical"/>
+<link href="https://airr-knowledge.github.io/ak-schema/SpecimenProcessing/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: TCellReceptorEpitopeBindingAssay - ak-schema</title>
+<title>Class: SpecimenProcessing - ak-schema</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-tcellreceptorepitopebindingassay">
+<a class="md-skip" href="#class-specimenprocessing">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: TCellReceptorEpitopeBindingAssay
+              Class: SpecimenProcessing
             
           </span>
 </div>
@@ -152,6 +152,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+    Usages
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
@@ -196,68 +201,31 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/TCellReceptorEpitopeBindingAssay.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/SpecimenProcessing.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-tcellreceptorepitopebindingassay">Class: TCellReceptorEpitopeBindingAssay</h1>
-<p>URI: <a href="http://purl.obolibrary.org/obo/OBI_1110037">OBI:1110037</a></p>
+<h1 id="class-specimenprocessing">Class: SpecimenProcessing</h1>
+<p>URI: <a href="http://purl.obolibrary.org/obo/OBI_0000094">OBI:0000094</a></p>
 <div class="mermaid"> classDiagram
-    class TCellReceptorEpitopeBindingAssay
-    click TCellReceptorEpitopeBindingAssay href "../TCellReceptorEpitopeBindingAssay"
-      Assay &lt;|-- TCellReceptorEpitopeBindingAssay
-        click Assay href "../Assay"
+    class SpecimenProcessing
+    click SpecimenProcessing href "../SpecimenProcessing"
+      PlannedProcess &lt;|-- SpecimenProcessing
+        click PlannedProcess href "../PlannedProcess"
 
-      TCellReceptorEpitopeBindingAssay : akc_id
+      SpecimenProcessing : akc_id
 
-      TCellReceptorEpitopeBindingAssay : assay_type
+      SpecimenProcessing : description
 
-      TCellReceptorEpitopeBindingAssay : description
+      SpecimenProcessing : name
 
-      TCellReceptorEpitopeBindingAssay : epitope
-
-
-
-
-    TCellReceptorEpitopeBindingAssay --&gt; "0..1" Epitope : epitope
-    click Epitope href "../Epitope"
-
-
-      TCellReceptorEpitopeBindingAssay : name
-
-      TCellReceptorEpitopeBindingAssay : specimen
+      SpecimenProcessing : specimen
 
 
 
 
-    TCellReceptorEpitopeBindingAssay --&gt; "0..1" Specimen : specimen
+    SpecimenProcessing --&gt; "0..1" Specimen : specimen
     click Specimen href "../Specimen"
 
-
-      TCellReceptorEpitopeBindingAssay : specimen_processing
-
-
-
-
-    TCellReceptorEpitopeBindingAssay --&gt; "*" SpecimenProcessing : specimen_processing
-    click SpecimenProcessing href "../SpecimenProcessing"
-
-
-      TCellReceptorEpitopeBindingAssay : target_entity_type
-
-      TCellReceptorEpitopeBindingAssay : tcell_receptors
-
-
-
-
-    TCellReceptorEpitopeBindingAssay --&gt; "*" TCellReceptor : tcell_receptors
-    click TCellReceptor href "../TCellReceptor"
-
-
-      TCellReceptorEpitopeBindingAssay : type
-
-      TCellReceptorEpitopeBindingAssay : unit
-
-      TCellReceptorEpitopeBindingAssay : value
 
 
 </div>
@@ -266,10 +234,7 @@
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../PlannedProcess/">PlannedProcess</a><ul>
-<li><a href="../Assay/">Assay</a><ul>
-<li><strong>TCellReceptorEpitopeBindingAssay</strong></li>
-</ul>
-</li>
+<li><strong>SpecimenProcessing</strong></li>
 </ul>
 </li>
 </ul>
@@ -289,58 +254,10 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../epitope/">epitope</a></td>
-<td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
-<td>The epitope being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../tcell_receptors/">tcell_receptors</a></td>
-<td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
-<td>The T cell receptors being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The measurement result value</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../unit/">unit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The measurement result value unit</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../specimen/">specimen</a></td>
 <td>0..1 <br/> <a href="../Specimen/">Specimen</a></td>
 <td>The specimen that was input for an assay</td>
-<td><a href="../Assay/">Assay</a></td>
-</tr>
-<tr>
-<td><a href="../specimen_processing/">specimen_processing</a></td>
-<td>* <br/> <a href="../SpecimenProcessing/">SpecimenProcessing</a></td>
-<td>A series of zero or more specimen processing steps that precede an assay</td>
-<td><a href="../Assay/">Assay</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Assay/">Assay</a></td>
-</tr>
-<tr>
-<td><a href="../assay_type/">assay_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The specific type of an assay</td>
-<td><a href="../Assay/">Assay</a></td>
-</tr>
-<tr>
-<td><a href="../target_entity_type/">target_entity_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type of the entity being measured</td>
-<td><a href="../Assay/">Assay</a></td>
+<td>direct</td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -362,6 +279,37 @@
 </tr>
 </tbody>
 </table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Assay/">Assay</a></td>
+<td><a href="../specimen_processing/">specimen_processing</a></td>
+<td>range</td>
+<td><a href="./">SpecimenProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../ReceptorRepertoireSequencingAssay/">ReceptorRepertoireSequencingAssay</a></td>
+<td><a href="../specimen_processing/">specimen_processing</a></td>
+<td>range</td>
+<td><a href="./">SpecimenProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td><a href="../specimen_processing/">specimen_processing</a></td>
+<td>range</td>
+<td><a href="./">SpecimenProcessing</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
@@ -378,11 +326,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>OBI:1110037</td>
+<td>OBI:0000094</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:TCellReceptorEpitopeBindingAssay</td>
+<td>ak_schema:SpecimenProcessing</td>
 </tr>
 </tbody>
 </table>
@@ -390,68 +338,21 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: TCellReceptorEpitopeBindingAssay
+<pre><code class="language-yaml">name: SpecimenProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: Assay
+is_a: PlannedProcess
 slots:
-- epitope
-- tcell_receptors
-- value
-- unit
-class_uri: OBI:1110037
+- specimen
+class_uri: OBI:0000094
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: TCellReceptorEpitopeBindingAssay
+<pre><code class="language-yaml">name: SpecimenProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: Assay
+is_a: PlannedProcess
 attributes:
-  epitope:
-    name: epitope
-    description: The epitope being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: epitope
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    range: Epitope
-  tcell_receptors:
-    name: tcell_receptors
-    description: The T cell receptors being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: tcell_receptors
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - AIRRKnowledgeCommons
-    - TCellReceptorEpitopeBindingAssay
-    range: TCellReceptor
-    multivalued: true
-  value:
-    name: value
-    description: The measurement result value
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: value
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    range: string
-  unit:
-    name: unit
-    description: The measurement result value unit
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: unit
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    range: string
   specimen:
     name: specimen
     description: The specimen that was input for an assay
@@ -459,59 +360,12 @@ attributes:
     rank: 1000
     slot_uri: OBI:0000293
     alias: specimen
-    owner: TCellReceptorEpitopeBindingAssay
+    owner: SpecimenProcessing
     domain_of:
     - SpecimenCollection
     - SpecimenProcessing
     - Assay
     range: Specimen
-  specimen_processing:
-    name: specimen_processing
-    description: A series of zero or more specimen processing steps that precede an
-      assay
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: BFO:0000051
-    alias: specimen_processing
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - Assay
-    range: SpecimenProcessing
-    multivalued: true
-  type:
-    name: type
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    designates_type: true
-    alias: type
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - Assay
-    - TCellReceptor
-    - Epitope
-    range: string
-  assay_type:
-    name: assay_type
-    description: The specific type of an assay
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: rdf:type
-    alias: assay_type
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - Assay
-    range: string
-  target_entity_type:
-    name: target_entity_type
-    description: The type of the entity being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: target_entity_type
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - Assay
-    - Assessment
-    range: string
   name:
     name: name
     description: A human-readable name for a thing
@@ -519,7 +373,7 @@ attributes:
     rank: 1000
     slot_uri: schema:name
     alias: name
-    owner: TCellReceptorEpitopeBindingAssay
+    owner: SpecimenProcessing
     domain_of:
     - NamedThing
     range: string
@@ -530,7 +384,7 @@ attributes:
     rank: 1000
     slot_uri: schema:description
     alias: description
-    owner: TCellReceptorEpitopeBindingAssay
+    owner: SpecimenProcessing
     domain_of:
     - NamedThing
     range: string
@@ -542,12 +396,12 @@ attributes:
     slot_uri: schema:identifier
     identifier: true
     alias: akc_id
-    owner: TCellReceptorEpitopeBindingAssay
+    owner: SpecimenProcessing
     domain_of:
     - AKObject
     range: uriorcurie
     required: true
-class_uri: OBI:1110037
+class_uri: OBI:0000094
 
 </code></pre>
 </details>

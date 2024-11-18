@@ -405,18 +405,6 @@
 <td>Name and description for AKC things.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assay/">Assay</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
-<td>None</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assessment/">Assessment</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="BCellReceptor/">BCellReceptor</a></td>
 <td>None</td>
 </tr>
@@ -481,6 +469,22 @@
 <td>A process to realize a plan.</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assay/">Assay</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ReceptorRepertoireSequencingAssay/">ReceptorRepertoireSequencingAssay</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assessment/">Assessment</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Investigation/">Investigation</a></td>
 <td>A scientific investigation.</td>
 </tr>
@@ -490,6 +494,10 @@
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SpecimenCollection/">SpecimenCollection</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SpecimenProcessing/">SpecimenProcessing</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -660,6 +668,10 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="complete_sequences/">complete_sequences</a></td>
+<td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
+</tr>
+<tr>
 <td><a href="conclusions/">conclusions</a></td>
 <td>The conclusions from the investigation</td>
 </tr>
@@ -780,6 +792,18 @@
 <td>Amino acid form of the junction</td>
 </tr>
 <tr>
+<td><a href="library_generation_kit_version/">library_generation_kit_version</a></td>
+<td>When using a library generation protocol from a commercial provider, provide ...</td>
+</tr>
+<tr>
+<td><a href="library_generation_method/">library_generation_method</a></td>
+<td>Generic type of library generation</td>
+</tr>
+<tr>
+<td><a href="library_generation_protocol/">library_generation_protocol</a></td>
+<td>Description of processes applied to substrate to obtain a library that is rea...</td>
+</tr>
+<tr>
 <td><a href="life_event/">life_event</a></td>
 <td>The life event corresponding to an immune exposure</td>
 </tr>
@@ -816,8 +840,16 @@
 <td>The participants involved with the investigation</td>
 </tr>
 <tr>
+<td><a href="pcr_target/">pcr_target</a></td>
+<td>Target locus for PCR</td>
+</tr>
+<tr>
 <td><a href="phenotypic_sex/">phenotypic_sex</a></td>
 <td>The phenotypic sex of a participant</td>
+</tr>
+<tr>
+<td><a href="physical_linkage/">physical_linkage</a></td>
+<td>In case an experimental setup is used that physically links nucleic acids der...</td>
 </tr>
 <tr>
 <td><a href="process/">process</a></td>
@@ -880,6 +912,10 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="specimen_processing/">specimen_processing</a></td>
+<td>A series of zero or more specimen processing steps that precede an assay</td>
+</tr>
+<tr>
 <td><a href="specimen_type/">specimen_type</a></td>
 <td>The type of this specimen</td>
 </tr>
@@ -930,6 +966,22 @@
 <tr>
 <td><a href="tcell_receptors/">tcell_receptors</a></td>
 <td>The T cell receptors being measured</td>
+</tr>
+<tr>
+<td><a href="template_amount/">template_amount</a></td>
+<td>Amount of template that went into the process</td>
+</tr>
+<tr>
+<td><a href="template_amount_unit/">template_amount_unit</a></td>
+<td>Unit of template amount</td>
+</tr>
+<tr>
+<td><a href="template_class/">template_class</a></td>
+<td>The class of nucleic acid that was used as primary starting material for the ...</td>
+</tr>
+<tr>
+<td><a href="template_quality/">template_quality</a></td>
+<td>Description and results of the quality control performed on the template mate...</td>
 </tr>
 <tr>
 <td><a href="time_unit/">time_unit</a></td>
