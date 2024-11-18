@@ -135,10 +135,7 @@ slots:
   cell_phenotype:
     description: List of cellular markers and their expression levels used to isolate the cell population
   cell_species:
-    description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should
- be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in
- which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for a
-ll lower layers of the schema.
+    description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
   single_cell:
     description: TRUE if single cells were isolated into separate compartments
   cell_number:
@@ -152,8 +149,7 @@ ll lower layers of the schema.
   cell_isolation:
     description: Description of the procedure used for marker-based isolation or enrich cells
   cell_processing_protocol:
-    description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nuc
-leic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
+    description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
 
   specimen:
     description: The specimen that was input for an assay
