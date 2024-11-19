@@ -47,7 +47,7 @@ classes:
       - template_quality
       - template_amount
       - template_amount_unit
-  LibrayPreparationProcessing:
+  LibraryPreparationProcessing:
     is_a: SpecimenProcessing
     class_uri: OBI:00000711 # library preparation
     slots:
