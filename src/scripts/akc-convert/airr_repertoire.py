@@ -120,6 +120,15 @@ class AIRRRepertoire(Repertoire):
                 "Specimen" : {
                     "life_event" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Investigation"},
                     },
+                "CellIsolationProcessing" : {
+                    "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
+                    },
+                "NucleicAcidProcessing" : {
+                    "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
+                    },
+                "LibraryPreparationProcessing" : {
+                    "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
+                    },
                 "ReceptorRepertoireSequencingAssay" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     }

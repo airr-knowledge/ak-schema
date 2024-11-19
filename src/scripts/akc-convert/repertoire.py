@@ -27,7 +27,10 @@ class Repertoire(Parser):
             "Specimen" : { "classes" : ["Specimen"], "fields" : ["subject_id", "sample_id"] },
             "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
             "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id"] },
-            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id"] }
+            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "LibraryPreparationProcessing" : { "classes" : ["LibraryPreparationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "CellIsolationProcessing" : { "classes" : ["CellIsolationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] }
         }
         # Classes that perform a special link function between other classes
         # TODO: This should be in a config file and not harcoded here.
@@ -103,6 +106,9 @@ class Repertoire(Parser):
                 "LifeEvent" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "CellIsolationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "LibraryPreparationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id']
                 }
         #print('addADCData: akc_class = %s'%(akc_class))
@@ -251,6 +257,10 @@ class Repertoire(Parser):
         # Iterate over the AKC classes and build the objects we need
         for akc_class in akc_class_list:
 
+            if not akc_class in globals():
+                print('Warning: Class %s is not a valid AKC schema class, skipping'%(akc_class))
+                continue
+
             # Get the dictionary for this class
             akc_dict = investigation[akc_class]
 
@@ -263,7 +273,18 @@ class Repertoire(Parser):
                 if 'akc_class' in value and value['akc_class'] == akc_class:
                     # Get the value that identifies an object from this repertoire
                     # of this class type and for the given key and value
-                    class_map = {'Subject':'Participant','SampleProcessing':'Specimen','Diagnosis':'ImmuneExposure'}
+                    class_map = {
+                            'Subject':'Participant',
+                            'SampleProcessing':'Specimen',
+                            'Diagnosis':'ImmuneExposure',
+                            }
+                    #class_map = {
+                    #        'Subject':'Participant',
+                    #        'SampleProcessing':'Specimen',
+                    #        'Diagnosis':'ImmuneExposure',
+                    #        'NucleicAcidProcessing':'NucleicAcidProcessing',
+                    #        'NucleicAcidProcessing':'LibraryPreparationProcessing',
+                    #        'CellProcessing':'CellIsolationProcessing'}
                     class_type = ''
                     if value['airr_subclass'] in class_map:
                         class_type = class_map[value['airr_subclass']]
@@ -278,6 +299,9 @@ class Repertoire(Parser):
                     else:
                         if self.verbose():
                             print('Info: Create instance %s, field = %s, value = %s, class = %s, type = %s, airr class = %s'%(airr_link_value, value['akc_field'],value['value'], akc_class, value['akc_type'],value['airr_subclass']))
+                        # The python globals object consists of a list of global entities. This
+                        # will include the classes that are part of the AKC data model. So the
+                        # line below instantiates an instance of the class with the name provided in akc_class.
                         akc_object = globals()[akc_class]('')
                         # Generate a unique ID for this object, add the link tag and related
                         # other info we might need to link objects together later.
