@@ -56,11 +56,25 @@ class Repertoire(Parser):
             # Iterate over the fields and add them to the instance name
             for field in class_name_fields:
                 # print('getAIRRUniqueLink - adding field %s = %s'%(field, repertoire_dict[field]['value']))
+                # If the field is in the repertoire, we add the field value to the link tag.
                 if field in repertoire_dict:
                     field_value = repertoire_dict[field]['value']
-                    if isinstance(field_value, dict):
-                        field_value = field_value['id']
-                    airr_link_value = airr_link_value + '_' + field_value
+                    # Check to see if we have an ontology dictionary. If we do
+                    # then we use the ontology ID in the link value.
+                    if isinstance(field_value, dict): 
+                        if 'id' in field_value:
+                            # Check for an empty ontology and don't use it if empty
+                            if not field_value['id'] is None:
+                                # If all is good, use the link value.
+                                field_value = field_value['id']
+                                airr_link_value = airr_link_value + '_' + field_value
+                        else:
+                            # Warn that we are trying to use a dictionary field that
+                            # isn't an ontology, this should not happen.
+                            print('Warning: mapped field %s (%s) is not an ontology dict'%
+                                    (field, field_value))
+                    else:
+                        airr_link_value = airr_link_value + '_' + field_value
                 else:
                     print('Warning: mapped field %s not in AIRR repertoire'%(field))
         else:
