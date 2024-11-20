@@ -26,7 +26,7 @@ class Repertoire(Parser):
             "Participant" : { "classes" : ["Participant"], "fields" : ["subject_id"] },
             "Specimen" : { "classes" : ["Specimen"], "fields" : ["subject_id", "sample_id"] },
             "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
-            "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id"] },
+            "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id", "disease_diagnosis"] },
             "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "LibraryPreparationProcessing" : { "classes" : ["LibraryPreparationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
@@ -57,7 +57,10 @@ class Repertoire(Parser):
             for field in class_name_fields:
                 # print('getAIRRUniqueLink - adding field %s = %s'%(field, repertoire_dict[field]['value']))
                 if field in repertoire_dict:
-                    airr_link_value = airr_link_value + '_' + repertoire_dict[field]['value']
+                    field_value = repertoire_dict[field]['value']
+                    if isinstance(field_value, dict):
+                        field_value = field_value['id']
+                    airr_link_value = airr_link_value + '_' + field_value
                 else:
                     print('Warning: mapped field %s not in AIRR repertoire'%(field))
         else:
@@ -218,8 +221,17 @@ class Repertoire(Parser):
                 'Specimen': {'link_class' : 'LifeEvent', 'link_target':'Particpant'},
                 'Participant': {'link_class' : 'LifeEvent', 'link_target':'Particpant'}
                 }
+        # A mapping for AIRR classes that are used in AKC link classes (e.g. LifeEvent).
+        # In these cases we need to know the equivalent AKC class to use in the
+        # definition of the AKC instance
+        # TODO: This should be in a config file, not hardcoded here.
+        class_map = {
+            'Subject':'Participant',
+            'SampleProcessing':'Specimen',
+            'Diagnosis':'ImmuneExposure',
+        }
 
-        # TODO: This should be in the config file and not hardcoded here
+        # TODO: This should be in a config file, not hardcoded here.
         airr_study_field = 'study_id'
         # Check to make sure we have an AIRR Study ID.
         if not airr_study_field in repertoire_dict:
@@ -273,18 +285,6 @@ class Repertoire(Parser):
                 if 'akc_class' in value and value['akc_class'] == akc_class:
                     # Get the value that identifies an object from this repertoire
                     # of this class type and for the given key and value
-                    class_map = {
-                            'Subject':'Participant',
-                            'SampleProcessing':'Specimen',
-                            'Diagnosis':'ImmuneExposure',
-                            }
-                    #class_map = {
-                    #        'Subject':'Participant',
-                    #        'SampleProcessing':'Specimen',
-                    #        'Diagnosis':'ImmuneExposure',
-                    #        'NucleicAcidProcessing':'NucleicAcidProcessing',
-                    #        'NucleicAcidProcessing':'LibraryPreparationProcessing',
-                    #        'CellProcessing':'CellIsolationProcessing'}
                     class_type = ''
                     if value['airr_subclass'] in class_map:
                         class_type = class_map[value['airr_subclass']]
