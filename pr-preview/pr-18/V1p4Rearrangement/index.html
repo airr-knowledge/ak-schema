@@ -1,0 +1,4147 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://airr-knowledge.github.io/ak-schema/V1p4Rearrangement/" rel="canonical"/>
+<link href="../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
+<title>Class: V1p4Rearrangement - ak-schema</title>
+<link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="None" data-md-color-primary="None" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#class-v1p4rearrangement">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="ak-schema" class="md-header__button md-logo" data-md-component="logo" href=".." title="ak-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            ak-schema
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Class: V1p4Rearrangement
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/airr-knowledge/ak-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="ak-schema" class="md-nav__button md-logo" data-md-component="logo" href=".." title="ak-schema">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    ak-schema
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/airr-knowledge/ak-schema" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#slots">
+    Slots
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#identifier-and-mapping-information">
+    Identifier and Mapping Information
+  </a>
+<nav aria-label="Identifier and Mapping Information" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#schema-source">
+    Schema Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mappings">
+    Mappings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linkml-source">
+    LinkML Source
+  </a>
+<nav aria-label="LinkML Source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#direct">
+    Direct
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#induced">
+    Induced
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/V1p4Rearrangement.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="class-v1p4rearrangement">Class: V1p4Rearrangement</h1>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/V1p4Rearrangement">ak_schema:V1p4Rearrangement</a></p>
+<div class="mermaid"> classDiagram
+    class V1p4Rearrangement
+    click V1p4Rearrangement href "../V1p4Rearrangement"
+      V1p4Rearrangement : rearrangement__c_alignment_end
+
+      V1p4Rearrangement : rearrangement__c_alignment_start
+
+      V1p4Rearrangement : rearrangement__c_call
+
+      V1p4Rearrangement : rearrangement__c_cigar
+
+      V1p4Rearrangement : rearrangement__c_germline_alignment
+
+      V1p4Rearrangement : rearrangement__c_germline_alignment_aa
+
+      V1p4Rearrangement : rearrangement__c_germline_end
+
+      V1p4Rearrangement : rearrangement__c_germline_start
+
+      V1p4Rearrangement : rearrangement__c_identity
+
+      V1p4Rearrangement : rearrangement__c_score
+
+      V1p4Rearrangement : rearrangement__c_sequence_alignment
+
+      V1p4Rearrangement : rearrangement__c_sequence_alignment_aa
+
+      V1p4Rearrangement : rearrangement__c_sequence_end
+
+      V1p4Rearrangement : rearrangement__c_sequence_start
+
+      V1p4Rearrangement : rearrangement__c_support
+
+      V1p4Rearrangement : rearrangement__cdr1
+
+      V1p4Rearrangement : rearrangement__cdr1_aa
+
+      V1p4Rearrangement : rearrangement__cdr1_end
+
+      V1p4Rearrangement : rearrangement__cdr1_start
+
+      V1p4Rearrangement : rearrangement__cdr2
+
+      V1p4Rearrangement : rearrangement__cdr2_aa
+
+      V1p4Rearrangement : rearrangement__cdr2_end
+
+      V1p4Rearrangement : rearrangement__cdr2_start
+
+      V1p4Rearrangement : rearrangement__cdr3
+
+      V1p4Rearrangement : rearrangement__cdr3_aa
+
+      V1p4Rearrangement : rearrangement__cdr3_end
+
+      V1p4Rearrangement : rearrangement__cdr3_start
+
+      V1p4Rearrangement : rearrangement__cell_id
+
+      V1p4Rearrangement : rearrangement__clone_id
+
+      V1p4Rearrangement : rearrangement__complete_vdj
+
+      V1p4Rearrangement : rearrangement__consensus_count
+
+      V1p4Rearrangement : rearrangement__d2_alignment_end
+
+      V1p4Rearrangement : rearrangement__d2_alignment_start
+
+      V1p4Rearrangement : rearrangement__d2_call
+
+      V1p4Rearrangement : rearrangement__d2_cigar
+
+      V1p4Rearrangement : rearrangement__d2_frame
+
+      V1p4Rearrangement : rearrangement__d2_germline_alignment
+
+      V1p4Rearrangement : rearrangement__d2_germline_alignment_aa
+
+      V1p4Rearrangement : rearrangement__d2_germline_end
+
+      V1p4Rearrangement : rearrangement__d2_germline_start
+
+      V1p4Rearrangement : rearrangement__d2_identity
+
+      V1p4Rearrangement : rearrangement__d2_score
+
+      V1p4Rearrangement : rearrangement__d2_sequence_alignment
+
+      V1p4Rearrangement : rearrangement__d2_sequence_alignment_aa
+
+      V1p4Rearrangement : rearrangement__d2_sequence_end
+
+      V1p4Rearrangement : rearrangement__d2_sequence_start
+
+      V1p4Rearrangement : rearrangement__d2_support
+
+      V1p4Rearrangement : rearrangement__d_alignment_end
+
+      V1p4Rearrangement : rearrangement__d_alignment_start
+
+      V1p4Rearrangement : rearrangement__d_call
+
+      V1p4Rearrangement : rearrangement__d_cigar
+
+      V1p4Rearrangement : rearrangement__d_frame
+
+      V1p4Rearrangement : rearrangement__d_germline_alignment
+
+      V1p4Rearrangement : rearrangement__d_germline_alignment_aa
+
+      V1p4Rearrangement : rearrangement__d_germline_end
+
+      V1p4Rearrangement : rearrangement__d_germline_start
+
+      V1p4Rearrangement : rearrangement__d_identity
+
+      V1p4Rearrangement : rearrangement__d_score
+
+      V1p4Rearrangement : rearrangement__d_sequence_alignment
+
+      V1p4Rearrangement : rearrangement__d_sequence_alignment_aa
+
+      V1p4Rearrangement : rearrangement__d_sequence_end
+
+      V1p4Rearrangement : rearrangement__d_sequence_start
+
+      V1p4Rearrangement : rearrangement__d_support
+
+      V1p4Rearrangement : rearrangement__data_processing_id
+
+      V1p4Rearrangement : rearrangement__duplicate_count
+
+      V1p4Rearrangement : rearrangement__fwr1
+
+      V1p4Rearrangement : rearrangement__fwr1_aa
+
+      V1p4Rearrangement : rearrangement__fwr1_end
+
+      V1p4Rearrangement : rearrangement__fwr1_start
+
+      V1p4Rearrangement : rearrangement__fwr2
+
+      V1p4Rearrangement : rearrangement__fwr2_aa
+
+      V1p4Rearrangement : rearrangement__fwr2_end
+
+      V1p4Rearrangement : rearrangement__fwr2_start
+
+      V1p4Rearrangement : rearrangement__fwr3
+
+      V1p4Rearrangement : rearrangement__fwr3_aa
+
+      V1p4Rearrangement : rearrangement__fwr3_end
+
+      V1p4Rearrangement : rearrangement__fwr3_start
+
+      V1p4Rearrangement : rearrangement__fwr4
+
+      V1p4Rearrangement : rearrangement__fwr4_aa
+
+      V1p4Rearrangement : rearrangement__fwr4_end
+
+      V1p4Rearrangement : rearrangement__fwr4_start
+
+      V1p4Rearrangement : rearrangement__germline_alignment
+
+      V1p4Rearrangement : rearrangement__germline_alignment_aa
+
+      V1p4Rearrangement : rearrangement__j_alignment_end
+
+      V1p4Rearrangement : rearrangement__j_alignment_start
+
+      V1p4Rearrangement : rearrangement__j_call
+
+      V1p4Rearrangement : rearrangement__j_cigar
+
+      V1p4Rearrangement : rearrangement__j_frameshift
+
+      V1p4Rearrangement : rearrangement__j_germline_alignment
+
+      V1p4Rearrangement : rearrangement__j_germline_alignment_aa
+
+      V1p4Rearrangement : rearrangement__j_germline_end
+
+      V1p4Rearrangement : rearrangement__j_germline_start
+
+      V1p4Rearrangement : rearrangement__j_identity
+
+      V1p4Rearrangement : rearrangement__j_score
+
+      V1p4Rearrangement : rearrangement__j_sequence_alignment
+
+      V1p4Rearrangement : rearrangement__j_sequence_alignment_aa
+
+      V1p4Rearrangement : rearrangement__j_sequence_end
+
+      V1p4Rearrangement : rearrangement__j_sequence_start
+
+      V1p4Rearrangement : rearrangement__j_support
+
+      V1p4Rearrangement : rearrangement__junction
+
+      V1p4Rearrangement : rearrangement__junction_aa
+
+      V1p4Rearrangement : rearrangement__junction_aa_length
+
+      V1p4Rearrangement : rearrangement__junction_length
+
+      V1p4Rearrangement : rearrangement__locus
+
+
+
+
+    V1p4Rearrangement --&gt; "0..1" V1p4Locus : rearrangement__locus
+    click V1p4Locus href "../V1p4Locus"
+
+
+      V1p4Rearrangement : rearrangement__locus_species
+
+
+
+
+    V1p4Rearrangement --&gt; "0..1" V1p4LocusSpecies : rearrangement__locus_species
+    click V1p4LocusSpecies href "../V1p4LocusSpecies"
+
+
+      V1p4Rearrangement : rearrangement__n1_length
+
+      V1p4Rearrangement : rearrangement__n2_length
+
+      V1p4Rearrangement : rearrangement__n3_length
+
+      V1p4Rearrangement : rearrangement__np1
+
+      V1p4Rearrangement : rearrangement__np1_aa
+
+      V1p4Rearrangement : rearrangement__np1_length
+
+      V1p4Rearrangement : rearrangement__np2
+
+      V1p4Rearrangement : rearrangement__np2_aa
+
+      V1p4Rearrangement : rearrangement__np2_length
+
+      V1p4Rearrangement : rearrangement__np3
+
+      V1p4Rearrangement : rearrangement__np3_aa
+
+      V1p4Rearrangement : rearrangement__np3_length
+
+      V1p4Rearrangement : rearrangement__p3d2_length
+
+      V1p4Rearrangement : rearrangement__p3d_length
+
+      V1p4Rearrangement : rearrangement__p3v_length
+
+      V1p4Rearrangement : rearrangement__p5d2_length
+
+      V1p4Rearrangement : rearrangement__p5d_length
+
+      V1p4Rearrangement : rearrangement__p5j_length
+
+      V1p4Rearrangement : rearrangement__productive
+
+      V1p4Rearrangement : rearrangement__quality
+
+      V1p4Rearrangement : rearrangement__quality_alignment
+
+      V1p4Rearrangement : rearrangement__reactivity_id
+
+      V1p4Rearrangement : rearrangement__reactivity_ref
+
+      V1p4Rearrangement : rearrangement__repertoire_id
+
+      V1p4Rearrangement : rearrangement__rev_comp
+
+      V1p4Rearrangement : rearrangement__sample_processing_id
+
+      V1p4Rearrangement : rearrangement__sequence
+
+      V1p4Rearrangement : rearrangement__sequence_aa
+
+      V1p4Rearrangement : rearrangement__sequence_alignment
+
+      V1p4Rearrangement : rearrangement__sequence_alignment_aa
+
+      V1p4Rearrangement : rearrangement__sequence_id
+
+      V1p4Rearrangement : rearrangement__stop_codon
+
+      V1p4Rearrangement : rearrangement__umi_count
+
+      V1p4Rearrangement : rearrangement__v_alignment_end
+
+      V1p4Rearrangement : rearrangement__v_alignment_start
+
+      V1p4Rearrangement : rearrangement__v_call
+
+      V1p4Rearrangement : rearrangement__v_cigar
+
+      V1p4Rearrangement : rearrangement__v_frameshift
+
+      V1p4Rearrangement : rearrangement__v_germline_alignment
+
+      V1p4Rearrangement : rearrangement__v_germline_alignment_aa
+
+      V1p4Rearrangement : rearrangement__v_germline_end
+
+      V1p4Rearrangement : rearrangement__v_germline_start
+
+      V1p4Rearrangement : rearrangement__v_identity
+
+      V1p4Rearrangement : rearrangement__v_score
+
+      V1p4Rearrangement : rearrangement__v_sequence_alignment
+
+      V1p4Rearrangement : rearrangement__v_sequence_alignment_aa
+
+      V1p4Rearrangement : rearrangement__v_sequence_end
+
+      V1p4Rearrangement : rearrangement__v_sequence_start
+
+      V1p4Rearrangement : rearrangement__v_support
+
+      V1p4Rearrangement : rearrangement__vj_in_frame
+
+
+</div>
+<!-- no inheritance hierarchy -->
+<h2 id="slots">Slots</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Cardinality and Range</th>
+<th>Description</th>
+<th>Inheritance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../rearrangement__sequence_id/">rearrangement__sequence_id</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Unique query sequence identifier for the Rearrangement</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__sequence/">rearrangement__sequence</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>The query nucleotide sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__quality/">rearrangement__quality</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The Sanger/Phred quality scores for assessment of sequence quality</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__sequence_aa/">rearrangement__sequence_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the query nucleotide sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__rev_comp/">rearrangement__rev_comp</a></td>
+<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>True if the alignment is on the opposite strand (reverse complemented) with r...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__productive/">rearrangement__productive</a></td>
+<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>True if the V(D)J sequence is predicted to be productive</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__vj_in_frame/">rearrangement__vj_in_frame</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>True if the V and J gene alignments are in-frame</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__stop_codon/">rearrangement__stop_codon</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>True if the aligned sequence contains a stop codon</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__complete_vdj/">rearrangement__complete_vdj</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>True if the sequence alignment spans the entire V(D)J region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__locus/">rearrangement__locus</a></td>
+<td>0..1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
+<td>Gene locus (chain type)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__locus_species/">rearrangement__locus_species</a></td>
+<td>0..1 <br/> <a href="../V1p4LocusSpecies/">V1p4LocusSpecies</a></td>
+<td>Binomial designation of the species from which the locus originates</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_call/">rearrangement__v_call</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>V gene with allele</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_call/">rearrangement__d_call</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>First or only D gene with allele</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_call/">rearrangement__d2_call</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Second D gene with allele</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_call/">rearrangement__j_call</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>J gene with allele</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_call/">rearrangement__c_call</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Constant region gene with allele</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__sequence_alignment/">rearrangement__sequence_alignment</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Aligned portion of query sequence, including any indel corrections or numberi...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__quality_alignment/">rearrangement__quality_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Sanger/Phred quality scores for assessment of sequence_alignment quality</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__sequence_alignment_aa/">rearrangement__sequence_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the aligned query sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__germline_alignment/">rearrangement__germline_alignment</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Assembled, aligned, full-length inferred germline sequence spanning the same ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__germline_alignment_aa/">rearrangement__germline_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the assembled germline sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__junction/">rearrangement__junction</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Junction region nucleotide sequence, where the junction is defined as the CDR...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__junction_aa/">rearrangement__junction_aa</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the junction</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np1/">rearrangement__np1</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the combined N/P region between the V gene and first D...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np1_aa/">rearrangement__np1_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the np1 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np2/">rearrangement__np2</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the combined N/P region between either the first D gen...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np2_aa/">rearrangement__np2_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the np2 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np3/">rearrangement__np3</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the combined N/P region between the second D gene and ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np3_aa/">rearrangement__np3_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the np3 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr1/">rearrangement__cdr1</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the aligned CDR1 region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr1_aa/">rearrangement__cdr1_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the cdr1 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr2/">rearrangement__cdr2</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the aligned CDR2 region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr2_aa/">rearrangement__cdr2_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the cdr2 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr3/">rearrangement__cdr3</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the aligned CDR3 region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr3_aa/">rearrangement__cdr3_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the cdr3 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr1/">rearrangement__fwr1</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the aligned FWR1 region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr1_aa/">rearrangement__fwr1_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the fwr1 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr2/">rearrangement__fwr2</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the aligned FWR2 region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr2_aa/">rearrangement__fwr2_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the fwr2 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr3/">rearrangement__fwr3</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the aligned FWR3 region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr3_aa/">rearrangement__fwr3_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the fwr3 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr4/">rearrangement__fwr4</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence of the aligned FWR4 region</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr4_aa/">rearrangement__fwr4_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the fwr4 field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_score/">rearrangement__v_score</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Alignment score for the V gene</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_identity/">rearrangement__v_identity</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Fractional identity for the V gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_support/">rearrangement__v_support</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>V gene alignment E-value, p-value, likelihood, probability or other similar m...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_cigar/">rearrangement__v_cigar</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>CIGAR string for the V gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_score/">rearrangement__d_score</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Alignment score for the first or only D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_identity/">rearrangement__d_identity</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Fractional identity for the first or only D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_support/">rearrangement__d_support</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>D gene alignment E-value, p-value, likelihood, probability or other similar m...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_cigar/">rearrangement__d_cigar</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>CIGAR string for the first or only D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_score/">rearrangement__d2_score</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Alignment score for the second D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_identity/">rearrangement__d2_identity</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Fractional identity for the second D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_support/">rearrangement__d2_support</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>D gene alignment E-value, p-value, likelihood, probability or other similar m...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_cigar/">rearrangement__d2_cigar</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>CIGAR string for the second D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_score/">rearrangement__j_score</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Alignment score for the J gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_identity/">rearrangement__j_identity</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Fractional identity for the J gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_support/">rearrangement__j_support</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>J gene alignment E-value, p-value, likelihood, probability or other similar m...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_cigar/">rearrangement__j_cigar</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td>CIGAR string for the J gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_score/">rearrangement__c_score</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Alignment score for the C gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_identity/">rearrangement__c_identity</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Fractional identity for the C gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_support/">rearrangement__c_support</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>C gene alignment E-value, p-value, likelihood, probability or other similar m...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_cigar/">rearrangement__c_cigar</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>CIGAR string for the C gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_sequence_start/">rearrangement__v_sequence_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the V gene in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_sequence_end/">rearrangement__v_sequence_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the V gene in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_germline_start/">rearrangement__v_germline_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment start position in the V gene reference sequence (1-based closed int...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_germline_end/">rearrangement__v_germline_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment end position in the V gene reference sequence (1-based closed inter...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_alignment_start/">rearrangement__v_alignment_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the V gene alignment in both the sequence_alignment and ger...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_alignment_end/">rearrangement__v_alignment_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the V gene alignment in both the sequence_alignment and germl...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_sequence_start/">rearrangement__d_sequence_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the first or only D gene in the query sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_sequence_end/">rearrangement__d_sequence_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the first or only D gene in the query sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_germline_start/">rearrangement__d_germline_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment start position in the D gene reference sequence for the first or on...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_germline_end/">rearrangement__d_germline_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment end position in the D gene reference sequence for the first or only...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_alignment_start/">rearrangement__d_alignment_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the first or only D gene in both the sequence_alignment and...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_alignment_end/">rearrangement__d_alignment_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the first or only D gene in both the sequence_alignment and g...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_sequence_start/">rearrangement__d2_sequence_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the second D gene in the query sequence (1-based closed int...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_sequence_end/">rearrangement__d2_sequence_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the second D gene in the query sequence (1-based closed inter...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_germline_start/">rearrangement__d2_germline_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment start position in the second D gene reference sequence (1-based clo...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_germline_end/">rearrangement__d2_germline_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment end position in the second D gene reference sequence (1-based close...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_alignment_start/">rearrangement__d2_alignment_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the second D gene alignment in both the sequence_alignment ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_alignment_end/">rearrangement__d2_alignment_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the second D gene alignment in both the sequence_alignment an...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_sequence_start/">rearrangement__j_sequence_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the J gene in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_sequence_end/">rearrangement__j_sequence_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the J gene in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_germline_start/">rearrangement__j_germline_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment start position in the J gene reference sequence (1-based closed int...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_germline_end/">rearrangement__j_germline_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment end position in the J gene reference sequence (1-based closed inter...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_alignment_start/">rearrangement__j_alignment_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the J gene alignment in both the sequence_alignment and ger...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_alignment_end/">rearrangement__j_alignment_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the J gene alignment in both the sequence_alignment and germl...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_sequence_start/">rearrangement__c_sequence_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the C gene in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_sequence_end/">rearrangement__c_sequence_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the C gene in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_germline_start/">rearrangement__c_germline_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment start position in the C gene reference sequence (1-based closed int...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_germline_end/">rearrangement__c_germline_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Alignment end position in the C gene reference sequence (1-based closed inter...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_alignment_start/">rearrangement__c_alignment_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Start position of the C gene alignment in both the sequence_alignment and ger...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_alignment_end/">rearrangement__c_alignment_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>End position of the C gene alignment in both the sequence_alignment and germl...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr1_start/">rearrangement__cdr1_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>CDR1 start position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr1_end/">rearrangement__cdr1_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>CDR1 end position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr2_start/">rearrangement__cdr2_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>CDR2 start position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr2_end/">rearrangement__cdr2_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>CDR2 end position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr3_start/">rearrangement__cdr3_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>CDR3 start position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cdr3_end/">rearrangement__cdr3_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>CDR3 end position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr1_start/">rearrangement__fwr1_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR1 start position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr1_end/">rearrangement__fwr1_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR1 end position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr2_start/">rearrangement__fwr2_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR2 start position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr2_end/">rearrangement__fwr2_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR2 end position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr3_start/">rearrangement__fwr3_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR3 start position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr3_end/">rearrangement__fwr3_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR3 end position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr4_start/">rearrangement__fwr4_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR4 start position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__fwr4_end/">rearrangement__fwr4_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>FWR4 end position in the query sequence (1-based closed interval)</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_sequence_alignment/">rearrangement__v_sequence_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned portion of query sequence assigned to the V gene, including any indel...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_sequence_alignment_aa/">rearrangement__v_sequence_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the v_sequence_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_sequence_alignment/">rearrangement__d_sequence_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned portion of query sequence assigned to the first or only D gene, inclu...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_sequence_alignment_aa/">rearrangement__d_sequence_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the d_sequence_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_sequence_alignment/">rearrangement__d2_sequence_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned portion of query sequence assigned to the second D gene, including an...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_sequence_alignment_aa/">rearrangement__d2_sequence_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the d2_sequence_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_sequence_alignment/">rearrangement__j_sequence_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned portion of query sequence assigned to the J gene, including any indel...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_sequence_alignment_aa/">rearrangement__j_sequence_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the j_sequence_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_sequence_alignment/">rearrangement__c_sequence_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned portion of query sequence assigned to the constant region, including ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_sequence_alignment_aa/">rearrangement__c_sequence_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the c_sequence_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_germline_alignment/">rearrangement__v_germline_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned V gene germline sequence spanning the same region as the v_sequence_a...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_germline_alignment_aa/">rearrangement__v_germline_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the v_germline_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_germline_alignment/">rearrangement__d_germline_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned D gene germline sequence spanning the same region as the d_sequence_a...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_germline_alignment_aa/">rearrangement__d_germline_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the d_germline_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_germline_alignment/">rearrangement__d2_germline_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned D gene germline sequence spanning the same region as the d2_sequence_...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_germline_alignment_aa/">rearrangement__d2_germline_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the d2_germline_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_germline_alignment/">rearrangement__j_germline_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned J gene germline sequence spanning the same region as the j_sequence_a...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_germline_alignment_aa/">rearrangement__j_germline_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the j_germline_alignment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_germline_alignment/">rearrangement__c_germline_alignment</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Aligned constant region germline sequence spanning the same region as the c_s...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__c_germline_alignment_aa/">rearrangement__c_germline_alignment_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Amino acid translation of the c_germline_aligment field</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__junction_length/">rearrangement__junction_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of nucleotides in the junction sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__junction_aa_length/">rearrangement__junction_aa_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of amino acids in the junction sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np1_length/">rearrangement__np1_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of nucleotides between the V gene and first D gene alignments or betwe...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np2_length/">rearrangement__np2_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of nucleotides between either the first D gene and J gene alignments o...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__np3_length/">rearrangement__np3_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of nucleotides between the second D gene and J gene alignments</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__n1_length/">rearrangement__n1_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of untemplated nucleotides 5' of the first or only D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__n2_length/">rearrangement__n2_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of untemplated nucleotides 3' of the first or only D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__n3_length/">rearrangement__n3_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of untemplated nucleotides 3' of the second D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__p3v_length/">rearrangement__p3v_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of palindromic nucleotides 3' of the V gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__p5d_length/">rearrangement__p5d_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of palindromic nucleotides 5' of the first or only D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__p3d_length/">rearrangement__p3d_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of palindromic nucleotides 3' of the first or only D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__p5d2_length/">rearrangement__p5d2_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of palindromic nucleotides 5' of the second D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__p3d2_length/">rearrangement__p3d2_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of palindromic nucleotides 3' of the second D gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__p5j_length/">rearrangement__p5j_length</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of palindromic nucleotides 5' of the J gene alignment</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__v_frameshift/">rearrangement__v_frameshift</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>True if the V gene in the query nucleotide sequence contains a translational ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__j_frameshift/">rearrangement__j_frameshift</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>True if the J gene in the query nucleotide sequence contains a translational ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d_frame/">rearrangement__d_frame</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Numerical reading frame (1, 2, 3) of the first or only D gene in the query nu...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__d2_frame/">rearrangement__d2_frame</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Numerical reading frame (1, 2, 3) of the second D gene in the query nucleotid...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__consensus_count/">rearrangement__consensus_count</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of reads contributing to the UMI consensus or contig assembly for this...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__duplicate_count/">rearrangement__duplicate_count</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Copy number or number of duplicate observations for the query sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__umi_count/">rearrangement__umi_count</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td>Number of distinct UMIs represented by this sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__cell_id/">rearrangement__cell_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier defining the cell of origin for the query sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__clone_id/">rearrangement__clone_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Clonal cluster assignment for the query sequence</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__reactivity_id/">rearrangement__reactivity_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Comma separated list of unique identifiers for Reactivity objects associated ...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__reactivity_ref/">rearrangement__reactivity_ref</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Comma separated list of CURIE identifiers of external reactivity records (e</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__repertoire_id/">rearrangement__repertoire_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier to the associated repertoire in study metadata</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__sample_processing_id/">rearrangement__sample_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier to the sample processing object in the repertoire metadata for thi...</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../rearrangement__data_processing_id/">rearrangement__data_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Identifier to the data processing object in the repertoire metadata for this ...</td>
+<td>direct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="schema-source">Schema Source</h3>
+<ul>
+<li>from schema: https://github.com/airr-knowledge/ak-schema</li>
+</ul>
+<h2 id="mappings">Mappings</h2>
+<table>
+<thead>
+<tr>
+<th>Mapping Type</th>
+<th>Mapped Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td>ak_schema:V1p4Rearrangement</td>
+</tr>
+<tr>
+<td>native</td>
+<td>ak_schema:V1p4Rearrangement</td>
+</tr>
+</tbody>
+</table>
+<h2 id="linkml-source">LinkML Source</h2>
+<!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
+<h3 id="direct">Direct</h3>
+<details>
+<pre><code class="language-yaml">name: V1p4_Rearrangement
+from_schema: https://github.com/airr-knowledge/ak-schema
+slots:
+- rearrangement__sequence_id
+- rearrangement__sequence
+- rearrangement__quality
+- rearrangement__sequence_aa
+- rearrangement__rev_comp
+- rearrangement__productive
+- rearrangement__vj_in_frame
+- rearrangement__stop_codon
+- rearrangement__complete_vdj
+- rearrangement__locus
+- rearrangement__locus_species
+- rearrangement__v_call
+- rearrangement__d_call
+- rearrangement__d2_call
+- rearrangement__j_call
+- rearrangement__c_call
+- rearrangement__sequence_alignment
+- rearrangement__quality_alignment
+- rearrangement__sequence_alignment_aa
+- rearrangement__germline_alignment
+- rearrangement__germline_alignment_aa
+- rearrangement__junction
+- rearrangement__junction_aa
+- rearrangement__np1
+- rearrangement__np1_aa
+- rearrangement__np2
+- rearrangement__np2_aa
+- rearrangement__np3
+- rearrangement__np3_aa
+- rearrangement__cdr1
+- rearrangement__cdr1_aa
+- rearrangement__cdr2
+- rearrangement__cdr2_aa
+- rearrangement__cdr3
+- rearrangement__cdr3_aa
+- rearrangement__fwr1
+- rearrangement__fwr1_aa
+- rearrangement__fwr2
+- rearrangement__fwr2_aa
+- rearrangement__fwr3
+- rearrangement__fwr3_aa
+- rearrangement__fwr4
+- rearrangement__fwr4_aa
+- rearrangement__v_score
+- rearrangement__v_identity
+- rearrangement__v_support
+- rearrangement__v_cigar
+- rearrangement__d_score
+- rearrangement__d_identity
+- rearrangement__d_support
+- rearrangement__d_cigar
+- rearrangement__d2_score
+- rearrangement__d2_identity
+- rearrangement__d2_support
+- rearrangement__d2_cigar
+- rearrangement__j_score
+- rearrangement__j_identity
+- rearrangement__j_support
+- rearrangement__j_cigar
+- rearrangement__c_score
+- rearrangement__c_identity
+- rearrangement__c_support
+- rearrangement__c_cigar
+- rearrangement__v_sequence_start
+- rearrangement__v_sequence_end
+- rearrangement__v_germline_start
+- rearrangement__v_germline_end
+- rearrangement__v_alignment_start
+- rearrangement__v_alignment_end
+- rearrangement__d_sequence_start
+- rearrangement__d_sequence_end
+- rearrangement__d_germline_start
+- rearrangement__d_germline_end
+- rearrangement__d_alignment_start
+- rearrangement__d_alignment_end
+- rearrangement__d2_sequence_start
+- rearrangement__d2_sequence_end
+- rearrangement__d2_germline_start
+- rearrangement__d2_germline_end
+- rearrangement__d2_alignment_start
+- rearrangement__d2_alignment_end
+- rearrangement__j_sequence_start
+- rearrangement__j_sequence_end
+- rearrangement__j_germline_start
+- rearrangement__j_germline_end
+- rearrangement__j_alignment_start
+- rearrangement__j_alignment_end
+- rearrangement__c_sequence_start
+- rearrangement__c_sequence_end
+- rearrangement__c_germline_start
+- rearrangement__c_germline_end
+- rearrangement__c_alignment_start
+- rearrangement__c_alignment_end
+- rearrangement__cdr1_start
+- rearrangement__cdr1_end
+- rearrangement__cdr2_start
+- rearrangement__cdr2_end
+- rearrangement__cdr3_start
+- rearrangement__cdr3_end
+- rearrangement__fwr1_start
+- rearrangement__fwr1_end
+- rearrangement__fwr2_start
+- rearrangement__fwr2_end
+- rearrangement__fwr3_start
+- rearrangement__fwr3_end
+- rearrangement__fwr4_start
+- rearrangement__fwr4_end
+- rearrangement__v_sequence_alignment
+- rearrangement__v_sequence_alignment_aa
+- rearrangement__d_sequence_alignment
+- rearrangement__d_sequence_alignment_aa
+- rearrangement__d2_sequence_alignment
+- rearrangement__d2_sequence_alignment_aa
+- rearrangement__j_sequence_alignment
+- rearrangement__j_sequence_alignment_aa
+- rearrangement__c_sequence_alignment
+- rearrangement__c_sequence_alignment_aa
+- rearrangement__v_germline_alignment
+- rearrangement__v_germline_alignment_aa
+- rearrangement__d_germline_alignment
+- rearrangement__d_germline_alignment_aa
+- rearrangement__d2_germline_alignment
+- rearrangement__d2_germline_alignment_aa
+- rearrangement__j_germline_alignment
+- rearrangement__j_germline_alignment_aa
+- rearrangement__c_germline_alignment
+- rearrangement__c_germline_alignment_aa
+- rearrangement__junction_length
+- rearrangement__junction_aa_length
+- rearrangement__np1_length
+- rearrangement__np2_length
+- rearrangement__np3_length
+- rearrangement__n1_length
+- rearrangement__n2_length
+- rearrangement__n3_length
+- rearrangement__p3v_length
+- rearrangement__p5d_length
+- rearrangement__p3d_length
+- rearrangement__p5d2_length
+- rearrangement__p3d2_length
+- rearrangement__p5j_length
+- rearrangement__v_frameshift
+- rearrangement__j_frameshift
+- rearrangement__d_frame
+- rearrangement__d2_frame
+- rearrangement__consensus_count
+- rearrangement__duplicate_count
+- rearrangement__umi_count
+- rearrangement__cell_id
+- rearrangement__clone_id
+- rearrangement__reactivity_id
+- rearrangement__reactivity_ref
+- rearrangement__repertoire_id
+- rearrangement__sample_processing_id
+- rearrangement__data_processing_id
+
+</code></pre>
+</details>
+<h3 id="induced">Induced</h3>
+<details>
+<pre><code class="language-yaml">name: V1p4_Rearrangement
+from_schema: https://github.com/airr-knowledge/ak-schema
+attributes:
+  rearrangement__sequence_id:
+    name: rearrangement__sequence_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unique query sequence identifier for the Rearrangement. Most often
+      this will be the input sequence header or a substring thereof, but may also
+      be a custom identifier defined by the tool in cases where query sequences have
+      been combined in some fashion prior to alignment. When downloaded from an AIRR
+      Data Commons repository, this will usually be a universally unique record locator
+      for linking with other objects in the AIRR Data Model.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__sequence_id
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__sequence:
+    name: rearrangement__sequence
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The query nucleotide sequence. Usually, this is the unmodified input
+      sequence, which may be reverse complemented if necessary. In some cases, this
+      field may contain consensus sequences or other types of collapsed input sequences
+      if these steps are performed prior to alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__sequence
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__quality:
+    name: rearrangement__quality
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The Sanger/Phred quality scores for assessment of sequence quality.
+      Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by
+      Illumina from v1.8.)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__quality
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__sequence_aa:
+    name: rearrangement__sequence_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the query nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__sequence_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__rev_comp:
+    name: rearrangement__rev_comp
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the alignment is on the opposite strand (reverse complemented)
+      with respect to the query sequence. If True then all output data, such as alignment
+      coordinates and sequences, are based on the reverse complement of 'sequence'.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__rev_comp
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: boolean
+    required: true
+  rearrangement__productive:
+    name: rearrangement__productive
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the V(D)J sequence is predicted to be productive.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__productive
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: boolean
+    required: true
+  rearrangement__vj_in_frame:
+    name: rearrangement__vj_in_frame
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the V and J gene alignments are in-frame.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__vj_in_frame
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: boolean
+    required: false
+  rearrangement__stop_codon:
+    name: rearrangement__stop_codon
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the aligned sequence contains a stop codon.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__stop_codon
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: boolean
+    required: false
+  rearrangement__complete_vdj:
+    name: rearrangement__complete_vdj
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the sequence alignment spans the entire V(D)J region. Meaning,
+      sequence_alignment includes both the first V gene codon that encodes the mature
+      polypeptide chain (i.e., after the leader sequence) and the last complete codon
+      of the J gene (i.e., before the J-C splice site). This does not require an absence
+      of deletions within the internal FWR and CDR regions of the alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__complete_vdj
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: boolean
+    required: false
+  rearrangement__locus:
+    name: rearrangement__locus
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Gene locus (chain type). Note that this field uses a controlled vocabulary
+      that is meant to provide a generic classification of the locus, not necessarily
+      the correct designation according to a specific nomenclature.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__locus
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: V1p4_Locus
+    required: false
+  rearrangement__locus_species:
+    name: rearrangement__locus_species
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Binomial designation of the species from which the locus originates.
+      Typically, this value should be identical to `organism`, if which case it SHOULD
+      NOT be set explicitly. However, there are valid experimental setups in which
+      the two might differ, e.g. transgenic animal models. If set, this key will overwrite
+      the `organism` information for all lower layers of the schema.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__locus_species
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: V1p4_LocusSpecies
+    required: false
+  rearrangement__v_call:
+    name: rearrangement__v_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: V gene with allele. If referring to a known reference sequence in
+      a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01
+      if using IMGT/GENE-DB).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_call
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__d_call:
+    name: rearrangement__d_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: First or only D gene with allele. If referring to a known reference
+      sequence in a database the relevant gene/allele nomenclature should be followed
+      (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_call
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__d2_call:
+    name: rearrangement__d2_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Second D gene with allele. If referring to a known reference sequence
+      in a database the relevant gene/allele nomenclature should be followed (e.g.,
+      IGHD3-10*01 if using IMGT/GENE-DB).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_call
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__j_call:
+    name: rearrangement__j_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: J gene with allele. If referring to a known reference sequence in
+      a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02
+      if using IMGT/GENE-DB).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_call
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__c_call:
+    name: rearrangement__c_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Constant region gene with allele. If referring to a known reference
+      sequence in a database the relevant gene/allele nomenclature should be followed
+      (e.g., IGHG1*01 if using IMGT/GENE-DB).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_call
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__sequence_alignment:
+    name: rearrangement__sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence, including any indel corrections
+      or numbering spacers, such as IMGT-gaps. Typically, this will include only the
+      V(D)J region, but that is not a requirement.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__sequence_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__quality_alignment:
+    name: rearrangement__quality_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Sanger/Phred quality scores for assessment of sequence_alignment
+      quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126
+      (Used by Illumina from v1.8.)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__quality_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__sequence_alignment_aa:
+    name: rearrangement__sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the aligned query sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__sequence_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__germline_alignment:
+    name: rearrangement__germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Assembled, aligned, full-length inferred germline sequence spanning
+      the same region as the sequence_alignment field (typically the V(D)J region)
+      and including the same set of corrections and spacers (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__germline_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__germline_alignment_aa:
+    name: rearrangement__germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the assembled germline sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__germline_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__junction:
+    name: rearrangement__junction
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Junction region nucleotide sequence, where the junction is defined
+      as the CDR3 plus the two flanking conserved codons.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__junction
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__junction_aa:
+    name: rearrangement__junction_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the junction.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__junction_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__np1:
+    name: rearrangement__np1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the combined N/P region between the V gene
+      and first D gene alignment or between the V gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np1
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__np1_aa:
+    name: rearrangement__np1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the np1 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np1_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__np2:
+    name: rearrangement__np2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the combined N/P region between either the
+      first D gene and J gene alignments or the first D gene and second D gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np2
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__np2_aa:
+    name: rearrangement__np2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the np2 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np2_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__np3:
+    name: rearrangement__np3
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the combined N/P region between the second
+      D gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np3
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__np3_aa:
+    name: rearrangement__np3_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the np3 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np3_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__cdr1:
+    name: rearrangement__cdr1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned CDR1 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr1
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__cdr1_aa:
+    name: rearrangement__cdr1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the cdr1 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr1_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__cdr2:
+    name: rearrangement__cdr2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned CDR2 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr2
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__cdr2_aa:
+    name: rearrangement__cdr2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the cdr2 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr2_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__cdr3:
+    name: rearrangement__cdr3
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned CDR3 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr3
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__cdr3_aa:
+    name: rearrangement__cdr3_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the cdr3 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr3_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr1:
+    name: rearrangement__fwr1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR1 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr1
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr1_aa:
+    name: rearrangement__fwr1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr1 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr1_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr2:
+    name: rearrangement__fwr2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR2 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr2
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr2_aa:
+    name: rearrangement__fwr2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr2 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr2_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr3:
+    name: rearrangement__fwr3
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR3 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr3
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr3_aa:
+    name: rearrangement__fwr3_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr3 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr3_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr4:
+    name: rearrangement__fwr4
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR4 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr4
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__fwr4_aa:
+    name: rearrangement__fwr4_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr4 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr4_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__v_score:
+    name: rearrangement__v_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the V gene.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_score
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__v_identity:
+    name: rearrangement__v_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the V gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_identity
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__v_support:
+    name: rearrangement__v_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: V gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the V gene assignment as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_support
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__v_cigar:
+    name: rearrangement__v_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the V gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_cigar
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__d_score:
+    name: rearrangement__d_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the first or only D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_score
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__d_identity:
+    name: rearrangement__d_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the first or only D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_identity
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__d_support:
+    name: rearrangement__d_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: D gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the first or only D gene as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_support
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__d_cigar:
+    name: rearrangement__d_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the first or only D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_cigar
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__d2_score:
+    name: rearrangement__d2_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_score
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__d2_identity:
+    name: rearrangement__d2_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_identity
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__d2_support:
+    name: rearrangement__d2_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: D gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the second D gene as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_support
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__d2_cigar:
+    name: rearrangement__d2_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_cigar
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__j_score:
+    name: rearrangement__j_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_score
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__j_identity:
+    name: rearrangement__j_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_identity
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__j_support:
+    name: rearrangement__j_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: J gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the J gene assignment as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_support
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__j_cigar:
+    name: rearrangement__j_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_cigar
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: true
+  rearrangement__c_score:
+    name: rearrangement__c_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the C gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_score
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__c_identity:
+    name: rearrangement__c_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the C gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_identity
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__c_support:
+    name: rearrangement__c_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: C gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the C gene assignment as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_support
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: float
+    required: false
+  rearrangement__c_cigar:
+    name: rearrangement__c_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the C gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_cigar
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__v_sequence_start:
+    name: rearrangement__v_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the V gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_sequence_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__v_sequence_end:
+    name: rearrangement__v_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the V gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_sequence_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__v_germline_start:
+    name: rearrangement__v_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the V gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_germline_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__v_germline_end:
+    name: rearrangement__v_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the V gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_germline_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__v_alignment_start:
+    name: rearrangement__v_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the V gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_alignment_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__v_alignment_end:
+    name: rearrangement__v_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the V gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_alignment_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d_sequence_start:
+    name: rearrangement__d_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the first or only D gene in the query sequence.
+      (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_sequence_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d_sequence_end:
+    name: rearrangement__d_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the first or only D gene in the query sequence. (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_sequence_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d_germline_start:
+    name: rearrangement__d_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the D gene reference sequence for the
+      first or only D gene (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_germline_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d_germline_end:
+    name: rearrangement__d_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the D gene reference sequence for the first
+      or only D gene (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_germline_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d_alignment_start:
+    name: rearrangement__d_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the first or only D gene in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_alignment_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d_alignment_end:
+    name: rearrangement__d_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the first or only D gene in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_alignment_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d2_sequence_start:
+    name: rearrangement__d2_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the second D gene in the query sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_sequence_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d2_sequence_end:
+    name: rearrangement__d2_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the second D gene in the query sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_sequence_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d2_germline_start:
+    name: rearrangement__d2_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the second D gene reference sequence
+      (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_germline_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d2_germline_end:
+    name: rearrangement__d2_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the second D gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_germline_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d2_alignment_start:
+    name: rearrangement__d2_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the second D gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_alignment_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d2_alignment_end:
+    name: rearrangement__d2_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the second D gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_alignment_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__j_sequence_start:
+    name: rearrangement__j_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the J gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_sequence_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__j_sequence_end:
+    name: rearrangement__j_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the J gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_sequence_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__j_germline_start:
+    name: rearrangement__j_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the J gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_germline_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__j_germline_end:
+    name: rearrangement__j_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the J gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_germline_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__j_alignment_start:
+    name: rearrangement__j_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the J gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_alignment_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__j_alignment_end:
+    name: rearrangement__j_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the J gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_alignment_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__c_sequence_start:
+    name: rearrangement__c_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the C gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_sequence_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__c_sequence_end:
+    name: rearrangement__c_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the C gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_sequence_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__c_germline_start:
+    name: rearrangement__c_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the C gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_germline_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__c_germline_end:
+    name: rearrangement__c_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the C gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_germline_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__c_alignment_start:
+    name: rearrangement__c_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the C gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_alignment_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__c_alignment_end:
+    name: rearrangement__c_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the C gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_alignment_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__cdr1_start:
+    name: rearrangement__cdr1_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CDR1 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr1_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__cdr1_end:
+    name: rearrangement__cdr1_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CDR1 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr1_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__cdr2_start:
+    name: rearrangement__cdr2_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CDR2 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr2_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__cdr2_end:
+    name: rearrangement__cdr2_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CDR2 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr2_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__cdr3_start:
+    name: rearrangement__cdr3_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CDR3 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr3_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__cdr3_end:
+    name: rearrangement__cdr3_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CDR3 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cdr3_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr1_start:
+    name: rearrangement__fwr1_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR1 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr1_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr1_end:
+    name: rearrangement__fwr1_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR1 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr1_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr2_start:
+    name: rearrangement__fwr2_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR2 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr2_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr2_end:
+    name: rearrangement__fwr2_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR2 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr2_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr3_start:
+    name: rearrangement__fwr3_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR3 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr3_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr3_end:
+    name: rearrangement__fwr3_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR3 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr3_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr4_start:
+    name: rearrangement__fwr4_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR4 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr4_start
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__fwr4_end:
+    name: rearrangement__fwr4_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR4 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__fwr4_end
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__v_sequence_alignment:
+    name: rearrangement__v_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the V gene, including
+      any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_sequence_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__v_sequence_alignment_aa:
+    name: rearrangement__v_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the v_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_sequence_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d_sequence_alignment:
+    name: rearrangement__d_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the first or only D
+      gene, including any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_sequence_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d_sequence_alignment_aa:
+    name: rearrangement__d_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_sequence_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d2_sequence_alignment:
+    name: rearrangement__d2_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the second D gene,
+      including any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_sequence_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d2_sequence_alignment_aa:
+    name: rearrangement__d2_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d2_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_sequence_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__j_sequence_alignment:
+    name: rearrangement__j_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the J gene, including
+      any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_sequence_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__j_sequence_alignment_aa:
+    name: rearrangement__j_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the j_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_sequence_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__c_sequence_alignment:
+    name: rearrangement__c_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the constant region,
+      including any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_sequence_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__c_sequence_alignment_aa:
+    name: rearrangement__c_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the c_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_sequence_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__v_germline_alignment:
+    name: rearrangement__v_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned V gene germline sequence spanning the same region as the
+      v_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_germline_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__v_germline_alignment_aa:
+    name: rearrangement__v_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the v_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_germline_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d_germline_alignment:
+    name: rearrangement__d_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned D gene germline sequence spanning the same region as the
+      d_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_germline_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d_germline_alignment_aa:
+    name: rearrangement__d_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_germline_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d2_germline_alignment:
+    name: rearrangement__d2_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned D gene germline sequence spanning the same region as the
+      d2_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_germline_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__d2_germline_alignment_aa:
+    name: rearrangement__d2_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d2_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_germline_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__j_germline_alignment:
+    name: rearrangement__j_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned J gene germline sequence spanning the same region as the
+      j_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_germline_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__j_germline_alignment_aa:
+    name: rearrangement__j_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the j_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_germline_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__c_germline_alignment:
+    name: rearrangement__c_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned constant region germline sequence spanning the same region
+      as the c_sequence_alignment field and including the same set of corrections
+      and spacers (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_germline_alignment
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__c_germline_alignment_aa:
+    name: rearrangement__c_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the c_germline_aligment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__c_germline_alignment_aa
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__junction_length:
+    name: rearrangement__junction_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of nucleotides in the junction sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__junction_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__junction_aa_length:
+    name: rearrangement__junction_aa_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of amino acids in the junction sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__junction_aa_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__np1_length:
+    name: rearrangement__np1_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of nucleotides between the V gene and first D gene alignments
+      or between the V gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np1_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__np2_length:
+    name: rearrangement__np2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of nucleotides between either the first D gene and J gene
+      alignments or the first D gene and second D gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np2_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__np3_length:
+    name: rearrangement__np3_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of nucleotides between the second D gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__np3_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__n1_length:
+    name: rearrangement__n1_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of untemplated nucleotides 5' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__n1_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__n2_length:
+    name: rearrangement__n2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of untemplated nucleotides 3' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__n2_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__n3_length:
+    name: rearrangement__n3_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of untemplated nucleotides 3' of the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__n3_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__p3v_length:
+    name: rearrangement__p3v_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 3' of the V gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__p3v_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__p5d_length:
+    name: rearrangement__p5d_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 5' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__p5d_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__p3d_length:
+    name: rearrangement__p3d_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 3' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__p3d_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__p5d2_length:
+    name: rearrangement__p5d2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 5' of the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__p5d2_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__p3d2_length:
+    name: rearrangement__p3d2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 3' of the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__p3d2_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__p5j_length:
+    name: rearrangement__p5j_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 5' of the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__p5j_length
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__v_frameshift:
+    name: rearrangement__v_frameshift
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the V gene in the query nucleotide sequence contains a translational
+      frameshift relative to the frame of the V gene reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__v_frameshift
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: boolean
+    required: false
+  rearrangement__j_frameshift:
+    name: rearrangement__j_frameshift
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the J gene in the query nucleotide sequence contains a translational
+      frameshift relative to the frame of the J gene reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__j_frameshift
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: boolean
+    required: false
+  rearrangement__d_frame:
+    name: rearrangement__d_frame
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Numerical reading frame (1, 2, 3) of the first or only D gene in
+      the query nucleotide sequence, where frame 1 is relative to the first codon
+      of D gene reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d_frame
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__d2_frame:
+    name: rearrangement__d2_frame
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Numerical reading frame (1, 2, 3) of the second D gene in the query
+      nucleotide sequence, where frame 1 is relative to the first codon of D gene
+      reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__d2_frame
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__consensus_count:
+    name: rearrangement__consensus_count
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of reads contributing to the UMI consensus or contig assembly
+      for this sequence. For example, the sum of the number of reads for all UMIs
+      that contribute to the query sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__consensus_count
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__duplicate_count:
+    name: rearrangement__duplicate_count
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Copy number or number of duplicate observations for the query sequence.
+      For example, the number of identical reads observed for this sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__duplicate_count
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__umi_count:
+    name: rearrangement__umi_count
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of distinct UMIs represented by this sequence. For example,
+      the total number of UMIs that contribute to the contig assembly for the query
+      sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__umi_count
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: integer
+    required: false
+  rearrangement__cell_id:
+    name: rearrangement__cell_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier defining the cell of origin for the query sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__cell_id
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__clone_id:
+    name: rearrangement__clone_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Clonal cluster assignment for the query sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__clone_id
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__reactivity_id:
+    name: rearrangement__reactivity_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Comma separated list of unique identifiers for Reactivity objects
+      associated with this Rearrangement. Order and length of reactivity_id and reactivity_ref
+      are independent.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__reactivity_id
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__reactivity_ref:
+    name: rearrangement__reactivity_ref
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Comma separated list of CURIE identifiers of external reactivity
+      records (e.g. IEDB_RECEPTOR:182992, https://www.iedb.org/receptor/182992)  associated
+      with this Rearrangement. Order and length of reactivity_id and reactivity_ref
+      are independent.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__reactivity_ref
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__repertoire_id:
+    name: rearrangement__repertoire_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier to the associated repertoire in study metadata.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__repertoire_id
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__sample_processing_id:
+    name: rearrangement__sample_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier to the sample processing object in the repertoire metadata
+      for this rearrangement. If the repertoire has a single sample then this field
+      may be empty or missing. If the repertoire has multiple samples then this field
+      may be empty or missing if the sample cannot be differentiated or the relationship
+      is not maintained by the data processing.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__sample_processing_id
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+  rearrangement__data_processing_id:
+    name: rearrangement__data_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier to the data processing object in the repertoire metadata
+      for this rearrangement. If this field is empty than the primary data processing
+      object is assumed.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: rearrangement__data_processing_id
+    owner: V1p4_Rearrangement
+    domain_of:
+    - V1p4_Rearrangement
+    range: string
+    required: false
+
+</code></pre>
+</details>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["content.tabs.link"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script><script type="module">import mermaid from "https://unpkg.com/mermaid@10.9.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
+</html>
