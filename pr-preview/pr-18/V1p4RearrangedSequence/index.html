@@ -204,39 +204,39 @@
 <div class="mermaid"> classDiagram
     class V1p4RearrangedSequence
     click V1p4RearrangedSequence href "../V1p4RearrangedSequence"
-      V1p4RearrangedSequence : rearranged_sequence__curation
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__curation
 
-      V1p4RearrangedSequence : rearranged_sequence__deposited_version
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__deposited_version
 
-      V1p4RearrangedSequence : rearranged_sequence__derivation
-
-
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__derivation
 
 
-    V1p4RearrangedSequence --&gt; "1" V1p4Derivation : rearranged_sequence__derivation
+
+
+    V1p4RearrangedSequence --&gt; "1" V1p4Derivation : v1p4__rearranged_sequence__derivation
     click V1p4Derivation href "../V1p4Derivation"
 
 
-      V1p4RearrangedSequence : rearranged_sequence__observation_type
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__observation_type
 
 
 
 
-    V1p4RearrangedSequence --&gt; "1" V1p4ObservationType : rearranged_sequence__observation_type
+    V1p4RearrangedSequence --&gt; "1" V1p4ObservationType : v1p4__rearranged_sequence__observation_type
     click V1p4ObservationType href "../V1p4ObservationType"
 
 
-      V1p4RearrangedSequence : rearranged_sequence__repository_name
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__repository_name
 
-      V1p4RearrangedSequence : rearranged_sequence__repository_ref
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__repository_ref
 
-      V1p4RearrangedSequence : rearranged_sequence__sequence
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__sequence
 
-      V1p4RearrangedSequence : rearranged_sequence__sequence_end
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__sequence_end
 
-      V1p4RearrangedSequence : rearranged_sequence__sequence_id
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__sequence_id
 
-      V1p4RearrangedSequence : rearranged_sequence__sequence_start
+      V1p4RearrangedSequence : v1p4__rearranged_sequence__sequence_start
 
 
 </div>
@@ -253,61 +253,61 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../rearranged_sequence__sequence_id/">rearranged_sequence__sequence_id</a></td>
+<td><a href="../v1p4__rearranged_sequence__sequence_id/">v1p4__rearranged_sequence__sequence_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this RearrangedSequence within the file, typically gener...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__sequence/">rearranged_sequence__sequence</a></td>
+<td><a href="../v1p4__rearranged_sequence__sequence/">v1p4__rearranged_sequence__sequence</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>nucleotide sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__derivation/">rearranged_sequence__derivation</a></td>
+<td><a href="../v1p4__rearranged_sequence__derivation/">v1p4__rearranged_sequence__derivation</a></td>
 <td>1 <br/> <a href="../V1p4Derivation/">V1p4Derivation</a></td>
 <td>The class of nucleic acid that was used as primary starting material</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__observation_type/">rearranged_sequence__observation_type</a></td>
+<td><a href="../v1p4__rearranged_sequence__observation_type/">v1p4__rearranged_sequence__observation_type</a></td>
 <td>1 <br/> <a href="../V1p4ObservationType/">V1p4ObservationType</a></td>
 <td>The type of observation from which this sequence was drawn, such as direct se...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__curation/">rearranged_sequence__curation</a></td>
+<td><a href="../v1p4__rearranged_sequence__curation/">v1p4__rearranged_sequence__curation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Curational notes on the sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__repository_name/">rearranged_sequence__repository_name</a></td>
+<td><a href="../v1p4__rearranged_sequence__repository_name/">v1p4__rearranged_sequence__repository_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name of the repository in which the sequence has been deposited</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__repository_ref/">rearranged_sequence__repository_ref</a></td>
+<td><a href="../v1p4__rearranged_sequence__repository_ref/">v1p4__rearranged_sequence__repository_ref</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Queryable id or accession number of the sequence published by the repository</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__deposited_version/">rearranged_sequence__deposited_version</a></td>
+<td><a href="../v1p4__rearranged_sequence__deposited_version/">v1p4__rearranged_sequence__deposited_version</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Version number of the sequence within the repository</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__sequence_start/">rearranged_sequence__sequence_start</a></td>
+<td><a href="../v1p4__rearranged_sequence__sequence_start/">v1p4__rearranged_sequence__sequence_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate of the sequence detailed in this record, within the sequenc...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../rearranged_sequence__sequence_end/">rearranged_sequence__sequence_end</a></td>
+<td><a href="../v1p4__rearranged_sequence__sequence_end/">v1p4__rearranged_sequence__sequence_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate of the sequence detailed in this record, within the sequence ...</td>
 <td>direct</td>
@@ -327,7 +327,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4AlleleDescription/">V1p4AlleleDescription</a></td>
-<td><a href="../allele_description__rearranged_support/">allele_description__rearranged_support</a></td>
+<td><a href="../v1p4__allele_description__rearranged_support/">v1p4__allele_description__rearranged_support</a></td>
 <td>range</td>
 <td><a href="./">V1p4RearrangedSequence</a></td>
 </tr>
@@ -361,29 +361,29 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_RearrangedSequence
+<pre><code class="language-yaml">name: v1p4_RearrangedSequence
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- rearranged_sequence__sequence_id
-- rearranged_sequence__sequence
-- rearranged_sequence__derivation
-- rearranged_sequence__observation_type
-- rearranged_sequence__curation
-- rearranged_sequence__repository_name
-- rearranged_sequence__repository_ref
-- rearranged_sequence__deposited_version
-- rearranged_sequence__sequence_start
-- rearranged_sequence__sequence_end
+- v1p4__rearranged_sequence__sequence_id
+- v1p4__rearranged_sequence__sequence
+- v1p4__rearranged_sequence__derivation
+- v1p4__rearranged_sequence__observation_type
+- v1p4__rearranged_sequence__curation
+- v1p4__rearranged_sequence__repository_name
+- v1p4__rearranged_sequence__repository_ref
+- v1p4__rearranged_sequence__deposited_version
+- v1p4__rearranged_sequence__sequence_start
+- v1p4__rearranged_sequence__sequence_end
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_RearrangedSequence
+<pre><code class="language-yaml">name: v1p4_RearrangedSequence
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  rearranged_sequence__sequence_id:
-    name: rearranged_sequence__sequence_id
+  v1p4__rearranged_sequence__sequence_id:
+    name: v1p4__rearranged_sequence__sequence_id
     annotations:
       nullable:
         tag: nullable
@@ -393,14 +393,14 @@ attributes:
       ID of the database record.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__sequence_id
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__sequence_id
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: string
     required: true
-  rearranged_sequence__sequence:
-    name: rearranged_sequence__sequence
+  v1p4__rearranged_sequence__sequence:
+    name: v1p4__rearranged_sequence__sequence
     annotations:
       nullable:
         tag: nullable
@@ -408,14 +408,14 @@ attributes:
     description: nucleotide sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__sequence
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__sequence
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: string
     required: true
-  rearranged_sequence__derivation:
-    name: rearranged_sequence__derivation
+  v1p4__rearranged_sequence__derivation:
+    name: v1p4__rearranged_sequence__derivation
     annotations:
       nullable:
         tag: nullable
@@ -423,14 +423,14 @@ attributes:
     description: The class of nucleic acid that was used as primary starting material
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__derivation
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__derivation
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
-    range: V1p4_Derivation
+    - v1p4_RearrangedSequence
+    range: v1p4_Derivation
     required: true
-  rearranged_sequence__observation_type:
-    name: rearranged_sequence__observation_type
+  v1p4__rearranged_sequence__observation_type:
+    name: v1p4__rearranged_sequence__observation_type
     annotations:
       nullable:
         tag: nullable
@@ -439,14 +439,14 @@ attributes:
       as direct sequencing or  inference from repertoire sequencing data.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__observation_type
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__observation_type
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
-    range: V1p4_ObservationType
+    - v1p4_RearrangedSequence
+    range: v1p4_ObservationType
     required: true
-  rearranged_sequence__curation:
-    name: rearranged_sequence__curation
+  v1p4__rearranged_sequence__curation:
+    name: v1p4__rearranged_sequence__curation
     annotations:
       nullable:
         tag: nullable
@@ -454,14 +454,14 @@ attributes:
     description: Curational notes on the sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__curation
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__curation
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: string
     required: false
-  rearranged_sequence__repository_name:
-    name: rearranged_sequence__repository_name
+  v1p4__rearranged_sequence__repository_name:
+    name: v1p4__rearranged_sequence__repository_name
     annotations:
       nullable:
         tag: nullable
@@ -469,14 +469,14 @@ attributes:
     description: Name of the repository in which the sequence has been deposited
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__repository_name
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__repository_name
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: string
     required: true
-  rearranged_sequence__repository_ref:
-    name: rearranged_sequence__repository_ref
+  v1p4__rearranged_sequence__repository_ref:
+    name: v1p4__rearranged_sequence__repository_ref
     annotations:
       nullable:
         tag: nullable
@@ -485,14 +485,14 @@ attributes:
       repository
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__repository_ref
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__repository_ref
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: string
     required: false
-  rearranged_sequence__deposited_version:
-    name: rearranged_sequence__deposited_version
+  v1p4__rearranged_sequence__deposited_version:
+    name: v1p4__rearranged_sequence__deposited_version
     annotations:
       nullable:
         tag: nullable
@@ -500,14 +500,14 @@ attributes:
     description: Version number of the sequence within the repository
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__deposited_version
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__deposited_version
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: string
     required: true
-  rearranged_sequence__sequence_start:
-    name: rearranged_sequence__sequence_start
+  v1p4__rearranged_sequence__sequence_start:
+    name: v1p4__rearranged_sequence__sequence_start
     annotations:
       nullable:
         tag: nullable
@@ -516,14 +516,14 @@ attributes:
       the sequence deposited
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__sequence_start
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__sequence_start
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: integer
     required: false
-  rearranged_sequence__sequence_end:
-    name: rearranged_sequence__sequence_end
+  v1p4__rearranged_sequence__sequence_end:
+    name: v1p4__rearranged_sequence__sequence_end
     annotations:
       nullable:
         tag: nullable
@@ -532,10 +532,10 @@ attributes:
       sequence deposited
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: rearranged_sequence__sequence_end
-    owner: V1p4_RearrangedSequence
+    alias: v1p4__rearranged_sequence__sequence_end
+    owner: v1p4_RearrangedSequence
     domain_of:
-    - V1p4_RearrangedSequence
+    - v1p4_RearrangedSequence
     range: integer
     required: false
 

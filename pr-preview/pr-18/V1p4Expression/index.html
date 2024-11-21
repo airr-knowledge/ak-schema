@@ -199,26 +199,26 @@
 <div class="mermaid"> classDiagram
     class V1p4Expression
     click V1p4Expression href "../V1p4Expression"
-      V1p4Expression : expression__cell_id
+      V1p4Expression : v1p4__expression__cell_id
 
-      V1p4Expression : expression__data_processing_id
+      V1p4Expression : v1p4__expression__data_processing_id
 
-      V1p4Expression : expression__expression_id
+      V1p4Expression : v1p4__expression__expression_id
 
-      V1p4Expression : expression__property
-
-
+      V1p4Expression : v1p4__expression__property
 
 
-    V1p4Expression --&gt; "1" V1p4Property : expression__property
+
+
+    V1p4Expression --&gt; "1" V1p4Property : v1p4__expression__property
     click V1p4Property href "../V1p4Property"
 
 
-      V1p4Expression : expression__property_type
+      V1p4Expression : v1p4__expression__property_type
 
-      V1p4Expression : expression__repertoire_id
+      V1p4Expression : v1p4__expression__repertoire_id
 
-      V1p4Expression : expression__value
+      V1p4Expression : v1p4__expression__value
 
 
 </div>
@@ -235,43 +235,43 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../expression__expression_id/">expression__expression_id</a></td>
+<td><a href="../v1p4__expression__expression_id/">v1p4__expression__expression_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the Expression object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expression__cell_id/">expression__cell_id</a></td>
+<td><a href="../v1p4__expression__cell_id/">v1p4__expression__cell_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier of the cell to which this expression data is related</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expression__repertoire_id/">expression__repertoire_id</a></td>
+<td><a href="../v1p4__expression__repertoire_id/">v1p4__expression__repertoire_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the associated repertoire in study metadata</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expression__data_processing_id/">expression__data_processing_id</a></td>
+<td><a href="../v1p4__expression__data_processing_id/">v1p4__expression__data_processing_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier of the data processing object in the repertoire metadata for this ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expression__property_type/">expression__property_type</a></td>
+<td><a href="../v1p4__expression__property_type/">v1p4__expression__property_type</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Keyword describing the property type and detection method used to measure the...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expression__property/">expression__property</a></td>
+<td><a href="../v1p4__expression__property/">v1p4__expression__property</a></td>
 <td>1 <br/> <a href="../V1p4Property/">V1p4Property</a></td>
 <td>Name of the property observed, typically a gene or antibody identifier (and l...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../expression__value/">expression__value</a></td>
+<td><a href="../v1p4__expression__value/">v1p4__expression__value</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Level at which the property was observed in the experiment (non-normalized)</td>
 <td>direct</td>
@@ -306,26 +306,26 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Expression
+<pre><code class="language-yaml">name: v1p4_Expression
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- expression__expression_id
-- expression__cell_id
-- expression__repertoire_id
-- expression__data_processing_id
-- expression__property_type
-- expression__property
-- expression__value
+- v1p4__expression__expression_id
+- v1p4__expression__cell_id
+- v1p4__expression__repertoire_id
+- v1p4__expression__data_processing_id
+- v1p4__expression__property_type
+- v1p4__expression__property
+- v1p4__expression__value
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Expression
+<pre><code class="language-yaml">name: v1p4_Expression
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  expression__expression_id:
-    name: expression__expression_id
+  v1p4__expression__expression_id:
+    name: v1p4__expression__expression_id
     annotations:
       nullable:
         tag: nullable
@@ -335,14 +335,14 @@ attributes:
       record locator to enable database applications.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: expression__expression_id
-    owner: V1p4_Expression
+    alias: v1p4__expression__expression_id
+    owner: v1p4_Expression
     domain_of:
-    - V1p4_Expression
+    - v1p4_Expression
     range: string
     required: true
-  expression__cell_id:
-    name: expression__cell_id
+  v1p4__expression__cell_id:
+    name: v1p4__expression__cell_id
     annotations:
       nullable:
         tag: nullable
@@ -350,14 +350,14 @@ attributes:
     description: Identifier of the cell to which this expression data is related.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: expression__cell_id
-    owner: V1p4_Expression
+    alias: v1p4__expression__cell_id
+    owner: v1p4_Expression
     domain_of:
-    - V1p4_Expression
+    - v1p4_Expression
     range: string
     required: true
-  expression__repertoire_id:
-    name: expression__repertoire_id
+  v1p4__expression__repertoire_id:
+    name: v1p4__expression__repertoire_id
     annotations:
       nullable:
         tag: nullable
@@ -365,14 +365,14 @@ attributes:
     description: Identifier for the associated repertoire in study metadata.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: expression__repertoire_id
-    owner: V1p4_Expression
+    alias: v1p4__expression__repertoire_id
+    owner: v1p4_Expression
     domain_of:
-    - V1p4_Expression
+    - v1p4_Expression
     range: string
     required: true
-  expression__data_processing_id:
-    name: expression__data_processing_id
+  v1p4__expression__data_processing_id:
+    name: v1p4__expression__data_processing_id
     annotations:
       nullable:
         tag: nullable
@@ -381,14 +381,14 @@ attributes:
       for this cell.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: expression__data_processing_id
-    owner: V1p4_Expression
+    alias: v1p4__expression__data_processing_id
+    owner: v1p4_Expression
     domain_of:
-    - V1p4_Expression
+    - v1p4_Expression
     range: string
     required: true
-  expression__property_type:
-    name: expression__property_type
+  v1p4__expression__property_type:
+    name: v1p4__expression__property_type
     annotations:
       nullable:
         tag: nullable
@@ -400,14 +400,14 @@ attributes:
       and "antigen_bait_binding_by_dna_barcode_count".'
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: expression__property_type
-    owner: V1p4_Expression
+    alias: v1p4__expression__property_type
+    owner: v1p4_Expression
     domain_of:
-    - V1p4_Expression
+    - v1p4_Expression
     range: string
     required: true
-  expression__property:
-    name: expression__property
+  v1p4__expression__property:
+    name: v1p4__expression__property
     annotations:
       nullable:
         tag: nullable
@@ -418,14 +418,14 @@ attributes:
       CD27 antibody).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: expression__property
-    owner: V1p4_Expression
+    alias: v1p4__expression__property
+    owner: v1p4_Expression
     domain_of:
-    - V1p4_Expression
-    range: V1p4_Property
+    - v1p4_Expression
+    range: v1p4_Property
     required: true
-  expression__value:
-    name: expression__value
+  v1p4__expression__value:
+    name: v1p4__expression__value
     annotations:
       nullable:
         tag: nullable
@@ -433,10 +433,10 @@ attributes:
     description: Level at which the property was observed in the experiment (non-normalized).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: expression__value
-    owner: V1p4_Expression
+    alias: v1p4__expression__value
+    owner: v1p4_Expression
     domain_of:
-    - V1p4_Expression
+    - v1p4_Expression
     range: float
     required: true
 

@@ -204,27 +204,27 @@
 <div class="mermaid"> classDiagram
     class V1p4MHCGenotype
     click V1p4MHCGenotype href "../V1p4MHCGenotype"
-      V1p4MHCGenotype : m_h_c_genotype__mhc_alleles
+      V1p4MHCGenotype : v1p4__m_h_c_genotype__mhc_alleles
 
 
 
 
-    V1p4MHCGenotype --&gt; "1..*" V1p4MHCAllele : m_h_c_genotype__mhc_alleles
+    V1p4MHCGenotype --&gt; "1..*" V1p4MHCAllele : v1p4__m_h_c_genotype__mhc_alleles
     click V1p4MHCAllele href "../V1p4MHCAllele"
 
 
-      V1p4MHCGenotype : m_h_c_genotype__mhc_class
+      V1p4MHCGenotype : v1p4__m_h_c_genotype__mhc_class
 
 
 
 
-    V1p4MHCGenotype --&gt; "1" V1p4MhcClass : m_h_c_genotype__mhc_class
+    V1p4MHCGenotype --&gt; "1" V1p4MhcClass : v1p4__m_h_c_genotype__mhc_class
     click V1p4MhcClass href "../V1p4MhcClass"
 
 
-      V1p4MHCGenotype : m_h_c_genotype__mhc_genotype_id
+      V1p4MHCGenotype : v1p4__m_h_c_genotype__mhc_genotype_id
 
-      V1p4MHCGenotype : m_h_c_genotype__mhc_genotyping_method
+      V1p4MHCGenotype : v1p4__m_h_c_genotype__mhc_genotyping_method
 
 
 </div>
@@ -241,25 +241,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../m_h_c_genotype__mhc_genotype_id/">m_h_c_genotype__mhc_genotype_id</a></td>
+<td><a href="../v1p4__m_h_c_genotype__mhc_genotype_id/">v1p4__m_h_c_genotype__mhc_genotype_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for this MHCGenotype, assumed to be unique in the context...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../m_h_c_genotype__mhc_class/">m_h_c_genotype__mhc_class</a></td>
+<td><a href="../v1p4__m_h_c_genotype__mhc_class/">v1p4__m_h_c_genotype__mhc_class</a></td>
 <td>1 <br/> <a href="../V1p4MhcClass/">V1p4MhcClass</a></td>
 <td>Class of MHC alleles described by the MHCGenotype</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../m_h_c_genotype__mhc_alleles/">m_h_c_genotype__mhc_alleles</a></td>
+<td><a href="../v1p4__m_h_c_genotype__mhc_alleles/">v1p4__m_h_c_genotype__mhc_alleles</a></td>
 <td>1..* <br/> <a href="../V1p4MHCAllele/">V1p4MHCAllele</a></td>
 <td>List of MHC alleles of the indicated mhc_class identified in an individual</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../m_h_c_genotype__mhc_genotyping_method/">m_h_c_genotype__mhc_genotyping_method</a></td>
+<td><a href="../v1p4__m_h_c_genotype__mhc_genotyping_method/">v1p4__m_h_c_genotype__mhc_genotyping_method</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Information on how the genotype was determined</td>
 <td>direct</td>
@@ -279,7 +279,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4MHCGenotypeSet/">V1p4MHCGenotypeSet</a></td>
-<td><a href="../m_h_c_genotype_set__mhc_genotype_list/">m_h_c_genotype_set__mhc_genotype_list</a></td>
+<td><a href="../v1p4__m_h_c_genotype_set__mhc_genotype_list/">v1p4__m_h_c_genotype_set__mhc_genotype_list</a></td>
 <td>range</td>
 <td><a href="./">V1p4MHCGenotype</a></td>
 </tr>
@@ -313,23 +313,23 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_MHCGenotype
+<pre><code class="language-yaml">name: v1p4_MHCGenotype
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- m_h_c_genotype__mhc_genotype_id
-- m_h_c_genotype__mhc_class
-- m_h_c_genotype__mhc_alleles
-- m_h_c_genotype__mhc_genotyping_method
+- v1p4__m_h_c_genotype__mhc_genotype_id
+- v1p4__m_h_c_genotype__mhc_class
+- v1p4__m_h_c_genotype__mhc_alleles
+- v1p4__m_h_c_genotype__mhc_genotyping_method
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_MHCGenotype
+<pre><code class="language-yaml">name: v1p4_MHCGenotype
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  m_h_c_genotype__mhc_genotype_id:
-    name: m_h_c_genotype__mhc_genotype_id
+  v1p4__m_h_c_genotype__mhc_genotype_id:
+    name: v1p4__m_h_c_genotype__mhc_genotype_id
     annotations:
       nullable:
         tag: nullable
@@ -338,14 +338,14 @@ attributes:
       the context of the study
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: m_h_c_genotype__mhc_genotype_id
-    owner: V1p4_MHCGenotype
+    alias: v1p4__m_h_c_genotype__mhc_genotype_id
+    owner: v1p4_MHCGenotype
     domain_of:
-    - V1p4_MHCGenotype
+    - v1p4_MHCGenotype
     range: string
     required: true
-  m_h_c_genotype__mhc_class:
-    name: m_h_c_genotype__mhc_class
+  v1p4__m_h_c_genotype__mhc_class:
+    name: v1p4__m_h_c_genotype__mhc_class
     annotations:
       nullable:
         tag: nullable
@@ -353,14 +353,14 @@ attributes:
     description: Class of MHC alleles described by the MHCGenotype
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: m_h_c_genotype__mhc_class
-    owner: V1p4_MHCGenotype
+    alias: v1p4__m_h_c_genotype__mhc_class
+    owner: v1p4_MHCGenotype
     domain_of:
-    - V1p4_MHCGenotype
-    range: V1p4_MhcClass
+    - v1p4_MHCGenotype
+    range: v1p4_MhcClass
     required: true
-  m_h_c_genotype__mhc_alleles:
-    name: m_h_c_genotype__mhc_alleles
+  v1p4__m_h_c_genotype__mhc_alleles:
+    name: v1p4__m_h_c_genotype__mhc_alleles
     annotations:
       nullable:
         tag: nullable
@@ -368,15 +368,15 @@ attributes:
     description: List of MHC alleles of the indicated mhc_class identified in an individual
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: m_h_c_genotype__mhc_alleles
-    owner: V1p4_MHCGenotype
+    alias: v1p4__m_h_c_genotype__mhc_alleles
+    owner: v1p4_MHCGenotype
     domain_of:
-    - V1p4_MHCGenotype
-    range: V1p4_MHCAllele
+    - v1p4_MHCGenotype
+    range: v1p4_MHCAllele
     required: true
     multivalued: true
-  m_h_c_genotype__mhc_genotyping_method:
-    name: m_h_c_genotype__mhc_genotyping_method
+  v1p4__m_h_c_genotype__mhc_genotyping_method:
+    name: v1p4__m_h_c_genotype__mhc_genotyping_method
     annotations:
       nullable:
         tag: nullable
@@ -386,10 +386,10 @@ attributes:
       documentation.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: m_h_c_genotype__mhc_genotyping_method
-    owner: V1p4_MHCGenotype
+    alias: v1p4__m_h_c_genotype__mhc_genotyping_method
+    owner: v1p4_MHCGenotype
     domain_of:
-    - V1p4_MHCGenotype
+    - v1p4_MHCGenotype
     range: string
     required: false
 

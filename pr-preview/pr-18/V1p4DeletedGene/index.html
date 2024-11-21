@@ -204,11 +204,11 @@
 <div class="mermaid"> classDiagram
     class V1p4DeletedGene
     click V1p4DeletedGene href "../V1p4DeletedGene"
-      V1p4DeletedGene : deleted_gene__germline_set_ref
+      V1p4DeletedGene : v1p4__deleted_gene__germline_set_ref
 
-      V1p4DeletedGene : deleted_gene__label
+      V1p4DeletedGene : v1p4__deleted_gene__label
 
-      V1p4DeletedGene : deleted_gene__phasing
+      V1p4DeletedGene : v1p4__deleted_gene__phasing
 
 
 </div>
@@ -225,19 +225,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../deleted_gene__label/">deleted_gene__label</a></td>
+<td><a href="../v1p4__deleted_gene__label/">v1p4__deleted_gene__label</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The accepted name for this gene, taken from the GermlineSet</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../deleted_gene__germline_set_ref/">deleted_gene__germline_set_ref</a></td>
+<td><a href="../v1p4__deleted_gene__germline_set_ref/">v1p4__deleted_gene__germline_set_ref</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>GermlineSet from which it was taken (issuer/name/version)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../deleted_gene__phasing/">deleted_gene__phasing</a></td>
+<td><a href="../v1p4__deleted_gene__phasing/">v1p4__deleted_gene__phasing</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Chromosomal phasing indicator</td>
 <td>direct</td>
@@ -257,7 +257,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Genotype/">V1p4Genotype</a></td>
-<td><a href="../genotype__deleted_genes/">genotype__deleted_genes</a></td>
+<td><a href="../v1p4__genotype__deleted_genes/">v1p4__genotype__deleted_genes</a></td>
 <td>range</td>
 <td><a href="./">V1p4DeletedGene</a></td>
 </tr>
@@ -291,22 +291,22 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_DeletedGene
+<pre><code class="language-yaml">name: v1p4_DeletedGene
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- deleted_gene__label
-- deleted_gene__germline_set_ref
-- deleted_gene__phasing
+- v1p4__deleted_gene__label
+- v1p4__deleted_gene__germline_set_ref
+- v1p4__deleted_gene__phasing
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_DeletedGene
+<pre><code class="language-yaml">name: v1p4_DeletedGene
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  deleted_gene__label:
-    name: deleted_gene__label
+  v1p4__deleted_gene__label:
+    name: v1p4__deleted_gene__label
     annotations:
       nullable:
         tag: nullable
@@ -314,14 +314,14 @@ attributes:
     description: The accepted name for this gene, taken from the GermlineSet
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: deleted_gene__label
-    owner: V1p4_DeletedGene
+    alias: v1p4__deleted_gene__label
+    owner: v1p4_DeletedGene
     domain_of:
-    - V1p4_DeletedGene
+    - v1p4_DeletedGene
     range: string
     required: true
-  deleted_gene__germline_set_ref:
-    name: deleted_gene__germline_set_ref
+  v1p4__deleted_gene__germline_set_ref:
+    name: v1p4__deleted_gene__germline_set_ref
     annotations:
       nullable:
         tag: nullable
@@ -329,14 +329,14 @@ attributes:
     description: GermlineSet from which it was taken (issuer/name/version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: deleted_gene__germline_set_ref
-    owner: V1p4_DeletedGene
+    alias: v1p4__deleted_gene__germline_set_ref
+    owner: v1p4_DeletedGene
     domain_of:
-    - V1p4_DeletedGene
+    - v1p4_DeletedGene
     range: string
     required: true
-  deleted_gene__phasing:
-    name: deleted_gene__phasing
+  v1p4__deleted_gene__phasing:
+    name: v1p4__deleted_gene__phasing
     annotations:
       nullable:
         tag: nullable
@@ -345,10 +345,10 @@ attributes:
       to be located on the  same chromosome.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: deleted_gene__phasing
-    owner: V1p4_DeletedGene
+    alias: v1p4__deleted_gene__phasing
+    owner: v1p4_DeletedGene
     domain_of:
-    - V1p4_DeletedGene
+    - v1p4_DeletedGene
     range: integer
     required: false
 

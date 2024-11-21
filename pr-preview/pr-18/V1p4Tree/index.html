@@ -199,13 +199,13 @@
 <div class="mermaid"> classDiagram
     class V1p4Tree
     click V1p4Tree href "../V1p4Tree"
-      V1p4Tree : tree__clone_id
+      V1p4Tree : v1p4__tree__clone_id
 
-      V1p4Tree : tree__newick
+      V1p4Tree : v1p4__tree__newick
 
-      V1p4Tree : tree__nodes
+      V1p4Tree : v1p4__tree__nodes
 
-      V1p4Tree : tree__tree_id
+      V1p4Tree : v1p4__tree__tree_id
 
 
 </div>
@@ -222,25 +222,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../tree__tree_id/">tree__tree_id</a></td>
+<td><a href="../v1p4__tree__tree_id/">v1p4__tree__tree_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the tree</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../tree__clone_id/">tree__clone_id</a></td>
+<td><a href="../v1p4__tree__clone_id/">v1p4__tree__clone_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the clone</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../tree__newick/">tree__newick</a></td>
+<td><a href="../v1p4__tree__newick/">v1p4__tree__newick</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Newick string of the tree edges</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../tree__nodes/">tree__nodes</a></td>
+<td><a href="../v1p4__tree__nodes/">v1p4__tree__nodes</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Dictionary of nodes in the tree, keyed by sequence_id string</td>
 <td>direct</td>
@@ -275,23 +275,23 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Tree
+<pre><code class="language-yaml">name: v1p4_Tree
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- tree__tree_id
-- tree__clone_id
-- tree__newick
-- tree__nodes
+- v1p4__tree__tree_id
+- v1p4__tree__clone_id
+- v1p4__tree__newick
+- v1p4__tree__nodes
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Tree
+<pre><code class="language-yaml">name: v1p4_Tree
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  tree__tree_id:
-    name: tree__tree_id
+  v1p4__tree__tree_id:
+    name: v1p4__tree__tree_id
     annotations:
       nullable:
         tag: nullable
@@ -299,14 +299,14 @@ attributes:
     description: Identifier for the tree.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: tree__tree_id
-    owner: V1p4_Tree
+    alias: v1p4__tree__tree_id
+    owner: v1p4_Tree
     domain_of:
-    - V1p4_Tree
+    - v1p4_Tree
     range: string
     required: true
-  tree__clone_id:
-    name: tree__clone_id
+  v1p4__tree__clone_id:
+    name: v1p4__tree__clone_id
     annotations:
       nullable:
         tag: nullable
@@ -314,14 +314,14 @@ attributes:
     description: Identifier for the clone.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: tree__clone_id
-    owner: V1p4_Tree
+    alias: v1p4__tree__clone_id
+    owner: v1p4_Tree
     domain_of:
-    - V1p4_Tree
+    - v1p4_Tree
     range: string
     required: true
-  tree__newick:
-    name: tree__newick
+  v1p4__tree__newick:
+    name: v1p4__tree__newick
     annotations:
       nullable:
         tag: nullable
@@ -329,14 +329,14 @@ attributes:
     description: Newick string of the tree edges.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: tree__newick
-    owner: V1p4_Tree
+    alias: v1p4__tree__newick
+    owner: v1p4_Tree
     domain_of:
-    - V1p4_Tree
+    - v1p4_Tree
     range: string
     required: true
-  tree__nodes:
-    name: tree__nodes
+  v1p4__tree__nodes:
+    name: v1p4__tree__nodes
     annotations:
       nullable:
         tag: nullable
@@ -344,10 +344,10 @@ attributes:
     description: Dictionary of nodes in the tree, keyed by sequence_id string
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: tree__nodes
-    owner: V1p4_Tree
+    alias: v1p4__tree__nodes
+    owner: v1p4_Tree
     domain_of:
-    - V1p4_Tree
+    - v1p4_Tree
     range: string
     required: false
 

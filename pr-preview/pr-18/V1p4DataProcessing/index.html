@@ -204,29 +204,29 @@
 <div class="mermaid"> classDiagram
     class V1p4DataProcessing
     click V1p4DataProcessing href "../V1p4DataProcessing"
-      V1p4DataProcessing : data_processing__analysis_provenance_id
+      V1p4DataProcessing : v1p4__data_processing__analysis_provenance_id
 
-      V1p4DataProcessing : data_processing__collapsing_method
+      V1p4DataProcessing : v1p4__data_processing__collapsing_method
 
-      V1p4DataProcessing : data_processing__data_processing_files
+      V1p4DataProcessing : v1p4__data_processing__data_processing_files
 
-      V1p4DataProcessing : data_processing__data_processing_id
+      V1p4DataProcessing : v1p4__data_processing__data_processing_id
 
-      V1p4DataProcessing : data_processing__data_processing_protocols
+      V1p4DataProcessing : v1p4__data_processing__data_processing_protocols
 
-      V1p4DataProcessing : data_processing__germline_database
+      V1p4DataProcessing : v1p4__data_processing__germline_database
 
-      V1p4DataProcessing : data_processing__germline_set_ref
+      V1p4DataProcessing : v1p4__data_processing__germline_set_ref
 
-      V1p4DataProcessing : data_processing__paired_reads_assembly
+      V1p4DataProcessing : v1p4__data_processing__paired_reads_assembly
 
-      V1p4DataProcessing : data_processing__primary_annotation
+      V1p4DataProcessing : v1p4__data_processing__primary_annotation
 
-      V1p4DataProcessing : data_processing__primer_match_cutoffs
+      V1p4DataProcessing : v1p4__data_processing__primer_match_cutoffs
 
-      V1p4DataProcessing : data_processing__quality_thresholds
+      V1p4DataProcessing : v1p4__data_processing__quality_thresholds
 
-      V1p4DataProcessing : data_processing__software_versions
+      V1p4DataProcessing : v1p4__data_processing__software_versions
 
 
 </div>
@@ -243,73 +243,73 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../data_processing__data_processing_id/">data_processing__data_processing_id</a></td>
+<td><a href="../v1p4__data_processing__data_processing_id/">v1p4__data_processing__data_processing_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the data processing object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__primary_annotation/">data_processing__primary_annotation</a></td>
+<td><a href="../v1p4__data_processing__primary_annotation/">v1p4__data_processing__primary_annotation</a></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>If true, indicates this is the primary or default data processing for the rep...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__software_versions/">data_processing__software_versions</a></td>
+<td><a href="../v1p4__data_processing__software_versions/">v1p4__data_processing__software_versions</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Version number and / or date, include company pipelines</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__paired_reads_assembly/">data_processing__paired_reads_assembly</a></td>
+<td><a href="../v1p4__data_processing__paired_reads_assembly/">v1p4__data_processing__paired_reads_assembly</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>How paired end reads were assembled into a single receptor sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__quality_thresholds/">data_processing__quality_thresholds</a></td>
+<td><a href="../v1p4__data_processing__quality_thresholds/">v1p4__data_processing__quality_thresholds</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>How/if sequences were removed from (4) based on base quality scores</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__primer_match_cutoffs/">data_processing__primer_match_cutoffs</a></td>
+<td><a href="../v1p4__data_processing__primer_match_cutoffs/">v1p4__data_processing__primer_match_cutoffs</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>How primers were identified in the sequences, were they removed/masked/etc?</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__collapsing_method/">data_processing__collapsing_method</a></td>
+<td><a href="../v1p4__data_processing__collapsing_method/">v1p4__data_processing__collapsing_method</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The method used for combining multiple sequences from (4) into a single seque...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__data_processing_protocols/">data_processing__data_processing_protocols</a></td>
+<td><a href="../v1p4__data_processing__data_processing_protocols/">v1p4__data_processing__data_processing_protocols</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>General description of how QC is performed</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__data_processing_files/">data_processing__data_processing_files</a></td>
+<td><a href="../v1p4__data_processing__data_processing_files/">v1p4__data_processing__data_processing_files</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Array of file names for data produced by this data processing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__germline_database/">data_processing__germline_database</a></td>
+<td><a href="../v1p4__data_processing__germline_database/">v1p4__data_processing__germline_database</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Source of germline V(D)J genes with version number or date accessed</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__germline_set_ref/">data_processing__germline_set_ref</a></td>
+<td><a href="../v1p4__data_processing__germline_set_ref/">v1p4__data_processing__germline_set_ref</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of the germline set and version, in standardized form (Repo...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../data_processing__analysis_provenance_id/">data_processing__analysis_provenance_id</a></td>
+<td><a href="../v1p4__data_processing__analysis_provenance_id/">v1p4__data_processing__analysis_provenance_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for machine-readable PROV model of analysis provenance</td>
 <td>direct</td>
@@ -329,7 +329,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Repertoire/">V1p4Repertoire</a></td>
-<td><a href="../repertoire__data_processing/">repertoire__data_processing</a></td>
+<td><a href="../v1p4__repertoire__data_processing/">v1p4__repertoire__data_processing</a></td>
 <td>range</td>
 <td><a href="./">V1p4DataProcessing</a></td>
 </tr>
@@ -363,31 +363,31 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_DataProcessing
+<pre><code class="language-yaml">name: v1p4_DataProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- data_processing__data_processing_id
-- data_processing__primary_annotation
-- data_processing__software_versions
-- data_processing__paired_reads_assembly
-- data_processing__quality_thresholds
-- data_processing__primer_match_cutoffs
-- data_processing__collapsing_method
-- data_processing__data_processing_protocols
-- data_processing__data_processing_files
-- data_processing__germline_database
-- data_processing__germline_set_ref
-- data_processing__analysis_provenance_id
+- v1p4__data_processing__data_processing_id
+- v1p4__data_processing__primary_annotation
+- v1p4__data_processing__software_versions
+- v1p4__data_processing__paired_reads_assembly
+- v1p4__data_processing__quality_thresholds
+- v1p4__data_processing__primer_match_cutoffs
+- v1p4__data_processing__collapsing_method
+- v1p4__data_processing__data_processing_protocols
+- v1p4__data_processing__data_processing_files
+- v1p4__data_processing__germline_database
+- v1p4__data_processing__germline_set_ref
+- v1p4__data_processing__analysis_provenance_id
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_DataProcessing
+<pre><code class="language-yaml">name: v1p4_DataProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  data_processing__data_processing_id:
-    name: data_processing__data_processing_id
+  v1p4__data_processing__data_processing_id:
+    name: v1p4__data_processing__data_processing_id
     annotations:
       nullable:
         tag: nullable
@@ -395,14 +395,14 @@ attributes:
     description: Identifier for the data processing object.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__data_processing_id
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__data_processing_id
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: false
-  data_processing__primary_annotation:
-    name: data_processing__primary_annotation
+  v1p4__data_processing__primary_annotation:
+    name: v1p4__data_processing__primary_annotation
     annotations:
       nullable:
         tag: nullable
@@ -412,14 +412,14 @@ attributes:
       or additional data processing.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__primary_annotation
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__primary_annotation
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: boolean
     required: false
-  data_processing__software_versions:
-    name: data_processing__software_versions
+  v1p4__data_processing__software_versions:
+    name: v1p4__data_processing__software_versions
     annotations:
       nullable:
         tag: nullable
@@ -427,14 +427,14 @@ attributes:
     description: Version number and / or date, include company pipelines
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__software_versions
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__software_versions
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: true
-  data_processing__paired_reads_assembly:
-    name: data_processing__paired_reads_assembly
+  v1p4__data_processing__paired_reads_assembly:
+    name: v1p4__data_processing__paired_reads_assembly
     annotations:
       nullable:
         tag: nullable
@@ -442,14 +442,14 @@ attributes:
     description: How paired end reads were assembled into a single receptor sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__paired_reads_assembly
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__paired_reads_assembly
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: true
-  data_processing__quality_thresholds:
-    name: data_processing__quality_thresholds
+  v1p4__data_processing__quality_thresholds:
+    name: v1p4__data_processing__quality_thresholds
     annotations:
       nullable:
         tag: nullable
@@ -457,14 +457,14 @@ attributes:
     description: How/if sequences were removed from (4) based on base quality scores
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__quality_thresholds
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__quality_thresholds
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: true
-  data_processing__primer_match_cutoffs:
-    name: data_processing__primer_match_cutoffs
+  v1p4__data_processing__primer_match_cutoffs:
+    name: v1p4__data_processing__primer_match_cutoffs
     annotations:
       nullable:
         tag: nullable
@@ -472,14 +472,14 @@ attributes:
     description: How primers were identified in the sequences, were they removed/masked/etc?
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__primer_match_cutoffs
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__primer_match_cutoffs
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: true
-  data_processing__collapsing_method:
-    name: data_processing__collapsing_method
+  v1p4__data_processing__collapsing_method:
+    name: v1p4__data_processing__collapsing_method
     annotations:
       nullable:
         tag: nullable
@@ -488,14 +488,14 @@ attributes:
       single sequence in (5)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__collapsing_method
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__collapsing_method
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: true
-  data_processing__data_processing_protocols:
-    name: data_processing__data_processing_protocols
+  v1p4__data_processing__data_processing_protocols:
+    name: v1p4__data_processing__data_processing_protocols
     annotations:
       nullable:
         tag: nullable
@@ -503,14 +503,14 @@ attributes:
     description: General description of how QC is performed
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__data_processing_protocols
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__data_processing_protocols
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: true
-  data_processing__data_processing_files:
-    name: data_processing__data_processing_files
+  v1p4__data_processing__data_processing_files:
+    name: v1p4__data_processing__data_processing_files
     annotations:
       nullable:
         tag: nullable
@@ -518,15 +518,15 @@ attributes:
     description: Array of file names for data produced by this data processing.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__data_processing_files
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__data_processing_files
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: false
     multivalued: true
-  data_processing__germline_database:
-    name: data_processing__germline_database
+  v1p4__data_processing__germline_database:
+    name: v1p4__data_processing__germline_database
     annotations:
       nullable:
         tag: nullable
@@ -534,14 +534,14 @@ attributes:
     description: Source of germline V(D)J genes with version number or date accessed.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__germline_database
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__germline_database
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: true
-  data_processing__germline_set_ref:
-    name: data_processing__germline_set_ref
+  v1p4__data_processing__germline_set_ref:
+    name: v1p4__data_processing__germline_set_ref
     annotations:
       nullable:
         tag: nullable
@@ -550,14 +550,14 @@ attributes:
       form (Repo:Label:Version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__germline_set_ref
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__germline_set_ref
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: false
-  data_processing__analysis_provenance_id:
-    name: data_processing__analysis_provenance_id
+  v1p4__data_processing__analysis_provenance_id:
+    name: v1p4__data_processing__analysis_provenance_id
     annotations:
       nullable:
         tag: nullable
@@ -565,10 +565,10 @@ attributes:
     description: Identifier for machine-readable PROV model of analysis provenance
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: data_processing__analysis_provenance_id
-    owner: V1p4_DataProcessing
+    alias: v1p4__data_processing__analysis_provenance_id
+    owner: v1p4_DataProcessing
     domain_of:
-    - V1p4_DataProcessing
+    - v1p4_DataProcessing
     range: string
     required: false
 

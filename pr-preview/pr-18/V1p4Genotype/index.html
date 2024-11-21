@@ -204,50 +204,50 @@
 <div class="mermaid"> classDiagram
     class V1p4Genotype
     click V1p4Genotype href "../V1p4Genotype"
-      V1p4Genotype : genotype__deleted_genes
+      V1p4Genotype : v1p4__genotype__deleted_genes
 
 
 
 
-    V1p4Genotype --&gt; "*" V1p4DeletedGene : genotype__deleted_genes
+    V1p4Genotype --&gt; "*" V1p4DeletedGene : v1p4__genotype__deleted_genes
     click V1p4DeletedGene href "../V1p4DeletedGene"
 
 
-      V1p4Genotype : genotype__documented_alleles
+      V1p4Genotype : v1p4__genotype__documented_alleles
 
 
 
 
-    V1p4Genotype --&gt; "*" V1p4DocumentedAllele : genotype__documented_alleles
+    V1p4Genotype --&gt; "*" V1p4DocumentedAllele : v1p4__genotype__documented_alleles
     click V1p4DocumentedAllele href "../V1p4DocumentedAllele"
 
 
-      V1p4Genotype : genotype__inference_process
+      V1p4Genotype : v1p4__genotype__inference_process
 
 
 
 
-    V1p4Genotype --&gt; "0..1" V1p4InferenceProcess : genotype__inference_process
+    V1p4Genotype --&gt; "0..1" V1p4InferenceProcess : v1p4__genotype__inference_process
     click V1p4InferenceProcess href "../V1p4InferenceProcess"
 
 
-      V1p4Genotype : genotype__locus
+      V1p4Genotype : v1p4__genotype__locus
 
 
 
 
-    V1p4Genotype --&gt; "1" V1p4Locus : genotype__locus
+    V1p4Genotype --&gt; "1" V1p4Locus : v1p4__genotype__locus
     click V1p4Locus href "../V1p4Locus"
 
 
-      V1p4Genotype : genotype__receptor_genotype_id
+      V1p4Genotype : v1p4__genotype__receptor_genotype_id
 
-      V1p4Genotype : genotype__undocumented_alleles
-
-
+      V1p4Genotype : v1p4__genotype__undocumented_alleles
 
 
-    V1p4Genotype --&gt; "*" V1p4UndocumentedAllele : genotype__undocumented_alleles
+
+
+    V1p4Genotype --&gt; "*" V1p4UndocumentedAllele : v1p4__genotype__undocumented_alleles
     click V1p4UndocumentedAllele href "../V1p4UndocumentedAllele"
 
 
@@ -266,37 +266,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../genotype__receptor_genotype_id/">genotype__receptor_genotype_id</a></td>
+<td><a href="../v1p4__genotype__receptor_genotype_id/">v1p4__genotype__receptor_genotype_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier within the file for this Receptor Genotype, typically gen...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../genotype__locus/">genotype__locus</a></td>
+<td><a href="../v1p4__genotype__locus/">v1p4__genotype__locus</a></td>
 <td>1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
 <td>Gene locus</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../genotype__documented_alleles/">genotype__documented_alleles</a></td>
+<td><a href="../v1p4__genotype__documented_alleles/">v1p4__genotype__documented_alleles</a></td>
 <td>* <br/> <a href="../V1p4DocumentedAllele/">V1p4DocumentedAllele</a></td>
 <td>List of alleles documented in reference set(s)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../genotype__undocumented_alleles/">genotype__undocumented_alleles</a></td>
+<td><a href="../v1p4__genotype__undocumented_alleles/">v1p4__genotype__undocumented_alleles</a></td>
 <td>* <br/> <a href="../V1p4UndocumentedAllele/">V1p4UndocumentedAllele</a></td>
 <td>List of alleles inferred to be present and not documented in an identified Ge...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../genotype__deleted_genes/">genotype__deleted_genes</a></td>
+<td><a href="../v1p4__genotype__deleted_genes/">v1p4__genotype__deleted_genes</a></td>
 <td>* <br/> <a href="../V1p4DeletedGene/">V1p4DeletedGene</a></td>
 <td>Array of genes identified as being deleted in this genotype</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../genotype__inference_process/">genotype__inference_process</a></td>
+<td><a href="../v1p4__genotype__inference_process/">v1p4__genotype__inference_process</a></td>
 <td>0..1 <br/> <a href="../V1p4InferenceProcess/">V1p4InferenceProcess</a></td>
 <td>Information on how the genotype was acquired</td>
 <td>direct</td>
@@ -316,7 +316,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4GenotypeSet/">V1p4GenotypeSet</a></td>
-<td><a href="../genotype_set__genotype_class_list/">genotype_set__genotype_class_list</a></td>
+<td><a href="../v1p4__genotype_set__genotype_class_list/">v1p4__genotype_set__genotype_class_list</a></td>
 <td>range</td>
 <td><a href="./">V1p4Genotype</a></td>
 </tr>
@@ -350,25 +350,25 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Genotype
+<pre><code class="language-yaml">name: v1p4_Genotype
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- genotype__receptor_genotype_id
-- genotype__locus
-- genotype__documented_alleles
-- genotype__undocumented_alleles
-- genotype__deleted_genes
-- genotype__inference_process
+- v1p4__genotype__receptor_genotype_id
+- v1p4__genotype__locus
+- v1p4__genotype__documented_alleles
+- v1p4__genotype__undocumented_alleles
+- v1p4__genotype__deleted_genes
+- v1p4__genotype__inference_process
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Genotype
+<pre><code class="language-yaml">name: v1p4_Genotype
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  genotype__receptor_genotype_id:
-    name: genotype__receptor_genotype_id
+  v1p4__genotype__receptor_genotype_id:
+    name: v1p4__genotype__receptor_genotype_id
     annotations:
       nullable:
         tag: nullable
@@ -378,14 +378,14 @@ attributes:
       ID of the database record.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: genotype__receptor_genotype_id
-    owner: V1p4_Genotype
+    alias: v1p4__genotype__receptor_genotype_id
+    owner: v1p4_Genotype
     domain_of:
-    - V1p4_Genotype
+    - v1p4_Genotype
     range: string
     required: true
-  genotype__locus:
-    name: genotype__locus
+  v1p4__genotype__locus:
+    name: v1p4__genotype__locus
     annotations:
       nullable:
         tag: nullable
@@ -393,14 +393,14 @@ attributes:
     description: Gene locus
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: genotype__locus
-    owner: V1p4_Genotype
+    alias: v1p4__genotype__locus
+    owner: v1p4_Genotype
     domain_of:
-    - V1p4_Genotype
-    range: V1p4_Locus
+    - v1p4_Genotype
+    range: v1p4_Locus
     required: true
-  genotype__documented_alleles:
-    name: genotype__documented_alleles
+  v1p4__genotype__documented_alleles:
+    name: v1p4__genotype__documented_alleles
     annotations:
       nullable:
         tag: nullable
@@ -408,15 +408,15 @@ attributes:
     description: List of alleles documented in reference set(s)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: genotype__documented_alleles
-    owner: V1p4_Genotype
+    alias: v1p4__genotype__documented_alleles
+    owner: v1p4_Genotype
     domain_of:
-    - V1p4_Genotype
-    range: V1p4_DocumentedAllele
+    - v1p4_Genotype
+    range: v1p4_DocumentedAllele
     required: false
     multivalued: true
-  genotype__undocumented_alleles:
-    name: genotype__undocumented_alleles
+  v1p4__genotype__undocumented_alleles:
+    name: v1p4__genotype__undocumented_alleles
     annotations:
       nullable:
         tag: nullable
@@ -425,15 +425,15 @@ attributes:
       GermlineSet
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: genotype__undocumented_alleles
-    owner: V1p4_Genotype
+    alias: v1p4__genotype__undocumented_alleles
+    owner: v1p4_Genotype
     domain_of:
-    - V1p4_Genotype
-    range: V1p4_UndocumentedAllele
+    - v1p4_Genotype
+    range: v1p4_UndocumentedAllele
     required: false
     multivalued: true
-  genotype__deleted_genes:
-    name: genotype__deleted_genes
+  v1p4__genotype__deleted_genes:
+    name: v1p4__genotype__deleted_genes
     annotations:
       nullable:
         tag: nullable
@@ -441,15 +441,15 @@ attributes:
     description: Array of genes identified as being deleted in this genotype
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: genotype__deleted_genes
-    owner: V1p4_Genotype
+    alias: v1p4__genotype__deleted_genes
+    owner: v1p4_Genotype
     domain_of:
-    - V1p4_Genotype
-    range: V1p4_DeletedGene
+    - v1p4_Genotype
+    range: v1p4_DeletedGene
     required: false
     multivalued: true
-  genotype__inference_process:
-    name: genotype__inference_process
+  v1p4__genotype__inference_process:
+    name: v1p4__genotype__inference_process
     annotations:
       nullable:
         tag: nullable
@@ -457,11 +457,11 @@ attributes:
     description: Information on how the genotype was acquired. Controlled vocabulary.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: genotype__inference_process
-    owner: V1p4_Genotype
+    alias: v1p4__genotype__inference_process
+    owner: v1p4_Genotype
     domain_of:
-    - V1p4_Genotype
-    range: V1p4_InferenceProcess
+    - v1p4_Genotype
+    range: v1p4_InferenceProcess
     required: false
 
 </code></pre>

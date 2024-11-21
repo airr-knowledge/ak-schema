@@ -204,84 +204,84 @@
 <div class="mermaid"> classDiagram
     class V1p4Subject
     click V1p4Subject href "../V1p4Subject"
-      V1p4Subject : subject__age
+      V1p4Subject : v1p4__subject__age
 
 
 
 
-    V1p4Subject --&gt; "1" V1p4TimeInterval : subject__age
+    V1p4Subject --&gt; "1" V1p4TimeInterval : v1p4__subject__age
     click V1p4TimeInterval href "../V1p4TimeInterval"
 
 
-      V1p4Subject : subject__age_event
+      V1p4Subject : v1p4__subject__age_event
 
-      V1p4Subject : subject__ancestry_population
-
-
+      V1p4Subject : v1p4__subject__ancestry_population
 
 
-    V1p4Subject --&gt; "1" V1p4AncestryPopulation : subject__ancestry_population
+
+
+    V1p4Subject --&gt; "1" V1p4AncestryPopulation : v1p4__subject__ancestry_population
     click V1p4AncestryPopulation href "../V1p4AncestryPopulation"
 
 
-      V1p4Subject : subject__diagnosis
+      V1p4Subject : v1p4__subject__diagnosis
 
 
 
 
-    V1p4Subject --&gt; "*" V1p4Diagnosis : subject__diagnosis
+    V1p4Subject --&gt; "*" V1p4Diagnosis : v1p4__subject__diagnosis
     click V1p4Diagnosis href "../V1p4Diagnosis"
 
 
-      V1p4Subject : subject__ethnicity
+      V1p4Subject : v1p4__subject__ethnicity
 
-      V1p4Subject : subject__genotype
-
-
+      V1p4Subject : v1p4__subject__genotype
 
 
-    V1p4Subject --&gt; "0..1" V1p4SubjectGenotype : subject__genotype
+
+
+    V1p4Subject --&gt; "0..1" V1p4SubjectGenotype : v1p4__subject__genotype
     click V1p4SubjectGenotype href "../V1p4SubjectGenotype"
 
 
-      V1p4Subject : subject__link_type
+      V1p4Subject : v1p4__subject__link_type
 
-      V1p4Subject : subject__linked_subjects
+      V1p4Subject : v1p4__subject__linked_subjects
 
-      V1p4Subject : subject__location_birth
-
-
+      V1p4Subject : v1p4__subject__location_birth
 
 
-    V1p4Subject --&gt; "0..1" V1p4LocationBirth : subject__location_birth
+
+
+    V1p4Subject --&gt; "0..1" V1p4LocationBirth : v1p4__subject__location_birth
     click V1p4LocationBirth href "../V1p4LocationBirth"
 
 
-      V1p4Subject : subject__race
+      V1p4Subject : v1p4__subject__race
 
-      V1p4Subject : subject__sex
-
-
+      V1p4Subject : v1p4__subject__sex
 
 
-    V1p4Subject --&gt; "1" V1p4Sex : subject__sex
+
+
+    V1p4Subject --&gt; "1" V1p4Sex : v1p4__subject__sex
     click V1p4Sex href "../V1p4Sex"
 
 
-      V1p4Subject : subject__species
+      V1p4Subject : v1p4__subject__species
 
 
 
 
-    V1p4Subject --&gt; "1" V1p4Species : subject__species
+    V1p4Subject --&gt; "1" V1p4Species : v1p4__subject__species
     click V1p4Species href "../V1p4Species"
 
 
-      V1p4Subject : subject__strain_name
+      V1p4Subject : v1p4__subject__strain_name
 
-      V1p4Subject : subject__subject_id
+      V1p4Subject : v1p4__subject__subject_id
 
-      V1p4Subject : subject__synthetic
+      V1p4Subject : v1p4__subject__synthetic
 
 
 </div>
@@ -298,91 +298,91 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../subject__subject_id/">subject__subject_id</a></td>
+<td><a href="../v1p4__subject__subject_id/">v1p4__subject__subject_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Subject ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__synthetic/">subject__synthetic</a></td>
+<td><a href="../v1p4__subject__synthetic/">v1p4__subject__synthetic</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE for libraries in which the diversity has been synthetically generated (e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__species/">subject__species</a></td>
+<td><a href="../v1p4__subject__species/">v1p4__subject__species</a></td>
 <td>1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__sex/">subject__sex</a></td>
+<td><a href="../v1p4__subject__sex/">v1p4__subject__sex</a></td>
 <td>1 <br/> <a href="../V1p4Sex/">V1p4Sex</a></td>
 <td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__age/">subject__age</a></td>
+<td><a href="../v1p4__subject__age/">v1p4__subject__age</a></td>
 <td>1 <br/> <a href="../V1p4TimeInterval/">V1p4TimeInterval</a></td>
 <td>Age of subject expressed as a time interval</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__age_event/">subject__age_event</a></td>
+<td><a href="../v1p4__subject__age_event/">v1p4__subject__age_event</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Event in the study schedule to which <code>Age</code> refers</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__ancestry_population/">subject__ancestry_population</a></td>
+<td><a href="../v1p4__subject__ancestry_population/">v1p4__subject__ancestry_population</a></td>
 <td>1 <br/> <a href="../V1p4AncestryPopulation/">V1p4AncestryPopulation</a></td>
 <td>Broad geographic origin of ancestry (continent)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__location_birth/">subject__location_birth</a></td>
+<td><a href="../v1p4__subject__location_birth/">v1p4__subject__location_birth</a></td>
 <td>0..1 <br/> <a href="../V1p4LocationBirth/">V1p4LocationBirth</a></td>
 <td>Self-reported location of birth of the subject, preferred granularity is coun...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__ethnicity/">subject__ethnicity</a></td>
+<td><a href="../v1p4__subject__ethnicity/">v1p4__subject__ethnicity</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Ethnic group of subject (defined as cultural/language-based membership)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__race/">subject__race</a></td>
+<td><a href="../v1p4__subject__race/">v1p4__subject__race</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Racial group of subject (as defined by NIH)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__strain_name/">subject__strain_name</a></td>
+<td><a href="../v1p4__subject__strain_name/">v1p4__subject__strain_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Non-human designation of the strain or breed of animal used</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__linked_subjects/">subject__linked_subjects</a></td>
+<td><a href="../v1p4__subject__linked_subjects/">v1p4__subject__linked_subjects</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Subject ID to which <code>Relation type</code> refers</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__link_type/">subject__link_type</a></td>
+<td><a href="../v1p4__subject__link_type/">v1p4__subject__link_type</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Relation between subject and <code>linked_subjects</code>, can be genetic or environment...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__diagnosis/">subject__diagnosis</a></td>
+<td><a href="../v1p4__subject__diagnosis/">v1p4__subject__diagnosis</a></td>
 <td>* <br/> <a href="../V1p4Diagnosis/">V1p4Diagnosis</a></td>
 <td>Diagnosis information for subject</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../subject__genotype/">subject__genotype</a></td>
+<td><a href="../v1p4__subject__genotype/">v1p4__subject__genotype</a></td>
 <td>0..1 <br/> <a href="../V1p4SubjectGenotype/">V1p4SubjectGenotype</a></td>
 <td></td>
 <td>direct</td>
@@ -402,7 +402,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Repertoire/">V1p4Repertoire</a></td>
-<td><a href="../repertoire__subject/">repertoire__subject</a></td>
+<td><a href="../v1p4__repertoire__subject/">v1p4__repertoire__subject</a></td>
 <td>range</td>
 <td><a href="./">V1p4Subject</a></td>
 </tr>
@@ -436,34 +436,34 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Subject
+<pre><code class="language-yaml">name: v1p4_Subject
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- subject__subject_id
-- subject__synthetic
-- subject__species
-- subject__sex
-- subject__age
-- subject__age_event
-- subject__ancestry_population
-- subject__location_birth
-- subject__ethnicity
-- subject__race
-- subject__strain_name
-- subject__linked_subjects
-- subject__link_type
-- subject__diagnosis
-- subject__genotype
+- v1p4__subject__subject_id
+- v1p4__subject__synthetic
+- v1p4__subject__species
+- v1p4__subject__sex
+- v1p4__subject__age
+- v1p4__subject__age_event
+- v1p4__subject__ancestry_population
+- v1p4__subject__location_birth
+- v1p4__subject__ethnicity
+- v1p4__subject__race
+- v1p4__subject__strain_name
+- v1p4__subject__linked_subjects
+- v1p4__subject__link_type
+- v1p4__subject__diagnosis
+- v1p4__subject__genotype
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Subject
+<pre><code class="language-yaml">name: v1p4_Subject
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  subject__subject_id:
-    name: subject__subject_id
+  v1p4__subject__subject_id:
+    name: v1p4__subject__subject_id
     annotations:
       nullable:
         tag: nullable
@@ -473,14 +473,14 @@ attributes:
       be used.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__subject_id
-    owner: V1p4_Subject
+    alias: v1p4__subject__subject_id
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: string
     required: true
-  subject__synthetic:
-    name: subject__synthetic
+  v1p4__subject__synthetic:
+    name: v1p4__subject__synthetic
     annotations:
       nullable:
         tag: nullable
@@ -489,14 +489,14 @@ attributes:
       generated (e.g. phage display)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__synthetic
-    owner: V1p4_Subject
+    alias: v1p4__subject__synthetic
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: boolean
     required: true
-  subject__species:
-    name: subject__species
+  v1p4__subject__species:
+    name: v1p4__subject__species
     annotations:
       nullable:
         tag: nullable
@@ -504,14 +504,14 @@ attributes:
     description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__species
-    owner: V1p4_Subject
+    alias: v1p4__subject__species
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
-    range: V1p4_Species
+    - v1p4_Subject
+    range: v1p4_Species
     required: true
-  subject__sex:
-    name: subject__sex
+  v1p4__subject__sex:
+    name: v1p4__subject__sex
     annotations:
       nullable:
         tag: nullable
@@ -519,14 +519,14 @@ attributes:
     description: Biological sex of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__sex
-    owner: V1p4_Subject
+    alias: v1p4__subject__sex
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
-    range: V1p4_Sex
+    - v1p4_Subject
+    range: v1p4_Sex
     required: true
-  subject__age:
-    name: subject__age
+  v1p4__subject__age:
+    name: v1p4__subject__age
     annotations:
       nullable:
         tag: nullable
@@ -535,14 +535,14 @@ attributes:
       then min == max in the time interval.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__age
-    owner: V1p4_Subject
+    alias: v1p4__subject__age
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
-    range: V1p4_TimeInterval
+    - v1p4_Subject
+    range: v1p4_TimeInterval
     required: true
-  subject__age_event:
-    name: subject__age_event
+  v1p4__subject__age_event:
+    name: v1p4__subject__age_event
     annotations:
       nullable:
         tag: nullable
@@ -554,14 +554,14 @@ attributes:
       proximity.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__age_event
-    owner: V1p4_Subject
+    alias: v1p4__subject__age_event
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: string
     required: true
-  subject__ancestry_population:
-    name: subject__ancestry_population
+  v1p4__subject__ancestry_population:
+    name: v1p4__subject__ancestry_population
     annotations:
       nullable:
         tag: nullable
@@ -569,14 +569,14 @@ attributes:
     description: Broad geographic origin of ancestry (continent)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__ancestry_population
-    owner: V1p4_Subject
+    alias: v1p4__subject__ancestry_population
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
-    range: V1p4_AncestryPopulation
+    - v1p4_Subject
+    range: v1p4_AncestryPopulation
     required: true
-  subject__location_birth:
-    name: subject__location_birth
+  v1p4__subject__location_birth:
+    name: v1p4__subject__location_birth
     annotations:
       nullable:
         tag: nullable
@@ -585,14 +585,14 @@ attributes:
       is country-level
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__location_birth
-    owner: V1p4_Subject
+    alias: v1p4__subject__location_birth
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
-    range: V1p4_LocationBirth
+    - v1p4_Subject
+    range: v1p4_LocationBirth
     required: false
-  subject__ethnicity:
-    name: subject__ethnicity
+  v1p4__subject__ethnicity:
+    name: v1p4__subject__ethnicity
     annotations:
       nullable:
         tag: nullable
@@ -600,14 +600,14 @@ attributes:
     description: Ethnic group of subject (defined as cultural/language-based membership)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__ethnicity
-    owner: V1p4_Subject
+    alias: v1p4__subject__ethnicity
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: string
     required: true
-  subject__race:
-    name: subject__race
+  v1p4__subject__race:
+    name: v1p4__subject__race
     annotations:
       nullable:
         tag: nullable
@@ -615,14 +615,14 @@ attributes:
     description: Racial group of subject (as defined by NIH)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__race
-    owner: V1p4_Subject
+    alias: v1p4__subject__race
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: string
     required: true
-  subject__strain_name:
-    name: subject__strain_name
+  v1p4__subject__strain_name:
+    name: v1p4__subject__strain_name
     annotations:
       nullable:
         tag: nullable
@@ -630,14 +630,14 @@ attributes:
     description: Non-human designation of the strain or breed of animal used
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__strain_name
-    owner: V1p4_Subject
+    alias: v1p4__subject__strain_name
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: string
     required: true
-  subject__linked_subjects:
-    name: subject__linked_subjects
+  v1p4__subject__linked_subjects:
+    name: v1p4__subject__linked_subjects
     annotations:
       nullable:
         tag: nullable
@@ -645,14 +645,14 @@ attributes:
     description: Subject ID to which `Relation type` refers
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__linked_subjects
-    owner: V1p4_Subject
+    alias: v1p4__subject__linked_subjects
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: string
     required: true
-  subject__link_type:
-    name: subject__link_type
+  v1p4__subject__link_type:
+    name: v1p4__subject__link_type
     annotations:
       nullable:
         tag: nullable
@@ -661,14 +661,14 @@ attributes:
       environmental (e.g.exposure)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__link_type
-    owner: V1p4_Subject
+    alias: v1p4__subject__link_type
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
+    - v1p4_Subject
     range: string
     required: true
-  subject__diagnosis:
-    name: subject__diagnosis
+  v1p4__subject__diagnosis:
+    name: v1p4__subject__diagnosis
     annotations:
       nullable:
         tag: nullable
@@ -676,15 +676,15 @@ attributes:
     description: Diagnosis information for subject
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__diagnosis
-    owner: V1p4_Subject
+    alias: v1p4__subject__diagnosis
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
-    range: V1p4_Diagnosis
+    - v1p4_Subject
+    range: v1p4_Diagnosis
     required: false
     multivalued: true
-  subject__genotype:
-    name: subject__genotype
+  v1p4__subject__genotype:
+    name: v1p4__subject__genotype
     annotations:
       nullable:
         tag: nullable
@@ -692,11 +692,11 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: subject__genotype
-    owner: V1p4_Subject
+    alias: v1p4__subject__genotype
+    owner: v1p4_Subject
     domain_of:
-    - V1p4_Subject
-    range: V1p4_SubjectGenotype
+    - v1p4_Subject
+    range: v1p4_SubjectGenotype
     required: false
 
 </code></pre>

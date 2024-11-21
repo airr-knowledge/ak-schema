@@ -199,13 +199,13 @@
 <div class="mermaid"> classDiagram
     class V1p4RepertoireGroup
     click V1p4RepertoireGroup href "../V1p4RepertoireGroup"
-      V1p4RepertoireGroup : repertoire_group__repertoire_group_description
+      V1p4RepertoireGroup : v1p4__repertoire_group__repertoire_group_description
 
-      V1p4RepertoireGroup : repertoire_group__repertoire_group_id
+      V1p4RepertoireGroup : v1p4__repertoire_group__repertoire_group_id
 
-      V1p4RepertoireGroup : repertoire_group__repertoire_group_name
+      V1p4RepertoireGroup : v1p4__repertoire_group__repertoire_group_name
 
-      V1p4RepertoireGroup : repertoire_group__repertoires
+      V1p4RepertoireGroup : v1p4__repertoire_group__repertoires
 
 
 </div>
@@ -222,25 +222,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../repertoire_group__repertoire_group_id/">repertoire_group__repertoire_group_id</a></td>
+<td><a href="../v1p4__repertoire_group__repertoire_group_id/">v1p4__repertoire_group__repertoire_group_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for this repertoire group</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../repertoire_group__repertoire_group_name/">repertoire_group__repertoire_group_name</a></td>
+<td><a href="../v1p4__repertoire_group__repertoire_group_name/">v1p4__repertoire_group__repertoire_group_name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Short display name for this repertoire group</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../repertoire_group__repertoire_group_description/">repertoire_group__repertoire_group_description</a></td>
+<td><a href="../v1p4__repertoire_group__repertoire_group_description/">v1p4__repertoire_group__repertoire_group_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Repertoire group description</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../repertoire_group__repertoires/">repertoire_group__repertoires</a></td>
+<td><a href="../v1p4__repertoire_group__repertoires/">v1p4__repertoire_group__repertoires</a></td>
 <td>1..* <br/> <a href="../String/">String</a></td>
 <td>List of repertoires in this group with an associated description and time poi...</td>
 <td>direct</td>
@@ -275,23 +275,23 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_RepertoireGroup
+<pre><code class="language-yaml">name: v1p4_RepertoireGroup
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- repertoire_group__repertoire_group_id
-- repertoire_group__repertoire_group_name
-- repertoire_group__repertoire_group_description
-- repertoire_group__repertoires
+- v1p4__repertoire_group__repertoire_group_id
+- v1p4__repertoire_group__repertoire_group_name
+- v1p4__repertoire_group__repertoire_group_description
+- v1p4__repertoire_group__repertoires
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_RepertoireGroup
+<pre><code class="language-yaml">name: v1p4_RepertoireGroup
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  repertoire_group__repertoire_group_id:
-    name: repertoire_group__repertoire_group_id
+  v1p4__repertoire_group__repertoire_group_id:
+    name: v1p4__repertoire_group__repertoire_group_id
     annotations:
       nullable:
         tag: nullable
@@ -299,14 +299,14 @@ attributes:
     description: Identifier for this repertoire group
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: repertoire_group__repertoire_group_id
-    owner: V1p4_RepertoireGroup
+    alias: v1p4__repertoire_group__repertoire_group_id
+    owner: v1p4_RepertoireGroup
     domain_of:
-    - V1p4_RepertoireGroup
+    - v1p4_RepertoireGroup
     range: string
     required: true
-  repertoire_group__repertoire_group_name:
-    name: repertoire_group__repertoire_group_name
+  v1p4__repertoire_group__repertoire_group_name:
+    name: v1p4__repertoire_group__repertoire_group_name
     annotations:
       nullable:
         tag: nullable
@@ -314,14 +314,14 @@ attributes:
     description: Short display name for this repertoire group
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: repertoire_group__repertoire_group_name
-    owner: V1p4_RepertoireGroup
+    alias: v1p4__repertoire_group__repertoire_group_name
+    owner: v1p4_RepertoireGroup
     domain_of:
-    - V1p4_RepertoireGroup
+    - v1p4_RepertoireGroup
     range: string
     required: false
-  repertoire_group__repertoire_group_description:
-    name: repertoire_group__repertoire_group_description
+  v1p4__repertoire_group__repertoire_group_description:
+    name: v1p4__repertoire_group__repertoire_group_description
     annotations:
       nullable:
         tag: nullable
@@ -329,14 +329,14 @@ attributes:
     description: Repertoire group description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: repertoire_group__repertoire_group_description
-    owner: V1p4_RepertoireGroup
+    alias: v1p4__repertoire_group__repertoire_group_description
+    owner: v1p4_RepertoireGroup
     domain_of:
-    - V1p4_RepertoireGroup
+    - v1p4_RepertoireGroup
     range: string
     required: false
-  repertoire_group__repertoires:
-    name: repertoire_group__repertoires
+  v1p4__repertoire_group__repertoires:
+    name: v1p4__repertoire_group__repertoires
     annotations:
       nullable:
         tag: nullable
@@ -345,10 +345,10 @@ attributes:
       and time point designation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: repertoire_group__repertoires
-    owner: V1p4_RepertoireGroup
+    alias: v1p4__repertoire_group__repertoires
+    owner: v1p4_RepertoireGroup
     domain_of:
-    - V1p4_RepertoireGroup
+    - v1p4_RepertoireGroup
     range: string
     required: true
     multivalued: true

@@ -204,11 +204,11 @@
 <div class="mermaid"> classDiagram
     class V1p4UndocumentedAllele
     click V1p4UndocumentedAllele href "../V1p4UndocumentedAllele"
-      V1p4UndocumentedAllele : undocumented_allele__allele_name
+      V1p4UndocumentedAllele : v1p4__undocumented_allele__allele_name
 
-      V1p4UndocumentedAllele : undocumented_allele__phasing
+      V1p4UndocumentedAllele : v1p4__undocumented_allele__phasing
 
-      V1p4UndocumentedAllele : undocumented_allele__sequence
+      V1p4UndocumentedAllele : v1p4__undocumented_allele__sequence
 
 
 </div>
@@ -225,19 +225,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../undocumented_allele__allele_name/">undocumented_allele__allele_name</a></td>
+<td><a href="../v1p4__undocumented_allele__allele_name/">v1p4__undocumented_allele__allele_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Allele name as allocated by the inference pipeline</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../undocumented_allele__sequence/">undocumented_allele__sequence</a></td>
+<td><a href="../v1p4__undocumented_allele__sequence/">v1p4__undocumented_allele__sequence</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>nt sequence of the allele, as provided by the inference pipeline</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../undocumented_allele__phasing/">undocumented_allele__phasing</a></td>
+<td><a href="../v1p4__undocumented_allele__phasing/">v1p4__undocumented_allele__phasing</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Chromosomal phasing indicator</td>
 <td>direct</td>
@@ -257,7 +257,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Genotype/">V1p4Genotype</a></td>
-<td><a href="../genotype__undocumented_alleles/">genotype__undocumented_alleles</a></td>
+<td><a href="../v1p4__genotype__undocumented_alleles/">v1p4__genotype__undocumented_alleles</a></td>
 <td>range</td>
 <td><a href="./">V1p4UndocumentedAllele</a></td>
 </tr>
@@ -291,22 +291,22 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_UndocumentedAllele
+<pre><code class="language-yaml">name: v1p4_UndocumentedAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- undocumented_allele__allele_name
-- undocumented_allele__sequence
-- undocumented_allele__phasing
+- v1p4__undocumented_allele__allele_name
+- v1p4__undocumented_allele__sequence
+- v1p4__undocumented_allele__phasing
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_UndocumentedAllele
+<pre><code class="language-yaml">name: v1p4_UndocumentedAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  undocumented_allele__allele_name:
-    name: undocumented_allele__allele_name
+  v1p4__undocumented_allele__allele_name:
+    name: v1p4__undocumented_allele__allele_name
     annotations:
       nullable:
         tag: nullable
@@ -314,14 +314,14 @@ attributes:
     description: Allele name as allocated by the inference pipeline
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: undocumented_allele__allele_name
-    owner: V1p4_UndocumentedAllele
+    alias: v1p4__undocumented_allele__allele_name
+    owner: v1p4_UndocumentedAllele
     domain_of:
-    - V1p4_UndocumentedAllele
+    - v1p4_UndocumentedAllele
     range: string
     required: true
-  undocumented_allele__sequence:
-    name: undocumented_allele__sequence
+  v1p4__undocumented_allele__sequence:
+    name: v1p4__undocumented_allele__sequence
     annotations:
       nullable:
         tag: nullable
@@ -329,14 +329,14 @@ attributes:
     description: nt sequence of the allele, as provided by the inference pipeline
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: undocumented_allele__sequence
-    owner: V1p4_UndocumentedAllele
+    alias: v1p4__undocumented_allele__sequence
+    owner: v1p4_UndocumentedAllele
     domain_of:
-    - V1p4_UndocumentedAllele
+    - v1p4_UndocumentedAllele
     range: string
     required: true
-  undocumented_allele__phasing:
-    name: undocumented_allele__phasing
+  v1p4__undocumented_allele__phasing:
+    name: v1p4__undocumented_allele__phasing
     annotations:
       nullable:
         tag: nullable
@@ -345,10 +345,10 @@ attributes:
       to be located on the  same chromosome.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: undocumented_allele__phasing
-    owner: V1p4_UndocumentedAllele
+    alias: v1p4__undocumented_allele__phasing
+    owner: v1p4_UndocumentedAllele
     domain_of:
-    - V1p4_UndocumentedAllele
+    - v1p4_UndocumentedAllele
     range: integer
     required: false
 

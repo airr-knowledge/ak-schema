@@ -199,26 +199,26 @@
 <div class="mermaid"> classDiagram
     class V1p4SequencingRun
     click V1p4SequencingRun href "../V1p4SequencingRun"
-      V1p4SequencingRun : sequencing_run__sequencing_facility
+      V1p4SequencingRun : v1p4__sequencing_run__sequencing_facility
 
-      V1p4SequencingRun : sequencing_run__sequencing_files
-
-
+      V1p4SequencingRun : v1p4__sequencing_run__sequencing_files
 
 
-    V1p4SequencingRun --&gt; "0..1" V1p4SequencingData : sequencing_run__sequencing_files
+
+
+    V1p4SequencingRun --&gt; "0..1" V1p4SequencingData : v1p4__sequencing_run__sequencing_files
     click V1p4SequencingData href "../V1p4SequencingData"
 
 
-      V1p4SequencingRun : sequencing_run__sequencing_kit
+      V1p4SequencingRun : v1p4__sequencing_run__sequencing_kit
 
-      V1p4SequencingRun : sequencing_run__sequencing_platform
+      V1p4SequencingRun : v1p4__sequencing_run__sequencing_platform
 
-      V1p4SequencingRun : sequencing_run__sequencing_run_date
+      V1p4SequencingRun : v1p4__sequencing_run__sequencing_run_date
 
-      V1p4SequencingRun : sequencing_run__sequencing_run_id
+      V1p4SequencingRun : v1p4__sequencing_run__sequencing_run_id
 
-      V1p4SequencingRun : sequencing_run__total_reads_passing_qc_filter
+      V1p4SequencingRun : v1p4__sequencing_run__total_reads_passing_qc_filter
 
 
 </div>
@@ -235,43 +235,43 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../sequencing_run__sequencing_run_id/">sequencing_run__sequencing_run_id</a></td>
+<td><a href="../v1p4__sequencing_run__sequencing_run_id/">v1p4__sequencing_run__sequencing_run_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>ID of sequencing run assigned by the sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sequencing_run__total_reads_passing_qc_filter/">sequencing_run__total_reads_passing_qc_filter</a></td>
+<td><a href="../v1p4__sequencing_run__total_reads_passing_qc_filter/">v1p4__sequencing_run__total_reads_passing_qc_filter</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of usable reads for analysis</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sequencing_run__sequencing_platform/">sequencing_run__sequencing_platform</a></td>
+<td><a href="../v1p4__sequencing_run__sequencing_platform/">v1p4__sequencing_run__sequencing_platform</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Designation of sequencing instrument used</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sequencing_run__sequencing_facility/">sequencing_run__sequencing_facility</a></td>
+<td><a href="../v1p4__sequencing_run__sequencing_facility/">v1p4__sequencing_run__sequencing_facility</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sequencing_run__sequencing_run_date/">sequencing_run__sequencing_run_date</a></td>
+<td><a href="../v1p4__sequencing_run__sequencing_run_date/">v1p4__sequencing_run__sequencing_run_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sequencing_run__sequencing_kit/">sequencing_run__sequencing_kit</a></td>
+<td><a href="../v1p4__sequencing_run__sequencing_kit/">v1p4__sequencing_run__sequencing_kit</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name, manufacturer, order and lot numbers of sequencing kit</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sequencing_run__sequencing_files/">sequencing_run__sequencing_files</a></td>
+<td><a href="../v1p4__sequencing_run__sequencing_files/">v1p4__sequencing_run__sequencing_files</a></td>
 <td>0..1 <br/> <a href="../V1p4SequencingData/">V1p4SequencingData</a></td>
 <td>Set of sequencing files produced by the sequencing run</td>
 <td>direct</td>
@@ -306,26 +306,26 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_SequencingRun
+<pre><code class="language-yaml">name: v1p4_SequencingRun
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- sequencing_run__sequencing_run_id
-- sequencing_run__total_reads_passing_qc_filter
-- sequencing_run__sequencing_platform
-- sequencing_run__sequencing_facility
-- sequencing_run__sequencing_run_date
-- sequencing_run__sequencing_kit
-- sequencing_run__sequencing_files
+- v1p4__sequencing_run__sequencing_run_id
+- v1p4__sequencing_run__total_reads_passing_qc_filter
+- v1p4__sequencing_run__sequencing_platform
+- v1p4__sequencing_run__sequencing_facility
+- v1p4__sequencing_run__sequencing_run_date
+- v1p4__sequencing_run__sequencing_kit
+- v1p4__sequencing_run__sequencing_files
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_SequencingRun
+<pre><code class="language-yaml">name: v1p4_SequencingRun
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  sequencing_run__sequencing_run_id:
-    name: sequencing_run__sequencing_run_id
+  v1p4__sequencing_run__sequencing_run_id:
+    name: v1p4__sequencing_run__sequencing_run_id
     annotations:
       nullable:
         tag: nullable
@@ -333,15 +333,15 @@ attributes:
     description: ID of sequencing run assigned by the sequencing facility
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sequencing_run__sequencing_run_id
-    owner: V1p4_SequencingRun
+    alias: v1p4__sequencing_run__sequencing_run_id
+    owner: v1p4_SequencingRun
     domain_of:
-    - V1p4_SequencingRun
-    - V1p4_SampleProcessing
+    - v1p4_SequencingRun
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sequencing_run__total_reads_passing_qc_filter:
-    name: sequencing_run__total_reads_passing_qc_filter
+  v1p4__sequencing_run__total_reads_passing_qc_filter:
+    name: v1p4__sequencing_run__total_reads_passing_qc_filter
     annotations:
       nullable:
         tag: nullable
@@ -349,15 +349,15 @@ attributes:
     description: Number of usable reads for analysis
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sequencing_run__total_reads_passing_qc_filter
-    owner: V1p4_SequencingRun
+    alias: v1p4__sequencing_run__total_reads_passing_qc_filter
+    owner: v1p4_SequencingRun
     domain_of:
-    - V1p4_SequencingRun
-    - V1p4_SampleProcessing
+    - v1p4_SequencingRun
+    - v1p4_SampleProcessing
     range: integer
     required: true
-  sequencing_run__sequencing_platform:
-    name: sequencing_run__sequencing_platform
+  v1p4__sequencing_run__sequencing_platform:
+    name: v1p4__sequencing_run__sequencing_platform
     annotations:
       nullable:
         tag: nullable
@@ -365,15 +365,15 @@ attributes:
     description: Designation of sequencing instrument used
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sequencing_run__sequencing_platform
-    owner: V1p4_SequencingRun
+    alias: v1p4__sequencing_run__sequencing_platform
+    owner: v1p4_SequencingRun
     domain_of:
-    - V1p4_SequencingRun
-    - V1p4_SampleProcessing
+    - v1p4_SequencingRun
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sequencing_run__sequencing_facility:
-    name: sequencing_run__sequencing_facility
+  v1p4__sequencing_run__sequencing_facility:
+    name: v1p4__sequencing_run__sequencing_facility
     annotations:
       nullable:
         tag: nullable
@@ -381,15 +381,15 @@ attributes:
     description: Name and address of sequencing facility
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sequencing_run__sequencing_facility
-    owner: V1p4_SequencingRun
+    alias: v1p4__sequencing_run__sequencing_facility
+    owner: v1p4_SequencingRun
     domain_of:
-    - V1p4_SequencingRun
-    - V1p4_SampleProcessing
+    - v1p4_SequencingRun
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sequencing_run__sequencing_run_date:
-    name: sequencing_run__sequencing_run_date
+  v1p4__sequencing_run__sequencing_run_date:
+    name: v1p4__sequencing_run__sequencing_run_date
     annotations:
       nullable:
         tag: nullable
@@ -397,15 +397,15 @@ attributes:
     description: Date of sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sequencing_run__sequencing_run_date
-    owner: V1p4_SequencingRun
+    alias: v1p4__sequencing_run__sequencing_run_date
+    owner: v1p4_SequencingRun
     domain_of:
-    - V1p4_SequencingRun
-    - V1p4_SampleProcessing
+    - v1p4_SequencingRun
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sequencing_run__sequencing_kit:
-    name: sequencing_run__sequencing_kit
+  v1p4__sequencing_run__sequencing_kit:
+    name: v1p4__sequencing_run__sequencing_kit
     annotations:
       nullable:
         tag: nullable
@@ -413,15 +413,15 @@ attributes:
     description: Name, manufacturer, order and lot numbers of sequencing kit
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sequencing_run__sequencing_kit
-    owner: V1p4_SequencingRun
+    alias: v1p4__sequencing_run__sequencing_kit
+    owner: v1p4_SequencingRun
     domain_of:
-    - V1p4_SequencingRun
-    - V1p4_SampleProcessing
+    - v1p4_SequencingRun
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sequencing_run__sequencing_files:
-    name: sequencing_run__sequencing_files
+  v1p4__sequencing_run__sequencing_files:
+    name: v1p4__sequencing_run__sequencing_files
     annotations:
       nullable:
         tag: nullable
@@ -429,12 +429,12 @@ attributes:
     description: Set of sequencing files produced by the sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sequencing_run__sequencing_files
-    owner: V1p4_SequencingRun
+    alias: v1p4__sequencing_run__sequencing_files
+    owner: v1p4_SequencingRun
     domain_of:
-    - V1p4_SequencingRun
-    - V1p4_SampleProcessing
-    range: V1p4_SequencingData
+    - v1p4_SequencingRun
+    - v1p4_SampleProcessing
+    range: v1p4_SequencingData
     required: false
 
 </code></pre>

@@ -199,65 +199,65 @@
 <div class="mermaid"> classDiagram
     class V1p4NucleicAcidProcessing
     click V1p4NucleicAcidProcessing href "../V1p4NucleicAcidProcessing"
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__complete_sequences
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__complete_sequences
 
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4CompleteSequences : nucleic_acid_processing__complete_sequences
+    V1p4NucleicAcidProcessing --&gt; "1" V1p4CompleteSequences : v1p4__nucleic_acid_processing__complete_sequences
     click V1p4CompleteSequences href "../V1p4CompleteSequences"
 
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__library_generation_kit_version
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__library_generation_kit_version
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__library_generation_method
-
-
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__library_generation_method
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4LibraryGenerationMethod : nucleic_acid_processing__library_generation_method
+
+
+    V1p4NucleicAcidProcessing --&gt; "1" V1p4LibraryGenerationMethod : v1p4__nucleic_acid_processing__library_generation_method
     click V1p4LibraryGenerationMethod href "../V1p4LibraryGenerationMethod"
 
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__library_generation_protocol
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__library_generation_protocol
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__pcr_target
-
-
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__pcr_target
 
 
-    V1p4NucleicAcidProcessing --&gt; "*" V1p4PCRTarget : nucleic_acid_processing__pcr_target
+
+
+    V1p4NucleicAcidProcessing --&gt; "*" V1p4PCRTarget : v1p4__nucleic_acid_processing__pcr_target
     click V1p4PCRTarget href "../V1p4PCRTarget"
 
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__physical_linkage
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__physical_linkage
 
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4PhysicalLinkage : nucleic_acid_processing__physical_linkage
+    V1p4NucleicAcidProcessing --&gt; "1" V1p4PhysicalLinkage : v1p4__nucleic_acid_processing__physical_linkage
     click V1p4PhysicalLinkage href "../V1p4PhysicalLinkage"
 
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__template_amount
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__template_amount
 
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4PhysicalQuantity : nucleic_acid_processing__template_amount
+    V1p4NucleicAcidProcessing --&gt; "1" V1p4PhysicalQuantity : v1p4__nucleic_acid_processing__template_amount
     click V1p4PhysicalQuantity href "../V1p4PhysicalQuantity"
 
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__template_class
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__template_class
 
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4TemplateClass : nucleic_acid_processing__template_class
+    V1p4NucleicAcidProcessing --&gt; "1" V1p4TemplateClass : v1p4__nucleic_acid_processing__template_class
     click V1p4TemplateClass href "../V1p4TemplateClass"
 
 
-      V1p4NucleicAcidProcessing : nucleic_acid_processing__template_quality
+      V1p4NucleicAcidProcessing : v1p4__nucleic_acid_processing__template_quality
 
 
 </div>
@@ -274,55 +274,55 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../nucleic_acid_processing__template_class/">nucleic_acid_processing__template_class</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__template_class/">v1p4__nucleic_acid_processing__template_class</a></td>
 <td>1 <br/> <a href="../V1p4TemplateClass/">V1p4TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__template_quality/">nucleic_acid_processing__template_quality</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__template_quality/">v1p4__nucleic_acid_processing__template_quality</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__template_amount/">nucleic_acid_processing__template_amount</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__template_amount/">v1p4__nucleic_acid_processing__template_amount</a></td>
 <td>1 <br/> <a href="../V1p4PhysicalQuantity/">V1p4PhysicalQuantity</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__library_generation_method/">nucleic_acid_processing__library_generation_method</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__library_generation_method/">v1p4__nucleic_acid_processing__library_generation_method</a></td>
 <td>1 <br/> <a href="../V1p4LibraryGenerationMethod/">V1p4LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__library_generation_protocol/">nucleic_acid_processing__library_generation_protocol</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__library_generation_protocol/">v1p4__nucleic_acid_processing__library_generation_protocol</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__library_generation_kit_version/">nucleic_acid_processing__library_generation_kit_version</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__library_generation_kit_version/">v1p4__nucleic_acid_processing__library_generation_kit_version</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__pcr_target/">nucleic_acid_processing__pcr_target</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__pcr_target/">v1p4__nucleic_acid_processing__pcr_target</a></td>
 <td>* <br/> <a href="../V1p4PCRTarget/">V1p4PCRTarget</a></td>
 <td>If a PCR step was performed that specifically targets the IG/TR loci, the tar...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__complete_sequences/">nucleic_acid_processing__complete_sequences</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__complete_sequences/">v1p4__nucleic_acid_processing__complete_sequences</a></td>
 <td>1 <br/> <a href="../V1p4CompleteSequences/">V1p4CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../nucleic_acid_processing__physical_linkage/">nucleic_acid_processing__physical_linkage</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__physical_linkage/">v1p4__nucleic_acid_processing__physical_linkage</a></td>
 <td>1 <br/> <a href="../V1p4PhysicalLinkage/">V1p4PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
@@ -357,28 +357,28 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_NucleicAcidProcessing
+<pre><code class="language-yaml">name: v1p4_NucleicAcidProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- nucleic_acid_processing__template_class
-- nucleic_acid_processing__template_quality
-- nucleic_acid_processing__template_amount
-- nucleic_acid_processing__library_generation_method
-- nucleic_acid_processing__library_generation_protocol
-- nucleic_acid_processing__library_generation_kit_version
-- nucleic_acid_processing__pcr_target
-- nucleic_acid_processing__complete_sequences
-- nucleic_acid_processing__physical_linkage
+- v1p4__nucleic_acid_processing__template_class
+- v1p4__nucleic_acid_processing__template_quality
+- v1p4__nucleic_acid_processing__template_amount
+- v1p4__nucleic_acid_processing__library_generation_method
+- v1p4__nucleic_acid_processing__library_generation_protocol
+- v1p4__nucleic_acid_processing__library_generation_kit_version
+- v1p4__nucleic_acid_processing__pcr_target
+- v1p4__nucleic_acid_processing__complete_sequences
+- v1p4__nucleic_acid_processing__physical_linkage
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_NucleicAcidProcessing
+<pre><code class="language-yaml">name: v1p4_NucleicAcidProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  nucleic_acid_processing__template_class:
-    name: nucleic_acid_processing__template_class
+  v1p4__nucleic_acid_processing__template_class:
+    name: v1p4__nucleic_acid_processing__template_class
     annotations:
       nullable:
         tag: nullable
@@ -387,15 +387,15 @@ attributes:
       for the following procedures
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__template_class
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__template_class
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_TemplateClass
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_TemplateClass
     required: true
-  nucleic_acid_processing__template_quality:
-    name: nucleic_acid_processing__template_quality
+  v1p4__nucleic_acid_processing__template_quality:
+    name: v1p4__nucleic_acid_processing__template_quality
     annotations:
       nullable:
         tag: nullable
@@ -404,15 +404,15 @@ attributes:
       material
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__template_quality
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__template_quality
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
-  nucleic_acid_processing__template_amount:
-    name: nucleic_acid_processing__template_amount
+  v1p4__nucleic_acid_processing__template_amount:
+    name: v1p4__nucleic_acid_processing__template_amount
     annotations:
       nullable:
         tag: nullable
@@ -420,15 +420,15 @@ attributes:
     description: Amount of template that went into the process
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__template_amount
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__template_amount
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_PhysicalQuantity
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_PhysicalQuantity
     required: true
-  nucleic_acid_processing__library_generation_method:
-    name: nucleic_acid_processing__library_generation_method
+  v1p4__nucleic_acid_processing__library_generation_method:
+    name: v1p4__nucleic_acid_processing__library_generation_method
     annotations:
       nullable:
         tag: nullable
@@ -436,15 +436,15 @@ attributes:
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__library_generation_method
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__library_generation_method
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_LibraryGenerationMethod
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_LibraryGenerationMethod
     required: true
-  nucleic_acid_processing__library_generation_protocol:
-    name: nucleic_acid_processing__library_generation_protocol
+  v1p4__nucleic_acid_processing__library_generation_protocol:
+    name: v1p4__nucleic_acid_processing__library_generation_protocol
     annotations:
       nullable:
         tag: nullable
@@ -453,15 +453,15 @@ attributes:
       that is ready for sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__library_generation_protocol
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__library_generation_protocol
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
-  nucleic_acid_processing__library_generation_kit_version:
-    name: nucleic_acid_processing__library_generation_kit_version
+  v1p4__nucleic_acid_processing__library_generation_kit_version:
+    name: v1p4__nucleic_acid_processing__library_generation_kit_version
     annotations:
       nullable:
         tag: nullable
@@ -470,15 +470,15 @@ attributes:
       provide the protocol version number
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__library_generation_kit_version
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__library_generation_kit_version
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
-  nucleic_acid_processing__pcr_target:
-    name: nucleic_acid_processing__pcr_target
+  v1p4__nucleic_acid_processing__pcr_target:
+    name: v1p4__nucleic_acid_processing__pcr_target
     annotations:
       nullable:
         tag: nullable
@@ -491,16 +491,16 @@ attributes:
       appropriate library_generation_method instead.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__pcr_target
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__pcr_target
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_PCRTarget
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_PCRTarget
     required: false
     multivalued: true
-  nucleic_acid_processing__complete_sequences:
-    name: nucleic_acid_processing__complete_sequences
+  v1p4__nucleic_acid_processing__complete_sequences:
+    name: v1p4__nucleic_acid_processing__complete_sequences
     annotations:
       nullable:
         tag: nullable
@@ -518,15 +518,15 @@ attributes:
       replacement of a NULL value.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__complete_sequences
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__complete_sequences
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_CompleteSequences
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_CompleteSequences
     required: true
-  nucleic_acid_processing__physical_linkage:
-    name: nucleic_acid_processing__physical_linkage
+  v1p4__nucleic_acid_processing__physical_linkage:
+    name: v1p4__nucleic_acid_processing__physical_linkage
     annotations:
       nullable:
         tag: nullable
@@ -543,12 +543,12 @@ attributes:
       linkage was already present on the DNA level (e.g. scFv).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: nucleic_acid_processing__physical_linkage
-    owner: V1p4_NucleicAcidProcessing
+    alias: v1p4__nucleic_acid_processing__physical_linkage
+    owner: v1p4_NucleicAcidProcessing
     domain_of:
-    - V1p4_NucleicAcidProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_PhysicalLinkage
+    - v1p4_NucleicAcidProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_PhysicalLinkage
     required: true
 
 </code></pre>

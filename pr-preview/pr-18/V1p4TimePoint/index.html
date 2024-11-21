@@ -204,18 +204,18 @@
 <div class="mermaid"> classDiagram
     class V1p4TimePoint
     click V1p4TimePoint href "../V1p4TimePoint"
-      V1p4TimePoint : time_point__label
+      V1p4TimePoint : v1p4__time_point__label
 
-      V1p4TimePoint : time_point__unit
-
-
+      V1p4TimePoint : v1p4__time_point__unit
 
 
-    V1p4TimePoint --&gt; "0..1" V1p4Unit : time_point__unit
+
+
+    V1p4TimePoint --&gt; "0..1" V1p4Unit : v1p4__time_point__unit
     click V1p4Unit href "../V1p4Unit"
 
 
-      V1p4TimePoint : time_point__value
+      V1p4TimePoint : v1p4__time_point__value
 
 
 </div>
@@ -232,19 +232,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../time_point__label/">time_point__label</a></td>
+<td><a href="../v1p4__time_point__label/">v1p4__time_point__label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Informative label for the time point</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../time_point__value/">time_point__value</a></td>
+<td><a href="../v1p4__time_point__value/">v1p4__time_point__value</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Value of the time point</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../time_point__unit/">time_point__unit</a></td>
+<td><a href="../v1p4__time_point__unit/">v1p4__time_point__unit</a></td>
 <td>0..1 <br/> <a href="../V1p4Unit/">V1p4Unit</a></td>
 <td>Unit of the time point</td>
 <td>direct</td>
@@ -264,19 +264,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Diagnosis/">V1p4Diagnosis</a></td>
-<td><a href="../diagnosis__diagnosis_timepoint/">diagnosis__diagnosis_timepoint</a></td>
+<td><a href="../v1p4__diagnosis__diagnosis_timepoint/">v1p4__diagnosis__diagnosis_timepoint</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimePoint</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4Sample/">V1p4Sample</a></td>
-<td><a href="../sample__collection_time_point_relative/">sample__collection_time_point_relative</a></td>
+<td><a href="../v1p4__sample__collection_time_point_relative/">v1p4__sample__collection_time_point_relative</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimePoint</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
-<td><a href="../sample__collection_time_point_relative/">sample__collection_time_point_relative</a></td>
+<td><a href="../v1p4__sample__collection_time_point_relative/">v1p4__sample__collection_time_point_relative</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimePoint</a></td>
 </tr>
@@ -310,22 +310,22 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_TimePoint
+<pre><code class="language-yaml">name: v1p4_TimePoint
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- time_point__label
-- time_point__value
-- time_point__unit
+- v1p4__time_point__label
+- v1p4__time_point__value
+- v1p4__time_point__unit
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_TimePoint
+<pre><code class="language-yaml">name: v1p4_TimePoint
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  time_point__label:
-    name: time_point__label
+  v1p4__time_point__label:
+    name: v1p4__time_point__label
     annotations:
       nullable:
         tag: nullable
@@ -333,14 +333,14 @@ attributes:
     description: Informative label for the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: time_point__label
-    owner: V1p4_TimePoint
+    alias: v1p4__time_point__label
+    owner: v1p4_TimePoint
     domain_of:
-    - V1p4_TimePoint
+    - v1p4_TimePoint
     range: string
     required: false
-  time_point__value:
-    name: time_point__value
+  v1p4__time_point__value:
+    name: v1p4__time_point__value
     annotations:
       nullable:
         tag: nullable
@@ -348,14 +348,14 @@ attributes:
     description: Value of the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: time_point__value
-    owner: V1p4_TimePoint
+    alias: v1p4__time_point__value
+    owner: v1p4_TimePoint
     domain_of:
-    - V1p4_TimePoint
+    - v1p4_TimePoint
     range: float
     required: false
-  time_point__unit:
-    name: time_point__unit
+  v1p4__time_point__unit:
+    name: v1p4__time_point__unit
     annotations:
       nullable:
         tag: nullable
@@ -363,11 +363,11 @@ attributes:
     description: Unit of the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: time_point__unit
-    owner: V1p4_TimePoint
+    alias: v1p4__time_point__unit
+    owner: v1p4_TimePoint
     domain_of:
-    - V1p4_TimePoint
-    range: V1p4_Unit
+    - v1p4_TimePoint
+    range: v1p4_Unit
     required: false
 
 </code></pre>

@@ -204,18 +204,18 @@
 <div class="mermaid"> classDiagram
     class V1p4MHCAllele
     click V1p4MHCAllele href "../V1p4MHCAllele"
-      V1p4MHCAllele : m_h_c_allele__allele_designation
+      V1p4MHCAllele : v1p4__m_h_c_allele__allele_designation
 
-      V1p4MHCAllele : m_h_c_allele__gene
-
-
+      V1p4MHCAllele : v1p4__m_h_c_allele__gene
 
 
-    V1p4MHCAllele --&gt; "0..1" V1p4Gene : m_h_c_allele__gene
+
+
+    V1p4MHCAllele --&gt; "0..1" V1p4Gene : v1p4__m_h_c_allele__gene
     click V1p4Gene href "../V1p4Gene"
 
 
-      V1p4MHCAllele : m_h_c_allele__reference_set_ref
+      V1p4MHCAllele : v1p4__m_h_c_allele__reference_set_ref
 
 
 </div>
@@ -232,19 +232,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../m_h_c_allele__allele_designation/">m_h_c_allele__allele_designation</a></td>
+<td><a href="../v1p4__m_h_c_allele__allele_designation/">v1p4__m_h_c_allele__allele_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The accepted designation of an allele, usually its gene symbol plus allele/su...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../m_h_c_allele__gene/">m_h_c_allele__gene</a></td>
+<td><a href="../v1p4__m_h_c_allele__gene/">v1p4__m_h_c_allele__gene</a></td>
 <td>0..1 <br/> <a href="../V1p4Gene/">V1p4Gene</a></td>
 <td>The MHC gene to which the described allele belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../m_h_c_allele__reference_set_ref/">m_h_c_allele__reference_set_ref</a></td>
+<td><a href="../v1p4__m_h_c_allele__reference_set_ref/">v1p4__m_h_c_allele__reference_set_ref</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Repository and list from which it was taken (issuer/name/version)</td>
 <td>direct</td>
@@ -264,7 +264,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4MHCGenotype/">V1p4MHCGenotype</a></td>
-<td><a href="../m_h_c_genotype__mhc_alleles/">m_h_c_genotype__mhc_alleles</a></td>
+<td><a href="../v1p4__m_h_c_genotype__mhc_alleles/">v1p4__m_h_c_genotype__mhc_alleles</a></td>
 <td>range</td>
 <td><a href="./">V1p4MHCAllele</a></td>
 </tr>
@@ -298,22 +298,22 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_MHCAllele
+<pre><code class="language-yaml">name: v1p4_MHCAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- m_h_c_allele__allele_designation
-- m_h_c_allele__gene
-- m_h_c_allele__reference_set_ref
+- v1p4__m_h_c_allele__allele_designation
+- v1p4__m_h_c_allele__gene
+- v1p4__m_h_c_allele__reference_set_ref
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_MHCAllele
+<pre><code class="language-yaml">name: v1p4_MHCAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  m_h_c_allele__allele_designation:
-    name: m_h_c_allele__allele_designation
+  v1p4__m_h_c_allele__allele_designation:
+    name: v1p4__m_h_c_allele__allele_designation
     annotations:
       nullable:
         tag: nullable
@@ -322,14 +322,14 @@ attributes:
       allele/sub-allele/etc identifiers, if provided by the mhc_typing method
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: m_h_c_allele__allele_designation
-    owner: V1p4_MHCAllele
+    alias: v1p4__m_h_c_allele__allele_designation
+    owner: v1p4_MHCAllele
     domain_of:
-    - V1p4_MHCAllele
+    - v1p4_MHCAllele
     range: string
     required: false
-  m_h_c_allele__gene:
-    name: m_h_c_allele__gene
+  v1p4__m_h_c_allele__gene:
+    name: v1p4__m_h_c_allele__gene
     annotations:
       nullable:
         tag: nullable
@@ -337,14 +337,14 @@ attributes:
     description: The MHC gene to which the described allele belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: m_h_c_allele__gene
-    owner: V1p4_MHCAllele
+    alias: v1p4__m_h_c_allele__gene
+    owner: v1p4_MHCAllele
     domain_of:
-    - V1p4_MHCAllele
-    range: V1p4_Gene
+    - v1p4_MHCAllele
+    range: v1p4_Gene
     required: false
-  m_h_c_allele__reference_set_ref:
-    name: m_h_c_allele__reference_set_ref
+  v1p4__m_h_c_allele__reference_set_ref:
+    name: v1p4__m_h_c_allele__reference_set_ref
     annotations:
       nullable:
         tag: nullable
@@ -352,10 +352,10 @@ attributes:
     description: Repository and list from which it was taken (issuer/name/version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: m_h_c_allele__reference_set_ref
-    owner: V1p4_MHCAllele
+    alias: v1p4__m_h_c_allele__reference_set_ref
+    owner: v1p4_MHCAllele
     domain_of:
-    - V1p4_MHCAllele
+    - v1p4_MHCAllele
     range: string
     required: false
 

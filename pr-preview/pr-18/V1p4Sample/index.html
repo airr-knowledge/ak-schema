@@ -199,40 +199,40 @@
 <div class="mermaid"> classDiagram
     class V1p4Sample
     click V1p4Sample href "../V1p4Sample"
-      V1p4Sample : sample__anatomic_site
+      V1p4Sample : v1p4__sample__anatomic_site
 
-      V1p4Sample : sample__biomaterial_provider
+      V1p4Sample : v1p4__sample__biomaterial_provider
 
-      V1p4Sample : sample__collection_location
-
-
+      V1p4Sample : v1p4__sample__collection_location
 
 
-    V1p4Sample --&gt; "0..1" V1p4CollectionLocation : sample__collection_location
+
+
+    V1p4Sample --&gt; "0..1" V1p4CollectionLocation : v1p4__sample__collection_location
     click V1p4CollectionLocation href "../V1p4CollectionLocation"
 
 
-      V1p4Sample : sample__collection_time_point_relative
+      V1p4Sample : v1p4__sample__collection_time_point_relative
 
 
 
 
-    V1p4Sample --&gt; "1" V1p4TimePoint : sample__collection_time_point_relative
+    V1p4Sample --&gt; "1" V1p4TimePoint : v1p4__sample__collection_time_point_relative
     click V1p4TimePoint href "../V1p4TimePoint"
 
 
-      V1p4Sample : sample__disease_state_sample
+      V1p4Sample : v1p4__sample__disease_state_sample
 
-      V1p4Sample : sample__sample_id
+      V1p4Sample : v1p4__sample__sample_id
 
-      V1p4Sample : sample__sample_type
+      V1p4Sample : v1p4__sample__sample_type
 
-      V1p4Sample : sample__tissue
-
-
+      V1p4Sample : v1p4__sample__tissue
 
 
-    V1p4Sample --&gt; "1" V1p4Tissue : sample__tissue
+
+
+    V1p4Sample --&gt; "1" V1p4Tissue : v1p4__sample__tissue
     click V1p4Tissue href "../V1p4Tissue"
 
 
@@ -251,49 +251,49 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../sample__sample_id/">sample__sample_id</a></td>
+<td><a href="../v1p4__sample__sample_id/">v1p4__sample__sample_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sample__sample_type/">sample__sample_type</a></td>
+<td><a href="../v1p4__sample__sample_type/">v1p4__sample__sample_type</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sample__tissue/">sample__tissue</a></td>
+<td><a href="../v1p4__sample__tissue/">v1p4__sample__tissue</a></td>
 <td>1 <br/> <a href="../V1p4Tissue/">V1p4Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sample__anatomic_site/">sample__anatomic_site</a></td>
+<td><a href="../v1p4__sample__anatomic_site/">v1p4__sample__anatomic_site</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sample__disease_state_sample/">sample__disease_state_sample</a></td>
+<td><a href="../v1p4__sample__disease_state_sample/">v1p4__sample__disease_state_sample</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sample__collection_time_point_relative/">sample__collection_time_point_relative</a></td>
+<td><a href="../v1p4__sample__collection_time_point_relative/">v1p4__sample__collection_time_point_relative</a></td>
 <td>1 <br/> <a href="../V1p4TimePoint/">V1p4TimePoint</a></td>
 <td>Time point at which sample was taken, relative to <code>label</code> event</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sample__collection_location/">sample__collection_location</a></td>
+<td><a href="../v1p4__sample__collection_location/">v1p4__sample__collection_location</a></td>
 <td>0..1 <br/> <a href="../V1p4CollectionLocation/">V1p4CollectionLocation</a></td>
 <td>Location where the sample was taken, preferred granularity is country-level</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../sample__biomaterial_provider/">sample__biomaterial_provider</a></td>
+<td><a href="../v1p4__sample__biomaterial_provider/">v1p4__sample__biomaterial_provider</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
@@ -328,27 +328,27 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Sample
+<pre><code class="language-yaml">name: v1p4_Sample
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- sample__sample_id
-- sample__sample_type
-- sample__tissue
-- sample__anatomic_site
-- sample__disease_state_sample
-- sample__collection_time_point_relative
-- sample__collection_location
-- sample__biomaterial_provider
+- v1p4__sample__sample_id
+- v1p4__sample__sample_type
+- v1p4__sample__tissue
+- v1p4__sample__anatomic_site
+- v1p4__sample__disease_state_sample
+- v1p4__sample__collection_time_point_relative
+- v1p4__sample__collection_location
+- v1p4__sample__biomaterial_provider
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Sample
+<pre><code class="language-yaml">name: v1p4_Sample
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  sample__sample_id:
-    name: sample__sample_id
+  v1p4__sample__sample_id:
+    name: v1p4__sample__sample_id
     annotations:
       nullable:
         tag: nullable
@@ -358,15 +358,15 @@ attributes:
       used.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__sample_id
-    owner: V1p4_Sample
+    alias: v1p4__sample__sample_id
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
+    - v1p4_Sample
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sample__sample_type:
-    name: sample__sample_type
+  v1p4__sample__sample_type:
+    name: v1p4__sample__sample_type
     annotations:
       nullable:
         tag: nullable
@@ -375,15 +375,15 @@ attributes:
       harvest, peripheral venous puncture
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__sample_type
-    owner: V1p4_Sample
+    alias: v1p4__sample__sample_type
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
+    - v1p4_Sample
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sample__tissue:
-    name: sample__tissue
+  v1p4__sample__tissue:
+    name: v1p4__sample__tissue
     annotations:
       nullable:
         tag: nullable
@@ -391,15 +391,15 @@ attributes:
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__tissue
-    owner: V1p4_Sample
+    alias: v1p4__sample__tissue
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
-    range: V1p4_Tissue
+    - v1p4_Sample
+    - v1p4_SampleProcessing
+    range: v1p4_Tissue
     required: true
-  sample__anatomic_site:
-    name: sample__anatomic_site
+  v1p4__sample__anatomic_site:
+    name: v1p4__sample__anatomic_site
     annotations:
       nullable:
         tag: nullable
@@ -407,15 +407,15 @@ attributes:
     description: The anatomic location of the tissue, e.g. Inguinal, femur
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__anatomic_site
-    owner: V1p4_Sample
+    alias: v1p4__sample__anatomic_site
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
+    - v1p4_Sample
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sample__disease_state_sample:
-    name: sample__disease_state_sample
+  v1p4__sample__disease_state_sample:
+    name: v1p4__sample__disease_state_sample
     annotations:
       nullable:
         tag: nullable
@@ -423,15 +423,15 @@ attributes:
     description: Histopathologic evaluation of the sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__disease_state_sample
-    owner: V1p4_Sample
+    alias: v1p4__sample__disease_state_sample
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
+    - v1p4_Sample
+    - v1p4_SampleProcessing
     range: string
     required: true
-  sample__collection_time_point_relative:
-    name: sample__collection_time_point_relative
+  v1p4__sample__collection_time_point_relative:
+    name: v1p4__sample__collection_time_point_relative
     annotations:
       nullable:
         tag: nullable
@@ -439,15 +439,15 @@ attributes:
     description: Time point at which sample was taken, relative to `label` event
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__collection_time_point_relative
-    owner: V1p4_Sample
+    alias: v1p4__sample__collection_time_point_relative
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
-    range: V1p4_TimePoint
+    - v1p4_Sample
+    - v1p4_SampleProcessing
+    range: v1p4_TimePoint
     required: true
-  sample__collection_location:
-    name: sample__collection_location
+  v1p4__sample__collection_location:
+    name: v1p4__sample__collection_location
     annotations:
       nullable:
         tag: nullable
@@ -455,15 +455,15 @@ attributes:
     description: Location where the sample was taken, preferred granularity is country-level
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__collection_location
-    owner: V1p4_Sample
+    alias: v1p4__sample__collection_location
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
-    range: V1p4_CollectionLocation
+    - v1p4_Sample
+    - v1p4_SampleProcessing
+    range: v1p4_CollectionLocation
     required: false
-  sample__biomaterial_provider:
-    name: sample__biomaterial_provider
+  v1p4__sample__biomaterial_provider:
+    name: v1p4__sample__biomaterial_provider
     annotations:
       nullable:
         tag: nullable
@@ -471,11 +471,11 @@ attributes:
     description: Name and address of the entity providing the sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: sample__biomaterial_provider
-    owner: V1p4_Sample
+    alias: v1p4__sample__biomaterial_provider
+    owner: v1p4_Sample
     domain_of:
-    - V1p4_Sample
-    - V1p4_SampleProcessing
+    - v1p4_Sample
+    - v1p4_SampleProcessing
     range: string
     required: true
 

@@ -204,14 +204,14 @@
 <div class="mermaid"> classDiagram
     class V1p4PhysicalQuantity
     click V1p4PhysicalQuantity href "../V1p4PhysicalQuantity"
-      V1p4PhysicalQuantity : physical_quantity__quantity
+      V1p4PhysicalQuantity : v1p4__physical_quantity__quantity
 
-      V1p4PhysicalQuantity : physical_quantity__unit
-
-
+      V1p4PhysicalQuantity : v1p4__physical_quantity__unit
 
 
-    V1p4PhysicalQuantity --&gt; "0..1" V1p4Unit : physical_quantity__unit
+
+
+    V1p4PhysicalQuantity --&gt; "0..1" V1p4Unit : v1p4__physical_quantity__unit
     click V1p4Unit href "../V1p4Unit"
 
 
@@ -230,13 +230,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../physical_quantity__quantity/">physical_quantity__quantity</a></td>
+<td><a href="../v1p4__physical_quantity__quantity/">v1p4__physical_quantity__quantity</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Physical quantity</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../physical_quantity__unit/">physical_quantity__unit</a></td>
+<td><a href="../v1p4__physical_quantity__unit/">v1p4__physical_quantity__unit</a></td>
 <td>0..1 <br/> <a href="../V1p4Unit/">V1p4Unit</a></td>
 <td>Unit of physical quantity</td>
 <td>direct</td>
@@ -256,13 +256,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p4NucleicAcidProcessing/">V1p4NucleicAcidProcessing</a></td>
-<td><a href="../nucleic_acid_processing__template_amount/">nucleic_acid_processing__template_amount</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__template_amount/">v1p4__nucleic_acid_processing__template_amount</a></td>
 <td>range</td>
 <td><a href="./">V1p4PhysicalQuantity</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
-<td><a href="../nucleic_acid_processing__template_amount/">nucleic_acid_processing__template_amount</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__template_amount/">v1p4__nucleic_acid_processing__template_amount</a></td>
 <td>range</td>
 <td><a href="./">V1p4PhysicalQuantity</a></td>
 </tr>
@@ -296,21 +296,21 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_PhysicalQuantity
+<pre><code class="language-yaml">name: v1p4_PhysicalQuantity
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- physical_quantity__quantity
-- physical_quantity__unit
+- v1p4__physical_quantity__quantity
+- v1p4__physical_quantity__unit
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_PhysicalQuantity
+<pre><code class="language-yaml">name: v1p4_PhysicalQuantity
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  physical_quantity__quantity:
-    name: physical_quantity__quantity
+  v1p4__physical_quantity__quantity:
+    name: v1p4__physical_quantity__quantity
     annotations:
       nullable:
         tag: nullable
@@ -318,14 +318,14 @@ attributes:
     description: Physical quantity
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: physical_quantity__quantity
-    owner: V1p4_PhysicalQuantity
+    alias: v1p4__physical_quantity__quantity
+    owner: v1p4_PhysicalQuantity
     domain_of:
-    - V1p4_PhysicalQuantity
+    - v1p4_PhysicalQuantity
     range: float
     required: false
-  physical_quantity__unit:
-    name: physical_quantity__unit
+  v1p4__physical_quantity__unit:
+    name: v1p4__physical_quantity__unit
     annotations:
       nullable:
         tag: nullable
@@ -333,11 +333,11 @@ attributes:
     description: Unit of physical quantity
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: physical_quantity__unit
-    owner: V1p4_PhysicalQuantity
+    alias: v1p4__physical_quantity__unit
+    owner: v1p4_PhysicalQuantity
     domain_of:
-    - V1p4_PhysicalQuantity
-    range: V1p4_Unit
+    - v1p4_PhysicalQuantity
+    range: v1p4_Unit
     required: false
 
 </code></pre>

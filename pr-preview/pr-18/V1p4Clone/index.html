@@ -199,53 +199,53 @@
 <div class="mermaid"> classDiagram
     class V1p4Clone
     click V1p4Clone href "../V1p4Clone"
-      V1p4Clone : clone__clone_count
+      V1p4Clone : v1p4__clone__clone_count
 
-      V1p4Clone : clone__clone_id
+      V1p4Clone : v1p4__clone__clone_id
 
-      V1p4Clone : clone__d_alignment_end
+      V1p4Clone : v1p4__clone__d_alignment_end
 
-      V1p4Clone : clone__d_alignment_start
+      V1p4Clone : v1p4__clone__d_alignment_start
 
-      V1p4Clone : clone__d_call
+      V1p4Clone : v1p4__clone__d_call
 
-      V1p4Clone : clone__data_processing_id
+      V1p4Clone : v1p4__clone__data_processing_id
 
-      V1p4Clone : clone__germline_alignment
+      V1p4Clone : v1p4__clone__germline_alignment
 
-      V1p4Clone : clone__germline_alignment_aa
+      V1p4Clone : v1p4__clone__germline_alignment_aa
 
-      V1p4Clone : clone__j_alignment_end
+      V1p4Clone : v1p4__clone__j_alignment_end
 
-      V1p4Clone : clone__j_alignment_start
+      V1p4Clone : v1p4__clone__j_alignment_start
 
-      V1p4Clone : clone__j_call
+      V1p4Clone : v1p4__clone__j_call
 
-      V1p4Clone : clone__junction
+      V1p4Clone : v1p4__clone__junction
 
-      V1p4Clone : clone__junction_aa
+      V1p4Clone : v1p4__clone__junction_aa
 
-      V1p4Clone : clone__junction_aa_length
+      V1p4Clone : v1p4__clone__junction_aa_length
 
-      V1p4Clone : clone__junction_end
+      V1p4Clone : v1p4__clone__junction_end
 
-      V1p4Clone : clone__junction_length
+      V1p4Clone : v1p4__clone__junction_length
 
-      V1p4Clone : clone__junction_start
+      V1p4Clone : v1p4__clone__junction_start
 
-      V1p4Clone : clone__repertoire_id
+      V1p4Clone : v1p4__clone__repertoire_id
 
-      V1p4Clone : clone__seed_id
+      V1p4Clone : v1p4__clone__seed_id
 
-      V1p4Clone : clone__sequences
+      V1p4Clone : v1p4__clone__sequences
 
-      V1p4Clone : clone__umi_count
+      V1p4Clone : v1p4__clone__umi_count
 
-      V1p4Clone : clone__v_alignment_end
+      V1p4Clone : v1p4__clone__v_alignment_end
 
-      V1p4Clone : clone__v_alignment_start
+      V1p4Clone : v1p4__clone__v_alignment_start
 
-      V1p4Clone : clone__v_call
+      V1p4Clone : v1p4__clone__v_call
 
 
 </div>
@@ -262,145 +262,145 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../clone__clone_id/">clone__clone_id</a></td>
+<td><a href="../v1p4__clone__clone_id/">v1p4__clone__clone_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the clone</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__repertoire_id/">clone__repertoire_id</a></td>
+<td><a href="../v1p4__clone__repertoire_id/">v1p4__clone__repertoire_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier to the associated repertoire in study metadata</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__data_processing_id/">clone__data_processing_id</a></td>
+<td><a href="../v1p4__clone__data_processing_id/">v1p4__clone__data_processing_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier of the data processing object in the repertoire metadata for this ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__sequences/">clone__sequences</a></td>
+<td><a href="../v1p4__clone__sequences/">v1p4__clone__sequences</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>List sequence_id strings that act as keys to the Rearrangement records for me...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__v_call/">clone__v_call</a></td>
+<td><a href="../v1p4__clone__v_call/">v1p4__clone__v_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>V gene with allele of the inferred ancestral of the clone</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__d_call/">clone__d_call</a></td>
+<td><a href="../v1p4__clone__d_call/">v1p4__clone__d_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>D gene with allele of the inferred ancestor of the clone</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__j_call/">clone__j_call</a></td>
+<td><a href="../v1p4__clone__j_call/">v1p4__clone__j_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>J gene with allele of the inferred ancestor of the clone</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__junction/">clone__junction</a></td>
+<td><a href="../v1p4__clone__junction/">v1p4__clone__junction</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Nucleotide sequence for the junction region of the inferred ancestor of the c...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__junction_aa/">clone__junction_aa</a></td>
+<td><a href="../v1p4__clone__junction_aa/">v1p4__clone__junction_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Amino acid translation of the junction</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__junction_length/">clone__junction_length</a></td>
+<td><a href="../v1p4__clone__junction_length/">v1p4__clone__junction_length</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of nucleotides in the junction</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__junction_aa_length/">clone__junction_aa_length</a></td>
+<td><a href="../v1p4__clone__junction_aa_length/">v1p4__clone__junction_aa_length</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of amino acids in junction_aa</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__germline_alignment/">clone__germline_alignment</a></td>
+<td><a href="../v1p4__clone__germline_alignment/">v1p4__clone__germline_alignment</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Assembled, aligned, full-length inferred ancestor of the clone spanning the s...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__germline_alignment_aa/">clone__germline_alignment_aa</a></td>
+<td><a href="../v1p4__clone__germline_alignment_aa/">v1p4__clone__germline_alignment_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Amino acid translation of germline_alignment</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__v_alignment_start/">clone__v_alignment_start</a></td>
+<td><a href="../v1p4__clone__v_alignment_start/">v1p4__clone__v_alignment_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start position in the V gene alignment in both the sequence_alignment and ger...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__v_alignment_end/">clone__v_alignment_end</a></td>
+<td><a href="../v1p4__clone__v_alignment_end/">v1p4__clone__v_alignment_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End position in the V gene alignment in both the sequence_alignment and germl...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__d_alignment_start/">clone__d_alignment_start</a></td>
+<td><a href="../v1p4__clone__d_alignment_start/">v1p4__clone__d_alignment_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start position of the D gene alignment in both the sequence_alignment and ger...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__d_alignment_end/">clone__d_alignment_end</a></td>
+<td><a href="../v1p4__clone__d_alignment_end/">v1p4__clone__d_alignment_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End position of the D gene alignment in both the sequence_alignment and germl...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__j_alignment_start/">clone__j_alignment_start</a></td>
+<td><a href="../v1p4__clone__j_alignment_start/">v1p4__clone__j_alignment_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start position of the J gene alignment in both the sequence_alignment and ger...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__j_alignment_end/">clone__j_alignment_end</a></td>
+<td><a href="../v1p4__clone__j_alignment_end/">v1p4__clone__j_alignment_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End position of the J gene alignment in both the sequence_alignment and germl...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__junction_start/">clone__junction_start</a></td>
+<td><a href="../v1p4__clone__junction_start/">v1p4__clone__junction_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Junction region start position in the alignment (1-based closed interval)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__junction_end/">clone__junction_end</a></td>
+<td><a href="../v1p4__clone__junction_end/">v1p4__clone__junction_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Junction region end position in the alignment (1-based closed interval)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__umi_count/">clone__umi_count</a></td>
+<td><a href="../v1p4__clone__umi_count/">v1p4__clone__umi_count</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of distinct UMIs observed across all sequences (Rearrangement records)...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__clone_count/">clone__clone_count</a></td>
+<td><a href="../v1p4__clone__clone_count/">v1p4__clone__clone_count</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Absolute count of the size (number of members) of this clone in the repertoir...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../clone__seed_id/">clone__seed_id</a></td>
+<td><a href="../v1p4__clone__seed_id/">v1p4__clone__seed_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>sequence_id of the seed sequence</td>
 <td>direct</td>
@@ -435,43 +435,43 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Clone
+<pre><code class="language-yaml">name: v1p4_Clone
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- clone__clone_id
-- clone__repertoire_id
-- clone__data_processing_id
-- clone__sequences
-- clone__v_call
-- clone__d_call
-- clone__j_call
-- clone__junction
-- clone__junction_aa
-- clone__junction_length
-- clone__junction_aa_length
-- clone__germline_alignment
-- clone__germline_alignment_aa
-- clone__v_alignment_start
-- clone__v_alignment_end
-- clone__d_alignment_start
-- clone__d_alignment_end
-- clone__j_alignment_start
-- clone__j_alignment_end
-- clone__junction_start
-- clone__junction_end
-- clone__umi_count
-- clone__clone_count
-- clone__seed_id
+- v1p4__clone__clone_id
+- v1p4__clone__repertoire_id
+- v1p4__clone__data_processing_id
+- v1p4__clone__sequences
+- v1p4__clone__v_call
+- v1p4__clone__d_call
+- v1p4__clone__j_call
+- v1p4__clone__junction
+- v1p4__clone__junction_aa
+- v1p4__clone__junction_length
+- v1p4__clone__junction_aa_length
+- v1p4__clone__germline_alignment
+- v1p4__clone__germline_alignment_aa
+- v1p4__clone__v_alignment_start
+- v1p4__clone__v_alignment_end
+- v1p4__clone__d_alignment_start
+- v1p4__clone__d_alignment_end
+- v1p4__clone__j_alignment_start
+- v1p4__clone__j_alignment_end
+- v1p4__clone__junction_start
+- v1p4__clone__junction_end
+- v1p4__clone__umi_count
+- v1p4__clone__clone_count
+- v1p4__clone__seed_id
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Clone
+<pre><code class="language-yaml">name: v1p4_Clone
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  clone__clone_id:
-    name: clone__clone_id
+  v1p4__clone__clone_id:
+    name: v1p4__clone__clone_id
     annotations:
       nullable:
         tag: nullable
@@ -479,14 +479,14 @@ attributes:
     description: Identifier for the clone.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__clone_id
-    owner: V1p4_Clone
+    alias: v1p4__clone__clone_id
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: true
-  clone__repertoire_id:
-    name: clone__repertoire_id
+  v1p4__clone__repertoire_id:
+    name: v1p4__clone__repertoire_id
     annotations:
       nullable:
         tag: nullable
@@ -494,14 +494,14 @@ attributes:
     description: Identifier to the associated repertoire in study metadata.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__repertoire_id
-    owner: V1p4_Clone
+    alias: v1p4__clone__repertoire_id
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__data_processing_id:
-    name: clone__data_processing_id
+  v1p4__clone__data_processing_id:
+    name: v1p4__clone__data_processing_id
     annotations:
       nullable:
         tag: nullable
@@ -510,14 +510,14 @@ attributes:
       for this clone.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__data_processing_id
-    owner: V1p4_Clone
+    alias: v1p4__clone__data_processing_id
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__sequences:
-    name: clone__sequences
+  v1p4__clone__sequences:
+    name: v1p4__clone__sequences
     annotations:
       nullable:
         tag: nullable
@@ -526,15 +526,15 @@ attributes:
       for members of the clone.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__sequences
-    owner: V1p4_Clone
+    alias: v1p4__clone__sequences
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
     multivalued: true
-  clone__v_call:
-    name: clone__v_call
+  v1p4__clone__v_call:
+    name: v1p4__clone__v_call
     annotations:
       nullable:
         tag: nullable
@@ -543,14 +543,14 @@ attributes:
       IGHV4-59*01.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__v_call
-    owner: V1p4_Clone
+    alias: v1p4__clone__v_call
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__d_call:
-    name: clone__d_call
+  v1p4__clone__d_call:
+    name: v1p4__clone__d_call
     annotations:
       nullable:
         tag: nullable
@@ -559,14 +559,14 @@ attributes:
       IGHD3-10*01.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__d_call
-    owner: V1p4_Clone
+    alias: v1p4__clone__d_call
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__j_call:
-    name: clone__j_call
+  v1p4__clone__j_call:
+    name: v1p4__clone__j_call
     annotations:
       nullable:
         tag: nullable
@@ -575,14 +575,14 @@ attributes:
       IGHJ4*02.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__j_call
-    owner: V1p4_Clone
+    alias: v1p4__clone__j_call
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__junction:
-    name: clone__junction
+  v1p4__clone__junction:
+    name: v1p4__clone__junction
     annotations:
       nullable:
         tag: nullable
@@ -592,14 +592,14 @@ attributes:
       conserved codons.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__junction
-    owner: V1p4_Clone
+    alias: v1p4__clone__junction
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__junction_aa:
-    name: clone__junction_aa
+  v1p4__clone__junction_aa:
+    name: v1p4__clone__junction_aa
     annotations:
       nullable:
         tag: nullable
@@ -607,14 +607,14 @@ attributes:
     description: Amino acid translation of the junction.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__junction_aa
-    owner: V1p4_Clone
+    alias: v1p4__clone__junction_aa
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__junction_length:
-    name: clone__junction_length
+  v1p4__clone__junction_length:
+    name: v1p4__clone__junction_length
     annotations:
       nullable:
         tag: nullable
@@ -622,14 +622,14 @@ attributes:
     description: Number of nucleotides in the junction.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__junction_length
-    owner: V1p4_Clone
+    alias: v1p4__clone__junction_length
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__junction_aa_length:
-    name: clone__junction_aa_length
+  v1p4__clone__junction_aa_length:
+    name: v1p4__clone__junction_aa_length
     annotations:
       nullable:
         tag: nullable
@@ -637,14 +637,14 @@ attributes:
     description: Number of amino acids in junction_aa.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__junction_aa_length
-    owner: V1p4_Clone
+    alias: v1p4__clone__junction_aa_length
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__germline_alignment:
-    name: clone__germline_alignment
+  v1p4__clone__germline_alignment:
+    name: v1p4__clone__germline_alignment
     annotations:
       nullable:
         tag: nullable
@@ -654,14 +654,14 @@ attributes:
       region) and including the same set of corrections and spacers (if any).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__germline_alignment
-    owner: V1p4_Clone
+    alias: v1p4__clone__germline_alignment
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: true
-  clone__germline_alignment_aa:
-    name: clone__germline_alignment_aa
+  v1p4__clone__germline_alignment_aa:
+    name: v1p4__clone__germline_alignment_aa
     annotations:
       nullable:
         tag: nullable
@@ -669,14 +669,14 @@ attributes:
     description: Amino acid translation of germline_alignment.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__germline_alignment_aa
-    owner: V1p4_Clone
+    alias: v1p4__clone__germline_alignment_aa
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
-  clone__v_alignment_start:
-    name: clone__v_alignment_start
+  v1p4__clone__v_alignment_start:
+    name: v1p4__clone__v_alignment_start
     annotations:
       nullable:
         tag: nullable
@@ -685,14 +685,14 @@ attributes:
       and germline_alignment fields (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__v_alignment_start
-    owner: V1p4_Clone
+    alias: v1p4__clone__v_alignment_start
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__v_alignment_end:
-    name: clone__v_alignment_end
+  v1p4__clone__v_alignment_end:
+    name: v1p4__clone__v_alignment_end
     annotations:
       nullable:
         tag: nullable
@@ -701,14 +701,14 @@ attributes:
       and germline_alignment fields (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__v_alignment_end
-    owner: V1p4_Clone
+    alias: v1p4__clone__v_alignment_end
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__d_alignment_start:
-    name: clone__d_alignment_start
+  v1p4__clone__d_alignment_start:
+    name: v1p4__clone__d_alignment_start
     annotations:
       nullable:
         tag: nullable
@@ -717,14 +717,14 @@ attributes:
       and germline_alignment fields (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__d_alignment_start
-    owner: V1p4_Clone
+    alias: v1p4__clone__d_alignment_start
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__d_alignment_end:
-    name: clone__d_alignment_end
+  v1p4__clone__d_alignment_end:
+    name: v1p4__clone__d_alignment_end
     annotations:
       nullable:
         tag: nullable
@@ -733,14 +733,14 @@ attributes:
       and germline_alignment fields (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__d_alignment_end
-    owner: V1p4_Clone
+    alias: v1p4__clone__d_alignment_end
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__j_alignment_start:
-    name: clone__j_alignment_start
+  v1p4__clone__j_alignment_start:
+    name: v1p4__clone__j_alignment_start
     annotations:
       nullable:
         tag: nullable
@@ -749,14 +749,14 @@ attributes:
       and germline_alignment fields (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__j_alignment_start
-    owner: V1p4_Clone
+    alias: v1p4__clone__j_alignment_start
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__j_alignment_end:
-    name: clone__j_alignment_end
+  v1p4__clone__j_alignment_end:
+    name: v1p4__clone__j_alignment_end
     annotations:
       nullable:
         tag: nullable
@@ -765,14 +765,14 @@ attributes:
       and germline_alignment fields (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__j_alignment_end
-    owner: V1p4_Clone
+    alias: v1p4__clone__j_alignment_end
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__junction_start:
-    name: clone__junction_start
+  v1p4__clone__junction_start:
+    name: v1p4__clone__junction_start
     annotations:
       nullable:
         tag: nullable
@@ -780,14 +780,14 @@ attributes:
     description: Junction region start position in the alignment (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__junction_start
-    owner: V1p4_Clone
+    alias: v1p4__clone__junction_start
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__junction_end:
-    name: clone__junction_end
+  v1p4__clone__junction_end:
+    name: v1p4__clone__junction_end
     annotations:
       nullable:
         tag: nullable
@@ -795,14 +795,14 @@ attributes:
     description: Junction region end position in the alignment (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__junction_end
-    owner: V1p4_Clone
+    alias: v1p4__clone__junction_end
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__umi_count:
-    name: clone__umi_count
+  v1p4__clone__umi_count:
+    name: v1p4__clone__umi_count
     annotations:
       nullable:
         tag: nullable
@@ -811,14 +811,14 @@ attributes:
       records) in this clone.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__umi_count
-    owner: V1p4_Clone
+    alias: v1p4__clone__umi_count
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__clone_count:
-    name: clone__clone_count
+  v1p4__clone__clone_count:
+    name: v1p4__clone__clone_count
     annotations:
       nullable:
         tag: nullable
@@ -831,14 +831,14 @@ attributes:
       tools can perform their own normalization.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__clone_count
-    owner: V1p4_Clone
+    alias: v1p4__clone__clone_count
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: integer
     required: false
-  clone__seed_id:
-    name: clone__seed_id
+  v1p4__clone__seed_id:
+    name: v1p4__clone__seed_id
     annotations:
       nullable:
         tag: nullable
@@ -847,10 +847,10 @@ attributes:
       is no seed sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: clone__seed_id
-    owner: V1p4_Clone
+    alias: v1p4__clone__seed_id
+    owner: v1p4_Clone
     domain_of:
-    - V1p4_Clone
+    - v1p4_Clone
     range: string
     required: false
 

@@ -204,18 +204,18 @@
 <div class="mermaid"> classDiagram
     class V1p4PCRTarget
     click V1p4PCRTarget href "../V1p4PCRTarget"
-      V1p4PCRTarget : p_c_r_target__forward_pcr_primer_target_location
+      V1p4PCRTarget : v1p4__p_c_r_target__forward_pcr_primer_target_location
 
-      V1p4PCRTarget : p_c_r_target__pcr_target_locus
-
-
+      V1p4PCRTarget : v1p4__p_c_r_target__pcr_target_locus
 
 
-    V1p4PCRTarget --&gt; "1" V1p4PcrTargetLocus : p_c_r_target__pcr_target_locus
+
+
+    V1p4PCRTarget --&gt; "1" V1p4PcrTargetLocus : v1p4__p_c_r_target__pcr_target_locus
     click V1p4PcrTargetLocus href "../V1p4PcrTargetLocus"
 
 
-      V1p4PCRTarget : p_c_r_target__reverse_pcr_primer_target_location
+      V1p4PCRTarget : v1p4__p_c_r_target__reverse_pcr_primer_target_location
 
 
 </div>
@@ -232,19 +232,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../p_c_r_target__pcr_target_locus/">p_c_r_target__pcr_target_locus</a></td>
+<td><a href="../v1p4__p_c_r_target__pcr_target_locus/">v1p4__p_c_r_target__pcr_target_locus</a></td>
 <td>1 <br/> <a href="../V1p4PcrTargetLocus/">V1p4PcrTargetLocus</a></td>
 <td>Designation of the target locus</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../p_c_r_target__forward_pcr_primer_target_location/">p_c_r_target__forward_pcr_primer_target_location</a></td>
+<td><a href="../v1p4__p_c_r_target__forward_pcr_primer_target_location/">v1p4__p_c_r_target__forward_pcr_primer_target_location</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Position of the most distal nucleotide templated by the forward primer or pri...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../p_c_r_target__reverse_pcr_primer_target_location/">p_c_r_target__reverse_pcr_primer_target_location</a></td>
+<td><a href="../v1p4__p_c_r_target__reverse_pcr_primer_target_location/">v1p4__p_c_r_target__reverse_pcr_primer_target_location</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Position of the most proximal nucleotide templated by the reverse primer or p...</td>
 <td>direct</td>
@@ -264,13 +264,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p4NucleicAcidProcessing/">V1p4NucleicAcidProcessing</a></td>
-<td><a href="../nucleic_acid_processing__pcr_target/">nucleic_acid_processing__pcr_target</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__pcr_target/">v1p4__nucleic_acid_processing__pcr_target</a></td>
 <td>range</td>
 <td><a href="./">V1p4PCRTarget</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
-<td><a href="../nucleic_acid_processing__pcr_target/">nucleic_acid_processing__pcr_target</a></td>
+<td><a href="../v1p4__nucleic_acid_processing__pcr_target/">v1p4__nucleic_acid_processing__pcr_target</a></td>
 <td>range</td>
 <td><a href="./">V1p4PCRTarget</a></td>
 </tr>
@@ -304,22 +304,22 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_PCRTarget
+<pre><code class="language-yaml">name: v1p4_PCRTarget
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- p_c_r_target__pcr_target_locus
-- p_c_r_target__forward_pcr_primer_target_location
-- p_c_r_target__reverse_pcr_primer_target_location
+- v1p4__p_c_r_target__pcr_target_locus
+- v1p4__p_c_r_target__forward_pcr_primer_target_location
+- v1p4__p_c_r_target__reverse_pcr_primer_target_location
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_PCRTarget
+<pre><code class="language-yaml">name: v1p4_PCRTarget
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  p_c_r_target__pcr_target_locus:
-    name: p_c_r_target__pcr_target_locus
+  v1p4__p_c_r_target__pcr_target_locus:
+    name: v1p4__p_c_r_target__pcr_target_locus
     annotations:
       nullable:
         tag: nullable
@@ -329,14 +329,14 @@ attributes:
       necessarily the correct designation according to a specific nomenclature.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: p_c_r_target__pcr_target_locus
-    owner: V1p4_PCRTarget
+    alias: v1p4__p_c_r_target__pcr_target_locus
+    owner: v1p4_PCRTarget
     domain_of:
-    - V1p4_PCRTarget
-    range: V1p4_PcrTargetLocus
+    - v1p4_PCRTarget
+    range: v1p4_PcrTargetLocus
     required: true
-  p_c_r_target__forward_pcr_primer_target_location:
-    name: p_c_r_target__forward_pcr_primer_target_location
+  v1p4__p_c_r_target__forward_pcr_primer_target_location:
+    name: v1p4__p_c_r_target__forward_pcr_primer_target_location
     annotations:
       nullable:
         tag: nullable
@@ -345,14 +345,14 @@ attributes:
       or primer mix
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: p_c_r_target__forward_pcr_primer_target_location
-    owner: V1p4_PCRTarget
+    alias: v1p4__p_c_r_target__forward_pcr_primer_target_location
+    owner: v1p4_PCRTarget
     domain_of:
-    - V1p4_PCRTarget
+    - v1p4_PCRTarget
     range: string
     required: true
-  p_c_r_target__reverse_pcr_primer_target_location:
-    name: p_c_r_target__reverse_pcr_primer_target_location
+  v1p4__p_c_r_target__reverse_pcr_primer_target_location:
+    name: v1p4__p_c_r_target__reverse_pcr_primer_target_location
     annotations:
       nullable:
         tag: nullable
@@ -361,10 +361,10 @@ attributes:
       primer or primer mix
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: p_c_r_target__reverse_pcr_primer_target_location
-    owner: V1p4_PCRTarget
+    alias: v1p4__p_c_r_target__reverse_pcr_primer_target_location
+    owner: v1p4_PCRTarget
     domain_of:
-    - V1p4_PCRTarget
+    - v1p4_PCRTarget
     range: string
     required: true
 

@@ -204,30 +204,30 @@
 <div class="mermaid"> classDiagram
     class V1p4UnrearrangedSequence
     click V1p4UnrearrangedSequence href "../V1p4UnrearrangedSequence"
-      V1p4UnrearrangedSequence : unrearranged_sequence__curation
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__curation
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__gff_end
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__gff_end
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__gff_seqid
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__gff_seqid
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__gff_start
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__gff_start
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__patch_no
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__patch_no
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__repository_name
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__repository_name
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__repository_ref
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__repository_ref
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__sequence
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__sequence
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__sequence_id
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__sequence_id
 
-      V1p4UnrearrangedSequence : unrearranged_sequence__strand
-
-
+      V1p4UnrearrangedSequence : v1p4__unrearranged_sequence__strand
 
 
-    V1p4UnrearrangedSequence --&gt; "1" V1p4Strand : unrearranged_sequence__strand
+
+
+    V1p4UnrearrangedSequence --&gt; "1" V1p4Strand : v1p4__unrearranged_sequence__strand
     click V1p4Strand href "../V1p4Strand"
 
 
@@ -246,61 +246,61 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../unrearranged_sequence__sequence_id/">unrearranged_sequence__sequence_id</a></td>
+<td><a href="../v1p4__unrearranged_sequence__sequence_id/">v1p4__unrearranged_sequence__sequence_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>unique identifier of this UnrearrangedSequence within the file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__sequence/">unrearranged_sequence__sequence</a></td>
+<td><a href="../v1p4__unrearranged_sequence__sequence/">v1p4__unrearranged_sequence__sequence</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Sequence of interest described in this record</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__curation/">unrearranged_sequence__curation</a></td>
+<td><a href="../v1p4__unrearranged_sequence__curation/">v1p4__unrearranged_sequence__curation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Curational notes on the sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__repository_name/">unrearranged_sequence__repository_name</a></td>
+<td><a href="../v1p4__unrearranged_sequence__repository_name/">v1p4__unrearranged_sequence__repository_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name of the repository in which the assembly or contig is deposited</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__repository_ref/">unrearranged_sequence__repository_ref</a></td>
+<td><a href="../v1p4__unrearranged_sequence__repository_ref/">v1p4__unrearranged_sequence__repository_ref</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Queryable id or accession number of the sequence published by the repository</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__patch_no/">unrearranged_sequence__patch_no</a></td>
+<td><a href="../v1p4__unrearranged_sequence__patch_no/">v1p4__unrearranged_sequence__patch_no</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Genome assembly patch number in which this gene was determined</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__gff_seqid/">unrearranged_sequence__gff_seqid</a></td>
+<td><a href="../v1p4__unrearranged_sequence__gff_seqid/">v1p4__unrearranged_sequence__gff_seqid</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Sequence (from the assembly) of a window including the gene and preferably al...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__gff_start/">unrearranged_sequence__gff_start</a></td>
+<td><a href="../v1p4__unrearranged_sequence__gff_start/">v1p4__unrearranged_sequence__gff_start</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Genomic co-ordinates of the start of the sequence of interest described in th...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__gff_end/">unrearranged_sequence__gff_end</a></td>
+<td><a href="../v1p4__unrearranged_sequence__gff_end/">v1p4__unrearranged_sequence__gff_end</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Genomic co-ordinates of the end of the sequence of interest described in this...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../unrearranged_sequence__strand/">unrearranged_sequence__strand</a></td>
+<td><a href="../v1p4__unrearranged_sequence__strand/">v1p4__unrearranged_sequence__strand</a></td>
 <td>1 <br/> <a href="../V1p4Strand/">V1p4Strand</a></td>
 <td>sense (+ or -)</td>
 <td>direct</td>
@@ -320,7 +320,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4AlleleDescription/">V1p4AlleleDescription</a></td>
-<td><a href="../allele_description__unrearranged_support/">allele_description__unrearranged_support</a></td>
+<td><a href="../v1p4__allele_description__unrearranged_support/">v1p4__allele_description__unrearranged_support</a></td>
 <td>range</td>
 <td><a href="./">V1p4UnrearrangedSequence</a></td>
 </tr>
@@ -354,29 +354,29 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_UnrearrangedSequence
+<pre><code class="language-yaml">name: v1p4_UnrearrangedSequence
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- unrearranged_sequence__sequence_id
-- unrearranged_sequence__sequence
-- unrearranged_sequence__curation
-- unrearranged_sequence__repository_name
-- unrearranged_sequence__repository_ref
-- unrearranged_sequence__patch_no
-- unrearranged_sequence__gff_seqid
-- unrearranged_sequence__gff_start
-- unrearranged_sequence__gff_end
-- unrearranged_sequence__strand
+- v1p4__unrearranged_sequence__sequence_id
+- v1p4__unrearranged_sequence__sequence
+- v1p4__unrearranged_sequence__curation
+- v1p4__unrearranged_sequence__repository_name
+- v1p4__unrearranged_sequence__repository_ref
+- v1p4__unrearranged_sequence__patch_no
+- v1p4__unrearranged_sequence__gff_seqid
+- v1p4__unrearranged_sequence__gff_start
+- v1p4__unrearranged_sequence__gff_end
+- v1p4__unrearranged_sequence__strand
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_UnrearrangedSequence
+<pre><code class="language-yaml">name: v1p4_UnrearrangedSequence
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  unrearranged_sequence__sequence_id:
-    name: unrearranged_sequence__sequence_id
+  v1p4__unrearranged_sequence__sequence_id:
+    name: v1p4__unrearranged_sequence__sequence_id
     annotations:
       nullable:
         tag: nullable
@@ -384,14 +384,14 @@ attributes:
     description: unique identifier of this UnrearrangedSequence within the file
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__sequence_id
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__sequence_id
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: string
     required: true
-  unrearranged_sequence__sequence:
-    name: unrearranged_sequence__sequence
+  v1p4__unrearranged_sequence__sequence:
+    name: v1p4__unrearranged_sequence__sequence
     annotations:
       nullable:
         tag: nullable
@@ -400,14 +400,14 @@ attributes:
       include gene and promoter region.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__sequence
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__sequence
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: string
     required: true
-  unrearranged_sequence__curation:
-    name: unrearranged_sequence__curation
+  v1p4__unrearranged_sequence__curation:
+    name: v1p4__unrearranged_sequence__curation
     annotations:
       nullable:
         tag: nullable
@@ -415,14 +415,14 @@ attributes:
     description: Curational notes on the sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__curation
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__curation
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: string
     required: false
-  unrearranged_sequence__repository_name:
-    name: unrearranged_sequence__repository_name
+  v1p4__unrearranged_sequence__repository_name:
+    name: v1p4__unrearranged_sequence__repository_name
     annotations:
       nullable:
         tag: nullable
@@ -430,14 +430,14 @@ attributes:
     description: Name of the repository in which the assembly or contig is deposited
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__repository_name
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__repository_name
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: string
     required: true
-  unrearranged_sequence__repository_ref:
-    name: unrearranged_sequence__repository_ref
+  v1p4__unrearranged_sequence__repository_ref:
+    name: v1p4__unrearranged_sequence__repository_ref
     annotations:
       nullable:
         tag: nullable
@@ -446,14 +446,14 @@ attributes:
       repository
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__repository_ref
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__repository_ref
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: string
     required: false
-  unrearranged_sequence__patch_no:
-    name: unrearranged_sequence__patch_no
+  v1p4__unrearranged_sequence__patch_no:
+    name: v1p4__unrearranged_sequence__patch_no
     annotations:
       nullable:
         tag: nullable
@@ -461,14 +461,14 @@ attributes:
     description: Genome assembly patch number in which this gene was determined
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__patch_no
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__patch_no
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: string
     required: false
-  unrearranged_sequence__gff_seqid:
-    name: unrearranged_sequence__gff_seqid
+  v1p4__unrearranged_sequence__gff_seqid:
+    name: v1p4__unrearranged_sequence__gff_seqid
     annotations:
       nullable:
         tag: nullable
@@ -477,14 +477,14 @@ attributes:
       also the promoter region.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__gff_seqid
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__gff_seqid
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: string
     required: true
-  unrearranged_sequence__gff_start:
-    name: unrearranged_sequence__gff_start
+  v1p4__unrearranged_sequence__gff_start:
+    name: v1p4__unrearranged_sequence__gff_start
     annotations:
       nullable:
         tag: nullable
@@ -493,14 +493,14 @@ attributes:
       in this record in  Ensemble GFF version 3.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__gff_start
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__gff_start
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: integer
     required: true
-  unrearranged_sequence__gff_end:
-    name: unrearranged_sequence__gff_end
+  v1p4__unrearranged_sequence__gff_end:
+    name: v1p4__unrearranged_sequence__gff_end
     annotations:
       nullable:
         tag: nullable
@@ -509,14 +509,14 @@ attributes:
       in this record in  Ensemble GFF version 3.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__gff_end
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__gff_end
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
+    - v1p4_UnrearrangedSequence
     range: integer
     required: true
-  unrearranged_sequence__strand:
-    name: unrearranged_sequence__strand
+  v1p4__unrearranged_sequence__strand:
+    name: v1p4__unrearranged_sequence__strand
     annotations:
       nullable:
         tag: nullable
@@ -524,11 +524,11 @@ attributes:
     description: sense (+ or -)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unrearranged_sequence__strand
-    owner: V1p4_UnrearrangedSequence
+    alias: v1p4__unrearranged_sequence__strand
+    owner: v1p4_UnrearrangedSequence
     domain_of:
-    - V1p4_UnrearrangedSequence
-    range: V1p4_Strand
+    - v1p4_UnrearrangedSequence
+    range: v1p4_Strand
     required: true
 
 </code></pre>

@@ -204,21 +204,21 @@
 <div class="mermaid"> classDiagram
     class V1p4ContributorContribution
     click V1p4ContributorContribution href "../V1p4ContributorContribution"
-      V1p4ContributorContribution : contributor_contribution__degree
+      V1p4ContributorContribution : v1p4__contributor_contribution__degree
 
 
 
 
-    V1p4ContributorContribution --&gt; "0..1" V1p4Degree : contributor_contribution__degree
+    V1p4ContributorContribution --&gt; "0..1" V1p4Degree : v1p4__contributor_contribution__degree
     click V1p4Degree href "../V1p4Degree"
 
 
-      V1p4ContributorContribution : contributor_contribution__role
+      V1p4ContributorContribution : v1p4__contributor_contribution__role
 
 
 
 
-    V1p4ContributorContribution --&gt; "1" V1p4Role : contributor_contribution__role
+    V1p4ContributorContribution --&gt; "1" V1p4Role : v1p4__contributor_contribution__role
     click V1p4Role href "../V1p4Role"
 
 
@@ -237,13 +237,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../contributor_contribution__role/">contributor_contribution__role</a></td>
+<td><a href="../v1p4__contributor_contribution__role/">v1p4__contributor_contribution__role</a></td>
 <td>1 <br/> <a href="../V1p4Role/">V1p4Role</a></td>
 <td>Role according to CRediT taxonomy</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributor_contribution__degree/">contributor_contribution__degree</a></td>
+<td><a href="../v1p4__contributor_contribution__degree/">v1p4__contributor_contribution__degree</a></td>
 <td>0..1 <br/> <a href="../V1p4Degree/">V1p4Degree</a></td>
 <td>Optional specification of the degree of contribution, should be used if multi...</td>
 <td>direct</td>
@@ -263,7 +263,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Contributor/">V1p4Contributor</a></td>
-<td><a href="../contributor__contributions/">contributor__contributions</a></td>
+<td><a href="../v1p4__contributor__contributions/">v1p4__contributor__contributions</a></td>
 <td>range</td>
 <td><a href="./">V1p4ContributorContribution</a></td>
 </tr>
@@ -297,21 +297,21 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_ContributorContribution
+<pre><code class="language-yaml">name: v1p4_ContributorContribution
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- contributor_contribution__role
-- contributor_contribution__degree
+- v1p4__contributor_contribution__role
+- v1p4__contributor_contribution__degree
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_ContributorContribution
+<pre><code class="language-yaml">name: v1p4_ContributorContribution
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  contributor_contribution__role:
-    name: contributor_contribution__role
+  v1p4__contributor_contribution__role:
+    name: v1p4__contributor_contribution__role
     annotations:
       nullable:
         tag: nullable
@@ -319,14 +319,14 @@ attributes:
     description: Role according to CRediT taxonomy
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor_contribution__role
-    owner: V1p4_ContributorContribution
+    alias: v1p4__contributor_contribution__role
+    owner: v1p4_ContributorContribution
     domain_of:
-    - V1p4_ContributorContribution
-    range: V1p4_Role
+    - v1p4_ContributorContribution
+    range: v1p4_Role
     required: true
-  contributor_contribution__degree:
-    name: contributor_contribution__degree
+  v1p4__contributor_contribution__degree:
+    name: v1p4__contributor_contribution__degree
     annotations:
       nullable:
         tag: nullable
@@ -335,11 +335,11 @@ attributes:
       if multiple individuals serve the same role.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor_contribution__degree
-    owner: V1p4_ContributorContribution
+    alias: v1p4__contributor_contribution__degree
+    owner: v1p4_ContributorContribution
     domain_of:
-    - V1p4_ContributorContribution
-    range: V1p4_Degree
+    - v1p4_ContributorContribution
+    range: v1p4_Degree
     required: false
 
 </code></pre>

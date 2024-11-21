@@ -204,44 +204,44 @@
 <div class="mermaid"> classDiagram
     class V1p4Diagnosis
     click V1p4Diagnosis href "../V1p4Diagnosis"
-      V1p4Diagnosis : diagnosis__diagnosis_timepoint
+      V1p4Diagnosis : v1p4__diagnosis__diagnosis_timepoint
 
 
 
 
-    V1p4Diagnosis --&gt; "0..1" V1p4TimePoint : diagnosis__diagnosis_timepoint
+    V1p4Diagnosis --&gt; "0..1" V1p4TimePoint : v1p4__diagnosis__diagnosis_timepoint
     click V1p4TimePoint href "../V1p4TimePoint"
 
 
-      V1p4Diagnosis : diagnosis__disease_diagnosis
+      V1p4Diagnosis : v1p4__diagnosis__disease_diagnosis
 
 
 
 
-    V1p4Diagnosis --&gt; "1" V1p4DiseaseDiagnosis : diagnosis__disease_diagnosis
+    V1p4Diagnosis --&gt; "1" V1p4DiseaseDiagnosis : v1p4__diagnosis__disease_diagnosis
     click V1p4DiseaseDiagnosis href "../V1p4DiseaseDiagnosis"
 
 
-      V1p4Diagnosis : diagnosis__disease_length
+      V1p4Diagnosis : v1p4__diagnosis__disease_length
 
 
 
 
-    V1p4Diagnosis --&gt; "1" V1p4TimeQuantity : diagnosis__disease_length
+    V1p4Diagnosis --&gt; "1" V1p4TimeQuantity : v1p4__diagnosis__disease_length
     click V1p4TimeQuantity href "../V1p4TimeQuantity"
 
 
-      V1p4Diagnosis : diagnosis__disease_stage
+      V1p4Diagnosis : v1p4__diagnosis__disease_stage
 
-      V1p4Diagnosis : diagnosis__immunogen
+      V1p4Diagnosis : v1p4__diagnosis__immunogen
 
-      V1p4Diagnosis : diagnosis__intervention
+      V1p4Diagnosis : v1p4__diagnosis__intervention
 
-      V1p4Diagnosis : diagnosis__medical_history
+      V1p4Diagnosis : v1p4__diagnosis__medical_history
 
-      V1p4Diagnosis : diagnosis__prior_therapies
+      V1p4Diagnosis : v1p4__diagnosis__prior_therapies
 
-      V1p4Diagnosis : diagnosis__study_group_description
+      V1p4Diagnosis : v1p4__diagnosis__study_group_description
 
 
 </div>
@@ -258,55 +258,55 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../diagnosis__study_group_description/">diagnosis__study_group_description</a></td>
+<td><a href="../v1p4__diagnosis__study_group_description/">v1p4__diagnosis__study_group_description</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Designation of study arm to which the subject is assigned to</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__diagnosis_timepoint/">diagnosis__diagnosis_timepoint</a></td>
+<td><a href="../v1p4__diagnosis__diagnosis_timepoint/">v1p4__diagnosis__diagnosis_timepoint</a></td>
 <td>0..1 <br/> <a href="../V1p4TimePoint/">V1p4TimePoint</a></td>
 <td>Time point for the diagnosis</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__disease_diagnosis/">diagnosis__disease_diagnosis</a></td>
+<td><a href="../v1p4__diagnosis__disease_diagnosis/">v1p4__diagnosis__disease_diagnosis</a></td>
 <td>1 <br/> <a href="../V1p4DiseaseDiagnosis/">V1p4DiseaseDiagnosis</a></td>
 <td>Diagnosis of subject</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__disease_length/">diagnosis__disease_length</a></td>
+<td><a href="../v1p4__diagnosis__disease_length/">v1p4__diagnosis__disease_length</a></td>
 <td>1 <br/> <a href="../V1p4TimeQuantity/">V1p4TimeQuantity</a></td>
 <td>Time duration between initial diagnosis and current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__disease_stage/">diagnosis__disease_stage</a></td>
+<td><a href="../v1p4__diagnosis__disease_stage/">v1p4__diagnosis__disease_stage</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Stage of disease at current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__prior_therapies/">diagnosis__prior_therapies</a></td>
+<td><a href="../v1p4__diagnosis__prior_therapies/">v1p4__diagnosis__prior_therapies</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>List of all relevant previous therapies applied to subject for treatment of `...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__immunogen/">diagnosis__immunogen</a></td>
+<td><a href="../v1p4__diagnosis__immunogen/">v1p4__diagnosis__immunogen</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Antigen, vaccine or drug applied to subject at this intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__intervention/">diagnosis__intervention</a></td>
+<td><a href="../v1p4__diagnosis__intervention/">v1p4__diagnosis__intervention</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../diagnosis__medical_history/">diagnosis__medical_history</a></td>
+<td><a href="../v1p4__diagnosis__medical_history/">v1p4__diagnosis__medical_history</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Medical history of subject that is relevant to assess the course of disease a...</td>
 <td>direct</td>
@@ -326,7 +326,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Subject/">V1p4Subject</a></td>
-<td><a href="../subject__diagnosis/">subject__diagnosis</a></td>
+<td><a href="../v1p4__subject__diagnosis/">v1p4__subject__diagnosis</a></td>
 <td>range</td>
 <td><a href="./">V1p4Diagnosis</a></td>
 </tr>
@@ -360,28 +360,28 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Diagnosis
+<pre><code class="language-yaml">name: v1p4_Diagnosis
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- diagnosis__study_group_description
-- diagnosis__diagnosis_timepoint
-- diagnosis__disease_diagnosis
-- diagnosis__disease_length
-- diagnosis__disease_stage
-- diagnosis__prior_therapies
-- diagnosis__immunogen
-- diagnosis__intervention
-- diagnosis__medical_history
+- v1p4__diagnosis__study_group_description
+- v1p4__diagnosis__diagnosis_timepoint
+- v1p4__diagnosis__disease_diagnosis
+- v1p4__diagnosis__disease_length
+- v1p4__diagnosis__disease_stage
+- v1p4__diagnosis__prior_therapies
+- v1p4__diagnosis__immunogen
+- v1p4__diagnosis__intervention
+- v1p4__diagnosis__medical_history
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Diagnosis
+<pre><code class="language-yaml">name: v1p4_Diagnosis
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  diagnosis__study_group_description:
-    name: diagnosis__study_group_description
+  v1p4__diagnosis__study_group_description:
+    name: v1p4__diagnosis__study_group_description
     annotations:
       nullable:
         tag: nullable
@@ -389,14 +389,14 @@ attributes:
     description: Designation of study arm to which the subject is assigned to
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__study_group_description
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__study_group_description
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
+    - v1p4_Diagnosis
     range: string
     required: true
-  diagnosis__diagnosis_timepoint:
-    name: diagnosis__diagnosis_timepoint
+  v1p4__diagnosis__diagnosis_timepoint:
+    name: v1p4__diagnosis__diagnosis_timepoint
     annotations:
       nullable:
         tag: nullable
@@ -404,14 +404,14 @@ attributes:
     description: Time point for the diagnosis
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__diagnosis_timepoint
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__diagnosis_timepoint
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
-    range: V1p4_TimePoint
+    - v1p4_Diagnosis
+    range: v1p4_TimePoint
     required: false
-  diagnosis__disease_diagnosis:
-    name: diagnosis__disease_diagnosis
+  v1p4__diagnosis__disease_diagnosis:
+    name: v1p4__diagnosis__disease_diagnosis
     annotations:
       nullable:
         tag: nullable
@@ -419,14 +419,14 @@ attributes:
     description: Diagnosis of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__disease_diagnosis
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__disease_diagnosis
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
-    range: V1p4_DiseaseDiagnosis
+    - v1p4_Diagnosis
+    range: v1p4_DiseaseDiagnosis
     required: true
-  diagnosis__disease_length:
-    name: diagnosis__disease_length
+  v1p4__diagnosis__disease_length:
+    name: v1p4__diagnosis__disease_length
     annotations:
       nullable:
         tag: nullable
@@ -434,14 +434,14 @@ attributes:
     description: Time duration between initial diagnosis and current intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__disease_length
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__disease_length
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
-    range: V1p4_TimeQuantity
+    - v1p4_Diagnosis
+    range: v1p4_TimeQuantity
     required: true
-  diagnosis__disease_stage:
-    name: diagnosis__disease_stage
+  v1p4__diagnosis__disease_stage:
+    name: v1p4__diagnosis__disease_stage
     annotations:
       nullable:
         tag: nullable
@@ -449,14 +449,14 @@ attributes:
     description: Stage of disease at current intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__disease_stage
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__disease_stage
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
+    - v1p4_Diagnosis
     range: string
     required: true
-  diagnosis__prior_therapies:
-    name: diagnosis__prior_therapies
+  v1p4__diagnosis__prior_therapies:
+    name: v1p4__diagnosis__prior_therapies
     annotations:
       nullable:
         tag: nullable
@@ -465,14 +465,14 @@ attributes:
       of `Diagnosis`
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__prior_therapies
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__prior_therapies
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
+    - v1p4_Diagnosis
     range: string
     required: true
-  diagnosis__immunogen:
-    name: diagnosis__immunogen
+  v1p4__diagnosis__immunogen:
+    name: v1p4__diagnosis__immunogen
     annotations:
       nullable:
         tag: nullable
@@ -480,14 +480,14 @@ attributes:
     description: Antigen, vaccine or drug applied to subject at this intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__immunogen
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__immunogen
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
+    - v1p4_Diagnosis
     range: string
     required: true
-  diagnosis__intervention:
-    name: diagnosis__intervention
+  v1p4__diagnosis__intervention:
+    name: v1p4__diagnosis__intervention
     annotations:
       nullable:
         tag: nullable
@@ -495,14 +495,14 @@ attributes:
     description: Description of intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__intervention
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__intervention
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
+    - v1p4_Diagnosis
     range: string
     required: true
-  diagnosis__medical_history:
-    name: diagnosis__medical_history
+  v1p4__diagnosis__medical_history:
+    name: v1p4__diagnosis__medical_history
     annotations:
       nullable:
         tag: nullable
@@ -511,10 +511,10 @@ attributes:
       of disease and/or treatment
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: diagnosis__medical_history
-    owner: V1p4_Diagnosis
+    alias: v1p4__diagnosis__medical_history
+    owner: v1p4_Diagnosis
     domain_of:
-    - V1p4_Diagnosis
+    - v1p4_Diagnosis
     range: string
     required: true
 

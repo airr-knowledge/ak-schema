@@ -204,14 +204,14 @@
 <div class="mermaid"> classDiagram
     class V1p4TimeQuantity
     click V1p4TimeQuantity href "../V1p4TimeQuantity"
-      V1p4TimeQuantity : time_quantity__quantity
+      V1p4TimeQuantity : v1p4__time_quantity__quantity
 
-      V1p4TimeQuantity : time_quantity__unit
-
-
+      V1p4TimeQuantity : v1p4__time_quantity__unit
 
 
-    V1p4TimeQuantity --&gt; "0..1" V1p4Unit : time_quantity__unit
+
+
+    V1p4TimeQuantity --&gt; "0..1" V1p4Unit : v1p4__time_quantity__unit
     click V1p4Unit href "../V1p4Unit"
 
 
@@ -230,13 +230,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../time_quantity__quantity/">time_quantity__quantity</a></td>
+<td><a href="../v1p4__time_quantity__quantity/">v1p4__time_quantity__quantity</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Time quantity</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../time_quantity__unit/">time_quantity__unit</a></td>
+<td><a href="../v1p4__time_quantity__unit/">v1p4__time_quantity__unit</a></td>
 <td>0..1 <br/> <a href="../V1p4Unit/">V1p4Unit</a></td>
 <td>Unit of time</td>
 <td>direct</td>
@@ -256,7 +256,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Diagnosis/">V1p4Diagnosis</a></td>
-<td><a href="../diagnosis__disease_length/">diagnosis__disease_length</a></td>
+<td><a href="../v1p4__diagnosis__disease_length/">v1p4__diagnosis__disease_length</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimeQuantity</a></td>
 </tr>
@@ -290,21 +290,21 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_TimeQuantity
+<pre><code class="language-yaml">name: v1p4_TimeQuantity
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- time_quantity__quantity
-- time_quantity__unit
+- v1p4__time_quantity__quantity
+- v1p4__time_quantity__unit
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_TimeQuantity
+<pre><code class="language-yaml">name: v1p4_TimeQuantity
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  time_quantity__quantity:
-    name: time_quantity__quantity
+  v1p4__time_quantity__quantity:
+    name: v1p4__time_quantity__quantity
     annotations:
       nullable:
         tag: nullable
@@ -312,14 +312,14 @@ attributes:
     description: Time quantity
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: time_quantity__quantity
-    owner: V1p4_TimeQuantity
+    alias: v1p4__time_quantity__quantity
+    owner: v1p4_TimeQuantity
     domain_of:
-    - V1p4_TimeQuantity
+    - v1p4_TimeQuantity
     range: float
     required: false
-  time_quantity__unit:
-    name: time_quantity__unit
+  v1p4__time_quantity__unit:
+    name: v1p4__time_quantity__unit
     annotations:
       nullable:
         tag: nullable
@@ -327,11 +327,11 @@ attributes:
     description: Unit of time
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: time_quantity__unit
-    owner: V1p4_TimeQuantity
+    alias: v1p4__time_quantity__unit
+    owner: v1p4_TimeQuantity
     domain_of:
-    - V1p4_TimeQuantity
-    range: V1p4_Unit
+    - v1p4_TimeQuantity
+    range: v1p4_Unit
     required: false
 
 </code></pre>

@@ -204,11 +204,11 @@
 <div class="mermaid"> classDiagram
     class V1p4DocumentedAllele
     click V1p4DocumentedAllele href "../V1p4DocumentedAllele"
-      V1p4DocumentedAllele : documented_allele__germline_set_ref
+      V1p4DocumentedAllele : v1p4__documented_allele__germline_set_ref
 
-      V1p4DocumentedAllele : documented_allele__label
+      V1p4DocumentedAllele : v1p4__documented_allele__label
 
-      V1p4DocumentedAllele : documented_allele__phasing
+      V1p4DocumentedAllele : v1p4__documented_allele__phasing
 
 
 </div>
@@ -225,19 +225,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../documented_allele__label/">documented_allele__label</a></td>
+<td><a href="../v1p4__documented_allele__label/">v1p4__documented_allele__label</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The accepted name for this allele, taken from the GermlineSet</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../documented_allele__germline_set_ref/">documented_allele__germline_set_ref</a></td>
+<td><a href="../v1p4__documented_allele__germline_set_ref/">v1p4__documented_allele__germline_set_ref</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>GermlineSet from which it was taken, referenced in standardized form (Repo:La...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../documented_allele__phasing/">documented_allele__phasing</a></td>
+<td><a href="../v1p4__documented_allele__phasing/">v1p4__documented_allele__phasing</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Chromosomal phasing indicator</td>
 <td>direct</td>
@@ -257,7 +257,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Genotype/">V1p4Genotype</a></td>
-<td><a href="../genotype__documented_alleles/">genotype__documented_alleles</a></td>
+<td><a href="../v1p4__genotype__documented_alleles/">v1p4__genotype__documented_alleles</a></td>
 <td>range</td>
 <td><a href="./">V1p4DocumentedAllele</a></td>
 </tr>
@@ -291,22 +291,22 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_DocumentedAllele
+<pre><code class="language-yaml">name: v1p4_DocumentedAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- documented_allele__label
-- documented_allele__germline_set_ref
-- documented_allele__phasing
+- v1p4__documented_allele__label
+- v1p4__documented_allele__germline_set_ref
+- v1p4__documented_allele__phasing
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_DocumentedAllele
+<pre><code class="language-yaml">name: v1p4_DocumentedAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  documented_allele__label:
-    name: documented_allele__label
+  v1p4__documented_allele__label:
+    name: v1p4__documented_allele__label
     annotations:
       nullable:
         tag: nullable
@@ -314,14 +314,14 @@ attributes:
     description: The accepted name for this allele, taken from the GermlineSet
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: documented_allele__label
-    owner: V1p4_DocumentedAllele
+    alias: v1p4__documented_allele__label
+    owner: v1p4_DocumentedAllele
     domain_of:
-    - V1p4_DocumentedAllele
+    - v1p4_DocumentedAllele
     range: string
     required: true
-  documented_allele__germline_set_ref:
-    name: documented_allele__germline_set_ref
+  v1p4__documented_allele__germline_set_ref:
+    name: v1p4__documented_allele__germline_set_ref
     annotations:
       nullable:
         tag: nullable
@@ -330,14 +330,14 @@ attributes:
       (Repo:Label:Version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: documented_allele__germline_set_ref
-    owner: V1p4_DocumentedAllele
+    alias: v1p4__documented_allele__germline_set_ref
+    owner: v1p4_DocumentedAllele
     domain_of:
-    - V1p4_DocumentedAllele
+    - v1p4_DocumentedAllele
     range: string
     required: true
-  documented_allele__phasing:
-    name: documented_allele__phasing
+  v1p4__documented_allele__phasing:
+    name: v1p4__documented_allele__phasing
     annotations:
       nullable:
         tag: nullable
@@ -346,10 +346,10 @@ attributes:
       to be located on the  same chromosome.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: documented_allele__phasing
-    owner: V1p4_DocumentedAllele
+    alias: v1p4__documented_allele__phasing
+    owner: v1p4_DocumentedAllele
     domain_of:
-    - V1p4_DocumentedAllele
+    - v1p4_DocumentedAllele
     range: integer
     required: false
 

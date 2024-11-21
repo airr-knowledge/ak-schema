@@ -199,43 +199,43 @@
 <div class="mermaid"> classDiagram
     class V1p4CellProcessing
     click V1p4CellProcessing href "../V1p4CellProcessing"
-      V1p4CellProcessing : cell_processing__cell_isolation
+      V1p4CellProcessing : v1p4__cell_processing__cell_isolation
 
-      V1p4CellProcessing : cell_processing__cell_label
+      V1p4CellProcessing : v1p4__cell_processing__cell_label
 
-      V1p4CellProcessing : cell_processing__cell_number
+      V1p4CellProcessing : v1p4__cell_processing__cell_number
 
-      V1p4CellProcessing : cell_processing__cell_phenotype
+      V1p4CellProcessing : v1p4__cell_processing__cell_phenotype
 
-      V1p4CellProcessing : cell_processing__cell_processing_protocol
+      V1p4CellProcessing : v1p4__cell_processing__cell_processing_protocol
 
-      V1p4CellProcessing : cell_processing__cell_quality
+      V1p4CellProcessing : v1p4__cell_processing__cell_quality
 
-      V1p4CellProcessing : cell_processing__cell_species
-
-
+      V1p4CellProcessing : v1p4__cell_processing__cell_species
 
 
-    V1p4CellProcessing --&gt; "0..1" V1p4CellSpecies : cell_processing__cell_species
+
+
+    V1p4CellProcessing --&gt; "0..1" V1p4CellSpecies : v1p4__cell_processing__cell_species
     click V1p4CellSpecies href "../V1p4CellSpecies"
 
 
-      V1p4CellProcessing : cell_processing__cell_storage
+      V1p4CellProcessing : v1p4__cell_processing__cell_storage
 
-      V1p4CellProcessing : cell_processing__cell_subset
-
-
+      V1p4CellProcessing : v1p4__cell_processing__cell_subset
 
 
-    V1p4CellProcessing --&gt; "1" V1p4CellSubset : cell_processing__cell_subset
+
+
+    V1p4CellProcessing --&gt; "1" V1p4CellSubset : v1p4__cell_processing__cell_subset
     click V1p4CellSubset href "../V1p4CellSubset"
 
 
-      V1p4CellProcessing : cell_processing__cells_per_reaction
+      V1p4CellProcessing : v1p4__cell_processing__cells_per_reaction
 
-      V1p4CellProcessing : cell_processing__single_cell
+      V1p4CellProcessing : v1p4__cell_processing__single_cell
 
-      V1p4CellProcessing : cell_processing__tissue_processing
+      V1p4CellProcessing : v1p4__cell_processing__tissue_processing
 
 
 </div>
@@ -252,73 +252,73 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../cell_processing__tissue_processing/">cell_processing__tissue_processing</a></td>
+<td><a href="../v1p4__cell_processing__tissue_processing/">v1p4__cell_processing__tissue_processing</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_subset/">cell_processing__cell_subset</a></td>
+<td><a href="../v1p4__cell_processing__cell_subset/">v1p4__cell_processing__cell_subset</a></td>
 <td>1 <br/> <a href="../V1p4CellSubset/">V1p4CellSubset</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_phenotype/">cell_processing__cell_phenotype</a></td>
+<td><a href="../v1p4__cell_processing__cell_phenotype/">v1p4__cell_processing__cell_phenotype</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>List of cellular markers and their expression levels used to isolate the cell...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_label/">cell_processing__cell_label</a></td>
+<td><a href="../v1p4__cell_processing__cell_label/">v1p4__cell_processing__cell_label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Free text cell type annotation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_species/">cell_processing__cell_species</a></td>
+<td><a href="../v1p4__cell_processing__cell_species/">v1p4__cell_processing__cell_species</a></td>
 <td>0..1 <br/> <a href="../V1p4CellSpecies/">V1p4CellSpecies</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__single_cell/">cell_processing__single_cell</a></td>
+<td><a href="../v1p4__cell_processing__single_cell/">v1p4__cell_processing__single_cell</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_number/">cell_processing__cell_number</a></td>
+<td><a href="../v1p4__cell_processing__cell_number/">v1p4__cell_processing__cell_number</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cells_per_reaction/">cell_processing__cells_per_reaction</a></td>
+<td><a href="../v1p4__cell_processing__cells_per_reaction/">v1p4__cell_processing__cells_per_reaction</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_storage/">cell_processing__cell_storage</a></td>
+<td><a href="../v1p4__cell_processing__cell_storage/">v1p4__cell_processing__cell_storage</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_quality/">cell_processing__cell_quality</a></td>
+<td><a href="../v1p4__cell_processing__cell_quality/">v1p4__cell_processing__cell_quality</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_isolation/">cell_processing__cell_isolation</a></td>
+<td><a href="../v1p4__cell_processing__cell_isolation/">v1p4__cell_processing__cell_isolation</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cell_processing__cell_processing_protocol/">cell_processing__cell_processing_protocol</a></td>
+<td><a href="../v1p4__cell_processing__cell_processing_protocol/">v1p4__cell_processing__cell_processing_protocol</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
@@ -353,31 +353,31 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_CellProcessing
+<pre><code class="language-yaml">name: v1p4_CellProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- cell_processing__tissue_processing
-- cell_processing__cell_subset
-- cell_processing__cell_phenotype
-- cell_processing__cell_label
-- cell_processing__cell_species
-- cell_processing__single_cell
-- cell_processing__cell_number
-- cell_processing__cells_per_reaction
-- cell_processing__cell_storage
-- cell_processing__cell_quality
-- cell_processing__cell_isolation
-- cell_processing__cell_processing_protocol
+- v1p4__cell_processing__tissue_processing
+- v1p4__cell_processing__cell_subset
+- v1p4__cell_processing__cell_phenotype
+- v1p4__cell_processing__cell_label
+- v1p4__cell_processing__cell_species
+- v1p4__cell_processing__single_cell
+- v1p4__cell_processing__cell_number
+- v1p4__cell_processing__cells_per_reaction
+- v1p4__cell_processing__cell_storage
+- v1p4__cell_processing__cell_quality
+- v1p4__cell_processing__cell_isolation
+- v1p4__cell_processing__cell_processing_protocol
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_CellProcessing
+<pre><code class="language-yaml">name: v1p4_CellProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  cell_processing__tissue_processing:
-    name: cell_processing__tissue_processing
+  v1p4__cell_processing__tissue_processing:
+    name: v1p4__cell_processing__tissue_processing
     annotations:
       nullable:
         tag: nullable
@@ -386,15 +386,15 @@ attributes:
       from sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__tissue_processing
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__tissue_processing
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
-  cell_processing__cell_subset:
-    name: cell_processing__cell_subset
+  v1p4__cell_processing__cell_subset:
+    name: v1p4__cell_processing__cell_subset
     annotations:
       nullable:
         tag: nullable
@@ -402,15 +402,15 @@ attributes:
     description: Commonly-used designation of isolated cell population
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_subset
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_subset
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_CellSubset
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_CellSubset
     required: true
-  cell_processing__cell_phenotype:
-    name: cell_processing__cell_phenotype
+  v1p4__cell_processing__cell_phenotype:
+    name: v1p4__cell_processing__cell_phenotype
     annotations:
       nullable:
         tag: nullable
@@ -419,15 +419,15 @@ attributes:
       the cell population.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_phenotype
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_phenotype
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
-  cell_processing__cell_label:
-    name: cell_processing__cell_label
+  v1p4__cell_processing__cell_label:
+    name: v1p4__cell_processing__cell_label
     annotations:
       nullable:
         tag: nullable
@@ -436,15 +436,15 @@ attributes:
       types that are not  provided in the Cell Ontology.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_label
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_label
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: string
     required: false
-  cell_processing__cell_species:
-    name: cell_processing__cell_species
+  v1p4__cell_processing__cell_species:
+    name: v1p4__cell_processing__cell_species
     annotations:
       nullable:
         tag: nullable
@@ -457,15 +457,15 @@ attributes:
       schema.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_species
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_species
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
-    range: V1p4_CellSpecies
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
+    range: v1p4_CellSpecies
     required: false
-  cell_processing__single_cell:
-    name: cell_processing__single_cell
+  v1p4__cell_processing__single_cell:
+    name: v1p4__cell_processing__single_cell
     annotations:
       nullable:
         tag: nullable
@@ -473,15 +473,15 @@ attributes:
     description: TRUE if single cells were isolated into separate compartments
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__single_cell
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__single_cell
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: boolean
     required: true
-  cell_processing__cell_number:
-    name: cell_processing__cell_number
+  v1p4__cell_processing__cell_number:
+    name: v1p4__cell_processing__cell_number
     annotations:
       nullable:
         tag: nullable
@@ -489,15 +489,15 @@ attributes:
     description: Total number of cells that went into the experiment
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_number
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_number
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: integer
     required: true
-  cell_processing__cells_per_reaction:
-    name: cell_processing__cells_per_reaction
+  v1p4__cell_processing__cells_per_reaction:
+    name: v1p4__cell_processing__cells_per_reaction
     annotations:
       nullable:
         tag: nullable
@@ -505,15 +505,15 @@ attributes:
     description: Number of cells for each biological replicate
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cells_per_reaction
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cells_per_reaction
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: integer
     required: true
-  cell_processing__cell_storage:
-    name: cell_processing__cell_storage
+  v1p4__cell_processing__cell_storage:
+    name: v1p4__cell_processing__cell_storage
     annotations:
       nullable:
         tag: nullable
@@ -521,15 +521,15 @@ attributes:
     description: TRUE if cells were cryo-preserved between isolation and further processing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_storage
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_storage
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: boolean
     required: true
-  cell_processing__cell_quality:
-    name: cell_processing__cell_quality
+  v1p4__cell_processing__cell_quality:
+    name: v1p4__cell_processing__cell_quality
     annotations:
       nullable:
         tag: nullable
@@ -538,15 +538,15 @@ attributes:
       thawing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_quality
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_quality
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
-  cell_processing__cell_isolation:
-    name: cell_processing__cell_isolation
+  v1p4__cell_processing__cell_isolation:
+    name: v1p4__cell_processing__cell_isolation
     annotations:
       nullable:
         tag: nullable
@@ -555,15 +555,15 @@ attributes:
       cells
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_isolation
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_isolation
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
-  cell_processing__cell_processing_protocol:
-    name: cell_processing__cell_processing_protocol
+  v1p4__cell_processing__cell_processing_protocol:
+    name: v1p4__cell_processing__cell_processing_protocol
     annotations:
       nullable:
         tag: nullable
@@ -573,11 +573,11 @@ attributes:
       the Materials and methods section in the manuscript.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: cell_processing__cell_processing_protocol
-    owner: V1p4_CellProcessing
+    alias: v1p4__cell_processing__cell_processing_protocol
+    owner: v1p4_CellProcessing
     domain_of:
-    - V1p4_CellProcessing
-    - V1p4_SampleProcessing
+    - v1p4_CellProcessing
+    - v1p4_SampleProcessing
     range: string
     required: true
 

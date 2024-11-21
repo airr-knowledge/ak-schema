@@ -204,36 +204,36 @@
 <div class="mermaid"> classDiagram
     class V1p4Contributor
     click V1p4Contributor href "../V1p4Contributor"
-      V1p4Contributor : contributor__affiliation
+      V1p4Contributor : v1p4__contributor__affiliation
 
 
 
 
-    V1p4Contributor --&gt; "0..1" V1p4Affiliation : contributor__affiliation
+    V1p4Contributor --&gt; "0..1" V1p4Affiliation : v1p4__contributor__affiliation
     click V1p4Affiliation href "../V1p4Affiliation"
 
 
-      V1p4Contributor : contributor__affiliation_department
+      V1p4Contributor : v1p4__contributor__affiliation_department
 
-      V1p4Contributor : contributor__contributions
-
-
+      V1p4Contributor : v1p4__contributor__contributions
 
 
-    V1p4Contributor --&gt; "*" V1p4ContributorContribution : contributor__contributions
+
+
+    V1p4Contributor --&gt; "*" V1p4ContributorContribution : v1p4__contributor__contributions
     click V1p4ContributorContribution href "../V1p4ContributorContribution"
 
 
-      V1p4Contributor : contributor__contributor_id
+      V1p4Contributor : v1p4__contributor__contributor_id
 
-      V1p4Contributor : contributor__name
+      V1p4Contributor : v1p4__contributor__name
 
-      V1p4Contributor : contributor__orcid_id
-
-
+      V1p4Contributor : v1p4__contributor__orcid_id
 
 
-    V1p4Contributor --&gt; "0..1" V1p4OrcidId : contributor__orcid_id
+
+
+    V1p4Contributor --&gt; "0..1" V1p4OrcidId : v1p4__contributor__orcid_id
     click V1p4OrcidId href "../V1p4OrcidId"
 
 
@@ -252,37 +252,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../contributor__contributor_id/">contributor__contributor_id</a></td>
+<td><a href="../v1p4__contributor__contributor_id/">v1p4__contributor__contributor_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this contributor within the file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributor__name/">contributor__name</a></td>
+<td><a href="../v1p4__contributor__name/">v1p4__contributor__name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Full name of contributor</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributor__orcid_id/">contributor__orcid_id</a></td>
+<td><a href="../v1p4__contributor__orcid_id/">v1p4__contributor__orcid_id</a></td>
 <td>0..1 <br/> <a href="../V1p4OrcidId/">V1p4OrcidId</a></td>
 <td>ORCID identifier of the contributor</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributor__affiliation/">contributor__affiliation</a></td>
+<td><a href="../v1p4__contributor__affiliation/">v1p4__contributor__affiliation</a></td>
 <td>0..1 <br/> <a href="../V1p4Affiliation/">V1p4Affiliation</a></td>
 <td>ROR of the contributor's primary affiliation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributor__affiliation_department/">contributor__affiliation_department</a></td>
+<td><a href="../v1p4__contributor__affiliation_department/">v1p4__contributor__affiliation_department</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Additional information regarding the contributor's primary affiliation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../contributor__contributions/">contributor__contributions</a></td>
+<td><a href="../v1p4__contributor__contributions/">v1p4__contributor__contributions</a></td>
 <td>* <br/> <a href="../V1p4ContributorContribution/">V1p4ContributorContribution</a></td>
 <td>List of all roles the contributor had in a project</td>
 <td>direct</td>
@@ -302,19 +302,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p4AlleleDescription/">V1p4AlleleDescription</a></td>
-<td><a href="../allele_description__acknowledgements/">allele_description__acknowledgements</a></td>
+<td><a href="../v1p4__allele_description__acknowledgements/">v1p4__allele_description__acknowledgements</a></td>
 <td>range</td>
 <td><a href="./">V1p4Contributor</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4GermlineSet/">V1p4GermlineSet</a></td>
-<td><a href="../germline_set__acknowledgements/">germline_set__acknowledgements</a></td>
+<td><a href="../v1p4__germline_set__acknowledgements/">v1p4__germline_set__acknowledgements</a></td>
 <td>range</td>
 <td><a href="./">V1p4Contributor</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4Study/">V1p4Study</a></td>
-<td><a href="../study__contributors/">study__contributors</a></td>
+<td><a href="../v1p4__study__contributors/">v1p4__study__contributors</a></td>
 <td>range</td>
 <td><a href="./">V1p4Contributor</a></td>
 </tr>
@@ -348,25 +348,25 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Contributor
+<pre><code class="language-yaml">name: v1p4_Contributor
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- contributor__contributor_id
-- contributor__name
-- contributor__orcid_id
-- contributor__affiliation
-- contributor__affiliation_department
-- contributor__contributions
+- v1p4__contributor__contributor_id
+- v1p4__contributor__name
+- v1p4__contributor__orcid_id
+- v1p4__contributor__affiliation
+- v1p4__contributor__affiliation_department
+- v1p4__contributor__contributions
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: V1p4_Contributor
+<pre><code class="language-yaml">name: v1p4_Contributor
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  contributor__contributor_id:
-    name: contributor__contributor_id
+  v1p4__contributor__contributor_id:
+    name: v1p4__contributor__contributor_id
     annotations:
       nullable:
         tag: nullable
@@ -374,14 +374,14 @@ attributes:
     description: Unique identifier of this contributor within the file
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor__contributor_id
-    owner: V1p4_Contributor
+    alias: v1p4__contributor__contributor_id
+    owner: v1p4_Contributor
     domain_of:
-    - V1p4_Contributor
+    - v1p4_Contributor
     range: string
     required: true
-  contributor__name:
-    name: contributor__name
+  v1p4__contributor__name:
+    name: v1p4__contributor__name
     annotations:
       nullable:
         tag: nullable
@@ -389,14 +389,14 @@ attributes:
     description: Full name of contributor
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor__name
-    owner: V1p4_Contributor
+    alias: v1p4__contributor__name
+    owner: v1p4_Contributor
     domain_of:
-    - V1p4_Contributor
+    - v1p4_Contributor
     range: string
     required: true
-  contributor__orcid_id:
-    name: contributor__orcid_id
+  v1p4__contributor__orcid_id:
+    name: v1p4__contributor__orcid_id
     annotations:
       nullable:
         tag: nullable
@@ -406,14 +406,14 @@ attributes:
       property.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor__orcid_id
-    owner: V1p4_Contributor
+    alias: v1p4__contributor__orcid_id
+    owner: v1p4_Contributor
     domain_of:
-    - V1p4_Contributor
-    range: V1p4_OrcidId
+    - v1p4_Contributor
+    range: v1p4_OrcidId
     required: false
-  contributor__affiliation:
-    name: contributor__affiliation
+  v1p4__contributor__affiliation:
+    name: v1p4__contributor__affiliation
     annotations:
       nullable:
         tag: nullable
@@ -422,14 +422,14 @@ attributes:
       minted for institutions, not from individuals institutes, divisions or departments.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor__affiliation
-    owner: V1p4_Contributor
+    alias: v1p4__contributor__affiliation
+    owner: v1p4_Contributor
     domain_of:
-    - V1p4_Contributor
-    range: V1p4_Affiliation
+    - v1p4_Contributor
+    range: v1p4_Affiliation
     required: false
-  contributor__affiliation_department:
-    name: contributor__affiliation_department
+  v1p4__contributor__affiliation_department:
+    name: v1p4__contributor__affiliation_department
     annotations:
       nullable:
         tag: nullable
@@ -438,14 +438,14 @@ attributes:
       Can be used to specify individual institutes, divisions or departments.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor__affiliation_department
-    owner: V1p4_Contributor
+    alias: v1p4__contributor__affiliation_department
+    owner: v1p4_Contributor
     domain_of:
-    - V1p4_Contributor
+    - v1p4_Contributor
     range: string
     required: false
-  contributor__contributions:
-    name: contributor__contributions
+  v1p4__contributor__contributions:
+    name: v1p4__contributor__contributions
     annotations:
       nullable:
         tag: nullable
@@ -453,11 +453,11 @@ attributes:
     description: List of all roles the contributor had in a project
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: contributor__contributions
-    owner: V1p4_Contributor
+    alias: v1p4__contributor__contributions
+    owner: v1p4_Contributor
     domain_of:
-    - V1p4_Contributor
-    range: V1p4_ContributorContribution
+    - v1p4_Contributor
+    range: v1p4_ContributorContribution
     required: false
     multivalued: true
 
