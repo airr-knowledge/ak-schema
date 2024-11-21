@@ -7141,6 +7141,19 @@ slots:
     range: string
     required: false
     multivalued: true
+  sample_processing__sample_processing_id:
+    name: sample_processing__sample_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier for the sample processing object. This field should be
+      unique within the repertoire. This field can be used to uniquely identify the
+      combination of sample, cell processing, nucleic acid processing and sequencing
+      run information for the repertoire.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain
