@@ -19,23 +19,41 @@ classes:
     slots:
       - specimen
 
-  Assay:
-    is_a: NamedThing
-    class_uri: OBI:0000070 # assay
+  SpecimenProcessing:
+    is_a: PlannedProcess
+    class_uri: OBI:0000094 # material processing
     slots:
       - specimen
-      - type
-      - assay_type
+
+  Assay:
+    is_a: PlannedProcess
+    class_uri: OBI:0000070 # assay
+    slots:
+      - specimen # Specimen that the assay is applied to
+      - specimen_processing # Chain of specimen processing applied to specimen before assay is performed 
+      - type # Name of type of Assay class e.g. TCellReceptorEpitopeBindingAssay
+      - assay_type # CURIE of OBI name for assay e.g. OBI:1110179
       - target_entity_type
-      - value
-      - unit
+
+  ReceptorRepertoireSequencingAssay:
+    is_a: Assay
+    class_uri: OBI:0600047
+    slots:
+      - template_class
+      - template_quality
+      - template_amount
+      - template_amount_unit
+      - library_generation_method
+      - library_generation_protocol
+      - library_generation_kit_version
+      - pcr_target
+      - complete_sequences
+      - physical_linkage
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
-      - specimen
-      - assay_type
       - epitope
       - tcell_receptors
       - value
@@ -62,7 +80,7 @@ classes:
 
   Assessment:
     # is_a: LifeEvent
-    is_a: NamedThing
+    is_a: PlannedProcess
     class_uri: OBI:0002441 # physical examination of an organism
     slots:
       - life_event
@@ -92,12 +110,44 @@ slots:
     description: The specimen that was input for an assay
     range: Specimen
     slot_uri: OBI:0000293 # has specified input
+  specimen_processing:
+    description: A series of zero or more specimen processing steps that precede an assay
+    range: SpecimenProcessing
+    slot_uri: BFO:0000051 # has part
+    multivalued: true
   assay_type:
     description: The specific type of an assay
     slot_uri: rdf:type
     # TODO: enum
   target_entity_type:
     description: The type of the entity being measured
+
+  template_class:
+    description: The class of nucleic acid that was used as primary starting material for the following procedures
+    # TODO: enum
+  template_quality:
+    description: Description and results of the quality control performed on the template material
+  template_amount:
+    description: Amount of template that went into the process
+  template_amount_unit:
+    description: Unit of template amount
+  library_generation_method:
+    description: Generic type of library generation
+    # TODO: enum
+  library_generation_protocol:
+    description: Description of processes applied to substrate to obtain a library that is ready for sequencing
+  library_generation_kit_version:
+    description: When using a library generation protocol from a commercial provider, provide the protocol version number
+  pcr_target:
+    description: Target locus for PCR
+    multivalued: true
+  complete_sequences:
+    description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
+    # TODO: enum
+  physical_linkage:
+    description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
+    # TODO: enum
+
   epitope:
     description: The epitope being measured
     range: Epitope

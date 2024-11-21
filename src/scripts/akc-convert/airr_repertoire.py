@@ -97,7 +97,7 @@ class AIRRRepertoire(Repertoire):
                 "Investigation" : {
                     "participants" : {"lookup" : "forward", "class" : "Participant", "field" : "adc_study_id", "source" : "Investigation"},
                     "documents" : {"lookup" : "forward", "class" : "Reference", "field" : "adc_study_id", "source" : "Investigation"},
-                    "assays" : {"lookup" : "forward", "class" : "Assay", "field" : "adc_study_id", "source" : "Investigation"},
+                    "assays" : {"lookup" : "forward", "class" : "ReceptorRepertoireSequencingAssay", "field" : "adc_study_id", "source" : "Investigation"},
                     "conclusions" : {"lookup" : "forward", "class" : "Conclusion", "field" : "adc_study_id", "source" : "Investigation"},
                     "simulations" : {"lookup" : "forward", "class" : "Simulation", "field" : "adc_study_id", "source" : "Investigation"}
                     },
@@ -119,6 +119,9 @@ class AIRRRepertoire(Repertoire):
                     },
                 "Specimen" : {
                     "life_event" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Investigation"},
+                    },
+                "ReceptorRepertoireSequencingAssay" : {
+                    "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     }
                 }
         # For every field that refers to another class, process the field.
@@ -146,7 +149,8 @@ class AIRRRepertoire(Repertoire):
                 # If our investigation has the change class and the source class, process it.
                 if akc_change_class in akc_investigation and akc_source_class in akc_investigation:
                     if self.verbose():
-                        print('    Change class %s and source class %s in investigation: %s'%(akc_change_class, akc_source_class, adc_study_id))
+                        print('    Change class %s in investigation: %s'%(akc_change_class, adc_study_id))
+                        print('    Looping over source class %s'%(akc_source_class))
                     # Get the dictionary for the class we are changing.
                     akc_change_class_dict = akc_investigation[akc_change_class]
                     # Get the dictionary for the class the link is coming from.
@@ -162,8 +166,8 @@ class AIRRRepertoire(Repertoire):
                             # If the change class and the field being processed is not in our
                             # class map, we don't know how to link it so we skip it.
                             if akc_change_class in class_map and akc_change_field in class_map[akc_change_class]:
-                                if self.verbose():
-                                    print("        Change AKC key = %s, Source AKC key = %s"%(change_akc_key, source_akc_key))
+                                #if self.verbose():
+                                #    print("        Change AKC key = %s, Source AKC key = %s"%(change_akc_key, source_akc_key))
                                 # Get the field information on how we convert this field in this class.
                                 field_info = class_map[akc_change_class][akc_change_field]
                                 # A forward lookup means we use the change class to generate the class instance name
@@ -172,8 +176,8 @@ class AIRRRepertoire(Repertoire):
                                     # self.getAKCUniqueLink generates the correct class names for us. This is where the
                                     # linking magic occurs. Don't stare at it to closely or you will fall into a trance.
                                     change_link_tag = self.getAKCUniqueLink(change_class_instance, akc_change_class, akc_source_class)
-                                    if self.verbose():
-                                        print("        Change link tag = %s, Checking %s (Forward lookup)"%(change_link_tag, change_akc_key))
+                                    #if self.verbose():
+                                    #    print("        Change link tag = %s, Checking %s (Forward lookup)"%(change_link_tag, change_akc_key))
                                     # If the tags/keys match, then we need to update the links.
                                     if change_link_tag == change_akc_key:
                                         if self.verbose():
@@ -190,8 +194,8 @@ class AIRRRepertoire(Repertoire):
                                     # Reverse look up means we use the change class information but the source class algorithm to
                                     # generate the tag.
                                     lookup_link_tag = self.getAKCUniqueLink(change_class_instance, akc_source_class, akc_change_class)
-                                    if self.verbose():
-                                        print("        Change link tag = %s, Checking %s (Reverse lookup)"%(lookup_link_tag, source_akc_key))
+                                    #if self.verbose():
+                                    #    print("        Change link tag = %s, Checking %s (Reverse lookup)"%(lookup_link_tag, source_akc_key))
                                     # If the match, set the link variable, append if array, just set if not an array.
                                     if lookup_link_tag == source_akc_key:
                                         if self.verbose():

@@ -569,6 +569,22 @@ class Parser:
                       (key, field_type, str(type(value))))
         return valid_type
 
+    # Set the AKC related attributes for the field dictionary given the 
+    # airr_field value.
+    def setAKCAttr(self, field_dict, airr_field, akc_field, airr_class):
+        field_dict['akc_field'] = akc_field
+        field_dict['akc_class'] = self.getAIRRMap().getMapping(airr_field, 'airr',
+                                                               'akc_class', airr_class)
+        field_dict['akc_form'] = self.getAIRRMap().getMapping(airr_field, 'airr',
+                                                              'akc_form', airr_class)
+        field_dict['akc_type'] = self.getAIRRMap().getMapping(airr_field, "airr",
+                                                              "akc_type", airr_class)
+        field_dict['akc_is_array'] = self.getAIRRMap().getMapping(airr_field, "airr",
+                                                              "akc_is_array", airr_class)
+        field_dict['akc_convert'] = self.getAIRRMap().getMapping(airr_field, "airr",
+                                                              "akc_convert", airr_class)
+        return field_dict
+
     # This method is a recursive function that takes a key and value in a JSON
     # object and recursively flattens the values adding each element to the dictionary
     # as it finds a "leaf node". Note a leaf node in general is a key value pair where
@@ -589,7 +605,7 @@ class Parser:
     #     "akc_type":"LifeEvent"
     #   }
     # }
-    def akc_flatten(self, key, value, dictionary, key_path, airr_class):
+    def akc_flatten(self, key, value, dictionary, key_path, airr_class, append=False):
         column = self.getAIRRTag()
         # If it is an integer, float, or bool we just use the key value pair.
         if isinstance(value, (int, float, bool)):
@@ -603,11 +619,8 @@ class Parser:
                 if not akc_field is None and value != '':
                     # For each field we create a dictionary that has the value,
                     # the AKC class/object, and the AKC field name.
-                    field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class", airr_class)
-                    field_dict['akc_field'] = akc_field
-                    field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
-                    field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                    field_dict = self.setAKCAttr(field_dict, key, akc_field, airr_class)
+
                 # Store the field dictionary keyed on the key.
                 dictionary[key] = field_dict
             else:
@@ -617,18 +630,37 @@ class Parser:
             if self.validAIRRFieldType(key, value, False):
                 # Map the field and if it exists as an akc_field, process it.
                 akc_field = self.getAIRRMap().getMapping(key, "airr", "akc_field", airr_class)
-                field_dict = dict()
-                field_dict['value'] = value
+
+                # Check to see if the key is in the dictionary.
+                if key in dictionary:
+                    field_dict = dictionary[key]
+                    # If we are appending, we want to add to the list already there.
+                    # If not, then we have an error situation that warrants a warning.
+                    # This is an error because we should never have multiple definitions
+                    # of a field in a single repertoire except in append mode (array).
+                    if append:
+                        field_dict['value'].append(value)
+                    else:
+                        print('Warning: Field %s already in dictionary, ignoring %s'%(key, value))
+                else:
+                    field_dict = dict()
+                    # If we are appending, the field is an array so create a list
+                    # with one element, otherwise just assign the value.
+                    if append:
+                        field_dict['value'] = [value]
+                    else:
+                        field_dict['value'] = value
+
+                # Track the AIRR subclass of the field.
                 field_dict['airr_subclass'] = self.getAIRRMap().getMapping(key,
                                                   "airr", "ir_subclass", airr_class)
+
+                # If the AKC field is valid, set up the AKC attribute information.
                 if not akc_field is None and value != '':
                     # For each field we create a dictionary that has the value,
                     # the AKC class/object, and the AKC field name.
-                    field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class", airr_class)
-                    field_dict['akc_field'] = akc_field
-                    field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
-                    field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                    field_dict = self.setAKCAttr(field_dict, key, akc_field, airr_class)
+
                 # Store the field dictionary keyed on the key.
                 dictionary[key] = field_dict
             else:
@@ -655,11 +687,8 @@ class Parser:
                     if not akc_field is None and value != '':
                         # For each field we create a dictionary that has the value,
                         # the AKC class/object, and the AKC field name.
-                        field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class", airr_class)
-                        field_dict['akc_field'] = akc_field
-                        field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
-                        field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                        field_dict = self.setAKCAttr(field_dict, key, akc_field, airr_class)
+
                     # Store the field dictionary keyed on the key.
                     dictionary[key] = field_dict
                 else:
@@ -667,7 +696,8 @@ class Parser:
             else:
                 # If we aren't processing an ontology term, we recursively flatten
                 for sub_key, sub_value in value.items():
-                    self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
+                    self.akc_flatten(sub_key, sub_value, dictionary,
+                                     key_path + "." + sub_key, airr_class)
         elif isinstance(value, list):
             # There are currently three possible list situations in the spec.
             # - keywords_study, data_processing_files: An array of strings
@@ -692,56 +722,66 @@ class Parser:
                     if not akc_field is None and value != '':
                         # For each field we create a dictionary that has the value,
                         # the AKC class/object, and the AKC field name.
-                        field_dict['akc_class'] = self.getAIRRMap().getMapping(key,
-                                                  "airr", "akc_class", airr_class)
-                        field_dict['akc_field'] = akc_field
-                        field_dict['akc_form'] = self.getAIRRMap().getMapping(key, "airr", "akc_form", airr_class)
-                        field_dict['akc_type'] = self.getAIRRMap().getMapping(key, "airr", "akc_type", airr_class)
+                        field_dict = self.setAKCAttr(field_dict, key, akc_field, airr_class)
+
                     # Store the field dictionary keyed on the key.
                     dictionary[key] = field_dict
                 else:
                     raise TypeError(key)
-            else:
+            elif key == "data_processing":
                 # If we are handling a data processing element list, we have a hint as
                 # to which element is the most important, as we can use the
                 # "primary_annotation" field to determine which one to use.
-                if key == "data_processing":
-                    # Warn if we found more than one, as we only store one per repertoire. If
-                    # you have more than one and want to store the rearrangements separately
-                    # then you need to split this up into two repertoires.
-                    if len(value) > 1:
-                        print("Warning: Found more than one %s element (found %d)."%
-                              (key, len(value)))
-                    # Look for the primary annotation
-                    got_primary = False
+                # Warn if we found more than one, as we only store one per repertoire. If
+                # you have more than one and want to store the rearrangements separately
+                # then you need to split this up into two repertoires.
+                if len(value) > 1:
+                    print("Warning: Found more than one %s element (found %d)."%
+                          (key, len(value)))
+                # Look for the primary annotation
+                got_primary = False
+                for element in value:
+                    if 'primary_annotation' in element and element['primary_annotation']:
+                        # If we found it, flatten it and the break out of the loop
+                        for sub_key, sub_value in element.items():
+                            self.akc_flatten(sub_key, sub_value, dictionary,
+                                             key_path + "." + sub_key, airr_class)
+                        got_primary = True
+                        if self.verbose():
+                            print("Info: Found a primary annotation, using it.")
+                        break
+                # If we didn't find the primary, then use the first one as a best guess.
+                if not got_primary:
+                    print("Warning: Could not find a primary annotation, using the first one.")
+                    for sub_key, sub_value in value[0].items():
+                            self.akc_flatten(sub_key, sub_value, dictionary,
+                                             key_path + "." + sub_key, airr_class)
+            elif key == "pcr_target":
+                # For pcr_target, we have a class with a set of leaf nodes. We want to
+                # create an array for each leaf node that contains the constituent parts.
+                # So an array of pcr_targets with pcr_target_locus of TRA and TRB 
+                # becomes pcr_target_locus ['TRA','TRB']
+                if self.verbose():
+                    print("Info: Found a PCRTarget array, flatenning.")
+                for element in value:
+                    for sub_key, sub_value in element.items():
+                        self.akc_flatten(sub_key, sub_value, dictionary,
+                                         key_path + "." + sub_key, airr_class, True)
+
+            else:
+                # Process the array of objects as indivdual objects.
+                if len(value) > 1:
+                    if self.verbose():
+                        print("Info: Processing multi element array key %s."%(key))
+                # We should only have arrays of objects here. Special case AIRR
+                # arrays are handled above. So we should only have an array of 
+                # dictionaries here.
+                if isinstance(value[0], dict):
                     for element in value:
-                        if 'primary_annotation' in element and element['primary_annotation']:
-                            # If we found it, flatten it and the break out of the loop
-                            for sub_key, sub_value in element.items():
-                                self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
-                            got_primary = True
-                            if self.verbose():
-                                print("Info: Found a primary annotation, using it.")
-                            break
-                    # If we didn't find the primary, then use the first one as a best guess.
-                    if not got_primary:
-                        print("Warning: Could not find a primary annotation, using the first one.")
-                        for sub_key, sub_value in value[0].items():
+                        for sub_key, sub_value in element.items():
                             self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
                 else:
-                    # Process the array of objects as indivdual objects.
-                    if len(value) > 1:
-                        if self.verbose():
-                            print("Info: Processing multi element array key %s."%(key))
-                    # We should only have arrays of objects here. Special case AIRR
-                    # arrays are handled above. So we should only have an array of 
-                    # dictionaries here.
-                    if isinstance(value[0], dict):
-                        for element in value:
-                            for sub_key, sub_value in element.items():
-                                self.akc_flatten(sub_key, sub_value, dictionary, key_path + "." + sub_key, airr_class)
-                    else:
-                        print("Warning: Skipping non-AIRR multi element array %s."%(key))
+                    print("Warning: Skipping non-AIRR multi element array %s."%(key))
 
         return dictionary
 
