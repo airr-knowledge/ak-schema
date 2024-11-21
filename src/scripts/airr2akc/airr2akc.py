@@ -1,15 +1,10 @@
-# This code is developed under this license:
-# https://github.com/sfu-ireceptor/sandbox/blob/master/LICENSE
-
 import argparse
 import yaml
 import sys
 
 def get_arguments():
-    # Set up the command line parser
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description="")
 
-    # The block to process
     parser.add_argument("-a", "--airr_schema_yaml", type=str, default="/Users/lscheffer/PycharmProjects/ak-schema/src/scripts/airr2akc/airr-schema-openapi3.yaml")
     parser.add_argument("-o", "--output_file", type=str, default="../../ak_schema/schema/ak_airr.yaml")
 
@@ -91,15 +86,6 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
 
     is_required = orig_slot_name in required_slots
     slot[pr_slot_name]["required"] = is_required
-
-    # todo: in linkML, 'identifier' slot must always be 'required', and there must only be 1 id per class.
-    #  This is not consistent with AIRR
-    # if "x-airr" in slot_yaml and  "identifier" in slot_yaml["x-airr"]:
-    #     slot[pr_slot_name]["identifier"] = slot_yaml["x-airr"]["identifier"]
-    #     if "required" not in slot[pr_slot_name] or slot[pr_slot_name]["required"] != True:
-    #         print(f"Slot '{pr_slot_name}' in '{cls_keyword}' was annotated as identifier but not set as required. "
-    #               f"In LinkML, all identifiers must be required. Setting required to True for this slot...")
-    #         slot[pr_slot_name]["required"] = True
 
     annotations = get_slot_annotation(slot_yaml)
     if len(annotations) > 0:
@@ -195,13 +181,6 @@ def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix):
 def new_keys_not_in_existing(existing_keys, new_keys):
     return all([key not in existing_keys for key in new_keys])
 
-# def check_can_safely_add(existing_keys, new_keys, item_name):
-#     assert new_keys_not_in_existing(existing_keys, new_keys), \
-#         (f"Error when adding new {item_name}, some of these already exist. \n"
-#          f"Existing: {existing_keys}\n"
-#          f"New: {new_keys}\n"
-#          f"Erroneous: {set(existing_keys).intersection(new_keys)}")
-
 def check_can_safely_add(existing_yaml, new_yaml, type_name):
     for key in new_yaml:
         if key in existing_yaml:
@@ -282,7 +261,6 @@ def main(parsed_args):
                    "enums": dict()}
 
     # keywords_to_process = airr_yaml.keys()
-    # keywords_to_process = parsed_args.keywords_to_parse
     keywords_to_process = get_simple_keywords_to_process(airr_yaml)
 
     # Simple keywords: add classes, slots and enums
@@ -326,6 +304,7 @@ if __name__ == "__main__":
     parsed_args = get_arguments()
 
     main(parsed_args)
+
 
 
 
