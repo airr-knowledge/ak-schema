@@ -67,7 +67,7 @@ def is_array(slot_yaml):
     return "type" in slot_yaml and slot_yaml["type"] == "array"
 
 def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
-    pr_slot_name = f"{camel_to_snake_case(cls_keyword)}__{orig_slot_name}"
+    pr_slot_name = f"{version_prefix}_{camel_to_snake_case(cls_keyword)}__{orig_slot_name}"
 
     if is_deprecated(slot_yaml):
         return dict()
@@ -247,7 +247,7 @@ def write_yaml_output(yaml_output_dict, yaml_outfile):
 def main(parsed_args):
     airr_yaml = get_airr_yaml(parsed_args.airr_schema_yaml)
     airr_version = airr_yaml["Info"]["version"]
-    version_prefix = f"V{str(airr_version).replace('.', 'p')}_"
+    version_prefix = f"v{str(airr_version).replace('.', 'p')}_"
 
 
     skip_keywords = ["Info", "Ontology", "CURIEMap", "InformationProvider", "Attributes", "FileObject", "DataSet",
