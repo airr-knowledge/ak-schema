@@ -36,6 +36,22 @@ class Repertoire(Parser):
         # TODO: This should be in a config file and not harcoded here.
         self.link_classes = ['LifeEvent', 'StudyEvent']
 
+        # Mapping of which ADC fields should be stored in a specific class to help
+        # link AKC objects
+        self.class_adc_map = {
+                "Investigation" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
+                "Reference" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
+                "StudyArm" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'study_group_description'],
+                "Participant" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id','subject_id', 'sample_id', 'study_group_description'],
+                "LifeEvent" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "CellIsolationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "LibraryPreparationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id']
+                }
+
     def getAIRRUniqueLink(self, repertoire_dict, link_class, akc_class):
         # Get the link name for a class instance. Default to None
         airr_link_value = None
@@ -115,22 +131,9 @@ class Repertoire(Parser):
 
     def addADCData(self, akc_object, akc_class, repertoire_dict):
 
-        class_adc_map = {
-                "Investigation" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
-                "Reference" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
-                "StudyArm" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'study_group_description'],
-                "Participant" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id','subject_id', 'sample_id', 'study_group_description'],
-                "LifeEvent" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "CellIsolationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "LibraryPreparationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id']
-                }
         #print('addADCData: akc_class = %s'%(akc_class))
-        if akc_class in class_adc_map:
-            fields = class_adc_map[akc_class]
+        if akc_class in self.class_adc_map:
+            fields = self.class_adc_map[akc_class]
             #print('addADCData: fields = %s'%(fields))
             for field in fields:
                 if field in repertoire_dict:
@@ -138,6 +141,25 @@ class Repertoire(Parser):
                     #print('addADCData: adding %s = %s'%('adc_' + field, repertoire_dict[field]['value']))
                 else:
                     print('Warning: Could not find field %s in repertoire'%(field))
+        else:
+            print('Warning: Could not find class %s in ADC class map'%(akc_class))
+
+        return akc_object
+
+    def removeADCData(self, akc_object, akc_class):
+
+        #print('removeADCData: akc_class = %s'%(akc_class))
+        if akc_class in self.class_adc_map:
+            fields = self.class_adc_map[akc_class]
+            for field in fields:
+                field_name = 'adc_' + field
+                if field_name in akc_object:
+                    #print('removeADCData: removing %s = %s'%(field_name, akc_object[field_name]))
+                    del akc_object[field_name]
+                else:
+                    print('Warning: Could not find field %s in repertoire'%(field))
+                if 'adc_link_tag' in akc_object:
+                    del akc_object['adc_link_tag']
         else:
             print('Warning: Could not find class %s in ADC class map'%(akc_class))
 

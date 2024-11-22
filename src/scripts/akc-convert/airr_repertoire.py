@@ -218,6 +218,17 @@ class AIRRRepertoire(Repertoire):
                                 else:
                                     print("ERROR: No lookup direction for %s.%s"%(akc_change_class, row['akc_field']))
 
+        # Clean up the adc_ keys in our objects.
+        # We only want to do this if we are not in verbose mode.
+        # Verbose implies debug, and if we are debugging we want to
+        # keep these fields.
+        if not self.verbose():
+            for akc_investigation_id, akc_investigation in investigation_dict.items():
+                for akc_class, akc_class_dict in akc_investigation.items():
+                    for akc_instance, akc_instance_dict in akc_class_dict.items():
+                        self.removeADCData(akc_instance_dict, akc_class)
+
+
         # We are done, dump out the JSON to the output file.
         print(json_dumper.dumps(investigation_dict), file=out_file)
 
