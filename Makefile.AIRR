@@ -1,6 +1,6 @@
 AIRR_SCHEMA_OUTPUT=src/ak_schema/schema/ak_airr.yaml
 SCRIPT_DIR=src/scripts/airr2akc
-AIRR_SCHEMA_INPUT=src/scripts/airr2akc/airr-schema-openapi3.yaml
+AIRR_SCHEMA_INPUT=src/airr_schema/airr-standards-v1.5/specs/airr-schema-openapi3.yaml
 
 airr_schema:
 	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT) -a $(AIRR_SCHEMA_INPUT)
