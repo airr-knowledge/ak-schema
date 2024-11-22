@@ -29,7 +29,7 @@ def get_slot_range(slot_name, slot_yaml, version_prefix):
         if slot_yaml["$ref"] == "#/Ontology":
             slot_range = f"{version_prefix}{snake_to_camel_case(slot_name)}"
         else:
-            slot_range = f"{version_prefix}{slot_yaml["$ref"].lstrip("#/")}"
+            slot_range = f"{version_prefix}{slot_yaml['$ref'].lstrip('#/')}"
     elif "type" in slot_yaml and slot_yaml["type"] in ("string", "float", "integer", "boolean", "number"):
         slot_range = slot_yaml["type"]
     # elif "x-airr" in slot_yaml and "format" in slot_yaml["x-airr"]:
