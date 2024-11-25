@@ -1,6 +1,7 @@
 import argparse
 import yaml
 import sys
+import logging
 
 def get_arguments():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, description="Script to convert AIRR openapi3 schema to LinkML")
@@ -9,15 +10,18 @@ def get_arguments():
                         default="../../airr_schema/airr-standards-v1.5/specs/airr-schema-openapi3.yaml")
     parser.add_argument("-o", "--output_file", type=str, help="Output file to write the LinkML to",
                         default="../../ak_schema/schema/ak_airr.yaml")
+    parser.add_argument("-l", "--log_file", type=str, help="Log file to write any error occurring while generating LinkML",
+                        default="airr2akc.log")
 
     parser.add_argument("-v", "--include_version_prefix", action="store_true",
-                        help="When this flag is specified, the AIRR ")
+                        help="When this flag is specified, the AIRR version is included as a class prefix")
+    parser.add_argument("-c", "--include_class_prefix", action="store_true",
+                        help="When this flag is specified, the class name is included as a slot prefix")
 
     return parser.parse_args()
 
 
 def snake_to_camel_case(word):
-    # Change _ to camel case as per LinkML naming. _ _ replaced with _
     new_word = ''.join('_' if x == '' else x.capitalize() for x in word.split('_'))
     return new_word
 
@@ -40,8 +44,7 @@ def get_slot_range(slot_name, slot_yaml, version_prefix):
     # elif "x-airr" in slot_yaml and "format" in slot_yaml["x-airr"]:
     #     slot_range = slot_yaml["x-airr"]["format"]  #
     elif "type" in slot_yaml and slot_yaml["type"] == "object":
-        slot_range = slot_yaml["type"]
-        print(f"Cannot determine range for slot '{slot_name}', omitting range...", file=sys.stderr)
+        logging.warning(f"Error: Cannot determine range for slot '{slot_name}', omitting range...")
         slot_range = None
     else:
         raise NotImplementedError(slot_yaml)
@@ -72,7 +75,8 @@ def is_array(slot_yaml):
     return "type" in slot_yaml and slot_yaml["type"] == "array"
 
 def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
-    pr_slot_name = f"{version_prefix}{cls_keyword}_{orig_slot_name}"
+    cls_prefix = cls_keyword + "_" if parsed_args.include_class_prefix else ""
+    pr_slot_name = f"{version_prefix}{cls_prefix}{orig_slot_name}"
 
     if is_deprecated(slot_yaml):
         return dict()
@@ -109,7 +113,7 @@ def get_all_slots(airr_yaml, keyword, version_prefix) -> dict:
 
     return all_slots
 
-def get_ontology_enum(name, slot_yaml, version_prefix):
+def get_ontology_enum(name, slot_yaml, keyword, version_prefix):
     if "ontology" in slot_yaml["x-airr"]:
         source_node = slot_yaml["x-airr"]["ontology"]["top_node"]["id"]
 
@@ -120,39 +124,38 @@ def get_ontology_enum(name, slot_yaml, version_prefix):
                          "include_self": True,
                          "relationship_types": ["rdfs:subClassOf"]}}
         else:
-            print(f"Source node for ontology '{name}' was not defined. \n"
+            logging.warning(f"Error: Source node for ontology '{name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
                   f"  Expected to find some value in the field: x-airr/ontology/top_node/id\n"
-                  f"  Instead found these fields: {slot_yaml}", file=sys.stderr)
+                  f"  Instead found these fields: {slot_yaml}")
     else:
-        print(f"Ontology '{name}' does not follow the correct formatting.\n"
+        logging.warning(f"Error: Ontology '{name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
               f"  Expected to find the field: x-airr/ontology/top_node/id\n"
-              f"  Instead found these fields: {slot_yaml}", file=sys.stderr)
+              f"  Instead found these fields: {slot_yaml}")
 
     return {"name": f"{version_prefix}{name}"}
 
-def get_closed_vocabulary_enum(name, slot_yaml, version_prefix):
+def get_closed_vocabulary_enum(name, slot_yaml, keyword, version_prefix):
     return {"name": f"{version_prefix}{name}",
-            "permissible_values": {"null" if enum_val is None else enum_val: None for enum_val in
-                                   slot_yaml["enum"]}}
+            "permissible_values": {"null" if enum_val is None else enum_val: None for enum_val in slot_yaml["enum"]}}
 
-def get_enum(name, slot_yaml, version_prefix):
+def get_enum(name, slot_yaml, keyword, version_prefix):
     if "type" in slot_yaml and slot_yaml["type"] == "array":
-        return get_enum(name, slot_yaml["items"], version_prefix)
+        return get_enum(name, slot_yaml["items"], keyword, version_prefix)
 
     if "$ref" in slot_yaml and slot_yaml["$ref"] == "#/Ontology":
-        return get_ontology_enum(name, slot_yaml, version_prefix)
+        return get_ontology_enum(name, slot_yaml, keyword, version_prefix)
 
     elif "enum" in slot_yaml:
-        return get_closed_vocabulary_enum(name, slot_yaml, version_prefix)
+        return get_closed_vocabulary_enum(name, slot_yaml, keyword, version_prefix)
 
 
-def get_all_enums(keyword_yaml, version_prefix):
+def get_all_enums(keyword_yaml, keyword, version_prefix):
     all_enums = dict()
 
     for slot_name, slot_yaml in keyword_yaml["properties"].items():
         if not is_deprecated(slot_yaml):
             name = snake_to_camel_case(slot_name)
-            new_enum = get_enum(name, slot_yaml, version_prefix)
+            new_enum = get_enum(name, slot_yaml, keyword, version_prefix)
 
             if new_enum is not None:
                 all_enums[f"{version_prefix}{name}"] = new_enum
@@ -179,34 +182,60 @@ def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix):
 
     yaml_output_dict = {"classes": {f"{version_prefix}{keyword}": {"slots": list(output_slots.keys())}},
                         "slots": output_slots,
-                        "enums": get_all_enums(airr_yaml[keyword], version_prefix)}
+                        "enums": get_all_enums(airr_yaml[keyword], keyword, version_prefix)}
 
     return yaml_output_dict
 
 def new_keys_not_in_existing(existing_keys, new_keys):
     return all([key not in existing_keys for key in new_keys])
 
-def check_can_safely_add(existing_yaml, new_yaml, type_name):
-    for key in new_yaml:
-        if key in existing_yaml:
-            if new_yaml[key] != existing_yaml[key]:
-                print(f"Issue when attempting to add {type_name} '{key}'. Same slot was already found with different content:\n"
-                      f"  Existing: {new_yaml[key]}\n  New:      {existing_yaml[key]}", file=sys.stderr)
-            # assert new_yaml[key] == existing_yaml[key]
+def get_intersecting_yaml(yaml_pt1, yaml_pt2):
+    final = {}
+
+    for key in yaml_pt1:
+        if key in yaml_pt2:
+            if yaml_pt1[key] == yaml_pt2[key]:
+                final[key] = yaml_pt1[key]
+            elif type(yaml_pt1[key]) == dict and type(yaml_pt2[key]) == dict:
+                sub_params = get_intersecting_yaml(yaml_pt1[key], yaml_pt2[key])
+                if len(sub_params) > 0:
+                    final[key] = sub_params
+
+    return final
+
+def safe_update_yaml_component(output_yaml_part, new_yaml_part, type_name):
+    conflicts = []
+
+    for key in new_yaml_part:
+        if key in output_yaml_part:
+            if new_yaml_part[key] != output_yaml_part[key]:
+                conflicts.append(key)
+
+                intersecting_yaml = get_intersecting_yaml(new_yaml_part[key], output_yaml_part[key])
+
+                logging.warning(f"Conflicting {type_name} '{key}'. Same {type_name} was already found with different content (only 'final' is kept):\n"
+                                f"  Existing: {new_yaml_part[key]}\n"
+                                f"  New:      {output_yaml_part[key]}\n"
+                                f"  Final:    {intersecting_yaml}")
+                output_yaml_part[key] = intersecting_yaml
+        else:
+            output_yaml_part[key] = new_yaml_part[key]
+
+    return conflicts
 
 
-def safe_update_yaml(output_yaml, keyword_yaml):
+def safe_update_yaml(output_yaml, keyword_yaml, conflicts):
     if "classes" in keyword_yaml:
-        check_can_safely_add(output_yaml["classes"], keyword_yaml["classes"], type_name="class")
-        output_yaml["classes"].update(keyword_yaml["classes"])
+        class_conflicts = safe_update_yaml_component(output_yaml["classes"], keyword_yaml["classes"], type_name="class")
+        conflicts["class_conflicts"] += class_conflicts
 
     if "slots" in keyword_yaml:
-        check_can_safely_add(output_yaml["slots"], keyword_yaml["slots"], type_name="slot")
-        output_yaml["slots"].update(keyword_yaml["slots"])
+        slot_conflicts = safe_update_yaml_component(output_yaml["slots"], keyword_yaml["slots"], type_name="slot")
+        conflicts["slot_conflicts"] += slot_conflicts
 
     if "enums" in keyword_yaml:
-        check_can_safely_add(output_yaml["enums"], keyword_yaml["enums"], type_name="enum")
-        output_yaml["enums"].update(keyword_yaml["enums"])
+        enum_conflicts = safe_update_yaml_component(output_yaml["enums"], keyword_yaml["enums"], type_name="enum")
+        conflicts["enum_conflicts"] += enum_conflicts
 
 
 def get_airr_yaml(file_location):
@@ -249,10 +278,24 @@ def write_yaml_output(yaml_output_dict, yaml_outfile):
                   Dumper=LinkMLDumper, explicit_start=True)
 
 
+def log_conflicts(conflicts):
+    logging.info("\n")
+    for conflict_type in ("class", "slot", "enum"):
+        conflicts_of_type = list(set(conflicts[f"{conflict_type}_conflicts"]))
+        if len(conflicts_of_type) == 0:
+            logging.info(f"0 {conflict_type} conflicts")
+        else:
+            logging.info(f"{len(conflicts_of_type)} {conflict_type} conflicts: {', '.join(conflicts_of_type)}")
+
+
 def main(parsed_args):
     airr_yaml = get_airr_yaml(parsed_args.airr_schema_yaml)
     airr_version = airr_yaml["Info"]["version"]
-    version_prefix = f"v{str(airr_version).replace('.', 'p')}_" if parsed_args.include_version_prefix else ""
+    version_prefix = f"V{str(airr_version).replace('.', 'p')}" if parsed_args.include_version_prefix else ""
+
+    logging.info(f"Generating LinkML for AIRR version {airr_version}\n"
+                 f"  Input: {parsed_args.airr_schema_yaml}\n"
+                 f"  Output: {parsed_args.output_file}\n\n")
 
 
     skip_keywords = ["Info", "Ontology", "CURIEMap", "InformationProvider", "Attributes", "FileObject", "DataSet",
@@ -260,10 +303,13 @@ def main(parsed_args):
 
     output_yaml = {"id": "https://github.com/airr-knowledge/ak-schema",
                    "name": "ak-schema",
-                   "airr_version": airr_version,
                    "classes": dict(),
                    "slots": dict(),
                    "enums": dict()}
+
+    conflicts = {"class_conflicts": [],
+                 "slot_conflicts": [],
+                 "enum_conflicts": []}
 
     # keywords_to_process = airr_yaml.keys()
     keywords_to_process = get_simple_keywords_to_process(airr_yaml)
@@ -272,7 +318,7 @@ def main(parsed_args):
     for keyword in keywords_to_process:
         if keyword not in skip_keywords:
             keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix)
-            safe_update_yaml(output_yaml, keyword_yaml)
+            safe_update_yaml(output_yaml, keyword_yaml, conflicts)
 
             skip_keywords.append(keyword)
 
@@ -293,20 +339,25 @@ def main(parsed_args):
                     composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"])
                 else:
                     new_slots = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
-                    new_enums = get_all_enums(class_yaml, version_prefix)
+                    new_enums = get_all_enums(class_yaml, keyword, version_prefix)
                     composition_yaml["slots"].update(new_slots)
                     composition_yaml["enums"].update(new_enums)
 
                     composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(list(new_slots.keys()))
 
+            safe_update_yaml(output_yaml, composition_yaml, conflicts)
 
-            safe_update_yaml(output_yaml, composition_yaml)
-
+    log_conflicts(conflicts)
     write_yaml_output(output_yaml, parsed_args.output_file)
 
 
 if __name__ == "__main__":
     parsed_args = get_arguments()
+
+    logging.basicConfig(level=logging.INFO, format='%(message)s', handlers=[
+        logging.FileHandler(parsed_args.log_file, mode='w'),
+        logging.StreamHandler(sys.stderr)
+    ])
 
     main(parsed_args)
 

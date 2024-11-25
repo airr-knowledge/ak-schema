@@ -4,4070 +4,3374 @@ id: https://github.com/airr-knowledge/ak-schema
 
 name: ak-schema
 
-airr_version: 1.5
-
 classes:
   TimePoint:
     slots:
-      - TimePoint_label
-      - TimePoint_value
-      - TimePoint_unit
+      - label
+      - value
+      - unit
   Acknowledgement:
     slots:
-      - Acknowledgement_acknowledgement_id
-      - Acknowledgement_name
-      - Acknowledgement_institution_name
-      - Acknowledgement_orcid_id
+      - acknowledgement_id
+      - name
+      - institution_name
+      - orcid_id
   RearrangedSequence:
     slots:
-      - RearrangedSequence_sequence_id
-      - RearrangedSequence_sequence
-      - RearrangedSequence_derivation
-      - RearrangedSequence_observation_type
-      - RearrangedSequence_curation
-      - RearrangedSequence_repository_name
-      - RearrangedSequence_repository_ref
-      - RearrangedSequence_deposited_version
-      - RearrangedSequence_sequence_start
-      - RearrangedSequence_sequence_end
+      - sequence_id
+      - sequence
+      - derivation
+      - observation_type
+      - curation
+      - repository_name
+      - repository_ref
+      - deposited_version
+      - sequence_start
+      - sequence_end
   UnrearrangedSequence:
     slots:
-      - UnrearrangedSequence_sequence_id
-      - UnrearrangedSequence_sequence
-      - UnrearrangedSequence_curation
-      - UnrearrangedSequence_repository_name
-      - UnrearrangedSequence_repository_ref
-      - UnrearrangedSequence_patch_no
-      - UnrearrangedSequence_gff_seqid
-      - UnrearrangedSequence_gff_start
-      - UnrearrangedSequence_gff_end
-      - UnrearrangedSequence_strand
+      - sequence_id
+      - sequence
+      - curation
+      - repository_name
+      - repository_ref
+      - patch_no
+      - gff_seqid
+      - gff_start
+      - gff_end
+      - strand
   SequenceDelineationV:
     slots:
-      - SequenceDelineationV_sequence_delineation_id
-      - SequenceDelineationV_delineation_scheme
-      - SequenceDelineationV_unaligned_sequence
-      - SequenceDelineationV_aligned_sequence
-      - SequenceDelineationV_fwr1_start
-      - SequenceDelineationV_fwr1_end
-      - SequenceDelineationV_cdr1_start
-      - SequenceDelineationV_cdr1_end
-      - SequenceDelineationV_fwr2_start
-      - SequenceDelineationV_fwr2_end
-      - SequenceDelineationV_cdr2_start
-      - SequenceDelineationV_cdr2_end
-      - SequenceDelineationV_fwr3_start
-      - SequenceDelineationV_fwr3_end
-      - SequenceDelineationV_cdr3_start
-      - SequenceDelineationV_alignment_labels
+      - sequence_delineation_id
+      - delineation_scheme
+      - unaligned_sequence
+      - aligned_sequence
+      - fwr1_start
+      - fwr1_end
+      - cdr1_start
+      - cdr1_end
+      - fwr2_start
+      - fwr2_end
+      - cdr2_start
+      - cdr2_end
+      - fwr3_start
+      - fwr3_end
+      - cdr3_start
+      - alignment_labels
   AlleleDescription:
     slots:
-      - AlleleDescription_allele_description_id
-      - AlleleDescription_allele_description_ref
-      - AlleleDescription_maintainer
-      - AlleleDescription_acknowledgements
-      - AlleleDescription_lab_address
-      - AlleleDescription_release_version
-      - AlleleDescription_release_date
-      - AlleleDescription_release_description
-      - AlleleDescription_label
-      - AlleleDescription_sequence
-      - AlleleDescription_coding_sequence
-      - AlleleDescription_aliases
-      - AlleleDescription_locus
-      - AlleleDescription_chromosome
-      - AlleleDescription_sequence_type
-      - AlleleDescription_functional
-      - AlleleDescription_inference_type
-      - AlleleDescription_species
-      - AlleleDescription_species_subgroup
-      - AlleleDescription_species_subgroup_type
-      - AlleleDescription_status
-      - AlleleDescription_subgroup_designation
-      - AlleleDescription_gene_designation
-      - AlleleDescription_allele_designation
-      - AlleleDescription_allele_similarity_cluster_designation
-      - AlleleDescription_allele_similarity_cluster_member_id
-      - AlleleDescription_j_codon_frame
-      - AlleleDescription_gene_start
-      - AlleleDescription_gene_end
-      - AlleleDescription_utr_5_prime_start
-      - AlleleDescription_utr_5_prime_end
-      - AlleleDescription_leader_1_start
-      - AlleleDescription_leader_1_end
-      - AlleleDescription_leader_2_start
-      - AlleleDescription_leader_2_end
-      - AlleleDescription_v_rs_start
-      - AlleleDescription_v_rs_end
-      - AlleleDescription_d_rs_3_prime_start
-      - AlleleDescription_d_rs_3_prime_end
-      - AlleleDescription_d_rs_5_prime_start
-      - AlleleDescription_d_rs_5_prime_end
-      - AlleleDescription_j_cdr3_end
-      - AlleleDescription_j_rs_start
-      - AlleleDescription_j_rs_end
-      - AlleleDescription_j_donor_splice
-      - AlleleDescription_v_gene_delineations
-      - AlleleDescription_unrearranged_support
-      - AlleleDescription_rearranged_support
-      - AlleleDescription_paralogs
-      - AlleleDescription_curation
-      - AlleleDescription_curational_tags
+      - allele_description_id
+      - allele_description_ref
+      - maintainer
+      - acknowledgements
+      - lab_address
+      - release_version
+      - release_date
+      - release_description
+      - label
+      - sequence
+      - coding_sequence
+      - aliases
+      - locus
+      - chromosome
+      - sequence_type
+      - functional
+      - inference_type
+      - species
+      - species_subgroup
+      - species_subgroup_type
+      - status
+      - subgroup_designation
+      - gene_designation
+      - allele_designation
+      - allele_similarity_cluster_designation
+      - allele_similarity_cluster_member_id
+      - j_codon_frame
+      - gene_start
+      - gene_end
+      - utr_5_prime_start
+      - utr_5_prime_end
+      - leader_1_start
+      - leader_1_end
+      - leader_2_start
+      - leader_2_end
+      - v_rs_start
+      - v_rs_end
+      - d_rs_3_prime_start
+      - d_rs_3_prime_end
+      - d_rs_5_prime_start
+      - d_rs_5_prime_end
+      - j_cdr3_end
+      - j_rs_start
+      - j_rs_end
+      - j_donor_splice
+      - v_gene_delineations
+      - unrearranged_support
+      - rearranged_support
+      - paralogs
+      - curation
+      - curational_tags
   GermlineSet:
     slots:
-      - GermlineSet_germline_set_id
-      - GermlineSet_author
-      - GermlineSet_lab_name
-      - GermlineSet_lab_address
-      - GermlineSet_acknowledgements
-      - GermlineSet_release_version
-      - GermlineSet_release_description
-      - GermlineSet_release_date
-      - GermlineSet_germline_set_name
-      - GermlineSet_germline_set_ref
-      - GermlineSet_pub_ids
-      - GermlineSet_species
-      - GermlineSet_species_subgroup
-      - GermlineSet_species_subgroup_type
-      - GermlineSet_locus
-      - GermlineSet_allele_descriptions
-      - GermlineSet_curation
+      - germline_set_id
+      - author
+      - lab_name
+      - lab_address
+      - acknowledgements
+      - release_version
+      - release_description
+      - release_date
+      - germline_set_name
+      - germline_set_ref
+      - pub_ids
+      - species
+      - species_subgroup
+      - species_subgroup_type
+      - locus
+      - allele_descriptions
+      - curation
   GenotypeSet:
     slots:
-      - GenotypeSet_receptor_genotype_set_id
-      - GenotypeSet_genotype_class_list
+      - receptor_genotype_set_id
+      - genotype_class_list
   Genotype:
     slots:
-      - Genotype_receptor_genotype_id
-      - Genotype_locus
-      - Genotype_documented_alleles
-      - Genotype_undocumented_alleles
-      - Genotype_deleted_genes
-      - Genotype_inference_process
+      - receptor_genotype_id
+      - locus
+      - documented_alleles
+      - undocumented_alleles
+      - deleted_genes
+      - inference_process
   DocumentedAllele:
     slots:
-      - DocumentedAllele_label
-      - DocumentedAllele_germline_set_ref
-      - DocumentedAllele_phasing
+      - label
+      - germline_set_ref
+      - phasing
   UndocumentedAllele:
     slots:
-      - UndocumentedAllele_allele_name
-      - UndocumentedAllele_sequence
-      - UndocumentedAllele_phasing
+      - allele_name
+      - sequence
+      - phasing
   DeletedGene:
     slots:
-      - DeletedGene_label
-      - DeletedGene_germline_set_ref
-      - DeletedGene_phasing
+      - label
+      - germline_set_ref
+      - phasing
   MHCGenotypeSet:
     slots:
-      - MHCGenotypeSet_mhc_genotype_set_id
-      - MHCGenotypeSet_mhc_genotype_list
+      - mhc_genotype_set_id
+      - mhc_genotype_list
   MHCGenotype:
     slots:
-      - MHCGenotype_mhc_genotype_id
-      - MHCGenotype_mhc_class
-      - MHCGenotype_mhc_alleles
-      - MHCGenotype_mhc_genotyping_method
+      - mhc_genotype_id
+      - mhc_class
+      - mhc_alleles
+      - mhc_genotyping_method
   MHCAllele:
     slots:
-      - MHCAllele_allele_designation
-      - MHCAllele_gene
-      - MHCAllele_reference_set_ref
+      - allele_designation
+      - gene
+      - reference_set_ref
   SubjectGenotype:
     slots:
-      - SubjectGenotype_receptor_genotype_set
-      - SubjectGenotype_mhc_genotype_set
+      - receptor_genotype_set
+      - mhc_genotype_set
   Study:
     slots:
-      - Study_study_id
-      - Study_study_title
-      - Study_study_type
-      - Study_study_description
-      - Study_inclusion_exclusion_criteria
-      - Study_grants
-      - Study_study_contact
-      - Study_collected_by
-      - Study_lab_name
-      - Study_lab_address
-      - Study_submitted_by
-      - Study_pub_ids
-      - Study_keywords_study
-      - Study_adc_publish_date
-      - Study_adc_update_date
+      - study_id
+      - study_title
+      - study_type
+      - study_description
+      - inclusion_exclusion_criteria
+      - grants
+      - study_contact
+      - collected_by
+      - lab_name
+      - lab_address
+      - submitted_by
+      - pub_ids
+      - keywords_study
+      - adc_publish_date
+      - adc_update_date
   Subject:
     slots:
-      - Subject_subject_id
-      - Subject_synthetic
-      - Subject_species
-      - Subject_sex
-      - Subject_age_min
-      - Subject_age_max
-      - Subject_age_unit
-      - Subject_age_event
-      - Subject_ancestry_population
-      - Subject_ethnicity
-      - Subject_race
-      - Subject_strain_name
-      - Subject_linked_subjects
-      - Subject_link_type
-      - Subject_diagnosis
-      - Subject_genotype
+      - subject_id
+      - synthetic
+      - species
+      - sex
+      - age_min
+      - age_max
+      - age_unit
+      - age_event
+      - ancestry_population
+      - ethnicity
+      - race
+      - strain_name
+      - linked_subjects
+      - link_type
+      - diagnosis
+      - genotype
   Diagnosis:
     slots:
-      - Diagnosis_study_group_description
-      - Diagnosis_disease_diagnosis
-      - Diagnosis_disease_length
-      - Diagnosis_disease_stage
-      - Diagnosis_prior_therapies
-      - Diagnosis_immunogen
-      - Diagnosis_intervention
-      - Diagnosis_medical_history
+      - study_group_description
+      - disease_diagnosis
+      - disease_length
+      - disease_stage
+      - prior_therapies
+      - immunogen
+      - intervention
+      - medical_history
   Sample:
     slots:
-      - Sample_sample_id
-      - Sample_sample_type
-      - Sample_tissue
-      - Sample_anatomic_site
-      - Sample_disease_state_sample
-      - Sample_collection_time_point_relative
-      - Sample_collection_time_point_relative_unit
-      - Sample_collection_time_point_reference
-      - Sample_biomaterial_provider
+      - sample_id
+      - sample_type
+      - tissue
+      - anatomic_site
+      - disease_state_sample
+      - collection_time_point_relative
+      - collection_time_point_relative_unit
+      - collection_time_point_reference
+      - biomaterial_provider
   CellProcessing:
     slots:
-      - CellProcessing_tissue_processing
-      - CellProcessing_cell_subset
-      - CellProcessing_cell_phenotype
-      - CellProcessing_cell_species
-      - CellProcessing_single_cell
-      - CellProcessing_cell_number
-      - CellProcessing_cells_per_reaction
-      - CellProcessing_cell_storage
-      - CellProcessing_cell_quality
-      - CellProcessing_cell_isolation
-      - CellProcessing_cell_processing_protocol
+      - tissue_processing
+      - cell_subset
+      - cell_phenotype
+      - cell_species
+      - single_cell
+      - cell_number
+      - cells_per_reaction
+      - cell_storage
+      - cell_quality
+      - cell_isolation
+      - cell_processing_protocol
   PCRTarget:
     slots:
-      - PCRTarget_pcr_target_locus
-      - PCRTarget_forward_pcr_primer_target_location
-      - PCRTarget_reverse_pcr_primer_target_location
+      - pcr_target_locus
+      - forward_pcr_primer_target_location
+      - reverse_pcr_primer_target_location
   NucleicAcidProcessing:
     slots:
-      - NucleicAcidProcessing_template_class
-      - NucleicAcidProcessing_template_quality
-      - NucleicAcidProcessing_template_amount
-      - NucleicAcidProcessing_template_amount_unit
-      - NucleicAcidProcessing_library_generation_method
-      - NucleicAcidProcessing_library_generation_protocol
-      - NucleicAcidProcessing_library_generation_kit_version
-      - NucleicAcidProcessing_pcr_target
-      - NucleicAcidProcessing_complete_sequences
-      - NucleicAcidProcessing_physical_linkage
+      - template_class
+      - template_quality
+      - template_amount
+      - template_amount_unit
+      - library_generation_method
+      - library_generation_protocol
+      - library_generation_kit_version
+      - pcr_target
+      - complete_sequences
+      - physical_linkage
   SequencingRun:
     slots:
-      - SequencingRun_sequencing_run_id
-      - SequencingRun_total_reads_passing_qc_filter
-      - SequencingRun_sequencing_platform
-      - SequencingRun_sequencing_facility
-      - SequencingRun_sequencing_run_date
-      - SequencingRun_sequencing_kit
-      - SequencingRun_sequencing_files
+      - sequencing_run_id
+      - total_reads_passing_qc_filter
+      - sequencing_platform
+      - sequencing_facility
+      - sequencing_run_date
+      - sequencing_kit
+      - sequencing_files
   SequencingData:
     slots:
-      - SequencingData_sequencing_data_id
-      - SequencingData_file_type
-      - SequencingData_filename
-      - SequencingData_read_direction
-      - SequencingData_read_length
-      - SequencingData_paired_filename
-      - SequencingData_paired_read_direction
-      - SequencingData_paired_read_length
-      - SequencingData_index_filename
-      - SequencingData_index_length
+      - sequencing_data_id
+      - file_type
+      - filename
+      - read_direction
+      - read_length
+      - paired_filename
+      - paired_read_direction
+      - paired_read_length
+      - index_filename
+      - index_length
   DataProcessing:
     slots:
-      - DataProcessing_data_processing_id
-      - DataProcessing_primary_annotation
-      - DataProcessing_software_versions
-      - DataProcessing_paired_reads_assembly
-      - DataProcessing_quality_thresholds
-      - DataProcessing_primer_match_cutoffs
-      - DataProcessing_collapsing_method
-      - DataProcessing_data_processing_protocols
-      - DataProcessing_data_processing_files
-      - DataProcessing_germline_database
-      - DataProcessing_germline_set_ref
-      - DataProcessing_analysis_provenance_id
+      - data_processing_id
+      - primary_annotation
+      - software_versions
+      - paired_reads_assembly
+      - quality_thresholds
+      - primer_match_cutoffs
+      - collapsing_method
+      - data_processing_protocols
+      - data_processing_files
+      - germline_database
+      - germline_set_ref
+      - analysis_provenance_id
   Repertoire:
     slots:
-      - Repertoire_repertoire_id
-      - Repertoire_repertoire_name
-      - Repertoire_repertoire_description
-      - Repertoire_study
-      - Repertoire_subject
-      - Repertoire_sample
-      - Repertoire_data_processing
+      - repertoire_id
+      - repertoire_name
+      - repertoire_description
+      - study
+      - subject
+      - sample
+      - data_processing
   RepertoireGroup:
     slots:
-      - RepertoireGroup_repertoire_group_id
-      - RepertoireGroup_repertoire_group_name
-      - RepertoireGroup_repertoire_group_description
-      - RepertoireGroup_repertoires
+      - repertoire_group_id
+      - repertoire_group_name
+      - repertoire_group_description
+      - repertoires
   Alignment:
     slots:
-      - Alignment_sequence_id
-      - Alignment_segment
-      - Alignment_rev_comp
-      - Alignment_call
-      - Alignment_score
-      - Alignment_identity
-      - Alignment_support
-      - Alignment_cigar
-      - Alignment_sequence_start
-      - Alignment_sequence_end
-      - Alignment_germline_start
-      - Alignment_germline_end
-      - Alignment_rank
-      - Alignment_data_processing_id
+      - sequence_id
+      - segment
+      - rev_comp
+      - call
+      - score
+      - identity
+      - support
+      - cigar
+      - sequence_start
+      - sequence_end
+      - germline_start
+      - germline_end
+      - rank
+      - data_processing_id
   Rearrangement:
     slots:
-      - Rearrangement_sequence_id
-      - Rearrangement_sequence
-      - Rearrangement_quality
-      - Rearrangement_sequence_aa
-      - Rearrangement_rev_comp
-      - Rearrangement_productive
-      - Rearrangement_vj_in_frame
-      - Rearrangement_stop_codon
-      - Rearrangement_complete_vdj
-      - Rearrangement_locus
-      - Rearrangement_v_call
-      - Rearrangement_d_call
-      - Rearrangement_d2_call
-      - Rearrangement_j_call
-      - Rearrangement_c_call
-      - Rearrangement_sequence_alignment
-      - Rearrangement_quality_alignment
-      - Rearrangement_sequence_alignment_aa
-      - Rearrangement_germline_alignment
-      - Rearrangement_germline_alignment_aa
-      - Rearrangement_junction
-      - Rearrangement_junction_aa
-      - Rearrangement_np1
-      - Rearrangement_np1_aa
-      - Rearrangement_np2
-      - Rearrangement_np2_aa
-      - Rearrangement_np3
-      - Rearrangement_np3_aa
-      - Rearrangement_cdr1
-      - Rearrangement_cdr1_aa
-      - Rearrangement_cdr2
-      - Rearrangement_cdr2_aa
-      - Rearrangement_cdr3
-      - Rearrangement_cdr3_aa
-      - Rearrangement_fwr1
-      - Rearrangement_fwr1_aa
-      - Rearrangement_fwr2
-      - Rearrangement_fwr2_aa
-      - Rearrangement_fwr3
-      - Rearrangement_fwr3_aa
-      - Rearrangement_fwr4
-      - Rearrangement_fwr4_aa
-      - Rearrangement_v_score
-      - Rearrangement_v_identity
-      - Rearrangement_v_support
-      - Rearrangement_v_cigar
-      - Rearrangement_d_score
-      - Rearrangement_d_identity
-      - Rearrangement_d_support
-      - Rearrangement_d_cigar
-      - Rearrangement_d2_score
-      - Rearrangement_d2_identity
-      - Rearrangement_d2_support
-      - Rearrangement_d2_cigar
-      - Rearrangement_j_score
-      - Rearrangement_j_identity
-      - Rearrangement_j_support
-      - Rearrangement_j_cigar
-      - Rearrangement_c_score
-      - Rearrangement_c_identity
-      - Rearrangement_c_support
-      - Rearrangement_c_cigar
-      - Rearrangement_v_sequence_start
-      - Rearrangement_v_sequence_end
-      - Rearrangement_v_germline_start
-      - Rearrangement_v_germline_end
-      - Rearrangement_v_alignment_start
-      - Rearrangement_v_alignment_end
-      - Rearrangement_d_sequence_start
-      - Rearrangement_d_sequence_end
-      - Rearrangement_d_germline_start
-      - Rearrangement_d_germline_end
-      - Rearrangement_d_alignment_start
-      - Rearrangement_d_alignment_end
-      - Rearrangement_d2_sequence_start
-      - Rearrangement_d2_sequence_end
-      - Rearrangement_d2_germline_start
-      - Rearrangement_d2_germline_end
-      - Rearrangement_d2_alignment_start
-      - Rearrangement_d2_alignment_end
-      - Rearrangement_j_sequence_start
-      - Rearrangement_j_sequence_end
-      - Rearrangement_j_germline_start
-      - Rearrangement_j_germline_end
-      - Rearrangement_j_alignment_start
-      - Rearrangement_j_alignment_end
-      - Rearrangement_c_sequence_start
-      - Rearrangement_c_sequence_end
-      - Rearrangement_c_germline_start
-      - Rearrangement_c_germline_end
-      - Rearrangement_c_alignment_start
-      - Rearrangement_c_alignment_end
-      - Rearrangement_cdr1_start
-      - Rearrangement_cdr1_end
-      - Rearrangement_cdr2_start
-      - Rearrangement_cdr2_end
-      - Rearrangement_cdr3_start
-      - Rearrangement_cdr3_end
-      - Rearrangement_fwr1_start
-      - Rearrangement_fwr1_end
-      - Rearrangement_fwr2_start
-      - Rearrangement_fwr2_end
-      - Rearrangement_fwr3_start
-      - Rearrangement_fwr3_end
-      - Rearrangement_fwr4_start
-      - Rearrangement_fwr4_end
-      - Rearrangement_v_sequence_alignment
-      - Rearrangement_v_sequence_alignment_aa
-      - Rearrangement_d_sequence_alignment
-      - Rearrangement_d_sequence_alignment_aa
-      - Rearrangement_d2_sequence_alignment
-      - Rearrangement_d2_sequence_alignment_aa
-      - Rearrangement_j_sequence_alignment
-      - Rearrangement_j_sequence_alignment_aa
-      - Rearrangement_c_sequence_alignment
-      - Rearrangement_c_sequence_alignment_aa
-      - Rearrangement_v_germline_alignment
-      - Rearrangement_v_germline_alignment_aa
-      - Rearrangement_d_germline_alignment
-      - Rearrangement_d_germline_alignment_aa
-      - Rearrangement_d2_germline_alignment
-      - Rearrangement_d2_germline_alignment_aa
-      - Rearrangement_j_germline_alignment
-      - Rearrangement_j_germline_alignment_aa
-      - Rearrangement_c_germline_alignment
-      - Rearrangement_c_germline_alignment_aa
-      - Rearrangement_junction_length
-      - Rearrangement_junction_aa_length
-      - Rearrangement_np1_length
-      - Rearrangement_np2_length
-      - Rearrangement_np3_length
-      - Rearrangement_n1_length
-      - Rearrangement_n2_length
-      - Rearrangement_n3_length
-      - Rearrangement_p3v_length
-      - Rearrangement_p5d_length
-      - Rearrangement_p3d_length
-      - Rearrangement_p5d2_length
-      - Rearrangement_p3d2_length
-      - Rearrangement_p5j_length
-      - Rearrangement_v_frameshift
-      - Rearrangement_j_frameshift
-      - Rearrangement_d_frame
-      - Rearrangement_d2_frame
-      - Rearrangement_consensus_count
-      - Rearrangement_duplicate_count
-      - Rearrangement_umi_count
-      - Rearrangement_cell_id
-      - Rearrangement_clone_id
-      - Rearrangement_repertoire_id
-      - Rearrangement_sample_processing_id
-      - Rearrangement_data_processing_id
+      - sequence_id
+      - sequence
+      - quality
+      - sequence_aa
+      - rev_comp
+      - productive
+      - vj_in_frame
+      - stop_codon
+      - complete_vdj
+      - locus
+      - v_call
+      - d_call
+      - d2_call
+      - j_call
+      - c_call
+      - sequence_alignment
+      - quality_alignment
+      - sequence_alignment_aa
+      - germline_alignment
+      - germline_alignment_aa
+      - junction
+      - junction_aa
+      - np1
+      - np1_aa
+      - np2
+      - np2_aa
+      - np3
+      - np3_aa
+      - cdr1
+      - cdr1_aa
+      - cdr2
+      - cdr2_aa
+      - cdr3
+      - cdr3_aa
+      - fwr1
+      - fwr1_aa
+      - fwr2
+      - fwr2_aa
+      - fwr3
+      - fwr3_aa
+      - fwr4
+      - fwr4_aa
+      - v_score
+      - v_identity
+      - v_support
+      - v_cigar
+      - d_score
+      - d_identity
+      - d_support
+      - d_cigar
+      - d2_score
+      - d2_identity
+      - d2_support
+      - d2_cigar
+      - j_score
+      - j_identity
+      - j_support
+      - j_cigar
+      - c_score
+      - c_identity
+      - c_support
+      - c_cigar
+      - v_sequence_start
+      - v_sequence_end
+      - v_germline_start
+      - v_germline_end
+      - v_alignment_start
+      - v_alignment_end
+      - d_sequence_start
+      - d_sequence_end
+      - d_germline_start
+      - d_germline_end
+      - d_alignment_start
+      - d_alignment_end
+      - d2_sequence_start
+      - d2_sequence_end
+      - d2_germline_start
+      - d2_germline_end
+      - d2_alignment_start
+      - d2_alignment_end
+      - j_sequence_start
+      - j_sequence_end
+      - j_germline_start
+      - j_germline_end
+      - j_alignment_start
+      - j_alignment_end
+      - c_sequence_start
+      - c_sequence_end
+      - c_germline_start
+      - c_germline_end
+      - c_alignment_start
+      - c_alignment_end
+      - cdr1_start
+      - cdr1_end
+      - cdr2_start
+      - cdr2_end
+      - cdr3_start
+      - cdr3_end
+      - fwr1_start
+      - fwr1_end
+      - fwr2_start
+      - fwr2_end
+      - fwr3_start
+      - fwr3_end
+      - fwr4_start
+      - fwr4_end
+      - v_sequence_alignment
+      - v_sequence_alignment_aa
+      - d_sequence_alignment
+      - d_sequence_alignment_aa
+      - d2_sequence_alignment
+      - d2_sequence_alignment_aa
+      - j_sequence_alignment
+      - j_sequence_alignment_aa
+      - c_sequence_alignment
+      - c_sequence_alignment_aa
+      - v_germline_alignment
+      - v_germline_alignment_aa
+      - d_germline_alignment
+      - d_germline_alignment_aa
+      - d2_germline_alignment
+      - d2_germline_alignment_aa
+      - j_germline_alignment
+      - j_germline_alignment_aa
+      - c_germline_alignment
+      - c_germline_alignment_aa
+      - junction_length
+      - junction_aa_length
+      - np1_length
+      - np2_length
+      - np3_length
+      - n1_length
+      - n2_length
+      - n3_length
+      - p3v_length
+      - p5d_length
+      - p3d_length
+      - p5d2_length
+      - p3d2_length
+      - p5j_length
+      - v_frameshift
+      - j_frameshift
+      - d_frame
+      - d2_frame
+      - consensus_count
+      - duplicate_count
+      - umi_count
+      - cell_id
+      - clone_id
+      - repertoire_id
+      - sample_processing_id
+      - data_processing_id
   Clone:
     slots:
-      - Clone_clone_id
-      - Clone_repertoire_id
-      - Clone_data_processing_id
-      - Clone_sequences
-      - Clone_v_call
-      - Clone_d_call
-      - Clone_j_call
-      - Clone_junction
-      - Clone_junction_aa
-      - Clone_junction_length
-      - Clone_junction_aa_length
-      - Clone_germline_alignment
-      - Clone_germline_alignment_aa
-      - Clone_v_alignment_start
-      - Clone_v_alignment_end
-      - Clone_d_alignment_start
-      - Clone_d_alignment_end
-      - Clone_j_alignment_start
-      - Clone_j_alignment_end
-      - Clone_junction_start
-      - Clone_junction_end
-      - Clone_umi_count
-      - Clone_clone_count
-      - Clone_seed_id
+      - clone_id
+      - repertoire_id
+      - data_processing_id
+      - sequences
+      - v_call
+      - d_call
+      - j_call
+      - junction
+      - junction_aa
+      - junction_length
+      - junction_aa_length
+      - germline_alignment
+      - germline_alignment_aa
+      - v_alignment_start
+      - v_alignment_end
+      - d_alignment_start
+      - d_alignment_end
+      - j_alignment_start
+      - j_alignment_end
+      - junction_start
+      - junction_end
+      - umi_count
+      - clone_count
+      - seed_id
   Tree:
     slots:
-      - Tree_tree_id
-      - Tree_clone_id
-      - Tree_newick
-      - Tree_nodes
+      - tree_id
+      - clone_id
+      - newick
+      - nodes
   Node:
     slots:
-      - Node_sequence_id
-      - Node_sequence_alignment
-      - Node_junction
-      - Node_junction_aa
+      - sequence_id
+      - sequence_alignment
+      - junction
+      - junction_aa
   Cell:
     slots:
-      - Cell_cell_id
-      - Cell_rearrangements
-      - Cell_receptors
-      - Cell_repertoire_id
-      - Cell_data_processing_id
-      - Cell_expression_study_method
-      - Cell_expression_raw_doi
-      - Cell_expression_index
-      - Cell_virtual_pairing
+      - cell_id
+      - rearrangements
+      - receptors
+      - repertoire_id
+      - data_processing_id
+      - expression_study_method
+      - expression_raw_doi
+      - expression_index
+      - virtual_pairing
   CellExpression:
     slots:
-      - CellExpression_expression_id
-      - CellExpression_cell_id
-      - CellExpression_repertoire_id
-      - CellExpression_data_processing_id
-      - CellExpression_property_type
-      - CellExpression_property
-      - CellExpression_value
+      - expression_id
+      - cell_id
+      - repertoire_id
+      - data_processing_id
+      - property_type
+      - property
+      - value
   Receptor:
     slots:
-      - Receptor_receptor_id
-      - Receptor_receptor_hash
-      - Receptor_receptor_type
-      - Receptor_receptor_variable_domain_1_aa
-      - Receptor_receptor_variable_domain_1_locus
-      - Receptor_receptor_variable_domain_2_aa
-      - Receptor_receptor_variable_domain_2_locus
-      - Receptor_receptor_ref
-      - Receptor_reactivity_measurements
+      - receptor_id
+      - receptor_hash
+      - receptor_type
+      - receptor_variable_domain_1_aa
+      - receptor_variable_domain_1_locus
+      - receptor_variable_domain_2_aa
+      - receptor_variable_domain_2_locus
+      - receptor_ref
+      - reactivity_measurements
   ReceptorReactivity:
     slots:
-      - ReceptorReactivity_ligand_type
-      - ReceptorReactivity_antigen_type
-      - ReceptorReactivity_antigen
-      - ReceptorReactivity_antigen_source_species
-      - ReceptorReactivity_peptide_start
-      - ReceptorReactivity_peptide_end
-      - ReceptorReactivity_mhc_class
-      - ReceptorReactivity_mhc_gene_1
-      - ReceptorReactivity_mhc_allele_1
-      - ReceptorReactivity_mhc_gene_2
-      - ReceptorReactivity_mhc_allele_2
-      - ReceptorReactivity_reactivity_method
-      - ReceptorReactivity_reactivity_readout
-      - ReceptorReactivity_reactivity_value
-      - ReceptorReactivity_reactivity_unit
+      - ligand_type
+      - antigen_type
+      - antigen
+      - antigen_source_species
+      - peptide_start
+      - peptide_end
+      - mhc_class
+      - mhc_gene_1
+      - mhc_allele_1
+      - mhc_gene_2
+      - mhc_allele_2
+      - reactivity_method
+      - reactivity_readout
+      - reactivity_value
+      - reactivity_unit
   SampleProcessing:
     slots:
-      - SampleProcessing_sample_processing_id
-      - Sample_sample_id
-      - Sample_sample_type
-      - Sample_tissue
-      - Sample_anatomic_site
-      - Sample_disease_state_sample
-      - Sample_collection_time_point_relative
-      - Sample_collection_time_point_relative_unit
-      - Sample_collection_time_point_reference
-      - Sample_biomaterial_provider
-      - CellProcessing_tissue_processing
-      - CellProcessing_cell_subset
-      - CellProcessing_cell_phenotype
-      - CellProcessing_cell_species
-      - CellProcessing_single_cell
-      - CellProcessing_cell_number
-      - CellProcessing_cells_per_reaction
-      - CellProcessing_cell_storage
-      - CellProcessing_cell_quality
-      - CellProcessing_cell_isolation
-      - CellProcessing_cell_processing_protocol
-      - NucleicAcidProcessing_template_class
-      - NucleicAcidProcessing_template_quality
-      - NucleicAcidProcessing_template_amount
-      - NucleicAcidProcessing_template_amount_unit
-      - NucleicAcidProcessing_library_generation_method
-      - NucleicAcidProcessing_library_generation_protocol
-      - NucleicAcidProcessing_library_generation_kit_version
-      - NucleicAcidProcessing_pcr_target
-      - NucleicAcidProcessing_complete_sequences
-      - NucleicAcidProcessing_physical_linkage
-      - SequencingRun_sequencing_run_id
-      - SequencingRun_total_reads_passing_qc_filter
-      - SequencingRun_sequencing_platform
-      - SequencingRun_sequencing_facility
-      - SequencingRun_sequencing_run_date
-      - SequencingRun_sequencing_kit
-      - SequencingRun_sequencing_files
+      - sample_processing_id
+      - sample_id
+      - sample_type
+      - tissue
+      - anatomic_site
+      - disease_state_sample
+      - collection_time_point_relative
+      - collection_time_point_relative_unit
+      - collection_time_point_reference
+      - biomaterial_provider
+      - tissue_processing
+      - cell_subset
+      - cell_phenotype
+      - cell_species
+      - single_cell
+      - cell_number
+      - cells_per_reaction
+      - cell_storage
+      - cell_quality
+      - cell_isolation
+      - cell_processing_protocol
+      - template_class
+      - template_quality
+      - template_amount
+      - template_amount_unit
+      - library_generation_method
+      - library_generation_protocol
+      - library_generation_kit_version
+      - pcr_target
+      - complete_sequences
+      - physical_linkage
+      - sequencing_run_id
+      - total_reads_passing_qc_filter
+      - sequencing_platform
+      - sequencing_facility
+      - sequencing_run_date
+      - sequencing_kit
+      - sequencing_files
 
 slots:
-  TimePoint_label:
-    name: TimePoint_label
-    description: Informative label for the time point
+  label:
+    name: label
     range: string
-    required: false
-    annotations:
-      nullable: true
-  TimePoint_value:
-    name: TimePoint_value
-    description: Value of the time point
+  value:
+    name: value
     range: float
-    required: false
     annotations:
       nullable: true
-  TimePoint_unit:
-    name: TimePoint_unit
+  unit:
+    name: unit
     description: Unit of the time point
     range: Unit
     required: false
     annotations:
       nullable: true
-  Acknowledgement_acknowledgement_id:
-    name: Acknowledgement_acknowledgement_id
+  acknowledgement_id:
+    name: acknowledgement_id
     description: unique identifier of this Acknowledgement within the file
     range: string
     required: true
     annotations:
       nullable: true
-  Acknowledgement_name:
-    name: Acknowledgement_name
+  name:
+    name: name
     description: Full name of individual
     range: string
     required: true
     annotations:
       nullable: true
-  Acknowledgement_institution_name:
-    name: Acknowledgement_institution_name
+  institution_name:
+    name: institution_name
     description: Individual's department and institution name
     range: string
     required: true
     annotations:
       nullable: true
-  Acknowledgement_orcid_id:
-    name: Acknowledgement_orcid_id
+  orcid_id:
+    name: orcid_id
     description: Individual's ORCID identifier
     range: string
     required: false
     annotations:
       nullable: true
-  RearrangedSequence_sequence_id:
-    name: RearrangedSequence_sequence_id
-    description: Unique identifier of this RearrangedSequence within the file, typically generated by the repository  hosting the schema, for example from the underlying ID of the database record.
+  sequence_id:
+    name: sequence_id
     range: string
     required: true
     annotations:
       nullable: true
-  RearrangedSequence_sequence:
-    name: RearrangedSequence_sequence
-    description: nucleotide sequence
+  sequence:
+    name: sequence
     range: string
     required: true
-    annotations:
-      nullable: false
-  RearrangedSequence_derivation:
-    name: RearrangedSequence_derivation
+  derivation:
+    name: derivation
     description: The class of nucleic acid that was used as primary starting material
     range: Derivation
     required: true
     annotations:
       nullable: true
-  RearrangedSequence_observation_type:
-    name: RearrangedSequence_observation_type
+  observation_type:
+    name: observation_type
     description: The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.
     range: ObservationType
     required: true
     annotations:
       nullable: false
-  RearrangedSequence_curation:
-    name: RearrangedSequence_curation
-    description: Curational notes on the sequence
+  curation:
+    name: curation
     range: string
     required: false
     annotations:
       nullable: true
-  RearrangedSequence_repository_name:
-    name: RearrangedSequence_repository_name
-    description: Name of the repository in which the sequence has been deposited
+  repository_name:
+    name: repository_name
     range: string
     required: true
     annotations:
       nullable: true
-  RearrangedSequence_repository_ref:
-    name: RearrangedSequence_repository_ref
+  repository_ref:
+    name: repository_ref
     description: Queryable id or accession number of the sequence published by the repository
     range: string
     required: false
     annotations:
       nullable: true
-  RearrangedSequence_deposited_version:
-    name: RearrangedSequence_deposited_version
+  deposited_version:
+    name: deposited_version
     description: Version number of the sequence within the repository
     range: string
     required: true
     annotations:
       nullable: true
-  RearrangedSequence_sequence_start:
-    name: RearrangedSequence_sequence_start
-    description: Start co-ordinate of the sequence detailed in this record, within the sequence deposited
+  sequence_start:
+    name: sequence_start
     range: integer
     required: false
-    annotations:
-      nullable: false
-  RearrangedSequence_sequence_end:
-    name: RearrangedSequence_sequence_end
-    description: End co-ordinate of the sequence detailed in this record, within the sequence deposited
+  sequence_end:
+    name: sequence_end
     range: integer
     required: false
-    annotations:
-      nullable: false
-  UnrearrangedSequence_sequence_id:
-    name: UnrearrangedSequence_sequence_id
-    description: unique identifier of this UnrearrangedSequence within the file
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  UnrearrangedSequence_sequence:
-    name: UnrearrangedSequence_sequence
-    description: Sequence of interest described in this record. Typically, this will include gene and promoter region.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  UnrearrangedSequence_curation:
-    name: UnrearrangedSequence_curation
-    description: Curational notes on the sequence
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  UnrearrangedSequence_repository_name:
-    name: UnrearrangedSequence_repository_name
-    description: Name of the repository in which the assembly or contig is deposited
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  UnrearrangedSequence_repository_ref:
-    name: UnrearrangedSequence_repository_ref
-    description: Queryable id or accession number of the sequence published by the repository
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  UnrearrangedSequence_patch_no:
-    name: UnrearrangedSequence_patch_no
+  patch_no:
+    name: patch_no
     description: Genome assembly patch number in which this gene was determined
     range: string
     required: false
     annotations:
       nullable: true
-  UnrearrangedSequence_gff_seqid:
-    name: UnrearrangedSequence_gff_seqid
+  gff_seqid:
+    name: gff_seqid
     description: Sequence (from the assembly) of a window including the gene and preferably also the promoter region.
     range: string
     required: true
     annotations:
       nullable: true
-  UnrearrangedSequence_gff_start:
-    name: UnrearrangedSequence_gff_start
+  gff_start:
+    name: gff_start
     description: Genomic co-ordinates of the start of the sequence of interest described in this record in  Ensemble GFF version 3.
     range: integer
     required: true
     annotations:
       nullable: true
-  UnrearrangedSequence_gff_end:
-    name: UnrearrangedSequence_gff_end
+  gff_end:
+    name: gff_end
     description: Genomic co-ordinates of the end of the sequence of interest described in this record in  Ensemble GFF version 3.
     range: integer
     required: true
     annotations:
       nullable: true
-  UnrearrangedSequence_strand:
-    name: UnrearrangedSequence_strand
+  strand:
+    name: strand
     description: sense (+ or -)
     range: Strand
     required: true
     annotations:
       nullable: true
-  SequenceDelineationV_sequence_delineation_id:
-    name: SequenceDelineationV_sequence_delineation_id
+  sequence_delineation_id:
+    name: sequence_delineation_id
     description: Unique identifier of this SequenceDelineationV within the file. Typically, generated by the  repository hosting the record.
     range: string
     required: true
     annotations:
       nullable: true
-  SequenceDelineationV_delineation_scheme:
-    name: SequenceDelineationV_delineation_scheme
+  delineation_scheme:
+    name: delineation_scheme
     description: Name of the delineation scheme
     range: string
     required: true
     annotations:
       nullable: true
-  SequenceDelineationV_unaligned_sequence:
-    name: SequenceDelineationV_unaligned_sequence
+  unaligned_sequence:
+    name: unaligned_sequence
     description: entire V-sequence covered by this delineation
     range: string
     required: false
     annotations:
       nullable: true
-  SequenceDelineationV_aligned_sequence:
-    name: SequenceDelineationV_aligned_sequence
+  aligned_sequence:
+    name: aligned_sequence
     description: Aligned sequence if this delineation provides an alignment. An aligned sequence should always be  provided for IMGT delineations.
     range: string
     required: false
     annotations:
       nullable: true
-  SequenceDelineationV_fwr1_start:
-    name: SequenceDelineationV_fwr1_start
-    description: FWR1 start co-ordinate in the 'unaligned sequence' field
+  fwr1_start:
+    name: fwr1_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_fwr1_end:
-    name: SequenceDelineationV_fwr1_end
-    description: FWR1 end co-ordinate in the 'unaligned sequence' field
+  fwr1_end:
+    name: fwr1_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_cdr1_start:
-    name: SequenceDelineationV_cdr1_start
-    description: CDR1 start co-ordinate in the 'unaligned sequence' field
+  cdr1_start:
+    name: cdr1_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_cdr1_end:
-    name: SequenceDelineationV_cdr1_end
-    description: CDR1 end co-ordinate in the 'unaligned sequence' field
+  cdr1_end:
+    name: cdr1_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_fwr2_start:
-    name: SequenceDelineationV_fwr2_start
-    description: FWR2 start co-ordinate in the 'unaligned sequence' field
+  fwr2_start:
+    name: fwr2_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_fwr2_end:
-    name: SequenceDelineationV_fwr2_end
-    description: FWR2 end co-ordinate in the 'unaligned sequence' field
+  fwr2_end:
+    name: fwr2_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_cdr2_start:
-    name: SequenceDelineationV_cdr2_start
-    description: CDR2 start co-ordinate in the 'unaligned sequence' field
+  cdr2_start:
+    name: cdr2_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_cdr2_end:
-    name: SequenceDelineationV_cdr2_end
-    description: CDR2 end co-ordinate in the 'unaligned sequence' field
+  cdr2_end:
+    name: cdr2_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_fwr3_start:
-    name: SequenceDelineationV_fwr3_start
-    description: FWR3 start co-ordinate in the 'unaligned sequence' field
+  fwr3_start:
+    name: fwr3_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_fwr3_end:
-    name: SequenceDelineationV_fwr3_end
-    description: FWR3 end co-ordinate in the 'unaligned sequence' field
+  fwr3_end:
+    name: fwr3_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_cdr3_start:
-    name: SequenceDelineationV_cdr3_start
-    description: CDR3 start co-ordinate in the 'unaligned sequence' field
+  cdr3_start:
+    name: cdr3_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  SequenceDelineationV_alignment_labels:
-    name: SequenceDelineationV_alignment_labels
+  alignment_labels:
+    name: alignment_labels
     description: One string for each codon in the aligned_sequence indicating the label of that codon according to  the numbering of the delineation scheme if it provides one.
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  AlleleDescription_allele_description_id:
-    name: AlleleDescription_allele_description_id
+  allele_description_id:
+    name: allele_description_id
     description: Unique identifier of this AlleleDescription within the file. Typically, generated by the  repository hosting the record.
     range: string
     required: true
     annotations:
       nullable: true
-  AlleleDescription_allele_description_ref:
-    name: AlleleDescription_allele_description_ref
+  allele_description_ref:
+    name: allele_description_ref
     description: Unique reference to the allele description, in standardized form (Repo:Label:Version)
     range: string
     required: false
     annotations:
       nullable: true
-  AlleleDescription_maintainer:
-    name: AlleleDescription_maintainer
+  maintainer:
+    name: maintainer
     description: Maintainer of this sequence record
     range: string
     required: true
     annotations:
       nullable: true
-  AlleleDescription_acknowledgements:
-    name: AlleleDescription_acknowledgements
-    description: List of individuals whose contribution to the gene description should be acknowledged
+  acknowledgements:
+    name: acknowledgements
     range: Acknowledgement
     multivalued: true
     required: false
     annotations:
       nullable: true
-  AlleleDescription_lab_address:
-    name: AlleleDescription_lab_address
-    description: Institution and full address of corresponding author
+  lab_address:
+    name: lab_address
     range: string
     required: true
     annotations:
       nullable: true
-  AlleleDescription_release_version:
-    name: AlleleDescription_release_version
-    description: Version number of this record, updated whenever a revised version is published or released
-    range: integer
+  release_version:
+    name: release_version
     required: true
     annotations:
       nullable: true
-  AlleleDescription_release_date:
-    name: AlleleDescription_release_date
+  release_date:
+    name: release_date
     description: Date of this release
     range: string
     required: true
     annotations:
       nullable: true
-  AlleleDescription_release_description:
-    name: AlleleDescription_release_description
+  release_description:
+    name: release_description
     description: Brief descriptive notes of the reason for this release and the changes embodied
     range: string
     required: true
     annotations:
       nullable: true
-  AlleleDescription_label:
-    name: AlleleDescription_label
-    description: The accepted name for this gene or allele following the relevant nomenclature. The value in this field should correspond to values in acceptable name fields of other schemas,  such as v_call, d_call, and j_call fields.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  AlleleDescription_sequence:
-    name: AlleleDescription_sequence
-    description: Nucleotide sequence of the gene. This should cover the full length that is available,  including where possible RSS, and 5' UTR and lead-in for V-gene sequences.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  AlleleDescription_coding_sequence:
-    name: AlleleDescription_coding_sequence
+  coding_sequence:
+    name: coding_sequence
     description: Nucleotide sequence of the core coding region, such as the coding region of a D-, J- or C- gene  or the coding region of a V-gene excluding the leader.
     range: string
     required: true
     annotations:
       nullable: true
-  AlleleDescription_aliases:
-    name: AlleleDescription_aliases
+  aliases:
+    name: aliases
     description: Alternative names for this sequence
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  AlleleDescription_locus:
-    name: AlleleDescription_locus
-    description: Gene locus
+  locus:
+    name: locus
     range: Locus
-    required: true
-    annotations:
-      nullable: false
-  AlleleDescription_chromosome:
-    name: AlleleDescription_chromosome
+  chromosome:
+    name: chromosome
     description: chromosome on which the gene is located
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_sequence_type:
-    name: AlleleDescription_sequence_type
+  sequence_type:
+    name: sequence_type
     description: Sequence type (V, D, J, C)
     range: SequenceType
     required: true
     annotations:
       nullable: false
-  AlleleDescription_functional:
-    name: AlleleDescription_functional
+  functional:
+    name: functional
     description: True if the gene is functional, false if it is a pseudogene
     range: boolean
     required: true
     annotations:
       nullable: true
-  AlleleDescription_inference_type:
-    name: AlleleDescription_inference_type
+  inference_type:
+    name: inference_type
     description: Type of inference(s) from which this gene sequence was inferred
     range: InferenceType
     required: true
     annotations:
       nullable: true
-  AlleleDescription_species:
-    name: AlleleDescription_species
+  species:
+    name: species
     description: Binomial designation of subject's species
     range: Species
     required: true
     annotations:
       nullable: false
-  AlleleDescription_species_subgroup:
-    name: AlleleDescription_species_subgroup
+  species_subgroup:
+    name: species_subgroup
     description: Race, strain or other species subgroup to which this subject belongs
     range: string
     required: false
     annotations:
       nullable: true
-  AlleleDescription_species_subgroup_type:
-    name: AlleleDescription_species_subgroup_type
+  species_subgroup_type:
+    name: species_subgroup_type
     description: ''
     range: SpeciesSubgroupType
     required: false
     annotations:
       nullable: true
-  AlleleDescription_status:
-    name: AlleleDescription_status
+  status:
+    name: status
     description: Status of record, assumed active if the field is not present
     range: Status
     required: false
     annotations:
       nullable: true
-  AlleleDescription_subgroup_designation:
-    name: AlleleDescription_subgroup_designation
+  subgroup_designation:
+    name: subgroup_designation
     description: Identifier of the gene subgroup or clade, as (and if) defined
     range: string
     required: false
     annotations:
       nullable: true
-  AlleleDescription_gene_designation:
-    name: AlleleDescription_gene_designation
+  gene_designation:
+    name: gene_designation
     description: Gene number or other identifier, as (and if) defined
     range: string
     required: false
     annotations:
       nullable: true
-  AlleleDescription_allele_designation:
-    name: AlleleDescription_allele_designation
-    description: Allele number or other identifier, as (and if) defined
+  allele_designation:
+    name: allele_designation
     range: string
     required: false
     annotations:
       nullable: true
-  AlleleDescription_allele_similarity_cluster_designation:
-    name: AlleleDescription_allele_similarity_cluster_designation
+  allele_similarity_cluster_designation:
+    name: allele_similarity_cluster_designation
     description: ID of the similarity cluster used in this germline set, if designated
     range: string
     required: false
     annotations:
       nullable: true
-  AlleleDescription_allele_similarity_cluster_member_id:
-    name: AlleleDescription_allele_similarity_cluster_member_id
+  allele_similarity_cluster_member_id:
+    name: allele_similarity_cluster_member_id
     description: Membership ID of the allele within the similarity cluster, if a cluster is designated
     range: string
     required: false
     annotations:
       nullable: true
-  AlleleDescription_j_codon_frame:
-    name: AlleleDescription_j_codon_frame
+  j_codon_frame:
+    name: j_codon_frame
     description: Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing.
     range: JCodonFrame
     required: false
     annotations:
       nullable: true
-  AlleleDescription_gene_start:
-    name: AlleleDescription_gene_start
+  gene_start:
+    name: gene_start
     description: Co-ordinate in the sequence field of the first nucleotide in the coding_sequence field.
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_gene_end:
-    name: AlleleDescription_gene_end
+  gene_end:
+    name: gene_end
     description: Co-ordinate in the sequence field of the last gene-coding nucleotide in the coding_sequence field.
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_utr_5_prime_start:
-    name: AlleleDescription_utr_5_prime_start
+  utr_5_prime_start:
+    name: utr_5_prime_start
     description: Start co-ordinate in the sequence field of the 5 prime UTR (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_utr_5_prime_end:
-    name: AlleleDescription_utr_5_prime_end
+  utr_5_prime_end:
+    name: utr_5_prime_end
     description: End co-ordinate in the sequence field of the 5 prime UTR (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_leader_1_start:
-    name: AlleleDescription_leader_1_start
+  leader_1_start:
+    name: leader_1_start
     description: Start co-ordinate in the sequence field of L-PART1 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_leader_1_end:
-    name: AlleleDescription_leader_1_end
+  leader_1_end:
+    name: leader_1_end
     description: End co-ordinate in the sequence field of L-PART1 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_leader_2_start:
-    name: AlleleDescription_leader_2_start
+  leader_2_start:
+    name: leader_2_start
     description: Start co-ordinate in the sequence field of L-PART2 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_leader_2_end:
-    name: AlleleDescription_leader_2_end
+  leader_2_end:
+    name: leader_2_end
     description: End co-ordinate in the sequence field of L-PART2 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_v_rs_start:
-    name: AlleleDescription_v_rs_start
+  v_rs_start:
+    name: v_rs_start
     description: Start co-ordinate in the sequence field of the V recombination site (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_v_rs_end:
-    name: AlleleDescription_v_rs_end
+  v_rs_end:
+    name: v_rs_end
     description: End co-ordinate in the sequence field of the V recombination site (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_d_rs_3_prime_start:
-    name: AlleleDescription_d_rs_3_prime_start
+  d_rs_3_prime_start:
+    name: d_rs_3_prime_start
     description: Start co-ordinate in the sequence field of the 3 prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_d_rs_3_prime_end:
-    name: AlleleDescription_d_rs_3_prime_end
+  d_rs_3_prime_end:
+    name: d_rs_3_prime_end
     description: End co-ordinate in the sequence field of the 3 prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_d_rs_5_prime_start:
-    name: AlleleDescription_d_rs_5_prime_start
+  d_rs_5_prime_start:
+    name: d_rs_5_prime_start
     description: Start co-ordinate in the sequence field of the 5 prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_d_rs_5_prime_end:
-    name: AlleleDescription_d_rs_5_prime_end
+  d_rs_5_prime_end:
+    name: d_rs_5_prime_end
     description: End co-ordinate in the sequence field of 5 the prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_j_cdr3_end:
-    name: AlleleDescription_j_cdr3_end
+  j_cdr3_end:
+    name: j_cdr3_end
     description: In the case of a J-gene, the co-ordinate in the sequence field of the first nucelotide of the  conserved PHE or TRP (IMGT codon position 118).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_j_rs_start:
-    name: AlleleDescription_j_rs_start
+  j_rs_start:
+    name: j_rs_start
     description: Start co-ordinate in the sequence field of J recombination site (J-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_j_rs_end:
-    name: AlleleDescription_j_rs_end
+  j_rs_end:
+    name: j_rs_end
     description: End co-ordinate in the sequence field of J recombination site (J-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_j_donor_splice:
-    name: AlleleDescription_j_donor_splice
+  j_donor_splice:
+    name: j_donor_splice
     description: Co-ordinate in the sequence field of the final 3' nucleotide of the J-REGION (J-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  AlleleDescription_v_gene_delineations:
-    name: AlleleDescription_v_gene_delineations
+  v_gene_delineations:
+    name: v_gene_delineations
     description: ''
     range: SequenceDelineationV
     multivalued: true
     required: false
     annotations:
       nullable: true
-  AlleleDescription_unrearranged_support:
-    name: AlleleDescription_unrearranged_support
+  unrearranged_support:
+    name: unrearranged_support
     description: ''
     range: UnrearrangedSequence
     multivalued: true
     required: false
     annotations:
       nullable: true
-  AlleleDescription_rearranged_support:
-    name: AlleleDescription_rearranged_support
+  rearranged_support:
+    name: rearranged_support
     description: ''
     range: RearrangedSequence
     multivalued: true
     required: false
     annotations:
       nullable: true
-  AlleleDescription_paralogs:
-    name: AlleleDescription_paralogs
+  paralogs:
+    name: paralogs
     description: Gene symbols of any paralogs
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  AlleleDescription_curation:
-    name: AlleleDescription_curation
-    description: Curational notes on the AlleleDescription. This can be used to give more extensive notes on the  decisions taken than are provided in the release_description.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  AlleleDescription_curational_tags:
-    name: AlleleDescription_curational_tags
+  curational_tags:
+    name: curational_tags
     description: Controlled-vocabulary tags applied to this description
     range: CurationalTags
     multivalued: true
     required: false
     annotations:
       nullable: true
-  GermlineSet_germline_set_id:
-    name: GermlineSet_germline_set_id
+  germline_set_id:
+    name: germline_set_id
     description: Unique identifier of the GermlineSet within this file. Typically, generated by the  repository hosting the record.
     range: string
     required: true
     annotations:
       nullable: true
-  GermlineSet_author:
-    name: GermlineSet_author
+  author:
+    name: author
     description: Corresponding author
     range: string
     required: true
     annotations:
       nullable: true
-  GermlineSet_lab_name:
-    name: GermlineSet_lab_name
-    description: Department of corresponding author
+  lab_name:
+    name: lab_name
     range: string
     required: true
     annotations:
       nullable: true
-  GermlineSet_lab_address:
-    name: GermlineSet_lab_address
-    description: Institutional address of corresponding author
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  GermlineSet_acknowledgements:
-    name: GermlineSet_acknowledgements
-    description: List of individuals whose contribution to the germline set should be acknowledged
-    range: Acknowledgement
-    multivalued: true
-    required: false
-    annotations:
-      nullable: true
-  GermlineSet_release_version:
-    name: GermlineSet_release_version
-    description: Version number of this record, allocated automatically
-    range: float
-    required: true
-    annotations:
-      nullable: true
-  GermlineSet_release_description:
-    name: GermlineSet_release_description
-    description: Brief descriptive notes of the reason for this release and the changes embodied
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  GermlineSet_release_date:
-    name: GermlineSet_release_date
-    description: Date of this release
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  GermlineSet_germline_set_name:
-    name: GermlineSet_germline_set_name
+  germline_set_name:
+    name: germline_set_name
     description: descriptive name of this germline set
     range: string
     required: true
     annotations:
       nullable: true
-  GermlineSet_germline_set_ref:
-    name: GermlineSet_germline_set_ref
-    description: Unique identifier of the germline set and version, in standardized form (Repo:Label:Version)
+  germline_set_ref:
+    name: germline_set_ref
     range: string
-    required: true
     annotations:
       nullable: true
-  GermlineSet_pub_ids:
-    name: GermlineSet_pub_ids
-    description: Publications describing the germline set
+  pub_ids:
+    name: pub_ids
     range: string
-    required: false
     annotations:
       nullable: true
-  GermlineSet_species:
-    name: GermlineSet_species
-    description: Binomial designation of subject's species
-    range: Species
-    required: true
-    annotations:
-      nullable: false
-  GermlineSet_species_subgroup:
-    name: GermlineSet_species_subgroup
-    description: Race, strain or other species subgroup to which this subject belongs
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  GermlineSet_species_subgroup_type:
-    name: GermlineSet_species_subgroup_type
-    description: ''
-    range: SpeciesSubgroupType
-    required: false
-    annotations:
-      nullable: true
-  GermlineSet_locus:
-    name: GermlineSet_locus
-    description: Gene locus
-    range: Locus
-    required: true
-    annotations:
-      nullable: false
-  GermlineSet_allele_descriptions:
-    name: GermlineSet_allele_descriptions
+  allele_descriptions:
+    name: allele_descriptions
     description: list of allele_descriptions in the germline set
     range: AlleleDescription
     multivalued: true
     required: true
     annotations:
       nullable: true
-  GermlineSet_curation:
-    name: GermlineSet_curation
-    description: Curational notes on the GermlineSet. This can be used to give more extensive notes on the  decisions taken than are provided in the release_description.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  GenotypeSet_receptor_genotype_set_id:
-    name: GenotypeSet_receptor_genotype_set_id
+  receptor_genotype_set_id:
+    name: receptor_genotype_set_id
     description: A unique identifier for this Receptor Genotype Set, typically generated by the repository  hosting the schema, for example from the underlying ID of the database record.
     range: string
     required: true
     annotations:
       nullable: true
-  GenotypeSet_genotype_class_list:
-    name: GenotypeSet_genotype_class_list
+  genotype_class_list:
+    name: genotype_class_list
     description: List of Genotypes included in this Receptor Genotype Set.
     range: Genotype
     multivalued: true
     required: false
     annotations:
       nullable: true
-  Genotype_receptor_genotype_id:
-    name: Genotype_receptor_genotype_id
+  receptor_genotype_id:
+    name: receptor_genotype_id
     description: A unique identifier within the file for this Receptor Genotype, typically generated by the  repository hosting the schema, for example from the underlying ID of the database record.
     range: string
     required: true
     annotations:
       nullable: true
-  Genotype_locus:
-    name: Genotype_locus
-    description: Gene locus
-    range: Locus
-    required: true
-    annotations:
-      nullable: false
-  Genotype_documented_alleles:
-    name: Genotype_documented_alleles
+  documented_alleles:
+    name: documented_alleles
     description: List of alleles documented in reference set(s)
     range: DocumentedAllele
     multivalued: true
     required: false
     annotations:
       nullable: true
-  Genotype_undocumented_alleles:
-    name: Genotype_undocumented_alleles
+  undocumented_alleles:
+    name: undocumented_alleles
     description: List of alleles inferred to be present and not documented in an identified GermlineSet
     range: UndocumentedAllele
     multivalued: true
     required: false
     annotations:
       nullable: true
-  Genotype_deleted_genes:
-    name: Genotype_deleted_genes
+  deleted_genes:
+    name: deleted_genes
     description: Array of genes identified as being deleted in this genotype
     range: DeletedGene
     multivalued: true
     required: false
     annotations:
       nullable: true
-  Genotype_inference_process:
-    name: Genotype_inference_process
+  inference_process:
+    name: inference_process
     description: Information on how the genotype was acquired. Controlled vocabulary.
     range: InferenceProcess
     required: false
     annotations:
       nullable: true
-  DocumentedAllele_label:
-    name: DocumentedAllele_label
-    description: The accepted name for this allele, taken from the GermlineSet
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  DocumentedAllele_germline_set_ref:
-    name: DocumentedAllele_germline_set_ref
-    description: GermlineSet from which it was taken, referenced in standardized form (Repo:Label:Version)
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  DocumentedAllele_phasing:
-    name: DocumentedAllele_phasing
+  phasing:
+    name: phasing
     description: Chromosomal phasing indicator. Alleles with the same value are inferred to be located on the  same chromosome.
     range: integer
     required: false
     annotations:
       nullable: true
-  UndocumentedAllele_allele_name:
-    name: UndocumentedAllele_allele_name
+  allele_name:
+    name: allele_name
     description: Allele name as allocated by the inference pipeline
     range: string
     required: true
     annotations:
       nullable: true
-  UndocumentedAllele_sequence:
-    name: UndocumentedAllele_sequence
-    description: nt sequence of the allele, as provided by the inference pipeline
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  UndocumentedAllele_phasing:
-    name: UndocumentedAllele_phasing
-    description: Chromosomal phasing indicator. Alleles with the same value are inferred to be located on the  same chromosome.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  DeletedGene_label:
-    name: DeletedGene_label
-    description: The accepted name for this gene, taken from the GermlineSet
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  DeletedGene_germline_set_ref:
-    name: DeletedGene_germline_set_ref
-    description: GermlineSet from which it was taken (issuer/name/version)
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  DeletedGene_phasing:
-    name: DeletedGene_phasing
-    description: Chromosomal phasing indicator. Alleles with the same value are inferred to be located on the  same chromosome.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  MHCGenotypeSet_mhc_genotype_set_id:
-    name: MHCGenotypeSet_mhc_genotype_set_id
+  mhc_genotype_set_id:
+    name: mhc_genotype_set_id
     description: A unique identifier for this MHCGenotypeSet
     range: string
     required: true
     annotations:
       nullable: true
-  MHCGenotypeSet_mhc_genotype_list:
-    name: MHCGenotypeSet_mhc_genotype_list
+  mhc_genotype_list:
+    name: mhc_genotype_list
     description: List of MHCGenotypes included in this set
     range: MHCGenotype
     multivalued: true
     required: true
     annotations:
       nullable: true
-  MHCGenotype_mhc_genotype_id:
-    name: MHCGenotype_mhc_genotype_id
+  mhc_genotype_id:
+    name: mhc_genotype_id
     description: A unique identifier for this MHCGenotype, assumed to be unique in the context of the study
     range: string
     required: true
     annotations:
       nullable: true
-  MHCGenotype_mhc_class:
-    name: MHCGenotype_mhc_class
-    description: Class of MHC alleles described by the MHCGenotype
+  mhc_class:
+    name: mhc_class
     range: MhcClass
-    required: true
-    annotations:
-      nullable: false
-  MHCGenotype_mhc_alleles:
-    name: MHCGenotype_mhc_alleles
+  mhc_alleles:
+    name: mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
     range: MHCAllele
     multivalued: true
     required: true
     annotations:
       nullable: true
-  MHCGenotype_mhc_genotyping_method:
-    name: MHCGenotype_mhc_genotyping_method
+  mhc_genotyping_method:
+    name: mhc_genotyping_method
     description: Information on how the genotype was determined. The content of this field should come from a list of recommended terms provided in the AIRR Schema documentation.
     range: string
     required: false
     annotations:
       nullable: true
-  MHCAllele_allele_designation:
-    name: MHCAllele_allele_designation
-    description: The accepted designation of an allele, usually its gene symbol plus allele/sub-allele/etc identifiers, if provided by the mhc_typing method
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  MHCAllele_gene:
-    name: MHCAllele_gene
+  gene:
+    name: gene
     description: The MHC gene to which the described allele belongs
     range: Gene
     required: false
     annotations:
       nullable: true
-  MHCAllele_reference_set_ref:
-    name: MHCAllele_reference_set_ref
+  reference_set_ref:
+    name: reference_set_ref
     description: Repository and list from which it was taken (issuer/name/version)
     range: string
     required: false
     annotations:
       nullable: true
-  SubjectGenotype_receptor_genotype_set:
-    name: SubjectGenotype_receptor_genotype_set
+  receptor_genotype_set:
+    name: receptor_genotype_set
     description: Immune receptor genotype set for this subject.
     range: GenotypeSet
     required: false
     annotations:
       nullable: true
-  SubjectGenotype_mhc_genotype_set:
-    name: SubjectGenotype_mhc_genotype_set
+  mhc_genotype_set:
+    name: mhc_genotype_set
     description: MHC genotype set for this subject.
     range: MHCGenotypeSet
     required: false
     annotations:
       nullable: true
-  Study_study_id:
-    name: Study_study_id
+  study_id:
+    name: study_id
     description: Unique ID assigned by study registry such as one of the International Nucleotide Sequence Database Collaboration (INSDC) repositories.
     range: string
     required: true
     annotations:
       nullable: true
-  Study_study_title:
-    name: Study_study_title
+  study_title:
+    name: study_title
     description: Descriptive study title
     range: string
     required: true
     annotations:
       nullable: true
-  Study_study_type:
-    name: Study_study_type
+  study_type:
+    name: study_type
     description: Type of study design
     range: StudyType
     required: true
     annotations:
       nullable: true
-  Study_study_description:
-    name: Study_study_description
+  study_description:
+    name: study_description
     description: Generic study description
     range: string
     required: false
     annotations:
       nullable: true
-  Study_inclusion_exclusion_criteria:
-    name: Study_inclusion_exclusion_criteria
+  inclusion_exclusion_criteria:
+    name: inclusion_exclusion_criteria
     description: List of criteria for inclusion/exclusion for the study
     range: string
     required: true
     annotations:
       nullable: true
-  Study_grants:
-    name: Study_grants
+  grants:
+    name: grants
     description: Funding agencies and grant numbers
     range: string
     required: true
     annotations:
       nullable: true
-  Study_study_contact:
-    name: Study_study_contact
+  study_contact:
+    name: study_contact
     description: Full contact information of the contact persons for this study This should include an e-mail address and a persistent identifier such as an ORCID ID.
     range: string
     required: false
     annotations:
       nullable: true
-  Study_collected_by:
-    name: Study_collected_by
+  collected_by:
+    name: collected_by
     description: Full contact information of the data collector, i.e. the person who is legally responsible for data collection and release. This should include an e-mail address and a persistent identifier such as an ORCID ID.
     range: string
     required: true
     annotations:
       nullable: true
-  Study_lab_name:
-    name: Study_lab_name
-    description: Department of data collector
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Study_lab_address:
-    name: Study_lab_address
-    description: Institution and institutional address of data collector
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Study_submitted_by:
-    name: Study_submitted_by
+  submitted_by:
+    name: submitted_by
     description: Full contact information of the data depositor, i.e., the person submitting the data to a repository. This should include an e-mail address and a persistent identifier such as an ORCID ID. This is supposed to be a short-lived and technical role until the submission is relased.
     range: string
     required: true
     annotations:
       nullable: true
-  Study_pub_ids:
-    name: Study_pub_ids
-    description: Publications describing the rationale and/or outcome of the study. Where ever possible, a persistent identifier should be used such as a DOI or a Pubmed ID
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Study_keywords_study:
-    name: Study_keywords_study
+  keywords_study:
+    name: keywords_study
     description: Keywords describing properties of one or more data sets in a study. "contains_schema" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that "contains_paired_chain" but does not "contains_schema_cell").
     range: KeywordsStudy
     multivalued: true
     required: true
     annotations:
       nullable: true
-  Study_adc_publish_date:
-    name: Study_adc_publish_date
+  adc_publish_date:
+    name: adc_publish_date
     description: Date the study was first published in the AIRR Data Commons.
     range: string
     required: false
     annotations:
       nullable: true
-  Study_adc_update_date:
-    name: Study_adc_update_date
+  adc_update_date:
+    name: adc_update_date
     description: Date the study data was updated in the AIRR Data Commons.
     range: string
     required: false
     annotations:
       nullable: true
-  Subject_subject_id:
-    name: Subject_subject_id
+  subject_id:
+    name: subject_id
     description: Subject ID assigned by submitter, unique within study. If possible, a persistent subject ID linked to an INSDC or similar repository study should be used.
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_synthetic:
-    name: Subject_synthetic
+  synthetic:
+    name: synthetic
     description: TRUE for libraries in which the diversity has been synthetically generated (e.g. phage display)
     range: boolean
     required: true
     annotations:
       nullable: false
-  Subject_species:
-    name: Subject_species
-    description: Binomial designation of subject's species
-    range: Species
-    required: true
-    annotations:
-      nullable: false
-  Subject_sex:
-    name: Subject_sex
+  sex:
+    name: sex
     description: Biological sex of subject
     range: Sex
     required: true
     annotations:
       nullable: true
-  Subject_age_min:
-    name: Subject_age_min
+  age_min:
+    name: age_min
     description: Specific age or lower boundary of age range.
     range: float
     required: true
     annotations:
       nullable: true
-  Subject_age_max:
-    name: Subject_age_max
+  age_max:
+    name: age_max
     description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
     range: float
     required: true
     annotations:
       nullable: true
-  Subject_age_unit:
-    name: Subject_age_unit
+  age_unit:
+    name: age_unit
     description: Unit of age range
     range: AgeUnit
     required: true
     annotations:
       nullable: true
-  Subject_age_event:
-    name: Subject_age_event
+  age_event:
+    name: age_event
     description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_ancestry_population:
-    name: Subject_ancestry_population
+  ancestry_population:
+    name: ancestry_population
     description: Broad geographic origin of ancestry (continent)
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_ethnicity:
-    name: Subject_ethnicity
+  ethnicity:
+    name: ethnicity
     description: Ethnic group of subject (defined as cultural/language-based membership)
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_race:
-    name: Subject_race
+  race:
+    name: race
     description: Racial group of subject (as defined by NIH)
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_strain_name:
-    name: Subject_strain_name
+  strain_name:
+    name: strain_name
     description: Non-human designation of the strain or breed of animal used
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_linked_subjects:
-    name: Subject_linked_subjects
+  linked_subjects:
+    name: linked_subjects
     description: Subject ID to which `Relation type` refers
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_link_type:
-    name: Subject_link_type
+  link_type:
+    name: link_type
     description: Relation between subject and `linked_subjects`, can be genetic or environmental (e.g.exposure)
     range: string
     required: true
     annotations:
       nullable: true
-  Subject_diagnosis:
-    name: Subject_diagnosis
+  diagnosis:
+    name: diagnosis
     description: Diagnosis information for subject
     range: Diagnosis
     multivalued: true
     required: false
     annotations:
       nullable: false
-  Subject_genotype:
-    name: Subject_genotype
+  genotype:
+    name: genotype
     description: ''
     range: SubjectGenotype
     required: false
     annotations:
       nullable: true
-  Diagnosis_study_group_description:
-    name: Diagnosis_study_group_description
+  study_group_description:
+    name: study_group_description
     description: Designation of study arm to which the subject is assigned to
     range: string
     required: true
     annotations:
       nullable: true
-  Diagnosis_disease_diagnosis:
-    name: Diagnosis_disease_diagnosis
+  disease_diagnosis:
+    name: disease_diagnosis
     description: Diagnosis of subject
     range: DiseaseDiagnosis
     required: true
     annotations:
       nullable: true
-  Diagnosis_disease_length:
-    name: Diagnosis_disease_length
+  disease_length:
+    name: disease_length
     description: Time duration between initial diagnosis and current intervention
     range: string
     required: true
     annotations:
       nullable: true
-  Diagnosis_disease_stage:
-    name: Diagnosis_disease_stage
+  disease_stage:
+    name: disease_stage
     description: Stage of disease at current intervention
     range: string
     required: true
     annotations:
       nullable: true
-  Diagnosis_prior_therapies:
-    name: Diagnosis_prior_therapies
+  prior_therapies:
+    name: prior_therapies
     description: List of all relevant previous therapies applied to subject for treatment of `Diagnosis`
     range: string
     required: true
     annotations:
       nullable: true
-  Diagnosis_immunogen:
-    name: Diagnosis_immunogen
+  immunogen:
+    name: immunogen
     description: Antigen, vaccine or drug applied to subject at this intervention
     range: string
     required: true
     annotations:
       nullable: true
-  Diagnosis_intervention:
-    name: Diagnosis_intervention
+  intervention:
+    name: intervention
     description: Description of intervention
     range: string
     required: true
     annotations:
       nullable: true
-  Diagnosis_medical_history:
-    name: Diagnosis_medical_history
+  medical_history:
+    name: medical_history
     description: Medical history of subject that is relevant to assess the course of disease and/or treatment
     range: string
     required: true
     annotations:
       nullable: true
-  Sample_sample_id:
-    name: Sample_sample_id
+  sample_id:
+    name: sample_id
     description: Sample ID assigned by submitter, unique within study. If possible, a persistent sample ID linked to INSDC or similar repository study should be used.
     range: string
     required: true
     annotations:
       nullable: true
-  Sample_sample_type:
-    name: Sample_sample_type
+  sample_type:
+    name: sample_type
     description: The way the sample was obtained, e.g. fine-needle aspirate, organ harvest, peripheral venous puncture
     range: string
     required: true
     annotations:
       nullable: true
-  Sample_tissue:
-    name: Sample_tissue
+  tissue:
+    name: tissue
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     range: Tissue
     required: true
     annotations:
       nullable: true
-  Sample_anatomic_site:
-    name: Sample_anatomic_site
+  anatomic_site:
+    name: anatomic_site
     description: The anatomic location of the tissue, e.g. Inguinal, femur
     range: string
     required: true
     annotations:
       nullable: true
-  Sample_disease_state_sample:
-    name: Sample_disease_state_sample
+  disease_state_sample:
+    name: disease_state_sample
     description: Histopathologic evaluation of the sample
     range: string
     required: true
     annotations:
       nullable: true
-  Sample_collection_time_point_relative:
-    name: Sample_collection_time_point_relative
+  collection_time_point_relative:
+    name: collection_time_point_relative
     description: Time point at which sample was taken, relative to `Collection time event`
     range: float
     required: true
     annotations:
       nullable: true
-  Sample_collection_time_point_relative_unit:
-    name: Sample_collection_time_point_relative_unit
+  collection_time_point_relative_unit:
+    name: collection_time_point_relative_unit
     description: Unit of Sample collection time
     range: CollectionTimePointRelativeUnit
     required: true
     annotations:
       nullable: true
-  Sample_collection_time_point_reference:
-    name: Sample_collection_time_point_reference
+  collection_time_point_reference:
+    name: collection_time_point_reference
     description: Event in the study schedule to which `Sample collection time` relates to
     range: string
     required: true
     annotations:
       nullable: true
-  Sample_biomaterial_provider:
-    name: Sample_biomaterial_provider
+  biomaterial_provider:
+    name: biomaterial_provider
     description: Name and address of the entity providing the sample
     range: string
     required: true
     annotations:
       nullable: true
-  CellProcessing_tissue_processing:
-    name: CellProcessing_tissue_processing
+  tissue_processing:
+    name: tissue_processing
     description: Enzymatic digestion and/or physical methods used to isolate cells from sample
     range: string
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_subset:
-    name: CellProcessing_cell_subset
+  cell_subset:
+    name: cell_subset
     description: Commonly-used designation of isolated cell population
     range: CellSubset
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_phenotype:
-    name: CellProcessing_cell_phenotype
+  cell_phenotype:
+    name: cell_phenotype
     description: List of cellular markers and their expression levels used to isolate the cell population
     range: string
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_species:
-    name: CellProcessing_cell_species
+  cell_species:
+    name: cell_species
     description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
     range: CellSpecies
     required: false
     annotations:
       nullable: true
-  CellProcessing_single_cell:
-    name: CellProcessing_single_cell
+  single_cell:
+    name: single_cell
     description: TRUE if single cells were isolated into separate compartments
     range: boolean
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_number:
-    name: CellProcessing_cell_number
+  cell_number:
+    name: cell_number
     description: Total number of cells that went into the experiment
     range: integer
     required: true
     annotations:
       nullable: true
-  CellProcessing_cells_per_reaction:
-    name: CellProcessing_cells_per_reaction
+  cells_per_reaction:
+    name: cells_per_reaction
     description: Number of cells for each biological replicate
     range: integer
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_storage:
-    name: CellProcessing_cell_storage
+  cell_storage:
+    name: cell_storage
     description: TRUE if cells were cryo-preserved between isolation and further processing
     range: boolean
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_quality:
-    name: CellProcessing_cell_quality
+  cell_quality:
+    name: cell_quality
     description: Relative amount of viable cells after preparation and (if applicable) thawing
     range: string
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_isolation:
-    name: CellProcessing_cell_isolation
+  cell_isolation:
+    name: cell_isolation
     description: Description of the procedure used for marker-based isolation or enrich cells
     range: string
     required: true
     annotations:
       nullable: true
-  CellProcessing_cell_processing_protocol:
-    name: CellProcessing_cell_processing_protocol
+  cell_processing_protocol:
+    name: cell_processing_protocol
     description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
     range: string
     required: true
     annotations:
       nullable: true
-  PCRTarget_pcr_target_locus:
-    name: PCRTarget_pcr_target_locus
+  pcr_target_locus:
+    name: pcr_target_locus
     description: Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
     range: PcrTargetLocus
     required: true
     annotations:
       nullable: true
-  PCRTarget_forward_pcr_primer_target_location:
-    name: PCRTarget_forward_pcr_primer_target_location
+  forward_pcr_primer_target_location:
+    name: forward_pcr_primer_target_location
     description: Position of the most distal nucleotide templated by the forward primer or primer mix
     range: string
     required: true
     annotations:
       nullable: true
-  PCRTarget_reverse_pcr_primer_target_location:
-    name: PCRTarget_reverse_pcr_primer_target_location
+  reverse_pcr_primer_target_location:
+    name: reverse_pcr_primer_target_location
     description: Position of the most proximal nucleotide templated by the reverse primer or primer mix
     range: string
     required: true
     annotations:
       nullable: true
-  NucleicAcidProcessing_template_class:
-    name: NucleicAcidProcessing_template_class
+  template_class:
+    name: template_class
     description: The class of nucleic acid that was used as primary starting material for the following procedures
     range: TemplateClass
     required: true
     annotations:
       nullable: false
-  NucleicAcidProcessing_template_quality:
-    name: NucleicAcidProcessing_template_quality
+  template_quality:
+    name: template_quality
     description: Description and results of the quality control performed on the template material
     range: string
     required: true
     annotations:
       nullable: true
-  NucleicAcidProcessing_template_amount:
-    name: NucleicAcidProcessing_template_amount
+  template_amount:
+    name: template_amount
     description: Amount of template that went into the process
     range: float
     required: true
     annotations:
       nullable: true
-  NucleicAcidProcessing_template_amount_unit:
-    name: NucleicAcidProcessing_template_amount_unit
+  template_amount_unit:
+    name: template_amount_unit
     description: Unit of template amount
     range: TemplateAmountUnit
     required: true
     annotations:
       nullable: true
-  NucleicAcidProcessing_library_generation_method:
-    name: NucleicAcidProcessing_library_generation_method
+  library_generation_method:
+    name: library_generation_method
     description: Generic type of library generation
     range: LibraryGenerationMethod
     required: true
     annotations:
       nullable: false
-  NucleicAcidProcessing_library_generation_protocol:
-    name: NucleicAcidProcessing_library_generation_protocol
+  library_generation_protocol:
+    name: library_generation_protocol
     description: Description of processes applied to substrate to obtain a library that is ready for sequencing
     range: string
     required: true
     annotations:
       nullable: true
-  NucleicAcidProcessing_library_generation_kit_version:
-    name: NucleicAcidProcessing_library_generation_kit_version
+  library_generation_kit_version:
+    name: library_generation_kit_version
     description: When using a library generation protocol from a commercial provider, provide the protocol version number
     range: string
     required: true
     annotations:
       nullable: true
-  NucleicAcidProcessing_pcr_target:
-    name: NucleicAcidProcessing_pcr_target
+  pcr_target:
+    name: pcr_target
     description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
     range: PCRTarget
     multivalued: true
     required: false
     annotations:
       nullable: false
-  NucleicAcidProcessing_complete_sequences:
-    name: NucleicAcidProcessing_complete_sequences
+  complete_sequences:
+    name: complete_sequences
     description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
     range: CompleteSequences
     required: true
     annotations:
       nullable: false
-  NucleicAcidProcessing_physical_linkage:
-    name: NucleicAcidProcessing_physical_linkage
+  physical_linkage:
+    name: physical_linkage
     description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
     range: PhysicalLinkage
     required: true
     annotations:
       nullable: false
-  SequencingRun_sequencing_run_id:
-    name: SequencingRun_sequencing_run_id
+  sequencing_run_id:
+    name: sequencing_run_id
     description: ID of sequencing run assigned by the sequencing facility
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingRun_total_reads_passing_qc_filter:
-    name: SequencingRun_total_reads_passing_qc_filter
+  total_reads_passing_qc_filter:
+    name: total_reads_passing_qc_filter
     description: Number of usable reads for analysis
     range: integer
     required: true
     annotations:
       nullable: true
-  SequencingRun_sequencing_platform:
-    name: SequencingRun_sequencing_platform
+  sequencing_platform:
+    name: sequencing_platform
     description: Designation of sequencing instrument used
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingRun_sequencing_facility:
-    name: SequencingRun_sequencing_facility
+  sequencing_facility:
+    name: sequencing_facility
     description: Name and address of sequencing facility
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingRun_sequencing_run_date:
-    name: SequencingRun_sequencing_run_date
+  sequencing_run_date:
+    name: sequencing_run_date
     description: Date of sequencing run
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingRun_sequencing_kit:
-    name: SequencingRun_sequencing_kit
+  sequencing_kit:
+    name: sequencing_kit
     description: Name, manufacturer, order and lot numbers of sequencing kit
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingRun_sequencing_files:
-    name: SequencingRun_sequencing_files
+  sequencing_files:
+    name: sequencing_files
     description: Set of sequencing files produced by the sequencing run
     range: SequencingData
     required: false
     annotations:
       nullable: false
-  SequencingData_sequencing_data_id:
-    name: SequencingData_sequencing_data_id
+  sequencing_data_id:
+    name: sequencing_data_id
     description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingData_file_type:
-    name: SequencingData_file_type
+  file_type:
+    name: file_type
     description: File format for the raw reads or sequences
     range: FileType
     required: true
     annotations:
       nullable: true
-  SequencingData_filename:
-    name: SequencingData_filename
+  filename:
+    name: filename
     description: File name for the raw reads or sequences. The first file in paired-read sequencing.
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingData_read_direction:
-    name: SequencingData_read_direction
+  read_direction:
+    name: read_direction
     description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
     range: ReadDirection
     required: true
     annotations:
       nullable: true
-  SequencingData_read_length:
-    name: SequencingData_read_length
+  read_length:
+    name: read_length
     description: Read length in bases for the first file in paired-read sequencing
     range: integer
     required: true
     annotations:
       nullable: true
-  SequencingData_paired_filename:
-    name: SequencingData_paired_filename
+  paired_filename:
+    name: paired_filename
     description: File name for the second file in paired-read sequencing
     range: string
     required: true
     annotations:
       nullable: true
-  SequencingData_paired_read_direction:
-    name: SequencingData_paired_read_direction
+  paired_read_direction:
+    name: paired_read_direction
     description: Read direction for the second file in paired-read sequencing
     range: PairedReadDirection
     required: true
     annotations:
       nullable: true
-  SequencingData_paired_read_length:
-    name: SequencingData_paired_read_length
+  paired_read_length:
+    name: paired_read_length
     description: Read length in bases for the second file in paired-read sequencing
     range: integer
     required: true
     annotations:
       nullable: true
-  SequencingData_index_filename:
-    name: SequencingData_index_filename
+  index_filename:
+    name: index_filename
     description: File name for the index file
     range: string
     required: false
     annotations:
       nullable: true
-  SequencingData_index_length:
-    name: SequencingData_index_length
+  index_length:
+    name: index_length
     description: Read length in bases for the index file
     range: integer
     required: false
     annotations:
       nullable: true
-  DataProcessing_data_processing_id:
-    name: DataProcessing_data_processing_id
-    description: Identifier for the data processing object.
+  data_processing_id:
+    name: data_processing_id
     range: string
-    required: false
     annotations:
       nullable: true
-  DataProcessing_primary_annotation:
-    name: DataProcessing_primary_annotation
+  primary_annotation:
+    name: primary_annotation
     description: If true, indicates this is the primary or default data processing for the repertoire and its rearrangements. If false, indicates this is a secondary or additional data processing.
     range: boolean
     required: false
     annotations:
       nullable: false
-  DataProcessing_software_versions:
-    name: DataProcessing_software_versions
+  software_versions:
+    name: software_versions
     description: Version number and / or date, include company pipelines
     range: string
     required: true
     annotations:
       nullable: true
-  DataProcessing_paired_reads_assembly:
-    name: DataProcessing_paired_reads_assembly
+  paired_reads_assembly:
+    name: paired_reads_assembly
     description: How paired end reads were assembled into a single receptor sequence
     range: string
     required: true
     annotations:
       nullable: true
-  DataProcessing_quality_thresholds:
-    name: DataProcessing_quality_thresholds
+  quality_thresholds:
+    name: quality_thresholds
     description: How/if sequences were removed from (4) based on base quality scores
     range: string
     required: true
     annotations:
       nullable: true
-  DataProcessing_primer_match_cutoffs:
-    name: DataProcessing_primer_match_cutoffs
+  primer_match_cutoffs:
+    name: primer_match_cutoffs
     description: How primers were identified in the sequences, were they removed/masked/etc?
     range: string
     required: true
     annotations:
       nullable: true
-  DataProcessing_collapsing_method:
-    name: DataProcessing_collapsing_method
+  collapsing_method:
+    name: collapsing_method
     description: The method used for combining multiple sequences from (4) into a single sequence in (5)
     range: string
     required: true
     annotations:
       nullable: true
-  DataProcessing_data_processing_protocols:
-    name: DataProcessing_data_processing_protocols
+  data_processing_protocols:
+    name: data_processing_protocols
     description: General description of how QC is performed
     range: string
     required: true
     annotations:
       nullable: true
-  DataProcessing_data_processing_files:
-    name: DataProcessing_data_processing_files
+  data_processing_files:
+    name: data_processing_files
     description: Array of file names for data produced by this data processing.
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  DataProcessing_germline_database:
-    name: DataProcessing_germline_database
+  germline_database:
+    name: germline_database
     description: Source of germline V(D)J genes with version number or date accessed.
     range: string
     required: true
     annotations:
       nullable: true
-  DataProcessing_germline_set_ref:
-    name: DataProcessing_germline_set_ref
-    description: Unique identifier of the germline set and version, in standardized form (Repo:Label:Version)
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  DataProcessing_analysis_provenance_id:
-    name: DataProcessing_analysis_provenance_id
+  analysis_provenance_id:
+    name: analysis_provenance_id
     description: Identifier for machine-readable PROV model of analysis provenance
     range: string
     required: false
     annotations:
       nullable: true
-  Repertoire_repertoire_id:
-    name: Repertoire_repertoire_id
-    description: Identifier for the repertoire object. This identifier should be globally unique so that repertoires from multiple studies can be combined together without conflict. The repertoire_id is used to link other AIRR data to a Repertoire. Specifically, the Rearrangements Schema includes repertoire_id for referencing the specific Repertoire for that Rearrangement.
+  repertoire_id:
+    name: repertoire_id
     range: string
-    required: false
     annotations:
       nullable: true
-  Repertoire_repertoire_name:
-    name: Repertoire_repertoire_name
+  repertoire_name:
+    name: repertoire_name
     description: Short generic display name for the repertoire
     range: string
     required: false
     annotations:
       nullable: true
-  Repertoire_repertoire_description:
-    name: Repertoire_repertoire_description
+  repertoire_description:
+    name: repertoire_description
     description: Generic repertoire description
     range: string
     required: false
     annotations:
       nullable: true
-  Repertoire_study:
-    name: Repertoire_study
+  study:
+    name: study
     description: Study object
     range: Study
     required: true
     annotations:
       nullable: false
-  Repertoire_subject:
-    name: Repertoire_subject
+  subject:
+    name: subject
     description: Subject object
     range: Subject
     required: true
     annotations:
       nullable: false
-  Repertoire_sample:
-    name: Repertoire_sample
+  sample:
+    name: sample
     description: List of Sample Processing objects
     range: SampleProcessing
     multivalued: true
     required: true
     annotations:
       nullable: false
-  Repertoire_data_processing:
-    name: Repertoire_data_processing
+  data_processing:
+    name: data_processing
     description: List of Data Processing objects
     range: DataProcessing
     multivalued: true
     required: true
     annotations:
       nullable: false
-  RepertoireGroup_repertoire_group_id:
-    name: RepertoireGroup_repertoire_group_id
+  repertoire_group_id:
+    name: repertoire_group_id
     description: Identifier for this repertoire collection
     range: string
     required: true
     annotations:
       nullable: true
-  RepertoireGroup_repertoire_group_name:
-    name: RepertoireGroup_repertoire_group_name
+  repertoire_group_name:
+    name: repertoire_group_name
     description: Short display name for this repertoire collection
     range: string
     required: false
     annotations:
       nullable: true
-  RepertoireGroup_repertoire_group_description:
-    name: RepertoireGroup_repertoire_group_description
+  repertoire_group_description:
+    name: repertoire_group_description
     description: Repertoire collection description
     range: string
     required: false
     annotations:
       nullable: true
-  RepertoireGroup_repertoires:
-    name: RepertoireGroup_repertoires
+  repertoires:
+    name: repertoires
     description: List of repertoires in this collection with an associated description and time point designation
     multivalued: true
     required: true
     annotations:
       nullable: true
-  Alignment_sequence_id:
-    name: Alignment_sequence_id
-    description: Unique query sequence identifier within the file. Most often this will be the input sequence header or a substring thereof, but may also be a custom identifier defined by the tool in cases where query sequences have been combined in some fashion prior to alignment.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Alignment_segment:
-    name: Alignment_segment
+  segment:
+    name: segment
     description: The segment for this alignment. One of V, D, J or C.
     range: string
     required: true
     annotations:
       nullable: true
-  Alignment_rev_comp:
-    name: Alignment_rev_comp
-    description: Alignment result is from the reverse complement of the query sequence.
+  rev_comp:
+    name: rev_comp
     range: boolean
-    required: false
     annotations:
       nullable: true
-  Alignment_call:
-    name: Alignment_call
+  call:
+    name: call
     description: Gene assignment with allele.
     range: string
     required: true
     annotations:
       nullable: true
-  Alignment_score:
-    name: Alignment_score
+  score:
+    name: score
     description: Alignment score.
     range: float
     required: true
     annotations:
       nullable: true
-  Alignment_identity:
-    name: Alignment_identity
+  identity:
+    name: identity
     description: Alignment fractional identity.
     range: float
     required: false
     annotations:
       nullable: true
-  Alignment_support:
-    name: Alignment_support
+  support:
+    name: support
     description: Alignment E-value, p-value, likelihood, probability or other similar measure of support for the gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  Alignment_cigar:
-    name: Alignment_cigar
+  cigar:
+    name: cigar
     description: Alignment CIGAR string.
     range: string
     required: true
     annotations:
       nullable: true
-  Alignment_sequence_start:
-    name: Alignment_sequence_start
-    description: Start position of the segment in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Alignment_sequence_end:
-    name: Alignment_sequence_end
-    description: End position of the segment in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Alignment_germline_start:
-    name: Alignment_germline_start
+  germline_start:
+    name: germline_start
     description: Alignment start position in the reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Alignment_germline_end:
-    name: Alignment_germline_end
+  germline_end:
+    name: germline_end
     description: Alignment end position in the reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Alignment_rank:
-    name: Alignment_rank
+  rank:
+    name: rank
     description: Alignment rank.
     range: integer
     required: false
     annotations:
       nullable: true
-  Alignment_data_processing_id:
-    name: Alignment_data_processing_id
-    description: Identifier to the data processing object in the repertoire metadata for this rearrangement. If this field is empty than the primary data processing object is assumed.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_sequence_id:
-    name: Rearrangement_sequence_id
-    description: Unique query sequence identifier for the Rearrangement. Most often this will be the input sequence header or a substring thereof, but may also be a custom identifier defined by the tool in cases where query sequences have been combined in some fashion prior to alignment. When downloaded from an AIRR Data Commons repository, this will usually be a universally unique record locator for linking with other objects in the AIRR Data Model.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Rearrangement_sequence:
-    name: Rearrangement_sequence
-    description: The query nucleotide sequence. Usually, this is the unmodified input sequence, which may be reverse complemented if necessary. In some cases, this field may contain consensus sequences or other types of collapsed input sequences if these steps are performed prior to alignment.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Rearrangement_quality:
-    name: Rearrangement_quality
+  quality:
+    name: quality
     description: The Sanger/Phred quality scores for assessment of sequence quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by Illumina from v1.8.)
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_sequence_aa:
-    name: Rearrangement_sequence_aa
+  sequence_aa:
+    name: sequence_aa
     description: Amino acid translation of the query nucleotide sequence.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_rev_comp:
-    name: Rearrangement_rev_comp
-    description: True if the alignment is on the opposite strand (reverse complemented) with respect to the query sequence. If True then all output data, such as alignment coordinates and sequences, are based on the reverse complement of 'sequence'.
-    range: boolean
-    required: true
-    annotations:
-      nullable: true
-  Rearrangement_productive:
-    name: Rearrangement_productive
+  productive:
+    name: productive
     description: True if the V(D)J sequence is predicted to be productive.
     range: boolean
     required: true
     annotations:
       nullable: true
-  Rearrangement_vj_in_frame:
-    name: Rearrangement_vj_in_frame
+  vj_in_frame:
+    name: vj_in_frame
     description: True if the V and J gene alignments are in-frame.
     range: boolean
     required: false
     annotations:
       nullable: true
-  Rearrangement_stop_codon:
-    name: Rearrangement_stop_codon
+  stop_codon:
+    name: stop_codon
     description: True if the aligned sequence contains a stop codon.
     range: boolean
     required: false
     annotations:
       nullable: true
-  Rearrangement_complete_vdj:
-    name: Rearrangement_complete_vdj
+  complete_vdj:
+    name: complete_vdj
     description: True if the sequence alignment spans the entire V(D)J region. Meaning, sequence_alignment includes both the first V gene codon that encodes the mature polypeptide chain (i.e., after the leader sequence) and the last complete codon of the J gene (i.e., before the J-C splice site). This does not require an absence of deletions within the internal FWR and CDR regions of the alignment.
     range: boolean
     required: false
     annotations:
       nullable: true
-  Rearrangement_locus:
-    name: Rearrangement_locus
-    description: Gene locus (chain type). Note that this field uses a controlled vocabulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
-    range: Locus
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_v_call:
-    name: Rearrangement_v_call
-    description: V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).
+  v_call:
+    name: v_call
     range: string
-    required: true
     annotations:
       nullable: true
-  Rearrangement_d_call:
-    name: Rearrangement_d_call
-    description: First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
+  d_call:
+    name: d_call
     range: string
-    required: true
     annotations:
       nullable: true
-  Rearrangement_d2_call:
-    name: Rearrangement_d2_call
+  d2_call:
+    name: d2_call
     description: Second D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_call:
-    name: Rearrangement_j_call
-    description: J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).
+  j_call:
+    name: j_call
     range: string
-    required: true
     annotations:
       nullable: true
-  Rearrangement_c_call:
-    name: Rearrangement_c_call
+  c_call:
+    name: c_call
     description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_sequence_alignment:
-    name: Rearrangement_sequence_alignment
-    description: Aligned portion of query sequence, including any indel corrections or numbering spacers, such as IMGT-gaps. Typically, this will include only the V(D)J region, but that is not a requirement.
+  sequence_alignment:
+    name: sequence_alignment
     range: string
-    required: true
     annotations:
       nullable: true
-  Rearrangement_quality_alignment:
-    name: Rearrangement_quality_alignment
+  quality_alignment:
+    name: quality_alignment
     description: Sanger/Phred quality scores for assessment of sequence_alignment quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by Illumina from v1.8.)
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_sequence_alignment_aa:
-    name: Rearrangement_sequence_alignment_aa
+  sequence_alignment_aa:
+    name: sequence_alignment_aa
     description: Amino acid translation of the aligned query sequence.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_germline_alignment:
-    name: Rearrangement_germline_alignment
-    description: Assembled, aligned, full-length inferred germline sequence spanning the same region as the sequence_alignment field (typically the V(D)J region) and including the same set of corrections and spacers (if any).
+  germline_alignment:
+    name: germline_alignment
     range: string
     required: true
     annotations:
       nullable: true
-  Rearrangement_germline_alignment_aa:
-    name: Rearrangement_germline_alignment_aa
-    description: Amino acid translation of the assembled germline sequence.
+  germline_alignment_aa:
+    name: germline_alignment_aa
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_junction:
-    name: Rearrangement_junction
-    description: Junction region nucleotide sequence, where the junction is defined as the CDR3 plus the two flanking conserved codons.
+  junction:
+    name: junction
     range: string
-    required: true
     annotations:
       nullable: true
-  Rearrangement_junction_aa:
-    name: Rearrangement_junction_aa
+  junction_aa:
+    name: junction_aa
     description: Amino acid translation of the junction.
     range: string
-    required: true
     annotations:
       nullable: true
-  Rearrangement_np1:
-    name: Rearrangement_np1
+  np1:
+    name: np1
     description: Nucleotide sequence of the combined N/P region between the V gene and first D gene alignment or between the V gene and J gene alignments.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_np1_aa:
-    name: Rearrangement_np1_aa
+  np1_aa:
+    name: np1_aa
     description: Amino acid translation of the np1 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_np2:
-    name: Rearrangement_np2
+  np2:
+    name: np2
     description: Nucleotide sequence of the combined N/P region between either the first D gene and J gene alignments or the first D gene and second D gene alignments.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_np2_aa:
-    name: Rearrangement_np2_aa
+  np2_aa:
+    name: np2_aa
     description: Amino acid translation of the np2 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_np3:
-    name: Rearrangement_np3
+  np3:
+    name: np3
     description: Nucleotide sequence of the combined N/P region between the second D gene and J gene alignments.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_np3_aa:
-    name: Rearrangement_np3_aa
+  np3_aa:
+    name: np3_aa
     description: Amino acid translation of the np3 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_cdr1:
-    name: Rearrangement_cdr1
+  cdr1:
+    name: cdr1
     description: Nucleotide sequence of the aligned CDR1 region.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_cdr1_aa:
-    name: Rearrangement_cdr1_aa
+  cdr1_aa:
+    name: cdr1_aa
     description: Amino acid translation of the cdr1 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_cdr2:
-    name: Rearrangement_cdr2
+  cdr2:
+    name: cdr2
     description: Nucleotide sequence of the aligned CDR2 region.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_cdr2_aa:
-    name: Rearrangement_cdr2_aa
+  cdr2_aa:
+    name: cdr2_aa
     description: Amino acid translation of the cdr2 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_cdr3:
-    name: Rearrangement_cdr3
+  cdr3:
+    name: cdr3
     description: Nucleotide sequence of the aligned CDR3 region.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_cdr3_aa:
-    name: Rearrangement_cdr3_aa
+  cdr3_aa:
+    name: cdr3_aa
     description: Amino acid translation of the cdr3 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr1:
-    name: Rearrangement_fwr1
+  fwr1:
+    name: fwr1
     description: Nucleotide sequence of the aligned FWR1 region.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr1_aa:
-    name: Rearrangement_fwr1_aa
+  fwr1_aa:
+    name: fwr1_aa
     description: Amino acid translation of the fwr1 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr2:
-    name: Rearrangement_fwr2
+  fwr2:
+    name: fwr2
     description: Nucleotide sequence of the aligned FWR2 region.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr2_aa:
-    name: Rearrangement_fwr2_aa
+  fwr2_aa:
+    name: fwr2_aa
     description: Amino acid translation of the fwr2 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr3:
-    name: Rearrangement_fwr3
+  fwr3:
+    name: fwr3
     description: Nucleotide sequence of the aligned FWR3 region.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr3_aa:
-    name: Rearrangement_fwr3_aa
+  fwr3_aa:
+    name: fwr3_aa
     description: Amino acid translation of the fwr3 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr4:
-    name: Rearrangement_fwr4
+  fwr4:
+    name: fwr4
     description: Nucleotide sequence of the aligned FWR4 region.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr4_aa:
-    name: Rearrangement_fwr4_aa
+  fwr4_aa:
+    name: fwr4_aa
     description: Amino acid translation of the fwr4 field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_score:
-    name: Rearrangement_v_score
+  v_score:
+    name: v_score
     description: Alignment score for the V gene.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_identity:
-    name: Rearrangement_v_identity
+  v_identity:
+    name: v_identity
     description: Fractional identity for the V gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_support:
-    name: Rearrangement_v_support
+  v_support:
+    name: v_support
     description: V gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the V gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_cigar:
-    name: Rearrangement_v_cigar
+  v_cigar:
+    name: v_cigar
     description: CIGAR string for the V gene alignment.
     range: string
     required: true
     annotations:
       nullable: true
-  Rearrangement_d_score:
-    name: Rearrangement_d_score
+  d_score:
+    name: d_score
     description: Alignment score for the first or only D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_identity:
-    name: Rearrangement_d_identity
+  d_identity:
+    name: d_identity
     description: Fractional identity for the first or only D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_support:
-    name: Rearrangement_d_support
+  d_support:
+    name: d_support
     description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the first or only D gene as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_cigar:
-    name: Rearrangement_d_cigar
+  d_cigar:
+    name: d_cigar
     description: CIGAR string for the first or only D gene alignment.
     range: string
     required: true
     annotations:
       nullable: true
-  Rearrangement_d2_score:
-    name: Rearrangement_d2_score
+  d2_score:
+    name: d2_score
     description: Alignment score for the second D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_identity:
-    name: Rearrangement_d2_identity
+  d2_identity:
+    name: d2_identity
     description: Fractional identity for the second D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_support:
-    name: Rearrangement_d2_support
+  d2_support:
+    name: d2_support
     description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the second D gene as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_cigar:
-    name: Rearrangement_d2_cigar
+  d2_cigar:
+    name: d2_cigar
     description: CIGAR string for the second D gene alignment.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_score:
-    name: Rearrangement_j_score
+  j_score:
+    name: j_score
     description: Alignment score for the J gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_identity:
-    name: Rearrangement_j_identity
+  j_identity:
+    name: j_identity
     description: Fractional identity for the J gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_support:
-    name: Rearrangement_j_support
+  j_support:
+    name: j_support
     description: J gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the J gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_cigar:
-    name: Rearrangement_j_cigar
+  j_cigar:
+    name: j_cigar
     description: CIGAR string for the J gene alignment.
     range: string
     required: true
     annotations:
       nullable: true
-  Rearrangement_c_score:
-    name: Rearrangement_c_score
+  c_score:
+    name: c_score
     description: Alignment score for the C gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_identity:
-    name: Rearrangement_c_identity
+  c_identity:
+    name: c_identity
     description: Fractional identity for the C gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_support:
-    name: Rearrangement_c_support
+  c_support:
+    name: c_support
     description: C gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the C gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_cigar:
-    name: Rearrangement_c_cigar
+  c_cigar:
+    name: c_cigar
     description: CIGAR string for the C gene alignment.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_sequence_start:
-    name: Rearrangement_v_sequence_start
+  v_sequence_start:
+    name: v_sequence_start
     description: Start position of the V gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_sequence_end:
-    name: Rearrangement_v_sequence_end
+  v_sequence_end:
+    name: v_sequence_end
     description: End position of the V gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_germline_start:
-    name: Rearrangement_v_germline_start
+  v_germline_start:
+    name: v_germline_start
     description: Alignment start position in the V gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_germline_end:
-    name: Rearrangement_v_germline_end
+  v_germline_end:
+    name: v_germline_end
     description: Alignment end position in the V gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_alignment_start:
-    name: Rearrangement_v_alignment_start
-    description: Start position of the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  v_alignment_start:
+    name: v_alignment_start
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_alignment_end:
-    name: Rearrangement_v_alignment_end
-    description: End position of the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  v_alignment_end:
+    name: v_alignment_end
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_sequence_start:
-    name: Rearrangement_d_sequence_start
+  d_sequence_start:
+    name: d_sequence_start
     description: Start position of the first or only D gene in the query sequence. (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_sequence_end:
-    name: Rearrangement_d_sequence_end
+  d_sequence_end:
+    name: d_sequence_end
     description: End position of the first or only D gene in the query sequence. (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_germline_start:
-    name: Rearrangement_d_germline_start
+  d_germline_start:
+    name: d_germline_start
     description: Alignment start position in the D gene reference sequence for the first or only D gene (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_germline_end:
-    name: Rearrangement_d_germline_end
+  d_germline_end:
+    name: d_germline_end
     description: Alignment end position in the D gene reference sequence for the first or only D gene (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_alignment_start:
-    name: Rearrangement_d_alignment_start
-    description: Start position of the first or only D gene in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  d_alignment_start:
+    name: d_alignment_start
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_alignment_end:
-    name: Rearrangement_d_alignment_end
-    description: End position of the first or only D gene in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  d_alignment_end:
+    name: d_alignment_end
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_sequence_start:
-    name: Rearrangement_d2_sequence_start
+  d2_sequence_start:
+    name: d2_sequence_start
     description: Start position of the second D gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_sequence_end:
-    name: Rearrangement_d2_sequence_end
+  d2_sequence_end:
+    name: d2_sequence_end
     description: End position of the second D gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_germline_start:
-    name: Rearrangement_d2_germline_start
+  d2_germline_start:
+    name: d2_germline_start
     description: Alignment start position in the second D gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_germline_end:
-    name: Rearrangement_d2_germline_end
+  d2_germline_end:
+    name: d2_germline_end
     description: Alignment end position in the second D gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_alignment_start:
-    name: Rearrangement_d2_alignment_start
+  d2_alignment_start:
+    name: d2_alignment_start
     description: Start position of the second D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_alignment_end:
-    name: Rearrangement_d2_alignment_end
+  d2_alignment_end:
+    name: d2_alignment_end
     description: End position of the second D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_sequence_start:
-    name: Rearrangement_j_sequence_start
+  j_sequence_start:
+    name: j_sequence_start
     description: Start position of the J gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_sequence_end:
-    name: Rearrangement_j_sequence_end
+  j_sequence_end:
+    name: j_sequence_end
     description: End position of the J gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_germline_start:
-    name: Rearrangement_j_germline_start
+  j_germline_start:
+    name: j_germline_start
     description: Alignment start position in the J gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_germline_end:
-    name: Rearrangement_j_germline_end
+  j_germline_end:
+    name: j_germline_end
     description: Alignment end position in the J gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_alignment_start:
-    name: Rearrangement_j_alignment_start
+  j_alignment_start:
+    name: j_alignment_start
     description: Start position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_alignment_end:
-    name: Rearrangement_j_alignment_end
+  j_alignment_end:
+    name: j_alignment_end
     description: End position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_sequence_start:
-    name: Rearrangement_c_sequence_start
+  c_sequence_start:
+    name: c_sequence_start
     description: Start position of the C gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_sequence_end:
-    name: Rearrangement_c_sequence_end
+  c_sequence_end:
+    name: c_sequence_end
     description: End position of the C gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_germline_start:
-    name: Rearrangement_c_germline_start
+  c_germline_start:
+    name: c_germline_start
     description: Alignment start position in the C gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_germline_end:
-    name: Rearrangement_c_germline_end
+  c_germline_end:
+    name: c_germline_end
     description: Alignment end position in the C gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_alignment_start:
-    name: Rearrangement_c_alignment_start
+  c_alignment_start:
+    name: c_alignment_start
     description: Start position of the C gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_alignment_end:
-    name: Rearrangement_c_alignment_end
+  c_alignment_end:
+    name: c_alignment_end
     description: End position of the C gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_cdr1_start:
-    name: Rearrangement_cdr1_start
-    description: CDR1 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_cdr1_end:
-    name: Rearrangement_cdr1_end
-    description: CDR1 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_cdr2_start:
-    name: Rearrangement_cdr2_start
-    description: CDR2 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_cdr2_end:
-    name: Rearrangement_cdr2_end
-    description: CDR2 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_cdr3_start:
-    name: Rearrangement_cdr3_start
-    description: CDR3 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_cdr3_end:
-    name: Rearrangement_cdr3_end
+  cdr3_end:
+    name: cdr3_end
     description: CDR3 end position in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr1_start:
-    name: Rearrangement_fwr1_start
-    description: FWR1 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_fwr1_end:
-    name: Rearrangement_fwr1_end
-    description: FWR1 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_fwr2_start:
-    name: Rearrangement_fwr2_start
-    description: FWR2 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_fwr2_end:
-    name: Rearrangement_fwr2_end
-    description: FWR2 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_fwr3_start:
-    name: Rearrangement_fwr3_start
-    description: FWR3 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_fwr3_end:
-    name: Rearrangement_fwr3_end
-    description: FWR3 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_fwr4_start:
-    name: Rearrangement_fwr4_start
+  fwr4_start:
+    name: fwr4_start
     description: FWR4 start position in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_fwr4_end:
-    name: Rearrangement_fwr4_end
+  fwr4_end:
+    name: fwr4_end
     description: FWR4 end position in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_sequence_alignment:
-    name: Rearrangement_v_sequence_alignment
+  v_sequence_alignment:
+    name: v_sequence_alignment
     description: Aligned portion of query sequence assigned to the V gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_sequence_alignment_aa:
-    name: Rearrangement_v_sequence_alignment_aa
+  v_sequence_alignment_aa:
+    name: v_sequence_alignment_aa
     description: Amino acid translation of the v_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_sequence_alignment:
-    name: Rearrangement_d_sequence_alignment
+  d_sequence_alignment:
+    name: d_sequence_alignment
     description: Aligned portion of query sequence assigned to the first or only D gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_sequence_alignment_aa:
-    name: Rearrangement_d_sequence_alignment_aa
+  d_sequence_alignment_aa:
+    name: d_sequence_alignment_aa
     description: Amino acid translation of the d_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_sequence_alignment:
-    name: Rearrangement_d2_sequence_alignment
+  d2_sequence_alignment:
+    name: d2_sequence_alignment
     description: Aligned portion of query sequence assigned to the second D gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_sequence_alignment_aa:
-    name: Rearrangement_d2_sequence_alignment_aa
+  d2_sequence_alignment_aa:
+    name: d2_sequence_alignment_aa
     description: Amino acid translation of the d2_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_sequence_alignment:
-    name: Rearrangement_j_sequence_alignment
+  j_sequence_alignment:
+    name: j_sequence_alignment
     description: Aligned portion of query sequence assigned to the J gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_sequence_alignment_aa:
-    name: Rearrangement_j_sequence_alignment_aa
+  j_sequence_alignment_aa:
+    name: j_sequence_alignment_aa
     description: Amino acid translation of the j_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_sequence_alignment:
-    name: Rearrangement_c_sequence_alignment
+  c_sequence_alignment:
+    name: c_sequence_alignment
     description: Aligned portion of query sequence assigned to the constant region, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_sequence_alignment_aa:
-    name: Rearrangement_c_sequence_alignment_aa
+  c_sequence_alignment_aa:
+    name: c_sequence_alignment_aa
     description: Amino acid translation of the c_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_germline_alignment:
-    name: Rearrangement_v_germline_alignment
+  v_germline_alignment:
+    name: v_germline_alignment
     description: Aligned V gene germline sequence spanning the same region as the v_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_germline_alignment_aa:
-    name: Rearrangement_v_germline_alignment_aa
+  v_germline_alignment_aa:
+    name: v_germline_alignment_aa
     description: Amino acid translation of the v_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_germline_alignment:
-    name: Rearrangement_d_germline_alignment
+  d_germline_alignment:
+    name: d_germline_alignment
     description: Aligned D gene germline sequence spanning the same region as the d_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_germline_alignment_aa:
-    name: Rearrangement_d_germline_alignment_aa
+  d_germline_alignment_aa:
+    name: d_germline_alignment_aa
     description: Amino acid translation of the d_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_germline_alignment:
-    name: Rearrangement_d2_germline_alignment
+  d2_germline_alignment:
+    name: d2_germline_alignment
     description: Aligned D gene germline sequence spanning the same region as the d2_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_germline_alignment_aa:
-    name: Rearrangement_d2_germline_alignment_aa
+  d2_germline_alignment_aa:
+    name: d2_germline_alignment_aa
     description: Amino acid translation of the d2_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_germline_alignment:
-    name: Rearrangement_j_germline_alignment
+  j_germline_alignment:
+    name: j_germline_alignment
     description: Aligned J gene germline sequence spanning the same region as the j_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_germline_alignment_aa:
-    name: Rearrangement_j_germline_alignment_aa
+  j_germline_alignment_aa:
+    name: j_germline_alignment_aa
     description: Amino acid translation of the j_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_germline_alignment:
-    name: Rearrangement_c_germline_alignment
+  c_germline_alignment:
+    name: c_germline_alignment
     description: Aligned constant region germline sequence spanning the same region as the c_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_c_germline_alignment_aa:
-    name: Rearrangement_c_germline_alignment_aa
+  c_germline_alignment_aa:
+    name: c_germline_alignment_aa
     description: Amino acid translation of the c_germline_aligment field.
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_junction_length:
-    name: Rearrangement_junction_length
-    description: Number of nucleotides in the junction sequence.
+  junction_length:
+    name: junction_length
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_junction_aa_length:
-    name: Rearrangement_junction_aa_length
-    description: Number of amino acids in the junction sequence.
+  junction_aa_length:
+    name: junction_aa_length
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_np1_length:
-    name: Rearrangement_np1_length
+  np1_length:
+    name: np1_length
     description: Number of nucleotides between the V gene and first D gene alignments or between the V gene and J gene alignments.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_np2_length:
-    name: Rearrangement_np2_length
+  np2_length:
+    name: np2_length
     description: Number of nucleotides between either the first D gene and J gene alignments or the first D gene and second D gene alignments.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_np3_length:
-    name: Rearrangement_np3_length
+  np3_length:
+    name: np3_length
     description: Number of nucleotides between the second D gene and J gene alignments.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_n1_length:
-    name: Rearrangement_n1_length
+  n1_length:
+    name: n1_length
     description: Number of untemplated nucleotides 5' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_n2_length:
-    name: Rearrangement_n2_length
+  n2_length:
+    name: n2_length
     description: Number of untemplated nucleotides 3' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_n3_length:
-    name: Rearrangement_n3_length
+  n3_length:
+    name: n3_length
     description: Number of untemplated nucleotides 3' of the second D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_p3v_length:
-    name: Rearrangement_p3v_length
+  p3v_length:
+    name: p3v_length
     description: Number of palindromic nucleotides 3' of the V gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_p5d_length:
-    name: Rearrangement_p5d_length
+  p5d_length:
+    name: p5d_length
     description: Number of palindromic nucleotides 5' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_p3d_length:
-    name: Rearrangement_p3d_length
+  p3d_length:
+    name: p3d_length
     description: Number of palindromic nucleotides 3' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_p5d2_length:
-    name: Rearrangement_p5d2_length
+  p5d2_length:
+    name: p5d2_length
     description: Number of palindromic nucleotides 5' of the second D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_p3d2_length:
-    name: Rearrangement_p3d2_length
+  p3d2_length:
+    name: p3d2_length
     description: Number of palindromic nucleotides 3' of the second D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_p5j_length:
-    name: Rearrangement_p5j_length
+  p5j_length:
+    name: p5j_length
     description: Number of palindromic nucleotides 5' of the J gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_v_frameshift:
-    name: Rearrangement_v_frameshift
+  v_frameshift:
+    name: v_frameshift
     description: True if the V gene in the query nucleotide sequence contains a translational frameshift relative to the frame of the V gene reference sequence.
     range: boolean
     required: false
     annotations:
       nullable: true
-  Rearrangement_j_frameshift:
-    name: Rearrangement_j_frameshift
+  j_frameshift:
+    name: j_frameshift
     description: True if the J gene in the query nucleotide sequence contains a translational frameshift relative to the frame of the J gene reference sequence.
     range: boolean
     required: false
     annotations:
       nullable: true
-  Rearrangement_d_frame:
-    name: Rearrangement_d_frame
+  d_frame:
+    name: d_frame
     description: Numerical reading frame (1, 2, 3) of the first or only D gene in the query nucleotide sequence, where frame 1 is relative to the first codon of D gene reference sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_d2_frame:
-    name: Rearrangement_d2_frame
+  d2_frame:
+    name: d2_frame
     description: Numerical reading frame (1, 2, 3) of the second D gene in the query nucleotide sequence, where frame 1 is relative to the first codon of D gene reference sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_consensus_count:
-    name: Rearrangement_consensus_count
+  consensus_count:
+    name: consensus_count
     description: Number of reads contributing to the UMI consensus or contig assembly for this sequence. For example, the sum of the number of reads for all UMIs that contribute to the query sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_duplicate_count:
-    name: Rearrangement_duplicate_count
+  duplicate_count:
+    name: duplicate_count
     description: Copy number or number of duplicate observations for the query sequence. For example, the number of identical reads observed for this sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_umi_count:
-    name: Rearrangement_umi_count
-    description: Number of distinct UMIs represented by this sequence. For example, the total number of UMIs that contribute to the contig assembly for the query sequence.
+  umi_count:
+    name: umi_count
     range: integer
     required: false
     annotations:
       nullable: true
-  Rearrangement_cell_id:
-    name: Rearrangement_cell_id
-    description: Identifier defining the cell of origin for the query sequence.
+  cell_id:
+    name: cell_id
+    range: string
+  clone_id:
+    name: clone_id
+    range: string
+    annotations:
+      nullable: true
+  sample_processing_id:
+    name: sample_processing_id
     range: string
     required: false
     annotations:
       nullable: true
-  Rearrangement_clone_id:
-    name: Rearrangement_clone_id
-    description: Clonal cluster assignment for the query sequence.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_repertoire_id:
-    name: Rearrangement_repertoire_id
-    description: Identifier to the associated repertoire in study metadata.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_sample_processing_id:
-    name: Rearrangement_sample_processing_id
-    description: Identifier to the sample processing object in the repertoire metadata for this rearrangement. If the repertoire has a single sample then this field may be empty or missing. If the repertoire has multiple samples then this field may be empty or missing if the sample cannot be differentiated or the relationship is not maintained by the data processing.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Rearrangement_data_processing_id:
-    name: Rearrangement_data_processing_id
-    description: Identifier to the data processing object in the repertoire metadata for this rearrangement. If this field is empty than the primary data processing object is assumed.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_clone_id:
-    name: Clone_clone_id
-    description: Identifier for the clone.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Clone_repertoire_id:
-    name: Clone_repertoire_id
-    description: Identifier to the associated repertoire in study metadata.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_data_processing_id:
-    name: Clone_data_processing_id
-    description: Identifier of the data processing object in the repertoire metadata for this clone.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_sequences:
-    name: Clone_sequences
+  sequences:
+    name: sequences
     description: List sequence_id strings that act as keys to the Rearrangement records for members of the clone.
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  Clone_v_call:
-    name: Clone_v_call
-    description: V gene with allele of the inferred ancestral of the clone. For example, IGHV4-59*01.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_d_call:
-    name: Clone_d_call
-    description: D gene with allele of the inferred ancestor of the clone. For example, IGHD3-10*01.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_j_call:
-    name: Clone_j_call
-    description: J gene with allele of the inferred ancestor of the clone. For example, IGHJ4*02.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_junction:
-    name: Clone_junction
-    description: Nucleotide sequence for the junction region of the inferred ancestor of the clone, where the junction is defined as the CDR3 plus the two flanking conserved codons.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_junction_aa:
-    name: Clone_junction_aa
-    description: Amino acid translation of the junction.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_junction_length:
-    name: Clone_junction_length
-    description: Number of nucleotides in the junction.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_junction_aa_length:
-    name: Clone_junction_aa_length
-    description: Number of amino acids in junction_aa.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_germline_alignment:
-    name: Clone_germline_alignment
-    description: Assembled, aligned, full-length inferred ancestor of the clone spanning the same region as the sequence_alignment field of nodes (typically the V(D)J region) and including the same set of corrections and spacers (if any).
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Clone_germline_alignment_aa:
-    name: Clone_germline_alignment_aa
-    description: Amino acid translation of germline_alignment.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Clone_v_alignment_start:
-    name: Clone_v_alignment_start
-    description: Start position in the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_v_alignment_end:
-    name: Clone_v_alignment_end
-    description: End position in the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_d_alignment_start:
-    name: Clone_d_alignment_start
-    description: Start position of the D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_d_alignment_end:
-    name: Clone_d_alignment_end
-    description: End position of the D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_j_alignment_start:
-    name: Clone_j_alignment_start
-    description: Start position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_j_alignment_end:
-    name: Clone_j_alignment_end
-    description: End position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_junction_start:
-    name: Clone_junction_start
+  junction_start:
+    name: junction_start
     description: Junction region start position in the alignment (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Clone_junction_end:
-    name: Clone_junction_end
+  junction_end:
+    name: junction_end
     description: Junction region end position in the alignment (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  Clone_umi_count:
-    name: Clone_umi_count
-    description: Number of distinct UMIs observed across all sequences (Rearrangement records) in this clone.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  Clone_clone_count:
-    name: Clone_clone_count
+  clone_count:
+    name: clone_count
     description: Absolute count of the size (number of members) of this clone in the repertoire. This could simply be the number of sequences (Rearrangement records) observed in this clone, the number of distinct cell barcodes (unique cell_id values), or a more sophisticated calculation appropriate to the experimental protocol. Absolute count is provided versus a frequency so that downstream analysis tools can perform their own normalization.
     range: integer
     required: false
     annotations:
       nullable: true
-  Clone_seed_id:
-    name: Clone_seed_id
+  seed_id:
+    name: seed_id
     description: sequence_id of the seed sequence. Empty string (or null) if there is no seed sequence.
     range: string
     required: false
     annotations:
       nullable: true
-  Tree_tree_id:
-    name: Tree_tree_id
+  tree_id:
+    name: tree_id
     description: Identifier for the tree.
     range: string
     required: true
     annotations:
       nullable: true
-  Tree_clone_id:
-    name: Tree_clone_id
-    description: Identifier for the clone.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Tree_newick:
-    name: Tree_newick
+  newick:
+    name: newick
     description: Newick string of the tree edges.
     range: string
     required: true
     annotations:
       nullable: true
-  Tree_nodes:
-    name: Tree_nodes
+  nodes:
+    name: nodes
     description: Dictionary of nodes in the tree, keyed by sequence_id string
     required: false
     annotations:
       nullable: true
-  Node_sequence_id:
-    name: Node_sequence_id
-    description: Identifier for this node that matches the identifier in the newick string and, where possible, the sequence_id in the source repertoire.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Node_sequence_alignment:
-    name: Node_sequence_alignment
-    description: Nucleotide sequence of the node, aligned to the germline_alignment for this clone, including including any indel corrections or spacers.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Node_junction:
-    name: Node_junction
-    description: Junction region nucleotide sequence for the node, where the junction is defined as the CDR3 plus the two flanking conserved codons.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Node_junction_aa:
-    name: Node_junction_aa
-    description: Amino acid translation of the junction.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Cell_cell_id:
-    name: Cell_cell_id
-    description: Identifier defining the cell of origin for the query sequence.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  Cell_rearrangements:
-    name: Cell_rearrangements
+  rearrangements:
+    name: rearrangements
     description: Array of sequence identifiers defined for the Rearrangement object
     range: string
     multivalued: true
     required: true
     annotations:
       nullable: true
-  Cell_receptors:
-    name: Cell_receptors
+  receptors:
+    name: receptors
     description: Array of receptor identifiers defined for the Receptor object
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  Cell_repertoire_id:
-    name: Cell_repertoire_id
-    description: Identifier to the associated repertoire in study metadata.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  Cell_data_processing_id:
-    name: Cell_data_processing_id
-    description: Identifier of the data processing object in the repertoire metadata for this clone.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  Cell_expression_study_method:
-    name: Cell_expression_study_method
+  expression_study_method:
+    name: expression_study_method
     description: Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary.
     range: ExpressionStudyMethod
     required: false
     annotations:
       nullable: true
-  Cell_expression_raw_doi:
-    name: Cell_expression_raw_doi
+  expression_raw_doi:
+    name: expression_raw_doi
     description: DOI of raw data set containing the current event
     range: string
     required: false
     annotations:
       nullable: true
-  Cell_expression_index:
-    name: Cell_expression_index
+  expression_index:
+    name: expression_index
     description: Index addressing the current event within the raw data set.
     range: string
     required: false
     annotations:
       nullable: true
-  Cell_virtual_pairing:
-    name: Cell_virtual_pairing
+  virtual_pairing:
+    name: virtual_pairing
     description: boolean to indicate if pairing was inferred.
     range: boolean
     required: true
     annotations:
       nullable: true
-  CellExpression_expression_id:
-    name: CellExpression_expression_id
+  expression_id:
+    name: expression_id
     description: Identifier of this expression property measurement.
     range: string
     required: true
     annotations:
       nullable: false
-  CellExpression_cell_id:
-    name: CellExpression_cell_id
-    description: Identifier of the cell to which this expression data is related.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  CellExpression_repertoire_id:
-    name: CellExpression_repertoire_id
-    description: Identifier for the associated repertoire in study metadata.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  CellExpression_data_processing_id:
-    name: CellExpression_data_processing_id
-    description: Identifier of the data processing object in the repertoire metadata for this clone.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  CellExpression_property_type:
-    name: CellExpression_property_type
+  property_type:
+    name: property_type
     description: 'Keyword describing the property type and detection method used to measure the property value. The following keywords are recommended, but custom property types are also valid: "mrna_expression_by_read_count", "protein_expression_by_fluorescence_intensity", "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count" and "antigen_bait_binding_by_dna_barcode_count".'
     range: string
     required: true
     annotations:
       nullable: false
-  CellExpression_property:
-    name: CellExpression_property
+  property:
+    name: property
     description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
     range: Property
     required: true
     annotations:
       nullable: true
-  CellExpression_value:
-    name: CellExpression_value
-    description: Level at which the property was observed in the experiment (non-normalized).
-    range: float
-    required: true
-    annotations:
-      nullable: true
-  Receptor_receptor_id:
-    name: Receptor_receptor_id
+  receptor_id:
+    name: receptor_id
     description: ID of the current Receptor object, unique within the local repository.
     range: string
     required: true
     annotations:
       nullable: false
-  Receptor_receptor_hash:
-    name: Receptor_receptor_hash
+  receptor_hash:
+    name: receptor_hash
     description: The SHA256 hash of the receptor amino acid sequence, calculated on the concatenated ``receptor_variable_domain_*_aa`` sequences and represented as base16-encoded string.
     range: string
     required: true
     annotations:
       nullable: false
-  Receptor_receptor_type:
-    name: Receptor_receptor_type
+  receptor_type:
+    name: receptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
     range: ReceptorType
     required: true
     annotations:
       nullable: false
-  Receptor_receptor_variable_domain_1_aa:
-    name: Receptor_receptor_variable_domain_1_aa
+  receptor_variable_domain_1_aa:
+    name: receptor_variable_domain_1_aa
     description: Complete amino acid sequence of the mature variable domain of the Ig heavy, TCR beta or TCR delta chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.
     range: string
     required: true
     annotations:
       nullable: false
-  Receptor_receptor_variable_domain_1_locus:
-    name: Receptor_receptor_variable_domain_1_locus
+  receptor_variable_domain_1_locus:
+    name: receptor_variable_domain_1_locus
     description: Locus from which the variable domain in receptor_variable_domain_1_aa originates
     range: ReceptorVariableDomain1Locus
     required: true
     annotations:
       nullable: false
-  Receptor_receptor_variable_domain_2_aa:
-    name: Receptor_receptor_variable_domain_2_aa
+  receptor_variable_domain_2_aa:
+    name: receptor_variable_domain_2_aa
     description: Complete amino acid sequence of the mature variable domain of the Ig light, TCR alpha or TCR gamma chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.
     range: string
     required: true
     annotations:
       nullable: false
-  Receptor_receptor_variable_domain_2_locus:
-    name: Receptor_receptor_variable_domain_2_locus
+  receptor_variable_domain_2_locus:
+    name: receptor_variable_domain_2_locus
     description: Locus from which the variable domain in receptor_variable_domain_2_aa originates
     range: ReceptorVariableDomain2Locus
     required: true
     annotations:
       nullable: false
-  Receptor_receptor_ref:
-    name: Receptor_receptor_ref
+  receptor_ref:
+    name: receptor_ref
     description: Array of receptor identifiers defined for the Receptor object
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  Receptor_reactivity_measurements:
-    name: Receptor_reactivity_measurements
+  reactivity_measurements:
+    name: reactivity_measurements
     description: Records of reactivity measurement
     range: ReceptorReactivity
     multivalued: true
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_ligand_type:
-    name: ReceptorReactivity_ligand_type
+  ligand_type:
+    name: ligand_type
     description: Classification of ligand binding to receptor
     range: LigandType
     required: true
     annotations:
       nullable: false
-  ReceptorReactivity_antigen_type:
-    name: ReceptorReactivity_antigen_type
+  antigen_type:
+    name: antigen_type
     description: The type of antigen before processing by the immune system.
     range: AntigenType
     required: true
     annotations:
       nullable: false
-  ReceptorReactivity_antigen:
-    name: ReceptorReactivity_antigen
+  antigen:
+    name: antigen
     description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
     range: Antigen
     required: true
     annotations:
       nullable: false
-  ReceptorReactivity_antigen_source_species:
-    name: ReceptorReactivity_antigen_source_species
+  antigen_source_species:
+    name: antigen_source_species
     description: The species from which the antigen was isolated
     range: AntigenSourceSpecies
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_peptide_start:
-    name: ReceptorReactivity_peptide_start
+  peptide_start:
+    name: peptide_start
     description: Start position of the peptide within the reference protein sequence
     range: integer
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_peptide_end:
-    name: ReceptorReactivity_peptide_end
+  peptide_end:
+    name: peptide_end
     description: End position of the peptide within the reference protein sequence
     range: integer
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_mhc_class:
-    name: ReceptorReactivity_mhc_class
-    description: Class of MHC molecule, only present for MHC:x ligand types
-    range: MhcClass
-    required: false
-    annotations:
-      nullable: true
-  ReceptorReactivity_mhc_gene_1:
-    name: ReceptorReactivity_mhc_gene_1
+  mhc_gene_1:
+    name: mhc_gene_1
     description: The MHC gene to which the mhc_allele_1 belongs
     range: MhcGene1
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_mhc_allele_1:
-    name: ReceptorReactivity_mhc_allele_1
+  mhc_allele_1:
+    name: mhc_allele_1
     description: Allele designation of the MHC alpha chain
     range: string
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_mhc_gene_2:
-    name: ReceptorReactivity_mhc_gene_2
+  mhc_gene_2:
+    name: mhc_gene_2
     description: The MHC gene to which the mhc_allele_2 belongs
     range: MhcGene2
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_mhc_allele_2:
-    name: ReceptorReactivity_mhc_allele_2
+  mhc_allele_2:
+    name: mhc_allele_2
     description: Allele designation of the MHC class II beta chain or the invariant beta2-microglobin chain
     range: string
     required: false
     annotations:
       nullable: true
-  ReceptorReactivity_reactivity_method:
-    name: ReceptorReactivity_reactivity_method
+  reactivity_method:
+    name: reactivity_method
     description: The methodology used to assess expression (assay implemented in experiment)
     range: ReactivityMethod
     required: true
     annotations:
       nullable: false
-  ReceptorReactivity_reactivity_readout:
-    name: ReceptorReactivity_reactivity_readout
+  reactivity_readout:
+    name: reactivity_readout
     description: Reactivity measurement read-out
     range: ReactivityReadout
     required: true
     annotations:
       nullable: false
-  ReceptorReactivity_reactivity_value:
-    name: ReceptorReactivity_reactivity_value
+  reactivity_value:
+    name: reactivity_value
     description: The absolute (processed) value of the measurement
     range: float
     required: true
     annotations:
       nullable: false
-  ReceptorReactivity_reactivity_unit:
-    name: ReceptorReactivity_reactivity_unit
+  reactivity_unit:
+    name: reactivity_unit
     description: The unit of the measurement
     range: string
     required: true
     annotations:
       nullable: false
-  SampleProcessing_sample_processing_id:
-    name: SampleProcessing_sample_processing_id
-    description: Identifier for the sample processing object. This field should be unique within the repertoire. This field can be used to uniquely identify the combination of sample, cell processing, nucleic acid processing and sequencing run information for the repertoire.
-    range: string
-    required: false
-    annotations:
-      nullable: true
 
 enums:
   Unit:
@@ -4106,7 +3410,6 @@ enums:
       TRB:
       TRD:
       TRG:
-      'null':
   SequenceType:
     name: SequenceType
     permissible_values:
@@ -4123,12 +3426,6 @@ enums:
       'null':
   Species:
     name: Species
-    reachable_from:
-      source_nodes:
-        - NCBITAXON:7776
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
   SpeciesSubgroupType:
     name: SpeciesSubgroupType
     permissible_values:
@@ -4170,7 +3467,6 @@ enums:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
-      'null':
   Gene:
     name: Gene
     reachable_from:
