@@ -7,6 +7,7 @@ import uuid
 import numpy as np
 from repertoire import Repertoire
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
+from ak_schema import *
 
 
 class AIRRRepertoire(Repertoire):
@@ -143,27 +144,27 @@ class AIRRRepertoire(Repertoire):
                         row['akc_class'], row['akc_field'], row['akc_form'], row['akc_type'], row['akc_is_array']))
             # Source class is the class of object where the ID comes from (e.g. Participant).
             akc_source_class = row['akc_type']
+            akc_source_slot = self.classToSlot(akc_source_class)
             # Change class is the class of object that the ID reference is added to (e.g. Investigation).
             akc_change_class = row['akc_class']
+            akc_change_slot = self.classToSlot(akc_change_class)
             # Get the field we are changing
             akc_change_field = row['akc_field']
             if self.verbose():
                 print("AKC Change Class = %s, Change Field = %s, Source Class = %s"%(akc_change_class, akc_change_field, akc_source_class))
             # For each investigation in the top level investigation dictionary, process the investigation.
-            # Hack for skipping this:
-            # for adc_study_id, akc_investigation in dict():
             for adc_study_id, akc_investigation in investigation_dict.items():
                 if self.verbose():
                     print('Processing investigation: %s'%(adc_study_id))
                 # If our investigation has the change class and the source class, process it.
-                if akc_change_class in akc_investigation and akc_source_class in akc_investigation:
+                if akc_change_slot in akc_investigation and akc_source_slot in akc_investigation:
                     if self.verbose():
                         print('    Change class %s in investigation: %s'%(akc_change_class, adc_study_id))
                         print('    Looping over source class %s'%(akc_source_class))
                     # Get the dictionary for the class we are changing.
-                    akc_change_class_dict = akc_investigation[akc_change_class]
+                    akc_change_class_dict = akc_investigation[self.classToSlot(akc_change_class)]
                     # Get the dictionary for the class the link is coming from.
-                    akc_source_class_dict = akc_investigation[akc_source_class]
+                    akc_source_class_dict = akc_investigation[self.classToSlot(akc_source_class)]
                     
                     # Loop over the source instances from which the links are being produced.
                     for source_akc_key, source_class_instance in akc_source_class_dict.items():
@@ -223,10 +224,26 @@ class AIRRRepertoire(Repertoire):
         # Verbose implies debug, and if we are debugging we want to
         # keep these fields.
         if not self.verbose():
-            for akc_investigation_id, akc_investigation in investigation_dict.items():
-                for akc_class, akc_class_dict in akc_investigation.items():
-                    for akc_instance, akc_instance_dict in akc_class_dict.items():
-                        self.removeADCData(akc_instance_dict, akc_class)
+            # Iterate over the base AIRRKnowledgeCommons object
+            # This object consists of arrays for each class of object in the
+            # AKC
+            for akc_tag, akc_object in investigation_dict.items():
+                # Get the list of slots in the AIRRKnowledgeCommons objects
+                # and iterate over them
+                class_to_slot_list = self.classToSlotList()
+                for akc_class, akc_slot in class_to_slot_list.items():
+                    # For each slot in AIRRKnowledgeCommons, iterate over all
+                    # instances of that type of AKC class. First get the alot
+                    akc_class_slot = akc_object[akc_slot]
+                    # For each instance of the type contained in the slot
+                    for akc_instance, akc_instance_dict in akc_class_slot.items():
+                        # Generate a temporary object of the type being processed
+                        tmp_object = globals()[akc_class]('')
+                        # If the type is the same process it. This avoids needlessly
+                        # trying to process different assays from the assays slot
+                        # when they are not of the correct subclass. 
+                        if type(akc_instance_dict) == type(tmp_object):
+                            self.removeADCData(akc_instance_dict, akc_class)
 
 
         # We are done, dump out the JSON to the output file.
