@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/library_generation_method/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/specimen_processings/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: library_generation_method - ak-schema</title>
+        <title>Slot: specimen_processings - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-library_generation_method" class="md-skip">
+        <a href="#slot-specimen_processings" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: library_generation_method
+              Slot: specimen_processings
             
           </span>
         </div>
@@ -317,15 +317,14 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/library_generation_method.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/specimen_processings.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-library_generation_method">Slot: library_generation_method</h1>
-<p><em>Generic type of library generation</em></p>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/library_generation_method">ak_schema:library_generation_method</a></p>
+<h1 id="slot-specimen_processings">Slot: specimen_processings</h1>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/specimen_processings">ak_schema:specimen_processings</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,15 +338,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../LibraryPreparationProcessing/">LibraryPreparationProcessing</a></td>
-<td></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td>A container for instances of multiple classes</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../SpecimenProcessing/">SpecimenProcessing</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -365,25 +369,27 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:library_generation_method</td>
+<td>ak_schema:specimen_processings</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:library_generation_method</td>
+<td>ak_schema:specimen_processings</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: library_generation_method
-description: Generic type of library generation
+<pre><code class="language-yaml">name: specimen_processings
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-alias: library_generation_method
+alias: specimen_processings
+owner: AIRRKnowledgeCommons
 domain_of:
-- LibraryPreparationProcessing
-range: string
+- AIRRKnowledgeCommons
+range: SpecimenProcessing
+multivalued: true
+inlined: true
 
 </code></pre>
 

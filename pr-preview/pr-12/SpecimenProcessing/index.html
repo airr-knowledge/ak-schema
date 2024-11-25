@@ -212,6 +212,15 @@
       PlannedProcess &lt;|-- SpecimenProcessing
         click PlannedProcess href "../PlannedProcess"
 
+
+      SpecimenProcessing &lt;|-- CellIsolationProcessing
+        click CellIsolationProcessing href "../CellIsolationProcessing"
+      SpecimenProcessing &lt;|-- NucleicAcidProcessing
+        click NucleicAcidProcessing href "../NucleicAcidProcessing"
+      SpecimenProcessing &lt;|-- LibraryPreparationProcessing
+        click LibraryPreparationProcessing href "../LibraryPreparationProcessing"
+
+
       SpecimenProcessing : akc_id
 
       SpecimenProcessing : description
@@ -234,7 +243,12 @@
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../PlannedProcess/">PlannedProcess</a><ul>
-<li><strong>SpecimenProcessing</strong></li>
+<li><strong>SpecimenProcessing</strong><ul>
+<li><a href="../CellIsolationProcessing/">CellIsolationProcessing</a></li>
+<li><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></li>
+<li><a href="../LibraryPreparationProcessing/">LibraryPreparationProcessing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -290,6 +304,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../specimen_processings/">specimen_processings</a></td>
+<td>range</td>
+<td><a href="./">SpecimenProcessing</a></td>
+</tr>
 <tr>
 <td><a href="../Assay/">Assay</a></td>
 <td><a href="../specimen_processing/">specimen_processing</a></td>
