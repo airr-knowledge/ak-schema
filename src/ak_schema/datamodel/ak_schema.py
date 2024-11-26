@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-11-21T14:59:08
+# Generation date: 2024-11-25T12:33:28
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1710,3070 +1710,2986 @@ class Simulation(PlannedProcess):
 
 
 @dataclass(repr=False)
-class V1p4TimePoint(YAMLRoot):
+class TimePoint(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4TimePoint"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4TimePoint"
-    class_name: ClassVar[str] = "v1p4_TimePoint"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4TimePoint
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["TimePoint"]
+    class_class_curie: ClassVar[str] = "ak_schema:TimePoint"
+    class_name: ClassVar[str] = "TimePoint"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TimePoint
 
-    v1p4__time_point__label: Optional[str] = None
-    v1p4__time_point__value: Optional[float] = None
-    v1p4__time_point__unit: Optional[Union[str, "V1p4Unit"]] = None
+    TimePoint_label: Optional[str] = None
+    TimePoint_value: Optional[float] = None
+    TimePoint_unit: Optional[Union[str, "Unit"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.v1p4__time_point__label is not None and not isinstance(self.v1p4__time_point__label, str):
-            self.v1p4__time_point__label = str(self.v1p4__time_point__label)
+        if self.TimePoint_label is not None and not isinstance(self.TimePoint_label, str):
+            self.TimePoint_label = str(self.TimePoint_label)
 
-        if self.v1p4__time_point__value is not None and not isinstance(self.v1p4__time_point__value, float):
-            self.v1p4__time_point__value = float(self.v1p4__time_point__value)
+        if self.TimePoint_value is not None and not isinstance(self.TimePoint_value, float):
+            self.TimePoint_value = float(self.TimePoint_value)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4TimeInterval(YAMLRoot):
+class Acknowledgement(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4TimeInterval"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4TimeInterval"
-    class_name: ClassVar[str] = "v1p4_TimeInterval"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4TimeInterval
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Acknowledgement"]
+    class_class_curie: ClassVar[str] = "ak_schema:Acknowledgement"
+    class_name: ClassVar[str] = "Acknowledgement"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Acknowledgement
 
-    v1p4__time_interval__min: Optional[float] = None
-    v1p4__time_interval__max: Optional[float] = None
-    v1p4__time_interval__unit: Optional[Union[str, "V1p4Unit"]] = None
+    Acknowledgement_acknowledgement_id: str = None
+    Acknowledgement_name: str = None
+    Acknowledgement_institution_name: str = None
+    Acknowledgement_orcid_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.v1p4__time_interval__min is not None and not isinstance(self.v1p4__time_interval__min, float):
-            self.v1p4__time_interval__min = float(self.v1p4__time_interval__min)
+        if self._is_empty(self.Acknowledgement_acknowledgement_id):
+            self.MissingRequiredField("Acknowledgement_acknowledgement_id")
+        if not isinstance(self.Acknowledgement_acknowledgement_id, str):
+            self.Acknowledgement_acknowledgement_id = str(self.Acknowledgement_acknowledgement_id)
 
-        if self.v1p4__time_interval__max is not None and not isinstance(self.v1p4__time_interval__max, float):
-            self.v1p4__time_interval__max = float(self.v1p4__time_interval__max)
+        if self._is_empty(self.Acknowledgement_name):
+            self.MissingRequiredField("Acknowledgement_name")
+        if not isinstance(self.Acknowledgement_name, str):
+            self.Acknowledgement_name = str(self.Acknowledgement_name)
+
+        if self._is_empty(self.Acknowledgement_institution_name):
+            self.MissingRequiredField("Acknowledgement_institution_name")
+        if not isinstance(self.Acknowledgement_institution_name, str):
+            self.Acknowledgement_institution_name = str(self.Acknowledgement_institution_name)
+
+        if self.Acknowledgement_orcid_id is not None and not isinstance(self.Acknowledgement_orcid_id, str):
+            self.Acknowledgement_orcid_id = str(self.Acknowledgement_orcid_id)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4PhysicalQuantity(YAMLRoot):
+class RearrangedSequence(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4PhysicalQuantity"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4PhysicalQuantity"
-    class_name: ClassVar[str] = "v1p4_PhysicalQuantity"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4PhysicalQuantity
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RearrangedSequence"]
+    class_class_curie: ClassVar[str] = "ak_schema:RearrangedSequence"
+    class_name: ClassVar[str] = "RearrangedSequence"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RearrangedSequence
 
-    v1p4__physical_quantity__quantity: Optional[float] = None
-    v1p4__physical_quantity__unit: Optional[Union[str, "V1p4Unit"]] = None
+    RearrangedSequence_sequence_id: str = None
+    RearrangedSequence_sequence: str = None
+    RearrangedSequence_derivation: Union[str, "Derivation"] = None
+    RearrangedSequence_observation_type: Union[str, "ObservationType"] = None
+    RearrangedSequence_repository_name: str = None
+    RearrangedSequence_deposited_version: str = None
+    RearrangedSequence_curation: Optional[str] = None
+    RearrangedSequence_repository_ref: Optional[str] = None
+    RearrangedSequence_sequence_start: Optional[int] = None
+    RearrangedSequence_sequence_end: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.v1p4__physical_quantity__quantity is not None and not isinstance(self.v1p4__physical_quantity__quantity, float):
-            self.v1p4__physical_quantity__quantity = float(self.v1p4__physical_quantity__quantity)
+        if self._is_empty(self.RearrangedSequence_sequence_id):
+            self.MissingRequiredField("RearrangedSequence_sequence_id")
+        if not isinstance(self.RearrangedSequence_sequence_id, str):
+            self.RearrangedSequence_sequence_id = str(self.RearrangedSequence_sequence_id)
+
+        if self._is_empty(self.RearrangedSequence_sequence):
+            self.MissingRequiredField("RearrangedSequence_sequence")
+        if not isinstance(self.RearrangedSequence_sequence, str):
+            self.RearrangedSequence_sequence = str(self.RearrangedSequence_sequence)
+
+        if self._is_empty(self.RearrangedSequence_derivation):
+            self.MissingRequiredField("RearrangedSequence_derivation")
+        if not isinstance(self.RearrangedSequence_derivation, Derivation):
+            self.RearrangedSequence_derivation = Derivation(self.RearrangedSequence_derivation)
+
+        if self._is_empty(self.RearrangedSequence_observation_type):
+            self.MissingRequiredField("RearrangedSequence_observation_type")
+        if not isinstance(self.RearrangedSequence_observation_type, ObservationType):
+            self.RearrangedSequence_observation_type = ObservationType(self.RearrangedSequence_observation_type)
+
+        if self._is_empty(self.RearrangedSequence_repository_name):
+            self.MissingRequiredField("RearrangedSequence_repository_name")
+        if not isinstance(self.RearrangedSequence_repository_name, str):
+            self.RearrangedSequence_repository_name = str(self.RearrangedSequence_repository_name)
+
+        if self._is_empty(self.RearrangedSequence_deposited_version):
+            self.MissingRequiredField("RearrangedSequence_deposited_version")
+        if not isinstance(self.RearrangedSequence_deposited_version, str):
+            self.RearrangedSequence_deposited_version = str(self.RearrangedSequence_deposited_version)
+
+        if self.RearrangedSequence_curation is not None and not isinstance(self.RearrangedSequence_curation, str):
+            self.RearrangedSequence_curation = str(self.RearrangedSequence_curation)
+
+        if self.RearrangedSequence_repository_ref is not None and not isinstance(self.RearrangedSequence_repository_ref, str):
+            self.RearrangedSequence_repository_ref = str(self.RearrangedSequence_repository_ref)
+
+        if self.RearrangedSequence_sequence_start is not None and not isinstance(self.RearrangedSequence_sequence_start, int):
+            self.RearrangedSequence_sequence_start = int(self.RearrangedSequence_sequence_start)
+
+        if self.RearrangedSequence_sequence_end is not None and not isinstance(self.RearrangedSequence_sequence_end, int):
+            self.RearrangedSequence_sequence_end = int(self.RearrangedSequence_sequence_end)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4TimeQuantity(YAMLRoot):
+class UnrearrangedSequence(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4TimeQuantity"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4TimeQuantity"
-    class_name: ClassVar[str] = "v1p4_TimeQuantity"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4TimeQuantity
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UnrearrangedSequence"]
+    class_class_curie: ClassVar[str] = "ak_schema:UnrearrangedSequence"
+    class_name: ClassVar[str] = "UnrearrangedSequence"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UnrearrangedSequence
 
-    v1p4__time_quantity__quantity: Optional[float] = None
-    v1p4__time_quantity__unit: Optional[Union[str, "V1p4Unit"]] = None
+    UnrearrangedSequence_sequence_id: str = None
+    UnrearrangedSequence_sequence: str = None
+    UnrearrangedSequence_repository_name: str = None
+    UnrearrangedSequence_gff_seqid: str = None
+    UnrearrangedSequence_gff_start: int = None
+    UnrearrangedSequence_gff_end: int = None
+    UnrearrangedSequence_strand: Union[str, "Strand"] = None
+    UnrearrangedSequence_curation: Optional[str] = None
+    UnrearrangedSequence_repository_ref: Optional[str] = None
+    UnrearrangedSequence_patch_no: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.v1p4__time_quantity__quantity is not None and not isinstance(self.v1p4__time_quantity__quantity, float):
-            self.v1p4__time_quantity__quantity = float(self.v1p4__time_quantity__quantity)
+        if self._is_empty(self.UnrearrangedSequence_sequence_id):
+            self.MissingRequiredField("UnrearrangedSequence_sequence_id")
+        if not isinstance(self.UnrearrangedSequence_sequence_id, str):
+            self.UnrearrangedSequence_sequence_id = str(self.UnrearrangedSequence_sequence_id)
+
+        if self._is_empty(self.UnrearrangedSequence_sequence):
+            self.MissingRequiredField("UnrearrangedSequence_sequence")
+        if not isinstance(self.UnrearrangedSequence_sequence, str):
+            self.UnrearrangedSequence_sequence = str(self.UnrearrangedSequence_sequence)
+
+        if self._is_empty(self.UnrearrangedSequence_repository_name):
+            self.MissingRequiredField("UnrearrangedSequence_repository_name")
+        if not isinstance(self.UnrearrangedSequence_repository_name, str):
+            self.UnrearrangedSequence_repository_name = str(self.UnrearrangedSequence_repository_name)
+
+        if self._is_empty(self.UnrearrangedSequence_gff_seqid):
+            self.MissingRequiredField("UnrearrangedSequence_gff_seqid")
+        if not isinstance(self.UnrearrangedSequence_gff_seqid, str):
+            self.UnrearrangedSequence_gff_seqid = str(self.UnrearrangedSequence_gff_seqid)
+
+        if self._is_empty(self.UnrearrangedSequence_gff_start):
+            self.MissingRequiredField("UnrearrangedSequence_gff_start")
+        if not isinstance(self.UnrearrangedSequence_gff_start, int):
+            self.UnrearrangedSequence_gff_start = int(self.UnrearrangedSequence_gff_start)
+
+        if self._is_empty(self.UnrearrangedSequence_gff_end):
+            self.MissingRequiredField("UnrearrangedSequence_gff_end")
+        if not isinstance(self.UnrearrangedSequence_gff_end, int):
+            self.UnrearrangedSequence_gff_end = int(self.UnrearrangedSequence_gff_end)
+
+        if self._is_empty(self.UnrearrangedSequence_strand):
+            self.MissingRequiredField("UnrearrangedSequence_strand")
+        if not isinstance(self.UnrearrangedSequence_strand, Strand):
+            self.UnrearrangedSequence_strand = Strand(self.UnrearrangedSequence_strand)
+
+        if self.UnrearrangedSequence_curation is not None and not isinstance(self.UnrearrangedSequence_curation, str):
+            self.UnrearrangedSequence_curation = str(self.UnrearrangedSequence_curation)
+
+        if self.UnrearrangedSequence_repository_ref is not None and not isinstance(self.UnrearrangedSequence_repository_ref, str):
+            self.UnrearrangedSequence_repository_ref = str(self.UnrearrangedSequence_repository_ref)
+
+        if self.UnrearrangedSequence_patch_no is not None and not isinstance(self.UnrearrangedSequence_patch_no, str):
+            self.UnrearrangedSequence_patch_no = str(self.UnrearrangedSequence_patch_no)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Contributor(YAMLRoot):
+class SequenceDelineationV(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Contributor"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Contributor"
-    class_name: ClassVar[str] = "v1p4_Contributor"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Contributor
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequenceDelineationV"]
+    class_class_curie: ClassVar[str] = "ak_schema:SequenceDelineationV"
+    class_name: ClassVar[str] = "SequenceDelineationV"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequenceDelineationV
 
-    v1p4__contributor__contributor_id: str = None
-    v1p4__contributor__name: str = None
-    v1p4__contributor__orcid_id: Optional[Union[str, "V1p4OrcidId"]] = None
-    v1p4__contributor__affiliation: Optional[Union[str, "V1p4Affiliation"]] = None
-    v1p4__contributor__affiliation_department: Optional[str] = None
-    v1p4__contributor__contributions: Optional[Union[Union[dict, "V1p4ContributorContribution"], List[Union[dict, "V1p4ContributorContribution"]]]] = empty_list()
+    SequenceDelineationV_sequence_delineation_id: str = None
+    SequenceDelineationV_delineation_scheme: str = None
+    SequenceDelineationV_fwr1_start: int = None
+    SequenceDelineationV_fwr1_end: int = None
+    SequenceDelineationV_cdr1_start: int = None
+    SequenceDelineationV_cdr1_end: int = None
+    SequenceDelineationV_fwr2_start: int = None
+    SequenceDelineationV_fwr2_end: int = None
+    SequenceDelineationV_cdr2_start: int = None
+    SequenceDelineationV_cdr2_end: int = None
+    SequenceDelineationV_fwr3_start: int = None
+    SequenceDelineationV_fwr3_end: int = None
+    SequenceDelineationV_cdr3_start: int = None
+    SequenceDelineationV_unaligned_sequence: Optional[str] = None
+    SequenceDelineationV_aligned_sequence: Optional[str] = None
+    SequenceDelineationV_alignment_labels: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__contributor__contributor_id):
-            self.MissingRequiredField("v1p4__contributor__contributor_id")
-        if not isinstance(self.v1p4__contributor__contributor_id, str):
-            self.v1p4__contributor__contributor_id = str(self.v1p4__contributor__contributor_id)
+        if self._is_empty(self.SequenceDelineationV_sequence_delineation_id):
+            self.MissingRequiredField("SequenceDelineationV_sequence_delineation_id")
+        if not isinstance(self.SequenceDelineationV_sequence_delineation_id, str):
+            self.SequenceDelineationV_sequence_delineation_id = str(self.SequenceDelineationV_sequence_delineation_id)
 
-        if self._is_empty(self.v1p4__contributor__name):
-            self.MissingRequiredField("v1p4__contributor__name")
-        if not isinstance(self.v1p4__contributor__name, str):
-            self.v1p4__contributor__name = str(self.v1p4__contributor__name)
+        if self._is_empty(self.SequenceDelineationV_delineation_scheme):
+            self.MissingRequiredField("SequenceDelineationV_delineation_scheme")
+        if not isinstance(self.SequenceDelineationV_delineation_scheme, str):
+            self.SequenceDelineationV_delineation_scheme = str(self.SequenceDelineationV_delineation_scheme)
 
-        if self.v1p4__contributor__affiliation_department is not None and not isinstance(self.v1p4__contributor__affiliation_department, str):
-            self.v1p4__contributor__affiliation_department = str(self.v1p4__contributor__affiliation_department)
+        if self._is_empty(self.SequenceDelineationV_fwr1_start):
+            self.MissingRequiredField("SequenceDelineationV_fwr1_start")
+        if not isinstance(self.SequenceDelineationV_fwr1_start, int):
+            self.SequenceDelineationV_fwr1_start = int(self.SequenceDelineationV_fwr1_start)
 
-        self._normalize_inlined_as_dict(slot_name="v1p4__contributor__contributions", slot_type=V1p4ContributorContribution, key_name="v1p4__contributor_contribution__role", keyed=False)
+        if self._is_empty(self.SequenceDelineationV_fwr1_end):
+            self.MissingRequiredField("SequenceDelineationV_fwr1_end")
+        if not isinstance(self.SequenceDelineationV_fwr1_end, int):
+            self.SequenceDelineationV_fwr1_end = int(self.SequenceDelineationV_fwr1_end)
+
+        if self._is_empty(self.SequenceDelineationV_cdr1_start):
+            self.MissingRequiredField("SequenceDelineationV_cdr1_start")
+        if not isinstance(self.SequenceDelineationV_cdr1_start, int):
+            self.SequenceDelineationV_cdr1_start = int(self.SequenceDelineationV_cdr1_start)
+
+        if self._is_empty(self.SequenceDelineationV_cdr1_end):
+            self.MissingRequiredField("SequenceDelineationV_cdr1_end")
+        if not isinstance(self.SequenceDelineationV_cdr1_end, int):
+            self.SequenceDelineationV_cdr1_end = int(self.SequenceDelineationV_cdr1_end)
+
+        if self._is_empty(self.SequenceDelineationV_fwr2_start):
+            self.MissingRequiredField("SequenceDelineationV_fwr2_start")
+        if not isinstance(self.SequenceDelineationV_fwr2_start, int):
+            self.SequenceDelineationV_fwr2_start = int(self.SequenceDelineationV_fwr2_start)
+
+        if self._is_empty(self.SequenceDelineationV_fwr2_end):
+            self.MissingRequiredField("SequenceDelineationV_fwr2_end")
+        if not isinstance(self.SequenceDelineationV_fwr2_end, int):
+            self.SequenceDelineationV_fwr2_end = int(self.SequenceDelineationV_fwr2_end)
+
+        if self._is_empty(self.SequenceDelineationV_cdr2_start):
+            self.MissingRequiredField("SequenceDelineationV_cdr2_start")
+        if not isinstance(self.SequenceDelineationV_cdr2_start, int):
+            self.SequenceDelineationV_cdr2_start = int(self.SequenceDelineationV_cdr2_start)
+
+        if self._is_empty(self.SequenceDelineationV_cdr2_end):
+            self.MissingRequiredField("SequenceDelineationV_cdr2_end")
+        if not isinstance(self.SequenceDelineationV_cdr2_end, int):
+            self.SequenceDelineationV_cdr2_end = int(self.SequenceDelineationV_cdr2_end)
+
+        if self._is_empty(self.SequenceDelineationV_fwr3_start):
+            self.MissingRequiredField("SequenceDelineationV_fwr3_start")
+        if not isinstance(self.SequenceDelineationV_fwr3_start, int):
+            self.SequenceDelineationV_fwr3_start = int(self.SequenceDelineationV_fwr3_start)
+
+        if self._is_empty(self.SequenceDelineationV_fwr3_end):
+            self.MissingRequiredField("SequenceDelineationV_fwr3_end")
+        if not isinstance(self.SequenceDelineationV_fwr3_end, int):
+            self.SequenceDelineationV_fwr3_end = int(self.SequenceDelineationV_fwr3_end)
+
+        if self._is_empty(self.SequenceDelineationV_cdr3_start):
+            self.MissingRequiredField("SequenceDelineationV_cdr3_start")
+        if not isinstance(self.SequenceDelineationV_cdr3_start, int):
+            self.SequenceDelineationV_cdr3_start = int(self.SequenceDelineationV_cdr3_start)
+
+        if self.SequenceDelineationV_unaligned_sequence is not None and not isinstance(self.SequenceDelineationV_unaligned_sequence, str):
+            self.SequenceDelineationV_unaligned_sequence = str(self.SequenceDelineationV_unaligned_sequence)
+
+        if self.SequenceDelineationV_aligned_sequence is not None and not isinstance(self.SequenceDelineationV_aligned_sequence, str):
+            self.SequenceDelineationV_aligned_sequence = str(self.SequenceDelineationV_aligned_sequence)
+
+        if not isinstance(self.SequenceDelineationV_alignment_labels, list):
+            self.SequenceDelineationV_alignment_labels = [self.SequenceDelineationV_alignment_labels] if self.SequenceDelineationV_alignment_labels is not None else []
+        self.SequenceDelineationV_alignment_labels = [v if isinstance(v, str) else str(v) for v in self.SequenceDelineationV_alignment_labels]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4ContributorContribution(YAMLRoot):
+class AlleleDescription(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4ContributorContribution"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4ContributorContribution"
-    class_name: ClassVar[str] = "v1p4_ContributorContribution"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4ContributorContribution
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AlleleDescription"]
+    class_class_curie: ClassVar[str] = "ak_schema:AlleleDescription"
+    class_name: ClassVar[str] = "AlleleDescription"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AlleleDescription
 
-    v1p4__contributor_contribution__role: Union[str, "V1p4Role"] = None
-    v1p4__contributor_contribution__degree: Optional[Union[str, "V1p4Degree"]] = None
+    AlleleDescription_allele_description_id: str = None
+    AlleleDescription_maintainer: str = None
+    AlleleDescription_lab_address: str = None
+    AlleleDescription_release_version: int = None
+    AlleleDescription_release_date: str = None
+    AlleleDescription_release_description: str = None
+    AlleleDescription_sequence: str = None
+    AlleleDescription_coding_sequence: str = None
+    AlleleDescription_locus: Union[str, "Locus"] = None
+    AlleleDescription_sequence_type: Union[str, "SequenceType"] = None
+    AlleleDescription_functional: Union[bool, Bool] = None
+    AlleleDescription_inference_type: Union[str, "InferenceType"] = None
+    AlleleDescription_species: Union[str, "Species"] = None
+    AlleleDescription_allele_description_ref: Optional[str] = None
+    AlleleDescription_acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
+    AlleleDescription_label: Optional[str] = None
+    AlleleDescription_aliases: Optional[Union[str, List[str]]] = empty_list()
+    AlleleDescription_chromosome: Optional[int] = None
+    AlleleDescription_species_subgroup: Optional[str] = None
+    AlleleDescription_species_subgroup_type: Optional[Union[str, "SpeciesSubgroupType"]] = None
+    AlleleDescription_status: Optional[Union[str, "Status"]] = None
+    AlleleDescription_subgroup_designation: Optional[str] = None
+    AlleleDescription_gene_designation: Optional[str] = None
+    AlleleDescription_allele_designation: Optional[str] = None
+    AlleleDescription_allele_similarity_cluster_designation: Optional[str] = None
+    AlleleDescription_allele_similarity_cluster_member_id: Optional[str] = None
+    AlleleDescription_j_codon_frame: Optional[Union[str, "JCodonFrame"]] = None
+    AlleleDescription_gene_start: Optional[int] = None
+    AlleleDescription_gene_end: Optional[int] = None
+    AlleleDescription_utr_5_prime_start: Optional[int] = None
+    AlleleDescription_utr_5_prime_end: Optional[int] = None
+    AlleleDescription_leader_1_start: Optional[int] = None
+    AlleleDescription_leader_1_end: Optional[int] = None
+    AlleleDescription_leader_2_start: Optional[int] = None
+    AlleleDescription_leader_2_end: Optional[int] = None
+    AlleleDescription_v_rs_start: Optional[int] = None
+    AlleleDescription_v_rs_end: Optional[int] = None
+    AlleleDescription_d_rs_3_prime_start: Optional[int] = None
+    AlleleDescription_d_rs_3_prime_end: Optional[int] = None
+    AlleleDescription_d_rs_5_prime_start: Optional[int] = None
+    AlleleDescription_d_rs_5_prime_end: Optional[int] = None
+    AlleleDescription_j_cdr3_end: Optional[int] = None
+    AlleleDescription_j_rs_start: Optional[int] = None
+    AlleleDescription_j_rs_end: Optional[int] = None
+    AlleleDescription_j_donor_splice: Optional[int] = None
+    AlleleDescription_v_gene_delineations: Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]] = empty_list()
+    AlleleDescription_unrearranged_support: Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]] = empty_list()
+    AlleleDescription_rearranged_support: Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]] = empty_list()
+    AlleleDescription_paralogs: Optional[Union[str, List[str]]] = empty_list()
+    AlleleDescription_curation: Optional[str] = None
+    AlleleDescription_curational_tags: Optional[Union[Union[str, "CurationalTags"], List[Union[str, "CurationalTags"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__contributor_contribution__role):
-            self.MissingRequiredField("v1p4__contributor_contribution__role")
-        if not isinstance(self.v1p4__contributor_contribution__role, V1p4Role):
-            self.v1p4__contributor_contribution__role = V1p4Role(self.v1p4__contributor_contribution__role)
+        if self._is_empty(self.AlleleDescription_allele_description_id):
+            self.MissingRequiredField("AlleleDescription_allele_description_id")
+        if not isinstance(self.AlleleDescription_allele_description_id, str):
+            self.AlleleDescription_allele_description_id = str(self.AlleleDescription_allele_description_id)
 
-        if self.v1p4__contributor_contribution__degree is not None and not isinstance(self.v1p4__contributor_contribution__degree, V1p4Degree):
-            self.v1p4__contributor_contribution__degree = V1p4Degree(self.v1p4__contributor_contribution__degree)
+        if self._is_empty(self.AlleleDescription_maintainer):
+            self.MissingRequiredField("AlleleDescription_maintainer")
+        if not isinstance(self.AlleleDescription_maintainer, str):
+            self.AlleleDescription_maintainer = str(self.AlleleDescription_maintainer)
+
+        if self._is_empty(self.AlleleDescription_lab_address):
+            self.MissingRequiredField("AlleleDescription_lab_address")
+        if not isinstance(self.AlleleDescription_lab_address, str):
+            self.AlleleDescription_lab_address = str(self.AlleleDescription_lab_address)
+
+        if self._is_empty(self.AlleleDescription_release_version):
+            self.MissingRequiredField("AlleleDescription_release_version")
+        if not isinstance(self.AlleleDescription_release_version, int):
+            self.AlleleDescription_release_version = int(self.AlleleDescription_release_version)
+
+        if self._is_empty(self.AlleleDescription_release_date):
+            self.MissingRequiredField("AlleleDescription_release_date")
+        if not isinstance(self.AlleleDescription_release_date, str):
+            self.AlleleDescription_release_date = str(self.AlleleDescription_release_date)
+
+        if self._is_empty(self.AlleleDescription_release_description):
+            self.MissingRequiredField("AlleleDescription_release_description")
+        if not isinstance(self.AlleleDescription_release_description, str):
+            self.AlleleDescription_release_description = str(self.AlleleDescription_release_description)
+
+        if self._is_empty(self.AlleleDescription_sequence):
+            self.MissingRequiredField("AlleleDescription_sequence")
+        if not isinstance(self.AlleleDescription_sequence, str):
+            self.AlleleDescription_sequence = str(self.AlleleDescription_sequence)
+
+        if self._is_empty(self.AlleleDescription_coding_sequence):
+            self.MissingRequiredField("AlleleDescription_coding_sequence")
+        if not isinstance(self.AlleleDescription_coding_sequence, str):
+            self.AlleleDescription_coding_sequence = str(self.AlleleDescription_coding_sequence)
+
+        if self._is_empty(self.AlleleDescription_locus):
+            self.MissingRequiredField("AlleleDescription_locus")
+        if not isinstance(self.AlleleDescription_locus, Locus):
+            self.AlleleDescription_locus = Locus(self.AlleleDescription_locus)
+
+        if self._is_empty(self.AlleleDescription_sequence_type):
+            self.MissingRequiredField("AlleleDescription_sequence_type")
+        if not isinstance(self.AlleleDescription_sequence_type, SequenceType):
+            self.AlleleDescription_sequence_type = SequenceType(self.AlleleDescription_sequence_type)
+
+        if self._is_empty(self.AlleleDescription_functional):
+            self.MissingRequiredField("AlleleDescription_functional")
+        if not isinstance(self.AlleleDescription_functional, Bool):
+            self.AlleleDescription_functional = Bool(self.AlleleDescription_functional)
+
+        if self._is_empty(self.AlleleDescription_inference_type):
+            self.MissingRequiredField("AlleleDescription_inference_type")
+        if not isinstance(self.AlleleDescription_inference_type, InferenceType):
+            self.AlleleDescription_inference_type = InferenceType(self.AlleleDescription_inference_type)
+
+        if self._is_empty(self.AlleleDescription_species):
+            self.MissingRequiredField("AlleleDescription_species")
+        if not isinstance(self.AlleleDescription_species, Species):
+            self.AlleleDescription_species = Species(self.AlleleDescription_species)
+
+        if self.AlleleDescription_allele_description_ref is not None and not isinstance(self.AlleleDescription_allele_description_ref, str):
+            self.AlleleDescription_allele_description_ref = str(self.AlleleDescription_allele_description_ref)
+
+        self._normalize_inlined_as_dict(slot_name="AlleleDescription_acknowledgements", slot_type=Acknowledgement, key_name="Acknowledgement_acknowledgement_id", keyed=False)
+
+        if self.AlleleDescription_label is not None and not isinstance(self.AlleleDescription_label, str):
+            self.AlleleDescription_label = str(self.AlleleDescription_label)
+
+        if not isinstance(self.AlleleDescription_aliases, list):
+            self.AlleleDescription_aliases = [self.AlleleDescription_aliases] if self.AlleleDescription_aliases is not None else []
+        self.AlleleDescription_aliases = [v if isinstance(v, str) else str(v) for v in self.AlleleDescription_aliases]
+
+        if self.AlleleDescription_chromosome is not None and not isinstance(self.AlleleDescription_chromosome, int):
+            self.AlleleDescription_chromosome = int(self.AlleleDescription_chromosome)
+
+        if self.AlleleDescription_species_subgroup is not None and not isinstance(self.AlleleDescription_species_subgroup, str):
+            self.AlleleDescription_species_subgroup = str(self.AlleleDescription_species_subgroup)
+
+        if self.AlleleDescription_species_subgroup_type is not None and not isinstance(self.AlleleDescription_species_subgroup_type, SpeciesSubgroupType):
+            self.AlleleDescription_species_subgroup_type = SpeciesSubgroupType(self.AlleleDescription_species_subgroup_type)
+
+        if self.AlleleDescription_status is not None and not isinstance(self.AlleleDescription_status, Status):
+            self.AlleleDescription_status = Status(self.AlleleDescription_status)
+
+        if self.AlleleDescription_subgroup_designation is not None and not isinstance(self.AlleleDescription_subgroup_designation, str):
+            self.AlleleDescription_subgroup_designation = str(self.AlleleDescription_subgroup_designation)
+
+        if self.AlleleDescription_gene_designation is not None and not isinstance(self.AlleleDescription_gene_designation, str):
+            self.AlleleDescription_gene_designation = str(self.AlleleDescription_gene_designation)
+
+        if self.AlleleDescription_allele_designation is not None and not isinstance(self.AlleleDescription_allele_designation, str):
+            self.AlleleDescription_allele_designation = str(self.AlleleDescription_allele_designation)
+
+        if self.AlleleDescription_allele_similarity_cluster_designation is not None and not isinstance(self.AlleleDescription_allele_similarity_cluster_designation, str):
+            self.AlleleDescription_allele_similarity_cluster_designation = str(self.AlleleDescription_allele_similarity_cluster_designation)
+
+        if self.AlleleDescription_allele_similarity_cluster_member_id is not None and not isinstance(self.AlleleDescription_allele_similarity_cluster_member_id, str):
+            self.AlleleDescription_allele_similarity_cluster_member_id = str(self.AlleleDescription_allele_similarity_cluster_member_id)
+
+        if self.AlleleDescription_j_codon_frame is not None and not isinstance(self.AlleleDescription_j_codon_frame, JCodonFrame):
+            self.AlleleDescription_j_codon_frame = JCodonFrame(self.AlleleDescription_j_codon_frame)
+
+        if self.AlleleDescription_gene_start is not None and not isinstance(self.AlleleDescription_gene_start, int):
+            self.AlleleDescription_gene_start = int(self.AlleleDescription_gene_start)
+
+        if self.AlleleDescription_gene_end is not None and not isinstance(self.AlleleDescription_gene_end, int):
+            self.AlleleDescription_gene_end = int(self.AlleleDescription_gene_end)
+
+        if self.AlleleDescription_utr_5_prime_start is not None and not isinstance(self.AlleleDescription_utr_5_prime_start, int):
+            self.AlleleDescription_utr_5_prime_start = int(self.AlleleDescription_utr_5_prime_start)
+
+        if self.AlleleDescription_utr_5_prime_end is not None and not isinstance(self.AlleleDescription_utr_5_prime_end, int):
+            self.AlleleDescription_utr_5_prime_end = int(self.AlleleDescription_utr_5_prime_end)
+
+        if self.AlleleDescription_leader_1_start is not None and not isinstance(self.AlleleDescription_leader_1_start, int):
+            self.AlleleDescription_leader_1_start = int(self.AlleleDescription_leader_1_start)
+
+        if self.AlleleDescription_leader_1_end is not None and not isinstance(self.AlleleDescription_leader_1_end, int):
+            self.AlleleDescription_leader_1_end = int(self.AlleleDescription_leader_1_end)
+
+        if self.AlleleDescription_leader_2_start is not None and not isinstance(self.AlleleDescription_leader_2_start, int):
+            self.AlleleDescription_leader_2_start = int(self.AlleleDescription_leader_2_start)
+
+        if self.AlleleDescription_leader_2_end is not None and not isinstance(self.AlleleDescription_leader_2_end, int):
+            self.AlleleDescription_leader_2_end = int(self.AlleleDescription_leader_2_end)
+
+        if self.AlleleDescription_v_rs_start is not None and not isinstance(self.AlleleDescription_v_rs_start, int):
+            self.AlleleDescription_v_rs_start = int(self.AlleleDescription_v_rs_start)
+
+        if self.AlleleDescription_v_rs_end is not None and not isinstance(self.AlleleDescription_v_rs_end, int):
+            self.AlleleDescription_v_rs_end = int(self.AlleleDescription_v_rs_end)
+
+        if self.AlleleDescription_d_rs_3_prime_start is not None and not isinstance(self.AlleleDescription_d_rs_3_prime_start, int):
+            self.AlleleDescription_d_rs_3_prime_start = int(self.AlleleDescription_d_rs_3_prime_start)
+
+        if self.AlleleDescription_d_rs_3_prime_end is not None and not isinstance(self.AlleleDescription_d_rs_3_prime_end, int):
+            self.AlleleDescription_d_rs_3_prime_end = int(self.AlleleDescription_d_rs_3_prime_end)
+
+        if self.AlleleDescription_d_rs_5_prime_start is not None and not isinstance(self.AlleleDescription_d_rs_5_prime_start, int):
+            self.AlleleDescription_d_rs_5_prime_start = int(self.AlleleDescription_d_rs_5_prime_start)
+
+        if self.AlleleDescription_d_rs_5_prime_end is not None and not isinstance(self.AlleleDescription_d_rs_5_prime_end, int):
+            self.AlleleDescription_d_rs_5_prime_end = int(self.AlleleDescription_d_rs_5_prime_end)
+
+        if self.AlleleDescription_j_cdr3_end is not None and not isinstance(self.AlleleDescription_j_cdr3_end, int):
+            self.AlleleDescription_j_cdr3_end = int(self.AlleleDescription_j_cdr3_end)
+
+        if self.AlleleDescription_j_rs_start is not None and not isinstance(self.AlleleDescription_j_rs_start, int):
+            self.AlleleDescription_j_rs_start = int(self.AlleleDescription_j_rs_start)
+
+        if self.AlleleDescription_j_rs_end is not None and not isinstance(self.AlleleDescription_j_rs_end, int):
+            self.AlleleDescription_j_rs_end = int(self.AlleleDescription_j_rs_end)
+
+        if self.AlleleDescription_j_donor_splice is not None and not isinstance(self.AlleleDescription_j_donor_splice, int):
+            self.AlleleDescription_j_donor_splice = int(self.AlleleDescription_j_donor_splice)
+
+        self._normalize_inlined_as_dict(slot_name="AlleleDescription_v_gene_delineations", slot_type=SequenceDelineationV, key_name="SequenceDelineationV_sequence_delineation_id", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="AlleleDescription_unrearranged_support", slot_type=UnrearrangedSequence, key_name="UnrearrangedSequence_sequence_id", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="AlleleDescription_rearranged_support", slot_type=RearrangedSequence, key_name="RearrangedSequence_sequence_id", keyed=False)
+
+        if not isinstance(self.AlleleDescription_paralogs, list):
+            self.AlleleDescription_paralogs = [self.AlleleDescription_paralogs] if self.AlleleDescription_paralogs is not None else []
+        self.AlleleDescription_paralogs = [v if isinstance(v, str) else str(v) for v in self.AlleleDescription_paralogs]
+
+        if self.AlleleDescription_curation is not None and not isinstance(self.AlleleDescription_curation, str):
+            self.AlleleDescription_curation = str(self.AlleleDescription_curation)
+
+        if not isinstance(self.AlleleDescription_curational_tags, list):
+            self.AlleleDescription_curational_tags = [self.AlleleDescription_curational_tags] if self.AlleleDescription_curational_tags is not None else []
+        self.AlleleDescription_curational_tags = [v if isinstance(v, CurationalTags) else CurationalTags(v) for v in self.AlleleDescription_curational_tags]
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4RearrangedSequence(YAMLRoot):
+class GermlineSet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4RearrangedSequence"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4RearrangedSequence"
-    class_name: ClassVar[str] = "v1p4_RearrangedSequence"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4RearrangedSequence
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GermlineSet"]
+    class_class_curie: ClassVar[str] = "ak_schema:GermlineSet"
+    class_name: ClassVar[str] = "GermlineSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GermlineSet
 
-    v1p4__rearranged_sequence__sequence_id: str = None
-    v1p4__rearranged_sequence__sequence: str = None
-    v1p4__rearranged_sequence__derivation: Union[str, "V1p4Derivation"] = None
-    v1p4__rearranged_sequence__observation_type: Union[str, "V1p4ObservationType"] = None
-    v1p4__rearranged_sequence__repository_name: str = None
-    v1p4__rearranged_sequence__deposited_version: str = None
-    v1p4__rearranged_sequence__curation: Optional[str] = None
-    v1p4__rearranged_sequence__repository_ref: Optional[str] = None
-    v1p4__rearranged_sequence__sequence_start: Optional[int] = None
-    v1p4__rearranged_sequence__sequence_end: Optional[int] = None
+    GermlineSet_germline_set_id: str = None
+    GermlineSet_author: str = None
+    GermlineSet_lab_name: str = None
+    GermlineSet_lab_address: str = None
+    GermlineSet_release_version: float = None
+    GermlineSet_release_description: str = None
+    GermlineSet_release_date: str = None
+    GermlineSet_germline_set_name: str = None
+    GermlineSet_germline_set_ref: str = None
+    GermlineSet_species: Union[str, "Species"] = None
+    GermlineSet_locus: Union[str, "Locus"] = None
+    GermlineSet_allele_descriptions: Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]] = None
+    GermlineSet_acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
+    GermlineSet_pub_ids: Optional[str] = None
+    GermlineSet_species_subgroup: Optional[str] = None
+    GermlineSet_species_subgroup_type: Optional[Union[str, "SpeciesSubgroupType"]] = None
+    GermlineSet_curation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__rearranged_sequence__sequence_id):
-            self.MissingRequiredField("v1p4__rearranged_sequence__sequence_id")
-        if not isinstance(self.v1p4__rearranged_sequence__sequence_id, str):
-            self.v1p4__rearranged_sequence__sequence_id = str(self.v1p4__rearranged_sequence__sequence_id)
+        if self._is_empty(self.GermlineSet_germline_set_id):
+            self.MissingRequiredField("GermlineSet_germline_set_id")
+        if not isinstance(self.GermlineSet_germline_set_id, str):
+            self.GermlineSet_germline_set_id = str(self.GermlineSet_germline_set_id)
 
-        if self._is_empty(self.v1p4__rearranged_sequence__sequence):
-            self.MissingRequiredField("v1p4__rearranged_sequence__sequence")
-        if not isinstance(self.v1p4__rearranged_sequence__sequence, str):
-            self.v1p4__rearranged_sequence__sequence = str(self.v1p4__rearranged_sequence__sequence)
+        if self._is_empty(self.GermlineSet_author):
+            self.MissingRequiredField("GermlineSet_author")
+        if not isinstance(self.GermlineSet_author, str):
+            self.GermlineSet_author = str(self.GermlineSet_author)
 
-        if self._is_empty(self.v1p4__rearranged_sequence__derivation):
-            self.MissingRequiredField("v1p4__rearranged_sequence__derivation")
-        if not isinstance(self.v1p4__rearranged_sequence__derivation, V1p4Derivation):
-            self.v1p4__rearranged_sequence__derivation = V1p4Derivation(self.v1p4__rearranged_sequence__derivation)
+        if self._is_empty(self.GermlineSet_lab_name):
+            self.MissingRequiredField("GermlineSet_lab_name")
+        if not isinstance(self.GermlineSet_lab_name, str):
+            self.GermlineSet_lab_name = str(self.GermlineSet_lab_name)
 
-        if self._is_empty(self.v1p4__rearranged_sequence__observation_type):
-            self.MissingRequiredField("v1p4__rearranged_sequence__observation_type")
-        if not isinstance(self.v1p4__rearranged_sequence__observation_type, V1p4ObservationType):
-            self.v1p4__rearranged_sequence__observation_type = V1p4ObservationType(self.v1p4__rearranged_sequence__observation_type)
+        if self._is_empty(self.GermlineSet_lab_address):
+            self.MissingRequiredField("GermlineSet_lab_address")
+        if not isinstance(self.GermlineSet_lab_address, str):
+            self.GermlineSet_lab_address = str(self.GermlineSet_lab_address)
 
-        if self._is_empty(self.v1p4__rearranged_sequence__repository_name):
-            self.MissingRequiredField("v1p4__rearranged_sequence__repository_name")
-        if not isinstance(self.v1p4__rearranged_sequence__repository_name, str):
-            self.v1p4__rearranged_sequence__repository_name = str(self.v1p4__rearranged_sequence__repository_name)
+        if self._is_empty(self.GermlineSet_release_version):
+            self.MissingRequiredField("GermlineSet_release_version")
+        if not isinstance(self.GermlineSet_release_version, float):
+            self.GermlineSet_release_version = float(self.GermlineSet_release_version)
 
-        if self._is_empty(self.v1p4__rearranged_sequence__deposited_version):
-            self.MissingRequiredField("v1p4__rearranged_sequence__deposited_version")
-        if not isinstance(self.v1p4__rearranged_sequence__deposited_version, str):
-            self.v1p4__rearranged_sequence__deposited_version = str(self.v1p4__rearranged_sequence__deposited_version)
+        if self._is_empty(self.GermlineSet_release_description):
+            self.MissingRequiredField("GermlineSet_release_description")
+        if not isinstance(self.GermlineSet_release_description, str):
+            self.GermlineSet_release_description = str(self.GermlineSet_release_description)
 
-        if self.v1p4__rearranged_sequence__curation is not None and not isinstance(self.v1p4__rearranged_sequence__curation, str):
-            self.v1p4__rearranged_sequence__curation = str(self.v1p4__rearranged_sequence__curation)
+        if self._is_empty(self.GermlineSet_release_date):
+            self.MissingRequiredField("GermlineSet_release_date")
+        if not isinstance(self.GermlineSet_release_date, str):
+            self.GermlineSet_release_date = str(self.GermlineSet_release_date)
 
-        if self.v1p4__rearranged_sequence__repository_ref is not None and not isinstance(self.v1p4__rearranged_sequence__repository_ref, str):
-            self.v1p4__rearranged_sequence__repository_ref = str(self.v1p4__rearranged_sequence__repository_ref)
+        if self._is_empty(self.GermlineSet_germline_set_name):
+            self.MissingRequiredField("GermlineSet_germline_set_name")
+        if not isinstance(self.GermlineSet_germline_set_name, str):
+            self.GermlineSet_germline_set_name = str(self.GermlineSet_germline_set_name)
 
-        if self.v1p4__rearranged_sequence__sequence_start is not None and not isinstance(self.v1p4__rearranged_sequence__sequence_start, int):
-            self.v1p4__rearranged_sequence__sequence_start = int(self.v1p4__rearranged_sequence__sequence_start)
+        if self._is_empty(self.GermlineSet_germline_set_ref):
+            self.MissingRequiredField("GermlineSet_germline_set_ref")
+        if not isinstance(self.GermlineSet_germline_set_ref, str):
+            self.GermlineSet_germline_set_ref = str(self.GermlineSet_germline_set_ref)
 
-        if self.v1p4__rearranged_sequence__sequence_end is not None and not isinstance(self.v1p4__rearranged_sequence__sequence_end, int):
-            self.v1p4__rearranged_sequence__sequence_end = int(self.v1p4__rearranged_sequence__sequence_end)
+        if self._is_empty(self.GermlineSet_species):
+            self.MissingRequiredField("GermlineSet_species")
+        if not isinstance(self.GermlineSet_species, Species):
+            self.GermlineSet_species = Species(self.GermlineSet_species)
+
+        if self._is_empty(self.GermlineSet_locus):
+            self.MissingRequiredField("GermlineSet_locus")
+        if not isinstance(self.GermlineSet_locus, Locus):
+            self.GermlineSet_locus = Locus(self.GermlineSet_locus)
+
+        if self._is_empty(self.GermlineSet_allele_descriptions):
+            self.MissingRequiredField("GermlineSet_allele_descriptions")
+        self._normalize_inlined_as_dict(slot_name="GermlineSet_allele_descriptions", slot_type=AlleleDescription, key_name="AlleleDescription_allele_description_id", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="GermlineSet_acknowledgements", slot_type=Acknowledgement, key_name="Acknowledgement_acknowledgement_id", keyed=False)
+
+        if self.GermlineSet_pub_ids is not None and not isinstance(self.GermlineSet_pub_ids, str):
+            self.GermlineSet_pub_ids = str(self.GermlineSet_pub_ids)
+
+        if self.GermlineSet_species_subgroup is not None and not isinstance(self.GermlineSet_species_subgroup, str):
+            self.GermlineSet_species_subgroup = str(self.GermlineSet_species_subgroup)
+
+        if self.GermlineSet_species_subgroup_type is not None and not isinstance(self.GermlineSet_species_subgroup_type, SpeciesSubgroupType):
+            self.GermlineSet_species_subgroup_type = SpeciesSubgroupType(self.GermlineSet_species_subgroup_type)
+
+        if self.GermlineSet_curation is not None and not isinstance(self.GermlineSet_curation, str):
+            self.GermlineSet_curation = str(self.GermlineSet_curation)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4UnrearrangedSequence(YAMLRoot):
+class GenotypeSet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4UnrearrangedSequence"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4UnrearrangedSequence"
-    class_name: ClassVar[str] = "v1p4_UnrearrangedSequence"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4UnrearrangedSequence
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GenotypeSet"]
+    class_class_curie: ClassVar[str] = "ak_schema:GenotypeSet"
+    class_name: ClassVar[str] = "GenotypeSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GenotypeSet
 
-    v1p4__unrearranged_sequence__sequence_id: str = None
-    v1p4__unrearranged_sequence__sequence: str = None
-    v1p4__unrearranged_sequence__repository_name: str = None
-    v1p4__unrearranged_sequence__gff_seqid: str = None
-    v1p4__unrearranged_sequence__gff_start: int = None
-    v1p4__unrearranged_sequence__gff_end: int = None
-    v1p4__unrearranged_sequence__strand: Union[str, "V1p4Strand"] = None
-    v1p4__unrearranged_sequence__curation: Optional[str] = None
-    v1p4__unrearranged_sequence__repository_ref: Optional[str] = None
-    v1p4__unrearranged_sequence__patch_no: Optional[str] = None
+    GenotypeSet_receptor_genotype_set_id: str = None
+    GenotypeSet_genotype_class_list: Optional[Union[Union[dict, "Genotype"], List[Union[dict, "Genotype"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__unrearranged_sequence__sequence_id):
-            self.MissingRequiredField("v1p4__unrearranged_sequence__sequence_id")
-        if not isinstance(self.v1p4__unrearranged_sequence__sequence_id, str):
-            self.v1p4__unrearranged_sequence__sequence_id = str(self.v1p4__unrearranged_sequence__sequence_id)
+        if self._is_empty(self.GenotypeSet_receptor_genotype_set_id):
+            self.MissingRequiredField("GenotypeSet_receptor_genotype_set_id")
+        if not isinstance(self.GenotypeSet_receptor_genotype_set_id, str):
+            self.GenotypeSet_receptor_genotype_set_id = str(self.GenotypeSet_receptor_genotype_set_id)
 
-        if self._is_empty(self.v1p4__unrearranged_sequence__sequence):
-            self.MissingRequiredField("v1p4__unrearranged_sequence__sequence")
-        if not isinstance(self.v1p4__unrearranged_sequence__sequence, str):
-            self.v1p4__unrearranged_sequence__sequence = str(self.v1p4__unrearranged_sequence__sequence)
-
-        if self._is_empty(self.v1p4__unrearranged_sequence__repository_name):
-            self.MissingRequiredField("v1p4__unrearranged_sequence__repository_name")
-        if not isinstance(self.v1p4__unrearranged_sequence__repository_name, str):
-            self.v1p4__unrearranged_sequence__repository_name = str(self.v1p4__unrearranged_sequence__repository_name)
-
-        if self._is_empty(self.v1p4__unrearranged_sequence__gff_seqid):
-            self.MissingRequiredField("v1p4__unrearranged_sequence__gff_seqid")
-        if not isinstance(self.v1p4__unrearranged_sequence__gff_seqid, str):
-            self.v1p4__unrearranged_sequence__gff_seqid = str(self.v1p4__unrearranged_sequence__gff_seqid)
-
-        if self._is_empty(self.v1p4__unrearranged_sequence__gff_start):
-            self.MissingRequiredField("v1p4__unrearranged_sequence__gff_start")
-        if not isinstance(self.v1p4__unrearranged_sequence__gff_start, int):
-            self.v1p4__unrearranged_sequence__gff_start = int(self.v1p4__unrearranged_sequence__gff_start)
-
-        if self._is_empty(self.v1p4__unrearranged_sequence__gff_end):
-            self.MissingRequiredField("v1p4__unrearranged_sequence__gff_end")
-        if not isinstance(self.v1p4__unrearranged_sequence__gff_end, int):
-            self.v1p4__unrearranged_sequence__gff_end = int(self.v1p4__unrearranged_sequence__gff_end)
-
-        if self._is_empty(self.v1p4__unrearranged_sequence__strand):
-            self.MissingRequiredField("v1p4__unrearranged_sequence__strand")
-        if not isinstance(self.v1p4__unrearranged_sequence__strand, V1p4Strand):
-            self.v1p4__unrearranged_sequence__strand = V1p4Strand(self.v1p4__unrearranged_sequence__strand)
-
-        if self.v1p4__unrearranged_sequence__curation is not None and not isinstance(self.v1p4__unrearranged_sequence__curation, str):
-            self.v1p4__unrearranged_sequence__curation = str(self.v1p4__unrearranged_sequence__curation)
-
-        if self.v1p4__unrearranged_sequence__repository_ref is not None and not isinstance(self.v1p4__unrearranged_sequence__repository_ref, str):
-            self.v1p4__unrearranged_sequence__repository_ref = str(self.v1p4__unrearranged_sequence__repository_ref)
-
-        if self.v1p4__unrearranged_sequence__patch_no is not None and not isinstance(self.v1p4__unrearranged_sequence__patch_no, str):
-            self.v1p4__unrearranged_sequence__patch_no = str(self.v1p4__unrearranged_sequence__patch_no)
+        self._normalize_inlined_as_dict(slot_name="GenotypeSet_genotype_class_list", slot_type=Genotype, key_name="Genotype_receptor_genotype_id", keyed=False)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4SequenceDelineationV(YAMLRoot):
+class Genotype(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4SequenceDelineationV"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4SequenceDelineationV"
-    class_name: ClassVar[str] = "v1p4_SequenceDelineationV"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SequenceDelineationV
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Genotype"]
+    class_class_curie: ClassVar[str] = "ak_schema:Genotype"
+    class_name: ClassVar[str] = "Genotype"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Genotype
 
-    v1p4__sequence_delineation_v__sequence_delineation_id: str = None
-    v1p4__sequence_delineation_v__delineation_scheme: str = None
-    v1p4__sequence_delineation_v__fwr1_start: int = None
-    v1p4__sequence_delineation_v__fwr1_end: int = None
-    v1p4__sequence_delineation_v__cdr1_start: int = None
-    v1p4__sequence_delineation_v__cdr1_end: int = None
-    v1p4__sequence_delineation_v__fwr2_start: int = None
-    v1p4__sequence_delineation_v__fwr2_end: int = None
-    v1p4__sequence_delineation_v__cdr2_start: int = None
-    v1p4__sequence_delineation_v__cdr2_end: int = None
-    v1p4__sequence_delineation_v__fwr3_start: int = None
-    v1p4__sequence_delineation_v__fwr3_end: int = None
-    v1p4__sequence_delineation_v__cdr3_start: int = None
-    v1p4__sequence_delineation_v__unaligned_sequence: Optional[str] = None
-    v1p4__sequence_delineation_v__aligned_sequence: Optional[str] = None
-    v1p4__sequence_delineation_v__alignment_labels: Optional[Union[str, List[str]]] = empty_list()
+    Genotype_receptor_genotype_id: str = None
+    Genotype_locus: Union[str, "Locus"] = None
+    Genotype_documented_alleles: Optional[Union[Union[dict, "DocumentedAllele"], List[Union[dict, "DocumentedAllele"]]]] = empty_list()
+    Genotype_undocumented_alleles: Optional[Union[Union[dict, "UndocumentedAllele"], List[Union[dict, "UndocumentedAllele"]]]] = empty_list()
+    Genotype_deleted_genes: Optional[Union[Union[dict, "DeletedGene"], List[Union[dict, "DeletedGene"]]]] = empty_list()
+    Genotype_inference_process: Optional[Union[str, "InferenceProcess"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__sequence_delineation_v__sequence_delineation_id):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__sequence_delineation_id")
-        if not isinstance(self.v1p4__sequence_delineation_v__sequence_delineation_id, str):
-            self.v1p4__sequence_delineation_v__sequence_delineation_id = str(self.v1p4__sequence_delineation_v__sequence_delineation_id)
+        if self._is_empty(self.Genotype_receptor_genotype_id):
+            self.MissingRequiredField("Genotype_receptor_genotype_id")
+        if not isinstance(self.Genotype_receptor_genotype_id, str):
+            self.Genotype_receptor_genotype_id = str(self.Genotype_receptor_genotype_id)
 
-        if self._is_empty(self.v1p4__sequence_delineation_v__delineation_scheme):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__delineation_scheme")
-        if not isinstance(self.v1p4__sequence_delineation_v__delineation_scheme, str):
-            self.v1p4__sequence_delineation_v__delineation_scheme = str(self.v1p4__sequence_delineation_v__delineation_scheme)
+        if self._is_empty(self.Genotype_locus):
+            self.MissingRequiredField("Genotype_locus")
+        if not isinstance(self.Genotype_locus, Locus):
+            self.Genotype_locus = Locus(self.Genotype_locus)
 
-        if self._is_empty(self.v1p4__sequence_delineation_v__fwr1_start):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__fwr1_start")
-        if not isinstance(self.v1p4__sequence_delineation_v__fwr1_start, int):
-            self.v1p4__sequence_delineation_v__fwr1_start = int(self.v1p4__sequence_delineation_v__fwr1_start)
+        self._normalize_inlined_as_dict(slot_name="Genotype_documented_alleles", slot_type=DocumentedAllele, key_name="DocumentedAllele_label", keyed=False)
 
-        if self._is_empty(self.v1p4__sequence_delineation_v__fwr1_end):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__fwr1_end")
-        if not isinstance(self.v1p4__sequence_delineation_v__fwr1_end, int):
-            self.v1p4__sequence_delineation_v__fwr1_end = int(self.v1p4__sequence_delineation_v__fwr1_end)
+        self._normalize_inlined_as_dict(slot_name="Genotype_undocumented_alleles", slot_type=UndocumentedAllele, key_name="UndocumentedAllele_allele_name", keyed=False)
 
-        if self._is_empty(self.v1p4__sequence_delineation_v__cdr1_start):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__cdr1_start")
-        if not isinstance(self.v1p4__sequence_delineation_v__cdr1_start, int):
-            self.v1p4__sequence_delineation_v__cdr1_start = int(self.v1p4__sequence_delineation_v__cdr1_start)
+        self._normalize_inlined_as_dict(slot_name="Genotype_deleted_genes", slot_type=DeletedGene, key_name="DeletedGene_label", keyed=False)
 
-        if self._is_empty(self.v1p4__sequence_delineation_v__cdr1_end):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__cdr1_end")
-        if not isinstance(self.v1p4__sequence_delineation_v__cdr1_end, int):
-            self.v1p4__sequence_delineation_v__cdr1_end = int(self.v1p4__sequence_delineation_v__cdr1_end)
-
-        if self._is_empty(self.v1p4__sequence_delineation_v__fwr2_start):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__fwr2_start")
-        if not isinstance(self.v1p4__sequence_delineation_v__fwr2_start, int):
-            self.v1p4__sequence_delineation_v__fwr2_start = int(self.v1p4__sequence_delineation_v__fwr2_start)
-
-        if self._is_empty(self.v1p4__sequence_delineation_v__fwr2_end):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__fwr2_end")
-        if not isinstance(self.v1p4__sequence_delineation_v__fwr2_end, int):
-            self.v1p4__sequence_delineation_v__fwr2_end = int(self.v1p4__sequence_delineation_v__fwr2_end)
-
-        if self._is_empty(self.v1p4__sequence_delineation_v__cdr2_start):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__cdr2_start")
-        if not isinstance(self.v1p4__sequence_delineation_v__cdr2_start, int):
-            self.v1p4__sequence_delineation_v__cdr2_start = int(self.v1p4__sequence_delineation_v__cdr2_start)
-
-        if self._is_empty(self.v1p4__sequence_delineation_v__cdr2_end):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__cdr2_end")
-        if not isinstance(self.v1p4__sequence_delineation_v__cdr2_end, int):
-            self.v1p4__sequence_delineation_v__cdr2_end = int(self.v1p4__sequence_delineation_v__cdr2_end)
-
-        if self._is_empty(self.v1p4__sequence_delineation_v__fwr3_start):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__fwr3_start")
-        if not isinstance(self.v1p4__sequence_delineation_v__fwr3_start, int):
-            self.v1p4__sequence_delineation_v__fwr3_start = int(self.v1p4__sequence_delineation_v__fwr3_start)
-
-        if self._is_empty(self.v1p4__sequence_delineation_v__fwr3_end):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__fwr3_end")
-        if not isinstance(self.v1p4__sequence_delineation_v__fwr3_end, int):
-            self.v1p4__sequence_delineation_v__fwr3_end = int(self.v1p4__sequence_delineation_v__fwr3_end)
-
-        if self._is_empty(self.v1p4__sequence_delineation_v__cdr3_start):
-            self.MissingRequiredField("v1p4__sequence_delineation_v__cdr3_start")
-        if not isinstance(self.v1p4__sequence_delineation_v__cdr3_start, int):
-            self.v1p4__sequence_delineation_v__cdr3_start = int(self.v1p4__sequence_delineation_v__cdr3_start)
-
-        if self.v1p4__sequence_delineation_v__unaligned_sequence is not None and not isinstance(self.v1p4__sequence_delineation_v__unaligned_sequence, str):
-            self.v1p4__sequence_delineation_v__unaligned_sequence = str(self.v1p4__sequence_delineation_v__unaligned_sequence)
-
-        if self.v1p4__sequence_delineation_v__aligned_sequence is not None and not isinstance(self.v1p4__sequence_delineation_v__aligned_sequence, str):
-            self.v1p4__sequence_delineation_v__aligned_sequence = str(self.v1p4__sequence_delineation_v__aligned_sequence)
-
-        if not isinstance(self.v1p4__sequence_delineation_v__alignment_labels, list):
-            self.v1p4__sequence_delineation_v__alignment_labels = [self.v1p4__sequence_delineation_v__alignment_labels] if self.v1p4__sequence_delineation_v__alignment_labels is not None else []
-        self.v1p4__sequence_delineation_v__alignment_labels = [v if isinstance(v, str) else str(v) for v in self.v1p4__sequence_delineation_v__alignment_labels]
+        if self.Genotype_inference_process is not None and not isinstance(self.Genotype_inference_process, InferenceProcess):
+            self.Genotype_inference_process = InferenceProcess(self.Genotype_inference_process)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4AlleleDescription(YAMLRoot):
+class DocumentedAllele(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4AlleleDescription"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4AlleleDescription"
-    class_name: ClassVar[str] = "v1p4_AlleleDescription"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4AlleleDescription
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DocumentedAllele"]
+    class_class_curie: ClassVar[str] = "ak_schema:DocumentedAllele"
+    class_name: ClassVar[str] = "DocumentedAllele"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DocumentedAllele
 
-    v1p4__allele_description__allele_description_id: str = None
-    v1p4__allele_description__acknowledgements: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    v1p4__allele_description__release_version: int = None
-    v1p4__allele_description__release_date: str = None
-    v1p4__allele_description__release_description: str = None
-    v1p4__allele_description__sequence: str = None
-    v1p4__allele_description__coding_sequence: str = None
-    v1p4__allele_description__locus: Union[str, "V1p4Locus"] = None
-    v1p4__allele_description__sequence_type: Union[str, "V1p4SequenceType"] = None
-    v1p4__allele_description__functional: Union[bool, Bool] = None
-    v1p4__allele_description__inference_type: Union[str, "V1p4InferenceType"] = None
-    v1p4__allele_description__species: Union[str, "V1p4Species"] = None
-    v1p4__allele_description__allele_description_ref: Optional[str] = None
-    v1p4__allele_description__label: Optional[str] = None
-    v1p4__allele_description__aliases: Optional[Union[str, List[str]]] = empty_list()
-    v1p4__allele_description__chromosome: Optional[int] = None
-    v1p4__allele_description__species_subgroup: Optional[str] = None
-    v1p4__allele_description__species_subgroup_type: Optional[Union[str, "V1p4SpeciesSubgroupType"]] = None
-    v1p4__allele_description__status: Optional[Union[str, "V1p4Status"]] = None
-    v1p4__allele_description__subgroup_designation: Optional[str] = None
-    v1p4__allele_description__gene_designation: Optional[str] = None
-    v1p4__allele_description__allele_designation: Optional[str] = None
-    v1p4__allele_description__allele_similarity_cluster_designation: Optional[str] = None
-    v1p4__allele_description__allele_similarity_cluster_member_id: Optional[str] = None
-    v1p4__allele_description__j_codon_frame: Optional[Union[str, "V1p4JCodonFrame"]] = None
-    v1p4__allele_description__gene_start: Optional[int] = None
-    v1p4__allele_description__gene_end: Optional[int] = None
-    v1p4__allele_description__utr_5_prime_start: Optional[int] = None
-    v1p4__allele_description__utr_5_prime_end: Optional[int] = None
-    v1p4__allele_description__leader_1_start: Optional[int] = None
-    v1p4__allele_description__leader_1_end: Optional[int] = None
-    v1p4__allele_description__leader_2_start: Optional[int] = None
-    v1p4__allele_description__leader_2_end: Optional[int] = None
-    v1p4__allele_description__v_rs_start: Optional[int] = None
-    v1p4__allele_description__v_rs_end: Optional[int] = None
-    v1p4__allele_description__d_rs_3_prime_start: Optional[int] = None
-    v1p4__allele_description__d_rs_3_prime_end: Optional[int] = None
-    v1p4__allele_description__d_rs_5_prime_start: Optional[int] = None
-    v1p4__allele_description__d_rs_5_prime_end: Optional[int] = None
-    v1p4__allele_description__j_cdr3_end: Optional[int] = None
-    v1p4__allele_description__j_rs_start: Optional[int] = None
-    v1p4__allele_description__j_rs_end: Optional[int] = None
-    v1p4__allele_description__j_donor_splice: Optional[int] = None
-    v1p4__allele_description__v_gene_delineations: Optional[Union[Union[dict, V1p4SequenceDelineationV], List[Union[dict, V1p4SequenceDelineationV]]]] = empty_list()
-    v1p4__allele_description__unrearranged_support: Optional[Union[Union[dict, V1p4UnrearrangedSequence], List[Union[dict, V1p4UnrearrangedSequence]]]] = empty_list()
-    v1p4__allele_description__rearranged_support: Optional[Union[Union[dict, V1p4RearrangedSequence], List[Union[dict, V1p4RearrangedSequence]]]] = empty_list()
-    v1p4__allele_description__paralogs: Optional[Union[str, List[str]]] = empty_list()
-    v1p4__allele_description__curation: Optional[str] = None
-    v1p4__allele_description__curational_tags: Optional[Union[Union[str, "V1p4CurationalTags"], List[Union[str, "V1p4CurationalTags"]]]] = empty_list()
+    DocumentedAllele_label: str = None
+    DocumentedAllele_germline_set_ref: str = None
+    DocumentedAllele_phasing: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__allele_description__allele_description_id):
-            self.MissingRequiredField("v1p4__allele_description__allele_description_id")
-        if not isinstance(self.v1p4__allele_description__allele_description_id, str):
-            self.v1p4__allele_description__allele_description_id = str(self.v1p4__allele_description__allele_description_id)
+        if self._is_empty(self.DocumentedAllele_label):
+            self.MissingRequiredField("DocumentedAllele_label")
+        if not isinstance(self.DocumentedAllele_label, str):
+            self.DocumentedAllele_label = str(self.DocumentedAllele_label)
 
-        if self._is_empty(self.v1p4__allele_description__acknowledgements):
-            self.MissingRequiredField("v1p4__allele_description__acknowledgements")
-        self._normalize_inlined_as_dict(slot_name="v1p4__allele_description__acknowledgements", slot_type=V1p4Contributor, key_name="v1p4__contributor__contributor_id", keyed=False)
+        if self._is_empty(self.DocumentedAllele_germline_set_ref):
+            self.MissingRequiredField("DocumentedAllele_germline_set_ref")
+        if not isinstance(self.DocumentedAllele_germline_set_ref, str):
+            self.DocumentedAllele_germline_set_ref = str(self.DocumentedAllele_germline_set_ref)
 
-        if self._is_empty(self.v1p4__allele_description__release_version):
-            self.MissingRequiredField("v1p4__allele_description__release_version")
-        if not isinstance(self.v1p4__allele_description__release_version, int):
-            self.v1p4__allele_description__release_version = int(self.v1p4__allele_description__release_version)
-
-        if self._is_empty(self.v1p4__allele_description__release_date):
-            self.MissingRequiredField("v1p4__allele_description__release_date")
-        if not isinstance(self.v1p4__allele_description__release_date, str):
-            self.v1p4__allele_description__release_date = str(self.v1p4__allele_description__release_date)
-
-        if self._is_empty(self.v1p4__allele_description__release_description):
-            self.MissingRequiredField("v1p4__allele_description__release_description")
-        if not isinstance(self.v1p4__allele_description__release_description, str):
-            self.v1p4__allele_description__release_description = str(self.v1p4__allele_description__release_description)
-
-        if self._is_empty(self.v1p4__allele_description__sequence):
-            self.MissingRequiredField("v1p4__allele_description__sequence")
-        if not isinstance(self.v1p4__allele_description__sequence, str):
-            self.v1p4__allele_description__sequence = str(self.v1p4__allele_description__sequence)
-
-        if self._is_empty(self.v1p4__allele_description__coding_sequence):
-            self.MissingRequiredField("v1p4__allele_description__coding_sequence")
-        if not isinstance(self.v1p4__allele_description__coding_sequence, str):
-            self.v1p4__allele_description__coding_sequence = str(self.v1p4__allele_description__coding_sequence)
-
-        if self._is_empty(self.v1p4__allele_description__locus):
-            self.MissingRequiredField("v1p4__allele_description__locus")
-        if not isinstance(self.v1p4__allele_description__locus, V1p4Locus):
-            self.v1p4__allele_description__locus = V1p4Locus(self.v1p4__allele_description__locus)
-
-        if self._is_empty(self.v1p4__allele_description__sequence_type):
-            self.MissingRequiredField("v1p4__allele_description__sequence_type")
-        if not isinstance(self.v1p4__allele_description__sequence_type, V1p4SequenceType):
-            self.v1p4__allele_description__sequence_type = V1p4SequenceType(self.v1p4__allele_description__sequence_type)
-
-        if self._is_empty(self.v1p4__allele_description__functional):
-            self.MissingRequiredField("v1p4__allele_description__functional")
-        if not isinstance(self.v1p4__allele_description__functional, Bool):
-            self.v1p4__allele_description__functional = Bool(self.v1p4__allele_description__functional)
-
-        if self._is_empty(self.v1p4__allele_description__inference_type):
-            self.MissingRequiredField("v1p4__allele_description__inference_type")
-        if not isinstance(self.v1p4__allele_description__inference_type, V1p4InferenceType):
-            self.v1p4__allele_description__inference_type = V1p4InferenceType(self.v1p4__allele_description__inference_type)
-
-        if self.v1p4__allele_description__allele_description_ref is not None and not isinstance(self.v1p4__allele_description__allele_description_ref, str):
-            self.v1p4__allele_description__allele_description_ref = str(self.v1p4__allele_description__allele_description_ref)
-
-        if self.v1p4__allele_description__label is not None and not isinstance(self.v1p4__allele_description__label, str):
-            self.v1p4__allele_description__label = str(self.v1p4__allele_description__label)
-
-        if not isinstance(self.v1p4__allele_description__aliases, list):
-            self.v1p4__allele_description__aliases = [self.v1p4__allele_description__aliases] if self.v1p4__allele_description__aliases is not None else []
-        self.v1p4__allele_description__aliases = [v if isinstance(v, str) else str(v) for v in self.v1p4__allele_description__aliases]
-
-        if self.v1p4__allele_description__chromosome is not None and not isinstance(self.v1p4__allele_description__chromosome, int):
-            self.v1p4__allele_description__chromosome = int(self.v1p4__allele_description__chromosome)
-
-        if self.v1p4__allele_description__species_subgroup is not None and not isinstance(self.v1p4__allele_description__species_subgroup, str):
-            self.v1p4__allele_description__species_subgroup = str(self.v1p4__allele_description__species_subgroup)
-
-        if self.v1p4__allele_description__species_subgroup_type is not None and not isinstance(self.v1p4__allele_description__species_subgroup_type, V1p4SpeciesSubgroupType):
-            self.v1p4__allele_description__species_subgroup_type = V1p4SpeciesSubgroupType(self.v1p4__allele_description__species_subgroup_type)
-
-        if self.v1p4__allele_description__status is not None and not isinstance(self.v1p4__allele_description__status, V1p4Status):
-            self.v1p4__allele_description__status = V1p4Status(self.v1p4__allele_description__status)
-
-        if self.v1p4__allele_description__subgroup_designation is not None and not isinstance(self.v1p4__allele_description__subgroup_designation, str):
-            self.v1p4__allele_description__subgroup_designation = str(self.v1p4__allele_description__subgroup_designation)
-
-        if self.v1p4__allele_description__gene_designation is not None and not isinstance(self.v1p4__allele_description__gene_designation, str):
-            self.v1p4__allele_description__gene_designation = str(self.v1p4__allele_description__gene_designation)
-
-        if self.v1p4__allele_description__allele_designation is not None and not isinstance(self.v1p4__allele_description__allele_designation, str):
-            self.v1p4__allele_description__allele_designation = str(self.v1p4__allele_description__allele_designation)
-
-        if self.v1p4__allele_description__allele_similarity_cluster_designation is not None and not isinstance(self.v1p4__allele_description__allele_similarity_cluster_designation, str):
-            self.v1p4__allele_description__allele_similarity_cluster_designation = str(self.v1p4__allele_description__allele_similarity_cluster_designation)
-
-        if self.v1p4__allele_description__allele_similarity_cluster_member_id is not None and not isinstance(self.v1p4__allele_description__allele_similarity_cluster_member_id, str):
-            self.v1p4__allele_description__allele_similarity_cluster_member_id = str(self.v1p4__allele_description__allele_similarity_cluster_member_id)
-
-        if self.v1p4__allele_description__j_codon_frame is not None and not isinstance(self.v1p4__allele_description__j_codon_frame, V1p4JCodonFrame):
-            self.v1p4__allele_description__j_codon_frame = V1p4JCodonFrame(self.v1p4__allele_description__j_codon_frame)
-
-        if self.v1p4__allele_description__gene_start is not None and not isinstance(self.v1p4__allele_description__gene_start, int):
-            self.v1p4__allele_description__gene_start = int(self.v1p4__allele_description__gene_start)
-
-        if self.v1p4__allele_description__gene_end is not None and not isinstance(self.v1p4__allele_description__gene_end, int):
-            self.v1p4__allele_description__gene_end = int(self.v1p4__allele_description__gene_end)
-
-        if self.v1p4__allele_description__utr_5_prime_start is not None and not isinstance(self.v1p4__allele_description__utr_5_prime_start, int):
-            self.v1p4__allele_description__utr_5_prime_start = int(self.v1p4__allele_description__utr_5_prime_start)
-
-        if self.v1p4__allele_description__utr_5_prime_end is not None and not isinstance(self.v1p4__allele_description__utr_5_prime_end, int):
-            self.v1p4__allele_description__utr_5_prime_end = int(self.v1p4__allele_description__utr_5_prime_end)
-
-        if self.v1p4__allele_description__leader_1_start is not None and not isinstance(self.v1p4__allele_description__leader_1_start, int):
-            self.v1p4__allele_description__leader_1_start = int(self.v1p4__allele_description__leader_1_start)
-
-        if self.v1p4__allele_description__leader_1_end is not None and not isinstance(self.v1p4__allele_description__leader_1_end, int):
-            self.v1p4__allele_description__leader_1_end = int(self.v1p4__allele_description__leader_1_end)
-
-        if self.v1p4__allele_description__leader_2_start is not None and not isinstance(self.v1p4__allele_description__leader_2_start, int):
-            self.v1p4__allele_description__leader_2_start = int(self.v1p4__allele_description__leader_2_start)
-
-        if self.v1p4__allele_description__leader_2_end is not None and not isinstance(self.v1p4__allele_description__leader_2_end, int):
-            self.v1p4__allele_description__leader_2_end = int(self.v1p4__allele_description__leader_2_end)
-
-        if self.v1p4__allele_description__v_rs_start is not None and not isinstance(self.v1p4__allele_description__v_rs_start, int):
-            self.v1p4__allele_description__v_rs_start = int(self.v1p4__allele_description__v_rs_start)
-
-        if self.v1p4__allele_description__v_rs_end is not None and not isinstance(self.v1p4__allele_description__v_rs_end, int):
-            self.v1p4__allele_description__v_rs_end = int(self.v1p4__allele_description__v_rs_end)
-
-        if self.v1p4__allele_description__d_rs_3_prime_start is not None and not isinstance(self.v1p4__allele_description__d_rs_3_prime_start, int):
-            self.v1p4__allele_description__d_rs_3_prime_start = int(self.v1p4__allele_description__d_rs_3_prime_start)
-
-        if self.v1p4__allele_description__d_rs_3_prime_end is not None and not isinstance(self.v1p4__allele_description__d_rs_3_prime_end, int):
-            self.v1p4__allele_description__d_rs_3_prime_end = int(self.v1p4__allele_description__d_rs_3_prime_end)
-
-        if self.v1p4__allele_description__d_rs_5_prime_start is not None and not isinstance(self.v1p4__allele_description__d_rs_5_prime_start, int):
-            self.v1p4__allele_description__d_rs_5_prime_start = int(self.v1p4__allele_description__d_rs_5_prime_start)
-
-        if self.v1p4__allele_description__d_rs_5_prime_end is not None and not isinstance(self.v1p4__allele_description__d_rs_5_prime_end, int):
-            self.v1p4__allele_description__d_rs_5_prime_end = int(self.v1p4__allele_description__d_rs_5_prime_end)
-
-        if self.v1p4__allele_description__j_cdr3_end is not None and not isinstance(self.v1p4__allele_description__j_cdr3_end, int):
-            self.v1p4__allele_description__j_cdr3_end = int(self.v1p4__allele_description__j_cdr3_end)
-
-        if self.v1p4__allele_description__j_rs_start is not None and not isinstance(self.v1p4__allele_description__j_rs_start, int):
-            self.v1p4__allele_description__j_rs_start = int(self.v1p4__allele_description__j_rs_start)
-
-        if self.v1p4__allele_description__j_rs_end is not None and not isinstance(self.v1p4__allele_description__j_rs_end, int):
-            self.v1p4__allele_description__j_rs_end = int(self.v1p4__allele_description__j_rs_end)
-
-        if self.v1p4__allele_description__j_donor_splice is not None and not isinstance(self.v1p4__allele_description__j_donor_splice, int):
-            self.v1p4__allele_description__j_donor_splice = int(self.v1p4__allele_description__j_donor_splice)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__allele_description__v_gene_delineations", slot_type=V1p4SequenceDelineationV, key_name="v1p4__sequence_delineation_v__sequence_delineation_id", keyed=False)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__allele_description__unrearranged_support", slot_type=V1p4UnrearrangedSequence, key_name="v1p4__unrearranged_sequence__sequence_id", keyed=False)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__allele_description__rearranged_support", slot_type=V1p4RearrangedSequence, key_name="v1p4__rearranged_sequence__sequence_id", keyed=False)
-
-        if not isinstance(self.v1p4__allele_description__paralogs, list):
-            self.v1p4__allele_description__paralogs = [self.v1p4__allele_description__paralogs] if self.v1p4__allele_description__paralogs is not None else []
-        self.v1p4__allele_description__paralogs = [v if isinstance(v, str) else str(v) for v in self.v1p4__allele_description__paralogs]
-
-        if self.v1p4__allele_description__curation is not None and not isinstance(self.v1p4__allele_description__curation, str):
-            self.v1p4__allele_description__curation = str(self.v1p4__allele_description__curation)
-
-        if not isinstance(self.v1p4__allele_description__curational_tags, list):
-            self.v1p4__allele_description__curational_tags = [self.v1p4__allele_description__curational_tags] if self.v1p4__allele_description__curational_tags is not None else []
-        self.v1p4__allele_description__curational_tags = [v if isinstance(v, V1p4CurationalTags) else V1p4CurationalTags(v) for v in self.v1p4__allele_description__curational_tags]
+        if self.DocumentedAllele_phasing is not None and not isinstance(self.DocumentedAllele_phasing, int):
+            self.DocumentedAllele_phasing = int(self.DocumentedAllele_phasing)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4GermlineSet(YAMLRoot):
+class UndocumentedAllele(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4GermlineSet"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4GermlineSet"
-    class_name: ClassVar[str] = "v1p4_GermlineSet"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4GermlineSet
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UndocumentedAllele"]
+    class_class_curie: ClassVar[str] = "ak_schema:UndocumentedAllele"
+    class_name: ClassVar[str] = "UndocumentedAllele"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UndocumentedAllele
 
-    v1p4__germline_set__germline_set_id: str = None
-    v1p4__germline_set__acknowledgements: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    v1p4__germline_set__release_version: float = None
-    v1p4__germline_set__release_description: str = None
-    v1p4__germline_set__release_date: str = None
-    v1p4__germline_set__germline_set_name: str = None
-    v1p4__germline_set__germline_set_ref: str = None
-    v1p4__germline_set__species: Union[str, "V1p4Species"] = None
-    v1p4__germline_set__locus: Union[str, "V1p4Locus"] = None
-    v1p4__germline_set__allele_descriptions: Union[Union[dict, V1p4AlleleDescription], List[Union[dict, V1p4AlleleDescription]]] = None
-    v1p4__germline_set__pub_ids: Optional[Union[str, List[str]]] = empty_list()
-    v1p4__germline_set__species_subgroup: Optional[str] = None
-    v1p4__germline_set__species_subgroup_type: Optional[Union[str, "V1p4SpeciesSubgroupType"]] = None
-    v1p4__germline_set__curation: Optional[str] = None
+    UndocumentedAllele_allele_name: str = None
+    UndocumentedAllele_sequence: str = None
+    UndocumentedAllele_phasing: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__germline_set__germline_set_id):
-            self.MissingRequiredField("v1p4__germline_set__germline_set_id")
-        if not isinstance(self.v1p4__germline_set__germline_set_id, str):
-            self.v1p4__germline_set__germline_set_id = str(self.v1p4__germline_set__germline_set_id)
+        if self._is_empty(self.UndocumentedAllele_allele_name):
+            self.MissingRequiredField("UndocumentedAllele_allele_name")
+        if not isinstance(self.UndocumentedAllele_allele_name, str):
+            self.UndocumentedAllele_allele_name = str(self.UndocumentedAllele_allele_name)
 
-        if self._is_empty(self.v1p4__germline_set__acknowledgements):
-            self.MissingRequiredField("v1p4__germline_set__acknowledgements")
-        self._normalize_inlined_as_dict(slot_name="v1p4__germline_set__acknowledgements", slot_type=V1p4Contributor, key_name="v1p4__contributor__contributor_id", keyed=False)
+        if self._is_empty(self.UndocumentedAllele_sequence):
+            self.MissingRequiredField("UndocumentedAllele_sequence")
+        if not isinstance(self.UndocumentedAllele_sequence, str):
+            self.UndocumentedAllele_sequence = str(self.UndocumentedAllele_sequence)
 
-        if self._is_empty(self.v1p4__germline_set__release_version):
-            self.MissingRequiredField("v1p4__germline_set__release_version")
-        if not isinstance(self.v1p4__germline_set__release_version, float):
-            self.v1p4__germline_set__release_version = float(self.v1p4__germline_set__release_version)
-
-        if self._is_empty(self.v1p4__germline_set__release_description):
-            self.MissingRequiredField("v1p4__germline_set__release_description")
-        if not isinstance(self.v1p4__germline_set__release_description, str):
-            self.v1p4__germline_set__release_description = str(self.v1p4__germline_set__release_description)
-
-        if self._is_empty(self.v1p4__germline_set__release_date):
-            self.MissingRequiredField("v1p4__germline_set__release_date")
-        if not isinstance(self.v1p4__germline_set__release_date, str):
-            self.v1p4__germline_set__release_date = str(self.v1p4__germline_set__release_date)
-
-        if self._is_empty(self.v1p4__germline_set__germline_set_name):
-            self.MissingRequiredField("v1p4__germline_set__germline_set_name")
-        if not isinstance(self.v1p4__germline_set__germline_set_name, str):
-            self.v1p4__germline_set__germline_set_name = str(self.v1p4__germline_set__germline_set_name)
-
-        if self._is_empty(self.v1p4__germline_set__germline_set_ref):
-            self.MissingRequiredField("v1p4__germline_set__germline_set_ref")
-        if not isinstance(self.v1p4__germline_set__germline_set_ref, str):
-            self.v1p4__germline_set__germline_set_ref = str(self.v1p4__germline_set__germline_set_ref)
-
-        if self._is_empty(self.v1p4__germline_set__locus):
-            self.MissingRequiredField("v1p4__germline_set__locus")
-        if not isinstance(self.v1p4__germline_set__locus, V1p4Locus):
-            self.v1p4__germline_set__locus = V1p4Locus(self.v1p4__germline_set__locus)
-
-        if self._is_empty(self.v1p4__germline_set__allele_descriptions):
-            self.MissingRequiredField("v1p4__germline_set__allele_descriptions")
-        self._normalize_inlined_as_dict(slot_name="v1p4__germline_set__allele_descriptions", slot_type=V1p4AlleleDescription, key_name="v1p4__allele_description__allele_description_id", keyed=False)
-
-        if not isinstance(self.v1p4__germline_set__pub_ids, list):
-            self.v1p4__germline_set__pub_ids = [self.v1p4__germline_set__pub_ids] if self.v1p4__germline_set__pub_ids is not None else []
-        self.v1p4__germline_set__pub_ids = [v if isinstance(v, str) else str(v) for v in self.v1p4__germline_set__pub_ids]
-
-        if self.v1p4__germline_set__species_subgroup is not None and not isinstance(self.v1p4__germline_set__species_subgroup, str):
-            self.v1p4__germline_set__species_subgroup = str(self.v1p4__germline_set__species_subgroup)
-
-        if self.v1p4__germline_set__species_subgroup_type is not None and not isinstance(self.v1p4__germline_set__species_subgroup_type, V1p4SpeciesSubgroupType):
-            self.v1p4__germline_set__species_subgroup_type = V1p4SpeciesSubgroupType(self.v1p4__germline_set__species_subgroup_type)
-
-        if self.v1p4__germline_set__curation is not None and not isinstance(self.v1p4__germline_set__curation, str):
-            self.v1p4__germline_set__curation = str(self.v1p4__germline_set__curation)
+        if self.UndocumentedAllele_phasing is not None and not isinstance(self.UndocumentedAllele_phasing, int):
+            self.UndocumentedAllele_phasing = int(self.UndocumentedAllele_phasing)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4GenotypeSet(YAMLRoot):
+class DeletedGene(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4GenotypeSet"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4GenotypeSet"
-    class_name: ClassVar[str] = "v1p4_GenotypeSet"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4GenotypeSet
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DeletedGene"]
+    class_class_curie: ClassVar[str] = "ak_schema:DeletedGene"
+    class_name: ClassVar[str] = "DeletedGene"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DeletedGene
 
-    v1p4__genotype_set__receptor_genotype_set_id: str = None
-    v1p4__genotype_set__genotype_class_list: Optional[Union[Union[dict, "V1p4Genotype"], List[Union[dict, "V1p4Genotype"]]]] = empty_list()
+    DeletedGene_label: str = None
+    DeletedGene_germline_set_ref: str = None
+    DeletedGene_phasing: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__genotype_set__receptor_genotype_set_id):
-            self.MissingRequiredField("v1p4__genotype_set__receptor_genotype_set_id")
-        if not isinstance(self.v1p4__genotype_set__receptor_genotype_set_id, str):
-            self.v1p4__genotype_set__receptor_genotype_set_id = str(self.v1p4__genotype_set__receptor_genotype_set_id)
+        if self._is_empty(self.DeletedGene_label):
+            self.MissingRequiredField("DeletedGene_label")
+        if not isinstance(self.DeletedGene_label, str):
+            self.DeletedGene_label = str(self.DeletedGene_label)
 
-        self._normalize_inlined_as_dict(slot_name="v1p4__genotype_set__genotype_class_list", slot_type=V1p4Genotype, key_name="v1p4__genotype__receptor_genotype_id", keyed=False)
+        if self._is_empty(self.DeletedGene_germline_set_ref):
+            self.MissingRequiredField("DeletedGene_germline_set_ref")
+        if not isinstance(self.DeletedGene_germline_set_ref, str):
+            self.DeletedGene_germline_set_ref = str(self.DeletedGene_germline_set_ref)
+
+        if self.DeletedGene_phasing is not None and not isinstance(self.DeletedGene_phasing, int):
+            self.DeletedGene_phasing = int(self.DeletedGene_phasing)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Genotype(YAMLRoot):
+class MHCGenotypeSet(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Genotype"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Genotype"
-    class_name: ClassVar[str] = "v1p4_Genotype"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Genotype
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotypeSet"]
+    class_class_curie: ClassVar[str] = "ak_schema:MHCGenotypeSet"
+    class_name: ClassVar[str] = "MHCGenotypeSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCGenotypeSet
 
-    v1p4__genotype__receptor_genotype_id: str = None
-    v1p4__genotype__locus: Union[str, "V1p4Locus"] = None
-    v1p4__genotype__documented_alleles: Optional[Union[Union[dict, "V1p4DocumentedAllele"], List[Union[dict, "V1p4DocumentedAllele"]]]] = empty_list()
-    v1p4__genotype__undocumented_alleles: Optional[Union[Union[dict, "V1p4UndocumentedAllele"], List[Union[dict, "V1p4UndocumentedAllele"]]]] = empty_list()
-    v1p4__genotype__deleted_genes: Optional[Union[Union[dict, "V1p4DeletedGene"], List[Union[dict, "V1p4DeletedGene"]]]] = empty_list()
-    v1p4__genotype__inference_process: Optional[Union[str, "V1p4InferenceProcess"]] = None
+    MHCGenotypeSet_mhc_genotype_set_id: str = None
+    MHCGenotypeSet_mhc_genotype_list: Union[Union[dict, "MHCGenotype"], List[Union[dict, "MHCGenotype"]]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__genotype__receptor_genotype_id):
-            self.MissingRequiredField("v1p4__genotype__receptor_genotype_id")
-        if not isinstance(self.v1p4__genotype__receptor_genotype_id, str):
-            self.v1p4__genotype__receptor_genotype_id = str(self.v1p4__genotype__receptor_genotype_id)
+        if self._is_empty(self.MHCGenotypeSet_mhc_genotype_set_id):
+            self.MissingRequiredField("MHCGenotypeSet_mhc_genotype_set_id")
+        if not isinstance(self.MHCGenotypeSet_mhc_genotype_set_id, str):
+            self.MHCGenotypeSet_mhc_genotype_set_id = str(self.MHCGenotypeSet_mhc_genotype_set_id)
 
-        if self._is_empty(self.v1p4__genotype__locus):
-            self.MissingRequiredField("v1p4__genotype__locus")
-        if not isinstance(self.v1p4__genotype__locus, V1p4Locus):
-            self.v1p4__genotype__locus = V1p4Locus(self.v1p4__genotype__locus)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__genotype__documented_alleles", slot_type=V1p4DocumentedAllele, key_name="v1p4__documented_allele__label", keyed=False)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__genotype__undocumented_alleles", slot_type=V1p4UndocumentedAllele, key_name="v1p4__undocumented_allele__allele_name", keyed=False)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__genotype__deleted_genes", slot_type=V1p4DeletedGene, key_name="v1p4__deleted_gene__label", keyed=False)
-
-        if self.v1p4__genotype__inference_process is not None and not isinstance(self.v1p4__genotype__inference_process, V1p4InferenceProcess):
-            self.v1p4__genotype__inference_process = V1p4InferenceProcess(self.v1p4__genotype__inference_process)
+        if self._is_empty(self.MHCGenotypeSet_mhc_genotype_list):
+            self.MissingRequiredField("MHCGenotypeSet_mhc_genotype_list")
+        self._normalize_inlined_as_dict(slot_name="MHCGenotypeSet_mhc_genotype_list", slot_type=MHCGenotype, key_name="MHCGenotype_mhc_genotype_id", keyed=False)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4DocumentedAllele(YAMLRoot):
+class MHCGenotype(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4DocumentedAllele"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4DocumentedAllele"
-    class_name: ClassVar[str] = "v1p4_DocumentedAllele"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4DocumentedAllele
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotype"]
+    class_class_curie: ClassVar[str] = "ak_schema:MHCGenotype"
+    class_name: ClassVar[str] = "MHCGenotype"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCGenotype
 
-    v1p4__documented_allele__label: str = None
-    v1p4__documented_allele__germline_set_ref: str = None
-    v1p4__documented_allele__phasing: Optional[int] = None
+    MHCGenotype_mhc_genotype_id: str = None
+    MHCGenotype_mhc_class: Union[str, "MhcClass"] = None
+    MHCGenotype_mhc_alleles: Union[Union[dict, "MHCAllele"], List[Union[dict, "MHCAllele"]]] = None
+    MHCGenotype_mhc_genotyping_method: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__documented_allele__label):
-            self.MissingRequiredField("v1p4__documented_allele__label")
-        if not isinstance(self.v1p4__documented_allele__label, str):
-            self.v1p4__documented_allele__label = str(self.v1p4__documented_allele__label)
+        if self._is_empty(self.MHCGenotype_mhc_genotype_id):
+            self.MissingRequiredField("MHCGenotype_mhc_genotype_id")
+        if not isinstance(self.MHCGenotype_mhc_genotype_id, str):
+            self.MHCGenotype_mhc_genotype_id = str(self.MHCGenotype_mhc_genotype_id)
 
-        if self._is_empty(self.v1p4__documented_allele__germline_set_ref):
-            self.MissingRequiredField("v1p4__documented_allele__germline_set_ref")
-        if not isinstance(self.v1p4__documented_allele__germline_set_ref, str):
-            self.v1p4__documented_allele__germline_set_ref = str(self.v1p4__documented_allele__germline_set_ref)
+        if self._is_empty(self.MHCGenotype_mhc_class):
+            self.MissingRequiredField("MHCGenotype_mhc_class")
+        if not isinstance(self.MHCGenotype_mhc_class, MhcClass):
+            self.MHCGenotype_mhc_class = MhcClass(self.MHCGenotype_mhc_class)
 
-        if self.v1p4__documented_allele__phasing is not None and not isinstance(self.v1p4__documented_allele__phasing, int):
-            self.v1p4__documented_allele__phasing = int(self.v1p4__documented_allele__phasing)
+        if self._is_empty(self.MHCGenotype_mhc_alleles):
+            self.MissingRequiredField("MHCGenotype_mhc_alleles")
+        if not isinstance(self.MHCGenotype_mhc_alleles, list):
+            self.MHCGenotype_mhc_alleles = [self.MHCGenotype_mhc_alleles] if self.MHCGenotype_mhc_alleles is not None else []
+        self.MHCGenotype_mhc_alleles = [v if isinstance(v, MHCAllele) else MHCAllele(**as_dict(v)) for v in self.MHCGenotype_mhc_alleles]
+
+        if self.MHCGenotype_mhc_genotyping_method is not None and not isinstance(self.MHCGenotype_mhc_genotyping_method, str):
+            self.MHCGenotype_mhc_genotyping_method = str(self.MHCGenotype_mhc_genotyping_method)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4UndocumentedAllele(YAMLRoot):
+class MHCAllele(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4UndocumentedAllele"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4UndocumentedAllele"
-    class_name: ClassVar[str] = "v1p4_UndocumentedAllele"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4UndocumentedAllele
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCAllele"]
+    class_class_curie: ClassVar[str] = "ak_schema:MHCAllele"
+    class_name: ClassVar[str] = "MHCAllele"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCAllele
 
-    v1p4__undocumented_allele__allele_name: str = None
-    v1p4__undocumented_allele__sequence: str = None
-    v1p4__undocumented_allele__phasing: Optional[int] = None
+    MHCAllele_allele_designation: Optional[str] = None
+    MHCAllele_gene: Optional[Union[str, "Gene"]] = None
+    MHCAllele_reference_set_ref: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__undocumented_allele__allele_name):
-            self.MissingRequiredField("v1p4__undocumented_allele__allele_name")
-        if not isinstance(self.v1p4__undocumented_allele__allele_name, str):
-            self.v1p4__undocumented_allele__allele_name = str(self.v1p4__undocumented_allele__allele_name)
+        if self.MHCAllele_allele_designation is not None and not isinstance(self.MHCAllele_allele_designation, str):
+            self.MHCAllele_allele_designation = str(self.MHCAllele_allele_designation)
 
-        if self._is_empty(self.v1p4__undocumented_allele__sequence):
-            self.MissingRequiredField("v1p4__undocumented_allele__sequence")
-        if not isinstance(self.v1p4__undocumented_allele__sequence, str):
-            self.v1p4__undocumented_allele__sequence = str(self.v1p4__undocumented_allele__sequence)
-
-        if self.v1p4__undocumented_allele__phasing is not None and not isinstance(self.v1p4__undocumented_allele__phasing, int):
-            self.v1p4__undocumented_allele__phasing = int(self.v1p4__undocumented_allele__phasing)
+        if self.MHCAllele_reference_set_ref is not None and not isinstance(self.MHCAllele_reference_set_ref, str):
+            self.MHCAllele_reference_set_ref = str(self.MHCAllele_reference_set_ref)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4DeletedGene(YAMLRoot):
+class SubjectGenotype(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4DeletedGene"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4DeletedGene"
-    class_name: ClassVar[str] = "v1p4_DeletedGene"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4DeletedGene
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SubjectGenotype"]
+    class_class_curie: ClassVar[str] = "ak_schema:SubjectGenotype"
+    class_name: ClassVar[str] = "SubjectGenotype"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SubjectGenotype
 
-    v1p4__deleted_gene__label: str = None
-    v1p4__deleted_gene__germline_set_ref: str = None
-    v1p4__deleted_gene__phasing: Optional[int] = None
+    SubjectGenotype_receptor_genotype_set: Optional[Union[dict, GenotypeSet]] = None
+    SubjectGenotype_mhc_genotype_set: Optional[Union[dict, MHCGenotypeSet]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__deleted_gene__label):
-            self.MissingRequiredField("v1p4__deleted_gene__label")
-        if not isinstance(self.v1p4__deleted_gene__label, str):
-            self.v1p4__deleted_gene__label = str(self.v1p4__deleted_gene__label)
+        if self.SubjectGenotype_receptor_genotype_set is not None and not isinstance(self.SubjectGenotype_receptor_genotype_set, GenotypeSet):
+            self.SubjectGenotype_receptor_genotype_set = GenotypeSet(**as_dict(self.SubjectGenotype_receptor_genotype_set))
 
-        if self._is_empty(self.v1p4__deleted_gene__germline_set_ref):
-            self.MissingRequiredField("v1p4__deleted_gene__germline_set_ref")
-        if not isinstance(self.v1p4__deleted_gene__germline_set_ref, str):
-            self.v1p4__deleted_gene__germline_set_ref = str(self.v1p4__deleted_gene__germline_set_ref)
-
-        if self.v1p4__deleted_gene__phasing is not None and not isinstance(self.v1p4__deleted_gene__phasing, int):
-            self.v1p4__deleted_gene__phasing = int(self.v1p4__deleted_gene__phasing)
+        if self.SubjectGenotype_mhc_genotype_set is not None and not isinstance(self.SubjectGenotype_mhc_genotype_set, MHCGenotypeSet):
+            self.SubjectGenotype_mhc_genotype_set = MHCGenotypeSet(**as_dict(self.SubjectGenotype_mhc_genotype_set))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4MHCGenotypeSet(YAMLRoot):
+class Study(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4MHCGenotypeSet"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4MHCGenotypeSet"
-    class_name: ClassVar[str] = "v1p4_MHCGenotypeSet"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4MHCGenotypeSet
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Study"]
+    class_class_curie: ClassVar[str] = "ak_schema:Study"
+    class_name: ClassVar[str] = "Study"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Study
 
-    v1p4__m_h_c_genotype_set__mhc_genotype_set_id: str = None
-    v1p4__m_h_c_genotype_set__mhc_genotype_list: Union[Union[dict, "V1p4MHCGenotype"], List[Union[dict, "V1p4MHCGenotype"]]] = None
+    Study_study_id: str = None
+    Study_study_title: str = None
+    Study_study_type: Union[str, "StudyType"] = None
+    Study_inclusion_exclusion_criteria: str = None
+    Study_grants: str = None
+    Study_collected_by: str = None
+    Study_lab_name: str = None
+    Study_lab_address: str = None
+    Study_submitted_by: str = None
+    Study_pub_ids: str = None
+    Study_keywords_study: Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]] = None
+    Study_study_description: Optional[str] = None
+    Study_study_contact: Optional[str] = None
+    Study_adc_publish_date: Optional[str] = None
+    Study_adc_update_date: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__m_h_c_genotype_set__mhc_genotype_set_id):
-            self.MissingRequiredField("v1p4__m_h_c_genotype_set__mhc_genotype_set_id")
-        if not isinstance(self.v1p4__m_h_c_genotype_set__mhc_genotype_set_id, str):
-            self.v1p4__m_h_c_genotype_set__mhc_genotype_set_id = str(self.v1p4__m_h_c_genotype_set__mhc_genotype_set_id)
+        if self._is_empty(self.Study_study_id):
+            self.MissingRequiredField("Study_study_id")
+        if not isinstance(self.Study_study_id, str):
+            self.Study_study_id = str(self.Study_study_id)
 
-        if self._is_empty(self.v1p4__m_h_c_genotype_set__mhc_genotype_list):
-            self.MissingRequiredField("v1p4__m_h_c_genotype_set__mhc_genotype_list")
-        self._normalize_inlined_as_dict(slot_name="v1p4__m_h_c_genotype_set__mhc_genotype_list", slot_type=V1p4MHCGenotype, key_name="v1p4__m_h_c_genotype__mhc_genotype_id", keyed=False)
+        if self._is_empty(self.Study_study_title):
+            self.MissingRequiredField("Study_study_title")
+        if not isinstance(self.Study_study_title, str):
+            self.Study_study_title = str(self.Study_study_title)
+
+        if self._is_empty(self.Study_inclusion_exclusion_criteria):
+            self.MissingRequiredField("Study_inclusion_exclusion_criteria")
+        if not isinstance(self.Study_inclusion_exclusion_criteria, str):
+            self.Study_inclusion_exclusion_criteria = str(self.Study_inclusion_exclusion_criteria)
+
+        if self._is_empty(self.Study_grants):
+            self.MissingRequiredField("Study_grants")
+        if not isinstance(self.Study_grants, str):
+            self.Study_grants = str(self.Study_grants)
+
+        if self._is_empty(self.Study_collected_by):
+            self.MissingRequiredField("Study_collected_by")
+        if not isinstance(self.Study_collected_by, str):
+            self.Study_collected_by = str(self.Study_collected_by)
+
+        if self._is_empty(self.Study_lab_name):
+            self.MissingRequiredField("Study_lab_name")
+        if not isinstance(self.Study_lab_name, str):
+            self.Study_lab_name = str(self.Study_lab_name)
+
+        if self._is_empty(self.Study_lab_address):
+            self.MissingRequiredField("Study_lab_address")
+        if not isinstance(self.Study_lab_address, str):
+            self.Study_lab_address = str(self.Study_lab_address)
+
+        if self._is_empty(self.Study_submitted_by):
+            self.MissingRequiredField("Study_submitted_by")
+        if not isinstance(self.Study_submitted_by, str):
+            self.Study_submitted_by = str(self.Study_submitted_by)
+
+        if self._is_empty(self.Study_pub_ids):
+            self.MissingRequiredField("Study_pub_ids")
+        if not isinstance(self.Study_pub_ids, str):
+            self.Study_pub_ids = str(self.Study_pub_ids)
+
+        if self._is_empty(self.Study_keywords_study):
+            self.MissingRequiredField("Study_keywords_study")
+        if not isinstance(self.Study_keywords_study, list):
+            self.Study_keywords_study = [self.Study_keywords_study] if self.Study_keywords_study is not None else []
+        self.Study_keywords_study = [v if isinstance(v, KeywordsStudy) else KeywordsStudy(v) for v in self.Study_keywords_study]
+
+        if self.Study_study_description is not None and not isinstance(self.Study_study_description, str):
+            self.Study_study_description = str(self.Study_study_description)
+
+        if self.Study_study_contact is not None and not isinstance(self.Study_study_contact, str):
+            self.Study_study_contact = str(self.Study_study_contact)
+
+        if self.Study_adc_publish_date is not None and not isinstance(self.Study_adc_publish_date, str):
+            self.Study_adc_publish_date = str(self.Study_adc_publish_date)
+
+        if self.Study_adc_update_date is not None and not isinstance(self.Study_adc_update_date, str):
+            self.Study_adc_update_date = str(self.Study_adc_update_date)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4MHCGenotype(YAMLRoot):
+class Subject(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4MHCGenotype"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4MHCGenotype"
-    class_name: ClassVar[str] = "v1p4_MHCGenotype"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4MHCGenotype
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Subject"]
+    class_class_curie: ClassVar[str] = "ak_schema:Subject"
+    class_name: ClassVar[str] = "Subject"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Subject
 
-    v1p4__m_h_c_genotype__mhc_genotype_id: str = None
-    v1p4__m_h_c_genotype__mhc_class: Union[str, "V1p4MhcClass"] = None
-    v1p4__m_h_c_genotype__mhc_alleles: Union[Union[dict, "V1p4MHCAllele"], List[Union[dict, "V1p4MHCAllele"]]] = None
-    v1p4__m_h_c_genotype__mhc_genotyping_method: Optional[str] = None
+    Subject_subject_id: str = None
+    Subject_synthetic: Union[bool, Bool] = None
+    Subject_species: Union[str, "Species"] = None
+    Subject_sex: Union[str, "Sex"] = None
+    Subject_age_min: float = None
+    Subject_age_max: float = None
+    Subject_age_unit: Union[str, "AgeUnit"] = None
+    Subject_age_event: str = None
+    Subject_ancestry_population: str = None
+    Subject_ethnicity: str = None
+    Subject_race: str = None
+    Subject_strain_name: str = None
+    Subject_linked_subjects: str = None
+    Subject_link_type: str = None
+    Subject_diagnosis: Optional[Union[Union[dict, "Diagnosis"], List[Union[dict, "Diagnosis"]]]] = empty_list()
+    Subject_genotype: Optional[Union[dict, SubjectGenotype]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__m_h_c_genotype__mhc_genotype_id):
-            self.MissingRequiredField("v1p4__m_h_c_genotype__mhc_genotype_id")
-        if not isinstance(self.v1p4__m_h_c_genotype__mhc_genotype_id, str):
-            self.v1p4__m_h_c_genotype__mhc_genotype_id = str(self.v1p4__m_h_c_genotype__mhc_genotype_id)
+        if self._is_empty(self.Subject_subject_id):
+            self.MissingRequiredField("Subject_subject_id")
+        if not isinstance(self.Subject_subject_id, str):
+            self.Subject_subject_id = str(self.Subject_subject_id)
 
-        if self._is_empty(self.v1p4__m_h_c_genotype__mhc_class):
-            self.MissingRequiredField("v1p4__m_h_c_genotype__mhc_class")
-        if not isinstance(self.v1p4__m_h_c_genotype__mhc_class, V1p4MhcClass):
-            self.v1p4__m_h_c_genotype__mhc_class = V1p4MhcClass(self.v1p4__m_h_c_genotype__mhc_class)
+        if self._is_empty(self.Subject_synthetic):
+            self.MissingRequiredField("Subject_synthetic")
+        if not isinstance(self.Subject_synthetic, Bool):
+            self.Subject_synthetic = Bool(self.Subject_synthetic)
 
-        if self._is_empty(self.v1p4__m_h_c_genotype__mhc_alleles):
-            self.MissingRequiredField("v1p4__m_h_c_genotype__mhc_alleles")
-        if not isinstance(self.v1p4__m_h_c_genotype__mhc_alleles, list):
-            self.v1p4__m_h_c_genotype__mhc_alleles = [self.v1p4__m_h_c_genotype__mhc_alleles] if self.v1p4__m_h_c_genotype__mhc_alleles is not None else []
-        self.v1p4__m_h_c_genotype__mhc_alleles = [v if isinstance(v, V1p4MHCAllele) else V1p4MHCAllele(**as_dict(v)) for v in self.v1p4__m_h_c_genotype__mhc_alleles]
+        if self._is_empty(self.Subject_species):
+            self.MissingRequiredField("Subject_species")
+        if not isinstance(self.Subject_species, Species):
+            self.Subject_species = Species(self.Subject_species)
 
-        if self.v1p4__m_h_c_genotype__mhc_genotyping_method is not None and not isinstance(self.v1p4__m_h_c_genotype__mhc_genotyping_method, str):
-            self.v1p4__m_h_c_genotype__mhc_genotyping_method = str(self.v1p4__m_h_c_genotype__mhc_genotyping_method)
+        if self._is_empty(self.Subject_sex):
+            self.MissingRequiredField("Subject_sex")
+        if not isinstance(self.Subject_sex, Sex):
+            self.Subject_sex = Sex(self.Subject_sex)
+
+        if self._is_empty(self.Subject_age_min):
+            self.MissingRequiredField("Subject_age_min")
+        if not isinstance(self.Subject_age_min, float):
+            self.Subject_age_min = float(self.Subject_age_min)
+
+        if self._is_empty(self.Subject_age_max):
+            self.MissingRequiredField("Subject_age_max")
+        if not isinstance(self.Subject_age_max, float):
+            self.Subject_age_max = float(self.Subject_age_max)
+
+        if self._is_empty(self.Subject_age_event):
+            self.MissingRequiredField("Subject_age_event")
+        if not isinstance(self.Subject_age_event, str):
+            self.Subject_age_event = str(self.Subject_age_event)
+
+        if self._is_empty(self.Subject_ancestry_population):
+            self.MissingRequiredField("Subject_ancestry_population")
+        if not isinstance(self.Subject_ancestry_population, str):
+            self.Subject_ancestry_population = str(self.Subject_ancestry_population)
+
+        if self._is_empty(self.Subject_ethnicity):
+            self.MissingRequiredField("Subject_ethnicity")
+        if not isinstance(self.Subject_ethnicity, str):
+            self.Subject_ethnicity = str(self.Subject_ethnicity)
+
+        if self._is_empty(self.Subject_race):
+            self.MissingRequiredField("Subject_race")
+        if not isinstance(self.Subject_race, str):
+            self.Subject_race = str(self.Subject_race)
+
+        if self._is_empty(self.Subject_strain_name):
+            self.MissingRequiredField("Subject_strain_name")
+        if not isinstance(self.Subject_strain_name, str):
+            self.Subject_strain_name = str(self.Subject_strain_name)
+
+        if self._is_empty(self.Subject_linked_subjects):
+            self.MissingRequiredField("Subject_linked_subjects")
+        if not isinstance(self.Subject_linked_subjects, str):
+            self.Subject_linked_subjects = str(self.Subject_linked_subjects)
+
+        if self._is_empty(self.Subject_link_type):
+            self.MissingRequiredField("Subject_link_type")
+        if not isinstance(self.Subject_link_type, str):
+            self.Subject_link_type = str(self.Subject_link_type)
+
+        self._normalize_inlined_as_dict(slot_name="Subject_diagnosis", slot_type=Diagnosis, key_name="Diagnosis_study_group_description", keyed=False)
+
+        if self.Subject_genotype is not None and not isinstance(self.Subject_genotype, SubjectGenotype):
+            self.Subject_genotype = SubjectGenotype(**as_dict(self.Subject_genotype))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4MHCAllele(YAMLRoot):
+class Diagnosis(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4MHCAllele"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4MHCAllele"
-    class_name: ClassVar[str] = "v1p4_MHCAllele"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4MHCAllele
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Diagnosis"]
+    class_class_curie: ClassVar[str] = "ak_schema:Diagnosis"
+    class_name: ClassVar[str] = "Diagnosis"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Diagnosis
 
-    v1p4__m_h_c_allele__allele_designation: Optional[str] = None
-    v1p4__m_h_c_allele__gene: Optional[Union[str, "V1p4Gene"]] = None
-    v1p4__m_h_c_allele__reference_set_ref: Optional[str] = None
+    Diagnosis_study_group_description: str = None
+    Diagnosis_disease_diagnosis: Union[str, "DiseaseDiagnosis"] = None
+    Diagnosis_disease_length: str = None
+    Diagnosis_disease_stage: str = None
+    Diagnosis_prior_therapies: str = None
+    Diagnosis_immunogen: str = None
+    Diagnosis_intervention: str = None
+    Diagnosis_medical_history: str = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.v1p4__m_h_c_allele__allele_designation is not None and not isinstance(self.v1p4__m_h_c_allele__allele_designation, str):
-            self.v1p4__m_h_c_allele__allele_designation = str(self.v1p4__m_h_c_allele__allele_designation)
+        if self._is_empty(self.Diagnosis_study_group_description):
+            self.MissingRequiredField("Diagnosis_study_group_description")
+        if not isinstance(self.Diagnosis_study_group_description, str):
+            self.Diagnosis_study_group_description = str(self.Diagnosis_study_group_description)
 
-        if self.v1p4__m_h_c_allele__reference_set_ref is not None and not isinstance(self.v1p4__m_h_c_allele__reference_set_ref, str):
-            self.v1p4__m_h_c_allele__reference_set_ref = str(self.v1p4__m_h_c_allele__reference_set_ref)
+        if self._is_empty(self.Diagnosis_disease_length):
+            self.MissingRequiredField("Diagnosis_disease_length")
+        if not isinstance(self.Diagnosis_disease_length, str):
+            self.Diagnosis_disease_length = str(self.Diagnosis_disease_length)
+
+        if self._is_empty(self.Diagnosis_disease_stage):
+            self.MissingRequiredField("Diagnosis_disease_stage")
+        if not isinstance(self.Diagnosis_disease_stage, str):
+            self.Diagnosis_disease_stage = str(self.Diagnosis_disease_stage)
+
+        if self._is_empty(self.Diagnosis_prior_therapies):
+            self.MissingRequiredField("Diagnosis_prior_therapies")
+        if not isinstance(self.Diagnosis_prior_therapies, str):
+            self.Diagnosis_prior_therapies = str(self.Diagnosis_prior_therapies)
+
+        if self._is_empty(self.Diagnosis_immunogen):
+            self.MissingRequiredField("Diagnosis_immunogen")
+        if not isinstance(self.Diagnosis_immunogen, str):
+            self.Diagnosis_immunogen = str(self.Diagnosis_immunogen)
+
+        if self._is_empty(self.Diagnosis_intervention):
+            self.MissingRequiredField("Diagnosis_intervention")
+        if not isinstance(self.Diagnosis_intervention, str):
+            self.Diagnosis_intervention = str(self.Diagnosis_intervention)
+
+        if self._is_empty(self.Diagnosis_medical_history):
+            self.MissingRequiredField("Diagnosis_medical_history")
+        if not isinstance(self.Diagnosis_medical_history, str):
+            self.Diagnosis_medical_history = str(self.Diagnosis_medical_history)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4SubjectGenotype(YAMLRoot):
+class Sample(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4SubjectGenotype"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4SubjectGenotype"
-    class_name: ClassVar[str] = "v1p4_SubjectGenotype"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SubjectGenotype
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Sample"]
+    class_class_curie: ClassVar[str] = "ak_schema:Sample"
+    class_name: ClassVar[str] = "Sample"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Sample
 
-    v1p4__subject_genotype__receptor_genotype_set: Optional[Union[dict, V1p4GenotypeSet]] = None
-    v1p4__subject_genotype__mhc_genotype_set: Optional[Union[dict, V1p4MHCGenotypeSet]] = None
+    Sample_sample_id: str = None
+    Sample_sample_type: str = None
+    Sample_tissue: Union[str, TissueAkcId] = None
+    Sample_anatomic_site: str = None
+    Sample_disease_state_sample: str = None
+    Sample_collection_time_point_relative: float = None
+    Sample_collection_time_point_relative_unit: Union[str, "CollectionTimePointRelativeUnit"] = None
+    Sample_collection_time_point_reference: str = None
+    Sample_biomaterial_provider: str = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.v1p4__subject_genotype__receptor_genotype_set is not None and not isinstance(self.v1p4__subject_genotype__receptor_genotype_set, V1p4GenotypeSet):
-            self.v1p4__subject_genotype__receptor_genotype_set = V1p4GenotypeSet(**as_dict(self.v1p4__subject_genotype__receptor_genotype_set))
+        if self._is_empty(self.Sample_sample_id):
+            self.MissingRequiredField("Sample_sample_id")
+        if not isinstance(self.Sample_sample_id, str):
+            self.Sample_sample_id = str(self.Sample_sample_id)
 
-        if self.v1p4__subject_genotype__mhc_genotype_set is not None and not isinstance(self.v1p4__subject_genotype__mhc_genotype_set, V1p4MHCGenotypeSet):
-            self.v1p4__subject_genotype__mhc_genotype_set = V1p4MHCGenotypeSet(**as_dict(self.v1p4__subject_genotype__mhc_genotype_set))
+        if self._is_empty(self.Sample_sample_type):
+            self.MissingRequiredField("Sample_sample_type")
+        if not isinstance(self.Sample_sample_type, str):
+            self.Sample_sample_type = str(self.Sample_sample_type)
+
+        if self._is_empty(self.Sample_tissue):
+            self.MissingRequiredField("Sample_tissue")
+        if not isinstance(self.Sample_tissue, TissueAkcId):
+            self.Sample_tissue = TissueAkcId(self.Sample_tissue)
+
+        if self._is_empty(self.Sample_anatomic_site):
+            self.MissingRequiredField("Sample_anatomic_site")
+        if not isinstance(self.Sample_anatomic_site, str):
+            self.Sample_anatomic_site = str(self.Sample_anatomic_site)
+
+        if self._is_empty(self.Sample_disease_state_sample):
+            self.MissingRequiredField("Sample_disease_state_sample")
+        if not isinstance(self.Sample_disease_state_sample, str):
+            self.Sample_disease_state_sample = str(self.Sample_disease_state_sample)
+
+        if self._is_empty(self.Sample_collection_time_point_relative):
+            self.MissingRequiredField("Sample_collection_time_point_relative")
+        if not isinstance(self.Sample_collection_time_point_relative, float):
+            self.Sample_collection_time_point_relative = float(self.Sample_collection_time_point_relative)
+
+        if self._is_empty(self.Sample_collection_time_point_reference):
+            self.MissingRequiredField("Sample_collection_time_point_reference")
+        if not isinstance(self.Sample_collection_time_point_reference, str):
+            self.Sample_collection_time_point_reference = str(self.Sample_collection_time_point_reference)
+
+        if self._is_empty(self.Sample_biomaterial_provider):
+            self.MissingRequiredField("Sample_biomaterial_provider")
+        if not isinstance(self.Sample_biomaterial_provider, str):
+            self.Sample_biomaterial_provider = str(self.Sample_biomaterial_provider)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Study(YAMLRoot):
+class CellProcessing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Study"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Study"
-    class_name: ClassVar[str] = "v1p4_Study"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Study
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:CellProcessing"
+    class_name: ClassVar[str] = "CellProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellProcessing
 
-    v1p4__study__study_id: str = None
-    v1p4__study__study_title: str = None
-    v1p4__study__study_type: Union[str, "V1p4StudyType"] = None
-    v1p4__study__inclusion_exclusion_criteria: str = None
-    v1p4__study__grants: str = None
-    v1p4__study__contributors: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    v1p4__study__pub_ids: Union[str, List[str]] = None
-    v1p4__study__keywords_study: Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]] = None
-    v1p4__study__study_description: Optional[str] = None
-    v1p4__study__adc_publish_date: Optional[str] = None
-    v1p4__study__adc_update_date: Optional[str] = None
+    CellProcessing_tissue_processing: str = None
+    CellProcessing_cell_subset: Union[str, "CellSubset"] = None
+    CellProcessing_cell_phenotype: str = None
+    CellProcessing_single_cell: Union[bool, Bool] = None
+    CellProcessing_cell_number: int = None
+    CellProcessing_cells_per_reaction: int = None
+    CellProcessing_cell_storage: Union[bool, Bool] = None
+    CellProcessing_cell_quality: str = None
+    CellProcessing_cell_isolation: str = None
+    CellProcessing_cell_processing_protocol: str = None
+    CellProcessing_cell_species: Optional[Union[str, "CellSpecies"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__study__study_id):
-            self.MissingRequiredField("v1p4__study__study_id")
-        if not isinstance(self.v1p4__study__study_id, str):
-            self.v1p4__study__study_id = str(self.v1p4__study__study_id)
+        if self._is_empty(self.CellProcessing_tissue_processing):
+            self.MissingRequiredField("CellProcessing_tissue_processing")
+        if not isinstance(self.CellProcessing_tissue_processing, str):
+            self.CellProcessing_tissue_processing = str(self.CellProcessing_tissue_processing)
 
-        if self._is_empty(self.v1p4__study__study_title):
-            self.MissingRequiredField("v1p4__study__study_title")
-        if not isinstance(self.v1p4__study__study_title, str):
-            self.v1p4__study__study_title = str(self.v1p4__study__study_title)
+        if self._is_empty(self.CellProcessing_cell_phenotype):
+            self.MissingRequiredField("CellProcessing_cell_phenotype")
+        if not isinstance(self.CellProcessing_cell_phenotype, str):
+            self.CellProcessing_cell_phenotype = str(self.CellProcessing_cell_phenotype)
 
-        if self._is_empty(self.v1p4__study__inclusion_exclusion_criteria):
-            self.MissingRequiredField("v1p4__study__inclusion_exclusion_criteria")
-        if not isinstance(self.v1p4__study__inclusion_exclusion_criteria, str):
-            self.v1p4__study__inclusion_exclusion_criteria = str(self.v1p4__study__inclusion_exclusion_criteria)
+        if self._is_empty(self.CellProcessing_single_cell):
+            self.MissingRequiredField("CellProcessing_single_cell")
+        if not isinstance(self.CellProcessing_single_cell, Bool):
+            self.CellProcessing_single_cell = Bool(self.CellProcessing_single_cell)
 
-        if self._is_empty(self.v1p4__study__grants):
-            self.MissingRequiredField("v1p4__study__grants")
-        if not isinstance(self.v1p4__study__grants, str):
-            self.v1p4__study__grants = str(self.v1p4__study__grants)
+        if self._is_empty(self.CellProcessing_cell_number):
+            self.MissingRequiredField("CellProcessing_cell_number")
+        if not isinstance(self.CellProcessing_cell_number, int):
+            self.CellProcessing_cell_number = int(self.CellProcessing_cell_number)
 
-        if self._is_empty(self.v1p4__study__contributors):
-            self.MissingRequiredField("v1p4__study__contributors")
-        self._normalize_inlined_as_dict(slot_name="v1p4__study__contributors", slot_type=V1p4Contributor, key_name="v1p4__contributor__contributor_id", keyed=False)
+        if self._is_empty(self.CellProcessing_cells_per_reaction):
+            self.MissingRequiredField("CellProcessing_cells_per_reaction")
+        if not isinstance(self.CellProcessing_cells_per_reaction, int):
+            self.CellProcessing_cells_per_reaction = int(self.CellProcessing_cells_per_reaction)
 
-        if self._is_empty(self.v1p4__study__pub_ids):
-            self.MissingRequiredField("v1p4__study__pub_ids")
-        if not isinstance(self.v1p4__study__pub_ids, list):
-            self.v1p4__study__pub_ids = [self.v1p4__study__pub_ids] if self.v1p4__study__pub_ids is not None else []
-        self.v1p4__study__pub_ids = [v if isinstance(v, str) else str(v) for v in self.v1p4__study__pub_ids]
+        if self._is_empty(self.CellProcessing_cell_storage):
+            self.MissingRequiredField("CellProcessing_cell_storage")
+        if not isinstance(self.CellProcessing_cell_storage, Bool):
+            self.CellProcessing_cell_storage = Bool(self.CellProcessing_cell_storage)
 
-        if self._is_empty(self.v1p4__study__keywords_study):
-            self.MissingRequiredField("v1p4__study__keywords_study")
-        if not isinstance(self.v1p4__study__keywords_study, list):
-            self.v1p4__study__keywords_study = [self.v1p4__study__keywords_study] if self.v1p4__study__keywords_study is not None else []
-        self.v1p4__study__keywords_study = [v if isinstance(v, V1p4KeywordsStudy) else V1p4KeywordsStudy(v) for v in self.v1p4__study__keywords_study]
+        if self._is_empty(self.CellProcessing_cell_quality):
+            self.MissingRequiredField("CellProcessing_cell_quality")
+        if not isinstance(self.CellProcessing_cell_quality, str):
+            self.CellProcessing_cell_quality = str(self.CellProcessing_cell_quality)
 
-        if self.v1p4__study__study_description is not None and not isinstance(self.v1p4__study__study_description, str):
-            self.v1p4__study__study_description = str(self.v1p4__study__study_description)
+        if self._is_empty(self.CellProcessing_cell_isolation):
+            self.MissingRequiredField("CellProcessing_cell_isolation")
+        if not isinstance(self.CellProcessing_cell_isolation, str):
+            self.CellProcessing_cell_isolation = str(self.CellProcessing_cell_isolation)
 
-        if self.v1p4__study__adc_publish_date is not None and not isinstance(self.v1p4__study__adc_publish_date, str):
-            self.v1p4__study__adc_publish_date = str(self.v1p4__study__adc_publish_date)
-
-        if self.v1p4__study__adc_update_date is not None and not isinstance(self.v1p4__study__adc_update_date, str):
-            self.v1p4__study__adc_update_date = str(self.v1p4__study__adc_update_date)
+        if self._is_empty(self.CellProcessing_cell_processing_protocol):
+            self.MissingRequiredField("CellProcessing_cell_processing_protocol")
+        if not isinstance(self.CellProcessing_cell_processing_protocol, str):
+            self.CellProcessing_cell_processing_protocol = str(self.CellProcessing_cell_processing_protocol)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Subject(YAMLRoot):
+class PCRTarget(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Subject"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Subject"
-    class_name: ClassVar[str] = "v1p4_Subject"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Subject
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PCRTarget"]
+    class_class_curie: ClassVar[str] = "ak_schema:PCRTarget"
+    class_name: ClassVar[str] = "PCRTarget"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PCRTarget
 
-    v1p4__subject__subject_id: str = None
-    v1p4__subject__synthetic: Union[bool, Bool] = None
-    v1p4__subject__species: Union[str, "V1p4Species"] = None
-    v1p4__subject__sex: Union[str, "V1p4Sex"] = None
-    v1p4__subject__age: Union[dict, V1p4TimeInterval] = None
-    v1p4__subject__age_event: str = None
-    v1p4__subject__ancestry_population: Union[str, "V1p4AncestryPopulation"] = None
-    v1p4__subject__ethnicity: str = None
-    v1p4__subject__race: str = None
-    v1p4__subject__strain_name: str = None
-    v1p4__subject__linked_subjects: str = None
-    v1p4__subject__link_type: str = None
-    v1p4__subject__location_birth: Optional[Union[str, "V1p4LocationBirth"]] = None
-    v1p4__subject__diagnosis: Optional[Union[Union[dict, "V1p4Diagnosis"], List[Union[dict, "V1p4Diagnosis"]]]] = empty_list()
-    v1p4__subject__genotype: Optional[Union[dict, V1p4SubjectGenotype]] = None
+    PCRTarget_pcr_target_locus: Union[str, "PcrTargetLocus"] = None
+    PCRTarget_forward_pcr_primer_target_location: str = None
+    PCRTarget_reverse_pcr_primer_target_location: str = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__subject__subject_id):
-            self.MissingRequiredField("v1p4__subject__subject_id")
-        if not isinstance(self.v1p4__subject__subject_id, str):
-            self.v1p4__subject__subject_id = str(self.v1p4__subject__subject_id)
+        if self._is_empty(self.PCRTarget_pcr_target_locus):
+            self.MissingRequiredField("PCRTarget_pcr_target_locus")
+        if not isinstance(self.PCRTarget_pcr_target_locus, PcrTargetLocus):
+            self.PCRTarget_pcr_target_locus = PcrTargetLocus(self.PCRTarget_pcr_target_locus)
 
-        if self._is_empty(self.v1p4__subject__synthetic):
-            self.MissingRequiredField("v1p4__subject__synthetic")
-        if not isinstance(self.v1p4__subject__synthetic, Bool):
-            self.v1p4__subject__synthetic = Bool(self.v1p4__subject__synthetic)
+        if self._is_empty(self.PCRTarget_forward_pcr_primer_target_location):
+            self.MissingRequiredField("PCRTarget_forward_pcr_primer_target_location")
+        if not isinstance(self.PCRTarget_forward_pcr_primer_target_location, str):
+            self.PCRTarget_forward_pcr_primer_target_location = str(self.PCRTarget_forward_pcr_primer_target_location)
 
-        if self._is_empty(self.v1p4__subject__sex):
-            self.MissingRequiredField("v1p4__subject__sex")
-        if not isinstance(self.v1p4__subject__sex, V1p4Sex):
-            self.v1p4__subject__sex = V1p4Sex(self.v1p4__subject__sex)
-
-        if self._is_empty(self.v1p4__subject__age):
-            self.MissingRequiredField("v1p4__subject__age")
-        if not isinstance(self.v1p4__subject__age, V1p4TimeInterval):
-            self.v1p4__subject__age = V1p4TimeInterval(**as_dict(self.v1p4__subject__age))
-
-        if self._is_empty(self.v1p4__subject__age_event):
-            self.MissingRequiredField("v1p4__subject__age_event")
-        if not isinstance(self.v1p4__subject__age_event, str):
-            self.v1p4__subject__age_event = str(self.v1p4__subject__age_event)
-
-        if self._is_empty(self.v1p4__subject__ethnicity):
-            self.MissingRequiredField("v1p4__subject__ethnicity")
-        if not isinstance(self.v1p4__subject__ethnicity, str):
-            self.v1p4__subject__ethnicity = str(self.v1p4__subject__ethnicity)
-
-        if self._is_empty(self.v1p4__subject__race):
-            self.MissingRequiredField("v1p4__subject__race")
-        if not isinstance(self.v1p4__subject__race, str):
-            self.v1p4__subject__race = str(self.v1p4__subject__race)
-
-        if self._is_empty(self.v1p4__subject__strain_name):
-            self.MissingRequiredField("v1p4__subject__strain_name")
-        if not isinstance(self.v1p4__subject__strain_name, str):
-            self.v1p4__subject__strain_name = str(self.v1p4__subject__strain_name)
-
-        if self._is_empty(self.v1p4__subject__linked_subjects):
-            self.MissingRequiredField("v1p4__subject__linked_subjects")
-        if not isinstance(self.v1p4__subject__linked_subjects, str):
-            self.v1p4__subject__linked_subjects = str(self.v1p4__subject__linked_subjects)
-
-        if self._is_empty(self.v1p4__subject__link_type):
-            self.MissingRequiredField("v1p4__subject__link_type")
-        if not isinstance(self.v1p4__subject__link_type, str):
-            self.v1p4__subject__link_type = str(self.v1p4__subject__link_type)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__subject__diagnosis", slot_type=V1p4Diagnosis, key_name="v1p4__diagnosis__study_group_description", keyed=False)
-
-        if self.v1p4__subject__genotype is not None and not isinstance(self.v1p4__subject__genotype, V1p4SubjectGenotype):
-            self.v1p4__subject__genotype = V1p4SubjectGenotype(**as_dict(self.v1p4__subject__genotype))
+        if self._is_empty(self.PCRTarget_reverse_pcr_primer_target_location):
+            self.MissingRequiredField("PCRTarget_reverse_pcr_primer_target_location")
+        if not isinstance(self.PCRTarget_reverse_pcr_primer_target_location, str):
+            self.PCRTarget_reverse_pcr_primer_target_location = str(self.PCRTarget_reverse_pcr_primer_target_location)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Diagnosis(YAMLRoot):
+class NucleicAcidProcessing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Diagnosis"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Diagnosis"
-    class_name: ClassVar[str] = "v1p4_Diagnosis"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Diagnosis
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["NucleicAcidProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:NucleicAcidProcessing"
+    class_name: ClassVar[str] = "NucleicAcidProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.NucleicAcidProcessing
 
-    v1p4__diagnosis__study_group_description: str = None
-    v1p4__diagnosis__disease_diagnosis: Union[str, "V1p4DiseaseDiagnosis"] = None
-    v1p4__diagnosis__disease_length: Union[dict, V1p4TimeQuantity] = None
-    v1p4__diagnosis__disease_stage: str = None
-    v1p4__diagnosis__prior_therapies: str = None
-    v1p4__diagnosis__immunogen: str = None
-    v1p4__diagnosis__intervention: str = None
-    v1p4__diagnosis__medical_history: str = None
-    v1p4__diagnosis__diagnosis_timepoint: Optional[Union[dict, V1p4TimePoint]] = None
+    NucleicAcidProcessing_template_class: Union[str, "TemplateClass"] = None
+    NucleicAcidProcessing_template_quality: str = None
+    NucleicAcidProcessing_template_amount: float = None
+    NucleicAcidProcessing_template_amount_unit: Union[str, "TemplateAmountUnit"] = None
+    NucleicAcidProcessing_library_generation_method: Union[str, "LibraryGenerationMethod"] = None
+    NucleicAcidProcessing_library_generation_protocol: str = None
+    NucleicAcidProcessing_library_generation_kit_version: str = None
+    NucleicAcidProcessing_complete_sequences: Union[str, "CompleteSequences"] = None
+    NucleicAcidProcessing_physical_linkage: Union[str, "PhysicalLinkage"] = None
+    NucleicAcidProcessing_pcr_target: Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__diagnosis__study_group_description):
-            self.MissingRequiredField("v1p4__diagnosis__study_group_description")
-        if not isinstance(self.v1p4__diagnosis__study_group_description, str):
-            self.v1p4__diagnosis__study_group_description = str(self.v1p4__diagnosis__study_group_description)
+        if self._is_empty(self.NucleicAcidProcessing_template_class):
+            self.MissingRequiredField("NucleicAcidProcessing_template_class")
+        if not isinstance(self.NucleicAcidProcessing_template_class, TemplateClass):
+            self.NucleicAcidProcessing_template_class = TemplateClass(self.NucleicAcidProcessing_template_class)
 
-        if self._is_empty(self.v1p4__diagnosis__disease_length):
-            self.MissingRequiredField("v1p4__diagnosis__disease_length")
-        if not isinstance(self.v1p4__diagnosis__disease_length, V1p4TimeQuantity):
-            self.v1p4__diagnosis__disease_length = V1p4TimeQuantity(**as_dict(self.v1p4__diagnosis__disease_length))
+        if self._is_empty(self.NucleicAcidProcessing_template_quality):
+            self.MissingRequiredField("NucleicAcidProcessing_template_quality")
+        if not isinstance(self.NucleicAcidProcessing_template_quality, str):
+            self.NucleicAcidProcessing_template_quality = str(self.NucleicAcidProcessing_template_quality)
 
-        if self._is_empty(self.v1p4__diagnosis__disease_stage):
-            self.MissingRequiredField("v1p4__diagnosis__disease_stage")
-        if not isinstance(self.v1p4__diagnosis__disease_stage, str):
-            self.v1p4__diagnosis__disease_stage = str(self.v1p4__diagnosis__disease_stage)
+        if self._is_empty(self.NucleicAcidProcessing_template_amount):
+            self.MissingRequiredField("NucleicAcidProcessing_template_amount")
+        if not isinstance(self.NucleicAcidProcessing_template_amount, float):
+            self.NucleicAcidProcessing_template_amount = float(self.NucleicAcidProcessing_template_amount)
 
-        if self._is_empty(self.v1p4__diagnosis__prior_therapies):
-            self.MissingRequiredField("v1p4__diagnosis__prior_therapies")
-        if not isinstance(self.v1p4__diagnosis__prior_therapies, str):
-            self.v1p4__diagnosis__prior_therapies = str(self.v1p4__diagnosis__prior_therapies)
+        if self._is_empty(self.NucleicAcidProcessing_library_generation_method):
+            self.MissingRequiredField("NucleicAcidProcessing_library_generation_method")
+        if not isinstance(self.NucleicAcidProcessing_library_generation_method, LibraryGenerationMethod):
+            self.NucleicAcidProcessing_library_generation_method = LibraryGenerationMethod(self.NucleicAcidProcessing_library_generation_method)
 
-        if self._is_empty(self.v1p4__diagnosis__immunogen):
-            self.MissingRequiredField("v1p4__diagnosis__immunogen")
-        if not isinstance(self.v1p4__diagnosis__immunogen, str):
-            self.v1p4__diagnosis__immunogen = str(self.v1p4__diagnosis__immunogen)
+        if self._is_empty(self.NucleicAcidProcessing_library_generation_protocol):
+            self.MissingRequiredField("NucleicAcidProcessing_library_generation_protocol")
+        if not isinstance(self.NucleicAcidProcessing_library_generation_protocol, str):
+            self.NucleicAcidProcessing_library_generation_protocol = str(self.NucleicAcidProcessing_library_generation_protocol)
 
-        if self._is_empty(self.v1p4__diagnosis__intervention):
-            self.MissingRequiredField("v1p4__diagnosis__intervention")
-        if not isinstance(self.v1p4__diagnosis__intervention, str):
-            self.v1p4__diagnosis__intervention = str(self.v1p4__diagnosis__intervention)
+        if self._is_empty(self.NucleicAcidProcessing_library_generation_kit_version):
+            self.MissingRequiredField("NucleicAcidProcessing_library_generation_kit_version")
+        if not isinstance(self.NucleicAcidProcessing_library_generation_kit_version, str):
+            self.NucleicAcidProcessing_library_generation_kit_version = str(self.NucleicAcidProcessing_library_generation_kit_version)
 
-        if self._is_empty(self.v1p4__diagnosis__medical_history):
-            self.MissingRequiredField("v1p4__diagnosis__medical_history")
-        if not isinstance(self.v1p4__diagnosis__medical_history, str):
-            self.v1p4__diagnosis__medical_history = str(self.v1p4__diagnosis__medical_history)
+        if self._is_empty(self.NucleicAcidProcessing_complete_sequences):
+            self.MissingRequiredField("NucleicAcidProcessing_complete_sequences")
+        if not isinstance(self.NucleicAcidProcessing_complete_sequences, CompleteSequences):
+            self.NucleicAcidProcessing_complete_sequences = CompleteSequences(self.NucleicAcidProcessing_complete_sequences)
 
-        if self.v1p4__diagnosis__diagnosis_timepoint is not None and not isinstance(self.v1p4__diagnosis__diagnosis_timepoint, V1p4TimePoint):
-            self.v1p4__diagnosis__diagnosis_timepoint = V1p4TimePoint(**as_dict(self.v1p4__diagnosis__diagnosis_timepoint))
+        if self._is_empty(self.NucleicAcidProcessing_physical_linkage):
+            self.MissingRequiredField("NucleicAcidProcessing_physical_linkage")
+        if not isinstance(self.NucleicAcidProcessing_physical_linkage, PhysicalLinkage):
+            self.NucleicAcidProcessing_physical_linkage = PhysicalLinkage(self.NucleicAcidProcessing_physical_linkage)
+
+        self._normalize_inlined_as_dict(slot_name="NucleicAcidProcessing_pcr_target", slot_type=PCRTarget, key_name="PCRTarget_pcr_target_locus", keyed=False)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Sample(YAMLRoot):
+class SequencingRun(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Sample"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Sample"
-    class_name: ClassVar[str] = "v1p4_Sample"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Sample
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingRun"]
+    class_class_curie: ClassVar[str] = "ak_schema:SequencingRun"
+    class_name: ClassVar[str] = "SequencingRun"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequencingRun
 
-    v1p4__sample__sample_id: str = None
-    v1p4__sample__sample_type: str = None
-    v1p4__sample__tissue: Union[str, "V1p4Tissue"] = None
-    v1p4__sample__anatomic_site: str = None
-    v1p4__sample__disease_state_sample: str = None
-    v1p4__sample__collection_time_point_relative: Union[dict, V1p4TimePoint] = None
-    v1p4__sample__biomaterial_provider: str = None
-    v1p4__sample__collection_location: Optional[Union[str, "V1p4CollectionLocation"]] = None
+    SequencingRun_sequencing_run_id: str = None
+    SequencingRun_total_reads_passing_qc_filter: int = None
+    SequencingRun_sequencing_platform: str = None
+    SequencingRun_sequencing_facility: str = None
+    SequencingRun_sequencing_run_date: str = None
+    SequencingRun_sequencing_kit: str = None
+    SequencingRun_sequencing_files: Optional[Union[dict, "SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__sample__sample_id):
-            self.MissingRequiredField("v1p4__sample__sample_id")
-        if not isinstance(self.v1p4__sample__sample_id, str):
-            self.v1p4__sample__sample_id = str(self.v1p4__sample__sample_id)
+        if self._is_empty(self.SequencingRun_sequencing_run_id):
+            self.MissingRequiredField("SequencingRun_sequencing_run_id")
+        if not isinstance(self.SequencingRun_sequencing_run_id, str):
+            self.SequencingRun_sequencing_run_id = str(self.SequencingRun_sequencing_run_id)
 
-        if self._is_empty(self.v1p4__sample__sample_type):
-            self.MissingRequiredField("v1p4__sample__sample_type")
-        if not isinstance(self.v1p4__sample__sample_type, str):
-            self.v1p4__sample__sample_type = str(self.v1p4__sample__sample_type)
+        if self._is_empty(self.SequencingRun_total_reads_passing_qc_filter):
+            self.MissingRequiredField("SequencingRun_total_reads_passing_qc_filter")
+        if not isinstance(self.SequencingRun_total_reads_passing_qc_filter, int):
+            self.SequencingRun_total_reads_passing_qc_filter = int(self.SequencingRun_total_reads_passing_qc_filter)
 
-        if self._is_empty(self.v1p4__sample__anatomic_site):
-            self.MissingRequiredField("v1p4__sample__anatomic_site")
-        if not isinstance(self.v1p4__sample__anatomic_site, str):
-            self.v1p4__sample__anatomic_site = str(self.v1p4__sample__anatomic_site)
+        if self._is_empty(self.SequencingRun_sequencing_platform):
+            self.MissingRequiredField("SequencingRun_sequencing_platform")
+        if not isinstance(self.SequencingRun_sequencing_platform, str):
+            self.SequencingRun_sequencing_platform = str(self.SequencingRun_sequencing_platform)
 
-        if self._is_empty(self.v1p4__sample__disease_state_sample):
-            self.MissingRequiredField("v1p4__sample__disease_state_sample")
-        if not isinstance(self.v1p4__sample__disease_state_sample, str):
-            self.v1p4__sample__disease_state_sample = str(self.v1p4__sample__disease_state_sample)
+        if self._is_empty(self.SequencingRun_sequencing_facility):
+            self.MissingRequiredField("SequencingRun_sequencing_facility")
+        if not isinstance(self.SequencingRun_sequencing_facility, str):
+            self.SequencingRun_sequencing_facility = str(self.SequencingRun_sequencing_facility)
 
-        if self._is_empty(self.v1p4__sample__collection_time_point_relative):
-            self.MissingRequiredField("v1p4__sample__collection_time_point_relative")
-        if not isinstance(self.v1p4__sample__collection_time_point_relative, V1p4TimePoint):
-            self.v1p4__sample__collection_time_point_relative = V1p4TimePoint(**as_dict(self.v1p4__sample__collection_time_point_relative))
+        if self._is_empty(self.SequencingRun_sequencing_run_date):
+            self.MissingRequiredField("SequencingRun_sequencing_run_date")
+        if not isinstance(self.SequencingRun_sequencing_run_date, str):
+            self.SequencingRun_sequencing_run_date = str(self.SequencingRun_sequencing_run_date)
 
-        if self._is_empty(self.v1p4__sample__biomaterial_provider):
-            self.MissingRequiredField("v1p4__sample__biomaterial_provider")
-        if not isinstance(self.v1p4__sample__biomaterial_provider, str):
-            self.v1p4__sample__biomaterial_provider = str(self.v1p4__sample__biomaterial_provider)
+        if self._is_empty(self.SequencingRun_sequencing_kit):
+            self.MissingRequiredField("SequencingRun_sequencing_kit")
+        if not isinstance(self.SequencingRun_sequencing_kit, str):
+            self.SequencingRun_sequencing_kit = str(self.SequencingRun_sequencing_kit)
+
+        if self.SequencingRun_sequencing_files is not None and not isinstance(self.SequencingRun_sequencing_files, SequencingData):
+            self.SequencingRun_sequencing_files = SequencingData(**as_dict(self.SequencingRun_sequencing_files))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4CellProcessing(YAMLRoot):
+class SequencingData(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4CellProcessing"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4CellProcessing"
-    class_name: ClassVar[str] = "v1p4_CellProcessing"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4CellProcessing
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingData"]
+    class_class_curie: ClassVar[str] = "ak_schema:SequencingData"
+    class_name: ClassVar[str] = "SequencingData"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequencingData
 
-    v1p4__cell_processing__tissue_processing: str = None
-    v1p4__cell_processing__cell_subset: Union[str, "V1p4CellSubset"] = None
-    v1p4__cell_processing__cell_phenotype: str = None
-    v1p4__cell_processing__single_cell: Union[bool, Bool] = None
-    v1p4__cell_processing__cell_number: int = None
-    v1p4__cell_processing__cells_per_reaction: int = None
-    v1p4__cell_processing__cell_storage: Union[bool, Bool] = None
-    v1p4__cell_processing__cell_quality: str = None
-    v1p4__cell_processing__cell_isolation: str = None
-    v1p4__cell_processing__cell_processing_protocol: str = None
-    v1p4__cell_processing__cell_label: Optional[str] = None
-    v1p4__cell_processing__cell_species: Optional[Union[str, "V1p4CellSpecies"]] = None
+    SequencingData_sequencing_data_id: str = None
+    SequencingData_file_type: Union[str, "FileType"] = None
+    SequencingData_filename: str = None
+    SequencingData_read_direction: Union[str, "ReadDirection"] = None
+    SequencingData_read_length: int = None
+    SequencingData_paired_filename: str = None
+    SequencingData_paired_read_direction: Union[str, "PairedReadDirection"] = None
+    SequencingData_paired_read_length: int = None
+    SequencingData_index_filename: Optional[str] = None
+    SequencingData_index_length: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__cell_processing__tissue_processing):
-            self.MissingRequiredField("v1p4__cell_processing__tissue_processing")
-        if not isinstance(self.v1p4__cell_processing__tissue_processing, str):
-            self.v1p4__cell_processing__tissue_processing = str(self.v1p4__cell_processing__tissue_processing)
+        if self._is_empty(self.SequencingData_sequencing_data_id):
+            self.MissingRequiredField("SequencingData_sequencing_data_id")
+        if not isinstance(self.SequencingData_sequencing_data_id, str):
+            self.SequencingData_sequencing_data_id = str(self.SequencingData_sequencing_data_id)
 
-        if self._is_empty(self.v1p4__cell_processing__cell_phenotype):
-            self.MissingRequiredField("v1p4__cell_processing__cell_phenotype")
-        if not isinstance(self.v1p4__cell_processing__cell_phenotype, str):
-            self.v1p4__cell_processing__cell_phenotype = str(self.v1p4__cell_processing__cell_phenotype)
+        if self._is_empty(self.SequencingData_file_type):
+            self.MissingRequiredField("SequencingData_file_type")
+        if not isinstance(self.SequencingData_file_type, FileType):
+            self.SequencingData_file_type = FileType(self.SequencingData_file_type)
 
-        if self._is_empty(self.v1p4__cell_processing__single_cell):
-            self.MissingRequiredField("v1p4__cell_processing__single_cell")
-        if not isinstance(self.v1p4__cell_processing__single_cell, Bool):
-            self.v1p4__cell_processing__single_cell = Bool(self.v1p4__cell_processing__single_cell)
+        if self._is_empty(self.SequencingData_filename):
+            self.MissingRequiredField("SequencingData_filename")
+        if not isinstance(self.SequencingData_filename, str):
+            self.SequencingData_filename = str(self.SequencingData_filename)
 
-        if self._is_empty(self.v1p4__cell_processing__cell_number):
-            self.MissingRequiredField("v1p4__cell_processing__cell_number")
-        if not isinstance(self.v1p4__cell_processing__cell_number, int):
-            self.v1p4__cell_processing__cell_number = int(self.v1p4__cell_processing__cell_number)
+        if self._is_empty(self.SequencingData_read_direction):
+            self.MissingRequiredField("SequencingData_read_direction")
+        if not isinstance(self.SequencingData_read_direction, ReadDirection):
+            self.SequencingData_read_direction = ReadDirection(self.SequencingData_read_direction)
 
-        if self._is_empty(self.v1p4__cell_processing__cells_per_reaction):
-            self.MissingRequiredField("v1p4__cell_processing__cells_per_reaction")
-        if not isinstance(self.v1p4__cell_processing__cells_per_reaction, int):
-            self.v1p4__cell_processing__cells_per_reaction = int(self.v1p4__cell_processing__cells_per_reaction)
+        if self._is_empty(self.SequencingData_read_length):
+            self.MissingRequiredField("SequencingData_read_length")
+        if not isinstance(self.SequencingData_read_length, int):
+            self.SequencingData_read_length = int(self.SequencingData_read_length)
 
-        if self._is_empty(self.v1p4__cell_processing__cell_storage):
-            self.MissingRequiredField("v1p4__cell_processing__cell_storage")
-        if not isinstance(self.v1p4__cell_processing__cell_storage, Bool):
-            self.v1p4__cell_processing__cell_storage = Bool(self.v1p4__cell_processing__cell_storage)
+        if self._is_empty(self.SequencingData_paired_filename):
+            self.MissingRequiredField("SequencingData_paired_filename")
+        if not isinstance(self.SequencingData_paired_filename, str):
+            self.SequencingData_paired_filename = str(self.SequencingData_paired_filename)
 
-        if self._is_empty(self.v1p4__cell_processing__cell_quality):
-            self.MissingRequiredField("v1p4__cell_processing__cell_quality")
-        if not isinstance(self.v1p4__cell_processing__cell_quality, str):
-            self.v1p4__cell_processing__cell_quality = str(self.v1p4__cell_processing__cell_quality)
+        if self._is_empty(self.SequencingData_paired_read_direction):
+            self.MissingRequiredField("SequencingData_paired_read_direction")
+        if not isinstance(self.SequencingData_paired_read_direction, PairedReadDirection):
+            self.SequencingData_paired_read_direction = PairedReadDirection(self.SequencingData_paired_read_direction)
 
-        if self._is_empty(self.v1p4__cell_processing__cell_isolation):
-            self.MissingRequiredField("v1p4__cell_processing__cell_isolation")
-        if not isinstance(self.v1p4__cell_processing__cell_isolation, str):
-            self.v1p4__cell_processing__cell_isolation = str(self.v1p4__cell_processing__cell_isolation)
+        if self._is_empty(self.SequencingData_paired_read_length):
+            self.MissingRequiredField("SequencingData_paired_read_length")
+        if not isinstance(self.SequencingData_paired_read_length, int):
+            self.SequencingData_paired_read_length = int(self.SequencingData_paired_read_length)
 
-        if self._is_empty(self.v1p4__cell_processing__cell_processing_protocol):
-            self.MissingRequiredField("v1p4__cell_processing__cell_processing_protocol")
-        if not isinstance(self.v1p4__cell_processing__cell_processing_protocol, str):
-            self.v1p4__cell_processing__cell_processing_protocol = str(self.v1p4__cell_processing__cell_processing_protocol)
+        if self.SequencingData_index_filename is not None and not isinstance(self.SequencingData_index_filename, str):
+            self.SequencingData_index_filename = str(self.SequencingData_index_filename)
 
-        if self.v1p4__cell_processing__cell_label is not None and not isinstance(self.v1p4__cell_processing__cell_label, str):
-            self.v1p4__cell_processing__cell_label = str(self.v1p4__cell_processing__cell_label)
+        if self.SequencingData_index_length is not None and not isinstance(self.SequencingData_index_length, int):
+            self.SequencingData_index_length = int(self.SequencingData_index_length)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4PCRTarget(YAMLRoot):
+class DataProcessing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4PCRTarget"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4PCRTarget"
-    class_name: ClassVar[str] = "v1p4_PCRTarget"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4PCRTarget
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DataProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:DataProcessing"
+    class_name: ClassVar[str] = "DataProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DataProcessing
 
-    v1p4__p_c_r_target__pcr_target_locus: Union[str, "V1p4PcrTargetLocus"] = None
-    v1p4__p_c_r_target__forward_pcr_primer_target_location: str = None
-    v1p4__p_c_r_target__reverse_pcr_primer_target_location: str = None
+    DataProcessing_software_versions: str = None
+    DataProcessing_paired_reads_assembly: str = None
+    DataProcessing_quality_thresholds: str = None
+    DataProcessing_primer_match_cutoffs: str = None
+    DataProcessing_collapsing_method: str = None
+    DataProcessing_data_processing_protocols: str = None
+    DataProcessing_germline_database: str = None
+    DataProcessing_data_processing_id: Optional[str] = None
+    DataProcessing_primary_annotation: Optional[Union[bool, Bool]] = None
+    DataProcessing_data_processing_files: Optional[Union[str, List[str]]] = empty_list()
+    DataProcessing_germline_set_ref: Optional[str] = None
+    DataProcessing_analysis_provenance_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__p_c_r_target__pcr_target_locus):
-            self.MissingRequiredField("v1p4__p_c_r_target__pcr_target_locus")
-        if not isinstance(self.v1p4__p_c_r_target__pcr_target_locus, V1p4PcrTargetLocus):
-            self.v1p4__p_c_r_target__pcr_target_locus = V1p4PcrTargetLocus(self.v1p4__p_c_r_target__pcr_target_locus)
+        if self._is_empty(self.DataProcessing_software_versions):
+            self.MissingRequiredField("DataProcessing_software_versions")
+        if not isinstance(self.DataProcessing_software_versions, str):
+            self.DataProcessing_software_versions = str(self.DataProcessing_software_versions)
 
-        if self._is_empty(self.v1p4__p_c_r_target__forward_pcr_primer_target_location):
-            self.MissingRequiredField("v1p4__p_c_r_target__forward_pcr_primer_target_location")
-        if not isinstance(self.v1p4__p_c_r_target__forward_pcr_primer_target_location, str):
-            self.v1p4__p_c_r_target__forward_pcr_primer_target_location = str(self.v1p4__p_c_r_target__forward_pcr_primer_target_location)
+        if self._is_empty(self.DataProcessing_paired_reads_assembly):
+            self.MissingRequiredField("DataProcessing_paired_reads_assembly")
+        if not isinstance(self.DataProcessing_paired_reads_assembly, str):
+            self.DataProcessing_paired_reads_assembly = str(self.DataProcessing_paired_reads_assembly)
 
-        if self._is_empty(self.v1p4__p_c_r_target__reverse_pcr_primer_target_location):
-            self.MissingRequiredField("v1p4__p_c_r_target__reverse_pcr_primer_target_location")
-        if not isinstance(self.v1p4__p_c_r_target__reverse_pcr_primer_target_location, str):
-            self.v1p4__p_c_r_target__reverse_pcr_primer_target_location = str(self.v1p4__p_c_r_target__reverse_pcr_primer_target_location)
+        if self._is_empty(self.DataProcessing_quality_thresholds):
+            self.MissingRequiredField("DataProcessing_quality_thresholds")
+        if not isinstance(self.DataProcessing_quality_thresholds, str):
+            self.DataProcessing_quality_thresholds = str(self.DataProcessing_quality_thresholds)
+
+        if self._is_empty(self.DataProcessing_primer_match_cutoffs):
+            self.MissingRequiredField("DataProcessing_primer_match_cutoffs")
+        if not isinstance(self.DataProcessing_primer_match_cutoffs, str):
+            self.DataProcessing_primer_match_cutoffs = str(self.DataProcessing_primer_match_cutoffs)
+
+        if self._is_empty(self.DataProcessing_collapsing_method):
+            self.MissingRequiredField("DataProcessing_collapsing_method")
+        if not isinstance(self.DataProcessing_collapsing_method, str):
+            self.DataProcessing_collapsing_method = str(self.DataProcessing_collapsing_method)
+
+        if self._is_empty(self.DataProcessing_data_processing_protocols):
+            self.MissingRequiredField("DataProcessing_data_processing_protocols")
+        if not isinstance(self.DataProcessing_data_processing_protocols, str):
+            self.DataProcessing_data_processing_protocols = str(self.DataProcessing_data_processing_protocols)
+
+        if self._is_empty(self.DataProcessing_germline_database):
+            self.MissingRequiredField("DataProcessing_germline_database")
+        if not isinstance(self.DataProcessing_germline_database, str):
+            self.DataProcessing_germline_database = str(self.DataProcessing_germline_database)
+
+        if self.DataProcessing_data_processing_id is not None and not isinstance(self.DataProcessing_data_processing_id, str):
+            self.DataProcessing_data_processing_id = str(self.DataProcessing_data_processing_id)
+
+        if self.DataProcessing_primary_annotation is not None and not isinstance(self.DataProcessing_primary_annotation, Bool):
+            self.DataProcessing_primary_annotation = Bool(self.DataProcessing_primary_annotation)
+
+        if not isinstance(self.DataProcessing_data_processing_files, list):
+            self.DataProcessing_data_processing_files = [self.DataProcessing_data_processing_files] if self.DataProcessing_data_processing_files is not None else []
+        self.DataProcessing_data_processing_files = [v if isinstance(v, str) else str(v) for v in self.DataProcessing_data_processing_files]
+
+        if self.DataProcessing_germline_set_ref is not None and not isinstance(self.DataProcessing_germline_set_ref, str):
+            self.DataProcessing_germline_set_ref = str(self.DataProcessing_germline_set_ref)
+
+        if self.DataProcessing_analysis_provenance_id is not None and not isinstance(self.DataProcessing_analysis_provenance_id, str):
+            self.DataProcessing_analysis_provenance_id = str(self.DataProcessing_analysis_provenance_id)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4NucleicAcidProcessing(YAMLRoot):
+class Repertoire(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4NucleicAcidProcessing"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4NucleicAcidProcessing"
-    class_name: ClassVar[str] = "v1p4_NucleicAcidProcessing"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4NucleicAcidProcessing
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Repertoire"]
+    class_class_curie: ClassVar[str] = "ak_schema:Repertoire"
+    class_name: ClassVar[str] = "Repertoire"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Repertoire
 
-    v1p4__nucleic_acid_processing__template_class: Union[str, "V1p4TemplateClass"] = None
-    v1p4__nucleic_acid_processing__template_quality: str = None
-    v1p4__nucleic_acid_processing__template_amount: Union[dict, V1p4PhysicalQuantity] = None
-    v1p4__nucleic_acid_processing__library_generation_method: Union[str, "V1p4LibraryGenerationMethod"] = None
-    v1p4__nucleic_acid_processing__library_generation_protocol: str = None
-    v1p4__nucleic_acid_processing__library_generation_kit_version: str = None
-    v1p4__nucleic_acid_processing__complete_sequences: Union[str, "V1p4CompleteSequences"] = None
-    v1p4__nucleic_acid_processing__physical_linkage: Union[str, "V1p4PhysicalLinkage"] = None
-    v1p4__nucleic_acid_processing__pcr_target: Optional[Union[Union[dict, V1p4PCRTarget], List[Union[dict, V1p4PCRTarget]]]] = empty_list()
+    Repertoire_study: Union[dict, Study] = None
+    Repertoire_subject: Union[dict, Subject] = None
+    Repertoire_sample: Union[Union[dict, "SampleProcessing"], List[Union[dict, "SampleProcessing"]]] = None
+    Repertoire_data_processing: Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]] = None
+    Repertoire_repertoire_id: Optional[str] = None
+    Repertoire_repertoire_name: Optional[str] = None
+    Repertoire_repertoire_description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__nucleic_acid_processing__template_class):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__template_class")
-        if not isinstance(self.v1p4__nucleic_acid_processing__template_class, V1p4TemplateClass):
-            self.v1p4__nucleic_acid_processing__template_class = V1p4TemplateClass(self.v1p4__nucleic_acid_processing__template_class)
+        if self._is_empty(self.Repertoire_study):
+            self.MissingRequiredField("Repertoire_study")
+        if not isinstance(self.Repertoire_study, Study):
+            self.Repertoire_study = Study(**as_dict(self.Repertoire_study))
 
-        if self._is_empty(self.v1p4__nucleic_acid_processing__template_quality):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__template_quality")
-        if not isinstance(self.v1p4__nucleic_acid_processing__template_quality, str):
-            self.v1p4__nucleic_acid_processing__template_quality = str(self.v1p4__nucleic_acid_processing__template_quality)
+        if self._is_empty(self.Repertoire_subject):
+            self.MissingRequiredField("Repertoire_subject")
+        if not isinstance(self.Repertoire_subject, Subject):
+            self.Repertoire_subject = Subject(**as_dict(self.Repertoire_subject))
 
-        if self._is_empty(self.v1p4__nucleic_acid_processing__template_amount):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__template_amount")
-        if not isinstance(self.v1p4__nucleic_acid_processing__template_amount, V1p4PhysicalQuantity):
-            self.v1p4__nucleic_acid_processing__template_amount = V1p4PhysicalQuantity(**as_dict(self.v1p4__nucleic_acid_processing__template_amount))
+        if self._is_empty(self.Repertoire_sample):
+            self.MissingRequiredField("Repertoire_sample")
+        self._normalize_inlined_as_dict(slot_name="Repertoire_sample", slot_type=SampleProcessing, key_name="Sample_sample_id", keyed=False)
 
-        if self._is_empty(self.v1p4__nucleic_acid_processing__library_generation_method):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__library_generation_method")
-        if not isinstance(self.v1p4__nucleic_acid_processing__library_generation_method, V1p4LibraryGenerationMethod):
-            self.v1p4__nucleic_acid_processing__library_generation_method = V1p4LibraryGenerationMethod(self.v1p4__nucleic_acid_processing__library_generation_method)
+        if self._is_empty(self.Repertoire_data_processing):
+            self.MissingRequiredField("Repertoire_data_processing")
+        self._normalize_inlined_as_dict(slot_name="Repertoire_data_processing", slot_type=DataProcessing, key_name="DataProcessing_software_versions", keyed=False)
 
-        if self._is_empty(self.v1p4__nucleic_acid_processing__library_generation_protocol):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__library_generation_protocol")
-        if not isinstance(self.v1p4__nucleic_acid_processing__library_generation_protocol, str):
-            self.v1p4__nucleic_acid_processing__library_generation_protocol = str(self.v1p4__nucleic_acid_processing__library_generation_protocol)
+        if self.Repertoire_repertoire_id is not None and not isinstance(self.Repertoire_repertoire_id, str):
+            self.Repertoire_repertoire_id = str(self.Repertoire_repertoire_id)
 
-        if self._is_empty(self.v1p4__nucleic_acid_processing__library_generation_kit_version):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__library_generation_kit_version")
-        if not isinstance(self.v1p4__nucleic_acid_processing__library_generation_kit_version, str):
-            self.v1p4__nucleic_acid_processing__library_generation_kit_version = str(self.v1p4__nucleic_acid_processing__library_generation_kit_version)
+        if self.Repertoire_repertoire_name is not None and not isinstance(self.Repertoire_repertoire_name, str):
+            self.Repertoire_repertoire_name = str(self.Repertoire_repertoire_name)
 
-        if self._is_empty(self.v1p4__nucleic_acid_processing__complete_sequences):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__complete_sequences")
-        if not isinstance(self.v1p4__nucleic_acid_processing__complete_sequences, V1p4CompleteSequences):
-            self.v1p4__nucleic_acid_processing__complete_sequences = V1p4CompleteSequences(self.v1p4__nucleic_acid_processing__complete_sequences)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__physical_linkage):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__physical_linkage")
-        if not isinstance(self.v1p4__nucleic_acid_processing__physical_linkage, V1p4PhysicalLinkage):
-            self.v1p4__nucleic_acid_processing__physical_linkage = V1p4PhysicalLinkage(self.v1p4__nucleic_acid_processing__physical_linkage)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__nucleic_acid_processing__pcr_target", slot_type=V1p4PCRTarget, key_name="v1p4__p_c_r_target__pcr_target_locus", keyed=False)
+        if self.Repertoire_repertoire_description is not None and not isinstance(self.Repertoire_repertoire_description, str):
+            self.Repertoire_repertoire_description = str(self.Repertoire_repertoire_description)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4SequencingRun(YAMLRoot):
+class RepertoireGroup(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4SequencingRun"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4SequencingRun"
-    class_name: ClassVar[str] = "v1p4_SequencingRun"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SequencingRun
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroup"]
+    class_class_curie: ClassVar[str] = "ak_schema:RepertoireGroup"
+    class_name: ClassVar[str] = "RepertoireGroup"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireGroup
 
-    v1p4__sequencing_run__sequencing_run_id: str = None
-    v1p4__sequencing_run__total_reads_passing_qc_filter: int = None
-    v1p4__sequencing_run__sequencing_platform: str = None
-    v1p4__sequencing_run__sequencing_facility: str = None
-    v1p4__sequencing_run__sequencing_run_date: str = None
-    v1p4__sequencing_run__sequencing_kit: str = None
-    v1p4__sequencing_run__sequencing_files: Optional[Union[dict, "V1p4SequencingData"]] = None
+    RepertoireGroup_repertoire_group_id: str = None
+    RepertoireGroup_repertoires: Union[str, List[str]] = None
+    RepertoireGroup_repertoire_group_name: Optional[str] = None
+    RepertoireGroup_repertoire_group_description: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_run_id):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_run_id")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_run_id, str):
-            self.v1p4__sequencing_run__sequencing_run_id = str(self.v1p4__sequencing_run__sequencing_run_id)
+        if self._is_empty(self.RepertoireGroup_repertoire_group_id):
+            self.MissingRequiredField("RepertoireGroup_repertoire_group_id")
+        if not isinstance(self.RepertoireGroup_repertoire_group_id, str):
+            self.RepertoireGroup_repertoire_group_id = str(self.RepertoireGroup_repertoire_group_id)
 
-        if self._is_empty(self.v1p4__sequencing_run__total_reads_passing_qc_filter):
-            self.MissingRequiredField("v1p4__sequencing_run__total_reads_passing_qc_filter")
-        if not isinstance(self.v1p4__sequencing_run__total_reads_passing_qc_filter, int):
-            self.v1p4__sequencing_run__total_reads_passing_qc_filter = int(self.v1p4__sequencing_run__total_reads_passing_qc_filter)
+        if self._is_empty(self.RepertoireGroup_repertoires):
+            self.MissingRequiredField("RepertoireGroup_repertoires")
+        if not isinstance(self.RepertoireGroup_repertoires, list):
+            self.RepertoireGroup_repertoires = [self.RepertoireGroup_repertoires] if self.RepertoireGroup_repertoires is not None else []
+        self.RepertoireGroup_repertoires = [v if isinstance(v, str) else str(v) for v in self.RepertoireGroup_repertoires]
 
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_platform):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_platform")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_platform, str):
-            self.v1p4__sequencing_run__sequencing_platform = str(self.v1p4__sequencing_run__sequencing_platform)
+        if self.RepertoireGroup_repertoire_group_name is not None and not isinstance(self.RepertoireGroup_repertoire_group_name, str):
+            self.RepertoireGroup_repertoire_group_name = str(self.RepertoireGroup_repertoire_group_name)
 
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_facility):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_facility")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_facility, str):
-            self.v1p4__sequencing_run__sequencing_facility = str(self.v1p4__sequencing_run__sequencing_facility)
-
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_run_date):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_run_date")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_run_date, str):
-            self.v1p4__sequencing_run__sequencing_run_date = str(self.v1p4__sequencing_run__sequencing_run_date)
-
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_kit):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_kit")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_kit, str):
-            self.v1p4__sequencing_run__sequencing_kit = str(self.v1p4__sequencing_run__sequencing_kit)
-
-        if self.v1p4__sequencing_run__sequencing_files is not None and not isinstance(self.v1p4__sequencing_run__sequencing_files, V1p4SequencingData):
-            self.v1p4__sequencing_run__sequencing_files = V1p4SequencingData(**as_dict(self.v1p4__sequencing_run__sequencing_files))
+        if self.RepertoireGroup_repertoire_group_description is not None and not isinstance(self.RepertoireGroup_repertoire_group_description, str):
+            self.RepertoireGroup_repertoire_group_description = str(self.RepertoireGroup_repertoire_group_description)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4SequencingData(YAMLRoot):
+class Alignment(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4SequencingData"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4SequencingData"
-    class_name: ClassVar[str] = "v1p4_SequencingData"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SequencingData
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Alignment"]
+    class_class_curie: ClassVar[str] = "ak_schema:Alignment"
+    class_name: ClassVar[str] = "Alignment"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Alignment
 
-    v1p4__sequencing_data__sequencing_data_id: str = None
-    v1p4__sequencing_data__file_type: Union[str, "V1p4FileType"] = None
-    v1p4__sequencing_data__filename: str = None
-    v1p4__sequencing_data__read_direction: Union[str, "V1p4ReadDirection"] = None
-    v1p4__sequencing_data__read_length: int = None
-    v1p4__sequencing_data__paired_filename: str = None
-    v1p4__sequencing_data__paired_read_direction: Union[str, "V1p4PairedReadDirection"] = None
-    v1p4__sequencing_data__paired_read_length: int = None
-    v1p4__sequencing_data__index_filename: Optional[str] = None
-    v1p4__sequencing_data__index_length: Optional[int] = None
+    Alignment_sequence_id: str = None
+    Alignment_segment: str = None
+    Alignment_call: str = None
+    Alignment_score: float = None
+    Alignment_cigar: str = None
+    Alignment_rev_comp: Optional[Union[bool, Bool]] = None
+    Alignment_identity: Optional[float] = None
+    Alignment_support: Optional[float] = None
+    Alignment_sequence_start: Optional[int] = None
+    Alignment_sequence_end: Optional[int] = None
+    Alignment_germline_start: Optional[int] = None
+    Alignment_germline_end: Optional[int] = None
+    Alignment_rank: Optional[int] = None
+    Alignment_data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__sequencing_data__sequencing_data_id):
-            self.MissingRequiredField("v1p4__sequencing_data__sequencing_data_id")
-        if not isinstance(self.v1p4__sequencing_data__sequencing_data_id, str):
-            self.v1p4__sequencing_data__sequencing_data_id = str(self.v1p4__sequencing_data__sequencing_data_id)
+        if self._is_empty(self.Alignment_sequence_id):
+            self.MissingRequiredField("Alignment_sequence_id")
+        if not isinstance(self.Alignment_sequence_id, str):
+            self.Alignment_sequence_id = str(self.Alignment_sequence_id)
 
-        if self._is_empty(self.v1p4__sequencing_data__file_type):
-            self.MissingRequiredField("v1p4__sequencing_data__file_type")
-        if not isinstance(self.v1p4__sequencing_data__file_type, V1p4FileType):
-            self.v1p4__sequencing_data__file_type = V1p4FileType(self.v1p4__sequencing_data__file_type)
+        if self._is_empty(self.Alignment_segment):
+            self.MissingRequiredField("Alignment_segment")
+        if not isinstance(self.Alignment_segment, str):
+            self.Alignment_segment = str(self.Alignment_segment)
 
-        if self._is_empty(self.v1p4__sequencing_data__filename):
-            self.MissingRequiredField("v1p4__sequencing_data__filename")
-        if not isinstance(self.v1p4__sequencing_data__filename, str):
-            self.v1p4__sequencing_data__filename = str(self.v1p4__sequencing_data__filename)
+        if self._is_empty(self.Alignment_call):
+            self.MissingRequiredField("Alignment_call")
+        if not isinstance(self.Alignment_call, str):
+            self.Alignment_call = str(self.Alignment_call)
 
-        if self._is_empty(self.v1p4__sequencing_data__read_direction):
-            self.MissingRequiredField("v1p4__sequencing_data__read_direction")
-        if not isinstance(self.v1p4__sequencing_data__read_direction, V1p4ReadDirection):
-            self.v1p4__sequencing_data__read_direction = V1p4ReadDirection(self.v1p4__sequencing_data__read_direction)
+        if self._is_empty(self.Alignment_score):
+            self.MissingRequiredField("Alignment_score")
+        if not isinstance(self.Alignment_score, float):
+            self.Alignment_score = float(self.Alignment_score)
 
-        if self._is_empty(self.v1p4__sequencing_data__read_length):
-            self.MissingRequiredField("v1p4__sequencing_data__read_length")
-        if not isinstance(self.v1p4__sequencing_data__read_length, int):
-            self.v1p4__sequencing_data__read_length = int(self.v1p4__sequencing_data__read_length)
+        if self._is_empty(self.Alignment_cigar):
+            self.MissingRequiredField("Alignment_cigar")
+        if not isinstance(self.Alignment_cigar, str):
+            self.Alignment_cigar = str(self.Alignment_cigar)
 
-        if self._is_empty(self.v1p4__sequencing_data__paired_filename):
-            self.MissingRequiredField("v1p4__sequencing_data__paired_filename")
-        if not isinstance(self.v1p4__sequencing_data__paired_filename, str):
-            self.v1p4__sequencing_data__paired_filename = str(self.v1p4__sequencing_data__paired_filename)
+        if self.Alignment_rev_comp is not None and not isinstance(self.Alignment_rev_comp, Bool):
+            self.Alignment_rev_comp = Bool(self.Alignment_rev_comp)
 
-        if self._is_empty(self.v1p4__sequencing_data__paired_read_direction):
-            self.MissingRequiredField("v1p4__sequencing_data__paired_read_direction")
-        if not isinstance(self.v1p4__sequencing_data__paired_read_direction, V1p4PairedReadDirection):
-            self.v1p4__sequencing_data__paired_read_direction = V1p4PairedReadDirection(self.v1p4__sequencing_data__paired_read_direction)
+        if self.Alignment_identity is not None and not isinstance(self.Alignment_identity, float):
+            self.Alignment_identity = float(self.Alignment_identity)
 
-        if self._is_empty(self.v1p4__sequencing_data__paired_read_length):
-            self.MissingRequiredField("v1p4__sequencing_data__paired_read_length")
-        if not isinstance(self.v1p4__sequencing_data__paired_read_length, int):
-            self.v1p4__sequencing_data__paired_read_length = int(self.v1p4__sequencing_data__paired_read_length)
+        if self.Alignment_support is not None and not isinstance(self.Alignment_support, float):
+            self.Alignment_support = float(self.Alignment_support)
 
-        if self.v1p4__sequencing_data__index_filename is not None and not isinstance(self.v1p4__sequencing_data__index_filename, str):
-            self.v1p4__sequencing_data__index_filename = str(self.v1p4__sequencing_data__index_filename)
+        if self.Alignment_sequence_start is not None and not isinstance(self.Alignment_sequence_start, int):
+            self.Alignment_sequence_start = int(self.Alignment_sequence_start)
 
-        if self.v1p4__sequencing_data__index_length is not None and not isinstance(self.v1p4__sequencing_data__index_length, int):
-            self.v1p4__sequencing_data__index_length = int(self.v1p4__sequencing_data__index_length)
+        if self.Alignment_sequence_end is not None and not isinstance(self.Alignment_sequence_end, int):
+            self.Alignment_sequence_end = int(self.Alignment_sequence_end)
+
+        if self.Alignment_germline_start is not None and not isinstance(self.Alignment_germline_start, int):
+            self.Alignment_germline_start = int(self.Alignment_germline_start)
+
+        if self.Alignment_germline_end is not None and not isinstance(self.Alignment_germline_end, int):
+            self.Alignment_germline_end = int(self.Alignment_germline_end)
+
+        if self.Alignment_rank is not None and not isinstance(self.Alignment_rank, int):
+            self.Alignment_rank = int(self.Alignment_rank)
+
+        if self.Alignment_data_processing_id is not None and not isinstance(self.Alignment_data_processing_id, str):
+            self.Alignment_data_processing_id = str(self.Alignment_data_processing_id)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4DataProcessing(YAMLRoot):
+class Rearrangement(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4DataProcessing"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4DataProcessing"
-    class_name: ClassVar[str] = "v1p4_DataProcessing"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4DataProcessing
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Rearrangement"]
+    class_class_curie: ClassVar[str] = "ak_schema:Rearrangement"
+    class_name: ClassVar[str] = "Rearrangement"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Rearrangement
 
-    v1p4__data_processing__software_versions: str = None
-    v1p4__data_processing__paired_reads_assembly: str = None
-    v1p4__data_processing__quality_thresholds: str = None
-    v1p4__data_processing__primer_match_cutoffs: str = None
-    v1p4__data_processing__collapsing_method: str = None
-    v1p4__data_processing__data_processing_protocols: str = None
-    v1p4__data_processing__germline_database: str = None
-    v1p4__data_processing__data_processing_id: Optional[str] = None
-    v1p4__data_processing__primary_annotation: Optional[Union[bool, Bool]] = None
-    v1p4__data_processing__data_processing_files: Optional[Union[str, List[str]]] = empty_list()
-    v1p4__data_processing__germline_set_ref: Optional[str] = None
-    v1p4__data_processing__analysis_provenance_id: Optional[str] = None
+    Rearrangement_sequence_id: str = None
+    Rearrangement_sequence: str = None
+    Rearrangement_rev_comp: Union[bool, Bool] = None
+    Rearrangement_productive: Union[bool, Bool] = None
+    Rearrangement_v_call: str = None
+    Rearrangement_d_call: str = None
+    Rearrangement_j_call: str = None
+    Rearrangement_sequence_alignment: str = None
+    Rearrangement_germline_alignment: str = None
+    Rearrangement_junction: str = None
+    Rearrangement_junction_aa: str = None
+    Rearrangement_v_cigar: str = None
+    Rearrangement_d_cigar: str = None
+    Rearrangement_j_cigar: str = None
+    Rearrangement_quality: Optional[str] = None
+    Rearrangement_sequence_aa: Optional[str] = None
+    Rearrangement_vj_in_frame: Optional[Union[bool, Bool]] = None
+    Rearrangement_stop_codon: Optional[Union[bool, Bool]] = None
+    Rearrangement_complete_vdj: Optional[Union[bool, Bool]] = None
+    Rearrangement_locus: Optional[Union[str, "Locus"]] = None
+    Rearrangement_d2_call: Optional[str] = None
+    Rearrangement_c_call: Optional[str] = None
+    Rearrangement_quality_alignment: Optional[str] = None
+    Rearrangement_sequence_alignment_aa: Optional[str] = None
+    Rearrangement_germline_alignment_aa: Optional[str] = None
+    Rearrangement_np1: Optional[str] = None
+    Rearrangement_np1_aa: Optional[str] = None
+    Rearrangement_np2: Optional[str] = None
+    Rearrangement_np2_aa: Optional[str] = None
+    Rearrangement_np3: Optional[str] = None
+    Rearrangement_np3_aa: Optional[str] = None
+    Rearrangement_cdr1: Optional[str] = None
+    Rearrangement_cdr1_aa: Optional[str] = None
+    Rearrangement_cdr2: Optional[str] = None
+    Rearrangement_cdr2_aa: Optional[str] = None
+    Rearrangement_cdr3: Optional[str] = None
+    Rearrangement_cdr3_aa: Optional[str] = None
+    Rearrangement_fwr1: Optional[str] = None
+    Rearrangement_fwr1_aa: Optional[str] = None
+    Rearrangement_fwr2: Optional[str] = None
+    Rearrangement_fwr2_aa: Optional[str] = None
+    Rearrangement_fwr3: Optional[str] = None
+    Rearrangement_fwr3_aa: Optional[str] = None
+    Rearrangement_fwr4: Optional[str] = None
+    Rearrangement_fwr4_aa: Optional[str] = None
+    Rearrangement_v_score: Optional[float] = None
+    Rearrangement_v_identity: Optional[float] = None
+    Rearrangement_v_support: Optional[float] = None
+    Rearrangement_d_score: Optional[float] = None
+    Rearrangement_d_identity: Optional[float] = None
+    Rearrangement_d_support: Optional[float] = None
+    Rearrangement_d2_score: Optional[float] = None
+    Rearrangement_d2_identity: Optional[float] = None
+    Rearrangement_d2_support: Optional[float] = None
+    Rearrangement_d2_cigar: Optional[str] = None
+    Rearrangement_j_score: Optional[float] = None
+    Rearrangement_j_identity: Optional[float] = None
+    Rearrangement_j_support: Optional[float] = None
+    Rearrangement_c_score: Optional[float] = None
+    Rearrangement_c_identity: Optional[float] = None
+    Rearrangement_c_support: Optional[float] = None
+    Rearrangement_c_cigar: Optional[str] = None
+    Rearrangement_v_sequence_start: Optional[int] = None
+    Rearrangement_v_sequence_end: Optional[int] = None
+    Rearrangement_v_germline_start: Optional[int] = None
+    Rearrangement_v_germline_end: Optional[int] = None
+    Rearrangement_v_alignment_start: Optional[int] = None
+    Rearrangement_v_alignment_end: Optional[int] = None
+    Rearrangement_d_sequence_start: Optional[int] = None
+    Rearrangement_d_sequence_end: Optional[int] = None
+    Rearrangement_d_germline_start: Optional[int] = None
+    Rearrangement_d_germline_end: Optional[int] = None
+    Rearrangement_d_alignment_start: Optional[int] = None
+    Rearrangement_d_alignment_end: Optional[int] = None
+    Rearrangement_d2_sequence_start: Optional[int] = None
+    Rearrangement_d2_sequence_end: Optional[int] = None
+    Rearrangement_d2_germline_start: Optional[int] = None
+    Rearrangement_d2_germline_end: Optional[int] = None
+    Rearrangement_d2_alignment_start: Optional[int] = None
+    Rearrangement_d2_alignment_end: Optional[int] = None
+    Rearrangement_j_sequence_start: Optional[int] = None
+    Rearrangement_j_sequence_end: Optional[int] = None
+    Rearrangement_j_germline_start: Optional[int] = None
+    Rearrangement_j_germline_end: Optional[int] = None
+    Rearrangement_j_alignment_start: Optional[int] = None
+    Rearrangement_j_alignment_end: Optional[int] = None
+    Rearrangement_c_sequence_start: Optional[int] = None
+    Rearrangement_c_sequence_end: Optional[int] = None
+    Rearrangement_c_germline_start: Optional[int] = None
+    Rearrangement_c_germline_end: Optional[int] = None
+    Rearrangement_c_alignment_start: Optional[int] = None
+    Rearrangement_c_alignment_end: Optional[int] = None
+    Rearrangement_cdr1_start: Optional[int] = None
+    Rearrangement_cdr1_end: Optional[int] = None
+    Rearrangement_cdr2_start: Optional[int] = None
+    Rearrangement_cdr2_end: Optional[int] = None
+    Rearrangement_cdr3_start: Optional[int] = None
+    Rearrangement_cdr3_end: Optional[int] = None
+    Rearrangement_fwr1_start: Optional[int] = None
+    Rearrangement_fwr1_end: Optional[int] = None
+    Rearrangement_fwr2_start: Optional[int] = None
+    Rearrangement_fwr2_end: Optional[int] = None
+    Rearrangement_fwr3_start: Optional[int] = None
+    Rearrangement_fwr3_end: Optional[int] = None
+    Rearrangement_fwr4_start: Optional[int] = None
+    Rearrangement_fwr4_end: Optional[int] = None
+    Rearrangement_v_sequence_alignment: Optional[str] = None
+    Rearrangement_v_sequence_alignment_aa: Optional[str] = None
+    Rearrangement_d_sequence_alignment: Optional[str] = None
+    Rearrangement_d_sequence_alignment_aa: Optional[str] = None
+    Rearrangement_d2_sequence_alignment: Optional[str] = None
+    Rearrangement_d2_sequence_alignment_aa: Optional[str] = None
+    Rearrangement_j_sequence_alignment: Optional[str] = None
+    Rearrangement_j_sequence_alignment_aa: Optional[str] = None
+    Rearrangement_c_sequence_alignment: Optional[str] = None
+    Rearrangement_c_sequence_alignment_aa: Optional[str] = None
+    Rearrangement_v_germline_alignment: Optional[str] = None
+    Rearrangement_v_germline_alignment_aa: Optional[str] = None
+    Rearrangement_d_germline_alignment: Optional[str] = None
+    Rearrangement_d_germline_alignment_aa: Optional[str] = None
+    Rearrangement_d2_germline_alignment: Optional[str] = None
+    Rearrangement_d2_germline_alignment_aa: Optional[str] = None
+    Rearrangement_j_germline_alignment: Optional[str] = None
+    Rearrangement_j_germline_alignment_aa: Optional[str] = None
+    Rearrangement_c_germline_alignment: Optional[str] = None
+    Rearrangement_c_germline_alignment_aa: Optional[str] = None
+    Rearrangement_junction_length: Optional[int] = None
+    Rearrangement_junction_aa_length: Optional[int] = None
+    Rearrangement_np1_length: Optional[int] = None
+    Rearrangement_np2_length: Optional[int] = None
+    Rearrangement_np3_length: Optional[int] = None
+    Rearrangement_n1_length: Optional[int] = None
+    Rearrangement_n2_length: Optional[int] = None
+    Rearrangement_n3_length: Optional[int] = None
+    Rearrangement_p3v_length: Optional[int] = None
+    Rearrangement_p5d_length: Optional[int] = None
+    Rearrangement_p3d_length: Optional[int] = None
+    Rearrangement_p5d2_length: Optional[int] = None
+    Rearrangement_p3d2_length: Optional[int] = None
+    Rearrangement_p5j_length: Optional[int] = None
+    Rearrangement_v_frameshift: Optional[Union[bool, Bool]] = None
+    Rearrangement_j_frameshift: Optional[Union[bool, Bool]] = None
+    Rearrangement_d_frame: Optional[int] = None
+    Rearrangement_d2_frame: Optional[int] = None
+    Rearrangement_consensus_count: Optional[int] = None
+    Rearrangement_duplicate_count: Optional[int] = None
+    Rearrangement_umi_count: Optional[int] = None
+    Rearrangement_cell_id: Optional[str] = None
+    Rearrangement_clone_id: Optional[str] = None
+    Rearrangement_repertoire_id: Optional[str] = None
+    Rearrangement_sample_processing_id: Optional[str] = None
+    Rearrangement_data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__data_processing__software_versions):
-            self.MissingRequiredField("v1p4__data_processing__software_versions")
-        if not isinstance(self.v1p4__data_processing__software_versions, str):
-            self.v1p4__data_processing__software_versions = str(self.v1p4__data_processing__software_versions)
+        if self._is_empty(self.Rearrangement_sequence_id):
+            self.MissingRequiredField("Rearrangement_sequence_id")
+        if not isinstance(self.Rearrangement_sequence_id, str):
+            self.Rearrangement_sequence_id = str(self.Rearrangement_sequence_id)
 
-        if self._is_empty(self.v1p4__data_processing__paired_reads_assembly):
-            self.MissingRequiredField("v1p4__data_processing__paired_reads_assembly")
-        if not isinstance(self.v1p4__data_processing__paired_reads_assembly, str):
-            self.v1p4__data_processing__paired_reads_assembly = str(self.v1p4__data_processing__paired_reads_assembly)
+        if self._is_empty(self.Rearrangement_sequence):
+            self.MissingRequiredField("Rearrangement_sequence")
+        if not isinstance(self.Rearrangement_sequence, str):
+            self.Rearrangement_sequence = str(self.Rearrangement_sequence)
 
-        if self._is_empty(self.v1p4__data_processing__quality_thresholds):
-            self.MissingRequiredField("v1p4__data_processing__quality_thresholds")
-        if not isinstance(self.v1p4__data_processing__quality_thresholds, str):
-            self.v1p4__data_processing__quality_thresholds = str(self.v1p4__data_processing__quality_thresholds)
+        if self._is_empty(self.Rearrangement_rev_comp):
+            self.MissingRequiredField("Rearrangement_rev_comp")
+        if not isinstance(self.Rearrangement_rev_comp, Bool):
+            self.Rearrangement_rev_comp = Bool(self.Rearrangement_rev_comp)
 
-        if self._is_empty(self.v1p4__data_processing__primer_match_cutoffs):
-            self.MissingRequiredField("v1p4__data_processing__primer_match_cutoffs")
-        if not isinstance(self.v1p4__data_processing__primer_match_cutoffs, str):
-            self.v1p4__data_processing__primer_match_cutoffs = str(self.v1p4__data_processing__primer_match_cutoffs)
+        if self._is_empty(self.Rearrangement_productive):
+            self.MissingRequiredField("Rearrangement_productive")
+        if not isinstance(self.Rearrangement_productive, Bool):
+            self.Rearrangement_productive = Bool(self.Rearrangement_productive)
 
-        if self._is_empty(self.v1p4__data_processing__collapsing_method):
-            self.MissingRequiredField("v1p4__data_processing__collapsing_method")
-        if not isinstance(self.v1p4__data_processing__collapsing_method, str):
-            self.v1p4__data_processing__collapsing_method = str(self.v1p4__data_processing__collapsing_method)
+        if self._is_empty(self.Rearrangement_v_call):
+            self.MissingRequiredField("Rearrangement_v_call")
+        if not isinstance(self.Rearrangement_v_call, str):
+            self.Rearrangement_v_call = str(self.Rearrangement_v_call)
 
-        if self._is_empty(self.v1p4__data_processing__data_processing_protocols):
-            self.MissingRequiredField("v1p4__data_processing__data_processing_protocols")
-        if not isinstance(self.v1p4__data_processing__data_processing_protocols, str):
-            self.v1p4__data_processing__data_processing_protocols = str(self.v1p4__data_processing__data_processing_protocols)
+        if self._is_empty(self.Rearrangement_d_call):
+            self.MissingRequiredField("Rearrangement_d_call")
+        if not isinstance(self.Rearrangement_d_call, str):
+            self.Rearrangement_d_call = str(self.Rearrangement_d_call)
 
-        if self._is_empty(self.v1p4__data_processing__germline_database):
-            self.MissingRequiredField("v1p4__data_processing__germline_database")
-        if not isinstance(self.v1p4__data_processing__germline_database, str):
-            self.v1p4__data_processing__germline_database = str(self.v1p4__data_processing__germline_database)
+        if self._is_empty(self.Rearrangement_j_call):
+            self.MissingRequiredField("Rearrangement_j_call")
+        if not isinstance(self.Rearrangement_j_call, str):
+            self.Rearrangement_j_call = str(self.Rearrangement_j_call)
 
-        if self.v1p4__data_processing__data_processing_id is not None and not isinstance(self.v1p4__data_processing__data_processing_id, str):
-            self.v1p4__data_processing__data_processing_id = str(self.v1p4__data_processing__data_processing_id)
+        if self._is_empty(self.Rearrangement_sequence_alignment):
+            self.MissingRequiredField("Rearrangement_sequence_alignment")
+        if not isinstance(self.Rearrangement_sequence_alignment, str):
+            self.Rearrangement_sequence_alignment = str(self.Rearrangement_sequence_alignment)
 
-        if self.v1p4__data_processing__primary_annotation is not None and not isinstance(self.v1p4__data_processing__primary_annotation, Bool):
-            self.v1p4__data_processing__primary_annotation = Bool(self.v1p4__data_processing__primary_annotation)
+        if self._is_empty(self.Rearrangement_germline_alignment):
+            self.MissingRequiredField("Rearrangement_germline_alignment")
+        if not isinstance(self.Rearrangement_germline_alignment, str):
+            self.Rearrangement_germline_alignment = str(self.Rearrangement_germline_alignment)
 
-        if not isinstance(self.v1p4__data_processing__data_processing_files, list):
-            self.v1p4__data_processing__data_processing_files = [self.v1p4__data_processing__data_processing_files] if self.v1p4__data_processing__data_processing_files is not None else []
-        self.v1p4__data_processing__data_processing_files = [v if isinstance(v, str) else str(v) for v in self.v1p4__data_processing__data_processing_files]
+        if self._is_empty(self.Rearrangement_junction):
+            self.MissingRequiredField("Rearrangement_junction")
+        if not isinstance(self.Rearrangement_junction, str):
+            self.Rearrangement_junction = str(self.Rearrangement_junction)
 
-        if self.v1p4__data_processing__germline_set_ref is not None and not isinstance(self.v1p4__data_processing__germline_set_ref, str):
-            self.v1p4__data_processing__germline_set_ref = str(self.v1p4__data_processing__germline_set_ref)
+        if self._is_empty(self.Rearrangement_junction_aa):
+            self.MissingRequiredField("Rearrangement_junction_aa")
+        if not isinstance(self.Rearrangement_junction_aa, str):
+            self.Rearrangement_junction_aa = str(self.Rearrangement_junction_aa)
 
-        if self.v1p4__data_processing__analysis_provenance_id is not None and not isinstance(self.v1p4__data_processing__analysis_provenance_id, str):
-            self.v1p4__data_processing__analysis_provenance_id = str(self.v1p4__data_processing__analysis_provenance_id)
+        if self._is_empty(self.Rearrangement_v_cigar):
+            self.MissingRequiredField("Rearrangement_v_cigar")
+        if not isinstance(self.Rearrangement_v_cigar, str):
+            self.Rearrangement_v_cigar = str(self.Rearrangement_v_cigar)
+
+        if self._is_empty(self.Rearrangement_d_cigar):
+            self.MissingRequiredField("Rearrangement_d_cigar")
+        if not isinstance(self.Rearrangement_d_cigar, str):
+            self.Rearrangement_d_cigar = str(self.Rearrangement_d_cigar)
+
+        if self._is_empty(self.Rearrangement_j_cigar):
+            self.MissingRequiredField("Rearrangement_j_cigar")
+        if not isinstance(self.Rearrangement_j_cigar, str):
+            self.Rearrangement_j_cigar = str(self.Rearrangement_j_cigar)
+
+        if self.Rearrangement_quality is not None and not isinstance(self.Rearrangement_quality, str):
+            self.Rearrangement_quality = str(self.Rearrangement_quality)
+
+        if self.Rearrangement_sequence_aa is not None and not isinstance(self.Rearrangement_sequence_aa, str):
+            self.Rearrangement_sequence_aa = str(self.Rearrangement_sequence_aa)
+
+        if self.Rearrangement_vj_in_frame is not None and not isinstance(self.Rearrangement_vj_in_frame, Bool):
+            self.Rearrangement_vj_in_frame = Bool(self.Rearrangement_vj_in_frame)
+
+        if self.Rearrangement_stop_codon is not None and not isinstance(self.Rearrangement_stop_codon, Bool):
+            self.Rearrangement_stop_codon = Bool(self.Rearrangement_stop_codon)
+
+        if self.Rearrangement_complete_vdj is not None and not isinstance(self.Rearrangement_complete_vdj, Bool):
+            self.Rearrangement_complete_vdj = Bool(self.Rearrangement_complete_vdj)
+
+        if self.Rearrangement_locus is not None and not isinstance(self.Rearrangement_locus, Locus):
+            self.Rearrangement_locus = Locus(self.Rearrangement_locus)
+
+        if self.Rearrangement_d2_call is not None and not isinstance(self.Rearrangement_d2_call, str):
+            self.Rearrangement_d2_call = str(self.Rearrangement_d2_call)
+
+        if self.Rearrangement_c_call is not None and not isinstance(self.Rearrangement_c_call, str):
+            self.Rearrangement_c_call = str(self.Rearrangement_c_call)
+
+        if self.Rearrangement_quality_alignment is not None and not isinstance(self.Rearrangement_quality_alignment, str):
+            self.Rearrangement_quality_alignment = str(self.Rearrangement_quality_alignment)
+
+        if self.Rearrangement_sequence_alignment_aa is not None and not isinstance(self.Rearrangement_sequence_alignment_aa, str):
+            self.Rearrangement_sequence_alignment_aa = str(self.Rearrangement_sequence_alignment_aa)
+
+        if self.Rearrangement_germline_alignment_aa is not None and not isinstance(self.Rearrangement_germline_alignment_aa, str):
+            self.Rearrangement_germline_alignment_aa = str(self.Rearrangement_germline_alignment_aa)
+
+        if self.Rearrangement_np1 is not None and not isinstance(self.Rearrangement_np1, str):
+            self.Rearrangement_np1 = str(self.Rearrangement_np1)
+
+        if self.Rearrangement_np1_aa is not None and not isinstance(self.Rearrangement_np1_aa, str):
+            self.Rearrangement_np1_aa = str(self.Rearrangement_np1_aa)
+
+        if self.Rearrangement_np2 is not None and not isinstance(self.Rearrangement_np2, str):
+            self.Rearrangement_np2 = str(self.Rearrangement_np2)
+
+        if self.Rearrangement_np2_aa is not None and not isinstance(self.Rearrangement_np2_aa, str):
+            self.Rearrangement_np2_aa = str(self.Rearrangement_np2_aa)
+
+        if self.Rearrangement_np3 is not None and not isinstance(self.Rearrangement_np3, str):
+            self.Rearrangement_np3 = str(self.Rearrangement_np3)
+
+        if self.Rearrangement_np3_aa is not None and not isinstance(self.Rearrangement_np3_aa, str):
+            self.Rearrangement_np3_aa = str(self.Rearrangement_np3_aa)
+
+        if self.Rearrangement_cdr1 is not None and not isinstance(self.Rearrangement_cdr1, str):
+            self.Rearrangement_cdr1 = str(self.Rearrangement_cdr1)
+
+        if self.Rearrangement_cdr1_aa is not None and not isinstance(self.Rearrangement_cdr1_aa, str):
+            self.Rearrangement_cdr1_aa = str(self.Rearrangement_cdr1_aa)
+
+        if self.Rearrangement_cdr2 is not None and not isinstance(self.Rearrangement_cdr2, str):
+            self.Rearrangement_cdr2 = str(self.Rearrangement_cdr2)
+
+        if self.Rearrangement_cdr2_aa is not None and not isinstance(self.Rearrangement_cdr2_aa, str):
+            self.Rearrangement_cdr2_aa = str(self.Rearrangement_cdr2_aa)
+
+        if self.Rearrangement_cdr3 is not None and not isinstance(self.Rearrangement_cdr3, str):
+            self.Rearrangement_cdr3 = str(self.Rearrangement_cdr3)
+
+        if self.Rearrangement_cdr3_aa is not None and not isinstance(self.Rearrangement_cdr3_aa, str):
+            self.Rearrangement_cdr3_aa = str(self.Rearrangement_cdr3_aa)
+
+        if self.Rearrangement_fwr1 is not None and not isinstance(self.Rearrangement_fwr1, str):
+            self.Rearrangement_fwr1 = str(self.Rearrangement_fwr1)
+
+        if self.Rearrangement_fwr1_aa is not None and not isinstance(self.Rearrangement_fwr1_aa, str):
+            self.Rearrangement_fwr1_aa = str(self.Rearrangement_fwr1_aa)
+
+        if self.Rearrangement_fwr2 is not None and not isinstance(self.Rearrangement_fwr2, str):
+            self.Rearrangement_fwr2 = str(self.Rearrangement_fwr2)
+
+        if self.Rearrangement_fwr2_aa is not None and not isinstance(self.Rearrangement_fwr2_aa, str):
+            self.Rearrangement_fwr2_aa = str(self.Rearrangement_fwr2_aa)
+
+        if self.Rearrangement_fwr3 is not None and not isinstance(self.Rearrangement_fwr3, str):
+            self.Rearrangement_fwr3 = str(self.Rearrangement_fwr3)
+
+        if self.Rearrangement_fwr3_aa is not None and not isinstance(self.Rearrangement_fwr3_aa, str):
+            self.Rearrangement_fwr3_aa = str(self.Rearrangement_fwr3_aa)
+
+        if self.Rearrangement_fwr4 is not None and not isinstance(self.Rearrangement_fwr4, str):
+            self.Rearrangement_fwr4 = str(self.Rearrangement_fwr4)
+
+        if self.Rearrangement_fwr4_aa is not None and not isinstance(self.Rearrangement_fwr4_aa, str):
+            self.Rearrangement_fwr4_aa = str(self.Rearrangement_fwr4_aa)
+
+        if self.Rearrangement_v_score is not None and not isinstance(self.Rearrangement_v_score, float):
+            self.Rearrangement_v_score = float(self.Rearrangement_v_score)
+
+        if self.Rearrangement_v_identity is not None and not isinstance(self.Rearrangement_v_identity, float):
+            self.Rearrangement_v_identity = float(self.Rearrangement_v_identity)
+
+        if self.Rearrangement_v_support is not None and not isinstance(self.Rearrangement_v_support, float):
+            self.Rearrangement_v_support = float(self.Rearrangement_v_support)
+
+        if self.Rearrangement_d_score is not None and not isinstance(self.Rearrangement_d_score, float):
+            self.Rearrangement_d_score = float(self.Rearrangement_d_score)
+
+        if self.Rearrangement_d_identity is not None and not isinstance(self.Rearrangement_d_identity, float):
+            self.Rearrangement_d_identity = float(self.Rearrangement_d_identity)
+
+        if self.Rearrangement_d_support is not None and not isinstance(self.Rearrangement_d_support, float):
+            self.Rearrangement_d_support = float(self.Rearrangement_d_support)
+
+        if self.Rearrangement_d2_score is not None and not isinstance(self.Rearrangement_d2_score, float):
+            self.Rearrangement_d2_score = float(self.Rearrangement_d2_score)
+
+        if self.Rearrangement_d2_identity is not None and not isinstance(self.Rearrangement_d2_identity, float):
+            self.Rearrangement_d2_identity = float(self.Rearrangement_d2_identity)
+
+        if self.Rearrangement_d2_support is not None and not isinstance(self.Rearrangement_d2_support, float):
+            self.Rearrangement_d2_support = float(self.Rearrangement_d2_support)
+
+        if self.Rearrangement_d2_cigar is not None and not isinstance(self.Rearrangement_d2_cigar, str):
+            self.Rearrangement_d2_cigar = str(self.Rearrangement_d2_cigar)
+
+        if self.Rearrangement_j_score is not None and not isinstance(self.Rearrangement_j_score, float):
+            self.Rearrangement_j_score = float(self.Rearrangement_j_score)
+
+        if self.Rearrangement_j_identity is not None and not isinstance(self.Rearrangement_j_identity, float):
+            self.Rearrangement_j_identity = float(self.Rearrangement_j_identity)
+
+        if self.Rearrangement_j_support is not None and not isinstance(self.Rearrangement_j_support, float):
+            self.Rearrangement_j_support = float(self.Rearrangement_j_support)
+
+        if self.Rearrangement_c_score is not None and not isinstance(self.Rearrangement_c_score, float):
+            self.Rearrangement_c_score = float(self.Rearrangement_c_score)
+
+        if self.Rearrangement_c_identity is not None and not isinstance(self.Rearrangement_c_identity, float):
+            self.Rearrangement_c_identity = float(self.Rearrangement_c_identity)
+
+        if self.Rearrangement_c_support is not None and not isinstance(self.Rearrangement_c_support, float):
+            self.Rearrangement_c_support = float(self.Rearrangement_c_support)
+
+        if self.Rearrangement_c_cigar is not None and not isinstance(self.Rearrangement_c_cigar, str):
+            self.Rearrangement_c_cigar = str(self.Rearrangement_c_cigar)
+
+        if self.Rearrangement_v_sequence_start is not None and not isinstance(self.Rearrangement_v_sequence_start, int):
+            self.Rearrangement_v_sequence_start = int(self.Rearrangement_v_sequence_start)
+
+        if self.Rearrangement_v_sequence_end is not None and not isinstance(self.Rearrangement_v_sequence_end, int):
+            self.Rearrangement_v_sequence_end = int(self.Rearrangement_v_sequence_end)
+
+        if self.Rearrangement_v_germline_start is not None and not isinstance(self.Rearrangement_v_germline_start, int):
+            self.Rearrangement_v_germline_start = int(self.Rearrangement_v_germline_start)
+
+        if self.Rearrangement_v_germline_end is not None and not isinstance(self.Rearrangement_v_germline_end, int):
+            self.Rearrangement_v_germline_end = int(self.Rearrangement_v_germline_end)
+
+        if self.Rearrangement_v_alignment_start is not None and not isinstance(self.Rearrangement_v_alignment_start, int):
+            self.Rearrangement_v_alignment_start = int(self.Rearrangement_v_alignment_start)
+
+        if self.Rearrangement_v_alignment_end is not None and not isinstance(self.Rearrangement_v_alignment_end, int):
+            self.Rearrangement_v_alignment_end = int(self.Rearrangement_v_alignment_end)
+
+        if self.Rearrangement_d_sequence_start is not None and not isinstance(self.Rearrangement_d_sequence_start, int):
+            self.Rearrangement_d_sequence_start = int(self.Rearrangement_d_sequence_start)
+
+        if self.Rearrangement_d_sequence_end is not None and not isinstance(self.Rearrangement_d_sequence_end, int):
+            self.Rearrangement_d_sequence_end = int(self.Rearrangement_d_sequence_end)
+
+        if self.Rearrangement_d_germline_start is not None and not isinstance(self.Rearrangement_d_germline_start, int):
+            self.Rearrangement_d_germline_start = int(self.Rearrangement_d_germline_start)
+
+        if self.Rearrangement_d_germline_end is not None and not isinstance(self.Rearrangement_d_germline_end, int):
+            self.Rearrangement_d_germline_end = int(self.Rearrangement_d_germline_end)
+
+        if self.Rearrangement_d_alignment_start is not None and not isinstance(self.Rearrangement_d_alignment_start, int):
+            self.Rearrangement_d_alignment_start = int(self.Rearrangement_d_alignment_start)
+
+        if self.Rearrangement_d_alignment_end is not None and not isinstance(self.Rearrangement_d_alignment_end, int):
+            self.Rearrangement_d_alignment_end = int(self.Rearrangement_d_alignment_end)
+
+        if self.Rearrangement_d2_sequence_start is not None and not isinstance(self.Rearrangement_d2_sequence_start, int):
+            self.Rearrangement_d2_sequence_start = int(self.Rearrangement_d2_sequence_start)
+
+        if self.Rearrangement_d2_sequence_end is not None and not isinstance(self.Rearrangement_d2_sequence_end, int):
+            self.Rearrangement_d2_sequence_end = int(self.Rearrangement_d2_sequence_end)
+
+        if self.Rearrangement_d2_germline_start is not None and not isinstance(self.Rearrangement_d2_germline_start, int):
+            self.Rearrangement_d2_germline_start = int(self.Rearrangement_d2_germline_start)
+
+        if self.Rearrangement_d2_germline_end is not None and not isinstance(self.Rearrangement_d2_germline_end, int):
+            self.Rearrangement_d2_germline_end = int(self.Rearrangement_d2_germline_end)
+
+        if self.Rearrangement_d2_alignment_start is not None and not isinstance(self.Rearrangement_d2_alignment_start, int):
+            self.Rearrangement_d2_alignment_start = int(self.Rearrangement_d2_alignment_start)
+
+        if self.Rearrangement_d2_alignment_end is not None and not isinstance(self.Rearrangement_d2_alignment_end, int):
+            self.Rearrangement_d2_alignment_end = int(self.Rearrangement_d2_alignment_end)
+
+        if self.Rearrangement_j_sequence_start is not None and not isinstance(self.Rearrangement_j_sequence_start, int):
+            self.Rearrangement_j_sequence_start = int(self.Rearrangement_j_sequence_start)
+
+        if self.Rearrangement_j_sequence_end is not None and not isinstance(self.Rearrangement_j_sequence_end, int):
+            self.Rearrangement_j_sequence_end = int(self.Rearrangement_j_sequence_end)
+
+        if self.Rearrangement_j_germline_start is not None and not isinstance(self.Rearrangement_j_germline_start, int):
+            self.Rearrangement_j_germline_start = int(self.Rearrangement_j_germline_start)
+
+        if self.Rearrangement_j_germline_end is not None and not isinstance(self.Rearrangement_j_germline_end, int):
+            self.Rearrangement_j_germline_end = int(self.Rearrangement_j_germline_end)
+
+        if self.Rearrangement_j_alignment_start is not None and not isinstance(self.Rearrangement_j_alignment_start, int):
+            self.Rearrangement_j_alignment_start = int(self.Rearrangement_j_alignment_start)
+
+        if self.Rearrangement_j_alignment_end is not None and not isinstance(self.Rearrangement_j_alignment_end, int):
+            self.Rearrangement_j_alignment_end = int(self.Rearrangement_j_alignment_end)
+
+        if self.Rearrangement_c_sequence_start is not None and not isinstance(self.Rearrangement_c_sequence_start, int):
+            self.Rearrangement_c_sequence_start = int(self.Rearrangement_c_sequence_start)
+
+        if self.Rearrangement_c_sequence_end is not None and not isinstance(self.Rearrangement_c_sequence_end, int):
+            self.Rearrangement_c_sequence_end = int(self.Rearrangement_c_sequence_end)
+
+        if self.Rearrangement_c_germline_start is not None and not isinstance(self.Rearrangement_c_germline_start, int):
+            self.Rearrangement_c_germline_start = int(self.Rearrangement_c_germline_start)
+
+        if self.Rearrangement_c_germline_end is not None and not isinstance(self.Rearrangement_c_germline_end, int):
+            self.Rearrangement_c_germline_end = int(self.Rearrangement_c_germline_end)
+
+        if self.Rearrangement_c_alignment_start is not None and not isinstance(self.Rearrangement_c_alignment_start, int):
+            self.Rearrangement_c_alignment_start = int(self.Rearrangement_c_alignment_start)
+
+        if self.Rearrangement_c_alignment_end is not None and not isinstance(self.Rearrangement_c_alignment_end, int):
+            self.Rearrangement_c_alignment_end = int(self.Rearrangement_c_alignment_end)
+
+        if self.Rearrangement_cdr1_start is not None and not isinstance(self.Rearrangement_cdr1_start, int):
+            self.Rearrangement_cdr1_start = int(self.Rearrangement_cdr1_start)
+
+        if self.Rearrangement_cdr1_end is not None and not isinstance(self.Rearrangement_cdr1_end, int):
+            self.Rearrangement_cdr1_end = int(self.Rearrangement_cdr1_end)
+
+        if self.Rearrangement_cdr2_start is not None and not isinstance(self.Rearrangement_cdr2_start, int):
+            self.Rearrangement_cdr2_start = int(self.Rearrangement_cdr2_start)
+
+        if self.Rearrangement_cdr2_end is not None and not isinstance(self.Rearrangement_cdr2_end, int):
+            self.Rearrangement_cdr2_end = int(self.Rearrangement_cdr2_end)
+
+        if self.Rearrangement_cdr3_start is not None and not isinstance(self.Rearrangement_cdr3_start, int):
+            self.Rearrangement_cdr3_start = int(self.Rearrangement_cdr3_start)
+
+        if self.Rearrangement_cdr3_end is not None and not isinstance(self.Rearrangement_cdr3_end, int):
+            self.Rearrangement_cdr3_end = int(self.Rearrangement_cdr3_end)
+
+        if self.Rearrangement_fwr1_start is not None and not isinstance(self.Rearrangement_fwr1_start, int):
+            self.Rearrangement_fwr1_start = int(self.Rearrangement_fwr1_start)
+
+        if self.Rearrangement_fwr1_end is not None and not isinstance(self.Rearrangement_fwr1_end, int):
+            self.Rearrangement_fwr1_end = int(self.Rearrangement_fwr1_end)
+
+        if self.Rearrangement_fwr2_start is not None and not isinstance(self.Rearrangement_fwr2_start, int):
+            self.Rearrangement_fwr2_start = int(self.Rearrangement_fwr2_start)
+
+        if self.Rearrangement_fwr2_end is not None and not isinstance(self.Rearrangement_fwr2_end, int):
+            self.Rearrangement_fwr2_end = int(self.Rearrangement_fwr2_end)
+
+        if self.Rearrangement_fwr3_start is not None and not isinstance(self.Rearrangement_fwr3_start, int):
+            self.Rearrangement_fwr3_start = int(self.Rearrangement_fwr3_start)
+
+        if self.Rearrangement_fwr3_end is not None and not isinstance(self.Rearrangement_fwr3_end, int):
+            self.Rearrangement_fwr3_end = int(self.Rearrangement_fwr3_end)
+
+        if self.Rearrangement_fwr4_start is not None and not isinstance(self.Rearrangement_fwr4_start, int):
+            self.Rearrangement_fwr4_start = int(self.Rearrangement_fwr4_start)
+
+        if self.Rearrangement_fwr4_end is not None and not isinstance(self.Rearrangement_fwr4_end, int):
+            self.Rearrangement_fwr4_end = int(self.Rearrangement_fwr4_end)
+
+        if self.Rearrangement_v_sequence_alignment is not None and not isinstance(self.Rearrangement_v_sequence_alignment, str):
+            self.Rearrangement_v_sequence_alignment = str(self.Rearrangement_v_sequence_alignment)
+
+        if self.Rearrangement_v_sequence_alignment_aa is not None and not isinstance(self.Rearrangement_v_sequence_alignment_aa, str):
+            self.Rearrangement_v_sequence_alignment_aa = str(self.Rearrangement_v_sequence_alignment_aa)
+
+        if self.Rearrangement_d_sequence_alignment is not None and not isinstance(self.Rearrangement_d_sequence_alignment, str):
+            self.Rearrangement_d_sequence_alignment = str(self.Rearrangement_d_sequence_alignment)
+
+        if self.Rearrangement_d_sequence_alignment_aa is not None and not isinstance(self.Rearrangement_d_sequence_alignment_aa, str):
+            self.Rearrangement_d_sequence_alignment_aa = str(self.Rearrangement_d_sequence_alignment_aa)
+
+        if self.Rearrangement_d2_sequence_alignment is not None and not isinstance(self.Rearrangement_d2_sequence_alignment, str):
+            self.Rearrangement_d2_sequence_alignment = str(self.Rearrangement_d2_sequence_alignment)
+
+        if self.Rearrangement_d2_sequence_alignment_aa is not None and not isinstance(self.Rearrangement_d2_sequence_alignment_aa, str):
+            self.Rearrangement_d2_sequence_alignment_aa = str(self.Rearrangement_d2_sequence_alignment_aa)
+
+        if self.Rearrangement_j_sequence_alignment is not None and not isinstance(self.Rearrangement_j_sequence_alignment, str):
+            self.Rearrangement_j_sequence_alignment = str(self.Rearrangement_j_sequence_alignment)
+
+        if self.Rearrangement_j_sequence_alignment_aa is not None and not isinstance(self.Rearrangement_j_sequence_alignment_aa, str):
+            self.Rearrangement_j_sequence_alignment_aa = str(self.Rearrangement_j_sequence_alignment_aa)
+
+        if self.Rearrangement_c_sequence_alignment is not None and not isinstance(self.Rearrangement_c_sequence_alignment, str):
+            self.Rearrangement_c_sequence_alignment = str(self.Rearrangement_c_sequence_alignment)
+
+        if self.Rearrangement_c_sequence_alignment_aa is not None and not isinstance(self.Rearrangement_c_sequence_alignment_aa, str):
+            self.Rearrangement_c_sequence_alignment_aa = str(self.Rearrangement_c_sequence_alignment_aa)
+
+        if self.Rearrangement_v_germline_alignment is not None and not isinstance(self.Rearrangement_v_germline_alignment, str):
+            self.Rearrangement_v_germline_alignment = str(self.Rearrangement_v_germline_alignment)
+
+        if self.Rearrangement_v_germline_alignment_aa is not None and not isinstance(self.Rearrangement_v_germline_alignment_aa, str):
+            self.Rearrangement_v_germline_alignment_aa = str(self.Rearrangement_v_germline_alignment_aa)
+
+        if self.Rearrangement_d_germline_alignment is not None and not isinstance(self.Rearrangement_d_germline_alignment, str):
+            self.Rearrangement_d_germline_alignment = str(self.Rearrangement_d_germline_alignment)
+
+        if self.Rearrangement_d_germline_alignment_aa is not None and not isinstance(self.Rearrangement_d_germline_alignment_aa, str):
+            self.Rearrangement_d_germline_alignment_aa = str(self.Rearrangement_d_germline_alignment_aa)
+
+        if self.Rearrangement_d2_germline_alignment is not None and not isinstance(self.Rearrangement_d2_germline_alignment, str):
+            self.Rearrangement_d2_germline_alignment = str(self.Rearrangement_d2_germline_alignment)
+
+        if self.Rearrangement_d2_germline_alignment_aa is not None and not isinstance(self.Rearrangement_d2_germline_alignment_aa, str):
+            self.Rearrangement_d2_germline_alignment_aa = str(self.Rearrangement_d2_germline_alignment_aa)
+
+        if self.Rearrangement_j_germline_alignment is not None and not isinstance(self.Rearrangement_j_germline_alignment, str):
+            self.Rearrangement_j_germline_alignment = str(self.Rearrangement_j_germline_alignment)
+
+        if self.Rearrangement_j_germline_alignment_aa is not None and not isinstance(self.Rearrangement_j_germline_alignment_aa, str):
+            self.Rearrangement_j_germline_alignment_aa = str(self.Rearrangement_j_germline_alignment_aa)
+
+        if self.Rearrangement_c_germline_alignment is not None and not isinstance(self.Rearrangement_c_germline_alignment, str):
+            self.Rearrangement_c_germline_alignment = str(self.Rearrangement_c_germline_alignment)
+
+        if self.Rearrangement_c_germline_alignment_aa is not None and not isinstance(self.Rearrangement_c_germline_alignment_aa, str):
+            self.Rearrangement_c_germline_alignment_aa = str(self.Rearrangement_c_germline_alignment_aa)
+
+        if self.Rearrangement_junction_length is not None and not isinstance(self.Rearrangement_junction_length, int):
+            self.Rearrangement_junction_length = int(self.Rearrangement_junction_length)
+
+        if self.Rearrangement_junction_aa_length is not None and not isinstance(self.Rearrangement_junction_aa_length, int):
+            self.Rearrangement_junction_aa_length = int(self.Rearrangement_junction_aa_length)
+
+        if self.Rearrangement_np1_length is not None and not isinstance(self.Rearrangement_np1_length, int):
+            self.Rearrangement_np1_length = int(self.Rearrangement_np1_length)
+
+        if self.Rearrangement_np2_length is not None and not isinstance(self.Rearrangement_np2_length, int):
+            self.Rearrangement_np2_length = int(self.Rearrangement_np2_length)
+
+        if self.Rearrangement_np3_length is not None and not isinstance(self.Rearrangement_np3_length, int):
+            self.Rearrangement_np3_length = int(self.Rearrangement_np3_length)
+
+        if self.Rearrangement_n1_length is not None and not isinstance(self.Rearrangement_n1_length, int):
+            self.Rearrangement_n1_length = int(self.Rearrangement_n1_length)
+
+        if self.Rearrangement_n2_length is not None and not isinstance(self.Rearrangement_n2_length, int):
+            self.Rearrangement_n2_length = int(self.Rearrangement_n2_length)
+
+        if self.Rearrangement_n3_length is not None and not isinstance(self.Rearrangement_n3_length, int):
+            self.Rearrangement_n3_length = int(self.Rearrangement_n3_length)
+
+        if self.Rearrangement_p3v_length is not None and not isinstance(self.Rearrangement_p3v_length, int):
+            self.Rearrangement_p3v_length = int(self.Rearrangement_p3v_length)
+
+        if self.Rearrangement_p5d_length is not None and not isinstance(self.Rearrangement_p5d_length, int):
+            self.Rearrangement_p5d_length = int(self.Rearrangement_p5d_length)
+
+        if self.Rearrangement_p3d_length is not None and not isinstance(self.Rearrangement_p3d_length, int):
+            self.Rearrangement_p3d_length = int(self.Rearrangement_p3d_length)
+
+        if self.Rearrangement_p5d2_length is not None and not isinstance(self.Rearrangement_p5d2_length, int):
+            self.Rearrangement_p5d2_length = int(self.Rearrangement_p5d2_length)
+
+        if self.Rearrangement_p3d2_length is not None and not isinstance(self.Rearrangement_p3d2_length, int):
+            self.Rearrangement_p3d2_length = int(self.Rearrangement_p3d2_length)
+
+        if self.Rearrangement_p5j_length is not None and not isinstance(self.Rearrangement_p5j_length, int):
+            self.Rearrangement_p5j_length = int(self.Rearrangement_p5j_length)
+
+        if self.Rearrangement_v_frameshift is not None and not isinstance(self.Rearrangement_v_frameshift, Bool):
+            self.Rearrangement_v_frameshift = Bool(self.Rearrangement_v_frameshift)
+
+        if self.Rearrangement_j_frameshift is not None and not isinstance(self.Rearrangement_j_frameshift, Bool):
+            self.Rearrangement_j_frameshift = Bool(self.Rearrangement_j_frameshift)
+
+        if self.Rearrangement_d_frame is not None and not isinstance(self.Rearrangement_d_frame, int):
+            self.Rearrangement_d_frame = int(self.Rearrangement_d_frame)
+
+        if self.Rearrangement_d2_frame is not None and not isinstance(self.Rearrangement_d2_frame, int):
+            self.Rearrangement_d2_frame = int(self.Rearrangement_d2_frame)
+
+        if self.Rearrangement_consensus_count is not None and not isinstance(self.Rearrangement_consensus_count, int):
+            self.Rearrangement_consensus_count = int(self.Rearrangement_consensus_count)
+
+        if self.Rearrangement_duplicate_count is not None and not isinstance(self.Rearrangement_duplicate_count, int):
+            self.Rearrangement_duplicate_count = int(self.Rearrangement_duplicate_count)
+
+        if self.Rearrangement_umi_count is not None and not isinstance(self.Rearrangement_umi_count, int):
+            self.Rearrangement_umi_count = int(self.Rearrangement_umi_count)
+
+        if self.Rearrangement_cell_id is not None and not isinstance(self.Rearrangement_cell_id, str):
+            self.Rearrangement_cell_id = str(self.Rearrangement_cell_id)
+
+        if self.Rearrangement_clone_id is not None and not isinstance(self.Rearrangement_clone_id, str):
+            self.Rearrangement_clone_id = str(self.Rearrangement_clone_id)
+
+        if self.Rearrangement_repertoire_id is not None and not isinstance(self.Rearrangement_repertoire_id, str):
+            self.Rearrangement_repertoire_id = str(self.Rearrangement_repertoire_id)
+
+        if self.Rearrangement_sample_processing_id is not None and not isinstance(self.Rearrangement_sample_processing_id, str):
+            self.Rearrangement_sample_processing_id = str(self.Rearrangement_sample_processing_id)
+
+        if self.Rearrangement_data_processing_id is not None and not isinstance(self.Rearrangement_data_processing_id, str):
+            self.Rearrangement_data_processing_id = str(self.Rearrangement_data_processing_id)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Repertoire(YAMLRoot):
+class Clone(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Repertoire"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Repertoire"
-    class_name: ClassVar[str] = "v1p4_Repertoire"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Repertoire
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Clone"]
+    class_class_curie: ClassVar[str] = "ak_schema:Clone"
+    class_name: ClassVar[str] = "Clone"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Clone
 
-    v1p4__repertoire__study: Union[dict, V1p4Study] = None
-    v1p4__repertoire__subject: Union[dict, V1p4Subject] = None
-    v1p4__repertoire__sample: Union[Union[dict, "V1p4SampleProcessing"], List[Union[dict, "V1p4SampleProcessing"]]] = None
-    v1p4__repertoire__data_processing: Union[Union[dict, V1p4DataProcessing], List[Union[dict, V1p4DataProcessing]]] = None
-    v1p4__repertoire__repertoire_id: Optional[str] = None
-    v1p4__repertoire__repertoire_name: Optional[str] = None
-    v1p4__repertoire__repertoire_description: Optional[str] = None
+    Clone_clone_id: str = None
+    Clone_germline_alignment: str = None
+    Clone_repertoire_id: Optional[str] = None
+    Clone_data_processing_id: Optional[str] = None
+    Clone_sequences: Optional[Union[str, List[str]]] = empty_list()
+    Clone_v_call: Optional[str] = None
+    Clone_d_call: Optional[str] = None
+    Clone_j_call: Optional[str] = None
+    Clone_junction: Optional[str] = None
+    Clone_junction_aa: Optional[str] = None
+    Clone_junction_length: Optional[int] = None
+    Clone_junction_aa_length: Optional[int] = None
+    Clone_germline_alignment_aa: Optional[str] = None
+    Clone_v_alignment_start: Optional[int] = None
+    Clone_v_alignment_end: Optional[int] = None
+    Clone_d_alignment_start: Optional[int] = None
+    Clone_d_alignment_end: Optional[int] = None
+    Clone_j_alignment_start: Optional[int] = None
+    Clone_j_alignment_end: Optional[int] = None
+    Clone_junction_start: Optional[int] = None
+    Clone_junction_end: Optional[int] = None
+    Clone_umi_count: Optional[int] = None
+    Clone_clone_count: Optional[int] = None
+    Clone_seed_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__repertoire__study):
-            self.MissingRequiredField("v1p4__repertoire__study")
-        if not isinstance(self.v1p4__repertoire__study, V1p4Study):
-            self.v1p4__repertoire__study = V1p4Study(**as_dict(self.v1p4__repertoire__study))
+        if self._is_empty(self.Clone_clone_id):
+            self.MissingRequiredField("Clone_clone_id")
+        if not isinstance(self.Clone_clone_id, str):
+            self.Clone_clone_id = str(self.Clone_clone_id)
 
-        if self._is_empty(self.v1p4__repertoire__subject):
-            self.MissingRequiredField("v1p4__repertoire__subject")
-        if not isinstance(self.v1p4__repertoire__subject, V1p4Subject):
-            self.v1p4__repertoire__subject = V1p4Subject(**as_dict(self.v1p4__repertoire__subject))
+        if self._is_empty(self.Clone_germline_alignment):
+            self.MissingRequiredField("Clone_germline_alignment")
+        if not isinstance(self.Clone_germline_alignment, str):
+            self.Clone_germline_alignment = str(self.Clone_germline_alignment)
 
-        if self._is_empty(self.v1p4__repertoire__sample):
-            self.MissingRequiredField("v1p4__repertoire__sample")
-        self._normalize_inlined_as_dict(slot_name="v1p4__repertoire__sample", slot_type=V1p4SampleProcessing, key_name="v1p4__sample__sample_id", keyed=False)
+        if self.Clone_repertoire_id is not None and not isinstance(self.Clone_repertoire_id, str):
+            self.Clone_repertoire_id = str(self.Clone_repertoire_id)
 
-        if self._is_empty(self.v1p4__repertoire__data_processing):
-            self.MissingRequiredField("v1p4__repertoire__data_processing")
-        self._normalize_inlined_as_dict(slot_name="v1p4__repertoire__data_processing", slot_type=V1p4DataProcessing, key_name="v1p4__data_processing__software_versions", keyed=False)
+        if self.Clone_data_processing_id is not None and not isinstance(self.Clone_data_processing_id, str):
+            self.Clone_data_processing_id = str(self.Clone_data_processing_id)
 
-        if self.v1p4__repertoire__repertoire_id is not None and not isinstance(self.v1p4__repertoire__repertoire_id, str):
-            self.v1p4__repertoire__repertoire_id = str(self.v1p4__repertoire__repertoire_id)
+        if not isinstance(self.Clone_sequences, list):
+            self.Clone_sequences = [self.Clone_sequences] if self.Clone_sequences is not None else []
+        self.Clone_sequences = [v if isinstance(v, str) else str(v) for v in self.Clone_sequences]
 
-        if self.v1p4__repertoire__repertoire_name is not None and not isinstance(self.v1p4__repertoire__repertoire_name, str):
-            self.v1p4__repertoire__repertoire_name = str(self.v1p4__repertoire__repertoire_name)
+        if self.Clone_v_call is not None and not isinstance(self.Clone_v_call, str):
+            self.Clone_v_call = str(self.Clone_v_call)
 
-        if self.v1p4__repertoire__repertoire_description is not None and not isinstance(self.v1p4__repertoire__repertoire_description, str):
-            self.v1p4__repertoire__repertoire_description = str(self.v1p4__repertoire__repertoire_description)
+        if self.Clone_d_call is not None and not isinstance(self.Clone_d_call, str):
+            self.Clone_d_call = str(self.Clone_d_call)
+
+        if self.Clone_j_call is not None and not isinstance(self.Clone_j_call, str):
+            self.Clone_j_call = str(self.Clone_j_call)
+
+        if self.Clone_junction is not None and not isinstance(self.Clone_junction, str):
+            self.Clone_junction = str(self.Clone_junction)
+
+        if self.Clone_junction_aa is not None and not isinstance(self.Clone_junction_aa, str):
+            self.Clone_junction_aa = str(self.Clone_junction_aa)
+
+        if self.Clone_junction_length is not None and not isinstance(self.Clone_junction_length, int):
+            self.Clone_junction_length = int(self.Clone_junction_length)
+
+        if self.Clone_junction_aa_length is not None and not isinstance(self.Clone_junction_aa_length, int):
+            self.Clone_junction_aa_length = int(self.Clone_junction_aa_length)
+
+        if self.Clone_germline_alignment_aa is not None and not isinstance(self.Clone_germline_alignment_aa, str):
+            self.Clone_germline_alignment_aa = str(self.Clone_germline_alignment_aa)
+
+        if self.Clone_v_alignment_start is not None and not isinstance(self.Clone_v_alignment_start, int):
+            self.Clone_v_alignment_start = int(self.Clone_v_alignment_start)
+
+        if self.Clone_v_alignment_end is not None and not isinstance(self.Clone_v_alignment_end, int):
+            self.Clone_v_alignment_end = int(self.Clone_v_alignment_end)
+
+        if self.Clone_d_alignment_start is not None and not isinstance(self.Clone_d_alignment_start, int):
+            self.Clone_d_alignment_start = int(self.Clone_d_alignment_start)
+
+        if self.Clone_d_alignment_end is not None and not isinstance(self.Clone_d_alignment_end, int):
+            self.Clone_d_alignment_end = int(self.Clone_d_alignment_end)
+
+        if self.Clone_j_alignment_start is not None and not isinstance(self.Clone_j_alignment_start, int):
+            self.Clone_j_alignment_start = int(self.Clone_j_alignment_start)
+
+        if self.Clone_j_alignment_end is not None and not isinstance(self.Clone_j_alignment_end, int):
+            self.Clone_j_alignment_end = int(self.Clone_j_alignment_end)
+
+        if self.Clone_junction_start is not None and not isinstance(self.Clone_junction_start, int):
+            self.Clone_junction_start = int(self.Clone_junction_start)
+
+        if self.Clone_junction_end is not None and not isinstance(self.Clone_junction_end, int):
+            self.Clone_junction_end = int(self.Clone_junction_end)
+
+        if self.Clone_umi_count is not None and not isinstance(self.Clone_umi_count, int):
+            self.Clone_umi_count = int(self.Clone_umi_count)
+
+        if self.Clone_clone_count is not None and not isinstance(self.Clone_clone_count, int):
+            self.Clone_clone_count = int(self.Clone_clone_count)
+
+        if self.Clone_seed_id is not None and not isinstance(self.Clone_seed_id, str):
+            self.Clone_seed_id = str(self.Clone_seed_id)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4RepertoireGroup(YAMLRoot):
+class Tree(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4RepertoireGroup"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4RepertoireGroup"
-    class_name: ClassVar[str] = "v1p4_RepertoireGroup"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4RepertoireGroup
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Tree"]
+    class_class_curie: ClassVar[str] = "ak_schema:Tree"
+    class_name: ClassVar[str] = "Tree"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Tree
 
-    v1p4__repertoire_group__repertoire_group_id: str = None
-    v1p4__repertoire_group__repertoires: Union[str, List[str]] = None
-    v1p4__repertoire_group__repertoire_group_name: Optional[str] = None
-    v1p4__repertoire_group__repertoire_group_description: Optional[str] = None
+    Tree_tree_id: str = None
+    Tree_clone_id: str = None
+    Tree_newick: str = None
+    Tree_nodes: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__repertoire_group__repertoire_group_id):
-            self.MissingRequiredField("v1p4__repertoire_group__repertoire_group_id")
-        if not isinstance(self.v1p4__repertoire_group__repertoire_group_id, str):
-            self.v1p4__repertoire_group__repertoire_group_id = str(self.v1p4__repertoire_group__repertoire_group_id)
+        if self._is_empty(self.Tree_tree_id):
+            self.MissingRequiredField("Tree_tree_id")
+        if not isinstance(self.Tree_tree_id, str):
+            self.Tree_tree_id = str(self.Tree_tree_id)
 
-        if self._is_empty(self.v1p4__repertoire_group__repertoires):
-            self.MissingRequiredField("v1p4__repertoire_group__repertoires")
-        if not isinstance(self.v1p4__repertoire_group__repertoires, list):
-            self.v1p4__repertoire_group__repertoires = [self.v1p4__repertoire_group__repertoires] if self.v1p4__repertoire_group__repertoires is not None else []
-        self.v1p4__repertoire_group__repertoires = [v if isinstance(v, str) else str(v) for v in self.v1p4__repertoire_group__repertoires]
+        if self._is_empty(self.Tree_clone_id):
+            self.MissingRequiredField("Tree_clone_id")
+        if not isinstance(self.Tree_clone_id, str):
+            self.Tree_clone_id = str(self.Tree_clone_id)
 
-        if self.v1p4__repertoire_group__repertoire_group_name is not None and not isinstance(self.v1p4__repertoire_group__repertoire_group_name, str):
-            self.v1p4__repertoire_group__repertoire_group_name = str(self.v1p4__repertoire_group__repertoire_group_name)
+        if self._is_empty(self.Tree_newick):
+            self.MissingRequiredField("Tree_newick")
+        if not isinstance(self.Tree_newick, str):
+            self.Tree_newick = str(self.Tree_newick)
 
-        if self.v1p4__repertoire_group__repertoire_group_description is not None and not isinstance(self.v1p4__repertoire_group__repertoire_group_description, str):
-            self.v1p4__repertoire_group__repertoire_group_description = str(self.v1p4__repertoire_group__repertoire_group_description)
+        if self.Tree_nodes is not None and not isinstance(self.Tree_nodes, str):
+            self.Tree_nodes = str(self.Tree_nodes)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Alignment(YAMLRoot):
+class Node(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Alignment"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Alignment"
-    class_name: ClassVar[str] = "v1p4_Alignment"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Alignment
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Node"]
+    class_class_curie: ClassVar[str] = "ak_schema:Node"
+    class_name: ClassVar[str] = "Node"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Node
 
-    v1p4__alignment__sequence_id: str = None
-    v1p4__alignment__segment: str = None
-    v1p4__alignment__call: str = None
-    v1p4__alignment__score: float = None
-    v1p4__alignment__cigar: str = None
-    v1p4__alignment__rev_comp: Optional[Union[bool, Bool]] = None
-    v1p4__alignment__identity: Optional[float] = None
-    v1p4__alignment__support: Optional[float] = None
-    v1p4__alignment__sequence_start: Optional[int] = None
-    v1p4__alignment__sequence_end: Optional[int] = None
-    v1p4__alignment__germline_start: Optional[int] = None
-    v1p4__alignment__germline_end: Optional[int] = None
-    v1p4__alignment__rank: Optional[int] = None
-    v1p4__alignment__data_processing_id: Optional[str] = None
+    Node_sequence_id: str = None
+    Node_sequence_alignment: Optional[str] = None
+    Node_junction: Optional[str] = None
+    Node_junction_aa: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__alignment__sequence_id):
-            self.MissingRequiredField("v1p4__alignment__sequence_id")
-        if not isinstance(self.v1p4__alignment__sequence_id, str):
-            self.v1p4__alignment__sequence_id = str(self.v1p4__alignment__sequence_id)
+        if self._is_empty(self.Node_sequence_id):
+            self.MissingRequiredField("Node_sequence_id")
+        if not isinstance(self.Node_sequence_id, str):
+            self.Node_sequence_id = str(self.Node_sequence_id)
 
-        if self._is_empty(self.v1p4__alignment__segment):
-            self.MissingRequiredField("v1p4__alignment__segment")
-        if not isinstance(self.v1p4__alignment__segment, str):
-            self.v1p4__alignment__segment = str(self.v1p4__alignment__segment)
+        if self.Node_sequence_alignment is not None and not isinstance(self.Node_sequence_alignment, str):
+            self.Node_sequence_alignment = str(self.Node_sequence_alignment)
 
-        if self._is_empty(self.v1p4__alignment__call):
-            self.MissingRequiredField("v1p4__alignment__call")
-        if not isinstance(self.v1p4__alignment__call, str):
-            self.v1p4__alignment__call = str(self.v1p4__alignment__call)
+        if self.Node_junction is not None and not isinstance(self.Node_junction, str):
+            self.Node_junction = str(self.Node_junction)
 
-        if self._is_empty(self.v1p4__alignment__score):
-            self.MissingRequiredField("v1p4__alignment__score")
-        if not isinstance(self.v1p4__alignment__score, float):
-            self.v1p4__alignment__score = float(self.v1p4__alignment__score)
-
-        if self._is_empty(self.v1p4__alignment__cigar):
-            self.MissingRequiredField("v1p4__alignment__cigar")
-        if not isinstance(self.v1p4__alignment__cigar, str):
-            self.v1p4__alignment__cigar = str(self.v1p4__alignment__cigar)
-
-        if self.v1p4__alignment__rev_comp is not None and not isinstance(self.v1p4__alignment__rev_comp, Bool):
-            self.v1p4__alignment__rev_comp = Bool(self.v1p4__alignment__rev_comp)
-
-        if self.v1p4__alignment__identity is not None and not isinstance(self.v1p4__alignment__identity, float):
-            self.v1p4__alignment__identity = float(self.v1p4__alignment__identity)
-
-        if self.v1p4__alignment__support is not None and not isinstance(self.v1p4__alignment__support, float):
-            self.v1p4__alignment__support = float(self.v1p4__alignment__support)
-
-        if self.v1p4__alignment__sequence_start is not None and not isinstance(self.v1p4__alignment__sequence_start, int):
-            self.v1p4__alignment__sequence_start = int(self.v1p4__alignment__sequence_start)
-
-        if self.v1p4__alignment__sequence_end is not None and not isinstance(self.v1p4__alignment__sequence_end, int):
-            self.v1p4__alignment__sequence_end = int(self.v1p4__alignment__sequence_end)
-
-        if self.v1p4__alignment__germline_start is not None and not isinstance(self.v1p4__alignment__germline_start, int):
-            self.v1p4__alignment__germline_start = int(self.v1p4__alignment__germline_start)
-
-        if self.v1p4__alignment__germline_end is not None and not isinstance(self.v1p4__alignment__germline_end, int):
-            self.v1p4__alignment__germline_end = int(self.v1p4__alignment__germline_end)
-
-        if self.v1p4__alignment__rank is not None and not isinstance(self.v1p4__alignment__rank, int):
-            self.v1p4__alignment__rank = int(self.v1p4__alignment__rank)
-
-        if self.v1p4__alignment__data_processing_id is not None and not isinstance(self.v1p4__alignment__data_processing_id, str):
-            self.v1p4__alignment__data_processing_id = str(self.v1p4__alignment__data_processing_id)
+        if self.Node_junction_aa is not None and not isinstance(self.Node_junction_aa, str):
+            self.Node_junction_aa = str(self.Node_junction_aa)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Rearrangement(YAMLRoot):
+class CellExpression(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Rearrangement"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Rearrangement"
-    class_name: ClassVar[str] = "v1p4_Rearrangement"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Rearrangement
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellExpression"]
+    class_class_curie: ClassVar[str] = "ak_schema:CellExpression"
+    class_name: ClassVar[str] = "CellExpression"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellExpression
 
-    v1p4__rearrangement__sequence_id: str = None
-    v1p4__rearrangement__sequence: str = None
-    v1p4__rearrangement__rev_comp: Union[bool, Bool] = None
-    v1p4__rearrangement__productive: Union[bool, Bool] = None
-    v1p4__rearrangement__v_call: str = None
-    v1p4__rearrangement__d_call: str = None
-    v1p4__rearrangement__j_call: str = None
-    v1p4__rearrangement__sequence_alignment: str = None
-    v1p4__rearrangement__germline_alignment: str = None
-    v1p4__rearrangement__junction: str = None
-    v1p4__rearrangement__junction_aa: str = None
-    v1p4__rearrangement__v_cigar: str = None
-    v1p4__rearrangement__d_cigar: str = None
-    v1p4__rearrangement__j_cigar: str = None
-    v1p4__rearrangement__quality: Optional[str] = None
-    v1p4__rearrangement__sequence_aa: Optional[str] = None
-    v1p4__rearrangement__vj_in_frame: Optional[Union[bool, Bool]] = None
-    v1p4__rearrangement__stop_codon: Optional[Union[bool, Bool]] = None
-    v1p4__rearrangement__complete_vdj: Optional[Union[bool, Bool]] = None
-    v1p4__rearrangement__locus: Optional[Union[str, "V1p4Locus"]] = None
-    v1p4__rearrangement__locus_species: Optional[Union[str, "V1p4LocusSpecies"]] = None
-    v1p4__rearrangement__d2_call: Optional[str] = None
-    v1p4__rearrangement__c_call: Optional[str] = None
-    v1p4__rearrangement__quality_alignment: Optional[str] = None
-    v1p4__rearrangement__sequence_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__germline_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__np1: Optional[str] = None
-    v1p4__rearrangement__np1_aa: Optional[str] = None
-    v1p4__rearrangement__np2: Optional[str] = None
-    v1p4__rearrangement__np2_aa: Optional[str] = None
-    v1p4__rearrangement__np3: Optional[str] = None
-    v1p4__rearrangement__np3_aa: Optional[str] = None
-    v1p4__rearrangement__cdr1: Optional[str] = None
-    v1p4__rearrangement__cdr1_aa: Optional[str] = None
-    v1p4__rearrangement__cdr2: Optional[str] = None
-    v1p4__rearrangement__cdr2_aa: Optional[str] = None
-    v1p4__rearrangement__cdr3: Optional[str] = None
-    v1p4__rearrangement__cdr3_aa: Optional[str] = None
-    v1p4__rearrangement__fwr1: Optional[str] = None
-    v1p4__rearrangement__fwr1_aa: Optional[str] = None
-    v1p4__rearrangement__fwr2: Optional[str] = None
-    v1p4__rearrangement__fwr2_aa: Optional[str] = None
-    v1p4__rearrangement__fwr3: Optional[str] = None
-    v1p4__rearrangement__fwr3_aa: Optional[str] = None
-    v1p4__rearrangement__fwr4: Optional[str] = None
-    v1p4__rearrangement__fwr4_aa: Optional[str] = None
-    v1p4__rearrangement__v_score: Optional[float] = None
-    v1p4__rearrangement__v_identity: Optional[float] = None
-    v1p4__rearrangement__v_support: Optional[float] = None
-    v1p4__rearrangement__d_score: Optional[float] = None
-    v1p4__rearrangement__d_identity: Optional[float] = None
-    v1p4__rearrangement__d_support: Optional[float] = None
-    v1p4__rearrangement__d2_score: Optional[float] = None
-    v1p4__rearrangement__d2_identity: Optional[float] = None
-    v1p4__rearrangement__d2_support: Optional[float] = None
-    v1p4__rearrangement__d2_cigar: Optional[str] = None
-    v1p4__rearrangement__j_score: Optional[float] = None
-    v1p4__rearrangement__j_identity: Optional[float] = None
-    v1p4__rearrangement__j_support: Optional[float] = None
-    v1p4__rearrangement__c_score: Optional[float] = None
-    v1p4__rearrangement__c_identity: Optional[float] = None
-    v1p4__rearrangement__c_support: Optional[float] = None
-    v1p4__rearrangement__c_cigar: Optional[str] = None
-    v1p4__rearrangement__v_sequence_start: Optional[int] = None
-    v1p4__rearrangement__v_sequence_end: Optional[int] = None
-    v1p4__rearrangement__v_germline_start: Optional[int] = None
-    v1p4__rearrangement__v_germline_end: Optional[int] = None
-    v1p4__rearrangement__v_alignment_start: Optional[int] = None
-    v1p4__rearrangement__v_alignment_end: Optional[int] = None
-    v1p4__rearrangement__d_sequence_start: Optional[int] = None
-    v1p4__rearrangement__d_sequence_end: Optional[int] = None
-    v1p4__rearrangement__d_germline_start: Optional[int] = None
-    v1p4__rearrangement__d_germline_end: Optional[int] = None
-    v1p4__rearrangement__d_alignment_start: Optional[int] = None
-    v1p4__rearrangement__d_alignment_end: Optional[int] = None
-    v1p4__rearrangement__d2_sequence_start: Optional[int] = None
-    v1p4__rearrangement__d2_sequence_end: Optional[int] = None
-    v1p4__rearrangement__d2_germline_start: Optional[int] = None
-    v1p4__rearrangement__d2_germline_end: Optional[int] = None
-    v1p4__rearrangement__d2_alignment_start: Optional[int] = None
-    v1p4__rearrangement__d2_alignment_end: Optional[int] = None
-    v1p4__rearrangement__j_sequence_start: Optional[int] = None
-    v1p4__rearrangement__j_sequence_end: Optional[int] = None
-    v1p4__rearrangement__j_germline_start: Optional[int] = None
-    v1p4__rearrangement__j_germline_end: Optional[int] = None
-    v1p4__rearrangement__j_alignment_start: Optional[int] = None
-    v1p4__rearrangement__j_alignment_end: Optional[int] = None
-    v1p4__rearrangement__c_sequence_start: Optional[int] = None
-    v1p4__rearrangement__c_sequence_end: Optional[int] = None
-    v1p4__rearrangement__c_germline_start: Optional[int] = None
-    v1p4__rearrangement__c_germline_end: Optional[int] = None
-    v1p4__rearrangement__c_alignment_start: Optional[int] = None
-    v1p4__rearrangement__c_alignment_end: Optional[int] = None
-    v1p4__rearrangement__cdr1_start: Optional[int] = None
-    v1p4__rearrangement__cdr1_end: Optional[int] = None
-    v1p4__rearrangement__cdr2_start: Optional[int] = None
-    v1p4__rearrangement__cdr2_end: Optional[int] = None
-    v1p4__rearrangement__cdr3_start: Optional[int] = None
-    v1p4__rearrangement__cdr3_end: Optional[int] = None
-    v1p4__rearrangement__fwr1_start: Optional[int] = None
-    v1p4__rearrangement__fwr1_end: Optional[int] = None
-    v1p4__rearrangement__fwr2_start: Optional[int] = None
-    v1p4__rearrangement__fwr2_end: Optional[int] = None
-    v1p4__rearrangement__fwr3_start: Optional[int] = None
-    v1p4__rearrangement__fwr3_end: Optional[int] = None
-    v1p4__rearrangement__fwr4_start: Optional[int] = None
-    v1p4__rearrangement__fwr4_end: Optional[int] = None
-    v1p4__rearrangement__v_sequence_alignment: Optional[str] = None
-    v1p4__rearrangement__v_sequence_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__d_sequence_alignment: Optional[str] = None
-    v1p4__rearrangement__d_sequence_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__d2_sequence_alignment: Optional[str] = None
-    v1p4__rearrangement__d2_sequence_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__j_sequence_alignment: Optional[str] = None
-    v1p4__rearrangement__j_sequence_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__c_sequence_alignment: Optional[str] = None
-    v1p4__rearrangement__c_sequence_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__v_germline_alignment: Optional[str] = None
-    v1p4__rearrangement__v_germline_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__d_germline_alignment: Optional[str] = None
-    v1p4__rearrangement__d_germline_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__d2_germline_alignment: Optional[str] = None
-    v1p4__rearrangement__d2_germline_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__j_germline_alignment: Optional[str] = None
-    v1p4__rearrangement__j_germline_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__c_germline_alignment: Optional[str] = None
-    v1p4__rearrangement__c_germline_alignment_aa: Optional[str] = None
-    v1p4__rearrangement__junction_length: Optional[int] = None
-    v1p4__rearrangement__junction_aa_length: Optional[int] = None
-    v1p4__rearrangement__np1_length: Optional[int] = None
-    v1p4__rearrangement__np2_length: Optional[int] = None
-    v1p4__rearrangement__np3_length: Optional[int] = None
-    v1p4__rearrangement__n1_length: Optional[int] = None
-    v1p4__rearrangement__n2_length: Optional[int] = None
-    v1p4__rearrangement__n3_length: Optional[int] = None
-    v1p4__rearrangement__p3v_length: Optional[int] = None
-    v1p4__rearrangement__p5d_length: Optional[int] = None
-    v1p4__rearrangement__p3d_length: Optional[int] = None
-    v1p4__rearrangement__p5d2_length: Optional[int] = None
-    v1p4__rearrangement__p3d2_length: Optional[int] = None
-    v1p4__rearrangement__p5j_length: Optional[int] = None
-    v1p4__rearrangement__v_frameshift: Optional[Union[bool, Bool]] = None
-    v1p4__rearrangement__j_frameshift: Optional[Union[bool, Bool]] = None
-    v1p4__rearrangement__d_frame: Optional[int] = None
-    v1p4__rearrangement__d2_frame: Optional[int] = None
-    v1p4__rearrangement__consensus_count: Optional[int] = None
-    v1p4__rearrangement__duplicate_count: Optional[int] = None
-    v1p4__rearrangement__umi_count: Optional[int] = None
-    v1p4__rearrangement__cell_id: Optional[str] = None
-    v1p4__rearrangement__clone_id: Optional[str] = None
-    v1p4__rearrangement__reactivity_id: Optional[str] = None
-    v1p4__rearrangement__reactivity_ref: Optional[str] = None
-    v1p4__rearrangement__repertoire_id: Optional[str] = None
-    v1p4__rearrangement__sample_processing_id: Optional[str] = None
-    v1p4__rearrangement__data_processing_id: Optional[str] = None
+    CellExpression_expression_id: str = None
+    CellExpression_cell_id: str = None
+    CellExpression_repertoire_id: str = None
+    CellExpression_data_processing_id: str = None
+    CellExpression_property_type: str = None
+    CellExpression_property: Union[str, "Property"] = None
+    CellExpression_value: float = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__rearrangement__sequence_id):
-            self.MissingRequiredField("v1p4__rearrangement__sequence_id")
-        if not isinstance(self.v1p4__rearrangement__sequence_id, str):
-            self.v1p4__rearrangement__sequence_id = str(self.v1p4__rearrangement__sequence_id)
-
-        if self._is_empty(self.v1p4__rearrangement__sequence):
-            self.MissingRequiredField("v1p4__rearrangement__sequence")
-        if not isinstance(self.v1p4__rearrangement__sequence, str):
-            self.v1p4__rearrangement__sequence = str(self.v1p4__rearrangement__sequence)
-
-        if self._is_empty(self.v1p4__rearrangement__rev_comp):
-            self.MissingRequiredField("v1p4__rearrangement__rev_comp")
-        if not isinstance(self.v1p4__rearrangement__rev_comp, Bool):
-            self.v1p4__rearrangement__rev_comp = Bool(self.v1p4__rearrangement__rev_comp)
-
-        if self._is_empty(self.v1p4__rearrangement__productive):
-            self.MissingRequiredField("v1p4__rearrangement__productive")
-        if not isinstance(self.v1p4__rearrangement__productive, Bool):
-            self.v1p4__rearrangement__productive = Bool(self.v1p4__rearrangement__productive)
-
-        if self._is_empty(self.v1p4__rearrangement__v_call):
-            self.MissingRequiredField("v1p4__rearrangement__v_call")
-        if not isinstance(self.v1p4__rearrangement__v_call, str):
-            self.v1p4__rearrangement__v_call = str(self.v1p4__rearrangement__v_call)
-
-        if self._is_empty(self.v1p4__rearrangement__d_call):
-            self.MissingRequiredField("v1p4__rearrangement__d_call")
-        if not isinstance(self.v1p4__rearrangement__d_call, str):
-            self.v1p4__rearrangement__d_call = str(self.v1p4__rearrangement__d_call)
-
-        if self._is_empty(self.v1p4__rearrangement__j_call):
-            self.MissingRequiredField("v1p4__rearrangement__j_call")
-        if not isinstance(self.v1p4__rearrangement__j_call, str):
-            self.v1p4__rearrangement__j_call = str(self.v1p4__rearrangement__j_call)
-
-        if self._is_empty(self.v1p4__rearrangement__sequence_alignment):
-            self.MissingRequiredField("v1p4__rearrangement__sequence_alignment")
-        if not isinstance(self.v1p4__rearrangement__sequence_alignment, str):
-            self.v1p4__rearrangement__sequence_alignment = str(self.v1p4__rearrangement__sequence_alignment)
-
-        if self._is_empty(self.v1p4__rearrangement__germline_alignment):
-            self.MissingRequiredField("v1p4__rearrangement__germline_alignment")
-        if not isinstance(self.v1p4__rearrangement__germline_alignment, str):
-            self.v1p4__rearrangement__germline_alignment = str(self.v1p4__rearrangement__germline_alignment)
-
-        if self._is_empty(self.v1p4__rearrangement__junction):
-            self.MissingRequiredField("v1p4__rearrangement__junction")
-        if not isinstance(self.v1p4__rearrangement__junction, str):
-            self.v1p4__rearrangement__junction = str(self.v1p4__rearrangement__junction)
-
-        if self._is_empty(self.v1p4__rearrangement__junction_aa):
-            self.MissingRequiredField("v1p4__rearrangement__junction_aa")
-        if not isinstance(self.v1p4__rearrangement__junction_aa, str):
-            self.v1p4__rearrangement__junction_aa = str(self.v1p4__rearrangement__junction_aa)
-
-        if self._is_empty(self.v1p4__rearrangement__v_cigar):
-            self.MissingRequiredField("v1p4__rearrangement__v_cigar")
-        if not isinstance(self.v1p4__rearrangement__v_cigar, str):
-            self.v1p4__rearrangement__v_cigar = str(self.v1p4__rearrangement__v_cigar)
-
-        if self._is_empty(self.v1p4__rearrangement__d_cigar):
-            self.MissingRequiredField("v1p4__rearrangement__d_cigar")
-        if not isinstance(self.v1p4__rearrangement__d_cigar, str):
-            self.v1p4__rearrangement__d_cigar = str(self.v1p4__rearrangement__d_cigar)
-
-        if self._is_empty(self.v1p4__rearrangement__j_cigar):
-            self.MissingRequiredField("v1p4__rearrangement__j_cigar")
-        if not isinstance(self.v1p4__rearrangement__j_cigar, str):
-            self.v1p4__rearrangement__j_cigar = str(self.v1p4__rearrangement__j_cigar)
-
-        if self.v1p4__rearrangement__quality is not None and not isinstance(self.v1p4__rearrangement__quality, str):
-            self.v1p4__rearrangement__quality = str(self.v1p4__rearrangement__quality)
-
-        if self.v1p4__rearrangement__sequence_aa is not None and not isinstance(self.v1p4__rearrangement__sequence_aa, str):
-            self.v1p4__rearrangement__sequence_aa = str(self.v1p4__rearrangement__sequence_aa)
-
-        if self.v1p4__rearrangement__vj_in_frame is not None and not isinstance(self.v1p4__rearrangement__vj_in_frame, Bool):
-            self.v1p4__rearrangement__vj_in_frame = Bool(self.v1p4__rearrangement__vj_in_frame)
-
-        if self.v1p4__rearrangement__stop_codon is not None and not isinstance(self.v1p4__rearrangement__stop_codon, Bool):
-            self.v1p4__rearrangement__stop_codon = Bool(self.v1p4__rearrangement__stop_codon)
-
-        if self.v1p4__rearrangement__complete_vdj is not None and not isinstance(self.v1p4__rearrangement__complete_vdj, Bool):
-            self.v1p4__rearrangement__complete_vdj = Bool(self.v1p4__rearrangement__complete_vdj)
-
-        if self.v1p4__rearrangement__locus is not None and not isinstance(self.v1p4__rearrangement__locus, V1p4Locus):
-            self.v1p4__rearrangement__locus = V1p4Locus(self.v1p4__rearrangement__locus)
-
-        if self.v1p4__rearrangement__d2_call is not None and not isinstance(self.v1p4__rearrangement__d2_call, str):
-            self.v1p4__rearrangement__d2_call = str(self.v1p4__rearrangement__d2_call)
-
-        if self.v1p4__rearrangement__c_call is not None and not isinstance(self.v1p4__rearrangement__c_call, str):
-            self.v1p4__rearrangement__c_call = str(self.v1p4__rearrangement__c_call)
-
-        if self.v1p4__rearrangement__quality_alignment is not None and not isinstance(self.v1p4__rearrangement__quality_alignment, str):
-            self.v1p4__rearrangement__quality_alignment = str(self.v1p4__rearrangement__quality_alignment)
-
-        if self.v1p4__rearrangement__sequence_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__sequence_alignment_aa, str):
-            self.v1p4__rearrangement__sequence_alignment_aa = str(self.v1p4__rearrangement__sequence_alignment_aa)
-
-        if self.v1p4__rearrangement__germline_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__germline_alignment_aa, str):
-            self.v1p4__rearrangement__germline_alignment_aa = str(self.v1p4__rearrangement__germline_alignment_aa)
-
-        if self.v1p4__rearrangement__np1 is not None and not isinstance(self.v1p4__rearrangement__np1, str):
-            self.v1p4__rearrangement__np1 = str(self.v1p4__rearrangement__np1)
-
-        if self.v1p4__rearrangement__np1_aa is not None and not isinstance(self.v1p4__rearrangement__np1_aa, str):
-            self.v1p4__rearrangement__np1_aa = str(self.v1p4__rearrangement__np1_aa)
-
-        if self.v1p4__rearrangement__np2 is not None and not isinstance(self.v1p4__rearrangement__np2, str):
-            self.v1p4__rearrangement__np2 = str(self.v1p4__rearrangement__np2)
-
-        if self.v1p4__rearrangement__np2_aa is not None and not isinstance(self.v1p4__rearrangement__np2_aa, str):
-            self.v1p4__rearrangement__np2_aa = str(self.v1p4__rearrangement__np2_aa)
-
-        if self.v1p4__rearrangement__np3 is not None and not isinstance(self.v1p4__rearrangement__np3, str):
-            self.v1p4__rearrangement__np3 = str(self.v1p4__rearrangement__np3)
-
-        if self.v1p4__rearrangement__np3_aa is not None and not isinstance(self.v1p4__rearrangement__np3_aa, str):
-            self.v1p4__rearrangement__np3_aa = str(self.v1p4__rearrangement__np3_aa)
-
-        if self.v1p4__rearrangement__cdr1 is not None and not isinstance(self.v1p4__rearrangement__cdr1, str):
-            self.v1p4__rearrangement__cdr1 = str(self.v1p4__rearrangement__cdr1)
-
-        if self.v1p4__rearrangement__cdr1_aa is not None and not isinstance(self.v1p4__rearrangement__cdr1_aa, str):
-            self.v1p4__rearrangement__cdr1_aa = str(self.v1p4__rearrangement__cdr1_aa)
-
-        if self.v1p4__rearrangement__cdr2 is not None and not isinstance(self.v1p4__rearrangement__cdr2, str):
-            self.v1p4__rearrangement__cdr2 = str(self.v1p4__rearrangement__cdr2)
-
-        if self.v1p4__rearrangement__cdr2_aa is not None and not isinstance(self.v1p4__rearrangement__cdr2_aa, str):
-            self.v1p4__rearrangement__cdr2_aa = str(self.v1p4__rearrangement__cdr2_aa)
-
-        if self.v1p4__rearrangement__cdr3 is not None and not isinstance(self.v1p4__rearrangement__cdr3, str):
-            self.v1p4__rearrangement__cdr3 = str(self.v1p4__rearrangement__cdr3)
-
-        if self.v1p4__rearrangement__cdr3_aa is not None and not isinstance(self.v1p4__rearrangement__cdr3_aa, str):
-            self.v1p4__rearrangement__cdr3_aa = str(self.v1p4__rearrangement__cdr3_aa)
-
-        if self.v1p4__rearrangement__fwr1 is not None and not isinstance(self.v1p4__rearrangement__fwr1, str):
-            self.v1p4__rearrangement__fwr1 = str(self.v1p4__rearrangement__fwr1)
-
-        if self.v1p4__rearrangement__fwr1_aa is not None and not isinstance(self.v1p4__rearrangement__fwr1_aa, str):
-            self.v1p4__rearrangement__fwr1_aa = str(self.v1p4__rearrangement__fwr1_aa)
-
-        if self.v1p4__rearrangement__fwr2 is not None and not isinstance(self.v1p4__rearrangement__fwr2, str):
-            self.v1p4__rearrangement__fwr2 = str(self.v1p4__rearrangement__fwr2)
-
-        if self.v1p4__rearrangement__fwr2_aa is not None and not isinstance(self.v1p4__rearrangement__fwr2_aa, str):
-            self.v1p4__rearrangement__fwr2_aa = str(self.v1p4__rearrangement__fwr2_aa)
-
-        if self.v1p4__rearrangement__fwr3 is not None and not isinstance(self.v1p4__rearrangement__fwr3, str):
-            self.v1p4__rearrangement__fwr3 = str(self.v1p4__rearrangement__fwr3)
-
-        if self.v1p4__rearrangement__fwr3_aa is not None and not isinstance(self.v1p4__rearrangement__fwr3_aa, str):
-            self.v1p4__rearrangement__fwr3_aa = str(self.v1p4__rearrangement__fwr3_aa)
-
-        if self.v1p4__rearrangement__fwr4 is not None and not isinstance(self.v1p4__rearrangement__fwr4, str):
-            self.v1p4__rearrangement__fwr4 = str(self.v1p4__rearrangement__fwr4)
-
-        if self.v1p4__rearrangement__fwr4_aa is not None and not isinstance(self.v1p4__rearrangement__fwr4_aa, str):
-            self.v1p4__rearrangement__fwr4_aa = str(self.v1p4__rearrangement__fwr4_aa)
-
-        if self.v1p4__rearrangement__v_score is not None and not isinstance(self.v1p4__rearrangement__v_score, float):
-            self.v1p4__rearrangement__v_score = float(self.v1p4__rearrangement__v_score)
-
-        if self.v1p4__rearrangement__v_identity is not None and not isinstance(self.v1p4__rearrangement__v_identity, float):
-            self.v1p4__rearrangement__v_identity = float(self.v1p4__rearrangement__v_identity)
-
-        if self.v1p4__rearrangement__v_support is not None and not isinstance(self.v1p4__rearrangement__v_support, float):
-            self.v1p4__rearrangement__v_support = float(self.v1p4__rearrangement__v_support)
-
-        if self.v1p4__rearrangement__d_score is not None and not isinstance(self.v1p4__rearrangement__d_score, float):
-            self.v1p4__rearrangement__d_score = float(self.v1p4__rearrangement__d_score)
-
-        if self.v1p4__rearrangement__d_identity is not None and not isinstance(self.v1p4__rearrangement__d_identity, float):
-            self.v1p4__rearrangement__d_identity = float(self.v1p4__rearrangement__d_identity)
-
-        if self.v1p4__rearrangement__d_support is not None and not isinstance(self.v1p4__rearrangement__d_support, float):
-            self.v1p4__rearrangement__d_support = float(self.v1p4__rearrangement__d_support)
-
-        if self.v1p4__rearrangement__d2_score is not None and not isinstance(self.v1p4__rearrangement__d2_score, float):
-            self.v1p4__rearrangement__d2_score = float(self.v1p4__rearrangement__d2_score)
-
-        if self.v1p4__rearrangement__d2_identity is not None and not isinstance(self.v1p4__rearrangement__d2_identity, float):
-            self.v1p4__rearrangement__d2_identity = float(self.v1p4__rearrangement__d2_identity)
-
-        if self.v1p4__rearrangement__d2_support is not None and not isinstance(self.v1p4__rearrangement__d2_support, float):
-            self.v1p4__rearrangement__d2_support = float(self.v1p4__rearrangement__d2_support)
-
-        if self.v1p4__rearrangement__d2_cigar is not None and not isinstance(self.v1p4__rearrangement__d2_cigar, str):
-            self.v1p4__rearrangement__d2_cigar = str(self.v1p4__rearrangement__d2_cigar)
-
-        if self.v1p4__rearrangement__j_score is not None and not isinstance(self.v1p4__rearrangement__j_score, float):
-            self.v1p4__rearrangement__j_score = float(self.v1p4__rearrangement__j_score)
-
-        if self.v1p4__rearrangement__j_identity is not None and not isinstance(self.v1p4__rearrangement__j_identity, float):
-            self.v1p4__rearrangement__j_identity = float(self.v1p4__rearrangement__j_identity)
-
-        if self.v1p4__rearrangement__j_support is not None and not isinstance(self.v1p4__rearrangement__j_support, float):
-            self.v1p4__rearrangement__j_support = float(self.v1p4__rearrangement__j_support)
-
-        if self.v1p4__rearrangement__c_score is not None and not isinstance(self.v1p4__rearrangement__c_score, float):
-            self.v1p4__rearrangement__c_score = float(self.v1p4__rearrangement__c_score)
-
-        if self.v1p4__rearrangement__c_identity is not None and not isinstance(self.v1p4__rearrangement__c_identity, float):
-            self.v1p4__rearrangement__c_identity = float(self.v1p4__rearrangement__c_identity)
-
-        if self.v1p4__rearrangement__c_support is not None and not isinstance(self.v1p4__rearrangement__c_support, float):
-            self.v1p4__rearrangement__c_support = float(self.v1p4__rearrangement__c_support)
-
-        if self.v1p4__rearrangement__c_cigar is not None and not isinstance(self.v1p4__rearrangement__c_cigar, str):
-            self.v1p4__rearrangement__c_cigar = str(self.v1p4__rearrangement__c_cigar)
-
-        if self.v1p4__rearrangement__v_sequence_start is not None and not isinstance(self.v1p4__rearrangement__v_sequence_start, int):
-            self.v1p4__rearrangement__v_sequence_start = int(self.v1p4__rearrangement__v_sequence_start)
-
-        if self.v1p4__rearrangement__v_sequence_end is not None and not isinstance(self.v1p4__rearrangement__v_sequence_end, int):
-            self.v1p4__rearrangement__v_sequence_end = int(self.v1p4__rearrangement__v_sequence_end)
-
-        if self.v1p4__rearrangement__v_germline_start is not None and not isinstance(self.v1p4__rearrangement__v_germline_start, int):
-            self.v1p4__rearrangement__v_germline_start = int(self.v1p4__rearrangement__v_germline_start)
-
-        if self.v1p4__rearrangement__v_germline_end is not None and not isinstance(self.v1p4__rearrangement__v_germline_end, int):
-            self.v1p4__rearrangement__v_germline_end = int(self.v1p4__rearrangement__v_germline_end)
-
-        if self.v1p4__rearrangement__v_alignment_start is not None and not isinstance(self.v1p4__rearrangement__v_alignment_start, int):
-            self.v1p4__rearrangement__v_alignment_start = int(self.v1p4__rearrangement__v_alignment_start)
-
-        if self.v1p4__rearrangement__v_alignment_end is not None and not isinstance(self.v1p4__rearrangement__v_alignment_end, int):
-            self.v1p4__rearrangement__v_alignment_end = int(self.v1p4__rearrangement__v_alignment_end)
-
-        if self.v1p4__rearrangement__d_sequence_start is not None and not isinstance(self.v1p4__rearrangement__d_sequence_start, int):
-            self.v1p4__rearrangement__d_sequence_start = int(self.v1p4__rearrangement__d_sequence_start)
-
-        if self.v1p4__rearrangement__d_sequence_end is not None and not isinstance(self.v1p4__rearrangement__d_sequence_end, int):
-            self.v1p4__rearrangement__d_sequence_end = int(self.v1p4__rearrangement__d_sequence_end)
-
-        if self.v1p4__rearrangement__d_germline_start is not None and not isinstance(self.v1p4__rearrangement__d_germline_start, int):
-            self.v1p4__rearrangement__d_germline_start = int(self.v1p4__rearrangement__d_germline_start)
-
-        if self.v1p4__rearrangement__d_germline_end is not None and not isinstance(self.v1p4__rearrangement__d_germline_end, int):
-            self.v1p4__rearrangement__d_germline_end = int(self.v1p4__rearrangement__d_germline_end)
-
-        if self.v1p4__rearrangement__d_alignment_start is not None and not isinstance(self.v1p4__rearrangement__d_alignment_start, int):
-            self.v1p4__rearrangement__d_alignment_start = int(self.v1p4__rearrangement__d_alignment_start)
-
-        if self.v1p4__rearrangement__d_alignment_end is not None and not isinstance(self.v1p4__rearrangement__d_alignment_end, int):
-            self.v1p4__rearrangement__d_alignment_end = int(self.v1p4__rearrangement__d_alignment_end)
-
-        if self.v1p4__rearrangement__d2_sequence_start is not None and not isinstance(self.v1p4__rearrangement__d2_sequence_start, int):
-            self.v1p4__rearrangement__d2_sequence_start = int(self.v1p4__rearrangement__d2_sequence_start)
-
-        if self.v1p4__rearrangement__d2_sequence_end is not None and not isinstance(self.v1p4__rearrangement__d2_sequence_end, int):
-            self.v1p4__rearrangement__d2_sequence_end = int(self.v1p4__rearrangement__d2_sequence_end)
-
-        if self.v1p4__rearrangement__d2_germline_start is not None and not isinstance(self.v1p4__rearrangement__d2_germline_start, int):
-            self.v1p4__rearrangement__d2_germline_start = int(self.v1p4__rearrangement__d2_germline_start)
-
-        if self.v1p4__rearrangement__d2_germline_end is not None and not isinstance(self.v1p4__rearrangement__d2_germline_end, int):
-            self.v1p4__rearrangement__d2_germline_end = int(self.v1p4__rearrangement__d2_germline_end)
-
-        if self.v1p4__rearrangement__d2_alignment_start is not None and not isinstance(self.v1p4__rearrangement__d2_alignment_start, int):
-            self.v1p4__rearrangement__d2_alignment_start = int(self.v1p4__rearrangement__d2_alignment_start)
-
-        if self.v1p4__rearrangement__d2_alignment_end is not None and not isinstance(self.v1p4__rearrangement__d2_alignment_end, int):
-            self.v1p4__rearrangement__d2_alignment_end = int(self.v1p4__rearrangement__d2_alignment_end)
-
-        if self.v1p4__rearrangement__j_sequence_start is not None and not isinstance(self.v1p4__rearrangement__j_sequence_start, int):
-            self.v1p4__rearrangement__j_sequence_start = int(self.v1p4__rearrangement__j_sequence_start)
-
-        if self.v1p4__rearrangement__j_sequence_end is not None and not isinstance(self.v1p4__rearrangement__j_sequence_end, int):
-            self.v1p4__rearrangement__j_sequence_end = int(self.v1p4__rearrangement__j_sequence_end)
-
-        if self.v1p4__rearrangement__j_germline_start is not None and not isinstance(self.v1p4__rearrangement__j_germline_start, int):
-            self.v1p4__rearrangement__j_germline_start = int(self.v1p4__rearrangement__j_germline_start)
-
-        if self.v1p4__rearrangement__j_germline_end is not None and not isinstance(self.v1p4__rearrangement__j_germline_end, int):
-            self.v1p4__rearrangement__j_germline_end = int(self.v1p4__rearrangement__j_germline_end)
-
-        if self.v1p4__rearrangement__j_alignment_start is not None and not isinstance(self.v1p4__rearrangement__j_alignment_start, int):
-            self.v1p4__rearrangement__j_alignment_start = int(self.v1p4__rearrangement__j_alignment_start)
-
-        if self.v1p4__rearrangement__j_alignment_end is not None and not isinstance(self.v1p4__rearrangement__j_alignment_end, int):
-            self.v1p4__rearrangement__j_alignment_end = int(self.v1p4__rearrangement__j_alignment_end)
-
-        if self.v1p4__rearrangement__c_sequence_start is not None and not isinstance(self.v1p4__rearrangement__c_sequence_start, int):
-            self.v1p4__rearrangement__c_sequence_start = int(self.v1p4__rearrangement__c_sequence_start)
-
-        if self.v1p4__rearrangement__c_sequence_end is not None and not isinstance(self.v1p4__rearrangement__c_sequence_end, int):
-            self.v1p4__rearrangement__c_sequence_end = int(self.v1p4__rearrangement__c_sequence_end)
-
-        if self.v1p4__rearrangement__c_germline_start is not None and not isinstance(self.v1p4__rearrangement__c_germline_start, int):
-            self.v1p4__rearrangement__c_germline_start = int(self.v1p4__rearrangement__c_germline_start)
-
-        if self.v1p4__rearrangement__c_germline_end is not None and not isinstance(self.v1p4__rearrangement__c_germline_end, int):
-            self.v1p4__rearrangement__c_germline_end = int(self.v1p4__rearrangement__c_germline_end)
-
-        if self.v1p4__rearrangement__c_alignment_start is not None and not isinstance(self.v1p4__rearrangement__c_alignment_start, int):
-            self.v1p4__rearrangement__c_alignment_start = int(self.v1p4__rearrangement__c_alignment_start)
-
-        if self.v1p4__rearrangement__c_alignment_end is not None and not isinstance(self.v1p4__rearrangement__c_alignment_end, int):
-            self.v1p4__rearrangement__c_alignment_end = int(self.v1p4__rearrangement__c_alignment_end)
-
-        if self.v1p4__rearrangement__cdr1_start is not None and not isinstance(self.v1p4__rearrangement__cdr1_start, int):
-            self.v1p4__rearrangement__cdr1_start = int(self.v1p4__rearrangement__cdr1_start)
-
-        if self.v1p4__rearrangement__cdr1_end is not None and not isinstance(self.v1p4__rearrangement__cdr1_end, int):
-            self.v1p4__rearrangement__cdr1_end = int(self.v1p4__rearrangement__cdr1_end)
-
-        if self.v1p4__rearrangement__cdr2_start is not None and not isinstance(self.v1p4__rearrangement__cdr2_start, int):
-            self.v1p4__rearrangement__cdr2_start = int(self.v1p4__rearrangement__cdr2_start)
-
-        if self.v1p4__rearrangement__cdr2_end is not None and not isinstance(self.v1p4__rearrangement__cdr2_end, int):
-            self.v1p4__rearrangement__cdr2_end = int(self.v1p4__rearrangement__cdr2_end)
-
-        if self.v1p4__rearrangement__cdr3_start is not None and not isinstance(self.v1p4__rearrangement__cdr3_start, int):
-            self.v1p4__rearrangement__cdr3_start = int(self.v1p4__rearrangement__cdr3_start)
-
-        if self.v1p4__rearrangement__cdr3_end is not None and not isinstance(self.v1p4__rearrangement__cdr3_end, int):
-            self.v1p4__rearrangement__cdr3_end = int(self.v1p4__rearrangement__cdr3_end)
-
-        if self.v1p4__rearrangement__fwr1_start is not None and not isinstance(self.v1p4__rearrangement__fwr1_start, int):
-            self.v1p4__rearrangement__fwr1_start = int(self.v1p4__rearrangement__fwr1_start)
-
-        if self.v1p4__rearrangement__fwr1_end is not None and not isinstance(self.v1p4__rearrangement__fwr1_end, int):
-            self.v1p4__rearrangement__fwr1_end = int(self.v1p4__rearrangement__fwr1_end)
-
-        if self.v1p4__rearrangement__fwr2_start is not None and not isinstance(self.v1p4__rearrangement__fwr2_start, int):
-            self.v1p4__rearrangement__fwr2_start = int(self.v1p4__rearrangement__fwr2_start)
-
-        if self.v1p4__rearrangement__fwr2_end is not None and not isinstance(self.v1p4__rearrangement__fwr2_end, int):
-            self.v1p4__rearrangement__fwr2_end = int(self.v1p4__rearrangement__fwr2_end)
-
-        if self.v1p4__rearrangement__fwr3_start is not None and not isinstance(self.v1p4__rearrangement__fwr3_start, int):
-            self.v1p4__rearrangement__fwr3_start = int(self.v1p4__rearrangement__fwr3_start)
-
-        if self.v1p4__rearrangement__fwr3_end is not None and not isinstance(self.v1p4__rearrangement__fwr3_end, int):
-            self.v1p4__rearrangement__fwr3_end = int(self.v1p4__rearrangement__fwr3_end)
-
-        if self.v1p4__rearrangement__fwr4_start is not None and not isinstance(self.v1p4__rearrangement__fwr4_start, int):
-            self.v1p4__rearrangement__fwr4_start = int(self.v1p4__rearrangement__fwr4_start)
-
-        if self.v1p4__rearrangement__fwr4_end is not None and not isinstance(self.v1p4__rearrangement__fwr4_end, int):
-            self.v1p4__rearrangement__fwr4_end = int(self.v1p4__rearrangement__fwr4_end)
-
-        if self.v1p4__rearrangement__v_sequence_alignment is not None and not isinstance(self.v1p4__rearrangement__v_sequence_alignment, str):
-            self.v1p4__rearrangement__v_sequence_alignment = str(self.v1p4__rearrangement__v_sequence_alignment)
-
-        if self.v1p4__rearrangement__v_sequence_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__v_sequence_alignment_aa, str):
-            self.v1p4__rearrangement__v_sequence_alignment_aa = str(self.v1p4__rearrangement__v_sequence_alignment_aa)
-
-        if self.v1p4__rearrangement__d_sequence_alignment is not None and not isinstance(self.v1p4__rearrangement__d_sequence_alignment, str):
-            self.v1p4__rearrangement__d_sequence_alignment = str(self.v1p4__rearrangement__d_sequence_alignment)
-
-        if self.v1p4__rearrangement__d_sequence_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__d_sequence_alignment_aa, str):
-            self.v1p4__rearrangement__d_sequence_alignment_aa = str(self.v1p4__rearrangement__d_sequence_alignment_aa)
-
-        if self.v1p4__rearrangement__d2_sequence_alignment is not None and not isinstance(self.v1p4__rearrangement__d2_sequence_alignment, str):
-            self.v1p4__rearrangement__d2_sequence_alignment = str(self.v1p4__rearrangement__d2_sequence_alignment)
-
-        if self.v1p4__rearrangement__d2_sequence_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__d2_sequence_alignment_aa, str):
-            self.v1p4__rearrangement__d2_sequence_alignment_aa = str(self.v1p4__rearrangement__d2_sequence_alignment_aa)
-
-        if self.v1p4__rearrangement__j_sequence_alignment is not None and not isinstance(self.v1p4__rearrangement__j_sequence_alignment, str):
-            self.v1p4__rearrangement__j_sequence_alignment = str(self.v1p4__rearrangement__j_sequence_alignment)
-
-        if self.v1p4__rearrangement__j_sequence_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__j_sequence_alignment_aa, str):
-            self.v1p4__rearrangement__j_sequence_alignment_aa = str(self.v1p4__rearrangement__j_sequence_alignment_aa)
-
-        if self.v1p4__rearrangement__c_sequence_alignment is not None and not isinstance(self.v1p4__rearrangement__c_sequence_alignment, str):
-            self.v1p4__rearrangement__c_sequence_alignment = str(self.v1p4__rearrangement__c_sequence_alignment)
-
-        if self.v1p4__rearrangement__c_sequence_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__c_sequence_alignment_aa, str):
-            self.v1p4__rearrangement__c_sequence_alignment_aa = str(self.v1p4__rearrangement__c_sequence_alignment_aa)
-
-        if self.v1p4__rearrangement__v_germline_alignment is not None and not isinstance(self.v1p4__rearrangement__v_germline_alignment, str):
-            self.v1p4__rearrangement__v_germline_alignment = str(self.v1p4__rearrangement__v_germline_alignment)
-
-        if self.v1p4__rearrangement__v_germline_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__v_germline_alignment_aa, str):
-            self.v1p4__rearrangement__v_germline_alignment_aa = str(self.v1p4__rearrangement__v_germline_alignment_aa)
-
-        if self.v1p4__rearrangement__d_germline_alignment is not None and not isinstance(self.v1p4__rearrangement__d_germline_alignment, str):
-            self.v1p4__rearrangement__d_germline_alignment = str(self.v1p4__rearrangement__d_germline_alignment)
-
-        if self.v1p4__rearrangement__d_germline_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__d_germline_alignment_aa, str):
-            self.v1p4__rearrangement__d_germline_alignment_aa = str(self.v1p4__rearrangement__d_germline_alignment_aa)
-
-        if self.v1p4__rearrangement__d2_germline_alignment is not None and not isinstance(self.v1p4__rearrangement__d2_germline_alignment, str):
-            self.v1p4__rearrangement__d2_germline_alignment = str(self.v1p4__rearrangement__d2_germline_alignment)
-
-        if self.v1p4__rearrangement__d2_germline_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__d2_germline_alignment_aa, str):
-            self.v1p4__rearrangement__d2_germline_alignment_aa = str(self.v1p4__rearrangement__d2_germline_alignment_aa)
-
-        if self.v1p4__rearrangement__j_germline_alignment is not None and not isinstance(self.v1p4__rearrangement__j_germline_alignment, str):
-            self.v1p4__rearrangement__j_germline_alignment = str(self.v1p4__rearrangement__j_germline_alignment)
-
-        if self.v1p4__rearrangement__j_germline_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__j_germline_alignment_aa, str):
-            self.v1p4__rearrangement__j_germline_alignment_aa = str(self.v1p4__rearrangement__j_germline_alignment_aa)
-
-        if self.v1p4__rearrangement__c_germline_alignment is not None and not isinstance(self.v1p4__rearrangement__c_germline_alignment, str):
-            self.v1p4__rearrangement__c_germline_alignment = str(self.v1p4__rearrangement__c_germline_alignment)
-
-        if self.v1p4__rearrangement__c_germline_alignment_aa is not None and not isinstance(self.v1p4__rearrangement__c_germline_alignment_aa, str):
-            self.v1p4__rearrangement__c_germline_alignment_aa = str(self.v1p4__rearrangement__c_germline_alignment_aa)
-
-        if self.v1p4__rearrangement__junction_length is not None and not isinstance(self.v1p4__rearrangement__junction_length, int):
-            self.v1p4__rearrangement__junction_length = int(self.v1p4__rearrangement__junction_length)
-
-        if self.v1p4__rearrangement__junction_aa_length is not None and not isinstance(self.v1p4__rearrangement__junction_aa_length, int):
-            self.v1p4__rearrangement__junction_aa_length = int(self.v1p4__rearrangement__junction_aa_length)
-
-        if self.v1p4__rearrangement__np1_length is not None and not isinstance(self.v1p4__rearrangement__np1_length, int):
-            self.v1p4__rearrangement__np1_length = int(self.v1p4__rearrangement__np1_length)
-
-        if self.v1p4__rearrangement__np2_length is not None and not isinstance(self.v1p4__rearrangement__np2_length, int):
-            self.v1p4__rearrangement__np2_length = int(self.v1p4__rearrangement__np2_length)
-
-        if self.v1p4__rearrangement__np3_length is not None and not isinstance(self.v1p4__rearrangement__np3_length, int):
-            self.v1p4__rearrangement__np3_length = int(self.v1p4__rearrangement__np3_length)
-
-        if self.v1p4__rearrangement__n1_length is not None and not isinstance(self.v1p4__rearrangement__n1_length, int):
-            self.v1p4__rearrangement__n1_length = int(self.v1p4__rearrangement__n1_length)
-
-        if self.v1p4__rearrangement__n2_length is not None and not isinstance(self.v1p4__rearrangement__n2_length, int):
-            self.v1p4__rearrangement__n2_length = int(self.v1p4__rearrangement__n2_length)
-
-        if self.v1p4__rearrangement__n3_length is not None and not isinstance(self.v1p4__rearrangement__n3_length, int):
-            self.v1p4__rearrangement__n3_length = int(self.v1p4__rearrangement__n3_length)
-
-        if self.v1p4__rearrangement__p3v_length is not None and not isinstance(self.v1p4__rearrangement__p3v_length, int):
-            self.v1p4__rearrangement__p3v_length = int(self.v1p4__rearrangement__p3v_length)
-
-        if self.v1p4__rearrangement__p5d_length is not None and not isinstance(self.v1p4__rearrangement__p5d_length, int):
-            self.v1p4__rearrangement__p5d_length = int(self.v1p4__rearrangement__p5d_length)
-
-        if self.v1p4__rearrangement__p3d_length is not None and not isinstance(self.v1p4__rearrangement__p3d_length, int):
-            self.v1p4__rearrangement__p3d_length = int(self.v1p4__rearrangement__p3d_length)
-
-        if self.v1p4__rearrangement__p5d2_length is not None and not isinstance(self.v1p4__rearrangement__p5d2_length, int):
-            self.v1p4__rearrangement__p5d2_length = int(self.v1p4__rearrangement__p5d2_length)
-
-        if self.v1p4__rearrangement__p3d2_length is not None and not isinstance(self.v1p4__rearrangement__p3d2_length, int):
-            self.v1p4__rearrangement__p3d2_length = int(self.v1p4__rearrangement__p3d2_length)
-
-        if self.v1p4__rearrangement__p5j_length is not None and not isinstance(self.v1p4__rearrangement__p5j_length, int):
-            self.v1p4__rearrangement__p5j_length = int(self.v1p4__rearrangement__p5j_length)
-
-        if self.v1p4__rearrangement__v_frameshift is not None and not isinstance(self.v1p4__rearrangement__v_frameshift, Bool):
-            self.v1p4__rearrangement__v_frameshift = Bool(self.v1p4__rearrangement__v_frameshift)
-
-        if self.v1p4__rearrangement__j_frameshift is not None and not isinstance(self.v1p4__rearrangement__j_frameshift, Bool):
-            self.v1p4__rearrangement__j_frameshift = Bool(self.v1p4__rearrangement__j_frameshift)
-
-        if self.v1p4__rearrangement__d_frame is not None and not isinstance(self.v1p4__rearrangement__d_frame, int):
-            self.v1p4__rearrangement__d_frame = int(self.v1p4__rearrangement__d_frame)
-
-        if self.v1p4__rearrangement__d2_frame is not None and not isinstance(self.v1p4__rearrangement__d2_frame, int):
-            self.v1p4__rearrangement__d2_frame = int(self.v1p4__rearrangement__d2_frame)
-
-        if self.v1p4__rearrangement__consensus_count is not None and not isinstance(self.v1p4__rearrangement__consensus_count, int):
-            self.v1p4__rearrangement__consensus_count = int(self.v1p4__rearrangement__consensus_count)
-
-        if self.v1p4__rearrangement__duplicate_count is not None and not isinstance(self.v1p4__rearrangement__duplicate_count, int):
-            self.v1p4__rearrangement__duplicate_count = int(self.v1p4__rearrangement__duplicate_count)
-
-        if self.v1p4__rearrangement__umi_count is not None and not isinstance(self.v1p4__rearrangement__umi_count, int):
-            self.v1p4__rearrangement__umi_count = int(self.v1p4__rearrangement__umi_count)
-
-        if self.v1p4__rearrangement__cell_id is not None and not isinstance(self.v1p4__rearrangement__cell_id, str):
-            self.v1p4__rearrangement__cell_id = str(self.v1p4__rearrangement__cell_id)
-
-        if self.v1p4__rearrangement__clone_id is not None and not isinstance(self.v1p4__rearrangement__clone_id, str):
-            self.v1p4__rearrangement__clone_id = str(self.v1p4__rearrangement__clone_id)
-
-        if self.v1p4__rearrangement__reactivity_id is not None and not isinstance(self.v1p4__rearrangement__reactivity_id, str):
-            self.v1p4__rearrangement__reactivity_id = str(self.v1p4__rearrangement__reactivity_id)
-
-        if self.v1p4__rearrangement__reactivity_ref is not None and not isinstance(self.v1p4__rearrangement__reactivity_ref, str):
-            self.v1p4__rearrangement__reactivity_ref = str(self.v1p4__rearrangement__reactivity_ref)
-
-        if self.v1p4__rearrangement__repertoire_id is not None and not isinstance(self.v1p4__rearrangement__repertoire_id, str):
-            self.v1p4__rearrangement__repertoire_id = str(self.v1p4__rearrangement__repertoire_id)
-
-        if self.v1p4__rearrangement__sample_processing_id is not None and not isinstance(self.v1p4__rearrangement__sample_processing_id, str):
-            self.v1p4__rearrangement__sample_processing_id = str(self.v1p4__rearrangement__sample_processing_id)
-
-        if self.v1p4__rearrangement__data_processing_id is not None and not isinstance(self.v1p4__rearrangement__data_processing_id, str):
-            self.v1p4__rearrangement__data_processing_id = str(self.v1p4__rearrangement__data_processing_id)
+        if self._is_empty(self.CellExpression_expression_id):
+            self.MissingRequiredField("CellExpression_expression_id")
+        if not isinstance(self.CellExpression_expression_id, str):
+            self.CellExpression_expression_id = str(self.CellExpression_expression_id)
+
+        if self._is_empty(self.CellExpression_cell_id):
+            self.MissingRequiredField("CellExpression_cell_id")
+        if not isinstance(self.CellExpression_cell_id, str):
+            self.CellExpression_cell_id = str(self.CellExpression_cell_id)
+
+        if self._is_empty(self.CellExpression_repertoire_id):
+            self.MissingRequiredField("CellExpression_repertoire_id")
+        if not isinstance(self.CellExpression_repertoire_id, str):
+            self.CellExpression_repertoire_id = str(self.CellExpression_repertoire_id)
+
+        if self._is_empty(self.CellExpression_data_processing_id):
+            self.MissingRequiredField("CellExpression_data_processing_id")
+        if not isinstance(self.CellExpression_data_processing_id, str):
+            self.CellExpression_data_processing_id = str(self.CellExpression_data_processing_id)
+
+        if self._is_empty(self.CellExpression_property_type):
+            self.MissingRequiredField("CellExpression_property_type")
+        if not isinstance(self.CellExpression_property_type, str):
+            self.CellExpression_property_type = str(self.CellExpression_property_type)
+
+        if self._is_empty(self.CellExpression_value):
+            self.MissingRequiredField("CellExpression_value")
+        if not isinstance(self.CellExpression_value, float):
+            self.CellExpression_value = float(self.CellExpression_value)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Clone(YAMLRoot):
+class Receptor(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Clone"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Clone"
-    class_name: ClassVar[str] = "v1p4_Clone"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Clone
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Receptor"]
+    class_class_curie: ClassVar[str] = "ak_schema:Receptor"
+    class_name: ClassVar[str] = "Receptor"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Receptor
 
-    v1p4__clone__clone_id: str = None
-    v1p4__clone__germline_alignment: str = None
-    v1p4__clone__repertoire_id: Optional[str] = None
-    v1p4__clone__data_processing_id: Optional[str] = None
-    v1p4__clone__sequences: Optional[Union[str, List[str]]] = empty_list()
-    v1p4__clone__v_call: Optional[str] = None
-    v1p4__clone__d_call: Optional[str] = None
-    v1p4__clone__j_call: Optional[str] = None
-    v1p4__clone__junction: Optional[str] = None
-    v1p4__clone__junction_aa: Optional[str] = None
-    v1p4__clone__junction_length: Optional[int] = None
-    v1p4__clone__junction_aa_length: Optional[int] = None
-    v1p4__clone__germline_alignment_aa: Optional[str] = None
-    v1p4__clone__v_alignment_start: Optional[int] = None
-    v1p4__clone__v_alignment_end: Optional[int] = None
-    v1p4__clone__d_alignment_start: Optional[int] = None
-    v1p4__clone__d_alignment_end: Optional[int] = None
-    v1p4__clone__j_alignment_start: Optional[int] = None
-    v1p4__clone__j_alignment_end: Optional[int] = None
-    v1p4__clone__junction_start: Optional[int] = None
-    v1p4__clone__junction_end: Optional[int] = None
-    v1p4__clone__umi_count: Optional[int] = None
-    v1p4__clone__clone_count: Optional[int] = None
-    v1p4__clone__seed_id: Optional[str] = None
+    Receptor_receptor_id: str = None
+    Receptor_receptor_hash: str = None
+    Receptor_receptor_type: Union[str, "ReceptorType"] = None
+    Receptor_receptor_variable_domain_1_aa: str = None
+    Receptor_receptor_variable_domain_1_locus: Union[str, "ReceptorVariableDomain1Locus"] = None
+    Receptor_receptor_variable_domain_2_aa: str = None
+    Receptor_receptor_variable_domain_2_locus: Union[str, "ReceptorVariableDomain2Locus"] = None
+    Receptor_receptor_ref: Optional[Union[str, List[str]]] = empty_list()
+    Receptor_reactivity_measurements: Optional[Union[Union[dict, "ReceptorReactivity"], List[Union[dict, "ReceptorReactivity"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__clone__clone_id):
-            self.MissingRequiredField("v1p4__clone__clone_id")
-        if not isinstance(self.v1p4__clone__clone_id, str):
-            self.v1p4__clone__clone_id = str(self.v1p4__clone__clone_id)
+        if self._is_empty(self.Receptor_receptor_id):
+            self.MissingRequiredField("Receptor_receptor_id")
+        if not isinstance(self.Receptor_receptor_id, str):
+            self.Receptor_receptor_id = str(self.Receptor_receptor_id)
 
-        if self._is_empty(self.v1p4__clone__germline_alignment):
-            self.MissingRequiredField("v1p4__clone__germline_alignment")
-        if not isinstance(self.v1p4__clone__germline_alignment, str):
-            self.v1p4__clone__germline_alignment = str(self.v1p4__clone__germline_alignment)
+        if self._is_empty(self.Receptor_receptor_hash):
+            self.MissingRequiredField("Receptor_receptor_hash")
+        if not isinstance(self.Receptor_receptor_hash, str):
+            self.Receptor_receptor_hash = str(self.Receptor_receptor_hash)
 
-        if self.v1p4__clone__repertoire_id is not None and not isinstance(self.v1p4__clone__repertoire_id, str):
-            self.v1p4__clone__repertoire_id = str(self.v1p4__clone__repertoire_id)
+        if self._is_empty(self.Receptor_receptor_type):
+            self.MissingRequiredField("Receptor_receptor_type")
+        if not isinstance(self.Receptor_receptor_type, ReceptorType):
+            self.Receptor_receptor_type = ReceptorType(self.Receptor_receptor_type)
 
-        if self.v1p4__clone__data_processing_id is not None and not isinstance(self.v1p4__clone__data_processing_id, str):
-            self.v1p4__clone__data_processing_id = str(self.v1p4__clone__data_processing_id)
+        if self._is_empty(self.Receptor_receptor_variable_domain_1_aa):
+            self.MissingRequiredField("Receptor_receptor_variable_domain_1_aa")
+        if not isinstance(self.Receptor_receptor_variable_domain_1_aa, str):
+            self.Receptor_receptor_variable_domain_1_aa = str(self.Receptor_receptor_variable_domain_1_aa)
 
-        if not isinstance(self.v1p4__clone__sequences, list):
-            self.v1p4__clone__sequences = [self.v1p4__clone__sequences] if self.v1p4__clone__sequences is not None else []
-        self.v1p4__clone__sequences = [v if isinstance(v, str) else str(v) for v in self.v1p4__clone__sequences]
+        if self._is_empty(self.Receptor_receptor_variable_domain_1_locus):
+            self.MissingRequiredField("Receptor_receptor_variable_domain_1_locus")
+        if not isinstance(self.Receptor_receptor_variable_domain_1_locus, ReceptorVariableDomain1Locus):
+            self.Receptor_receptor_variable_domain_1_locus = ReceptorVariableDomain1Locus(self.Receptor_receptor_variable_domain_1_locus)
 
-        if self.v1p4__clone__v_call is not None and not isinstance(self.v1p4__clone__v_call, str):
-            self.v1p4__clone__v_call = str(self.v1p4__clone__v_call)
+        if self._is_empty(self.Receptor_receptor_variable_domain_2_aa):
+            self.MissingRequiredField("Receptor_receptor_variable_domain_2_aa")
+        if not isinstance(self.Receptor_receptor_variable_domain_2_aa, str):
+            self.Receptor_receptor_variable_domain_2_aa = str(self.Receptor_receptor_variable_domain_2_aa)
 
-        if self.v1p4__clone__d_call is not None and not isinstance(self.v1p4__clone__d_call, str):
-            self.v1p4__clone__d_call = str(self.v1p4__clone__d_call)
+        if self._is_empty(self.Receptor_receptor_variable_domain_2_locus):
+            self.MissingRequiredField("Receptor_receptor_variable_domain_2_locus")
+        if not isinstance(self.Receptor_receptor_variable_domain_2_locus, ReceptorVariableDomain2Locus):
+            self.Receptor_receptor_variable_domain_2_locus = ReceptorVariableDomain2Locus(self.Receptor_receptor_variable_domain_2_locus)
 
-        if self.v1p4__clone__j_call is not None and not isinstance(self.v1p4__clone__j_call, str):
-            self.v1p4__clone__j_call = str(self.v1p4__clone__j_call)
+        if not isinstance(self.Receptor_receptor_ref, list):
+            self.Receptor_receptor_ref = [self.Receptor_receptor_ref] if self.Receptor_receptor_ref is not None else []
+        self.Receptor_receptor_ref = [v if isinstance(v, str) else str(v) for v in self.Receptor_receptor_ref]
 
-        if self.v1p4__clone__junction is not None and not isinstance(self.v1p4__clone__junction, str):
-            self.v1p4__clone__junction = str(self.v1p4__clone__junction)
-
-        if self.v1p4__clone__junction_aa is not None and not isinstance(self.v1p4__clone__junction_aa, str):
-            self.v1p4__clone__junction_aa = str(self.v1p4__clone__junction_aa)
-
-        if self.v1p4__clone__junction_length is not None and not isinstance(self.v1p4__clone__junction_length, int):
-            self.v1p4__clone__junction_length = int(self.v1p4__clone__junction_length)
-
-        if self.v1p4__clone__junction_aa_length is not None and not isinstance(self.v1p4__clone__junction_aa_length, int):
-            self.v1p4__clone__junction_aa_length = int(self.v1p4__clone__junction_aa_length)
-
-        if self.v1p4__clone__germline_alignment_aa is not None and not isinstance(self.v1p4__clone__germline_alignment_aa, str):
-            self.v1p4__clone__germline_alignment_aa = str(self.v1p4__clone__germline_alignment_aa)
-
-        if self.v1p4__clone__v_alignment_start is not None and not isinstance(self.v1p4__clone__v_alignment_start, int):
-            self.v1p4__clone__v_alignment_start = int(self.v1p4__clone__v_alignment_start)
-
-        if self.v1p4__clone__v_alignment_end is not None and not isinstance(self.v1p4__clone__v_alignment_end, int):
-            self.v1p4__clone__v_alignment_end = int(self.v1p4__clone__v_alignment_end)
-
-        if self.v1p4__clone__d_alignment_start is not None and not isinstance(self.v1p4__clone__d_alignment_start, int):
-            self.v1p4__clone__d_alignment_start = int(self.v1p4__clone__d_alignment_start)
-
-        if self.v1p4__clone__d_alignment_end is not None and not isinstance(self.v1p4__clone__d_alignment_end, int):
-            self.v1p4__clone__d_alignment_end = int(self.v1p4__clone__d_alignment_end)
-
-        if self.v1p4__clone__j_alignment_start is not None and not isinstance(self.v1p4__clone__j_alignment_start, int):
-            self.v1p4__clone__j_alignment_start = int(self.v1p4__clone__j_alignment_start)
-
-        if self.v1p4__clone__j_alignment_end is not None and not isinstance(self.v1p4__clone__j_alignment_end, int):
-            self.v1p4__clone__j_alignment_end = int(self.v1p4__clone__j_alignment_end)
-
-        if self.v1p4__clone__junction_start is not None and not isinstance(self.v1p4__clone__junction_start, int):
-            self.v1p4__clone__junction_start = int(self.v1p4__clone__junction_start)
-
-        if self.v1p4__clone__junction_end is not None and not isinstance(self.v1p4__clone__junction_end, int):
-            self.v1p4__clone__junction_end = int(self.v1p4__clone__junction_end)
-
-        if self.v1p4__clone__umi_count is not None and not isinstance(self.v1p4__clone__umi_count, int):
-            self.v1p4__clone__umi_count = int(self.v1p4__clone__umi_count)
-
-        if self.v1p4__clone__clone_count is not None and not isinstance(self.v1p4__clone__clone_count, int):
-            self.v1p4__clone__clone_count = int(self.v1p4__clone__clone_count)
-
-        if self.v1p4__clone__seed_id is not None and not isinstance(self.v1p4__clone__seed_id, str):
-            self.v1p4__clone__seed_id = str(self.v1p4__clone__seed_id)
+        self._normalize_inlined_as_dict(slot_name="Receptor_reactivity_measurements", slot_type=ReceptorReactivity, key_name="ReceptorReactivity_ligand_type", keyed=False)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Tree(YAMLRoot):
+class ReceptorReactivity(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Tree"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Tree"
-    class_name: ClassVar[str] = "v1p4_Tree"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Tree
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ReceptorReactivity"]
+    class_class_curie: ClassVar[str] = "ak_schema:ReceptorReactivity"
+    class_name: ClassVar[str] = "ReceptorReactivity"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorReactivity
 
-    v1p4__tree__tree_id: str = None
-    v1p4__tree__clone_id: str = None
-    v1p4__tree__newick: str = None
-    v1p4__tree__nodes: Optional[str] = None
+    ReceptorReactivity_ligand_type: Union[str, "LigandType"] = None
+    ReceptorReactivity_antigen_type: Union[str, "AntigenType"] = None
+    ReceptorReactivity_antigen: Union[str, "Antigen"] = None
+    ReceptorReactivity_reactivity_method: Union[str, "ReactivityMethod"] = None
+    ReceptorReactivity_reactivity_readout: Union[str, "ReactivityReadout"] = None
+    ReceptorReactivity_reactivity_value: float = None
+    ReceptorReactivity_reactivity_unit: str = None
+    ReceptorReactivity_antigen_source_species: Optional[Union[str, "AntigenSourceSpecies"]] = None
+    ReceptorReactivity_peptide_start: Optional[int] = None
+    ReceptorReactivity_peptide_end: Optional[int] = None
+    ReceptorReactivity_mhc_class: Optional[Union[str, "MhcClass"]] = None
+    ReceptorReactivity_mhc_gene_1: Optional[Union[str, "MhcGene1"]] = None
+    ReceptorReactivity_mhc_allele_1: Optional[str] = None
+    ReceptorReactivity_mhc_gene_2: Optional[Union[str, "MhcGene2"]] = None
+    ReceptorReactivity_mhc_allele_2: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__tree__tree_id):
-            self.MissingRequiredField("v1p4__tree__tree_id")
-        if not isinstance(self.v1p4__tree__tree_id, str):
-            self.v1p4__tree__tree_id = str(self.v1p4__tree__tree_id)
+        if self._is_empty(self.ReceptorReactivity_ligand_type):
+            self.MissingRequiredField("ReceptorReactivity_ligand_type")
+        if not isinstance(self.ReceptorReactivity_ligand_type, LigandType):
+            self.ReceptorReactivity_ligand_type = LigandType(self.ReceptorReactivity_ligand_type)
 
-        if self._is_empty(self.v1p4__tree__clone_id):
-            self.MissingRequiredField("v1p4__tree__clone_id")
-        if not isinstance(self.v1p4__tree__clone_id, str):
-            self.v1p4__tree__clone_id = str(self.v1p4__tree__clone_id)
+        if self._is_empty(self.ReceptorReactivity_antigen_type):
+            self.MissingRequiredField("ReceptorReactivity_antigen_type")
+        if not isinstance(self.ReceptorReactivity_antigen_type, AntigenType):
+            self.ReceptorReactivity_antigen_type = AntigenType(self.ReceptorReactivity_antigen_type)
 
-        if self._is_empty(self.v1p4__tree__newick):
-            self.MissingRequiredField("v1p4__tree__newick")
-        if not isinstance(self.v1p4__tree__newick, str):
-            self.v1p4__tree__newick = str(self.v1p4__tree__newick)
+        if self._is_empty(self.ReceptorReactivity_reactivity_method):
+            self.MissingRequiredField("ReceptorReactivity_reactivity_method")
+        if not isinstance(self.ReceptorReactivity_reactivity_method, ReactivityMethod):
+            self.ReceptorReactivity_reactivity_method = ReactivityMethod(self.ReceptorReactivity_reactivity_method)
 
-        if self.v1p4__tree__nodes is not None and not isinstance(self.v1p4__tree__nodes, str):
-            self.v1p4__tree__nodes = str(self.v1p4__tree__nodes)
+        if self._is_empty(self.ReceptorReactivity_reactivity_readout):
+            self.MissingRequiredField("ReceptorReactivity_reactivity_readout")
+        if not isinstance(self.ReceptorReactivity_reactivity_readout, ReactivityReadout):
+            self.ReceptorReactivity_reactivity_readout = ReactivityReadout(self.ReceptorReactivity_reactivity_readout)
+
+        if self._is_empty(self.ReceptorReactivity_reactivity_value):
+            self.MissingRequiredField("ReceptorReactivity_reactivity_value")
+        if not isinstance(self.ReceptorReactivity_reactivity_value, float):
+            self.ReceptorReactivity_reactivity_value = float(self.ReceptorReactivity_reactivity_value)
+
+        if self._is_empty(self.ReceptorReactivity_reactivity_unit):
+            self.MissingRequiredField("ReceptorReactivity_reactivity_unit")
+        if not isinstance(self.ReceptorReactivity_reactivity_unit, str):
+            self.ReceptorReactivity_reactivity_unit = str(self.ReceptorReactivity_reactivity_unit)
+
+        if self.ReceptorReactivity_peptide_start is not None and not isinstance(self.ReceptorReactivity_peptide_start, int):
+            self.ReceptorReactivity_peptide_start = int(self.ReceptorReactivity_peptide_start)
+
+        if self.ReceptorReactivity_peptide_end is not None and not isinstance(self.ReceptorReactivity_peptide_end, int):
+            self.ReceptorReactivity_peptide_end = int(self.ReceptorReactivity_peptide_end)
+
+        if self.ReceptorReactivity_mhc_class is not None and not isinstance(self.ReceptorReactivity_mhc_class, MhcClass):
+            self.ReceptorReactivity_mhc_class = MhcClass(self.ReceptorReactivity_mhc_class)
+
+        if self.ReceptorReactivity_mhc_allele_1 is not None and not isinstance(self.ReceptorReactivity_mhc_allele_1, str):
+            self.ReceptorReactivity_mhc_allele_1 = str(self.ReceptorReactivity_mhc_allele_1)
+
+        if self.ReceptorReactivity_mhc_allele_2 is not None and not isinstance(self.ReceptorReactivity_mhc_allele_2, str):
+            self.ReceptorReactivity_mhc_allele_2 = str(self.ReceptorReactivity_mhc_allele_2)
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class V1p4Node(YAMLRoot):
+class SampleProcessing(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Node"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Node"
-    class_name: ClassVar[str] = "v1p4_Node"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Node
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SampleProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:SampleProcessing"
+    class_name: ClassVar[str] = "SampleProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SampleProcessing
 
-    v1p4__node__sequence_id: str = None
-    v1p4__node__sequence_alignment: Optional[str] = None
-    v1p4__node__junction: Optional[str] = None
-    v1p4__node__junction_aa: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__node__sequence_id):
-            self.MissingRequiredField("v1p4__node__sequence_id")
-        if not isinstance(self.v1p4__node__sequence_id, str):
-            self.v1p4__node__sequence_id = str(self.v1p4__node__sequence_id)
-
-        if self.v1p4__node__sequence_alignment is not None and not isinstance(self.v1p4__node__sequence_alignment, str):
-            self.v1p4__node__sequence_alignment = str(self.v1p4__node__sequence_alignment)
-
-        if self.v1p4__node__junction is not None and not isinstance(self.v1p4__node__junction, str):
-            self.v1p4__node__junction = str(self.v1p4__node__junction)
-
-        if self.v1p4__node__junction_aa is not None and not isinstance(self.v1p4__node__junction_aa, str):
-            self.v1p4__node__junction_aa = str(self.v1p4__node__junction_aa)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class V1p4Cell(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Cell"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Cell"
-    class_name: ClassVar[str] = "v1p4_Cell"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Cell
-
-    v1p4__cell__cell_id: str = None
-    v1p4__cell__repertoire_id: str = None
-    v1p4__cell__virtual_pairing: Union[bool, Bool] = None
-    v1p4__cell__data_processing_id: Optional[str] = None
-    v1p4__cell__receptors: Optional[Union[str, List[str]]] = empty_list()
-    v1p4__cell__cell_subset: Optional[Union[str, "V1p4CellSubset"]] = None
-    v1p4__cell__cell_phenotype: Optional[str] = None
-    v1p4__cell__cell_label: Optional[str] = None
+    Sample_sample_id: str = None
+    Sample_sample_type: str = None
+    Sample_tissue: Union[str, TissueAkcId] = None
+    Sample_anatomic_site: str = None
+    Sample_disease_state_sample: str = None
+    Sample_collection_time_point_relative: float = None
+    Sample_collection_time_point_relative_unit: Union[str, "CollectionTimePointRelativeUnit"] = None
+    Sample_collection_time_point_reference: str = None
+    Sample_biomaterial_provider: str = None
+    CellProcessing_tissue_processing: str = None
+    CellProcessing_cell_subset: Union[str, "CellSubset"] = None
+    CellProcessing_cell_phenotype: str = None
+    CellProcessing_single_cell: Union[bool, Bool] = None
+    CellProcessing_cell_number: int = None
+    CellProcessing_cells_per_reaction: int = None
+    CellProcessing_cell_storage: Union[bool, Bool] = None
+    CellProcessing_cell_quality: str = None
+    CellProcessing_cell_isolation: str = None
+    CellProcessing_cell_processing_protocol: str = None
+    NucleicAcidProcessing_template_class: Union[str, "TemplateClass"] = None
+    NucleicAcidProcessing_template_quality: str = None
+    NucleicAcidProcessing_template_amount: float = None
+    NucleicAcidProcessing_template_amount_unit: Union[str, "TemplateAmountUnit"] = None
+    NucleicAcidProcessing_library_generation_method: Union[str, "LibraryGenerationMethod"] = None
+    NucleicAcidProcessing_library_generation_protocol: str = None
+    NucleicAcidProcessing_library_generation_kit_version: str = None
+    NucleicAcidProcessing_complete_sequences: Union[str, "CompleteSequences"] = None
+    NucleicAcidProcessing_physical_linkage: Union[str, "PhysicalLinkage"] = None
+    SequencingRun_sequencing_run_id: str = None
+    SequencingRun_total_reads_passing_qc_filter: int = None
+    SequencingRun_sequencing_platform: str = None
+    SequencingRun_sequencing_facility: str = None
+    SequencingRun_sequencing_run_date: str = None
+    SequencingRun_sequencing_kit: str = None
+    SampleProcessing_sample_processing_id: Optional[str] = None
+    CellProcessing_cell_species: Optional[Union[str, "CellSpecies"]] = None
+    NucleicAcidProcessing_pcr_target: Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]] = empty_list()
+    SequencingRun_sequencing_files: Optional[Union[dict, SequencingData]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__cell__cell_id):
-            self.MissingRequiredField("v1p4__cell__cell_id")
-        if not isinstance(self.v1p4__cell__cell_id, str):
-            self.v1p4__cell__cell_id = str(self.v1p4__cell__cell_id)
-
-        if self._is_empty(self.v1p4__cell__repertoire_id):
-            self.MissingRequiredField("v1p4__cell__repertoire_id")
-        if not isinstance(self.v1p4__cell__repertoire_id, str):
-            self.v1p4__cell__repertoire_id = str(self.v1p4__cell__repertoire_id)
-
-        if self._is_empty(self.v1p4__cell__virtual_pairing):
-            self.MissingRequiredField("v1p4__cell__virtual_pairing")
-        if not isinstance(self.v1p4__cell__virtual_pairing, Bool):
-            self.v1p4__cell__virtual_pairing = Bool(self.v1p4__cell__virtual_pairing)
-
-        if self.v1p4__cell__data_processing_id is not None and not isinstance(self.v1p4__cell__data_processing_id, str):
-            self.v1p4__cell__data_processing_id = str(self.v1p4__cell__data_processing_id)
-
-        if not isinstance(self.v1p4__cell__receptors, list):
-            self.v1p4__cell__receptors = [self.v1p4__cell__receptors] if self.v1p4__cell__receptors is not None else []
-        self.v1p4__cell__receptors = [v if isinstance(v, str) else str(v) for v in self.v1p4__cell__receptors]
-
-        if self.v1p4__cell__cell_phenotype is not None and not isinstance(self.v1p4__cell__cell_phenotype, str):
-            self.v1p4__cell__cell_phenotype = str(self.v1p4__cell__cell_phenotype)
-
-        if self.v1p4__cell__cell_label is not None and not isinstance(self.v1p4__cell__cell_label, str):
-            self.v1p4__cell__cell_label = str(self.v1p4__cell__cell_label)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class V1p4Expression(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Expression"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Expression"
-    class_name: ClassVar[str] = "v1p4_Expression"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Expression
-
-    v1p4__expression__expression_id: str = None
-    v1p4__expression__cell_id: str = None
-    v1p4__expression__repertoire_id: str = None
-    v1p4__expression__data_processing_id: str = None
-    v1p4__expression__property_type: str = None
-    v1p4__expression__property: Union[str, "V1p4Property"] = None
-    v1p4__expression__value: float = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__expression__expression_id):
-            self.MissingRequiredField("v1p4__expression__expression_id")
-        if not isinstance(self.v1p4__expression__expression_id, str):
-            self.v1p4__expression__expression_id = str(self.v1p4__expression__expression_id)
-
-        if self._is_empty(self.v1p4__expression__cell_id):
-            self.MissingRequiredField("v1p4__expression__cell_id")
-        if not isinstance(self.v1p4__expression__cell_id, str):
-            self.v1p4__expression__cell_id = str(self.v1p4__expression__cell_id)
-
-        if self._is_empty(self.v1p4__expression__repertoire_id):
-            self.MissingRequiredField("v1p4__expression__repertoire_id")
-        if not isinstance(self.v1p4__expression__repertoire_id, str):
-            self.v1p4__expression__repertoire_id = str(self.v1p4__expression__repertoire_id)
-
-        if self._is_empty(self.v1p4__expression__data_processing_id):
-            self.MissingRequiredField("v1p4__expression__data_processing_id")
-        if not isinstance(self.v1p4__expression__data_processing_id, str):
-            self.v1p4__expression__data_processing_id = str(self.v1p4__expression__data_processing_id)
-
-        if self._is_empty(self.v1p4__expression__property_type):
-            self.MissingRequiredField("v1p4__expression__property_type")
-        if not isinstance(self.v1p4__expression__property_type, str):
-            self.v1p4__expression__property_type = str(self.v1p4__expression__property_type)
-
-        if self._is_empty(self.v1p4__expression__value):
-            self.MissingRequiredField("v1p4__expression__value")
-        if not isinstance(self.v1p4__expression__value, float):
-            self.v1p4__expression__value = float(self.v1p4__expression__value)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class V1p4Receptor(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Receptor"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Receptor"
-    class_name: ClassVar[str] = "v1p4_Receptor"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Receptor
-
-    v1p4__receptor__receptor_id: str = None
-    v1p4__receptor__receptor_hash: str = None
-    v1p4__receptor__receptor_type: Union[str, "V1p4ReceptorType"] = None
-    v1p4__receptor__receptor_variable_domain_1_aa: str = None
-    v1p4__receptor__receptor_variable_domain_1_locus: Union[str, "V1p4ReceptorVariableDomain1Locus"] = None
-    v1p4__receptor__receptor_variable_domain_2_aa: str = None
-    v1p4__receptor__receptor_variable_domain_2_locus: Union[str, "V1p4ReceptorVariableDomain2Locus"] = None
-    v1p4__receptor__receptor_ref: Optional[Union[str, List[str]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__receptor__receptor_id):
-            self.MissingRequiredField("v1p4__receptor__receptor_id")
-        if not isinstance(self.v1p4__receptor__receptor_id, str):
-            self.v1p4__receptor__receptor_id = str(self.v1p4__receptor__receptor_id)
-
-        if self._is_empty(self.v1p4__receptor__receptor_hash):
-            self.MissingRequiredField("v1p4__receptor__receptor_hash")
-        if not isinstance(self.v1p4__receptor__receptor_hash, str):
-            self.v1p4__receptor__receptor_hash = str(self.v1p4__receptor__receptor_hash)
-
-        if self._is_empty(self.v1p4__receptor__receptor_type):
-            self.MissingRequiredField("v1p4__receptor__receptor_type")
-        if not isinstance(self.v1p4__receptor__receptor_type, V1p4ReceptorType):
-            self.v1p4__receptor__receptor_type = V1p4ReceptorType(self.v1p4__receptor__receptor_type)
-
-        if self._is_empty(self.v1p4__receptor__receptor_variable_domain_1_aa):
-            self.MissingRequiredField("v1p4__receptor__receptor_variable_domain_1_aa")
-        if not isinstance(self.v1p4__receptor__receptor_variable_domain_1_aa, str):
-            self.v1p4__receptor__receptor_variable_domain_1_aa = str(self.v1p4__receptor__receptor_variable_domain_1_aa)
-
-        if self._is_empty(self.v1p4__receptor__receptor_variable_domain_1_locus):
-            self.MissingRequiredField("v1p4__receptor__receptor_variable_domain_1_locus")
-        if not isinstance(self.v1p4__receptor__receptor_variable_domain_1_locus, V1p4ReceptorVariableDomain1Locus):
-            self.v1p4__receptor__receptor_variable_domain_1_locus = V1p4ReceptorVariableDomain1Locus(self.v1p4__receptor__receptor_variable_domain_1_locus)
-
-        if self._is_empty(self.v1p4__receptor__receptor_variable_domain_2_aa):
-            self.MissingRequiredField("v1p4__receptor__receptor_variable_domain_2_aa")
-        if not isinstance(self.v1p4__receptor__receptor_variable_domain_2_aa, str):
-            self.v1p4__receptor__receptor_variable_domain_2_aa = str(self.v1p4__receptor__receptor_variable_domain_2_aa)
-
-        if self._is_empty(self.v1p4__receptor__receptor_variable_domain_2_locus):
-            self.MissingRequiredField("v1p4__receptor__receptor_variable_domain_2_locus")
-        if not isinstance(self.v1p4__receptor__receptor_variable_domain_2_locus, V1p4ReceptorVariableDomain2Locus):
-            self.v1p4__receptor__receptor_variable_domain_2_locus = V1p4ReceptorVariableDomain2Locus(self.v1p4__receptor__receptor_variable_domain_2_locus)
-
-        if not isinstance(self.v1p4__receptor__receptor_ref, list):
-            self.v1p4__receptor__receptor_ref = [self.v1p4__receptor__receptor_ref] if self.v1p4__receptor__receptor_ref is not None else []
-        self.v1p4__receptor__receptor_ref = [v if isinstance(v, str) else str(v) for v in self.v1p4__receptor__receptor_ref]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class V1p4Reactivity(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4Reactivity"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4Reactivity"
-    class_name: ClassVar[str] = "v1p4_Reactivity"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Reactivity
-
-    v1p4__reactivity__reactivity_id: str = None
-    v1p4__reactivity__cell_id: str = None
-    v1p4__reactivity__ligand_type: Union[str, "V1p4LigandType"] = None
-    v1p4__reactivity__antigen_type: Union[str, "V1p4AntigenType"] = None
-    v1p4__reactivity__antigen: Union[str, "V1p4Antigen"] = None
-    v1p4__reactivity__reactivity_method: str = None
-    v1p4__reactivity__reactivity_readout: str = None
-    v1p4__reactivity__reactivity_value: float = None
-    v1p4__reactivity__reactivity_unit: str = None
-    v1p4__reactivity__repertoire_id: Optional[str] = None
-    v1p4__reactivity__data_processing_id: Optional[str] = None
-    v1p4__reactivity__antigen_source_species: Optional[Union[str, "V1p4AntigenSourceSpecies"]] = None
-    v1p4__reactivity__peptide_start: Optional[int] = None
-    v1p4__reactivity__peptide_end: Optional[int] = None
-    v1p4__reactivity__peptide_sequence_aa: Optional[str] = None
-    v1p4__reactivity__mhc_class: Optional[Union[str, "V1p4MhcClass"]] = None
-    v1p4__reactivity__mhc_gene_1: Optional[Union[str, "V1p4MhcGene1"]] = None
-    v1p4__reactivity__mhc_allele_1: Optional[str] = None
-    v1p4__reactivity__mhc_gene_2: Optional[Union[str, "V1p4MhcGene2"]] = None
-    v1p4__reactivity__mhc_allele_2: Optional[str] = None
-    v1p4__reactivity__reactivity_ref: Optional[Union[str, List[str]]] = empty_list()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__reactivity__reactivity_id):
-            self.MissingRequiredField("v1p4__reactivity__reactivity_id")
-        if not isinstance(self.v1p4__reactivity__reactivity_id, str):
-            self.v1p4__reactivity__reactivity_id = str(self.v1p4__reactivity__reactivity_id)
-
-        if self._is_empty(self.v1p4__reactivity__cell_id):
-            self.MissingRequiredField("v1p4__reactivity__cell_id")
-        if not isinstance(self.v1p4__reactivity__cell_id, str):
-            self.v1p4__reactivity__cell_id = str(self.v1p4__reactivity__cell_id)
-
-        if self._is_empty(self.v1p4__reactivity__ligand_type):
-            self.MissingRequiredField("v1p4__reactivity__ligand_type")
-        if not isinstance(self.v1p4__reactivity__ligand_type, V1p4LigandType):
-            self.v1p4__reactivity__ligand_type = V1p4LigandType(self.v1p4__reactivity__ligand_type)
-
-        if self._is_empty(self.v1p4__reactivity__antigen_type):
-            self.MissingRequiredField("v1p4__reactivity__antigen_type")
-        if not isinstance(self.v1p4__reactivity__antigen_type, V1p4AntigenType):
-            self.v1p4__reactivity__antigen_type = V1p4AntigenType(self.v1p4__reactivity__antigen_type)
-
-        if self._is_empty(self.v1p4__reactivity__reactivity_method):
-            self.MissingRequiredField("v1p4__reactivity__reactivity_method")
-        if not isinstance(self.v1p4__reactivity__reactivity_method, str):
-            self.v1p4__reactivity__reactivity_method = str(self.v1p4__reactivity__reactivity_method)
-
-        if self._is_empty(self.v1p4__reactivity__reactivity_readout):
-            self.MissingRequiredField("v1p4__reactivity__reactivity_readout")
-        if not isinstance(self.v1p4__reactivity__reactivity_readout, str):
-            self.v1p4__reactivity__reactivity_readout = str(self.v1p4__reactivity__reactivity_readout)
-
-        if self._is_empty(self.v1p4__reactivity__reactivity_value):
-            self.MissingRequiredField("v1p4__reactivity__reactivity_value")
-        if not isinstance(self.v1p4__reactivity__reactivity_value, float):
-            self.v1p4__reactivity__reactivity_value = float(self.v1p4__reactivity__reactivity_value)
-
-        if self._is_empty(self.v1p4__reactivity__reactivity_unit):
-            self.MissingRequiredField("v1p4__reactivity__reactivity_unit")
-        if not isinstance(self.v1p4__reactivity__reactivity_unit, str):
-            self.v1p4__reactivity__reactivity_unit = str(self.v1p4__reactivity__reactivity_unit)
-
-        if self.v1p4__reactivity__repertoire_id is not None and not isinstance(self.v1p4__reactivity__repertoire_id, str):
-            self.v1p4__reactivity__repertoire_id = str(self.v1p4__reactivity__repertoire_id)
-
-        if self.v1p4__reactivity__data_processing_id is not None and not isinstance(self.v1p4__reactivity__data_processing_id, str):
-            self.v1p4__reactivity__data_processing_id = str(self.v1p4__reactivity__data_processing_id)
-
-        if self.v1p4__reactivity__peptide_start is not None and not isinstance(self.v1p4__reactivity__peptide_start, int):
-            self.v1p4__reactivity__peptide_start = int(self.v1p4__reactivity__peptide_start)
-
-        if self.v1p4__reactivity__peptide_end is not None and not isinstance(self.v1p4__reactivity__peptide_end, int):
-            self.v1p4__reactivity__peptide_end = int(self.v1p4__reactivity__peptide_end)
-
-        if self.v1p4__reactivity__peptide_sequence_aa is not None and not isinstance(self.v1p4__reactivity__peptide_sequence_aa, str):
-            self.v1p4__reactivity__peptide_sequence_aa = str(self.v1p4__reactivity__peptide_sequence_aa)
-
-        if self.v1p4__reactivity__mhc_class is not None and not isinstance(self.v1p4__reactivity__mhc_class, V1p4MhcClass):
-            self.v1p4__reactivity__mhc_class = V1p4MhcClass(self.v1p4__reactivity__mhc_class)
-
-        if self.v1p4__reactivity__mhc_allele_1 is not None and not isinstance(self.v1p4__reactivity__mhc_allele_1, str):
-            self.v1p4__reactivity__mhc_allele_1 = str(self.v1p4__reactivity__mhc_allele_1)
-
-        if self.v1p4__reactivity__mhc_allele_2 is not None and not isinstance(self.v1p4__reactivity__mhc_allele_2, str):
-            self.v1p4__reactivity__mhc_allele_2 = str(self.v1p4__reactivity__mhc_allele_2)
-
-        if not isinstance(self.v1p4__reactivity__reactivity_ref, list):
-            self.v1p4__reactivity__reactivity_ref = [self.v1p4__reactivity__reactivity_ref] if self.v1p4__reactivity__reactivity_ref is not None else []
-        self.v1p4__reactivity__reactivity_ref = [v if isinstance(v, str) else str(v) for v in self.v1p4__reactivity__reactivity_ref]
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class V1p4SampleProcessing(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p4SampleProcessing"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p4SampleProcessing"
-    class_name: ClassVar[str] = "v1p4_SampleProcessing"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SampleProcessing
-
-    v1p4__sample__sample_id: str = None
-    v1p4__sample__sample_type: str = None
-    v1p4__sample__tissue: Union[str, "V1p4Tissue"] = None
-    v1p4__sample__anatomic_site: str = None
-    v1p4__sample__disease_state_sample: str = None
-    v1p4__sample__collection_time_point_relative: Union[dict, V1p4TimePoint] = None
-    v1p4__sample__biomaterial_provider: str = None
-    v1p4__cell_processing__tissue_processing: str = None
-    v1p4__cell_processing__cell_subset: Union[str, "V1p4CellSubset"] = None
-    v1p4__cell_processing__cell_phenotype: str = None
-    v1p4__cell_processing__single_cell: Union[bool, Bool] = None
-    v1p4__cell_processing__cell_number: int = None
-    v1p4__cell_processing__cells_per_reaction: int = None
-    v1p4__cell_processing__cell_storage: Union[bool, Bool] = None
-    v1p4__cell_processing__cell_quality: str = None
-    v1p4__cell_processing__cell_isolation: str = None
-    v1p4__cell_processing__cell_processing_protocol: str = None
-    v1p4__nucleic_acid_processing__template_class: Union[str, "V1p4TemplateClass"] = None
-    v1p4__nucleic_acid_processing__template_quality: str = None
-    v1p4__nucleic_acid_processing__template_amount: Union[dict, V1p4PhysicalQuantity] = None
-    v1p4__nucleic_acid_processing__library_generation_method: Union[str, "V1p4LibraryGenerationMethod"] = None
-    v1p4__nucleic_acid_processing__library_generation_protocol: str = None
-    v1p4__nucleic_acid_processing__library_generation_kit_version: str = None
-    v1p4__nucleic_acid_processing__complete_sequences: Union[str, "V1p4CompleteSequences"] = None
-    v1p4__nucleic_acid_processing__physical_linkage: Union[str, "V1p4PhysicalLinkage"] = None
-    v1p4__sequencing_run__sequencing_run_id: str = None
-    v1p4__sequencing_run__total_reads_passing_qc_filter: int = None
-    v1p4__sequencing_run__sequencing_platform: str = None
-    v1p4__sequencing_run__sequencing_facility: str = None
-    v1p4__sequencing_run__sequencing_run_date: str = None
-    v1p4__sequencing_run__sequencing_kit: str = None
-    v1p4__sample_processing__sample_processing_id: Optional[str] = None
-    v1p4__sample__collection_location: Optional[Union[str, "V1p4CollectionLocation"]] = None
-    v1p4__cell_processing__cell_label: Optional[str] = None
-    v1p4__cell_processing__cell_species: Optional[Union[str, "V1p4CellSpecies"]] = None
-    v1p4__nucleic_acid_processing__pcr_target: Optional[Union[Union[dict, V1p4PCRTarget], List[Union[dict, V1p4PCRTarget]]]] = empty_list()
-    v1p4__sequencing_run__sequencing_files: Optional[Union[dict, V1p4SequencingData]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.v1p4__sample__sample_id):
-            self.MissingRequiredField("v1p4__sample__sample_id")
-        if not isinstance(self.v1p4__sample__sample_id, str):
-            self.v1p4__sample__sample_id = str(self.v1p4__sample__sample_id)
-
-        if self._is_empty(self.v1p4__sample__sample_type):
-            self.MissingRequiredField("v1p4__sample__sample_type")
-        if not isinstance(self.v1p4__sample__sample_type, str):
-            self.v1p4__sample__sample_type = str(self.v1p4__sample__sample_type)
-
-        if self._is_empty(self.v1p4__sample__anatomic_site):
-            self.MissingRequiredField("v1p4__sample__anatomic_site")
-        if not isinstance(self.v1p4__sample__anatomic_site, str):
-            self.v1p4__sample__anatomic_site = str(self.v1p4__sample__anatomic_site)
-
-        if self._is_empty(self.v1p4__sample__disease_state_sample):
-            self.MissingRequiredField("v1p4__sample__disease_state_sample")
-        if not isinstance(self.v1p4__sample__disease_state_sample, str):
-            self.v1p4__sample__disease_state_sample = str(self.v1p4__sample__disease_state_sample)
-
-        if self._is_empty(self.v1p4__sample__collection_time_point_relative):
-            self.MissingRequiredField("v1p4__sample__collection_time_point_relative")
-        if not isinstance(self.v1p4__sample__collection_time_point_relative, V1p4TimePoint):
-            self.v1p4__sample__collection_time_point_relative = V1p4TimePoint(**as_dict(self.v1p4__sample__collection_time_point_relative))
-
-        if self._is_empty(self.v1p4__sample__biomaterial_provider):
-            self.MissingRequiredField("v1p4__sample__biomaterial_provider")
-        if not isinstance(self.v1p4__sample__biomaterial_provider, str):
-            self.v1p4__sample__biomaterial_provider = str(self.v1p4__sample__biomaterial_provider)
-
-        if self._is_empty(self.v1p4__cell_processing__tissue_processing):
-            self.MissingRequiredField("v1p4__cell_processing__tissue_processing")
-        if not isinstance(self.v1p4__cell_processing__tissue_processing, str):
-            self.v1p4__cell_processing__tissue_processing = str(self.v1p4__cell_processing__tissue_processing)
-
-        if self._is_empty(self.v1p4__cell_processing__cell_phenotype):
-            self.MissingRequiredField("v1p4__cell_processing__cell_phenotype")
-        if not isinstance(self.v1p4__cell_processing__cell_phenotype, str):
-            self.v1p4__cell_processing__cell_phenotype = str(self.v1p4__cell_processing__cell_phenotype)
-
-        if self._is_empty(self.v1p4__cell_processing__single_cell):
-            self.MissingRequiredField("v1p4__cell_processing__single_cell")
-        if not isinstance(self.v1p4__cell_processing__single_cell, Bool):
-            self.v1p4__cell_processing__single_cell = Bool(self.v1p4__cell_processing__single_cell)
-
-        if self._is_empty(self.v1p4__cell_processing__cell_number):
-            self.MissingRequiredField("v1p4__cell_processing__cell_number")
-        if not isinstance(self.v1p4__cell_processing__cell_number, int):
-            self.v1p4__cell_processing__cell_number = int(self.v1p4__cell_processing__cell_number)
-
-        if self._is_empty(self.v1p4__cell_processing__cells_per_reaction):
-            self.MissingRequiredField("v1p4__cell_processing__cells_per_reaction")
-        if not isinstance(self.v1p4__cell_processing__cells_per_reaction, int):
-            self.v1p4__cell_processing__cells_per_reaction = int(self.v1p4__cell_processing__cells_per_reaction)
-
-        if self._is_empty(self.v1p4__cell_processing__cell_storage):
-            self.MissingRequiredField("v1p4__cell_processing__cell_storage")
-        if not isinstance(self.v1p4__cell_processing__cell_storage, Bool):
-            self.v1p4__cell_processing__cell_storage = Bool(self.v1p4__cell_processing__cell_storage)
-
-        if self._is_empty(self.v1p4__cell_processing__cell_quality):
-            self.MissingRequiredField("v1p4__cell_processing__cell_quality")
-        if not isinstance(self.v1p4__cell_processing__cell_quality, str):
-            self.v1p4__cell_processing__cell_quality = str(self.v1p4__cell_processing__cell_quality)
-
-        if self._is_empty(self.v1p4__cell_processing__cell_isolation):
-            self.MissingRequiredField("v1p4__cell_processing__cell_isolation")
-        if not isinstance(self.v1p4__cell_processing__cell_isolation, str):
-            self.v1p4__cell_processing__cell_isolation = str(self.v1p4__cell_processing__cell_isolation)
-
-        if self._is_empty(self.v1p4__cell_processing__cell_processing_protocol):
-            self.MissingRequiredField("v1p4__cell_processing__cell_processing_protocol")
-        if not isinstance(self.v1p4__cell_processing__cell_processing_protocol, str):
-            self.v1p4__cell_processing__cell_processing_protocol = str(self.v1p4__cell_processing__cell_processing_protocol)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__template_class):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__template_class")
-        if not isinstance(self.v1p4__nucleic_acid_processing__template_class, V1p4TemplateClass):
-            self.v1p4__nucleic_acid_processing__template_class = V1p4TemplateClass(self.v1p4__nucleic_acid_processing__template_class)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__template_quality):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__template_quality")
-        if not isinstance(self.v1p4__nucleic_acid_processing__template_quality, str):
-            self.v1p4__nucleic_acid_processing__template_quality = str(self.v1p4__nucleic_acid_processing__template_quality)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__template_amount):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__template_amount")
-        if not isinstance(self.v1p4__nucleic_acid_processing__template_amount, V1p4PhysicalQuantity):
-            self.v1p4__nucleic_acid_processing__template_amount = V1p4PhysicalQuantity(**as_dict(self.v1p4__nucleic_acid_processing__template_amount))
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__library_generation_method):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__library_generation_method")
-        if not isinstance(self.v1p4__nucleic_acid_processing__library_generation_method, V1p4LibraryGenerationMethod):
-            self.v1p4__nucleic_acid_processing__library_generation_method = V1p4LibraryGenerationMethod(self.v1p4__nucleic_acid_processing__library_generation_method)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__library_generation_protocol):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__library_generation_protocol")
-        if not isinstance(self.v1p4__nucleic_acid_processing__library_generation_protocol, str):
-            self.v1p4__nucleic_acid_processing__library_generation_protocol = str(self.v1p4__nucleic_acid_processing__library_generation_protocol)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__library_generation_kit_version):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__library_generation_kit_version")
-        if not isinstance(self.v1p4__nucleic_acid_processing__library_generation_kit_version, str):
-            self.v1p4__nucleic_acid_processing__library_generation_kit_version = str(self.v1p4__nucleic_acid_processing__library_generation_kit_version)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__complete_sequences):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__complete_sequences")
-        if not isinstance(self.v1p4__nucleic_acid_processing__complete_sequences, V1p4CompleteSequences):
-            self.v1p4__nucleic_acid_processing__complete_sequences = V1p4CompleteSequences(self.v1p4__nucleic_acid_processing__complete_sequences)
-
-        if self._is_empty(self.v1p4__nucleic_acid_processing__physical_linkage):
-            self.MissingRequiredField("v1p4__nucleic_acid_processing__physical_linkage")
-        if not isinstance(self.v1p4__nucleic_acid_processing__physical_linkage, V1p4PhysicalLinkage):
-            self.v1p4__nucleic_acid_processing__physical_linkage = V1p4PhysicalLinkage(self.v1p4__nucleic_acid_processing__physical_linkage)
-
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_run_id):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_run_id")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_run_id, str):
-            self.v1p4__sequencing_run__sequencing_run_id = str(self.v1p4__sequencing_run__sequencing_run_id)
-
-        if self._is_empty(self.v1p4__sequencing_run__total_reads_passing_qc_filter):
-            self.MissingRequiredField("v1p4__sequencing_run__total_reads_passing_qc_filter")
-        if not isinstance(self.v1p4__sequencing_run__total_reads_passing_qc_filter, int):
-            self.v1p4__sequencing_run__total_reads_passing_qc_filter = int(self.v1p4__sequencing_run__total_reads_passing_qc_filter)
-
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_platform):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_platform")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_platform, str):
-            self.v1p4__sequencing_run__sequencing_platform = str(self.v1p4__sequencing_run__sequencing_platform)
-
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_facility):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_facility")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_facility, str):
-            self.v1p4__sequencing_run__sequencing_facility = str(self.v1p4__sequencing_run__sequencing_facility)
-
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_run_date):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_run_date")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_run_date, str):
-            self.v1p4__sequencing_run__sequencing_run_date = str(self.v1p4__sequencing_run__sequencing_run_date)
-
-        if self._is_empty(self.v1p4__sequencing_run__sequencing_kit):
-            self.MissingRequiredField("v1p4__sequencing_run__sequencing_kit")
-        if not isinstance(self.v1p4__sequencing_run__sequencing_kit, str):
-            self.v1p4__sequencing_run__sequencing_kit = str(self.v1p4__sequencing_run__sequencing_kit)
-
-        if self.v1p4__sample_processing__sample_processing_id is not None and not isinstance(self.v1p4__sample_processing__sample_processing_id, str):
-            self.v1p4__sample_processing__sample_processing_id = str(self.v1p4__sample_processing__sample_processing_id)
-
-        if self.v1p4__cell_processing__cell_label is not None and not isinstance(self.v1p4__cell_processing__cell_label, str):
-            self.v1p4__cell_processing__cell_label = str(self.v1p4__cell_processing__cell_label)
-
-        self._normalize_inlined_as_dict(slot_name="v1p4__nucleic_acid_processing__pcr_target", slot_type=V1p4PCRTarget, key_name="v1p4__p_c_r_target__pcr_target_locus", keyed=False)
-
-        if self.v1p4__sequencing_run__sequencing_files is not None and not isinstance(self.v1p4__sequencing_run__sequencing_files, V1p4SequencingData):
-            self.v1p4__sequencing_run__sequencing_files = V1p4SequencingData(**as_dict(self.v1p4__sequencing_run__sequencing_files))
+        if self._is_empty(self.Sample_sample_id):
+            self.MissingRequiredField("Sample_sample_id")
+        if not isinstance(self.Sample_sample_id, str):
+            self.Sample_sample_id = str(self.Sample_sample_id)
+
+        if self._is_empty(self.Sample_sample_type):
+            self.MissingRequiredField("Sample_sample_type")
+        if not isinstance(self.Sample_sample_type, str):
+            self.Sample_sample_type = str(self.Sample_sample_type)
+
+        if self._is_empty(self.Sample_tissue):
+            self.MissingRequiredField("Sample_tissue")
+        if not isinstance(self.Sample_tissue, TissueAkcId):
+            self.Sample_tissue = TissueAkcId(self.Sample_tissue)
+
+        if self._is_empty(self.Sample_anatomic_site):
+            self.MissingRequiredField("Sample_anatomic_site")
+        if not isinstance(self.Sample_anatomic_site, str):
+            self.Sample_anatomic_site = str(self.Sample_anatomic_site)
+
+        if self._is_empty(self.Sample_disease_state_sample):
+            self.MissingRequiredField("Sample_disease_state_sample")
+        if not isinstance(self.Sample_disease_state_sample, str):
+            self.Sample_disease_state_sample = str(self.Sample_disease_state_sample)
+
+        if self._is_empty(self.Sample_collection_time_point_relative):
+            self.MissingRequiredField("Sample_collection_time_point_relative")
+        if not isinstance(self.Sample_collection_time_point_relative, float):
+            self.Sample_collection_time_point_relative = float(self.Sample_collection_time_point_relative)
+
+        if self._is_empty(self.Sample_collection_time_point_reference):
+            self.MissingRequiredField("Sample_collection_time_point_reference")
+        if not isinstance(self.Sample_collection_time_point_reference, str):
+            self.Sample_collection_time_point_reference = str(self.Sample_collection_time_point_reference)
+
+        if self._is_empty(self.Sample_biomaterial_provider):
+            self.MissingRequiredField("Sample_biomaterial_provider")
+        if not isinstance(self.Sample_biomaterial_provider, str):
+            self.Sample_biomaterial_provider = str(self.Sample_biomaterial_provider)
+
+        if self._is_empty(self.CellProcessing_tissue_processing):
+            self.MissingRequiredField("CellProcessing_tissue_processing")
+        if not isinstance(self.CellProcessing_tissue_processing, str):
+            self.CellProcessing_tissue_processing = str(self.CellProcessing_tissue_processing)
+
+        if self._is_empty(self.CellProcessing_cell_phenotype):
+            self.MissingRequiredField("CellProcessing_cell_phenotype")
+        if not isinstance(self.CellProcessing_cell_phenotype, str):
+            self.CellProcessing_cell_phenotype = str(self.CellProcessing_cell_phenotype)
+
+        if self._is_empty(self.CellProcessing_single_cell):
+            self.MissingRequiredField("CellProcessing_single_cell")
+        if not isinstance(self.CellProcessing_single_cell, Bool):
+            self.CellProcessing_single_cell = Bool(self.CellProcessing_single_cell)
+
+        if self._is_empty(self.CellProcessing_cell_number):
+            self.MissingRequiredField("CellProcessing_cell_number")
+        if not isinstance(self.CellProcessing_cell_number, int):
+            self.CellProcessing_cell_number = int(self.CellProcessing_cell_number)
+
+        if self._is_empty(self.CellProcessing_cells_per_reaction):
+            self.MissingRequiredField("CellProcessing_cells_per_reaction")
+        if not isinstance(self.CellProcessing_cells_per_reaction, int):
+            self.CellProcessing_cells_per_reaction = int(self.CellProcessing_cells_per_reaction)
+
+        if self._is_empty(self.CellProcessing_cell_storage):
+            self.MissingRequiredField("CellProcessing_cell_storage")
+        if not isinstance(self.CellProcessing_cell_storage, Bool):
+            self.CellProcessing_cell_storage = Bool(self.CellProcessing_cell_storage)
+
+        if self._is_empty(self.CellProcessing_cell_quality):
+            self.MissingRequiredField("CellProcessing_cell_quality")
+        if not isinstance(self.CellProcessing_cell_quality, str):
+            self.CellProcessing_cell_quality = str(self.CellProcessing_cell_quality)
+
+        if self._is_empty(self.CellProcessing_cell_isolation):
+            self.MissingRequiredField("CellProcessing_cell_isolation")
+        if not isinstance(self.CellProcessing_cell_isolation, str):
+            self.CellProcessing_cell_isolation = str(self.CellProcessing_cell_isolation)
+
+        if self._is_empty(self.CellProcessing_cell_processing_protocol):
+            self.MissingRequiredField("CellProcessing_cell_processing_protocol")
+        if not isinstance(self.CellProcessing_cell_processing_protocol, str):
+            self.CellProcessing_cell_processing_protocol = str(self.CellProcessing_cell_processing_protocol)
+
+        if self._is_empty(self.NucleicAcidProcessing_template_class):
+            self.MissingRequiredField("NucleicAcidProcessing_template_class")
+        if not isinstance(self.NucleicAcidProcessing_template_class, TemplateClass):
+            self.NucleicAcidProcessing_template_class = TemplateClass(self.NucleicAcidProcessing_template_class)
+
+        if self._is_empty(self.NucleicAcidProcessing_template_quality):
+            self.MissingRequiredField("NucleicAcidProcessing_template_quality")
+        if not isinstance(self.NucleicAcidProcessing_template_quality, str):
+            self.NucleicAcidProcessing_template_quality = str(self.NucleicAcidProcessing_template_quality)
+
+        if self._is_empty(self.NucleicAcidProcessing_template_amount):
+            self.MissingRequiredField("NucleicAcidProcessing_template_amount")
+        if not isinstance(self.NucleicAcidProcessing_template_amount, float):
+            self.NucleicAcidProcessing_template_amount = float(self.NucleicAcidProcessing_template_amount)
+
+        if self._is_empty(self.NucleicAcidProcessing_library_generation_method):
+            self.MissingRequiredField("NucleicAcidProcessing_library_generation_method")
+        if not isinstance(self.NucleicAcidProcessing_library_generation_method, LibraryGenerationMethod):
+            self.NucleicAcidProcessing_library_generation_method = LibraryGenerationMethod(self.NucleicAcidProcessing_library_generation_method)
+
+        if self._is_empty(self.NucleicAcidProcessing_library_generation_protocol):
+            self.MissingRequiredField("NucleicAcidProcessing_library_generation_protocol")
+        if not isinstance(self.NucleicAcidProcessing_library_generation_protocol, str):
+            self.NucleicAcidProcessing_library_generation_protocol = str(self.NucleicAcidProcessing_library_generation_protocol)
+
+        if self._is_empty(self.NucleicAcidProcessing_library_generation_kit_version):
+            self.MissingRequiredField("NucleicAcidProcessing_library_generation_kit_version")
+        if not isinstance(self.NucleicAcidProcessing_library_generation_kit_version, str):
+            self.NucleicAcidProcessing_library_generation_kit_version = str(self.NucleicAcidProcessing_library_generation_kit_version)
+
+        if self._is_empty(self.NucleicAcidProcessing_complete_sequences):
+            self.MissingRequiredField("NucleicAcidProcessing_complete_sequences")
+        if not isinstance(self.NucleicAcidProcessing_complete_sequences, CompleteSequences):
+            self.NucleicAcidProcessing_complete_sequences = CompleteSequences(self.NucleicAcidProcessing_complete_sequences)
+
+        if self._is_empty(self.NucleicAcidProcessing_physical_linkage):
+            self.MissingRequiredField("NucleicAcidProcessing_physical_linkage")
+        if not isinstance(self.NucleicAcidProcessing_physical_linkage, PhysicalLinkage):
+            self.NucleicAcidProcessing_physical_linkage = PhysicalLinkage(self.NucleicAcidProcessing_physical_linkage)
+
+        if self._is_empty(self.SequencingRun_sequencing_run_id):
+            self.MissingRequiredField("SequencingRun_sequencing_run_id")
+        if not isinstance(self.SequencingRun_sequencing_run_id, str):
+            self.SequencingRun_sequencing_run_id = str(self.SequencingRun_sequencing_run_id)
+
+        if self._is_empty(self.SequencingRun_total_reads_passing_qc_filter):
+            self.MissingRequiredField("SequencingRun_total_reads_passing_qc_filter")
+        if not isinstance(self.SequencingRun_total_reads_passing_qc_filter, int):
+            self.SequencingRun_total_reads_passing_qc_filter = int(self.SequencingRun_total_reads_passing_qc_filter)
+
+        if self._is_empty(self.SequencingRun_sequencing_platform):
+            self.MissingRequiredField("SequencingRun_sequencing_platform")
+        if not isinstance(self.SequencingRun_sequencing_platform, str):
+            self.SequencingRun_sequencing_platform = str(self.SequencingRun_sequencing_platform)
+
+        if self._is_empty(self.SequencingRun_sequencing_facility):
+            self.MissingRequiredField("SequencingRun_sequencing_facility")
+        if not isinstance(self.SequencingRun_sequencing_facility, str):
+            self.SequencingRun_sequencing_facility = str(self.SequencingRun_sequencing_facility)
+
+        if self._is_empty(self.SequencingRun_sequencing_run_date):
+            self.MissingRequiredField("SequencingRun_sequencing_run_date")
+        if not isinstance(self.SequencingRun_sequencing_run_date, str):
+            self.SequencingRun_sequencing_run_date = str(self.SequencingRun_sequencing_run_date)
+
+        if self._is_empty(self.SequencingRun_sequencing_kit):
+            self.MissingRequiredField("SequencingRun_sequencing_kit")
+        if not isinstance(self.SequencingRun_sequencing_kit, str):
+            self.SequencingRun_sequencing_kit = str(self.SequencingRun_sequencing_kit)
+
+        if self.SampleProcessing_sample_processing_id is not None and not isinstance(self.SampleProcessing_sample_processing_id, str):
+            self.SampleProcessing_sample_processing_id = str(self.SampleProcessing_sample_processing_id)
+
+        self._normalize_inlined_as_dict(slot_name="NucleicAcidProcessing_pcr_target", slot_type=PCRTarget, key_name="PCRTarget_pcr_target_locus", keyed=False)
+
+        if self.SequencingRun_sequencing_files is not None and not isinstance(self.SequencingRun_sequencing_files, SequencingData):
+            self.SequencingRun_sequencing_files = SequencingData(**as_dict(self.SequencingRun_sequencing_files))
 
         super().__post_init__(**kwargs)
 
@@ -5268,89 +5184,37 @@ class ChainType(EnumDefinitionImpl):
         name="ChainType",
     )
 
-class V1p4Unit(EnumDefinitionImpl):
+class Unit(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4Unit",
+        name="Unit",
     )
 
-class V1p4OrcidId(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="V1p4OrcidId",
-    )
-
-class V1p4Affiliation(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="V1p4Affiliation",
-    )
-
-class V1p4Role(EnumDefinitionImpl):
-
-    conceptualization = PermissibleValue(text="conceptualization")
-    investigation = PermissibleValue(text="investigation")
-    methodology = PermissibleValue(text="methodology")
-    resources = PermissibleValue(text="resources")
-    software = PermissibleValue(text="software")
-    supervision = PermissibleValue(text="supervision")
-    validation = PermissibleValue(text="validation")
-    visualization = PermissibleValue(text="visualization")
-
-    _defn = EnumDefinition(
-        name="V1p4Role",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "data curation",
-            PermissibleValue(text="data curation"))
-        setattr(cls, "formal analysis",
-            PermissibleValue(text="formal analysis"))
-        setattr(cls, "funding acquisition",
-            PermissibleValue(text="funding acquisition"))
-        setattr(cls, "project administration",
-            PermissibleValue(text="project administration"))
-        setattr(cls, "writing - original draft",
-            PermissibleValue(text="writing - original draft"))
-        setattr(cls, "writing - review & editing",
-            PermissibleValue(text="writing - review & editing"))
-
-class V1p4Degree(EnumDefinitionImpl):
-
-    lead = PermissibleValue(text="lead")
-    equal = PermissibleValue(text="equal")
-    supporting = PermissibleValue(text="supporting")
-
-    _defn = EnumDefinition(
-        name="V1p4Degree",
-    )
-
-class V1p4Derivation(EnumDefinitionImpl):
+class Derivation(EnumDefinitionImpl):
 
     DNA = PermissibleValue(text="DNA")
     RNA = PermissibleValue(text="RNA")
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4Derivation",
+        name="Derivation",
     )
 
-class V1p4ObservationType(EnumDefinitionImpl):
+class ObservationType(EnumDefinitionImpl):
 
     direct_sequencing = PermissibleValue(text="direct_sequencing")
     inference_from_repertoire = PermissibleValue(text="inference_from_repertoire")
 
     _defn = EnumDefinition(
-        name="V1p4ObservationType",
+        name="ObservationType",
     )
 
-class V1p4Strand(EnumDefinitionImpl):
+class Strand(EnumDefinitionImpl):
 
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4Strand",
+        name="Strand",
     )
 
     @classmethod
@@ -5360,7 +5224,7 @@ class V1p4Strand(EnumDefinitionImpl):
         setattr(cls, "-",
             PermissibleValue(text="-"))
 
-class V1p4Locus(EnumDefinitionImpl):
+class Locus(EnumDefinitionImpl):
 
     IGH = PermissibleValue(text="IGH")
     IGI = PermissibleValue(text="IGI")
@@ -5373,10 +5237,10 @@ class V1p4Locus(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4Locus",
+        name="Locus",
     )
 
-class V1p4SequenceType(EnumDefinitionImpl):
+class SequenceType(EnumDefinitionImpl):
 
     V = PermissibleValue(text="V")
     D = PermissibleValue(text="D")
@@ -5384,10 +5248,10 @@ class V1p4SequenceType(EnumDefinitionImpl):
     C = PermissibleValue(text="C")
 
     _defn = EnumDefinition(
-        name="V1p4SequenceType",
+        name="SequenceType",
     )
 
-class V1p4InferenceType(EnumDefinitionImpl):
+class InferenceType(EnumDefinitionImpl):
 
     genomic_and_rearranged = PermissibleValue(text="genomic_and_rearranged")
     genomic_only = PermissibleValue(text="genomic_only")
@@ -5395,16 +5259,10 @@ class V1p4InferenceType(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4InferenceType",
+        name="InferenceType",
     )
 
-class V1p4Species(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="V1p4Species",
-    )
-
-class V1p4SpeciesSubgroupType(EnumDefinitionImpl):
+class SpeciesSubgroupType(EnumDefinitionImpl):
 
     breed = PermissibleValue(text="breed")
     strain = PermissibleValue(text="strain")
@@ -5414,10 +5272,10 @@ class V1p4SpeciesSubgroupType(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4SpeciesSubgroupType",
+        name="SpeciesSubgroupType",
     )
 
-class V1p4Status(EnumDefinitionImpl):
+class Status(EnumDefinitionImpl):
 
     active = PermissibleValue(text="active")
     draft = PermissibleValue(text="draft")
@@ -5426,15 +5284,15 @@ class V1p4Status(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4Status",
+        name="Status",
     )
 
-class V1p4JCodonFrame(EnumDefinitionImpl):
+class JCodonFrame(EnumDefinitionImpl):
 
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4JCodonFrame",
+        name="JCodonFrame",
     )
 
     @classmethod
@@ -5446,31 +5304,31 @@ class V1p4JCodonFrame(EnumDefinitionImpl):
         setattr(cls, "3",
             PermissibleValue(text="3"))
 
-class V1p4CurationalTags(EnumDefinitionImpl):
+class CurationalTags(EnumDefinitionImpl):
 
     likely_truncated = PermissibleValue(text="likely_truncated")
     likely_full_length = PermissibleValue(text="likely_full_length")
 
     _defn = EnumDefinition(
-        name="V1p4CurationalTags",
+        name="CurationalTags",
     )
 
-class V1p4InferenceProcess(EnumDefinitionImpl):
+class InferenceProcess(EnumDefinitionImpl):
 
     genomic_sequencing = PermissibleValue(text="genomic_sequencing")
     repertoire_sequencing = PermissibleValue(text="repertoire_sequencing")
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4InferenceProcess",
+        name="InferenceProcess",
     )
 
-class V1p4MhcClass(EnumDefinitionImpl):
+class MhcClass(EnumDefinitionImpl):
 
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4MhcClass",
+        name="MhcClass",
     )
 
     @classmethod
@@ -5482,19 +5340,13 @@ class V1p4MhcClass(EnumDefinitionImpl):
         setattr(cls, "MHC-nonclassical",
             PermissibleValue(text="MHC-nonclassical"))
 
-class V1p4Gene(EnumDefinitionImpl):
+class Gene(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4Gene",
+        name="Gene",
     )
 
-class V1p4StudyType(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="V1p4StudyType",
-    )
-
-class V1p4KeywordsStudy(EnumDefinitionImpl):
+class KeywordsStudy(EnumDefinitionImpl):
 
     contains_ig = PermissibleValue(text="contains_ig")
     contains_tr = PermissibleValue(text="contains_tr")
@@ -5503,14 +5355,12 @@ class V1p4KeywordsStudy(EnumDefinitionImpl):
     contains_schema_clone = PermissibleValue(text="contains_schema_clone")
     contains_schema_cell = PermissibleValue(text="contains_schema_cell")
     contains_schema_receptor = PermissibleValue(text="contains_schema_receptor")
-    contains_schema_cellexpression = PermissibleValue(text="contains_schema_cellexpression")
-    contains_schema_receptorreactivity = PermissibleValue(text="contains_schema_receptorreactivity")
 
     _defn = EnumDefinition(
-        name="V1p4KeywordsStudy",
+        name="KeywordsStudy",
     )
 
-class V1p4Sex(EnumDefinitionImpl):
+class Sex(EnumDefinitionImpl):
 
     male = PermissibleValue(text="male")
     female = PermissibleValue(text="female")
@@ -5520,52 +5370,46 @@ class V1p4Sex(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4Sex",
+        name="Sex",
     )
 
-class V1p4AncestryPopulation(EnumDefinitionImpl):
+class AgeUnit(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4AncestryPopulation",
+        name="AgeUnit",
     )
 
-class V1p4LocationBirth(EnumDefinitionImpl):
+class DiseaseDiagnosis(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4LocationBirth",
+        name="DiseaseDiagnosis",
     )
 
-class V1p4DiseaseDiagnosis(EnumDefinitionImpl):
+class Tissue(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4DiseaseDiagnosis",
+        name="Tissue",
     )
 
-class V1p4Tissue(EnumDefinitionImpl):
+class CollectionTimePointRelativeUnit(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4Tissue",
+        name="CollectionTimePointRelativeUnit",
     )
 
-class V1p4CollectionLocation(EnumDefinitionImpl):
+class CellSubset(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4CollectionLocation",
+        name="CellSubset",
     )
 
-class V1p4CellSubset(EnumDefinitionImpl):
+class CellSpecies(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4CellSubset",
+        name="CellSpecies",
     )
 
-class V1p4CellSpecies(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="V1p4CellSpecies",
-    )
-
-class V1p4PcrTargetLocus(EnumDefinitionImpl):
+class PcrTargetLocus(EnumDefinitionImpl):
 
     IGH = PermissibleValue(text="IGH")
     IGI = PermissibleValue(text="IGI")
@@ -5578,25 +5422,31 @@ class V1p4PcrTargetLocus(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4PcrTargetLocus",
+        name="PcrTargetLocus",
     )
 
-class V1p4TemplateClass(EnumDefinitionImpl):
+class TemplateClass(EnumDefinitionImpl):
 
     DNA = PermissibleValue(text="DNA")
     RNA = PermissibleValue(text="RNA")
 
     _defn = EnumDefinition(
-        name="V1p4TemplateClass",
+        name="TemplateClass",
     )
 
-class V1p4LibraryGenerationMethod(EnumDefinitionImpl):
+class TemplateAmountUnit(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="TemplateAmountUnit",
+    )
+
+class LibraryGenerationMethod(EnumDefinitionImpl):
 
     PCR = PermissibleValue(text="PCR")
     other = PermissibleValue(text="other")
 
     _defn = EnumDefinition(
-        name="V1p4LibraryGenerationMethod",
+        name="LibraryGenerationMethod",
     )
 
     @classmethod
@@ -5622,14 +5472,14 @@ class V1p4LibraryGenerationMethod(EnumDefinitionImpl):
         setattr(cls, "RT(specific)+TS",
             PermissibleValue(text="RT(specific)+TS"))
 
-class V1p4CompleteSequences(EnumDefinitionImpl):
+class CompleteSequences(EnumDefinitionImpl):
 
     partial = PermissibleValue(text="partial")
     complete = PermissibleValue(text="complete")
     mixed = PermissibleValue(text="mixed")
 
     _defn = EnumDefinition(
-        name="V1p4CompleteSequences",
+        name="CompleteSequences",
     )
 
     @classmethod
@@ -5637,13 +5487,13 @@ class V1p4CompleteSequences(EnumDefinitionImpl):
         setattr(cls, "complete+untemplated",
             PermissibleValue(text="complete+untemplated"))
 
-class V1p4PhysicalLinkage(EnumDefinitionImpl):
+class PhysicalLinkage(EnumDefinitionImpl):
 
     none = PermissibleValue(text="none")
     hetero_prelinked = PermissibleValue(text="hetero_prelinked")
 
     _defn = EnumDefinition(
-        name="V1p4PhysicalLinkage",
+        name="PhysicalLinkage",
     )
 
     @classmethod
@@ -5653,17 +5503,17 @@ class V1p4PhysicalLinkage(EnumDefinitionImpl):
         setattr(cls, "hetero_tail-head",
             PermissibleValue(text="hetero_tail-head"))
 
-class V1p4FileType(EnumDefinitionImpl):
+class FileType(EnumDefinitionImpl):
 
     fasta = PermissibleValue(text="fasta")
     fastq = PermissibleValue(text="fastq")
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4FileType",
+        name="FileType",
     )
 
-class V1p4ReadDirection(EnumDefinitionImpl):
+class ReadDirection(EnumDefinitionImpl):
 
     forward = PermissibleValue(text="forward")
     reverse = PermissibleValue(text="reverse")
@@ -5671,10 +5521,10 @@ class V1p4ReadDirection(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4ReadDirection",
+        name="ReadDirection",
     )
 
-class V1p4PairedReadDirection(EnumDefinitionImpl):
+class PairedReadDirection(EnumDefinitionImpl):
 
     forward = PermissibleValue(text="forward")
     reverse = PermissibleValue(text="reverse")
@@ -5682,41 +5532,49 @@ class V1p4PairedReadDirection(EnumDefinitionImpl):
     null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4PairedReadDirection",
+        name="PairedReadDirection",
     )
 
-class V1p4LocusSpecies(EnumDefinitionImpl):
+class ExpressionStudyMethod(EnumDefinitionImpl):
+
+    flow_cytometry = PermissibleValue(text="flow_cytometry")
+    null = PermissibleValue(text="null")
 
     _defn = EnumDefinition(
-        name="V1p4LocusSpecies",
+        name="ExpressionStudyMethod",
     )
 
-class V1p4Property(EnumDefinitionImpl):
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "single-cell_transcriptome",
+            PermissibleValue(text="single-cell_transcriptome"))
+
+class Property(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4Property",
+        name="Property",
     )
 
-class V1p4ReceptorType(EnumDefinitionImpl):
+class ReceptorType(EnumDefinitionImpl):
 
     Ig = PermissibleValue(text="Ig")
     TCR = PermissibleValue(text="TCR")
 
     _defn = EnumDefinition(
-        name="V1p4ReceptorType",
+        name="ReceptorType",
     )
 
-class V1p4ReceptorVariableDomain1Locus(EnumDefinitionImpl):
+class ReceptorVariableDomain1Locus(EnumDefinitionImpl):
 
     IGH = PermissibleValue(text="IGH")
     TRB = PermissibleValue(text="TRB")
     TRD = PermissibleValue(text="TRD")
 
     _defn = EnumDefinition(
-        name="V1p4ReceptorVariableDomain1Locus",
+        name="ReceptorVariableDomain1Locus",
     )
 
-class V1p4ReceptorVariableDomain2Locus(EnumDefinitionImpl):
+class ReceptorVariableDomain2Locus(EnumDefinitionImpl):
 
     IGI = PermissibleValue(text="IGI")
     IGK = PermissibleValue(text="IGK")
@@ -5725,16 +5583,16 @@ class V1p4ReceptorVariableDomain2Locus(EnumDefinitionImpl):
     TRG = PermissibleValue(text="TRG")
 
     _defn = EnumDefinition(
-        name="V1p4ReceptorVariableDomain2Locus",
+        name="ReceptorVariableDomain2Locus",
     )
 
-class V1p4LigandType(EnumDefinitionImpl):
+class LigandType(EnumDefinitionImpl):
 
     protein = PermissibleValue(text="protein")
     peptide = PermissibleValue(text="peptide")
 
     _defn = EnumDefinition(
-        name="V1p4LigandType",
+        name="LigandType",
     )
 
     @classmethod
@@ -5746,13 +5604,13 @@ class V1p4LigandType(EnumDefinitionImpl):
         setattr(cls, "non-peptidic",
             PermissibleValue(text="non-peptidic"))
 
-class V1p4AntigenType(EnumDefinitionImpl):
+class AntigenType(EnumDefinitionImpl):
 
     protein = PermissibleValue(text="protein")
     peptide = PermissibleValue(text="peptide")
 
     _defn = EnumDefinition(
-        name="V1p4AntigenType",
+        name="AntigenType",
     )
 
     @classmethod
@@ -5760,28 +5618,53 @@ class V1p4AntigenType(EnumDefinitionImpl):
         setattr(cls, "non-peptidic",
             PermissibleValue(text="non-peptidic"))
 
-class V1p4Antigen(EnumDefinitionImpl):
+class Antigen(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4Antigen",
+        name="Antigen",
     )
 
-class V1p4AntigenSourceSpecies(EnumDefinitionImpl):
+class AntigenSourceSpecies(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4AntigenSourceSpecies",
+        name="AntigenSourceSpecies",
     )
 
-class V1p4MhcGene1(EnumDefinitionImpl):
+class MhcGene1(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4MhcGene1",
+        name="MhcGene1",
     )
 
-class V1p4MhcGene2(EnumDefinitionImpl):
+class MhcGene2(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="V1p4MhcGene2",
+        name="MhcGene2",
+    )
+
+class ReactivityMethod(EnumDefinitionImpl):
+
+    SPR = PermissibleValue(text="SPR")
+    ITC = PermissibleValue(text="ITC")
+    ELISA = PermissibleValue(text="ELISA")
+    cytometry = PermissibleValue(text="cytometry")
+    biological_activity = PermissibleValue(text="biological_activity")
+
+    _defn = EnumDefinition(
+        name="ReactivityMethod",
+    )
+
+class ReactivityReadout(EnumDefinitionImpl):
+
+    binding_strength = PermissibleValue(text="binding_strength")
+    cytokine_release = PermissibleValue(text="cytokine_release")
+    dissociation_constant_kd = PermissibleValue(text="dissociation_constant_kd")
+    on_rate = PermissibleValue(text="on_rate")
+    off_rate = PermissibleValue(text="off_rate")
+    pathogen_inhibition = PermissibleValue(text="pathogen_inhibition")
+
+    _defn = EnumDefinition(
+        name="ReactivityReadout",
     )
 
 class ChainSimilarityType(EnumDefinitionImpl):
@@ -6122,1499 +6005,1475 @@ slots.source_protein = Slot(uri=AK_SCHEMA.source_protein, name="source_protein",
 slots.source_organism = Slot(uri=AK_SCHEMA.source_organism, name="source_organism", curie=AK_SCHEMA.curie('source_organism'),
                    model_uri=AK_SCHEMA.source_organism, domain=None, range=Optional[str])
 
-slots.v1p4__time_point__label = Slot(uri=AK_SCHEMA.v1p4__time_point__label, name="v1p4__time_point__label", curie=AK_SCHEMA.curie('v1p4__time_point__label'),
-                   model_uri=AK_SCHEMA.v1p4__time_point__label, domain=None, range=Optional[str])
+slots.TimePoint_label = Slot(uri=AK_SCHEMA.TimePoint_label, name="TimePoint_label", curie=AK_SCHEMA.curie('TimePoint_label'),
+                   model_uri=AK_SCHEMA.TimePoint_label, domain=None, range=Optional[str])
 
-slots.v1p4__time_point__value = Slot(uri=AK_SCHEMA.v1p4__time_point__value, name="v1p4__time_point__value", curie=AK_SCHEMA.curie('v1p4__time_point__value'),
-                   model_uri=AK_SCHEMA.v1p4__time_point__value, domain=None, range=Optional[float])
+slots.TimePoint_value = Slot(uri=AK_SCHEMA.TimePoint_value, name="TimePoint_value", curie=AK_SCHEMA.curie('TimePoint_value'),
+                   model_uri=AK_SCHEMA.TimePoint_value, domain=None, range=Optional[float])
 
-slots.v1p4__time_point__unit = Slot(uri=AK_SCHEMA.v1p4__time_point__unit, name="v1p4__time_point__unit", curie=AK_SCHEMA.curie('v1p4__time_point__unit'),
-                   model_uri=AK_SCHEMA.v1p4__time_point__unit, domain=None, range=Optional[Union[str, "V1p4Unit"]])
+slots.TimePoint_unit = Slot(uri=AK_SCHEMA.TimePoint_unit, name="TimePoint_unit", curie=AK_SCHEMA.curie('TimePoint_unit'),
+                   model_uri=AK_SCHEMA.TimePoint_unit, domain=None, range=Optional[Union[str, "Unit"]])
 
-slots.v1p4__time_interval__min = Slot(uri=AK_SCHEMA.v1p4__time_interval__min, name="v1p4__time_interval__min", curie=AK_SCHEMA.curie('v1p4__time_interval__min'),
-                   model_uri=AK_SCHEMA.v1p4__time_interval__min, domain=None, range=Optional[float])
+slots.Acknowledgement_acknowledgement_id = Slot(uri=AK_SCHEMA.Acknowledgement_acknowledgement_id, name="Acknowledgement_acknowledgement_id", curie=AK_SCHEMA.curie('Acknowledgement_acknowledgement_id'),
+                   model_uri=AK_SCHEMA.Acknowledgement_acknowledgement_id, domain=None, range=str)
 
-slots.v1p4__time_interval__max = Slot(uri=AK_SCHEMA.v1p4__time_interval__max, name="v1p4__time_interval__max", curie=AK_SCHEMA.curie('v1p4__time_interval__max'),
-                   model_uri=AK_SCHEMA.v1p4__time_interval__max, domain=None, range=Optional[float])
+slots.Acknowledgement_name = Slot(uri=AK_SCHEMA.Acknowledgement_name, name="Acknowledgement_name", curie=AK_SCHEMA.curie('Acknowledgement_name'),
+                   model_uri=AK_SCHEMA.Acknowledgement_name, domain=None, range=str)
 
-slots.v1p4__time_interval__unit = Slot(uri=AK_SCHEMA.v1p4__time_interval__unit, name="v1p4__time_interval__unit", curie=AK_SCHEMA.curie('v1p4__time_interval__unit'),
-                   model_uri=AK_SCHEMA.v1p4__time_interval__unit, domain=None, range=Optional[Union[str, "V1p4Unit"]])
+slots.Acknowledgement_institution_name = Slot(uri=AK_SCHEMA.Acknowledgement_institution_name, name="Acknowledgement_institution_name", curie=AK_SCHEMA.curie('Acknowledgement_institution_name'),
+                   model_uri=AK_SCHEMA.Acknowledgement_institution_name, domain=None, range=str)
 
-slots.v1p4__physical_quantity__quantity = Slot(uri=AK_SCHEMA.v1p4__physical_quantity__quantity, name="v1p4__physical_quantity__quantity", curie=AK_SCHEMA.curie('v1p4__physical_quantity__quantity'),
-                   model_uri=AK_SCHEMA.v1p4__physical_quantity__quantity, domain=None, range=Optional[float])
+slots.Acknowledgement_orcid_id = Slot(uri=AK_SCHEMA.Acknowledgement_orcid_id, name="Acknowledgement_orcid_id", curie=AK_SCHEMA.curie('Acknowledgement_orcid_id'),
+                   model_uri=AK_SCHEMA.Acknowledgement_orcid_id, domain=None, range=Optional[str])
 
-slots.v1p4__physical_quantity__unit = Slot(uri=AK_SCHEMA.v1p4__physical_quantity__unit, name="v1p4__physical_quantity__unit", curie=AK_SCHEMA.curie('v1p4__physical_quantity__unit'),
-                   model_uri=AK_SCHEMA.v1p4__physical_quantity__unit, domain=None, range=Optional[Union[str, "V1p4Unit"]])
+slots.RearrangedSequence_sequence_id = Slot(uri=AK_SCHEMA.RearrangedSequence_sequence_id, name="RearrangedSequence_sequence_id", curie=AK_SCHEMA.curie('RearrangedSequence_sequence_id'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_sequence_id, domain=None, range=str)
 
-slots.v1p4__time_quantity__quantity = Slot(uri=AK_SCHEMA.v1p4__time_quantity__quantity, name="v1p4__time_quantity__quantity", curie=AK_SCHEMA.curie('v1p4__time_quantity__quantity'),
-                   model_uri=AK_SCHEMA.v1p4__time_quantity__quantity, domain=None, range=Optional[float])
+slots.RearrangedSequence_sequence = Slot(uri=AK_SCHEMA.RearrangedSequence_sequence, name="RearrangedSequence_sequence", curie=AK_SCHEMA.curie('RearrangedSequence_sequence'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_sequence, domain=None, range=str)
 
-slots.v1p4__time_quantity__unit = Slot(uri=AK_SCHEMA.v1p4__time_quantity__unit, name="v1p4__time_quantity__unit", curie=AK_SCHEMA.curie('v1p4__time_quantity__unit'),
-                   model_uri=AK_SCHEMA.v1p4__time_quantity__unit, domain=None, range=Optional[Union[str, "V1p4Unit"]])
+slots.RearrangedSequence_derivation = Slot(uri=AK_SCHEMA.RearrangedSequence_derivation, name="RearrangedSequence_derivation", curie=AK_SCHEMA.curie('RearrangedSequence_derivation'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_derivation, domain=None, range=Union[str, "Derivation"])
 
-slots.v1p4__contributor__contributor_id = Slot(uri=AK_SCHEMA.v1p4__contributor__contributor_id, name="v1p4__contributor__contributor_id", curie=AK_SCHEMA.curie('v1p4__contributor__contributor_id'),
-                   model_uri=AK_SCHEMA.v1p4__contributor__contributor_id, domain=None, range=str)
+slots.RearrangedSequence_observation_type = Slot(uri=AK_SCHEMA.RearrangedSequence_observation_type, name="RearrangedSequence_observation_type", curie=AK_SCHEMA.curie('RearrangedSequence_observation_type'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_observation_type, domain=None, range=Union[str, "ObservationType"])
 
-slots.v1p4__contributor__name = Slot(uri=AK_SCHEMA.v1p4__contributor__name, name="v1p4__contributor__name", curie=AK_SCHEMA.curie('v1p4__contributor__name'),
-                   model_uri=AK_SCHEMA.v1p4__contributor__name, domain=None, range=str)
+slots.RearrangedSequence_curation = Slot(uri=AK_SCHEMA.RearrangedSequence_curation, name="RearrangedSequence_curation", curie=AK_SCHEMA.curie('RearrangedSequence_curation'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_curation, domain=None, range=Optional[str])
 
-slots.v1p4__contributor__orcid_id = Slot(uri=AK_SCHEMA.v1p4__contributor__orcid_id, name="v1p4__contributor__orcid_id", curie=AK_SCHEMA.curie('v1p4__contributor__orcid_id'),
-                   model_uri=AK_SCHEMA.v1p4__contributor__orcid_id, domain=None, range=Optional[Union[str, "V1p4OrcidId"]])
+slots.RearrangedSequence_repository_name = Slot(uri=AK_SCHEMA.RearrangedSequence_repository_name, name="RearrangedSequence_repository_name", curie=AK_SCHEMA.curie('RearrangedSequence_repository_name'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_repository_name, domain=None, range=str)
 
-slots.v1p4__contributor__affiliation = Slot(uri=AK_SCHEMA.v1p4__contributor__affiliation, name="v1p4__contributor__affiliation", curie=AK_SCHEMA.curie('v1p4__contributor__affiliation'),
-                   model_uri=AK_SCHEMA.v1p4__contributor__affiliation, domain=None, range=Optional[Union[str, "V1p4Affiliation"]])
+slots.RearrangedSequence_repository_ref = Slot(uri=AK_SCHEMA.RearrangedSequence_repository_ref, name="RearrangedSequence_repository_ref", curie=AK_SCHEMA.curie('RearrangedSequence_repository_ref'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_repository_ref, domain=None, range=Optional[str])
 
-slots.v1p4__contributor__affiliation_department = Slot(uri=AK_SCHEMA.v1p4__contributor__affiliation_department, name="v1p4__contributor__affiliation_department", curie=AK_SCHEMA.curie('v1p4__contributor__affiliation_department'),
-                   model_uri=AK_SCHEMA.v1p4__contributor__affiliation_department, domain=None, range=Optional[str])
+slots.RearrangedSequence_deposited_version = Slot(uri=AK_SCHEMA.RearrangedSequence_deposited_version, name="RearrangedSequence_deposited_version", curie=AK_SCHEMA.curie('RearrangedSequence_deposited_version'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_deposited_version, domain=None, range=str)
 
-slots.v1p4__contributor__contributions = Slot(uri=AK_SCHEMA.v1p4__contributor__contributions, name="v1p4__contributor__contributions", curie=AK_SCHEMA.curie('v1p4__contributor__contributions'),
-                   model_uri=AK_SCHEMA.v1p4__contributor__contributions, domain=None, range=Optional[Union[Union[dict, V1p4ContributorContribution], List[Union[dict, V1p4ContributorContribution]]]])
+slots.RearrangedSequence_sequence_start = Slot(uri=AK_SCHEMA.RearrangedSequence_sequence_start, name="RearrangedSequence_sequence_start", curie=AK_SCHEMA.curie('RearrangedSequence_sequence_start'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_sequence_start, domain=None, range=Optional[int])
 
-slots.v1p4__contributor_contribution__role = Slot(uri=AK_SCHEMA.v1p4__contributor_contribution__role, name="v1p4__contributor_contribution__role", curie=AK_SCHEMA.curie('v1p4__contributor_contribution__role'),
-                   model_uri=AK_SCHEMA.v1p4__contributor_contribution__role, domain=None, range=Union[str, "V1p4Role"])
+slots.RearrangedSequence_sequence_end = Slot(uri=AK_SCHEMA.RearrangedSequence_sequence_end, name="RearrangedSequence_sequence_end", curie=AK_SCHEMA.curie('RearrangedSequence_sequence_end'),
+                   model_uri=AK_SCHEMA.RearrangedSequence_sequence_end, domain=None, range=Optional[int])
 
-slots.v1p4__contributor_contribution__degree = Slot(uri=AK_SCHEMA.v1p4__contributor_contribution__degree, name="v1p4__contributor_contribution__degree", curie=AK_SCHEMA.curie('v1p4__contributor_contribution__degree'),
-                   model_uri=AK_SCHEMA.v1p4__contributor_contribution__degree, domain=None, range=Optional[Union[str, "V1p4Degree"]])
+slots.UnrearrangedSequence_sequence_id = Slot(uri=AK_SCHEMA.UnrearrangedSequence_sequence_id, name="UnrearrangedSequence_sequence_id", curie=AK_SCHEMA.curie('UnrearrangedSequence_sequence_id'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_sequence_id, domain=None, range=str)
 
-slots.v1p4__rearranged_sequence__sequence_id = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence_id, name="v1p4__rearranged_sequence__sequence_id", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__sequence_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence_id, domain=None, range=str)
+slots.UnrearrangedSequence_sequence = Slot(uri=AK_SCHEMA.UnrearrangedSequence_sequence, name="UnrearrangedSequence_sequence", curie=AK_SCHEMA.curie('UnrearrangedSequence_sequence'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_sequence, domain=None, range=str)
 
-slots.v1p4__rearranged_sequence__sequence = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence, name="v1p4__rearranged_sequence__sequence", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__sequence'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence, domain=None, range=str)
+slots.UnrearrangedSequence_curation = Slot(uri=AK_SCHEMA.UnrearrangedSequence_curation, name="UnrearrangedSequence_curation", curie=AK_SCHEMA.curie('UnrearrangedSequence_curation'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_curation, domain=None, range=Optional[str])
 
-slots.v1p4__rearranged_sequence__derivation = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__derivation, name="v1p4__rearranged_sequence__derivation", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__derivation'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__derivation, domain=None, range=Union[str, "V1p4Derivation"])
+slots.UnrearrangedSequence_repository_name = Slot(uri=AK_SCHEMA.UnrearrangedSequence_repository_name, name="UnrearrangedSequence_repository_name", curie=AK_SCHEMA.curie('UnrearrangedSequence_repository_name'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_repository_name, domain=None, range=str)
 
-slots.v1p4__rearranged_sequence__observation_type = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__observation_type, name="v1p4__rearranged_sequence__observation_type", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__observation_type'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__observation_type, domain=None, range=Union[str, "V1p4ObservationType"])
+slots.UnrearrangedSequence_repository_ref = Slot(uri=AK_SCHEMA.UnrearrangedSequence_repository_ref, name="UnrearrangedSequence_repository_ref", curie=AK_SCHEMA.curie('UnrearrangedSequence_repository_ref'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_repository_ref, domain=None, range=Optional[str])
 
-slots.v1p4__rearranged_sequence__curation = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__curation, name="v1p4__rearranged_sequence__curation", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__curation'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__curation, domain=None, range=Optional[str])
+slots.UnrearrangedSequence_patch_no = Slot(uri=AK_SCHEMA.UnrearrangedSequence_patch_no, name="UnrearrangedSequence_patch_no", curie=AK_SCHEMA.curie('UnrearrangedSequence_patch_no'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_patch_no, domain=None, range=Optional[str])
 
-slots.v1p4__rearranged_sequence__repository_name = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__repository_name, name="v1p4__rearranged_sequence__repository_name", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__repository_name'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__repository_name, domain=None, range=str)
+slots.UnrearrangedSequence_gff_seqid = Slot(uri=AK_SCHEMA.UnrearrangedSequence_gff_seqid, name="UnrearrangedSequence_gff_seqid", curie=AK_SCHEMA.curie('UnrearrangedSequence_gff_seqid'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_gff_seqid, domain=None, range=str)
 
-slots.v1p4__rearranged_sequence__repository_ref = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__repository_ref, name="v1p4__rearranged_sequence__repository_ref", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__repository_ref'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__repository_ref, domain=None, range=Optional[str])
+slots.UnrearrangedSequence_gff_start = Slot(uri=AK_SCHEMA.UnrearrangedSequence_gff_start, name="UnrearrangedSequence_gff_start", curie=AK_SCHEMA.curie('UnrearrangedSequence_gff_start'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_gff_start, domain=None, range=int)
 
-slots.v1p4__rearranged_sequence__deposited_version = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__deposited_version, name="v1p4__rearranged_sequence__deposited_version", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__deposited_version'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__deposited_version, domain=None, range=str)
+slots.UnrearrangedSequence_gff_end = Slot(uri=AK_SCHEMA.UnrearrangedSequence_gff_end, name="UnrearrangedSequence_gff_end", curie=AK_SCHEMA.curie('UnrearrangedSequence_gff_end'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_gff_end, domain=None, range=int)
 
-slots.v1p4__rearranged_sequence__sequence_start = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence_start, name="v1p4__rearranged_sequence__sequence_start", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__sequence_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence_start, domain=None, range=Optional[int])
+slots.UnrearrangedSequence_strand = Slot(uri=AK_SCHEMA.UnrearrangedSequence_strand, name="UnrearrangedSequence_strand", curie=AK_SCHEMA.curie('UnrearrangedSequence_strand'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_strand, domain=None, range=Union[str, "Strand"])
 
-slots.v1p4__rearranged_sequence__sequence_end = Slot(uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence_end, name="v1p4__rearranged_sequence__sequence_end", curie=AK_SCHEMA.curie('v1p4__rearranged_sequence__sequence_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearranged_sequence__sequence_end, domain=None, range=Optional[int])
+slots.SequenceDelineationV_sequence_delineation_id = Slot(uri=AK_SCHEMA.SequenceDelineationV_sequence_delineation_id, name="SequenceDelineationV_sequence_delineation_id", curie=AK_SCHEMA.curie('SequenceDelineationV_sequence_delineation_id'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_sequence_delineation_id, domain=None, range=str)
 
-slots.v1p4__unrearranged_sequence__sequence_id = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__sequence_id, name="v1p4__unrearranged_sequence__sequence_id", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__sequence_id'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__sequence_id, domain=None, range=str)
+slots.SequenceDelineationV_delineation_scheme = Slot(uri=AK_SCHEMA.SequenceDelineationV_delineation_scheme, name="SequenceDelineationV_delineation_scheme", curie=AK_SCHEMA.curie('SequenceDelineationV_delineation_scheme'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_delineation_scheme, domain=None, range=str)
 
-slots.v1p4__unrearranged_sequence__sequence = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__sequence, name="v1p4__unrearranged_sequence__sequence", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__sequence'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__sequence, domain=None, range=str)
+slots.SequenceDelineationV_unaligned_sequence = Slot(uri=AK_SCHEMA.SequenceDelineationV_unaligned_sequence, name="SequenceDelineationV_unaligned_sequence", curie=AK_SCHEMA.curie('SequenceDelineationV_unaligned_sequence'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_unaligned_sequence, domain=None, range=Optional[str])
 
-slots.v1p4__unrearranged_sequence__curation = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__curation, name="v1p4__unrearranged_sequence__curation", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__curation'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__curation, domain=None, range=Optional[str])
+slots.SequenceDelineationV_aligned_sequence = Slot(uri=AK_SCHEMA.SequenceDelineationV_aligned_sequence, name="SequenceDelineationV_aligned_sequence", curie=AK_SCHEMA.curie('SequenceDelineationV_aligned_sequence'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_aligned_sequence, domain=None, range=Optional[str])
 
-slots.v1p4__unrearranged_sequence__repository_name = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__repository_name, name="v1p4__unrearranged_sequence__repository_name", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__repository_name'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__repository_name, domain=None, range=str)
+slots.SequenceDelineationV_fwr1_start = Slot(uri=AK_SCHEMA.SequenceDelineationV_fwr1_start, name="SequenceDelineationV_fwr1_start", curie=AK_SCHEMA.curie('SequenceDelineationV_fwr1_start'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_fwr1_start, domain=None, range=int)
 
-slots.v1p4__unrearranged_sequence__repository_ref = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__repository_ref, name="v1p4__unrearranged_sequence__repository_ref", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__repository_ref'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__repository_ref, domain=None, range=Optional[str])
+slots.SequenceDelineationV_fwr1_end = Slot(uri=AK_SCHEMA.SequenceDelineationV_fwr1_end, name="SequenceDelineationV_fwr1_end", curie=AK_SCHEMA.curie('SequenceDelineationV_fwr1_end'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_fwr1_end, domain=None, range=int)
 
-slots.v1p4__unrearranged_sequence__patch_no = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__patch_no, name="v1p4__unrearranged_sequence__patch_no", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__patch_no'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__patch_no, domain=None, range=Optional[str])
+slots.SequenceDelineationV_cdr1_start = Slot(uri=AK_SCHEMA.SequenceDelineationV_cdr1_start, name="SequenceDelineationV_cdr1_start", curie=AK_SCHEMA.curie('SequenceDelineationV_cdr1_start'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_cdr1_start, domain=None, range=int)
 
-slots.v1p4__unrearranged_sequence__gff_seqid = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__gff_seqid, name="v1p4__unrearranged_sequence__gff_seqid", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__gff_seqid'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__gff_seqid, domain=None, range=str)
+slots.SequenceDelineationV_cdr1_end = Slot(uri=AK_SCHEMA.SequenceDelineationV_cdr1_end, name="SequenceDelineationV_cdr1_end", curie=AK_SCHEMA.curie('SequenceDelineationV_cdr1_end'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_cdr1_end, domain=None, range=int)
 
-slots.v1p4__unrearranged_sequence__gff_start = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__gff_start, name="v1p4__unrearranged_sequence__gff_start", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__gff_start'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__gff_start, domain=None, range=int)
+slots.SequenceDelineationV_fwr2_start = Slot(uri=AK_SCHEMA.SequenceDelineationV_fwr2_start, name="SequenceDelineationV_fwr2_start", curie=AK_SCHEMA.curie('SequenceDelineationV_fwr2_start'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_fwr2_start, domain=None, range=int)
 
-slots.v1p4__unrearranged_sequence__gff_end = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__gff_end, name="v1p4__unrearranged_sequence__gff_end", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__gff_end'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__gff_end, domain=None, range=int)
+slots.SequenceDelineationV_fwr2_end = Slot(uri=AK_SCHEMA.SequenceDelineationV_fwr2_end, name="SequenceDelineationV_fwr2_end", curie=AK_SCHEMA.curie('SequenceDelineationV_fwr2_end'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_fwr2_end, domain=None, range=int)
 
-slots.v1p4__unrearranged_sequence__strand = Slot(uri=AK_SCHEMA.v1p4__unrearranged_sequence__strand, name="v1p4__unrearranged_sequence__strand", curie=AK_SCHEMA.curie('v1p4__unrearranged_sequence__strand'),
-                   model_uri=AK_SCHEMA.v1p4__unrearranged_sequence__strand, domain=None, range=Union[str, "V1p4Strand"])
+slots.SequenceDelineationV_cdr2_start = Slot(uri=AK_SCHEMA.SequenceDelineationV_cdr2_start, name="SequenceDelineationV_cdr2_start", curie=AK_SCHEMA.curie('SequenceDelineationV_cdr2_start'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_cdr2_start, domain=None, range=int)
 
-slots.v1p4__sequence_delineation_v__sequence_delineation_id = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__sequence_delineation_id, name="v1p4__sequence_delineation_v__sequence_delineation_id", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__sequence_delineation_id'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__sequence_delineation_id, domain=None, range=str)
+slots.SequenceDelineationV_cdr2_end = Slot(uri=AK_SCHEMA.SequenceDelineationV_cdr2_end, name="SequenceDelineationV_cdr2_end", curie=AK_SCHEMA.curie('SequenceDelineationV_cdr2_end'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_cdr2_end, domain=None, range=int)
 
-slots.v1p4__sequence_delineation_v__delineation_scheme = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__delineation_scheme, name="v1p4__sequence_delineation_v__delineation_scheme", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__delineation_scheme'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__delineation_scheme, domain=None, range=str)
+slots.SequenceDelineationV_fwr3_start = Slot(uri=AK_SCHEMA.SequenceDelineationV_fwr3_start, name="SequenceDelineationV_fwr3_start", curie=AK_SCHEMA.curie('SequenceDelineationV_fwr3_start'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_fwr3_start, domain=None, range=int)
 
-slots.v1p4__sequence_delineation_v__unaligned_sequence = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__unaligned_sequence, name="v1p4__sequence_delineation_v__unaligned_sequence", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__unaligned_sequence'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__unaligned_sequence, domain=None, range=Optional[str])
+slots.SequenceDelineationV_fwr3_end = Slot(uri=AK_SCHEMA.SequenceDelineationV_fwr3_end, name="SequenceDelineationV_fwr3_end", curie=AK_SCHEMA.curie('SequenceDelineationV_fwr3_end'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_fwr3_end, domain=None, range=int)
 
-slots.v1p4__sequence_delineation_v__aligned_sequence = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__aligned_sequence, name="v1p4__sequence_delineation_v__aligned_sequence", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__aligned_sequence'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__aligned_sequence, domain=None, range=Optional[str])
+slots.SequenceDelineationV_cdr3_start = Slot(uri=AK_SCHEMA.SequenceDelineationV_cdr3_start, name="SequenceDelineationV_cdr3_start", curie=AK_SCHEMA.curie('SequenceDelineationV_cdr3_start'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_cdr3_start, domain=None, range=int)
 
-slots.v1p4__sequence_delineation_v__fwr1_start = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr1_start, name="v1p4__sequence_delineation_v__fwr1_start", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__fwr1_start'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr1_start, domain=None, range=int)
+slots.SequenceDelineationV_alignment_labels = Slot(uri=AK_SCHEMA.SequenceDelineationV_alignment_labels, name="SequenceDelineationV_alignment_labels", curie=AK_SCHEMA.curie('SequenceDelineationV_alignment_labels'),
+                   model_uri=AK_SCHEMA.SequenceDelineationV_alignment_labels, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.v1p4__sequence_delineation_v__fwr1_end = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr1_end, name="v1p4__sequence_delineation_v__fwr1_end", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__fwr1_end'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr1_end, domain=None, range=int)
+slots.AlleleDescription_allele_description_id = Slot(uri=AK_SCHEMA.AlleleDescription_allele_description_id, name="AlleleDescription_allele_description_id", curie=AK_SCHEMA.curie('AlleleDescription_allele_description_id'),
+                   model_uri=AK_SCHEMA.AlleleDescription_allele_description_id, domain=None, range=str)
 
-slots.v1p4__sequence_delineation_v__cdr1_start = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr1_start, name="v1p4__sequence_delineation_v__cdr1_start", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__cdr1_start'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr1_start, domain=None, range=int)
+slots.AlleleDescription_allele_description_ref = Slot(uri=AK_SCHEMA.AlleleDescription_allele_description_ref, name="AlleleDescription_allele_description_ref", curie=AK_SCHEMA.curie('AlleleDescription_allele_description_ref'),
+                   model_uri=AK_SCHEMA.AlleleDescription_allele_description_ref, domain=None, range=Optional[str])
 
-slots.v1p4__sequence_delineation_v__cdr1_end = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr1_end, name="v1p4__sequence_delineation_v__cdr1_end", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__cdr1_end'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr1_end, domain=None, range=int)
+slots.AlleleDescription_maintainer = Slot(uri=AK_SCHEMA.AlleleDescription_maintainer, name="AlleleDescription_maintainer", curie=AK_SCHEMA.curie('AlleleDescription_maintainer'),
+                   model_uri=AK_SCHEMA.AlleleDescription_maintainer, domain=None, range=str)
 
-slots.v1p4__sequence_delineation_v__fwr2_start = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr2_start, name="v1p4__sequence_delineation_v__fwr2_start", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__fwr2_start'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr2_start, domain=None, range=int)
+slots.AlleleDescription_acknowledgements = Slot(uri=AK_SCHEMA.AlleleDescription_acknowledgements, name="AlleleDescription_acknowledgements", curie=AK_SCHEMA.curie('AlleleDescription_acknowledgements'),
+                   model_uri=AK_SCHEMA.AlleleDescription_acknowledgements, domain=None, range=Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]])
 
-slots.v1p4__sequence_delineation_v__fwr2_end = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr2_end, name="v1p4__sequence_delineation_v__fwr2_end", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__fwr2_end'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr2_end, domain=None, range=int)
+slots.AlleleDescription_lab_address = Slot(uri=AK_SCHEMA.AlleleDescription_lab_address, name="AlleleDescription_lab_address", curie=AK_SCHEMA.curie('AlleleDescription_lab_address'),
+                   model_uri=AK_SCHEMA.AlleleDescription_lab_address, domain=None, range=str)
 
-slots.v1p4__sequence_delineation_v__cdr2_start = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr2_start, name="v1p4__sequence_delineation_v__cdr2_start", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__cdr2_start'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr2_start, domain=None, range=int)
+slots.AlleleDescription_release_version = Slot(uri=AK_SCHEMA.AlleleDescription_release_version, name="AlleleDescription_release_version", curie=AK_SCHEMA.curie('AlleleDescription_release_version'),
+                   model_uri=AK_SCHEMA.AlleleDescription_release_version, domain=None, range=int)
 
-slots.v1p4__sequence_delineation_v__cdr2_end = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr2_end, name="v1p4__sequence_delineation_v__cdr2_end", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__cdr2_end'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr2_end, domain=None, range=int)
+slots.AlleleDescription_release_date = Slot(uri=AK_SCHEMA.AlleleDescription_release_date, name="AlleleDescription_release_date", curie=AK_SCHEMA.curie('AlleleDescription_release_date'),
+                   model_uri=AK_SCHEMA.AlleleDescription_release_date, domain=None, range=str)
 
-slots.v1p4__sequence_delineation_v__fwr3_start = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr3_start, name="v1p4__sequence_delineation_v__fwr3_start", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__fwr3_start'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr3_start, domain=None, range=int)
+slots.AlleleDescription_release_description = Slot(uri=AK_SCHEMA.AlleleDescription_release_description, name="AlleleDescription_release_description", curie=AK_SCHEMA.curie('AlleleDescription_release_description'),
+                   model_uri=AK_SCHEMA.AlleleDescription_release_description, domain=None, range=str)
 
-slots.v1p4__sequence_delineation_v__fwr3_end = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr3_end, name="v1p4__sequence_delineation_v__fwr3_end", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__fwr3_end'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__fwr3_end, domain=None, range=int)
+slots.AlleleDescription_label = Slot(uri=AK_SCHEMA.AlleleDescription_label, name="AlleleDescription_label", curie=AK_SCHEMA.curie('AlleleDescription_label'),
+                   model_uri=AK_SCHEMA.AlleleDescription_label, domain=None, range=Optional[str])
 
-slots.v1p4__sequence_delineation_v__cdr3_start = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr3_start, name="v1p4__sequence_delineation_v__cdr3_start", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__cdr3_start'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__cdr3_start, domain=None, range=int)
+slots.AlleleDescription_sequence = Slot(uri=AK_SCHEMA.AlleleDescription_sequence, name="AlleleDescription_sequence", curie=AK_SCHEMA.curie('AlleleDescription_sequence'),
+                   model_uri=AK_SCHEMA.AlleleDescription_sequence, domain=None, range=str)
 
-slots.v1p4__sequence_delineation_v__alignment_labels = Slot(uri=AK_SCHEMA.v1p4__sequence_delineation_v__alignment_labels, name="v1p4__sequence_delineation_v__alignment_labels", curie=AK_SCHEMA.curie('v1p4__sequence_delineation_v__alignment_labels'),
-                   model_uri=AK_SCHEMA.v1p4__sequence_delineation_v__alignment_labels, domain=None, range=Optional[Union[str, List[str]]])
+slots.AlleleDescription_coding_sequence = Slot(uri=AK_SCHEMA.AlleleDescription_coding_sequence, name="AlleleDescription_coding_sequence", curie=AK_SCHEMA.curie('AlleleDescription_coding_sequence'),
+                   model_uri=AK_SCHEMA.AlleleDescription_coding_sequence, domain=None, range=str)
 
-slots.v1p4__allele_description__allele_description_id = Slot(uri=AK_SCHEMA.v1p4__allele_description__allele_description_id, name="v1p4__allele_description__allele_description_id", curie=AK_SCHEMA.curie('v1p4__allele_description__allele_description_id'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__allele_description_id, domain=None, range=str)
+slots.AlleleDescription_aliases = Slot(uri=AK_SCHEMA.AlleleDescription_aliases, name="AlleleDescription_aliases", curie=AK_SCHEMA.curie('AlleleDescription_aliases'),
+                   model_uri=AK_SCHEMA.AlleleDescription_aliases, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.v1p4__allele_description__allele_description_ref = Slot(uri=AK_SCHEMA.v1p4__allele_description__allele_description_ref, name="v1p4__allele_description__allele_description_ref", curie=AK_SCHEMA.curie('v1p4__allele_description__allele_description_ref'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__allele_description_ref, domain=None, range=Optional[str])
+slots.AlleleDescription_locus = Slot(uri=AK_SCHEMA.AlleleDescription_locus, name="AlleleDescription_locus", curie=AK_SCHEMA.curie('AlleleDescription_locus'),
+                   model_uri=AK_SCHEMA.AlleleDescription_locus, domain=None, range=Union[str, "Locus"])
 
-slots.v1p4__allele_description__acknowledgements = Slot(uri=AK_SCHEMA.v1p4__allele_description__acknowledgements, name="v1p4__allele_description__acknowledgements", curie=AK_SCHEMA.curie('v1p4__allele_description__acknowledgements'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__acknowledgements, domain=None, range=Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]])
+slots.AlleleDescription_chromosome = Slot(uri=AK_SCHEMA.AlleleDescription_chromosome, name="AlleleDescription_chromosome", curie=AK_SCHEMA.curie('AlleleDescription_chromosome'),
+                   model_uri=AK_SCHEMA.AlleleDescription_chromosome, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__release_version = Slot(uri=AK_SCHEMA.v1p4__allele_description__release_version, name="v1p4__allele_description__release_version", curie=AK_SCHEMA.curie('v1p4__allele_description__release_version'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__release_version, domain=None, range=int)
+slots.AlleleDescription_sequence_type = Slot(uri=AK_SCHEMA.AlleleDescription_sequence_type, name="AlleleDescription_sequence_type", curie=AK_SCHEMA.curie('AlleleDescription_sequence_type'),
+                   model_uri=AK_SCHEMA.AlleleDescription_sequence_type, domain=None, range=Union[str, "SequenceType"])
 
-slots.v1p4__allele_description__release_date = Slot(uri=AK_SCHEMA.v1p4__allele_description__release_date, name="v1p4__allele_description__release_date", curie=AK_SCHEMA.curie('v1p4__allele_description__release_date'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__release_date, domain=None, range=str)
+slots.AlleleDescription_functional = Slot(uri=AK_SCHEMA.AlleleDescription_functional, name="AlleleDescription_functional", curie=AK_SCHEMA.curie('AlleleDescription_functional'),
+                   model_uri=AK_SCHEMA.AlleleDescription_functional, domain=None, range=Union[bool, Bool])
 
-slots.v1p4__allele_description__release_description = Slot(uri=AK_SCHEMA.v1p4__allele_description__release_description, name="v1p4__allele_description__release_description", curie=AK_SCHEMA.curie('v1p4__allele_description__release_description'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__release_description, domain=None, range=str)
+slots.AlleleDescription_inference_type = Slot(uri=AK_SCHEMA.AlleleDescription_inference_type, name="AlleleDescription_inference_type", curie=AK_SCHEMA.curie('AlleleDescription_inference_type'),
+                   model_uri=AK_SCHEMA.AlleleDescription_inference_type, domain=None, range=Union[str, "InferenceType"])
 
-slots.v1p4__allele_description__label = Slot(uri=AK_SCHEMA.v1p4__allele_description__label, name="v1p4__allele_description__label", curie=AK_SCHEMA.curie('v1p4__allele_description__label'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__label, domain=None, range=Optional[str])
+slots.AlleleDescription_species = Slot(uri=AK_SCHEMA.AlleleDescription_species, name="AlleleDescription_species", curie=AK_SCHEMA.curie('AlleleDescription_species'),
+                   model_uri=AK_SCHEMA.AlleleDescription_species, domain=None, range=Union[str, "Species"])
 
-slots.v1p4__allele_description__sequence = Slot(uri=AK_SCHEMA.v1p4__allele_description__sequence, name="v1p4__allele_description__sequence", curie=AK_SCHEMA.curie('v1p4__allele_description__sequence'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__sequence, domain=None, range=str)
+slots.AlleleDescription_species_subgroup = Slot(uri=AK_SCHEMA.AlleleDescription_species_subgroup, name="AlleleDescription_species_subgroup", curie=AK_SCHEMA.curie('AlleleDescription_species_subgroup'),
+                   model_uri=AK_SCHEMA.AlleleDescription_species_subgroup, domain=None, range=Optional[str])
 
-slots.v1p4__allele_description__coding_sequence = Slot(uri=AK_SCHEMA.v1p4__allele_description__coding_sequence, name="v1p4__allele_description__coding_sequence", curie=AK_SCHEMA.curie('v1p4__allele_description__coding_sequence'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__coding_sequence, domain=None, range=str)
+slots.AlleleDescription_species_subgroup_type = Slot(uri=AK_SCHEMA.AlleleDescription_species_subgroup_type, name="AlleleDescription_species_subgroup_type", curie=AK_SCHEMA.curie('AlleleDescription_species_subgroup_type'),
+                   model_uri=AK_SCHEMA.AlleleDescription_species_subgroup_type, domain=None, range=Optional[Union[str, "SpeciesSubgroupType"]])
 
-slots.v1p4__allele_description__aliases = Slot(uri=AK_SCHEMA.v1p4__allele_description__aliases, name="v1p4__allele_description__aliases", curie=AK_SCHEMA.curie('v1p4__allele_description__aliases'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__aliases, domain=None, range=Optional[Union[str, List[str]]])
+slots.AlleleDescription_status = Slot(uri=AK_SCHEMA.AlleleDescription_status, name="AlleleDescription_status", curie=AK_SCHEMA.curie('AlleleDescription_status'),
+                   model_uri=AK_SCHEMA.AlleleDescription_status, domain=None, range=Optional[Union[str, "Status"]])
 
-slots.v1p4__allele_description__locus = Slot(uri=AK_SCHEMA.v1p4__allele_description__locus, name="v1p4__allele_description__locus", curie=AK_SCHEMA.curie('v1p4__allele_description__locus'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__locus, domain=None, range=Union[str, "V1p4Locus"])
+slots.AlleleDescription_subgroup_designation = Slot(uri=AK_SCHEMA.AlleleDescription_subgroup_designation, name="AlleleDescription_subgroup_designation", curie=AK_SCHEMA.curie('AlleleDescription_subgroup_designation'),
+                   model_uri=AK_SCHEMA.AlleleDescription_subgroup_designation, domain=None, range=Optional[str])
 
-slots.v1p4__allele_description__chromosome = Slot(uri=AK_SCHEMA.v1p4__allele_description__chromosome, name="v1p4__allele_description__chromosome", curie=AK_SCHEMA.curie('v1p4__allele_description__chromosome'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__chromosome, domain=None, range=Optional[int])
+slots.AlleleDescription_gene_designation = Slot(uri=AK_SCHEMA.AlleleDescription_gene_designation, name="AlleleDescription_gene_designation", curie=AK_SCHEMA.curie('AlleleDescription_gene_designation'),
+                   model_uri=AK_SCHEMA.AlleleDescription_gene_designation, domain=None, range=Optional[str])
 
-slots.v1p4__allele_description__sequence_type = Slot(uri=AK_SCHEMA.v1p4__allele_description__sequence_type, name="v1p4__allele_description__sequence_type", curie=AK_SCHEMA.curie('v1p4__allele_description__sequence_type'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__sequence_type, domain=None, range=Union[str, "V1p4SequenceType"])
+slots.AlleleDescription_allele_designation = Slot(uri=AK_SCHEMA.AlleleDescription_allele_designation, name="AlleleDescription_allele_designation", curie=AK_SCHEMA.curie('AlleleDescription_allele_designation'),
+                   model_uri=AK_SCHEMA.AlleleDescription_allele_designation, domain=None, range=Optional[str])
 
-slots.v1p4__allele_description__functional = Slot(uri=AK_SCHEMA.v1p4__allele_description__functional, name="v1p4__allele_description__functional", curie=AK_SCHEMA.curie('v1p4__allele_description__functional'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__functional, domain=None, range=Union[bool, Bool])
+slots.AlleleDescription_allele_similarity_cluster_designation = Slot(uri=AK_SCHEMA.AlleleDescription_allele_similarity_cluster_designation, name="AlleleDescription_allele_similarity_cluster_designation", curie=AK_SCHEMA.curie('AlleleDescription_allele_similarity_cluster_designation'),
+                   model_uri=AK_SCHEMA.AlleleDescription_allele_similarity_cluster_designation, domain=None, range=Optional[str])
 
-slots.v1p4__allele_description__inference_type = Slot(uri=AK_SCHEMA.v1p4__allele_description__inference_type, name="v1p4__allele_description__inference_type", curie=AK_SCHEMA.curie('v1p4__allele_description__inference_type'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__inference_type, domain=None, range=Union[str, "V1p4InferenceType"])
+slots.AlleleDescription_allele_similarity_cluster_member_id = Slot(uri=AK_SCHEMA.AlleleDescription_allele_similarity_cluster_member_id, name="AlleleDescription_allele_similarity_cluster_member_id", curie=AK_SCHEMA.curie('AlleleDescription_allele_similarity_cluster_member_id'),
+                   model_uri=AK_SCHEMA.AlleleDescription_allele_similarity_cluster_member_id, domain=None, range=Optional[str])
 
-slots.v1p4__allele_description__species = Slot(uri=AK_SCHEMA.v1p4__allele_description__species, name="v1p4__allele_description__species", curie=AK_SCHEMA.curie('v1p4__allele_description__species'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__species, domain=None, range=Union[str, "V1p4Species"])
+slots.AlleleDescription_j_codon_frame = Slot(uri=AK_SCHEMA.AlleleDescription_j_codon_frame, name="AlleleDescription_j_codon_frame", curie=AK_SCHEMA.curie('AlleleDescription_j_codon_frame'),
+                   model_uri=AK_SCHEMA.AlleleDescription_j_codon_frame, domain=None, range=Optional[Union[str, "JCodonFrame"]])
 
-slots.v1p4__allele_description__species_subgroup = Slot(uri=AK_SCHEMA.v1p4__allele_description__species_subgroup, name="v1p4__allele_description__species_subgroup", curie=AK_SCHEMA.curie('v1p4__allele_description__species_subgroup'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__species_subgroup, domain=None, range=Optional[str])
+slots.AlleleDescription_gene_start = Slot(uri=AK_SCHEMA.AlleleDescription_gene_start, name="AlleleDescription_gene_start", curie=AK_SCHEMA.curie('AlleleDescription_gene_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_gene_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__species_subgroup_type = Slot(uri=AK_SCHEMA.v1p4__allele_description__species_subgroup_type, name="v1p4__allele_description__species_subgroup_type", curie=AK_SCHEMA.curie('v1p4__allele_description__species_subgroup_type'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__species_subgroup_type, domain=None, range=Optional[Union[str, "V1p4SpeciesSubgroupType"]])
+slots.AlleleDescription_gene_end = Slot(uri=AK_SCHEMA.AlleleDescription_gene_end, name="AlleleDescription_gene_end", curie=AK_SCHEMA.curie('AlleleDescription_gene_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_gene_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__status = Slot(uri=AK_SCHEMA.v1p4__allele_description__status, name="v1p4__allele_description__status", curie=AK_SCHEMA.curie('v1p4__allele_description__status'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__status, domain=None, range=Optional[Union[str, "V1p4Status"]])
+slots.AlleleDescription_utr_5_prime_start = Slot(uri=AK_SCHEMA.AlleleDescription_utr_5_prime_start, name="AlleleDescription_utr_5_prime_start", curie=AK_SCHEMA.curie('AlleleDescription_utr_5_prime_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_utr_5_prime_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__subgroup_designation = Slot(uri=AK_SCHEMA.v1p4__allele_description__subgroup_designation, name="v1p4__allele_description__subgroup_designation", curie=AK_SCHEMA.curie('v1p4__allele_description__subgroup_designation'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__subgroup_designation, domain=None, range=Optional[str])
+slots.AlleleDescription_utr_5_prime_end = Slot(uri=AK_SCHEMA.AlleleDescription_utr_5_prime_end, name="AlleleDescription_utr_5_prime_end", curie=AK_SCHEMA.curie('AlleleDescription_utr_5_prime_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_utr_5_prime_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__gene_designation = Slot(uri=AK_SCHEMA.v1p4__allele_description__gene_designation, name="v1p4__allele_description__gene_designation", curie=AK_SCHEMA.curie('v1p4__allele_description__gene_designation'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__gene_designation, domain=None, range=Optional[str])
+slots.AlleleDescription_leader_1_start = Slot(uri=AK_SCHEMA.AlleleDescription_leader_1_start, name="AlleleDescription_leader_1_start", curie=AK_SCHEMA.curie('AlleleDescription_leader_1_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_leader_1_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__allele_designation = Slot(uri=AK_SCHEMA.v1p4__allele_description__allele_designation, name="v1p4__allele_description__allele_designation", curie=AK_SCHEMA.curie('v1p4__allele_description__allele_designation'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__allele_designation, domain=None, range=Optional[str])
+slots.AlleleDescription_leader_1_end = Slot(uri=AK_SCHEMA.AlleleDescription_leader_1_end, name="AlleleDescription_leader_1_end", curie=AK_SCHEMA.curie('AlleleDescription_leader_1_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_leader_1_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__allele_similarity_cluster_designation = Slot(uri=AK_SCHEMA.v1p4__allele_description__allele_similarity_cluster_designation, name="v1p4__allele_description__allele_similarity_cluster_designation", curie=AK_SCHEMA.curie('v1p4__allele_description__allele_similarity_cluster_designation'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__allele_similarity_cluster_designation, domain=None, range=Optional[str])
+slots.AlleleDescription_leader_2_start = Slot(uri=AK_SCHEMA.AlleleDescription_leader_2_start, name="AlleleDescription_leader_2_start", curie=AK_SCHEMA.curie('AlleleDescription_leader_2_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_leader_2_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__allele_similarity_cluster_member_id = Slot(uri=AK_SCHEMA.v1p4__allele_description__allele_similarity_cluster_member_id, name="v1p4__allele_description__allele_similarity_cluster_member_id", curie=AK_SCHEMA.curie('v1p4__allele_description__allele_similarity_cluster_member_id'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__allele_similarity_cluster_member_id, domain=None, range=Optional[str])
+slots.AlleleDescription_leader_2_end = Slot(uri=AK_SCHEMA.AlleleDescription_leader_2_end, name="AlleleDescription_leader_2_end", curie=AK_SCHEMA.curie('AlleleDescription_leader_2_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_leader_2_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__j_codon_frame = Slot(uri=AK_SCHEMA.v1p4__allele_description__j_codon_frame, name="v1p4__allele_description__j_codon_frame", curie=AK_SCHEMA.curie('v1p4__allele_description__j_codon_frame'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__j_codon_frame, domain=None, range=Optional[Union[str, "V1p4JCodonFrame"]])
+slots.AlleleDescription_v_rs_start = Slot(uri=AK_SCHEMA.AlleleDescription_v_rs_start, name="AlleleDescription_v_rs_start", curie=AK_SCHEMA.curie('AlleleDescription_v_rs_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_v_rs_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__gene_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__gene_start, name="v1p4__allele_description__gene_start", curie=AK_SCHEMA.curie('v1p4__allele_description__gene_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__gene_start, domain=None, range=Optional[int])
+slots.AlleleDescription_v_rs_end = Slot(uri=AK_SCHEMA.AlleleDescription_v_rs_end, name="AlleleDescription_v_rs_end", curie=AK_SCHEMA.curie('AlleleDescription_v_rs_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_v_rs_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__gene_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__gene_end, name="v1p4__allele_description__gene_end", curie=AK_SCHEMA.curie('v1p4__allele_description__gene_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__gene_end, domain=None, range=Optional[int])
+slots.AlleleDescription_d_rs_3_prime_start = Slot(uri=AK_SCHEMA.AlleleDescription_d_rs_3_prime_start, name="AlleleDescription_d_rs_3_prime_start", curie=AK_SCHEMA.curie('AlleleDescription_d_rs_3_prime_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_d_rs_3_prime_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__utr_5_prime_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__utr_5_prime_start, name="v1p4__allele_description__utr_5_prime_start", curie=AK_SCHEMA.curie('v1p4__allele_description__utr_5_prime_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__utr_5_prime_start, domain=None, range=Optional[int])
+slots.AlleleDescription_d_rs_3_prime_end = Slot(uri=AK_SCHEMA.AlleleDescription_d_rs_3_prime_end, name="AlleleDescription_d_rs_3_prime_end", curie=AK_SCHEMA.curie('AlleleDescription_d_rs_3_prime_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_d_rs_3_prime_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__utr_5_prime_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__utr_5_prime_end, name="v1p4__allele_description__utr_5_prime_end", curie=AK_SCHEMA.curie('v1p4__allele_description__utr_5_prime_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__utr_5_prime_end, domain=None, range=Optional[int])
+slots.AlleleDescription_d_rs_5_prime_start = Slot(uri=AK_SCHEMA.AlleleDescription_d_rs_5_prime_start, name="AlleleDescription_d_rs_5_prime_start", curie=AK_SCHEMA.curie('AlleleDescription_d_rs_5_prime_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_d_rs_5_prime_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__leader_1_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__leader_1_start, name="v1p4__allele_description__leader_1_start", curie=AK_SCHEMA.curie('v1p4__allele_description__leader_1_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__leader_1_start, domain=None, range=Optional[int])
+slots.AlleleDescription_d_rs_5_prime_end = Slot(uri=AK_SCHEMA.AlleleDescription_d_rs_5_prime_end, name="AlleleDescription_d_rs_5_prime_end", curie=AK_SCHEMA.curie('AlleleDescription_d_rs_5_prime_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_d_rs_5_prime_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__leader_1_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__leader_1_end, name="v1p4__allele_description__leader_1_end", curie=AK_SCHEMA.curie('v1p4__allele_description__leader_1_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__leader_1_end, domain=None, range=Optional[int])
+slots.AlleleDescription_j_cdr3_end = Slot(uri=AK_SCHEMA.AlleleDescription_j_cdr3_end, name="AlleleDescription_j_cdr3_end", curie=AK_SCHEMA.curie('AlleleDescription_j_cdr3_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_j_cdr3_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__leader_2_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__leader_2_start, name="v1p4__allele_description__leader_2_start", curie=AK_SCHEMA.curie('v1p4__allele_description__leader_2_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__leader_2_start, domain=None, range=Optional[int])
+slots.AlleleDescription_j_rs_start = Slot(uri=AK_SCHEMA.AlleleDescription_j_rs_start, name="AlleleDescription_j_rs_start", curie=AK_SCHEMA.curie('AlleleDescription_j_rs_start'),
+                   model_uri=AK_SCHEMA.AlleleDescription_j_rs_start, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__leader_2_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__leader_2_end, name="v1p4__allele_description__leader_2_end", curie=AK_SCHEMA.curie('v1p4__allele_description__leader_2_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__leader_2_end, domain=None, range=Optional[int])
+slots.AlleleDescription_j_rs_end = Slot(uri=AK_SCHEMA.AlleleDescription_j_rs_end, name="AlleleDescription_j_rs_end", curie=AK_SCHEMA.curie('AlleleDescription_j_rs_end'),
+                   model_uri=AK_SCHEMA.AlleleDescription_j_rs_end, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__v_rs_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__v_rs_start, name="v1p4__allele_description__v_rs_start", curie=AK_SCHEMA.curie('v1p4__allele_description__v_rs_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__v_rs_start, domain=None, range=Optional[int])
+slots.AlleleDescription_j_donor_splice = Slot(uri=AK_SCHEMA.AlleleDescription_j_donor_splice, name="AlleleDescription_j_donor_splice", curie=AK_SCHEMA.curie('AlleleDescription_j_donor_splice'),
+                   model_uri=AK_SCHEMA.AlleleDescription_j_donor_splice, domain=None, range=Optional[int])
 
-slots.v1p4__allele_description__v_rs_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__v_rs_end, name="v1p4__allele_description__v_rs_end", curie=AK_SCHEMA.curie('v1p4__allele_description__v_rs_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__v_rs_end, domain=None, range=Optional[int])
+slots.AlleleDescription_v_gene_delineations = Slot(uri=AK_SCHEMA.AlleleDescription_v_gene_delineations, name="AlleleDescription_v_gene_delineations", curie=AK_SCHEMA.curie('AlleleDescription_v_gene_delineations'),
+                   model_uri=AK_SCHEMA.AlleleDescription_v_gene_delineations, domain=None, range=Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]])
 
-slots.v1p4__allele_description__d_rs_3_prime_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__d_rs_3_prime_start, name="v1p4__allele_description__d_rs_3_prime_start", curie=AK_SCHEMA.curie('v1p4__allele_description__d_rs_3_prime_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__d_rs_3_prime_start, domain=None, range=Optional[int])
+slots.AlleleDescription_unrearranged_support = Slot(uri=AK_SCHEMA.AlleleDescription_unrearranged_support, name="AlleleDescription_unrearranged_support", curie=AK_SCHEMA.curie('AlleleDescription_unrearranged_support'),
+                   model_uri=AK_SCHEMA.AlleleDescription_unrearranged_support, domain=None, range=Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]])
 
-slots.v1p4__allele_description__d_rs_3_prime_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__d_rs_3_prime_end, name="v1p4__allele_description__d_rs_3_prime_end", curie=AK_SCHEMA.curie('v1p4__allele_description__d_rs_3_prime_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__d_rs_3_prime_end, domain=None, range=Optional[int])
+slots.AlleleDescription_rearranged_support = Slot(uri=AK_SCHEMA.AlleleDescription_rearranged_support, name="AlleleDescription_rearranged_support", curie=AK_SCHEMA.curie('AlleleDescription_rearranged_support'),
+                   model_uri=AK_SCHEMA.AlleleDescription_rearranged_support, domain=None, range=Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]])
 
-slots.v1p4__allele_description__d_rs_5_prime_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__d_rs_5_prime_start, name="v1p4__allele_description__d_rs_5_prime_start", curie=AK_SCHEMA.curie('v1p4__allele_description__d_rs_5_prime_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__d_rs_5_prime_start, domain=None, range=Optional[int])
+slots.AlleleDescription_paralogs = Slot(uri=AK_SCHEMA.AlleleDescription_paralogs, name="AlleleDescription_paralogs", curie=AK_SCHEMA.curie('AlleleDescription_paralogs'),
+                   model_uri=AK_SCHEMA.AlleleDescription_paralogs, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.v1p4__allele_description__d_rs_5_prime_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__d_rs_5_prime_end, name="v1p4__allele_description__d_rs_5_prime_end", curie=AK_SCHEMA.curie('v1p4__allele_description__d_rs_5_prime_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__d_rs_5_prime_end, domain=None, range=Optional[int])
+slots.AlleleDescription_curation = Slot(uri=AK_SCHEMA.AlleleDescription_curation, name="AlleleDescription_curation", curie=AK_SCHEMA.curie('AlleleDescription_curation'),
+                   model_uri=AK_SCHEMA.AlleleDescription_curation, domain=None, range=Optional[str])
 
-slots.v1p4__allele_description__j_cdr3_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__j_cdr3_end, name="v1p4__allele_description__j_cdr3_end", curie=AK_SCHEMA.curie('v1p4__allele_description__j_cdr3_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__j_cdr3_end, domain=None, range=Optional[int])
+slots.AlleleDescription_curational_tags = Slot(uri=AK_SCHEMA.AlleleDescription_curational_tags, name="AlleleDescription_curational_tags", curie=AK_SCHEMA.curie('AlleleDescription_curational_tags'),
+                   model_uri=AK_SCHEMA.AlleleDescription_curational_tags, domain=None, range=Optional[Union[Union[str, "CurationalTags"], List[Union[str, "CurationalTags"]]]])
 
-slots.v1p4__allele_description__j_rs_start = Slot(uri=AK_SCHEMA.v1p4__allele_description__j_rs_start, name="v1p4__allele_description__j_rs_start", curie=AK_SCHEMA.curie('v1p4__allele_description__j_rs_start'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__j_rs_start, domain=None, range=Optional[int])
+slots.GermlineSet_germline_set_id = Slot(uri=AK_SCHEMA.GermlineSet_germline_set_id, name="GermlineSet_germline_set_id", curie=AK_SCHEMA.curie('GermlineSet_germline_set_id'),
+                   model_uri=AK_SCHEMA.GermlineSet_germline_set_id, domain=None, range=str)
 
-slots.v1p4__allele_description__j_rs_end = Slot(uri=AK_SCHEMA.v1p4__allele_description__j_rs_end, name="v1p4__allele_description__j_rs_end", curie=AK_SCHEMA.curie('v1p4__allele_description__j_rs_end'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__j_rs_end, domain=None, range=Optional[int])
+slots.GermlineSet_author = Slot(uri=AK_SCHEMA.GermlineSet_author, name="GermlineSet_author", curie=AK_SCHEMA.curie('GermlineSet_author'),
+                   model_uri=AK_SCHEMA.GermlineSet_author, domain=None, range=str)
 
-slots.v1p4__allele_description__j_donor_splice = Slot(uri=AK_SCHEMA.v1p4__allele_description__j_donor_splice, name="v1p4__allele_description__j_donor_splice", curie=AK_SCHEMA.curie('v1p4__allele_description__j_donor_splice'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__j_donor_splice, domain=None, range=Optional[int])
+slots.GermlineSet_lab_name = Slot(uri=AK_SCHEMA.GermlineSet_lab_name, name="GermlineSet_lab_name", curie=AK_SCHEMA.curie('GermlineSet_lab_name'),
+                   model_uri=AK_SCHEMA.GermlineSet_lab_name, domain=None, range=str)
 
-slots.v1p4__allele_description__v_gene_delineations = Slot(uri=AK_SCHEMA.v1p4__allele_description__v_gene_delineations, name="v1p4__allele_description__v_gene_delineations", curie=AK_SCHEMA.curie('v1p4__allele_description__v_gene_delineations'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__v_gene_delineations, domain=None, range=Optional[Union[Union[dict, V1p4SequenceDelineationV], List[Union[dict, V1p4SequenceDelineationV]]]])
+slots.GermlineSet_lab_address = Slot(uri=AK_SCHEMA.GermlineSet_lab_address, name="GermlineSet_lab_address", curie=AK_SCHEMA.curie('GermlineSet_lab_address'),
+                   model_uri=AK_SCHEMA.GermlineSet_lab_address, domain=None, range=str)
 
-slots.v1p4__allele_description__unrearranged_support = Slot(uri=AK_SCHEMA.v1p4__allele_description__unrearranged_support, name="v1p4__allele_description__unrearranged_support", curie=AK_SCHEMA.curie('v1p4__allele_description__unrearranged_support'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__unrearranged_support, domain=None, range=Optional[Union[Union[dict, V1p4UnrearrangedSequence], List[Union[dict, V1p4UnrearrangedSequence]]]])
+slots.GermlineSet_acknowledgements = Slot(uri=AK_SCHEMA.GermlineSet_acknowledgements, name="GermlineSet_acknowledgements", curie=AK_SCHEMA.curie('GermlineSet_acknowledgements'),
+                   model_uri=AK_SCHEMA.GermlineSet_acknowledgements, domain=None, range=Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]])
 
-slots.v1p4__allele_description__rearranged_support = Slot(uri=AK_SCHEMA.v1p4__allele_description__rearranged_support, name="v1p4__allele_description__rearranged_support", curie=AK_SCHEMA.curie('v1p4__allele_description__rearranged_support'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__rearranged_support, domain=None, range=Optional[Union[Union[dict, V1p4RearrangedSequence], List[Union[dict, V1p4RearrangedSequence]]]])
+slots.GermlineSet_release_version = Slot(uri=AK_SCHEMA.GermlineSet_release_version, name="GermlineSet_release_version", curie=AK_SCHEMA.curie('GermlineSet_release_version'),
+                   model_uri=AK_SCHEMA.GermlineSet_release_version, domain=None, range=float)
 
-slots.v1p4__allele_description__paralogs = Slot(uri=AK_SCHEMA.v1p4__allele_description__paralogs, name="v1p4__allele_description__paralogs", curie=AK_SCHEMA.curie('v1p4__allele_description__paralogs'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__paralogs, domain=None, range=Optional[Union[str, List[str]]])
+slots.GermlineSet_release_description = Slot(uri=AK_SCHEMA.GermlineSet_release_description, name="GermlineSet_release_description", curie=AK_SCHEMA.curie('GermlineSet_release_description'),
+                   model_uri=AK_SCHEMA.GermlineSet_release_description, domain=None, range=str)
 
-slots.v1p4__allele_description__curation = Slot(uri=AK_SCHEMA.v1p4__allele_description__curation, name="v1p4__allele_description__curation", curie=AK_SCHEMA.curie('v1p4__allele_description__curation'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__curation, domain=None, range=Optional[str])
+slots.GermlineSet_release_date = Slot(uri=AK_SCHEMA.GermlineSet_release_date, name="GermlineSet_release_date", curie=AK_SCHEMA.curie('GermlineSet_release_date'),
+                   model_uri=AK_SCHEMA.GermlineSet_release_date, domain=None, range=str)
 
-slots.v1p4__allele_description__curational_tags = Slot(uri=AK_SCHEMA.v1p4__allele_description__curational_tags, name="v1p4__allele_description__curational_tags", curie=AK_SCHEMA.curie('v1p4__allele_description__curational_tags'),
-                   model_uri=AK_SCHEMA.v1p4__allele_description__curational_tags, domain=None, range=Optional[Union[Union[str, "V1p4CurationalTags"], List[Union[str, "V1p4CurationalTags"]]]])
+slots.GermlineSet_germline_set_name = Slot(uri=AK_SCHEMA.GermlineSet_germline_set_name, name="GermlineSet_germline_set_name", curie=AK_SCHEMA.curie('GermlineSet_germline_set_name'),
+                   model_uri=AK_SCHEMA.GermlineSet_germline_set_name, domain=None, range=str)
 
-slots.v1p4__germline_set__germline_set_id = Slot(uri=AK_SCHEMA.v1p4__germline_set__germline_set_id, name="v1p4__germline_set__germline_set_id", curie=AK_SCHEMA.curie('v1p4__germline_set__germline_set_id'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__germline_set_id, domain=None, range=str)
+slots.GermlineSet_germline_set_ref = Slot(uri=AK_SCHEMA.GermlineSet_germline_set_ref, name="GermlineSet_germline_set_ref", curie=AK_SCHEMA.curie('GermlineSet_germline_set_ref'),
+                   model_uri=AK_SCHEMA.GermlineSet_germline_set_ref, domain=None, range=str)
 
-slots.v1p4__germline_set__acknowledgements = Slot(uri=AK_SCHEMA.v1p4__germline_set__acknowledgements, name="v1p4__germline_set__acknowledgements", curie=AK_SCHEMA.curie('v1p4__germline_set__acknowledgements'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__acknowledgements, domain=None, range=Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]])
+slots.GermlineSet_pub_ids = Slot(uri=AK_SCHEMA.GermlineSet_pub_ids, name="GermlineSet_pub_ids", curie=AK_SCHEMA.curie('GermlineSet_pub_ids'),
+                   model_uri=AK_SCHEMA.GermlineSet_pub_ids, domain=None, range=Optional[str])
 
-slots.v1p4__germline_set__release_version = Slot(uri=AK_SCHEMA.v1p4__germline_set__release_version, name="v1p4__germline_set__release_version", curie=AK_SCHEMA.curie('v1p4__germline_set__release_version'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__release_version, domain=None, range=float)
+slots.GermlineSet_species = Slot(uri=AK_SCHEMA.GermlineSet_species, name="GermlineSet_species", curie=AK_SCHEMA.curie('GermlineSet_species'),
+                   model_uri=AK_SCHEMA.GermlineSet_species, domain=None, range=Union[str, "Species"])
 
-slots.v1p4__germline_set__release_description = Slot(uri=AK_SCHEMA.v1p4__germline_set__release_description, name="v1p4__germline_set__release_description", curie=AK_SCHEMA.curie('v1p4__germline_set__release_description'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__release_description, domain=None, range=str)
+slots.GermlineSet_species_subgroup = Slot(uri=AK_SCHEMA.GermlineSet_species_subgroup, name="GermlineSet_species_subgroup", curie=AK_SCHEMA.curie('GermlineSet_species_subgroup'),
+                   model_uri=AK_SCHEMA.GermlineSet_species_subgroup, domain=None, range=Optional[str])
 
-slots.v1p4__germline_set__release_date = Slot(uri=AK_SCHEMA.v1p4__germline_set__release_date, name="v1p4__germline_set__release_date", curie=AK_SCHEMA.curie('v1p4__germline_set__release_date'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__release_date, domain=None, range=str)
+slots.GermlineSet_species_subgroup_type = Slot(uri=AK_SCHEMA.GermlineSet_species_subgroup_type, name="GermlineSet_species_subgroup_type", curie=AK_SCHEMA.curie('GermlineSet_species_subgroup_type'),
+                   model_uri=AK_SCHEMA.GermlineSet_species_subgroup_type, domain=None, range=Optional[Union[str, "SpeciesSubgroupType"]])
 
-slots.v1p4__germline_set__germline_set_name = Slot(uri=AK_SCHEMA.v1p4__germline_set__germline_set_name, name="v1p4__germline_set__germline_set_name", curie=AK_SCHEMA.curie('v1p4__germline_set__germline_set_name'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__germline_set_name, domain=None, range=str)
+slots.GermlineSet_locus = Slot(uri=AK_SCHEMA.GermlineSet_locus, name="GermlineSet_locus", curie=AK_SCHEMA.curie('GermlineSet_locus'),
+                   model_uri=AK_SCHEMA.GermlineSet_locus, domain=None, range=Union[str, "Locus"])
 
-slots.v1p4__germline_set__germline_set_ref = Slot(uri=AK_SCHEMA.v1p4__germline_set__germline_set_ref, name="v1p4__germline_set__germline_set_ref", curie=AK_SCHEMA.curie('v1p4__germline_set__germline_set_ref'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__germline_set_ref, domain=None, range=str)
+slots.GermlineSet_allele_descriptions = Slot(uri=AK_SCHEMA.GermlineSet_allele_descriptions, name="GermlineSet_allele_descriptions", curie=AK_SCHEMA.curie('GermlineSet_allele_descriptions'),
+                   model_uri=AK_SCHEMA.GermlineSet_allele_descriptions, domain=None, range=Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]])
 
-slots.v1p4__germline_set__pub_ids = Slot(uri=AK_SCHEMA.v1p4__germline_set__pub_ids, name="v1p4__germline_set__pub_ids", curie=AK_SCHEMA.curie('v1p4__germline_set__pub_ids'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__pub_ids, domain=None, range=Optional[Union[str, List[str]]])
+slots.GermlineSet_curation = Slot(uri=AK_SCHEMA.GermlineSet_curation, name="GermlineSet_curation", curie=AK_SCHEMA.curie('GermlineSet_curation'),
+                   model_uri=AK_SCHEMA.GermlineSet_curation, domain=None, range=Optional[str])
 
-slots.v1p4__germline_set__species = Slot(uri=AK_SCHEMA.v1p4__germline_set__species, name="v1p4__germline_set__species", curie=AK_SCHEMA.curie('v1p4__germline_set__species'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__species, domain=None, range=Union[str, "V1p4Species"])
+slots.GenotypeSet_receptor_genotype_set_id = Slot(uri=AK_SCHEMA.GenotypeSet_receptor_genotype_set_id, name="GenotypeSet_receptor_genotype_set_id", curie=AK_SCHEMA.curie('GenotypeSet_receptor_genotype_set_id'),
+                   model_uri=AK_SCHEMA.GenotypeSet_receptor_genotype_set_id, domain=None, range=str)
 
-slots.v1p4__germline_set__species_subgroup = Slot(uri=AK_SCHEMA.v1p4__germline_set__species_subgroup, name="v1p4__germline_set__species_subgroup", curie=AK_SCHEMA.curie('v1p4__germline_set__species_subgroup'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__species_subgroup, domain=None, range=Optional[str])
+slots.GenotypeSet_genotype_class_list = Slot(uri=AK_SCHEMA.GenotypeSet_genotype_class_list, name="GenotypeSet_genotype_class_list", curie=AK_SCHEMA.curie('GenotypeSet_genotype_class_list'),
+                   model_uri=AK_SCHEMA.GenotypeSet_genotype_class_list, domain=None, range=Optional[Union[Union[dict, Genotype], List[Union[dict, Genotype]]]])
 
-slots.v1p4__germline_set__species_subgroup_type = Slot(uri=AK_SCHEMA.v1p4__germline_set__species_subgroup_type, name="v1p4__germline_set__species_subgroup_type", curie=AK_SCHEMA.curie('v1p4__germline_set__species_subgroup_type'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__species_subgroup_type, domain=None, range=Optional[Union[str, "V1p4SpeciesSubgroupType"]])
+slots.Genotype_receptor_genotype_id = Slot(uri=AK_SCHEMA.Genotype_receptor_genotype_id, name="Genotype_receptor_genotype_id", curie=AK_SCHEMA.curie('Genotype_receptor_genotype_id'),
+                   model_uri=AK_SCHEMA.Genotype_receptor_genotype_id, domain=None, range=str)
 
-slots.v1p4__germline_set__locus = Slot(uri=AK_SCHEMA.v1p4__germline_set__locus, name="v1p4__germline_set__locus", curie=AK_SCHEMA.curie('v1p4__germline_set__locus'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__locus, domain=None, range=Union[str, "V1p4Locus"])
+slots.Genotype_locus = Slot(uri=AK_SCHEMA.Genotype_locus, name="Genotype_locus", curie=AK_SCHEMA.curie('Genotype_locus'),
+                   model_uri=AK_SCHEMA.Genotype_locus, domain=None, range=Union[str, "Locus"])
 
-slots.v1p4__germline_set__allele_descriptions = Slot(uri=AK_SCHEMA.v1p4__germline_set__allele_descriptions, name="v1p4__germline_set__allele_descriptions", curie=AK_SCHEMA.curie('v1p4__germline_set__allele_descriptions'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__allele_descriptions, domain=None, range=Union[Union[dict, V1p4AlleleDescription], List[Union[dict, V1p4AlleleDescription]]])
+slots.Genotype_documented_alleles = Slot(uri=AK_SCHEMA.Genotype_documented_alleles, name="Genotype_documented_alleles", curie=AK_SCHEMA.curie('Genotype_documented_alleles'),
+                   model_uri=AK_SCHEMA.Genotype_documented_alleles, domain=None, range=Optional[Union[Union[dict, DocumentedAllele], List[Union[dict, DocumentedAllele]]]])
 
-slots.v1p4__germline_set__curation = Slot(uri=AK_SCHEMA.v1p4__germline_set__curation, name="v1p4__germline_set__curation", curie=AK_SCHEMA.curie('v1p4__germline_set__curation'),
-                   model_uri=AK_SCHEMA.v1p4__germline_set__curation, domain=None, range=Optional[str])
+slots.Genotype_undocumented_alleles = Slot(uri=AK_SCHEMA.Genotype_undocumented_alleles, name="Genotype_undocumented_alleles", curie=AK_SCHEMA.curie('Genotype_undocumented_alleles'),
+                   model_uri=AK_SCHEMA.Genotype_undocumented_alleles, domain=None, range=Optional[Union[Union[dict, UndocumentedAllele], List[Union[dict, UndocumentedAllele]]]])
 
-slots.v1p4__genotype_set__receptor_genotype_set_id = Slot(uri=AK_SCHEMA.v1p4__genotype_set__receptor_genotype_set_id, name="v1p4__genotype_set__receptor_genotype_set_id", curie=AK_SCHEMA.curie('v1p4__genotype_set__receptor_genotype_set_id'),
-                   model_uri=AK_SCHEMA.v1p4__genotype_set__receptor_genotype_set_id, domain=None, range=str)
+slots.Genotype_deleted_genes = Slot(uri=AK_SCHEMA.Genotype_deleted_genes, name="Genotype_deleted_genes", curie=AK_SCHEMA.curie('Genotype_deleted_genes'),
+                   model_uri=AK_SCHEMA.Genotype_deleted_genes, domain=None, range=Optional[Union[Union[dict, DeletedGene], List[Union[dict, DeletedGene]]]])
 
-slots.v1p4__genotype_set__genotype_class_list = Slot(uri=AK_SCHEMA.v1p4__genotype_set__genotype_class_list, name="v1p4__genotype_set__genotype_class_list", curie=AK_SCHEMA.curie('v1p4__genotype_set__genotype_class_list'),
-                   model_uri=AK_SCHEMA.v1p4__genotype_set__genotype_class_list, domain=None, range=Optional[Union[Union[dict, V1p4Genotype], List[Union[dict, V1p4Genotype]]]])
+slots.Genotype_inference_process = Slot(uri=AK_SCHEMA.Genotype_inference_process, name="Genotype_inference_process", curie=AK_SCHEMA.curie('Genotype_inference_process'),
+                   model_uri=AK_SCHEMA.Genotype_inference_process, domain=None, range=Optional[Union[str, "InferenceProcess"]])
 
-slots.v1p4__genotype__receptor_genotype_id = Slot(uri=AK_SCHEMA.v1p4__genotype__receptor_genotype_id, name="v1p4__genotype__receptor_genotype_id", curie=AK_SCHEMA.curie('v1p4__genotype__receptor_genotype_id'),
-                   model_uri=AK_SCHEMA.v1p4__genotype__receptor_genotype_id, domain=None, range=str)
+slots.DocumentedAllele_label = Slot(uri=AK_SCHEMA.DocumentedAllele_label, name="DocumentedAllele_label", curie=AK_SCHEMA.curie('DocumentedAllele_label'),
+                   model_uri=AK_SCHEMA.DocumentedAllele_label, domain=None, range=str)
 
-slots.v1p4__genotype__locus = Slot(uri=AK_SCHEMA.v1p4__genotype__locus, name="v1p4__genotype__locus", curie=AK_SCHEMA.curie('v1p4__genotype__locus'),
-                   model_uri=AK_SCHEMA.v1p4__genotype__locus, domain=None, range=Union[str, "V1p4Locus"])
+slots.DocumentedAllele_germline_set_ref = Slot(uri=AK_SCHEMA.DocumentedAllele_germline_set_ref, name="DocumentedAllele_germline_set_ref", curie=AK_SCHEMA.curie('DocumentedAllele_germline_set_ref'),
+                   model_uri=AK_SCHEMA.DocumentedAllele_germline_set_ref, domain=None, range=str)
 
-slots.v1p4__genotype__documented_alleles = Slot(uri=AK_SCHEMA.v1p4__genotype__documented_alleles, name="v1p4__genotype__documented_alleles", curie=AK_SCHEMA.curie('v1p4__genotype__documented_alleles'),
-                   model_uri=AK_SCHEMA.v1p4__genotype__documented_alleles, domain=None, range=Optional[Union[Union[dict, V1p4DocumentedAllele], List[Union[dict, V1p4DocumentedAllele]]]])
+slots.DocumentedAllele_phasing = Slot(uri=AK_SCHEMA.DocumentedAllele_phasing, name="DocumentedAllele_phasing", curie=AK_SCHEMA.curie('DocumentedAllele_phasing'),
+                   model_uri=AK_SCHEMA.DocumentedAllele_phasing, domain=None, range=Optional[int])
 
-slots.v1p4__genotype__undocumented_alleles = Slot(uri=AK_SCHEMA.v1p4__genotype__undocumented_alleles, name="v1p4__genotype__undocumented_alleles", curie=AK_SCHEMA.curie('v1p4__genotype__undocumented_alleles'),
-                   model_uri=AK_SCHEMA.v1p4__genotype__undocumented_alleles, domain=None, range=Optional[Union[Union[dict, V1p4UndocumentedAllele], List[Union[dict, V1p4UndocumentedAllele]]]])
+slots.UndocumentedAllele_allele_name = Slot(uri=AK_SCHEMA.UndocumentedAllele_allele_name, name="UndocumentedAllele_allele_name", curie=AK_SCHEMA.curie('UndocumentedAllele_allele_name'),
+                   model_uri=AK_SCHEMA.UndocumentedAllele_allele_name, domain=None, range=str)
 
-slots.v1p4__genotype__deleted_genes = Slot(uri=AK_SCHEMA.v1p4__genotype__deleted_genes, name="v1p4__genotype__deleted_genes", curie=AK_SCHEMA.curie('v1p4__genotype__deleted_genes'),
-                   model_uri=AK_SCHEMA.v1p4__genotype__deleted_genes, domain=None, range=Optional[Union[Union[dict, V1p4DeletedGene], List[Union[dict, V1p4DeletedGene]]]])
+slots.UndocumentedAllele_sequence = Slot(uri=AK_SCHEMA.UndocumentedAllele_sequence, name="UndocumentedAllele_sequence", curie=AK_SCHEMA.curie('UndocumentedAllele_sequence'),
+                   model_uri=AK_SCHEMA.UndocumentedAllele_sequence, domain=None, range=str)
 
-slots.v1p4__genotype__inference_process = Slot(uri=AK_SCHEMA.v1p4__genotype__inference_process, name="v1p4__genotype__inference_process", curie=AK_SCHEMA.curie('v1p4__genotype__inference_process'),
-                   model_uri=AK_SCHEMA.v1p4__genotype__inference_process, domain=None, range=Optional[Union[str, "V1p4InferenceProcess"]])
+slots.UndocumentedAllele_phasing = Slot(uri=AK_SCHEMA.UndocumentedAllele_phasing, name="UndocumentedAllele_phasing", curie=AK_SCHEMA.curie('UndocumentedAllele_phasing'),
+                   model_uri=AK_SCHEMA.UndocumentedAllele_phasing, domain=None, range=Optional[int])
 
-slots.v1p4__documented_allele__label = Slot(uri=AK_SCHEMA.v1p4__documented_allele__label, name="v1p4__documented_allele__label", curie=AK_SCHEMA.curie('v1p4__documented_allele__label'),
-                   model_uri=AK_SCHEMA.v1p4__documented_allele__label, domain=None, range=str)
+slots.DeletedGene_label = Slot(uri=AK_SCHEMA.DeletedGene_label, name="DeletedGene_label", curie=AK_SCHEMA.curie('DeletedGene_label'),
+                   model_uri=AK_SCHEMA.DeletedGene_label, domain=None, range=str)
 
-slots.v1p4__documented_allele__germline_set_ref = Slot(uri=AK_SCHEMA.v1p4__documented_allele__germline_set_ref, name="v1p4__documented_allele__germline_set_ref", curie=AK_SCHEMA.curie('v1p4__documented_allele__germline_set_ref'),
-                   model_uri=AK_SCHEMA.v1p4__documented_allele__germline_set_ref, domain=None, range=str)
+slots.DeletedGene_germline_set_ref = Slot(uri=AK_SCHEMA.DeletedGene_germline_set_ref, name="DeletedGene_germline_set_ref", curie=AK_SCHEMA.curie('DeletedGene_germline_set_ref'),
+                   model_uri=AK_SCHEMA.DeletedGene_germline_set_ref, domain=None, range=str)
 
-slots.v1p4__documented_allele__phasing = Slot(uri=AK_SCHEMA.v1p4__documented_allele__phasing, name="v1p4__documented_allele__phasing", curie=AK_SCHEMA.curie('v1p4__documented_allele__phasing'),
-                   model_uri=AK_SCHEMA.v1p4__documented_allele__phasing, domain=None, range=Optional[int])
+slots.DeletedGene_phasing = Slot(uri=AK_SCHEMA.DeletedGene_phasing, name="DeletedGene_phasing", curie=AK_SCHEMA.curie('DeletedGene_phasing'),
+                   model_uri=AK_SCHEMA.DeletedGene_phasing, domain=None, range=Optional[int])
 
-slots.v1p4__undocumented_allele__allele_name = Slot(uri=AK_SCHEMA.v1p4__undocumented_allele__allele_name, name="v1p4__undocumented_allele__allele_name", curie=AK_SCHEMA.curie('v1p4__undocumented_allele__allele_name'),
-                   model_uri=AK_SCHEMA.v1p4__undocumented_allele__allele_name, domain=None, range=str)
+slots.MHCGenotypeSet_mhc_genotype_set_id = Slot(uri=AK_SCHEMA.MHCGenotypeSet_mhc_genotype_set_id, name="MHCGenotypeSet_mhc_genotype_set_id", curie=AK_SCHEMA.curie('MHCGenotypeSet_mhc_genotype_set_id'),
+                   model_uri=AK_SCHEMA.MHCGenotypeSet_mhc_genotype_set_id, domain=None, range=str)
 
-slots.v1p4__undocumented_allele__sequence = Slot(uri=AK_SCHEMA.v1p4__undocumented_allele__sequence, name="v1p4__undocumented_allele__sequence", curie=AK_SCHEMA.curie('v1p4__undocumented_allele__sequence'),
-                   model_uri=AK_SCHEMA.v1p4__undocumented_allele__sequence, domain=None, range=str)
+slots.MHCGenotypeSet_mhc_genotype_list = Slot(uri=AK_SCHEMA.MHCGenotypeSet_mhc_genotype_list, name="MHCGenotypeSet_mhc_genotype_list", curie=AK_SCHEMA.curie('MHCGenotypeSet_mhc_genotype_list'),
+                   model_uri=AK_SCHEMA.MHCGenotypeSet_mhc_genotype_list, domain=None, range=Union[Union[dict, MHCGenotype], List[Union[dict, MHCGenotype]]])
 
-slots.v1p4__undocumented_allele__phasing = Slot(uri=AK_SCHEMA.v1p4__undocumented_allele__phasing, name="v1p4__undocumented_allele__phasing", curie=AK_SCHEMA.curie('v1p4__undocumented_allele__phasing'),
-                   model_uri=AK_SCHEMA.v1p4__undocumented_allele__phasing, domain=None, range=Optional[int])
+slots.MHCGenotype_mhc_genotype_id = Slot(uri=AK_SCHEMA.MHCGenotype_mhc_genotype_id, name="MHCGenotype_mhc_genotype_id", curie=AK_SCHEMA.curie('MHCGenotype_mhc_genotype_id'),
+                   model_uri=AK_SCHEMA.MHCGenotype_mhc_genotype_id, domain=None, range=str)
 
-slots.v1p4__deleted_gene__label = Slot(uri=AK_SCHEMA.v1p4__deleted_gene__label, name="v1p4__deleted_gene__label", curie=AK_SCHEMA.curie('v1p4__deleted_gene__label'),
-                   model_uri=AK_SCHEMA.v1p4__deleted_gene__label, domain=None, range=str)
+slots.MHCGenotype_mhc_class = Slot(uri=AK_SCHEMA.MHCGenotype_mhc_class, name="MHCGenotype_mhc_class", curie=AK_SCHEMA.curie('MHCGenotype_mhc_class'),
+                   model_uri=AK_SCHEMA.MHCGenotype_mhc_class, domain=None, range=Union[str, "MhcClass"])
 
-slots.v1p4__deleted_gene__germline_set_ref = Slot(uri=AK_SCHEMA.v1p4__deleted_gene__germline_set_ref, name="v1p4__deleted_gene__germline_set_ref", curie=AK_SCHEMA.curie('v1p4__deleted_gene__germline_set_ref'),
-                   model_uri=AK_SCHEMA.v1p4__deleted_gene__germline_set_ref, domain=None, range=str)
+slots.MHCGenotype_mhc_alleles = Slot(uri=AK_SCHEMA.MHCGenotype_mhc_alleles, name="MHCGenotype_mhc_alleles", curie=AK_SCHEMA.curie('MHCGenotype_mhc_alleles'),
+                   model_uri=AK_SCHEMA.MHCGenotype_mhc_alleles, domain=None, range=Union[Union[dict, MHCAllele], List[Union[dict, MHCAllele]]])
 
-slots.v1p4__deleted_gene__phasing = Slot(uri=AK_SCHEMA.v1p4__deleted_gene__phasing, name="v1p4__deleted_gene__phasing", curie=AK_SCHEMA.curie('v1p4__deleted_gene__phasing'),
-                   model_uri=AK_SCHEMA.v1p4__deleted_gene__phasing, domain=None, range=Optional[int])
+slots.MHCGenotype_mhc_genotyping_method = Slot(uri=AK_SCHEMA.MHCGenotype_mhc_genotyping_method, name="MHCGenotype_mhc_genotyping_method", curie=AK_SCHEMA.curie('MHCGenotype_mhc_genotyping_method'),
+                   model_uri=AK_SCHEMA.MHCGenotype_mhc_genotyping_method, domain=None, range=Optional[str])
 
-slots.v1p4__m_h_c_genotype_set__mhc_genotype_set_id = Slot(uri=AK_SCHEMA.v1p4__m_h_c_genotype_set__mhc_genotype_set_id, name="v1p4__m_h_c_genotype_set__mhc_genotype_set_id", curie=AK_SCHEMA.curie('v1p4__m_h_c_genotype_set__mhc_genotype_set_id'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_genotype_set__mhc_genotype_set_id, domain=None, range=str)
+slots.MHCAllele_allele_designation = Slot(uri=AK_SCHEMA.MHCAllele_allele_designation, name="MHCAllele_allele_designation", curie=AK_SCHEMA.curie('MHCAllele_allele_designation'),
+                   model_uri=AK_SCHEMA.MHCAllele_allele_designation, domain=None, range=Optional[str])
 
-slots.v1p4__m_h_c_genotype_set__mhc_genotype_list = Slot(uri=AK_SCHEMA.v1p4__m_h_c_genotype_set__mhc_genotype_list, name="v1p4__m_h_c_genotype_set__mhc_genotype_list", curie=AK_SCHEMA.curie('v1p4__m_h_c_genotype_set__mhc_genotype_list'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_genotype_set__mhc_genotype_list, domain=None, range=Union[Union[dict, V1p4MHCGenotype], List[Union[dict, V1p4MHCGenotype]]])
+slots.MHCAllele_gene = Slot(uri=AK_SCHEMA.MHCAllele_gene, name="MHCAllele_gene", curie=AK_SCHEMA.curie('MHCAllele_gene'),
+                   model_uri=AK_SCHEMA.MHCAllele_gene, domain=None, range=Optional[Union[str, "Gene"]])
 
-slots.v1p4__m_h_c_genotype__mhc_genotype_id = Slot(uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_genotype_id, name="v1p4__m_h_c_genotype__mhc_genotype_id", curie=AK_SCHEMA.curie('v1p4__m_h_c_genotype__mhc_genotype_id'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_genotype_id, domain=None, range=str)
+slots.MHCAllele_reference_set_ref = Slot(uri=AK_SCHEMA.MHCAllele_reference_set_ref, name="MHCAllele_reference_set_ref", curie=AK_SCHEMA.curie('MHCAllele_reference_set_ref'),
+                   model_uri=AK_SCHEMA.MHCAllele_reference_set_ref, domain=None, range=Optional[str])
 
-slots.v1p4__m_h_c_genotype__mhc_class = Slot(uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_class, name="v1p4__m_h_c_genotype__mhc_class", curie=AK_SCHEMA.curie('v1p4__m_h_c_genotype__mhc_class'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_class, domain=None, range=Union[str, "V1p4MhcClass"])
+slots.SubjectGenotype_receptor_genotype_set = Slot(uri=AK_SCHEMA.SubjectGenotype_receptor_genotype_set, name="SubjectGenotype_receptor_genotype_set", curie=AK_SCHEMA.curie('SubjectGenotype_receptor_genotype_set'),
+                   model_uri=AK_SCHEMA.SubjectGenotype_receptor_genotype_set, domain=None, range=Optional[Union[dict, GenotypeSet]])
 
-slots.v1p4__m_h_c_genotype__mhc_alleles = Slot(uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_alleles, name="v1p4__m_h_c_genotype__mhc_alleles", curie=AK_SCHEMA.curie('v1p4__m_h_c_genotype__mhc_alleles'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_alleles, domain=None, range=Union[Union[dict, V1p4MHCAllele], List[Union[dict, V1p4MHCAllele]]])
+slots.SubjectGenotype_mhc_genotype_set = Slot(uri=AK_SCHEMA.SubjectGenotype_mhc_genotype_set, name="SubjectGenotype_mhc_genotype_set", curie=AK_SCHEMA.curie('SubjectGenotype_mhc_genotype_set'),
+                   model_uri=AK_SCHEMA.SubjectGenotype_mhc_genotype_set, domain=None, range=Optional[Union[dict, MHCGenotypeSet]])
 
-slots.v1p4__m_h_c_genotype__mhc_genotyping_method = Slot(uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_genotyping_method, name="v1p4__m_h_c_genotype__mhc_genotyping_method", curie=AK_SCHEMA.curie('v1p4__m_h_c_genotype__mhc_genotyping_method'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_genotype__mhc_genotyping_method, domain=None, range=Optional[str])
+slots.Study_study_id = Slot(uri=AK_SCHEMA.Study_study_id, name="Study_study_id", curie=AK_SCHEMA.curie('Study_study_id'),
+                   model_uri=AK_SCHEMA.Study_study_id, domain=None, range=str)
 
-slots.v1p4__m_h_c_allele__allele_designation = Slot(uri=AK_SCHEMA.v1p4__m_h_c_allele__allele_designation, name="v1p4__m_h_c_allele__allele_designation", curie=AK_SCHEMA.curie('v1p4__m_h_c_allele__allele_designation'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_allele__allele_designation, domain=None, range=Optional[str])
+slots.Study_study_title = Slot(uri=AK_SCHEMA.Study_study_title, name="Study_study_title", curie=AK_SCHEMA.curie('Study_study_title'),
+                   model_uri=AK_SCHEMA.Study_study_title, domain=None, range=str)
 
-slots.v1p4__m_h_c_allele__gene = Slot(uri=AK_SCHEMA.v1p4__m_h_c_allele__gene, name="v1p4__m_h_c_allele__gene", curie=AK_SCHEMA.curie('v1p4__m_h_c_allele__gene'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_allele__gene, domain=None, range=Optional[Union[str, "V1p4Gene"]])
+slots.Study_study_type = Slot(uri=AK_SCHEMA.Study_study_type, name="Study_study_type", curie=AK_SCHEMA.curie('Study_study_type'),
+                   model_uri=AK_SCHEMA.Study_study_type, domain=None, range=Union[str, "StudyType"])
 
-slots.v1p4__m_h_c_allele__reference_set_ref = Slot(uri=AK_SCHEMA.v1p4__m_h_c_allele__reference_set_ref, name="v1p4__m_h_c_allele__reference_set_ref", curie=AK_SCHEMA.curie('v1p4__m_h_c_allele__reference_set_ref'),
-                   model_uri=AK_SCHEMA.v1p4__m_h_c_allele__reference_set_ref, domain=None, range=Optional[str])
+slots.Study_study_description = Slot(uri=AK_SCHEMA.Study_study_description, name="Study_study_description", curie=AK_SCHEMA.curie('Study_study_description'),
+                   model_uri=AK_SCHEMA.Study_study_description, domain=None, range=Optional[str])
 
-slots.v1p4__subject_genotype__receptor_genotype_set = Slot(uri=AK_SCHEMA.v1p4__subject_genotype__receptor_genotype_set, name="v1p4__subject_genotype__receptor_genotype_set", curie=AK_SCHEMA.curie('v1p4__subject_genotype__receptor_genotype_set'),
-                   model_uri=AK_SCHEMA.v1p4__subject_genotype__receptor_genotype_set, domain=None, range=Optional[Union[dict, V1p4GenotypeSet]])
+slots.Study_inclusion_exclusion_criteria = Slot(uri=AK_SCHEMA.Study_inclusion_exclusion_criteria, name="Study_inclusion_exclusion_criteria", curie=AK_SCHEMA.curie('Study_inclusion_exclusion_criteria'),
+                   model_uri=AK_SCHEMA.Study_inclusion_exclusion_criteria, domain=None, range=str)
 
-slots.v1p4__subject_genotype__mhc_genotype_set = Slot(uri=AK_SCHEMA.v1p4__subject_genotype__mhc_genotype_set, name="v1p4__subject_genotype__mhc_genotype_set", curie=AK_SCHEMA.curie('v1p4__subject_genotype__mhc_genotype_set'),
-                   model_uri=AK_SCHEMA.v1p4__subject_genotype__mhc_genotype_set, domain=None, range=Optional[Union[dict, V1p4MHCGenotypeSet]])
+slots.Study_grants = Slot(uri=AK_SCHEMA.Study_grants, name="Study_grants", curie=AK_SCHEMA.curie('Study_grants'),
+                   model_uri=AK_SCHEMA.Study_grants, domain=None, range=str)
 
-slots.v1p4__study__study_id = Slot(uri=AK_SCHEMA.v1p4__study__study_id, name="v1p4__study__study_id", curie=AK_SCHEMA.curie('v1p4__study__study_id'),
-                   model_uri=AK_SCHEMA.v1p4__study__study_id, domain=None, range=str)
+slots.Study_study_contact = Slot(uri=AK_SCHEMA.Study_study_contact, name="Study_study_contact", curie=AK_SCHEMA.curie('Study_study_contact'),
+                   model_uri=AK_SCHEMA.Study_study_contact, domain=None, range=Optional[str])
 
-slots.v1p4__study__study_title = Slot(uri=AK_SCHEMA.v1p4__study__study_title, name="v1p4__study__study_title", curie=AK_SCHEMA.curie('v1p4__study__study_title'),
-                   model_uri=AK_SCHEMA.v1p4__study__study_title, domain=None, range=str)
+slots.Study_collected_by = Slot(uri=AK_SCHEMA.Study_collected_by, name="Study_collected_by", curie=AK_SCHEMA.curie('Study_collected_by'),
+                   model_uri=AK_SCHEMA.Study_collected_by, domain=None, range=str)
 
-slots.v1p4__study__study_type = Slot(uri=AK_SCHEMA.v1p4__study__study_type, name="v1p4__study__study_type", curie=AK_SCHEMA.curie('v1p4__study__study_type'),
-                   model_uri=AK_SCHEMA.v1p4__study__study_type, domain=None, range=Union[str, "V1p4StudyType"])
+slots.Study_lab_name = Slot(uri=AK_SCHEMA.Study_lab_name, name="Study_lab_name", curie=AK_SCHEMA.curie('Study_lab_name'),
+                   model_uri=AK_SCHEMA.Study_lab_name, domain=None, range=str)
 
-slots.v1p4__study__study_description = Slot(uri=AK_SCHEMA.v1p4__study__study_description, name="v1p4__study__study_description", curie=AK_SCHEMA.curie('v1p4__study__study_description'),
-                   model_uri=AK_SCHEMA.v1p4__study__study_description, domain=None, range=Optional[str])
+slots.Study_lab_address = Slot(uri=AK_SCHEMA.Study_lab_address, name="Study_lab_address", curie=AK_SCHEMA.curie('Study_lab_address'),
+                   model_uri=AK_SCHEMA.Study_lab_address, domain=None, range=str)
 
-slots.v1p4__study__inclusion_exclusion_criteria = Slot(uri=AK_SCHEMA.v1p4__study__inclusion_exclusion_criteria, name="v1p4__study__inclusion_exclusion_criteria", curie=AK_SCHEMA.curie('v1p4__study__inclusion_exclusion_criteria'),
-                   model_uri=AK_SCHEMA.v1p4__study__inclusion_exclusion_criteria, domain=None, range=str)
+slots.Study_submitted_by = Slot(uri=AK_SCHEMA.Study_submitted_by, name="Study_submitted_by", curie=AK_SCHEMA.curie('Study_submitted_by'),
+                   model_uri=AK_SCHEMA.Study_submitted_by, domain=None, range=str)
 
-slots.v1p4__study__grants = Slot(uri=AK_SCHEMA.v1p4__study__grants, name="v1p4__study__grants", curie=AK_SCHEMA.curie('v1p4__study__grants'),
-                   model_uri=AK_SCHEMA.v1p4__study__grants, domain=None, range=str)
+slots.Study_pub_ids = Slot(uri=AK_SCHEMA.Study_pub_ids, name="Study_pub_ids", curie=AK_SCHEMA.curie('Study_pub_ids'),
+                   model_uri=AK_SCHEMA.Study_pub_ids, domain=None, range=str)
 
-slots.v1p4__study__contributors = Slot(uri=AK_SCHEMA.v1p4__study__contributors, name="v1p4__study__contributors", curie=AK_SCHEMA.curie('v1p4__study__contributors'),
-                   model_uri=AK_SCHEMA.v1p4__study__contributors, domain=None, range=Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]])
+slots.Study_keywords_study = Slot(uri=AK_SCHEMA.Study_keywords_study, name="Study_keywords_study", curie=AK_SCHEMA.curie('Study_keywords_study'),
+                   model_uri=AK_SCHEMA.Study_keywords_study, domain=None, range=Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]])
 
-slots.v1p4__study__pub_ids = Slot(uri=AK_SCHEMA.v1p4__study__pub_ids, name="v1p4__study__pub_ids", curie=AK_SCHEMA.curie('v1p4__study__pub_ids'),
-                   model_uri=AK_SCHEMA.v1p4__study__pub_ids, domain=None, range=Union[str, List[str]])
+slots.Study_adc_publish_date = Slot(uri=AK_SCHEMA.Study_adc_publish_date, name="Study_adc_publish_date", curie=AK_SCHEMA.curie('Study_adc_publish_date'),
+                   model_uri=AK_SCHEMA.Study_adc_publish_date, domain=None, range=Optional[str])
 
-slots.v1p4__study__keywords_study = Slot(uri=AK_SCHEMA.v1p4__study__keywords_study, name="v1p4__study__keywords_study", curie=AK_SCHEMA.curie('v1p4__study__keywords_study'),
-                   model_uri=AK_SCHEMA.v1p4__study__keywords_study, domain=None, range=Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]])
+slots.Study_adc_update_date = Slot(uri=AK_SCHEMA.Study_adc_update_date, name="Study_adc_update_date", curie=AK_SCHEMA.curie('Study_adc_update_date'),
+                   model_uri=AK_SCHEMA.Study_adc_update_date, domain=None, range=Optional[str])
 
-slots.v1p4__study__adc_publish_date = Slot(uri=AK_SCHEMA.v1p4__study__adc_publish_date, name="v1p4__study__adc_publish_date", curie=AK_SCHEMA.curie('v1p4__study__adc_publish_date'),
-                   model_uri=AK_SCHEMA.v1p4__study__adc_publish_date, domain=None, range=Optional[str])
+slots.Subject_subject_id = Slot(uri=AK_SCHEMA.Subject_subject_id, name="Subject_subject_id", curie=AK_SCHEMA.curie('Subject_subject_id'),
+                   model_uri=AK_SCHEMA.Subject_subject_id, domain=None, range=str)
 
-slots.v1p4__study__adc_update_date = Slot(uri=AK_SCHEMA.v1p4__study__adc_update_date, name="v1p4__study__adc_update_date", curie=AK_SCHEMA.curie('v1p4__study__adc_update_date'),
-                   model_uri=AK_SCHEMA.v1p4__study__adc_update_date, domain=None, range=Optional[str])
+slots.Subject_synthetic = Slot(uri=AK_SCHEMA.Subject_synthetic, name="Subject_synthetic", curie=AK_SCHEMA.curie('Subject_synthetic'),
+                   model_uri=AK_SCHEMA.Subject_synthetic, domain=None, range=Union[bool, Bool])
 
-slots.v1p4__subject__subject_id = Slot(uri=AK_SCHEMA.v1p4__subject__subject_id, name="v1p4__subject__subject_id", curie=AK_SCHEMA.curie('v1p4__subject__subject_id'),
-                   model_uri=AK_SCHEMA.v1p4__subject__subject_id, domain=None, range=str)
+slots.Subject_species = Slot(uri=AK_SCHEMA.Subject_species, name="Subject_species", curie=AK_SCHEMA.curie('Subject_species'),
+                   model_uri=AK_SCHEMA.Subject_species, domain=None, range=Union[str, "Species"])
 
-slots.v1p4__subject__synthetic = Slot(uri=AK_SCHEMA.v1p4__subject__synthetic, name="v1p4__subject__synthetic", curie=AK_SCHEMA.curie('v1p4__subject__synthetic'),
-                   model_uri=AK_SCHEMA.v1p4__subject__synthetic, domain=None, range=Union[bool, Bool])
+slots.Subject_sex = Slot(uri=AK_SCHEMA.Subject_sex, name="Subject_sex", curie=AK_SCHEMA.curie('Subject_sex'),
+                   model_uri=AK_SCHEMA.Subject_sex, domain=None, range=Union[str, "Sex"])
 
-slots.v1p4__subject__species = Slot(uri=AK_SCHEMA.v1p4__subject__species, name="v1p4__subject__species", curie=AK_SCHEMA.curie('v1p4__subject__species'),
-                   model_uri=AK_SCHEMA.v1p4__subject__species, domain=None, range=Union[str, "V1p4Species"])
+slots.Subject_age_min = Slot(uri=AK_SCHEMA.Subject_age_min, name="Subject_age_min", curie=AK_SCHEMA.curie('Subject_age_min'),
+                   model_uri=AK_SCHEMA.Subject_age_min, domain=None, range=float)
 
-slots.v1p4__subject__sex = Slot(uri=AK_SCHEMA.v1p4__subject__sex, name="v1p4__subject__sex", curie=AK_SCHEMA.curie('v1p4__subject__sex'),
-                   model_uri=AK_SCHEMA.v1p4__subject__sex, domain=None, range=Union[str, "V1p4Sex"])
+slots.Subject_age_max = Slot(uri=AK_SCHEMA.Subject_age_max, name="Subject_age_max", curie=AK_SCHEMA.curie('Subject_age_max'),
+                   model_uri=AK_SCHEMA.Subject_age_max, domain=None, range=float)
 
-slots.v1p4__subject__age = Slot(uri=AK_SCHEMA.v1p4__subject__age, name="v1p4__subject__age", curie=AK_SCHEMA.curie('v1p4__subject__age'),
-                   model_uri=AK_SCHEMA.v1p4__subject__age, domain=None, range=Union[dict, V1p4TimeInterval])
+slots.Subject_age_unit = Slot(uri=AK_SCHEMA.Subject_age_unit, name="Subject_age_unit", curie=AK_SCHEMA.curie('Subject_age_unit'),
+                   model_uri=AK_SCHEMA.Subject_age_unit, domain=None, range=Union[str, "AgeUnit"])
 
-slots.v1p4__subject__age_event = Slot(uri=AK_SCHEMA.v1p4__subject__age_event, name="v1p4__subject__age_event", curie=AK_SCHEMA.curie('v1p4__subject__age_event'),
-                   model_uri=AK_SCHEMA.v1p4__subject__age_event, domain=None, range=str)
+slots.Subject_age_event = Slot(uri=AK_SCHEMA.Subject_age_event, name="Subject_age_event", curie=AK_SCHEMA.curie('Subject_age_event'),
+                   model_uri=AK_SCHEMA.Subject_age_event, domain=None, range=str)
 
-slots.v1p4__subject__ancestry_population = Slot(uri=AK_SCHEMA.v1p4__subject__ancestry_population, name="v1p4__subject__ancestry_population", curie=AK_SCHEMA.curie('v1p4__subject__ancestry_population'),
-                   model_uri=AK_SCHEMA.v1p4__subject__ancestry_population, domain=None, range=Union[str, "V1p4AncestryPopulation"])
+slots.Subject_ancestry_population = Slot(uri=AK_SCHEMA.Subject_ancestry_population, name="Subject_ancestry_population", curie=AK_SCHEMA.curie('Subject_ancestry_population'),
+                   model_uri=AK_SCHEMA.Subject_ancestry_population, domain=None, range=str)
 
-slots.v1p4__subject__location_birth = Slot(uri=AK_SCHEMA.v1p4__subject__location_birth, name="v1p4__subject__location_birth", curie=AK_SCHEMA.curie('v1p4__subject__location_birth'),
-                   model_uri=AK_SCHEMA.v1p4__subject__location_birth, domain=None, range=Optional[Union[str, "V1p4LocationBirth"]])
+slots.Subject_ethnicity = Slot(uri=AK_SCHEMA.Subject_ethnicity, name="Subject_ethnicity", curie=AK_SCHEMA.curie('Subject_ethnicity'),
+                   model_uri=AK_SCHEMA.Subject_ethnicity, domain=None, range=str)
 
-slots.v1p4__subject__ethnicity = Slot(uri=AK_SCHEMA.v1p4__subject__ethnicity, name="v1p4__subject__ethnicity", curie=AK_SCHEMA.curie('v1p4__subject__ethnicity'),
-                   model_uri=AK_SCHEMA.v1p4__subject__ethnicity, domain=None, range=str)
+slots.Subject_race = Slot(uri=AK_SCHEMA.Subject_race, name="Subject_race", curie=AK_SCHEMA.curie('Subject_race'),
+                   model_uri=AK_SCHEMA.Subject_race, domain=None, range=str)
 
-slots.v1p4__subject__race = Slot(uri=AK_SCHEMA.v1p4__subject__race, name="v1p4__subject__race", curie=AK_SCHEMA.curie('v1p4__subject__race'),
-                   model_uri=AK_SCHEMA.v1p4__subject__race, domain=None, range=str)
+slots.Subject_strain_name = Slot(uri=AK_SCHEMA.Subject_strain_name, name="Subject_strain_name", curie=AK_SCHEMA.curie('Subject_strain_name'),
+                   model_uri=AK_SCHEMA.Subject_strain_name, domain=None, range=str)
 
-slots.v1p4__subject__strain_name = Slot(uri=AK_SCHEMA.v1p4__subject__strain_name, name="v1p4__subject__strain_name", curie=AK_SCHEMA.curie('v1p4__subject__strain_name'),
-                   model_uri=AK_SCHEMA.v1p4__subject__strain_name, domain=None, range=str)
+slots.Subject_linked_subjects = Slot(uri=AK_SCHEMA.Subject_linked_subjects, name="Subject_linked_subjects", curie=AK_SCHEMA.curie('Subject_linked_subjects'),
+                   model_uri=AK_SCHEMA.Subject_linked_subjects, domain=None, range=str)
 
-slots.v1p4__subject__linked_subjects = Slot(uri=AK_SCHEMA.v1p4__subject__linked_subjects, name="v1p4__subject__linked_subjects", curie=AK_SCHEMA.curie('v1p4__subject__linked_subjects'),
-                   model_uri=AK_SCHEMA.v1p4__subject__linked_subjects, domain=None, range=str)
+slots.Subject_link_type = Slot(uri=AK_SCHEMA.Subject_link_type, name="Subject_link_type", curie=AK_SCHEMA.curie('Subject_link_type'),
+                   model_uri=AK_SCHEMA.Subject_link_type, domain=None, range=str)
 
-slots.v1p4__subject__link_type = Slot(uri=AK_SCHEMA.v1p4__subject__link_type, name="v1p4__subject__link_type", curie=AK_SCHEMA.curie('v1p4__subject__link_type'),
-                   model_uri=AK_SCHEMA.v1p4__subject__link_type, domain=None, range=str)
+slots.Subject_diagnosis = Slot(uri=AK_SCHEMA.Subject_diagnosis, name="Subject_diagnosis", curie=AK_SCHEMA.curie('Subject_diagnosis'),
+                   model_uri=AK_SCHEMA.Subject_diagnosis, domain=None, range=Optional[Union[Union[dict, Diagnosis], List[Union[dict, Diagnosis]]]])
 
-slots.v1p4__subject__diagnosis = Slot(uri=AK_SCHEMA.v1p4__subject__diagnosis, name="v1p4__subject__diagnosis", curie=AK_SCHEMA.curie('v1p4__subject__diagnosis'),
-                   model_uri=AK_SCHEMA.v1p4__subject__diagnosis, domain=None, range=Optional[Union[Union[dict, V1p4Diagnosis], List[Union[dict, V1p4Diagnosis]]]])
+slots.Subject_genotype = Slot(uri=AK_SCHEMA.Subject_genotype, name="Subject_genotype", curie=AK_SCHEMA.curie('Subject_genotype'),
+                   model_uri=AK_SCHEMA.Subject_genotype, domain=None, range=Optional[Union[dict, SubjectGenotype]])
 
-slots.v1p4__subject__genotype = Slot(uri=AK_SCHEMA.v1p4__subject__genotype, name="v1p4__subject__genotype", curie=AK_SCHEMA.curie('v1p4__subject__genotype'),
-                   model_uri=AK_SCHEMA.v1p4__subject__genotype, domain=None, range=Optional[Union[dict, V1p4SubjectGenotype]])
+slots.Diagnosis_study_group_description = Slot(uri=AK_SCHEMA.Diagnosis_study_group_description, name="Diagnosis_study_group_description", curie=AK_SCHEMA.curie('Diagnosis_study_group_description'),
+                   model_uri=AK_SCHEMA.Diagnosis_study_group_description, domain=None, range=str)
 
-slots.v1p4__diagnosis__study_group_description = Slot(uri=AK_SCHEMA.v1p4__diagnosis__study_group_description, name="v1p4__diagnosis__study_group_description", curie=AK_SCHEMA.curie('v1p4__diagnosis__study_group_description'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__study_group_description, domain=None, range=str)
+slots.Diagnosis_disease_diagnosis = Slot(uri=AK_SCHEMA.Diagnosis_disease_diagnosis, name="Diagnosis_disease_diagnosis", curie=AK_SCHEMA.curie('Diagnosis_disease_diagnosis'),
+                   model_uri=AK_SCHEMA.Diagnosis_disease_diagnosis, domain=None, range=Union[str, "DiseaseDiagnosis"])
 
-slots.v1p4__diagnosis__diagnosis_timepoint = Slot(uri=AK_SCHEMA.v1p4__diagnosis__diagnosis_timepoint, name="v1p4__diagnosis__diagnosis_timepoint", curie=AK_SCHEMA.curie('v1p4__diagnosis__diagnosis_timepoint'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__diagnosis_timepoint, domain=None, range=Optional[Union[dict, V1p4TimePoint]])
+slots.Diagnosis_disease_length = Slot(uri=AK_SCHEMA.Diagnosis_disease_length, name="Diagnosis_disease_length", curie=AK_SCHEMA.curie('Diagnosis_disease_length'),
+                   model_uri=AK_SCHEMA.Diagnosis_disease_length, domain=None, range=str)
 
-slots.v1p4__diagnosis__disease_diagnosis = Slot(uri=AK_SCHEMA.v1p4__diagnosis__disease_diagnosis, name="v1p4__diagnosis__disease_diagnosis", curie=AK_SCHEMA.curie('v1p4__diagnosis__disease_diagnosis'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__disease_diagnosis, domain=None, range=Union[str, "V1p4DiseaseDiagnosis"])
+slots.Diagnosis_disease_stage = Slot(uri=AK_SCHEMA.Diagnosis_disease_stage, name="Diagnosis_disease_stage", curie=AK_SCHEMA.curie('Diagnosis_disease_stage'),
+                   model_uri=AK_SCHEMA.Diagnosis_disease_stage, domain=None, range=str)
 
-slots.v1p4__diagnosis__disease_length = Slot(uri=AK_SCHEMA.v1p4__diagnosis__disease_length, name="v1p4__diagnosis__disease_length", curie=AK_SCHEMA.curie('v1p4__diagnosis__disease_length'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__disease_length, domain=None, range=Union[dict, V1p4TimeQuantity])
+slots.Diagnosis_prior_therapies = Slot(uri=AK_SCHEMA.Diagnosis_prior_therapies, name="Diagnosis_prior_therapies", curie=AK_SCHEMA.curie('Diagnosis_prior_therapies'),
+                   model_uri=AK_SCHEMA.Diagnosis_prior_therapies, domain=None, range=str)
 
-slots.v1p4__diagnosis__disease_stage = Slot(uri=AK_SCHEMA.v1p4__diagnosis__disease_stage, name="v1p4__diagnosis__disease_stage", curie=AK_SCHEMA.curie('v1p4__diagnosis__disease_stage'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__disease_stage, domain=None, range=str)
+slots.Diagnosis_immunogen = Slot(uri=AK_SCHEMA.Diagnosis_immunogen, name="Diagnosis_immunogen", curie=AK_SCHEMA.curie('Diagnosis_immunogen'),
+                   model_uri=AK_SCHEMA.Diagnosis_immunogen, domain=None, range=str)
 
-slots.v1p4__diagnosis__prior_therapies = Slot(uri=AK_SCHEMA.v1p4__diagnosis__prior_therapies, name="v1p4__diagnosis__prior_therapies", curie=AK_SCHEMA.curie('v1p4__diagnosis__prior_therapies'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__prior_therapies, domain=None, range=str)
+slots.Diagnosis_intervention = Slot(uri=AK_SCHEMA.Diagnosis_intervention, name="Diagnosis_intervention", curie=AK_SCHEMA.curie('Diagnosis_intervention'),
+                   model_uri=AK_SCHEMA.Diagnosis_intervention, domain=None, range=str)
 
-slots.v1p4__diagnosis__immunogen = Slot(uri=AK_SCHEMA.v1p4__diagnosis__immunogen, name="v1p4__diagnosis__immunogen", curie=AK_SCHEMA.curie('v1p4__diagnosis__immunogen'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__immunogen, domain=None, range=str)
+slots.Diagnosis_medical_history = Slot(uri=AK_SCHEMA.Diagnosis_medical_history, name="Diagnosis_medical_history", curie=AK_SCHEMA.curie('Diagnosis_medical_history'),
+                   model_uri=AK_SCHEMA.Diagnosis_medical_history, domain=None, range=str)
 
-slots.v1p4__diagnosis__intervention = Slot(uri=AK_SCHEMA.v1p4__diagnosis__intervention, name="v1p4__diagnosis__intervention", curie=AK_SCHEMA.curie('v1p4__diagnosis__intervention'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__intervention, domain=None, range=str)
+slots.Sample_sample_id = Slot(uri=AK_SCHEMA.Sample_sample_id, name="Sample_sample_id", curie=AK_SCHEMA.curie('Sample_sample_id'),
+                   model_uri=AK_SCHEMA.Sample_sample_id, domain=None, range=str)
 
-slots.v1p4__diagnosis__medical_history = Slot(uri=AK_SCHEMA.v1p4__diagnosis__medical_history, name="v1p4__diagnosis__medical_history", curie=AK_SCHEMA.curie('v1p4__diagnosis__medical_history'),
-                   model_uri=AK_SCHEMA.v1p4__diagnosis__medical_history, domain=None, range=str)
+slots.Sample_sample_type = Slot(uri=AK_SCHEMA.Sample_sample_type, name="Sample_sample_type", curie=AK_SCHEMA.curie('Sample_sample_type'),
+                   model_uri=AK_SCHEMA.Sample_sample_type, domain=None, range=str)
 
-slots.v1p4__sample__sample_id = Slot(uri=AK_SCHEMA.v1p4__sample__sample_id, name="v1p4__sample__sample_id", curie=AK_SCHEMA.curie('v1p4__sample__sample_id'),
-                   model_uri=AK_SCHEMA.v1p4__sample__sample_id, domain=None, range=str)
+slots.Sample_tissue = Slot(uri=AK_SCHEMA.Sample_tissue, name="Sample_tissue", curie=AK_SCHEMA.curie('Sample_tissue'),
+                   model_uri=AK_SCHEMA.Sample_tissue, domain=None, range=Union[str, TissueAkcId])
 
-slots.v1p4__sample__sample_type = Slot(uri=AK_SCHEMA.v1p4__sample__sample_type, name="v1p4__sample__sample_type", curie=AK_SCHEMA.curie('v1p4__sample__sample_type'),
-                   model_uri=AK_SCHEMA.v1p4__sample__sample_type, domain=None, range=str)
+slots.Sample_anatomic_site = Slot(uri=AK_SCHEMA.Sample_anatomic_site, name="Sample_anatomic_site", curie=AK_SCHEMA.curie('Sample_anatomic_site'),
+                   model_uri=AK_SCHEMA.Sample_anatomic_site, domain=None, range=str)
 
-slots.v1p4__sample__tissue = Slot(uri=AK_SCHEMA.v1p4__sample__tissue, name="v1p4__sample__tissue", curie=AK_SCHEMA.curie('v1p4__sample__tissue'),
-                   model_uri=AK_SCHEMA.v1p4__sample__tissue, domain=None, range=Union[str, "V1p4Tissue"])
+slots.Sample_disease_state_sample = Slot(uri=AK_SCHEMA.Sample_disease_state_sample, name="Sample_disease_state_sample", curie=AK_SCHEMA.curie('Sample_disease_state_sample'),
+                   model_uri=AK_SCHEMA.Sample_disease_state_sample, domain=None, range=str)
 
-slots.v1p4__sample__anatomic_site = Slot(uri=AK_SCHEMA.v1p4__sample__anatomic_site, name="v1p4__sample__anatomic_site", curie=AK_SCHEMA.curie('v1p4__sample__anatomic_site'),
-                   model_uri=AK_SCHEMA.v1p4__sample__anatomic_site, domain=None, range=str)
+slots.Sample_collection_time_point_relative = Slot(uri=AK_SCHEMA.Sample_collection_time_point_relative, name="Sample_collection_time_point_relative", curie=AK_SCHEMA.curie('Sample_collection_time_point_relative'),
+                   model_uri=AK_SCHEMA.Sample_collection_time_point_relative, domain=None, range=float)
 
-slots.v1p4__sample__disease_state_sample = Slot(uri=AK_SCHEMA.v1p4__sample__disease_state_sample, name="v1p4__sample__disease_state_sample", curie=AK_SCHEMA.curie('v1p4__sample__disease_state_sample'),
-                   model_uri=AK_SCHEMA.v1p4__sample__disease_state_sample, domain=None, range=str)
+slots.Sample_collection_time_point_relative_unit = Slot(uri=AK_SCHEMA.Sample_collection_time_point_relative_unit, name="Sample_collection_time_point_relative_unit", curie=AK_SCHEMA.curie('Sample_collection_time_point_relative_unit'),
+                   model_uri=AK_SCHEMA.Sample_collection_time_point_relative_unit, domain=None, range=Union[str, "CollectionTimePointRelativeUnit"])
 
-slots.v1p4__sample__collection_time_point_relative = Slot(uri=AK_SCHEMA.v1p4__sample__collection_time_point_relative, name="v1p4__sample__collection_time_point_relative", curie=AK_SCHEMA.curie('v1p4__sample__collection_time_point_relative'),
-                   model_uri=AK_SCHEMA.v1p4__sample__collection_time_point_relative, domain=None, range=Union[dict, V1p4TimePoint])
+slots.Sample_collection_time_point_reference = Slot(uri=AK_SCHEMA.Sample_collection_time_point_reference, name="Sample_collection_time_point_reference", curie=AK_SCHEMA.curie('Sample_collection_time_point_reference'),
+                   model_uri=AK_SCHEMA.Sample_collection_time_point_reference, domain=None, range=str)
 
-slots.v1p4__sample__collection_location = Slot(uri=AK_SCHEMA.v1p4__sample__collection_location, name="v1p4__sample__collection_location", curie=AK_SCHEMA.curie('v1p4__sample__collection_location'),
-                   model_uri=AK_SCHEMA.v1p4__sample__collection_location, domain=None, range=Optional[Union[str, "V1p4CollectionLocation"]])
+slots.Sample_biomaterial_provider = Slot(uri=AK_SCHEMA.Sample_biomaterial_provider, name="Sample_biomaterial_provider", curie=AK_SCHEMA.curie('Sample_biomaterial_provider'),
+                   model_uri=AK_SCHEMA.Sample_biomaterial_provider, domain=None, range=str)
 
-slots.v1p4__sample__biomaterial_provider = Slot(uri=AK_SCHEMA.v1p4__sample__biomaterial_provider, name="v1p4__sample__biomaterial_provider", curie=AK_SCHEMA.curie('v1p4__sample__biomaterial_provider'),
-                   model_uri=AK_SCHEMA.v1p4__sample__biomaterial_provider, domain=None, range=str)
+slots.CellProcessing_tissue_processing = Slot(uri=AK_SCHEMA.CellProcessing_tissue_processing, name="CellProcessing_tissue_processing", curie=AK_SCHEMA.curie('CellProcessing_tissue_processing'),
+                   model_uri=AK_SCHEMA.CellProcessing_tissue_processing, domain=None, range=str)
 
-slots.v1p4__cell_processing__tissue_processing = Slot(uri=AK_SCHEMA.v1p4__cell_processing__tissue_processing, name="v1p4__cell_processing__tissue_processing", curie=AK_SCHEMA.curie('v1p4__cell_processing__tissue_processing'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__tissue_processing, domain=None, range=str)
+slots.CellProcessing_cell_subset = Slot(uri=AK_SCHEMA.CellProcessing_cell_subset, name="CellProcessing_cell_subset", curie=AK_SCHEMA.curie('CellProcessing_cell_subset'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_subset, domain=None, range=Union[str, "CellSubset"])
 
-slots.v1p4__cell_processing__cell_subset = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_subset, name="v1p4__cell_processing__cell_subset", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_subset'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_subset, domain=None, range=Union[str, "V1p4CellSubset"])
+slots.CellProcessing_cell_phenotype = Slot(uri=AK_SCHEMA.CellProcessing_cell_phenotype, name="CellProcessing_cell_phenotype", curie=AK_SCHEMA.curie('CellProcessing_cell_phenotype'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_phenotype, domain=None, range=str)
 
-slots.v1p4__cell_processing__cell_phenotype = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_phenotype, name="v1p4__cell_processing__cell_phenotype", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_phenotype'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_phenotype, domain=None, range=str)
+slots.CellProcessing_cell_species = Slot(uri=AK_SCHEMA.CellProcessing_cell_species, name="CellProcessing_cell_species", curie=AK_SCHEMA.curie('CellProcessing_cell_species'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_species, domain=None, range=Optional[Union[str, "CellSpecies"]])
 
-slots.v1p4__cell_processing__cell_label = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_label, name="v1p4__cell_processing__cell_label", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_label'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_label, domain=None, range=Optional[str])
+slots.CellProcessing_single_cell = Slot(uri=AK_SCHEMA.CellProcessing_single_cell, name="CellProcessing_single_cell", curie=AK_SCHEMA.curie('CellProcessing_single_cell'),
+                   model_uri=AK_SCHEMA.CellProcessing_single_cell, domain=None, range=Union[bool, Bool])
 
-slots.v1p4__cell_processing__cell_species = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_species, name="v1p4__cell_processing__cell_species", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_species'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_species, domain=None, range=Optional[Union[str, "V1p4CellSpecies"]])
+slots.CellProcessing_cell_number = Slot(uri=AK_SCHEMA.CellProcessing_cell_number, name="CellProcessing_cell_number", curie=AK_SCHEMA.curie('CellProcessing_cell_number'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_number, domain=None, range=int)
 
-slots.v1p4__cell_processing__single_cell = Slot(uri=AK_SCHEMA.v1p4__cell_processing__single_cell, name="v1p4__cell_processing__single_cell", curie=AK_SCHEMA.curie('v1p4__cell_processing__single_cell'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__single_cell, domain=None, range=Union[bool, Bool])
+slots.CellProcessing_cells_per_reaction = Slot(uri=AK_SCHEMA.CellProcessing_cells_per_reaction, name="CellProcessing_cells_per_reaction", curie=AK_SCHEMA.curie('CellProcessing_cells_per_reaction'),
+                   model_uri=AK_SCHEMA.CellProcessing_cells_per_reaction, domain=None, range=int)
 
-slots.v1p4__cell_processing__cell_number = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_number, name="v1p4__cell_processing__cell_number", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_number'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_number, domain=None, range=int)
+slots.CellProcessing_cell_storage = Slot(uri=AK_SCHEMA.CellProcessing_cell_storage, name="CellProcessing_cell_storage", curie=AK_SCHEMA.curie('CellProcessing_cell_storage'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_storage, domain=None, range=Union[bool, Bool])
 
-slots.v1p4__cell_processing__cells_per_reaction = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cells_per_reaction, name="v1p4__cell_processing__cells_per_reaction", curie=AK_SCHEMA.curie('v1p4__cell_processing__cells_per_reaction'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cells_per_reaction, domain=None, range=int)
+slots.CellProcessing_cell_quality = Slot(uri=AK_SCHEMA.CellProcessing_cell_quality, name="CellProcessing_cell_quality", curie=AK_SCHEMA.curie('CellProcessing_cell_quality'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_quality, domain=None, range=str)
 
-slots.v1p4__cell_processing__cell_storage = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_storage, name="v1p4__cell_processing__cell_storage", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_storage'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_storage, domain=None, range=Union[bool, Bool])
+slots.CellProcessing_cell_isolation = Slot(uri=AK_SCHEMA.CellProcessing_cell_isolation, name="CellProcessing_cell_isolation", curie=AK_SCHEMA.curie('CellProcessing_cell_isolation'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_isolation, domain=None, range=str)
 
-slots.v1p4__cell_processing__cell_quality = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_quality, name="v1p4__cell_processing__cell_quality", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_quality'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_quality, domain=None, range=str)
+slots.CellProcessing_cell_processing_protocol = Slot(uri=AK_SCHEMA.CellProcessing_cell_processing_protocol, name="CellProcessing_cell_processing_protocol", curie=AK_SCHEMA.curie('CellProcessing_cell_processing_protocol'),
+                   model_uri=AK_SCHEMA.CellProcessing_cell_processing_protocol, domain=None, range=str)
 
-slots.v1p4__cell_processing__cell_isolation = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_isolation, name="v1p4__cell_processing__cell_isolation", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_isolation'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_isolation, domain=None, range=str)
+slots.PCRTarget_pcr_target_locus = Slot(uri=AK_SCHEMA.PCRTarget_pcr_target_locus, name="PCRTarget_pcr_target_locus", curie=AK_SCHEMA.curie('PCRTarget_pcr_target_locus'),
+                   model_uri=AK_SCHEMA.PCRTarget_pcr_target_locus, domain=None, range=Union[str, "PcrTargetLocus"])
 
-slots.v1p4__cell_processing__cell_processing_protocol = Slot(uri=AK_SCHEMA.v1p4__cell_processing__cell_processing_protocol, name="v1p4__cell_processing__cell_processing_protocol", curie=AK_SCHEMA.curie('v1p4__cell_processing__cell_processing_protocol'),
-                   model_uri=AK_SCHEMA.v1p4__cell_processing__cell_processing_protocol, domain=None, range=str)
+slots.PCRTarget_forward_pcr_primer_target_location = Slot(uri=AK_SCHEMA.PCRTarget_forward_pcr_primer_target_location, name="PCRTarget_forward_pcr_primer_target_location", curie=AK_SCHEMA.curie('PCRTarget_forward_pcr_primer_target_location'),
+                   model_uri=AK_SCHEMA.PCRTarget_forward_pcr_primer_target_location, domain=None, range=str)
 
-slots.v1p4__p_c_r_target__pcr_target_locus = Slot(uri=AK_SCHEMA.v1p4__p_c_r_target__pcr_target_locus, name="v1p4__p_c_r_target__pcr_target_locus", curie=AK_SCHEMA.curie('v1p4__p_c_r_target__pcr_target_locus'),
-                   model_uri=AK_SCHEMA.v1p4__p_c_r_target__pcr_target_locus, domain=None, range=Union[str, "V1p4PcrTargetLocus"])
+slots.PCRTarget_reverse_pcr_primer_target_location = Slot(uri=AK_SCHEMA.PCRTarget_reverse_pcr_primer_target_location, name="PCRTarget_reverse_pcr_primer_target_location", curie=AK_SCHEMA.curie('PCRTarget_reverse_pcr_primer_target_location'),
+                   model_uri=AK_SCHEMA.PCRTarget_reverse_pcr_primer_target_location, domain=None, range=str)
 
-slots.v1p4__p_c_r_target__forward_pcr_primer_target_location = Slot(uri=AK_SCHEMA.v1p4__p_c_r_target__forward_pcr_primer_target_location, name="v1p4__p_c_r_target__forward_pcr_primer_target_location", curie=AK_SCHEMA.curie('v1p4__p_c_r_target__forward_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.v1p4__p_c_r_target__forward_pcr_primer_target_location, domain=None, range=str)
+slots.NucleicAcidProcessing_template_class = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_template_class, name="NucleicAcidProcessing_template_class", curie=AK_SCHEMA.curie('NucleicAcidProcessing_template_class'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_template_class, domain=None, range=Union[str, "TemplateClass"])
 
-slots.v1p4__p_c_r_target__reverse_pcr_primer_target_location = Slot(uri=AK_SCHEMA.v1p4__p_c_r_target__reverse_pcr_primer_target_location, name="v1p4__p_c_r_target__reverse_pcr_primer_target_location", curie=AK_SCHEMA.curie('v1p4__p_c_r_target__reverse_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.v1p4__p_c_r_target__reverse_pcr_primer_target_location, domain=None, range=str)
+slots.NucleicAcidProcessing_template_quality = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_template_quality, name="NucleicAcidProcessing_template_quality", curie=AK_SCHEMA.curie('NucleicAcidProcessing_template_quality'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_template_quality, domain=None, range=str)
 
-slots.v1p4__nucleic_acid_processing__template_class = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__template_class, name="v1p4__nucleic_acid_processing__template_class", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__template_class'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__template_class, domain=None, range=Union[str, "V1p4TemplateClass"])
+slots.NucleicAcidProcessing_template_amount = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_template_amount, name="NucleicAcidProcessing_template_amount", curie=AK_SCHEMA.curie('NucleicAcidProcessing_template_amount'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_template_amount, domain=None, range=float)
 
-slots.v1p4__nucleic_acid_processing__template_quality = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__template_quality, name="v1p4__nucleic_acid_processing__template_quality", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__template_quality'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__template_quality, domain=None, range=str)
+slots.NucleicAcidProcessing_template_amount_unit = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_template_amount_unit, name="NucleicAcidProcessing_template_amount_unit", curie=AK_SCHEMA.curie('NucleicAcidProcessing_template_amount_unit'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_template_amount_unit, domain=None, range=Union[str, "TemplateAmountUnit"])
 
-slots.v1p4__nucleic_acid_processing__template_amount = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__template_amount, name="v1p4__nucleic_acid_processing__template_amount", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__template_amount'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__template_amount, domain=None, range=Union[dict, V1p4PhysicalQuantity])
+slots.NucleicAcidProcessing_library_generation_method = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_library_generation_method, name="NucleicAcidProcessing_library_generation_method", curie=AK_SCHEMA.curie('NucleicAcidProcessing_library_generation_method'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_library_generation_method, domain=None, range=Union[str, "LibraryGenerationMethod"])
 
-slots.v1p4__nucleic_acid_processing__library_generation_method = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__library_generation_method, name="v1p4__nucleic_acid_processing__library_generation_method", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__library_generation_method'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__library_generation_method, domain=None, range=Union[str, "V1p4LibraryGenerationMethod"])
+slots.NucleicAcidProcessing_library_generation_protocol = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_library_generation_protocol, name="NucleicAcidProcessing_library_generation_protocol", curie=AK_SCHEMA.curie('NucleicAcidProcessing_library_generation_protocol'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_library_generation_protocol, domain=None, range=str)
 
-slots.v1p4__nucleic_acid_processing__library_generation_protocol = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__library_generation_protocol, name="v1p4__nucleic_acid_processing__library_generation_protocol", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__library_generation_protocol'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__library_generation_protocol, domain=None, range=str)
+slots.NucleicAcidProcessing_library_generation_kit_version = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_library_generation_kit_version, name="NucleicAcidProcessing_library_generation_kit_version", curie=AK_SCHEMA.curie('NucleicAcidProcessing_library_generation_kit_version'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_library_generation_kit_version, domain=None, range=str)
 
-slots.v1p4__nucleic_acid_processing__library_generation_kit_version = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__library_generation_kit_version, name="v1p4__nucleic_acid_processing__library_generation_kit_version", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__library_generation_kit_version'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__library_generation_kit_version, domain=None, range=str)
+slots.NucleicAcidProcessing_pcr_target = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_pcr_target, name="NucleicAcidProcessing_pcr_target", curie=AK_SCHEMA.curie('NucleicAcidProcessing_pcr_target'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_pcr_target, domain=None, range=Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]])
 
-slots.v1p4__nucleic_acid_processing__pcr_target = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__pcr_target, name="v1p4__nucleic_acid_processing__pcr_target", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__pcr_target'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__pcr_target, domain=None, range=Optional[Union[Union[dict, V1p4PCRTarget], List[Union[dict, V1p4PCRTarget]]]])
+slots.NucleicAcidProcessing_complete_sequences = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_complete_sequences, name="NucleicAcidProcessing_complete_sequences", curie=AK_SCHEMA.curie('NucleicAcidProcessing_complete_sequences'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_complete_sequences, domain=None, range=Union[str, "CompleteSequences"])
 
-slots.v1p4__nucleic_acid_processing__complete_sequences = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__complete_sequences, name="v1p4__nucleic_acid_processing__complete_sequences", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__complete_sequences'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__complete_sequences, domain=None, range=Union[str, "V1p4CompleteSequences"])
+slots.NucleicAcidProcessing_physical_linkage = Slot(uri=AK_SCHEMA.NucleicAcidProcessing_physical_linkage, name="NucleicAcidProcessing_physical_linkage", curie=AK_SCHEMA.curie('NucleicAcidProcessing_physical_linkage'),
+                   model_uri=AK_SCHEMA.NucleicAcidProcessing_physical_linkage, domain=None, range=Union[str, "PhysicalLinkage"])
 
-slots.v1p4__nucleic_acid_processing__physical_linkage = Slot(uri=AK_SCHEMA.v1p4__nucleic_acid_processing__physical_linkage, name="v1p4__nucleic_acid_processing__physical_linkage", curie=AK_SCHEMA.curie('v1p4__nucleic_acid_processing__physical_linkage'),
-                   model_uri=AK_SCHEMA.v1p4__nucleic_acid_processing__physical_linkage, domain=None, range=Union[str, "V1p4PhysicalLinkage"])
+slots.SequencingRun_sequencing_run_id = Slot(uri=AK_SCHEMA.SequencingRun_sequencing_run_id, name="SequencingRun_sequencing_run_id", curie=AK_SCHEMA.curie('SequencingRun_sequencing_run_id'),
+                   model_uri=AK_SCHEMA.SequencingRun_sequencing_run_id, domain=None, range=str)
 
-slots.v1p4__sequencing_run__sequencing_run_id = Slot(uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_run_id, name="v1p4__sequencing_run__sequencing_run_id", curie=AK_SCHEMA.curie('v1p4__sequencing_run__sequencing_run_id'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_run_id, domain=None, range=str)
+slots.SequencingRun_total_reads_passing_qc_filter = Slot(uri=AK_SCHEMA.SequencingRun_total_reads_passing_qc_filter, name="SequencingRun_total_reads_passing_qc_filter", curie=AK_SCHEMA.curie('SequencingRun_total_reads_passing_qc_filter'),
+                   model_uri=AK_SCHEMA.SequencingRun_total_reads_passing_qc_filter, domain=None, range=int)
 
-slots.v1p4__sequencing_run__total_reads_passing_qc_filter = Slot(uri=AK_SCHEMA.v1p4__sequencing_run__total_reads_passing_qc_filter, name="v1p4__sequencing_run__total_reads_passing_qc_filter", curie=AK_SCHEMA.curie('v1p4__sequencing_run__total_reads_passing_qc_filter'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_run__total_reads_passing_qc_filter, domain=None, range=int)
+slots.SequencingRun_sequencing_platform = Slot(uri=AK_SCHEMA.SequencingRun_sequencing_platform, name="SequencingRun_sequencing_platform", curie=AK_SCHEMA.curie('SequencingRun_sequencing_platform'),
+                   model_uri=AK_SCHEMA.SequencingRun_sequencing_platform, domain=None, range=str)
 
-slots.v1p4__sequencing_run__sequencing_platform = Slot(uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_platform, name="v1p4__sequencing_run__sequencing_platform", curie=AK_SCHEMA.curie('v1p4__sequencing_run__sequencing_platform'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_platform, domain=None, range=str)
+slots.SequencingRun_sequencing_facility = Slot(uri=AK_SCHEMA.SequencingRun_sequencing_facility, name="SequencingRun_sequencing_facility", curie=AK_SCHEMA.curie('SequencingRun_sequencing_facility'),
+                   model_uri=AK_SCHEMA.SequencingRun_sequencing_facility, domain=None, range=str)
 
-slots.v1p4__sequencing_run__sequencing_facility = Slot(uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_facility, name="v1p4__sequencing_run__sequencing_facility", curie=AK_SCHEMA.curie('v1p4__sequencing_run__sequencing_facility'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_facility, domain=None, range=str)
+slots.SequencingRun_sequencing_run_date = Slot(uri=AK_SCHEMA.SequencingRun_sequencing_run_date, name="SequencingRun_sequencing_run_date", curie=AK_SCHEMA.curie('SequencingRun_sequencing_run_date'),
+                   model_uri=AK_SCHEMA.SequencingRun_sequencing_run_date, domain=None, range=str)
 
-slots.v1p4__sequencing_run__sequencing_run_date = Slot(uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_run_date, name="v1p4__sequencing_run__sequencing_run_date", curie=AK_SCHEMA.curie('v1p4__sequencing_run__sequencing_run_date'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_run_date, domain=None, range=str)
+slots.SequencingRun_sequencing_kit = Slot(uri=AK_SCHEMA.SequencingRun_sequencing_kit, name="SequencingRun_sequencing_kit", curie=AK_SCHEMA.curie('SequencingRun_sequencing_kit'),
+                   model_uri=AK_SCHEMA.SequencingRun_sequencing_kit, domain=None, range=str)
 
-slots.v1p4__sequencing_run__sequencing_kit = Slot(uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_kit, name="v1p4__sequencing_run__sequencing_kit", curie=AK_SCHEMA.curie('v1p4__sequencing_run__sequencing_kit'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_kit, domain=None, range=str)
+slots.SequencingRun_sequencing_files = Slot(uri=AK_SCHEMA.SequencingRun_sequencing_files, name="SequencingRun_sequencing_files", curie=AK_SCHEMA.curie('SequencingRun_sequencing_files'),
+                   model_uri=AK_SCHEMA.SequencingRun_sequencing_files, domain=None, range=Optional[Union[dict, SequencingData]])
 
-slots.v1p4__sequencing_run__sequencing_files = Slot(uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_files, name="v1p4__sequencing_run__sequencing_files", curie=AK_SCHEMA.curie('v1p4__sequencing_run__sequencing_files'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_run__sequencing_files, domain=None, range=Optional[Union[dict, V1p4SequencingData]])
+slots.SequencingData_sequencing_data_id = Slot(uri=AK_SCHEMA.SequencingData_sequencing_data_id, name="SequencingData_sequencing_data_id", curie=AK_SCHEMA.curie('SequencingData_sequencing_data_id'),
+                   model_uri=AK_SCHEMA.SequencingData_sequencing_data_id, domain=None, range=str)
 
-slots.v1p4__sequencing_data__sequencing_data_id = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__sequencing_data_id, name="v1p4__sequencing_data__sequencing_data_id", curie=AK_SCHEMA.curie('v1p4__sequencing_data__sequencing_data_id'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__sequencing_data_id, domain=None, range=str)
+slots.SequencingData_file_type = Slot(uri=AK_SCHEMA.SequencingData_file_type, name="SequencingData_file_type", curie=AK_SCHEMA.curie('SequencingData_file_type'),
+                   model_uri=AK_SCHEMA.SequencingData_file_type, domain=None, range=Union[str, "FileType"])
 
-slots.v1p4__sequencing_data__file_type = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__file_type, name="v1p4__sequencing_data__file_type", curie=AK_SCHEMA.curie('v1p4__sequencing_data__file_type'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__file_type, domain=None, range=Union[str, "V1p4FileType"])
+slots.SequencingData_filename = Slot(uri=AK_SCHEMA.SequencingData_filename, name="SequencingData_filename", curie=AK_SCHEMA.curie('SequencingData_filename'),
+                   model_uri=AK_SCHEMA.SequencingData_filename, domain=None, range=str)
 
-slots.v1p4__sequencing_data__filename = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__filename, name="v1p4__sequencing_data__filename", curie=AK_SCHEMA.curie('v1p4__sequencing_data__filename'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__filename, domain=None, range=str)
+slots.SequencingData_read_direction = Slot(uri=AK_SCHEMA.SequencingData_read_direction, name="SequencingData_read_direction", curie=AK_SCHEMA.curie('SequencingData_read_direction'),
+                   model_uri=AK_SCHEMA.SequencingData_read_direction, domain=None, range=Union[str, "ReadDirection"])
 
-slots.v1p4__sequencing_data__read_direction = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__read_direction, name="v1p4__sequencing_data__read_direction", curie=AK_SCHEMA.curie('v1p4__sequencing_data__read_direction'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__read_direction, domain=None, range=Union[str, "V1p4ReadDirection"])
+slots.SequencingData_read_length = Slot(uri=AK_SCHEMA.SequencingData_read_length, name="SequencingData_read_length", curie=AK_SCHEMA.curie('SequencingData_read_length'),
+                   model_uri=AK_SCHEMA.SequencingData_read_length, domain=None, range=int)
 
-slots.v1p4__sequencing_data__read_length = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__read_length, name="v1p4__sequencing_data__read_length", curie=AK_SCHEMA.curie('v1p4__sequencing_data__read_length'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__read_length, domain=None, range=int)
+slots.SequencingData_paired_filename = Slot(uri=AK_SCHEMA.SequencingData_paired_filename, name="SequencingData_paired_filename", curie=AK_SCHEMA.curie('SequencingData_paired_filename'),
+                   model_uri=AK_SCHEMA.SequencingData_paired_filename, domain=None, range=str)
 
-slots.v1p4__sequencing_data__paired_filename = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__paired_filename, name="v1p4__sequencing_data__paired_filename", curie=AK_SCHEMA.curie('v1p4__sequencing_data__paired_filename'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__paired_filename, domain=None, range=str)
+slots.SequencingData_paired_read_direction = Slot(uri=AK_SCHEMA.SequencingData_paired_read_direction, name="SequencingData_paired_read_direction", curie=AK_SCHEMA.curie('SequencingData_paired_read_direction'),
+                   model_uri=AK_SCHEMA.SequencingData_paired_read_direction, domain=None, range=Union[str, "PairedReadDirection"])
 
-slots.v1p4__sequencing_data__paired_read_direction = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__paired_read_direction, name="v1p4__sequencing_data__paired_read_direction", curie=AK_SCHEMA.curie('v1p4__sequencing_data__paired_read_direction'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__paired_read_direction, domain=None, range=Union[str, "V1p4PairedReadDirection"])
+slots.SequencingData_paired_read_length = Slot(uri=AK_SCHEMA.SequencingData_paired_read_length, name="SequencingData_paired_read_length", curie=AK_SCHEMA.curie('SequencingData_paired_read_length'),
+                   model_uri=AK_SCHEMA.SequencingData_paired_read_length, domain=None, range=int)
 
-slots.v1p4__sequencing_data__paired_read_length = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__paired_read_length, name="v1p4__sequencing_data__paired_read_length", curie=AK_SCHEMA.curie('v1p4__sequencing_data__paired_read_length'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__paired_read_length, domain=None, range=int)
+slots.SequencingData_index_filename = Slot(uri=AK_SCHEMA.SequencingData_index_filename, name="SequencingData_index_filename", curie=AK_SCHEMA.curie('SequencingData_index_filename'),
+                   model_uri=AK_SCHEMA.SequencingData_index_filename, domain=None, range=Optional[str])
 
-slots.v1p4__sequencing_data__index_filename = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__index_filename, name="v1p4__sequencing_data__index_filename", curie=AK_SCHEMA.curie('v1p4__sequencing_data__index_filename'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__index_filename, domain=None, range=Optional[str])
+slots.SequencingData_index_length = Slot(uri=AK_SCHEMA.SequencingData_index_length, name="SequencingData_index_length", curie=AK_SCHEMA.curie('SequencingData_index_length'),
+                   model_uri=AK_SCHEMA.SequencingData_index_length, domain=None, range=Optional[int])
 
-slots.v1p4__sequencing_data__index_length = Slot(uri=AK_SCHEMA.v1p4__sequencing_data__index_length, name="v1p4__sequencing_data__index_length", curie=AK_SCHEMA.curie('v1p4__sequencing_data__index_length'),
-                   model_uri=AK_SCHEMA.v1p4__sequencing_data__index_length, domain=None, range=Optional[int])
+slots.DataProcessing_data_processing_id = Slot(uri=AK_SCHEMA.DataProcessing_data_processing_id, name="DataProcessing_data_processing_id", curie=AK_SCHEMA.curie('DataProcessing_data_processing_id'),
+                   model_uri=AK_SCHEMA.DataProcessing_data_processing_id, domain=None, range=Optional[str])
 
-slots.v1p4__data_processing__data_processing_id = Slot(uri=AK_SCHEMA.v1p4__data_processing__data_processing_id, name="v1p4__data_processing__data_processing_id", curie=AK_SCHEMA.curie('v1p4__data_processing__data_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__data_processing_id, domain=None, range=Optional[str])
+slots.DataProcessing_primary_annotation = Slot(uri=AK_SCHEMA.DataProcessing_primary_annotation, name="DataProcessing_primary_annotation", curie=AK_SCHEMA.curie('DataProcessing_primary_annotation'),
+                   model_uri=AK_SCHEMA.DataProcessing_primary_annotation, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.v1p4__data_processing__primary_annotation = Slot(uri=AK_SCHEMA.v1p4__data_processing__primary_annotation, name="v1p4__data_processing__primary_annotation", curie=AK_SCHEMA.curie('v1p4__data_processing__primary_annotation'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__primary_annotation, domain=None, range=Optional[Union[bool, Bool]])
+slots.DataProcessing_software_versions = Slot(uri=AK_SCHEMA.DataProcessing_software_versions, name="DataProcessing_software_versions", curie=AK_SCHEMA.curie('DataProcessing_software_versions'),
+                   model_uri=AK_SCHEMA.DataProcessing_software_versions, domain=None, range=str)
 
-slots.v1p4__data_processing__software_versions = Slot(uri=AK_SCHEMA.v1p4__data_processing__software_versions, name="v1p4__data_processing__software_versions", curie=AK_SCHEMA.curie('v1p4__data_processing__software_versions'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__software_versions, domain=None, range=str)
+slots.DataProcessing_paired_reads_assembly = Slot(uri=AK_SCHEMA.DataProcessing_paired_reads_assembly, name="DataProcessing_paired_reads_assembly", curie=AK_SCHEMA.curie('DataProcessing_paired_reads_assembly'),
+                   model_uri=AK_SCHEMA.DataProcessing_paired_reads_assembly, domain=None, range=str)
 
-slots.v1p4__data_processing__paired_reads_assembly = Slot(uri=AK_SCHEMA.v1p4__data_processing__paired_reads_assembly, name="v1p4__data_processing__paired_reads_assembly", curie=AK_SCHEMA.curie('v1p4__data_processing__paired_reads_assembly'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__paired_reads_assembly, domain=None, range=str)
+slots.DataProcessing_quality_thresholds = Slot(uri=AK_SCHEMA.DataProcessing_quality_thresholds, name="DataProcessing_quality_thresholds", curie=AK_SCHEMA.curie('DataProcessing_quality_thresholds'),
+                   model_uri=AK_SCHEMA.DataProcessing_quality_thresholds, domain=None, range=str)
 
-slots.v1p4__data_processing__quality_thresholds = Slot(uri=AK_SCHEMA.v1p4__data_processing__quality_thresholds, name="v1p4__data_processing__quality_thresholds", curie=AK_SCHEMA.curie('v1p4__data_processing__quality_thresholds'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__quality_thresholds, domain=None, range=str)
+slots.DataProcessing_primer_match_cutoffs = Slot(uri=AK_SCHEMA.DataProcessing_primer_match_cutoffs, name="DataProcessing_primer_match_cutoffs", curie=AK_SCHEMA.curie('DataProcessing_primer_match_cutoffs'),
+                   model_uri=AK_SCHEMA.DataProcessing_primer_match_cutoffs, domain=None, range=str)
 
-slots.v1p4__data_processing__primer_match_cutoffs = Slot(uri=AK_SCHEMA.v1p4__data_processing__primer_match_cutoffs, name="v1p4__data_processing__primer_match_cutoffs", curie=AK_SCHEMA.curie('v1p4__data_processing__primer_match_cutoffs'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__primer_match_cutoffs, domain=None, range=str)
+slots.DataProcessing_collapsing_method = Slot(uri=AK_SCHEMA.DataProcessing_collapsing_method, name="DataProcessing_collapsing_method", curie=AK_SCHEMA.curie('DataProcessing_collapsing_method'),
+                   model_uri=AK_SCHEMA.DataProcessing_collapsing_method, domain=None, range=str)
 
-slots.v1p4__data_processing__collapsing_method = Slot(uri=AK_SCHEMA.v1p4__data_processing__collapsing_method, name="v1p4__data_processing__collapsing_method", curie=AK_SCHEMA.curie('v1p4__data_processing__collapsing_method'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__collapsing_method, domain=None, range=str)
+slots.DataProcessing_data_processing_protocols = Slot(uri=AK_SCHEMA.DataProcessing_data_processing_protocols, name="DataProcessing_data_processing_protocols", curie=AK_SCHEMA.curie('DataProcessing_data_processing_protocols'),
+                   model_uri=AK_SCHEMA.DataProcessing_data_processing_protocols, domain=None, range=str)
 
-slots.v1p4__data_processing__data_processing_protocols = Slot(uri=AK_SCHEMA.v1p4__data_processing__data_processing_protocols, name="v1p4__data_processing__data_processing_protocols", curie=AK_SCHEMA.curie('v1p4__data_processing__data_processing_protocols'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__data_processing_protocols, domain=None, range=str)
+slots.DataProcessing_data_processing_files = Slot(uri=AK_SCHEMA.DataProcessing_data_processing_files, name="DataProcessing_data_processing_files", curie=AK_SCHEMA.curie('DataProcessing_data_processing_files'),
+                   model_uri=AK_SCHEMA.DataProcessing_data_processing_files, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.v1p4__data_processing__data_processing_files = Slot(uri=AK_SCHEMA.v1p4__data_processing__data_processing_files, name="v1p4__data_processing__data_processing_files", curie=AK_SCHEMA.curie('v1p4__data_processing__data_processing_files'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__data_processing_files, domain=None, range=Optional[Union[str, List[str]]])
+slots.DataProcessing_germline_database = Slot(uri=AK_SCHEMA.DataProcessing_germline_database, name="DataProcessing_germline_database", curie=AK_SCHEMA.curie('DataProcessing_germline_database'),
+                   model_uri=AK_SCHEMA.DataProcessing_germline_database, domain=None, range=str)
 
-slots.v1p4__data_processing__germline_database = Slot(uri=AK_SCHEMA.v1p4__data_processing__germline_database, name="v1p4__data_processing__germline_database", curie=AK_SCHEMA.curie('v1p4__data_processing__germline_database'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__germline_database, domain=None, range=str)
+slots.DataProcessing_germline_set_ref = Slot(uri=AK_SCHEMA.DataProcessing_germline_set_ref, name="DataProcessing_germline_set_ref", curie=AK_SCHEMA.curie('DataProcessing_germline_set_ref'),
+                   model_uri=AK_SCHEMA.DataProcessing_germline_set_ref, domain=None, range=Optional[str])
 
-slots.v1p4__data_processing__germline_set_ref = Slot(uri=AK_SCHEMA.v1p4__data_processing__germline_set_ref, name="v1p4__data_processing__germline_set_ref", curie=AK_SCHEMA.curie('v1p4__data_processing__germline_set_ref'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__germline_set_ref, domain=None, range=Optional[str])
+slots.DataProcessing_analysis_provenance_id = Slot(uri=AK_SCHEMA.DataProcessing_analysis_provenance_id, name="DataProcessing_analysis_provenance_id", curie=AK_SCHEMA.curie('DataProcessing_analysis_provenance_id'),
+                   model_uri=AK_SCHEMA.DataProcessing_analysis_provenance_id, domain=None, range=Optional[str])
 
-slots.v1p4__data_processing__analysis_provenance_id = Slot(uri=AK_SCHEMA.v1p4__data_processing__analysis_provenance_id, name="v1p4__data_processing__analysis_provenance_id", curie=AK_SCHEMA.curie('v1p4__data_processing__analysis_provenance_id'),
-                   model_uri=AK_SCHEMA.v1p4__data_processing__analysis_provenance_id, domain=None, range=Optional[str])
+slots.Repertoire_repertoire_id = Slot(uri=AK_SCHEMA.Repertoire_repertoire_id, name="Repertoire_repertoire_id", curie=AK_SCHEMA.curie('Repertoire_repertoire_id'),
+                   model_uri=AK_SCHEMA.Repertoire_repertoire_id, domain=None, range=Optional[str])
 
-slots.v1p4__repertoire__repertoire_id = Slot(uri=AK_SCHEMA.v1p4__repertoire__repertoire_id, name="v1p4__repertoire__repertoire_id", curie=AK_SCHEMA.curie('v1p4__repertoire__repertoire_id'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire__repertoire_id, domain=None, range=Optional[str])
+slots.Repertoire_repertoire_name = Slot(uri=AK_SCHEMA.Repertoire_repertoire_name, name="Repertoire_repertoire_name", curie=AK_SCHEMA.curie('Repertoire_repertoire_name'),
+                   model_uri=AK_SCHEMA.Repertoire_repertoire_name, domain=None, range=Optional[str])
 
-slots.v1p4__repertoire__repertoire_name = Slot(uri=AK_SCHEMA.v1p4__repertoire__repertoire_name, name="v1p4__repertoire__repertoire_name", curie=AK_SCHEMA.curie('v1p4__repertoire__repertoire_name'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire__repertoire_name, domain=None, range=Optional[str])
+slots.Repertoire_repertoire_description = Slot(uri=AK_SCHEMA.Repertoire_repertoire_description, name="Repertoire_repertoire_description", curie=AK_SCHEMA.curie('Repertoire_repertoire_description'),
+                   model_uri=AK_SCHEMA.Repertoire_repertoire_description, domain=None, range=Optional[str])
 
-slots.v1p4__repertoire__repertoire_description = Slot(uri=AK_SCHEMA.v1p4__repertoire__repertoire_description, name="v1p4__repertoire__repertoire_description", curie=AK_SCHEMA.curie('v1p4__repertoire__repertoire_description'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire__repertoire_description, domain=None, range=Optional[str])
+slots.Repertoire_study = Slot(uri=AK_SCHEMA.Repertoire_study, name="Repertoire_study", curie=AK_SCHEMA.curie('Repertoire_study'),
+                   model_uri=AK_SCHEMA.Repertoire_study, domain=None, range=Union[dict, Study])
 
-slots.v1p4__repertoire__study = Slot(uri=AK_SCHEMA.v1p4__repertoire__study, name="v1p4__repertoire__study", curie=AK_SCHEMA.curie('v1p4__repertoire__study'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire__study, domain=None, range=Union[dict, V1p4Study])
+slots.Repertoire_subject = Slot(uri=AK_SCHEMA.Repertoire_subject, name="Repertoire_subject", curie=AK_SCHEMA.curie('Repertoire_subject'),
+                   model_uri=AK_SCHEMA.Repertoire_subject, domain=None, range=Union[dict, Subject])
 
-slots.v1p4__repertoire__subject = Slot(uri=AK_SCHEMA.v1p4__repertoire__subject, name="v1p4__repertoire__subject", curie=AK_SCHEMA.curie('v1p4__repertoire__subject'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire__subject, domain=None, range=Union[dict, V1p4Subject])
+slots.Repertoire_sample = Slot(uri=AK_SCHEMA.Repertoire_sample, name="Repertoire_sample", curie=AK_SCHEMA.curie('Repertoire_sample'),
+                   model_uri=AK_SCHEMA.Repertoire_sample, domain=None, range=Union[Union[dict, SampleProcessing], List[Union[dict, SampleProcessing]]])
 
-slots.v1p4__repertoire__sample = Slot(uri=AK_SCHEMA.v1p4__repertoire__sample, name="v1p4__repertoire__sample", curie=AK_SCHEMA.curie('v1p4__repertoire__sample'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire__sample, domain=None, range=Union[Union[dict, V1p4SampleProcessing], List[Union[dict, V1p4SampleProcessing]]])
+slots.Repertoire_data_processing = Slot(uri=AK_SCHEMA.Repertoire_data_processing, name="Repertoire_data_processing", curie=AK_SCHEMA.curie('Repertoire_data_processing'),
+                   model_uri=AK_SCHEMA.Repertoire_data_processing, domain=None, range=Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]])
 
-slots.v1p4__repertoire__data_processing = Slot(uri=AK_SCHEMA.v1p4__repertoire__data_processing, name="v1p4__repertoire__data_processing", curie=AK_SCHEMA.curie('v1p4__repertoire__data_processing'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire__data_processing, domain=None, range=Union[Union[dict, V1p4DataProcessing], List[Union[dict, V1p4DataProcessing]]])
+slots.RepertoireGroup_repertoire_group_id = Slot(uri=AK_SCHEMA.RepertoireGroup_repertoire_group_id, name="RepertoireGroup_repertoire_group_id", curie=AK_SCHEMA.curie('RepertoireGroup_repertoire_group_id'),
+                   model_uri=AK_SCHEMA.RepertoireGroup_repertoire_group_id, domain=None, range=str)
 
-slots.v1p4__repertoire_group__repertoire_group_id = Slot(uri=AK_SCHEMA.v1p4__repertoire_group__repertoire_group_id, name="v1p4__repertoire_group__repertoire_group_id", curie=AK_SCHEMA.curie('v1p4__repertoire_group__repertoire_group_id'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire_group__repertoire_group_id, domain=None, range=str)
+slots.RepertoireGroup_repertoire_group_name = Slot(uri=AK_SCHEMA.RepertoireGroup_repertoire_group_name, name="RepertoireGroup_repertoire_group_name", curie=AK_SCHEMA.curie('RepertoireGroup_repertoire_group_name'),
+                   model_uri=AK_SCHEMA.RepertoireGroup_repertoire_group_name, domain=None, range=Optional[str])
 
-slots.v1p4__repertoire_group__repertoire_group_name = Slot(uri=AK_SCHEMA.v1p4__repertoire_group__repertoire_group_name, name="v1p4__repertoire_group__repertoire_group_name", curie=AK_SCHEMA.curie('v1p4__repertoire_group__repertoire_group_name'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire_group__repertoire_group_name, domain=None, range=Optional[str])
+slots.RepertoireGroup_repertoire_group_description = Slot(uri=AK_SCHEMA.RepertoireGroup_repertoire_group_description, name="RepertoireGroup_repertoire_group_description", curie=AK_SCHEMA.curie('RepertoireGroup_repertoire_group_description'),
+                   model_uri=AK_SCHEMA.RepertoireGroup_repertoire_group_description, domain=None, range=Optional[str])
 
-slots.v1p4__repertoire_group__repertoire_group_description = Slot(uri=AK_SCHEMA.v1p4__repertoire_group__repertoire_group_description, name="v1p4__repertoire_group__repertoire_group_description", curie=AK_SCHEMA.curie('v1p4__repertoire_group__repertoire_group_description'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire_group__repertoire_group_description, domain=None, range=Optional[str])
+slots.RepertoireGroup_repertoires = Slot(uri=AK_SCHEMA.RepertoireGroup_repertoires, name="RepertoireGroup_repertoires", curie=AK_SCHEMA.curie('RepertoireGroup_repertoires'),
+                   model_uri=AK_SCHEMA.RepertoireGroup_repertoires, domain=None, range=Union[str, List[str]])
 
-slots.v1p4__repertoire_group__repertoires = Slot(uri=AK_SCHEMA.v1p4__repertoire_group__repertoires, name="v1p4__repertoire_group__repertoires", curie=AK_SCHEMA.curie('v1p4__repertoire_group__repertoires'),
-                   model_uri=AK_SCHEMA.v1p4__repertoire_group__repertoires, domain=None, range=Union[str, List[str]])
+slots.Alignment_sequence_id = Slot(uri=AK_SCHEMA.Alignment_sequence_id, name="Alignment_sequence_id", curie=AK_SCHEMA.curie('Alignment_sequence_id'),
+                   model_uri=AK_SCHEMA.Alignment_sequence_id, domain=None, range=str)
 
-slots.v1p4__alignment__sequence_id = Slot(uri=AK_SCHEMA.v1p4__alignment__sequence_id, name="v1p4__alignment__sequence_id", curie=AK_SCHEMA.curie('v1p4__alignment__sequence_id'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__sequence_id, domain=None, range=str)
+slots.Alignment_segment = Slot(uri=AK_SCHEMA.Alignment_segment, name="Alignment_segment", curie=AK_SCHEMA.curie('Alignment_segment'),
+                   model_uri=AK_SCHEMA.Alignment_segment, domain=None, range=str)
 
-slots.v1p4__alignment__segment = Slot(uri=AK_SCHEMA.v1p4__alignment__segment, name="v1p4__alignment__segment", curie=AK_SCHEMA.curie('v1p4__alignment__segment'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__segment, domain=None, range=str)
+slots.Alignment_rev_comp = Slot(uri=AK_SCHEMA.Alignment_rev_comp, name="Alignment_rev_comp", curie=AK_SCHEMA.curie('Alignment_rev_comp'),
+                   model_uri=AK_SCHEMA.Alignment_rev_comp, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.v1p4__alignment__rev_comp = Slot(uri=AK_SCHEMA.v1p4__alignment__rev_comp, name="v1p4__alignment__rev_comp", curie=AK_SCHEMA.curie('v1p4__alignment__rev_comp'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__rev_comp, domain=None, range=Optional[Union[bool, Bool]])
+slots.Alignment_call = Slot(uri=AK_SCHEMA.Alignment_call, name="Alignment_call", curie=AK_SCHEMA.curie('Alignment_call'),
+                   model_uri=AK_SCHEMA.Alignment_call, domain=None, range=str)
 
-slots.v1p4__alignment__call = Slot(uri=AK_SCHEMA.v1p4__alignment__call, name="v1p4__alignment__call", curie=AK_SCHEMA.curie('v1p4__alignment__call'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__call, domain=None, range=str)
+slots.Alignment_score = Slot(uri=AK_SCHEMA.Alignment_score, name="Alignment_score", curie=AK_SCHEMA.curie('Alignment_score'),
+                   model_uri=AK_SCHEMA.Alignment_score, domain=None, range=float)
 
-slots.v1p4__alignment__score = Slot(uri=AK_SCHEMA.v1p4__alignment__score, name="v1p4__alignment__score", curie=AK_SCHEMA.curie('v1p4__alignment__score'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__score, domain=None, range=float)
+slots.Alignment_identity = Slot(uri=AK_SCHEMA.Alignment_identity, name="Alignment_identity", curie=AK_SCHEMA.curie('Alignment_identity'),
+                   model_uri=AK_SCHEMA.Alignment_identity, domain=None, range=Optional[float])
 
-slots.v1p4__alignment__identity = Slot(uri=AK_SCHEMA.v1p4__alignment__identity, name="v1p4__alignment__identity", curie=AK_SCHEMA.curie('v1p4__alignment__identity'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__identity, domain=None, range=Optional[float])
+slots.Alignment_support = Slot(uri=AK_SCHEMA.Alignment_support, name="Alignment_support", curie=AK_SCHEMA.curie('Alignment_support'),
+                   model_uri=AK_SCHEMA.Alignment_support, domain=None, range=Optional[float])
 
-slots.v1p4__alignment__support = Slot(uri=AK_SCHEMA.v1p4__alignment__support, name="v1p4__alignment__support", curie=AK_SCHEMA.curie('v1p4__alignment__support'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__support, domain=None, range=Optional[float])
+slots.Alignment_cigar = Slot(uri=AK_SCHEMA.Alignment_cigar, name="Alignment_cigar", curie=AK_SCHEMA.curie('Alignment_cigar'),
+                   model_uri=AK_SCHEMA.Alignment_cigar, domain=None, range=str)
 
-slots.v1p4__alignment__cigar = Slot(uri=AK_SCHEMA.v1p4__alignment__cigar, name="v1p4__alignment__cigar", curie=AK_SCHEMA.curie('v1p4__alignment__cigar'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__cigar, domain=None, range=str)
+slots.Alignment_sequence_start = Slot(uri=AK_SCHEMA.Alignment_sequence_start, name="Alignment_sequence_start", curie=AK_SCHEMA.curie('Alignment_sequence_start'),
+                   model_uri=AK_SCHEMA.Alignment_sequence_start, domain=None, range=Optional[int])
 
-slots.v1p4__alignment__sequence_start = Slot(uri=AK_SCHEMA.v1p4__alignment__sequence_start, name="v1p4__alignment__sequence_start", curie=AK_SCHEMA.curie('v1p4__alignment__sequence_start'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__sequence_start, domain=None, range=Optional[int])
+slots.Alignment_sequence_end = Slot(uri=AK_SCHEMA.Alignment_sequence_end, name="Alignment_sequence_end", curie=AK_SCHEMA.curie('Alignment_sequence_end'),
+                   model_uri=AK_SCHEMA.Alignment_sequence_end, domain=None, range=Optional[int])
 
-slots.v1p4__alignment__sequence_end = Slot(uri=AK_SCHEMA.v1p4__alignment__sequence_end, name="v1p4__alignment__sequence_end", curie=AK_SCHEMA.curie('v1p4__alignment__sequence_end'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__sequence_end, domain=None, range=Optional[int])
+slots.Alignment_germline_start = Slot(uri=AK_SCHEMA.Alignment_germline_start, name="Alignment_germline_start", curie=AK_SCHEMA.curie('Alignment_germline_start'),
+                   model_uri=AK_SCHEMA.Alignment_germline_start, domain=None, range=Optional[int])
 
-slots.v1p4__alignment__germline_start = Slot(uri=AK_SCHEMA.v1p4__alignment__germline_start, name="v1p4__alignment__germline_start", curie=AK_SCHEMA.curie('v1p4__alignment__germline_start'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__germline_start, domain=None, range=Optional[int])
+slots.Alignment_germline_end = Slot(uri=AK_SCHEMA.Alignment_germline_end, name="Alignment_germline_end", curie=AK_SCHEMA.curie('Alignment_germline_end'),
+                   model_uri=AK_SCHEMA.Alignment_germline_end, domain=None, range=Optional[int])
 
-slots.v1p4__alignment__germline_end = Slot(uri=AK_SCHEMA.v1p4__alignment__germline_end, name="v1p4__alignment__germline_end", curie=AK_SCHEMA.curie('v1p4__alignment__germline_end'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__germline_end, domain=None, range=Optional[int])
+slots.Alignment_rank = Slot(uri=AK_SCHEMA.Alignment_rank, name="Alignment_rank", curie=AK_SCHEMA.curie('Alignment_rank'),
+                   model_uri=AK_SCHEMA.Alignment_rank, domain=None, range=Optional[int])
 
-slots.v1p4__alignment__rank = Slot(uri=AK_SCHEMA.v1p4__alignment__rank, name="v1p4__alignment__rank", curie=AK_SCHEMA.curie('v1p4__alignment__rank'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__rank, domain=None, range=Optional[int])
+slots.Alignment_data_processing_id = Slot(uri=AK_SCHEMA.Alignment_data_processing_id, name="Alignment_data_processing_id", curie=AK_SCHEMA.curie('Alignment_data_processing_id'),
+                   model_uri=AK_SCHEMA.Alignment_data_processing_id, domain=None, range=Optional[str])
 
-slots.v1p4__alignment__data_processing_id = Slot(uri=AK_SCHEMA.v1p4__alignment__data_processing_id, name="v1p4__alignment__data_processing_id", curie=AK_SCHEMA.curie('v1p4__alignment__data_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__alignment__data_processing_id, domain=None, range=Optional[str])
+slots.Rearrangement_sequence_id = Slot(uri=AK_SCHEMA.Rearrangement_sequence_id, name="Rearrangement_sequence_id", curie=AK_SCHEMA.curie('Rearrangement_sequence_id'),
+                   model_uri=AK_SCHEMA.Rearrangement_sequence_id, domain=None, range=str)
 
-slots.v1p4__rearrangement__sequence_id = Slot(uri=AK_SCHEMA.v1p4__rearrangement__sequence_id, name="v1p4__rearrangement__sequence_id", curie=AK_SCHEMA.curie('v1p4__rearrangement__sequence_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__sequence_id, domain=None, range=str)
+slots.Rearrangement_sequence = Slot(uri=AK_SCHEMA.Rearrangement_sequence, name="Rearrangement_sequence", curie=AK_SCHEMA.curie('Rearrangement_sequence'),
+                   model_uri=AK_SCHEMA.Rearrangement_sequence, domain=None, range=str)
 
-slots.v1p4__rearrangement__sequence = Slot(uri=AK_SCHEMA.v1p4__rearrangement__sequence, name="v1p4__rearrangement__sequence", curie=AK_SCHEMA.curie('v1p4__rearrangement__sequence'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__sequence, domain=None, range=str)
+slots.Rearrangement_quality = Slot(uri=AK_SCHEMA.Rearrangement_quality, name="Rearrangement_quality", curie=AK_SCHEMA.curie('Rearrangement_quality'),
+                   model_uri=AK_SCHEMA.Rearrangement_quality, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__quality = Slot(uri=AK_SCHEMA.v1p4__rearrangement__quality, name="v1p4__rearrangement__quality", curie=AK_SCHEMA.curie('v1p4__rearrangement__quality'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__quality, domain=None, range=Optional[str])
+slots.Rearrangement_sequence_aa = Slot(uri=AK_SCHEMA.Rearrangement_sequence_aa, name="Rearrangement_sequence_aa", curie=AK_SCHEMA.curie('Rearrangement_sequence_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_sequence_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__sequence_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__sequence_aa, name="v1p4__rearrangement__sequence_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__sequence_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__sequence_aa, domain=None, range=Optional[str])
+slots.Rearrangement_rev_comp = Slot(uri=AK_SCHEMA.Rearrangement_rev_comp, name="Rearrangement_rev_comp", curie=AK_SCHEMA.curie('Rearrangement_rev_comp'),
+                   model_uri=AK_SCHEMA.Rearrangement_rev_comp, domain=None, range=Union[bool, Bool])
 
-slots.v1p4__rearrangement__rev_comp = Slot(uri=AK_SCHEMA.v1p4__rearrangement__rev_comp, name="v1p4__rearrangement__rev_comp", curie=AK_SCHEMA.curie('v1p4__rearrangement__rev_comp'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__rev_comp, domain=None, range=Union[bool, Bool])
+slots.Rearrangement_productive = Slot(uri=AK_SCHEMA.Rearrangement_productive, name="Rearrangement_productive", curie=AK_SCHEMA.curie('Rearrangement_productive'),
+                   model_uri=AK_SCHEMA.Rearrangement_productive, domain=None, range=Union[bool, Bool])
 
-slots.v1p4__rearrangement__productive = Slot(uri=AK_SCHEMA.v1p4__rearrangement__productive, name="v1p4__rearrangement__productive", curie=AK_SCHEMA.curie('v1p4__rearrangement__productive'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__productive, domain=None, range=Union[bool, Bool])
+slots.Rearrangement_vj_in_frame = Slot(uri=AK_SCHEMA.Rearrangement_vj_in_frame, name="Rearrangement_vj_in_frame", curie=AK_SCHEMA.curie('Rearrangement_vj_in_frame'),
+                   model_uri=AK_SCHEMA.Rearrangement_vj_in_frame, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.v1p4__rearrangement__vj_in_frame = Slot(uri=AK_SCHEMA.v1p4__rearrangement__vj_in_frame, name="v1p4__rearrangement__vj_in_frame", curie=AK_SCHEMA.curie('v1p4__rearrangement__vj_in_frame'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__vj_in_frame, domain=None, range=Optional[Union[bool, Bool]])
+slots.Rearrangement_stop_codon = Slot(uri=AK_SCHEMA.Rearrangement_stop_codon, name="Rearrangement_stop_codon", curie=AK_SCHEMA.curie('Rearrangement_stop_codon'),
+                   model_uri=AK_SCHEMA.Rearrangement_stop_codon, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.v1p4__rearrangement__stop_codon = Slot(uri=AK_SCHEMA.v1p4__rearrangement__stop_codon, name="v1p4__rearrangement__stop_codon", curie=AK_SCHEMA.curie('v1p4__rearrangement__stop_codon'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__stop_codon, domain=None, range=Optional[Union[bool, Bool]])
+slots.Rearrangement_complete_vdj = Slot(uri=AK_SCHEMA.Rearrangement_complete_vdj, name="Rearrangement_complete_vdj", curie=AK_SCHEMA.curie('Rearrangement_complete_vdj'),
+                   model_uri=AK_SCHEMA.Rearrangement_complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.v1p4__rearrangement__complete_vdj = Slot(uri=AK_SCHEMA.v1p4__rearrangement__complete_vdj, name="v1p4__rearrangement__complete_vdj", curie=AK_SCHEMA.curie('v1p4__rearrangement__complete_vdj'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
+slots.Rearrangement_locus = Slot(uri=AK_SCHEMA.Rearrangement_locus, name="Rearrangement_locus", curie=AK_SCHEMA.curie('Rearrangement_locus'),
+                   model_uri=AK_SCHEMA.Rearrangement_locus, domain=None, range=Optional[Union[str, "Locus"]])
 
-slots.v1p4__rearrangement__locus = Slot(uri=AK_SCHEMA.v1p4__rearrangement__locus, name="v1p4__rearrangement__locus", curie=AK_SCHEMA.curie('v1p4__rearrangement__locus'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__locus, domain=None, range=Optional[Union[str, "V1p4Locus"]])
+slots.Rearrangement_v_call = Slot(uri=AK_SCHEMA.Rearrangement_v_call, name="Rearrangement_v_call", curie=AK_SCHEMA.curie('Rearrangement_v_call'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_call, domain=None, range=str)
 
-slots.v1p4__rearrangement__locus_species = Slot(uri=AK_SCHEMA.v1p4__rearrangement__locus_species, name="v1p4__rearrangement__locus_species", curie=AK_SCHEMA.curie('v1p4__rearrangement__locus_species'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__locus_species, domain=None, range=Optional[Union[str, "V1p4LocusSpecies"]])
+slots.Rearrangement_d_call = Slot(uri=AK_SCHEMA.Rearrangement_d_call, name="Rearrangement_d_call", curie=AK_SCHEMA.curie('Rearrangement_d_call'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_call, domain=None, range=str)
 
-slots.v1p4__rearrangement__v_call = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_call, name="v1p4__rearrangement__v_call", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_call'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_call, domain=None, range=str)
+slots.Rearrangement_d2_call = Slot(uri=AK_SCHEMA.Rearrangement_d2_call, name="Rearrangement_d2_call", curie=AK_SCHEMA.curie('Rearrangement_d2_call'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_call, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d_call = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_call, name="v1p4__rearrangement__d_call", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_call'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_call, domain=None, range=str)
+slots.Rearrangement_j_call = Slot(uri=AK_SCHEMA.Rearrangement_j_call, name="Rearrangement_j_call", curie=AK_SCHEMA.curie('Rearrangement_j_call'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_call, domain=None, range=str)
 
-slots.v1p4__rearrangement__d2_call = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_call, name="v1p4__rearrangement__d2_call", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_call'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_call, domain=None, range=Optional[str])
+slots.Rearrangement_c_call = Slot(uri=AK_SCHEMA.Rearrangement_c_call, name="Rearrangement_c_call", curie=AK_SCHEMA.curie('Rearrangement_c_call'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_call, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__j_call = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_call, name="v1p4__rearrangement__j_call", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_call'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_call, domain=None, range=str)
+slots.Rearrangement_sequence_alignment = Slot(uri=AK_SCHEMA.Rearrangement_sequence_alignment, name="Rearrangement_sequence_alignment", curie=AK_SCHEMA.curie('Rearrangement_sequence_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_sequence_alignment, domain=None, range=str)
 
-slots.v1p4__rearrangement__c_call = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_call, name="v1p4__rearrangement__c_call", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_call'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_call, domain=None, range=Optional[str])
+slots.Rearrangement_quality_alignment = Slot(uri=AK_SCHEMA.Rearrangement_quality_alignment, name="Rearrangement_quality_alignment", curie=AK_SCHEMA.curie('Rearrangement_quality_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_quality_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__sequence_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__sequence_alignment, name="v1p4__rearrangement__sequence_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__sequence_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__sequence_alignment, domain=None, range=str)
+slots.Rearrangement_sequence_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_sequence_alignment_aa, name="Rearrangement_sequence_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_sequence_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__quality_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__quality_alignment, name="v1p4__rearrangement__quality_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__quality_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__quality_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_germline_alignment = Slot(uri=AK_SCHEMA.Rearrangement_germline_alignment, name="Rearrangement_germline_alignment", curie=AK_SCHEMA.curie('Rearrangement_germline_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_germline_alignment, domain=None, range=str)
 
-slots.v1p4__rearrangement__sequence_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__sequence_alignment_aa, name="v1p4__rearrangement__sequence_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__sequence_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__sequence_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_germline_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_germline_alignment_aa, name="Rearrangement_germline_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_germline_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__germline_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__germline_alignment, name="v1p4__rearrangement__germline_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__germline_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__germline_alignment, domain=None, range=str)
+slots.Rearrangement_junction = Slot(uri=AK_SCHEMA.Rearrangement_junction, name="Rearrangement_junction", curie=AK_SCHEMA.curie('Rearrangement_junction'),
+                   model_uri=AK_SCHEMA.Rearrangement_junction, domain=None, range=str)
 
-slots.v1p4__rearrangement__germline_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__germline_alignment_aa, name="v1p4__rearrangement__germline_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__germline_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__germline_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_junction_aa = Slot(uri=AK_SCHEMA.Rearrangement_junction_aa, name="Rearrangement_junction_aa", curie=AK_SCHEMA.curie('Rearrangement_junction_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_junction_aa, domain=None, range=str)
 
-slots.v1p4__rearrangement__junction = Slot(uri=AK_SCHEMA.v1p4__rearrangement__junction, name="v1p4__rearrangement__junction", curie=AK_SCHEMA.curie('v1p4__rearrangement__junction'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__junction, domain=None, range=str)
+slots.Rearrangement_np1 = Slot(uri=AK_SCHEMA.Rearrangement_np1, name="Rearrangement_np1", curie=AK_SCHEMA.curie('Rearrangement_np1'),
+                   model_uri=AK_SCHEMA.Rearrangement_np1, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__junction_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__junction_aa, name="v1p4__rearrangement__junction_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__junction_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__junction_aa, domain=None, range=str)
+slots.Rearrangement_np1_aa = Slot(uri=AK_SCHEMA.Rearrangement_np1_aa, name="Rearrangement_np1_aa", curie=AK_SCHEMA.curie('Rearrangement_np1_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_np1_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__np1 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np1, name="v1p4__rearrangement__np1", curie=AK_SCHEMA.curie('v1p4__rearrangement__np1'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np1, domain=None, range=Optional[str])
+slots.Rearrangement_np2 = Slot(uri=AK_SCHEMA.Rearrangement_np2, name="Rearrangement_np2", curie=AK_SCHEMA.curie('Rearrangement_np2'),
+                   model_uri=AK_SCHEMA.Rearrangement_np2, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__np1_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np1_aa, name="v1p4__rearrangement__np1_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__np1_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np1_aa, domain=None, range=Optional[str])
+slots.Rearrangement_np2_aa = Slot(uri=AK_SCHEMA.Rearrangement_np2_aa, name="Rearrangement_np2_aa", curie=AK_SCHEMA.curie('Rearrangement_np2_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_np2_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__np2 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np2, name="v1p4__rearrangement__np2", curie=AK_SCHEMA.curie('v1p4__rearrangement__np2'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np2, domain=None, range=Optional[str])
+slots.Rearrangement_np3 = Slot(uri=AK_SCHEMA.Rearrangement_np3, name="Rearrangement_np3", curie=AK_SCHEMA.curie('Rearrangement_np3'),
+                   model_uri=AK_SCHEMA.Rearrangement_np3, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__np2_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np2_aa, name="v1p4__rearrangement__np2_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__np2_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np2_aa, domain=None, range=Optional[str])
+slots.Rearrangement_np3_aa = Slot(uri=AK_SCHEMA.Rearrangement_np3_aa, name="Rearrangement_np3_aa", curie=AK_SCHEMA.curie('Rearrangement_np3_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_np3_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__np3 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np3, name="v1p4__rearrangement__np3", curie=AK_SCHEMA.curie('v1p4__rearrangement__np3'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np3, domain=None, range=Optional[str])
+slots.Rearrangement_cdr1 = Slot(uri=AK_SCHEMA.Rearrangement_cdr1, name="Rearrangement_cdr1", curie=AK_SCHEMA.curie('Rearrangement_cdr1'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr1, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__np3_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np3_aa, name="v1p4__rearrangement__np3_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__np3_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np3_aa, domain=None, range=Optional[str])
+slots.Rearrangement_cdr1_aa = Slot(uri=AK_SCHEMA.Rearrangement_cdr1_aa, name="Rearrangement_cdr1_aa", curie=AK_SCHEMA.curie('Rearrangement_cdr1_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr1_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__cdr1 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr1, name="v1p4__rearrangement__cdr1", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr1'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr1, domain=None, range=Optional[str])
+slots.Rearrangement_cdr2 = Slot(uri=AK_SCHEMA.Rearrangement_cdr2, name="Rearrangement_cdr2", curie=AK_SCHEMA.curie('Rearrangement_cdr2'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr2, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__cdr1_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr1_aa, name="v1p4__rearrangement__cdr1_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr1_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr1_aa, domain=None, range=Optional[str])
+slots.Rearrangement_cdr2_aa = Slot(uri=AK_SCHEMA.Rearrangement_cdr2_aa, name="Rearrangement_cdr2_aa", curie=AK_SCHEMA.curie('Rearrangement_cdr2_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr2_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__cdr2 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr2, name="v1p4__rearrangement__cdr2", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr2'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr2, domain=None, range=Optional[str])
+slots.Rearrangement_cdr3 = Slot(uri=AK_SCHEMA.Rearrangement_cdr3, name="Rearrangement_cdr3", curie=AK_SCHEMA.curie('Rearrangement_cdr3'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr3, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__cdr2_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr2_aa, name="v1p4__rearrangement__cdr2_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr2_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr2_aa, domain=None, range=Optional[str])
+slots.Rearrangement_cdr3_aa = Slot(uri=AK_SCHEMA.Rearrangement_cdr3_aa, name="Rearrangement_cdr3_aa", curie=AK_SCHEMA.curie('Rearrangement_cdr3_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr3_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__cdr3 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr3, name="v1p4__rearrangement__cdr3", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr3'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr3, domain=None, range=Optional[str])
+slots.Rearrangement_fwr1 = Slot(uri=AK_SCHEMA.Rearrangement_fwr1, name="Rearrangement_fwr1", curie=AK_SCHEMA.curie('Rearrangement_fwr1'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr1, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__cdr3_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr3_aa, name="v1p4__rearrangement__cdr3_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr3_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr3_aa, domain=None, range=Optional[str])
+slots.Rearrangement_fwr1_aa = Slot(uri=AK_SCHEMA.Rearrangement_fwr1_aa, name="Rearrangement_fwr1_aa", curie=AK_SCHEMA.curie('Rearrangement_fwr1_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr1_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr1 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr1, name="v1p4__rearrangement__fwr1", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr1'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr1, domain=None, range=Optional[str])
+slots.Rearrangement_fwr2 = Slot(uri=AK_SCHEMA.Rearrangement_fwr2, name="Rearrangement_fwr2", curie=AK_SCHEMA.curie('Rearrangement_fwr2'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr2, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr1_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr1_aa, name="v1p4__rearrangement__fwr1_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr1_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr1_aa, domain=None, range=Optional[str])
+slots.Rearrangement_fwr2_aa = Slot(uri=AK_SCHEMA.Rearrangement_fwr2_aa, name="Rearrangement_fwr2_aa", curie=AK_SCHEMA.curie('Rearrangement_fwr2_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr2_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr2 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr2, name="v1p4__rearrangement__fwr2", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr2'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr2, domain=None, range=Optional[str])
+slots.Rearrangement_fwr3 = Slot(uri=AK_SCHEMA.Rearrangement_fwr3, name="Rearrangement_fwr3", curie=AK_SCHEMA.curie('Rearrangement_fwr3'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr3, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr2_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr2_aa, name="v1p4__rearrangement__fwr2_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr2_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr2_aa, domain=None, range=Optional[str])
+slots.Rearrangement_fwr3_aa = Slot(uri=AK_SCHEMA.Rearrangement_fwr3_aa, name="Rearrangement_fwr3_aa", curie=AK_SCHEMA.curie('Rearrangement_fwr3_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr3_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr3 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr3, name="v1p4__rearrangement__fwr3", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr3'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr3, domain=None, range=Optional[str])
+slots.Rearrangement_fwr4 = Slot(uri=AK_SCHEMA.Rearrangement_fwr4, name="Rearrangement_fwr4", curie=AK_SCHEMA.curie('Rearrangement_fwr4'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr4, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr3_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr3_aa, name="v1p4__rearrangement__fwr3_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr3_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr3_aa, domain=None, range=Optional[str])
+slots.Rearrangement_fwr4_aa = Slot(uri=AK_SCHEMA.Rearrangement_fwr4_aa, name="Rearrangement_fwr4_aa", curie=AK_SCHEMA.curie('Rearrangement_fwr4_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr4_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr4 = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr4, name="v1p4__rearrangement__fwr4", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr4'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr4, domain=None, range=Optional[str])
+slots.Rearrangement_v_score = Slot(uri=AK_SCHEMA.Rearrangement_v_score, name="Rearrangement_v_score", curie=AK_SCHEMA.curie('Rearrangement_v_score'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_score, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__fwr4_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr4_aa, name="v1p4__rearrangement__fwr4_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr4_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr4_aa, domain=None, range=Optional[str])
+slots.Rearrangement_v_identity = Slot(uri=AK_SCHEMA.Rearrangement_v_identity, name="Rearrangement_v_identity", curie=AK_SCHEMA.curie('Rearrangement_v_identity'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_identity, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__v_score = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_score, name="v1p4__rearrangement__v_score", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_score'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_score, domain=None, range=Optional[float])
+slots.Rearrangement_v_support = Slot(uri=AK_SCHEMA.Rearrangement_v_support, name="Rearrangement_v_support", curie=AK_SCHEMA.curie('Rearrangement_v_support'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_support, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__v_identity = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_identity, name="v1p4__rearrangement__v_identity", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_identity'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_identity, domain=None, range=Optional[float])
+slots.Rearrangement_v_cigar = Slot(uri=AK_SCHEMA.Rearrangement_v_cigar, name="Rearrangement_v_cigar", curie=AK_SCHEMA.curie('Rearrangement_v_cigar'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_cigar, domain=None, range=str)
 
-slots.v1p4__rearrangement__v_support = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_support, name="v1p4__rearrangement__v_support", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_support'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_support, domain=None, range=Optional[float])
+slots.Rearrangement_d_score = Slot(uri=AK_SCHEMA.Rearrangement_d_score, name="Rearrangement_d_score", curie=AK_SCHEMA.curie('Rearrangement_d_score'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_score, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__v_cigar = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_cigar, name="v1p4__rearrangement__v_cigar", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_cigar'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_cigar, domain=None, range=str)
+slots.Rearrangement_d_identity = Slot(uri=AK_SCHEMA.Rearrangement_d_identity, name="Rearrangement_d_identity", curie=AK_SCHEMA.curie('Rearrangement_d_identity'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_identity, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__d_score = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_score, name="v1p4__rearrangement__d_score", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_score'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_score, domain=None, range=Optional[float])
+slots.Rearrangement_d_support = Slot(uri=AK_SCHEMA.Rearrangement_d_support, name="Rearrangement_d_support", curie=AK_SCHEMA.curie('Rearrangement_d_support'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_support, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__d_identity = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_identity, name="v1p4__rearrangement__d_identity", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_identity'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_identity, domain=None, range=Optional[float])
+slots.Rearrangement_d_cigar = Slot(uri=AK_SCHEMA.Rearrangement_d_cigar, name="Rearrangement_d_cigar", curie=AK_SCHEMA.curie('Rearrangement_d_cigar'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_cigar, domain=None, range=str)
 
-slots.v1p4__rearrangement__d_support = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_support, name="v1p4__rearrangement__d_support", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_support'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_support, domain=None, range=Optional[float])
+slots.Rearrangement_d2_score = Slot(uri=AK_SCHEMA.Rearrangement_d2_score, name="Rearrangement_d2_score", curie=AK_SCHEMA.curie('Rearrangement_d2_score'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_score, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__d_cigar = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_cigar, name="v1p4__rearrangement__d_cigar", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_cigar'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_cigar, domain=None, range=str)
+slots.Rearrangement_d2_identity = Slot(uri=AK_SCHEMA.Rearrangement_d2_identity, name="Rearrangement_d2_identity", curie=AK_SCHEMA.curie('Rearrangement_d2_identity'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_identity, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__d2_score = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_score, name="v1p4__rearrangement__d2_score", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_score'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_score, domain=None, range=Optional[float])
+slots.Rearrangement_d2_support = Slot(uri=AK_SCHEMA.Rearrangement_d2_support, name="Rearrangement_d2_support", curie=AK_SCHEMA.curie('Rearrangement_d2_support'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_support, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__d2_identity = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_identity, name="v1p4__rearrangement__d2_identity", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_identity'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_identity, domain=None, range=Optional[float])
+slots.Rearrangement_d2_cigar = Slot(uri=AK_SCHEMA.Rearrangement_d2_cigar, name="Rearrangement_d2_cigar", curie=AK_SCHEMA.curie('Rearrangement_d2_cigar'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_cigar, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d2_support = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_support, name="v1p4__rearrangement__d2_support", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_support'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_support, domain=None, range=Optional[float])
+slots.Rearrangement_j_score = Slot(uri=AK_SCHEMA.Rearrangement_j_score, name="Rearrangement_j_score", curie=AK_SCHEMA.curie('Rearrangement_j_score'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_score, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__d2_cigar = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_cigar, name="v1p4__rearrangement__d2_cigar", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_cigar'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_cigar, domain=None, range=Optional[str])
+slots.Rearrangement_j_identity = Slot(uri=AK_SCHEMA.Rearrangement_j_identity, name="Rearrangement_j_identity", curie=AK_SCHEMA.curie('Rearrangement_j_identity'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_identity, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__j_score = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_score, name="v1p4__rearrangement__j_score", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_score'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_score, domain=None, range=Optional[float])
+slots.Rearrangement_j_support = Slot(uri=AK_SCHEMA.Rearrangement_j_support, name="Rearrangement_j_support", curie=AK_SCHEMA.curie('Rearrangement_j_support'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_support, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__j_identity = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_identity, name="v1p4__rearrangement__j_identity", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_identity'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_identity, domain=None, range=Optional[float])
+slots.Rearrangement_j_cigar = Slot(uri=AK_SCHEMA.Rearrangement_j_cigar, name="Rearrangement_j_cigar", curie=AK_SCHEMA.curie('Rearrangement_j_cigar'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_cigar, domain=None, range=str)
 
-slots.v1p4__rearrangement__j_support = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_support, name="v1p4__rearrangement__j_support", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_support'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_support, domain=None, range=Optional[float])
+slots.Rearrangement_c_score = Slot(uri=AK_SCHEMA.Rearrangement_c_score, name="Rearrangement_c_score", curie=AK_SCHEMA.curie('Rearrangement_c_score'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_score, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__j_cigar = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_cigar, name="v1p4__rearrangement__j_cigar", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_cigar'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_cigar, domain=None, range=str)
+slots.Rearrangement_c_identity = Slot(uri=AK_SCHEMA.Rearrangement_c_identity, name="Rearrangement_c_identity", curie=AK_SCHEMA.curie('Rearrangement_c_identity'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_identity, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__c_score = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_score, name="v1p4__rearrangement__c_score", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_score'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_score, domain=None, range=Optional[float])
+slots.Rearrangement_c_support = Slot(uri=AK_SCHEMA.Rearrangement_c_support, name="Rearrangement_c_support", curie=AK_SCHEMA.curie('Rearrangement_c_support'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_support, domain=None, range=Optional[float])
 
-slots.v1p4__rearrangement__c_identity = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_identity, name="v1p4__rearrangement__c_identity", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_identity'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_identity, domain=None, range=Optional[float])
+slots.Rearrangement_c_cigar = Slot(uri=AK_SCHEMA.Rearrangement_c_cigar, name="Rearrangement_c_cigar", curie=AK_SCHEMA.curie('Rearrangement_c_cigar'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_cigar, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__c_support = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_support, name="v1p4__rearrangement__c_support", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_support'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_support, domain=None, range=Optional[float])
+slots.Rearrangement_v_sequence_start = Slot(uri=AK_SCHEMA.Rearrangement_v_sequence_start, name="Rearrangement_v_sequence_start", curie=AK_SCHEMA.curie('Rearrangement_v_sequence_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_sequence_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_cigar = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_cigar, name="v1p4__rearrangement__c_cigar", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_cigar'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_cigar, domain=None, range=Optional[str])
+slots.Rearrangement_v_sequence_end = Slot(uri=AK_SCHEMA.Rearrangement_v_sequence_end, name="Rearrangement_v_sequence_end", curie=AK_SCHEMA.curie('Rearrangement_v_sequence_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_sequence_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__v_sequence_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_start, name="v1p4__rearrangement__v_sequence_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_sequence_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_start, domain=None, range=Optional[int])
+slots.Rearrangement_v_germline_start = Slot(uri=AK_SCHEMA.Rearrangement_v_germline_start, name="Rearrangement_v_germline_start", curie=AK_SCHEMA.curie('Rearrangement_v_germline_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_germline_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__v_sequence_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_end, name="v1p4__rearrangement__v_sequence_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_sequence_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_end, domain=None, range=Optional[int])
+slots.Rearrangement_v_germline_end = Slot(uri=AK_SCHEMA.Rearrangement_v_germline_end, name="Rearrangement_v_germline_end", curie=AK_SCHEMA.curie('Rearrangement_v_germline_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_germline_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__v_germline_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_germline_start, name="v1p4__rearrangement__v_germline_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_germline_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_germline_start, domain=None, range=Optional[int])
+slots.Rearrangement_v_alignment_start = Slot(uri=AK_SCHEMA.Rearrangement_v_alignment_start, name="Rearrangement_v_alignment_start", curie=AK_SCHEMA.curie('Rearrangement_v_alignment_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__v_germline_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_germline_end, name="v1p4__rearrangement__v_germline_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_germline_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_germline_end, domain=None, range=Optional[int])
+slots.Rearrangement_v_alignment_end = Slot(uri=AK_SCHEMA.Rearrangement_v_alignment_end, name="Rearrangement_v_alignment_end", curie=AK_SCHEMA.curie('Rearrangement_v_alignment_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__v_alignment_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_alignment_start, name="v1p4__rearrangement__v_alignment_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_alignment_start, domain=None, range=Optional[int])
+slots.Rearrangement_d_sequence_start = Slot(uri=AK_SCHEMA.Rearrangement_d_sequence_start, name="Rearrangement_d_sequence_start", curie=AK_SCHEMA.curie('Rearrangement_d_sequence_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_sequence_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__v_alignment_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_alignment_end, name="v1p4__rearrangement__v_alignment_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_alignment_end, domain=None, range=Optional[int])
+slots.Rearrangement_d_sequence_end = Slot(uri=AK_SCHEMA.Rearrangement_d_sequence_end, name="Rearrangement_d_sequence_end", curie=AK_SCHEMA.curie('Rearrangement_d_sequence_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_sequence_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d_sequence_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_start, name="v1p4__rearrangement__d_sequence_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_sequence_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_start, domain=None, range=Optional[int])
+slots.Rearrangement_d_germline_start = Slot(uri=AK_SCHEMA.Rearrangement_d_germline_start, name="Rearrangement_d_germline_start", curie=AK_SCHEMA.curie('Rearrangement_d_germline_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_germline_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d_sequence_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_end, name="v1p4__rearrangement__d_sequence_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_sequence_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_end, domain=None, range=Optional[int])
+slots.Rearrangement_d_germline_end = Slot(uri=AK_SCHEMA.Rearrangement_d_germline_end, name="Rearrangement_d_germline_end", curie=AK_SCHEMA.curie('Rearrangement_d_germline_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_germline_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d_germline_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_germline_start, name="v1p4__rearrangement__d_germline_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_germline_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_germline_start, domain=None, range=Optional[int])
+slots.Rearrangement_d_alignment_start = Slot(uri=AK_SCHEMA.Rearrangement_d_alignment_start, name="Rearrangement_d_alignment_start", curie=AK_SCHEMA.curie('Rearrangement_d_alignment_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d_germline_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_germline_end, name="v1p4__rearrangement__d_germline_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_germline_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_germline_end, domain=None, range=Optional[int])
+slots.Rearrangement_d_alignment_end = Slot(uri=AK_SCHEMA.Rearrangement_d_alignment_end, name="Rearrangement_d_alignment_end", curie=AK_SCHEMA.curie('Rearrangement_d_alignment_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d_alignment_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_alignment_start, name="v1p4__rearrangement__d_alignment_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_alignment_start, domain=None, range=Optional[int])
+slots.Rearrangement_d2_sequence_start = Slot(uri=AK_SCHEMA.Rearrangement_d2_sequence_start, name="Rearrangement_d2_sequence_start", curie=AK_SCHEMA.curie('Rearrangement_d2_sequence_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_sequence_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d_alignment_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_alignment_end, name="v1p4__rearrangement__d_alignment_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_alignment_end, domain=None, range=Optional[int])
+slots.Rearrangement_d2_sequence_end = Slot(uri=AK_SCHEMA.Rearrangement_d2_sequence_end, name="Rearrangement_d2_sequence_end", curie=AK_SCHEMA.curie('Rearrangement_d2_sequence_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_sequence_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d2_sequence_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_start, name="v1p4__rearrangement__d2_sequence_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_sequence_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_start, domain=None, range=Optional[int])
+slots.Rearrangement_d2_germline_start = Slot(uri=AK_SCHEMA.Rearrangement_d2_germline_start, name="Rearrangement_d2_germline_start", curie=AK_SCHEMA.curie('Rearrangement_d2_germline_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_germline_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d2_sequence_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_end, name="v1p4__rearrangement__d2_sequence_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_sequence_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_end, domain=None, range=Optional[int])
+slots.Rearrangement_d2_germline_end = Slot(uri=AK_SCHEMA.Rearrangement_d2_germline_end, name="Rearrangement_d2_germline_end", curie=AK_SCHEMA.curie('Rearrangement_d2_germline_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_germline_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d2_germline_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_start, name="v1p4__rearrangement__d2_germline_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_germline_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_start, domain=None, range=Optional[int])
+slots.Rearrangement_d2_alignment_start = Slot(uri=AK_SCHEMA.Rearrangement_d2_alignment_start, name="Rearrangement_d2_alignment_start", curie=AK_SCHEMA.curie('Rearrangement_d2_alignment_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d2_germline_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_end, name="v1p4__rearrangement__d2_germline_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_germline_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_end, domain=None, range=Optional[int])
+slots.Rearrangement_d2_alignment_end = Slot(uri=AK_SCHEMA.Rearrangement_d2_alignment_end, name="Rearrangement_d2_alignment_end", curie=AK_SCHEMA.curie('Rearrangement_d2_alignment_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d2_alignment_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_alignment_start, name="v1p4__rearrangement__d2_alignment_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_alignment_start, domain=None, range=Optional[int])
+slots.Rearrangement_j_sequence_start = Slot(uri=AK_SCHEMA.Rearrangement_j_sequence_start, name="Rearrangement_j_sequence_start", curie=AK_SCHEMA.curie('Rearrangement_j_sequence_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_sequence_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d2_alignment_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_alignment_end, name="v1p4__rearrangement__d2_alignment_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_alignment_end, domain=None, range=Optional[int])
+slots.Rearrangement_j_sequence_end = Slot(uri=AK_SCHEMA.Rearrangement_j_sequence_end, name="Rearrangement_j_sequence_end", curie=AK_SCHEMA.curie('Rearrangement_j_sequence_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_sequence_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__j_sequence_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_start, name="v1p4__rearrangement__j_sequence_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_sequence_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_start, domain=None, range=Optional[int])
+slots.Rearrangement_j_germline_start = Slot(uri=AK_SCHEMA.Rearrangement_j_germline_start, name="Rearrangement_j_germline_start", curie=AK_SCHEMA.curie('Rearrangement_j_germline_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_germline_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__j_sequence_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_end, name="v1p4__rearrangement__j_sequence_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_sequence_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_end, domain=None, range=Optional[int])
+slots.Rearrangement_j_germline_end = Slot(uri=AK_SCHEMA.Rearrangement_j_germline_end, name="Rearrangement_j_germline_end", curie=AK_SCHEMA.curie('Rearrangement_j_germline_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_germline_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__j_germline_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_germline_start, name="v1p4__rearrangement__j_germline_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_germline_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_germline_start, domain=None, range=Optional[int])
+slots.Rearrangement_j_alignment_start = Slot(uri=AK_SCHEMA.Rearrangement_j_alignment_start, name="Rearrangement_j_alignment_start", curie=AK_SCHEMA.curie('Rearrangement_j_alignment_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__j_germline_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_germline_end, name="v1p4__rearrangement__j_germline_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_germline_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_germline_end, domain=None, range=Optional[int])
+slots.Rearrangement_j_alignment_end = Slot(uri=AK_SCHEMA.Rearrangement_j_alignment_end, name="Rearrangement_j_alignment_end", curie=AK_SCHEMA.curie('Rearrangement_j_alignment_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__j_alignment_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_alignment_start, name="v1p4__rearrangement__j_alignment_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_alignment_start, domain=None, range=Optional[int])
+slots.Rearrangement_c_sequence_start = Slot(uri=AK_SCHEMA.Rearrangement_c_sequence_start, name="Rearrangement_c_sequence_start", curie=AK_SCHEMA.curie('Rearrangement_c_sequence_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_sequence_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__j_alignment_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_alignment_end, name="v1p4__rearrangement__j_alignment_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_alignment_end, domain=None, range=Optional[int])
+slots.Rearrangement_c_sequence_end = Slot(uri=AK_SCHEMA.Rearrangement_c_sequence_end, name="Rearrangement_c_sequence_end", curie=AK_SCHEMA.curie('Rearrangement_c_sequence_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_sequence_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_sequence_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_start, name="v1p4__rearrangement__c_sequence_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_sequence_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_start, domain=None, range=Optional[int])
+slots.Rearrangement_c_germline_start = Slot(uri=AK_SCHEMA.Rearrangement_c_germline_start, name="Rearrangement_c_germline_start", curie=AK_SCHEMA.curie('Rearrangement_c_germline_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_germline_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_sequence_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_end, name="v1p4__rearrangement__c_sequence_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_sequence_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_end, domain=None, range=Optional[int])
+slots.Rearrangement_c_germline_end = Slot(uri=AK_SCHEMA.Rearrangement_c_germline_end, name="Rearrangement_c_germline_end", curie=AK_SCHEMA.curie('Rearrangement_c_germline_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_germline_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_germline_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_germline_start, name="v1p4__rearrangement__c_germline_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_germline_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_germline_start, domain=None, range=Optional[int])
+slots.Rearrangement_c_alignment_start = Slot(uri=AK_SCHEMA.Rearrangement_c_alignment_start, name="Rearrangement_c_alignment_start", curie=AK_SCHEMA.curie('Rearrangement_c_alignment_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_germline_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_germline_end, name="v1p4__rearrangement__c_germline_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_germline_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_germline_end, domain=None, range=Optional[int])
+slots.Rearrangement_c_alignment_end = Slot(uri=AK_SCHEMA.Rearrangement_c_alignment_end, name="Rearrangement_c_alignment_end", curie=AK_SCHEMA.curie('Rearrangement_c_alignment_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_alignment_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_alignment_start, name="v1p4__rearrangement__c_alignment_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_alignment_start, domain=None, range=Optional[int])
+slots.Rearrangement_cdr1_start = Slot(uri=AK_SCHEMA.Rearrangement_cdr1_start, name="Rearrangement_cdr1_start", curie=AK_SCHEMA.curie('Rearrangement_cdr1_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr1_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_alignment_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_alignment_end, name="v1p4__rearrangement__c_alignment_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_alignment_end, domain=None, range=Optional[int])
+slots.Rearrangement_cdr1_end = Slot(uri=AK_SCHEMA.Rearrangement_cdr1_end, name="Rearrangement_cdr1_end", curie=AK_SCHEMA.curie('Rearrangement_cdr1_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr1_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__cdr1_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr1_start, name="v1p4__rearrangement__cdr1_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr1_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr1_start, domain=None, range=Optional[int])
+slots.Rearrangement_cdr2_start = Slot(uri=AK_SCHEMA.Rearrangement_cdr2_start, name="Rearrangement_cdr2_start", curie=AK_SCHEMA.curie('Rearrangement_cdr2_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr2_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__cdr1_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr1_end, name="v1p4__rearrangement__cdr1_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr1_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr1_end, domain=None, range=Optional[int])
+slots.Rearrangement_cdr2_end = Slot(uri=AK_SCHEMA.Rearrangement_cdr2_end, name="Rearrangement_cdr2_end", curie=AK_SCHEMA.curie('Rearrangement_cdr2_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr2_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__cdr2_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr2_start, name="v1p4__rearrangement__cdr2_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr2_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr2_start, domain=None, range=Optional[int])
+slots.Rearrangement_cdr3_start = Slot(uri=AK_SCHEMA.Rearrangement_cdr3_start, name="Rearrangement_cdr3_start", curie=AK_SCHEMA.curie('Rearrangement_cdr3_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr3_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__cdr2_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr2_end, name="v1p4__rearrangement__cdr2_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr2_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr2_end, domain=None, range=Optional[int])
+slots.Rearrangement_cdr3_end = Slot(uri=AK_SCHEMA.Rearrangement_cdr3_end, name="Rearrangement_cdr3_end", curie=AK_SCHEMA.curie('Rearrangement_cdr3_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_cdr3_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__cdr3_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr3_start, name="v1p4__rearrangement__cdr3_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr3_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr3_start, domain=None, range=Optional[int])
+slots.Rearrangement_fwr1_start = Slot(uri=AK_SCHEMA.Rearrangement_fwr1_start, name="Rearrangement_fwr1_start", curie=AK_SCHEMA.curie('Rearrangement_fwr1_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr1_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__cdr3_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cdr3_end, name="v1p4__rearrangement__cdr3_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__cdr3_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cdr3_end, domain=None, range=Optional[int])
+slots.Rearrangement_fwr1_end = Slot(uri=AK_SCHEMA.Rearrangement_fwr1_end, name="Rearrangement_fwr1_end", curie=AK_SCHEMA.curie('Rearrangement_fwr1_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr1_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__fwr1_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr1_start, name="v1p4__rearrangement__fwr1_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr1_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr1_start, domain=None, range=Optional[int])
+slots.Rearrangement_fwr2_start = Slot(uri=AK_SCHEMA.Rearrangement_fwr2_start, name="Rearrangement_fwr2_start", curie=AK_SCHEMA.curie('Rearrangement_fwr2_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr2_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__fwr1_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr1_end, name="v1p4__rearrangement__fwr1_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr1_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr1_end, domain=None, range=Optional[int])
+slots.Rearrangement_fwr2_end = Slot(uri=AK_SCHEMA.Rearrangement_fwr2_end, name="Rearrangement_fwr2_end", curie=AK_SCHEMA.curie('Rearrangement_fwr2_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr2_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__fwr2_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr2_start, name="v1p4__rearrangement__fwr2_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr2_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr2_start, domain=None, range=Optional[int])
+slots.Rearrangement_fwr3_start = Slot(uri=AK_SCHEMA.Rearrangement_fwr3_start, name="Rearrangement_fwr3_start", curie=AK_SCHEMA.curie('Rearrangement_fwr3_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr3_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__fwr2_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr2_end, name="v1p4__rearrangement__fwr2_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr2_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr2_end, domain=None, range=Optional[int])
+slots.Rearrangement_fwr3_end = Slot(uri=AK_SCHEMA.Rearrangement_fwr3_end, name="Rearrangement_fwr3_end", curie=AK_SCHEMA.curie('Rearrangement_fwr3_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr3_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__fwr3_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr3_start, name="v1p4__rearrangement__fwr3_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr3_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr3_start, domain=None, range=Optional[int])
+slots.Rearrangement_fwr4_start = Slot(uri=AK_SCHEMA.Rearrangement_fwr4_start, name="Rearrangement_fwr4_start", curie=AK_SCHEMA.curie('Rearrangement_fwr4_start'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr4_start, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__fwr3_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr3_end, name="v1p4__rearrangement__fwr3_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr3_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr3_end, domain=None, range=Optional[int])
+slots.Rearrangement_fwr4_end = Slot(uri=AK_SCHEMA.Rearrangement_fwr4_end, name="Rearrangement_fwr4_end", curie=AK_SCHEMA.curie('Rearrangement_fwr4_end'),
+                   model_uri=AK_SCHEMA.Rearrangement_fwr4_end, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__fwr4_start = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr4_start, name="v1p4__rearrangement__fwr4_start", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr4_start'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr4_start, domain=None, range=Optional[int])
+slots.Rearrangement_v_sequence_alignment = Slot(uri=AK_SCHEMA.Rearrangement_v_sequence_alignment, name="Rearrangement_v_sequence_alignment", curie=AK_SCHEMA.curie('Rearrangement_v_sequence_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_sequence_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__fwr4_end = Slot(uri=AK_SCHEMA.v1p4__rearrangement__fwr4_end, name="v1p4__rearrangement__fwr4_end", curie=AK_SCHEMA.curie('v1p4__rearrangement__fwr4_end'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__fwr4_end, domain=None, range=Optional[int])
+slots.Rearrangement_v_sequence_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_v_sequence_alignment_aa, name="Rearrangement_v_sequence_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_v_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_sequence_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__v_sequence_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_alignment, name="v1p4__rearrangement__v_sequence_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_sequence_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_d_sequence_alignment = Slot(uri=AK_SCHEMA.Rearrangement_d_sequence_alignment, name="Rearrangement_d_sequence_alignment", curie=AK_SCHEMA.curie('Rearrangement_d_sequence_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_sequence_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__v_sequence_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_alignment_aa, name="v1p4__rearrangement__v_sequence_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_sequence_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_sequence_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_d_sequence_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_d_sequence_alignment_aa, name="Rearrangement_d_sequence_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_d_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_sequence_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d_sequence_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_alignment, name="v1p4__rearrangement__d_sequence_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_sequence_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_d2_sequence_alignment = Slot(uri=AK_SCHEMA.Rearrangement_d2_sequence_alignment, name="Rearrangement_d2_sequence_alignment", curie=AK_SCHEMA.curie('Rearrangement_d2_sequence_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_sequence_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d_sequence_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_alignment_aa, name="v1p4__rearrangement__d_sequence_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_sequence_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_sequence_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_d2_sequence_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_d2_sequence_alignment_aa, name="Rearrangement_d2_sequence_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_d2_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_sequence_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d2_sequence_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_alignment, name="v1p4__rearrangement__d2_sequence_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_sequence_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_j_sequence_alignment = Slot(uri=AK_SCHEMA.Rearrangement_j_sequence_alignment, name="Rearrangement_j_sequence_alignment", curie=AK_SCHEMA.curie('Rearrangement_j_sequence_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_sequence_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d2_sequence_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_alignment_aa, name="v1p4__rearrangement__d2_sequence_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_sequence_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_sequence_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_j_sequence_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_j_sequence_alignment_aa, name="Rearrangement_j_sequence_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_j_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_sequence_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__j_sequence_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_alignment, name="v1p4__rearrangement__j_sequence_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_sequence_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_c_sequence_alignment = Slot(uri=AK_SCHEMA.Rearrangement_c_sequence_alignment, name="Rearrangement_c_sequence_alignment", curie=AK_SCHEMA.curie('Rearrangement_c_sequence_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_sequence_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__j_sequence_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_alignment_aa, name="v1p4__rearrangement__j_sequence_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_sequence_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_sequence_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_c_sequence_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_c_sequence_alignment_aa, name="Rearrangement_c_sequence_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_c_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_sequence_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__c_sequence_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_alignment, name="v1p4__rearrangement__c_sequence_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_sequence_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_v_germline_alignment = Slot(uri=AK_SCHEMA.Rearrangement_v_germline_alignment, name="Rearrangement_v_germline_alignment", curie=AK_SCHEMA.curie('Rearrangement_v_germline_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_germline_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__c_sequence_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_alignment_aa, name="v1p4__rearrangement__c_sequence_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_sequence_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_sequence_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_v_germline_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_v_germline_alignment_aa, name="Rearrangement_v_germline_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_v_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_germline_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__v_germline_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_germline_alignment, name="v1p4__rearrangement__v_germline_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_germline_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_germline_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_d_germline_alignment = Slot(uri=AK_SCHEMA.Rearrangement_d_germline_alignment, name="Rearrangement_d_germline_alignment", curie=AK_SCHEMA.curie('Rearrangement_d_germline_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_germline_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__v_germline_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_germline_alignment_aa, name="v1p4__rearrangement__v_germline_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_germline_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_germline_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_d_germline_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_d_germline_alignment_aa, name="Rearrangement_d_germline_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_d_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_germline_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d_germline_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_germline_alignment, name="v1p4__rearrangement__d_germline_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_germline_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_germline_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_d2_germline_alignment = Slot(uri=AK_SCHEMA.Rearrangement_d2_germline_alignment, name="Rearrangement_d2_germline_alignment", curie=AK_SCHEMA.curie('Rearrangement_d2_germline_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_germline_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d_germline_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_germline_alignment_aa, name="v1p4__rearrangement__d_germline_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_germline_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_germline_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_d2_germline_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_d2_germline_alignment_aa, name="Rearrangement_d2_germline_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_d2_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_germline_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d2_germline_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_alignment, name="v1p4__rearrangement__d2_germline_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_germline_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_j_germline_alignment = Slot(uri=AK_SCHEMA.Rearrangement_j_germline_alignment, name="Rearrangement_j_germline_alignment", curie=AK_SCHEMA.curie('Rearrangement_j_germline_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_germline_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__d2_germline_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_alignment_aa, name="v1p4__rearrangement__d2_germline_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_germline_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_germline_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_j_germline_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_j_germline_alignment_aa, name="Rearrangement_j_germline_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_j_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_germline_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__j_germline_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_germline_alignment, name="v1p4__rearrangement__j_germline_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_germline_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_germline_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_c_germline_alignment = Slot(uri=AK_SCHEMA.Rearrangement_c_germline_alignment, name="Rearrangement_c_germline_alignment", curie=AK_SCHEMA.curie('Rearrangement_c_germline_alignment'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_germline_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__j_germline_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_germline_alignment_aa, name="v1p4__rearrangement__j_germline_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_germline_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_germline_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_c_germline_alignment_aa = Slot(uri=AK_SCHEMA.Rearrangement_c_germline_alignment_aa, name="Rearrangement_c_germline_alignment_aa", curie=AK_SCHEMA.curie('Rearrangement_c_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.Rearrangement_c_germline_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__c_germline_alignment = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_germline_alignment, name="v1p4__rearrangement__c_germline_alignment", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_germline_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_germline_alignment, domain=None, range=Optional[str])
+slots.Rearrangement_junction_length = Slot(uri=AK_SCHEMA.Rearrangement_junction_length, name="Rearrangement_junction_length", curie=AK_SCHEMA.curie('Rearrangement_junction_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_junction_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__c_germline_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__rearrangement__c_germline_alignment_aa, name="v1p4__rearrangement__c_germline_alignment_aa", curie=AK_SCHEMA.curie('v1p4__rearrangement__c_germline_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__c_germline_alignment_aa, domain=None, range=Optional[str])
+slots.Rearrangement_junction_aa_length = Slot(uri=AK_SCHEMA.Rearrangement_junction_aa_length, name="Rearrangement_junction_aa_length", curie=AK_SCHEMA.curie('Rearrangement_junction_aa_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_junction_aa_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__junction_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__junction_length, name="v1p4__rearrangement__junction_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__junction_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__junction_length, domain=None, range=Optional[int])
+slots.Rearrangement_np1_length = Slot(uri=AK_SCHEMA.Rearrangement_np1_length, name="Rearrangement_np1_length", curie=AK_SCHEMA.curie('Rearrangement_np1_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_np1_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__junction_aa_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__junction_aa_length, name="v1p4__rearrangement__junction_aa_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__junction_aa_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__junction_aa_length, domain=None, range=Optional[int])
+slots.Rearrangement_np2_length = Slot(uri=AK_SCHEMA.Rearrangement_np2_length, name="Rearrangement_np2_length", curie=AK_SCHEMA.curie('Rearrangement_np2_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_np2_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__np1_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np1_length, name="v1p4__rearrangement__np1_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__np1_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np1_length, domain=None, range=Optional[int])
+slots.Rearrangement_np3_length = Slot(uri=AK_SCHEMA.Rearrangement_np3_length, name="Rearrangement_np3_length", curie=AK_SCHEMA.curie('Rearrangement_np3_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_np3_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__np2_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np2_length, name="v1p4__rearrangement__np2_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__np2_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np2_length, domain=None, range=Optional[int])
+slots.Rearrangement_n1_length = Slot(uri=AK_SCHEMA.Rearrangement_n1_length, name="Rearrangement_n1_length", curie=AK_SCHEMA.curie('Rearrangement_n1_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_n1_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__np3_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__np3_length, name="v1p4__rearrangement__np3_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__np3_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__np3_length, domain=None, range=Optional[int])
+slots.Rearrangement_n2_length = Slot(uri=AK_SCHEMA.Rearrangement_n2_length, name="Rearrangement_n2_length", curie=AK_SCHEMA.curie('Rearrangement_n2_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_n2_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__n1_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__n1_length, name="v1p4__rearrangement__n1_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__n1_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__n1_length, domain=None, range=Optional[int])
+slots.Rearrangement_n3_length = Slot(uri=AK_SCHEMA.Rearrangement_n3_length, name="Rearrangement_n3_length", curie=AK_SCHEMA.curie('Rearrangement_n3_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_n3_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__n2_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__n2_length, name="v1p4__rearrangement__n2_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__n2_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__n2_length, domain=None, range=Optional[int])
+slots.Rearrangement_p3v_length = Slot(uri=AK_SCHEMA.Rearrangement_p3v_length, name="Rearrangement_p3v_length", curie=AK_SCHEMA.curie('Rearrangement_p3v_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_p3v_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__n3_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__n3_length, name="v1p4__rearrangement__n3_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__n3_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__n3_length, domain=None, range=Optional[int])
+slots.Rearrangement_p5d_length = Slot(uri=AK_SCHEMA.Rearrangement_p5d_length, name="Rearrangement_p5d_length", curie=AK_SCHEMA.curie('Rearrangement_p5d_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_p5d_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__p3v_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__p3v_length, name="v1p4__rearrangement__p3v_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__p3v_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__p3v_length, domain=None, range=Optional[int])
+slots.Rearrangement_p3d_length = Slot(uri=AK_SCHEMA.Rearrangement_p3d_length, name="Rearrangement_p3d_length", curie=AK_SCHEMA.curie('Rearrangement_p3d_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_p3d_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__p5d_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__p5d_length, name="v1p4__rearrangement__p5d_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__p5d_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__p5d_length, domain=None, range=Optional[int])
+slots.Rearrangement_p5d2_length = Slot(uri=AK_SCHEMA.Rearrangement_p5d2_length, name="Rearrangement_p5d2_length", curie=AK_SCHEMA.curie('Rearrangement_p5d2_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_p5d2_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__p3d_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__p3d_length, name="v1p4__rearrangement__p3d_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__p3d_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__p3d_length, domain=None, range=Optional[int])
+slots.Rearrangement_p3d2_length = Slot(uri=AK_SCHEMA.Rearrangement_p3d2_length, name="Rearrangement_p3d2_length", curie=AK_SCHEMA.curie('Rearrangement_p3d2_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_p3d2_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__p5d2_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__p5d2_length, name="v1p4__rearrangement__p5d2_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__p5d2_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__p5d2_length, domain=None, range=Optional[int])
+slots.Rearrangement_p5j_length = Slot(uri=AK_SCHEMA.Rearrangement_p5j_length, name="Rearrangement_p5j_length", curie=AK_SCHEMA.curie('Rearrangement_p5j_length'),
+                   model_uri=AK_SCHEMA.Rearrangement_p5j_length, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__p3d2_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__p3d2_length, name="v1p4__rearrangement__p3d2_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__p3d2_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__p3d2_length, domain=None, range=Optional[int])
+slots.Rearrangement_v_frameshift = Slot(uri=AK_SCHEMA.Rearrangement_v_frameshift, name="Rearrangement_v_frameshift", curie=AK_SCHEMA.curie('Rearrangement_v_frameshift'),
+                   model_uri=AK_SCHEMA.Rearrangement_v_frameshift, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.v1p4__rearrangement__p5j_length = Slot(uri=AK_SCHEMA.v1p4__rearrangement__p5j_length, name="v1p4__rearrangement__p5j_length", curie=AK_SCHEMA.curie('v1p4__rearrangement__p5j_length'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__p5j_length, domain=None, range=Optional[int])
+slots.Rearrangement_j_frameshift = Slot(uri=AK_SCHEMA.Rearrangement_j_frameshift, name="Rearrangement_j_frameshift", curie=AK_SCHEMA.curie('Rearrangement_j_frameshift'),
+                   model_uri=AK_SCHEMA.Rearrangement_j_frameshift, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.v1p4__rearrangement__v_frameshift = Slot(uri=AK_SCHEMA.v1p4__rearrangement__v_frameshift, name="v1p4__rearrangement__v_frameshift", curie=AK_SCHEMA.curie('v1p4__rearrangement__v_frameshift'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__v_frameshift, domain=None, range=Optional[Union[bool, Bool]])
+slots.Rearrangement_d_frame = Slot(uri=AK_SCHEMA.Rearrangement_d_frame, name="Rearrangement_d_frame", curie=AK_SCHEMA.curie('Rearrangement_d_frame'),
+                   model_uri=AK_SCHEMA.Rearrangement_d_frame, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__j_frameshift = Slot(uri=AK_SCHEMA.v1p4__rearrangement__j_frameshift, name="v1p4__rearrangement__j_frameshift", curie=AK_SCHEMA.curie('v1p4__rearrangement__j_frameshift'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__j_frameshift, domain=None, range=Optional[Union[bool, Bool]])
+slots.Rearrangement_d2_frame = Slot(uri=AK_SCHEMA.Rearrangement_d2_frame, name="Rearrangement_d2_frame", curie=AK_SCHEMA.curie('Rearrangement_d2_frame'),
+                   model_uri=AK_SCHEMA.Rearrangement_d2_frame, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d_frame = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d_frame, name="v1p4__rearrangement__d_frame", curie=AK_SCHEMA.curie('v1p4__rearrangement__d_frame'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d_frame, domain=None, range=Optional[int])
+slots.Rearrangement_consensus_count = Slot(uri=AK_SCHEMA.Rearrangement_consensus_count, name="Rearrangement_consensus_count", curie=AK_SCHEMA.curie('Rearrangement_consensus_count'),
+                   model_uri=AK_SCHEMA.Rearrangement_consensus_count, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__d2_frame = Slot(uri=AK_SCHEMA.v1p4__rearrangement__d2_frame, name="v1p4__rearrangement__d2_frame", curie=AK_SCHEMA.curie('v1p4__rearrangement__d2_frame'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__d2_frame, domain=None, range=Optional[int])
+slots.Rearrangement_duplicate_count = Slot(uri=AK_SCHEMA.Rearrangement_duplicate_count, name="Rearrangement_duplicate_count", curie=AK_SCHEMA.curie('Rearrangement_duplicate_count'),
+                   model_uri=AK_SCHEMA.Rearrangement_duplicate_count, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__consensus_count = Slot(uri=AK_SCHEMA.v1p4__rearrangement__consensus_count, name="v1p4__rearrangement__consensus_count", curie=AK_SCHEMA.curie('v1p4__rearrangement__consensus_count'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__consensus_count, domain=None, range=Optional[int])
+slots.Rearrangement_umi_count = Slot(uri=AK_SCHEMA.Rearrangement_umi_count, name="Rearrangement_umi_count", curie=AK_SCHEMA.curie('Rearrangement_umi_count'),
+                   model_uri=AK_SCHEMA.Rearrangement_umi_count, domain=None, range=Optional[int])
 
-slots.v1p4__rearrangement__duplicate_count = Slot(uri=AK_SCHEMA.v1p4__rearrangement__duplicate_count, name="v1p4__rearrangement__duplicate_count", curie=AK_SCHEMA.curie('v1p4__rearrangement__duplicate_count'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__duplicate_count, domain=None, range=Optional[int])
+slots.Rearrangement_cell_id = Slot(uri=AK_SCHEMA.Rearrangement_cell_id, name="Rearrangement_cell_id", curie=AK_SCHEMA.curie('Rearrangement_cell_id'),
+                   model_uri=AK_SCHEMA.Rearrangement_cell_id, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__umi_count = Slot(uri=AK_SCHEMA.v1p4__rearrangement__umi_count, name="v1p4__rearrangement__umi_count", curie=AK_SCHEMA.curie('v1p4__rearrangement__umi_count'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__umi_count, domain=None, range=Optional[int])
+slots.Rearrangement_clone_id = Slot(uri=AK_SCHEMA.Rearrangement_clone_id, name="Rearrangement_clone_id", curie=AK_SCHEMA.curie('Rearrangement_clone_id'),
+                   model_uri=AK_SCHEMA.Rearrangement_clone_id, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__cell_id = Slot(uri=AK_SCHEMA.v1p4__rearrangement__cell_id, name="v1p4__rearrangement__cell_id", curie=AK_SCHEMA.curie('v1p4__rearrangement__cell_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__cell_id, domain=None, range=Optional[str])
+slots.Rearrangement_repertoire_id = Slot(uri=AK_SCHEMA.Rearrangement_repertoire_id, name="Rearrangement_repertoire_id", curie=AK_SCHEMA.curie('Rearrangement_repertoire_id'),
+                   model_uri=AK_SCHEMA.Rearrangement_repertoire_id, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__clone_id = Slot(uri=AK_SCHEMA.v1p4__rearrangement__clone_id, name="v1p4__rearrangement__clone_id", curie=AK_SCHEMA.curie('v1p4__rearrangement__clone_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__clone_id, domain=None, range=Optional[str])
+slots.Rearrangement_sample_processing_id = Slot(uri=AK_SCHEMA.Rearrangement_sample_processing_id, name="Rearrangement_sample_processing_id", curie=AK_SCHEMA.curie('Rearrangement_sample_processing_id'),
+                   model_uri=AK_SCHEMA.Rearrangement_sample_processing_id, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__reactivity_id = Slot(uri=AK_SCHEMA.v1p4__rearrangement__reactivity_id, name="v1p4__rearrangement__reactivity_id", curie=AK_SCHEMA.curie('v1p4__rearrangement__reactivity_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__reactivity_id, domain=None, range=Optional[str])
+slots.Rearrangement_data_processing_id = Slot(uri=AK_SCHEMA.Rearrangement_data_processing_id, name="Rearrangement_data_processing_id", curie=AK_SCHEMA.curie('Rearrangement_data_processing_id'),
+                   model_uri=AK_SCHEMA.Rearrangement_data_processing_id, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__reactivity_ref = Slot(uri=AK_SCHEMA.v1p4__rearrangement__reactivity_ref, name="v1p4__rearrangement__reactivity_ref", curie=AK_SCHEMA.curie('v1p4__rearrangement__reactivity_ref'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__reactivity_ref, domain=None, range=Optional[str])
+slots.Clone_clone_id = Slot(uri=AK_SCHEMA.Clone_clone_id, name="Clone_clone_id", curie=AK_SCHEMA.curie('Clone_clone_id'),
+                   model_uri=AK_SCHEMA.Clone_clone_id, domain=None, range=str)
 
-slots.v1p4__rearrangement__repertoire_id = Slot(uri=AK_SCHEMA.v1p4__rearrangement__repertoire_id, name="v1p4__rearrangement__repertoire_id", curie=AK_SCHEMA.curie('v1p4__rearrangement__repertoire_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__repertoire_id, domain=None, range=Optional[str])
+slots.Clone_repertoire_id = Slot(uri=AK_SCHEMA.Clone_repertoire_id, name="Clone_repertoire_id", curie=AK_SCHEMA.curie('Clone_repertoire_id'),
+                   model_uri=AK_SCHEMA.Clone_repertoire_id, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__sample_processing_id = Slot(uri=AK_SCHEMA.v1p4__rearrangement__sample_processing_id, name="v1p4__rearrangement__sample_processing_id", curie=AK_SCHEMA.curie('v1p4__rearrangement__sample_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__sample_processing_id, domain=None, range=Optional[str])
+slots.Clone_data_processing_id = Slot(uri=AK_SCHEMA.Clone_data_processing_id, name="Clone_data_processing_id", curie=AK_SCHEMA.curie('Clone_data_processing_id'),
+                   model_uri=AK_SCHEMA.Clone_data_processing_id, domain=None, range=Optional[str])
 
-slots.v1p4__rearrangement__data_processing_id = Slot(uri=AK_SCHEMA.v1p4__rearrangement__data_processing_id, name="v1p4__rearrangement__data_processing_id", curie=AK_SCHEMA.curie('v1p4__rearrangement__data_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__rearrangement__data_processing_id, domain=None, range=Optional[str])
+slots.Clone_sequences = Slot(uri=AK_SCHEMA.Clone_sequences, name="Clone_sequences", curie=AK_SCHEMA.curie('Clone_sequences'),
+                   model_uri=AK_SCHEMA.Clone_sequences, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.v1p4__clone__clone_id = Slot(uri=AK_SCHEMA.v1p4__clone__clone_id, name="v1p4__clone__clone_id", curie=AK_SCHEMA.curie('v1p4__clone__clone_id'),
-                   model_uri=AK_SCHEMA.v1p4__clone__clone_id, domain=None, range=str)
+slots.Clone_v_call = Slot(uri=AK_SCHEMA.Clone_v_call, name="Clone_v_call", curie=AK_SCHEMA.curie('Clone_v_call'),
+                   model_uri=AK_SCHEMA.Clone_v_call, domain=None, range=Optional[str])
 
-slots.v1p4__clone__repertoire_id = Slot(uri=AK_SCHEMA.v1p4__clone__repertoire_id, name="v1p4__clone__repertoire_id", curie=AK_SCHEMA.curie('v1p4__clone__repertoire_id'),
-                   model_uri=AK_SCHEMA.v1p4__clone__repertoire_id, domain=None, range=Optional[str])
+slots.Clone_d_call = Slot(uri=AK_SCHEMA.Clone_d_call, name="Clone_d_call", curie=AK_SCHEMA.curie('Clone_d_call'),
+                   model_uri=AK_SCHEMA.Clone_d_call, domain=None, range=Optional[str])
 
-slots.v1p4__clone__data_processing_id = Slot(uri=AK_SCHEMA.v1p4__clone__data_processing_id, name="v1p4__clone__data_processing_id", curie=AK_SCHEMA.curie('v1p4__clone__data_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__clone__data_processing_id, domain=None, range=Optional[str])
+slots.Clone_j_call = Slot(uri=AK_SCHEMA.Clone_j_call, name="Clone_j_call", curie=AK_SCHEMA.curie('Clone_j_call'),
+                   model_uri=AK_SCHEMA.Clone_j_call, domain=None, range=Optional[str])
 
-slots.v1p4__clone__sequences = Slot(uri=AK_SCHEMA.v1p4__clone__sequences, name="v1p4__clone__sequences", curie=AK_SCHEMA.curie('v1p4__clone__sequences'),
-                   model_uri=AK_SCHEMA.v1p4__clone__sequences, domain=None, range=Optional[Union[str, List[str]]])
+slots.Clone_junction = Slot(uri=AK_SCHEMA.Clone_junction, name="Clone_junction", curie=AK_SCHEMA.curie('Clone_junction'),
+                   model_uri=AK_SCHEMA.Clone_junction, domain=None, range=Optional[str])
 
-slots.v1p4__clone__v_call = Slot(uri=AK_SCHEMA.v1p4__clone__v_call, name="v1p4__clone__v_call", curie=AK_SCHEMA.curie('v1p4__clone__v_call'),
-                   model_uri=AK_SCHEMA.v1p4__clone__v_call, domain=None, range=Optional[str])
+slots.Clone_junction_aa = Slot(uri=AK_SCHEMA.Clone_junction_aa, name="Clone_junction_aa", curie=AK_SCHEMA.curie('Clone_junction_aa'),
+                   model_uri=AK_SCHEMA.Clone_junction_aa, domain=None, range=Optional[str])
 
-slots.v1p4__clone__d_call = Slot(uri=AK_SCHEMA.v1p4__clone__d_call, name="v1p4__clone__d_call", curie=AK_SCHEMA.curie('v1p4__clone__d_call'),
-                   model_uri=AK_SCHEMA.v1p4__clone__d_call, domain=None, range=Optional[str])
+slots.Clone_junction_length = Slot(uri=AK_SCHEMA.Clone_junction_length, name="Clone_junction_length", curie=AK_SCHEMA.curie('Clone_junction_length'),
+                   model_uri=AK_SCHEMA.Clone_junction_length, domain=None, range=Optional[int])
 
-slots.v1p4__clone__j_call = Slot(uri=AK_SCHEMA.v1p4__clone__j_call, name="v1p4__clone__j_call", curie=AK_SCHEMA.curie('v1p4__clone__j_call'),
-                   model_uri=AK_SCHEMA.v1p4__clone__j_call, domain=None, range=Optional[str])
+slots.Clone_junction_aa_length = Slot(uri=AK_SCHEMA.Clone_junction_aa_length, name="Clone_junction_aa_length", curie=AK_SCHEMA.curie('Clone_junction_aa_length'),
+                   model_uri=AK_SCHEMA.Clone_junction_aa_length, domain=None, range=Optional[int])
 
-slots.v1p4__clone__junction = Slot(uri=AK_SCHEMA.v1p4__clone__junction, name="v1p4__clone__junction", curie=AK_SCHEMA.curie('v1p4__clone__junction'),
-                   model_uri=AK_SCHEMA.v1p4__clone__junction, domain=None, range=Optional[str])
+slots.Clone_germline_alignment = Slot(uri=AK_SCHEMA.Clone_germline_alignment, name="Clone_germline_alignment", curie=AK_SCHEMA.curie('Clone_germline_alignment'),
+                   model_uri=AK_SCHEMA.Clone_germline_alignment, domain=None, range=str)
 
-slots.v1p4__clone__junction_aa = Slot(uri=AK_SCHEMA.v1p4__clone__junction_aa, name="v1p4__clone__junction_aa", curie=AK_SCHEMA.curie('v1p4__clone__junction_aa'),
-                   model_uri=AK_SCHEMA.v1p4__clone__junction_aa, domain=None, range=Optional[str])
+slots.Clone_germline_alignment_aa = Slot(uri=AK_SCHEMA.Clone_germline_alignment_aa, name="Clone_germline_alignment_aa", curie=AK_SCHEMA.curie('Clone_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.Clone_germline_alignment_aa, domain=None, range=Optional[str])
 
-slots.v1p4__clone__junction_length = Slot(uri=AK_SCHEMA.v1p4__clone__junction_length, name="v1p4__clone__junction_length", curie=AK_SCHEMA.curie('v1p4__clone__junction_length'),
-                   model_uri=AK_SCHEMA.v1p4__clone__junction_length, domain=None, range=Optional[int])
+slots.Clone_v_alignment_start = Slot(uri=AK_SCHEMA.Clone_v_alignment_start, name="Clone_v_alignment_start", curie=AK_SCHEMA.curie('Clone_v_alignment_start'),
+                   model_uri=AK_SCHEMA.Clone_v_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__clone__junction_aa_length = Slot(uri=AK_SCHEMA.v1p4__clone__junction_aa_length, name="v1p4__clone__junction_aa_length", curie=AK_SCHEMA.curie('v1p4__clone__junction_aa_length'),
-                   model_uri=AK_SCHEMA.v1p4__clone__junction_aa_length, domain=None, range=Optional[int])
+slots.Clone_v_alignment_end = Slot(uri=AK_SCHEMA.Clone_v_alignment_end, name="Clone_v_alignment_end", curie=AK_SCHEMA.curie('Clone_v_alignment_end'),
+                   model_uri=AK_SCHEMA.Clone_v_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__clone__germline_alignment = Slot(uri=AK_SCHEMA.v1p4__clone__germline_alignment, name="v1p4__clone__germline_alignment", curie=AK_SCHEMA.curie('v1p4__clone__germline_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__clone__germline_alignment, domain=None, range=str)
+slots.Clone_d_alignment_start = Slot(uri=AK_SCHEMA.Clone_d_alignment_start, name="Clone_d_alignment_start", curie=AK_SCHEMA.curie('Clone_d_alignment_start'),
+                   model_uri=AK_SCHEMA.Clone_d_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__clone__germline_alignment_aa = Slot(uri=AK_SCHEMA.v1p4__clone__germline_alignment_aa, name="v1p4__clone__germline_alignment_aa", curie=AK_SCHEMA.curie('v1p4__clone__germline_alignment_aa'),
-                   model_uri=AK_SCHEMA.v1p4__clone__germline_alignment_aa, domain=None, range=Optional[str])
+slots.Clone_d_alignment_end = Slot(uri=AK_SCHEMA.Clone_d_alignment_end, name="Clone_d_alignment_end", curie=AK_SCHEMA.curie('Clone_d_alignment_end'),
+                   model_uri=AK_SCHEMA.Clone_d_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__clone__v_alignment_start = Slot(uri=AK_SCHEMA.v1p4__clone__v_alignment_start, name="v1p4__clone__v_alignment_start", curie=AK_SCHEMA.curie('v1p4__clone__v_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__clone__v_alignment_start, domain=None, range=Optional[int])
+slots.Clone_j_alignment_start = Slot(uri=AK_SCHEMA.Clone_j_alignment_start, name="Clone_j_alignment_start", curie=AK_SCHEMA.curie('Clone_j_alignment_start'),
+                   model_uri=AK_SCHEMA.Clone_j_alignment_start, domain=None, range=Optional[int])
 
-slots.v1p4__clone__v_alignment_end = Slot(uri=AK_SCHEMA.v1p4__clone__v_alignment_end, name="v1p4__clone__v_alignment_end", curie=AK_SCHEMA.curie('v1p4__clone__v_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__clone__v_alignment_end, domain=None, range=Optional[int])
+slots.Clone_j_alignment_end = Slot(uri=AK_SCHEMA.Clone_j_alignment_end, name="Clone_j_alignment_end", curie=AK_SCHEMA.curie('Clone_j_alignment_end'),
+                   model_uri=AK_SCHEMA.Clone_j_alignment_end, domain=None, range=Optional[int])
 
-slots.v1p4__clone__d_alignment_start = Slot(uri=AK_SCHEMA.v1p4__clone__d_alignment_start, name="v1p4__clone__d_alignment_start", curie=AK_SCHEMA.curie('v1p4__clone__d_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__clone__d_alignment_start, domain=None, range=Optional[int])
+slots.Clone_junction_start = Slot(uri=AK_SCHEMA.Clone_junction_start, name="Clone_junction_start", curie=AK_SCHEMA.curie('Clone_junction_start'),
+                   model_uri=AK_SCHEMA.Clone_junction_start, domain=None, range=Optional[int])
 
-slots.v1p4__clone__d_alignment_end = Slot(uri=AK_SCHEMA.v1p4__clone__d_alignment_end, name="v1p4__clone__d_alignment_end", curie=AK_SCHEMA.curie('v1p4__clone__d_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__clone__d_alignment_end, domain=None, range=Optional[int])
+slots.Clone_junction_end = Slot(uri=AK_SCHEMA.Clone_junction_end, name="Clone_junction_end", curie=AK_SCHEMA.curie('Clone_junction_end'),
+                   model_uri=AK_SCHEMA.Clone_junction_end, domain=None, range=Optional[int])
 
-slots.v1p4__clone__j_alignment_start = Slot(uri=AK_SCHEMA.v1p4__clone__j_alignment_start, name="v1p4__clone__j_alignment_start", curie=AK_SCHEMA.curie('v1p4__clone__j_alignment_start'),
-                   model_uri=AK_SCHEMA.v1p4__clone__j_alignment_start, domain=None, range=Optional[int])
+slots.Clone_umi_count = Slot(uri=AK_SCHEMA.Clone_umi_count, name="Clone_umi_count", curie=AK_SCHEMA.curie('Clone_umi_count'),
+                   model_uri=AK_SCHEMA.Clone_umi_count, domain=None, range=Optional[int])
 
-slots.v1p4__clone__j_alignment_end = Slot(uri=AK_SCHEMA.v1p4__clone__j_alignment_end, name="v1p4__clone__j_alignment_end", curie=AK_SCHEMA.curie('v1p4__clone__j_alignment_end'),
-                   model_uri=AK_SCHEMA.v1p4__clone__j_alignment_end, domain=None, range=Optional[int])
+slots.Clone_clone_count = Slot(uri=AK_SCHEMA.Clone_clone_count, name="Clone_clone_count", curie=AK_SCHEMA.curie('Clone_clone_count'),
+                   model_uri=AK_SCHEMA.Clone_clone_count, domain=None, range=Optional[int])
 
-slots.v1p4__clone__junction_start = Slot(uri=AK_SCHEMA.v1p4__clone__junction_start, name="v1p4__clone__junction_start", curie=AK_SCHEMA.curie('v1p4__clone__junction_start'),
-                   model_uri=AK_SCHEMA.v1p4__clone__junction_start, domain=None, range=Optional[int])
+slots.Clone_seed_id = Slot(uri=AK_SCHEMA.Clone_seed_id, name="Clone_seed_id", curie=AK_SCHEMA.curie('Clone_seed_id'),
+                   model_uri=AK_SCHEMA.Clone_seed_id, domain=None, range=Optional[str])
 
-slots.v1p4__clone__junction_end = Slot(uri=AK_SCHEMA.v1p4__clone__junction_end, name="v1p4__clone__junction_end", curie=AK_SCHEMA.curie('v1p4__clone__junction_end'),
-                   model_uri=AK_SCHEMA.v1p4__clone__junction_end, domain=None, range=Optional[int])
+slots.Tree_tree_id = Slot(uri=AK_SCHEMA.Tree_tree_id, name="Tree_tree_id", curie=AK_SCHEMA.curie('Tree_tree_id'),
+                   model_uri=AK_SCHEMA.Tree_tree_id, domain=None, range=str)
 
-slots.v1p4__clone__umi_count = Slot(uri=AK_SCHEMA.v1p4__clone__umi_count, name="v1p4__clone__umi_count", curie=AK_SCHEMA.curie('v1p4__clone__umi_count'),
-                   model_uri=AK_SCHEMA.v1p4__clone__umi_count, domain=None, range=Optional[int])
+slots.Tree_clone_id = Slot(uri=AK_SCHEMA.Tree_clone_id, name="Tree_clone_id", curie=AK_SCHEMA.curie('Tree_clone_id'),
+                   model_uri=AK_SCHEMA.Tree_clone_id, domain=None, range=str)
 
-slots.v1p4__clone__clone_count = Slot(uri=AK_SCHEMA.v1p4__clone__clone_count, name="v1p4__clone__clone_count", curie=AK_SCHEMA.curie('v1p4__clone__clone_count'),
-                   model_uri=AK_SCHEMA.v1p4__clone__clone_count, domain=None, range=Optional[int])
+slots.Tree_newick = Slot(uri=AK_SCHEMA.Tree_newick, name="Tree_newick", curie=AK_SCHEMA.curie('Tree_newick'),
+                   model_uri=AK_SCHEMA.Tree_newick, domain=None, range=str)
 
-slots.v1p4__clone__seed_id = Slot(uri=AK_SCHEMA.v1p4__clone__seed_id, name="v1p4__clone__seed_id", curie=AK_SCHEMA.curie('v1p4__clone__seed_id'),
-                   model_uri=AK_SCHEMA.v1p4__clone__seed_id, domain=None, range=Optional[str])
+slots.Tree_nodes = Slot(uri=AK_SCHEMA.Tree_nodes, name="Tree_nodes", curie=AK_SCHEMA.curie('Tree_nodes'),
+                   model_uri=AK_SCHEMA.Tree_nodes, domain=None, range=Optional[str])
 
-slots.v1p4__tree__tree_id = Slot(uri=AK_SCHEMA.v1p4__tree__tree_id, name="v1p4__tree__tree_id", curie=AK_SCHEMA.curie('v1p4__tree__tree_id'),
-                   model_uri=AK_SCHEMA.v1p4__tree__tree_id, domain=None, range=str)
+slots.Node_sequence_id = Slot(uri=AK_SCHEMA.Node_sequence_id, name="Node_sequence_id", curie=AK_SCHEMA.curie('Node_sequence_id'),
+                   model_uri=AK_SCHEMA.Node_sequence_id, domain=None, range=str)
 
-slots.v1p4__tree__clone_id = Slot(uri=AK_SCHEMA.v1p4__tree__clone_id, name="v1p4__tree__clone_id", curie=AK_SCHEMA.curie('v1p4__tree__clone_id'),
-                   model_uri=AK_SCHEMA.v1p4__tree__clone_id, domain=None, range=str)
+slots.Node_sequence_alignment = Slot(uri=AK_SCHEMA.Node_sequence_alignment, name="Node_sequence_alignment", curie=AK_SCHEMA.curie('Node_sequence_alignment'),
+                   model_uri=AK_SCHEMA.Node_sequence_alignment, domain=None, range=Optional[str])
 
-slots.v1p4__tree__newick = Slot(uri=AK_SCHEMA.v1p4__tree__newick, name="v1p4__tree__newick", curie=AK_SCHEMA.curie('v1p4__tree__newick'),
-                   model_uri=AK_SCHEMA.v1p4__tree__newick, domain=None, range=str)
+slots.Node_junction = Slot(uri=AK_SCHEMA.Node_junction, name="Node_junction", curie=AK_SCHEMA.curie('Node_junction'),
+                   model_uri=AK_SCHEMA.Node_junction, domain=None, range=Optional[str])
 
-slots.v1p4__tree__nodes = Slot(uri=AK_SCHEMA.v1p4__tree__nodes, name="v1p4__tree__nodes", curie=AK_SCHEMA.curie('v1p4__tree__nodes'),
-                   model_uri=AK_SCHEMA.v1p4__tree__nodes, domain=None, range=Optional[str])
+slots.Node_junction_aa = Slot(uri=AK_SCHEMA.Node_junction_aa, name="Node_junction_aa", curie=AK_SCHEMA.curie('Node_junction_aa'),
+                   model_uri=AK_SCHEMA.Node_junction_aa, domain=None, range=Optional[str])
 
-slots.v1p4__node__sequence_id = Slot(uri=AK_SCHEMA.v1p4__node__sequence_id, name="v1p4__node__sequence_id", curie=AK_SCHEMA.curie('v1p4__node__sequence_id'),
-                   model_uri=AK_SCHEMA.v1p4__node__sequence_id, domain=None, range=str)
+slots.Cell_cell_id = Slot(uri=AK_SCHEMA.Cell_cell_id, name="Cell_cell_id", curie=AK_SCHEMA.curie('Cell_cell_id'),
+                   model_uri=AK_SCHEMA.Cell_cell_id, domain=None, range=str)
 
-slots.v1p4__node__sequence_alignment = Slot(uri=AK_SCHEMA.v1p4__node__sequence_alignment, name="v1p4__node__sequence_alignment", curie=AK_SCHEMA.curie('v1p4__node__sequence_alignment'),
-                   model_uri=AK_SCHEMA.v1p4__node__sequence_alignment, domain=None, range=Optional[str])
+slots.Cell_rearrangements = Slot(uri=AK_SCHEMA.Cell_rearrangements, name="Cell_rearrangements", curie=AK_SCHEMA.curie('Cell_rearrangements'),
+                   model_uri=AK_SCHEMA.Cell_rearrangements, domain=None, range=Union[str, List[str]])
 
-slots.v1p4__node__junction = Slot(uri=AK_SCHEMA.v1p4__node__junction, name="v1p4__node__junction", curie=AK_SCHEMA.curie('v1p4__node__junction'),
-                   model_uri=AK_SCHEMA.v1p4__node__junction, domain=None, range=Optional[str])
+slots.Cell_receptors = Slot(uri=AK_SCHEMA.Cell_receptors, name="Cell_receptors", curie=AK_SCHEMA.curie('Cell_receptors'),
+                   model_uri=AK_SCHEMA.Cell_receptors, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.v1p4__node__junction_aa = Slot(uri=AK_SCHEMA.v1p4__node__junction_aa, name="v1p4__node__junction_aa", curie=AK_SCHEMA.curie('v1p4__node__junction_aa'),
-                   model_uri=AK_SCHEMA.v1p4__node__junction_aa, domain=None, range=Optional[str])
+slots.Cell_repertoire_id = Slot(uri=AK_SCHEMA.Cell_repertoire_id, name="Cell_repertoire_id", curie=AK_SCHEMA.curie('Cell_repertoire_id'),
+                   model_uri=AK_SCHEMA.Cell_repertoire_id, domain=None, range=str)
 
-slots.v1p4__cell__cell_id = Slot(uri=AK_SCHEMA.v1p4__cell__cell_id, name="v1p4__cell__cell_id", curie=AK_SCHEMA.curie('v1p4__cell__cell_id'),
-                   model_uri=AK_SCHEMA.v1p4__cell__cell_id, domain=None, range=str)
+slots.Cell_data_processing_id = Slot(uri=AK_SCHEMA.Cell_data_processing_id, name="Cell_data_processing_id", curie=AK_SCHEMA.curie('Cell_data_processing_id'),
+                   model_uri=AK_SCHEMA.Cell_data_processing_id, domain=None, range=Optional[str])
 
-slots.v1p4__cell__repertoire_id = Slot(uri=AK_SCHEMA.v1p4__cell__repertoire_id, name="v1p4__cell__repertoire_id", curie=AK_SCHEMA.curie('v1p4__cell__repertoire_id'),
-                   model_uri=AK_SCHEMA.v1p4__cell__repertoire_id, domain=None, range=str)
+slots.Cell_expression_study_method = Slot(uri=AK_SCHEMA.Cell_expression_study_method, name="Cell_expression_study_method", curie=AK_SCHEMA.curie('Cell_expression_study_method'),
+                   model_uri=AK_SCHEMA.Cell_expression_study_method, domain=None, range=Optional[Union[str, "ExpressionStudyMethod"]])
 
-slots.v1p4__cell__data_processing_id = Slot(uri=AK_SCHEMA.v1p4__cell__data_processing_id, name="v1p4__cell__data_processing_id", curie=AK_SCHEMA.curie('v1p4__cell__data_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__cell__data_processing_id, domain=None, range=Optional[str])
+slots.Cell_expression_raw_doi = Slot(uri=AK_SCHEMA.Cell_expression_raw_doi, name="Cell_expression_raw_doi", curie=AK_SCHEMA.curie('Cell_expression_raw_doi'),
+                   model_uri=AK_SCHEMA.Cell_expression_raw_doi, domain=None, range=Optional[str])
 
-slots.v1p4__cell__receptors = Slot(uri=AK_SCHEMA.v1p4__cell__receptors, name="v1p4__cell__receptors", curie=AK_SCHEMA.curie('v1p4__cell__receptors'),
-                   model_uri=AK_SCHEMA.v1p4__cell__receptors, domain=None, range=Optional[Union[str, List[str]]])
+slots.Cell_expression_index = Slot(uri=AK_SCHEMA.Cell_expression_index, name="Cell_expression_index", curie=AK_SCHEMA.curie('Cell_expression_index'),
+                   model_uri=AK_SCHEMA.Cell_expression_index, domain=None, range=Optional[str])
 
-slots.v1p4__cell__cell_subset = Slot(uri=AK_SCHEMA.v1p4__cell__cell_subset, name="v1p4__cell__cell_subset", curie=AK_SCHEMA.curie('v1p4__cell__cell_subset'),
-                   model_uri=AK_SCHEMA.v1p4__cell__cell_subset, domain=None, range=Optional[Union[str, "V1p4CellSubset"]])
+slots.Cell_virtual_pairing = Slot(uri=AK_SCHEMA.Cell_virtual_pairing, name="Cell_virtual_pairing", curie=AK_SCHEMA.curie('Cell_virtual_pairing'),
+                   model_uri=AK_SCHEMA.Cell_virtual_pairing, domain=None, range=Union[bool, Bool])
 
-slots.v1p4__cell__cell_phenotype = Slot(uri=AK_SCHEMA.v1p4__cell__cell_phenotype, name="v1p4__cell__cell_phenotype", curie=AK_SCHEMA.curie('v1p4__cell__cell_phenotype'),
-                   model_uri=AK_SCHEMA.v1p4__cell__cell_phenotype, domain=None, range=Optional[str])
+slots.CellExpression_expression_id = Slot(uri=AK_SCHEMA.CellExpression_expression_id, name="CellExpression_expression_id", curie=AK_SCHEMA.curie('CellExpression_expression_id'),
+                   model_uri=AK_SCHEMA.CellExpression_expression_id, domain=None, range=str)
 
-slots.v1p4__cell__cell_label = Slot(uri=AK_SCHEMA.v1p4__cell__cell_label, name="v1p4__cell__cell_label", curie=AK_SCHEMA.curie('v1p4__cell__cell_label'),
-                   model_uri=AK_SCHEMA.v1p4__cell__cell_label, domain=None, range=Optional[str])
+slots.CellExpression_cell_id = Slot(uri=AK_SCHEMA.CellExpression_cell_id, name="CellExpression_cell_id", curie=AK_SCHEMA.curie('CellExpression_cell_id'),
+                   model_uri=AK_SCHEMA.CellExpression_cell_id, domain=None, range=str)
 
-slots.v1p4__cell__virtual_pairing = Slot(uri=AK_SCHEMA.v1p4__cell__virtual_pairing, name="v1p4__cell__virtual_pairing", curie=AK_SCHEMA.curie('v1p4__cell__virtual_pairing'),
-                   model_uri=AK_SCHEMA.v1p4__cell__virtual_pairing, domain=None, range=Union[bool, Bool])
+slots.CellExpression_repertoire_id = Slot(uri=AK_SCHEMA.CellExpression_repertoire_id, name="CellExpression_repertoire_id", curie=AK_SCHEMA.curie('CellExpression_repertoire_id'),
+                   model_uri=AK_SCHEMA.CellExpression_repertoire_id, domain=None, range=str)
 
-slots.v1p4__expression__expression_id = Slot(uri=AK_SCHEMA.v1p4__expression__expression_id, name="v1p4__expression__expression_id", curie=AK_SCHEMA.curie('v1p4__expression__expression_id'),
-                   model_uri=AK_SCHEMA.v1p4__expression__expression_id, domain=None, range=str)
+slots.CellExpression_data_processing_id = Slot(uri=AK_SCHEMA.CellExpression_data_processing_id, name="CellExpression_data_processing_id", curie=AK_SCHEMA.curie('CellExpression_data_processing_id'),
+                   model_uri=AK_SCHEMA.CellExpression_data_processing_id, domain=None, range=str)
 
-slots.v1p4__expression__cell_id = Slot(uri=AK_SCHEMA.v1p4__expression__cell_id, name="v1p4__expression__cell_id", curie=AK_SCHEMA.curie('v1p4__expression__cell_id'),
-                   model_uri=AK_SCHEMA.v1p4__expression__cell_id, domain=None, range=str)
+slots.CellExpression_property_type = Slot(uri=AK_SCHEMA.CellExpression_property_type, name="CellExpression_property_type", curie=AK_SCHEMA.curie('CellExpression_property_type'),
+                   model_uri=AK_SCHEMA.CellExpression_property_type, domain=None, range=str)
 
-slots.v1p4__expression__repertoire_id = Slot(uri=AK_SCHEMA.v1p4__expression__repertoire_id, name="v1p4__expression__repertoire_id", curie=AK_SCHEMA.curie('v1p4__expression__repertoire_id'),
-                   model_uri=AK_SCHEMA.v1p4__expression__repertoire_id, domain=None, range=str)
+slots.CellExpression_property = Slot(uri=AK_SCHEMA.CellExpression_property, name="CellExpression_property", curie=AK_SCHEMA.curie('CellExpression_property'),
+                   model_uri=AK_SCHEMA.CellExpression_property, domain=None, range=Union[str, "Property"])
 
-slots.v1p4__expression__data_processing_id = Slot(uri=AK_SCHEMA.v1p4__expression__data_processing_id, name="v1p4__expression__data_processing_id", curie=AK_SCHEMA.curie('v1p4__expression__data_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__expression__data_processing_id, domain=None, range=str)
+slots.CellExpression_value = Slot(uri=AK_SCHEMA.CellExpression_value, name="CellExpression_value", curie=AK_SCHEMA.curie('CellExpression_value'),
+                   model_uri=AK_SCHEMA.CellExpression_value, domain=None, range=float)
 
-slots.v1p4__expression__property_type = Slot(uri=AK_SCHEMA.v1p4__expression__property_type, name="v1p4__expression__property_type", curie=AK_SCHEMA.curie('v1p4__expression__property_type'),
-                   model_uri=AK_SCHEMA.v1p4__expression__property_type, domain=None, range=str)
+slots.Receptor_receptor_id = Slot(uri=AK_SCHEMA.Receptor_receptor_id, name="Receptor_receptor_id", curie=AK_SCHEMA.curie('Receptor_receptor_id'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_id, domain=None, range=str)
 
-slots.v1p4__expression__property = Slot(uri=AK_SCHEMA.v1p4__expression__property, name="v1p4__expression__property", curie=AK_SCHEMA.curie('v1p4__expression__property'),
-                   model_uri=AK_SCHEMA.v1p4__expression__property, domain=None, range=Union[str, "V1p4Property"])
+slots.Receptor_receptor_hash = Slot(uri=AK_SCHEMA.Receptor_receptor_hash, name="Receptor_receptor_hash", curie=AK_SCHEMA.curie('Receptor_receptor_hash'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_hash, domain=None, range=str)
 
-slots.v1p4__expression__value = Slot(uri=AK_SCHEMA.v1p4__expression__value, name="v1p4__expression__value", curie=AK_SCHEMA.curie('v1p4__expression__value'),
-                   model_uri=AK_SCHEMA.v1p4__expression__value, domain=None, range=float)
+slots.Receptor_receptor_type = Slot(uri=AK_SCHEMA.Receptor_receptor_type, name="Receptor_receptor_type", curie=AK_SCHEMA.curie('Receptor_receptor_type'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_type, domain=None, range=Union[str, "ReceptorType"])
 
-slots.v1p4__receptor__receptor_id = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_id, name="v1p4__receptor__receptor_id", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_id'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_id, domain=None, range=str)
+slots.Receptor_receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.Receptor_receptor_variable_domain_1_aa, name="Receptor_receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('Receptor_receptor_variable_domain_1_aa'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_variable_domain_1_aa, domain=None, range=str)
 
-slots.v1p4__receptor__receptor_hash = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_hash, name="v1p4__receptor__receptor_hash", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_hash'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_hash, domain=None, range=str)
+slots.Receptor_receptor_variable_domain_1_locus = Slot(uri=AK_SCHEMA.Receptor_receptor_variable_domain_1_locus, name="Receptor_receptor_variable_domain_1_locus", curie=AK_SCHEMA.curie('Receptor_receptor_variable_domain_1_locus'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_variable_domain_1_locus, domain=None, range=Union[str, "ReceptorVariableDomain1Locus"])
 
-slots.v1p4__receptor__receptor_type = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_type, name="v1p4__receptor__receptor_type", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_type'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_type, domain=None, range=Union[str, "V1p4ReceptorType"])
+slots.Receptor_receptor_variable_domain_2_aa = Slot(uri=AK_SCHEMA.Receptor_receptor_variable_domain_2_aa, name="Receptor_receptor_variable_domain_2_aa", curie=AK_SCHEMA.curie('Receptor_receptor_variable_domain_2_aa'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_variable_domain_2_aa, domain=None, range=str)
 
-slots.v1p4__receptor__receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_1_aa, name="v1p4__receptor__receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_variable_domain_1_aa'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_1_aa, domain=None, range=str)
+slots.Receptor_receptor_variable_domain_2_locus = Slot(uri=AK_SCHEMA.Receptor_receptor_variable_domain_2_locus, name="Receptor_receptor_variable_domain_2_locus", curie=AK_SCHEMA.curie('Receptor_receptor_variable_domain_2_locus'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_variable_domain_2_locus, domain=None, range=Union[str, "ReceptorVariableDomain2Locus"])
 
-slots.v1p4__receptor__receptor_variable_domain_1_locus = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_1_locus, name="v1p4__receptor__receptor_variable_domain_1_locus", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_variable_domain_1_locus'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_1_locus, domain=None, range=Union[str, "V1p4ReceptorVariableDomain1Locus"])
+slots.Receptor_receptor_ref = Slot(uri=AK_SCHEMA.Receptor_receptor_ref, name="Receptor_receptor_ref", curie=AK_SCHEMA.curie('Receptor_receptor_ref'),
+                   model_uri=AK_SCHEMA.Receptor_receptor_ref, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.v1p4__receptor__receptor_variable_domain_2_aa = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_2_aa, name="v1p4__receptor__receptor_variable_domain_2_aa", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_variable_domain_2_aa'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_2_aa, domain=None, range=str)
+slots.Receptor_reactivity_measurements = Slot(uri=AK_SCHEMA.Receptor_reactivity_measurements, name="Receptor_reactivity_measurements", curie=AK_SCHEMA.curie('Receptor_reactivity_measurements'),
+                   model_uri=AK_SCHEMA.Receptor_reactivity_measurements, domain=None, range=Optional[Union[Union[dict, ReceptorReactivity], List[Union[dict, ReceptorReactivity]]]])
 
-slots.v1p4__receptor__receptor_variable_domain_2_locus = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_2_locus, name="v1p4__receptor__receptor_variable_domain_2_locus", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_variable_domain_2_locus'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_variable_domain_2_locus, domain=None, range=Union[str, "V1p4ReceptorVariableDomain2Locus"])
+slots.ReceptorReactivity_ligand_type = Slot(uri=AK_SCHEMA.ReceptorReactivity_ligand_type, name="ReceptorReactivity_ligand_type", curie=AK_SCHEMA.curie('ReceptorReactivity_ligand_type'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_ligand_type, domain=None, range=Union[str, "LigandType"])
 
-slots.v1p4__receptor__receptor_ref = Slot(uri=AK_SCHEMA.v1p4__receptor__receptor_ref, name="v1p4__receptor__receptor_ref", curie=AK_SCHEMA.curie('v1p4__receptor__receptor_ref'),
-                   model_uri=AK_SCHEMA.v1p4__receptor__receptor_ref, domain=None, range=Optional[Union[str, List[str]]])
+slots.ReceptorReactivity_antigen_type = Slot(uri=AK_SCHEMA.ReceptorReactivity_antigen_type, name="ReceptorReactivity_antigen_type", curie=AK_SCHEMA.curie('ReceptorReactivity_antigen_type'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_antigen_type, domain=None, range=Union[str, "AntigenType"])
 
-slots.v1p4__reactivity__reactivity_id = Slot(uri=AK_SCHEMA.v1p4__reactivity__reactivity_id, name="v1p4__reactivity__reactivity_id", curie=AK_SCHEMA.curie('v1p4__reactivity__reactivity_id'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__reactivity_id, domain=None, range=str)
+slots.ReceptorReactivity_antigen = Slot(uri=AK_SCHEMA.ReceptorReactivity_antigen, name="ReceptorReactivity_antigen", curie=AK_SCHEMA.curie('ReceptorReactivity_antigen'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_antigen, domain=None, range=Union[str, "Antigen"])
 
-slots.v1p4__reactivity__cell_id = Slot(uri=AK_SCHEMA.v1p4__reactivity__cell_id, name="v1p4__reactivity__cell_id", curie=AK_SCHEMA.curie('v1p4__reactivity__cell_id'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__cell_id, domain=None, range=str)
+slots.ReceptorReactivity_antigen_source_species = Slot(uri=AK_SCHEMA.ReceptorReactivity_antigen_source_species, name="ReceptorReactivity_antigen_source_species", curie=AK_SCHEMA.curie('ReceptorReactivity_antigen_source_species'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_antigen_source_species, domain=None, range=Optional[Union[str, "AntigenSourceSpecies"]])
 
-slots.v1p4__reactivity__repertoire_id = Slot(uri=AK_SCHEMA.v1p4__reactivity__repertoire_id, name="v1p4__reactivity__repertoire_id", curie=AK_SCHEMA.curie('v1p4__reactivity__repertoire_id'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__repertoire_id, domain=None, range=Optional[str])
+slots.ReceptorReactivity_peptide_start = Slot(uri=AK_SCHEMA.ReceptorReactivity_peptide_start, name="ReceptorReactivity_peptide_start", curie=AK_SCHEMA.curie('ReceptorReactivity_peptide_start'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_peptide_start, domain=None, range=Optional[int])
 
-slots.v1p4__reactivity__data_processing_id = Slot(uri=AK_SCHEMA.v1p4__reactivity__data_processing_id, name="v1p4__reactivity__data_processing_id", curie=AK_SCHEMA.curie('v1p4__reactivity__data_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__data_processing_id, domain=None, range=Optional[str])
+slots.ReceptorReactivity_peptide_end = Slot(uri=AK_SCHEMA.ReceptorReactivity_peptide_end, name="ReceptorReactivity_peptide_end", curie=AK_SCHEMA.curie('ReceptorReactivity_peptide_end'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_peptide_end, domain=None, range=Optional[int])
 
-slots.v1p4__reactivity__ligand_type = Slot(uri=AK_SCHEMA.v1p4__reactivity__ligand_type, name="v1p4__reactivity__ligand_type", curie=AK_SCHEMA.curie('v1p4__reactivity__ligand_type'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__ligand_type, domain=None, range=Union[str, "V1p4LigandType"])
+slots.ReceptorReactivity_mhc_class = Slot(uri=AK_SCHEMA.ReceptorReactivity_mhc_class, name="ReceptorReactivity_mhc_class", curie=AK_SCHEMA.curie('ReceptorReactivity_mhc_class'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_mhc_class, domain=None, range=Optional[Union[str, "MhcClass"]])
 
-slots.v1p4__reactivity__antigen_type = Slot(uri=AK_SCHEMA.v1p4__reactivity__antigen_type, name="v1p4__reactivity__antigen_type", curie=AK_SCHEMA.curie('v1p4__reactivity__antigen_type'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__antigen_type, domain=None, range=Union[str, "V1p4AntigenType"])
+slots.ReceptorReactivity_mhc_gene_1 = Slot(uri=AK_SCHEMA.ReceptorReactivity_mhc_gene_1, name="ReceptorReactivity_mhc_gene_1", curie=AK_SCHEMA.curie('ReceptorReactivity_mhc_gene_1'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_mhc_gene_1, domain=None, range=Optional[Union[str, "MhcGene1"]])
 
-slots.v1p4__reactivity__antigen = Slot(uri=AK_SCHEMA.v1p4__reactivity__antigen, name="v1p4__reactivity__antigen", curie=AK_SCHEMA.curie('v1p4__reactivity__antigen'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__antigen, domain=None, range=Union[str, "V1p4Antigen"])
+slots.ReceptorReactivity_mhc_allele_1 = Slot(uri=AK_SCHEMA.ReceptorReactivity_mhc_allele_1, name="ReceptorReactivity_mhc_allele_1", curie=AK_SCHEMA.curie('ReceptorReactivity_mhc_allele_1'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_mhc_allele_1, domain=None, range=Optional[str])
 
-slots.v1p4__reactivity__antigen_source_species = Slot(uri=AK_SCHEMA.v1p4__reactivity__antigen_source_species, name="v1p4__reactivity__antigen_source_species", curie=AK_SCHEMA.curie('v1p4__reactivity__antigen_source_species'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__antigen_source_species, domain=None, range=Optional[Union[str, "V1p4AntigenSourceSpecies"]])
+slots.ReceptorReactivity_mhc_gene_2 = Slot(uri=AK_SCHEMA.ReceptorReactivity_mhc_gene_2, name="ReceptorReactivity_mhc_gene_2", curie=AK_SCHEMA.curie('ReceptorReactivity_mhc_gene_2'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_mhc_gene_2, domain=None, range=Optional[Union[str, "MhcGene2"]])
 
-slots.v1p4__reactivity__peptide_start = Slot(uri=AK_SCHEMA.v1p4__reactivity__peptide_start, name="v1p4__reactivity__peptide_start", curie=AK_SCHEMA.curie('v1p4__reactivity__peptide_start'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__peptide_start, domain=None, range=Optional[int])
+slots.ReceptorReactivity_mhc_allele_2 = Slot(uri=AK_SCHEMA.ReceptorReactivity_mhc_allele_2, name="ReceptorReactivity_mhc_allele_2", curie=AK_SCHEMA.curie('ReceptorReactivity_mhc_allele_2'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_mhc_allele_2, domain=None, range=Optional[str])
 
-slots.v1p4__reactivity__peptide_end = Slot(uri=AK_SCHEMA.v1p4__reactivity__peptide_end, name="v1p4__reactivity__peptide_end", curie=AK_SCHEMA.curie('v1p4__reactivity__peptide_end'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__peptide_end, domain=None, range=Optional[int])
+slots.ReceptorReactivity_reactivity_method = Slot(uri=AK_SCHEMA.ReceptorReactivity_reactivity_method, name="ReceptorReactivity_reactivity_method", curie=AK_SCHEMA.curie('ReceptorReactivity_reactivity_method'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_reactivity_method, domain=None, range=Union[str, "ReactivityMethod"])
 
-slots.v1p4__reactivity__peptide_sequence_aa = Slot(uri=AK_SCHEMA.v1p4__reactivity__peptide_sequence_aa, name="v1p4__reactivity__peptide_sequence_aa", curie=AK_SCHEMA.curie('v1p4__reactivity__peptide_sequence_aa'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__peptide_sequence_aa, domain=None, range=Optional[str])
+slots.ReceptorReactivity_reactivity_readout = Slot(uri=AK_SCHEMA.ReceptorReactivity_reactivity_readout, name="ReceptorReactivity_reactivity_readout", curie=AK_SCHEMA.curie('ReceptorReactivity_reactivity_readout'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_reactivity_readout, domain=None, range=Union[str, "ReactivityReadout"])
 
-slots.v1p4__reactivity__mhc_class = Slot(uri=AK_SCHEMA.v1p4__reactivity__mhc_class, name="v1p4__reactivity__mhc_class", curie=AK_SCHEMA.curie('v1p4__reactivity__mhc_class'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__mhc_class, domain=None, range=Optional[Union[str, "V1p4MhcClass"]])
+slots.ReceptorReactivity_reactivity_value = Slot(uri=AK_SCHEMA.ReceptorReactivity_reactivity_value, name="ReceptorReactivity_reactivity_value", curie=AK_SCHEMA.curie('ReceptorReactivity_reactivity_value'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_reactivity_value, domain=None, range=float)
 
-slots.v1p4__reactivity__mhc_gene_1 = Slot(uri=AK_SCHEMA.v1p4__reactivity__mhc_gene_1, name="v1p4__reactivity__mhc_gene_1", curie=AK_SCHEMA.curie('v1p4__reactivity__mhc_gene_1'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__mhc_gene_1, domain=None, range=Optional[Union[str, "V1p4MhcGene1"]])
+slots.ReceptorReactivity_reactivity_unit = Slot(uri=AK_SCHEMA.ReceptorReactivity_reactivity_unit, name="ReceptorReactivity_reactivity_unit", curie=AK_SCHEMA.curie('ReceptorReactivity_reactivity_unit'),
+                   model_uri=AK_SCHEMA.ReceptorReactivity_reactivity_unit, domain=None, range=str)
 
-slots.v1p4__reactivity__mhc_allele_1 = Slot(uri=AK_SCHEMA.v1p4__reactivity__mhc_allele_1, name="v1p4__reactivity__mhc_allele_1", curie=AK_SCHEMA.curie('v1p4__reactivity__mhc_allele_1'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__mhc_allele_1, domain=None, range=Optional[str])
-
-slots.v1p4__reactivity__mhc_gene_2 = Slot(uri=AK_SCHEMA.v1p4__reactivity__mhc_gene_2, name="v1p4__reactivity__mhc_gene_2", curie=AK_SCHEMA.curie('v1p4__reactivity__mhc_gene_2'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__mhc_gene_2, domain=None, range=Optional[Union[str, "V1p4MhcGene2"]])
-
-slots.v1p4__reactivity__mhc_allele_2 = Slot(uri=AK_SCHEMA.v1p4__reactivity__mhc_allele_2, name="v1p4__reactivity__mhc_allele_2", curie=AK_SCHEMA.curie('v1p4__reactivity__mhc_allele_2'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__mhc_allele_2, domain=None, range=Optional[str])
-
-slots.v1p4__reactivity__reactivity_method = Slot(uri=AK_SCHEMA.v1p4__reactivity__reactivity_method, name="v1p4__reactivity__reactivity_method", curie=AK_SCHEMA.curie('v1p4__reactivity__reactivity_method'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__reactivity_method, domain=None, range=str)
-
-slots.v1p4__reactivity__reactivity_readout = Slot(uri=AK_SCHEMA.v1p4__reactivity__reactivity_readout, name="v1p4__reactivity__reactivity_readout", curie=AK_SCHEMA.curie('v1p4__reactivity__reactivity_readout'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__reactivity_readout, domain=None, range=str)
-
-slots.v1p4__reactivity__reactivity_value = Slot(uri=AK_SCHEMA.v1p4__reactivity__reactivity_value, name="v1p4__reactivity__reactivity_value", curie=AK_SCHEMA.curie('v1p4__reactivity__reactivity_value'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__reactivity_value, domain=None, range=float)
-
-slots.v1p4__reactivity__reactivity_unit = Slot(uri=AK_SCHEMA.v1p4__reactivity__reactivity_unit, name="v1p4__reactivity__reactivity_unit", curie=AK_SCHEMA.curie('v1p4__reactivity__reactivity_unit'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__reactivity_unit, domain=None, range=str)
-
-slots.v1p4__reactivity__reactivity_ref = Slot(uri=AK_SCHEMA.v1p4__reactivity__reactivity_ref, name="v1p4__reactivity__reactivity_ref", curie=AK_SCHEMA.curie('v1p4__reactivity__reactivity_ref'),
-                   model_uri=AK_SCHEMA.v1p4__reactivity__reactivity_ref, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.v1p4__sample_processing__sample_processing_id = Slot(uri=AK_SCHEMA.v1p4__sample_processing__sample_processing_id, name="v1p4__sample_processing__sample_processing_id", curie=AK_SCHEMA.curie('v1p4__sample_processing__sample_processing_id'),
-                   model_uri=AK_SCHEMA.v1p4__sample_processing__sample_processing_id, domain=None, range=Optional[str])
+slots.SampleProcessing_sample_processing_id = Slot(uri=AK_SCHEMA.SampleProcessing_sample_processing_id, name="SampleProcessing_sample_processing_id", curie=AK_SCHEMA.curie('SampleProcessing_sample_processing_id'),
+                   model_uri=AK_SCHEMA.SampleProcessing_sample_processing_id, domain=None, range=Optional[str])
 
 slots.chain_domain = Slot(uri=AK_SCHEMA.chain_domain, name="chain_domain", curie=AK_SCHEMA.curie('chain_domain'),
                    model_uri=AK_SCHEMA.chain_domain, domain=None, range=Optional[Union[str, ChainAkcId]])
