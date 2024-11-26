@@ -4,8 +4,8 @@
       "": {
         "akc_id": ""
       },
-      "Investigation_PRJNA472381": {
-        "akc_id": "9664c1bf-074b-44ce-8c02-7a3672f6848e",
+      "32fc70d4-96fe-494b-a540-bafd06497f24": {
+        "akc_id": "32fc70d4-96fe-494b-a540-bafd06497f24",
         "name": "Single-Cell Map of Diverse Immune Phenotypes in the Breast Tumor Microenvironment",
         "description": "Knowledge of immune cell phenotypes in the tumor microenvironment is essential for understanding mechanisms of cancer progression and immunotherapy response. We profiled 45,000 immune cells from eight breast carcinomas, as well as matched normal breast tissue, blood, and lymph nodes, using single-cell RNA-seq. We developed a preprocessing pipeline, SEQC, and a Bayesian clustering and normalization method, Biscuit, to address computational challenges inherent to single-cell data. Despite significant similarity between normal and tumor tissue-resident immune cells, we observed continuous phenotypic expansions specific to the tumor microenvironment. Analysis of paired single-cell RNA and T cell receptor (TCR) sequencing data from 27,000 additional T cells revealed the combinatorial impact of TCR utilization on phenotypic diversity. Our results support a model of continuous activation in T cells and do not comport with the macrophage polarization model in cancer. Our results have important implications for characterizing tumor-infiltrating immune cells.",
         "study_type": {
@@ -16,51 +16,51 @@
         "release_date": "2021-10-06T21:16:04.238Z",
         "update_date": "2022-12-16T20:41:46.262Z",
         "participants": [
-          "f7ab3599-a350-4f15-8046-5115c6e22145",
-          "c720dbd7-0609-420d-8775-727c33be7008",
-          "b451f63e-7d1a-45e7-8838-2d54422d99f1"
+          "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2",
+          "d912d5d9-54e2-44a9-be98-878429366551",
+          "00152953-5af2-4f36-999a-8ac07447e6e9"
         ],
         "assays": [
-          "b734a1ba-4d99-4134-a8a3-35b1bfefe58f",
-          "819642a2-78ce-412a-80d3-adfd4fe15315",
-          "0520f9a4-f39f-4f5d-97c7-68a7b4061680",
-          "85538fd4-86e7-4934-9ae0-790abb735421",
-          "9bc3c3c2-5a75-465d-9cb0-214805278115",
-          "13930a90-b9aa-4c28-9691-b3f40a4a2668",
-          "6048cb37-0fad-47c6-a6a3-ecd3f26945c4",
-          "ebce703f-b64f-453f-9e54-517e716752af",
-          "95a67ce4-e0af-440b-9e4b-5aeb1cd4ef15",
-          "1e4bab85-392e-4675-9aa7-8ab164dfba1e"
+          "b8d3e9be-b3de-4420-9227-2287d510527a",
+          "2dc31563-43aa-4ca6-a163-eab599a5472b",
+          "d4069cbb-4ca3-45b3-a7b8-a851d568e796",
+          "74393dfd-d0a2-4708-a76f-d24c901121f9",
+          "c07617cf-d620-4057-9ea0-0bc722e01261",
+          "1450fc90-e48d-4ebd-a1d2-ca8e01f97ead",
+          "20c6da46-1b5e-4aa0-9949-28b9796bc0dc",
+          "9f4b34c9-529e-4c64-8360-0c36799b9866",
+          "a92ef1f6-dcb3-41e2-b874-630034e0fade",
+          "778eba6b-ff84-4994-b240-c7c2b3d2c31e"
         ],
         "documents": [
-          "219e8fbf-3342-401f-afb7-f7201e6e1142"
+          "8f7494dc-ad4f-4882-94f4-19ac6f5dd4c4"
         ]
       }
     },
     "references": {
-      "Reference_PRJNA472381": {
+      "8f7494dc-ad4f-4882-94f4-19ac6f5dd4c4": {
         "source_uri": "",
         "sources": "PMID: 29961579",
         "investigations": [
           "",
-          "9664c1bf-074b-44ce-8c02-7a3672f6848e"
+          "32fc70d4-96fe-494b-a540-bafd06497f24"
         ],
-        "akc_id": "219e8fbf-3342-401f-afb7-f7201e6e1142"
+        "akc_id": "8f7494dc-ad4f-4882-94f4-19ac6f5dd4c4"
       }
     },
     "study_arms": {
-      "StudyArm_BC": {
-        "akc_id": "54d682f1-4fd6-44e0-a592-9436037bea21",
+      "e6882546-3f07-4302-b363-b2eb8ad5e9b5": {
+        "akc_id": "e6882546-3f07-4302-b363-b2eb8ad5e9b5",
         "name": "BC",
-        "investigation": "9664c1bf-074b-44ce-8c02-7a3672f6848e",
+        "investigation": "32fc70d4-96fe-494b-a540-bafd06497f24",
         "inclusion_criteria": "Tissues were collected from women undergoing surgery for primary breast cancer. All samples were obtained after informed consent and approval from the Institutional Review Board (IRB) at Memorial Sloan Kettering Cancer Center."
       }
     },
     "participants": {
-      "Participant_BC09": {
-        "akc_id": "f7ab3599-a350-4f15-8046-5115c6e22145",
+      "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2": {
+        "akc_id": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2",
         "name": "BC09",
-        "study_arm": "54d682f1-4fd6-44e0-a592-9436037bea21",
+        "study_arm": "e6882546-3f07-4302-b363-b2eb8ad5e9b5",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -73,10 +73,10 @@
         },
         "age_event": "sampling"
       },
-      "Participant_BC11": {
-        "akc_id": "c720dbd7-0609-420d-8775-727c33be7008",
+      "d912d5d9-54e2-44a9-be98-878429366551": {
+        "akc_id": "d912d5d9-54e2-44a9-be98-878429366551",
         "name": "BC11",
-        "study_arm": "54d682f1-4fd6-44e0-a592-9436037bea21",
+        "study_arm": "e6882546-3f07-4302-b363-b2eb8ad5e9b5",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -89,10 +89,10 @@
         },
         "age_event": "sampling"
       },
-      "Participant_BC10": {
-        "akc_id": "b451f63e-7d1a-45e7-8838-2d54422d99f1",
+      "00152953-5af2-4f36-999a-8ac07447e6e9": {
+        "akc_id": "00152953-5af2-4f36-999a-8ac07447e6e9",
         "name": "BC10",
-        "study_arm": "54d682f1-4fd6-44e0-a592-9436037bea21",
+        "study_arm": "e6882546-3f07-4302-b363-b2eb8ad5e9b5",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -107,32 +107,32 @@
       }
     },
     "life_events": {
-      "LifeEvent_Participant_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "f136b93d-f627-49e6-949d-393cfb99297a",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+      "419ccb4e-e41a-4e28-b30f-4989aada37cb": {
+        "akc_id": "419ccb4e-e41a-4e28-b30f-4989aada37cb",
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_ImmuneExposure_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "8e2e499c-5dc8-4254-8cce-de355e408e05",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+      "be155e1b-91d4-4d3b-8f30-c3da4ccf3309": {
+        "akc_id": "be155e1b-91d4-4d3b-8f30-c3da4ccf3309",
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_Specimen_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "8e7687eb-d223-49c1-be70-cce46a54f321",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+      "c7359afa-f9be-4ea6-924d-97a187c4edb4": {
+        "akc_id": "c7359afa-f9be-4ea6-924d-97a187c4edb4",
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_Participant_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "d8e9e82a-01d5-408f-b6ad-be6cc5b2ff60",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+      "86f4ab9b-35e1-410d-b3cf-df04a85c5aea": {
+        "akc_id": "86f4ab9b-35e1-410d-b3cf-df04a85c5aea",
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_ImmuneExposure_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "0d39d1a1-99f4-4046-8a57-8b61275ba2a5",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+      "6c2e89be-889a-4544-b19d-8a93b79fc6ca": {
+        "akc_id": "6c2e89be-889a-4544-b19d-8a93b79fc6ca",
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Specimen_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "8d2b3414-1701-42be-9864-11e9024706c0",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+      "78fb4de3-d4a8-4718-b27f-0cf6ab3d80f0": {
+        "akc_id": "78fb4de3-d4a8-4718-b27f-0cf6ab3d80f0",
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Participant_BC11_BC11_TUMOR1_TCR": {
-        "akc_id": "66c32fbe-4b57-44ca-960a-b1b01cd52c30",
+      "97243f4c-57a6-4c13-905c-be2a6f33187d": {
+        "akc_id": "97243f4c-57a6-4c13-905c-be2a6f33187d",
         "adc_link_tag": "LifeEvent_Participant_BC11_BC11_TUMOR1_TCR",
         "adc_repertoire_id": "1322701767323348500-242ac114-0001-012",
         "adc_data_processing_id": "72cdd548-9465-40b9-9bfe-905311f95723-007",
@@ -140,26 +140,26 @@
         "adc_subject_id": "BC11",
         "adc_sample_id": "BC11_TUMOR1_TCR",
         "adc_study_group_description": "BC",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Specimen_BC11_BC11_TUMOR1_TCR": {
-        "akc_id": "0ca89601-3927-4a2e-b566-0d142bd5b37e",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+      "4b20d14b-6d77-4548-853a-3e365c285158": {
+        "akc_id": "4b20d14b-6d77-4548-853a-3e365c285158",
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Participant_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "2c9b65d3-2c0a-48ae-8060-2e1c57dbaa47",
-        "participant": "b451f63e-7d1a-45e7-8838-2d54422d99f1"
+      "3be56f97-975e-4c55-abef-bfc3a9e84acb": {
+        "akc_id": "3be56f97-975e-4c55-abef-bfc3a9e84acb",
+        "participant": "00152953-5af2-4f36-999a-8ac07447e6e9"
       },
-      "LifeEvent_ImmuneExposure_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "7c34b288-fa63-4595-8159-61480b243412",
-        "participant": "b451f63e-7d1a-45e7-8838-2d54422d99f1"
+      "bfa824d1-65bf-465e-8472-acca3c01d13f": {
+        "akc_id": "bfa824d1-65bf-465e-8472-acca3c01d13f",
+        "participant": "00152953-5af2-4f36-999a-8ac07447e6e9"
       },
-      "LifeEvent_Specimen_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "6383809e-aa8c-48f2-82aa-78dd1a762762",
-        "participant": "b451f63e-7d1a-45e7-8838-2d54422d99f1"
+      "024e1188-0d2f-436b-b648-bd3aedaa5f4b": {
+        "akc_id": "024e1188-0d2f-436b-b648-bd3aedaa5f4b",
+        "participant": "00152953-5af2-4f36-999a-8ac07447e6e9"
       },
-      "LifeEvent_Participant_BC09_BC09_TUMOR1_TCR_2": {
-        "akc_id": "3b24baac-9c5c-409a-841f-833ada081df2",
+      "470d21c2-e140-433c-aea1-c9b977e3ca1e": {
+        "akc_id": "470d21c2-e140-433c-aea1-c9b977e3ca1e",
         "adc_link_tag": "LifeEvent_Participant_BC09_BC09_TUMOR1_TCR_2",
         "adc_repertoire_id": "1323388962090708500-242ac114-0001-012",
         "adc_data_processing_id": "fbdba957-f81d-4048-8411-4ade43de75e4-007",
@@ -167,14 +167,14 @@
         "adc_subject_id": "BC09",
         "adc_sample_id": "BC09_TUMOR1_TCR_2",
         "adc_study_group_description": "BC",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_Specimen_BC09_BC09_TUMOR1_TCR_2": {
-        "akc_id": "5eb22dc6-79ac-46a9-be44-8bb867dbe761",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+      "4f4e3f0f-ecec-4231-b8a7-8f40fb273b47": {
+        "akc_id": "4f4e3f0f-ecec-4231-b8a7-8f40fb273b47",
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_Participant_BC11_BC11_TUMOR2_TCR": {
-        "akc_id": "bc779638-a865-46de-a51f-66f696709100",
+      "99b7620d-aaf8-4392-a3e9-092eea625bbe": {
+        "akc_id": "99b7620d-aaf8-4392-a3e9-092eea625bbe",
         "adc_link_tag": "LifeEvent_Participant_BC11_BC11_TUMOR2_TCR",
         "adc_repertoire_id": "1323474861436628500-242ac114-0001-012",
         "adc_data_processing_id": "1e869002-b488-46b0-bae8-a18ddffc7177-007",
@@ -182,14 +182,14 @@
         "adc_subject_id": "BC11",
         "adc_sample_id": "BC11_TUMOR2_TCR",
         "adc_study_group_description": "BC",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Specimen_BC11_BC11_TUMOR2_TCR": {
-        "akc_id": "b7a0a7e0-8510-41b0-8101-4d25fb3692ca",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+      "70af0add-d6f9-4932-b95f-e49344dc1265": {
+        "akc_id": "70af0add-d6f9-4932-b95f-e49344dc1265",
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Participant_BC10_BC10_TUMOR1_TCR": {
-        "akc_id": "901f586f-f2fc-4cf4-ab51-5eb4c7c60b6d",
+      "608be19e-ff2e-43f8-9d46-7147f4cd1cca": {
+        "akc_id": "608be19e-ff2e-43f8-9d46-7147f4cd1cca",
         "adc_link_tag": "LifeEvent_Participant_BC10_BC10_TUMOR1_TCR",
         "adc_repertoire_id": "1323431911763668500-242ac114-0001-012",
         "adc_data_processing_id": "5199f2c4-7d4f-49eb-97a7-179046451ee5-007",
@@ -197,14 +197,14 @@
         "adc_subject_id": "BC10",
         "adc_sample_id": "BC10_TUMOR1_TCR",
         "adc_study_group_description": "BC",
-        "participant": "b451f63e-7d1a-45e7-8838-2d54422d99f1"
+        "participant": "00152953-5af2-4f36-999a-8ac07447e6e9"
       },
-      "LifeEvent_Specimen_BC10_BC10_TUMOR1_TCR": {
-        "akc_id": "190a0cee-8f16-4e9b-bacb-68f9b374347f",
-        "participant": "b451f63e-7d1a-45e7-8838-2d54422d99f1"
+      "0f97f7b2-a5ac-416e-81a8-f961bcd27c5e": {
+        "akc_id": "0f97f7b2-a5ac-416e-81a8-f961bcd27c5e",
+        "participant": "00152953-5af2-4f36-999a-8ac07447e6e9"
       },
-      "LifeEvent_Participant_BC11_BC11_TUMOR1_TCR_2": {
-        "akc_id": "2b7ae297-8b61-46b8-9976-6bcc063fa6e7",
+      "7cb65b4d-8de3-4ddb-92a2-45bd78b19d02": {
+        "akc_id": "7cb65b4d-8de3-4ddb-92a2-45bd78b19d02",
         "adc_link_tag": "LifeEvent_Participant_BC11_BC11_TUMOR1_TCR_2",
         "adc_repertoire_id": "1322143421574868500-242ac114-0001-012",
         "adc_data_processing_id": "347b7155-346b-4707-99f4-d721fb5dc49e-007",
@@ -212,14 +212,14 @@
         "adc_subject_id": "BC11",
         "adc_sample_id": "BC11_TUMOR1_TCR_2",
         "adc_study_group_description": "BC",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Specimen_BC11_BC11_TUMOR1_TCR_2": {
-        "akc_id": "63fb8d45-ed02-4b34-9289-3ecbf27405a5",
-        "participant": "c720dbd7-0609-420d-8775-727c33be7008"
+      "f089acae-adc2-4e3a-848f-31a2bf8eb476": {
+        "akc_id": "f089acae-adc2-4e3a-848f-31a2bf8eb476",
+        "participant": "d912d5d9-54e2-44a9-be98-878429366551"
       },
-      "LifeEvent_Participant_BC09_BC09_TUMOR2_TCR_2": {
-        "akc_id": "37fd7a90-9c37-4e02-99e6-9a322334df54",
+      "eccd2cdd-97b4-4465-96c1-e0beacb460b0": {
+        "akc_id": "eccd2cdd-97b4-4465-96c1-e0beacb460b0",
         "adc_link_tag": "LifeEvent_Participant_BC09_BC09_TUMOR2_TCR_2",
         "adc_repertoire_id": "1322615867977428500-242ac114-0001-012",
         "adc_data_processing_id": "1c041373-3fd3-4407-8b0a-cb81faadef76-007",
@@ -227,14 +227,14 @@
         "adc_subject_id": "BC09",
         "adc_sample_id": "BC09_TUMOR2_TCR_2",
         "adc_study_group_description": "BC",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_Specimen_BC09_BC09_TUMOR2_TCR_2": {
-        "akc_id": "fc05743c-df31-472e-8775-b8e16ba7d1df",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+      "faf4c954-6544-4369-8303-7feed6029904": {
+        "akc_id": "faf4c954-6544-4369-8303-7feed6029904",
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_Participant_BC09_BC09_TUMOR2_TCR": {
-        "akc_id": "b5c8a59e-ae64-4a7f-9583-09d005838680",
+      "2c145c68-e39b-4b8d-96da-8955f9d1b852": {
+        "akc_id": "2c145c68-e39b-4b8d-96da-8955f9d1b852",
         "adc_link_tag": "LifeEvent_Participant_BC09_BC09_TUMOR2_TCR",
         "adc_repertoire_id": "1322572918304468500-242ac114-0001-012",
         "adc_data_processing_id": "fb081d08-0be6-4d32-9f62-39f8fef4f8b7-007",
@@ -242,35 +242,35 @@
         "adc_subject_id": "BC09",
         "adc_sample_id": "BC09_TUMOR2_TCR",
         "adc_study_group_description": "BC",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       },
-      "LifeEvent_Specimen_BC09_BC09_TUMOR2_TCR": {
-        "akc_id": "8dff6098-90e4-4b18-992a-e05fbe755b4f",
-        "participant": "f7ab3599-a350-4f15-8046-5115c6e22145"
+      "bbadff6e-edca-4638-9e62-be014ac0a3f9": {
+        "akc_id": "bbadff6e-edca-4638-9e62-be014ac0a3f9",
+        "participant": "edb06c64-ba8e-4f45-a2f4-4e5fb21d40f2"
       }
     },
     "immune_exposures": {
-      "ImmuneExposure_BC09_DOID:1612": {
-        "akc_id": "5c636bd0-65fd-4951-9b12-f5150c3a9827",
-        "life_event": "8e2e499c-5dc8-4254-8cce-de355e408e05",
+      "7bd8fe1a-8a67-4b24-a14a-0bde882408ea": {
+        "akc_id": "7bd8fe1a-8a67-4b24-a14a-0bde882408ea",
+        "life_event": "be155e1b-91d4-4d3b-8f30-c3da4ccf3309",
         "disease": {
           "id": "DOID:1612",
           "label": "breast cancer"
         },
         "disease_stage": "2"
       },
-      "ImmuneExposure_BC11_DOID:1612": {
-        "akc_id": "04e129a5-b0eb-477e-b644-62c199aeeaa3",
-        "life_event": "0d39d1a1-99f4-4046-8a57-8b61275ba2a5",
+      "786cef10-f42f-4269-a471-b4d185620725": {
+        "akc_id": "786cef10-f42f-4269-a471-b4d185620725",
+        "life_event": "6c2e89be-889a-4544-b19d-8a93b79fc6ca",
         "disease": {
           "id": "DOID:1612",
           "label": "breast cancer"
         },
         "disease_stage": "3"
       },
-      "ImmuneExposure_BC10_DOID:1612": {
-        "akc_id": "e997adac-9aee-4cbf-92f9-a858cf95f3aa",
-        "life_event": "7c34b288-fa63-4595-8159-61480b243412",
+      "7bbbbe83-3ab2-4d15-9823-9ce5c1523327": {
+        "akc_id": "7bbbbe83-3ab2-4d15-9823-9ce5c1523327",
+        "life_event": "bfa824d1-65bf-465e-8472-acca3c01d13f",
         "disease": {
           "id": "DOID:1612",
           "label": "breast cancer"
@@ -279,100 +279,100 @@
       }
     },
     "specimens": {
-      "Specimen_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "a1fb28ca-6e8b-46cd-baf0-032bd335bf69",
+      "1b82ece8-f555-4272-a3b3-b5117a88476b": {
+        "akc_id": "1b82ece8-f555-4272-a3b3-b5117a88476b",
         "name": "BC09_TUMOR1_TCR",
-        "life_event": "8e7687eb-d223-49c1-be70-cce46a54f321",
+        "life_event": "c7359afa-f9be-4ea6-924d-97a187c4edb4",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "870bf2d9-fd6d-4072-9e38-2b4d7451510a",
+      "3a5e0ff8-d8bf-4e95-b2ee-3a9ccd270de4": {
+        "akc_id": "3a5e0ff8-d8bf-4e95-b2ee-3a9ccd270de4",
         "name": "BC11_TUMOR2_TCR_2",
-        "life_event": "8d2b3414-1701-42be-9864-11e9024706c0",
+        "life_event": "78fb4de3-d4a8-4718-b27f-0cf6ab3d80f0",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC11_BC11_TUMOR1_TCR": {
-        "akc_id": "7698a4be-135e-4b5a-993a-298cda47ba95",
+      "4d77415f-9253-4181-87fc-446c3d445acb": {
+        "akc_id": "4d77415f-9253-4181-87fc-446c3d445acb",
         "name": "BC11_TUMOR1_TCR",
-        "life_event": "0ca89601-3927-4a2e-b566-0d142bd5b37e",
+        "life_event": "4b20d14b-6d77-4548-853a-3e365c285158",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "281b16b4-81b1-4621-bca1-44ab1fddb0ee",
+      "570c2089-b3f5-4728-89e9-732354b25abd": {
+        "akc_id": "570c2089-b3f5-4728-89e9-732354b25abd",
         "name": "BC10_TUMOR1_TCR_2",
-        "life_event": "6383809e-aa8c-48f2-82aa-78dd1a762762",
+        "life_event": "024e1188-0d2f-436b-b648-bd3aedaa5f4b",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC09_BC09_TUMOR1_TCR_2": {
-        "akc_id": "257c7498-bda3-4e84-afdc-959a1e149b60",
+      "eaabec23-a0ee-4b96-bd72-0043a82c2c45": {
+        "akc_id": "eaabec23-a0ee-4b96-bd72-0043a82c2c45",
         "name": "BC09_TUMOR1_TCR_2",
-        "life_event": "5eb22dc6-79ac-46a9-be44-8bb867dbe761",
+        "life_event": "4f4e3f0f-ecec-4231-b8a7-8f40fb273b47",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC11_BC11_TUMOR2_TCR": {
-        "akc_id": "fc86bce9-612c-4069-96f1-9e581a6e03e7",
+      "e02d0895-4233-44d8-bc2c-68ea9dc44e16": {
+        "akc_id": "e02d0895-4233-44d8-bc2c-68ea9dc44e16",
         "name": "BC11_TUMOR2_TCR",
-        "life_event": "b7a0a7e0-8510-41b0-8101-4d25fb3692ca",
+        "life_event": "70af0add-d6f9-4932-b95f-e49344dc1265",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC10_BC10_TUMOR1_TCR": {
-        "akc_id": "a02011c1-0f97-452d-806a-97721199cd62",
+      "42eddac9-12d5-4551-ae10-032998c29b19": {
+        "akc_id": "42eddac9-12d5-4551-ae10-032998c29b19",
         "name": "BC10_TUMOR1_TCR",
-        "life_event": "190a0cee-8f16-4e9b-bacb-68f9b374347f",
+        "life_event": "0f97f7b2-a5ac-416e-81a8-f961bcd27c5e",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC11_BC11_TUMOR1_TCR_2": {
-        "akc_id": "dbdd65a7-763c-44f5-afc4-10a771b6e0c9",
+      "7430cbea-c2fb-49af-8636-b9a67ae73c4e": {
+        "akc_id": "7430cbea-c2fb-49af-8636-b9a67ae73c4e",
         "name": "BC11_TUMOR1_TCR_2",
-        "life_event": "63fb8d45-ed02-4b34-9289-3ecbf27405a5",
+        "life_event": "f089acae-adc2-4e3a-848f-31a2bf8eb476",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC09_BC09_TUMOR2_TCR_2": {
-        "akc_id": "f892c7a9-9f51-4118-bc2e-efb779ed5138",
+      "e7457fff-56f4-4c7d-b98e-e03c10966f45": {
+        "akc_id": "e7457fff-56f4-4c7d-b98e-e03c10966f45",
         "name": "BC09_TUMOR2_TCR_2",
-        "life_event": "fc05743c-df31-472e-8775-b8e16ba7d1df",
+        "life_event": "faf4c954-6544-4369-8303-7feed6029904",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
           "label": "breast"
         }
       },
-      "Specimen_BC09_BC09_TUMOR2_TCR": {
-        "akc_id": "7966e064-f0e2-4712-8da4-8fd090d652c9",
+      "03b25b37-394f-4001-9355-cccf55974ca5": {
+        "akc_id": "03b25b37-394f-4001-9355-cccf55974ca5",
         "name": "BC09_TUMOR2_TCR",
-        "life_event": "8dff6098-90e4-4b18-992a-e05fbe755b4f",
+        "life_event": "bbadff6e-edca-4638-9e62-be014ac0a3f9",
         "specimen_type": "breast tumor",
         "tissue": {
           "id": "UBERON:0000310",
@@ -381,9 +381,9 @@
       }
     },
     "specimen_processings": {
-      "CellIsolationProcessing_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "09812c8f-80a1-4731-bfb2-683cfb0782b4",
-        "specimen": "a1fb28ca-6e8b-46cd-baf0-032bd335bf69",
+      "d525b1bc-c2a3-4a9b-9c6a-566a03e5657d": {
+        "akc_id": "d525b1bc-c2a3-4a9b-9c6a-566a03e5657d",
+        "specimen": "1b82ece8-f555-4272-a3b3-b5117a88476b",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -394,20 +394,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "aa44d7d4-7e8f-4a18-a97a-cef65a865af5",
-        "specimen": "a1fb28ca-6e8b-46cd-baf0-032bd335bf69",
+      "f3d226f8-14fb-4443-9084-4c29d6cd3821": {
+        "akc_id": "f3d226f8-14fb-4443-9084-4c29d6cd3821",
+        "specimen": "1b82ece8-f555-4272-a3b3-b5117a88476b",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "d137606b-78b2-4756-ab3a-73c386b2ee0c",
-        "specimen": "a1fb28ca-6e8b-46cd-baf0-032bd335bf69",
+      "0c0f7459-f719-48e1-a8a4-11cf7b7c8351": {
+        "akc_id": "0c0f7459-f719-48e1-a8a4-11cf7b7c8351",
+        "specimen": "1b82ece8-f555-4272-a3b3-b5117a88476b",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "6bb769f9-9b9e-4fda-8f04-75dbaab0c932",
-        "specimen": "870bf2d9-fd6d-4072-9e38-2b4d7451510a",
+      "edf5900f-7461-458d-86fe-2c15f2f9f7e2": {
+        "akc_id": "edf5900f-7461-458d-86fe-2c15f2f9f7e2",
+        "specimen": "3a5e0ff8-d8bf-4e95-b2ee-3a9ccd270de4",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -418,20 +418,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "284ce62e-89d1-4293-9d12-17897c360b3e",
-        "specimen": "870bf2d9-fd6d-4072-9e38-2b4d7451510a",
+      "a8df81d4-06cc-498e-935a-a879f6cf5cf2": {
+        "akc_id": "a8df81d4-06cc-498e-935a-a879f6cf5cf2",
+        "specimen": "3a5e0ff8-d8bf-4e95-b2ee-3a9ccd270de4",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "e927017b-d0e2-4d73-9cdf-9caa3d5be02f",
-        "specimen": "870bf2d9-fd6d-4072-9e38-2b4d7451510a",
+      "428c7077-f6d4-4c43-abf6-d457ef6575a2": {
+        "akc_id": "428c7077-f6d4-4c43-abf6-d457ef6575a2",
+        "specimen": "3a5e0ff8-d8bf-4e95-b2ee-3a9ccd270de4",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC11_BC11_TUMOR1_TCR": {
-        "akc_id": "9dafbd29-5051-4ff2-9c4d-f4fb68c55e38",
-        "specimen": "7698a4be-135e-4b5a-993a-298cda47ba95",
+      "4f2ddc15-1355-45a3-85b4-af68b97aba23": {
+        "akc_id": "4f2ddc15-1355-45a3-85b4-af68b97aba23",
+        "specimen": "4d77415f-9253-4181-87fc-446c3d445acb",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -442,20 +442,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC11_BC11_TUMOR1_TCR": {
-        "akc_id": "bb545bd7-f13c-41b2-aab3-812cf6d1f59e",
-        "specimen": "7698a4be-135e-4b5a-993a-298cda47ba95",
+      "06912a3f-7690-410b-89f5-7b86c50ccf55": {
+        "akc_id": "06912a3f-7690-410b-89f5-7b86c50ccf55",
+        "specimen": "4d77415f-9253-4181-87fc-446c3d445acb",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC11_BC11_TUMOR1_TCR": {
-        "akc_id": "5a25228d-dfec-401e-a9a2-e53b58e14095",
-        "specimen": "7698a4be-135e-4b5a-993a-298cda47ba95",
+      "33e4ff4f-b8cd-431f-be9d-f7be280c4e42": {
+        "akc_id": "33e4ff4f-b8cd-431f-be9d-f7be280c4e42",
+        "specimen": "4d77415f-9253-4181-87fc-446c3d445acb",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "c2c66ac5-c335-4c6d-8f3b-7ee10b681002",
-        "specimen": "281b16b4-81b1-4621-bca1-44ab1fddb0ee",
+      "ba7f6ea5-1f83-405e-821c-86e209ff3ad8": {
+        "akc_id": "ba7f6ea5-1f83-405e-821c-86e209ff3ad8",
+        "specimen": "570c2089-b3f5-4728-89e9-732354b25abd",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -466,20 +466,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "8d5c6f32-783c-4156-8bf3-09ff1626ac7d",
-        "specimen": "281b16b4-81b1-4621-bca1-44ab1fddb0ee",
+      "7eb8f109-9538-4854-9512-56def2fd0e71": {
+        "akc_id": "7eb8f109-9538-4854-9512-56def2fd0e71",
+        "specimen": "570c2089-b3f5-4728-89e9-732354b25abd",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "ad416584-39b5-4f10-8a7d-7a6d5ea4e873",
-        "specimen": "281b16b4-81b1-4621-bca1-44ab1fddb0ee",
+      "9a7f2a1b-cd27-4f42-958d-562b207d9c06": {
+        "akc_id": "9a7f2a1b-cd27-4f42-958d-562b207d9c06",
+        "specimen": "570c2089-b3f5-4728-89e9-732354b25abd",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC09_BC09_TUMOR1_TCR_2": {
-        "akc_id": "20fc0774-9824-4ce7-80ea-d3f77c71ae37",
-        "specimen": "257c7498-bda3-4e84-afdc-959a1e149b60",
+      "4e05e9b3-2e67-441a-8697-81bd8cb5e186": {
+        "akc_id": "4e05e9b3-2e67-441a-8697-81bd8cb5e186",
+        "specimen": "eaabec23-a0ee-4b96-bd72-0043a82c2c45",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -490,20 +490,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC09_BC09_TUMOR1_TCR_2": {
-        "akc_id": "13186142-2552-4d91-b7e1-21792acebd09",
-        "specimen": "257c7498-bda3-4e84-afdc-959a1e149b60",
+      "ff2b1b79-b0a6-472b-bd0e-17d5e54cb071": {
+        "akc_id": "ff2b1b79-b0a6-472b-bd0e-17d5e54cb071",
+        "specimen": "eaabec23-a0ee-4b96-bd72-0043a82c2c45",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC09_BC09_TUMOR1_TCR_2": {
-        "akc_id": "ac4913e7-bca1-4034-8139-3b5dc0928105",
-        "specimen": "257c7498-bda3-4e84-afdc-959a1e149b60",
+      "63aa6af9-aab8-41d7-9e32-f67dd4229c5a": {
+        "akc_id": "63aa6af9-aab8-41d7-9e32-f67dd4229c5a",
+        "specimen": "eaabec23-a0ee-4b96-bd72-0043a82c2c45",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC11_BC11_TUMOR2_TCR": {
-        "akc_id": "97b4af7b-9ba8-4aa2-af11-745dd97127e4",
-        "specimen": "fc86bce9-612c-4069-96f1-9e581a6e03e7",
+      "aab24017-8b0f-4025-a3c4-4b4a0c001e4b": {
+        "akc_id": "aab24017-8b0f-4025-a3c4-4b4a0c001e4b",
+        "specimen": "e02d0895-4233-44d8-bc2c-68ea9dc44e16",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -514,20 +514,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC11_BC11_TUMOR2_TCR": {
-        "akc_id": "215fa50c-b9cc-4203-8945-b5902ffac164",
-        "specimen": "fc86bce9-612c-4069-96f1-9e581a6e03e7",
+      "a031de5a-10be-4cd5-bfeb-024b3345dfab": {
+        "akc_id": "a031de5a-10be-4cd5-bfeb-024b3345dfab",
+        "specimen": "e02d0895-4233-44d8-bc2c-68ea9dc44e16",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC11_BC11_TUMOR2_TCR": {
-        "akc_id": "46242a25-1ad7-4058-a81b-0aef3e71ca42",
-        "specimen": "fc86bce9-612c-4069-96f1-9e581a6e03e7",
+      "e9f1b67e-b23d-416f-b6db-b817222680c0": {
+        "akc_id": "e9f1b67e-b23d-416f-b6db-b817222680c0",
+        "specimen": "e02d0895-4233-44d8-bc2c-68ea9dc44e16",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC10_BC10_TUMOR1_TCR": {
-        "akc_id": "b7d6f35d-3bb3-43ee-b1cf-4740821738d1",
-        "specimen": "a02011c1-0f97-452d-806a-97721199cd62",
+      "8a7170f1-a009-478e-a257-fa04806e11e7": {
+        "akc_id": "8a7170f1-a009-478e-a257-fa04806e11e7",
+        "specimen": "42eddac9-12d5-4551-ae10-032998c29b19",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -538,20 +538,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC10_BC10_TUMOR1_TCR": {
-        "akc_id": "4898e884-f156-4266-b118-88e7f73dbfc4",
-        "specimen": "a02011c1-0f97-452d-806a-97721199cd62",
+      "6d63ab36-3885-4b84-b8e1-3af1a8fa564e": {
+        "akc_id": "6d63ab36-3885-4b84-b8e1-3af1a8fa564e",
+        "specimen": "42eddac9-12d5-4551-ae10-032998c29b19",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC10_BC10_TUMOR1_TCR": {
-        "akc_id": "3f1ebe31-14ca-4238-ac93-e268e490e993",
-        "specimen": "a02011c1-0f97-452d-806a-97721199cd62",
+      "251eb43d-9459-4361-b881-d260a03d702e": {
+        "akc_id": "251eb43d-9459-4361-b881-d260a03d702e",
+        "specimen": "42eddac9-12d5-4551-ae10-032998c29b19",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC11_BC11_TUMOR1_TCR_2": {
-        "akc_id": "130687f8-179a-4aa1-b5de-914c3a5feba0",
-        "specimen": "dbdd65a7-763c-44f5-afc4-10a771b6e0c9",
+      "dd3f60a4-dc59-49bc-b2a7-a56db4a0aea2": {
+        "akc_id": "dd3f60a4-dc59-49bc-b2a7-a56db4a0aea2",
+        "specimen": "7430cbea-c2fb-49af-8636-b9a67ae73c4e",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -562,20 +562,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC11_BC11_TUMOR1_TCR_2": {
-        "akc_id": "19edeb27-be1f-4544-9d5b-1c85c40b9220",
-        "specimen": "dbdd65a7-763c-44f5-afc4-10a771b6e0c9",
+      "fe9a71f7-4c43-45c0-813e-4a1f5c2d514a": {
+        "akc_id": "fe9a71f7-4c43-45c0-813e-4a1f5c2d514a",
+        "specimen": "7430cbea-c2fb-49af-8636-b9a67ae73c4e",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC11_BC11_TUMOR1_TCR_2": {
-        "akc_id": "a76226e2-f0fe-43c2-a48a-b8afa4fd7112",
-        "specimen": "dbdd65a7-763c-44f5-afc4-10a771b6e0c9",
+      "46c383f6-5646-400f-b3e5-af980b075579": {
+        "akc_id": "46c383f6-5646-400f-b3e5-af980b075579",
+        "specimen": "7430cbea-c2fb-49af-8636-b9a67ae73c4e",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC09_BC09_TUMOR2_TCR_2": {
-        "akc_id": "ed3570ec-0a00-425c-9dc4-fb5c2467f6e9",
-        "specimen": "f892c7a9-9f51-4118-bc2e-efb779ed5138",
+      "a063aa07-5587-453b-8ec6-269b3d3fe317": {
+        "akc_id": "a063aa07-5587-453b-8ec6-269b3d3fe317",
+        "specimen": "e7457fff-56f4-4c7d-b98e-e03c10966f45",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -586,20 +586,20 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC09_BC09_TUMOR2_TCR_2": {
-        "akc_id": "ae0e6d2a-d07a-4551-ba87-65fdf82f9588",
-        "specimen": "f892c7a9-9f51-4118-bc2e-efb779ed5138",
+      "1c388e1e-7fbc-4cdd-8365-238b0fdf829b": {
+        "akc_id": "1c388e1e-7fbc-4cdd-8365-238b0fdf829b",
+        "specimen": "e7457fff-56f4-4c7d-b98e-e03c10966f45",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC09_BC09_TUMOR2_TCR_2": {
-        "akc_id": "362eff8b-3a68-4d2e-8aed-fdef7d267150",
-        "specimen": "f892c7a9-9f51-4118-bc2e-efb779ed5138",
+      "598adff4-6544-470f-a49b-71daa8c7bec1": {
+        "akc_id": "598adff4-6544-470f-a49b-71daa8c7bec1",
+        "specimen": "e7457fff-56f4-4c7d-b98e-e03c10966f45",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       },
-      "CellIsolationProcessing_BC09_BC09_TUMOR2_TCR": {
-        "akc_id": "438fe701-a0f8-423a-bfe4-90511c25db5c",
-        "specimen": "7966e064-f0e2-4712-8da4-8fd090d652c9",
+      "2ea784bf-62a0-4efc-ac0e-9d69644376a5": {
+        "akc_id": "2ea784bf-62a0-4efc-ac0e-9d69644376a5",
+        "specimen": "03b25b37-394f-4001-9355-cccf55974ca5",
         "cell_subset": {
           "id": "CL:0000084",
           "label": "T cell"
@@ -610,22 +610,22 @@
         "cells_per_reaction": 1,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_BC09_BC09_TUMOR2_TCR": {
-        "akc_id": "b8018c96-d70f-47df-81eb-6907f418ce8a",
-        "specimen": "7966e064-f0e2-4712-8da4-8fd090d652c9",
+      "908121dd-6375-4e35-a167-a71d2fa11d39": {
+        "akc_id": "908121dd-6375-4e35-a167-a71d2fa11d39",
+        "specimen": "03b25b37-394f-4001-9355-cccf55974ca5",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_BC09_BC09_TUMOR2_TCR": {
-        "akc_id": "78a336da-06be-43fd-ae14-47fdebc9d23f",
-        "specimen": "7966e064-f0e2-4712-8da4-8fd090d652c9",
+      "0e6ff3d3-c1cf-429c-8585-0818c524d7a8": {
+        "akc_id": "0e6ff3d3-c1cf-429c-8585-0818c524d7a8",
+        "specimen": "03b25b37-394f-4001-9355-cccf55974ca5",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_kit_version": "10x Genomics Chromium Single Cell V(D)J Enrichment Kit"
       }
     },
     "assays": {
-      "ReceptorRepertoireSequencingAssay_BC09_BC09_TUMOR1_TCR": {
-        "akc_id": "b734a1ba-4d99-4134-a8a3-35b1bfefe58f",
-        "specimen": "a1fb28ca-6e8b-46cd-baf0-032bd335bf69",
+      "b8d3e9be-b3de-4420-9227-2287d510527a": {
+        "akc_id": "b8d3e9be-b3de-4420-9227-2287d510527a",
+        "specimen": "1b82ece8-f555-4272-a3b3-b5117a88476b",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -634,9 +634,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC11_BC11_TUMOR2_TCR_2": {
-        "akc_id": "819642a2-78ce-412a-80d3-adfd4fe15315",
-        "specimen": "870bf2d9-fd6d-4072-9e38-2b4d7451510a",
+      "2dc31563-43aa-4ca6-a163-eab599a5472b": {
+        "akc_id": "2dc31563-43aa-4ca6-a163-eab599a5472b",
+        "specimen": "3a5e0ff8-d8bf-4e95-b2ee-3a9ccd270de4",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -645,9 +645,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC11_BC11_TUMOR1_TCR": {
-        "akc_id": "0520f9a4-f39f-4f5d-97c7-68a7b4061680",
-        "specimen": "7698a4be-135e-4b5a-993a-298cda47ba95",
+      "d4069cbb-4ca3-45b3-a7b8-a851d568e796": {
+        "akc_id": "d4069cbb-4ca3-45b3-a7b8-a851d568e796",
+        "specimen": "4d77415f-9253-4181-87fc-446c3d445acb",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -656,9 +656,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC10_BC10_TUMOR1_TCR_2": {
-        "akc_id": "85538fd4-86e7-4934-9ae0-790abb735421",
-        "specimen": "281b16b4-81b1-4621-bca1-44ab1fddb0ee",
+      "74393dfd-d0a2-4708-a76f-d24c901121f9": {
+        "akc_id": "74393dfd-d0a2-4708-a76f-d24c901121f9",
+        "specimen": "570c2089-b3f5-4728-89e9-732354b25abd",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -667,9 +667,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC09_BC09_TUMOR1_TCR_2": {
-        "akc_id": "9bc3c3c2-5a75-465d-9cb0-214805278115",
-        "specimen": "257c7498-bda3-4e84-afdc-959a1e149b60",
+      "c07617cf-d620-4057-9ea0-0bc722e01261": {
+        "akc_id": "c07617cf-d620-4057-9ea0-0bc722e01261",
+        "specimen": "eaabec23-a0ee-4b96-bd72-0043a82c2c45",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -678,9 +678,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC11_BC11_TUMOR2_TCR": {
-        "akc_id": "13930a90-b9aa-4c28-9691-b3f40a4a2668",
-        "specimen": "fc86bce9-612c-4069-96f1-9e581a6e03e7",
+      "1450fc90-e48d-4ebd-a1d2-ca8e01f97ead": {
+        "akc_id": "1450fc90-e48d-4ebd-a1d2-ca8e01f97ead",
+        "specimen": "e02d0895-4233-44d8-bc2c-68ea9dc44e16",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -689,9 +689,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC10_BC10_TUMOR1_TCR": {
-        "akc_id": "6048cb37-0fad-47c6-a6a3-ecd3f26945c4",
-        "specimen": "a02011c1-0f97-452d-806a-97721199cd62",
+      "20c6da46-1b5e-4aa0-9949-28b9796bc0dc": {
+        "akc_id": "20c6da46-1b5e-4aa0-9949-28b9796bc0dc",
+        "specimen": "42eddac9-12d5-4551-ae10-032998c29b19",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -700,9 +700,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC11_BC11_TUMOR1_TCR_2": {
-        "akc_id": "ebce703f-b64f-453f-9e54-517e716752af",
-        "specimen": "dbdd65a7-763c-44f5-afc4-10a771b6e0c9",
+      "9f4b34c9-529e-4c64-8360-0c36799b9866": {
+        "akc_id": "9f4b34c9-529e-4c64-8360-0c36799b9866",
+        "specimen": "7430cbea-c2fb-49af-8636-b9a67ae73c4e",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -711,9 +711,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC09_BC09_TUMOR2_TCR_2": {
-        "akc_id": "95a67ce4-e0af-440b-9e4b-5aeb1cd4ef15",
-        "specimen": "f892c7a9-9f51-4118-bc2e-efb779ed5138",
+      "a92ef1f6-dcb3-41e2-b874-630034e0fade": {
+        "akc_id": "a92ef1f6-dcb3-41e2-b874-630034e0fade",
+        "specimen": "e7457fff-56f4-4c7d-b98e-e03c10966f45",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",
@@ -722,9 +722,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_BC09_BC09_TUMOR2_TCR": {
-        "akc_id": "1e4bab85-392e-4675-9aa7-8ab164dfba1e",
-        "specimen": "7966e064-f0e2-4712-8da4-8fd090d652c9",
+      "778eba6b-ff84-4994-b240-c7c2b3d2c31e": {
+        "akc_id": "778eba6b-ff84-4994-b240-c7c2b3d2c31e",
+        "specimen": "03b25b37-394f-4001-9355-cccf55974ca5",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB",

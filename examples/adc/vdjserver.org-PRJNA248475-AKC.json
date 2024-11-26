@@ -4,8 +4,8 @@
       "": {
         "akc_id": ""
       },
-      "Investigation_PRJNA248475": {
-        "akc_id": "494c5cb2-a248-4200-bf30-3b0af8037e24",
+      "66457859-e3ca-4b2b-897c-13d976ce5878": {
+        "akc_id": "66457859-e3ca-4b2b-897c-13d976ce5878",
         "name": "B cells populating the multiple sclerosis brain mature in the draining cervical lymph nodes",
         "description": "Multiple sclerosis (MS) is an inflammatory disease of the central nervous system (CNS) characterized by autoimmune-mediated demyelination and neurodegeneration. The CNS of patients with MS harbors expanded clones of antigen-experienced B cells that reside in distinct compartments including the meninges, cerebrospinal fluid (CSF), and parenchyma. It is not understood whether this immune infiltrate initiates its development in the CNS or in peripheral tissues. B cells in the CSF can exchange with those in peripheral blood, implying that CNS B cells may have access to lymphoid tissue that may be the specific compartment(s) in which CNS-resident B cells encounter antigen and experience affinity maturation. Paired tissues were used to determine whether the B cells that populate the CNS mature in the draining cervical lymph nodes (CLNs). High-throughput sequencing of the antibody repertoire demonstrated that clonally expanded B cells were present in both compartments. Founding members of clones were more often found in the draining CLNs. More mature clonal members derived from these founders were observed in the draining CLNs and also in the CNS, including lesions. These data provide new evidence that B cells traffic freely across the tissue barrier, with the majority of B cell maturation occurring outside of the CNS in the secondary lymphoid tissue. Our study may aid in further defining the mechanisms of immunomodulatory therapies that either deplete circulating B cells or affect the intrathecal B cell compartment by inhibiting lymphocyte transmigration into the CNS.\n",
         "study_type": {
@@ -16,73 +16,73 @@
         "release_date": "2019-11-08T11:01:11.542-06:00",
         "update_date": "2022-12-16T20:42:07.319Z",
         "participants": [
-          "3dd82cce-122e-4145-a93e-9125b5b3b304",
-          "87aa6697-75b2-4275-946d-41da5142bccb",
-          "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578",
-          "8f094716-8a79-4eff-83f6-7241750e09f2"
+          "6d31ae39-398d-4556-8499-dd8336354690",
+          "4a1bde8e-b485-4469-a103-312711cdefb6",
+          "cc620f5c-6df0-41d9-9f91-80cbff601f9d",
+          "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
         ],
         "assays": [
-          "c37f06ac-b035-4393-b459-bd0ab074fbe9",
-          "27526f62-a51b-4da3-b077-845e214d4e6a",
-          "8d255eff-3e43-4eea-8ba4-9f09beb62d0e",
-          "d003f6ea-c15f-4f80-929e-0a9e47d7c44f",
-          "c71672fe-acfa-4942-9bb6-f04c56a757b3",
-          "b620939b-84c0-4897-a10d-d4da2bc6fe34",
-          "2fc78c99-9951-41fb-84c1-3869f90d2d10",
-          "0e96d257-da8f-404f-9899-800e4496b713",
-          "1522bdf7-46c1-4163-bb68-3dca0bce56ea",
-          "7a5632d3-cee6-41f9-a9a5-54ecae4d3301",
-          "eb4119be-936c-42c1-8a1f-0cdc5fe8951a",
-          "efb47b53-6fe8-4d25-956e-ec28e7095b68",
-          "4f682bd6-664a-4c7d-919e-e60eee5ebdeb",
-          "a12c4fdb-dc99-4414-82ae-670b42c01303",
-          "7cac86c0-1e4b-4d55-994e-026e1eb09594",
-          "d470c22c-88e1-49ce-a955-53113f56bb7b",
-          "561ca59c-b31e-4c37-9ef8-f27c0a4cf768",
-          "c13e72b6-50df-4291-9500-afce87b5b03c",
-          "a1eb3fe6-216e-4fa3-a458-28595f1d9387",
-          "d8456090-3833-4435-aa18-d60ca9f76352",
-          "84a3738e-5725-4c04-9bb1-e27789ed1ece",
-          "7b0c1cbe-bef1-4985-9180-17398f4d61cb",
-          "442ac95a-2a1b-4222-a2d2-bea52f415691",
-          "57e70fe0-cef8-49fb-a11d-402f138c684a",
-          "605e4b34-0592-4b14-8143-5a05a4f05ec0",
-          "09805720-0b62-4f14-8651-488587f0d4b3",
-          "4df9d85a-fa0b-45c8-ab3c-ba582ba17255",
-          "30a58db8-83aa-423b-b0fe-425d4a03e970",
-          "fec74765-f3ac-4f3e-b306-19bc74a9d283",
-          "4dc8b92f-b729-4f79-92fd-b4b86ffeaa4e",
-          "70668644-6f17-4dcc-b7e1-5018965b861d",
-          "decf1ed8-7a9f-4412-b61c-bbd9cb80a20e"
+          "6462d6da-3f53-47a1-9b45-3a93a66467d9",
+          "0efda01f-3a40-4891-8895-729268cb3c98",
+          "9cbe2693-46e1-464a-b7d2-3a3766c3131a",
+          "55f7f0f3-e121-4254-8616-40c935de3888",
+          "380da5b0-aad4-4839-b118-aedaad49c47b",
+          "209f29f8-6b41-4cb3-a9f7-4d0e1f2397da",
+          "2db19a53-9237-4365-ae18-8ad15d0c1a54",
+          "191a319b-7d7b-4ccb-806c-eb4c6047e6c8",
+          "d24afb01-23ab-4775-b37b-70b0c7efe638",
+          "e5c36113-fb53-4046-be72-facfafafd182",
+          "6a7c2c91-a2f8-41f0-8f36-036a5822bead",
+          "ef1820a2-892a-4714-a6f1-e8dc7e0bd0d2",
+          "b5b29f1a-ebef-41d1-9d3c-30419defc284",
+          "8cddcd79-f5b8-4d43-b0c2-a225149c67d1",
+          "850935be-e833-4d9f-9f7d-79edd3856279",
+          "c7213249-d861-40f2-8e88-9833c36adab0",
+          "7f6fbcda-a222-47fe-b16e-2cfac7f783e9",
+          "f69ed145-4c28-443f-bf36-5fb3cbfa20e8",
+          "2778f752-87e9-4c32-8b3e-fa9cb3b24707",
+          "074cd629-502a-4d54-8ab1-d2b2a158deb2",
+          "2c00f350-ef03-45bb-af9b-678adf3eaa78",
+          "f2a7654d-2bfc-4310-a2e1-ef59f3c9a950",
+          "0e81dee2-8ebb-4edf-8704-c950b173de3f",
+          "61a505cf-507c-43a9-8956-e8ca7c4c9eff",
+          "8e942051-a29f-4a99-9869-a14cc41e8b1e",
+          "859de238-0f55-4114-a480-21c9757343b1",
+          "6deccf63-c476-4a3d-8969-3b578d923a4e",
+          "05d6de80-c64c-4fe5-85ed-c9a5ce8452c8",
+          "c81ed0b1-49cc-4ee6-acd1-64753b26ba9b",
+          "35e939c7-e0a0-497a-9fce-f6d97d7034a2",
+          "aaad1d7e-a4d3-46b3-8557-193a3718387f",
+          "4c7604a1-3730-4617-9d01-73548bb30c57"
         ],
         "documents": [
-          "49287d22-ae98-4864-915c-96b72d978afe"
+          "fec07b48-3b8e-4d0f-8d02-0d395299f356"
         ]
       }
     },
     "references": {
-      "Reference_PRJNA248475": {
+      "fec07b48-3b8e-4d0f-8d02-0d395299f356": {
         "source_uri": "",
         "sources": "PMID:25100741",
         "investigations": [
           "",
-          "494c5cb2-a248-4200-bf30-3b0af8037e24"
+          "66457859-e3ca-4b2b-897c-13d976ce5878"
         ],
-        "akc_id": "49287d22-ae98-4864-915c-96b72d978afe"
+        "akc_id": "fec07b48-3b8e-4d0f-8d02-0d395299f356"
       }
     },
     "study_arms": {
-      "StudyArm": {
-        "akc_id": "e2d83d6a-0ca2-401f-b5db-8fede443e5f7",
-        "investigation": "494c5cb2-a248-4200-bf30-3b0af8037e24",
+      "7d6aa321-c54d-4b42-9729-b5ebe53eab78": {
+        "akc_id": "7d6aa321-c54d-4b42-9729-b5ebe53eab78",
+        "investigation": "66457859-e3ca-4b2b-897c-13d976ce5878",
         "inclusion_criteria": " "
       }
     },
     "participants": {
-      "Participant_M2": {
-        "akc_id": "3dd82cce-122e-4145-a93e-9125b5b3b304",
+      "6d31ae39-398d-4556-8499-dd8336354690": {
+        "akc_id": "6d31ae39-398d-4556-8499-dd8336354690",
         "name": "M2",
-        "study_arm": "e2d83d6a-0ca2-401f-b5db-8fede443e5f7",
+        "study_arm": "7d6aa321-c54d-4b42-9729-b5ebe53eab78",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -95,10 +95,10 @@
         },
         "age_event": "sampling"
       },
-      "Participant_M3": {
-        "akc_id": "87aa6697-75b2-4275-946d-41da5142bccb",
+      "4a1bde8e-b485-4469-a103-312711cdefb6": {
+        "akc_id": "4a1bde8e-b485-4469-a103-312711cdefb6",
         "name": "M3",
-        "study_arm": "e2d83d6a-0ca2-401f-b5db-8fede443e5f7",
+        "study_arm": "7d6aa321-c54d-4b42-9729-b5ebe53eab78",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -111,10 +111,10 @@
         },
         "age_event": "sampling"
       },
-      "Participant_M4": {
-        "akc_id": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578",
+      "cc620f5c-6df0-41d9-9f91-80cbff601f9d": {
+        "akc_id": "cc620f5c-6df0-41d9-9f91-80cbff601f9d",
         "name": "M4",
-        "study_arm": "e2d83d6a-0ca2-401f-b5db-8fede443e5f7",
+        "study_arm": "7d6aa321-c54d-4b42-9729-b5ebe53eab78",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -127,10 +127,10 @@
         },
         "age_event": "sampling"
       },
-      "Participant_M5": {
-        "akc_id": "8f094716-8a79-4eff-83f6-7241750e09f2",
+      "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a": {
+        "akc_id": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a",
         "name": "M5",
-        "study_arm": "e2d83d6a-0ca2-401f-b5db-8fede443e5f7",
+        "study_arm": "7d6aa321-c54d-4b42-9729-b5ebe53eab78",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -145,476 +145,476 @@
       }
     },
     "life_events": {
-      "LifeEvent_Participant_M2_M2 CLN section 1": {
-        "akc_id": "9de21c74-6dff-465f-9b05-8fa4eda7fa4e",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "a74fbee9-ada5-4c23-b869-9c530de0ae51": {
+        "akc_id": "a74fbee9-ada5-4c23-b869-9c530de0ae51",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_ImmuneExposure_M2_M2 CLN section 1": {
-        "akc_id": "dff1980a-6829-44d6-99ca-8c23fee0b042",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "8b74493a-949e-4018-ad6e-dc18fd626b5a": {
+        "akc_id": "8b74493a-949e-4018-ad6e-dc18fd626b5a",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Specimen_M2_M2 CLN section 1": {
-        "akc_id": "c3c4bf59-67d9-48a4-a82a-505ee425e611",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "9306e2e8-6c58-4d8a-a0f5-783942802620": {
+        "akc_id": "9306e2e8-6c58-4d8a-a0f5-783942802620",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Participant_M2_M2 CLN section 2": {
-        "akc_id": "7a2f7969-ac0a-4d28-9aa5-0aa13b443ccc",
+      "e217af67-78c4-4154-9fbf-0a4fc288cdfa": {
+        "akc_id": "e217af67-78c4-4154-9fbf-0a4fc288cdfa",
         "adc_link_tag": "LifeEvent_Participant_M2_M2 CLN section 2",
         "adc_repertoire_id": "5969357543952608790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M2",
         "adc_sample_id": "M2 CLN section 2",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Specimen_M2_M2 CLN section 2": {
-        "akc_id": "60c4b3be-43f8-4d2d-bb55-05990f955ac6",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "6a75deff-8b98-4695-af13-85ef195bd4b8": {
+        "akc_id": "6a75deff-8b98-4695-af13-85ef195bd4b8",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Participant_M2_M2 CLN section 3": {
-        "akc_id": "6f16709d-f9b4-45c6-9e41-9b758ee05845",
+      "7fd039a7-ae0e-497e-9c5c-6371667b4485": {
+        "akc_id": "7fd039a7-ae0e-497e-9c5c-6371667b4485",
         "adc_link_tag": "LifeEvent_Participant_M2_M2 CLN section 3",
         "adc_repertoire_id": "5949257097007328790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M2",
         "adc_sample_id": "M2 CLN section 3",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Specimen_M2_M2 CLN section 3": {
-        "akc_id": "020b21ee-4946-4264-8a63-8cde5809c5b3",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "ab2b92a8-923f-4f82-a2fd-f1d4b1133e09": {
+        "akc_id": "ab2b92a8-923f-4f82-a2fd-f1d4b1133e09",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Participant_M2_M2 Lesion section 1": {
-        "akc_id": "b6b1fe9d-b482-46ce-8cda-33c133b24910",
+      "87a30ebb-0650-4f24-86be-f0573cb0e94a": {
+        "akc_id": "87a30ebb-0650-4f24-86be-f0573cb0e94a",
         "adc_link_tag": "LifeEvent_Participant_M2_M2 Lesion section 1",
         "adc_repertoire_id": "5927911109546208790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M2",
         "adc_sample_id": "M2 Lesion section 1",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Specimen_M2_M2 Lesion section 1": {
-        "akc_id": "d86b4cdb-8455-4bf0-8ff0-4c04580fa08b",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "921eeb35-c7c9-40a5-8d8b-33244e4ebb95": {
+        "akc_id": "921eeb35-c7c9-40a5-8d8b-33244e4ebb95",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Participant_M2_M2 Lesion section 2": {
-        "akc_id": "9159700c-2874-4232-a8cf-ba56fc866c9f",
+      "f8a2357e-3e89-410b-b7b8-e42de15b3d41": {
+        "akc_id": "f8a2357e-3e89-410b-b7b8-e42de15b3d41",
         "adc_link_tag": "LifeEvent_Participant_M2_M2 Lesion section 2",
         "adc_repertoire_id": "5910044045594848790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M2",
         "adc_sample_id": "M2 Lesion section 2",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Specimen_M2_M2 Lesion section 2": {
-        "akc_id": "f36daf6c-47e4-41ea-8ea6-08d951c2ebeb",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "39385b7d-791e-4c4d-a10c-e9c083f20e92": {
+        "akc_id": "39385b7d-791e-4c4d-a10c-e9c083f20e92",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Participant_M2_M2 Lesion section 3": {
-        "akc_id": "d47befeb-04a4-4174-bf21-aa5ac6356114",
+      "131f7270-42d4-4098-b42e-7a46bff69878": {
+        "akc_id": "131f7270-42d4-4098-b42e-7a46bff69878",
         "adc_link_tag": "LifeEvent_Participant_M2_M2 Lesion section 3",
         "adc_repertoire_id": "5890931441127648790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M2",
         "adc_sample_id": "M2 Lesion section 3",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Specimen_M2_M2 Lesion section 3": {
-        "akc_id": "8b867cab-8b7a-4e41-be40-a2c9ddd23ba8",
-        "participant": "3dd82cce-122e-4145-a93e-9125b5b3b304"
+      "4261a927-c135-4619-8d34-8ae93c7499e2": {
+        "akc_id": "4261a927-c135-4619-8d34-8ae93c7499e2",
+        "participant": "6d31ae39-398d-4556-8499-dd8336354690"
       },
-      "LifeEvent_Participant_M3_M3 CLN section 1": {
-        "akc_id": "fb3d53a3-cdfb-4b05-a37d-91046cc3d459",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+      "b1ac413f-2c76-473e-bd7b-eefde925c909": {
+        "akc_id": "b1ac413f-2c76-473e-bd7b-eefde925c909",
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_ImmuneExposure_M3_M3 CLN section 1": {
-        "akc_id": "ca02d730-879a-41e9-a3d6-cc22236f9079",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+      "f76844c0-ec63-47da-8e72-d62cdab3c852": {
+        "akc_id": "f76844c0-ec63-47da-8e72-d62cdab3c852",
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Specimen_M3_M3 CLN section 1": {
-        "akc_id": "0b1a89bb-4387-4ebc-8802-01ba64639c09",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+      "8b5ecfb1-b461-4ab1-8bec-067720b04174": {
+        "akc_id": "8b5ecfb1-b461-4ab1-8bec-067720b04174",
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Participant_M3_M3 CLN section 2": {
-        "akc_id": "9b036617-de73-4ccd-8945-bd95d21c9cfc",
+      "cd98076e-f351-49c3-ad3b-16f66133d058": {
+        "akc_id": "cd98076e-f351-49c3-ad3b-16f66133d058",
         "adc_link_tag": "LifeEvent_Participant_M3_M3 CLN section 2",
         "adc_repertoire_id": "5847380472746208790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M3",
         "adc_sample_id": "M3 CLN section 2",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Specimen_M3_M3 CLN section 2": {
-        "akc_id": "e8c12dfa-b03e-447f-b829-e4310eb00dad",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+      "1dc3c11e-1442-41cd-8791-e07393662f98": {
+        "akc_id": "1dc3c11e-1442-41cd-8791-e07393662f98",
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Participant_M3_M3 CLN section 3": {
-        "akc_id": "a7291afd-4e38-4c2a-bbef-4ebefbecb52b",
+      "e6b800e5-3021-4299-949b-01812450e4f1": {
+        "akc_id": "e6b800e5-3021-4299-949b-01812450e4f1",
         "adc_link_tag": "LifeEvent_Participant_M3_M3 CLN section 3",
         "adc_repertoire_id": "5825347290517728790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M3",
         "adc_sample_id": "M3 CLN section 3",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Specimen_M3_M3 CLN section 3": {
-        "akc_id": "ba3e1d32-0039-4774-b0cb-b148cec5eea9",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+      "2904f8ad-c3d0-432b-9cd7-bd4c213282bf": {
+        "akc_id": "2904f8ad-c3d0-432b-9cd7-bd4c213282bf",
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Participant_M3_M3 Lesion section 1": {
-        "akc_id": "4d425ee4-cb02-425c-8623-7b4911b780f5",
+      "0fda085e-2808-4df0-a662-0eaea0bfbf97": {
+        "akc_id": "0fda085e-2808-4df0-a662-0eaea0bfbf97",
         "adc_link_tag": "LifeEvent_Participant_M3_M3 Lesion section 1",
         "adc_repertoire_id": "5803743605018848790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M3",
         "adc_sample_id": "M3 Lesion section 1",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Specimen_M3_M3 Lesion section 1": {
-        "akc_id": "cc0e98bc-ceec-46ac-95ed-a653d6c184fc",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+      "cf85902f-60e2-4f3e-804c-b816c55a58cc": {
+        "akc_id": "cf85902f-60e2-4f3e-804c-b816c55a58cc",
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Participant_M3_M3 Lesion section 2": {
-        "akc_id": "209b1564-1ee6-4ed8-ab08-4b84cf6a977c",
+      "2af85fe1-3fe6-4cda-b09d-2d15497d90d4": {
+        "akc_id": "2af85fe1-3fe6-4cda-b09d-2d15497d90d4",
         "adc_link_tag": "LifeEvent_Participant_M3_M3 Lesion section 2",
         "adc_repertoire_id": "5783299560689888790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M3",
         "adc_sample_id": "M3 Lesion section 2",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Specimen_M3_M3 Lesion section 2": {
-        "akc_id": "5e76342f-0fb0-4ea8-b6fb-6e8637e8dd59",
-        "participant": "87aa6697-75b2-4275-946d-41da5142bccb"
+      "0fb94c42-face-4067-a769-d8101610456c": {
+        "akc_id": "0fb94c42-face-4067-a769-d8101610456c",
+        "participant": "4a1bde8e-b485-4469-a103-312711cdefb6"
       },
-      "LifeEvent_Participant_M4_M4 CLN section 1": {
-        "akc_id": "64ef5f81-2e2d-4869-8c3c-5a39e73f0e4d",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "d4cb0e67-6927-4ff3-9b72-2973e2731c73": {
+        "akc_id": "d4cb0e67-6927-4ff3-9b72-2973e2731c73",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_ImmuneExposure_M4_M4 CLN section 1": {
-        "akc_id": "f48dcbeb-026d-4289-a6d7-5aa4f5c61c30",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "6210fcf3-c33a-4a3c-a908-6ac252285e68": {
+        "akc_id": "6210fcf3-c33a-4a3c-a908-6ac252285e68",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Specimen_M4_M4 CLN section 1": {
-        "akc_id": "00083c89-434c-4d12-9403-4d2f2f5605b9",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "be388469-dd7e-4aad-b3d1-5a48dc77a5a2": {
+        "akc_id": "be388469-dd7e-4aad-b3d1-5a48dc77a5a2",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Participant_M4_M4 CLN section 2": {
-        "akc_id": "6cec3bc2-dd11-4e7f-91f2-61c40de95872",
+      "d99b3e22-604a-4eee-a045-571c3517dcc1": {
+        "akc_id": "d99b3e22-604a-4eee-a045-571c3517dcc1",
         "adc_link_tag": "LifeEvent_Participant_M4_M4 CLN section 2",
         "adc_repertoire_id": "5746663489655008790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M4",
         "adc_sample_id": "M4 CLN section 2",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Specimen_M4_M4 CLN section 2": {
-        "akc_id": "00f50490-ef2d-4ff4-8e4c-e9396a9c604a",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "826088e6-28d1-46b0-b3cf-c5b70f668931": {
+        "akc_id": "826088e6-28d1-46b0-b3cf-c5b70f668931",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Participant_M4_M4 CLN section 3": {
-        "akc_id": "296f45e6-7a17-4d96-8f47-8fc75fe8402f",
+      "e2276205-721d-4e86-ba7e-f8c2fa2a1054": {
+        "akc_id": "e2276205-721d-4e86-ba7e-f8c2fa2a1054",
         "adc_link_tag": "LifeEvent_Participant_M4_M4 CLN section 3",
         "adc_repertoire_id": "5730428513276128790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M4",
         "adc_sample_id": "M4 CLN section 3",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Specimen_M4_M4 CLN section 3": {
-        "akc_id": "9394ed90-7806-4ca3-a62f-dbf2f4f1dc6d",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "0932aa62-67ae-4cdb-8a6a-4753120acf33": {
+        "akc_id": "0932aa62-67ae-4cdb-8a6a-4753120acf33",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Participant_M4_M4 Lesion section 1": {
-        "akc_id": "f4bf1e5e-f938-48ec-acc5-cb94d0b9dd5c",
+      "e109c330-50c9-49be-a579-47a54788f398": {
+        "akc_id": "e109c330-50c9-49be-a579-47a54788f398",
         "adc_link_tag": "LifeEvent_Participant_M4_M4 Lesion section 1",
         "adc_repertoire_id": "5716083322507488790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M4",
         "adc_sample_id": "M4 Lesion section 1",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Specimen_M4_M4 Lesion section 1": {
-        "akc_id": "bf1e043c-083c-47fc-a494-450c68229cd8",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "b4a87608-a8cd-4917-8ac1-4b3f5b761bd3": {
+        "akc_id": "b4a87608-a8cd-4917-8ac1-4b3f5b761bd3",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Participant_M4_M4 Lesion section 2": {
-        "akc_id": "be30e354-bb7f-4583-9df7-03ce4fd931d2",
+      "9cc8d67a-5610-47c2-8369-9d141c44779c": {
+        "akc_id": "9cc8d67a-5610-47c2-8369-9d141c44779c",
         "adc_link_tag": "LifeEvent_Participant_M4_M4 Lesion section 2",
         "adc_repertoire_id": "5696841869021408790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M4",
         "adc_sample_id": "M4 Lesion section 2",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Specimen_M4_M4 Lesion section 2": {
-        "akc_id": "2053b98f-5e33-40f3-9f44-23caedec4db3",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "82e51987-386d-427d-a418-373171b83a6b": {
+        "akc_id": "82e51987-386d-427d-a418-373171b83a6b",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Participant_M4_M4 Lesion section 3": {
-        "akc_id": "699e28b3-a086-4d68-80c5-efb512a1c457",
+      "0756c62b-82b6-4822-a1ad-7b201624b8c4": {
+        "akc_id": "0756c62b-82b6-4822-a1ad-7b201624b8c4",
         "adc_link_tag": "LifeEvent_Participant_M4_M4 Lesion section 3",
         "adc_repertoire_id": "5675367032541408790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M4",
         "adc_sample_id": "M4 Lesion section 3",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Specimen_M4_M4 Lesion section 3": {
-        "akc_id": "bdfcb8da-c382-4a4f-88c1-c70529b774be",
-        "participant": "4c0fd7c7-d8e3-4cfe-ab9d-d4a7ee550578"
+      "b2bf088b-3a98-4b73-af57-56a576ce7c5c": {
+        "akc_id": "b2bf088b-3a98-4b73-af57-56a576ce7c5c",
+        "participant": "cc620f5c-6df0-41d9-9f91-80cbff601f9d"
       },
-      "LifeEvent_Participant_M5_M5 Pia section 1": {
-        "akc_id": "ebf2f24b-2627-46e0-8679-bda3e4cd992c",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "957b37af-404b-4884-8337-92f79cc00397": {
+        "akc_id": "957b37af-404b-4884-8337-92f79cc00397",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_ImmuneExposure_M5_M5 Pia section 1": {
-        "akc_id": "525bf074-b5d3-4c1d-b19f-7a70d02b8760",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "d4aeef2e-9743-4784-b8ec-7a31ad5de9c8": {
+        "akc_id": "d4aeef2e-9743-4784-b8ec-7a31ad5de9c8",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Pia section 1": {
-        "akc_id": "100f24d5-3060-414e-bc9e-1cfac5e44f52",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "ae9162da-2d2e-4d42-b7ff-d8e0024ad095": {
+        "akc_id": "ae9162da-2d2e-4d42-b7ff-d8e0024ad095",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Pia section 2": {
-        "akc_id": "fa2fd643-a86b-44b6-8b78-d5c39806fe9b",
+      "dc5c293c-f028-4ac9-9fae-2076e7406509": {
+        "akc_id": "dc5c293c-f028-4ac9-9fae-2076e7406509",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Pia section 2",
         "adc_repertoire_id": "5643412475859168790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Pia section 2",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Pia section 2": {
-        "akc_id": "abf9514c-9cda-4c94-af99-b3091ff77778",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "af7fe234-b493-433c-b211-3590fee6de7d": {
+        "akc_id": "af7fe234-b493-433c-b211-3590fee6de7d",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Pia section 3": {
-        "akc_id": "54aab17e-fde2-4594-94e2-e34a8dd12e57",
+      "b79f7066-ea3a-4998-b5ec-b5cd0afa95cb": {
+        "akc_id": "b79f7066-ea3a-4998-b5ec-b5cd0afa95cb",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Pia section 3",
         "adc_repertoire_id": "5622195337416928790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Pia section 3",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Pia section 3": {
-        "akc_id": "161b8f80-a552-4ff6-9781-612e0d62aa4f",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "78eea1f2-68bf-4e5c-b4c2-55bd4d4c6677": {
+        "akc_id": "78eea1f2-68bf-4e5c-b4c2-55bd4d4c6677",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 CLN-B section 1": {
-        "akc_id": "d2d207ac-1aaa-4d09-a3b8-bfa38df5a105",
+      "c008b93d-afbf-4f02-8948-0ebcdf575bb8": {
+        "akc_id": "c008b93d-afbf-4f02-8948-0ebcdf575bb8",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 CLN-B section 1",
         "adc_repertoire_id": "5601321796358368790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 CLN-B section 1",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 CLN-B section 1": {
-        "akc_id": "8c5ee8ed-59e5-4d23-b1f7-5a262d530c62",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "972a8dcd-8c6c-4ed0-aec8-093649c4d9c6": {
+        "akc_id": "972a8dcd-8c6c-4ed0-aec8-093649c4d9c6",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 CLN-B section 2": {
-        "akc_id": "395610e2-4aae-448f-a4a4-7207ec582afc",
+      "264d28a7-780d-4365-bfda-a31aed403748": {
+        "akc_id": "264d28a7-780d-4365-bfda-a31aed403748",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 CLN-B section 2",
         "adc_repertoire_id": "5579288614129888790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 CLN-B section 2",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 CLN-B section 2": {
-        "akc_id": "d3ed57ce-74c7-42b9-9d41-78a638e0c4b7",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "d0b95ef6-55d8-4b77-b83b-12a818f8cf29": {
+        "akc_id": "d0b95ef6-55d8-4b77-b83b-12a818f8cf29",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 CLN-B section 3": {
-        "akc_id": "e7393244-9791-4dce-aaaf-693846553961",
+      "fd17e568-395e-4e71-a005-be37f6aac3da": {
+        "akc_id": "fd17e568-395e-4e71-a005-be37f6aac3da",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 CLN-B section 3",
         "adc_repertoire_id": "5557942626668768790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 CLN-B section 3",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 CLN-B section 3": {
-        "akc_id": "e5671778-fa64-4940-8d5c-fe6a003d57f3",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "4adb2d7c-372d-40f0-b629-87a28d9e1892": {
+        "akc_id": "4adb2d7c-372d-40f0-b629-87a28d9e1892",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 CLN-A section 1": {
-        "akc_id": "618218cf-2d8f-4f7d-8569-5a2d0818b144",
+      "dac24d13-4788-41e9-b5b6-9ea5ca5ff413": {
+        "akc_id": "dac24d13-4788-41e9-b5b6-9ea5ca5ff413",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 CLN-A section 1",
         "adc_repertoire_id": "5533976709157088790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 CLN-A section 1",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 CLN-A section 1": {
-        "akc_id": "4657dc8b-b9d0-4492-a22c-96a45c3f72c6",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "ebdcb725-03d3-4837-aab5-36dd36305a6a": {
+        "akc_id": "ebdcb725-03d3-4837-aab5-36dd36305a6a",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 CLN-A section 2": {
-        "akc_id": "3906c61d-9ef7-490e-9719-22458cf39406",
+      "f54d47dd-89e7-46c2-b69b-5eba1f9dab36": {
+        "akc_id": "f54d47dd-89e7-46c2-b69b-5eba1f9dab36",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 CLN-A section 2",
         "adc_repertoire_id": "5511127483142368790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 CLN-A section 2",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 CLN-A section 2": {
-        "akc_id": "48c69870-f7ac-4e86-b97c-92091bbea9a2",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "da7b9a87-6c44-431d-8cef-751654c2c049": {
+        "akc_id": "da7b9a87-6c44-431d-8cef-751654c2c049",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 CLN-A section 3": {
-        "akc_id": "193f206c-6891-484f-8064-6cd3f9915a28",
+      "553a0d56-5765-4254-8e48-3072effbda09": {
+        "akc_id": "553a0d56-5765-4254-8e48-3072effbda09",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 CLN-A section 3",
         "adc_repertoire_id": "5489266099605728790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 CLN-A section 3",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 CLN-A section 3": {
-        "akc_id": "29d155d8-fcee-45df-b5a0-e79e6a6a3b9e",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "0c189474-3271-4173-87d6-97d2d433afd9": {
+        "akc_id": "0c189474-3271-4173-87d6-97d2d433afd9",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Lesion section 1": {
-        "akc_id": "ee5a953e-1466-4689-b102-4441bc6fc9fb",
+      "23e9fda4-3e15-4ca8-a30c-18350d3864eb": {
+        "akc_id": "23e9fda4-3e15-4ca8-a30c-18350d3864eb",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Lesion section 1",
         "adc_repertoire_id": "5466545722609888790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Lesion section 1",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Lesion section 1": {
-        "akc_id": "7db560be-6f36-4cfe-947c-01b5754f46fb",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "581aeb56-56da-4888-b544-7975f18eb20f": {
+        "akc_id": "581aeb56-56da-4888-b544-7975f18eb20f",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Lesion section 2": {
-        "akc_id": "eaca880f-e963-4739-9040-3ccac14526f6",
+      "8475c451-3d98-418b-b9d8-8d22b9186ef1": {
+        "akc_id": "8475c451-3d98-418b-b9d8-8d22b9186ef1",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Lesion section 2",
         "adc_repertoire_id": "5443266999865568790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Lesion section 2",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Lesion section 2": {
-        "akc_id": "c326a365-8c39-4620-a98b-311bf9f5d0ac",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "7fb4903a-a407-405f-b871-52eaa7ebfd1d": {
+        "akc_id": "7fb4903a-a407-405f-b871-52eaa7ebfd1d",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Lesion section 3": {
-        "akc_id": "9a66d9e9-31f5-4ddc-8eec-030f36b738be",
+      "e474d823-de1f-4a4a-9ecc-11b52a888246": {
+        "akc_id": "e474d823-de1f-4a4a-9ecc-11b52a888246",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Lesion section 3",
         "adc_repertoire_id": "5427719218254048790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Lesion section 3",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Lesion section 3": {
-        "akc_id": "f149aa99-30c7-48ff-ba5b-34bd7179a084",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "3a727565-f734-4137-a09f-d7d07411cb0e": {
+        "akc_id": "3a727565-f734-4137-a09f-d7d07411cb0e",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Choroid section 1": {
-        "akc_id": "89b6b4ea-1cee-4f76-9d76-31610d68cb10",
+      "9f9da8a1-ab44-4886-acee-427354683fc5": {
+        "akc_id": "9f9da8a1-ab44-4886-acee-427354683fc5",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Choroid section 1",
         "adc_repertoire_id": "5413030430101728790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Choroid section 1",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Choroid section 1": {
-        "akc_id": "60700b7c-aba9-41ca-928a-1532f796136b",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "4d7f8f4b-9e04-44f2-9a35-24cee26243b2": {
+        "akc_id": "4d7f8f4b-9e04-44f2-9a35-24cee26243b2",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Choroid section 2": {
-        "akc_id": "58baba28-7166-46da-9371-a75073572e5d",
+      "c5069694-ee08-4b04-bfb6-929ce35ce568": {
+        "akc_id": "c5069694-ee08-4b04-bfb6-929ce35ce568",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Choroid section 2",
         "adc_repertoire_id": "5398126893584608790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Choroid section 2",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Choroid section 2": {
-        "akc_id": "28e34692-c01c-47e0-8c6f-e895f31139e9",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "43f385aa-b793-4b56-8e62-aa37dff39185": {
+        "akc_id": "43f385aa-b793-4b56-8e62-aa37dff39185",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Participant_M5_M5 Choroid section 3": {
-        "akc_id": "4c082ec9-220b-45ac-ad4b-4cbef581d8cb",
+      "469b13b4-83ed-43c5-a90e-86bac92abfc2": {
+        "akc_id": "469b13b4-83ed-43c5-a90e-86bac92abfc2",
         "adc_link_tag": "LifeEvent_Participant_M5_M5 Choroid section 3",
         "adc_repertoire_id": "5377983496966368790-242ac113-0001-012",
         "adc_data_processing_id": "72775635-b44e-41ac-8acc-a6d92dac052c-007",
         "adc_study_id": "PRJNA248475",
         "adc_subject_id": "M5",
         "adc_sample_id": "M5 Choroid section 3",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       },
-      "LifeEvent_Specimen_M5_M5 Choroid section 3": {
-        "akc_id": "9bb06696-4de7-4ceb-ac04-7e8cda4da62b",
-        "participant": "8f094716-8a79-4eff-83f6-7241750e09f2"
+      "cad2cf7e-9135-40d1-ba08-1c54df2241f0": {
+        "akc_id": "cad2cf7e-9135-40d1-ba08-1c54df2241f0",
+        "participant": "3b8eb44f-efeb-4bd3-bcd8-66a42d616d0a"
       }
     },
     "immune_exposures": {
-      "ImmuneExposure_M2_DOID:0050783": {
-        "akc_id": "4362d1e5-ab6d-4cdc-8065-e1005edab099",
-        "life_event": "dff1980a-6829-44d6-99ca-8c23fee0b042",
+      "620426a2-c0f0-43e9-a1a9-ab5b31d0303d": {
+        "akc_id": "620426a2-c0f0-43e9-a1a9-ab5b31d0303d",
+        "life_event": "8b74493a-949e-4018-ad6e-dc18fd626b5a",
         "disease": {
           "id": "DOID:0050783",
           "label": "secondary progressive multiple sclerosis"
         }
       },
-      "ImmuneExposure_M3_DOID:0050784": {
-        "akc_id": "5ed45153-40d3-4c47-a6cb-bcc21ac2e370",
-        "life_event": "ca02d730-879a-41e9-a3d6-cc22236f9079",
+      "f695fbd7-6344-465a-8cdb-c0c30a3ae7cb": {
+        "akc_id": "f695fbd7-6344-465a-8cdb-c0c30a3ae7cb",
+        "life_event": "f76844c0-ec63-47da-8e72-d62cdab3c852",
         "disease": {
           "id": "DOID:0050784",
           "label": "primary progressive multiple sclerosis"
         }
       },
-      "ImmuneExposure_M4_DOID:2377": {
-        "akc_id": "ae86017b-494b-4935-b231-4feb338b53e9",
-        "life_event": "f48dcbeb-026d-4289-a6d7-5aa4f5c61c30",
+      "833df9a5-f1f8-41ec-8825-9339e8b3d9e6": {
+        "akc_id": "833df9a5-f1f8-41ec-8825-9339e8b3d9e6",
+        "life_event": "6210fcf3-c33a-4a3c-a908-6ac252285e68",
         "disease": {
           "id": "DOID:2377",
           "label": "multiple sclerosis"
         },
         "disease_stage": "chronic progressive"
       },
-      "ImmuneExposure_M5_DOID:2377": {
-        "akc_id": "94869d19-b860-4777-8dcd-71b846ffdbf6",
-        "life_event": "525bf074-b5d3-4c1d-b19f-7a70d02b8760",
+      "f0f5a2a6-94e3-4d64-b9d3-165ad5287e74": {
+        "akc_id": "f0f5a2a6-94e3-4d64-b9d3-165ad5287e74",
+        "life_event": "d4aeef2e-9743-4784-b8ec-7a31ad5de9c8",
         "disease": {
           "id": "DOID:2377",
           "label": "multiple sclerosis"
@@ -623,320 +623,320 @@
       }
     },
     "specimens": {
-      "Specimen_M2_M2 CLN section 1": {
-        "akc_id": "a0d7a0a9-3a2e-4891-8d91-e26efdd148f2",
+      "b0956f52-6b23-41ed-85b8-fb7d4a8ede62": {
+        "akc_id": "b0956f52-6b23-41ed-85b8-fb7d4a8ede62",
         "name": "M2 CLN section 1",
-        "life_event": "c3c4bf59-67d9-48a4-a82a-505ee425e611",
+        "life_event": "9306e2e8-6c58-4d8a-a0f5-783942802620",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M2_M2 CLN section 2": {
-        "akc_id": "c428b73b-4492-4718-b6a6-770a9d14f386",
+      "db0c4b4c-badf-40dc-a1b8-12168ce95be3": {
+        "akc_id": "db0c4b4c-badf-40dc-a1b8-12168ce95be3",
         "name": "M2 CLN section 2",
-        "life_event": "60c4b3be-43f8-4d2d-bb55-05990f955ac6",
+        "life_event": "6a75deff-8b98-4695-af13-85ef195bd4b8",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M2_M2 CLN section 3": {
-        "akc_id": "c802f2ac-f052-4aad-9136-438d4f047467",
+      "fce42478-7600-4ffb-8d0d-f198e98c7c81": {
+        "akc_id": "fce42478-7600-4ffb-8d0d-f198e98c7c81",
         "name": "M2 CLN section 3",
-        "life_event": "020b21ee-4946-4264-8a63-8cde5809c5b3",
+        "life_event": "ab2b92a8-923f-4f82-a2fd-f1d4b1133e09",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M2_M2 Lesion section 1": {
-        "akc_id": "eba81c08-a645-41de-99d4-8d6d113237c9",
+      "d99f1109-dd12-4157-af21-9115634e61a2": {
+        "akc_id": "d99f1109-dd12-4157-af21-9115634e61a2",
         "name": "M2 Lesion section 1",
-        "life_event": "d86b4cdb-8455-4bf0-8ff0-4c04580fa08b",
+        "life_event": "921eeb35-c7c9-40a5-8d8b-33244e4ebb95",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M2_M2 Lesion section 2": {
-        "akc_id": "10cf1ce0-61e4-42a2-afd9-426aa0528729",
+      "ff570175-efd4-446a-9f8b-8e63963f133b": {
+        "akc_id": "ff570175-efd4-446a-9f8b-8e63963f133b",
         "name": "M2 Lesion section 2",
-        "life_event": "f36daf6c-47e4-41ea-8ea6-08d951c2ebeb",
+        "life_event": "39385b7d-791e-4c4d-a10c-e9c083f20e92",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M2_M2 Lesion section 3": {
-        "akc_id": "547c0e8b-2467-4af5-8a50-7e44aa3bad1b",
+      "8b0d1272-fe07-4295-b763-fcc6e84477c3": {
+        "akc_id": "8b0d1272-fe07-4295-b763-fcc6e84477c3",
         "name": "M2 Lesion section 3",
-        "life_event": "8b867cab-8b7a-4e41-be40-a2c9ddd23ba8",
+        "life_event": "4261a927-c135-4619-8d34-8ae93c7499e2",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M3_M3 CLN section 1": {
-        "akc_id": "3fc238d0-40db-441d-99ec-c88be6f19cbf",
+      "16938a26-0593-474e-9a08-c2d87cb62161": {
+        "akc_id": "16938a26-0593-474e-9a08-c2d87cb62161",
         "name": "M3 CLN section 1",
-        "life_event": "0b1a89bb-4387-4ebc-8802-01ba64639c09",
+        "life_event": "8b5ecfb1-b461-4ab1-8bec-067720b04174",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M3_M3 CLN section 2": {
-        "akc_id": "02a32b82-5d81-477e-abcf-10c08e897d9f",
+      "a81c9062-9ef5-4e94-8dd8-23e95e7f6e22": {
+        "akc_id": "a81c9062-9ef5-4e94-8dd8-23e95e7f6e22",
         "name": "M3 CLN section 2",
-        "life_event": "e8c12dfa-b03e-447f-b829-e4310eb00dad",
+        "life_event": "1dc3c11e-1442-41cd-8791-e07393662f98",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M3_M3 CLN section 3": {
-        "akc_id": "fbd72c7a-b515-4332-817c-c95316c966ce",
+      "e32d587c-0791-4329-93ca-c0e5e670f3ae": {
+        "akc_id": "e32d587c-0791-4329-93ca-c0e5e670f3ae",
         "name": "M3 CLN section 3",
-        "life_event": "ba3e1d32-0039-4774-b0cb-b148cec5eea9",
+        "life_event": "2904f8ad-c3d0-432b-9cd7-bd4c213282bf",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M3_M3 Lesion section 1": {
-        "akc_id": "11f0f2a8-19de-4e49-a9e8-40106bd32eba",
+      "fe9b036d-cded-49ac-be81-3f8e431e2249": {
+        "akc_id": "fe9b036d-cded-49ac-be81-3f8e431e2249",
         "name": "M3 Lesion section 1",
-        "life_event": "cc0e98bc-ceec-46ac-95ed-a653d6c184fc",
+        "life_event": "cf85902f-60e2-4f3e-804c-b816c55a58cc",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M3_M3 Lesion section 2": {
-        "akc_id": "07af562c-934c-40de-9ac1-9b910e0a0a0b",
+      "28c0803c-8d98-43ea-b6be-db0dc624d78b": {
+        "akc_id": "28c0803c-8d98-43ea-b6be-db0dc624d78b",
         "name": "M3 Lesion section 2",
-        "life_event": "5e76342f-0fb0-4ea8-b6fb-6e8637e8dd59",
+        "life_event": "0fb94c42-face-4067-a769-d8101610456c",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M4_M4 CLN section 1": {
-        "akc_id": "7195bffc-dfd6-45ff-9368-07e69e18e235",
+      "113659da-b241-4237-85c6-613720f45346": {
+        "akc_id": "113659da-b241-4237-85c6-613720f45346",
         "name": "M4 CLN section 1",
-        "life_event": "00083c89-434c-4d12-9403-4d2f2f5605b9",
+        "life_event": "be388469-dd7e-4aad-b3d1-5a48dc77a5a2",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M4_M4 CLN section 2": {
-        "akc_id": "760cd96f-9891-4399-955b-bde757e9aded",
+      "60c88e92-77d7-4c10-b2b6-cb894a153e67": {
+        "akc_id": "60c88e92-77d7-4c10-b2b6-cb894a153e67",
         "name": "M4 CLN section 2",
-        "life_event": "00f50490-ef2d-4ff4-8e4c-e9396a9c604a",
+        "life_event": "826088e6-28d1-46b0-b3cf-c5b70f668931",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M4_M4 CLN section 3": {
-        "akc_id": "12491384-d531-4d85-a70e-b1686a34531e",
+      "7aaca3f6-d97b-42c7-bdfe-52962c9ac1bc": {
+        "akc_id": "7aaca3f6-d97b-42c7-bdfe-52962c9ac1bc",
         "name": "M4 CLN section 3",
-        "life_event": "9394ed90-7806-4ca3-a62f-dbf2f4f1dc6d",
+        "life_event": "0932aa62-67ae-4cdb-8a6a-4753120acf33",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M4_M4 Lesion section 1": {
-        "akc_id": "756083f9-7781-4c3d-896d-fcefe5135054",
+      "870c362a-bee9-4040-88e8-d8191b83852f": {
+        "akc_id": "870c362a-bee9-4040-88e8-d8191b83852f",
         "name": "M4 Lesion section 1",
-        "life_event": "bf1e043c-083c-47fc-a494-450c68229cd8",
+        "life_event": "b4a87608-a8cd-4917-8ac1-4b3f5b761bd3",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M4_M4 Lesion section 2": {
-        "akc_id": "c5682151-6252-41de-aa6b-898b058571c3",
+      "ef3be4fa-2f6f-45ac-b965-706c3a9299e0": {
+        "akc_id": "ef3be4fa-2f6f-45ac-b965-706c3a9299e0",
         "name": "M4 Lesion section 2",
-        "life_event": "2053b98f-5e33-40f3-9f44-23caedec4db3",
+        "life_event": "82e51987-386d-427d-a418-373171b83a6b",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M4_M4 Lesion section 3": {
-        "akc_id": "0d48af09-fb45-4a89-aa56-a6da91c35328",
+      "a8a1b6b5-33d6-441e-8e49-dd2737075874": {
+        "akc_id": "a8a1b6b5-33d6-441e-8e49-dd2737075874",
         "name": "M4 Lesion section 3",
-        "life_event": "bdfcb8da-c382-4a4f-88c1-c70529b774be",
+        "life_event": "b2bf088b-3a98-4b73-af57-56a576ce7c5c",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M5_M5 Pia section 1": {
-        "akc_id": "c7fe249c-650f-4d27-a9ba-dc4b5d2561e0",
+      "29849f32-3213-44fe-9b02-97e317884db4": {
+        "akc_id": "29849f32-3213-44fe-9b02-97e317884db4",
         "name": "M5 Pia section 1",
-        "life_event": "100f24d5-3060-414e-bc9e-1cfac5e44f52",
+        "life_event": "ae9162da-2d2e-4d42-b7ff-d8e0024ad095",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002361",
           "label": "pia mater"
         }
       },
-      "Specimen_M5_M5 Pia section 2": {
-        "akc_id": "c00bfff6-94e5-4f3f-8321-f61d6da0ac65",
+      "566cdd6f-0bf2-4faa-b97d-2b1c6758160f": {
+        "akc_id": "566cdd6f-0bf2-4faa-b97d-2b1c6758160f",
         "name": "M5 Pia section 2",
-        "life_event": "abf9514c-9cda-4c94-af99-b3091ff77778",
+        "life_event": "af7fe234-b493-433c-b211-3590fee6de7d",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002361",
           "label": "pia mater"
         }
       },
-      "Specimen_M5_M5 Pia section 3": {
-        "akc_id": "3f22aba6-ecb9-460f-9d2e-d99c65aeba52",
+      "124d434e-72e0-433c-b8e6-3d71ae128ee2": {
+        "akc_id": "124d434e-72e0-433c-b8e6-3d71ae128ee2",
         "name": "M5 Pia section 3",
-        "life_event": "161b8f80-a552-4ff6-9781-612e0d62aa4f",
+        "life_event": "78eea1f2-68bf-4e5c-b4c2-55bd4d4c6677",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002361",
           "label": "pia mater"
         }
       },
-      "Specimen_M5_M5 CLN-B section 1": {
-        "akc_id": "29dd370e-6928-4c03-b1c5-60392cdb515c",
+      "5ff72d3b-c1d0-4821-a310-a99ebc7d19b9": {
+        "akc_id": "5ff72d3b-c1d0-4821-a310-a99ebc7d19b9",
         "name": "M5 CLN-B section 1",
-        "life_event": "8c5ee8ed-59e5-4d23-b1f7-5a262d530c62",
+        "life_event": "972a8dcd-8c6c-4ed0-aec8-093649c4d9c6",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M5_M5 CLN-B section 2": {
-        "akc_id": "f7ab4e8e-3f35-4cd6-b38b-159026fbfd7f",
+      "7818ddd2-fa17-43a4-aeb8-92c147f78207": {
+        "akc_id": "7818ddd2-fa17-43a4-aeb8-92c147f78207",
         "name": "M5 CLN-B section 2",
-        "life_event": "d3ed57ce-74c7-42b9-9d41-78a638e0c4b7",
+        "life_event": "d0b95ef6-55d8-4b77-b83b-12a818f8cf29",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M5_M5 CLN-B section 3": {
-        "akc_id": "28ab749d-7ec1-48b4-be59-3847c010d92c",
+      "3218e3a7-2304-4253-b036-cb80a26252d6": {
+        "akc_id": "3218e3a7-2304-4253-b036-cb80a26252d6",
         "name": "M5 CLN-B section 3",
-        "life_event": "e5671778-fa64-4940-8d5c-fe6a003d57f3",
+        "life_event": "4adb2d7c-372d-40f0-b629-87a28d9e1892",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M5_M5 CLN-A section 1": {
-        "akc_id": "ad072bad-2d07-4a59-bc8b-fdb8b81ceb8d",
+      "5344d8ee-46d0-42aa-b9d0-7fe7d5d37eb1": {
+        "akc_id": "5344d8ee-46d0-42aa-b9d0-7fe7d5d37eb1",
         "name": "M5 CLN-A section 1",
-        "life_event": "4657dc8b-b9d0-4492-a22c-96a45c3f72c6",
+        "life_event": "ebdcb725-03d3-4837-aab5-36dd36305a6a",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M5_M5 CLN-A section 2": {
-        "akc_id": "69d926d7-3b2e-4103-8ad2-3a6ff694a2c7",
+      "c171aef2-b321-4bce-b9a9-d2ccc01f6e19": {
+        "akc_id": "c171aef2-b321-4bce-b9a9-d2ccc01f6e19",
         "name": "M5 CLN-A section 2",
-        "life_event": "48c69870-f7ac-4e86-b97c-92091bbea9a2",
+        "life_event": "da7b9a87-6c44-431d-8cef-751654c2c049",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M5_M5 CLN-A section 3": {
-        "akc_id": "dfd65856-6555-4ad3-8695-ea160806bc9f",
+      "dd7d2ccc-7d61-4791-9d74-f8ddac9f5a07": {
+        "akc_id": "dd7d2ccc-7d61-4791-9d74-f8ddac9f5a07",
         "name": "M5 CLN-A section 3",
-        "life_event": "29d155d8-fcee-45df-b5a0-e79e6a6a3b9e",
+        "life_event": "0c189474-3271-4173-87d6-97d2d433afd9",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0002429",
           "label": "cervical lymph node"
         }
       },
-      "Specimen_M5_M5 Lesion section 1": {
-        "akc_id": "ced263e3-ff1f-4e39-829d-0b34ed224192",
+      "4e982994-16c4-4199-a7f5-33520f763890": {
+        "akc_id": "4e982994-16c4-4199-a7f5-33520f763890",
         "name": "M5 Lesion section 1",
-        "life_event": "7db560be-6f36-4cfe-947c-01b5754f46fb",
+        "life_event": "581aeb56-56da-4888-b544-7975f18eb20f",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M5_M5 Lesion section 2": {
-        "akc_id": "07065a36-f253-4dff-ba19-7cee1c7a4172",
+      "84daea25-3167-405c-9330-37a2da4ae680": {
+        "akc_id": "84daea25-3167-405c-9330-37a2da4ae680",
         "name": "M5 Lesion section 2",
-        "life_event": "c326a365-8c39-4620-a98b-311bf9f5d0ac",
+        "life_event": "7fb4903a-a407-405f-b871-52eaa7ebfd1d",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M5_M5 Lesion section 3": {
-        "akc_id": "acaafc71-5c8a-4dda-81b7-7db783e6e47f",
+      "2ce8ae04-b5c6-47ee-9a3b-2fa7001ebf66": {
+        "akc_id": "2ce8ae04-b5c6-47ee-9a3b-2fa7001ebf66",
         "name": "M5 Lesion section 3",
-        "life_event": "f149aa99-30c7-48ff-ba5b-34bd7179a084",
+        "life_event": "3a727565-f734-4137-a09f-d7d07411cb0e",
         "specimen_type": "Lesion sample",
         "tissue": {
           "id": "UBERON:0003544",
           "label": "brain white matter"
         }
       },
-      "Specimen_M5_M5 Choroid section 1": {
-        "akc_id": "31e3f520-5955-4a1b-855d-4e68d4a3eb5d",
+      "21e75211-66b3-430f-b440-d39e3f3e8cf4": {
+        "akc_id": "21e75211-66b3-430f-b440-d39e3f3e8cf4",
         "name": "M5 Choroid section 1",
-        "life_event": "60700b7c-aba9-41ca-928a-1532f796136b",
+        "life_event": "4d7f8f4b-9e04-44f2-9a35-24cee26243b2",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0001886",
           "label": "choroid plexus"
         }
       },
-      "Specimen_M5_M5 Choroid section 2": {
-        "akc_id": "c84c8801-6676-489b-b0c6-d33128a3a00a",
+      "270ca4ad-10dc-499c-96e7-aaca3b66084d": {
+        "akc_id": "270ca4ad-10dc-499c-96e7-aaca3b66084d",
         "name": "M5 Choroid section 2",
-        "life_event": "28e34692-c01c-47e0-8c6f-e895f31139e9",
+        "life_event": "43f385aa-b793-4b56-8e62-aa37dff39185",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0001886",
           "label": "choroid plexus"
         }
       },
-      "Specimen_M5_M5 Choroid section 3": {
-        "akc_id": "0b89c186-5ad5-4698-822e-5b54769d6424",
+      "42d465bc-1506-4444-b764-18fa6bfd4e98": {
+        "akc_id": "42d465bc-1506-4444-b764-18fa6bfd4e98",
         "name": "M5 Choroid section 3",
-        "life_event": "9bb06696-4de7-4ceb-ac04-7e8cda4da62b",
+        "life_event": "cad2cf7e-9135-40d1-ba08-1c54df2241f0",
         "specimen_type": "Tissue sample",
         "tissue": {
           "id": "UBERON:0001886",
@@ -945,523 +945,523 @@
       }
     },
     "specimen_processings": {
-      "CellIsolationProcessing_M2_M2 CLN section 1": {
-        "akc_id": "19584e4b-b68b-4107-823e-d66b26c68700",
-        "specimen": "a0d7a0a9-3a2e-4891-8d91-e26efdd148f2",
+      "5614e7d5-d695-46db-bcbd-606ae39584bb": {
+        "akc_id": "5614e7d5-d695-46db-bcbd-606ae39584bb",
+        "specimen": "b0956f52-6b23-41ed-85b8-fb7d4a8ede62",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M2_M2 CLN section 1": {
-        "akc_id": "e91b12d8-f797-457b-bace-66554a39c43f",
-        "specimen": "a0d7a0a9-3a2e-4891-8d91-e26efdd148f2",
+      "88c493fa-e9e0-4e78-96aa-c4a6fc1b564a": {
+        "akc_id": "88c493fa-e9e0-4e78-96aa-c4a6fc1b564a",
+        "specimen": "b0956f52-6b23-41ed-85b8-fb7d4a8ede62",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M2_M2 CLN section 1": {
-        "akc_id": "62b4ff07-3258-44f9-bc57-f0eafc3d353d",
-        "specimen": "a0d7a0a9-3a2e-4891-8d91-e26efdd148f2",
+      "1dc6ac83-6238-47c9-b4f3-62264cc0e8fb": {
+        "akc_id": "1dc6ac83-6238-47c9-b4f3-62264cc0e8fb",
+        "specimen": "b0956f52-6b23-41ed-85b8-fb7d4a8ede62",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M2_M2 CLN section 2": {
-        "akc_id": "7b8feb29-3360-43fb-b1b0-9e88b03b9887",
-        "specimen": "c428b73b-4492-4718-b6a6-770a9d14f386",
+      "a5249e91-4741-49ee-946e-9ceaba9e5ac6": {
+        "akc_id": "a5249e91-4741-49ee-946e-9ceaba9e5ac6",
+        "specimen": "db0c4b4c-badf-40dc-a1b8-12168ce95be3",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M2_M2 CLN section 2": {
-        "akc_id": "fcbd86b5-6a60-43c3-b5bc-d8f2ce116752",
-        "specimen": "c428b73b-4492-4718-b6a6-770a9d14f386",
+      "ce7cd1b9-c838-4a6d-809c-75561e69e77c": {
+        "akc_id": "ce7cd1b9-c838-4a6d-809c-75561e69e77c",
+        "specimen": "db0c4b4c-badf-40dc-a1b8-12168ce95be3",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M2_M2 CLN section 2": {
-        "akc_id": "ddb8915b-9d0c-4f7f-9934-59f0bcfdcd8d",
-        "specimen": "c428b73b-4492-4718-b6a6-770a9d14f386",
+      "7bbbd5aa-b5ed-4fd5-9b2d-b93478a8ad80": {
+        "akc_id": "7bbbd5aa-b5ed-4fd5-9b2d-b93478a8ad80",
+        "specimen": "db0c4b4c-badf-40dc-a1b8-12168ce95be3",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M2_M2 CLN section 3": {
-        "akc_id": "e5568ae1-f3d1-4324-abc6-b79a2268ca00",
-        "specimen": "c802f2ac-f052-4aad-9136-438d4f047467",
+      "491049e7-76fa-42c5-8c8f-8f0ef6002bc1": {
+        "akc_id": "491049e7-76fa-42c5-8c8f-8f0ef6002bc1",
+        "specimen": "fce42478-7600-4ffb-8d0d-f198e98c7c81",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M2_M2 CLN section 3": {
-        "akc_id": "311106a9-2925-4e25-852d-2a228fe08791",
-        "specimen": "c802f2ac-f052-4aad-9136-438d4f047467",
+      "1ea38245-ddbc-474a-96b4-617343c585a4": {
+        "akc_id": "1ea38245-ddbc-474a-96b4-617343c585a4",
+        "specimen": "fce42478-7600-4ffb-8d0d-f198e98c7c81",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M2_M2 CLN section 3": {
-        "akc_id": "0a3397c6-7c9d-4867-bca8-7ec666746e4a",
-        "specimen": "c802f2ac-f052-4aad-9136-438d4f047467",
+      "f11b8e47-61c9-438f-8b52-6aa646f3cd78": {
+        "akc_id": "f11b8e47-61c9-438f-8b52-6aa646f3cd78",
+        "specimen": "fce42478-7600-4ffb-8d0d-f198e98c7c81",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M2_M2 Lesion section 1": {
-        "akc_id": "e65b45d5-63b9-49e5-b84a-6e536ccbb7c8",
-        "specimen": "eba81c08-a645-41de-99d4-8d6d113237c9",
+      "672f3a18-8f42-4663-813c-9ee48efb4891": {
+        "akc_id": "672f3a18-8f42-4663-813c-9ee48efb4891",
+        "specimen": "d99f1109-dd12-4157-af21-9115634e61a2",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M2_M2 Lesion section 1": {
-        "akc_id": "5db11313-9308-4346-8bef-e502fc6d70de",
-        "specimen": "eba81c08-a645-41de-99d4-8d6d113237c9",
+      "edc1caf3-4ae3-4d8d-bdaf-61c739ce5caa": {
+        "akc_id": "edc1caf3-4ae3-4d8d-bdaf-61c739ce5caa",
+        "specimen": "d99f1109-dd12-4157-af21-9115634e61a2",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M2_M2 Lesion section 1": {
-        "akc_id": "a269138c-83ed-43b6-8599-e8e3b8de1cab",
-        "specimen": "eba81c08-a645-41de-99d4-8d6d113237c9",
+      "be4ed536-55cf-4c7d-97f5-ae8c286f021a": {
+        "akc_id": "be4ed536-55cf-4c7d-97f5-ae8c286f021a",
+        "specimen": "d99f1109-dd12-4157-af21-9115634e61a2",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M2_M2 Lesion section 2": {
-        "akc_id": "1c27fc25-3487-460a-8832-e94051766b61",
-        "specimen": "10cf1ce0-61e4-42a2-afd9-426aa0528729",
+      "625141bf-794f-49ed-9dc2-eacf9c41c41e": {
+        "akc_id": "625141bf-794f-49ed-9dc2-eacf9c41c41e",
+        "specimen": "ff570175-efd4-446a-9f8b-8e63963f133b",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M2_M2 Lesion section 2": {
-        "akc_id": "a67202bc-0b34-4d74-9a02-1f4c51bccd60",
-        "specimen": "10cf1ce0-61e4-42a2-afd9-426aa0528729",
+      "cb2f3be1-d60b-457b-acbb-d484b3bf7bf2": {
+        "akc_id": "cb2f3be1-d60b-457b-acbb-d484b3bf7bf2",
+        "specimen": "ff570175-efd4-446a-9f8b-8e63963f133b",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M2_M2 Lesion section 2": {
-        "akc_id": "81078cee-37bd-426a-97ed-cd47871138b8",
-        "specimen": "10cf1ce0-61e4-42a2-afd9-426aa0528729",
+      "068c5f56-11dc-49da-a046-d6178aba164f": {
+        "akc_id": "068c5f56-11dc-49da-a046-d6178aba164f",
+        "specimen": "ff570175-efd4-446a-9f8b-8e63963f133b",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M2_M2 Lesion section 3": {
-        "akc_id": "8511f202-24cd-4295-9c83-95f21ebe9853",
-        "specimen": "547c0e8b-2467-4af5-8a50-7e44aa3bad1b",
+      "1defbe02-eaaa-48ea-82c3-960f10c94025": {
+        "akc_id": "1defbe02-eaaa-48ea-82c3-960f10c94025",
+        "specimen": "8b0d1272-fe07-4295-b763-fcc6e84477c3",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M2_M2 Lesion section 3": {
-        "akc_id": "b21b87c9-5a66-4b13-81b9-7db58cc0cc24",
-        "specimen": "547c0e8b-2467-4af5-8a50-7e44aa3bad1b",
+      "a934696f-6ca2-4e92-8f6c-1e5f9b54491a": {
+        "akc_id": "a934696f-6ca2-4e92-8f6c-1e5f9b54491a",
+        "specimen": "8b0d1272-fe07-4295-b763-fcc6e84477c3",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M2_M2 Lesion section 3": {
-        "akc_id": "c2f63dde-f0e3-49f7-95fd-92d186add37a",
-        "specimen": "547c0e8b-2467-4af5-8a50-7e44aa3bad1b",
+      "5581d391-cb13-4be8-90cd-a3e477b7c496": {
+        "akc_id": "5581d391-cb13-4be8-90cd-a3e477b7c496",
+        "specimen": "8b0d1272-fe07-4295-b763-fcc6e84477c3",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M3_M3 CLN section 1": {
-        "akc_id": "48ebe14f-0215-4971-b791-ab3355f6aea6",
-        "specimen": "3fc238d0-40db-441d-99ec-c88be6f19cbf",
+      "3d28b25b-836b-421d-b299-e29c06966ff8": {
+        "akc_id": "3d28b25b-836b-421d-b299-e29c06966ff8",
+        "specimen": "16938a26-0593-474e-9a08-c2d87cb62161",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M3_M3 CLN section 1": {
-        "akc_id": "62c9a3b3-e387-4ccb-90f1-dd3ba9822e02",
-        "specimen": "3fc238d0-40db-441d-99ec-c88be6f19cbf",
+      "08558fd7-af56-4f4c-b3a5-cabd8a912793": {
+        "akc_id": "08558fd7-af56-4f4c-b3a5-cabd8a912793",
+        "specimen": "16938a26-0593-474e-9a08-c2d87cb62161",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M3_M3 CLN section 1": {
-        "akc_id": "589871aa-0c5e-421c-85d0-9b6e6a5f8914",
-        "specimen": "3fc238d0-40db-441d-99ec-c88be6f19cbf",
+      "1542b226-b094-42c0-9eb4-c226fcec5245": {
+        "akc_id": "1542b226-b094-42c0-9eb4-c226fcec5245",
+        "specimen": "16938a26-0593-474e-9a08-c2d87cb62161",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M3_M3 CLN section 2": {
-        "akc_id": "15138c2f-8601-4d09-8b2e-de84daad6952",
-        "specimen": "02a32b82-5d81-477e-abcf-10c08e897d9f",
+      "81ac15bb-14b7-4c08-a4f2-d9b3b04eee5d": {
+        "akc_id": "81ac15bb-14b7-4c08-a4f2-d9b3b04eee5d",
+        "specimen": "a81c9062-9ef5-4e94-8dd8-23e95e7f6e22",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M3_M3 CLN section 2": {
-        "akc_id": "13bf459f-d76a-469a-8298-8a60ee23ddae",
-        "specimen": "02a32b82-5d81-477e-abcf-10c08e897d9f",
+      "b5b5390e-61d1-45d8-9058-dc3deac179a6": {
+        "akc_id": "b5b5390e-61d1-45d8-9058-dc3deac179a6",
+        "specimen": "a81c9062-9ef5-4e94-8dd8-23e95e7f6e22",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M3_M3 CLN section 2": {
-        "akc_id": "9601bf63-070b-4ba2-9018-3a27b3b0aa63",
-        "specimen": "02a32b82-5d81-477e-abcf-10c08e897d9f",
+      "3224cedd-2a46-4a6c-b368-f4a52a672ed2": {
+        "akc_id": "3224cedd-2a46-4a6c-b368-f4a52a672ed2",
+        "specimen": "a81c9062-9ef5-4e94-8dd8-23e95e7f6e22",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M3_M3 CLN section 3": {
-        "akc_id": "c5ee52f3-06ac-48d3-851a-f091ab8bce8d",
-        "specimen": "fbd72c7a-b515-4332-817c-c95316c966ce",
+      "74d16414-f9cb-49ac-9420-fefc62575eef": {
+        "akc_id": "74d16414-f9cb-49ac-9420-fefc62575eef",
+        "specimen": "e32d587c-0791-4329-93ca-c0e5e670f3ae",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M3_M3 CLN section 3": {
-        "akc_id": "656c1c6b-9621-4399-960b-d1a0d83bdf11",
-        "specimen": "fbd72c7a-b515-4332-817c-c95316c966ce",
+      "b3d33111-af5b-4207-9809-b490ad2e5a25": {
+        "akc_id": "b3d33111-af5b-4207-9809-b490ad2e5a25",
+        "specimen": "e32d587c-0791-4329-93ca-c0e5e670f3ae",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M3_M3 CLN section 3": {
-        "akc_id": "ee48e195-6902-43e6-af1d-d8bfd53de6a6",
-        "specimen": "fbd72c7a-b515-4332-817c-c95316c966ce",
+      "d685e828-c107-4489-b9a1-bebdcc7046e7": {
+        "akc_id": "d685e828-c107-4489-b9a1-bebdcc7046e7",
+        "specimen": "e32d587c-0791-4329-93ca-c0e5e670f3ae",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M3_M3 Lesion section 1": {
-        "akc_id": "1d1df37c-498d-4071-a72e-e22f21d0e8b8",
-        "specimen": "11f0f2a8-19de-4e49-a9e8-40106bd32eba",
+      "5af42043-ecf1-401f-b662-6b83b77a0bb4": {
+        "akc_id": "5af42043-ecf1-401f-b662-6b83b77a0bb4",
+        "specimen": "fe9b036d-cded-49ac-be81-3f8e431e2249",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M3_M3 Lesion section 1": {
-        "akc_id": "88d34ca7-b3dd-45ac-af3a-983e9715aaac",
-        "specimen": "11f0f2a8-19de-4e49-a9e8-40106bd32eba",
+      "0708fe37-ef3d-4881-b125-ee6dfe991f15": {
+        "akc_id": "0708fe37-ef3d-4881-b125-ee6dfe991f15",
+        "specimen": "fe9b036d-cded-49ac-be81-3f8e431e2249",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M3_M3 Lesion section 1": {
-        "akc_id": "14ad90bd-90eb-45d2-87d8-85d61d4e3c76",
-        "specimen": "11f0f2a8-19de-4e49-a9e8-40106bd32eba",
+      "1bc46ed5-3db8-4efa-af7c-83c59ae72de9": {
+        "akc_id": "1bc46ed5-3db8-4efa-af7c-83c59ae72de9",
+        "specimen": "fe9b036d-cded-49ac-be81-3f8e431e2249",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M3_M3 Lesion section 2": {
-        "akc_id": "42b0cfae-0fd2-4d09-9155-8b8678084a47",
-        "specimen": "07af562c-934c-40de-9ac1-9b910e0a0a0b",
+      "235621eb-8337-45ac-bf41-7d55e8a9f33c": {
+        "akc_id": "235621eb-8337-45ac-bf41-7d55e8a9f33c",
+        "specimen": "28c0803c-8d98-43ea-b6be-db0dc624d78b",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M3_M3 Lesion section 2": {
-        "akc_id": "12d6761b-fae5-4529-9135-70969e57960d",
-        "specimen": "07af562c-934c-40de-9ac1-9b910e0a0a0b",
+      "f691491b-fa7d-4de3-a2de-9d4617bab2d9": {
+        "akc_id": "f691491b-fa7d-4de3-a2de-9d4617bab2d9",
+        "specimen": "28c0803c-8d98-43ea-b6be-db0dc624d78b",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M3_M3 Lesion section 2": {
-        "akc_id": "189890c2-fdd4-426f-abf1-3c3e2f7641fb",
-        "specimen": "07af562c-934c-40de-9ac1-9b910e0a0a0b",
+      "c2330949-ab76-4ef5-b4c0-201e92c0f8b6": {
+        "akc_id": "c2330949-ab76-4ef5-b4c0-201e92c0f8b6",
+        "specimen": "28c0803c-8d98-43ea-b6be-db0dc624d78b",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M4_M4 CLN section 1": {
-        "akc_id": "3a8e5e2b-adbb-400c-aab3-4f4073674f38",
-        "specimen": "7195bffc-dfd6-45ff-9368-07e69e18e235",
+      "350842dc-d662-4bdb-accb-7c3a6061d8fc": {
+        "akc_id": "350842dc-d662-4bdb-accb-7c3a6061d8fc",
+        "specimen": "113659da-b241-4237-85c6-613720f45346",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M4_M4 CLN section 1": {
-        "akc_id": "470a6ccd-870e-4dc2-8ddb-2704c7e7b1a5",
-        "specimen": "7195bffc-dfd6-45ff-9368-07e69e18e235",
+      "5a705179-b487-4cf3-8f55-4398a856c0b4": {
+        "akc_id": "5a705179-b487-4cf3-8f55-4398a856c0b4",
+        "specimen": "113659da-b241-4237-85c6-613720f45346",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M4_M4 CLN section 1": {
-        "akc_id": "d6f6d850-ecd6-443a-9a5f-75230d12de2e",
-        "specimen": "7195bffc-dfd6-45ff-9368-07e69e18e235",
+      "ebcc92b9-a4c8-4e31-a486-9b289d6a177c": {
+        "akc_id": "ebcc92b9-a4c8-4e31-a486-9b289d6a177c",
+        "specimen": "113659da-b241-4237-85c6-613720f45346",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M4_M4 CLN section 2": {
-        "akc_id": "46877f77-6951-47b8-a810-77fb75daf201",
-        "specimen": "760cd96f-9891-4399-955b-bde757e9aded",
+      "dce1f2e6-fdb1-4e8c-a098-3c735b2b63fd": {
+        "akc_id": "dce1f2e6-fdb1-4e8c-a098-3c735b2b63fd",
+        "specimen": "60c88e92-77d7-4c10-b2b6-cb894a153e67",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M4_M4 CLN section 2": {
-        "akc_id": "23c90a74-6806-4219-8d07-94c697deb6e8",
-        "specimen": "760cd96f-9891-4399-955b-bde757e9aded",
+      "ad2dddaf-2bcb-4160-83b4-c243bd5070ae": {
+        "akc_id": "ad2dddaf-2bcb-4160-83b4-c243bd5070ae",
+        "specimen": "60c88e92-77d7-4c10-b2b6-cb894a153e67",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M4_M4 CLN section 2": {
-        "akc_id": "9117a8a4-db87-46d7-870d-5f583ab11197",
-        "specimen": "760cd96f-9891-4399-955b-bde757e9aded",
+      "8f98ff05-ad95-4939-92f1-396876880d60": {
+        "akc_id": "8f98ff05-ad95-4939-92f1-396876880d60",
+        "specimen": "60c88e92-77d7-4c10-b2b6-cb894a153e67",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M4_M4 CLN section 3": {
-        "akc_id": "111a0362-c279-4f21-925b-39216a50847f",
-        "specimen": "12491384-d531-4d85-a70e-b1686a34531e",
+      "2c79ed4d-e068-4fbc-9146-45145d3f45ca": {
+        "akc_id": "2c79ed4d-e068-4fbc-9146-45145d3f45ca",
+        "specimen": "7aaca3f6-d97b-42c7-bdfe-52962c9ac1bc",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M4_M4 CLN section 3": {
-        "akc_id": "fed0e00f-e7ba-48f8-9de1-1cdc4408bd74",
-        "specimen": "12491384-d531-4d85-a70e-b1686a34531e",
+      "e5cc4209-2c01-411f-9181-550d99c7e744": {
+        "akc_id": "e5cc4209-2c01-411f-9181-550d99c7e744",
+        "specimen": "7aaca3f6-d97b-42c7-bdfe-52962c9ac1bc",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M4_M4 CLN section 3": {
-        "akc_id": "32ada491-0794-4f53-8311-ad4b72cf3f75",
-        "specimen": "12491384-d531-4d85-a70e-b1686a34531e",
+      "fa3c330c-dc2b-4ff8-82ed-668a9dd9613d": {
+        "akc_id": "fa3c330c-dc2b-4ff8-82ed-668a9dd9613d",
+        "specimen": "7aaca3f6-d97b-42c7-bdfe-52962c9ac1bc",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M4_M4 Lesion section 1": {
-        "akc_id": "e5dd273f-537a-4df7-8f4a-70c5169aa374",
-        "specimen": "756083f9-7781-4c3d-896d-fcefe5135054",
+      "d165d6d8-e235-40bd-978e-e88bb8cc40d8": {
+        "akc_id": "d165d6d8-e235-40bd-978e-e88bb8cc40d8",
+        "specimen": "870c362a-bee9-4040-88e8-d8191b83852f",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M4_M4 Lesion section 1": {
-        "akc_id": "dbfaa8c1-2711-4cdd-8435-010cf0cd54c3",
-        "specimen": "756083f9-7781-4c3d-896d-fcefe5135054",
+      "4ed77b1e-4852-4fc5-9fed-b0df02f29d75": {
+        "akc_id": "4ed77b1e-4852-4fc5-9fed-b0df02f29d75",
+        "specimen": "870c362a-bee9-4040-88e8-d8191b83852f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M4_M4 Lesion section 1": {
-        "akc_id": "08788310-9222-4cfd-84d1-a953605bd4fe",
-        "specimen": "756083f9-7781-4c3d-896d-fcefe5135054",
+      "b0389740-1288-48aa-9672-60f3674155a0": {
+        "akc_id": "b0389740-1288-48aa-9672-60f3674155a0",
+        "specimen": "870c362a-bee9-4040-88e8-d8191b83852f",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M4_M4 Lesion section 2": {
-        "akc_id": "5c39a7b8-f312-48e5-bf8c-f81ccd4c7f6e",
-        "specimen": "c5682151-6252-41de-aa6b-898b058571c3",
+      "e2c97c5b-20d5-41cb-abaf-50ea567a8f56": {
+        "akc_id": "e2c97c5b-20d5-41cb-abaf-50ea567a8f56",
+        "specimen": "ef3be4fa-2f6f-45ac-b965-706c3a9299e0",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M4_M4 Lesion section 2": {
-        "akc_id": "25fb32df-b9ae-4171-a725-7ff2b7942fc5",
-        "specimen": "c5682151-6252-41de-aa6b-898b058571c3",
+      "14695731-c2d9-46dc-8543-c62c383f430f": {
+        "akc_id": "14695731-c2d9-46dc-8543-c62c383f430f",
+        "specimen": "ef3be4fa-2f6f-45ac-b965-706c3a9299e0",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M4_M4 Lesion section 2": {
-        "akc_id": "c4763226-6ef5-4be9-9b26-3dda20783821",
-        "specimen": "c5682151-6252-41de-aa6b-898b058571c3",
+      "9778b413-5d5d-4838-8025-66d90924fcb6": {
+        "akc_id": "9778b413-5d5d-4838-8025-66d90924fcb6",
+        "specimen": "ef3be4fa-2f6f-45ac-b965-706c3a9299e0",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M4_M4 Lesion section 3": {
-        "akc_id": "1f93b5f2-9f24-446f-98fb-8f12bb14948c",
-        "specimen": "0d48af09-fb45-4a89-aa56-a6da91c35328",
+      "4fa2abf5-b83a-4ef9-b4a3-005025d6059f": {
+        "akc_id": "4fa2abf5-b83a-4ef9-b4a3-005025d6059f",
+        "specimen": "a8a1b6b5-33d6-441e-8e49-dd2737075874",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M4_M4 Lesion section 3": {
-        "akc_id": "332b5540-e986-49ed-af26-6f198063928b",
-        "specimen": "0d48af09-fb45-4a89-aa56-a6da91c35328",
+      "6557669e-3591-4d0b-88b1-92fb49598fb7": {
+        "akc_id": "6557669e-3591-4d0b-88b1-92fb49598fb7",
+        "specimen": "a8a1b6b5-33d6-441e-8e49-dd2737075874",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M4_M4 Lesion section 3": {
-        "akc_id": "95eff64d-f289-43e5-9545-a96b5a9f96a8",
-        "specimen": "0d48af09-fb45-4a89-aa56-a6da91c35328",
+      "5fe8cd8b-1420-4e74-a7b9-17865291c909": {
+        "akc_id": "5fe8cd8b-1420-4e74-a7b9-17865291c909",
+        "specimen": "a8a1b6b5-33d6-441e-8e49-dd2737075874",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Pia section 1": {
-        "akc_id": "8f38a78c-97ab-46b1-90b0-c19b99cd8df8",
-        "specimen": "c7fe249c-650f-4d27-a9ba-dc4b5d2561e0",
+      "dec8a5a7-7cb4-4ac0-9bed-a1efb64031c0": {
+        "akc_id": "dec8a5a7-7cb4-4ac0-9bed-a1efb64031c0",
+        "specimen": "29849f32-3213-44fe-9b02-97e317884db4",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Pia section 1": {
-        "akc_id": "e4369a93-b6dc-466d-b36f-6969448f6ffa",
-        "specimen": "c7fe249c-650f-4d27-a9ba-dc4b5d2561e0",
+      "4ea01785-3ca2-4277-b5d8-f085c52a484b": {
+        "akc_id": "4ea01785-3ca2-4277-b5d8-f085c52a484b",
+        "specimen": "29849f32-3213-44fe-9b02-97e317884db4",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Pia section 1": {
-        "akc_id": "a5f7f04b-c764-4d93-82fc-bc5f6804ec5f",
-        "specimen": "c7fe249c-650f-4d27-a9ba-dc4b5d2561e0",
+      "776b16de-d4b7-4787-8a36-b6e36e9535f7": {
+        "akc_id": "776b16de-d4b7-4787-8a36-b6e36e9535f7",
+        "specimen": "29849f32-3213-44fe-9b02-97e317884db4",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Pia section 2": {
-        "akc_id": "072b51e1-3a15-404a-872a-924977a72329",
-        "specimen": "c00bfff6-94e5-4f3f-8321-f61d6da0ac65",
+      "2c97716a-87d6-4a56-8928-46f3dc9beb11": {
+        "akc_id": "2c97716a-87d6-4a56-8928-46f3dc9beb11",
+        "specimen": "566cdd6f-0bf2-4faa-b97d-2b1c6758160f",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Pia section 2": {
-        "akc_id": "2780d046-e037-4ac7-b395-68d73d2d8494",
-        "specimen": "c00bfff6-94e5-4f3f-8321-f61d6da0ac65",
+      "fd766be5-871c-4e87-86d2-31c4747e94ec": {
+        "akc_id": "fd766be5-871c-4e87-86d2-31c4747e94ec",
+        "specimen": "566cdd6f-0bf2-4faa-b97d-2b1c6758160f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Pia section 2": {
-        "akc_id": "790ec4f2-e20d-407f-8a5a-152d8321a3ad",
-        "specimen": "c00bfff6-94e5-4f3f-8321-f61d6da0ac65",
+      "dba7ca1a-8137-4595-a149-49186607e10b": {
+        "akc_id": "dba7ca1a-8137-4595-a149-49186607e10b",
+        "specimen": "566cdd6f-0bf2-4faa-b97d-2b1c6758160f",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Pia section 3": {
-        "akc_id": "48cae11b-433e-4acc-87a6-5d65641c3b53",
-        "specimen": "3f22aba6-ecb9-460f-9d2e-d99c65aeba52",
+      "cb1a2101-1465-4000-98f0-6fc347075435": {
+        "akc_id": "cb1a2101-1465-4000-98f0-6fc347075435",
+        "specimen": "124d434e-72e0-433c-b8e6-3d71ae128ee2",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Pia section 3": {
-        "akc_id": "d4ce1124-2fd6-41f5-ac4a-97c69d7d3825",
-        "specimen": "3f22aba6-ecb9-460f-9d2e-d99c65aeba52",
+      "b9fc7666-24c5-4b76-8d07-e235c490f66b": {
+        "akc_id": "b9fc7666-24c5-4b76-8d07-e235c490f66b",
+        "specimen": "124d434e-72e0-433c-b8e6-3d71ae128ee2",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Pia section 3": {
-        "akc_id": "bebd9e0d-b25f-4929-ad72-64abf444e9b9",
-        "specimen": "3f22aba6-ecb9-460f-9d2e-d99c65aeba52",
+      "63879ece-4b75-4e81-9386-926c611bc2ab": {
+        "akc_id": "63879ece-4b75-4e81-9386-926c611bc2ab",
+        "specimen": "124d434e-72e0-433c-b8e6-3d71ae128ee2",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 CLN-B section 1": {
-        "akc_id": "60c09f4b-300e-4889-b58e-fbe8c9922b06",
-        "specimen": "29dd370e-6928-4c03-b1c5-60392cdb515c",
+      "4567da36-3258-4c68-b9f9-89c3e162ba15": {
+        "akc_id": "4567da36-3258-4c68-b9f9-89c3e162ba15",
+        "specimen": "5ff72d3b-c1d0-4821-a310-a99ebc7d19b9",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 CLN-B section 1": {
-        "akc_id": "bdcd0d8f-7e42-4edc-8cce-31f39fc4eb0f",
-        "specimen": "29dd370e-6928-4c03-b1c5-60392cdb515c",
+      "bf2edf28-a742-44b3-874b-31e72605d40d": {
+        "akc_id": "bf2edf28-a742-44b3-874b-31e72605d40d",
+        "specimen": "5ff72d3b-c1d0-4821-a310-a99ebc7d19b9",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 CLN-B section 1": {
-        "akc_id": "c352d580-ad1f-4fd5-aa5d-ec0f2bbf7933",
-        "specimen": "29dd370e-6928-4c03-b1c5-60392cdb515c",
+      "fba17fb8-bd0e-4f80-8098-c5d248d716ab": {
+        "akc_id": "fba17fb8-bd0e-4f80-8098-c5d248d716ab",
+        "specimen": "5ff72d3b-c1d0-4821-a310-a99ebc7d19b9",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 CLN-B section 2": {
-        "akc_id": "c1fa7a82-cd51-4e06-bdc8-aac40350eacd",
-        "specimen": "f7ab4e8e-3f35-4cd6-b38b-159026fbfd7f",
+      "2479b980-a98b-4e2c-a165-7fe51930ce8c": {
+        "akc_id": "2479b980-a98b-4e2c-a165-7fe51930ce8c",
+        "specimen": "7818ddd2-fa17-43a4-aeb8-92c147f78207",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 CLN-B section 2": {
-        "akc_id": "c39ffee8-1e14-46b2-b8f9-7688114d36e4",
-        "specimen": "f7ab4e8e-3f35-4cd6-b38b-159026fbfd7f",
+      "0e509c2f-53f4-4f9c-9d44-18b49546b600": {
+        "akc_id": "0e509c2f-53f4-4f9c-9d44-18b49546b600",
+        "specimen": "7818ddd2-fa17-43a4-aeb8-92c147f78207",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 CLN-B section 2": {
-        "akc_id": "d9c170b3-5602-4d51-9606-05b77f14a2e7",
-        "specimen": "f7ab4e8e-3f35-4cd6-b38b-159026fbfd7f",
+      "1f81a79d-60b4-4681-b29b-d7000b4f78d1": {
+        "akc_id": "1f81a79d-60b4-4681-b29b-d7000b4f78d1",
+        "specimen": "7818ddd2-fa17-43a4-aeb8-92c147f78207",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 CLN-B section 3": {
-        "akc_id": "bf308f92-1499-4ef2-b581-e8bd525681ce",
-        "specimen": "28ab749d-7ec1-48b4-be59-3847c010d92c",
+      "778f3474-f6f8-41f1-bc73-51f4dff98503": {
+        "akc_id": "778f3474-f6f8-41f1-bc73-51f4dff98503",
+        "specimen": "3218e3a7-2304-4253-b036-cb80a26252d6",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 CLN-B section 3": {
-        "akc_id": "e28364a2-8f34-4cd4-9875-330b724e74e9",
-        "specimen": "28ab749d-7ec1-48b4-be59-3847c010d92c",
+      "6b242fec-2aa4-4dc8-abdc-fde953615614": {
+        "akc_id": "6b242fec-2aa4-4dc8-abdc-fde953615614",
+        "specimen": "3218e3a7-2304-4253-b036-cb80a26252d6",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 CLN-B section 3": {
-        "akc_id": "db4868e3-5d35-4a3c-9125-9b26ea461b99",
-        "specimen": "28ab749d-7ec1-48b4-be59-3847c010d92c",
+      "ad6e0b4f-3fd6-42e8-a42d-06a4d6a7a0a6": {
+        "akc_id": "ad6e0b4f-3fd6-42e8-a42d-06a4d6a7a0a6",
+        "specimen": "3218e3a7-2304-4253-b036-cb80a26252d6",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 CLN-A section 1": {
-        "akc_id": "d6318345-45c7-4c44-8c20-74e05b67d638",
-        "specimen": "ad072bad-2d07-4a59-bc8b-fdb8b81ceb8d",
+      "9ceb0d84-d3d9-4310-a54d-77d9ad062584": {
+        "akc_id": "9ceb0d84-d3d9-4310-a54d-77d9ad062584",
+        "specimen": "5344d8ee-46d0-42aa-b9d0-7fe7d5d37eb1",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 CLN-A section 1": {
-        "akc_id": "4637d12f-837a-47fc-872b-9135d63ec620",
-        "specimen": "ad072bad-2d07-4a59-bc8b-fdb8b81ceb8d",
+      "93f2a989-938e-4c59-b784-42d697c49be4": {
+        "akc_id": "93f2a989-938e-4c59-b784-42d697c49be4",
+        "specimen": "5344d8ee-46d0-42aa-b9d0-7fe7d5d37eb1",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 CLN-A section 1": {
-        "akc_id": "c119cf71-f12f-45a3-b2d8-73e306f038c3",
-        "specimen": "ad072bad-2d07-4a59-bc8b-fdb8b81ceb8d",
+      "0ca23274-5165-4a3b-87bc-e8198f44faf3": {
+        "akc_id": "0ca23274-5165-4a3b-87bc-e8198f44faf3",
+        "specimen": "5344d8ee-46d0-42aa-b9d0-7fe7d5d37eb1",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 CLN-A section 2": {
-        "akc_id": "d89f4600-edfb-43c4-9fe6-dcfbfa6b617f",
-        "specimen": "69d926d7-3b2e-4103-8ad2-3a6ff694a2c7",
+      "5ca51470-583e-4965-b910-1b4bb40f0d2a": {
+        "akc_id": "5ca51470-583e-4965-b910-1b4bb40f0d2a",
+        "specimen": "c171aef2-b321-4bce-b9a9-d2ccc01f6e19",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 CLN-A section 2": {
-        "akc_id": "848c6fef-fd72-469b-a724-314c6665b3ae",
-        "specimen": "69d926d7-3b2e-4103-8ad2-3a6ff694a2c7",
+      "9e72b2eb-6f25-4953-a1ee-015e005e9855": {
+        "akc_id": "9e72b2eb-6f25-4953-a1ee-015e005e9855",
+        "specimen": "c171aef2-b321-4bce-b9a9-d2ccc01f6e19",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 CLN-A section 2": {
-        "akc_id": "23ba5902-a050-414c-8528-eabbef397a59",
-        "specimen": "69d926d7-3b2e-4103-8ad2-3a6ff694a2c7",
+      "8c31f5ab-7f66-4dd0-ae25-fe90fb560954": {
+        "akc_id": "8c31f5ab-7f66-4dd0-ae25-fe90fb560954",
+        "specimen": "c171aef2-b321-4bce-b9a9-d2ccc01f6e19",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 CLN-A section 3": {
-        "akc_id": "67b26e24-629f-4f17-9da0-e5ee4b589cef",
-        "specimen": "dfd65856-6555-4ad3-8695-ea160806bc9f",
+      "eb86831a-86ca-41d1-93b9-e78a94dd1fec": {
+        "akc_id": "eb86831a-86ca-41d1-93b9-e78a94dd1fec",
+        "specimen": "dd7d2ccc-7d61-4791-9d74-f8ddac9f5a07",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 CLN-A section 3": {
-        "akc_id": "a4d55ae0-b1ec-4ee0-a7f5-0063a20976d9",
-        "specimen": "dfd65856-6555-4ad3-8695-ea160806bc9f",
+      "cc32a123-1202-4f13-96b1-cc227ef2a266": {
+        "akc_id": "cc32a123-1202-4f13-96b1-cc227ef2a266",
+        "specimen": "dd7d2ccc-7d61-4791-9d74-f8ddac9f5a07",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 CLN-A section 3": {
-        "akc_id": "1a828fa5-2112-4e6e-ac2b-f1f11125290a",
-        "specimen": "dfd65856-6555-4ad3-8695-ea160806bc9f",
+      "7f75b900-c622-4a8e-9fa4-da1cf4353b1f": {
+        "akc_id": "7f75b900-c622-4a8e-9fa4-da1cf4353b1f",
+        "specimen": "dd7d2ccc-7d61-4791-9d74-f8ddac9f5a07",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Lesion section 1": {
-        "akc_id": "795507c8-a9f7-428c-9ed3-eec832b74ecb",
-        "specimen": "ced263e3-ff1f-4e39-829d-0b34ed224192",
+      "b53bf9c7-4f4f-4c93-8b2e-5e0c1c7e59d0": {
+        "akc_id": "b53bf9c7-4f4f-4c93-8b2e-5e0c1c7e59d0",
+        "specimen": "4e982994-16c4-4199-a7f5-33520f763890",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Lesion section 1": {
-        "akc_id": "d9ece93d-e7ce-4152-96dc-34077c65528f",
-        "specimen": "ced263e3-ff1f-4e39-829d-0b34ed224192",
+      "0e5d2db9-f032-466a-a0c5-18498dab5b87": {
+        "akc_id": "0e5d2db9-f032-466a-a0c5-18498dab5b87",
+        "specimen": "4e982994-16c4-4199-a7f5-33520f763890",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Lesion section 1": {
-        "akc_id": "d6d00338-43f4-4c67-95de-55c805d7e94f",
-        "specimen": "ced263e3-ff1f-4e39-829d-0b34ed224192",
+      "eea81b8c-d2ca-4ec0-9226-f7d41bf9cd5f": {
+        "akc_id": "eea81b8c-d2ca-4ec0-9226-f7d41bf9cd5f",
+        "specimen": "4e982994-16c4-4199-a7f5-33520f763890",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Lesion section 2": {
-        "akc_id": "15af71ec-7d60-499e-832f-32dc0378ed2a",
-        "specimen": "07065a36-f253-4dff-ba19-7cee1c7a4172",
+      "8c1615f6-6df1-4d9c-b75c-da3bb3eacf06": {
+        "akc_id": "8c1615f6-6df1-4d9c-b75c-da3bb3eacf06",
+        "specimen": "84daea25-3167-405c-9330-37a2da4ae680",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Lesion section 2": {
-        "akc_id": "ea1401d3-a4e0-4d5f-aba9-50e2d5fcc8d6",
-        "specimen": "07065a36-f253-4dff-ba19-7cee1c7a4172",
+      "c88d5a49-ecb0-4b55-8f9c-3a129b491b95": {
+        "akc_id": "c88d5a49-ecb0-4b55-8f9c-3a129b491b95",
+        "specimen": "84daea25-3167-405c-9330-37a2da4ae680",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Lesion section 2": {
-        "akc_id": "5080a40a-9ef2-4c5a-b379-33ab281bad03",
-        "specimen": "07065a36-f253-4dff-ba19-7cee1c7a4172",
+      "0c0369c3-2aa8-4465-976d-9edbb9c175ad": {
+        "akc_id": "0c0369c3-2aa8-4465-976d-9edbb9c175ad",
+        "specimen": "84daea25-3167-405c-9330-37a2da4ae680",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Lesion section 3": {
-        "akc_id": "5213173a-04c1-4a71-92ed-67ddc5790a49",
-        "specimen": "acaafc71-5c8a-4dda-81b7-7db783e6e47f",
+      "34d4686b-70b2-4d86-8082-31612f65e2dd": {
+        "akc_id": "34d4686b-70b2-4d86-8082-31612f65e2dd",
+        "specimen": "2ce8ae04-b5c6-47ee-9a3b-2fa7001ebf66",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Lesion section 3": {
-        "akc_id": "de3986e9-dc6e-41d8-b398-9d45ab36f810",
-        "specimen": "acaafc71-5c8a-4dda-81b7-7db783e6e47f",
+      "dc842164-5812-4ed4-861b-1eb5d38c065f": {
+        "akc_id": "dc842164-5812-4ed4-861b-1eb5d38c065f",
+        "specimen": "2ce8ae04-b5c6-47ee-9a3b-2fa7001ebf66",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Lesion section 3": {
-        "akc_id": "b9e5246c-e50c-4a9f-a99f-478aceeb13b6",
-        "specimen": "acaafc71-5c8a-4dda-81b7-7db783e6e47f",
+      "6d18f8cc-691a-4c36-bed4-860746231900": {
+        "akc_id": "6d18f8cc-691a-4c36-bed4-860746231900",
+        "specimen": "2ce8ae04-b5c6-47ee-9a3b-2fa7001ebf66",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Choroid section 1": {
-        "akc_id": "0d8c2c8c-bd52-4134-98be-49d4b478d6e8",
-        "specimen": "31e3f520-5955-4a1b-855d-4e68d4a3eb5d",
+      "b7feaec4-eb1d-4808-82b0-be47ceea0371": {
+        "akc_id": "b7feaec4-eb1d-4808-82b0-be47ceea0371",
+        "specimen": "21e75211-66b3-430f-b440-d39e3f3e8cf4",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Choroid section 1": {
-        "akc_id": "00fbf384-27d7-4f56-b655-d9915fc3110e",
-        "specimen": "31e3f520-5955-4a1b-855d-4e68d4a3eb5d",
+      "7ed0d93c-f616-40e1-8bc8-dd28d85ce9ab": {
+        "akc_id": "7ed0d93c-f616-40e1-8bc8-dd28d85ce9ab",
+        "specimen": "21e75211-66b3-430f-b440-d39e3f3e8cf4",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Choroid section 1": {
-        "akc_id": "02f353ff-47aa-44d7-8ff6-41963c17a9f2",
-        "specimen": "31e3f520-5955-4a1b-855d-4e68d4a3eb5d",
+      "079aae2e-0735-4c63-9ae3-fdb06216ee9c": {
+        "akc_id": "079aae2e-0735-4c63-9ae3-fdb06216ee9c",
+        "specimen": "21e75211-66b3-430f-b440-d39e3f3e8cf4",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Choroid section 2": {
-        "akc_id": "67ad1517-b406-4023-af3b-d3dc0a5377e0",
-        "specimen": "c84c8801-6676-489b-b0c6-d33128a3a00a",
+      "b55d4ee2-a9f8-4522-b8d6-d0f7db6edfad": {
+        "akc_id": "b55d4ee2-a9f8-4522-b8d6-d0f7db6edfad",
+        "specimen": "270ca4ad-10dc-499c-96e7-aaca3b66084d",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Choroid section 2": {
-        "akc_id": "90668224-b6e4-47ae-9e6d-f63497a84cb6",
-        "specimen": "c84c8801-6676-489b-b0c6-d33128a3a00a",
+      "feb9fc3e-e80c-4816-b0b1-7d97c29fbde6": {
+        "akc_id": "feb9fc3e-e80c-4816-b0b1-7d97c29fbde6",
+        "specimen": "270ca4ad-10dc-499c-96e7-aaca3b66084d",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Choroid section 2": {
-        "akc_id": "d9d892d4-887c-4185-b59b-44f118200a08",
-        "specimen": "c84c8801-6676-489b-b0c6-d33128a3a00a",
+      "0c62319f-2a87-4739-aa0f-deb1b0df06f2": {
+        "akc_id": "0c62319f-2a87-4739-aa0f-deb1b0df06f2",
+        "specimen": "270ca4ad-10dc-499c-96e7-aaca3b66084d",
         "library_generation_method": "RT(specific+UMI)+PCR"
       },
-      "CellIsolationProcessing_M5_M5 Choroid section 3": {
-        "akc_id": "46640fb4-838c-4abf-b3c2-528d98b3b90f",
-        "specimen": "0b89c186-5ad5-4698-822e-5b54769d6424",
+      "381dade0-7491-4d17-a141-5f48cea57101": {
+        "akc_id": "381dade0-7491-4d17-a141-5f48cea57101",
+        "specimen": "42d465bc-1506-4444-b764-18fa6bfd4e98",
         "single_cell": false,
         "cell_storage": false
       },
-      "NucleicAcidProcessing_M5_M5 Choroid section 3": {
-        "akc_id": "d03c2a70-07e8-44e3-8fe6-c901045e3dbf",
-        "specimen": "0b89c186-5ad5-4698-822e-5b54769d6424",
+      "0e3ce50f-4538-4f59-b20c-d1470c9e3a60": {
+        "akc_id": "0e3ce50f-4538-4f59-b20c-d1470c9e3a60",
+        "specimen": "42d465bc-1506-4444-b764-18fa6bfd4e98",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_M5_M5 Choroid section 3": {
-        "akc_id": "270e58d9-2e9b-4b4a-8aa0-90b817e640e6",
-        "specimen": "0b89c186-5ad5-4698-822e-5b54769d6424",
+      "bfbc0046-582d-4029-aefa-670c5ae10182": {
+        "akc_id": "bfbc0046-582d-4029-aefa-670c5ae10182",
+        "specimen": "42d465bc-1506-4444-b764-18fa6bfd4e98",
         "library_generation_method": "RT(specific+UMI)+PCR"
       }
     },
     "assays": {
-      "ReceptorRepertoireSequencingAssay_M2_M2 CLN section 1": {
-        "akc_id": "c37f06ac-b035-4393-b459-bd0ab074fbe9",
-        "specimen": "a0d7a0a9-3a2e-4891-8d91-e26efdd148f2",
+      "6462d6da-3f53-47a1-9b45-3a93a66467d9": {
+        "akc_id": "6462d6da-3f53-47a1-9b45-3a93a66467d9",
+        "specimen": "b0956f52-6b23-41ed-85b8-fb7d4a8ede62",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1469,9 +1469,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M2_M2 CLN section 2": {
-        "akc_id": "27526f62-a51b-4da3-b077-845e214d4e6a",
-        "specimen": "c428b73b-4492-4718-b6a6-770a9d14f386",
+      "0efda01f-3a40-4891-8895-729268cb3c98": {
+        "akc_id": "0efda01f-3a40-4891-8895-729268cb3c98",
+        "specimen": "db0c4b4c-badf-40dc-a1b8-12168ce95be3",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1479,9 +1479,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M2_M2 CLN section 3": {
-        "akc_id": "8d255eff-3e43-4eea-8ba4-9f09beb62d0e",
-        "specimen": "c802f2ac-f052-4aad-9136-438d4f047467",
+      "9cbe2693-46e1-464a-b7d2-3a3766c3131a": {
+        "akc_id": "9cbe2693-46e1-464a-b7d2-3a3766c3131a",
+        "specimen": "fce42478-7600-4ffb-8d0d-f198e98c7c81",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1489,9 +1489,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M2_M2 Lesion section 1": {
-        "akc_id": "d003f6ea-c15f-4f80-929e-0a9e47d7c44f",
-        "specimen": "eba81c08-a645-41de-99d4-8d6d113237c9",
+      "55f7f0f3-e121-4254-8616-40c935de3888": {
+        "akc_id": "55f7f0f3-e121-4254-8616-40c935de3888",
+        "specimen": "d99f1109-dd12-4157-af21-9115634e61a2",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1499,9 +1499,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M2_M2 Lesion section 2": {
-        "akc_id": "c71672fe-acfa-4942-9bb6-f04c56a757b3",
-        "specimen": "10cf1ce0-61e4-42a2-afd9-426aa0528729",
+      "380da5b0-aad4-4839-b118-aedaad49c47b": {
+        "akc_id": "380da5b0-aad4-4839-b118-aedaad49c47b",
+        "specimen": "ff570175-efd4-446a-9f8b-8e63963f133b",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1509,9 +1509,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M2_M2 Lesion section 3": {
-        "akc_id": "b620939b-84c0-4897-a10d-d4da2bc6fe34",
-        "specimen": "547c0e8b-2467-4af5-8a50-7e44aa3bad1b",
+      "209f29f8-6b41-4cb3-a9f7-4d0e1f2397da": {
+        "akc_id": "209f29f8-6b41-4cb3-a9f7-4d0e1f2397da",
+        "specimen": "8b0d1272-fe07-4295-b763-fcc6e84477c3",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1519,9 +1519,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M3_M3 CLN section 1": {
-        "akc_id": "2fc78c99-9951-41fb-84c1-3869f90d2d10",
-        "specimen": "3fc238d0-40db-441d-99ec-c88be6f19cbf",
+      "2db19a53-9237-4365-ae18-8ad15d0c1a54": {
+        "akc_id": "2db19a53-9237-4365-ae18-8ad15d0c1a54",
+        "specimen": "16938a26-0593-474e-9a08-c2d87cb62161",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1529,9 +1529,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M3_M3 CLN section 2": {
-        "akc_id": "0e96d257-da8f-404f-9899-800e4496b713",
-        "specimen": "02a32b82-5d81-477e-abcf-10c08e897d9f",
+      "191a319b-7d7b-4ccb-806c-eb4c6047e6c8": {
+        "akc_id": "191a319b-7d7b-4ccb-806c-eb4c6047e6c8",
+        "specimen": "a81c9062-9ef5-4e94-8dd8-23e95e7f6e22",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1539,9 +1539,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M3_M3 CLN section 3": {
-        "akc_id": "1522bdf7-46c1-4163-bb68-3dca0bce56ea",
-        "specimen": "fbd72c7a-b515-4332-817c-c95316c966ce",
+      "d24afb01-23ab-4775-b37b-70b0c7efe638": {
+        "akc_id": "d24afb01-23ab-4775-b37b-70b0c7efe638",
+        "specimen": "e32d587c-0791-4329-93ca-c0e5e670f3ae",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1549,9 +1549,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M3_M3 Lesion section 1": {
-        "akc_id": "7a5632d3-cee6-41f9-a9a5-54ecae4d3301",
-        "specimen": "11f0f2a8-19de-4e49-a9e8-40106bd32eba",
+      "e5c36113-fb53-4046-be72-facfafafd182": {
+        "akc_id": "e5c36113-fb53-4046-be72-facfafafd182",
+        "specimen": "fe9b036d-cded-49ac-be81-3f8e431e2249",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1559,9 +1559,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M3_M3 Lesion section 2": {
-        "akc_id": "eb4119be-936c-42c1-8a1f-0cdc5fe8951a",
-        "specimen": "07af562c-934c-40de-9ac1-9b910e0a0a0b",
+      "6a7c2c91-a2f8-41f0-8f36-036a5822bead": {
+        "akc_id": "6a7c2c91-a2f8-41f0-8f36-036a5822bead",
+        "specimen": "28c0803c-8d98-43ea-b6be-db0dc624d78b",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1569,9 +1569,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M4_M4 CLN section 1": {
-        "akc_id": "efb47b53-6fe8-4d25-956e-ec28e7095b68",
-        "specimen": "7195bffc-dfd6-45ff-9368-07e69e18e235",
+      "ef1820a2-892a-4714-a6f1-e8dc7e0bd0d2": {
+        "akc_id": "ef1820a2-892a-4714-a6f1-e8dc7e0bd0d2",
+        "specimen": "113659da-b241-4237-85c6-613720f45346",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1579,9 +1579,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M4_M4 CLN section 2": {
-        "akc_id": "4f682bd6-664a-4c7d-919e-e60eee5ebdeb",
-        "specimen": "760cd96f-9891-4399-955b-bde757e9aded",
+      "b5b29f1a-ebef-41d1-9d3c-30419defc284": {
+        "akc_id": "b5b29f1a-ebef-41d1-9d3c-30419defc284",
+        "specimen": "60c88e92-77d7-4c10-b2b6-cb894a153e67",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1589,9 +1589,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M4_M4 CLN section 3": {
-        "akc_id": "a12c4fdb-dc99-4414-82ae-670b42c01303",
-        "specimen": "12491384-d531-4d85-a70e-b1686a34531e",
+      "8cddcd79-f5b8-4d43-b0c2-a225149c67d1": {
+        "akc_id": "8cddcd79-f5b8-4d43-b0c2-a225149c67d1",
+        "specimen": "7aaca3f6-d97b-42c7-bdfe-52962c9ac1bc",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1599,9 +1599,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M4_M4 Lesion section 1": {
-        "akc_id": "7cac86c0-1e4b-4d55-994e-026e1eb09594",
-        "specimen": "756083f9-7781-4c3d-896d-fcefe5135054",
+      "850935be-e833-4d9f-9f7d-79edd3856279": {
+        "akc_id": "850935be-e833-4d9f-9f7d-79edd3856279",
+        "specimen": "870c362a-bee9-4040-88e8-d8191b83852f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1609,9 +1609,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M4_M4 Lesion section 2": {
-        "akc_id": "d470c22c-88e1-49ce-a955-53113f56bb7b",
-        "specimen": "c5682151-6252-41de-aa6b-898b058571c3",
+      "c7213249-d861-40f2-8e88-9833c36adab0": {
+        "akc_id": "c7213249-d861-40f2-8e88-9833c36adab0",
+        "specimen": "ef3be4fa-2f6f-45ac-b965-706c3a9299e0",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1619,9 +1619,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M4_M4 Lesion section 3": {
-        "akc_id": "561ca59c-b31e-4c37-9ef8-f27c0a4cf768",
-        "specimen": "0d48af09-fb45-4a89-aa56-a6da91c35328",
+      "7f6fbcda-a222-47fe-b16e-2cfac7f783e9": {
+        "akc_id": "7f6fbcda-a222-47fe-b16e-2cfac7f783e9",
+        "specimen": "a8a1b6b5-33d6-441e-8e49-dd2737075874",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1629,9 +1629,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Pia section 1": {
-        "akc_id": "c13e72b6-50df-4291-9500-afce87b5b03c",
-        "specimen": "c7fe249c-650f-4d27-a9ba-dc4b5d2561e0",
+      "f69ed145-4c28-443f-bf36-5fb3cbfa20e8": {
+        "akc_id": "f69ed145-4c28-443f-bf36-5fb3cbfa20e8",
+        "specimen": "29849f32-3213-44fe-9b02-97e317884db4",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1639,9 +1639,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Pia section 2": {
-        "akc_id": "a1eb3fe6-216e-4fa3-a458-28595f1d9387",
-        "specimen": "c00bfff6-94e5-4f3f-8321-f61d6da0ac65",
+      "2778f752-87e9-4c32-8b3e-fa9cb3b24707": {
+        "akc_id": "2778f752-87e9-4c32-8b3e-fa9cb3b24707",
+        "specimen": "566cdd6f-0bf2-4faa-b97d-2b1c6758160f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1649,9 +1649,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Pia section 3": {
-        "akc_id": "d8456090-3833-4435-aa18-d60ca9f76352",
-        "specimen": "3f22aba6-ecb9-460f-9d2e-d99c65aeba52",
+      "074cd629-502a-4d54-8ab1-d2b2a158deb2": {
+        "akc_id": "074cd629-502a-4d54-8ab1-d2b2a158deb2",
+        "specimen": "124d434e-72e0-433c-b8e6-3d71ae128ee2",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1659,9 +1659,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 CLN-B section 1": {
-        "akc_id": "84a3738e-5725-4c04-9bb1-e27789ed1ece",
-        "specimen": "29dd370e-6928-4c03-b1c5-60392cdb515c",
+      "2c00f350-ef03-45bb-af9b-678adf3eaa78": {
+        "akc_id": "2c00f350-ef03-45bb-af9b-678adf3eaa78",
+        "specimen": "5ff72d3b-c1d0-4821-a310-a99ebc7d19b9",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1669,9 +1669,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 CLN-B section 2": {
-        "akc_id": "7b0c1cbe-bef1-4985-9180-17398f4d61cb",
-        "specimen": "f7ab4e8e-3f35-4cd6-b38b-159026fbfd7f",
+      "f2a7654d-2bfc-4310-a2e1-ef59f3c9a950": {
+        "akc_id": "f2a7654d-2bfc-4310-a2e1-ef59f3c9a950",
+        "specimen": "7818ddd2-fa17-43a4-aeb8-92c147f78207",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1679,9 +1679,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 CLN-B section 3": {
-        "akc_id": "442ac95a-2a1b-4222-a2d2-bea52f415691",
-        "specimen": "28ab749d-7ec1-48b4-be59-3847c010d92c",
+      "0e81dee2-8ebb-4edf-8704-c950b173de3f": {
+        "akc_id": "0e81dee2-8ebb-4edf-8704-c950b173de3f",
+        "specimen": "3218e3a7-2304-4253-b036-cb80a26252d6",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1689,9 +1689,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 CLN-A section 1": {
-        "akc_id": "57e70fe0-cef8-49fb-a11d-402f138c684a",
-        "specimen": "ad072bad-2d07-4a59-bc8b-fdb8b81ceb8d",
+      "61a505cf-507c-43a9-8956-e8ca7c4c9eff": {
+        "akc_id": "61a505cf-507c-43a9-8956-e8ca7c4c9eff",
+        "specimen": "5344d8ee-46d0-42aa-b9d0-7fe7d5d37eb1",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1699,9 +1699,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 CLN-A section 2": {
-        "akc_id": "605e4b34-0592-4b14-8143-5a05a4f05ec0",
-        "specimen": "69d926d7-3b2e-4103-8ad2-3a6ff694a2c7",
+      "8e942051-a29f-4a99-9869-a14cc41e8b1e": {
+        "akc_id": "8e942051-a29f-4a99-9869-a14cc41e8b1e",
+        "specimen": "c171aef2-b321-4bce-b9a9-d2ccc01f6e19",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1709,9 +1709,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 CLN-A section 3": {
-        "akc_id": "09805720-0b62-4f14-8651-488587f0d4b3",
-        "specimen": "dfd65856-6555-4ad3-8695-ea160806bc9f",
+      "859de238-0f55-4114-a480-21c9757343b1": {
+        "akc_id": "859de238-0f55-4114-a480-21c9757343b1",
+        "specimen": "dd7d2ccc-7d61-4791-9d74-f8ddac9f5a07",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1719,9 +1719,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Lesion section 1": {
-        "akc_id": "4df9d85a-fa0b-45c8-ab3c-ba582ba17255",
-        "specimen": "ced263e3-ff1f-4e39-829d-0b34ed224192",
+      "6deccf63-c476-4a3d-8969-3b578d923a4e": {
+        "akc_id": "6deccf63-c476-4a3d-8969-3b578d923a4e",
+        "specimen": "4e982994-16c4-4199-a7f5-33520f763890",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1729,9 +1729,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Lesion section 2": {
-        "akc_id": "30a58db8-83aa-423b-b0fe-425d4a03e970",
-        "specimen": "07065a36-f253-4dff-ba19-7cee1c7a4172",
+      "05d6de80-c64c-4fe5-85ed-c9a5ce8452c8": {
+        "akc_id": "05d6de80-c64c-4fe5-85ed-c9a5ce8452c8",
+        "specimen": "84daea25-3167-405c-9330-37a2da4ae680",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1739,9 +1739,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Lesion section 3": {
-        "akc_id": "fec74765-f3ac-4f3e-b306-19bc74a9d283",
-        "specimen": "acaafc71-5c8a-4dda-81b7-7db783e6e47f",
+      "c81ed0b1-49cc-4ee6-acd1-64753b26ba9b": {
+        "akc_id": "c81ed0b1-49cc-4ee6-acd1-64753b26ba9b",
+        "specimen": "2ce8ae04-b5c6-47ee-9a3b-2fa7001ebf66",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1749,9 +1749,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Choroid section 1": {
-        "akc_id": "4dc8b92f-b729-4f79-92fd-b4b86ffeaa4e",
-        "specimen": "31e3f520-5955-4a1b-855d-4e68d4a3eb5d",
+      "35e939c7-e0a0-497a-9fce-f6d97d7034a2": {
+        "akc_id": "35e939c7-e0a0-497a-9fce-f6d97d7034a2",
+        "specimen": "21e75211-66b3-430f-b440-d39e3f3e8cf4",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1759,9 +1759,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Choroid section 2": {
-        "akc_id": "70668644-6f17-4dcc-b7e1-5018965b861d",
-        "specimen": "c84c8801-6676-489b-b0c6-d33128a3a00a",
+      "aaad1d7e-a4d3-46b3-8557-193a3718387f": {
+        "akc_id": "aaad1d7e-a4d3-46b3-8557-193a3718387f",
+        "specimen": "270ca4ad-10dc-499c-96e7-aaca3b66084d",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
@@ -1769,9 +1769,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_M5_M5 Choroid section 3": {
-        "akc_id": "decf1ed8-7a9f-4412-b61c-bbd9cb80a20e",
-        "specimen": "0b89c186-5ad5-4698-822e-5b54769d6424",
+      "4c7604a1-3730-4617-9d01-73548bb30c57": {
+        "akc_id": "4c7604a1-3730-4617-9d01-73548bb30c57",
+        "specimen": "42d465bc-1506-4444-b764-18fa6bfd4e98",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"

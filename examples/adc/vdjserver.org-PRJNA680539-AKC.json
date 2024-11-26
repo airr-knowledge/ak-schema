@@ -4,8 +4,8 @@
       "": {
         "akc_id": ""
       },
-      "Investigation_PRJNA680539": {
-        "akc_id": "1e659dfd-69a7-4978-888f-c97c92bce3a4",
+      "fd1dd868-0ab4-4bf2-834d-b3244089072d": {
+        "akc_id": "fd1dd868-0ab4-4bf2-834d-b3244089072d",
         "name": "Low avidity T cell responses to SARS-CoV-2 in unexposed individuals and severe COVID-19",
         "description": "CD4+ T cells reactive against SARS-CoV-2 can be found in unexposed individuals, and these are suggested to arise in response to common cold coronavirus (CCCoV) infection. Here, we utilized SARS-CoV-2-reactive CD4+ T cell enrichment to examine the antigen avidity and clonality of these cells, as well as the relative contribution of CCCoV cross-reactivity. SARS-CoV-2-reactive CD4+ memory T cells were present in virtually all unexposed individuals examined, displaying low functional avidity and multiple, highly variable cross-reactivities that were not restricted to CCCoVs. SARS-CoV-2-reactive CD4+ T cells from COVID-19 patients lacked cross-reactivity to CCCoVs, irrespective of strong memory T cell responses against CCCoV in all donors analyzed. In severe but not mild COVID-19, SARS-CoV-2-specific T cells displayed low functional avidity and clonality, despite increased frequencies. Our findings identify low-avidity CD4+ T cell responses as a hallmark of severe COVID-19 and argue against a protective role for CCCoV-reactive T cells in SARS-CoV-2 infection.\n",
         "study_type": {
@@ -16,84 +16,84 @@
         "release_date": "2021-08-19T18:17:47.893Z",
         "update_date": "2023-01-20T00:29:39.977Z",
         "participants": [
-          "4063da66-2d63-4f3a-9058-da0c7d07c345",
-          "936e3ebc-8e94-44a6-a323-3e56a87cfce1",
-          "5718e986-aa9c-4c39-8909-124b518d5da6",
-          "a7ac1ada-ca20-4510-8d11-af1324a27350",
-          "a2eab980-b014-4a5d-a144-364ab9e2de3a",
-          "8713e21b-b4b1-4258-8ec1-1fab99830300",
-          "6b1c80f9-c3c1-4132-b82d-7a50ab3458b5",
-          "ad0b4ff0-eb1d-4a37-b23b-7445ed598183",
-          "440e2ca3-d86b-4797-bfe3-04e400d30b4c",
-          "6bf81a4c-b98d-4908-829f-58a9536aac7d",
-          "9e1dfce5-2611-432f-bf9b-ee8d2c6be92d",
-          "63c743e1-ad05-4f00-87b9-5cc9589eb9ae",
-          "0b6e593a-30b4-45b8-a1d7-c45fc9d4daf5",
-          "b83a1033-16b0-4a34-b58a-669ad94996f8",
-          "de8dde10-22ff-4be1-ae20-5eb6b84b0cdc",
-          "b1174ba9-0a82-42c2-8a1b-f3ff7a9fb514",
-          "a9feee0e-b65a-4218-9257-aa46addacb09",
-          "09fbe46e-a207-45ea-813b-a126ee96f81e",
-          "97b72df3-0b8e-424e-b364-48b839c64dd9",
-          "53f57977-6aad-4019-9042-d2ff54c94f0d"
+          "dd1797c9-2aaf-46a7-9dde-72400a696b9e",
+          "3f984a51-123e-4a4d-a97f-abf819f547f0",
+          "770b1d2d-c85c-42ea-9b3f-bfa296d3c4a0",
+          "fda14ec3-deb5-4274-a0c8-d783317cba90",
+          "0340c5e3-283b-420f-a756-811a3497b404",
+          "73bcb58b-8745-4c50-9839-e9da797d357d",
+          "85511462-fd49-47d1-9666-c2a39bbdee40",
+          "e55a6898-ebbe-4747-a37a-4c754cf28788",
+          "e64d8dac-2767-45c3-acbd-19eff6c379f9",
+          "b12c7ac9-170c-4b85-8f3d-8562d13cd033",
+          "97f24df8-fc20-4f36-b6cb-5c4d4e84124c",
+          "f71f1f5d-f56c-4105-9d2b-6b0ed960f013",
+          "e9620a69-e94e-4cfb-aa1b-7b91d2ff76ff",
+          "1b12bb17-5b37-4efa-8783-7dd924958e5d",
+          "a0f61bf0-f5fd-4f1f-b124-ad94e85d9b3a",
+          "30e89b37-95ab-4ef8-85e7-0bb43b663cb0",
+          "8bc483db-2821-4986-9ada-e58c5111918d",
+          "01532934-1ddf-43ac-8946-b9e5269d48a4",
+          "c24b2455-4db9-4cca-9c94-ff58dec3e4ff",
+          "9991b0bf-fd3c-41cb-99dc-078dd5e01cec"
         ],
         "assays": [
-          "f1109ab0-6a49-414d-9f96-085d65e03ea1",
-          "09858f08-cb20-486d-809f-3d25265ececd",
-          "80aec044-70df-41ec-bc6e-8ed14b3e56e9",
-          "ecd39f7c-9ab6-4ff0-a9a0-7ef371179e05",
-          "30f4aa2b-4a02-4b8e-a76b-fe46661df051",
-          "cd3b24ed-8a98-4821-b008-ed3567d2658c",
-          "881c938a-0e9d-4d13-b9bf-8d70c33d0d47",
-          "fc7a9e58-d7d8-4a3a-9269-e33ae8eee9c2",
-          "30abd82d-3e95-4a92-abe1-710fb637df9b",
-          "269ba1b4-6c70-4a3c-b25d-04e95ba04a86",
-          "75737f09-7bbe-4bb7-9646-baa3fbe61899",
-          "0bd6acde-6ac4-4227-b2a6-7b917e6d0940",
-          "73ceecd6-83e4-4abc-ba21-e3ae442c6352",
-          "46b3cb9c-e105-4619-8251-f7c0b2dc1cde",
-          "573ee41a-a483-4a76-9944-cf525b0afc21",
-          "7b4d130e-fb9d-4357-ac03-271574e08fee",
-          "53c1a712-6360-4be1-9a64-6d0bde5ada97",
-          "a880eb55-a2d6-4e12-b028-97f41480681f",
-          "761c28ce-73c3-42e5-b579-ffa0fbb1da05",
-          "fc6df1c3-2e80-410b-8ce5-6b110d491b00"
+          "04a8dfaf-3833-4538-8d79-3fc1bf97165a",
+          "2c003232-00d4-4142-b299-cafe67d2f9c3",
+          "e989ab3c-bf33-410c-8e66-cf2bb727ed40",
+          "4f2b13bb-3d3c-417d-8bee-209d1652f12d",
+          "eb4e1465-b02d-40ac-a230-b870c6ff6798",
+          "bb3d918a-554b-4658-943f-0fbd036a5179",
+          "dc3e822a-d9bc-4986-b18a-13c3781603a3",
+          "59fc5fe4-13a7-457b-8b78-c1791866ae1f",
+          "9c91f8fa-6d01-4d5d-b2d4-649a850bc6b7",
+          "653ece97-b3aa-44a0-8960-aa671f9434aa",
+          "49d02cee-1527-4037-be17-533b1ab42515",
+          "7a70e1a2-a5f6-4bab-901e-e719d688380a",
+          "1174c206-f9c6-46b2-b26f-e0d5e9746449",
+          "dda1964b-9937-49d3-969c-7fe53418c168",
+          "dfa4eabe-39ff-437c-b1a8-caafc5cb798b",
+          "f55206ee-fc6f-45a9-98b6-c6a28e746684",
+          "cd3c1ab0-f49c-433e-80dd-f1172181bfde",
+          "bfa8fae9-8fcd-4f7c-b052-b6f2752bdab1",
+          "6cb58e39-6c22-4868-94f0-5d948b8d4ab2",
+          "1e47565c-32b8-4f2a-b103-f1812d1d8bfd"
         ],
         "documents": [
-          "f37bfa78-8a46-4bba-b6e2-c93cebbdba87"
+          "cef70a23-9f62-4231-9c8a-4cd5702dfca4"
         ]
       }
     },
     "references": {
-      "Reference_PRJNA680539": {
+      "cef70a23-9f62-4231-9c8a-4cd5702dfca4": {
         "source_uri": "",
         "sources": "PMID:33296686",
         "investigations": [
           "",
-          "1e659dfd-69a7-4978-888f-c97c92bce3a4"
+          "fd1dd868-0ab4-4bf2-834d-b3244089072d"
         ],
-        "akc_id": "f37bfa78-8a46-4bba-b6e2-c93cebbdba87"
+        "akc_id": "cef70a23-9f62-4231-9c8a-4cd5702dfca4"
       }
     },
     "study_arms": {
-      "StudyArm_Case": {
-        "akc_id": "51c879f2-af69-4288-912a-4e7171f839ff",
+      "afbb1429-a5c3-403a-b91d-e196b3cdc163": {
+        "akc_id": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "name": "Case",
-        "investigation": "1e659dfd-69a7-4978-888f-c97c92bce3a4",
+        "investigation": "fd1dd868-0ab4-4bf2-834d-b3244089072d",
         "inclusion_criteria": " "
       },
-      "StudyArm_Control (Healthy)": {
-        "akc_id": "cdfef8af-9fc2-475b-afbd-1bccfe7a1ea2",
+      "59b4d0cb-a5af-4e80-9460-85a9332e6364": {
+        "akc_id": "59b4d0cb-a5af-4e80-9460-85a9332e6364",
         "name": "Control (Healthy)",
-        "investigation": "1e659dfd-69a7-4978-888f-c97c92bce3a4",
+        "investigation": "fd1dd868-0ab4-4bf2-834d-b3244089072d",
         "inclusion_criteria": " "
       }
     },
     "participants": {
-      "Participant_COVID_8": {
-        "akc_id": "4063da66-2d63-4f3a-9058-da0c7d07c345",
+      "dd1797c9-2aaf-46a7-9dde-72400a696b9e": {
+        "akc_id": "dd1797c9-2aaf-46a7-9dde-72400a696b9e",
         "name": "COVID_8",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -106,10 +106,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_20": {
-        "akc_id": "936e3ebc-8e94-44a6-a323-3e56a87cfce1",
+      "3f984a51-123e-4a4d-a97f-abf819f547f0": {
+        "akc_id": "3f984a51-123e-4a4d-a97f-abf819f547f0",
         "name": "COVID_20",
-        "study_arm": "cdfef8af-9fc2-475b-afbd-1bccfe7a1ea2",
+        "study_arm": "59b4d0cb-a5af-4e80-9460-85a9332e6364",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -122,10 +122,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_21": {
-        "akc_id": "5718e986-aa9c-4c39-8909-124b518d5da6",
+      "770b1d2d-c85c-42ea-9b3f-bfa296d3c4a0": {
+        "akc_id": "770b1d2d-c85c-42ea-9b3f-bfa296d3c4a0",
         "name": "COVID_21",
-        "study_arm": "cdfef8af-9fc2-475b-afbd-1bccfe7a1ea2",
+        "study_arm": "59b4d0cb-a5af-4e80-9460-85a9332e6364",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -138,10 +138,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_14": {
-        "akc_id": "a7ac1ada-ca20-4510-8d11-af1324a27350",
+      "fda14ec3-deb5-4274-a0c8-d783317cba90": {
+        "akc_id": "fda14ec3-deb5-4274-a0c8-d783317cba90",
         "name": "COVID_14",
-        "study_arm": "cdfef8af-9fc2-475b-afbd-1bccfe7a1ea2",
+        "study_arm": "59b4d0cb-a5af-4e80-9460-85a9332e6364",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -154,10 +154,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_13": {
-        "akc_id": "a2eab980-b014-4a5d-a144-364ab9e2de3a",
+      "0340c5e3-283b-420f-a756-811a3497b404": {
+        "akc_id": "0340c5e3-283b-420f-a756-811a3497b404",
         "name": "COVID_13",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -170,10 +170,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_6": {
-        "akc_id": "8713e21b-b4b1-4258-8ec1-1fab99830300",
+      "73bcb58b-8745-4c50-9839-e9da797d357d": {
+        "akc_id": "73bcb58b-8745-4c50-9839-e9da797d357d",
         "name": "COVID_6",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -186,10 +186,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_19": {
-        "akc_id": "6b1c80f9-c3c1-4132-b82d-7a50ab3458b5",
+      "85511462-fd49-47d1-9666-c2a39bbdee40": {
+        "akc_id": "85511462-fd49-47d1-9666-c2a39bbdee40",
         "name": "COVID_19",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -202,10 +202,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_2": {
-        "akc_id": "ad0b4ff0-eb1d-4a37-b23b-7445ed598183",
+      "e55a6898-ebbe-4747-a37a-4c754cf28788": {
+        "akc_id": "e55a6898-ebbe-4747-a37a-4c754cf28788",
         "name": "COVID_2",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -218,10 +218,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_9": {
-        "akc_id": "440e2ca3-d86b-4797-bfe3-04e400d30b4c",
+      "e64d8dac-2767-45c3-acbd-19eff6c379f9": {
+        "akc_id": "e64d8dac-2767-45c3-acbd-19eff6c379f9",
         "name": "COVID_9",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -234,10 +234,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_11": {
-        "akc_id": "6bf81a4c-b98d-4908-829f-58a9536aac7d",
+      "b12c7ac9-170c-4b85-8f3d-8562d13cd033": {
+        "akc_id": "b12c7ac9-170c-4b85-8f3d-8562d13cd033",
         "name": "COVID_11",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -250,10 +250,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_5": {
-        "akc_id": "9e1dfce5-2611-432f-bf9b-ee8d2c6be92d",
+      "97f24df8-fc20-4f36-b6cb-5c4d4e84124c": {
+        "akc_id": "97f24df8-fc20-4f36-b6cb-5c4d4e84124c",
         "name": "COVID_5",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -266,10 +266,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_4": {
-        "akc_id": "63c743e1-ad05-4f00-87b9-5cc9589eb9ae",
+      "f71f1f5d-f56c-4105-9d2b-6b0ed960f013": {
+        "akc_id": "f71f1f5d-f56c-4105-9d2b-6b0ed960f013",
         "name": "COVID_4",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -282,10 +282,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_18": {
-        "akc_id": "0b6e593a-30b4-45b8-a1d7-c45fc9d4daf5",
+      "e9620a69-e94e-4cfb-aa1b-7b91d2ff76ff": {
+        "akc_id": "e9620a69-e94e-4cfb-aa1b-7b91d2ff76ff",
         "name": "COVID_18",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -298,10 +298,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_7": {
-        "akc_id": "b83a1033-16b0-4a34-b58a-669ad94996f8",
+      "1b12bb17-5b37-4efa-8783-7dd924958e5d": {
+        "akc_id": "1b12bb17-5b37-4efa-8783-7dd924958e5d",
         "name": "COVID_7",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -314,10 +314,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_12": {
-        "akc_id": "de8dde10-22ff-4be1-ae20-5eb6b84b0cdc",
+      "a0f61bf0-f5fd-4f1f-b124-ad94e85d9b3a": {
+        "akc_id": "a0f61bf0-f5fd-4f1f-b124-ad94e85d9b3a",
         "name": "COVID_12",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -330,10 +330,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_3": {
-        "akc_id": "b1174ba9-0a82-42c2-8a1b-f3ff7a9fb514",
+      "30e89b37-95ab-4ef8-85e7-0bb43b663cb0": {
+        "akc_id": "30e89b37-95ab-4ef8-85e7-0bb43b663cb0",
         "name": "COVID_3",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -346,10 +346,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_16": {
-        "akc_id": "a9feee0e-b65a-4218-9257-aa46addacb09",
+      "8bc483db-2821-4986-9ada-e58c5111918d": {
+        "akc_id": "8bc483db-2821-4986-9ada-e58c5111918d",
         "name": "COVID_16",
-        "study_arm": "cdfef8af-9fc2-475b-afbd-1bccfe7a1ea2",
+        "study_arm": "59b4d0cb-a5af-4e80-9460-85a9332e6364",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -362,10 +362,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_1": {
-        "akc_id": "09fbe46e-a207-45ea-813b-a126ee96f81e",
+      "01532934-1ddf-43ac-8946-b9e5269d48a4": {
+        "akc_id": "01532934-1ddf-43ac-8946-b9e5269d48a4",
         "name": "COVID_1",
-        "study_arm": "51c879f2-af69-4288-912a-4e7171f839ff",
+        "study_arm": "afbb1429-a5c3-403a-b91d-e196b3cdc163",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -378,10 +378,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_15": {
-        "akc_id": "97b72df3-0b8e-424e-b364-48b839c64dd9",
+      "c24b2455-4db9-4cca-9c94-ff58dec3e4ff": {
+        "akc_id": "c24b2455-4db9-4cca-9c94-ff58dec3e4ff",
         "name": "COVID_15",
-        "study_arm": "cdfef8af-9fc2-475b-afbd-1bccfe7a1ea2",
+        "study_arm": "59b4d0cb-a5af-4e80-9460-85a9332e6364",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -394,10 +394,10 @@
         },
         "age_event": "Sample Collection"
       },
-      "Participant_COVID_17": {
-        "akc_id": "53f57977-6aad-4019-9042-d2ff54c94f0d",
+      "9991b0bf-fd3c-41cb-99dc-078dd5e01cec": {
+        "akc_id": "9991b0bf-fd3c-41cb-99dc-078dd5e01cec",
         "name": "COVID_17",
-        "study_arm": "cdfef8af-9fc2-475b-afbd-1bccfe7a1ea2",
+        "study_arm": "59b4d0cb-a5af-4e80-9460-85a9332e6364",
         "species": {
           "id": "NCBITAXON:9606",
           "label": "Homo sapiens"
@@ -412,17 +412,17 @@
       }
     },
     "life_events": {
-      "LifeEvent_Participant_COVID_8_COVID_8": {
-        "akc_id": "f9fede40-df28-4ed9-aa05-106d41613361",
-        "participant": "4063da66-2d63-4f3a-9058-da0c7d07c345"
+      "a6f6fd7e-1deb-499e-844d-23b3c8e9f8a9": {
+        "akc_id": "a6f6fd7e-1deb-499e-844d-23b3c8e9f8a9",
+        "participant": "dd1797c9-2aaf-46a7-9dde-72400a696b9e"
       },
-      "LifeEvent_ImmuneExposure_COVID_8_COVID_8": {
-        "akc_id": "c6c5b24e-6293-4742-873d-cca6cf11e348",
-        "participant": "4063da66-2d63-4f3a-9058-da0c7d07c345"
+      "b9291a1e-d89f-4972-a3c4-ae02120f65ce": {
+        "akc_id": "b9291a1e-d89f-4972-a3c4-ae02120f65ce",
+        "participant": "dd1797c9-2aaf-46a7-9dde-72400a696b9e"
       },
-      "LifeEvent_Specimen_COVID_8_COVID_8": {
-        "akc_id": "120f4060-01aa-4a45-9626-1af447eb9610",
-        "participant": "4063da66-2d63-4f3a-9058-da0c7d07c345",
+      "4386b7cd-f65a-4d43-af20-1e56cbfdb8a8": {
+        "akc_id": "4386b7cd-f65a-4d43-af20-1e56cbfdb8a8",
+        "participant": "dd1797c9-2aaf-46a7-9dde-72400a696b9e",
         "t0_event": "symptom onset",
         "start": 50,
         "time_unit": {
@@ -430,56 +430,56 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_20_COVID_20": {
-        "akc_id": "9d5572f2-6f54-4c46-992f-6fd4d09955ce",
-        "participant": "936e3ebc-8e94-44a6-a323-3e56a87cfce1"
+      "be5289ff-9053-4bfe-b4f4-caf076b62067": {
+        "akc_id": "be5289ff-9053-4bfe-b4f4-caf076b62067",
+        "participant": "3f984a51-123e-4a4d-a97f-abf819f547f0"
       },
-      "LifeEvent_ImmuneExposure_COVID_20_COVID_20": {
-        "akc_id": "1b05c868-ad30-417b-8d61-f8d0c0ddee1b",
-        "participant": "936e3ebc-8e94-44a6-a323-3e56a87cfce1"
+      "249f8722-5afe-4a5d-80d4-ab5bc1206b2e": {
+        "akc_id": "249f8722-5afe-4a5d-80d4-ab5bc1206b2e",
+        "participant": "3f984a51-123e-4a4d-a97f-abf819f547f0"
       },
-      "LifeEvent_Specimen_COVID_20_COVID_20": {
-        "akc_id": "1439561e-5156-4cf3-9630-a8bea00efa94",
-        "participant": "936e3ebc-8e94-44a6-a323-3e56a87cfce1",
+      "39d3e45b-2827-4ab7-a186-41e1d40ae289": {
+        "akc_id": "39d3e45b-2827-4ab7-a186-41e1d40ae289",
+        "participant": "3f984a51-123e-4a4d-a97f-abf819f547f0",
         "t0_event": "symptom onset"
       },
-      "LifeEvent_Participant_COVID_21_COVID_21": {
-        "akc_id": "1d6bc3aa-3ad4-4e97-b7e9-b2219a4f82a7",
-        "participant": "5718e986-aa9c-4c39-8909-124b518d5da6"
+      "9a20b878-8b89-41ef-b823-0695a113be07": {
+        "akc_id": "9a20b878-8b89-41ef-b823-0695a113be07",
+        "participant": "770b1d2d-c85c-42ea-9b3f-bfa296d3c4a0"
       },
-      "LifeEvent_ImmuneExposure_COVID_21_COVID_21": {
-        "akc_id": "039d5a3e-c2df-4beb-b402-0fe86b8a3d19",
-        "participant": "5718e986-aa9c-4c39-8909-124b518d5da6"
+      "154ba098-57c4-48b1-bce4-6df731847c4e": {
+        "akc_id": "154ba098-57c4-48b1-bce4-6df731847c4e",
+        "participant": "770b1d2d-c85c-42ea-9b3f-bfa296d3c4a0"
       },
-      "LifeEvent_Specimen_COVID_21_COVID_21": {
-        "akc_id": "9714c3b3-48c5-4f25-85e6-bddbceb865aa",
-        "participant": "5718e986-aa9c-4c39-8909-124b518d5da6",
+      "bb3196bb-5255-42a0-b57a-70cf0c87aa77": {
+        "akc_id": "bb3196bb-5255-42a0-b57a-70cf0c87aa77",
+        "participant": "770b1d2d-c85c-42ea-9b3f-bfa296d3c4a0",
         "t0_event": "symptom onset"
       },
-      "LifeEvent_Participant_COVID_14_COVID_14": {
-        "akc_id": "edea9a6a-a246-4314-b686-0459ec9dc691",
-        "participant": "a7ac1ada-ca20-4510-8d11-af1324a27350"
+      "db51d2bb-f5bd-4c60-b1a9-f9f75a5b0c88": {
+        "akc_id": "db51d2bb-f5bd-4c60-b1a9-f9f75a5b0c88",
+        "participant": "fda14ec3-deb5-4274-a0c8-d783317cba90"
       },
-      "LifeEvent_ImmuneExposure_COVID_14_COVID_14": {
-        "akc_id": "58a3ad71-6fa5-471c-b181-687aa5b15862",
-        "participant": "a7ac1ada-ca20-4510-8d11-af1324a27350"
+      "3c6bad31-f468-48bd-9406-83d5e71e622b": {
+        "akc_id": "3c6bad31-f468-48bd-9406-83d5e71e622b",
+        "participant": "fda14ec3-deb5-4274-a0c8-d783317cba90"
       },
-      "LifeEvent_Specimen_COVID_14_COVID_14": {
-        "akc_id": "a15017dd-ed17-4ee0-ba4c-8dff19f409e5",
-        "participant": "a7ac1ada-ca20-4510-8d11-af1324a27350",
+      "8a8c31c8-0795-4876-9043-17a530e0c042": {
+        "akc_id": "8a8c31c8-0795-4876-9043-17a530e0c042",
+        "participant": "fda14ec3-deb5-4274-a0c8-d783317cba90",
         "t0_event": "symptom onset"
       },
-      "LifeEvent_Participant_COVID_13_COVID_13": {
-        "akc_id": "b230103a-06e9-4cb0-87ce-6759744a72b3",
-        "participant": "a2eab980-b014-4a5d-a144-364ab9e2de3a"
+      "12b5a187-c4e1-42cd-b35b-7d46f41a7fc8": {
+        "akc_id": "12b5a187-c4e1-42cd-b35b-7d46f41a7fc8",
+        "participant": "0340c5e3-283b-420f-a756-811a3497b404"
       },
-      "LifeEvent_ImmuneExposure_COVID_13_COVID_13": {
-        "akc_id": "77190bf0-fe27-4806-9669-22306b650ffa",
-        "participant": "a2eab980-b014-4a5d-a144-364ab9e2de3a"
+      "c84b4e95-9eb2-4e33-a553-a26d70d4c85d": {
+        "akc_id": "c84b4e95-9eb2-4e33-a553-a26d70d4c85d",
+        "participant": "0340c5e3-283b-420f-a756-811a3497b404"
       },
-      "LifeEvent_Specimen_COVID_13_COVID_13": {
-        "akc_id": "0e351192-ab6b-48bb-80f3-0bc81f3197cc",
-        "participant": "a2eab980-b014-4a5d-a144-364ab9e2de3a",
+      "b03e21ce-373c-4768-a8b5-33778f46cb1c": {
+        "akc_id": "b03e21ce-373c-4768-a8b5-33778f46cb1c",
+        "participant": "0340c5e3-283b-420f-a756-811a3497b404",
         "t0_event": "symptom onset",
         "start": 53,
         "time_unit": {
@@ -487,17 +487,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_6_COVID_6": {
-        "akc_id": "6e3930d1-5164-4556-8409-88071e2826fe",
-        "participant": "8713e21b-b4b1-4258-8ec1-1fab99830300"
+      "204bfd75-8381-4d3e-8cb0-786fe49f75bf": {
+        "akc_id": "204bfd75-8381-4d3e-8cb0-786fe49f75bf",
+        "participant": "73bcb58b-8745-4c50-9839-e9da797d357d"
       },
-      "LifeEvent_ImmuneExposure_COVID_6_COVID_6": {
-        "akc_id": "86bdc2a8-586d-445d-8c4f-12b113c6da13",
-        "participant": "8713e21b-b4b1-4258-8ec1-1fab99830300"
+      "70bdc0c8-cccf-43fb-ad42-13bab8cbbfda": {
+        "akc_id": "70bdc0c8-cccf-43fb-ad42-13bab8cbbfda",
+        "participant": "73bcb58b-8745-4c50-9839-e9da797d357d"
       },
-      "LifeEvent_Specimen_COVID_6_COVID_6": {
-        "akc_id": "29298322-53d4-4706-b1a7-b7d61701162e",
-        "participant": "8713e21b-b4b1-4258-8ec1-1fab99830300",
+      "13807f0f-34a3-4a85-ba8b-4a9c001ececc": {
+        "akc_id": "13807f0f-34a3-4a85-ba8b-4a9c001ececc",
+        "participant": "73bcb58b-8745-4c50-9839-e9da797d357d",
         "t0_event": "symptom onset",
         "start": 38,
         "time_unit": {
@@ -505,17 +505,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_19_COVID_19": {
-        "akc_id": "fefda9f2-58ec-4484-90b9-728df10a56c5",
-        "participant": "6b1c80f9-c3c1-4132-b82d-7a50ab3458b5"
+      "141e521d-5411-4248-8a43-ba85fea08191": {
+        "akc_id": "141e521d-5411-4248-8a43-ba85fea08191",
+        "participant": "85511462-fd49-47d1-9666-c2a39bbdee40"
       },
-      "LifeEvent_ImmuneExposure_COVID_19_COVID_19": {
-        "akc_id": "508a7843-438b-44db-9d3a-76a46e3da929",
-        "participant": "6b1c80f9-c3c1-4132-b82d-7a50ab3458b5"
+      "29709d9c-764e-4fc1-90ea-0c1a0ca283c4": {
+        "akc_id": "29709d9c-764e-4fc1-90ea-0c1a0ca283c4",
+        "participant": "85511462-fd49-47d1-9666-c2a39bbdee40"
       },
-      "LifeEvent_Specimen_COVID_19_COVID_19": {
-        "akc_id": "df9b3ba5-4606-4863-96bd-ed29314e5019",
-        "participant": "6b1c80f9-c3c1-4132-b82d-7a50ab3458b5",
+      "47bd6790-cda0-4aad-9fa7-97e798ed7527": {
+        "akc_id": "47bd6790-cda0-4aad-9fa7-97e798ed7527",
+        "participant": "85511462-fd49-47d1-9666-c2a39bbdee40",
         "t0_event": "symptom onset",
         "start": 107,
         "time_unit": {
@@ -523,17 +523,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_2_COVID_2": {
-        "akc_id": "173b722e-c445-4ef7-838b-66163c940dcc",
-        "participant": "ad0b4ff0-eb1d-4a37-b23b-7445ed598183"
+      "620cf6a1-cd58-4a32-a381-c5da8324f5ff": {
+        "akc_id": "620cf6a1-cd58-4a32-a381-c5da8324f5ff",
+        "participant": "e55a6898-ebbe-4747-a37a-4c754cf28788"
       },
-      "LifeEvent_ImmuneExposure_COVID_2_COVID_2": {
-        "akc_id": "4eedd8c3-9c2f-48f1-b0fe-c0f69047e376",
-        "participant": "ad0b4ff0-eb1d-4a37-b23b-7445ed598183"
+      "7a13051c-eb46-4d19-8681-c2868947dc95": {
+        "akc_id": "7a13051c-eb46-4d19-8681-c2868947dc95",
+        "participant": "e55a6898-ebbe-4747-a37a-4c754cf28788"
       },
-      "LifeEvent_Specimen_COVID_2_COVID_2": {
-        "akc_id": "81db398d-ddf7-4a07-9a10-b86718111e27",
-        "participant": "ad0b4ff0-eb1d-4a37-b23b-7445ed598183",
+      "7dd2a765-9933-4d4c-9c36-5850e294c508": {
+        "akc_id": "7dd2a765-9933-4d4c-9c36-5850e294c508",
+        "participant": "e55a6898-ebbe-4747-a37a-4c754cf28788",
         "t0_event": "symptom onset",
         "start": 36,
         "time_unit": {
@@ -541,17 +541,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_9_COVID_9": {
-        "akc_id": "a9115082-65d4-49a5-b451-aea9e0ae1f7a",
-        "participant": "440e2ca3-d86b-4797-bfe3-04e400d30b4c"
+      "c5427e43-cfc8-454b-9ef6-c5e7bf4e9dca": {
+        "akc_id": "c5427e43-cfc8-454b-9ef6-c5e7bf4e9dca",
+        "participant": "e64d8dac-2767-45c3-acbd-19eff6c379f9"
       },
-      "LifeEvent_ImmuneExposure_COVID_9_COVID_9": {
-        "akc_id": "0a377407-aad1-4d94-b6f3-6252a7cb0f83",
-        "participant": "440e2ca3-d86b-4797-bfe3-04e400d30b4c"
+      "09e64dcb-a67d-436a-95b5-948806a8e6a6": {
+        "akc_id": "09e64dcb-a67d-436a-95b5-948806a8e6a6",
+        "participant": "e64d8dac-2767-45c3-acbd-19eff6c379f9"
       },
-      "LifeEvent_Specimen_COVID_9_COVID_9": {
-        "akc_id": "44af8c96-3798-4874-a4da-abb32f745775",
-        "participant": "440e2ca3-d86b-4797-bfe3-04e400d30b4c",
+      "594b5d14-32ee-4c8a-a182-0349f2d3fc18": {
+        "akc_id": "594b5d14-32ee-4c8a-a182-0349f2d3fc18",
+        "participant": "e64d8dac-2767-45c3-acbd-19eff6c379f9",
         "t0_event": "symptom onset",
         "start": 31,
         "time_unit": {
@@ -559,17 +559,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_11_COVID_11": {
-        "akc_id": "4d02a8d6-decb-4372-b3fb-b71f84b5d3c6",
-        "participant": "6bf81a4c-b98d-4908-829f-58a9536aac7d"
+      "acedec13-9b20-4a75-bb27-caa28c59e2bc": {
+        "akc_id": "acedec13-9b20-4a75-bb27-caa28c59e2bc",
+        "participant": "b12c7ac9-170c-4b85-8f3d-8562d13cd033"
       },
-      "LifeEvent_ImmuneExposure_COVID_11_COVID_11": {
-        "akc_id": "eca53c84-0dd4-460a-a4b6-ffe228891fea",
-        "participant": "6bf81a4c-b98d-4908-829f-58a9536aac7d"
+      "6c5284aa-9c31-4b64-978c-9b0e269e6edb": {
+        "akc_id": "6c5284aa-9c31-4b64-978c-9b0e269e6edb",
+        "participant": "b12c7ac9-170c-4b85-8f3d-8562d13cd033"
       },
-      "LifeEvent_Specimen_COVID_11_COVID_11": {
-        "akc_id": "d0656e61-c2fb-48f2-974a-795c2550c125",
-        "participant": "6bf81a4c-b98d-4908-829f-58a9536aac7d",
+      "506db3a3-9e64-40e8-bc76-5b934e894eda": {
+        "akc_id": "506db3a3-9e64-40e8-bc76-5b934e894eda",
+        "participant": "b12c7ac9-170c-4b85-8f3d-8562d13cd033",
         "t0_event": "symptom onset",
         "start": 42,
         "time_unit": {
@@ -577,17 +577,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_5_COVID_5": {
-        "akc_id": "f225a366-be25-4ff1-a28e-02957e640379",
-        "participant": "9e1dfce5-2611-432f-bf9b-ee8d2c6be92d"
+      "7f7545aa-2977-4078-a274-0fb9a1d9d088": {
+        "akc_id": "7f7545aa-2977-4078-a274-0fb9a1d9d088",
+        "participant": "97f24df8-fc20-4f36-b6cb-5c4d4e84124c"
       },
-      "LifeEvent_ImmuneExposure_COVID_5_COVID_5": {
-        "akc_id": "1c6695c6-2373-4950-a0a5-36a64dec8abd",
-        "participant": "9e1dfce5-2611-432f-bf9b-ee8d2c6be92d"
+      "1df45d88-fa67-407d-a649-660ec0c4a08c": {
+        "akc_id": "1df45d88-fa67-407d-a649-660ec0c4a08c",
+        "participant": "97f24df8-fc20-4f36-b6cb-5c4d4e84124c"
       },
-      "LifeEvent_Specimen_COVID_5_COVID_5": {
-        "akc_id": "492675e0-13db-475a-adcc-d7ccd7208bc1",
-        "participant": "9e1dfce5-2611-432f-bf9b-ee8d2c6be92d",
+      "608d6234-91c1-489d-8a13-425abe6efe52": {
+        "akc_id": "608d6234-91c1-489d-8a13-425abe6efe52",
+        "participant": "97f24df8-fc20-4f36-b6cb-5c4d4e84124c",
         "t0_event": "symptom onset",
         "start": 45,
         "time_unit": {
@@ -595,17 +595,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_4_COVID_4": {
-        "akc_id": "228dd614-844a-4feb-b005-50d9dbaefd1b",
-        "participant": "63c743e1-ad05-4f00-87b9-5cc9589eb9ae"
+      "785680ff-008d-4c10-8a17-5523342b2def": {
+        "akc_id": "785680ff-008d-4c10-8a17-5523342b2def",
+        "participant": "f71f1f5d-f56c-4105-9d2b-6b0ed960f013"
       },
-      "LifeEvent_ImmuneExposure_COVID_4_COVID_4": {
-        "akc_id": "98b13ae0-2aac-48ab-a5d8-abd84dad9b88",
-        "participant": "63c743e1-ad05-4f00-87b9-5cc9589eb9ae"
+      "a3d4eb08-7c08-443d-9ed2-91c4c008408f": {
+        "akc_id": "a3d4eb08-7c08-443d-9ed2-91c4c008408f",
+        "participant": "f71f1f5d-f56c-4105-9d2b-6b0ed960f013"
       },
-      "LifeEvent_Specimen_COVID_4_COVID_4": {
-        "akc_id": "8bdfdb04-c9da-4acc-8998-793e7e476f7a",
-        "participant": "63c743e1-ad05-4f00-87b9-5cc9589eb9ae",
+      "43df03e3-856e-4bb1-b8a6-f9cf11ed981b": {
+        "akc_id": "43df03e3-856e-4bb1-b8a6-f9cf11ed981b",
+        "participant": "f71f1f5d-f56c-4105-9d2b-6b0ed960f013",
         "t0_event": "symptom onset",
         "start": 55,
         "time_unit": {
@@ -613,17 +613,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_18_COVID_18": {
-        "akc_id": "1edddbe9-a83b-4886-a33f-a0732a9d30e9",
-        "participant": "0b6e593a-30b4-45b8-a1d7-c45fc9d4daf5"
+      "a1006550-78aa-494b-b4be-d7928a149ff9": {
+        "akc_id": "a1006550-78aa-494b-b4be-d7928a149ff9",
+        "participant": "e9620a69-e94e-4cfb-aa1b-7b91d2ff76ff"
       },
-      "LifeEvent_ImmuneExposure_COVID_18_COVID_18": {
-        "akc_id": "19aa4080-a7f6-47ba-98da-a185e2b3bbab",
-        "participant": "0b6e593a-30b4-45b8-a1d7-c45fc9d4daf5"
+      "dcb19335-5857-4fe2-8c90-aeebf0e58da6": {
+        "akc_id": "dcb19335-5857-4fe2-8c90-aeebf0e58da6",
+        "participant": "e9620a69-e94e-4cfb-aa1b-7b91d2ff76ff"
       },
-      "LifeEvent_Specimen_COVID_18_COVID_18": {
-        "akc_id": "d31c4642-e606-4556-8a74-fdd93621f49e",
-        "participant": "0b6e593a-30b4-45b8-a1d7-c45fc9d4daf5",
+      "dc9d32e0-b821-4d86-96d3-2a2bccac1117": {
+        "akc_id": "dc9d32e0-b821-4d86-96d3-2a2bccac1117",
+        "participant": "e9620a69-e94e-4cfb-aa1b-7b91d2ff76ff",
         "t0_event": "symptom onset",
         "start": 44,
         "time_unit": {
@@ -631,17 +631,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_7_COVID_7": {
-        "akc_id": "fdfcf8ed-45c2-460f-b6c8-d8445b22bb6d",
-        "participant": "b83a1033-16b0-4a34-b58a-669ad94996f8"
+      "5c49fffa-3e82-4e94-979f-97fa7b62a0e3": {
+        "akc_id": "5c49fffa-3e82-4e94-979f-97fa7b62a0e3",
+        "participant": "1b12bb17-5b37-4efa-8783-7dd924958e5d"
       },
-      "LifeEvent_ImmuneExposure_COVID_7_COVID_7": {
-        "akc_id": "0317ed7b-bb26-4ac4-899e-01a4d62128db",
-        "participant": "b83a1033-16b0-4a34-b58a-669ad94996f8"
+      "1b88e8b2-5d86-4672-81b4-d3893771a8ab": {
+        "akc_id": "1b88e8b2-5d86-4672-81b4-d3893771a8ab",
+        "participant": "1b12bb17-5b37-4efa-8783-7dd924958e5d"
       },
-      "LifeEvent_Specimen_COVID_7_COVID_7": {
-        "akc_id": "7b58df33-e6e8-4d46-87b9-d6493e9ee8cb",
-        "participant": "b83a1033-16b0-4a34-b58a-669ad94996f8",
+      "d5ced9e5-32d6-4814-b1d7-7845dd43f6f2": {
+        "akc_id": "d5ced9e5-32d6-4814-b1d7-7845dd43f6f2",
+        "participant": "1b12bb17-5b37-4efa-8783-7dd924958e5d",
         "t0_event": "symptom onset",
         "start": 51,
         "time_unit": {
@@ -649,17 +649,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_12_COVID_12": {
-        "akc_id": "0f3cbcec-0b5c-414f-8211-14f4a305a209",
-        "participant": "de8dde10-22ff-4be1-ae20-5eb6b84b0cdc"
+      "32b9aca5-3dba-4fec-aa34-bebbc6ec78f6": {
+        "akc_id": "32b9aca5-3dba-4fec-aa34-bebbc6ec78f6",
+        "participant": "a0f61bf0-f5fd-4f1f-b124-ad94e85d9b3a"
       },
-      "LifeEvent_ImmuneExposure_COVID_12_COVID_12": {
-        "akc_id": "d8761371-0242-48b6-84c4-ccbae4094728",
-        "participant": "de8dde10-22ff-4be1-ae20-5eb6b84b0cdc"
+      "34f525db-6f64-4ca4-afed-858fbcd0a953": {
+        "akc_id": "34f525db-6f64-4ca4-afed-858fbcd0a953",
+        "participant": "a0f61bf0-f5fd-4f1f-b124-ad94e85d9b3a"
       },
-      "LifeEvent_Specimen_COVID_12_COVID_12": {
-        "akc_id": "6356e442-77dd-4bfd-943f-900ee1345d4d",
-        "participant": "de8dde10-22ff-4be1-ae20-5eb6b84b0cdc",
+      "dba2eb33-7512-4b85-a3e1-0270342a56a1": {
+        "akc_id": "dba2eb33-7512-4b85-a3e1-0270342a56a1",
+        "participant": "a0f61bf0-f5fd-4f1f-b124-ad94e85d9b3a",
         "t0_event": "symptom onset",
         "start": 69,
         "time_unit": {
@@ -667,17 +667,17 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_3_COVID_3": {
-        "akc_id": "b006acab-1394-4830-a638-60479065f635",
-        "participant": "b1174ba9-0a82-42c2-8a1b-f3ff7a9fb514"
+      "df811eef-32d1-4f9d-b78b-6940ba1d5cb8": {
+        "akc_id": "df811eef-32d1-4f9d-b78b-6940ba1d5cb8",
+        "participant": "30e89b37-95ab-4ef8-85e7-0bb43b663cb0"
       },
-      "LifeEvent_ImmuneExposure_COVID_3_COVID_3": {
-        "akc_id": "54cb3f2b-9575-4c58-9e80-1f01d00d2638",
-        "participant": "b1174ba9-0a82-42c2-8a1b-f3ff7a9fb514"
+      "d862cb1b-95c5-4d65-b6a2-5d65b32774b5": {
+        "akc_id": "d862cb1b-95c5-4d65-b6a2-5d65b32774b5",
+        "participant": "30e89b37-95ab-4ef8-85e7-0bb43b663cb0"
       },
-      "LifeEvent_Specimen_COVID_3_COVID_3": {
-        "akc_id": "e9bc185a-8ad8-4d3b-9ce4-233f5c9cd44e",
-        "participant": "b1174ba9-0a82-42c2-8a1b-f3ff7a9fb514",
+      "f40f8b08-5c6e-4c83-bd35-8258d022c29f": {
+        "akc_id": "f40f8b08-5c6e-4c83-bd35-8258d022c29f",
+        "participant": "30e89b37-95ab-4ef8-85e7-0bb43b663cb0",
         "t0_event": "symptom onset",
         "start": 9,
         "time_unit": {
@@ -685,30 +685,30 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_16_COVID_16": {
-        "akc_id": "17ea828c-7471-4392-83e3-c9c0d6a69318",
-        "participant": "a9feee0e-b65a-4218-9257-aa46addacb09"
+      "68c88d07-8ec1-46da-91b2-1feeb74f35a2": {
+        "akc_id": "68c88d07-8ec1-46da-91b2-1feeb74f35a2",
+        "participant": "8bc483db-2821-4986-9ada-e58c5111918d"
       },
-      "LifeEvent_ImmuneExposure_COVID_16_COVID_16": {
-        "akc_id": "e052fb87-7b89-4b04-9b49-4b7823f3696d",
-        "participant": "a9feee0e-b65a-4218-9257-aa46addacb09"
+      "0217999e-2015-4409-b729-cd121b070cf2": {
+        "akc_id": "0217999e-2015-4409-b729-cd121b070cf2",
+        "participant": "8bc483db-2821-4986-9ada-e58c5111918d"
       },
-      "LifeEvent_Specimen_COVID_16_COVID_16": {
-        "akc_id": "1e5ca655-f465-42b4-a730-719f678b7be6",
-        "participant": "a9feee0e-b65a-4218-9257-aa46addacb09",
+      "f18989a6-dc01-41d5-a0a1-53cbf84dd306": {
+        "akc_id": "f18989a6-dc01-41d5-a0a1-53cbf84dd306",
+        "participant": "8bc483db-2821-4986-9ada-e58c5111918d",
         "t0_event": "symptom onset"
       },
-      "LifeEvent_Participant_COVID_1_COVID_1": {
-        "akc_id": "5d9fc27a-9397-4548-ad96-844737970723",
-        "participant": "09fbe46e-a207-45ea-813b-a126ee96f81e"
+      "c43039ad-28af-4c2f-b8de-ed04e2c7920b": {
+        "akc_id": "c43039ad-28af-4c2f-b8de-ed04e2c7920b",
+        "participant": "01532934-1ddf-43ac-8946-b9e5269d48a4"
       },
-      "LifeEvent_ImmuneExposure_COVID_1_COVID_1": {
-        "akc_id": "023c65d2-f3ce-46ff-9eb4-8d0341b099ce",
-        "participant": "09fbe46e-a207-45ea-813b-a126ee96f81e"
+      "55598a43-02d8-4bb1-9b21-df77227d4624": {
+        "akc_id": "55598a43-02d8-4bb1-9b21-df77227d4624",
+        "participant": "01532934-1ddf-43ac-8946-b9e5269d48a4"
       },
-      "LifeEvent_Specimen_COVID_1_COVID_1": {
-        "akc_id": "0daf6e92-c019-4f90-bc69-f66fd3a55595",
-        "participant": "09fbe46e-a207-45ea-813b-a126ee96f81e",
+      "fe36eef0-743e-43c2-9bf9-46fe6c9ecbec": {
+        "akc_id": "fe36eef0-743e-43c2-9bf9-46fe6c9ecbec",
+        "participant": "01532934-1ddf-43ac-8946-b9e5269d48a4",
         "t0_event": "symptom onset",
         "start": 36,
         "time_unit": {
@@ -716,380 +716,380 @@
           "label": "day"
         }
       },
-      "LifeEvent_Participant_COVID_15_COVID_15": {
-        "akc_id": "10d191cf-512c-4dd4-a1ae-fff256b508b9",
-        "participant": "97b72df3-0b8e-424e-b364-48b839c64dd9"
+      "e5703bdb-a8db-4984-a29f-20c3e25478ea": {
+        "akc_id": "e5703bdb-a8db-4984-a29f-20c3e25478ea",
+        "participant": "c24b2455-4db9-4cca-9c94-ff58dec3e4ff"
       },
-      "LifeEvent_ImmuneExposure_COVID_15_COVID_15": {
-        "akc_id": "b1a648d1-ac5d-447a-bbfe-0cd1a6866b52",
-        "participant": "97b72df3-0b8e-424e-b364-48b839c64dd9"
+      "bf82ccf2-ce2b-4ae3-9bb1-2d62fb9e8ad6": {
+        "akc_id": "bf82ccf2-ce2b-4ae3-9bb1-2d62fb9e8ad6",
+        "participant": "c24b2455-4db9-4cca-9c94-ff58dec3e4ff"
       },
-      "LifeEvent_Specimen_COVID_15_COVID_15": {
-        "akc_id": "ee5a76f3-7316-447e-81dd-da8b44722a60",
-        "participant": "97b72df3-0b8e-424e-b364-48b839c64dd9",
+      "b17cd360-12e2-432e-abe6-200168cdbca2": {
+        "akc_id": "b17cd360-12e2-432e-abe6-200168cdbca2",
+        "participant": "c24b2455-4db9-4cca-9c94-ff58dec3e4ff",
         "t0_event": "symptom onset"
       },
-      "LifeEvent_Participant_COVID_17_COVID_17": {
-        "akc_id": "7c8b2ec0-625a-4993-b8b7-a19dde4df0e4",
-        "participant": "53f57977-6aad-4019-9042-d2ff54c94f0d"
+      "491dc9f1-337b-4255-9d40-e344217c3ccd": {
+        "akc_id": "491dc9f1-337b-4255-9d40-e344217c3ccd",
+        "participant": "9991b0bf-fd3c-41cb-99dc-078dd5e01cec"
       },
-      "LifeEvent_ImmuneExposure_COVID_17_COVID_17": {
-        "akc_id": "2dd79df1-195c-4312-8168-4ca96b7da9fa",
-        "participant": "53f57977-6aad-4019-9042-d2ff54c94f0d"
+      "2090e3f0-ef18-46ad-9105-ec097fb5d585": {
+        "akc_id": "2090e3f0-ef18-46ad-9105-ec097fb5d585",
+        "participant": "9991b0bf-fd3c-41cb-99dc-078dd5e01cec"
       },
-      "LifeEvent_Specimen_COVID_17_COVID_17": {
-        "akc_id": "5d55648a-39ec-4560-ac3d-3fa6cfbc9c51",
-        "participant": "53f57977-6aad-4019-9042-d2ff54c94f0d",
+      "1eb662bd-328b-4f8b-9b3d-5ac916f29fd8": {
+        "akc_id": "1eb662bd-328b-4f8b-9b3d-5ac916f29fd8",
+        "participant": "9991b0bf-fd3c-41cb-99dc-078dd5e01cec",
         "t0_event": "symptom onset"
       }
     },
     "immune_exposures": {
-      "ImmuneExposure_COVID_8_DOID:0080600": {
-        "akc_id": "ce41d4dc-a569-4617-9700-4b35f3dce2f3",
-        "life_event": "c6c5b24e-6293-4742-873d-cca6cf11e348",
+      "b67fd90a-17f1-499f-a867-20ee66353bb4": {
+        "akc_id": "b67fd90a-17f1-499f-a867-20ee66353bb4",
+        "life_event": "b9291a1e-d89f-4972-a3c4-ae02120f65ce",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_20": {
-        "akc_id": "a6e2936d-9b83-47f0-96b5-a5c7ed27b476",
-        "life_event": "1b05c868-ad30-417b-8d61-f8d0c0ddee1b"
+      "50f7fbde-51d4-4e66-8872-74a2e4f30db5": {
+        "akc_id": "50f7fbde-51d4-4e66-8872-74a2e4f30db5",
+        "life_event": "249f8722-5afe-4a5d-80d4-ab5bc1206b2e"
       },
-      "ImmuneExposure_COVID_21": {
-        "akc_id": "9db778cd-18b8-4e62-b9f9-7caef0134986",
-        "life_event": "039d5a3e-c2df-4beb-b402-0fe86b8a3d19"
+      "3de2f712-539a-4276-8e64-7994af0e33e4": {
+        "akc_id": "3de2f712-539a-4276-8e64-7994af0e33e4",
+        "life_event": "154ba098-57c4-48b1-bce4-6df731847c4e"
       },
-      "ImmuneExposure_COVID_14": {
-        "akc_id": "9867c862-492a-4ce7-8a53-3254546e25a9",
-        "life_event": "58a3ad71-6fa5-471c-b181-687aa5b15862"
+      "118eed62-7c14-4bbf-b122-b813ad80d27b": {
+        "akc_id": "118eed62-7c14-4bbf-b122-b813ad80d27b",
+        "life_event": "3c6bad31-f468-48bd-9406-83d5e71e622b"
       },
-      "ImmuneExposure_COVID_13_DOID:0080600": {
-        "akc_id": "6c2b95f0-affb-4cc6-8f59-ea555f5c9237",
-        "life_event": "77190bf0-fe27-4806-9669-22306b650ffa",
+      "097a34fe-2e90-42b1-a993-3b665a9344df": {
+        "akc_id": "097a34fe-2e90-42b1-a993-3b665a9344df",
+        "life_event": "c84b4e95-9eb2-4e33-a553-a26d70d4c85d",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_6_DOID:0080600": {
-        "akc_id": "25d0342f-31f0-496f-963a-6371ad486c3b",
-        "life_event": "86bdc2a8-586d-445d-8c4f-12b113c6da13",
+      "b79db32a-5065-4a9f-a727-4a5ccc3699d7": {
+        "akc_id": "b79db32a-5065-4a9f-a727-4a5ccc3699d7",
+        "life_event": "70bdc0c8-cccf-43fb-ad42-13bab8cbbfda",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_mild-moderate"
       },
-      "ImmuneExposure_COVID_19_DOID:0080600": {
-        "akc_id": "77d9fa9f-a29c-4b67-84f3-69c31fcae2bb",
-        "life_event": "508a7843-438b-44db-9d3a-76a46e3da929",
+      "22e5715c-cc5d-4626-9afd-861dfdc7adcf": {
+        "akc_id": "22e5715c-cc5d-4626-9afd-861dfdc7adcf",
+        "life_event": "29709d9c-764e-4fc1-90ea-0c1a0ca283c4",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_2_DOID:0080600": {
-        "akc_id": "e89268f2-0b06-4f17-a645-73e755358598",
-        "life_event": "4eedd8c3-9c2f-48f1-b0fe-c0f69047e376",
+      "16b5573f-8448-4995-8242-a303545de5fc": {
+        "akc_id": "16b5573f-8448-4995-8242-a303545de5fc",
+        "life_event": "7a13051c-eb46-4d19-8681-c2868947dc95",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_9_DOID:0080600": {
-        "akc_id": "5ba8475b-0f88-4bc9-a615-a32e379ead7f",
-        "life_event": "0a377407-aad1-4d94-b6f3-6252a7cb0f83",
+      "e0999f59-060d-4202-85f3-7ff810e4cb12": {
+        "akc_id": "e0999f59-060d-4202-85f3-7ff810e4cb12",
+        "life_event": "09e64dcb-a67d-436a-95b5-948806a8e6a6",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_11_DOID:0080600": {
-        "akc_id": "d2097f58-7462-40ca-9300-214cf2ff11fd",
-        "life_event": "eca53c84-0dd4-460a-a4b6-ffe228891fea",
+      "2f4156b8-57a5-424f-80d4-35abd3d70f33": {
+        "akc_id": "2f4156b8-57a5-424f-80d4-35abd3d70f33",
+        "life_event": "6c5284aa-9c31-4b64-978c-9b0e269e6edb",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_5_DOID:0080600": {
-        "akc_id": "0b6d37bc-8a48-42c7-8537-b2d46a464f5a",
-        "life_event": "1c6695c6-2373-4950-a0a5-36a64dec8abd",
+      "157e88ea-fd37-4dce-bd45-3073847d5304": {
+        "akc_id": "157e88ea-fd37-4dce-bd45-3073847d5304",
+        "life_event": "1df45d88-fa67-407d-a649-660ec0c4a08c",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_4_DOID:0080600": {
-        "akc_id": "14b4ee41-c69b-44f4-87de-8e9814b7688c",
-        "life_event": "98b13ae0-2aac-48ab-a5d8-abd84dad9b88",
+      "c5c2fec5-af2c-4062-be2d-3bff10f3e702": {
+        "akc_id": "c5c2fec5-af2c-4062-be2d-3bff10f3e702",
+        "life_event": "a3d4eb08-7c08-443d-9ed2-91c4c008408f",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_18_DOID:0080600": {
-        "akc_id": "21deb9b1-bb0c-4f06-a0eb-29102a0f3799",
-        "life_event": "19aa4080-a7f6-47ba-98da-a185e2b3bbab",
+      "bab7548b-3f55-4615-9362-05d9b29256f5": {
+        "akc_id": "bab7548b-3f55-4615-9362-05d9b29256f5",
+        "life_event": "dcb19335-5857-4fe2-8c90-aeebf0e58da6",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_7_DOID:0080600": {
-        "akc_id": "2b1ec0e1-5ee3-42ad-b215-e6567e45ae16",
-        "life_event": "0317ed7b-bb26-4ac4-899e-01a4d62128db",
+      "cdbabea5-5485-4d67-a00c-76f8fa690d40": {
+        "akc_id": "cdbabea5-5485-4d67-a00c-76f8fa690d40",
+        "life_event": "1b88e8b2-5d86-4672-81b4-d3893771a8ab",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_12_DOID:0080600": {
-        "akc_id": "d9e5cbcc-9f9e-4f44-a170-916bd3b6f99f",
-        "life_event": "d8761371-0242-48b6-84c4-ccbae4094728",
+      "65010bee-61c3-479a-9d1f-a4b6d8b2cb8f": {
+        "akc_id": "65010bee-61c3-479a-9d1f-a4b6d8b2cb8f",
+        "life_event": "34f525db-6f64-4ca4-afed-858fbcd0a953",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_3_DOID:0080600": {
-        "akc_id": "9bc7bdac-22aa-401b-a6a9-926419e3381a",
-        "life_event": "54cb3f2b-9575-4c58-9e80-1f01d00d2638",
+      "beda343f-5a7c-4534-a42d-524e920df66a": {
+        "akc_id": "beda343f-5a7c-4534-a42d-524e920df66a",
+        "life_event": "d862cb1b-95c5-4d65-b6a2-5d65b32774b5",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_16": {
-        "akc_id": "07a8accd-47ad-475d-965d-8458640065a9",
-        "life_event": "e052fb87-7b89-4b04-9b49-4b7823f3696d"
+      "d20daea5-225b-433f-a351-26d12fc03e8f": {
+        "akc_id": "d20daea5-225b-433f-a351-26d12fc03e8f",
+        "life_event": "0217999e-2015-4409-b729-cd121b070cf2"
       },
-      "ImmuneExposure_COVID_1_DOID:0080600": {
-        "akc_id": "521ceb65-46ae-46db-80cb-6cbc8c4d50f1",
-        "life_event": "023c65d2-f3ce-46ff-9eb4-8d0341b099ce",
+      "a62eefa4-5dca-4aeb-9f8e-5599bea1f196": {
+        "akc_id": "a62eefa4-5dca-4aeb-9f8e-5599bea1f196",
+        "life_event": "55598a43-02d8-4bb1-9b21-df77227d4624",
         "disease": {
           "id": "DOID:0080600",
           "label": "COVID-19"
         },
         "disease_stage": "COVID_convalescent"
       },
-      "ImmuneExposure_COVID_15": {
-        "akc_id": "ce4000ff-665e-4d8e-8e02-199a994cdb47",
-        "life_event": "b1a648d1-ac5d-447a-bbfe-0cd1a6866b52"
+      "a6ffd78d-345c-4618-b782-9e2a06e08167": {
+        "akc_id": "a6ffd78d-345c-4618-b782-9e2a06e08167",
+        "life_event": "bf82ccf2-ce2b-4ae3-9bb1-2d62fb9e8ad6"
       },
-      "ImmuneExposure_COVID_17": {
-        "akc_id": "edced6c0-b127-479e-bcde-95c220de4ed0",
-        "life_event": "2dd79df1-195c-4312-8168-4ca96b7da9fa"
+      "f21fa635-fda1-466a-b41a-41f7379309cc": {
+        "akc_id": "f21fa635-fda1-466a-b41a-41f7379309cc",
+        "life_event": "2090e3f0-ef18-46ad-9105-ec097fb5d585"
       }
     },
     "specimens": {
-      "Specimen_COVID_8_COVID_8": {
-        "akc_id": "fd6bebef-3be3-45ff-923b-5ab33f6c97c4",
+      "71e45ac4-535d-46dc-b369-dae50ae5cc60": {
+        "akc_id": "71e45ac4-535d-46dc-b369-dae50ae5cc60",
         "name": "COVID_8",
-        "life_event": "120f4060-01aa-4a45-9626-1af447eb9610",
+        "life_event": "4386b7cd-f65a-4d43-af20-1e56cbfdb8a8",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_20_COVID_20": {
-        "akc_id": "1891d21f-fcca-4465-9260-65e088b689ee",
+      "a70f6a82-3a9d-432c-8ebe-0be2b3555f9c": {
+        "akc_id": "a70f6a82-3a9d-432c-8ebe-0be2b3555f9c",
         "name": "COVID_20",
-        "life_event": "1439561e-5156-4cf3-9630-a8bea00efa94",
+        "life_event": "39d3e45b-2827-4ab7-a186-41e1d40ae289",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_21_COVID_21": {
-        "akc_id": "8a1b18e5-e864-4893-9dd0-e5ea82dd0b1e",
+      "5636a982-d13a-4a04-8a86-918753b0177c": {
+        "akc_id": "5636a982-d13a-4a04-8a86-918753b0177c",
         "name": "COVID_21",
-        "life_event": "9714c3b3-48c5-4f25-85e6-bddbceb865aa",
+        "life_event": "bb3196bb-5255-42a0-b57a-70cf0c87aa77",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_14_COVID_14": {
-        "akc_id": "1d33c561-6ae5-481b-83c0-c03ed9549906",
+      "ed318b8e-d417-44d6-aa6b-ed16bc8b4c04": {
+        "akc_id": "ed318b8e-d417-44d6-aa6b-ed16bc8b4c04",
         "name": "COVID_14",
-        "life_event": "a15017dd-ed17-4ee0-ba4c-8dff19f409e5",
+        "life_event": "8a8c31c8-0795-4876-9043-17a530e0c042",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_13_COVID_13": {
-        "akc_id": "f20a5405-8a58-4bda-ae03-c82a93265878",
+      "8021994b-e1ad-410f-89a5-a4dd5a18561a": {
+        "akc_id": "8021994b-e1ad-410f-89a5-a4dd5a18561a",
         "name": "COVID_13",
-        "life_event": "0e351192-ab6b-48bb-80f3-0bc81f3197cc",
+        "life_event": "b03e21ce-373c-4768-a8b5-33778f46cb1c",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_6_COVID_6": {
-        "akc_id": "704a37b3-5149-4c79-9b8b-311f5918fde8",
+      "940485dd-c464-49b5-bd1f-dcbd1e461f23": {
+        "akc_id": "940485dd-c464-49b5-bd1f-dcbd1e461f23",
         "name": "COVID_6",
-        "life_event": "29298322-53d4-4706-b1a7-b7d61701162e",
+        "life_event": "13807f0f-34a3-4a85-ba8b-4a9c001ececc",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_19_COVID_19": {
-        "akc_id": "718e0ea0-1e9f-4f7b-8401-0288ca2f70bd",
+      "dc9e5c41-cd7b-4e40-9554-c2ffd58f2b4a": {
+        "akc_id": "dc9e5c41-cd7b-4e40-9554-c2ffd58f2b4a",
         "name": "COVID_19",
-        "life_event": "df9b3ba5-4606-4863-96bd-ed29314e5019",
+        "life_event": "47bd6790-cda0-4aad-9fa7-97e798ed7527",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_2_COVID_2": {
-        "akc_id": "f08c6e4d-e45e-4a3d-92f1-33efdab28942",
+      "c9c598d8-f060-4a6b-aaf5-163635a50942": {
+        "akc_id": "c9c598d8-f060-4a6b-aaf5-163635a50942",
         "name": "COVID_2",
-        "life_event": "81db398d-ddf7-4a07-9a10-b86718111e27",
+        "life_event": "7dd2a765-9933-4d4c-9c36-5850e294c508",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_9_COVID_9": {
-        "akc_id": "b64c0eaa-c45f-463f-9ec5-695b2b1b88c1",
+      "afb2f322-c891-48f2-94ab-d709b65409d8": {
+        "akc_id": "afb2f322-c891-48f2-94ab-d709b65409d8",
         "name": "COVID_9",
-        "life_event": "44af8c96-3798-4874-a4da-abb32f745775",
+        "life_event": "594b5d14-32ee-4c8a-a182-0349f2d3fc18",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_11_COVID_11": {
-        "akc_id": "4b4c4766-c6a6-48d5-95fd-91a423b16cca",
+      "cb59923e-050e-4f62-95f1-cf2c5abacb17": {
+        "akc_id": "cb59923e-050e-4f62-95f1-cf2c5abacb17",
         "name": "COVID_11",
-        "life_event": "d0656e61-c2fb-48f2-974a-795c2550c125",
+        "life_event": "506db3a3-9e64-40e8-bc76-5b934e894eda",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_5_COVID_5": {
-        "akc_id": "576863b4-b9f2-4584-b994-50c9ea326a6f",
+      "9d26f282-09af-41a8-a4e3-e3b63e4b7e96": {
+        "akc_id": "9d26f282-09af-41a8-a4e3-e3b63e4b7e96",
         "name": "COVID_5",
-        "life_event": "492675e0-13db-475a-adcc-d7ccd7208bc1",
+        "life_event": "608d6234-91c1-489d-8a13-425abe6efe52",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_4_COVID_4": {
-        "akc_id": "49fe4476-9124-46aa-b877-6f3d43edc732",
+      "d60aac67-9ac9-4d96-bf57-9147023c70e9": {
+        "akc_id": "d60aac67-9ac9-4d96-bf57-9147023c70e9",
         "name": "COVID_4",
-        "life_event": "8bdfdb04-c9da-4acc-8998-793e7e476f7a",
+        "life_event": "43df03e3-856e-4bb1-b8a6-f9cf11ed981b",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_18_COVID_18": {
-        "akc_id": "1de0b4d8-d79d-463e-837e-0d2c28ab244c",
+      "c2501353-423a-4159-938a-1f8af0ec0798": {
+        "akc_id": "c2501353-423a-4159-938a-1f8af0ec0798",
         "name": "COVID_18",
-        "life_event": "d31c4642-e606-4556-8a74-fdd93621f49e",
+        "life_event": "dc9d32e0-b821-4d86-96d3-2a2bccac1117",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_7_COVID_7": {
-        "akc_id": "78f46921-a5ea-440a-a858-0b1461e1f0a7",
+      "41230a1d-6022-4cdf-a545-38a6f99d22eb": {
+        "akc_id": "41230a1d-6022-4cdf-a545-38a6f99d22eb",
         "name": "COVID_7",
-        "life_event": "7b58df33-e6e8-4d46-87b9-d6493e9ee8cb",
+        "life_event": "d5ced9e5-32d6-4814-b1d7-7845dd43f6f2",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_12_COVID_12": {
-        "akc_id": "cc1abf99-1b8b-4dd6-ba65-4aee31897831",
+      "7afb30a4-8b31-4bcb-b335-d9b82dc3ae18": {
+        "akc_id": "7afb30a4-8b31-4bcb-b335-d9b82dc3ae18",
         "name": "COVID_12",
-        "life_event": "6356e442-77dd-4bfd-943f-900ee1345d4d",
+        "life_event": "dba2eb33-7512-4b85-a3e1-0270342a56a1",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_3_COVID_3": {
-        "akc_id": "d799e715-6569-4b0b-89b6-087bfddabb6c",
+      "0e7b6e86-58a9-4a99-854f-515fb2907dd5": {
+        "akc_id": "0e7b6e86-58a9-4a99-854f-515fb2907dd5",
         "name": "COVID_3",
-        "life_event": "e9bc185a-8ad8-4d3b-9ce4-233f5c9cd44e",
+        "life_event": "f40f8b08-5c6e-4c83-bd35-8258d022c29f",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_16_COVID_16": {
-        "akc_id": "a0a78956-a91e-436e-801a-9c7d2b436ad8",
+      "350193aa-2099-4c02-af1b-3dba349f5505": {
+        "akc_id": "350193aa-2099-4c02-af1b-3dba349f5505",
         "name": "COVID_16",
-        "life_event": "1e5ca655-f465-42b4-a730-719f678b7be6",
+        "life_event": "f18989a6-dc01-41d5-a0a1-53cbf84dd306",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_1_COVID_1": {
-        "akc_id": "f3bc34b6-b5b0-42eb-8880-760eeab7d422",
+      "7c65b2d0-7b9d-4a9f-ada8-3ca88520938a": {
+        "akc_id": "7c65b2d0-7b9d-4a9f-ada8-3ca88520938a",
         "name": "COVID_1",
-        "life_event": "0daf6e92-c019-4f90-bc69-f66fd3a55595",
+        "life_event": "fe36eef0-743e-43c2-9bf9-46fe6c9ecbec",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_15_COVID_15": {
-        "akc_id": "27bae8eb-abe5-4d0d-8bde-00b8800bf808",
+      "963f38f3-09ad-4a28-bd22-8781c5c6829c": {
+        "akc_id": "963f38f3-09ad-4a28-bd22-8781c5c6829c",
         "name": "COVID_15",
-        "life_event": "ee5a76f3-7316-447e-81dd-da8b44722a60",
+        "life_event": "b17cd360-12e2-432e-abe6-200168cdbca2",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
           "label": "venous blood"
         }
       },
-      "Specimen_COVID_17_COVID_17": {
-        "akc_id": "384b150c-9cf2-44aa-8760-de0fc0f1e254",
+      "a3cf828b-9bce-420f-ab6f-77ff47c2f3c0": {
+        "akc_id": "a3cf828b-9bce-420f-ab6f-77ff47c2f3c0",
         "name": "COVID_17",
-        "life_event": "5d55648a-39ec-4560-ac3d-3fa6cfbc9c51",
+        "life_event": "1eb662bd-328b-4f8b-9b3d-5ac916f29fd8",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "id": "UBERON:0013756",
@@ -1098,9 +1098,9 @@
       }
     },
     "specimen_processings": {
-      "CellIsolationProcessing_COVID_8_COVID_8": {
-        "akc_id": "5db3c815-630c-40a8-9950-a24f94228af0",
-        "specimen": "fd6bebef-3be3-45ff-923b-5ab33f6c97c4",
+      "66081ffa-ec94-4fe1-b1ef-86a64ea79e6a": {
+        "akc_id": "66081ffa-ec94-4fe1-b1ef-86a64ea79e6a",
+        "specimen": "71e45ac4-535d-46dc-b369-dae50ae5cc60",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1114,21 +1114,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_8_COVID_8": {
-        "akc_id": "1001e1c6-91f7-42e9-bc87-c8ccea34c9ec",
-        "specimen": "fd6bebef-3be3-45ff-923b-5ab33f6c97c4",
+      "8968a111-706b-41e7-a429-08b57f6157b9": {
+        "akc_id": "8968a111-706b-41e7-a429-08b57f6157b9",
+        "specimen": "71e45ac4-535d-46dc-b369-dae50ae5cc60",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_8_COVID_8": {
-        "akc_id": "b5cd4280-fafb-4225-8891-0110a186669a",
-        "specimen": "fd6bebef-3be3-45ff-923b-5ab33f6c97c4",
+      "f9ce4777-de9f-47de-83ea-e596af5813b7": {
+        "akc_id": "f9ce4777-de9f-47de-83ea-e596af5813b7",
+        "specimen": "71e45ac4-535d-46dc-b369-dae50ae5cc60",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_20_COVID_20": {
-        "akc_id": "bd0a5b45-fffd-4a7d-9b1b-d11e2aeb2333",
-        "specimen": "1891d21f-fcca-4465-9260-65e088b689ee",
+      "352e1309-c0e5-4da4-9378-4b9ad8cc8cab": {
+        "akc_id": "352e1309-c0e5-4da4-9378-4b9ad8cc8cab",
+        "specimen": "a70f6a82-3a9d-432c-8ebe-0be2b3555f9c",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1142,21 +1142,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_20_COVID_20": {
-        "akc_id": "18a92e78-0a9a-48bb-af68-4902b1abde9f",
-        "specimen": "1891d21f-fcca-4465-9260-65e088b689ee",
+      "e4815779-4341-4a18-a6dd-5f7883a366b7": {
+        "akc_id": "e4815779-4341-4a18-a6dd-5f7883a366b7",
+        "specimen": "a70f6a82-3a9d-432c-8ebe-0be2b3555f9c",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_20_COVID_20": {
-        "akc_id": "cfb79238-c531-4c98-ba3e-a1ce3d900cd0",
-        "specimen": "1891d21f-fcca-4465-9260-65e088b689ee",
+      "c536296e-971d-4ca8-a072-62c8c78e3c73": {
+        "akc_id": "c536296e-971d-4ca8-a072-62c8c78e3c73",
+        "specimen": "a70f6a82-3a9d-432c-8ebe-0be2b3555f9c",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_21_COVID_21": {
-        "akc_id": "aca76f7a-f192-4517-bc8a-06f924ae91d0",
-        "specimen": "8a1b18e5-e864-4893-9dd0-e5ea82dd0b1e",
+      "9436f84c-b221-4c35-aaf9-e8676bb44d47": {
+        "akc_id": "9436f84c-b221-4c35-aaf9-e8676bb44d47",
+        "specimen": "5636a982-d13a-4a04-8a86-918753b0177c",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1170,21 +1170,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_21_COVID_21": {
-        "akc_id": "070d6bf5-11f0-440d-b0d8-1da19424b88f",
-        "specimen": "8a1b18e5-e864-4893-9dd0-e5ea82dd0b1e",
+      "22c89ac4-778c-4781-be3c-e8ec9f5c724d": {
+        "akc_id": "22c89ac4-778c-4781-be3c-e8ec9f5c724d",
+        "specimen": "5636a982-d13a-4a04-8a86-918753b0177c",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_21_COVID_21": {
-        "akc_id": "8f0e4e8e-f4e6-4200-81eb-9b4c85965b09",
-        "specimen": "8a1b18e5-e864-4893-9dd0-e5ea82dd0b1e",
+      "14c590f3-9749-4adb-bd75-1904ecbcc5b8": {
+        "akc_id": "14c590f3-9749-4adb-bd75-1904ecbcc5b8",
+        "specimen": "5636a982-d13a-4a04-8a86-918753b0177c",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_14_COVID_14": {
-        "akc_id": "302527fb-8fc5-446d-8d0b-9bf5997de9d8",
-        "specimen": "1d33c561-6ae5-481b-83c0-c03ed9549906",
+      "26c17a01-2770-4351-be9f-2547cc8331e2": {
+        "akc_id": "26c17a01-2770-4351-be9f-2547cc8331e2",
+        "specimen": "ed318b8e-d417-44d6-aa6b-ed16bc8b4c04",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1198,21 +1198,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_14_COVID_14": {
-        "akc_id": "eb0bca7b-c76a-415f-af57-cce9c6634933",
-        "specimen": "1d33c561-6ae5-481b-83c0-c03ed9549906",
+      "4d0dc829-ebdb-4f69-a96f-db5258491db8": {
+        "akc_id": "4d0dc829-ebdb-4f69-a96f-db5258491db8",
+        "specimen": "ed318b8e-d417-44d6-aa6b-ed16bc8b4c04",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_14_COVID_14": {
-        "akc_id": "92103c15-605c-4d33-9e1a-566bfee177d8",
-        "specimen": "1d33c561-6ae5-481b-83c0-c03ed9549906",
+      "b81842fe-4d0c-4424-a28f-ce587d3472ba": {
+        "akc_id": "b81842fe-4d0c-4424-a28f-ce587d3472ba",
+        "specimen": "ed318b8e-d417-44d6-aa6b-ed16bc8b4c04",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_13_COVID_13": {
-        "akc_id": "a9c98901-1f1e-4d66-ad46-43ce4baea28e",
-        "specimen": "f20a5405-8a58-4bda-ae03-c82a93265878",
+      "5bbccef7-cc1f-4bc2-a43a-74b7d1c4e389": {
+        "akc_id": "5bbccef7-cc1f-4bc2-a43a-74b7d1c4e389",
+        "specimen": "8021994b-e1ad-410f-89a5-a4dd5a18561a",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1226,21 +1226,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_13_COVID_13": {
-        "akc_id": "7c8bfbb1-96a3-4d8f-96e3-780738bb2795",
-        "specimen": "f20a5405-8a58-4bda-ae03-c82a93265878",
+      "cef44f22-488f-4139-8472-fd35a2e00725": {
+        "akc_id": "cef44f22-488f-4139-8472-fd35a2e00725",
+        "specimen": "8021994b-e1ad-410f-89a5-a4dd5a18561a",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_13_COVID_13": {
-        "akc_id": "a3092c1d-6dd2-48bd-8421-877f9ec3bbce",
-        "specimen": "f20a5405-8a58-4bda-ae03-c82a93265878",
+      "11f00262-f7f2-4dd8-b4f6-f6bb7ad99abb": {
+        "akc_id": "11f00262-f7f2-4dd8-b4f6-f6bb7ad99abb",
+        "specimen": "8021994b-e1ad-410f-89a5-a4dd5a18561a",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_6_COVID_6": {
-        "akc_id": "a1c5df63-841c-4ba6-81c3-fac01c99351a",
-        "specimen": "704a37b3-5149-4c79-9b8b-311f5918fde8",
+      "21f42f4a-5904-47d2-ad80-3d2ce8fc9cb9": {
+        "akc_id": "21f42f4a-5904-47d2-ad80-3d2ce8fc9cb9",
+        "specimen": "940485dd-c464-49b5-bd1f-dcbd1e461f23",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1254,21 +1254,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_6_COVID_6": {
-        "akc_id": "be7598b8-6533-4980-ba3f-a61842193af1",
-        "specimen": "704a37b3-5149-4c79-9b8b-311f5918fde8",
+      "051f0e67-0bd5-4289-95f1-eaa0eb9684a8": {
+        "akc_id": "051f0e67-0bd5-4289-95f1-eaa0eb9684a8",
+        "specimen": "940485dd-c464-49b5-bd1f-dcbd1e461f23",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_6_COVID_6": {
-        "akc_id": "79fe54af-dc93-4e4d-8565-4ea1556d44b2",
-        "specimen": "704a37b3-5149-4c79-9b8b-311f5918fde8",
+      "8b2ab22c-21ca-469d-9d3d-c82b442bb0aa": {
+        "akc_id": "8b2ab22c-21ca-469d-9d3d-c82b442bb0aa",
+        "specimen": "940485dd-c464-49b5-bd1f-dcbd1e461f23",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_19_COVID_19": {
-        "akc_id": "514b4518-a9a0-4be0-bd19-990f5f0fa984",
-        "specimen": "718e0ea0-1e9f-4f7b-8401-0288ca2f70bd",
+      "052a551b-cc4c-400d-9c97-ed9d3b188703": {
+        "akc_id": "052a551b-cc4c-400d-9c97-ed9d3b188703",
+        "specimen": "dc9e5c41-cd7b-4e40-9554-c2ffd58f2b4a",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1282,21 +1282,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_19_COVID_19": {
-        "akc_id": "c7be7590-6903-42f2-bb37-ed9065002209",
-        "specimen": "718e0ea0-1e9f-4f7b-8401-0288ca2f70bd",
+      "f9b25eb6-cd9d-49b6-a188-20ebc853104b": {
+        "akc_id": "f9b25eb6-cd9d-49b6-a188-20ebc853104b",
+        "specimen": "dc9e5c41-cd7b-4e40-9554-c2ffd58f2b4a",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_19_COVID_19": {
-        "akc_id": "f7c5183b-f5e0-4f8b-bce6-765ad62dca10",
-        "specimen": "718e0ea0-1e9f-4f7b-8401-0288ca2f70bd",
+      "fd34c662-0229-43d9-9f30-86e2964dc521": {
+        "akc_id": "fd34c662-0229-43d9-9f30-86e2964dc521",
+        "specimen": "dc9e5c41-cd7b-4e40-9554-c2ffd58f2b4a",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_2_COVID_2": {
-        "akc_id": "e14d2ba6-0450-4cd3-892a-8eb0efc619f9",
-        "specimen": "f08c6e4d-e45e-4a3d-92f1-33efdab28942",
+      "88d41b51-87e2-4f60-87e9-ca08acb94faa": {
+        "akc_id": "88d41b51-87e2-4f60-87e9-ca08acb94faa",
+        "specimen": "c9c598d8-f060-4a6b-aaf5-163635a50942",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1310,21 +1310,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_2_COVID_2": {
-        "akc_id": "aaef55c8-b850-4a98-9a73-5cc5a0672264",
-        "specimen": "f08c6e4d-e45e-4a3d-92f1-33efdab28942",
+      "73325738-87b6-40e8-8eb2-aece40f3ceed": {
+        "akc_id": "73325738-87b6-40e8-8eb2-aece40f3ceed",
+        "specimen": "c9c598d8-f060-4a6b-aaf5-163635a50942",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_2_COVID_2": {
-        "akc_id": "27c379c1-73e3-48e2-b581-d23c6cc2ad6c",
-        "specimen": "f08c6e4d-e45e-4a3d-92f1-33efdab28942",
+      "c819f611-44f7-4257-81c6-b527b01aa9bf": {
+        "akc_id": "c819f611-44f7-4257-81c6-b527b01aa9bf",
+        "specimen": "c9c598d8-f060-4a6b-aaf5-163635a50942",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_9_COVID_9": {
-        "akc_id": "509e5d9a-987f-4862-80dd-8e205958c53d",
-        "specimen": "b64c0eaa-c45f-463f-9ec5-695b2b1b88c1",
+      "d0601ae9-800e-4a0e-9056-218188a9bb67": {
+        "akc_id": "d0601ae9-800e-4a0e-9056-218188a9bb67",
+        "specimen": "afb2f322-c891-48f2-94ab-d709b65409d8",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1338,21 +1338,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_9_COVID_9": {
-        "akc_id": "2f8e3ec7-038d-4ad5-8f6d-41c358429420",
-        "specimen": "b64c0eaa-c45f-463f-9ec5-695b2b1b88c1",
+      "14192363-810f-4939-b0e0-f19f758a6cdf": {
+        "akc_id": "14192363-810f-4939-b0e0-f19f758a6cdf",
+        "specimen": "afb2f322-c891-48f2-94ab-d709b65409d8",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_9_COVID_9": {
-        "akc_id": "b97eb5bb-74b5-4cf8-9556-757dcbdfe9c6",
-        "specimen": "b64c0eaa-c45f-463f-9ec5-695b2b1b88c1",
+      "4ba9d3cc-7b31-49b5-904e-e2b99d6081b1": {
+        "akc_id": "4ba9d3cc-7b31-49b5-904e-e2b99d6081b1",
+        "specimen": "afb2f322-c891-48f2-94ab-d709b65409d8",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_11_COVID_11": {
-        "akc_id": "6a81cf43-f2f5-4609-8e40-ff13380c1215",
-        "specimen": "4b4c4766-c6a6-48d5-95fd-91a423b16cca",
+      "0c30d328-0113-42fe-b17b-9618e57172e1": {
+        "akc_id": "0c30d328-0113-42fe-b17b-9618e57172e1",
+        "specimen": "cb59923e-050e-4f62-95f1-cf2c5abacb17",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1366,21 +1366,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_11_COVID_11": {
-        "akc_id": "84064de8-80b9-4e2d-942b-dcdb36b97c62",
-        "specimen": "4b4c4766-c6a6-48d5-95fd-91a423b16cca",
+      "a6e7bbd8-6cc6-4bbf-a95f-4e5c731c7168": {
+        "akc_id": "a6e7bbd8-6cc6-4bbf-a95f-4e5c731c7168",
+        "specimen": "cb59923e-050e-4f62-95f1-cf2c5abacb17",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_11_COVID_11": {
-        "akc_id": "be28b8c0-dee0-4bf2-8327-f70e996ba021",
-        "specimen": "4b4c4766-c6a6-48d5-95fd-91a423b16cca",
+      "c8771255-319d-4fb9-bc86-21b71da10ca7": {
+        "akc_id": "c8771255-319d-4fb9-bc86-21b71da10ca7",
+        "specimen": "cb59923e-050e-4f62-95f1-cf2c5abacb17",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_5_COVID_5": {
-        "akc_id": "d3d1d0d4-20f7-4605-a631-ef6ff95d8b3f",
-        "specimen": "576863b4-b9f2-4584-b994-50c9ea326a6f",
+      "350e257e-75b3-4694-9bf9-c377619838dc": {
+        "akc_id": "350e257e-75b3-4694-9bf9-c377619838dc",
+        "specimen": "9d26f282-09af-41a8-a4e3-e3b63e4b7e96",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1394,21 +1394,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_5_COVID_5": {
-        "akc_id": "6e3d0e50-6600-4a9a-ac4b-008f6f549b00",
-        "specimen": "576863b4-b9f2-4584-b994-50c9ea326a6f",
+      "ab33ee03-4676-4811-94e5-86685a036917": {
+        "akc_id": "ab33ee03-4676-4811-94e5-86685a036917",
+        "specimen": "9d26f282-09af-41a8-a4e3-e3b63e4b7e96",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_5_COVID_5": {
-        "akc_id": "af79fe54-2908-4913-bdfd-1452c590dcf9",
-        "specimen": "576863b4-b9f2-4584-b994-50c9ea326a6f",
+      "5deb141a-fbce-494c-b0a6-3fb5c522b13e": {
+        "akc_id": "5deb141a-fbce-494c-b0a6-3fb5c522b13e",
+        "specimen": "9d26f282-09af-41a8-a4e3-e3b63e4b7e96",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_4_COVID_4": {
-        "akc_id": "0a16c865-9c88-4424-88e5-a1599bebb4a6",
-        "specimen": "49fe4476-9124-46aa-b877-6f3d43edc732",
+      "282750c2-545e-437b-9998-2bcb0e548440": {
+        "akc_id": "282750c2-545e-437b-9998-2bcb0e548440",
+        "specimen": "d60aac67-9ac9-4d96-bf57-9147023c70e9",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1422,21 +1422,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_4_COVID_4": {
-        "akc_id": "ec47354f-6a80-434d-adfd-0a4f24feb5df",
-        "specimen": "49fe4476-9124-46aa-b877-6f3d43edc732",
+      "a26a04b1-160b-434d-b809-e90a40302510": {
+        "akc_id": "a26a04b1-160b-434d-b809-e90a40302510",
+        "specimen": "d60aac67-9ac9-4d96-bf57-9147023c70e9",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_4_COVID_4": {
-        "akc_id": "714ff94a-ec50-4df4-bd0e-8db04ef8ef2a",
-        "specimen": "49fe4476-9124-46aa-b877-6f3d43edc732",
+      "05b2c7ed-81c0-44df-82bc-2df44648904f": {
+        "akc_id": "05b2c7ed-81c0-44df-82bc-2df44648904f",
+        "specimen": "d60aac67-9ac9-4d96-bf57-9147023c70e9",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_18_COVID_18": {
-        "akc_id": "312a37f1-4c1f-44f0-b823-8cb98f167976",
-        "specimen": "1de0b4d8-d79d-463e-837e-0d2c28ab244c",
+      "652b56a3-591d-4b77-8a7e-d2d99a5fb862": {
+        "akc_id": "652b56a3-591d-4b77-8a7e-d2d99a5fb862",
+        "specimen": "c2501353-423a-4159-938a-1f8af0ec0798",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1450,21 +1450,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_18_COVID_18": {
-        "akc_id": "4593d015-0830-4112-8344-b1af48cc5080",
-        "specimen": "1de0b4d8-d79d-463e-837e-0d2c28ab244c",
+      "65d5ce28-1fee-4de0-aa94-2c97149f13fb": {
+        "akc_id": "65d5ce28-1fee-4de0-aa94-2c97149f13fb",
+        "specimen": "c2501353-423a-4159-938a-1f8af0ec0798",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_18_COVID_18": {
-        "akc_id": "26fa0408-6507-4aa9-8622-2c0df4966750",
-        "specimen": "1de0b4d8-d79d-463e-837e-0d2c28ab244c",
+      "4ee21afe-37ba-46f3-9937-8d8e212194e0": {
+        "akc_id": "4ee21afe-37ba-46f3-9937-8d8e212194e0",
+        "specimen": "c2501353-423a-4159-938a-1f8af0ec0798",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_7_COVID_7": {
-        "akc_id": "2216abf3-9023-4525-ab43-58f0b2696480",
-        "specimen": "78f46921-a5ea-440a-a858-0b1461e1f0a7",
+      "f204960c-c611-45c2-bdb5-b606ab27031b": {
+        "akc_id": "f204960c-c611-45c2-bdb5-b606ab27031b",
+        "specimen": "41230a1d-6022-4cdf-a545-38a6f99d22eb",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1478,21 +1478,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_7_COVID_7": {
-        "akc_id": "86b7a7a1-3de5-4e77-9cc4-e3bbcff55269",
-        "specimen": "78f46921-a5ea-440a-a858-0b1461e1f0a7",
+      "b5f8e8c4-b85a-4e74-8f8d-89d6e04b3efa": {
+        "akc_id": "b5f8e8c4-b85a-4e74-8f8d-89d6e04b3efa",
+        "specimen": "41230a1d-6022-4cdf-a545-38a6f99d22eb",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_7_COVID_7": {
-        "akc_id": "94efa4b2-23c9-4529-8201-b59a45de6974",
-        "specimen": "78f46921-a5ea-440a-a858-0b1461e1f0a7",
+      "324ca4e0-40d9-45eb-ae3b-51fd8e880d7b": {
+        "akc_id": "324ca4e0-40d9-45eb-ae3b-51fd8e880d7b",
+        "specimen": "41230a1d-6022-4cdf-a545-38a6f99d22eb",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_12_COVID_12": {
-        "akc_id": "98391238-9455-435c-8097-7b286fbdca9a",
-        "specimen": "cc1abf99-1b8b-4dd6-ba65-4aee31897831",
+      "15f07fe3-2c99-4bd3-84fd-4e6d494809d1": {
+        "akc_id": "15f07fe3-2c99-4bd3-84fd-4e6d494809d1",
+        "specimen": "7afb30a4-8b31-4bcb-b335-d9b82dc3ae18",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1506,21 +1506,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_12_COVID_12": {
-        "akc_id": "08634874-461d-4cf1-89cb-7953b5cabb7d",
-        "specimen": "cc1abf99-1b8b-4dd6-ba65-4aee31897831",
+      "2c95189c-5eb2-4a89-9aee-1432b8f3c61a": {
+        "akc_id": "2c95189c-5eb2-4a89-9aee-1432b8f3c61a",
+        "specimen": "7afb30a4-8b31-4bcb-b335-d9b82dc3ae18",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_12_COVID_12": {
-        "akc_id": "20d11c50-a6a8-47a8-89e0-2f5fed72fd6e",
-        "specimen": "cc1abf99-1b8b-4dd6-ba65-4aee31897831",
+      "73c0b1bd-5748-4632-9e84-7be3ff67ec45": {
+        "akc_id": "73c0b1bd-5748-4632-9e84-7be3ff67ec45",
+        "specimen": "7afb30a4-8b31-4bcb-b335-d9b82dc3ae18",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_3_COVID_3": {
-        "akc_id": "ccff1149-3c6e-4d5b-81f1-7b1c98e64094",
-        "specimen": "d799e715-6569-4b0b-89b6-087bfddabb6c",
+      "50184729-4b62-4449-b9a2-0b4108382c3a": {
+        "akc_id": "50184729-4b62-4449-b9a2-0b4108382c3a",
+        "specimen": "0e7b6e86-58a9-4a99-854f-515fb2907dd5",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1534,21 +1534,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_3_COVID_3": {
-        "akc_id": "72cd78c3-595f-40b5-b213-3298f4c1652c",
-        "specimen": "d799e715-6569-4b0b-89b6-087bfddabb6c",
+      "bfc2f9c3-c3c5-40df-b97d-1e4824ce2a1f": {
+        "akc_id": "bfc2f9c3-c3c5-40df-b97d-1e4824ce2a1f",
+        "specimen": "0e7b6e86-58a9-4a99-854f-515fb2907dd5",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_3_COVID_3": {
-        "akc_id": "d161113c-6d90-4910-bdc0-cd7c0b737ffe",
-        "specimen": "d799e715-6569-4b0b-89b6-087bfddabb6c",
+      "01666468-c030-420a-b91c-c33c9806f139": {
+        "akc_id": "01666468-c030-420a-b91c-c33c9806f139",
+        "specimen": "0e7b6e86-58a9-4a99-854f-515fb2907dd5",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_16_COVID_16": {
-        "akc_id": "9863f9ed-4140-47cd-bd77-75d0330486c7",
-        "specimen": "a0a78956-a91e-436e-801a-9c7d2b436ad8",
+      "f4d27000-c408-4aa4-803a-458c9ee7cb97": {
+        "akc_id": "f4d27000-c408-4aa4-803a-458c9ee7cb97",
+        "specimen": "350193aa-2099-4c02-af1b-3dba349f5505",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1562,21 +1562,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_16_COVID_16": {
-        "akc_id": "9a1d9e23-771e-4a55-8b48-d15f148cbd1f",
-        "specimen": "a0a78956-a91e-436e-801a-9c7d2b436ad8",
+      "ab61fdcd-c299-409e-b05f-ae1aec575a56": {
+        "akc_id": "ab61fdcd-c299-409e-b05f-ae1aec575a56",
+        "specimen": "350193aa-2099-4c02-af1b-3dba349f5505",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_16_COVID_16": {
-        "akc_id": "68f0399c-438c-41d1-aa24-e0a1e09e446b",
-        "specimen": "a0a78956-a91e-436e-801a-9c7d2b436ad8",
+      "83d99e59-1eb6-463d-85da-abca114bede7": {
+        "akc_id": "83d99e59-1eb6-463d-85da-abca114bede7",
+        "specimen": "350193aa-2099-4c02-af1b-3dba349f5505",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_1_COVID_1": {
-        "akc_id": "5e26d1b4-5461-46c4-9d80-3e89253764ab",
-        "specimen": "f3bc34b6-b5b0-42eb-8880-760eeab7d422",
+      "844cf5bf-cad7-41bc-9d78-320bc44aa40b": {
+        "akc_id": "844cf5bf-cad7-41bc-9d78-320bc44aa40b",
+        "specimen": "7c65b2d0-7b9d-4a9f-ada8-3ca88520938a",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1590,21 +1590,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_1_COVID_1": {
-        "akc_id": "35ec173d-b138-4cf0-8f88-12fab61d75a3",
-        "specimen": "f3bc34b6-b5b0-42eb-8880-760eeab7d422",
+      "41bcf037-9b4f-4c2d-b8b8-6b78adf8fb82": {
+        "akc_id": "41bcf037-9b4f-4c2d-b8b8-6b78adf8fb82",
+        "specimen": "7c65b2d0-7b9d-4a9f-ada8-3ca88520938a",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_1_COVID_1": {
-        "akc_id": "44ed8b46-e3f3-429f-bae3-831fcbe8c8c5",
-        "specimen": "f3bc34b6-b5b0-42eb-8880-760eeab7d422",
+      "10abde19-f611-47ed-bf39-401cb64ad874": {
+        "akc_id": "10abde19-f611-47ed-bf39-401cb64ad874",
+        "specimen": "7c65b2d0-7b9d-4a9f-ada8-3ca88520938a",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_15_COVID_15": {
-        "akc_id": "897c6a09-a88a-4431-a460-2997792dcb38",
-        "specimen": "27bae8eb-abe5-4d0d-8bde-00b8800bf808",
+      "8466e9ab-c9da-4501-8613-8a56e808b9c9": {
+        "akc_id": "8466e9ab-c9da-4501-8613-8a56e808b9c9",
+        "specimen": "963f38f3-09ad-4a28-bd22-8781c5c6829c",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1618,21 +1618,21 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_15_COVID_15": {
-        "akc_id": "25e9008e-4ca5-4da1-9317-18f82e5880e8",
-        "specimen": "27bae8eb-abe5-4d0d-8bde-00b8800bf808",
+      "6d5bc65b-6fb1-49a4-9c63-714842b990aa": {
+        "akc_id": "6d5bc65b-6fb1-49a4-9c63-714842b990aa",
+        "specimen": "963f38f3-09ad-4a28-bd22-8781c5c6829c",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_15_COVID_15": {
-        "akc_id": "7548f133-b182-4101-b79b-d642ab300ae8",
-        "specimen": "27bae8eb-abe5-4d0d-8bde-00b8800bf808",
+      "e083f04e-30ed-4265-bb7d-0aaef59b2016": {
+        "akc_id": "e083f04e-30ed-4265-bb7d-0aaef59b2016",
+        "specimen": "963f38f3-09ad-4a28-bd22-8781c5c6829c",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       },
-      "CellIsolationProcessing_COVID_17_COVID_17": {
-        "akc_id": "523f6b09-6134-41eb-900e-52e73ba99d47",
-        "specimen": "384b150c-9cf2-44aa-8760-de0fc0f1e254",
+      "0c51af0e-fe81-4b34-886d-cfc3f1a186b1": {
+        "akc_id": "0c51af0e-fe81-4b34-886d-cfc3f1a186b1",
+        "specimen": "a3cf828b-9bce-420f-ab6f-77ff47c2f3c0",
         "cell_subset": {
           "id": "CL:0000897",
           "label": "CD4-positive, alpha-beta memory T cell"
@@ -1646,23 +1646,23 @@
         "cell_isolation": "Cells were stained in different combinations of fluorochrome-conjugated antibodies. Data were acquired on a LSR Fortessa (BD Bioscience, San Jose, CA, USA). Screening of expanded T cell lines on 384-well plates was performed on a MACSQuantX Analyzer (Miltenyi Biotec).",
         "cell_processing_protocol": "Antigen-reactive T cell enrichment (ARTE) was performed as previously described (Bacher et al., 2016; Bacher et al., 2019; Bacher et al., 2013). In brief, 0.5-2 × 10e7 PBMCs were plated in RPMI-1640 medium (GIBCO), supplemented with 5% (v/v) human AB-serum (Sigma Aldrich, Schnelldorf, Germany) at a cell density of 1 × 10e7 PBMCs / 2 cm^2 in cell culture plates and stimulated for 7 h with pooled SARS-CoV-2 spike, membrane, and nucleocapsid proteins in presence of 1 μg/mL CD40 and 1 μg/mL CD28 pure antibody (both Miltenyi Biotec, Bergisch Gladbach, Germany). 1 μg/mL Brefeldin A (Sigma Aldrich) was added for the last 2 h. "
       },
-      "NucleicAcidProcessing_COVID_17_COVID_17": {
-        "akc_id": "c1b73e43-b5ed-4cfa-a1e9-efa5660a8611",
-        "specimen": "384b150c-9cf2-44aa-8760-de0fc0f1e254",
+      "52ebe263-a62d-4eb4-93dc-00a543d54cc1": {
+        "akc_id": "52ebe263-a62d-4eb4-93dc-00a543d54cc1",
+        "specimen": "a3cf828b-9bce-420f-ab6f-77ff47c2f3c0",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_COVID_17_COVID_17": {
-        "akc_id": "9e5c6b79-4e54-4de0-bf1a-810ca10ecba3",
-        "specimen": "384b150c-9cf2-44aa-8760-de0fc0f1e254",
+      "76500b28-4f9e-49cc-912c-f9dbce6ff046": {
+        "akc_id": "76500b28-4f9e-49cc-912c-f9dbce6ff046",
+        "specimen": "a3cf828b-9bce-420f-ab6f-77ff47c2f3c0",
         "library_generation_method": "RT(oligo-dT)+TS(UMI)+PCR",
         "library_generation_protocol": "Sequencing was performed on ex vivo FACS-purified SARS-CoV-2-reactive memory T cells. Briefly, CD154+ cells were isolated by MACS and further purified by FACS sorting on a MACSQuant Tyto (Miltenyi Biotec) based on dual expression of CD154 and CD69. Sorted CD154+ T cells were removed from the sorting chamber into pre-coated low-bind collection tubes, 1ml RPMI1640 medium supplemented with 5% AB Serum was added, and cells were centrifuged for 5 min at 400 x g, 4°C. The supernatant was removed leaving 10-30 μL to reach a maximum concentration of 1000 cells /μl. Single-cell suspensions were loaded on a Chromium Chip G (10x Genomics) according to the manufacturer’s instructions for processing with the Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1. Depending on the number of cells available for each patient, a maximum of 30,000 cells were loaded for each reaction. TCR single-cell libraries were subsequently prepared from the same cells with the Chromium Single Cell V(D)J Enrichment Kit, Human T Cell. ",
         "library_generation_kit_version": "10x Genomics kits: Chromium Next GEM Chip G Single Cell Kit; Chromium Next GEM Single Cell 5' Library and Gel Bead Kit v1.1; Chromium Single Cell 5' Library Construction Kit; Chromium Single Cell V(D)J Enrichment Kit, Human T Cell; Single Index Kit T Set A"
       }
     },
     "assays": {
-      "ReceptorRepertoireSequencingAssay_COVID_8_COVID_8": {
-        "akc_id": "f1109ab0-6a49-414d-9f96-085d65e03ea1",
-        "specimen": "fd6bebef-3be3-45ff-923b-5ab33f6c97c4",
+      "04a8dfaf-3833-4538-8d79-3fc1bf97165a": {
+        "akc_id": "04a8dfaf-3833-4538-8d79-3fc1bf97165a",
+        "specimen": "71e45ac4-535d-46dc-b369-dae50ae5cc60",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1671,9 +1671,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_20_COVID_20": {
-        "akc_id": "09858f08-cb20-486d-809f-3d25265ececd",
-        "specimen": "1891d21f-fcca-4465-9260-65e088b689ee",
+      "2c003232-00d4-4142-b299-cafe67d2f9c3": {
+        "akc_id": "2c003232-00d4-4142-b299-cafe67d2f9c3",
+        "specimen": "a70f6a82-3a9d-432c-8ebe-0be2b3555f9c",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1682,9 +1682,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_21_COVID_21": {
-        "akc_id": "80aec044-70df-41ec-bc6e-8ed14b3e56e9",
-        "specimen": "8a1b18e5-e864-4893-9dd0-e5ea82dd0b1e",
+      "e989ab3c-bf33-410c-8e66-cf2bb727ed40": {
+        "akc_id": "e989ab3c-bf33-410c-8e66-cf2bb727ed40",
+        "specimen": "5636a982-d13a-4a04-8a86-918753b0177c",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1693,9 +1693,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_14_COVID_14": {
-        "akc_id": "ecd39f7c-9ab6-4ff0-a9a0-7ef371179e05",
-        "specimen": "1d33c561-6ae5-481b-83c0-c03ed9549906",
+      "4f2b13bb-3d3c-417d-8bee-209d1652f12d": {
+        "akc_id": "4f2b13bb-3d3c-417d-8bee-209d1652f12d",
+        "specimen": "ed318b8e-d417-44d6-aa6b-ed16bc8b4c04",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1704,9 +1704,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_13_COVID_13": {
-        "akc_id": "30f4aa2b-4a02-4b8e-a76b-fe46661df051",
-        "specimen": "f20a5405-8a58-4bda-ae03-c82a93265878",
+      "eb4e1465-b02d-40ac-a230-b870c6ff6798": {
+        "akc_id": "eb4e1465-b02d-40ac-a230-b870c6ff6798",
+        "specimen": "8021994b-e1ad-410f-89a5-a4dd5a18561a",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1715,9 +1715,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_6_COVID_6": {
-        "akc_id": "cd3b24ed-8a98-4821-b008-ed3567d2658c",
-        "specimen": "704a37b3-5149-4c79-9b8b-311f5918fde8",
+      "bb3d918a-554b-4658-943f-0fbd036a5179": {
+        "akc_id": "bb3d918a-554b-4658-943f-0fbd036a5179",
+        "specimen": "940485dd-c464-49b5-bd1f-dcbd1e461f23",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1726,9 +1726,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_19_COVID_19": {
-        "akc_id": "881c938a-0e9d-4d13-b9bf-8d70c33d0d47",
-        "specimen": "718e0ea0-1e9f-4f7b-8401-0288ca2f70bd",
+      "dc3e822a-d9bc-4986-b18a-13c3781603a3": {
+        "akc_id": "dc3e822a-d9bc-4986-b18a-13c3781603a3",
+        "specimen": "dc9e5c41-cd7b-4e40-9554-c2ffd58f2b4a",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1737,9 +1737,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_2_COVID_2": {
-        "akc_id": "fc7a9e58-d7d8-4a3a-9269-e33ae8eee9c2",
-        "specimen": "f08c6e4d-e45e-4a3d-92f1-33efdab28942",
+      "59fc5fe4-13a7-457b-8b78-c1791866ae1f": {
+        "akc_id": "59fc5fe4-13a7-457b-8b78-c1791866ae1f",
+        "specimen": "c9c598d8-f060-4a6b-aaf5-163635a50942",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1748,9 +1748,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_9_COVID_9": {
-        "akc_id": "30abd82d-3e95-4a92-abe1-710fb637df9b",
-        "specimen": "b64c0eaa-c45f-463f-9ec5-695b2b1b88c1",
+      "9c91f8fa-6d01-4d5d-b2d4-649a850bc6b7": {
+        "akc_id": "9c91f8fa-6d01-4d5d-b2d4-649a850bc6b7",
+        "specimen": "afb2f322-c891-48f2-94ab-d709b65409d8",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1759,9 +1759,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_11_COVID_11": {
-        "akc_id": "269ba1b4-6c70-4a3c-b25d-04e95ba04a86",
-        "specimen": "4b4c4766-c6a6-48d5-95fd-91a423b16cca",
+      "653ece97-b3aa-44a0-8960-aa671f9434aa": {
+        "akc_id": "653ece97-b3aa-44a0-8960-aa671f9434aa",
+        "specimen": "cb59923e-050e-4f62-95f1-cf2c5abacb17",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1770,9 +1770,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_5_COVID_5": {
-        "akc_id": "75737f09-7bbe-4bb7-9646-baa3fbe61899",
-        "specimen": "576863b4-b9f2-4584-b994-50c9ea326a6f",
+      "49d02cee-1527-4037-be17-533b1ab42515": {
+        "akc_id": "49d02cee-1527-4037-be17-533b1ab42515",
+        "specimen": "9d26f282-09af-41a8-a4e3-e3b63e4b7e96",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1781,9 +1781,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_4_COVID_4": {
-        "akc_id": "0bd6acde-6ac4-4227-b2a6-7b917e6d0940",
-        "specimen": "49fe4476-9124-46aa-b877-6f3d43edc732",
+      "7a70e1a2-a5f6-4bab-901e-e719d688380a": {
+        "akc_id": "7a70e1a2-a5f6-4bab-901e-e719d688380a",
+        "specimen": "d60aac67-9ac9-4d96-bf57-9147023c70e9",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1792,9 +1792,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_18_COVID_18": {
-        "akc_id": "73ceecd6-83e4-4abc-ba21-e3ae442c6352",
-        "specimen": "1de0b4d8-d79d-463e-837e-0d2c28ab244c",
+      "1174c206-f9c6-46b2-b26f-e0d5e9746449": {
+        "akc_id": "1174c206-f9c6-46b2-b26f-e0d5e9746449",
+        "specimen": "c2501353-423a-4159-938a-1f8af0ec0798",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1803,9 +1803,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_7_COVID_7": {
-        "akc_id": "46b3cb9c-e105-4619-8251-f7c0b2dc1cde",
-        "specimen": "78f46921-a5ea-440a-a858-0b1461e1f0a7",
+      "dda1964b-9937-49d3-969c-7fe53418c168": {
+        "akc_id": "dda1964b-9937-49d3-969c-7fe53418c168",
+        "specimen": "41230a1d-6022-4cdf-a545-38a6f99d22eb",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1814,9 +1814,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_12_COVID_12": {
-        "akc_id": "573ee41a-a483-4a76-9944-cf525b0afc21",
-        "specimen": "cc1abf99-1b8b-4dd6-ba65-4aee31897831",
+      "dfa4eabe-39ff-437c-b1a8-caafc5cb798b": {
+        "akc_id": "dfa4eabe-39ff-437c-b1a8-caafc5cb798b",
+        "specimen": "7afb30a4-8b31-4bcb-b335-d9b82dc3ae18",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1825,9 +1825,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_3_COVID_3": {
-        "akc_id": "7b4d130e-fb9d-4357-ac03-271574e08fee",
-        "specimen": "d799e715-6569-4b0b-89b6-087bfddabb6c",
+      "f55206ee-fc6f-45a9-98b6-c6a28e746684": {
+        "akc_id": "f55206ee-fc6f-45a9-98b6-c6a28e746684",
+        "specimen": "0e7b6e86-58a9-4a99-854f-515fb2907dd5",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1836,9 +1836,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_16_COVID_16": {
-        "akc_id": "53c1a712-6360-4be1-9a64-6d0bde5ada97",
-        "specimen": "a0a78956-a91e-436e-801a-9c7d2b436ad8",
+      "cd3c1ab0-f49c-433e-80dd-f1172181bfde": {
+        "akc_id": "cd3c1ab0-f49c-433e-80dd-f1172181bfde",
+        "specimen": "350193aa-2099-4c02-af1b-3dba349f5505",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1847,9 +1847,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_1_COVID_1": {
-        "akc_id": "a880eb55-a2d6-4e12-b028-97f41480681f",
-        "specimen": "f3bc34b6-b5b0-42eb-8880-760eeab7d422",
+      "bfa8fae9-8fcd-4f7c-b052-b6f2752bdab1": {
+        "akc_id": "bfa8fae9-8fcd-4f7c-b052-b6f2752bdab1",
+        "specimen": "7c65b2d0-7b9d-4a9f-ada8-3ca88520938a",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1858,9 +1858,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_15_COVID_15": {
-        "akc_id": "761c28ce-73c3-42e5-b579-ffa0fbb1da05",
-        "specimen": "27bae8eb-abe5-4d0d-8bde-00b8800bf808",
+      "6cb58e39-6c22-4868-94f0-5d948b8d4ab2": {
+        "akc_id": "6cb58e39-6c22-4868-94f0-5d948b8d4ab2",
+        "specimen": "963f38f3-09ad-4a28-bd22-8781c5c6829c",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",
@@ -1869,9 +1869,9 @@
         "complete_sequences": "complete+untemplated",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_COVID_17_COVID_17": {
-        "akc_id": "fc6df1c3-2e80-410b-8ce5-6b110d491b00",
-        "specimen": "384b150c-9cf2-44aa-8760-de0fc0f1e254",
+      "1e47565c-32b8-4f2a-b103-f1812d1d8bfd": {
+        "akc_id": "1e47565c-32b8-4f2a-b103-f1812d1d8bfd",
+        "specimen": "a3cf828b-9bce-420f-ab6f-77ff47c2f3c0",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA",

@@ -4,8 +4,8 @@
       "": {
         "akc_id": ""
       },
-      "Investigation_IR-T1D-000003": {
-        "akc_id": "457aff10-f542-4023-a2f6-593225aa2612",
+      "40c6a814-ee0d-4cea-84e9-d0848f023d17": {
+        "akc_id": "40c6a814-ee0d-4cea-84e9-d0848f023d17",
         "name": "Eugster et al., Physiological and pathogenic T cell autoreactivity converge in type 1 diabetes",
         "study_type": {
           "label": "Case-Control Study",
@@ -15,87 +15,87 @@
         "release_date": "2024-10-24T16:48:48.999222+00:00",
         "update_date": "2024-10-24T17:23:07.304067+00:00",
         "participants": [
-          "3740ef1a-3ed8-494d-8473-278bf5386765",
-          "ff194802-b410-4096-959b-bef269e7326f",
-          "745335d9-3674-46b6-8a70-6ecddaba09ee",
-          "51cb4c2d-b151-44a4-9910-a284ddf3b410",
-          "a9ba22ed-ec4e-4c88-8c8a-2d9d55035ca7",
-          "d0c12a6e-c1ea-4774-ac96-206b396ead4b",
-          "b86a6a0e-0a12-492b-a60a-48f1c9628bfc",
-          "68c50993-fea0-43fa-9dd2-4b777c3924c2",
-          "a9d2d5a0-c0fe-4384-89d5-48c34dd5a7a0",
-          "19659bc2-36fb-4e4e-9797-575c0e8d0578",
-          "a57007fd-fd6d-498f-9514-f75bfa8b0b42",
-          "bc75fdc8-bd14-48db-8d53-cc9fdff4e6c6",
-          "3d1eb4a7-582d-4d1a-82bc-deb10e417664"
+          "0a0f95ae-df92-44d2-a1fd-15cbd55c8606",
+          "acf5f1e0-8236-45c6-bf2a-86be9574fde7",
+          "c0af6505-c24f-497b-8d6c-ff1c310e6928",
+          "b2c6c22c-c8d3-44bc-ae8a-62df0e01893d",
+          "df5bd7f6-072a-4b31-8bf4-2b451b39962a",
+          "e5d4a553-db1c-4e2a-8e6f-d2b6695a3674",
+          "a4fd0437-3309-423a-8b4c-7102fa1e176c",
+          "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2",
+          "de196e8e-ce3e-4a5e-a3d4-bbc026e8fe42",
+          "5d4e56a2-c276-4400-9039-34da5c8a7adb",
+          "f6e4052e-76b7-404d-85d1-97e5f2cd73d4",
+          "81ae0b82-471a-463e-8543-2db5e238f3a6",
+          "b7e73b5d-6c6e-4688-8e5a-c06e2d7b2caa"
         ],
         "assays": [
-          "ef392f3e-d417-475d-9750-326454ee6e60",
-          "917f6ab3-2254-4699-997a-db39a9142707",
-          "fbbef736-b11d-4db0-b640-ff6733b4972e",
-          "1e1fb7c3-6c66-465c-b001-b142763244b8",
-          "819675be-d49b-40a5-b748-204fadd71486",
-          "91923c92-2a70-45e7-8feb-ea3859f37c5d",
-          "c2f05b70-a2f7-4f2a-9f72-9acd04c3806b",
-          "991da6e2-a658-4c0c-80cb-1ba5840ed377",
-          "5a58ab5e-4461-401a-9013-5166bb2979e3",
-          "7d8464f7-b2d4-4cab-97de-c86e49376a8e",
-          "d8591d1f-9bfa-466b-bc3f-78e0aac2c7bd",
-          "f65d7d4a-0295-4f94-ad9f-6ed61529802c",
-          "0f5bcd89-d39a-430e-beec-9034a2c07ba4",
-          "bee5c2ad-3fc4-4a81-91cd-2e1385068a77",
-          "edea2dfb-2d7b-4b2c-8133-31fdb38a16e5",
-          "e4163a16-c5ff-4cc3-adb4-79070064342a",
-          "b825f935-d0d8-48e3-9b36-8cd997efef64",
-          "94eae913-684e-4ba6-bd85-5f28e4ff7c68",
-          "4b157c88-94f8-44d3-8a75-60257f8500aa",
-          "2e6e33a5-5f11-4c7e-b1f7-200d9c64e4db",
-          "26d76549-34de-4153-a2cc-3731870078ac",
-          "e9c22591-64dd-40b7-98a5-5df01b3a5034",
-          "994e9536-2409-487e-9591-4fa3e4811a86",
-          "b8da3f2f-fcbf-4dc9-ac79-0fa25cccd8e1",
-          "d457399e-0e85-47fb-b77c-cb0eb369baf9",
-          "9bbbddf6-0139-427c-8f99-1c6315577ad3",
-          "4366aabc-b3af-4216-ad2f-e6d78b31c685",
-          "f45678cb-ec30-4c69-8d69-17d96b447901",
-          "e5eaeac3-c13f-4d57-9a5d-29240b1a3096",
-          "a307fea6-7fad-4be7-9cd0-2e0661be9f2b"
+          "a1c86548-d7fe-4442-b45e-a731f2359738",
+          "a5e3cd6d-2fb3-4b7f-9c45-4940bc88b85f",
+          "34e84cb8-93e6-43d5-afc2-68375f181c0b",
+          "be8350a9-a651-4655-a2e3-c06804121ae1",
+          "2a6ee0c1-76f8-4fd6-9cc2-bb56a1e5f5ae",
+          "c1be6739-5478-433a-88b3-a8c4920bf8b6",
+          "88366306-61fd-4cb8-9892-bbba52e806a1",
+          "1d5e6db8-124a-4337-8823-3661980c81d2",
+          "c7664d97-6f21-4fe5-8bc0-f0c130e01d93",
+          "b810ba87-ff97-4f2c-8121-0e5328420c29",
+          "432ce672-d5da-49bf-aff0-5dc2c5e95c1c",
+          "121bed08-528f-464e-8e97-2a7c0e53ddaa",
+          "c1e10dd0-ef67-4d6a-8f5a-d023c5d1bf30",
+          "cb004ab0-8523-4757-822a-7660271273dc",
+          "9572c556-4ebd-4a71-812c-8c459ee51f6c",
+          "04b6e248-9a30-4adc-804f-3c81b62e0228",
+          "918fc7bd-35bb-47c8-b338-e8e7cff0fb66",
+          "36e5583f-3cd6-417b-bb49-25c4c3614ae0",
+          "e9b5be88-995f-433a-b0d2-039586e51d95",
+          "d3b74d07-1a5d-489a-9605-a176a134bf69",
+          "ffb175a9-ddac-4ab7-94f6-5c89d2ed12c8",
+          "c09a48da-b810-46e6-9d30-779a08a52366",
+          "965142d0-a821-4ac8-8eea-aa0f8f932d50",
+          "79c52361-a341-4af8-abd2-9d54bf2e602a",
+          "78dbc312-076e-44ec-b26a-0741eb98f4fa",
+          "8e36e936-6b29-4763-8010-616b6287e11b",
+          "0ae34fb7-c788-486a-85c6-9cf41f26e1fc",
+          "3ace3509-d333-4c82-8fa9-532301000c77",
+          "9649194b-04bb-44e4-8965-7d293e9f9091",
+          "a19e2e5a-44b5-4df4-9f8a-2967e2130cda"
         ],
         "documents": [
-          "f320316a-f438-4acd-a123-9ec2f9cb7cf8"
+          "931c172e-ce84-4402-b262-0980daf0e4ac"
         ]
       }
     },
     "references": {
-      "Reference_IR-T1D-000003": {
+      "931c172e-ce84-4402-b262-0980daf0e4ac": {
         "source_uri": "",
         "sources": "DOI:10.1038/s41467-024-53255-9",
         "investigations": [
           "",
-          "457aff10-f542-4023-a2f6-593225aa2612"
+          "40c6a814-ee0d-4cea-84e9-d0848f023d17"
         ],
-        "akc_id": "f320316a-f438-4acd-a123-9ec2f9cb7cf8"
+        "akc_id": "931c172e-ce84-4402-b262-0980daf0e4ac"
       }
     },
     "study_arms": {
-      "StudyArm_Control": {
-        "akc_id": "73086a54-043c-4d83-899b-9dc2694c5ea4",
+      "d7098869-c88c-4578-a5d6-d3143d4cf563": {
+        "akc_id": "d7098869-c88c-4578-a5d6-d3143d4cf563",
         "name": "Control",
-        "investigation": "457aff10-f542-4023-a2f6-593225aa2612",
+        "investigation": "40c6a814-ee0d-4cea-84e9-d0848f023d17",
         "inclusion_criteria": "T1D: include diagnosed less than 12 months ago. HD: exclude history of autoimmune diseases"
       },
-      "StudyArm_Case (T1D)": {
-        "akc_id": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+      "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a": {
+        "akc_id": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "name": "Case (T1D)",
-        "investigation": "457aff10-f542-4023-a2f6-593225aa2612",
+        "investigation": "40c6a814-ee0d-4cea-84e9-d0848f023d17",
         "inclusion_criteria": "T1D: include diagnosed less than 12 months ago. HD: exclude history of autoimmune diseases"
       }
     },
     "participants": {
-      "Participant_HD_016": {
-        "akc_id": "3740ef1a-3ed8-494d-8473-278bf5386765",
+      "0a0f95ae-df92-44d2-a1fd-15cbd55c8606": {
+        "akc_id": "0a0f95ae-df92-44d2-a1fd-15cbd55c8606",
         "name": "HD_016",
-        "study_arm": "73086a54-043c-4d83-899b-9dc2694c5ea4",
+        "study_arm": "d7098869-c88c-4578-a5d6-d3143d4cf563",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -109,10 +109,10 @@
         "age_event": "sample collection time",
         "race": "White-British"
       },
-      "Participant_HD_018": {
-        "akc_id": "ff194802-b410-4096-959b-bef269e7326f",
+      "acf5f1e0-8236-45c6-bf2a-86be9574fde7": {
+        "akc_id": "acf5f1e0-8236-45c6-bf2a-86be9574fde7",
         "name": "HD_018",
-        "study_arm": "73086a54-043c-4d83-899b-9dc2694c5ea4",
+        "study_arm": "d7098869-c88c-4578-a5d6-d3143d4cf563",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -126,10 +126,10 @@
         "age_event": "sample collection time",
         "race": "Indian"
       },
-      "Participant_HD_027": {
-        "akc_id": "745335d9-3674-46b6-8a70-6ecddaba09ee",
+      "c0af6505-c24f-497b-8d6c-ff1c310e6928": {
+        "akc_id": "c0af6505-c24f-497b-8d6c-ff1c310e6928",
         "name": "HD_027",
-        "study_arm": "73086a54-043c-4d83-899b-9dc2694c5ea4",
+        "study_arm": "d7098869-c88c-4578-a5d6-d3143d4cf563",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -143,10 +143,10 @@
         "age_event": "sample collection time",
         "race": "White-Caucasian"
       },
-      "Participant_HD_034": {
-        "akc_id": "51cb4c2d-b151-44a4-9910-a284ddf3b410",
+      "b2c6c22c-c8d3-44bc-ae8a-62df0e01893d": {
+        "akc_id": "b2c6c22c-c8d3-44bc-ae8a-62df0e01893d",
         "name": "HD_034",
-        "study_arm": "73086a54-043c-4d83-899b-9dc2694c5ea4",
+        "study_arm": "d7098869-c88c-4578-a5d6-d3143d4cf563",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -160,10 +160,10 @@
         "age_event": "sample collection time",
         "race": "Caucasian"
       },
-      "Participant_HD_035": {
-        "akc_id": "a9ba22ed-ec4e-4c88-8c8a-2d9d55035ca7",
+      "df5bd7f6-072a-4b31-8bf4-2b451b39962a": {
+        "akc_id": "df5bd7f6-072a-4b31-8bf4-2b451b39962a",
         "name": "HD_035",
-        "study_arm": "73086a54-043c-4d83-899b-9dc2694c5ea4",
+        "study_arm": "d7098869-c88c-4578-a5d6-d3143d4cf563",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -177,10 +177,10 @@
         "age_event": "sample collection time",
         "race": "Brazilian"
       },
-      "Participant_T1D_024": {
-        "akc_id": "d0c12a6e-c1ea-4774-ac96-206b396ead4b",
+      "e5d4a553-db1c-4e2a-8e6f-d2b6695a3674": {
+        "akc_id": "e5d4a553-db1c-4e2a-8e6f-d2b6695a3674",
         "name": "T1D_024",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -194,10 +194,10 @@
         "age_event": "sample collection time",
         "race": "White-caucasian"
       },
-      "Participant_T1D_033": {
-        "akc_id": "b86a6a0e-0a12-492b-a60a-48f1c9628bfc",
+      "a4fd0437-3309-423a-8b4c-7102fa1e176c": {
+        "akc_id": "a4fd0437-3309-423a-8b4c-7102fa1e176c",
         "name": "T1D_033",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -211,10 +211,10 @@
         "age_event": "sample collection time",
         "race": "not_available"
       },
-      "Participant_T1D_034": {
-        "akc_id": "68c50993-fea0-43fa-9dd2-4b777c3924c2",
+      "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2": {
+        "akc_id": "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2",
         "name": "T1D_034",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -228,10 +228,10 @@
         "age_event": "sample collection time",
         "race": "White-caucasian"
       },
-      "Participant_T1D_035": {
-        "akc_id": "a9d2d5a0-c0fe-4384-89d5-48c34dd5a7a0",
+      "de196e8e-ce3e-4a5e-a3d4-bbc026e8fe42": {
+        "akc_id": "de196e8e-ce3e-4a5e-a3d4-bbc026e8fe42",
         "name": "T1D_035",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -245,10 +245,10 @@
         "age_event": "sample collection time",
         "race": "White-British"
       },
-      "Participant_T1D_036": {
-        "akc_id": "19659bc2-36fb-4e4e-9797-575c0e8d0578",
+      "5d4e56a2-c276-4400-9039-34da5c8a7adb": {
+        "akc_id": "5d4e56a2-c276-4400-9039-34da5c8a7adb",
         "name": "T1D_036",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -262,10 +262,10 @@
         "age_event": "sample collection time",
         "race": "White-British"
       },
-      "Participant_T1D_038": {
-        "akc_id": "a57007fd-fd6d-498f-9514-f75bfa8b0b42",
+      "f6e4052e-76b7-404d-85d1-97e5f2cd73d4": {
+        "akc_id": "f6e4052e-76b7-404d-85d1-97e5f2cd73d4",
         "name": "T1D_038",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -279,10 +279,10 @@
         "age_event": "sample collection time",
         "race": "White-caucasian"
       },
-      "Participant_T1D_040": {
-        "akc_id": "bc75fdc8-bd14-48db-8d53-cc9fdff4e6c6",
+      "81ae0b82-471a-463e-8543-2db5e238f3a6": {
+        "akc_id": "81ae0b82-471a-463e-8543-2db5e238f3a6",
         "name": "T1D_040",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -296,10 +296,10 @@
         "age_event": "sample collection time",
         "race": "White-caucasian"
       },
-      "Participant_T1D_029": {
-        "akc_id": "3d1eb4a7-582d-4d1a-82bc-deb10e417664",
+      "b7e73b5d-6c6e-4688-8e5a-c06e2d7b2caa": {
+        "akc_id": "b7e73b5d-6c6e-4688-8e5a-c06e2d7b2caa",
         "name": "T1D_029",
-        "study_arm": "b9f4f08f-7a3d-4558-bc3f-895e11062188",
+        "study_arm": "e16f0c7a-a83a-4c8a-a83e-d985ed060a2a",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -315,17 +315,17 @@
       }
     },
     "life_events": {
-      "LifeEvent_Participant_HD_016_HD_016_GAD": {
-        "akc_id": "479d47e4-3abb-4cbe-a80d-8e1c0d86db61",
-        "participant": "3740ef1a-3ed8-494d-8473-278bf5386765"
+      "31e91091-85f7-46c9-aa27-8b74be21e448": {
+        "akc_id": "31e91091-85f7-46c9-aa27-8b74be21e448",
+        "participant": "0a0f95ae-df92-44d2-a1fd-15cbd55c8606"
       },
-      "LifeEvent_ImmuneExposure_HD_016_HD_016_GAD": {
-        "akc_id": "dbbbf734-2e76-419a-b035-951946b487d3",
-        "participant": "3740ef1a-3ed8-494d-8473-278bf5386765"
+      "18d99830-4901-424b-92e1-6e0dd15864fa": {
+        "akc_id": "18d99830-4901-424b-92e1-6e0dd15864fa",
+        "participant": "0a0f95ae-df92-44d2-a1fd-15cbd55c8606"
       },
-      "LifeEvent_Specimen_HD_016_HD_016_GAD": {
-        "akc_id": "b94fe442-60ca-4d25-8eda-4f7a47f42cbd",
-        "participant": "3740ef1a-3ed8-494d-8473-278bf5386765",
+      "a6622250-8817-4ace-aed5-2f0996859911": {
+        "akc_id": "a6622250-8817-4ace-aed5-2f0996859911",
+        "participant": "0a0f95ae-df92-44d2-a1fd-15cbd55c8606",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -333,17 +333,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_HD_018_HD_018_GAD": {
-        "akc_id": "d4c9e267-d7a5-44e8-a0ad-58be4ee7853b",
-        "participant": "ff194802-b410-4096-959b-bef269e7326f"
+      "e8903b61-3a43-4d73-80f4-1f6b9eea9650": {
+        "akc_id": "e8903b61-3a43-4d73-80f4-1f6b9eea9650",
+        "participant": "acf5f1e0-8236-45c6-bf2a-86be9574fde7"
       },
-      "LifeEvent_ImmuneExposure_HD_018_HD_018_GAD": {
-        "akc_id": "9451256b-b267-4ba8-bd47-399fda73ca08",
-        "participant": "ff194802-b410-4096-959b-bef269e7326f"
+      "d7afa3b4-ccd9-4e72-86e9-2f498d9718bd": {
+        "akc_id": "d7afa3b4-ccd9-4e72-86e9-2f498d9718bd",
+        "participant": "acf5f1e0-8236-45c6-bf2a-86be9574fde7"
       },
-      "LifeEvent_Specimen_HD_018_HD_018_GAD": {
-        "akc_id": "61cf9a34-d36b-4b9c-8e8c-814ba6f70bb2",
-        "participant": "ff194802-b410-4096-959b-bef269e7326f",
+      "07e8cded-c2fe-493c-8756-9a00d902bf59": {
+        "akc_id": "07e8cded-c2fe-493c-8756-9a00d902bf59",
+        "participant": "acf5f1e0-8236-45c6-bf2a-86be9574fde7",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -351,17 +351,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_HD_027_HD_027_GAD": {
-        "akc_id": "f84ad53a-2907-4711-9881-599e3c94a018",
-        "participant": "745335d9-3674-46b6-8a70-6ecddaba09ee"
+      "32575752-bf62-457f-bbf5-80fd89ed0228": {
+        "akc_id": "32575752-bf62-457f-bbf5-80fd89ed0228",
+        "participant": "c0af6505-c24f-497b-8d6c-ff1c310e6928"
       },
-      "LifeEvent_ImmuneExposure_HD_027_HD_027_GAD": {
-        "akc_id": "036c52a9-58de-4c41-be14-4a826d183bfe",
-        "participant": "745335d9-3674-46b6-8a70-6ecddaba09ee"
+      "49395620-699c-4a06-96a4-951b4e1d260f": {
+        "akc_id": "49395620-699c-4a06-96a4-951b4e1d260f",
+        "participant": "c0af6505-c24f-497b-8d6c-ff1c310e6928"
       },
-      "LifeEvent_Specimen_HD_027_HD_027_GAD": {
-        "akc_id": "9f06d295-f9cd-4e61-a064-318bf5022828",
-        "participant": "745335d9-3674-46b6-8a70-6ecddaba09ee",
+      "e42295c6-1aaa-45f5-bd91-7438a1e7f486": {
+        "akc_id": "e42295c6-1aaa-45f5-bd91-7438a1e7f486",
+        "participant": "c0af6505-c24f-497b-8d6c-ff1c310e6928",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -369,17 +369,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_HD_034_HD_034_GAD": {
-        "akc_id": "534b1e2b-ed95-4641-9901-79cca04c4c36",
-        "participant": "51cb4c2d-b151-44a4-9910-a284ddf3b410"
+      "4b601bfc-29ae-487b-ab02-020b320126f3": {
+        "akc_id": "4b601bfc-29ae-487b-ab02-020b320126f3",
+        "participant": "b2c6c22c-c8d3-44bc-ae8a-62df0e01893d"
       },
-      "LifeEvent_ImmuneExposure_HD_034_HD_034_GAD": {
-        "akc_id": "c6785e26-d7e4-485b-b393-3e11a88a9386",
-        "participant": "51cb4c2d-b151-44a4-9910-a284ddf3b410"
+      "ee3b70be-ad64-4888-8eb9-e51dbbbe5b75": {
+        "akc_id": "ee3b70be-ad64-4888-8eb9-e51dbbbe5b75",
+        "participant": "b2c6c22c-c8d3-44bc-ae8a-62df0e01893d"
       },
-      "LifeEvent_Specimen_HD_034_HD_034_GAD": {
-        "akc_id": "26fa139c-c579-49ca-a177-4b0db84f8e13",
-        "participant": "51cb4c2d-b151-44a4-9910-a284ddf3b410",
+      "cfc6cd6f-5785-4cea-a90b-f9158b1439f2": {
+        "akc_id": "cfc6cd6f-5785-4cea-a90b-f9158b1439f2",
+        "participant": "b2c6c22c-c8d3-44bc-ae8a-62df0e01893d",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -387,17 +387,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_HD_035_HD_035_GAD": {
-        "akc_id": "0d3ef73b-6f15-4f9a-b3a5-00fea861c7d6",
-        "participant": "a9ba22ed-ec4e-4c88-8c8a-2d9d55035ca7"
+      "958effdb-2a27-4f81-8c76-d7d3028a7aca": {
+        "akc_id": "958effdb-2a27-4f81-8c76-d7d3028a7aca",
+        "participant": "df5bd7f6-072a-4b31-8bf4-2b451b39962a"
       },
-      "LifeEvent_ImmuneExposure_HD_035_HD_035_GAD": {
-        "akc_id": "e681e53f-c0d1-4d6d-87f7-077b21134842",
-        "participant": "a9ba22ed-ec4e-4c88-8c8a-2d9d55035ca7"
+      "fa24f40f-814c-43be-bf97-e03b36d4641e": {
+        "akc_id": "fa24f40f-814c-43be-bf97-e03b36d4641e",
+        "participant": "df5bd7f6-072a-4b31-8bf4-2b451b39962a"
       },
-      "LifeEvent_Specimen_HD_035_HD_035_GAD": {
-        "akc_id": "e5bf6914-59a2-4ab9-9205-9a2ebb1ebb43",
-        "participant": "a9ba22ed-ec4e-4c88-8c8a-2d9d55035ca7",
+      "3dbbeb68-ceb1-4ae0-a035-940b17e2acb6": {
+        "akc_id": "3dbbeb68-ceb1-4ae0-a035-940b17e2acb6",
+        "participant": "df5bd7f6-072a-4b31-8bf4-2b451b39962a",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -405,17 +405,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_024_T1D_024_GAD": {
-        "akc_id": "7210d443-d7cf-4bfb-bd81-0f84b9f7e9e6",
-        "participant": "d0c12a6e-c1ea-4774-ac96-206b396ead4b"
+      "3e761fce-1094-4956-b36b-c460741c18aa": {
+        "akc_id": "3e761fce-1094-4956-b36b-c460741c18aa",
+        "participant": "e5d4a553-db1c-4e2a-8e6f-d2b6695a3674"
       },
-      "LifeEvent_ImmuneExposure_T1D_024_T1D_024_GAD": {
-        "akc_id": "f8a41556-28b5-4f60-bb0a-874e592f55f1",
-        "participant": "d0c12a6e-c1ea-4774-ac96-206b396ead4b"
+      "423f1c4d-f939-4b11-a2a1-69a84a444cbd": {
+        "akc_id": "423f1c4d-f939-4b11-a2a1-69a84a444cbd",
+        "participant": "e5d4a553-db1c-4e2a-8e6f-d2b6695a3674"
       },
-      "LifeEvent_Specimen_T1D_024_T1D_024_GAD": {
-        "akc_id": "3d450623-2763-46ee-bf54-a5a617d81e4d",
-        "participant": "d0c12a6e-c1ea-4774-ac96-206b396ead4b",
+      "5880bb07-33c8-47e5-b6e5-269ca1beef3e": {
+        "akc_id": "5880bb07-33c8-47e5-b6e5-269ca1beef3e",
+        "participant": "e5d4a553-db1c-4e2a-8e6f-d2b6695a3674",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -423,17 +423,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_033_T1D_033_GAD": {
-        "akc_id": "6ed4883f-a659-444f-af4a-daf10db995cc",
-        "participant": "b86a6a0e-0a12-492b-a60a-48f1c9628bfc"
+      "12160c53-e10e-4c6d-a25e-5495b3dbc749": {
+        "akc_id": "12160c53-e10e-4c6d-a25e-5495b3dbc749",
+        "participant": "a4fd0437-3309-423a-8b4c-7102fa1e176c"
       },
-      "LifeEvent_ImmuneExposure_T1D_033_T1D_033_GAD": {
-        "akc_id": "28218501-9062-4723-aa27-cd94163a9166",
-        "participant": "b86a6a0e-0a12-492b-a60a-48f1c9628bfc"
+      "a914cf7e-9c00-4c81-a200-351762d5e39c": {
+        "akc_id": "a914cf7e-9c00-4c81-a200-351762d5e39c",
+        "participant": "a4fd0437-3309-423a-8b4c-7102fa1e176c"
       },
-      "LifeEvent_Specimen_T1D_033_T1D_033_GAD": {
-        "akc_id": "a87e386b-e6c7-4913-bff8-0376d9012a3f",
-        "participant": "b86a6a0e-0a12-492b-a60a-48f1c9628bfc",
+      "faf979ed-8c83-4ddd-a1f5-4222a6ed0d08": {
+        "akc_id": "faf979ed-8c83-4ddd-a1f5-4222a6ed0d08",
+        "participant": "a4fd0437-3309-423a-8b4c-7102fa1e176c",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -441,17 +441,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_034_T1D_034_GAD": {
-        "akc_id": "92f947b3-d025-4ddb-8884-3f1c589c6795",
-        "participant": "68c50993-fea0-43fa-9dd2-4b777c3924c2"
+      "1dbc2496-8856-470e-b1c6-b56a33b7d1b2": {
+        "akc_id": "1dbc2496-8856-470e-b1c6-b56a33b7d1b2",
+        "participant": "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2"
       },
-      "LifeEvent_ImmuneExposure_T1D_034_T1D_034_GAD": {
-        "akc_id": "a8e4338a-ee54-42e4-9d2a-a290349d90bc",
-        "participant": "68c50993-fea0-43fa-9dd2-4b777c3924c2"
+      "587814b2-4863-48a9-9596-c70ab00b1687": {
+        "akc_id": "587814b2-4863-48a9-9596-c70ab00b1687",
+        "participant": "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2"
       },
-      "LifeEvent_Specimen_T1D_034_T1D_034_GAD": {
-        "akc_id": "ca907307-e3ac-426c-8264-dfce2c2fdc92",
-        "participant": "68c50993-fea0-43fa-9dd2-4b777c3924c2",
+      "d363597e-e109-4bd4-ad2a-9ba2f8cf053f": {
+        "akc_id": "d363597e-e109-4bd4-ad2a-9ba2f8cf053f",
+        "participant": "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -459,17 +459,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_035_T1D_035_GAD": {
-        "akc_id": "76a401c6-dc68-48ec-9cda-82b060b8764e",
-        "participant": "a9d2d5a0-c0fe-4384-89d5-48c34dd5a7a0"
+      "c7744c1d-23f9-4a12-be10-ca51c127b11a": {
+        "akc_id": "c7744c1d-23f9-4a12-be10-ca51c127b11a",
+        "participant": "de196e8e-ce3e-4a5e-a3d4-bbc026e8fe42"
       },
-      "LifeEvent_ImmuneExposure_T1D_035_T1D_035_GAD": {
-        "akc_id": "eeab5229-aa1f-4c74-aecc-f17f0522b20d",
-        "participant": "a9d2d5a0-c0fe-4384-89d5-48c34dd5a7a0"
+      "01185ce0-73eb-4c6e-856a-b662d6184bae": {
+        "akc_id": "01185ce0-73eb-4c6e-856a-b662d6184bae",
+        "participant": "de196e8e-ce3e-4a5e-a3d4-bbc026e8fe42"
       },
-      "LifeEvent_Specimen_T1D_035_T1D_035_GAD": {
-        "akc_id": "d735eed6-1eca-4bdb-b75e-34824774ea7f",
-        "participant": "a9d2d5a0-c0fe-4384-89d5-48c34dd5a7a0",
+      "992b1073-b83c-449d-ba11-acff1c6a764a": {
+        "akc_id": "992b1073-b83c-449d-ba11-acff1c6a764a",
+        "participant": "de196e8e-ce3e-4a5e-a3d4-bbc026e8fe42",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -477,17 +477,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_036_T1D_036_GAD": {
-        "akc_id": "bb095b15-1168-425f-b7b5-2847442a09f0",
-        "participant": "19659bc2-36fb-4e4e-9797-575c0e8d0578"
+      "d1e41468-3549-442f-b5eb-cd9a7a1cb941": {
+        "akc_id": "d1e41468-3549-442f-b5eb-cd9a7a1cb941",
+        "participant": "5d4e56a2-c276-4400-9039-34da5c8a7adb"
       },
-      "LifeEvent_ImmuneExposure_T1D_036_T1D_036_GAD": {
-        "akc_id": "cf536a68-20bd-480e-8ec2-c2e92f51ede1",
-        "participant": "19659bc2-36fb-4e4e-9797-575c0e8d0578"
+      "a8439416-b498-4d28-b1ff-162824c2fd3b": {
+        "akc_id": "a8439416-b498-4d28-b1ff-162824c2fd3b",
+        "participant": "5d4e56a2-c276-4400-9039-34da5c8a7adb"
       },
-      "LifeEvent_Specimen_T1D_036_T1D_036_GAD": {
-        "akc_id": "38ab84d8-5880-47fd-a930-cb1461e88417",
-        "participant": "19659bc2-36fb-4e4e-9797-575c0e8d0578",
+      "dd25ade2-df91-40f4-b718-f7c39952c877": {
+        "akc_id": "dd25ade2-df91-40f4-b718-f7c39952c877",
+        "participant": "5d4e56a2-c276-4400-9039-34da5c8a7adb",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -495,17 +495,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_038_T1D_038_GAD": {
-        "akc_id": "51667a7a-53ce-4720-9782-385bcfec6422",
-        "participant": "a57007fd-fd6d-498f-9514-f75bfa8b0b42"
+      "bb9e7ac3-cf68-4530-910a-7c5b76f70bf8": {
+        "akc_id": "bb9e7ac3-cf68-4530-910a-7c5b76f70bf8",
+        "participant": "f6e4052e-76b7-404d-85d1-97e5f2cd73d4"
       },
-      "LifeEvent_ImmuneExposure_T1D_038_T1D_038_GAD": {
-        "akc_id": "22a47a83-e7c4-4997-994a-5f671a76aaee",
-        "participant": "a57007fd-fd6d-498f-9514-f75bfa8b0b42"
+      "be8c48ad-a4ef-4419-9457-ca161f30e399": {
+        "akc_id": "be8c48ad-a4ef-4419-9457-ca161f30e399",
+        "participant": "f6e4052e-76b7-404d-85d1-97e5f2cd73d4"
       },
-      "LifeEvent_Specimen_T1D_038_T1D_038_GAD": {
-        "akc_id": "e74799ce-d4c7-4731-95f8-5077da566d72",
-        "participant": "a57007fd-fd6d-498f-9514-f75bfa8b0b42",
+      "0614791b-2590-48b6-a43d-9bec3f8bebd9": {
+        "akc_id": "0614791b-2590-48b6-a43d-9bec3f8bebd9",
+        "participant": "f6e4052e-76b7-404d-85d1-97e5f2cd73d4",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -513,17 +513,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_040_T1D_040_GAD": {
-        "akc_id": "a9c009fe-ba2d-4e80-8fc7-e20328ebbdfb",
-        "participant": "bc75fdc8-bd14-48db-8d53-cc9fdff4e6c6"
+      "db5f5922-33f6-47e4-bd3a-b6df1517cb18": {
+        "akc_id": "db5f5922-33f6-47e4-bd3a-b6df1517cb18",
+        "participant": "81ae0b82-471a-463e-8543-2db5e238f3a6"
       },
-      "LifeEvent_ImmuneExposure_T1D_040_T1D_040_GAD": {
-        "akc_id": "edfcb3cb-5fad-4582-a740-64b395e030c9",
-        "participant": "bc75fdc8-bd14-48db-8d53-cc9fdff4e6c6"
+      "305e6f8f-7f18-4bb7-bb9d-a0339c696bdd": {
+        "akc_id": "305e6f8f-7f18-4bb7-bb9d-a0339c696bdd",
+        "participant": "81ae0b82-471a-463e-8543-2db5e238f3a6"
       },
-      "LifeEvent_Specimen_T1D_040_T1D_040_GAD": {
-        "akc_id": "a535db38-923e-49e3-81ed-c7bd59ce4187",
-        "participant": "bc75fdc8-bd14-48db-8d53-cc9fdff4e6c6",
+      "fa9a1415-b795-41e3-8c25-4863c489e4af": {
+        "akc_id": "fa9a1415-b795-41e3-8c25-4863c489e4af",
+        "participant": "81ae0b82-471a-463e-8543-2db5e238f3a6",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -531,8 +531,8 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_HD_035_HD_035_CMV": {
-        "akc_id": "5b0a09f3-addf-45fb-92ca-bd50a0810151",
+      "65c1f4ae-a1a1-4721-bbaa-886b5231a614": {
+        "akc_id": "65c1f4ae-a1a1-4721-bbaa-886b5231a614",
         "adc_link_tag": "LifeEvent_Participant_HD_035_HD_035_CMV",
         "adc_repertoire_id": "671a7a742820f084c2be9b8c",
         "adc_sample_processing_id": "671a7a742820f084c2be9b8c",
@@ -541,11 +541,11 @@
         "adc_subject_id": "HD_035",
         "adc_sample_id": "HD_035_CMV",
         "adc_study_group_description": "Control",
-        "participant": "a9ba22ed-ec4e-4c88-8c8a-2d9d55035ca7"
+        "participant": "df5bd7f6-072a-4b31-8bf4-2b451b39962a"
       },
-      "LifeEvent_Specimen_HD_035_HD_035_CMV": {
-        "akc_id": "55e66f6d-5b4e-48f2-90ce-1d8eb89a4517",
-        "participant": "a9ba22ed-ec4e-4c88-8c8a-2d9d55035ca7",
+      "2f469171-250d-41c6-98b5-dbb6c1e5fe76": {
+        "akc_id": "2f469171-250d-41c6-98b5-dbb6c1e5fe76",
+        "participant": "df5bd7f6-072a-4b31-8bf4-2b451b39962a",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -553,17 +553,17 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_029_T1D_029_CMV": {
-        "akc_id": "fa659acd-0b98-4c33-9286-e0fe75db7744",
-        "participant": "3d1eb4a7-582d-4d1a-82bc-deb10e417664"
+      "7b184928-0924-433d-ba28-aa2fc89b7f3f": {
+        "akc_id": "7b184928-0924-433d-ba28-aa2fc89b7f3f",
+        "participant": "b7e73b5d-6c6e-4688-8e5a-c06e2d7b2caa"
       },
-      "LifeEvent_ImmuneExposure_T1D_029_T1D_029_CMV": {
-        "akc_id": "685cbbf7-b9a4-4fd6-82f7-bb1a12c719d2",
-        "participant": "3d1eb4a7-582d-4d1a-82bc-deb10e417664"
+      "19d1fca5-5267-4ba4-97f8-f3741aaa748d": {
+        "akc_id": "19d1fca5-5267-4ba4-97f8-f3741aaa748d",
+        "participant": "b7e73b5d-6c6e-4688-8e5a-c06e2d7b2caa"
       },
-      "LifeEvent_Specimen_T1D_029_T1D_029_CMV": {
-        "akc_id": "2c52566b-e91a-419d-8df5-e1e32b83fb3a",
-        "participant": "3d1eb4a7-582d-4d1a-82bc-deb10e417664",
+      "d68c1cf5-d8c6-493b-9b59-70d0e38abdbd": {
+        "akc_id": "d68c1cf5-d8c6-493b-9b59-70d0e38abdbd",
+        "participant": "b7e73b5d-6c6e-4688-8e5a-c06e2d7b2caa",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -571,8 +571,8 @@
           "id": "UO:0000033"
         }
       },
-      "LifeEvent_Participant_T1D_034_T1D_034_CMV": {
-        "akc_id": "75e59300-0261-45e7-97fb-ef6e10efdcde",
+      "c6ecd8fd-d923-42d5-ae65-d3365013408c": {
+        "akc_id": "c6ecd8fd-d923-42d5-ae65-d3365013408c",
         "adc_link_tag": "LifeEvent_Participant_T1D_034_T1D_034_CMV",
         "adc_repertoire_id": "671a7a752820f084c2be9b8e",
         "adc_sample_processing_id": "671a7a752820f084c2be9b8e",
@@ -581,11 +581,11 @@
         "adc_subject_id": "T1D_034",
         "adc_sample_id": "T1D_034_CMV",
         "adc_study_group_description": "Case (T1D)",
-        "participant": "68c50993-fea0-43fa-9dd2-4b777c3924c2"
+        "participant": "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2"
       },
-      "LifeEvent_Specimen_T1D_034_T1D_034_CMV": {
-        "akc_id": "6fe5f01f-66c0-4006-9472-c39fe03b6fa1",
-        "participant": "68c50993-fea0-43fa-9dd2-4b777c3924c2",
+      "09385b75-a559-458e-813d-64218e86182c": {
+        "akc_id": "09385b75-a559-458e-813d-64218e86182c",
+        "participant": "3c245dc1-d0e5-4bd7-8156-e95a4e0c6bb2",
         "t0_event": "sample collection time",
         "start": 0,
         "time_unit": {
@@ -595,92 +595,92 @@
       }
     },
     "immune_exposures": {
-      "ImmuneExposure_HD_016": {
-        "akc_id": "f569be82-e687-4e07-bd05-e1a96a6839c2",
-        "life_event": "dbbbf734-2e76-419a-b035-951946b487d3"
+      "e1ad8073-da33-45e7-9e71-bc4377810fa2": {
+        "akc_id": "e1ad8073-da33-45e7-9e71-bc4377810fa2",
+        "life_event": "18d99830-4901-424b-92e1-6e0dd15864fa"
       },
-      "ImmuneExposure_HD_018": {
-        "akc_id": "c7f30fa4-24d7-4224-9dd7-ddf9f2ec8ada",
-        "life_event": "9451256b-b267-4ba8-bd47-399fda73ca08"
+      "8857a8f9-3a7b-4cdc-ac69-7f7824cc6f8b": {
+        "akc_id": "8857a8f9-3a7b-4cdc-ac69-7f7824cc6f8b",
+        "life_event": "d7afa3b4-ccd9-4e72-86e9-2f498d9718bd"
       },
-      "ImmuneExposure_HD_027": {
-        "akc_id": "83556384-1462-4b40-9f02-a2b06fe74d4a",
-        "life_event": "036c52a9-58de-4c41-be14-4a826d183bfe"
+      "1fd6a73e-f119-4706-a1f1-bbdc61f2021b": {
+        "akc_id": "1fd6a73e-f119-4706-a1f1-bbdc61f2021b",
+        "life_event": "49395620-699c-4a06-96a4-951b4e1d260f"
       },
-      "ImmuneExposure_HD_034": {
-        "akc_id": "ec74443a-5057-4788-be28-1a65f19db81a",
-        "life_event": "c6785e26-d7e4-485b-b393-3e11a88a9386"
+      "8e06f66b-ccd0-4570-afad-b84137d90db5": {
+        "akc_id": "8e06f66b-ccd0-4570-afad-b84137d90db5",
+        "life_event": "ee3b70be-ad64-4888-8eb9-e51dbbbe5b75"
       },
-      "ImmuneExposure_HD_035": {
-        "akc_id": "a37a1b7a-8bc1-4c79-9836-b4de94d23fc6",
-        "life_event": "e681e53f-c0d1-4d6d-87f7-077b21134842"
+      "83bfb30b-46db-44a6-94f9-fb248e0fa16e": {
+        "akc_id": "83bfb30b-46db-44a6-94f9-fb248e0fa16e",
+        "life_event": "fa24f40f-814c-43be-bf97-e03b36d4641e"
       },
-      "ImmuneExposure_T1D_024_DOID:9744": {
-        "akc_id": "79076b84-dd4f-442a-9d8d-a5ea823d9956",
-        "life_event": "f8a41556-28b5-4f60-bb0a-874e592f55f1",
+      "222f24da-8a73-4794-82c1-3bd726338c66": {
+        "akc_id": "222f24da-8a73-4794-82c1-3bd726338c66",
+        "life_event": "423f1c4d-f939-4b11-a2a1-69a84a444cbd",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
         },
         "disease_stage": "Stage 3"
       },
-      "ImmuneExposure_T1D_033_DOID:9744": {
-        "akc_id": "6cd1b42f-b9fc-463b-8773-c9113752d540",
-        "life_event": "28218501-9062-4723-aa27-cd94163a9166",
+      "33241c50-8e27-4909-8ac3-6b32a45fbb99": {
+        "akc_id": "33241c50-8e27-4909-8ac3-6b32a45fbb99",
+        "life_event": "a914cf7e-9c00-4c81-a200-351762d5e39c",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
         },
         "disease_stage": "Stage 3"
       },
-      "ImmuneExposure_T1D_034_DOID:9744": {
-        "akc_id": "09a8ee13-4379-4849-9442-d28e46b981e1",
-        "life_event": "a8e4338a-ee54-42e4-9d2a-a290349d90bc",
+      "6ffe6607-d9b7-46e2-9eea-1e078e797027": {
+        "akc_id": "6ffe6607-d9b7-46e2-9eea-1e078e797027",
+        "life_event": "587814b2-4863-48a9-9596-c70ab00b1687",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
         },
         "disease_stage": "Stage 3"
       },
-      "ImmuneExposure_T1D_035_DOID:9744": {
-        "akc_id": "6586fd3c-5ebe-4385-95e1-af49edc42ca4",
-        "life_event": "eeab5229-aa1f-4c74-aecc-f17f0522b20d",
+      "26309f12-1939-4c14-9e97-b8df80ecac6e": {
+        "akc_id": "26309f12-1939-4c14-9e97-b8df80ecac6e",
+        "life_event": "01185ce0-73eb-4c6e-856a-b662d6184bae",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
         },
         "disease_stage": "Stage 3"
       },
-      "ImmuneExposure_T1D_036_DOID:9744": {
-        "akc_id": "a26c3671-b413-49dc-8d91-4c030ff44997",
-        "life_event": "cf536a68-20bd-480e-8ec2-c2e92f51ede1",
+      "5a05ef05-cc9a-4fbc-be0f-7a8d58aaf46e": {
+        "akc_id": "5a05ef05-cc9a-4fbc-be0f-7a8d58aaf46e",
+        "life_event": "a8439416-b498-4d28-b1ff-162824c2fd3b",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
         },
         "disease_stage": "Stage 3"
       },
-      "ImmuneExposure_T1D_038_DOID:9744": {
-        "akc_id": "bb352943-a58e-4d4e-b448-78fc629ecc7b",
-        "life_event": "22a47a83-e7c4-4997-994a-5f671a76aaee",
+      "ceb335e5-1e80-4778-a305-4ede4466fca7": {
+        "akc_id": "ceb335e5-1e80-4778-a305-4ede4466fca7",
+        "life_event": "be8c48ad-a4ef-4419-9457-ca161f30e399",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
         },
         "disease_stage": "Stage 3"
       },
-      "ImmuneExposure_T1D_040_DOID:9744": {
-        "akc_id": "abeac8e0-5e2e-409b-a5d6-60b7ce6897ff",
-        "life_event": "edfcb3cb-5fad-4582-a740-64b395e030c9",
+      "b2f4cdd9-5dc9-44ed-821f-68fe24533e41": {
+        "akc_id": "b2f4cdd9-5dc9-44ed-821f-68fe24533e41",
+        "life_event": "305e6f8f-7f18-4bb7-bb9d-a0339c696bdd",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
         },
         "disease_stage": "Stage 3"
       },
-      "ImmuneExposure_T1D_029_DOID:9744": {
-        "akc_id": "7c7a5b31-4e61-4d88-b9d7-a2730437578a",
-        "life_event": "685cbbf7-b9a4-4fd6-82f7-bb1a12c719d2",
+      "b6cbdfa4-57da-4e63-9ad7-638ea9902d98": {
+        "akc_id": "b6cbdfa4-57da-4e63-9ad7-638ea9902d98",
+        "life_event": "19d1fca5-5267-4ba4-97f8-f3741aaa748d",
         "disease": {
           "label": "type 1 diabetes mellitus",
           "id": "DOID:9744"
@@ -689,150 +689,150 @@
       }
     },
     "specimens": {
-      "Specimen_HD_016_HD_016_GAD": {
-        "akc_id": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "d8210e05-8299-436f-946f-94550b9775f4": {
+        "akc_id": "d8210e05-8299-436f-946f-94550b9775f4",
         "name": "HD_016_GAD",
-        "life_event": "b94fe442-60ca-4d25-8eda-4f7a47f42cbd",
+        "life_event": "a6622250-8817-4ace-aed5-2f0996859911",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_HD_018_HD_018_GAD": {
-        "akc_id": "ee66c628-766d-4d13-a389-812642f16977",
+      "1fa4bad9-fca8-487a-9388-4333fd90b454": {
+        "akc_id": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "name": "HD_018_GAD",
-        "life_event": "61cf9a34-d36b-4b9c-8e8c-814ba6f70bb2",
+        "life_event": "07e8cded-c2fe-493c-8756-9a00d902bf59",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_HD_027_HD_027_GAD": {
-        "akc_id": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "49d9580d-e62e-42dc-8480-3473de331b28": {
+        "akc_id": "49d9580d-e62e-42dc-8480-3473de331b28",
         "name": "HD_027_GAD",
-        "life_event": "9f06d295-f9cd-4e61-a064-318bf5022828",
+        "life_event": "e42295c6-1aaa-45f5-bd91-7438a1e7f486",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_HD_034_HD_034_GAD": {
-        "akc_id": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "545bee80-1be9-43f3-a5d7-6e831fca54b7": {
+        "akc_id": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "name": "HD_034_GAD",
-        "life_event": "26fa139c-c579-49ca-a177-4b0db84f8e13",
+        "life_event": "cfc6cd6f-5785-4cea-a90b-f9158b1439f2",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_HD_035_HD_035_GAD": {
-        "akc_id": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8": {
+        "akc_id": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "name": "HD_035_GAD",
-        "life_event": "e5bf6914-59a2-4ab9-9205-9a2ebb1ebb43",
+        "life_event": "3dbbeb68-ceb1-4ae0-a035-940b17e2acb6",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_024_T1D_024_GAD": {
-        "akc_id": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3": {
+        "akc_id": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "name": "T1D_024_GAD",
-        "life_event": "3d450623-2763-46ee-bf54-a5a617d81e4d",
+        "life_event": "5880bb07-33c8-47e5-b6e5-269ca1beef3e",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_033_T1D_033_GAD": {
-        "akc_id": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "ea6f656d-c448-4274-aafb-93e4a476cac0": {
+        "akc_id": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "name": "T1D_033_GAD",
-        "life_event": "a87e386b-e6c7-4913-bff8-0376d9012a3f",
+        "life_event": "faf979ed-8c83-4ddd-a1f5-4222a6ed0d08",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000179"
         }
       },
-      "Specimen_T1D_034_T1D_034_GAD": {
-        "akc_id": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f": {
+        "akc_id": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "name": "T1D_034_GAD",
-        "life_event": "ca907307-e3ac-426c-8264-dfce2c2fdc92",
+        "life_event": "d363597e-e109-4bd4-ad2a-9ba2f8cf053f",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_035_T1D_035_GAD": {
-        "akc_id": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "0bf3568c-5c2d-4804-b331-3767e837e50f": {
+        "akc_id": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "name": "T1D_035_GAD",
-        "life_event": "d735eed6-1eca-4bdb-b75e-34824774ea7f",
+        "life_event": "992b1073-b83c-449d-ba11-acff1c6a764a",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_036_T1D_036_GAD": {
-        "akc_id": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "98452f92-3fb7-4410-9046-0d968cc9719a": {
+        "akc_id": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "name": "T1D_036_GAD",
-        "life_event": "38ab84d8-5880-47fd-a930-cb1461e88417",
+        "life_event": "dd25ade2-df91-40f4-b718-f7c39952c877",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_038_T1D_038_GAD": {
-        "akc_id": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "d538cc30-d6dd-4d52-ae02-28b43c4b3db3": {
+        "akc_id": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "name": "T1D_038_GAD",
-        "life_event": "e74799ce-d4c7-4731-95f8-5077da566d72",
+        "life_event": "0614791b-2590-48b6-a43d-9bec3f8bebd9",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_040_T1D_040_GAD": {
-        "akc_id": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "90374a4b-43ac-4d4f-a809-42c49237f75f": {
+        "akc_id": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "name": "T1D_040_GAD",
-        "life_event": "a535db38-923e-49e3-81ed-c7bd59ce4187",
+        "life_event": "fa9a1415-b795-41e3-8c25-4863c489e4af",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_HD_035_HD_035_CMV": {
-        "akc_id": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "78b68bb5-bbc5-49e1-baf5-86a66ca4f002": {
+        "akc_id": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "name": "HD_035_CMV",
-        "life_event": "55e66f6d-5b4e-48f2-90ce-1d8eb89a4517",
+        "life_event": "2f469171-250d-41c6-98b5-dbb6c1e5fe76",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_029_T1D_029_CMV": {
-        "akc_id": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34": {
+        "akc_id": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "name": "T1D_029_CMV",
-        "life_event": "2c52566b-e91a-419d-8df5-e1e32b83fb3a",
+        "life_event": "d68c1cf5-d8c6-493b-9b59-70d0e38abdbd",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
         }
       },
-      "Specimen_T1D_034_T1D_034_CMV": {
-        "akc_id": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "1725253f-825c-4dbf-b673-fcf428b1f3bb": {
+        "akc_id": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "name": "T1D_034_CMV",
-        "life_event": "6fe5f01f-66c0-4006-9472-c39fe03b6fa1",
+        "life_event": "09385b75-a559-458e-813d-64218e86182c",
         "specimen_type": "peripheral venous puncture",
         "tissue": {
           "label": "blood",
@@ -841,9 +841,9 @@
       }
     },
     "specimen_processings": {
-      "CellIsolationProcessing_HD_016_HD_016_GAD_671a7a712820f084c2be9b80": {
-        "akc_id": "9b94d060-f044-4d22-bff4-4aed88a56f52",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "313489ad-691b-4d65-8838-ae1f460c5f97": {
+        "akc_id": "313489ad-691b-4d65-8838-ae1f460c5f97",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -860,20 +860,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_016_HD_016_GAD_671a7a712820f084c2be9b80": {
-        "akc_id": "0751fac9-4609-4e97-82fd-f1e0925afd9f",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "956208dd-b5c7-4e06-986c-06d1e5038533": {
+        "akc_id": "956208dd-b5c7-4e06-986c-06d1e5038533",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_016_HD_016_GAD_671a7a712820f084c2be9b80": {
-        "akc_id": "d065d1da-16d7-41e5-8167-f567a6fc0670",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "a88e7c13-76d5-41a8-855f-32ca47ffe86b": {
+        "akc_id": "a88e7c13-76d5-41a8-855f-32ca47ffe86b",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_018_HD_018_GAD_671a7a712820f084c2be9b81": {
-        "akc_id": "940b0b62-fd02-4088-b9a4-cf303bd200af",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "22550ed9-4c5b-4bfd-ad72-46f02d43a96f": {
+        "akc_id": "22550ed9-4c5b-4bfd-ad72-46f02d43a96f",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -890,20 +890,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_018_HD_018_GAD_671a7a712820f084c2be9b81": {
-        "akc_id": "29378bb8-43b6-4a32-9d4b-d8283672b31c",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "c48daa4a-2c91-4b84-aede-ede0a3efd4bf": {
+        "akc_id": "c48daa4a-2c91-4b84-aede-ede0a3efd4bf",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_018_HD_018_GAD_671a7a712820f084c2be9b81": {
-        "akc_id": "30dfdfd1-9503-45ea-8755-27d92e3789a5",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "51a8de7d-28ac-42ff-9303-600427d09957": {
+        "akc_id": "51a8de7d-28ac-42ff-9303-600427d09957",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_027_HD_027_GAD_671a7a712820f084c2be9b82": {
-        "akc_id": "385c8245-600c-441e-8b46-8103405deb1b",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "5d5e229f-8011-41e9-937a-9a511fdd42ab": {
+        "akc_id": "5d5e229f-8011-41e9-937a-9a511fdd42ab",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -920,20 +920,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_027_HD_027_GAD_671a7a712820f084c2be9b82": {
-        "akc_id": "361fe34f-e33c-453a-a4f2-aab5603daf95",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "2f429cd9-57db-442b-a2fd-b113d4fb895b": {
+        "akc_id": "2f429cd9-57db-442b-a2fd-b113d4fb895b",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_027_HD_027_GAD_671a7a712820f084c2be9b82": {
-        "akc_id": "5bbb9680-500b-403b-9691-9bf85967c531",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "b05c159b-e1cf-4d86-8758-2fa0111017e9": {
+        "akc_id": "b05c159b-e1cf-4d86-8758-2fa0111017e9",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_034_HD_034_GAD_671a7a712820f084c2be9b83": {
-        "akc_id": "7ce45b57-925d-436d-ad05-fe88c58e096f",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "f3ee9cb0-1720-4a2e-b7e1-39a2fdba9ac0": {
+        "akc_id": "f3ee9cb0-1720-4a2e-b7e1-39a2fdba9ac0",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -950,20 +950,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_034_HD_034_GAD_671a7a712820f084c2be9b83": {
-        "akc_id": "ced75045-0ddc-48d4-8eb5-b38523ffad11",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "c894e1e1-896c-49ee-a653-6768487c10b4": {
+        "akc_id": "c894e1e1-896c-49ee-a653-6768487c10b4",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_034_HD_034_GAD_671a7a712820f084c2be9b83": {
-        "akc_id": "3205c2f1-b162-4593-a9f3-6ac7055a8d7f",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "0e93d5eb-4a81-4317-83ca-d8a405c8ff79": {
+        "akc_id": "0e93d5eb-4a81-4317-83ca-d8a405c8ff79",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_035_HD_035_GAD_671a7a722820f084c2be9b84": {
-        "akc_id": "15f306ac-004f-4d99-9ffa-98072303cd21",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "610e5733-492d-4664-9430-c786b8bad08b": {
+        "akc_id": "610e5733-492d-4664-9430-c786b8bad08b",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -980,20 +980,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_035_HD_035_GAD_671a7a722820f084c2be9b84": {
-        "akc_id": "6530db79-7134-4ad4-8aea-7ab2b054c9f4",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "f1fba685-f85b-4f26-b7a9-eb243bc1b516": {
+        "akc_id": "f1fba685-f85b-4f26-b7a9-eb243bc1b516",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_035_HD_035_GAD_671a7a722820f084c2be9b84": {
-        "akc_id": "7ccc38b7-db51-46da-bbab-9707931f6164",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "fb32a4bb-8e57-403c-bb82-42950f6ce630": {
+        "akc_id": "fb32a4bb-8e57-403c-bb82-42950f6ce630",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_024_T1D_024_GAD_671a7a722820f084c2be9b85": {
-        "akc_id": "e131650a-55bb-498a-a726-79cc79dbeec5",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "f278802b-0bf4-4126-8281-51dfaa41a8b5": {
+        "akc_id": "f278802b-0bf4-4126-8281-51dfaa41a8b5",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1010,20 +1010,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_024_T1D_024_GAD_671a7a722820f084c2be9b85": {
-        "akc_id": "49823820-715f-4077-ac58-059f112fc79e",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "b6cbcbbc-ea79-4ac5-beaf-ecc9a46418a2": {
+        "akc_id": "b6cbcbbc-ea79-4ac5-beaf-ecc9a46418a2",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_024_T1D_024_GAD_671a7a722820f084c2be9b85": {
-        "akc_id": "0c31326f-95a9-4ce8-bef9-322d0999546c",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "6db5f226-560b-4704-8e08-db308093ca90": {
+        "akc_id": "6db5f226-560b-4704-8e08-db308093ca90",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_033_T1D_033_GAD_671a7a722820f084c2be9b86": {
-        "akc_id": "3887f675-fc62-4d89-b778-fa7d02d6915b",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "c19221a1-c4f3-406f-b6fd-c71102b6da81": {
+        "akc_id": "c19221a1-c4f3-406f-b6fd-c71102b6da81",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1040,20 +1040,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_033_T1D_033_GAD_671a7a722820f084c2be9b86": {
-        "akc_id": "9b069b04-507d-499b-8081-4cb667fbe9b5",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "8ba2d2c0-ad94-4b1a-b362-c8a1e571a99e": {
+        "akc_id": "8ba2d2c0-ad94-4b1a-b362-c8a1e571a99e",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_033_T1D_033_GAD_671a7a722820f084c2be9b86": {
-        "akc_id": "dd3c2514-c80b-49c9-8ccb-01bb07461e0c",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "692937b4-cf01-45c4-9be7-28660f2ead3d": {
+        "akc_id": "692937b4-cf01-45c4-9be7-28660f2ead3d",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_034_T1D_034_GAD_671a7a732820f084c2be9b87": {
-        "akc_id": "5feb8ad9-4114-46e7-bfcb-e196425338a3",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "29a9b25d-9f01-4ee5-a867-3384d14b11e3": {
+        "akc_id": "29a9b25d-9f01-4ee5-a867-3384d14b11e3",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1070,20 +1070,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_034_T1D_034_GAD_671a7a732820f084c2be9b87": {
-        "akc_id": "4e9f57a9-ca90-4b82-b5c5-71615758bf0e",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "08ab20a9-a45e-4b98-a9df-690c60aafdc0": {
+        "akc_id": "08ab20a9-a45e-4b98-a9df-690c60aafdc0",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_034_T1D_034_GAD_671a7a732820f084c2be9b87": {
-        "akc_id": "2968449d-e840-46cb-b048-933f813eee3e",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "bbf1273f-1896-4d7b-bdab-a33fefd765c0": {
+        "akc_id": "bbf1273f-1896-4d7b-bdab-a33fefd765c0",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_035_T1D_035_GAD_671a7a732820f084c2be9b88": {
-        "akc_id": "004dd5fd-12f9-41f3-8d8c-2f1ebbf39660",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "0390a2fc-844e-404b-b111-fe818c7a4c16": {
+        "akc_id": "0390a2fc-844e-404b-b111-fe818c7a4c16",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1100,20 +1100,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_035_T1D_035_GAD_671a7a732820f084c2be9b88": {
-        "akc_id": "0674d804-fd35-43d9-9e98-62496ac02dfe",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "aa9deef7-b01c-4bdb-ab15-50b7393122a4": {
+        "akc_id": "aa9deef7-b01c-4bdb-ab15-50b7393122a4",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_035_T1D_035_GAD_671a7a732820f084c2be9b88": {
-        "akc_id": "a1fb4340-5349-4a25-a5b2-12fbf098dcca",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "5e7618ae-4abe-47e9-b0ae-bd5cc87ebb2b": {
+        "akc_id": "5e7618ae-4abe-47e9-b0ae-bd5cc87ebb2b",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_036_T1D_036_GAD_671a7a732820f084c2be9b89": {
-        "akc_id": "2f0d11c2-a485-4f99-9148-9b4fc6ea26cf",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "6881c583-9e7b-4104-b12a-788bfcefd1ca": {
+        "akc_id": "6881c583-9e7b-4104-b12a-788bfcefd1ca",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1130,20 +1130,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_036_T1D_036_GAD_671a7a732820f084c2be9b89": {
-        "akc_id": "455389e7-a84e-4ff9-9080-a32aaacd5057",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "98cb89ec-830c-4b09-8dfc-52a252a38623": {
+        "akc_id": "98cb89ec-830c-4b09-8dfc-52a252a38623",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_036_T1D_036_GAD_671a7a732820f084c2be9b89": {
-        "akc_id": "d4c925b9-eafd-4b84-aa0e-c487cdba1416",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "02cf25bc-dfa9-4c3b-8267-91ff6ec321ee": {
+        "akc_id": "02cf25bc-dfa9-4c3b-8267-91ff6ec321ee",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_038_T1D_038_GAD_671a7a742820f084c2be9b8a": {
-        "akc_id": "b68fa107-8fe0-4d3b-a04e-4749bd78deaf",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "d7ca7b64-fe8b-4f5a-8f2c-9e8ae218531a": {
+        "akc_id": "d7ca7b64-fe8b-4f5a-8f2c-9e8ae218531a",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1160,20 +1160,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_038_T1D_038_GAD_671a7a742820f084c2be9b8a": {
-        "akc_id": "a2660780-037d-4c10-8e5f-58647f2fa34d",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "463189d1-0497-4e93-8d80-b9b7cd2e0f31": {
+        "akc_id": "463189d1-0497-4e93-8d80-b9b7cd2e0f31",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_038_T1D_038_GAD_671a7a742820f084c2be9b8a": {
-        "akc_id": "69ee98c7-b009-4234-8bdd-0cd61b1e479a",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "77670910-f13d-4ced-a3d4-018ab05464a0": {
+        "akc_id": "77670910-f13d-4ced-a3d4-018ab05464a0",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_040_T1D_040_GAD_671a7a742820f084c2be9b8b": {
-        "akc_id": "d8408322-250c-4877-96d8-93b8ab448fa2",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "c9d925fe-6eda-41bb-80d2-235becf95146": {
+        "akc_id": "c9d925fe-6eda-41bb-80d2-235becf95146",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1190,20 +1190,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_040_T1D_040_GAD_671a7a742820f084c2be9b8b": {
-        "akc_id": "f754842a-8275-4a92-b962-db5ea1705f94",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "39e61917-676b-4ed3-ba83-024c0494aee7": {
+        "akc_id": "39e61917-676b-4ed3-ba83-024c0494aee7",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_040_T1D_040_GAD_671a7a742820f084c2be9b8b": {
-        "akc_id": "424bf467-5f34-48d8-82d9-7eece2f3cbce",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "7391b407-e1bb-4932-bff8-5891791cfcaa": {
+        "akc_id": "7391b407-e1bb-4932-bff8-5891791cfcaa",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_035_HD_035_CMV_671a7a742820f084c2be9b8c": {
-        "akc_id": "2bcdd01c-f57d-419a-9272-a58c4d159aa2",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "ade9f8e4-d620-4a4a-8128-34ef223728ac": {
+        "akc_id": "ade9f8e4-d620-4a4a-8128-34ef223728ac",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1220,20 +1220,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with CMV extract, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_035_HD_035_CMV_671a7a742820f084c2be9b8c": {
-        "akc_id": "c3756194-a184-4e3c-a501-23ed1845bd9d",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "cc54c19b-ed8f-4232-bfc0-0b3bd60e2504": {
+        "akc_id": "cc54c19b-ed8f-4232-bfc0-0b3bd60e2504",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_035_HD_035_CMV_671a7a742820f084c2be9b8c": {
-        "akc_id": "c20edc3c-1cae-4091-accb-efb70a7d99f9",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "0fbd5693-0337-4621-b790-de7348315436": {
+        "akc_id": "0fbd5693-0337-4621-b790-de7348315436",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_029_T1D_029_CMV_671a7a742820f084c2be9b8d": {
-        "akc_id": "40b3033a-eba3-41de-8d99-ce92fbab0678",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "632515a7-f583-4cf6-ab45-c130b0d5edf8": {
+        "akc_id": "632515a7-f583-4cf6-ab45-c130b0d5edf8",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1250,20 +1250,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with CMV extract, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_029_T1D_029_CMV_671a7a742820f084c2be9b8d": {
-        "akc_id": "a68a46e9-425f-47f9-9abd-2a8baf2d7e2d",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "d18989d4-bb18-4939-bdf3-76f19dfef7cd": {
+        "akc_id": "d18989d4-bb18-4939-bdf3-76f19dfef7cd",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_029_T1D_029_CMV_671a7a742820f084c2be9b8d": {
-        "akc_id": "3f2ddf41-5c6a-4c81-857d-b32b202a6430",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "c8be1d59-97a1-44be-ac94-2d423b93a078": {
+        "akc_id": "c8be1d59-97a1-44be-ac94-2d423b93a078",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_034_T1D_034_CMV_671a7a752820f084c2be9b8e": {
-        "akc_id": "09c95de2-599c-43ab-b15c-b43f10765357",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "7c5f4076-8664-42a3-9309-04845d3f9cc8": {
+        "akc_id": "7c5f4076-8664-42a3-9309-04845d3f9cc8",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1280,20 +1280,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with CMV extract, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_034_T1D_034_CMV_671a7a752820f084c2be9b8e": {
-        "akc_id": "c397c94c-dd20-4e98-89c8-249d3753c23f",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "e4d1202b-2f9f-4b77-8fda-112608630386": {
+        "akc_id": "e4d1202b-2f9f-4b77-8fda-112608630386",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_034_T1D_034_CMV_671a7a752820f084c2be9b8e": {
-        "akc_id": "9d987048-2c7c-4f9c-86c3-40acb7936e72",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "2a29d249-0932-4211-9a8d-b7b8277f5a01": {
+        "akc_id": "2a29d249-0932-4211-9a8d-b7b8277f5a01",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_016_HD_016_GAD_671a7a752820f084c2be9b8f": {
-        "akc_id": "8c7757bd-260b-4dde-b8b2-f8ad9f7a69dc",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "c4fb7c64-6973-4fc5-8e48-115cbc6bd6d2": {
+        "akc_id": "c4fb7c64-6973-4fc5-8e48-115cbc6bd6d2",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1310,20 +1310,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_016_HD_016_GAD_671a7a752820f084c2be9b8f": {
-        "akc_id": "c4c934bf-c501-46cb-b514-2f72b2db1d0c",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "89b77a63-c018-48cc-bf5d-60ac61a9db4f": {
+        "akc_id": "89b77a63-c018-48cc-bf5d-60ac61a9db4f",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_016_HD_016_GAD_671a7a752820f084c2be9b8f": {
-        "akc_id": "17152393-3c4b-4231-ba9d-286c4b45c3a8",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "1a6cc940-61df-4b94-a2bb-665d0545287e": {
+        "akc_id": "1a6cc940-61df-4b94-a2bb-665d0545287e",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_018_HD_018_GAD_671a7a752820f084c2be9b90": {
-        "akc_id": "3749b8e7-48a0-4f73-aeb2-e5bdaf6420b3",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "9b01e151-31d6-42df-9bbd-5c95dd83bed7": {
+        "akc_id": "9b01e151-31d6-42df-9bbd-5c95dd83bed7",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1340,20 +1340,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_018_HD_018_GAD_671a7a752820f084c2be9b90": {
-        "akc_id": "31748406-0c81-423f-bf35-fa4d3d22637b",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "e6e9a694-e2a1-4951-b62b-35baf822621c": {
+        "akc_id": "e6e9a694-e2a1-4951-b62b-35baf822621c",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_018_HD_018_GAD_671a7a752820f084c2be9b90": {
-        "akc_id": "a6549b95-574b-4a88-aff3-6cd0c66acfe5",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "957cdce6-e5ea-441f-9322-e8fe27190f80": {
+        "akc_id": "957cdce6-e5ea-441f-9322-e8fe27190f80",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_027_HD_027_GAD_671a7a762820f084c2be9b91": {
-        "akc_id": "fcd415eb-96eb-4ac1-af7f-dbaec3eed826",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "1b4eae4f-a665-473a-a3ff-25cb609e05dc": {
+        "akc_id": "1b4eae4f-a665-473a-a3ff-25cb609e05dc",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1370,20 +1370,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_027_HD_027_GAD_671a7a762820f084c2be9b91": {
-        "akc_id": "e09bb672-4b0b-454c-8000-adeec635a290",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "9fdb1e4a-22f6-4c5f-9118-0a4603aa7d44": {
+        "akc_id": "9fdb1e4a-22f6-4c5f-9118-0a4603aa7d44",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_027_HD_027_GAD_671a7a762820f084c2be9b91": {
-        "akc_id": "1deb06a9-fcaf-40c1-a62d-c5c9283c86ee",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "ec449bfb-57fb-44af-840d-b18909d4e9b9": {
+        "akc_id": "ec449bfb-57fb-44af-840d-b18909d4e9b9",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_034_HD_034_GAD_671a7a762820f084c2be9b92": {
-        "akc_id": "3cfaa2d6-259d-4082-8a36-7db95e6f9eab",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "e5b3d868-f0f1-421b-a286-38e9db7617f4": {
+        "akc_id": "e5b3d868-f0f1-421b-a286-38e9db7617f4",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1400,20 +1400,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_034_HD_034_GAD_671a7a762820f084c2be9b92": {
-        "akc_id": "b92f5751-3743-4d7b-8166-43f22ad123ab",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "220383ed-d370-49c9-a2fe-cf0432507d63": {
+        "akc_id": "220383ed-d370-49c9-a2fe-cf0432507d63",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_034_HD_034_GAD_671a7a762820f084c2be9b92": {
-        "akc_id": "8340ffbc-03a4-49a9-b43a-98e9a5296685",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "08755852-2cdc-4320-a1f2-69e98617f1e6": {
+        "akc_id": "08755852-2cdc-4320-a1f2-69e98617f1e6",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_035_HD_035_GAD_671a7a762820f084c2be9b93": {
-        "akc_id": "a4204881-b3b2-461a-8bcd-5ca48418a7e0",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "01b5f788-508d-4bfb-aa4f-8e83945e3269": {
+        "akc_id": "01b5f788-508d-4bfb-aa4f-8e83945e3269",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1430,20 +1430,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_035_HD_035_GAD_671a7a762820f084c2be9b93": {
-        "akc_id": "4af0f763-4190-4bc3-abe0-55d6e0e0d2ae",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "98dd8e08-bd9f-4c7d-96fd-8f80baacd67c": {
+        "akc_id": "98dd8e08-bd9f-4c7d-96fd-8f80baacd67c",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_035_HD_035_GAD_671a7a762820f084c2be9b93": {
-        "akc_id": "8ba84ffa-dffa-412b-90e3-df72e1887bee",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "81c0b05c-6398-421c-8829-7d20410adfea": {
+        "akc_id": "81c0b05c-6398-421c-8829-7d20410adfea",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_024_T1D_024_GAD_671a7a772820f084c2be9b94": {
-        "akc_id": "b98c9bc9-5242-435c-bfbe-009fa880e03e",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "e1cc4744-cd49-4e0f-8d46-a099665804ce": {
+        "akc_id": "e1cc4744-cd49-4e0f-8d46-a099665804ce",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1460,20 +1460,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_024_T1D_024_GAD_671a7a772820f084c2be9b94": {
-        "akc_id": "eace7029-f8b9-4c81-8f6d-5f49d937f474",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "50e75160-b029-4cca-8f41-14047eaebbed": {
+        "akc_id": "50e75160-b029-4cca-8f41-14047eaebbed",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_024_T1D_024_GAD_671a7a772820f084c2be9b94": {
-        "akc_id": "dbd7bfed-8563-43d0-b279-838daa4cbbb4",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "809f7b17-4cdd-47d3-a12b-3706d30e6fc2": {
+        "akc_id": "809f7b17-4cdd-47d3-a12b-3706d30e6fc2",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_033_T1D_033_GAD_671a7a772820f084c2be9b95": {
-        "akc_id": "a21d8d03-a4e9-42ef-98e4-de23bdd4ba2c",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "d29ffe2f-65b9-47a7-b967-1af1c2ec0b75": {
+        "akc_id": "d29ffe2f-65b9-47a7-b967-1af1c2ec0b75",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1490,20 +1490,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_033_T1D_033_GAD_671a7a772820f084c2be9b95": {
-        "akc_id": "da9aac30-8e00-4511-92d5-fa898b39e1f8",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "8d1c1ca8-51e2-47a4-98f0-c3a8a3833441": {
+        "akc_id": "8d1c1ca8-51e2-47a4-98f0-c3a8a3833441",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_033_T1D_033_GAD_671a7a772820f084c2be9b95": {
-        "akc_id": "c4158df2-4ee9-4cee-90c3-3fc7c90d5830",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "ec9790ff-f668-4f6b-bf76-ef9de8c56707": {
+        "akc_id": "ec9790ff-f668-4f6b-bf76-ef9de8c56707",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_034_T1D_034_GAD_671a7a772820f084c2be9b96": {
-        "akc_id": "ad56fcce-c2b8-44e6-9260-729fd37bd1c0",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "8779fcc9-2577-4b47-b88d-ddce87faf093": {
+        "akc_id": "8779fcc9-2577-4b47-b88d-ddce87faf093",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1520,20 +1520,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_034_T1D_034_GAD_671a7a772820f084c2be9b96": {
-        "akc_id": "20de1407-0f2b-4ad5-9dd2-5c5204cfb0ab",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "80f74b96-5f9d-4488-8271-f2d29185bfb9": {
+        "akc_id": "80f74b96-5f9d-4488-8271-f2d29185bfb9",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_034_T1D_034_GAD_671a7a772820f084c2be9b96": {
-        "akc_id": "07a8fca6-6c07-4c57-b957-38103cbeef39",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "1c6700e0-7fc4-48a3-8881-61edb4964c0c": {
+        "akc_id": "1c6700e0-7fc4-48a3-8881-61edb4964c0c",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_035_T1D_035_GAD_671a7a782820f084c2be9b97": {
-        "akc_id": "8188d714-d22a-4e97-8f27-9f082c28f4ed",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "7ed5f1d8-abe5-4451-ac7e-effe135fe709": {
+        "akc_id": "7ed5f1d8-abe5-4451-ac7e-effe135fe709",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1550,20 +1550,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_035_T1D_035_GAD_671a7a782820f084c2be9b97": {
-        "akc_id": "8aad434b-1fa5-4b95-b254-80c97947dea1",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "7c0e9f8f-483d-42ec-962d-979f219fff30": {
+        "akc_id": "7c0e9f8f-483d-42ec-962d-979f219fff30",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_035_T1D_035_GAD_671a7a782820f084c2be9b97": {
-        "akc_id": "b6001acf-396a-4dc2-9c5c-d9a79790ea9f",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "edc50ad4-aeb5-4fc2-b148-669a6b2546eb": {
+        "akc_id": "edc50ad4-aeb5-4fc2-b148-669a6b2546eb",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_036_T1D_036_GAD_671a7a782820f084c2be9b98": {
-        "akc_id": "e67a1e1a-2f14-4894-8e88-55c9c9793456",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "b72b9d1c-3efa-45df-b618-2c8cef821ae2": {
+        "akc_id": "b72b9d1c-3efa-45df-b618-2c8cef821ae2",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1580,20 +1580,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_036_T1D_036_GAD_671a7a782820f084c2be9b98": {
-        "akc_id": "df0a6bb9-576d-4fe6-b74f-6681260749bb",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "96fd35db-5cc0-4f45-acec-3b49f797df98": {
+        "akc_id": "96fd35db-5cc0-4f45-acec-3b49f797df98",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_036_T1D_036_GAD_671a7a782820f084c2be9b98": {
-        "akc_id": "bce3e326-89a7-4655-bcfb-fc492d42feb2",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "09b01d8d-b54e-4dfd-aec8-81c95c12eb9d": {
+        "akc_id": "09b01d8d-b54e-4dfd-aec8-81c95c12eb9d",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_038_T1D_038_GAD_671a7a782820f084c2be9b99": {
-        "akc_id": "c72d89b5-27e0-4ef2-b669-25cb29949c66",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "d46fa676-d7ea-4314-beee-a33ce0ed4f6b": {
+        "akc_id": "d46fa676-d7ea-4314-beee-a33ce0ed4f6b",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1610,20 +1610,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_038_T1D_038_GAD_671a7a782820f084c2be9b99": {
-        "akc_id": "ee4b36b3-97af-40bb-b27d-6fdd62b95a61",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "d83564df-9c89-4f43-92d0-1cf9870a3cf2": {
+        "akc_id": "d83564df-9c89-4f43-92d0-1cf9870a3cf2",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_038_T1D_038_GAD_671a7a782820f084c2be9b99": {
-        "akc_id": "9468ae9f-4e2f-44a0-a243-cf8661197108",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "1d0eb39c-7b98-469b-9889-d68c4fdb538d": {
+        "akc_id": "1d0eb39c-7b98-469b-9889-d68c4fdb538d",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_040_T1D_040_GAD_671a7a782820f084c2be9b9a": {
-        "akc_id": "e69335d5-f5e6-4522-b711-90f32cd49129",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "172a107c-0d75-4329-b99b-ca1aaa1aa5d6": {
+        "akc_id": "172a107c-0d75-4329-b99b-ca1aaa1aa5d6",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1640,20 +1640,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with whole GAD, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_040_T1D_040_GAD_671a7a782820f084c2be9b9a": {
-        "akc_id": "5a7bd705-8137-4378-85ba-b402585c9c38",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "91ae7d02-3228-4901-a937-84bb2da10f1f": {
+        "akc_id": "91ae7d02-3228-4901-a937-84bb2da10f1f",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_040_T1D_040_GAD_671a7a782820f084c2be9b9a": {
-        "akc_id": "e168e736-e560-479b-9972-2edc0b6431bf",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "b0208020-71cb-4089-9fe5-e4d00fab1ae5": {
+        "akc_id": "b0208020-71cb-4089-9fe5-e4d00fab1ae5",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_HD_035_HD_035_CMV_671a7a792820f084c2be9b9b": {
-        "akc_id": "f8f87462-8c82-49cd-b9c3-3213e2c9e192",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "bc336e78-9828-451c-90a5-e3e7686f0be6": {
+        "akc_id": "bc336e78-9828-451c-90a5-e3e7686f0be6",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1670,20 +1670,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with CMV extract, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_HD_035_HD_035_CMV_671a7a792820f084c2be9b9b": {
-        "akc_id": "97be0bc7-9899-43fd-885e-71e8e34844c7",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "ea179a17-e530-4800-8c49-0a7e1956d4ea": {
+        "akc_id": "ea179a17-e530-4800-8c49-0a7e1956d4ea",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_HD_035_HD_035_CMV_671a7a792820f084c2be9b9b": {
-        "akc_id": "17942ba0-ea4a-4339-969b-e993273b11c9",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "a1671bf9-8f42-42c8-805c-7b22bb015d9f": {
+        "akc_id": "a1671bf9-8f42-42c8-805c-7b22bb015d9f",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_029_T1D_029_CMV_671a7a792820f084c2be9b9c": {
-        "akc_id": "bdf938d9-b03e-4dc2-83a7-67d678e52687",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "80118037-63ba-4277-968c-06a2dec760eb": {
+        "akc_id": "80118037-63ba-4277-968c-06a2dec760eb",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1700,20 +1700,20 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with CMV extract, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_029_T1D_029_CMV_671a7a792820f084c2be9b9c": {
-        "akc_id": "5dae03c1-6736-44b9-91ff-935a4cad0c9a",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "66cd5694-ecba-4c7e-80dd-900290e068d7": {
+        "akc_id": "66cd5694-ecba-4c7e-80dd-900290e068d7",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_029_T1D_029_CMV_671a7a792820f084c2be9b9c": {
-        "akc_id": "e974ab0e-2c04-4145-9a5d-854ce5513392",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "970d9443-40ce-4be7-8b35-16883d4a96fd": {
+        "akc_id": "970d9443-40ce-4be7-8b35-16883d4a96fd",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       },
-      "CellIsolationProcessing_T1D_034_T1D_034_CMV_671a7a792820f084c2be9b9d": {
-        "akc_id": "e19db8b1-9caf-4206-94bc-6a7a3de27ab7",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "f31768c0-d05d-469c-b633-37fc556b1332": {
+        "akc_id": "f31768c0-d05d-469c-b633-37fc556b1332",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "cell_subset": {
           "label": "CD4-positive, alpha-beta T cell",
           "id": "CL:0000624"
@@ -1730,22 +1730,22 @@
         "cell_isolation": "Cells were stained with fluorochrome labeled antibodies and then sorted on a BD FACSAria II flow cytometer",
         "cell_processing_protocol": "Fresh PBMCs were stimulated with CMV extract, live CD4+ CD154+ CD69+ cells single cell sorted into 96-well plates contaning RNAse-DNase-free PBS, snap-frozen in dry ice and stored at -80C until RT-PCR and PCR procedures"
       },
-      "NucleicAcidProcessing_T1D_034_T1D_034_CMV_671a7a792820f084c2be9b9d": {
-        "akc_id": "ff3cdc2c-78a4-4a99-9033-1ac5331ec7c1",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "668d4717-e4b5-4a98-891c-a7728b0e826a": {
+        "akc_id": "668d4717-e4b5-4a98-891c-a7728b0e826a",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "template_class": "RNA"
       },
-      "LibraryPreparationProcessing_T1D_034_T1D_034_CMV_671a7a792820f084c2be9b9d": {
-        "akc_id": "41f7a1a6-48c5-47e4-b4ef-d4f8c90e3006",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "3500def8-8132-4e94-b2ce-e23ae3c7c18f": {
+        "akc_id": "3500def8-8132-4e94-b2ce-e23ae3c7c18f",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "library_generation_method": "RT (random and oligo-dT)+PCR+Sanger",
         "library_generation_protocol": "Sorted cells. Then cDNA was synthesized directly from single cells using qScript cDNA Supermix (Quanta Biosciences). A first round of PCR was done on all cDNA using TATAA GrandMaster Mix in the presence of a mix of 31 tagged (HTSP-“tag”) variable region primers covering all subgroups of TCR Vα and Vβ genes, an alpha constant region primer, a beta constant region primer and 96 primers for preamplification of 48 genes of interest, including cytokines, transcription factors, chemokines and lineage markers. A second round PCR was performed separately for TCRA and TCRB on 3 μl of the first round product, using the HTSP-“tag”-primer and a nested constant region primer (for alpha or beta, depending on the PCR reaction), with Takara ExTaq. The PCR products were Sanger sequenced using the HTSP-tag primer"
       }
     },
     "assays": {
-      "ReceptorRepertoireSequencingAssay_HD_016_HD_016_GAD_671a7a712820f084c2be9b80": {
-        "akc_id": "ef392f3e-d417-475d-9750-326454ee6e60",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "a1c86548-d7fe-4442-b45e-a731f2359738": {
+        "akc_id": "a1c86548-d7fe-4442-b45e-a731f2359738",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1753,9 +1753,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_018_HD_018_GAD_671a7a712820f084c2be9b81": {
-        "akc_id": "917f6ab3-2254-4699-997a-db39a9142707",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "a5e3cd6d-2fb3-4b7f-9c45-4940bc88b85f": {
+        "akc_id": "a5e3cd6d-2fb3-4b7f-9c45-4940bc88b85f",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1763,9 +1763,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_027_HD_027_GAD_671a7a712820f084c2be9b82": {
-        "akc_id": "fbbef736-b11d-4db0-b640-ff6733b4972e",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "34e84cb8-93e6-43d5-afc2-68375f181c0b": {
+        "akc_id": "34e84cb8-93e6-43d5-afc2-68375f181c0b",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1773,9 +1773,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_034_HD_034_GAD_671a7a712820f084c2be9b83": {
-        "akc_id": "1e1fb7c3-6c66-465c-b001-b142763244b8",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "be8350a9-a651-4655-a2e3-c06804121ae1": {
+        "akc_id": "be8350a9-a651-4655-a2e3-c06804121ae1",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1783,9 +1783,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_035_HD_035_GAD_671a7a722820f084c2be9b84": {
-        "akc_id": "819675be-d49b-40a5-b748-204fadd71486",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "2a6ee0c1-76f8-4fd6-9cc2-bb56a1e5f5ae": {
+        "akc_id": "2a6ee0c1-76f8-4fd6-9cc2-bb56a1e5f5ae",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1793,9 +1793,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_024_T1D_024_GAD_671a7a722820f084c2be9b85": {
-        "akc_id": "91923c92-2a70-45e7-8feb-ea3859f37c5d",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "c1be6739-5478-433a-88b3-a8c4920bf8b6": {
+        "akc_id": "c1be6739-5478-433a-88b3-a8c4920bf8b6",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1803,9 +1803,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_033_T1D_033_GAD_671a7a722820f084c2be9b86": {
-        "akc_id": "c2f05b70-a2f7-4f2a-9f72-9acd04c3806b",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "88366306-61fd-4cb8-9892-bbba52e806a1": {
+        "akc_id": "88366306-61fd-4cb8-9892-bbba52e806a1",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1813,9 +1813,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_034_T1D_034_GAD_671a7a732820f084c2be9b87": {
-        "akc_id": "991da6e2-a658-4c0c-80cb-1ba5840ed377",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "1d5e6db8-124a-4337-8823-3661980c81d2": {
+        "akc_id": "1d5e6db8-124a-4337-8823-3661980c81d2",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1823,9 +1823,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_035_T1D_035_GAD_671a7a732820f084c2be9b88": {
-        "akc_id": "5a58ab5e-4461-401a-9013-5166bb2979e3",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "c7664d97-6f21-4fe5-8bc0-f0c130e01d93": {
+        "akc_id": "c7664d97-6f21-4fe5-8bc0-f0c130e01d93",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1833,9 +1833,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_036_T1D_036_GAD_671a7a732820f084c2be9b89": {
-        "akc_id": "7d8464f7-b2d4-4cab-97de-c86e49376a8e",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "b810ba87-ff97-4f2c-8121-0e5328420c29": {
+        "akc_id": "b810ba87-ff97-4f2c-8121-0e5328420c29",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1843,9 +1843,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_038_T1D_038_GAD_671a7a742820f084c2be9b8a": {
-        "akc_id": "d8591d1f-9bfa-466b-bc3f-78e0aac2c7bd",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "432ce672-d5da-49bf-aff0-5dc2c5e95c1c": {
+        "akc_id": "432ce672-d5da-49bf-aff0-5dc2c5e95c1c",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1853,9 +1853,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_040_T1D_040_GAD_671a7a742820f084c2be9b8b": {
-        "akc_id": "f65d7d4a-0295-4f94-ad9f-6ed61529802c",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "121bed08-528f-464e-8e97-2a7c0e53ddaa": {
+        "akc_id": "121bed08-528f-464e-8e97-2a7c0e53ddaa",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1863,9 +1863,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_035_HD_035_CMV_671a7a742820f084c2be9b8c": {
-        "akc_id": "0f5bcd89-d39a-430e-beec-9034a2c07ba4",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "c1e10dd0-ef67-4d6a-8f5a-d023c5d1bf30": {
+        "akc_id": "c1e10dd0-ef67-4d6a-8f5a-d023c5d1bf30",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1873,9 +1873,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_029_T1D_029_CMV_671a7a742820f084c2be9b8d": {
-        "akc_id": "bee5c2ad-3fc4-4a81-91cd-2e1385068a77",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "cb004ab0-8523-4757-822a-7660271273dc": {
+        "akc_id": "cb004ab0-8523-4757-822a-7660271273dc",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1883,9 +1883,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_034_T1D_034_CMV_671a7a752820f084c2be9b8e": {
-        "akc_id": "edea2dfb-2d7b-4b2c-8133-31fdb38a16e5",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "9572c556-4ebd-4a71-812c-8c459ee51f6c": {
+        "akc_id": "9572c556-4ebd-4a71-812c-8c459ee51f6c",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRB"
@@ -1893,9 +1893,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_016_HD_016_GAD_671a7a752820f084c2be9b8f": {
-        "akc_id": "e4163a16-c5ff-4cc3-adb4-79070064342a",
-        "specimen": "03426646-9bbb-4858-bac2-34c285dc5075",
+      "04b6e248-9a30-4adc-804f-3c81b62e0228": {
+        "akc_id": "04b6e248-9a30-4adc-804f-3c81b62e0228",
+        "specimen": "d8210e05-8299-436f-946f-94550b9775f4",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1903,9 +1903,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_018_HD_018_GAD_671a7a752820f084c2be9b90": {
-        "akc_id": "b825f935-d0d8-48e3-9b36-8cd997efef64",
-        "specimen": "ee66c628-766d-4d13-a389-812642f16977",
+      "918fc7bd-35bb-47c8-b338-e8e7cff0fb66": {
+        "akc_id": "918fc7bd-35bb-47c8-b338-e8e7cff0fb66",
+        "specimen": "1fa4bad9-fca8-487a-9388-4333fd90b454",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1913,9 +1913,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_027_HD_027_GAD_671a7a762820f084c2be9b91": {
-        "akc_id": "94eae913-684e-4ba6-bd85-5f28e4ff7c68",
-        "specimen": "823148b5-7fc2-44bf-b818-b959bbf164bd",
+      "36e5583f-3cd6-417b-bb49-25c4c3614ae0": {
+        "akc_id": "36e5583f-3cd6-417b-bb49-25c4c3614ae0",
+        "specimen": "49d9580d-e62e-42dc-8480-3473de331b28",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1923,9 +1923,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_034_HD_034_GAD_671a7a762820f084c2be9b92": {
-        "akc_id": "4b157c88-94f8-44d3-8a75-60257f8500aa",
-        "specimen": "ddbb5a05-00a0-4307-b309-fa9448162176",
+      "e9b5be88-995f-433a-b0d2-039586e51d95": {
+        "akc_id": "e9b5be88-995f-433a-b0d2-039586e51d95",
+        "specimen": "545bee80-1be9-43f3-a5d7-6e831fca54b7",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1933,9 +1933,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_035_HD_035_GAD_671a7a762820f084c2be9b93": {
-        "akc_id": "2e6e33a5-5f11-4c7e-b1f7-200d9c64e4db",
-        "specimen": "6bf659c8-61ff-4252-9fac-fac4ae4bda95",
+      "d3b74d07-1a5d-489a-9605-a176a134bf69": {
+        "akc_id": "d3b74d07-1a5d-489a-9605-a176a134bf69",
+        "specimen": "9a8dcd0d-b07d-4133-ae80-2ffe1c0d71e8",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1943,9 +1943,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_024_T1D_024_GAD_671a7a772820f084c2be9b94": {
-        "akc_id": "26d76549-34de-4153-a2cc-3731870078ac",
-        "specimen": "c0a32c42-8e39-46e3-939a-372e47f6d4d8",
+      "ffb175a9-ddac-4ab7-94f6-5c89d2ed12c8": {
+        "akc_id": "ffb175a9-ddac-4ab7-94f6-5c89d2ed12c8",
+        "specimen": "dfa59d9e-3c8b-4f47-a1cb-1a93939e11e3",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1953,9 +1953,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_033_T1D_033_GAD_671a7a772820f084c2be9b95": {
-        "akc_id": "e9c22591-64dd-40b7-98a5-5df01b3a5034",
-        "specimen": "5d604cc5-7d56-49ef-8fcb-da66a74e3a2d",
+      "c09a48da-b810-46e6-9d30-779a08a52366": {
+        "akc_id": "c09a48da-b810-46e6-9d30-779a08a52366",
+        "specimen": "ea6f656d-c448-4274-aafb-93e4a476cac0",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1963,9 +1963,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_034_T1D_034_GAD_671a7a772820f084c2be9b96": {
-        "akc_id": "994e9536-2409-487e-9591-4fa3e4811a86",
-        "specimen": "828d3f55-666c-499e-8dda-20271ce49e05",
+      "965142d0-a821-4ac8-8eea-aa0f8f932d50": {
+        "akc_id": "965142d0-a821-4ac8-8eea-aa0f8f932d50",
+        "specimen": "dcf5c114-5095-49bc-9cfd-7ef8729d5e1f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1973,9 +1973,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_035_T1D_035_GAD_671a7a782820f084c2be9b97": {
-        "akc_id": "b8da3f2f-fcbf-4dc9-ac79-0fa25cccd8e1",
-        "specimen": "bbc6a51d-e76a-4f6d-8ed3-068cd5c3b0bf",
+      "79c52361-a341-4af8-abd2-9d54bf2e602a": {
+        "akc_id": "79c52361-a341-4af8-abd2-9d54bf2e602a",
+        "specimen": "0bf3568c-5c2d-4804-b331-3767e837e50f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1983,9 +1983,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_036_T1D_036_GAD_671a7a782820f084c2be9b98": {
-        "akc_id": "d457399e-0e85-47fb-b77c-cb0eb369baf9",
-        "specimen": "3430441c-5d58-4d5e-9524-7a41bc03f36f",
+      "78dbc312-076e-44ec-b26a-0741eb98f4fa": {
+        "akc_id": "78dbc312-076e-44ec-b26a-0741eb98f4fa",
+        "specimen": "98452f92-3fb7-4410-9046-0d968cc9719a",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -1993,9 +1993,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_038_T1D_038_GAD_671a7a782820f084c2be9b99": {
-        "akc_id": "9bbbddf6-0139-427c-8f99-1c6315577ad3",
-        "specimen": "fa290a68-c7e8-4bfe-9c95-2f79e7a2dc75",
+      "8e36e936-6b29-4763-8010-616b6287e11b": {
+        "akc_id": "8e36e936-6b29-4763-8010-616b6287e11b",
+        "specimen": "d538cc30-d6dd-4d52-ae02-28b43c4b3db3",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -2003,9 +2003,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_040_T1D_040_GAD_671a7a782820f084c2be9b9a": {
-        "akc_id": "4366aabc-b3af-4216-ad2f-e6d78b31c685",
-        "specimen": "88272b16-9f58-41ab-8b41-488b5674ec27",
+      "0ae34fb7-c788-486a-85c6-9cf41f26e1fc": {
+        "akc_id": "0ae34fb7-c788-486a-85c6-9cf41f26e1fc",
+        "specimen": "90374a4b-43ac-4d4f-a809-42c49237f75f",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -2013,9 +2013,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_HD_035_HD_035_CMV_671a7a792820f084c2be9b9b": {
-        "akc_id": "f45678cb-ec30-4c69-8d69-17d96b447901",
-        "specimen": "19d456ef-ca4f-4748-b31f-9f2a22ceed09",
+      "3ace3509-d333-4c82-8fa9-532301000c77": {
+        "akc_id": "3ace3509-d333-4c82-8fa9-532301000c77",
+        "specimen": "78b68bb5-bbc5-49e1-baf5-86a66ca4f002",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -2023,9 +2023,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_029_T1D_029_CMV_671a7a792820f084c2be9b9c": {
-        "akc_id": "e5eaeac3-c13f-4d57-9a5d-29240b1a3096",
-        "specimen": "51b1b969-bb92-4427-af4e-e86ad475b616",
+      "9649194b-04bb-44e4-8965-7d293e9f9091": {
+        "akc_id": "9649194b-04bb-44e4-8965-7d293e9f9091",
+        "specimen": "e90cbfb8-403c-4a4d-a5eb-1dd7172d7e34",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
@@ -2033,9 +2033,9 @@
         "complete_sequences": "partial",
         "physical_linkage": "none"
       },
-      "ReceptorRepertoireSequencingAssay_T1D_034_T1D_034_CMV_671a7a792820f084c2be9b9d": {
-        "akc_id": "a307fea6-7fad-4be7-9cd0-2e0661be9f2b",
-        "specimen": "924decd9-8181-403b-85a7-d039a2fc0ea2",
+      "a19e2e5a-44b5-4df4-9f8a-2967e2130cda": {
+        "akc_id": "a19e2e5a-44b5-4df4-9f8a-2967e2130cda",
+        "specimen": "1725253f-825c-4dbf-b673-fcf428b1f3bb",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "TRA"
