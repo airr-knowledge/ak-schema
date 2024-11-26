@@ -1,0 +1,1049 @@
+{
+  "AIRRKnowledgeCommons": {
+    "investigations": {
+      "": {
+        "akc_id": ""
+      },
+      "Investigation_PRJNA248411": {
+        "akc_id": "2020b0e2-a2a1-4fed-ba87-228cc98c920d",
+        "name": "Palanichamy et al., Immunoglobulin class-switched B cells provide an active immune axis between CNS and periphery in multiple sclerosis",
+        "description": "Multiple Sclerosis Study",
+        "study_type": {
+          "label": "Study",
+          "id": "NCIT:C63536"
+        },
+        "archival_id": "PRJNA248411",
+        "participants": [
+          "95b6419e-500c-45c5-a26a-745fa33f5311",
+          "b762a940-a543-4762-8825-fc597bb86456",
+          "190641d5-85d7-4534-be81-b787cc918275",
+          "fec14246-476c-4bb1-a9f7-910168618b30",
+          "7c54b404-1f83-40c2-8793-c16eee79c766",
+          "d3120134-0441-43eb-831a-6f38dbc162ac",
+          "a8258f23-f3e3-49e9-b94a-c0c7f7b0e5f2",
+          "a7f127c7-0c35-4a75-b0c1-39132d8898aa"
+        ],
+        "assays": [
+          "1a19ea6e-9ed1-42ef-bc84-fd3074f22a87",
+          "e4e72c9b-dd8d-4158-a407-3649dba2def3",
+          "5d78867b-5b96-424c-896e-f7fbccb75db5",
+          "ae18cbef-bd40-49cd-9b3c-cf57d1138eda",
+          "fef18815-6eaf-41c2-b541-f7f631f72c8e",
+          "4a62f82c-67bd-4117-83b5-7ae8d01d4bc9",
+          "097ba019-1808-4425-a305-b4620190d01d",
+          "7d23ec1e-1638-495a-9390-736cc1ce1fa8",
+          "0e3d7413-84e4-4a79-95e1-80bf8cc00e24",
+          "feec182d-a56d-44fd-9ea2-63c86509b8da",
+          "6ead4288-62f1-4315-ab99-dbae317814d3",
+          "2f6d4f4e-8285-4fb7-8e47-77ad8f98e55e",
+          "a74624f6-185b-4188-a22b-8bd3cc01df6d",
+          "853a6e05-6fcb-409e-9f51-7acd0e9b4964",
+          "595ebccd-bd72-4605-8c0f-94087dd2e98e",
+          "ebbfccbf-1f02-4d17-b2bf-b6dc2ce88c8c"
+        ],
+        "documents": [
+          "a6f72fe8-5f96-4db5-aaf8-3bcb1fab3149"
+        ]
+      }
+    },
+    "references": {
+      "Reference_PRJNA248411": {
+        "source_uri": "",
+        "sources": "PMID: 25100740",
+        "investigations": [
+          "",
+          "2020b0e2-a2a1-4fed-ba87-228cc98c920d"
+        ],
+        "akc_id": "a6f72fe8-5f96-4db5-aaf8-3bcb1fab3149"
+      }
+    },
+    "study_arms": {
+      "StudyArm_Case": {
+        "akc_id": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "name": "Case",
+        "investigation": "2020b0e2-a2a1-4fed-ba87-228cc98c920d"
+      }
+    },
+    "participants": {
+      "Participant_43213": {
+        "akc_id": "95b6419e-500c-45c5-a26a-745fa33f5311",
+        "name": "43213",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age": 34,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      },
+      "Participant_26712": {
+        "akc_id": "b762a940-a543-4762-8825-fc597bb86456",
+        "name": "26712",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age": 54,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      },
+      "Participant_29612": {
+        "akc_id": "190641d5-85d7-4534-be81-b787cc918275",
+        "name": "29612",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 22,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      },
+      "Participant_30512": {
+        "akc_id": "fec14246-476c-4bb1-a9f7-910168618b30",
+        "name": "30512",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 34,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      },
+      "Participant_34012": {
+        "akc_id": "7c54b404-1f83-40c2-8793-c16eee79c766",
+        "name": "34012",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 43,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      },
+      "Participant_31012": {
+        "akc_id": "d3120134-0441-43eb-831a-6f38dbc162ac",
+        "name": "31012",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age": 37,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      },
+      "Participant_14711": {
+        "akc_id": "a8258f23-f3e3-49e9-b94a-c0c7f7b0e5f2",
+        "name": "14711",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 20,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      },
+      "Participant_43113": {
+        "akc_id": "a7f127c7-0c35-4a75-b0c1-39132d8898aa",
+        "name": "43113",
+        "study_arm": "2898b607-dbe3-4123-9fd0-5162b7fd1bd9",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age": 31,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        }
+      }
+    },
+    "life_events": {
+      "LifeEvent_Participant_43213_43213_CSF": {
+        "akc_id": "ee2e5386-21c9-4e59-9a3e-5257793aa382",
+        "participant": "95b6419e-500c-45c5-a26a-745fa33f5311"
+      },
+      "LifeEvent_ImmuneExposure_43213_43213_CSF": {
+        "akc_id": "1ba891b8-30a0-4c1b-a8c4-03e586f1e382",
+        "participant": "95b6419e-500c-45c5-a26a-745fa33f5311"
+      },
+      "LifeEvent_Specimen_43213_43213_CSF": {
+        "akc_id": "623ccba9-81a6-4ad7-b510-2d5b5ab87ce7",
+        "participant": "95b6419e-500c-45c5-a26a-745fa33f5311",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_26712_26712_PBMC": {
+        "akc_id": "396c4019-e3be-420f-a52a-3165dc07f776",
+        "participant": "b762a940-a543-4762-8825-fc597bb86456"
+      },
+      "LifeEvent_ImmuneExposure_26712_26712_PBMC": {
+        "akc_id": "301994a2-ccfc-4c3b-b5b1-2b29017a1242",
+        "participant": "b762a940-a543-4762-8825-fc597bb86456"
+      },
+      "LifeEvent_Specimen_26712_26712_PBMC": {
+        "akc_id": "09558e1f-da50-45f2-a5fe-c608552787fa",
+        "participant": "b762a940-a543-4762-8825-fc597bb86456",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_29612_29612_CSF": {
+        "akc_id": "9ce83f74-8576-42bd-a4c4-3db07093f549",
+        "participant": "190641d5-85d7-4534-be81-b787cc918275"
+      },
+      "LifeEvent_ImmuneExposure_29612_29612_CSF": {
+        "akc_id": "ed083225-6cb0-4a76-8f66-7e65feb7b642",
+        "participant": "190641d5-85d7-4534-be81-b787cc918275"
+      },
+      "LifeEvent_Specimen_29612_29612_CSF": {
+        "akc_id": "f4081e62-77e8-4716-8834-61a7213b29c3",
+        "participant": "190641d5-85d7-4534-be81-b787cc918275",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_30512_30512_PBMC": {
+        "akc_id": "512fdf08-771c-4024-bf7f-bc19873fa14d",
+        "participant": "fec14246-476c-4bb1-a9f7-910168618b30"
+      },
+      "LifeEvent_ImmuneExposure_30512_30512_PBMC": {
+        "akc_id": "4fe8aa6a-ec1f-4255-9a98-ef81ddf5db45",
+        "participant": "fec14246-476c-4bb1-a9f7-910168618b30"
+      },
+      "LifeEvent_Specimen_30512_30512_PBMC": {
+        "akc_id": "7aacfd71-3869-4aa9-89c5-463c6652d1bc",
+        "participant": "fec14246-476c-4bb1-a9f7-910168618b30",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_34012_34012_CSF": {
+        "akc_id": "4d716428-f455-4815-818f-f2d1a8220672",
+        "participant": "7c54b404-1f83-40c2-8793-c16eee79c766"
+      },
+      "LifeEvent_ImmuneExposure_34012_34012_CSF": {
+        "akc_id": "80bd259f-e065-49f1-a6e0-0b9a3c2d9f85",
+        "participant": "7c54b404-1f83-40c2-8793-c16eee79c766"
+      },
+      "LifeEvent_Specimen_34012_34012_CSF": {
+        "akc_id": "3684d501-681d-4ba4-af84-91cdee85214e",
+        "participant": "7c54b404-1f83-40c2-8793-c16eee79c766",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_31012_31012_CSF": {
+        "akc_id": "b4755a7a-e7a9-48e5-aa62-28bf0a5f7ac8",
+        "participant": "d3120134-0441-43eb-831a-6f38dbc162ac"
+      },
+      "LifeEvent_ImmuneExposure_31012_31012_CSF": {
+        "akc_id": "697500cd-537c-4dd0-b97f-f9de5139cb58",
+        "participant": "d3120134-0441-43eb-831a-6f38dbc162ac"
+      },
+      "LifeEvent_Specimen_31012_31012_CSF": {
+        "akc_id": "c4f0e9b1-b4bb-4386-af35-65de84222dd1",
+        "participant": "d3120134-0441-43eb-831a-6f38dbc162ac",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_43213_43213_PBMC": {
+        "akc_id": "e10f13ac-ab88-443f-9119-d69e4bf144e4",
+        "participant": "95b6419e-500c-45c5-a26a-745fa33f5311",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_29612_ 29612_PBMC": {
+        "akc_id": "2325b294-b78f-443e-95b2-1770455ff77f",
+        "participant": "190641d5-85d7-4534-be81-b787cc918275",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_26712_26712_CSF": {
+        "akc_id": "b220a468-ee06-4709-a907-7a480f1c1fe3",
+        "participant": "b762a940-a543-4762-8825-fc597bb86456",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_34012_34012_PBMC": {
+        "akc_id": "efe121ba-953d-4f78-92cb-7d2a6b5b13b6",
+        "participant": "7c54b404-1f83-40c2-8793-c16eee79c766",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_31012_31012_PBMC": {
+        "akc_id": "78cae2f1-711a-4af7-9966-5017e1f19a07",
+        "participant": "d3120134-0441-43eb-831a-6f38dbc162ac",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_14711_14711_PBMC": {
+        "akc_id": "23b13442-0435-4302-ac0e-c87771eea326",
+        "participant": "a8258f23-f3e3-49e9-b94a-c0c7f7b0e5f2"
+      },
+      "LifeEvent_ImmuneExposure_14711_14711_PBMC": {
+        "akc_id": "d736c186-d783-4481-9a00-760c06e426d3",
+        "participant": "a8258f23-f3e3-49e9-b94a-c0c7f7b0e5f2"
+      },
+      "LifeEvent_Specimen_14711_14711_PBMC": {
+        "akc_id": "8b5dc856-a74b-4d45-85db-5869cbb103bc",
+        "participant": "a8258f23-f3e3-49e9-b94a-c0c7f7b0e5f2",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_30512_30512_CSF": {
+        "akc_id": "4d1db82f-c232-49eb-8a37-3d85fecd29c1",
+        "participant": "fec14246-476c-4bb1-a9f7-910168618b30",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_43113_43113_CSF": {
+        "akc_id": "305ae86f-f80d-4f4f-927c-7de850ff0d94",
+        "participant": "a7f127c7-0c35-4a75-b0c1-39132d8898aa"
+      },
+      "LifeEvent_ImmuneExposure_43113_43113_CSF": {
+        "akc_id": "cbfa9a95-990b-4dde-b359-a6e404022884",
+        "participant": "a7f127c7-0c35-4a75-b0c1-39132d8898aa"
+      },
+      "LifeEvent_Specimen_43113_43113_CSF": {
+        "akc_id": "38274798-e988-49f0-9e46-9a81a38b7c05",
+        "participant": "a7f127c7-0c35-4a75-b0c1-39132d8898aa",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_14711_14711_CSF": {
+        "akc_id": "d8c9cc30-93cc-4bc9-ac0d-56189263654c",
+        "participant": "a8258f23-f3e3-49e9-b94a-c0c7f7b0e5f2",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Specimen_43113_43113_PBMC": {
+        "akc_id": "06f7caff-3975-4f14-8989-c8bdb32df0b9",
+        "participant": "a7f127c7-0c35-4a75-b0c1-39132d8898aa",
+        "t0_event": "Sample collection"
+      }
+    },
+    "immune_exposures": {
+      "ImmuneExposure_43213_DOID:2377": {
+        "akc_id": "a3e3e861-eaeb-4282-abc9-5c8b7d11baa1",
+        "life_event": "1ba891b8-30a0-4c1b-a8c4-03e586f1e382",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      },
+      "ImmuneExposure_26712_DOID:2377": {
+        "akc_id": "b61c2875-1d58-4a76-8287-99a12a65e4ab",
+        "life_event": "301994a2-ccfc-4c3b-b5b1-2b29017a1242",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      },
+      "ImmuneExposure_29612_DOID:2377": {
+        "akc_id": "03378b26-1d34-429a-8864-d02b8c11712b",
+        "life_event": "ed083225-6cb0-4a76-8f66-7e65feb7b642",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      },
+      "ImmuneExposure_30512_DOID:2377": {
+        "akc_id": "394668ec-468e-4ca9-b007-10eeedc76d90",
+        "life_event": "4fe8aa6a-ec1f-4255-9a98-ef81ddf5db45",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      },
+      "ImmuneExposure_34012_DOID:2377": {
+        "akc_id": "11109de5-73cb-4925-a101-98e737de3493",
+        "life_event": "80bd259f-e065-49f1-a6e0-0b9a3c2d9f85",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      },
+      "ImmuneExposure_31012_DOID:2377": {
+        "akc_id": "c411166b-3b01-492c-a7a6-cb2376ee7c37",
+        "life_event": "697500cd-537c-4dd0-b97f-f9de5139cb58",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      },
+      "ImmuneExposure_14711_DOID:2377": {
+        "akc_id": "6044b8c6-1ff5-4749-82d8-e0a30d68f7cc",
+        "life_event": "d736c186-d783-4481-9a00-760c06e426d3",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      },
+      "ImmuneExposure_43113_DOID:2377": {
+        "akc_id": "c69d6b24-e1ab-4600-b630-bfe8174e9c47",
+        "life_event": "cbfa9a95-990b-4dde-b359-a6e404022884",
+        "disease": {
+          "label": "multiple sclerosis",
+          "id": "DOID:2377"
+        }
+      }
+    },
+    "specimens": {
+      "Specimen_43213_43213_CSF": {
+        "akc_id": "df2d87ed-19c2-42cb-a396-f17416ea3979",
+        "name": "43213_CSF",
+        "life_event": "623ccba9-81a6-4ad7-b510-2d5b5ab87ce7",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_26712_26712_PBMC": {
+        "akc_id": "3c78b14d-f601-4c62-b201-aa867a9cdb86",
+        "name": "26712_PBMC",
+        "life_event": "09558e1f-da50-45f2-a5fe-c608552787fa",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_29612_29612_CSF": {
+        "akc_id": "afdb7ac8-69e0-4fa1-a5f1-2cc65baef8c9",
+        "name": "29612_CSF",
+        "life_event": "f4081e62-77e8-4716-8834-61a7213b29c3",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_30512_30512_PBMC": {
+        "akc_id": "a4e48a59-4992-404b-910c-88af1ede1605",
+        "name": "30512_PBMC",
+        "life_event": "7aacfd71-3869-4aa9-89c5-463c6652d1bc",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_34012_34012_CSF": {
+        "akc_id": "a11e8d05-4868-4f90-9c2c-6487ac67886c",
+        "name": "34012_CSF",
+        "life_event": "3684d501-681d-4ba4-af84-91cdee85214e",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_31012_31012_CSF": {
+        "akc_id": "3250370b-c1c2-466b-8916-49fc8185a0e4",
+        "name": "31012_CSF",
+        "life_event": "c4f0e9b1-b4bb-4386-af35-65de84222dd1",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_43213_43213_PBMC": {
+        "akc_id": "22490e24-af2e-427a-8304-ea30c0f55389",
+        "name": "43213_PBMC",
+        "life_event": "e10f13ac-ab88-443f-9119-d69e4bf144e4",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_29612_ 29612_PBMC": {
+        "akc_id": "38aa9a73-cd49-4f39-86ef-44443458b49c",
+        "name": " 29612_PBMC",
+        "life_event": "2325b294-b78f-443e-95b2-1770455ff77f",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_26712_26712_CSF": {
+        "akc_id": "6aa21e51-e7c2-48ab-9c10-40792810acf0",
+        "name": "26712_CSF",
+        "life_event": "b220a468-ee06-4709-a907-7a480f1c1fe3",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_34012_34012_PBMC": {
+        "akc_id": "6dc50a94-c442-4321-b994-db25b1142363",
+        "name": "34012_PBMC",
+        "life_event": "efe121ba-953d-4f78-92cb-7d2a6b5b13b6",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_31012_31012_PBMC": {
+        "akc_id": "6ed97f6d-f3fb-486b-97db-1edc81d51046",
+        "name": "31012_PBMC",
+        "life_event": "78cae2f1-711a-4af7-9966-5017e1f19a07",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_14711_14711_PBMC": {
+        "akc_id": "e9de7678-97f8-4094-aaac-8e8ffd718208",
+        "name": "14711_PBMC",
+        "life_event": "8b5dc856-a74b-4d45-85db-5869cbb103bc",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_30512_30512_CSF": {
+        "akc_id": "48e51183-8ed7-40ff-a61f-8aa89b6fdee9",
+        "name": "30512_CSF",
+        "life_event": "4d1db82f-c232-49eb-8a37-3d85fecd29c1",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_43113_43113_CSF": {
+        "akc_id": "6918e481-bd66-4a8d-a0ce-c36db5795f16",
+        "name": "43113_CSF",
+        "life_event": "38274798-e988-49f0-9e46-9a81a38b7c05",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_14711_14711_CSF": {
+        "akc_id": "9bb65f40-6f83-43e1-b6f3-bd20830739bc",
+        "name": "14711_CSF",
+        "life_event": "d8c9cc30-93cc-4bc9-ac0d-56189263654c",
+        "tissue": {
+          "label": "cerebrospinal fluid",
+          "id": "UBERON:0001359"
+        }
+      },
+      "Specimen_43113_43113_PBMC": {
+        "akc_id": "b2d6212d-bb4b-4468-aca0-17851bf4b905",
+        "name": "43113_PBMC",
+        "life_event": "06f7caff-3975-4f14-8989-c8bdb32df0b9",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      }
+    },
+    "specimen_processings": {
+      "CellIsolationProcessing_43213_43213_CSF_392": {
+        "akc_id": "b3d57d9b-f0e0-4de6-8c8d-38100c3a730f",
+        "specimen": "df2d87ed-19c2-42cb-a396-f17416ea3979",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_43213_43213_CSF_392": {
+        "akc_id": "b79ac013-5315-42e3-ab05-da10be214cd5",
+        "specimen": "df2d87ed-19c2-42cb-a396-f17416ea3979",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_43213_43213_CSF_392": {
+        "akc_id": "d3a7e24e-91a0-4ac7-a1e1-495ecf95978a",
+        "specimen": "df2d87ed-19c2-42cb-a396-f17416ea3979",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_26712_26712_PBMC_407": {
+        "akc_id": "b4d5e071-249d-45a3-9dd4-ed339e9e1a3b",
+        "specimen": "3c78b14d-f601-4c62-b201-aa867a9cdb86",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_26712_26712_PBMC_407": {
+        "akc_id": "8e5c626d-93f4-440e-9ec2-923c5f11b2bc",
+        "specimen": "3c78b14d-f601-4c62-b201-aa867a9cdb86",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_26712_26712_PBMC_407": {
+        "akc_id": "5fff31be-7548-4dab-9eab-24ccb9a48281",
+        "specimen": "3c78b14d-f601-4c62-b201-aa867a9cdb86",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_29612_29612_CSF_397": {
+        "akc_id": "2c8e7aaa-2071-4c22-83e6-6efde1ed7ab3",
+        "specimen": "afdb7ac8-69e0-4fa1-a5f1-2cc65baef8c9",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_29612_29612_CSF_397": {
+        "akc_id": "3bade1ab-c6f1-470b-a022-e79f2fdbbf32",
+        "specimen": "afdb7ac8-69e0-4fa1-a5f1-2cc65baef8c9",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_29612_29612_CSF_397": {
+        "akc_id": "7436d0a6-c9fb-4e27-adbd-6e01e68748b4",
+        "specimen": "afdb7ac8-69e0-4fa1-a5f1-2cc65baef8c9",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_30512_30512_PBMC_404": {
+        "akc_id": "8ac8a0b7-a7de-4faf-8a17-b18dc41f5718",
+        "specimen": "a4e48a59-4992-404b-910c-88af1ede1605",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_30512_30512_PBMC_404": {
+        "akc_id": "72dab40c-a752-44de-b64d-fc35e0274bac",
+        "specimen": "a4e48a59-4992-404b-910c-88af1ede1605",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_30512_30512_PBMC_404": {
+        "akc_id": "c47c9a65-0d43-42ac-8705-7345c2c8a909",
+        "specimen": "a4e48a59-4992-404b-910c-88af1ede1605",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_34012_34012_CSF_394": {
+        "akc_id": "bd98d81f-78b1-4bfc-ba89-d1b0204ec123",
+        "specimen": "a11e8d05-4868-4f90-9c2c-6487ac67886c",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_34012_34012_CSF_394": {
+        "akc_id": "882cd818-c83b-45e0-a4b1-94ccf5b2975f",
+        "specimen": "a11e8d05-4868-4f90-9c2c-6487ac67886c",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_34012_34012_CSF_394": {
+        "akc_id": "9433a6af-03f8-4e38-ad8e-1e78fbd984f2",
+        "specimen": "a11e8d05-4868-4f90-9c2c-6487ac67886c",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_31012_31012_CSF_395": {
+        "akc_id": "0ed62e18-a22b-4032-b58a-301cddc3331f",
+        "specimen": "3250370b-c1c2-466b-8916-49fc8185a0e4",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_31012_31012_CSF_395": {
+        "akc_id": "52b07327-985a-4653-b7f1-b02ff38ce8ab",
+        "specimen": "3250370b-c1c2-466b-8916-49fc8185a0e4",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_31012_31012_CSF_395": {
+        "akc_id": "d0890f84-5ea0-4673-a39b-2ad2123bd473",
+        "specimen": "3250370b-c1c2-466b-8916-49fc8185a0e4",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_43213_43213_PBMC_400": {
+        "akc_id": "62f5957b-524a-46ff-8f78-3d2d0499a806",
+        "specimen": "22490e24-af2e-427a-8304-ea30c0f55389",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_43213_43213_PBMC_400": {
+        "akc_id": "7a062eee-b090-4553-946c-37863263cb8e",
+        "specimen": "22490e24-af2e-427a-8304-ea30c0f55389",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_43213_43213_PBMC_400": {
+        "akc_id": "cc49e769-d9e5-4718-bd0b-44ac19bbd6f7",
+        "specimen": "22490e24-af2e-427a-8304-ea30c0f55389",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_29612_ 29612_PBMC_405": {
+        "akc_id": "c2033477-3c0f-4e76-bbdb-86fb13585f7c",
+        "specimen": "38aa9a73-cd49-4f39-86ef-44443458b49c",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_29612_ 29612_PBMC_405": {
+        "akc_id": "058e4827-eb85-4024-9477-ab19259aa170",
+        "specimen": "38aa9a73-cd49-4f39-86ef-44443458b49c",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_29612_ 29612_PBMC_405": {
+        "akc_id": "cba8fdb4-ce18-4c4c-87f4-b1f55f828173",
+        "specimen": "38aa9a73-cd49-4f39-86ef-44443458b49c",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_26712_26712_CSF_398": {
+        "akc_id": "2f103e17-80d5-43e2-ad18-2d5cbf5cb214",
+        "specimen": "6aa21e51-e7c2-48ab-9c10-40792810acf0",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_26712_26712_CSF_398": {
+        "akc_id": "d5a39f88-876f-4c5c-aa54-d8949b73cc0a",
+        "specimen": "6aa21e51-e7c2-48ab-9c10-40792810acf0",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_26712_26712_CSF_398": {
+        "akc_id": "a0ec5864-26eb-4e5e-b41a-226cfc6cb4cd",
+        "specimen": "6aa21e51-e7c2-48ab-9c10-40792810acf0",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_34012_34012_PBMC_402": {
+        "akc_id": "cf06fa63-eccc-4953-b3f2-411d2d4c48ff",
+        "specimen": "6dc50a94-c442-4321-b994-db25b1142363",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_34012_34012_PBMC_402": {
+        "akc_id": "8a062aa5-ce14-45d9-81ec-d7800cd87424",
+        "specimen": "6dc50a94-c442-4321-b994-db25b1142363",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_34012_34012_PBMC_402": {
+        "akc_id": "0f75ab17-d61b-42f9-a2bd-51db788bb1c8",
+        "specimen": "6dc50a94-c442-4321-b994-db25b1142363",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_31012_31012_PBMC_403": {
+        "akc_id": "1823f413-004f-4570-a596-536d09fe580d",
+        "specimen": "6ed97f6d-f3fb-486b-97db-1edc81d51046",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_31012_31012_PBMC_403": {
+        "akc_id": "7cefbcca-ef02-4225-afff-7cccd9d702e4",
+        "specimen": "6ed97f6d-f3fb-486b-97db-1edc81d51046",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_31012_31012_PBMC_403": {
+        "akc_id": "e184668c-4932-4bd6-a25b-cb4ac9130423",
+        "specimen": "6ed97f6d-f3fb-486b-97db-1edc81d51046",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_14711_14711_PBMC_406": {
+        "akc_id": "a58b8eda-e160-40d7-bcc9-9432b45ec7d1",
+        "specimen": "e9de7678-97f8-4094-aaac-8e8ffd718208",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_14711_14711_PBMC_406": {
+        "akc_id": "531bca66-b28b-41d4-971d-1ef1ebf08f8a",
+        "specimen": "e9de7678-97f8-4094-aaac-8e8ffd718208",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_14711_14711_PBMC_406": {
+        "akc_id": "57cee72e-b524-4836-b0ba-d13570c520e4",
+        "specimen": "e9de7678-97f8-4094-aaac-8e8ffd718208",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_30512_30512_CSF_396": {
+        "akc_id": "28e80588-90a4-43c9-b428-d03973348041",
+        "specimen": "48e51183-8ed7-40ff-a61f-8aa89b6fdee9",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_30512_30512_CSF_396": {
+        "akc_id": "2554990c-7f55-4443-ac49-e7f244445e76",
+        "specimen": "48e51183-8ed7-40ff-a61f-8aa89b6fdee9",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_30512_30512_CSF_396": {
+        "akc_id": "5510e473-2193-40cf-b449-00bb146afc2c",
+        "specimen": "48e51183-8ed7-40ff-a61f-8aa89b6fdee9",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_43113_43113_CSF_393": {
+        "akc_id": "e99176f2-2c02-4b75-99b6-ac2c57ada454",
+        "specimen": "6918e481-bd66-4a8d-a0ce-c36db5795f16",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_43113_43113_CSF_393": {
+        "akc_id": "bb891ebc-392a-4b7b-bbf0-c89bfef9d7a0",
+        "specimen": "6918e481-bd66-4a8d-a0ce-c36db5795f16",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_43113_43113_CSF_393": {
+        "akc_id": "364398b3-d393-4e52-926d-c63c25fc62db",
+        "specimen": "6918e481-bd66-4a8d-a0ce-c36db5795f16",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_14711_14711_CSF_399": {
+        "akc_id": "b627ce68-2440-4810-852c-73884f4f9a0f",
+        "specimen": "9bb65f40-6f83-43e1-b6f3-bd20830739bc",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_14711_14711_CSF_399": {
+        "akc_id": "3d58f0f8-f918-44e5-803c-2ae935159188",
+        "specimen": "9bb65f40-6f83-43e1-b6f3-bd20830739bc",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_14711_14711_CSF_399": {
+        "akc_id": "94cef1da-a19c-49a2-a9b6-2d978fac9d96",
+        "specimen": "9bb65f40-6f83-43e1-b6f3-bd20830739bc",
+        "library_generation_method": "PCR"
+      },
+      "CellIsolationProcessing_43113_43113_PBMC_401": {
+        "akc_id": "049d2a0b-3d2a-4087-a484-4035e6c480cf",
+        "specimen": "b2d6212d-bb4b-4468-aca0-17851bf4b905",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cells_per_reaction": 1000000000,
+        "cell_storage": false
+      },
+      "NucleicAcidProcessing_43113_43113_PBMC_401": {
+        "akc_id": "c0fa293c-673a-453c-b7f4-206d56593735",
+        "specimen": "b2d6212d-bb4b-4468-aca0-17851bf4b905",
+        "template_class": "RNA"
+      },
+      "LibraryPreparationProcessing_43113_43113_PBMC_401": {
+        "akc_id": "b17cd46c-7d69-48c4-8100-a963c2d4b239",
+        "specimen": "b2d6212d-bb4b-4468-aca0-17851bf4b905",
+        "library_generation_method": "PCR"
+      }
+    },
+    "assays": {
+      "ReceptorRepertoireSequencingAssay_43213_43213_CSF_392": {
+        "akc_id": "1a19ea6e-9ed1-42ef-bc84-fd3074f22a87",
+        "specimen": "df2d87ed-19c2-42cb-a396-f17416ea3979",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_26712_26712_PBMC_407": {
+        "akc_id": "e4e72c9b-dd8d-4158-a407-3649dba2def3",
+        "specimen": "3c78b14d-f601-4c62-b201-aa867a9cdb86",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_29612_29612_CSF_397": {
+        "akc_id": "5d78867b-5b96-424c-896e-f7fbccb75db5",
+        "specimen": "afdb7ac8-69e0-4fa1-a5f1-2cc65baef8c9",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_30512_30512_PBMC_404": {
+        "akc_id": "ae18cbef-bd40-49cd-9b3c-cf57d1138eda",
+        "specimen": "a4e48a59-4992-404b-910c-88af1ede1605",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_34012_34012_CSF_394": {
+        "akc_id": "fef18815-6eaf-41c2-b541-f7f631f72c8e",
+        "specimen": "a11e8d05-4868-4f90-9c2c-6487ac67886c",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_31012_31012_CSF_395": {
+        "akc_id": "4a62f82c-67bd-4117-83b5-7ae8d01d4bc9",
+        "specimen": "3250370b-c1c2-466b-8916-49fc8185a0e4",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_43213_43213_PBMC_400": {
+        "akc_id": "097ba019-1808-4425-a305-b4620190d01d",
+        "specimen": "22490e24-af2e-427a-8304-ea30c0f55389",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_29612_ 29612_PBMC_405": {
+        "akc_id": "7d23ec1e-1638-495a-9390-736cc1ce1fa8",
+        "specimen": "38aa9a73-cd49-4f39-86ef-44443458b49c",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_26712_26712_CSF_398": {
+        "akc_id": "0e3d7413-84e4-4a79-95e1-80bf8cc00e24",
+        "specimen": "6aa21e51-e7c2-48ab-9c10-40792810acf0",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_34012_34012_PBMC_402": {
+        "akc_id": "feec182d-a56d-44fd-9ea2-63c86509b8da",
+        "specimen": "6dc50a94-c442-4321-b994-db25b1142363",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_31012_31012_PBMC_403": {
+        "akc_id": "6ead4288-62f1-4315-ab99-dbae317814d3",
+        "specimen": "6ed97f6d-f3fb-486b-97db-1edc81d51046",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_14711_14711_PBMC_406": {
+        "akc_id": "2f6d4f4e-8285-4fb7-8e47-77ad8f98e55e",
+        "specimen": "e9de7678-97f8-4094-aaac-8e8ffd718208",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_30512_30512_CSF_396": {
+        "akc_id": "a74624f6-185b-4188-a22b-8bd3cc01df6d",
+        "specimen": "48e51183-8ed7-40ff-a61f-8aa89b6fdee9",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_43113_43113_CSF_393": {
+        "akc_id": "853a6e05-6fcb-409e-9f51-7acd0e9b4964",
+        "specimen": "6918e481-bd66-4a8d-a0ce-c36db5795f16",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_14711_14711_CSF_399": {
+        "akc_id": "595ebccd-bd72-4605-8c0f-94087dd2e98e",
+        "specimen": "9bb65f40-6f83-43e1-b6f3-bd20830739bc",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_43113_43113_PBMC_401": {
+        "akc_id": "ebbfccbf-1f02-4d17-b2bf-b6dc2ce88c8c",
+        "specimen": "b2d6212d-bb4b-4468-aca0-17851bf4b905",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      }
+    }
+  },
+  "@type": "dict"
+}

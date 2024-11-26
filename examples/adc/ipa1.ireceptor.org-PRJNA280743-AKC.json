@@ -1,0 +1,1645 @@
+{
+  "AIRRKnowledgeCommons": {
+    "investigations": {
+      "": {
+        "akc_id": ""
+      },
+      "Investigation_PRJNA280743": {
+        "akc_id": "4267ffc0-18bc-4fae-bd99-a1378ec5632d",
+        "name": "Tipton et al., Diversity, cellular origin and autoreactivity of antibody-secreting cell population expansions in acute systemic lupus erythematosus",
+        "description": "SLE Study",
+        "study_type": {
+          "label": "Case-Control Study",
+          "id": "NCIT:C15197"
+        },
+        "archival_id": "PRJNA280743",
+        "participants": [
+          "34fa8de2-60c6-465f-821c-7f22c37cf2dc",
+          "218e1f2b-145b-40ae-8dd4-6d16d992f3ea",
+          "07703051-b830-4591-85c6-03d446690b2e",
+          "843423c7-a042-443f-a9b4-b5092f77d99f",
+          "bd433467-ee19-4ef2-81cb-a922063aa279",
+          "9d46c862-407a-4396-b966-099ce640589f",
+          "483ad13f-556c-4abc-817a-9ffdc4e5fdb4",
+          "d7e79bf1-e20f-4184-874d-af80feaba596",
+          "936298c7-c982-4ec2-9622-8e4022b787c0",
+          "9c2e46a6-d376-4a53-b48c-ea0d7314e9d3",
+          "bc61f5b0-1d94-4c0c-ab8d-bfb2f45c884f",
+          "450d3a10-2e0e-441e-b309-856258d715bf",
+          "a3b2f3c0-5ac3-4067-b5c1-f3224497f111",
+          "79c4680d-694e-4474-bf1d-5a6c2897ef52",
+          "17e5bbbf-1651-456b-a1b3-64ad8a66298b",
+          "63de0c75-fef8-4a2f-a26e-25be4fd7b484",
+          "874e3588-a2b2-4f3c-ac5a-c40aedf79427",
+          "ad324089-1e4d-48f9-97ee-6d1ed5e1efed",
+          "1c303933-63f6-4563-8c3e-181f8aab20e1"
+        ],
+        "assays": [
+          "6118d307-8bd7-4c63-8a50-afe82cdb1d0e",
+          "c3d4dad9-31b1-48f1-bd89-fb36006a8de0",
+          "f9e5da32-6234-48f6-9737-d977b4f9e3bd",
+          "e6014ac5-7722-4009-90cd-3e20c5d27435",
+          "47c9b2de-62f1-4227-80dd-e0415c7a941b",
+          "d9f8febe-8c88-43d8-86dd-ed6e23aca3ee",
+          "db55ef77-e900-408a-a26f-c7a9b13bc0e2",
+          "d255fb61-9019-4bc5-8f02-3dd0da558a6b",
+          "60304a66-05e0-4575-97c7-637993613342",
+          "1b62ff62-300c-40da-96f3-8696a54cfcaf",
+          "06e1b567-91a9-450a-a9e7-6b161f08453c",
+          "f7d71772-5f90-477e-b420-df9dc7d576a2",
+          "babb6427-1719-4032-9318-e391b0045b4c",
+          "a75a9919-d272-4b01-8be4-e9124263449a",
+          "6e4451a0-70ca-4dac-a6ff-d06e25df5fb9",
+          "4711eae2-6288-42b1-a959-59df46fd14d4",
+          "02bbd24b-7abb-402d-8ca3-282f92abf367",
+          "a850d9f2-a3e1-443b-a4cc-542392862b0c",
+          "87a0d559-807d-431f-af90-d055efb2b50d",
+          "ecd1c7b4-d0e6-47fa-a89d-6175271ca8cf"
+        ],
+        "documents": [
+          "779d4124-8b11-4bfc-8bc6-5860c5e56d2f"
+        ]
+      }
+    },
+    "references": {
+      "Reference_PRJNA280743": {
+        "source_uri": "",
+        "sources": "PMID: 26006014",
+        "investigations": [
+          "",
+          "4267ffc0-18bc-4fae-bd99-a1378ec5632d"
+        ],
+        "akc_id": "779d4124-8b11-4bfc-8bc6-5860c5e56d2f"
+      }
+    },
+    "study_arms": {
+      "StudyArm_Control (Healthy)": {
+        "akc_id": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "name": "Control (Healthy)",
+        "investigation": "4267ffc0-18bc-4fae-bd99-a1378ec5632d",
+        "inclusion_criteria": "8 healthy subjects, 4 with trivalent influenza vaccination and 4 with tetanus vaccination, 8 SLE patients experiecing acute flares."
+      },
+      "StudyArm_Case": {
+        "akc_id": "0e403132-da67-4edf-963e-fce90bb20764",
+        "name": "Case",
+        "investigation": "4267ffc0-18bc-4fae-bd99-a1378ec5632d",
+        "inclusion_criteria": "8 healthy subjects, 4 with trivalent influenza vaccination and 4 with tetanus vaccination, 8 SLE patients experiecing acute flares."
+      }
+    },
+    "participants": {
+      "Participant_TET1-42": {
+        "akc_id": "34fa8de2-60c6-465f-821c-7f22c37cf2dc",
+        "name": "TET1-42",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_SLE3-292": {
+        "akc_id": "218e1f2b-145b-40ae-8dd4-6d16d992f3ea",
+        "name": "SLE3-292",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_TET2-43": {
+        "akc_id": "07703051-b830-4591-85c6-03d446690b2e",
+        "name": "TET2-43",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_SLE6-161": {
+        "akc_id": "843423c7-a042-443f-a9b4-b5092f77d99f",
+        "name": "SLE6-161",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_SLE7-730": {
+        "akc_id": "bd433467-ee19-4ef2-81cb-a922063aa279",
+        "name": "SLE7-730",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_IGG2-337": {
+        "akc_id": "9d46c862-407a-4396-b966-099ce640589f",
+        "name": "IGG2-337",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_SLE5-262": {
+        "akc_id": "483ad13f-556c-4abc-817a-9ffdc4e5fdb4",
+        "name": "SLE5-262",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_FLU4-752": {
+        "akc_id": "d7e79bf1-e20f-4184-874d-af80feaba596",
+        "name": "FLU4-752",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_PEM2-20": {
+        "akc_id": "936298c7-c982-4ec2-9622-8e4022b787c0",
+        "name": "PEM2-20",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_SLE4-2037": {
+        "akc_id": "9c2e46a6-d376-4a53-b48c-ea0d7314e9d3",
+        "name": "SLE4-2037",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_FLU1-701": {
+        "akc_id": "bc61f5b0-1d94-4c0c-ab8d-bfb2f45c884f",
+        "name": "FLU1-701",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_TET4-47": {
+        "akc_id": "450d3a10-2e0e-441e-b309-856258d715bf",
+        "name": "TET4-47",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_FLU2-185": {
+        "akc_id": "a3b2f3c0-5ac3-4067-b5c1-f3224497f111",
+        "name": "FLU2-185",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_IGG1-267": {
+        "akc_id": "79c4680d-694e-4474-bf1d-5a6c2897ef52",
+        "name": "IGG1-267",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_SLE1-126": {
+        "akc_id": "17e5bbbf-1651-456b-a1b3-64ad8a66298b",
+        "name": "SLE1-126",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_TET3-45": {
+        "akc_id": "63de0c75-fef8-4a2f-a26e-25be4fd7b484",
+        "name": "TET3-45",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_PEM1-10": {
+        "akc_id": "874e3588-a2b2-4f3c-ac5a-c40aedf79427",
+        "name": "PEM1-10",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      },
+      "Participant_SLE2-178": {
+        "akc_id": "ad324089-1e4d-48f9-97ee-6d1ed5e1efed",
+        "name": "SLE2-178",
+        "study_arm": "0e403132-da67-4edf-963e-fce90bb20764",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "SLE flare"
+      },
+      "Participant_FLU3-188": {
+        "akc_id": "1c303933-63f6-4563-8c3e-181f8aab20e1",
+        "name": "FLU3-188",
+        "study_arm": "b9a29c7e-0853-4c48-8a64-8d01f3948da8",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age_event": "Vaccination"
+      }
+    },
+    "life_events": {
+      "LifeEvent_Participant_TET1-42_TET1-42": {
+        "akc_id": "ed03934f-c5fe-4854-adc4-35da9cabcb51",
+        "participant": "34fa8de2-60c6-465f-821c-7f22c37cf2dc"
+      },
+      "LifeEvent_ImmuneExposure_TET1-42_TET1-42": {
+        "akc_id": "fe54e0d3-2054-4931-afc7-938b59401ad4",
+        "participant": "34fa8de2-60c6-465f-821c-7f22c37cf2dc"
+      },
+      "LifeEvent_Specimen_TET1-42_TET1-42": {
+        "akc_id": "f9c91323-8db6-45db-b985-603ce94fb77d",
+        "participant": "34fa8de2-60c6-465f-821c-7f22c37cf2dc",
+        "t0_event": "Vaccination"
+      },
+      "LifeEvent_Participant_SLE3-292_SLE3-292": {
+        "akc_id": "d23b4be1-4a2c-49de-90a4-a0783da37b9d",
+        "participant": "218e1f2b-145b-40ae-8dd4-6d16d992f3ea"
+      },
+      "LifeEvent_ImmuneExposure_SLE3-292_SLE3-292": {
+        "akc_id": "d383f467-03a4-43b0-a30d-b08798ecfa5b",
+        "participant": "218e1f2b-145b-40ae-8dd4-6d16d992f3ea"
+      },
+      "LifeEvent_Specimen_SLE3-292_SLE3-292": {
+        "akc_id": "cbce0ecc-d489-47d6-b7b3-9ef880d046bb",
+        "participant": "218e1f2b-145b-40ae-8dd4-6d16d992f3ea",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_TET2-43_TET2-43": {
+        "akc_id": "3313dc0a-0bf1-4fcc-9400-a5b1544c157d",
+        "participant": "07703051-b830-4591-85c6-03d446690b2e"
+      },
+      "LifeEvent_ImmuneExposure_TET2-43_TET2-43": {
+        "akc_id": "ccc74502-e300-4cc0-8b44-437cdd85d68d",
+        "participant": "07703051-b830-4591-85c6-03d446690b2e"
+      },
+      "LifeEvent_Specimen_TET2-43_TET2-43": {
+        "akc_id": "38165ad9-6a60-4f57-be4d-96ddd93bd049",
+        "participant": "07703051-b830-4591-85c6-03d446690b2e",
+        "t0_event": "Vaccination"
+      },
+      "LifeEvent_Participant_SLE6-161_SLE6-161": {
+        "akc_id": "2eb62019-09e3-4183-8c67-47d9632bfcd5",
+        "participant": "843423c7-a042-443f-a9b4-b5092f77d99f"
+      },
+      "LifeEvent_ImmuneExposure_SLE6-161_SLE6-161": {
+        "akc_id": "197f4c48-f326-4a8e-8d7a-80e758e3f2cf",
+        "participant": "843423c7-a042-443f-a9b4-b5092f77d99f"
+      },
+      "LifeEvent_Specimen_SLE6-161_SLE6-161": {
+        "akc_id": "e855f981-9c19-4475-93ac-c0ae959248fe",
+        "participant": "843423c7-a042-443f-a9b4-b5092f77d99f",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_SLE7-730_SLE7-730": {
+        "akc_id": "94363b9e-51f4-48f9-b10d-e4e7815e6bfa",
+        "participant": "bd433467-ee19-4ef2-81cb-a922063aa279"
+      },
+      "LifeEvent_ImmuneExposure_SLE7-730_SLE7-730": {
+        "akc_id": "14836e83-000e-448b-84c5-6498c86c5eee",
+        "participant": "bd433467-ee19-4ef2-81cb-a922063aa279"
+      },
+      "LifeEvent_Specimen_SLE7-730_SLE7-730": {
+        "akc_id": "18cabadf-6291-4e83-9e98-78a2777e3516",
+        "participant": "bd433467-ee19-4ef2-81cb-a922063aa279",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_IGG2-337_IGG2-337": {
+        "akc_id": "085077a2-bf7e-4819-87ba-096f7f9c0531",
+        "participant": "9d46c862-407a-4396-b966-099ce640589f"
+      },
+      "LifeEvent_ImmuneExposure_IGG2-337_IGG2-337": {
+        "akc_id": "f095a4fe-9e6f-48bc-996e-6a6fae92808e",
+        "participant": "9d46c862-407a-4396-b966-099ce640589f"
+      },
+      "LifeEvent_Specimen_IGG2-337_IGG2-337": {
+        "akc_id": "dc40e84e-a1a0-4eeb-b266-2edd559675fc",
+        "participant": "9d46c862-407a-4396-b966-099ce640589f",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_SLE5-262_SLE5-262": {
+        "akc_id": "3188f190-c6f7-4ebe-a0eb-0eabbc66a104",
+        "participant": "483ad13f-556c-4abc-817a-9ffdc4e5fdb4"
+      },
+      "LifeEvent_ImmuneExposure_SLE5-262_SLE5-262": {
+        "akc_id": "add9f3e8-7d0a-4542-86ed-97b82b1dbe0f",
+        "participant": "483ad13f-556c-4abc-817a-9ffdc4e5fdb4"
+      },
+      "LifeEvent_Specimen_SLE5-262_SLE5-262": {
+        "akc_id": "622f7770-267c-4c09-b185-94e087b1f94e",
+        "participant": "483ad13f-556c-4abc-817a-9ffdc4e5fdb4",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_FLU4-752_FLU4-752": {
+        "akc_id": "b04eadfe-650c-4529-afcf-c54df12c61af",
+        "participant": "d7e79bf1-e20f-4184-874d-af80feaba596"
+      },
+      "LifeEvent_ImmuneExposure_FLU4-752_FLU4-752": {
+        "akc_id": "bd2efa05-6390-4547-9002-7f1ecaf6fa4d",
+        "participant": "d7e79bf1-e20f-4184-874d-af80feaba596"
+      },
+      "LifeEvent_Specimen_FLU4-752_FLU4-752": {
+        "akc_id": "e6cd62e7-a832-4cbe-affb-3b9cb9a81f71",
+        "participant": "d7e79bf1-e20f-4184-874d-af80feaba596",
+        "t0_event": "Vaccination"
+      },
+      "LifeEvent_Participant_PEM2-20_PEM2-20": {
+        "akc_id": "06483652-e523-4c96-98b9-58f6d06d9c9b",
+        "participant": "936298c7-c982-4ec2-9622-8e4022b787c0"
+      },
+      "LifeEvent_ImmuneExposure_PEM2-20_PEM2-20": {
+        "akc_id": "5162cb3a-cae2-4072-bd5b-b85bbf729614",
+        "participant": "936298c7-c982-4ec2-9622-8e4022b787c0"
+      },
+      "LifeEvent_Specimen_PEM2-20_PEM2-20": {
+        "akc_id": "29aae2a6-be3d-453c-bef5-ffd9afa3c210",
+        "participant": "936298c7-c982-4ec2-9622-8e4022b787c0",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_SLE4-2037_SLE4-2037": {
+        "akc_id": "c6ab6d68-6e5b-41b8-88ff-9583fda13f33",
+        "participant": "9c2e46a6-d376-4a53-b48c-ea0d7314e9d3"
+      },
+      "LifeEvent_ImmuneExposure_SLE4-2037_SLE4-2037": {
+        "akc_id": "1b66e7d3-5d6a-413c-89bc-b944c57fbf0c",
+        "participant": "9c2e46a6-d376-4a53-b48c-ea0d7314e9d3"
+      },
+      "LifeEvent_Specimen_SLE4-2037_SLE4-2037": {
+        "akc_id": "da8ee375-b816-4b27-8ec5-830ab240e497",
+        "participant": "9c2e46a6-d376-4a53-b48c-ea0d7314e9d3",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_FLU1-701_FLU1-701": {
+        "akc_id": "e0496561-5d5b-4230-a685-1257d63371cd",
+        "participant": "bc61f5b0-1d94-4c0c-ab8d-bfb2f45c884f"
+      },
+      "LifeEvent_ImmuneExposure_FLU1-701_FLU1-701": {
+        "akc_id": "cb324e4b-80a4-481f-8d08-e836328f3921",
+        "participant": "bc61f5b0-1d94-4c0c-ab8d-bfb2f45c884f"
+      },
+      "LifeEvent_Specimen_FLU1-701_FLU1-701": {
+        "akc_id": "745b738b-d290-490a-bef7-8aed7d6b861a",
+        "participant": "bc61f5b0-1d94-4c0c-ab8d-bfb2f45c884f",
+        "t0_event": "Vaccination"
+      },
+      "LifeEvent_Participant_TET4-47_TET4-47": {
+        "akc_id": "0648bc10-c7bc-4f14-a882-0880458ffd47",
+        "participant": "450d3a10-2e0e-441e-b309-856258d715bf"
+      },
+      "LifeEvent_ImmuneExposure_TET4-47_TET4-47": {
+        "akc_id": "334d20cd-5b1c-4973-bd80-552a7a8b8a87",
+        "participant": "450d3a10-2e0e-441e-b309-856258d715bf"
+      },
+      "LifeEvent_Specimen_TET4-47_TET4-47": {
+        "akc_id": "95c406c2-9828-407e-9fdb-6cc318f8f039",
+        "participant": "450d3a10-2e0e-441e-b309-856258d715bf",
+        "t0_event": "Vaccination"
+      },
+      "LifeEvent_Participant_FLU2-185_FLU2-185": {
+        "akc_id": "132cc9ce-b843-4ebb-805f-41eac9774e52",
+        "participant": "a3b2f3c0-5ac3-4067-b5c1-f3224497f111"
+      },
+      "LifeEvent_ImmuneExposure_FLU2-185_FLU2-185": {
+        "akc_id": "5ac94b6c-7a87-4355-8544-3116fb1e8dfd",
+        "participant": "a3b2f3c0-5ac3-4067-b5c1-f3224497f111"
+      },
+      "LifeEvent_Specimen_FLU2-185_FLU2-185": {
+        "akc_id": "77c88d51-ced8-4d7c-ac94-6f78203df300",
+        "participant": "a3b2f3c0-5ac3-4067-b5c1-f3224497f111",
+        "t0_event": "Vaccination"
+      },
+      "LifeEvent_Participant_IGG1-267_IGG1-267": {
+        "akc_id": "396b300e-f03d-4c79-8940-df159a1d8df5",
+        "participant": "79c4680d-694e-4474-bf1d-5a6c2897ef52"
+      },
+      "LifeEvent_ImmuneExposure_IGG1-267_IGG1-267": {
+        "akc_id": "8f510211-a91c-4b8a-9d4b-79c843ec5136",
+        "participant": "79c4680d-694e-4474-bf1d-5a6c2897ef52"
+      },
+      "LifeEvent_Specimen_IGG1-267_IGG1-267": {
+        "akc_id": "b386cd49-0824-45a2-a508-43485fa08be9",
+        "participant": "79c4680d-694e-4474-bf1d-5a6c2897ef52",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_SLE1-126_SLE1-126": {
+        "akc_id": "28835338-ec25-4195-bbb8-5d0cbf29e013",
+        "participant": "17e5bbbf-1651-456b-a1b3-64ad8a66298b"
+      },
+      "LifeEvent_ImmuneExposure_SLE1-126_SLE1-126": {
+        "akc_id": "6afb5fe2-1398-4e40-b0fd-742446605034",
+        "participant": "17e5bbbf-1651-456b-a1b3-64ad8a66298b"
+      },
+      "LifeEvent_Specimen_SLE1-126_SLE1-126": {
+        "akc_id": "470da99c-b564-430b-a708-6d119d9eafd3",
+        "participant": "17e5bbbf-1651-456b-a1b3-64ad8a66298b",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_TET3-45_TET3-45": {
+        "akc_id": "0dac5d47-3916-4380-8105-bf750be0f026",
+        "participant": "63de0c75-fef8-4a2f-a26e-25be4fd7b484"
+      },
+      "LifeEvent_ImmuneExposure_TET3-45_TET3-45": {
+        "akc_id": "f0e3f8a3-0083-4523-8014-eb039f5f6b84",
+        "participant": "63de0c75-fef8-4a2f-a26e-25be4fd7b484"
+      },
+      "LifeEvent_Specimen_TET3-45_TET3-45": {
+        "akc_id": "491257e6-1f20-4a23-af42-2865b4fc80be",
+        "participant": "63de0c75-fef8-4a2f-a26e-25be4fd7b484",
+        "t0_event": "Vaccination"
+      },
+      "LifeEvent_Participant_PEM1-10_PEM1-10": {
+        "akc_id": "e488ffbd-91a3-4c01-878a-aac0d6cc6118",
+        "participant": "874e3588-a2b2-4f3c-ac5a-c40aedf79427"
+      },
+      "LifeEvent_ImmuneExposure_PEM1-10_PEM1-10": {
+        "akc_id": "6ee89b24-e042-4c3a-ab11-b6540c714dd9",
+        "participant": "874e3588-a2b2-4f3c-ac5a-c40aedf79427"
+      },
+      "LifeEvent_Specimen_PEM1-10_PEM1-10": {
+        "akc_id": "c482e03d-5f69-46f2-bcb8-70940a1173ed",
+        "participant": "874e3588-a2b2-4f3c-ac5a-c40aedf79427",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_SLE2-178_SLE2-178": {
+        "akc_id": "52fb6ccd-3830-4c34-a077-8ca6db683d1c",
+        "participant": "ad324089-1e4d-48f9-97ee-6d1ed5e1efed"
+      },
+      "LifeEvent_ImmuneExposure_SLE2-178_SLE2-178": {
+        "akc_id": "8b5f7f8b-5efb-4a92-9d2c-9029d0ad98e0",
+        "participant": "ad324089-1e4d-48f9-97ee-6d1ed5e1efed"
+      },
+      "LifeEvent_Specimen_SLE2-178_SLE2-178": {
+        "akc_id": "ca811db5-4186-4f08-b9ab-de49173934c0",
+        "participant": "ad324089-1e4d-48f9-97ee-6d1ed5e1efed",
+        "t0_event": "Sample collection"
+      },
+      "LifeEvent_Participant_FLU3-188_FLU3-188": {
+        "akc_id": "02900893-febb-49df-8a65-0a7d531e8293",
+        "participant": "1c303933-63f6-4563-8c3e-181f8aab20e1"
+      },
+      "LifeEvent_ImmuneExposure_FLU3-188_FLU3-188": {
+        "akc_id": "2f81d819-97ba-4189-9b4a-ba768660055d",
+        "participant": "1c303933-63f6-4563-8c3e-181f8aab20e1"
+      },
+      "LifeEvent_Specimen_FLU3-188_FLU3-188": {
+        "akc_id": "5753c998-76d1-4994-b515-21ec0874fc2f",
+        "participant": "1c303933-63f6-4563-8c3e-181f8aab20e1",
+        "t0_event": "Vaccination"
+      }
+    },
+    "immune_exposures": {
+      "ImmuneExposure_TET1-42": {
+        "akc_id": "528fc93b-4b60-48fb-a056-e291bbf976ef",
+        "life_event": "fe54e0d3-2054-4931-afc7-938b59401ad4",
+        "exposure_material": "Tdap"
+      },
+      "ImmuneExposure_SLE3-292_DOID:9074": {
+        "akc_id": "1cc85743-e0d2-4ab6-844c-cd069f9df33e",
+        "life_event": "d383f467-03a4-43b0-a30d-b08798ecfa5b",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_TET2-43": {
+        "akc_id": "5e7eebdd-51ad-4af2-b1f0-f01057923538",
+        "life_event": "ccc74502-e300-4cc0-8b44-437cdd85d68d",
+        "exposure_material": "Tdap"
+      },
+      "ImmuneExposure_SLE6-161_DOID:9074": {
+        "akc_id": "872bfe92-700e-4aba-a1bc-26540d0ca52b",
+        "life_event": "197f4c48-f326-4a8e-8d7a-80e758e3f2cf",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_SLE7-730_DOID:9074": {
+        "akc_id": "87d7b480-bcb2-4566-8f7b-a7767714f6da",
+        "life_event": "14836e83-000e-448b-84c5-6498c86c5eee",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_IGG2-337_DOID:9074": {
+        "akc_id": "c0c900c9-9ebb-4998-b9fc-ffa336a61d08",
+        "life_event": "f095a4fe-9e6f-48bc-996e-6a6fae92808e",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_SLE5-262_DOID:9074": {
+        "akc_id": "d44ce3cf-0448-4da4-9191-94f34b7a80f2",
+        "life_event": "add9f3e8-7d0a-4542-86ed-97b82b1dbe0f",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_FLU4-752": {
+        "akc_id": "f3f32c20-84d4-49a6-93ae-6742478dfd08",
+        "life_event": "bd2efa05-6390-4547-9002-7f1ecaf6fa4d"
+      },
+      "ImmuneExposure_PEM2-20": {
+        "akc_id": "9edbed47-d639-4f77-a48f-9ff5b5b842e0",
+        "life_event": "5162cb3a-cae2-4072-bd5b-b85bbf729614"
+      },
+      "ImmuneExposure_SLE4-2037_DOID:9074": {
+        "akc_id": "9757df8f-8c5b-4d91-b080-5e79bc27af05",
+        "life_event": "1b66e7d3-5d6a-413c-89bc-b944c57fbf0c",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_FLU1-701": {
+        "akc_id": "edbfe13c-f694-4255-b1a5-fd74ef040a33",
+        "life_event": "cb324e4b-80a4-481f-8d08-e836328f3921"
+      },
+      "ImmuneExposure_TET4-47": {
+        "akc_id": "2c01cfca-8531-47c0-a30a-159d1886211a",
+        "life_event": "334d20cd-5b1c-4973-bd80-552a7a8b8a87",
+        "exposure_material": "Tdap"
+      },
+      "ImmuneExposure_FLU2-185": {
+        "akc_id": "738585fa-ed35-406d-a693-9cd1207aafc1",
+        "life_event": "5ac94b6c-7a87-4355-8544-3116fb1e8dfd"
+      },
+      "ImmuneExposure_IGG1-267_DOID:9074": {
+        "akc_id": "2c1341f7-adf9-4fa0-8653-778166b5b8ac",
+        "life_event": "8f510211-a91c-4b8a-9d4b-79c843ec5136",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_SLE1-126_DOID:9074": {
+        "akc_id": "2034068f-fcc2-4a5c-b9d6-7b0d98bf4028",
+        "life_event": "6afb5fe2-1398-4e40-b0fd-742446605034",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_TET3-45": {
+        "akc_id": "024670c7-8a0a-47fc-aa03-179f55455f5d",
+        "life_event": "f0e3f8a3-0083-4523-8014-eb039f5f6b84",
+        "exposure_material": "Tdap"
+      },
+      "ImmuneExposure_PEM1-10": {
+        "akc_id": "02a5de4b-0fa1-4b21-9a13-12ffc7fe24e8",
+        "life_event": "6ee89b24-e042-4c3a-ab11-b6540c714dd9"
+      },
+      "ImmuneExposure_SLE2-178_DOID:9074": {
+        "akc_id": "d1dfb6b2-4678-48fa-8cc3-52545ab56a2b",
+        "life_event": "8b5f7f8b-5efb-4a92-9d2c-9029d0ad98e0",
+        "disease": {
+          "label": "systemic lupus erythematosus",
+          "id": "DOID:9074"
+        }
+      },
+      "ImmuneExposure_FLU3-188": {
+        "akc_id": "9a6413c7-0951-4ad9-b8c2-4fbb10e9b09f",
+        "life_event": "2f81d819-97ba-4189-9b4a-ba768660055d"
+      }
+    },
+    "specimens": {
+      "Specimen_TET1-42_TET1-42": {
+        "akc_id": "76fe92dd-87d1-498b-b40b-fc2bfba4fc3a",
+        "name": "TET1-42",
+        "life_event": "f9c91323-8db6-45db-b985-603ce94fb77d",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_SLE3-292_SLE3-292": {
+        "akc_id": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "name": "SLE3-292",
+        "life_event": "cbce0ecc-d489-47d6-b7b3-9ef880d046bb",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_TET2-43_TET2-43": {
+        "akc_id": "0d8b9725-f173-427e-9dc1-53673b265aad",
+        "name": "TET2-43",
+        "life_event": "38165ad9-6a60-4f57-be4d-96ddd93bd049",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_SLE6-161_SLE6-161": {
+        "akc_id": "86962663-03a0-4f89-a671-72aafd9529e1",
+        "name": "SLE6-161",
+        "life_event": "e855f981-9c19-4475-93ac-c0ae959248fe",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_SLE7-730_SLE7-730": {
+        "akc_id": "095e7074-6f6a-46c6-bb03-1ee067abbf42",
+        "name": "SLE7-730",
+        "life_event": "18cabadf-6291-4e83-9e98-78a2777e3516",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_IGG2-337_IGG2-337": {
+        "akc_id": "cc23c21e-e12e-4528-a403-68b5260193f5",
+        "name": "IGG2-337",
+        "life_event": "dc40e84e-a1a0-4eeb-b266-2edd559675fc",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_SLE5-262_SLE5-262": {
+        "akc_id": "bd2a917d-03b7-4f36-8540-3cd58811bd19",
+        "name": "SLE5-262",
+        "life_event": "622f7770-267c-4c09-b185-94e087b1f94e",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_FLU4-752_FLU4-752": {
+        "akc_id": "0af7c505-aa09-4b39-b5b9-3fa6380fc435",
+        "name": "FLU4-752",
+        "life_event": "e6cd62e7-a832-4cbe-affb-3b9cb9a81f71",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_PEM2-20_PEM2-20": {
+        "akc_id": "acae0632-9b4e-4a51-a735-09bada9efd92",
+        "name": "PEM2-20",
+        "life_event": "29aae2a6-be3d-453c-bef5-ffd9afa3c210",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_SLE4-2037_SLE4-2037": {
+        "akc_id": "718058bd-4006-4f42-9d29-39a52bbc2580",
+        "name": "SLE4-2037",
+        "life_event": "da8ee375-b816-4b27-8ec5-830ab240e497",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_FLU1-701_FLU1-701": {
+        "akc_id": "c4ec7d00-5c2a-4e89-acfd-0af38e4ca526",
+        "name": "FLU1-701",
+        "life_event": "745b738b-d290-490a-bef7-8aed7d6b861a",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_TET4-47_TET4-47": {
+        "akc_id": "023b27a6-4f76-4dba-8101-4d47d9e5475c",
+        "name": "TET4-47",
+        "life_event": "95c406c2-9828-407e-9fdb-6cc318f8f039",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_FLU2-185_FLU2-185": {
+        "akc_id": "4ea13b73-97c2-4517-9efc-e057c60e781d",
+        "name": "FLU2-185",
+        "life_event": "77c88d51-ced8-4d7c-ac94-6f78203df300",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_IGG1-267_IGG1-267": {
+        "akc_id": "b49a3cd2-0308-4c9c-ba2c-20c5f2417a25",
+        "name": "IGG1-267",
+        "life_event": "b386cd49-0824-45a2-a508-43485fa08be9",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_SLE1-126_SLE1-126": {
+        "akc_id": "8418c3e2-a702-43c9-8385-0b874d325392",
+        "name": "SLE1-126",
+        "life_event": "470da99c-b564-430b-a708-6d119d9eafd3",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_TET3-45_TET3-45": {
+        "akc_id": "1314d0dd-fe92-473b-b5a3-ca70acadfbac",
+        "name": "TET3-45",
+        "life_event": "491257e6-1f20-4a23-af42-2865b4fc80be",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_PEM1-10_PEM1-10": {
+        "akc_id": "2e111924-e011-4db2-8ff0-622575856996",
+        "name": "PEM1-10",
+        "life_event": "c482e03d-5f69-46f2-bcb8-70940a1173ed",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_SLE2-178_SLE2-178": {
+        "akc_id": "35e62055-540d-4d84-ae9a-ba11bb753860",
+        "name": "SLE2-178",
+        "life_event": "ca811db5-4186-4f08-b9ab-de49173934c0",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      },
+      "Specimen_FLU3-188_FLU3-188": {
+        "akc_id": "3dd425c7-83d4-45d1-a9b8-dc4ffad9b229",
+        "name": "FLU3-188",
+        "life_event": "5753c998-76d1-4994-b515-21ec0874fc2f",
+        "specimen_type": "Intravenous blood sample",
+        "tissue": {
+          "label": "blood",
+          "id": "UBERON:0000178"
+        }
+      }
+    },
+    "specimen_processings": {
+      "CellIsolationProcessing_TET1-42_TET1-42_643": {
+        "akc_id": "ea007b1c-8ab4-4b0a-86be-03f302fd9697",
+        "specimen": "76fe92dd-87d1-498b-b40b-fc2bfba4fc3a",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 1200658,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_TET1-42_TET1-42_643": {
+        "akc_id": "495979bc-7bcc-4db2-8a31-49821b232fd1",
+        "specimen": "76fe92dd-87d1-498b-b40b-fc2bfba4fc3a",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_TET1-42_TET1-42_643": {
+        "akc_id": "fff5fe70-866b-4cb1-ab41-4fcd10fd8945",
+        "specimen": "76fe92dd-87d1-498b-b40b-fc2bfba4fc3a",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE3-292_SLE3-292_652": {
+        "akc_id": "379938c3-7df7-4c5d-ae85-753484d87984",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 4547836,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE3-292_SLE3-292_652": {
+        "akc_id": "da582fa9-fe85-414e-b901-989ab95acb99",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE3-292_SLE3-292_652": {
+        "akc_id": "737e12d2-a81e-45c7-99a9-040727aea4f9",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_TET2-43_TET2-43_642": {
+        "akc_id": "31f3d788-6cfa-4e22-80c6-2cbe1c7a6e4c",
+        "specimen": "0d8b9725-f173-427e-9dc1-53673b265aad",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 1714912,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_TET2-43_TET2-43_642": {
+        "akc_id": "10f04f1d-dafa-4509-ad13-d9f80f778711",
+        "specimen": "0d8b9725-f173-427e-9dc1-53673b265aad",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_TET2-43_TET2-43_642": {
+        "akc_id": "a2dfcf3d-aa36-47ef-9b95-0103154f25f8",
+        "specimen": "0d8b9725-f173-427e-9dc1-53673b265aad",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE6-161_SLE6-161_638": {
+        "akc_id": "950a4b91-3439-4c80-a328-2ecfa4e7c8b1",
+        "specimen": "86962663-03a0-4f89-a671-72aafd9529e1",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 8267194,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE6-161_SLE6-161_638": {
+        "akc_id": "c6a7eb3b-fa25-45ad-ba66-a94d7e105f82",
+        "specimen": "86962663-03a0-4f89-a671-72aafd9529e1",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE6-161_SLE6-161_638": {
+        "akc_id": "7a8d040a-b15b-4d62-8788-577ac152b007",
+        "specimen": "86962663-03a0-4f89-a671-72aafd9529e1",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE7-730_SLE7-730_648": {
+        "akc_id": "ee322931-9edf-4d9d-bb77-8685d5c91a5b",
+        "specimen": "095e7074-6f6a-46c6-bb03-1ee067abbf42",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 1455382,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE7-730_SLE7-730_648": {
+        "akc_id": "c0fc4853-a4ec-4f1d-84ed-1cc7dafbe09f",
+        "specimen": "095e7074-6f6a-46c6-bb03-1ee067abbf42",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE7-730_SLE7-730_648": {
+        "akc_id": "4ec311fa-b962-4378-a203-235d705b9ee6",
+        "specimen": "095e7074-6f6a-46c6-bb03-1ee067abbf42",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_IGG2-337_IGG2-337_637": {
+        "akc_id": "e4336216-154a-4a11-af66-88e6aa5b8c73",
+        "specimen": "cc23c21e-e12e-4528-a403-68b5260193f5",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 791041,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_IGG2-337_IGG2-337_637": {
+        "akc_id": "7398bb14-dc98-43f9-9679-bec164b81fb4",
+        "specimen": "cc23c21e-e12e-4528-a403-68b5260193f5",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_IGG2-337_IGG2-337_637": {
+        "akc_id": "a90ef719-7ad6-446f-8b1b-88e1482f3aaf",
+        "specimen": "cc23c21e-e12e-4528-a403-68b5260193f5",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE5-262_SLE5-262_649": {
+        "akc_id": "5ac0a0d7-7de1-4c6a-bedc-d43320706741",
+        "specimen": "bd2a917d-03b7-4f36-8540-3cd58811bd19",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 5155612,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE5-262_SLE5-262_649": {
+        "akc_id": "909d753a-0a74-4ccd-a5d8-ed2f161790d7",
+        "specimen": "bd2a917d-03b7-4f36-8540-3cd58811bd19",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE5-262_SLE5-262_649": {
+        "akc_id": "a488b981-a8a5-4716-ad0b-0c827720ceb9",
+        "specimen": "bd2a917d-03b7-4f36-8540-3cd58811bd19",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_FLU4-752_FLU4-752_644": {
+        "akc_id": "3da07a3f-8abd-450f-8c7d-8f5326caa475",
+        "specimen": "0af7c505-aa09-4b39-b5b9-3fa6380fc435",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 3682374,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_FLU4-752_FLU4-752_644": {
+        "akc_id": "66cea979-a0e4-4487-bbe1-69a68fe0eb8a",
+        "specimen": "0af7c505-aa09-4b39-b5b9-3fa6380fc435",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_FLU4-752_FLU4-752_644": {
+        "akc_id": "a3ddbbb6-b895-4b1a-9fe0-fe3ac24d7d74",
+        "specimen": "0af7c505-aa09-4b39-b5b9-3fa6380fc435",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_PEM2-20_PEM2-20_635": {
+        "akc_id": "8549d13b-07a3-46ea-b4e4-6104dba12429",
+        "specimen": "acae0632-9b4e-4a51-a735-09bada9efd92",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 717437,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_PEM2-20_PEM2-20_635": {
+        "akc_id": "8290426f-9fe2-4324-b09a-1e6fffe593fc",
+        "specimen": "acae0632-9b4e-4a51-a735-09bada9efd92",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_PEM2-20_PEM2-20_635": {
+        "akc_id": "c52d5393-abf2-4510-83e2-0dbae4052688",
+        "specimen": "acae0632-9b4e-4a51-a735-09bada9efd92",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE4-2037_SLE4-2037_650": {
+        "akc_id": "9a1fa93b-e1c5-4177-add0-14d239d516b5",
+        "specimen": "718058bd-4006-4f42-9d29-39a52bbc2580",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 1480663,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE4-2037_SLE4-2037_650": {
+        "akc_id": "037c0767-f8f7-424a-9bc5-517ff8f94e56",
+        "specimen": "718058bd-4006-4f42-9d29-39a52bbc2580",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE4-2037_SLE4-2037_650": {
+        "akc_id": "05aac64b-df94-4cef-bf72-d9fcd6be3b6f",
+        "specimen": "718058bd-4006-4f42-9d29-39a52bbc2580",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_FLU1-701_FLU1-701_647": {
+        "akc_id": "69a96134-b098-46fd-9890-e38c7543abe0",
+        "specimen": "c4ec7d00-5c2a-4e89-acfd-0af38e4ca526",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 3763948,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_FLU1-701_FLU1-701_647": {
+        "akc_id": "2df682d7-317e-4164-8062-368db1e6327c",
+        "specimen": "c4ec7d00-5c2a-4e89-acfd-0af38e4ca526",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_FLU1-701_FLU1-701_647": {
+        "akc_id": "08b4ed61-e66a-496d-a748-6eaf91169021",
+        "specimen": "c4ec7d00-5c2a-4e89-acfd-0af38e4ca526",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_TET4-47_TET4-47_640": {
+        "akc_id": "bb97a6dc-6de6-4dcb-9393-8618e47095d6",
+        "specimen": "023b27a6-4f76-4dba-8101-4d47d9e5475c",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 3139898,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_TET4-47_TET4-47_640": {
+        "akc_id": "12980a83-f5f3-4b8f-b41e-804dddd4243d",
+        "specimen": "023b27a6-4f76-4dba-8101-4d47d9e5475c",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_TET4-47_TET4-47_640": {
+        "akc_id": "50846849-feed-4637-98e4-8e714e754499",
+        "specimen": "023b27a6-4f76-4dba-8101-4d47d9e5475c",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_FLU2-185_FLU2-185_646": {
+        "akc_id": "5f2a2f26-3276-4aa8-b92b-b32c60bfcb11",
+        "specimen": "4ea13b73-97c2-4517-9efc-e057c60e781d",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 544226,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_FLU2-185_FLU2-185_646": {
+        "akc_id": "8e017f59-2b0f-4394-ad79-9b10cfc1fff7",
+        "specimen": "4ea13b73-97c2-4517-9efc-e057c60e781d",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_FLU2-185_FLU2-185_646": {
+        "akc_id": "c5c67d9a-9a15-434a-ac60-44491a5834e5",
+        "specimen": "4ea13b73-97c2-4517-9efc-e057c60e781d",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_IGG1-267_IGG1-267_639": {
+        "akc_id": "4536eac3-dde3-4fee-adf2-a388c44081f9",
+        "specimen": "b49a3cd2-0308-4c9c-ba2c-20c5f2417a25",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 228184,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_IGG1-267_IGG1-267_639": {
+        "akc_id": "294fad73-470a-45c5-a891-d64fcee52cc8",
+        "specimen": "b49a3cd2-0308-4c9c-ba2c-20c5f2417a25",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_IGG1-267_IGG1-267_639": {
+        "akc_id": "594418a9-9a5e-4117-ab24-8813fa40de90",
+        "specimen": "b49a3cd2-0308-4c9c-ba2c-20c5f2417a25",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE1-126_SLE1-126_654": {
+        "akc_id": "97b4d29b-aafb-41ab-873c-595538b752a4",
+        "specimen": "8418c3e2-a702-43c9-8385-0b874d325392",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 990139,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE1-126_SLE1-126_654": {
+        "akc_id": "97426f16-23e5-41d0-874c-315cdc08b139",
+        "specimen": "8418c3e2-a702-43c9-8385-0b874d325392",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE1-126_SLE1-126_654": {
+        "akc_id": "1169fb80-a70a-42a2-a971-3f90fe299a02",
+        "specimen": "8418c3e2-a702-43c9-8385-0b874d325392",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_TET3-45_TET3-45_641": {
+        "akc_id": "844bdcf8-9d77-4b9f-a197-856740e80150",
+        "specimen": "1314d0dd-fe92-473b-b5a3-ca70acadfbac",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 1941454,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_TET3-45_TET3-45_641": {
+        "akc_id": "61bf91de-e817-450a-9421-3f95ce1e4de1",
+        "specimen": "1314d0dd-fe92-473b-b5a3-ca70acadfbac",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_TET3-45_TET3-45_641": {
+        "akc_id": "88abd373-3c4f-46e0-a1db-c90d8781a4f0",
+        "specimen": "1314d0dd-fe92-473b-b5a3-ca70acadfbac",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_PEM1-10_PEM1-10_636": {
+        "akc_id": "422ed97d-770a-469c-bc31-968c338ad3c4",
+        "specimen": "2e111924-e011-4db2-8ff0-622575856996",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 85697,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_PEM1-10_PEM1-10_636": {
+        "akc_id": "78d97f13-7131-44aa-ac39-e95b002fa049",
+        "specimen": "2e111924-e011-4db2-8ff0-622575856996",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_PEM1-10_PEM1-10_636": {
+        "akc_id": "6dfcc766-b0c1-40d3-b8c8-dadc0b4f78e0",
+        "specimen": "2e111924-e011-4db2-8ff0-622575856996",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE2-178_SLE2-178_653": {
+        "akc_id": "f9ee0e3a-cc40-4d29-ae63-3769c8518a22",
+        "specimen": "35e62055-540d-4d84-ae9a-ba11bb753860",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 1551082,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE2-178_SLE2-178_653": {
+        "akc_id": "56b1de1a-0075-484f-8576-1a207ab3458c",
+        "specimen": "35e62055-540d-4d84-ae9a-ba11bb753860",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE2-178_SLE2-178_653": {
+        "akc_id": "9cc353ae-d538-4ce8-ae50-edf87f8d6a42",
+        "specimen": "35e62055-540d-4d84-ae9a-ba11bb753860",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_FLU3-188_FLU3-188_645": {
+        "akc_id": "a0962aa1-ffc4-44b0-a028-a477efd73180",
+        "specimen": "3dd425c7-83d4-45d1-a9b8-dc4ffad9b229",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 1044698,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_FLU3-188_FLU3-188_645": {
+        "akc_id": "763c69b3-5e61-4ff3-b6b1-5b8afece5d0d",
+        "specimen": "3dd425c7-83d4-45d1-a9b8-dc4ffad9b229",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_FLU3-188_FLU3-188_645": {
+        "akc_id": "99d5109f-afe0-4c47-98fb-f3e5090a3416",
+        "specimen": "3dd425c7-83d4-45d1-a9b8-dc4ffad9b229",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      },
+      "CellIsolationProcessing_SLE3-292_SLE3-292_651": {
+        "akc_id": "840d353f-e2dd-4a6e-b35a-a585334d4c91",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": false,
+        "cell_number": 6487646,
+        "cell_storage": false,
+        "cell_isolation": "PBMCs isolated using ficoll density gradient centrifugation",
+        "cell_processing_protocol": "PBMCs isolated using ficoll density gradient centrifugation, Cells stained with anti-human antibodies for multi-color flow cytometry and cell sorting, RNA isolated from total cells using RNeasy Micro kit, 2ng of RNA for Reverse Transcription"
+      },
+      "NucleicAcidProcessing_SLE3-292_SLE3-292_651": {
+        "akc_id": "c7c76f0e-296f-44de-ba69-23ef9606d38e",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "template_class": "RNA",
+        "template_amount": 2,
+        "template_amount_unit": {
+          "label": "nanogram",
+          "id": "UO:0000024"
+        }
+      },
+      "LibraryPreparationProcessing_SLE3-292_SLE3-292_651": {
+        "akc_id": "86875d45-7f45-4ba9-b5af-8fd3f58e3cdc",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "library_generation_method": "PCR",
+        "library_generation_protocol": "RT-PCR"
+      }
+    },
+    "assays": {
+      "ReceptorRepertoireSequencingAssay_TET1-42_TET1-42_643": {
+        "akc_id": "6118d307-8bd7-4c63-8a50-afe82cdb1d0e",
+        "specimen": "76fe92dd-87d1-498b-b40b-fc2bfba4fc3a",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE3-292_SLE3-292_652": {
+        "akc_id": "c3d4dad9-31b1-48f1-bd89-fb36006a8de0",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_TET2-43_TET2-43_642": {
+        "akc_id": "f9e5da32-6234-48f6-9737-d977b4f9e3bd",
+        "specimen": "0d8b9725-f173-427e-9dc1-53673b265aad",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE6-161_SLE6-161_638": {
+        "akc_id": "e6014ac5-7722-4009-90cd-3e20c5d27435",
+        "specimen": "86962663-03a0-4f89-a671-72aafd9529e1",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE7-730_SLE7-730_648": {
+        "akc_id": "47c9b2de-62f1-4227-80dd-e0415c7a941b",
+        "specimen": "095e7074-6f6a-46c6-bb03-1ee067abbf42",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_IGG2-337_IGG2-337_637": {
+        "akc_id": "d9f8febe-8c88-43d8-86dd-ed6e23aca3ee",
+        "specimen": "cc23c21e-e12e-4528-a403-68b5260193f5",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE5-262_SLE5-262_649": {
+        "akc_id": "db55ef77-e900-408a-a26f-c7a9b13bc0e2",
+        "specimen": "bd2a917d-03b7-4f36-8540-3cd58811bd19",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_FLU4-752_FLU4-752_644": {
+        "akc_id": "d255fb61-9019-4bc5-8f02-3dd0da558a6b",
+        "specimen": "0af7c505-aa09-4b39-b5b9-3fa6380fc435",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_PEM2-20_PEM2-20_635": {
+        "akc_id": "60304a66-05e0-4575-97c7-637993613342",
+        "specimen": "acae0632-9b4e-4a51-a735-09bada9efd92",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE4-2037_SLE4-2037_650": {
+        "akc_id": "1b62ff62-300c-40da-96f3-8696a54cfcaf",
+        "specimen": "718058bd-4006-4f42-9d29-39a52bbc2580",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_FLU1-701_FLU1-701_647": {
+        "akc_id": "06e1b567-91a9-450a-a9e7-6b161f08453c",
+        "specimen": "c4ec7d00-5c2a-4e89-acfd-0af38e4ca526",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_TET4-47_TET4-47_640": {
+        "akc_id": "f7d71772-5f90-477e-b420-df9dc7d576a2",
+        "specimen": "023b27a6-4f76-4dba-8101-4d47d9e5475c",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_FLU2-185_FLU2-185_646": {
+        "akc_id": "babb6427-1719-4032-9318-e391b0045b4c",
+        "specimen": "4ea13b73-97c2-4517-9efc-e057c60e781d",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_IGG1-267_IGG1-267_639": {
+        "akc_id": "a75a9919-d272-4b01-8be4-e9124263449a",
+        "specimen": "b49a3cd2-0308-4c9c-ba2c-20c5f2417a25",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE1-126_SLE1-126_654": {
+        "akc_id": "6e4451a0-70ca-4dac-a6ff-d06e25df5fb9",
+        "specimen": "8418c3e2-a702-43c9-8385-0b874d325392",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_TET3-45_TET3-45_641": {
+        "akc_id": "4711eae2-6288-42b1-a959-59df46fd14d4",
+        "specimen": "1314d0dd-fe92-473b-b5a3-ca70acadfbac",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_PEM1-10_PEM1-10_636": {
+        "akc_id": "02bbd24b-7abb-402d-8ca3-282f92abf367",
+        "specimen": "2e111924-e011-4db2-8ff0-622575856996",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE2-178_SLE2-178_653": {
+        "akc_id": "a850d9f2-a3e1-443b-a4cc-542392862b0c",
+        "specimen": "35e62055-540d-4d84-ae9a-ba11bb753860",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_FLU3-188_FLU3-188_645": {
+        "akc_id": "87a0d559-807d-431f-af90-d055efb2b50d",
+        "specimen": "3dd425c7-83d4-45d1-a9b8-dc4ffad9b229",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      },
+      "ReceptorRepertoireSequencingAssay_SLE3-292_SLE3-292_651": {
+        "akc_id": "ecd1c7b4-d0e6-47fa-a89d-6175271ca8cf",
+        "specimen": "f0e6dd63-b391-47ee-9355-3d208078f13f",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "IGH"
+        ],
+        "complete_sequences": "partial",
+        "physical_linkage": "none"
+      }
+    }
+  },
+  "@type": "dict"
+}
