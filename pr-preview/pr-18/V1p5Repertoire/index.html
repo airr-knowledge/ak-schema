@@ -199,45 +199,45 @@
 <div class="mermaid"> classDiagram
     class V1p5Repertoire
     click V1p5Repertoire href "../V1p5Repertoire"
-      V1p5Repertoire : V1p5Repertoire_data_processing
+      V1p5Repertoire : V1p5data_processing
 
 
 
 
-    V1p5Repertoire --&gt; "1..*" V1p5DataProcessing : V1p5Repertoire_data_processing
+    V1p5Repertoire --&gt; "1..*" V1p5DataProcessing : V1p5data_processing
     click V1p5DataProcessing href "../V1p5DataProcessing"
 
 
-      V1p5Repertoire : V1p5Repertoire_repertoire_description
+      V1p5Repertoire : V1p5repertoire_description
 
-      V1p5Repertoire : V1p5Repertoire_repertoire_id
+      V1p5Repertoire : V1p5repertoire_id
 
-      V1p5Repertoire : V1p5Repertoire_repertoire_name
+      V1p5Repertoire : V1p5repertoire_name
 
-      V1p5Repertoire : V1p5Repertoire_sample
-
-
+      V1p5Repertoire : V1p5sample
 
 
-    V1p5Repertoire --&gt; "1..*" V1p5SampleProcessing : V1p5Repertoire_sample
+
+
+    V1p5Repertoire --&gt; "1..*" V1p5SampleProcessing : V1p5sample
     click V1p5SampleProcessing href "../V1p5SampleProcessing"
 
 
-      V1p5Repertoire : V1p5Repertoire_study
+      V1p5Repertoire : V1p5study
 
 
 
 
-    V1p5Repertoire --&gt; "1" V1p5Study : V1p5Repertoire_study
+    V1p5Repertoire --&gt; "1" V1p5Study : V1p5study
     click V1p5Study href "../V1p5Study"
 
 
-      V1p5Repertoire : V1p5Repertoire_subject
+      V1p5Repertoire : V1p5subject
 
 
 
 
-    V1p5Repertoire --&gt; "1" V1p5Subject : V1p5Repertoire_subject
+    V1p5Repertoire --&gt; "1" V1p5Subject : V1p5subject
     click V1p5Subject href "../V1p5Subject"
 
 
@@ -256,43 +256,43 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5Repertoire_repertoire_id/">V1p5Repertoire_repertoire_id</a></td>
+<td><a href="../V1p5repertoire_id/">V1p5repertoire_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the repertoire object</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Repertoire_repertoire_name/">V1p5Repertoire_repertoire_name</a></td>
+<td><a href="../V1p5repertoire_name/">V1p5repertoire_name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Short generic display name for the repertoire</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Repertoire_repertoire_description/">V1p5Repertoire_repertoire_description</a></td>
+<td><a href="../V1p5repertoire_description/">V1p5repertoire_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Generic repertoire description</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Repertoire_study/">V1p5Repertoire_study</a></td>
+<td><a href="../V1p5study/">V1p5study</a></td>
 <td>1 <br/> <a href="../V1p5Study/">V1p5Study</a></td>
 <td>Study object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Repertoire_subject/">V1p5Repertoire_subject</a></td>
+<td><a href="../V1p5subject/">V1p5subject</a></td>
 <td>1 <br/> <a href="../V1p5Subject/">V1p5Subject</a></td>
 <td>Subject object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Repertoire_sample/">V1p5Repertoire_sample</a></td>
+<td><a href="../V1p5sample/">V1p5sample</a></td>
 <td>1..* <br/> <a href="../V1p5SampleProcessing/">V1p5SampleProcessing</a></td>
 <td>List of Sample Processing objects</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Repertoire_data_processing/">V1p5Repertoire_data_processing</a></td>
+<td><a href="../V1p5data_processing/">V1p5data_processing</a></td>
 <td>1..* <br/> <a href="../V1p5DataProcessing/">V1p5DataProcessing</a></td>
 <td>List of Data Processing objects</td>
 <td>direct</td>
@@ -330,13 +330,13 @@
 <pre><code class="language-yaml">name: V1p5Repertoire
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5Repertoire_repertoire_id
-- V1p5Repertoire_repertoire_name
-- V1p5Repertoire_repertoire_description
-- V1p5Repertoire_study
-- V1p5Repertoire_subject
-- V1p5Repertoire_sample
-- V1p5Repertoire_data_processing
+- V1p5repertoire_id
+- V1p5repertoire_name
+- V1p5repertoire_description
+- V1p5study
+- V1p5subject
+- V1p5sample
+- V1p5data_processing
 
 </code></pre>
 </details>
@@ -345,27 +345,22 @@ slots:
 <pre><code class="language-yaml">name: V1p5Repertoire
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5Repertoire_repertoire_id:
-    name: V1p5Repertoire_repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Identifier for the repertoire object. This identifier should be globally
-      unique so that repertoires from multiple studies can be combined together without
-      conflict. The repertoire_id is used to link other AIRR data to a Repertoire.
-      Specifically, the Rearrangements Schema includes repertoire_id for referencing
-      the specific Repertoire for that Rearrangement.
+  V1p5repertoire_id:
+    name: V1p5repertoire_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Repertoire_repertoire_id
+    alias: V1p5repertoire_id
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
+    - V1p5Rearrangement
+    - V1p5Clone
+    - V1p5Cell
+    - V1p5CellExpression
     range: string
-    required: false
-  V1p5Repertoire_repertoire_name:
-    name: V1p5Repertoire_repertoire_name
+  V1p5repertoire_name:
+    name: V1p5repertoire_name
     annotations:
       nullable:
         tag: nullable
@@ -373,29 +368,29 @@ attributes:
     description: Short generic display name for the repertoire
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Repertoire_repertoire_name
+    alias: V1p5repertoire_name
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
     range: string
     required: false
-  V1p5Repertoire_repertoire_description:
-    name: V1p5Repertoire_repertoire_description
+  V1p5repertoire_description:
+    name: V1p5repertoire_description
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Repertoire_repertoire_description
+    alias: V1p5repertoire_description
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
     range: string
     required: false
-  V1p5Repertoire_study:
-    name: V1p5Repertoire_study
+  V1p5study:
+    name: V1p5study
     annotations:
       nullable:
         tag: nullable
@@ -403,14 +398,14 @@ attributes:
     description: Study object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Repertoire_study
+    alias: V1p5study
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
     range: V1p5Study
     required: true
-  V1p5Repertoire_subject:
-    name: V1p5Repertoire_subject
+  V1p5subject:
+    name: V1p5subject
     annotations:
       nullable:
         tag: nullable
@@ -418,14 +413,14 @@ attributes:
     description: Subject object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Repertoire_subject
+    alias: V1p5subject
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
     range: V1p5Subject
     required: true
-  V1p5Repertoire_sample:
-    name: V1p5Repertoire_sample
+  V1p5sample:
+    name: V1p5sample
     annotations:
       nullable:
         tag: nullable
@@ -433,15 +428,15 @@ attributes:
     description: List of Sample Processing objects
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Repertoire_sample
+    alias: V1p5sample
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
     range: V1p5SampleProcessing
     required: true
     multivalued: true
-  V1p5Repertoire_data_processing:
-    name: V1p5Repertoire_data_processing
+  V1p5data_processing:
+    name: V1p5data_processing
     annotations:
       nullable:
         tag: nullable
@@ -449,7 +444,7 @@ attributes:
     description: List of Data Processing objects
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Repertoire_data_processing
+    alias: V1p5data_processing
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire

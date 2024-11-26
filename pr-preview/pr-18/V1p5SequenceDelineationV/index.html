@@ -204,37 +204,37 @@
 <div class="mermaid"> classDiagram
     class V1p5SequenceDelineationV
     click V1p5SequenceDelineationV href "../V1p5SequenceDelineationV"
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_aligned_sequence
+      V1p5SequenceDelineationV : V1p5aligned_sequence
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_alignment_labels
+      V1p5SequenceDelineationV : V1p5alignment_labels
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_cdr1_end
+      V1p5SequenceDelineationV : V1p5cdr1_end
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_cdr1_start
+      V1p5SequenceDelineationV : V1p5cdr1_start
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_cdr2_end
+      V1p5SequenceDelineationV : V1p5cdr2_end
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_cdr2_start
+      V1p5SequenceDelineationV : V1p5cdr2_start
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_cdr3_start
+      V1p5SequenceDelineationV : V1p5cdr3_start
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_delineation_scheme
+      V1p5SequenceDelineationV : V1p5delineation_scheme
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_fwr1_end
+      V1p5SequenceDelineationV : V1p5fwr1_end
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_fwr1_start
+      V1p5SequenceDelineationV : V1p5fwr1_start
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_fwr2_end
+      V1p5SequenceDelineationV : V1p5fwr2_end
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_fwr2_start
+      V1p5SequenceDelineationV : V1p5fwr2_start
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_fwr3_end
+      V1p5SequenceDelineationV : V1p5fwr3_end
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_fwr3_start
+      V1p5SequenceDelineationV : V1p5fwr3_start
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_sequence_delineation_id
+      V1p5SequenceDelineationV : V1p5sequence_delineation_id
 
-      V1p5SequenceDelineationV : V1p5SequenceDelineationV_unaligned_sequence
+      V1p5SequenceDelineationV : V1p5unaligned_sequence
 
 
 </div>
@@ -251,97 +251,97 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_sequence_delineation_id/">V1p5SequenceDelineationV_sequence_delineation_id</a></td>
+<td><a href="../V1p5sequence_delineation_id/">V1p5sequence_delineation_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this SequenceDelineationV within the file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_delineation_scheme/">V1p5SequenceDelineationV_delineation_scheme</a></td>
+<td><a href="../V1p5delineation_scheme/">V1p5delineation_scheme</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name of the delineation scheme</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_unaligned_sequence/">V1p5SequenceDelineationV_unaligned_sequence</a></td>
+<td><a href="../V1p5unaligned_sequence/">V1p5unaligned_sequence</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>entire V-sequence covered by this delineation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_aligned_sequence/">V1p5SequenceDelineationV_aligned_sequence</a></td>
+<td><a href="../V1p5aligned_sequence/">V1p5aligned_sequence</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Aligned sequence if this delineation provides an alignment</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_fwr1_start/">V1p5SequenceDelineationV_fwr1_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>FWR1 start co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5fwr1_start/">V1p5fwr1_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_fwr1_end/">V1p5SequenceDelineationV_fwr1_end</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>FWR1 end co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5fwr1_end/">V1p5fwr1_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_cdr1_start/">V1p5SequenceDelineationV_cdr1_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR1 start co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5cdr1_start/">V1p5cdr1_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_cdr1_end/">V1p5SequenceDelineationV_cdr1_end</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR1 end co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5cdr1_end/">V1p5cdr1_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_fwr2_start/">V1p5SequenceDelineationV_fwr2_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>FWR2 start co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5fwr2_start/">V1p5fwr2_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_fwr2_end/">V1p5SequenceDelineationV_fwr2_end</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>FWR2 end co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5fwr2_end/">V1p5fwr2_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_cdr2_start/">V1p5SequenceDelineationV_cdr2_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR2 start co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5cdr2_start/">V1p5cdr2_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_cdr2_end/">V1p5SequenceDelineationV_cdr2_end</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR2 end co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5cdr2_end/">V1p5cdr2_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_fwr3_start/">V1p5SequenceDelineationV_fwr3_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>FWR3 start co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5fwr3_start/">V1p5fwr3_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_fwr3_end/">V1p5SequenceDelineationV_fwr3_end</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>FWR3 end co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5fwr3_end/">V1p5fwr3_end</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_cdr3_start/">V1p5SequenceDelineationV_cdr3_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR3 start co-ordinate in the 'unaligned sequence' field</td>
+<td><a href="../V1p5cdr3_start/">V1p5cdr3_start</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequenceDelineationV_alignment_labels/">V1p5SequenceDelineationV_alignment_labels</a></td>
+<td><a href="../V1p5alignment_labels/">V1p5alignment_labels</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>One string for each codon in the aligned_sequence indicating the label of tha...</td>
 <td>direct</td>
@@ -361,7 +361,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5AlleleDescription/">V1p5AlleleDescription</a></td>
-<td><a href="../V1p5AlleleDescription_v_gene_delineations/">V1p5AlleleDescription_v_gene_delineations</a></td>
+<td><a href="../V1p5v_gene_delineations/">V1p5v_gene_delineations</a></td>
 <td>range</td>
 <td><a href="./">V1p5SequenceDelineationV</a></td>
 </tr>
@@ -398,22 +398,22 @@
 <pre><code class="language-yaml">name: V1p5SequenceDelineationV
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5SequenceDelineationV_sequence_delineation_id
-- V1p5SequenceDelineationV_delineation_scheme
-- V1p5SequenceDelineationV_unaligned_sequence
-- V1p5SequenceDelineationV_aligned_sequence
-- V1p5SequenceDelineationV_fwr1_start
-- V1p5SequenceDelineationV_fwr1_end
-- V1p5SequenceDelineationV_cdr1_start
-- V1p5SequenceDelineationV_cdr1_end
-- V1p5SequenceDelineationV_fwr2_start
-- V1p5SequenceDelineationV_fwr2_end
-- V1p5SequenceDelineationV_cdr2_start
-- V1p5SequenceDelineationV_cdr2_end
-- V1p5SequenceDelineationV_fwr3_start
-- V1p5SequenceDelineationV_fwr3_end
-- V1p5SequenceDelineationV_cdr3_start
-- V1p5SequenceDelineationV_alignment_labels
+- V1p5sequence_delineation_id
+- V1p5delineation_scheme
+- V1p5unaligned_sequence
+- V1p5aligned_sequence
+- V1p5fwr1_start
+- V1p5fwr1_end
+- V1p5cdr1_start
+- V1p5cdr1_end
+- V1p5fwr2_start
+- V1p5fwr2_end
+- V1p5cdr2_start
+- V1p5cdr2_end
+- V1p5fwr3_start
+- V1p5fwr3_end
+- V1p5cdr3_start
+- V1p5alignment_labels
 
 </code></pre>
 </details>
@@ -422,8 +422,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5SequenceDelineationV
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5SequenceDelineationV_sequence_delineation_id:
-    name: V1p5SequenceDelineationV_sequence_delineation_id
+  V1p5sequence_delineation_id:
+    name: V1p5sequence_delineation_id
     annotations:
       nullable:
         tag: nullable
@@ -432,14 +432,14 @@ attributes:
       generated by the  repository hosting the record.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_sequence_delineation_id
+    alias: V1p5sequence_delineation_id
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
     range: string
     required: true
-  V1p5SequenceDelineationV_delineation_scheme:
-    name: V1p5SequenceDelineationV_delineation_scheme
+  V1p5delineation_scheme:
+    name: V1p5delineation_scheme
     annotations:
       nullable:
         tag: nullable
@@ -447,14 +447,14 @@ attributes:
     description: Name of the delineation scheme
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_delineation_scheme
+    alias: V1p5delineation_scheme
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
     range: string
     required: true
-  V1p5SequenceDelineationV_unaligned_sequence:
-    name: V1p5SequenceDelineationV_unaligned_sequence
+  V1p5unaligned_sequence:
+    name: V1p5unaligned_sequence
     annotations:
       nullable:
         tag: nullable
@@ -462,14 +462,14 @@ attributes:
     description: entire V-sequence covered by this delineation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_unaligned_sequence
+    alias: V1p5unaligned_sequence
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
     range: string
     required: false
-  V1p5SequenceDelineationV_aligned_sequence:
-    name: V1p5SequenceDelineationV_aligned_sequence
+  V1p5aligned_sequence:
+    name: V1p5aligned_sequence
     annotations:
       nullable:
         tag: nullable
@@ -478,179 +478,168 @@ attributes:
       sequence should always be  provided for IMGT delineations.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_aligned_sequence
+    alias: V1p5aligned_sequence
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
     range: string
     required: false
-  V1p5SequenceDelineationV_fwr1_start:
-    name: V1p5SequenceDelineationV_fwr1_start
+  V1p5fwr1_start:
+    name: V1p5fwr1_start
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: FWR1 start co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_fwr1_start
+    alias: V1p5fwr1_start
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_fwr1_end:
-    name: V1p5SequenceDelineationV_fwr1_end
+  V1p5fwr1_end:
+    name: V1p5fwr1_end
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: FWR1 end co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_fwr1_end
+    alias: V1p5fwr1_end
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_cdr1_start:
-    name: V1p5SequenceDelineationV_cdr1_start
+  V1p5cdr1_start:
+    name: V1p5cdr1_start
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: CDR1 start co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_cdr1_start
+    alias: V1p5cdr1_start
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_cdr1_end:
-    name: V1p5SequenceDelineationV_cdr1_end
+  V1p5cdr1_end:
+    name: V1p5cdr1_end
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: CDR1 end co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_cdr1_end
+    alias: V1p5cdr1_end
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_fwr2_start:
-    name: V1p5SequenceDelineationV_fwr2_start
+  V1p5fwr2_start:
+    name: V1p5fwr2_start
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: FWR2 start co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_fwr2_start
+    alias: V1p5fwr2_start
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_fwr2_end:
-    name: V1p5SequenceDelineationV_fwr2_end
+  V1p5fwr2_end:
+    name: V1p5fwr2_end
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: FWR2 end co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_fwr2_end
+    alias: V1p5fwr2_end
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_cdr2_start:
-    name: V1p5SequenceDelineationV_cdr2_start
+  V1p5cdr2_start:
+    name: V1p5cdr2_start
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: CDR2 start co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_cdr2_start
+    alias: V1p5cdr2_start
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_cdr2_end:
-    name: V1p5SequenceDelineationV_cdr2_end
+  V1p5cdr2_end:
+    name: V1p5cdr2_end
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: CDR2 end co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_cdr2_end
+    alias: V1p5cdr2_end
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_fwr3_start:
-    name: V1p5SequenceDelineationV_fwr3_start
+  V1p5fwr3_start:
+    name: V1p5fwr3_start
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: FWR3 start co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_fwr3_start
+    alias: V1p5fwr3_start
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_fwr3_end:
-    name: V1p5SequenceDelineationV_fwr3_end
+  V1p5fwr3_end:
+    name: V1p5fwr3_end
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: FWR3 end co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_fwr3_end
+    alias: V1p5fwr3_end
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_cdr3_start:
-    name: V1p5SequenceDelineationV_cdr3_start
+  V1p5cdr3_start:
+    name: V1p5cdr3_start
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: CDR3 start co-ordinate in the 'unaligned sequence' field
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_cdr3_start
+    alias: V1p5cdr3_start
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV
+    - V1p5Rearrangement
     range: integer
-    required: true
-  V1p5SequenceDelineationV_alignment_labels:
-    name: V1p5SequenceDelineationV_alignment_labels
+  V1p5alignment_labels:
+    name: V1p5alignment_labels
     annotations:
       nullable:
         tag: nullable
@@ -660,7 +649,7 @@ attributes:
       it provides one.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequenceDelineationV_alignment_labels
+    alias: V1p5alignment_labels
     owner: V1p5SequenceDelineationV
     domain_of:
     - V1p5SequenceDelineationV

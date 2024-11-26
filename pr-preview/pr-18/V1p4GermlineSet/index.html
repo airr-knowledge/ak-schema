@@ -199,66 +199,66 @@
 <div class="mermaid"> classDiagram
     class V1p4GermlineSet
     click V1p4GermlineSet href "../V1p4GermlineSet"
-      V1p4GermlineSet : V1p4GermlineSet_acknowledgements
+      V1p4GermlineSet : V1p4acknowledgements
 
 
 
 
-    V1p4GermlineSet --&gt; "1..*" V1p4Contributor : V1p4GermlineSet_acknowledgements
+    V1p4GermlineSet --&gt; "1..*" V1p4Contributor : V1p4acknowledgements
     click V1p4Contributor href "../V1p4Contributor"
 
 
-      V1p4GermlineSet : V1p4GermlineSet_allele_descriptions
+      V1p4GermlineSet : V1p4allele_descriptions
 
 
 
 
-    V1p4GermlineSet --&gt; "1..*" V1p4AlleleDescription : V1p4GermlineSet_allele_descriptions
+    V1p4GermlineSet --&gt; "1..*" V1p4AlleleDescription : V1p4allele_descriptions
     click V1p4AlleleDescription href "../V1p4AlleleDescription"
 
 
-      V1p4GermlineSet : V1p4GermlineSet_curation
+      V1p4GermlineSet : V1p4curation
 
-      V1p4GermlineSet : V1p4GermlineSet_germline_set_id
+      V1p4GermlineSet : V1p4germline_set_id
 
-      V1p4GermlineSet : V1p4GermlineSet_germline_set_name
+      V1p4GermlineSet : V1p4germline_set_name
 
-      V1p4GermlineSet : V1p4GermlineSet_germline_set_ref
+      V1p4GermlineSet : V1p4germline_set_ref
 
-      V1p4GermlineSet : V1p4GermlineSet_locus
-
-
+      V1p4GermlineSet : V1p4locus
 
 
-    V1p4GermlineSet --&gt; "1" V1p4Locus : V1p4GermlineSet_locus
+
+
+    V1p4GermlineSet --&gt; "0..1" V1p4Locus : V1p4locus
     click V1p4Locus href "../V1p4Locus"
 
 
-      V1p4GermlineSet : V1p4GermlineSet_pub_ids
+      V1p4GermlineSet : V1p4pub_ids
 
-      V1p4GermlineSet : V1p4GermlineSet_release_date
+      V1p4GermlineSet : V1p4release_date
 
-      V1p4GermlineSet : V1p4GermlineSet_release_description
+      V1p4GermlineSet : V1p4release_description
 
-      V1p4GermlineSet : V1p4GermlineSet_release_version
+      V1p4GermlineSet : V1p4release_version
 
-      V1p4GermlineSet : V1p4GermlineSet_species
-
-
+      V1p4GermlineSet : V1p4species
 
 
-    V1p4GermlineSet --&gt; "1" V1p4Species : V1p4GermlineSet_species
+
+
+    V1p4GermlineSet --&gt; "1" V1p4Species : V1p4species
     click V1p4Species href "../V1p4Species"
 
 
-      V1p4GermlineSet : V1p4GermlineSet_species_subgroup
+      V1p4GermlineSet : V1p4species_subgroup
 
-      V1p4GermlineSet : V1p4GermlineSet_species_subgroup_type
-
-
+      V1p4GermlineSet : V1p4species_subgroup_type
 
 
-    V1p4GermlineSet --&gt; "0..1" V1p4SpeciesSubgroupType : V1p4GermlineSet_species_subgroup_type
+
+
+    V1p4GermlineSet --&gt; "0..1" V1p4SpeciesSubgroupType : V1p4species_subgroup_type
     click V1p4SpeciesSubgroupType href "../V1p4SpeciesSubgroupType"
 
 
@@ -277,87 +277,87 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4GermlineSet_germline_set_id/">V1p4GermlineSet_germline_set_id</a></td>
+<td><a href="../V1p4germline_set_id/">V1p4germline_set_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of the GermlineSet within this file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_acknowledgements/">V1p4GermlineSet_acknowledgements</a></td>
+<td><a href="../V1p4acknowledgements/">V1p4acknowledgements</a></td>
 <td>1..* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
-<td>List of individuals whose contribution to the germline set should be acknowle...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_release_version/">V1p4GermlineSet_release_version</a></td>
+<td><a href="../V1p4release_version/">V1p4release_version</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Version number of this record, allocated automatically</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_release_description/">V1p4GermlineSet_release_description</a></td>
+<td><a href="../V1p4release_description/">V1p4release_description</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_release_date/">V1p4GermlineSet_release_date</a></td>
+<td><a href="../V1p4release_date/">V1p4release_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_germline_set_name/">V1p4GermlineSet_germline_set_name</a></td>
+<td><a href="../V1p4germline_set_name/">V1p4germline_set_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>descriptive name of this germline set</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_germline_set_ref/">V1p4GermlineSet_germline_set_ref</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Unique identifier of the germline set and version, in standardized form (Repo...</td>
+<td><a href="../V1p4germline_set_ref/">V1p4germline_set_ref</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_pub_ids/">V1p4GermlineSet_pub_ids</a></td>
+<td><a href="../V1p4pub_ids/">V1p4pub_ids</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
-<td>Publications describing the germline set</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_species/">V1p4GermlineSet_species</a></td>
+<td><a href="../V1p4species/">V1p4species</a></td>
 <td>1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_species_subgroup/">V1p4GermlineSet_species_subgroup</a></td>
+<td><a href="../V1p4species_subgroup/">V1p4species_subgroup</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Race, strain or other species subgroup to which this subject belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_species_subgroup_type/">V1p4GermlineSet_species_subgroup_type</a></td>
+<td><a href="../V1p4species_subgroup_type/">V1p4species_subgroup_type</a></td>
 <td>0..1 <br/> <a href="../V1p4SpeciesSubgroupType/">V1p4SpeciesSubgroupType</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_locus/">V1p4GermlineSet_locus</a></td>
-<td>1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
-<td>Gene locus</td>
+<td><a href="../V1p4locus/">V1p4locus</a></td>
+<td>0..1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_allele_descriptions/">V1p4GermlineSet_allele_descriptions</a></td>
+<td><a href="../V1p4allele_descriptions/">V1p4allele_descriptions</a></td>
 <td>1..* <br/> <a href="../V1p4AlleleDescription/">V1p4AlleleDescription</a></td>
 <td>list of allele_descriptions in the germline set</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4GermlineSet_curation/">V1p4GermlineSet_curation</a></td>
+<td><a href="../V1p4curation/">V1p4curation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Curational notes on the GermlineSet</td>
+<td></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -393,20 +393,20 @@
 <pre><code class="language-yaml">name: V1p4GermlineSet
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4GermlineSet_germline_set_id
-- V1p4GermlineSet_acknowledgements
-- V1p4GermlineSet_release_version
-- V1p4GermlineSet_release_description
-- V1p4GermlineSet_release_date
-- V1p4GermlineSet_germline_set_name
-- V1p4GermlineSet_germline_set_ref
-- V1p4GermlineSet_pub_ids
-- V1p4GermlineSet_species
-- V1p4GermlineSet_species_subgroup
-- V1p4GermlineSet_species_subgroup_type
-- V1p4GermlineSet_locus
-- V1p4GermlineSet_allele_descriptions
-- V1p4GermlineSet_curation
+- V1p4germline_set_id
+- V1p4acknowledgements
+- V1p4release_version
+- V1p4release_description
+- V1p4release_date
+- V1p4germline_set_name
+- V1p4germline_set_ref
+- V1p4pub_ids
+- V1p4species
+- V1p4species_subgroup
+- V1p4species_subgroup_type
+- V1p4locus
+- V1p4allele_descriptions
+- V1p4curation
 
 </code></pre>
 </details>
@@ -415,8 +415,8 @@ slots:
 <pre><code class="language-yaml">name: V1p4GermlineSet
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4GermlineSet_germline_set_id:
-    name: V1p4GermlineSet_germline_set_id
+  V1p4germline_set_id:
+    name: V1p4germline_set_id
     annotations:
       nullable:
         tag: nullable
@@ -425,50 +425,45 @@ attributes:
       generated by the  repository hosting the record.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_germline_set_id
+    alias: V1p4germline_set_id
     owner: V1p4GermlineSet
     domain_of:
     - V1p4GermlineSet
     range: string
     required: true
-  V1p4GermlineSet_acknowledgements:
-    name: V1p4GermlineSet_acknowledgements
+  V1p4acknowledgements:
+    name: V1p4acknowledgements
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: List of individuals whose contribution to the germline set should
-      be acknowledged. Note that these are not necessarily identical with the authors
-      on an associated manuscript or other scholarly communication. Further note that
-      typically at least the three CRediT contributor roles "supervision", "investigation"
-      and "data curation" should be assigned. The coresponding author should be listed
-      last.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_acknowledgements
+    alias: V1p4acknowledgements
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
     range: V1p4Contributor
     required: true
     multivalued: true
-  V1p4GermlineSet_release_version:
-    name: V1p4GermlineSet_release_version
+  V1p4release_version:
+    name: V1p4release_version
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Version number of this record, allocated automatically
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_release_version
+    alias: V1p4release_version
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
     range: integer
     required: true
-  V1p4GermlineSet_release_description:
-    name: V1p4GermlineSet_release_description
+  V1p4release_description:
+    name: V1p4release_description
     annotations:
       nullable:
         tag: nullable
@@ -477,14 +472,15 @@ attributes:
       embodied
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_release_description
+    alias: V1p4release_description
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
     required: true
-  V1p4GermlineSet_release_date:
-    name: V1p4GermlineSet_release_date
+  V1p4release_date:
+    name: V1p4release_date
     annotations:
       nullable:
         tag: nullable
@@ -492,14 +488,15 @@ attributes:
     description: Date of this release
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_release_date
+    alias: V1p4release_date
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
     required: true
-  V1p4GermlineSet_germline_set_name:
-    name: V1p4GermlineSet_germline_set_name
+  V1p4germline_set_name:
+    name: V1p4germline_set_name
     annotations:
       nullable:
         tag: nullable
@@ -507,46 +504,45 @@ attributes:
     description: descriptive name of this germline set
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_germline_set_name
+    alias: V1p4germline_set_name
     owner: V1p4GermlineSet
     domain_of:
     - V1p4GermlineSet
     range: string
     required: true
-  V1p4GermlineSet_germline_set_ref:
-    name: V1p4GermlineSet_germline_set_ref
+  V1p4germline_set_ref:
+    name: V1p4germline_set_ref
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Unique identifier of the germline set and version, in standardized
-      form (Repo:Label:Version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_germline_set_ref
+    alias: V1p4germline_set_ref
     owner: V1p4GermlineSet
     domain_of:
     - V1p4GermlineSet
+    - V1p4DocumentedAllele
+    - V1p4DeletedGene
+    - V1p4DataProcessing
     range: string
-    required: true
-  V1p4GermlineSet_pub_ids:
-    name: V1p4GermlineSet_pub_ids
+  V1p4pub_ids:
+    name: V1p4pub_ids
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Publications describing the germline set
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_pub_ids
+    alias: V1p4pub_ids
     owner: V1p4GermlineSet
     domain_of:
     - V1p4GermlineSet
+    - V1p4Study
     range: string
-    required: false
     multivalued: true
-  V1p4GermlineSet_species:
-    name: V1p4GermlineSet_species
+  V1p4species:
+    name: V1p4species
     annotations:
       nullable:
         tag: nullable
@@ -554,14 +550,16 @@ attributes:
     description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_species
+    alias: V1p4species
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
+    - V1p4Subject
     range: V1p4Species
     required: true
-  V1p4GermlineSet_species_subgroup:
-    name: V1p4GermlineSet_species_subgroup
+  V1p4species_subgroup:
+    name: V1p4species_subgroup
     annotations:
       nullable:
         tag: nullable
@@ -569,14 +567,15 @@ attributes:
     description: Race, strain or other species subgroup to which this subject belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_species_subgroup
+    alias: V1p4species_subgroup
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
     required: false
-  V1p4GermlineSet_species_subgroup_type:
-    name: V1p4GermlineSet_species_subgroup_type
+  V1p4species_subgroup_type:
+    name: V1p4species_subgroup_type
     annotations:
       nullable:
         tag: nullable
@@ -584,29 +583,27 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_species_subgroup_type
+    alias: V1p4species_subgroup_type
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
     range: V1p4SpeciesSubgroupType
     required: false
-  V1p4GermlineSet_locus:
-    name: V1p4GermlineSet_locus
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Gene locus
+  V1p4locus:
+    name: V1p4locus
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_locus
+    alias: V1p4locus
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4AlleleDescription
     - V1p4GermlineSet
+    - V1p4Genotype
+    - V1p4Rearrangement
     range: V1p4Locus
-    required: true
-  V1p4GermlineSet_allele_descriptions:
-    name: V1p4GermlineSet_allele_descriptions
+  V1p4allele_descriptions:
+    name: V1p4allele_descriptions
     annotations:
       nullable:
         tag: nullable
@@ -614,26 +611,27 @@ attributes:
     description: list of allele_descriptions in the germline set
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_allele_descriptions
+    alias: V1p4allele_descriptions
     owner: V1p4GermlineSet
     domain_of:
     - V1p4GermlineSet
     range: V1p4AlleleDescription
     required: true
     multivalued: true
-  V1p4GermlineSet_curation:
-    name: V1p4GermlineSet_curation
+  V1p4curation:
+    name: V1p4curation
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Curational notes on the GermlineSet. This can be used to give more
-      extensive notes on the  decisions taken than are provided in the release_description.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4GermlineSet_curation
+    alias: V1p4curation
     owner: V1p4GermlineSet
     domain_of:
+    - V1p4RearrangedSequence
+    - V1p4UnrearrangedSequence
+    - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
     required: false

@@ -204,163 +204,163 @@
 <div class="mermaid"> classDiagram
     class V1p4SampleProcessing
     click V1p4SampleProcessing href "../V1p4SampleProcessing"
-      V1p4SampleProcessing : V1p4CellProcessing_cell_isolation
+      V1p4SampleProcessing : V1p4anatomic_site
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_label
+      V1p4SampleProcessing : V1p4biomaterial_provider
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_number
+      V1p4SampleProcessing : V1p4cell_isolation
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_phenotype
+      V1p4SampleProcessing : V1p4cell_label
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_processing_protocol
+      V1p4SampleProcessing : V1p4cell_number
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_quality
+      V1p4SampleProcessing : V1p4cell_phenotype
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_species
+      V1p4SampleProcessing : V1p4cell_processing_protocol
+
+      V1p4SampleProcessing : V1p4cell_quality
+
+      V1p4SampleProcessing : V1p4cell_species
 
 
 
 
-    V1p4SampleProcessing --&gt; "0..1" V1p4CellSpecies : V1p4CellProcessing_cell_species
+    V1p4SampleProcessing --&gt; "0..1" V1p4CellSpecies : V1p4cell_species
     click V1p4CellSpecies href "../V1p4CellSpecies"
 
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_storage
+      V1p4SampleProcessing : V1p4cell_storage
 
-      V1p4SampleProcessing : V1p4CellProcessing_cell_subset
-
-
+      V1p4SampleProcessing : V1p4cell_subset
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4CellSubset : V1p4CellProcessing_cell_subset
+
+
+    V1p4SampleProcessing --&gt; "0..1" V1p4CellSubset : V1p4cell_subset
     click V1p4CellSubset href "../V1p4CellSubset"
 
 
-      V1p4SampleProcessing : V1p4CellProcessing_cells_per_reaction
+      V1p4SampleProcessing : V1p4cells_per_reaction
 
-      V1p4SampleProcessing : V1p4CellProcessing_single_cell
-
-      V1p4SampleProcessing : V1p4CellProcessing_tissue_processing
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_complete_sequences
+      V1p4SampleProcessing : V1p4collection_location
 
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4CompleteSequences : V1p4NucleicAcidProcessing_complete_sequences
-    click V1p4CompleteSequences href "../V1p4CompleteSequences"
-
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_library_generation_kit_version
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_library_generation_method
-
-
-
-
-    V1p4SampleProcessing --&gt; "1" V1p4LibraryGenerationMethod : V1p4NucleicAcidProcessing_library_generation_method
-    click V1p4LibraryGenerationMethod href "../V1p4LibraryGenerationMethod"
-
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_library_generation_protocol
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_pcr_target
-
-
-
-
-    V1p4SampleProcessing --&gt; "*" V1p4PCRTarget : V1p4NucleicAcidProcessing_pcr_target
-    click V1p4PCRTarget href "../V1p4PCRTarget"
-
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_physical_linkage
-
-
-
-
-    V1p4SampleProcessing --&gt; "1" V1p4PhysicalLinkage : V1p4NucleicAcidProcessing_physical_linkage
-    click V1p4PhysicalLinkage href "../V1p4PhysicalLinkage"
-
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_template_amount
-
-
-
-
-    V1p4SampleProcessing --&gt; "1" V1p4PhysicalQuantity : V1p4NucleicAcidProcessing_template_amount
-    click V1p4PhysicalQuantity href "../V1p4PhysicalQuantity"
-
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_template_class
-
-
-
-
-    V1p4SampleProcessing --&gt; "1" V1p4TemplateClass : V1p4NucleicAcidProcessing_template_class
-    click V1p4TemplateClass href "../V1p4TemplateClass"
-
-
-      V1p4SampleProcessing : V1p4NucleicAcidProcessing_template_quality
-
-      V1p4SampleProcessing : V1p4Sample_anatomic_site
-
-      V1p4SampleProcessing : V1p4Sample_biomaterial_provider
-
-      V1p4SampleProcessing : V1p4Sample_collection_location
-
-
-
-
-    V1p4SampleProcessing --&gt; "0..1" V1p4CollectionLocation : V1p4Sample_collection_location
+    V1p4SampleProcessing --&gt; "0..1" V1p4CollectionLocation : V1p4collection_location
     click V1p4CollectionLocation href "../V1p4CollectionLocation"
 
 
-      V1p4SampleProcessing : V1p4Sample_collection_time_point_relative
+      V1p4SampleProcessing : V1p4collection_time_point_relative
 
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4TimePoint : V1p4Sample_collection_time_point_relative
+    V1p4SampleProcessing --&gt; "1" V1p4TimePoint : V1p4collection_time_point_relative
     click V1p4TimePoint href "../V1p4TimePoint"
 
 
-      V1p4SampleProcessing : V1p4Sample_disease_state_sample
-
-      V1p4SampleProcessing : V1p4Sample_sample_id
-
-      V1p4SampleProcessing : V1p4Sample_sample_type
-
-      V1p4SampleProcessing : V1p4Sample_tissue
+      V1p4SampleProcessing : V1p4complete_sequences
 
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4Tissue : V1p4Sample_tissue
-    click V1p4Tissue href "../V1p4Tissue"
+    V1p4SampleProcessing --&gt; "1" V1p4CompleteSequences : V1p4complete_sequences
+    click V1p4CompleteSequences href "../V1p4CompleteSequences"
 
 
-      V1p4SampleProcessing : V1p4SampleProcessing_sample_processing_id
+      V1p4SampleProcessing : V1p4disease_state_sample
 
-      V1p4SampleProcessing : V1p4SequencingRun_sequencing_facility
+      V1p4SampleProcessing : V1p4library_generation_kit_version
 
-      V1p4SampleProcessing : V1p4SequencingRun_sequencing_files
-
-
+      V1p4SampleProcessing : V1p4library_generation_method
 
 
-    V1p4SampleProcessing --&gt; "0..1" V1p4SequencingData : V1p4SequencingRun_sequencing_files
+
+
+    V1p4SampleProcessing --&gt; "1" V1p4LibraryGenerationMethod : V1p4library_generation_method
+    click V1p4LibraryGenerationMethod href "../V1p4LibraryGenerationMethod"
+
+
+      V1p4SampleProcessing : V1p4library_generation_protocol
+
+      V1p4SampleProcessing : V1p4pcr_target
+
+
+
+
+    V1p4SampleProcessing --&gt; "*" V1p4PCRTarget : V1p4pcr_target
+    click V1p4PCRTarget href "../V1p4PCRTarget"
+
+
+      V1p4SampleProcessing : V1p4physical_linkage
+
+
+
+
+    V1p4SampleProcessing --&gt; "1" V1p4PhysicalLinkage : V1p4physical_linkage
+    click V1p4PhysicalLinkage href "../V1p4PhysicalLinkage"
+
+
+      V1p4SampleProcessing : V1p4sample_id
+
+      V1p4SampleProcessing : V1p4sample_processing_id
+
+      V1p4SampleProcessing : V1p4sample_type
+
+      V1p4SampleProcessing : V1p4sequencing_facility
+
+      V1p4SampleProcessing : V1p4sequencing_files
+
+
+
+
+    V1p4SampleProcessing --&gt; "0..1" V1p4SequencingData : V1p4sequencing_files
     click V1p4SequencingData href "../V1p4SequencingData"
 
 
-      V1p4SampleProcessing : V1p4SequencingRun_sequencing_kit
+      V1p4SampleProcessing : V1p4sequencing_kit
 
-      V1p4SampleProcessing : V1p4SequencingRun_sequencing_platform
+      V1p4SampleProcessing : V1p4sequencing_platform
 
-      V1p4SampleProcessing : V1p4SequencingRun_sequencing_run_date
+      V1p4SampleProcessing : V1p4sequencing_run_date
 
-      V1p4SampleProcessing : V1p4SequencingRun_sequencing_run_id
+      V1p4SampleProcessing : V1p4sequencing_run_id
 
-      V1p4SampleProcessing : V1p4SequencingRun_total_reads_passing_qc_filter
+      V1p4SampleProcessing : V1p4single_cell
+
+      V1p4SampleProcessing : V1p4template_amount
+
+
+
+
+    V1p4SampleProcessing --&gt; "1" V1p4PhysicalQuantity : V1p4template_amount
+    click V1p4PhysicalQuantity href "../V1p4PhysicalQuantity"
+
+
+      V1p4SampleProcessing : V1p4template_class
+
+
+
+
+    V1p4SampleProcessing --&gt; "1" V1p4TemplateClass : V1p4template_class
+    click V1p4TemplateClass href "../V1p4TemplateClass"
+
+
+      V1p4SampleProcessing : V1p4template_quality
+
+      V1p4SampleProcessing : V1p4tissue
+
+
+
+
+    V1p4SampleProcessing --&gt; "1" V1p4Tissue : V1p4tissue
+    click V1p4Tissue href "../V1p4Tissue"
+
+
+      V1p4SampleProcessing : V1p4tissue_processing
+
+      V1p4SampleProcessing : V1p4total_reads_passing_qc_filter
 
 
 </div>
@@ -377,223 +377,223 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4SampleProcessing_sample_processing_id/">V1p4SampleProcessing_sample_processing_id</a></td>
+<td><a href="../V1p4sample_processing_id/">V1p4sample_processing_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the sample processing object</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_sample_id/">V1p4Sample_sample_id</a></td>
+<td><a href="../V1p4sample_id/">V1p4sample_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_sample_type/">V1p4Sample_sample_type</a></td>
+<td><a href="../V1p4sample_type/">V1p4sample_type</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_tissue/">V1p4Sample_tissue</a></td>
+<td><a href="../V1p4tissue/">V1p4tissue</a></td>
 <td>1 <br/> <a href="../V1p4Tissue/">V1p4Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_anatomic_site/">V1p4Sample_anatomic_site</a></td>
+<td><a href="../V1p4anatomic_site/">V1p4anatomic_site</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_disease_state_sample/">V1p4Sample_disease_state_sample</a></td>
+<td><a href="../V1p4disease_state_sample/">V1p4disease_state_sample</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_collection_time_point_relative/">V1p4Sample_collection_time_point_relative</a></td>
+<td><a href="../V1p4collection_time_point_relative/">V1p4collection_time_point_relative</a></td>
 <td>1 <br/> <a href="../V1p4TimePoint/">V1p4TimePoint</a></td>
 <td>Time point at which sample was taken, relative to <code>label</code> event</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_collection_location/">V1p4Sample_collection_location</a></td>
+<td><a href="../V1p4collection_location/">V1p4collection_location</a></td>
 <td>0..1 <br/> <a href="../V1p4CollectionLocation/">V1p4CollectionLocation</a></td>
 <td>Location where the sample was taken, preferred granularity is country-level</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Sample_biomaterial_provider/">V1p4Sample_biomaterial_provider</a></td>
+<td><a href="../V1p4biomaterial_provider/">V1p4biomaterial_provider</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_tissue_processing/">V1p4CellProcessing_tissue_processing</a></td>
+<td><a href="../V1p4tissue_processing/">V1p4tissue_processing</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_subset/">V1p4CellProcessing_cell_subset</a></td>
-<td>1 <br/> <a href="../V1p4CellSubset/">V1p4CellSubset</a></td>
-<td>Commonly-used designation of isolated cell population</td>
+<td><a href="../V1p4cell_subset/">V1p4cell_subset</a></td>
+<td>0..1 <br/> <a href="../V1p4CellSubset/">V1p4CellSubset</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_phenotype/">V1p4CellProcessing_cell_phenotype</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td><a href="../V1p4cell_phenotype/">V1p4cell_phenotype</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of cellular markers and their expression levels used to isolate the cell...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_label/">V1p4CellProcessing_cell_label</a></td>
+<td><a href="../V1p4cell_label/">V1p4cell_label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Free text cell type annotation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_species/">V1p4CellProcessing_cell_species</a></td>
+<td><a href="../V1p4cell_species/">V1p4cell_species</a></td>
 <td>0..1 <br/> <a href="../V1p4CellSpecies/">V1p4CellSpecies</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_single_cell/">V1p4CellProcessing_single_cell</a></td>
+<td><a href="../V1p4single_cell/">V1p4single_cell</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_number/">V1p4CellProcessing_cell_number</a></td>
+<td><a href="../V1p4cell_number/">V1p4cell_number</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cells_per_reaction/">V1p4CellProcessing_cells_per_reaction</a></td>
+<td><a href="../V1p4cells_per_reaction/">V1p4cells_per_reaction</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_storage/">V1p4CellProcessing_cell_storage</a></td>
+<td><a href="../V1p4cell_storage/">V1p4cell_storage</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_quality/">V1p4CellProcessing_cell_quality</a></td>
+<td><a href="../V1p4cell_quality/">V1p4cell_quality</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_isolation/">V1p4CellProcessing_cell_isolation</a></td>
+<td><a href="../V1p4cell_isolation/">V1p4cell_isolation</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4CellProcessing_cell_processing_protocol/">V1p4CellProcessing_cell_processing_protocol</a></td>
+<td><a href="../V1p4cell_processing_protocol/">V1p4cell_processing_protocol</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_template_class/">V1p4NucleicAcidProcessing_template_class</a></td>
+<td><a href="../V1p4template_class/">V1p4template_class</a></td>
 <td>1 <br/> <a href="../V1p4TemplateClass/">V1p4TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_template_quality/">V1p4NucleicAcidProcessing_template_quality</a></td>
+<td><a href="../V1p4template_quality/">V1p4template_quality</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_template_amount/">V1p4NucleicAcidProcessing_template_amount</a></td>
+<td><a href="../V1p4template_amount/">V1p4template_amount</a></td>
 <td>1 <br/> <a href="../V1p4PhysicalQuantity/">V1p4PhysicalQuantity</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_library_generation_method/">V1p4NucleicAcidProcessing_library_generation_method</a></td>
+<td><a href="../V1p4library_generation_method/">V1p4library_generation_method</a></td>
 <td>1 <br/> <a href="../V1p4LibraryGenerationMethod/">V1p4LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_library_generation_protocol/">V1p4NucleicAcidProcessing_library_generation_protocol</a></td>
+<td><a href="../V1p4library_generation_protocol/">V1p4library_generation_protocol</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_library_generation_kit_version/">V1p4NucleicAcidProcessing_library_generation_kit_version</a></td>
+<td><a href="../V1p4library_generation_kit_version/">V1p4library_generation_kit_version</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_pcr_target/">V1p4NucleicAcidProcessing_pcr_target</a></td>
+<td><a href="../V1p4pcr_target/">V1p4pcr_target</a></td>
 <td>* <br/> <a href="../V1p4PCRTarget/">V1p4PCRTarget</a></td>
 <td>If a PCR step was performed that specifically targets the IG/TR loci, the tar...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_complete_sequences/">V1p4NucleicAcidProcessing_complete_sequences</a></td>
+<td><a href="../V1p4complete_sequences/">V1p4complete_sequences</a></td>
 <td>1 <br/> <a href="../V1p4CompleteSequences/">V1p4CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4NucleicAcidProcessing_physical_linkage/">V1p4NucleicAcidProcessing_physical_linkage</a></td>
+<td><a href="../V1p4physical_linkage/">V1p4physical_linkage</a></td>
 <td>1 <br/> <a href="../V1p4PhysicalLinkage/">V1p4PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4SequencingRun_sequencing_run_id/">V1p4SequencingRun_sequencing_run_id</a></td>
+<td><a href="../V1p4sequencing_run_id/">V1p4sequencing_run_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>ID of sequencing run assigned by the sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4SequencingRun_total_reads_passing_qc_filter/">V1p4SequencingRun_total_reads_passing_qc_filter</a></td>
+<td><a href="../V1p4total_reads_passing_qc_filter/">V1p4total_reads_passing_qc_filter</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of usable reads for analysis</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4SequencingRun_sequencing_platform/">V1p4SequencingRun_sequencing_platform</a></td>
+<td><a href="../V1p4sequencing_platform/">V1p4sequencing_platform</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Designation of sequencing instrument used</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4SequencingRun_sequencing_facility/">V1p4SequencingRun_sequencing_facility</a></td>
+<td><a href="../V1p4sequencing_facility/">V1p4sequencing_facility</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4SequencingRun_sequencing_run_date/">V1p4SequencingRun_sequencing_run_date</a></td>
+<td><a href="../V1p4sequencing_run_date/">V1p4sequencing_run_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4SequencingRun_sequencing_kit/">V1p4SequencingRun_sequencing_kit</a></td>
+<td><a href="../V1p4sequencing_kit/">V1p4sequencing_kit</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name, manufacturer, order and lot numbers of sequencing kit</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4SequencingRun_sequencing_files/">V1p4SequencingRun_sequencing_files</a></td>
+<td><a href="../V1p4sequencing_files/">V1p4sequencing_files</a></td>
 <td>0..1 <br/> <a href="../V1p4SequencingData/">V1p4SequencingData</a></td>
 <td>Set of sequencing files produced by the sequencing run</td>
 <td>direct</td>
@@ -613,7 +613,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Repertoire/">V1p4Repertoire</a></td>
-<td><a href="../V1p4Repertoire_sample/">V1p4Repertoire_sample</a></td>
+<td><a href="../V1p4sample/">V1p4sample</a></td>
 <td>range</td>
 <td><a href="./">V1p4SampleProcessing</a></td>
 </tr>
@@ -650,43 +650,43 @@
 <pre><code class="language-yaml">name: V1p4SampleProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4SampleProcessing_sample_processing_id
-- V1p4Sample_sample_id
-- V1p4Sample_sample_type
-- V1p4Sample_tissue
-- V1p4Sample_anatomic_site
-- V1p4Sample_disease_state_sample
-- V1p4Sample_collection_time_point_relative
-- V1p4Sample_collection_location
-- V1p4Sample_biomaterial_provider
-- V1p4CellProcessing_tissue_processing
-- V1p4CellProcessing_cell_subset
-- V1p4CellProcessing_cell_phenotype
-- V1p4CellProcessing_cell_label
-- V1p4CellProcessing_cell_species
-- V1p4CellProcessing_single_cell
-- V1p4CellProcessing_cell_number
-- V1p4CellProcessing_cells_per_reaction
-- V1p4CellProcessing_cell_storage
-- V1p4CellProcessing_cell_quality
-- V1p4CellProcessing_cell_isolation
-- V1p4CellProcessing_cell_processing_protocol
-- V1p4NucleicAcidProcessing_template_class
-- V1p4NucleicAcidProcessing_template_quality
-- V1p4NucleicAcidProcessing_template_amount
-- V1p4NucleicAcidProcessing_library_generation_method
-- V1p4NucleicAcidProcessing_library_generation_protocol
-- V1p4NucleicAcidProcessing_library_generation_kit_version
-- V1p4NucleicAcidProcessing_pcr_target
-- V1p4NucleicAcidProcessing_complete_sequences
-- V1p4NucleicAcidProcessing_physical_linkage
-- V1p4SequencingRun_sequencing_run_id
-- V1p4SequencingRun_total_reads_passing_qc_filter
-- V1p4SequencingRun_sequencing_platform
-- V1p4SequencingRun_sequencing_facility
-- V1p4SequencingRun_sequencing_run_date
-- V1p4SequencingRun_sequencing_kit
-- V1p4SequencingRun_sequencing_files
+- V1p4sample_processing_id
+- V1p4sample_id
+- V1p4sample_type
+- V1p4tissue
+- V1p4anatomic_site
+- V1p4disease_state_sample
+- V1p4collection_time_point_relative
+- V1p4collection_location
+- V1p4biomaterial_provider
+- V1p4tissue_processing
+- V1p4cell_subset
+- V1p4cell_phenotype
+- V1p4cell_label
+- V1p4cell_species
+- V1p4single_cell
+- V1p4cell_number
+- V1p4cells_per_reaction
+- V1p4cell_storage
+- V1p4cell_quality
+- V1p4cell_isolation
+- V1p4cell_processing_protocol
+- V1p4template_class
+- V1p4template_quality
+- V1p4template_amount
+- V1p4library_generation_method
+- V1p4library_generation_protocol
+- V1p4library_generation_kit_version
+- V1p4pcr_target
+- V1p4complete_sequences
+- V1p4physical_linkage
+- V1p4sequencing_run_id
+- V1p4total_reads_passing_qc_filter
+- V1p4sequencing_platform
+- V1p4sequencing_facility
+- V1p4sequencing_run_date
+- V1p4sequencing_kit
+- V1p4sequencing_files
 
 </code></pre>
 </details>
@@ -695,26 +695,23 @@ slots:
 <pre><code class="language-yaml">name: V1p4SampleProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4SampleProcessing_sample_processing_id:
-    name: V1p4SampleProcessing_sample_processing_id
+  V1p4sample_processing_id:
+    name: V1p4sample_processing_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier for the sample processing object. This field should be
-      unique within the repertoire. This field can be used to uniquely identify the
-      combination of sample, cell processing, nucleic acid processing and sequencing
-      run information for the repertoire.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SampleProcessing_sample_processing_id
+    alias: V1p4sample_processing_id
     owner: V1p4SampleProcessing
     domain_of:
+    - V1p4Rearrangement
     - V1p4SampleProcessing
     range: string
     required: false
-  V1p4Sample_sample_id:
-    name: V1p4Sample_sample_id
+  V1p4sample_id:
+    name: V1p4sample_id
     annotations:
       nullable:
         tag: nullable
@@ -724,15 +721,15 @@ attributes:
       used.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_sample_id
+    alias: V1p4sample_id
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4Sample_sample_type:
-    name: V1p4Sample_sample_type
+  V1p4sample_type:
+    name: V1p4sample_type
     annotations:
       nullable:
         tag: nullable
@@ -741,15 +738,15 @@ attributes:
       harvest, peripheral venous puncture
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_sample_type
+    alias: V1p4sample_type
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4Sample_tissue:
-    name: V1p4Sample_tissue
+  V1p4tissue:
+    name: V1p4tissue
     annotations:
       nullable:
         tag: nullable
@@ -757,15 +754,15 @@ attributes:
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_tissue
+    alias: V1p4tissue
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4Tissue
     required: true
-  V1p4Sample_anatomic_site:
-    name: V1p4Sample_anatomic_site
+  V1p4anatomic_site:
+    name: V1p4anatomic_site
     annotations:
       nullable:
         tag: nullable
@@ -773,15 +770,15 @@ attributes:
     description: The anatomic location of the tissue, e.g. Inguinal, femur
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_anatomic_site
+    alias: V1p4anatomic_site
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4Sample_disease_state_sample:
-    name: V1p4Sample_disease_state_sample
+  V1p4disease_state_sample:
+    name: V1p4disease_state_sample
     annotations:
       nullable:
         tag: nullable
@@ -789,15 +786,15 @@ attributes:
     description: Histopathologic evaluation of the sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_disease_state_sample
+    alias: V1p4disease_state_sample
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4Sample_collection_time_point_relative:
-    name: V1p4Sample_collection_time_point_relative
+  V1p4collection_time_point_relative:
+    name: V1p4collection_time_point_relative
     annotations:
       nullable:
         tag: nullable
@@ -805,15 +802,15 @@ attributes:
     description: Time point at which sample was taken, relative to `label` event
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_collection_time_point_relative
+    alias: V1p4collection_time_point_relative
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4TimePoint
     required: true
-  V1p4Sample_collection_location:
-    name: V1p4Sample_collection_location
+  V1p4collection_location:
+    name: V1p4collection_location
     annotations:
       nullable:
         tag: nullable
@@ -821,15 +818,15 @@ attributes:
     description: Location where the sample was taken, preferred granularity is country-level
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_collection_location
+    alias: V1p4collection_location
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4CollectionLocation
     required: false
-  V1p4Sample_biomaterial_provider:
-    name: V1p4Sample_biomaterial_provider
+  V1p4biomaterial_provider:
+    name: V1p4biomaterial_provider
     annotations:
       nullable:
         tag: nullable
@@ -837,15 +834,15 @@ attributes:
     description: Name and address of the entity providing the sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Sample_biomaterial_provider
+    alias: V1p4biomaterial_provider
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4CellProcessing_tissue_processing:
-    name: V1p4CellProcessing_tissue_processing
+  V1p4tissue_processing:
+    name: V1p4tissue_processing
     annotations:
       nullable:
         tag: nullable
@@ -854,31 +851,30 @@ attributes:
       from sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_tissue_processing
+    alias: V1p4tissue_processing
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4CellProcessing_cell_subset:
-    name: V1p4CellProcessing_cell_subset
+  V1p4cell_subset:
+    name: V1p4cell_subset
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Commonly-used designation of isolated cell population
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_subset
+    alias: V1p4cell_subset
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
+    - V1p4Cell
     - V1p4SampleProcessing
     range: V1p4CellSubset
-    required: true
-  V1p4CellProcessing_cell_phenotype:
-    name: V1p4CellProcessing_cell_phenotype
+  V1p4cell_phenotype:
+    name: V1p4cell_phenotype
     annotations:
       nullable:
         tag: nullable
@@ -887,15 +883,15 @@ attributes:
       the cell population.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_phenotype
+    alias: V1p4cell_phenotype
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
+    - V1p4Cell
     - V1p4SampleProcessing
     range: string
-    required: true
-  V1p4CellProcessing_cell_label:
-    name: V1p4CellProcessing_cell_label
+  V1p4cell_label:
+    name: V1p4cell_label
     annotations:
       nullable:
         tag: nullable
@@ -904,15 +900,16 @@ attributes:
       types that are not  provided in the Cell Ontology.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_label
+    alias: V1p4cell_label
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
+    - V1p4Cell
     - V1p4SampleProcessing
     range: string
     required: false
-  V1p4CellProcessing_cell_species:
-    name: V1p4CellProcessing_cell_species
+  V1p4cell_species:
+    name: V1p4cell_species
     annotations:
       nullable:
         tag: nullable
@@ -925,15 +922,15 @@ attributes:
       schema.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_species
+    alias: V1p4cell_species
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: V1p4CellSpecies
     required: false
-  V1p4CellProcessing_single_cell:
-    name: V1p4CellProcessing_single_cell
+  V1p4single_cell:
+    name: V1p4single_cell
     annotations:
       nullable:
         tag: nullable
@@ -941,15 +938,15 @@ attributes:
     description: TRUE if single cells were isolated into separate compartments
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_single_cell
+    alias: V1p4single_cell
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: boolean
     required: true
-  V1p4CellProcessing_cell_number:
-    name: V1p4CellProcessing_cell_number
+  V1p4cell_number:
+    name: V1p4cell_number
     annotations:
       nullable:
         tag: nullable
@@ -957,15 +954,15 @@ attributes:
     description: Total number of cells that went into the experiment
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_number
+    alias: V1p4cell_number
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: integer
     required: true
-  V1p4CellProcessing_cells_per_reaction:
-    name: V1p4CellProcessing_cells_per_reaction
+  V1p4cells_per_reaction:
+    name: V1p4cells_per_reaction
     annotations:
       nullable:
         tag: nullable
@@ -973,15 +970,15 @@ attributes:
     description: Number of cells for each biological replicate
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cells_per_reaction
+    alias: V1p4cells_per_reaction
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: integer
     required: true
-  V1p4CellProcessing_cell_storage:
-    name: V1p4CellProcessing_cell_storage
+  V1p4cell_storage:
+    name: V1p4cell_storage
     annotations:
       nullable:
         tag: nullable
@@ -989,15 +986,15 @@ attributes:
     description: TRUE if cells were cryo-preserved between isolation and further processing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_storage
+    alias: V1p4cell_storage
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: boolean
     required: true
-  V1p4CellProcessing_cell_quality:
-    name: V1p4CellProcessing_cell_quality
+  V1p4cell_quality:
+    name: V1p4cell_quality
     annotations:
       nullable:
         tag: nullable
@@ -1006,15 +1003,15 @@ attributes:
       thawing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_quality
+    alias: V1p4cell_quality
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4CellProcessing_cell_isolation:
-    name: V1p4CellProcessing_cell_isolation
+  V1p4cell_isolation:
+    name: V1p4cell_isolation
     annotations:
       nullable:
         tag: nullable
@@ -1023,15 +1020,15 @@ attributes:
       cells
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_isolation
+    alias: V1p4cell_isolation
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4CellProcessing_cell_processing_protocol:
-    name: V1p4CellProcessing_cell_processing_protocol
+  V1p4cell_processing_protocol:
+    name: V1p4cell_processing_protocol
     annotations:
       nullable:
         tag: nullable
@@ -1041,15 +1038,15 @@ attributes:
       the Materials and methods section in the manuscript.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4CellProcessing_cell_processing_protocol
+    alias: V1p4cell_processing_protocol
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4NucleicAcidProcessing_template_class:
-    name: V1p4NucleicAcidProcessing_template_class
+  V1p4template_class:
+    name: V1p4template_class
     annotations:
       nullable:
         tag: nullable
@@ -1058,15 +1055,15 @@ attributes:
       for the following procedures
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_template_class
+    alias: V1p4template_class
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4TemplateClass
     required: true
-  V1p4NucleicAcidProcessing_template_quality:
-    name: V1p4NucleicAcidProcessing_template_quality
+  V1p4template_quality:
+    name: V1p4template_quality
     annotations:
       nullable:
         tag: nullable
@@ -1075,15 +1072,15 @@ attributes:
       material
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_template_quality
+    alias: V1p4template_quality
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4NucleicAcidProcessing_template_amount:
-    name: V1p4NucleicAcidProcessing_template_amount
+  V1p4template_amount:
+    name: V1p4template_amount
     annotations:
       nullable:
         tag: nullable
@@ -1091,15 +1088,15 @@ attributes:
     description: Amount of template that went into the process
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_template_amount
+    alias: V1p4template_amount
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PhysicalQuantity
     required: true
-  V1p4NucleicAcidProcessing_library_generation_method:
-    name: V1p4NucleicAcidProcessing_library_generation_method
+  V1p4library_generation_method:
+    name: V1p4library_generation_method
     annotations:
       nullable:
         tag: nullable
@@ -1107,15 +1104,15 @@ attributes:
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_library_generation_method
+    alias: V1p4library_generation_method
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4LibraryGenerationMethod
     required: true
-  V1p4NucleicAcidProcessing_library_generation_protocol:
-    name: V1p4NucleicAcidProcessing_library_generation_protocol
+  V1p4library_generation_protocol:
+    name: V1p4library_generation_protocol
     annotations:
       nullable:
         tag: nullable
@@ -1124,15 +1121,15 @@ attributes:
       that is ready for sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_library_generation_protocol
+    alias: V1p4library_generation_protocol
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4NucleicAcidProcessing_library_generation_kit_version:
-    name: V1p4NucleicAcidProcessing_library_generation_kit_version
+  V1p4library_generation_kit_version:
+    name: V1p4library_generation_kit_version
     annotations:
       nullable:
         tag: nullable
@@ -1141,15 +1138,15 @@ attributes:
       provide the protocol version number
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_library_generation_kit_version
+    alias: V1p4library_generation_kit_version
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4NucleicAcidProcessing_pcr_target:
-    name: V1p4NucleicAcidProcessing_pcr_target
+  V1p4pcr_target:
+    name: V1p4pcr_target
     annotations:
       nullable:
         tag: nullable
@@ -1162,7 +1159,7 @@ attributes:
       appropriate library_generation_method instead.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_pcr_target
+    alias: V1p4pcr_target
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
@@ -1170,8 +1167,8 @@ attributes:
     range: V1p4PCRTarget
     required: false
     multivalued: true
-  V1p4NucleicAcidProcessing_complete_sequences:
-    name: V1p4NucleicAcidProcessing_complete_sequences
+  V1p4complete_sequences:
+    name: V1p4complete_sequences
     annotations:
       nullable:
         tag: nullable
@@ -1189,15 +1186,15 @@ attributes:
       replacement of a NULL value.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_complete_sequences
+    alias: V1p4complete_sequences
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4CompleteSequences
     required: true
-  V1p4NucleicAcidProcessing_physical_linkage:
-    name: V1p4NucleicAcidProcessing_physical_linkage
+  V1p4physical_linkage:
+    name: V1p4physical_linkage
     annotations:
       nullable:
         tag: nullable
@@ -1214,15 +1211,15 @@ attributes:
       linkage was already present on the DNA level (e.g. scFv).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4NucleicAcidProcessing_physical_linkage
+    alias: V1p4physical_linkage
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PhysicalLinkage
     required: true
-  V1p4SequencingRun_sequencing_run_id:
-    name: V1p4SequencingRun_sequencing_run_id
+  V1p4sequencing_run_id:
+    name: V1p4sequencing_run_id
     annotations:
       nullable:
         tag: nullable
@@ -1230,15 +1227,15 @@ attributes:
     description: ID of sequencing run assigned by the sequencing facility
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SequencingRun_sequencing_run_id
+    alias: V1p4sequencing_run_id
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4SequencingRun_total_reads_passing_qc_filter:
-    name: V1p4SequencingRun_total_reads_passing_qc_filter
+  V1p4total_reads_passing_qc_filter:
+    name: V1p4total_reads_passing_qc_filter
     annotations:
       nullable:
         tag: nullable
@@ -1246,15 +1243,15 @@ attributes:
     description: Number of usable reads for analysis
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SequencingRun_total_reads_passing_qc_filter
+    alias: V1p4total_reads_passing_qc_filter
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: integer
     required: true
-  V1p4SequencingRun_sequencing_platform:
-    name: V1p4SequencingRun_sequencing_platform
+  V1p4sequencing_platform:
+    name: V1p4sequencing_platform
     annotations:
       nullable:
         tag: nullable
@@ -1262,15 +1259,15 @@ attributes:
     description: Designation of sequencing instrument used
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SequencingRun_sequencing_platform
+    alias: V1p4sequencing_platform
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4SequencingRun_sequencing_facility:
-    name: V1p4SequencingRun_sequencing_facility
+  V1p4sequencing_facility:
+    name: V1p4sequencing_facility
     annotations:
       nullable:
         tag: nullable
@@ -1278,15 +1275,15 @@ attributes:
     description: Name and address of sequencing facility
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SequencingRun_sequencing_facility
+    alias: V1p4sequencing_facility
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4SequencingRun_sequencing_run_date:
-    name: V1p4SequencingRun_sequencing_run_date
+  V1p4sequencing_run_date:
+    name: V1p4sequencing_run_date
     annotations:
       nullable:
         tag: nullable
@@ -1294,15 +1291,15 @@ attributes:
     description: Date of sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SequencingRun_sequencing_run_date
+    alias: V1p4sequencing_run_date
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4SequencingRun_sequencing_kit:
-    name: V1p4SequencingRun_sequencing_kit
+  V1p4sequencing_kit:
+    name: V1p4sequencing_kit
     annotations:
       nullable:
         tag: nullable
@@ -1310,15 +1307,15 @@ attributes:
     description: Name, manufacturer, order and lot numbers of sequencing kit
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SequencingRun_sequencing_kit
+    alias: V1p4sequencing_kit
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
     required: true
-  V1p4SequencingRun_sequencing_files:
-    name: V1p4SequencingRun_sequencing_files
+  V1p4sequencing_files:
+    name: V1p4sequencing_files
     annotations:
       nullable:
         tag: nullable
@@ -1326,7 +1323,7 @@ attributes:
     description: Set of sequencing files produced by the sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4SequencingRun_sequencing_files
+    alias: V1p4sequencing_files
     owner: V1p4SampleProcessing
     domain_of:
     - V1p4SequencingRun

@@ -204,98 +204,98 @@
 <div class="mermaid"> classDiagram
     class V1p5ReceptorReactivity
     click V1p5ReceptorReactivity href "../V1p5ReceptorReactivity"
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_antigen
+      V1p5ReceptorReactivity : V1p5antigen
 
 
 
 
-    V1p5ReceptorReactivity --&gt; "1" V1p5Antigen : V1p5ReceptorReactivity_antigen
+    V1p5ReceptorReactivity --&gt; "1" V1p5Antigen : V1p5antigen
     click V1p5Antigen href "../V1p5Antigen"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_antigen_source_species
+      V1p5ReceptorReactivity : V1p5antigen_source_species
 
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5AntigenSourceSpecies : V1p5ReceptorReactivity_antigen_source_species
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5AntigenSourceSpecies : V1p5antigen_source_species
     click V1p5AntigenSourceSpecies href "../V1p5AntigenSourceSpecies"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_antigen_type
+      V1p5ReceptorReactivity : V1p5antigen_type
 
 
 
 
-    V1p5ReceptorReactivity --&gt; "1" V1p5AntigenType : V1p5ReceptorReactivity_antigen_type
+    V1p5ReceptorReactivity --&gt; "1" V1p5AntigenType : V1p5antigen_type
     click V1p5AntigenType href "../V1p5AntigenType"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_ligand_type
+      V1p5ReceptorReactivity : V1p5ligand_type
 
 
 
 
-    V1p5ReceptorReactivity --&gt; "1" V1p5LigandType : V1p5ReceptorReactivity_ligand_type
+    V1p5ReceptorReactivity --&gt; "1" V1p5LigandType : V1p5ligand_type
     click V1p5LigandType href "../V1p5LigandType"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_mhc_allele_1
+      V1p5ReceptorReactivity : V1p5mhc_allele_1
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_mhc_allele_2
+      V1p5ReceptorReactivity : V1p5mhc_allele_2
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_mhc_class
-
-
+      V1p5ReceptorReactivity : V1p5mhc_class
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcClass : V1p5ReceptorReactivity_mhc_class
+
+
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcClass : V1p5mhc_class
     click V1p5MhcClass href "../V1p5MhcClass"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_mhc_gene_1
+      V1p5ReceptorReactivity : V1p5mhc_gene_1
 
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene1 : V1p5ReceptorReactivity_mhc_gene_1
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene1 : V1p5mhc_gene_1
     click V1p5MhcGene1 href "../V1p5MhcGene1"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_mhc_gene_2
+      V1p5ReceptorReactivity : V1p5mhc_gene_2
 
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene2 : V1p5ReceptorReactivity_mhc_gene_2
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene2 : V1p5mhc_gene_2
     click V1p5MhcGene2 href "../V1p5MhcGene2"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_peptide_end
+      V1p5ReceptorReactivity : V1p5peptide_end
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_peptide_start
+      V1p5ReceptorReactivity : V1p5peptide_start
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_reactivity_method
-
-
+      V1p5ReceptorReactivity : V1p5reactivity_method
 
 
-    V1p5ReceptorReactivity --&gt; "1" V1p5ReactivityMethod : V1p5ReceptorReactivity_reactivity_method
+
+
+    V1p5ReceptorReactivity --&gt; "1" V1p5ReactivityMethod : V1p5reactivity_method
     click V1p5ReactivityMethod href "../V1p5ReactivityMethod"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_reactivity_readout
+      V1p5ReceptorReactivity : V1p5reactivity_readout
 
 
 
 
-    V1p5ReceptorReactivity --&gt; "1" V1p5ReactivityReadout : V1p5ReceptorReactivity_reactivity_readout
+    V1p5ReceptorReactivity --&gt; "1" V1p5ReactivityReadout : V1p5reactivity_readout
     click V1p5ReactivityReadout href "../V1p5ReactivityReadout"
 
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_reactivity_unit
+      V1p5ReceptorReactivity : V1p5reactivity_unit
 
-      V1p5ReceptorReactivity : V1p5ReceptorReactivity_reactivity_value
+      V1p5ReceptorReactivity : V1p5reactivity_value
 
 
 </div>
@@ -312,91 +312,91 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_ligand_type/">V1p5ReceptorReactivity_ligand_type</a></td>
+<td><a href="../V1p5ligand_type/">V1p5ligand_type</a></td>
 <td>1 <br/> <a href="../V1p5LigandType/">V1p5LigandType</a></td>
 <td>Classification of ligand binding to receptor</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_antigen_type/">V1p5ReceptorReactivity_antigen_type</a></td>
+<td><a href="../V1p5antigen_type/">V1p5antigen_type</a></td>
 <td>1 <br/> <a href="../V1p5AntigenType/">V1p5AntigenType</a></td>
 <td>The type of antigen before processing by the immune system</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_antigen/">V1p5ReceptorReactivity_antigen</a></td>
+<td><a href="../V1p5antigen/">V1p5antigen</a></td>
 <td>1 <br/> <a href="../V1p5Antigen/">V1p5Antigen</a></td>
 <td>The substance against which the receptor was tested</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_antigen_source_species/">V1p5ReceptorReactivity_antigen_source_species</a></td>
+<td><a href="../V1p5antigen_source_species/">V1p5antigen_source_species</a></td>
 <td>0..1 <br/> <a href="../V1p5AntigenSourceSpecies/">V1p5AntigenSourceSpecies</a></td>
 <td>The species from which the antigen was isolated</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_peptide_start/">V1p5ReceptorReactivity_peptide_start</a></td>
+<td><a href="../V1p5peptide_start/">V1p5peptide_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start position of the peptide within the reference protein sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_peptide_end/">V1p5ReceptorReactivity_peptide_end</a></td>
+<td><a href="../V1p5peptide_end/">V1p5peptide_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End position of the peptide within the reference protein sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_mhc_class/">V1p5ReceptorReactivity_mhc_class</a></td>
+<td><a href="../V1p5mhc_class/">V1p5mhc_class</a></td>
 <td>0..1 <br/> <a href="../V1p5MhcClass/">V1p5MhcClass</a></td>
-<td>Class of MHC molecule, only present for MHC:x ligand types</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_mhc_gene_1/">V1p5ReceptorReactivity_mhc_gene_1</a></td>
+<td><a href="../V1p5mhc_gene_1/">V1p5mhc_gene_1</a></td>
 <td>0..1 <br/> <a href="../V1p5MhcGene1/">V1p5MhcGene1</a></td>
 <td>The MHC gene to which the mhc_allele_1 belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_mhc_allele_1/">V1p5ReceptorReactivity_mhc_allele_1</a></td>
+<td><a href="../V1p5mhc_allele_1/">V1p5mhc_allele_1</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Allele designation of the MHC alpha chain</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_mhc_gene_2/">V1p5ReceptorReactivity_mhc_gene_2</a></td>
+<td><a href="../V1p5mhc_gene_2/">V1p5mhc_gene_2</a></td>
 <td>0..1 <br/> <a href="../V1p5MhcGene2/">V1p5MhcGene2</a></td>
 <td>The MHC gene to which the mhc_allele_2 belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_mhc_allele_2/">V1p5ReceptorReactivity_mhc_allele_2</a></td>
+<td><a href="../V1p5mhc_allele_2/">V1p5mhc_allele_2</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Allele designation of the MHC class II beta chain or the invariant beta2-micr...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_reactivity_method/">V1p5ReceptorReactivity_reactivity_method</a></td>
+<td><a href="../V1p5reactivity_method/">V1p5reactivity_method</a></td>
 <td>1 <br/> <a href="../V1p5ReactivityMethod/">V1p5ReactivityMethod</a></td>
 <td>The methodology used to assess expression (assay implemented in experiment)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_reactivity_readout/">V1p5ReceptorReactivity_reactivity_readout</a></td>
+<td><a href="../V1p5reactivity_readout/">V1p5reactivity_readout</a></td>
 <td>1 <br/> <a href="../V1p5ReactivityReadout/">V1p5ReactivityReadout</a></td>
 <td>Reactivity measurement read-out</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_reactivity_value/">V1p5ReceptorReactivity_reactivity_value</a></td>
+<td><a href="../V1p5reactivity_value/">V1p5reactivity_value</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>The absolute (processed) value of the measurement</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5ReceptorReactivity_reactivity_unit/">V1p5ReceptorReactivity_reactivity_unit</a></td>
+<td><a href="../V1p5reactivity_unit/">V1p5reactivity_unit</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The unit of the measurement</td>
 <td>direct</td>
@@ -416,7 +416,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5Receptor/">V1p5Receptor</a></td>
-<td><a href="../V1p5Receptor_reactivity_measurements/">V1p5Receptor_reactivity_measurements</a></td>
+<td><a href="../V1p5reactivity_measurements/">V1p5reactivity_measurements</a></td>
 <td>range</td>
 <td><a href="./">V1p5ReceptorReactivity</a></td>
 </tr>
@@ -453,21 +453,21 @@
 <pre><code class="language-yaml">name: V1p5ReceptorReactivity
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5ReceptorReactivity_ligand_type
-- V1p5ReceptorReactivity_antigen_type
-- V1p5ReceptorReactivity_antigen
-- V1p5ReceptorReactivity_antigen_source_species
-- V1p5ReceptorReactivity_peptide_start
-- V1p5ReceptorReactivity_peptide_end
-- V1p5ReceptorReactivity_mhc_class
-- V1p5ReceptorReactivity_mhc_gene_1
-- V1p5ReceptorReactivity_mhc_allele_1
-- V1p5ReceptorReactivity_mhc_gene_2
-- V1p5ReceptorReactivity_mhc_allele_2
-- V1p5ReceptorReactivity_reactivity_method
-- V1p5ReceptorReactivity_reactivity_readout
-- V1p5ReceptorReactivity_reactivity_value
-- V1p5ReceptorReactivity_reactivity_unit
+- V1p5ligand_type
+- V1p5antigen_type
+- V1p5antigen
+- V1p5antigen_source_species
+- V1p5peptide_start
+- V1p5peptide_end
+- V1p5mhc_class
+- V1p5mhc_gene_1
+- V1p5mhc_allele_1
+- V1p5mhc_gene_2
+- V1p5mhc_allele_2
+- V1p5reactivity_method
+- V1p5reactivity_readout
+- V1p5reactivity_value
+- V1p5reactivity_unit
 
 </code></pre>
 </details>
@@ -476,8 +476,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5ReceptorReactivity
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5ReceptorReactivity_ligand_type:
-    name: V1p5ReceptorReactivity_ligand_type
+  V1p5ligand_type:
+    name: V1p5ligand_type
     annotations:
       nullable:
         tag: nullable
@@ -485,14 +485,14 @@ attributes:
     description: Classification of ligand binding to receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_ligand_type
+    alias: V1p5ligand_type
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5LigandType
     required: true
-  V1p5ReceptorReactivity_antigen_type:
-    name: V1p5ReceptorReactivity_antigen_type
+  V1p5antigen_type:
+    name: V1p5antigen_type
     annotations:
       nullable:
         tag: nullable
@@ -500,14 +500,14 @@ attributes:
     description: The type of antigen before processing by the immune system.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_antigen_type
+    alias: V1p5antigen_type
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5AntigenType
     required: true
-  V1p5ReceptorReactivity_antigen:
-    name: V1p5ReceptorReactivity_antigen
+  V1p5antigen:
+    name: V1p5antigen
     annotations:
       nullable:
         tag: nullable
@@ -518,14 +518,14 @@ attributes:
       MHC molecule.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_antigen
+    alias: V1p5antigen
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5Antigen
     required: true
-  V1p5ReceptorReactivity_antigen_source_species:
-    name: V1p5ReceptorReactivity_antigen_source_species
+  V1p5antigen_source_species:
+    name: V1p5antigen_source_species
     annotations:
       nullable:
         tag: nullable
@@ -533,14 +533,14 @@ attributes:
     description: The species from which the antigen was isolated
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_antigen_source_species
+    alias: V1p5antigen_source_species
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5AntigenSourceSpecies
     required: false
-  V1p5ReceptorReactivity_peptide_start:
-    name: V1p5ReceptorReactivity_peptide_start
+  V1p5peptide_start:
+    name: V1p5peptide_start
     annotations:
       nullable:
         tag: nullable
@@ -548,14 +548,14 @@ attributes:
     description: Start position of the peptide within the reference protein sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_peptide_start
+    alias: V1p5peptide_start
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: integer
     required: false
-  V1p5ReceptorReactivity_peptide_end:
-    name: V1p5ReceptorReactivity_peptide_end
+  V1p5peptide_end:
+    name: V1p5peptide_end
     annotations:
       nullable:
         tag: nullable
@@ -563,29 +563,24 @@ attributes:
     description: End position of the peptide within the reference protein sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_peptide_end
+    alias: V1p5peptide_end
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: integer
     required: false
-  V1p5ReceptorReactivity_mhc_class:
-    name: V1p5ReceptorReactivity_mhc_class
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Class of MHC molecule, only present for MHC:x ligand types
+  V1p5mhc_class:
+    name: V1p5mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_mhc_class
+    alias: V1p5mhc_class
     owner: V1p5ReceptorReactivity
     domain_of:
+    - V1p5MHCGenotype
     - V1p5ReceptorReactivity
     range: V1p5MhcClass
-    required: false
-  V1p5ReceptorReactivity_mhc_gene_1:
-    name: V1p5ReceptorReactivity_mhc_gene_1
+  V1p5mhc_gene_1:
+    name: V1p5mhc_gene_1
     annotations:
       nullable:
         tag: nullable
@@ -593,14 +588,14 @@ attributes:
     description: The MHC gene to which the mhc_allele_1 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_mhc_gene_1
+    alias: V1p5mhc_gene_1
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5MhcGene1
     required: false
-  V1p5ReceptorReactivity_mhc_allele_1:
-    name: V1p5ReceptorReactivity_mhc_allele_1
+  V1p5mhc_allele_1:
+    name: V1p5mhc_allele_1
     annotations:
       nullable:
         tag: nullable
@@ -608,14 +603,14 @@ attributes:
     description: Allele designation of the MHC alpha chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_mhc_allele_1
+    alias: V1p5mhc_allele_1
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: string
     required: false
-  V1p5ReceptorReactivity_mhc_gene_2:
-    name: V1p5ReceptorReactivity_mhc_gene_2
+  V1p5mhc_gene_2:
+    name: V1p5mhc_gene_2
     annotations:
       nullable:
         tag: nullable
@@ -623,14 +618,14 @@ attributes:
     description: The MHC gene to which the mhc_allele_2 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_mhc_gene_2
+    alias: V1p5mhc_gene_2
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5MhcGene2
     required: false
-  V1p5ReceptorReactivity_mhc_allele_2:
-    name: V1p5ReceptorReactivity_mhc_allele_2
+  V1p5mhc_allele_2:
+    name: V1p5mhc_allele_2
     annotations:
       nullable:
         tag: nullable
@@ -639,14 +634,14 @@ attributes:
       beta2-microglobin chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_mhc_allele_2
+    alias: V1p5mhc_allele_2
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: string
     required: false
-  V1p5ReceptorReactivity_reactivity_method:
-    name: V1p5ReceptorReactivity_reactivity_method
+  V1p5reactivity_method:
+    name: V1p5reactivity_method
     annotations:
       nullable:
         tag: nullable
@@ -654,14 +649,14 @@ attributes:
     description: The methodology used to assess expression (assay implemented in experiment)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_reactivity_method
+    alias: V1p5reactivity_method
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5ReactivityMethod
     required: true
-  V1p5ReceptorReactivity_reactivity_readout:
-    name: V1p5ReceptorReactivity_reactivity_readout
+  V1p5reactivity_readout:
+    name: V1p5reactivity_readout
     annotations:
       nullable:
         tag: nullable
@@ -669,14 +664,14 @@ attributes:
     description: Reactivity measurement read-out
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_reactivity_readout
+    alias: V1p5reactivity_readout
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: V1p5ReactivityReadout
     required: true
-  V1p5ReceptorReactivity_reactivity_value:
-    name: V1p5ReceptorReactivity_reactivity_value
+  V1p5reactivity_value:
+    name: V1p5reactivity_value
     annotations:
       nullable:
         tag: nullable
@@ -684,14 +679,14 @@ attributes:
     description: The absolute (processed) value of the measurement
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_reactivity_value
+    alias: V1p5reactivity_value
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
     range: float
     required: true
-  V1p5ReceptorReactivity_reactivity_unit:
-    name: V1p5ReceptorReactivity_reactivity_unit
+  V1p5reactivity_unit:
+    name: V1p5reactivity_unit
     annotations:
       nullable:
         tag: nullable
@@ -699,7 +694,7 @@ attributes:
     description: The unit of the measurement
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5ReceptorReactivity_reactivity_unit
+    alias: V1p5reactivity_unit
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity

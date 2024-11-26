@@ -204,14 +204,14 @@
 <div class="mermaid"> classDiagram
     class V1p4TimeQuantity
     click V1p4TimeQuantity href "../V1p4TimeQuantity"
-      V1p4TimeQuantity : V1p4TimeQuantity_quantity
+      V1p4TimeQuantity : V1p4quantity
 
-      V1p4TimeQuantity : V1p4TimeQuantity_unit
-
-
+      V1p4TimeQuantity : V1p4unit
 
 
-    V1p4TimeQuantity --&gt; "0..1" V1p4Unit : V1p4TimeQuantity_unit
+
+
+    V1p4TimeQuantity --&gt; "0..1" V1p4Unit : V1p4unit
     click V1p4Unit href "../V1p4Unit"
 
 
@@ -230,15 +230,15 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4TimeQuantity_quantity/">V1p4TimeQuantity_quantity</a></td>
+<td><a href="../V1p4quantity/">V1p4quantity</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td>Time quantity</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4TimeQuantity_unit/">V1p4TimeQuantity_unit</a></td>
+<td><a href="../V1p4unit/">V1p4unit</a></td>
 <td>0..1 <br/> <a href="../V1p4Unit/">V1p4Unit</a></td>
-<td>Unit of time</td>
+<td></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -256,7 +256,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Diagnosis/">V1p4Diagnosis</a></td>
-<td><a href="../V1p4Diagnosis_disease_length/">V1p4Diagnosis_disease_length</a></td>
+<td><a href="../V1p4disease_length/">V1p4disease_length</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimeQuantity</a></td>
 </tr>
@@ -293,8 +293,8 @@
 <pre><code class="language-yaml">name: V1p4TimeQuantity
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4TimeQuantity_quantity
-- V1p4TimeQuantity_unit
+- V1p4quantity
+- V1p4unit
 
 </code></pre>
 </details>
@@ -303,33 +303,35 @@ slots:
 <pre><code class="language-yaml">name: V1p4TimeQuantity
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4TimeQuantity_quantity:
-    name: V1p4TimeQuantity_quantity
+  V1p4quantity:
+    name: V1p4quantity
     annotations:
       nullable:
         tag: nullable
         value: false
-    description: Time quantity
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4TimeQuantity_quantity
+    alias: V1p4quantity
     owner: V1p4TimeQuantity
     domain_of:
+    - V1p4PhysicalQuantity
     - V1p4TimeQuantity
     range: float
     required: false
-  V1p4TimeQuantity_unit:
-    name: V1p4TimeQuantity_unit
+  V1p4unit:
+    name: V1p4unit
     annotations:
       nullable:
         tag: nullable
         value: false
-    description: Unit of time
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4TimeQuantity_unit
+    alias: V1p4unit
     owner: V1p4TimeQuantity
     domain_of:
+    - V1p4TimePoint
+    - V1p4TimeInterval
+    - V1p4PhysicalQuantity
     - V1p4TimeQuantity
     range: V1p4Unit
     required: false

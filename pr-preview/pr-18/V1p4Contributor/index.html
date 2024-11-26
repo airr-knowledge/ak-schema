@@ -204,36 +204,36 @@
 <div class="mermaid"> classDiagram
     class V1p4Contributor
     click V1p4Contributor href "../V1p4Contributor"
-      V1p4Contributor : V1p4Contributor_affiliation
+      V1p4Contributor : V1p4affiliation
 
 
 
 
-    V1p4Contributor --&gt; "0..1" V1p4Affiliation : V1p4Contributor_affiliation
+    V1p4Contributor --&gt; "0..1" V1p4Affiliation : V1p4affiliation
     click V1p4Affiliation href "../V1p4Affiliation"
 
 
-      V1p4Contributor : V1p4Contributor_affiliation_department
+      V1p4Contributor : V1p4affiliation_department
 
-      V1p4Contributor : V1p4Contributor_contributions
-
-
+      V1p4Contributor : V1p4contributions
 
 
-    V1p4Contributor --&gt; "*" V1p4ContributorContribution : V1p4Contributor_contributions
+
+
+    V1p4Contributor --&gt; "*" V1p4ContributorContribution : V1p4contributions
     click V1p4ContributorContribution href "../V1p4ContributorContribution"
 
 
-      V1p4Contributor : V1p4Contributor_contributor_id
+      V1p4Contributor : V1p4contributor_id
 
-      V1p4Contributor : V1p4Contributor_name
+      V1p4Contributor : V1p4name
 
-      V1p4Contributor : V1p4Contributor_orcid_id
-
-
+      V1p4Contributor : V1p4orcid_id
 
 
-    V1p4Contributor --&gt; "0..1" V1p4OrcidId : V1p4Contributor_orcid_id
+
+
+    V1p4Contributor --&gt; "0..1" V1p4OrcidId : V1p4orcid_id
     click V1p4OrcidId href "../V1p4OrcidId"
 
 
@@ -252,37 +252,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4Contributor_contributor_id/">V1p4Contributor_contributor_id</a></td>
+<td><a href="../V1p4contributor_id/">V1p4contributor_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this contributor within the file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Contributor_name/">V1p4Contributor_name</a></td>
+<td><a href="../V1p4name/">V1p4name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Full name of contributor</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Contributor_orcid_id/">V1p4Contributor_orcid_id</a></td>
+<td><a href="../V1p4orcid_id/">V1p4orcid_id</a></td>
 <td>0..1 <br/> <a href="../V1p4OrcidId/">V1p4OrcidId</a></td>
 <td>ORCID identifier of the contributor</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Contributor_affiliation/">V1p4Contributor_affiliation</a></td>
+<td><a href="../V1p4affiliation/">V1p4affiliation</a></td>
 <td>0..1 <br/> <a href="../V1p4Affiliation/">V1p4Affiliation</a></td>
 <td>ROR of the contributor's primary affiliation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Contributor_affiliation_department/">V1p4Contributor_affiliation_department</a></td>
+<td><a href="../V1p4affiliation_department/">V1p4affiliation_department</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Additional information regarding the contributor's primary affiliation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Contributor_contributions/">V1p4Contributor_contributions</a></td>
+<td><a href="../V1p4contributions/">V1p4contributions</a></td>
 <td>* <br/> <a href="../V1p4ContributorContribution/">V1p4ContributorContribution</a></td>
 <td>List of all roles the contributor had in a project</td>
 <td>direct</td>
@@ -302,19 +302,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p4AlleleDescription/">V1p4AlleleDescription</a></td>
-<td><a href="../V1p4AlleleDescription_acknowledgements/">V1p4AlleleDescription_acknowledgements</a></td>
+<td><a href="../V1p4acknowledgements/">V1p4acknowledgements</a></td>
 <td>range</td>
 <td><a href="./">V1p4Contributor</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4GermlineSet/">V1p4GermlineSet</a></td>
-<td><a href="../V1p4GermlineSet_acknowledgements/">V1p4GermlineSet_acknowledgements</a></td>
+<td><a href="../V1p4acknowledgements/">V1p4acknowledgements</a></td>
 <td>range</td>
 <td><a href="./">V1p4Contributor</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4Study/">V1p4Study</a></td>
-<td><a href="../V1p4Study_contributors/">V1p4Study_contributors</a></td>
+<td><a href="../V1p4contributors/">V1p4contributors</a></td>
 <td>range</td>
 <td><a href="./">V1p4Contributor</a></td>
 </tr>
@@ -351,12 +351,12 @@
 <pre><code class="language-yaml">name: V1p4Contributor
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4Contributor_contributor_id
-- V1p4Contributor_name
-- V1p4Contributor_orcid_id
-- V1p4Contributor_affiliation
-- V1p4Contributor_affiliation_department
-- V1p4Contributor_contributions
+- V1p4contributor_id
+- V1p4name
+- V1p4orcid_id
+- V1p4affiliation
+- V1p4affiliation_department
+- V1p4contributions
 
 </code></pre>
 </details>
@@ -365,8 +365,8 @@ slots:
 <pre><code class="language-yaml">name: V1p4Contributor
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4Contributor_contributor_id:
-    name: V1p4Contributor_contributor_id
+  V1p4contributor_id:
+    name: V1p4contributor_id
     annotations:
       nullable:
         tag: nullable
@@ -374,14 +374,14 @@ attributes:
     description: Unique identifier of this contributor within the file
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Contributor_contributor_id
+    alias: V1p4contributor_id
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor
     range: string
     required: true
-  V1p4Contributor_name:
-    name: V1p4Contributor_name
+  V1p4name:
+    name: V1p4name
     annotations:
       nullable:
         tag: nullable
@@ -389,14 +389,14 @@ attributes:
     description: Full name of contributor
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Contributor_name
+    alias: V1p4name
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor
     range: string
     required: true
-  V1p4Contributor_orcid_id:
-    name: V1p4Contributor_orcid_id
+  V1p4orcid_id:
+    name: V1p4orcid_id
     annotations:
       nullable:
         tag: nullable
@@ -406,14 +406,14 @@ attributes:
       property.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Contributor_orcid_id
+    alias: V1p4orcid_id
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor
     range: V1p4OrcidId
     required: false
-  V1p4Contributor_affiliation:
-    name: V1p4Contributor_affiliation
+  V1p4affiliation:
+    name: V1p4affiliation
     annotations:
       nullable:
         tag: nullable
@@ -422,14 +422,14 @@ attributes:
       minted for institutions, not from individuals institutes, divisions or departments.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Contributor_affiliation
+    alias: V1p4affiliation
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor
     range: V1p4Affiliation
     required: false
-  V1p4Contributor_affiliation_department:
-    name: V1p4Contributor_affiliation_department
+  V1p4affiliation_department:
+    name: V1p4affiliation_department
     annotations:
       nullable:
         tag: nullable
@@ -438,14 +438,14 @@ attributes:
       Can be used to specify individual institutes, divisions or departments.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Contributor_affiliation_department
+    alias: V1p4affiliation_department
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor
     range: string
     required: false
-  V1p4Contributor_contributions:
-    name: V1p4Contributor_contributions
+  V1p4contributions:
+    name: V1p4contributions
     annotations:
       nullable:
         tag: nullable
@@ -453,7 +453,7 @@ attributes:
     description: List of all roles the contributor had in a project
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Contributor_contributions
+    alias: V1p4contributions
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor

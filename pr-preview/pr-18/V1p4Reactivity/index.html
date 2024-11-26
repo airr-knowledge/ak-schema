@@ -199,96 +199,96 @@
 <div class="mermaid"> classDiagram
     class V1p4Reactivity
     click V1p4Reactivity href "../V1p4Reactivity"
-      V1p4Reactivity : V1p4Reactivity_antigen
+      V1p4Reactivity : V1p4antigen
 
 
 
 
-    V1p4Reactivity --&gt; "1" V1p4Antigen : V1p4Reactivity_antigen
+    V1p4Reactivity --&gt; "1" V1p4Antigen : V1p4antigen
     click V1p4Antigen href "../V1p4Antigen"
 
 
-      V1p4Reactivity : V1p4Reactivity_antigen_source_species
+      V1p4Reactivity : V1p4antigen_source_species
 
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4AntigenSourceSpecies : V1p4Reactivity_antigen_source_species
+    V1p4Reactivity --&gt; "0..1" V1p4AntigenSourceSpecies : V1p4antigen_source_species
     click V1p4AntigenSourceSpecies href "../V1p4AntigenSourceSpecies"
 
 
-      V1p4Reactivity : V1p4Reactivity_antigen_type
+      V1p4Reactivity : V1p4antigen_type
 
 
 
 
-    V1p4Reactivity --&gt; "1" V1p4AntigenType : V1p4Reactivity_antigen_type
+    V1p4Reactivity --&gt; "1" V1p4AntigenType : V1p4antigen_type
     click V1p4AntigenType href "../V1p4AntigenType"
 
 
-      V1p4Reactivity : V1p4Reactivity_cell_id
+      V1p4Reactivity : V1p4cell_id
 
-      V1p4Reactivity : V1p4Reactivity_data_processing_id
+      V1p4Reactivity : V1p4data_processing_id
 
-      V1p4Reactivity : V1p4Reactivity_ligand_type
-
-
+      V1p4Reactivity : V1p4ligand_type
 
 
-    V1p4Reactivity --&gt; "1" V1p4LigandType : V1p4Reactivity_ligand_type
+
+
+    V1p4Reactivity --&gt; "1" V1p4LigandType : V1p4ligand_type
     click V1p4LigandType href "../V1p4LigandType"
 
 
-      V1p4Reactivity : V1p4Reactivity_mhc_allele_1
+      V1p4Reactivity : V1p4mhc_allele_1
 
-      V1p4Reactivity : V1p4Reactivity_mhc_allele_2
+      V1p4Reactivity : V1p4mhc_allele_2
 
-      V1p4Reactivity : V1p4Reactivity_mhc_class
-
-
+      V1p4Reactivity : V1p4mhc_class
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4MhcClass : V1p4Reactivity_mhc_class
+
+
+    V1p4Reactivity --&gt; "0..1" V1p4MhcClass : V1p4mhc_class
     click V1p4MhcClass href "../V1p4MhcClass"
 
 
-      V1p4Reactivity : V1p4Reactivity_mhc_gene_1
+      V1p4Reactivity : V1p4mhc_gene_1
 
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4MhcGene1 : V1p4Reactivity_mhc_gene_1
+    V1p4Reactivity --&gt; "0..1" V1p4MhcGene1 : V1p4mhc_gene_1
     click V1p4MhcGene1 href "../V1p4MhcGene1"
 
 
-      V1p4Reactivity : V1p4Reactivity_mhc_gene_2
+      V1p4Reactivity : V1p4mhc_gene_2
 
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4MhcGene2 : V1p4Reactivity_mhc_gene_2
+    V1p4Reactivity --&gt; "0..1" V1p4MhcGene2 : V1p4mhc_gene_2
     click V1p4MhcGene2 href "../V1p4MhcGene2"
 
 
-      V1p4Reactivity : V1p4Reactivity_peptide_end
+      V1p4Reactivity : V1p4peptide_end
 
-      V1p4Reactivity : V1p4Reactivity_peptide_sequence_aa
+      V1p4Reactivity : V1p4peptide_sequence_aa
 
-      V1p4Reactivity : V1p4Reactivity_peptide_start
+      V1p4Reactivity : V1p4peptide_start
 
-      V1p4Reactivity : V1p4Reactivity_reactivity_id
+      V1p4Reactivity : V1p4reactivity_id
 
-      V1p4Reactivity : V1p4Reactivity_reactivity_method
+      V1p4Reactivity : V1p4reactivity_method
 
-      V1p4Reactivity : V1p4Reactivity_reactivity_readout
+      V1p4Reactivity : V1p4reactivity_readout
 
-      V1p4Reactivity : V1p4Reactivity_reactivity_ref
+      V1p4Reactivity : V1p4reactivity_ref
 
-      V1p4Reactivity : V1p4Reactivity_reactivity_unit
+      V1p4Reactivity : V1p4reactivity_unit
 
-      V1p4Reactivity : V1p4Reactivity_reactivity_value
+      V1p4Reactivity : V1p4reactivity_value
 
-      V1p4Reactivity : V1p4Reactivity_repertoire_id
+      V1p4Reactivity : V1p4repertoire_id
 
 
 </div>
@@ -305,129 +305,129 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4Reactivity_reactivity_id/">V1p4Reactivity_reactivity_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the Reactivity object</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../V1p4Reactivity_cell_id/">V1p4Reactivity_cell_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier of the Cell in the context of which the reactivity measurement was...</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../V1p4Reactivity_repertoire_id/">V1p4Reactivity_repertoire_id</a></td>
+<td><a href="../V1p4reactivity_id/">V1p4reactivity_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the associated repertoire in study metadata</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_data_processing_id/">V1p4Reactivity_data_processing_id</a></td>
+<td><a href="../V1p4cell_id/">V1p4cell_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier of the data processing object in the repertoire metadata for this ...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_ligand_type/">V1p4Reactivity_ligand_type</a></td>
+<td><a href="../V1p4repertoire_id/">V1p4repertoire_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../V1p4data_processing_id/">V1p4data_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../V1p4ligand_type/">V1p4ligand_type</a></td>
 <td>1 <br/> <a href="../V1p4LigandType/">V1p4LigandType</a></td>
 <td>Classification of ligand binding to the cell</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_antigen_type/">V1p4Reactivity_antigen_type</a></td>
+<td><a href="../V1p4antigen_type/">V1p4antigen_type</a></td>
 <td>1 <br/> <a href="../V1p4AntigenType/">V1p4AntigenType</a></td>
 <td>The type of antigen before processing by the immune system</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_antigen/">V1p4Reactivity_antigen</a></td>
+<td><a href="../V1p4antigen/">V1p4antigen</a></td>
 <td>1 <br/> <a href="../V1p4Antigen/">V1p4Antigen</a></td>
 <td>The substance against which the receptor was tested</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_antigen_source_species/">V1p4Reactivity_antigen_source_species</a></td>
+<td><a href="../V1p4antigen_source_species/">V1p4antigen_source_species</a></td>
 <td>0..1 <br/> <a href="../V1p4AntigenSourceSpecies/">V1p4AntigenSourceSpecies</a></td>
 <td>The species from which the antigen was isolated</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_peptide_start/">V1p4Reactivity_peptide_start</a></td>
+<td><a href="../V1p4peptide_start/">V1p4peptide_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start position of the peptide within the reference protein sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_peptide_end/">V1p4Reactivity_peptide_end</a></td>
+<td><a href="../V1p4peptide_end/">V1p4peptide_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End position of the peptide within the reference protein sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_peptide_sequence_aa/">V1p4Reactivity_peptide_sequence_aa</a></td>
+<td><a href="../V1p4peptide_sequence_aa/">V1p4peptide_sequence_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The actual peptide sequence against which the receptor reactivity was measure...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_mhc_class/">V1p4Reactivity_mhc_class</a></td>
+<td><a href="../V1p4mhc_class/">V1p4mhc_class</a></td>
 <td>0..1 <br/> <a href="../V1p4MhcClass/">V1p4MhcClass</a></td>
-<td>Class of MHC molecule, only present for MHC:x ligand types</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_mhc_gene_1/">V1p4Reactivity_mhc_gene_1</a></td>
+<td><a href="../V1p4mhc_gene_1/">V1p4mhc_gene_1</a></td>
 <td>0..1 <br/> <a href="../V1p4MhcGene1/">V1p4MhcGene1</a></td>
 <td>The MHC gene to which the mhc_allele_1 belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_mhc_allele_1/">V1p4Reactivity_mhc_allele_1</a></td>
+<td><a href="../V1p4mhc_allele_1/">V1p4mhc_allele_1</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Allele designation of the MHC alpha chain</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_mhc_gene_2/">V1p4Reactivity_mhc_gene_2</a></td>
+<td><a href="../V1p4mhc_gene_2/">V1p4mhc_gene_2</a></td>
 <td>0..1 <br/> <a href="../V1p4MhcGene2/">V1p4MhcGene2</a></td>
 <td>The MHC gene to which the mhc_allele_2 belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_mhc_allele_2/">V1p4Reactivity_mhc_allele_2</a></td>
+<td><a href="../V1p4mhc_allele_2/">V1p4mhc_allele_2</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Allele designation of the MHC class II beta chain or the invariant beta2-micr...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_reactivity_method/">V1p4Reactivity_reactivity_method</a></td>
+<td><a href="../V1p4reactivity_method/">V1p4reactivity_method</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The methodology used to assess/classify reactivity</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_reactivity_readout/">V1p4Reactivity_reactivity_readout</a></td>
+<td><a href="../V1p4reactivity_readout/">V1p4reactivity_readout</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Reactivity measurement read-out</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_reactivity_value/">V1p4Reactivity_reactivity_value</a></td>
+<td><a href="../V1p4reactivity_value/">V1p4reactivity_value</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>The absolute (processed) value of the measurement</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_reactivity_unit/">V1p4Reactivity_reactivity_unit</a></td>
+<td><a href="../V1p4reactivity_unit/">V1p4reactivity_unit</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The unit of the measurement</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Reactivity_reactivity_ref/">V1p4Reactivity_reactivity_ref</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Array of cross references to external epitope reactivity records</td>
+<td><a href="../V1p4reactivity_ref/">V1p4reactivity_ref</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -463,27 +463,27 @@
 <pre><code class="language-yaml">name: V1p4Reactivity
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4Reactivity_reactivity_id
-- V1p4Reactivity_cell_id
-- V1p4Reactivity_repertoire_id
-- V1p4Reactivity_data_processing_id
-- V1p4Reactivity_ligand_type
-- V1p4Reactivity_antigen_type
-- V1p4Reactivity_antigen
-- V1p4Reactivity_antigen_source_species
-- V1p4Reactivity_peptide_start
-- V1p4Reactivity_peptide_end
-- V1p4Reactivity_peptide_sequence_aa
-- V1p4Reactivity_mhc_class
-- V1p4Reactivity_mhc_gene_1
-- V1p4Reactivity_mhc_allele_1
-- V1p4Reactivity_mhc_gene_2
-- V1p4Reactivity_mhc_allele_2
-- V1p4Reactivity_reactivity_method
-- V1p4Reactivity_reactivity_readout
-- V1p4Reactivity_reactivity_value
-- V1p4Reactivity_reactivity_unit
-- V1p4Reactivity_reactivity_ref
+- V1p4reactivity_id
+- V1p4cell_id
+- V1p4repertoire_id
+- V1p4data_processing_id
+- V1p4ligand_type
+- V1p4antigen_type
+- V1p4antigen
+- V1p4antigen_source_species
+- V1p4peptide_start
+- V1p4peptide_end
+- V1p4peptide_sequence_aa
+- V1p4mhc_class
+- V1p4mhc_gene_1
+- V1p4mhc_allele_1
+- V1p4mhc_gene_2
+- V1p4mhc_allele_2
+- V1p4reactivity_method
+- V1p4reactivity_readout
+- V1p4reactivity_value
+- V1p4reactivity_unit
+- V1p4reactivity_ref
 
 </code></pre>
 </details>
@@ -492,72 +492,67 @@ slots:
 <pre><code class="language-yaml">name: V1p4Reactivity
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4Reactivity_reactivity_id:
-    name: V1p4Reactivity_reactivity_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Identifier for the Reactivity object. This identifier must be unique
-      within  a given study, but it is recommended that it be a universally unique
-      record locator to enable database applications.
+  V1p4reactivity_id:
+    name: V1p4reactivity_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_reactivity_id
+    alias: V1p4reactivity_id
     owner: V1p4Reactivity
     domain_of:
+    - V1p4Rearrangement
     - V1p4Reactivity
     range: string
-    required: true
-  V1p4Reactivity_cell_id:
-    name: V1p4Reactivity_cell_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Identifier of the Cell in the context of which the reactivity measurement
-      was conducted.
+  V1p4cell_id:
+    name: V1p4cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_cell_id
+    alias: V1p4cell_id
     owner: V1p4Reactivity
     domain_of:
+    - V1p4Rearrangement
+    - V1p4Cell
+    - V1p4Expression
     - V1p4Reactivity
     range: string
-    required: true
-  V1p4Reactivity_repertoire_id:
-    name: V1p4Reactivity_repertoire_id
+  V1p4repertoire_id:
+    name: V1p4repertoire_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier for the associated repertoire in study metadata.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_repertoire_id
+    alias: V1p4repertoire_id
     owner: V1p4Reactivity
     domain_of:
+    - V1p4Repertoire
+    - V1p4Rearrangement
+    - V1p4Clone
+    - V1p4Cell
+    - V1p4Expression
     - V1p4Reactivity
     range: string
-    required: false
-  V1p4Reactivity_data_processing_id:
-    name: V1p4Reactivity_data_processing_id
+  V1p4data_processing_id:
+    name: V1p4data_processing_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier of the data processing object in the repertoire metadata
-      for this cell.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_data_processing_id
+    alias: V1p4data_processing_id
     owner: V1p4Reactivity
     domain_of:
+    - V1p4DataProcessing
+    - V1p4Alignment
+    - V1p4Rearrangement
+    - V1p4Clone
+    - V1p4Cell
+    - V1p4Expression
     - V1p4Reactivity
     range: string
-    required: false
-  V1p4Reactivity_ligand_type:
-    name: V1p4Reactivity_ligand_type
+  V1p4ligand_type:
+    name: V1p4ligand_type
     annotations:
       nullable:
         tag: nullable
@@ -565,14 +560,14 @@ attributes:
     description: Classification of ligand binding to the cell
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_ligand_type
+    alias: V1p4ligand_type
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: V1p4LigandType
     required: true
-  V1p4Reactivity_antigen_type:
-    name: V1p4Reactivity_antigen_type
+  V1p4antigen_type:
+    name: V1p4antigen_type
     annotations:
       nullable:
         tag: nullable
@@ -580,14 +575,14 @@ attributes:
     description: The type of antigen before processing by the immune system.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_antigen_type
+    alias: V1p4antigen_type
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: V1p4AntigenType
     required: true
-  V1p4Reactivity_antigen:
-    name: V1p4Reactivity_antigen
+  V1p4antigen:
+    name: V1p4antigen
     annotations:
       nullable:
         tag: nullable
@@ -598,14 +593,14 @@ attributes:
       MHC molecule.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_antigen
+    alias: V1p4antigen
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: V1p4Antigen
     required: true
-  V1p4Reactivity_antigen_source_species:
-    name: V1p4Reactivity_antigen_source_species
+  V1p4antigen_source_species:
+    name: V1p4antigen_source_species
     annotations:
       nullable:
         tag: nullable
@@ -613,14 +608,14 @@ attributes:
     description: The species from which the antigen was isolated
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_antigen_source_species
+    alias: V1p4antigen_source_species
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: V1p4AntigenSourceSpecies
     required: false
-  V1p4Reactivity_peptide_start:
-    name: V1p4Reactivity_peptide_start
+  V1p4peptide_start:
+    name: V1p4peptide_start
     annotations:
       nullable:
         tag: nullable
@@ -628,14 +623,14 @@ attributes:
     description: Start position of the peptide within the reference protein sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_peptide_start
+    alias: V1p4peptide_start
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: integer
     required: false
-  V1p4Reactivity_peptide_end:
-    name: V1p4Reactivity_peptide_end
+  V1p4peptide_end:
+    name: V1p4peptide_end
     annotations:
       nullable:
         tag: nullable
@@ -643,14 +638,14 @@ attributes:
     description: End position of the peptide within the reference protein sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_peptide_end
+    alias: V1p4peptide_end
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: integer
     required: false
-  V1p4Reactivity_peptide_sequence_aa:
-    name: V1p4Reactivity_peptide_sequence_aa
+  V1p4peptide_sequence_aa:
+    name: V1p4peptide_sequence_aa
     annotations:
       nullable:
         tag: nullable
@@ -660,29 +655,24 @@ attributes:
       `protein` or `peptide`.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_peptide_sequence_aa
+    alias: V1p4peptide_sequence_aa
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: string
     required: false
-  V1p4Reactivity_mhc_class:
-    name: V1p4Reactivity_mhc_class
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Class of MHC molecule, only present for MHC:x ligand types
+  V1p4mhc_class:
+    name: V1p4mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_mhc_class
+    alias: V1p4mhc_class
     owner: V1p4Reactivity
     domain_of:
+    - V1p4MHCGenotype
     - V1p4Reactivity
     range: V1p4MhcClass
-    required: false
-  V1p4Reactivity_mhc_gene_1:
-    name: V1p4Reactivity_mhc_gene_1
+  V1p4mhc_gene_1:
+    name: V1p4mhc_gene_1
     annotations:
       nullable:
         tag: nullable
@@ -690,14 +680,14 @@ attributes:
     description: The MHC gene to which the mhc_allele_1 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_mhc_gene_1
+    alias: V1p4mhc_gene_1
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: V1p4MhcGene1
     required: false
-  V1p4Reactivity_mhc_allele_1:
-    name: V1p4Reactivity_mhc_allele_1
+  V1p4mhc_allele_1:
+    name: V1p4mhc_allele_1
     annotations:
       nullable:
         tag: nullable
@@ -705,14 +695,14 @@ attributes:
     description: Allele designation of the MHC alpha chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_mhc_allele_1
+    alias: V1p4mhc_allele_1
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: string
     required: false
-  V1p4Reactivity_mhc_gene_2:
-    name: V1p4Reactivity_mhc_gene_2
+  V1p4mhc_gene_2:
+    name: V1p4mhc_gene_2
     annotations:
       nullable:
         tag: nullable
@@ -720,14 +710,14 @@ attributes:
     description: The MHC gene to which the mhc_allele_2 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_mhc_gene_2
+    alias: V1p4mhc_gene_2
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: V1p4MhcGene2
     required: false
-  V1p4Reactivity_mhc_allele_2:
-    name: V1p4Reactivity_mhc_allele_2
+  V1p4mhc_allele_2:
+    name: V1p4mhc_allele_2
     annotations:
       nullable:
         tag: nullable
@@ -736,14 +726,14 @@ attributes:
       beta2-microglobin chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_mhc_allele_2
+    alias: V1p4mhc_allele_2
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: string
     required: false
-  V1p4Reactivity_reactivity_method:
-    name: V1p4Reactivity_reactivity_method
+  V1p4reactivity_method:
+    name: V1p4reactivity_method
     annotations:
       nullable:
         tag: nullable
@@ -757,14 +747,14 @@ attributes:
       annotated, inferred.'
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_reactivity_method
+    alias: V1p4reactivity_method
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: string
     required: true
-  V1p4Reactivity_reactivity_readout:
-    name: V1p4Reactivity_reactivity_readout
+  V1p4reactivity_readout:
+    name: V1p4reactivity_readout
     annotations:
       nullable:
         tag: nullable
@@ -777,14 +767,14 @@ attributes:
       fluorescence_intensity, barcode_count, confidence.'
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_reactivity_readout
+    alias: V1p4reactivity_readout
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: string
     required: true
-  V1p4Reactivity_reactivity_value:
-    name: V1p4Reactivity_reactivity_value
+  V1p4reactivity_value:
+    name: V1p4reactivity_value
     annotations:
       nullable:
         tag: nullable
@@ -792,14 +782,14 @@ attributes:
     description: The absolute (processed) value of the measurement
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_reactivity_value
+    alias: V1p4reactivity_value
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: float
     required: true
-  V1p4Reactivity_reactivity_unit:
-    name: V1p4Reactivity_reactivity_unit
+  V1p4reactivity_unit:
+    name: V1p4reactivity_unit
     annotations:
       nullable:
         tag: nullable
@@ -807,28 +797,27 @@ attributes:
     description: The unit of the measurement
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_reactivity_unit
+    alias: V1p4reactivity_unit
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
     range: string
     required: true
-  V1p4Reactivity_reactivity_ref:
-    name: V1p4Reactivity_reactivity_ref
+  V1p4reactivity_ref:
+    name: V1p4reactivity_ref
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Array of cross references to external epitope reactivity records
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Reactivity_reactivity_ref
+    alias: V1p4reactivity_ref
     owner: V1p4Reactivity
     domain_of:
+    - V1p4Rearrangement
     - V1p4Reactivity
     range: string
     required: false
-    multivalued: true
 
 </code></pre>
 </details>

@@ -204,18 +204,18 @@
 <div class="mermaid"> classDiagram
     class V1p5MHCAllele
     click V1p5MHCAllele href "../V1p5MHCAllele"
-      V1p5MHCAllele : V1p5MHCAllele_allele_designation
+      V1p5MHCAllele : V1p5allele_designation
 
-      V1p5MHCAllele : V1p5MHCAllele_gene
-
-
+      V1p5MHCAllele : V1p5gene
 
 
-    V1p5MHCAllele --&gt; "0..1" V1p5Gene : V1p5MHCAllele_gene
+
+
+    V1p5MHCAllele --&gt; "0..1" V1p5Gene : V1p5gene
     click V1p5Gene href "../V1p5Gene"
 
 
-      V1p5MHCAllele : V1p5MHCAllele_reference_set_ref
+      V1p5MHCAllele : V1p5reference_set_ref
 
 
 </div>
@@ -232,19 +232,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5MHCAllele_allele_designation/">V1p5MHCAllele_allele_designation</a></td>
+<td><a href="../V1p5allele_designation/">V1p5allele_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The accepted designation of an allele, usually its gene symbol plus allele/su...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5MHCAllele_gene/">V1p5MHCAllele_gene</a></td>
+<td><a href="../V1p5gene/">V1p5gene</a></td>
 <td>0..1 <br/> <a href="../V1p5Gene/">V1p5Gene</a></td>
 <td>The MHC gene to which the described allele belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5MHCAllele_reference_set_ref/">V1p5MHCAllele_reference_set_ref</a></td>
+<td><a href="../V1p5reference_set_ref/">V1p5reference_set_ref</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Repository and list from which it was taken (issuer/name/version)</td>
 <td>direct</td>
@@ -264,7 +264,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5MHCGenotype/">V1p5MHCGenotype</a></td>
-<td><a href="../V1p5MHCGenotype_mhc_alleles/">V1p5MHCGenotype_mhc_alleles</a></td>
+<td><a href="../V1p5mhc_alleles/">V1p5mhc_alleles</a></td>
 <td>range</td>
 <td><a href="./">V1p5MHCAllele</a></td>
 </tr>
@@ -301,9 +301,9 @@
 <pre><code class="language-yaml">name: V1p5MHCAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5MHCAllele_allele_designation
-- V1p5MHCAllele_gene
-- V1p5MHCAllele_reference_set_ref
+- V1p5allele_designation
+- V1p5gene
+- V1p5reference_set_ref
 
 </code></pre>
 </details>
@@ -312,24 +312,23 @@ slots:
 <pre><code class="language-yaml">name: V1p5MHCAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5MHCAllele_allele_designation:
-    name: V1p5MHCAllele_allele_designation
+  V1p5allele_designation:
+    name: V1p5allele_designation
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: The accepted designation of an allele, usually its gene symbol plus
-      allele/sub-allele/etc identifiers, if provided by the mhc_typing method
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5MHCAllele_allele_designation
+    alias: V1p5allele_designation
     owner: V1p5MHCAllele
     domain_of:
+    - V1p5AlleleDescription
     - V1p5MHCAllele
     range: string
     required: false
-  V1p5MHCAllele_gene:
-    name: V1p5MHCAllele_gene
+  V1p5gene:
+    name: V1p5gene
     annotations:
       nullable:
         tag: nullable
@@ -337,14 +336,14 @@ attributes:
     description: The MHC gene to which the described allele belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5MHCAllele_gene
+    alias: V1p5gene
     owner: V1p5MHCAllele
     domain_of:
     - V1p5MHCAllele
     range: V1p5Gene
     required: false
-  V1p5MHCAllele_reference_set_ref:
-    name: V1p5MHCAllele_reference_set_ref
+  V1p5reference_set_ref:
+    name: V1p5reference_set_ref
     annotations:
       nullable:
         tag: nullable
@@ -352,7 +351,7 @@ attributes:
     description: Repository and list from which it was taken (issuer/name/version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5MHCAllele_reference_set_ref
+    alias: V1p5reference_set_ref
     owner: V1p5MHCAllele
     domain_of:
     - V1p5MHCAllele

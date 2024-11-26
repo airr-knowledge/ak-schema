@@ -199,28 +199,28 @@
 <div class="mermaid"> classDiagram
     class V1p4Cell
     click V1p4Cell href "../V1p4Cell"
-      V1p4Cell : V1p4Cell_cell_id
+      V1p4Cell : V1p4cell_id
 
-      V1p4Cell : V1p4Cell_cell_label
+      V1p4Cell : V1p4cell_label
 
-      V1p4Cell : V1p4Cell_cell_phenotype
+      V1p4Cell : V1p4cell_phenotype
 
-      V1p4Cell : V1p4Cell_cell_subset
-
-
+      V1p4Cell : V1p4cell_subset
 
 
-    V1p4Cell --&gt; "0..1" V1p4CellSubset : V1p4Cell_cell_subset
+
+
+    V1p4Cell --&gt; "0..1" V1p4CellSubset : V1p4cell_subset
     click V1p4CellSubset href "../V1p4CellSubset"
 
 
-      V1p4Cell : V1p4Cell_data_processing_id
+      V1p4Cell : V1p4data_processing_id
 
-      V1p4Cell : V1p4Cell_receptors
+      V1p4Cell : V1p4receptors
 
-      V1p4Cell : V1p4Cell_repertoire_id
+      V1p4Cell : V1p4repertoire_id
 
-      V1p4Cell : V1p4Cell_virtual_pairing
+      V1p4Cell : V1p4virtual_pairing
 
 
 </div>
@@ -237,49 +237,49 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4Cell_cell_id/">V1p4Cell_cell_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the Cell object</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../V1p4Cell_repertoire_id/">V1p4Cell_repertoire_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier to the associated repertoire in study metadata</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../V1p4Cell_data_processing_id/">V1p4Cell_data_processing_id</a></td>
+<td><a href="../V1p4cell_id/">V1p4cell_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier of the data processing object in the repertoire metadata for this ...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Cell_receptors/">V1p4Cell_receptors</a></td>
+<td><a href="../V1p4repertoire_id/">V1p4repertoire_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../V1p4data_processing_id/">V1p4data_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../V1p4receptors/">V1p4receptors</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Array of receptor identifiers defined for the Receptor objects associated wit...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Cell_cell_subset/">V1p4Cell_cell_subset</a></td>
+<td><a href="../V1p4cell_subset/">V1p4cell_subset</a></td>
 <td>0..1 <br/> <a href="../V1p4CellSubset/">V1p4CellSubset</a></td>
-<td>Commonly-used designation of isolated cell population</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Cell_cell_phenotype/">V1p4Cell_cell_phenotype</a></td>
+<td><a href="../V1p4cell_phenotype/">V1p4cell_phenotype</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of cellular markers and their expression levels used to isolate the cell...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Cell_cell_label/">V1p4Cell_cell_label</a></td>
+<td><a href="../V1p4cell_label/">V1p4cell_label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Free text cell type annotation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Cell_virtual_pairing/">V1p4Cell_virtual_pairing</a></td>
+<td><a href="../V1p4virtual_pairing/">V1p4virtual_pairing</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>boolean to indicate if pairing was inferred</td>
 <td>direct</td>
@@ -317,14 +317,14 @@
 <pre><code class="language-yaml">name: V1p4Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4Cell_cell_id
-- V1p4Cell_repertoire_id
-- V1p4Cell_data_processing_id
-- V1p4Cell_receptors
-- V1p4Cell_cell_subset
-- V1p4Cell_cell_phenotype
-- V1p4Cell_cell_label
-- V1p4Cell_virtual_pairing
+- V1p4cell_id
+- V1p4repertoire_id
+- V1p4data_processing_id
+- V1p4receptors
+- V1p4cell_subset
+- V1p4cell_phenotype
+- V1p4cell_label
+- V1p4virtual_pairing
 
 </code></pre>
 </details>
@@ -333,56 +333,57 @@ slots:
 <pre><code class="language-yaml">name: V1p4Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4Cell_cell_id:
-    name: V1p4Cell_cell_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Identifier for the Cell object. This identifier must be unique within  a
-      given study, but it is recommended that it be a universally unique record locator
-      to enable database applications.
+  V1p4cell_id:
+    name: V1p4cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_cell_id
+    alias: V1p4cell_id
     owner: V1p4Cell
     domain_of:
+    - V1p4Rearrangement
     - V1p4Cell
+    - V1p4Expression
+    - V1p4Reactivity
     range: string
-    required: true
-  V1p4Cell_repertoire_id:
-    name: V1p4Cell_repertoire_id
+  V1p4repertoire_id:
+    name: V1p4repertoire_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier to the associated repertoire in study metadata.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_repertoire_id
+    alias: V1p4repertoire_id
     owner: V1p4Cell
     domain_of:
+    - V1p4Repertoire
+    - V1p4Rearrangement
+    - V1p4Clone
     - V1p4Cell
+    - V1p4Expression
+    - V1p4Reactivity
     range: string
-    required: true
-  V1p4Cell_data_processing_id:
-    name: V1p4Cell_data_processing_id
+  V1p4data_processing_id:
+    name: V1p4data_processing_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier of the data processing object in the repertoire metadata
-      for this cell.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_data_processing_id
+    alias: V1p4data_processing_id
     owner: V1p4Cell
     domain_of:
+    - V1p4DataProcessing
+    - V1p4Alignment
+    - V1p4Rearrangement
+    - V1p4Clone
     - V1p4Cell
+    - V1p4Expression
+    - V1p4Reactivity
     range: string
-    required: false
-  V1p4Cell_receptors:
-    name: V1p4Cell_receptors
+  V1p4receptors:
+    name: V1p4receptors
     annotations:
       nullable:
         tag: nullable
@@ -391,30 +392,30 @@ attributes:
       with this cell
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_receptors
+    alias: V1p4receptors
     owner: V1p4Cell
     domain_of:
     - V1p4Cell
     range: string
     required: false
     multivalued: true
-  V1p4Cell_cell_subset:
-    name: V1p4Cell_cell_subset
+  V1p4cell_subset:
+    name: V1p4cell_subset
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Commonly-used designation of isolated cell population.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_cell_subset
+    alias: V1p4cell_subset
     owner: V1p4Cell
     domain_of:
+    - V1p4CellProcessing
     - V1p4Cell
+    - V1p4SampleProcessing
     range: V1p4CellSubset
-    required: false
-  V1p4Cell_cell_phenotype:
-    name: V1p4Cell_cell_phenotype
+  V1p4cell_phenotype:
+    name: V1p4cell_phenotype
     annotations:
       nullable:
         tag: nullable
@@ -423,14 +424,15 @@ attributes:
       the cell population.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_cell_phenotype
+    alias: V1p4cell_phenotype
     owner: V1p4Cell
     domain_of:
+    - V1p4CellProcessing
     - V1p4Cell
+    - V1p4SampleProcessing
     range: string
-    required: false
-  V1p4Cell_cell_label:
-    name: V1p4Cell_cell_label
+  V1p4cell_label:
+    name: V1p4cell_label
     annotations:
       nullable:
         tag: nullable
@@ -439,14 +441,16 @@ attributes:
       types that are not  provided in the Cell Ontology.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_cell_label
+    alias: V1p4cell_label
     owner: V1p4Cell
     domain_of:
+    - V1p4CellProcessing
     - V1p4Cell
+    - V1p4SampleProcessing
     range: string
     required: false
-  V1p4Cell_virtual_pairing:
-    name: V1p4Cell_virtual_pairing
+  V1p4virtual_pairing:
+    name: V1p4virtual_pairing
     annotations:
       nullable:
         tag: nullable
@@ -454,7 +458,7 @@ attributes:
     description: boolean to indicate if pairing was inferred.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Cell_virtual_pairing
+    alias: V1p4virtual_pairing
     owner: V1p4Cell
     domain_of:
     - V1p4Cell

@@ -199,35 +199,35 @@
 <div class="mermaid"> classDiagram
     class V1p5Sample
     click V1p5Sample href "../V1p5Sample"
-      V1p5Sample : V1p5Sample_anatomic_site
+      V1p5Sample : V1p5anatomic_site
 
-      V1p5Sample : V1p5Sample_biomaterial_provider
+      V1p5Sample : V1p5biomaterial_provider
 
-      V1p5Sample : V1p5Sample_collection_time_point_reference
+      V1p5Sample : V1p5collection_time_point_reference
 
-      V1p5Sample : V1p5Sample_collection_time_point_relative
+      V1p5Sample : V1p5collection_time_point_relative
 
-      V1p5Sample : V1p5Sample_collection_time_point_relative_unit
-
-
+      V1p5Sample : V1p5collection_time_point_relative_unit
 
 
-    V1p5Sample --&gt; "1" V1p5CollectionTimePointRelativeUnit : V1p5Sample_collection_time_point_relative_unit
+
+
+    V1p5Sample --&gt; "1" V1p5CollectionTimePointRelativeUnit : V1p5collection_time_point_relative_unit
     click V1p5CollectionTimePointRelativeUnit href "../V1p5CollectionTimePointRelativeUnit"
 
 
-      V1p5Sample : V1p5Sample_disease_state_sample
+      V1p5Sample : V1p5disease_state_sample
 
-      V1p5Sample : V1p5Sample_sample_id
+      V1p5Sample : V1p5sample_id
 
-      V1p5Sample : V1p5Sample_sample_type
+      V1p5Sample : V1p5sample_type
 
-      V1p5Sample : V1p5Sample_tissue
-
-
+      V1p5Sample : V1p5tissue
 
 
-    V1p5Sample --&gt; "1" V1p5Tissue : V1p5Sample_tissue
+
+
+    V1p5Sample --&gt; "1" V1p5Tissue : V1p5tissue
     click V1p5Tissue href "../V1p5Tissue"
 
 
@@ -246,55 +246,55 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5Sample_sample_id/">V1p5Sample_sample_id</a></td>
+<td><a href="../V1p5sample_id/">V1p5sample_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_sample_type/">V1p5Sample_sample_type</a></td>
+<td><a href="../V1p5sample_type/">V1p5sample_type</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_tissue/">V1p5Sample_tissue</a></td>
+<td><a href="../V1p5tissue/">V1p5tissue</a></td>
 <td>1 <br/> <a href="../V1p5Tissue/">V1p5Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_anatomic_site/">V1p5Sample_anatomic_site</a></td>
+<td><a href="../V1p5anatomic_site/">V1p5anatomic_site</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_disease_state_sample/">V1p5Sample_disease_state_sample</a></td>
+<td><a href="../V1p5disease_state_sample/">V1p5disease_state_sample</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_collection_time_point_relative/">V1p5Sample_collection_time_point_relative</a></td>
+<td><a href="../V1p5collection_time_point_relative/">V1p5collection_time_point_relative</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Time point at which sample was taken, relative to <code>Collection time event</code></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_collection_time_point_relative_unit/">V1p5Sample_collection_time_point_relative_unit</a></td>
+<td><a href="../V1p5collection_time_point_relative_unit/">V1p5collection_time_point_relative_unit</a></td>
 <td>1 <br/> <a href="../V1p5CollectionTimePointRelativeUnit/">V1p5CollectionTimePointRelativeUnit</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_collection_time_point_reference/">V1p5Sample_collection_time_point_reference</a></td>
+<td><a href="../V1p5collection_time_point_reference/">V1p5collection_time_point_reference</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Event in the study schedule to which <code>Sample collection time</code> relates to</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Sample_biomaterial_provider/">V1p5Sample_biomaterial_provider</a></td>
+<td><a href="../V1p5biomaterial_provider/">V1p5biomaterial_provider</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
@@ -332,15 +332,15 @@
 <pre><code class="language-yaml">name: V1p5Sample
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5Sample_sample_id
-- V1p5Sample_sample_type
-- V1p5Sample_tissue
-- V1p5Sample_anatomic_site
-- V1p5Sample_disease_state_sample
-- V1p5Sample_collection_time_point_relative
-- V1p5Sample_collection_time_point_relative_unit
-- V1p5Sample_collection_time_point_reference
-- V1p5Sample_biomaterial_provider
+- V1p5sample_id
+- V1p5sample_type
+- V1p5tissue
+- V1p5anatomic_site
+- V1p5disease_state_sample
+- V1p5collection_time_point_relative
+- V1p5collection_time_point_relative_unit
+- V1p5collection_time_point_reference
+- V1p5biomaterial_provider
 
 </code></pre>
 </details>
@@ -349,8 +349,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5Sample
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5Sample_sample_id:
-    name: V1p5Sample_sample_id
+  V1p5sample_id:
+    name: V1p5sample_id
     annotations:
       nullable:
         tag: nullable
@@ -360,15 +360,15 @@ attributes:
       used.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_sample_id
+    alias: V1p5sample_id
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5Sample_sample_type:
-    name: V1p5Sample_sample_type
+  V1p5sample_type:
+    name: V1p5sample_type
     annotations:
       nullable:
         tag: nullable
@@ -377,15 +377,15 @@ attributes:
       harvest, peripheral venous puncture
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_sample_type
+    alias: V1p5sample_type
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5Sample_tissue:
-    name: V1p5Sample_tissue
+  V1p5tissue:
+    name: V1p5tissue
     annotations:
       nullable:
         tag: nullable
@@ -393,15 +393,15 @@ attributes:
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_tissue
+    alias: V1p5tissue
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: V1p5Tissue
     required: true
-  V1p5Sample_anatomic_site:
-    name: V1p5Sample_anatomic_site
+  V1p5anatomic_site:
+    name: V1p5anatomic_site
     annotations:
       nullable:
         tag: nullable
@@ -409,15 +409,15 @@ attributes:
     description: The anatomic location of the tissue, e.g. Inguinal, femur
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_anatomic_site
+    alias: V1p5anatomic_site
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5Sample_disease_state_sample:
-    name: V1p5Sample_disease_state_sample
+  V1p5disease_state_sample:
+    name: V1p5disease_state_sample
     annotations:
       nullable:
         tag: nullable
@@ -425,15 +425,15 @@ attributes:
     description: Histopathologic evaluation of the sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_disease_state_sample
+    alias: V1p5disease_state_sample
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5Sample_collection_time_point_relative:
-    name: V1p5Sample_collection_time_point_relative
+  V1p5collection_time_point_relative:
+    name: V1p5collection_time_point_relative
     annotations:
       nullable:
         tag: nullable
@@ -442,15 +442,15 @@ attributes:
       event`
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_collection_time_point_relative
+    alias: V1p5collection_time_point_relative
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: float
     required: true
-  V1p5Sample_collection_time_point_relative_unit:
-    name: V1p5Sample_collection_time_point_relative_unit
+  V1p5collection_time_point_relative_unit:
+    name: V1p5collection_time_point_relative_unit
     annotations:
       nullable:
         tag: nullable
@@ -458,15 +458,15 @@ attributes:
     description: Unit of Sample collection time
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_collection_time_point_relative_unit
+    alias: V1p5collection_time_point_relative_unit
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: V1p5CollectionTimePointRelativeUnit
     required: true
-  V1p5Sample_collection_time_point_reference:
-    name: V1p5Sample_collection_time_point_reference
+  V1p5collection_time_point_reference:
+    name: V1p5collection_time_point_reference
     annotations:
       nullable:
         tag: nullable
@@ -475,15 +475,15 @@ attributes:
       to
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_collection_time_point_reference
+    alias: V1p5collection_time_point_reference
     owner: V1p5Sample
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5Sample_biomaterial_provider:
-    name: V1p5Sample_biomaterial_provider
+  V1p5biomaterial_provider:
+    name: V1p5biomaterial_provider
     annotations:
       nullable:
         tag: nullable
@@ -491,7 +491,7 @@ attributes:
     description: Name and address of the entity providing the sample
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Sample_biomaterial_provider
+    alias: V1p5biomaterial_provider
     owner: V1p5Sample
     domain_of:
     - V1p5Sample

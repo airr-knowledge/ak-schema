@@ -204,46 +204,46 @@
 <div class="mermaid"> classDiagram
     class V1p4Study
     click V1p4Study href "../V1p4Study"
-      V1p4Study : V1p4Study_adc_publish_date
+      V1p4Study : V1p4adc_publish_date
 
-      V1p4Study : V1p4Study_adc_update_date
+      V1p4Study : V1p4adc_update_date
 
-      V1p4Study : V1p4Study_contributors
-
-
+      V1p4Study : V1p4contributors
 
 
-    V1p4Study --&gt; "1..*" V1p4Contributor : V1p4Study_contributors
+
+
+    V1p4Study --&gt; "1..*" V1p4Contributor : V1p4contributors
     click V1p4Contributor href "../V1p4Contributor"
 
 
-      V1p4Study : V1p4Study_grants
+      V1p4Study : V1p4grants
 
-      V1p4Study : V1p4Study_inclusion_exclusion_criteria
+      V1p4Study : V1p4inclusion_exclusion_criteria
 
-      V1p4Study : V1p4Study_keywords_study
-
-
+      V1p4Study : V1p4keywords_study
 
 
-    V1p4Study --&gt; "1..*" V1p4KeywordsStudy : V1p4Study_keywords_study
+
+
+    V1p4Study --&gt; "1..*" V1p4KeywordsStudy : V1p4keywords_study
     click V1p4KeywordsStudy href "../V1p4KeywordsStudy"
 
 
-      V1p4Study : V1p4Study_pub_ids
+      V1p4Study : V1p4pub_ids
 
-      V1p4Study : V1p4Study_study_description
+      V1p4Study : V1p4study_description
 
-      V1p4Study : V1p4Study_study_id
+      V1p4Study : V1p4study_id
 
-      V1p4Study : V1p4Study_study_title
+      V1p4Study : V1p4study_title
 
-      V1p4Study : V1p4Study_study_type
-
-
+      V1p4Study : V1p4study_type
 
 
-    V1p4Study --&gt; "1" V1p4StudyType : V1p4Study_study_type
+
+
+    V1p4Study --&gt; "1" V1p4StudyType : V1p4study_type
     click V1p4StudyType href "../V1p4StudyType"
 
 
@@ -262,67 +262,67 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4Study_study_id/">V1p4Study_study_id</a></td>
+<td><a href="../V1p4study_id/">V1p4study_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique ID assigned by study registry such as one of the International Nucleot...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_study_title/">V1p4Study_study_title</a></td>
+<td><a href="../V1p4study_title/">V1p4study_title</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Descriptive study title</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_study_type/">V1p4Study_study_type</a></td>
+<td><a href="../V1p4study_type/">V1p4study_type</a></td>
 <td>1 <br/> <a href="../V1p4StudyType/">V1p4StudyType</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_study_description/">V1p4Study_study_description</a></td>
+<td><a href="../V1p4study_description/">V1p4study_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Generic study description</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_inclusion_exclusion_criteria/">V1p4Study_inclusion_exclusion_criteria</a></td>
+<td><a href="../V1p4inclusion_exclusion_criteria/">V1p4inclusion_exclusion_criteria</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>List of criteria for inclusion/exclusion for the study</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_grants/">V1p4Study_grants</a></td>
+<td><a href="../V1p4grants/">V1p4grants</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Funding agencies and grant numbers</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_contributors/">V1p4Study_contributors</a></td>
+<td><a href="../V1p4contributors/">V1p4contributors</a></td>
 <td>1..* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
 <td>List of individuals who contributed to the study</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_pub_ids/">V1p4Study_pub_ids</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
-<td>Array of publications describing the rationale and/or outcome of the study as...</td>
+<td><a href="../V1p4pub_ids/">V1p4pub_ids</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_keywords_study/">V1p4Study_keywords_study</a></td>
+<td><a href="../V1p4keywords_study/">V1p4keywords_study</a></td>
 <td>1..* <br/> <a href="../V1p4KeywordsStudy/">V1p4KeywordsStudy</a></td>
 <td>Keywords describing properties of one or more data sets in a study</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_adc_publish_date/">V1p4Study_adc_publish_date</a></td>
+<td><a href="../V1p4adc_publish_date/">V1p4adc_publish_date</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Date the study was first published in the AIRR Data Commons</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Study_adc_update_date/">V1p4Study_adc_update_date</a></td>
+<td><a href="../V1p4adc_update_date/">V1p4adc_update_date</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Date the study data was updated in the AIRR Data Commons</td>
 <td>direct</td>
@@ -342,7 +342,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Repertoire/">V1p4Repertoire</a></td>
-<td><a href="../V1p4Repertoire_study/">V1p4Repertoire_study</a></td>
+<td><a href="../V1p4study/">V1p4study</a></td>
 <td>range</td>
 <td><a href="./">V1p4Study</a></td>
 </tr>
@@ -379,17 +379,17 @@
 <pre><code class="language-yaml">name: V1p4Study
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4Study_study_id
-- V1p4Study_study_title
-- V1p4Study_study_type
-- V1p4Study_study_description
-- V1p4Study_inclusion_exclusion_criteria
-- V1p4Study_grants
-- V1p4Study_contributors
-- V1p4Study_pub_ids
-- V1p4Study_keywords_study
-- V1p4Study_adc_publish_date
-- V1p4Study_adc_update_date
+- V1p4study_id
+- V1p4study_title
+- V1p4study_type
+- V1p4study_description
+- V1p4inclusion_exclusion_criteria
+- V1p4grants
+- V1p4contributors
+- V1p4pub_ids
+- V1p4keywords_study
+- V1p4adc_publish_date
+- V1p4adc_update_date
 
 </code></pre>
 </details>
@@ -398,8 +398,8 @@ slots:
 <pre><code class="language-yaml">name: V1p4Study
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4Study_study_id:
-    name: V1p4Study_study_id
+  V1p4study_id:
+    name: V1p4study_id
     annotations:
       nullable:
         tag: nullable
@@ -408,14 +408,14 @@ attributes:
       Nucleotide Sequence Database Collaboration (INSDC) repositories.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_study_id
+    alias: V1p4study_id
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: string
     required: true
-  V1p4Study_study_title:
-    name: V1p4Study_study_title
+  V1p4study_title:
+    name: V1p4study_title
     annotations:
       nullable:
         tag: nullable
@@ -423,14 +423,14 @@ attributes:
     description: Descriptive study title
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_study_title
+    alias: V1p4study_title
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: string
     required: true
-  V1p4Study_study_type:
-    name: V1p4Study_study_type
+  V1p4study_type:
+    name: V1p4study_type
     annotations:
       nullable:
         tag: nullable
@@ -438,14 +438,14 @@ attributes:
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_study_type
+    alias: V1p4study_type
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: V1p4StudyType
     required: true
-  V1p4Study_study_description:
-    name: V1p4Study_study_description
+  V1p4study_description:
+    name: V1p4study_description
     annotations:
       nullable:
         tag: nullable
@@ -453,14 +453,14 @@ attributes:
     description: Generic study description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_study_description
+    alias: V1p4study_description
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: string
     required: false
-  V1p4Study_inclusion_exclusion_criteria:
-    name: V1p4Study_inclusion_exclusion_criteria
+  V1p4inclusion_exclusion_criteria:
+    name: V1p4inclusion_exclusion_criteria
     annotations:
       nullable:
         tag: nullable
@@ -468,14 +468,14 @@ attributes:
     description: List of criteria for inclusion/exclusion for the study
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_inclusion_exclusion_criteria
+    alias: V1p4inclusion_exclusion_criteria
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: string
     required: true
-  V1p4Study_grants:
-    name: V1p4Study_grants
+  V1p4grants:
+    name: V1p4grants
     annotations:
       nullable:
         tag: nullable
@@ -483,14 +483,14 @@ attributes:
     description: Funding agencies and grant numbers
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_grants
+    alias: V1p4grants
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: string
     required: true
-  V1p4Study_contributors:
-    name: V1p4Study_contributors
+  V1p4contributors:
+    name: V1p4contributors
     annotations:
       nullable:
         tag: nullable
@@ -502,34 +502,30 @@ attributes:
       should be assigned. The coresponding author should be listed last.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_contributors
+    alias: V1p4contributors
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: V1p4Contributor
     required: true
     multivalued: true
-  V1p4Study_pub_ids:
-    name: V1p4Study_pub_ids
+  V1p4pub_ids:
+    name: V1p4pub_ids
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Array of publications describing the rationale and/or outcome of
-      the study as an array of CURIE objects such as  a DOI or Pubmed ID. Where more
-      than one publication is given, if there is a primary publication for the study
-      it should come first.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_pub_ids
+    alias: V1p4pub_ids
     owner: V1p4Study
     domain_of:
+    - V1p4GermlineSet
     - V1p4Study
     range: string
-    required: true
     multivalued: true
-  V1p4Study_keywords_study:
-    name: V1p4Study_keywords_study
+  V1p4keywords_study:
+    name: V1p4keywords_study
     annotations:
       nullable:
         tag: nullable
@@ -542,15 +538,15 @@ attributes:
       "contains_schema_cell").
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_keywords_study
+    alias: V1p4keywords_study
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: V1p4KeywordsStudy
     required: true
     multivalued: true
-  V1p4Study_adc_publish_date:
-    name: V1p4Study_adc_publish_date
+  V1p4adc_publish_date:
+    name: V1p4adc_publish_date
     annotations:
       nullable:
         tag: nullable
@@ -558,14 +554,14 @@ attributes:
     description: Date the study was first published in the AIRR Data Commons.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_adc_publish_date
+    alias: V1p4adc_publish_date
     owner: V1p4Study
     domain_of:
     - V1p4Study
     range: string
     required: false
-  V1p4Study_adc_update_date:
-    name: V1p4Study_adc_update_date
+  V1p4adc_update_date:
+    name: V1p4adc_update_date
     annotations:
       nullable:
         tag: nullable
@@ -573,7 +569,7 @@ attributes:
     description: Date the study data was updated in the AIRR Data Commons.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Study_adc_update_date
+    alias: V1p4adc_update_date
     owner: V1p4Study
     domain_of:
     - V1p4Study

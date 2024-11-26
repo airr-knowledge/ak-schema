@@ -199,26 +199,26 @@
 <div class="mermaid"> classDiagram
     class V1p5SequencingRun
     click V1p5SequencingRun href "../V1p5SequencingRun"
-      V1p5SequencingRun : V1p5SequencingRun_sequencing_facility
+      V1p5SequencingRun : V1p5sequencing_facility
 
-      V1p5SequencingRun : V1p5SequencingRun_sequencing_files
-
-
+      V1p5SequencingRun : V1p5sequencing_files
 
 
-    V1p5SequencingRun --&gt; "0..1" V1p5SequencingData : V1p5SequencingRun_sequencing_files
+
+
+    V1p5SequencingRun --&gt; "0..1" V1p5SequencingData : V1p5sequencing_files
     click V1p5SequencingData href "../V1p5SequencingData"
 
 
-      V1p5SequencingRun : V1p5SequencingRun_sequencing_kit
+      V1p5SequencingRun : V1p5sequencing_kit
 
-      V1p5SequencingRun : V1p5SequencingRun_sequencing_platform
+      V1p5SequencingRun : V1p5sequencing_platform
 
-      V1p5SequencingRun : V1p5SequencingRun_sequencing_run_date
+      V1p5SequencingRun : V1p5sequencing_run_date
 
-      V1p5SequencingRun : V1p5SequencingRun_sequencing_run_id
+      V1p5SequencingRun : V1p5sequencing_run_id
 
-      V1p5SequencingRun : V1p5SequencingRun_total_reads_passing_qc_filter
+      V1p5SequencingRun : V1p5total_reads_passing_qc_filter
 
 
 </div>
@@ -235,43 +235,43 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5SequencingRun_sequencing_run_id/">V1p5SequencingRun_sequencing_run_id</a></td>
+<td><a href="../V1p5sequencing_run_id/">V1p5sequencing_run_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>ID of sequencing run assigned by the sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingRun_total_reads_passing_qc_filter/">V1p5SequencingRun_total_reads_passing_qc_filter</a></td>
+<td><a href="../V1p5total_reads_passing_qc_filter/">V1p5total_reads_passing_qc_filter</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of usable reads for analysis</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingRun_sequencing_platform/">V1p5SequencingRun_sequencing_platform</a></td>
+<td><a href="../V1p5sequencing_platform/">V1p5sequencing_platform</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Designation of sequencing instrument used</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingRun_sequencing_facility/">V1p5SequencingRun_sequencing_facility</a></td>
+<td><a href="../V1p5sequencing_facility/">V1p5sequencing_facility</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingRun_sequencing_run_date/">V1p5SequencingRun_sequencing_run_date</a></td>
+<td><a href="../V1p5sequencing_run_date/">V1p5sequencing_run_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingRun_sequencing_kit/">V1p5SequencingRun_sequencing_kit</a></td>
+<td><a href="../V1p5sequencing_kit/">V1p5sequencing_kit</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Name, manufacturer, order and lot numbers of sequencing kit</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingRun_sequencing_files/">V1p5SequencingRun_sequencing_files</a></td>
+<td><a href="../V1p5sequencing_files/">V1p5sequencing_files</a></td>
 <td>0..1 <br/> <a href="../V1p5SequencingData/">V1p5SequencingData</a></td>
 <td>Set of sequencing files produced by the sequencing run</td>
 <td>direct</td>
@@ -309,13 +309,13 @@
 <pre><code class="language-yaml">name: V1p5SequencingRun
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5SequencingRun_sequencing_run_id
-- V1p5SequencingRun_total_reads_passing_qc_filter
-- V1p5SequencingRun_sequencing_platform
-- V1p5SequencingRun_sequencing_facility
-- V1p5SequencingRun_sequencing_run_date
-- V1p5SequencingRun_sequencing_kit
-- V1p5SequencingRun_sequencing_files
+- V1p5sequencing_run_id
+- V1p5total_reads_passing_qc_filter
+- V1p5sequencing_platform
+- V1p5sequencing_facility
+- V1p5sequencing_run_date
+- V1p5sequencing_kit
+- V1p5sequencing_files
 
 </code></pre>
 </details>
@@ -324,8 +324,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5SequencingRun
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5SequencingRun_sequencing_run_id:
-    name: V1p5SequencingRun_sequencing_run_id
+  V1p5sequencing_run_id:
+    name: V1p5sequencing_run_id
     annotations:
       nullable:
         tag: nullable
@@ -333,15 +333,15 @@ attributes:
     description: ID of sequencing run assigned by the sequencing facility
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingRun_sequencing_run_id
+    alias: V1p5sequencing_run_id
     owner: V1p5SequencingRun
     domain_of:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5SequencingRun_total_reads_passing_qc_filter:
-    name: V1p5SequencingRun_total_reads_passing_qc_filter
+  V1p5total_reads_passing_qc_filter:
+    name: V1p5total_reads_passing_qc_filter
     annotations:
       nullable:
         tag: nullable
@@ -349,15 +349,15 @@ attributes:
     description: Number of usable reads for analysis
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingRun_total_reads_passing_qc_filter
+    alias: V1p5total_reads_passing_qc_filter
     owner: V1p5SequencingRun
     domain_of:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: integer
     required: true
-  V1p5SequencingRun_sequencing_platform:
-    name: V1p5SequencingRun_sequencing_platform
+  V1p5sequencing_platform:
+    name: V1p5sequencing_platform
     annotations:
       nullable:
         tag: nullable
@@ -365,15 +365,15 @@ attributes:
     description: Designation of sequencing instrument used
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingRun_sequencing_platform
+    alias: V1p5sequencing_platform
     owner: V1p5SequencingRun
     domain_of:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5SequencingRun_sequencing_facility:
-    name: V1p5SequencingRun_sequencing_facility
+  V1p5sequencing_facility:
+    name: V1p5sequencing_facility
     annotations:
       nullable:
         tag: nullable
@@ -381,15 +381,15 @@ attributes:
     description: Name and address of sequencing facility
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingRun_sequencing_facility
+    alias: V1p5sequencing_facility
     owner: V1p5SequencingRun
     domain_of:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5SequencingRun_sequencing_run_date:
-    name: V1p5SequencingRun_sequencing_run_date
+  V1p5sequencing_run_date:
+    name: V1p5sequencing_run_date
     annotations:
       nullable:
         tag: nullable
@@ -397,15 +397,15 @@ attributes:
     description: Date of sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingRun_sequencing_run_date
+    alias: V1p5sequencing_run_date
     owner: V1p5SequencingRun
     domain_of:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5SequencingRun_sequencing_kit:
-    name: V1p5SequencingRun_sequencing_kit
+  V1p5sequencing_kit:
+    name: V1p5sequencing_kit
     annotations:
       nullable:
         tag: nullable
@@ -413,15 +413,15 @@ attributes:
     description: Name, manufacturer, order and lot numbers of sequencing kit
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingRun_sequencing_kit
+    alias: V1p5sequencing_kit
     owner: V1p5SequencingRun
     domain_of:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5SequencingRun_sequencing_files:
-    name: V1p5SequencingRun_sequencing_files
+  V1p5sequencing_files:
+    name: V1p5sequencing_files
     annotations:
       nullable:
         tag: nullable
@@ -429,7 +429,7 @@ attributes:
     description: Set of sequencing files produced by the sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingRun_sequencing_files
+    alias: V1p5sequencing_files
     owner: V1p5SequencingRun
     domain_of:
     - V1p5SequencingRun

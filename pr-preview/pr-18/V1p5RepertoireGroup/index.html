@@ -199,18 +199,18 @@
 <div class="mermaid"> classDiagram
     class V1p5RepertoireGroup
     click V1p5RepertoireGroup href "../V1p5RepertoireGroup"
-      V1p5RepertoireGroup : V1p5RepertoireGroup_repertoire_group_description
+      V1p5RepertoireGroup : V1p5repertoire_group_description
 
-      V1p5RepertoireGroup : V1p5RepertoireGroup_repertoire_group_id
+      V1p5RepertoireGroup : V1p5repertoire_group_id
 
-      V1p5RepertoireGroup : V1p5RepertoireGroup_repertoire_group_name
+      V1p5RepertoireGroup : V1p5repertoire_group_name
 
-      V1p5RepertoireGroup : V1p5RepertoireGroup_repertoires
-
-
+      V1p5RepertoireGroup : V1p5repertoires
 
 
-    V1p5RepertoireGroup --&gt; "1..*" V1p5RepertoireGroupDetail : V1p5RepertoireGroup_repertoires
+
+
+    V1p5RepertoireGroup --&gt; "1..*" V1p5RepertoireGroupDetail : V1p5repertoires
     click V1p5RepertoireGroupDetail href "../V1p5RepertoireGroupDetail"
 
 
@@ -229,25 +229,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5RepertoireGroup_repertoire_group_id/">V1p5RepertoireGroup_repertoire_group_id</a></td>
+<td><a href="../V1p5repertoire_group_id/">V1p5repertoire_group_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for this repertoire collection</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5RepertoireGroup_repertoire_group_name/">V1p5RepertoireGroup_repertoire_group_name</a></td>
+<td><a href="../V1p5repertoire_group_name/">V1p5repertoire_group_name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Short display name for this repertoire collection</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5RepertoireGroup_repertoire_group_description/">V1p5RepertoireGroup_repertoire_group_description</a></td>
+<td><a href="../V1p5repertoire_group_description/">V1p5repertoire_group_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Repertoire collection description</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5RepertoireGroup_repertoires/">V1p5RepertoireGroup_repertoires</a></td>
+<td><a href="../V1p5repertoires/">V1p5repertoires</a></td>
 <td>1..* <br/> <a href="../V1p5RepertoireGroupDetail/">V1p5RepertoireGroupDetail</a></td>
 <td>List of repertoires in this collection with an associated description and tim...</td>
 <td>direct</td>
@@ -285,10 +285,10 @@
 <pre><code class="language-yaml">name: V1p5RepertoireGroup
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5RepertoireGroup_repertoire_group_id
-- V1p5RepertoireGroup_repertoire_group_name
-- V1p5RepertoireGroup_repertoire_group_description
-- V1p5RepertoireGroup_repertoires
+- V1p5repertoire_group_id
+- V1p5repertoire_group_name
+- V1p5repertoire_group_description
+- V1p5repertoires
 
 </code></pre>
 </details>
@@ -297,8 +297,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5RepertoireGroup
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5RepertoireGroup_repertoire_group_id:
-    name: V1p5RepertoireGroup_repertoire_group_id
+  V1p5repertoire_group_id:
+    name: V1p5repertoire_group_id
     annotations:
       nullable:
         tag: nullable
@@ -306,14 +306,14 @@ attributes:
     description: Identifier for this repertoire collection
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5RepertoireGroup_repertoire_group_id
+    alias: V1p5repertoire_group_id
     owner: V1p5RepertoireGroup
     domain_of:
     - V1p5RepertoireGroup
     range: string
     required: true
-  V1p5RepertoireGroup_repertoire_group_name:
-    name: V1p5RepertoireGroup_repertoire_group_name
+  V1p5repertoire_group_name:
+    name: V1p5repertoire_group_name
     annotations:
       nullable:
         tag: nullable
@@ -321,14 +321,14 @@ attributes:
     description: Short display name for this repertoire collection
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5RepertoireGroup_repertoire_group_name
+    alias: V1p5repertoire_group_name
     owner: V1p5RepertoireGroup
     domain_of:
     - V1p5RepertoireGroup
     range: string
     required: false
-  V1p5RepertoireGroup_repertoire_group_description:
-    name: V1p5RepertoireGroup_repertoire_group_description
+  V1p5repertoire_group_description:
+    name: V1p5repertoire_group_description
     annotations:
       nullable:
         tag: nullable
@@ -336,14 +336,14 @@ attributes:
     description: Repertoire collection description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5RepertoireGroup_repertoire_group_description
+    alias: V1p5repertoire_group_description
     owner: V1p5RepertoireGroup
     domain_of:
     - V1p5RepertoireGroup
     range: string
     required: false
-  V1p5RepertoireGroup_repertoires:
-    name: V1p5RepertoireGroup_repertoires
+  V1p5repertoires:
+    name: V1p5repertoires
     annotations:
       nullable:
         tag: nullable
@@ -352,7 +352,7 @@ attributes:
       and time point designation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5RepertoireGroup_repertoires
+    alias: V1p5repertoires
     owner: V1p5RepertoireGroup
     domain_of:
     - V1p5RepertoireGroup

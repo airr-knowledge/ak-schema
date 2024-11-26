@@ -204,46 +204,46 @@
 <div class="mermaid"> classDiagram
     class V1p5SequencingData
     click V1p5SequencingData href "../V1p5SequencingData"
-      V1p5SequencingData : V1p5SequencingData_file_type
+      V1p5SequencingData : V1p5file_type
 
 
 
 
-    V1p5SequencingData --&gt; "1" V1p5FileType : V1p5SequencingData_file_type
+    V1p5SequencingData --&gt; "1" V1p5FileType : V1p5file_type
     click V1p5FileType href "../V1p5FileType"
 
 
-      V1p5SequencingData : V1p5SequencingData_filename
+      V1p5SequencingData : V1p5filename
 
-      V1p5SequencingData : V1p5SequencingData_index_filename
+      V1p5SequencingData : V1p5index_filename
 
-      V1p5SequencingData : V1p5SequencingData_index_length
+      V1p5SequencingData : V1p5index_length
 
-      V1p5SequencingData : V1p5SequencingData_paired_filename
+      V1p5SequencingData : V1p5paired_filename
 
-      V1p5SequencingData : V1p5SequencingData_paired_read_direction
-
-
+      V1p5SequencingData : V1p5paired_read_direction
 
 
-    V1p5SequencingData --&gt; "1" V1p5PairedReadDirection : V1p5SequencingData_paired_read_direction
+
+
+    V1p5SequencingData --&gt; "1" V1p5PairedReadDirection : V1p5paired_read_direction
     click V1p5PairedReadDirection href "../V1p5PairedReadDirection"
 
 
-      V1p5SequencingData : V1p5SequencingData_paired_read_length
+      V1p5SequencingData : V1p5paired_read_length
 
-      V1p5SequencingData : V1p5SequencingData_read_direction
-
-
+      V1p5SequencingData : V1p5read_direction
 
 
-    V1p5SequencingData --&gt; "1" V1p5ReadDirection : V1p5SequencingData_read_direction
+
+
+    V1p5SequencingData --&gt; "1" V1p5ReadDirection : V1p5read_direction
     click V1p5ReadDirection href "../V1p5ReadDirection"
 
 
-      V1p5SequencingData : V1p5SequencingData_read_length
+      V1p5SequencingData : V1p5read_length
 
-      V1p5SequencingData : V1p5SequencingData_sequencing_data_id
+      V1p5SequencingData : V1p5sequencing_data_id
 
 
 </div>
@@ -260,61 +260,61 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5SequencingData_sequencing_data_id/">V1p5SequencingData_sequencing_data_id</a></td>
+<td><a href="../V1p5sequencing_data_id/">V1p5sequencing_data_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Persistent identifier of raw data stored in an archive (e</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_file_type/">V1p5SequencingData_file_type</a></td>
+<td><a href="../V1p5file_type/">V1p5file_type</a></td>
 <td>1 <br/> <a href="../V1p5FileType/">V1p5FileType</a></td>
 <td>File format for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_filename/">V1p5SequencingData_filename</a></td>
+<td><a href="../V1p5filename/">V1p5filename</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>File name for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_read_direction/">V1p5SequencingData_read_direction</a></td>
+<td><a href="../V1p5read_direction/">V1p5read_direction</a></td>
 <td>1 <br/> <a href="../V1p5ReadDirection/">V1p5ReadDirection</a></td>
 <td>Read direction for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_read_length/">V1p5SequencingData_read_length</a></td>
+<td><a href="../V1p5read_length/">V1p5read_length</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Read length in bases for the first file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_paired_filename/">V1p5SequencingData_paired_filename</a></td>
+<td><a href="../V1p5paired_filename/">V1p5paired_filename</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>File name for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_paired_read_direction/">V1p5SequencingData_paired_read_direction</a></td>
+<td><a href="../V1p5paired_read_direction/">V1p5paired_read_direction</a></td>
 <td>1 <br/> <a href="../V1p5PairedReadDirection/">V1p5PairedReadDirection</a></td>
 <td>Read direction for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_paired_read_length/">V1p5SequencingData_paired_read_length</a></td>
+<td><a href="../V1p5paired_read_length/">V1p5paired_read_length</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Read length in bases for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_index_filename/">V1p5SequencingData_index_filename</a></td>
+<td><a href="../V1p5index_filename/">V1p5index_filename</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>File name for the index file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5SequencingData_index_length/">V1p5SequencingData_index_length</a></td>
+<td><a href="../V1p5index_length/">V1p5index_length</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Read length in bases for the index file</td>
 <td>direct</td>
@@ -334,13 +334,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p5SequencingRun/">V1p5SequencingRun</a></td>
-<td><a href="../V1p5SequencingRun_sequencing_files/">V1p5SequencingRun_sequencing_files</a></td>
+<td><a href="../V1p5sequencing_files/">V1p5sequencing_files</a></td>
 <td>range</td>
 <td><a href="./">V1p5SequencingData</a></td>
 </tr>
 <tr>
 <td><a href="../V1p5SampleProcessing/">V1p5SampleProcessing</a></td>
-<td><a href="../V1p5SequencingRun_sequencing_files/">V1p5SequencingRun_sequencing_files</a></td>
+<td><a href="../V1p5sequencing_files/">V1p5sequencing_files</a></td>
 <td>range</td>
 <td><a href="./">V1p5SequencingData</a></td>
 </tr>
@@ -377,16 +377,16 @@
 <pre><code class="language-yaml">name: V1p5SequencingData
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5SequencingData_sequencing_data_id
-- V1p5SequencingData_file_type
-- V1p5SequencingData_filename
-- V1p5SequencingData_read_direction
-- V1p5SequencingData_read_length
-- V1p5SequencingData_paired_filename
-- V1p5SequencingData_paired_read_direction
-- V1p5SequencingData_paired_read_length
-- V1p5SequencingData_index_filename
-- V1p5SequencingData_index_length
+- V1p5sequencing_data_id
+- V1p5file_type
+- V1p5filename
+- V1p5read_direction
+- V1p5read_length
+- V1p5paired_filename
+- V1p5paired_read_direction
+- V1p5paired_read_length
+- V1p5index_filename
+- V1p5index_length
 
 </code></pre>
 </details>
@@ -395,8 +395,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5SequencingData
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5SequencingData_sequencing_data_id:
-    name: V1p5SequencingData_sequencing_data_id
+  V1p5sequencing_data_id:
+    name: V1p5sequencing_data_id
     annotations:
       nullable:
         tag: nullable
@@ -405,14 +405,14 @@ attributes:
       run ID). Data archive should  be identified in the CURIE prefix.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_sequencing_data_id
+    alias: V1p5sequencing_data_id
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: string
     required: true
-  V1p5SequencingData_file_type:
-    name: V1p5SequencingData_file_type
+  V1p5file_type:
+    name: V1p5file_type
     annotations:
       nullable:
         tag: nullable
@@ -420,14 +420,14 @@ attributes:
     description: File format for the raw reads or sequences
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_file_type
+    alias: V1p5file_type
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: V1p5FileType
     required: true
-  V1p5SequencingData_filename:
-    name: V1p5SequencingData_filename
+  V1p5filename:
+    name: V1p5filename
     annotations:
       nullable:
         tag: nullable
@@ -436,14 +436,14 @@ attributes:
       sequencing.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_filename
+    alias: V1p5filename
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: string
     required: true
-  V1p5SequencingData_read_direction:
-    name: V1p5SequencingData_read_direction
+  V1p5read_direction:
+    name: V1p5read_direction
     annotations:
       nullable:
         tag: nullable
@@ -452,14 +452,14 @@ attributes:
       paired-read sequencing.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_read_direction
+    alias: V1p5read_direction
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: V1p5ReadDirection
     required: true
-  V1p5SequencingData_read_length:
-    name: V1p5SequencingData_read_length
+  V1p5read_length:
+    name: V1p5read_length
     annotations:
       nullable:
         tag: nullable
@@ -467,14 +467,14 @@ attributes:
     description: Read length in bases for the first file in paired-read sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_read_length
+    alias: V1p5read_length
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: integer
     required: true
-  V1p5SequencingData_paired_filename:
-    name: V1p5SequencingData_paired_filename
+  V1p5paired_filename:
+    name: V1p5paired_filename
     annotations:
       nullable:
         tag: nullable
@@ -482,14 +482,14 @@ attributes:
     description: File name for the second file in paired-read sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_paired_filename
+    alias: V1p5paired_filename
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: string
     required: true
-  V1p5SequencingData_paired_read_direction:
-    name: V1p5SequencingData_paired_read_direction
+  V1p5paired_read_direction:
+    name: V1p5paired_read_direction
     annotations:
       nullable:
         tag: nullable
@@ -497,14 +497,14 @@ attributes:
     description: Read direction for the second file in paired-read sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_paired_read_direction
+    alias: V1p5paired_read_direction
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: V1p5PairedReadDirection
     required: true
-  V1p5SequencingData_paired_read_length:
-    name: V1p5SequencingData_paired_read_length
+  V1p5paired_read_length:
+    name: V1p5paired_read_length
     annotations:
       nullable:
         tag: nullable
@@ -512,14 +512,14 @@ attributes:
     description: Read length in bases for the second file in paired-read sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_paired_read_length
+    alias: V1p5paired_read_length
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: integer
     required: true
-  V1p5SequencingData_index_filename:
-    name: V1p5SequencingData_index_filename
+  V1p5index_filename:
+    name: V1p5index_filename
     annotations:
       nullable:
         tag: nullable
@@ -527,14 +527,14 @@ attributes:
     description: File name for the index file
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_index_filename
+    alias: V1p5index_filename
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData
     range: string
     required: false
-  V1p5SequencingData_index_length:
-    name: V1p5SequencingData_index_length
+  V1p5index_length:
+    name: V1p5index_length
     annotations:
       nullable:
         tag: nullable
@@ -542,7 +542,7 @@ attributes:
     description: Read length in bases for the index file
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5SequencingData_index_length
+    alias: V1p5index_length
     owner: V1p5SequencingData
     domain_of:
     - V1p5SequencingData

@@ -204,11 +204,11 @@
 <div class="mermaid"> classDiagram
     class V1p5DeletedGene
     click V1p5DeletedGene href "../V1p5DeletedGene"
-      V1p5DeletedGene : V1p5DeletedGene_germline_set_ref
+      V1p5DeletedGene : V1p5germline_set_ref
 
-      V1p5DeletedGene : V1p5DeletedGene_label
+      V1p5DeletedGene : V1p5label
 
-      V1p5DeletedGene : V1p5DeletedGene_phasing
+      V1p5DeletedGene : V1p5phasing
 
 
 </div>
@@ -225,19 +225,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5DeletedGene_label/">V1p5DeletedGene_label</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The accepted name for this gene, taken from the GermlineSet</td>
+<td><a href="../V1p5label/">V1p5label</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5DeletedGene_germline_set_ref/">V1p5DeletedGene_germline_set_ref</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>GermlineSet from which it was taken (issuer/name/version)</td>
+<td><a href="../V1p5germline_set_ref/">V1p5germline_set_ref</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5DeletedGene_phasing/">V1p5DeletedGene_phasing</a></td>
+<td><a href="../V1p5phasing/">V1p5phasing</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Chromosomal phasing indicator</td>
 <td>direct</td>
@@ -257,7 +257,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5Genotype/">V1p5Genotype</a></td>
-<td><a href="../V1p5Genotype_deleted_genes/">V1p5Genotype_deleted_genes</a></td>
+<td><a href="../V1p5deleted_genes/">V1p5deleted_genes</a></td>
 <td>range</td>
 <td><a href="./">V1p5DeletedGene</a></td>
 </tr>
@@ -294,9 +294,9 @@
 <pre><code class="language-yaml">name: V1p5DeletedGene
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5DeletedGene_label
-- V1p5DeletedGene_germline_set_ref
-- V1p5DeletedGene_phasing
+- V1p5label
+- V1p5germline_set_ref
+- V1p5phasing
 
 </code></pre>
 </details>
@@ -305,38 +305,36 @@ slots:
 <pre><code class="language-yaml">name: V1p5DeletedGene
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5DeletedGene_label:
-    name: V1p5DeletedGene_label
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: The accepted name for this gene, taken from the GermlineSet
+  V1p5label:
+    name: V1p5label
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5DeletedGene_label
+    alias: V1p5label
     owner: V1p5DeletedGene
     domain_of:
+    - V1p5TimePoint
+    - V1p5AlleleDescription
+    - V1p5DocumentedAllele
     - V1p5DeletedGene
     range: string
-    required: true
-  V1p5DeletedGene_germline_set_ref:
-    name: V1p5DeletedGene_germline_set_ref
+  V1p5germline_set_ref:
+    name: V1p5germline_set_ref
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: GermlineSet from which it was taken (issuer/name/version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5DeletedGene_germline_set_ref
+    alias: V1p5germline_set_ref
     owner: V1p5DeletedGene
     domain_of:
+    - V1p5GermlineSet
+    - V1p5DocumentedAllele
     - V1p5DeletedGene
+    - V1p5DataProcessing
     range: string
-    required: true
-  V1p5DeletedGene_phasing:
-    name: V1p5DeletedGene_phasing
+  V1p5phasing:
+    name: V1p5phasing
     annotations:
       nullable:
         tag: nullable
@@ -345,9 +343,11 @@ attributes:
       to be located on the  same chromosome.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5DeletedGene_phasing
+    alias: V1p5phasing
     owner: V1p5DeletedGene
     domain_of:
+    - V1p5DocumentedAllele
+    - V1p5UndocumentedAllele
     - V1p5DeletedGene
     range: integer
     required: false

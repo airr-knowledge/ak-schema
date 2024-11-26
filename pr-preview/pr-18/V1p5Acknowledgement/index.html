@@ -204,13 +204,13 @@
 <div class="mermaid"> classDiagram
     class V1p5Acknowledgement
     click V1p5Acknowledgement href "../V1p5Acknowledgement"
-      V1p5Acknowledgement : V1p5Acknowledgement_acknowledgement_id
+      V1p5Acknowledgement : V1p5acknowledgement_id
 
-      V1p5Acknowledgement : V1p5Acknowledgement_institution_name
+      V1p5Acknowledgement : V1p5institution_name
 
-      V1p5Acknowledgement : V1p5Acknowledgement_name
+      V1p5Acknowledgement : V1p5name
 
-      V1p5Acknowledgement : V1p5Acknowledgement_orcid_id
+      V1p5Acknowledgement : V1p5orcid_id
 
 
 </div>
@@ -227,25 +227,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5Acknowledgement_acknowledgement_id/">V1p5Acknowledgement_acknowledgement_id</a></td>
+<td><a href="../V1p5acknowledgement_id/">V1p5acknowledgement_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>unique identifier of this Acknowledgement within the file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Acknowledgement_name/">V1p5Acknowledgement_name</a></td>
+<td><a href="../V1p5name/">V1p5name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Full name of individual</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Acknowledgement_institution_name/">V1p5Acknowledgement_institution_name</a></td>
+<td><a href="../V1p5institution_name/">V1p5institution_name</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Individual's department and institution name</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Acknowledgement_orcid_id/">V1p5Acknowledgement_orcid_id</a></td>
+<td><a href="../V1p5orcid_id/">V1p5orcid_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Individual's ORCID identifier</td>
 <td>direct</td>
@@ -265,13 +265,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p5AlleleDescription/">V1p5AlleleDescription</a></td>
-<td><a href="../V1p5AlleleDescription_acknowledgements/">V1p5AlleleDescription_acknowledgements</a></td>
+<td><a href="../V1p5acknowledgements/">V1p5acknowledgements</a></td>
 <td>range</td>
 <td><a href="./">V1p5Acknowledgement</a></td>
 </tr>
 <tr>
 <td><a href="../V1p5GermlineSet/">V1p5GermlineSet</a></td>
-<td><a href="../V1p5GermlineSet_acknowledgements/">V1p5GermlineSet_acknowledgements</a></td>
+<td><a href="../V1p5acknowledgements/">V1p5acknowledgements</a></td>
 <td>range</td>
 <td><a href="./">V1p5Acknowledgement</a></td>
 </tr>
@@ -308,10 +308,10 @@
 <pre><code class="language-yaml">name: V1p5Acknowledgement
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5Acknowledgement_acknowledgement_id
-- V1p5Acknowledgement_name
-- V1p5Acknowledgement_institution_name
-- V1p5Acknowledgement_orcid_id
+- V1p5acknowledgement_id
+- V1p5name
+- V1p5institution_name
+- V1p5orcid_id
 
 </code></pre>
 </details>
@@ -320,8 +320,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5Acknowledgement
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5Acknowledgement_acknowledgement_id:
-    name: V1p5Acknowledgement_acknowledgement_id
+  V1p5acknowledgement_id:
+    name: V1p5acknowledgement_id
     annotations:
       nullable:
         tag: nullable
@@ -329,14 +329,14 @@ attributes:
     description: unique identifier of this Acknowledgement within the file
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Acknowledgement_acknowledgement_id
+    alias: V1p5acknowledgement_id
     owner: V1p5Acknowledgement
     domain_of:
     - V1p5Acknowledgement
     range: string
     required: true
-  V1p5Acknowledgement_name:
-    name: V1p5Acknowledgement_name
+  V1p5name:
+    name: V1p5name
     annotations:
       nullable:
         tag: nullable
@@ -344,14 +344,14 @@ attributes:
     description: Full name of individual
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Acknowledgement_name
+    alias: V1p5name
     owner: V1p5Acknowledgement
     domain_of:
     - V1p5Acknowledgement
     range: string
     required: true
-  V1p5Acknowledgement_institution_name:
-    name: V1p5Acknowledgement_institution_name
+  V1p5institution_name:
+    name: V1p5institution_name
     annotations:
       nullable:
         tag: nullable
@@ -359,14 +359,14 @@ attributes:
     description: Individual's department and institution name
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Acknowledgement_institution_name
+    alias: V1p5institution_name
     owner: V1p5Acknowledgement
     domain_of:
     - V1p5Acknowledgement
     range: string
     required: true
-  V1p5Acknowledgement_orcid_id:
-    name: V1p5Acknowledgement_orcid_id
+  V1p5orcid_id:
+    name: V1p5orcid_id
     annotations:
       nullable:
         tag: nullable
@@ -374,7 +374,7 @@ attributes:
     description: Individual's ORCID identifier
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Acknowledgement_orcid_id
+    alias: V1p5orcid_id
     owner: V1p5Acknowledgement
     domain_of:
     - V1p5Acknowledgement

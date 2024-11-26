@@ -204,28 +204,28 @@
 <div class="mermaid"> classDiagram
     class V1p5Diagnosis
     click V1p5Diagnosis href "../V1p5Diagnosis"
-      V1p5Diagnosis : V1p5Diagnosis_disease_diagnosis
+      V1p5Diagnosis : V1p5disease_diagnosis
 
 
 
 
-    V1p5Diagnosis --&gt; "1" V1p5DiseaseDiagnosis : V1p5Diagnosis_disease_diagnosis
+    V1p5Diagnosis --&gt; "1" V1p5DiseaseDiagnosis : V1p5disease_diagnosis
     click V1p5DiseaseDiagnosis href "../V1p5DiseaseDiagnosis"
 
 
-      V1p5Diagnosis : V1p5Diagnosis_disease_length
+      V1p5Diagnosis : V1p5disease_length
 
-      V1p5Diagnosis : V1p5Diagnosis_disease_stage
+      V1p5Diagnosis : V1p5disease_stage
 
-      V1p5Diagnosis : V1p5Diagnosis_immunogen
+      V1p5Diagnosis : V1p5immunogen
 
-      V1p5Diagnosis : V1p5Diagnosis_intervention
+      V1p5Diagnosis : V1p5intervention
 
-      V1p5Diagnosis : V1p5Diagnosis_medical_history
+      V1p5Diagnosis : V1p5medical_history
 
-      V1p5Diagnosis : V1p5Diagnosis_prior_therapies
+      V1p5Diagnosis : V1p5prior_therapies
 
-      V1p5Diagnosis : V1p5Diagnosis_study_group_description
+      V1p5Diagnosis : V1p5study_group_description
 
 
 </div>
@@ -242,49 +242,49 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5Diagnosis_study_group_description/">V1p5Diagnosis_study_group_description</a></td>
+<td><a href="../V1p5study_group_description/">V1p5study_group_description</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Designation of study arm to which the subject is assigned to</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Diagnosis_disease_diagnosis/">V1p5Diagnosis_disease_diagnosis</a></td>
+<td><a href="../V1p5disease_diagnosis/">V1p5disease_diagnosis</a></td>
 <td>1 <br/> <a href="../V1p5DiseaseDiagnosis/">V1p5DiseaseDiagnosis</a></td>
 <td>Diagnosis of subject</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Diagnosis_disease_length/">V1p5Diagnosis_disease_length</a></td>
+<td><a href="../V1p5disease_length/">V1p5disease_length</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Time duration between initial diagnosis and current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Diagnosis_disease_stage/">V1p5Diagnosis_disease_stage</a></td>
+<td><a href="../V1p5disease_stage/">V1p5disease_stage</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Stage of disease at current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Diagnosis_prior_therapies/">V1p5Diagnosis_prior_therapies</a></td>
+<td><a href="../V1p5prior_therapies/">V1p5prior_therapies</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>List of all relevant previous therapies applied to subject for treatment of `...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Diagnosis_immunogen/">V1p5Diagnosis_immunogen</a></td>
+<td><a href="../V1p5immunogen/">V1p5immunogen</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Antigen, vaccine or drug applied to subject at this intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Diagnosis_intervention/">V1p5Diagnosis_intervention</a></td>
+<td><a href="../V1p5intervention/">V1p5intervention</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of intervention</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Diagnosis_medical_history/">V1p5Diagnosis_medical_history</a></td>
+<td><a href="../V1p5medical_history/">V1p5medical_history</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Medical history of subject that is relevant to assess the course of disease a...</td>
 <td>direct</td>
@@ -304,7 +304,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5Subject/">V1p5Subject</a></td>
-<td><a href="../V1p5Subject_diagnosis/">V1p5Subject_diagnosis</a></td>
+<td><a href="../V1p5diagnosis/">V1p5diagnosis</a></td>
 <td>range</td>
 <td><a href="./">V1p5Diagnosis</a></td>
 </tr>
@@ -341,14 +341,14 @@
 <pre><code class="language-yaml">name: V1p5Diagnosis
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5Diagnosis_study_group_description
-- V1p5Diagnosis_disease_diagnosis
-- V1p5Diagnosis_disease_length
-- V1p5Diagnosis_disease_stage
-- V1p5Diagnosis_prior_therapies
-- V1p5Diagnosis_immunogen
-- V1p5Diagnosis_intervention
-- V1p5Diagnosis_medical_history
+- V1p5study_group_description
+- V1p5disease_diagnosis
+- V1p5disease_length
+- V1p5disease_stage
+- V1p5prior_therapies
+- V1p5immunogen
+- V1p5intervention
+- V1p5medical_history
 
 </code></pre>
 </details>
@@ -357,8 +357,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5Diagnosis
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5Diagnosis_study_group_description:
-    name: V1p5Diagnosis_study_group_description
+  V1p5study_group_description:
+    name: V1p5study_group_description
     annotations:
       nullable:
         tag: nullable
@@ -366,14 +366,14 @@ attributes:
     description: Designation of study arm to which the subject is assigned to
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_study_group_description
+    alias: V1p5study_group_description
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
     range: string
     required: true
-  V1p5Diagnosis_disease_diagnosis:
-    name: V1p5Diagnosis_disease_diagnosis
+  V1p5disease_diagnosis:
+    name: V1p5disease_diagnosis
     annotations:
       nullable:
         tag: nullable
@@ -381,14 +381,14 @@ attributes:
     description: Diagnosis of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_disease_diagnosis
+    alias: V1p5disease_diagnosis
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
     range: V1p5DiseaseDiagnosis
     required: true
-  V1p5Diagnosis_disease_length:
-    name: V1p5Diagnosis_disease_length
+  V1p5disease_length:
+    name: V1p5disease_length
     annotations:
       nullable:
         tag: nullable
@@ -396,14 +396,14 @@ attributes:
     description: Time duration between initial diagnosis and current intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_disease_length
+    alias: V1p5disease_length
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
     range: string
     required: true
-  V1p5Diagnosis_disease_stage:
-    name: V1p5Diagnosis_disease_stage
+  V1p5disease_stage:
+    name: V1p5disease_stage
     annotations:
       nullable:
         tag: nullable
@@ -411,14 +411,14 @@ attributes:
     description: Stage of disease at current intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_disease_stage
+    alias: V1p5disease_stage
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
     range: string
     required: true
-  V1p5Diagnosis_prior_therapies:
-    name: V1p5Diagnosis_prior_therapies
+  V1p5prior_therapies:
+    name: V1p5prior_therapies
     annotations:
       nullable:
         tag: nullable
@@ -427,14 +427,14 @@ attributes:
       of `Diagnosis`
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_prior_therapies
+    alias: V1p5prior_therapies
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
     range: string
     required: true
-  V1p5Diagnosis_immunogen:
-    name: V1p5Diagnosis_immunogen
+  V1p5immunogen:
+    name: V1p5immunogen
     annotations:
       nullable:
         tag: nullable
@@ -442,14 +442,14 @@ attributes:
     description: Antigen, vaccine or drug applied to subject at this intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_immunogen
+    alias: V1p5immunogen
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
     range: string
     required: true
-  V1p5Diagnosis_intervention:
-    name: V1p5Diagnosis_intervention
+  V1p5intervention:
+    name: V1p5intervention
     annotations:
       nullable:
         tag: nullable
@@ -457,14 +457,14 @@ attributes:
     description: Description of intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_intervention
+    alias: V1p5intervention
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
     range: string
     required: true
-  V1p5Diagnosis_medical_history:
-    name: V1p5Diagnosis_medical_history
+  V1p5medical_history:
+    name: V1p5medical_history
     annotations:
       nullable:
         tag: nullable
@@ -473,7 +473,7 @@ attributes:
       of disease and/or treatment
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Diagnosis_medical_history
+    alias: V1p5medical_history
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis

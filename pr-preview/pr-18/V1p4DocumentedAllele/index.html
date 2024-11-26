@@ -204,11 +204,11 @@
 <div class="mermaid"> classDiagram
     class V1p4DocumentedAllele
     click V1p4DocumentedAllele href "../V1p4DocumentedAllele"
-      V1p4DocumentedAllele : V1p4DocumentedAllele_germline_set_ref
+      V1p4DocumentedAllele : V1p4germline_set_ref
 
-      V1p4DocumentedAllele : V1p4DocumentedAllele_label
+      V1p4DocumentedAllele : V1p4label
 
-      V1p4DocumentedAllele : V1p4DocumentedAllele_phasing
+      V1p4DocumentedAllele : V1p4phasing
 
 
 </div>
@@ -225,19 +225,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4DocumentedAllele_label/">V1p4DocumentedAllele_label</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>The accepted name for this allele, taken from the GermlineSet</td>
+<td><a href="../V1p4label/">V1p4label</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4DocumentedAllele_germline_set_ref/">V1p4DocumentedAllele_germline_set_ref</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>GermlineSet from which it was taken, referenced in standardized form (Repo:La...</td>
+<td><a href="../V1p4germline_set_ref/">V1p4germline_set_ref</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4DocumentedAllele_phasing/">V1p4DocumentedAllele_phasing</a></td>
+<td><a href="../V1p4phasing/">V1p4phasing</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Chromosomal phasing indicator</td>
 <td>direct</td>
@@ -257,7 +257,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Genotype/">V1p4Genotype</a></td>
-<td><a href="../V1p4Genotype_documented_alleles/">V1p4Genotype_documented_alleles</a></td>
+<td><a href="../V1p4documented_alleles/">V1p4documented_alleles</a></td>
 <td>range</td>
 <td><a href="./">V1p4DocumentedAllele</a></td>
 </tr>
@@ -294,9 +294,9 @@
 <pre><code class="language-yaml">name: V1p4DocumentedAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4DocumentedAllele_label
-- V1p4DocumentedAllele_germline_set_ref
-- V1p4DocumentedAllele_phasing
+- V1p4label
+- V1p4germline_set_ref
+- V1p4phasing
 
 </code></pre>
 </details>
@@ -305,39 +305,36 @@ slots:
 <pre><code class="language-yaml">name: V1p4DocumentedAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4DocumentedAllele_label:
-    name: V1p4DocumentedAllele_label
+  V1p4label:
+    name: V1p4label
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: V1p4label
+    owner: V1p4DocumentedAllele
+    domain_of:
+    - V1p4TimePoint
+    - V1p4AlleleDescription
+    - V1p4DocumentedAllele
+    - V1p4DeletedGene
+    range: string
+  V1p4germline_set_ref:
+    name: V1p4germline_set_ref
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: The accepted name for this allele, taken from the GermlineSet
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4DocumentedAllele_label
+    alias: V1p4germline_set_ref
     owner: V1p4DocumentedAllele
     domain_of:
+    - V1p4GermlineSet
     - V1p4DocumentedAllele
+    - V1p4DeletedGene
+    - V1p4DataProcessing
     range: string
-    required: true
-  V1p4DocumentedAllele_germline_set_ref:
-    name: V1p4DocumentedAllele_germline_set_ref
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: GermlineSet from which it was taken, referenced in standardized form
-      (Repo:Label:Version)
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: V1p4DocumentedAllele_germline_set_ref
-    owner: V1p4DocumentedAllele
-    domain_of:
-    - V1p4DocumentedAllele
-    range: string
-    required: true
-  V1p4DocumentedAllele_phasing:
-    name: V1p4DocumentedAllele_phasing
+  V1p4phasing:
+    name: V1p4phasing
     annotations:
       nullable:
         tag: nullable
@@ -346,10 +343,12 @@ attributes:
       to be located on the  same chromosome.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4DocumentedAllele_phasing
+    alias: V1p4phasing
     owner: V1p4DocumentedAllele
     domain_of:
     - V1p4DocumentedAllele
+    - V1p4UndocumentedAllele
+    - V1p4DeletedGene
     range: integer
     required: false
 

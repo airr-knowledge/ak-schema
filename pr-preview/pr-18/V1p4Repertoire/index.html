@@ -199,45 +199,45 @@
 <div class="mermaid"> classDiagram
     class V1p4Repertoire
     click V1p4Repertoire href "../V1p4Repertoire"
-      V1p4Repertoire : V1p4Repertoire_data_processing
+      V1p4Repertoire : V1p4data_processing
 
 
 
 
-    V1p4Repertoire --&gt; "1..*" V1p4DataProcessing : V1p4Repertoire_data_processing
+    V1p4Repertoire --&gt; "1..*" V1p4DataProcessing : V1p4data_processing
     click V1p4DataProcessing href "../V1p4DataProcessing"
 
 
-      V1p4Repertoire : V1p4Repertoire_repertoire_description
+      V1p4Repertoire : V1p4repertoire_description
 
-      V1p4Repertoire : V1p4Repertoire_repertoire_id
+      V1p4Repertoire : V1p4repertoire_id
 
-      V1p4Repertoire : V1p4Repertoire_repertoire_name
+      V1p4Repertoire : V1p4repertoire_name
 
-      V1p4Repertoire : V1p4Repertoire_sample
-
-
+      V1p4Repertoire : V1p4sample
 
 
-    V1p4Repertoire --&gt; "1..*" V1p4SampleProcessing : V1p4Repertoire_sample
+
+
+    V1p4Repertoire --&gt; "1..*" V1p4SampleProcessing : V1p4sample
     click V1p4SampleProcessing href "../V1p4SampleProcessing"
 
 
-      V1p4Repertoire : V1p4Repertoire_study
+      V1p4Repertoire : V1p4study
 
 
 
 
-    V1p4Repertoire --&gt; "1" V1p4Study : V1p4Repertoire_study
+    V1p4Repertoire --&gt; "1" V1p4Study : V1p4study
     click V1p4Study href "../V1p4Study"
 
 
-      V1p4Repertoire : V1p4Repertoire_subject
+      V1p4Repertoire : V1p4subject
 
 
 
 
-    V1p4Repertoire --&gt; "1" V1p4Subject : V1p4Repertoire_subject
+    V1p4Repertoire --&gt; "1" V1p4Subject : V1p4subject
     click V1p4Subject href "../V1p4Subject"
 
 
@@ -256,43 +256,43 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4Repertoire_repertoire_id/">V1p4Repertoire_repertoire_id</a></td>
+<td><a href="../V1p4repertoire_id/">V1p4repertoire_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the repertoire object</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Repertoire_repertoire_name/">V1p4Repertoire_repertoire_name</a></td>
+<td><a href="../V1p4repertoire_name/">V1p4repertoire_name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Short generic display name for the repertoire</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Repertoire_repertoire_description/">V1p4Repertoire_repertoire_description</a></td>
+<td><a href="../V1p4repertoire_description/">V1p4repertoire_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Generic repertoire description</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Repertoire_study/">V1p4Repertoire_study</a></td>
+<td><a href="../V1p4study/">V1p4study</a></td>
 <td>1 <br/> <a href="../V1p4Study/">V1p4Study</a></td>
 <td>Study object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Repertoire_subject/">V1p4Repertoire_subject</a></td>
+<td><a href="../V1p4subject/">V1p4subject</a></td>
 <td>1 <br/> <a href="../V1p4Subject/">V1p4Subject</a></td>
 <td>Subject object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Repertoire_sample/">V1p4Repertoire_sample</a></td>
+<td><a href="../V1p4sample/">V1p4sample</a></td>
 <td>1..* <br/> <a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
 <td>List of Sample Processing objects</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Repertoire_data_processing/">V1p4Repertoire_data_processing</a></td>
+<td><a href="../V1p4data_processing/">V1p4data_processing</a></td>
 <td>1..* <br/> <a href="../V1p4DataProcessing/">V1p4DataProcessing</a></td>
 <td>List of Data Processing objects</td>
 <td>direct</td>
@@ -330,13 +330,13 @@
 <pre><code class="language-yaml">name: V1p4Repertoire
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4Repertoire_repertoire_id
-- V1p4Repertoire_repertoire_name
-- V1p4Repertoire_repertoire_description
-- V1p4Repertoire_study
-- V1p4Repertoire_subject
-- V1p4Repertoire_sample
-- V1p4Repertoire_data_processing
+- V1p4repertoire_id
+- V1p4repertoire_name
+- V1p4repertoire_description
+- V1p4study
+- V1p4subject
+- V1p4sample
+- V1p4data_processing
 
 </code></pre>
 </details>
@@ -345,27 +345,26 @@ slots:
 <pre><code class="language-yaml">name: V1p4Repertoire
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4Repertoire_repertoire_id:
-    name: V1p4Repertoire_repertoire_id
+  V1p4repertoire_id:
+    name: V1p4repertoire_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier for the repertoire object. This identifier should be globally
-      unique so that repertoires from multiple studies can be combined together without
-      conflict. The repertoire_id is used to link other AIRR data to a Repertoire.
-      Specifically, the Rearrangements Schema includes repertoire_id for referencing
-      the specific Repertoire for that Rearrangement.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Repertoire_repertoire_id
+    alias: V1p4repertoire_id
     owner: V1p4Repertoire
     domain_of:
     - V1p4Repertoire
+    - V1p4Rearrangement
+    - V1p4Clone
+    - V1p4Cell
+    - V1p4Expression
+    - V1p4Reactivity
     range: string
-    required: false
-  V1p4Repertoire_repertoire_name:
-    name: V1p4Repertoire_repertoire_name
+  V1p4repertoire_name:
+    name: V1p4repertoire_name
     annotations:
       nullable:
         tag: nullable
@@ -373,14 +372,14 @@ attributes:
     description: Short generic display name for the repertoire
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Repertoire_repertoire_name
+    alias: V1p4repertoire_name
     owner: V1p4Repertoire
     domain_of:
     - V1p4Repertoire
     range: string
     required: false
-  V1p4Repertoire_repertoire_description:
-    name: V1p4Repertoire_repertoire_description
+  V1p4repertoire_description:
+    name: V1p4repertoire_description
     annotations:
       nullable:
         tag: nullable
@@ -388,14 +387,14 @@ attributes:
     description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Repertoire_repertoire_description
+    alias: V1p4repertoire_description
     owner: V1p4Repertoire
     domain_of:
     - V1p4Repertoire
     range: string
     required: false
-  V1p4Repertoire_study:
-    name: V1p4Repertoire_study
+  V1p4study:
+    name: V1p4study
     annotations:
       nullable:
         tag: nullable
@@ -403,14 +402,14 @@ attributes:
     description: Study object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Repertoire_study
+    alias: V1p4study
     owner: V1p4Repertoire
     domain_of:
     - V1p4Repertoire
     range: V1p4Study
     required: true
-  V1p4Repertoire_subject:
-    name: V1p4Repertoire_subject
+  V1p4subject:
+    name: V1p4subject
     annotations:
       nullable:
         tag: nullable
@@ -418,14 +417,14 @@ attributes:
     description: Subject object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Repertoire_subject
+    alias: V1p4subject
     owner: V1p4Repertoire
     domain_of:
     - V1p4Repertoire
     range: V1p4Subject
     required: true
-  V1p4Repertoire_sample:
-    name: V1p4Repertoire_sample
+  V1p4sample:
+    name: V1p4sample
     annotations:
       nullable:
         tag: nullable
@@ -433,15 +432,15 @@ attributes:
     description: List of Sample Processing objects
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Repertoire_sample
+    alias: V1p4sample
     owner: V1p4Repertoire
     domain_of:
     - V1p4Repertoire
     range: V1p4SampleProcessing
     required: true
     multivalued: true
-  V1p4Repertoire_data_processing:
-    name: V1p4Repertoire_data_processing
+  V1p4data_processing:
+    name: V1p4data_processing
     annotations:
       nullable:
         tag: nullable
@@ -449,7 +448,7 @@ attributes:
     description: List of Data Processing objects
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Repertoire_data_processing
+    alias: V1p4data_processing
     owner: V1p4Repertoire
     domain_of:
     - V1p4Repertoire

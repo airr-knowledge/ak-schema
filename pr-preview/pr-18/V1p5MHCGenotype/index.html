@@ -204,27 +204,27 @@
 <div class="mermaid"> classDiagram
     class V1p5MHCGenotype
     click V1p5MHCGenotype href "../V1p5MHCGenotype"
-      V1p5MHCGenotype : V1p5MHCGenotype_mhc_alleles
+      V1p5MHCGenotype : V1p5mhc_alleles
 
 
 
 
-    V1p5MHCGenotype --&gt; "1..*" V1p5MHCAllele : V1p5MHCGenotype_mhc_alleles
+    V1p5MHCGenotype --&gt; "1..*" V1p5MHCAllele : V1p5mhc_alleles
     click V1p5MHCAllele href "../V1p5MHCAllele"
 
 
-      V1p5MHCGenotype : V1p5MHCGenotype_mhc_class
+      V1p5MHCGenotype : V1p5mhc_class
 
 
 
 
-    V1p5MHCGenotype --&gt; "1" V1p5MhcClass : V1p5MHCGenotype_mhc_class
+    V1p5MHCGenotype --&gt; "0..1" V1p5MhcClass : V1p5mhc_class
     click V1p5MhcClass href "../V1p5MhcClass"
 
 
-      V1p5MHCGenotype : V1p5MHCGenotype_mhc_genotype_id
+      V1p5MHCGenotype : V1p5mhc_genotype_id
 
-      V1p5MHCGenotype : V1p5MHCGenotype_mhc_genotyping_method
+      V1p5MHCGenotype : V1p5mhc_genotyping_method
 
 
 </div>
@@ -241,25 +241,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5MHCGenotype_mhc_genotype_id/">V1p5MHCGenotype_mhc_genotype_id</a></td>
+<td><a href="../V1p5mhc_genotype_id/">V1p5mhc_genotype_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for this MHCGenotype, assumed to be unique in the context...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5MHCGenotype_mhc_class/">V1p5MHCGenotype_mhc_class</a></td>
-<td>1 <br/> <a href="../V1p5MhcClass/">V1p5MhcClass</a></td>
-<td>Class of MHC alleles described by the MHCGenotype</td>
+<td><a href="../V1p5mhc_class/">V1p5mhc_class</a></td>
+<td>0..1 <br/> <a href="../V1p5MhcClass/">V1p5MhcClass</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5MHCGenotype_mhc_alleles/">V1p5MHCGenotype_mhc_alleles</a></td>
+<td><a href="../V1p5mhc_alleles/">V1p5mhc_alleles</a></td>
 <td>1..* <br/> <a href="../V1p5MHCAllele/">V1p5MHCAllele</a></td>
 <td>List of MHC alleles of the indicated mhc_class identified in an individual</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5MHCGenotype_mhc_genotyping_method/">V1p5MHCGenotype_mhc_genotyping_method</a></td>
+<td><a href="../V1p5mhc_genotyping_method/">V1p5mhc_genotyping_method</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Information on how the genotype was determined</td>
 <td>direct</td>
@@ -279,7 +279,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5MHCGenotypeSet/">V1p5MHCGenotypeSet</a></td>
-<td><a href="../V1p5MHCGenotypeSet_mhc_genotype_list/">V1p5MHCGenotypeSet_mhc_genotype_list</a></td>
+<td><a href="../V1p5mhc_genotype_list/">V1p5mhc_genotype_list</a></td>
 <td>range</td>
 <td><a href="./">V1p5MHCGenotype</a></td>
 </tr>
@@ -316,10 +316,10 @@
 <pre><code class="language-yaml">name: V1p5MHCGenotype
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5MHCGenotype_mhc_genotype_id
-- V1p5MHCGenotype_mhc_class
-- V1p5MHCGenotype_mhc_alleles
-- V1p5MHCGenotype_mhc_genotyping_method
+- V1p5mhc_genotype_id
+- V1p5mhc_class
+- V1p5mhc_alleles
+- V1p5mhc_genotyping_method
 
 </code></pre>
 </details>
@@ -328,8 +328,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5MHCGenotype
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5MHCGenotype_mhc_genotype_id:
-    name: V1p5MHCGenotype_mhc_genotype_id
+  V1p5mhc_genotype_id:
+    name: V1p5mhc_genotype_id
     annotations:
       nullable:
         tag: nullable
@@ -338,29 +338,24 @@ attributes:
       the context of the study
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5MHCGenotype_mhc_genotype_id
+    alias: V1p5mhc_genotype_id
     owner: V1p5MHCGenotype
     domain_of:
     - V1p5MHCGenotype
     range: string
     required: true
-  V1p5MHCGenotype_mhc_class:
-    name: V1p5MHCGenotype_mhc_class
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Class of MHC alleles described by the MHCGenotype
+  V1p5mhc_class:
+    name: V1p5mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5MHCGenotype_mhc_class
+    alias: V1p5mhc_class
     owner: V1p5MHCGenotype
     domain_of:
     - V1p5MHCGenotype
+    - V1p5ReceptorReactivity
     range: V1p5MhcClass
-    required: true
-  V1p5MHCGenotype_mhc_alleles:
-    name: V1p5MHCGenotype_mhc_alleles
+  V1p5mhc_alleles:
+    name: V1p5mhc_alleles
     annotations:
       nullable:
         tag: nullable
@@ -368,15 +363,15 @@ attributes:
     description: List of MHC alleles of the indicated mhc_class identified in an individual
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5MHCGenotype_mhc_alleles
+    alias: V1p5mhc_alleles
     owner: V1p5MHCGenotype
     domain_of:
     - V1p5MHCGenotype
     range: V1p5MHCAllele
     required: true
     multivalued: true
-  V1p5MHCGenotype_mhc_genotyping_method:
-    name: V1p5MHCGenotype_mhc_genotyping_method
+  V1p5mhc_genotyping_method:
+    name: V1p5mhc_genotyping_method
     annotations:
       nullable:
         tag: nullable
@@ -386,7 +381,7 @@ attributes:
       documentation.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5MHCGenotype_mhc_genotyping_method
+    alias: V1p5mhc_genotyping_method
     owner: V1p5MHCGenotype
     domain_of:
     - V1p5MHCGenotype

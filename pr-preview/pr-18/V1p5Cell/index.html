@@ -199,30 +199,30 @@
 <div class="mermaid"> classDiagram
     class V1p5Cell
     click V1p5Cell href "../V1p5Cell"
-      V1p5Cell : V1p5Cell_cell_id
+      V1p5Cell : V1p5cell_id
 
-      V1p5Cell : V1p5Cell_data_processing_id
+      V1p5Cell : V1p5data_processing_id
 
-      V1p5Cell : V1p5Cell_expression_index
+      V1p5Cell : V1p5expression_index
 
-      V1p5Cell : V1p5Cell_expression_raw_doi
+      V1p5Cell : V1p5expression_raw_doi
 
-      V1p5Cell : V1p5Cell_expression_study_method
-
-
+      V1p5Cell : V1p5expression_study_method
 
 
-    V1p5Cell --&gt; "0..1" V1p5ExpressionStudyMethod : V1p5Cell_expression_study_method
+
+
+    V1p5Cell --&gt; "0..1" V1p5ExpressionStudyMethod : V1p5expression_study_method
     click V1p5ExpressionStudyMethod href "../V1p5ExpressionStudyMethod"
 
 
-      V1p5Cell : V1p5Cell_rearrangements
+      V1p5Cell : V1p5rearrangements
 
-      V1p5Cell : V1p5Cell_receptors
+      V1p5Cell : V1p5receptors
 
-      V1p5Cell : V1p5Cell_repertoire_id
+      V1p5Cell : V1p5repertoire_id
 
-      V1p5Cell : V1p5Cell_virtual_pairing
+      V1p5Cell : V1p5virtual_pairing
 
 
 </div>
@@ -239,55 +239,55 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5Cell_cell_id/">V1p5Cell_cell_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier defining the cell of origin for the query sequence</td>
+<td><a href="../V1p5cell_id/">V1p5cell_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Cell_rearrangements/">V1p5Cell_rearrangements</a></td>
+<td><a href="../V1p5rearrangements/">V1p5rearrangements</a></td>
 <td>1..* <br/> <a href="../String/">String</a></td>
 <td>Array of sequence identifiers defined for the Rearrangement object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Cell_receptors/">V1p5Cell_receptors</a></td>
+<td><a href="../V1p5receptors/">V1p5receptors</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Array of receptor identifiers defined for the Receptor object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Cell_repertoire_id/">V1p5Cell_repertoire_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier to the associated repertoire in study metadata</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../V1p5Cell_data_processing_id/">V1p5Cell_data_processing_id</a></td>
+<td><a href="../V1p5repertoire_id/">V1p5repertoire_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier of the data processing object in the repertoire metadata for this ...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Cell_expression_study_method/">V1p5Cell_expression_study_method</a></td>
+<td><a href="../V1p5data_processing_id/">V1p5data_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../V1p5expression_study_method/">V1p5expression_study_method</a></td>
 <td>0..1 <br/> <a href="../V1p5ExpressionStudyMethod/">V1p5ExpressionStudyMethod</a></td>
 <td>Keyword describing the methodology used to assess expression</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Cell_expression_raw_doi/">V1p5Cell_expression_raw_doi</a></td>
+<td><a href="../V1p5expression_raw_doi/">V1p5expression_raw_doi</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>DOI of raw data set containing the current event</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Cell_expression_index/">V1p5Cell_expression_index</a></td>
+<td><a href="../V1p5expression_index/">V1p5expression_index</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Index addressing the current event within the raw data set</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Cell_virtual_pairing/">V1p5Cell_virtual_pairing</a></td>
+<td><a href="../V1p5virtual_pairing/">V1p5virtual_pairing</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>boolean to indicate if pairing was inferred</td>
 <td>direct</td>
@@ -325,15 +325,15 @@
 <pre><code class="language-yaml">name: V1p5Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5Cell_cell_id
-- V1p5Cell_rearrangements
-- V1p5Cell_receptors
-- V1p5Cell_repertoire_id
-- V1p5Cell_data_processing_id
-- V1p5Cell_expression_study_method
-- V1p5Cell_expression_raw_doi
-- V1p5Cell_expression_index
-- V1p5Cell_virtual_pairing
+- V1p5cell_id
+- V1p5rearrangements
+- V1p5receptors
+- V1p5repertoire_id
+- V1p5data_processing_id
+- V1p5expression_study_method
+- V1p5expression_raw_doi
+- V1p5expression_index
+- V1p5virtual_pairing
 
 </code></pre>
 </details>
@@ -342,23 +342,19 @@ slots:
 <pre><code class="language-yaml">name: V1p5Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5Cell_cell_id:
-    name: V1p5Cell_cell_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Identifier defining the cell of origin for the query sequence.
+  V1p5cell_id:
+    name: V1p5cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_cell_id
+    alias: V1p5cell_id
     owner: V1p5Cell
     domain_of:
+    - V1p5Rearrangement
     - V1p5Cell
+    - V1p5CellExpression
     range: string
-    required: true
-  V1p5Cell_rearrangements:
-    name: V1p5Cell_rearrangements
+  V1p5rearrangements:
+    name: V1p5rearrangements
     annotations:
       nullable:
         tag: nullable
@@ -366,15 +362,15 @@ attributes:
     description: Array of sequence identifiers defined for the Rearrangement object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_rearrangements
+    alias: V1p5rearrangements
     owner: V1p5Cell
     domain_of:
     - V1p5Cell
     range: string
     required: true
     multivalued: true
-  V1p5Cell_receptors:
-    name: V1p5Cell_receptors
+  V1p5receptors:
+    name: V1p5receptors
     annotations:
       nullable:
         tag: nullable
@@ -382,46 +378,47 @@ attributes:
     description: Array of receptor identifiers defined for the Receptor object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_receptors
+    alias: V1p5receptors
     owner: V1p5Cell
     domain_of:
     - V1p5Cell
     range: string
     required: false
     multivalued: true
-  V1p5Cell_repertoire_id:
-    name: V1p5Cell_repertoire_id
+  V1p5repertoire_id:
+    name: V1p5repertoire_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: V1p5repertoire_id
+    owner: V1p5Cell
+    domain_of:
+    - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
+    - V1p5Rearrangement
+    - V1p5Clone
+    - V1p5Cell
+    - V1p5CellExpression
+    range: string
+  V1p5data_processing_id:
+    name: V1p5data_processing_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier to the associated repertoire in study metadata.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_repertoire_id
+    alias: V1p5data_processing_id
     owner: V1p5Cell
     domain_of:
+    - V1p5DataProcessing
+    - V1p5Alignment
+    - V1p5Rearrangement
+    - V1p5Clone
     - V1p5Cell
+    - V1p5CellExpression
     range: string
-    required: true
-  V1p5Cell_data_processing_id:
-    name: V1p5Cell_data_processing_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Identifier of the data processing object in the repertoire metadata
-      for this clone.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: V1p5Cell_data_processing_id
-    owner: V1p5Cell
-    domain_of:
-    - V1p5Cell
-    range: string
-    required: false
-  V1p5Cell_expression_study_method:
-    name: V1p5Cell_expression_study_method
+  V1p5expression_study_method:
+    name: V1p5expression_study_method
     annotations:
       nullable:
         tag: nullable
@@ -430,14 +427,14 @@ attributes:
       values for this field MUST  come from a controlled vocabulary.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_expression_study_method
+    alias: V1p5expression_study_method
     owner: V1p5Cell
     domain_of:
     - V1p5Cell
     range: V1p5ExpressionStudyMethod
     required: false
-  V1p5Cell_expression_raw_doi:
-    name: V1p5Cell_expression_raw_doi
+  V1p5expression_raw_doi:
+    name: V1p5expression_raw_doi
     annotations:
       nullable:
         tag: nullable
@@ -445,14 +442,14 @@ attributes:
     description: DOI of raw data set containing the current event
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_expression_raw_doi
+    alias: V1p5expression_raw_doi
     owner: V1p5Cell
     domain_of:
     - V1p5Cell
     range: string
     required: false
-  V1p5Cell_expression_index:
-    name: V1p5Cell_expression_index
+  V1p5expression_index:
+    name: V1p5expression_index
     annotations:
       nullable:
         tag: nullable
@@ -460,14 +457,14 @@ attributes:
     description: Index addressing the current event within the raw data set.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_expression_index
+    alias: V1p5expression_index
     owner: V1p5Cell
     domain_of:
     - V1p5Cell
     range: string
     required: false
-  V1p5Cell_virtual_pairing:
-    name: V1p5Cell_virtual_pairing
+  V1p5virtual_pairing:
+    name: V1p5virtual_pairing
     annotations:
       nullable:
         tag: nullable
@@ -475,7 +472,7 @@ attributes:
     description: boolean to indicate if pairing was inferred.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Cell_virtual_pairing
+    alias: V1p5virtual_pairing
     owner: V1p5Cell
     domain_of:
     - V1p5Cell

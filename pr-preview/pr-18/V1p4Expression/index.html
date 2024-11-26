@@ -199,26 +199,26 @@
 <div class="mermaid"> classDiagram
     class V1p4Expression
     click V1p4Expression href "../V1p4Expression"
-      V1p4Expression : V1p4Expression_cell_id
+      V1p4Expression : V1p4cell_id
 
-      V1p4Expression : V1p4Expression_data_processing_id
+      V1p4Expression : V1p4data_processing_id
 
-      V1p4Expression : V1p4Expression_expression_id
+      V1p4Expression : V1p4expression_id
 
-      V1p4Expression : V1p4Expression_property
-
-
+      V1p4Expression : V1p4property
 
 
-    V1p4Expression --&gt; "1" V1p4Property : V1p4Expression_property
+
+
+    V1p4Expression --&gt; "1" V1p4Property : V1p4property
     click V1p4Property href "../V1p4Property"
 
 
-      V1p4Expression : V1p4Expression_property_type
+      V1p4Expression : V1p4property_type
 
-      V1p4Expression : V1p4Expression_repertoire_id
+      V1p4Expression : V1p4repertoire_id
 
-      V1p4Expression : V1p4Expression_value
+      V1p4Expression : V1p4value
 
 
 </div>
@@ -235,45 +235,45 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4Expression_expression_id/">V1p4Expression_expression_id</a></td>
+<td><a href="../V1p4expression_id/">V1p4expression_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the Expression object</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Expression_cell_id/">V1p4Expression_cell_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier of the cell to which this expression data is related</td>
+<td><a href="../V1p4cell_id/">V1p4cell_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Expression_repertoire_id/">V1p4Expression_repertoire_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the associated repertoire in study metadata</td>
+<td><a href="../V1p4repertoire_id/">V1p4repertoire_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Expression_data_processing_id/">V1p4Expression_data_processing_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier of the data processing object in the repertoire metadata for this ...</td>
+<td><a href="../V1p4data_processing_id/">V1p4data_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Expression_property_type/">V1p4Expression_property_type</a></td>
+<td><a href="../V1p4property_type/">V1p4property_type</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Keyword describing the property type and detection method used to measure the...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Expression_property/">V1p4Expression_property</a></td>
+<td><a href="../V1p4property/">V1p4property</a></td>
 <td>1 <br/> <a href="../V1p4Property/">V1p4Property</a></td>
 <td>Name of the property observed, typically a gene or antibody identifier (and l...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Expression_value/">V1p4Expression_value</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
-<td>Level at which the property was observed in the experiment (non-normalized)</td>
+<td><a href="../V1p4value/">V1p4value</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -309,13 +309,13 @@
 <pre><code class="language-yaml">name: V1p4Expression
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4Expression_expression_id
-- V1p4Expression_cell_id
-- V1p4Expression_repertoire_id
-- V1p4Expression_data_processing_id
-- V1p4Expression_property_type
-- V1p4Expression_property
-- V1p4Expression_value
+- V1p4expression_id
+- V1p4cell_id
+- V1p4repertoire_id
+- V1p4data_processing_id
+- V1p4property_type
+- V1p4property
+- V1p4value
 
 </code></pre>
 </details>
@@ -324,8 +324,8 @@ slots:
 <pre><code class="language-yaml">name: V1p4Expression
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4Expression_expression_id:
-    name: V1p4Expression_expression_id
+  V1p4expression_id:
+    name: V1p4expression_id
     annotations:
       nullable:
         tag: nullable
@@ -335,60 +335,63 @@ attributes:
       record locator to enable database applications.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Expression_expression_id
+    alias: V1p4expression_id
     owner: V1p4Expression
     domain_of:
     - V1p4Expression
     range: string
     required: true
-  V1p4Expression_cell_id:
-    name: V1p4Expression_cell_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Identifier of the cell to which this expression data is related.
+  V1p4cell_id:
+    name: V1p4cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Expression_cell_id
+    alias: V1p4cell_id
     owner: V1p4Expression
     domain_of:
+    - V1p4Rearrangement
+    - V1p4Cell
     - V1p4Expression
+    - V1p4Reactivity
     range: string
-    required: true
-  V1p4Expression_repertoire_id:
-    name: V1p4Expression_repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Identifier for the associated repertoire in study metadata.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: V1p4Expression_repertoire_id
-    owner: V1p4Expression
-    domain_of:
-    - V1p4Expression
-    range: string
-    required: true
-  V1p4Expression_data_processing_id:
-    name: V1p4Expression_data_processing_id
+  V1p4repertoire_id:
+    name: V1p4repertoire_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier of the data processing object in the repertoire metadata
-      for this cell.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Expression_data_processing_id
+    alias: V1p4repertoire_id
     owner: V1p4Expression
     domain_of:
+    - V1p4Repertoire
+    - V1p4Rearrangement
+    - V1p4Clone
+    - V1p4Cell
     - V1p4Expression
+    - V1p4Reactivity
     range: string
-    required: true
-  V1p4Expression_property_type:
-    name: V1p4Expression_property_type
+  V1p4data_processing_id:
+    name: V1p4data_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: V1p4data_processing_id
+    owner: V1p4Expression
+    domain_of:
+    - V1p4DataProcessing
+    - V1p4Alignment
+    - V1p4Rearrangement
+    - V1p4Clone
+    - V1p4Cell
+    - V1p4Expression
+    - V1p4Reactivity
+    range: string
+  V1p4property_type:
+    name: V1p4property_type
     annotations:
       nullable:
         tag: nullable
@@ -400,14 +403,14 @@ attributes:
       and "antigen_bait_binding_by_dna_barcode_count".'
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Expression_property_type
+    alias: V1p4property_type
     owner: V1p4Expression
     domain_of:
     - V1p4Expression
     range: string
     required: true
-  V1p4Expression_property:
-    name: V1p4Expression_property
+  V1p4property:
+    name: V1p4property
     annotations:
       nullable:
         tag: nullable
@@ -418,27 +421,22 @@ attributes:
       CD27 antibody).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Expression_property
+    alias: V1p4property
     owner: V1p4Expression
     domain_of:
     - V1p4Expression
     range: V1p4Property
     required: true
-  V1p4Expression_value:
-    name: V1p4Expression_value
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Level at which the property was observed in the experiment (non-normalized).
+  V1p4value:
+    name: V1p4value
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Expression_value
+    alias: V1p4value
     owner: V1p4Expression
     domain_of:
+    - V1p4TimePoint
     - V1p4Expression
     range: float
-    required: true
 
 </code></pre>
 </details>

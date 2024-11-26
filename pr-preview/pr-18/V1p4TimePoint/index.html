@@ -204,18 +204,18 @@
 <div class="mermaid"> classDiagram
     class V1p4TimePoint
     click V1p4TimePoint href "../V1p4TimePoint"
-      V1p4TimePoint : V1p4TimePoint_label
+      V1p4TimePoint : V1p4label
 
-      V1p4TimePoint : V1p4TimePoint_unit
-
-
+      V1p4TimePoint : V1p4unit
 
 
-    V1p4TimePoint --&gt; "0..1" V1p4Unit : V1p4TimePoint_unit
+
+
+    V1p4TimePoint --&gt; "0..1" V1p4Unit : V1p4unit
     click V1p4Unit href "../V1p4Unit"
 
 
-      V1p4TimePoint : V1p4TimePoint_value
+      V1p4TimePoint : V1p4value
 
 
 </div>
@@ -232,21 +232,21 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4TimePoint_label/">V1p4TimePoint_label</a></td>
+<td><a href="../V1p4label/">V1p4label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Informative label for the time point</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4TimePoint_value/">V1p4TimePoint_value</a></td>
+<td><a href="../V1p4value/">V1p4value</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td>Value of the time point</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4TimePoint_unit/">V1p4TimePoint_unit</a></td>
+<td><a href="../V1p4unit/">V1p4unit</a></td>
 <td>0..1 <br/> <a href="../V1p4Unit/">V1p4Unit</a></td>
-<td>Unit of the time point</td>
+<td></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -264,19 +264,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Diagnosis/">V1p4Diagnosis</a></td>
-<td><a href="../V1p4Diagnosis_diagnosis_timepoint/">V1p4Diagnosis_diagnosis_timepoint</a></td>
+<td><a href="../V1p4diagnosis_timepoint/">V1p4diagnosis_timepoint</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimePoint</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4Sample/">V1p4Sample</a></td>
-<td><a href="../V1p4Sample_collection_time_point_relative/">V1p4Sample_collection_time_point_relative</a></td>
+<td><a href="../V1p4collection_time_point_relative/">V1p4collection_time_point_relative</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimePoint</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
-<td><a href="../V1p4Sample_collection_time_point_relative/">V1p4Sample_collection_time_point_relative</a></td>
+<td><a href="../V1p4collection_time_point_relative/">V1p4collection_time_point_relative</a></td>
 <td>range</td>
 <td><a href="./">V1p4TimePoint</a></td>
 </tr>
@@ -313,9 +313,9 @@
 <pre><code class="language-yaml">name: V1p4TimePoint
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4TimePoint_label
-- V1p4TimePoint_value
-- V1p4TimePoint_unit
+- V1p4label
+- V1p4value
+- V1p4unit
 
 </code></pre>
 </details>
@@ -324,49 +324,43 @@ slots:
 <pre><code class="language-yaml">name: V1p4TimePoint
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4TimePoint_label:
-    name: V1p4TimePoint_label
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Informative label for the time point
+  V1p4label:
+    name: V1p4label
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4TimePoint_label
+    alias: V1p4label
     owner: V1p4TimePoint
     domain_of:
     - V1p4TimePoint
+    - V1p4AlleleDescription
+    - V1p4DocumentedAllele
+    - V1p4DeletedGene
     range: string
-    required: false
-  V1p4TimePoint_value:
-    name: V1p4TimePoint_value
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Value of the time point
+  V1p4value:
+    name: V1p4value
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4TimePoint_value
+    alias: V1p4value
     owner: V1p4TimePoint
     domain_of:
     - V1p4TimePoint
+    - V1p4Expression
     range: float
-    required: false
-  V1p4TimePoint_unit:
-    name: V1p4TimePoint_unit
+  V1p4unit:
+    name: V1p4unit
     annotations:
       nullable:
         tag: nullable
         value: false
-    description: Unit of the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4TimePoint_unit
+    alias: V1p4unit
     owner: V1p4TimePoint
     domain_of:
     - V1p4TimePoint
+    - V1p4TimeInterval
+    - V1p4PhysicalQuantity
+    - V1p4TimeQuantity
     range: V1p4Unit
     required: false
 

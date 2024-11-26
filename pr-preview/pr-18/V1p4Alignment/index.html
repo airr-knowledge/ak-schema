@@ -199,33 +199,33 @@
 <div class="mermaid"> classDiagram
     class V1p4Alignment
     click V1p4Alignment href "../V1p4Alignment"
-      V1p4Alignment : V1p4Alignment_call
+      V1p4Alignment : V1p4call
 
-      V1p4Alignment : V1p4Alignment_cigar
+      V1p4Alignment : V1p4cigar
 
-      V1p4Alignment : V1p4Alignment_data_processing_id
+      V1p4Alignment : V1p4data_processing_id
 
-      V1p4Alignment : V1p4Alignment_germline_end
+      V1p4Alignment : V1p4germline_end
 
-      V1p4Alignment : V1p4Alignment_germline_start
+      V1p4Alignment : V1p4germline_start
 
-      V1p4Alignment : V1p4Alignment_identity
+      V1p4Alignment : V1p4identity
 
-      V1p4Alignment : V1p4Alignment_rank
+      V1p4Alignment : V1p4rank
 
-      V1p4Alignment : V1p4Alignment_rev_comp
+      V1p4Alignment : V1p4rev_comp
 
-      V1p4Alignment : V1p4Alignment_score
+      V1p4Alignment : V1p4score
 
-      V1p4Alignment : V1p4Alignment_segment
+      V1p4Alignment : V1p4segment
 
-      V1p4Alignment : V1p4Alignment_sequence_end
+      V1p4Alignment : V1p4sequence_end
 
-      V1p4Alignment : V1p4Alignment_sequence_id
+      V1p4Alignment : V1p4sequence_id
 
-      V1p4Alignment : V1p4Alignment_sequence_start
+      V1p4Alignment : V1p4sequence_start
 
-      V1p4Alignment : V1p4Alignment_support
+      V1p4Alignment : V1p4support
 
 
 </div>
@@ -242,87 +242,87 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4Alignment_sequence_id/">V1p4Alignment_sequence_id</a></td>
+<td><a href="../V1p4sequence_id/">V1p4sequence_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>Unique query sequence identifier within the file</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_segment/">V1p4Alignment_segment</a></td>
+<td><a href="../V1p4segment/">V1p4segment</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>The segment for this alignment</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_rev_comp/">V1p4Alignment_rev_comp</a></td>
+<td><a href="../V1p4rev_comp/">V1p4rev_comp</a></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td>Alignment result is from the reverse complement of the query sequence</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_call/">V1p4Alignment_call</a></td>
+<td><a href="../V1p4call/">V1p4call</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Gene assignment with allele</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_score/">V1p4Alignment_score</a></td>
+<td><a href="../V1p4score/">V1p4score</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Alignment score</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_identity/">V1p4Alignment_identity</a></td>
+<td><a href="../V1p4identity/">V1p4identity</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Alignment fractional identity</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_support/">V1p4Alignment_support</a></td>
+<td><a href="../V1p4support/">V1p4support</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Alignment E-value, p-value, likelihood, probability or other similar measure ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_cigar/">V1p4Alignment_cigar</a></td>
+<td><a href="../V1p4cigar/">V1p4cigar</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Alignment CIGAR string</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_sequence_start/">V1p4Alignment_sequence_start</a></td>
+<td><a href="../V1p4sequence_start/">V1p4sequence_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Start position of the segment in the query sequence (1-based closed interval)</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_sequence_end/">V1p4Alignment_sequence_end</a></td>
+<td><a href="../V1p4sequence_end/">V1p4sequence_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>End position of the segment in the query sequence (1-based closed interval)</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_germline_start/">V1p4Alignment_germline_start</a></td>
+<td><a href="../V1p4germline_start/">V1p4germline_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Alignment start position in the reference sequence (1-based closed interval)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_germline_end/">V1p4Alignment_germline_end</a></td>
+<td><a href="../V1p4germline_end/">V1p4germline_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Alignment end position in the reference sequence (1-based closed interval)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_rank/">V1p4Alignment_rank</a></td>
+<td><a href="../V1p4rank/">V1p4rank</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Alignment rank</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4Alignment_data_processing_id/">V1p4Alignment_data_processing_id</a></td>
+<td><a href="../V1p4data_processing_id/">V1p4data_processing_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Identifier to the data processing object in the repertoire metadata for this ...</td>
+<td></td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -358,20 +358,20 @@
 <pre><code class="language-yaml">name: V1p4Alignment
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4Alignment_sequence_id
-- V1p4Alignment_segment
-- V1p4Alignment_rev_comp
-- V1p4Alignment_call
-- V1p4Alignment_score
-- V1p4Alignment_identity
-- V1p4Alignment_support
-- V1p4Alignment_cigar
-- V1p4Alignment_sequence_start
-- V1p4Alignment_sequence_end
-- V1p4Alignment_germline_start
-- V1p4Alignment_germline_end
-- V1p4Alignment_rank
-- V1p4Alignment_data_processing_id
+- V1p4sequence_id
+- V1p4segment
+- V1p4rev_comp
+- V1p4call
+- V1p4score
+- V1p4identity
+- V1p4support
+- V1p4cigar
+- V1p4sequence_start
+- V1p4sequence_end
+- V1p4germline_start
+- V1p4germline_end
+- V1p4rank
+- V1p4data_processing_id
 
 </code></pre>
 </details>
@@ -380,26 +380,26 @@ slots:
 <pre><code class="language-yaml">name: V1p4Alignment
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4Alignment_sequence_id:
-    name: V1p4Alignment_sequence_id
+  V1p4sequence_id:
+    name: V1p4sequence_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Unique query sequence identifier within the file. Most often this
-      will be the input sequence header or a substring thereof, but may also be a
-      custom identifier defined by the tool in cases where query sequences have been
-      combined in some fashion prior to alignment.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_sequence_id
+    alias: V1p4sequence_id
     owner: V1p4Alignment
     domain_of:
+    - V1p4RearrangedSequence
+    - V1p4UnrearrangedSequence
     - V1p4Alignment
+    - V1p4Rearrangement
+    - V1p4Node
     range: string
     required: true
-  V1p4Alignment_segment:
-    name: V1p4Alignment_segment
+  V1p4segment:
+    name: V1p4segment
     annotations:
       nullable:
         tag: nullable
@@ -407,29 +407,28 @@ attributes:
     description: The segment for this alignment. One of V, D, J or C.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_segment
+    alias: V1p4segment
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: string
     required: true
-  V1p4Alignment_rev_comp:
-    name: V1p4Alignment_rev_comp
+  V1p4rev_comp:
+    name: V1p4rev_comp
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Alignment result is from the reverse complement of the query sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_rev_comp
+    alias: V1p4rev_comp
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
+    - V1p4Rearrangement
     range: boolean
-    required: false
-  V1p4Alignment_call:
-    name: V1p4Alignment_call
+  V1p4call:
+    name: V1p4call
     annotations:
       nullable:
         tag: nullable
@@ -437,14 +436,14 @@ attributes:
     description: Gene assignment with allele.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_call
+    alias: V1p4call
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: string
     required: true
-  V1p4Alignment_score:
-    name: V1p4Alignment_score
+  V1p4score:
+    name: V1p4score
     annotations:
       nullable:
         tag: nullable
@@ -452,14 +451,14 @@ attributes:
     description: Alignment score.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_score
+    alias: V1p4score
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: float
     required: true
-  V1p4Alignment_identity:
-    name: V1p4Alignment_identity
+  V1p4identity:
+    name: V1p4identity
     annotations:
       nullable:
         tag: nullable
@@ -467,14 +466,14 @@ attributes:
     description: Alignment fractional identity.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_identity
+    alias: V1p4identity
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: float
     required: false
-  V1p4Alignment_support:
-    name: V1p4Alignment_support
+  V1p4support:
+    name: V1p4support
     annotations:
       nullable:
         tag: nullable
@@ -483,14 +482,14 @@ attributes:
       measure of support for the gene assignment as defined by the alignment tool.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_support
+    alias: V1p4support
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: float
     required: false
-  V1p4Alignment_cigar:
-    name: V1p4Alignment_cigar
+  V1p4cigar:
+    name: V1p4cigar
     annotations:
       nullable:
         tag: nullable
@@ -498,46 +497,36 @@ attributes:
     description: Alignment CIGAR string.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_cigar
+    alias: V1p4cigar
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: string
     required: true
-  V1p4Alignment_sequence_start:
-    name: V1p4Alignment_sequence_start
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Start position of the segment in the query sequence (1-based closed
-      interval).
+  V1p4sequence_start:
+    name: V1p4sequence_start
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_sequence_start
+    alias: V1p4sequence_start
     owner: V1p4Alignment
     domain_of:
+    - V1p4RearrangedSequence
     - V1p4Alignment
     range: integer
     required: false
-  V1p4Alignment_sequence_end:
-    name: V1p4Alignment_sequence_end
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: End position of the segment in the query sequence (1-based closed
-      interval).
+  V1p4sequence_end:
+    name: V1p4sequence_end
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_sequence_end
+    alias: V1p4sequence_end
     owner: V1p4Alignment
     domain_of:
+    - V1p4RearrangedSequence
     - V1p4Alignment
     range: integer
     required: false
-  V1p4Alignment_germline_start:
-    name: V1p4Alignment_germline_start
+  V1p4germline_start:
+    name: V1p4germline_start
     annotations:
       nullable:
         tag: nullable
@@ -546,14 +535,14 @@ attributes:
       interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_germline_start
+    alias: V1p4germline_start
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: integer
     required: false
-  V1p4Alignment_germline_end:
-    name: V1p4Alignment_germline_end
+  V1p4germline_end:
+    name: V1p4germline_end
     annotations:
       nullable:
         tag: nullable
@@ -562,14 +551,14 @@ attributes:
       interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_germline_end
+    alias: V1p4germline_end
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: integer
     required: false
-  V1p4Alignment_rank:
-    name: V1p4Alignment_rank
+  V1p4rank:
+    name: V1p4rank
     annotations:
       nullable:
         tag: nullable
@@ -577,29 +566,31 @@ attributes:
     description: Alignment rank.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_rank
+    alias: V1p4rank
     owner: V1p4Alignment
     domain_of:
     - V1p4Alignment
     range: integer
     required: false
-  V1p4Alignment_data_processing_id:
-    name: V1p4Alignment_data_processing_id
+  V1p4data_processing_id:
+    name: V1p4data_processing_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier to the data processing object in the repertoire metadata
-      for this rearrangement. If this field is empty than the primary data processing
-      object is assumed.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4Alignment_data_processing_id
+    alias: V1p4data_processing_id
     owner: V1p4Alignment
     domain_of:
+    - V1p4DataProcessing
     - V1p4Alignment
+    - V1p4Rearrangement
+    - V1p4Clone
+    - V1p4Cell
+    - V1p4Expression
+    - V1p4Reactivity
     range: string
-    required: false
 
 </code></pre>
 </details>

@@ -199,20 +199,20 @@
 <div class="mermaid"> classDiagram
     class V1p5Tree
     click V1p5Tree href "../V1p5Tree"
-      V1p5Tree : V1p5Tree_clone_id
+      V1p5Tree : V1p5clone_id
 
-      V1p5Tree : V1p5Tree_newick
+      V1p5Tree : V1p5newick
 
-      V1p5Tree : V1p5Tree_nodes
-
-
+      V1p5Tree : V1p5nodes
 
 
-    V1p5Tree --&gt; "*" V1p5Node : V1p5Tree_nodes
+
+
+    V1p5Tree --&gt; "*" V1p5Node : V1p5nodes
     click V1p5Node href "../V1p5Node"
 
 
-      V1p5Tree : V1p5Tree_tree_id
+      V1p5Tree : V1p5tree_id
 
 
 </div>
@@ -229,25 +229,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5Tree_tree_id/">V1p5Tree_tree_id</a></td>
+<td><a href="../V1p5tree_id/">V1p5tree_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the tree</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Tree_clone_id/">V1p5Tree_clone_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
-<td>Identifier for the clone</td>
+<td><a href="../V1p5clone_id/">V1p5clone_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Tree_newick/">V1p5Tree_newick</a></td>
+<td><a href="../V1p5newick/">V1p5newick</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Newick string of the tree edges</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5Tree_nodes/">V1p5Tree_nodes</a></td>
+<td><a href="../V1p5nodes/">V1p5nodes</a></td>
 <td>* <br/> <a href="../V1p5Node/">V1p5Node</a></td>
 <td>Dictionary of nodes in the tree, keyed by sequence_id string</td>
 <td>direct</td>
@@ -285,10 +285,10 @@
 <pre><code class="language-yaml">name: V1p5Tree
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5Tree_tree_id
-- V1p5Tree_clone_id
-- V1p5Tree_newick
-- V1p5Tree_nodes
+- V1p5tree_id
+- V1p5clone_id
+- V1p5newick
+- V1p5nodes
 
 </code></pre>
 </details>
@@ -297,8 +297,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5Tree
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5Tree_tree_id:
-    name: V1p5Tree_tree_id
+  V1p5tree_id:
+    name: V1p5tree_id
     annotations:
       nullable:
         tag: nullable
@@ -306,29 +306,29 @@ attributes:
     description: Identifier for the tree.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Tree_tree_id
+    alias: V1p5tree_id
     owner: V1p5Tree
     domain_of:
     - V1p5Tree
     range: string
     required: true
-  V1p5Tree_clone_id:
-    name: V1p5Tree_clone_id
+  V1p5clone_id:
+    name: V1p5clone_id
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Identifier for the clone.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Tree_clone_id
+    alias: V1p5clone_id
     owner: V1p5Tree
     domain_of:
+    - V1p5Rearrangement
+    - V1p5Clone
     - V1p5Tree
     range: string
-    required: true
-  V1p5Tree_newick:
-    name: V1p5Tree_newick
+  V1p5newick:
+    name: V1p5newick
     annotations:
       nullable:
         tag: nullable
@@ -336,14 +336,14 @@ attributes:
     description: Newick string of the tree edges.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Tree_newick
+    alias: V1p5newick
     owner: V1p5Tree
     domain_of:
     - V1p5Tree
     range: string
     required: true
-  V1p5Tree_nodes:
-    name: V1p5Tree_nodes
+  V1p5nodes:
+    name: V1p5nodes
     annotations:
       nullable:
         tag: nullable
@@ -351,7 +351,7 @@ attributes:
     description: Dictionary of nodes in the tree, keyed by sequence_id string
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5Tree_nodes
+    alias: V1p5nodes
     owner: V1p5Tree
     domain_of:
     - V1p5Tree

@@ -204,191 +204,191 @@
 <div class="mermaid"> classDiagram
     class V1p5AlleleDescription
     click V1p5AlleleDescription href "../V1p5AlleleDescription"
-      V1p5AlleleDescription : V1p5AlleleDescription_acknowledgements
+      V1p5AlleleDescription : V1p5acknowledgements
 
 
 
 
-    V1p5AlleleDescription --&gt; "*" V1p5Acknowledgement : V1p5AlleleDescription_acknowledgements
+    V1p5AlleleDescription --&gt; "*" V1p5Acknowledgement : V1p5acknowledgements
     click V1p5Acknowledgement href "../V1p5Acknowledgement"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_aliases
+      V1p5AlleleDescription : V1p5aliases
 
-      V1p5AlleleDescription : V1p5AlleleDescription_allele_description_id
+      V1p5AlleleDescription : V1p5allele_description_id
 
-      V1p5AlleleDescription : V1p5AlleleDescription_allele_description_ref
+      V1p5AlleleDescription : V1p5allele_description_ref
 
-      V1p5AlleleDescription : V1p5AlleleDescription_allele_designation
+      V1p5AlleleDescription : V1p5allele_designation
 
-      V1p5AlleleDescription : V1p5AlleleDescription_allele_similarity_cluster_designation
+      V1p5AlleleDescription : V1p5allele_similarity_cluster_designation
 
-      V1p5AlleleDescription : V1p5AlleleDescription_allele_similarity_cluster_member_id
+      V1p5AlleleDescription : V1p5allele_similarity_cluster_member_id
 
-      V1p5AlleleDescription : V1p5AlleleDescription_chromosome
+      V1p5AlleleDescription : V1p5chromosome
 
-      V1p5AlleleDescription : V1p5AlleleDescription_coding_sequence
+      V1p5AlleleDescription : V1p5coding_sequence
 
-      V1p5AlleleDescription : V1p5AlleleDescription_curation
+      V1p5AlleleDescription : V1p5curation
 
-      V1p5AlleleDescription : V1p5AlleleDescription_curational_tags
-
-
+      V1p5AlleleDescription : V1p5curational_tags
 
 
-    V1p5AlleleDescription --&gt; "*" V1p5CurationalTags : V1p5AlleleDescription_curational_tags
+
+
+    V1p5AlleleDescription --&gt; "*" V1p5CurationalTags : V1p5curational_tags
     click V1p5CurationalTags href "../V1p5CurationalTags"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_d_rs_3_prime_end
+      V1p5AlleleDescription : V1p5d_rs_3_prime_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_d_rs_3_prime_start
+      V1p5AlleleDescription : V1p5d_rs_3_prime_start
 
-      V1p5AlleleDescription : V1p5AlleleDescription_d_rs_5_prime_end
+      V1p5AlleleDescription : V1p5d_rs_5_prime_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_d_rs_5_prime_start
+      V1p5AlleleDescription : V1p5d_rs_5_prime_start
 
-      V1p5AlleleDescription : V1p5AlleleDescription_functional
+      V1p5AlleleDescription : V1p5functional
 
-      V1p5AlleleDescription : V1p5AlleleDescription_gene_designation
+      V1p5AlleleDescription : V1p5gene_designation
 
-      V1p5AlleleDescription : V1p5AlleleDescription_gene_end
+      V1p5AlleleDescription : V1p5gene_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_gene_start
+      V1p5AlleleDescription : V1p5gene_start
 
-      V1p5AlleleDescription : V1p5AlleleDescription_inference_type
-
-
+      V1p5AlleleDescription : V1p5inference_type
 
 
-    V1p5AlleleDescription --&gt; "1" V1p5InferenceType : V1p5AlleleDescription_inference_type
+
+
+    V1p5AlleleDescription --&gt; "1" V1p5InferenceType : V1p5inference_type
     click V1p5InferenceType href "../V1p5InferenceType"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_j_cdr3_end
+      V1p5AlleleDescription : V1p5j_cdr3_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_j_codon_frame
-
-
+      V1p5AlleleDescription : V1p5j_codon_frame
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5JCodonFrame : V1p5AlleleDescription_j_codon_frame
+
+
+    V1p5AlleleDescription --&gt; "0..1" V1p5JCodonFrame : V1p5j_codon_frame
     click V1p5JCodonFrame href "../V1p5JCodonFrame"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_j_donor_splice
+      V1p5AlleleDescription : V1p5j_donor_splice
 
-      V1p5AlleleDescription : V1p5AlleleDescription_j_rs_end
+      V1p5AlleleDescription : V1p5j_rs_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_j_rs_start
+      V1p5AlleleDescription : V1p5j_rs_start
 
-      V1p5AlleleDescription : V1p5AlleleDescription_lab_address
+      V1p5AlleleDescription : V1p5lab_address
 
-      V1p5AlleleDescription : V1p5AlleleDescription_label
+      V1p5AlleleDescription : V1p5label
 
-      V1p5AlleleDescription : V1p5AlleleDescription_leader_1_end
+      V1p5AlleleDescription : V1p5leader_1_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_leader_1_start
+      V1p5AlleleDescription : V1p5leader_1_start
 
-      V1p5AlleleDescription : V1p5AlleleDescription_leader_2_end
+      V1p5AlleleDescription : V1p5leader_2_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_leader_2_start
+      V1p5AlleleDescription : V1p5leader_2_start
 
-      V1p5AlleleDescription : V1p5AlleleDescription_locus
-
-
+      V1p5AlleleDescription : V1p5locus
 
 
-    V1p5AlleleDescription --&gt; "1" V1p5Locus : V1p5AlleleDescription_locus
+
+
+    V1p5AlleleDescription --&gt; "0..1" V1p5Locus : V1p5locus
     click V1p5Locus href "../V1p5Locus"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_maintainer
+      V1p5AlleleDescription : V1p5maintainer
 
-      V1p5AlleleDescription : V1p5AlleleDescription_paralogs
+      V1p5AlleleDescription : V1p5paralogs
 
-      V1p5AlleleDescription : V1p5AlleleDescription_rearranged_support
-
-
+      V1p5AlleleDescription : V1p5rearranged_support
 
 
-    V1p5AlleleDescription --&gt; "*" V1p5RearrangedSequence : V1p5AlleleDescription_rearranged_support
+
+
+    V1p5AlleleDescription --&gt; "*" V1p5RearrangedSequence : V1p5rearranged_support
     click V1p5RearrangedSequence href "../V1p5RearrangedSequence"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_release_date
+      V1p5AlleleDescription : V1p5release_date
 
-      V1p5AlleleDescription : V1p5AlleleDescription_release_description
+      V1p5AlleleDescription : V1p5release_description
 
-      V1p5AlleleDescription : V1p5AlleleDescription_release_version
+      V1p5AlleleDescription : V1p5release_version
 
-      V1p5AlleleDescription : V1p5AlleleDescription_sequence
+      V1p5AlleleDescription : V1p5sequence
 
-      V1p5AlleleDescription : V1p5AlleleDescription_sequence_type
-
-
+      V1p5AlleleDescription : V1p5sequence_type
 
 
-    V1p5AlleleDescription --&gt; "1" V1p5SequenceType : V1p5AlleleDescription_sequence_type
+
+
+    V1p5AlleleDescription --&gt; "1" V1p5SequenceType : V1p5sequence_type
     click V1p5SequenceType href "../V1p5SequenceType"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_species
+      V1p5AlleleDescription : V1p5species
 
 
 
 
-    V1p5AlleleDescription --&gt; "1" V1p5Species : V1p5AlleleDescription_species
+    V1p5AlleleDescription --&gt; "1" V1p5Species : V1p5species
     click V1p5Species href "../V1p5Species"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_species_subgroup
+      V1p5AlleleDescription : V1p5species_subgroup
 
-      V1p5AlleleDescription : V1p5AlleleDescription_species_subgroup_type
-
-
+      V1p5AlleleDescription : V1p5species_subgroup_type
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5SpeciesSubgroupType : V1p5AlleleDescription_species_subgroup_type
+
+
+    V1p5AlleleDescription --&gt; "0..1" V1p5SpeciesSubgroupType : V1p5species_subgroup_type
     click V1p5SpeciesSubgroupType href "../V1p5SpeciesSubgroupType"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_status
+      V1p5AlleleDescription : V1p5status
 
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5Status : V1p5AlleleDescription_status
+    V1p5AlleleDescription --&gt; "0..1" V1p5Status : V1p5status
     click V1p5Status href "../V1p5Status"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_subgroup_designation
+      V1p5AlleleDescription : V1p5subgroup_designation
 
-      V1p5AlleleDescription : V1p5AlleleDescription_unrearranged_support
-
-
+      V1p5AlleleDescription : V1p5unrearranged_support
 
 
-    V1p5AlleleDescription --&gt; "*" V1p5UnrearrangedSequence : V1p5AlleleDescription_unrearranged_support
+
+
+    V1p5AlleleDescription --&gt; "*" V1p5UnrearrangedSequence : V1p5unrearranged_support
     click V1p5UnrearrangedSequence href "../V1p5UnrearrangedSequence"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_utr_5_prime_end
+      V1p5AlleleDescription : V1p5utr_5_prime_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_utr_5_prime_start
+      V1p5AlleleDescription : V1p5utr_5_prime_start
 
-      V1p5AlleleDescription : V1p5AlleleDescription_v_gene_delineations
-
-
+      V1p5AlleleDescription : V1p5v_gene_delineations
 
 
-    V1p5AlleleDescription --&gt; "*" V1p5SequenceDelineationV : V1p5AlleleDescription_v_gene_delineations
+
+
+    V1p5AlleleDescription --&gt; "*" V1p5SequenceDelineationV : V1p5v_gene_delineations
     click V1p5SequenceDelineationV href "../V1p5SequenceDelineationV"
 
 
-      V1p5AlleleDescription : V1p5AlleleDescription_v_rs_end
+      V1p5AlleleDescription : V1p5v_rs_end
 
-      V1p5AlleleDescription : V1p5AlleleDescription_v_rs_start
+      V1p5AlleleDescription : V1p5v_rs_start
 
 
 </div>
@@ -405,307 +405,307 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5AlleleDescription_allele_description_id/">V1p5AlleleDescription_allele_description_id</a></td>
+<td><a href="../V1p5allele_description_id/">V1p5allele_description_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this AlleleDescription within the file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_allele_description_ref/">V1p5AlleleDescription_allele_description_ref</a></td>
+<td><a href="../V1p5allele_description_ref/">V1p5allele_description_ref</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique reference to the allele description, in standardized form (Repo:Label:...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_maintainer/">V1p5AlleleDescription_maintainer</a></td>
+<td><a href="../V1p5maintainer/">V1p5maintainer</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Maintainer of this sequence record</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_acknowledgements/">V1p5AlleleDescription_acknowledgements</a></td>
+<td><a href="../V1p5acknowledgements/">V1p5acknowledgements</a></td>
 <td>* <br/> <a href="../V1p5Acknowledgement/">V1p5Acknowledgement</a></td>
-<td>List of individuals whose contribution to the gene description should be ackn...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_lab_address/">V1p5AlleleDescription_lab_address</a></td>
+<td><a href="../V1p5lab_address/">V1p5lab_address</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>Institution and full address of corresponding author</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_release_version/">V1p5AlleleDescription_release_version</a></td>
+<td><a href="../V1p5release_version/">V1p5release_version</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Version number of this record, updated whenever a revised version is publishe...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_release_date/">V1p5AlleleDescription_release_date</a></td>
+<td><a href="../V1p5release_date/">V1p5release_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_release_description/">V1p5AlleleDescription_release_description</a></td>
+<td><a href="../V1p5release_description/">V1p5release_description</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_label/">V1p5AlleleDescription_label</a></td>
+<td><a href="../V1p5label/">V1p5label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The accepted name for this gene or allele following the relevant nomenclature</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_sequence/">V1p5AlleleDescription_sequence</a></td>
+<td><a href="../V1p5sequence/">V1p5sequence</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>Nucleotide sequence of the gene</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_coding_sequence/">V1p5AlleleDescription_coding_sequence</a></td>
+<td><a href="../V1p5coding_sequence/">V1p5coding_sequence</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Nucleotide sequence of the core coding region, such as the coding region of a...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_aliases/">V1p5AlleleDescription_aliases</a></td>
+<td><a href="../V1p5aliases/">V1p5aliases</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Alternative names for this sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_locus/">V1p5AlleleDescription_locus</a></td>
-<td>1 <br/> <a href="../V1p5Locus/">V1p5Locus</a></td>
-<td>Gene locus</td>
+<td><a href="../V1p5locus/">V1p5locus</a></td>
+<td>0..1 <br/> <a href="../V1p5Locus/">V1p5Locus</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_chromosome/">V1p5AlleleDescription_chromosome</a></td>
+<td><a href="../V1p5chromosome/">V1p5chromosome</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>chromosome on which the gene is located</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_sequence_type/">V1p5AlleleDescription_sequence_type</a></td>
+<td><a href="../V1p5sequence_type/">V1p5sequence_type</a></td>
 <td>1 <br/> <a href="../V1p5SequenceType/">V1p5SequenceType</a></td>
 <td>Sequence type (V, D, J, C)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_functional/">V1p5AlleleDescription_functional</a></td>
+<td><a href="../V1p5functional/">V1p5functional</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>True if the gene is functional, false if it is a pseudogene</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_inference_type/">V1p5AlleleDescription_inference_type</a></td>
+<td><a href="../V1p5inference_type/">V1p5inference_type</a></td>
 <td>1 <br/> <a href="../V1p5InferenceType/">V1p5InferenceType</a></td>
 <td>Type of inference(s) from which this gene sequence was inferred</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_species/">V1p5AlleleDescription_species</a></td>
+<td><a href="../V1p5species/">V1p5species</a></td>
 <td>1 <br/> <a href="../V1p5Species/">V1p5Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_species_subgroup/">V1p5AlleleDescription_species_subgroup</a></td>
+<td><a href="../V1p5species_subgroup/">V1p5species_subgroup</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Race, strain or other species subgroup to which this subject belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_species_subgroup_type/">V1p5AlleleDescription_species_subgroup_type</a></td>
+<td><a href="../V1p5species_subgroup_type/">V1p5species_subgroup_type</a></td>
 <td>0..1 <br/> <a href="../V1p5SpeciesSubgroupType/">V1p5SpeciesSubgroupType</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_status/">V1p5AlleleDescription_status</a></td>
+<td><a href="../V1p5status/">V1p5status</a></td>
 <td>0..1 <br/> <a href="../V1p5Status/">V1p5Status</a></td>
 <td>Status of record, assumed active if the field is not present</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_subgroup_designation/">V1p5AlleleDescription_subgroup_designation</a></td>
+<td><a href="../V1p5subgroup_designation/">V1p5subgroup_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier of the gene subgroup or clade, as (and if) defined</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_gene_designation/">V1p5AlleleDescription_gene_designation</a></td>
+<td><a href="../V1p5gene_designation/">V1p5gene_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Gene number or other identifier, as (and if) defined</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_allele_designation/">V1p5AlleleDescription_allele_designation</a></td>
+<td><a href="../V1p5allele_designation/">V1p5allele_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Allele number or other identifier, as (and if) defined</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_allele_similarity_cluster_designation/">V1p5AlleleDescription_allele_similarity_cluster_designation</a></td>
+<td><a href="../V1p5allele_similarity_cluster_designation/">V1p5allele_similarity_cluster_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>ID of the similarity cluster used in this germline set, if designated</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_allele_similarity_cluster_member_id/">V1p5AlleleDescription_allele_similarity_cluster_member_id</a></td>
+<td><a href="../V1p5allele_similarity_cluster_member_id/">V1p5allele_similarity_cluster_member_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Membership ID of the allele within the similarity cluster, if a cluster is de...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_j_codon_frame/">V1p5AlleleDescription_j_codon_frame</a></td>
+<td><a href="../V1p5j_codon_frame/">V1p5j_codon_frame</a></td>
 <td>0..1 <br/> <a href="../V1p5JCodonFrame/">V1p5JCodonFrame</a></td>
 <td>Codon position of the first nucleotide in the 'coding_sequence' field</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_gene_start/">V1p5AlleleDescription_gene_start</a></td>
+<td><a href="../V1p5gene_start/">V1p5gene_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Co-ordinate in the sequence field of the first nucleotide in the coding_seque...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_gene_end/">V1p5AlleleDescription_gene_end</a></td>
+<td><a href="../V1p5gene_end/">V1p5gene_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Co-ordinate in the sequence field of the last gene-coding nucleotide in the c...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_utr_5_prime_start/">V1p5AlleleDescription_utr_5_prime_start</a></td>
+<td><a href="../V1p5utr_5_prime_start/">V1p5utr_5_prime_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the 5 prime UTR (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_utr_5_prime_end/">V1p5AlleleDescription_utr_5_prime_end</a></td>
+<td><a href="../V1p5utr_5_prime_end/">V1p5utr_5_prime_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of the 5 prime UTR (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_leader_1_start/">V1p5AlleleDescription_leader_1_start</a></td>
+<td><a href="../V1p5leader_1_start/">V1p5leader_1_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of L-PART1 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_leader_1_end/">V1p5AlleleDescription_leader_1_end</a></td>
+<td><a href="../V1p5leader_1_end/">V1p5leader_1_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of L-PART1 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_leader_2_start/">V1p5AlleleDescription_leader_2_start</a></td>
+<td><a href="../V1p5leader_2_start/">V1p5leader_2_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of L-PART2 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_leader_2_end/">V1p5AlleleDescription_leader_2_end</a></td>
+<td><a href="../V1p5leader_2_end/">V1p5leader_2_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of L-PART2 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_v_rs_start/">V1p5AlleleDescription_v_rs_start</a></td>
+<td><a href="../V1p5v_rs_start/">V1p5v_rs_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the V recombination site (V-genes ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_v_rs_end/">V1p5AlleleDescription_v_rs_end</a></td>
+<td><a href="../V1p5v_rs_end/">V1p5v_rs_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of the V recombination site (V-genes on...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_d_rs_3_prime_start/">V1p5AlleleDescription_d_rs_3_prime_start</a></td>
+<td><a href="../V1p5d_rs_3_prime_start/">V1p5d_rs_3_prime_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the 3 prime D recombination site (...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_d_rs_3_prime_end/">V1p5AlleleDescription_d_rs_3_prime_end</a></td>
+<td><a href="../V1p5d_rs_3_prime_end/">V1p5d_rs_3_prime_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of the 3 prime D recombination site (D-...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_d_rs_5_prime_start/">V1p5AlleleDescription_d_rs_5_prime_start</a></td>
+<td><a href="../V1p5d_rs_5_prime_start/">V1p5d_rs_5_prime_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the 5 prime D recombination site (...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_d_rs_5_prime_end/">V1p5AlleleDescription_d_rs_5_prime_end</a></td>
+<td><a href="../V1p5d_rs_5_prime_end/">V1p5d_rs_5_prime_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of 5 the prime D recombination site (D-...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_j_cdr3_end/">V1p5AlleleDescription_j_cdr3_end</a></td>
+<td><a href="../V1p5j_cdr3_end/">V1p5j_cdr3_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>In the case of a J-gene, the co-ordinate in the sequence field of the first n...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_j_rs_start/">V1p5AlleleDescription_j_rs_start</a></td>
+<td><a href="../V1p5j_rs_start/">V1p5j_rs_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of J recombination site (J-genes only...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_j_rs_end/">V1p5AlleleDescription_j_rs_end</a></td>
+<td><a href="../V1p5j_rs_end/">V1p5j_rs_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of J recombination site (J-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_j_donor_splice/">V1p5AlleleDescription_j_donor_splice</a></td>
+<td><a href="../V1p5j_donor_splice/">V1p5j_donor_splice</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Co-ordinate in the sequence field of the final 3' nucleotide of the J-REGION ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_v_gene_delineations/">V1p5AlleleDescription_v_gene_delineations</a></td>
+<td><a href="../V1p5v_gene_delineations/">V1p5v_gene_delineations</a></td>
 <td>* <br/> <a href="../V1p5SequenceDelineationV/">V1p5SequenceDelineationV</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_unrearranged_support/">V1p5AlleleDescription_unrearranged_support</a></td>
+<td><a href="../V1p5unrearranged_support/">V1p5unrearranged_support</a></td>
 <td>* <br/> <a href="../V1p5UnrearrangedSequence/">V1p5UnrearrangedSequence</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_rearranged_support/">V1p5AlleleDescription_rearranged_support</a></td>
+<td><a href="../V1p5rearranged_support/">V1p5rearranged_support</a></td>
 <td>* <br/> <a href="../V1p5RearrangedSequence/">V1p5RearrangedSequence</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_paralogs/">V1p5AlleleDescription_paralogs</a></td>
+<td><a href="../V1p5paralogs/">V1p5paralogs</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Gene symbols of any paralogs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_curation/">V1p5AlleleDescription_curation</a></td>
+<td><a href="../V1p5curation/">V1p5curation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Curational notes on the AlleleDescription</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5AlleleDescription_curational_tags/">V1p5AlleleDescription_curational_tags</a></td>
+<td><a href="../V1p5curational_tags/">V1p5curational_tags</a></td>
 <td>* <br/> <a href="../V1p5CurationalTags/">V1p5CurationalTags</a></td>
 <td>Controlled-vocabulary tags applied to this description</td>
 <td>direct</td>
@@ -725,7 +725,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5GermlineSet/">V1p5GermlineSet</a></td>
-<td><a href="../V1p5GermlineSet_allele_descriptions/">V1p5GermlineSet_allele_descriptions</a></td>
+<td><a href="../V1p5allele_descriptions/">V1p5allele_descriptions</a></td>
 <td>range</td>
 <td><a href="./">V1p5AlleleDescription</a></td>
 </tr>
@@ -762,57 +762,57 @@
 <pre><code class="language-yaml">name: V1p5AlleleDescription
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5AlleleDescription_allele_description_id
-- V1p5AlleleDescription_allele_description_ref
-- V1p5AlleleDescription_maintainer
-- V1p5AlleleDescription_acknowledgements
-- V1p5AlleleDescription_lab_address
-- V1p5AlleleDescription_release_version
-- V1p5AlleleDescription_release_date
-- V1p5AlleleDescription_release_description
-- V1p5AlleleDescription_label
-- V1p5AlleleDescription_sequence
-- V1p5AlleleDescription_coding_sequence
-- V1p5AlleleDescription_aliases
-- V1p5AlleleDescription_locus
-- V1p5AlleleDescription_chromosome
-- V1p5AlleleDescription_sequence_type
-- V1p5AlleleDescription_functional
-- V1p5AlleleDescription_inference_type
-- V1p5AlleleDescription_species
-- V1p5AlleleDescription_species_subgroup
-- V1p5AlleleDescription_species_subgroup_type
-- V1p5AlleleDescription_status
-- V1p5AlleleDescription_subgroup_designation
-- V1p5AlleleDescription_gene_designation
-- V1p5AlleleDescription_allele_designation
-- V1p5AlleleDescription_allele_similarity_cluster_designation
-- V1p5AlleleDescription_allele_similarity_cluster_member_id
-- V1p5AlleleDescription_j_codon_frame
-- V1p5AlleleDescription_gene_start
-- V1p5AlleleDescription_gene_end
-- V1p5AlleleDescription_utr_5_prime_start
-- V1p5AlleleDescription_utr_5_prime_end
-- V1p5AlleleDescription_leader_1_start
-- V1p5AlleleDescription_leader_1_end
-- V1p5AlleleDescription_leader_2_start
-- V1p5AlleleDescription_leader_2_end
-- V1p5AlleleDescription_v_rs_start
-- V1p5AlleleDescription_v_rs_end
-- V1p5AlleleDescription_d_rs_3_prime_start
-- V1p5AlleleDescription_d_rs_3_prime_end
-- V1p5AlleleDescription_d_rs_5_prime_start
-- V1p5AlleleDescription_d_rs_5_prime_end
-- V1p5AlleleDescription_j_cdr3_end
-- V1p5AlleleDescription_j_rs_start
-- V1p5AlleleDescription_j_rs_end
-- V1p5AlleleDescription_j_donor_splice
-- V1p5AlleleDescription_v_gene_delineations
-- V1p5AlleleDescription_unrearranged_support
-- V1p5AlleleDescription_rearranged_support
-- V1p5AlleleDescription_paralogs
-- V1p5AlleleDescription_curation
-- V1p5AlleleDescription_curational_tags
+- V1p5allele_description_id
+- V1p5allele_description_ref
+- V1p5maintainer
+- V1p5acknowledgements
+- V1p5lab_address
+- V1p5release_version
+- V1p5release_date
+- V1p5release_description
+- V1p5label
+- V1p5sequence
+- V1p5coding_sequence
+- V1p5aliases
+- V1p5locus
+- V1p5chromosome
+- V1p5sequence_type
+- V1p5functional
+- V1p5inference_type
+- V1p5species
+- V1p5species_subgroup
+- V1p5species_subgroup_type
+- V1p5status
+- V1p5subgroup_designation
+- V1p5gene_designation
+- V1p5allele_designation
+- V1p5allele_similarity_cluster_designation
+- V1p5allele_similarity_cluster_member_id
+- V1p5j_codon_frame
+- V1p5gene_start
+- V1p5gene_end
+- V1p5utr_5_prime_start
+- V1p5utr_5_prime_end
+- V1p5leader_1_start
+- V1p5leader_1_end
+- V1p5leader_2_start
+- V1p5leader_2_end
+- V1p5v_rs_start
+- V1p5v_rs_end
+- V1p5d_rs_3_prime_start
+- V1p5d_rs_3_prime_end
+- V1p5d_rs_5_prime_start
+- V1p5d_rs_5_prime_end
+- V1p5j_cdr3_end
+- V1p5j_rs_start
+- V1p5j_rs_end
+- V1p5j_donor_splice
+- V1p5v_gene_delineations
+- V1p5unrearranged_support
+- V1p5rearranged_support
+- V1p5paralogs
+- V1p5curation
+- V1p5curational_tags
 
 </code></pre>
 </details>
@@ -821,8 +821,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5AlleleDescription
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5AlleleDescription_allele_description_id:
-    name: V1p5AlleleDescription_allele_description_id
+  V1p5allele_description_id:
+    name: V1p5allele_description_id
     annotations:
       nullable:
         tag: nullable
@@ -831,14 +831,14 @@ attributes:
       generated by the  repository hosting the record.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_allele_description_id
+    alias: V1p5allele_description_id
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: true
-  V1p5AlleleDescription_allele_description_ref:
-    name: V1p5AlleleDescription_allele_description_ref
+  V1p5allele_description_ref:
+    name: V1p5allele_description_ref
     annotations:
       nullable:
         tag: nullable
@@ -847,14 +847,14 @@ attributes:
       (Repo:Label:Version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_allele_description_ref
+    alias: V1p5allele_description_ref
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: false
-  V1p5AlleleDescription_maintainer:
-    name: V1p5AlleleDescription_maintainer
+  V1p5maintainer:
+    name: V1p5maintainer
     annotations:
       nullable:
         tag: nullable
@@ -862,62 +862,61 @@ attributes:
     description: Maintainer of this sequence record
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_maintainer
+    alias: V1p5maintainer
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: true
-  V1p5AlleleDescription_acknowledgements:
-    name: V1p5AlleleDescription_acknowledgements
+  V1p5acknowledgements:
+    name: V1p5acknowledgements
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: List of individuals whose contribution to the gene description should
-      be acknowledged
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_acknowledgements
+    alias: V1p5acknowledgements
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
     range: V1p5Acknowledgement
     required: false
     multivalued: true
-  V1p5AlleleDescription_lab_address:
-    name: V1p5AlleleDescription_lab_address
+  V1p5lab_address:
+    name: V1p5lab_address
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Institution and full address of corresponding author
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_lab_address
+    alias: V1p5lab_address
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
+    - V1p5Study
     range: string
     required: true
-  V1p5AlleleDescription_release_version:
-    name: V1p5AlleleDescription_release_version
+  V1p5release_version:
+    name: V1p5release_version
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Version number of this record, updated whenever a revised version
-      is published or released
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_release_version
+    alias: V1p5release_version
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
     range: integer
     required: true
-  V1p5AlleleDescription_release_date:
-    name: V1p5AlleleDescription_release_date
+  V1p5release_date:
+    name: V1p5release_date
     annotations:
       nullable:
         tag: nullable
@@ -925,14 +924,15 @@ attributes:
     description: Date of this release
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_release_date
+    alias: V1p5release_date
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
     range: string
     required: true
-  V1p5AlleleDescription_release_description:
-    name: V1p5AlleleDescription_release_description
+  V1p5release_description:
+    name: V1p5release_description
     annotations:
       nullable:
         tag: nullable
@@ -941,48 +941,41 @@ attributes:
       embodied
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_release_description
+    alias: V1p5release_description
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
     range: string
     required: true
-  V1p5AlleleDescription_label:
-    name: V1p5AlleleDescription_label
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: The accepted name for this gene or allele following the relevant
-      nomenclature. The value in this field should correspond to values in acceptable
-      name fields of other schemas,  such as v_call, d_call, and j_call fields.
+  V1p5label:
+    name: V1p5label
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_label
+    alias: V1p5label
     owner: V1p5AlleleDescription
     domain_of:
+    - V1p5TimePoint
     - V1p5AlleleDescription
+    - V1p5DocumentedAllele
+    - V1p5DeletedGene
     range: string
-    required: false
-  V1p5AlleleDescription_sequence:
-    name: V1p5AlleleDescription_sequence
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Nucleotide sequence of the gene. This should cover the full length
-      that is available,  including where possible RSS, and 5' UTR and lead-in for
-      V-gene sequences.
+  V1p5sequence:
+    name: V1p5sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_sequence
+    alias: V1p5sequence
     owner: V1p5AlleleDescription
     domain_of:
+    - V1p5RearrangedSequence
+    - V1p5UnrearrangedSequence
     - V1p5AlleleDescription
+    - V1p5UndocumentedAllele
+    - V1p5Rearrangement
     range: string
     required: true
-  V1p5AlleleDescription_coding_sequence:
-    name: V1p5AlleleDescription_coding_sequence
+  V1p5coding_sequence:
+    name: V1p5coding_sequence
     annotations:
       nullable:
         tag: nullable
@@ -992,14 +985,14 @@ attributes:
       leader.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_coding_sequence
+    alias: V1p5coding_sequence
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: true
-  V1p5AlleleDescription_aliases:
-    name: V1p5AlleleDescription_aliases
+  V1p5aliases:
+    name: V1p5aliases
     annotations:
       nullable:
         tag: nullable
@@ -1007,30 +1000,27 @@ attributes:
     description: Alternative names for this sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_aliases
+    alias: V1p5aliases
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: false
     multivalued: true
-  V1p5AlleleDescription_locus:
-    name: V1p5AlleleDescription_locus
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Gene locus
+  V1p5locus:
+    name: V1p5locus
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_locus
+    alias: V1p5locus
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
+    - V1p5Genotype
+    - V1p5Rearrangement
     range: V1p5Locus
-    required: true
-  V1p5AlleleDescription_chromosome:
-    name: V1p5AlleleDescription_chromosome
+  V1p5chromosome:
+    name: V1p5chromosome
     annotations:
       nullable:
         tag: nullable
@@ -1038,14 +1028,14 @@ attributes:
     description: chromosome on which the gene is located
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_chromosome
+    alias: V1p5chromosome
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_sequence_type:
-    name: V1p5AlleleDescription_sequence_type
+  V1p5sequence_type:
+    name: V1p5sequence_type
     annotations:
       nullable:
         tag: nullable
@@ -1053,14 +1043,14 @@ attributes:
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_sequence_type
+    alias: V1p5sequence_type
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: V1p5SequenceType
     required: true
-  V1p5AlleleDescription_functional:
-    name: V1p5AlleleDescription_functional
+  V1p5functional:
+    name: V1p5functional
     annotations:
       nullable:
         tag: nullable
@@ -1068,14 +1058,14 @@ attributes:
     description: True if the gene is functional, false if it is a pseudogene
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_functional
+    alias: V1p5functional
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: boolean
     required: true
-  V1p5AlleleDescription_inference_type:
-    name: V1p5AlleleDescription_inference_type
+  V1p5inference_type:
+    name: V1p5inference_type
     annotations:
       nullable:
         tag: nullable
@@ -1083,14 +1073,14 @@ attributes:
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_inference_type
+    alias: V1p5inference_type
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: V1p5InferenceType
     required: true
-  V1p5AlleleDescription_species:
-    name: V1p5AlleleDescription_species
+  V1p5species:
+    name: V1p5species
     annotations:
       nullable:
         tag: nullable
@@ -1098,14 +1088,16 @@ attributes:
     description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_species
+    alias: V1p5species
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
+    - V1p5Subject
     range: V1p5Species
     required: true
-  V1p5AlleleDescription_species_subgroup:
-    name: V1p5AlleleDescription_species_subgroup
+  V1p5species_subgroup:
+    name: V1p5species_subgroup
     annotations:
       nullable:
         tag: nullable
@@ -1113,14 +1105,15 @@ attributes:
     description: Race, strain or other species subgroup to which this subject belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_species_subgroup
+    alias: V1p5species_subgroup
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
     range: string
     required: false
-  V1p5AlleleDescription_species_subgroup_type:
-    name: V1p5AlleleDescription_species_subgroup_type
+  V1p5species_subgroup_type:
+    name: V1p5species_subgroup_type
     annotations:
       nullable:
         tag: nullable
@@ -1128,14 +1121,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_species_subgroup_type
+    alias: V1p5species_subgroup_type
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5GermlineSet
     range: V1p5SpeciesSubgroupType
     required: false
-  V1p5AlleleDescription_status:
-    name: V1p5AlleleDescription_status
+  V1p5status:
+    name: V1p5status
     annotations:
       nullable:
         tag: nullable
@@ -1143,14 +1137,14 @@ attributes:
     description: Status of record, assumed active if the field is not present
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_status
+    alias: V1p5status
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: V1p5Status
     required: false
-  V1p5AlleleDescription_subgroup_designation:
-    name: V1p5AlleleDescription_subgroup_designation
+  V1p5subgroup_designation:
+    name: V1p5subgroup_designation
     annotations:
       nullable:
         tag: nullable
@@ -1158,14 +1152,14 @@ attributes:
     description: Identifier of the gene subgroup or clade, as (and if) defined
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_subgroup_designation
+    alias: V1p5subgroup_designation
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: false
-  V1p5AlleleDescription_gene_designation:
-    name: V1p5AlleleDescription_gene_designation
+  V1p5gene_designation:
+    name: V1p5gene_designation
     annotations:
       nullable:
         tag: nullable
@@ -1173,29 +1167,29 @@ attributes:
     description: Gene number or other identifier, as (and if) defined
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_gene_designation
+    alias: V1p5gene_designation
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: false
-  V1p5AlleleDescription_allele_designation:
-    name: V1p5AlleleDescription_allele_designation
+  V1p5allele_designation:
+    name: V1p5allele_designation
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Allele number or other identifier, as (and if) defined
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_allele_designation
+    alias: V1p5allele_designation
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
+    - V1p5MHCAllele
     range: string
     required: false
-  V1p5AlleleDescription_allele_similarity_cluster_designation:
-    name: V1p5AlleleDescription_allele_similarity_cluster_designation
+  V1p5allele_similarity_cluster_designation:
+    name: V1p5allele_similarity_cluster_designation
     annotations:
       nullable:
         tag: nullable
@@ -1203,14 +1197,14 @@ attributes:
     description: ID of the similarity cluster used in this germline set, if designated
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_allele_similarity_cluster_designation
+    alias: V1p5allele_similarity_cluster_designation
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: false
-  V1p5AlleleDescription_allele_similarity_cluster_member_id:
-    name: V1p5AlleleDescription_allele_similarity_cluster_member_id
+  V1p5allele_similarity_cluster_member_id:
+    name: V1p5allele_similarity_cluster_member_id
     annotations:
       nullable:
         tag: nullable
@@ -1219,14 +1213,14 @@ attributes:
       is designated
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_allele_similarity_cluster_member_id
+    alias: V1p5allele_similarity_cluster_member_id
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: false
-  V1p5AlleleDescription_j_codon_frame:
-    name: V1p5AlleleDescription_j_codon_frame
+  V1p5j_codon_frame:
+    name: V1p5j_codon_frame
     annotations:
       nullable:
         tag: nullable
@@ -1237,14 +1231,14 @@ attributes:
       '3' means that the first 2 bp are missing.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_j_codon_frame
+    alias: V1p5j_codon_frame
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: V1p5JCodonFrame
     required: false
-  V1p5AlleleDescription_gene_start:
-    name: V1p5AlleleDescription_gene_start
+  V1p5gene_start:
+    name: V1p5gene_start
     annotations:
       nullable:
         tag: nullable
@@ -1253,14 +1247,14 @@ attributes:
       coding_sequence field.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_gene_start
+    alias: V1p5gene_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_gene_end:
-    name: V1p5AlleleDescription_gene_end
+  V1p5gene_end:
+    name: V1p5gene_end
     annotations:
       nullable:
         tag: nullable
@@ -1269,14 +1263,14 @@ attributes:
       in the coding_sequence field.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_gene_end
+    alias: V1p5gene_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_utr_5_prime_start:
-    name: V1p5AlleleDescription_utr_5_prime_start
+  V1p5utr_5_prime_start:
+    name: V1p5utr_5_prime_start
     annotations:
       nullable:
         tag: nullable
@@ -1285,14 +1279,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_utr_5_prime_start
+    alias: V1p5utr_5_prime_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_utr_5_prime_end:
-    name: V1p5AlleleDescription_utr_5_prime_end
+  V1p5utr_5_prime_end:
+    name: V1p5utr_5_prime_end
     annotations:
       nullable:
         tag: nullable
@@ -1301,14 +1295,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_utr_5_prime_end
+    alias: V1p5utr_5_prime_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_leader_1_start:
-    name: V1p5AlleleDescription_leader_1_start
+  V1p5leader_1_start:
+    name: V1p5leader_1_start
     annotations:
       nullable:
         tag: nullable
@@ -1316,14 +1310,14 @@ attributes:
     description: Start co-ordinate in the sequence field of L-PART1 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_leader_1_start
+    alias: V1p5leader_1_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_leader_1_end:
-    name: V1p5AlleleDescription_leader_1_end
+  V1p5leader_1_end:
+    name: V1p5leader_1_end
     annotations:
       nullable:
         tag: nullable
@@ -1331,14 +1325,14 @@ attributes:
     description: End co-ordinate in the sequence field of L-PART1 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_leader_1_end
+    alias: V1p5leader_1_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_leader_2_start:
-    name: V1p5AlleleDescription_leader_2_start
+  V1p5leader_2_start:
+    name: V1p5leader_2_start
     annotations:
       nullable:
         tag: nullable
@@ -1346,14 +1340,14 @@ attributes:
     description: Start co-ordinate in the sequence field of L-PART2 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_leader_2_start
+    alias: V1p5leader_2_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_leader_2_end:
-    name: V1p5AlleleDescription_leader_2_end
+  V1p5leader_2_end:
+    name: V1p5leader_2_end
     annotations:
       nullable:
         tag: nullable
@@ -1361,14 +1355,14 @@ attributes:
     description: End co-ordinate in the sequence field of L-PART2 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_leader_2_end
+    alias: V1p5leader_2_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_v_rs_start:
-    name: V1p5AlleleDescription_v_rs_start
+  V1p5v_rs_start:
+    name: V1p5v_rs_start
     annotations:
       nullable:
         tag: nullable
@@ -1377,14 +1371,14 @@ attributes:
       (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_v_rs_start
+    alias: V1p5v_rs_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_v_rs_end:
-    name: V1p5AlleleDescription_v_rs_end
+  V1p5v_rs_end:
+    name: V1p5v_rs_end
     annotations:
       nullable:
         tag: nullable
@@ -1393,14 +1387,14 @@ attributes:
       (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_v_rs_end
+    alias: V1p5v_rs_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_d_rs_3_prime_start:
-    name: V1p5AlleleDescription_d_rs_3_prime_start
+  V1p5d_rs_3_prime_start:
+    name: V1p5d_rs_3_prime_start
     annotations:
       nullable:
         tag: nullable
@@ -1409,14 +1403,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_d_rs_3_prime_start
+    alias: V1p5d_rs_3_prime_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_d_rs_3_prime_end:
-    name: V1p5AlleleDescription_d_rs_3_prime_end
+  V1p5d_rs_3_prime_end:
+    name: V1p5d_rs_3_prime_end
     annotations:
       nullable:
         tag: nullable
@@ -1425,14 +1419,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_d_rs_3_prime_end
+    alias: V1p5d_rs_3_prime_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_d_rs_5_prime_start:
-    name: V1p5AlleleDescription_d_rs_5_prime_start
+  V1p5d_rs_5_prime_start:
+    name: V1p5d_rs_5_prime_start
     annotations:
       nullable:
         tag: nullable
@@ -1441,14 +1435,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_d_rs_5_prime_start
+    alias: V1p5d_rs_5_prime_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_d_rs_5_prime_end:
-    name: V1p5AlleleDescription_d_rs_5_prime_end
+  V1p5d_rs_5_prime_end:
+    name: V1p5d_rs_5_prime_end
     annotations:
       nullable:
         tag: nullable
@@ -1457,14 +1451,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_d_rs_5_prime_end
+    alias: V1p5d_rs_5_prime_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_j_cdr3_end:
-    name: V1p5AlleleDescription_j_cdr3_end
+  V1p5j_cdr3_end:
+    name: V1p5j_cdr3_end
     annotations:
       nullable:
         tag: nullable
@@ -1473,14 +1467,14 @@ attributes:
       the first nucelotide of the  conserved PHE or TRP (IMGT codon position 118).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_j_cdr3_end
+    alias: V1p5j_cdr3_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_j_rs_start:
-    name: V1p5AlleleDescription_j_rs_start
+  V1p5j_rs_start:
+    name: V1p5j_rs_start
     annotations:
       nullable:
         tag: nullable
@@ -1489,14 +1483,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_j_rs_start
+    alias: V1p5j_rs_start
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_j_rs_end:
-    name: V1p5AlleleDescription_j_rs_end
+  V1p5j_rs_end:
+    name: V1p5j_rs_end
     annotations:
       nullable:
         tag: nullable
@@ -1505,14 +1499,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_j_rs_end
+    alias: V1p5j_rs_end
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_j_donor_splice:
-    name: V1p5AlleleDescription_j_donor_splice
+  V1p5j_donor_splice:
+    name: V1p5j_donor_splice
     annotations:
       nullable:
         tag: nullable
@@ -1521,14 +1515,14 @@ attributes:
       J-REGION (J-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_j_donor_splice
+    alias: V1p5j_donor_splice
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: integer
     required: false
-  V1p5AlleleDescription_v_gene_delineations:
-    name: V1p5AlleleDescription_v_gene_delineations
+  V1p5v_gene_delineations:
+    name: V1p5v_gene_delineations
     annotations:
       nullable:
         tag: nullable
@@ -1536,15 +1530,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_v_gene_delineations
+    alias: V1p5v_gene_delineations
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: V1p5SequenceDelineationV
     required: false
     multivalued: true
-  V1p5AlleleDescription_unrearranged_support:
-    name: V1p5AlleleDescription_unrearranged_support
+  V1p5unrearranged_support:
+    name: V1p5unrearranged_support
     annotations:
       nullable:
         tag: nullable
@@ -1552,15 +1546,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_unrearranged_support
+    alias: V1p5unrearranged_support
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: V1p5UnrearrangedSequence
     required: false
     multivalued: true
-  V1p5AlleleDescription_rearranged_support:
-    name: V1p5AlleleDescription_rearranged_support
+  V1p5rearranged_support:
+    name: V1p5rearranged_support
     annotations:
       nullable:
         tag: nullable
@@ -1568,15 +1562,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_rearranged_support
+    alias: V1p5rearranged_support
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: V1p5RearrangedSequence
     required: false
     multivalued: true
-  V1p5AlleleDescription_paralogs:
-    name: V1p5AlleleDescription_paralogs
+  V1p5paralogs:
+    name: V1p5paralogs
     annotations:
       nullable:
         tag: nullable
@@ -1584,31 +1578,32 @@ attributes:
     description: Gene symbols of any paralogs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_paralogs
+    alias: V1p5paralogs
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
     range: string
     required: false
     multivalued: true
-  V1p5AlleleDescription_curation:
-    name: V1p5AlleleDescription_curation
+  V1p5curation:
+    name: V1p5curation
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Curational notes on the AlleleDescription. This can be used to give
-      more extensive notes on the  decisions taken than are provided in the release_description.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_curation
+    alias: V1p5curation
     owner: V1p5AlleleDescription
     domain_of:
+    - V1p5RearrangedSequence
+    - V1p5UnrearrangedSequence
     - V1p5AlleleDescription
+    - V1p5GermlineSet
     range: string
     required: false
-  V1p5AlleleDescription_curational_tags:
-    name: V1p5AlleleDescription_curational_tags
+  V1p5curational_tags:
+    name: V1p5curational_tags
     annotations:
       nullable:
         tag: nullable
@@ -1616,7 +1611,7 @@ attributes:
     description: Controlled-vocabulary tags applied to this description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5AlleleDescription_curational_tags
+    alias: V1p5curational_tags
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription

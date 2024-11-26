@@ -204,21 +204,21 @@
 <div class="mermaid"> classDiagram
     class V1p4ContributorContribution
     click V1p4ContributorContribution href "../V1p4ContributorContribution"
-      V1p4ContributorContribution : V1p4ContributorContribution_degree
+      V1p4ContributorContribution : V1p4degree
 
 
 
 
-    V1p4ContributorContribution --&gt; "0..1" V1p4Degree : V1p4ContributorContribution_degree
+    V1p4ContributorContribution --&gt; "0..1" V1p4Degree : V1p4degree
     click V1p4Degree href "../V1p4Degree"
 
 
-      V1p4ContributorContribution : V1p4ContributorContribution_role
+      V1p4ContributorContribution : V1p4role
 
 
 
 
-    V1p4ContributorContribution --&gt; "1" V1p4Role : V1p4ContributorContribution_role
+    V1p4ContributorContribution --&gt; "1" V1p4Role : V1p4role
     click V1p4Role href "../V1p4Role"
 
 
@@ -237,13 +237,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4ContributorContribution_role/">V1p4ContributorContribution_role</a></td>
+<td><a href="../V1p4role/">V1p4role</a></td>
 <td>1 <br/> <a href="../V1p4Role/">V1p4Role</a></td>
 <td>Role according to CRediT taxonomy</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4ContributorContribution_degree/">V1p4ContributorContribution_degree</a></td>
+<td><a href="../V1p4degree/">V1p4degree</a></td>
 <td>0..1 <br/> <a href="../V1p4Degree/">V1p4Degree</a></td>
 <td>Optional specification of the degree of contribution, should be used if multi...</td>
 <td>direct</td>
@@ -263,7 +263,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4Contributor/">V1p4Contributor</a></td>
-<td><a href="../V1p4Contributor_contributions/">V1p4Contributor_contributions</a></td>
+<td><a href="../V1p4contributions/">V1p4contributions</a></td>
 <td>range</td>
 <td><a href="./">V1p4ContributorContribution</a></td>
 </tr>
@@ -300,8 +300,8 @@
 <pre><code class="language-yaml">name: V1p4ContributorContribution
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4ContributorContribution_role
-- V1p4ContributorContribution_degree
+- V1p4role
+- V1p4degree
 
 </code></pre>
 </details>
@@ -310,8 +310,8 @@ slots:
 <pre><code class="language-yaml">name: V1p4ContributorContribution
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4ContributorContribution_role:
-    name: V1p4ContributorContribution_role
+  V1p4role:
+    name: V1p4role
     annotations:
       nullable:
         tag: nullable
@@ -319,14 +319,14 @@ attributes:
     description: Role according to CRediT taxonomy
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4ContributorContribution_role
+    alias: V1p4role
     owner: V1p4ContributorContribution
     domain_of:
     - V1p4ContributorContribution
     range: V1p4Role
     required: true
-  V1p4ContributorContribution_degree:
-    name: V1p4ContributorContribution_degree
+  V1p4degree:
+    name: V1p4degree
     annotations:
       nullable:
         tag: nullable
@@ -335,7 +335,7 @@ attributes:
       if multiple individuals serve the same role.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4ContributorContribution_degree
+    alias: V1p4degree
     owner: V1p4ContributorContribution
     domain_of:
     - V1p4ContributorContribution

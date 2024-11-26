@@ -204,187 +204,187 @@
 <div class="mermaid"> classDiagram
     class V1p4AlleleDescription
     click V1p4AlleleDescription href "../V1p4AlleleDescription"
-      V1p4AlleleDescription : V1p4AlleleDescription_acknowledgements
+      V1p4AlleleDescription : V1p4acknowledgements
 
 
 
 
-    V1p4AlleleDescription --&gt; "1..*" V1p4Contributor : V1p4AlleleDescription_acknowledgements
+    V1p4AlleleDescription --&gt; "1..*" V1p4Contributor : V1p4acknowledgements
     click V1p4Contributor href "../V1p4Contributor"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_aliases
+      V1p4AlleleDescription : V1p4aliases
 
-      V1p4AlleleDescription : V1p4AlleleDescription_allele_description_id
+      V1p4AlleleDescription : V1p4allele_description_id
 
-      V1p4AlleleDescription : V1p4AlleleDescription_allele_description_ref
+      V1p4AlleleDescription : V1p4allele_description_ref
 
-      V1p4AlleleDescription : V1p4AlleleDescription_allele_designation
+      V1p4AlleleDescription : V1p4allele_designation
 
-      V1p4AlleleDescription : V1p4AlleleDescription_allele_similarity_cluster_designation
+      V1p4AlleleDescription : V1p4allele_similarity_cluster_designation
 
-      V1p4AlleleDescription : V1p4AlleleDescription_allele_similarity_cluster_member_id
+      V1p4AlleleDescription : V1p4allele_similarity_cluster_member_id
 
-      V1p4AlleleDescription : V1p4AlleleDescription_chromosome
+      V1p4AlleleDescription : V1p4chromosome
 
-      V1p4AlleleDescription : V1p4AlleleDescription_coding_sequence
+      V1p4AlleleDescription : V1p4coding_sequence
 
-      V1p4AlleleDescription : V1p4AlleleDescription_curation
+      V1p4AlleleDescription : V1p4curation
 
-      V1p4AlleleDescription : V1p4AlleleDescription_curational_tags
-
-
+      V1p4AlleleDescription : V1p4curational_tags
 
 
-    V1p4AlleleDescription --&gt; "*" V1p4CurationalTags : V1p4AlleleDescription_curational_tags
+
+
+    V1p4AlleleDescription --&gt; "*" V1p4CurationalTags : V1p4curational_tags
     click V1p4CurationalTags href "../V1p4CurationalTags"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_d_rs_3_prime_end
+      V1p4AlleleDescription : V1p4d_rs_3_prime_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_d_rs_3_prime_start
+      V1p4AlleleDescription : V1p4d_rs_3_prime_start
 
-      V1p4AlleleDescription : V1p4AlleleDescription_d_rs_5_prime_end
+      V1p4AlleleDescription : V1p4d_rs_5_prime_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_d_rs_5_prime_start
+      V1p4AlleleDescription : V1p4d_rs_5_prime_start
 
-      V1p4AlleleDescription : V1p4AlleleDescription_functional
+      V1p4AlleleDescription : V1p4functional
 
-      V1p4AlleleDescription : V1p4AlleleDescription_gene_designation
+      V1p4AlleleDescription : V1p4gene_designation
 
-      V1p4AlleleDescription : V1p4AlleleDescription_gene_end
+      V1p4AlleleDescription : V1p4gene_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_gene_start
+      V1p4AlleleDescription : V1p4gene_start
 
-      V1p4AlleleDescription : V1p4AlleleDescription_inference_type
-
-
+      V1p4AlleleDescription : V1p4inference_type
 
 
-    V1p4AlleleDescription --&gt; "1" V1p4InferenceType : V1p4AlleleDescription_inference_type
+
+
+    V1p4AlleleDescription --&gt; "1" V1p4InferenceType : V1p4inference_type
     click V1p4InferenceType href "../V1p4InferenceType"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_j_cdr3_end
+      V1p4AlleleDescription : V1p4j_cdr3_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_j_codon_frame
-
-
+      V1p4AlleleDescription : V1p4j_codon_frame
 
 
-    V1p4AlleleDescription --&gt; "0..1" V1p4JCodonFrame : V1p4AlleleDescription_j_codon_frame
+
+
+    V1p4AlleleDescription --&gt; "0..1" V1p4JCodonFrame : V1p4j_codon_frame
     click V1p4JCodonFrame href "../V1p4JCodonFrame"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_j_donor_splice
+      V1p4AlleleDescription : V1p4j_donor_splice
 
-      V1p4AlleleDescription : V1p4AlleleDescription_j_rs_end
+      V1p4AlleleDescription : V1p4j_rs_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_j_rs_start
+      V1p4AlleleDescription : V1p4j_rs_start
 
-      V1p4AlleleDescription : V1p4AlleleDescription_label
+      V1p4AlleleDescription : V1p4label
 
-      V1p4AlleleDescription : V1p4AlleleDescription_leader_1_end
+      V1p4AlleleDescription : V1p4leader_1_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_leader_1_start
+      V1p4AlleleDescription : V1p4leader_1_start
 
-      V1p4AlleleDescription : V1p4AlleleDescription_leader_2_end
+      V1p4AlleleDescription : V1p4leader_2_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_leader_2_start
+      V1p4AlleleDescription : V1p4leader_2_start
 
-      V1p4AlleleDescription : V1p4AlleleDescription_locus
-
-
+      V1p4AlleleDescription : V1p4locus
 
 
-    V1p4AlleleDescription --&gt; "1" V1p4Locus : V1p4AlleleDescription_locus
+
+
+    V1p4AlleleDescription --&gt; "0..1" V1p4Locus : V1p4locus
     click V1p4Locus href "../V1p4Locus"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_paralogs
+      V1p4AlleleDescription : V1p4paralogs
 
-      V1p4AlleleDescription : V1p4AlleleDescription_rearranged_support
-
-
+      V1p4AlleleDescription : V1p4rearranged_support
 
 
-    V1p4AlleleDescription --&gt; "*" V1p4RearrangedSequence : V1p4AlleleDescription_rearranged_support
+
+
+    V1p4AlleleDescription --&gt; "*" V1p4RearrangedSequence : V1p4rearranged_support
     click V1p4RearrangedSequence href "../V1p4RearrangedSequence"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_release_date
+      V1p4AlleleDescription : V1p4release_date
 
-      V1p4AlleleDescription : V1p4AlleleDescription_release_description
+      V1p4AlleleDescription : V1p4release_description
 
-      V1p4AlleleDescription : V1p4AlleleDescription_release_version
+      V1p4AlleleDescription : V1p4release_version
 
-      V1p4AlleleDescription : V1p4AlleleDescription_sequence
+      V1p4AlleleDescription : V1p4sequence
 
-      V1p4AlleleDescription : V1p4AlleleDescription_sequence_type
-
-
+      V1p4AlleleDescription : V1p4sequence_type
 
 
-    V1p4AlleleDescription --&gt; "1" V1p4SequenceType : V1p4AlleleDescription_sequence_type
+
+
+    V1p4AlleleDescription --&gt; "1" V1p4SequenceType : V1p4sequence_type
     click V1p4SequenceType href "../V1p4SequenceType"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_species
+      V1p4AlleleDescription : V1p4species
 
 
 
 
-    V1p4AlleleDescription --&gt; "1" V1p4Species : V1p4AlleleDescription_species
+    V1p4AlleleDescription --&gt; "1" V1p4Species : V1p4species
     click V1p4Species href "../V1p4Species"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_species_subgroup
+      V1p4AlleleDescription : V1p4species_subgroup
 
-      V1p4AlleleDescription : V1p4AlleleDescription_species_subgroup_type
-
-
+      V1p4AlleleDescription : V1p4species_subgroup_type
 
 
-    V1p4AlleleDescription --&gt; "0..1" V1p4SpeciesSubgroupType : V1p4AlleleDescription_species_subgroup_type
+
+
+    V1p4AlleleDescription --&gt; "0..1" V1p4SpeciesSubgroupType : V1p4species_subgroup_type
     click V1p4SpeciesSubgroupType href "../V1p4SpeciesSubgroupType"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_status
+      V1p4AlleleDescription : V1p4status
 
 
 
 
-    V1p4AlleleDescription --&gt; "0..1" V1p4Status : V1p4AlleleDescription_status
+    V1p4AlleleDescription --&gt; "0..1" V1p4Status : V1p4status
     click V1p4Status href "../V1p4Status"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_subgroup_designation
+      V1p4AlleleDescription : V1p4subgroup_designation
 
-      V1p4AlleleDescription : V1p4AlleleDescription_unrearranged_support
-
-
+      V1p4AlleleDescription : V1p4unrearranged_support
 
 
-    V1p4AlleleDescription --&gt; "*" V1p4UnrearrangedSequence : V1p4AlleleDescription_unrearranged_support
+
+
+    V1p4AlleleDescription --&gt; "*" V1p4UnrearrangedSequence : V1p4unrearranged_support
     click V1p4UnrearrangedSequence href "../V1p4UnrearrangedSequence"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_utr_5_prime_end
+      V1p4AlleleDescription : V1p4utr_5_prime_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_utr_5_prime_start
+      V1p4AlleleDescription : V1p4utr_5_prime_start
 
-      V1p4AlleleDescription : V1p4AlleleDescription_v_gene_delineations
-
-
+      V1p4AlleleDescription : V1p4v_gene_delineations
 
 
-    V1p4AlleleDescription --&gt; "*" V1p4SequenceDelineationV : V1p4AlleleDescription_v_gene_delineations
+
+
+    V1p4AlleleDescription --&gt; "*" V1p4SequenceDelineationV : V1p4v_gene_delineations
     click V1p4SequenceDelineationV href "../V1p4SequenceDelineationV"
 
 
-      V1p4AlleleDescription : V1p4AlleleDescription_v_rs_end
+      V1p4AlleleDescription : V1p4v_rs_end
 
-      V1p4AlleleDescription : V1p4AlleleDescription_v_rs_start
+      V1p4AlleleDescription : V1p4v_rs_start
 
 
 </div>
@@ -401,295 +401,295 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4AlleleDescription_allele_description_id/">V1p4AlleleDescription_allele_description_id</a></td>
+<td><a href="../V1p4allele_description_id/">V1p4allele_description_id</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this AlleleDescription within the file</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_allele_description_ref/">V1p4AlleleDescription_allele_description_ref</a></td>
+<td><a href="../V1p4allele_description_ref/">V1p4allele_description_ref</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique reference to the allele description, in standardized form (Repo:Label:...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_acknowledgements/">V1p4AlleleDescription_acknowledgements</a></td>
+<td><a href="../V1p4acknowledgements/">V1p4acknowledgements</a></td>
 <td>1..* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
-<td>List of individuals whose contribution to the gene description should be ackn...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_release_version/">V1p4AlleleDescription_release_version</a></td>
+<td><a href="../V1p4release_version/">V1p4release_version</a></td>
 <td>1 <br/> <a href="../Integer/">Integer</a></td>
-<td>Version number of this record, updated whenever a revised version is publishe...</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_release_date/">V1p4AlleleDescription_release_date</a></td>
+<td><a href="../V1p4release_date/">V1p4release_date</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_release_description/">V1p4AlleleDescription_release_description</a></td>
+<td><a href="../V1p4release_description/">V1p4release_description</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_label/">V1p4AlleleDescription_label</a></td>
+<td><a href="../V1p4label/">V1p4label</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The accepted name for this gene or allele following the relevant nomenclature</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_sequence/">V1p4AlleleDescription_sequence</a></td>
+<td><a href="../V1p4sequence/">V1p4sequence</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
-<td>Nucleotide sequence of the gene</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_coding_sequence/">V1p4AlleleDescription_coding_sequence</a></td>
+<td><a href="../V1p4coding_sequence/">V1p4coding_sequence</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Nucleotide sequence of the core coding region, such as the coding region of a...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_aliases/">V1p4AlleleDescription_aliases</a></td>
+<td><a href="../V1p4aliases/">V1p4aliases</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Alternative names for this sequence</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_locus/">V1p4AlleleDescription_locus</a></td>
-<td>1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
-<td>Gene locus</td>
+<td><a href="../V1p4locus/">V1p4locus</a></td>
+<td>0..1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_chromosome/">V1p4AlleleDescription_chromosome</a></td>
+<td><a href="../V1p4chromosome/">V1p4chromosome</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>chromosome on which the gene is located</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_sequence_type/">V1p4AlleleDescription_sequence_type</a></td>
+<td><a href="../V1p4sequence_type/">V1p4sequence_type</a></td>
 <td>1 <br/> <a href="../V1p4SequenceType/">V1p4SequenceType</a></td>
 <td>Sequence type (V, D, J, C)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_functional/">V1p4AlleleDescription_functional</a></td>
+<td><a href="../V1p4functional/">V1p4functional</a></td>
 <td>1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>True if the gene is functional, false if it is a pseudogene</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_inference_type/">V1p4AlleleDescription_inference_type</a></td>
+<td><a href="../V1p4inference_type/">V1p4inference_type</a></td>
 <td>1 <br/> <a href="../V1p4InferenceType/">V1p4InferenceType</a></td>
 <td>Type of inference(s) from which this gene sequence was inferred</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_species/">V1p4AlleleDescription_species</a></td>
+<td><a href="../V1p4species/">V1p4species</a></td>
 <td>1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_species_subgroup/">V1p4AlleleDescription_species_subgroup</a></td>
+<td><a href="../V1p4species_subgroup/">V1p4species_subgroup</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Race, strain or other species subgroup to which this subject belongs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_species_subgroup_type/">V1p4AlleleDescription_species_subgroup_type</a></td>
+<td><a href="../V1p4species_subgroup_type/">V1p4species_subgroup_type</a></td>
 <td>0..1 <br/> <a href="../V1p4SpeciesSubgroupType/">V1p4SpeciesSubgroupType</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_status/">V1p4AlleleDescription_status</a></td>
+<td><a href="../V1p4status/">V1p4status</a></td>
 <td>0..1 <br/> <a href="../V1p4Status/">V1p4Status</a></td>
 <td>Status of record, assumed active if the field is not present</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_subgroup_designation/">V1p4AlleleDescription_subgroup_designation</a></td>
+<td><a href="../V1p4subgroup_designation/">V1p4subgroup_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier of the gene subgroup or clade, as (and if) defined</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_gene_designation/">V1p4AlleleDescription_gene_designation</a></td>
+<td><a href="../V1p4gene_designation/">V1p4gene_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Gene number or other identifier, as (and if) defined</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_allele_designation/">V1p4AlleleDescription_allele_designation</a></td>
+<td><a href="../V1p4allele_designation/">V1p4allele_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Allele number or other identifier, as (and if) defined</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_allele_similarity_cluster_designation/">V1p4AlleleDescription_allele_similarity_cluster_designation</a></td>
+<td><a href="../V1p4allele_similarity_cluster_designation/">V1p4allele_similarity_cluster_designation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>ID of the similarity cluster used in this germline set, if designated</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_allele_similarity_cluster_member_id/">V1p4AlleleDescription_allele_similarity_cluster_member_id</a></td>
+<td><a href="../V1p4allele_similarity_cluster_member_id/">V1p4allele_similarity_cluster_member_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Membership ID of the allele within the similarity cluster, if a cluster is de...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_j_codon_frame/">V1p4AlleleDescription_j_codon_frame</a></td>
+<td><a href="../V1p4j_codon_frame/">V1p4j_codon_frame</a></td>
 <td>0..1 <br/> <a href="../V1p4JCodonFrame/">V1p4JCodonFrame</a></td>
 <td>Codon position of the first nucleotide in the 'coding_sequence' field</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_gene_start/">V1p4AlleleDescription_gene_start</a></td>
+<td><a href="../V1p4gene_start/">V1p4gene_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Co-ordinate in the sequence field of the first nucleotide in the coding_seque...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_gene_end/">V1p4AlleleDescription_gene_end</a></td>
+<td><a href="../V1p4gene_end/">V1p4gene_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Co-ordinate in the sequence field of the last gene-coding nucleotide in the c...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_utr_5_prime_start/">V1p4AlleleDescription_utr_5_prime_start</a></td>
+<td><a href="../V1p4utr_5_prime_start/">V1p4utr_5_prime_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the 5 prime UTR (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_utr_5_prime_end/">V1p4AlleleDescription_utr_5_prime_end</a></td>
+<td><a href="../V1p4utr_5_prime_end/">V1p4utr_5_prime_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of the 5 prime UTR (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_leader_1_start/">V1p4AlleleDescription_leader_1_start</a></td>
+<td><a href="../V1p4leader_1_start/">V1p4leader_1_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of L-PART1 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_leader_1_end/">V1p4AlleleDescription_leader_1_end</a></td>
+<td><a href="../V1p4leader_1_end/">V1p4leader_1_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of L-PART1 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_leader_2_start/">V1p4AlleleDescription_leader_2_start</a></td>
+<td><a href="../V1p4leader_2_start/">V1p4leader_2_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of L-PART2 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_leader_2_end/">V1p4AlleleDescription_leader_2_end</a></td>
+<td><a href="../V1p4leader_2_end/">V1p4leader_2_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of L-PART2 (V-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_v_rs_start/">V1p4AlleleDescription_v_rs_start</a></td>
+<td><a href="../V1p4v_rs_start/">V1p4v_rs_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the V recombination site (V-genes ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_v_rs_end/">V1p4AlleleDescription_v_rs_end</a></td>
+<td><a href="../V1p4v_rs_end/">V1p4v_rs_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of the V recombination site (V-genes on...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_d_rs_3_prime_start/">V1p4AlleleDescription_d_rs_3_prime_start</a></td>
+<td><a href="../V1p4d_rs_3_prime_start/">V1p4d_rs_3_prime_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the 3 prime D recombination site (...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_d_rs_3_prime_end/">V1p4AlleleDescription_d_rs_3_prime_end</a></td>
+<td><a href="../V1p4d_rs_3_prime_end/">V1p4d_rs_3_prime_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of the 3 prime D recombination site (D-...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_d_rs_5_prime_start/">V1p4AlleleDescription_d_rs_5_prime_start</a></td>
+<td><a href="../V1p4d_rs_5_prime_start/">V1p4d_rs_5_prime_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of the 5 prime D recombination site (...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_d_rs_5_prime_end/">V1p4AlleleDescription_d_rs_5_prime_end</a></td>
+<td><a href="../V1p4d_rs_5_prime_end/">V1p4d_rs_5_prime_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of 5 the prime D recombination site (D-...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_j_cdr3_end/">V1p4AlleleDescription_j_cdr3_end</a></td>
+<td><a href="../V1p4j_cdr3_end/">V1p4j_cdr3_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>In the case of a J-gene, the co-ordinate in the sequence field of the first n...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_j_rs_start/">V1p4AlleleDescription_j_rs_start</a></td>
+<td><a href="../V1p4j_rs_start/">V1p4j_rs_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Start co-ordinate in the sequence field of J recombination site (J-genes only...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_j_rs_end/">V1p4AlleleDescription_j_rs_end</a></td>
+<td><a href="../V1p4j_rs_end/">V1p4j_rs_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>End co-ordinate in the sequence field of J recombination site (J-genes only)</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_j_donor_splice/">V1p4AlleleDescription_j_donor_splice</a></td>
+<td><a href="../V1p4j_donor_splice/">V1p4j_donor_splice</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Co-ordinate in the sequence field of the final 3' nucleotide of the J-REGION ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_v_gene_delineations/">V1p4AlleleDescription_v_gene_delineations</a></td>
+<td><a href="../V1p4v_gene_delineations/">V1p4v_gene_delineations</a></td>
 <td>* <br/> <a href="../V1p4SequenceDelineationV/">V1p4SequenceDelineationV</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_unrearranged_support/">V1p4AlleleDescription_unrearranged_support</a></td>
+<td><a href="../V1p4unrearranged_support/">V1p4unrearranged_support</a></td>
 <td>* <br/> <a href="../V1p4UnrearrangedSequence/">V1p4UnrearrangedSequence</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_rearranged_support/">V1p4AlleleDescription_rearranged_support</a></td>
+<td><a href="../V1p4rearranged_support/">V1p4rearranged_support</a></td>
 <td>* <br/> <a href="../V1p4RearrangedSequence/">V1p4RearrangedSequence</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_paralogs/">V1p4AlleleDescription_paralogs</a></td>
+<td><a href="../V1p4paralogs/">V1p4paralogs</a></td>
 <td>* <br/> <a href="../String/">String</a></td>
 <td>Gene symbols of any paralogs</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_curation/">V1p4AlleleDescription_curation</a></td>
+<td><a href="../V1p4curation/">V1p4curation</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Curational notes on the AlleleDescription</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4AlleleDescription_curational_tags/">V1p4AlleleDescription_curational_tags</a></td>
+<td><a href="../V1p4curational_tags/">V1p4curational_tags</a></td>
 <td>* <br/> <a href="../V1p4CurationalTags/">V1p4CurationalTags</a></td>
 <td>Controlled-vocabulary tags applied to this description</td>
 <td>direct</td>
@@ -709,7 +709,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4GermlineSet/">V1p4GermlineSet</a></td>
-<td><a href="../V1p4GermlineSet_allele_descriptions/">V1p4GermlineSet_allele_descriptions</a></td>
+<td><a href="../V1p4allele_descriptions/">V1p4allele_descriptions</a></td>
 <td>range</td>
 <td><a href="./">V1p4AlleleDescription</a></td>
 </tr>
@@ -746,55 +746,55 @@
 <pre><code class="language-yaml">name: V1p4AlleleDescription
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4AlleleDescription_allele_description_id
-- V1p4AlleleDescription_allele_description_ref
-- V1p4AlleleDescription_acknowledgements
-- V1p4AlleleDescription_release_version
-- V1p4AlleleDescription_release_date
-- V1p4AlleleDescription_release_description
-- V1p4AlleleDescription_label
-- V1p4AlleleDescription_sequence
-- V1p4AlleleDescription_coding_sequence
-- V1p4AlleleDescription_aliases
-- V1p4AlleleDescription_locus
-- V1p4AlleleDescription_chromosome
-- V1p4AlleleDescription_sequence_type
-- V1p4AlleleDescription_functional
-- V1p4AlleleDescription_inference_type
-- V1p4AlleleDescription_species
-- V1p4AlleleDescription_species_subgroup
-- V1p4AlleleDescription_species_subgroup_type
-- V1p4AlleleDescription_status
-- V1p4AlleleDescription_subgroup_designation
-- V1p4AlleleDescription_gene_designation
-- V1p4AlleleDescription_allele_designation
-- V1p4AlleleDescription_allele_similarity_cluster_designation
-- V1p4AlleleDescription_allele_similarity_cluster_member_id
-- V1p4AlleleDescription_j_codon_frame
-- V1p4AlleleDescription_gene_start
-- V1p4AlleleDescription_gene_end
-- V1p4AlleleDescription_utr_5_prime_start
-- V1p4AlleleDescription_utr_5_prime_end
-- V1p4AlleleDescription_leader_1_start
-- V1p4AlleleDescription_leader_1_end
-- V1p4AlleleDescription_leader_2_start
-- V1p4AlleleDescription_leader_2_end
-- V1p4AlleleDescription_v_rs_start
-- V1p4AlleleDescription_v_rs_end
-- V1p4AlleleDescription_d_rs_3_prime_start
-- V1p4AlleleDescription_d_rs_3_prime_end
-- V1p4AlleleDescription_d_rs_5_prime_start
-- V1p4AlleleDescription_d_rs_5_prime_end
-- V1p4AlleleDescription_j_cdr3_end
-- V1p4AlleleDescription_j_rs_start
-- V1p4AlleleDescription_j_rs_end
-- V1p4AlleleDescription_j_donor_splice
-- V1p4AlleleDescription_v_gene_delineations
-- V1p4AlleleDescription_unrearranged_support
-- V1p4AlleleDescription_rearranged_support
-- V1p4AlleleDescription_paralogs
-- V1p4AlleleDescription_curation
-- V1p4AlleleDescription_curational_tags
+- V1p4allele_description_id
+- V1p4allele_description_ref
+- V1p4acknowledgements
+- V1p4release_version
+- V1p4release_date
+- V1p4release_description
+- V1p4label
+- V1p4sequence
+- V1p4coding_sequence
+- V1p4aliases
+- V1p4locus
+- V1p4chromosome
+- V1p4sequence_type
+- V1p4functional
+- V1p4inference_type
+- V1p4species
+- V1p4species_subgroup
+- V1p4species_subgroup_type
+- V1p4status
+- V1p4subgroup_designation
+- V1p4gene_designation
+- V1p4allele_designation
+- V1p4allele_similarity_cluster_designation
+- V1p4allele_similarity_cluster_member_id
+- V1p4j_codon_frame
+- V1p4gene_start
+- V1p4gene_end
+- V1p4utr_5_prime_start
+- V1p4utr_5_prime_end
+- V1p4leader_1_start
+- V1p4leader_1_end
+- V1p4leader_2_start
+- V1p4leader_2_end
+- V1p4v_rs_start
+- V1p4v_rs_end
+- V1p4d_rs_3_prime_start
+- V1p4d_rs_3_prime_end
+- V1p4d_rs_5_prime_start
+- V1p4d_rs_5_prime_end
+- V1p4j_cdr3_end
+- V1p4j_rs_start
+- V1p4j_rs_end
+- V1p4j_donor_splice
+- V1p4v_gene_delineations
+- V1p4unrearranged_support
+- V1p4rearranged_support
+- V1p4paralogs
+- V1p4curation
+- V1p4curational_tags
 
 </code></pre>
 </details>
@@ -803,8 +803,8 @@ slots:
 <pre><code class="language-yaml">name: V1p4AlleleDescription
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4AlleleDescription_allele_description_id:
-    name: V1p4AlleleDescription_allele_description_id
+  V1p4allele_description_id:
+    name: V1p4allele_description_id
     annotations:
       nullable:
         tag: nullable
@@ -813,14 +813,14 @@ attributes:
       generated by the  repository hosting the record.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_allele_description_id
+    alias: V1p4allele_description_id
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: true
-  V1p4AlleleDescription_allele_description_ref:
-    name: V1p4AlleleDescription_allele_description_ref
+  V1p4allele_description_ref:
+    name: V1p4allele_description_ref
     annotations:
       nullable:
         tag: nullable
@@ -829,51 +829,45 @@ attributes:
       (Repo:Label:Version)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_allele_description_ref
+    alias: V1p4allele_description_ref
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: false
-  V1p4AlleleDescription_acknowledgements:
-    name: V1p4AlleleDescription_acknowledgements
+  V1p4acknowledgements:
+    name: V1p4acknowledgements
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: List of individuals whose contribution to the gene description should
-      be acknowledged. Note that these are not necessarily identical with the authors
-      on an associated manuscript or other scholarly communication. Further note that
-      typically at least the three CRediT contributor roles "supervision", "investigation"
-      and "data curation" should be assigned. The current maintainer should be listed
-      first.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_acknowledgements
+    alias: V1p4acknowledgements
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
     range: V1p4Contributor
     required: true
     multivalued: true
-  V1p4AlleleDescription_release_version:
-    name: V1p4AlleleDescription_release_version
+  V1p4release_version:
+    name: V1p4release_version
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Version number of this record, updated whenever a revised version
-      is published or released
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_release_version
+    alias: V1p4release_version
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
     range: integer
     required: true
-  V1p4AlleleDescription_release_date:
-    name: V1p4AlleleDescription_release_date
+  V1p4release_date:
+    name: V1p4release_date
     annotations:
       nullable:
         tag: nullable
@@ -881,14 +875,15 @@ attributes:
     description: Date of this release
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_release_date
+    alias: V1p4release_date
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
     range: string
     required: true
-  V1p4AlleleDescription_release_description:
-    name: V1p4AlleleDescription_release_description
+  V1p4release_description:
+    name: V1p4release_description
     annotations:
       nullable:
         tag: nullable
@@ -897,48 +892,41 @@ attributes:
       embodied
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_release_description
+    alias: V1p4release_description
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
     range: string
     required: true
-  V1p4AlleleDescription_label:
-    name: V1p4AlleleDescription_label
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: The accepted name for this gene or allele following the relevant
-      nomenclature. The value in this field should correspond to values in acceptable
-      name fields of other schemas,  such as v_call, d_call, and j_call fields.
+  V1p4label:
+    name: V1p4label
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_label
+    alias: V1p4label
     owner: V1p4AlleleDescription
     domain_of:
+    - V1p4TimePoint
     - V1p4AlleleDescription
+    - V1p4DocumentedAllele
+    - V1p4DeletedGene
     range: string
-    required: false
-  V1p4AlleleDescription_sequence:
-    name: V1p4AlleleDescription_sequence
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Nucleotide sequence of the gene. This should cover the full length
-      that is available,  including where possible RSS, and 5' UTR and lead-in for
-      V-gene sequences.
+  V1p4sequence:
+    name: V1p4sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_sequence
+    alias: V1p4sequence
     owner: V1p4AlleleDescription
     domain_of:
+    - V1p4RearrangedSequence
+    - V1p4UnrearrangedSequence
     - V1p4AlleleDescription
+    - V1p4UndocumentedAllele
+    - V1p4Rearrangement
     range: string
     required: true
-  V1p4AlleleDescription_coding_sequence:
-    name: V1p4AlleleDescription_coding_sequence
+  V1p4coding_sequence:
+    name: V1p4coding_sequence
     annotations:
       nullable:
         tag: nullable
@@ -948,14 +936,14 @@ attributes:
       leader.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_coding_sequence
+    alias: V1p4coding_sequence
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: true
-  V1p4AlleleDescription_aliases:
-    name: V1p4AlleleDescription_aliases
+  V1p4aliases:
+    name: V1p4aliases
     annotations:
       nullable:
         tag: nullable
@@ -963,30 +951,27 @@ attributes:
     description: Alternative names for this sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_aliases
+    alias: V1p4aliases
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: false
     multivalued: true
-  V1p4AlleleDescription_locus:
-    name: V1p4AlleleDescription_locus
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: Gene locus
+  V1p4locus:
+    name: V1p4locus
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_locus
+    alias: V1p4locus
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
+    - V1p4Genotype
+    - V1p4Rearrangement
     range: V1p4Locus
-    required: true
-  V1p4AlleleDescription_chromosome:
-    name: V1p4AlleleDescription_chromosome
+  V1p4chromosome:
+    name: V1p4chromosome
     annotations:
       nullable:
         tag: nullable
@@ -994,14 +979,14 @@ attributes:
     description: chromosome on which the gene is located
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_chromosome
+    alias: V1p4chromosome
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_sequence_type:
-    name: V1p4AlleleDescription_sequence_type
+  V1p4sequence_type:
+    name: V1p4sequence_type
     annotations:
       nullable:
         tag: nullable
@@ -1009,14 +994,14 @@ attributes:
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_sequence_type
+    alias: V1p4sequence_type
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: V1p4SequenceType
     required: true
-  V1p4AlleleDescription_functional:
-    name: V1p4AlleleDescription_functional
+  V1p4functional:
+    name: V1p4functional
     annotations:
       nullable:
         tag: nullable
@@ -1024,14 +1009,14 @@ attributes:
     description: True if the gene is functional, false if it is a pseudogene
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_functional
+    alias: V1p4functional
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: boolean
     required: true
-  V1p4AlleleDescription_inference_type:
-    name: V1p4AlleleDescription_inference_type
+  V1p4inference_type:
+    name: V1p4inference_type
     annotations:
       nullable:
         tag: nullable
@@ -1039,14 +1024,14 @@ attributes:
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_inference_type
+    alias: V1p4inference_type
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: V1p4InferenceType
     required: true
-  V1p4AlleleDescription_species:
-    name: V1p4AlleleDescription_species
+  V1p4species:
+    name: V1p4species
     annotations:
       nullable:
         tag: nullable
@@ -1054,14 +1039,16 @@ attributes:
     description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_species
+    alias: V1p4species
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
+    - V1p4Subject
     range: V1p4Species
     required: true
-  V1p4AlleleDescription_species_subgroup:
-    name: V1p4AlleleDescription_species_subgroup
+  V1p4species_subgroup:
+    name: V1p4species_subgroup
     annotations:
       nullable:
         tag: nullable
@@ -1069,14 +1056,15 @@ attributes:
     description: Race, strain or other species subgroup to which this subject belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_species_subgroup
+    alias: V1p4species_subgroup
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
     range: string
     required: false
-  V1p4AlleleDescription_species_subgroup_type:
-    name: V1p4AlleleDescription_species_subgroup_type
+  V1p4species_subgroup_type:
+    name: V1p4species_subgroup_type
     annotations:
       nullable:
         tag: nullable
@@ -1084,14 +1072,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_species_subgroup_type
+    alias: V1p4species_subgroup_type
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4GermlineSet
     range: V1p4SpeciesSubgroupType
     required: false
-  V1p4AlleleDescription_status:
-    name: V1p4AlleleDescription_status
+  V1p4status:
+    name: V1p4status
     annotations:
       nullable:
         tag: nullable
@@ -1099,14 +1088,14 @@ attributes:
     description: Status of record, assumed active if the field is not present
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_status
+    alias: V1p4status
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: V1p4Status
     required: false
-  V1p4AlleleDescription_subgroup_designation:
-    name: V1p4AlleleDescription_subgroup_designation
+  V1p4subgroup_designation:
+    name: V1p4subgroup_designation
     annotations:
       nullable:
         tag: nullable
@@ -1114,14 +1103,14 @@ attributes:
     description: Identifier of the gene subgroup or clade, as (and if) defined
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_subgroup_designation
+    alias: V1p4subgroup_designation
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: false
-  V1p4AlleleDescription_gene_designation:
-    name: V1p4AlleleDescription_gene_designation
+  V1p4gene_designation:
+    name: V1p4gene_designation
     annotations:
       nullable:
         tag: nullable
@@ -1129,29 +1118,29 @@ attributes:
     description: Gene number or other identifier, as (and if) defined
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_gene_designation
+    alias: V1p4gene_designation
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: false
-  V1p4AlleleDescription_allele_designation:
-    name: V1p4AlleleDescription_allele_designation
+  V1p4allele_designation:
+    name: V1p4allele_designation
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Allele number or other identifier, as (and if) defined
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_allele_designation
+    alias: V1p4allele_designation
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
+    - V1p4MHCAllele
     range: string
     required: false
-  V1p4AlleleDescription_allele_similarity_cluster_designation:
-    name: V1p4AlleleDescription_allele_similarity_cluster_designation
+  V1p4allele_similarity_cluster_designation:
+    name: V1p4allele_similarity_cluster_designation
     annotations:
       nullable:
         tag: nullable
@@ -1159,14 +1148,14 @@ attributes:
     description: ID of the similarity cluster used in this germline set, if designated
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_allele_similarity_cluster_designation
+    alias: V1p4allele_similarity_cluster_designation
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: false
-  V1p4AlleleDescription_allele_similarity_cluster_member_id:
-    name: V1p4AlleleDescription_allele_similarity_cluster_member_id
+  V1p4allele_similarity_cluster_member_id:
+    name: V1p4allele_similarity_cluster_member_id
     annotations:
       nullable:
         tag: nullable
@@ -1175,14 +1164,14 @@ attributes:
       is designated
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_allele_similarity_cluster_member_id
+    alias: V1p4allele_similarity_cluster_member_id
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: false
-  V1p4AlleleDescription_j_codon_frame:
-    name: V1p4AlleleDescription_j_codon_frame
+  V1p4j_codon_frame:
+    name: V1p4j_codon_frame
     annotations:
       nullable:
         tag: nullable
@@ -1193,14 +1182,14 @@ attributes:
       '3' means that the first 2 bp are missing.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_j_codon_frame
+    alias: V1p4j_codon_frame
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: V1p4JCodonFrame
     required: false
-  V1p4AlleleDescription_gene_start:
-    name: V1p4AlleleDescription_gene_start
+  V1p4gene_start:
+    name: V1p4gene_start
     annotations:
       nullable:
         tag: nullable
@@ -1209,14 +1198,14 @@ attributes:
       coding_sequence field.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_gene_start
+    alias: V1p4gene_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_gene_end:
-    name: V1p4AlleleDescription_gene_end
+  V1p4gene_end:
+    name: V1p4gene_end
     annotations:
       nullable:
         tag: nullable
@@ -1225,14 +1214,14 @@ attributes:
       in the coding_sequence field.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_gene_end
+    alias: V1p4gene_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_utr_5_prime_start:
-    name: V1p4AlleleDescription_utr_5_prime_start
+  V1p4utr_5_prime_start:
+    name: V1p4utr_5_prime_start
     annotations:
       nullable:
         tag: nullable
@@ -1241,14 +1230,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_utr_5_prime_start
+    alias: V1p4utr_5_prime_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_utr_5_prime_end:
-    name: V1p4AlleleDescription_utr_5_prime_end
+  V1p4utr_5_prime_end:
+    name: V1p4utr_5_prime_end
     annotations:
       nullable:
         tag: nullable
@@ -1257,14 +1246,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_utr_5_prime_end
+    alias: V1p4utr_5_prime_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_leader_1_start:
-    name: V1p4AlleleDescription_leader_1_start
+  V1p4leader_1_start:
+    name: V1p4leader_1_start
     annotations:
       nullable:
         tag: nullable
@@ -1272,14 +1261,14 @@ attributes:
     description: Start co-ordinate in the sequence field of L-PART1 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_leader_1_start
+    alias: V1p4leader_1_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_leader_1_end:
-    name: V1p4AlleleDescription_leader_1_end
+  V1p4leader_1_end:
+    name: V1p4leader_1_end
     annotations:
       nullable:
         tag: nullable
@@ -1287,14 +1276,14 @@ attributes:
     description: End co-ordinate in the sequence field of L-PART1 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_leader_1_end
+    alias: V1p4leader_1_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_leader_2_start:
-    name: V1p4AlleleDescription_leader_2_start
+  V1p4leader_2_start:
+    name: V1p4leader_2_start
     annotations:
       nullable:
         tag: nullable
@@ -1302,14 +1291,14 @@ attributes:
     description: Start co-ordinate in the sequence field of L-PART2 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_leader_2_start
+    alias: V1p4leader_2_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_leader_2_end:
-    name: V1p4AlleleDescription_leader_2_end
+  V1p4leader_2_end:
+    name: V1p4leader_2_end
     annotations:
       nullable:
         tag: nullable
@@ -1317,14 +1306,14 @@ attributes:
     description: End co-ordinate in the sequence field of L-PART2 (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_leader_2_end
+    alias: V1p4leader_2_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_v_rs_start:
-    name: V1p4AlleleDescription_v_rs_start
+  V1p4v_rs_start:
+    name: V1p4v_rs_start
     annotations:
       nullable:
         tag: nullable
@@ -1333,14 +1322,14 @@ attributes:
       (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_v_rs_start
+    alias: V1p4v_rs_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_v_rs_end:
-    name: V1p4AlleleDescription_v_rs_end
+  V1p4v_rs_end:
+    name: V1p4v_rs_end
     annotations:
       nullable:
         tag: nullable
@@ -1349,14 +1338,14 @@ attributes:
       (V-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_v_rs_end
+    alias: V1p4v_rs_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_d_rs_3_prime_start:
-    name: V1p4AlleleDescription_d_rs_3_prime_start
+  V1p4d_rs_3_prime_start:
+    name: V1p4d_rs_3_prime_start
     annotations:
       nullable:
         tag: nullable
@@ -1365,14 +1354,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_d_rs_3_prime_start
+    alias: V1p4d_rs_3_prime_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_d_rs_3_prime_end:
-    name: V1p4AlleleDescription_d_rs_3_prime_end
+  V1p4d_rs_3_prime_end:
+    name: V1p4d_rs_3_prime_end
     annotations:
       nullable:
         tag: nullable
@@ -1381,14 +1370,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_d_rs_3_prime_end
+    alias: V1p4d_rs_3_prime_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_d_rs_5_prime_start:
-    name: V1p4AlleleDescription_d_rs_5_prime_start
+  V1p4d_rs_5_prime_start:
+    name: V1p4d_rs_5_prime_start
     annotations:
       nullable:
         tag: nullable
@@ -1397,14 +1386,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_d_rs_5_prime_start
+    alias: V1p4d_rs_5_prime_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_d_rs_5_prime_end:
-    name: V1p4AlleleDescription_d_rs_5_prime_end
+  V1p4d_rs_5_prime_end:
+    name: V1p4d_rs_5_prime_end
     annotations:
       nullable:
         tag: nullable
@@ -1413,14 +1402,14 @@ attributes:
       site (D-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_d_rs_5_prime_end
+    alias: V1p4d_rs_5_prime_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_j_cdr3_end:
-    name: V1p4AlleleDescription_j_cdr3_end
+  V1p4j_cdr3_end:
+    name: V1p4j_cdr3_end
     annotations:
       nullable:
         tag: nullable
@@ -1429,14 +1418,14 @@ attributes:
       the first nucelotide of the  conserved PHE or TRP (IMGT codon position 118).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_j_cdr3_end
+    alias: V1p4j_cdr3_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_j_rs_start:
-    name: V1p4AlleleDescription_j_rs_start
+  V1p4j_rs_start:
+    name: V1p4j_rs_start
     annotations:
       nullable:
         tag: nullable
@@ -1445,14 +1434,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_j_rs_start
+    alias: V1p4j_rs_start
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_j_rs_end:
-    name: V1p4AlleleDescription_j_rs_end
+  V1p4j_rs_end:
+    name: V1p4j_rs_end
     annotations:
       nullable:
         tag: nullable
@@ -1461,14 +1450,14 @@ attributes:
       only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_j_rs_end
+    alias: V1p4j_rs_end
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_j_donor_splice:
-    name: V1p4AlleleDescription_j_donor_splice
+  V1p4j_donor_splice:
+    name: V1p4j_donor_splice
     annotations:
       nullable:
         tag: nullable
@@ -1477,14 +1466,14 @@ attributes:
       J-REGION (J-genes only).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_j_donor_splice
+    alias: V1p4j_donor_splice
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: integer
     required: false
-  V1p4AlleleDescription_v_gene_delineations:
-    name: V1p4AlleleDescription_v_gene_delineations
+  V1p4v_gene_delineations:
+    name: V1p4v_gene_delineations
     annotations:
       nullable:
         tag: nullable
@@ -1492,15 +1481,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_v_gene_delineations
+    alias: V1p4v_gene_delineations
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: V1p4SequenceDelineationV
     required: false
     multivalued: true
-  V1p4AlleleDescription_unrearranged_support:
-    name: V1p4AlleleDescription_unrearranged_support
+  V1p4unrearranged_support:
+    name: V1p4unrearranged_support
     annotations:
       nullable:
         tag: nullable
@@ -1508,15 +1497,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_unrearranged_support
+    alias: V1p4unrearranged_support
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: V1p4UnrearrangedSequence
     required: false
     multivalued: true
-  V1p4AlleleDescription_rearranged_support:
-    name: V1p4AlleleDescription_rearranged_support
+  V1p4rearranged_support:
+    name: V1p4rearranged_support
     annotations:
       nullable:
         tag: nullable
@@ -1524,15 +1513,15 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_rearranged_support
+    alias: V1p4rearranged_support
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: V1p4RearrangedSequence
     required: false
     multivalued: true
-  V1p4AlleleDescription_paralogs:
-    name: V1p4AlleleDescription_paralogs
+  V1p4paralogs:
+    name: V1p4paralogs
     annotations:
       nullable:
         tag: nullable
@@ -1540,31 +1529,32 @@ attributes:
     description: Gene symbols of any paralogs
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_paralogs
+    alias: V1p4paralogs
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription
     range: string
     required: false
     multivalued: true
-  V1p4AlleleDescription_curation:
-    name: V1p4AlleleDescription_curation
+  V1p4curation:
+    name: V1p4curation
     annotations:
       nullable:
         tag: nullable
         value: true
-    description: Curational notes on the AlleleDescription. This can be used to give
-      more extensive notes on the  decisions taken than are provided in the release_description.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_curation
+    alias: V1p4curation
     owner: V1p4AlleleDescription
     domain_of:
+    - V1p4RearrangedSequence
+    - V1p4UnrearrangedSequence
     - V1p4AlleleDescription
+    - V1p4GermlineSet
     range: string
     required: false
-  V1p4AlleleDescription_curational_tags:
-    name: V1p4AlleleDescription_curational_tags
+  V1p4curational_tags:
+    name: V1p4curational_tags
     annotations:
       nullable:
         tag: nullable
@@ -1572,7 +1562,7 @@ attributes:
     description: Controlled-vocabulary tags applied to this description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4AlleleDescription_curational_tags
+    alias: V1p4curational_tags
     owner: V1p4AlleleDescription
     domain_of:
     - V1p4AlleleDescription

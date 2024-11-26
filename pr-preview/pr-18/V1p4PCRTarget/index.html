@@ -204,18 +204,18 @@
 <div class="mermaid"> classDiagram
     class V1p4PCRTarget
     click V1p4PCRTarget href "../V1p4PCRTarget"
-      V1p4PCRTarget : V1p4PCRTarget_forward_pcr_primer_target_location
+      V1p4PCRTarget : V1p4forward_pcr_primer_target_location
 
-      V1p4PCRTarget : V1p4PCRTarget_pcr_target_locus
-
-
+      V1p4PCRTarget : V1p4pcr_target_locus
 
 
-    V1p4PCRTarget --&gt; "1" V1p4PcrTargetLocus : V1p4PCRTarget_pcr_target_locus
+
+
+    V1p4PCRTarget --&gt; "1" V1p4PcrTargetLocus : V1p4pcr_target_locus
     click V1p4PcrTargetLocus href "../V1p4PcrTargetLocus"
 
 
-      V1p4PCRTarget : V1p4PCRTarget_reverse_pcr_primer_target_location
+      V1p4PCRTarget : V1p4reverse_pcr_primer_target_location
 
 
 </div>
@@ -232,19 +232,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p4PCRTarget_pcr_target_locus/">V1p4PCRTarget_pcr_target_locus</a></td>
+<td><a href="../V1p4pcr_target_locus/">V1p4pcr_target_locus</a></td>
 <td>1 <br/> <a href="../V1p4PcrTargetLocus/">V1p4PcrTargetLocus</a></td>
 <td>Designation of the target locus</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4PCRTarget_forward_pcr_primer_target_location/">V1p4PCRTarget_forward_pcr_primer_target_location</a></td>
+<td><a href="../V1p4forward_pcr_primer_target_location/">V1p4forward_pcr_primer_target_location</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Position of the most distal nucleotide templated by the forward primer or pri...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p4PCRTarget_reverse_pcr_primer_target_location/">V1p4PCRTarget_reverse_pcr_primer_target_location</a></td>
+<td><a href="../V1p4reverse_pcr_primer_target_location/">V1p4reverse_pcr_primer_target_location</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Position of the most proximal nucleotide templated by the reverse primer or p...</td>
 <td>direct</td>
@@ -264,13 +264,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p4NucleicAcidProcessing/">V1p4NucleicAcidProcessing</a></td>
-<td><a href="../V1p4NucleicAcidProcessing_pcr_target/">V1p4NucleicAcidProcessing_pcr_target</a></td>
+<td><a href="../V1p4pcr_target/">V1p4pcr_target</a></td>
 <td>range</td>
 <td><a href="./">V1p4PCRTarget</a></td>
 </tr>
 <tr>
 <td><a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
-<td><a href="../V1p4NucleicAcidProcessing_pcr_target/">V1p4NucleicAcidProcessing_pcr_target</a></td>
+<td><a href="../V1p4pcr_target/">V1p4pcr_target</a></td>
 <td>range</td>
 <td><a href="./">V1p4PCRTarget</a></td>
 </tr>
@@ -307,9 +307,9 @@
 <pre><code class="language-yaml">name: V1p4PCRTarget
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p4PCRTarget_pcr_target_locus
-- V1p4PCRTarget_forward_pcr_primer_target_location
-- V1p4PCRTarget_reverse_pcr_primer_target_location
+- V1p4pcr_target_locus
+- V1p4forward_pcr_primer_target_location
+- V1p4reverse_pcr_primer_target_location
 
 </code></pre>
 </details>
@@ -318,8 +318,8 @@ slots:
 <pre><code class="language-yaml">name: V1p4PCRTarget
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p4PCRTarget_pcr_target_locus:
-    name: V1p4PCRTarget_pcr_target_locus
+  V1p4pcr_target_locus:
+    name: V1p4pcr_target_locus
     annotations:
       nullable:
         tag: nullable
@@ -329,14 +329,14 @@ attributes:
       necessarily the correct designation according to a specific nomenclature.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4PCRTarget_pcr_target_locus
+    alias: V1p4pcr_target_locus
     owner: V1p4PCRTarget
     domain_of:
     - V1p4PCRTarget
     range: V1p4PcrTargetLocus
     required: true
-  V1p4PCRTarget_forward_pcr_primer_target_location:
-    name: V1p4PCRTarget_forward_pcr_primer_target_location
+  V1p4forward_pcr_primer_target_location:
+    name: V1p4forward_pcr_primer_target_location
     annotations:
       nullable:
         tag: nullable
@@ -345,14 +345,14 @@ attributes:
       or primer mix
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4PCRTarget_forward_pcr_primer_target_location
+    alias: V1p4forward_pcr_primer_target_location
     owner: V1p4PCRTarget
     domain_of:
     - V1p4PCRTarget
     range: string
     required: true
-  V1p4PCRTarget_reverse_pcr_primer_target_location:
-    name: V1p4PCRTarget_reverse_pcr_primer_target_location
+  V1p4reverse_pcr_primer_target_location:
+    name: V1p4reverse_pcr_primer_target_location
     annotations:
       nullable:
         tag: nullable
@@ -361,7 +361,7 @@ attributes:
       primer or primer mix
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p4PCRTarget_reverse_pcr_primer_target_location
+    alias: V1p4reverse_pcr_primer_target_location
     owner: V1p4PCRTarget
     domain_of:
     - V1p4PCRTarget

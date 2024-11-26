@@ -199,67 +199,67 @@
 <div class="mermaid"> classDiagram
     class V1p5NucleicAcidProcessing
     click V1p5NucleicAcidProcessing href "../V1p5NucleicAcidProcessing"
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_complete_sequences
+      V1p5NucleicAcidProcessing : V1p5complete_sequences
 
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5CompleteSequences : V1p5NucleicAcidProcessing_complete_sequences
+    V1p5NucleicAcidProcessing --&gt; "1" V1p5CompleteSequences : V1p5complete_sequences
     click V1p5CompleteSequences href "../V1p5CompleteSequences"
 
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_library_generation_kit_version
+      V1p5NucleicAcidProcessing : V1p5library_generation_kit_version
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_library_generation_method
-
-
+      V1p5NucleicAcidProcessing : V1p5library_generation_method
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5LibraryGenerationMethod : V1p5NucleicAcidProcessing_library_generation_method
+
+
+    V1p5NucleicAcidProcessing --&gt; "1" V1p5LibraryGenerationMethod : V1p5library_generation_method
     click V1p5LibraryGenerationMethod href "../V1p5LibraryGenerationMethod"
 
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_library_generation_protocol
+      V1p5NucleicAcidProcessing : V1p5library_generation_protocol
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_pcr_target
-
-
+      V1p5NucleicAcidProcessing : V1p5pcr_target
 
 
-    V1p5NucleicAcidProcessing --&gt; "*" V1p5PCRTarget : V1p5NucleicAcidProcessing_pcr_target
+
+
+    V1p5NucleicAcidProcessing --&gt; "*" V1p5PCRTarget : V1p5pcr_target
     click V1p5PCRTarget href "../V1p5PCRTarget"
 
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_physical_linkage
+      V1p5NucleicAcidProcessing : V1p5physical_linkage
 
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5PhysicalLinkage : V1p5NucleicAcidProcessing_physical_linkage
+    V1p5NucleicAcidProcessing --&gt; "1" V1p5PhysicalLinkage : V1p5physical_linkage
     click V1p5PhysicalLinkage href "../V1p5PhysicalLinkage"
 
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_template_amount
+      V1p5NucleicAcidProcessing : V1p5template_amount
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_template_amount_unit
-
-
+      V1p5NucleicAcidProcessing : V1p5template_amount_unit
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5TemplateAmountUnit : V1p5NucleicAcidProcessing_template_amount_unit
+
+
+    V1p5NucleicAcidProcessing --&gt; "1" V1p5TemplateAmountUnit : V1p5template_amount_unit
     click V1p5TemplateAmountUnit href "../V1p5TemplateAmountUnit"
 
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_template_class
+      V1p5NucleicAcidProcessing : V1p5template_class
 
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5TemplateClass : V1p5NucleicAcidProcessing_template_class
+    V1p5NucleicAcidProcessing --&gt; "1" V1p5TemplateClass : V1p5template_class
     click V1p5TemplateClass href "../V1p5TemplateClass"
 
 
-      V1p5NucleicAcidProcessing : V1p5NucleicAcidProcessing_template_quality
+      V1p5NucleicAcidProcessing : V1p5template_quality
 
 
 </div>
@@ -276,61 +276,61 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_template_class/">V1p5NucleicAcidProcessing_template_class</a></td>
+<td><a href="../V1p5template_class/">V1p5template_class</a></td>
 <td>1 <br/> <a href="../V1p5TemplateClass/">V1p5TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_template_quality/">V1p5NucleicAcidProcessing_template_quality</a></td>
+<td><a href="../V1p5template_quality/">V1p5template_quality</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_template_amount/">V1p5NucleicAcidProcessing_template_amount</a></td>
+<td><a href="../V1p5template_amount/">V1p5template_amount</a></td>
 <td>1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_template_amount_unit/">V1p5NucleicAcidProcessing_template_amount_unit</a></td>
+<td><a href="../V1p5template_amount_unit/">V1p5template_amount_unit</a></td>
 <td>1 <br/> <a href="../V1p5TemplateAmountUnit/">V1p5TemplateAmountUnit</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_library_generation_method/">V1p5NucleicAcidProcessing_library_generation_method</a></td>
+<td><a href="../V1p5library_generation_method/">V1p5library_generation_method</a></td>
 <td>1 <br/> <a href="../V1p5LibraryGenerationMethod/">V1p5LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_library_generation_protocol/">V1p5NucleicAcidProcessing_library_generation_protocol</a></td>
+<td><a href="../V1p5library_generation_protocol/">V1p5library_generation_protocol</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_library_generation_kit_version/">V1p5NucleicAcidProcessing_library_generation_kit_version</a></td>
+<td><a href="../V1p5library_generation_kit_version/">V1p5library_generation_kit_version</a></td>
 <td>1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_pcr_target/">V1p5NucleicAcidProcessing_pcr_target</a></td>
+<td><a href="../V1p5pcr_target/">V1p5pcr_target</a></td>
 <td>* <br/> <a href="../V1p5PCRTarget/">V1p5PCRTarget</a></td>
 <td>If a PCR step was performed that specifically targets the IG/TR loci, the tar...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_complete_sequences/">V1p5NucleicAcidProcessing_complete_sequences</a></td>
+<td><a href="../V1p5complete_sequences/">V1p5complete_sequences</a></td>
 <td>1 <br/> <a href="../V1p5CompleteSequences/">V1p5CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5NucleicAcidProcessing_physical_linkage/">V1p5NucleicAcidProcessing_physical_linkage</a></td>
+<td><a href="../V1p5physical_linkage/">V1p5physical_linkage</a></td>
 <td>1 <br/> <a href="../V1p5PhysicalLinkage/">V1p5PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
@@ -368,16 +368,16 @@
 <pre><code class="language-yaml">name: V1p5NucleicAcidProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
-- V1p5NucleicAcidProcessing_template_class
-- V1p5NucleicAcidProcessing_template_quality
-- V1p5NucleicAcidProcessing_template_amount
-- V1p5NucleicAcidProcessing_template_amount_unit
-- V1p5NucleicAcidProcessing_library_generation_method
-- V1p5NucleicAcidProcessing_library_generation_protocol
-- V1p5NucleicAcidProcessing_library_generation_kit_version
-- V1p5NucleicAcidProcessing_pcr_target
-- V1p5NucleicAcidProcessing_complete_sequences
-- V1p5NucleicAcidProcessing_physical_linkage
+- V1p5template_class
+- V1p5template_quality
+- V1p5template_amount
+- V1p5template_amount_unit
+- V1p5library_generation_method
+- V1p5library_generation_protocol
+- V1p5library_generation_kit_version
+- V1p5pcr_target
+- V1p5complete_sequences
+- V1p5physical_linkage
 
 </code></pre>
 </details>
@@ -386,8 +386,8 @@ slots:
 <pre><code class="language-yaml">name: V1p5NucleicAcidProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
-  V1p5NucleicAcidProcessing_template_class:
-    name: V1p5NucleicAcidProcessing_template_class
+  V1p5template_class:
+    name: V1p5template_class
     annotations:
       nullable:
         tag: nullable
@@ -396,15 +396,15 @@ attributes:
       for the following procedures
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_template_class
+    alias: V1p5template_class
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5TemplateClass
     required: true
-  V1p5NucleicAcidProcessing_template_quality:
-    name: V1p5NucleicAcidProcessing_template_quality
+  V1p5template_quality:
+    name: V1p5template_quality
     annotations:
       nullable:
         tag: nullable
@@ -413,15 +413,15 @@ attributes:
       material
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_template_quality
+    alias: V1p5template_quality
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5NucleicAcidProcessing_template_amount:
-    name: V1p5NucleicAcidProcessing_template_amount
+  V1p5template_amount:
+    name: V1p5template_amount
     annotations:
       nullable:
         tag: nullable
@@ -429,15 +429,15 @@ attributes:
     description: Amount of template that went into the process
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_template_amount
+    alias: V1p5template_amount
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: float
     required: true
-  V1p5NucleicAcidProcessing_template_amount_unit:
-    name: V1p5NucleicAcidProcessing_template_amount_unit
+  V1p5template_amount_unit:
+    name: V1p5template_amount_unit
     annotations:
       nullable:
         tag: nullable
@@ -445,15 +445,15 @@ attributes:
     description: Unit of template amount
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_template_amount_unit
+    alias: V1p5template_amount_unit
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5TemplateAmountUnit
     required: true
-  V1p5NucleicAcidProcessing_library_generation_method:
-    name: V1p5NucleicAcidProcessing_library_generation_method
+  V1p5library_generation_method:
+    name: V1p5library_generation_method
     annotations:
       nullable:
         tag: nullable
@@ -461,15 +461,15 @@ attributes:
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_library_generation_method
+    alias: V1p5library_generation_method
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5LibraryGenerationMethod
     required: true
-  V1p5NucleicAcidProcessing_library_generation_protocol:
-    name: V1p5NucleicAcidProcessing_library_generation_protocol
+  V1p5library_generation_protocol:
+    name: V1p5library_generation_protocol
     annotations:
       nullable:
         tag: nullable
@@ -478,15 +478,15 @@ attributes:
       that is ready for sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_library_generation_protocol
+    alias: V1p5library_generation_protocol
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5NucleicAcidProcessing_library_generation_kit_version:
-    name: V1p5NucleicAcidProcessing_library_generation_kit_version
+  V1p5library_generation_kit_version:
+    name: V1p5library_generation_kit_version
     annotations:
       nullable:
         tag: nullable
@@ -495,15 +495,15 @@ attributes:
       provide the protocol version number
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_library_generation_kit_version
+    alias: V1p5library_generation_kit_version
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
     required: true
-  V1p5NucleicAcidProcessing_pcr_target:
-    name: V1p5NucleicAcidProcessing_pcr_target
+  V1p5pcr_target:
+    name: V1p5pcr_target
     annotations:
       nullable:
         tag: nullable
@@ -516,7 +516,7 @@ attributes:
       appropriate library_generation_method instead.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_pcr_target
+    alias: V1p5pcr_target
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
@@ -524,8 +524,8 @@ attributes:
     range: V1p5PCRTarget
     required: false
     multivalued: true
-  V1p5NucleicAcidProcessing_complete_sequences:
-    name: V1p5NucleicAcidProcessing_complete_sequences
+  V1p5complete_sequences:
+    name: V1p5complete_sequences
     annotations:
       nullable:
         tag: nullable
@@ -543,15 +543,15 @@ attributes:
       replacement of a NULL value.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_complete_sequences
+    alias: V1p5complete_sequences
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5CompleteSequences
     required: true
-  V1p5NucleicAcidProcessing_physical_linkage:
-    name: V1p5NucleicAcidProcessing_physical_linkage
+  V1p5physical_linkage:
+    name: V1p5physical_linkage
     annotations:
       nullable:
         tag: nullable
@@ -568,7 +568,7 @@ attributes:
       linkage was already present on the DNA level (e.g. scFv).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5NucleicAcidProcessing_physical_linkage
+    alias: V1p5physical_linkage
     owner: V1p5NucleicAcidProcessing
     domain_of:
     - V1p5NucleicAcidProcessing
