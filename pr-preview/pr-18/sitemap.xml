@@ -596,6 +596,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/RepertoireGroupDetail/</loc>
+         <lastmod>2024-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Sample/</loc>
          <lastmod>2024-11-26</lastmod>
          <changefreq>daily</changefreq>
@@ -3007,6 +3012,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/template_quality/</loc>
+         <lastmod>2024-11-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/time_point/</loc>
          <lastmod>2024-11-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
