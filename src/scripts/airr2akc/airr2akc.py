@@ -48,7 +48,9 @@ def get_slot_range(slot_name, slot_yaml, version_prefix):
     # elif "x-airr" in slot_yaml and "format" in slot_yaml["x-airr"]:
     #     slot_range = slot_yaml["x-airr"]["format"]  #
     elif "type" in slot_yaml and slot_yaml["type"] == "object":
-        logging.error(f"Error: Cannot determine range for slot '{slot_name}', omitting range...")
+        logging.error(f"**\n"
+                      f"** Error: Cannot determine range for slot '{slot_name}', omitting range...\n"
+                      f"**")
         slot_range = None
     else:
         raise NotImplementedError(slot_yaml)
@@ -134,13 +136,17 @@ def get_ontology_enum(name, slot_yaml, keyword, version_prefix):
                          "include_self": True,
                          "relationship_types": ["rdfs:subClassOf"]}}
         else:
-            logging.error(f"Error: Source node for ontology '{name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
-                  f"  Expected to find some value in the field: x-airr/ontology/top_node/id\n"
-                  f"  Instead found these fields: {slot_yaml}")
+            logging.error(f"**\n"
+                          f"** Error: Source node for ontology '{name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
+                          f"**   Expected to find some value in the field: x-airr/ontology/top_node/id\n"
+                          f"**   Instead found these fields: {slot_yaml}\n"
+                          f"**")
     else:
-        logging.error(f"Error: Ontology '{name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
-              f"  Expected to find the field: x-airr/ontology/top_node/id\n"
-              f"  Instead found these fields: {slot_yaml}")
+        logging.error(f"**\n"
+                      f"** Error: Ontology '{name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
+                      f"**   Expected to find the field: x-airr/ontology/top_node/id\n"
+                      f"**   Instead found these fields: {slot_yaml}\n"
+                      f"**")
 
     return {"name": f"{version_prefix}{name}"}
 
@@ -254,16 +260,18 @@ def safe_update_yaml_component(output_yaml_part, new_yaml_part, type_name):
                     if get_differing_fields(new_yaml_part[key]["permissible_values"], output_yaml_part[key]["permissible_values"]) == ['null']:
                         intersecting_yaml["permissible_values"]["null"] = None
                         conflict_fields.remove("permissible_values")
-                        logging.warning(f"Keeping value 'null' in permissible_values for {type_name} '{key}' (only sometimes present in input)")
+                        logging.warning(f"Warning: Keeping value 'null' in permissible_values for {type_name} '{key}' (only sometimes present in input)")
 
                 if not all([field in ignore_fields for field in conflict_fields]):
                     conflicts.append(key)
-                    logging.warning(f"Error: Conflicting {type_name} '{key}'. Same {type_name} was already found with different content (only 'final' is kept):\n"
-                                    f"  Existing: {new_yaml_part[key]}\n"
-                                    f"  New:      {output_yaml_part[key]}\n"
-                                    f"  Final:    {intersecting_yaml}")
+                    logging.error(f"**\n"
+                                    f"** Error: Conflicting {type_name} '{key}'. Same {type_name} was already found with different content (only 'final' is kept):\n"
+                                    f"**   Existing: {new_yaml_part[key]}\n"
+                                    f"**   New:      {output_yaml_part[key]}\n"
+                                    f"**   Final:    {intersecting_yaml}\n"
+                                    f"**")
                 elif len(conflict_fields) > 0:
-                    logging.warning(f"Removing fields {conflict_fields} from {type_name} '{key}' due to conflicting values.")
+                    logging.warning(f"Warning: Removing fields {conflict_fields} from {type_name} '{key}' due to conflicting values.")
 
                 output_yaml_part[key] = intersecting_yaml
         else:
@@ -329,7 +337,7 @@ def log_error_summary(conflicts):
     flush_log()
     logging.info("\nSummary of errors during AIRR LinkML generation:")
 
-    logging.info(f"  {ErrorCounter.count} errors in constructing the correct LinkML for a class/slot/enum")
+    logging.info(f"  {ErrorCounter.count} errors occurred while constructing LinkML")
     for conflict_type in ("class", "slot", "enum"):
         conflicts_of_type = list(set(conflicts[f"{conflict_type}_conflicts"]))
         if len(conflicts_of_type) == 0:
@@ -349,7 +357,7 @@ def check_conflicts_with_akc_file(output_yaml, ak_data, file_path):
             for ak_key in ak_data.keys():
                 if ak_key in base_keys:
                     if airr_name in ak_data[ak_key]:
-                        logging.warning(f"Overlapping namespace between AIRR and AKC LinkML ({file_path}): {airr_name} occurs in AIRR {airr_key} and AKC {ak_key}")
+                        logging.warning(f"Warning: Overlapping namespace between AIRR and AKC LinkML ({file_path}): {airr_name} occurs in AIRR {airr_key} and AKC {ak_key}")
                         overlapping_names.append(airr_name)
 
     return overlapping_names
@@ -421,9 +429,8 @@ def main(parsed_args):
     airr_version = airr_yaml["Info"]["version"]
     version_prefix = f"V{str(airr_version).replace('.', 'p')}" if parsed_args.include_version_prefix else ""
 
-    logging.info(f"Generating LinkML for AIRR version {airr_version}\n"
-                 f"  Input: {parsed_args.airr_schema_yaml}\n"
-                 f"  Output: {parsed_args.output_file}\n")
+    logging.info(f"Generating LinkML for AIRR version {airr_version}\n" +
+                 "\n".join([f"  {key}: {value}" for key, value in vars(parsed_args).items()]) + "\n")
     flush_log()
 
 

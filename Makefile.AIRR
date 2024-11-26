@@ -1,7 +1,14 @@
-AIRR_SCHEMA_OUTPUT=src/ak_schema/schema/ak_airr.yaml
+AIRR_SCHEMA_OUTPUT_DIR=src/ak_schema/schema
 SCRIPT_DIR=src/scripts/airr2akc
-AIRR_SCHEMA_INPUT=src/airr_schema/airr-standards-v1.5/specs/airr-schema-openapi3.yaml
+AIRR_SCHEMA_V1.5_INPUT=src/airr_schema/airr-standards-v1.5/specs/airr-schema-openapi3.yaml
+AIRR_SCHEMA_V2.0_INPUT=src/airr_schema/airr-standards-v2.0/specs/airr-schema-openapi3.yaml
+LOGFILE_DIR=tmp
 
-airr_schema:
-	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT) -a $(AIRR_SCHEMA_INPUT)
+airr_schema: airr_schema_1.5 airr_schema_2.0
+
+airr_schema_1.5:
+	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_airr_v1.5.yaml -a $(AIRR_SCHEMA_V1.5_INPUT) -l $(LOGFILE_DIR)/airr2akc_v1.5.log -v -c
+
+airr_schema_2.0:
+	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_airr_v2.0.yaml -a $(AIRR_SCHEMA_V2.0_INPUT) -l $(LOGFILE_DIR)/airr2akc_v2.0.log -v -c
 
