@@ -80,6 +80,27 @@ class Repertoire(Parser):
                 'TCellReceptor':'tcell_receptors',
                 'Epitope':'epitopes'
                 }
+        # A mapping of AKC class to the slot it should be stored in in
+        # AIRRKnowledgeCommons
+        self.akc_slot_list = [
+                'investigations',
+                'references',
+                'study_arms',
+                'study_events',
+                'participants',
+                'life_events',
+                'immune_exposures',
+                'assessments',
+                'specimens',
+                'specimen_collections',
+                'specimen_processings',
+                'assays',
+                'datasets',
+                'conclusions',
+                'chains',
+                'tcell_receptors',
+                'epitopes'
+                ]
 
     def classToSlot(self, class_name):
         if class_name in self.akc_class_to_slot:
@@ -89,6 +110,9 @@ class Repertoire(Parser):
 
     def classToSlotList(self):
         return self.akc_class_to_slot
+
+    def slotList(self):
+        return self.akc_slot_list
 
     def getAIRRUniqueLink(self, repertoire_dict, link_class, akc_class):
         # Get the link name for a class instance. Default to None

@@ -244,7 +244,24 @@ class AIRRRepertoire(Repertoire):
                         # when they are not of the correct subclass. 
                         if type(akc_instance_dict) == type(tmp_object):
                             self.removeADCData(akc_instance_dict, akc_class)
+                            
+        for akc_tag, akc_object in investigation_dict.items():
+            # Get the list of slots in the AIRRKnowledgeCommons objects
+            # and iterate over them
+            slot_list = self.slotList()
+            for akc_slot in slot_list:
+                # Get the class list for this slot
+                akc_class_slot = akc_object[akc_slot]
+                # Create a new empty dictionary, we are essentially going to copy
+                # the instance dictionaries with a new key that is the unique UUID
+                new_slot_dict = dict()
+                # For every instance, add it to the dictionary using the UUID as
+                # the key.
+                for akc_instance, akc_instance_dict in akc_class_slot.items():
+                    new_slot_dict[akc_instance_dict['akc_id']] = akc_instance_dict
 
+                # Replace the old dictionary with the new dictionary
+                akc_object[akc_slot] = new_slot_dict
 
         # We are done, dump out the JSON to the output file.
         print(json_dumper.dumps(investigation_dict), file=out_file)
