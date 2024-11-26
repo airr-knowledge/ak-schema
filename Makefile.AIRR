@@ -7,8 +7,8 @@ LOGFILE_DIR=tmp
 airr_schema: airr_schema_1.5 airr_schema_2.0
 
 airr_schema_1.5:
-	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_airr_v1.5.yaml -a $(AIRR_SCHEMA_V1.5_INPUT) -f $(AIRR_SCHEMA_OUTPUT_DIR) -l $(LOGFILE_DIR)/airr2akc_v1.5.log -v -c
+	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_airr_v1.5.yaml -a $(AIRR_SCHEMA_V1.5_INPUT) -f $(AIRR_SCHEMA_OUTPUT_DIR) -l $(LOGFILE_DIR)/airr2akc_v1.5.log -v
 
 airr_schema_2.0:
-	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_airr_v2.0.yaml -a $(AIRR_SCHEMA_V2.0_INPUT) -f $(AIRR_SCHEMA_OUTPUT_DIR) -l $(LOGFILE_DIR)/airr2akc_v2.0.log -v -c
+	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_airr_v2.0.yaml -a $(AIRR_SCHEMA_V2.0_INPUT) -f $(AIRR_SCHEMA_OUTPUT_DIR) -l $(LOGFILE_DIR)/airr2akc_v2.0.log -v
 

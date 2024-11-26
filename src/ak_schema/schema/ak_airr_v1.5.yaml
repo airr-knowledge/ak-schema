@@ -7,4094 +7,3384 @@ name: ak-schema
 classes:
   V1p5TimePoint:
     slots:
-      - V1p5TimePoint_label
-      - V1p5TimePoint_value
-      - V1p5TimePoint_unit
+      - V1p5label
+      - V1p5value
+      - V1p5unit
   V1p5Acknowledgement:
     slots:
-      - V1p5Acknowledgement_acknowledgement_id
-      - V1p5Acknowledgement_name
-      - V1p5Acknowledgement_institution_name
-      - V1p5Acknowledgement_orcid_id
+      - V1p5acknowledgement_id
+      - V1p5name
+      - V1p5institution_name
+      - V1p5orcid_id
   V1p5RearrangedSequence:
     slots:
-      - V1p5RearrangedSequence_sequence_id
-      - V1p5RearrangedSequence_sequence
-      - V1p5RearrangedSequence_derivation
-      - V1p5RearrangedSequence_observation_type
-      - V1p5RearrangedSequence_curation
-      - V1p5RearrangedSequence_repository_name
-      - V1p5RearrangedSequence_repository_ref
-      - V1p5RearrangedSequence_deposited_version
-      - V1p5RearrangedSequence_sequence_start
-      - V1p5RearrangedSequence_sequence_end
+      - V1p5sequence_id
+      - V1p5sequence
+      - V1p5derivation
+      - V1p5observation_type
+      - V1p5curation
+      - V1p5repository_name
+      - V1p5repository_ref
+      - V1p5deposited_version
+      - V1p5sequence_start
+      - V1p5sequence_end
   V1p5UnrearrangedSequence:
     slots:
-      - V1p5UnrearrangedSequence_sequence_id
-      - V1p5UnrearrangedSequence_sequence
-      - V1p5UnrearrangedSequence_curation
-      - V1p5UnrearrangedSequence_repository_name
-      - V1p5UnrearrangedSequence_repository_ref
-      - V1p5UnrearrangedSequence_patch_no
-      - V1p5UnrearrangedSequence_gff_seqid
-      - V1p5UnrearrangedSequence_gff_start
-      - V1p5UnrearrangedSequence_gff_end
-      - V1p5UnrearrangedSequence_strand
+      - V1p5sequence_id
+      - V1p5sequence
+      - V1p5curation
+      - V1p5repository_name
+      - V1p5repository_ref
+      - V1p5patch_no
+      - V1p5gff_seqid
+      - V1p5gff_start
+      - V1p5gff_end
+      - V1p5strand
   V1p5SequenceDelineationV:
     slots:
-      - V1p5SequenceDelineationV_sequence_delineation_id
-      - V1p5SequenceDelineationV_delineation_scheme
-      - V1p5SequenceDelineationV_unaligned_sequence
-      - V1p5SequenceDelineationV_aligned_sequence
-      - V1p5SequenceDelineationV_fwr1_start
-      - V1p5SequenceDelineationV_fwr1_end
-      - V1p5SequenceDelineationV_cdr1_start
-      - V1p5SequenceDelineationV_cdr1_end
-      - V1p5SequenceDelineationV_fwr2_start
-      - V1p5SequenceDelineationV_fwr2_end
-      - V1p5SequenceDelineationV_cdr2_start
-      - V1p5SequenceDelineationV_cdr2_end
-      - V1p5SequenceDelineationV_fwr3_start
-      - V1p5SequenceDelineationV_fwr3_end
-      - V1p5SequenceDelineationV_cdr3_start
-      - V1p5SequenceDelineationV_alignment_labels
+      - V1p5sequence_delineation_id
+      - V1p5delineation_scheme
+      - V1p5unaligned_sequence
+      - V1p5aligned_sequence
+      - V1p5fwr1_start
+      - V1p5fwr1_end
+      - V1p5cdr1_start
+      - V1p5cdr1_end
+      - V1p5fwr2_start
+      - V1p5fwr2_end
+      - V1p5cdr2_start
+      - V1p5cdr2_end
+      - V1p5fwr3_start
+      - V1p5fwr3_end
+      - V1p5cdr3_start
+      - V1p5alignment_labels
   V1p5AlleleDescription:
     slots:
-      - V1p5AlleleDescription_allele_description_id
-      - V1p5AlleleDescription_allele_description_ref
-      - V1p5AlleleDescription_maintainer
-      - V1p5AlleleDescription_acknowledgements
-      - V1p5AlleleDescription_lab_address
-      - V1p5AlleleDescription_release_version
-      - V1p5AlleleDescription_release_date
-      - V1p5AlleleDescription_release_description
-      - V1p5AlleleDescription_label
-      - V1p5AlleleDescription_sequence
-      - V1p5AlleleDescription_coding_sequence
-      - V1p5AlleleDescription_aliases
-      - V1p5AlleleDescription_locus
-      - V1p5AlleleDescription_chromosome
-      - V1p5AlleleDescription_sequence_type
-      - V1p5AlleleDescription_functional
-      - V1p5AlleleDescription_inference_type
-      - V1p5AlleleDescription_species
-      - V1p5AlleleDescription_species_subgroup
-      - V1p5AlleleDescription_species_subgroup_type
-      - V1p5AlleleDescription_status
-      - V1p5AlleleDescription_subgroup_designation
-      - V1p5AlleleDescription_gene_designation
-      - V1p5AlleleDescription_allele_designation
-      - V1p5AlleleDescription_allele_similarity_cluster_designation
-      - V1p5AlleleDescription_allele_similarity_cluster_member_id
-      - V1p5AlleleDescription_j_codon_frame
-      - V1p5AlleleDescription_gene_start
-      - V1p5AlleleDescription_gene_end
-      - V1p5AlleleDescription_utr_5_prime_start
-      - V1p5AlleleDescription_utr_5_prime_end
-      - V1p5AlleleDescription_leader_1_start
-      - V1p5AlleleDescription_leader_1_end
-      - V1p5AlleleDescription_leader_2_start
-      - V1p5AlleleDescription_leader_2_end
-      - V1p5AlleleDescription_v_rs_start
-      - V1p5AlleleDescription_v_rs_end
-      - V1p5AlleleDescription_d_rs_3_prime_start
-      - V1p5AlleleDescription_d_rs_3_prime_end
-      - V1p5AlleleDescription_d_rs_5_prime_start
-      - V1p5AlleleDescription_d_rs_5_prime_end
-      - V1p5AlleleDescription_j_cdr3_end
-      - V1p5AlleleDescription_j_rs_start
-      - V1p5AlleleDescription_j_rs_end
-      - V1p5AlleleDescription_j_donor_splice
-      - V1p5AlleleDescription_v_gene_delineations
-      - V1p5AlleleDescription_unrearranged_support
-      - V1p5AlleleDescription_rearranged_support
-      - V1p5AlleleDescription_paralogs
-      - V1p5AlleleDescription_curation
-      - V1p5AlleleDescription_curational_tags
+      - V1p5allele_description_id
+      - V1p5allele_description_ref
+      - V1p5maintainer
+      - V1p5acknowledgements
+      - V1p5lab_address
+      - V1p5release_version
+      - V1p5release_date
+      - V1p5release_description
+      - V1p5label
+      - V1p5sequence
+      - V1p5coding_sequence
+      - V1p5aliases
+      - V1p5locus
+      - V1p5chromosome
+      - V1p5sequence_type
+      - V1p5functional
+      - V1p5inference_type
+      - V1p5species
+      - V1p5species_subgroup
+      - V1p5species_subgroup_type
+      - V1p5status
+      - V1p5subgroup_designation
+      - V1p5gene_designation
+      - V1p5allele_designation
+      - V1p5allele_similarity_cluster_designation
+      - V1p5allele_similarity_cluster_member_id
+      - V1p5j_codon_frame
+      - V1p5gene_start
+      - V1p5gene_end
+      - V1p5utr_5_prime_start
+      - V1p5utr_5_prime_end
+      - V1p5leader_1_start
+      - V1p5leader_1_end
+      - V1p5leader_2_start
+      - V1p5leader_2_end
+      - V1p5v_rs_start
+      - V1p5v_rs_end
+      - V1p5d_rs_3_prime_start
+      - V1p5d_rs_3_prime_end
+      - V1p5d_rs_5_prime_start
+      - V1p5d_rs_5_prime_end
+      - V1p5j_cdr3_end
+      - V1p5j_rs_start
+      - V1p5j_rs_end
+      - V1p5j_donor_splice
+      - V1p5v_gene_delineations
+      - V1p5unrearranged_support
+      - V1p5rearranged_support
+      - V1p5paralogs
+      - V1p5curation
+      - V1p5curational_tags
   V1p5GermlineSet:
     slots:
-      - V1p5GermlineSet_germline_set_id
-      - V1p5GermlineSet_author
-      - V1p5GermlineSet_lab_name
-      - V1p5GermlineSet_lab_address
-      - V1p5GermlineSet_acknowledgements
-      - V1p5GermlineSet_release_version
-      - V1p5GermlineSet_release_description
-      - V1p5GermlineSet_release_date
-      - V1p5GermlineSet_germline_set_name
-      - V1p5GermlineSet_germline_set_ref
-      - V1p5GermlineSet_pub_ids
-      - V1p5GermlineSet_species
-      - V1p5GermlineSet_species_subgroup
-      - V1p5GermlineSet_species_subgroup_type
-      - V1p5GermlineSet_locus
-      - V1p5GermlineSet_allele_descriptions
-      - V1p5GermlineSet_curation
+      - V1p5germline_set_id
+      - V1p5author
+      - V1p5lab_name
+      - V1p5lab_address
+      - V1p5acknowledgements
+      - V1p5release_version
+      - V1p5release_description
+      - V1p5release_date
+      - V1p5germline_set_name
+      - V1p5germline_set_ref
+      - V1p5pub_ids
+      - V1p5species
+      - V1p5species_subgroup
+      - V1p5species_subgroup_type
+      - V1p5locus
+      - V1p5allele_descriptions
+      - V1p5curation
   V1p5GenotypeSet:
     slots:
-      - V1p5GenotypeSet_receptor_genotype_set_id
-      - V1p5GenotypeSet_genotype_class_list
+      - V1p5receptor_genotype_set_id
+      - V1p5genotype_class_list
   V1p5Genotype:
     slots:
-      - V1p5Genotype_receptor_genotype_id
-      - V1p5Genotype_locus
-      - V1p5Genotype_documented_alleles
-      - V1p5Genotype_undocumented_alleles
-      - V1p5Genotype_deleted_genes
-      - V1p5Genotype_inference_process
+      - V1p5receptor_genotype_id
+      - V1p5locus
+      - V1p5documented_alleles
+      - V1p5undocumented_alleles
+      - V1p5deleted_genes
+      - V1p5inference_process
   V1p5DocumentedAllele:
     slots:
-      - V1p5DocumentedAllele_label
-      - V1p5DocumentedAllele_germline_set_ref
-      - V1p5DocumentedAllele_phasing
+      - V1p5label
+      - V1p5germline_set_ref
+      - V1p5phasing
   V1p5UndocumentedAllele:
     slots:
-      - V1p5UndocumentedAllele_allele_name
-      - V1p5UndocumentedAllele_sequence
-      - V1p5UndocumentedAllele_phasing
+      - V1p5allele_name
+      - V1p5sequence
+      - V1p5phasing
   V1p5DeletedGene:
     slots:
-      - V1p5DeletedGene_label
-      - V1p5DeletedGene_germline_set_ref
-      - V1p5DeletedGene_phasing
+      - V1p5label
+      - V1p5germline_set_ref
+      - V1p5phasing
   V1p5MHCGenotypeSet:
     slots:
-      - V1p5MHCGenotypeSet_mhc_genotype_set_id
-      - V1p5MHCGenotypeSet_mhc_genotype_list
+      - V1p5mhc_genotype_set_id
+      - V1p5mhc_genotype_list
   V1p5MHCGenotype:
     slots:
-      - V1p5MHCGenotype_mhc_genotype_id
-      - V1p5MHCGenotype_mhc_class
-      - V1p5MHCGenotype_mhc_alleles
-      - V1p5MHCGenotype_mhc_genotyping_method
+      - V1p5mhc_genotype_id
+      - V1p5mhc_class
+      - V1p5mhc_alleles
+      - V1p5mhc_genotyping_method
   V1p5MHCAllele:
     slots:
-      - V1p5MHCAllele_allele_designation
-      - V1p5MHCAllele_gene
-      - V1p5MHCAllele_reference_set_ref
+      - V1p5allele_designation
+      - V1p5gene
+      - V1p5reference_set_ref
   V1p5SubjectGenotype:
     slots:
-      - V1p5SubjectGenotype_receptor_genotype_set
-      - V1p5SubjectGenotype_mhc_genotype_set
+      - V1p5receptor_genotype_set
+      - V1p5mhc_genotype_set
   V1p5Study:
     slots:
-      - V1p5Study_study_id
-      - V1p5Study_study_title
-      - V1p5Study_study_type
-      - V1p5Study_study_description
-      - V1p5Study_inclusion_exclusion_criteria
-      - V1p5Study_grants
-      - V1p5Study_study_contact
-      - V1p5Study_collected_by
-      - V1p5Study_lab_name
-      - V1p5Study_lab_address
-      - V1p5Study_submitted_by
-      - V1p5Study_pub_ids
-      - V1p5Study_keywords_study
-      - V1p5Study_adc_publish_date
-      - V1p5Study_adc_update_date
+      - V1p5study_id
+      - V1p5study_title
+      - V1p5study_type
+      - V1p5study_description
+      - V1p5inclusion_exclusion_criteria
+      - V1p5grants
+      - V1p5study_contact
+      - V1p5collected_by
+      - V1p5lab_name
+      - V1p5lab_address
+      - V1p5submitted_by
+      - V1p5pub_ids
+      - V1p5keywords_study
+      - V1p5adc_publish_date
+      - V1p5adc_update_date
   V1p5Subject:
     slots:
-      - V1p5Subject_subject_id
-      - V1p5Subject_synthetic
-      - V1p5Subject_species
-      - V1p5Subject_sex
-      - V1p5Subject_age_min
-      - V1p5Subject_age_max
-      - V1p5Subject_age_unit
-      - V1p5Subject_age_event
-      - V1p5Subject_ancestry_population
-      - V1p5Subject_ethnicity
-      - V1p5Subject_race
-      - V1p5Subject_strain_name
-      - V1p5Subject_linked_subjects
-      - V1p5Subject_link_type
-      - V1p5Subject_diagnosis
-      - V1p5Subject_genotype
+      - V1p5subject_id
+      - V1p5synthetic
+      - V1p5species
+      - V1p5sex
+      - V1p5age_min
+      - V1p5age_max
+      - V1p5age_unit
+      - V1p5age_event
+      - V1p5ancestry_population
+      - V1p5ethnicity
+      - V1p5race
+      - V1p5strain_name
+      - V1p5linked_subjects
+      - V1p5link_type
+      - V1p5diagnosis
+      - V1p5genotype
   V1p5Diagnosis:
     slots:
-      - V1p5Diagnosis_study_group_description
-      - V1p5Diagnosis_disease_diagnosis
-      - V1p5Diagnosis_disease_length
-      - V1p5Diagnosis_disease_stage
-      - V1p5Diagnosis_prior_therapies
-      - V1p5Diagnosis_immunogen
-      - V1p5Diagnosis_intervention
-      - V1p5Diagnosis_medical_history
+      - V1p5study_group_description
+      - V1p5disease_diagnosis
+      - V1p5disease_length
+      - V1p5disease_stage
+      - V1p5prior_therapies
+      - V1p5immunogen
+      - V1p5intervention
+      - V1p5medical_history
   V1p5Sample:
     slots:
-      - V1p5Sample_sample_id
-      - V1p5Sample_sample_type
-      - V1p5Sample_tissue
-      - V1p5Sample_anatomic_site
-      - V1p5Sample_disease_state_sample
-      - V1p5Sample_collection_time_point_relative
-      - V1p5Sample_collection_time_point_relative_unit
-      - V1p5Sample_collection_time_point_reference
-      - V1p5Sample_biomaterial_provider
+      - V1p5sample_id
+      - V1p5sample_type
+      - V1p5tissue
+      - V1p5anatomic_site
+      - V1p5disease_state_sample
+      - V1p5collection_time_point_relative
+      - V1p5collection_time_point_relative_unit
+      - V1p5collection_time_point_reference
+      - V1p5biomaterial_provider
   V1p5CellProcessing:
     slots:
-      - V1p5CellProcessing_tissue_processing
-      - V1p5CellProcessing_cell_subset
-      - V1p5CellProcessing_cell_phenotype
-      - V1p5CellProcessing_cell_species
-      - V1p5CellProcessing_single_cell
-      - V1p5CellProcessing_cell_number
-      - V1p5CellProcessing_cells_per_reaction
-      - V1p5CellProcessing_cell_storage
-      - V1p5CellProcessing_cell_quality
-      - V1p5CellProcessing_cell_isolation
-      - V1p5CellProcessing_cell_processing_protocol
+      - V1p5tissue_processing
+      - V1p5cell_subset
+      - V1p5cell_phenotype
+      - V1p5cell_species
+      - V1p5single_cell
+      - V1p5cell_number
+      - V1p5cells_per_reaction
+      - V1p5cell_storage
+      - V1p5cell_quality
+      - V1p5cell_isolation
+      - V1p5cell_processing_protocol
   V1p5PCRTarget:
     slots:
-      - V1p5PCRTarget_pcr_target_locus
-      - V1p5PCRTarget_forward_pcr_primer_target_location
-      - V1p5PCRTarget_reverse_pcr_primer_target_location
+      - V1p5pcr_target_locus
+      - V1p5forward_pcr_primer_target_location
+      - V1p5reverse_pcr_primer_target_location
   V1p5NucleicAcidProcessing:
     slots:
-      - V1p5NucleicAcidProcessing_template_class
-      - V1p5NucleicAcidProcessing_template_quality
-      - V1p5NucleicAcidProcessing_template_amount
-      - V1p5NucleicAcidProcessing_template_amount_unit
-      - V1p5NucleicAcidProcessing_library_generation_method
-      - V1p5NucleicAcidProcessing_library_generation_protocol
-      - V1p5NucleicAcidProcessing_library_generation_kit_version
-      - V1p5NucleicAcidProcessing_pcr_target
-      - V1p5NucleicAcidProcessing_complete_sequences
-      - V1p5NucleicAcidProcessing_physical_linkage
+      - V1p5template_class
+      - V1p5template_quality
+      - V1p5template_amount
+      - V1p5template_amount_unit
+      - V1p5library_generation_method
+      - V1p5library_generation_protocol
+      - V1p5library_generation_kit_version
+      - V1p5pcr_target
+      - V1p5complete_sequences
+      - V1p5physical_linkage
   V1p5SequencingRun:
     slots:
-      - V1p5SequencingRun_sequencing_run_id
-      - V1p5SequencingRun_total_reads_passing_qc_filter
-      - V1p5SequencingRun_sequencing_platform
-      - V1p5SequencingRun_sequencing_facility
-      - V1p5SequencingRun_sequencing_run_date
-      - V1p5SequencingRun_sequencing_kit
-      - V1p5SequencingRun_sequencing_files
+      - V1p5sequencing_run_id
+      - V1p5total_reads_passing_qc_filter
+      - V1p5sequencing_platform
+      - V1p5sequencing_facility
+      - V1p5sequencing_run_date
+      - V1p5sequencing_kit
+      - V1p5sequencing_files
   V1p5SequencingData:
     slots:
-      - V1p5SequencingData_sequencing_data_id
-      - V1p5SequencingData_file_type
-      - V1p5SequencingData_filename
-      - V1p5SequencingData_read_direction
-      - V1p5SequencingData_read_length
-      - V1p5SequencingData_paired_filename
-      - V1p5SequencingData_paired_read_direction
-      - V1p5SequencingData_paired_read_length
-      - V1p5SequencingData_index_filename
-      - V1p5SequencingData_index_length
+      - V1p5sequencing_data_id
+      - V1p5file_type
+      - V1p5filename
+      - V1p5read_direction
+      - V1p5read_length
+      - V1p5paired_filename
+      - V1p5paired_read_direction
+      - V1p5paired_read_length
+      - V1p5index_filename
+      - V1p5index_length
   V1p5DataProcessing:
     slots:
-      - V1p5DataProcessing_data_processing_id
-      - V1p5DataProcessing_primary_annotation
-      - V1p5DataProcessing_software_versions
-      - V1p5DataProcessing_paired_reads_assembly
-      - V1p5DataProcessing_quality_thresholds
-      - V1p5DataProcessing_primer_match_cutoffs
-      - V1p5DataProcessing_collapsing_method
-      - V1p5DataProcessing_data_processing_protocols
-      - V1p5DataProcessing_data_processing_files
-      - V1p5DataProcessing_germline_database
-      - V1p5DataProcessing_germline_set_ref
-      - V1p5DataProcessing_analysis_provenance_id
+      - V1p5data_processing_id
+      - V1p5primary_annotation
+      - V1p5software_versions
+      - V1p5paired_reads_assembly
+      - V1p5quality_thresholds
+      - V1p5primer_match_cutoffs
+      - V1p5collapsing_method
+      - V1p5data_processing_protocols
+      - V1p5data_processing_files
+      - V1p5germline_database
+      - V1p5germline_set_ref
+      - V1p5analysis_provenance_id
   V1p5Repertoire:
     slots:
-      - V1p5Repertoire_repertoire_id
-      - V1p5Repertoire_repertoire_name
-      - V1p5Repertoire_repertoire_description
-      - V1p5Repertoire_study
-      - V1p5Repertoire_subject
-      - V1p5Repertoire_sample
-      - V1p5Repertoire_data_processing
+      - V1p5repertoire_id
+      - V1p5repertoire_name
+      - V1p5repertoire_description
+      - V1p5study
+      - V1p5subject
+      - V1p5sample
+      - V1p5data_processing
   V1p5RepertoireGroupDetail:
     slots:
-      - V1p5RepertoireGroupDetail_repertoire_id
-      - V1p5RepertoireGroupDetail_repertoire_description
-      - V1p5RepertoireGroupDetail_time_point
+      - V1p5repertoire_id
+      - V1p5repertoire_description
+      - V1p5time_point
   V1p5RepertoireGroup:
     slots:
-      - V1p5RepertoireGroup_repertoire_group_id
-      - V1p5RepertoireGroup_repertoire_group_name
-      - V1p5RepertoireGroup_repertoire_group_description
-      - V1p5RepertoireGroup_repertoires
+      - V1p5repertoire_group_id
+      - V1p5repertoire_group_name
+      - V1p5repertoire_group_description
+      - V1p5repertoires
   V1p5Alignment:
     slots:
-      - V1p5Alignment_sequence_id
-      - V1p5Alignment_segment
-      - V1p5Alignment_rev_comp
-      - V1p5Alignment_call
-      - V1p5Alignment_score
-      - V1p5Alignment_identity
-      - V1p5Alignment_support
-      - V1p5Alignment_cigar
-      - V1p5Alignment_sequence_start
-      - V1p5Alignment_sequence_end
-      - V1p5Alignment_germline_start
-      - V1p5Alignment_germline_end
-      - V1p5Alignment_rank
-      - V1p5Alignment_data_processing_id
+      - V1p5sequence_id
+      - V1p5segment
+      - V1p5rev_comp
+      - V1p5call
+      - V1p5score
+      - V1p5identity
+      - V1p5support
+      - V1p5cigar
+      - V1p5sequence_start
+      - V1p5sequence_end
+      - V1p5germline_start
+      - V1p5germline_end
+      - V1p5rank
+      - V1p5data_processing_id
   V1p5Rearrangement:
     slots:
-      - V1p5Rearrangement_sequence_id
-      - V1p5Rearrangement_sequence
-      - V1p5Rearrangement_quality
-      - V1p5Rearrangement_sequence_aa
-      - V1p5Rearrangement_rev_comp
-      - V1p5Rearrangement_productive
-      - V1p5Rearrangement_vj_in_frame
-      - V1p5Rearrangement_stop_codon
-      - V1p5Rearrangement_complete_vdj
-      - V1p5Rearrangement_locus
-      - V1p5Rearrangement_v_call
-      - V1p5Rearrangement_d_call
-      - V1p5Rearrangement_d2_call
-      - V1p5Rearrangement_j_call
-      - V1p5Rearrangement_c_call
-      - V1p5Rearrangement_sequence_alignment
-      - V1p5Rearrangement_quality_alignment
-      - V1p5Rearrangement_sequence_alignment_aa
-      - V1p5Rearrangement_germline_alignment
-      - V1p5Rearrangement_germline_alignment_aa
-      - V1p5Rearrangement_junction
-      - V1p5Rearrangement_junction_aa
-      - V1p5Rearrangement_np1
-      - V1p5Rearrangement_np1_aa
-      - V1p5Rearrangement_np2
-      - V1p5Rearrangement_np2_aa
-      - V1p5Rearrangement_np3
-      - V1p5Rearrangement_np3_aa
-      - V1p5Rearrangement_cdr1
-      - V1p5Rearrangement_cdr1_aa
-      - V1p5Rearrangement_cdr2
-      - V1p5Rearrangement_cdr2_aa
-      - V1p5Rearrangement_cdr3
-      - V1p5Rearrangement_cdr3_aa
-      - V1p5Rearrangement_fwr1
-      - V1p5Rearrangement_fwr1_aa
-      - V1p5Rearrangement_fwr2
-      - V1p5Rearrangement_fwr2_aa
-      - V1p5Rearrangement_fwr3
-      - V1p5Rearrangement_fwr3_aa
-      - V1p5Rearrangement_fwr4
-      - V1p5Rearrangement_fwr4_aa
-      - V1p5Rearrangement_v_score
-      - V1p5Rearrangement_v_identity
-      - V1p5Rearrangement_v_support
-      - V1p5Rearrangement_v_cigar
-      - V1p5Rearrangement_d_score
-      - V1p5Rearrangement_d_identity
-      - V1p5Rearrangement_d_support
-      - V1p5Rearrangement_d_cigar
-      - V1p5Rearrangement_d2_score
-      - V1p5Rearrangement_d2_identity
-      - V1p5Rearrangement_d2_support
-      - V1p5Rearrangement_d2_cigar
-      - V1p5Rearrangement_j_score
-      - V1p5Rearrangement_j_identity
-      - V1p5Rearrangement_j_support
-      - V1p5Rearrangement_j_cigar
-      - V1p5Rearrangement_c_score
-      - V1p5Rearrangement_c_identity
-      - V1p5Rearrangement_c_support
-      - V1p5Rearrangement_c_cigar
-      - V1p5Rearrangement_v_sequence_start
-      - V1p5Rearrangement_v_sequence_end
-      - V1p5Rearrangement_v_germline_start
-      - V1p5Rearrangement_v_germline_end
-      - V1p5Rearrangement_v_alignment_start
-      - V1p5Rearrangement_v_alignment_end
-      - V1p5Rearrangement_d_sequence_start
-      - V1p5Rearrangement_d_sequence_end
-      - V1p5Rearrangement_d_germline_start
-      - V1p5Rearrangement_d_germline_end
-      - V1p5Rearrangement_d_alignment_start
-      - V1p5Rearrangement_d_alignment_end
-      - V1p5Rearrangement_d2_sequence_start
-      - V1p5Rearrangement_d2_sequence_end
-      - V1p5Rearrangement_d2_germline_start
-      - V1p5Rearrangement_d2_germline_end
-      - V1p5Rearrangement_d2_alignment_start
-      - V1p5Rearrangement_d2_alignment_end
-      - V1p5Rearrangement_j_sequence_start
-      - V1p5Rearrangement_j_sequence_end
-      - V1p5Rearrangement_j_germline_start
-      - V1p5Rearrangement_j_germline_end
-      - V1p5Rearrangement_j_alignment_start
-      - V1p5Rearrangement_j_alignment_end
-      - V1p5Rearrangement_c_sequence_start
-      - V1p5Rearrangement_c_sequence_end
-      - V1p5Rearrangement_c_germline_start
-      - V1p5Rearrangement_c_germline_end
-      - V1p5Rearrangement_c_alignment_start
-      - V1p5Rearrangement_c_alignment_end
-      - V1p5Rearrangement_cdr1_start
-      - V1p5Rearrangement_cdr1_end
-      - V1p5Rearrangement_cdr2_start
-      - V1p5Rearrangement_cdr2_end
-      - V1p5Rearrangement_cdr3_start
-      - V1p5Rearrangement_cdr3_end
-      - V1p5Rearrangement_fwr1_start
-      - V1p5Rearrangement_fwr1_end
-      - V1p5Rearrangement_fwr2_start
-      - V1p5Rearrangement_fwr2_end
-      - V1p5Rearrangement_fwr3_start
-      - V1p5Rearrangement_fwr3_end
-      - V1p5Rearrangement_fwr4_start
-      - V1p5Rearrangement_fwr4_end
-      - V1p5Rearrangement_v_sequence_alignment
-      - V1p5Rearrangement_v_sequence_alignment_aa
-      - V1p5Rearrangement_d_sequence_alignment
-      - V1p5Rearrangement_d_sequence_alignment_aa
-      - V1p5Rearrangement_d2_sequence_alignment
-      - V1p5Rearrangement_d2_sequence_alignment_aa
-      - V1p5Rearrangement_j_sequence_alignment
-      - V1p5Rearrangement_j_sequence_alignment_aa
-      - V1p5Rearrangement_c_sequence_alignment
-      - V1p5Rearrangement_c_sequence_alignment_aa
-      - V1p5Rearrangement_v_germline_alignment
-      - V1p5Rearrangement_v_germline_alignment_aa
-      - V1p5Rearrangement_d_germline_alignment
-      - V1p5Rearrangement_d_germline_alignment_aa
-      - V1p5Rearrangement_d2_germline_alignment
-      - V1p5Rearrangement_d2_germline_alignment_aa
-      - V1p5Rearrangement_j_germline_alignment
-      - V1p5Rearrangement_j_germline_alignment_aa
-      - V1p5Rearrangement_c_germline_alignment
-      - V1p5Rearrangement_c_germline_alignment_aa
-      - V1p5Rearrangement_junction_length
-      - V1p5Rearrangement_junction_aa_length
-      - V1p5Rearrangement_np1_length
-      - V1p5Rearrangement_np2_length
-      - V1p5Rearrangement_np3_length
-      - V1p5Rearrangement_n1_length
-      - V1p5Rearrangement_n2_length
-      - V1p5Rearrangement_n3_length
-      - V1p5Rearrangement_p3v_length
-      - V1p5Rearrangement_p5d_length
-      - V1p5Rearrangement_p3d_length
-      - V1p5Rearrangement_p5d2_length
-      - V1p5Rearrangement_p3d2_length
-      - V1p5Rearrangement_p5j_length
-      - V1p5Rearrangement_v_frameshift
-      - V1p5Rearrangement_j_frameshift
-      - V1p5Rearrangement_d_frame
-      - V1p5Rearrangement_d2_frame
-      - V1p5Rearrangement_consensus_count
-      - V1p5Rearrangement_duplicate_count
-      - V1p5Rearrangement_umi_count
-      - V1p5Rearrangement_cell_id
-      - V1p5Rearrangement_clone_id
-      - V1p5Rearrangement_repertoire_id
-      - V1p5Rearrangement_sample_processing_id
-      - V1p5Rearrangement_data_processing_id
+      - V1p5sequence_id
+      - V1p5sequence
+      - V1p5quality
+      - V1p5sequence_aa
+      - V1p5rev_comp
+      - V1p5productive
+      - V1p5vj_in_frame
+      - V1p5stop_codon
+      - V1p5complete_vdj
+      - V1p5locus
+      - V1p5v_call
+      - V1p5d_call
+      - V1p5d2_call
+      - V1p5j_call
+      - V1p5c_call
+      - V1p5sequence_alignment
+      - V1p5quality_alignment
+      - V1p5sequence_alignment_aa
+      - V1p5germline_alignment
+      - V1p5germline_alignment_aa
+      - V1p5junction
+      - V1p5junction_aa
+      - V1p5np1
+      - V1p5np1_aa
+      - V1p5np2
+      - V1p5np2_aa
+      - V1p5np3
+      - V1p5np3_aa
+      - V1p5cdr1
+      - V1p5cdr1_aa
+      - V1p5cdr2
+      - V1p5cdr2_aa
+      - V1p5cdr3
+      - V1p5cdr3_aa
+      - V1p5fwr1
+      - V1p5fwr1_aa
+      - V1p5fwr2
+      - V1p5fwr2_aa
+      - V1p5fwr3
+      - V1p5fwr3_aa
+      - V1p5fwr4
+      - V1p5fwr4_aa
+      - V1p5v_score
+      - V1p5v_identity
+      - V1p5v_support
+      - V1p5v_cigar
+      - V1p5d_score
+      - V1p5d_identity
+      - V1p5d_support
+      - V1p5d_cigar
+      - V1p5d2_score
+      - V1p5d2_identity
+      - V1p5d2_support
+      - V1p5d2_cigar
+      - V1p5j_score
+      - V1p5j_identity
+      - V1p5j_support
+      - V1p5j_cigar
+      - V1p5c_score
+      - V1p5c_identity
+      - V1p5c_support
+      - V1p5c_cigar
+      - V1p5v_sequence_start
+      - V1p5v_sequence_end
+      - V1p5v_germline_start
+      - V1p5v_germline_end
+      - V1p5v_alignment_start
+      - V1p5v_alignment_end
+      - V1p5d_sequence_start
+      - V1p5d_sequence_end
+      - V1p5d_germline_start
+      - V1p5d_germline_end
+      - V1p5d_alignment_start
+      - V1p5d_alignment_end
+      - V1p5d2_sequence_start
+      - V1p5d2_sequence_end
+      - V1p5d2_germline_start
+      - V1p5d2_germline_end
+      - V1p5d2_alignment_start
+      - V1p5d2_alignment_end
+      - V1p5j_sequence_start
+      - V1p5j_sequence_end
+      - V1p5j_germline_start
+      - V1p5j_germline_end
+      - V1p5j_alignment_start
+      - V1p5j_alignment_end
+      - V1p5c_sequence_start
+      - V1p5c_sequence_end
+      - V1p5c_germline_start
+      - V1p5c_germline_end
+      - V1p5c_alignment_start
+      - V1p5c_alignment_end
+      - V1p5cdr1_start
+      - V1p5cdr1_end
+      - V1p5cdr2_start
+      - V1p5cdr2_end
+      - V1p5cdr3_start
+      - V1p5cdr3_end
+      - V1p5fwr1_start
+      - V1p5fwr1_end
+      - V1p5fwr2_start
+      - V1p5fwr2_end
+      - V1p5fwr3_start
+      - V1p5fwr3_end
+      - V1p5fwr4_start
+      - V1p5fwr4_end
+      - V1p5v_sequence_alignment
+      - V1p5v_sequence_alignment_aa
+      - V1p5d_sequence_alignment
+      - V1p5d_sequence_alignment_aa
+      - V1p5d2_sequence_alignment
+      - V1p5d2_sequence_alignment_aa
+      - V1p5j_sequence_alignment
+      - V1p5j_sequence_alignment_aa
+      - V1p5c_sequence_alignment
+      - V1p5c_sequence_alignment_aa
+      - V1p5v_germline_alignment
+      - V1p5v_germline_alignment_aa
+      - V1p5d_germline_alignment
+      - V1p5d_germline_alignment_aa
+      - V1p5d2_germline_alignment
+      - V1p5d2_germline_alignment_aa
+      - V1p5j_germline_alignment
+      - V1p5j_germline_alignment_aa
+      - V1p5c_germline_alignment
+      - V1p5c_germline_alignment_aa
+      - V1p5junction_length
+      - V1p5junction_aa_length
+      - V1p5np1_length
+      - V1p5np2_length
+      - V1p5np3_length
+      - V1p5n1_length
+      - V1p5n2_length
+      - V1p5n3_length
+      - V1p5p3v_length
+      - V1p5p5d_length
+      - V1p5p3d_length
+      - V1p5p5d2_length
+      - V1p5p3d2_length
+      - V1p5p5j_length
+      - V1p5v_frameshift
+      - V1p5j_frameshift
+      - V1p5d_frame
+      - V1p5d2_frame
+      - V1p5consensus_count
+      - V1p5duplicate_count
+      - V1p5umi_count
+      - V1p5cell_id
+      - V1p5clone_id
+      - V1p5repertoire_id
+      - V1p5sample_processing_id
+      - V1p5data_processing_id
   V1p5Clone:
     slots:
-      - V1p5Clone_clone_id
-      - V1p5Clone_repertoire_id
-      - V1p5Clone_data_processing_id
-      - V1p5Clone_sequences
-      - V1p5Clone_v_call
-      - V1p5Clone_d_call
-      - V1p5Clone_j_call
-      - V1p5Clone_junction
-      - V1p5Clone_junction_aa
-      - V1p5Clone_junction_length
-      - V1p5Clone_junction_aa_length
-      - V1p5Clone_germline_alignment
-      - V1p5Clone_germline_alignment_aa
-      - V1p5Clone_v_alignment_start
-      - V1p5Clone_v_alignment_end
-      - V1p5Clone_d_alignment_start
-      - V1p5Clone_d_alignment_end
-      - V1p5Clone_j_alignment_start
-      - V1p5Clone_j_alignment_end
-      - V1p5Clone_junction_start
-      - V1p5Clone_junction_end
-      - V1p5Clone_umi_count
-      - V1p5Clone_clone_count
-      - V1p5Clone_seed_id
+      - V1p5clone_id
+      - V1p5repertoire_id
+      - V1p5data_processing_id
+      - V1p5sequences
+      - V1p5v_call
+      - V1p5d_call
+      - V1p5j_call
+      - V1p5junction
+      - V1p5junction_aa
+      - V1p5junction_length
+      - V1p5junction_aa_length
+      - V1p5germline_alignment
+      - V1p5germline_alignment_aa
+      - V1p5v_alignment_start
+      - V1p5v_alignment_end
+      - V1p5d_alignment_start
+      - V1p5d_alignment_end
+      - V1p5j_alignment_start
+      - V1p5j_alignment_end
+      - V1p5junction_start
+      - V1p5junction_end
+      - V1p5umi_count
+      - V1p5clone_count
+      - V1p5seed_id
   V1p5Tree:
     slots:
-      - V1p5Tree_tree_id
-      - V1p5Tree_clone_id
-      - V1p5Tree_newick
-      - V1p5Tree_nodes
+      - V1p5tree_id
+      - V1p5clone_id
+      - V1p5newick
+      - V1p5nodes
   V1p5Node:
     slots:
-      - V1p5Node_sequence_id
-      - V1p5Node_sequence_alignment
-      - V1p5Node_junction
-      - V1p5Node_junction_aa
+      - V1p5sequence_id
+      - V1p5sequence_alignment
+      - V1p5junction
+      - V1p5junction_aa
   V1p5Cell:
     slots:
-      - V1p5Cell_cell_id
-      - V1p5Cell_rearrangements
-      - V1p5Cell_receptors
-      - V1p5Cell_repertoire_id
-      - V1p5Cell_data_processing_id
-      - V1p5Cell_expression_study_method
-      - V1p5Cell_expression_raw_doi
-      - V1p5Cell_expression_index
-      - V1p5Cell_virtual_pairing
+      - V1p5cell_id
+      - V1p5rearrangements
+      - V1p5receptors
+      - V1p5repertoire_id
+      - V1p5data_processing_id
+      - V1p5expression_study_method
+      - V1p5expression_raw_doi
+      - V1p5expression_index
+      - V1p5virtual_pairing
   V1p5CellExpression:
     slots:
-      - V1p5CellExpression_expression_id
-      - V1p5CellExpression_cell_id
-      - V1p5CellExpression_repertoire_id
-      - V1p5CellExpression_data_processing_id
-      - V1p5CellExpression_property_type
-      - V1p5CellExpression_property
-      - V1p5CellExpression_value
+      - V1p5expression_id
+      - V1p5cell_id
+      - V1p5repertoire_id
+      - V1p5data_processing_id
+      - V1p5property_type
+      - V1p5property
+      - V1p5value
   V1p5Receptor:
     slots:
-      - V1p5Receptor_receptor_id
-      - V1p5Receptor_receptor_hash
-      - V1p5Receptor_receptor_type
-      - V1p5Receptor_receptor_variable_domain_1_aa
-      - V1p5Receptor_receptor_variable_domain_1_locus
-      - V1p5Receptor_receptor_variable_domain_2_aa
-      - V1p5Receptor_receptor_variable_domain_2_locus
-      - V1p5Receptor_receptor_ref
-      - V1p5Receptor_reactivity_measurements
+      - V1p5receptor_id
+      - V1p5receptor_hash
+      - V1p5receptor_type
+      - V1p5receptor_variable_domain_1_aa
+      - V1p5receptor_variable_domain_1_locus
+      - V1p5receptor_variable_domain_2_aa
+      - V1p5receptor_variable_domain_2_locus
+      - V1p5receptor_ref
+      - V1p5reactivity_measurements
   V1p5ReceptorReactivity:
     slots:
-      - V1p5ReceptorReactivity_ligand_type
-      - V1p5ReceptorReactivity_antigen_type
-      - V1p5ReceptorReactivity_antigen
-      - V1p5ReceptorReactivity_antigen_source_species
-      - V1p5ReceptorReactivity_peptide_start
-      - V1p5ReceptorReactivity_peptide_end
-      - V1p5ReceptorReactivity_mhc_class
-      - V1p5ReceptorReactivity_mhc_gene_1
-      - V1p5ReceptorReactivity_mhc_allele_1
-      - V1p5ReceptorReactivity_mhc_gene_2
-      - V1p5ReceptorReactivity_mhc_allele_2
-      - V1p5ReceptorReactivity_reactivity_method
-      - V1p5ReceptorReactivity_reactivity_readout
-      - V1p5ReceptorReactivity_reactivity_value
-      - V1p5ReceptorReactivity_reactivity_unit
+      - V1p5ligand_type
+      - V1p5antigen_type
+      - V1p5antigen
+      - V1p5antigen_source_species
+      - V1p5peptide_start
+      - V1p5peptide_end
+      - V1p5mhc_class
+      - V1p5mhc_gene_1
+      - V1p5mhc_allele_1
+      - V1p5mhc_gene_2
+      - V1p5mhc_allele_2
+      - V1p5reactivity_method
+      - V1p5reactivity_readout
+      - V1p5reactivity_value
+      - V1p5reactivity_unit
   V1p5SampleProcessing:
     slots:
-      - V1p5SampleProcessing_sample_processing_id
-      - V1p5Sample_sample_id
-      - V1p5Sample_sample_type
-      - V1p5Sample_tissue
-      - V1p5Sample_anatomic_site
-      - V1p5Sample_disease_state_sample
-      - V1p5Sample_collection_time_point_relative
-      - V1p5Sample_collection_time_point_relative_unit
-      - V1p5Sample_collection_time_point_reference
-      - V1p5Sample_biomaterial_provider
-      - V1p5CellProcessing_tissue_processing
-      - V1p5CellProcessing_cell_subset
-      - V1p5CellProcessing_cell_phenotype
-      - V1p5CellProcessing_cell_species
-      - V1p5CellProcessing_single_cell
-      - V1p5CellProcessing_cell_number
-      - V1p5CellProcessing_cells_per_reaction
-      - V1p5CellProcessing_cell_storage
-      - V1p5CellProcessing_cell_quality
-      - V1p5CellProcessing_cell_isolation
-      - V1p5CellProcessing_cell_processing_protocol
-      - V1p5NucleicAcidProcessing_template_class
-      - V1p5NucleicAcidProcessing_template_quality
-      - V1p5NucleicAcidProcessing_template_amount
-      - V1p5NucleicAcidProcessing_template_amount_unit
-      - V1p5NucleicAcidProcessing_library_generation_method
-      - V1p5NucleicAcidProcessing_library_generation_protocol
-      - V1p5NucleicAcidProcessing_library_generation_kit_version
-      - V1p5NucleicAcidProcessing_pcr_target
-      - V1p5NucleicAcidProcessing_complete_sequences
-      - V1p5NucleicAcidProcessing_physical_linkage
-      - V1p5SequencingRun_sequencing_run_id
-      - V1p5SequencingRun_total_reads_passing_qc_filter
-      - V1p5SequencingRun_sequencing_platform
-      - V1p5SequencingRun_sequencing_facility
-      - V1p5SequencingRun_sequencing_run_date
-      - V1p5SequencingRun_sequencing_kit
-      - V1p5SequencingRun_sequencing_files
+      - V1p5sample_processing_id
+      - V1p5sample_id
+      - V1p5sample_type
+      - V1p5tissue
+      - V1p5anatomic_site
+      - V1p5disease_state_sample
+      - V1p5collection_time_point_relative
+      - V1p5collection_time_point_relative_unit
+      - V1p5collection_time_point_reference
+      - V1p5biomaterial_provider
+      - V1p5tissue_processing
+      - V1p5cell_subset
+      - V1p5cell_phenotype
+      - V1p5cell_species
+      - V1p5single_cell
+      - V1p5cell_number
+      - V1p5cells_per_reaction
+      - V1p5cell_storage
+      - V1p5cell_quality
+      - V1p5cell_isolation
+      - V1p5cell_processing_protocol
+      - V1p5template_class
+      - V1p5template_quality
+      - V1p5template_amount
+      - V1p5template_amount_unit
+      - V1p5library_generation_method
+      - V1p5library_generation_protocol
+      - V1p5library_generation_kit_version
+      - V1p5pcr_target
+      - V1p5complete_sequences
+      - V1p5physical_linkage
+      - V1p5sequencing_run_id
+      - V1p5total_reads_passing_qc_filter
+      - V1p5sequencing_platform
+      - V1p5sequencing_facility
+      - V1p5sequencing_run_date
+      - V1p5sequencing_kit
+      - V1p5sequencing_files
 
 slots:
-  V1p5TimePoint_label:
-    name: V1p5TimePoint_label
-    description: Informative label for the time point
+  V1p5label:
+    name: V1p5label
     range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5TimePoint_value:
-    name: V1p5TimePoint_value
-    description: Value of the time point
+  V1p5value:
+    name: V1p5value
     range: float
-    required: false
     annotations:
       nullable: true
-  V1p5TimePoint_unit:
-    name: V1p5TimePoint_unit
+  V1p5unit:
+    name: V1p5unit
     description: Unit of the time point
     range: V1p5Unit
     required: false
     annotations:
       nullable: true
-  V1p5Acknowledgement_acknowledgement_id:
-    name: V1p5Acknowledgement_acknowledgement_id
+  V1p5acknowledgement_id:
+    name: V1p5acknowledgement_id
     description: unique identifier of this Acknowledgement within the file
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Acknowledgement_name:
-    name: V1p5Acknowledgement_name
+  V1p5name:
+    name: V1p5name
     description: Full name of individual
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Acknowledgement_institution_name:
-    name: V1p5Acknowledgement_institution_name
+  V1p5institution_name:
+    name: V1p5institution_name
     description: Individual's department and institution name
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Acknowledgement_orcid_id:
-    name: V1p5Acknowledgement_orcid_id
+  V1p5orcid_id:
+    name: V1p5orcid_id
     description: Individual's ORCID identifier
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5RearrangedSequence_sequence_id:
-    name: V1p5RearrangedSequence_sequence_id
-    description: Unique identifier of this RearrangedSequence within the file, typically generated by the repository  hosting the schema, for example from the underlying ID of the database record.
+  V1p5sequence_id:
+    name: V1p5sequence_id
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5RearrangedSequence_sequence:
-    name: V1p5RearrangedSequence_sequence
-    description: nucleotide sequence
+  V1p5sequence:
+    name: V1p5sequence
     range: string
     required: true
-    annotations:
-      nullable: false
-  V1p5RearrangedSequence_derivation:
-    name: V1p5RearrangedSequence_derivation
+  V1p5derivation:
+    name: V1p5derivation
     description: The class of nucleic acid that was used as primary starting material
     range: V1p5Derivation
     required: true
     annotations:
       nullable: true
-  V1p5RearrangedSequence_observation_type:
-    name: V1p5RearrangedSequence_observation_type
+  V1p5observation_type:
+    name: V1p5observation_type
     description: The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.
     range: V1p5ObservationType
     required: true
     annotations:
       nullable: false
-  V1p5RearrangedSequence_curation:
-    name: V1p5RearrangedSequence_curation
-    description: Curational notes on the sequence
+  V1p5curation:
+    name: V1p5curation
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5RearrangedSequence_repository_name:
-    name: V1p5RearrangedSequence_repository_name
-    description: Name of the repository in which the sequence has been deposited
+  V1p5repository_name:
+    name: V1p5repository_name
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5RearrangedSequence_repository_ref:
-    name: V1p5RearrangedSequence_repository_ref
+  V1p5repository_ref:
+    name: V1p5repository_ref
     description: Queryable id or accession number of the sequence published by the repository
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5RearrangedSequence_deposited_version:
-    name: V1p5RearrangedSequence_deposited_version
+  V1p5deposited_version:
+    name: V1p5deposited_version
     description: Version number of the sequence within the repository
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5RearrangedSequence_sequence_start:
-    name: V1p5RearrangedSequence_sequence_start
-    description: Start co-ordinate of the sequence detailed in this record, within the sequence deposited
+  V1p5sequence_start:
+    name: V1p5sequence_start
     range: integer
     required: false
-    annotations:
-      nullable: false
-  V1p5RearrangedSequence_sequence_end:
-    name: V1p5RearrangedSequence_sequence_end
-    description: End co-ordinate of the sequence detailed in this record, within the sequence deposited
+  V1p5sequence_end:
+    name: V1p5sequence_end
     range: integer
     required: false
-    annotations:
-      nullable: false
-  V1p5UnrearrangedSequence_sequence_id:
-    name: V1p5UnrearrangedSequence_sequence_id
-    description: unique identifier of this UnrearrangedSequence within the file
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5UnrearrangedSequence_sequence:
-    name: V1p5UnrearrangedSequence_sequence
-    description: Sequence of interest described in this record. Typically, this will include gene and promoter region.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  V1p5UnrearrangedSequence_curation:
-    name: V1p5UnrearrangedSequence_curation
-    description: Curational notes on the sequence
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5UnrearrangedSequence_repository_name:
-    name: V1p5UnrearrangedSequence_repository_name
-    description: Name of the repository in which the assembly or contig is deposited
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5UnrearrangedSequence_repository_ref:
-    name: V1p5UnrearrangedSequence_repository_ref
-    description: Queryable id or accession number of the sequence published by the repository
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5UnrearrangedSequence_patch_no:
-    name: V1p5UnrearrangedSequence_patch_no
+  V1p5patch_no:
+    name: V1p5patch_no
     description: Genome assembly patch number in which this gene was determined
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5UnrearrangedSequence_gff_seqid:
-    name: V1p5UnrearrangedSequence_gff_seqid
+  V1p5gff_seqid:
+    name: V1p5gff_seqid
     description: Sequence (from the assembly) of a window including the gene and preferably also the promoter region.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5UnrearrangedSequence_gff_start:
-    name: V1p5UnrearrangedSequence_gff_start
+  V1p5gff_start:
+    name: V1p5gff_start
     description: Genomic co-ordinates of the start of the sequence of interest described in this record in  Ensemble GFF version 3.
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5UnrearrangedSequence_gff_end:
-    name: V1p5UnrearrangedSequence_gff_end
+  V1p5gff_end:
+    name: V1p5gff_end
     description: Genomic co-ordinates of the end of the sequence of interest described in this record in  Ensemble GFF version 3.
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5UnrearrangedSequence_strand:
-    name: V1p5UnrearrangedSequence_strand
+  V1p5strand:
+    name: V1p5strand
     description: sense (+ or -)
     range: V1p5Strand
     required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_sequence_delineation_id:
-    name: V1p5SequenceDelineationV_sequence_delineation_id
+  V1p5sequence_delineation_id:
+    name: V1p5sequence_delineation_id
     description: Unique identifier of this SequenceDelineationV within the file. Typically, generated by the  repository hosting the record.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_delineation_scheme:
-    name: V1p5SequenceDelineationV_delineation_scheme
+  V1p5delineation_scheme:
+    name: V1p5delineation_scheme
     description: Name of the delineation scheme
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_unaligned_sequence:
-    name: V1p5SequenceDelineationV_unaligned_sequence
+  V1p5unaligned_sequence:
+    name: V1p5unaligned_sequence
     description: entire V-sequence covered by this delineation
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_aligned_sequence:
-    name: V1p5SequenceDelineationV_aligned_sequence
+  V1p5aligned_sequence:
+    name: V1p5aligned_sequence
     description: Aligned sequence if this delineation provides an alignment. An aligned sequence should always be  provided for IMGT delineations.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_fwr1_start:
-    name: V1p5SequenceDelineationV_fwr1_start
-    description: FWR1 start co-ordinate in the 'unaligned sequence' field
+  V1p5fwr1_start:
+    name: V1p5fwr1_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_fwr1_end:
-    name: V1p5SequenceDelineationV_fwr1_end
-    description: FWR1 end co-ordinate in the 'unaligned sequence' field
+  V1p5fwr1_end:
+    name: V1p5fwr1_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_cdr1_start:
-    name: V1p5SequenceDelineationV_cdr1_start
-    description: CDR1 start co-ordinate in the 'unaligned sequence' field
+  V1p5cdr1_start:
+    name: V1p5cdr1_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_cdr1_end:
-    name: V1p5SequenceDelineationV_cdr1_end
-    description: CDR1 end co-ordinate in the 'unaligned sequence' field
+  V1p5cdr1_end:
+    name: V1p5cdr1_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_fwr2_start:
-    name: V1p5SequenceDelineationV_fwr2_start
-    description: FWR2 start co-ordinate in the 'unaligned sequence' field
+  V1p5fwr2_start:
+    name: V1p5fwr2_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_fwr2_end:
-    name: V1p5SequenceDelineationV_fwr2_end
-    description: FWR2 end co-ordinate in the 'unaligned sequence' field
+  V1p5fwr2_end:
+    name: V1p5fwr2_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_cdr2_start:
-    name: V1p5SequenceDelineationV_cdr2_start
-    description: CDR2 start co-ordinate in the 'unaligned sequence' field
+  V1p5cdr2_start:
+    name: V1p5cdr2_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_cdr2_end:
-    name: V1p5SequenceDelineationV_cdr2_end
-    description: CDR2 end co-ordinate in the 'unaligned sequence' field
+  V1p5cdr2_end:
+    name: V1p5cdr2_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_fwr3_start:
-    name: V1p5SequenceDelineationV_fwr3_start
-    description: FWR3 start co-ordinate in the 'unaligned sequence' field
+  V1p5fwr3_start:
+    name: V1p5fwr3_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_fwr3_end:
-    name: V1p5SequenceDelineationV_fwr3_end
-    description: FWR3 end co-ordinate in the 'unaligned sequence' field
+  V1p5fwr3_end:
+    name: V1p5fwr3_end
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_cdr3_start:
-    name: V1p5SequenceDelineationV_cdr3_start
-    description: CDR3 start co-ordinate in the 'unaligned sequence' field
+  V1p5cdr3_start:
+    name: V1p5cdr3_start
     range: integer
-    required: true
     annotations:
       nullable: true
-  V1p5SequenceDelineationV_alignment_labels:
-    name: V1p5SequenceDelineationV_alignment_labels
+  V1p5alignment_labels:
+    name: V1p5alignment_labels
     description: One string for each codon in the aligned_sequence indicating the label of that codon according to  the numbering of the delineation scheme if it provides one.
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_allele_description_id:
-    name: V1p5AlleleDescription_allele_description_id
+  V1p5allele_description_id:
+    name: V1p5allele_description_id
     description: Unique identifier of this AlleleDescription within the file. Typically, generated by the  repository hosting the record.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_allele_description_ref:
-    name: V1p5AlleleDescription_allele_description_ref
+  V1p5allele_description_ref:
+    name: V1p5allele_description_ref
     description: Unique reference to the allele description, in standardized form (Repo:Label:Version)
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_maintainer:
-    name: V1p5AlleleDescription_maintainer
+  V1p5maintainer:
+    name: V1p5maintainer
     description: Maintainer of this sequence record
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_acknowledgements:
-    name: V1p5AlleleDescription_acknowledgements
-    description: List of individuals whose contribution to the gene description should be acknowledged
+  V1p5acknowledgements:
+    name: V1p5acknowledgements
     range: V1p5Acknowledgement
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_lab_address:
-    name: V1p5AlleleDescription_lab_address
-    description: Institution and full address of corresponding author
+  V1p5lab_address:
+    name: V1p5lab_address
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_release_version:
-    name: V1p5AlleleDescription_release_version
-    description: Version number of this record, updated whenever a revised version is published or released
+  V1p5release_version:
+    name: V1p5release_version
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_release_date:
-    name: V1p5AlleleDescription_release_date
+  V1p5release_date:
+    name: V1p5release_date
     description: Date of this release
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_release_description:
-    name: V1p5AlleleDescription_release_description
+  V1p5release_description:
+    name: V1p5release_description
     description: Brief descriptive notes of the reason for this release and the changes embodied
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_label:
-    name: V1p5AlleleDescription_label
-    description: The accepted name for this gene or allele following the relevant nomenclature. The value in this field should correspond to values in acceptable name fields of other schemas,  such as v_call, d_call, and j_call fields.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5AlleleDescription_sequence:
-    name: V1p5AlleleDescription_sequence
-    description: Nucleotide sequence of the gene. This should cover the full length that is available,  including where possible RSS, and 5' UTR and lead-in for V-gene sequences.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  V1p5AlleleDescription_coding_sequence:
-    name: V1p5AlleleDescription_coding_sequence
+  V1p5coding_sequence:
+    name: V1p5coding_sequence
     description: Nucleotide sequence of the core coding region, such as the coding region of a D-, J- or C- gene  or the coding region of a V-gene excluding the leader.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_aliases:
-    name: V1p5AlleleDescription_aliases
+  V1p5aliases:
+    name: V1p5aliases
     description: Alternative names for this sequence
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_locus:
-    name: V1p5AlleleDescription_locus
-    description: Gene locus
+  V1p5locus:
+    name: V1p5locus
     range: V1p5Locus
-    required: true
-    annotations:
-      nullable: false
-  V1p5AlleleDescription_chromosome:
-    name: V1p5AlleleDescription_chromosome
+  V1p5chromosome:
+    name: V1p5chromosome
     description: chromosome on which the gene is located
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_sequence_type:
-    name: V1p5AlleleDescription_sequence_type
+  V1p5sequence_type:
+    name: V1p5sequence_type
     description: Sequence type (V, D, J, C)
     range: V1p5SequenceType
     required: true
     annotations:
       nullable: false
-  V1p5AlleleDescription_functional:
-    name: V1p5AlleleDescription_functional
+  V1p5functional:
+    name: V1p5functional
     description: True if the gene is functional, false if it is a pseudogene
     range: boolean
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_inference_type:
-    name: V1p5AlleleDescription_inference_type
+  V1p5inference_type:
+    name: V1p5inference_type
     description: Type of inference(s) from which this gene sequence was inferred
     range: V1p5InferenceType
     required: true
     annotations:
       nullable: true
-  V1p5AlleleDescription_species:
-    name: V1p5AlleleDescription_species
+  V1p5species:
+    name: V1p5species
     description: Binomial designation of subject's species
     range: V1p5Species
     required: true
     annotations:
       nullable: false
-  V1p5AlleleDescription_species_subgroup:
-    name: V1p5AlleleDescription_species_subgroup
+  V1p5species_subgroup:
+    name: V1p5species_subgroup
     description: Race, strain or other species subgroup to which this subject belongs
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_species_subgroup_type:
-    name: V1p5AlleleDescription_species_subgroup_type
+  V1p5species_subgroup_type:
+    name: V1p5species_subgroup_type
     description: ''
     range: V1p5SpeciesSubgroupType
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_status:
-    name: V1p5AlleleDescription_status
+  V1p5status:
+    name: V1p5status
     description: Status of record, assumed active if the field is not present
     range: V1p5Status
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_subgroup_designation:
-    name: V1p5AlleleDescription_subgroup_designation
+  V1p5subgroup_designation:
+    name: V1p5subgroup_designation
     description: Identifier of the gene subgroup or clade, as (and if) defined
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_gene_designation:
-    name: V1p5AlleleDescription_gene_designation
+  V1p5gene_designation:
+    name: V1p5gene_designation
     description: Gene number or other identifier, as (and if) defined
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_allele_designation:
-    name: V1p5AlleleDescription_allele_designation
-    description: Allele number or other identifier, as (and if) defined
+  V1p5allele_designation:
+    name: V1p5allele_designation
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_allele_similarity_cluster_designation:
-    name: V1p5AlleleDescription_allele_similarity_cluster_designation
+  V1p5allele_similarity_cluster_designation:
+    name: V1p5allele_similarity_cluster_designation
     description: ID of the similarity cluster used in this germline set, if designated
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_allele_similarity_cluster_member_id:
-    name: V1p5AlleleDescription_allele_similarity_cluster_member_id
+  V1p5allele_similarity_cluster_member_id:
+    name: V1p5allele_similarity_cluster_member_id
     description: Membership ID of the allele within the similarity cluster, if a cluster is designated
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_j_codon_frame:
-    name: V1p5AlleleDescription_j_codon_frame
+  V1p5j_codon_frame:
+    name: V1p5j_codon_frame
     description: Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing.
     range: V1p5JCodonFrame
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_gene_start:
-    name: V1p5AlleleDescription_gene_start
+  V1p5gene_start:
+    name: V1p5gene_start
     description: Co-ordinate in the sequence field of the first nucleotide in the coding_sequence field.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_gene_end:
-    name: V1p5AlleleDescription_gene_end
+  V1p5gene_end:
+    name: V1p5gene_end
     description: Co-ordinate in the sequence field of the last gene-coding nucleotide in the coding_sequence field.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_utr_5_prime_start:
-    name: V1p5AlleleDescription_utr_5_prime_start
+  V1p5utr_5_prime_start:
+    name: V1p5utr_5_prime_start
     description: Start co-ordinate in the sequence field of the 5 prime UTR (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_utr_5_prime_end:
-    name: V1p5AlleleDescription_utr_5_prime_end
+  V1p5utr_5_prime_end:
+    name: V1p5utr_5_prime_end
     description: End co-ordinate in the sequence field of the 5 prime UTR (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_leader_1_start:
-    name: V1p5AlleleDescription_leader_1_start
+  V1p5leader_1_start:
+    name: V1p5leader_1_start
     description: Start co-ordinate in the sequence field of L-PART1 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_leader_1_end:
-    name: V1p5AlleleDescription_leader_1_end
+  V1p5leader_1_end:
+    name: V1p5leader_1_end
     description: End co-ordinate in the sequence field of L-PART1 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_leader_2_start:
-    name: V1p5AlleleDescription_leader_2_start
+  V1p5leader_2_start:
+    name: V1p5leader_2_start
     description: Start co-ordinate in the sequence field of L-PART2 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_leader_2_end:
-    name: V1p5AlleleDescription_leader_2_end
+  V1p5leader_2_end:
+    name: V1p5leader_2_end
     description: End co-ordinate in the sequence field of L-PART2 (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_v_rs_start:
-    name: V1p5AlleleDescription_v_rs_start
+  V1p5v_rs_start:
+    name: V1p5v_rs_start
     description: Start co-ordinate in the sequence field of the V recombination site (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_v_rs_end:
-    name: V1p5AlleleDescription_v_rs_end
+  V1p5v_rs_end:
+    name: V1p5v_rs_end
     description: End co-ordinate in the sequence field of the V recombination site (V-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_d_rs_3_prime_start:
-    name: V1p5AlleleDescription_d_rs_3_prime_start
+  V1p5d_rs_3_prime_start:
+    name: V1p5d_rs_3_prime_start
     description: Start co-ordinate in the sequence field of the 3 prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_d_rs_3_prime_end:
-    name: V1p5AlleleDescription_d_rs_3_prime_end
+  V1p5d_rs_3_prime_end:
+    name: V1p5d_rs_3_prime_end
     description: End co-ordinate in the sequence field of the 3 prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_d_rs_5_prime_start:
-    name: V1p5AlleleDescription_d_rs_5_prime_start
+  V1p5d_rs_5_prime_start:
+    name: V1p5d_rs_5_prime_start
     description: Start co-ordinate in the sequence field of the 5 prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_d_rs_5_prime_end:
-    name: V1p5AlleleDescription_d_rs_5_prime_end
+  V1p5d_rs_5_prime_end:
+    name: V1p5d_rs_5_prime_end
     description: End co-ordinate in the sequence field of 5 the prime D recombination site (D-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_j_cdr3_end:
-    name: V1p5AlleleDescription_j_cdr3_end
+  V1p5j_cdr3_end:
+    name: V1p5j_cdr3_end
     description: In the case of a J-gene, the co-ordinate in the sequence field of the first nucelotide of the  conserved PHE or TRP (IMGT codon position 118).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_j_rs_start:
-    name: V1p5AlleleDescription_j_rs_start
+  V1p5j_rs_start:
+    name: V1p5j_rs_start
     description: Start co-ordinate in the sequence field of J recombination site (J-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_j_rs_end:
-    name: V1p5AlleleDescription_j_rs_end
+  V1p5j_rs_end:
+    name: V1p5j_rs_end
     description: End co-ordinate in the sequence field of J recombination site (J-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_j_donor_splice:
-    name: V1p5AlleleDescription_j_donor_splice
+  V1p5j_donor_splice:
+    name: V1p5j_donor_splice
     description: Co-ordinate in the sequence field of the final 3' nucleotide of the J-REGION (J-genes only).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_v_gene_delineations:
-    name: V1p5AlleleDescription_v_gene_delineations
+  V1p5v_gene_delineations:
+    name: V1p5v_gene_delineations
     description: ''
     range: V1p5SequenceDelineationV
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_unrearranged_support:
-    name: V1p5AlleleDescription_unrearranged_support
+  V1p5unrearranged_support:
+    name: V1p5unrearranged_support
     description: ''
     range: V1p5UnrearrangedSequence
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_rearranged_support:
-    name: V1p5AlleleDescription_rearranged_support
+  V1p5rearranged_support:
+    name: V1p5rearranged_support
     description: ''
     range: V1p5RearrangedSequence
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_paralogs:
-    name: V1p5AlleleDescription_paralogs
+  V1p5paralogs:
+    name: V1p5paralogs
     description: Gene symbols of any paralogs
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5AlleleDescription_curation:
-    name: V1p5AlleleDescription_curation
-    description: Curational notes on the AlleleDescription. This can be used to give more extensive notes on the  decisions taken than are provided in the release_description.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5AlleleDescription_curational_tags:
-    name: V1p5AlleleDescription_curational_tags
+  V1p5curational_tags:
+    name: V1p5curational_tags
     description: Controlled-vocabulary tags applied to this description
     range: V1p5CurationalTags
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5GermlineSet_germline_set_id:
-    name: V1p5GermlineSet_germline_set_id
+  V1p5germline_set_id:
+    name: V1p5germline_set_id
     description: Unique identifier of the GermlineSet within this file. Typically, generated by the  repository hosting the record.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5GermlineSet_author:
-    name: V1p5GermlineSet_author
+  V1p5author:
+    name: V1p5author
     description: Corresponding author
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5GermlineSet_lab_name:
-    name: V1p5GermlineSet_lab_name
-    description: Department of corresponding author
+  V1p5lab_name:
+    name: V1p5lab_name
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5GermlineSet_lab_address:
-    name: V1p5GermlineSet_lab_address
-    description: Institutional address of corresponding author
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5GermlineSet_acknowledgements:
-    name: V1p5GermlineSet_acknowledgements
-    description: List of individuals whose contribution to the germline set should be acknowledged
-    range: V1p5Acknowledgement
-    multivalued: true
-    required: false
-    annotations:
-      nullable: true
-  V1p5GermlineSet_release_version:
-    name: V1p5GermlineSet_release_version
-    description: Version number of this record, allocated automatically
-    range: integer
-    required: true
-    annotations:
-      nullable: true
-  V1p5GermlineSet_release_description:
-    name: V1p5GermlineSet_release_description
-    description: Brief descriptive notes of the reason for this release and the changes embodied
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5GermlineSet_release_date:
-    name: V1p5GermlineSet_release_date
-    description: Date of this release
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5GermlineSet_germline_set_name:
-    name: V1p5GermlineSet_germline_set_name
+  V1p5germline_set_name:
+    name: V1p5germline_set_name
     description: descriptive name of this germline set
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5GermlineSet_germline_set_ref:
-    name: V1p5GermlineSet_germline_set_ref
-    description: Unique identifier of the germline set and version, in standardized form (Repo:Label:Version)
+  V1p5germline_set_ref:
+    name: V1p5germline_set_ref
     range: string
-    required: true
     annotations:
       nullable: true
-  V1p5GermlineSet_pub_ids:
-    name: V1p5GermlineSet_pub_ids
-    description: Publications describing the germline set
+  V1p5pub_ids:
+    name: V1p5pub_ids
     range: string
-    required: false
     annotations:
       nullable: true
-  V1p5GermlineSet_species:
-    name: V1p5GermlineSet_species
-    description: Binomial designation of subject's species
-    range: V1p5Species
-    required: true
-    annotations:
-      nullable: false
-  V1p5GermlineSet_species_subgroup:
-    name: V1p5GermlineSet_species_subgroup
-    description: Race, strain or other species subgroup to which this subject belongs
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5GermlineSet_species_subgroup_type:
-    name: V1p5GermlineSet_species_subgroup_type
-    description: ''
-    range: V1p5SpeciesSubgroupType
-    required: false
-    annotations:
-      nullable: true
-  V1p5GermlineSet_locus:
-    name: V1p5GermlineSet_locus
-    description: Gene locus
-    range: V1p5Locus
-    required: true
-    annotations:
-      nullable: false
-  V1p5GermlineSet_allele_descriptions:
-    name: V1p5GermlineSet_allele_descriptions
+  V1p5allele_descriptions:
+    name: V1p5allele_descriptions
     description: list of allele_descriptions in the germline set
     range: V1p5AlleleDescription
     multivalued: true
     required: true
     annotations:
       nullable: true
-  V1p5GermlineSet_curation:
-    name: V1p5GermlineSet_curation
-    description: Curational notes on the GermlineSet. This can be used to give more extensive notes on the  decisions taken than are provided in the release_description.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5GenotypeSet_receptor_genotype_set_id:
-    name: V1p5GenotypeSet_receptor_genotype_set_id
+  V1p5receptor_genotype_set_id:
+    name: V1p5receptor_genotype_set_id
     description: A unique identifier for this Receptor Genotype Set, typically generated by the repository  hosting the schema, for example from the underlying ID of the database record.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5GenotypeSet_genotype_class_list:
-    name: V1p5GenotypeSet_genotype_class_list
+  V1p5genotype_class_list:
+    name: V1p5genotype_class_list
     description: List of Genotypes included in this Receptor Genotype Set.
     range: V1p5Genotype
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Genotype_receptor_genotype_id:
-    name: V1p5Genotype_receptor_genotype_id
+  V1p5receptor_genotype_id:
+    name: V1p5receptor_genotype_id
     description: A unique identifier within the file for this Receptor Genotype, typically generated by the  repository hosting the schema, for example from the underlying ID of the database record.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Genotype_locus:
-    name: V1p5Genotype_locus
-    description: Gene locus
-    range: V1p5Locus
-    required: true
-    annotations:
-      nullable: false
-  V1p5Genotype_documented_alleles:
-    name: V1p5Genotype_documented_alleles
+  V1p5documented_alleles:
+    name: V1p5documented_alleles
     description: List of alleles documented in reference set(s)
     range: V1p5DocumentedAllele
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Genotype_undocumented_alleles:
-    name: V1p5Genotype_undocumented_alleles
+  V1p5undocumented_alleles:
+    name: V1p5undocumented_alleles
     description: List of alleles inferred to be present and not documented in an identified GermlineSet
     range: V1p5UndocumentedAllele
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Genotype_deleted_genes:
-    name: V1p5Genotype_deleted_genes
+  V1p5deleted_genes:
+    name: V1p5deleted_genes
     description: Array of genes identified as being deleted in this genotype
     range: V1p5DeletedGene
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Genotype_inference_process:
-    name: V1p5Genotype_inference_process
+  V1p5inference_process:
+    name: V1p5inference_process
     description: Information on how the genotype was acquired. Controlled vocabulary.
     range: V1p5InferenceProcess
     required: false
     annotations:
       nullable: true
-  V1p5DocumentedAllele_label:
-    name: V1p5DocumentedAllele_label
-    description: The accepted name for this allele, taken from the GermlineSet
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5DocumentedAllele_germline_set_ref:
-    name: V1p5DocumentedAllele_germline_set_ref
-    description: GermlineSet from which it was taken, referenced in standardized form (Repo:Label:Version)
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5DocumentedAllele_phasing:
-    name: V1p5DocumentedAllele_phasing
+  V1p5phasing:
+    name: V1p5phasing
     description: Chromosomal phasing indicator. Alleles with the same value are inferred to be located on the  same chromosome.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5UndocumentedAllele_allele_name:
-    name: V1p5UndocumentedAllele_allele_name
+  V1p5allele_name:
+    name: V1p5allele_name
     description: Allele name as allocated by the inference pipeline
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5UndocumentedAllele_sequence:
-    name: V1p5UndocumentedAllele_sequence
-    description: nt sequence of the allele, as provided by the inference pipeline
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  V1p5UndocumentedAllele_phasing:
-    name: V1p5UndocumentedAllele_phasing
-    description: Chromosomal phasing indicator. Alleles with the same value are inferred to be located on the  same chromosome.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5DeletedGene_label:
-    name: V1p5DeletedGene_label
-    description: The accepted name for this gene, taken from the GermlineSet
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  V1p5DeletedGene_germline_set_ref:
-    name: V1p5DeletedGene_germline_set_ref
-    description: GermlineSet from which it was taken (issuer/name/version)
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5DeletedGene_phasing:
-    name: V1p5DeletedGene_phasing
-    description: Chromosomal phasing indicator. Alleles with the same value are inferred to be located on the  same chromosome.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5MHCGenotypeSet_mhc_genotype_set_id:
-    name: V1p5MHCGenotypeSet_mhc_genotype_set_id
+  V1p5mhc_genotype_set_id:
+    name: V1p5mhc_genotype_set_id
     description: A unique identifier for this MHCGenotypeSet
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5MHCGenotypeSet_mhc_genotype_list:
-    name: V1p5MHCGenotypeSet_mhc_genotype_list
+  V1p5mhc_genotype_list:
+    name: V1p5mhc_genotype_list
     description: List of MHCGenotypes included in this set
     range: V1p5MHCGenotype
     multivalued: true
     required: true
     annotations:
       nullable: true
-  V1p5MHCGenotype_mhc_genotype_id:
-    name: V1p5MHCGenotype_mhc_genotype_id
+  V1p5mhc_genotype_id:
+    name: V1p5mhc_genotype_id
     description: A unique identifier for this MHCGenotype, assumed to be unique in the context of the study
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5MHCGenotype_mhc_class:
-    name: V1p5MHCGenotype_mhc_class
-    description: Class of MHC alleles described by the MHCGenotype
+  V1p5mhc_class:
+    name: V1p5mhc_class
     range: V1p5MhcClass
-    required: true
-    annotations:
-      nullable: false
-  V1p5MHCGenotype_mhc_alleles:
-    name: V1p5MHCGenotype_mhc_alleles
+  V1p5mhc_alleles:
+    name: V1p5mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
     range: V1p5MHCAllele
     multivalued: true
     required: true
     annotations:
       nullable: true
-  V1p5MHCGenotype_mhc_genotyping_method:
-    name: V1p5MHCGenotype_mhc_genotyping_method
+  V1p5mhc_genotyping_method:
+    name: V1p5mhc_genotyping_method
     description: Information on how the genotype was determined. The content of this field should come from a list of recommended terms provided in the AIRR Schema documentation.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5MHCAllele_allele_designation:
-    name: V1p5MHCAllele_allele_designation
-    description: The accepted designation of an allele, usually its gene symbol plus allele/sub-allele/etc identifiers, if provided by the mhc_typing method
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5MHCAllele_gene:
-    name: V1p5MHCAllele_gene
+  V1p5gene:
+    name: V1p5gene
     description: The MHC gene to which the described allele belongs
     range: V1p5Gene
     required: false
     annotations:
       nullable: true
-  V1p5MHCAllele_reference_set_ref:
-    name: V1p5MHCAllele_reference_set_ref
+  V1p5reference_set_ref:
+    name: V1p5reference_set_ref
     description: Repository and list from which it was taken (issuer/name/version)
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5SubjectGenotype_receptor_genotype_set:
-    name: V1p5SubjectGenotype_receptor_genotype_set
+  V1p5receptor_genotype_set:
+    name: V1p5receptor_genotype_set
     description: Immune receptor genotype set for this subject.
     range: V1p5GenotypeSet
     required: false
     annotations:
       nullable: true
-  V1p5SubjectGenotype_mhc_genotype_set:
-    name: V1p5SubjectGenotype_mhc_genotype_set
+  V1p5mhc_genotype_set:
+    name: V1p5mhc_genotype_set
     description: MHC genotype set for this subject.
     range: V1p5MHCGenotypeSet
     required: false
     annotations:
       nullable: true
-  V1p5Study_study_id:
-    name: V1p5Study_study_id
+  V1p5study_id:
+    name: V1p5study_id
     description: Unique ID assigned by study registry such as one of the International Nucleotide Sequence Database Collaboration (INSDC) repositories.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Study_study_title:
-    name: V1p5Study_study_title
+  V1p5study_title:
+    name: V1p5study_title
     description: Descriptive study title
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Study_study_type:
-    name: V1p5Study_study_type
+  V1p5study_type:
+    name: V1p5study_type
     description: Type of study design
     range: V1p5StudyType
     required: true
     annotations:
       nullable: true
-  V1p5Study_study_description:
-    name: V1p5Study_study_description
+  V1p5study_description:
+    name: V1p5study_description
     description: Generic study description
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Study_inclusion_exclusion_criteria:
-    name: V1p5Study_inclusion_exclusion_criteria
+  V1p5inclusion_exclusion_criteria:
+    name: V1p5inclusion_exclusion_criteria
     description: List of criteria for inclusion/exclusion for the study
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Study_grants:
-    name: V1p5Study_grants
+  V1p5grants:
+    name: V1p5grants
     description: Funding agencies and grant numbers
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Study_study_contact:
-    name: V1p5Study_study_contact
+  V1p5study_contact:
+    name: V1p5study_contact
     description: Full contact information of the contact persons for this study This should include an e-mail address and a persistent identifier such as an ORCID ID.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Study_collected_by:
-    name: V1p5Study_collected_by
+  V1p5collected_by:
+    name: V1p5collected_by
     description: Full contact information of the data collector, i.e. the person who is legally responsible for data collection and release. This should include an e-mail address and a persistent identifier such as an ORCID ID.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Study_lab_name:
-    name: V1p5Study_lab_name
-    description: Department of data collector
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Study_lab_address:
-    name: V1p5Study_lab_address
-    description: Institution and institutional address of data collector
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Study_submitted_by:
-    name: V1p5Study_submitted_by
+  V1p5submitted_by:
+    name: V1p5submitted_by
     description: Full contact information of the data depositor, i.e., the person submitting the data to a repository. This should include an e-mail address and a persistent identifier such as an ORCID ID. This is supposed to be a short-lived and technical role until the submission is relased.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Study_pub_ids:
-    name: V1p5Study_pub_ids
-    description: Publications describing the rationale and/or outcome of the study. Where ever possible, a persistent identifier should be used such as a DOI or a Pubmed ID
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Study_keywords_study:
-    name: V1p5Study_keywords_study
+  V1p5keywords_study:
+    name: V1p5keywords_study
     description: Keywords describing properties of one or more data sets in a study. "contains_schema" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that "contains_paired_chain" but does not "contains_schema_cell").
     range: V1p5KeywordsStudy
     multivalued: true
     required: true
     annotations:
       nullable: true
-  V1p5Study_adc_publish_date:
-    name: V1p5Study_adc_publish_date
+  V1p5adc_publish_date:
+    name: V1p5adc_publish_date
     description: Date the study was first published in the AIRR Data Commons.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Study_adc_update_date:
-    name: V1p5Study_adc_update_date
+  V1p5adc_update_date:
+    name: V1p5adc_update_date
     description: Date the study data was updated in the AIRR Data Commons.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Subject_subject_id:
-    name: V1p5Subject_subject_id
+  V1p5subject_id:
+    name: V1p5subject_id
     description: Subject ID assigned by submitter, unique within study. If possible, a persistent subject ID linked to an INSDC or similar repository study should be used.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_synthetic:
-    name: V1p5Subject_synthetic
+  V1p5synthetic:
+    name: V1p5synthetic
     description: TRUE for libraries in which the diversity has been synthetically generated (e.g. phage display)
     range: boolean
     required: true
     annotations:
       nullable: false
-  V1p5Subject_species:
-    name: V1p5Subject_species
-    description: Binomial designation of subject's species
-    range: V1p5Species
-    required: true
-    annotations:
-      nullable: false
-  V1p5Subject_sex:
-    name: V1p5Subject_sex
+  V1p5sex:
+    name: V1p5sex
     description: Biological sex of subject
     range: V1p5Sex
     required: true
     annotations:
       nullable: true
-  V1p5Subject_age_min:
-    name: V1p5Subject_age_min
+  V1p5age_min:
+    name: V1p5age_min
     description: Specific age or lower boundary of age range.
     range: float
     required: true
     annotations:
       nullable: true
-  V1p5Subject_age_max:
-    name: V1p5Subject_age_max
+  V1p5age_max:
+    name: V1p5age_max
     description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
     range: float
     required: true
     annotations:
       nullable: true
-  V1p5Subject_age_unit:
-    name: V1p5Subject_age_unit
+  V1p5age_unit:
+    name: V1p5age_unit
     description: Unit of age range
     range: V1p5AgeUnit
     required: true
     annotations:
       nullable: true
-  V1p5Subject_age_event:
-    name: V1p5Subject_age_event
+  V1p5age_event:
+    name: V1p5age_event
     description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_ancestry_population:
-    name: V1p5Subject_ancestry_population
+  V1p5ancestry_population:
+    name: V1p5ancestry_population
     description: Broad geographic origin of ancestry (continent)
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_ethnicity:
-    name: V1p5Subject_ethnicity
+  V1p5ethnicity:
+    name: V1p5ethnicity
     description: Ethnic group of subject (defined as cultural/language-based membership)
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_race:
-    name: V1p5Subject_race
+  V1p5race:
+    name: V1p5race
     description: Racial group of subject (as defined by NIH)
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_strain_name:
-    name: V1p5Subject_strain_name
+  V1p5strain_name:
+    name: V1p5strain_name
     description: Non-human designation of the strain or breed of animal used
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_linked_subjects:
-    name: V1p5Subject_linked_subjects
+  V1p5linked_subjects:
+    name: V1p5linked_subjects
     description: Subject ID to which `Relation type` refers
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_link_type:
-    name: V1p5Subject_link_type
+  V1p5link_type:
+    name: V1p5link_type
     description: Relation between subject and `linked_subjects`, can be genetic or environmental (e.g.exposure)
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Subject_diagnosis:
-    name: V1p5Subject_diagnosis
+  V1p5diagnosis:
+    name: V1p5diagnosis
     description: Diagnosis information for subject
     range: V1p5Diagnosis
     multivalued: true
     required: false
     annotations:
       nullable: false
-  V1p5Subject_genotype:
-    name: V1p5Subject_genotype
+  V1p5genotype:
+    name: V1p5genotype
     description: ''
     range: V1p5SubjectGenotype
     required: false
     annotations:
       nullable: true
-  V1p5Diagnosis_study_group_description:
-    name: V1p5Diagnosis_study_group_description
+  V1p5study_group_description:
+    name: V1p5study_group_description
     description: Designation of study arm to which the subject is assigned to
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Diagnosis_disease_diagnosis:
-    name: V1p5Diagnosis_disease_diagnosis
+  V1p5disease_diagnosis:
+    name: V1p5disease_diagnosis
     description: Diagnosis of subject
     range: V1p5DiseaseDiagnosis
     required: true
     annotations:
       nullable: true
-  V1p5Diagnosis_disease_length:
-    name: V1p5Diagnosis_disease_length
+  V1p5disease_length:
+    name: V1p5disease_length
     description: Time duration between initial diagnosis and current intervention
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Diagnosis_disease_stage:
-    name: V1p5Diagnosis_disease_stage
+  V1p5disease_stage:
+    name: V1p5disease_stage
     description: Stage of disease at current intervention
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Diagnosis_prior_therapies:
-    name: V1p5Diagnosis_prior_therapies
+  V1p5prior_therapies:
+    name: V1p5prior_therapies
     description: List of all relevant previous therapies applied to subject for treatment of `Diagnosis`
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Diagnosis_immunogen:
-    name: V1p5Diagnosis_immunogen
+  V1p5immunogen:
+    name: V1p5immunogen
     description: Antigen, vaccine or drug applied to subject at this intervention
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Diagnosis_intervention:
-    name: V1p5Diagnosis_intervention
+  V1p5intervention:
+    name: V1p5intervention
     description: Description of intervention
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Diagnosis_medical_history:
-    name: V1p5Diagnosis_medical_history
+  V1p5medical_history:
+    name: V1p5medical_history
     description: Medical history of subject that is relevant to assess the course of disease and/or treatment
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Sample_sample_id:
-    name: V1p5Sample_sample_id
+  V1p5sample_id:
+    name: V1p5sample_id
     description: Sample ID assigned by submitter, unique within study. If possible, a persistent sample ID linked to INSDC or similar repository study should be used.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Sample_sample_type:
-    name: V1p5Sample_sample_type
+  V1p5sample_type:
+    name: V1p5sample_type
     description: The way the sample was obtained, e.g. fine-needle aspirate, organ harvest, peripheral venous puncture
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Sample_tissue:
-    name: V1p5Sample_tissue
+  V1p5tissue:
+    name: V1p5tissue
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     range: V1p5Tissue
     required: true
     annotations:
       nullable: true
-  V1p5Sample_anatomic_site:
-    name: V1p5Sample_anatomic_site
+  V1p5anatomic_site:
+    name: V1p5anatomic_site
     description: The anatomic location of the tissue, e.g. Inguinal, femur
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Sample_disease_state_sample:
-    name: V1p5Sample_disease_state_sample
+  V1p5disease_state_sample:
+    name: V1p5disease_state_sample
     description: Histopathologic evaluation of the sample
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Sample_collection_time_point_relative:
-    name: V1p5Sample_collection_time_point_relative
+  V1p5collection_time_point_relative:
+    name: V1p5collection_time_point_relative
     description: Time point at which sample was taken, relative to `Collection time event`
     range: float
     required: true
     annotations:
       nullable: true
-  V1p5Sample_collection_time_point_relative_unit:
-    name: V1p5Sample_collection_time_point_relative_unit
+  V1p5collection_time_point_relative_unit:
+    name: V1p5collection_time_point_relative_unit
     description: Unit of Sample collection time
     range: V1p5CollectionTimePointRelativeUnit
     required: true
     annotations:
       nullable: true
-  V1p5Sample_collection_time_point_reference:
-    name: V1p5Sample_collection_time_point_reference
+  V1p5collection_time_point_reference:
+    name: V1p5collection_time_point_reference
     description: Event in the study schedule to which `Sample collection time` relates to
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Sample_biomaterial_provider:
-    name: V1p5Sample_biomaterial_provider
+  V1p5biomaterial_provider:
+    name: V1p5biomaterial_provider
     description: Name and address of the entity providing the sample
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_tissue_processing:
-    name: V1p5CellProcessing_tissue_processing
+  V1p5tissue_processing:
+    name: V1p5tissue_processing
     description: Enzymatic digestion and/or physical methods used to isolate cells from sample
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_subset:
-    name: V1p5CellProcessing_cell_subset
+  V1p5cell_subset:
+    name: V1p5cell_subset
     description: Commonly-used designation of isolated cell population
     range: V1p5CellSubset
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_phenotype:
-    name: V1p5CellProcessing_cell_phenotype
+  V1p5cell_phenotype:
+    name: V1p5cell_phenotype
     description: List of cellular markers and their expression levels used to isolate the cell population
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_species:
-    name: V1p5CellProcessing_cell_species
+  V1p5cell_species:
+    name: V1p5cell_species
     description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
     range: V1p5CellSpecies
     required: false
     annotations:
       nullable: true
-  V1p5CellProcessing_single_cell:
-    name: V1p5CellProcessing_single_cell
+  V1p5single_cell:
+    name: V1p5single_cell
     description: TRUE if single cells were isolated into separate compartments
     range: boolean
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_number:
-    name: V1p5CellProcessing_cell_number
+  V1p5cell_number:
+    name: V1p5cell_number
     description: Total number of cells that went into the experiment
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cells_per_reaction:
-    name: V1p5CellProcessing_cells_per_reaction
+  V1p5cells_per_reaction:
+    name: V1p5cells_per_reaction
     description: Number of cells for each biological replicate
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_storage:
-    name: V1p5CellProcessing_cell_storage
+  V1p5cell_storage:
+    name: V1p5cell_storage
     description: TRUE if cells were cryo-preserved between isolation and further processing
     range: boolean
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_quality:
-    name: V1p5CellProcessing_cell_quality
+  V1p5cell_quality:
+    name: V1p5cell_quality
     description: Relative amount of viable cells after preparation and (if applicable) thawing
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_isolation:
-    name: V1p5CellProcessing_cell_isolation
+  V1p5cell_isolation:
+    name: V1p5cell_isolation
     description: Description of the procedure used for marker-based isolation or enrich cells
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5CellProcessing_cell_processing_protocol:
-    name: V1p5CellProcessing_cell_processing_protocol
+  V1p5cell_processing_protocol:
+    name: V1p5cell_processing_protocol
     description: Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5PCRTarget_pcr_target_locus:
-    name: V1p5PCRTarget_pcr_target_locus
+  V1p5pcr_target_locus:
+    name: V1p5pcr_target_locus
     description: Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
     range: V1p5PcrTargetLocus
     required: true
     annotations:
       nullable: true
-  V1p5PCRTarget_forward_pcr_primer_target_location:
-    name: V1p5PCRTarget_forward_pcr_primer_target_location
+  V1p5forward_pcr_primer_target_location:
+    name: V1p5forward_pcr_primer_target_location
     description: Position of the most distal nucleotide templated by the forward primer or primer mix
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5PCRTarget_reverse_pcr_primer_target_location:
-    name: V1p5PCRTarget_reverse_pcr_primer_target_location
+  V1p5reverse_pcr_primer_target_location:
+    name: V1p5reverse_pcr_primer_target_location
     description: Position of the most proximal nucleotide templated by the reverse primer or primer mix
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5NucleicAcidProcessing_template_class:
-    name: V1p5NucleicAcidProcessing_template_class
+  V1p5template_class:
+    name: V1p5template_class
     description: The class of nucleic acid that was used as primary starting material for the following procedures
     range: V1p5TemplateClass
     required: true
     annotations:
       nullable: false
-  V1p5NucleicAcidProcessing_template_quality:
-    name: V1p5NucleicAcidProcessing_template_quality
+  V1p5template_quality:
+    name: V1p5template_quality
     description: Description and results of the quality control performed on the template material
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5NucleicAcidProcessing_template_amount:
-    name: V1p5NucleicAcidProcessing_template_amount
+  V1p5template_amount:
+    name: V1p5template_amount
     description: Amount of template that went into the process
     range: float
     required: true
     annotations:
       nullable: true
-  V1p5NucleicAcidProcessing_template_amount_unit:
-    name: V1p5NucleicAcidProcessing_template_amount_unit
+  V1p5template_amount_unit:
+    name: V1p5template_amount_unit
     description: Unit of template amount
     range: V1p5TemplateAmountUnit
     required: true
     annotations:
       nullable: true
-  V1p5NucleicAcidProcessing_library_generation_method:
-    name: V1p5NucleicAcidProcessing_library_generation_method
+  V1p5library_generation_method:
+    name: V1p5library_generation_method
     description: Generic type of library generation
     range: V1p5LibraryGenerationMethod
     required: true
     annotations:
       nullable: false
-  V1p5NucleicAcidProcessing_library_generation_protocol:
-    name: V1p5NucleicAcidProcessing_library_generation_protocol
+  V1p5library_generation_protocol:
+    name: V1p5library_generation_protocol
     description: Description of processes applied to substrate to obtain a library that is ready for sequencing
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5NucleicAcidProcessing_library_generation_kit_version:
-    name: V1p5NucleicAcidProcessing_library_generation_kit_version
+  V1p5library_generation_kit_version:
+    name: V1p5library_generation_kit_version
     description: When using a library generation protocol from a commercial provider, provide the protocol version number
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5NucleicAcidProcessing_pcr_target:
-    name: V1p5NucleicAcidProcessing_pcr_target
+  V1p5pcr_target:
+    name: V1p5pcr_target
     description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
     range: V1p5PCRTarget
     multivalued: true
     required: false
     annotations:
       nullable: false
-  V1p5NucleicAcidProcessing_complete_sequences:
-    name: V1p5NucleicAcidProcessing_complete_sequences
+  V1p5complete_sequences:
+    name: V1p5complete_sequences
     description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
     range: V1p5CompleteSequences
     required: true
     annotations:
       nullable: false
-  V1p5NucleicAcidProcessing_physical_linkage:
-    name: V1p5NucleicAcidProcessing_physical_linkage
+  V1p5physical_linkage:
+    name: V1p5physical_linkage
     description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
     range: V1p5PhysicalLinkage
     required: true
     annotations:
       nullable: false
-  V1p5SequencingRun_sequencing_run_id:
-    name: V1p5SequencingRun_sequencing_run_id
+  V1p5sequencing_run_id:
+    name: V1p5sequencing_run_id
     description: ID of sequencing run assigned by the sequencing facility
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingRun_total_reads_passing_qc_filter:
-    name: V1p5SequencingRun_total_reads_passing_qc_filter
+  V1p5total_reads_passing_qc_filter:
+    name: V1p5total_reads_passing_qc_filter
     description: Number of usable reads for analysis
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5SequencingRun_sequencing_platform:
-    name: V1p5SequencingRun_sequencing_platform
+  V1p5sequencing_platform:
+    name: V1p5sequencing_platform
     description: Designation of sequencing instrument used
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingRun_sequencing_facility:
-    name: V1p5SequencingRun_sequencing_facility
+  V1p5sequencing_facility:
+    name: V1p5sequencing_facility
     description: Name and address of sequencing facility
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingRun_sequencing_run_date:
-    name: V1p5SequencingRun_sequencing_run_date
+  V1p5sequencing_run_date:
+    name: V1p5sequencing_run_date
     description: Date of sequencing run
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingRun_sequencing_kit:
-    name: V1p5SequencingRun_sequencing_kit
+  V1p5sequencing_kit:
+    name: V1p5sequencing_kit
     description: Name, manufacturer, order and lot numbers of sequencing kit
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingRun_sequencing_files:
-    name: V1p5SequencingRun_sequencing_files
+  V1p5sequencing_files:
+    name: V1p5sequencing_files
     description: Set of sequencing files produced by the sequencing run
     range: V1p5SequencingData
     required: false
     annotations:
       nullable: false
-  V1p5SequencingData_sequencing_data_id:
-    name: V1p5SequencingData_sequencing_data_id
+  V1p5sequencing_data_id:
+    name: V1p5sequencing_data_id
     description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_file_type:
-    name: V1p5SequencingData_file_type
+  V1p5file_type:
+    name: V1p5file_type
     description: File format for the raw reads or sequences
     range: V1p5FileType
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_filename:
-    name: V1p5SequencingData_filename
+  V1p5filename:
+    name: V1p5filename
     description: File name for the raw reads or sequences. The first file in paired-read sequencing.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_read_direction:
-    name: V1p5SequencingData_read_direction
+  V1p5read_direction:
+    name: V1p5read_direction
     description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
     range: V1p5ReadDirection
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_read_length:
-    name: V1p5SequencingData_read_length
+  V1p5read_length:
+    name: V1p5read_length
     description: Read length in bases for the first file in paired-read sequencing
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_paired_filename:
-    name: V1p5SequencingData_paired_filename
+  V1p5paired_filename:
+    name: V1p5paired_filename
     description: File name for the second file in paired-read sequencing
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_paired_read_direction:
-    name: V1p5SequencingData_paired_read_direction
+  V1p5paired_read_direction:
+    name: V1p5paired_read_direction
     description: Read direction for the second file in paired-read sequencing
     range: V1p5PairedReadDirection
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_paired_read_length:
-    name: V1p5SequencingData_paired_read_length
+  V1p5paired_read_length:
+    name: V1p5paired_read_length
     description: Read length in bases for the second file in paired-read sequencing
     range: integer
     required: true
     annotations:
       nullable: true
-  V1p5SequencingData_index_filename:
-    name: V1p5SequencingData_index_filename
+  V1p5index_filename:
+    name: V1p5index_filename
     description: File name for the index file
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5SequencingData_index_length:
-    name: V1p5SequencingData_index_length
+  V1p5index_length:
+    name: V1p5index_length
     description: Read length in bases for the index file
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5DataProcessing_data_processing_id:
-    name: V1p5DataProcessing_data_processing_id
-    description: Identifier for the data processing object.
+  V1p5data_processing_id:
+    name: V1p5data_processing_id
     range: string
-    required: false
     annotations:
       nullable: true
-  V1p5DataProcessing_primary_annotation:
-    name: V1p5DataProcessing_primary_annotation
+  V1p5primary_annotation:
+    name: V1p5primary_annotation
     description: If true, indicates this is the primary or default data processing for the repertoire and its rearrangements. If false, indicates this is a secondary or additional data processing.
     range: boolean
     required: false
     annotations:
       nullable: false
-  V1p5DataProcessing_software_versions:
-    name: V1p5DataProcessing_software_versions
+  V1p5software_versions:
+    name: V1p5software_versions
     description: Version number and / or date, include company pipelines
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5DataProcessing_paired_reads_assembly:
-    name: V1p5DataProcessing_paired_reads_assembly
+  V1p5paired_reads_assembly:
+    name: V1p5paired_reads_assembly
     description: How paired end reads were assembled into a single receptor sequence
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5DataProcessing_quality_thresholds:
-    name: V1p5DataProcessing_quality_thresholds
+  V1p5quality_thresholds:
+    name: V1p5quality_thresholds
     description: How/if sequences were removed from (4) based on base quality scores
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5DataProcessing_primer_match_cutoffs:
-    name: V1p5DataProcessing_primer_match_cutoffs
+  V1p5primer_match_cutoffs:
+    name: V1p5primer_match_cutoffs
     description: How primers were identified in the sequences, were they removed/masked/etc?
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5DataProcessing_collapsing_method:
-    name: V1p5DataProcessing_collapsing_method
+  V1p5collapsing_method:
+    name: V1p5collapsing_method
     description: The method used for combining multiple sequences from (4) into a single sequence in (5)
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5DataProcessing_data_processing_protocols:
-    name: V1p5DataProcessing_data_processing_protocols
+  V1p5data_processing_protocols:
+    name: V1p5data_processing_protocols
     description: General description of how QC is performed
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5DataProcessing_data_processing_files:
-    name: V1p5DataProcessing_data_processing_files
+  V1p5data_processing_files:
+    name: V1p5data_processing_files
     description: Array of file names for data produced by this data processing.
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5DataProcessing_germline_database:
-    name: V1p5DataProcessing_germline_database
+  V1p5germline_database:
+    name: V1p5germline_database
     description: Source of germline V(D)J genes with version number or date accessed.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5DataProcessing_germline_set_ref:
-    name: V1p5DataProcessing_germline_set_ref
-    description: Unique identifier of the germline set and version, in standardized form (Repo:Label:Version)
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5DataProcessing_analysis_provenance_id:
-    name: V1p5DataProcessing_analysis_provenance_id
+  V1p5analysis_provenance_id:
+    name: V1p5analysis_provenance_id
     description: Identifier for machine-readable PROV model of analysis provenance
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Repertoire_repertoire_id:
-    name: V1p5Repertoire_repertoire_id
-    description: Identifier for the repertoire object. This identifier should be globally unique so that repertoires from multiple studies can be combined together without conflict. The repertoire_id is used to link other AIRR data to a Repertoire. Specifically, the Rearrangements Schema includes repertoire_id for referencing the specific Repertoire for that Rearrangement.
+  V1p5repertoire_id:
+    name: V1p5repertoire_id
     range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Repertoire_repertoire_name:
-    name: V1p5Repertoire_repertoire_name
+  V1p5repertoire_name:
+    name: V1p5repertoire_name
     description: Short generic display name for the repertoire
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Repertoire_repertoire_description:
-    name: V1p5Repertoire_repertoire_description
-    description: Generic repertoire description
+  V1p5repertoire_description:
+    name: V1p5repertoire_description
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Repertoire_study:
-    name: V1p5Repertoire_study
+  V1p5study:
+    name: V1p5study
     description: Study object
     range: V1p5Study
     required: true
     annotations:
       nullable: false
-  V1p5Repertoire_subject:
-    name: V1p5Repertoire_subject
+  V1p5subject:
+    name: V1p5subject
     description: Subject object
     range: V1p5Subject
     required: true
     annotations:
       nullable: false
-  V1p5Repertoire_sample:
-    name: V1p5Repertoire_sample
+  V1p5sample:
+    name: V1p5sample
     description: List of Sample Processing objects
     range: V1p5SampleProcessing
     multivalued: true
     required: true
     annotations:
       nullable: false
-  V1p5Repertoire_data_processing:
-    name: V1p5Repertoire_data_processing
+  V1p5data_processing:
+    name: V1p5data_processing
     description: List of Data Processing objects
     range: V1p5DataProcessing
     multivalued: true
     required: true
     annotations:
       nullable: false
-  V1p5RepertoireGroupDetail_repertoire_id:
-    name: V1p5RepertoireGroupDetail_repertoire_id
-    description: Identifier to the repertoire
-    range: string
-    required: false
-    annotations:
-      nullable: false
-  V1p5RepertoireGroupDetail_repertoire_description:
-    name: V1p5RepertoireGroupDetail_repertoire_description
-    description: Description of this repertoire within the group
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5RepertoireGroupDetail_time_point:
-    name: V1p5RepertoireGroupDetail_time_point
+  V1p5time_point:
+    name: V1p5time_point
     description: Time point designation for this repertoire within the group
     range: V1p5TimePoint
     required: false
     annotations:
       nullable: true
-  V1p5RepertoireGroup_repertoire_group_id:
-    name: V1p5RepertoireGroup_repertoire_group_id
+  V1p5repertoire_group_id:
+    name: V1p5repertoire_group_id
     description: Identifier for this repertoire collection
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5RepertoireGroup_repertoire_group_name:
-    name: V1p5RepertoireGroup_repertoire_group_name
+  V1p5repertoire_group_name:
+    name: V1p5repertoire_group_name
     description: Short display name for this repertoire collection
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5RepertoireGroup_repertoire_group_description:
-    name: V1p5RepertoireGroup_repertoire_group_description
+  V1p5repertoire_group_description:
+    name: V1p5repertoire_group_description
     description: Repertoire collection description
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5RepertoireGroup_repertoires:
-    name: V1p5RepertoireGroup_repertoires
+  V1p5repertoires:
+    name: V1p5repertoires
     description: List of repertoires in this collection with an associated description and time point designation
     range: V1p5RepertoireGroupDetail
     multivalued: true
     required: true
     annotations:
       nullable: true
-  V1p5Alignment_sequence_id:
-    name: V1p5Alignment_sequence_id
-    description: Unique query sequence identifier within the file. Most often this will be the input sequence header or a substring thereof, but may also be a custom identifier defined by the tool in cases where query sequences have been combined in some fashion prior to alignment.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Alignment_segment:
-    name: V1p5Alignment_segment
+  V1p5segment:
+    name: V1p5segment
     description: The segment for this alignment. One of V, D, J or C.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Alignment_rev_comp:
-    name: V1p5Alignment_rev_comp
-    description: Alignment result is from the reverse complement of the query sequence.
+  V1p5rev_comp:
+    name: V1p5rev_comp
     range: boolean
-    required: false
     annotations:
       nullable: true
-  V1p5Alignment_call:
-    name: V1p5Alignment_call
+  V1p5call:
+    name: V1p5call
     description: Gene assignment with allele.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Alignment_score:
-    name: V1p5Alignment_score
+  V1p5score:
+    name: V1p5score
     description: Alignment score.
     range: float
     required: true
     annotations:
       nullable: true
-  V1p5Alignment_identity:
-    name: V1p5Alignment_identity
+  V1p5identity:
+    name: V1p5identity
     description: Alignment fractional identity.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Alignment_support:
-    name: V1p5Alignment_support
+  V1p5support:
+    name: V1p5support
     description: Alignment E-value, p-value, likelihood, probability or other similar measure of support for the gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Alignment_cigar:
-    name: V1p5Alignment_cigar
+  V1p5cigar:
+    name: V1p5cigar
     description: Alignment CIGAR string.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Alignment_sequence_start:
-    name: V1p5Alignment_sequence_start
-    description: Start position of the segment in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Alignment_sequence_end:
-    name: V1p5Alignment_sequence_end
-    description: End position of the segment in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Alignment_germline_start:
-    name: V1p5Alignment_germline_start
+  V1p5germline_start:
+    name: V1p5germline_start
     description: Alignment start position in the reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Alignment_germline_end:
-    name: V1p5Alignment_germline_end
+  V1p5germline_end:
+    name: V1p5germline_end
     description: Alignment end position in the reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Alignment_rank:
-    name: V1p5Alignment_rank
+  V1p5rank:
+    name: V1p5rank
     description: Alignment rank.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Alignment_data_processing_id:
-    name: V1p5Alignment_data_processing_id
-    description: Identifier to the data processing object in the repertoire metadata for this rearrangement. If this field is empty than the primary data processing object is assumed.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_sequence_id:
-    name: V1p5Rearrangement_sequence_id
-    description: Unique query sequence identifier for the Rearrangement. Most often this will be the input sequence header or a substring thereof, but may also be a custom identifier defined by the tool in cases where query sequences have been combined in some fashion prior to alignment. When downloaded from an AIRR Data Commons repository, this will usually be a universally unique record locator for linking with other objects in the AIRR Data Model.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Rearrangement_sequence:
-    name: V1p5Rearrangement_sequence
-    description: The query nucleotide sequence. Usually, this is the unmodified input sequence, which may be reverse complemented if necessary. In some cases, this field may contain consensus sequences or other types of collapsed input sequences if these steps are performed prior to alignment.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Rearrangement_quality:
-    name: V1p5Rearrangement_quality
+  V1p5quality:
+    name: V1p5quality
     description: The Sanger/Phred quality scores for assessment of sequence quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by Illumina from v1.8.)
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_sequence_aa:
-    name: V1p5Rearrangement_sequence_aa
+  V1p5sequence_aa:
+    name: V1p5sequence_aa
     description: Amino acid translation of the query nucleotide sequence.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_rev_comp:
-    name: V1p5Rearrangement_rev_comp
-    description: True if the alignment is on the opposite strand (reverse complemented) with respect to the query sequence. If True then all output data, such as alignment coordinates and sequences, are based on the reverse complement of 'sequence'.
-    range: boolean
-    required: true
-    annotations:
-      nullable: true
-  V1p5Rearrangement_productive:
-    name: V1p5Rearrangement_productive
+  V1p5productive:
+    name: V1p5productive
     description: True if the V(D)J sequence is predicted to be productive.
     range: boolean
     required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_vj_in_frame:
-    name: V1p5Rearrangement_vj_in_frame
+  V1p5vj_in_frame:
+    name: V1p5vj_in_frame
     description: True if the V and J gene alignments are in-frame.
     range: boolean
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_stop_codon:
-    name: V1p5Rearrangement_stop_codon
+  V1p5stop_codon:
+    name: V1p5stop_codon
     description: True if the aligned sequence contains a stop codon.
     range: boolean
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_complete_vdj:
-    name: V1p5Rearrangement_complete_vdj
+  V1p5complete_vdj:
+    name: V1p5complete_vdj
     description: True if the sequence alignment spans the entire V(D)J region. Meaning, sequence_alignment includes both the first V gene codon that encodes the mature polypeptide chain (i.e., after the leader sequence) and the last complete codon of the J gene (i.e., before the J-C splice site). This does not require an absence of deletions within the internal FWR and CDR regions of the alignment.
     range: boolean
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_locus:
-    name: V1p5Rearrangement_locus
-    description: Gene locus (chain type). Note that this field uses a controlled vocabulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
-    range: V1p5Locus
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_v_call:
-    name: V1p5Rearrangement_v_call
-    description: V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).
+  V1p5v_call:
+    name: V1p5v_call
     range: string
-    required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_d_call:
-    name: V1p5Rearrangement_d_call
-    description: First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
+  V1p5d_call:
+    name: V1p5d_call
     range: string
-    required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_call:
-    name: V1p5Rearrangement_d2_call
+  V1p5d2_call:
+    name: V1p5d2_call
     description: Second D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_call:
-    name: V1p5Rearrangement_j_call
-    description: J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).
+  V1p5j_call:
+    name: V1p5j_call
     range: string
-    required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_c_call:
-    name: V1p5Rearrangement_c_call
+  V1p5c_call:
+    name: V1p5c_call
     description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_sequence_alignment:
-    name: V1p5Rearrangement_sequence_alignment
-    description: Aligned portion of query sequence, including any indel corrections or numbering spacers, such as IMGT-gaps. Typically, this will include only the V(D)J region, but that is not a requirement.
+  V1p5sequence_alignment:
+    name: V1p5sequence_alignment
     range: string
-    required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_quality_alignment:
-    name: V1p5Rearrangement_quality_alignment
+  V1p5quality_alignment:
+    name: V1p5quality_alignment
     description: Sanger/Phred quality scores for assessment of sequence_alignment quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by Illumina from v1.8.)
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_sequence_alignment_aa:
-    name: V1p5Rearrangement_sequence_alignment_aa
+  V1p5sequence_alignment_aa:
+    name: V1p5sequence_alignment_aa
     description: Amino acid translation of the aligned query sequence.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_germline_alignment:
-    name: V1p5Rearrangement_germline_alignment
-    description: Assembled, aligned, full-length inferred germline sequence spanning the same region as the sequence_alignment field (typically the V(D)J region) and including the same set of corrections and spacers (if any).
+  V1p5germline_alignment:
+    name: V1p5germline_alignment
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_germline_alignment_aa:
-    name: V1p5Rearrangement_germline_alignment_aa
-    description: Amino acid translation of the assembled germline sequence.
+  V1p5germline_alignment_aa:
+    name: V1p5germline_alignment_aa
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_junction:
-    name: V1p5Rearrangement_junction
-    description: Junction region nucleotide sequence, where the junction is defined as the CDR3 plus the two flanking conserved codons.
+  V1p5junction:
+    name: V1p5junction
     range: string
-    required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_junction_aa:
-    name: V1p5Rearrangement_junction_aa
+  V1p5junction_aa:
+    name: V1p5junction_aa
     description: Amino acid translation of the junction.
     range: string
-    required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_np1:
-    name: V1p5Rearrangement_np1
+  V1p5np1:
+    name: V1p5np1
     description: Nucleotide sequence of the combined N/P region between the V gene and first D gene alignment or between the V gene and J gene alignments.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np1_aa:
-    name: V1p5Rearrangement_np1_aa
+  V1p5np1_aa:
+    name: V1p5np1_aa
     description: Amino acid translation of the np1 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np2:
-    name: V1p5Rearrangement_np2
+  V1p5np2:
+    name: V1p5np2
     description: Nucleotide sequence of the combined N/P region between either the first D gene and J gene alignments or the first D gene and second D gene alignments.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np2_aa:
-    name: V1p5Rearrangement_np2_aa
+  V1p5np2_aa:
+    name: V1p5np2_aa
     description: Amino acid translation of the np2 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np3:
-    name: V1p5Rearrangement_np3
+  V1p5np3:
+    name: V1p5np3
     description: Nucleotide sequence of the combined N/P region between the second D gene and J gene alignments.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np3_aa:
-    name: V1p5Rearrangement_np3_aa
+  V1p5np3_aa:
+    name: V1p5np3_aa
     description: Amino acid translation of the np3 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cdr1:
-    name: V1p5Rearrangement_cdr1
+  V1p5cdr1:
+    name: V1p5cdr1
     description: Nucleotide sequence of the aligned CDR1 region.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cdr1_aa:
-    name: V1p5Rearrangement_cdr1_aa
+  V1p5cdr1_aa:
+    name: V1p5cdr1_aa
     description: Amino acid translation of the cdr1 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cdr2:
-    name: V1p5Rearrangement_cdr2
+  V1p5cdr2:
+    name: V1p5cdr2
     description: Nucleotide sequence of the aligned CDR2 region.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cdr2_aa:
-    name: V1p5Rearrangement_cdr2_aa
+  V1p5cdr2_aa:
+    name: V1p5cdr2_aa
     description: Amino acid translation of the cdr2 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cdr3:
-    name: V1p5Rearrangement_cdr3
+  V1p5cdr3:
+    name: V1p5cdr3
     description: Nucleotide sequence of the aligned CDR3 region.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cdr3_aa:
-    name: V1p5Rearrangement_cdr3_aa
+  V1p5cdr3_aa:
+    name: V1p5cdr3_aa
     description: Amino acid translation of the cdr3 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr1:
-    name: V1p5Rearrangement_fwr1
+  V1p5fwr1:
+    name: V1p5fwr1
     description: Nucleotide sequence of the aligned FWR1 region.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr1_aa:
-    name: V1p5Rearrangement_fwr1_aa
+  V1p5fwr1_aa:
+    name: V1p5fwr1_aa
     description: Amino acid translation of the fwr1 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr2:
-    name: V1p5Rearrangement_fwr2
+  V1p5fwr2:
+    name: V1p5fwr2
     description: Nucleotide sequence of the aligned FWR2 region.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr2_aa:
-    name: V1p5Rearrangement_fwr2_aa
+  V1p5fwr2_aa:
+    name: V1p5fwr2_aa
     description: Amino acid translation of the fwr2 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr3:
-    name: V1p5Rearrangement_fwr3
+  V1p5fwr3:
+    name: V1p5fwr3
     description: Nucleotide sequence of the aligned FWR3 region.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr3_aa:
-    name: V1p5Rearrangement_fwr3_aa
+  V1p5fwr3_aa:
+    name: V1p5fwr3_aa
     description: Amino acid translation of the fwr3 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr4:
-    name: V1p5Rearrangement_fwr4
+  V1p5fwr4:
+    name: V1p5fwr4
     description: Nucleotide sequence of the aligned FWR4 region.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr4_aa:
-    name: V1p5Rearrangement_fwr4_aa
+  V1p5fwr4_aa:
+    name: V1p5fwr4_aa
     description: Amino acid translation of the fwr4 field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_score:
-    name: V1p5Rearrangement_v_score
+  V1p5v_score:
+    name: V1p5v_score
     description: Alignment score for the V gene.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_identity:
-    name: V1p5Rearrangement_v_identity
+  V1p5v_identity:
+    name: V1p5v_identity
     description: Fractional identity for the V gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_support:
-    name: V1p5Rearrangement_v_support
+  V1p5v_support:
+    name: V1p5v_support
     description: V gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the V gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_cigar:
-    name: V1p5Rearrangement_v_cigar
+  V1p5v_cigar:
+    name: V1p5v_cigar
     description: CIGAR string for the V gene alignment.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_d_score:
-    name: V1p5Rearrangement_d_score
+  V1p5d_score:
+    name: V1p5d_score
     description: Alignment score for the first or only D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_identity:
-    name: V1p5Rearrangement_d_identity
+  V1p5d_identity:
+    name: V1p5d_identity
     description: Fractional identity for the first or only D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_support:
-    name: V1p5Rearrangement_d_support
+  V1p5d_support:
+    name: V1p5d_support
     description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the first or only D gene as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_cigar:
-    name: V1p5Rearrangement_d_cigar
+  V1p5d_cigar:
+    name: V1p5d_cigar
     description: CIGAR string for the first or only D gene alignment.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_score:
-    name: V1p5Rearrangement_d2_score
+  V1p5d2_score:
+    name: V1p5d2_score
     description: Alignment score for the second D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_identity:
-    name: V1p5Rearrangement_d2_identity
+  V1p5d2_identity:
+    name: V1p5d2_identity
     description: Fractional identity for the second D gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_support:
-    name: V1p5Rearrangement_d2_support
+  V1p5d2_support:
+    name: V1p5d2_support
     description: D gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the second D gene as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_cigar:
-    name: V1p5Rearrangement_d2_cigar
+  V1p5d2_cigar:
+    name: V1p5d2_cigar
     description: CIGAR string for the second D gene alignment.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_score:
-    name: V1p5Rearrangement_j_score
+  V1p5j_score:
+    name: V1p5j_score
     description: Alignment score for the J gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_identity:
-    name: V1p5Rearrangement_j_identity
+  V1p5j_identity:
+    name: V1p5j_identity
     description: Fractional identity for the J gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_support:
-    name: V1p5Rearrangement_j_support
+  V1p5j_support:
+    name: V1p5j_support
     description: J gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the J gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_cigar:
-    name: V1p5Rearrangement_j_cigar
+  V1p5j_cigar:
+    name: V1p5j_cigar
     description: CIGAR string for the J gene alignment.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Rearrangement_c_score:
-    name: V1p5Rearrangement_c_score
+  V1p5c_score:
+    name: V1p5c_score
     description: Alignment score for the C gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_identity:
-    name: V1p5Rearrangement_c_identity
+  V1p5c_identity:
+    name: V1p5c_identity
     description: Fractional identity for the C gene alignment.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_support:
-    name: V1p5Rearrangement_c_support
+  V1p5c_support:
+    name: V1p5c_support
     description: C gene alignment E-value, p-value, likelihood, probability or other similar measure of support for the C gene assignment as defined by the alignment tool.
     range: float
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_cigar:
-    name: V1p5Rearrangement_c_cigar
+  V1p5c_cigar:
+    name: V1p5c_cigar
     description: CIGAR string for the C gene alignment.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_sequence_start:
-    name: V1p5Rearrangement_v_sequence_start
+  V1p5v_sequence_start:
+    name: V1p5v_sequence_start
     description: Start position of the V gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_sequence_end:
-    name: V1p5Rearrangement_v_sequence_end
+  V1p5v_sequence_end:
+    name: V1p5v_sequence_end
     description: End position of the V gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_germline_start:
-    name: V1p5Rearrangement_v_germline_start
+  V1p5v_germline_start:
+    name: V1p5v_germline_start
     description: Alignment start position in the V gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_germline_end:
-    name: V1p5Rearrangement_v_germline_end
+  V1p5v_germline_end:
+    name: V1p5v_germline_end
     description: Alignment end position in the V gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_alignment_start:
-    name: V1p5Rearrangement_v_alignment_start
-    description: Start position of the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  V1p5v_alignment_start:
+    name: V1p5v_alignment_start
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_alignment_end:
-    name: V1p5Rearrangement_v_alignment_end
-    description: End position of the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  V1p5v_alignment_end:
+    name: V1p5v_alignment_end
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_sequence_start:
-    name: V1p5Rearrangement_d_sequence_start
+  V1p5d_sequence_start:
+    name: V1p5d_sequence_start
     description: Start position of the first or only D gene in the query sequence. (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_sequence_end:
-    name: V1p5Rearrangement_d_sequence_end
+  V1p5d_sequence_end:
+    name: V1p5d_sequence_end
     description: End position of the first or only D gene in the query sequence. (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_germline_start:
-    name: V1p5Rearrangement_d_germline_start
+  V1p5d_germline_start:
+    name: V1p5d_germline_start
     description: Alignment start position in the D gene reference sequence for the first or only D gene (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_germline_end:
-    name: V1p5Rearrangement_d_germline_end
+  V1p5d_germline_end:
+    name: V1p5d_germline_end
     description: Alignment end position in the D gene reference sequence for the first or only D gene (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_alignment_start:
-    name: V1p5Rearrangement_d_alignment_start
-    description: Start position of the first or only D gene in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  V1p5d_alignment_start:
+    name: V1p5d_alignment_start
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_alignment_end:
-    name: V1p5Rearrangement_d_alignment_end
-    description: End position of the first or only D gene in both the sequence_alignment and germline_alignment fields (1-based closed interval).
+  V1p5d_alignment_end:
+    name: V1p5d_alignment_end
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_sequence_start:
-    name: V1p5Rearrangement_d2_sequence_start
+  V1p5d2_sequence_start:
+    name: V1p5d2_sequence_start
     description: Start position of the second D gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_sequence_end:
-    name: V1p5Rearrangement_d2_sequence_end
+  V1p5d2_sequence_end:
+    name: V1p5d2_sequence_end
     description: End position of the second D gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_germline_start:
-    name: V1p5Rearrangement_d2_germline_start
+  V1p5d2_germline_start:
+    name: V1p5d2_germline_start
     description: Alignment start position in the second D gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_germline_end:
-    name: V1p5Rearrangement_d2_germline_end
+  V1p5d2_germline_end:
+    name: V1p5d2_germline_end
     description: Alignment end position in the second D gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_alignment_start:
-    name: V1p5Rearrangement_d2_alignment_start
+  V1p5d2_alignment_start:
+    name: V1p5d2_alignment_start
     description: Start position of the second D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_alignment_end:
-    name: V1p5Rearrangement_d2_alignment_end
+  V1p5d2_alignment_end:
+    name: V1p5d2_alignment_end
     description: End position of the second D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_sequence_start:
-    name: V1p5Rearrangement_j_sequence_start
+  V1p5j_sequence_start:
+    name: V1p5j_sequence_start
     description: Start position of the J gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_sequence_end:
-    name: V1p5Rearrangement_j_sequence_end
+  V1p5j_sequence_end:
+    name: V1p5j_sequence_end
     description: End position of the J gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_germline_start:
-    name: V1p5Rearrangement_j_germline_start
+  V1p5j_germline_start:
+    name: V1p5j_germline_start
     description: Alignment start position in the J gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_germline_end:
-    name: V1p5Rearrangement_j_germline_end
+  V1p5j_germline_end:
+    name: V1p5j_germline_end
     description: Alignment end position in the J gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_alignment_start:
-    name: V1p5Rearrangement_j_alignment_start
+  V1p5j_alignment_start:
+    name: V1p5j_alignment_start
     description: Start position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_alignment_end:
-    name: V1p5Rearrangement_j_alignment_end
+  V1p5j_alignment_end:
+    name: V1p5j_alignment_end
     description: End position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_sequence_start:
-    name: V1p5Rearrangement_c_sequence_start
+  V1p5c_sequence_start:
+    name: V1p5c_sequence_start
     description: Start position of the C gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_sequence_end:
-    name: V1p5Rearrangement_c_sequence_end
+  V1p5c_sequence_end:
+    name: V1p5c_sequence_end
     description: End position of the C gene in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_germline_start:
-    name: V1p5Rearrangement_c_germline_start
+  V1p5c_germline_start:
+    name: V1p5c_germline_start
     description: Alignment start position in the C gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_germline_end:
-    name: V1p5Rearrangement_c_germline_end
+  V1p5c_germline_end:
+    name: V1p5c_germline_end
     description: Alignment end position in the C gene reference sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_alignment_start:
-    name: V1p5Rearrangement_c_alignment_start
+  V1p5c_alignment_start:
+    name: V1p5c_alignment_start
     description: Start position of the C gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_alignment_end:
-    name: V1p5Rearrangement_c_alignment_end
+  V1p5c_alignment_end:
+    name: V1p5c_alignment_end
     description: End position of the C gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cdr1_start:
-    name: V1p5Rearrangement_cdr1_start
-    description: CDR1 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_cdr1_end:
-    name: V1p5Rearrangement_cdr1_end
-    description: CDR1 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_cdr2_start:
-    name: V1p5Rearrangement_cdr2_start
-    description: CDR2 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_cdr2_end:
-    name: V1p5Rearrangement_cdr2_end
-    description: CDR2 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_cdr3_start:
-    name: V1p5Rearrangement_cdr3_start
-    description: CDR3 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_cdr3_end:
-    name: V1p5Rearrangement_cdr3_end
+  V1p5cdr3_end:
+    name: V1p5cdr3_end
     description: CDR3 end position in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr1_start:
-    name: V1p5Rearrangement_fwr1_start
-    description: FWR1 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_fwr1_end:
-    name: V1p5Rearrangement_fwr1_end
-    description: FWR1 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_fwr2_start:
-    name: V1p5Rearrangement_fwr2_start
-    description: FWR2 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_fwr2_end:
-    name: V1p5Rearrangement_fwr2_end
-    description: FWR2 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_fwr3_start:
-    name: V1p5Rearrangement_fwr3_start
-    description: FWR3 start position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_fwr3_end:
-    name: V1p5Rearrangement_fwr3_end
-    description: FWR3 end position in the query sequence (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_fwr4_start:
-    name: V1p5Rearrangement_fwr4_start
+  V1p5fwr4_start:
+    name: V1p5fwr4_start
     description: FWR4 start position in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_fwr4_end:
-    name: V1p5Rearrangement_fwr4_end
+  V1p5fwr4_end:
+    name: V1p5fwr4_end
     description: FWR4 end position in the query sequence (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_sequence_alignment:
-    name: V1p5Rearrangement_v_sequence_alignment
+  V1p5v_sequence_alignment:
+    name: V1p5v_sequence_alignment
     description: Aligned portion of query sequence assigned to the V gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_sequence_alignment_aa:
-    name: V1p5Rearrangement_v_sequence_alignment_aa
+  V1p5v_sequence_alignment_aa:
+    name: V1p5v_sequence_alignment_aa
     description: Amino acid translation of the v_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_sequence_alignment:
-    name: V1p5Rearrangement_d_sequence_alignment
+  V1p5d_sequence_alignment:
+    name: V1p5d_sequence_alignment
     description: Aligned portion of query sequence assigned to the first or only D gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_sequence_alignment_aa:
-    name: V1p5Rearrangement_d_sequence_alignment_aa
+  V1p5d_sequence_alignment_aa:
+    name: V1p5d_sequence_alignment_aa
     description: Amino acid translation of the d_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_sequence_alignment:
-    name: V1p5Rearrangement_d2_sequence_alignment
+  V1p5d2_sequence_alignment:
+    name: V1p5d2_sequence_alignment
     description: Aligned portion of query sequence assigned to the second D gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_sequence_alignment_aa:
-    name: V1p5Rearrangement_d2_sequence_alignment_aa
+  V1p5d2_sequence_alignment_aa:
+    name: V1p5d2_sequence_alignment_aa
     description: Amino acid translation of the d2_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_sequence_alignment:
-    name: V1p5Rearrangement_j_sequence_alignment
+  V1p5j_sequence_alignment:
+    name: V1p5j_sequence_alignment
     description: Aligned portion of query sequence assigned to the J gene, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_sequence_alignment_aa:
-    name: V1p5Rearrangement_j_sequence_alignment_aa
+  V1p5j_sequence_alignment_aa:
+    name: V1p5j_sequence_alignment_aa
     description: Amino acid translation of the j_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_sequence_alignment:
-    name: V1p5Rearrangement_c_sequence_alignment
+  V1p5c_sequence_alignment:
+    name: V1p5c_sequence_alignment
     description: Aligned portion of query sequence assigned to the constant region, including any indel corrections or numbering spacers.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_sequence_alignment_aa:
-    name: V1p5Rearrangement_c_sequence_alignment_aa
+  V1p5c_sequence_alignment_aa:
+    name: V1p5c_sequence_alignment_aa
     description: Amino acid translation of the c_sequence_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_germline_alignment:
-    name: V1p5Rearrangement_v_germline_alignment
+  V1p5v_germline_alignment:
+    name: V1p5v_germline_alignment
     description: Aligned V gene germline sequence spanning the same region as the v_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_germline_alignment_aa:
-    name: V1p5Rearrangement_v_germline_alignment_aa
+  V1p5v_germline_alignment_aa:
+    name: V1p5v_germline_alignment_aa
     description: Amino acid translation of the v_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_germline_alignment:
-    name: V1p5Rearrangement_d_germline_alignment
+  V1p5d_germline_alignment:
+    name: V1p5d_germline_alignment
     description: Aligned D gene germline sequence spanning the same region as the d_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_germline_alignment_aa:
-    name: V1p5Rearrangement_d_germline_alignment_aa
+  V1p5d_germline_alignment_aa:
+    name: V1p5d_germline_alignment_aa
     description: Amino acid translation of the d_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_germline_alignment:
-    name: V1p5Rearrangement_d2_germline_alignment
+  V1p5d2_germline_alignment:
+    name: V1p5d2_germline_alignment
     description: Aligned D gene germline sequence spanning the same region as the d2_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_germline_alignment_aa:
-    name: V1p5Rearrangement_d2_germline_alignment_aa
+  V1p5d2_germline_alignment_aa:
+    name: V1p5d2_germline_alignment_aa
     description: Amino acid translation of the d2_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_germline_alignment:
-    name: V1p5Rearrangement_j_germline_alignment
+  V1p5j_germline_alignment:
+    name: V1p5j_germline_alignment
     description: Aligned J gene germline sequence spanning the same region as the j_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_germline_alignment_aa:
-    name: V1p5Rearrangement_j_germline_alignment_aa
+  V1p5j_germline_alignment_aa:
+    name: V1p5j_germline_alignment_aa
     description: Amino acid translation of the j_germline_alignment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_germline_alignment:
-    name: V1p5Rearrangement_c_germline_alignment
+  V1p5c_germline_alignment:
+    name: V1p5c_germline_alignment
     description: Aligned constant region germline sequence spanning the same region as the c_sequence_alignment field and including the same set of corrections and spacers (if any).
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_c_germline_alignment_aa:
-    name: V1p5Rearrangement_c_germline_alignment_aa
+  V1p5c_germline_alignment_aa:
+    name: V1p5c_germline_alignment_aa
     description: Amino acid translation of the c_germline_aligment field.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_junction_length:
-    name: V1p5Rearrangement_junction_length
-    description: Number of nucleotides in the junction sequence.
+  V1p5junction_length:
+    name: V1p5junction_length
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_junction_aa_length:
-    name: V1p5Rearrangement_junction_aa_length
-    description: Number of amino acids in the junction sequence.
+  V1p5junction_aa_length:
+    name: V1p5junction_aa_length
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np1_length:
-    name: V1p5Rearrangement_np1_length
+  V1p5np1_length:
+    name: V1p5np1_length
     description: Number of nucleotides between the V gene and first D gene alignments or between the V gene and J gene alignments.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np2_length:
-    name: V1p5Rearrangement_np2_length
+  V1p5np2_length:
+    name: V1p5np2_length
     description: Number of nucleotides between either the first D gene and J gene alignments or the first D gene and second D gene alignments.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_np3_length:
-    name: V1p5Rearrangement_np3_length
+  V1p5np3_length:
+    name: V1p5np3_length
     description: Number of nucleotides between the second D gene and J gene alignments.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_n1_length:
-    name: V1p5Rearrangement_n1_length
+  V1p5n1_length:
+    name: V1p5n1_length
     description: Number of untemplated nucleotides 5' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_n2_length:
-    name: V1p5Rearrangement_n2_length
+  V1p5n2_length:
+    name: V1p5n2_length
     description: Number of untemplated nucleotides 3' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_n3_length:
-    name: V1p5Rearrangement_n3_length
+  V1p5n3_length:
+    name: V1p5n3_length
     description: Number of untemplated nucleotides 3' of the second D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_p3v_length:
-    name: V1p5Rearrangement_p3v_length
+  V1p5p3v_length:
+    name: V1p5p3v_length
     description: Number of palindromic nucleotides 3' of the V gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_p5d_length:
-    name: V1p5Rearrangement_p5d_length
+  V1p5p5d_length:
+    name: V1p5p5d_length
     description: Number of palindromic nucleotides 5' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_p3d_length:
-    name: V1p5Rearrangement_p3d_length
+  V1p5p3d_length:
+    name: V1p5p3d_length
     description: Number of palindromic nucleotides 3' of the first or only D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_p5d2_length:
-    name: V1p5Rearrangement_p5d2_length
+  V1p5p5d2_length:
+    name: V1p5p5d2_length
     description: Number of palindromic nucleotides 5' of the second D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_p3d2_length:
-    name: V1p5Rearrangement_p3d2_length
+  V1p5p3d2_length:
+    name: V1p5p3d2_length
     description: Number of palindromic nucleotides 3' of the second D gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_p5j_length:
-    name: V1p5Rearrangement_p5j_length
+  V1p5p5j_length:
+    name: V1p5p5j_length
     description: Number of palindromic nucleotides 5' of the J gene alignment.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_v_frameshift:
-    name: V1p5Rearrangement_v_frameshift
+  V1p5v_frameshift:
+    name: V1p5v_frameshift
     description: True if the V gene in the query nucleotide sequence contains a translational frameshift relative to the frame of the V gene reference sequence.
     range: boolean
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_j_frameshift:
-    name: V1p5Rearrangement_j_frameshift
+  V1p5j_frameshift:
+    name: V1p5j_frameshift
     description: True if the J gene in the query nucleotide sequence contains a translational frameshift relative to the frame of the J gene reference sequence.
     range: boolean
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d_frame:
-    name: V1p5Rearrangement_d_frame
+  V1p5d_frame:
+    name: V1p5d_frame
     description: Numerical reading frame (1, 2, 3) of the first or only D gene in the query nucleotide sequence, where frame 1 is relative to the first codon of D gene reference sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_d2_frame:
-    name: V1p5Rearrangement_d2_frame
+  V1p5d2_frame:
+    name: V1p5d2_frame
     description: Numerical reading frame (1, 2, 3) of the second D gene in the query nucleotide sequence, where frame 1 is relative to the first codon of D gene reference sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_consensus_count:
-    name: V1p5Rearrangement_consensus_count
+  V1p5consensus_count:
+    name: V1p5consensus_count
     description: Number of reads contributing to the UMI consensus or contig assembly for this sequence. For example, the sum of the number of reads for all UMIs that contribute to the query sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_duplicate_count:
-    name: V1p5Rearrangement_duplicate_count
+  V1p5duplicate_count:
+    name: V1p5duplicate_count
     description: Copy number or number of duplicate observations for the query sequence. For example, the number of identical reads observed for this sequence.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_umi_count:
-    name: V1p5Rearrangement_umi_count
-    description: Number of distinct UMIs represented by this sequence. For example, the total number of UMIs that contribute to the contig assembly for the query sequence.
+  V1p5umi_count:
+    name: V1p5umi_count
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_cell_id:
-    name: V1p5Rearrangement_cell_id
-    description: Identifier defining the cell of origin for the query sequence.
+  V1p5cell_id:
+    name: V1p5cell_id
+    range: string
+  V1p5clone_id:
+    name: V1p5clone_id
+    range: string
+    annotations:
+      nullable: true
+  V1p5sample_processing_id:
+    name: V1p5sample_processing_id
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Rearrangement_clone_id:
-    name: V1p5Rearrangement_clone_id
-    description: Clonal cluster assignment for the query sequence.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_repertoire_id:
-    name: V1p5Rearrangement_repertoire_id
-    description: Identifier to the associated repertoire in study metadata.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_sample_processing_id:
-    name: V1p5Rearrangement_sample_processing_id
-    description: Identifier to the sample processing object in the repertoire metadata for this rearrangement. If the repertoire has a single sample then this field may be empty or missing. If the repertoire has multiple samples then this field may be empty or missing if the sample cannot be differentiated or the relationship is not maintained by the data processing.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Rearrangement_data_processing_id:
-    name: V1p5Rearrangement_data_processing_id
-    description: Identifier to the data processing object in the repertoire metadata for this rearrangement. If this field is empty than the primary data processing object is assumed.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_clone_id:
-    name: V1p5Clone_clone_id
-    description: Identifier for the clone.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Clone_repertoire_id:
-    name: V1p5Clone_repertoire_id
-    description: Identifier to the associated repertoire in study metadata.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_data_processing_id:
-    name: V1p5Clone_data_processing_id
-    description: Identifier of the data processing object in the repertoire metadata for this clone.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_sequences:
-    name: V1p5Clone_sequences
+  V1p5sequences:
+    name: V1p5sequences
     description: List sequence_id strings that act as keys to the Rearrangement records for members of the clone.
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Clone_v_call:
-    name: V1p5Clone_v_call
-    description: V gene with allele of the inferred ancestral of the clone. For example, IGHV4-59*01.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_d_call:
-    name: V1p5Clone_d_call
-    description: D gene with allele of the inferred ancestor of the clone. For example, IGHD3-10*01.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_j_call:
-    name: V1p5Clone_j_call
-    description: J gene with allele of the inferred ancestor of the clone. For example, IGHJ4*02.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_junction:
-    name: V1p5Clone_junction
-    description: Nucleotide sequence for the junction region of the inferred ancestor of the clone, where the junction is defined as the CDR3 plus the two flanking conserved codons.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_junction_aa:
-    name: V1p5Clone_junction_aa
-    description: Amino acid translation of the junction.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_junction_length:
-    name: V1p5Clone_junction_length
-    description: Number of nucleotides in the junction.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_junction_aa_length:
-    name: V1p5Clone_junction_aa_length
-    description: Number of amino acids in junction_aa.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_germline_alignment:
-    name: V1p5Clone_germline_alignment
-    description: Assembled, aligned, full-length inferred ancestor of the clone spanning the same region as the sequence_alignment field of nodes (typically the V(D)J region) and including the same set of corrections and spacers (if any).
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Clone_germline_alignment_aa:
-    name: V1p5Clone_germline_alignment_aa
-    description: Amino acid translation of germline_alignment.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_v_alignment_start:
-    name: V1p5Clone_v_alignment_start
-    description: Start position in the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_v_alignment_end:
-    name: V1p5Clone_v_alignment_end
-    description: End position in the V gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_d_alignment_start:
-    name: V1p5Clone_d_alignment_start
-    description: Start position of the D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_d_alignment_end:
-    name: V1p5Clone_d_alignment_end
-    description: End position of the D gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_j_alignment_start:
-    name: V1p5Clone_j_alignment_start
-    description: Start position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_j_alignment_end:
-    name: V1p5Clone_j_alignment_end
-    description: End position of the J gene alignment in both the sequence_alignment and germline_alignment fields (1-based closed interval).
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_junction_start:
-    name: V1p5Clone_junction_start
+  V1p5junction_start:
+    name: V1p5junction_start
     description: Junction region start position in the alignment (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Clone_junction_end:
-    name: V1p5Clone_junction_end
+  V1p5junction_end:
+    name: V1p5junction_end
     description: Junction region end position in the alignment (1-based closed interval).
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Clone_umi_count:
-    name: V1p5Clone_umi_count
-    description: Number of distinct UMIs observed across all sequences (Rearrangement records) in this clone.
-    range: integer
-    required: false
-    annotations:
-      nullable: true
-  V1p5Clone_clone_count:
-    name: V1p5Clone_clone_count
+  V1p5clone_count:
+    name: V1p5clone_count
     description: Absolute count of the size (number of members) of this clone in the repertoire. This could simply be the number of sequences (Rearrangement records) observed in this clone, the number of distinct cell barcodes (unique cell_id values), or a more sophisticated calculation appropriate to the experimental protocol. Absolute count is provided versus a frequency so that downstream analysis tools can perform their own normalization.
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5Clone_seed_id:
-    name: V1p5Clone_seed_id
+  V1p5seed_id:
+    name: V1p5seed_id
     description: sequence_id of the seed sequence. Empty string (or null) if there is no seed sequence.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Tree_tree_id:
-    name: V1p5Tree_tree_id
+  V1p5tree_id:
+    name: V1p5tree_id
     description: Identifier for the tree.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Tree_clone_id:
-    name: V1p5Tree_clone_id
-    description: Identifier for the clone.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Tree_newick:
-    name: V1p5Tree_newick
+  V1p5newick:
+    name: V1p5newick
     description: Newick string of the tree edges.
     range: string
     required: true
     annotations:
       nullable: true
-  V1p5Tree_nodes:
-    name: V1p5Tree_nodes
+  V1p5nodes:
+    name: V1p5nodes
     description: Dictionary of nodes in the tree, keyed by sequence_id string
     range: V1p5Node
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Node_sequence_id:
-    name: V1p5Node_sequence_id
-    description: Identifier for this node that matches the identifier in the newick string and, where possible, the sequence_id in the source repertoire.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Node_sequence_alignment:
-    name: V1p5Node_sequence_alignment
-    description: Nucleotide sequence of the node, aligned to the germline_alignment for this clone, including including any indel corrections or spacers.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Node_junction:
-    name: V1p5Node_junction
-    description: Junction region nucleotide sequence for the node, where the junction is defined as the CDR3 plus the two flanking conserved codons.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Node_junction_aa:
-    name: V1p5Node_junction_aa
-    description: Amino acid translation of the junction.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Cell_cell_id:
-    name: V1p5Cell_cell_id
-    description: Identifier defining the cell of origin for the query sequence.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  V1p5Cell_rearrangements:
-    name: V1p5Cell_rearrangements
+  V1p5rearrangements:
+    name: V1p5rearrangements
     description: Array of sequence identifiers defined for the Rearrangement object
     range: string
     multivalued: true
     required: true
     annotations:
       nullable: true
-  V1p5Cell_receptors:
-    name: V1p5Cell_receptors
+  V1p5receptors:
+    name: V1p5receptors
     description: Array of receptor identifiers defined for the Receptor object
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Cell_repertoire_id:
-    name: V1p5Cell_repertoire_id
-    description: Identifier to the associated repertoire in study metadata.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5Cell_data_processing_id:
-    name: V1p5Cell_data_processing_id
-    description: Identifier of the data processing object in the repertoire metadata for this clone.
-    range: string
-    required: false
-    annotations:
-      nullable: true
-  V1p5Cell_expression_study_method:
-    name: V1p5Cell_expression_study_method
+  V1p5expression_study_method:
+    name: V1p5expression_study_method
     description: Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary.
     range: V1p5ExpressionStudyMethod
     required: false
     annotations:
       nullable: true
-  V1p5Cell_expression_raw_doi:
-    name: V1p5Cell_expression_raw_doi
+  V1p5expression_raw_doi:
+    name: V1p5expression_raw_doi
     description: DOI of raw data set containing the current event
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Cell_expression_index:
-    name: V1p5Cell_expression_index
+  V1p5expression_index:
+    name: V1p5expression_index
     description: Index addressing the current event within the raw data set.
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5Cell_virtual_pairing:
-    name: V1p5Cell_virtual_pairing
+  V1p5virtual_pairing:
+    name: V1p5virtual_pairing
     description: boolean to indicate if pairing was inferred.
     range: boolean
     required: true
     annotations:
       nullable: true
-  V1p5CellExpression_expression_id:
-    name: V1p5CellExpression_expression_id
+  V1p5expression_id:
+    name: V1p5expression_id
     description: Identifier of this expression property measurement.
     range: string
     required: true
     annotations:
       nullable: false
-  V1p5CellExpression_cell_id:
-    name: V1p5CellExpression_cell_id
-    description: Identifier of the cell to which this expression data is related.
-    range: string
-    required: true
-    annotations:
-      nullable: false
-  V1p5CellExpression_repertoire_id:
-    name: V1p5CellExpression_repertoire_id
-    description: Identifier for the associated repertoire in study metadata.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5CellExpression_data_processing_id:
-    name: V1p5CellExpression_data_processing_id
-    description: Identifier of the data processing object in the repertoire metadata for this clone.
-    range: string
-    required: true
-    annotations:
-      nullable: true
-  V1p5CellExpression_property_type:
-    name: V1p5CellExpression_property_type
+  V1p5property_type:
+    name: V1p5property_type
     description: 'Keyword describing the property type and detection method used to measure the property value. The following keywords are recommended, but custom property types are also valid: "mrna_expression_by_read_count", "protein_expression_by_fluorescence_intensity", "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count" and "antigen_bait_binding_by_dna_barcode_count".'
     range: string
     required: true
     annotations:
       nullable: false
-  V1p5CellExpression_property:
-    name: V1p5CellExpression_property
+  V1p5property:
+    name: V1p5property
     description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
     range: V1p5Property
     required: true
     annotations:
       nullable: true
-  V1p5CellExpression_value:
-    name: V1p5CellExpression_value
-    description: Level at which the property was observed in the experiment (non-normalized).
-    range: float
-    required: true
-    annotations:
-      nullable: true
-  V1p5Receptor_receptor_id:
-    name: V1p5Receptor_receptor_id
+  V1p5receptor_id:
+    name: V1p5receptor_id
     description: ID of the current Receptor object, unique within the local repository.
     range: string
     required: true
     annotations:
       nullable: false
-  V1p5Receptor_receptor_hash:
-    name: V1p5Receptor_receptor_hash
+  V1p5receptor_hash:
+    name: V1p5receptor_hash
     description: The SHA256 hash of the receptor amino acid sequence, calculated on the concatenated ``receptor_variable_domain_*_aa`` sequences and represented as base16-encoded string.
     range: string
     required: true
     annotations:
       nullable: false
-  V1p5Receptor_receptor_type:
-    name: V1p5Receptor_receptor_type
+  V1p5receptor_type:
+    name: V1p5receptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
     range: V1p5ReceptorType
     required: true
     annotations:
       nullable: false
-  V1p5Receptor_receptor_variable_domain_1_aa:
-    name: V1p5Receptor_receptor_variable_domain_1_aa
+  V1p5receptor_variable_domain_1_aa:
+    name: V1p5receptor_variable_domain_1_aa
     description: Complete amino acid sequence of the mature variable domain of the Ig heavy, TCR beta or TCR delta chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.
     range: string
     required: true
     annotations:
       nullable: false
-  V1p5Receptor_receptor_variable_domain_1_locus:
-    name: V1p5Receptor_receptor_variable_domain_1_locus
+  V1p5receptor_variable_domain_1_locus:
+    name: V1p5receptor_variable_domain_1_locus
     description: Locus from which the variable domain in receptor_variable_domain_1_aa originates
     range: V1p5ReceptorVariableDomain1Locus
     required: true
     annotations:
       nullable: false
-  V1p5Receptor_receptor_variable_domain_2_aa:
-    name: V1p5Receptor_receptor_variable_domain_2_aa
+  V1p5receptor_variable_domain_2_aa:
+    name: V1p5receptor_variable_domain_2_aa
     description: Complete amino acid sequence of the mature variable domain of the Ig light, TCR alpha or TCR gamma chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.
     range: string
     required: true
     annotations:
       nullable: false
-  V1p5Receptor_receptor_variable_domain_2_locus:
-    name: V1p5Receptor_receptor_variable_domain_2_locus
+  V1p5receptor_variable_domain_2_locus:
+    name: V1p5receptor_variable_domain_2_locus
     description: Locus from which the variable domain in receptor_variable_domain_2_aa originates
     range: V1p5ReceptorVariableDomain2Locus
     required: true
     annotations:
       nullable: false
-  V1p5Receptor_receptor_ref:
-    name: V1p5Receptor_receptor_ref
+  V1p5receptor_ref:
+    name: V1p5receptor_ref
     description: Array of receptor identifiers defined for the Receptor object
     range: string
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5Receptor_reactivity_measurements:
-    name: V1p5Receptor_reactivity_measurements
+  V1p5reactivity_measurements:
+    name: V1p5reactivity_measurements
     description: Records of reactivity measurement
     range: V1p5ReceptorReactivity
     multivalued: true
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_ligand_type:
-    name: V1p5ReceptorReactivity_ligand_type
+  V1p5ligand_type:
+    name: V1p5ligand_type
     description: Classification of ligand binding to receptor
     range: V1p5LigandType
     required: true
     annotations:
       nullable: false
-  V1p5ReceptorReactivity_antigen_type:
-    name: V1p5ReceptorReactivity_antigen_type
+  V1p5antigen_type:
+    name: V1p5antigen_type
     description: The type of antigen before processing by the immune system.
     range: V1p5AntigenType
     required: true
     annotations:
       nullable: false
-  V1p5ReceptorReactivity_antigen:
-    name: V1p5ReceptorReactivity_antigen
+  V1p5antigen:
+    name: V1p5antigen
     description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
     range: V1p5Antigen
     required: true
     annotations:
       nullable: false
-  V1p5ReceptorReactivity_antigen_source_species:
-    name: V1p5ReceptorReactivity_antigen_source_species
+  V1p5antigen_source_species:
+    name: V1p5antigen_source_species
     description: The species from which the antigen was isolated
     range: V1p5AntigenSourceSpecies
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_peptide_start:
-    name: V1p5ReceptorReactivity_peptide_start
+  V1p5peptide_start:
+    name: V1p5peptide_start
     description: Start position of the peptide within the reference protein sequence
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_peptide_end:
-    name: V1p5ReceptorReactivity_peptide_end
+  V1p5peptide_end:
+    name: V1p5peptide_end
     description: End position of the peptide within the reference protein sequence
     range: integer
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_mhc_class:
-    name: V1p5ReceptorReactivity_mhc_class
-    description: Class of MHC molecule, only present for MHC:x ligand types
-    range: V1p5MhcClass
-    required: false
-    annotations:
-      nullable: true
-  V1p5ReceptorReactivity_mhc_gene_1:
-    name: V1p5ReceptorReactivity_mhc_gene_1
+  V1p5mhc_gene_1:
+    name: V1p5mhc_gene_1
     description: The MHC gene to which the mhc_allele_1 belongs
     range: V1p5MhcGene1
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_mhc_allele_1:
-    name: V1p5ReceptorReactivity_mhc_allele_1
+  V1p5mhc_allele_1:
+    name: V1p5mhc_allele_1
     description: Allele designation of the MHC alpha chain
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_mhc_gene_2:
-    name: V1p5ReceptorReactivity_mhc_gene_2
+  V1p5mhc_gene_2:
+    name: V1p5mhc_gene_2
     description: The MHC gene to which the mhc_allele_2 belongs
     range: V1p5MhcGene2
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_mhc_allele_2:
-    name: V1p5ReceptorReactivity_mhc_allele_2
+  V1p5mhc_allele_2:
+    name: V1p5mhc_allele_2
     description: Allele designation of the MHC class II beta chain or the invariant beta2-microglobin chain
     range: string
     required: false
     annotations:
       nullable: true
-  V1p5ReceptorReactivity_reactivity_method:
-    name: V1p5ReceptorReactivity_reactivity_method
+  V1p5reactivity_method:
+    name: V1p5reactivity_method
     description: The methodology used to assess expression (assay implemented in experiment)
     range: V1p5ReactivityMethod
     required: true
     annotations:
       nullable: false
-  V1p5ReceptorReactivity_reactivity_readout:
-    name: V1p5ReceptorReactivity_reactivity_readout
+  V1p5reactivity_readout:
+    name: V1p5reactivity_readout
     description: Reactivity measurement read-out
     range: V1p5ReactivityReadout
     required: true
     annotations:
       nullable: false
-  V1p5ReceptorReactivity_reactivity_value:
-    name: V1p5ReceptorReactivity_reactivity_value
+  V1p5reactivity_value:
+    name: V1p5reactivity_value
     description: The absolute (processed) value of the measurement
     range: float
     required: true
     annotations:
       nullable: false
-  V1p5ReceptorReactivity_reactivity_unit:
-    name: V1p5ReceptorReactivity_reactivity_unit
+  V1p5reactivity_unit:
+    name: V1p5reactivity_unit
     description: The unit of the measurement
     range: string
     required: true
     annotations:
       nullable: false
-  V1p5SampleProcessing_sample_processing_id:
-    name: V1p5SampleProcessing_sample_processing_id
-    description: Identifier for the sample processing object. This field should be unique within the repertoire. This field can be used to uniquely identify the combination of sample, cell processing, nucleic acid processing and sequencing run information for the repertoire.
-    range: string
-    required: false
-    annotations:
-      nullable: true
 
 enums:
   V1p5Unit:
