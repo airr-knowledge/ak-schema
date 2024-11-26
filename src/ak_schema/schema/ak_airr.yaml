@@ -306,6 +306,11 @@ classes:
       - subject
       - sample
       - data_processing
+  RepertoireGroupDetail:
+    slots:
+      - repertoire_id
+      - repertoire_description
+      - time_point
   RepertoireGroup:
     slots:
       - repertoire_group_id
@@ -873,6 +878,7 @@ slots:
       nullable: true
   release_version:
     name: release_version
+    range: integer
     required: true
     annotations:
       nullable: true
@@ -2028,8 +2034,6 @@ slots:
   repertoire_id:
     name: repertoire_id
     range: string
-    annotations:
-      nullable: true
   repertoire_name:
     name: repertoire_name
     description: Short generic display name for the repertoire
@@ -2039,7 +2043,6 @@ slots:
       nullable: true
   repertoire_description:
     name: repertoire_description
-    description: Generic repertoire description
     range: string
     required: false
     annotations:
@@ -2074,6 +2077,13 @@ slots:
     required: true
     annotations:
       nullable: false
+  time_point:
+    name: time_point
+    description: Time point designation for this repertoire within the group
+    range: TimePoint
+    required: false
+    annotations:
+      nullable: true
   repertoire_group_id:
     name: repertoire_group_id
     description: Identifier for this repertoire collection
@@ -2098,6 +2108,7 @@ slots:
   repertoires:
     name: repertoires
     description: List of repertoires in this collection with an associated description and time point designation
+    range: RepertoireGroupDetail
     multivalued: true
     required: true
     annotations:
@@ -3141,6 +3152,8 @@ slots:
   nodes:
     name: nodes
     description: Dictionary of nodes in the tree, keyed by sequence_id string
+    range: Node
+    multivalued: true
     required: false
     annotations:
       nullable: true
@@ -3410,6 +3423,7 @@ enums:
       TRB:
       TRD:
       TRG:
+      'null':
   SequenceType:
     name: SequenceType
     permissible_values:
@@ -3426,6 +3440,12 @@ enums:
       'null':
   Species:
     name: Species
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
   SpeciesSubgroupType:
     name: SpeciesSubgroupType
     permissible_values:
@@ -3467,6 +3487,7 @@ enums:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
+      'null':
   Gene:
     name: Gene
     reachable_from:

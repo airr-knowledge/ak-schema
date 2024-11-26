@@ -78,12 +78,19 @@ def is_deprecated(slot_yaml):
 def is_array(slot_yaml):
     return "type" in slot_yaml and slot_yaml["type"] == "array"
 
-def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
-    cls_prefix = cls_keyword + "_" if parsed_args.include_class_prefix else ""
-    pr_slot_name = f"{version_prefix}{cls_prefix}{orig_slot_name}"
+def is_multivalued(slot_yaml):
+    return is_array(slot_yaml) or "additionalProperties" in slot_yaml
 
+def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
     if is_deprecated(slot_yaml):
         return dict()
+
+    # Used for Tree/nodes only
+    if "additionalProperties" in slot_yaml and type(slot_yaml["additionalProperties"]) == dict:
+        slot_yaml = {**slot_yaml["additionalProperties"], **slot_yaml}
+
+    cls_prefix = cls_keyword + "_" if parsed_args.include_class_prefix else ""
+    pr_slot_name = f"{version_prefix}{cls_prefix}{orig_slot_name}"
 
     slot = {pr_slot_name: {
                 "name": pr_slot_name,
@@ -94,7 +101,7 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
     if slot_range is not None:
         slot[pr_slot_name]["range"] = slot_range
 
-    if is_array(slot_yaml):
+    if is_multivalued(slot_yaml):
         slot[pr_slot_name]["multivalued"] = True
 
     is_required = orig_slot_name in required_slots
@@ -213,6 +220,11 @@ def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, ver
 def new_keys_not_in_existing(existing_keys, new_keys):
     return all([key not in existing_keys for key in new_keys])
 
+def get_differing_fields(yaml_pt1, yaml_pt2):
+    return ([key for key in yaml_pt1 if key not in yaml_pt2] +
+            [key for key in yaml_pt2 if key not in yaml_pt1] +
+            [key for key in yaml_pt1 if key in yaml_pt2 and yaml_pt1[key] != yaml_pt2[key]])
+
 def get_intersecting_yaml(yaml_pt1, yaml_pt2):
     final = {}
 
@@ -230,17 +242,29 @@ def get_intersecting_yaml(yaml_pt1, yaml_pt2):
 def safe_update_yaml_component(output_yaml_part, new_yaml_part, type_name):
     conflicts = []
 
+    ignore_fields = ["description", "required", "annotations"]
+
     for key in new_yaml_part:
         if key in output_yaml_part:
             if new_yaml_part[key] != output_yaml_part[key]:
-                conflicts.append(key)
-
+                conflict_fields = get_differing_fields(new_yaml_part[key], output_yaml_part[key])
                 intersecting_yaml = get_intersecting_yaml(new_yaml_part[key], output_yaml_part[key])
 
-                logging.warning(f"Conflicting {type_name} '{key}'. Same {type_name} was already found with different content (only 'final' is kept):\n"
-                                f"  Existing: {new_yaml_part[key]}\n"
-                                f"  New:      {output_yaml_part[key]}\n"
-                                f"  Final:    {intersecting_yaml}")
+                if "permissible_values" in conflict_fields:
+                    if get_differing_fields(new_yaml_part[key]["permissible_values"], output_yaml_part[key]["permissible_values"]) == ['null']:
+                        intersecting_yaml["permissible_values"]["null"] = None
+                        conflict_fields.remove("permissible_values")
+                        logging.warning(f"Keeping value 'null' in permissible_values for {type_name} '{key}' (only sometimes present in input)")
+
+                if not all([field in ignore_fields for field in conflict_fields]):
+                    conflicts.append(key)
+                    logging.warning(f"Error: Conflicting {type_name} '{key}'. Same {type_name} was already found with different content (only 'final' is kept):\n"
+                                    f"  Existing: {new_yaml_part[key]}\n"
+                                    f"  New:      {output_yaml_part[key]}\n"
+                                    f"  Final:    {intersecting_yaml}")
+                elif len(conflict_fields) > 0:
+                    logging.warning(f"Removing fields {conflict_fields} from {type_name} '{key}' due to conflicting values.")
+
                 output_yaml_part[key] = intersecting_yaml
         else:
             output_yaml_part[key] = new_yaml_part[key]

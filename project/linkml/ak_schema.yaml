@@ -762,6 +762,8 @@ enums:
         text: TRD
       TRG:
         text: TRG
+      'null':
+        text: 'null'
   SequenceType:
     name: SequenceType
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -856,6 +858,8 @@ enums:
         text: MHC-II
       MHC-nonclassical:
         text: MHC-nonclassical
+      'null':
+        text: 'null'
   Gene:
     name: Gene
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -2128,6 +2132,7 @@ slots:
         tag: nullable
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
     required: true
   release_description:
     name: release_description
@@ -3654,10 +3659,6 @@ slots:
     required: false
   repertoire_id:
     name: repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   repertoire_name:
@@ -3676,7 +3677,6 @@ slots:
       nullable:
         tag: nullable
         value: true
-    description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
     required: false
@@ -3722,6 +3722,16 @@ slots:
     range: DataProcessing
     required: true
     multivalued: true
+  time_point:
+    name: time_point
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Time point designation for this repertoire within the group
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TimePoint
+    required: false
   repertoire_group_id:
     name: repertoire_group_id
     annotations:
@@ -3761,6 +3771,7 @@ slots:
     description: List of repertoires in this collection with an associated description
       and time point designation
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: RepertoireGroupDetail
     required: true
     multivalued: true
   segment:
@@ -5257,7 +5268,9 @@ slots:
         value: true
     description: Dictionary of nodes in the tree, keyed by sequence_id string
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Node
     required: false
+    multivalued: true
   rearrangements:
     name: rearrangements
     annotations:
@@ -6418,6 +6431,13 @@ classes:
     - subject
     - sample
     - data_processing
+  RepertoireGroupDetail:
+    name: RepertoireGroupDetail
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - repertoire_id
+    - repertoire_description
+    - time_point
   RepertoireGroup:
     name: RepertoireGroup
     from_schema: https://github.com/airr-knowledge/ak-schema
