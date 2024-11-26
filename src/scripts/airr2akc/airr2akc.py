@@ -3,6 +3,7 @@ import yaml
 import sys
 import logging
 import glob
+from datetime import datetime
 
 
 def get_arguments():
@@ -429,7 +430,7 @@ def main(parsed_args):
     airr_version = airr_yaml["Info"]["version"]
     version_prefix = f"V{str(airr_version).replace('.', 'p')}" if parsed_args.include_version_prefix else ""
 
-    logging.info(f"Generating LinkML for AIRR version {airr_version}\n" +
+    logging.info(f"Generating LinkML for AIRR version {airr_version} at {datetime.now()}\n" +
                  "\n".join([f"  {key}: {value}" for key, value in vars(parsed_args).items()]) + "\n")
     flush_log()
 
