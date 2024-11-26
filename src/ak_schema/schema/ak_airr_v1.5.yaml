@@ -4110,7 +4110,6 @@ enums:
     permissible_values:
       DNA:
       RNA:
-      'null':
   V1p5ObservationType:
     name: V1p5ObservationType
     permissible_values:
@@ -4121,7 +4120,6 @@ enums:
     permissible_values:
       +:
       '-':
-      'null':
   V1p5Locus:
     name: V1p5Locus
     permissible_values:
@@ -4131,9 +4129,8 @@ enums:
       IGL:
       TRA:
       TRB:
-      TRD:
       TRG:
-      'null':
+      TRD:
   V1p5SequenceType:
     name: V1p5SequenceType
     permissible_values:
@@ -4147,7 +4144,6 @@ enums:
       genomic_and_rearranged:
       genomic_only:
       rearranged_only:
-      'null':
   V1p5Species:
     name: V1p5Species
     reachable_from:
@@ -4164,7 +4160,6 @@ enums:
       inbred:
       outbred:
       locational:
-      'null':
   V1p5Status:
     name: V1p5Status
     permissible_values:
@@ -4172,14 +4167,12 @@ enums:
       draft:
       retired:
       withdrawn:
-      'null':
   V1p5JCodonFrame:
     name: V1p5JCodonFrame
     permissible_values:
       1:
       2:
       3:
-      'null':
   V1p5CurationalTags:
     name: V1p5CurationalTags
     permissible_values:
@@ -4190,14 +4183,12 @@ enums:
     permissible_values:
       genomic_sequencing:
       repertoire_sequencing:
-      'null':
   V1p5MhcClass:
     name: V1p5MhcClass
     permissible_values:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
-      'null':
   V1p5Gene:
     name: V1p5Gene
     reachable_from:
@@ -4232,7 +4223,6 @@ enums:
       pooled:
       hermaphrodite:
       intersex:
-      'null':
   V1p5AgeUnit:
     name: V1p5AgeUnit
     reachable_from:
@@ -4292,7 +4282,6 @@ enums:
       TRB:
       TRD:
       TRG:
-      'null':
   V1p5TemplateClass:
     name: V1p5TemplateClass
     permissible_values:
@@ -4340,27 +4329,23 @@ enums:
     permissible_values:
       fasta:
       fastq:
-      'null':
   V1p5ReadDirection:
     name: V1p5ReadDirection
     permissible_values:
       forward:
       reverse:
       mixed:
-      'null':
   V1p5PairedReadDirection:
     name: V1p5PairedReadDirection
     permissible_values:
       forward:
       reverse:
       mixed:
-      'null':
   V1p5ExpressionStudyMethod:
     name: V1p5ExpressionStudyMethod
     permissible_values:
       flow_cytometry:
       single-cell_transcriptome:
-      'null':
   V1p5Property:
     name: V1p5Property
   V1p5ReceptorType:

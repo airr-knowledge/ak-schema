@@ -153,7 +153,7 @@ def get_ontology_enum(name, slot_yaml, keyword, version_prefix):
 
 def get_closed_vocabulary_enum(name, slot_yaml, keyword, version_prefix):
     return {"name": f"{version_prefix}{name}",
-            "permissible_values": {"null" if enum_val is None else enum_val: None for enum_val in slot_yaml["enum"]}}
+            "permissible_values": {enum_val: None for enum_val in slot_yaml["enum"] if enum_val is not None}}
 
 def get_enum(name, slot_yaml, keyword, version_prefix):
     if "type" in slot_yaml and slot_yaml["type"] == "array":

@@ -4182,7 +4182,6 @@ enums:
     permissible_values:
       DNA:
       RNA:
-      'null':
   V1p4ObservationType:
     name: V1p4ObservationType
     permissible_values:
@@ -4193,7 +4192,6 @@ enums:
     permissible_values:
       +:
       '-':
-      'null':
   V1p4Locus:
     name: V1p4Locus
     permissible_values:
@@ -4203,9 +4201,8 @@ enums:
       IGL:
       TRA:
       TRB:
-      TRD:
       TRG:
-      'null':
+      TRD:
   V1p4SequenceType:
     name: V1p4SequenceType
     permissible_values:
@@ -4219,7 +4216,6 @@ enums:
       genomic_and_rearranged:
       genomic_only:
       rearranged_only:
-      'null':
   V1p4Species:
     name: V1p4Species
     reachable_from:
@@ -4236,7 +4232,6 @@ enums:
       inbred:
       outbred:
       locational:
-      'null':
   V1p4Status:
     name: V1p4Status
     permissible_values:
@@ -4244,14 +4239,12 @@ enums:
       draft:
       retired:
       withdrawn:
-      'null':
   V1p4JCodonFrame:
     name: V1p4JCodonFrame
     permissible_values:
       1:
       2:
       3:
-      'null':
   V1p4CurationalTags:
     name: V1p4CurationalTags
     permissible_values:
@@ -4262,14 +4255,12 @@ enums:
     permissible_values:
       genomic_sequencing:
       repertoire_sequencing:
-      'null':
   V1p4MhcClass:
     name: V1p4MhcClass
     permissible_values:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
-      'null':
   V1p4Gene:
     name: V1p4Gene
     reachable_from:
@@ -4306,7 +4297,6 @@ enums:
       pooled:
       hermaphrodite:
       intersex:
-      'null':
   V1p4AncestryPopulation:
     name: V1p4AncestryPopulation
     reachable_from:
@@ -4374,7 +4364,6 @@ enums:
       TRB:
       TRD:
       TRG:
-      'null':
   V1p4TemplateClass:
     name: V1p4TemplateClass
     permissible_values:
@@ -4414,21 +4403,18 @@ enums:
     permissible_values:
       fasta:
       fastq:
-      'null':
   V1p4ReadDirection:
     name: V1p4ReadDirection
     permissible_values:
       forward:
       reverse:
       mixed:
-      'null':
   V1p4PairedReadDirection:
     name: V1p4PairedReadDirection
     permissible_values:
       forward:
       reverse:
       mixed:
-      'null':
   V1p4LocusSpecies:
     name: V1p4LocusSpecies
     reachable_from:
