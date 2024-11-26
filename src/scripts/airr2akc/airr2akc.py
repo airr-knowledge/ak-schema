@@ -2,6 +2,8 @@ import argparse
 import yaml
 import sys
 import logging
+import glob
+
 
 def get_arguments():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, description="Script to convert AIRR openapi3 schema to LinkML")
@@ -10,6 +12,8 @@ def get_arguments():
                         default="../../airr_schema/airr-standards-v1.5/specs/airr-schema-openapi3.yaml")
     parser.add_argument("-o", "--output_file", type=str, help="Output file to write the LinkML to",
                         default="../../ak_schema/schema/ak_airr.yaml")
+    parser.add_argument("-f", "--ak_schema_folder", type=str, help="AK schema folder, for checking conflicts with existing schema",
+                        default="../../ak_schema/schema/")
     parser.add_argument("-l", "--log_file", type=str, help="Log file to write any error occurring while generating LinkML",
                         default="airr2akc.log")
 
@@ -44,7 +48,7 @@ def get_slot_range(slot_name, slot_yaml, version_prefix):
     # elif "x-airr" in slot_yaml and "format" in slot_yaml["x-airr"]:
     #     slot_range = slot_yaml["x-airr"]["format"]  #
     elif "type" in slot_yaml and slot_yaml["type"] == "object":
-        logging.warning(f"Error: Cannot determine range for slot '{slot_name}', omitting range...")
+        logging.error(f"Error: Cannot determine range for slot '{slot_name}', omitting range...")
         slot_range = None
     else:
         raise NotImplementedError(slot_yaml)
@@ -102,7 +106,6 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
 
     return slot
 
-
 def get_all_slots(airr_yaml, keyword, version_prefix) -> dict:
     all_slots = dict()
 
@@ -124,11 +127,11 @@ def get_ontology_enum(name, slot_yaml, keyword, version_prefix):
                          "include_self": True,
                          "relationship_types": ["rdfs:subClassOf"]}}
         else:
-            logging.warning(f"Error: Source node for ontology '{name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
+            logging.error(f"Error: Source node for ontology '{name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
                   f"  Expected to find some value in the field: x-airr/ontology/top_node/id\n"
                   f"  Instead found these fields: {slot_yaml}")
     else:
-        logging.warning(f"Error: Ontology '{name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
+        logging.error(f"Error: Ontology '{name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
               f"  Expected to find the field: x-airr/ontology/top_node/id\n"
               f"  Instead found these fields: {slot_yaml}")
 
@@ -186,6 +189,27 @@ def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix):
 
     return yaml_output_dict
 
+def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix):
+    composition_yaml = {"classes": {f"{version_prefix}{keyword}": {"slots": []}},
+                        "slots": {},
+                        "enums": {}}
+
+    for class_yaml in airr_yaml[keyword]["allOf"]:
+        if "$ref" in class_yaml:
+            super_class_name = class_yaml["$ref"].lstrip("/#")
+            composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(
+                output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"])
+        else:
+            new_slots = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
+            new_enums = get_all_enums(class_yaml, keyword, version_prefix)
+            composition_yaml["slots"].update(new_slots)
+            composition_yaml["enums"].update(new_enums)
+
+            composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(list(new_slots.keys()))
+
+    return composition_yaml
+
+
 def new_keys_not_in_existing(existing_keys, new_keys):
     return all([key not in existing_keys for key in new_keys])
 
@@ -237,17 +261,16 @@ def safe_update_yaml(output_yaml, keyword_yaml, conflicts):
         enum_conflicts = safe_update_yaml_component(output_yaml["enums"], keyword_yaml["enums"], type_name="enum")
         conflicts["enum_conflicts"] += enum_conflicts
 
-
 def get_airr_yaml(file_location):
     with open(parsed_args.airr_schema_yaml) as file:
         airr_yaml = yaml.safe_load(file)
     return airr_yaml
 
-def get_simple_keywords_to_process(airr_yaml):
-    return [key for key, value in airr_yaml.items() if "type" in value.keys()]
+def get_simple_keywords_to_process(airr_yaml, skip_keywords):
+    return [key for key, value in airr_yaml.items() if "type" in value.keys() and key not in skip_keywords]
 
-def get_composition_keywords_to_process(airr_yaml):
-    return [key for key, value in airr_yaml.items() if list(value.keys()) == ["allOf"]]
+def get_composition_keywords_to_process(airr_yaml, skip_keywords):
+    return [key for key, value in airr_yaml.items() if list(value.keys()) == ["allOf"] and key not in skip_keywords]
 
 
 class LinkMLDumper(yaml.Dumper):
@@ -278,15 +301,96 @@ def write_yaml_output(yaml_output_dict, yaml_outfile):
                   Dumper=LinkMLDumper, explicit_start=True)
 
 
-def log_conflicts(conflicts):
-    logging.info("\n")
+def log_error_summary(conflicts):
+    flush_log()
+    logging.info("\nSummary of errors during AIRR LinkML generation:")
+
+    logging.info(f"  {ErrorCounter.count} errors in constructing the correct LinkML for a class/slot/enum")
     for conflict_type in ("class", "slot", "enum"):
         conflicts_of_type = list(set(conflicts[f"{conflict_type}_conflicts"]))
         if len(conflicts_of_type) == 0:
-            logging.info(f"0 {conflict_type} conflicts")
+            logging.info(f"  0 {conflict_type} conflicts (overlapping {conflict_type} names with different values)")
         else:
-            logging.info(f"{len(conflicts_of_type)} {conflict_type} conflicts: {', '.join(conflicts_of_type)}")
+            logging.info(f"  {len(conflicts_of_type)} {conflict_type} conflicts (overlapping {conflict_type} names with different values): {', '.join(conflicts_of_type)}")
 
+    logging.info("")
+    flush_log()
+
+def check_conflicts_with_akc_file(output_yaml, ak_data, file_path):
+    overlapping_names = []
+
+    base_keys = ("classes", "slots", "enums")
+    for airr_key in base_keys:
+        for airr_name in output_yaml[airr_key]:
+            for ak_key in ak_data.keys():
+                if ak_key in base_keys:
+                    if airr_name in ak_data[ak_key]:
+                        logging.warning(f"Overlapping namespace between AIRR and AKC LinkML ({file_path}): {airr_name} occurs in AIRR {airr_key} and AKC {ak_key}")
+                        overlapping_names.append(airr_name)
+
+    return overlapping_names
+
+def log_confict_with_akc_summary(overlapping_names_per_file):
+    flush_log()
+    logging.info(f"\nSummary of conflicts between AIRR LinkML and exising AKC LinkML:")
+    if len(overlapping_names_per_file) == 0:
+        logging.info("  No overlapping names found")
+
+    for file_path, overlapping_names in overlapping_names_per_file.items():
+        if len(overlapping_names) > 0:
+            logging.info(
+                f"  Found {len(overlapping_names)} overlapping names between AIRR LinkML and {file_path}: {', '.join(overlapping_names)}")
+    flush_log()
+
+def check_conflicts_with_akc(output_yaml):
+    overlapping_names_per_file = {}
+
+    for file_path in glob.glob(f"{parsed_args.ak_schema_folder}/*.yaml"):
+        if file_path not in glob.glob(f"{parsed_args.ak_schema_folder}/ak_airr*.yaml"):
+
+            with open(file_path, "r") as file:
+                ak_data = yaml.safe_load(file)
+                overlapping_names = check_conflicts_with_akc_file(output_yaml, ak_data, file_path)
+                if len(overlapping_names) > 0:
+                    overlapping_names_per_file[file_path] = overlapping_names
+
+    return overlapping_names_per_file
+
+class ErrorCounter(logging.Filter):
+    count = 0
+    def filter(self, record):
+        if record.levelno == logging.ERROR:
+            self.__class__.count += 1
+        return True
+
+def configure_logger(log_file):
+    # stderr and stdout are both written to the log file
+    # when no issues arise, stderr is empty (but a log summary is written to stdout/log file)
+    # errors are counted to include in error summary
+    logger = logging.getLogger()
+    logger.addFilter(ErrorCounter())
+    logger.setLevel(logging.INFO)
+
+    file_handler = logging.FileHandler(log_file, mode='w')
+    file_handler.setFormatter(logging.Formatter('%(message)s'))
+
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stdout_handler.setLevel(logging.INFO)
+    stdout_handler.addFilter(lambda record: record.levelno < logging.WARNING)
+
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    stderr_handler.setLevel(logging.WARNING)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(stdout_handler)
+    logger.addHandler(stderr_handler)
+
+def flush_log():
+    for handler in logging.getLogger().handlers:
+        handler.flush()
+
+def process_simple_keywords():
+    pass
 
 def main(parsed_args):
     airr_yaml = get_airr_yaml(parsed_args.airr_schema_yaml)
@@ -295,7 +399,8 @@ def main(parsed_args):
 
     logging.info(f"Generating LinkML for AIRR version {airr_version}\n"
                  f"  Input: {parsed_args.airr_schema_yaml}\n"
-                 f"  Output: {parsed_args.output_file}\n\n")
+                 f"  Output: {parsed_args.output_file}\n")
+    flush_log()
 
 
     skip_keywords = ["Info", "Ontology", "CURIEMap", "InformationProvider", "Attributes", "FileObject", "DataSet",
@@ -307,58 +412,30 @@ def main(parsed_args):
                    "slots": dict(),
                    "enums": dict()}
 
-    conflicts = {"class_conflicts": [],
-                 "slot_conflicts": [],
-                 "enum_conflicts": []}
-
-    # keywords_to_process = airr_yaml.keys()
-    keywords_to_process = get_simple_keywords_to_process(airr_yaml)
+    internal_conflicts = {"class_conflicts": [],
+                          "slot_conflicts": [],
+                          "enum_conflicts": []}
 
     # Simple keywords: add classes, slots and enums
-    for keyword in keywords_to_process:
-        if keyword not in skip_keywords:
-            keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix)
-            safe_update_yaml(output_yaml, keyword_yaml, conflicts)
+    for keyword in get_simple_keywords_to_process(airr_yaml, skip_keywords):
+        keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix)
+        safe_update_yaml(output_yaml, keyword_yaml, internal_conflicts)
 
-            skip_keywords.append(keyword)
+    # composition keywords (consisting of 'allOf')
+    for keyword in get_composition_keywords_to_process(airr_yaml, skip_keywords):
+        composition_yaml = get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix)
+        safe_update_yaml(output_yaml, composition_yaml, internal_conflicts)
 
-    # composition keywords (consisting of 'allOf'): only add classes
-    # although new slots and enums could be defined here, this is not handled, as
-    # 'SampleProcessing' is currently the only composition keyword
-    for keyword in get_composition_keywords_to_process(airr_yaml):
-        if keyword not in skip_keywords:
-            keyword_yaml = airr_yaml[keyword]
-            # all_slots = []
-            composition_yaml = {"classes": {f"{version_prefix}{keyword}": {"slots": []}},
-                                "slots": {},
-                                "enums": {}}
-
-            for class_yaml in keyword_yaml["allOf"]:
-                if "$ref" in class_yaml:
-                    super_class_name = class_yaml["$ref"].lstrip("/#")
-                    composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"])
-                else:
-                    new_slots = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
-                    new_enums = get_all_enums(class_yaml, keyword, version_prefix)
-                    composition_yaml["slots"].update(new_slots)
-                    composition_yaml["enums"].update(new_enums)
-
-                    composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(list(new_slots.keys()))
-
-            safe_update_yaml(output_yaml, composition_yaml, conflicts)
-
-    log_conflicts(conflicts)
     write_yaml_output(output_yaml, parsed_args.output_file)
+    akc_conflicts = check_conflicts_with_akc(output_yaml)
 
+    log_error_summary(internal_conflicts)
+    log_confict_with_akc_summary(akc_conflicts)
 
 if __name__ == "__main__":
     parsed_args = get_arguments()
 
-    logging.basicConfig(level=logging.INFO, format='%(message)s', handlers=[
-        logging.FileHandler(parsed_args.log_file, mode='w'),
-        logging.StreamHandler(sys.stderr)
-    ])
-
+    configure_logger(parsed_args.log_file)
     main(parsed_args)
 
 
