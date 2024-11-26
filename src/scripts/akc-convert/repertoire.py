@@ -459,9 +459,6 @@ class Repertoire(Parser):
                                 if self.verbose():
                                     print('Info:     Creating new field %s.%s, value = %s'%(airr_link_value, value['akc_field'], value['value']))
                                 akc_object[value['akc_field']] = value['value']
-                                #print(akc_object[value['akc_field']])
-                                #print(json_dumper.dumps(akc_object))
-
 
                     # If the current field is a "link field" (the akc_form column is of type Class)
                     # we need to check to see if the referenced Class object has been created yet.
