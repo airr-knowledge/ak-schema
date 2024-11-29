@@ -4,8 +4,8 @@
       "": {
         "akc_id": ""
       },
-      "bf47ab95-40f8-461c-913a-c767f6683dbe": {
-        "akc_id": "bf47ab95-40f8-461c-913a-c767f6683dbe",
+      "4431cd2b-a941-4060-a86f-0d046deefda3": {
+        "akc_id": "4431cd2b-a941-4060-a86f-0d046deefda3",
         "name": "Vergani et al., Novel Method for High-Throughput Full-Length IGHV-D-J Sequencing of the Immune Repertoire from Bulk B-Cells with Single-Cell Resolution",
         "description": "Cancer Study",
         "study_type": {
@@ -16,92 +16,175 @@
         "release_date": "2019-05-02T20:09:19",
         "update_date": "2022-11-14T19:12:11.173521",
         "participants": [
-          "b27c5f4a-f002-48d8-874f-9eb6672838dd",
-          "3ca265cb-00d2-40d8-a143-25edb3a74fdc",
-          "8a3ee109-1295-4b5e-a377-e2165c770a0b",
-          "21b9adb0-e18c-493b-97a6-a1addeaf6f79",
-          "dbbd69e1-9d1e-4ca5-9284-8e5d10cc3066",
-          "5e1aee50-024a-4014-9497-e52fab26da89",
-          "ccb80694-9699-400b-b49e-cc184f24d9f0",
-          "c300e0ef-16ec-4efb-b829-a9a32aa4d4bd",
-          "9fa19958-b9bf-4a17-b25c-ad9eba3ae8b9",
-          "d663b0ff-cff5-493d-aa44-f6b48a27a7e4",
-          "da1fee2c-e6d1-4c70-a131-1f5f4144c93f",
-          "75cdc0e5-56c1-470f-85b3-e6469f31d64e",
-          "9a4fb1b3-65ce-4262-95f2-bc18e30f8429",
-          "d6641cf2-70da-45ec-b768-17db316d8e43",
-          "b635978d-ccda-4cb9-8d5d-f166b904d66a",
-          "7854036e-6545-4235-bc7c-9a00dd3a6eaf",
-          "95802662-1351-4dfd-b5fd-c1245e904888",
-          "76a09892-ce44-4d9c-ab3d-9497cf4114d8",
-          "617b300a-cbdc-4db9-933d-8868ff7fe58c",
-          "29cb9f3e-0a1e-4762-ba10-d6b0ea13da76",
-          "fb1f9bc0-94c8-491c-a9ed-d21d4b0a01f3",
-          "8f35c051-ea4d-4b72-bbaa-29c1fe9a5e9f",
-          "91b01cb1-4251-4fd5-b623-e5089fee35f9",
-          "028897d4-8312-45c7-8ed7-ca587d121cb6",
-          "d4be14c0-2389-407b-9d3f-23e4929a0695"
+          "22524ced-8dec-4994-9578-fc35679a93f9",
+          "57f0e179-798a-4831-b484-28114a0779f0",
+          "fbc9161b-3605-4311-b39d-2ef33dd4bc2d",
+          "d6469368-a361-4ded-9118-28b03a0b05c4",
+          "c1068d15-2e26-49c2-8c67-9379bc1155c6",
+          "7cfe3e35-c8c8-4b0e-8a96-228486444517",
+          "a5205c65-dd78-468c-a158-03b546ee563b",
+          "302886dd-606a-445f-a423-5a36cca184c5",
+          "66b6f082-9bdf-41ae-8fa8-03848fc9654e",
+          "ebde5bb7-47cf-4577-96d5-1244604ffe5a",
+          "cc3cf331-8521-436f-8c9d-bb1eeafc0b4b",
+          "6ba10ee7-fd45-4d62-b25e-7d30882eaa12",
+          "e9751bf4-24e7-46d9-b1ac-9bea996256c8",
+          "c68bd180-77b5-4b7b-8db9-4814c11c2957",
+          "37138ed2-69cb-4a8f-9c27-d5d63c456bae",
+          "830d4e3b-b300-4a33-a44d-715710b31b4f",
+          "beef51c0-6ee4-40f3-94ae-64ecb0082522",
+          "930d20a5-5154-4005-aa42-8dfcfbfd1938",
+          "91def9dc-c14e-4763-91c6-9f9c5a4b7374",
+          "42d692b5-558f-46f4-ae43-d7a447a96eed",
+          "0f2d85e9-182b-4f59-a745-30370e1a91e4",
+          "4fcfb5c6-a8fe-4d2f-b93d-74899033e434",
+          "98d49fb3-fc0a-4fe4-a75d-bbf834741e89",
+          "e02499c6-f022-44b3-a018-8ddd5bde47f2",
+          "7627d972-3590-47e7-bf1c-fe7fcb7d5ab2"
         ],
         "assays": [
-          "a5a1923d-c9e5-4fa1-b6aa-b1bc15b36802",
-          "06ecd6c1-1e3a-49aa-80dd-555f0a136873",
-          "f64ab3bb-c937-4324-b0ac-b26f1864cce5",
-          "fd5765e2-fccb-4161-9b78-c513507dfdbf",
-          "e05b19e3-af9f-4585-b5ea-57a5e9d1e026",
-          "167b283f-2739-4a78-839c-29dccbfb5bd0",
-          "1cf54bba-9288-4e1d-a23c-2206a02871c9",
-          "aad23ccf-3629-4a40-bc94-8c0bb2ca1b54",
-          "a112395d-dd3c-4418-8c6f-7465f4087ca2",
-          "45c9050b-e722-4c76-9211-79cc4808dd48",
-          "ff46ac95-5566-4e81-8dd6-f34720267071",
-          "02399ef4-299d-441b-95f1-b07310082c0e",
-          "5f379827-03ed-4d4d-9698-513761541c5a",
-          "7194104f-2d0e-43d2-9221-5158744b571d",
-          "486b64b3-3f6b-4454-a8a2-99c1b14ec87e",
-          "3aeab9f8-4ae6-4b2e-a3c9-08069d730c6d",
-          "ef479322-9f5c-45b7-9e63-7470d9346083",
-          "03330c45-97b6-42df-92b3-577c6406623e",
-          "6e8c480d-69d8-4d13-aa4e-142df295dc59",
-          "19dba60e-82a4-4981-a91a-c2a8e6935fca",
-          "b3f148b6-2001-45ef-9f8d-b004d99afc65",
-          "6418ad5e-07d5-4fdc-afa2-5c33f2b684b6",
-          "51d8ec9c-44c5-4911-81f5-55f087134b85",
-          "6941432c-1631-43f3-ae0a-cbfe71ff5e32",
-          "9ae2633b-7daf-4bb5-b7aa-dae160b4967a"
+          "0163b578-83a3-4683-becc-43983952e9df",
+          "de886608-3f23-4125-bf49-af79e68f04ec",
+          "f0f97c6c-510a-4664-aa3b-198f4aff140c",
+          "c60cbf2a-5439-4bdc-abb0-39dbb4b07a56",
+          "fbbd3dd8-5b52-4cc4-afd1-355a45190be0",
+          "8315d8a8-c1a1-49b2-9ecb-6603de9dae0a",
+          "fbefb941-17b7-4e74-8966-65ee55c428d0",
+          "fe3cc785-66bf-41cc-9798-b6ba3e60d435",
+          "8d6d2efd-2465-4af4-9685-807f9c53cbf7",
+          "0e297ba7-1da8-4fb7-b930-4ab9858db0e2",
+          "4ac17939-e170-4fca-9813-4704400f880b",
+          "f01f27d3-8657-4e3a-96fb-e355ff13f30f",
+          "dd1c64dc-b1c5-4844-826e-4fe8b5aacb20",
+          "dd3e4968-6c16-413a-b1bb-73cd091afa9b",
+          "bc8aa6af-ea61-4371-b022-f4d328a21a3d",
+          "9280b71f-a754-4c8a-a9c8-0af5810e9486",
+          "8b4f9c23-191a-4153-ba98-952d74a31f95",
+          "3b42765d-594f-448c-ae07-80e6210df2e5",
+          "dea5de35-4f6a-459f-a6fc-0bd3d043c553",
+          "a7d9ada1-450b-4c3c-a70f-01a06a7ad59f",
+          "08e3f8a3-bcd1-4ebc-ae6a-1cf86c9846ec",
+          "0eb5fab1-c32d-4549-ab4b-a6dbb1699986",
+          "6faa3427-d524-456f-90e1-402630073a94",
+          "471d3361-5979-49db-a193-2fbcf14a376a",
+          "fad177ea-ddb9-4c1d-8a53-309bbc93f08e"
         ],
         "documents": [
-          "3dc8b116-6cde-4b86-902d-f42297078add"
+          "56b39a05-bcdf-42b9-b30f-61d13badc4d0"
+        ],
+        "source_uris": [
+          "ADC_REPERTOIRE:1",
+          "ADC_REPERTOIRE:2",
+          "ADC_REPERTOIRE:3",
+          "ADC_REPERTOIRE:4",
+          "ADC_REPERTOIRE:5",
+          "ADC_REPERTOIRE:6",
+          "ADC_REPERTOIRE:7",
+          "ADC_REPERTOIRE:8",
+          "ADC_REPERTOIRE:9",
+          "ADC_REPERTOIRE:10",
+          "ADC_REPERTOIRE:11",
+          "ADC_REPERTOIRE:12",
+          "ADC_REPERTOIRE:13",
+          "ADC_REPERTOIRE:14",
+          "ADC_REPERTOIRE:15",
+          "ADC_REPERTOIRE:16",
+          "ADC_REPERTOIRE:17",
+          "ADC_REPERTOIRE:18",
+          "ADC_REPERTOIRE:19",
+          "ADC_REPERTOIRE:20",
+          "ADC_REPERTOIRE:21",
+          "ADC_REPERTOIRE:22",
+          "ADC_REPERTOIRE:23",
+          "ADC_REPERTOIRE:24",
+          "ADC_REPERTOIRE:25"
         ]
       }
     },
     "references": {
-      "3dc8b116-6cde-4b86-902d-f42297078add": {
+      "56b39a05-bcdf-42b9-b30f-61d13badc4d0": {
         "source_uri": "",
         "sources": "PMID: 28959265",
         "investigations": [
           "",
-          "bf47ab95-40f8-461c-913a-c767f6683dbe"
+          "4431cd2b-a941-4060-a86f-0d046deefda3"
         ],
-        "akc_id": "3dc8b116-6cde-4b86-902d-f42297078add"
+        "akc_id": "56b39a05-bcdf-42b9-b30f-61d13badc4d0",
+        "source_uris": [
+          "ADC_REPERTOIRE:1",
+          "ADC_REPERTOIRE:2",
+          "ADC_REPERTOIRE:3",
+          "ADC_REPERTOIRE:4",
+          "ADC_REPERTOIRE:5",
+          "ADC_REPERTOIRE:6",
+          "ADC_REPERTOIRE:7",
+          "ADC_REPERTOIRE:8",
+          "ADC_REPERTOIRE:9",
+          "ADC_REPERTOIRE:10",
+          "ADC_REPERTOIRE:11",
+          "ADC_REPERTOIRE:12",
+          "ADC_REPERTOIRE:13",
+          "ADC_REPERTOIRE:14",
+          "ADC_REPERTOIRE:15",
+          "ADC_REPERTOIRE:16",
+          "ADC_REPERTOIRE:17",
+          "ADC_REPERTOIRE:18",
+          "ADC_REPERTOIRE:19",
+          "ADC_REPERTOIRE:20",
+          "ADC_REPERTOIRE:21",
+          "ADC_REPERTOIRE:22",
+          "ADC_REPERTOIRE:23",
+          "ADC_REPERTOIRE:24",
+          "ADC_REPERTOIRE:25"
+        ]
       }
     },
     "study_arms": {
-      "60f62aea-d9d2-4585-834e-219451fbb4f3": {
-        "akc_id": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+      "9b315770-7574-4104-8021-40abc7003754": {
+        "akc_id": "9b315770-7574-4104-8021-40abc7003754",
         "name": "Control (Healthy)",
-        "investigation": "bf47ab95-40f8-461c-913a-c767f6683dbe"
+        "investigation": "4431cd2b-a941-4060-a86f-0d046deefda3",
+        "source_uris": [
+          "ADC_REPERTOIRE:1",
+          "ADC_REPERTOIRE:2",
+          "ADC_REPERTOIRE:3",
+          "ADC_REPERTOIRE:4",
+          "ADC_REPERTOIRE:5",
+          "ADC_REPERTOIRE:6",
+          "ADC_REPERTOIRE:7",
+          "ADC_REPERTOIRE:8",
+          "ADC_REPERTOIRE:9",
+          "ADC_REPERTOIRE:10",
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "a3c037aa-e048-4b20-a056-644c11900492": {
-        "akc_id": "a3c037aa-e048-4b20-a056-644c11900492",
+      "5d272f07-9642-498c-b1ef-607e90cb3fb0": {
+        "akc_id": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "name": "Case",
-        "investigation": "bf47ab95-40f8-461c-913a-c767f6683dbe"
+        "investigation": "4431cd2b-a941-4060-a86f-0d046deefda3",
+        "source_uris": [
+          "ADC_REPERTOIRE:12",
+          "ADC_REPERTOIRE:13",
+          "ADC_REPERTOIRE:14",
+          "ADC_REPERTOIRE:15",
+          "ADC_REPERTOIRE:16",
+          "ADC_REPERTOIRE:17",
+          "ADC_REPERTOIRE:18",
+          "ADC_REPERTOIRE:19",
+          "ADC_REPERTOIRE:20",
+          "ADC_REPERTOIRE:21",
+          "ADC_REPERTOIRE:22",
+          "ADC_REPERTOIRE:23",
+          "ADC_REPERTOIRE:24",
+          "ADC_REPERTOIRE:25"
+        ]
       }
     },
     "participants": {
-      "b27c5f4a-f002-48d8-874f-9eb6672838dd": {
-        "akc_id": "b27c5f4a-f002-48d8-874f-9eb6672838dd",
+      "22524ced-8dec-4994-9578-fc35679a93f9": {
+        "akc_id": "22524ced-8dec-4994-9578-fc35679a93f9",
         "name": "B10_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -112,12 +195,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
       },
-      "3ca265cb-00d2-40d8-a143-25edb3a74fdc": {
-        "akc_id": "3ca265cb-00d2-40d8-a143-25edb3a74fdc",
+      "57f0e179-798a-4831-b484-28114a0779f0": {
+        "akc_id": "57f0e179-798a-4831-b484-28114a0779f0",
         "name": "B11_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -128,12 +214,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
       },
-      "8a3ee109-1295-4b5e-a377-e2165c770a0b": {
-        "akc_id": "8a3ee109-1295-4b5e-a377-e2165c770a0b",
+      "fbc9161b-3605-4311-b39d-2ef33dd4bc2d": {
+        "akc_id": "fbc9161b-3605-4311-b39d-2ef33dd4bc2d",
         "name": "B12_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -144,12 +233,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
       },
-      "21b9adb0-e18c-493b-97a6-a1addeaf6f79": {
-        "akc_id": "21b9adb0-e18c-493b-97a6-a1addeaf6f79",
+      "d6469368-a361-4ded-9118-28b03a0b05c4": {
+        "akc_id": "d6469368-a361-4ded-9118-28b03a0b05c4",
         "name": "B13_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -160,12 +252,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
       },
-      "dbbd69e1-9d1e-4ca5-9284-8e5d10cc3066": {
-        "akc_id": "dbbd69e1-9d1e-4ca5-9284-8e5d10cc3066",
+      "c1068d15-2e26-49c2-8c67-9379bc1155c6": {
+        "akc_id": "c1068d15-2e26-49c2-8c67-9379bc1155c6",
         "name": "B14_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -176,12 +271,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
       },
-      "5e1aee50-024a-4014-9497-e52fab26da89": {
-        "akc_id": "5e1aee50-024a-4014-9497-e52fab26da89",
+      "7cfe3e35-c8c8-4b0e-8a96-228486444517": {
+        "akc_id": "7cfe3e35-c8c8-4b0e-8a96-228486444517",
         "name": "B16_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -191,12 +289,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
       },
-      "ccb80694-9699-400b-b49e-cc184f24d9f0": {
-        "akc_id": "ccb80694-9699-400b-b49e-cc184f24d9f0",
+      "a5205c65-dd78-468c-a158-03b546ee563b": {
+        "akc_id": "a5205c65-dd78-468c-a158-03b546ee563b",
         "name": "B17_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -206,12 +307,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
       },
-      "c300e0ef-16ec-4efb-b829-a9a32aa4d4bd": {
-        "akc_id": "c300e0ef-16ec-4efb-b829-a9a32aa4d4bd",
+      "302886dd-606a-445f-a423-5a36cca184c5": {
+        "akc_id": "302886dd-606a-445f-a423-5a36cca184c5",
         "name": "B18_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -221,12 +325,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
       },
-      "9fa19958-b9bf-4a17-b25c-ad9eba3ae8b9": {
-        "akc_id": "9fa19958-b9bf-4a17-b25c-ad9eba3ae8b9",
+      "66b6f082-9bdf-41ae-8fa8-03848fc9654e": {
+        "akc_id": "66b6f082-9bdf-41ae-8fa8-03848fc9654e",
         "name": "B19_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -237,12 +344,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
       },
-      "d663b0ff-cff5-493d-aa44-f6b48a27a7e4": {
-        "akc_id": "d663b0ff-cff5-493d-aa44-f6b48a27a7e4",
+      "ebde5bb7-47cf-4577-96d5-1244604ffe5a": {
+        "akc_id": "ebde5bb7-47cf-4577-96d5-1244604ffe5a",
         "name": "B20_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -253,12 +363,15 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
       },
-      "da1fee2c-e6d1-4c70-a131-1f5f4144c93f": {
-        "akc_id": "da1fee2c-e6d1-4c70-a131-1f5f4144c93f",
+      "cc3cf331-8521-436f-8c9d-bb1eeafc0b4b": {
+        "akc_id": "cc3cf331-8521-436f-8c9d-bb1eeafc0b4b",
         "name": "B21_N",
-        "study_arm": "60f62aea-d9d2-4585-834e-219451fbb4f3",
+        "study_arm": "9b315770-7574-4104-8021-40abc7003754",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
@@ -269,904 +382,1174 @@
           "label": "year",
           "id": "UO:0000036"
         },
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "75cdc0e5-56c1-470f-85b3-e6469f31d64e": {
-        "akc_id": "75cdc0e5-56c1-470f-85b3-e6469f31d64e",
+      "6ba10ee7-fd45-4d62-b25e-7d30882eaa12": {
+        "akc_id": "6ba10ee7-fd45-4d62-b25e-7d30882eaa12",
         "name": "B00_CLL_05_10x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
       },
-      "9a4fb1b3-65ce-4262-95f2-bc18e30f8429": {
-        "akc_id": "9a4fb1b3-65ce-4262-95f2-bc18e30f8429",
+      "e9751bf4-24e7-46d9-b1ac-9bea996256c8": {
+        "akc_id": "e9751bf4-24e7-46d9-b1ac-9bea996256c8",
         "name": "B00_CLL_05_20x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
       },
-      "d6641cf2-70da-45ec-b768-17db316d8e43": {
-        "akc_id": "d6641cf2-70da-45ec-b768-17db316d8e43",
+      "c68bd180-77b5-4b7b-8db9-4814c11c2957": {
+        "akc_id": "c68bd180-77b5-4b7b-8db9-4814c11c2957",
         "name": "B00_CLL_05_40x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
       },
-      "b635978d-ccda-4cb9-8d5d-f166b904d66a": {
-        "akc_id": "b635978d-ccda-4cb9-8d5d-f166b904d66a",
+      "37138ed2-69cb-4a8f-9c27-d5d63c456bae": {
+        "akc_id": "37138ed2-69cb-4a8f-9c27-d5d63c456bae",
         "name": "B00_CLL_1_10x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
       },
-      "7854036e-6545-4235-bc7c-9a00dd3a6eaf": {
-        "akc_id": "7854036e-6545-4235-bc7c-9a00dd3a6eaf",
+      "830d4e3b-b300-4a33-a44d-715710b31b4f": {
+        "akc_id": "830d4e3b-b300-4a33-a44d-715710b31b4f",
         "name": "B00_CLL_1_20x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
       },
-      "95802662-1351-4dfd-b5fd-c1245e904888": {
-        "akc_id": "95802662-1351-4dfd-b5fd-c1245e904888",
+      "beef51c0-6ee4-40f3-94ae-64ecb0082522": {
+        "akc_id": "beef51c0-6ee4-40f3-94ae-64ecb0082522",
         "name": "B00_CLL_1_40x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
       },
-      "76a09892-ce44-4d9c-ab3d-9497cf4114d8": {
-        "akc_id": "76a09892-ce44-4d9c-ab3d-9497cf4114d8",
+      "930d20a5-5154-4005-aa42-8dfcfbfd1938": {
+        "akc_id": "930d20a5-5154-4005-aa42-8dfcfbfd1938",
         "name": "B00_CLL_2_10x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
       },
-      "617b300a-cbdc-4db9-933d-8868ff7fe58c": {
-        "akc_id": "617b300a-cbdc-4db9-933d-8868ff7fe58c",
+      "91def9dc-c14e-4763-91c6-9f9c5a4b7374": {
+        "akc_id": "91def9dc-c14e-4763-91c6-9f9c5a4b7374",
         "name": "B00_CLL_2_20x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
       },
-      "29cb9f3e-0a1e-4762-ba10-d6b0ea13da76": {
-        "akc_id": "29cb9f3e-0a1e-4762-ba10-d6b0ea13da76",
+      "42d692b5-558f-46f4-ae43-d7a447a96eed": {
+        "akc_id": "42d692b5-558f-46f4-ae43-d7a447a96eed",
         "name": "B00_CLL_2_40x",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
       },
-      "fb1f9bc0-94c8-491c-a9ed-d21d4b0a01f3": {
-        "akc_id": "fb1f9bc0-94c8-491c-a9ed-d21d4b0a01f3",
+      "0f2d85e9-182b-4f59-a745-30370e1a91e4": {
+        "akc_id": "0f2d85e9-182b-4f59-a745-30370e1a91e4",
         "name": "B00_CLL_DIL1:1",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
       },
-      "8f35c051-ea4d-4b72-bbaa-29c1fe9a5e9f": {
-        "akc_id": "8f35c051-ea4d-4b72-bbaa-29c1fe9a5e9f",
+      "4fcfb5c6-a8fe-4d2f-b93d-74899033e434": {
+        "akc_id": "4fcfb5c6-a8fe-4d2f-b93d-74899033e434",
         "name": "B00_CLL_DIL1:2",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
       },
-      "91b01cb1-4251-4fd5-b623-e5089fee35f9": {
-        "akc_id": "91b01cb1-4251-4fd5-b623-e5089fee35f9",
+      "98d49fb3-fc0a-4fe4-a75d-bbf834741e89": {
+        "akc_id": "98d49fb3-fc0a-4fe4-a75d-bbf834741e89",
         "name": "B00_CLL_DIL1:4",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
       },
-      "028897d4-8312-45c7-8ed7-ca587d121cb6": {
-        "akc_id": "028897d4-8312-45c7-8ed7-ca587d121cb6",
+      "e02499c6-f022-44b3-a018-8ddd5bde47f2": {
+        "akc_id": "e02499c6-f022-44b3-a018-8ddd5bde47f2",
         "name": "B00_CLL_DIL1:8",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
       },
-      "d4be14c0-2389-407b-9d3f-23e4929a0695": {
-        "akc_id": "d4be14c0-2389-407b-9d3f-23e4929a0695",
+      "7627d972-3590-47e7-bf1c-fe7fcb7d5ab2": {
+        "akc_id": "7627d972-3590-47e7-bf1c-fe7fcb7d5ab2",
         "name": "B00_CLL_DIL1:16",
-        "study_arm": "a3c037aa-e048-4b20-a056-644c11900492",
+        "study_arm": "5d272f07-9642-498c-b1ef-607e90cb3fb0",
         "species": {
           "label": "Homo sapiens",
           "id": "NCBITAXON:9606"
         },
         "biological_sex": "not collected",
-        "age_event": "Sample Collection"
+        "age_event": "Sample Collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       }
     },
     "life_events": {
-      "3509fb69-8c09-4068-aae6-f60e360afab5": {
-        "akc_id": "3509fb69-8c09-4068-aae6-f60e360afab5",
-        "participant": "b27c5f4a-f002-48d8-874f-9eb6672838dd"
-      },
-      "3ae066e8-69ee-431d-ab63-e6ed8de073a8": {
-        "akc_id": "3ae066e8-69ee-431d-ab63-e6ed8de073a8",
-        "participant": "b27c5f4a-f002-48d8-874f-9eb6672838dd"
-      },
-      "407fff27-20a9-46f6-b941-e5977f4ea1a3": {
-        "akc_id": "407fff27-20a9-46f6-b941-e5977f4ea1a3",
-        "participant": "b27c5f4a-f002-48d8-874f-9eb6672838dd",
-        "t0_event": "Sample collection"
-      },
-      "2e4df892-4a3c-4e72-96c2-9a32fcf68b24": {
-        "akc_id": "2e4df892-4a3c-4e72-96c2-9a32fcf68b24",
-        "participant": "3ca265cb-00d2-40d8-a143-25edb3a74fdc"
-      },
-      "b2dfc06a-bf5a-43b6-9632-711351de5e85": {
-        "akc_id": "b2dfc06a-bf5a-43b6-9632-711351de5e85",
-        "participant": "3ca265cb-00d2-40d8-a143-25edb3a74fdc"
-      },
-      "9debda68-609d-4a09-9ac8-d6a24f66bffc": {
-        "akc_id": "9debda68-609d-4a09-9ac8-d6a24f66bffc",
-        "participant": "3ca265cb-00d2-40d8-a143-25edb3a74fdc",
-        "t0_event": "Sample collection"
-      },
-      "c8fdec92-f745-4718-a55b-f771e9bc4213": {
-        "akc_id": "c8fdec92-f745-4718-a55b-f771e9bc4213",
-        "participant": "8a3ee109-1295-4b5e-a377-e2165c770a0b"
-      },
-      "10eefd10-cf64-4b60-916e-32b4daa254ce": {
-        "akc_id": "10eefd10-cf64-4b60-916e-32b4daa254ce",
-        "participant": "8a3ee109-1295-4b5e-a377-e2165c770a0b"
-      },
-      "de33d050-c094-4832-b670-d3d7b6e024cc": {
-        "akc_id": "de33d050-c094-4832-b670-d3d7b6e024cc",
-        "participant": "8a3ee109-1295-4b5e-a377-e2165c770a0b",
-        "t0_event": "Sample collection"
-      },
-      "41cb1994-e7b4-42c3-9887-a75dc76dde39": {
-        "akc_id": "41cb1994-e7b4-42c3-9887-a75dc76dde39",
-        "participant": "21b9adb0-e18c-493b-97a6-a1addeaf6f79"
-      },
-      "b97d3a23-bc4d-4259-a165-1a6e51bfc023": {
-        "akc_id": "b97d3a23-bc4d-4259-a165-1a6e51bfc023",
-        "participant": "21b9adb0-e18c-493b-97a6-a1addeaf6f79"
-      },
-      "4470c87a-0028-4d24-b187-41a67ddffe45": {
-        "akc_id": "4470c87a-0028-4d24-b187-41a67ddffe45",
-        "participant": "21b9adb0-e18c-493b-97a6-a1addeaf6f79",
-        "t0_event": "Sample collection"
-      },
-      "7b488a4d-7eb7-48c2-8374-52c303079894": {
-        "akc_id": "7b488a4d-7eb7-48c2-8374-52c303079894",
-        "participant": "dbbd69e1-9d1e-4ca5-9284-8e5d10cc3066"
-      },
-      "f69e75cf-a4d8-4459-9d40-6c380dfad3c1": {
-        "akc_id": "f69e75cf-a4d8-4459-9d40-6c380dfad3c1",
-        "participant": "dbbd69e1-9d1e-4ca5-9284-8e5d10cc3066"
-      },
-      "8e66c2f0-ed66-487b-8218-bef3b76ab2ca": {
-        "akc_id": "8e66c2f0-ed66-487b-8218-bef3b76ab2ca",
-        "participant": "dbbd69e1-9d1e-4ca5-9284-8e5d10cc3066",
-        "t0_event": "Sample collection"
-      },
-      "c09f7421-c284-428a-9c19-e15d0f31897c": {
-        "akc_id": "c09f7421-c284-428a-9c19-e15d0f31897c",
-        "participant": "5e1aee50-024a-4014-9497-e52fab26da89"
-      },
-      "5b490598-fb79-4ca4-9636-b4cef729ba27": {
-        "akc_id": "5b490598-fb79-4ca4-9636-b4cef729ba27",
-        "participant": "5e1aee50-024a-4014-9497-e52fab26da89"
-      },
-      "210d4c72-7b65-4841-aeb4-5e26bedaf255": {
-        "akc_id": "210d4c72-7b65-4841-aeb4-5e26bedaf255",
-        "participant": "5e1aee50-024a-4014-9497-e52fab26da89",
-        "t0_event": "Sample collection"
-      },
-      "70a14a83-f48e-4ab4-ad4d-8724b325cea4": {
-        "akc_id": "70a14a83-f48e-4ab4-ad4d-8724b325cea4",
-        "participant": "ccb80694-9699-400b-b49e-cc184f24d9f0"
-      },
-      "5f3fc5c3-0a65-45a9-9093-83cc929c6651": {
-        "akc_id": "5f3fc5c3-0a65-45a9-9093-83cc929c6651",
-        "participant": "ccb80694-9699-400b-b49e-cc184f24d9f0"
-      },
-      "8f016504-b14d-418f-9f24-2860dbd53324": {
-        "akc_id": "8f016504-b14d-418f-9f24-2860dbd53324",
-        "participant": "ccb80694-9699-400b-b49e-cc184f24d9f0",
-        "t0_event": "Sample collection"
-      },
-      "73e632c2-a820-49bf-8204-344e213bcda7": {
-        "akc_id": "73e632c2-a820-49bf-8204-344e213bcda7",
-        "participant": "c300e0ef-16ec-4efb-b829-a9a32aa4d4bd"
-      },
-      "20549ec7-f3a1-4bde-aa33-0cb56f04da4e": {
-        "akc_id": "20549ec7-f3a1-4bde-aa33-0cb56f04da4e",
-        "participant": "c300e0ef-16ec-4efb-b829-a9a32aa4d4bd"
-      },
-      "bdd8f2b1-a718-4d49-bd06-9fc630b7cc0a": {
-        "akc_id": "bdd8f2b1-a718-4d49-bd06-9fc630b7cc0a",
-        "participant": "c300e0ef-16ec-4efb-b829-a9a32aa4d4bd",
-        "t0_event": "Sample collection"
-      },
-      "68bba7c6-a7c8-4001-9f85-63c0dcd3c5b8": {
-        "akc_id": "68bba7c6-a7c8-4001-9f85-63c0dcd3c5b8",
-        "participant": "9fa19958-b9bf-4a17-b25c-ad9eba3ae8b9"
-      },
-      "731274d6-31c4-4deb-9b03-36bd9f147f5e": {
-        "akc_id": "731274d6-31c4-4deb-9b03-36bd9f147f5e",
-        "participant": "9fa19958-b9bf-4a17-b25c-ad9eba3ae8b9"
-      },
-      "6db4bfd4-bc0b-46b4-9e9a-d003370a9ad9": {
-        "akc_id": "6db4bfd4-bc0b-46b4-9e9a-d003370a9ad9",
-        "participant": "9fa19958-b9bf-4a17-b25c-ad9eba3ae8b9",
-        "t0_event": "Sample collection"
-      },
-      "fde8a36d-9f8e-478c-92c0-86df342ae3ac": {
-        "akc_id": "fde8a36d-9f8e-478c-92c0-86df342ae3ac",
-        "participant": "d663b0ff-cff5-493d-aa44-f6b48a27a7e4"
-      },
-      "21f3fc3f-2594-4d1c-82b3-17e631a81071": {
-        "akc_id": "21f3fc3f-2594-4d1c-82b3-17e631a81071",
-        "participant": "d663b0ff-cff5-493d-aa44-f6b48a27a7e4"
-      },
-      "59101f37-b1ac-4e76-b80d-db6383bed266": {
-        "akc_id": "59101f37-b1ac-4e76-b80d-db6383bed266",
-        "participant": "d663b0ff-cff5-493d-aa44-f6b48a27a7e4",
-        "t0_event": "Sample collection"
-      },
-      "32d0dbcd-2c81-446c-bede-ab706f94f0c2": {
-        "akc_id": "32d0dbcd-2c81-446c-bede-ab706f94f0c2",
-        "participant": "da1fee2c-e6d1-4c70-a131-1f5f4144c93f"
-      },
-      "c29f0e12-0954-4bba-879a-26f20d36a76c": {
-        "akc_id": "c29f0e12-0954-4bba-879a-26f20d36a76c",
-        "participant": "da1fee2c-e6d1-4c70-a131-1f5f4144c93f"
-      },
-      "39305a56-e37e-4621-9cbe-8669aa021dd6": {
-        "akc_id": "39305a56-e37e-4621-9cbe-8669aa021dd6",
-        "participant": "da1fee2c-e6d1-4c70-a131-1f5f4144c93f",
-        "t0_event": "Sample collection"
-      },
-      "7f6ca512-ba31-4caf-9469-6aee6ef7b108": {
-        "akc_id": "7f6ca512-ba31-4caf-9469-6aee6ef7b108",
-        "participant": "75cdc0e5-56c1-470f-85b3-e6469f31d64e"
-      },
-      "8265e46b-049c-4e64-984a-cad3fc6d9654": {
-        "akc_id": "8265e46b-049c-4e64-984a-cad3fc6d9654",
-        "participant": "75cdc0e5-56c1-470f-85b3-e6469f31d64e"
-      },
-      "3d9bd469-ad3a-451f-bf7c-f8543085e700": {
-        "akc_id": "3d9bd469-ad3a-451f-bf7c-f8543085e700",
-        "participant": "75cdc0e5-56c1-470f-85b3-e6469f31d64e",
-        "t0_event": "Sample collection"
-      },
-      "c32eb6c3-640b-43ad-af81-2bd2dfd5e497": {
-        "akc_id": "c32eb6c3-640b-43ad-af81-2bd2dfd5e497",
-        "participant": "9a4fb1b3-65ce-4262-95f2-bc18e30f8429"
-      },
-      "94ebfbc8-07fa-4d22-9ad8-974e829f6bd7": {
-        "akc_id": "94ebfbc8-07fa-4d22-9ad8-974e829f6bd7",
-        "participant": "9a4fb1b3-65ce-4262-95f2-bc18e30f8429"
-      },
-      "79a3e912-64a3-46a3-8707-f11603f3bc28": {
-        "akc_id": "79a3e912-64a3-46a3-8707-f11603f3bc28",
-        "participant": "9a4fb1b3-65ce-4262-95f2-bc18e30f8429",
-        "t0_event": "Sample collection"
-      },
-      "f5b72d75-a7b6-4511-9fcc-b74c6ce8911e": {
-        "akc_id": "f5b72d75-a7b6-4511-9fcc-b74c6ce8911e",
-        "participant": "d6641cf2-70da-45ec-b768-17db316d8e43"
-      },
-      "f79a1c21-8eb5-4ce3-9e90-0b50e373fc89": {
-        "akc_id": "f79a1c21-8eb5-4ce3-9e90-0b50e373fc89",
-        "participant": "d6641cf2-70da-45ec-b768-17db316d8e43"
-      },
-      "a3a61f9e-5e30-4fa1-ae1b-5af9fdc3833f": {
-        "akc_id": "a3a61f9e-5e30-4fa1-ae1b-5af9fdc3833f",
-        "participant": "d6641cf2-70da-45ec-b768-17db316d8e43",
-        "t0_event": "Sample collection"
-      },
-      "dfdb8c47-8173-4848-b99e-cd5751992f20": {
-        "akc_id": "dfdb8c47-8173-4848-b99e-cd5751992f20",
-        "participant": "b635978d-ccda-4cb9-8d5d-f166b904d66a"
-      },
-      "2b35fc8b-af82-4b08-a5a9-4808e0b6a5c8": {
-        "akc_id": "2b35fc8b-af82-4b08-a5a9-4808e0b6a5c8",
-        "participant": "b635978d-ccda-4cb9-8d5d-f166b904d66a"
-      },
-      "9f8df5b3-988c-4dce-a0d0-14f6e445ad5f": {
-        "akc_id": "9f8df5b3-988c-4dce-a0d0-14f6e445ad5f",
-        "participant": "b635978d-ccda-4cb9-8d5d-f166b904d66a",
-        "t0_event": "Sample collection"
-      },
-      "32a511e1-e4c8-4268-a7d7-3125aac3c95d": {
-        "akc_id": "32a511e1-e4c8-4268-a7d7-3125aac3c95d",
-        "participant": "7854036e-6545-4235-bc7c-9a00dd3a6eaf"
-      },
-      "3c139103-c900-4618-96e4-8bbc1c572be0": {
-        "akc_id": "3c139103-c900-4618-96e4-8bbc1c572be0",
-        "participant": "7854036e-6545-4235-bc7c-9a00dd3a6eaf"
-      },
-      "130bd32f-0e56-4e6b-accb-aff2ce9c40a0": {
-        "akc_id": "130bd32f-0e56-4e6b-accb-aff2ce9c40a0",
-        "participant": "7854036e-6545-4235-bc7c-9a00dd3a6eaf",
-        "t0_event": "Sample collection"
-      },
-      "6346e69d-f488-4f85-b624-6eba3a093cc0": {
-        "akc_id": "6346e69d-f488-4f85-b624-6eba3a093cc0",
-        "participant": "95802662-1351-4dfd-b5fd-c1245e904888"
-      },
-      "cfa9a02d-b58f-4a44-b00d-9e98958befbb": {
-        "akc_id": "cfa9a02d-b58f-4a44-b00d-9e98958befbb",
-        "participant": "95802662-1351-4dfd-b5fd-c1245e904888"
-      },
-      "601514c1-7428-4dad-a13e-730641eb6bdf": {
-        "akc_id": "601514c1-7428-4dad-a13e-730641eb6bdf",
-        "participant": "95802662-1351-4dfd-b5fd-c1245e904888",
-        "t0_event": "Sample collection"
-      },
-      "e57c7ab4-ca45-4be4-b53b-3253de53faf9": {
-        "akc_id": "e57c7ab4-ca45-4be4-b53b-3253de53faf9",
-        "participant": "76a09892-ce44-4d9c-ab3d-9497cf4114d8"
-      },
-      "20704bd3-7052-4a81-bf2c-3f18532b505b": {
-        "akc_id": "20704bd3-7052-4a81-bf2c-3f18532b505b",
-        "participant": "76a09892-ce44-4d9c-ab3d-9497cf4114d8"
-      },
-      "fc3efed5-c186-441a-b4b9-c9d02d156968": {
-        "akc_id": "fc3efed5-c186-441a-b4b9-c9d02d156968",
-        "participant": "76a09892-ce44-4d9c-ab3d-9497cf4114d8",
-        "t0_event": "Sample collection"
-      },
-      "859e8318-cb72-4567-9c73-0d6e266ad2b7": {
-        "akc_id": "859e8318-cb72-4567-9c73-0d6e266ad2b7",
-        "participant": "617b300a-cbdc-4db9-933d-8868ff7fe58c"
-      },
-      "b7a8c291-84de-4b61-aa61-4cc40df98e31": {
-        "akc_id": "b7a8c291-84de-4b61-aa61-4cc40df98e31",
-        "participant": "617b300a-cbdc-4db9-933d-8868ff7fe58c"
-      },
-      "b7eb1a45-3d0d-4926-985c-2ab87359b57b": {
-        "akc_id": "b7eb1a45-3d0d-4926-985c-2ab87359b57b",
-        "participant": "617b300a-cbdc-4db9-933d-8868ff7fe58c",
-        "t0_event": "Sample collection"
-      },
-      "a5d90355-ef6f-4118-ba85-da1b45bc81a4": {
-        "akc_id": "a5d90355-ef6f-4118-ba85-da1b45bc81a4",
-        "participant": "29cb9f3e-0a1e-4762-ba10-d6b0ea13da76"
-      },
-      "cd175989-9fa8-4603-a8ef-ce9336e09171": {
-        "akc_id": "cd175989-9fa8-4603-a8ef-ce9336e09171",
-        "participant": "29cb9f3e-0a1e-4762-ba10-d6b0ea13da76"
-      },
-      "ab71f597-68a0-479b-beae-22b7b5f8dd7a": {
-        "akc_id": "ab71f597-68a0-479b-beae-22b7b5f8dd7a",
-        "participant": "29cb9f3e-0a1e-4762-ba10-d6b0ea13da76",
-        "t0_event": "Sample collection"
-      },
-      "e8efb79a-f527-410c-8bea-f85395842145": {
-        "akc_id": "e8efb79a-f527-410c-8bea-f85395842145",
-        "participant": "fb1f9bc0-94c8-491c-a9ed-d21d4b0a01f3"
-      },
-      "666a6dc4-f75e-4461-9851-c73e3bb0e4db": {
-        "akc_id": "666a6dc4-f75e-4461-9851-c73e3bb0e4db",
-        "participant": "fb1f9bc0-94c8-491c-a9ed-d21d4b0a01f3"
-      },
-      "2536f5dd-925f-4528-af70-ba21e7bdef7c": {
-        "akc_id": "2536f5dd-925f-4528-af70-ba21e7bdef7c",
-        "participant": "fb1f9bc0-94c8-491c-a9ed-d21d4b0a01f3",
-        "t0_event": "Sample collection"
-      },
-      "2d9483a8-271f-4a67-bf58-5f90229ad505": {
-        "akc_id": "2d9483a8-271f-4a67-bf58-5f90229ad505",
-        "participant": "8f35c051-ea4d-4b72-bbaa-29c1fe9a5e9f"
-      },
-      "db96e06c-cfd3-4749-b759-79c844d88ad0": {
-        "akc_id": "db96e06c-cfd3-4749-b759-79c844d88ad0",
-        "participant": "8f35c051-ea4d-4b72-bbaa-29c1fe9a5e9f"
-      },
-      "38af5335-cdc7-4098-af65-e7be22ec5efb": {
-        "akc_id": "38af5335-cdc7-4098-af65-e7be22ec5efb",
-        "participant": "8f35c051-ea4d-4b72-bbaa-29c1fe9a5e9f",
-        "t0_event": "Sample collection"
-      },
-      "01ba6348-1c58-4cc6-821e-bd6d5838253e": {
-        "akc_id": "01ba6348-1c58-4cc6-821e-bd6d5838253e",
-        "participant": "91b01cb1-4251-4fd5-b623-e5089fee35f9"
-      },
-      "7bd8f121-bee6-4779-b1d0-e97b479fdb1a": {
-        "akc_id": "7bd8f121-bee6-4779-b1d0-e97b479fdb1a",
-        "participant": "91b01cb1-4251-4fd5-b623-e5089fee35f9"
-      },
-      "753dfe61-9dfb-4612-a365-4edac8317bfb": {
-        "akc_id": "753dfe61-9dfb-4612-a365-4edac8317bfb",
-        "participant": "91b01cb1-4251-4fd5-b623-e5089fee35f9",
-        "t0_event": "Sample collection"
-      },
-      "1cd8a711-873a-42c1-81aa-e34d042fa844": {
-        "akc_id": "1cd8a711-873a-42c1-81aa-e34d042fa844",
-        "participant": "028897d4-8312-45c7-8ed7-ca587d121cb6"
-      },
-      "e9ac429d-26fe-4101-bd3a-770b6f7c302a": {
-        "akc_id": "e9ac429d-26fe-4101-bd3a-770b6f7c302a",
-        "participant": "028897d4-8312-45c7-8ed7-ca587d121cb6"
-      },
-      "2a18d64f-d2f5-46ae-99fb-c8bf098895bf": {
-        "akc_id": "2a18d64f-d2f5-46ae-99fb-c8bf098895bf",
-        "participant": "028897d4-8312-45c7-8ed7-ca587d121cb6",
-        "t0_event": "Sample collection"
-      },
-      "d6e9514f-37d2-433b-a6c5-cb53c5eaf775": {
-        "akc_id": "d6e9514f-37d2-433b-a6c5-cb53c5eaf775",
-        "participant": "d4be14c0-2389-407b-9d3f-23e4929a0695"
-      },
-      "533a865f-da04-46a1-8c2d-7c2611085e15": {
-        "akc_id": "533a865f-da04-46a1-8c2d-7c2611085e15",
-        "participant": "d4be14c0-2389-407b-9d3f-23e4929a0695"
-      },
-      "660c9f6e-fb26-4288-94aa-f2a671e3b9c8": {
-        "akc_id": "660c9f6e-fb26-4288-94aa-f2a671e3b9c8",
-        "participant": "d4be14c0-2389-407b-9d3f-23e4929a0695",
-        "t0_event": "Sample collection"
+      "d287008c-5bdd-465e-b4fb-781f444799a2": {
+        "akc_id": "d287008c-5bdd-465e-b4fb-781f444799a2",
+        "participant": "22524ced-8dec-4994-9578-fc35679a93f9"
+      },
+      "0ba001a9-1686-48d6-8f00-ecb64dc1a1be": {
+        "akc_id": "0ba001a9-1686-48d6-8f00-ecb64dc1a1be",
+        "participant": "22524ced-8dec-4994-9578-fc35679a93f9"
+      },
+      "51127c32-2ad9-4d6d-98ce-c202f00b9298": {
+        "akc_id": "51127c32-2ad9-4d6d-98ce-c202f00b9298",
+        "participant": "22524ced-8dec-4994-9578-fc35679a93f9",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
+      },
+      "bf3d720f-f5b3-4bac-8575-9d89320e1cbd": {
+        "akc_id": "bf3d720f-f5b3-4bac-8575-9d89320e1cbd",
+        "participant": "57f0e179-798a-4831-b484-28114a0779f0"
+      },
+      "36d42f46-a85a-4c26-b42a-2c458ae7c038": {
+        "akc_id": "36d42f46-a85a-4c26-b42a-2c458ae7c038",
+        "participant": "57f0e179-798a-4831-b484-28114a0779f0"
+      },
+      "e9143000-2df0-4122-8ccd-5361ba5f788b": {
+        "akc_id": "e9143000-2df0-4122-8ccd-5361ba5f788b",
+        "participant": "57f0e179-798a-4831-b484-28114a0779f0",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
+      },
+      "2468ec65-2fd5-48f5-8fbf-6886e6e596e0": {
+        "akc_id": "2468ec65-2fd5-48f5-8fbf-6886e6e596e0",
+        "participant": "fbc9161b-3605-4311-b39d-2ef33dd4bc2d"
+      },
+      "69beefde-fc99-4328-af12-9dffd7d73667": {
+        "akc_id": "69beefde-fc99-4328-af12-9dffd7d73667",
+        "participant": "fbc9161b-3605-4311-b39d-2ef33dd4bc2d"
+      },
+      "bd36009a-c97a-4428-8a1a-0e40a11474b4": {
+        "akc_id": "bd36009a-c97a-4428-8a1a-0e40a11474b4",
+        "participant": "fbc9161b-3605-4311-b39d-2ef33dd4bc2d",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
+      },
+      "14cf33f9-a86d-4e29-b18e-5d8c6c3decfd": {
+        "akc_id": "14cf33f9-a86d-4e29-b18e-5d8c6c3decfd",
+        "participant": "d6469368-a361-4ded-9118-28b03a0b05c4"
+      },
+      "0150568b-71f8-495d-a908-469951dde64f": {
+        "akc_id": "0150568b-71f8-495d-a908-469951dde64f",
+        "participant": "d6469368-a361-4ded-9118-28b03a0b05c4"
+      },
+      "830f6001-2dad-40df-ad51-2b3845550c1a": {
+        "akc_id": "830f6001-2dad-40df-ad51-2b3845550c1a",
+        "participant": "d6469368-a361-4ded-9118-28b03a0b05c4",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
+      },
+      "1e0c2c9d-e403-4080-bba3-3e3c4d50d918": {
+        "akc_id": "1e0c2c9d-e403-4080-bba3-3e3c4d50d918",
+        "participant": "c1068d15-2e26-49c2-8c67-9379bc1155c6"
+      },
+      "23add7b8-79e2-412a-836c-3acc94ab96e3": {
+        "akc_id": "23add7b8-79e2-412a-836c-3acc94ab96e3",
+        "participant": "c1068d15-2e26-49c2-8c67-9379bc1155c6"
+      },
+      "3e980446-5917-4529-826e-972f65069cc1": {
+        "akc_id": "3e980446-5917-4529-826e-972f65069cc1",
+        "participant": "c1068d15-2e26-49c2-8c67-9379bc1155c6",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
+      },
+      "7b49b532-7c59-4a20-aa55-a1b058a39e1f": {
+        "akc_id": "7b49b532-7c59-4a20-aa55-a1b058a39e1f",
+        "participant": "7cfe3e35-c8c8-4b0e-8a96-228486444517"
+      },
+      "56eafd1a-7339-4ce3-b9a1-1ca571769067": {
+        "akc_id": "56eafd1a-7339-4ce3-b9a1-1ca571769067",
+        "participant": "7cfe3e35-c8c8-4b0e-8a96-228486444517"
+      },
+      "b82d0213-bf04-4c79-a863-e40d81c8b4a7": {
+        "akc_id": "b82d0213-bf04-4c79-a863-e40d81c8b4a7",
+        "participant": "7cfe3e35-c8c8-4b0e-8a96-228486444517",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
+      },
+      "53d4c529-dc07-485c-a8b4-870daefc077f": {
+        "akc_id": "53d4c529-dc07-485c-a8b4-870daefc077f",
+        "participant": "a5205c65-dd78-468c-a158-03b546ee563b"
+      },
+      "e0f082cf-bb98-410f-b1f5-8453c1441f87": {
+        "akc_id": "e0f082cf-bb98-410f-b1f5-8453c1441f87",
+        "participant": "a5205c65-dd78-468c-a158-03b546ee563b"
+      },
+      "0570dbf1-fd5b-45a6-b9d2-24d8c08cfc50": {
+        "akc_id": "0570dbf1-fd5b-45a6-b9d2-24d8c08cfc50",
+        "participant": "a5205c65-dd78-468c-a158-03b546ee563b",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
+      },
+      "1692f268-4407-4e97-9c0f-8d6a08004420": {
+        "akc_id": "1692f268-4407-4e97-9c0f-8d6a08004420",
+        "participant": "302886dd-606a-445f-a423-5a36cca184c5"
+      },
+      "3772c635-286d-4faa-afbd-56b031c12c52": {
+        "akc_id": "3772c635-286d-4faa-afbd-56b031c12c52",
+        "participant": "302886dd-606a-445f-a423-5a36cca184c5"
+      },
+      "cf449a88-fff7-47d4-ae88-d3e678b17aac": {
+        "akc_id": "cf449a88-fff7-47d4-ae88-d3e678b17aac",
+        "participant": "302886dd-606a-445f-a423-5a36cca184c5",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
+      },
+      "088cc13a-7fba-4cf0-be43-eb1e2e45fd43": {
+        "akc_id": "088cc13a-7fba-4cf0-be43-eb1e2e45fd43",
+        "participant": "66b6f082-9bdf-41ae-8fa8-03848fc9654e"
+      },
+      "db98fb6e-f5e1-4384-a869-7e948ccc2c5a": {
+        "akc_id": "db98fb6e-f5e1-4384-a869-7e948ccc2c5a",
+        "participant": "66b6f082-9bdf-41ae-8fa8-03848fc9654e"
+      },
+      "ac7415d8-7050-4bb9-99c6-19c06bc84043": {
+        "akc_id": "ac7415d8-7050-4bb9-99c6-19c06bc84043",
+        "participant": "66b6f082-9bdf-41ae-8fa8-03848fc9654e",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
+      },
+      "7aabe482-3932-4ae1-af9e-fac1b2d52576": {
+        "akc_id": "7aabe482-3932-4ae1-af9e-fac1b2d52576",
+        "participant": "ebde5bb7-47cf-4577-96d5-1244604ffe5a"
+      },
+      "48792673-43dc-4cf0-b363-369d679f71d7": {
+        "akc_id": "48792673-43dc-4cf0-b363-369d679f71d7",
+        "participant": "ebde5bb7-47cf-4577-96d5-1244604ffe5a"
+      },
+      "31ca0b05-d1cc-457e-bf90-170c96cb2e7c": {
+        "akc_id": "31ca0b05-d1cc-457e-bf90-170c96cb2e7c",
+        "participant": "ebde5bb7-47cf-4577-96d5-1244604ffe5a",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
+      },
+      "16e42ec7-9f3c-403c-b3c2-44d685cca393": {
+        "akc_id": "16e42ec7-9f3c-403c-b3c2-44d685cca393",
+        "participant": "cc3cf331-8521-436f-8c9d-bb1eeafc0b4b"
+      },
+      "d69fc93c-f9cd-4640-b4f0-7bd14c26a818": {
+        "akc_id": "d69fc93c-f9cd-4640-b4f0-7bd14c26a818",
+        "participant": "cc3cf331-8521-436f-8c9d-bb1eeafc0b4b"
+      },
+      "240d369f-96d3-4b1b-9987-c8d67275a2c7": {
+        "akc_id": "240d369f-96d3-4b1b-9987-c8d67275a2c7",
+        "participant": "cc3cf331-8521-436f-8c9d-bb1eeafc0b4b",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
+      },
+      "4a3240f5-5379-40b6-8ca9-ce950b087c15": {
+        "akc_id": "4a3240f5-5379-40b6-8ca9-ce950b087c15",
+        "participant": "6ba10ee7-fd45-4d62-b25e-7d30882eaa12"
+      },
+      "f1022f9b-18a6-46a4-9efb-c39393e6ef28": {
+        "akc_id": "f1022f9b-18a6-46a4-9efb-c39393e6ef28",
+        "participant": "6ba10ee7-fd45-4d62-b25e-7d30882eaa12"
+      },
+      "92ff350d-b00f-4e34-9278-1af86d2d1dc6": {
+        "akc_id": "92ff350d-b00f-4e34-9278-1af86d2d1dc6",
+        "participant": "6ba10ee7-fd45-4d62-b25e-7d30882eaa12",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
+      },
+      "8994659d-ef5d-4ea8-b8e6-d1797b84bca2": {
+        "akc_id": "8994659d-ef5d-4ea8-b8e6-d1797b84bca2",
+        "participant": "e9751bf4-24e7-46d9-b1ac-9bea996256c8"
+      },
+      "79346a60-daa0-45a7-9ab5-76c8b7aac55c": {
+        "akc_id": "79346a60-daa0-45a7-9ab5-76c8b7aac55c",
+        "participant": "e9751bf4-24e7-46d9-b1ac-9bea996256c8"
+      },
+      "26b44517-3b9c-4a22-946e-f489ff2ae3b7": {
+        "akc_id": "26b44517-3b9c-4a22-946e-f489ff2ae3b7",
+        "participant": "e9751bf4-24e7-46d9-b1ac-9bea996256c8",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
+      },
+      "76b52266-d26d-409c-bd52-173b478bba9e": {
+        "akc_id": "76b52266-d26d-409c-bd52-173b478bba9e",
+        "participant": "c68bd180-77b5-4b7b-8db9-4814c11c2957"
+      },
+      "c12cc39f-e458-4548-9ecb-f7e88161426f": {
+        "akc_id": "c12cc39f-e458-4548-9ecb-f7e88161426f",
+        "participant": "c68bd180-77b5-4b7b-8db9-4814c11c2957"
+      },
+      "7cb76a36-af5b-4e0c-9cb1-ebd57c581526": {
+        "akc_id": "7cb76a36-af5b-4e0c-9cb1-ebd57c581526",
+        "participant": "c68bd180-77b5-4b7b-8db9-4814c11c2957",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
+      },
+      "e742a54a-ebd7-42c0-8255-5cdd49d3c6dd": {
+        "akc_id": "e742a54a-ebd7-42c0-8255-5cdd49d3c6dd",
+        "participant": "37138ed2-69cb-4a8f-9c27-d5d63c456bae"
+      },
+      "e77d448b-4ca1-4d27-9aba-9033866c32e9": {
+        "akc_id": "e77d448b-4ca1-4d27-9aba-9033866c32e9",
+        "participant": "37138ed2-69cb-4a8f-9c27-d5d63c456bae"
+      },
+      "caed9b21-df20-44d2-8069-007219e0e577": {
+        "akc_id": "caed9b21-df20-44d2-8069-007219e0e577",
+        "participant": "37138ed2-69cb-4a8f-9c27-d5d63c456bae",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
+      },
+      "77cdd8fb-2f7d-4151-9bc6-85a0c275e409": {
+        "akc_id": "77cdd8fb-2f7d-4151-9bc6-85a0c275e409",
+        "participant": "830d4e3b-b300-4a33-a44d-715710b31b4f"
+      },
+      "8bdf449e-29a9-4a83-8c57-e0a4ae5f5a71": {
+        "akc_id": "8bdf449e-29a9-4a83-8c57-e0a4ae5f5a71",
+        "participant": "830d4e3b-b300-4a33-a44d-715710b31b4f"
+      },
+      "a42f47a6-6066-46a0-a1b1-02ede13e0445": {
+        "akc_id": "a42f47a6-6066-46a0-a1b1-02ede13e0445",
+        "participant": "830d4e3b-b300-4a33-a44d-715710b31b4f",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
+      },
+      "db793a83-40dc-401c-be0b-c02e904602ec": {
+        "akc_id": "db793a83-40dc-401c-be0b-c02e904602ec",
+        "participant": "beef51c0-6ee4-40f3-94ae-64ecb0082522"
+      },
+      "e1783a6c-3d17-43a6-a104-25206f0396ca": {
+        "akc_id": "e1783a6c-3d17-43a6-a104-25206f0396ca",
+        "participant": "beef51c0-6ee4-40f3-94ae-64ecb0082522"
+      },
+      "30da46de-c23e-4fb8-9e06-1e3321f87a62": {
+        "akc_id": "30da46de-c23e-4fb8-9e06-1e3321f87a62",
+        "participant": "beef51c0-6ee4-40f3-94ae-64ecb0082522",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
+      },
+      "2375c92c-4b1a-4e64-bdbe-d8dcf55f0277": {
+        "akc_id": "2375c92c-4b1a-4e64-bdbe-d8dcf55f0277",
+        "participant": "930d20a5-5154-4005-aa42-8dfcfbfd1938"
+      },
+      "8949b0ac-dc16-4e88-9ade-c4052638a38c": {
+        "akc_id": "8949b0ac-dc16-4e88-9ade-c4052638a38c",
+        "participant": "930d20a5-5154-4005-aa42-8dfcfbfd1938"
+      },
+      "74355d7f-985d-4039-8b5b-a171d0b9fab0": {
+        "akc_id": "74355d7f-985d-4039-8b5b-a171d0b9fab0",
+        "participant": "930d20a5-5154-4005-aa42-8dfcfbfd1938",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
+      },
+      "2950fd3a-8ad7-4953-aea2-380e4a875759": {
+        "akc_id": "2950fd3a-8ad7-4953-aea2-380e4a875759",
+        "participant": "91def9dc-c14e-4763-91c6-9f9c5a4b7374"
+      },
+      "6f90a689-65a0-44c1-b3b9-1ebb911f3aac": {
+        "akc_id": "6f90a689-65a0-44c1-b3b9-1ebb911f3aac",
+        "participant": "91def9dc-c14e-4763-91c6-9f9c5a4b7374"
+      },
+      "b44a6c1f-9800-4f11-942e-7fee4b909db2": {
+        "akc_id": "b44a6c1f-9800-4f11-942e-7fee4b909db2",
+        "participant": "91def9dc-c14e-4763-91c6-9f9c5a4b7374",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
+      },
+      "71538e78-ac35-4faa-8977-c9e4a339183c": {
+        "akc_id": "71538e78-ac35-4faa-8977-c9e4a339183c",
+        "participant": "42d692b5-558f-46f4-ae43-d7a447a96eed"
+      },
+      "7d126c81-d596-4dea-9e9a-3fecedcb7c2e": {
+        "akc_id": "7d126c81-d596-4dea-9e9a-3fecedcb7c2e",
+        "participant": "42d692b5-558f-46f4-ae43-d7a447a96eed"
+      },
+      "e09db45f-7960-4b29-a394-285ad122b6a9": {
+        "akc_id": "e09db45f-7960-4b29-a394-285ad122b6a9",
+        "participant": "42d692b5-558f-46f4-ae43-d7a447a96eed",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
+      },
+      "cfaadcff-8a41-468c-8297-bddae88a5278": {
+        "akc_id": "cfaadcff-8a41-468c-8297-bddae88a5278",
+        "participant": "0f2d85e9-182b-4f59-a745-30370e1a91e4"
+      },
+      "a5ca6bb2-632f-4b26-a6a9-1a4d4954825c": {
+        "akc_id": "a5ca6bb2-632f-4b26-a6a9-1a4d4954825c",
+        "participant": "0f2d85e9-182b-4f59-a745-30370e1a91e4"
+      },
+      "d0f28f3e-4c76-402b-8e32-4a1cdb71a2ae": {
+        "akc_id": "d0f28f3e-4c76-402b-8e32-4a1cdb71a2ae",
+        "participant": "0f2d85e9-182b-4f59-a745-30370e1a91e4",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
+      },
+      "05323e5f-a211-492c-acb6-22deefdc59b2": {
+        "akc_id": "05323e5f-a211-492c-acb6-22deefdc59b2",
+        "participant": "4fcfb5c6-a8fe-4d2f-b93d-74899033e434"
+      },
+      "3e6ffc11-e029-41b2-8d95-b22b322057ef": {
+        "akc_id": "3e6ffc11-e029-41b2-8d95-b22b322057ef",
+        "participant": "4fcfb5c6-a8fe-4d2f-b93d-74899033e434"
+      },
+      "0ff2b9ea-5041-4cd3-a230-4a1ce668ff51": {
+        "akc_id": "0ff2b9ea-5041-4cd3-a230-4a1ce668ff51",
+        "participant": "4fcfb5c6-a8fe-4d2f-b93d-74899033e434",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
+      },
+      "ece8b66d-a1e3-4426-8e3d-71d54a45c758": {
+        "akc_id": "ece8b66d-a1e3-4426-8e3d-71d54a45c758",
+        "participant": "98d49fb3-fc0a-4fe4-a75d-bbf834741e89"
+      },
+      "dcace03e-bf23-4059-8f90-82098a8450ba": {
+        "akc_id": "dcace03e-bf23-4059-8f90-82098a8450ba",
+        "participant": "98d49fb3-fc0a-4fe4-a75d-bbf834741e89"
+      },
+      "5aed5427-59b6-44f5-a4dd-5f3a759e4868": {
+        "akc_id": "5aed5427-59b6-44f5-a4dd-5f3a759e4868",
+        "participant": "98d49fb3-fc0a-4fe4-a75d-bbf834741e89",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
+      },
+      "0b6355f4-5e73-4385-b362-2d94e9acde57": {
+        "akc_id": "0b6355f4-5e73-4385-b362-2d94e9acde57",
+        "participant": "e02499c6-f022-44b3-a018-8ddd5bde47f2"
+      },
+      "790da782-5e8d-4b43-adca-653847067083": {
+        "akc_id": "790da782-5e8d-4b43-adca-653847067083",
+        "participant": "e02499c6-f022-44b3-a018-8ddd5bde47f2"
+      },
+      "2450d850-abb3-4e31-9da0-78e17a50be65": {
+        "akc_id": "2450d850-abb3-4e31-9da0-78e17a50be65",
+        "participant": "e02499c6-f022-44b3-a018-8ddd5bde47f2",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
+      },
+      "5489b940-45b4-4834-8dbf-73b64280155a": {
+        "akc_id": "5489b940-45b4-4834-8dbf-73b64280155a",
+        "participant": "7627d972-3590-47e7-bf1c-fe7fcb7d5ab2"
+      },
+      "41bf49fc-c127-4969-a108-573fbdaeead5": {
+        "akc_id": "41bf49fc-c127-4969-a108-573fbdaeead5",
+        "participant": "7627d972-3590-47e7-bf1c-fe7fcb7d5ab2"
+      },
+      "e4842741-888a-462f-95b2-3ce13cfec295": {
+        "akc_id": "e4842741-888a-462f-95b2-3ce13cfec295",
+        "participant": "7627d972-3590-47e7-bf1c-fe7fcb7d5ab2",
+        "t0_event": "Sample collection",
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       }
     },
     "immune_exposures": {
-      "ee0841c5-900d-4d5d-88ec-0e48f6f72f8e": {
-        "akc_id": "ee0841c5-900d-4d5d-88ec-0e48f6f72f8e",
-        "life_event": "3ae066e8-69ee-431d-ab63-e6ed8de073a8"
+      "0f96e2a3-ab5a-453f-97cc-6a5134d4634f": {
+        "akc_id": "0f96e2a3-ab5a-453f-97cc-6a5134d4634f",
+        "life_event": "0ba001a9-1686-48d6-8f00-ecb64dc1a1be",
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
       },
-      "e569f842-e714-4e5e-90df-79b16b685ac9": {
-        "akc_id": "e569f842-e714-4e5e-90df-79b16b685ac9",
-        "life_event": "b2dfc06a-bf5a-43b6-9632-711351de5e85"
+      "db262b08-87df-46f0-926a-f5a718335a23": {
+        "akc_id": "db262b08-87df-46f0-926a-f5a718335a23",
+        "life_event": "36d42f46-a85a-4c26-b42a-2c458ae7c038",
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
       },
-      "260e02d0-28a2-42b9-ad53-8f575d5dbe9a": {
-        "akc_id": "260e02d0-28a2-42b9-ad53-8f575d5dbe9a",
-        "life_event": "10eefd10-cf64-4b60-916e-32b4daa254ce"
+      "fae780e7-c6d3-48c5-9805-cee8895740dd": {
+        "akc_id": "fae780e7-c6d3-48c5-9805-cee8895740dd",
+        "life_event": "69beefde-fc99-4328-af12-9dffd7d73667",
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
       },
-      "e1c8a6fa-0bd7-424c-8b5f-7f892db85add": {
-        "akc_id": "e1c8a6fa-0bd7-424c-8b5f-7f892db85add",
-        "life_event": "b97d3a23-bc4d-4259-a165-1a6e51bfc023"
+      "095ec271-55e7-4b92-baea-68b0baf77c48": {
+        "akc_id": "095ec271-55e7-4b92-baea-68b0baf77c48",
+        "life_event": "0150568b-71f8-495d-a908-469951dde64f",
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
       },
-      "bc857cd2-f4ea-487a-a7f8-d1a883e564a9": {
-        "akc_id": "bc857cd2-f4ea-487a-a7f8-d1a883e564a9",
-        "life_event": "f69e75cf-a4d8-4459-9d40-6c380dfad3c1"
+      "428bdf57-ffdb-4804-a2b6-9b62a7074caa": {
+        "akc_id": "428bdf57-ffdb-4804-a2b6-9b62a7074caa",
+        "life_event": "23add7b8-79e2-412a-836c-3acc94ab96e3",
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
       },
-      "5835d406-9931-474a-9adf-d859c58804d5": {
-        "akc_id": "5835d406-9931-474a-9adf-d859c58804d5",
-        "life_event": "5b490598-fb79-4ca4-9636-b4cef729ba27"
+      "648e444d-42fe-4bed-bd13-0ac8c6955146": {
+        "akc_id": "648e444d-42fe-4bed-bd13-0ac8c6955146",
+        "life_event": "56eafd1a-7339-4ce3-b9a1-1ca571769067",
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
       },
-      "3ec9fd2a-b8d9-4750-ab5b-084db130d29c": {
-        "akc_id": "3ec9fd2a-b8d9-4750-ab5b-084db130d29c",
-        "life_event": "5f3fc5c3-0a65-45a9-9093-83cc929c6651"
+      "809c41e4-a269-4a6b-9842-168b8d6c74b5": {
+        "akc_id": "809c41e4-a269-4a6b-9842-168b8d6c74b5",
+        "life_event": "e0f082cf-bb98-410f-b1f5-8453c1441f87",
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
       },
-      "41090c0c-460b-4165-a0a0-1aa6941dd90a": {
-        "akc_id": "41090c0c-460b-4165-a0a0-1aa6941dd90a",
-        "life_event": "20549ec7-f3a1-4bde-aa33-0cb56f04da4e"
+      "52cf5114-241c-4d60-845e-133102b42d8f": {
+        "akc_id": "52cf5114-241c-4d60-845e-133102b42d8f",
+        "life_event": "3772c635-286d-4faa-afbd-56b031c12c52",
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
       },
-      "1e6c354c-db9a-4c6d-b4e8-966b1f755711": {
-        "akc_id": "1e6c354c-db9a-4c6d-b4e8-966b1f755711",
-        "life_event": "731274d6-31c4-4deb-9b03-36bd9f147f5e"
+      "a010420b-9d23-4521-ab5e-3462ca236fe0": {
+        "akc_id": "a010420b-9d23-4521-ab5e-3462ca236fe0",
+        "life_event": "db98fb6e-f5e1-4384-a869-7e948ccc2c5a",
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
       },
-      "eff6808f-74d0-48b6-97df-89170ef60e2b": {
-        "akc_id": "eff6808f-74d0-48b6-97df-89170ef60e2b",
-        "life_event": "21f3fc3f-2594-4d1c-82b3-17e631a81071"
+      "0bab532c-7e07-49e4-a613-9768e4d6781a": {
+        "akc_id": "0bab532c-7e07-49e4-a613-9768e4d6781a",
+        "life_event": "48792673-43dc-4cf0-b363-369d679f71d7",
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
       },
-      "4f703bb4-2ce7-4aa3-a55d-4eb43f751791": {
-        "akc_id": "4f703bb4-2ce7-4aa3-a55d-4eb43f751791",
-        "life_event": "c29f0e12-0954-4bba-879a-26f20d36a76c"
+      "04b58262-370b-421c-9873-8315e03f2060": {
+        "akc_id": "04b58262-370b-421c-9873-8315e03f2060",
+        "life_event": "d69fc93c-f9cd-4640-b4f0-7bd14c26a818",
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "ffa8e614-16bb-496e-8191-db2811cec634": {
-        "akc_id": "ffa8e614-16bb-496e-8191-db2811cec634",
-        "life_event": "8265e46b-049c-4e64-984a-cad3fc6d9654",
+      "145994c9-8fc9-4d65-8869-aa9dceab0705": {
+        "akc_id": "145994c9-8fc9-4d65-8869-aa9dceab0705",
+        "life_event": "f1022f9b-18a6-46a4-9efb-c39393e6ef28",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
       },
-      "e47bfdac-655d-41fd-b91e-620ec9bea196": {
-        "akc_id": "e47bfdac-655d-41fd-b91e-620ec9bea196",
-        "life_event": "94ebfbc8-07fa-4d22-9ad8-974e829f6bd7",
+      "8ecc34e0-0f4c-4e9b-ac7b-41420507d2b6": {
+        "akc_id": "8ecc34e0-0f4c-4e9b-ac7b-41420507d2b6",
+        "life_event": "79346a60-daa0-45a7-9ab5-76c8b7aac55c",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
       },
-      "16bdb770-5fb0-45da-9a77-f54393d10a31": {
-        "akc_id": "16bdb770-5fb0-45da-9a77-f54393d10a31",
-        "life_event": "f79a1c21-8eb5-4ce3-9e90-0b50e373fc89",
+      "68a7b39b-049e-4f6b-810f-aa48279aec78": {
+        "akc_id": "68a7b39b-049e-4f6b-810f-aa48279aec78",
+        "life_event": "c12cc39f-e458-4548-9ecb-f7e88161426f",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
       },
-      "b048553a-842c-45df-bc28-3d678671c810": {
-        "akc_id": "b048553a-842c-45df-bc28-3d678671c810",
-        "life_event": "2b35fc8b-af82-4b08-a5a9-4808e0b6a5c8",
+      "c5e65bec-78d2-4527-b24a-1636ab91d6fc": {
+        "akc_id": "c5e65bec-78d2-4527-b24a-1636ab91d6fc",
+        "life_event": "e77d448b-4ca1-4d27-9aba-9033866c32e9",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
       },
-      "cdcf7c68-e158-41a0-84ad-093f8b24ab12": {
-        "akc_id": "cdcf7c68-e158-41a0-84ad-093f8b24ab12",
-        "life_event": "3c139103-c900-4618-96e4-8bbc1c572be0",
+      "ea9c23b5-87d3-43f1-b750-9fb72e4da5f7": {
+        "akc_id": "ea9c23b5-87d3-43f1-b750-9fb72e4da5f7",
+        "life_event": "8bdf449e-29a9-4a83-8c57-e0a4ae5f5a71",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
       },
-      "674f09ac-0a7f-4dae-81bb-17639be4a751": {
-        "akc_id": "674f09ac-0a7f-4dae-81bb-17639be4a751",
-        "life_event": "cfa9a02d-b58f-4a44-b00d-9e98958befbb",
+      "34f36796-0ea4-47a5-93f8-e8774919dfa1": {
+        "akc_id": "34f36796-0ea4-47a5-93f8-e8774919dfa1",
+        "life_event": "e1783a6c-3d17-43a6-a104-25206f0396ca",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
       },
-      "ac1b56db-f488-4d46-b897-f2fd3b9167fc": {
-        "akc_id": "ac1b56db-f488-4d46-b897-f2fd3b9167fc",
-        "life_event": "20704bd3-7052-4a81-bf2c-3f18532b505b",
+      "633147b5-0bf2-4f5b-8806-e4db28890b70": {
+        "akc_id": "633147b5-0bf2-4f5b-8806-e4db28890b70",
+        "life_event": "8949b0ac-dc16-4e88-9ade-c4052638a38c",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
       },
-      "8cac05c0-d139-40c9-8949-6eeeb55712ec": {
-        "akc_id": "8cac05c0-d139-40c9-8949-6eeeb55712ec",
-        "life_event": "b7a8c291-84de-4b61-aa61-4cc40df98e31",
+      "c1be9d25-7b1c-40e1-ba5b-15522932aa54": {
+        "akc_id": "c1be9d25-7b1c-40e1-ba5b-15522932aa54",
+        "life_event": "6f90a689-65a0-44c1-b3b9-1ebb911f3aac",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
       },
-      "520ddf48-c641-47da-9119-c68c5be533b1": {
-        "akc_id": "520ddf48-c641-47da-9119-c68c5be533b1",
-        "life_event": "cd175989-9fa8-4603-a8ef-ce9336e09171",
+      "d67b46c7-8cae-4b78-b44e-6902efd4e458": {
+        "akc_id": "d67b46c7-8cae-4b78-b44e-6902efd4e458",
+        "life_event": "7d126c81-d596-4dea-9e9a-3fecedcb7c2e",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
       },
-      "c47e87d1-96f9-4206-836f-bcf714651d26": {
-        "akc_id": "c47e87d1-96f9-4206-836f-bcf714651d26",
-        "life_event": "666a6dc4-f75e-4461-9851-c73e3bb0e4db",
+      "437e0ea7-3726-4adc-a680-a93a27c2104e": {
+        "akc_id": "437e0ea7-3726-4adc-a680-a93a27c2104e",
+        "life_event": "a5ca6bb2-632f-4b26-a6a9-1a4d4954825c",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
       },
-      "0229da86-a484-4e41-b240-00677e9a806d": {
-        "akc_id": "0229da86-a484-4e41-b240-00677e9a806d",
-        "life_event": "db96e06c-cfd3-4749-b759-79c844d88ad0",
+      "f1c542ce-5842-49a9-a144-e1f3500a7420": {
+        "akc_id": "f1c542ce-5842-49a9-a144-e1f3500a7420",
+        "life_event": "3e6ffc11-e029-41b2-8d95-b22b322057ef",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
       },
-      "5d9cff76-d71b-47f9-8556-3baf91d5e50e": {
-        "akc_id": "5d9cff76-d71b-47f9-8556-3baf91d5e50e",
-        "life_event": "7bd8f121-bee6-4779-b1d0-e97b479fdb1a",
+      "c51039cb-6f7f-4113-b3ca-4722ab5b7731": {
+        "akc_id": "c51039cb-6f7f-4113-b3ca-4722ab5b7731",
+        "life_event": "dcace03e-bf23-4059-8f90-82098a8450ba",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
       },
-      "392c6e9f-6c08-4fe2-8d27-b97040939fde": {
-        "akc_id": "392c6e9f-6c08-4fe2-8d27-b97040939fde",
-        "life_event": "e9ac429d-26fe-4101-bd3a-770b6f7c302a",
+      "56860b4f-8eab-42bd-ad8e-f80ab540a3f2": {
+        "akc_id": "56860b4f-8eab-42bd-ad8e-f80ab540a3f2",
+        "life_event": "790da782-5e8d-4b43-adca-653847067083",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
       },
-      "f3e9cec2-c97c-4820-9e3b-ccef17633f81": {
-        "akc_id": "f3e9cec2-c97c-4820-9e3b-ccef17633f81",
-        "life_event": "533a865f-da04-46a1-8c2d-7c2611085e15",
+      "8bb7f561-2c1e-4e02-a869-091802145041": {
+        "akc_id": "8bb7f561-2c1e-4e02-a869-091802145041",
+        "life_event": "41bf49fc-c127-4969-a108-573fbdaeead5",
         "disease": {
           "label": "chronic lymphocytic leukemia",
           "id": "DOID:1040"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       }
     },
     "specimens": {
-      "e678d3e5-0cec-46e2-8ebb-6e5103a31a2b": {
-        "akc_id": "e678d3e5-0cec-46e2-8ebb-6e5103a31a2b",
+      "e0891072-99e8-48f7-870c-ef87f2f6d093": {
+        "akc_id": "e0891072-99e8-48f7-870c-ef87f2f6d093",
         "name": "B10_N",
-        "life_event": "407fff27-20a9-46f6-b941-e5977f4ea1a3",
+        "life_event": "51127c32-2ad9-4d6d-98ce-c202f00b9298",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
       },
-      "6e2ba4f1-c67f-4f79-ba7b-126dd5e44726": {
-        "akc_id": "6e2ba4f1-c67f-4f79-ba7b-126dd5e44726",
+      "d52fbdc3-2ebb-4a8e-8d49-97a1acc3cc3e": {
+        "akc_id": "d52fbdc3-2ebb-4a8e-8d49-97a1acc3cc3e",
         "name": "B11_N",
-        "life_event": "9debda68-609d-4a09-9ac8-d6a24f66bffc",
+        "life_event": "e9143000-2df0-4122-8ccd-5361ba5f788b",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
       },
-      "dfb16135-1b0b-40f7-876c-e4c4284e7a7e": {
-        "akc_id": "dfb16135-1b0b-40f7-876c-e4c4284e7a7e",
+      "3519dc85-c055-47be-aabd-071c1cb839d0": {
+        "akc_id": "3519dc85-c055-47be-aabd-071c1cb839d0",
         "name": "B12_N",
-        "life_event": "de33d050-c094-4832-b670-d3d7b6e024cc",
+        "life_event": "bd36009a-c97a-4428-8a1a-0e40a11474b4",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
       },
-      "57a9fdc5-8d3a-45ca-903e-01e5bdc0abdd": {
-        "akc_id": "57a9fdc5-8d3a-45ca-903e-01e5bdc0abdd",
+      "5e1d4608-3f81-4ebd-ae75-5595ab74d43e": {
+        "akc_id": "5e1d4608-3f81-4ebd-ae75-5595ab74d43e",
         "name": "B13_N",
-        "life_event": "4470c87a-0028-4d24-b187-41a67ddffe45",
+        "life_event": "830f6001-2dad-40df-ad51-2b3845550c1a",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
       },
-      "b20763f9-3e69-4573-b4fe-ca86ac69f157": {
-        "akc_id": "b20763f9-3e69-4573-b4fe-ca86ac69f157",
+      "68bbe0ad-18ba-486b-b7e9-1e237c123047": {
+        "akc_id": "68bbe0ad-18ba-486b-b7e9-1e237c123047",
         "name": "B14_N",
-        "life_event": "8e66c2f0-ed66-487b-8218-bef3b76ab2ca",
+        "life_event": "3e980446-5917-4529-826e-972f65069cc1",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
       },
-      "ddad4808-7bf7-4166-a74a-4c291c05092e": {
-        "akc_id": "ddad4808-7bf7-4166-a74a-4c291c05092e",
+      "00980013-f3b4-4dbb-9073-2062fdab7700": {
+        "akc_id": "00980013-f3b4-4dbb-9073-2062fdab7700",
         "name": "B16_N",
-        "life_event": "210d4c72-7b65-4841-aeb4-5e26bedaf255",
+        "life_event": "b82d0213-bf04-4c79-a863-e40d81c8b4a7",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
       },
-      "79661ae2-000c-4c5f-bbb4-886b7524c445": {
-        "akc_id": "79661ae2-000c-4c5f-bbb4-886b7524c445",
+      "679c2c4b-f31e-4f04-8a09-22fdf32d797c": {
+        "akc_id": "679c2c4b-f31e-4f04-8a09-22fdf32d797c",
         "name": "B17_N",
-        "life_event": "8f016504-b14d-418f-9f24-2860dbd53324",
+        "life_event": "0570dbf1-fd5b-45a6-b9d2-24d8c08cfc50",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
       },
-      "a8b61ad9-07f3-481d-b227-5815955ba2c8": {
-        "akc_id": "a8b61ad9-07f3-481d-b227-5815955ba2c8",
+      "a2afaa18-29d3-4d74-ba7a-7de5c6576423": {
+        "akc_id": "a2afaa18-29d3-4d74-ba7a-7de5c6576423",
         "name": "B18_N",
-        "life_event": "bdd8f2b1-a718-4d49-bd06-9fc630b7cc0a",
+        "life_event": "cf449a88-fff7-47d4-ae88-d3e678b17aac",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
       },
-      "7451fa33-f283-4067-8e21-c63a30fc5a88": {
-        "akc_id": "7451fa33-f283-4067-8e21-c63a30fc5a88",
+      "32e8c696-5469-430a-a2be-94f143f02ece": {
+        "akc_id": "32e8c696-5469-430a-a2be-94f143f02ece",
         "name": "B19_N",
-        "life_event": "6db4bfd4-bc0b-46b4-9e9a-d003370a9ad9",
+        "life_event": "ac7415d8-7050-4bb9-99c6-19c06bc84043",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
       },
-      "bd1aa7b0-dfeb-4f37-919c-be692f73ab8f": {
-        "akc_id": "bd1aa7b0-dfeb-4f37-919c-be692f73ab8f",
+      "50b379ed-b451-4075-862b-44525246b140": {
+        "akc_id": "50b379ed-b451-4075-862b-44525246b140",
         "name": "B20_N",
-        "life_event": "59101f37-b1ac-4e76-b80d-db6383bed266",
+        "life_event": "31ca0b05-d1cc-457e-bf90-170c96cb2e7c",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
       },
-      "b49d3a5a-b8f8-44aa-9ee3-6d7b8a4e6675": {
-        "akc_id": "b49d3a5a-b8f8-44aa-9ee3-6d7b8a4e6675",
+      "1af0ab81-8843-40fb-87f3-e0db0feaf9ff": {
+        "akc_id": "1af0ab81-8843-40fb-87f3-e0db0feaf9ff",
         "name": "B21_N",
-        "life_event": "39305a56-e37e-4621-9cbe-8669aa021dd6",
+        "life_event": "240d369f-96d3-4b1b-9987-c8d67275a2c7",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "59cce8d7-68a5-48ab-8743-43022a44d1c8": {
-        "akc_id": "59cce8d7-68a5-48ab-8743-43022a44d1c8",
+      "01d67126-b3d8-4c58-a333-7f3908461e66": {
+        "akc_id": "01d67126-b3d8-4c58-a333-7f3908461e66",
         "name": "B00_CLL_05_10x",
-        "life_event": "3d9bd469-ad3a-451f-bf7c-f8543085e700",
+        "life_event": "92ff350d-b00f-4e34-9278-1af86d2d1dc6",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
       },
-      "5ffe5617-b88c-4571-bcd6-ad72efed1062": {
-        "akc_id": "5ffe5617-b88c-4571-bcd6-ad72efed1062",
+      "22861f63-9aa8-4560-9503-c79a16511db0": {
+        "akc_id": "22861f63-9aa8-4560-9503-c79a16511db0",
         "name": "B00_CLL_05_20x",
-        "life_event": "79a3e912-64a3-46a3-8707-f11603f3bc28",
+        "life_event": "26b44517-3b9c-4a22-946e-f489ff2ae3b7",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
       },
-      "c6e35599-2b9f-4b84-957e-d91bd05eb073": {
-        "akc_id": "c6e35599-2b9f-4b84-957e-d91bd05eb073",
+      "5dc4297b-2c1d-4e51-b9cb-6da678de51bb": {
+        "akc_id": "5dc4297b-2c1d-4e51-b9cb-6da678de51bb",
         "name": "B00_CLL_05_40x",
-        "life_event": "a3a61f9e-5e30-4fa1-ae1b-5af9fdc3833f",
+        "life_event": "7cb76a36-af5b-4e0c-9cb1-ebd57c581526",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
       },
-      "df7bbb40-d67e-43b6-8cdb-9da3f2461c0b": {
-        "akc_id": "df7bbb40-d67e-43b6-8cdb-9da3f2461c0b",
+      "3135cced-78c3-4d99-85ac-dab7c94ffcb8": {
+        "akc_id": "3135cced-78c3-4d99-85ac-dab7c94ffcb8",
         "name": "B00_CLL_1_10x",
-        "life_event": "9f8df5b3-988c-4dce-a0d0-14f6e445ad5f",
+        "life_event": "caed9b21-df20-44d2-8069-007219e0e577",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
       },
-      "50e76179-b30c-4318-b25a-85d5e832ee19": {
-        "akc_id": "50e76179-b30c-4318-b25a-85d5e832ee19",
+      "203498b0-f861-47cf-9017-2b88cb9d0c78": {
+        "akc_id": "203498b0-f861-47cf-9017-2b88cb9d0c78",
         "name": "B00_CLL_1_20x",
-        "life_event": "130bd32f-0e56-4e6b-accb-aff2ce9c40a0",
+        "life_event": "a42f47a6-6066-46a0-a1b1-02ede13e0445",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
       },
-      "09888d1b-ad47-47f9-aa46-3ffbedfedac1": {
-        "akc_id": "09888d1b-ad47-47f9-aa46-3ffbedfedac1",
+      "964e18b5-1fa8-4f84-8677-32abb5082a9b": {
+        "akc_id": "964e18b5-1fa8-4f84-8677-32abb5082a9b",
         "name": "B00_CLL_1_40x",
-        "life_event": "601514c1-7428-4dad-a13e-730641eb6bdf",
+        "life_event": "30da46de-c23e-4fb8-9e06-1e3321f87a62",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
       },
-      "5eba7349-42e1-40fe-8979-0805b6a96827": {
-        "akc_id": "5eba7349-42e1-40fe-8979-0805b6a96827",
+      "866d0a09-91b8-42f1-ad08-19389c804be2": {
+        "akc_id": "866d0a09-91b8-42f1-ad08-19389c804be2",
         "name": "B00_CLL_2_10x",
-        "life_event": "fc3efed5-c186-441a-b4b9-c9d02d156968",
+        "life_event": "74355d7f-985d-4039-8b5b-a171d0b9fab0",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
       },
-      "ef21fe0e-b3c1-49b6-bc33-216f25d971ab": {
-        "akc_id": "ef21fe0e-b3c1-49b6-bc33-216f25d971ab",
+      "c75c170e-07f1-4545-a408-2920a0a272f3": {
+        "akc_id": "c75c170e-07f1-4545-a408-2920a0a272f3",
         "name": "B00_CLL_2_20x",
-        "life_event": "b7eb1a45-3d0d-4926-985c-2ab87359b57b",
+        "life_event": "b44a6c1f-9800-4f11-942e-7fee4b909db2",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
       },
-      "eaf65371-ecb8-41ac-81ca-a5543669a688": {
-        "akc_id": "eaf65371-ecb8-41ac-81ca-a5543669a688",
+      "d49a759d-9137-4769-b91e-77da6065578c": {
+        "akc_id": "d49a759d-9137-4769-b91e-77da6065578c",
         "name": "B00_CLL_2_40x",
-        "life_event": "ab71f597-68a0-479b-beae-22b7b5f8dd7a",
+        "life_event": "e09db45f-7960-4b29-a394-285ad122b6a9",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
       },
-      "9c47740e-9b6e-4d69-913e-13e864c79b74": {
-        "akc_id": "9c47740e-9b6e-4d69-913e-13e864c79b74",
+      "d174b3c4-1cea-458e-9008-74c5a4ae2a08": {
+        "akc_id": "d174b3c4-1cea-458e-9008-74c5a4ae2a08",
         "name": "B00_CLL_DIL1:1",
-        "life_event": "2536f5dd-925f-4528-af70-ba21e7bdef7c",
+        "life_event": "d0f28f3e-4c76-402b-8e32-4a1cdb71a2ae",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
       },
-      "1db38a37-8d11-42c7-9a32-5cf16aec48b1": {
-        "akc_id": "1db38a37-8d11-42c7-9a32-5cf16aec48b1",
+      "7410cf3a-1839-44db-ac97-4164f5ef5e54": {
+        "akc_id": "7410cf3a-1839-44db-ac97-4164f5ef5e54",
         "name": "B00_CLL_DIL1:2",
-        "life_event": "38af5335-cdc7-4098-af65-e7be22ec5efb",
+        "life_event": "0ff2b9ea-5041-4cd3-a230-4a1ce668ff51",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
       },
-      "370752d7-f71a-4cab-9763-f37eb975b003": {
-        "akc_id": "370752d7-f71a-4cab-9763-f37eb975b003",
+      "37ea013c-6177-40f7-a740-5785b75963ec": {
+        "akc_id": "37ea013c-6177-40f7-a740-5785b75963ec",
         "name": "B00_CLL_DIL1:4",
-        "life_event": "753dfe61-9dfb-4612-a365-4edac8317bfb",
+        "life_event": "5aed5427-59b6-44f5-a4dd-5f3a759e4868",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
       },
-      "41508fb3-b337-4ecd-a902-c6d6c1f9cabb": {
-        "akc_id": "41508fb3-b337-4ecd-a902-c6d6c1f9cabb",
+      "42693c4b-840b-4c47-b580-288e88f1ae0c": {
+        "akc_id": "42693c4b-840b-4c47-b580-288e88f1ae0c",
         "name": "B00_CLL_DIL1:8",
-        "life_event": "2a18d64f-d2f5-46ae-99fb-c8bf098895bf",
+        "life_event": "2450d850-abb3-4e31-9da0-78e17a50be65",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
       },
-      "2b5cc5b0-3bde-4a66-9e0a-e3d1c77c4a33": {
-        "akc_id": "2b5cc5b0-3bde-4a66-9e0a-e3d1c77c4a33",
+      "8df2df4c-52b5-40b8-8b3e-a21e7f3daea8": {
+        "akc_id": "8df2df4c-52b5-40b8-8b3e-a21e7f3daea8",
         "name": "B00_CLL_DIL1:16",
-        "life_event": "660c9f6e-fb26-4288-94aa-f2a671e3b9c8",
+        "life_event": "e4842741-888a-462f-95b2-3ce13cfec295",
         "specimen_type": "Intravenous blood sample",
         "tissue": {
           "label": "blood",
           "id": "UBERON:0000178"
-        }
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       }
     },
     "specimen_processings": {
-      "64246311-16b6-42a0-af9e-750fa1bf599e": {
-        "akc_id": "64246311-16b6-42a0-af9e-750fa1bf599e",
-        "specimen": "e678d3e5-0cec-46e2-8ebb-6e5103a31a2b",
+      "2384e7cd-8d7c-4e72-b54a-241f954649e7": {
+        "akc_id": "2384e7cd-8d7c-4e72-b54a-241f954649e7",
+        "specimen": "e0891072-99e8-48f7-870c-ef87f2f6d093",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1180,22 +1563,31 @@
         "cell_number": 1766476,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
       },
-      "5135db43-f7fd-4e7e-93e5-0058c99de34d": {
-        "akc_id": "5135db43-f7fd-4e7e-93e5-0058c99de34d",
-        "specimen": "e678d3e5-0cec-46e2-8ebb-6e5103a31a2b",
-        "template_class": "RNA"
+      "5a1e0d73-37b1-4cc4-a359-c275c6e1ddaf": {
+        "akc_id": "5a1e0d73-37b1-4cc4-a359-c275c6e1ddaf",
+        "specimen": "e0891072-99e8-48f7-870c-ef87f2f6d093",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
       },
-      "a3df0d11-7286-4fb5-a32e-6b8d60fcec08": {
-        "akc_id": "a3df0d11-7286-4fb5-a32e-6b8d60fcec08",
-        "specimen": "e678d3e5-0cec-46e2-8ebb-6e5103a31a2b",
+      "79332d99-1aab-481a-86b5-f2ffc468f5b2": {
+        "akc_id": "79332d99-1aab-481a-86b5-f2ffc468f5b2",
+        "specimen": "e0891072-99e8-48f7-870c-ef87f2f6d093",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
       },
-      "85e26940-6c8d-4be2-b868-1bb29bb67768": {
-        "akc_id": "85e26940-6c8d-4be2-b868-1bb29bb67768",
-        "specimen": "6e2ba4f1-c67f-4f79-ba7b-126dd5e44726",
+      "63b73d52-9f6d-4f54-95b5-9442220d109a": {
+        "akc_id": "63b73d52-9f6d-4f54-95b5-9442220d109a",
+        "specimen": "d52fbdc3-2ebb-4a8e-8d49-97a1acc3cc3e",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1209,22 +1601,31 @@
         "cell_number": 1804895,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
       },
-      "60707a3d-f4be-40d7-9b29-f2721a1bcb3b": {
-        "akc_id": "60707a3d-f4be-40d7-9b29-f2721a1bcb3b",
-        "specimen": "6e2ba4f1-c67f-4f79-ba7b-126dd5e44726",
-        "template_class": "RNA"
+      "89192a4f-4eb2-471d-8d14-cfe644fb62f6": {
+        "akc_id": "89192a4f-4eb2-471d-8d14-cfe644fb62f6",
+        "specimen": "d52fbdc3-2ebb-4a8e-8d49-97a1acc3cc3e",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
       },
-      "5a88f80c-8a44-420d-b411-c5a9d25aaef1": {
-        "akc_id": "5a88f80c-8a44-420d-b411-c5a9d25aaef1",
-        "specimen": "6e2ba4f1-c67f-4f79-ba7b-126dd5e44726",
+      "5aed212e-248d-4310-b715-dd4945dbdb40": {
+        "akc_id": "5aed212e-248d-4310-b715-dd4945dbdb40",
+        "specimen": "d52fbdc3-2ebb-4a8e-8d49-97a1acc3cc3e",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
       },
-      "a435fbea-3082-4bc0-874d-8fd9630461c4": {
-        "akc_id": "a435fbea-3082-4bc0-874d-8fd9630461c4",
-        "specimen": "dfb16135-1b0b-40f7-876c-e4c4284e7a7e",
+      "1334217f-08ee-4c9f-9d88-f9414863154f": {
+        "akc_id": "1334217f-08ee-4c9f-9d88-f9414863154f",
+        "specimen": "3519dc85-c055-47be-aabd-071c1cb839d0",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1238,22 +1639,31 @@
         "cell_number": 1823538,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
       },
-      "4a753b3b-ca6f-4c4b-928c-ccef9b7906fd": {
-        "akc_id": "4a753b3b-ca6f-4c4b-928c-ccef9b7906fd",
-        "specimen": "dfb16135-1b0b-40f7-876c-e4c4284e7a7e",
-        "template_class": "RNA"
+      "d3f2f40f-fb4b-4109-9742-7ec0b532dcb2": {
+        "akc_id": "d3f2f40f-fb4b-4109-9742-7ec0b532dcb2",
+        "specimen": "3519dc85-c055-47be-aabd-071c1cb839d0",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
       },
-      "cb2cc83c-43b9-428a-a79b-952fe331e0ec": {
-        "akc_id": "cb2cc83c-43b9-428a-a79b-952fe331e0ec",
-        "specimen": "dfb16135-1b0b-40f7-876c-e4c4284e7a7e",
+      "f0d5ac93-ae73-4a96-90b4-628b134cdf9d": {
+        "akc_id": "f0d5ac93-ae73-4a96-90b4-628b134cdf9d",
+        "specimen": "3519dc85-c055-47be-aabd-071c1cb839d0",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
       },
-      "d30d8ca2-14bd-4078-9dca-6cd472a379b3": {
-        "akc_id": "d30d8ca2-14bd-4078-9dca-6cd472a379b3",
-        "specimen": "57a9fdc5-8d3a-45ca-903e-01e5bdc0abdd",
+      "15647629-a089-4564-9852-e1b6ad70c2ff": {
+        "akc_id": "15647629-a089-4564-9852-e1b6ad70c2ff",
+        "specimen": "5e1d4608-3f81-4ebd-ae75-5595ab74d43e",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1267,22 +1677,31 @@
         "cell_number": 1439815,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
       },
-      "18b37358-2ba8-4eff-a866-3591a5c8449b": {
-        "akc_id": "18b37358-2ba8-4eff-a866-3591a5c8449b",
-        "specimen": "57a9fdc5-8d3a-45ca-903e-01e5bdc0abdd",
-        "template_class": "RNA"
+      "e6e74600-f13d-4815-8d77-9938d7bbe173": {
+        "akc_id": "e6e74600-f13d-4815-8d77-9938d7bbe173",
+        "specimen": "5e1d4608-3f81-4ebd-ae75-5595ab74d43e",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
       },
-      "821b007d-87b4-47d5-975d-f3190d129580": {
-        "akc_id": "821b007d-87b4-47d5-975d-f3190d129580",
-        "specimen": "57a9fdc5-8d3a-45ca-903e-01e5bdc0abdd",
+      "308949c4-fe7a-4d06-a786-f5be8e9097d3": {
+        "akc_id": "308949c4-fe7a-4d06-a786-f5be8e9097d3",
+        "specimen": "5e1d4608-3f81-4ebd-ae75-5595ab74d43e",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
       },
-      "e471d33a-9f93-4dd2-af2b-0981472c5aa4": {
-        "akc_id": "e471d33a-9f93-4dd2-af2b-0981472c5aa4",
-        "specimen": "b20763f9-3e69-4573-b4fe-ca86ac69f157",
+      "841b34f5-0afb-4f35-9672-18a5d4edb218": {
+        "akc_id": "841b34f5-0afb-4f35-9672-18a5d4edb218",
+        "specimen": "68bbe0ad-18ba-486b-b7e9-1e237c123047",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1296,22 +1715,31 @@
         "cell_number": 1699223,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
       },
-      "22821164-5e40-4731-b73d-a404f60b9639": {
-        "akc_id": "22821164-5e40-4731-b73d-a404f60b9639",
-        "specimen": "b20763f9-3e69-4573-b4fe-ca86ac69f157",
-        "template_class": "RNA"
+      "3a90f9c6-f269-4b4b-931b-8c7aca7a7226": {
+        "akc_id": "3a90f9c6-f269-4b4b-931b-8c7aca7a7226",
+        "specimen": "68bbe0ad-18ba-486b-b7e9-1e237c123047",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
       },
-      "c5931c75-2bf7-4c01-bab2-d20a89d418d3": {
-        "akc_id": "c5931c75-2bf7-4c01-bab2-d20a89d418d3",
-        "specimen": "b20763f9-3e69-4573-b4fe-ca86ac69f157",
+      "5861b533-bfef-432e-8b14-2b4a5c018b6f": {
+        "akc_id": "5861b533-bfef-432e-8b14-2b4a5c018b6f",
+        "specimen": "68bbe0ad-18ba-486b-b7e9-1e237c123047",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
       },
-      "80bf3eb6-fdd7-45b7-92c9-444be8764024": {
-        "akc_id": "80bf3eb6-fdd7-45b7-92c9-444be8764024",
-        "specimen": "ddad4808-7bf7-4166-a74a-4c291c05092e",
+      "2c5cde74-b5d3-4272-ac90-d59ae729d1db": {
+        "akc_id": "2c5cde74-b5d3-4272-ac90-d59ae729d1db",
+        "specimen": "00980013-f3b4-4dbb-9073-2062fdab7700",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1325,22 +1753,31 @@
         "cell_number": 1164340,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
       },
-      "d234719f-6e6b-48cc-86bb-43ecd1848c05": {
-        "akc_id": "d234719f-6e6b-48cc-86bb-43ecd1848c05",
-        "specimen": "ddad4808-7bf7-4166-a74a-4c291c05092e",
-        "template_class": "RNA"
+      "39f2f225-a0b5-48f8-bee1-2e7d9f8e16cc": {
+        "akc_id": "39f2f225-a0b5-48f8-bee1-2e7d9f8e16cc",
+        "specimen": "00980013-f3b4-4dbb-9073-2062fdab7700",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
       },
-      "6f3396b2-c9f9-4757-b409-e30f7eb1e024": {
-        "akc_id": "6f3396b2-c9f9-4757-b409-e30f7eb1e024",
-        "specimen": "ddad4808-7bf7-4166-a74a-4c291c05092e",
+      "8cb6b71d-9fad-446a-8e52-3ae5e92e6a21": {
+        "akc_id": "8cb6b71d-9fad-446a-8e52-3ae5e92e6a21",
+        "specimen": "00980013-f3b4-4dbb-9073-2062fdab7700",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
       },
-      "99321985-c1f0-4277-bbd5-f53d6f015f57": {
-        "akc_id": "99321985-c1f0-4277-bbd5-f53d6f015f57",
-        "specimen": "79661ae2-000c-4c5f-bbb4-886b7524c445",
+      "1c6b9a2e-d499-45be-928b-cb094dfdd03f": {
+        "akc_id": "1c6b9a2e-d499-45be-928b-cb094dfdd03f",
+        "specimen": "679c2c4b-f31e-4f04-8a09-22fdf32d797c",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1354,22 +1791,31 @@
         "cell_number": 1286813,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
       },
-      "5eb75818-0010-4d31-bd4c-bc30d590bbcf": {
-        "akc_id": "5eb75818-0010-4d31-bd4c-bc30d590bbcf",
-        "specimen": "79661ae2-000c-4c5f-bbb4-886b7524c445",
-        "template_class": "RNA"
+      "64aa25d9-185a-46f0-a4b2-df53f4e603cb": {
+        "akc_id": "64aa25d9-185a-46f0-a4b2-df53f4e603cb",
+        "specimen": "679c2c4b-f31e-4f04-8a09-22fdf32d797c",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
       },
-      "65f91193-b9e2-496e-99b7-90323a16da58": {
-        "akc_id": "65f91193-b9e2-496e-99b7-90323a16da58",
-        "specimen": "79661ae2-000c-4c5f-bbb4-886b7524c445",
+      "a0fc13b3-9182-475c-b7e0-8000100517d4": {
+        "akc_id": "a0fc13b3-9182-475c-b7e0-8000100517d4",
+        "specimen": "679c2c4b-f31e-4f04-8a09-22fdf32d797c",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
       },
-      "c5f98d7f-7d5d-4e06-a1d5-c1a697ad61fe": {
-        "akc_id": "c5f98d7f-7d5d-4e06-a1d5-c1a697ad61fe",
-        "specimen": "a8b61ad9-07f3-481d-b227-5815955ba2c8",
+      "54ebd78b-f54b-4829-8b62-254e9e1b9d16": {
+        "akc_id": "54ebd78b-f54b-4829-8b62-254e9e1b9d16",
+        "specimen": "a2afaa18-29d3-4d74-ba7a-7de5c6576423",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1383,22 +1829,31 @@
         "cell_number": 1837250,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
       },
-      "3e488024-f53c-4458-bd46-5c855a13b0bd": {
-        "akc_id": "3e488024-f53c-4458-bd46-5c855a13b0bd",
-        "specimen": "a8b61ad9-07f3-481d-b227-5815955ba2c8",
-        "template_class": "RNA"
+      "b64bd738-645e-4c17-a7c4-392118653b0e": {
+        "akc_id": "b64bd738-645e-4c17-a7c4-392118653b0e",
+        "specimen": "a2afaa18-29d3-4d74-ba7a-7de5c6576423",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
       },
-      "43689680-f007-422f-8085-c9fbb7a75416": {
-        "akc_id": "43689680-f007-422f-8085-c9fbb7a75416",
-        "specimen": "a8b61ad9-07f3-481d-b227-5815955ba2c8",
+      "9c0556c5-8e06-44df-84ec-97bdd7f1ebcc": {
+        "akc_id": "9c0556c5-8e06-44df-84ec-97bdd7f1ebcc",
+        "specimen": "a2afaa18-29d3-4d74-ba7a-7de5c6576423",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
       },
-      "062f005a-8802-40de-a73d-a77d518d094a": {
-        "akc_id": "062f005a-8802-40de-a73d-a77d518d094a",
-        "specimen": "7451fa33-f283-4067-8e21-c63a30fc5a88",
+      "1076c1bc-396c-43e4-8c68-7751bf4aeeb6": {
+        "akc_id": "1076c1bc-396c-43e4-8c68-7751bf4aeeb6",
+        "specimen": "32e8c696-5469-430a-a2be-94f143f02ece",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1412,22 +1867,31 @@
         "cell_number": 1830652,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
       },
-      "d6e33a98-b8de-4772-b513-14e4a73638b6": {
-        "akc_id": "d6e33a98-b8de-4772-b513-14e4a73638b6",
-        "specimen": "7451fa33-f283-4067-8e21-c63a30fc5a88",
-        "template_class": "RNA"
+      "cccf491a-873c-4ec7-81ca-037358b1c3f3": {
+        "akc_id": "cccf491a-873c-4ec7-81ca-037358b1c3f3",
+        "specimen": "32e8c696-5469-430a-a2be-94f143f02ece",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
       },
-      "787cb651-dff6-493a-b98d-285935a03ac4": {
-        "akc_id": "787cb651-dff6-493a-b98d-285935a03ac4",
-        "specimen": "7451fa33-f283-4067-8e21-c63a30fc5a88",
+      "f4d2bb76-88a6-40cd-ac1a-47ff6f51a0c7": {
+        "akc_id": "f4d2bb76-88a6-40cd-ac1a-47ff6f51a0c7",
+        "specimen": "32e8c696-5469-430a-a2be-94f143f02ece",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
       },
-      "269499c8-1bb4-4497-a6c4-48a660dd7694": {
-        "akc_id": "269499c8-1bb4-4497-a6c4-48a660dd7694",
-        "specimen": "bd1aa7b0-dfeb-4f37-919c-be692f73ab8f",
+      "a4034395-a0ba-4ba1-9afb-b37af4e789ff": {
+        "akc_id": "a4034395-a0ba-4ba1-9afb-b37af4e789ff",
+        "specimen": "50b379ed-b451-4075-862b-44525246b140",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1441,22 +1905,31 @@
         "cell_number": 1346116,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
       },
-      "a928f22d-8cd9-419e-8c01-fb51fa3e8813": {
-        "akc_id": "a928f22d-8cd9-419e-8c01-fb51fa3e8813",
-        "specimen": "bd1aa7b0-dfeb-4f37-919c-be692f73ab8f",
-        "template_class": "RNA"
+      "330ab733-8530-4b52-ab76-3902d29f68c2": {
+        "akc_id": "330ab733-8530-4b52-ab76-3902d29f68c2",
+        "specimen": "50b379ed-b451-4075-862b-44525246b140",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
       },
-      "18a06c07-9802-4cf2-9eca-07ad529df7fa": {
-        "akc_id": "18a06c07-9802-4cf2-9eca-07ad529df7fa",
-        "specimen": "bd1aa7b0-dfeb-4f37-919c-be692f73ab8f",
+      "3a144205-74fa-4159-bbfb-64b484591983": {
+        "akc_id": "3a144205-74fa-4159-bbfb-64b484591983",
+        "specimen": "50b379ed-b451-4075-862b-44525246b140",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
       },
-      "4f4dc2ab-ea99-4a39-9b94-60f91e547c19": {
-        "akc_id": "4f4dc2ab-ea99-4a39-9b94-60f91e547c19",
-        "specimen": "b49d3a5a-b8f8-44aa-9ee3-6d7b8a4e6675",
+      "58923eb5-e72f-46ab-975f-3e0df3d030a7": {
+        "akc_id": "58923eb5-e72f-46ab-975f-3e0df3d030a7",
+        "specimen": "1af0ab81-8843-40fb-87f3-e0db0feaf9ff",
         "cell_subset": {
           "label": "naive B cell",
           "id": "CL:0000788"
@@ -1470,22 +1943,31 @@
         "cell_number": 1143485,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "76fc2e1a-742f-4b7e-9240-c4ed90995158": {
-        "akc_id": "76fc2e1a-742f-4b7e-9240-c4ed90995158",
-        "specimen": "b49d3a5a-b8f8-44aa-9ee3-6d7b8a4e6675",
-        "template_class": "RNA"
+      "2fee6426-4092-4234-951d-0e93bed9b88f": {
+        "akc_id": "2fee6426-4092-4234-951d-0e93bed9b88f",
+        "specimen": "1af0ab81-8843-40fb-87f3-e0db0feaf9ff",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "bd5e97cb-38ef-4e15-932b-a28b5e86e641": {
-        "akc_id": "bd5e97cb-38ef-4e15-932b-a28b5e86e641",
-        "specimen": "b49d3a5a-b8f8-44aa-9ee3-6d7b8a4e6675",
+      "c43454e3-19b0-42c8-9fbb-e112eaf24eba": {
+        "akc_id": "c43454e3-19b0-42c8-9fbb-e112eaf24eba",
+        "specimen": "1af0ab81-8843-40fb-87f3-e0db0feaf9ff",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "419482fd-1033-42e6-9ef2-fa6752037e71": {
-        "akc_id": "419482fd-1033-42e6-9ef2-fa6752037e71",
-        "specimen": "59cce8d7-68a5-48ab-8743-43022a44d1c8",
+      "c4d0e065-322d-4bde-96d6-11e0d499a51b": {
+        "akc_id": "c4d0e065-322d-4bde-96d6-11e0d499a51b",
+        "specimen": "01d67126-b3d8-4c58-a333-7f3908461e66",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1499,22 +1981,31 @@
         "cell_number": 193437,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
       },
-      "67c59fa1-da90-492d-8b04-931e9954cb62": {
-        "akc_id": "67c59fa1-da90-492d-8b04-931e9954cb62",
-        "specimen": "59cce8d7-68a5-48ab-8743-43022a44d1c8",
-        "template_class": "RNA"
+      "0081bb0f-0aee-4e0e-9e79-634f6d97a86e": {
+        "akc_id": "0081bb0f-0aee-4e0e-9e79-634f6d97a86e",
+        "specimen": "01d67126-b3d8-4c58-a333-7f3908461e66",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
       },
-      "4256123e-8e9a-4b30-ab28-b5373707c2ba": {
-        "akc_id": "4256123e-8e9a-4b30-ab28-b5373707c2ba",
-        "specimen": "59cce8d7-68a5-48ab-8743-43022a44d1c8",
+      "8e79019a-d91c-4004-a51a-60609babf52e": {
+        "akc_id": "8e79019a-d91c-4004-a51a-60609babf52e",
+        "specimen": "01d67126-b3d8-4c58-a333-7f3908461e66",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
       },
-      "c149e556-f8a8-425c-918a-78c8b2792bf5": {
-        "akc_id": "c149e556-f8a8-425c-918a-78c8b2792bf5",
-        "specimen": "5ffe5617-b88c-4571-bcd6-ad72efed1062",
+      "92ff3dfb-ae54-430d-94f1-0dde220aa755": {
+        "akc_id": "92ff3dfb-ae54-430d-94f1-0dde220aa755",
+        "specimen": "22861f63-9aa8-4560-9503-c79a16511db0",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1528,22 +2019,31 @@
         "cell_number": 373361,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
       },
-      "7ce20230-a92f-4b03-914a-fe4800a2b7e6": {
-        "akc_id": "7ce20230-a92f-4b03-914a-fe4800a2b7e6",
-        "specimen": "5ffe5617-b88c-4571-bcd6-ad72efed1062",
-        "template_class": "RNA"
+      "fce0af63-d8ba-429c-9a33-2b7be55d4026": {
+        "akc_id": "fce0af63-d8ba-429c-9a33-2b7be55d4026",
+        "specimen": "22861f63-9aa8-4560-9503-c79a16511db0",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
       },
-      "f084cff7-fc33-401f-a697-8df599eb58a0": {
-        "akc_id": "f084cff7-fc33-401f-a697-8df599eb58a0",
-        "specimen": "5ffe5617-b88c-4571-bcd6-ad72efed1062",
+      "cd423504-aaf3-4c1f-851c-0bcf890b53d2": {
+        "akc_id": "cd423504-aaf3-4c1f-851c-0bcf890b53d2",
+        "specimen": "22861f63-9aa8-4560-9503-c79a16511db0",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
       },
-      "9d4c06b2-a4f7-41a1-a51a-741cd7e10fc0": {
-        "akc_id": "9d4c06b2-a4f7-41a1-a51a-741cd7e10fc0",
-        "specimen": "c6e35599-2b9f-4b84-957e-d91bd05eb073",
+      "6d319cef-afe6-4846-a0f0-77c86e3f33e2": {
+        "akc_id": "6d319cef-afe6-4846-a0f0-77c86e3f33e2",
+        "specimen": "5dc4297b-2c1d-4e51-b9cb-6da678de51bb",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1557,22 +2057,31 @@
         "cell_number": 710461,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
       },
-      "a659aafe-c533-471a-a5d5-99bc0baf81b6": {
-        "akc_id": "a659aafe-c533-471a-a5d5-99bc0baf81b6",
-        "specimen": "c6e35599-2b9f-4b84-957e-d91bd05eb073",
-        "template_class": "RNA"
+      "1cc77b55-25a9-4738-8b62-2365945504d6": {
+        "akc_id": "1cc77b55-25a9-4738-8b62-2365945504d6",
+        "specimen": "5dc4297b-2c1d-4e51-b9cb-6da678de51bb",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
       },
-      "b04152ae-ab14-4472-858f-c52c08a26807": {
-        "akc_id": "b04152ae-ab14-4472-858f-c52c08a26807",
-        "specimen": "c6e35599-2b9f-4b84-957e-d91bd05eb073",
+      "38f92436-f8c7-41c1-b037-be9b6722da51": {
+        "akc_id": "38f92436-f8c7-41c1-b037-be9b6722da51",
+        "specimen": "5dc4297b-2c1d-4e51-b9cb-6da678de51bb",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
       },
-      "02e1504c-95c7-46df-95f7-2eabb2e18b75": {
-        "akc_id": "02e1504c-95c7-46df-95f7-2eabb2e18b75",
-        "specimen": "df7bbb40-d67e-43b6-8cdb-9da3f2461c0b",
+      "ddd2fc1d-1f35-4925-beec-d9cd69a4172b": {
+        "akc_id": "ddd2fc1d-1f35-4925-beec-d9cd69a4172b",
+        "specimen": "3135cced-78c3-4d99-85ac-dab7c94ffcb8",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1586,22 +2095,31 @@
         "cell_number": 218455,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
       },
-      "300751dd-a778-432b-8bfa-70eb38f338fb": {
-        "akc_id": "300751dd-a778-432b-8bfa-70eb38f338fb",
-        "specimen": "df7bbb40-d67e-43b6-8cdb-9da3f2461c0b",
-        "template_class": "RNA"
+      "b22e4a08-98df-4899-ad3a-d90e5222e2d8": {
+        "akc_id": "b22e4a08-98df-4899-ad3a-d90e5222e2d8",
+        "specimen": "3135cced-78c3-4d99-85ac-dab7c94ffcb8",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
       },
-      "8917a26e-26d0-4ad0-afc2-b2076cad22fe": {
-        "akc_id": "8917a26e-26d0-4ad0-afc2-b2076cad22fe",
-        "specimen": "df7bbb40-d67e-43b6-8cdb-9da3f2461c0b",
+      "8eac0109-a935-4563-b02c-338a40fad14a": {
+        "akc_id": "8eac0109-a935-4563-b02c-338a40fad14a",
+        "specimen": "3135cced-78c3-4d99-85ac-dab7c94ffcb8",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
       },
-      "aa6b0370-04e3-40f5-a233-1ef6848883e2": {
-        "akc_id": "aa6b0370-04e3-40f5-a233-1ef6848883e2",
-        "specimen": "50e76179-b30c-4318-b25a-85d5e832ee19",
+      "911a0643-349a-40ee-b138-b017df1ae2a2": {
+        "akc_id": "911a0643-349a-40ee-b138-b017df1ae2a2",
+        "specimen": "203498b0-f861-47cf-9017-2b88cb9d0c78",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1615,22 +2133,31 @@
         "cell_number": 403343,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
       },
-      "2ab39906-7fd4-4c4d-b35e-4e62af65d2e9": {
-        "akc_id": "2ab39906-7fd4-4c4d-b35e-4e62af65d2e9",
-        "specimen": "50e76179-b30c-4318-b25a-85d5e832ee19",
-        "template_class": "RNA"
+      "2fa79048-f6d9-4340-9053-e5e097252b27": {
+        "akc_id": "2fa79048-f6d9-4340-9053-e5e097252b27",
+        "specimen": "203498b0-f861-47cf-9017-2b88cb9d0c78",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
       },
-      "97d34872-d519-4632-a015-1f8c4a26db1f": {
-        "akc_id": "97d34872-d519-4632-a015-1f8c4a26db1f",
-        "specimen": "50e76179-b30c-4318-b25a-85d5e832ee19",
+      "a3ae308f-2a9a-4679-a4bf-36332ced49ff": {
+        "akc_id": "a3ae308f-2a9a-4679-a4bf-36332ced49ff",
+        "specimen": "203498b0-f861-47cf-9017-2b88cb9d0c78",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
       },
-      "7ad5fb86-1842-406f-8246-9b05688008bc": {
-        "akc_id": "7ad5fb86-1842-406f-8246-9b05688008bc",
-        "specimen": "09888d1b-ad47-47f9-aa46-3ffbedfedac1",
+      "000639fb-df23-49eb-b8c7-d4e33e3d816a": {
+        "akc_id": "000639fb-df23-49eb-b8c7-d4e33e3d816a",
+        "specimen": "964e18b5-1fa8-4f84-8677-32abb5082a9b",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1644,22 +2171,31 @@
         "cell_number": 704020,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
       },
-      "6e169343-2a9b-4478-9787-47638b89439a": {
-        "akc_id": "6e169343-2a9b-4478-9787-47638b89439a",
-        "specimen": "09888d1b-ad47-47f9-aa46-3ffbedfedac1",
-        "template_class": "RNA"
+      "a50cb595-969c-4e30-9ec4-b60eb462c2f1": {
+        "akc_id": "a50cb595-969c-4e30-9ec4-b60eb462c2f1",
+        "specimen": "964e18b5-1fa8-4f84-8677-32abb5082a9b",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
       },
-      "54fb7c7d-4b8a-453a-8c5f-dffd6a1b3842": {
-        "akc_id": "54fb7c7d-4b8a-453a-8c5f-dffd6a1b3842",
-        "specimen": "09888d1b-ad47-47f9-aa46-3ffbedfedac1",
+      "4307c9a8-58ac-4ce9-aa7d-ef0a944cbf35": {
+        "akc_id": "4307c9a8-58ac-4ce9-aa7d-ef0a944cbf35",
+        "specimen": "964e18b5-1fa8-4f84-8677-32abb5082a9b",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
       },
-      "a5039105-6fd3-4555-8f0c-43e0ec826da6": {
-        "akc_id": "a5039105-6fd3-4555-8f0c-43e0ec826da6",
-        "specimen": "5eba7349-42e1-40fe-8979-0805b6a96827",
+      "c11936b2-6780-4d02-8bbb-e132003855ef": {
+        "akc_id": "c11936b2-6780-4d02-8bbb-e132003855ef",
+        "specimen": "866d0a09-91b8-42f1-ad08-19389c804be2",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1673,22 +2209,31 @@
         "cell_number": 197741,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
       },
-      "2bd945f5-2702-4d5e-bad3-13d633fc834c": {
-        "akc_id": "2bd945f5-2702-4d5e-bad3-13d633fc834c",
-        "specimen": "5eba7349-42e1-40fe-8979-0805b6a96827",
-        "template_class": "RNA"
+      "5f2dc4da-61c1-4508-b987-2d75e46cad40": {
+        "akc_id": "5f2dc4da-61c1-4508-b987-2d75e46cad40",
+        "specimen": "866d0a09-91b8-42f1-ad08-19389c804be2",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
       },
-      "0030144b-8365-47c4-8214-bb24b3ee6afe": {
-        "akc_id": "0030144b-8365-47c4-8214-bb24b3ee6afe",
-        "specimen": "5eba7349-42e1-40fe-8979-0805b6a96827",
+      "4023e770-5086-4002-b946-822488bb90ef": {
+        "akc_id": "4023e770-5086-4002-b946-822488bb90ef",
+        "specimen": "866d0a09-91b8-42f1-ad08-19389c804be2",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
       },
-      "e61611b6-f394-4531-8ea5-0e4f4019bef9": {
-        "akc_id": "e61611b6-f394-4531-8ea5-0e4f4019bef9",
-        "specimen": "ef21fe0e-b3c1-49b6-bc33-216f25d971ab",
+      "2ebfe156-0f58-44c2-8b8e-8d46f934edc0": {
+        "akc_id": "2ebfe156-0f58-44c2-8b8e-8d46f934edc0",
+        "specimen": "c75c170e-07f1-4545-a408-2920a0a272f3",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1702,22 +2247,31 @@
         "cell_number": 391613,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
       },
-      "32a1714c-4b71-4825-a1c3-31cd2027da0c": {
-        "akc_id": "32a1714c-4b71-4825-a1c3-31cd2027da0c",
-        "specimen": "ef21fe0e-b3c1-49b6-bc33-216f25d971ab",
-        "template_class": "RNA"
+      "02a0ad1c-4413-45fd-8fde-2ca1052fb075": {
+        "akc_id": "02a0ad1c-4413-45fd-8fde-2ca1052fb075",
+        "specimen": "c75c170e-07f1-4545-a408-2920a0a272f3",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
       },
-      "e73f31d5-2511-4e03-9235-b3da3bb9c633": {
-        "akc_id": "e73f31d5-2511-4e03-9235-b3da3bb9c633",
-        "specimen": "ef21fe0e-b3c1-49b6-bc33-216f25d971ab",
+      "249883ec-4273-475e-ab93-957bf6f5cbc2": {
+        "akc_id": "249883ec-4273-475e-ab93-957bf6f5cbc2",
+        "specimen": "c75c170e-07f1-4545-a408-2920a0a272f3",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
       },
-      "5ee62039-9d2b-4a8d-9a5e-b0829f2b5c10": {
-        "akc_id": "5ee62039-9d2b-4a8d-9a5e-b0829f2b5c10",
-        "specimen": "eaf65371-ecb8-41ac-81ca-a5543669a688",
+      "6a4bca93-fb4c-4370-83ca-18041762d9a3": {
+        "akc_id": "6a4bca93-fb4c-4370-83ca-18041762d9a3",
+        "specimen": "d49a759d-9137-4769-b91e-77da6065578c",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1731,22 +2285,31 @@
         "cell_number": 699698,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
       },
-      "329ede76-686a-4505-98bb-369b8d63cb5d": {
-        "akc_id": "329ede76-686a-4505-98bb-369b8d63cb5d",
-        "specimen": "eaf65371-ecb8-41ac-81ca-a5543669a688",
-        "template_class": "RNA"
+      "ed591ce4-0d9a-4fa8-ab6a-1b37a246d11e": {
+        "akc_id": "ed591ce4-0d9a-4fa8-ab6a-1b37a246d11e",
+        "specimen": "d49a759d-9137-4769-b91e-77da6065578c",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
       },
-      "4d046a69-0e10-40b6-b8e1-9e7c60a36a1d": {
-        "akc_id": "4d046a69-0e10-40b6-b8e1-9e7c60a36a1d",
-        "specimen": "eaf65371-ecb8-41ac-81ca-a5543669a688",
+      "05968f3a-5234-4fd9-8f61-3d8cf687bc2b": {
+        "akc_id": "05968f3a-5234-4fd9-8f61-3d8cf687bc2b",
+        "specimen": "d49a759d-9137-4769-b91e-77da6065578c",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
       },
-      "15b93821-cbe3-4c39-baf9-d6d58ae1574a": {
-        "akc_id": "15b93821-cbe3-4c39-baf9-d6d58ae1574a",
-        "specimen": "9c47740e-9b6e-4d69-913e-13e864c79b74",
+      "f354579e-8ea3-4eb8-ba7a-78dd311239e6": {
+        "akc_id": "f354579e-8ea3-4eb8-ba7a-78dd311239e6",
+        "specimen": "d174b3c4-1cea-458e-9008-74c5a4ae2a08",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1760,22 +2323,31 @@
         "cell_number": 953260,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
       },
-      "e1724c75-1c52-46cb-81f8-65c89d8e7370": {
-        "akc_id": "e1724c75-1c52-46cb-81f8-65c89d8e7370",
-        "specimen": "9c47740e-9b6e-4d69-913e-13e864c79b74",
-        "template_class": "RNA"
+      "98b86055-dd6f-4a5a-aecc-9f05bb154806": {
+        "akc_id": "98b86055-dd6f-4a5a-aecc-9f05bb154806",
+        "specimen": "d174b3c4-1cea-458e-9008-74c5a4ae2a08",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
       },
-      "72f2636d-c8b7-4f75-b3f0-78078226f185": {
-        "akc_id": "72f2636d-c8b7-4f75-b3f0-78078226f185",
-        "specimen": "9c47740e-9b6e-4d69-913e-13e864c79b74",
+      "6fa99c80-ea53-45fc-84e6-a4c8234dda5a": {
+        "akc_id": "6fa99c80-ea53-45fc-84e6-a4c8234dda5a",
+        "specimen": "d174b3c4-1cea-458e-9008-74c5a4ae2a08",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
       },
-      "52d6f47f-d13d-4a26-9e70-c4566d5e0645": {
-        "akc_id": "52d6f47f-d13d-4a26-9e70-c4566d5e0645",
-        "specimen": "1db38a37-8d11-42c7-9a32-5cf16aec48b1",
+      "b1248f04-4859-409f-acad-2bbe7ee82852": {
+        "akc_id": "b1248f04-4859-409f-acad-2bbe7ee82852",
+        "specimen": "7410cf3a-1839-44db-ac97-4164f5ef5e54",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1789,22 +2361,31 @@
         "cell_number": 1978920,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
       },
-      "d96cd12a-dd28-4fc7-9acc-25c20f1503f1": {
-        "akc_id": "d96cd12a-dd28-4fc7-9acc-25c20f1503f1",
-        "specimen": "1db38a37-8d11-42c7-9a32-5cf16aec48b1",
-        "template_class": "RNA"
+      "5b3ce7d4-9dcc-4258-898c-7f9222b6d5f0": {
+        "akc_id": "5b3ce7d4-9dcc-4258-898c-7f9222b6d5f0",
+        "specimen": "7410cf3a-1839-44db-ac97-4164f5ef5e54",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
       },
-      "7cbbbf0c-66fb-4e05-84ec-b16f2d511883": {
-        "akc_id": "7cbbbf0c-66fb-4e05-84ec-b16f2d511883",
-        "specimen": "1db38a37-8d11-42c7-9a32-5cf16aec48b1",
+      "ca843561-cb04-4f0f-966b-a0cf92e023c3": {
+        "akc_id": "ca843561-cb04-4f0f-966b-a0cf92e023c3",
+        "specimen": "7410cf3a-1839-44db-ac97-4164f5ef5e54",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
       },
-      "2b547584-c763-4496-a4a9-983fc3e2d2cd": {
-        "akc_id": "2b547584-c763-4496-a4a9-983fc3e2d2cd",
-        "specimen": "370752d7-f71a-4cab-9763-f37eb975b003",
+      "62fccce0-c81f-4024-b647-5abf16b56ba2": {
+        "akc_id": "62fccce0-c81f-4024-b647-5abf16b56ba2",
+        "specimen": "37ea013c-6177-40f7-a740-5785b75963ec",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1818,22 +2399,31 @@
         "cell_number": 3933690,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
       },
-      "b590987f-a6fb-49c1-abac-493bddc734fd": {
-        "akc_id": "b590987f-a6fb-49c1-abac-493bddc734fd",
-        "specimen": "370752d7-f71a-4cab-9763-f37eb975b003",
-        "template_class": "RNA"
+      "f7bbd93d-a993-46cb-929b-a3f4d60ad1e0": {
+        "akc_id": "f7bbd93d-a993-46cb-929b-a3f4d60ad1e0",
+        "specimen": "37ea013c-6177-40f7-a740-5785b75963ec",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
       },
-      "5782e393-a5d3-4ca0-ab4f-769e511d31ba": {
-        "akc_id": "5782e393-a5d3-4ca0-ab4f-769e511d31ba",
-        "specimen": "370752d7-f71a-4cab-9763-f37eb975b003",
+      "6a06ac88-b2d1-490e-99b7-eb864e9aa148": {
+        "akc_id": "6a06ac88-b2d1-490e-99b7-eb864e9aa148",
+        "specimen": "37ea013c-6177-40f7-a740-5785b75963ec",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
       },
-      "1ab96ee0-7696-416c-84a8-371140f9e851": {
-        "akc_id": "1ab96ee0-7696-416c-84a8-371140f9e851",
-        "specimen": "41508fb3-b337-4ecd-a902-c6d6c1f9cabb",
+      "076d1979-b617-4909-bbb6-fd268590a6e6": {
+        "akc_id": "076d1979-b617-4909-bbb6-fd268590a6e6",
+        "specimen": "42693c4b-840b-4c47-b580-288e88f1ae0c",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1847,22 +2437,31 @@
         "cell_number": 7206863,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
       },
-      "34ad0309-01a5-42b2-852b-72ea31dade9e": {
-        "akc_id": "34ad0309-01a5-42b2-852b-72ea31dade9e",
-        "specimen": "41508fb3-b337-4ecd-a902-c6d6c1f9cabb",
-        "template_class": "RNA"
+      "4ddf7940-0ef8-4abf-b5e7-c879f3196cad": {
+        "akc_id": "4ddf7940-0ef8-4abf-b5e7-c879f3196cad",
+        "specimen": "42693c4b-840b-4c47-b580-288e88f1ae0c",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
       },
-      "7841f7b3-a608-465b-b642-cc4a1249d0f5": {
-        "akc_id": "7841f7b3-a608-465b-b642-cc4a1249d0f5",
-        "specimen": "41508fb3-b337-4ecd-a902-c6d6c1f9cabb",
+      "7f0b51fc-0b51-4e1d-b5d3-4e2222c5b55d": {
+        "akc_id": "7f0b51fc-0b51-4e1d-b5d3-4e2222c5b55d",
+        "specimen": "42693c4b-840b-4c47-b580-288e88f1ae0c",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
       },
-      "46439a8f-6f83-450f-bbbf-d19f06d34dd9": {
-        "akc_id": "46439a8f-6f83-450f-bbbf-d19f06d34dd9",
-        "specimen": "2b5cc5b0-3bde-4a66-9e0a-e3d1c77c4a33",
+      "df46bc1e-a173-4401-b3a5-0bb7fe471c1f": {
+        "akc_id": "df46bc1e-a173-4401-b3a5-0bb7fe471c1f",
+        "specimen": "8df2df4c-52b5-40b8-8b3e-a21e7f3daea8",
         "cell_subset": {
           "label": "B cell",
           "id": "CL:0000236"
@@ -1876,270 +2475,354 @@
         "cell_number": 14114852,
         "cells_per_reaction": 100000,
         "cell_storage": true,
-        "cell_isolation": "Dynabeads Oligo(dT)"
+        "cell_isolation": "Dynabeads Oligo(dT)",
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       },
-      "bbc673f2-2f2e-458f-88ee-9bc3e468affb": {
-        "akc_id": "bbc673f2-2f2e-458f-88ee-9bc3e468affb",
-        "specimen": "2b5cc5b0-3bde-4a66-9e0a-e3d1c77c4a33",
-        "template_class": "RNA"
+      "534804af-0b98-4f39-a9b3-3bc8d97d3266": {
+        "akc_id": "534804af-0b98-4f39-a9b3-3bc8d97d3266",
+        "specimen": "8df2df4c-52b5-40b8-8b3e-a21e7f3daea8",
+        "template_class": "RNA",
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       },
-      "d15f2386-c256-46f3-8582-d5f0115bc6c4": {
-        "akc_id": "d15f2386-c256-46f3-8582-d5f0115bc6c4",
-        "specimen": "2b5cc5b0-3bde-4a66-9e0a-e3d1c77c4a33",
+      "3aea8141-f8f2-4e01-b9fd-5c2e10ee1219": {
+        "akc_id": "3aea8141-f8f2-4e01-b9fd-5c2e10ee1219",
+        "specimen": "8df2df4c-52b5-40b8-8b3e-a21e7f3daea8",
         "library_generation_method": "PCR",
-        "library_generation_protocol": "V region amplification"
+        "library_generation_protocol": "V region amplification",
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       }
     },
     "assays": {
-      "a5a1923d-c9e5-4fa1-b6aa-b1bc15b36802": {
-        "akc_id": "a5a1923d-c9e5-4fa1-b6aa-b1bc15b36802",
-        "specimen": "e678d3e5-0cec-46e2-8ebb-6e5103a31a2b",
+      "0163b578-83a3-4683-becc-43983952e9df": {
+        "akc_id": "0163b578-83a3-4683-becc-43983952e9df",
+        "specimen": "e0891072-99e8-48f7-870c-ef87f2f6d093",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:1"
+        ]
       },
-      "06ecd6c1-1e3a-49aa-80dd-555f0a136873": {
-        "akc_id": "06ecd6c1-1e3a-49aa-80dd-555f0a136873",
-        "specimen": "6e2ba4f1-c67f-4f79-ba7b-126dd5e44726",
+      "de886608-3f23-4125-bf49-af79e68f04ec": {
+        "akc_id": "de886608-3f23-4125-bf49-af79e68f04ec",
+        "specimen": "d52fbdc3-2ebb-4a8e-8d49-97a1acc3cc3e",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:2"
+        ]
       },
-      "f64ab3bb-c937-4324-b0ac-b26f1864cce5": {
-        "akc_id": "f64ab3bb-c937-4324-b0ac-b26f1864cce5",
-        "specimen": "dfb16135-1b0b-40f7-876c-e4c4284e7a7e",
+      "f0f97c6c-510a-4664-aa3b-198f4aff140c": {
+        "akc_id": "f0f97c6c-510a-4664-aa3b-198f4aff140c",
+        "specimen": "3519dc85-c055-47be-aabd-071c1cb839d0",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:3"
+        ]
       },
-      "fd5765e2-fccb-4161-9b78-c513507dfdbf": {
-        "akc_id": "fd5765e2-fccb-4161-9b78-c513507dfdbf",
-        "specimen": "57a9fdc5-8d3a-45ca-903e-01e5bdc0abdd",
+      "c60cbf2a-5439-4bdc-abb0-39dbb4b07a56": {
+        "akc_id": "c60cbf2a-5439-4bdc-abb0-39dbb4b07a56",
+        "specimen": "5e1d4608-3f81-4ebd-ae75-5595ab74d43e",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:4"
+        ]
       },
-      "e05b19e3-af9f-4585-b5ea-57a5e9d1e026": {
-        "akc_id": "e05b19e3-af9f-4585-b5ea-57a5e9d1e026",
-        "specimen": "b20763f9-3e69-4573-b4fe-ca86ac69f157",
+      "fbbd3dd8-5b52-4cc4-afd1-355a45190be0": {
+        "akc_id": "fbbd3dd8-5b52-4cc4-afd1-355a45190be0",
+        "specimen": "68bbe0ad-18ba-486b-b7e9-1e237c123047",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:5"
+        ]
       },
-      "167b283f-2739-4a78-839c-29dccbfb5bd0": {
-        "akc_id": "167b283f-2739-4a78-839c-29dccbfb5bd0",
-        "specimen": "ddad4808-7bf7-4166-a74a-4c291c05092e",
+      "8315d8a8-c1a1-49b2-9ecb-6603de9dae0a": {
+        "akc_id": "8315d8a8-c1a1-49b2-9ecb-6603de9dae0a",
+        "specimen": "00980013-f3b4-4dbb-9073-2062fdab7700",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:6"
+        ]
       },
-      "1cf54bba-9288-4e1d-a23c-2206a02871c9": {
-        "akc_id": "1cf54bba-9288-4e1d-a23c-2206a02871c9",
-        "specimen": "79661ae2-000c-4c5f-bbb4-886b7524c445",
+      "fbefb941-17b7-4e74-8966-65ee55c428d0": {
+        "akc_id": "fbefb941-17b7-4e74-8966-65ee55c428d0",
+        "specimen": "679c2c4b-f31e-4f04-8a09-22fdf32d797c",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7"
+        ]
       },
-      "aad23ccf-3629-4a40-bc94-8c0bb2ca1b54": {
-        "akc_id": "aad23ccf-3629-4a40-bc94-8c0bb2ca1b54",
-        "specimen": "a8b61ad9-07f3-481d-b227-5815955ba2c8",
+      "fe3cc785-66bf-41cc-9798-b6ba3e60d435": {
+        "akc_id": "fe3cc785-66bf-41cc-9798-b6ba3e60d435",
+        "specimen": "a2afaa18-29d3-4d74-ba7a-7de5c6576423",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:8"
+        ]
       },
-      "a112395d-dd3c-4418-8c6f-7465f4087ca2": {
-        "akc_id": "a112395d-dd3c-4418-8c6f-7465f4087ca2",
-        "specimen": "7451fa33-f283-4067-8e21-c63a30fc5a88",
+      "8d6d2efd-2465-4af4-9685-807f9c53cbf7": {
+        "akc_id": "8d6d2efd-2465-4af4-9685-807f9c53cbf7",
+        "specimen": "32e8c696-5469-430a-a2be-94f143f02ece",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:9"
+        ]
       },
-      "45c9050b-e722-4c76-9211-79cc4808dd48": {
-        "akc_id": "45c9050b-e722-4c76-9211-79cc4808dd48",
-        "specimen": "bd1aa7b0-dfeb-4f37-919c-be692f73ab8f",
+      "0e297ba7-1da8-4fb7-b930-4ab9858db0e2": {
+        "akc_id": "0e297ba7-1da8-4fb7-b930-4ab9858db0e2",
+        "specimen": "50b379ed-b451-4075-862b-44525246b140",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:10"
+        ]
       },
-      "ff46ac95-5566-4e81-8dd6-f34720267071": {
-        "akc_id": "ff46ac95-5566-4e81-8dd6-f34720267071",
-        "specimen": "b49d3a5a-b8f8-44aa-9ee3-6d7b8a4e6675",
+      "4ac17939-e170-4fca-9813-4704400f880b": {
+        "akc_id": "4ac17939-e170-4fca-9813-4704400f880b",
+        "specimen": "1af0ab81-8843-40fb-87f3-e0db0feaf9ff",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:11"
+        ]
       },
-      "02399ef4-299d-441b-95f1-b07310082c0e": {
-        "akc_id": "02399ef4-299d-441b-95f1-b07310082c0e",
-        "specimen": "59cce8d7-68a5-48ab-8743-43022a44d1c8",
+      "f01f27d3-8657-4e3a-96fb-e355ff13f30f": {
+        "akc_id": "f01f27d3-8657-4e3a-96fb-e355ff13f30f",
+        "specimen": "01d67126-b3d8-4c58-a333-7f3908461e66",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:12"
+        ]
       },
-      "5f379827-03ed-4d4d-9698-513761541c5a": {
-        "akc_id": "5f379827-03ed-4d4d-9698-513761541c5a",
-        "specimen": "5ffe5617-b88c-4571-bcd6-ad72efed1062",
+      "dd1c64dc-b1c5-4844-826e-4fe8b5aacb20": {
+        "akc_id": "dd1c64dc-b1c5-4844-826e-4fe8b5aacb20",
+        "specimen": "22861f63-9aa8-4560-9503-c79a16511db0",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:13"
+        ]
       },
-      "7194104f-2d0e-43d2-9221-5158744b571d": {
-        "akc_id": "7194104f-2d0e-43d2-9221-5158744b571d",
-        "specimen": "c6e35599-2b9f-4b84-957e-d91bd05eb073",
+      "dd3e4968-6c16-413a-b1bb-73cd091afa9b": {
+        "akc_id": "dd3e4968-6c16-413a-b1bb-73cd091afa9b",
+        "specimen": "5dc4297b-2c1d-4e51-b9cb-6da678de51bb",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:14"
+        ]
       },
-      "486b64b3-3f6b-4454-a8a2-99c1b14ec87e": {
-        "akc_id": "486b64b3-3f6b-4454-a8a2-99c1b14ec87e",
-        "specimen": "df7bbb40-d67e-43b6-8cdb-9da3f2461c0b",
+      "bc8aa6af-ea61-4371-b022-f4d328a21a3d": {
+        "akc_id": "bc8aa6af-ea61-4371-b022-f4d328a21a3d",
+        "specimen": "3135cced-78c3-4d99-85ac-dab7c94ffcb8",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:15"
+        ]
       },
-      "3aeab9f8-4ae6-4b2e-a3c9-08069d730c6d": {
-        "akc_id": "3aeab9f8-4ae6-4b2e-a3c9-08069d730c6d",
-        "specimen": "50e76179-b30c-4318-b25a-85d5e832ee19",
+      "9280b71f-a754-4c8a-a9c8-0af5810e9486": {
+        "akc_id": "9280b71f-a754-4c8a-a9c8-0af5810e9486",
+        "specimen": "203498b0-f861-47cf-9017-2b88cb9d0c78",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:16"
+        ]
       },
-      "ef479322-9f5c-45b7-9e63-7470d9346083": {
-        "akc_id": "ef479322-9f5c-45b7-9e63-7470d9346083",
-        "specimen": "09888d1b-ad47-47f9-aa46-3ffbedfedac1",
+      "8b4f9c23-191a-4153-ba98-952d74a31f95": {
+        "akc_id": "8b4f9c23-191a-4153-ba98-952d74a31f95",
+        "specimen": "964e18b5-1fa8-4f84-8677-32abb5082a9b",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:17"
+        ]
       },
-      "03330c45-97b6-42df-92b3-577c6406623e": {
-        "akc_id": "03330c45-97b6-42df-92b3-577c6406623e",
-        "specimen": "5eba7349-42e1-40fe-8979-0805b6a96827",
+      "3b42765d-594f-448c-ae07-80e6210df2e5": {
+        "akc_id": "3b42765d-594f-448c-ae07-80e6210df2e5",
+        "specimen": "866d0a09-91b8-42f1-ad08-19389c804be2",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:18"
+        ]
       },
-      "6e8c480d-69d8-4d13-aa4e-142df295dc59": {
-        "akc_id": "6e8c480d-69d8-4d13-aa4e-142df295dc59",
-        "specimen": "ef21fe0e-b3c1-49b6-bc33-216f25d971ab",
+      "dea5de35-4f6a-459f-a6fc-0bd3d043c553": {
+        "akc_id": "dea5de35-4f6a-459f-a6fc-0bd3d043c553",
+        "specimen": "c75c170e-07f1-4545-a408-2920a0a272f3",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:19"
+        ]
       },
-      "19dba60e-82a4-4981-a91a-c2a8e6935fca": {
-        "akc_id": "19dba60e-82a4-4981-a91a-c2a8e6935fca",
-        "specimen": "eaf65371-ecb8-41ac-81ca-a5543669a688",
+      "a7d9ada1-450b-4c3c-a70f-01a06a7ad59f": {
+        "akc_id": "a7d9ada1-450b-4c3c-a70f-01a06a7ad59f",
+        "specimen": "d49a759d-9137-4769-b91e-77da6065578c",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:20"
+        ]
       },
-      "b3f148b6-2001-45ef-9f8d-b004d99afc65": {
-        "akc_id": "b3f148b6-2001-45ef-9f8d-b004d99afc65",
-        "specimen": "9c47740e-9b6e-4d69-913e-13e864c79b74",
+      "08e3f8a3-bcd1-4ebc-ae6a-1cf86c9846ec": {
+        "akc_id": "08e3f8a3-bcd1-4ebc-ae6a-1cf86c9846ec",
+        "specimen": "d174b3c4-1cea-458e-9008-74c5a4ae2a08",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:21"
+        ]
       },
-      "6418ad5e-07d5-4fdc-afa2-5c33f2b684b6": {
-        "akc_id": "6418ad5e-07d5-4fdc-afa2-5c33f2b684b6",
-        "specimen": "1db38a37-8d11-42c7-9a32-5cf16aec48b1",
+      "0eb5fab1-c32d-4549-ab4b-a6dbb1699986": {
+        "akc_id": "0eb5fab1-c32d-4549-ab4b-a6dbb1699986",
+        "specimen": "7410cf3a-1839-44db-ac97-4164f5ef5e54",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:22"
+        ]
       },
-      "51d8ec9c-44c5-4911-81f5-55f087134b85": {
-        "akc_id": "51d8ec9c-44c5-4911-81f5-55f087134b85",
-        "specimen": "370752d7-f71a-4cab-9763-f37eb975b003",
+      "6faa3427-d524-456f-90e1-402630073a94": {
+        "akc_id": "6faa3427-d524-456f-90e1-402630073a94",
+        "specimen": "37ea013c-6177-40f7-a740-5785b75963ec",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:23"
+        ]
       },
-      "6941432c-1631-43f3-ae0a-cbfe71ff5e32": {
-        "akc_id": "6941432c-1631-43f3-ae0a-cbfe71ff5e32",
-        "specimen": "41508fb3-b337-4ecd-a902-c6d6c1f9cabb",
+      "471d3361-5979-49db-a193-2fbcf14a376a": {
+        "akc_id": "471d3361-5979-49db-a193-2fbcf14a376a",
+        "specimen": "42693c4b-840b-4c47-b580-288e88f1ae0c",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:24"
+        ]
       },
-      "9ae2633b-7daf-4bb5-b7aa-dae160b4967a": {
-        "akc_id": "9ae2633b-7daf-4bb5-b7aa-dae160b4967a",
-        "specimen": "2b5cc5b0-3bde-4a66-9e0a-e3d1c77c4a33",
+      "fad177ea-ddb9-4c1d-8a53-309bbc93f08e": {
+        "akc_id": "fad177ea-ddb9-4c1d-8a53-309bbc93f08e",
+        "specimen": "8df2df4c-52b5-40b8-8b3e-a21e7f3daea8",
         "type": "ReceptorRepertoireSequencingAssay",
         "pcr_target": [
           "IGH"
         ],
         "complete_sequences": "complete ",
-        "physical_linkage": "none"
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:25"
+        ]
       }
     }
   },
