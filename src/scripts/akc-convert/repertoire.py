@@ -452,6 +452,22 @@ class Repertoire(Parser):
                     # sanity check on the ADC data and generates a warning when data
                     # differs when it presumably should not.
                     if value['akc_field'] in akc_object: 
+                        # Keep track of the ADC repertoire that contributed to this
+                        # AKC object. We use a CURIE with prefix ADC_REPERTOIRE.
+                        # We build an array of source_uris in the AKC object that
+                        # links back to the source of this data. This could be a 
+                        # list of CURIEs from multiple repositories is the
+                        # investigation exists in the ADC, IEDB, and VDJBase
+                        repertoire_id = repertoire_dict['repertoire_id']['value']
+                        repertoire_curie = 'ADC_REPERTOIRE:' + repertoire_id
+                        # If we have the field and the repertoire doesn't already
+                        # exist in the list, append the CURIE.
+                        if 'source_uris' in akc_object:
+                            if not repertoire_curie in akc_object['source_uris']:
+                                akc_object['source_uris'].append(repertoire_curie)
+                        else:
+                            # If not, then we create a new list with the CURIE.
+                            akc_object['source_uris'] = [repertoire_curie]
                         # The field already exists in the object, get the existing value.
                         current_value = akc_object[value['akc_field']]
                         if isinstance(current_value, list):
