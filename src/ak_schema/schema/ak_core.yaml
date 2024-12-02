@@ -85,6 +85,10 @@ classes:
         range: SpecimenCollection
         multivalued: true
         inlined: true
+      specimen_processings:
+        range: SpecimenProcessing
+        multivalued: true
+        inlined: true
       assays:
         range: Assay
         multivalued: true

@@ -3370,6 +3370,149 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "tissue_processing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tissue_processing",
+      "description": "Enzymatic digestion and/or physical methods used to isolate cells from sample",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tissue_processing",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_subset",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_subset",
+      "description": "Commonly-used designation of isolated cell population",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_subset",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_phenotype",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_phenotype",
+      "description": "List of cellular markers and their expression levels used to isolate the cell population",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_phenotype",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_species",
+      "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_species",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "single_cell",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/single_cell",
+      "description": "TRUE if single cells were isolated into separate compartments",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/single_cell",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_number",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_number",
+      "description": "Total number of cells that went into the experiment",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_number",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cells_per_reaction",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cells_per_reaction",
+      "description": "Number of cells for each biological replicate",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cells_per_reaction",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_storage",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_storage",
+      "description": "TRUE if cells were cryo-preserved between isolation and further processing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_storage",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_quality",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_quality",
+      "description": "Relative amount of viable cells after preparation and (if applicable) thawing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_quality",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_isolation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_isolation",
+      "description": "Description of the procedure used for marker-based isolation or enrich cells",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_isolation",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "cell_processing_protocol",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_processing_protocol",
+      "description": "Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_processing_protocol",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "specimen",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen",
       "description": "The specimen that was input for an assay",
@@ -3440,9 +3583,9 @@
       "description": "The class of nucleic acid that was used as primary starting material for the following procedures",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_class",
-      "owner": "ReceptorRepertoireSequencingAssay",
+      "owner": "NucleicAcidProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay"
+        "NucleicAcidProcessing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3453,9 +3596,9 @@
       "description": "Description and results of the quality control performed on the template material",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_quality",
-      "owner": "ReceptorRepertoireSequencingAssay",
+      "owner": "NucleicAcidProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay"
+        "NucleicAcidProcessing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3466,9 +3609,9 @@
       "description": "Amount of template that went into the process",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_amount",
-      "owner": "ReceptorRepertoireSequencingAssay",
+      "owner": "NucleicAcidProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay"
+        "NucleicAcidProcessing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3479,9 +3622,9 @@
       "description": "Unit of template amount",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/template_amount_unit",
-      "owner": "ReceptorRepertoireSequencingAssay",
+      "owner": "NucleicAcidProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay"
+        "NucleicAcidProcessing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3492,9 +3635,9 @@
       "description": "Generic type of library generation",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_method",
-      "owner": "ReceptorRepertoireSequencingAssay",
+      "owner": "LibraryPreparationProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay"
+        "LibraryPreparationProcessing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3505,9 +3648,9 @@
       "description": "Description of processes applied to substrate to obtain a library that is ready for sequencing",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_protocol",
-      "owner": "ReceptorRepertoireSequencingAssay",
+      "owner": "LibraryPreparationProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay"
+        "LibraryPreparationProcessing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3518,9 +3661,9 @@
       "description": "When using a library generation protocol from a commercial provider, provide the protocol version number",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_kit_version",
-      "owner": "ReceptorRepertoireSequencingAssay",
+      "owner": "LibraryPreparationProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay"
+        "LibraryPreparationProcessing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -20801,6 +20944,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__specimen_processings",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/specimen_processings",
+      "alias": "specimen_processings",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "SpecimenProcessing",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aIRRKnowledgeCommons__assays",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/assays",
@@ -20976,6 +21133,7 @@
         "aIRRKnowledgeCommons__assessments",
         "aIRRKnowledgeCommons__specimens",
         "aIRRKnowledgeCommons__specimen_collections",
+        "aIRRKnowledgeCommons__specimen_processings",
         "aIRRKnowledgeCommons__assays",
         "aIRRKnowledgeCommons__datasets",
         "aIRRKnowledgeCommons__conclusions",
@@ -21061,6 +21219,14 @@
           "name": "specimen_collections",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "SpecimenCollection",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "specimen_processings",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "SpecimenProcessing",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -21349,6 +21515,78 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "CellIsolationProcessing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CellIsolationProcessing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:00000512"
+      ],
+      "is_a": "SpecimenProcessing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen",
+        "tissue_processing",
+        "cell_subset",
+        "cell_phenotype",
+        "cell_species",
+        "single_cell",
+        "cell_number",
+        "cells_per_reaction",
+        "cell_storage",
+        "cell_quality",
+        "cell_isolation",
+        "cell_processing_protocol"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_00000512",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "NucleicAcidProcessing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/NucleicAcidProcessing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:00001902"
+      ],
+      "is_a": "SpecimenProcessing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen",
+        "template_class",
+        "template_quality",
+        "template_amount",
+        "template_amount_unit"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_00001902",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "LibraryPreparationProcessing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LibraryPreparationProcessing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:00000711"
+      ],
+      "is_a": "SpecimenProcessing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen",
+        "library_generation_method",
+        "library_generation_protocol",
+        "library_generation_kit_version"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_00000711",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Assay",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Assay",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -21387,13 +21625,6 @@
         "type",
         "assay_type",
         "target_entity_type",
-        "template_class",
-        "template_quality",
-        "template_amount",
-        "template_amount_unit",
-        "library_generation_method",
-        "library_generation_protocol",
-        "library_generation_kit_version",
         "pcr_target",
         "complete_sequences",
         "physical_linkage"
@@ -23691,9 +23922,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-11-26T14:25:53",
-  "source_file_size": 377956,
-  "generation_date": "2024-11-26T14:25:54",
+  "source_file_date": "2024-12-02T21:13:28",
+  "source_file_size": 381574,
+  "generation_date": "2024-12-02T21:13:30",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

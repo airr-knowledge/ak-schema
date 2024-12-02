@@ -213,6 +213,22 @@
                         "null"
                     ]
                 },
+                "specimen_processings": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SpecimenProcessing__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "specimens": {
                     "additionalProperties": {
                         "anyOf": [
@@ -741,6 +757,119 @@
                 "akc_id"
             ],
             "title": "Cell",
+            "type": "object"
+        },
+        "CellIsolationProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "cell_isolation": {
+                    "description": "Description of the procedure used for marker-based isolation or enrich cells",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_number": {
+                    "description": "Total number of cells that went into the experiment",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_phenotype": {
+                    "description": "List of cellular markers and their expression levels used to isolate the cell population",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_processing_protocol": {
+                    "description": "Description of the methods applied to the sample including cell preparation/ isolation/enrichment and nucleic acid extraction. This should closely mirror the Materials and methods section in the manuscript.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_quality": {
+                    "description": "Relative amount of viable cells after preparation and (if applicable) thawing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_species": {
+                    "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_storage": {
+                    "description": "TRUE if cells were cryo-preserved between isolation and further processing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cell_subset": {
+                    "description": "Commonly-used designation of isolated cell population",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cells_per_reaction": {
+                    "description": "Number of cells for each biological replicate",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "single_cell": {
+                    "description": "TRUE if single cells were isolated into separate compartments",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tissue_processing": {
+                    "description": "Enzymatic digestion and/or physical methods used to isolate cells from sample",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "CellIsolationProcessing",
             "type": "object"
         },
         "Chain": {
@@ -1997,6 +2126,63 @@
             "title": "Investigation",
             "type": "object"
         },
+        "LibraryPreparationProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "library_generation_kit_version": {
+                    "description": "When using a library generation protocol from a commercial provider, provide the protocol version number",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "library_generation_method": {
+                    "description": "Generic type of library generation",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "library_generation_protocol": {
+                    "description": "Description of processes applied to substrate to obtain a library that is ready for sequencing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "LibraryPreparationProcessing",
+            "type": "object"
+        },
         "LifeEvent": {
             "additionalProperties": false,
             "description": "An event in which a study participant participates.",
@@ -2234,6 +2420,70 @@
                 "akc_id"
             ],
             "title": "ModelingFramework",
+            "type": "object"
+        },
+        "NucleicAcidProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "template_amount": {
+                    "description": "Amount of template that went into the process",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "template_amount_unit": {
+                    "description": "Unit of template amount",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "template_class": {
+                    "description": "The class of nucleic acid that was used as primary starting material for the following procedures",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "template_quality": {
+                    "description": "Description and results of the quality control performed on the template material",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "NucleicAcidProcessing",
             "type": "object"
         },
         "Participant": {
@@ -2598,27 +2848,6 @@
                         "null"
                     ]
                 },
-                "library_generation_kit_version": {
-                    "description": "When using a library generation protocol from a commercial provider, provide the protocol version number",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "library_generation_method": {
-                    "description": "Generic type of library generation",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "library_generation_protocol": {
-                    "description": "Description of processes applied to substrate to obtain a library that is ready for sequencing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -2662,34 +2891,6 @@
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_amount": {
-                    "description": "Amount of template that went into the process",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_amount_unit": {
-                    "description": "Unit of template amount",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_class": {
-                    "description": "The class of nucleic acid that was used as primary starting material for the following procedures",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_quality": {
-                    "description": "Description and results of the quality control performed on the template material",
                     "type": [
                         "string",
                         "null"
@@ -2740,27 +2941,6 @@
                         "null"
                     ]
                 },
-                "library_generation_kit_version": {
-                    "description": "When using a library generation protocol from a commercial provider, provide the protocol version number",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "library_generation_method": {
-                    "description": "Generic type of library generation",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "library_generation_protocol": {
-                    "description": "Description of processes applied to substrate to obtain a library that is ready for sequencing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -2804,34 +2984,6 @@
                 },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_amount": {
-                    "description": "Amount of template that went into the process",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_amount_unit": {
-                    "description": "Unit of template amount",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_class": {
-                    "description": "The class of nucleic acid that was used as primary starting material for the following procedures",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "template_quality": {
-                    "description": "Description and results of the quality control performed on the template material",
                     "type": [
                         "string",
                         "null"
@@ -3252,6 +3404,40 @@
             "required": [
                 "akc_id"
             ],
+            "title": "SpecimenProcessing",
+            "type": "object"
+        },
+        "SpecimenProcessing__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
             "title": "SpecimenProcessing",
             "type": "object"
         },
@@ -12115,6 +12301,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/SpecimenCollection__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "specimen_processings": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/SpecimenProcessing__identifier_optional"
                     },
                     {
                         "type": "null"
