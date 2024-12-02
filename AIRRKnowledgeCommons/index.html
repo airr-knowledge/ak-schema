@@ -308,6 +308,15 @@
     click SpecimenCollection href "../SpecimenCollection"
 
 
+      AIRRKnowledgeCommons : specimen_processings
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" SpecimenProcessing : specimen_processings
+    click SpecimenProcessing href "../SpecimenProcessing"
+
+
       AIRRKnowledgeCommons : specimens
 
 
@@ -415,6 +424,12 @@
 <tr>
 <td><a href="../specimen_collections/">specimen_collections</a></td>
 <td>* <br/> <a href="../SpecimenCollection/">SpecimenCollection</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../specimen_processings/">specimen_processings</a></td>
+<td>* <br/> <a href="../SpecimenProcessing/">SpecimenProcessing</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -577,6 +592,15 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: SpecimenCollection
+    multivalued: true
+    inlined: true
+  specimen_processings:
+    name: specimen_processings
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: SpecimenProcessing
     multivalued: true
     inlined: true
   assays:
@@ -753,6 +777,17 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: SpecimenCollection
+    multivalued: true
+    inlined: true
+  specimen_processings:
+    name: specimen_processings
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: specimen_processings
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: SpecimenProcessing
     multivalued: true
     inlined: true
   assays:
