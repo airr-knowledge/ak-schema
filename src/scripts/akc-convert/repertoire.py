@@ -26,12 +26,93 @@ class Repertoire(Parser):
             "Participant" : { "classes" : ["Participant"], "fields" : ["subject_id"] },
             "Specimen" : { "classes" : ["Specimen"], "fields" : ["subject_id", "sample_id"] },
             "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
-            "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id"] },
-            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id"] }
+            "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id", "disease_diagnosis"] },
+            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "LibraryPreparationProcessing" : { "classes" : ["LibraryPreparationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "CellIsolationProcessing" : { "classes" : ["CellIsolationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] }
         }
         # Classes that perform a special link function between other classes
         # TODO: This should be in a config file and not harcoded here.
         self.link_classes = ['LifeEvent', 'StudyEvent']
+
+        # Mapping of which ADC fields should be stored in a specific class to help
+        # link AKC objects
+        self.class_adc_map = {
+                "Investigation" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
+                "Reference" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
+                "StudyArm" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'study_group_description'],
+                "Participant" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id','subject_id', 'sample_id', 'study_group_description'],
+                "LifeEvent" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "CellIsolationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "LibraryPreparationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "Assay" : [],
+                "TCellReceptorEpitopeBindingAssay" : []
+                }
+
+        # A mapping of AKC class to the slot it should be stored in in
+        # AIRRKnowledgeCommons
+        self.akc_class_to_slot = {
+                'Investigation':'investigations',
+                'Reference':'references',
+                'StudyArm':'study_arms',
+                'StudyEvents':'study_events',
+                'Participant':'participants',
+                'LifeEvent':'life_events',
+                'ImmuneExposure':'immune_exposures',
+                'Assessment':'assessments',
+                'Specimen':'specimens',
+                'SpecimenCollection':'specimen_collections',
+                'SpecimenProcessing':'specimen_processings',
+                'CellIsolationProcessing':'specimen_processings',
+                'NucleicAcidProcessing':'specimen_processings',
+                'LibraryPreparationProcessing':'specimen_processings',
+                'Assay':'assays',
+                'ReceptorRepertoireSequencingAssay':'assays',
+                'TCellReceptorEpitopeBindingAssay':'assays',
+                'Dataset':'datasets',
+                'Conclusion':'conclusions',
+                'Chain':'chains',
+                'TCellReceptor':'tcell_receptors',
+                'Epitope':'epitopes'
+                }
+        # A mapping of AKC class to the slot it should be stored in in
+        # AIRRKnowledgeCommons
+        self.akc_slot_list = [
+                'investigations',
+                'references',
+                'study_arms',
+                'study_events',
+                'participants',
+                'life_events',
+                'immune_exposures',
+                'assessments',
+                'specimens',
+                'specimen_collections',
+                'specimen_processings',
+                'assays',
+                'datasets',
+                'conclusions',
+                'chains',
+                'tcell_receptors',
+                'epitopes'
+                ]
+
+    def classToSlot(self, class_name):
+        if class_name in self.akc_class_to_slot:
+            return self.akc_class_to_slot[class_name]
+        else:
+            return None
+
+    def classToSlotList(self):
+        return self.akc_class_to_slot
+
+    def slotList(self):
+        return self.akc_slot_list
 
     def getAIRRUniqueLink(self, repertoire_dict, link_class, akc_class):
         # Get the link name for a class instance. Default to None
@@ -53,8 +134,25 @@ class Repertoire(Parser):
             # Iterate over the fields and add them to the instance name
             for field in class_name_fields:
                 # print('getAIRRUniqueLink - adding field %s = %s'%(field, repertoire_dict[field]['value']))
+                # If the field is in the repertoire, we add the field value to the link tag.
                 if field in repertoire_dict:
-                    airr_link_value = airr_link_value + '_' + repertoire_dict[field]['value']
+                    field_value = repertoire_dict[field]['value']
+                    # Check to see if we have an ontology dictionary. If we do
+                    # then we use the ontology ID in the link value.
+                    if isinstance(field_value, dict): 
+                        if 'id' in field_value:
+                            # Check for an empty ontology and don't use it if empty
+                            if not field_value['id'] is None:
+                                # If all is good, use the link value.
+                                field_value = field_value['id']
+                                airr_link_value = airr_link_value + '_' + field_value
+                        else:
+                            # Warn that we are trying to use a dictionary field that
+                            # isn't an ontology, this should not happen.
+                            print('Warning: mapped field %s (%s) is not an ontology dict'%
+                                    (field, field_value))
+                    else:
+                        airr_link_value = airr_link_value + '_' + field_value
                 else:
                     print('Warning: mapped field %s not in AIRR repertoire'%(field))
         else:
@@ -95,19 +193,9 @@ class Repertoire(Parser):
 
     def addADCData(self, akc_object, akc_class, repertoire_dict):
 
-        class_adc_map = {
-                "Investigation" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
-                "Reference" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id'],
-                "StudyArm" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'study_group_description'],
-                "Participant" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id','subject_id', 'sample_id', 'study_group_description'],
-                "LifeEvent" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id']
-                }
         #print('addADCData: akc_class = %s'%(akc_class))
-        if akc_class in class_adc_map:
-            fields = class_adc_map[akc_class]
+        if akc_class in self.class_adc_map:
+            fields = self.class_adc_map[akc_class]
             #print('addADCData: fields = %s'%(fields))
             for field in fields:
                 if field in repertoire_dict:
@@ -115,6 +203,25 @@ class Repertoire(Parser):
                     #print('addADCData: adding %s = %s'%('adc_' + field, repertoire_dict[field]['value']))
                 else:
                     print('Warning: Could not find field %s in repertoire'%(field))
+        else:
+            print('Warning: Could not find class %s in ADC class map'%(akc_class))
+
+        return akc_object
+
+    def removeADCData(self, akc_object, akc_class):
+
+        #print('removeADCData: akc_class = %s'%(akc_class))
+        if akc_class in self.class_adc_map:
+            fields = self.class_adc_map[akc_class]
+            for field in fields:
+                field_name = 'adc_' + field
+                if field_name in akc_object:
+                    #print('removeADCData: removing %s = %s'%(field_name, akc_object[field_name]))
+                    del akc_object[field_name]
+                else:
+                    print('Warning: Could not find field %s in repertoire'%(field))
+                if 'adc_link_tag' in akc_object:
+                    del akc_object['adc_link_tag']
         else:
             print('Warning: Could not find class %s in ADC class map'%(akc_class))
 
@@ -212,8 +319,17 @@ class Repertoire(Parser):
                 'Specimen': {'link_class' : 'LifeEvent', 'link_target':'Particpant'},
                 'Participant': {'link_class' : 'LifeEvent', 'link_target':'Particpant'}
                 }
+        # A mapping for AIRR classes that are used in AKC link classes (e.g. LifeEvent).
+        # In these cases we need to know the equivalent AKC class to use in the
+        # definition of the AKC instance
+        # TODO: This should be in a config file, not hardcoded here.
+        class_map = {
+            'Subject':'Participant',
+            'SampleProcessing':'Specimen',
+            'Diagnosis':'ImmuneExposure',
+        }
 
-        # TODO: This should be in the config file and not hardcoded here
+        # TODO: This should be in a config file, not hardcoded here.
         airr_study_field = 'study_id'
         # Check to make sure we have an AIRR Study ID.
         if not airr_study_field in repertoire_dict:
@@ -221,19 +337,16 @@ class Repertoire(Parser):
             return investigation_dict
 
         # Check to see if the Investigation with that ID is in the dictionary.
-        if airr_study_field in investigation_dict:
+        akc_base_class = 'AIRRKnowledgeCommons'
+        if akc_base_class in investigation_dict:
             # If it does, we need to keep track of it
-            investigation = investigation_dict[airr_study_field]
+            investigation = investigation_dict[akc_base_class]
         else:
             # If it doesn't exist we need to create a dict for this study.
-            investigation = dict()
-            # For each class type, create a keyed array of class instances,
-            # an empty object for now.
-            for akc_class in akc_class_list:
-                investigation[akc_class] = dict()
+            investigation = globals()[akc_base_class]('')
 
             # Record the investigation for later use.
-            investigation_dict[airr_study_field] = investigation
+            investigation_dict[akc_base_class] = investigation
 
         # Get the column of values from the akc_type column. We only want the
         # Repertoire related fields.
@@ -251,8 +364,12 @@ class Repertoire(Parser):
         # Iterate over the AKC classes and build the objects we need
         for akc_class in akc_class_list:
 
+            if not akc_class in globals():
+                print('Warning: Class %s is not a valid AKC schema class, skipping'%(akc_class))
+                continue
+
             # Get the dictionary for this class
-            akc_dict = investigation[akc_class]
+            akc_dict = investigation[self.akc_class_to_slot[akc_class]]
 
             # Iterate over the Repertoire and process any fields that are of
             # the current AKC class.
@@ -263,7 +380,6 @@ class Repertoire(Parser):
                 if 'akc_class' in value and value['akc_class'] == akc_class:
                     # Get the value that identifies an object from this repertoire
                     # of this class type and for the given key and value
-                    class_map = {'Subject':'Participant','SampleProcessing':'Specimen','Diagnosis':'ImmuneExposure'}
                     class_type = ''
                     if value['airr_subclass'] in class_map:
                         class_type = class_map[value['airr_subclass']]
@@ -278,6 +394,9 @@ class Repertoire(Parser):
                     else:
                         if self.verbose():
                             print('Info: Create instance %s, field = %s, value = %s, class = %s, type = %s, airr class = %s'%(airr_link_value, value['akc_field'],value['value'], akc_class, value['akc_type'],value['airr_subclass']))
+                        # The python globals object consists of a list of global entities. This
+                        # will include the classes that are part of the AKC data model. So the
+                        # line below instantiates an instance of the class with the name provided in akc_class.
                         akc_object = globals()[akc_class]('')
                         # Generate a unique ID for this object, add the link tag and related
                         # other info we might need to link objects together later.
@@ -304,7 +423,7 @@ class Repertoire(Parser):
                             class_link_value = self.getAIRRUniqueLink(repertoire_dict, akc_class, link_class)
                             # Get the dictionary of objects of the type of class we are creating. This is often
                             # a LifeEvent as it is these objects that often fall into this category.
-                            class_link_dict = investigation[link_class]
+                            class_link_dict = investigation[self.akc_class_to_slot[link_class]]
                             # Check to see if the instance already exists. If so we don't need to do anything.
                             # If it doesn't exist, we just create an empty one.
                             if not class_link_value in class_link_dict:
@@ -320,7 +439,7 @@ class Repertoire(Parser):
                                 # Store the new object in the class dictionary
                                 class_link_dict[class_link_value] = akc_link_object
                                 # Update the class dictionary in the investigation.
-                                investigation[link_class] = class_link_dict
+                                investigation[self.akc_class_to_slot[link_class]] = class_link_dict
 
                     # Check to see if the field exists. If so then check the
                     # value. They should be the same. If not generate an error message.
@@ -333,6 +452,22 @@ class Repertoire(Parser):
                     # sanity check on the ADC data and generates a warning when data
                     # differs when it presumably should not.
                     if value['akc_field'] in akc_object: 
+                        # Keep track of the ADC repertoire that contributed to this
+                        # AKC object. We use a CURIE with prefix ADC_REPERTOIRE.
+                        # We build an array of source_uris in the AKC object that
+                        # links back to the source of this data. This could be a 
+                        # list of CURIEs from multiple repositories is the
+                        # investigation exists in the ADC, IEDB, and VDJBase
+                        repertoire_id = repertoire_dict['repertoire_id']['value']
+                        repertoire_curie = 'ADC_REPERTOIRE:' + repertoire_id
+                        # If we have the field and the repertoire doesn't already
+                        # exist in the list, append the CURIE.
+                        if 'source_uris' in akc_object:
+                            if not repertoire_curie in akc_object['source_uris']:
+                                akc_object['source_uris'].append(repertoire_curie)
+                        else:
+                            # If not, then we create a new list with the CURIE.
+                            akc_object['source_uris'] = [repertoire_curie]
                         # The field already exists in the object, get the existing value.
                         current_value = akc_object[value['akc_field']]
                         if isinstance(current_value, list):
@@ -364,9 +499,6 @@ class Repertoire(Parser):
                                 if self.verbose():
                                     print('Info:     Creating new field %s.%s, value = %s'%(airr_link_value, value['akc_field'], value['value']))
                                 akc_object[value['akc_field']] = value['value']
-                                #print(akc_object[value['akc_field']])
-                                #print(json_dumper.dumps(akc_object))
-
 
                     # If the current field is a "link field" (the akc_form column is of type Class)
                     # we need to check to see if the referenced Class object has been created yet.
@@ -377,7 +509,7 @@ class Repertoire(Parser):
                         class_type = value['akc_type']
                         class_link_value = self.getAIRRUniqueLink(repertoire_dict, akc_class, value['akc_type'])
                         # Get the dictionary that holds the objecst of this class.
-                        akc_class_dict = investigation[value['akc_type']]
+                        akc_class_dict = investigation[self.akc_class_to_slot[value['akc_type']]]
                         # Check to see if we have seen instance labeled with class_link_value
                         # before. If not, create a new object with the link value as the label.
                         if class_link_value in akc_class_dict:
@@ -399,7 +531,7 @@ class Repertoire(Parser):
                     akc_dict[airr_link_value] = akc_object
 
             # Once processing done for this investigation, reassign the investigation dictionary
-            investigation[akc_class] = akc_dict
+            investigation[self.akc_class_to_slot[akc_class]] = akc_dict
 
         # Return the investigation dictionary we have built.
         return investigation_dict

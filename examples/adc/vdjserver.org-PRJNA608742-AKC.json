@@ -1,0 +1,1154 @@
+{
+  "AIRRKnowledgeCommons": {
+    "investigations": {
+      "": {
+        "akc_id": ""
+      },
+      "e4e899c0-3fe4-49e9-a5c7-68a5dada5c22": {
+        "akc_id": "e4e899c0-3fe4-49e9-a5c7-68a5dada5c22",
+        "name": "Single-cell landscape of bronchoalveolar immune cells in patients with COVID-19",
+        "description": "Respiratory immune characteristics associated with Coronavirus Disease 2019 (COVID-19) severity are currently unclear. We characterized bronchoalveolar lavage fluid immune cells from patients with varying severity of COVID-19 and from healthy people by using single-cell RNA sequencing. Proinflammatory monocyte-derived macrophages were abundant in the bronchoalveolar lavage fluid from patients with severe COVID-9. Moderate cases were characterized by the presence of highly clonally expanded CD8+ T cells. This atlas of the bronchoalveolar immune microenvironment suggests potential mechanisms underlying pathogenesis and recovery in COVID-19.",
+        "study_type": {
+          "id": "NCIT:C16084",
+          "label": "Observational Study"
+        },
+        "archival_id": "PRJNA608742",
+        "release_date": "2021-08-27T02:00:30.261Z",
+        "update_date": "2022-12-16T20:43:16.264Z",
+        "participants": [
+          "75bf5e7d-03ba-4cdd-a1fd-c72fd53b0347",
+          "a185c9cf-4a25-4cc0-85d4-fcb8fdf1d0cd",
+          "c62c0346-8fe4-4d29-b3ac-3a6d811c8895",
+          "3dbf13f8-2cfd-4b9b-adbd-5e93d08885fe",
+          "698258fa-4d0b-4058-8bdd-b4cf6631d12d",
+          "b53eb280-dabd-467e-b231-bfa3a46e7ff0",
+          "4953ec02-c428-4771-b75f-4ef3156407c9",
+          "c3dc8048-db81-4130-adef-b6712366f820",
+          "59bf71b6-19a0-43a3-b9e8-3b2f96d27f3f"
+        ],
+        "assays": [
+          "e4ac5bd0-a0e8-4e12-bea9-deeba78b155e",
+          "061c65bb-5f7e-46f0-b643-bdab99cb3dc8",
+          "6c934856-37f5-4bd5-902b-46bfddefb9b0",
+          "f6a4c1ae-7d9d-4643-a2bc-bf6add5a801c",
+          "43a43a59-a01f-4d0f-ada7-2c4b2fa149e1",
+          "f85bcff1-30fa-457f-be4d-2a4b64d9ecc2",
+          "98dabf2c-c938-490b-a8dd-5865b0ec4fb3",
+          "bc3b4056-1691-4993-9e8c-d064dc821e2e",
+          "1b26f20c-8557-4d88-85ed-734267b6c481"
+        ],
+        "documents": [
+          "7675ace4-fec9-4d1a-a338-183b05d7d6bd"
+        ],
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    },
+    "references": {
+      "7675ace4-fec9-4d1a-a338-183b05d7d6bd": {
+        "source_uri": "",
+        "sources": "PMID: 32398875",
+        "investigations": [
+          "",
+          "e4e899c0-3fe4-49e9-a5c7-68a5dada5c22"
+        ],
+        "akc_id": "7675ace4-fec9-4d1a-a338-183b05d7d6bd",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    },
+    "study_arms": {
+      "da9e450a-ed38-43a2-9d99-ea1d83feb923": {
+        "akc_id": "da9e450a-ed38-43a2-9d99-ea1d83feb923",
+        "name": "severe",
+        "investigation": "e4e899c0-3fe4-49e9-a5c7-68a5dada5c22",
+        "inclusion_criteria": "This study was conducted according to the principles expressed in the Declaration of Helsinki. Ethical approval was obtained from the Research Ethics Committee of Shenzhen Third People’s Hospital (2020-112). All participants provided written informed consent for sample collection and subsequent analyses.",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      },
+      "c2dbc2e1-406b-4658-8794-1ada7b84f117": {
+        "akc_id": "c2dbc2e1-406b-4658-8794-1ada7b84f117",
+        "name": "mild",
+        "investigation": "e4e899c0-3fe4-49e9-a5c7-68a5dada5c22",
+        "inclusion_criteria": "This study was conducted according to the principles expressed in the Declaration of Helsinki. Ethical approval was obtained from the Research Ethics Committee of Shenzhen Third People’s Hospital (2020-112). All participants provided written informed consent for sample collection and subsequent analyses.",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012",
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      }
+    },
+    "participants": {
+      "75bf5e7d-03ba-4cdd-a1fd-c72fd53b0347": {
+        "akc_id": "75bf5e7d-03ba-4cdd-a1fd-c72fd53b0347",
+        "name": "S6",
+        "study_arm": "da9e450a-ed38-43a2-9d99-ea1d83feb923",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 46,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "a185c9cf-4a25-4cc0-85d4-fcb8fdf1d0cd": {
+        "akc_id": "a185c9cf-4a25-4cc0-85d4-fcb8fdf1d0cd",
+        "name": "M2",
+        "study_arm": "c2dbc2e1-406b-4658-8794-1ada7b84f117",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age": 37,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "c62c0346-8fe4-4d29-b3ac-3a6d811c8895": {
+        "akc_id": "c62c0346-8fe4-4d29-b3ac-3a6d811c8895",
+        "name": "S5",
+        "study_arm": "da9e450a-ed38-43a2-9d99-ea1d83feb923",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age": 57,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "3dbf13f8-2cfd-4b9b-adbd-5e93d08885fe": {
+        "akc_id": "3dbf13f8-2cfd-4b9b-adbd-5e93d08885fe",
+        "name": "S2",
+        "study_arm": "da9e450a-ed38-43a2-9d99-ea1d83feb923",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 66,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "698258fa-4d0b-4058-8bdd-b4cf6631d12d": {
+        "akc_id": "698258fa-4d0b-4058-8bdd-b4cf6631d12d",
+        "name": "M3",
+        "study_arm": "c2dbc2e1-406b-4658-8794-1ada7b84f117",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 35,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "b53eb280-dabd-467e-b231-bfa3a46e7ff0": {
+        "akc_id": "b53eb280-dabd-467e-b231-bfa3a46e7ff0",
+        "name": "S1",
+        "study_arm": "da9e450a-ed38-43a2-9d99-ea1d83feb923",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 62,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "4953ec02-c428-4771-b75f-4ef3156407c9": {
+        "akc_id": "4953ec02-c428-4771-b75f-4ef3156407c9",
+        "name": "S3",
+        "study_arm": "da9e450a-ed38-43a2-9d99-ea1d83feb923",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 63,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "c3dc8048-db81-4130-adef-b6712366f820": {
+        "akc_id": "c3dc8048-db81-4130-adef-b6712366f820",
+        "name": "M1",
+        "study_arm": "c2dbc2e1-406b-4658-8794-1ada7b84f117",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "male",
+        "age": 36,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "59bf71b6-19a0-43a3-b9e8-3b2f96d27f3f": {
+        "akc_id": "59bf71b6-19a0-43a3-b9e8-3b2f96d27f3f",
+        "name": "S4",
+        "study_arm": "da9e450a-ed38-43a2-9d99-ea1d83feb923",
+        "species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "biological_sex": "female",
+        "age": 65,
+        "age_unit": {
+          "label": "year",
+          "id": "UO:0000036"
+        },
+        "age_event": "sampling",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    },
+    "life_events": {
+      "4d092a14-d0ed-4f40-ae81-27ecb6736dab": {
+        "akc_id": "4d092a14-d0ed-4f40-ae81-27ecb6736dab",
+        "participant": "75bf5e7d-03ba-4cdd-a1fd-c72fd53b0347"
+      },
+      "2bf62492-479a-4f3b-ad20-bb1d8848f5e9": {
+        "akc_id": "2bf62492-479a-4f3b-ad20-bb1d8848f5e9",
+        "participant": "75bf5e7d-03ba-4cdd-a1fd-c72fd53b0347"
+      },
+      "5e11673e-18cf-459c-b451-216c1eb4fcff": {
+        "akc_id": "5e11673e-18cf-459c-b451-216c1eb4fcff",
+        "participant": "75bf5e7d-03ba-4cdd-a1fd-c72fd53b0347",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "5da03cbd-2326-4f67-816f-926b8b3a9bba": {
+        "akc_id": "5da03cbd-2326-4f67-816f-926b8b3a9bba",
+        "participant": "a185c9cf-4a25-4cc0-85d4-fcb8fdf1d0cd"
+      },
+      "bf2dbddb-c25f-43dc-8158-92eafcad5cff": {
+        "akc_id": "bf2dbddb-c25f-43dc-8158-92eafcad5cff",
+        "participant": "a185c9cf-4a25-4cc0-85d4-fcb8fdf1d0cd"
+      },
+      "e14ddaf1-912f-461e-85f6-195914510728": {
+        "akc_id": "e14ddaf1-912f-461e-85f6-195914510728",
+        "participant": "a185c9cf-4a25-4cc0-85d4-fcb8fdf1d0cd",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "0bfe267c-dac0-4c5e-9fd2-d1a99dd1cb8f": {
+        "akc_id": "0bfe267c-dac0-4c5e-9fd2-d1a99dd1cb8f",
+        "participant": "c62c0346-8fe4-4d29-b3ac-3a6d811c8895"
+      },
+      "a92f456a-abe9-474f-85ba-41f01a541307": {
+        "akc_id": "a92f456a-abe9-474f-85ba-41f01a541307",
+        "participant": "c62c0346-8fe4-4d29-b3ac-3a6d811c8895"
+      },
+      "b56faaa1-433c-476e-8730-026b24279813": {
+        "akc_id": "b56faaa1-433c-476e-8730-026b24279813",
+        "participant": "c62c0346-8fe4-4d29-b3ac-3a6d811c8895",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "b24a558a-7e59-44c3-8146-d405d1917abb": {
+        "akc_id": "b24a558a-7e59-44c3-8146-d405d1917abb",
+        "participant": "3dbf13f8-2cfd-4b9b-adbd-5e93d08885fe"
+      },
+      "d960e7fe-ae63-4f2c-a76e-dab8a47708a2": {
+        "akc_id": "d960e7fe-ae63-4f2c-a76e-dab8a47708a2",
+        "participant": "3dbf13f8-2cfd-4b9b-adbd-5e93d08885fe"
+      },
+      "ee5c7828-263d-46f4-93e1-f705fb4d9cd4": {
+        "akc_id": "ee5c7828-263d-46f4-93e1-f705fb4d9cd4",
+        "participant": "3dbf13f8-2cfd-4b9b-adbd-5e93d08885fe",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "9fe7ff61-a3c5-4fa1-a78d-7da07abf5586": {
+        "akc_id": "9fe7ff61-a3c5-4fa1-a78d-7da07abf5586",
+        "participant": "698258fa-4d0b-4058-8bdd-b4cf6631d12d"
+      },
+      "8047e9bb-cdb8-4f9a-ab89-9275bfce4f5f": {
+        "akc_id": "8047e9bb-cdb8-4f9a-ab89-9275bfce4f5f",
+        "participant": "698258fa-4d0b-4058-8bdd-b4cf6631d12d"
+      },
+      "d229a6b3-c910-4cc7-937e-b873b503e83e": {
+        "akc_id": "d229a6b3-c910-4cc7-937e-b873b503e83e",
+        "participant": "698258fa-4d0b-4058-8bdd-b4cf6631d12d",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "69c1753c-d677-44b6-8f07-f303a573239a": {
+        "akc_id": "69c1753c-d677-44b6-8f07-f303a573239a",
+        "participant": "b53eb280-dabd-467e-b231-bfa3a46e7ff0"
+      },
+      "0f220bdb-59a3-42ac-809c-4cd5b9c847e1": {
+        "akc_id": "0f220bdb-59a3-42ac-809c-4cd5b9c847e1",
+        "participant": "b53eb280-dabd-467e-b231-bfa3a46e7ff0"
+      },
+      "ea4a88a2-2ebf-4b71-bd56-87c4cc3e0aa5": {
+        "akc_id": "ea4a88a2-2ebf-4b71-bd56-87c4cc3e0aa5",
+        "participant": "b53eb280-dabd-467e-b231-bfa3a46e7ff0",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "1f8363ed-5207-4418-b651-c6aae33d677b": {
+        "akc_id": "1f8363ed-5207-4418-b651-c6aae33d677b",
+        "participant": "4953ec02-c428-4771-b75f-4ef3156407c9"
+      },
+      "c6a54e2a-fb70-4ebd-a024-634a335cbfdc": {
+        "akc_id": "c6a54e2a-fb70-4ebd-a024-634a335cbfdc",
+        "participant": "4953ec02-c428-4771-b75f-4ef3156407c9"
+      },
+      "6d0dc0d3-a4b4-4b54-81aa-8b136f09dd96": {
+        "akc_id": "6d0dc0d3-a4b4-4b54-81aa-8b136f09dd96",
+        "participant": "4953ec02-c428-4771-b75f-4ef3156407c9",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "08e40551-c930-4ae9-90bd-ddfc86a7f44e": {
+        "akc_id": "08e40551-c930-4ae9-90bd-ddfc86a7f44e",
+        "participant": "c3dc8048-db81-4130-adef-b6712366f820"
+      },
+      "016d3cf6-4812-44c0-a904-6cb167a61a6f": {
+        "akc_id": "016d3cf6-4812-44c0-a904-6cb167a61a6f",
+        "participant": "c3dc8048-db81-4130-adef-b6712366f820"
+      },
+      "f9909a30-b56c-4483-aed5-a070b18c2490": {
+        "akc_id": "f9909a30-b56c-4483-aed5-a070b18c2490",
+        "participant": "c3dc8048-db81-4130-adef-b6712366f820",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "b3d66020-9913-47ef-8a7e-ce16e393cfb8": {
+        "akc_id": "b3d66020-9913-47ef-8a7e-ce16e393cfb8",
+        "participant": "59bf71b6-19a0-43a3-b9e8-3b2f96d27f3f"
+      },
+      "aa90332c-fbb7-4362-aff4-134be9f80cd4": {
+        "akc_id": "aa90332c-fbb7-4362-aff4-134be9f80cd4",
+        "participant": "59bf71b6-19a0-43a3-b9e8-3b2f96d27f3f"
+      },
+      "8093ce5d-e456-4f2d-bdbf-6f95192eae42": {
+        "akc_id": "8093ce5d-e456-4f2d-bdbf-6f95192eae42",
+        "participant": "59bf71b6-19a0-43a3-b9e8-3b2f96d27f3f",
+        "t0_event": "Sample collection",
+        "start": 0,
+        "time_unit": {
+          "id": "UO:0000033",
+          "label": "day"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    },
+    "immune_exposures": {
+      "6b59762b-dfe1-42d0-8d64-396ee482fe33": {
+        "akc_id": "6b59762b-dfe1-42d0-8d64-396ee482fe33",
+        "life_event": "2bf62492-479a-4f3b-ad20-bb1d8848f5e9",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_critical",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "d8c9397d-77cb-4f47-9ac1-3ecaec3e9fa6": {
+        "akc_id": "d8c9397d-77cb-4f47-9ac1-3ecaec3e9fa6",
+        "life_event": "bf2dbddb-c25f-43dc-8158-92eafcad5cff",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_moderate",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "416d6be4-536d-4e8c-8d91-b72c01ba2356": {
+        "akc_id": "416d6be4-536d-4e8c-8d91-b72c01ba2356",
+        "life_event": "a92f456a-abe9-474f-85ba-41f01a541307",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_critical",
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "d04583b8-ba34-47d3-b2ed-4e6e9f445d40": {
+        "akc_id": "d04583b8-ba34-47d3-b2ed-4e6e9f445d40",
+        "life_event": "d960e7fe-ae63-4f2c-a76e-dab8a47708a2",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_severe",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "ee62d190-33c7-4176-b169-3be6b5693c6e": {
+        "akc_id": "ee62d190-33c7-4176-b169-3be6b5693c6e",
+        "life_event": "8047e9bb-cdb8-4f9a-ab89-9275bfce4f5f",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_moderate",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "ccb404a0-c5e3-491b-b5db-f8ce15b0a71b": {
+        "akc_id": "ccb404a0-c5e3-491b-b5db-f8ce15b0a71b",
+        "life_event": "0f220bdb-59a3-42ac-809c-4cd5b9c847e1",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_critical",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "a78054d8-1b59-4610-a160-559451bb28d9": {
+        "akc_id": "a78054d8-1b59-4610-a160-559451bb28d9",
+        "life_event": "c6a54e2a-fb70-4ebd-a024-634a335cbfdc",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_critical",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "60f92de5-784f-44de-b8f3-bace9fb7b601": {
+        "akc_id": "60f92de5-784f-44de-b8f3-bace9fb7b601",
+        "life_event": "016d3cf6-4812-44c0-a904-6cb167a61a6f",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_moderate",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "2e0b561f-b0db-4cc1-b364-0602546b9561": {
+        "akc_id": "2e0b561f-b0db-4cc1-b364-0602546b9561",
+        "life_event": "aa90332c-fbb7-4362-aff4-134be9f80cd4",
+        "disease": {
+          "label": "COVID-19",
+          "id": "DOID:0080600"
+        },
+        "disease_stage": "COVID_critical",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    },
+    "specimens": {
+      "fb38be11-1f82-4f15-925f-4aefdf194359": {
+        "akc_id": "fb38be11-1f82-4f15-925f-4aefdf194359",
+        "name": "C152 (TCR-seq)",
+        "life_event": "5e11673e-18cf-459c-b451-216c1eb4fcff",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "f65b8623-0b4f-4b77-b25a-17ec78d5f498": {
+        "akc_id": "f65b8623-0b4f-4b77-b25a-17ec78d5f498",
+        "name": "C142 (TCR-seq)",
+        "life_event": "e14ddaf1-912f-461e-85f6-195914510728",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "9e66825b-29bd-4fa4-b2d7-130c3350582b": {
+        "akc_id": "9e66825b-29bd-4fa4-b2d7-130c3350582b",
+        "name": "C149 (TCR-seq)",
+        "life_event": "b56faaa1-433c-476e-8730-026b24279813",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "55435506-007e-4dca-8faf-fbf321360c11": {
+        "akc_id": "55435506-007e-4dca-8faf-fbf321360c11",
+        "name": "C143 (TCR-seq)",
+        "life_event": "ee5c7828-263d-46f4-93e1-f705fb4d9cd4",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "5c3c4d64-0da9-4a97-8e83-b77865d50cf5": {
+        "akc_id": "5c3c4d64-0da9-4a97-8e83-b77865d50cf5",
+        "name": "C144 (TCR-seq)",
+        "life_event": "d229a6b3-c910-4cc7-937e-b873b503e83e",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "6894eed5-d65d-4bda-96c9-73078960d594": {
+        "akc_id": "6894eed5-d65d-4bda-96c9-73078960d594",
+        "name": "C145 (TCR-seq)",
+        "life_event": "ea4a88a2-2ebf-4b71-bd56-87c4cc3e0aa5",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "34aa68ec-9e45-4be6-805b-f8f4c8dc9841": {
+        "akc_id": "34aa68ec-9e45-4be6-805b-f8f4c8dc9841",
+        "name": "C146 (TCR-seq)",
+        "life_event": "6d0dc0d3-a4b4-4b54-81aa-8b136f09dd96",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "db6f1f3f-d3e6-47a2-94c8-8fbc0908156c": {
+        "akc_id": "db6f1f3f-d3e6-47a2-94c8-8fbc0908156c",
+        "name": "C141 (TCR-seq)",
+        "life_event": "f9909a30-b56c-4483-aed5-a070b18c2490",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "992c39fd-87be-4f78-9f1e-537a2a84a153": {
+        "akc_id": "992c39fd-87be-4f78-9f1e-537a2a84a153",
+        "name": "C148 (TCR-seq)",
+        "life_event": "8093ce5d-e456-4f2d-bdbf-6f95192eae42",
+        "specimen_type": "bronchoalveolar lavage fluid",
+        "tissue": {
+          "label": "lung",
+          "id": "UBERON:0002048"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    },
+    "specimen_processings": {
+      "a67f2ee2-d398-44ec-9eef-1252512118da": {
+        "akc_id": "a67f2ee2-d398-44ec-9eef-1252512118da",
+        "specimen": "fb38be11-1f82-4f15-925f-4aefdf194359",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "f508a5fd-2767-4df8-911c-3de7fc399eef": {
+        "akc_id": "f508a5fd-2767-4df8-911c-3de7fc399eef",
+        "specimen": "fb38be11-1f82-4f15-925f-4aefdf194359",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "bb9db208-98ed-41c7-bd36-b3eb9427bdc4": {
+        "akc_id": "bb9db208-98ed-41c7-bd36-b3eb9427bdc4",
+        "specimen": "fb38be11-1f82-4f15-925f-4aefdf194359",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "0b2c499e-74b1-48a9-9e00-4eaadde7e6a3": {
+        "akc_id": "0b2c499e-74b1-48a9-9e00-4eaadde7e6a3",
+        "specimen": "f65b8623-0b4f-4b77-b25a-17ec78d5f498",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "7705ee9c-4063-407b-89ec-a90c21143b7e": {
+        "akc_id": "7705ee9c-4063-407b-89ec-a90c21143b7e",
+        "specimen": "f65b8623-0b4f-4b77-b25a-17ec78d5f498",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "ea1f6d01-6724-4279-b3f2-0b882d087150": {
+        "akc_id": "ea1f6d01-6724-4279-b3f2-0b882d087150",
+        "specimen": "f65b8623-0b4f-4b77-b25a-17ec78d5f498",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "7fbdc0ae-2ca7-447e-95fa-26adda0b160e": {
+        "akc_id": "7fbdc0ae-2ca7-447e-95fa-26adda0b160e",
+        "specimen": "9e66825b-29bd-4fa4-b2d7-130c3350582b",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "4b4bb955-af42-421a-903a-338f745ac585": {
+        "akc_id": "4b4bb955-af42-421a-903a-338f745ac585",
+        "specimen": "9e66825b-29bd-4fa4-b2d7-130c3350582b",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "ce97927e-fb14-4f8c-8139-579d32f13f4f": {
+        "akc_id": "ce97927e-fb14-4f8c-8139-579d32f13f4f",
+        "specimen": "9e66825b-29bd-4fa4-b2d7-130c3350582b",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "2638fe31-9a8f-46eb-84cf-7a602fde76f9": {
+        "akc_id": "2638fe31-9a8f-46eb-84cf-7a602fde76f9",
+        "specimen": "55435506-007e-4dca-8faf-fbf321360c11",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "2c992d20-d271-4bc6-9e7f-f130471e37b3": {
+        "akc_id": "2c992d20-d271-4bc6-9e7f-f130471e37b3",
+        "specimen": "55435506-007e-4dca-8faf-fbf321360c11",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "8edfae27-795a-4847-a531-5e2b8769babf": {
+        "akc_id": "8edfae27-795a-4847-a531-5e2b8769babf",
+        "specimen": "55435506-007e-4dca-8faf-fbf321360c11",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "52da1221-0cc2-48ec-bb21-f8eec2a42266": {
+        "akc_id": "52da1221-0cc2-48ec-bb21-f8eec2a42266",
+        "specimen": "5c3c4d64-0da9-4a97-8e83-b77865d50cf5",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "18e08869-2aa1-4aac-8f64-41b449ed92e5": {
+        "akc_id": "18e08869-2aa1-4aac-8f64-41b449ed92e5",
+        "specimen": "5c3c4d64-0da9-4a97-8e83-b77865d50cf5",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "9c8aa0f1-b1ba-4a47-8723-79fce89a96b6": {
+        "akc_id": "9c8aa0f1-b1ba-4a47-8723-79fce89a96b6",
+        "specimen": "5c3c4d64-0da9-4a97-8e83-b77865d50cf5",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "2b51653e-7f4f-49ad-9d5f-6225e2bd4eaf": {
+        "akc_id": "2b51653e-7f4f-49ad-9d5f-6225e2bd4eaf",
+        "specimen": "6894eed5-d65d-4bda-96c9-73078960d594",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "f661fe5b-c1f9-4d42-9e27-6869e7c255fb": {
+        "akc_id": "f661fe5b-c1f9-4d42-9e27-6869e7c255fb",
+        "specimen": "6894eed5-d65d-4bda-96c9-73078960d594",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "ff4d47e8-7421-4415-a842-3433271a4853": {
+        "akc_id": "ff4d47e8-7421-4415-a842-3433271a4853",
+        "specimen": "6894eed5-d65d-4bda-96c9-73078960d594",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "f2a39d96-5a7a-41b4-8fbb-b1a14720ff1f": {
+        "akc_id": "f2a39d96-5a7a-41b4-8fbb-b1a14720ff1f",
+        "specimen": "34aa68ec-9e45-4be6-805b-f8f4c8dc9841",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "70658d02-87dc-488b-9137-981bb615707b": {
+        "akc_id": "70658d02-87dc-488b-9137-981bb615707b",
+        "specimen": "34aa68ec-9e45-4be6-805b-f8f4c8dc9841",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "434cea61-e9e6-4184-b4da-ee505b707154": {
+        "akc_id": "434cea61-e9e6-4184-b4da-ee505b707154",
+        "specimen": "34aa68ec-9e45-4be6-805b-f8f4c8dc9841",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "5c278e39-0609-449f-88ae-5a0e5aa8b509": {
+        "akc_id": "5c278e39-0609-449f-88ae-5a0e5aa8b509",
+        "specimen": "db6f1f3f-d3e6-47a2-94c8-8fbc0908156c",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "5ee49af9-14ce-4c51-a36c-f81cb4f797e9": {
+        "akc_id": "5ee49af9-14ce-4c51-a36c-f81cb4f797e9",
+        "specimen": "db6f1f3f-d3e6-47a2-94c8-8fbc0908156c",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "0efd5ca7-6d75-4a9a-86fc-115dc7b66444": {
+        "akc_id": "0efd5ca7-6d75-4a9a-86fc-115dc7b66444",
+        "specimen": "db6f1f3f-d3e6-47a2-94c8-8fbc0908156c",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "62250a38-5f3d-4d85-b355-97b7c5b02b52": {
+        "akc_id": "62250a38-5f3d-4d85-b355-97b7c5b02b52",
+        "specimen": "992c39fd-87be-4f78-9f1e-537a2a84a153",
+        "cell_species": {
+          "label": "Homo sapiens",
+          "id": "NCBITAXON:9606"
+        },
+        "single_cell": true,
+        "cell_storage": false,
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      },
+      "d0a392a1-3712-4678-8447-ca19c722ddd8": {
+        "akc_id": "d0a392a1-3712-4678-8447-ca19c722ddd8",
+        "specimen": "992c39fd-87be-4f78-9f1e-537a2a84a153",
+        "template_class": "RNA",
+        "template_amount": 11,
+        "template_amount_unit": {
+          "id": "UO:0000101",
+          "label": "microliter"
+        },
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      },
+      "8435372d-b0e4-41c8-86b5-d690ce6ffc9d": {
+        "akc_id": "8435372d-b0e4-41c8-86b5-d690ce6ffc9d",
+        "specimen": "992c39fd-87be-4f78-9f1e-537a2a84a153",
+        "library_generation_method": "RT(oligo-dT)+TS+PCR",
+        "library_generation_protocol": "Total 11 µl of single cell suspension and 40 µl barcoded Gel Beads were loaded to Chromium Chip A to generate single-cell gel bead-in-emulsion (GEM). The poly-adenylated transcripts were reverse-transcribed later. The single-cell capturing and downstream library constructions were performed using the Chromium Single Cell 5' library preparation kit with full length TCR V(D)J segment enrichment with a Chromium Single-Cell V(D)J Enrichment kit. Both kits were used accourding to 10X Genomic's protocol. Full-length cDNA along with cell-barcode identifiers were PCR-amplified and sequencing libraries were prepared and normalized to 3 nM.",
+        "library_generation_kit_version": "Chromium Single Cell V(D)J Reagent kits (10x Genomics; PN-1000006, PN-1000014, PN-1000020, PN-1000005)",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    },
+    "assays": {
+      "e4ac5bd0-a0e8-4e12-bea9-deeba78b155e": {
+        "akc_id": "e4ac5bd0-a0e8-4e12-bea9-deeba78b155e",
+        "specimen": "fb38be11-1f82-4f15-925f-4aefdf194359",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975227533997707756-242ac117-0001-012"
+        ]
+      },
+      "061c65bb-5f7e-46f0-b643-bdab99cb3dc8": {
+        "akc_id": "061c65bb-5f7e-46f0-b643-bdab99cb3dc8",
+        "specimen": "f65b8623-0b4f-4b77-b25a-17ec78d5f498",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976215376475787756-242ac117-0001-012"
+        ]
+      },
+      "6c934856-37f5-4bd5-902b-46bfddefb9b0": {
+        "akc_id": "6c934856-37f5-4bd5-902b-46bfddefb9b0",
+        "specimen": "9e66825b-29bd-4fa4-b2d7-130c3350582b",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7978019262740107756-242ac117-0001-012"
+        ]
+      },
+      "f6a4c1ae-7d9d-4643-a2bc-bf6add5a801c": {
+        "akc_id": "f6a4c1ae-7d9d-4643-a2bc-bf6add5a801c",
+        "specimen": "55435506-007e-4dca-8faf-fbf321360c11",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977031420262027756-242ac117-0001-012"
+        ]
+      },
+      "43a43a59-a01f-4d0f-ada7-2c4b2fa149e1": {
+        "akc_id": "43a43a59-a01f-4d0f-ada7-2c4b2fa149e1",
+        "specimen": "5c3c4d64-0da9-4a97-8e83-b77865d50cf5",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7975184584324747756-242ac117-0001-012"
+        ]
+      },
+      "f85bcff1-30fa-457f-be4d-2a4b64d9ecc2": {
+        "akc_id": "f85bcff1-30fa-457f-be4d-2a4b64d9ecc2",
+        "specimen": "6894eed5-d65d-4bda-96c9-73078960d594",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976516024186507756-242ac117-0001-012"
+        ]
+      },
+      "98dabf2c-c938-490b-a8dd-5865b0ec4fb3": {
+        "akc_id": "98dabf2c-c938-490b-a8dd-5865b0ec4fb3",
+        "specimen": "34aa68ec-9e45-4be6-805b-f8f4c8dc9841",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976387175167627756-242ac117-0001-012"
+        ]
+      },
+      "bc3b4056-1691-4993-9e8c-d064dc821e2e": {
+        "akc_id": "bc3b4056-1691-4993-9e8c-d064dc821e2e",
+        "specimen": "db6f1f3f-d3e6-47a2-94c8-8fbc0908156c",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7977718615029387756-242ac117-0001-012"
+        ]
+      },
+      "1b26f20c-8557-4d88-85ed-734267b6c481": {
+        "akc_id": "1b26f20c-8557-4d88-85ed-734267b6c481",
+        "specimen": "992c39fd-87be-4f78-9f1e-537a2a84a153",
+        "type": "ReceptorRepertoireSequencingAssay",
+        "pcr_target": [
+          "TRA",
+          "TRB"
+        ],
+        "complete_sequences": "complete",
+        "physical_linkage": "none",
+        "source_uris": [
+          "ADC_REPERTOIRE:7976558973859467756-242ac117-0001-012"
+        ]
+      }
+    }
+  },
+  "@type": "dict"
+}
