@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-05T11:10:29
+# Generation date: 2024-12-05T14:08:28
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -569,11 +569,11 @@ class Investigation(PlannedProcess):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     akc_id: Union[str, InvestigationAkcId] = None
-    study_type: Union[str, "StudyType"] = None
-    release_date: Union[str, XSDDateTime] = None
+    study_type: Optional[Union[str, "StudyType"]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
     inclusion_criteria: Optional[str] = None
     exclusion_criteria: Optional[str] = None
+    release_date: Optional[Union[str, XSDDateTime]] = None
     update_date: Optional[Union[str, XSDDateTime]] = None
     participants: Optional[Union[Union[str, ParticipantAkcId], List[Union[str, ParticipantAkcId]]]] = empty_list()
     assays: Optional[Union[Union[str, AssayAkcId], List[Union[str, AssayAkcId]]]] = empty_list()
@@ -587,11 +587,6 @@ class Investigation(PlannedProcess):
         if not isinstance(self.akc_id, InvestigationAkcId):
             self.akc_id = InvestigationAkcId(self.akc_id)
 
-        if self._is_empty(self.release_date):
-            self.MissingRequiredField("release_date")
-        if not isinstance(self.release_date, XSDDateTime):
-            self.release_date = XSDDateTime(self.release_date)
-
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
 
@@ -600,6 +595,9 @@ class Investigation(PlannedProcess):
 
         if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
             self.exclusion_criteria = str(self.exclusion_criteria)
+
+        if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
+            self.release_date = XSDDateTime(self.release_date)
 
         if self.update_date is not None and not isinstance(self.update_date, XSDDateTime):
             self.update_date = XSDDateTime(self.update_date)
@@ -737,12 +735,12 @@ class Participant(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Participant
 
     akc_id: Union[str, ParticipantAkcId] = None
-    age_unit: Union[str, "AgeUnit"] = None
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
     species: Optional[Union[str, "Species"]] = None
     biological_sex: Optional[Union[str, "BiologicalSex"]] = None
     phenotypic_sex: Optional[Union[str, "PhenotypicSex"]] = None
     age: Optional[str] = None
+    age_unit: Optional[Union[str, "AgeUnit"]] = None
     age_event: Optional[Union[str, LifeEventAkcId]] = None
     race: Optional[Union[str, "Race"]] = None
     ethnicity: Optional[Union[str, "Ethnicity"]] = None
@@ -928,9 +926,9 @@ class Specimen(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Specimen
 
     akc_id: Union[str, SpecimenAkcId] = None
-    tissue: Union[str, "Tissue"] = None
     life_event: Optional[Union[str, LifeEventAkcId]] = None
     specimen_type: Optional[str] = None
+    tissue: Optional[Union[str, "Tissue"]] = None
     process: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1009,17 +1007,17 @@ class CellIsolationProcessing(SpecimenProcessing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellIsolationProcessing
 
     akc_id: Union[str, CellIsolationProcessingAkcId] = None
-    tissue_processing: str = None
-    cell_subset: Union[str, "CellSubset"] = None
-    cell_phenotype: str = None
-    single_cell: Union[bool, Bool] = None
-    cell_number: int = None
-    cells_per_reaction: int = None
-    cell_storage: Union[bool, Bool] = None
-    cell_quality: str = None
-    cell_isolation: str = None
-    cell_processing_protocol: str = None
+    tissue_processing: Optional[str] = None
+    cell_subset: Optional[Union[str, "CellSubset"]] = None
+    cell_phenotype: Optional[str] = None
     cell_species: Optional[Union[str, "CellSpecies"]] = None
+    single_cell: Optional[Union[bool, Bool]] = None
+    cell_number: Optional[int] = None
+    cells_per_reaction: Optional[int] = None
+    cell_storage: Optional[Union[bool, Bool]] = None
+    cell_quality: Optional[str] = None
+    cell_isolation: Optional[str] = None
+    cell_processing_protocol: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1027,49 +1025,31 @@ class CellIsolationProcessing(SpecimenProcessing):
         if not isinstance(self.akc_id, CellIsolationProcessingAkcId):
             self.akc_id = CellIsolationProcessingAkcId(self.akc_id)
 
-        if self._is_empty(self.tissue_processing):
-            self.MissingRequiredField("tissue_processing")
-        if not isinstance(self.tissue_processing, str):
+        if self.tissue_processing is not None and not isinstance(self.tissue_processing, str):
             self.tissue_processing = str(self.tissue_processing)
 
-        if self._is_empty(self.cell_phenotype):
-            self.MissingRequiredField("cell_phenotype")
-        if not isinstance(self.cell_phenotype, str):
+        if self.cell_phenotype is not None and not isinstance(self.cell_phenotype, str):
             self.cell_phenotype = str(self.cell_phenotype)
 
-        if self._is_empty(self.single_cell):
-            self.MissingRequiredField("single_cell")
-        if not isinstance(self.single_cell, Bool):
+        if self.single_cell is not None and not isinstance(self.single_cell, Bool):
             self.single_cell = Bool(self.single_cell)
 
-        if self._is_empty(self.cell_number):
-            self.MissingRequiredField("cell_number")
-        if not isinstance(self.cell_number, int):
+        if self.cell_number is not None and not isinstance(self.cell_number, int):
             self.cell_number = int(self.cell_number)
 
-        if self._is_empty(self.cells_per_reaction):
-            self.MissingRequiredField("cells_per_reaction")
-        if not isinstance(self.cells_per_reaction, int):
+        if self.cells_per_reaction is not None and not isinstance(self.cells_per_reaction, int):
             self.cells_per_reaction = int(self.cells_per_reaction)
 
-        if self._is_empty(self.cell_storage):
-            self.MissingRequiredField("cell_storage")
-        if not isinstance(self.cell_storage, Bool):
+        if self.cell_storage is not None and not isinstance(self.cell_storage, Bool):
             self.cell_storage = Bool(self.cell_storage)
 
-        if self._is_empty(self.cell_quality):
-            self.MissingRequiredField("cell_quality")
-        if not isinstance(self.cell_quality, str):
+        if self.cell_quality is not None and not isinstance(self.cell_quality, str):
             self.cell_quality = str(self.cell_quality)
 
-        if self._is_empty(self.cell_isolation):
-            self.MissingRequiredField("cell_isolation")
-        if not isinstance(self.cell_isolation, str):
+        if self.cell_isolation is not None and not isinstance(self.cell_isolation, str):
             self.cell_isolation = str(self.cell_isolation)
 
-        if self._is_empty(self.cell_processing_protocol):
-            self.MissingRequiredField("cell_processing_protocol")
-        if not isinstance(self.cell_processing_protocol, str):
+        if self.cell_processing_protocol is not None and not isinstance(self.cell_processing_protocol, str):
             self.cell_processing_protocol = str(self.cell_processing_protocol)
 
         super().__post_init__(**kwargs)
@@ -1085,10 +1065,10 @@ class NucleicAcidProcessing(SpecimenProcessing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.NucleicAcidProcessing
 
     akc_id: Union[str, NucleicAcidProcessingAkcId] = None
-    template_class: Union[str, "TemplateClass"] = None
-    template_quality: str = None
-    template_amount: float = None
-    template_amount_unit: Union[str, "TemplateAmountUnit"] = None
+    template_class: Optional[Union[str, "TemplateClass"]] = None
+    template_quality: Optional[str] = None
+    template_amount: Optional[float] = None
+    template_amount_unit: Optional[Union[str, "TemplateAmountUnit"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1096,19 +1076,13 @@ class NucleicAcidProcessing(SpecimenProcessing):
         if not isinstance(self.akc_id, NucleicAcidProcessingAkcId):
             self.akc_id = NucleicAcidProcessingAkcId(self.akc_id)
 
-        if self._is_empty(self.template_class):
-            self.MissingRequiredField("template_class")
-        if not isinstance(self.template_class, TemplateClass):
+        if self.template_class is not None and not isinstance(self.template_class, TemplateClass):
             self.template_class = TemplateClass(self.template_class)
 
-        if self._is_empty(self.template_quality):
-            self.MissingRequiredField("template_quality")
-        if not isinstance(self.template_quality, str):
+        if self.template_quality is not None and not isinstance(self.template_quality, str):
             self.template_quality = str(self.template_quality)
 
-        if self._is_empty(self.template_amount):
-            self.MissingRequiredField("template_amount")
-        if not isinstance(self.template_amount, float):
+        if self.template_amount is not None and not isinstance(self.template_amount, float):
             self.template_amount = float(self.template_amount)
 
         super().__post_init__(**kwargs)
@@ -1124,9 +1098,9 @@ class LibraryPreparationProcessing(SpecimenProcessing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.LibraryPreparationProcessing
 
     akc_id: Union[str, LibraryPreparationProcessingAkcId] = None
-    library_generation_method: Union[str, "LibraryGenerationMethod"] = None
-    library_generation_protocol: str = None
-    library_generation_kit_version: str = None
+    library_generation_method: Optional[Union[str, "LibraryGenerationMethod"]] = None
+    library_generation_protocol: Optional[str] = None
+    library_generation_kit_version: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1134,19 +1108,13 @@ class LibraryPreparationProcessing(SpecimenProcessing):
         if not isinstance(self.akc_id, LibraryPreparationProcessingAkcId):
             self.akc_id = LibraryPreparationProcessingAkcId(self.akc_id)
 
-        if self._is_empty(self.library_generation_method):
-            self.MissingRequiredField("library_generation_method")
-        if not isinstance(self.library_generation_method, LibraryGenerationMethod):
+        if self.library_generation_method is not None and not isinstance(self.library_generation_method, LibraryGenerationMethod):
             self.library_generation_method = LibraryGenerationMethod(self.library_generation_method)
 
-        if self._is_empty(self.library_generation_protocol):
-            self.MissingRequiredField("library_generation_protocol")
-        if not isinstance(self.library_generation_protocol, str):
+        if self.library_generation_protocol is not None and not isinstance(self.library_generation_protocol, str):
             self.library_generation_protocol = str(self.library_generation_protocol)
 
-        if self._is_empty(self.library_generation_kit_version):
-            self.MissingRequiredField("library_generation_kit_version")
-        if not isinstance(self.library_generation_kit_version, str):
+        if self.library_generation_kit_version is not None and not isinstance(self.library_generation_kit_version, str):
             self.library_generation_kit_version = str(self.library_generation_kit_version)
 
         super().__post_init__(**kwargs)
@@ -1219,9 +1187,9 @@ class ReceptorRepertoireSequencingAssay(Assay):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorRepertoireSequencingAssay
 
     akc_id: Union[str, ReceptorRepertoireSequencingAssayAkcId] = None
-    complete_sequences: Union[str, "CompleteSequences"] = None
-    physical_linkage: Union[str, "PhysicalLinkage"] = None
     pcr_target: Optional[Union[Union[dict, "PCRTarget"], List[Union[dict, "PCRTarget"]]]] = empty_list()
+    complete_sequences: Optional[Union[str, "CompleteSequences"]] = None
+    physical_linkage: Optional[Union[str, "PhysicalLinkage"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1229,17 +1197,15 @@ class ReceptorRepertoireSequencingAssay(Assay):
         if not isinstance(self.akc_id, ReceptorRepertoireSequencingAssayAkcId):
             self.akc_id = ReceptorRepertoireSequencingAssayAkcId(self.akc_id)
 
-        if self._is_empty(self.complete_sequences):
-            self.MissingRequiredField("complete_sequences")
-        if not isinstance(self.complete_sequences, CompleteSequences):
+        if not isinstance(self.pcr_target, list):
+            self.pcr_target = [self.pcr_target] if self.pcr_target is not None else []
+        self.pcr_target = [v if isinstance(v, PCRTarget) else PCRTarget(**as_dict(v)) for v in self.pcr_target]
+
+        if self.complete_sequences is not None and not isinstance(self.complete_sequences, CompleteSequences):
             self.complete_sequences = CompleteSequences(self.complete_sequences)
 
-        if self._is_empty(self.physical_linkage):
-            self.MissingRequiredField("physical_linkage")
-        if not isinstance(self.physical_linkage, PhysicalLinkage):
+        if self.physical_linkage is not None and not isinstance(self.physical_linkage, PhysicalLinkage):
             self.physical_linkage = PhysicalLinkage(self.physical_linkage)
-
-        self._normalize_inlined_as_dict(slot_name="pcr_target", slot_type=PCRTarget, key_name="pcr_target_locus", keyed=False)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1473,7 +1439,7 @@ class Chain(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Chain
 
     akc_id: Union[str, ChainAkcId] = None
-    sequence: str = None
+    sequence: Optional[str] = None
     sequence_aa: Optional[str] = None
     chain_type: Optional[Union[str, "ChainType"]] = None
     v_call: Optional[str] = None
@@ -1497,9 +1463,7 @@ class Chain(NamedThing):
         if not isinstance(self.akc_id, ChainAkcId):
             self.akc_id = ChainAkcId(self.akc_id)
 
-        if self._is_empty(self.sequence):
-            self.MissingRequiredField("sequence")
-        if not isinstance(self.sequence, str):
+        if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
 
         if self.sequence_aa is not None and not isinstance(self.sequence_aa, str):
@@ -1936,24 +1900,20 @@ class Acknowledgement(YAMLRoot):
     class_name: ClassVar[str] = "Acknowledgement"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Acknowledgement
 
-    acknowledgement_id: str = None
-    institution_name: str = None
+    acknowledgement_id: Optional[str] = None
     name: Optional[str] = None
+    institution_name: Optional[str] = None
     orcid_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.acknowledgement_id):
-            self.MissingRequiredField("acknowledgement_id")
-        if not isinstance(self.acknowledgement_id, str):
+        if self.acknowledgement_id is not None and not isinstance(self.acknowledgement_id, str):
             self.acknowledgement_id = str(self.acknowledgement_id)
-
-        if self._is_empty(self.institution_name):
-            self.MissingRequiredField("institution_name")
-        if not isinstance(self.institution_name, str):
-            self.institution_name = str(self.institution_name)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
+
+        if self.institution_name is not None and not isinstance(self.institution_name, str):
+            self.institution_name = str(self.institution_name)
 
         if self.orcid_id is not None and not isinstance(self.orcid_id, str):
             self.orcid_id = str(self.orcid_id)
@@ -1970,53 +1930,41 @@ class RearrangedSequence(YAMLRoot):
     class_name: ClassVar[str] = "RearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RearrangedSequence
 
-    sequence_id: str = None
-    sequence: str = None
-    derivation: Union[str, "Derivation"] = None
-    observation_type: Union[str, "ObservationType"] = None
-    repository_name: str = None
-    deposited_version: str = None
+    sequence_id: Optional[str] = None
+    sequence: Optional[str] = None
+    derivation: Optional[Union[str, "Derivation"]] = None
+    observation_type: Optional[Union[str, "ObservationType"]] = None
     curation: Optional[str] = None
+    repository_name: Optional[str] = None
     repository_ref: Optional[str] = None
+    deposited_version: Optional[str] = None
     sequence_start: Optional[int] = None
     sequence_end: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequence_id):
-            self.MissingRequiredField("sequence_id")
-        if not isinstance(self.sequence_id, str):
+        if self.sequence_id is not None and not isinstance(self.sequence_id, str):
             self.sequence_id = str(self.sequence_id)
 
-        if self._is_empty(self.sequence):
-            self.MissingRequiredField("sequence")
-        if not isinstance(self.sequence, str):
+        if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
 
-        if self._is_empty(self.derivation):
-            self.MissingRequiredField("derivation")
-        if not isinstance(self.derivation, Derivation):
+        if self.derivation is not None and not isinstance(self.derivation, Derivation):
             self.derivation = Derivation(self.derivation)
 
-        if self._is_empty(self.observation_type):
-            self.MissingRequiredField("observation_type")
-        if not isinstance(self.observation_type, ObservationType):
+        if self.observation_type is not None and not isinstance(self.observation_type, ObservationType):
             self.observation_type = ObservationType(self.observation_type)
-
-        if self._is_empty(self.repository_name):
-            self.MissingRequiredField("repository_name")
-        if not isinstance(self.repository_name, str):
-            self.repository_name = str(self.repository_name)
-
-        if self._is_empty(self.deposited_version):
-            self.MissingRequiredField("deposited_version")
-        if not isinstance(self.deposited_version, str):
-            self.deposited_version = str(self.deposited_version)
 
         if self.curation is not None and not isinstance(self.curation, str):
             self.curation = str(self.curation)
 
+        if self.repository_name is not None and not isinstance(self.repository_name, str):
+            self.repository_name = str(self.repository_name)
+
         if self.repository_ref is not None and not isinstance(self.repository_ref, str):
             self.repository_ref = str(self.repository_ref)
+
+        if self.deposited_version is not None and not isinstance(self.deposited_version, str):
+            self.deposited_version = str(self.deposited_version)
 
         if self.sequence_start is not None and not isinstance(self.sequence_start, int):
             self.sequence_start = int(self.sequence_start)
@@ -2036,61 +1984,47 @@ class UnrearrangedSequence(YAMLRoot):
     class_name: ClassVar[str] = "UnrearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UnrearrangedSequence
 
-    sequence_id: str = None
-    sequence: str = None
-    repository_name: str = None
-    gff_seqid: str = None
-    gff_start: int = None
-    gff_end: int = None
-    strand: Union[str, "Strand"] = None
+    sequence_id: Optional[str] = None
+    sequence: Optional[str] = None
     curation: Optional[str] = None
+    repository_name: Optional[str] = None
     repository_ref: Optional[str] = None
     patch_no: Optional[str] = None
+    gff_seqid: Optional[str] = None
+    gff_start: Optional[int] = None
+    gff_end: Optional[int] = None
+    strand: Optional[Union[str, "Strand"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequence_id):
-            self.MissingRequiredField("sequence_id")
-        if not isinstance(self.sequence_id, str):
+        if self.sequence_id is not None and not isinstance(self.sequence_id, str):
             self.sequence_id = str(self.sequence_id)
 
-        if self._is_empty(self.sequence):
-            self.MissingRequiredField("sequence")
-        if not isinstance(self.sequence, str):
+        if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
-
-        if self._is_empty(self.repository_name):
-            self.MissingRequiredField("repository_name")
-        if not isinstance(self.repository_name, str):
-            self.repository_name = str(self.repository_name)
-
-        if self._is_empty(self.gff_seqid):
-            self.MissingRequiredField("gff_seqid")
-        if not isinstance(self.gff_seqid, str):
-            self.gff_seqid = str(self.gff_seqid)
-
-        if self._is_empty(self.gff_start):
-            self.MissingRequiredField("gff_start")
-        if not isinstance(self.gff_start, int):
-            self.gff_start = int(self.gff_start)
-
-        if self._is_empty(self.gff_end):
-            self.MissingRequiredField("gff_end")
-        if not isinstance(self.gff_end, int):
-            self.gff_end = int(self.gff_end)
-
-        if self._is_empty(self.strand):
-            self.MissingRequiredField("strand")
-        if not isinstance(self.strand, Strand):
-            self.strand = Strand(self.strand)
 
         if self.curation is not None and not isinstance(self.curation, str):
             self.curation = str(self.curation)
+
+        if self.repository_name is not None and not isinstance(self.repository_name, str):
+            self.repository_name = str(self.repository_name)
 
         if self.repository_ref is not None and not isinstance(self.repository_ref, str):
             self.repository_ref = str(self.repository_ref)
 
         if self.patch_no is not None and not isinstance(self.patch_no, str):
             self.patch_no = str(self.patch_no)
+
+        if self.gff_seqid is not None and not isinstance(self.gff_seqid, str):
+            self.gff_seqid = str(self.gff_seqid)
+
+        if self.gff_start is not None and not isinstance(self.gff_start, int):
+            self.gff_start = int(self.gff_start)
+
+        if self.gff_end is not None and not isinstance(self.gff_end, int):
+            self.gff_end = int(self.gff_end)
+
+        if self.strand is not None and not isinstance(self.strand, Strand):
+            self.strand = Strand(self.strand)
 
         super().__post_init__(**kwargs)
 
@@ -2104,8 +2038,8 @@ class SequenceDelineationV(YAMLRoot):
     class_name: ClassVar[str] = "SequenceDelineationV"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequenceDelineationV
 
-    sequence_delineation_id: str = None
-    delineation_scheme: str = None
+    sequence_delineation_id: Optional[str] = None
+    delineation_scheme: Optional[str] = None
     unaligned_sequence: Optional[str] = None
     aligned_sequence: Optional[str] = None
     fwr1_start: Optional[int] = None
@@ -2122,14 +2056,10 @@ class SequenceDelineationV(YAMLRoot):
     alignment_labels: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequence_delineation_id):
-            self.MissingRequiredField("sequence_delineation_id")
-        if not isinstance(self.sequence_delineation_id, str):
+        if self.sequence_delineation_id is not None and not isinstance(self.sequence_delineation_id, str):
             self.sequence_delineation_id = str(self.sequence_delineation_id)
 
-        if self._is_empty(self.delineation_scheme):
-            self.MissingRequiredField("delineation_scheme")
-        if not isinstance(self.delineation_scheme, str):
+        if self.delineation_scheme is not None and not isinstance(self.delineation_scheme, str):
             self.delineation_scheme = str(self.delineation_scheme)
 
         if self.unaligned_sequence is not None and not isinstance(self.unaligned_sequence, str):
@@ -2187,23 +2117,23 @@ class AlleleDescription(YAMLRoot):
     class_name: ClassVar[str] = "AlleleDescription"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AlleleDescription
 
-    allele_description_id: str = None
-    maintainer: str = None
-    lab_address: str = None
-    release_version: str = None
-    release_date: Union[str, XSDDateTime] = None
-    release_description: str = None
-    sequence: str = None
-    coding_sequence: str = None
-    sequence_type: Union[str, "SequenceType"] = None
-    functional: Union[bool, Bool] = None
-    inference_type: Union[str, "InferenceType"] = None
+    allele_description_id: Optional[str] = None
     allele_description_ref: Optional[str] = None
+    maintainer: Optional[str] = None
     acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
+    lab_address: Optional[str] = None
+    release_version: Optional[str] = None
+    release_date: Optional[Union[str, XSDDateTime]] = None
+    release_description: Optional[str] = None
     label: Optional[str] = None
+    sequence: Optional[str] = None
+    coding_sequence: Optional[str] = None
     aliases: Optional[Union[str, List[str]]] = empty_list()
     locus: Optional[Union[str, "Locus"]] = None
     chromosome: Optional[int] = None
+    sequence_type: Optional[Union[str, "SequenceType"]] = None
+    functional: Optional[Union[bool, Bool]] = None
+    inference_type: Optional[Union[str, "InferenceType"]] = None
     species: Optional[Union[str, "Species"]] = None
     species_subgroup: Optional[str] = None
     species_subgroup_type: Optional[Union[str, "SpeciesSubgroupType"]] = None
@@ -2240,68 +2170,39 @@ class AlleleDescription(YAMLRoot):
     curational_tags: Optional[Union[Union[str, "CurationalTags"], List[Union[str, "CurationalTags"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.allele_description_id):
-            self.MissingRequiredField("allele_description_id")
-        if not isinstance(self.allele_description_id, str):
+        if self.allele_description_id is not None and not isinstance(self.allele_description_id, str):
             self.allele_description_id = str(self.allele_description_id)
-
-        if self._is_empty(self.maintainer):
-            self.MissingRequiredField("maintainer")
-        if not isinstance(self.maintainer, str):
-            self.maintainer = str(self.maintainer)
-
-        if self._is_empty(self.lab_address):
-            self.MissingRequiredField("lab_address")
-        if not isinstance(self.lab_address, str):
-            self.lab_address = str(self.lab_address)
-
-        if self._is_empty(self.release_version):
-            self.MissingRequiredField("release_version")
-        if not isinstance(self.release_version, str):
-            self.release_version = str(self.release_version)
-
-        if self._is_empty(self.release_date):
-            self.MissingRequiredField("release_date")
-        if not isinstance(self.release_date, XSDDateTime):
-            self.release_date = XSDDateTime(self.release_date)
-
-        if self._is_empty(self.release_description):
-            self.MissingRequiredField("release_description")
-        if not isinstance(self.release_description, str):
-            self.release_description = str(self.release_description)
-
-        if self._is_empty(self.sequence):
-            self.MissingRequiredField("sequence")
-        if not isinstance(self.sequence, str):
-            self.sequence = str(self.sequence)
-
-        if self._is_empty(self.coding_sequence):
-            self.MissingRequiredField("coding_sequence")
-        if not isinstance(self.coding_sequence, str):
-            self.coding_sequence = str(self.coding_sequence)
-
-        if self._is_empty(self.sequence_type):
-            self.MissingRequiredField("sequence_type")
-        if not isinstance(self.sequence_type, SequenceType):
-            self.sequence_type = SequenceType(self.sequence_type)
-
-        if self._is_empty(self.functional):
-            self.MissingRequiredField("functional")
-        if not isinstance(self.functional, Bool):
-            self.functional = Bool(self.functional)
-
-        if self._is_empty(self.inference_type):
-            self.MissingRequiredField("inference_type")
-        if not isinstance(self.inference_type, InferenceType):
-            self.inference_type = InferenceType(self.inference_type)
 
         if self.allele_description_ref is not None and not isinstance(self.allele_description_ref, str):
             self.allele_description_ref = str(self.allele_description_ref)
 
-        self._normalize_inlined_as_dict(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=False)
+        if self.maintainer is not None and not isinstance(self.maintainer, str):
+            self.maintainer = str(self.maintainer)
+
+        if not isinstance(self.acknowledgements, list):
+            self.acknowledgements = [self.acknowledgements] if self.acknowledgements is not None else []
+        self.acknowledgements = [v if isinstance(v, Acknowledgement) else Acknowledgement(**as_dict(v)) for v in self.acknowledgements]
+
+        if self.lab_address is not None and not isinstance(self.lab_address, str):
+            self.lab_address = str(self.lab_address)
+
+        if self.release_version is not None and not isinstance(self.release_version, str):
+            self.release_version = str(self.release_version)
+
+        if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
+            self.release_date = XSDDateTime(self.release_date)
+
+        if self.release_description is not None and not isinstance(self.release_description, str):
+            self.release_description = str(self.release_description)
 
         if self.label is not None and not isinstance(self.label, str):
             self.label = str(self.label)
+
+        if self.sequence is not None and not isinstance(self.sequence, str):
+            self.sequence = str(self.sequence)
+
+        if self.coding_sequence is not None and not isinstance(self.coding_sequence, str):
+            self.coding_sequence = str(self.coding_sequence)
 
         if not isinstance(self.aliases, list):
             self.aliases = [self.aliases] if self.aliases is not None else []
@@ -2312,6 +2213,15 @@ class AlleleDescription(YAMLRoot):
 
         if self.chromosome is not None and not isinstance(self.chromosome, int):
             self.chromosome = int(self.chromosome)
+
+        if self.sequence_type is not None and not isinstance(self.sequence_type, SequenceType):
+            self.sequence_type = SequenceType(self.sequence_type)
+
+        if self.functional is not None and not isinstance(self.functional, Bool):
+            self.functional = Bool(self.functional)
+
+        if self.inference_type is not None and not isinstance(self.inference_type, InferenceType):
+            self.inference_type = InferenceType(self.inference_type)
 
         if self.species is not None and not isinstance(self.species, Species):
             self.species = Species(self.species)
@@ -2397,11 +2307,17 @@ class AlleleDescription(YAMLRoot):
         if self.j_donor_splice is not None and not isinstance(self.j_donor_splice, int):
             self.j_donor_splice = int(self.j_donor_splice)
 
-        self._normalize_inlined_as_dict(slot_name="v_gene_delineations", slot_type=SequenceDelineationV, key_name="sequence_delineation_id", keyed=False)
+        if not isinstance(self.v_gene_delineations, list):
+            self.v_gene_delineations = [self.v_gene_delineations] if self.v_gene_delineations is not None else []
+        self.v_gene_delineations = [v if isinstance(v, SequenceDelineationV) else SequenceDelineationV(**as_dict(v)) for v in self.v_gene_delineations]
 
-        self._normalize_inlined_as_dict(slot_name="unrearranged_support", slot_type=UnrearrangedSequence, key_name="sequence_id", keyed=False)
+        if not isinstance(self.unrearranged_support, list):
+            self.unrearranged_support = [self.unrearranged_support] if self.unrearranged_support is not None else []
+        self.unrearranged_support = [v if isinstance(v, UnrearrangedSequence) else UnrearrangedSequence(**as_dict(v)) for v in self.unrearranged_support]
 
-        self._normalize_inlined_as_dict(slot_name="rearranged_support", slot_type=RearrangedSequence, key_name="sequence_id", keyed=False)
+        if not isinstance(self.rearranged_support, list):
+            self.rearranged_support = [self.rearranged_support] if self.rearranged_support is not None else []
+        self.rearranged_support = [v if isinstance(v, RearrangedSequence) else RearrangedSequence(**as_dict(v)) for v in self.rearranged_support]
 
         if not isinstance(self.paralogs, list):
             self.paralogs = [self.paralogs] if self.paralogs is not None else []
@@ -2426,70 +2342,52 @@ class GermlineSet(YAMLRoot):
     class_name: ClassVar[str] = "GermlineSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GermlineSet
 
-    germline_set_id: str = None
-    author: str = None
-    lab_name: str = None
-    lab_address: str = None
-    release_version: str = None
-    release_description: str = None
-    release_date: Union[str, XSDDateTime] = None
-    germline_set_name: str = None
-    allele_descriptions: Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]] = None
+    germline_set_id: Optional[str] = None
+    author: Optional[str] = None
+    lab_name: Optional[str] = None
+    lab_address: Optional[str] = None
     acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
+    release_version: Optional[str] = None
+    release_description: Optional[str] = None
+    release_date: Optional[Union[str, XSDDateTime]] = None
+    germline_set_name: Optional[str] = None
     germline_set_ref: Optional[str] = None
     pub_ids: Optional[str] = None
     species: Optional[Union[str, "Species"]] = None
     species_subgroup: Optional[str] = None
     species_subgroup_type: Optional[Union[str, "SpeciesSubgroupType"]] = None
     locus: Optional[Union[str, "Locus"]] = None
+    allele_descriptions: Optional[Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]]] = empty_list()
     curation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.germline_set_id):
-            self.MissingRequiredField("germline_set_id")
-        if not isinstance(self.germline_set_id, str):
+        if self.germline_set_id is not None and not isinstance(self.germline_set_id, str):
             self.germline_set_id = str(self.germline_set_id)
 
-        if self._is_empty(self.author):
-            self.MissingRequiredField("author")
-        if not isinstance(self.author, str):
+        if self.author is not None and not isinstance(self.author, str):
             self.author = str(self.author)
 
-        if self._is_empty(self.lab_name):
-            self.MissingRequiredField("lab_name")
-        if not isinstance(self.lab_name, str):
+        if self.lab_name is not None and not isinstance(self.lab_name, str):
             self.lab_name = str(self.lab_name)
 
-        if self._is_empty(self.lab_address):
-            self.MissingRequiredField("lab_address")
-        if not isinstance(self.lab_address, str):
+        if self.lab_address is not None and not isinstance(self.lab_address, str):
             self.lab_address = str(self.lab_address)
 
-        if self._is_empty(self.release_version):
-            self.MissingRequiredField("release_version")
-        if not isinstance(self.release_version, str):
+        if not isinstance(self.acknowledgements, list):
+            self.acknowledgements = [self.acknowledgements] if self.acknowledgements is not None else []
+        self.acknowledgements = [v if isinstance(v, Acknowledgement) else Acknowledgement(**as_dict(v)) for v in self.acknowledgements]
+
+        if self.release_version is not None and not isinstance(self.release_version, str):
             self.release_version = str(self.release_version)
 
-        if self._is_empty(self.release_description):
-            self.MissingRequiredField("release_description")
-        if not isinstance(self.release_description, str):
+        if self.release_description is not None and not isinstance(self.release_description, str):
             self.release_description = str(self.release_description)
 
-        if self._is_empty(self.release_date):
-            self.MissingRequiredField("release_date")
-        if not isinstance(self.release_date, XSDDateTime):
+        if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
             self.release_date = XSDDateTime(self.release_date)
 
-        if self._is_empty(self.germline_set_name):
-            self.MissingRequiredField("germline_set_name")
-        if not isinstance(self.germline_set_name, str):
+        if self.germline_set_name is not None and not isinstance(self.germline_set_name, str):
             self.germline_set_name = str(self.germline_set_name)
-
-        if self._is_empty(self.allele_descriptions):
-            self.MissingRequiredField("allele_descriptions")
-        self._normalize_inlined_as_dict(slot_name="allele_descriptions", slot_type=AlleleDescription, key_name="allele_description_id", keyed=False)
-
-        self._normalize_inlined_as_dict(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=False)
 
         if self.germline_set_ref is not None and not isinstance(self.germline_set_ref, str):
             self.germline_set_ref = str(self.germline_set_ref)
@@ -2509,6 +2407,10 @@ class GermlineSet(YAMLRoot):
         if self.locus is not None and not isinstance(self.locus, Locus):
             self.locus = Locus(self.locus)
 
+        if not isinstance(self.allele_descriptions, list):
+            self.allele_descriptions = [self.allele_descriptions] if self.allele_descriptions is not None else []
+        self.allele_descriptions = [v if isinstance(v, AlleleDescription) else AlleleDescription(**as_dict(v)) for v in self.allele_descriptions]
+
         if self.curation is not None and not isinstance(self.curation, str):
             self.curation = str(self.curation)
 
@@ -2524,16 +2426,16 @@ class GenotypeSet(YAMLRoot):
     class_name: ClassVar[str] = "GenotypeSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GenotypeSet
 
-    receptor_genotype_set_id: str = None
+    receptor_genotype_set_id: Optional[str] = None
     genotype_class_list: Optional[Union[Union[dict, "Genotype"], List[Union[dict, "Genotype"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.receptor_genotype_set_id):
-            self.MissingRequiredField("receptor_genotype_set_id")
-        if not isinstance(self.receptor_genotype_set_id, str):
+        if self.receptor_genotype_set_id is not None and not isinstance(self.receptor_genotype_set_id, str):
             self.receptor_genotype_set_id = str(self.receptor_genotype_set_id)
 
-        self._normalize_inlined_as_dict(slot_name="genotype_class_list", slot_type=Genotype, key_name="receptor_genotype_id", keyed=False)
+        if not isinstance(self.genotype_class_list, list):
+            self.genotype_class_list = [self.genotype_class_list] if self.genotype_class_list is not None else []
+        self.genotype_class_list = [v if isinstance(v, Genotype) else Genotype(**as_dict(v)) for v in self.genotype_class_list]
 
         super().__post_init__(**kwargs)
 
@@ -2547,7 +2449,7 @@ class Genotype(YAMLRoot):
     class_name: ClassVar[str] = "Genotype"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Genotype
 
-    receptor_genotype_id: str = None
+    receptor_genotype_id: Optional[str] = None
     locus: Optional[Union[str, "Locus"]] = None
     documented_alleles: Optional[Union[Union[dict, "DocumentedAllele"], List[Union[dict, "DocumentedAllele"]]]] = empty_list()
     undocumented_alleles: Optional[Union[Union[dict, "UndocumentedAllele"], List[Union[dict, "UndocumentedAllele"]]]] = empty_list()
@@ -2555,9 +2457,7 @@ class Genotype(YAMLRoot):
     inference_process: Optional[Union[str, "InferenceProcess"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.receptor_genotype_id):
-            self.MissingRequiredField("receptor_genotype_id")
-        if not isinstance(self.receptor_genotype_id, str):
+        if self.receptor_genotype_id is not None and not isinstance(self.receptor_genotype_id, str):
             self.receptor_genotype_id = str(self.receptor_genotype_id)
 
         if self.locus is not None and not isinstance(self.locus, Locus):
@@ -2567,7 +2467,9 @@ class Genotype(YAMLRoot):
             self.documented_alleles = [self.documented_alleles] if self.documented_alleles is not None else []
         self.documented_alleles = [v if isinstance(v, DocumentedAllele) else DocumentedAllele(**as_dict(v)) for v in self.documented_alleles]
 
-        self._normalize_inlined_as_dict(slot_name="undocumented_alleles", slot_type=UndocumentedAllele, key_name="allele_name", keyed=False)
+        if not isinstance(self.undocumented_alleles, list):
+            self.undocumented_alleles = [self.undocumented_alleles] if self.undocumented_alleles is not None else []
+        self.undocumented_alleles = [v if isinstance(v, UndocumentedAllele) else UndocumentedAllele(**as_dict(v)) for v in self.undocumented_alleles]
 
         if not isinstance(self.deleted_genes, list):
             self.deleted_genes = [self.deleted_genes] if self.deleted_genes is not None else []
@@ -2614,19 +2516,15 @@ class UndocumentedAllele(YAMLRoot):
     class_name: ClassVar[str] = "UndocumentedAllele"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UndocumentedAllele
 
-    allele_name: str = None
-    sequence: str = None
+    allele_name: Optional[str] = None
+    sequence: Optional[str] = None
     phasing: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.allele_name):
-            self.MissingRequiredField("allele_name")
-        if not isinstance(self.allele_name, str):
+        if self.allele_name is not None and not isinstance(self.allele_name, str):
             self.allele_name = str(self.allele_name)
 
-        if self._is_empty(self.sequence):
-            self.MissingRequiredField("sequence")
-        if not isinstance(self.sequence, str):
+        if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
 
         if self.phasing is not None and not isinstance(self.phasing, int):
@@ -2670,18 +2568,16 @@ class MHCGenotypeSet(YAMLRoot):
     class_name: ClassVar[str] = "MHCGenotypeSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCGenotypeSet
 
-    mhc_genotype_set_id: str = None
-    mhc_genotype_list: Union[Union[dict, "MHCGenotype"], List[Union[dict, "MHCGenotype"]]] = None
+    mhc_genotype_set_id: Optional[str] = None
+    mhc_genotype_list: Optional[Union[Union[dict, "MHCGenotype"], List[Union[dict, "MHCGenotype"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.mhc_genotype_set_id):
-            self.MissingRequiredField("mhc_genotype_set_id")
-        if not isinstance(self.mhc_genotype_set_id, str):
+        if self.mhc_genotype_set_id is not None and not isinstance(self.mhc_genotype_set_id, str):
             self.mhc_genotype_set_id = str(self.mhc_genotype_set_id)
 
-        if self._is_empty(self.mhc_genotype_list):
-            self.MissingRequiredField("mhc_genotype_list")
-        self._normalize_inlined_as_dict(slot_name="mhc_genotype_list", slot_type=MHCGenotype, key_name="mhc_genotype_id", keyed=False)
+        if not isinstance(self.mhc_genotype_list, list):
+            self.mhc_genotype_list = [self.mhc_genotype_list] if self.mhc_genotype_list is not None else []
+        self.mhc_genotype_list = [v if isinstance(v, MHCGenotype) else MHCGenotype(**as_dict(v)) for v in self.mhc_genotype_list]
 
         super().__post_init__(**kwargs)
 
@@ -2695,25 +2591,21 @@ class MHCGenotype(YAMLRoot):
     class_name: ClassVar[str] = "MHCGenotype"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCGenotype
 
-    mhc_genotype_id: str = None
-    mhc_alleles: Union[Union[dict, "MHCAllele"], List[Union[dict, "MHCAllele"]]] = None
+    mhc_genotype_id: Optional[str] = None
     mhc_class: Optional[Union[str, "MhcClass"]] = None
+    mhc_alleles: Optional[Union[Union[dict, "MHCAllele"], List[Union[dict, "MHCAllele"]]]] = empty_list()
     mhc_genotyping_method: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.mhc_genotype_id):
-            self.MissingRequiredField("mhc_genotype_id")
-        if not isinstance(self.mhc_genotype_id, str):
+        if self.mhc_genotype_id is not None and not isinstance(self.mhc_genotype_id, str):
             self.mhc_genotype_id = str(self.mhc_genotype_id)
-
-        if self._is_empty(self.mhc_alleles):
-            self.MissingRequiredField("mhc_alleles")
-        if not isinstance(self.mhc_alleles, list):
-            self.mhc_alleles = [self.mhc_alleles] if self.mhc_alleles is not None else []
-        self.mhc_alleles = [v if isinstance(v, MHCAllele) else MHCAllele(**as_dict(v)) for v in self.mhc_alleles]
 
         if self.mhc_class is not None and not isinstance(self.mhc_class, MhcClass):
             self.mhc_class = MhcClass(self.mhc_class)
+
+        if not isinstance(self.mhc_alleles, list):
+            self.mhc_alleles = [self.mhc_alleles] if self.mhc_alleles is not None else []
+        self.mhc_alleles = [v if isinstance(v, MHCAllele) else MHCAllele(**as_dict(v)) for v in self.mhc_alleles]
 
         if self.mhc_genotyping_method is not None and not isinstance(self.mhc_genotyping_method, str):
             self.mhc_genotyping_method = str(self.mhc_genotyping_method)
@@ -2775,77 +2667,59 @@ class Study(YAMLRoot):
     class_name: ClassVar[str] = "Study"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Study
 
-    study_id: str = None
-    study_title: str = None
-    study_type: Union[str, "StudyType"] = None
-    inclusion_exclusion_criteria: str = None
-    grants: str = None
-    collected_by: str = None
-    lab_name: str = None
-    lab_address: str = None
-    submitted_by: str = None
-    keywords_study: Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]] = None
+    study_id: Optional[str] = None
+    study_title: Optional[str] = None
+    study_type: Optional[Union[str, "StudyType"]] = None
     study_description: Optional[str] = None
+    inclusion_exclusion_criteria: Optional[str] = None
+    grants: Optional[str] = None
     study_contact: Optional[str] = None
+    collected_by: Optional[str] = None
+    lab_name: Optional[str] = None
+    lab_address: Optional[str] = None
+    submitted_by: Optional[str] = None
     pub_ids: Optional[str] = None
+    keywords_study: Optional[Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]]] = empty_list()
     adc_publish_date: Optional[Union[str, XSDDateTime]] = None
     adc_update_date: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.study_id):
-            self.MissingRequiredField("study_id")
-        if not isinstance(self.study_id, str):
+        if self.study_id is not None and not isinstance(self.study_id, str):
             self.study_id = str(self.study_id)
 
-        if self._is_empty(self.study_title):
-            self.MissingRequiredField("study_title")
-        if not isinstance(self.study_title, str):
+        if self.study_title is not None and not isinstance(self.study_title, str):
             self.study_title = str(self.study_title)
-
-        if self._is_empty(self.inclusion_exclusion_criteria):
-            self.MissingRequiredField("inclusion_exclusion_criteria")
-        if not isinstance(self.inclusion_exclusion_criteria, str):
-            self.inclusion_exclusion_criteria = str(self.inclusion_exclusion_criteria)
-
-        if self._is_empty(self.grants):
-            self.MissingRequiredField("grants")
-        if not isinstance(self.grants, str):
-            self.grants = str(self.grants)
-
-        if self._is_empty(self.collected_by):
-            self.MissingRequiredField("collected_by")
-        if not isinstance(self.collected_by, str):
-            self.collected_by = str(self.collected_by)
-
-        if self._is_empty(self.lab_name):
-            self.MissingRequiredField("lab_name")
-        if not isinstance(self.lab_name, str):
-            self.lab_name = str(self.lab_name)
-
-        if self._is_empty(self.lab_address):
-            self.MissingRequiredField("lab_address")
-        if not isinstance(self.lab_address, str):
-            self.lab_address = str(self.lab_address)
-
-        if self._is_empty(self.submitted_by):
-            self.MissingRequiredField("submitted_by")
-        if not isinstance(self.submitted_by, str):
-            self.submitted_by = str(self.submitted_by)
-
-        if self._is_empty(self.keywords_study):
-            self.MissingRequiredField("keywords_study")
-        if not isinstance(self.keywords_study, list):
-            self.keywords_study = [self.keywords_study] if self.keywords_study is not None else []
-        self.keywords_study = [v if isinstance(v, KeywordsStudy) else KeywordsStudy(v) for v in self.keywords_study]
 
         if self.study_description is not None and not isinstance(self.study_description, str):
             self.study_description = str(self.study_description)
 
+        if self.inclusion_exclusion_criteria is not None and not isinstance(self.inclusion_exclusion_criteria, str):
+            self.inclusion_exclusion_criteria = str(self.inclusion_exclusion_criteria)
+
+        if self.grants is not None and not isinstance(self.grants, str):
+            self.grants = str(self.grants)
+
         if self.study_contact is not None and not isinstance(self.study_contact, str):
             self.study_contact = str(self.study_contact)
 
+        if self.collected_by is not None and not isinstance(self.collected_by, str):
+            self.collected_by = str(self.collected_by)
+
+        if self.lab_name is not None and not isinstance(self.lab_name, str):
+            self.lab_name = str(self.lab_name)
+
+        if self.lab_address is not None and not isinstance(self.lab_address, str):
+            self.lab_address = str(self.lab_address)
+
+        if self.submitted_by is not None and not isinstance(self.submitted_by, str):
+            self.submitted_by = str(self.submitted_by)
+
         if self.pub_ids is not None and not isinstance(self.pub_ids, str):
             self.pub_ids = str(self.pub_ids)
+
+        if not isinstance(self.keywords_study, list):
+            self.keywords_study = [self.keywords_study] if self.keywords_study is not None else []
+        self.keywords_study = [v if isinstance(v, KeywordsStudy) else KeywordsStudy(v) for v in self.keywords_study]
 
         if self.adc_publish_date is not None and not isinstance(self.adc_publish_date, XSDDateTime):
             self.adc_publish_date = XSDDateTime(self.adc_publish_date)
@@ -2865,74 +2739,47 @@ class Subject(YAMLRoot):
     class_name: ClassVar[str] = "Subject"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Subject
 
-    subject_id: str = None
-    synthetic: Union[bool, Bool] = None
-    sex: Union[str, "Sex"] = None
-    age_min: float = None
-    age_max: float = None
-    age_unit: Union[str, "AgeUnit"] = None
-    ancestry_population: str = None
-    strain_name: str = None
-    linked_subjects: str = None
-    link_type: str = None
+    subject_id: Optional[str] = None
+    synthetic: Optional[Union[bool, Bool]] = None
     species: Optional[Union[str, "Species"]] = None
+    sex: Optional[Union[str, "Sex"]] = None
+    age_min: Optional[float] = None
+    age_max: Optional[float] = None
+    age_unit: Optional[Union[str, "AgeUnit"]] = None
     age_event: Optional[Union[str, LifeEventAkcId]] = None
+    ancestry_population: Optional[str] = None
     ethnicity: Optional[Union[str, "Ethnicity"]] = None
     race: Optional[Union[str, "Race"]] = None
+    strain_name: Optional[str] = None
+    linked_subjects: Optional[str] = None
+    link_type: Optional[str] = None
     diagnosis: Optional[Union[Union[dict, "Diagnosis"], List[Union[dict, "Diagnosis"]]]] = empty_list()
     genotype: Optional[Union[dict, SubjectGenotype]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.subject_id):
-            self.MissingRequiredField("subject_id")
-        if not isinstance(self.subject_id, str):
+        if self.subject_id is not None and not isinstance(self.subject_id, str):
             self.subject_id = str(self.subject_id)
 
-        if self._is_empty(self.synthetic):
-            self.MissingRequiredField("synthetic")
-        if not isinstance(self.synthetic, Bool):
+        if self.synthetic is not None and not isinstance(self.synthetic, Bool):
             self.synthetic = Bool(self.synthetic)
-
-        if self._is_empty(self.sex):
-            self.MissingRequiredField("sex")
-        if not isinstance(self.sex, Sex):
-            self.sex = Sex(self.sex)
-
-        if self._is_empty(self.age_min):
-            self.MissingRequiredField("age_min")
-        if not isinstance(self.age_min, float):
-            self.age_min = float(self.age_min)
-
-        if self._is_empty(self.age_max):
-            self.MissingRequiredField("age_max")
-        if not isinstance(self.age_max, float):
-            self.age_max = float(self.age_max)
-
-        if self._is_empty(self.ancestry_population):
-            self.MissingRequiredField("ancestry_population")
-        if not isinstance(self.ancestry_population, str):
-            self.ancestry_population = str(self.ancestry_population)
-
-        if self._is_empty(self.strain_name):
-            self.MissingRequiredField("strain_name")
-        if not isinstance(self.strain_name, str):
-            self.strain_name = str(self.strain_name)
-
-        if self._is_empty(self.linked_subjects):
-            self.MissingRequiredField("linked_subjects")
-        if not isinstance(self.linked_subjects, str):
-            self.linked_subjects = str(self.linked_subjects)
-
-        if self._is_empty(self.link_type):
-            self.MissingRequiredField("link_type")
-        if not isinstance(self.link_type, str):
-            self.link_type = str(self.link_type)
 
         if self.species is not None and not isinstance(self.species, Species):
             self.species = Species(self.species)
 
+        if self.sex is not None and not isinstance(self.sex, Sex):
+            self.sex = Sex(self.sex)
+
+        if self.age_min is not None and not isinstance(self.age_min, float):
+            self.age_min = float(self.age_min)
+
+        if self.age_max is not None and not isinstance(self.age_max, float):
+            self.age_max = float(self.age_max)
+
         if self.age_event is not None and not isinstance(self.age_event, LifeEventAkcId):
             self.age_event = LifeEventAkcId(self.age_event)
+
+        if self.ancestry_population is not None and not isinstance(self.ancestry_population, str):
+            self.ancestry_population = str(self.ancestry_population)
 
         if self.ethnicity is not None and not isinstance(self.ethnicity, Ethnicity):
             self.ethnicity = Ethnicity(self.ethnicity)
@@ -2940,7 +2787,18 @@ class Subject(YAMLRoot):
         if self.race is not None and not isinstance(self.race, Race):
             self.race = Race(self.race)
 
-        self._normalize_inlined_as_dict(slot_name="diagnosis", slot_type=Diagnosis, key_name="study_group_description", keyed=False)
+        if self.strain_name is not None and not isinstance(self.strain_name, str):
+            self.strain_name = str(self.strain_name)
+
+        if self.linked_subjects is not None and not isinstance(self.linked_subjects, str):
+            self.linked_subjects = str(self.linked_subjects)
+
+        if self.link_type is not None and not isinstance(self.link_type, str):
+            self.link_type = str(self.link_type)
+
+        if not isinstance(self.diagnosis, list):
+            self.diagnosis = [self.diagnosis] if self.diagnosis is not None else []
+        self.diagnosis = [v if isinstance(v, Diagnosis) else Diagnosis(**as_dict(v)) for v in self.diagnosis]
 
         if self.genotype is not None and not isinstance(self.genotype, SubjectGenotype):
             self.genotype = SubjectGenotype(**as_dict(self.genotype))
@@ -2957,48 +2815,36 @@ class Diagnosis(YAMLRoot):
     class_name: ClassVar[str] = "Diagnosis"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Diagnosis
 
-    study_group_description: str = None
-    disease_diagnosis: Union[str, "DiseaseDiagnosis"] = None
-    disease_length: str = None
-    prior_therapies: str = None
-    immunogen: str = None
-    intervention: str = None
-    medical_history: str = None
+    study_group_description: Optional[str] = None
+    disease_diagnosis: Optional[Union[str, "DiseaseDiagnosis"]] = None
+    disease_length: Optional[str] = None
     disease_stage: Optional[Union[str, "DiseaseStage"]] = None
+    prior_therapies: Optional[str] = None
+    immunogen: Optional[str] = None
+    intervention: Optional[str] = None
+    medical_history: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.study_group_description):
-            self.MissingRequiredField("study_group_description")
-        if not isinstance(self.study_group_description, str):
+        if self.study_group_description is not None and not isinstance(self.study_group_description, str):
             self.study_group_description = str(self.study_group_description)
 
-        if self._is_empty(self.disease_length):
-            self.MissingRequiredField("disease_length")
-        if not isinstance(self.disease_length, str):
+        if self.disease_length is not None and not isinstance(self.disease_length, str):
             self.disease_length = str(self.disease_length)
-
-        if self._is_empty(self.prior_therapies):
-            self.MissingRequiredField("prior_therapies")
-        if not isinstance(self.prior_therapies, str):
-            self.prior_therapies = str(self.prior_therapies)
-
-        if self._is_empty(self.immunogen):
-            self.MissingRequiredField("immunogen")
-        if not isinstance(self.immunogen, str):
-            self.immunogen = str(self.immunogen)
-
-        if self._is_empty(self.intervention):
-            self.MissingRequiredField("intervention")
-        if not isinstance(self.intervention, str):
-            self.intervention = str(self.intervention)
-
-        if self._is_empty(self.medical_history):
-            self.MissingRequiredField("medical_history")
-        if not isinstance(self.medical_history, str):
-            self.medical_history = str(self.medical_history)
 
         if self.disease_stage is not None and not isinstance(self.disease_stage, DiseaseStage):
             self.disease_stage = DiseaseStage(self.disease_stage)
+
+        if self.prior_therapies is not None and not isinstance(self.prior_therapies, str):
+            self.prior_therapies = str(self.prior_therapies)
+
+        if self.immunogen is not None and not isinstance(self.immunogen, str):
+            self.immunogen = str(self.immunogen)
+
+        if self.intervention is not None and not isinstance(self.intervention, str):
+            self.intervention = str(self.intervention)
+
+        if self.medical_history is not None and not isinstance(self.medical_history, str):
+            self.medical_history = str(self.medical_history)
 
         super().__post_init__(**kwargs)
 
@@ -3012,50 +2858,36 @@ class Sample(YAMLRoot):
     class_name: ClassVar[str] = "Sample"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Sample
 
-    sample_id: str = None
-    sample_type: str = None
-    tissue: Union[str, "Tissue"] = None
-    anatomic_site: str = None
-    disease_state_sample: str = None
-    collection_time_point_relative: float = None
-    collection_time_point_relative_unit: Union[str, "CollectionTimePointRelativeUnit"] = None
-    collection_time_point_reference: str = None
-    biomaterial_provider: str = None
+    sample_id: Optional[str] = None
+    sample_type: Optional[str] = None
+    tissue: Optional[Union[str, "Tissue"]] = None
+    anatomic_site: Optional[str] = None
+    disease_state_sample: Optional[str] = None
+    collection_time_point_relative: Optional[float] = None
+    collection_time_point_relative_unit: Optional[Union[str, "CollectionTimePointRelativeUnit"]] = None
+    collection_time_point_reference: Optional[str] = None
+    biomaterial_provider: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sample_id):
-            self.MissingRequiredField("sample_id")
-        if not isinstance(self.sample_id, str):
+        if self.sample_id is not None and not isinstance(self.sample_id, str):
             self.sample_id = str(self.sample_id)
 
-        if self._is_empty(self.sample_type):
-            self.MissingRequiredField("sample_type")
-        if not isinstance(self.sample_type, str):
+        if self.sample_type is not None and not isinstance(self.sample_type, str):
             self.sample_type = str(self.sample_type)
 
-        if self._is_empty(self.anatomic_site):
-            self.MissingRequiredField("anatomic_site")
-        if not isinstance(self.anatomic_site, str):
+        if self.anatomic_site is not None and not isinstance(self.anatomic_site, str):
             self.anatomic_site = str(self.anatomic_site)
 
-        if self._is_empty(self.disease_state_sample):
-            self.MissingRequiredField("disease_state_sample")
-        if not isinstance(self.disease_state_sample, str):
+        if self.disease_state_sample is not None and not isinstance(self.disease_state_sample, str):
             self.disease_state_sample = str(self.disease_state_sample)
 
-        if self._is_empty(self.collection_time_point_relative):
-            self.MissingRequiredField("collection_time_point_relative")
-        if not isinstance(self.collection_time_point_relative, float):
+        if self.collection_time_point_relative is not None and not isinstance(self.collection_time_point_relative, float):
             self.collection_time_point_relative = float(self.collection_time_point_relative)
 
-        if self._is_empty(self.collection_time_point_reference):
-            self.MissingRequiredField("collection_time_point_reference")
-        if not isinstance(self.collection_time_point_reference, str):
+        if self.collection_time_point_reference is not None and not isinstance(self.collection_time_point_reference, str):
             self.collection_time_point_reference = str(self.collection_time_point_reference)
 
-        if self._is_empty(self.biomaterial_provider):
-            self.MissingRequiredField("biomaterial_provider")
-        if not isinstance(self.biomaterial_provider, str):
+        if self.biomaterial_provider is not None and not isinstance(self.biomaterial_provider, str):
             self.biomaterial_provider = str(self.biomaterial_provider)
 
         super().__post_init__(**kwargs)
@@ -3070,62 +2902,44 @@ class CellProcessing(YAMLRoot):
     class_name: ClassVar[str] = "CellProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellProcessing
 
-    tissue_processing: str = None
-    cell_subset: Union[str, "CellSubset"] = None
-    cell_phenotype: str = None
-    single_cell: Union[bool, Bool] = None
-    cell_number: int = None
-    cells_per_reaction: int = None
-    cell_storage: Union[bool, Bool] = None
-    cell_quality: str = None
-    cell_isolation: str = None
-    cell_processing_protocol: str = None
+    tissue_processing: Optional[str] = None
+    cell_subset: Optional[Union[str, "CellSubset"]] = None
+    cell_phenotype: Optional[str] = None
     cell_species: Optional[Union[str, "CellSpecies"]] = None
+    single_cell: Optional[Union[bool, Bool]] = None
+    cell_number: Optional[int] = None
+    cells_per_reaction: Optional[int] = None
+    cell_storage: Optional[Union[bool, Bool]] = None
+    cell_quality: Optional[str] = None
+    cell_isolation: Optional[str] = None
+    cell_processing_protocol: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.tissue_processing):
-            self.MissingRequiredField("tissue_processing")
-        if not isinstance(self.tissue_processing, str):
+        if self.tissue_processing is not None and not isinstance(self.tissue_processing, str):
             self.tissue_processing = str(self.tissue_processing)
 
-        if self._is_empty(self.cell_phenotype):
-            self.MissingRequiredField("cell_phenotype")
-        if not isinstance(self.cell_phenotype, str):
+        if self.cell_phenotype is not None and not isinstance(self.cell_phenotype, str):
             self.cell_phenotype = str(self.cell_phenotype)
 
-        if self._is_empty(self.single_cell):
-            self.MissingRequiredField("single_cell")
-        if not isinstance(self.single_cell, Bool):
+        if self.single_cell is not None and not isinstance(self.single_cell, Bool):
             self.single_cell = Bool(self.single_cell)
 
-        if self._is_empty(self.cell_number):
-            self.MissingRequiredField("cell_number")
-        if not isinstance(self.cell_number, int):
+        if self.cell_number is not None and not isinstance(self.cell_number, int):
             self.cell_number = int(self.cell_number)
 
-        if self._is_empty(self.cells_per_reaction):
-            self.MissingRequiredField("cells_per_reaction")
-        if not isinstance(self.cells_per_reaction, int):
+        if self.cells_per_reaction is not None and not isinstance(self.cells_per_reaction, int):
             self.cells_per_reaction = int(self.cells_per_reaction)
 
-        if self._is_empty(self.cell_storage):
-            self.MissingRequiredField("cell_storage")
-        if not isinstance(self.cell_storage, Bool):
+        if self.cell_storage is not None and not isinstance(self.cell_storage, Bool):
             self.cell_storage = Bool(self.cell_storage)
 
-        if self._is_empty(self.cell_quality):
-            self.MissingRequiredField("cell_quality")
-        if not isinstance(self.cell_quality, str):
+        if self.cell_quality is not None and not isinstance(self.cell_quality, str):
             self.cell_quality = str(self.cell_quality)
 
-        if self._is_empty(self.cell_isolation):
-            self.MissingRequiredField("cell_isolation")
-        if not isinstance(self.cell_isolation, str):
+        if self.cell_isolation is not None and not isinstance(self.cell_isolation, str):
             self.cell_isolation = str(self.cell_isolation)
 
-        if self._is_empty(self.cell_processing_protocol):
-            self.MissingRequiredField("cell_processing_protocol")
-        if not isinstance(self.cell_processing_protocol, str):
+        if self.cell_processing_protocol is not None and not isinstance(self.cell_processing_protocol, str):
             self.cell_processing_protocol = str(self.cell_processing_protocol)
 
         super().__post_init__(**kwargs)
@@ -3140,24 +2954,18 @@ class PCRTarget(YAMLRoot):
     class_name: ClassVar[str] = "PCRTarget"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PCRTarget
 
-    pcr_target_locus: Union[str, "PcrTargetLocus"] = None
-    forward_pcr_primer_target_location: str = None
-    reverse_pcr_primer_target_location: str = None
+    pcr_target_locus: Optional[Union[str, "PcrTargetLocus"]] = None
+    forward_pcr_primer_target_location: Optional[str] = None
+    reverse_pcr_primer_target_location: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.pcr_target_locus):
-            self.MissingRequiredField("pcr_target_locus")
-        if not isinstance(self.pcr_target_locus, PcrTargetLocus):
+        if self.pcr_target_locus is not None and not isinstance(self.pcr_target_locus, PcrTargetLocus):
             self.pcr_target_locus = PcrTargetLocus(self.pcr_target_locus)
 
-        if self._is_empty(self.forward_pcr_primer_target_location):
-            self.MissingRequiredField("forward_pcr_primer_target_location")
-        if not isinstance(self.forward_pcr_primer_target_location, str):
+        if self.forward_pcr_primer_target_location is not None and not isinstance(self.forward_pcr_primer_target_location, str):
             self.forward_pcr_primer_target_location = str(self.forward_pcr_primer_target_location)
 
-        if self._is_empty(self.reverse_pcr_primer_target_location):
-            self.MissingRequiredField("reverse_pcr_primer_target_location")
-        if not isinstance(self.reverse_pcr_primer_target_location, str):
+        if self.reverse_pcr_primer_target_location is not None and not isinstance(self.reverse_pcr_primer_target_location, str):
             self.reverse_pcr_primer_target_location = str(self.reverse_pcr_primer_target_location)
 
         super().__post_init__(**kwargs)
@@ -3172,43 +2980,31 @@ class SequencingRun(YAMLRoot):
     class_name: ClassVar[str] = "SequencingRun"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequencingRun
 
-    sequencing_run_id: str = None
-    total_reads_passing_qc_filter: int = None
-    sequencing_platform: str = None
-    sequencing_facility: str = None
-    sequencing_run_date: Union[str, XSDDateTime] = None
-    sequencing_kit: str = None
+    sequencing_run_id: Optional[str] = None
+    total_reads_passing_qc_filter: Optional[int] = None
+    sequencing_platform: Optional[str] = None
+    sequencing_facility: Optional[str] = None
+    sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
+    sequencing_kit: Optional[str] = None
     sequencing_files: Optional[Union[dict, "SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequencing_run_id):
-            self.MissingRequiredField("sequencing_run_id")
-        if not isinstance(self.sequencing_run_id, str):
+        if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
             self.sequencing_run_id = str(self.sequencing_run_id)
 
-        if self._is_empty(self.total_reads_passing_qc_filter):
-            self.MissingRequiredField("total_reads_passing_qc_filter")
-        if not isinstance(self.total_reads_passing_qc_filter, int):
+        if self.total_reads_passing_qc_filter is not None and not isinstance(self.total_reads_passing_qc_filter, int):
             self.total_reads_passing_qc_filter = int(self.total_reads_passing_qc_filter)
 
-        if self._is_empty(self.sequencing_platform):
-            self.MissingRequiredField("sequencing_platform")
-        if not isinstance(self.sequencing_platform, str):
+        if self.sequencing_platform is not None and not isinstance(self.sequencing_platform, str):
             self.sequencing_platform = str(self.sequencing_platform)
 
-        if self._is_empty(self.sequencing_facility):
-            self.MissingRequiredField("sequencing_facility")
-        if not isinstance(self.sequencing_facility, str):
+        if self.sequencing_facility is not None and not isinstance(self.sequencing_facility, str):
             self.sequencing_facility = str(self.sequencing_facility)
 
-        if self._is_empty(self.sequencing_run_date):
-            self.MissingRequiredField("sequencing_run_date")
-        if not isinstance(self.sequencing_run_date, XSDDateTime):
+        if self.sequencing_run_date is not None and not isinstance(self.sequencing_run_date, XSDDateTime):
             self.sequencing_run_date = XSDDateTime(self.sequencing_run_date)
 
-        if self._is_empty(self.sequencing_kit):
-            self.MissingRequiredField("sequencing_kit")
-        if not isinstance(self.sequencing_kit, str):
+        if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
             self.sequencing_kit = str(self.sequencing_kit)
 
         if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
@@ -3226,56 +3022,40 @@ class SequencingData(YAMLRoot):
     class_name: ClassVar[str] = "SequencingData"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequencingData
 
-    sequencing_data_id: str = None
-    file_type: Union[str, "FileType"] = None
-    filename: str = None
-    read_direction: Union[str, "ReadDirection"] = None
-    read_length: int = None
-    paired_filename: str = None
-    paired_read_direction: Union[str, "PairedReadDirection"] = None
-    paired_read_length: int = None
+    sequencing_data_id: Optional[str] = None
+    file_type: Optional[Union[str, "FileType"]] = None
+    filename: Optional[str] = None
+    read_direction: Optional[Union[str, "ReadDirection"]] = None
+    read_length: Optional[int] = None
+    paired_filename: Optional[str] = None
+    paired_read_direction: Optional[Union[str, "PairedReadDirection"]] = None
+    paired_read_length: Optional[int] = None
     index_filename: Optional[str] = None
     index_length: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequencing_data_id):
-            self.MissingRequiredField("sequencing_data_id")
-        if not isinstance(self.sequencing_data_id, str):
+        if self.sequencing_data_id is not None and not isinstance(self.sequencing_data_id, str):
             self.sequencing_data_id = str(self.sequencing_data_id)
 
-        if self._is_empty(self.file_type):
-            self.MissingRequiredField("file_type")
-        if not isinstance(self.file_type, FileType):
+        if self.file_type is not None and not isinstance(self.file_type, FileType):
             self.file_type = FileType(self.file_type)
 
-        if self._is_empty(self.filename):
-            self.MissingRequiredField("filename")
-        if not isinstance(self.filename, str):
+        if self.filename is not None and not isinstance(self.filename, str):
             self.filename = str(self.filename)
 
-        if self._is_empty(self.read_direction):
-            self.MissingRequiredField("read_direction")
-        if not isinstance(self.read_direction, ReadDirection):
+        if self.read_direction is not None and not isinstance(self.read_direction, ReadDirection):
             self.read_direction = ReadDirection(self.read_direction)
 
-        if self._is_empty(self.read_length):
-            self.MissingRequiredField("read_length")
-        if not isinstance(self.read_length, int):
+        if self.read_length is not None and not isinstance(self.read_length, int):
             self.read_length = int(self.read_length)
 
-        if self._is_empty(self.paired_filename):
-            self.MissingRequiredField("paired_filename")
-        if not isinstance(self.paired_filename, str):
+        if self.paired_filename is not None and not isinstance(self.paired_filename, str):
             self.paired_filename = str(self.paired_filename)
 
-        if self._is_empty(self.paired_read_direction):
-            self.MissingRequiredField("paired_read_direction")
-        if not isinstance(self.paired_read_direction, PairedReadDirection):
+        if self.paired_read_direction is not None and not isinstance(self.paired_read_direction, PairedReadDirection):
             self.paired_read_direction = PairedReadDirection(self.paired_read_direction)
 
-        if self._is_empty(self.paired_read_length):
-            self.MissingRequiredField("paired_read_length")
-        if not isinstance(self.paired_read_length, int):
+        if self.paired_read_length is not None and not isinstance(self.paired_read_length, int):
             self.paired_read_length = int(self.paired_read_length)
 
         if self.index_filename is not None and not isinstance(self.index_filename, str):
@@ -3296,64 +3076,50 @@ class DataProcessing(YAMLRoot):
     class_name: ClassVar[str] = "DataProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DataProcessing
 
-    software_versions: str = None
-    paired_reads_assembly: str = None
-    quality_thresholds: str = None
-    primer_match_cutoffs: str = None
-    collapsing_method: str = None
-    data_processing_protocols: str = None
-    germline_database: str = None
     data_processing_id: Optional[str] = None
     primary_annotation: Optional[Union[bool, Bool]] = None
+    software_versions: Optional[str] = None
+    paired_reads_assembly: Optional[str] = None
+    quality_thresholds: Optional[str] = None
+    primer_match_cutoffs: Optional[str] = None
+    collapsing_method: Optional[str] = None
+    data_processing_protocols: Optional[str] = None
     data_processing_files: Optional[Union[str, List[str]]] = empty_list()
+    germline_database: Optional[str] = None
     germline_set_ref: Optional[str] = None
     analysis_provenance_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.software_versions):
-            self.MissingRequiredField("software_versions")
-        if not isinstance(self.software_versions, str):
-            self.software_versions = str(self.software_versions)
-
-        if self._is_empty(self.paired_reads_assembly):
-            self.MissingRequiredField("paired_reads_assembly")
-        if not isinstance(self.paired_reads_assembly, str):
-            self.paired_reads_assembly = str(self.paired_reads_assembly)
-
-        if self._is_empty(self.quality_thresholds):
-            self.MissingRequiredField("quality_thresholds")
-        if not isinstance(self.quality_thresholds, str):
-            self.quality_thresholds = str(self.quality_thresholds)
-
-        if self._is_empty(self.primer_match_cutoffs):
-            self.MissingRequiredField("primer_match_cutoffs")
-        if not isinstance(self.primer_match_cutoffs, str):
-            self.primer_match_cutoffs = str(self.primer_match_cutoffs)
-
-        if self._is_empty(self.collapsing_method):
-            self.MissingRequiredField("collapsing_method")
-        if not isinstance(self.collapsing_method, str):
-            self.collapsing_method = str(self.collapsing_method)
-
-        if self._is_empty(self.data_processing_protocols):
-            self.MissingRequiredField("data_processing_protocols")
-        if not isinstance(self.data_processing_protocols, str):
-            self.data_processing_protocols = str(self.data_processing_protocols)
-
-        if self._is_empty(self.germline_database):
-            self.MissingRequiredField("germline_database")
-        if not isinstance(self.germline_database, str):
-            self.germline_database = str(self.germline_database)
-
         if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
             self.data_processing_id = str(self.data_processing_id)
 
         if self.primary_annotation is not None and not isinstance(self.primary_annotation, Bool):
             self.primary_annotation = Bool(self.primary_annotation)
 
+        if self.software_versions is not None and not isinstance(self.software_versions, str):
+            self.software_versions = str(self.software_versions)
+
+        if self.paired_reads_assembly is not None and not isinstance(self.paired_reads_assembly, str):
+            self.paired_reads_assembly = str(self.paired_reads_assembly)
+
+        if self.quality_thresholds is not None and not isinstance(self.quality_thresholds, str):
+            self.quality_thresholds = str(self.quality_thresholds)
+
+        if self.primer_match_cutoffs is not None and not isinstance(self.primer_match_cutoffs, str):
+            self.primer_match_cutoffs = str(self.primer_match_cutoffs)
+
+        if self.collapsing_method is not None and not isinstance(self.collapsing_method, str):
+            self.collapsing_method = str(self.collapsing_method)
+
+        if self.data_processing_protocols is not None and not isinstance(self.data_processing_protocols, str):
+            self.data_processing_protocols = str(self.data_processing_protocols)
+
         if not isinstance(self.data_processing_files, list):
             self.data_processing_files = [self.data_processing_files] if self.data_processing_files is not None else []
         self.data_processing_files = [v if isinstance(v, str) else str(v) for v in self.data_processing_files]
+
+        if self.germline_database is not None and not isinstance(self.germline_database, str):
+            self.germline_database = str(self.germline_database)
 
         if self.germline_set_ref is not None and not isinstance(self.germline_set_ref, str):
             self.germline_set_ref = str(self.germline_set_ref)
@@ -3373,33 +3139,15 @@ class Repertoire(YAMLRoot):
     class_name: ClassVar[str] = "Repertoire"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Repertoire
 
-    study: Union[dict, Study] = None
-    subject: Union[dict, Subject] = None
-    sample: Union[Union[dict, "SampleProcessing"], List[Union[dict, "SampleProcessing"]]] = None
-    data_processing: Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]] = None
     repertoire_id: Optional[str] = None
     repertoire_name: Optional[str] = None
     repertoire_description: Optional[str] = None
+    study: Optional[Union[dict, Study]] = None
+    subject: Optional[Union[dict, Subject]] = None
+    sample: Optional[Union[Union[dict, "SampleProcessing"], List[Union[dict, "SampleProcessing"]]]] = empty_list()
+    data_processing: Optional[Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.study):
-            self.MissingRequiredField("study")
-        if not isinstance(self.study, Study):
-            self.study = Study(**as_dict(self.study))
-
-        if self._is_empty(self.subject):
-            self.MissingRequiredField("subject")
-        if not isinstance(self.subject, Subject):
-            self.subject = Subject(**as_dict(self.subject))
-
-        if self._is_empty(self.sample):
-            self.MissingRequiredField("sample")
-        self._normalize_inlined_as_dict(slot_name="sample", slot_type=SampleProcessing, key_name="sample_id", keyed=False)
-
-        if self._is_empty(self.data_processing):
-            self.MissingRequiredField("data_processing")
-        self._normalize_inlined_as_dict(slot_name="data_processing", slot_type=DataProcessing, key_name="software_versions", keyed=False)
-
         if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
             self.repertoire_id = str(self.repertoire_id)
 
@@ -3408,6 +3156,20 @@ class Repertoire(YAMLRoot):
 
         if self.repertoire_description is not None and not isinstance(self.repertoire_description, str):
             self.repertoire_description = str(self.repertoire_description)
+
+        if self.study is not None and not isinstance(self.study, Study):
+            self.study = Study(**as_dict(self.study))
+
+        if self.subject is not None and not isinstance(self.subject, Subject):
+            self.subject = Subject(**as_dict(self.subject))
+
+        if not isinstance(self.sample, list):
+            self.sample = [self.sample] if self.sample is not None else []
+        self.sample = [v if isinstance(v, SampleProcessing) else SampleProcessing(**as_dict(v)) for v in self.sample]
+
+        if not isinstance(self.data_processing, list):
+            self.data_processing = [self.data_processing] if self.data_processing is not None else []
+        self.data_processing = [v if isinstance(v, DataProcessing) else DataProcessing(**as_dict(v)) for v in self.data_processing]
 
         super().__post_init__(**kwargs)
 
@@ -3421,28 +3183,24 @@ class RepertoireGroup(YAMLRoot):
     class_name: ClassVar[str] = "RepertoireGroup"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireGroup
 
-    repertoire_group_id: str = None
-    repertoires: Union[str, List[str]] = None
+    repertoire_group_id: Optional[str] = None
     repertoire_group_name: Optional[str] = None
     repertoire_group_description: Optional[str] = None
+    repertoires: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.repertoire_group_id):
-            self.MissingRequiredField("repertoire_group_id")
-        if not isinstance(self.repertoire_group_id, str):
+        if self.repertoire_group_id is not None and not isinstance(self.repertoire_group_id, str):
             self.repertoire_group_id = str(self.repertoire_group_id)
-
-        if self._is_empty(self.repertoires):
-            self.MissingRequiredField("repertoires")
-        if not isinstance(self.repertoires, list):
-            self.repertoires = [self.repertoires] if self.repertoires is not None else []
-        self.repertoires = [v if isinstance(v, str) else str(v) for v in self.repertoires]
 
         if self.repertoire_group_name is not None and not isinstance(self.repertoire_group_name, str):
             self.repertoire_group_name = str(self.repertoire_group_name)
 
         if self.repertoire_group_description is not None and not isinstance(self.repertoire_group_description, str):
             self.repertoire_group_description = str(self.repertoire_group_description)
+
+        if not isinstance(self.repertoires, list):
+            self.repertoires = [self.repertoires] if self.repertoires is not None else []
+        self.repertoires = [v if isinstance(v, str) else str(v) for v in self.repertoires]
 
         super().__post_init__(**kwargs)
 
@@ -3456,14 +3214,14 @@ class Alignment(YAMLRoot):
     class_name: ClassVar[str] = "Alignment"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Alignment
 
-    sequence_id: str = None
-    segment: str = None
-    call: str = None
-    score: float = None
-    cigar: str = None
+    sequence_id: Optional[str] = None
+    segment: Optional[str] = None
     rev_comp: Optional[Union[bool, Bool]] = None
+    call: Optional[str] = None
+    score: Optional[float] = None
     identity: Optional[float] = None
     support: Optional[float] = None
+    cigar: Optional[str] = None
     sequence_start: Optional[int] = None
     sequence_end: Optional[int] = None
     germline_start: Optional[int] = None
@@ -3472,39 +3230,29 @@ class Alignment(YAMLRoot):
     data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequence_id):
-            self.MissingRequiredField("sequence_id")
-        if not isinstance(self.sequence_id, str):
+        if self.sequence_id is not None and not isinstance(self.sequence_id, str):
             self.sequence_id = str(self.sequence_id)
 
-        if self._is_empty(self.segment):
-            self.MissingRequiredField("segment")
-        if not isinstance(self.segment, str):
+        if self.segment is not None and not isinstance(self.segment, str):
             self.segment = str(self.segment)
-
-        if self._is_empty(self.call):
-            self.MissingRequiredField("call")
-        if not isinstance(self.call, str):
-            self.call = str(self.call)
-
-        if self._is_empty(self.score):
-            self.MissingRequiredField("score")
-        if not isinstance(self.score, float):
-            self.score = float(self.score)
-
-        if self._is_empty(self.cigar):
-            self.MissingRequiredField("cigar")
-        if not isinstance(self.cigar, str):
-            self.cigar = str(self.cigar)
 
         if self.rev_comp is not None and not isinstance(self.rev_comp, Bool):
             self.rev_comp = Bool(self.rev_comp)
+
+        if self.call is not None and not isinstance(self.call, str):
+            self.call = str(self.call)
+
+        if self.score is not None and not isinstance(self.score, float):
+            self.score = float(self.score)
 
         if self.identity is not None and not isinstance(self.identity, float):
             self.identity = float(self.identity)
 
         if self.support is not None and not isinstance(self.support, float):
             self.support = float(self.support)
+
+        if self.cigar is not None and not isinstance(self.cigar, str):
+            self.cigar = str(self.cigar)
 
         if self.sequence_start is not None and not isinstance(self.sequence_start, int):
             self.sequence_start = int(self.sequence_start)
@@ -3536,16 +3284,12 @@ class Rearrangement(YAMLRoot):
     class_name: ClassVar[str] = "Rearrangement"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Rearrangement
 
-    sequence_id: str = None
-    sequence: str = None
-    productive: Union[bool, Bool] = None
-    germline_alignment: str = None
-    v_cigar: str = None
-    d_cigar: str = None
-    j_cigar: str = None
+    sequence_id: Optional[str] = None
+    sequence: Optional[str] = None
     quality: Optional[str] = None
     sequence_aa: Optional[str] = None
     rev_comp: Optional[Union[bool, Bool]] = None
+    productive: Optional[Union[bool, Bool]] = None
     vj_in_frame: Optional[Union[bool, Bool]] = None
     stop_codon: Optional[Union[bool, Bool]] = None
     complete_vdj: Optional[Union[bool, Bool]] = None
@@ -3558,6 +3302,7 @@ class Rearrangement(YAMLRoot):
     sequence_alignment: Optional[str] = None
     quality_alignment: Optional[str] = None
     sequence_alignment_aa: Optional[str] = None
+    germline_alignment: Optional[str] = None
     germline_alignment_aa: Optional[str] = None
     junction: Optional[str] = None
     junction_aa: Optional[str] = None
@@ -3584,9 +3329,11 @@ class Rearrangement(YAMLRoot):
     v_score: Optional[float] = None
     v_identity: Optional[float] = None
     v_support: Optional[float] = None
+    v_cigar: Optional[str] = None
     d_score: Optional[float] = None
     d_identity: Optional[float] = None
     d_support: Optional[float] = None
+    d_cigar: Optional[str] = None
     d2_score: Optional[float] = None
     d2_identity: Optional[float] = None
     d2_support: Optional[float] = None
@@ -3594,6 +3341,7 @@ class Rearrangement(YAMLRoot):
     j_score: Optional[float] = None
     j_identity: Optional[float] = None
     j_support: Optional[float] = None
+    j_cigar: Optional[str] = None
     c_score: Optional[float] = None
     c_identity: Optional[float] = None
     c_support: Optional[float] = None
@@ -3690,40 +3438,11 @@ class Rearrangement(YAMLRoot):
     data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequence_id):
-            self.MissingRequiredField("sequence_id")
-        if not isinstance(self.sequence_id, str):
+        if self.sequence_id is not None and not isinstance(self.sequence_id, str):
             self.sequence_id = str(self.sequence_id)
 
-        if self._is_empty(self.sequence):
-            self.MissingRequiredField("sequence")
-        if not isinstance(self.sequence, str):
+        if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
-
-        if self._is_empty(self.productive):
-            self.MissingRequiredField("productive")
-        if not isinstance(self.productive, Bool):
-            self.productive = Bool(self.productive)
-
-        if self._is_empty(self.germline_alignment):
-            self.MissingRequiredField("germline_alignment")
-        if not isinstance(self.germline_alignment, str):
-            self.germline_alignment = str(self.germline_alignment)
-
-        if self._is_empty(self.v_cigar):
-            self.MissingRequiredField("v_cigar")
-        if not isinstance(self.v_cigar, str):
-            self.v_cigar = str(self.v_cigar)
-
-        if self._is_empty(self.d_cigar):
-            self.MissingRequiredField("d_cigar")
-        if not isinstance(self.d_cigar, str):
-            self.d_cigar = str(self.d_cigar)
-
-        if self._is_empty(self.j_cigar):
-            self.MissingRequiredField("j_cigar")
-        if not isinstance(self.j_cigar, str):
-            self.j_cigar = str(self.j_cigar)
 
         if self.quality is not None and not isinstance(self.quality, str):
             self.quality = str(self.quality)
@@ -3733,6 +3452,9 @@ class Rearrangement(YAMLRoot):
 
         if self.rev_comp is not None and not isinstance(self.rev_comp, Bool):
             self.rev_comp = Bool(self.rev_comp)
+
+        if self.productive is not None and not isinstance(self.productive, Bool):
+            self.productive = Bool(self.productive)
 
         if self.vj_in_frame is not None and not isinstance(self.vj_in_frame, Bool):
             self.vj_in_frame = Bool(self.vj_in_frame)
@@ -3769,6 +3491,9 @@ class Rearrangement(YAMLRoot):
 
         if self.sequence_alignment_aa is not None and not isinstance(self.sequence_alignment_aa, str):
             self.sequence_alignment_aa = str(self.sequence_alignment_aa)
+
+        if self.germline_alignment is not None and not isinstance(self.germline_alignment, str):
+            self.germline_alignment = str(self.germline_alignment)
 
         if self.germline_alignment_aa is not None and not isinstance(self.germline_alignment_aa, str):
             self.germline_alignment_aa = str(self.germline_alignment_aa)
@@ -3848,6 +3573,9 @@ class Rearrangement(YAMLRoot):
         if self.v_support is not None and not isinstance(self.v_support, float):
             self.v_support = float(self.v_support)
 
+        if self.v_cigar is not None and not isinstance(self.v_cigar, str):
+            self.v_cigar = str(self.v_cigar)
+
         if self.d_score is not None and not isinstance(self.d_score, float):
             self.d_score = float(self.d_score)
 
@@ -3856,6 +3584,9 @@ class Rearrangement(YAMLRoot):
 
         if self.d_support is not None and not isinstance(self.d_support, float):
             self.d_support = float(self.d_support)
+
+        if self.d_cigar is not None and not isinstance(self.d_cigar, str):
+            self.d_cigar = str(self.d_cigar)
 
         if self.d2_score is not None and not isinstance(self.d2_score, float):
             self.d2_score = float(self.d2_score)
@@ -3877,6 +3608,9 @@ class Rearrangement(YAMLRoot):
 
         if self.j_support is not None and not isinstance(self.j_support, float):
             self.j_support = float(self.j_support)
+
+        if self.j_cigar is not None and not isinstance(self.j_cigar, str):
+            self.j_cigar = str(self.j_cigar)
 
         if self.c_score is not None and not isinstance(self.c_score, float):
             self.c_score = float(self.c_score)
@@ -4172,7 +3906,6 @@ class Clone(YAMLRoot):
     class_name: ClassVar[str] = "Clone"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Clone
 
-    germline_alignment: str = None
     clone_id: Optional[str] = None
     repertoire_id: Optional[str] = None
     data_processing_id: Optional[str] = None
@@ -4184,6 +3917,7 @@ class Clone(YAMLRoot):
     junction_aa: Optional[str] = None
     junction_length: Optional[int] = None
     junction_aa_length: Optional[int] = None
+    germline_alignment: Optional[str] = None
     germline_alignment_aa: Optional[str] = None
     v_alignment_start: Optional[int] = None
     v_alignment_end: Optional[int] = None
@@ -4198,11 +3932,6 @@ class Clone(YAMLRoot):
     seed_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.germline_alignment):
-            self.MissingRequiredField("germline_alignment")
-        if not isinstance(self.germline_alignment, str):
-            self.germline_alignment = str(self.germline_alignment)
-
         if self.clone_id is not None and not isinstance(self.clone_id, str):
             self.clone_id = str(self.clone_id)
 
@@ -4236,6 +3965,9 @@ class Clone(YAMLRoot):
 
         if self.junction_aa_length is not None and not isinstance(self.junction_aa_length, int):
             self.junction_aa_length = int(self.junction_aa_length)
+
+        if self.germline_alignment is not None and not isinstance(self.germline_alignment, str):
+            self.germline_alignment = str(self.germline_alignment)
 
         if self.germline_alignment_aa is not None and not isinstance(self.germline_alignment_aa, str):
             self.germline_alignment_aa = str(self.germline_alignment_aa)
@@ -4285,26 +4017,24 @@ class Tree(YAMLRoot):
     class_name: ClassVar[str] = "Tree"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Tree
 
-    tree_id: str = None
-    newick: str = None
+    tree_id: Optional[str] = None
     clone_id: Optional[str] = None
+    newick: Optional[str] = None
     nodes: Optional[Union[Union[dict, "Node"], List[Union[dict, "Node"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.tree_id):
-            self.MissingRequiredField("tree_id")
-        if not isinstance(self.tree_id, str):
+        if self.tree_id is not None and not isinstance(self.tree_id, str):
             self.tree_id = str(self.tree_id)
-
-        if self._is_empty(self.newick):
-            self.MissingRequiredField("newick")
-        if not isinstance(self.newick, str):
-            self.newick = str(self.newick)
 
         if self.clone_id is not None and not isinstance(self.clone_id, str):
             self.clone_id = str(self.clone_id)
 
-        self._normalize_inlined_as_dict(slot_name="nodes", slot_type=Node, key_name="sequence_id", keyed=False)
+        if self.newick is not None and not isinstance(self.newick, str):
+            self.newick = str(self.newick)
+
+        if not isinstance(self.nodes, list):
+            self.nodes = [self.nodes] if self.nodes is not None else []
+        self.nodes = [v if isinstance(v, Node) else Node(**as_dict(v)) for v in self.nodes]
 
         super().__post_init__(**kwargs)
 
@@ -4318,15 +4048,13 @@ class Node(YAMLRoot):
     class_name: ClassVar[str] = "Node"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Node
 
-    sequence_id: str = None
+    sequence_id: Optional[str] = None
     sequence_alignment: Optional[str] = None
     junction: Optional[str] = None
     junction_aa: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sequence_id):
-            self.MissingRequiredField("sequence_id")
-        if not isinstance(self.sequence_id, str):
+        if self.sequence_id is not None and not isinstance(self.sequence_id, str):
             self.sequence_id = str(self.sequence_id)
 
         if self.sequence_alignment is not None and not isinstance(self.sequence_alignment, str):
@@ -4350,24 +4078,17 @@ class CellExpression(YAMLRoot):
     class_name: ClassVar[str] = "CellExpression"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellExpression
 
-    expression_id: str = None
-    property_type: str = None
-    property: Union[str, "Property"] = None
+    expression_id: Optional[str] = None
     cell_id: Optional[str] = None
     repertoire_id: Optional[str] = None
     data_processing_id: Optional[str] = None
+    property_type: Optional[str] = None
+    property: Optional[Union[str, "Property"]] = None
     value: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.expression_id):
-            self.MissingRequiredField("expression_id")
-        if not isinstance(self.expression_id, str):
+        if self.expression_id is not None and not isinstance(self.expression_id, str):
             self.expression_id = str(self.expression_id)
-
-        if self._is_empty(self.property_type):
-            self.MissingRequiredField("property_type")
-        if not isinstance(self.property_type, str):
-            self.property_type = str(self.property_type)
 
         if self.cell_id is not None and not isinstance(self.cell_id, str):
             self.cell_id = str(self.cell_id)
@@ -4377,6 +4098,9 @@ class CellExpression(YAMLRoot):
 
         if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
             self.data_processing_id = str(self.data_processing_id)
+
+        if self.property_type is not None and not isinstance(self.property_type, str):
+            self.property_type = str(self.property_type)
 
         if self.value is not None and not isinstance(self.value, str):
             self.value = str(self.value)
@@ -4393,57 +4117,45 @@ class Receptor(YAMLRoot):
     class_name: ClassVar[str] = "Receptor"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Receptor
 
-    receptor_id: str = None
-    receptor_hash: str = None
-    receptor_type: Union[str, "ReceptorType"] = None
-    receptor_variable_domain_1_aa: str = None
-    receptor_variable_domain_1_locus: Union[str, "ReceptorVariableDomain1Locus"] = None
-    receptor_variable_domain_2_aa: str = None
-    receptor_variable_domain_2_locus: Union[str, "ReceptorVariableDomain2Locus"] = None
+    receptor_id: Optional[str] = None
+    receptor_hash: Optional[str] = None
+    receptor_type: Optional[Union[str, "ReceptorType"]] = None
+    receptor_variable_domain_1_aa: Optional[str] = None
+    receptor_variable_domain_1_locus: Optional[Union[str, "ReceptorVariableDomain1Locus"]] = None
+    receptor_variable_domain_2_aa: Optional[str] = None
+    receptor_variable_domain_2_locus: Optional[Union[str, "ReceptorVariableDomain2Locus"]] = None
     receptor_ref: Optional[Union[str, List[str]]] = empty_list()
     reactivity_measurements: Optional[Union[Union[dict, "ReceptorReactivity"], List[Union[dict, "ReceptorReactivity"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.receptor_id):
-            self.MissingRequiredField("receptor_id")
-        if not isinstance(self.receptor_id, str):
+        if self.receptor_id is not None and not isinstance(self.receptor_id, str):
             self.receptor_id = str(self.receptor_id)
 
-        if self._is_empty(self.receptor_hash):
-            self.MissingRequiredField("receptor_hash")
-        if not isinstance(self.receptor_hash, str):
+        if self.receptor_hash is not None and not isinstance(self.receptor_hash, str):
             self.receptor_hash = str(self.receptor_hash)
 
-        if self._is_empty(self.receptor_type):
-            self.MissingRequiredField("receptor_type")
-        if not isinstance(self.receptor_type, ReceptorType):
+        if self.receptor_type is not None and not isinstance(self.receptor_type, ReceptorType):
             self.receptor_type = ReceptorType(self.receptor_type)
 
-        if self._is_empty(self.receptor_variable_domain_1_aa):
-            self.MissingRequiredField("receptor_variable_domain_1_aa")
-        if not isinstance(self.receptor_variable_domain_1_aa, str):
+        if self.receptor_variable_domain_1_aa is not None and not isinstance(self.receptor_variable_domain_1_aa, str):
             self.receptor_variable_domain_1_aa = str(self.receptor_variable_domain_1_aa)
 
-        if self._is_empty(self.receptor_variable_domain_1_locus):
-            self.MissingRequiredField("receptor_variable_domain_1_locus")
-        if not isinstance(self.receptor_variable_domain_1_locus, ReceptorVariableDomain1Locus):
+        if self.receptor_variable_domain_1_locus is not None and not isinstance(self.receptor_variable_domain_1_locus, ReceptorVariableDomain1Locus):
             self.receptor_variable_domain_1_locus = ReceptorVariableDomain1Locus(self.receptor_variable_domain_1_locus)
 
-        if self._is_empty(self.receptor_variable_domain_2_aa):
-            self.MissingRequiredField("receptor_variable_domain_2_aa")
-        if not isinstance(self.receptor_variable_domain_2_aa, str):
+        if self.receptor_variable_domain_2_aa is not None and not isinstance(self.receptor_variable_domain_2_aa, str):
             self.receptor_variable_domain_2_aa = str(self.receptor_variable_domain_2_aa)
 
-        if self._is_empty(self.receptor_variable_domain_2_locus):
-            self.MissingRequiredField("receptor_variable_domain_2_locus")
-        if not isinstance(self.receptor_variable_domain_2_locus, ReceptorVariableDomain2Locus):
+        if self.receptor_variable_domain_2_locus is not None and not isinstance(self.receptor_variable_domain_2_locus, ReceptorVariableDomain2Locus):
             self.receptor_variable_domain_2_locus = ReceptorVariableDomain2Locus(self.receptor_variable_domain_2_locus)
 
         if not isinstance(self.receptor_ref, list):
             self.receptor_ref = [self.receptor_ref] if self.receptor_ref is not None else []
         self.receptor_ref = [v if isinstance(v, str) else str(v) for v in self.receptor_ref]
 
-        self._normalize_inlined_as_dict(slot_name="reactivity_measurements", slot_type=ReceptorReactivity, key_name="ligand_type", keyed=False)
+        if not isinstance(self.reactivity_measurements, list):
+            self.reactivity_measurements = [self.reactivity_measurements] if self.reactivity_measurements is not None else []
+        self.reactivity_measurements = [v if isinstance(v, ReceptorReactivity) else ReceptorReactivity(**as_dict(v)) for v in self.reactivity_measurements]
 
         super().__post_init__(**kwargs)
 
@@ -4457,13 +4169,9 @@ class ReceptorReactivity(YAMLRoot):
     class_name: ClassVar[str] = "ReceptorReactivity"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorReactivity
 
-    ligand_type: Union[str, "LigandType"] = None
-    antigen_type: Union[str, "AntigenType"] = None
-    antigen: Union[str, "Antigen"] = None
-    reactivity_method: Union[str, "ReactivityMethod"] = None
-    reactivity_readout: Union[str, "ReactivityReadout"] = None
-    reactivity_value: float = None
-    reactivity_unit: str = None
+    ligand_type: Optional[Union[str, "LigandType"]] = None
+    antigen_type: Optional[Union[str, "AntigenType"]] = None
+    antigen: Optional[Union[str, "Antigen"]] = None
     antigen_source_species: Optional[Union[str, "AntigenSourceSpecies"]] = None
     peptide_start: Optional[int] = None
     peptide_end: Optional[int] = None
@@ -4472,37 +4180,17 @@ class ReceptorReactivity(YAMLRoot):
     mhc_allele_1: Optional[str] = None
     mhc_gene_2: Optional[Union[str, "MhcGene2"]] = None
     mhc_allele_2: Optional[str] = None
+    reactivity_method: Optional[Union[str, "ReactivityMethod"]] = None
+    reactivity_readout: Optional[Union[str, "ReactivityReadout"]] = None
+    reactivity_value: Optional[float] = None
+    reactivity_unit: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.ligand_type):
-            self.MissingRequiredField("ligand_type")
-        if not isinstance(self.ligand_type, LigandType):
+        if self.ligand_type is not None and not isinstance(self.ligand_type, LigandType):
             self.ligand_type = LigandType(self.ligand_type)
 
-        if self._is_empty(self.antigen_type):
-            self.MissingRequiredField("antigen_type")
-        if not isinstance(self.antigen_type, AntigenType):
+        if self.antigen_type is not None and not isinstance(self.antigen_type, AntigenType):
             self.antigen_type = AntigenType(self.antigen_type)
-
-        if self._is_empty(self.reactivity_method):
-            self.MissingRequiredField("reactivity_method")
-        if not isinstance(self.reactivity_method, ReactivityMethod):
-            self.reactivity_method = ReactivityMethod(self.reactivity_method)
-
-        if self._is_empty(self.reactivity_readout):
-            self.MissingRequiredField("reactivity_readout")
-        if not isinstance(self.reactivity_readout, ReactivityReadout):
-            self.reactivity_readout = ReactivityReadout(self.reactivity_readout)
-
-        if self._is_empty(self.reactivity_value):
-            self.MissingRequiredField("reactivity_value")
-        if not isinstance(self.reactivity_value, float):
-            self.reactivity_value = float(self.reactivity_value)
-
-        if self._is_empty(self.reactivity_unit):
-            self.MissingRequiredField("reactivity_unit")
-        if not isinstance(self.reactivity_unit, str):
-            self.reactivity_unit = str(self.reactivity_unit)
 
         if self.peptide_start is not None and not isinstance(self.peptide_start, int):
             self.peptide_start = int(self.peptide_start)
@@ -4519,6 +4207,18 @@ class ReceptorReactivity(YAMLRoot):
         if self.mhc_allele_2 is not None and not isinstance(self.mhc_allele_2, str):
             self.mhc_allele_2 = str(self.mhc_allele_2)
 
+        if self.reactivity_method is not None and not isinstance(self.reactivity_method, ReactivityMethod):
+            self.reactivity_method = ReactivityMethod(self.reactivity_method)
+
+        if self.reactivity_readout is not None and not isinstance(self.reactivity_readout, ReactivityReadout):
+            self.reactivity_readout = ReactivityReadout(self.reactivity_readout)
+
+        if self.reactivity_value is not None and not isinstance(self.reactivity_value, float):
+            self.reactivity_value = float(self.reactivity_value)
+
+        if self.reactivity_unit is not None and not isinstance(self.reactivity_unit, str):
+            self.reactivity_unit = str(self.reactivity_unit)
+
         super().__post_init__(**kwargs)
 
 
@@ -4531,200 +4231,142 @@ class SampleProcessing(YAMLRoot):
     class_name: ClassVar[str] = "SampleProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SampleProcessing
 
-    sample_id: str = None
-    sample_type: str = None
-    tissue: Union[str, "Tissue"] = None
-    anatomic_site: str = None
-    disease_state_sample: str = None
-    collection_time_point_relative: float = None
-    collection_time_point_relative_unit: Union[str, "CollectionTimePointRelativeUnit"] = None
-    collection_time_point_reference: str = None
-    biomaterial_provider: str = None
-    tissue_processing: str = None
-    cell_subset: Union[str, "CellSubset"] = None
-    cell_phenotype: str = None
-    single_cell: Union[bool, Bool] = None
-    cell_number: int = None
-    cells_per_reaction: int = None
-    cell_storage: Union[bool, Bool] = None
-    cell_quality: str = None
-    cell_isolation: str = None
-    cell_processing_protocol: str = None
-    template_class: Union[str, "TemplateClass"] = None
-    template_quality: str = None
-    template_amount: float = None
-    template_amount_unit: Union[str, "TemplateAmountUnit"] = None
-    library_generation_method: Union[str, "LibraryGenerationMethod"] = None
-    library_generation_protocol: str = None
-    library_generation_kit_version: str = None
-    complete_sequences: Union[str, "CompleteSequences"] = None
-    physical_linkage: Union[str, "PhysicalLinkage"] = None
-    sequencing_run_id: str = None
-    total_reads_passing_qc_filter: int = None
-    sequencing_platform: str = None
-    sequencing_facility: str = None
-    sequencing_run_date: Union[str, XSDDateTime] = None
-    sequencing_kit: str = None
     sample_processing_id: Optional[str] = None
+    sample_id: Optional[str] = None
+    sample_type: Optional[str] = None
+    tissue: Optional[Union[str, "Tissue"]] = None
+    anatomic_site: Optional[str] = None
+    disease_state_sample: Optional[str] = None
+    collection_time_point_relative: Optional[float] = None
+    collection_time_point_relative_unit: Optional[Union[str, "CollectionTimePointRelativeUnit"]] = None
+    collection_time_point_reference: Optional[str] = None
+    biomaterial_provider: Optional[str] = None
+    tissue_processing: Optional[str] = None
+    cell_subset: Optional[Union[str, "CellSubset"]] = None
+    cell_phenotype: Optional[str] = None
     cell_species: Optional[Union[str, "CellSpecies"]] = None
+    single_cell: Optional[Union[bool, Bool]] = None
+    cell_number: Optional[int] = None
+    cells_per_reaction: Optional[int] = None
+    cell_storage: Optional[Union[bool, Bool]] = None
+    cell_quality: Optional[str] = None
+    cell_isolation: Optional[str] = None
+    cell_processing_protocol: Optional[str] = None
+    template_class: Optional[Union[str, "TemplateClass"]] = None
+    template_quality: Optional[str] = None
+    template_amount: Optional[float] = None
+    template_amount_unit: Optional[Union[str, "TemplateAmountUnit"]] = None
+    library_generation_method: Optional[Union[str, "LibraryGenerationMethod"]] = None
+    library_generation_protocol: Optional[str] = None
+    library_generation_kit_version: Optional[str] = None
     pcr_target: Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]] = empty_list()
+    complete_sequences: Optional[Union[str, "CompleteSequences"]] = None
+    physical_linkage: Optional[Union[str, "PhysicalLinkage"]] = None
+    sequencing_run_id: Optional[str] = None
+    total_reads_passing_qc_filter: Optional[int] = None
+    sequencing_platform: Optional[str] = None
+    sequencing_facility: Optional[str] = None
+    sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
+    sequencing_kit: Optional[str] = None
     sequencing_files: Optional[Union[dict, SequencingData]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.sample_id):
-            self.MissingRequiredField("sample_id")
-        if not isinstance(self.sample_id, str):
-            self.sample_id = str(self.sample_id)
-
-        if self._is_empty(self.sample_type):
-            self.MissingRequiredField("sample_type")
-        if not isinstance(self.sample_type, str):
-            self.sample_type = str(self.sample_type)
-
-        if self._is_empty(self.anatomic_site):
-            self.MissingRequiredField("anatomic_site")
-        if not isinstance(self.anatomic_site, str):
-            self.anatomic_site = str(self.anatomic_site)
-
-        if self._is_empty(self.disease_state_sample):
-            self.MissingRequiredField("disease_state_sample")
-        if not isinstance(self.disease_state_sample, str):
-            self.disease_state_sample = str(self.disease_state_sample)
-
-        if self._is_empty(self.collection_time_point_relative):
-            self.MissingRequiredField("collection_time_point_relative")
-        if not isinstance(self.collection_time_point_relative, float):
-            self.collection_time_point_relative = float(self.collection_time_point_relative)
-
-        if self._is_empty(self.collection_time_point_reference):
-            self.MissingRequiredField("collection_time_point_reference")
-        if not isinstance(self.collection_time_point_reference, str):
-            self.collection_time_point_reference = str(self.collection_time_point_reference)
-
-        if self._is_empty(self.biomaterial_provider):
-            self.MissingRequiredField("biomaterial_provider")
-        if not isinstance(self.biomaterial_provider, str):
-            self.biomaterial_provider = str(self.biomaterial_provider)
-
-        if self._is_empty(self.tissue_processing):
-            self.MissingRequiredField("tissue_processing")
-        if not isinstance(self.tissue_processing, str):
-            self.tissue_processing = str(self.tissue_processing)
-
-        if self._is_empty(self.cell_phenotype):
-            self.MissingRequiredField("cell_phenotype")
-        if not isinstance(self.cell_phenotype, str):
-            self.cell_phenotype = str(self.cell_phenotype)
-
-        if self._is_empty(self.single_cell):
-            self.MissingRequiredField("single_cell")
-        if not isinstance(self.single_cell, Bool):
-            self.single_cell = Bool(self.single_cell)
-
-        if self._is_empty(self.cell_number):
-            self.MissingRequiredField("cell_number")
-        if not isinstance(self.cell_number, int):
-            self.cell_number = int(self.cell_number)
-
-        if self._is_empty(self.cells_per_reaction):
-            self.MissingRequiredField("cells_per_reaction")
-        if not isinstance(self.cells_per_reaction, int):
-            self.cells_per_reaction = int(self.cells_per_reaction)
-
-        if self._is_empty(self.cell_storage):
-            self.MissingRequiredField("cell_storage")
-        if not isinstance(self.cell_storage, Bool):
-            self.cell_storage = Bool(self.cell_storage)
-
-        if self._is_empty(self.cell_quality):
-            self.MissingRequiredField("cell_quality")
-        if not isinstance(self.cell_quality, str):
-            self.cell_quality = str(self.cell_quality)
-
-        if self._is_empty(self.cell_isolation):
-            self.MissingRequiredField("cell_isolation")
-        if not isinstance(self.cell_isolation, str):
-            self.cell_isolation = str(self.cell_isolation)
-
-        if self._is_empty(self.cell_processing_protocol):
-            self.MissingRequiredField("cell_processing_protocol")
-        if not isinstance(self.cell_processing_protocol, str):
-            self.cell_processing_protocol = str(self.cell_processing_protocol)
-
-        if self._is_empty(self.template_class):
-            self.MissingRequiredField("template_class")
-        if not isinstance(self.template_class, TemplateClass):
-            self.template_class = TemplateClass(self.template_class)
-
-        if self._is_empty(self.template_quality):
-            self.MissingRequiredField("template_quality")
-        if not isinstance(self.template_quality, str):
-            self.template_quality = str(self.template_quality)
-
-        if self._is_empty(self.template_amount):
-            self.MissingRequiredField("template_amount")
-        if not isinstance(self.template_amount, float):
-            self.template_amount = float(self.template_amount)
-
-        if self._is_empty(self.library_generation_method):
-            self.MissingRequiredField("library_generation_method")
-        if not isinstance(self.library_generation_method, LibraryGenerationMethod):
-            self.library_generation_method = LibraryGenerationMethod(self.library_generation_method)
-
-        if self._is_empty(self.library_generation_protocol):
-            self.MissingRequiredField("library_generation_protocol")
-        if not isinstance(self.library_generation_protocol, str):
-            self.library_generation_protocol = str(self.library_generation_protocol)
-
-        if self._is_empty(self.library_generation_kit_version):
-            self.MissingRequiredField("library_generation_kit_version")
-        if not isinstance(self.library_generation_kit_version, str):
-            self.library_generation_kit_version = str(self.library_generation_kit_version)
-
-        if self._is_empty(self.complete_sequences):
-            self.MissingRequiredField("complete_sequences")
-        if not isinstance(self.complete_sequences, CompleteSequences):
-            self.complete_sequences = CompleteSequences(self.complete_sequences)
-
-        if self._is_empty(self.physical_linkage):
-            self.MissingRequiredField("physical_linkage")
-        if not isinstance(self.physical_linkage, PhysicalLinkage):
-            self.physical_linkage = PhysicalLinkage(self.physical_linkage)
-
-        if self._is_empty(self.sequencing_run_id):
-            self.MissingRequiredField("sequencing_run_id")
-        if not isinstance(self.sequencing_run_id, str):
-            self.sequencing_run_id = str(self.sequencing_run_id)
-
-        if self._is_empty(self.total_reads_passing_qc_filter):
-            self.MissingRequiredField("total_reads_passing_qc_filter")
-        if not isinstance(self.total_reads_passing_qc_filter, int):
-            self.total_reads_passing_qc_filter = int(self.total_reads_passing_qc_filter)
-
-        if self._is_empty(self.sequencing_platform):
-            self.MissingRequiredField("sequencing_platform")
-        if not isinstance(self.sequencing_platform, str):
-            self.sequencing_platform = str(self.sequencing_platform)
-
-        if self._is_empty(self.sequencing_facility):
-            self.MissingRequiredField("sequencing_facility")
-        if not isinstance(self.sequencing_facility, str):
-            self.sequencing_facility = str(self.sequencing_facility)
-
-        if self._is_empty(self.sequencing_run_date):
-            self.MissingRequiredField("sequencing_run_date")
-        if not isinstance(self.sequencing_run_date, XSDDateTime):
-            self.sequencing_run_date = XSDDateTime(self.sequencing_run_date)
-
-        if self._is_empty(self.sequencing_kit):
-            self.MissingRequiredField("sequencing_kit")
-        if not isinstance(self.sequencing_kit, str):
-            self.sequencing_kit = str(self.sequencing_kit)
-
         if self.sample_processing_id is not None and not isinstance(self.sample_processing_id, str):
             self.sample_processing_id = str(self.sample_processing_id)
 
-        self._normalize_inlined_as_dict(slot_name="pcr_target", slot_type=PCRTarget, key_name="pcr_target_locus", keyed=False)
+        if self.sample_id is not None and not isinstance(self.sample_id, str):
+            self.sample_id = str(self.sample_id)
+
+        if self.sample_type is not None and not isinstance(self.sample_type, str):
+            self.sample_type = str(self.sample_type)
+
+        if self.anatomic_site is not None and not isinstance(self.anatomic_site, str):
+            self.anatomic_site = str(self.anatomic_site)
+
+        if self.disease_state_sample is not None and not isinstance(self.disease_state_sample, str):
+            self.disease_state_sample = str(self.disease_state_sample)
+
+        if self.collection_time_point_relative is not None and not isinstance(self.collection_time_point_relative, float):
+            self.collection_time_point_relative = float(self.collection_time_point_relative)
+
+        if self.collection_time_point_reference is not None and not isinstance(self.collection_time_point_reference, str):
+            self.collection_time_point_reference = str(self.collection_time_point_reference)
+
+        if self.biomaterial_provider is not None and not isinstance(self.biomaterial_provider, str):
+            self.biomaterial_provider = str(self.biomaterial_provider)
+
+        if self.tissue_processing is not None and not isinstance(self.tissue_processing, str):
+            self.tissue_processing = str(self.tissue_processing)
+
+        if self.cell_phenotype is not None and not isinstance(self.cell_phenotype, str):
+            self.cell_phenotype = str(self.cell_phenotype)
+
+        if self.single_cell is not None and not isinstance(self.single_cell, Bool):
+            self.single_cell = Bool(self.single_cell)
+
+        if self.cell_number is not None and not isinstance(self.cell_number, int):
+            self.cell_number = int(self.cell_number)
+
+        if self.cells_per_reaction is not None and not isinstance(self.cells_per_reaction, int):
+            self.cells_per_reaction = int(self.cells_per_reaction)
+
+        if self.cell_storage is not None and not isinstance(self.cell_storage, Bool):
+            self.cell_storage = Bool(self.cell_storage)
+
+        if self.cell_quality is not None and not isinstance(self.cell_quality, str):
+            self.cell_quality = str(self.cell_quality)
+
+        if self.cell_isolation is not None and not isinstance(self.cell_isolation, str):
+            self.cell_isolation = str(self.cell_isolation)
+
+        if self.cell_processing_protocol is not None and not isinstance(self.cell_processing_protocol, str):
+            self.cell_processing_protocol = str(self.cell_processing_protocol)
+
+        if self.template_class is not None and not isinstance(self.template_class, TemplateClass):
+            self.template_class = TemplateClass(self.template_class)
+
+        if self.template_quality is not None and not isinstance(self.template_quality, str):
+            self.template_quality = str(self.template_quality)
+
+        if self.template_amount is not None and not isinstance(self.template_amount, float):
+            self.template_amount = float(self.template_amount)
+
+        if self.library_generation_method is not None and not isinstance(self.library_generation_method, LibraryGenerationMethod):
+            self.library_generation_method = LibraryGenerationMethod(self.library_generation_method)
+
+        if self.library_generation_protocol is not None and not isinstance(self.library_generation_protocol, str):
+            self.library_generation_protocol = str(self.library_generation_protocol)
+
+        if self.library_generation_kit_version is not None and not isinstance(self.library_generation_kit_version, str):
+            self.library_generation_kit_version = str(self.library_generation_kit_version)
+
+        if not isinstance(self.pcr_target, list):
+            self.pcr_target = [self.pcr_target] if self.pcr_target is not None else []
+        self.pcr_target = [v if isinstance(v, PCRTarget) else PCRTarget(**as_dict(v)) for v in self.pcr_target]
+
+        if self.complete_sequences is not None and not isinstance(self.complete_sequences, CompleteSequences):
+            self.complete_sequences = CompleteSequences(self.complete_sequences)
+
+        if self.physical_linkage is not None and not isinstance(self.physical_linkage, PhysicalLinkage):
+            self.physical_linkage = PhysicalLinkage(self.physical_linkage)
+
+        if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
+            self.sequencing_run_id = str(self.sequencing_run_id)
+
+        if self.total_reads_passing_qc_filter is not None and not isinstance(self.total_reads_passing_qc_filter, int):
+            self.total_reads_passing_qc_filter = int(self.total_reads_passing_qc_filter)
+
+        if self.sequencing_platform is not None and not isinstance(self.sequencing_platform, str):
+            self.sequencing_platform = str(self.sequencing_platform)
+
+        if self.sequencing_facility is not None and not isinstance(self.sequencing_facility, str):
+            self.sequencing_facility = str(self.sequencing_facility)
+
+        if self.sequencing_run_date is not None and not isinstance(self.sequencing_run_date, XSDDateTime):
+            self.sequencing_run_date = XSDDateTime(self.sequencing_run_date)
+
+        if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
+            self.sequencing_kit = str(self.sequencing_kit)
 
         if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
             self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
@@ -4764,25 +4406,19 @@ class V1p5Acknowledgement(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Acknowledgement"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Acknowledgement
 
-    V1p5acknowledgement_id: str = None
-    V1p5name: str = None
-    V1p5institution_name: str = None
+    V1p5acknowledgement_id: Optional[str] = None
+    V1p5name: Optional[str] = None
+    V1p5institution_name: Optional[str] = None
     V1p5orcid_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5acknowledgement_id):
-            self.MissingRequiredField("V1p5acknowledgement_id")
-        if not isinstance(self.V1p5acknowledgement_id, str):
+        if self.V1p5acknowledgement_id is not None and not isinstance(self.V1p5acknowledgement_id, str):
             self.V1p5acknowledgement_id = str(self.V1p5acknowledgement_id)
 
-        if self._is_empty(self.V1p5name):
-            self.MissingRequiredField("V1p5name")
-        if not isinstance(self.V1p5name, str):
+        if self.V1p5name is not None and not isinstance(self.V1p5name, str):
             self.V1p5name = str(self.V1p5name)
 
-        if self._is_empty(self.V1p5institution_name):
-            self.MissingRequiredField("V1p5institution_name")
-        if not isinstance(self.V1p5institution_name, str):
+        if self.V1p5institution_name is not None and not isinstance(self.V1p5institution_name, str):
             self.V1p5institution_name = str(self.V1p5institution_name)
 
         if self.V1p5orcid_id is not None and not isinstance(self.V1p5orcid_id, str):
@@ -4800,53 +4436,41 @@ class V1p5RearrangedSequence(YAMLRoot):
     class_name: ClassVar[str] = "V1p5RearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5RearrangedSequence
 
-    V1p5sequence_id: str = None
-    V1p5sequence: str = None
-    V1p5derivation: Union[str, "V1p5Derivation"] = None
-    V1p5observation_type: Union[str, "V1p5ObservationType"] = None
-    V1p5repository_name: str = None
-    V1p5deposited_version: str = None
+    V1p5sequence_id: Optional[str] = None
+    V1p5sequence: Optional[str] = None
+    V1p5derivation: Optional[Union[str, "V1p5Derivation"]] = None
+    V1p5observation_type: Optional[Union[str, "V1p5ObservationType"]] = None
     V1p5curation: Optional[str] = None
+    V1p5repository_name: Optional[str] = None
     V1p5repository_ref: Optional[str] = None
+    V1p5deposited_version: Optional[str] = None
     V1p5sequence_start: Optional[int] = None
     V1p5sequence_end: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequence_id):
-            self.MissingRequiredField("V1p5sequence_id")
-        if not isinstance(self.V1p5sequence_id, str):
+        if self.V1p5sequence_id is not None and not isinstance(self.V1p5sequence_id, str):
             self.V1p5sequence_id = str(self.V1p5sequence_id)
 
-        if self._is_empty(self.V1p5sequence):
-            self.MissingRequiredField("V1p5sequence")
-        if not isinstance(self.V1p5sequence, str):
+        if self.V1p5sequence is not None and not isinstance(self.V1p5sequence, str):
             self.V1p5sequence = str(self.V1p5sequence)
 
-        if self._is_empty(self.V1p5derivation):
-            self.MissingRequiredField("V1p5derivation")
-        if not isinstance(self.V1p5derivation, V1p5Derivation):
+        if self.V1p5derivation is not None and not isinstance(self.V1p5derivation, V1p5Derivation):
             self.V1p5derivation = V1p5Derivation(self.V1p5derivation)
 
-        if self._is_empty(self.V1p5observation_type):
-            self.MissingRequiredField("V1p5observation_type")
-        if not isinstance(self.V1p5observation_type, V1p5ObservationType):
+        if self.V1p5observation_type is not None and not isinstance(self.V1p5observation_type, V1p5ObservationType):
             self.V1p5observation_type = V1p5ObservationType(self.V1p5observation_type)
-
-        if self._is_empty(self.V1p5repository_name):
-            self.MissingRequiredField("V1p5repository_name")
-        if not isinstance(self.V1p5repository_name, str):
-            self.V1p5repository_name = str(self.V1p5repository_name)
-
-        if self._is_empty(self.V1p5deposited_version):
-            self.MissingRequiredField("V1p5deposited_version")
-        if not isinstance(self.V1p5deposited_version, str):
-            self.V1p5deposited_version = str(self.V1p5deposited_version)
 
         if self.V1p5curation is not None and not isinstance(self.V1p5curation, str):
             self.V1p5curation = str(self.V1p5curation)
 
+        if self.V1p5repository_name is not None and not isinstance(self.V1p5repository_name, str):
+            self.V1p5repository_name = str(self.V1p5repository_name)
+
         if self.V1p5repository_ref is not None and not isinstance(self.V1p5repository_ref, str):
             self.V1p5repository_ref = str(self.V1p5repository_ref)
+
+        if self.V1p5deposited_version is not None and not isinstance(self.V1p5deposited_version, str):
+            self.V1p5deposited_version = str(self.V1p5deposited_version)
 
         if self.V1p5sequence_start is not None and not isinstance(self.V1p5sequence_start, int):
             self.V1p5sequence_start = int(self.V1p5sequence_start)
@@ -4866,61 +4490,47 @@ class V1p5UnrearrangedSequence(YAMLRoot):
     class_name: ClassVar[str] = "V1p5UnrearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5UnrearrangedSequence
 
-    V1p5sequence_id: str = None
-    V1p5sequence: str = None
-    V1p5repository_name: str = None
-    V1p5gff_seqid: str = None
-    V1p5gff_start: int = None
-    V1p5gff_end: int = None
-    V1p5strand: Union[str, "V1p5Strand"] = None
+    V1p5sequence_id: Optional[str] = None
+    V1p5sequence: Optional[str] = None
     V1p5curation: Optional[str] = None
+    V1p5repository_name: Optional[str] = None
     V1p5repository_ref: Optional[str] = None
     V1p5patch_no: Optional[str] = None
+    V1p5gff_seqid: Optional[str] = None
+    V1p5gff_start: Optional[int] = None
+    V1p5gff_end: Optional[int] = None
+    V1p5strand: Optional[Union[str, "V1p5Strand"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequence_id):
-            self.MissingRequiredField("V1p5sequence_id")
-        if not isinstance(self.V1p5sequence_id, str):
+        if self.V1p5sequence_id is not None and not isinstance(self.V1p5sequence_id, str):
             self.V1p5sequence_id = str(self.V1p5sequence_id)
 
-        if self._is_empty(self.V1p5sequence):
-            self.MissingRequiredField("V1p5sequence")
-        if not isinstance(self.V1p5sequence, str):
+        if self.V1p5sequence is not None and not isinstance(self.V1p5sequence, str):
             self.V1p5sequence = str(self.V1p5sequence)
-
-        if self._is_empty(self.V1p5repository_name):
-            self.MissingRequiredField("V1p5repository_name")
-        if not isinstance(self.V1p5repository_name, str):
-            self.V1p5repository_name = str(self.V1p5repository_name)
-
-        if self._is_empty(self.V1p5gff_seqid):
-            self.MissingRequiredField("V1p5gff_seqid")
-        if not isinstance(self.V1p5gff_seqid, str):
-            self.V1p5gff_seqid = str(self.V1p5gff_seqid)
-
-        if self._is_empty(self.V1p5gff_start):
-            self.MissingRequiredField("V1p5gff_start")
-        if not isinstance(self.V1p5gff_start, int):
-            self.V1p5gff_start = int(self.V1p5gff_start)
-
-        if self._is_empty(self.V1p5gff_end):
-            self.MissingRequiredField("V1p5gff_end")
-        if not isinstance(self.V1p5gff_end, int):
-            self.V1p5gff_end = int(self.V1p5gff_end)
-
-        if self._is_empty(self.V1p5strand):
-            self.MissingRequiredField("V1p5strand")
-        if not isinstance(self.V1p5strand, V1p5Strand):
-            self.V1p5strand = V1p5Strand(self.V1p5strand)
 
         if self.V1p5curation is not None and not isinstance(self.V1p5curation, str):
             self.V1p5curation = str(self.V1p5curation)
+
+        if self.V1p5repository_name is not None and not isinstance(self.V1p5repository_name, str):
+            self.V1p5repository_name = str(self.V1p5repository_name)
 
         if self.V1p5repository_ref is not None and not isinstance(self.V1p5repository_ref, str):
             self.V1p5repository_ref = str(self.V1p5repository_ref)
 
         if self.V1p5patch_no is not None and not isinstance(self.V1p5patch_no, str):
             self.V1p5patch_no = str(self.V1p5patch_no)
+
+        if self.V1p5gff_seqid is not None and not isinstance(self.V1p5gff_seqid, str):
+            self.V1p5gff_seqid = str(self.V1p5gff_seqid)
+
+        if self.V1p5gff_start is not None and not isinstance(self.V1p5gff_start, int):
+            self.V1p5gff_start = int(self.V1p5gff_start)
+
+        if self.V1p5gff_end is not None and not isinstance(self.V1p5gff_end, int):
+            self.V1p5gff_end = int(self.V1p5gff_end)
+
+        if self.V1p5strand is not None and not isinstance(self.V1p5strand, V1p5Strand):
+            self.V1p5strand = V1p5Strand(self.V1p5strand)
 
         super().__post_init__(**kwargs)
 
@@ -4934,8 +4544,8 @@ class V1p5SequenceDelineationV(YAMLRoot):
     class_name: ClassVar[str] = "V1p5SequenceDelineationV"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5SequenceDelineationV
 
-    V1p5sequence_delineation_id: str = None
-    V1p5delineation_scheme: str = None
+    V1p5sequence_delineation_id: Optional[str] = None
+    V1p5delineation_scheme: Optional[str] = None
     V1p5unaligned_sequence: Optional[str] = None
     V1p5aligned_sequence: Optional[str] = None
     V1p5fwr1_start: Optional[int] = None
@@ -4952,14 +4562,10 @@ class V1p5SequenceDelineationV(YAMLRoot):
     V1p5alignment_labels: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequence_delineation_id):
-            self.MissingRequiredField("V1p5sequence_delineation_id")
-        if not isinstance(self.V1p5sequence_delineation_id, str):
+        if self.V1p5sequence_delineation_id is not None and not isinstance(self.V1p5sequence_delineation_id, str):
             self.V1p5sequence_delineation_id = str(self.V1p5sequence_delineation_id)
 
-        if self._is_empty(self.V1p5delineation_scheme):
-            self.MissingRequiredField("V1p5delineation_scheme")
-        if not isinstance(self.V1p5delineation_scheme, str):
+        if self.V1p5delineation_scheme is not None and not isinstance(self.V1p5delineation_scheme, str):
             self.V1p5delineation_scheme = str(self.V1p5delineation_scheme)
 
         if self.V1p5unaligned_sequence is not None and not isinstance(self.V1p5unaligned_sequence, str):
@@ -5017,24 +4623,24 @@ class V1p5AlleleDescription(YAMLRoot):
     class_name: ClassVar[str] = "V1p5AlleleDescription"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5AlleleDescription
 
-    V1p5allele_description_id: str = None
-    V1p5maintainer: str = None
-    V1p5lab_address: str = None
-    V1p5release_version: str = None
-    V1p5release_date: Union[str, XSDDateTime] = None
-    V1p5release_description: str = None
-    V1p5sequence: str = None
-    V1p5coding_sequence: str = None
-    V1p5sequence_type: Union[str, "V1p5SequenceType"] = None
-    V1p5functional: Union[bool, Bool] = None
-    V1p5inference_type: Union[str, "V1p5InferenceType"] = None
-    V1p5species: Union[str, "V1p5Species"] = None
+    V1p5allele_description_id: Optional[str] = None
     V1p5allele_description_ref: Optional[str] = None
+    V1p5maintainer: Optional[str] = None
     V1p5acknowledgements: Optional[Union[Union[dict, V1p5Acknowledgement], List[Union[dict, V1p5Acknowledgement]]]] = empty_list()
+    V1p5lab_address: Optional[str] = None
+    V1p5release_version: Optional[str] = None
+    V1p5release_date: Optional[Union[str, XSDDateTime]] = None
+    V1p5release_description: Optional[str] = None
     V1p5label: Optional[str] = None
+    V1p5sequence: Optional[str] = None
+    V1p5coding_sequence: Optional[str] = None
     V1p5aliases: Optional[Union[str, List[str]]] = empty_list()
     V1p5locus: Optional[Union[str, "V1p5Locus"]] = None
     V1p5chromosome: Optional[int] = None
+    V1p5sequence_type: Optional[Union[str, "V1p5SequenceType"]] = None
+    V1p5functional: Optional[Union[bool, Bool]] = None
+    V1p5inference_type: Optional[Union[str, "V1p5InferenceType"]] = None
+    V1p5species: Optional[Union[str, "V1p5Species"]] = None
     V1p5species_subgroup: Optional[str] = None
     V1p5species_subgroup_type: Optional[Union[str, "V1p5SpeciesSubgroupType"]] = None
     V1p5status: Optional[Union[str, "V1p5Status"]] = None
@@ -5070,68 +4676,39 @@ class V1p5AlleleDescription(YAMLRoot):
     V1p5curational_tags: Optional[Union[Union[str, "V1p5CurationalTags"], List[Union[str, "V1p5CurationalTags"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5allele_description_id):
-            self.MissingRequiredField("V1p5allele_description_id")
-        if not isinstance(self.V1p5allele_description_id, str):
+        if self.V1p5allele_description_id is not None and not isinstance(self.V1p5allele_description_id, str):
             self.V1p5allele_description_id = str(self.V1p5allele_description_id)
-
-        if self._is_empty(self.V1p5maintainer):
-            self.MissingRequiredField("V1p5maintainer")
-        if not isinstance(self.V1p5maintainer, str):
-            self.V1p5maintainer = str(self.V1p5maintainer)
-
-        if self._is_empty(self.V1p5lab_address):
-            self.MissingRequiredField("V1p5lab_address")
-        if not isinstance(self.V1p5lab_address, str):
-            self.V1p5lab_address = str(self.V1p5lab_address)
-
-        if self._is_empty(self.V1p5release_version):
-            self.MissingRequiredField("V1p5release_version")
-        if not isinstance(self.V1p5release_version, str):
-            self.V1p5release_version = str(self.V1p5release_version)
-
-        if self._is_empty(self.V1p5release_date):
-            self.MissingRequiredField("V1p5release_date")
-        if not isinstance(self.V1p5release_date, XSDDateTime):
-            self.V1p5release_date = XSDDateTime(self.V1p5release_date)
-
-        if self._is_empty(self.V1p5release_description):
-            self.MissingRequiredField("V1p5release_description")
-        if not isinstance(self.V1p5release_description, str):
-            self.V1p5release_description = str(self.V1p5release_description)
-
-        if self._is_empty(self.V1p5sequence):
-            self.MissingRequiredField("V1p5sequence")
-        if not isinstance(self.V1p5sequence, str):
-            self.V1p5sequence = str(self.V1p5sequence)
-
-        if self._is_empty(self.V1p5coding_sequence):
-            self.MissingRequiredField("V1p5coding_sequence")
-        if not isinstance(self.V1p5coding_sequence, str):
-            self.V1p5coding_sequence = str(self.V1p5coding_sequence)
-
-        if self._is_empty(self.V1p5sequence_type):
-            self.MissingRequiredField("V1p5sequence_type")
-        if not isinstance(self.V1p5sequence_type, V1p5SequenceType):
-            self.V1p5sequence_type = V1p5SequenceType(self.V1p5sequence_type)
-
-        if self._is_empty(self.V1p5functional):
-            self.MissingRequiredField("V1p5functional")
-        if not isinstance(self.V1p5functional, Bool):
-            self.V1p5functional = Bool(self.V1p5functional)
-
-        if self._is_empty(self.V1p5inference_type):
-            self.MissingRequiredField("V1p5inference_type")
-        if not isinstance(self.V1p5inference_type, V1p5InferenceType):
-            self.V1p5inference_type = V1p5InferenceType(self.V1p5inference_type)
 
         if self.V1p5allele_description_ref is not None and not isinstance(self.V1p5allele_description_ref, str):
             self.V1p5allele_description_ref = str(self.V1p5allele_description_ref)
 
-        self._normalize_inlined_as_dict(slot_name="V1p5acknowledgements", slot_type=V1p5Acknowledgement, key_name="V1p5acknowledgement_id", keyed=False)
+        if self.V1p5maintainer is not None and not isinstance(self.V1p5maintainer, str):
+            self.V1p5maintainer = str(self.V1p5maintainer)
+
+        if not isinstance(self.V1p5acknowledgements, list):
+            self.V1p5acknowledgements = [self.V1p5acknowledgements] if self.V1p5acknowledgements is not None else []
+        self.V1p5acknowledgements = [v if isinstance(v, V1p5Acknowledgement) else V1p5Acknowledgement(**as_dict(v)) for v in self.V1p5acknowledgements]
+
+        if self.V1p5lab_address is not None and not isinstance(self.V1p5lab_address, str):
+            self.V1p5lab_address = str(self.V1p5lab_address)
+
+        if self.V1p5release_version is not None and not isinstance(self.V1p5release_version, str):
+            self.V1p5release_version = str(self.V1p5release_version)
+
+        if self.V1p5release_date is not None and not isinstance(self.V1p5release_date, XSDDateTime):
+            self.V1p5release_date = XSDDateTime(self.V1p5release_date)
+
+        if self.V1p5release_description is not None and not isinstance(self.V1p5release_description, str):
+            self.V1p5release_description = str(self.V1p5release_description)
 
         if self.V1p5label is not None and not isinstance(self.V1p5label, str):
             self.V1p5label = str(self.V1p5label)
+
+        if self.V1p5sequence is not None and not isinstance(self.V1p5sequence, str):
+            self.V1p5sequence = str(self.V1p5sequence)
+
+        if self.V1p5coding_sequence is not None and not isinstance(self.V1p5coding_sequence, str):
+            self.V1p5coding_sequence = str(self.V1p5coding_sequence)
 
         if not isinstance(self.V1p5aliases, list):
             self.V1p5aliases = [self.V1p5aliases] if self.V1p5aliases is not None else []
@@ -5142,6 +4719,15 @@ class V1p5AlleleDescription(YAMLRoot):
 
         if self.V1p5chromosome is not None and not isinstance(self.V1p5chromosome, int):
             self.V1p5chromosome = int(self.V1p5chromosome)
+
+        if self.V1p5sequence_type is not None and not isinstance(self.V1p5sequence_type, V1p5SequenceType):
+            self.V1p5sequence_type = V1p5SequenceType(self.V1p5sequence_type)
+
+        if self.V1p5functional is not None and not isinstance(self.V1p5functional, Bool):
+            self.V1p5functional = Bool(self.V1p5functional)
+
+        if self.V1p5inference_type is not None and not isinstance(self.V1p5inference_type, V1p5InferenceType):
+            self.V1p5inference_type = V1p5InferenceType(self.V1p5inference_type)
 
         if self.V1p5species_subgroup is not None and not isinstance(self.V1p5species_subgroup, str):
             self.V1p5species_subgroup = str(self.V1p5species_subgroup)
@@ -5224,11 +4810,17 @@ class V1p5AlleleDescription(YAMLRoot):
         if self.V1p5j_donor_splice is not None and not isinstance(self.V1p5j_donor_splice, int):
             self.V1p5j_donor_splice = int(self.V1p5j_donor_splice)
 
-        self._normalize_inlined_as_dict(slot_name="V1p5v_gene_delineations", slot_type=V1p5SequenceDelineationV, key_name="V1p5sequence_delineation_id", keyed=False)
+        if not isinstance(self.V1p5v_gene_delineations, list):
+            self.V1p5v_gene_delineations = [self.V1p5v_gene_delineations] if self.V1p5v_gene_delineations is not None else []
+        self.V1p5v_gene_delineations = [v if isinstance(v, V1p5SequenceDelineationV) else V1p5SequenceDelineationV(**as_dict(v)) for v in self.V1p5v_gene_delineations]
 
-        self._normalize_inlined_as_dict(slot_name="V1p5unrearranged_support", slot_type=V1p5UnrearrangedSequence, key_name="V1p5sequence_id", keyed=False)
+        if not isinstance(self.V1p5unrearranged_support, list):
+            self.V1p5unrearranged_support = [self.V1p5unrearranged_support] if self.V1p5unrearranged_support is not None else []
+        self.V1p5unrearranged_support = [v if isinstance(v, V1p5UnrearrangedSequence) else V1p5UnrearrangedSequence(**as_dict(v)) for v in self.V1p5unrearranged_support]
 
-        self._normalize_inlined_as_dict(slot_name="V1p5rearranged_support", slot_type=V1p5RearrangedSequence, key_name="V1p5sequence_id", keyed=False)
+        if not isinstance(self.V1p5rearranged_support, list):
+            self.V1p5rearranged_support = [self.V1p5rearranged_support] if self.V1p5rearranged_support is not None else []
+        self.V1p5rearranged_support = [v if isinstance(v, V1p5RearrangedSequence) else V1p5RearrangedSequence(**as_dict(v)) for v in self.V1p5rearranged_support]
 
         if not isinstance(self.V1p5paralogs, list):
             self.V1p5paralogs = [self.V1p5paralogs] if self.V1p5paralogs is not None else []
@@ -5253,70 +4845,52 @@ class V1p5GermlineSet(YAMLRoot):
     class_name: ClassVar[str] = "V1p5GermlineSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5GermlineSet
 
-    V1p5germline_set_id: str = None
-    V1p5author: str = None
-    V1p5lab_name: str = None
-    V1p5lab_address: str = None
-    V1p5release_version: str = None
-    V1p5release_description: str = None
-    V1p5release_date: Union[str, XSDDateTime] = None
-    V1p5germline_set_name: str = None
-    V1p5species: Union[str, "V1p5Species"] = None
-    V1p5allele_descriptions: Union[Union[dict, V1p5AlleleDescription], List[Union[dict, V1p5AlleleDescription]]] = None
+    V1p5germline_set_id: Optional[str] = None
+    V1p5author: Optional[str] = None
+    V1p5lab_name: Optional[str] = None
+    V1p5lab_address: Optional[str] = None
     V1p5acknowledgements: Optional[Union[Union[dict, V1p5Acknowledgement], List[Union[dict, V1p5Acknowledgement]]]] = empty_list()
+    V1p5release_version: Optional[str] = None
+    V1p5release_description: Optional[str] = None
+    V1p5release_date: Optional[Union[str, XSDDateTime]] = None
+    V1p5germline_set_name: Optional[str] = None
     V1p5germline_set_ref: Optional[str] = None
     V1p5pub_ids: Optional[str] = None
+    V1p5species: Optional[Union[str, "V1p5Species"]] = None
     V1p5species_subgroup: Optional[str] = None
     V1p5species_subgroup_type: Optional[Union[str, "V1p5SpeciesSubgroupType"]] = None
     V1p5locus: Optional[Union[str, "V1p5Locus"]] = None
+    V1p5allele_descriptions: Optional[Union[Union[dict, V1p5AlleleDescription], List[Union[dict, V1p5AlleleDescription]]]] = empty_list()
     V1p5curation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5germline_set_id):
-            self.MissingRequiredField("V1p5germline_set_id")
-        if not isinstance(self.V1p5germline_set_id, str):
+        if self.V1p5germline_set_id is not None and not isinstance(self.V1p5germline_set_id, str):
             self.V1p5germline_set_id = str(self.V1p5germline_set_id)
 
-        if self._is_empty(self.V1p5author):
-            self.MissingRequiredField("V1p5author")
-        if not isinstance(self.V1p5author, str):
+        if self.V1p5author is not None and not isinstance(self.V1p5author, str):
             self.V1p5author = str(self.V1p5author)
 
-        if self._is_empty(self.V1p5lab_name):
-            self.MissingRequiredField("V1p5lab_name")
-        if not isinstance(self.V1p5lab_name, str):
+        if self.V1p5lab_name is not None and not isinstance(self.V1p5lab_name, str):
             self.V1p5lab_name = str(self.V1p5lab_name)
 
-        if self._is_empty(self.V1p5lab_address):
-            self.MissingRequiredField("V1p5lab_address")
-        if not isinstance(self.V1p5lab_address, str):
+        if self.V1p5lab_address is not None and not isinstance(self.V1p5lab_address, str):
             self.V1p5lab_address = str(self.V1p5lab_address)
 
-        if self._is_empty(self.V1p5release_version):
-            self.MissingRequiredField("V1p5release_version")
-        if not isinstance(self.V1p5release_version, str):
+        if not isinstance(self.V1p5acknowledgements, list):
+            self.V1p5acknowledgements = [self.V1p5acknowledgements] if self.V1p5acknowledgements is not None else []
+        self.V1p5acknowledgements = [v if isinstance(v, V1p5Acknowledgement) else V1p5Acknowledgement(**as_dict(v)) for v in self.V1p5acknowledgements]
+
+        if self.V1p5release_version is not None and not isinstance(self.V1p5release_version, str):
             self.V1p5release_version = str(self.V1p5release_version)
 
-        if self._is_empty(self.V1p5release_description):
-            self.MissingRequiredField("V1p5release_description")
-        if not isinstance(self.V1p5release_description, str):
+        if self.V1p5release_description is not None and not isinstance(self.V1p5release_description, str):
             self.V1p5release_description = str(self.V1p5release_description)
 
-        if self._is_empty(self.V1p5release_date):
-            self.MissingRequiredField("V1p5release_date")
-        if not isinstance(self.V1p5release_date, XSDDateTime):
+        if self.V1p5release_date is not None and not isinstance(self.V1p5release_date, XSDDateTime):
             self.V1p5release_date = XSDDateTime(self.V1p5release_date)
 
-        if self._is_empty(self.V1p5germline_set_name):
-            self.MissingRequiredField("V1p5germline_set_name")
-        if not isinstance(self.V1p5germline_set_name, str):
+        if self.V1p5germline_set_name is not None and not isinstance(self.V1p5germline_set_name, str):
             self.V1p5germline_set_name = str(self.V1p5germline_set_name)
-
-        if self._is_empty(self.V1p5allele_descriptions):
-            self.MissingRequiredField("V1p5allele_descriptions")
-        self._normalize_inlined_as_dict(slot_name="V1p5allele_descriptions", slot_type=V1p5AlleleDescription, key_name="V1p5allele_description_id", keyed=False)
-
-        self._normalize_inlined_as_dict(slot_name="V1p5acknowledgements", slot_type=V1p5Acknowledgement, key_name="V1p5acknowledgement_id", keyed=False)
 
         if self.V1p5germline_set_ref is not None and not isinstance(self.V1p5germline_set_ref, str):
             self.V1p5germline_set_ref = str(self.V1p5germline_set_ref)
@@ -5333,6 +4907,10 @@ class V1p5GermlineSet(YAMLRoot):
         if self.V1p5locus is not None and not isinstance(self.V1p5locus, V1p5Locus):
             self.V1p5locus = V1p5Locus(self.V1p5locus)
 
+        if not isinstance(self.V1p5allele_descriptions, list):
+            self.V1p5allele_descriptions = [self.V1p5allele_descriptions] if self.V1p5allele_descriptions is not None else []
+        self.V1p5allele_descriptions = [v if isinstance(v, V1p5AlleleDescription) else V1p5AlleleDescription(**as_dict(v)) for v in self.V1p5allele_descriptions]
+
         if self.V1p5curation is not None and not isinstance(self.V1p5curation, str):
             self.V1p5curation = str(self.V1p5curation)
 
@@ -5348,16 +4926,16 @@ class V1p5GenotypeSet(YAMLRoot):
     class_name: ClassVar[str] = "V1p5GenotypeSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5GenotypeSet
 
-    V1p5receptor_genotype_set_id: str = None
+    V1p5receptor_genotype_set_id: Optional[str] = None
     V1p5genotype_class_list: Optional[Union[Union[dict, "V1p5Genotype"], List[Union[dict, "V1p5Genotype"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5receptor_genotype_set_id):
-            self.MissingRequiredField("V1p5receptor_genotype_set_id")
-        if not isinstance(self.V1p5receptor_genotype_set_id, str):
+        if self.V1p5receptor_genotype_set_id is not None and not isinstance(self.V1p5receptor_genotype_set_id, str):
             self.V1p5receptor_genotype_set_id = str(self.V1p5receptor_genotype_set_id)
 
-        self._normalize_inlined_as_dict(slot_name="V1p5genotype_class_list", slot_type=V1p5Genotype, key_name="V1p5receptor_genotype_id", keyed=False)
+        if not isinstance(self.V1p5genotype_class_list, list):
+            self.V1p5genotype_class_list = [self.V1p5genotype_class_list] if self.V1p5genotype_class_list is not None else []
+        self.V1p5genotype_class_list = [v if isinstance(v, V1p5Genotype) else V1p5Genotype(**as_dict(v)) for v in self.V1p5genotype_class_list]
 
         super().__post_init__(**kwargs)
 
@@ -5371,7 +4949,7 @@ class V1p5Genotype(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Genotype"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Genotype
 
-    V1p5receptor_genotype_id: str = None
+    V1p5receptor_genotype_id: Optional[str] = None
     V1p5locus: Optional[Union[str, "V1p5Locus"]] = None
     V1p5documented_alleles: Optional[Union[Union[dict, "V1p5DocumentedAllele"], List[Union[dict, "V1p5DocumentedAllele"]]]] = empty_list()
     V1p5undocumented_alleles: Optional[Union[Union[dict, "V1p5UndocumentedAllele"], List[Union[dict, "V1p5UndocumentedAllele"]]]] = empty_list()
@@ -5379,9 +4957,7 @@ class V1p5Genotype(YAMLRoot):
     V1p5inference_process: Optional[Union[str, "V1p5InferenceProcess"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5receptor_genotype_id):
-            self.MissingRequiredField("V1p5receptor_genotype_id")
-        if not isinstance(self.V1p5receptor_genotype_id, str):
+        if self.V1p5receptor_genotype_id is not None and not isinstance(self.V1p5receptor_genotype_id, str):
             self.V1p5receptor_genotype_id = str(self.V1p5receptor_genotype_id)
 
         if self.V1p5locus is not None and not isinstance(self.V1p5locus, V1p5Locus):
@@ -5391,7 +4967,9 @@ class V1p5Genotype(YAMLRoot):
             self.V1p5documented_alleles = [self.V1p5documented_alleles] if self.V1p5documented_alleles is not None else []
         self.V1p5documented_alleles = [v if isinstance(v, V1p5DocumentedAllele) else V1p5DocumentedAllele(**as_dict(v)) for v in self.V1p5documented_alleles]
 
-        self._normalize_inlined_as_dict(slot_name="V1p5undocumented_alleles", slot_type=V1p5UndocumentedAllele, key_name="V1p5allele_name", keyed=False)
+        if not isinstance(self.V1p5undocumented_alleles, list):
+            self.V1p5undocumented_alleles = [self.V1p5undocumented_alleles] if self.V1p5undocumented_alleles is not None else []
+        self.V1p5undocumented_alleles = [v if isinstance(v, V1p5UndocumentedAllele) else V1p5UndocumentedAllele(**as_dict(v)) for v in self.V1p5undocumented_alleles]
 
         if not isinstance(self.V1p5deleted_genes, list):
             self.V1p5deleted_genes = [self.V1p5deleted_genes] if self.V1p5deleted_genes is not None else []
@@ -5438,19 +5016,15 @@ class V1p5UndocumentedAllele(YAMLRoot):
     class_name: ClassVar[str] = "V1p5UndocumentedAllele"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5UndocumentedAllele
 
-    V1p5allele_name: str = None
-    V1p5sequence: str = None
+    V1p5allele_name: Optional[str] = None
+    V1p5sequence: Optional[str] = None
     V1p5phasing: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5allele_name):
-            self.MissingRequiredField("V1p5allele_name")
-        if not isinstance(self.V1p5allele_name, str):
+        if self.V1p5allele_name is not None and not isinstance(self.V1p5allele_name, str):
             self.V1p5allele_name = str(self.V1p5allele_name)
 
-        if self._is_empty(self.V1p5sequence):
-            self.MissingRequiredField("V1p5sequence")
-        if not isinstance(self.V1p5sequence, str):
+        if self.V1p5sequence is not None and not isinstance(self.V1p5sequence, str):
             self.V1p5sequence = str(self.V1p5sequence)
 
         if self.V1p5phasing is not None and not isinstance(self.V1p5phasing, int):
@@ -5494,18 +5068,16 @@ class V1p5MHCGenotypeSet(YAMLRoot):
     class_name: ClassVar[str] = "V1p5MHCGenotypeSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5MHCGenotypeSet
 
-    V1p5mhc_genotype_set_id: str = None
-    V1p5mhc_genotype_list: Union[Union[dict, "V1p5MHCGenotype"], List[Union[dict, "V1p5MHCGenotype"]]] = None
+    V1p5mhc_genotype_set_id: Optional[str] = None
+    V1p5mhc_genotype_list: Optional[Union[Union[dict, "V1p5MHCGenotype"], List[Union[dict, "V1p5MHCGenotype"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5mhc_genotype_set_id):
-            self.MissingRequiredField("V1p5mhc_genotype_set_id")
-        if not isinstance(self.V1p5mhc_genotype_set_id, str):
+        if self.V1p5mhc_genotype_set_id is not None and not isinstance(self.V1p5mhc_genotype_set_id, str):
             self.V1p5mhc_genotype_set_id = str(self.V1p5mhc_genotype_set_id)
 
-        if self._is_empty(self.V1p5mhc_genotype_list):
-            self.MissingRequiredField("V1p5mhc_genotype_list")
-        self._normalize_inlined_as_dict(slot_name="V1p5mhc_genotype_list", slot_type=V1p5MHCGenotype, key_name="V1p5mhc_genotype_id", keyed=False)
+        if not isinstance(self.V1p5mhc_genotype_list, list):
+            self.V1p5mhc_genotype_list = [self.V1p5mhc_genotype_list] if self.V1p5mhc_genotype_list is not None else []
+        self.V1p5mhc_genotype_list = [v if isinstance(v, V1p5MHCGenotype) else V1p5MHCGenotype(**as_dict(v)) for v in self.V1p5mhc_genotype_list]
 
         super().__post_init__(**kwargs)
 
@@ -5519,25 +5091,21 @@ class V1p5MHCGenotype(YAMLRoot):
     class_name: ClassVar[str] = "V1p5MHCGenotype"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5MHCGenotype
 
-    V1p5mhc_genotype_id: str = None
-    V1p5mhc_alleles: Union[Union[dict, "V1p5MHCAllele"], List[Union[dict, "V1p5MHCAllele"]]] = None
+    V1p5mhc_genotype_id: Optional[str] = None
     V1p5mhc_class: Optional[Union[str, "V1p5MhcClass"]] = None
+    V1p5mhc_alleles: Optional[Union[Union[dict, "V1p5MHCAllele"], List[Union[dict, "V1p5MHCAllele"]]]] = empty_list()
     V1p5mhc_genotyping_method: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5mhc_genotype_id):
-            self.MissingRequiredField("V1p5mhc_genotype_id")
-        if not isinstance(self.V1p5mhc_genotype_id, str):
+        if self.V1p5mhc_genotype_id is not None and not isinstance(self.V1p5mhc_genotype_id, str):
             self.V1p5mhc_genotype_id = str(self.V1p5mhc_genotype_id)
-
-        if self._is_empty(self.V1p5mhc_alleles):
-            self.MissingRequiredField("V1p5mhc_alleles")
-        if not isinstance(self.V1p5mhc_alleles, list):
-            self.V1p5mhc_alleles = [self.V1p5mhc_alleles] if self.V1p5mhc_alleles is not None else []
-        self.V1p5mhc_alleles = [v if isinstance(v, V1p5MHCAllele) else V1p5MHCAllele(**as_dict(v)) for v in self.V1p5mhc_alleles]
 
         if self.V1p5mhc_class is not None and not isinstance(self.V1p5mhc_class, V1p5MhcClass):
             self.V1p5mhc_class = V1p5MhcClass(self.V1p5mhc_class)
+
+        if not isinstance(self.V1p5mhc_alleles, list):
+            self.V1p5mhc_alleles = [self.V1p5mhc_alleles] if self.V1p5mhc_alleles is not None else []
+        self.V1p5mhc_alleles = [v if isinstance(v, V1p5MHCAllele) else V1p5MHCAllele(**as_dict(v)) for v in self.V1p5mhc_alleles]
 
         if self.V1p5mhc_genotyping_method is not None and not isinstance(self.V1p5mhc_genotyping_method, str):
             self.V1p5mhc_genotyping_method = str(self.V1p5mhc_genotyping_method)
@@ -5599,77 +5167,59 @@ class V1p5Study(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Study"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Study
 
-    V1p5study_id: str = None
-    V1p5study_title: str = None
-    V1p5study_type: Union[str, "V1p5StudyType"] = None
-    V1p5inclusion_exclusion_criteria: str = None
-    V1p5grants: str = None
-    V1p5collected_by: str = None
-    V1p5lab_name: str = None
-    V1p5lab_address: str = None
-    V1p5submitted_by: str = None
-    V1p5keywords_study: Union[Union[str, "V1p5KeywordsStudy"], List[Union[str, "V1p5KeywordsStudy"]]] = None
+    V1p5study_id: Optional[str] = None
+    V1p5study_title: Optional[str] = None
+    V1p5study_type: Optional[Union[str, "V1p5StudyType"]] = None
     V1p5study_description: Optional[str] = None
+    V1p5inclusion_exclusion_criteria: Optional[str] = None
+    V1p5grants: Optional[str] = None
     V1p5study_contact: Optional[str] = None
+    V1p5collected_by: Optional[str] = None
+    V1p5lab_name: Optional[str] = None
+    V1p5lab_address: Optional[str] = None
+    V1p5submitted_by: Optional[str] = None
     V1p5pub_ids: Optional[str] = None
+    V1p5keywords_study: Optional[Union[Union[str, "V1p5KeywordsStudy"], List[Union[str, "V1p5KeywordsStudy"]]]] = empty_list()
     V1p5adc_publish_date: Optional[Union[str, XSDDateTime]] = None
     V1p5adc_update_date: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5study_id):
-            self.MissingRequiredField("V1p5study_id")
-        if not isinstance(self.V1p5study_id, str):
+        if self.V1p5study_id is not None and not isinstance(self.V1p5study_id, str):
             self.V1p5study_id = str(self.V1p5study_id)
 
-        if self._is_empty(self.V1p5study_title):
-            self.MissingRequiredField("V1p5study_title")
-        if not isinstance(self.V1p5study_title, str):
+        if self.V1p5study_title is not None and not isinstance(self.V1p5study_title, str):
             self.V1p5study_title = str(self.V1p5study_title)
-
-        if self._is_empty(self.V1p5inclusion_exclusion_criteria):
-            self.MissingRequiredField("V1p5inclusion_exclusion_criteria")
-        if not isinstance(self.V1p5inclusion_exclusion_criteria, str):
-            self.V1p5inclusion_exclusion_criteria = str(self.V1p5inclusion_exclusion_criteria)
-
-        if self._is_empty(self.V1p5grants):
-            self.MissingRequiredField("V1p5grants")
-        if not isinstance(self.V1p5grants, str):
-            self.V1p5grants = str(self.V1p5grants)
-
-        if self._is_empty(self.V1p5collected_by):
-            self.MissingRequiredField("V1p5collected_by")
-        if not isinstance(self.V1p5collected_by, str):
-            self.V1p5collected_by = str(self.V1p5collected_by)
-
-        if self._is_empty(self.V1p5lab_name):
-            self.MissingRequiredField("V1p5lab_name")
-        if not isinstance(self.V1p5lab_name, str):
-            self.V1p5lab_name = str(self.V1p5lab_name)
-
-        if self._is_empty(self.V1p5lab_address):
-            self.MissingRequiredField("V1p5lab_address")
-        if not isinstance(self.V1p5lab_address, str):
-            self.V1p5lab_address = str(self.V1p5lab_address)
-
-        if self._is_empty(self.V1p5submitted_by):
-            self.MissingRequiredField("V1p5submitted_by")
-        if not isinstance(self.V1p5submitted_by, str):
-            self.V1p5submitted_by = str(self.V1p5submitted_by)
-
-        if self._is_empty(self.V1p5keywords_study):
-            self.MissingRequiredField("V1p5keywords_study")
-        if not isinstance(self.V1p5keywords_study, list):
-            self.V1p5keywords_study = [self.V1p5keywords_study] if self.V1p5keywords_study is not None else []
-        self.V1p5keywords_study = [v if isinstance(v, V1p5KeywordsStudy) else V1p5KeywordsStudy(v) for v in self.V1p5keywords_study]
 
         if self.V1p5study_description is not None and not isinstance(self.V1p5study_description, str):
             self.V1p5study_description = str(self.V1p5study_description)
 
+        if self.V1p5inclusion_exclusion_criteria is not None and not isinstance(self.V1p5inclusion_exclusion_criteria, str):
+            self.V1p5inclusion_exclusion_criteria = str(self.V1p5inclusion_exclusion_criteria)
+
+        if self.V1p5grants is not None and not isinstance(self.V1p5grants, str):
+            self.V1p5grants = str(self.V1p5grants)
+
         if self.V1p5study_contact is not None and not isinstance(self.V1p5study_contact, str):
             self.V1p5study_contact = str(self.V1p5study_contact)
 
+        if self.V1p5collected_by is not None and not isinstance(self.V1p5collected_by, str):
+            self.V1p5collected_by = str(self.V1p5collected_by)
+
+        if self.V1p5lab_name is not None and not isinstance(self.V1p5lab_name, str):
+            self.V1p5lab_name = str(self.V1p5lab_name)
+
+        if self.V1p5lab_address is not None and not isinstance(self.V1p5lab_address, str):
+            self.V1p5lab_address = str(self.V1p5lab_address)
+
+        if self.V1p5submitted_by is not None and not isinstance(self.V1p5submitted_by, str):
+            self.V1p5submitted_by = str(self.V1p5submitted_by)
+
         if self.V1p5pub_ids is not None and not isinstance(self.V1p5pub_ids, str):
             self.V1p5pub_ids = str(self.V1p5pub_ids)
+
+        if not isinstance(self.V1p5keywords_study, list):
+            self.V1p5keywords_study = [self.V1p5keywords_study] if self.V1p5keywords_study is not None else []
+        self.V1p5keywords_study = [v if isinstance(v, V1p5KeywordsStudy) else V1p5KeywordsStudy(v) for v in self.V1p5keywords_study]
 
         if self.V1p5adc_publish_date is not None and not isinstance(self.V1p5adc_publish_date, XSDDateTime):
             self.V1p5adc_publish_date = XSDDateTime(self.V1p5adc_publish_date)
@@ -5689,85 +5239,63 @@ class V1p5Subject(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Subject"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Subject
 
-    V1p5subject_id: str = None
-    V1p5synthetic: Union[bool, Bool] = None
-    V1p5species: Union[str, "V1p5Species"] = None
-    V1p5sex: Union[str, "V1p5Sex"] = None
-    V1p5age_min: float = None
-    V1p5age_max: float = None
-    V1p5age_unit: Union[str, "V1p5AgeUnit"] = None
-    V1p5age_event: str = None
-    V1p5ancestry_population: str = None
-    V1p5ethnicity: str = None
-    V1p5race: str = None
-    V1p5strain_name: str = None
-    V1p5linked_subjects: str = None
-    V1p5link_type: str = None
+    V1p5subject_id: Optional[str] = None
+    V1p5synthetic: Optional[Union[bool, Bool]] = None
+    V1p5species: Optional[Union[str, "V1p5Species"]] = None
+    V1p5sex: Optional[Union[str, "V1p5Sex"]] = None
+    V1p5age_min: Optional[float] = None
+    V1p5age_max: Optional[float] = None
+    V1p5age_unit: Optional[Union[str, "V1p5AgeUnit"]] = None
+    V1p5age_event: Optional[str] = None
+    V1p5ancestry_population: Optional[str] = None
+    V1p5ethnicity: Optional[str] = None
+    V1p5race: Optional[str] = None
+    V1p5strain_name: Optional[str] = None
+    V1p5linked_subjects: Optional[str] = None
+    V1p5link_type: Optional[str] = None
     V1p5diagnosis: Optional[Union[Union[dict, "V1p5Diagnosis"], List[Union[dict, "V1p5Diagnosis"]]]] = empty_list()
     V1p5genotype: Optional[Union[dict, V1p5SubjectGenotype]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5subject_id):
-            self.MissingRequiredField("V1p5subject_id")
-        if not isinstance(self.V1p5subject_id, str):
+        if self.V1p5subject_id is not None and not isinstance(self.V1p5subject_id, str):
             self.V1p5subject_id = str(self.V1p5subject_id)
 
-        if self._is_empty(self.V1p5synthetic):
-            self.MissingRequiredField("V1p5synthetic")
-        if not isinstance(self.V1p5synthetic, Bool):
+        if self.V1p5synthetic is not None and not isinstance(self.V1p5synthetic, Bool):
             self.V1p5synthetic = Bool(self.V1p5synthetic)
 
-        if self._is_empty(self.V1p5sex):
-            self.MissingRequiredField("V1p5sex")
-        if not isinstance(self.V1p5sex, V1p5Sex):
+        if self.V1p5sex is not None and not isinstance(self.V1p5sex, V1p5Sex):
             self.V1p5sex = V1p5Sex(self.V1p5sex)
 
-        if self._is_empty(self.V1p5age_min):
-            self.MissingRequiredField("V1p5age_min")
-        if not isinstance(self.V1p5age_min, float):
+        if self.V1p5age_min is not None and not isinstance(self.V1p5age_min, float):
             self.V1p5age_min = float(self.V1p5age_min)
 
-        if self._is_empty(self.V1p5age_max):
-            self.MissingRequiredField("V1p5age_max")
-        if not isinstance(self.V1p5age_max, float):
+        if self.V1p5age_max is not None and not isinstance(self.V1p5age_max, float):
             self.V1p5age_max = float(self.V1p5age_max)
 
-        if self._is_empty(self.V1p5age_event):
-            self.MissingRequiredField("V1p5age_event")
-        if not isinstance(self.V1p5age_event, str):
+        if self.V1p5age_event is not None and not isinstance(self.V1p5age_event, str):
             self.V1p5age_event = str(self.V1p5age_event)
 
-        if self._is_empty(self.V1p5ancestry_population):
-            self.MissingRequiredField("V1p5ancestry_population")
-        if not isinstance(self.V1p5ancestry_population, str):
+        if self.V1p5ancestry_population is not None and not isinstance(self.V1p5ancestry_population, str):
             self.V1p5ancestry_population = str(self.V1p5ancestry_population)
 
-        if self._is_empty(self.V1p5ethnicity):
-            self.MissingRequiredField("V1p5ethnicity")
-        if not isinstance(self.V1p5ethnicity, str):
+        if self.V1p5ethnicity is not None and not isinstance(self.V1p5ethnicity, str):
             self.V1p5ethnicity = str(self.V1p5ethnicity)
 
-        if self._is_empty(self.V1p5race):
-            self.MissingRequiredField("V1p5race")
-        if not isinstance(self.V1p5race, str):
+        if self.V1p5race is not None and not isinstance(self.V1p5race, str):
             self.V1p5race = str(self.V1p5race)
 
-        if self._is_empty(self.V1p5strain_name):
-            self.MissingRequiredField("V1p5strain_name")
-        if not isinstance(self.V1p5strain_name, str):
+        if self.V1p5strain_name is not None and not isinstance(self.V1p5strain_name, str):
             self.V1p5strain_name = str(self.V1p5strain_name)
 
-        if self._is_empty(self.V1p5linked_subjects):
-            self.MissingRequiredField("V1p5linked_subjects")
-        if not isinstance(self.V1p5linked_subjects, str):
+        if self.V1p5linked_subjects is not None and not isinstance(self.V1p5linked_subjects, str):
             self.V1p5linked_subjects = str(self.V1p5linked_subjects)
 
-        if self._is_empty(self.V1p5link_type):
-            self.MissingRequiredField("V1p5link_type")
-        if not isinstance(self.V1p5link_type, str):
+        if self.V1p5link_type is not None and not isinstance(self.V1p5link_type, str):
             self.V1p5link_type = str(self.V1p5link_type)
 
-        self._normalize_inlined_as_dict(slot_name="V1p5diagnosis", slot_type=V1p5Diagnosis, key_name="V1p5study_group_description", keyed=False)
+        if not isinstance(self.V1p5diagnosis, list):
+            self.V1p5diagnosis = [self.V1p5diagnosis] if self.V1p5diagnosis is not None else []
+        self.V1p5diagnosis = [v if isinstance(v, V1p5Diagnosis) else V1p5Diagnosis(**as_dict(v)) for v in self.V1p5diagnosis]
 
         if self.V1p5genotype is not None and not isinstance(self.V1p5genotype, V1p5SubjectGenotype):
             self.V1p5genotype = V1p5SubjectGenotype(**as_dict(self.V1p5genotype))
@@ -5784,49 +5312,35 @@ class V1p5Diagnosis(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Diagnosis"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Diagnosis
 
-    V1p5study_group_description: str = None
-    V1p5disease_diagnosis: Union[str, "V1p5DiseaseDiagnosis"] = None
-    V1p5disease_length: str = None
-    V1p5disease_stage: str = None
-    V1p5prior_therapies: str = None
-    V1p5immunogen: str = None
-    V1p5intervention: str = None
-    V1p5medical_history: str = None
+    V1p5study_group_description: Optional[str] = None
+    V1p5disease_diagnosis: Optional[Union[str, "V1p5DiseaseDiagnosis"]] = None
+    V1p5disease_length: Optional[str] = None
+    V1p5disease_stage: Optional[str] = None
+    V1p5prior_therapies: Optional[str] = None
+    V1p5immunogen: Optional[str] = None
+    V1p5intervention: Optional[str] = None
+    V1p5medical_history: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5study_group_description):
-            self.MissingRequiredField("V1p5study_group_description")
-        if not isinstance(self.V1p5study_group_description, str):
+        if self.V1p5study_group_description is not None and not isinstance(self.V1p5study_group_description, str):
             self.V1p5study_group_description = str(self.V1p5study_group_description)
 
-        if self._is_empty(self.V1p5disease_length):
-            self.MissingRequiredField("V1p5disease_length")
-        if not isinstance(self.V1p5disease_length, str):
+        if self.V1p5disease_length is not None and not isinstance(self.V1p5disease_length, str):
             self.V1p5disease_length = str(self.V1p5disease_length)
 
-        if self._is_empty(self.V1p5disease_stage):
-            self.MissingRequiredField("V1p5disease_stage")
-        if not isinstance(self.V1p5disease_stage, str):
+        if self.V1p5disease_stage is not None and not isinstance(self.V1p5disease_stage, str):
             self.V1p5disease_stage = str(self.V1p5disease_stage)
 
-        if self._is_empty(self.V1p5prior_therapies):
-            self.MissingRequiredField("V1p5prior_therapies")
-        if not isinstance(self.V1p5prior_therapies, str):
+        if self.V1p5prior_therapies is not None and not isinstance(self.V1p5prior_therapies, str):
             self.V1p5prior_therapies = str(self.V1p5prior_therapies)
 
-        if self._is_empty(self.V1p5immunogen):
-            self.MissingRequiredField("V1p5immunogen")
-        if not isinstance(self.V1p5immunogen, str):
+        if self.V1p5immunogen is not None and not isinstance(self.V1p5immunogen, str):
             self.V1p5immunogen = str(self.V1p5immunogen)
 
-        if self._is_empty(self.V1p5intervention):
-            self.MissingRequiredField("V1p5intervention")
-        if not isinstance(self.V1p5intervention, str):
+        if self.V1p5intervention is not None and not isinstance(self.V1p5intervention, str):
             self.V1p5intervention = str(self.V1p5intervention)
 
-        if self._is_empty(self.V1p5medical_history):
-            self.MissingRequiredField("V1p5medical_history")
-        if not isinstance(self.V1p5medical_history, str):
+        if self.V1p5medical_history is not None and not isinstance(self.V1p5medical_history, str):
             self.V1p5medical_history = str(self.V1p5medical_history)
 
         super().__post_init__(**kwargs)
@@ -5841,50 +5355,36 @@ class V1p5Sample(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Sample"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Sample
 
-    V1p5sample_id: str = None
-    V1p5sample_type: str = None
-    V1p5tissue: Union[str, "V1p5Tissue"] = None
-    V1p5anatomic_site: str = None
-    V1p5disease_state_sample: str = None
-    V1p5collection_time_point_relative: float = None
-    V1p5collection_time_point_relative_unit: Union[str, "V1p5CollectionTimePointRelativeUnit"] = None
-    V1p5collection_time_point_reference: str = None
-    V1p5biomaterial_provider: str = None
+    V1p5sample_id: Optional[str] = None
+    V1p5sample_type: Optional[str] = None
+    V1p5tissue: Optional[Union[str, "V1p5Tissue"]] = None
+    V1p5anatomic_site: Optional[str] = None
+    V1p5disease_state_sample: Optional[str] = None
+    V1p5collection_time_point_relative: Optional[float] = None
+    V1p5collection_time_point_relative_unit: Optional[Union[str, "V1p5CollectionTimePointRelativeUnit"]] = None
+    V1p5collection_time_point_reference: Optional[str] = None
+    V1p5biomaterial_provider: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sample_id):
-            self.MissingRequiredField("V1p5sample_id")
-        if not isinstance(self.V1p5sample_id, str):
+        if self.V1p5sample_id is not None and not isinstance(self.V1p5sample_id, str):
             self.V1p5sample_id = str(self.V1p5sample_id)
 
-        if self._is_empty(self.V1p5sample_type):
-            self.MissingRequiredField("V1p5sample_type")
-        if not isinstance(self.V1p5sample_type, str):
+        if self.V1p5sample_type is not None and not isinstance(self.V1p5sample_type, str):
             self.V1p5sample_type = str(self.V1p5sample_type)
 
-        if self._is_empty(self.V1p5anatomic_site):
-            self.MissingRequiredField("V1p5anatomic_site")
-        if not isinstance(self.V1p5anatomic_site, str):
+        if self.V1p5anatomic_site is not None and not isinstance(self.V1p5anatomic_site, str):
             self.V1p5anatomic_site = str(self.V1p5anatomic_site)
 
-        if self._is_empty(self.V1p5disease_state_sample):
-            self.MissingRequiredField("V1p5disease_state_sample")
-        if not isinstance(self.V1p5disease_state_sample, str):
+        if self.V1p5disease_state_sample is not None and not isinstance(self.V1p5disease_state_sample, str):
             self.V1p5disease_state_sample = str(self.V1p5disease_state_sample)
 
-        if self._is_empty(self.V1p5collection_time_point_relative):
-            self.MissingRequiredField("V1p5collection_time_point_relative")
-        if not isinstance(self.V1p5collection_time_point_relative, float):
+        if self.V1p5collection_time_point_relative is not None and not isinstance(self.V1p5collection_time_point_relative, float):
             self.V1p5collection_time_point_relative = float(self.V1p5collection_time_point_relative)
 
-        if self._is_empty(self.V1p5collection_time_point_reference):
-            self.MissingRequiredField("V1p5collection_time_point_reference")
-        if not isinstance(self.V1p5collection_time_point_reference, str):
+        if self.V1p5collection_time_point_reference is not None and not isinstance(self.V1p5collection_time_point_reference, str):
             self.V1p5collection_time_point_reference = str(self.V1p5collection_time_point_reference)
 
-        if self._is_empty(self.V1p5biomaterial_provider):
-            self.MissingRequiredField("V1p5biomaterial_provider")
-        if not isinstance(self.V1p5biomaterial_provider, str):
+        if self.V1p5biomaterial_provider is not None and not isinstance(self.V1p5biomaterial_provider, str):
             self.V1p5biomaterial_provider = str(self.V1p5biomaterial_provider)
 
         super().__post_init__(**kwargs)
@@ -5899,62 +5399,44 @@ class V1p5CellProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p5CellProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5CellProcessing
 
-    V1p5tissue_processing: str = None
-    V1p5cell_subset: Union[str, "V1p5CellSubset"] = None
-    V1p5cell_phenotype: str = None
-    V1p5single_cell: Union[bool, Bool] = None
-    V1p5cell_number: int = None
-    V1p5cells_per_reaction: int = None
-    V1p5cell_storage: Union[bool, Bool] = None
-    V1p5cell_quality: str = None
-    V1p5cell_isolation: str = None
-    V1p5cell_processing_protocol: str = None
+    V1p5tissue_processing: Optional[str] = None
+    V1p5cell_subset: Optional[Union[str, "V1p5CellSubset"]] = None
+    V1p5cell_phenotype: Optional[str] = None
     V1p5cell_species: Optional[Union[str, "V1p5CellSpecies"]] = None
+    V1p5single_cell: Optional[Union[bool, Bool]] = None
+    V1p5cell_number: Optional[int] = None
+    V1p5cells_per_reaction: Optional[int] = None
+    V1p5cell_storage: Optional[Union[bool, Bool]] = None
+    V1p5cell_quality: Optional[str] = None
+    V1p5cell_isolation: Optional[str] = None
+    V1p5cell_processing_protocol: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5tissue_processing):
-            self.MissingRequiredField("V1p5tissue_processing")
-        if not isinstance(self.V1p5tissue_processing, str):
+        if self.V1p5tissue_processing is not None and not isinstance(self.V1p5tissue_processing, str):
             self.V1p5tissue_processing = str(self.V1p5tissue_processing)
 
-        if self._is_empty(self.V1p5cell_phenotype):
-            self.MissingRequiredField("V1p5cell_phenotype")
-        if not isinstance(self.V1p5cell_phenotype, str):
+        if self.V1p5cell_phenotype is not None and not isinstance(self.V1p5cell_phenotype, str):
             self.V1p5cell_phenotype = str(self.V1p5cell_phenotype)
 
-        if self._is_empty(self.V1p5single_cell):
-            self.MissingRequiredField("V1p5single_cell")
-        if not isinstance(self.V1p5single_cell, Bool):
+        if self.V1p5single_cell is not None and not isinstance(self.V1p5single_cell, Bool):
             self.V1p5single_cell = Bool(self.V1p5single_cell)
 
-        if self._is_empty(self.V1p5cell_number):
-            self.MissingRequiredField("V1p5cell_number")
-        if not isinstance(self.V1p5cell_number, int):
+        if self.V1p5cell_number is not None and not isinstance(self.V1p5cell_number, int):
             self.V1p5cell_number = int(self.V1p5cell_number)
 
-        if self._is_empty(self.V1p5cells_per_reaction):
-            self.MissingRequiredField("V1p5cells_per_reaction")
-        if not isinstance(self.V1p5cells_per_reaction, int):
+        if self.V1p5cells_per_reaction is not None and not isinstance(self.V1p5cells_per_reaction, int):
             self.V1p5cells_per_reaction = int(self.V1p5cells_per_reaction)
 
-        if self._is_empty(self.V1p5cell_storage):
-            self.MissingRequiredField("V1p5cell_storage")
-        if not isinstance(self.V1p5cell_storage, Bool):
+        if self.V1p5cell_storage is not None and not isinstance(self.V1p5cell_storage, Bool):
             self.V1p5cell_storage = Bool(self.V1p5cell_storage)
 
-        if self._is_empty(self.V1p5cell_quality):
-            self.MissingRequiredField("V1p5cell_quality")
-        if not isinstance(self.V1p5cell_quality, str):
+        if self.V1p5cell_quality is not None and not isinstance(self.V1p5cell_quality, str):
             self.V1p5cell_quality = str(self.V1p5cell_quality)
 
-        if self._is_empty(self.V1p5cell_isolation):
-            self.MissingRequiredField("V1p5cell_isolation")
-        if not isinstance(self.V1p5cell_isolation, str):
+        if self.V1p5cell_isolation is not None and not isinstance(self.V1p5cell_isolation, str):
             self.V1p5cell_isolation = str(self.V1p5cell_isolation)
 
-        if self._is_empty(self.V1p5cell_processing_protocol):
-            self.MissingRequiredField("V1p5cell_processing_protocol")
-        if not isinstance(self.V1p5cell_processing_protocol, str):
+        if self.V1p5cell_processing_protocol is not None and not isinstance(self.V1p5cell_processing_protocol, str):
             self.V1p5cell_processing_protocol = str(self.V1p5cell_processing_protocol)
 
         super().__post_init__(**kwargs)
@@ -5969,24 +5451,18 @@ class V1p5PCRTarget(YAMLRoot):
     class_name: ClassVar[str] = "V1p5PCRTarget"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5PCRTarget
 
-    V1p5pcr_target_locus: Union[str, "V1p5PcrTargetLocus"] = None
-    V1p5forward_pcr_primer_target_location: str = None
-    V1p5reverse_pcr_primer_target_location: str = None
+    V1p5pcr_target_locus: Optional[Union[str, "V1p5PcrTargetLocus"]] = None
+    V1p5forward_pcr_primer_target_location: Optional[str] = None
+    V1p5reverse_pcr_primer_target_location: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5pcr_target_locus):
-            self.MissingRequiredField("V1p5pcr_target_locus")
-        if not isinstance(self.V1p5pcr_target_locus, V1p5PcrTargetLocus):
+        if self.V1p5pcr_target_locus is not None and not isinstance(self.V1p5pcr_target_locus, V1p5PcrTargetLocus):
             self.V1p5pcr_target_locus = V1p5PcrTargetLocus(self.V1p5pcr_target_locus)
 
-        if self._is_empty(self.V1p5forward_pcr_primer_target_location):
-            self.MissingRequiredField("V1p5forward_pcr_primer_target_location")
-        if not isinstance(self.V1p5forward_pcr_primer_target_location, str):
+        if self.V1p5forward_pcr_primer_target_location is not None and not isinstance(self.V1p5forward_pcr_primer_target_location, str):
             self.V1p5forward_pcr_primer_target_location = str(self.V1p5forward_pcr_primer_target_location)
 
-        if self._is_empty(self.V1p5reverse_pcr_primer_target_location):
-            self.MissingRequiredField("V1p5reverse_pcr_primer_target_location")
-        if not isinstance(self.V1p5reverse_pcr_primer_target_location, str):
+        if self.V1p5reverse_pcr_primer_target_location is not None and not isinstance(self.V1p5reverse_pcr_primer_target_location, str):
             self.V1p5reverse_pcr_primer_target_location = str(self.V1p5reverse_pcr_primer_target_location)
 
         super().__post_init__(**kwargs)
@@ -6001,59 +5477,45 @@ class V1p5NucleicAcidProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p5NucleicAcidProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5NucleicAcidProcessing
 
-    V1p5template_class: Union[str, "V1p5TemplateClass"] = None
-    V1p5template_quality: str = None
-    V1p5template_amount: float = None
-    V1p5template_amount_unit: Union[str, "V1p5TemplateAmountUnit"] = None
-    V1p5library_generation_method: Union[str, "V1p5LibraryGenerationMethod"] = None
-    V1p5library_generation_protocol: str = None
-    V1p5library_generation_kit_version: str = None
-    V1p5complete_sequences: Union[str, "V1p5CompleteSequences"] = None
-    V1p5physical_linkage: Union[str, "V1p5PhysicalLinkage"] = None
+    V1p5template_class: Optional[Union[str, "V1p5TemplateClass"]] = None
+    V1p5template_quality: Optional[str] = None
+    V1p5template_amount: Optional[float] = None
+    V1p5template_amount_unit: Optional[Union[str, "V1p5TemplateAmountUnit"]] = None
+    V1p5library_generation_method: Optional[Union[str, "V1p5LibraryGenerationMethod"]] = None
+    V1p5library_generation_protocol: Optional[str] = None
+    V1p5library_generation_kit_version: Optional[str] = None
     V1p5pcr_target: Optional[Union[Union[dict, V1p5PCRTarget], List[Union[dict, V1p5PCRTarget]]]] = empty_list()
+    V1p5complete_sequences: Optional[Union[str, "V1p5CompleteSequences"]] = None
+    V1p5physical_linkage: Optional[Union[str, "V1p5PhysicalLinkage"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5template_class):
-            self.MissingRequiredField("V1p5template_class")
-        if not isinstance(self.V1p5template_class, V1p5TemplateClass):
+        if self.V1p5template_class is not None and not isinstance(self.V1p5template_class, V1p5TemplateClass):
             self.V1p5template_class = V1p5TemplateClass(self.V1p5template_class)
 
-        if self._is_empty(self.V1p5template_quality):
-            self.MissingRequiredField("V1p5template_quality")
-        if not isinstance(self.V1p5template_quality, str):
+        if self.V1p5template_quality is not None and not isinstance(self.V1p5template_quality, str):
             self.V1p5template_quality = str(self.V1p5template_quality)
 
-        if self._is_empty(self.V1p5template_amount):
-            self.MissingRequiredField("V1p5template_amount")
-        if not isinstance(self.V1p5template_amount, float):
+        if self.V1p5template_amount is not None and not isinstance(self.V1p5template_amount, float):
             self.V1p5template_amount = float(self.V1p5template_amount)
 
-        if self._is_empty(self.V1p5library_generation_method):
-            self.MissingRequiredField("V1p5library_generation_method")
-        if not isinstance(self.V1p5library_generation_method, V1p5LibraryGenerationMethod):
+        if self.V1p5library_generation_method is not None and not isinstance(self.V1p5library_generation_method, V1p5LibraryGenerationMethod):
             self.V1p5library_generation_method = V1p5LibraryGenerationMethod(self.V1p5library_generation_method)
 
-        if self._is_empty(self.V1p5library_generation_protocol):
-            self.MissingRequiredField("V1p5library_generation_protocol")
-        if not isinstance(self.V1p5library_generation_protocol, str):
+        if self.V1p5library_generation_protocol is not None and not isinstance(self.V1p5library_generation_protocol, str):
             self.V1p5library_generation_protocol = str(self.V1p5library_generation_protocol)
 
-        if self._is_empty(self.V1p5library_generation_kit_version):
-            self.MissingRequiredField("V1p5library_generation_kit_version")
-        if not isinstance(self.V1p5library_generation_kit_version, str):
+        if self.V1p5library_generation_kit_version is not None and not isinstance(self.V1p5library_generation_kit_version, str):
             self.V1p5library_generation_kit_version = str(self.V1p5library_generation_kit_version)
 
-        if self._is_empty(self.V1p5complete_sequences):
-            self.MissingRequiredField("V1p5complete_sequences")
-        if not isinstance(self.V1p5complete_sequences, V1p5CompleteSequences):
+        if not isinstance(self.V1p5pcr_target, list):
+            self.V1p5pcr_target = [self.V1p5pcr_target] if self.V1p5pcr_target is not None else []
+        self.V1p5pcr_target = [v if isinstance(v, V1p5PCRTarget) else V1p5PCRTarget(**as_dict(v)) for v in self.V1p5pcr_target]
+
+        if self.V1p5complete_sequences is not None and not isinstance(self.V1p5complete_sequences, V1p5CompleteSequences):
             self.V1p5complete_sequences = V1p5CompleteSequences(self.V1p5complete_sequences)
 
-        if self._is_empty(self.V1p5physical_linkage):
-            self.MissingRequiredField("V1p5physical_linkage")
-        if not isinstance(self.V1p5physical_linkage, V1p5PhysicalLinkage):
+        if self.V1p5physical_linkage is not None and not isinstance(self.V1p5physical_linkage, V1p5PhysicalLinkage):
             self.V1p5physical_linkage = V1p5PhysicalLinkage(self.V1p5physical_linkage)
-
-        self._normalize_inlined_as_dict(slot_name="V1p5pcr_target", slot_type=V1p5PCRTarget, key_name="V1p5pcr_target_locus", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -6067,43 +5529,31 @@ class V1p5SequencingRun(YAMLRoot):
     class_name: ClassVar[str] = "V1p5SequencingRun"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5SequencingRun
 
-    V1p5sequencing_run_id: str = None
-    V1p5total_reads_passing_qc_filter: int = None
-    V1p5sequencing_platform: str = None
-    V1p5sequencing_facility: str = None
-    V1p5sequencing_run_date: Union[str, XSDDateTime] = None
-    V1p5sequencing_kit: str = None
+    V1p5sequencing_run_id: Optional[str] = None
+    V1p5total_reads_passing_qc_filter: Optional[int] = None
+    V1p5sequencing_platform: Optional[str] = None
+    V1p5sequencing_facility: Optional[str] = None
+    V1p5sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
+    V1p5sequencing_kit: Optional[str] = None
     V1p5sequencing_files: Optional[Union[dict, "V1p5SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequencing_run_id):
-            self.MissingRequiredField("V1p5sequencing_run_id")
-        if not isinstance(self.V1p5sequencing_run_id, str):
+        if self.V1p5sequencing_run_id is not None and not isinstance(self.V1p5sequencing_run_id, str):
             self.V1p5sequencing_run_id = str(self.V1p5sequencing_run_id)
 
-        if self._is_empty(self.V1p5total_reads_passing_qc_filter):
-            self.MissingRequiredField("V1p5total_reads_passing_qc_filter")
-        if not isinstance(self.V1p5total_reads_passing_qc_filter, int):
+        if self.V1p5total_reads_passing_qc_filter is not None and not isinstance(self.V1p5total_reads_passing_qc_filter, int):
             self.V1p5total_reads_passing_qc_filter = int(self.V1p5total_reads_passing_qc_filter)
 
-        if self._is_empty(self.V1p5sequencing_platform):
-            self.MissingRequiredField("V1p5sequencing_platform")
-        if not isinstance(self.V1p5sequencing_platform, str):
+        if self.V1p5sequencing_platform is not None and not isinstance(self.V1p5sequencing_platform, str):
             self.V1p5sequencing_platform = str(self.V1p5sequencing_platform)
 
-        if self._is_empty(self.V1p5sequencing_facility):
-            self.MissingRequiredField("V1p5sequencing_facility")
-        if not isinstance(self.V1p5sequencing_facility, str):
+        if self.V1p5sequencing_facility is not None and not isinstance(self.V1p5sequencing_facility, str):
             self.V1p5sequencing_facility = str(self.V1p5sequencing_facility)
 
-        if self._is_empty(self.V1p5sequencing_run_date):
-            self.MissingRequiredField("V1p5sequencing_run_date")
-        if not isinstance(self.V1p5sequencing_run_date, XSDDateTime):
+        if self.V1p5sequencing_run_date is not None and not isinstance(self.V1p5sequencing_run_date, XSDDateTime):
             self.V1p5sequencing_run_date = XSDDateTime(self.V1p5sequencing_run_date)
 
-        if self._is_empty(self.V1p5sequencing_kit):
-            self.MissingRequiredField("V1p5sequencing_kit")
-        if not isinstance(self.V1p5sequencing_kit, str):
+        if self.V1p5sequencing_kit is not None and not isinstance(self.V1p5sequencing_kit, str):
             self.V1p5sequencing_kit = str(self.V1p5sequencing_kit)
 
         if self.V1p5sequencing_files is not None and not isinstance(self.V1p5sequencing_files, V1p5SequencingData):
@@ -6121,56 +5571,40 @@ class V1p5SequencingData(YAMLRoot):
     class_name: ClassVar[str] = "V1p5SequencingData"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5SequencingData
 
-    V1p5sequencing_data_id: str = None
-    V1p5file_type: Union[str, "V1p5FileType"] = None
-    V1p5filename: str = None
-    V1p5read_direction: Union[str, "V1p5ReadDirection"] = None
-    V1p5read_length: int = None
-    V1p5paired_filename: str = None
-    V1p5paired_read_direction: Union[str, "V1p5PairedReadDirection"] = None
-    V1p5paired_read_length: int = None
+    V1p5sequencing_data_id: Optional[str] = None
+    V1p5file_type: Optional[Union[str, "V1p5FileType"]] = None
+    V1p5filename: Optional[str] = None
+    V1p5read_direction: Optional[Union[str, "V1p5ReadDirection"]] = None
+    V1p5read_length: Optional[int] = None
+    V1p5paired_filename: Optional[str] = None
+    V1p5paired_read_direction: Optional[Union[str, "V1p5PairedReadDirection"]] = None
+    V1p5paired_read_length: Optional[int] = None
     V1p5index_filename: Optional[str] = None
     V1p5index_length: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequencing_data_id):
-            self.MissingRequiredField("V1p5sequencing_data_id")
-        if not isinstance(self.V1p5sequencing_data_id, str):
+        if self.V1p5sequencing_data_id is not None and not isinstance(self.V1p5sequencing_data_id, str):
             self.V1p5sequencing_data_id = str(self.V1p5sequencing_data_id)
 
-        if self._is_empty(self.V1p5file_type):
-            self.MissingRequiredField("V1p5file_type")
-        if not isinstance(self.V1p5file_type, V1p5FileType):
+        if self.V1p5file_type is not None and not isinstance(self.V1p5file_type, V1p5FileType):
             self.V1p5file_type = V1p5FileType(self.V1p5file_type)
 
-        if self._is_empty(self.V1p5filename):
-            self.MissingRequiredField("V1p5filename")
-        if not isinstance(self.V1p5filename, str):
+        if self.V1p5filename is not None and not isinstance(self.V1p5filename, str):
             self.V1p5filename = str(self.V1p5filename)
 
-        if self._is_empty(self.V1p5read_direction):
-            self.MissingRequiredField("V1p5read_direction")
-        if not isinstance(self.V1p5read_direction, V1p5ReadDirection):
+        if self.V1p5read_direction is not None and not isinstance(self.V1p5read_direction, V1p5ReadDirection):
             self.V1p5read_direction = V1p5ReadDirection(self.V1p5read_direction)
 
-        if self._is_empty(self.V1p5read_length):
-            self.MissingRequiredField("V1p5read_length")
-        if not isinstance(self.V1p5read_length, int):
+        if self.V1p5read_length is not None and not isinstance(self.V1p5read_length, int):
             self.V1p5read_length = int(self.V1p5read_length)
 
-        if self._is_empty(self.V1p5paired_filename):
-            self.MissingRequiredField("V1p5paired_filename")
-        if not isinstance(self.V1p5paired_filename, str):
+        if self.V1p5paired_filename is not None and not isinstance(self.V1p5paired_filename, str):
             self.V1p5paired_filename = str(self.V1p5paired_filename)
 
-        if self._is_empty(self.V1p5paired_read_direction):
-            self.MissingRequiredField("V1p5paired_read_direction")
-        if not isinstance(self.V1p5paired_read_direction, V1p5PairedReadDirection):
+        if self.V1p5paired_read_direction is not None and not isinstance(self.V1p5paired_read_direction, V1p5PairedReadDirection):
             self.V1p5paired_read_direction = V1p5PairedReadDirection(self.V1p5paired_read_direction)
 
-        if self._is_empty(self.V1p5paired_read_length):
-            self.MissingRequiredField("V1p5paired_read_length")
-        if not isinstance(self.V1p5paired_read_length, int):
+        if self.V1p5paired_read_length is not None and not isinstance(self.V1p5paired_read_length, int):
             self.V1p5paired_read_length = int(self.V1p5paired_read_length)
 
         if self.V1p5index_filename is not None and not isinstance(self.V1p5index_filename, str):
@@ -6191,64 +5625,50 @@ class V1p5DataProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p5DataProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5DataProcessing
 
-    V1p5software_versions: str = None
-    V1p5paired_reads_assembly: str = None
-    V1p5quality_thresholds: str = None
-    V1p5primer_match_cutoffs: str = None
-    V1p5collapsing_method: str = None
-    V1p5data_processing_protocols: str = None
-    V1p5germline_database: str = None
     V1p5data_processing_id: Optional[str] = None
     V1p5primary_annotation: Optional[Union[bool, Bool]] = None
+    V1p5software_versions: Optional[str] = None
+    V1p5paired_reads_assembly: Optional[str] = None
+    V1p5quality_thresholds: Optional[str] = None
+    V1p5primer_match_cutoffs: Optional[str] = None
+    V1p5collapsing_method: Optional[str] = None
+    V1p5data_processing_protocols: Optional[str] = None
     V1p5data_processing_files: Optional[Union[str, List[str]]] = empty_list()
+    V1p5germline_database: Optional[str] = None
     V1p5germline_set_ref: Optional[str] = None
     V1p5analysis_provenance_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5software_versions):
-            self.MissingRequiredField("V1p5software_versions")
-        if not isinstance(self.V1p5software_versions, str):
-            self.V1p5software_versions = str(self.V1p5software_versions)
-
-        if self._is_empty(self.V1p5paired_reads_assembly):
-            self.MissingRequiredField("V1p5paired_reads_assembly")
-        if not isinstance(self.V1p5paired_reads_assembly, str):
-            self.V1p5paired_reads_assembly = str(self.V1p5paired_reads_assembly)
-
-        if self._is_empty(self.V1p5quality_thresholds):
-            self.MissingRequiredField("V1p5quality_thresholds")
-        if not isinstance(self.V1p5quality_thresholds, str):
-            self.V1p5quality_thresholds = str(self.V1p5quality_thresholds)
-
-        if self._is_empty(self.V1p5primer_match_cutoffs):
-            self.MissingRequiredField("V1p5primer_match_cutoffs")
-        if not isinstance(self.V1p5primer_match_cutoffs, str):
-            self.V1p5primer_match_cutoffs = str(self.V1p5primer_match_cutoffs)
-
-        if self._is_empty(self.V1p5collapsing_method):
-            self.MissingRequiredField("V1p5collapsing_method")
-        if not isinstance(self.V1p5collapsing_method, str):
-            self.V1p5collapsing_method = str(self.V1p5collapsing_method)
-
-        if self._is_empty(self.V1p5data_processing_protocols):
-            self.MissingRequiredField("V1p5data_processing_protocols")
-        if not isinstance(self.V1p5data_processing_protocols, str):
-            self.V1p5data_processing_protocols = str(self.V1p5data_processing_protocols)
-
-        if self._is_empty(self.V1p5germline_database):
-            self.MissingRequiredField("V1p5germline_database")
-        if not isinstance(self.V1p5germline_database, str):
-            self.V1p5germline_database = str(self.V1p5germline_database)
-
         if self.V1p5data_processing_id is not None and not isinstance(self.V1p5data_processing_id, str):
             self.V1p5data_processing_id = str(self.V1p5data_processing_id)
 
         if self.V1p5primary_annotation is not None and not isinstance(self.V1p5primary_annotation, Bool):
             self.V1p5primary_annotation = Bool(self.V1p5primary_annotation)
 
+        if self.V1p5software_versions is not None and not isinstance(self.V1p5software_versions, str):
+            self.V1p5software_versions = str(self.V1p5software_versions)
+
+        if self.V1p5paired_reads_assembly is not None and not isinstance(self.V1p5paired_reads_assembly, str):
+            self.V1p5paired_reads_assembly = str(self.V1p5paired_reads_assembly)
+
+        if self.V1p5quality_thresholds is not None and not isinstance(self.V1p5quality_thresholds, str):
+            self.V1p5quality_thresholds = str(self.V1p5quality_thresholds)
+
+        if self.V1p5primer_match_cutoffs is not None and not isinstance(self.V1p5primer_match_cutoffs, str):
+            self.V1p5primer_match_cutoffs = str(self.V1p5primer_match_cutoffs)
+
+        if self.V1p5collapsing_method is not None and not isinstance(self.V1p5collapsing_method, str):
+            self.V1p5collapsing_method = str(self.V1p5collapsing_method)
+
+        if self.V1p5data_processing_protocols is not None and not isinstance(self.V1p5data_processing_protocols, str):
+            self.V1p5data_processing_protocols = str(self.V1p5data_processing_protocols)
+
         if not isinstance(self.V1p5data_processing_files, list):
             self.V1p5data_processing_files = [self.V1p5data_processing_files] if self.V1p5data_processing_files is not None else []
         self.V1p5data_processing_files = [v if isinstance(v, str) else str(v) for v in self.V1p5data_processing_files]
+
+        if self.V1p5germline_database is not None and not isinstance(self.V1p5germline_database, str):
+            self.V1p5germline_database = str(self.V1p5germline_database)
 
         if self.V1p5germline_set_ref is not None and not isinstance(self.V1p5germline_set_ref, str):
             self.V1p5germline_set_ref = str(self.V1p5germline_set_ref)
@@ -6268,33 +5688,15 @@ class V1p5Repertoire(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Repertoire"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Repertoire
 
-    V1p5study: Union[dict, V1p5Study] = None
-    V1p5subject: Union[dict, V1p5Subject] = None
-    V1p5sample: Union[Union[dict, "V1p5SampleProcessing"], List[Union[dict, "V1p5SampleProcessing"]]] = None
-    V1p5data_processing: Union[Union[dict, V1p5DataProcessing], List[Union[dict, V1p5DataProcessing]]] = None
     V1p5repertoire_id: Optional[str] = None
     V1p5repertoire_name: Optional[str] = None
     V1p5repertoire_description: Optional[str] = None
+    V1p5study: Optional[Union[dict, V1p5Study]] = None
+    V1p5subject: Optional[Union[dict, V1p5Subject]] = None
+    V1p5sample: Optional[Union[Union[dict, "V1p5SampleProcessing"], List[Union[dict, "V1p5SampleProcessing"]]]] = empty_list()
+    V1p5data_processing: Optional[Union[Union[dict, V1p5DataProcessing], List[Union[dict, V1p5DataProcessing]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5study):
-            self.MissingRequiredField("V1p5study")
-        if not isinstance(self.V1p5study, V1p5Study):
-            self.V1p5study = V1p5Study(**as_dict(self.V1p5study))
-
-        if self._is_empty(self.V1p5subject):
-            self.MissingRequiredField("V1p5subject")
-        if not isinstance(self.V1p5subject, V1p5Subject):
-            self.V1p5subject = V1p5Subject(**as_dict(self.V1p5subject))
-
-        if self._is_empty(self.V1p5sample):
-            self.MissingRequiredField("V1p5sample")
-        self._normalize_inlined_as_dict(slot_name="V1p5sample", slot_type=V1p5SampleProcessing, key_name="V1p5sample_id", keyed=False)
-
-        if self._is_empty(self.V1p5data_processing):
-            self.MissingRequiredField("V1p5data_processing")
-        self._normalize_inlined_as_dict(slot_name="V1p5data_processing", slot_type=V1p5DataProcessing, key_name="V1p5software_versions", keyed=False)
-
         if self.V1p5repertoire_id is not None and not isinstance(self.V1p5repertoire_id, str):
             self.V1p5repertoire_id = str(self.V1p5repertoire_id)
 
@@ -6303,6 +5705,20 @@ class V1p5Repertoire(YAMLRoot):
 
         if self.V1p5repertoire_description is not None and not isinstance(self.V1p5repertoire_description, str):
             self.V1p5repertoire_description = str(self.V1p5repertoire_description)
+
+        if self.V1p5study is not None and not isinstance(self.V1p5study, V1p5Study):
+            self.V1p5study = V1p5Study(**as_dict(self.V1p5study))
+
+        if self.V1p5subject is not None and not isinstance(self.V1p5subject, V1p5Subject):
+            self.V1p5subject = V1p5Subject(**as_dict(self.V1p5subject))
+
+        if not isinstance(self.V1p5sample, list):
+            self.V1p5sample = [self.V1p5sample] if self.V1p5sample is not None else []
+        self.V1p5sample = [v if isinstance(v, V1p5SampleProcessing) else V1p5SampleProcessing(**as_dict(v)) for v in self.V1p5sample]
+
+        if not isinstance(self.V1p5data_processing, list):
+            self.V1p5data_processing = [self.V1p5data_processing] if self.V1p5data_processing is not None else []
+        self.V1p5data_processing = [v if isinstance(v, V1p5DataProcessing) else V1p5DataProcessing(**as_dict(v)) for v in self.V1p5data_processing]
 
         super().__post_init__(**kwargs)
 
@@ -6316,28 +5732,24 @@ class V1p5RepertoireGroup(YAMLRoot):
     class_name: ClassVar[str] = "V1p5RepertoireGroup"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5RepertoireGroup
 
-    V1p5repertoire_group_id: str = None
-    V1p5repertoires: Union[str, List[str]] = None
+    V1p5repertoire_group_id: Optional[str] = None
     V1p5repertoire_group_name: Optional[str] = None
     V1p5repertoire_group_description: Optional[str] = None
+    V1p5repertoires: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5repertoire_group_id):
-            self.MissingRequiredField("V1p5repertoire_group_id")
-        if not isinstance(self.V1p5repertoire_group_id, str):
+        if self.V1p5repertoire_group_id is not None and not isinstance(self.V1p5repertoire_group_id, str):
             self.V1p5repertoire_group_id = str(self.V1p5repertoire_group_id)
-
-        if self._is_empty(self.V1p5repertoires):
-            self.MissingRequiredField("V1p5repertoires")
-        if not isinstance(self.V1p5repertoires, list):
-            self.V1p5repertoires = [self.V1p5repertoires] if self.V1p5repertoires is not None else []
-        self.V1p5repertoires = [v if isinstance(v, str) else str(v) for v in self.V1p5repertoires]
 
         if self.V1p5repertoire_group_name is not None and not isinstance(self.V1p5repertoire_group_name, str):
             self.V1p5repertoire_group_name = str(self.V1p5repertoire_group_name)
 
         if self.V1p5repertoire_group_description is not None and not isinstance(self.V1p5repertoire_group_description, str):
             self.V1p5repertoire_group_description = str(self.V1p5repertoire_group_description)
+
+        if not isinstance(self.V1p5repertoires, list):
+            self.V1p5repertoires = [self.V1p5repertoires] if self.V1p5repertoires is not None else []
+        self.V1p5repertoires = [v if isinstance(v, str) else str(v) for v in self.V1p5repertoires]
 
         super().__post_init__(**kwargs)
 
@@ -6351,14 +5763,14 @@ class V1p5Alignment(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Alignment"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Alignment
 
-    V1p5sequence_id: str = None
-    V1p5segment: str = None
-    V1p5call: str = None
-    V1p5score: float = None
-    V1p5cigar: str = None
+    V1p5sequence_id: Optional[str] = None
+    V1p5segment: Optional[str] = None
     V1p5rev_comp: Optional[Union[bool, Bool]] = None
+    V1p5call: Optional[str] = None
+    V1p5score: Optional[float] = None
     V1p5identity: Optional[float] = None
     V1p5support: Optional[float] = None
+    V1p5cigar: Optional[str] = None
     V1p5sequence_start: Optional[int] = None
     V1p5sequence_end: Optional[int] = None
     V1p5germline_start: Optional[int] = None
@@ -6367,39 +5779,29 @@ class V1p5Alignment(YAMLRoot):
     V1p5data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequence_id):
-            self.MissingRequiredField("V1p5sequence_id")
-        if not isinstance(self.V1p5sequence_id, str):
+        if self.V1p5sequence_id is not None and not isinstance(self.V1p5sequence_id, str):
             self.V1p5sequence_id = str(self.V1p5sequence_id)
 
-        if self._is_empty(self.V1p5segment):
-            self.MissingRequiredField("V1p5segment")
-        if not isinstance(self.V1p5segment, str):
+        if self.V1p5segment is not None and not isinstance(self.V1p5segment, str):
             self.V1p5segment = str(self.V1p5segment)
-
-        if self._is_empty(self.V1p5call):
-            self.MissingRequiredField("V1p5call")
-        if not isinstance(self.V1p5call, str):
-            self.V1p5call = str(self.V1p5call)
-
-        if self._is_empty(self.V1p5score):
-            self.MissingRequiredField("V1p5score")
-        if not isinstance(self.V1p5score, float):
-            self.V1p5score = float(self.V1p5score)
-
-        if self._is_empty(self.V1p5cigar):
-            self.MissingRequiredField("V1p5cigar")
-        if not isinstance(self.V1p5cigar, str):
-            self.V1p5cigar = str(self.V1p5cigar)
 
         if self.V1p5rev_comp is not None and not isinstance(self.V1p5rev_comp, Bool):
             self.V1p5rev_comp = Bool(self.V1p5rev_comp)
+
+        if self.V1p5call is not None and not isinstance(self.V1p5call, str):
+            self.V1p5call = str(self.V1p5call)
+
+        if self.V1p5score is not None and not isinstance(self.V1p5score, float):
+            self.V1p5score = float(self.V1p5score)
 
         if self.V1p5identity is not None and not isinstance(self.V1p5identity, float):
             self.V1p5identity = float(self.V1p5identity)
 
         if self.V1p5support is not None and not isinstance(self.V1p5support, float):
             self.V1p5support = float(self.V1p5support)
+
+        if self.V1p5cigar is not None and not isinstance(self.V1p5cigar, str):
+            self.V1p5cigar = str(self.V1p5cigar)
 
         if self.V1p5sequence_start is not None and not isinstance(self.V1p5sequence_start, int):
             self.V1p5sequence_start = int(self.V1p5sequence_start)
@@ -6431,16 +5833,12 @@ class V1p5Rearrangement(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Rearrangement"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Rearrangement
 
-    V1p5sequence_id: str = None
-    V1p5sequence: str = None
-    V1p5productive: Union[bool, Bool] = None
-    V1p5germline_alignment: str = None
-    V1p5v_cigar: str = None
-    V1p5d_cigar: str = None
-    V1p5j_cigar: str = None
+    V1p5sequence_id: Optional[str] = None
+    V1p5sequence: Optional[str] = None
     V1p5quality: Optional[str] = None
     V1p5sequence_aa: Optional[str] = None
     V1p5rev_comp: Optional[Union[bool, Bool]] = None
+    V1p5productive: Optional[Union[bool, Bool]] = None
     V1p5vj_in_frame: Optional[Union[bool, Bool]] = None
     V1p5stop_codon: Optional[Union[bool, Bool]] = None
     V1p5complete_vdj: Optional[Union[bool, Bool]] = None
@@ -6453,6 +5851,7 @@ class V1p5Rearrangement(YAMLRoot):
     V1p5sequence_alignment: Optional[str] = None
     V1p5quality_alignment: Optional[str] = None
     V1p5sequence_alignment_aa: Optional[str] = None
+    V1p5germline_alignment: Optional[str] = None
     V1p5germline_alignment_aa: Optional[str] = None
     V1p5junction: Optional[str] = None
     V1p5junction_aa: Optional[str] = None
@@ -6479,9 +5878,11 @@ class V1p5Rearrangement(YAMLRoot):
     V1p5v_score: Optional[float] = None
     V1p5v_identity: Optional[float] = None
     V1p5v_support: Optional[float] = None
+    V1p5v_cigar: Optional[str] = None
     V1p5d_score: Optional[float] = None
     V1p5d_identity: Optional[float] = None
     V1p5d_support: Optional[float] = None
+    V1p5d_cigar: Optional[str] = None
     V1p5d2_score: Optional[float] = None
     V1p5d2_identity: Optional[float] = None
     V1p5d2_support: Optional[float] = None
@@ -6489,6 +5890,7 @@ class V1p5Rearrangement(YAMLRoot):
     V1p5j_score: Optional[float] = None
     V1p5j_identity: Optional[float] = None
     V1p5j_support: Optional[float] = None
+    V1p5j_cigar: Optional[str] = None
     V1p5c_score: Optional[float] = None
     V1p5c_identity: Optional[float] = None
     V1p5c_support: Optional[float] = None
@@ -6585,40 +5987,11 @@ class V1p5Rearrangement(YAMLRoot):
     V1p5data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequence_id):
-            self.MissingRequiredField("V1p5sequence_id")
-        if not isinstance(self.V1p5sequence_id, str):
+        if self.V1p5sequence_id is not None and not isinstance(self.V1p5sequence_id, str):
             self.V1p5sequence_id = str(self.V1p5sequence_id)
 
-        if self._is_empty(self.V1p5sequence):
-            self.MissingRequiredField("V1p5sequence")
-        if not isinstance(self.V1p5sequence, str):
+        if self.V1p5sequence is not None and not isinstance(self.V1p5sequence, str):
             self.V1p5sequence = str(self.V1p5sequence)
-
-        if self._is_empty(self.V1p5productive):
-            self.MissingRequiredField("V1p5productive")
-        if not isinstance(self.V1p5productive, Bool):
-            self.V1p5productive = Bool(self.V1p5productive)
-
-        if self._is_empty(self.V1p5germline_alignment):
-            self.MissingRequiredField("V1p5germline_alignment")
-        if not isinstance(self.V1p5germline_alignment, str):
-            self.V1p5germline_alignment = str(self.V1p5germline_alignment)
-
-        if self._is_empty(self.V1p5v_cigar):
-            self.MissingRequiredField("V1p5v_cigar")
-        if not isinstance(self.V1p5v_cigar, str):
-            self.V1p5v_cigar = str(self.V1p5v_cigar)
-
-        if self._is_empty(self.V1p5d_cigar):
-            self.MissingRequiredField("V1p5d_cigar")
-        if not isinstance(self.V1p5d_cigar, str):
-            self.V1p5d_cigar = str(self.V1p5d_cigar)
-
-        if self._is_empty(self.V1p5j_cigar):
-            self.MissingRequiredField("V1p5j_cigar")
-        if not isinstance(self.V1p5j_cigar, str):
-            self.V1p5j_cigar = str(self.V1p5j_cigar)
 
         if self.V1p5quality is not None and not isinstance(self.V1p5quality, str):
             self.V1p5quality = str(self.V1p5quality)
@@ -6628,6 +6001,9 @@ class V1p5Rearrangement(YAMLRoot):
 
         if self.V1p5rev_comp is not None and not isinstance(self.V1p5rev_comp, Bool):
             self.V1p5rev_comp = Bool(self.V1p5rev_comp)
+
+        if self.V1p5productive is not None and not isinstance(self.V1p5productive, Bool):
+            self.V1p5productive = Bool(self.V1p5productive)
 
         if self.V1p5vj_in_frame is not None and not isinstance(self.V1p5vj_in_frame, Bool):
             self.V1p5vj_in_frame = Bool(self.V1p5vj_in_frame)
@@ -6664,6 +6040,9 @@ class V1p5Rearrangement(YAMLRoot):
 
         if self.V1p5sequence_alignment_aa is not None and not isinstance(self.V1p5sequence_alignment_aa, str):
             self.V1p5sequence_alignment_aa = str(self.V1p5sequence_alignment_aa)
+
+        if self.V1p5germline_alignment is not None and not isinstance(self.V1p5germline_alignment, str):
+            self.V1p5germline_alignment = str(self.V1p5germline_alignment)
 
         if self.V1p5germline_alignment_aa is not None and not isinstance(self.V1p5germline_alignment_aa, str):
             self.V1p5germline_alignment_aa = str(self.V1p5germline_alignment_aa)
@@ -6743,6 +6122,9 @@ class V1p5Rearrangement(YAMLRoot):
         if self.V1p5v_support is not None and not isinstance(self.V1p5v_support, float):
             self.V1p5v_support = float(self.V1p5v_support)
 
+        if self.V1p5v_cigar is not None and not isinstance(self.V1p5v_cigar, str):
+            self.V1p5v_cigar = str(self.V1p5v_cigar)
+
         if self.V1p5d_score is not None and not isinstance(self.V1p5d_score, float):
             self.V1p5d_score = float(self.V1p5d_score)
 
@@ -6751,6 +6133,9 @@ class V1p5Rearrangement(YAMLRoot):
 
         if self.V1p5d_support is not None and not isinstance(self.V1p5d_support, float):
             self.V1p5d_support = float(self.V1p5d_support)
+
+        if self.V1p5d_cigar is not None and not isinstance(self.V1p5d_cigar, str):
+            self.V1p5d_cigar = str(self.V1p5d_cigar)
 
         if self.V1p5d2_score is not None and not isinstance(self.V1p5d2_score, float):
             self.V1p5d2_score = float(self.V1p5d2_score)
@@ -6772,6 +6157,9 @@ class V1p5Rearrangement(YAMLRoot):
 
         if self.V1p5j_support is not None and not isinstance(self.V1p5j_support, float):
             self.V1p5j_support = float(self.V1p5j_support)
+
+        if self.V1p5j_cigar is not None and not isinstance(self.V1p5j_cigar, str):
+            self.V1p5j_cigar = str(self.V1p5j_cigar)
 
         if self.V1p5c_score is not None and not isinstance(self.V1p5c_score, float):
             self.V1p5c_score = float(self.V1p5c_score)
@@ -7067,7 +6455,6 @@ class V1p5Clone(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Clone"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Clone
 
-    V1p5germline_alignment: str = None
     V1p5clone_id: Optional[str] = None
     V1p5repertoire_id: Optional[str] = None
     V1p5data_processing_id: Optional[str] = None
@@ -7079,6 +6466,7 @@ class V1p5Clone(YAMLRoot):
     V1p5junction_aa: Optional[str] = None
     V1p5junction_length: Optional[int] = None
     V1p5junction_aa_length: Optional[int] = None
+    V1p5germline_alignment: Optional[str] = None
     V1p5germline_alignment_aa: Optional[str] = None
     V1p5v_alignment_start: Optional[int] = None
     V1p5v_alignment_end: Optional[int] = None
@@ -7093,11 +6481,6 @@ class V1p5Clone(YAMLRoot):
     V1p5seed_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5germline_alignment):
-            self.MissingRequiredField("V1p5germline_alignment")
-        if not isinstance(self.V1p5germline_alignment, str):
-            self.V1p5germline_alignment = str(self.V1p5germline_alignment)
-
         if self.V1p5clone_id is not None and not isinstance(self.V1p5clone_id, str):
             self.V1p5clone_id = str(self.V1p5clone_id)
 
@@ -7131,6 +6514,9 @@ class V1p5Clone(YAMLRoot):
 
         if self.V1p5junction_aa_length is not None and not isinstance(self.V1p5junction_aa_length, int):
             self.V1p5junction_aa_length = int(self.V1p5junction_aa_length)
+
+        if self.V1p5germline_alignment is not None and not isinstance(self.V1p5germline_alignment, str):
+            self.V1p5germline_alignment = str(self.V1p5germline_alignment)
 
         if self.V1p5germline_alignment_aa is not None and not isinstance(self.V1p5germline_alignment_aa, str):
             self.V1p5germline_alignment_aa = str(self.V1p5germline_alignment_aa)
@@ -7180,26 +6566,24 @@ class V1p5Tree(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Tree"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Tree
 
-    V1p5tree_id: str = None
-    V1p5newick: str = None
+    V1p5tree_id: Optional[str] = None
     V1p5clone_id: Optional[str] = None
+    V1p5newick: Optional[str] = None
     V1p5nodes: Optional[Union[Union[dict, "V1p5Node"], List[Union[dict, "V1p5Node"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5tree_id):
-            self.MissingRequiredField("V1p5tree_id")
-        if not isinstance(self.V1p5tree_id, str):
+        if self.V1p5tree_id is not None and not isinstance(self.V1p5tree_id, str):
             self.V1p5tree_id = str(self.V1p5tree_id)
-
-        if self._is_empty(self.V1p5newick):
-            self.MissingRequiredField("V1p5newick")
-        if not isinstance(self.V1p5newick, str):
-            self.V1p5newick = str(self.V1p5newick)
 
         if self.V1p5clone_id is not None and not isinstance(self.V1p5clone_id, str):
             self.V1p5clone_id = str(self.V1p5clone_id)
 
-        self._normalize_inlined_as_dict(slot_name="V1p5nodes", slot_type=V1p5Node, key_name="V1p5sequence_id", keyed=False)
+        if self.V1p5newick is not None and not isinstance(self.V1p5newick, str):
+            self.V1p5newick = str(self.V1p5newick)
+
+        if not isinstance(self.V1p5nodes, list):
+            self.V1p5nodes = [self.V1p5nodes] if self.V1p5nodes is not None else []
+        self.V1p5nodes = [v if isinstance(v, V1p5Node) else V1p5Node(**as_dict(v)) for v in self.V1p5nodes]
 
         super().__post_init__(**kwargs)
 
@@ -7213,15 +6597,13 @@ class V1p5Node(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Node"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Node
 
-    V1p5sequence_id: str = None
+    V1p5sequence_id: Optional[str] = None
     V1p5sequence_alignment: Optional[str] = None
     V1p5junction: Optional[str] = None
     V1p5junction_aa: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sequence_id):
-            self.MissingRequiredField("V1p5sequence_id")
-        if not isinstance(self.V1p5sequence_id, str):
+        if self.V1p5sequence_id is not None and not isinstance(self.V1p5sequence_id, str):
             self.V1p5sequence_id = str(self.V1p5sequence_id)
 
         if self.V1p5sequence_alignment is not None and not isinstance(self.V1p5sequence_alignment, str):
@@ -7245,30 +6627,23 @@ class V1p5Cell(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Cell"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Cell
 
-    V1p5rearrangements: Union[str, List[str]] = None
-    V1p5virtual_pairing: Union[bool, Bool] = None
     V1p5cell_id: Optional[str] = None
+    V1p5rearrangements: Optional[Union[str, List[str]]] = empty_list()
     V1p5receptors: Optional[Union[str, List[str]]] = empty_list()
     V1p5repertoire_id: Optional[str] = None
     V1p5data_processing_id: Optional[str] = None
     V1p5expression_study_method: Optional[Union[str, "V1p5ExpressionStudyMethod"]] = None
     V1p5expression_raw_doi: Optional[str] = None
     V1p5expression_index: Optional[str] = None
+    V1p5virtual_pairing: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5rearrangements):
-            self.MissingRequiredField("V1p5rearrangements")
+        if self.V1p5cell_id is not None and not isinstance(self.V1p5cell_id, str):
+            self.V1p5cell_id = str(self.V1p5cell_id)
+
         if not isinstance(self.V1p5rearrangements, list):
             self.V1p5rearrangements = [self.V1p5rearrangements] if self.V1p5rearrangements is not None else []
         self.V1p5rearrangements = [v if isinstance(v, str) else str(v) for v in self.V1p5rearrangements]
-
-        if self._is_empty(self.V1p5virtual_pairing):
-            self.MissingRequiredField("V1p5virtual_pairing")
-        if not isinstance(self.V1p5virtual_pairing, Bool):
-            self.V1p5virtual_pairing = Bool(self.V1p5virtual_pairing)
-
-        if self.V1p5cell_id is not None and not isinstance(self.V1p5cell_id, str):
-            self.V1p5cell_id = str(self.V1p5cell_id)
 
         if not isinstance(self.V1p5receptors, list):
             self.V1p5receptors = [self.V1p5receptors] if self.V1p5receptors is not None else []
@@ -7289,6 +6664,9 @@ class V1p5Cell(YAMLRoot):
         if self.V1p5expression_index is not None and not isinstance(self.V1p5expression_index, str):
             self.V1p5expression_index = str(self.V1p5expression_index)
 
+        if self.V1p5virtual_pairing is not None and not isinstance(self.V1p5virtual_pairing, Bool):
+            self.V1p5virtual_pairing = Bool(self.V1p5virtual_pairing)
+
         super().__post_init__(**kwargs)
 
 
@@ -7301,24 +6679,17 @@ class V1p5CellExpression(YAMLRoot):
     class_name: ClassVar[str] = "V1p5CellExpression"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5CellExpression
 
-    V1p5expression_id: str = None
-    V1p5property_type: str = None
-    V1p5property: Union[str, "V1p5Property"] = None
+    V1p5expression_id: Optional[str] = None
     V1p5cell_id: Optional[str] = None
     V1p5repertoire_id: Optional[str] = None
     V1p5data_processing_id: Optional[str] = None
+    V1p5property_type: Optional[str] = None
+    V1p5property: Optional[Union[str, "V1p5Property"]] = None
     V1p5value: Optional[float] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5expression_id):
-            self.MissingRequiredField("V1p5expression_id")
-        if not isinstance(self.V1p5expression_id, str):
+        if self.V1p5expression_id is not None and not isinstance(self.V1p5expression_id, str):
             self.V1p5expression_id = str(self.V1p5expression_id)
-
-        if self._is_empty(self.V1p5property_type):
-            self.MissingRequiredField("V1p5property_type")
-        if not isinstance(self.V1p5property_type, str):
-            self.V1p5property_type = str(self.V1p5property_type)
 
         if self.V1p5cell_id is not None and not isinstance(self.V1p5cell_id, str):
             self.V1p5cell_id = str(self.V1p5cell_id)
@@ -7328,6 +6699,9 @@ class V1p5CellExpression(YAMLRoot):
 
         if self.V1p5data_processing_id is not None and not isinstance(self.V1p5data_processing_id, str):
             self.V1p5data_processing_id = str(self.V1p5data_processing_id)
+
+        if self.V1p5property_type is not None and not isinstance(self.V1p5property_type, str):
+            self.V1p5property_type = str(self.V1p5property_type)
 
         if self.V1p5value is not None and not isinstance(self.V1p5value, float):
             self.V1p5value = float(self.V1p5value)
@@ -7344,57 +6718,45 @@ class V1p5Receptor(YAMLRoot):
     class_name: ClassVar[str] = "V1p5Receptor"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5Receptor
 
-    V1p5receptor_id: str = None
-    V1p5receptor_hash: str = None
-    V1p5receptor_type: Union[str, "V1p5ReceptorType"] = None
-    V1p5receptor_variable_domain_1_aa: str = None
-    V1p5receptor_variable_domain_1_locus: Union[str, "V1p5ReceptorVariableDomain1Locus"] = None
-    V1p5receptor_variable_domain_2_aa: str = None
-    V1p5receptor_variable_domain_2_locus: Union[str, "V1p5ReceptorVariableDomain2Locus"] = None
+    V1p5receptor_id: Optional[str] = None
+    V1p5receptor_hash: Optional[str] = None
+    V1p5receptor_type: Optional[Union[str, "V1p5ReceptorType"]] = None
+    V1p5receptor_variable_domain_1_aa: Optional[str] = None
+    V1p5receptor_variable_domain_1_locus: Optional[Union[str, "V1p5ReceptorVariableDomain1Locus"]] = None
+    V1p5receptor_variable_domain_2_aa: Optional[str] = None
+    V1p5receptor_variable_domain_2_locus: Optional[Union[str, "V1p5ReceptorVariableDomain2Locus"]] = None
     V1p5receptor_ref: Optional[Union[str, List[str]]] = empty_list()
     V1p5reactivity_measurements: Optional[Union[Union[dict, "V1p5ReceptorReactivity"], List[Union[dict, "V1p5ReceptorReactivity"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5receptor_id):
-            self.MissingRequiredField("V1p5receptor_id")
-        if not isinstance(self.V1p5receptor_id, str):
+        if self.V1p5receptor_id is not None and not isinstance(self.V1p5receptor_id, str):
             self.V1p5receptor_id = str(self.V1p5receptor_id)
 
-        if self._is_empty(self.V1p5receptor_hash):
-            self.MissingRequiredField("V1p5receptor_hash")
-        if not isinstance(self.V1p5receptor_hash, str):
+        if self.V1p5receptor_hash is not None and not isinstance(self.V1p5receptor_hash, str):
             self.V1p5receptor_hash = str(self.V1p5receptor_hash)
 
-        if self._is_empty(self.V1p5receptor_type):
-            self.MissingRequiredField("V1p5receptor_type")
-        if not isinstance(self.V1p5receptor_type, V1p5ReceptorType):
+        if self.V1p5receptor_type is not None and not isinstance(self.V1p5receptor_type, V1p5ReceptorType):
             self.V1p5receptor_type = V1p5ReceptorType(self.V1p5receptor_type)
 
-        if self._is_empty(self.V1p5receptor_variable_domain_1_aa):
-            self.MissingRequiredField("V1p5receptor_variable_domain_1_aa")
-        if not isinstance(self.V1p5receptor_variable_domain_1_aa, str):
+        if self.V1p5receptor_variable_domain_1_aa is not None and not isinstance(self.V1p5receptor_variable_domain_1_aa, str):
             self.V1p5receptor_variable_domain_1_aa = str(self.V1p5receptor_variable_domain_1_aa)
 
-        if self._is_empty(self.V1p5receptor_variable_domain_1_locus):
-            self.MissingRequiredField("V1p5receptor_variable_domain_1_locus")
-        if not isinstance(self.V1p5receptor_variable_domain_1_locus, V1p5ReceptorVariableDomain1Locus):
+        if self.V1p5receptor_variable_domain_1_locus is not None and not isinstance(self.V1p5receptor_variable_domain_1_locus, V1p5ReceptorVariableDomain1Locus):
             self.V1p5receptor_variable_domain_1_locus = V1p5ReceptorVariableDomain1Locus(self.V1p5receptor_variable_domain_1_locus)
 
-        if self._is_empty(self.V1p5receptor_variable_domain_2_aa):
-            self.MissingRequiredField("V1p5receptor_variable_domain_2_aa")
-        if not isinstance(self.V1p5receptor_variable_domain_2_aa, str):
+        if self.V1p5receptor_variable_domain_2_aa is not None and not isinstance(self.V1p5receptor_variable_domain_2_aa, str):
             self.V1p5receptor_variable_domain_2_aa = str(self.V1p5receptor_variable_domain_2_aa)
 
-        if self._is_empty(self.V1p5receptor_variable_domain_2_locus):
-            self.MissingRequiredField("V1p5receptor_variable_domain_2_locus")
-        if not isinstance(self.V1p5receptor_variable_domain_2_locus, V1p5ReceptorVariableDomain2Locus):
+        if self.V1p5receptor_variable_domain_2_locus is not None and not isinstance(self.V1p5receptor_variable_domain_2_locus, V1p5ReceptorVariableDomain2Locus):
             self.V1p5receptor_variable_domain_2_locus = V1p5ReceptorVariableDomain2Locus(self.V1p5receptor_variable_domain_2_locus)
 
         if not isinstance(self.V1p5receptor_ref, list):
             self.V1p5receptor_ref = [self.V1p5receptor_ref] if self.V1p5receptor_ref is not None else []
         self.V1p5receptor_ref = [v if isinstance(v, str) else str(v) for v in self.V1p5receptor_ref]
 
-        self._normalize_inlined_as_dict(slot_name="V1p5reactivity_measurements", slot_type=V1p5ReceptorReactivity, key_name="V1p5ligand_type", keyed=False)
+        if not isinstance(self.V1p5reactivity_measurements, list):
+            self.V1p5reactivity_measurements = [self.V1p5reactivity_measurements] if self.V1p5reactivity_measurements is not None else []
+        self.V1p5reactivity_measurements = [v if isinstance(v, V1p5ReceptorReactivity) else V1p5ReceptorReactivity(**as_dict(v)) for v in self.V1p5reactivity_measurements]
 
         super().__post_init__(**kwargs)
 
@@ -7408,13 +6770,9 @@ class V1p5ReceptorReactivity(YAMLRoot):
     class_name: ClassVar[str] = "V1p5ReceptorReactivity"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5ReceptorReactivity
 
-    V1p5ligand_type: Union[str, "V1p5LigandType"] = None
-    V1p5antigen_type: Union[str, "V1p5AntigenType"] = None
-    V1p5antigen: Union[str, "V1p5Antigen"] = None
-    V1p5reactivity_method: Union[str, "V1p5ReactivityMethod"] = None
-    V1p5reactivity_readout: Union[str, "V1p5ReactivityReadout"] = None
-    V1p5reactivity_value: float = None
-    V1p5reactivity_unit: str = None
+    V1p5ligand_type: Optional[Union[str, "V1p5LigandType"]] = None
+    V1p5antigen_type: Optional[Union[str, "V1p5AntigenType"]] = None
+    V1p5antigen: Optional[Union[str, "V1p5Antigen"]] = None
     V1p5antigen_source_species: Optional[Union[str, "V1p5AntigenSourceSpecies"]] = None
     V1p5peptide_start: Optional[int] = None
     V1p5peptide_end: Optional[int] = None
@@ -7423,37 +6781,17 @@ class V1p5ReceptorReactivity(YAMLRoot):
     V1p5mhc_allele_1: Optional[str] = None
     V1p5mhc_gene_2: Optional[Union[str, "V1p5MhcGene2"]] = None
     V1p5mhc_allele_2: Optional[str] = None
+    V1p5reactivity_method: Optional[Union[str, "V1p5ReactivityMethod"]] = None
+    V1p5reactivity_readout: Optional[Union[str, "V1p5ReactivityReadout"]] = None
+    V1p5reactivity_value: Optional[float] = None
+    V1p5reactivity_unit: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5ligand_type):
-            self.MissingRequiredField("V1p5ligand_type")
-        if not isinstance(self.V1p5ligand_type, V1p5LigandType):
+        if self.V1p5ligand_type is not None and not isinstance(self.V1p5ligand_type, V1p5LigandType):
             self.V1p5ligand_type = V1p5LigandType(self.V1p5ligand_type)
 
-        if self._is_empty(self.V1p5antigen_type):
-            self.MissingRequiredField("V1p5antigen_type")
-        if not isinstance(self.V1p5antigen_type, V1p5AntigenType):
+        if self.V1p5antigen_type is not None and not isinstance(self.V1p5antigen_type, V1p5AntigenType):
             self.V1p5antigen_type = V1p5AntigenType(self.V1p5antigen_type)
-
-        if self._is_empty(self.V1p5reactivity_method):
-            self.MissingRequiredField("V1p5reactivity_method")
-        if not isinstance(self.V1p5reactivity_method, V1p5ReactivityMethod):
-            self.V1p5reactivity_method = V1p5ReactivityMethod(self.V1p5reactivity_method)
-
-        if self._is_empty(self.V1p5reactivity_readout):
-            self.MissingRequiredField("V1p5reactivity_readout")
-        if not isinstance(self.V1p5reactivity_readout, V1p5ReactivityReadout):
-            self.V1p5reactivity_readout = V1p5ReactivityReadout(self.V1p5reactivity_readout)
-
-        if self._is_empty(self.V1p5reactivity_value):
-            self.MissingRequiredField("V1p5reactivity_value")
-        if not isinstance(self.V1p5reactivity_value, float):
-            self.V1p5reactivity_value = float(self.V1p5reactivity_value)
-
-        if self._is_empty(self.V1p5reactivity_unit):
-            self.MissingRequiredField("V1p5reactivity_unit")
-        if not isinstance(self.V1p5reactivity_unit, str):
-            self.V1p5reactivity_unit = str(self.V1p5reactivity_unit)
 
         if self.V1p5peptide_start is not None and not isinstance(self.V1p5peptide_start, int):
             self.V1p5peptide_start = int(self.V1p5peptide_start)
@@ -7470,6 +6808,18 @@ class V1p5ReceptorReactivity(YAMLRoot):
         if self.V1p5mhc_allele_2 is not None and not isinstance(self.V1p5mhc_allele_2, str):
             self.V1p5mhc_allele_2 = str(self.V1p5mhc_allele_2)
 
+        if self.V1p5reactivity_method is not None and not isinstance(self.V1p5reactivity_method, V1p5ReactivityMethod):
+            self.V1p5reactivity_method = V1p5ReactivityMethod(self.V1p5reactivity_method)
+
+        if self.V1p5reactivity_readout is not None and not isinstance(self.V1p5reactivity_readout, V1p5ReactivityReadout):
+            self.V1p5reactivity_readout = V1p5ReactivityReadout(self.V1p5reactivity_readout)
+
+        if self.V1p5reactivity_value is not None and not isinstance(self.V1p5reactivity_value, float):
+            self.V1p5reactivity_value = float(self.V1p5reactivity_value)
+
+        if self.V1p5reactivity_unit is not None and not isinstance(self.V1p5reactivity_unit, str):
+            self.V1p5reactivity_unit = str(self.V1p5reactivity_unit)
+
         super().__post_init__(**kwargs)
 
 
@@ -7482,200 +6832,142 @@ class V1p5SampleProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p5SampleProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5SampleProcessing
 
-    V1p5sample_id: str = None
-    V1p5sample_type: str = None
-    V1p5tissue: Union[str, "V1p5Tissue"] = None
-    V1p5anatomic_site: str = None
-    V1p5disease_state_sample: str = None
-    V1p5collection_time_point_relative: float = None
-    V1p5collection_time_point_relative_unit: Union[str, "V1p5CollectionTimePointRelativeUnit"] = None
-    V1p5collection_time_point_reference: str = None
-    V1p5biomaterial_provider: str = None
-    V1p5tissue_processing: str = None
-    V1p5cell_subset: Union[str, "V1p5CellSubset"] = None
-    V1p5cell_phenotype: str = None
-    V1p5single_cell: Union[bool, Bool] = None
-    V1p5cell_number: int = None
-    V1p5cells_per_reaction: int = None
-    V1p5cell_storage: Union[bool, Bool] = None
-    V1p5cell_quality: str = None
-    V1p5cell_isolation: str = None
-    V1p5cell_processing_protocol: str = None
-    V1p5template_class: Union[str, "V1p5TemplateClass"] = None
-    V1p5template_quality: str = None
-    V1p5template_amount: float = None
-    V1p5template_amount_unit: Union[str, "V1p5TemplateAmountUnit"] = None
-    V1p5library_generation_method: Union[str, "V1p5LibraryGenerationMethod"] = None
-    V1p5library_generation_protocol: str = None
-    V1p5library_generation_kit_version: str = None
-    V1p5complete_sequences: Union[str, "V1p5CompleteSequences"] = None
-    V1p5physical_linkage: Union[str, "V1p5PhysicalLinkage"] = None
-    V1p5sequencing_run_id: str = None
-    V1p5total_reads_passing_qc_filter: int = None
-    V1p5sequencing_platform: str = None
-    V1p5sequencing_facility: str = None
-    V1p5sequencing_run_date: Union[str, XSDDateTime] = None
-    V1p5sequencing_kit: str = None
     V1p5sample_processing_id: Optional[str] = None
+    V1p5sample_id: Optional[str] = None
+    V1p5sample_type: Optional[str] = None
+    V1p5tissue: Optional[Union[str, "V1p5Tissue"]] = None
+    V1p5anatomic_site: Optional[str] = None
+    V1p5disease_state_sample: Optional[str] = None
+    V1p5collection_time_point_relative: Optional[float] = None
+    V1p5collection_time_point_relative_unit: Optional[Union[str, "V1p5CollectionTimePointRelativeUnit"]] = None
+    V1p5collection_time_point_reference: Optional[str] = None
+    V1p5biomaterial_provider: Optional[str] = None
+    V1p5tissue_processing: Optional[str] = None
+    V1p5cell_subset: Optional[Union[str, "V1p5CellSubset"]] = None
+    V1p5cell_phenotype: Optional[str] = None
     V1p5cell_species: Optional[Union[str, "V1p5CellSpecies"]] = None
+    V1p5single_cell: Optional[Union[bool, Bool]] = None
+    V1p5cell_number: Optional[int] = None
+    V1p5cells_per_reaction: Optional[int] = None
+    V1p5cell_storage: Optional[Union[bool, Bool]] = None
+    V1p5cell_quality: Optional[str] = None
+    V1p5cell_isolation: Optional[str] = None
+    V1p5cell_processing_protocol: Optional[str] = None
+    V1p5template_class: Optional[Union[str, "V1p5TemplateClass"]] = None
+    V1p5template_quality: Optional[str] = None
+    V1p5template_amount: Optional[float] = None
+    V1p5template_amount_unit: Optional[Union[str, "V1p5TemplateAmountUnit"]] = None
+    V1p5library_generation_method: Optional[Union[str, "V1p5LibraryGenerationMethod"]] = None
+    V1p5library_generation_protocol: Optional[str] = None
+    V1p5library_generation_kit_version: Optional[str] = None
     V1p5pcr_target: Optional[Union[Union[dict, V1p5PCRTarget], List[Union[dict, V1p5PCRTarget]]]] = empty_list()
+    V1p5complete_sequences: Optional[Union[str, "V1p5CompleteSequences"]] = None
+    V1p5physical_linkage: Optional[Union[str, "V1p5PhysicalLinkage"]] = None
+    V1p5sequencing_run_id: Optional[str] = None
+    V1p5total_reads_passing_qc_filter: Optional[int] = None
+    V1p5sequencing_platform: Optional[str] = None
+    V1p5sequencing_facility: Optional[str] = None
+    V1p5sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
+    V1p5sequencing_kit: Optional[str] = None
     V1p5sequencing_files: Optional[Union[dict, V1p5SequencingData]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p5sample_id):
-            self.MissingRequiredField("V1p5sample_id")
-        if not isinstance(self.V1p5sample_id, str):
-            self.V1p5sample_id = str(self.V1p5sample_id)
-
-        if self._is_empty(self.V1p5sample_type):
-            self.MissingRequiredField("V1p5sample_type")
-        if not isinstance(self.V1p5sample_type, str):
-            self.V1p5sample_type = str(self.V1p5sample_type)
-
-        if self._is_empty(self.V1p5anatomic_site):
-            self.MissingRequiredField("V1p5anatomic_site")
-        if not isinstance(self.V1p5anatomic_site, str):
-            self.V1p5anatomic_site = str(self.V1p5anatomic_site)
-
-        if self._is_empty(self.V1p5disease_state_sample):
-            self.MissingRequiredField("V1p5disease_state_sample")
-        if not isinstance(self.V1p5disease_state_sample, str):
-            self.V1p5disease_state_sample = str(self.V1p5disease_state_sample)
-
-        if self._is_empty(self.V1p5collection_time_point_relative):
-            self.MissingRequiredField("V1p5collection_time_point_relative")
-        if not isinstance(self.V1p5collection_time_point_relative, float):
-            self.V1p5collection_time_point_relative = float(self.V1p5collection_time_point_relative)
-
-        if self._is_empty(self.V1p5collection_time_point_reference):
-            self.MissingRequiredField("V1p5collection_time_point_reference")
-        if not isinstance(self.V1p5collection_time_point_reference, str):
-            self.V1p5collection_time_point_reference = str(self.V1p5collection_time_point_reference)
-
-        if self._is_empty(self.V1p5biomaterial_provider):
-            self.MissingRequiredField("V1p5biomaterial_provider")
-        if not isinstance(self.V1p5biomaterial_provider, str):
-            self.V1p5biomaterial_provider = str(self.V1p5biomaterial_provider)
-
-        if self._is_empty(self.V1p5tissue_processing):
-            self.MissingRequiredField("V1p5tissue_processing")
-        if not isinstance(self.V1p5tissue_processing, str):
-            self.V1p5tissue_processing = str(self.V1p5tissue_processing)
-
-        if self._is_empty(self.V1p5cell_phenotype):
-            self.MissingRequiredField("V1p5cell_phenotype")
-        if not isinstance(self.V1p5cell_phenotype, str):
-            self.V1p5cell_phenotype = str(self.V1p5cell_phenotype)
-
-        if self._is_empty(self.V1p5single_cell):
-            self.MissingRequiredField("V1p5single_cell")
-        if not isinstance(self.V1p5single_cell, Bool):
-            self.V1p5single_cell = Bool(self.V1p5single_cell)
-
-        if self._is_empty(self.V1p5cell_number):
-            self.MissingRequiredField("V1p5cell_number")
-        if not isinstance(self.V1p5cell_number, int):
-            self.V1p5cell_number = int(self.V1p5cell_number)
-
-        if self._is_empty(self.V1p5cells_per_reaction):
-            self.MissingRequiredField("V1p5cells_per_reaction")
-        if not isinstance(self.V1p5cells_per_reaction, int):
-            self.V1p5cells_per_reaction = int(self.V1p5cells_per_reaction)
-
-        if self._is_empty(self.V1p5cell_storage):
-            self.MissingRequiredField("V1p5cell_storage")
-        if not isinstance(self.V1p5cell_storage, Bool):
-            self.V1p5cell_storage = Bool(self.V1p5cell_storage)
-
-        if self._is_empty(self.V1p5cell_quality):
-            self.MissingRequiredField("V1p5cell_quality")
-        if not isinstance(self.V1p5cell_quality, str):
-            self.V1p5cell_quality = str(self.V1p5cell_quality)
-
-        if self._is_empty(self.V1p5cell_isolation):
-            self.MissingRequiredField("V1p5cell_isolation")
-        if not isinstance(self.V1p5cell_isolation, str):
-            self.V1p5cell_isolation = str(self.V1p5cell_isolation)
-
-        if self._is_empty(self.V1p5cell_processing_protocol):
-            self.MissingRequiredField("V1p5cell_processing_protocol")
-        if not isinstance(self.V1p5cell_processing_protocol, str):
-            self.V1p5cell_processing_protocol = str(self.V1p5cell_processing_protocol)
-
-        if self._is_empty(self.V1p5template_class):
-            self.MissingRequiredField("V1p5template_class")
-        if not isinstance(self.V1p5template_class, V1p5TemplateClass):
-            self.V1p5template_class = V1p5TemplateClass(self.V1p5template_class)
-
-        if self._is_empty(self.V1p5template_quality):
-            self.MissingRequiredField("V1p5template_quality")
-        if not isinstance(self.V1p5template_quality, str):
-            self.V1p5template_quality = str(self.V1p5template_quality)
-
-        if self._is_empty(self.V1p5template_amount):
-            self.MissingRequiredField("V1p5template_amount")
-        if not isinstance(self.V1p5template_amount, float):
-            self.V1p5template_amount = float(self.V1p5template_amount)
-
-        if self._is_empty(self.V1p5library_generation_method):
-            self.MissingRequiredField("V1p5library_generation_method")
-        if not isinstance(self.V1p5library_generation_method, V1p5LibraryGenerationMethod):
-            self.V1p5library_generation_method = V1p5LibraryGenerationMethod(self.V1p5library_generation_method)
-
-        if self._is_empty(self.V1p5library_generation_protocol):
-            self.MissingRequiredField("V1p5library_generation_protocol")
-        if not isinstance(self.V1p5library_generation_protocol, str):
-            self.V1p5library_generation_protocol = str(self.V1p5library_generation_protocol)
-
-        if self._is_empty(self.V1p5library_generation_kit_version):
-            self.MissingRequiredField("V1p5library_generation_kit_version")
-        if not isinstance(self.V1p5library_generation_kit_version, str):
-            self.V1p5library_generation_kit_version = str(self.V1p5library_generation_kit_version)
-
-        if self._is_empty(self.V1p5complete_sequences):
-            self.MissingRequiredField("V1p5complete_sequences")
-        if not isinstance(self.V1p5complete_sequences, V1p5CompleteSequences):
-            self.V1p5complete_sequences = V1p5CompleteSequences(self.V1p5complete_sequences)
-
-        if self._is_empty(self.V1p5physical_linkage):
-            self.MissingRequiredField("V1p5physical_linkage")
-        if not isinstance(self.V1p5physical_linkage, V1p5PhysicalLinkage):
-            self.V1p5physical_linkage = V1p5PhysicalLinkage(self.V1p5physical_linkage)
-
-        if self._is_empty(self.V1p5sequencing_run_id):
-            self.MissingRequiredField("V1p5sequencing_run_id")
-        if not isinstance(self.V1p5sequencing_run_id, str):
-            self.V1p5sequencing_run_id = str(self.V1p5sequencing_run_id)
-
-        if self._is_empty(self.V1p5total_reads_passing_qc_filter):
-            self.MissingRequiredField("V1p5total_reads_passing_qc_filter")
-        if not isinstance(self.V1p5total_reads_passing_qc_filter, int):
-            self.V1p5total_reads_passing_qc_filter = int(self.V1p5total_reads_passing_qc_filter)
-
-        if self._is_empty(self.V1p5sequencing_platform):
-            self.MissingRequiredField("V1p5sequencing_platform")
-        if not isinstance(self.V1p5sequencing_platform, str):
-            self.V1p5sequencing_platform = str(self.V1p5sequencing_platform)
-
-        if self._is_empty(self.V1p5sequencing_facility):
-            self.MissingRequiredField("V1p5sequencing_facility")
-        if not isinstance(self.V1p5sequencing_facility, str):
-            self.V1p5sequencing_facility = str(self.V1p5sequencing_facility)
-
-        if self._is_empty(self.V1p5sequencing_run_date):
-            self.MissingRequiredField("V1p5sequencing_run_date")
-        if not isinstance(self.V1p5sequencing_run_date, XSDDateTime):
-            self.V1p5sequencing_run_date = XSDDateTime(self.V1p5sequencing_run_date)
-
-        if self._is_empty(self.V1p5sequencing_kit):
-            self.MissingRequiredField("V1p5sequencing_kit")
-        if not isinstance(self.V1p5sequencing_kit, str):
-            self.V1p5sequencing_kit = str(self.V1p5sequencing_kit)
-
         if self.V1p5sample_processing_id is not None and not isinstance(self.V1p5sample_processing_id, str):
             self.V1p5sample_processing_id = str(self.V1p5sample_processing_id)
 
-        self._normalize_inlined_as_dict(slot_name="V1p5pcr_target", slot_type=V1p5PCRTarget, key_name="V1p5pcr_target_locus", keyed=False)
+        if self.V1p5sample_id is not None and not isinstance(self.V1p5sample_id, str):
+            self.V1p5sample_id = str(self.V1p5sample_id)
+
+        if self.V1p5sample_type is not None and not isinstance(self.V1p5sample_type, str):
+            self.V1p5sample_type = str(self.V1p5sample_type)
+
+        if self.V1p5anatomic_site is not None and not isinstance(self.V1p5anatomic_site, str):
+            self.V1p5anatomic_site = str(self.V1p5anatomic_site)
+
+        if self.V1p5disease_state_sample is not None and not isinstance(self.V1p5disease_state_sample, str):
+            self.V1p5disease_state_sample = str(self.V1p5disease_state_sample)
+
+        if self.V1p5collection_time_point_relative is not None and not isinstance(self.V1p5collection_time_point_relative, float):
+            self.V1p5collection_time_point_relative = float(self.V1p5collection_time_point_relative)
+
+        if self.V1p5collection_time_point_reference is not None and not isinstance(self.V1p5collection_time_point_reference, str):
+            self.V1p5collection_time_point_reference = str(self.V1p5collection_time_point_reference)
+
+        if self.V1p5biomaterial_provider is not None and not isinstance(self.V1p5biomaterial_provider, str):
+            self.V1p5biomaterial_provider = str(self.V1p5biomaterial_provider)
+
+        if self.V1p5tissue_processing is not None and not isinstance(self.V1p5tissue_processing, str):
+            self.V1p5tissue_processing = str(self.V1p5tissue_processing)
+
+        if self.V1p5cell_phenotype is not None and not isinstance(self.V1p5cell_phenotype, str):
+            self.V1p5cell_phenotype = str(self.V1p5cell_phenotype)
+
+        if self.V1p5single_cell is not None and not isinstance(self.V1p5single_cell, Bool):
+            self.V1p5single_cell = Bool(self.V1p5single_cell)
+
+        if self.V1p5cell_number is not None and not isinstance(self.V1p5cell_number, int):
+            self.V1p5cell_number = int(self.V1p5cell_number)
+
+        if self.V1p5cells_per_reaction is not None and not isinstance(self.V1p5cells_per_reaction, int):
+            self.V1p5cells_per_reaction = int(self.V1p5cells_per_reaction)
+
+        if self.V1p5cell_storage is not None and not isinstance(self.V1p5cell_storage, Bool):
+            self.V1p5cell_storage = Bool(self.V1p5cell_storage)
+
+        if self.V1p5cell_quality is not None and not isinstance(self.V1p5cell_quality, str):
+            self.V1p5cell_quality = str(self.V1p5cell_quality)
+
+        if self.V1p5cell_isolation is not None and not isinstance(self.V1p5cell_isolation, str):
+            self.V1p5cell_isolation = str(self.V1p5cell_isolation)
+
+        if self.V1p5cell_processing_protocol is not None and not isinstance(self.V1p5cell_processing_protocol, str):
+            self.V1p5cell_processing_protocol = str(self.V1p5cell_processing_protocol)
+
+        if self.V1p5template_class is not None and not isinstance(self.V1p5template_class, V1p5TemplateClass):
+            self.V1p5template_class = V1p5TemplateClass(self.V1p5template_class)
+
+        if self.V1p5template_quality is not None and not isinstance(self.V1p5template_quality, str):
+            self.V1p5template_quality = str(self.V1p5template_quality)
+
+        if self.V1p5template_amount is not None and not isinstance(self.V1p5template_amount, float):
+            self.V1p5template_amount = float(self.V1p5template_amount)
+
+        if self.V1p5library_generation_method is not None and not isinstance(self.V1p5library_generation_method, V1p5LibraryGenerationMethod):
+            self.V1p5library_generation_method = V1p5LibraryGenerationMethod(self.V1p5library_generation_method)
+
+        if self.V1p5library_generation_protocol is not None and not isinstance(self.V1p5library_generation_protocol, str):
+            self.V1p5library_generation_protocol = str(self.V1p5library_generation_protocol)
+
+        if self.V1p5library_generation_kit_version is not None and not isinstance(self.V1p5library_generation_kit_version, str):
+            self.V1p5library_generation_kit_version = str(self.V1p5library_generation_kit_version)
+
+        if not isinstance(self.V1p5pcr_target, list):
+            self.V1p5pcr_target = [self.V1p5pcr_target] if self.V1p5pcr_target is not None else []
+        self.V1p5pcr_target = [v if isinstance(v, V1p5PCRTarget) else V1p5PCRTarget(**as_dict(v)) for v in self.V1p5pcr_target]
+
+        if self.V1p5complete_sequences is not None and not isinstance(self.V1p5complete_sequences, V1p5CompleteSequences):
+            self.V1p5complete_sequences = V1p5CompleteSequences(self.V1p5complete_sequences)
+
+        if self.V1p5physical_linkage is not None and not isinstance(self.V1p5physical_linkage, V1p5PhysicalLinkage):
+            self.V1p5physical_linkage = V1p5PhysicalLinkage(self.V1p5physical_linkage)
+
+        if self.V1p5sequencing_run_id is not None and not isinstance(self.V1p5sequencing_run_id, str):
+            self.V1p5sequencing_run_id = str(self.V1p5sequencing_run_id)
+
+        if self.V1p5total_reads_passing_qc_filter is not None and not isinstance(self.V1p5total_reads_passing_qc_filter, int):
+            self.V1p5total_reads_passing_qc_filter = int(self.V1p5total_reads_passing_qc_filter)
+
+        if self.V1p5sequencing_platform is not None and not isinstance(self.V1p5sequencing_platform, str):
+            self.V1p5sequencing_platform = str(self.V1p5sequencing_platform)
+
+        if self.V1p5sequencing_facility is not None and not isinstance(self.V1p5sequencing_facility, str):
+            self.V1p5sequencing_facility = str(self.V1p5sequencing_facility)
+
+        if self.V1p5sequencing_run_date is not None and not isinstance(self.V1p5sequencing_run_date, XSDDateTime):
+            self.V1p5sequencing_run_date = XSDDateTime(self.V1p5sequencing_run_date)
+
+        if self.V1p5sequencing_kit is not None and not isinstance(self.V1p5sequencing_kit, str):
+            self.V1p5sequencing_kit = str(self.V1p5sequencing_kit)
 
         if self.V1p5sequencing_files is not None and not isinstance(self.V1p5sequencing_files, V1p5SequencingData):
             self.V1p5sequencing_files = V1p5SequencingData(**as_dict(self.V1p5sequencing_files))
@@ -7776,28 +7068,26 @@ class V1p4Contributor(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Contributor"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Contributor
 
-    V1p4contributor_id: str = None
-    V1p4name: str = None
+    V1p4contributor_id: Optional[str] = None
+    V1p4name: Optional[str] = None
     V1p4orcid_id: Optional[Union[str, "V1p4OrcidId"]] = None
     V1p4affiliation: Optional[Union[str, "V1p4Affiliation"]] = None
     V1p4affiliation_department: Optional[str] = None
     V1p4contributions: Optional[Union[Union[dict, "V1p4ContributorContribution"], List[Union[dict, "V1p4ContributorContribution"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4contributor_id):
-            self.MissingRequiredField("V1p4contributor_id")
-        if not isinstance(self.V1p4contributor_id, str):
+        if self.V1p4contributor_id is not None and not isinstance(self.V1p4contributor_id, str):
             self.V1p4contributor_id = str(self.V1p4contributor_id)
 
-        if self._is_empty(self.V1p4name):
-            self.MissingRequiredField("V1p4name")
-        if not isinstance(self.V1p4name, str):
+        if self.V1p4name is not None and not isinstance(self.V1p4name, str):
             self.V1p4name = str(self.V1p4name)
 
         if self.V1p4affiliation_department is not None and not isinstance(self.V1p4affiliation_department, str):
             self.V1p4affiliation_department = str(self.V1p4affiliation_department)
 
-        self._normalize_inlined_as_dict(slot_name="V1p4contributions", slot_type=V1p4ContributorContribution, key_name="V1p4role", keyed=False)
+        if not isinstance(self.V1p4contributions, list):
+            self.V1p4contributions = [self.V1p4contributions] if self.V1p4contributions is not None else []
+        self.V1p4contributions = [v if isinstance(v, V1p4ContributorContribution) else V1p4ContributorContribution(**as_dict(v)) for v in self.V1p4contributions]
 
         super().__post_init__(**kwargs)
 
@@ -7811,13 +7101,11 @@ class V1p4ContributorContribution(YAMLRoot):
     class_name: ClassVar[str] = "V1p4ContributorContribution"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4ContributorContribution
 
-    V1p4role: Union[str, "V1p4Role"] = None
+    V1p4role: Optional[Union[str, "V1p4Role"]] = None
     V1p4degree: Optional[Union[str, "V1p4Degree"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4role):
-            self.MissingRequiredField("V1p4role")
-        if not isinstance(self.V1p4role, V1p4Role):
+        if self.V1p4role is not None and not isinstance(self.V1p4role, V1p4Role):
             self.V1p4role = V1p4Role(self.V1p4role)
 
         if self.V1p4degree is not None and not isinstance(self.V1p4degree, V1p4Degree):
@@ -7835,53 +7123,41 @@ class V1p4RearrangedSequence(YAMLRoot):
     class_name: ClassVar[str] = "V1p4RearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4RearrangedSequence
 
-    V1p4sequence_id: str = None
-    V1p4sequence: str = None
-    V1p4derivation: Union[str, "V1p4Derivation"] = None
-    V1p4observation_type: Union[str, "V1p4ObservationType"] = None
-    V1p4repository_name: str = None
-    V1p4deposited_version: str = None
+    V1p4sequence_id: Optional[str] = None
+    V1p4sequence: Optional[str] = None
+    V1p4derivation: Optional[Union[str, "V1p4Derivation"]] = None
+    V1p4observation_type: Optional[Union[str, "V1p4ObservationType"]] = None
     V1p4curation: Optional[str] = None
+    V1p4repository_name: Optional[str] = None
     V1p4repository_ref: Optional[str] = None
+    V1p4deposited_version: Optional[str] = None
     V1p4sequence_start: Optional[int] = None
     V1p4sequence_end: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequence_id):
-            self.MissingRequiredField("V1p4sequence_id")
-        if not isinstance(self.V1p4sequence_id, str):
+        if self.V1p4sequence_id is not None and not isinstance(self.V1p4sequence_id, str):
             self.V1p4sequence_id = str(self.V1p4sequence_id)
 
-        if self._is_empty(self.V1p4sequence):
-            self.MissingRequiredField("V1p4sequence")
-        if not isinstance(self.V1p4sequence, str):
+        if self.V1p4sequence is not None and not isinstance(self.V1p4sequence, str):
             self.V1p4sequence = str(self.V1p4sequence)
 
-        if self._is_empty(self.V1p4derivation):
-            self.MissingRequiredField("V1p4derivation")
-        if not isinstance(self.V1p4derivation, V1p4Derivation):
+        if self.V1p4derivation is not None and not isinstance(self.V1p4derivation, V1p4Derivation):
             self.V1p4derivation = V1p4Derivation(self.V1p4derivation)
 
-        if self._is_empty(self.V1p4observation_type):
-            self.MissingRequiredField("V1p4observation_type")
-        if not isinstance(self.V1p4observation_type, V1p4ObservationType):
+        if self.V1p4observation_type is not None and not isinstance(self.V1p4observation_type, V1p4ObservationType):
             self.V1p4observation_type = V1p4ObservationType(self.V1p4observation_type)
-
-        if self._is_empty(self.V1p4repository_name):
-            self.MissingRequiredField("V1p4repository_name")
-        if not isinstance(self.V1p4repository_name, str):
-            self.V1p4repository_name = str(self.V1p4repository_name)
-
-        if self._is_empty(self.V1p4deposited_version):
-            self.MissingRequiredField("V1p4deposited_version")
-        if not isinstance(self.V1p4deposited_version, str):
-            self.V1p4deposited_version = str(self.V1p4deposited_version)
 
         if self.V1p4curation is not None and not isinstance(self.V1p4curation, str):
             self.V1p4curation = str(self.V1p4curation)
 
+        if self.V1p4repository_name is not None and not isinstance(self.V1p4repository_name, str):
+            self.V1p4repository_name = str(self.V1p4repository_name)
+
         if self.V1p4repository_ref is not None and not isinstance(self.V1p4repository_ref, str):
             self.V1p4repository_ref = str(self.V1p4repository_ref)
+
+        if self.V1p4deposited_version is not None and not isinstance(self.V1p4deposited_version, str):
+            self.V1p4deposited_version = str(self.V1p4deposited_version)
 
         if self.V1p4sequence_start is not None and not isinstance(self.V1p4sequence_start, int):
             self.V1p4sequence_start = int(self.V1p4sequence_start)
@@ -7901,61 +7177,47 @@ class V1p4UnrearrangedSequence(YAMLRoot):
     class_name: ClassVar[str] = "V1p4UnrearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4UnrearrangedSequence
 
-    V1p4sequence_id: str = None
-    V1p4sequence: str = None
-    V1p4repository_name: str = None
-    V1p4gff_seqid: str = None
-    V1p4gff_start: int = None
-    V1p4gff_end: int = None
-    V1p4strand: Union[str, "V1p4Strand"] = None
+    V1p4sequence_id: Optional[str] = None
+    V1p4sequence: Optional[str] = None
     V1p4curation: Optional[str] = None
+    V1p4repository_name: Optional[str] = None
     V1p4repository_ref: Optional[str] = None
     V1p4patch_no: Optional[str] = None
+    V1p4gff_seqid: Optional[str] = None
+    V1p4gff_start: Optional[int] = None
+    V1p4gff_end: Optional[int] = None
+    V1p4strand: Optional[Union[str, "V1p4Strand"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequence_id):
-            self.MissingRequiredField("V1p4sequence_id")
-        if not isinstance(self.V1p4sequence_id, str):
+        if self.V1p4sequence_id is not None and not isinstance(self.V1p4sequence_id, str):
             self.V1p4sequence_id = str(self.V1p4sequence_id)
 
-        if self._is_empty(self.V1p4sequence):
-            self.MissingRequiredField("V1p4sequence")
-        if not isinstance(self.V1p4sequence, str):
+        if self.V1p4sequence is not None and not isinstance(self.V1p4sequence, str):
             self.V1p4sequence = str(self.V1p4sequence)
-
-        if self._is_empty(self.V1p4repository_name):
-            self.MissingRequiredField("V1p4repository_name")
-        if not isinstance(self.V1p4repository_name, str):
-            self.V1p4repository_name = str(self.V1p4repository_name)
-
-        if self._is_empty(self.V1p4gff_seqid):
-            self.MissingRequiredField("V1p4gff_seqid")
-        if not isinstance(self.V1p4gff_seqid, str):
-            self.V1p4gff_seqid = str(self.V1p4gff_seqid)
-
-        if self._is_empty(self.V1p4gff_start):
-            self.MissingRequiredField("V1p4gff_start")
-        if not isinstance(self.V1p4gff_start, int):
-            self.V1p4gff_start = int(self.V1p4gff_start)
-
-        if self._is_empty(self.V1p4gff_end):
-            self.MissingRequiredField("V1p4gff_end")
-        if not isinstance(self.V1p4gff_end, int):
-            self.V1p4gff_end = int(self.V1p4gff_end)
-
-        if self._is_empty(self.V1p4strand):
-            self.MissingRequiredField("V1p4strand")
-        if not isinstance(self.V1p4strand, V1p4Strand):
-            self.V1p4strand = V1p4Strand(self.V1p4strand)
 
         if self.V1p4curation is not None and not isinstance(self.V1p4curation, str):
             self.V1p4curation = str(self.V1p4curation)
+
+        if self.V1p4repository_name is not None and not isinstance(self.V1p4repository_name, str):
+            self.V1p4repository_name = str(self.V1p4repository_name)
 
         if self.V1p4repository_ref is not None and not isinstance(self.V1p4repository_ref, str):
             self.V1p4repository_ref = str(self.V1p4repository_ref)
 
         if self.V1p4patch_no is not None and not isinstance(self.V1p4patch_no, str):
             self.V1p4patch_no = str(self.V1p4patch_no)
+
+        if self.V1p4gff_seqid is not None and not isinstance(self.V1p4gff_seqid, str):
+            self.V1p4gff_seqid = str(self.V1p4gff_seqid)
+
+        if self.V1p4gff_start is not None and not isinstance(self.V1p4gff_start, int):
+            self.V1p4gff_start = int(self.V1p4gff_start)
+
+        if self.V1p4gff_end is not None and not isinstance(self.V1p4gff_end, int):
+            self.V1p4gff_end = int(self.V1p4gff_end)
+
+        if self.V1p4strand is not None and not isinstance(self.V1p4strand, V1p4Strand):
+            self.V1p4strand = V1p4Strand(self.V1p4strand)
 
         super().__post_init__(**kwargs)
 
@@ -7969,8 +7231,8 @@ class V1p4SequenceDelineationV(YAMLRoot):
     class_name: ClassVar[str] = "V1p4SequenceDelineationV"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SequenceDelineationV
 
-    V1p4sequence_delineation_id: str = None
-    V1p4delineation_scheme: str = None
+    V1p4sequence_delineation_id: Optional[str] = None
+    V1p4delineation_scheme: Optional[str] = None
     V1p4unaligned_sequence: Optional[str] = None
     V1p4aligned_sequence: Optional[str] = None
     V1p4fwr1_start: Optional[int] = None
@@ -7987,14 +7249,10 @@ class V1p4SequenceDelineationV(YAMLRoot):
     V1p4alignment_labels: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequence_delineation_id):
-            self.MissingRequiredField("V1p4sequence_delineation_id")
-        if not isinstance(self.V1p4sequence_delineation_id, str):
+        if self.V1p4sequence_delineation_id is not None and not isinstance(self.V1p4sequence_delineation_id, str):
             self.V1p4sequence_delineation_id = str(self.V1p4sequence_delineation_id)
 
-        if self._is_empty(self.V1p4delineation_scheme):
-            self.MissingRequiredField("V1p4delineation_scheme")
-        if not isinstance(self.V1p4delineation_scheme, str):
+        if self.V1p4delineation_scheme is not None and not isinstance(self.V1p4delineation_scheme, str):
             self.V1p4delineation_scheme = str(self.V1p4delineation_scheme)
 
         if self.V1p4unaligned_sequence is not None and not isinstance(self.V1p4unaligned_sequence, str):
@@ -8052,22 +7310,22 @@ class V1p4AlleleDescription(YAMLRoot):
     class_name: ClassVar[str] = "V1p4AlleleDescription"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4AlleleDescription
 
-    V1p4allele_description_id: str = None
-    V1p4acknowledgements: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    V1p4release_version: str = None
-    V1p4release_date: Union[str, XSDDateTime] = None
-    V1p4release_description: str = None
-    V1p4sequence: str = None
-    V1p4coding_sequence: str = None
-    V1p4sequence_type: Union[str, "V1p4SequenceType"] = None
-    V1p4functional: Union[bool, Bool] = None
-    V1p4inference_type: Union[str, "V1p4InferenceType"] = None
-    V1p4species: Union[str, "V1p4Species"] = None
+    V1p4allele_description_id: Optional[str] = None
     V1p4allele_description_ref: Optional[str] = None
+    V1p4acknowledgements: Optional[Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]]] = empty_list()
+    V1p4release_version: Optional[str] = None
+    V1p4release_date: Optional[Union[str, XSDDateTime]] = None
+    V1p4release_description: Optional[str] = None
     V1p4label: Optional[str] = None
+    V1p4sequence: Optional[str] = None
+    V1p4coding_sequence: Optional[str] = None
     V1p4aliases: Optional[Union[str, List[str]]] = empty_list()
     V1p4locus: Optional[Union[str, "V1p4Locus"]] = None
     V1p4chromosome: Optional[int] = None
+    V1p4sequence_type: Optional[Union[str, "V1p4SequenceType"]] = None
+    V1p4functional: Optional[Union[bool, Bool]] = None
+    V1p4inference_type: Optional[Union[str, "V1p4InferenceType"]] = None
+    V1p4species: Optional[Union[str, "V1p4Species"]] = None
     V1p4species_subgroup: Optional[str] = None
     V1p4species_subgroup_type: Optional[Union[str, "V1p4SpeciesSubgroupType"]] = None
     V1p4status: Optional[Union[str, "V1p4Status"]] = None
@@ -8103,60 +7361,33 @@ class V1p4AlleleDescription(YAMLRoot):
     V1p4curational_tags: Optional[Union[Union[str, "V1p4CurationalTags"], List[Union[str, "V1p4CurationalTags"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4allele_description_id):
-            self.MissingRequiredField("V1p4allele_description_id")
-        if not isinstance(self.V1p4allele_description_id, str):
+        if self.V1p4allele_description_id is not None and not isinstance(self.V1p4allele_description_id, str):
             self.V1p4allele_description_id = str(self.V1p4allele_description_id)
-
-        if self._is_empty(self.V1p4acknowledgements):
-            self.MissingRequiredField("V1p4acknowledgements")
-        self._normalize_inlined_as_dict(slot_name="V1p4acknowledgements", slot_type=V1p4Contributor, key_name="V1p4contributor_id", keyed=False)
-
-        if self._is_empty(self.V1p4release_version):
-            self.MissingRequiredField("V1p4release_version")
-        if not isinstance(self.V1p4release_version, str):
-            self.V1p4release_version = str(self.V1p4release_version)
-
-        if self._is_empty(self.V1p4release_date):
-            self.MissingRequiredField("V1p4release_date")
-        if not isinstance(self.V1p4release_date, XSDDateTime):
-            self.V1p4release_date = XSDDateTime(self.V1p4release_date)
-
-        if self._is_empty(self.V1p4release_description):
-            self.MissingRequiredField("V1p4release_description")
-        if not isinstance(self.V1p4release_description, str):
-            self.V1p4release_description = str(self.V1p4release_description)
-
-        if self._is_empty(self.V1p4sequence):
-            self.MissingRequiredField("V1p4sequence")
-        if not isinstance(self.V1p4sequence, str):
-            self.V1p4sequence = str(self.V1p4sequence)
-
-        if self._is_empty(self.V1p4coding_sequence):
-            self.MissingRequiredField("V1p4coding_sequence")
-        if not isinstance(self.V1p4coding_sequence, str):
-            self.V1p4coding_sequence = str(self.V1p4coding_sequence)
-
-        if self._is_empty(self.V1p4sequence_type):
-            self.MissingRequiredField("V1p4sequence_type")
-        if not isinstance(self.V1p4sequence_type, V1p4SequenceType):
-            self.V1p4sequence_type = V1p4SequenceType(self.V1p4sequence_type)
-
-        if self._is_empty(self.V1p4functional):
-            self.MissingRequiredField("V1p4functional")
-        if not isinstance(self.V1p4functional, Bool):
-            self.V1p4functional = Bool(self.V1p4functional)
-
-        if self._is_empty(self.V1p4inference_type):
-            self.MissingRequiredField("V1p4inference_type")
-        if not isinstance(self.V1p4inference_type, V1p4InferenceType):
-            self.V1p4inference_type = V1p4InferenceType(self.V1p4inference_type)
 
         if self.V1p4allele_description_ref is not None and not isinstance(self.V1p4allele_description_ref, str):
             self.V1p4allele_description_ref = str(self.V1p4allele_description_ref)
 
+        if not isinstance(self.V1p4acknowledgements, list):
+            self.V1p4acknowledgements = [self.V1p4acknowledgements] if self.V1p4acknowledgements is not None else []
+        self.V1p4acknowledgements = [v if isinstance(v, V1p4Contributor) else V1p4Contributor(**as_dict(v)) for v in self.V1p4acknowledgements]
+
+        if self.V1p4release_version is not None and not isinstance(self.V1p4release_version, str):
+            self.V1p4release_version = str(self.V1p4release_version)
+
+        if self.V1p4release_date is not None and not isinstance(self.V1p4release_date, XSDDateTime):
+            self.V1p4release_date = XSDDateTime(self.V1p4release_date)
+
+        if self.V1p4release_description is not None and not isinstance(self.V1p4release_description, str):
+            self.V1p4release_description = str(self.V1p4release_description)
+
         if self.V1p4label is not None and not isinstance(self.V1p4label, str):
             self.V1p4label = str(self.V1p4label)
+
+        if self.V1p4sequence is not None and not isinstance(self.V1p4sequence, str):
+            self.V1p4sequence = str(self.V1p4sequence)
+
+        if self.V1p4coding_sequence is not None and not isinstance(self.V1p4coding_sequence, str):
+            self.V1p4coding_sequence = str(self.V1p4coding_sequence)
 
         if not isinstance(self.V1p4aliases, list):
             self.V1p4aliases = [self.V1p4aliases] if self.V1p4aliases is not None else []
@@ -8167,6 +7398,15 @@ class V1p4AlleleDescription(YAMLRoot):
 
         if self.V1p4chromosome is not None and not isinstance(self.V1p4chromosome, int):
             self.V1p4chromosome = int(self.V1p4chromosome)
+
+        if self.V1p4sequence_type is not None and not isinstance(self.V1p4sequence_type, V1p4SequenceType):
+            self.V1p4sequence_type = V1p4SequenceType(self.V1p4sequence_type)
+
+        if self.V1p4functional is not None and not isinstance(self.V1p4functional, Bool):
+            self.V1p4functional = Bool(self.V1p4functional)
+
+        if self.V1p4inference_type is not None and not isinstance(self.V1p4inference_type, V1p4InferenceType):
+            self.V1p4inference_type = V1p4InferenceType(self.V1p4inference_type)
 
         if self.V1p4species_subgroup is not None and not isinstance(self.V1p4species_subgroup, str):
             self.V1p4species_subgroup = str(self.V1p4species_subgroup)
@@ -8249,11 +7489,17 @@ class V1p4AlleleDescription(YAMLRoot):
         if self.V1p4j_donor_splice is not None and not isinstance(self.V1p4j_donor_splice, int):
             self.V1p4j_donor_splice = int(self.V1p4j_donor_splice)
 
-        self._normalize_inlined_as_dict(slot_name="V1p4v_gene_delineations", slot_type=V1p4SequenceDelineationV, key_name="V1p4sequence_delineation_id", keyed=False)
+        if not isinstance(self.V1p4v_gene_delineations, list):
+            self.V1p4v_gene_delineations = [self.V1p4v_gene_delineations] if self.V1p4v_gene_delineations is not None else []
+        self.V1p4v_gene_delineations = [v if isinstance(v, V1p4SequenceDelineationV) else V1p4SequenceDelineationV(**as_dict(v)) for v in self.V1p4v_gene_delineations]
 
-        self._normalize_inlined_as_dict(slot_name="V1p4unrearranged_support", slot_type=V1p4UnrearrangedSequence, key_name="V1p4sequence_id", keyed=False)
+        if not isinstance(self.V1p4unrearranged_support, list):
+            self.V1p4unrearranged_support = [self.V1p4unrearranged_support] if self.V1p4unrearranged_support is not None else []
+        self.V1p4unrearranged_support = [v if isinstance(v, V1p4UnrearrangedSequence) else V1p4UnrearrangedSequence(**as_dict(v)) for v in self.V1p4unrearranged_support]
 
-        self._normalize_inlined_as_dict(slot_name="V1p4rearranged_support", slot_type=V1p4RearrangedSequence, key_name="V1p4sequence_id", keyed=False)
+        if not isinstance(self.V1p4rearranged_support, list):
+            self.V1p4rearranged_support = [self.V1p4rearranged_support] if self.V1p4rearranged_support is not None else []
+        self.V1p4rearranged_support = [v if isinstance(v, V1p4RearrangedSequence) else V1p4RearrangedSequence(**as_dict(v)) for v in self.V1p4rearranged_support]
 
         if not isinstance(self.V1p4paralogs, list):
             self.V1p4paralogs = [self.V1p4paralogs] if self.V1p4paralogs is not None else []
@@ -8278,54 +7524,40 @@ class V1p4GermlineSet(YAMLRoot):
     class_name: ClassVar[str] = "V1p4GermlineSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4GermlineSet
 
-    V1p4germline_set_id: str = None
-    V1p4acknowledgements: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    V1p4release_version: str = None
-    V1p4release_description: str = None
-    V1p4release_date: Union[str, XSDDateTime] = None
-    V1p4germline_set_name: str = None
-    V1p4species: Union[str, "V1p4Species"] = None
-    V1p4allele_descriptions: Union[Union[dict, V1p4AlleleDescription], List[Union[dict, V1p4AlleleDescription]]] = None
+    V1p4germline_set_id: Optional[str] = None
+    V1p4acknowledgements: Optional[Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]]] = empty_list()
+    V1p4release_version: Optional[str] = None
+    V1p4release_description: Optional[str] = None
+    V1p4release_date: Optional[Union[str, XSDDateTime]] = None
+    V1p4germline_set_name: Optional[str] = None
     V1p4germline_set_ref: Optional[str] = None
     V1p4pub_ids: Optional[Union[str, List[str]]] = empty_list()
+    V1p4species: Optional[Union[str, "V1p4Species"]] = None
     V1p4species_subgroup: Optional[str] = None
     V1p4species_subgroup_type: Optional[Union[str, "V1p4SpeciesSubgroupType"]] = None
     V1p4locus: Optional[Union[str, "V1p4Locus"]] = None
+    V1p4allele_descriptions: Optional[Union[Union[dict, V1p4AlleleDescription], List[Union[dict, V1p4AlleleDescription]]]] = empty_list()
     V1p4curation: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4germline_set_id):
-            self.MissingRequiredField("V1p4germline_set_id")
-        if not isinstance(self.V1p4germline_set_id, str):
+        if self.V1p4germline_set_id is not None and not isinstance(self.V1p4germline_set_id, str):
             self.V1p4germline_set_id = str(self.V1p4germline_set_id)
 
-        if self._is_empty(self.V1p4acknowledgements):
-            self.MissingRequiredField("V1p4acknowledgements")
-        self._normalize_inlined_as_dict(slot_name="V1p4acknowledgements", slot_type=V1p4Contributor, key_name="V1p4contributor_id", keyed=False)
+        if not isinstance(self.V1p4acknowledgements, list):
+            self.V1p4acknowledgements = [self.V1p4acknowledgements] if self.V1p4acknowledgements is not None else []
+        self.V1p4acknowledgements = [v if isinstance(v, V1p4Contributor) else V1p4Contributor(**as_dict(v)) for v in self.V1p4acknowledgements]
 
-        if self._is_empty(self.V1p4release_version):
-            self.MissingRequiredField("V1p4release_version")
-        if not isinstance(self.V1p4release_version, str):
+        if self.V1p4release_version is not None and not isinstance(self.V1p4release_version, str):
             self.V1p4release_version = str(self.V1p4release_version)
 
-        if self._is_empty(self.V1p4release_description):
-            self.MissingRequiredField("V1p4release_description")
-        if not isinstance(self.V1p4release_description, str):
+        if self.V1p4release_description is not None and not isinstance(self.V1p4release_description, str):
             self.V1p4release_description = str(self.V1p4release_description)
 
-        if self._is_empty(self.V1p4release_date):
-            self.MissingRequiredField("V1p4release_date")
-        if not isinstance(self.V1p4release_date, XSDDateTime):
+        if self.V1p4release_date is not None and not isinstance(self.V1p4release_date, XSDDateTime):
             self.V1p4release_date = XSDDateTime(self.V1p4release_date)
 
-        if self._is_empty(self.V1p4germline_set_name):
-            self.MissingRequiredField("V1p4germline_set_name")
-        if not isinstance(self.V1p4germline_set_name, str):
+        if self.V1p4germline_set_name is not None and not isinstance(self.V1p4germline_set_name, str):
             self.V1p4germline_set_name = str(self.V1p4germline_set_name)
-
-        if self._is_empty(self.V1p4allele_descriptions):
-            self.MissingRequiredField("V1p4allele_descriptions")
-        self._normalize_inlined_as_dict(slot_name="V1p4allele_descriptions", slot_type=V1p4AlleleDescription, key_name="V1p4allele_description_id", keyed=False)
 
         if self.V1p4germline_set_ref is not None and not isinstance(self.V1p4germline_set_ref, str):
             self.V1p4germline_set_ref = str(self.V1p4germline_set_ref)
@@ -8343,6 +7575,10 @@ class V1p4GermlineSet(YAMLRoot):
         if self.V1p4locus is not None and not isinstance(self.V1p4locus, V1p4Locus):
             self.V1p4locus = V1p4Locus(self.V1p4locus)
 
+        if not isinstance(self.V1p4allele_descriptions, list):
+            self.V1p4allele_descriptions = [self.V1p4allele_descriptions] if self.V1p4allele_descriptions is not None else []
+        self.V1p4allele_descriptions = [v if isinstance(v, V1p4AlleleDescription) else V1p4AlleleDescription(**as_dict(v)) for v in self.V1p4allele_descriptions]
+
         if self.V1p4curation is not None and not isinstance(self.V1p4curation, str):
             self.V1p4curation = str(self.V1p4curation)
 
@@ -8358,16 +7594,16 @@ class V1p4GenotypeSet(YAMLRoot):
     class_name: ClassVar[str] = "V1p4GenotypeSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4GenotypeSet
 
-    V1p4receptor_genotype_set_id: str = None
+    V1p4receptor_genotype_set_id: Optional[str] = None
     V1p4genotype_class_list: Optional[Union[Union[dict, "V1p4Genotype"], List[Union[dict, "V1p4Genotype"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4receptor_genotype_set_id):
-            self.MissingRequiredField("V1p4receptor_genotype_set_id")
-        if not isinstance(self.V1p4receptor_genotype_set_id, str):
+        if self.V1p4receptor_genotype_set_id is not None and not isinstance(self.V1p4receptor_genotype_set_id, str):
             self.V1p4receptor_genotype_set_id = str(self.V1p4receptor_genotype_set_id)
 
-        self._normalize_inlined_as_dict(slot_name="V1p4genotype_class_list", slot_type=V1p4Genotype, key_name="V1p4receptor_genotype_id", keyed=False)
+        if not isinstance(self.V1p4genotype_class_list, list):
+            self.V1p4genotype_class_list = [self.V1p4genotype_class_list] if self.V1p4genotype_class_list is not None else []
+        self.V1p4genotype_class_list = [v if isinstance(v, V1p4Genotype) else V1p4Genotype(**as_dict(v)) for v in self.V1p4genotype_class_list]
 
         super().__post_init__(**kwargs)
 
@@ -8381,7 +7617,7 @@ class V1p4Genotype(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Genotype"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Genotype
 
-    V1p4receptor_genotype_id: str = None
+    V1p4receptor_genotype_id: Optional[str] = None
     V1p4locus: Optional[Union[str, "V1p4Locus"]] = None
     V1p4documented_alleles: Optional[Union[Union[dict, "V1p4DocumentedAllele"], List[Union[dict, "V1p4DocumentedAllele"]]]] = empty_list()
     V1p4undocumented_alleles: Optional[Union[Union[dict, "V1p4UndocumentedAllele"], List[Union[dict, "V1p4UndocumentedAllele"]]]] = empty_list()
@@ -8389,9 +7625,7 @@ class V1p4Genotype(YAMLRoot):
     V1p4inference_process: Optional[Union[str, "V1p4InferenceProcess"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4receptor_genotype_id):
-            self.MissingRequiredField("V1p4receptor_genotype_id")
-        if not isinstance(self.V1p4receptor_genotype_id, str):
+        if self.V1p4receptor_genotype_id is not None and not isinstance(self.V1p4receptor_genotype_id, str):
             self.V1p4receptor_genotype_id = str(self.V1p4receptor_genotype_id)
 
         if self.V1p4locus is not None and not isinstance(self.V1p4locus, V1p4Locus):
@@ -8401,7 +7635,9 @@ class V1p4Genotype(YAMLRoot):
             self.V1p4documented_alleles = [self.V1p4documented_alleles] if self.V1p4documented_alleles is not None else []
         self.V1p4documented_alleles = [v if isinstance(v, V1p4DocumentedAllele) else V1p4DocumentedAllele(**as_dict(v)) for v in self.V1p4documented_alleles]
 
-        self._normalize_inlined_as_dict(slot_name="V1p4undocumented_alleles", slot_type=V1p4UndocumentedAllele, key_name="V1p4allele_name", keyed=False)
+        if not isinstance(self.V1p4undocumented_alleles, list):
+            self.V1p4undocumented_alleles = [self.V1p4undocumented_alleles] if self.V1p4undocumented_alleles is not None else []
+        self.V1p4undocumented_alleles = [v if isinstance(v, V1p4UndocumentedAllele) else V1p4UndocumentedAllele(**as_dict(v)) for v in self.V1p4undocumented_alleles]
 
         if not isinstance(self.V1p4deleted_genes, list):
             self.V1p4deleted_genes = [self.V1p4deleted_genes] if self.V1p4deleted_genes is not None else []
@@ -8448,19 +7684,15 @@ class V1p4UndocumentedAllele(YAMLRoot):
     class_name: ClassVar[str] = "V1p4UndocumentedAllele"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4UndocumentedAllele
 
-    V1p4allele_name: str = None
-    V1p4sequence: str = None
+    V1p4allele_name: Optional[str] = None
+    V1p4sequence: Optional[str] = None
     V1p4phasing: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4allele_name):
-            self.MissingRequiredField("V1p4allele_name")
-        if not isinstance(self.V1p4allele_name, str):
+        if self.V1p4allele_name is not None and not isinstance(self.V1p4allele_name, str):
             self.V1p4allele_name = str(self.V1p4allele_name)
 
-        if self._is_empty(self.V1p4sequence):
-            self.MissingRequiredField("V1p4sequence")
-        if not isinstance(self.V1p4sequence, str):
+        if self.V1p4sequence is not None and not isinstance(self.V1p4sequence, str):
             self.V1p4sequence = str(self.V1p4sequence)
 
         if self.V1p4phasing is not None and not isinstance(self.V1p4phasing, int):
@@ -8504,18 +7736,16 @@ class V1p4MHCGenotypeSet(YAMLRoot):
     class_name: ClassVar[str] = "V1p4MHCGenotypeSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4MHCGenotypeSet
 
-    V1p4mhc_genotype_set_id: str = None
-    V1p4mhc_genotype_list: Union[Union[dict, "V1p4MHCGenotype"], List[Union[dict, "V1p4MHCGenotype"]]] = None
+    V1p4mhc_genotype_set_id: Optional[str] = None
+    V1p4mhc_genotype_list: Optional[Union[Union[dict, "V1p4MHCGenotype"], List[Union[dict, "V1p4MHCGenotype"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4mhc_genotype_set_id):
-            self.MissingRequiredField("V1p4mhc_genotype_set_id")
-        if not isinstance(self.V1p4mhc_genotype_set_id, str):
+        if self.V1p4mhc_genotype_set_id is not None and not isinstance(self.V1p4mhc_genotype_set_id, str):
             self.V1p4mhc_genotype_set_id = str(self.V1p4mhc_genotype_set_id)
 
-        if self._is_empty(self.V1p4mhc_genotype_list):
-            self.MissingRequiredField("V1p4mhc_genotype_list")
-        self._normalize_inlined_as_dict(slot_name="V1p4mhc_genotype_list", slot_type=V1p4MHCGenotype, key_name="V1p4mhc_genotype_id", keyed=False)
+        if not isinstance(self.V1p4mhc_genotype_list, list):
+            self.V1p4mhc_genotype_list = [self.V1p4mhc_genotype_list] if self.V1p4mhc_genotype_list is not None else []
+        self.V1p4mhc_genotype_list = [v if isinstance(v, V1p4MHCGenotype) else V1p4MHCGenotype(**as_dict(v)) for v in self.V1p4mhc_genotype_list]
 
         super().__post_init__(**kwargs)
 
@@ -8529,25 +7759,21 @@ class V1p4MHCGenotype(YAMLRoot):
     class_name: ClassVar[str] = "V1p4MHCGenotype"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4MHCGenotype
 
-    V1p4mhc_genotype_id: str = None
-    V1p4mhc_alleles: Union[Union[dict, "V1p4MHCAllele"], List[Union[dict, "V1p4MHCAllele"]]] = None
+    V1p4mhc_genotype_id: Optional[str] = None
     V1p4mhc_class: Optional[Union[str, "V1p4MhcClass"]] = None
+    V1p4mhc_alleles: Optional[Union[Union[dict, "V1p4MHCAllele"], List[Union[dict, "V1p4MHCAllele"]]]] = empty_list()
     V1p4mhc_genotyping_method: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4mhc_genotype_id):
-            self.MissingRequiredField("V1p4mhc_genotype_id")
-        if not isinstance(self.V1p4mhc_genotype_id, str):
+        if self.V1p4mhc_genotype_id is not None and not isinstance(self.V1p4mhc_genotype_id, str):
             self.V1p4mhc_genotype_id = str(self.V1p4mhc_genotype_id)
-
-        if self._is_empty(self.V1p4mhc_alleles):
-            self.MissingRequiredField("V1p4mhc_alleles")
-        if not isinstance(self.V1p4mhc_alleles, list):
-            self.V1p4mhc_alleles = [self.V1p4mhc_alleles] if self.V1p4mhc_alleles is not None else []
-        self.V1p4mhc_alleles = [v if isinstance(v, V1p4MHCAllele) else V1p4MHCAllele(**as_dict(v)) for v in self.V1p4mhc_alleles]
 
         if self.V1p4mhc_class is not None and not isinstance(self.V1p4mhc_class, V1p4MhcClass):
             self.V1p4mhc_class = V1p4MhcClass(self.V1p4mhc_class)
+
+        if not isinstance(self.V1p4mhc_alleles, list):
+            self.V1p4mhc_alleles = [self.V1p4mhc_alleles] if self.V1p4mhc_alleles is not None else []
+        self.V1p4mhc_alleles = [v if isinstance(v, V1p4MHCAllele) else V1p4MHCAllele(**as_dict(v)) for v in self.V1p4mhc_alleles]
 
         if self.V1p4mhc_genotyping_method is not None and not isinstance(self.V1p4mhc_genotyping_method, str):
             self.V1p4mhc_genotyping_method = str(self.V1p4mhc_genotyping_method)
@@ -8609,55 +7835,45 @@ class V1p4Study(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Study"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Study
 
-    V1p4study_id: str = None
-    V1p4study_title: str = None
-    V1p4study_type: Union[str, "V1p4StudyType"] = None
-    V1p4inclusion_exclusion_criteria: str = None
-    V1p4grants: str = None
-    V1p4contributors: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    V1p4keywords_study: Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]] = None
+    V1p4study_id: Optional[str] = None
+    V1p4study_title: Optional[str] = None
+    V1p4study_type: Optional[Union[str, "V1p4StudyType"]] = None
     V1p4study_description: Optional[str] = None
+    V1p4inclusion_exclusion_criteria: Optional[str] = None
+    V1p4grants: Optional[str] = None
+    V1p4contributors: Optional[Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]]] = empty_list()
     V1p4pub_ids: Optional[Union[str, List[str]]] = empty_list()
+    V1p4keywords_study: Optional[Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]]] = empty_list()
     V1p4adc_publish_date: Optional[Union[str, XSDDateTime]] = None
     V1p4adc_update_date: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4study_id):
-            self.MissingRequiredField("V1p4study_id")
-        if not isinstance(self.V1p4study_id, str):
+        if self.V1p4study_id is not None and not isinstance(self.V1p4study_id, str):
             self.V1p4study_id = str(self.V1p4study_id)
 
-        if self._is_empty(self.V1p4study_title):
-            self.MissingRequiredField("V1p4study_title")
-        if not isinstance(self.V1p4study_title, str):
+        if self.V1p4study_title is not None and not isinstance(self.V1p4study_title, str):
             self.V1p4study_title = str(self.V1p4study_title)
-
-        if self._is_empty(self.V1p4inclusion_exclusion_criteria):
-            self.MissingRequiredField("V1p4inclusion_exclusion_criteria")
-        if not isinstance(self.V1p4inclusion_exclusion_criteria, str):
-            self.V1p4inclusion_exclusion_criteria = str(self.V1p4inclusion_exclusion_criteria)
-
-        if self._is_empty(self.V1p4grants):
-            self.MissingRequiredField("V1p4grants")
-        if not isinstance(self.V1p4grants, str):
-            self.V1p4grants = str(self.V1p4grants)
-
-        if self._is_empty(self.V1p4contributors):
-            self.MissingRequiredField("V1p4contributors")
-        self._normalize_inlined_as_dict(slot_name="V1p4contributors", slot_type=V1p4Contributor, key_name="V1p4contributor_id", keyed=False)
-
-        if self._is_empty(self.V1p4keywords_study):
-            self.MissingRequiredField("V1p4keywords_study")
-        if not isinstance(self.V1p4keywords_study, list):
-            self.V1p4keywords_study = [self.V1p4keywords_study] if self.V1p4keywords_study is not None else []
-        self.V1p4keywords_study = [v if isinstance(v, V1p4KeywordsStudy) else V1p4KeywordsStudy(v) for v in self.V1p4keywords_study]
 
         if self.V1p4study_description is not None and not isinstance(self.V1p4study_description, str):
             self.V1p4study_description = str(self.V1p4study_description)
 
+        if self.V1p4inclusion_exclusion_criteria is not None and not isinstance(self.V1p4inclusion_exclusion_criteria, str):
+            self.V1p4inclusion_exclusion_criteria = str(self.V1p4inclusion_exclusion_criteria)
+
+        if self.V1p4grants is not None and not isinstance(self.V1p4grants, str):
+            self.V1p4grants = str(self.V1p4grants)
+
+        if not isinstance(self.V1p4contributors, list):
+            self.V1p4contributors = [self.V1p4contributors] if self.V1p4contributors is not None else []
+        self.V1p4contributors = [v if isinstance(v, V1p4Contributor) else V1p4Contributor(**as_dict(v)) for v in self.V1p4contributors]
+
         if not isinstance(self.V1p4pub_ids, list):
             self.V1p4pub_ids = [self.V1p4pub_ids] if self.V1p4pub_ids is not None else []
         self.V1p4pub_ids = [v if isinstance(v, str) else str(v) for v in self.V1p4pub_ids]
+
+        if not isinstance(self.V1p4keywords_study, list):
+            self.V1p4keywords_study = [self.V1p4keywords_study] if self.V1p4keywords_study is not None else []
+        self.V1p4keywords_study = [v if isinstance(v, V1p4KeywordsStudy) else V1p4KeywordsStudy(v) for v in self.V1p4keywords_study]
 
         if self.V1p4adc_publish_date is not None and not isinstance(self.V1p4adc_publish_date, XSDDateTime):
             self.V1p4adc_publish_date = XSDDateTime(self.V1p4adc_publish_date)
@@ -8677,74 +7893,56 @@ class V1p4Subject(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Subject"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Subject
 
-    V1p4subject_id: str = None
-    V1p4synthetic: Union[bool, Bool] = None
-    V1p4species: Union[str, "V1p4Species"] = None
-    V1p4sex: Union[str, "V1p4Sex"] = None
-    V1p4age: Union[dict, V1p4TimeInterval] = None
-    V1p4age_event: str = None
-    V1p4ancestry_population: Union[str, "V1p4AncestryPopulation"] = None
-    V1p4ethnicity: str = None
-    V1p4race: str = None
-    V1p4strain_name: str = None
-    V1p4linked_subjects: str = None
-    V1p4link_type: str = None
+    V1p4subject_id: Optional[str] = None
+    V1p4synthetic: Optional[Union[bool, Bool]] = None
+    V1p4species: Optional[Union[str, "V1p4Species"]] = None
+    V1p4sex: Optional[Union[str, "V1p4Sex"]] = None
+    V1p4age: Optional[Union[dict, V1p4TimeInterval]] = None
+    V1p4age_event: Optional[str] = None
+    V1p4ancestry_population: Optional[Union[str, "V1p4AncestryPopulation"]] = None
     V1p4location_birth: Optional[Union[str, "V1p4LocationBirth"]] = None
+    V1p4ethnicity: Optional[str] = None
+    V1p4race: Optional[str] = None
+    V1p4strain_name: Optional[str] = None
+    V1p4linked_subjects: Optional[str] = None
+    V1p4link_type: Optional[str] = None
     V1p4diagnosis: Optional[Union[Union[dict, "V1p4Diagnosis"], List[Union[dict, "V1p4Diagnosis"]]]] = empty_list()
     V1p4genotype: Optional[Union[dict, V1p4SubjectGenotype]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4subject_id):
-            self.MissingRequiredField("V1p4subject_id")
-        if not isinstance(self.V1p4subject_id, str):
+        if self.V1p4subject_id is not None and not isinstance(self.V1p4subject_id, str):
             self.V1p4subject_id = str(self.V1p4subject_id)
 
-        if self._is_empty(self.V1p4synthetic):
-            self.MissingRequiredField("V1p4synthetic")
-        if not isinstance(self.V1p4synthetic, Bool):
+        if self.V1p4synthetic is not None and not isinstance(self.V1p4synthetic, Bool):
             self.V1p4synthetic = Bool(self.V1p4synthetic)
 
-        if self._is_empty(self.V1p4sex):
-            self.MissingRequiredField("V1p4sex")
-        if not isinstance(self.V1p4sex, V1p4Sex):
+        if self.V1p4sex is not None and not isinstance(self.V1p4sex, V1p4Sex):
             self.V1p4sex = V1p4Sex(self.V1p4sex)
 
-        if self._is_empty(self.V1p4age):
-            self.MissingRequiredField("V1p4age")
-        if not isinstance(self.V1p4age, V1p4TimeInterval):
+        if self.V1p4age is not None and not isinstance(self.V1p4age, V1p4TimeInterval):
             self.V1p4age = V1p4TimeInterval(**as_dict(self.V1p4age))
 
-        if self._is_empty(self.V1p4age_event):
-            self.MissingRequiredField("V1p4age_event")
-        if not isinstance(self.V1p4age_event, str):
+        if self.V1p4age_event is not None and not isinstance(self.V1p4age_event, str):
             self.V1p4age_event = str(self.V1p4age_event)
 
-        if self._is_empty(self.V1p4ethnicity):
-            self.MissingRequiredField("V1p4ethnicity")
-        if not isinstance(self.V1p4ethnicity, str):
+        if self.V1p4ethnicity is not None and not isinstance(self.V1p4ethnicity, str):
             self.V1p4ethnicity = str(self.V1p4ethnicity)
 
-        if self._is_empty(self.V1p4race):
-            self.MissingRequiredField("V1p4race")
-        if not isinstance(self.V1p4race, str):
+        if self.V1p4race is not None and not isinstance(self.V1p4race, str):
             self.V1p4race = str(self.V1p4race)
 
-        if self._is_empty(self.V1p4strain_name):
-            self.MissingRequiredField("V1p4strain_name")
-        if not isinstance(self.V1p4strain_name, str):
+        if self.V1p4strain_name is not None and not isinstance(self.V1p4strain_name, str):
             self.V1p4strain_name = str(self.V1p4strain_name)
 
-        if self._is_empty(self.V1p4linked_subjects):
-            self.MissingRequiredField("V1p4linked_subjects")
-        if not isinstance(self.V1p4linked_subjects, str):
+        if self.V1p4linked_subjects is not None and not isinstance(self.V1p4linked_subjects, str):
             self.V1p4linked_subjects = str(self.V1p4linked_subjects)
 
-        if self._is_empty(self.V1p4link_type):
-            self.MissingRequiredField("V1p4link_type")
-        if not isinstance(self.V1p4link_type, str):
+        if self.V1p4link_type is not None and not isinstance(self.V1p4link_type, str):
             self.V1p4link_type = str(self.V1p4link_type)
 
-        self._normalize_inlined_as_dict(slot_name="V1p4diagnosis", slot_type=V1p4Diagnosis, key_name="V1p4study_group_description", keyed=False)
+        if not isinstance(self.V1p4diagnosis, list):
+            self.V1p4diagnosis = [self.V1p4diagnosis] if self.V1p4diagnosis is not None else []
+        self.V1p4diagnosis = [v if isinstance(v, V1p4Diagnosis) else V1p4Diagnosis(**as_dict(v)) for v in self.V1p4diagnosis]
 
         if self.V1p4genotype is not None and not isinstance(self.V1p4genotype, V1p4SubjectGenotype):
             self.V1p4genotype = V1p4SubjectGenotype(**as_dict(self.V1p4genotype))
@@ -8761,54 +7959,40 @@ class V1p4Diagnosis(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Diagnosis"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Diagnosis
 
-    V1p4study_group_description: str = None
-    V1p4disease_diagnosis: Union[str, "V1p4DiseaseDiagnosis"] = None
-    V1p4disease_length: Union[dict, V1p4TimeQuantity] = None
-    V1p4disease_stage: str = None
-    V1p4prior_therapies: str = None
-    V1p4immunogen: str = None
-    V1p4intervention: str = None
-    V1p4medical_history: str = None
+    V1p4study_group_description: Optional[str] = None
     V1p4diagnosis_timepoint: Optional[Union[dict, V1p4TimePoint]] = None
+    V1p4disease_diagnosis: Optional[Union[str, "V1p4DiseaseDiagnosis"]] = None
+    V1p4disease_length: Optional[Union[dict, V1p4TimeQuantity]] = None
+    V1p4disease_stage: Optional[str] = None
+    V1p4prior_therapies: Optional[str] = None
+    V1p4immunogen: Optional[str] = None
+    V1p4intervention: Optional[str] = None
+    V1p4medical_history: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4study_group_description):
-            self.MissingRequiredField("V1p4study_group_description")
-        if not isinstance(self.V1p4study_group_description, str):
+        if self.V1p4study_group_description is not None and not isinstance(self.V1p4study_group_description, str):
             self.V1p4study_group_description = str(self.V1p4study_group_description)
-
-        if self._is_empty(self.V1p4disease_length):
-            self.MissingRequiredField("V1p4disease_length")
-        if not isinstance(self.V1p4disease_length, V1p4TimeQuantity):
-            self.V1p4disease_length = V1p4TimeQuantity(**as_dict(self.V1p4disease_length))
-
-        if self._is_empty(self.V1p4disease_stage):
-            self.MissingRequiredField("V1p4disease_stage")
-        if not isinstance(self.V1p4disease_stage, str):
-            self.V1p4disease_stage = str(self.V1p4disease_stage)
-
-        if self._is_empty(self.V1p4prior_therapies):
-            self.MissingRequiredField("V1p4prior_therapies")
-        if not isinstance(self.V1p4prior_therapies, str):
-            self.V1p4prior_therapies = str(self.V1p4prior_therapies)
-
-        if self._is_empty(self.V1p4immunogen):
-            self.MissingRequiredField("V1p4immunogen")
-        if not isinstance(self.V1p4immunogen, str):
-            self.V1p4immunogen = str(self.V1p4immunogen)
-
-        if self._is_empty(self.V1p4intervention):
-            self.MissingRequiredField("V1p4intervention")
-        if not isinstance(self.V1p4intervention, str):
-            self.V1p4intervention = str(self.V1p4intervention)
-
-        if self._is_empty(self.V1p4medical_history):
-            self.MissingRequiredField("V1p4medical_history")
-        if not isinstance(self.V1p4medical_history, str):
-            self.V1p4medical_history = str(self.V1p4medical_history)
 
         if self.V1p4diagnosis_timepoint is not None and not isinstance(self.V1p4diagnosis_timepoint, V1p4TimePoint):
             self.V1p4diagnosis_timepoint = V1p4TimePoint(**as_dict(self.V1p4diagnosis_timepoint))
+
+        if self.V1p4disease_length is not None and not isinstance(self.V1p4disease_length, V1p4TimeQuantity):
+            self.V1p4disease_length = V1p4TimeQuantity(**as_dict(self.V1p4disease_length))
+
+        if self.V1p4disease_stage is not None and not isinstance(self.V1p4disease_stage, str):
+            self.V1p4disease_stage = str(self.V1p4disease_stage)
+
+        if self.V1p4prior_therapies is not None and not isinstance(self.V1p4prior_therapies, str):
+            self.V1p4prior_therapies = str(self.V1p4prior_therapies)
+
+        if self.V1p4immunogen is not None and not isinstance(self.V1p4immunogen, str):
+            self.V1p4immunogen = str(self.V1p4immunogen)
+
+        if self.V1p4intervention is not None and not isinstance(self.V1p4intervention, str):
+            self.V1p4intervention = str(self.V1p4intervention)
+
+        if self.V1p4medical_history is not None and not isinstance(self.V1p4medical_history, str):
+            self.V1p4medical_history = str(self.V1p4medical_history)
 
         super().__post_init__(**kwargs)
 
@@ -8822,44 +8006,32 @@ class V1p4Sample(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Sample"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Sample
 
-    V1p4sample_id: str = None
-    V1p4sample_type: str = None
-    V1p4tissue: Union[str, "V1p4Tissue"] = None
-    V1p4anatomic_site: str = None
-    V1p4disease_state_sample: str = None
-    V1p4collection_time_point_relative: Union[dict, V1p4TimePoint] = None
-    V1p4biomaterial_provider: str = None
+    V1p4sample_id: Optional[str] = None
+    V1p4sample_type: Optional[str] = None
+    V1p4tissue: Optional[Union[str, "V1p4Tissue"]] = None
+    V1p4anatomic_site: Optional[str] = None
+    V1p4disease_state_sample: Optional[str] = None
+    V1p4collection_time_point_relative: Optional[Union[dict, V1p4TimePoint]] = None
     V1p4collection_location: Optional[Union[str, "V1p4CollectionLocation"]] = None
+    V1p4biomaterial_provider: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sample_id):
-            self.MissingRequiredField("V1p4sample_id")
-        if not isinstance(self.V1p4sample_id, str):
+        if self.V1p4sample_id is not None and not isinstance(self.V1p4sample_id, str):
             self.V1p4sample_id = str(self.V1p4sample_id)
 
-        if self._is_empty(self.V1p4sample_type):
-            self.MissingRequiredField("V1p4sample_type")
-        if not isinstance(self.V1p4sample_type, str):
+        if self.V1p4sample_type is not None and not isinstance(self.V1p4sample_type, str):
             self.V1p4sample_type = str(self.V1p4sample_type)
 
-        if self._is_empty(self.V1p4anatomic_site):
-            self.MissingRequiredField("V1p4anatomic_site")
-        if not isinstance(self.V1p4anatomic_site, str):
+        if self.V1p4anatomic_site is not None and not isinstance(self.V1p4anatomic_site, str):
             self.V1p4anatomic_site = str(self.V1p4anatomic_site)
 
-        if self._is_empty(self.V1p4disease_state_sample):
-            self.MissingRequiredField("V1p4disease_state_sample")
-        if not isinstance(self.V1p4disease_state_sample, str):
+        if self.V1p4disease_state_sample is not None and not isinstance(self.V1p4disease_state_sample, str):
             self.V1p4disease_state_sample = str(self.V1p4disease_state_sample)
 
-        if self._is_empty(self.V1p4collection_time_point_relative):
-            self.MissingRequiredField("V1p4collection_time_point_relative")
-        if not isinstance(self.V1p4collection_time_point_relative, V1p4TimePoint):
+        if self.V1p4collection_time_point_relative is not None and not isinstance(self.V1p4collection_time_point_relative, V1p4TimePoint):
             self.V1p4collection_time_point_relative = V1p4TimePoint(**as_dict(self.V1p4collection_time_point_relative))
 
-        if self._is_empty(self.V1p4biomaterial_provider):
-            self.MissingRequiredField("V1p4biomaterial_provider")
-        if not isinstance(self.V1p4biomaterial_provider, str):
+        if self.V1p4biomaterial_provider is not None and not isinstance(self.V1p4biomaterial_provider, str):
             self.V1p4biomaterial_provider = str(self.V1p4biomaterial_provider)
 
         super().__post_init__(**kwargs)
@@ -8874,65 +8046,49 @@ class V1p4CellProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p4CellProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4CellProcessing
 
-    V1p4tissue_processing: str = None
-    V1p4single_cell: Union[bool, Bool] = None
-    V1p4cell_number: int = None
-    V1p4cells_per_reaction: int = None
-    V1p4cell_storage: Union[bool, Bool] = None
-    V1p4cell_quality: str = None
-    V1p4cell_isolation: str = None
-    V1p4cell_processing_protocol: str = None
+    V1p4tissue_processing: Optional[str] = None
     V1p4cell_subset: Optional[Union[str, "V1p4CellSubset"]] = None
     V1p4cell_phenotype: Optional[str] = None
     V1p4cell_label: Optional[str] = None
     V1p4cell_species: Optional[Union[str, "V1p4CellSpecies"]] = None
+    V1p4single_cell: Optional[Union[bool, Bool]] = None
+    V1p4cell_number: Optional[int] = None
+    V1p4cells_per_reaction: Optional[int] = None
+    V1p4cell_storage: Optional[Union[bool, Bool]] = None
+    V1p4cell_quality: Optional[str] = None
+    V1p4cell_isolation: Optional[str] = None
+    V1p4cell_processing_protocol: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4tissue_processing):
-            self.MissingRequiredField("V1p4tissue_processing")
-        if not isinstance(self.V1p4tissue_processing, str):
+        if self.V1p4tissue_processing is not None and not isinstance(self.V1p4tissue_processing, str):
             self.V1p4tissue_processing = str(self.V1p4tissue_processing)
-
-        if self._is_empty(self.V1p4single_cell):
-            self.MissingRequiredField("V1p4single_cell")
-        if not isinstance(self.V1p4single_cell, Bool):
-            self.V1p4single_cell = Bool(self.V1p4single_cell)
-
-        if self._is_empty(self.V1p4cell_number):
-            self.MissingRequiredField("V1p4cell_number")
-        if not isinstance(self.V1p4cell_number, int):
-            self.V1p4cell_number = int(self.V1p4cell_number)
-
-        if self._is_empty(self.V1p4cells_per_reaction):
-            self.MissingRequiredField("V1p4cells_per_reaction")
-        if not isinstance(self.V1p4cells_per_reaction, int):
-            self.V1p4cells_per_reaction = int(self.V1p4cells_per_reaction)
-
-        if self._is_empty(self.V1p4cell_storage):
-            self.MissingRequiredField("V1p4cell_storage")
-        if not isinstance(self.V1p4cell_storage, Bool):
-            self.V1p4cell_storage = Bool(self.V1p4cell_storage)
-
-        if self._is_empty(self.V1p4cell_quality):
-            self.MissingRequiredField("V1p4cell_quality")
-        if not isinstance(self.V1p4cell_quality, str):
-            self.V1p4cell_quality = str(self.V1p4cell_quality)
-
-        if self._is_empty(self.V1p4cell_isolation):
-            self.MissingRequiredField("V1p4cell_isolation")
-        if not isinstance(self.V1p4cell_isolation, str):
-            self.V1p4cell_isolation = str(self.V1p4cell_isolation)
-
-        if self._is_empty(self.V1p4cell_processing_protocol):
-            self.MissingRequiredField("V1p4cell_processing_protocol")
-        if not isinstance(self.V1p4cell_processing_protocol, str):
-            self.V1p4cell_processing_protocol = str(self.V1p4cell_processing_protocol)
 
         if self.V1p4cell_phenotype is not None and not isinstance(self.V1p4cell_phenotype, str):
             self.V1p4cell_phenotype = str(self.V1p4cell_phenotype)
 
         if self.V1p4cell_label is not None and not isinstance(self.V1p4cell_label, str):
             self.V1p4cell_label = str(self.V1p4cell_label)
+
+        if self.V1p4single_cell is not None and not isinstance(self.V1p4single_cell, Bool):
+            self.V1p4single_cell = Bool(self.V1p4single_cell)
+
+        if self.V1p4cell_number is not None and not isinstance(self.V1p4cell_number, int):
+            self.V1p4cell_number = int(self.V1p4cell_number)
+
+        if self.V1p4cells_per_reaction is not None and not isinstance(self.V1p4cells_per_reaction, int):
+            self.V1p4cells_per_reaction = int(self.V1p4cells_per_reaction)
+
+        if self.V1p4cell_storage is not None and not isinstance(self.V1p4cell_storage, Bool):
+            self.V1p4cell_storage = Bool(self.V1p4cell_storage)
+
+        if self.V1p4cell_quality is not None and not isinstance(self.V1p4cell_quality, str):
+            self.V1p4cell_quality = str(self.V1p4cell_quality)
+
+        if self.V1p4cell_isolation is not None and not isinstance(self.V1p4cell_isolation, str):
+            self.V1p4cell_isolation = str(self.V1p4cell_isolation)
+
+        if self.V1p4cell_processing_protocol is not None and not isinstance(self.V1p4cell_processing_protocol, str):
+            self.V1p4cell_processing_protocol = str(self.V1p4cell_processing_protocol)
 
         super().__post_init__(**kwargs)
 
@@ -8946,24 +8102,18 @@ class V1p4PCRTarget(YAMLRoot):
     class_name: ClassVar[str] = "V1p4PCRTarget"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4PCRTarget
 
-    V1p4pcr_target_locus: Union[str, "V1p4PcrTargetLocus"] = None
-    V1p4forward_pcr_primer_target_location: str = None
-    V1p4reverse_pcr_primer_target_location: str = None
+    V1p4pcr_target_locus: Optional[Union[str, "V1p4PcrTargetLocus"]] = None
+    V1p4forward_pcr_primer_target_location: Optional[str] = None
+    V1p4reverse_pcr_primer_target_location: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4pcr_target_locus):
-            self.MissingRequiredField("V1p4pcr_target_locus")
-        if not isinstance(self.V1p4pcr_target_locus, V1p4PcrTargetLocus):
+        if self.V1p4pcr_target_locus is not None and not isinstance(self.V1p4pcr_target_locus, V1p4PcrTargetLocus):
             self.V1p4pcr_target_locus = V1p4PcrTargetLocus(self.V1p4pcr_target_locus)
 
-        if self._is_empty(self.V1p4forward_pcr_primer_target_location):
-            self.MissingRequiredField("V1p4forward_pcr_primer_target_location")
-        if not isinstance(self.V1p4forward_pcr_primer_target_location, str):
+        if self.V1p4forward_pcr_primer_target_location is not None and not isinstance(self.V1p4forward_pcr_primer_target_location, str):
             self.V1p4forward_pcr_primer_target_location = str(self.V1p4forward_pcr_primer_target_location)
 
-        if self._is_empty(self.V1p4reverse_pcr_primer_target_location):
-            self.MissingRequiredField("V1p4reverse_pcr_primer_target_location")
-        if not isinstance(self.V1p4reverse_pcr_primer_target_location, str):
+        if self.V1p4reverse_pcr_primer_target_location is not None and not isinstance(self.V1p4reverse_pcr_primer_target_location, str):
             self.V1p4reverse_pcr_primer_target_location = str(self.V1p4reverse_pcr_primer_target_location)
 
         super().__post_init__(**kwargs)
@@ -8978,58 +8128,44 @@ class V1p4NucleicAcidProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p4NucleicAcidProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4NucleicAcidProcessing
 
-    V1p4template_class: Union[str, "V1p4TemplateClass"] = None
-    V1p4template_quality: str = None
-    V1p4template_amount: Union[dict, V1p4PhysicalQuantity] = None
-    V1p4library_generation_method: Union[str, "V1p4LibraryGenerationMethod"] = None
-    V1p4library_generation_protocol: str = None
-    V1p4library_generation_kit_version: str = None
-    V1p4complete_sequences: Union[str, "V1p4CompleteSequences"] = None
-    V1p4physical_linkage: Union[str, "V1p4PhysicalLinkage"] = None
+    V1p4template_class: Optional[Union[str, "V1p4TemplateClass"]] = None
+    V1p4template_quality: Optional[str] = None
+    V1p4template_amount: Optional[Union[dict, V1p4PhysicalQuantity]] = None
+    V1p4library_generation_method: Optional[Union[str, "V1p4LibraryGenerationMethod"]] = None
+    V1p4library_generation_protocol: Optional[str] = None
+    V1p4library_generation_kit_version: Optional[str] = None
     V1p4pcr_target: Optional[Union[Union[dict, V1p4PCRTarget], List[Union[dict, V1p4PCRTarget]]]] = empty_list()
+    V1p4complete_sequences: Optional[Union[str, "V1p4CompleteSequences"]] = None
+    V1p4physical_linkage: Optional[Union[str, "V1p4PhysicalLinkage"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4template_class):
-            self.MissingRequiredField("V1p4template_class")
-        if not isinstance(self.V1p4template_class, V1p4TemplateClass):
+        if self.V1p4template_class is not None and not isinstance(self.V1p4template_class, V1p4TemplateClass):
             self.V1p4template_class = V1p4TemplateClass(self.V1p4template_class)
 
-        if self._is_empty(self.V1p4template_quality):
-            self.MissingRequiredField("V1p4template_quality")
-        if not isinstance(self.V1p4template_quality, str):
+        if self.V1p4template_quality is not None and not isinstance(self.V1p4template_quality, str):
             self.V1p4template_quality = str(self.V1p4template_quality)
 
-        if self._is_empty(self.V1p4template_amount):
-            self.MissingRequiredField("V1p4template_amount")
-        if not isinstance(self.V1p4template_amount, V1p4PhysicalQuantity):
+        if self.V1p4template_amount is not None and not isinstance(self.V1p4template_amount, V1p4PhysicalQuantity):
             self.V1p4template_amount = V1p4PhysicalQuantity(**as_dict(self.V1p4template_amount))
 
-        if self._is_empty(self.V1p4library_generation_method):
-            self.MissingRequiredField("V1p4library_generation_method")
-        if not isinstance(self.V1p4library_generation_method, V1p4LibraryGenerationMethod):
+        if self.V1p4library_generation_method is not None and not isinstance(self.V1p4library_generation_method, V1p4LibraryGenerationMethod):
             self.V1p4library_generation_method = V1p4LibraryGenerationMethod(self.V1p4library_generation_method)
 
-        if self._is_empty(self.V1p4library_generation_protocol):
-            self.MissingRequiredField("V1p4library_generation_protocol")
-        if not isinstance(self.V1p4library_generation_protocol, str):
+        if self.V1p4library_generation_protocol is not None and not isinstance(self.V1p4library_generation_protocol, str):
             self.V1p4library_generation_protocol = str(self.V1p4library_generation_protocol)
 
-        if self._is_empty(self.V1p4library_generation_kit_version):
-            self.MissingRequiredField("V1p4library_generation_kit_version")
-        if not isinstance(self.V1p4library_generation_kit_version, str):
+        if self.V1p4library_generation_kit_version is not None and not isinstance(self.V1p4library_generation_kit_version, str):
             self.V1p4library_generation_kit_version = str(self.V1p4library_generation_kit_version)
 
-        if self._is_empty(self.V1p4complete_sequences):
-            self.MissingRequiredField("V1p4complete_sequences")
-        if not isinstance(self.V1p4complete_sequences, V1p4CompleteSequences):
+        if not isinstance(self.V1p4pcr_target, list):
+            self.V1p4pcr_target = [self.V1p4pcr_target] if self.V1p4pcr_target is not None else []
+        self.V1p4pcr_target = [v if isinstance(v, V1p4PCRTarget) else V1p4PCRTarget(**as_dict(v)) for v in self.V1p4pcr_target]
+
+        if self.V1p4complete_sequences is not None and not isinstance(self.V1p4complete_sequences, V1p4CompleteSequences):
             self.V1p4complete_sequences = V1p4CompleteSequences(self.V1p4complete_sequences)
 
-        if self._is_empty(self.V1p4physical_linkage):
-            self.MissingRequiredField("V1p4physical_linkage")
-        if not isinstance(self.V1p4physical_linkage, V1p4PhysicalLinkage):
+        if self.V1p4physical_linkage is not None and not isinstance(self.V1p4physical_linkage, V1p4PhysicalLinkage):
             self.V1p4physical_linkage = V1p4PhysicalLinkage(self.V1p4physical_linkage)
-
-        self._normalize_inlined_as_dict(slot_name="V1p4pcr_target", slot_type=V1p4PCRTarget, key_name="V1p4pcr_target_locus", keyed=False)
 
         super().__post_init__(**kwargs)
 
@@ -9043,43 +8179,31 @@ class V1p4SequencingRun(YAMLRoot):
     class_name: ClassVar[str] = "V1p4SequencingRun"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SequencingRun
 
-    V1p4sequencing_run_id: str = None
-    V1p4total_reads_passing_qc_filter: int = None
-    V1p4sequencing_platform: str = None
-    V1p4sequencing_facility: str = None
-    V1p4sequencing_run_date: Union[str, XSDDateTime] = None
-    V1p4sequencing_kit: str = None
+    V1p4sequencing_run_id: Optional[str] = None
+    V1p4total_reads_passing_qc_filter: Optional[int] = None
+    V1p4sequencing_platform: Optional[str] = None
+    V1p4sequencing_facility: Optional[str] = None
+    V1p4sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
+    V1p4sequencing_kit: Optional[str] = None
     V1p4sequencing_files: Optional[Union[dict, "V1p4SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequencing_run_id):
-            self.MissingRequiredField("V1p4sequencing_run_id")
-        if not isinstance(self.V1p4sequencing_run_id, str):
+        if self.V1p4sequencing_run_id is not None and not isinstance(self.V1p4sequencing_run_id, str):
             self.V1p4sequencing_run_id = str(self.V1p4sequencing_run_id)
 
-        if self._is_empty(self.V1p4total_reads_passing_qc_filter):
-            self.MissingRequiredField("V1p4total_reads_passing_qc_filter")
-        if not isinstance(self.V1p4total_reads_passing_qc_filter, int):
+        if self.V1p4total_reads_passing_qc_filter is not None and not isinstance(self.V1p4total_reads_passing_qc_filter, int):
             self.V1p4total_reads_passing_qc_filter = int(self.V1p4total_reads_passing_qc_filter)
 
-        if self._is_empty(self.V1p4sequencing_platform):
-            self.MissingRequiredField("V1p4sequencing_platform")
-        if not isinstance(self.V1p4sequencing_platform, str):
+        if self.V1p4sequencing_platform is not None and not isinstance(self.V1p4sequencing_platform, str):
             self.V1p4sequencing_platform = str(self.V1p4sequencing_platform)
 
-        if self._is_empty(self.V1p4sequencing_facility):
-            self.MissingRequiredField("V1p4sequencing_facility")
-        if not isinstance(self.V1p4sequencing_facility, str):
+        if self.V1p4sequencing_facility is not None and not isinstance(self.V1p4sequencing_facility, str):
             self.V1p4sequencing_facility = str(self.V1p4sequencing_facility)
 
-        if self._is_empty(self.V1p4sequencing_run_date):
-            self.MissingRequiredField("V1p4sequencing_run_date")
-        if not isinstance(self.V1p4sequencing_run_date, XSDDateTime):
+        if self.V1p4sequencing_run_date is not None and not isinstance(self.V1p4sequencing_run_date, XSDDateTime):
             self.V1p4sequencing_run_date = XSDDateTime(self.V1p4sequencing_run_date)
 
-        if self._is_empty(self.V1p4sequencing_kit):
-            self.MissingRequiredField("V1p4sequencing_kit")
-        if not isinstance(self.V1p4sequencing_kit, str):
+        if self.V1p4sequencing_kit is not None and not isinstance(self.V1p4sequencing_kit, str):
             self.V1p4sequencing_kit = str(self.V1p4sequencing_kit)
 
         if self.V1p4sequencing_files is not None and not isinstance(self.V1p4sequencing_files, V1p4SequencingData):
@@ -9097,56 +8221,40 @@ class V1p4SequencingData(YAMLRoot):
     class_name: ClassVar[str] = "V1p4SequencingData"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SequencingData
 
-    V1p4sequencing_data_id: str = None
-    V1p4file_type: Union[str, "V1p4FileType"] = None
-    V1p4filename: str = None
-    V1p4read_direction: Union[str, "V1p4ReadDirection"] = None
-    V1p4read_length: int = None
-    V1p4paired_filename: str = None
-    V1p4paired_read_direction: Union[str, "V1p4PairedReadDirection"] = None
-    V1p4paired_read_length: int = None
+    V1p4sequencing_data_id: Optional[str] = None
+    V1p4file_type: Optional[Union[str, "V1p4FileType"]] = None
+    V1p4filename: Optional[str] = None
+    V1p4read_direction: Optional[Union[str, "V1p4ReadDirection"]] = None
+    V1p4read_length: Optional[int] = None
+    V1p4paired_filename: Optional[str] = None
+    V1p4paired_read_direction: Optional[Union[str, "V1p4PairedReadDirection"]] = None
+    V1p4paired_read_length: Optional[int] = None
     V1p4index_filename: Optional[str] = None
     V1p4index_length: Optional[int] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequencing_data_id):
-            self.MissingRequiredField("V1p4sequencing_data_id")
-        if not isinstance(self.V1p4sequencing_data_id, str):
+        if self.V1p4sequencing_data_id is not None and not isinstance(self.V1p4sequencing_data_id, str):
             self.V1p4sequencing_data_id = str(self.V1p4sequencing_data_id)
 
-        if self._is_empty(self.V1p4file_type):
-            self.MissingRequiredField("V1p4file_type")
-        if not isinstance(self.V1p4file_type, V1p4FileType):
+        if self.V1p4file_type is not None and not isinstance(self.V1p4file_type, V1p4FileType):
             self.V1p4file_type = V1p4FileType(self.V1p4file_type)
 
-        if self._is_empty(self.V1p4filename):
-            self.MissingRequiredField("V1p4filename")
-        if not isinstance(self.V1p4filename, str):
+        if self.V1p4filename is not None and not isinstance(self.V1p4filename, str):
             self.V1p4filename = str(self.V1p4filename)
 
-        if self._is_empty(self.V1p4read_direction):
-            self.MissingRequiredField("V1p4read_direction")
-        if not isinstance(self.V1p4read_direction, V1p4ReadDirection):
+        if self.V1p4read_direction is not None and not isinstance(self.V1p4read_direction, V1p4ReadDirection):
             self.V1p4read_direction = V1p4ReadDirection(self.V1p4read_direction)
 
-        if self._is_empty(self.V1p4read_length):
-            self.MissingRequiredField("V1p4read_length")
-        if not isinstance(self.V1p4read_length, int):
+        if self.V1p4read_length is not None and not isinstance(self.V1p4read_length, int):
             self.V1p4read_length = int(self.V1p4read_length)
 
-        if self._is_empty(self.V1p4paired_filename):
-            self.MissingRequiredField("V1p4paired_filename")
-        if not isinstance(self.V1p4paired_filename, str):
+        if self.V1p4paired_filename is not None and not isinstance(self.V1p4paired_filename, str):
             self.V1p4paired_filename = str(self.V1p4paired_filename)
 
-        if self._is_empty(self.V1p4paired_read_direction):
-            self.MissingRequiredField("V1p4paired_read_direction")
-        if not isinstance(self.V1p4paired_read_direction, V1p4PairedReadDirection):
+        if self.V1p4paired_read_direction is not None and not isinstance(self.V1p4paired_read_direction, V1p4PairedReadDirection):
             self.V1p4paired_read_direction = V1p4PairedReadDirection(self.V1p4paired_read_direction)
 
-        if self._is_empty(self.V1p4paired_read_length):
-            self.MissingRequiredField("V1p4paired_read_length")
-        if not isinstance(self.V1p4paired_read_length, int):
+        if self.V1p4paired_read_length is not None and not isinstance(self.V1p4paired_read_length, int):
             self.V1p4paired_read_length = int(self.V1p4paired_read_length)
 
         if self.V1p4index_filename is not None and not isinstance(self.V1p4index_filename, str):
@@ -9167,64 +8275,50 @@ class V1p4DataProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p4DataProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4DataProcessing
 
-    V1p4software_versions: str = None
-    V1p4paired_reads_assembly: str = None
-    V1p4quality_thresholds: str = None
-    V1p4primer_match_cutoffs: str = None
-    V1p4collapsing_method: str = None
-    V1p4data_processing_protocols: str = None
-    V1p4germline_database: str = None
     V1p4data_processing_id: Optional[str] = None
     V1p4primary_annotation: Optional[Union[bool, Bool]] = None
+    V1p4software_versions: Optional[str] = None
+    V1p4paired_reads_assembly: Optional[str] = None
+    V1p4quality_thresholds: Optional[str] = None
+    V1p4primer_match_cutoffs: Optional[str] = None
+    V1p4collapsing_method: Optional[str] = None
+    V1p4data_processing_protocols: Optional[str] = None
     V1p4data_processing_files: Optional[Union[str, List[str]]] = empty_list()
+    V1p4germline_database: Optional[str] = None
     V1p4germline_set_ref: Optional[str] = None
     V1p4analysis_provenance_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4software_versions):
-            self.MissingRequiredField("V1p4software_versions")
-        if not isinstance(self.V1p4software_versions, str):
-            self.V1p4software_versions = str(self.V1p4software_versions)
-
-        if self._is_empty(self.V1p4paired_reads_assembly):
-            self.MissingRequiredField("V1p4paired_reads_assembly")
-        if not isinstance(self.V1p4paired_reads_assembly, str):
-            self.V1p4paired_reads_assembly = str(self.V1p4paired_reads_assembly)
-
-        if self._is_empty(self.V1p4quality_thresholds):
-            self.MissingRequiredField("V1p4quality_thresholds")
-        if not isinstance(self.V1p4quality_thresholds, str):
-            self.V1p4quality_thresholds = str(self.V1p4quality_thresholds)
-
-        if self._is_empty(self.V1p4primer_match_cutoffs):
-            self.MissingRequiredField("V1p4primer_match_cutoffs")
-        if not isinstance(self.V1p4primer_match_cutoffs, str):
-            self.V1p4primer_match_cutoffs = str(self.V1p4primer_match_cutoffs)
-
-        if self._is_empty(self.V1p4collapsing_method):
-            self.MissingRequiredField("V1p4collapsing_method")
-        if not isinstance(self.V1p4collapsing_method, str):
-            self.V1p4collapsing_method = str(self.V1p4collapsing_method)
-
-        if self._is_empty(self.V1p4data_processing_protocols):
-            self.MissingRequiredField("V1p4data_processing_protocols")
-        if not isinstance(self.V1p4data_processing_protocols, str):
-            self.V1p4data_processing_protocols = str(self.V1p4data_processing_protocols)
-
-        if self._is_empty(self.V1p4germline_database):
-            self.MissingRequiredField("V1p4germline_database")
-        if not isinstance(self.V1p4germline_database, str):
-            self.V1p4germline_database = str(self.V1p4germline_database)
-
         if self.V1p4data_processing_id is not None and not isinstance(self.V1p4data_processing_id, str):
             self.V1p4data_processing_id = str(self.V1p4data_processing_id)
 
         if self.V1p4primary_annotation is not None and not isinstance(self.V1p4primary_annotation, Bool):
             self.V1p4primary_annotation = Bool(self.V1p4primary_annotation)
 
+        if self.V1p4software_versions is not None and not isinstance(self.V1p4software_versions, str):
+            self.V1p4software_versions = str(self.V1p4software_versions)
+
+        if self.V1p4paired_reads_assembly is not None and not isinstance(self.V1p4paired_reads_assembly, str):
+            self.V1p4paired_reads_assembly = str(self.V1p4paired_reads_assembly)
+
+        if self.V1p4quality_thresholds is not None and not isinstance(self.V1p4quality_thresholds, str):
+            self.V1p4quality_thresholds = str(self.V1p4quality_thresholds)
+
+        if self.V1p4primer_match_cutoffs is not None and not isinstance(self.V1p4primer_match_cutoffs, str):
+            self.V1p4primer_match_cutoffs = str(self.V1p4primer_match_cutoffs)
+
+        if self.V1p4collapsing_method is not None and not isinstance(self.V1p4collapsing_method, str):
+            self.V1p4collapsing_method = str(self.V1p4collapsing_method)
+
+        if self.V1p4data_processing_protocols is not None and not isinstance(self.V1p4data_processing_protocols, str):
+            self.V1p4data_processing_protocols = str(self.V1p4data_processing_protocols)
+
         if not isinstance(self.V1p4data_processing_files, list):
             self.V1p4data_processing_files = [self.V1p4data_processing_files] if self.V1p4data_processing_files is not None else []
         self.V1p4data_processing_files = [v if isinstance(v, str) else str(v) for v in self.V1p4data_processing_files]
+
+        if self.V1p4germline_database is not None and not isinstance(self.V1p4germline_database, str):
+            self.V1p4germline_database = str(self.V1p4germline_database)
 
         if self.V1p4germline_set_ref is not None and not isinstance(self.V1p4germline_set_ref, str):
             self.V1p4germline_set_ref = str(self.V1p4germline_set_ref)
@@ -9244,33 +8338,15 @@ class V1p4Repertoire(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Repertoire"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Repertoire
 
-    V1p4study: Union[dict, V1p4Study] = None
-    V1p4subject: Union[dict, V1p4Subject] = None
-    V1p4sample: Union[Union[dict, "V1p4SampleProcessing"], List[Union[dict, "V1p4SampleProcessing"]]] = None
-    V1p4data_processing: Union[Union[dict, V1p4DataProcessing], List[Union[dict, V1p4DataProcessing]]] = None
     V1p4repertoire_id: Optional[str] = None
     V1p4repertoire_name: Optional[str] = None
     V1p4repertoire_description: Optional[str] = None
+    V1p4study: Optional[Union[dict, V1p4Study]] = None
+    V1p4subject: Optional[Union[dict, V1p4Subject]] = None
+    V1p4sample: Optional[Union[Union[dict, "V1p4SampleProcessing"], List[Union[dict, "V1p4SampleProcessing"]]]] = empty_list()
+    V1p4data_processing: Optional[Union[Union[dict, V1p4DataProcessing], List[Union[dict, V1p4DataProcessing]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4study):
-            self.MissingRequiredField("V1p4study")
-        if not isinstance(self.V1p4study, V1p4Study):
-            self.V1p4study = V1p4Study(**as_dict(self.V1p4study))
-
-        if self._is_empty(self.V1p4subject):
-            self.MissingRequiredField("V1p4subject")
-        if not isinstance(self.V1p4subject, V1p4Subject):
-            self.V1p4subject = V1p4Subject(**as_dict(self.V1p4subject))
-
-        if self._is_empty(self.V1p4sample):
-            self.MissingRequiredField("V1p4sample")
-        self._normalize_inlined_as_dict(slot_name="V1p4sample", slot_type=V1p4SampleProcessing, key_name="V1p4sample_id", keyed=False)
-
-        if self._is_empty(self.V1p4data_processing):
-            self.MissingRequiredField("V1p4data_processing")
-        self._normalize_inlined_as_dict(slot_name="V1p4data_processing", slot_type=V1p4DataProcessing, key_name="V1p4software_versions", keyed=False)
-
         if self.V1p4repertoire_id is not None and not isinstance(self.V1p4repertoire_id, str):
             self.V1p4repertoire_id = str(self.V1p4repertoire_id)
 
@@ -9279,6 +8355,20 @@ class V1p4Repertoire(YAMLRoot):
 
         if self.V1p4repertoire_description is not None and not isinstance(self.V1p4repertoire_description, str):
             self.V1p4repertoire_description = str(self.V1p4repertoire_description)
+
+        if self.V1p4study is not None and not isinstance(self.V1p4study, V1p4Study):
+            self.V1p4study = V1p4Study(**as_dict(self.V1p4study))
+
+        if self.V1p4subject is not None and not isinstance(self.V1p4subject, V1p4Subject):
+            self.V1p4subject = V1p4Subject(**as_dict(self.V1p4subject))
+
+        if not isinstance(self.V1p4sample, list):
+            self.V1p4sample = [self.V1p4sample] if self.V1p4sample is not None else []
+        self.V1p4sample = [v if isinstance(v, V1p4SampleProcessing) else V1p4SampleProcessing(**as_dict(v)) for v in self.V1p4sample]
+
+        if not isinstance(self.V1p4data_processing, list):
+            self.V1p4data_processing = [self.V1p4data_processing] if self.V1p4data_processing is not None else []
+        self.V1p4data_processing = [v if isinstance(v, V1p4DataProcessing) else V1p4DataProcessing(**as_dict(v)) for v in self.V1p4data_processing]
 
         super().__post_init__(**kwargs)
 
@@ -9292,28 +8382,24 @@ class V1p4RepertoireGroup(YAMLRoot):
     class_name: ClassVar[str] = "V1p4RepertoireGroup"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4RepertoireGroup
 
-    V1p4repertoire_group_id: str = None
-    V1p4repertoires: Union[str, List[str]] = None
+    V1p4repertoire_group_id: Optional[str] = None
     V1p4repertoire_group_name: Optional[str] = None
     V1p4repertoire_group_description: Optional[str] = None
+    V1p4repertoires: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4repertoire_group_id):
-            self.MissingRequiredField("V1p4repertoire_group_id")
-        if not isinstance(self.V1p4repertoire_group_id, str):
+        if self.V1p4repertoire_group_id is not None and not isinstance(self.V1p4repertoire_group_id, str):
             self.V1p4repertoire_group_id = str(self.V1p4repertoire_group_id)
-
-        if self._is_empty(self.V1p4repertoires):
-            self.MissingRequiredField("V1p4repertoires")
-        if not isinstance(self.V1p4repertoires, list):
-            self.V1p4repertoires = [self.V1p4repertoires] if self.V1p4repertoires is not None else []
-        self.V1p4repertoires = [v if isinstance(v, str) else str(v) for v in self.V1p4repertoires]
 
         if self.V1p4repertoire_group_name is not None and not isinstance(self.V1p4repertoire_group_name, str):
             self.V1p4repertoire_group_name = str(self.V1p4repertoire_group_name)
 
         if self.V1p4repertoire_group_description is not None and not isinstance(self.V1p4repertoire_group_description, str):
             self.V1p4repertoire_group_description = str(self.V1p4repertoire_group_description)
+
+        if not isinstance(self.V1p4repertoires, list):
+            self.V1p4repertoires = [self.V1p4repertoires] if self.V1p4repertoires is not None else []
+        self.V1p4repertoires = [v if isinstance(v, str) else str(v) for v in self.V1p4repertoires]
 
         super().__post_init__(**kwargs)
 
@@ -9327,14 +8413,14 @@ class V1p4Alignment(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Alignment"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Alignment
 
-    V1p4sequence_id: str = None
-    V1p4segment: str = None
-    V1p4call: str = None
-    V1p4score: float = None
-    V1p4cigar: str = None
+    V1p4sequence_id: Optional[str] = None
+    V1p4segment: Optional[str] = None
     V1p4rev_comp: Optional[Union[bool, Bool]] = None
+    V1p4call: Optional[str] = None
+    V1p4score: Optional[float] = None
     V1p4identity: Optional[float] = None
     V1p4support: Optional[float] = None
+    V1p4cigar: Optional[str] = None
     V1p4sequence_start: Optional[int] = None
     V1p4sequence_end: Optional[int] = None
     V1p4germline_start: Optional[int] = None
@@ -9343,39 +8429,29 @@ class V1p4Alignment(YAMLRoot):
     V1p4data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequence_id):
-            self.MissingRequiredField("V1p4sequence_id")
-        if not isinstance(self.V1p4sequence_id, str):
+        if self.V1p4sequence_id is not None and not isinstance(self.V1p4sequence_id, str):
             self.V1p4sequence_id = str(self.V1p4sequence_id)
 
-        if self._is_empty(self.V1p4segment):
-            self.MissingRequiredField("V1p4segment")
-        if not isinstance(self.V1p4segment, str):
+        if self.V1p4segment is not None and not isinstance(self.V1p4segment, str):
             self.V1p4segment = str(self.V1p4segment)
-
-        if self._is_empty(self.V1p4call):
-            self.MissingRequiredField("V1p4call")
-        if not isinstance(self.V1p4call, str):
-            self.V1p4call = str(self.V1p4call)
-
-        if self._is_empty(self.V1p4score):
-            self.MissingRequiredField("V1p4score")
-        if not isinstance(self.V1p4score, float):
-            self.V1p4score = float(self.V1p4score)
-
-        if self._is_empty(self.V1p4cigar):
-            self.MissingRequiredField("V1p4cigar")
-        if not isinstance(self.V1p4cigar, str):
-            self.V1p4cigar = str(self.V1p4cigar)
 
         if self.V1p4rev_comp is not None and not isinstance(self.V1p4rev_comp, Bool):
             self.V1p4rev_comp = Bool(self.V1p4rev_comp)
+
+        if self.V1p4call is not None and not isinstance(self.V1p4call, str):
+            self.V1p4call = str(self.V1p4call)
+
+        if self.V1p4score is not None and not isinstance(self.V1p4score, float):
+            self.V1p4score = float(self.V1p4score)
 
         if self.V1p4identity is not None and not isinstance(self.V1p4identity, float):
             self.V1p4identity = float(self.V1p4identity)
 
         if self.V1p4support is not None and not isinstance(self.V1p4support, float):
             self.V1p4support = float(self.V1p4support)
+
+        if self.V1p4cigar is not None and not isinstance(self.V1p4cigar, str):
+            self.V1p4cigar = str(self.V1p4cigar)
 
         if self.V1p4sequence_start is not None and not isinstance(self.V1p4sequence_start, int):
             self.V1p4sequence_start = int(self.V1p4sequence_start)
@@ -9407,16 +8483,12 @@ class V1p4Rearrangement(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Rearrangement"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Rearrangement
 
-    V1p4sequence_id: str = None
-    V1p4sequence: str = None
-    V1p4productive: Union[bool, Bool] = None
-    V1p4germline_alignment: str = None
-    V1p4v_cigar: str = None
-    V1p4d_cigar: str = None
-    V1p4j_cigar: str = None
+    V1p4sequence_id: Optional[str] = None
+    V1p4sequence: Optional[str] = None
     V1p4quality: Optional[str] = None
     V1p4sequence_aa: Optional[str] = None
     V1p4rev_comp: Optional[Union[bool, Bool]] = None
+    V1p4productive: Optional[Union[bool, Bool]] = None
     V1p4vj_in_frame: Optional[Union[bool, Bool]] = None
     V1p4stop_codon: Optional[Union[bool, Bool]] = None
     V1p4complete_vdj: Optional[Union[bool, Bool]] = None
@@ -9430,6 +8502,7 @@ class V1p4Rearrangement(YAMLRoot):
     V1p4sequence_alignment: Optional[str] = None
     V1p4quality_alignment: Optional[str] = None
     V1p4sequence_alignment_aa: Optional[str] = None
+    V1p4germline_alignment: Optional[str] = None
     V1p4germline_alignment_aa: Optional[str] = None
     V1p4junction: Optional[str] = None
     V1p4junction_aa: Optional[str] = None
@@ -9456,9 +8529,11 @@ class V1p4Rearrangement(YAMLRoot):
     V1p4v_score: Optional[float] = None
     V1p4v_identity: Optional[float] = None
     V1p4v_support: Optional[float] = None
+    V1p4v_cigar: Optional[str] = None
     V1p4d_score: Optional[float] = None
     V1p4d_identity: Optional[float] = None
     V1p4d_support: Optional[float] = None
+    V1p4d_cigar: Optional[str] = None
     V1p4d2_score: Optional[float] = None
     V1p4d2_identity: Optional[float] = None
     V1p4d2_support: Optional[float] = None
@@ -9466,6 +8541,7 @@ class V1p4Rearrangement(YAMLRoot):
     V1p4j_score: Optional[float] = None
     V1p4j_identity: Optional[float] = None
     V1p4j_support: Optional[float] = None
+    V1p4j_cigar: Optional[str] = None
     V1p4c_score: Optional[float] = None
     V1p4c_identity: Optional[float] = None
     V1p4c_support: Optional[float] = None
@@ -9564,40 +8640,11 @@ class V1p4Rearrangement(YAMLRoot):
     V1p4data_processing_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequence_id):
-            self.MissingRequiredField("V1p4sequence_id")
-        if not isinstance(self.V1p4sequence_id, str):
+        if self.V1p4sequence_id is not None and not isinstance(self.V1p4sequence_id, str):
             self.V1p4sequence_id = str(self.V1p4sequence_id)
 
-        if self._is_empty(self.V1p4sequence):
-            self.MissingRequiredField("V1p4sequence")
-        if not isinstance(self.V1p4sequence, str):
+        if self.V1p4sequence is not None and not isinstance(self.V1p4sequence, str):
             self.V1p4sequence = str(self.V1p4sequence)
-
-        if self._is_empty(self.V1p4productive):
-            self.MissingRequiredField("V1p4productive")
-        if not isinstance(self.V1p4productive, Bool):
-            self.V1p4productive = Bool(self.V1p4productive)
-
-        if self._is_empty(self.V1p4germline_alignment):
-            self.MissingRequiredField("V1p4germline_alignment")
-        if not isinstance(self.V1p4germline_alignment, str):
-            self.V1p4germline_alignment = str(self.V1p4germline_alignment)
-
-        if self._is_empty(self.V1p4v_cigar):
-            self.MissingRequiredField("V1p4v_cigar")
-        if not isinstance(self.V1p4v_cigar, str):
-            self.V1p4v_cigar = str(self.V1p4v_cigar)
-
-        if self._is_empty(self.V1p4d_cigar):
-            self.MissingRequiredField("V1p4d_cigar")
-        if not isinstance(self.V1p4d_cigar, str):
-            self.V1p4d_cigar = str(self.V1p4d_cigar)
-
-        if self._is_empty(self.V1p4j_cigar):
-            self.MissingRequiredField("V1p4j_cigar")
-        if not isinstance(self.V1p4j_cigar, str):
-            self.V1p4j_cigar = str(self.V1p4j_cigar)
 
         if self.V1p4quality is not None and not isinstance(self.V1p4quality, str):
             self.V1p4quality = str(self.V1p4quality)
@@ -9607,6 +8654,9 @@ class V1p4Rearrangement(YAMLRoot):
 
         if self.V1p4rev_comp is not None and not isinstance(self.V1p4rev_comp, Bool):
             self.V1p4rev_comp = Bool(self.V1p4rev_comp)
+
+        if self.V1p4productive is not None and not isinstance(self.V1p4productive, Bool):
+            self.V1p4productive = Bool(self.V1p4productive)
 
         if self.V1p4vj_in_frame is not None and not isinstance(self.V1p4vj_in_frame, Bool):
             self.V1p4vj_in_frame = Bool(self.V1p4vj_in_frame)
@@ -9643,6 +8693,9 @@ class V1p4Rearrangement(YAMLRoot):
 
         if self.V1p4sequence_alignment_aa is not None and not isinstance(self.V1p4sequence_alignment_aa, str):
             self.V1p4sequence_alignment_aa = str(self.V1p4sequence_alignment_aa)
+
+        if self.V1p4germline_alignment is not None and not isinstance(self.V1p4germline_alignment, str):
+            self.V1p4germline_alignment = str(self.V1p4germline_alignment)
 
         if self.V1p4germline_alignment_aa is not None and not isinstance(self.V1p4germline_alignment_aa, str):
             self.V1p4germline_alignment_aa = str(self.V1p4germline_alignment_aa)
@@ -9722,6 +8775,9 @@ class V1p4Rearrangement(YAMLRoot):
         if self.V1p4v_support is not None and not isinstance(self.V1p4v_support, float):
             self.V1p4v_support = float(self.V1p4v_support)
 
+        if self.V1p4v_cigar is not None and not isinstance(self.V1p4v_cigar, str):
+            self.V1p4v_cigar = str(self.V1p4v_cigar)
+
         if self.V1p4d_score is not None and not isinstance(self.V1p4d_score, float):
             self.V1p4d_score = float(self.V1p4d_score)
 
@@ -9730,6 +8786,9 @@ class V1p4Rearrangement(YAMLRoot):
 
         if self.V1p4d_support is not None and not isinstance(self.V1p4d_support, float):
             self.V1p4d_support = float(self.V1p4d_support)
+
+        if self.V1p4d_cigar is not None and not isinstance(self.V1p4d_cigar, str):
+            self.V1p4d_cigar = str(self.V1p4d_cigar)
 
         if self.V1p4d2_score is not None and not isinstance(self.V1p4d2_score, float):
             self.V1p4d2_score = float(self.V1p4d2_score)
@@ -9751,6 +8810,9 @@ class V1p4Rearrangement(YAMLRoot):
 
         if self.V1p4j_support is not None and not isinstance(self.V1p4j_support, float):
             self.V1p4j_support = float(self.V1p4j_support)
+
+        if self.V1p4j_cigar is not None and not isinstance(self.V1p4j_cigar, str):
+            self.V1p4j_cigar = str(self.V1p4j_cigar)
 
         if self.V1p4c_score is not None and not isinstance(self.V1p4c_score, float):
             self.V1p4c_score = float(self.V1p4c_score)
@@ -10052,7 +9114,6 @@ class V1p4Clone(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Clone"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Clone
 
-    V1p4germline_alignment: str = None
     V1p4clone_id: Optional[str] = None
     V1p4repertoire_id: Optional[str] = None
     V1p4data_processing_id: Optional[str] = None
@@ -10064,6 +9125,7 @@ class V1p4Clone(YAMLRoot):
     V1p4junction_aa: Optional[str] = None
     V1p4junction_length: Optional[int] = None
     V1p4junction_aa_length: Optional[int] = None
+    V1p4germline_alignment: Optional[str] = None
     V1p4germline_alignment_aa: Optional[str] = None
     V1p4v_alignment_start: Optional[int] = None
     V1p4v_alignment_end: Optional[int] = None
@@ -10078,11 +9140,6 @@ class V1p4Clone(YAMLRoot):
     V1p4seed_id: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4germline_alignment):
-            self.MissingRequiredField("V1p4germline_alignment")
-        if not isinstance(self.V1p4germline_alignment, str):
-            self.V1p4germline_alignment = str(self.V1p4germline_alignment)
-
         if self.V1p4clone_id is not None and not isinstance(self.V1p4clone_id, str):
             self.V1p4clone_id = str(self.V1p4clone_id)
 
@@ -10116,6 +9173,9 @@ class V1p4Clone(YAMLRoot):
 
         if self.V1p4junction_aa_length is not None and not isinstance(self.V1p4junction_aa_length, int):
             self.V1p4junction_aa_length = int(self.V1p4junction_aa_length)
+
+        if self.V1p4germline_alignment is not None and not isinstance(self.V1p4germline_alignment, str):
+            self.V1p4germline_alignment = str(self.V1p4germline_alignment)
 
         if self.V1p4germline_alignment_aa is not None and not isinstance(self.V1p4germline_alignment_aa, str):
             self.V1p4germline_alignment_aa = str(self.V1p4germline_alignment_aa)
@@ -10165,26 +9225,24 @@ class V1p4Tree(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Tree"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Tree
 
-    V1p4tree_id: str = None
-    V1p4newick: str = None
+    V1p4tree_id: Optional[str] = None
     V1p4clone_id: Optional[str] = None
+    V1p4newick: Optional[str] = None
     V1p4nodes: Optional[Union[Union[dict, "V1p4Node"], List[Union[dict, "V1p4Node"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4tree_id):
-            self.MissingRequiredField("V1p4tree_id")
-        if not isinstance(self.V1p4tree_id, str):
+        if self.V1p4tree_id is not None and not isinstance(self.V1p4tree_id, str):
             self.V1p4tree_id = str(self.V1p4tree_id)
-
-        if self._is_empty(self.V1p4newick):
-            self.MissingRequiredField("V1p4newick")
-        if not isinstance(self.V1p4newick, str):
-            self.V1p4newick = str(self.V1p4newick)
 
         if self.V1p4clone_id is not None and not isinstance(self.V1p4clone_id, str):
             self.V1p4clone_id = str(self.V1p4clone_id)
 
-        self._normalize_inlined_as_dict(slot_name="V1p4nodes", slot_type=V1p4Node, key_name="V1p4sequence_id", keyed=False)
+        if self.V1p4newick is not None and not isinstance(self.V1p4newick, str):
+            self.V1p4newick = str(self.V1p4newick)
+
+        if not isinstance(self.V1p4nodes, list):
+            self.V1p4nodes = [self.V1p4nodes] if self.V1p4nodes is not None else []
+        self.V1p4nodes = [v if isinstance(v, V1p4Node) else V1p4Node(**as_dict(v)) for v in self.V1p4nodes]
 
         super().__post_init__(**kwargs)
 
@@ -10198,15 +9256,13 @@ class V1p4Node(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Node"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Node
 
-    V1p4sequence_id: str = None
+    V1p4sequence_id: Optional[str] = None
     V1p4sequence_alignment: Optional[str] = None
     V1p4junction: Optional[str] = None
     V1p4junction_aa: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sequence_id):
-            self.MissingRequiredField("V1p4sequence_id")
-        if not isinstance(self.V1p4sequence_id, str):
+        if self.V1p4sequence_id is not None and not isinstance(self.V1p4sequence_id, str):
             self.V1p4sequence_id = str(self.V1p4sequence_id)
 
         if self.V1p4sequence_alignment is not None and not isinstance(self.V1p4sequence_alignment, str):
@@ -10230,7 +9286,6 @@ class V1p4Cell(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Cell"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Cell
 
-    V1p4virtual_pairing: Union[bool, Bool] = None
     V1p4cell_id: Optional[str] = None
     V1p4repertoire_id: Optional[str] = None
     V1p4data_processing_id: Optional[str] = None
@@ -10238,13 +9293,9 @@ class V1p4Cell(YAMLRoot):
     V1p4cell_subset: Optional[Union[str, "V1p4CellSubset"]] = None
     V1p4cell_phenotype: Optional[str] = None
     V1p4cell_label: Optional[str] = None
+    V1p4virtual_pairing: Optional[Union[bool, Bool]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4virtual_pairing):
-            self.MissingRequiredField("V1p4virtual_pairing")
-        if not isinstance(self.V1p4virtual_pairing, Bool):
-            self.V1p4virtual_pairing = Bool(self.V1p4virtual_pairing)
-
         if self.V1p4cell_id is not None and not isinstance(self.V1p4cell_id, str):
             self.V1p4cell_id = str(self.V1p4cell_id)
 
@@ -10264,6 +9315,9 @@ class V1p4Cell(YAMLRoot):
         if self.V1p4cell_label is not None and not isinstance(self.V1p4cell_label, str):
             self.V1p4cell_label = str(self.V1p4cell_label)
 
+        if self.V1p4virtual_pairing is not None and not isinstance(self.V1p4virtual_pairing, Bool):
+            self.V1p4virtual_pairing = Bool(self.V1p4virtual_pairing)
+
         super().__post_init__(**kwargs)
 
 
@@ -10276,24 +9330,17 @@ class V1p4Expression(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Expression"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Expression
 
-    V1p4expression_id: str = None
-    V1p4property_type: str = None
-    V1p4property: Union[str, "V1p4Property"] = None
+    V1p4expression_id: Optional[str] = None
     V1p4cell_id: Optional[str] = None
     V1p4repertoire_id: Optional[str] = None
     V1p4data_processing_id: Optional[str] = None
+    V1p4property_type: Optional[str] = None
+    V1p4property: Optional[Union[str, "V1p4Property"]] = None
     V1p4value: Optional[float] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4expression_id):
-            self.MissingRequiredField("V1p4expression_id")
-        if not isinstance(self.V1p4expression_id, str):
+        if self.V1p4expression_id is not None and not isinstance(self.V1p4expression_id, str):
             self.V1p4expression_id = str(self.V1p4expression_id)
-
-        if self._is_empty(self.V1p4property_type):
-            self.MissingRequiredField("V1p4property_type")
-        if not isinstance(self.V1p4property_type, str):
-            self.V1p4property_type = str(self.V1p4property_type)
 
         if self.V1p4cell_id is not None and not isinstance(self.V1p4cell_id, str):
             self.V1p4cell_id = str(self.V1p4cell_id)
@@ -10303,6 +9350,9 @@ class V1p4Expression(YAMLRoot):
 
         if self.V1p4data_processing_id is not None and not isinstance(self.V1p4data_processing_id, str):
             self.V1p4data_processing_id = str(self.V1p4data_processing_id)
+
+        if self.V1p4property_type is not None and not isinstance(self.V1p4property_type, str):
+            self.V1p4property_type = str(self.V1p4property_type)
 
         if self.V1p4value is not None and not isinstance(self.V1p4value, float):
             self.V1p4value = float(self.V1p4value)
@@ -10319,49 +9369,35 @@ class V1p4Receptor(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Receptor"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Receptor
 
-    V1p4receptor_id: str = None
-    V1p4receptor_hash: str = None
-    V1p4receptor_type: Union[str, "V1p4ReceptorType"] = None
-    V1p4receptor_variable_domain_1_aa: str = None
-    V1p4receptor_variable_domain_1_locus: Union[str, "V1p4ReceptorVariableDomain1Locus"] = None
-    V1p4receptor_variable_domain_2_aa: str = None
-    V1p4receptor_variable_domain_2_locus: Union[str, "V1p4ReceptorVariableDomain2Locus"] = None
+    V1p4receptor_id: Optional[str] = None
+    V1p4receptor_hash: Optional[str] = None
+    V1p4receptor_type: Optional[Union[str, "V1p4ReceptorType"]] = None
+    V1p4receptor_variable_domain_1_aa: Optional[str] = None
+    V1p4receptor_variable_domain_1_locus: Optional[Union[str, "V1p4ReceptorVariableDomain1Locus"]] = None
+    V1p4receptor_variable_domain_2_aa: Optional[str] = None
+    V1p4receptor_variable_domain_2_locus: Optional[Union[str, "V1p4ReceptorVariableDomain2Locus"]] = None
     V1p4receptor_ref: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4receptor_id):
-            self.MissingRequiredField("V1p4receptor_id")
-        if not isinstance(self.V1p4receptor_id, str):
+        if self.V1p4receptor_id is not None and not isinstance(self.V1p4receptor_id, str):
             self.V1p4receptor_id = str(self.V1p4receptor_id)
 
-        if self._is_empty(self.V1p4receptor_hash):
-            self.MissingRequiredField("V1p4receptor_hash")
-        if not isinstance(self.V1p4receptor_hash, str):
+        if self.V1p4receptor_hash is not None and not isinstance(self.V1p4receptor_hash, str):
             self.V1p4receptor_hash = str(self.V1p4receptor_hash)
 
-        if self._is_empty(self.V1p4receptor_type):
-            self.MissingRequiredField("V1p4receptor_type")
-        if not isinstance(self.V1p4receptor_type, V1p4ReceptorType):
+        if self.V1p4receptor_type is not None and not isinstance(self.V1p4receptor_type, V1p4ReceptorType):
             self.V1p4receptor_type = V1p4ReceptorType(self.V1p4receptor_type)
 
-        if self._is_empty(self.V1p4receptor_variable_domain_1_aa):
-            self.MissingRequiredField("V1p4receptor_variable_domain_1_aa")
-        if not isinstance(self.V1p4receptor_variable_domain_1_aa, str):
+        if self.V1p4receptor_variable_domain_1_aa is not None and not isinstance(self.V1p4receptor_variable_domain_1_aa, str):
             self.V1p4receptor_variable_domain_1_aa = str(self.V1p4receptor_variable_domain_1_aa)
 
-        if self._is_empty(self.V1p4receptor_variable_domain_1_locus):
-            self.MissingRequiredField("V1p4receptor_variable_domain_1_locus")
-        if not isinstance(self.V1p4receptor_variable_domain_1_locus, V1p4ReceptorVariableDomain1Locus):
+        if self.V1p4receptor_variable_domain_1_locus is not None and not isinstance(self.V1p4receptor_variable_domain_1_locus, V1p4ReceptorVariableDomain1Locus):
             self.V1p4receptor_variable_domain_1_locus = V1p4ReceptorVariableDomain1Locus(self.V1p4receptor_variable_domain_1_locus)
 
-        if self._is_empty(self.V1p4receptor_variable_domain_2_aa):
-            self.MissingRequiredField("V1p4receptor_variable_domain_2_aa")
-        if not isinstance(self.V1p4receptor_variable_domain_2_aa, str):
+        if self.V1p4receptor_variable_domain_2_aa is not None and not isinstance(self.V1p4receptor_variable_domain_2_aa, str):
             self.V1p4receptor_variable_domain_2_aa = str(self.V1p4receptor_variable_domain_2_aa)
 
-        if self._is_empty(self.V1p4receptor_variable_domain_2_locus):
-            self.MissingRequiredField("V1p4receptor_variable_domain_2_locus")
-        if not isinstance(self.V1p4receptor_variable_domain_2_locus, V1p4ReceptorVariableDomain2Locus):
+        if self.V1p4receptor_variable_domain_2_locus is not None and not isinstance(self.V1p4receptor_variable_domain_2_locus, V1p4ReceptorVariableDomain2Locus):
             self.V1p4receptor_variable_domain_2_locus = V1p4ReceptorVariableDomain2Locus(self.V1p4receptor_variable_domain_2_locus)
 
         if not isinstance(self.V1p4receptor_ref, list):
@@ -10380,17 +9416,13 @@ class V1p4Reactivity(YAMLRoot):
     class_name: ClassVar[str] = "V1p4Reactivity"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4Reactivity
 
-    V1p4ligand_type: Union[str, "V1p4LigandType"] = None
-    V1p4antigen_type: Union[str, "V1p4AntigenType"] = None
-    V1p4antigen: Union[str, "V1p4Antigen"] = None
-    V1p4reactivity_method: str = None
-    V1p4reactivity_readout: str = None
-    V1p4reactivity_value: float = None
-    V1p4reactivity_unit: str = None
     V1p4reactivity_id: Optional[str] = None
     V1p4cell_id: Optional[str] = None
     V1p4repertoire_id: Optional[str] = None
     V1p4data_processing_id: Optional[str] = None
+    V1p4ligand_type: Optional[Union[str, "V1p4LigandType"]] = None
+    V1p4antigen_type: Optional[Union[str, "V1p4AntigenType"]] = None
+    V1p4antigen: Optional[Union[str, "V1p4Antigen"]] = None
     V1p4antigen_source_species: Optional[Union[str, "V1p4AntigenSourceSpecies"]] = None
     V1p4peptide_start: Optional[int] = None
     V1p4peptide_end: Optional[int] = None
@@ -10400,39 +9432,13 @@ class V1p4Reactivity(YAMLRoot):
     V1p4mhc_allele_1: Optional[str] = None
     V1p4mhc_gene_2: Optional[Union[str, "V1p4MhcGene2"]] = None
     V1p4mhc_allele_2: Optional[str] = None
+    V1p4reactivity_method: Optional[str] = None
+    V1p4reactivity_readout: Optional[str] = None
+    V1p4reactivity_value: Optional[float] = None
+    V1p4reactivity_unit: Optional[str] = None
     V1p4reactivity_ref: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4ligand_type):
-            self.MissingRequiredField("V1p4ligand_type")
-        if not isinstance(self.V1p4ligand_type, V1p4LigandType):
-            self.V1p4ligand_type = V1p4LigandType(self.V1p4ligand_type)
-
-        if self._is_empty(self.V1p4antigen_type):
-            self.MissingRequiredField("V1p4antigen_type")
-        if not isinstance(self.V1p4antigen_type, V1p4AntigenType):
-            self.V1p4antigen_type = V1p4AntigenType(self.V1p4antigen_type)
-
-        if self._is_empty(self.V1p4reactivity_method):
-            self.MissingRequiredField("V1p4reactivity_method")
-        if not isinstance(self.V1p4reactivity_method, str):
-            self.V1p4reactivity_method = str(self.V1p4reactivity_method)
-
-        if self._is_empty(self.V1p4reactivity_readout):
-            self.MissingRequiredField("V1p4reactivity_readout")
-        if not isinstance(self.V1p4reactivity_readout, str):
-            self.V1p4reactivity_readout = str(self.V1p4reactivity_readout)
-
-        if self._is_empty(self.V1p4reactivity_value):
-            self.MissingRequiredField("V1p4reactivity_value")
-        if not isinstance(self.V1p4reactivity_value, float):
-            self.V1p4reactivity_value = float(self.V1p4reactivity_value)
-
-        if self._is_empty(self.V1p4reactivity_unit):
-            self.MissingRequiredField("V1p4reactivity_unit")
-        if not isinstance(self.V1p4reactivity_unit, str):
-            self.V1p4reactivity_unit = str(self.V1p4reactivity_unit)
-
         if self.V1p4reactivity_id is not None and not isinstance(self.V1p4reactivity_id, str):
             self.V1p4reactivity_id = str(self.V1p4reactivity_id)
 
@@ -10444,6 +9450,12 @@ class V1p4Reactivity(YAMLRoot):
 
         if self.V1p4data_processing_id is not None and not isinstance(self.V1p4data_processing_id, str):
             self.V1p4data_processing_id = str(self.V1p4data_processing_id)
+
+        if self.V1p4ligand_type is not None and not isinstance(self.V1p4ligand_type, V1p4LigandType):
+            self.V1p4ligand_type = V1p4LigandType(self.V1p4ligand_type)
+
+        if self.V1p4antigen_type is not None and not isinstance(self.V1p4antigen_type, V1p4AntigenType):
+            self.V1p4antigen_type = V1p4AntigenType(self.V1p4antigen_type)
 
         if self.V1p4peptide_start is not None and not isinstance(self.V1p4peptide_start, int):
             self.V1p4peptide_start = int(self.V1p4peptide_start)
@@ -10463,6 +9475,18 @@ class V1p4Reactivity(YAMLRoot):
         if self.V1p4mhc_allele_2 is not None and not isinstance(self.V1p4mhc_allele_2, str):
             self.V1p4mhc_allele_2 = str(self.V1p4mhc_allele_2)
 
+        if self.V1p4reactivity_method is not None and not isinstance(self.V1p4reactivity_method, str):
+            self.V1p4reactivity_method = str(self.V1p4reactivity_method)
+
+        if self.V1p4reactivity_readout is not None and not isinstance(self.V1p4reactivity_readout, str):
+            self.V1p4reactivity_readout = str(self.V1p4reactivity_readout)
+
+        if self.V1p4reactivity_value is not None and not isinstance(self.V1p4reactivity_value, float):
+            self.V1p4reactivity_value = float(self.V1p4reactivity_value)
+
+        if self.V1p4reactivity_unit is not None and not isinstance(self.V1p4reactivity_unit, str):
+            self.V1p4reactivity_unit = str(self.V1p4reactivity_unit)
+
         if self.V1p4reactivity_ref is not None and not isinstance(self.V1p4reactivity_ref, str):
             self.V1p4reactivity_ref = str(self.V1p4reactivity_ref)
 
@@ -10478,187 +9502,68 @@ class V1p4SampleProcessing(YAMLRoot):
     class_name: ClassVar[str] = "V1p4SampleProcessing"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p4SampleProcessing
 
-    V1p4sample_id: str = None
-    V1p4sample_type: str = None
-    V1p4tissue: Union[str, "V1p4Tissue"] = None
-    V1p4anatomic_site: str = None
-    V1p4disease_state_sample: str = None
-    V1p4collection_time_point_relative: Union[dict, V1p4TimePoint] = None
-    V1p4biomaterial_provider: str = None
-    V1p4tissue_processing: str = None
-    V1p4single_cell: Union[bool, Bool] = None
-    V1p4cell_number: int = None
-    V1p4cells_per_reaction: int = None
-    V1p4cell_storage: Union[bool, Bool] = None
-    V1p4cell_quality: str = None
-    V1p4cell_isolation: str = None
-    V1p4cell_processing_protocol: str = None
-    V1p4template_class: Union[str, "V1p4TemplateClass"] = None
-    V1p4template_quality: str = None
-    V1p4template_amount: Union[dict, V1p4PhysicalQuantity] = None
-    V1p4library_generation_method: Union[str, "V1p4LibraryGenerationMethod"] = None
-    V1p4library_generation_protocol: str = None
-    V1p4library_generation_kit_version: str = None
-    V1p4complete_sequences: Union[str, "V1p4CompleteSequences"] = None
-    V1p4physical_linkage: Union[str, "V1p4PhysicalLinkage"] = None
-    V1p4sequencing_run_id: str = None
-    V1p4total_reads_passing_qc_filter: int = None
-    V1p4sequencing_platform: str = None
-    V1p4sequencing_facility: str = None
-    V1p4sequencing_run_date: Union[str, XSDDateTime] = None
-    V1p4sequencing_kit: str = None
     V1p4sample_processing_id: Optional[str] = None
+    V1p4sample_id: Optional[str] = None
+    V1p4sample_type: Optional[str] = None
+    V1p4tissue: Optional[Union[str, "V1p4Tissue"]] = None
+    V1p4anatomic_site: Optional[str] = None
+    V1p4disease_state_sample: Optional[str] = None
+    V1p4collection_time_point_relative: Optional[Union[dict, V1p4TimePoint]] = None
     V1p4collection_location: Optional[Union[str, "V1p4CollectionLocation"]] = None
+    V1p4biomaterial_provider: Optional[str] = None
+    V1p4tissue_processing: Optional[str] = None
     V1p4cell_subset: Optional[Union[str, "V1p4CellSubset"]] = None
     V1p4cell_phenotype: Optional[str] = None
     V1p4cell_label: Optional[str] = None
     V1p4cell_species: Optional[Union[str, "V1p4CellSpecies"]] = None
+    V1p4single_cell: Optional[Union[bool, Bool]] = None
+    V1p4cell_number: Optional[int] = None
+    V1p4cells_per_reaction: Optional[int] = None
+    V1p4cell_storage: Optional[Union[bool, Bool]] = None
+    V1p4cell_quality: Optional[str] = None
+    V1p4cell_isolation: Optional[str] = None
+    V1p4cell_processing_protocol: Optional[str] = None
+    V1p4template_class: Optional[Union[str, "V1p4TemplateClass"]] = None
+    V1p4template_quality: Optional[str] = None
+    V1p4template_amount: Optional[Union[dict, V1p4PhysicalQuantity]] = None
+    V1p4library_generation_method: Optional[Union[str, "V1p4LibraryGenerationMethod"]] = None
+    V1p4library_generation_protocol: Optional[str] = None
+    V1p4library_generation_kit_version: Optional[str] = None
     V1p4pcr_target: Optional[Union[Union[dict, V1p4PCRTarget], List[Union[dict, V1p4PCRTarget]]]] = empty_list()
+    V1p4complete_sequences: Optional[Union[str, "V1p4CompleteSequences"]] = None
+    V1p4physical_linkage: Optional[Union[str, "V1p4PhysicalLinkage"]] = None
+    V1p4sequencing_run_id: Optional[str] = None
+    V1p4total_reads_passing_qc_filter: Optional[int] = None
+    V1p4sequencing_platform: Optional[str] = None
+    V1p4sequencing_facility: Optional[str] = None
+    V1p4sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
+    V1p4sequencing_kit: Optional[str] = None
     V1p4sequencing_files: Optional[Union[dict, V1p4SequencingData]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.V1p4sample_id):
-            self.MissingRequiredField("V1p4sample_id")
-        if not isinstance(self.V1p4sample_id, str):
-            self.V1p4sample_id = str(self.V1p4sample_id)
-
-        if self._is_empty(self.V1p4sample_type):
-            self.MissingRequiredField("V1p4sample_type")
-        if not isinstance(self.V1p4sample_type, str):
-            self.V1p4sample_type = str(self.V1p4sample_type)
-
-        if self._is_empty(self.V1p4anatomic_site):
-            self.MissingRequiredField("V1p4anatomic_site")
-        if not isinstance(self.V1p4anatomic_site, str):
-            self.V1p4anatomic_site = str(self.V1p4anatomic_site)
-
-        if self._is_empty(self.V1p4disease_state_sample):
-            self.MissingRequiredField("V1p4disease_state_sample")
-        if not isinstance(self.V1p4disease_state_sample, str):
-            self.V1p4disease_state_sample = str(self.V1p4disease_state_sample)
-
-        if self._is_empty(self.V1p4collection_time_point_relative):
-            self.MissingRequiredField("V1p4collection_time_point_relative")
-        if not isinstance(self.V1p4collection_time_point_relative, V1p4TimePoint):
-            self.V1p4collection_time_point_relative = V1p4TimePoint(**as_dict(self.V1p4collection_time_point_relative))
-
-        if self._is_empty(self.V1p4biomaterial_provider):
-            self.MissingRequiredField("V1p4biomaterial_provider")
-        if not isinstance(self.V1p4biomaterial_provider, str):
-            self.V1p4biomaterial_provider = str(self.V1p4biomaterial_provider)
-
-        if self._is_empty(self.V1p4tissue_processing):
-            self.MissingRequiredField("V1p4tissue_processing")
-        if not isinstance(self.V1p4tissue_processing, str):
-            self.V1p4tissue_processing = str(self.V1p4tissue_processing)
-
-        if self._is_empty(self.V1p4single_cell):
-            self.MissingRequiredField("V1p4single_cell")
-        if not isinstance(self.V1p4single_cell, Bool):
-            self.V1p4single_cell = Bool(self.V1p4single_cell)
-
-        if self._is_empty(self.V1p4cell_number):
-            self.MissingRequiredField("V1p4cell_number")
-        if not isinstance(self.V1p4cell_number, int):
-            self.V1p4cell_number = int(self.V1p4cell_number)
-
-        if self._is_empty(self.V1p4cells_per_reaction):
-            self.MissingRequiredField("V1p4cells_per_reaction")
-        if not isinstance(self.V1p4cells_per_reaction, int):
-            self.V1p4cells_per_reaction = int(self.V1p4cells_per_reaction)
-
-        if self._is_empty(self.V1p4cell_storage):
-            self.MissingRequiredField("V1p4cell_storage")
-        if not isinstance(self.V1p4cell_storage, Bool):
-            self.V1p4cell_storage = Bool(self.V1p4cell_storage)
-
-        if self._is_empty(self.V1p4cell_quality):
-            self.MissingRequiredField("V1p4cell_quality")
-        if not isinstance(self.V1p4cell_quality, str):
-            self.V1p4cell_quality = str(self.V1p4cell_quality)
-
-        if self._is_empty(self.V1p4cell_isolation):
-            self.MissingRequiredField("V1p4cell_isolation")
-        if not isinstance(self.V1p4cell_isolation, str):
-            self.V1p4cell_isolation = str(self.V1p4cell_isolation)
-
-        if self._is_empty(self.V1p4cell_processing_protocol):
-            self.MissingRequiredField("V1p4cell_processing_protocol")
-        if not isinstance(self.V1p4cell_processing_protocol, str):
-            self.V1p4cell_processing_protocol = str(self.V1p4cell_processing_protocol)
-
-        if self._is_empty(self.V1p4template_class):
-            self.MissingRequiredField("V1p4template_class")
-        if not isinstance(self.V1p4template_class, V1p4TemplateClass):
-            self.V1p4template_class = V1p4TemplateClass(self.V1p4template_class)
-
-        if self._is_empty(self.V1p4template_quality):
-            self.MissingRequiredField("V1p4template_quality")
-        if not isinstance(self.V1p4template_quality, str):
-            self.V1p4template_quality = str(self.V1p4template_quality)
-
-        if self._is_empty(self.V1p4template_amount):
-            self.MissingRequiredField("V1p4template_amount")
-        if not isinstance(self.V1p4template_amount, V1p4PhysicalQuantity):
-            self.V1p4template_amount = V1p4PhysicalQuantity(**as_dict(self.V1p4template_amount))
-
-        if self._is_empty(self.V1p4library_generation_method):
-            self.MissingRequiredField("V1p4library_generation_method")
-        if not isinstance(self.V1p4library_generation_method, V1p4LibraryGenerationMethod):
-            self.V1p4library_generation_method = V1p4LibraryGenerationMethod(self.V1p4library_generation_method)
-
-        if self._is_empty(self.V1p4library_generation_protocol):
-            self.MissingRequiredField("V1p4library_generation_protocol")
-        if not isinstance(self.V1p4library_generation_protocol, str):
-            self.V1p4library_generation_protocol = str(self.V1p4library_generation_protocol)
-
-        if self._is_empty(self.V1p4library_generation_kit_version):
-            self.MissingRequiredField("V1p4library_generation_kit_version")
-        if not isinstance(self.V1p4library_generation_kit_version, str):
-            self.V1p4library_generation_kit_version = str(self.V1p4library_generation_kit_version)
-
-        if self._is_empty(self.V1p4complete_sequences):
-            self.MissingRequiredField("V1p4complete_sequences")
-        if not isinstance(self.V1p4complete_sequences, V1p4CompleteSequences):
-            self.V1p4complete_sequences = V1p4CompleteSequences(self.V1p4complete_sequences)
-
-        if self._is_empty(self.V1p4physical_linkage):
-            self.MissingRequiredField("V1p4physical_linkage")
-        if not isinstance(self.V1p4physical_linkage, V1p4PhysicalLinkage):
-            self.V1p4physical_linkage = V1p4PhysicalLinkage(self.V1p4physical_linkage)
-
-        if self._is_empty(self.V1p4sequencing_run_id):
-            self.MissingRequiredField("V1p4sequencing_run_id")
-        if not isinstance(self.V1p4sequencing_run_id, str):
-            self.V1p4sequencing_run_id = str(self.V1p4sequencing_run_id)
-
-        if self._is_empty(self.V1p4total_reads_passing_qc_filter):
-            self.MissingRequiredField("V1p4total_reads_passing_qc_filter")
-        if not isinstance(self.V1p4total_reads_passing_qc_filter, int):
-            self.V1p4total_reads_passing_qc_filter = int(self.V1p4total_reads_passing_qc_filter)
-
-        if self._is_empty(self.V1p4sequencing_platform):
-            self.MissingRequiredField("V1p4sequencing_platform")
-        if not isinstance(self.V1p4sequencing_platform, str):
-            self.V1p4sequencing_platform = str(self.V1p4sequencing_platform)
-
-        if self._is_empty(self.V1p4sequencing_facility):
-            self.MissingRequiredField("V1p4sequencing_facility")
-        if not isinstance(self.V1p4sequencing_facility, str):
-            self.V1p4sequencing_facility = str(self.V1p4sequencing_facility)
-
-        if self._is_empty(self.V1p4sequencing_run_date):
-            self.MissingRequiredField("V1p4sequencing_run_date")
-        if not isinstance(self.V1p4sequencing_run_date, XSDDateTime):
-            self.V1p4sequencing_run_date = XSDDateTime(self.V1p4sequencing_run_date)
-
-        if self._is_empty(self.V1p4sequencing_kit):
-            self.MissingRequiredField("V1p4sequencing_kit")
-        if not isinstance(self.V1p4sequencing_kit, str):
-            self.V1p4sequencing_kit = str(self.V1p4sequencing_kit)
-
         if self.V1p4sample_processing_id is not None and not isinstance(self.V1p4sample_processing_id, str):
             self.V1p4sample_processing_id = str(self.V1p4sample_processing_id)
+
+        if self.V1p4sample_id is not None and not isinstance(self.V1p4sample_id, str):
+            self.V1p4sample_id = str(self.V1p4sample_id)
+
+        if self.V1p4sample_type is not None and not isinstance(self.V1p4sample_type, str):
+            self.V1p4sample_type = str(self.V1p4sample_type)
+
+        if self.V1p4anatomic_site is not None and not isinstance(self.V1p4anatomic_site, str):
+            self.V1p4anatomic_site = str(self.V1p4anatomic_site)
+
+        if self.V1p4disease_state_sample is not None and not isinstance(self.V1p4disease_state_sample, str):
+            self.V1p4disease_state_sample = str(self.V1p4disease_state_sample)
+
+        if self.V1p4collection_time_point_relative is not None and not isinstance(self.V1p4collection_time_point_relative, V1p4TimePoint):
+            self.V1p4collection_time_point_relative = V1p4TimePoint(**as_dict(self.V1p4collection_time_point_relative))
+
+        if self.V1p4biomaterial_provider is not None and not isinstance(self.V1p4biomaterial_provider, str):
+            self.V1p4biomaterial_provider = str(self.V1p4biomaterial_provider)
+
+        if self.V1p4tissue_processing is not None and not isinstance(self.V1p4tissue_processing, str):
+            self.V1p4tissue_processing = str(self.V1p4tissue_processing)
 
         if self.V1p4cell_phenotype is not None and not isinstance(self.V1p4cell_phenotype, str):
             self.V1p4cell_phenotype = str(self.V1p4cell_phenotype)
@@ -10666,7 +9571,72 @@ class V1p4SampleProcessing(YAMLRoot):
         if self.V1p4cell_label is not None and not isinstance(self.V1p4cell_label, str):
             self.V1p4cell_label = str(self.V1p4cell_label)
 
-        self._normalize_inlined_as_dict(slot_name="V1p4pcr_target", slot_type=V1p4PCRTarget, key_name="V1p4pcr_target_locus", keyed=False)
+        if self.V1p4single_cell is not None and not isinstance(self.V1p4single_cell, Bool):
+            self.V1p4single_cell = Bool(self.V1p4single_cell)
+
+        if self.V1p4cell_number is not None and not isinstance(self.V1p4cell_number, int):
+            self.V1p4cell_number = int(self.V1p4cell_number)
+
+        if self.V1p4cells_per_reaction is not None and not isinstance(self.V1p4cells_per_reaction, int):
+            self.V1p4cells_per_reaction = int(self.V1p4cells_per_reaction)
+
+        if self.V1p4cell_storage is not None and not isinstance(self.V1p4cell_storage, Bool):
+            self.V1p4cell_storage = Bool(self.V1p4cell_storage)
+
+        if self.V1p4cell_quality is not None and not isinstance(self.V1p4cell_quality, str):
+            self.V1p4cell_quality = str(self.V1p4cell_quality)
+
+        if self.V1p4cell_isolation is not None and not isinstance(self.V1p4cell_isolation, str):
+            self.V1p4cell_isolation = str(self.V1p4cell_isolation)
+
+        if self.V1p4cell_processing_protocol is not None and not isinstance(self.V1p4cell_processing_protocol, str):
+            self.V1p4cell_processing_protocol = str(self.V1p4cell_processing_protocol)
+
+        if self.V1p4template_class is not None and not isinstance(self.V1p4template_class, V1p4TemplateClass):
+            self.V1p4template_class = V1p4TemplateClass(self.V1p4template_class)
+
+        if self.V1p4template_quality is not None and not isinstance(self.V1p4template_quality, str):
+            self.V1p4template_quality = str(self.V1p4template_quality)
+
+        if self.V1p4template_amount is not None and not isinstance(self.V1p4template_amount, V1p4PhysicalQuantity):
+            self.V1p4template_amount = V1p4PhysicalQuantity(**as_dict(self.V1p4template_amount))
+
+        if self.V1p4library_generation_method is not None and not isinstance(self.V1p4library_generation_method, V1p4LibraryGenerationMethod):
+            self.V1p4library_generation_method = V1p4LibraryGenerationMethod(self.V1p4library_generation_method)
+
+        if self.V1p4library_generation_protocol is not None and not isinstance(self.V1p4library_generation_protocol, str):
+            self.V1p4library_generation_protocol = str(self.V1p4library_generation_protocol)
+
+        if self.V1p4library_generation_kit_version is not None and not isinstance(self.V1p4library_generation_kit_version, str):
+            self.V1p4library_generation_kit_version = str(self.V1p4library_generation_kit_version)
+
+        if not isinstance(self.V1p4pcr_target, list):
+            self.V1p4pcr_target = [self.V1p4pcr_target] if self.V1p4pcr_target is not None else []
+        self.V1p4pcr_target = [v if isinstance(v, V1p4PCRTarget) else V1p4PCRTarget(**as_dict(v)) for v in self.V1p4pcr_target]
+
+        if self.V1p4complete_sequences is not None and not isinstance(self.V1p4complete_sequences, V1p4CompleteSequences):
+            self.V1p4complete_sequences = V1p4CompleteSequences(self.V1p4complete_sequences)
+
+        if self.V1p4physical_linkage is not None and not isinstance(self.V1p4physical_linkage, V1p4PhysicalLinkage):
+            self.V1p4physical_linkage = V1p4PhysicalLinkage(self.V1p4physical_linkage)
+
+        if self.V1p4sequencing_run_id is not None and not isinstance(self.V1p4sequencing_run_id, str):
+            self.V1p4sequencing_run_id = str(self.V1p4sequencing_run_id)
+
+        if self.V1p4total_reads_passing_qc_filter is not None and not isinstance(self.V1p4total_reads_passing_qc_filter, int):
+            self.V1p4total_reads_passing_qc_filter = int(self.V1p4total_reads_passing_qc_filter)
+
+        if self.V1p4sequencing_platform is not None and not isinstance(self.V1p4sequencing_platform, str):
+            self.V1p4sequencing_platform = str(self.V1p4sequencing_platform)
+
+        if self.V1p4sequencing_facility is not None and not isinstance(self.V1p4sequencing_facility, str):
+            self.V1p4sequencing_facility = str(self.V1p4sequencing_facility)
+
+        if self.V1p4sequencing_run_date is not None and not isinstance(self.V1p4sequencing_run_date, XSDDateTime):
+            self.V1p4sequencing_run_date = XSDDateTime(self.V1p4sequencing_run_date)
+
+        if self.V1p4sequencing_kit is not None and not isinstance(self.V1p4sequencing_kit, str):
+            self.V1p4sequencing_kit = str(self.V1p4sequencing_kit)
 
         if self.V1p4sequencing_files is not None and not isinstance(self.V1p4sequencing_files, V1p4SequencingData):
             self.V1p4sequencing_files = V1p4SequencingData(**as_dict(self.V1p4sequencing_files))
@@ -12814,37 +11784,37 @@ slots.label = Slot(uri=AK_SCHEMA.label, name="label", curie=AK_SCHEMA.curie('lab
                    model_uri=AK_SCHEMA.label, domain=None, range=Optional[str])
 
 slots.acknowledgement_id = Slot(uri=AK_SCHEMA.acknowledgement_id, name="acknowledgement_id", curie=AK_SCHEMA.curie('acknowledgement_id'),
-                   model_uri=AK_SCHEMA.acknowledgement_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.acknowledgement_id, domain=None, range=Optional[str])
 
 slots.institution_name = Slot(uri=AK_SCHEMA.institution_name, name="institution_name", curie=AK_SCHEMA.curie('institution_name'),
-                   model_uri=AK_SCHEMA.institution_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.institution_name, domain=None, range=Optional[str])
 
 slots.orcid_id = Slot(uri=AK_SCHEMA.orcid_id, name="orcid_id", curie=AK_SCHEMA.curie('orcid_id'),
                    model_uri=AK_SCHEMA.orcid_id, domain=None, range=Optional[str])
 
 slots.sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
-                   model_uri=AK_SCHEMA.sequence_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequence_id, domain=None, range=Optional[str])
 
 slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
-                   model_uri=AK_SCHEMA.sequence, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
 
 slots.derivation = Slot(uri=AK_SCHEMA.derivation, name="derivation", curie=AK_SCHEMA.curie('derivation'),
-                   model_uri=AK_SCHEMA.derivation, domain=None, range=Union[str, "Derivation"])
+                   model_uri=AK_SCHEMA.derivation, domain=None, range=Optional[Union[str, "Derivation"]])
 
 slots.observation_type = Slot(uri=RDF.type, name="observation_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.observation_type, domain=None, range=Union[str, "ObservationType"])
+                   model_uri=AK_SCHEMA.observation_type, domain=None, range=Optional[Union[str, "ObservationType"]])
 
 slots.curation = Slot(uri=AK_SCHEMA.curation, name="curation", curie=AK_SCHEMA.curie('curation'),
                    model_uri=AK_SCHEMA.curation, domain=None, range=Optional[str])
 
 slots.repository_name = Slot(uri=AK_SCHEMA.repository_name, name="repository_name", curie=AK_SCHEMA.curie('repository_name'),
-                   model_uri=AK_SCHEMA.repository_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.repository_name, domain=None, range=Optional[str])
 
 slots.repository_ref = Slot(uri=AK_SCHEMA.repository_ref, name="repository_ref", curie=AK_SCHEMA.curie('repository_ref'),
                    model_uri=AK_SCHEMA.repository_ref, domain=None, range=Optional[str])
 
 slots.deposited_version = Slot(uri=AK_SCHEMA.deposited_version, name="deposited_version", curie=AK_SCHEMA.curie('deposited_version'),
-                   model_uri=AK_SCHEMA.deposited_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.deposited_version, domain=None, range=Optional[str])
 
 slots.sequence_start = Slot(uri=AK_SCHEMA.sequence_start, name="sequence_start", curie=AK_SCHEMA.curie('sequence_start'),
                    model_uri=AK_SCHEMA.sequence_start, domain=None, range=Optional[int])
@@ -12856,22 +11826,22 @@ slots.patch_no = Slot(uri=AK_SCHEMA.patch_no, name="patch_no", curie=AK_SCHEMA.c
                    model_uri=AK_SCHEMA.patch_no, domain=None, range=Optional[str])
 
 slots.gff_seqid = Slot(uri=AK_SCHEMA.gff_seqid, name="gff_seqid", curie=AK_SCHEMA.curie('gff_seqid'),
-                   model_uri=AK_SCHEMA.gff_seqid, domain=None, range=str)
+                   model_uri=AK_SCHEMA.gff_seqid, domain=None, range=Optional[str])
 
 slots.gff_start = Slot(uri=AK_SCHEMA.gff_start, name="gff_start", curie=AK_SCHEMA.curie('gff_start'),
-                   model_uri=AK_SCHEMA.gff_start, domain=None, range=int)
+                   model_uri=AK_SCHEMA.gff_start, domain=None, range=Optional[int])
 
 slots.gff_end = Slot(uri=AK_SCHEMA.gff_end, name="gff_end", curie=AK_SCHEMA.curie('gff_end'),
-                   model_uri=AK_SCHEMA.gff_end, domain=None, range=int)
+                   model_uri=AK_SCHEMA.gff_end, domain=None, range=Optional[int])
 
 slots.strand = Slot(uri=AK_SCHEMA.strand, name="strand", curie=AK_SCHEMA.curie('strand'),
-                   model_uri=AK_SCHEMA.strand, domain=None, range=Union[str, "Strand"])
+                   model_uri=AK_SCHEMA.strand, domain=None, range=Optional[Union[str, "Strand"]])
 
 slots.sequence_delineation_id = Slot(uri=AK_SCHEMA.sequence_delineation_id, name="sequence_delineation_id", curie=AK_SCHEMA.curie('sequence_delineation_id'),
-                   model_uri=AK_SCHEMA.sequence_delineation_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequence_delineation_id, domain=None, range=Optional[str])
 
 slots.delineation_scheme = Slot(uri=AK_SCHEMA.delineation_scheme, name="delineation_scheme", curie=AK_SCHEMA.curie('delineation_scheme'),
-                   model_uri=AK_SCHEMA.delineation_scheme, domain=None, range=str)
+                   model_uri=AK_SCHEMA.delineation_scheme, domain=None, range=Optional[str])
 
 slots.unaligned_sequence = Slot(uri=AK_SCHEMA.unaligned_sequence, name="unaligned_sequence", curie=AK_SCHEMA.curie('unaligned_sequence'),
                    model_uri=AK_SCHEMA.unaligned_sequence, domain=None, range=Optional[str])
@@ -12916,31 +11886,31 @@ slots.alignment_labels = Slot(uri=AK_SCHEMA.alignment_labels, name="alignment_la
                    model_uri=AK_SCHEMA.alignment_labels, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.allele_description_id = Slot(uri=AK_SCHEMA.allele_description_id, name="allele_description_id", curie=AK_SCHEMA.curie('allele_description_id'),
-                   model_uri=AK_SCHEMA.allele_description_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.allele_description_id, domain=None, range=Optional[str])
 
 slots.allele_description_ref = Slot(uri=AK_SCHEMA.allele_description_ref, name="allele_description_ref", curie=AK_SCHEMA.curie('allele_description_ref'),
                    model_uri=AK_SCHEMA.allele_description_ref, domain=None, range=Optional[str])
 
 slots.maintainer = Slot(uri=AK_SCHEMA.maintainer, name="maintainer", curie=AK_SCHEMA.curie('maintainer'),
-                   model_uri=AK_SCHEMA.maintainer, domain=None, range=str)
+                   model_uri=AK_SCHEMA.maintainer, domain=None, range=Optional[str])
 
 slots.acknowledgements = Slot(uri=AK_SCHEMA.acknowledgements, name="acknowledgements", curie=AK_SCHEMA.curie('acknowledgements'),
                    model_uri=AK_SCHEMA.acknowledgements, domain=None, range=Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]])
 
 slots.lab_address = Slot(uri=AK_SCHEMA.lab_address, name="lab_address", curie=AK_SCHEMA.curie('lab_address'),
-                   model_uri=AK_SCHEMA.lab_address, domain=None, range=str)
+                   model_uri=AK_SCHEMA.lab_address, domain=None, range=Optional[str])
 
 slots.release_version = Slot(uri=AK_SCHEMA.release_version, name="release_version", curie=AK_SCHEMA.curie('release_version'),
-                   model_uri=AK_SCHEMA.release_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.release_version, domain=None, range=Optional[str])
 
 slots.release_date = Slot(uri=AK_SCHEMA.release_date, name="release_date", curie=AK_SCHEMA.curie('release_date'),
-                   model_uri=AK_SCHEMA.release_date, domain=None, range=Union[str, XSDDateTime])
+                   model_uri=AK_SCHEMA.release_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.release_description = Slot(uri=AK_SCHEMA.release_description, name="release_description", curie=AK_SCHEMA.curie('release_description'),
-                   model_uri=AK_SCHEMA.release_description, domain=None, range=str)
+                   model_uri=AK_SCHEMA.release_description, domain=None, range=Optional[str])
 
 slots.coding_sequence = Slot(uri=AK_SCHEMA.coding_sequence, name="coding_sequence", curie=AK_SCHEMA.curie('coding_sequence'),
-                   model_uri=AK_SCHEMA.coding_sequence, domain=None, range=str)
+                   model_uri=AK_SCHEMA.coding_sequence, domain=None, range=Optional[str])
 
 slots.aliases = Slot(uri=AK_SCHEMA.aliases, name="aliases", curie=AK_SCHEMA.curie('aliases'),
                    model_uri=AK_SCHEMA.aliases, domain=None, range=Optional[Union[str, List[str]]])
@@ -12952,13 +11922,13 @@ slots.chromosome = Slot(uri=AK_SCHEMA.chromosome, name="chromosome", curie=AK_SC
                    model_uri=AK_SCHEMA.chromosome, domain=None, range=Optional[int])
 
 slots.sequence_type = Slot(uri=RDF.type, name="sequence_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.sequence_type, domain=None, range=Union[str, "SequenceType"])
+                   model_uri=AK_SCHEMA.sequence_type, domain=None, range=Optional[Union[str, "SequenceType"]])
 
 slots.functional = Slot(uri=AK_SCHEMA.functional, name="functional", curie=AK_SCHEMA.curie('functional'),
-                   model_uri=AK_SCHEMA.functional, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.functional, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.inference_type = Slot(uri=RDF.type, name="inference_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.inference_type, domain=None, range=Union[str, "InferenceType"])
+                   model_uri=AK_SCHEMA.inference_type, domain=None, range=Optional[Union[str, "InferenceType"]])
 
 slots.species_subgroup = Slot(uri=AK_SCHEMA.species_subgroup, name="species_subgroup", curie=AK_SCHEMA.curie('species_subgroup'),
                    model_uri=AK_SCHEMA.species_subgroup, domain=None, range=Optional[str])
@@ -13057,16 +12027,16 @@ slots.curational_tags = Slot(uri=AK_SCHEMA.curational_tags, name="curational_tag
                    model_uri=AK_SCHEMA.curational_tags, domain=None, range=Optional[Union[Union[str, "CurationalTags"], List[Union[str, "CurationalTags"]]]])
 
 slots.germline_set_id = Slot(uri=AK_SCHEMA.germline_set_id, name="germline_set_id", curie=AK_SCHEMA.curie('germline_set_id'),
-                   model_uri=AK_SCHEMA.germline_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.germline_set_id, domain=None, range=Optional[str])
 
 slots.author = Slot(uri=AK_SCHEMA.author, name="author", curie=AK_SCHEMA.curie('author'),
-                   model_uri=AK_SCHEMA.author, domain=None, range=str)
+                   model_uri=AK_SCHEMA.author, domain=None, range=Optional[str])
 
 slots.lab_name = Slot(uri=AK_SCHEMA.lab_name, name="lab_name", curie=AK_SCHEMA.curie('lab_name'),
-                   model_uri=AK_SCHEMA.lab_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.lab_name, domain=None, range=Optional[str])
 
 slots.germline_set_name = Slot(uri=AK_SCHEMA.germline_set_name, name="germline_set_name", curie=AK_SCHEMA.curie('germline_set_name'),
-                   model_uri=AK_SCHEMA.germline_set_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.germline_set_name, domain=None, range=Optional[str])
 
 slots.germline_set_ref = Slot(uri=AK_SCHEMA.germline_set_ref, name="germline_set_ref", curie=AK_SCHEMA.curie('germline_set_ref'),
                    model_uri=AK_SCHEMA.germline_set_ref, domain=None, range=Optional[str])
@@ -13075,16 +12045,16 @@ slots.pub_ids = Slot(uri=AK_SCHEMA.pub_ids, name="pub_ids", curie=AK_SCHEMA.curi
                    model_uri=AK_SCHEMA.pub_ids, domain=None, range=Optional[str])
 
 slots.allele_descriptions = Slot(uri=AK_SCHEMA.allele_descriptions, name="allele_descriptions", curie=AK_SCHEMA.curie('allele_descriptions'),
-                   model_uri=AK_SCHEMA.allele_descriptions, domain=None, range=Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]])
+                   model_uri=AK_SCHEMA.allele_descriptions, domain=None, range=Optional[Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]]])
 
 slots.receptor_genotype_set_id = Slot(uri=AK_SCHEMA.receptor_genotype_set_id, name="receptor_genotype_set_id", curie=AK_SCHEMA.curie('receptor_genotype_set_id'),
-                   model_uri=AK_SCHEMA.receptor_genotype_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.receptor_genotype_set_id, domain=None, range=Optional[str])
 
 slots.genotype_class_list = Slot(uri=AK_SCHEMA.genotype_class_list, name="genotype_class_list", curie=AK_SCHEMA.curie('genotype_class_list'),
                    model_uri=AK_SCHEMA.genotype_class_list, domain=None, range=Optional[Union[Union[dict, Genotype], List[Union[dict, Genotype]]]])
 
 slots.receptor_genotype_id = Slot(uri=AK_SCHEMA.receptor_genotype_id, name="receptor_genotype_id", curie=AK_SCHEMA.curie('receptor_genotype_id'),
-                   model_uri=AK_SCHEMA.receptor_genotype_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.receptor_genotype_id, domain=None, range=Optional[str])
 
 slots.documented_alleles = Slot(uri=AK_SCHEMA.documented_alleles, name="documented_alleles", curie=AK_SCHEMA.curie('documented_alleles'),
                    model_uri=AK_SCHEMA.documented_alleles, domain=None, range=Optional[Union[Union[dict, DocumentedAllele], List[Union[dict, DocumentedAllele]]]])
@@ -13102,22 +12072,22 @@ slots.phasing = Slot(uri=AK_SCHEMA.phasing, name="phasing", curie=AK_SCHEMA.curi
                    model_uri=AK_SCHEMA.phasing, domain=None, range=Optional[int])
 
 slots.allele_name = Slot(uri=AK_SCHEMA.allele_name, name="allele_name", curie=AK_SCHEMA.curie('allele_name'),
-                   model_uri=AK_SCHEMA.allele_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.allele_name, domain=None, range=Optional[str])
 
 slots.mhc_genotype_set_id = Slot(uri=AK_SCHEMA.mhc_genotype_set_id, name="mhc_genotype_set_id", curie=AK_SCHEMA.curie('mhc_genotype_set_id'),
-                   model_uri=AK_SCHEMA.mhc_genotype_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.mhc_genotype_set_id, domain=None, range=Optional[str])
 
 slots.mhc_genotype_list = Slot(uri=AK_SCHEMA.mhc_genotype_list, name="mhc_genotype_list", curie=AK_SCHEMA.curie('mhc_genotype_list'),
-                   model_uri=AK_SCHEMA.mhc_genotype_list, domain=None, range=Union[Union[dict, MHCGenotype], List[Union[dict, MHCGenotype]]])
+                   model_uri=AK_SCHEMA.mhc_genotype_list, domain=None, range=Optional[Union[Union[dict, MHCGenotype], List[Union[dict, MHCGenotype]]]])
 
 slots.mhc_genotype_id = Slot(uri=AK_SCHEMA.mhc_genotype_id, name="mhc_genotype_id", curie=AK_SCHEMA.curie('mhc_genotype_id'),
-                   model_uri=AK_SCHEMA.mhc_genotype_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.mhc_genotype_id, domain=None, range=Optional[str])
 
 slots.mhc_class = Slot(uri=AK_SCHEMA.mhc_class, name="mhc_class", curie=AK_SCHEMA.curie('mhc_class'),
                    model_uri=AK_SCHEMA.mhc_class, domain=None, range=Optional[Union[str, "MhcClass"]])
 
 slots.mhc_alleles = Slot(uri=AK_SCHEMA.mhc_alleles, name="mhc_alleles", curie=AK_SCHEMA.curie('mhc_alleles'),
-                   model_uri=AK_SCHEMA.mhc_alleles, domain=None, range=Union[Union[dict, MHCAllele], List[Union[dict, MHCAllele]]])
+                   model_uri=AK_SCHEMA.mhc_alleles, domain=None, range=Optional[Union[Union[dict, MHCAllele], List[Union[dict, MHCAllele]]]])
 
 slots.mhc_genotyping_method = Slot(uri=AK_SCHEMA.mhc_genotyping_method, name="mhc_genotyping_method", curie=AK_SCHEMA.curie('mhc_genotyping_method'),
                    model_uri=AK_SCHEMA.mhc_genotyping_method, domain=None, range=Optional[str])
@@ -13135,34 +12105,34 @@ slots.mhc_genotype_set = Slot(uri=AK_SCHEMA.mhc_genotype_set, name="mhc_genotype
                    model_uri=AK_SCHEMA.mhc_genotype_set, domain=None, range=Optional[Union[dict, MHCGenotypeSet]])
 
 slots.study_id = Slot(uri=AK_SCHEMA.study_id, name="study_id", curie=AK_SCHEMA.curie('study_id'),
-                   model_uri=AK_SCHEMA.study_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.study_id, domain=None, range=Optional[str])
 
 slots.study_title = Slot(uri=AK_SCHEMA.study_title, name="study_title", curie=AK_SCHEMA.curie('study_title'),
-                   model_uri=AK_SCHEMA.study_title, domain=None, range=str)
+                   model_uri=AK_SCHEMA.study_title, domain=None, range=Optional[str])
 
 slots.study_type = Slot(uri=RDF.type, name="study_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.study_type, domain=None, range=Union[str, "StudyType"])
+                   model_uri=AK_SCHEMA.study_type, domain=None, range=Optional[Union[str, "StudyType"]])
 
 slots.study_description = Slot(uri=AK_SCHEMA.study_description, name="study_description", curie=AK_SCHEMA.curie('study_description'),
                    model_uri=AK_SCHEMA.study_description, domain=None, range=Optional[str])
 
 slots.inclusion_exclusion_criteria = Slot(uri=AK_SCHEMA.inclusion_exclusion_criteria, name="inclusion_exclusion_criteria", curie=AK_SCHEMA.curie('inclusion_exclusion_criteria'),
-                   model_uri=AK_SCHEMA.inclusion_exclusion_criteria, domain=None, range=str)
+                   model_uri=AK_SCHEMA.inclusion_exclusion_criteria, domain=None, range=Optional[str])
 
 slots.grants = Slot(uri=AK_SCHEMA.grants, name="grants", curie=AK_SCHEMA.curie('grants'),
-                   model_uri=AK_SCHEMA.grants, domain=None, range=str)
+                   model_uri=AK_SCHEMA.grants, domain=None, range=Optional[str])
 
 slots.study_contact = Slot(uri=AK_SCHEMA.study_contact, name="study_contact", curie=AK_SCHEMA.curie('study_contact'),
                    model_uri=AK_SCHEMA.study_contact, domain=None, range=Optional[str])
 
 slots.collected_by = Slot(uri=AK_SCHEMA.collected_by, name="collected_by", curie=AK_SCHEMA.curie('collected_by'),
-                   model_uri=AK_SCHEMA.collected_by, domain=None, range=str)
+                   model_uri=AK_SCHEMA.collected_by, domain=None, range=Optional[str])
 
 slots.submitted_by = Slot(uri=AK_SCHEMA.submitted_by, name="submitted_by", curie=AK_SCHEMA.curie('submitted_by'),
-                   model_uri=AK_SCHEMA.submitted_by, domain=None, range=str)
+                   model_uri=AK_SCHEMA.submitted_by, domain=None, range=Optional[str])
 
 slots.keywords_study = Slot(uri=AK_SCHEMA.keywords_study, name="keywords_study", curie=AK_SCHEMA.curie('keywords_study'),
-                   model_uri=AK_SCHEMA.keywords_study, domain=None, range=Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]])
+                   model_uri=AK_SCHEMA.keywords_study, domain=None, range=Optional[Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]]])
 
 slots.adc_publish_date = Slot(uri=AK_SCHEMA.adc_publish_date, name="adc_publish_date", curie=AK_SCHEMA.curie('adc_publish_date'),
                    model_uri=AK_SCHEMA.adc_publish_date, domain=None, range=Optional[Union[str, XSDDateTime]])
@@ -13171,34 +12141,34 @@ slots.adc_update_date = Slot(uri=AK_SCHEMA.adc_update_date, name="adc_update_dat
                    model_uri=AK_SCHEMA.adc_update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.subject_id = Slot(uri=AK_SCHEMA.subject_id, name="subject_id", curie=AK_SCHEMA.curie('subject_id'),
-                   model_uri=AK_SCHEMA.subject_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.subject_id, domain=None, range=Optional[str])
 
 slots.synthetic = Slot(uri=AK_SCHEMA.synthetic, name="synthetic", curie=AK_SCHEMA.curie('synthetic'),
-                   model_uri=AK_SCHEMA.synthetic, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.synthetic, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.sex = Slot(uri=AK_SCHEMA.sex, name="sex", curie=AK_SCHEMA.curie('sex'),
-                   model_uri=AK_SCHEMA.sex, domain=None, range=Union[str, "Sex"])
+                   model_uri=AK_SCHEMA.sex, domain=None, range=Optional[Union[str, "Sex"]])
 
 slots.age_min = Slot(uri=AK_SCHEMA.age_min, name="age_min", curie=AK_SCHEMA.curie('age_min'),
-                   model_uri=AK_SCHEMA.age_min, domain=None, range=float)
+                   model_uri=AK_SCHEMA.age_min, domain=None, range=Optional[float])
 
 slots.age_max = Slot(uri=AK_SCHEMA.age_max, name="age_max", curie=AK_SCHEMA.curie('age_max'),
-                   model_uri=AK_SCHEMA.age_max, domain=None, range=float)
+                   model_uri=AK_SCHEMA.age_max, domain=None, range=Optional[float])
 
 slots.age_unit = Slot(uri=AK_SCHEMA.age_unit, name="age_unit", curie=AK_SCHEMA.curie('age_unit'),
-                   model_uri=AK_SCHEMA.age_unit, domain=None, range=Union[str, "AgeUnit"])
+                   model_uri=AK_SCHEMA.age_unit, domain=None, range=Optional[Union[str, "AgeUnit"]])
 
 slots.ancestry_population = Slot(uri=AK_SCHEMA.ancestry_population, name="ancestry_population", curie=AK_SCHEMA.curie('ancestry_population'),
-                   model_uri=AK_SCHEMA.ancestry_population, domain=None, range=str)
+                   model_uri=AK_SCHEMA.ancestry_population, domain=None, range=Optional[str])
 
 slots.strain_name = Slot(uri=AK_SCHEMA.strain_name, name="strain_name", curie=AK_SCHEMA.curie('strain_name'),
-                   model_uri=AK_SCHEMA.strain_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.strain_name, domain=None, range=Optional[str])
 
 slots.linked_subjects = Slot(uri=AK_SCHEMA.linked_subjects, name="linked_subjects", curie=AK_SCHEMA.curie('linked_subjects'),
-                   model_uri=AK_SCHEMA.linked_subjects, domain=None, range=str)
+                   model_uri=AK_SCHEMA.linked_subjects, domain=None, range=Optional[str])
 
 slots.link_type = Slot(uri=RDF.type, name="link_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.link_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.link_type, domain=None, range=Optional[str])
 
 slots.diagnosis = Slot(uri=AK_SCHEMA.diagnosis, name="diagnosis", curie=AK_SCHEMA.curie('diagnosis'),
                    model_uri=AK_SCHEMA.diagnosis, domain=None, range=Optional[Union[Union[dict, Diagnosis], List[Union[dict, Diagnosis]]]])
@@ -13207,169 +12177,169 @@ slots.genotype = Slot(uri=AK_SCHEMA.genotype, name="genotype", curie=AK_SCHEMA.c
                    model_uri=AK_SCHEMA.genotype, domain=None, range=Optional[Union[dict, SubjectGenotype]])
 
 slots.study_group_description = Slot(uri=AK_SCHEMA.study_group_description, name="study_group_description", curie=AK_SCHEMA.curie('study_group_description'),
-                   model_uri=AK_SCHEMA.study_group_description, domain=None, range=str)
+                   model_uri=AK_SCHEMA.study_group_description, domain=None, range=Optional[str])
 
 slots.disease_diagnosis = Slot(uri=AK_SCHEMA.disease_diagnosis, name="disease_diagnosis", curie=AK_SCHEMA.curie('disease_diagnosis'),
-                   model_uri=AK_SCHEMA.disease_diagnosis, domain=None, range=Union[str, "DiseaseDiagnosis"])
+                   model_uri=AK_SCHEMA.disease_diagnosis, domain=None, range=Optional[Union[str, "DiseaseDiagnosis"]])
 
 slots.disease_length = Slot(uri=AK_SCHEMA.disease_length, name="disease_length", curie=AK_SCHEMA.curie('disease_length'),
-                   model_uri=AK_SCHEMA.disease_length, domain=None, range=str)
+                   model_uri=AK_SCHEMA.disease_length, domain=None, range=Optional[str])
 
 slots.prior_therapies = Slot(uri=AK_SCHEMA.prior_therapies, name="prior_therapies", curie=AK_SCHEMA.curie('prior_therapies'),
-                   model_uri=AK_SCHEMA.prior_therapies, domain=None, range=str)
+                   model_uri=AK_SCHEMA.prior_therapies, domain=None, range=Optional[str])
 
 slots.immunogen = Slot(uri=AK_SCHEMA.immunogen, name="immunogen", curie=AK_SCHEMA.curie('immunogen'),
-                   model_uri=AK_SCHEMA.immunogen, domain=None, range=str)
+                   model_uri=AK_SCHEMA.immunogen, domain=None, range=Optional[str])
 
 slots.intervention = Slot(uri=AK_SCHEMA.intervention, name="intervention", curie=AK_SCHEMA.curie('intervention'),
-                   model_uri=AK_SCHEMA.intervention, domain=None, range=str)
+                   model_uri=AK_SCHEMA.intervention, domain=None, range=Optional[str])
 
 slots.medical_history = Slot(uri=AK_SCHEMA.medical_history, name="medical_history", curie=AK_SCHEMA.curie('medical_history'),
-                   model_uri=AK_SCHEMA.medical_history, domain=None, range=str)
+                   model_uri=AK_SCHEMA.medical_history, domain=None, range=Optional[str])
 
 slots.sample_id = Slot(uri=AK_SCHEMA.sample_id, name="sample_id", curie=AK_SCHEMA.curie('sample_id'),
-                   model_uri=AK_SCHEMA.sample_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sample_id, domain=None, range=Optional[str])
 
 slots.sample_type = Slot(uri=RDF.type, name="sample_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.sample_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sample_type, domain=None, range=Optional[str])
 
 slots.tissue = Slot(uri=AK_SCHEMA.tissue, name="tissue", curie=AK_SCHEMA.curie('tissue'),
-                   model_uri=AK_SCHEMA.tissue, domain=None, range=Union[str, "Tissue"])
+                   model_uri=AK_SCHEMA.tissue, domain=None, range=Optional[Union[str, "Tissue"]])
 
 slots.anatomic_site = Slot(uri=AK_SCHEMA.anatomic_site, name="anatomic_site", curie=AK_SCHEMA.curie('anatomic_site'),
-                   model_uri=AK_SCHEMA.anatomic_site, domain=None, range=str)
+                   model_uri=AK_SCHEMA.anatomic_site, domain=None, range=Optional[str])
 
 slots.disease_state_sample = Slot(uri=AK_SCHEMA.disease_state_sample, name="disease_state_sample", curie=AK_SCHEMA.curie('disease_state_sample'),
-                   model_uri=AK_SCHEMA.disease_state_sample, domain=None, range=str)
+                   model_uri=AK_SCHEMA.disease_state_sample, domain=None, range=Optional[str])
 
 slots.collection_time_point_relative = Slot(uri=AK_SCHEMA.collection_time_point_relative, name="collection_time_point_relative", curie=AK_SCHEMA.curie('collection_time_point_relative'),
-                   model_uri=AK_SCHEMA.collection_time_point_relative, domain=None, range=float)
+                   model_uri=AK_SCHEMA.collection_time_point_relative, domain=None, range=Optional[float])
 
 slots.collection_time_point_relative_unit = Slot(uri=AK_SCHEMA.collection_time_point_relative_unit, name="collection_time_point_relative_unit", curie=AK_SCHEMA.curie('collection_time_point_relative_unit'),
-                   model_uri=AK_SCHEMA.collection_time_point_relative_unit, domain=None, range=Union[str, "CollectionTimePointRelativeUnit"])
+                   model_uri=AK_SCHEMA.collection_time_point_relative_unit, domain=None, range=Optional[Union[str, "CollectionTimePointRelativeUnit"]])
 
 slots.collection_time_point_reference = Slot(uri=AK_SCHEMA.collection_time_point_reference, name="collection_time_point_reference", curie=AK_SCHEMA.curie('collection_time_point_reference'),
-                   model_uri=AK_SCHEMA.collection_time_point_reference, domain=None, range=str)
+                   model_uri=AK_SCHEMA.collection_time_point_reference, domain=None, range=Optional[str])
 
 slots.biomaterial_provider = Slot(uri=AK_SCHEMA.biomaterial_provider, name="biomaterial_provider", curie=AK_SCHEMA.curie('biomaterial_provider'),
-                   model_uri=AK_SCHEMA.biomaterial_provider, domain=None, range=str)
+                   model_uri=AK_SCHEMA.biomaterial_provider, domain=None, range=Optional[str])
 
 slots.tissue_processing = Slot(uri=AK_SCHEMA.tissue_processing, name="tissue_processing", curie=AK_SCHEMA.curie('tissue_processing'),
-                   model_uri=AK_SCHEMA.tissue_processing, domain=None, range=str)
+                   model_uri=AK_SCHEMA.tissue_processing, domain=None, range=Optional[str])
 
 slots.cell_subset = Slot(uri=AK_SCHEMA.cell_subset, name="cell_subset", curie=AK_SCHEMA.curie('cell_subset'),
-                   model_uri=AK_SCHEMA.cell_subset, domain=None, range=Union[str, "CellSubset"])
+                   model_uri=AK_SCHEMA.cell_subset, domain=None, range=Optional[Union[str, "CellSubset"]])
 
 slots.cell_phenotype = Slot(uri=AK_SCHEMA.cell_phenotype, name="cell_phenotype", curie=AK_SCHEMA.curie('cell_phenotype'),
-                   model_uri=AK_SCHEMA.cell_phenotype, domain=None, range=str)
+                   model_uri=AK_SCHEMA.cell_phenotype, domain=None, range=Optional[str])
 
 slots.cell_species = Slot(uri=AK_SCHEMA.cell_species, name="cell_species", curie=AK_SCHEMA.curie('cell_species'),
                    model_uri=AK_SCHEMA.cell_species, domain=None, range=Optional[Union[str, "CellSpecies"]])
 
 slots.single_cell = Slot(uri=AK_SCHEMA.single_cell, name="single_cell", curie=AK_SCHEMA.curie('single_cell'),
-                   model_uri=AK_SCHEMA.single_cell, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.single_cell, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.cell_number = Slot(uri=AK_SCHEMA.cell_number, name="cell_number", curie=AK_SCHEMA.curie('cell_number'),
-                   model_uri=AK_SCHEMA.cell_number, domain=None, range=int)
+                   model_uri=AK_SCHEMA.cell_number, domain=None, range=Optional[int])
 
 slots.cells_per_reaction = Slot(uri=AK_SCHEMA.cells_per_reaction, name="cells_per_reaction", curie=AK_SCHEMA.curie('cells_per_reaction'),
-                   model_uri=AK_SCHEMA.cells_per_reaction, domain=None, range=int)
+                   model_uri=AK_SCHEMA.cells_per_reaction, domain=None, range=Optional[int])
 
 slots.cell_storage = Slot(uri=AK_SCHEMA.cell_storage, name="cell_storage", curie=AK_SCHEMA.curie('cell_storage'),
-                   model_uri=AK_SCHEMA.cell_storage, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.cell_storage, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.cell_quality = Slot(uri=AK_SCHEMA.cell_quality, name="cell_quality", curie=AK_SCHEMA.curie('cell_quality'),
-                   model_uri=AK_SCHEMA.cell_quality, domain=None, range=str)
+                   model_uri=AK_SCHEMA.cell_quality, domain=None, range=Optional[str])
 
 slots.cell_isolation = Slot(uri=AK_SCHEMA.cell_isolation, name="cell_isolation", curie=AK_SCHEMA.curie('cell_isolation'),
-                   model_uri=AK_SCHEMA.cell_isolation, domain=None, range=str)
+                   model_uri=AK_SCHEMA.cell_isolation, domain=None, range=Optional[str])
 
 slots.cell_processing_protocol = Slot(uri=AK_SCHEMA.cell_processing_protocol, name="cell_processing_protocol", curie=AK_SCHEMA.curie('cell_processing_protocol'),
-                   model_uri=AK_SCHEMA.cell_processing_protocol, domain=None, range=str)
+                   model_uri=AK_SCHEMA.cell_processing_protocol, domain=None, range=Optional[str])
 
 slots.pcr_target_locus = Slot(uri=AK_SCHEMA.pcr_target_locus, name="pcr_target_locus", curie=AK_SCHEMA.curie('pcr_target_locus'),
-                   model_uri=AK_SCHEMA.pcr_target_locus, domain=None, range=Union[str, "PcrTargetLocus"])
+                   model_uri=AK_SCHEMA.pcr_target_locus, domain=None, range=Optional[Union[str, "PcrTargetLocus"]])
 
 slots.forward_pcr_primer_target_location = Slot(uri=AK_SCHEMA.forward_pcr_primer_target_location, name="forward_pcr_primer_target_location", curie=AK_SCHEMA.curie('forward_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.forward_pcr_primer_target_location, domain=None, range=str)
+                   model_uri=AK_SCHEMA.forward_pcr_primer_target_location, domain=None, range=Optional[str])
 
 slots.reverse_pcr_primer_target_location = Slot(uri=AK_SCHEMA.reverse_pcr_primer_target_location, name="reverse_pcr_primer_target_location", curie=AK_SCHEMA.curie('reverse_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.reverse_pcr_primer_target_location, domain=None, range=str)
+                   model_uri=AK_SCHEMA.reverse_pcr_primer_target_location, domain=None, range=Optional[str])
 
 slots.template_class = Slot(uri=AK_SCHEMA.template_class, name="template_class", curie=AK_SCHEMA.curie('template_class'),
-                   model_uri=AK_SCHEMA.template_class, domain=None, range=Union[str, "TemplateClass"])
+                   model_uri=AK_SCHEMA.template_class, domain=None, range=Optional[Union[str, "TemplateClass"]])
 
 slots.template_quality = Slot(uri=AK_SCHEMA.template_quality, name="template_quality", curie=AK_SCHEMA.curie('template_quality'),
-                   model_uri=AK_SCHEMA.template_quality, domain=None, range=str)
+                   model_uri=AK_SCHEMA.template_quality, domain=None, range=Optional[str])
 
 slots.template_amount = Slot(uri=AK_SCHEMA.template_amount, name="template_amount", curie=AK_SCHEMA.curie('template_amount'),
-                   model_uri=AK_SCHEMA.template_amount, domain=None, range=float)
+                   model_uri=AK_SCHEMA.template_amount, domain=None, range=Optional[float])
 
 slots.template_amount_unit = Slot(uri=AK_SCHEMA.template_amount_unit, name="template_amount_unit", curie=AK_SCHEMA.curie('template_amount_unit'),
-                   model_uri=AK_SCHEMA.template_amount_unit, domain=None, range=Union[str, "TemplateAmountUnit"])
+                   model_uri=AK_SCHEMA.template_amount_unit, domain=None, range=Optional[Union[str, "TemplateAmountUnit"]])
 
 slots.library_generation_method = Slot(uri=AK_SCHEMA.library_generation_method, name="library_generation_method", curie=AK_SCHEMA.curie('library_generation_method'),
-                   model_uri=AK_SCHEMA.library_generation_method, domain=None, range=Union[str, "LibraryGenerationMethod"])
+                   model_uri=AK_SCHEMA.library_generation_method, domain=None, range=Optional[Union[str, "LibraryGenerationMethod"]])
 
 slots.library_generation_protocol = Slot(uri=AK_SCHEMA.library_generation_protocol, name="library_generation_protocol", curie=AK_SCHEMA.curie('library_generation_protocol'),
-                   model_uri=AK_SCHEMA.library_generation_protocol, domain=None, range=str)
+                   model_uri=AK_SCHEMA.library_generation_protocol, domain=None, range=Optional[str])
 
 slots.library_generation_kit_version = Slot(uri=AK_SCHEMA.library_generation_kit_version, name="library_generation_kit_version", curie=AK_SCHEMA.curie('library_generation_kit_version'),
-                   model_uri=AK_SCHEMA.library_generation_kit_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.library_generation_kit_version, domain=None, range=Optional[str])
 
 slots.pcr_target = Slot(uri=AK_SCHEMA.pcr_target, name="pcr_target", curie=AK_SCHEMA.curie('pcr_target'),
                    model_uri=AK_SCHEMA.pcr_target, domain=None, range=Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]])
 
 slots.complete_sequences = Slot(uri=AK_SCHEMA.complete_sequences, name="complete_sequences", curie=AK_SCHEMA.curie('complete_sequences'),
-                   model_uri=AK_SCHEMA.complete_sequences, domain=None, range=Union[str, "CompleteSequences"])
+                   model_uri=AK_SCHEMA.complete_sequences, domain=None, range=Optional[Union[str, "CompleteSequences"]])
 
 slots.physical_linkage = Slot(uri=AK_SCHEMA.physical_linkage, name="physical_linkage", curie=AK_SCHEMA.curie('physical_linkage'),
-                   model_uri=AK_SCHEMA.physical_linkage, domain=None, range=Union[str, "PhysicalLinkage"])
+                   model_uri=AK_SCHEMA.physical_linkage, domain=None, range=Optional[Union[str, "PhysicalLinkage"]])
 
 slots.sequencing_run_id = Slot(uri=AK_SCHEMA.sequencing_run_id, name="sequencing_run_id", curie=AK_SCHEMA.curie('sequencing_run_id'),
-                   model_uri=AK_SCHEMA.sequencing_run_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequencing_run_id, domain=None, range=Optional[str])
 
 slots.total_reads_passing_qc_filter = Slot(uri=AK_SCHEMA.total_reads_passing_qc_filter, name="total_reads_passing_qc_filter", curie=AK_SCHEMA.curie('total_reads_passing_qc_filter'),
-                   model_uri=AK_SCHEMA.total_reads_passing_qc_filter, domain=None, range=int)
+                   model_uri=AK_SCHEMA.total_reads_passing_qc_filter, domain=None, range=Optional[int])
 
 slots.sequencing_platform = Slot(uri=AK_SCHEMA.sequencing_platform, name="sequencing_platform", curie=AK_SCHEMA.curie('sequencing_platform'),
-                   model_uri=AK_SCHEMA.sequencing_platform, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequencing_platform, domain=None, range=Optional[str])
 
 slots.sequencing_facility = Slot(uri=AK_SCHEMA.sequencing_facility, name="sequencing_facility", curie=AK_SCHEMA.curie('sequencing_facility'),
-                   model_uri=AK_SCHEMA.sequencing_facility, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequencing_facility, domain=None, range=Optional[str])
 
 slots.sequencing_run_date = Slot(uri=AK_SCHEMA.sequencing_run_date, name="sequencing_run_date", curie=AK_SCHEMA.curie('sequencing_run_date'),
-                   model_uri=AK_SCHEMA.sequencing_run_date, domain=None, range=Union[str, XSDDateTime])
+                   model_uri=AK_SCHEMA.sequencing_run_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.sequencing_kit = Slot(uri=AK_SCHEMA.sequencing_kit, name="sequencing_kit", curie=AK_SCHEMA.curie('sequencing_kit'),
-                   model_uri=AK_SCHEMA.sequencing_kit, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequencing_kit, domain=None, range=Optional[str])
 
 slots.sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files, name="sequencing_files", curie=AK_SCHEMA.curie('sequencing_files'),
                    model_uri=AK_SCHEMA.sequencing_files, domain=None, range=Optional[Union[dict, SequencingData]])
 
 slots.sequencing_data_id = Slot(uri=AK_SCHEMA.sequencing_data_id, name="sequencing_data_id", curie=AK_SCHEMA.curie('sequencing_data_id'),
-                   model_uri=AK_SCHEMA.sequencing_data_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.sequencing_data_id, domain=None, range=Optional[str])
 
 slots.file_type = Slot(uri=RDF.type, name="file_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.file_type, domain=None, range=Union[str, "FileType"])
+                   model_uri=AK_SCHEMA.file_type, domain=None, range=Optional[Union[str, "FileType"]])
 
 slots.filename = Slot(uri=AK_SCHEMA.filename, name="filename", curie=AK_SCHEMA.curie('filename'),
-                   model_uri=AK_SCHEMA.filename, domain=None, range=str)
+                   model_uri=AK_SCHEMA.filename, domain=None, range=Optional[str])
 
 slots.read_direction = Slot(uri=AK_SCHEMA.read_direction, name="read_direction", curie=AK_SCHEMA.curie('read_direction'),
-                   model_uri=AK_SCHEMA.read_direction, domain=None, range=Union[str, "ReadDirection"])
+                   model_uri=AK_SCHEMA.read_direction, domain=None, range=Optional[Union[str, "ReadDirection"]])
 
 slots.read_length = Slot(uri=AK_SCHEMA.read_length, name="read_length", curie=AK_SCHEMA.curie('read_length'),
-                   model_uri=AK_SCHEMA.read_length, domain=None, range=int)
+                   model_uri=AK_SCHEMA.read_length, domain=None, range=Optional[int])
 
 slots.paired_filename = Slot(uri=AK_SCHEMA.paired_filename, name="paired_filename", curie=AK_SCHEMA.curie('paired_filename'),
-                   model_uri=AK_SCHEMA.paired_filename, domain=None, range=str)
+                   model_uri=AK_SCHEMA.paired_filename, domain=None, range=Optional[str])
 
 slots.paired_read_direction = Slot(uri=AK_SCHEMA.paired_read_direction, name="paired_read_direction", curie=AK_SCHEMA.curie('paired_read_direction'),
-                   model_uri=AK_SCHEMA.paired_read_direction, domain=None, range=Union[str, "PairedReadDirection"])
+                   model_uri=AK_SCHEMA.paired_read_direction, domain=None, range=Optional[Union[str, "PairedReadDirection"]])
 
 slots.paired_read_length = Slot(uri=AK_SCHEMA.paired_read_length, name="paired_read_length", curie=AK_SCHEMA.curie('paired_read_length'),
-                   model_uri=AK_SCHEMA.paired_read_length, domain=None, range=int)
+                   model_uri=AK_SCHEMA.paired_read_length, domain=None, range=Optional[int])
 
 slots.index_filename = Slot(uri=AK_SCHEMA.index_filename, name="index_filename", curie=AK_SCHEMA.curie('index_filename'),
                    model_uri=AK_SCHEMA.index_filename, domain=None, range=Optional[str])
@@ -13384,28 +12354,28 @@ slots.primary_annotation = Slot(uri=AK_SCHEMA.primary_annotation, name="primary_
                    model_uri=AK_SCHEMA.primary_annotation, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.software_versions = Slot(uri=AK_SCHEMA.software_versions, name="software_versions", curie=AK_SCHEMA.curie('software_versions'),
-                   model_uri=AK_SCHEMA.software_versions, domain=None, range=str)
+                   model_uri=AK_SCHEMA.software_versions, domain=None, range=Optional[str])
 
 slots.paired_reads_assembly = Slot(uri=AK_SCHEMA.paired_reads_assembly, name="paired_reads_assembly", curie=AK_SCHEMA.curie('paired_reads_assembly'),
-                   model_uri=AK_SCHEMA.paired_reads_assembly, domain=None, range=str)
+                   model_uri=AK_SCHEMA.paired_reads_assembly, domain=None, range=Optional[str])
 
 slots.quality_thresholds = Slot(uri=AK_SCHEMA.quality_thresholds, name="quality_thresholds", curie=AK_SCHEMA.curie('quality_thresholds'),
-                   model_uri=AK_SCHEMA.quality_thresholds, domain=None, range=str)
+                   model_uri=AK_SCHEMA.quality_thresholds, domain=None, range=Optional[str])
 
 slots.primer_match_cutoffs = Slot(uri=AK_SCHEMA.primer_match_cutoffs, name="primer_match_cutoffs", curie=AK_SCHEMA.curie('primer_match_cutoffs'),
-                   model_uri=AK_SCHEMA.primer_match_cutoffs, domain=None, range=str)
+                   model_uri=AK_SCHEMA.primer_match_cutoffs, domain=None, range=Optional[str])
 
 slots.collapsing_method = Slot(uri=AK_SCHEMA.collapsing_method, name="collapsing_method", curie=AK_SCHEMA.curie('collapsing_method'),
-                   model_uri=AK_SCHEMA.collapsing_method, domain=None, range=str)
+                   model_uri=AK_SCHEMA.collapsing_method, domain=None, range=Optional[str])
 
 slots.data_processing_protocols = Slot(uri=AK_SCHEMA.data_processing_protocols, name="data_processing_protocols", curie=AK_SCHEMA.curie('data_processing_protocols'),
-                   model_uri=AK_SCHEMA.data_processing_protocols, domain=None, range=str)
+                   model_uri=AK_SCHEMA.data_processing_protocols, domain=None, range=Optional[str])
 
 slots.data_processing_files = Slot(uri=AK_SCHEMA.data_processing_files, name="data_processing_files", curie=AK_SCHEMA.curie('data_processing_files'),
                    model_uri=AK_SCHEMA.data_processing_files, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.germline_database = Slot(uri=AK_SCHEMA.germline_database, name="germline_database", curie=AK_SCHEMA.curie('germline_database'),
-                   model_uri=AK_SCHEMA.germline_database, domain=None, range=str)
+                   model_uri=AK_SCHEMA.germline_database, domain=None, range=Optional[str])
 
 slots.analysis_provenance_id = Slot(uri=AK_SCHEMA.analysis_provenance_id, name="analysis_provenance_id", curie=AK_SCHEMA.curie('analysis_provenance_id'),
                    model_uri=AK_SCHEMA.analysis_provenance_id, domain=None, range=Optional[str])
@@ -13420,19 +12390,19 @@ slots.repertoire_description = Slot(uri=AK_SCHEMA.repertoire_description, name="
                    model_uri=AK_SCHEMA.repertoire_description, domain=None, range=Optional[str])
 
 slots.study = Slot(uri=AK_SCHEMA.study, name="study", curie=AK_SCHEMA.curie('study'),
-                   model_uri=AK_SCHEMA.study, domain=None, range=Union[dict, Study])
+                   model_uri=AK_SCHEMA.study, domain=None, range=Optional[Union[dict, Study]])
 
 slots.subject = Slot(uri=AK_SCHEMA.subject, name="subject", curie=AK_SCHEMA.curie('subject'),
-                   model_uri=AK_SCHEMA.subject, domain=None, range=Union[dict, Subject])
+                   model_uri=AK_SCHEMA.subject, domain=None, range=Optional[Union[dict, Subject]])
 
 slots.sample = Slot(uri=AK_SCHEMA.sample, name="sample", curie=AK_SCHEMA.curie('sample'),
-                   model_uri=AK_SCHEMA.sample, domain=None, range=Union[Union[dict, SampleProcessing], List[Union[dict, SampleProcessing]]])
+                   model_uri=AK_SCHEMA.sample, domain=None, range=Optional[Union[Union[dict, SampleProcessing], List[Union[dict, SampleProcessing]]]])
 
 slots.data_processing = Slot(uri=AK_SCHEMA.data_processing, name="data_processing", curie=AK_SCHEMA.curie('data_processing'),
-                   model_uri=AK_SCHEMA.data_processing, domain=None, range=Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]])
+                   model_uri=AK_SCHEMA.data_processing, domain=None, range=Optional[Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]]])
 
 slots.repertoire_group_id = Slot(uri=AK_SCHEMA.repertoire_group_id, name="repertoire_group_id", curie=AK_SCHEMA.curie('repertoire_group_id'),
-                   model_uri=AK_SCHEMA.repertoire_group_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.repertoire_group_id, domain=None, range=Optional[str])
 
 slots.repertoire_group_name = Slot(uri=AK_SCHEMA.repertoire_group_name, name="repertoire_group_name", curie=AK_SCHEMA.curie('repertoire_group_name'),
                    model_uri=AK_SCHEMA.repertoire_group_name, domain=None, range=Optional[str])
@@ -13441,19 +12411,19 @@ slots.repertoire_group_description = Slot(uri=AK_SCHEMA.repertoire_group_descrip
                    model_uri=AK_SCHEMA.repertoire_group_description, domain=None, range=Optional[str])
 
 slots.repertoires = Slot(uri=AK_SCHEMA.repertoires, name="repertoires", curie=AK_SCHEMA.curie('repertoires'),
-                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Union[str, List[str]])
+                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.segment = Slot(uri=AK_SCHEMA.segment, name="segment", curie=AK_SCHEMA.curie('segment'),
-                   model_uri=AK_SCHEMA.segment, domain=None, range=str)
+                   model_uri=AK_SCHEMA.segment, domain=None, range=Optional[str])
 
 slots.rev_comp = Slot(uri=AK_SCHEMA.rev_comp, name="rev_comp", curie=AK_SCHEMA.curie('rev_comp'),
                    model_uri=AK_SCHEMA.rev_comp, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.call = Slot(uri=AK_SCHEMA.call, name="call", curie=AK_SCHEMA.curie('call'),
-                   model_uri=AK_SCHEMA.call, domain=None, range=str)
+                   model_uri=AK_SCHEMA.call, domain=None, range=Optional[str])
 
 slots.score = Slot(uri=AK_SCHEMA.score, name="score", curie=AK_SCHEMA.curie('score'),
-                   model_uri=AK_SCHEMA.score, domain=None, range=float)
+                   model_uri=AK_SCHEMA.score, domain=None, range=Optional[float])
 
 slots.identity = Slot(uri=AK_SCHEMA.identity, name="identity", curie=AK_SCHEMA.curie('identity'),
                    model_uri=AK_SCHEMA.identity, domain=None, range=Optional[float])
@@ -13462,7 +12432,7 @@ slots.support = Slot(uri=AK_SCHEMA.support, name="support", curie=AK_SCHEMA.curi
                    model_uri=AK_SCHEMA.support, domain=None, range=Optional[float])
 
 slots.cigar = Slot(uri=AK_SCHEMA.cigar, name="cigar", curie=AK_SCHEMA.curie('cigar'),
-                   model_uri=AK_SCHEMA.cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.cigar, domain=None, range=Optional[str])
 
 slots.germline_start = Slot(uri=AK_SCHEMA.germline_start, name="germline_start", curie=AK_SCHEMA.curie('germline_start'),
                    model_uri=AK_SCHEMA.germline_start, domain=None, range=Optional[int])
@@ -13480,7 +12450,7 @@ slots.sequence_aa = Slot(uri=AK_SCHEMA.sequence_aa, name="sequence_aa", curie=AK
                    model_uri=AK_SCHEMA.sequence_aa, domain=None, range=Optional[str])
 
 slots.productive = Slot(uri=AK_SCHEMA.productive, name="productive", curie=AK_SCHEMA.curie('productive'),
-                   model_uri=AK_SCHEMA.productive, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.productive, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.vj_in_frame = Slot(uri=AK_SCHEMA.vj_in_frame, name="vj_in_frame", curie=AK_SCHEMA.curie('vj_in_frame'),
                    model_uri=AK_SCHEMA.vj_in_frame, domain=None, range=Optional[Union[bool, Bool]])
@@ -13516,7 +12486,7 @@ slots.sequence_alignment_aa = Slot(uri=AK_SCHEMA.sequence_alignment_aa, name="se
                    model_uri=AK_SCHEMA.sequence_alignment_aa, domain=None, range=Optional[str])
 
 slots.germline_alignment = Slot(uri=AK_SCHEMA.germline_alignment, name="germline_alignment", curie=AK_SCHEMA.curie('germline_alignment'),
-                   model_uri=AK_SCHEMA.germline_alignment, domain=None, range=str)
+                   model_uri=AK_SCHEMA.germline_alignment, domain=None, range=Optional[str])
 
 slots.germline_alignment_aa = Slot(uri=AK_SCHEMA.germline_alignment_aa, name="germline_alignment_aa", curie=AK_SCHEMA.curie('germline_alignment_aa'),
                    model_uri=AK_SCHEMA.germline_alignment_aa, domain=None, range=Optional[str])
@@ -13597,7 +12567,7 @@ slots.v_support = Slot(uri=AK_SCHEMA.v_support, name="v_support", curie=AK_SCHEM
                    model_uri=AK_SCHEMA.v_support, domain=None, range=Optional[float])
 
 slots.v_cigar = Slot(uri=AK_SCHEMA.v_cigar, name="v_cigar", curie=AK_SCHEMA.curie('v_cigar'),
-                   model_uri=AK_SCHEMA.v_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.v_cigar, domain=None, range=Optional[str])
 
 slots.d_score = Slot(uri=AK_SCHEMA.d_score, name="d_score", curie=AK_SCHEMA.curie('d_score'),
                    model_uri=AK_SCHEMA.d_score, domain=None, range=Optional[float])
@@ -13609,7 +12579,7 @@ slots.d_support = Slot(uri=AK_SCHEMA.d_support, name="d_support", curie=AK_SCHEM
                    model_uri=AK_SCHEMA.d_support, domain=None, range=Optional[float])
 
 slots.d_cigar = Slot(uri=AK_SCHEMA.d_cigar, name="d_cigar", curie=AK_SCHEMA.curie('d_cigar'),
-                   model_uri=AK_SCHEMA.d_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.d_cigar, domain=None, range=Optional[str])
 
 slots.d2_score = Slot(uri=AK_SCHEMA.d2_score, name="d2_score", curie=AK_SCHEMA.curie('d2_score'),
                    model_uri=AK_SCHEMA.d2_score, domain=None, range=Optional[float])
@@ -13633,7 +12603,7 @@ slots.j_support = Slot(uri=AK_SCHEMA.j_support, name="j_support", curie=AK_SCHEM
                    model_uri=AK_SCHEMA.j_support, domain=None, range=Optional[float])
 
 slots.j_cigar = Slot(uri=AK_SCHEMA.j_cigar, name="j_cigar", curie=AK_SCHEMA.curie('j_cigar'),
-                   model_uri=AK_SCHEMA.j_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.j_cigar, domain=None, range=Optional[str])
 
 slots.c_score = Slot(uri=AK_SCHEMA.c_score, name="c_score", curie=AK_SCHEMA.curie('c_score'),
                    model_uri=AK_SCHEMA.c_score, domain=None, range=Optional[float])
@@ -13894,16 +12864,16 @@ slots.seed_id = Slot(uri=AK_SCHEMA.seed_id, name="seed_id", curie=AK_SCHEMA.curi
                    model_uri=AK_SCHEMA.seed_id, domain=None, range=Optional[str])
 
 slots.tree_id = Slot(uri=AK_SCHEMA.tree_id, name="tree_id", curie=AK_SCHEMA.curie('tree_id'),
-                   model_uri=AK_SCHEMA.tree_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.tree_id, domain=None, range=Optional[str])
 
 slots.newick = Slot(uri=AK_SCHEMA.newick, name="newick", curie=AK_SCHEMA.curie('newick'),
-                   model_uri=AK_SCHEMA.newick, domain=None, range=str)
+                   model_uri=AK_SCHEMA.newick, domain=None, range=Optional[str])
 
 slots.nodes = Slot(uri=AK_SCHEMA.nodes, name="nodes", curie=AK_SCHEMA.curie('nodes'),
                    model_uri=AK_SCHEMA.nodes, domain=None, range=Optional[Union[Union[dict, Node], List[Union[dict, Node]]]])
 
 slots.rearrangements = Slot(uri=AK_SCHEMA.rearrangements, name="rearrangements", curie=AK_SCHEMA.curie('rearrangements'),
-                   model_uri=AK_SCHEMA.rearrangements, domain=None, range=Union[str, List[str]])
+                   model_uri=AK_SCHEMA.rearrangements, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.receptors = Slot(uri=AK_SCHEMA.receptors, name="receptors", curie=AK_SCHEMA.curie('receptors'),
                    model_uri=AK_SCHEMA.receptors, domain=None, range=Optional[Union[str, List[str]]])
@@ -13918,37 +12888,37 @@ slots.expression_index = Slot(uri=AK_SCHEMA.expression_index, name="expression_i
                    model_uri=AK_SCHEMA.expression_index, domain=None, range=Optional[str])
 
 slots.virtual_pairing = Slot(uri=AK_SCHEMA.virtual_pairing, name="virtual_pairing", curie=AK_SCHEMA.curie('virtual_pairing'),
-                   model_uri=AK_SCHEMA.virtual_pairing, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.virtual_pairing, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.expression_id = Slot(uri=AK_SCHEMA.expression_id, name="expression_id", curie=AK_SCHEMA.curie('expression_id'),
-                   model_uri=AK_SCHEMA.expression_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.expression_id, domain=None, range=Optional[str])
 
 slots.property_type = Slot(uri=RDF.type, name="property_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.property_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.property_type, domain=None, range=Optional[str])
 
 slots.property = Slot(uri=AK_SCHEMA.property, name="property", curie=AK_SCHEMA.curie('property'),
-                   model_uri=AK_SCHEMA.property, domain=None, range=Union[str, "Property"])
+                   model_uri=AK_SCHEMA.property, domain=None, range=Optional[Union[str, "Property"]])
 
 slots.receptor_id = Slot(uri=AK_SCHEMA.receptor_id, name="receptor_id", curie=AK_SCHEMA.curie('receptor_id'),
-                   model_uri=AK_SCHEMA.receptor_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.receptor_id, domain=None, range=Optional[str])
 
 slots.receptor_hash = Slot(uri=AK_SCHEMA.receptor_hash, name="receptor_hash", curie=AK_SCHEMA.curie('receptor_hash'),
-                   model_uri=AK_SCHEMA.receptor_hash, domain=None, range=str)
+                   model_uri=AK_SCHEMA.receptor_hash, domain=None, range=Optional[str])
 
 slots.receptor_type = Slot(uri=RDF.type, name="receptor_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.receptor_type, domain=None, range=Union[str, "ReceptorType"])
+                   model_uri=AK_SCHEMA.receptor_type, domain=None, range=Optional[Union[str, "ReceptorType"]])
 
 slots.receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.receptor_variable_domain_1_aa, name="receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('receptor_variable_domain_1_aa'),
-                   model_uri=AK_SCHEMA.receptor_variable_domain_1_aa, domain=None, range=str)
+                   model_uri=AK_SCHEMA.receptor_variable_domain_1_aa, domain=None, range=Optional[str])
 
 slots.receptor_variable_domain_1_locus = Slot(uri=AK_SCHEMA.receptor_variable_domain_1_locus, name="receptor_variable_domain_1_locus", curie=AK_SCHEMA.curie('receptor_variable_domain_1_locus'),
-                   model_uri=AK_SCHEMA.receptor_variable_domain_1_locus, domain=None, range=Union[str, "ReceptorVariableDomain1Locus"])
+                   model_uri=AK_SCHEMA.receptor_variable_domain_1_locus, domain=None, range=Optional[Union[str, "ReceptorVariableDomain1Locus"]])
 
 slots.receptor_variable_domain_2_aa = Slot(uri=AK_SCHEMA.receptor_variable_domain_2_aa, name="receptor_variable_domain_2_aa", curie=AK_SCHEMA.curie('receptor_variable_domain_2_aa'),
-                   model_uri=AK_SCHEMA.receptor_variable_domain_2_aa, domain=None, range=str)
+                   model_uri=AK_SCHEMA.receptor_variable_domain_2_aa, domain=None, range=Optional[str])
 
 slots.receptor_variable_domain_2_locus = Slot(uri=AK_SCHEMA.receptor_variable_domain_2_locus, name="receptor_variable_domain_2_locus", curie=AK_SCHEMA.curie('receptor_variable_domain_2_locus'),
-                   model_uri=AK_SCHEMA.receptor_variable_domain_2_locus, domain=None, range=Union[str, "ReceptorVariableDomain2Locus"])
+                   model_uri=AK_SCHEMA.receptor_variable_domain_2_locus, domain=None, range=Optional[Union[str, "ReceptorVariableDomain2Locus"]])
 
 slots.receptor_ref = Slot(uri=AK_SCHEMA.receptor_ref, name="receptor_ref", curie=AK_SCHEMA.curie('receptor_ref'),
                    model_uri=AK_SCHEMA.receptor_ref, domain=None, range=Optional[Union[str, List[str]]])
@@ -13957,13 +12927,13 @@ slots.reactivity_measurements = Slot(uri=AK_SCHEMA.reactivity_measurements, name
                    model_uri=AK_SCHEMA.reactivity_measurements, domain=None, range=Optional[Union[Union[dict, ReceptorReactivity], List[Union[dict, ReceptorReactivity]]]])
 
 slots.ligand_type = Slot(uri=RDF.type, name="ligand_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.ligand_type, domain=None, range=Union[str, "LigandType"])
+                   model_uri=AK_SCHEMA.ligand_type, domain=None, range=Optional[Union[str, "LigandType"]])
 
 slots.antigen_type = Slot(uri=RDF.type, name="antigen_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.antigen_type, domain=None, range=Union[str, "AntigenType"])
+                   model_uri=AK_SCHEMA.antigen_type, domain=None, range=Optional[Union[str, "AntigenType"]])
 
 slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curie('antigen'),
-                   model_uri=AK_SCHEMA.antigen, domain=None, range=Union[str, "Antigen"])
+                   model_uri=AK_SCHEMA.antigen, domain=None, range=Optional[Union[str, "Antigen"]])
 
 slots.antigen_source_species = Slot(uri=AK_SCHEMA.antigen_source_species, name="antigen_source_species", curie=AK_SCHEMA.curie('antigen_source_species'),
                    model_uri=AK_SCHEMA.antigen_source_species, domain=None, range=Optional[Union[str, "AntigenSourceSpecies"]])
@@ -13987,16 +12957,16 @@ slots.mhc_allele_2 = Slot(uri=AK_SCHEMA.mhc_allele_2, name="mhc_allele_2", curie
                    model_uri=AK_SCHEMA.mhc_allele_2, domain=None, range=Optional[str])
 
 slots.reactivity_method = Slot(uri=AK_SCHEMA.reactivity_method, name="reactivity_method", curie=AK_SCHEMA.curie('reactivity_method'),
-                   model_uri=AK_SCHEMA.reactivity_method, domain=None, range=Union[str, "ReactivityMethod"])
+                   model_uri=AK_SCHEMA.reactivity_method, domain=None, range=Optional[Union[str, "ReactivityMethod"]])
 
 slots.reactivity_readout = Slot(uri=AK_SCHEMA.reactivity_readout, name="reactivity_readout", curie=AK_SCHEMA.curie('reactivity_readout'),
-                   model_uri=AK_SCHEMA.reactivity_readout, domain=None, range=Union[str, "ReactivityReadout"])
+                   model_uri=AK_SCHEMA.reactivity_readout, domain=None, range=Optional[Union[str, "ReactivityReadout"]])
 
 slots.reactivity_value = Slot(uri=AK_SCHEMA.reactivity_value, name="reactivity_value", curie=AK_SCHEMA.curie('reactivity_value'),
-                   model_uri=AK_SCHEMA.reactivity_value, domain=None, range=float)
+                   model_uri=AK_SCHEMA.reactivity_value, domain=None, range=Optional[float])
 
 slots.reactivity_unit = Slot(uri=AK_SCHEMA.reactivity_unit, name="reactivity_unit", curie=AK_SCHEMA.curie('reactivity_unit'),
-                   model_uri=AK_SCHEMA.reactivity_unit, domain=None, range=str)
+                   model_uri=AK_SCHEMA.reactivity_unit, domain=None, range=Optional[str])
 
 slots.V1p5label = Slot(uri=AK_SCHEMA.V1p5label, name="V1p5label", curie=AK_SCHEMA.curie('V1p5label'),
                    model_uri=AK_SCHEMA.V1p5label, domain=None, range=Optional[str])
@@ -14008,40 +12978,40 @@ slots.V1p5unit = Slot(uri=AK_SCHEMA.V1p5unit, name="V1p5unit", curie=AK_SCHEMA.c
                    model_uri=AK_SCHEMA.V1p5unit, domain=None, range=Optional[Union[str, "V1p5Unit"]])
 
 slots.V1p5acknowledgement_id = Slot(uri=AK_SCHEMA.V1p5acknowledgement_id, name="V1p5acknowledgement_id", curie=AK_SCHEMA.curie('V1p5acknowledgement_id'),
-                   model_uri=AK_SCHEMA.V1p5acknowledgement_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5acknowledgement_id, domain=None, range=Optional[str])
 
 slots.V1p5name = Slot(uri=AK_SCHEMA.V1p5name, name="V1p5name", curie=AK_SCHEMA.curie('V1p5name'),
-                   model_uri=AK_SCHEMA.V1p5name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5name, domain=None, range=Optional[str])
 
 slots.V1p5institution_name = Slot(uri=AK_SCHEMA.V1p5institution_name, name="V1p5institution_name", curie=AK_SCHEMA.curie('V1p5institution_name'),
-                   model_uri=AK_SCHEMA.V1p5institution_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5institution_name, domain=None, range=Optional[str])
 
 slots.V1p5orcid_id = Slot(uri=AK_SCHEMA.V1p5orcid_id, name="V1p5orcid_id", curie=AK_SCHEMA.curie('V1p5orcid_id'),
                    model_uri=AK_SCHEMA.V1p5orcid_id, domain=None, range=Optional[str])
 
 slots.V1p5sequence_id = Slot(uri=AK_SCHEMA.V1p5sequence_id, name="V1p5sequence_id", curie=AK_SCHEMA.curie('V1p5sequence_id'),
-                   model_uri=AK_SCHEMA.V1p5sequence_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequence_id, domain=None, range=Optional[str])
 
 slots.V1p5sequence = Slot(uri=AK_SCHEMA.V1p5sequence, name="V1p5sequence", curie=AK_SCHEMA.curie('V1p5sequence'),
-                   model_uri=AK_SCHEMA.V1p5sequence, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequence, domain=None, range=Optional[str])
 
 slots.V1p5derivation = Slot(uri=AK_SCHEMA.V1p5derivation, name="V1p5derivation", curie=AK_SCHEMA.curie('V1p5derivation'),
-                   model_uri=AK_SCHEMA.V1p5derivation, domain=None, range=Union[str, "V1p5Derivation"])
+                   model_uri=AK_SCHEMA.V1p5derivation, domain=None, range=Optional[Union[str, "V1p5Derivation"]])
 
 slots.V1p5observation_type = Slot(uri=RDF.type, name="V1p5observation_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5observation_type, domain=None, range=Union[str, "V1p5ObservationType"])
+                   model_uri=AK_SCHEMA.V1p5observation_type, domain=None, range=Optional[Union[str, "V1p5ObservationType"]])
 
 slots.V1p5curation = Slot(uri=AK_SCHEMA.V1p5curation, name="V1p5curation", curie=AK_SCHEMA.curie('V1p5curation'),
                    model_uri=AK_SCHEMA.V1p5curation, domain=None, range=Optional[str])
 
 slots.V1p5repository_name = Slot(uri=AK_SCHEMA.V1p5repository_name, name="V1p5repository_name", curie=AK_SCHEMA.curie('V1p5repository_name'),
-                   model_uri=AK_SCHEMA.V1p5repository_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5repository_name, domain=None, range=Optional[str])
 
 slots.V1p5repository_ref = Slot(uri=AK_SCHEMA.V1p5repository_ref, name="V1p5repository_ref", curie=AK_SCHEMA.curie('V1p5repository_ref'),
                    model_uri=AK_SCHEMA.V1p5repository_ref, domain=None, range=Optional[str])
 
 slots.V1p5deposited_version = Slot(uri=AK_SCHEMA.V1p5deposited_version, name="V1p5deposited_version", curie=AK_SCHEMA.curie('V1p5deposited_version'),
-                   model_uri=AK_SCHEMA.V1p5deposited_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5deposited_version, domain=None, range=Optional[str])
 
 slots.V1p5sequence_start = Slot(uri=AK_SCHEMA.V1p5sequence_start, name="V1p5sequence_start", curie=AK_SCHEMA.curie('V1p5sequence_start'),
                    model_uri=AK_SCHEMA.V1p5sequence_start, domain=None, range=Optional[int])
@@ -14053,22 +13023,22 @@ slots.V1p5patch_no = Slot(uri=AK_SCHEMA.V1p5patch_no, name="V1p5patch_no", curie
                    model_uri=AK_SCHEMA.V1p5patch_no, domain=None, range=Optional[str])
 
 slots.V1p5gff_seqid = Slot(uri=AK_SCHEMA.V1p5gff_seqid, name="V1p5gff_seqid", curie=AK_SCHEMA.curie('V1p5gff_seqid'),
-                   model_uri=AK_SCHEMA.V1p5gff_seqid, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5gff_seqid, domain=None, range=Optional[str])
 
 slots.V1p5gff_start = Slot(uri=AK_SCHEMA.V1p5gff_start, name="V1p5gff_start", curie=AK_SCHEMA.curie('V1p5gff_start'),
-                   model_uri=AK_SCHEMA.V1p5gff_start, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5gff_start, domain=None, range=Optional[int])
 
 slots.V1p5gff_end = Slot(uri=AK_SCHEMA.V1p5gff_end, name="V1p5gff_end", curie=AK_SCHEMA.curie('V1p5gff_end'),
-                   model_uri=AK_SCHEMA.V1p5gff_end, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5gff_end, domain=None, range=Optional[int])
 
 slots.V1p5strand = Slot(uri=AK_SCHEMA.V1p5strand, name="V1p5strand", curie=AK_SCHEMA.curie('V1p5strand'),
-                   model_uri=AK_SCHEMA.V1p5strand, domain=None, range=Union[str, "V1p5Strand"])
+                   model_uri=AK_SCHEMA.V1p5strand, domain=None, range=Optional[Union[str, "V1p5Strand"]])
 
 slots.V1p5sequence_delineation_id = Slot(uri=AK_SCHEMA.V1p5sequence_delineation_id, name="V1p5sequence_delineation_id", curie=AK_SCHEMA.curie('V1p5sequence_delineation_id'),
-                   model_uri=AK_SCHEMA.V1p5sequence_delineation_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequence_delineation_id, domain=None, range=Optional[str])
 
 slots.V1p5delineation_scheme = Slot(uri=AK_SCHEMA.V1p5delineation_scheme, name="V1p5delineation_scheme", curie=AK_SCHEMA.curie('V1p5delineation_scheme'),
-                   model_uri=AK_SCHEMA.V1p5delineation_scheme, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5delineation_scheme, domain=None, range=Optional[str])
 
 slots.V1p5unaligned_sequence = Slot(uri=AK_SCHEMA.V1p5unaligned_sequence, name="V1p5unaligned_sequence", curie=AK_SCHEMA.curie('V1p5unaligned_sequence'),
                    model_uri=AK_SCHEMA.V1p5unaligned_sequence, domain=None, range=Optional[str])
@@ -14113,31 +13083,31 @@ slots.V1p5alignment_labels = Slot(uri=AK_SCHEMA.V1p5alignment_labels, name="V1p5
                    model_uri=AK_SCHEMA.V1p5alignment_labels, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p5allele_description_id = Slot(uri=AK_SCHEMA.V1p5allele_description_id, name="V1p5allele_description_id", curie=AK_SCHEMA.curie('V1p5allele_description_id'),
-                   model_uri=AK_SCHEMA.V1p5allele_description_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5allele_description_id, domain=None, range=Optional[str])
 
 slots.V1p5allele_description_ref = Slot(uri=AK_SCHEMA.V1p5allele_description_ref, name="V1p5allele_description_ref", curie=AK_SCHEMA.curie('V1p5allele_description_ref'),
                    model_uri=AK_SCHEMA.V1p5allele_description_ref, domain=None, range=Optional[str])
 
 slots.V1p5maintainer = Slot(uri=AK_SCHEMA.V1p5maintainer, name="V1p5maintainer", curie=AK_SCHEMA.curie('V1p5maintainer'),
-                   model_uri=AK_SCHEMA.V1p5maintainer, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5maintainer, domain=None, range=Optional[str])
 
 slots.V1p5acknowledgements = Slot(uri=AK_SCHEMA.V1p5acknowledgements, name="V1p5acknowledgements", curie=AK_SCHEMA.curie('V1p5acknowledgements'),
                    model_uri=AK_SCHEMA.V1p5acknowledgements, domain=None, range=Optional[Union[Union[dict, V1p5Acknowledgement], List[Union[dict, V1p5Acknowledgement]]]])
 
 slots.V1p5lab_address = Slot(uri=AK_SCHEMA.V1p5lab_address, name="V1p5lab_address", curie=AK_SCHEMA.curie('V1p5lab_address'),
-                   model_uri=AK_SCHEMA.V1p5lab_address, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5lab_address, domain=None, range=Optional[str])
 
 slots.V1p5release_version = Slot(uri=AK_SCHEMA.V1p5release_version, name="V1p5release_version", curie=AK_SCHEMA.curie('V1p5release_version'),
-                   model_uri=AK_SCHEMA.V1p5release_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5release_version, domain=None, range=Optional[str])
 
 slots.V1p5release_date = Slot(uri=AK_SCHEMA.V1p5release_date, name="V1p5release_date", curie=AK_SCHEMA.curie('V1p5release_date'),
-                   model_uri=AK_SCHEMA.V1p5release_date, domain=None, range=Union[str, XSDDateTime])
+                   model_uri=AK_SCHEMA.V1p5release_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p5release_description = Slot(uri=AK_SCHEMA.V1p5release_description, name="V1p5release_description", curie=AK_SCHEMA.curie('V1p5release_description'),
-                   model_uri=AK_SCHEMA.V1p5release_description, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5release_description, domain=None, range=Optional[str])
 
 slots.V1p5coding_sequence = Slot(uri=AK_SCHEMA.V1p5coding_sequence, name="V1p5coding_sequence", curie=AK_SCHEMA.curie('V1p5coding_sequence'),
-                   model_uri=AK_SCHEMA.V1p5coding_sequence, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5coding_sequence, domain=None, range=Optional[str])
 
 slots.V1p5aliases = Slot(uri=AK_SCHEMA.V1p5aliases, name="V1p5aliases", curie=AK_SCHEMA.curie('V1p5aliases'),
                    model_uri=AK_SCHEMA.V1p5aliases, domain=None, range=Optional[Union[str, List[str]]])
@@ -14149,16 +13119,16 @@ slots.V1p5chromosome = Slot(uri=AK_SCHEMA.V1p5chromosome, name="V1p5chromosome",
                    model_uri=AK_SCHEMA.V1p5chromosome, domain=None, range=Optional[int])
 
 slots.V1p5sequence_type = Slot(uri=RDF.type, name="V1p5sequence_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5sequence_type, domain=None, range=Union[str, "V1p5SequenceType"])
+                   model_uri=AK_SCHEMA.V1p5sequence_type, domain=None, range=Optional[Union[str, "V1p5SequenceType"]])
 
 slots.V1p5functional = Slot(uri=AK_SCHEMA.V1p5functional, name="V1p5functional", curie=AK_SCHEMA.curie('V1p5functional'),
-                   model_uri=AK_SCHEMA.V1p5functional, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p5functional, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5inference_type = Slot(uri=RDF.type, name="V1p5inference_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5inference_type, domain=None, range=Union[str, "V1p5InferenceType"])
+                   model_uri=AK_SCHEMA.V1p5inference_type, domain=None, range=Optional[Union[str, "V1p5InferenceType"]])
 
 slots.V1p5species = Slot(uri=AK_SCHEMA.V1p5species, name="V1p5species", curie=AK_SCHEMA.curie('V1p5species'),
-                   model_uri=AK_SCHEMA.V1p5species, domain=None, range=Union[str, "V1p5Species"])
+                   model_uri=AK_SCHEMA.V1p5species, domain=None, range=Optional[Union[str, "V1p5Species"]])
 
 slots.V1p5species_subgroup = Slot(uri=AK_SCHEMA.V1p5species_subgroup, name="V1p5species_subgroup", curie=AK_SCHEMA.curie('V1p5species_subgroup'),
                    model_uri=AK_SCHEMA.V1p5species_subgroup, domain=None, range=Optional[str])
@@ -14257,16 +13227,16 @@ slots.V1p5curational_tags = Slot(uri=AK_SCHEMA.V1p5curational_tags, name="V1p5cu
                    model_uri=AK_SCHEMA.V1p5curational_tags, domain=None, range=Optional[Union[Union[str, "V1p5CurationalTags"], List[Union[str, "V1p5CurationalTags"]]]])
 
 slots.V1p5germline_set_id = Slot(uri=AK_SCHEMA.V1p5germline_set_id, name="V1p5germline_set_id", curie=AK_SCHEMA.curie('V1p5germline_set_id'),
-                   model_uri=AK_SCHEMA.V1p5germline_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5germline_set_id, domain=None, range=Optional[str])
 
 slots.V1p5author = Slot(uri=AK_SCHEMA.V1p5author, name="V1p5author", curie=AK_SCHEMA.curie('V1p5author'),
-                   model_uri=AK_SCHEMA.V1p5author, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5author, domain=None, range=Optional[str])
 
 slots.V1p5lab_name = Slot(uri=AK_SCHEMA.V1p5lab_name, name="V1p5lab_name", curie=AK_SCHEMA.curie('V1p5lab_name'),
-                   model_uri=AK_SCHEMA.V1p5lab_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5lab_name, domain=None, range=Optional[str])
 
 slots.V1p5germline_set_name = Slot(uri=AK_SCHEMA.V1p5germline_set_name, name="V1p5germline_set_name", curie=AK_SCHEMA.curie('V1p5germline_set_name'),
-                   model_uri=AK_SCHEMA.V1p5germline_set_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5germline_set_name, domain=None, range=Optional[str])
 
 slots.V1p5germline_set_ref = Slot(uri=AK_SCHEMA.V1p5germline_set_ref, name="V1p5germline_set_ref", curie=AK_SCHEMA.curie('V1p5germline_set_ref'),
                    model_uri=AK_SCHEMA.V1p5germline_set_ref, domain=None, range=Optional[str])
@@ -14275,16 +13245,16 @@ slots.V1p5pub_ids = Slot(uri=AK_SCHEMA.V1p5pub_ids, name="V1p5pub_ids", curie=AK
                    model_uri=AK_SCHEMA.V1p5pub_ids, domain=None, range=Optional[str])
 
 slots.V1p5allele_descriptions = Slot(uri=AK_SCHEMA.V1p5allele_descriptions, name="V1p5allele_descriptions", curie=AK_SCHEMA.curie('V1p5allele_descriptions'),
-                   model_uri=AK_SCHEMA.V1p5allele_descriptions, domain=None, range=Union[Union[dict, V1p5AlleleDescription], List[Union[dict, V1p5AlleleDescription]]])
+                   model_uri=AK_SCHEMA.V1p5allele_descriptions, domain=None, range=Optional[Union[Union[dict, V1p5AlleleDescription], List[Union[dict, V1p5AlleleDescription]]]])
 
 slots.V1p5receptor_genotype_set_id = Slot(uri=AK_SCHEMA.V1p5receptor_genotype_set_id, name="V1p5receptor_genotype_set_id", curie=AK_SCHEMA.curie('V1p5receptor_genotype_set_id'),
-                   model_uri=AK_SCHEMA.V1p5receptor_genotype_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5receptor_genotype_set_id, domain=None, range=Optional[str])
 
 slots.V1p5genotype_class_list = Slot(uri=AK_SCHEMA.V1p5genotype_class_list, name="V1p5genotype_class_list", curie=AK_SCHEMA.curie('V1p5genotype_class_list'),
                    model_uri=AK_SCHEMA.V1p5genotype_class_list, domain=None, range=Optional[Union[Union[dict, V1p5Genotype], List[Union[dict, V1p5Genotype]]]])
 
 slots.V1p5receptor_genotype_id = Slot(uri=AK_SCHEMA.V1p5receptor_genotype_id, name="V1p5receptor_genotype_id", curie=AK_SCHEMA.curie('V1p5receptor_genotype_id'),
-                   model_uri=AK_SCHEMA.V1p5receptor_genotype_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5receptor_genotype_id, domain=None, range=Optional[str])
 
 slots.V1p5documented_alleles = Slot(uri=AK_SCHEMA.V1p5documented_alleles, name="V1p5documented_alleles", curie=AK_SCHEMA.curie('V1p5documented_alleles'),
                    model_uri=AK_SCHEMA.V1p5documented_alleles, domain=None, range=Optional[Union[Union[dict, V1p5DocumentedAllele], List[Union[dict, V1p5DocumentedAllele]]]])
@@ -14302,22 +13272,22 @@ slots.V1p5phasing = Slot(uri=AK_SCHEMA.V1p5phasing, name="V1p5phasing", curie=AK
                    model_uri=AK_SCHEMA.V1p5phasing, domain=None, range=Optional[int])
 
 slots.V1p5allele_name = Slot(uri=AK_SCHEMA.V1p5allele_name, name="V1p5allele_name", curie=AK_SCHEMA.curie('V1p5allele_name'),
-                   model_uri=AK_SCHEMA.V1p5allele_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5allele_name, domain=None, range=Optional[str])
 
 slots.V1p5mhc_genotype_set_id = Slot(uri=AK_SCHEMA.V1p5mhc_genotype_set_id, name="V1p5mhc_genotype_set_id", curie=AK_SCHEMA.curie('V1p5mhc_genotype_set_id'),
-                   model_uri=AK_SCHEMA.V1p5mhc_genotype_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5mhc_genotype_set_id, domain=None, range=Optional[str])
 
 slots.V1p5mhc_genotype_list = Slot(uri=AK_SCHEMA.V1p5mhc_genotype_list, name="V1p5mhc_genotype_list", curie=AK_SCHEMA.curie('V1p5mhc_genotype_list'),
-                   model_uri=AK_SCHEMA.V1p5mhc_genotype_list, domain=None, range=Union[Union[dict, V1p5MHCGenotype], List[Union[dict, V1p5MHCGenotype]]])
+                   model_uri=AK_SCHEMA.V1p5mhc_genotype_list, domain=None, range=Optional[Union[Union[dict, V1p5MHCGenotype], List[Union[dict, V1p5MHCGenotype]]]])
 
 slots.V1p5mhc_genotype_id = Slot(uri=AK_SCHEMA.V1p5mhc_genotype_id, name="V1p5mhc_genotype_id", curie=AK_SCHEMA.curie('V1p5mhc_genotype_id'),
-                   model_uri=AK_SCHEMA.V1p5mhc_genotype_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5mhc_genotype_id, domain=None, range=Optional[str])
 
 slots.V1p5mhc_class = Slot(uri=AK_SCHEMA.V1p5mhc_class, name="V1p5mhc_class", curie=AK_SCHEMA.curie('V1p5mhc_class'),
                    model_uri=AK_SCHEMA.V1p5mhc_class, domain=None, range=Optional[Union[str, "V1p5MhcClass"]])
 
 slots.V1p5mhc_alleles = Slot(uri=AK_SCHEMA.V1p5mhc_alleles, name="V1p5mhc_alleles", curie=AK_SCHEMA.curie('V1p5mhc_alleles'),
-                   model_uri=AK_SCHEMA.V1p5mhc_alleles, domain=None, range=Union[Union[dict, V1p5MHCAllele], List[Union[dict, V1p5MHCAllele]]])
+                   model_uri=AK_SCHEMA.V1p5mhc_alleles, domain=None, range=Optional[Union[Union[dict, V1p5MHCAllele], List[Union[dict, V1p5MHCAllele]]]])
 
 slots.V1p5mhc_genotyping_method = Slot(uri=AK_SCHEMA.V1p5mhc_genotyping_method, name="V1p5mhc_genotyping_method", curie=AK_SCHEMA.curie('V1p5mhc_genotyping_method'),
                    model_uri=AK_SCHEMA.V1p5mhc_genotyping_method, domain=None, range=Optional[str])
@@ -14335,34 +13305,34 @@ slots.V1p5mhc_genotype_set = Slot(uri=AK_SCHEMA.V1p5mhc_genotype_set, name="V1p5
                    model_uri=AK_SCHEMA.V1p5mhc_genotype_set, domain=None, range=Optional[Union[dict, V1p5MHCGenotypeSet]])
 
 slots.V1p5study_id = Slot(uri=AK_SCHEMA.V1p5study_id, name="V1p5study_id", curie=AK_SCHEMA.curie('V1p5study_id'),
-                   model_uri=AK_SCHEMA.V1p5study_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5study_id, domain=None, range=Optional[str])
 
 slots.V1p5study_title = Slot(uri=AK_SCHEMA.V1p5study_title, name="V1p5study_title", curie=AK_SCHEMA.curie('V1p5study_title'),
-                   model_uri=AK_SCHEMA.V1p5study_title, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5study_title, domain=None, range=Optional[str])
 
 slots.V1p5study_type = Slot(uri=RDF.type, name="V1p5study_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5study_type, domain=None, range=Union[str, "V1p5StudyType"])
+                   model_uri=AK_SCHEMA.V1p5study_type, domain=None, range=Optional[Union[str, "V1p5StudyType"]])
 
 slots.V1p5study_description = Slot(uri=AK_SCHEMA.V1p5study_description, name="V1p5study_description", curie=AK_SCHEMA.curie('V1p5study_description'),
                    model_uri=AK_SCHEMA.V1p5study_description, domain=None, range=Optional[str])
 
 slots.V1p5inclusion_exclusion_criteria = Slot(uri=AK_SCHEMA.V1p5inclusion_exclusion_criteria, name="V1p5inclusion_exclusion_criteria", curie=AK_SCHEMA.curie('V1p5inclusion_exclusion_criteria'),
-                   model_uri=AK_SCHEMA.V1p5inclusion_exclusion_criteria, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5inclusion_exclusion_criteria, domain=None, range=Optional[str])
 
 slots.V1p5grants = Slot(uri=AK_SCHEMA.V1p5grants, name="V1p5grants", curie=AK_SCHEMA.curie('V1p5grants'),
-                   model_uri=AK_SCHEMA.V1p5grants, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5grants, domain=None, range=Optional[str])
 
 slots.V1p5study_contact = Slot(uri=AK_SCHEMA.V1p5study_contact, name="V1p5study_contact", curie=AK_SCHEMA.curie('V1p5study_contact'),
                    model_uri=AK_SCHEMA.V1p5study_contact, domain=None, range=Optional[str])
 
 slots.V1p5collected_by = Slot(uri=AK_SCHEMA.V1p5collected_by, name="V1p5collected_by", curie=AK_SCHEMA.curie('V1p5collected_by'),
-                   model_uri=AK_SCHEMA.V1p5collected_by, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5collected_by, domain=None, range=Optional[str])
 
 slots.V1p5submitted_by = Slot(uri=AK_SCHEMA.V1p5submitted_by, name="V1p5submitted_by", curie=AK_SCHEMA.curie('V1p5submitted_by'),
-                   model_uri=AK_SCHEMA.V1p5submitted_by, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5submitted_by, domain=None, range=Optional[str])
 
 slots.V1p5keywords_study = Slot(uri=AK_SCHEMA.V1p5keywords_study, name="V1p5keywords_study", curie=AK_SCHEMA.curie('V1p5keywords_study'),
-                   model_uri=AK_SCHEMA.V1p5keywords_study, domain=None, range=Union[Union[str, "V1p5KeywordsStudy"], List[Union[str, "V1p5KeywordsStudy"]]])
+                   model_uri=AK_SCHEMA.V1p5keywords_study, domain=None, range=Optional[Union[Union[str, "V1p5KeywordsStudy"], List[Union[str, "V1p5KeywordsStudy"]]]])
 
 slots.V1p5adc_publish_date = Slot(uri=AK_SCHEMA.V1p5adc_publish_date, name="V1p5adc_publish_date", curie=AK_SCHEMA.curie('V1p5adc_publish_date'),
                    model_uri=AK_SCHEMA.V1p5adc_publish_date, domain=None, range=Optional[Union[str, XSDDateTime]])
@@ -14371,43 +13341,43 @@ slots.V1p5adc_update_date = Slot(uri=AK_SCHEMA.V1p5adc_update_date, name="V1p5ad
                    model_uri=AK_SCHEMA.V1p5adc_update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p5subject_id = Slot(uri=AK_SCHEMA.V1p5subject_id, name="V1p5subject_id", curie=AK_SCHEMA.curie('V1p5subject_id'),
-                   model_uri=AK_SCHEMA.V1p5subject_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5subject_id, domain=None, range=Optional[str])
 
 slots.V1p5synthetic = Slot(uri=AK_SCHEMA.V1p5synthetic, name="V1p5synthetic", curie=AK_SCHEMA.curie('V1p5synthetic'),
-                   model_uri=AK_SCHEMA.V1p5synthetic, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p5synthetic, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5sex = Slot(uri=AK_SCHEMA.V1p5sex, name="V1p5sex", curie=AK_SCHEMA.curie('V1p5sex'),
-                   model_uri=AK_SCHEMA.V1p5sex, domain=None, range=Union[str, "V1p5Sex"])
+                   model_uri=AK_SCHEMA.V1p5sex, domain=None, range=Optional[Union[str, "V1p5Sex"]])
 
 slots.V1p5age_min = Slot(uri=AK_SCHEMA.V1p5age_min, name="V1p5age_min", curie=AK_SCHEMA.curie('V1p5age_min'),
-                   model_uri=AK_SCHEMA.V1p5age_min, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p5age_min, domain=None, range=Optional[float])
 
 slots.V1p5age_max = Slot(uri=AK_SCHEMA.V1p5age_max, name="V1p5age_max", curie=AK_SCHEMA.curie('V1p5age_max'),
-                   model_uri=AK_SCHEMA.V1p5age_max, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p5age_max, domain=None, range=Optional[float])
 
 slots.V1p5age_unit = Slot(uri=AK_SCHEMA.V1p5age_unit, name="V1p5age_unit", curie=AK_SCHEMA.curie('V1p5age_unit'),
-                   model_uri=AK_SCHEMA.V1p5age_unit, domain=None, range=Union[str, "V1p5AgeUnit"])
+                   model_uri=AK_SCHEMA.V1p5age_unit, domain=None, range=Optional[Union[str, "V1p5AgeUnit"]])
 
 slots.V1p5age_event = Slot(uri=AK_SCHEMA.V1p5age_event, name="V1p5age_event", curie=AK_SCHEMA.curie('V1p5age_event'),
-                   model_uri=AK_SCHEMA.V1p5age_event, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5age_event, domain=None, range=Optional[str])
 
 slots.V1p5ancestry_population = Slot(uri=AK_SCHEMA.V1p5ancestry_population, name="V1p5ancestry_population", curie=AK_SCHEMA.curie('V1p5ancestry_population'),
-                   model_uri=AK_SCHEMA.V1p5ancestry_population, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5ancestry_population, domain=None, range=Optional[str])
 
 slots.V1p5ethnicity = Slot(uri=AK_SCHEMA.V1p5ethnicity, name="V1p5ethnicity", curie=AK_SCHEMA.curie('V1p5ethnicity'),
-                   model_uri=AK_SCHEMA.V1p5ethnicity, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5ethnicity, domain=None, range=Optional[str])
 
 slots.V1p5race = Slot(uri=AK_SCHEMA.V1p5race, name="V1p5race", curie=AK_SCHEMA.curie('V1p5race'),
-                   model_uri=AK_SCHEMA.V1p5race, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5race, domain=None, range=Optional[str])
 
 slots.V1p5strain_name = Slot(uri=AK_SCHEMA.V1p5strain_name, name="V1p5strain_name", curie=AK_SCHEMA.curie('V1p5strain_name'),
-                   model_uri=AK_SCHEMA.V1p5strain_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5strain_name, domain=None, range=Optional[str])
 
 slots.V1p5linked_subjects = Slot(uri=AK_SCHEMA.V1p5linked_subjects, name="V1p5linked_subjects", curie=AK_SCHEMA.curie('V1p5linked_subjects'),
-                   model_uri=AK_SCHEMA.V1p5linked_subjects, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5linked_subjects, domain=None, range=Optional[str])
 
 slots.V1p5link_type = Slot(uri=RDF.type, name="V1p5link_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5link_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5link_type, domain=None, range=Optional[str])
 
 slots.V1p5diagnosis = Slot(uri=AK_SCHEMA.V1p5diagnosis, name="V1p5diagnosis", curie=AK_SCHEMA.curie('V1p5diagnosis'),
                    model_uri=AK_SCHEMA.V1p5diagnosis, domain=None, range=Optional[Union[Union[dict, V1p5Diagnosis], List[Union[dict, V1p5Diagnosis]]]])
@@ -14416,172 +13386,172 @@ slots.V1p5genotype = Slot(uri=AK_SCHEMA.V1p5genotype, name="V1p5genotype", curie
                    model_uri=AK_SCHEMA.V1p5genotype, domain=None, range=Optional[Union[dict, V1p5SubjectGenotype]])
 
 slots.V1p5study_group_description = Slot(uri=AK_SCHEMA.V1p5study_group_description, name="V1p5study_group_description", curie=AK_SCHEMA.curie('V1p5study_group_description'),
-                   model_uri=AK_SCHEMA.V1p5study_group_description, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5study_group_description, domain=None, range=Optional[str])
 
 slots.V1p5disease_diagnosis = Slot(uri=AK_SCHEMA.V1p5disease_diagnosis, name="V1p5disease_diagnosis", curie=AK_SCHEMA.curie('V1p5disease_diagnosis'),
-                   model_uri=AK_SCHEMA.V1p5disease_diagnosis, domain=None, range=Union[str, "V1p5DiseaseDiagnosis"])
+                   model_uri=AK_SCHEMA.V1p5disease_diagnosis, domain=None, range=Optional[Union[str, "V1p5DiseaseDiagnosis"]])
 
 slots.V1p5disease_length = Slot(uri=AK_SCHEMA.V1p5disease_length, name="V1p5disease_length", curie=AK_SCHEMA.curie('V1p5disease_length'),
-                   model_uri=AK_SCHEMA.V1p5disease_length, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5disease_length, domain=None, range=Optional[str])
 
 slots.V1p5disease_stage = Slot(uri=AK_SCHEMA.V1p5disease_stage, name="V1p5disease_stage", curie=AK_SCHEMA.curie('V1p5disease_stage'),
-                   model_uri=AK_SCHEMA.V1p5disease_stage, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5disease_stage, domain=None, range=Optional[str])
 
 slots.V1p5prior_therapies = Slot(uri=AK_SCHEMA.V1p5prior_therapies, name="V1p5prior_therapies", curie=AK_SCHEMA.curie('V1p5prior_therapies'),
-                   model_uri=AK_SCHEMA.V1p5prior_therapies, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5prior_therapies, domain=None, range=Optional[str])
 
 slots.V1p5immunogen = Slot(uri=AK_SCHEMA.V1p5immunogen, name="V1p5immunogen", curie=AK_SCHEMA.curie('V1p5immunogen'),
-                   model_uri=AK_SCHEMA.V1p5immunogen, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5immunogen, domain=None, range=Optional[str])
 
 slots.V1p5intervention = Slot(uri=AK_SCHEMA.V1p5intervention, name="V1p5intervention", curie=AK_SCHEMA.curie('V1p5intervention'),
-                   model_uri=AK_SCHEMA.V1p5intervention, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5intervention, domain=None, range=Optional[str])
 
 slots.V1p5medical_history = Slot(uri=AK_SCHEMA.V1p5medical_history, name="V1p5medical_history", curie=AK_SCHEMA.curie('V1p5medical_history'),
-                   model_uri=AK_SCHEMA.V1p5medical_history, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5medical_history, domain=None, range=Optional[str])
 
 slots.V1p5sample_id = Slot(uri=AK_SCHEMA.V1p5sample_id, name="V1p5sample_id", curie=AK_SCHEMA.curie('V1p5sample_id'),
-                   model_uri=AK_SCHEMA.V1p5sample_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sample_id, domain=None, range=Optional[str])
 
 slots.V1p5sample_type = Slot(uri=RDF.type, name="V1p5sample_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5sample_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sample_type, domain=None, range=Optional[str])
 
 slots.V1p5tissue = Slot(uri=AK_SCHEMA.V1p5tissue, name="V1p5tissue", curie=AK_SCHEMA.curie('V1p5tissue'),
-                   model_uri=AK_SCHEMA.V1p5tissue, domain=None, range=Union[str, "V1p5Tissue"])
+                   model_uri=AK_SCHEMA.V1p5tissue, domain=None, range=Optional[Union[str, "V1p5Tissue"]])
 
 slots.V1p5anatomic_site = Slot(uri=AK_SCHEMA.V1p5anatomic_site, name="V1p5anatomic_site", curie=AK_SCHEMA.curie('V1p5anatomic_site'),
-                   model_uri=AK_SCHEMA.V1p5anatomic_site, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5anatomic_site, domain=None, range=Optional[str])
 
 slots.V1p5disease_state_sample = Slot(uri=AK_SCHEMA.V1p5disease_state_sample, name="V1p5disease_state_sample", curie=AK_SCHEMA.curie('V1p5disease_state_sample'),
-                   model_uri=AK_SCHEMA.V1p5disease_state_sample, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5disease_state_sample, domain=None, range=Optional[str])
 
 slots.V1p5collection_time_point_relative = Slot(uri=AK_SCHEMA.V1p5collection_time_point_relative, name="V1p5collection_time_point_relative", curie=AK_SCHEMA.curie('V1p5collection_time_point_relative'),
-                   model_uri=AK_SCHEMA.V1p5collection_time_point_relative, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p5collection_time_point_relative, domain=None, range=Optional[float])
 
 slots.V1p5collection_time_point_relative_unit = Slot(uri=AK_SCHEMA.V1p5collection_time_point_relative_unit, name="V1p5collection_time_point_relative_unit", curie=AK_SCHEMA.curie('V1p5collection_time_point_relative_unit'),
-                   model_uri=AK_SCHEMA.V1p5collection_time_point_relative_unit, domain=None, range=Union[str, "V1p5CollectionTimePointRelativeUnit"])
+                   model_uri=AK_SCHEMA.V1p5collection_time_point_relative_unit, domain=None, range=Optional[Union[str, "V1p5CollectionTimePointRelativeUnit"]])
 
 slots.V1p5collection_time_point_reference = Slot(uri=AK_SCHEMA.V1p5collection_time_point_reference, name="V1p5collection_time_point_reference", curie=AK_SCHEMA.curie('V1p5collection_time_point_reference'),
-                   model_uri=AK_SCHEMA.V1p5collection_time_point_reference, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5collection_time_point_reference, domain=None, range=Optional[str])
 
 slots.V1p5biomaterial_provider = Slot(uri=AK_SCHEMA.V1p5biomaterial_provider, name="V1p5biomaterial_provider", curie=AK_SCHEMA.curie('V1p5biomaterial_provider'),
-                   model_uri=AK_SCHEMA.V1p5biomaterial_provider, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5biomaterial_provider, domain=None, range=Optional[str])
 
 slots.V1p5tissue_processing = Slot(uri=AK_SCHEMA.V1p5tissue_processing, name="V1p5tissue_processing", curie=AK_SCHEMA.curie('V1p5tissue_processing'),
-                   model_uri=AK_SCHEMA.V1p5tissue_processing, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5tissue_processing, domain=None, range=Optional[str])
 
 slots.V1p5cell_subset = Slot(uri=AK_SCHEMA.V1p5cell_subset, name="V1p5cell_subset", curie=AK_SCHEMA.curie('V1p5cell_subset'),
-                   model_uri=AK_SCHEMA.V1p5cell_subset, domain=None, range=Union[str, "V1p5CellSubset"])
+                   model_uri=AK_SCHEMA.V1p5cell_subset, domain=None, range=Optional[Union[str, "V1p5CellSubset"]])
 
 slots.V1p5cell_phenotype = Slot(uri=AK_SCHEMA.V1p5cell_phenotype, name="V1p5cell_phenotype", curie=AK_SCHEMA.curie('V1p5cell_phenotype'),
-                   model_uri=AK_SCHEMA.V1p5cell_phenotype, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5cell_phenotype, domain=None, range=Optional[str])
 
 slots.V1p5cell_species = Slot(uri=AK_SCHEMA.V1p5cell_species, name="V1p5cell_species", curie=AK_SCHEMA.curie('V1p5cell_species'),
                    model_uri=AK_SCHEMA.V1p5cell_species, domain=None, range=Optional[Union[str, "V1p5CellSpecies"]])
 
 slots.V1p5single_cell = Slot(uri=AK_SCHEMA.V1p5single_cell, name="V1p5single_cell", curie=AK_SCHEMA.curie('V1p5single_cell'),
-                   model_uri=AK_SCHEMA.V1p5single_cell, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p5single_cell, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5cell_number = Slot(uri=AK_SCHEMA.V1p5cell_number, name="V1p5cell_number", curie=AK_SCHEMA.curie('V1p5cell_number'),
-                   model_uri=AK_SCHEMA.V1p5cell_number, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5cell_number, domain=None, range=Optional[int])
 
 slots.V1p5cells_per_reaction = Slot(uri=AK_SCHEMA.V1p5cells_per_reaction, name="V1p5cells_per_reaction", curie=AK_SCHEMA.curie('V1p5cells_per_reaction'),
-                   model_uri=AK_SCHEMA.V1p5cells_per_reaction, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5cells_per_reaction, domain=None, range=Optional[int])
 
 slots.V1p5cell_storage = Slot(uri=AK_SCHEMA.V1p5cell_storage, name="V1p5cell_storage", curie=AK_SCHEMA.curie('V1p5cell_storage'),
-                   model_uri=AK_SCHEMA.V1p5cell_storage, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p5cell_storage, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5cell_quality = Slot(uri=AK_SCHEMA.V1p5cell_quality, name="V1p5cell_quality", curie=AK_SCHEMA.curie('V1p5cell_quality'),
-                   model_uri=AK_SCHEMA.V1p5cell_quality, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5cell_quality, domain=None, range=Optional[str])
 
 slots.V1p5cell_isolation = Slot(uri=AK_SCHEMA.V1p5cell_isolation, name="V1p5cell_isolation", curie=AK_SCHEMA.curie('V1p5cell_isolation'),
-                   model_uri=AK_SCHEMA.V1p5cell_isolation, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5cell_isolation, domain=None, range=Optional[str])
 
 slots.V1p5cell_processing_protocol = Slot(uri=AK_SCHEMA.V1p5cell_processing_protocol, name="V1p5cell_processing_protocol", curie=AK_SCHEMA.curie('V1p5cell_processing_protocol'),
-                   model_uri=AK_SCHEMA.V1p5cell_processing_protocol, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5cell_processing_protocol, domain=None, range=Optional[str])
 
 slots.V1p5pcr_target_locus = Slot(uri=AK_SCHEMA.V1p5pcr_target_locus, name="V1p5pcr_target_locus", curie=AK_SCHEMA.curie('V1p5pcr_target_locus'),
-                   model_uri=AK_SCHEMA.V1p5pcr_target_locus, domain=None, range=Union[str, "V1p5PcrTargetLocus"])
+                   model_uri=AK_SCHEMA.V1p5pcr_target_locus, domain=None, range=Optional[Union[str, "V1p5PcrTargetLocus"]])
 
 slots.V1p5forward_pcr_primer_target_location = Slot(uri=AK_SCHEMA.V1p5forward_pcr_primer_target_location, name="V1p5forward_pcr_primer_target_location", curie=AK_SCHEMA.curie('V1p5forward_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.V1p5forward_pcr_primer_target_location, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5forward_pcr_primer_target_location, domain=None, range=Optional[str])
 
 slots.V1p5reverse_pcr_primer_target_location = Slot(uri=AK_SCHEMA.V1p5reverse_pcr_primer_target_location, name="V1p5reverse_pcr_primer_target_location", curie=AK_SCHEMA.curie('V1p5reverse_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.V1p5reverse_pcr_primer_target_location, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5reverse_pcr_primer_target_location, domain=None, range=Optional[str])
 
 slots.V1p5template_class = Slot(uri=AK_SCHEMA.V1p5template_class, name="V1p5template_class", curie=AK_SCHEMA.curie('V1p5template_class'),
-                   model_uri=AK_SCHEMA.V1p5template_class, domain=None, range=Union[str, "V1p5TemplateClass"])
+                   model_uri=AK_SCHEMA.V1p5template_class, domain=None, range=Optional[Union[str, "V1p5TemplateClass"]])
 
 slots.V1p5template_quality = Slot(uri=AK_SCHEMA.V1p5template_quality, name="V1p5template_quality", curie=AK_SCHEMA.curie('V1p5template_quality'),
-                   model_uri=AK_SCHEMA.V1p5template_quality, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5template_quality, domain=None, range=Optional[str])
 
 slots.V1p5template_amount = Slot(uri=AK_SCHEMA.V1p5template_amount, name="V1p5template_amount", curie=AK_SCHEMA.curie('V1p5template_amount'),
-                   model_uri=AK_SCHEMA.V1p5template_amount, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p5template_amount, domain=None, range=Optional[float])
 
 slots.V1p5template_amount_unit = Slot(uri=AK_SCHEMA.V1p5template_amount_unit, name="V1p5template_amount_unit", curie=AK_SCHEMA.curie('V1p5template_amount_unit'),
-                   model_uri=AK_SCHEMA.V1p5template_amount_unit, domain=None, range=Union[str, "V1p5TemplateAmountUnit"])
+                   model_uri=AK_SCHEMA.V1p5template_amount_unit, domain=None, range=Optional[Union[str, "V1p5TemplateAmountUnit"]])
 
 slots.V1p5library_generation_method = Slot(uri=AK_SCHEMA.V1p5library_generation_method, name="V1p5library_generation_method", curie=AK_SCHEMA.curie('V1p5library_generation_method'),
-                   model_uri=AK_SCHEMA.V1p5library_generation_method, domain=None, range=Union[str, "V1p5LibraryGenerationMethod"])
+                   model_uri=AK_SCHEMA.V1p5library_generation_method, domain=None, range=Optional[Union[str, "V1p5LibraryGenerationMethod"]])
 
 slots.V1p5library_generation_protocol = Slot(uri=AK_SCHEMA.V1p5library_generation_protocol, name="V1p5library_generation_protocol", curie=AK_SCHEMA.curie('V1p5library_generation_protocol'),
-                   model_uri=AK_SCHEMA.V1p5library_generation_protocol, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5library_generation_protocol, domain=None, range=Optional[str])
 
 slots.V1p5library_generation_kit_version = Slot(uri=AK_SCHEMA.V1p5library_generation_kit_version, name="V1p5library_generation_kit_version", curie=AK_SCHEMA.curie('V1p5library_generation_kit_version'),
-                   model_uri=AK_SCHEMA.V1p5library_generation_kit_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5library_generation_kit_version, domain=None, range=Optional[str])
 
 slots.V1p5pcr_target = Slot(uri=AK_SCHEMA.V1p5pcr_target, name="V1p5pcr_target", curie=AK_SCHEMA.curie('V1p5pcr_target'),
                    model_uri=AK_SCHEMA.V1p5pcr_target, domain=None, range=Optional[Union[Union[dict, V1p5PCRTarget], List[Union[dict, V1p5PCRTarget]]]])
 
 slots.V1p5complete_sequences = Slot(uri=AK_SCHEMA.V1p5complete_sequences, name="V1p5complete_sequences", curie=AK_SCHEMA.curie('V1p5complete_sequences'),
-                   model_uri=AK_SCHEMA.V1p5complete_sequences, domain=None, range=Union[str, "V1p5CompleteSequences"])
+                   model_uri=AK_SCHEMA.V1p5complete_sequences, domain=None, range=Optional[Union[str, "V1p5CompleteSequences"]])
 
 slots.V1p5physical_linkage = Slot(uri=AK_SCHEMA.V1p5physical_linkage, name="V1p5physical_linkage", curie=AK_SCHEMA.curie('V1p5physical_linkage'),
-                   model_uri=AK_SCHEMA.V1p5physical_linkage, domain=None, range=Union[str, "V1p5PhysicalLinkage"])
+                   model_uri=AK_SCHEMA.V1p5physical_linkage, domain=None, range=Optional[Union[str, "V1p5PhysicalLinkage"]])
 
 slots.V1p5sequencing_run_id = Slot(uri=AK_SCHEMA.V1p5sequencing_run_id, name="V1p5sequencing_run_id", curie=AK_SCHEMA.curie('V1p5sequencing_run_id'),
-                   model_uri=AK_SCHEMA.V1p5sequencing_run_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequencing_run_id, domain=None, range=Optional[str])
 
 slots.V1p5total_reads_passing_qc_filter = Slot(uri=AK_SCHEMA.V1p5total_reads_passing_qc_filter, name="V1p5total_reads_passing_qc_filter", curie=AK_SCHEMA.curie('V1p5total_reads_passing_qc_filter'),
-                   model_uri=AK_SCHEMA.V1p5total_reads_passing_qc_filter, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5total_reads_passing_qc_filter, domain=None, range=Optional[int])
 
 slots.V1p5sequencing_platform = Slot(uri=AK_SCHEMA.V1p5sequencing_platform, name="V1p5sequencing_platform", curie=AK_SCHEMA.curie('V1p5sequencing_platform'),
-                   model_uri=AK_SCHEMA.V1p5sequencing_platform, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequencing_platform, domain=None, range=Optional[str])
 
 slots.V1p5sequencing_facility = Slot(uri=AK_SCHEMA.V1p5sequencing_facility, name="V1p5sequencing_facility", curie=AK_SCHEMA.curie('V1p5sequencing_facility'),
-                   model_uri=AK_SCHEMA.V1p5sequencing_facility, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequencing_facility, domain=None, range=Optional[str])
 
 slots.V1p5sequencing_run_date = Slot(uri=AK_SCHEMA.V1p5sequencing_run_date, name="V1p5sequencing_run_date", curie=AK_SCHEMA.curie('V1p5sequencing_run_date'),
-                   model_uri=AK_SCHEMA.V1p5sequencing_run_date, domain=None, range=Union[str, XSDDateTime])
+                   model_uri=AK_SCHEMA.V1p5sequencing_run_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p5sequencing_kit = Slot(uri=AK_SCHEMA.V1p5sequencing_kit, name="V1p5sequencing_kit", curie=AK_SCHEMA.curie('V1p5sequencing_kit'),
-                   model_uri=AK_SCHEMA.V1p5sequencing_kit, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequencing_kit, domain=None, range=Optional[str])
 
 slots.V1p5sequencing_files = Slot(uri=AK_SCHEMA.V1p5sequencing_files, name="V1p5sequencing_files", curie=AK_SCHEMA.curie('V1p5sequencing_files'),
                    model_uri=AK_SCHEMA.V1p5sequencing_files, domain=None, range=Optional[Union[dict, V1p5SequencingData]])
 
 slots.V1p5sequencing_data_id = Slot(uri=AK_SCHEMA.V1p5sequencing_data_id, name="V1p5sequencing_data_id", curie=AK_SCHEMA.curie('V1p5sequencing_data_id'),
-                   model_uri=AK_SCHEMA.V1p5sequencing_data_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequencing_data_id, domain=None, range=Optional[str])
 
 slots.V1p5file_type = Slot(uri=RDF.type, name="V1p5file_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5file_type, domain=None, range=Union[str, "V1p5FileType"])
+                   model_uri=AK_SCHEMA.V1p5file_type, domain=None, range=Optional[Union[str, "V1p5FileType"]])
 
 slots.V1p5filename = Slot(uri=AK_SCHEMA.V1p5filename, name="V1p5filename", curie=AK_SCHEMA.curie('V1p5filename'),
-                   model_uri=AK_SCHEMA.V1p5filename, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5filename, domain=None, range=Optional[str])
 
 slots.V1p5read_direction = Slot(uri=AK_SCHEMA.V1p5read_direction, name="V1p5read_direction", curie=AK_SCHEMA.curie('V1p5read_direction'),
-                   model_uri=AK_SCHEMA.V1p5read_direction, domain=None, range=Union[str, "V1p5ReadDirection"])
+                   model_uri=AK_SCHEMA.V1p5read_direction, domain=None, range=Optional[Union[str, "V1p5ReadDirection"]])
 
 slots.V1p5read_length = Slot(uri=AK_SCHEMA.V1p5read_length, name="V1p5read_length", curie=AK_SCHEMA.curie('V1p5read_length'),
-                   model_uri=AK_SCHEMA.V1p5read_length, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5read_length, domain=None, range=Optional[int])
 
 slots.V1p5paired_filename = Slot(uri=AK_SCHEMA.V1p5paired_filename, name="V1p5paired_filename", curie=AK_SCHEMA.curie('V1p5paired_filename'),
-                   model_uri=AK_SCHEMA.V1p5paired_filename, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5paired_filename, domain=None, range=Optional[str])
 
 slots.V1p5paired_read_direction = Slot(uri=AK_SCHEMA.V1p5paired_read_direction, name="V1p5paired_read_direction", curie=AK_SCHEMA.curie('V1p5paired_read_direction'),
-                   model_uri=AK_SCHEMA.V1p5paired_read_direction, domain=None, range=Union[str, "V1p5PairedReadDirection"])
+                   model_uri=AK_SCHEMA.V1p5paired_read_direction, domain=None, range=Optional[Union[str, "V1p5PairedReadDirection"]])
 
 slots.V1p5paired_read_length = Slot(uri=AK_SCHEMA.V1p5paired_read_length, name="V1p5paired_read_length", curie=AK_SCHEMA.curie('V1p5paired_read_length'),
-                   model_uri=AK_SCHEMA.V1p5paired_read_length, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5paired_read_length, domain=None, range=Optional[int])
 
 slots.V1p5index_filename = Slot(uri=AK_SCHEMA.V1p5index_filename, name="V1p5index_filename", curie=AK_SCHEMA.curie('V1p5index_filename'),
                    model_uri=AK_SCHEMA.V1p5index_filename, domain=None, range=Optional[str])
@@ -14596,28 +13566,28 @@ slots.V1p5primary_annotation = Slot(uri=AK_SCHEMA.V1p5primary_annotation, name="
                    model_uri=AK_SCHEMA.V1p5primary_annotation, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5software_versions = Slot(uri=AK_SCHEMA.V1p5software_versions, name="V1p5software_versions", curie=AK_SCHEMA.curie('V1p5software_versions'),
-                   model_uri=AK_SCHEMA.V1p5software_versions, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5software_versions, domain=None, range=Optional[str])
 
 slots.V1p5paired_reads_assembly = Slot(uri=AK_SCHEMA.V1p5paired_reads_assembly, name="V1p5paired_reads_assembly", curie=AK_SCHEMA.curie('V1p5paired_reads_assembly'),
-                   model_uri=AK_SCHEMA.V1p5paired_reads_assembly, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5paired_reads_assembly, domain=None, range=Optional[str])
 
 slots.V1p5quality_thresholds = Slot(uri=AK_SCHEMA.V1p5quality_thresholds, name="V1p5quality_thresholds", curie=AK_SCHEMA.curie('V1p5quality_thresholds'),
-                   model_uri=AK_SCHEMA.V1p5quality_thresholds, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5quality_thresholds, domain=None, range=Optional[str])
 
 slots.V1p5primer_match_cutoffs = Slot(uri=AK_SCHEMA.V1p5primer_match_cutoffs, name="V1p5primer_match_cutoffs", curie=AK_SCHEMA.curie('V1p5primer_match_cutoffs'),
-                   model_uri=AK_SCHEMA.V1p5primer_match_cutoffs, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5primer_match_cutoffs, domain=None, range=Optional[str])
 
 slots.V1p5collapsing_method = Slot(uri=AK_SCHEMA.V1p5collapsing_method, name="V1p5collapsing_method", curie=AK_SCHEMA.curie('V1p5collapsing_method'),
-                   model_uri=AK_SCHEMA.V1p5collapsing_method, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5collapsing_method, domain=None, range=Optional[str])
 
 slots.V1p5data_processing_protocols = Slot(uri=AK_SCHEMA.V1p5data_processing_protocols, name="V1p5data_processing_protocols", curie=AK_SCHEMA.curie('V1p5data_processing_protocols'),
-                   model_uri=AK_SCHEMA.V1p5data_processing_protocols, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5data_processing_protocols, domain=None, range=Optional[str])
 
 slots.V1p5data_processing_files = Slot(uri=AK_SCHEMA.V1p5data_processing_files, name="V1p5data_processing_files", curie=AK_SCHEMA.curie('V1p5data_processing_files'),
                    model_uri=AK_SCHEMA.V1p5data_processing_files, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p5germline_database = Slot(uri=AK_SCHEMA.V1p5germline_database, name="V1p5germline_database", curie=AK_SCHEMA.curie('V1p5germline_database'),
-                   model_uri=AK_SCHEMA.V1p5germline_database, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5germline_database, domain=None, range=Optional[str])
 
 slots.V1p5analysis_provenance_id = Slot(uri=AK_SCHEMA.V1p5analysis_provenance_id, name="V1p5analysis_provenance_id", curie=AK_SCHEMA.curie('V1p5analysis_provenance_id'),
                    model_uri=AK_SCHEMA.V1p5analysis_provenance_id, domain=None, range=Optional[str])
@@ -14632,19 +13602,19 @@ slots.V1p5repertoire_description = Slot(uri=AK_SCHEMA.V1p5repertoire_description
                    model_uri=AK_SCHEMA.V1p5repertoire_description, domain=None, range=Optional[str])
 
 slots.V1p5study = Slot(uri=AK_SCHEMA.V1p5study, name="V1p5study", curie=AK_SCHEMA.curie('V1p5study'),
-                   model_uri=AK_SCHEMA.V1p5study, domain=None, range=Union[dict, V1p5Study])
+                   model_uri=AK_SCHEMA.V1p5study, domain=None, range=Optional[Union[dict, V1p5Study]])
 
 slots.V1p5subject = Slot(uri=AK_SCHEMA.V1p5subject, name="V1p5subject", curie=AK_SCHEMA.curie('V1p5subject'),
-                   model_uri=AK_SCHEMA.V1p5subject, domain=None, range=Union[dict, V1p5Subject])
+                   model_uri=AK_SCHEMA.V1p5subject, domain=None, range=Optional[Union[dict, V1p5Subject]])
 
 slots.V1p5sample = Slot(uri=AK_SCHEMA.V1p5sample, name="V1p5sample", curie=AK_SCHEMA.curie('V1p5sample'),
-                   model_uri=AK_SCHEMA.V1p5sample, domain=None, range=Union[Union[dict, V1p5SampleProcessing], List[Union[dict, V1p5SampleProcessing]]])
+                   model_uri=AK_SCHEMA.V1p5sample, domain=None, range=Optional[Union[Union[dict, V1p5SampleProcessing], List[Union[dict, V1p5SampleProcessing]]]])
 
 slots.V1p5data_processing = Slot(uri=AK_SCHEMA.V1p5data_processing, name="V1p5data_processing", curie=AK_SCHEMA.curie('V1p5data_processing'),
-                   model_uri=AK_SCHEMA.V1p5data_processing, domain=None, range=Union[Union[dict, V1p5DataProcessing], List[Union[dict, V1p5DataProcessing]]])
+                   model_uri=AK_SCHEMA.V1p5data_processing, domain=None, range=Optional[Union[Union[dict, V1p5DataProcessing], List[Union[dict, V1p5DataProcessing]]]])
 
 slots.V1p5repertoire_group_id = Slot(uri=AK_SCHEMA.V1p5repertoire_group_id, name="V1p5repertoire_group_id", curie=AK_SCHEMA.curie('V1p5repertoire_group_id'),
-                   model_uri=AK_SCHEMA.V1p5repertoire_group_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5repertoire_group_id, domain=None, range=Optional[str])
 
 slots.V1p5repertoire_group_name = Slot(uri=AK_SCHEMA.V1p5repertoire_group_name, name="V1p5repertoire_group_name", curie=AK_SCHEMA.curie('V1p5repertoire_group_name'),
                    model_uri=AK_SCHEMA.V1p5repertoire_group_name, domain=None, range=Optional[str])
@@ -14653,19 +13623,19 @@ slots.V1p5repertoire_group_description = Slot(uri=AK_SCHEMA.V1p5repertoire_group
                    model_uri=AK_SCHEMA.V1p5repertoire_group_description, domain=None, range=Optional[str])
 
 slots.V1p5repertoires = Slot(uri=AK_SCHEMA.V1p5repertoires, name="V1p5repertoires", curie=AK_SCHEMA.curie('V1p5repertoires'),
-                   model_uri=AK_SCHEMA.V1p5repertoires, domain=None, range=Union[str, List[str]])
+                   model_uri=AK_SCHEMA.V1p5repertoires, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p5segment = Slot(uri=AK_SCHEMA.V1p5segment, name="V1p5segment", curie=AK_SCHEMA.curie('V1p5segment'),
-                   model_uri=AK_SCHEMA.V1p5segment, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5segment, domain=None, range=Optional[str])
 
 slots.V1p5rev_comp = Slot(uri=AK_SCHEMA.V1p5rev_comp, name="V1p5rev_comp", curie=AK_SCHEMA.curie('V1p5rev_comp'),
                    model_uri=AK_SCHEMA.V1p5rev_comp, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5call = Slot(uri=AK_SCHEMA.V1p5call, name="V1p5call", curie=AK_SCHEMA.curie('V1p5call'),
-                   model_uri=AK_SCHEMA.V1p5call, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5call, domain=None, range=Optional[str])
 
 slots.V1p5score = Slot(uri=AK_SCHEMA.V1p5score, name="V1p5score", curie=AK_SCHEMA.curie('V1p5score'),
-                   model_uri=AK_SCHEMA.V1p5score, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p5score, domain=None, range=Optional[float])
 
 slots.V1p5identity = Slot(uri=AK_SCHEMA.V1p5identity, name="V1p5identity", curie=AK_SCHEMA.curie('V1p5identity'),
                    model_uri=AK_SCHEMA.V1p5identity, domain=None, range=Optional[float])
@@ -14674,7 +13644,7 @@ slots.V1p5support = Slot(uri=AK_SCHEMA.V1p5support, name="V1p5support", curie=AK
                    model_uri=AK_SCHEMA.V1p5support, domain=None, range=Optional[float])
 
 slots.V1p5cigar = Slot(uri=AK_SCHEMA.V1p5cigar, name="V1p5cigar", curie=AK_SCHEMA.curie('V1p5cigar'),
-                   model_uri=AK_SCHEMA.V1p5cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5cigar, domain=None, range=Optional[str])
 
 slots.V1p5germline_start = Slot(uri=AK_SCHEMA.V1p5germline_start, name="V1p5germline_start", curie=AK_SCHEMA.curie('V1p5germline_start'),
                    model_uri=AK_SCHEMA.V1p5germline_start, domain=None, range=Optional[int])
@@ -14692,7 +13662,7 @@ slots.V1p5sequence_aa = Slot(uri=AK_SCHEMA.V1p5sequence_aa, name="V1p5sequence_a
                    model_uri=AK_SCHEMA.V1p5sequence_aa, domain=None, range=Optional[str])
 
 slots.V1p5productive = Slot(uri=AK_SCHEMA.V1p5productive, name="V1p5productive", curie=AK_SCHEMA.curie('V1p5productive'),
-                   model_uri=AK_SCHEMA.V1p5productive, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p5productive, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5vj_in_frame = Slot(uri=AK_SCHEMA.V1p5vj_in_frame, name="V1p5vj_in_frame", curie=AK_SCHEMA.curie('V1p5vj_in_frame'),
                    model_uri=AK_SCHEMA.V1p5vj_in_frame, domain=None, range=Optional[Union[bool, Bool]])
@@ -14728,7 +13698,7 @@ slots.V1p5sequence_alignment_aa = Slot(uri=AK_SCHEMA.V1p5sequence_alignment_aa, 
                    model_uri=AK_SCHEMA.V1p5sequence_alignment_aa, domain=None, range=Optional[str])
 
 slots.V1p5germline_alignment = Slot(uri=AK_SCHEMA.V1p5germline_alignment, name="V1p5germline_alignment", curie=AK_SCHEMA.curie('V1p5germline_alignment'),
-                   model_uri=AK_SCHEMA.V1p5germline_alignment, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5germline_alignment, domain=None, range=Optional[str])
 
 slots.V1p5germline_alignment_aa = Slot(uri=AK_SCHEMA.V1p5germline_alignment_aa, name="V1p5germline_alignment_aa", curie=AK_SCHEMA.curie('V1p5germline_alignment_aa'),
                    model_uri=AK_SCHEMA.V1p5germline_alignment_aa, domain=None, range=Optional[str])
@@ -14809,7 +13779,7 @@ slots.V1p5v_support = Slot(uri=AK_SCHEMA.V1p5v_support, name="V1p5v_support", cu
                    model_uri=AK_SCHEMA.V1p5v_support, domain=None, range=Optional[float])
 
 slots.V1p5v_cigar = Slot(uri=AK_SCHEMA.V1p5v_cigar, name="V1p5v_cigar", curie=AK_SCHEMA.curie('V1p5v_cigar'),
-                   model_uri=AK_SCHEMA.V1p5v_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5v_cigar, domain=None, range=Optional[str])
 
 slots.V1p5d_score = Slot(uri=AK_SCHEMA.V1p5d_score, name="V1p5d_score", curie=AK_SCHEMA.curie('V1p5d_score'),
                    model_uri=AK_SCHEMA.V1p5d_score, domain=None, range=Optional[float])
@@ -14821,7 +13791,7 @@ slots.V1p5d_support = Slot(uri=AK_SCHEMA.V1p5d_support, name="V1p5d_support", cu
                    model_uri=AK_SCHEMA.V1p5d_support, domain=None, range=Optional[float])
 
 slots.V1p5d_cigar = Slot(uri=AK_SCHEMA.V1p5d_cigar, name="V1p5d_cigar", curie=AK_SCHEMA.curie('V1p5d_cigar'),
-                   model_uri=AK_SCHEMA.V1p5d_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5d_cigar, domain=None, range=Optional[str])
 
 slots.V1p5d2_score = Slot(uri=AK_SCHEMA.V1p5d2_score, name="V1p5d2_score", curie=AK_SCHEMA.curie('V1p5d2_score'),
                    model_uri=AK_SCHEMA.V1p5d2_score, domain=None, range=Optional[float])
@@ -14845,7 +13815,7 @@ slots.V1p5j_support = Slot(uri=AK_SCHEMA.V1p5j_support, name="V1p5j_support", cu
                    model_uri=AK_SCHEMA.V1p5j_support, domain=None, range=Optional[float])
 
 slots.V1p5j_cigar = Slot(uri=AK_SCHEMA.V1p5j_cigar, name="V1p5j_cigar", curie=AK_SCHEMA.curie('V1p5j_cigar'),
-                   model_uri=AK_SCHEMA.V1p5j_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5j_cigar, domain=None, range=Optional[str])
 
 slots.V1p5c_score = Slot(uri=AK_SCHEMA.V1p5c_score, name="V1p5c_score", curie=AK_SCHEMA.curie('V1p5c_score'),
                    model_uri=AK_SCHEMA.V1p5c_score, domain=None, range=Optional[float])
@@ -15106,16 +14076,16 @@ slots.V1p5seed_id = Slot(uri=AK_SCHEMA.V1p5seed_id, name="V1p5seed_id", curie=AK
                    model_uri=AK_SCHEMA.V1p5seed_id, domain=None, range=Optional[str])
 
 slots.V1p5tree_id = Slot(uri=AK_SCHEMA.V1p5tree_id, name="V1p5tree_id", curie=AK_SCHEMA.curie('V1p5tree_id'),
-                   model_uri=AK_SCHEMA.V1p5tree_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5tree_id, domain=None, range=Optional[str])
 
 slots.V1p5newick = Slot(uri=AK_SCHEMA.V1p5newick, name="V1p5newick", curie=AK_SCHEMA.curie('V1p5newick'),
-                   model_uri=AK_SCHEMA.V1p5newick, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5newick, domain=None, range=Optional[str])
 
 slots.V1p5nodes = Slot(uri=AK_SCHEMA.V1p5nodes, name="V1p5nodes", curie=AK_SCHEMA.curie('V1p5nodes'),
                    model_uri=AK_SCHEMA.V1p5nodes, domain=None, range=Optional[Union[Union[dict, V1p5Node], List[Union[dict, V1p5Node]]]])
 
 slots.V1p5rearrangements = Slot(uri=AK_SCHEMA.V1p5rearrangements, name="V1p5rearrangements", curie=AK_SCHEMA.curie('V1p5rearrangements'),
-                   model_uri=AK_SCHEMA.V1p5rearrangements, domain=None, range=Union[str, List[str]])
+                   model_uri=AK_SCHEMA.V1p5rearrangements, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p5receptors = Slot(uri=AK_SCHEMA.V1p5receptors, name="V1p5receptors", curie=AK_SCHEMA.curie('V1p5receptors'),
                    model_uri=AK_SCHEMA.V1p5receptors, domain=None, range=Optional[Union[str, List[str]]])
@@ -15130,37 +14100,37 @@ slots.V1p5expression_index = Slot(uri=AK_SCHEMA.V1p5expression_index, name="V1p5
                    model_uri=AK_SCHEMA.V1p5expression_index, domain=None, range=Optional[str])
 
 slots.V1p5virtual_pairing = Slot(uri=AK_SCHEMA.V1p5virtual_pairing, name="V1p5virtual_pairing", curie=AK_SCHEMA.curie('V1p5virtual_pairing'),
-                   model_uri=AK_SCHEMA.V1p5virtual_pairing, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p5virtual_pairing, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p5expression_id = Slot(uri=AK_SCHEMA.V1p5expression_id, name="V1p5expression_id", curie=AK_SCHEMA.curie('V1p5expression_id'),
-                   model_uri=AK_SCHEMA.V1p5expression_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5expression_id, domain=None, range=Optional[str])
 
 slots.V1p5property_type = Slot(uri=RDF.type, name="V1p5property_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5property_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5property_type, domain=None, range=Optional[str])
 
 slots.V1p5property = Slot(uri=AK_SCHEMA.V1p5property, name="V1p5property", curie=AK_SCHEMA.curie('V1p5property'),
-                   model_uri=AK_SCHEMA.V1p5property, domain=None, range=Union[str, "V1p5Property"])
+                   model_uri=AK_SCHEMA.V1p5property, domain=None, range=Optional[Union[str, "V1p5Property"]])
 
 slots.V1p5receptor_id = Slot(uri=AK_SCHEMA.V1p5receptor_id, name="V1p5receptor_id", curie=AK_SCHEMA.curie('V1p5receptor_id'),
-                   model_uri=AK_SCHEMA.V1p5receptor_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5receptor_id, domain=None, range=Optional[str])
 
 slots.V1p5receptor_hash = Slot(uri=AK_SCHEMA.V1p5receptor_hash, name="V1p5receptor_hash", curie=AK_SCHEMA.curie('V1p5receptor_hash'),
-                   model_uri=AK_SCHEMA.V1p5receptor_hash, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5receptor_hash, domain=None, range=Optional[str])
 
 slots.V1p5receptor_type = Slot(uri=RDF.type, name="V1p5receptor_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5receptor_type, domain=None, range=Union[str, "V1p5ReceptorType"])
+                   model_uri=AK_SCHEMA.V1p5receptor_type, domain=None, range=Optional[Union[str, "V1p5ReceptorType"]])
 
 slots.V1p5receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.V1p5receptor_variable_domain_1_aa, name="V1p5receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('V1p5receptor_variable_domain_1_aa'),
-                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_1_aa, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_1_aa, domain=None, range=Optional[str])
 
 slots.V1p5receptor_variable_domain_1_locus = Slot(uri=AK_SCHEMA.V1p5receptor_variable_domain_1_locus, name="V1p5receptor_variable_domain_1_locus", curie=AK_SCHEMA.curie('V1p5receptor_variable_domain_1_locus'),
-                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_1_locus, domain=None, range=Union[str, "V1p5ReceptorVariableDomain1Locus"])
+                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_1_locus, domain=None, range=Optional[Union[str, "V1p5ReceptorVariableDomain1Locus"]])
 
 slots.V1p5receptor_variable_domain_2_aa = Slot(uri=AK_SCHEMA.V1p5receptor_variable_domain_2_aa, name="V1p5receptor_variable_domain_2_aa", curie=AK_SCHEMA.curie('V1p5receptor_variable_domain_2_aa'),
-                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_2_aa, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_2_aa, domain=None, range=Optional[str])
 
 slots.V1p5receptor_variable_domain_2_locus = Slot(uri=AK_SCHEMA.V1p5receptor_variable_domain_2_locus, name="V1p5receptor_variable_domain_2_locus", curie=AK_SCHEMA.curie('V1p5receptor_variable_domain_2_locus'),
-                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_2_locus, domain=None, range=Union[str, "V1p5ReceptorVariableDomain2Locus"])
+                   model_uri=AK_SCHEMA.V1p5receptor_variable_domain_2_locus, domain=None, range=Optional[Union[str, "V1p5ReceptorVariableDomain2Locus"]])
 
 slots.V1p5receptor_ref = Slot(uri=AK_SCHEMA.V1p5receptor_ref, name="V1p5receptor_ref", curie=AK_SCHEMA.curie('V1p5receptor_ref'),
                    model_uri=AK_SCHEMA.V1p5receptor_ref, domain=None, range=Optional[Union[str, List[str]]])
@@ -15169,13 +14139,13 @@ slots.V1p5reactivity_measurements = Slot(uri=AK_SCHEMA.V1p5reactivity_measuremen
                    model_uri=AK_SCHEMA.V1p5reactivity_measurements, domain=None, range=Optional[Union[Union[dict, V1p5ReceptorReactivity], List[Union[dict, V1p5ReceptorReactivity]]]])
 
 slots.V1p5ligand_type = Slot(uri=RDF.type, name="V1p5ligand_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5ligand_type, domain=None, range=Union[str, "V1p5LigandType"])
+                   model_uri=AK_SCHEMA.V1p5ligand_type, domain=None, range=Optional[Union[str, "V1p5LigandType"]])
 
 slots.V1p5antigen_type = Slot(uri=RDF.type, name="V1p5antigen_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p5antigen_type, domain=None, range=Union[str, "V1p5AntigenType"])
+                   model_uri=AK_SCHEMA.V1p5antigen_type, domain=None, range=Optional[Union[str, "V1p5AntigenType"]])
 
 slots.V1p5antigen = Slot(uri=AK_SCHEMA.V1p5antigen, name="V1p5antigen", curie=AK_SCHEMA.curie('V1p5antigen'),
-                   model_uri=AK_SCHEMA.V1p5antigen, domain=None, range=Union[str, "V1p5Antigen"])
+                   model_uri=AK_SCHEMA.V1p5antigen, domain=None, range=Optional[Union[str, "V1p5Antigen"]])
 
 slots.V1p5antigen_source_species = Slot(uri=AK_SCHEMA.V1p5antigen_source_species, name="V1p5antigen_source_species", curie=AK_SCHEMA.curie('V1p5antigen_source_species'),
                    model_uri=AK_SCHEMA.V1p5antigen_source_species, domain=None, range=Optional[Union[str, "V1p5AntigenSourceSpecies"]])
@@ -15199,16 +14169,16 @@ slots.V1p5mhc_allele_2 = Slot(uri=AK_SCHEMA.V1p5mhc_allele_2, name="V1p5mhc_alle
                    model_uri=AK_SCHEMA.V1p5mhc_allele_2, domain=None, range=Optional[str])
 
 slots.V1p5reactivity_method = Slot(uri=AK_SCHEMA.V1p5reactivity_method, name="V1p5reactivity_method", curie=AK_SCHEMA.curie('V1p5reactivity_method'),
-                   model_uri=AK_SCHEMA.V1p5reactivity_method, domain=None, range=Union[str, "V1p5ReactivityMethod"])
+                   model_uri=AK_SCHEMA.V1p5reactivity_method, domain=None, range=Optional[Union[str, "V1p5ReactivityMethod"]])
 
 slots.V1p5reactivity_readout = Slot(uri=AK_SCHEMA.V1p5reactivity_readout, name="V1p5reactivity_readout", curie=AK_SCHEMA.curie('V1p5reactivity_readout'),
-                   model_uri=AK_SCHEMA.V1p5reactivity_readout, domain=None, range=Union[str, "V1p5ReactivityReadout"])
+                   model_uri=AK_SCHEMA.V1p5reactivity_readout, domain=None, range=Optional[Union[str, "V1p5ReactivityReadout"]])
 
 slots.V1p5reactivity_value = Slot(uri=AK_SCHEMA.V1p5reactivity_value, name="V1p5reactivity_value", curie=AK_SCHEMA.curie('V1p5reactivity_value'),
-                   model_uri=AK_SCHEMA.V1p5reactivity_value, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p5reactivity_value, domain=None, range=Optional[float])
 
 slots.V1p5reactivity_unit = Slot(uri=AK_SCHEMA.V1p5reactivity_unit, name="V1p5reactivity_unit", curie=AK_SCHEMA.curie('V1p5reactivity_unit'),
-                   model_uri=AK_SCHEMA.V1p5reactivity_unit, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5reactivity_unit, domain=None, range=Optional[str])
 
 slots.V1p4label = Slot(uri=AK_SCHEMA.V1p4label, name="V1p4label", curie=AK_SCHEMA.curie('V1p4label'),
                    model_uri=AK_SCHEMA.V1p4label, domain=None, range=Optional[str])
@@ -15229,10 +14199,10 @@ slots.V1p4quantity = Slot(uri=AK_SCHEMA.V1p4quantity, name="V1p4quantity", curie
                    model_uri=AK_SCHEMA.V1p4quantity, domain=None, range=Optional[float])
 
 slots.V1p4contributor_id = Slot(uri=AK_SCHEMA.V1p4contributor_id, name="V1p4contributor_id", curie=AK_SCHEMA.curie('V1p4contributor_id'),
-                   model_uri=AK_SCHEMA.V1p4contributor_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4contributor_id, domain=None, range=Optional[str])
 
 slots.V1p4name = Slot(uri=AK_SCHEMA.V1p4name, name="V1p4name", curie=AK_SCHEMA.curie('V1p4name'),
-                   model_uri=AK_SCHEMA.V1p4name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4name, domain=None, range=Optional[str])
 
 slots.V1p4orcid_id = Slot(uri=AK_SCHEMA.V1p4orcid_id, name="V1p4orcid_id", curie=AK_SCHEMA.curie('V1p4orcid_id'),
                    model_uri=AK_SCHEMA.V1p4orcid_id, domain=None, range=Optional[Union[str, "V1p4OrcidId"]])
@@ -15247,34 +14217,34 @@ slots.V1p4contributions = Slot(uri=AK_SCHEMA.V1p4contributions, name="V1p4contri
                    model_uri=AK_SCHEMA.V1p4contributions, domain=None, range=Optional[Union[Union[dict, V1p4ContributorContribution], List[Union[dict, V1p4ContributorContribution]]]])
 
 slots.V1p4role = Slot(uri=AK_SCHEMA.V1p4role, name="V1p4role", curie=AK_SCHEMA.curie('V1p4role'),
-                   model_uri=AK_SCHEMA.V1p4role, domain=None, range=Union[str, "V1p4Role"])
+                   model_uri=AK_SCHEMA.V1p4role, domain=None, range=Optional[Union[str, "V1p4Role"]])
 
 slots.V1p4degree = Slot(uri=AK_SCHEMA.V1p4degree, name="V1p4degree", curie=AK_SCHEMA.curie('V1p4degree'),
                    model_uri=AK_SCHEMA.V1p4degree, domain=None, range=Optional[Union[str, "V1p4Degree"]])
 
 slots.V1p4sequence_id = Slot(uri=AK_SCHEMA.V1p4sequence_id, name="V1p4sequence_id", curie=AK_SCHEMA.curie('V1p4sequence_id'),
-                   model_uri=AK_SCHEMA.V1p4sequence_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequence_id, domain=None, range=Optional[str])
 
 slots.V1p4sequence = Slot(uri=AK_SCHEMA.V1p4sequence, name="V1p4sequence", curie=AK_SCHEMA.curie('V1p4sequence'),
-                   model_uri=AK_SCHEMA.V1p4sequence, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequence, domain=None, range=Optional[str])
 
 slots.V1p4derivation = Slot(uri=AK_SCHEMA.V1p4derivation, name="V1p4derivation", curie=AK_SCHEMA.curie('V1p4derivation'),
-                   model_uri=AK_SCHEMA.V1p4derivation, domain=None, range=Union[str, "V1p4Derivation"])
+                   model_uri=AK_SCHEMA.V1p4derivation, domain=None, range=Optional[Union[str, "V1p4Derivation"]])
 
 slots.V1p4observation_type = Slot(uri=RDF.type, name="V1p4observation_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4observation_type, domain=None, range=Union[str, "V1p4ObservationType"])
+                   model_uri=AK_SCHEMA.V1p4observation_type, domain=None, range=Optional[Union[str, "V1p4ObservationType"]])
 
 slots.V1p4curation = Slot(uri=AK_SCHEMA.V1p4curation, name="V1p4curation", curie=AK_SCHEMA.curie('V1p4curation'),
                    model_uri=AK_SCHEMA.V1p4curation, domain=None, range=Optional[str])
 
 slots.V1p4repository_name = Slot(uri=AK_SCHEMA.V1p4repository_name, name="V1p4repository_name", curie=AK_SCHEMA.curie('V1p4repository_name'),
-                   model_uri=AK_SCHEMA.V1p4repository_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4repository_name, domain=None, range=Optional[str])
 
 slots.V1p4repository_ref = Slot(uri=AK_SCHEMA.V1p4repository_ref, name="V1p4repository_ref", curie=AK_SCHEMA.curie('V1p4repository_ref'),
                    model_uri=AK_SCHEMA.V1p4repository_ref, domain=None, range=Optional[str])
 
 slots.V1p4deposited_version = Slot(uri=AK_SCHEMA.V1p4deposited_version, name="V1p4deposited_version", curie=AK_SCHEMA.curie('V1p4deposited_version'),
-                   model_uri=AK_SCHEMA.V1p4deposited_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4deposited_version, domain=None, range=Optional[str])
 
 slots.V1p4sequence_start = Slot(uri=AK_SCHEMA.V1p4sequence_start, name="V1p4sequence_start", curie=AK_SCHEMA.curie('V1p4sequence_start'),
                    model_uri=AK_SCHEMA.V1p4sequence_start, domain=None, range=Optional[int])
@@ -15286,22 +14256,22 @@ slots.V1p4patch_no = Slot(uri=AK_SCHEMA.V1p4patch_no, name="V1p4patch_no", curie
                    model_uri=AK_SCHEMA.V1p4patch_no, domain=None, range=Optional[str])
 
 slots.V1p4gff_seqid = Slot(uri=AK_SCHEMA.V1p4gff_seqid, name="V1p4gff_seqid", curie=AK_SCHEMA.curie('V1p4gff_seqid'),
-                   model_uri=AK_SCHEMA.V1p4gff_seqid, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4gff_seqid, domain=None, range=Optional[str])
 
 slots.V1p4gff_start = Slot(uri=AK_SCHEMA.V1p4gff_start, name="V1p4gff_start", curie=AK_SCHEMA.curie('V1p4gff_start'),
-                   model_uri=AK_SCHEMA.V1p4gff_start, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4gff_start, domain=None, range=Optional[int])
 
 slots.V1p4gff_end = Slot(uri=AK_SCHEMA.V1p4gff_end, name="V1p4gff_end", curie=AK_SCHEMA.curie('V1p4gff_end'),
-                   model_uri=AK_SCHEMA.V1p4gff_end, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4gff_end, domain=None, range=Optional[int])
 
 slots.V1p4strand = Slot(uri=AK_SCHEMA.V1p4strand, name="V1p4strand", curie=AK_SCHEMA.curie('V1p4strand'),
-                   model_uri=AK_SCHEMA.V1p4strand, domain=None, range=Union[str, "V1p4Strand"])
+                   model_uri=AK_SCHEMA.V1p4strand, domain=None, range=Optional[Union[str, "V1p4Strand"]])
 
 slots.V1p4sequence_delineation_id = Slot(uri=AK_SCHEMA.V1p4sequence_delineation_id, name="V1p4sequence_delineation_id", curie=AK_SCHEMA.curie('V1p4sequence_delineation_id'),
-                   model_uri=AK_SCHEMA.V1p4sequence_delineation_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequence_delineation_id, domain=None, range=Optional[str])
 
 slots.V1p4delineation_scheme = Slot(uri=AK_SCHEMA.V1p4delineation_scheme, name="V1p4delineation_scheme", curie=AK_SCHEMA.curie('V1p4delineation_scheme'),
-                   model_uri=AK_SCHEMA.V1p4delineation_scheme, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4delineation_scheme, domain=None, range=Optional[str])
 
 slots.V1p4unaligned_sequence = Slot(uri=AK_SCHEMA.V1p4unaligned_sequence, name="V1p4unaligned_sequence", curie=AK_SCHEMA.curie('V1p4unaligned_sequence'),
                    model_uri=AK_SCHEMA.V1p4unaligned_sequence, domain=None, range=Optional[str])
@@ -15346,25 +14316,25 @@ slots.V1p4alignment_labels = Slot(uri=AK_SCHEMA.V1p4alignment_labels, name="V1p4
                    model_uri=AK_SCHEMA.V1p4alignment_labels, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p4allele_description_id = Slot(uri=AK_SCHEMA.V1p4allele_description_id, name="V1p4allele_description_id", curie=AK_SCHEMA.curie('V1p4allele_description_id'),
-                   model_uri=AK_SCHEMA.V1p4allele_description_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4allele_description_id, domain=None, range=Optional[str])
 
 slots.V1p4allele_description_ref = Slot(uri=AK_SCHEMA.V1p4allele_description_ref, name="V1p4allele_description_ref", curie=AK_SCHEMA.curie('V1p4allele_description_ref'),
                    model_uri=AK_SCHEMA.V1p4allele_description_ref, domain=None, range=Optional[str])
 
 slots.V1p4acknowledgements = Slot(uri=AK_SCHEMA.V1p4acknowledgements, name="V1p4acknowledgements", curie=AK_SCHEMA.curie('V1p4acknowledgements'),
-                   model_uri=AK_SCHEMA.V1p4acknowledgements, domain=None, range=Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]])
+                   model_uri=AK_SCHEMA.V1p4acknowledgements, domain=None, range=Optional[Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]]])
 
 slots.V1p4release_version = Slot(uri=AK_SCHEMA.V1p4release_version, name="V1p4release_version", curie=AK_SCHEMA.curie('V1p4release_version'),
-                   model_uri=AK_SCHEMA.V1p4release_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4release_version, domain=None, range=Optional[str])
 
 slots.V1p4release_date = Slot(uri=AK_SCHEMA.V1p4release_date, name="V1p4release_date", curie=AK_SCHEMA.curie('V1p4release_date'),
-                   model_uri=AK_SCHEMA.V1p4release_date, domain=None, range=Union[str, XSDDateTime])
+                   model_uri=AK_SCHEMA.V1p4release_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p4release_description = Slot(uri=AK_SCHEMA.V1p4release_description, name="V1p4release_description", curie=AK_SCHEMA.curie('V1p4release_description'),
-                   model_uri=AK_SCHEMA.V1p4release_description, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4release_description, domain=None, range=Optional[str])
 
 slots.V1p4coding_sequence = Slot(uri=AK_SCHEMA.V1p4coding_sequence, name="V1p4coding_sequence", curie=AK_SCHEMA.curie('V1p4coding_sequence'),
-                   model_uri=AK_SCHEMA.V1p4coding_sequence, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4coding_sequence, domain=None, range=Optional[str])
 
 slots.V1p4aliases = Slot(uri=AK_SCHEMA.V1p4aliases, name="V1p4aliases", curie=AK_SCHEMA.curie('V1p4aliases'),
                    model_uri=AK_SCHEMA.V1p4aliases, domain=None, range=Optional[Union[str, List[str]]])
@@ -15376,16 +14346,16 @@ slots.V1p4chromosome = Slot(uri=AK_SCHEMA.V1p4chromosome, name="V1p4chromosome",
                    model_uri=AK_SCHEMA.V1p4chromosome, domain=None, range=Optional[int])
 
 slots.V1p4sequence_type = Slot(uri=RDF.type, name="V1p4sequence_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4sequence_type, domain=None, range=Union[str, "V1p4SequenceType"])
+                   model_uri=AK_SCHEMA.V1p4sequence_type, domain=None, range=Optional[Union[str, "V1p4SequenceType"]])
 
 slots.V1p4functional = Slot(uri=AK_SCHEMA.V1p4functional, name="V1p4functional", curie=AK_SCHEMA.curie('V1p4functional'),
-                   model_uri=AK_SCHEMA.V1p4functional, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p4functional, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4inference_type = Slot(uri=RDF.type, name="V1p4inference_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4inference_type, domain=None, range=Union[str, "V1p4InferenceType"])
+                   model_uri=AK_SCHEMA.V1p4inference_type, domain=None, range=Optional[Union[str, "V1p4InferenceType"]])
 
 slots.V1p4species = Slot(uri=AK_SCHEMA.V1p4species, name="V1p4species", curie=AK_SCHEMA.curie('V1p4species'),
-                   model_uri=AK_SCHEMA.V1p4species, domain=None, range=Union[str, "V1p4Species"])
+                   model_uri=AK_SCHEMA.V1p4species, domain=None, range=Optional[Union[str, "V1p4Species"]])
 
 slots.V1p4species_subgroup = Slot(uri=AK_SCHEMA.V1p4species_subgroup, name="V1p4species_subgroup", curie=AK_SCHEMA.curie('V1p4species_subgroup'),
                    model_uri=AK_SCHEMA.V1p4species_subgroup, domain=None, range=Optional[str])
@@ -15484,10 +14454,10 @@ slots.V1p4curational_tags = Slot(uri=AK_SCHEMA.V1p4curational_tags, name="V1p4cu
                    model_uri=AK_SCHEMA.V1p4curational_tags, domain=None, range=Optional[Union[Union[str, "V1p4CurationalTags"], List[Union[str, "V1p4CurationalTags"]]]])
 
 slots.V1p4germline_set_id = Slot(uri=AK_SCHEMA.V1p4germline_set_id, name="V1p4germline_set_id", curie=AK_SCHEMA.curie('V1p4germline_set_id'),
-                   model_uri=AK_SCHEMA.V1p4germline_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4germline_set_id, domain=None, range=Optional[str])
 
 slots.V1p4germline_set_name = Slot(uri=AK_SCHEMA.V1p4germline_set_name, name="V1p4germline_set_name", curie=AK_SCHEMA.curie('V1p4germline_set_name'),
-                   model_uri=AK_SCHEMA.V1p4germline_set_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4germline_set_name, domain=None, range=Optional[str])
 
 slots.V1p4germline_set_ref = Slot(uri=AK_SCHEMA.V1p4germline_set_ref, name="V1p4germline_set_ref", curie=AK_SCHEMA.curie('V1p4germline_set_ref'),
                    model_uri=AK_SCHEMA.V1p4germline_set_ref, domain=None, range=Optional[str])
@@ -15496,16 +14466,16 @@ slots.V1p4pub_ids = Slot(uri=AK_SCHEMA.V1p4pub_ids, name="V1p4pub_ids", curie=AK
                    model_uri=AK_SCHEMA.V1p4pub_ids, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p4allele_descriptions = Slot(uri=AK_SCHEMA.V1p4allele_descriptions, name="V1p4allele_descriptions", curie=AK_SCHEMA.curie('V1p4allele_descriptions'),
-                   model_uri=AK_SCHEMA.V1p4allele_descriptions, domain=None, range=Union[Union[dict, V1p4AlleleDescription], List[Union[dict, V1p4AlleleDescription]]])
+                   model_uri=AK_SCHEMA.V1p4allele_descriptions, domain=None, range=Optional[Union[Union[dict, V1p4AlleleDescription], List[Union[dict, V1p4AlleleDescription]]]])
 
 slots.V1p4receptor_genotype_set_id = Slot(uri=AK_SCHEMA.V1p4receptor_genotype_set_id, name="V1p4receptor_genotype_set_id", curie=AK_SCHEMA.curie('V1p4receptor_genotype_set_id'),
-                   model_uri=AK_SCHEMA.V1p4receptor_genotype_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4receptor_genotype_set_id, domain=None, range=Optional[str])
 
 slots.V1p4genotype_class_list = Slot(uri=AK_SCHEMA.V1p4genotype_class_list, name="V1p4genotype_class_list", curie=AK_SCHEMA.curie('V1p4genotype_class_list'),
                    model_uri=AK_SCHEMA.V1p4genotype_class_list, domain=None, range=Optional[Union[Union[dict, V1p4Genotype], List[Union[dict, V1p4Genotype]]]])
 
 slots.V1p4receptor_genotype_id = Slot(uri=AK_SCHEMA.V1p4receptor_genotype_id, name="V1p4receptor_genotype_id", curie=AK_SCHEMA.curie('V1p4receptor_genotype_id'),
-                   model_uri=AK_SCHEMA.V1p4receptor_genotype_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4receptor_genotype_id, domain=None, range=Optional[str])
 
 slots.V1p4documented_alleles = Slot(uri=AK_SCHEMA.V1p4documented_alleles, name="V1p4documented_alleles", curie=AK_SCHEMA.curie('V1p4documented_alleles'),
                    model_uri=AK_SCHEMA.V1p4documented_alleles, domain=None, range=Optional[Union[Union[dict, V1p4DocumentedAllele], List[Union[dict, V1p4DocumentedAllele]]]])
@@ -15523,22 +14493,22 @@ slots.V1p4phasing = Slot(uri=AK_SCHEMA.V1p4phasing, name="V1p4phasing", curie=AK
                    model_uri=AK_SCHEMA.V1p4phasing, domain=None, range=Optional[int])
 
 slots.V1p4allele_name = Slot(uri=AK_SCHEMA.V1p4allele_name, name="V1p4allele_name", curie=AK_SCHEMA.curie('V1p4allele_name'),
-                   model_uri=AK_SCHEMA.V1p4allele_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4allele_name, domain=None, range=Optional[str])
 
 slots.V1p4mhc_genotype_set_id = Slot(uri=AK_SCHEMA.V1p4mhc_genotype_set_id, name="V1p4mhc_genotype_set_id", curie=AK_SCHEMA.curie('V1p4mhc_genotype_set_id'),
-                   model_uri=AK_SCHEMA.V1p4mhc_genotype_set_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4mhc_genotype_set_id, domain=None, range=Optional[str])
 
 slots.V1p4mhc_genotype_list = Slot(uri=AK_SCHEMA.V1p4mhc_genotype_list, name="V1p4mhc_genotype_list", curie=AK_SCHEMA.curie('V1p4mhc_genotype_list'),
-                   model_uri=AK_SCHEMA.V1p4mhc_genotype_list, domain=None, range=Union[Union[dict, V1p4MHCGenotype], List[Union[dict, V1p4MHCGenotype]]])
+                   model_uri=AK_SCHEMA.V1p4mhc_genotype_list, domain=None, range=Optional[Union[Union[dict, V1p4MHCGenotype], List[Union[dict, V1p4MHCGenotype]]]])
 
 slots.V1p4mhc_genotype_id = Slot(uri=AK_SCHEMA.V1p4mhc_genotype_id, name="V1p4mhc_genotype_id", curie=AK_SCHEMA.curie('V1p4mhc_genotype_id'),
-                   model_uri=AK_SCHEMA.V1p4mhc_genotype_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4mhc_genotype_id, domain=None, range=Optional[str])
 
 slots.V1p4mhc_class = Slot(uri=AK_SCHEMA.V1p4mhc_class, name="V1p4mhc_class", curie=AK_SCHEMA.curie('V1p4mhc_class'),
                    model_uri=AK_SCHEMA.V1p4mhc_class, domain=None, range=Optional[Union[str, "V1p4MhcClass"]])
 
 slots.V1p4mhc_alleles = Slot(uri=AK_SCHEMA.V1p4mhc_alleles, name="V1p4mhc_alleles", curie=AK_SCHEMA.curie('V1p4mhc_alleles'),
-                   model_uri=AK_SCHEMA.V1p4mhc_alleles, domain=None, range=Union[Union[dict, V1p4MHCAllele], List[Union[dict, V1p4MHCAllele]]])
+                   model_uri=AK_SCHEMA.V1p4mhc_alleles, domain=None, range=Optional[Union[Union[dict, V1p4MHCAllele], List[Union[dict, V1p4MHCAllele]]]])
 
 slots.V1p4mhc_genotyping_method = Slot(uri=AK_SCHEMA.V1p4mhc_genotyping_method, name="V1p4mhc_genotyping_method", curie=AK_SCHEMA.curie('V1p4mhc_genotyping_method'),
                    model_uri=AK_SCHEMA.V1p4mhc_genotyping_method, domain=None, range=Optional[str])
@@ -15556,28 +14526,28 @@ slots.V1p4mhc_genotype_set = Slot(uri=AK_SCHEMA.V1p4mhc_genotype_set, name="V1p4
                    model_uri=AK_SCHEMA.V1p4mhc_genotype_set, domain=None, range=Optional[Union[dict, V1p4MHCGenotypeSet]])
 
 slots.V1p4study_id = Slot(uri=AK_SCHEMA.V1p4study_id, name="V1p4study_id", curie=AK_SCHEMA.curie('V1p4study_id'),
-                   model_uri=AK_SCHEMA.V1p4study_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4study_id, domain=None, range=Optional[str])
 
 slots.V1p4study_title = Slot(uri=AK_SCHEMA.V1p4study_title, name="V1p4study_title", curie=AK_SCHEMA.curie('V1p4study_title'),
-                   model_uri=AK_SCHEMA.V1p4study_title, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4study_title, domain=None, range=Optional[str])
 
 slots.V1p4study_type = Slot(uri=RDF.type, name="V1p4study_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4study_type, domain=None, range=Union[str, "V1p4StudyType"])
+                   model_uri=AK_SCHEMA.V1p4study_type, domain=None, range=Optional[Union[str, "V1p4StudyType"]])
 
 slots.V1p4study_description = Slot(uri=AK_SCHEMA.V1p4study_description, name="V1p4study_description", curie=AK_SCHEMA.curie('V1p4study_description'),
                    model_uri=AK_SCHEMA.V1p4study_description, domain=None, range=Optional[str])
 
 slots.V1p4inclusion_exclusion_criteria = Slot(uri=AK_SCHEMA.V1p4inclusion_exclusion_criteria, name="V1p4inclusion_exclusion_criteria", curie=AK_SCHEMA.curie('V1p4inclusion_exclusion_criteria'),
-                   model_uri=AK_SCHEMA.V1p4inclusion_exclusion_criteria, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4inclusion_exclusion_criteria, domain=None, range=Optional[str])
 
 slots.V1p4grants = Slot(uri=AK_SCHEMA.V1p4grants, name="V1p4grants", curie=AK_SCHEMA.curie('V1p4grants'),
-                   model_uri=AK_SCHEMA.V1p4grants, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4grants, domain=None, range=Optional[str])
 
 slots.V1p4contributors = Slot(uri=AK_SCHEMA.V1p4contributors, name="V1p4contributors", curie=AK_SCHEMA.curie('V1p4contributors'),
-                   model_uri=AK_SCHEMA.V1p4contributors, domain=None, range=Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]])
+                   model_uri=AK_SCHEMA.V1p4contributors, domain=None, range=Optional[Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]]])
 
 slots.V1p4keywords_study = Slot(uri=AK_SCHEMA.V1p4keywords_study, name="V1p4keywords_study", curie=AK_SCHEMA.curie('V1p4keywords_study'),
-                   model_uri=AK_SCHEMA.V1p4keywords_study, domain=None, range=Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]])
+                   model_uri=AK_SCHEMA.V1p4keywords_study, domain=None, range=Optional[Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]]])
 
 slots.V1p4adc_publish_date = Slot(uri=AK_SCHEMA.V1p4adc_publish_date, name="V1p4adc_publish_date", curie=AK_SCHEMA.curie('V1p4adc_publish_date'),
                    model_uri=AK_SCHEMA.V1p4adc_publish_date, domain=None, range=Optional[Union[str, XSDDateTime]])
@@ -15586,40 +14556,40 @@ slots.V1p4adc_update_date = Slot(uri=AK_SCHEMA.V1p4adc_update_date, name="V1p4ad
                    model_uri=AK_SCHEMA.V1p4adc_update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p4subject_id = Slot(uri=AK_SCHEMA.V1p4subject_id, name="V1p4subject_id", curie=AK_SCHEMA.curie('V1p4subject_id'),
-                   model_uri=AK_SCHEMA.V1p4subject_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4subject_id, domain=None, range=Optional[str])
 
 slots.V1p4synthetic = Slot(uri=AK_SCHEMA.V1p4synthetic, name="V1p4synthetic", curie=AK_SCHEMA.curie('V1p4synthetic'),
-                   model_uri=AK_SCHEMA.V1p4synthetic, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p4synthetic, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4sex = Slot(uri=AK_SCHEMA.V1p4sex, name="V1p4sex", curie=AK_SCHEMA.curie('V1p4sex'),
-                   model_uri=AK_SCHEMA.V1p4sex, domain=None, range=Union[str, "V1p4Sex"])
+                   model_uri=AK_SCHEMA.V1p4sex, domain=None, range=Optional[Union[str, "V1p4Sex"]])
 
 slots.V1p4age = Slot(uri=AK_SCHEMA.V1p4age, name="V1p4age", curie=AK_SCHEMA.curie('V1p4age'),
-                   model_uri=AK_SCHEMA.V1p4age, domain=None, range=Union[dict, V1p4TimeInterval])
+                   model_uri=AK_SCHEMA.V1p4age, domain=None, range=Optional[Union[dict, V1p4TimeInterval]])
 
 slots.V1p4age_event = Slot(uri=AK_SCHEMA.V1p4age_event, name="V1p4age_event", curie=AK_SCHEMA.curie('V1p4age_event'),
-                   model_uri=AK_SCHEMA.V1p4age_event, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4age_event, domain=None, range=Optional[str])
 
 slots.V1p4ancestry_population = Slot(uri=AK_SCHEMA.V1p4ancestry_population, name="V1p4ancestry_population", curie=AK_SCHEMA.curie('V1p4ancestry_population'),
-                   model_uri=AK_SCHEMA.V1p4ancestry_population, domain=None, range=Union[str, "V1p4AncestryPopulation"])
+                   model_uri=AK_SCHEMA.V1p4ancestry_population, domain=None, range=Optional[Union[str, "V1p4AncestryPopulation"]])
 
 slots.V1p4location_birth = Slot(uri=AK_SCHEMA.V1p4location_birth, name="V1p4location_birth", curie=AK_SCHEMA.curie('V1p4location_birth'),
                    model_uri=AK_SCHEMA.V1p4location_birth, domain=None, range=Optional[Union[str, "V1p4LocationBirth"]])
 
 slots.V1p4ethnicity = Slot(uri=AK_SCHEMA.V1p4ethnicity, name="V1p4ethnicity", curie=AK_SCHEMA.curie('V1p4ethnicity'),
-                   model_uri=AK_SCHEMA.V1p4ethnicity, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4ethnicity, domain=None, range=Optional[str])
 
 slots.V1p4race = Slot(uri=AK_SCHEMA.V1p4race, name="V1p4race", curie=AK_SCHEMA.curie('V1p4race'),
-                   model_uri=AK_SCHEMA.V1p4race, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4race, domain=None, range=Optional[str])
 
 slots.V1p4strain_name = Slot(uri=AK_SCHEMA.V1p4strain_name, name="V1p4strain_name", curie=AK_SCHEMA.curie('V1p4strain_name'),
-                   model_uri=AK_SCHEMA.V1p4strain_name, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4strain_name, domain=None, range=Optional[str])
 
 slots.V1p4linked_subjects = Slot(uri=AK_SCHEMA.V1p4linked_subjects, name="V1p4linked_subjects", curie=AK_SCHEMA.curie('V1p4linked_subjects'),
-                   model_uri=AK_SCHEMA.V1p4linked_subjects, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4linked_subjects, domain=None, range=Optional[str])
 
 slots.V1p4link_type = Slot(uri=RDF.type, name="V1p4link_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4link_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4link_type, domain=None, range=Optional[str])
 
 slots.V1p4diagnosis = Slot(uri=AK_SCHEMA.V1p4diagnosis, name="V1p4diagnosis", curie=AK_SCHEMA.curie('V1p4diagnosis'),
                    model_uri=AK_SCHEMA.V1p4diagnosis, domain=None, range=Optional[Union[Union[dict, V1p4Diagnosis], List[Union[dict, V1p4Diagnosis]]]])
@@ -15628,58 +14598,58 @@ slots.V1p4genotype = Slot(uri=AK_SCHEMA.V1p4genotype, name="V1p4genotype", curie
                    model_uri=AK_SCHEMA.V1p4genotype, domain=None, range=Optional[Union[dict, V1p4SubjectGenotype]])
 
 slots.V1p4study_group_description = Slot(uri=AK_SCHEMA.V1p4study_group_description, name="V1p4study_group_description", curie=AK_SCHEMA.curie('V1p4study_group_description'),
-                   model_uri=AK_SCHEMA.V1p4study_group_description, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4study_group_description, domain=None, range=Optional[str])
 
 slots.V1p4diagnosis_timepoint = Slot(uri=AK_SCHEMA.V1p4diagnosis_timepoint, name="V1p4diagnosis_timepoint", curie=AK_SCHEMA.curie('V1p4diagnosis_timepoint'),
                    model_uri=AK_SCHEMA.V1p4diagnosis_timepoint, domain=None, range=Optional[Union[dict, V1p4TimePoint]])
 
 slots.V1p4disease_diagnosis = Slot(uri=AK_SCHEMA.V1p4disease_diagnosis, name="V1p4disease_diagnosis", curie=AK_SCHEMA.curie('V1p4disease_diagnosis'),
-                   model_uri=AK_SCHEMA.V1p4disease_diagnosis, domain=None, range=Union[str, "V1p4DiseaseDiagnosis"])
+                   model_uri=AK_SCHEMA.V1p4disease_diagnosis, domain=None, range=Optional[Union[str, "V1p4DiseaseDiagnosis"]])
 
 slots.V1p4disease_length = Slot(uri=AK_SCHEMA.V1p4disease_length, name="V1p4disease_length", curie=AK_SCHEMA.curie('V1p4disease_length'),
-                   model_uri=AK_SCHEMA.V1p4disease_length, domain=None, range=Union[dict, V1p4TimeQuantity])
+                   model_uri=AK_SCHEMA.V1p4disease_length, domain=None, range=Optional[Union[dict, V1p4TimeQuantity]])
 
 slots.V1p4disease_stage = Slot(uri=AK_SCHEMA.V1p4disease_stage, name="V1p4disease_stage", curie=AK_SCHEMA.curie('V1p4disease_stage'),
-                   model_uri=AK_SCHEMA.V1p4disease_stage, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4disease_stage, domain=None, range=Optional[str])
 
 slots.V1p4prior_therapies = Slot(uri=AK_SCHEMA.V1p4prior_therapies, name="V1p4prior_therapies", curie=AK_SCHEMA.curie('V1p4prior_therapies'),
-                   model_uri=AK_SCHEMA.V1p4prior_therapies, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4prior_therapies, domain=None, range=Optional[str])
 
 slots.V1p4immunogen = Slot(uri=AK_SCHEMA.V1p4immunogen, name="V1p4immunogen", curie=AK_SCHEMA.curie('V1p4immunogen'),
-                   model_uri=AK_SCHEMA.V1p4immunogen, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4immunogen, domain=None, range=Optional[str])
 
 slots.V1p4intervention = Slot(uri=AK_SCHEMA.V1p4intervention, name="V1p4intervention", curie=AK_SCHEMA.curie('V1p4intervention'),
-                   model_uri=AK_SCHEMA.V1p4intervention, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4intervention, domain=None, range=Optional[str])
 
 slots.V1p4medical_history = Slot(uri=AK_SCHEMA.V1p4medical_history, name="V1p4medical_history", curie=AK_SCHEMA.curie('V1p4medical_history'),
-                   model_uri=AK_SCHEMA.V1p4medical_history, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4medical_history, domain=None, range=Optional[str])
 
 slots.V1p4sample_id = Slot(uri=AK_SCHEMA.V1p4sample_id, name="V1p4sample_id", curie=AK_SCHEMA.curie('V1p4sample_id'),
-                   model_uri=AK_SCHEMA.V1p4sample_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sample_id, domain=None, range=Optional[str])
 
 slots.V1p4sample_type = Slot(uri=RDF.type, name="V1p4sample_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4sample_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sample_type, domain=None, range=Optional[str])
 
 slots.V1p4tissue = Slot(uri=AK_SCHEMA.V1p4tissue, name="V1p4tissue", curie=AK_SCHEMA.curie('V1p4tissue'),
-                   model_uri=AK_SCHEMA.V1p4tissue, domain=None, range=Union[str, "V1p4Tissue"])
+                   model_uri=AK_SCHEMA.V1p4tissue, domain=None, range=Optional[Union[str, "V1p4Tissue"]])
 
 slots.V1p4anatomic_site = Slot(uri=AK_SCHEMA.V1p4anatomic_site, name="V1p4anatomic_site", curie=AK_SCHEMA.curie('V1p4anatomic_site'),
-                   model_uri=AK_SCHEMA.V1p4anatomic_site, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4anatomic_site, domain=None, range=Optional[str])
 
 slots.V1p4disease_state_sample = Slot(uri=AK_SCHEMA.V1p4disease_state_sample, name="V1p4disease_state_sample", curie=AK_SCHEMA.curie('V1p4disease_state_sample'),
-                   model_uri=AK_SCHEMA.V1p4disease_state_sample, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4disease_state_sample, domain=None, range=Optional[str])
 
 slots.V1p4collection_time_point_relative = Slot(uri=AK_SCHEMA.V1p4collection_time_point_relative, name="V1p4collection_time_point_relative", curie=AK_SCHEMA.curie('V1p4collection_time_point_relative'),
-                   model_uri=AK_SCHEMA.V1p4collection_time_point_relative, domain=None, range=Union[dict, V1p4TimePoint])
+                   model_uri=AK_SCHEMA.V1p4collection_time_point_relative, domain=None, range=Optional[Union[dict, V1p4TimePoint]])
 
 slots.V1p4collection_location = Slot(uri=AK_SCHEMA.V1p4collection_location, name="V1p4collection_location", curie=AK_SCHEMA.curie('V1p4collection_location'),
                    model_uri=AK_SCHEMA.V1p4collection_location, domain=None, range=Optional[Union[str, "V1p4CollectionLocation"]])
 
 slots.V1p4biomaterial_provider = Slot(uri=AK_SCHEMA.V1p4biomaterial_provider, name="V1p4biomaterial_provider", curie=AK_SCHEMA.curie('V1p4biomaterial_provider'),
-                   model_uri=AK_SCHEMA.V1p4biomaterial_provider, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4biomaterial_provider, domain=None, range=Optional[str])
 
 slots.V1p4tissue_processing = Slot(uri=AK_SCHEMA.V1p4tissue_processing, name="V1p4tissue_processing", curie=AK_SCHEMA.curie('V1p4tissue_processing'),
-                   model_uri=AK_SCHEMA.V1p4tissue_processing, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4tissue_processing, domain=None, range=Optional[str])
 
 slots.V1p4cell_subset = Slot(uri=AK_SCHEMA.V1p4cell_subset, name="V1p4cell_subset", curie=AK_SCHEMA.curie('V1p4cell_subset'),
                    model_uri=AK_SCHEMA.V1p4cell_subset, domain=None, range=Optional[Union[str, "V1p4CellSubset"]])
@@ -15694,106 +14664,106 @@ slots.V1p4cell_species = Slot(uri=AK_SCHEMA.V1p4cell_species, name="V1p4cell_spe
                    model_uri=AK_SCHEMA.V1p4cell_species, domain=None, range=Optional[Union[str, "V1p4CellSpecies"]])
 
 slots.V1p4single_cell = Slot(uri=AK_SCHEMA.V1p4single_cell, name="V1p4single_cell", curie=AK_SCHEMA.curie('V1p4single_cell'),
-                   model_uri=AK_SCHEMA.V1p4single_cell, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p4single_cell, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4cell_number = Slot(uri=AK_SCHEMA.V1p4cell_number, name="V1p4cell_number", curie=AK_SCHEMA.curie('V1p4cell_number'),
-                   model_uri=AK_SCHEMA.V1p4cell_number, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4cell_number, domain=None, range=Optional[int])
 
 slots.V1p4cells_per_reaction = Slot(uri=AK_SCHEMA.V1p4cells_per_reaction, name="V1p4cells_per_reaction", curie=AK_SCHEMA.curie('V1p4cells_per_reaction'),
-                   model_uri=AK_SCHEMA.V1p4cells_per_reaction, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4cells_per_reaction, domain=None, range=Optional[int])
 
 slots.V1p4cell_storage = Slot(uri=AK_SCHEMA.V1p4cell_storage, name="V1p4cell_storage", curie=AK_SCHEMA.curie('V1p4cell_storage'),
-                   model_uri=AK_SCHEMA.V1p4cell_storage, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p4cell_storage, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4cell_quality = Slot(uri=AK_SCHEMA.V1p4cell_quality, name="V1p4cell_quality", curie=AK_SCHEMA.curie('V1p4cell_quality'),
-                   model_uri=AK_SCHEMA.V1p4cell_quality, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4cell_quality, domain=None, range=Optional[str])
 
 slots.V1p4cell_isolation = Slot(uri=AK_SCHEMA.V1p4cell_isolation, name="V1p4cell_isolation", curie=AK_SCHEMA.curie('V1p4cell_isolation'),
-                   model_uri=AK_SCHEMA.V1p4cell_isolation, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4cell_isolation, domain=None, range=Optional[str])
 
 slots.V1p4cell_processing_protocol = Slot(uri=AK_SCHEMA.V1p4cell_processing_protocol, name="V1p4cell_processing_protocol", curie=AK_SCHEMA.curie('V1p4cell_processing_protocol'),
-                   model_uri=AK_SCHEMA.V1p4cell_processing_protocol, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4cell_processing_protocol, domain=None, range=Optional[str])
 
 slots.V1p4pcr_target_locus = Slot(uri=AK_SCHEMA.V1p4pcr_target_locus, name="V1p4pcr_target_locus", curie=AK_SCHEMA.curie('V1p4pcr_target_locus'),
-                   model_uri=AK_SCHEMA.V1p4pcr_target_locus, domain=None, range=Union[str, "V1p4PcrTargetLocus"])
+                   model_uri=AK_SCHEMA.V1p4pcr_target_locus, domain=None, range=Optional[Union[str, "V1p4PcrTargetLocus"]])
 
 slots.V1p4forward_pcr_primer_target_location = Slot(uri=AK_SCHEMA.V1p4forward_pcr_primer_target_location, name="V1p4forward_pcr_primer_target_location", curie=AK_SCHEMA.curie('V1p4forward_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.V1p4forward_pcr_primer_target_location, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4forward_pcr_primer_target_location, domain=None, range=Optional[str])
 
 slots.V1p4reverse_pcr_primer_target_location = Slot(uri=AK_SCHEMA.V1p4reverse_pcr_primer_target_location, name="V1p4reverse_pcr_primer_target_location", curie=AK_SCHEMA.curie('V1p4reverse_pcr_primer_target_location'),
-                   model_uri=AK_SCHEMA.V1p4reverse_pcr_primer_target_location, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4reverse_pcr_primer_target_location, domain=None, range=Optional[str])
 
 slots.V1p4template_class = Slot(uri=AK_SCHEMA.V1p4template_class, name="V1p4template_class", curie=AK_SCHEMA.curie('V1p4template_class'),
-                   model_uri=AK_SCHEMA.V1p4template_class, domain=None, range=Union[str, "V1p4TemplateClass"])
+                   model_uri=AK_SCHEMA.V1p4template_class, domain=None, range=Optional[Union[str, "V1p4TemplateClass"]])
 
 slots.V1p4template_quality = Slot(uri=AK_SCHEMA.V1p4template_quality, name="V1p4template_quality", curie=AK_SCHEMA.curie('V1p4template_quality'),
-                   model_uri=AK_SCHEMA.V1p4template_quality, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4template_quality, domain=None, range=Optional[str])
 
 slots.V1p4template_amount = Slot(uri=AK_SCHEMA.V1p4template_amount, name="V1p4template_amount", curie=AK_SCHEMA.curie('V1p4template_amount'),
-                   model_uri=AK_SCHEMA.V1p4template_amount, domain=None, range=Union[dict, V1p4PhysicalQuantity])
+                   model_uri=AK_SCHEMA.V1p4template_amount, domain=None, range=Optional[Union[dict, V1p4PhysicalQuantity]])
 
 slots.V1p4library_generation_method = Slot(uri=AK_SCHEMA.V1p4library_generation_method, name="V1p4library_generation_method", curie=AK_SCHEMA.curie('V1p4library_generation_method'),
-                   model_uri=AK_SCHEMA.V1p4library_generation_method, domain=None, range=Union[str, "V1p4LibraryGenerationMethod"])
+                   model_uri=AK_SCHEMA.V1p4library_generation_method, domain=None, range=Optional[Union[str, "V1p4LibraryGenerationMethod"]])
 
 slots.V1p4library_generation_protocol = Slot(uri=AK_SCHEMA.V1p4library_generation_protocol, name="V1p4library_generation_protocol", curie=AK_SCHEMA.curie('V1p4library_generation_protocol'),
-                   model_uri=AK_SCHEMA.V1p4library_generation_protocol, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4library_generation_protocol, domain=None, range=Optional[str])
 
 slots.V1p4library_generation_kit_version = Slot(uri=AK_SCHEMA.V1p4library_generation_kit_version, name="V1p4library_generation_kit_version", curie=AK_SCHEMA.curie('V1p4library_generation_kit_version'),
-                   model_uri=AK_SCHEMA.V1p4library_generation_kit_version, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4library_generation_kit_version, domain=None, range=Optional[str])
 
 slots.V1p4pcr_target = Slot(uri=AK_SCHEMA.V1p4pcr_target, name="V1p4pcr_target", curie=AK_SCHEMA.curie('V1p4pcr_target'),
                    model_uri=AK_SCHEMA.V1p4pcr_target, domain=None, range=Optional[Union[Union[dict, V1p4PCRTarget], List[Union[dict, V1p4PCRTarget]]]])
 
 slots.V1p4complete_sequences = Slot(uri=AK_SCHEMA.V1p4complete_sequences, name="V1p4complete_sequences", curie=AK_SCHEMA.curie('V1p4complete_sequences'),
-                   model_uri=AK_SCHEMA.V1p4complete_sequences, domain=None, range=Union[str, "V1p4CompleteSequences"])
+                   model_uri=AK_SCHEMA.V1p4complete_sequences, domain=None, range=Optional[Union[str, "V1p4CompleteSequences"]])
 
 slots.V1p4physical_linkage = Slot(uri=AK_SCHEMA.V1p4physical_linkage, name="V1p4physical_linkage", curie=AK_SCHEMA.curie('V1p4physical_linkage'),
-                   model_uri=AK_SCHEMA.V1p4physical_linkage, domain=None, range=Union[str, "V1p4PhysicalLinkage"])
+                   model_uri=AK_SCHEMA.V1p4physical_linkage, domain=None, range=Optional[Union[str, "V1p4PhysicalLinkage"]])
 
 slots.V1p4sequencing_run_id = Slot(uri=AK_SCHEMA.V1p4sequencing_run_id, name="V1p4sequencing_run_id", curie=AK_SCHEMA.curie('V1p4sequencing_run_id'),
-                   model_uri=AK_SCHEMA.V1p4sequencing_run_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequencing_run_id, domain=None, range=Optional[str])
 
 slots.V1p4total_reads_passing_qc_filter = Slot(uri=AK_SCHEMA.V1p4total_reads_passing_qc_filter, name="V1p4total_reads_passing_qc_filter", curie=AK_SCHEMA.curie('V1p4total_reads_passing_qc_filter'),
-                   model_uri=AK_SCHEMA.V1p4total_reads_passing_qc_filter, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4total_reads_passing_qc_filter, domain=None, range=Optional[int])
 
 slots.V1p4sequencing_platform = Slot(uri=AK_SCHEMA.V1p4sequencing_platform, name="V1p4sequencing_platform", curie=AK_SCHEMA.curie('V1p4sequencing_platform'),
-                   model_uri=AK_SCHEMA.V1p4sequencing_platform, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequencing_platform, domain=None, range=Optional[str])
 
 slots.V1p4sequencing_facility = Slot(uri=AK_SCHEMA.V1p4sequencing_facility, name="V1p4sequencing_facility", curie=AK_SCHEMA.curie('V1p4sequencing_facility'),
-                   model_uri=AK_SCHEMA.V1p4sequencing_facility, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequencing_facility, domain=None, range=Optional[str])
 
 slots.V1p4sequencing_run_date = Slot(uri=AK_SCHEMA.V1p4sequencing_run_date, name="V1p4sequencing_run_date", curie=AK_SCHEMA.curie('V1p4sequencing_run_date'),
-                   model_uri=AK_SCHEMA.V1p4sequencing_run_date, domain=None, range=Union[str, XSDDateTime])
+                   model_uri=AK_SCHEMA.V1p4sequencing_run_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p4sequencing_kit = Slot(uri=AK_SCHEMA.V1p4sequencing_kit, name="V1p4sequencing_kit", curie=AK_SCHEMA.curie('V1p4sequencing_kit'),
-                   model_uri=AK_SCHEMA.V1p4sequencing_kit, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequencing_kit, domain=None, range=Optional[str])
 
 slots.V1p4sequencing_files = Slot(uri=AK_SCHEMA.V1p4sequencing_files, name="V1p4sequencing_files", curie=AK_SCHEMA.curie('V1p4sequencing_files'),
                    model_uri=AK_SCHEMA.V1p4sequencing_files, domain=None, range=Optional[Union[dict, V1p4SequencingData]])
 
 slots.V1p4sequencing_data_id = Slot(uri=AK_SCHEMA.V1p4sequencing_data_id, name="V1p4sequencing_data_id", curie=AK_SCHEMA.curie('V1p4sequencing_data_id'),
-                   model_uri=AK_SCHEMA.V1p4sequencing_data_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequencing_data_id, domain=None, range=Optional[str])
 
 slots.V1p4file_type = Slot(uri=RDF.type, name="V1p4file_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4file_type, domain=None, range=Union[str, "V1p4FileType"])
+                   model_uri=AK_SCHEMA.V1p4file_type, domain=None, range=Optional[Union[str, "V1p4FileType"]])
 
 slots.V1p4filename = Slot(uri=AK_SCHEMA.V1p4filename, name="V1p4filename", curie=AK_SCHEMA.curie('V1p4filename'),
-                   model_uri=AK_SCHEMA.V1p4filename, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4filename, domain=None, range=Optional[str])
 
 slots.V1p4read_direction = Slot(uri=AK_SCHEMA.V1p4read_direction, name="V1p4read_direction", curie=AK_SCHEMA.curie('V1p4read_direction'),
-                   model_uri=AK_SCHEMA.V1p4read_direction, domain=None, range=Union[str, "V1p4ReadDirection"])
+                   model_uri=AK_SCHEMA.V1p4read_direction, domain=None, range=Optional[Union[str, "V1p4ReadDirection"]])
 
 slots.V1p4read_length = Slot(uri=AK_SCHEMA.V1p4read_length, name="V1p4read_length", curie=AK_SCHEMA.curie('V1p4read_length'),
-                   model_uri=AK_SCHEMA.V1p4read_length, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4read_length, domain=None, range=Optional[int])
 
 slots.V1p4paired_filename = Slot(uri=AK_SCHEMA.V1p4paired_filename, name="V1p4paired_filename", curie=AK_SCHEMA.curie('V1p4paired_filename'),
-                   model_uri=AK_SCHEMA.V1p4paired_filename, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4paired_filename, domain=None, range=Optional[str])
 
 slots.V1p4paired_read_direction = Slot(uri=AK_SCHEMA.V1p4paired_read_direction, name="V1p4paired_read_direction", curie=AK_SCHEMA.curie('V1p4paired_read_direction'),
-                   model_uri=AK_SCHEMA.V1p4paired_read_direction, domain=None, range=Union[str, "V1p4PairedReadDirection"])
+                   model_uri=AK_SCHEMA.V1p4paired_read_direction, domain=None, range=Optional[Union[str, "V1p4PairedReadDirection"]])
 
 slots.V1p4paired_read_length = Slot(uri=AK_SCHEMA.V1p4paired_read_length, name="V1p4paired_read_length", curie=AK_SCHEMA.curie('V1p4paired_read_length'),
-                   model_uri=AK_SCHEMA.V1p4paired_read_length, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4paired_read_length, domain=None, range=Optional[int])
 
 slots.V1p4index_filename = Slot(uri=AK_SCHEMA.V1p4index_filename, name="V1p4index_filename", curie=AK_SCHEMA.curie('V1p4index_filename'),
                    model_uri=AK_SCHEMA.V1p4index_filename, domain=None, range=Optional[str])
@@ -15808,28 +14778,28 @@ slots.V1p4primary_annotation = Slot(uri=AK_SCHEMA.V1p4primary_annotation, name="
                    model_uri=AK_SCHEMA.V1p4primary_annotation, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4software_versions = Slot(uri=AK_SCHEMA.V1p4software_versions, name="V1p4software_versions", curie=AK_SCHEMA.curie('V1p4software_versions'),
-                   model_uri=AK_SCHEMA.V1p4software_versions, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4software_versions, domain=None, range=Optional[str])
 
 slots.V1p4paired_reads_assembly = Slot(uri=AK_SCHEMA.V1p4paired_reads_assembly, name="V1p4paired_reads_assembly", curie=AK_SCHEMA.curie('V1p4paired_reads_assembly'),
-                   model_uri=AK_SCHEMA.V1p4paired_reads_assembly, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4paired_reads_assembly, domain=None, range=Optional[str])
 
 slots.V1p4quality_thresholds = Slot(uri=AK_SCHEMA.V1p4quality_thresholds, name="V1p4quality_thresholds", curie=AK_SCHEMA.curie('V1p4quality_thresholds'),
-                   model_uri=AK_SCHEMA.V1p4quality_thresholds, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4quality_thresholds, domain=None, range=Optional[str])
 
 slots.V1p4primer_match_cutoffs = Slot(uri=AK_SCHEMA.V1p4primer_match_cutoffs, name="V1p4primer_match_cutoffs", curie=AK_SCHEMA.curie('V1p4primer_match_cutoffs'),
-                   model_uri=AK_SCHEMA.V1p4primer_match_cutoffs, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4primer_match_cutoffs, domain=None, range=Optional[str])
 
 slots.V1p4collapsing_method = Slot(uri=AK_SCHEMA.V1p4collapsing_method, name="V1p4collapsing_method", curie=AK_SCHEMA.curie('V1p4collapsing_method'),
-                   model_uri=AK_SCHEMA.V1p4collapsing_method, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4collapsing_method, domain=None, range=Optional[str])
 
 slots.V1p4data_processing_protocols = Slot(uri=AK_SCHEMA.V1p4data_processing_protocols, name="V1p4data_processing_protocols", curie=AK_SCHEMA.curie('V1p4data_processing_protocols'),
-                   model_uri=AK_SCHEMA.V1p4data_processing_protocols, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4data_processing_protocols, domain=None, range=Optional[str])
 
 slots.V1p4data_processing_files = Slot(uri=AK_SCHEMA.V1p4data_processing_files, name="V1p4data_processing_files", curie=AK_SCHEMA.curie('V1p4data_processing_files'),
                    model_uri=AK_SCHEMA.V1p4data_processing_files, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p4germline_database = Slot(uri=AK_SCHEMA.V1p4germline_database, name="V1p4germline_database", curie=AK_SCHEMA.curie('V1p4germline_database'),
-                   model_uri=AK_SCHEMA.V1p4germline_database, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4germline_database, domain=None, range=Optional[str])
 
 slots.V1p4analysis_provenance_id = Slot(uri=AK_SCHEMA.V1p4analysis_provenance_id, name="V1p4analysis_provenance_id", curie=AK_SCHEMA.curie('V1p4analysis_provenance_id'),
                    model_uri=AK_SCHEMA.V1p4analysis_provenance_id, domain=None, range=Optional[str])
@@ -15844,19 +14814,19 @@ slots.V1p4repertoire_description = Slot(uri=AK_SCHEMA.V1p4repertoire_description
                    model_uri=AK_SCHEMA.V1p4repertoire_description, domain=None, range=Optional[str])
 
 slots.V1p4study = Slot(uri=AK_SCHEMA.V1p4study, name="V1p4study", curie=AK_SCHEMA.curie('V1p4study'),
-                   model_uri=AK_SCHEMA.V1p4study, domain=None, range=Union[dict, V1p4Study])
+                   model_uri=AK_SCHEMA.V1p4study, domain=None, range=Optional[Union[dict, V1p4Study]])
 
 slots.V1p4subject = Slot(uri=AK_SCHEMA.V1p4subject, name="V1p4subject", curie=AK_SCHEMA.curie('V1p4subject'),
-                   model_uri=AK_SCHEMA.V1p4subject, domain=None, range=Union[dict, V1p4Subject])
+                   model_uri=AK_SCHEMA.V1p4subject, domain=None, range=Optional[Union[dict, V1p4Subject]])
 
 slots.V1p4sample = Slot(uri=AK_SCHEMA.V1p4sample, name="V1p4sample", curie=AK_SCHEMA.curie('V1p4sample'),
-                   model_uri=AK_SCHEMA.V1p4sample, domain=None, range=Union[Union[dict, V1p4SampleProcessing], List[Union[dict, V1p4SampleProcessing]]])
+                   model_uri=AK_SCHEMA.V1p4sample, domain=None, range=Optional[Union[Union[dict, V1p4SampleProcessing], List[Union[dict, V1p4SampleProcessing]]]])
 
 slots.V1p4data_processing = Slot(uri=AK_SCHEMA.V1p4data_processing, name="V1p4data_processing", curie=AK_SCHEMA.curie('V1p4data_processing'),
-                   model_uri=AK_SCHEMA.V1p4data_processing, domain=None, range=Union[Union[dict, V1p4DataProcessing], List[Union[dict, V1p4DataProcessing]]])
+                   model_uri=AK_SCHEMA.V1p4data_processing, domain=None, range=Optional[Union[Union[dict, V1p4DataProcessing], List[Union[dict, V1p4DataProcessing]]]])
 
 slots.V1p4repertoire_group_id = Slot(uri=AK_SCHEMA.V1p4repertoire_group_id, name="V1p4repertoire_group_id", curie=AK_SCHEMA.curie('V1p4repertoire_group_id'),
-                   model_uri=AK_SCHEMA.V1p4repertoire_group_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4repertoire_group_id, domain=None, range=Optional[str])
 
 slots.V1p4repertoire_group_name = Slot(uri=AK_SCHEMA.V1p4repertoire_group_name, name="V1p4repertoire_group_name", curie=AK_SCHEMA.curie('V1p4repertoire_group_name'),
                    model_uri=AK_SCHEMA.V1p4repertoire_group_name, domain=None, range=Optional[str])
@@ -15865,19 +14835,19 @@ slots.V1p4repertoire_group_description = Slot(uri=AK_SCHEMA.V1p4repertoire_group
                    model_uri=AK_SCHEMA.V1p4repertoire_group_description, domain=None, range=Optional[str])
 
 slots.V1p4repertoires = Slot(uri=AK_SCHEMA.V1p4repertoires, name="V1p4repertoires", curie=AK_SCHEMA.curie('V1p4repertoires'),
-                   model_uri=AK_SCHEMA.V1p4repertoires, domain=None, range=Union[str, List[str]])
+                   model_uri=AK_SCHEMA.V1p4repertoires, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p4segment = Slot(uri=AK_SCHEMA.V1p4segment, name="V1p4segment", curie=AK_SCHEMA.curie('V1p4segment'),
-                   model_uri=AK_SCHEMA.V1p4segment, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4segment, domain=None, range=Optional[str])
 
 slots.V1p4rev_comp = Slot(uri=AK_SCHEMA.V1p4rev_comp, name="V1p4rev_comp", curie=AK_SCHEMA.curie('V1p4rev_comp'),
                    model_uri=AK_SCHEMA.V1p4rev_comp, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4call = Slot(uri=AK_SCHEMA.V1p4call, name="V1p4call", curie=AK_SCHEMA.curie('V1p4call'),
-                   model_uri=AK_SCHEMA.V1p4call, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4call, domain=None, range=Optional[str])
 
 slots.V1p4score = Slot(uri=AK_SCHEMA.V1p4score, name="V1p4score", curie=AK_SCHEMA.curie('V1p4score'),
-                   model_uri=AK_SCHEMA.V1p4score, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p4score, domain=None, range=Optional[float])
 
 slots.V1p4identity = Slot(uri=AK_SCHEMA.V1p4identity, name="V1p4identity", curie=AK_SCHEMA.curie('V1p4identity'),
                    model_uri=AK_SCHEMA.V1p4identity, domain=None, range=Optional[float])
@@ -15886,7 +14856,7 @@ slots.V1p4support = Slot(uri=AK_SCHEMA.V1p4support, name="V1p4support", curie=AK
                    model_uri=AK_SCHEMA.V1p4support, domain=None, range=Optional[float])
 
 slots.V1p4cigar = Slot(uri=AK_SCHEMA.V1p4cigar, name="V1p4cigar", curie=AK_SCHEMA.curie('V1p4cigar'),
-                   model_uri=AK_SCHEMA.V1p4cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4cigar, domain=None, range=Optional[str])
 
 slots.V1p4germline_start = Slot(uri=AK_SCHEMA.V1p4germline_start, name="V1p4germline_start", curie=AK_SCHEMA.curie('V1p4germline_start'),
                    model_uri=AK_SCHEMA.V1p4germline_start, domain=None, range=Optional[int])
@@ -15904,7 +14874,7 @@ slots.V1p4sequence_aa = Slot(uri=AK_SCHEMA.V1p4sequence_aa, name="V1p4sequence_a
                    model_uri=AK_SCHEMA.V1p4sequence_aa, domain=None, range=Optional[str])
 
 slots.V1p4productive = Slot(uri=AK_SCHEMA.V1p4productive, name="V1p4productive", curie=AK_SCHEMA.curie('V1p4productive'),
-                   model_uri=AK_SCHEMA.V1p4productive, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p4productive, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4vj_in_frame = Slot(uri=AK_SCHEMA.V1p4vj_in_frame, name="V1p4vj_in_frame", curie=AK_SCHEMA.curie('V1p4vj_in_frame'),
                    model_uri=AK_SCHEMA.V1p4vj_in_frame, domain=None, range=Optional[Union[bool, Bool]])
@@ -15943,7 +14913,7 @@ slots.V1p4sequence_alignment_aa = Slot(uri=AK_SCHEMA.V1p4sequence_alignment_aa, 
                    model_uri=AK_SCHEMA.V1p4sequence_alignment_aa, domain=None, range=Optional[str])
 
 slots.V1p4germline_alignment = Slot(uri=AK_SCHEMA.V1p4germline_alignment, name="V1p4germline_alignment", curie=AK_SCHEMA.curie('V1p4germline_alignment'),
-                   model_uri=AK_SCHEMA.V1p4germline_alignment, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4germline_alignment, domain=None, range=Optional[str])
 
 slots.V1p4germline_alignment_aa = Slot(uri=AK_SCHEMA.V1p4germline_alignment_aa, name="V1p4germline_alignment_aa", curie=AK_SCHEMA.curie('V1p4germline_alignment_aa'),
                    model_uri=AK_SCHEMA.V1p4germline_alignment_aa, domain=None, range=Optional[str])
@@ -16024,7 +14994,7 @@ slots.V1p4v_support = Slot(uri=AK_SCHEMA.V1p4v_support, name="V1p4v_support", cu
                    model_uri=AK_SCHEMA.V1p4v_support, domain=None, range=Optional[float])
 
 slots.V1p4v_cigar = Slot(uri=AK_SCHEMA.V1p4v_cigar, name="V1p4v_cigar", curie=AK_SCHEMA.curie('V1p4v_cigar'),
-                   model_uri=AK_SCHEMA.V1p4v_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4v_cigar, domain=None, range=Optional[str])
 
 slots.V1p4d_score = Slot(uri=AK_SCHEMA.V1p4d_score, name="V1p4d_score", curie=AK_SCHEMA.curie('V1p4d_score'),
                    model_uri=AK_SCHEMA.V1p4d_score, domain=None, range=Optional[float])
@@ -16036,7 +15006,7 @@ slots.V1p4d_support = Slot(uri=AK_SCHEMA.V1p4d_support, name="V1p4d_support", cu
                    model_uri=AK_SCHEMA.V1p4d_support, domain=None, range=Optional[float])
 
 slots.V1p4d_cigar = Slot(uri=AK_SCHEMA.V1p4d_cigar, name="V1p4d_cigar", curie=AK_SCHEMA.curie('V1p4d_cigar'),
-                   model_uri=AK_SCHEMA.V1p4d_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4d_cigar, domain=None, range=Optional[str])
 
 slots.V1p4d2_score = Slot(uri=AK_SCHEMA.V1p4d2_score, name="V1p4d2_score", curie=AK_SCHEMA.curie('V1p4d2_score'),
                    model_uri=AK_SCHEMA.V1p4d2_score, domain=None, range=Optional[float])
@@ -16060,7 +15030,7 @@ slots.V1p4j_support = Slot(uri=AK_SCHEMA.V1p4j_support, name="V1p4j_support", cu
                    model_uri=AK_SCHEMA.V1p4j_support, domain=None, range=Optional[float])
 
 slots.V1p4j_cigar = Slot(uri=AK_SCHEMA.V1p4j_cigar, name="V1p4j_cigar", curie=AK_SCHEMA.curie('V1p4j_cigar'),
-                   model_uri=AK_SCHEMA.V1p4j_cigar, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4j_cigar, domain=None, range=Optional[str])
 
 slots.V1p4c_score = Slot(uri=AK_SCHEMA.V1p4c_score, name="V1p4c_score", curie=AK_SCHEMA.curie('V1p4c_score'),
                    model_uri=AK_SCHEMA.V1p4c_score, domain=None, range=Optional[float])
@@ -16327,10 +15297,10 @@ slots.V1p4seed_id = Slot(uri=AK_SCHEMA.V1p4seed_id, name="V1p4seed_id", curie=AK
                    model_uri=AK_SCHEMA.V1p4seed_id, domain=None, range=Optional[str])
 
 slots.V1p4tree_id = Slot(uri=AK_SCHEMA.V1p4tree_id, name="V1p4tree_id", curie=AK_SCHEMA.curie('V1p4tree_id'),
-                   model_uri=AK_SCHEMA.V1p4tree_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4tree_id, domain=None, range=Optional[str])
 
 slots.V1p4newick = Slot(uri=AK_SCHEMA.V1p4newick, name="V1p4newick", curie=AK_SCHEMA.curie('V1p4newick'),
-                   model_uri=AK_SCHEMA.V1p4newick, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4newick, domain=None, range=Optional[str])
 
 slots.V1p4nodes = Slot(uri=AK_SCHEMA.V1p4nodes, name="V1p4nodes", curie=AK_SCHEMA.curie('V1p4nodes'),
                    model_uri=AK_SCHEMA.V1p4nodes, domain=None, range=Optional[Union[Union[dict, V1p4Node], List[Union[dict, V1p4Node]]]])
@@ -16339,49 +15309,49 @@ slots.V1p4receptors = Slot(uri=AK_SCHEMA.V1p4receptors, name="V1p4receptors", cu
                    model_uri=AK_SCHEMA.V1p4receptors, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p4virtual_pairing = Slot(uri=AK_SCHEMA.V1p4virtual_pairing, name="V1p4virtual_pairing", curie=AK_SCHEMA.curie('V1p4virtual_pairing'),
-                   model_uri=AK_SCHEMA.V1p4virtual_pairing, domain=None, range=Union[bool, Bool])
+                   model_uri=AK_SCHEMA.V1p4virtual_pairing, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.V1p4expression_id = Slot(uri=AK_SCHEMA.V1p4expression_id, name="V1p4expression_id", curie=AK_SCHEMA.curie('V1p4expression_id'),
-                   model_uri=AK_SCHEMA.V1p4expression_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4expression_id, domain=None, range=Optional[str])
 
 slots.V1p4property_type = Slot(uri=RDF.type, name="V1p4property_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4property_type, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4property_type, domain=None, range=Optional[str])
 
 slots.V1p4property = Slot(uri=AK_SCHEMA.V1p4property, name="V1p4property", curie=AK_SCHEMA.curie('V1p4property'),
-                   model_uri=AK_SCHEMA.V1p4property, domain=None, range=Union[str, "V1p4Property"])
+                   model_uri=AK_SCHEMA.V1p4property, domain=None, range=Optional[Union[str, "V1p4Property"]])
 
 slots.V1p4receptor_id = Slot(uri=AK_SCHEMA.V1p4receptor_id, name="V1p4receptor_id", curie=AK_SCHEMA.curie('V1p4receptor_id'),
-                   model_uri=AK_SCHEMA.V1p4receptor_id, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4receptor_id, domain=None, range=Optional[str])
 
 slots.V1p4receptor_hash = Slot(uri=AK_SCHEMA.V1p4receptor_hash, name="V1p4receptor_hash", curie=AK_SCHEMA.curie('V1p4receptor_hash'),
-                   model_uri=AK_SCHEMA.V1p4receptor_hash, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4receptor_hash, domain=None, range=Optional[str])
 
 slots.V1p4receptor_type = Slot(uri=RDF.type, name="V1p4receptor_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4receptor_type, domain=None, range=Union[str, "V1p4ReceptorType"])
+                   model_uri=AK_SCHEMA.V1p4receptor_type, domain=None, range=Optional[Union[str, "V1p4ReceptorType"]])
 
 slots.V1p4receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.V1p4receptor_variable_domain_1_aa, name="V1p4receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('V1p4receptor_variable_domain_1_aa'),
-                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_1_aa, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_1_aa, domain=None, range=Optional[str])
 
 slots.V1p4receptor_variable_domain_1_locus = Slot(uri=AK_SCHEMA.V1p4receptor_variable_domain_1_locus, name="V1p4receptor_variable_domain_1_locus", curie=AK_SCHEMA.curie('V1p4receptor_variable_domain_1_locus'),
-                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_1_locus, domain=None, range=Union[str, "V1p4ReceptorVariableDomain1Locus"])
+                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_1_locus, domain=None, range=Optional[Union[str, "V1p4ReceptorVariableDomain1Locus"]])
 
 slots.V1p4receptor_variable_domain_2_aa = Slot(uri=AK_SCHEMA.V1p4receptor_variable_domain_2_aa, name="V1p4receptor_variable_domain_2_aa", curie=AK_SCHEMA.curie('V1p4receptor_variable_domain_2_aa'),
-                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_2_aa, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_2_aa, domain=None, range=Optional[str])
 
 slots.V1p4receptor_variable_domain_2_locus = Slot(uri=AK_SCHEMA.V1p4receptor_variable_domain_2_locus, name="V1p4receptor_variable_domain_2_locus", curie=AK_SCHEMA.curie('V1p4receptor_variable_domain_2_locus'),
-                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_2_locus, domain=None, range=Union[str, "V1p4ReceptorVariableDomain2Locus"])
+                   model_uri=AK_SCHEMA.V1p4receptor_variable_domain_2_locus, domain=None, range=Optional[Union[str, "V1p4ReceptorVariableDomain2Locus"]])
 
 slots.V1p4receptor_ref = Slot(uri=AK_SCHEMA.V1p4receptor_ref, name="V1p4receptor_ref", curie=AK_SCHEMA.curie('V1p4receptor_ref'),
                    model_uri=AK_SCHEMA.V1p4receptor_ref, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.V1p4ligand_type = Slot(uri=RDF.type, name="V1p4ligand_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4ligand_type, domain=None, range=Union[str, "V1p4LigandType"])
+                   model_uri=AK_SCHEMA.V1p4ligand_type, domain=None, range=Optional[Union[str, "V1p4LigandType"]])
 
 slots.V1p4antigen_type = Slot(uri=RDF.type, name="V1p4antigen_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.V1p4antigen_type, domain=None, range=Union[str, "V1p4AntigenType"])
+                   model_uri=AK_SCHEMA.V1p4antigen_type, domain=None, range=Optional[Union[str, "V1p4AntigenType"]])
 
 slots.V1p4antigen = Slot(uri=AK_SCHEMA.V1p4antigen, name="V1p4antigen", curie=AK_SCHEMA.curie('V1p4antigen'),
-                   model_uri=AK_SCHEMA.V1p4antigen, domain=None, range=Union[str, "V1p4Antigen"])
+                   model_uri=AK_SCHEMA.V1p4antigen, domain=None, range=Optional[Union[str, "V1p4Antigen"]])
 
 slots.V1p4antigen_source_species = Slot(uri=AK_SCHEMA.V1p4antigen_source_species, name="V1p4antigen_source_species", curie=AK_SCHEMA.curie('V1p4antigen_source_species'),
                    model_uri=AK_SCHEMA.V1p4antigen_source_species, domain=None, range=Optional[Union[str, "V1p4AntigenSourceSpecies"]])
@@ -16408,16 +15378,16 @@ slots.V1p4mhc_allele_2 = Slot(uri=AK_SCHEMA.V1p4mhc_allele_2, name="V1p4mhc_alle
                    model_uri=AK_SCHEMA.V1p4mhc_allele_2, domain=None, range=Optional[str])
 
 slots.V1p4reactivity_method = Slot(uri=AK_SCHEMA.V1p4reactivity_method, name="V1p4reactivity_method", curie=AK_SCHEMA.curie('V1p4reactivity_method'),
-                   model_uri=AK_SCHEMA.V1p4reactivity_method, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4reactivity_method, domain=None, range=Optional[str])
 
 slots.V1p4reactivity_readout = Slot(uri=AK_SCHEMA.V1p4reactivity_readout, name="V1p4reactivity_readout", curie=AK_SCHEMA.curie('V1p4reactivity_readout'),
-                   model_uri=AK_SCHEMA.V1p4reactivity_readout, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4reactivity_readout, domain=None, range=Optional[str])
 
 slots.V1p4reactivity_value = Slot(uri=AK_SCHEMA.V1p4reactivity_value, name="V1p4reactivity_value", curie=AK_SCHEMA.curie('V1p4reactivity_value'),
-                   model_uri=AK_SCHEMA.V1p4reactivity_value, domain=None, range=float)
+                   model_uri=AK_SCHEMA.V1p4reactivity_value, domain=None, range=Optional[float])
 
 slots.V1p4reactivity_unit = Slot(uri=AK_SCHEMA.V1p4reactivity_unit, name="V1p4reactivity_unit", curie=AK_SCHEMA.curie('V1p4reactivity_unit'),
-                   model_uri=AK_SCHEMA.V1p4reactivity_unit, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4reactivity_unit, domain=None, range=Optional[str])
 
 slots.aIRRKnowledgeCommons__investigations = Slot(uri=AK_SCHEMA.investigations, name="aIRRKnowledgeCommons__investigations", curie=AK_SCHEMA.curie('investigations'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__investigations, domain=None, range=Optional[Union[Dict[Union[str, InvestigationAkcId], Union[dict, Investigation]], List[Union[dict, Investigation]]]])
