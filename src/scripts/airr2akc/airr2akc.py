@@ -113,8 +113,8 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
     if is_multivalued(slot_yaml):
         slot[pr_slot_name]["multivalued"] = True
 
-    is_required = orig_slot_name in required_slots
-    slot[pr_slot_name]["required"] = is_required
+    # is_required = orig_slot_name in required_slots
+    # slot[pr_slot_name]["required"] = is_required
 
     annotations = get_slot_annotation(slot_yaml)
     if len(annotations) > 0:
