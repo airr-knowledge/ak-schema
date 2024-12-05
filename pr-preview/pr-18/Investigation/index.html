@@ -277,7 +277,7 @@
 
 
 
-    Investigation --&gt; "1" StudyType : study_type
+    Investigation --&gt; "0..1" StudyType : study_type
     click StudyType href "../StudyType"
 
 
@@ -311,7 +311,7 @@
 <tbody>
 <tr>
 <td><a href="../study_type/">study_type</a></td>
-<td>1 <br/> <a href="../StudyType/">StudyType</a></td>
+<td>0..1 <br/> <a href="../StudyType/">StudyType</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -335,7 +335,7 @@
 </tr>
 <tr>
 <td><a href="../release_date/">release_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
@@ -503,7 +503,6 @@ attributes:
     - Investigation
     - Study
     range: StudyType
-    required: true
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,
@@ -555,7 +554,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: datetime
-    required: true
   update_date:
     name: update_date
     description: Subsequence updates to the investigation or its data

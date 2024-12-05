@@ -216,7 +216,7 @@
 
 
 
-    ReceptorRepertoireSequencingAssay --&gt; "1" CompleteSequences : complete_sequences
+    ReceptorRepertoireSequencingAssay --&gt; "0..1" CompleteSequences : complete_sequences
     click CompleteSequences href "../CompleteSequences"
 
 
@@ -238,7 +238,7 @@
 
 
 
-    ReceptorRepertoireSequencingAssay --&gt; "1" PhysicalLinkage : physical_linkage
+    ReceptorRepertoireSequencingAssay --&gt; "0..1" PhysicalLinkage : physical_linkage
     click PhysicalLinkage href "../PhysicalLinkage"
 
 
@@ -301,13 +301,13 @@
 </tr>
 <tr>
 <td><a href="../complete_sequences/">complete_sequences</a></td>
-<td>1 <br/> <a href="../CompleteSequences/">CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../CompleteSequences/">CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../physical_linkage/">physical_linkage</a></td>
-<td>1 <br/> <a href="../PhysicalLinkage/">PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../PhysicalLinkage/">PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -426,7 +426,6 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - SampleProcessing
     range: PCRTarget
-    required: false
     multivalued: true
   complete_sequences:
     name: complete_sequences
@@ -453,7 +452,6 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - SampleProcessing
     range: CompleteSequences
-    required: true
   physical_linkage:
     name: physical_linkage
     annotations:
@@ -478,7 +476,6 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - SampleProcessing
     range: PhysicalLinkage
-    required: true
   specimen:
     name: specimen
     description: The specimen that was input for an assay

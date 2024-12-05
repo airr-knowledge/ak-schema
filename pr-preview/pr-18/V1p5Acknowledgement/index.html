@@ -228,19 +228,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p5acknowledgement_id/">V1p5acknowledgement_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>unique identifier of this Acknowledgement within the file</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5name/">V1p5name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Full name of individual</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5institution_name/">V1p5institution_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Individual's department and institution name</td>
 <td>direct</td>
 </tr>
@@ -334,7 +334,6 @@ attributes:
     domain_of:
     - V1p5Acknowledgement
     range: string
-    required: true
   V1p5name:
     name: V1p5name
     annotations:
@@ -349,7 +348,6 @@ attributes:
     domain_of:
     - V1p5Acknowledgement
     range: string
-    required: true
   V1p5institution_name:
     name: V1p5institution_name
     annotations:
@@ -364,7 +362,6 @@ attributes:
     domain_of:
     - V1p5Acknowledgement
     range: string
-    required: true
   V1p5orcid_id:
     name: V1p5orcid_id
     annotations:
@@ -379,7 +376,6 @@ attributes:
     domain_of:
     - V1p5Acknowledgement
     range: string
-    required: false
 
 </code></pre>
 </details>

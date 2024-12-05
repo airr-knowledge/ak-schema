@@ -204,7 +204,7 @@
 
 
 
-    V1p4GermlineSet --&gt; "1..*" V1p4Contributor : V1p4acknowledgements
+    V1p4GermlineSet --&gt; "*" V1p4Contributor : V1p4acknowledgements
     click V1p4Contributor href "../V1p4Contributor"
 
 
@@ -213,7 +213,7 @@
 
 
 
-    V1p4GermlineSet --&gt; "1..*" V1p4AlleleDescription : V1p4allele_descriptions
+    V1p4GermlineSet --&gt; "*" V1p4AlleleDescription : V1p4allele_descriptions
     click V1p4AlleleDescription href "../V1p4AlleleDescription"
 
 
@@ -247,7 +247,7 @@
 
 
 
-    V1p4GermlineSet --&gt; "1" V1p4Species : V1p4species
+    V1p4GermlineSet --&gt; "0..1" V1p4Species : V1p4species
     click V1p4Species href "../V1p4Species"
 
 
@@ -278,37 +278,37 @@
 <tbody>
 <tr>
 <td><a href="../V1p4germline_set_id/">V1p4germline_set_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of the GermlineSet within this file</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4acknowledgements/">V1p4acknowledgements</a></td>
-<td>1..* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
+<td>* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4release_version/">V1p4release_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4release_description/">V1p4release_description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4release_date/">V1p4release_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4germline_set_name/">V1p4germline_set_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>descriptive name of this germline set</td>
 <td>direct</td>
 </tr>
@@ -326,7 +326,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4species/">V1p4species</a></td>
-<td>1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
+<td>0..1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -350,7 +350,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4allele_descriptions/">V1p4allele_descriptions</a></td>
-<td>1..* <br/> <a href="../V1p4AlleleDescription/">V1p4AlleleDescription</a></td>
+<td>* <br/> <a href="../V1p4AlleleDescription/">V1p4AlleleDescription</a></td>
 <td>list of allele_descriptions in the germline set</td>
 <td>direct</td>
 </tr>
@@ -430,7 +430,6 @@ attributes:
     domain_of:
     - V1p4GermlineSet
     range: string
-    required: true
   V1p4acknowledgements:
     name: V1p4acknowledgements
     annotations:
@@ -445,7 +444,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: V1p4Contributor
-    required: true
     multivalued: true
   V1p4release_version:
     name: V1p4release_version
@@ -461,7 +459,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: true
   V1p4release_description:
     name: V1p4release_description
     annotations:
@@ -478,7 +475,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: true
   V1p4release_date:
     name: V1p4release_date
     annotations:
@@ -494,7 +490,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: datetime
-    required: true
   V1p4germline_set_name:
     name: V1p4germline_set_name
     annotations:
@@ -509,7 +504,6 @@ attributes:
     domain_of:
     - V1p4GermlineSet
     range: string
-    required: true
   V1p4germline_set_ref:
     name: V1p4germline_set_ref
     annotations:
@@ -557,7 +551,6 @@ attributes:
     - V1p4GermlineSet
     - V1p4Subject
     range: V1p4Species
-    required: true
   V1p4species_subgroup:
     name: V1p4species_subgroup
     annotations:
@@ -573,7 +566,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: false
   V1p4species_subgroup_type:
     name: V1p4species_subgroup_type
     annotations:
@@ -590,7 +582,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: V1p4SpeciesSubgroupType
-    required: false
   V1p4locus:
     name: V1p4locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -617,7 +608,6 @@ attributes:
     domain_of:
     - V1p4GermlineSet
     range: V1p4AlleleDescription
-    required: true
     multivalued: true
   V1p4curation:
     name: V1p4curation
@@ -635,7 +625,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: false
 
 </code></pre>
 </details>

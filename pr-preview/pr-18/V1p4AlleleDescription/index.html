@@ -209,7 +209,7 @@
 
 
 
-    V1p4AlleleDescription --&gt; "1..*" V1p4Contributor : V1p4acknowledgements
+    V1p4AlleleDescription --&gt; "*" V1p4Contributor : V1p4acknowledgements
     click V1p4Contributor href "../V1p4Contributor"
 
 
@@ -261,7 +261,7 @@
 
 
 
-    V1p4AlleleDescription --&gt; "1" V1p4InferenceType : V1p4inference_type
+    V1p4AlleleDescription --&gt; "0..1" V1p4InferenceType : V1p4inference_type
     click V1p4InferenceType href "../V1p4InferenceType"
 
 
@@ -325,7 +325,7 @@
 
 
 
-    V1p4AlleleDescription --&gt; "1" V1p4SequenceType : V1p4sequence_type
+    V1p4AlleleDescription --&gt; "0..1" V1p4SequenceType : V1p4sequence_type
     click V1p4SequenceType href "../V1p4SequenceType"
 
 
@@ -334,7 +334,7 @@
 
 
 
-    V1p4AlleleDescription --&gt; "1" V1p4Species : V1p4species
+    V1p4AlleleDescription --&gt; "0..1" V1p4Species : V1p4species
     click V1p4Species href "../V1p4Species"
 
 
@@ -402,7 +402,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4allele_description_id/">V1p4allele_description_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this AlleleDescription within the file</td>
 <td>direct</td>
 </tr>
@@ -414,25 +414,25 @@
 </tr>
 <tr>
 <td><a href="../V1p4acknowledgements/">V1p4acknowledgements</a></td>
-<td>1..* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
+<td>* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4release_version/">V1p4release_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4release_date/">V1p4release_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4release_description/">V1p4release_description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
@@ -444,13 +444,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4sequence/">V1p4sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4coding_sequence/">V1p4coding_sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Nucleotide sequence of the core coding region, such as the coding region of a...</td>
 <td>direct</td>
 </tr>
@@ -474,25 +474,25 @@
 </tr>
 <tr>
 <td><a href="../V1p4sequence_type/">V1p4sequence_type</a></td>
-<td>1 <br/> <a href="../V1p4SequenceType/">V1p4SequenceType</a></td>
+<td>0..1 <br/> <a href="../V1p4SequenceType/">V1p4SequenceType</a></td>
 <td>Sequence type (V, D, J, C)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4functional/">V1p4functional</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>True if the gene is functional, false if it is a pseudogene</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4inference_type/">V1p4inference_type</a></td>
-<td>1 <br/> <a href="../V1p4InferenceType/">V1p4InferenceType</a></td>
+<td>0..1 <br/> <a href="../V1p4InferenceType/">V1p4InferenceType</a></td>
 <td>Type of inference(s) from which this gene sequence was inferred</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4species/">V1p4species</a></td>
-<td>1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
+<td>0..1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -818,7 +818,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: true
   V1p4allele_description_ref:
     name: V1p4allele_description_ref
     annotations:
@@ -834,7 +833,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: false
   V1p4acknowledgements:
     name: V1p4acknowledgements
     annotations:
@@ -849,7 +847,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: V1p4Contributor
-    required: true
     multivalued: true
   V1p4release_version:
     name: V1p4release_version
@@ -865,7 +862,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: true
   V1p4release_date:
     name: V1p4release_date
     annotations:
@@ -881,7 +877,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: datetime
-    required: true
   V1p4release_description:
     name: V1p4release_description
     annotations:
@@ -898,7 +893,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: true
   V1p4label:
     name: V1p4label
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -924,7 +918,6 @@ attributes:
     - V1p4UndocumentedAllele
     - V1p4Rearrangement
     range: string
-    required: true
   V1p4coding_sequence:
     name: V1p4coding_sequence
     annotations:
@@ -941,7 +934,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: true
   V1p4aliases:
     name: V1p4aliases
     annotations:
@@ -956,7 +948,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: false
     multivalued: true
   V1p4locus:
     name: V1p4locus
@@ -984,7 +975,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4sequence_type:
     name: V1p4sequence_type
     annotations:
@@ -1000,7 +990,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4SequenceType
-    required: true
   V1p4functional:
     name: V1p4functional
     annotations:
@@ -1015,7 +1004,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: boolean
-    required: true
   V1p4inference_type:
     name: V1p4inference_type
     annotations:
@@ -1031,7 +1019,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4InferenceType
-    required: true
   V1p4species:
     name: V1p4species
     annotations:
@@ -1048,7 +1035,6 @@ attributes:
     - V1p4GermlineSet
     - V1p4Subject
     range: V1p4Species
-    required: true
   V1p4species_subgroup:
     name: V1p4species_subgroup
     annotations:
@@ -1064,7 +1050,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: false
   V1p4species_subgroup_type:
     name: V1p4species_subgroup_type
     annotations:
@@ -1081,7 +1066,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: V1p4SpeciesSubgroupType
-    required: false
   V1p4status:
     name: V1p4status
     annotations:
@@ -1096,7 +1080,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4Status
-    required: false
   V1p4subgroup_designation:
     name: V1p4subgroup_designation
     annotations:
@@ -1111,7 +1094,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: false
   V1p4gene_designation:
     name: V1p4gene_designation
     annotations:
@@ -1126,7 +1108,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: false
   V1p4allele_designation:
     name: V1p4allele_designation
     annotations:
@@ -1141,7 +1122,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4MHCAllele
     range: string
-    required: false
   V1p4allele_similarity_cluster_designation:
     name: V1p4allele_similarity_cluster_designation
     annotations:
@@ -1156,7 +1136,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: false
   V1p4allele_similarity_cluster_member_id:
     name: V1p4allele_similarity_cluster_member_id
     annotations:
@@ -1172,7 +1151,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: false
   V1p4j_codon_frame:
     name: V1p4j_codon_frame
     annotations:
@@ -1190,7 +1168,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4JCodonFrame
-    required: false
   V1p4gene_start:
     name: V1p4gene_start
     annotations:
@@ -1206,7 +1183,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4gene_end:
     name: V1p4gene_end
     annotations:
@@ -1222,7 +1198,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4utr_5_prime_start:
     name: V1p4utr_5_prime_start
     annotations:
@@ -1238,7 +1213,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4utr_5_prime_end:
     name: V1p4utr_5_prime_end
     annotations:
@@ -1254,7 +1228,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4leader_1_start:
     name: V1p4leader_1_start
     annotations:
@@ -1269,7 +1242,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4leader_1_end:
     name: V1p4leader_1_end
     annotations:
@@ -1284,7 +1256,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4leader_2_start:
     name: V1p4leader_2_start
     annotations:
@@ -1299,7 +1270,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4leader_2_end:
     name: V1p4leader_2_end
     annotations:
@@ -1314,7 +1284,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4v_rs_start:
     name: V1p4v_rs_start
     annotations:
@@ -1330,7 +1299,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4v_rs_end:
     name: V1p4v_rs_end
     annotations:
@@ -1346,7 +1314,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4d_rs_3_prime_start:
     name: V1p4d_rs_3_prime_start
     annotations:
@@ -1362,7 +1329,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4d_rs_3_prime_end:
     name: V1p4d_rs_3_prime_end
     annotations:
@@ -1378,7 +1344,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4d_rs_5_prime_start:
     name: V1p4d_rs_5_prime_start
     annotations:
@@ -1394,7 +1359,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4d_rs_5_prime_end:
     name: V1p4d_rs_5_prime_end
     annotations:
@@ -1410,7 +1374,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4j_cdr3_end:
     name: V1p4j_cdr3_end
     annotations:
@@ -1426,7 +1389,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4j_rs_start:
     name: V1p4j_rs_start
     annotations:
@@ -1442,7 +1404,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4j_rs_end:
     name: V1p4j_rs_end
     annotations:
@@ -1458,7 +1419,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4j_donor_splice:
     name: V1p4j_donor_splice
     annotations:
@@ -1474,7 +1434,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: integer
-    required: false
   V1p4v_gene_delineations:
     name: V1p4v_gene_delineations
     annotations:
@@ -1489,7 +1448,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4SequenceDelineationV
-    required: false
     multivalued: true
   V1p4unrearranged_support:
     name: V1p4unrearranged_support
@@ -1505,7 +1463,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4UnrearrangedSequence
-    required: false
     multivalued: true
   V1p4rearranged_support:
     name: V1p4rearranged_support
@@ -1521,7 +1478,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4RearrangedSequence
-    required: false
     multivalued: true
   V1p4paralogs:
     name: V1p4paralogs
@@ -1537,7 +1493,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: string
-    required: false
     multivalued: true
   V1p4curation:
     name: V1p4curation
@@ -1555,7 +1510,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: false
   V1p4curational_tags:
     name: V1p4curational_tags
     annotations:
@@ -1570,7 +1524,6 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     range: V1p4CurationalTags
-    required: false
     multivalued: true
 
 </code></pre>

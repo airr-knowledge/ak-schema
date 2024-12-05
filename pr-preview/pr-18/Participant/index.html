@@ -229,7 +229,7 @@
 
 
 
-    Participant --&gt; "1" AgeUnit : age_unit
+    Participant --&gt; "0..1" AgeUnit : age_unit
     click AgeUnit href "../AgeUnit"
 
 
@@ -366,7 +366,7 @@
 </tr>
 <tr>
 <td><a href="../age_unit/">age_unit</a></td>
-<td>1 <br/> <a href="../AgeUnit/">AgeUnit</a></td>
+<td>0..1 <br/> <a href="../AgeUnit/">AgeUnit</a></td>
 <td>Unit of age range</td>
 <td>direct</td>
 </tr>
@@ -578,7 +578,6 @@ attributes:
     - Participant
     - Subject
     range: AgeUnit
-    required: true
   age_event:
     name: age_event
     description: The event to which the age is relative

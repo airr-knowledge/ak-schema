@@ -219,7 +219,7 @@
 
 
 
-    V1p5Study --&gt; "1..*" V1p5KeywordsStudy : V1p5keywords_study
+    V1p5Study --&gt; "*" V1p5KeywordsStudy : V1p5keywords_study
     click V1p5KeywordsStudy href "../V1p5KeywordsStudy"
 
 
@@ -242,7 +242,7 @@
 
 
 
-    V1p5Study --&gt; "1" V1p5StudyType : V1p5study_type
+    V1p5Study --&gt; "0..1" V1p5StudyType : V1p5study_type
     click V1p5StudyType href "../V1p5StudyType"
 
 
@@ -264,19 +264,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p5study_id/">V1p5study_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique ID assigned by study registry such as one of the International Nucleot...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5study_title/">V1p5study_title</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Descriptive study title</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5study_type/">V1p5study_type</a></td>
-<td>1 <br/> <a href="../V1p5StudyType/">V1p5StudyType</a></td>
+<td>0..1 <br/> <a href="../V1p5StudyType/">V1p5StudyType</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -288,13 +288,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5inclusion_exclusion_criteria/">V1p5inclusion_exclusion_criteria</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of criteria for inclusion/exclusion for the study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5grants/">V1p5grants</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Funding agencies and grant numbers</td>
 <td>direct</td>
 </tr>
@@ -306,25 +306,25 @@
 </tr>
 <tr>
 <td><a href="../V1p5collected_by/">V1p5collected_by</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Full contact information of the data collector, i</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5lab_name/">V1p5lab_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5lab_address/">V1p5lab_address</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5submitted_by/">V1p5submitted_by</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Full contact information of the data depositor, i</td>
 <td>direct</td>
 </tr>
@@ -336,7 +336,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5keywords_study/">V1p5keywords_study</a></td>
-<td>1..* <br/> <a href="../V1p5KeywordsStudy/">V1p5KeywordsStudy</a></td>
+<td>* <br/> <a href="../V1p5KeywordsStudy/">V1p5KeywordsStudy</a></td>
 <td>Keywords describing properties of one or more data sets in a study</td>
 <td>direct</td>
 </tr>
@@ -442,7 +442,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: true
   V1p5study_title:
     name: V1p5study_title
     annotations:
@@ -457,7 +456,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: true
   V1p5study_type:
     name: V1p5study_type
     annotations:
@@ -473,7 +471,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: V1p5StudyType
-    required: true
   V1p5study_description:
     name: V1p5study_description
     annotations:
@@ -488,7 +485,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: false
   V1p5inclusion_exclusion_criteria:
     name: V1p5inclusion_exclusion_criteria
     annotations:
@@ -503,7 +499,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: true
   V1p5grants:
     name: V1p5grants
     annotations:
@@ -518,7 +513,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: true
   V1p5study_contact:
     name: V1p5study_contact
     annotations:
@@ -535,7 +529,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: false
   V1p5collected_by:
     name: V1p5collected_by
     annotations:
@@ -552,7 +545,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: true
   V1p5lab_name:
     name: V1p5lab_name
     annotations:
@@ -567,7 +559,6 @@ attributes:
     - V1p5GermlineSet
     - V1p5Study
     range: string
-    required: true
   V1p5lab_address:
     name: V1p5lab_address
     annotations:
@@ -583,7 +574,6 @@ attributes:
     - V1p5GermlineSet
     - V1p5Study
     range: string
-    required: true
   V1p5submitted_by:
     name: V1p5submitted_by
     annotations:
@@ -601,7 +591,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: string
-    required: true
   V1p5pub_ids:
     name: V1p5pub_ids
     annotations:
@@ -635,7 +624,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: V1p5KeywordsStudy
-    required: true
     multivalued: true
   V1p5adc_publish_date:
     name: V1p5adc_publish_date
@@ -651,7 +639,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: datetime
-    required: false
   V1p5adc_update_date:
     name: V1p5adc_update_date
     annotations:
@@ -666,7 +653,6 @@ attributes:
     domain_of:
     - V1p5Study
     range: datetime
-    required: false
 
 </code></pre>
 </details>

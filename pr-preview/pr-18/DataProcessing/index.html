@@ -256,37 +256,37 @@
 </tr>
 <tr>
 <td><a href="../software_versions/">software_versions</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Version number and / or date, include company pipelines</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../paired_reads_assembly/">paired_reads_assembly</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>How paired end reads were assembled into a single receptor sequence</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../quality_thresholds/">quality_thresholds</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>How/if sequences were removed from (4) based on base quality scores</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../primer_match_cutoffs/">primer_match_cutoffs</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>How primers were identified in the sequences, were they removed/masked/etc?</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collapsing_method/">collapsing_method</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The method used for combining multiple sequences from (4) into a single seque...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../data_processing_protocols/">data_processing_protocols</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>General description of how QC is performed</td>
 <td>direct</td>
 </tr>
@@ -298,7 +298,7 @@
 </tr>
 <tr>
 <td><a href="../germline_database/">germline_database</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Source of germline V(D)J genes with version number or date accessed</td>
 <td>direct</td>
 </tr>
@@ -419,7 +419,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: boolean
-    required: false
   software_versions:
     name: software_versions
     annotations:
@@ -434,7 +433,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: true
   paired_reads_assembly:
     name: paired_reads_assembly
     annotations:
@@ -449,7 +447,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: true
   quality_thresholds:
     name: quality_thresholds
     annotations:
@@ -464,7 +461,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: true
   primer_match_cutoffs:
     name: primer_match_cutoffs
     annotations:
@@ -479,7 +475,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: true
   collapsing_method:
     name: collapsing_method
     annotations:
@@ -495,7 +490,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: true
   data_processing_protocols:
     name: data_processing_protocols
     annotations:
@@ -510,7 +504,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: true
   data_processing_files:
     name: data_processing_files
     annotations:
@@ -525,7 +518,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: false
     multivalued: true
   germline_database:
     name: germline_database
@@ -541,7 +533,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: true
   germline_set_ref:
     name: germline_set_ref
     annotations:
@@ -572,7 +563,6 @@ attributes:
     domain_of:
     - DataProcessing
     range: string
-    required: false
 
 </code></pre>
 </details>

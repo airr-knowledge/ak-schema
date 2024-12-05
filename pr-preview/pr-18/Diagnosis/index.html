@@ -209,7 +209,7 @@
 
 
 
-    Diagnosis --&gt; "1" DiseaseDiagnosis : disease_diagnosis
+    Diagnosis --&gt; "0..1" DiseaseDiagnosis : disease_diagnosis
     click DiseaseDiagnosis href "../DiseaseDiagnosis"
 
 
@@ -250,19 +250,19 @@
 <tbody>
 <tr>
 <td><a href="../study_group_description/">study_group_description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Designation of study arm to which the subject is assigned to</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../disease_diagnosis/">disease_diagnosis</a></td>
-<td>1 <br/> <a href="../DiseaseDiagnosis/">DiseaseDiagnosis</a></td>
+<td>0..1 <br/> <a href="../DiseaseDiagnosis/">DiseaseDiagnosis</a></td>
 <td>Diagnosis of subject</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../disease_length/">disease_length</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Time duration between initial diagnosis and current intervention</td>
 <td>direct</td>
 </tr>
@@ -274,25 +274,25 @@
 </tr>
 <tr>
 <td><a href="../prior_therapies/">prior_therapies</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of all relevant previous therapies applied to subject for treatment of `...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../immunogen/">immunogen</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Antigen, vaccine or drug applied to subject at this intervention</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../intervention/">intervention</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of intervention</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../medical_history/">medical_history</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Medical history of subject that is relevant to assess the course of disease a...</td>
 <td>direct</td>
 </tr>
@@ -378,7 +378,6 @@ attributes:
     domain_of:
     - Diagnosis
     range: string
-    required: true
   disease_diagnosis:
     name: disease_diagnosis
     annotations:
@@ -393,7 +392,6 @@ attributes:
     domain_of:
     - Diagnosis
     range: DiseaseDiagnosis
-    required: true
   disease_length:
     name: disease_length
     annotations:
@@ -408,7 +406,6 @@ attributes:
     domain_of:
     - Diagnosis
     range: string
-    required: true
   disease_stage:
     name: disease_stage
     description: The stage of the disease relevant to an immune exposure
@@ -435,7 +432,6 @@ attributes:
     domain_of:
     - Diagnosis
     range: string
-    required: true
   immunogen:
     name: immunogen
     annotations:
@@ -450,7 +446,6 @@ attributes:
     domain_of:
     - Diagnosis
     range: string
-    required: true
   intervention:
     name: intervention
     annotations:
@@ -465,7 +460,6 @@ attributes:
     domain_of:
     - Diagnosis
     range: string
-    required: true
   medical_history:
     name: medical_history
     annotations:
@@ -481,7 +475,6 @@ attributes:
     domain_of:
     - Diagnosis
     range: string
-    required: true
 
 </code></pre>
 </details>

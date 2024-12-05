@@ -234,7 +234,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5CellSubset : V1p5cell_subset
+    V1p5SampleProcessing --&gt; "0..1" V1p5CellSubset : V1p5cell_subset
     click V1p5CellSubset href "../V1p5CellSubset"
 
 
@@ -249,7 +249,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5CollectionTimePointRelativeUnit : V1p5collection_time_point_relative_unit
+    V1p5SampleProcessing --&gt; "0..1" V1p5CollectionTimePointRelativeUnit : V1p5collection_time_point_relative_unit
     click V1p5CollectionTimePointRelativeUnit href "../V1p5CollectionTimePointRelativeUnit"
 
 
@@ -258,7 +258,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5CompleteSequences : V1p5complete_sequences
+    V1p5SampleProcessing --&gt; "0..1" V1p5CompleteSequences : V1p5complete_sequences
     click V1p5CompleteSequences href "../V1p5CompleteSequences"
 
 
@@ -271,7 +271,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5LibraryGenerationMethod : V1p5library_generation_method
+    V1p5SampleProcessing --&gt; "0..1" V1p5LibraryGenerationMethod : V1p5library_generation_method
     click V1p5LibraryGenerationMethod href "../V1p5LibraryGenerationMethod"
 
 
@@ -291,7 +291,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5PhysicalLinkage : V1p5physical_linkage
+    V1p5SampleProcessing --&gt; "0..1" V1p5PhysicalLinkage : V1p5physical_linkage
     click V1p5PhysicalLinkage href "../V1p5PhysicalLinkage"
 
 
@@ -329,7 +329,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5TemplateAmountUnit : V1p5template_amount_unit
+    V1p5SampleProcessing --&gt; "0..1" V1p5TemplateAmountUnit : V1p5template_amount_unit
     click V1p5TemplateAmountUnit href "../V1p5TemplateAmountUnit"
 
 
@@ -338,7 +338,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5TemplateClass : V1p5template_class
+    V1p5SampleProcessing --&gt; "0..1" V1p5TemplateClass : V1p5template_class
     click V1p5TemplateClass href "../V1p5TemplateClass"
 
 
@@ -349,7 +349,7 @@
 
 
 
-    V1p5SampleProcessing --&gt; "1" V1p5Tissue : V1p5tissue
+    V1p5SampleProcessing --&gt; "0..1" V1p5Tissue : V1p5tissue
     click V1p5Tissue href "../V1p5Tissue"
 
 
@@ -379,73 +379,73 @@
 </tr>
 <tr>
 <td><a href="../V1p5sample_id/">V1p5sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sample_type/">V1p5sample_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5tissue/">V1p5tissue</a></td>
-<td>1 <br/> <a href="../V1p5Tissue/">V1p5Tissue</a></td>
+<td>0..1 <br/> <a href="../V1p5Tissue/">V1p5Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5anatomic_site/">V1p5anatomic_site</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5disease_state_sample/">V1p5disease_state_sample</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_relative/">V1p5collection_time_point_relative</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Time point at which sample was taken, relative to <code>Collection time event</code></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_relative_unit/">V1p5collection_time_point_relative_unit</a></td>
-<td>1 <br/> <a href="../V1p5CollectionTimePointRelativeUnit/">V1p5CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5CollectionTimePointRelativeUnit/">V1p5CollectionTimePointRelativeUnit</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_reference/">V1p5collection_time_point_reference</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Event in the study schedule to which <code>Sample collection time</code> relates to</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5biomaterial_provider/">V1p5biomaterial_provider</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5tissue_processing/">V1p5tissue_processing</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_subset/">V1p5cell_subset</a></td>
-<td>1 <br/> <a href="../V1p5CellSubset/">V1p5CellSubset</a></td>
+<td>0..1 <br/> <a href="../V1p5CellSubset/">V1p5CellSubset</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_phenotype/">V1p5cell_phenotype</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of cellular markers and their expression levels used to isolate the cell...</td>
 <td>direct</td>
 </tr>
@@ -457,85 +457,85 @@
 </tr>
 <tr>
 <td><a href="../V1p5single_cell/">V1p5single_cell</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_number/">V1p5cell_number</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cells_per_reaction/">V1p5cells_per_reaction</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_storage/">V1p5cell_storage</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_quality/">V1p5cell_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_isolation/">V1p5cell_isolation</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_processing_protocol/">V1p5cell_processing_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5template_class/">V1p5template_class</a></td>
-<td>1 <br/> <a href="../V1p5TemplateClass/">V1p5TemplateClass</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateClass/">V1p5TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5template_quality/">V1p5template_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5template_amount/">V1p5template_amount</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5template_amount_unit/">V1p5template_amount_unit</a></td>
-<td>1 <br/> <a href="../V1p5TemplateAmountUnit/">V1p5TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateAmountUnit/">V1p5TemplateAmountUnit</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_method/">V1p5library_generation_method</a></td>
-<td>1 <br/> <a href="../V1p5LibraryGenerationMethod/">V1p5LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../V1p5LibraryGenerationMethod/">V1p5LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_protocol/">V1p5library_generation_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_kit_version/">V1p5library_generation_kit_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
@@ -547,49 +547,49 @@
 </tr>
 <tr>
 <td><a href="../V1p5complete_sequences/">V1p5complete_sequences</a></td>
-<td>1 <br/> <a href="../V1p5CompleteSequences/">V1p5CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../V1p5CompleteSequences/">V1p5CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5physical_linkage/">V1p5physical_linkage</a></td>
-<td>1 <br/> <a href="../V1p5PhysicalLinkage/">V1p5PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../V1p5PhysicalLinkage/">V1p5PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sequencing_run_id/">V1p5sequencing_run_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>ID of sequencing run assigned by the sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5total_reads_passing_qc_filter/">V1p5total_reads_passing_qc_filter</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of usable reads for analysis</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sequencing_platform/">V1p5sequencing_platform</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Designation of sequencing instrument used</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sequencing_facility/">V1p5sequencing_facility</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sequencing_run_date/">V1p5sequencing_run_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sequencing_kit/">V1p5sequencing_kit</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name, manufacturer, order and lot numbers of sequencing kit</td>
 <td>direct</td>
 </tr>
@@ -711,7 +711,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5SampleProcessing
     range: string
-    required: false
   V1p5sample_id:
     name: V1p5sample_id
     annotations:
@@ -729,7 +728,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5sample_type:
     name: V1p5sample_type
     annotations:
@@ -747,7 +745,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5tissue:
     name: V1p5tissue
     annotations:
@@ -763,7 +760,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: V1p5Tissue
-    required: true
   V1p5anatomic_site:
     name: V1p5anatomic_site
     annotations:
@@ -779,7 +775,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5disease_state_sample:
     name: V1p5disease_state_sample
     annotations:
@@ -795,7 +790,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5collection_time_point_relative:
     name: V1p5collection_time_point_relative
     annotations:
@@ -812,7 +806,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: float
-    required: true
   V1p5collection_time_point_relative_unit:
     name: V1p5collection_time_point_relative_unit
     annotations:
@@ -828,7 +821,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: V1p5CollectionTimePointRelativeUnit
-    required: true
   V1p5collection_time_point_reference:
     name: V1p5collection_time_point_reference
     annotations:
@@ -845,7 +837,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5biomaterial_provider:
     name: V1p5biomaterial_provider
     annotations:
@@ -861,7 +852,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5tissue_processing:
     name: V1p5tissue_processing
     annotations:
@@ -878,7 +868,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_subset:
     name: V1p5cell_subset
     annotations:
@@ -894,7 +883,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: V1p5CellSubset
-    required: true
   V1p5cell_phenotype:
     name: V1p5cell_phenotype
     annotations:
@@ -911,7 +899,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_species:
     name: V1p5cell_species
     annotations:
@@ -932,7 +919,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: V1p5CellSpecies
-    required: false
   V1p5single_cell:
     name: V1p5single_cell
     annotations:
@@ -948,7 +934,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: boolean
-    required: true
   V1p5cell_number:
     name: V1p5cell_number
     annotations:
@@ -964,7 +949,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: integer
-    required: true
   V1p5cells_per_reaction:
     name: V1p5cells_per_reaction
     annotations:
@@ -980,7 +964,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: integer
-    required: true
   V1p5cell_storage:
     name: V1p5cell_storage
     annotations:
@@ -996,7 +979,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: boolean
-    required: true
   V1p5cell_quality:
     name: V1p5cell_quality
     annotations:
@@ -1013,7 +995,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_isolation:
     name: V1p5cell_isolation
     annotations:
@@ -1030,7 +1011,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_processing_protocol:
     name: V1p5cell_processing_protocol
     annotations:
@@ -1048,7 +1028,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5template_class:
     name: V1p5template_class
     annotations:
@@ -1065,7 +1044,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5TemplateClass
-    required: true
   V1p5template_quality:
     name: V1p5template_quality
     annotations:
@@ -1082,7 +1060,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5template_amount:
     name: V1p5template_amount
     annotations:
@@ -1098,7 +1075,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: float
-    required: true
   V1p5template_amount_unit:
     name: V1p5template_amount_unit
     annotations:
@@ -1114,7 +1090,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5TemplateAmountUnit
-    required: true
   V1p5library_generation_method:
     name: V1p5library_generation_method
     annotations:
@@ -1130,7 +1105,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5LibraryGenerationMethod
-    required: true
   V1p5library_generation_protocol:
     name: V1p5library_generation_protocol
     annotations:
@@ -1147,7 +1121,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5library_generation_kit_version:
     name: V1p5library_generation_kit_version
     annotations:
@@ -1164,7 +1137,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5pcr_target:
     name: V1p5pcr_target
     annotations:
@@ -1185,7 +1157,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5PCRTarget
-    required: false
     multivalued: true
   V1p5complete_sequences:
     name: V1p5complete_sequences
@@ -1212,7 +1183,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5CompleteSequences
-    required: true
   V1p5physical_linkage:
     name: V1p5physical_linkage
     annotations:
@@ -1237,7 +1207,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5PhysicalLinkage
-    required: true
   V1p5sequencing_run_id:
     name: V1p5sequencing_run_id
     annotations:
@@ -1253,7 +1222,6 @@ attributes:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5total_reads_passing_qc_filter:
     name: V1p5total_reads_passing_qc_filter
     annotations:
@@ -1269,7 +1237,6 @@ attributes:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: integer
-    required: true
   V1p5sequencing_platform:
     name: V1p5sequencing_platform
     annotations:
@@ -1285,7 +1252,6 @@ attributes:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5sequencing_facility:
     name: V1p5sequencing_facility
     annotations:
@@ -1301,7 +1267,6 @@ attributes:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5sequencing_run_date:
     name: V1p5sequencing_run_date
     annotations:
@@ -1317,7 +1282,6 @@ attributes:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: datetime
-    required: true
   V1p5sequencing_kit:
     name: V1p5sequencing_kit
     annotations:
@@ -1333,7 +1297,6 @@ attributes:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5sequencing_files:
     name: V1p5sequencing_files
     annotations:
@@ -1349,7 +1312,6 @@ attributes:
     - V1p5SequencingRun
     - V1p5SampleProcessing
     range: V1p5SequencingData
-    required: false
 
 </code></pre>
 </details>

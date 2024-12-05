@@ -218,7 +218,7 @@
 
 
 
-    V1p4ContributorContribution --&gt; "1" V1p4Role : V1p4role
+    V1p4ContributorContribution --&gt; "0..1" V1p4Role : V1p4role
     click V1p4Role href "../V1p4Role"
 
 
@@ -238,7 +238,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4role/">V1p4role</a></td>
-<td>1 <br/> <a href="../V1p4Role/">V1p4Role</a></td>
+<td>0..1 <br/> <a href="../V1p4Role/">V1p4Role</a></td>
 <td>Role according to CRediT taxonomy</td>
 <td>direct</td>
 </tr>
@@ -324,7 +324,6 @@ attributes:
     domain_of:
     - V1p4ContributorContribution
     range: V1p4Role
-    required: true
   V1p4degree:
     name: V1p4degree
     annotations:
@@ -340,7 +339,6 @@ attributes:
     domain_of:
     - V1p4ContributorContribution
     range: V1p4Degree
-    required: false
 
 </code></pre>
 </details>

@@ -204,7 +204,7 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5CompleteSequences : V1p5complete_sequences
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5CompleteSequences : V1p5complete_sequences
     click V1p5CompleteSequences href "../V1p5CompleteSequences"
 
 
@@ -215,7 +215,7 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5LibraryGenerationMethod : V1p5library_generation_method
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5LibraryGenerationMethod : V1p5library_generation_method
     click V1p5LibraryGenerationMethod href "../V1p5LibraryGenerationMethod"
 
 
@@ -235,7 +235,7 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5PhysicalLinkage : V1p5physical_linkage
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5PhysicalLinkage : V1p5physical_linkage
     click V1p5PhysicalLinkage href "../V1p5PhysicalLinkage"
 
 
@@ -246,7 +246,7 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5TemplateAmountUnit : V1p5template_amount_unit
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5TemplateAmountUnit : V1p5template_amount_unit
     click V1p5TemplateAmountUnit href "../V1p5TemplateAmountUnit"
 
 
@@ -255,7 +255,7 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "1" V1p5TemplateClass : V1p5template_class
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5TemplateClass : V1p5template_class
     click V1p5TemplateClass href "../V1p5TemplateClass"
 
 
@@ -277,43 +277,43 @@
 <tbody>
 <tr>
 <td><a href="../V1p5template_class/">V1p5template_class</a></td>
-<td>1 <br/> <a href="../V1p5TemplateClass/">V1p5TemplateClass</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateClass/">V1p5TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5template_quality/">V1p5template_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5template_amount/">V1p5template_amount</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5template_amount_unit/">V1p5template_amount_unit</a></td>
-<td>1 <br/> <a href="../V1p5TemplateAmountUnit/">V1p5TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateAmountUnit/">V1p5TemplateAmountUnit</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_method/">V1p5library_generation_method</a></td>
-<td>1 <br/> <a href="../V1p5LibraryGenerationMethod/">V1p5LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../V1p5LibraryGenerationMethod/">V1p5LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_protocol/">V1p5library_generation_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_kit_version/">V1p5library_generation_kit_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
@@ -325,13 +325,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5complete_sequences/">V1p5complete_sequences</a></td>
-<td>1 <br/> <a href="../V1p5CompleteSequences/">V1p5CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../V1p5CompleteSequences/">V1p5CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5physical_linkage/">V1p5physical_linkage</a></td>
-<td>1 <br/> <a href="../V1p5PhysicalLinkage/">V1p5PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../V1p5PhysicalLinkage/">V1p5PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -402,7 +402,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5TemplateClass
-    required: true
   V1p5template_quality:
     name: V1p5template_quality
     annotations:
@@ -419,7 +418,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5template_amount:
     name: V1p5template_amount
     annotations:
@@ -435,7 +433,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: float
-    required: true
   V1p5template_amount_unit:
     name: V1p5template_amount_unit
     annotations:
@@ -451,7 +448,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5TemplateAmountUnit
-    required: true
   V1p5library_generation_method:
     name: V1p5library_generation_method
     annotations:
@@ -467,7 +463,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5LibraryGenerationMethod
-    required: true
   V1p5library_generation_protocol:
     name: V1p5library_generation_protocol
     annotations:
@@ -484,7 +479,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5library_generation_kit_version:
     name: V1p5library_generation_kit_version
     annotations:
@@ -501,7 +495,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5pcr_target:
     name: V1p5pcr_target
     annotations:
@@ -522,7 +515,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5PCRTarget
-    required: false
     multivalued: true
   V1p5complete_sequences:
     name: V1p5complete_sequences
@@ -549,7 +541,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5CompleteSequences
-    required: true
   V1p5physical_linkage:
     name: V1p5physical_linkage
     annotations:
@@ -574,7 +565,6 @@ attributes:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
     range: V1p5PhysicalLinkage
-    required: true
 
 </code></pre>
 </details>

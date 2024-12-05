@@ -217,7 +217,7 @@
 
 
 
-    V1p4Sample --&gt; "1" V1p4TimePoint : V1p4collection_time_point_relative
+    V1p4Sample --&gt; "0..1" V1p4TimePoint : V1p4collection_time_point_relative
     click V1p4TimePoint href "../V1p4TimePoint"
 
 
@@ -232,7 +232,7 @@
 
 
 
-    V1p4Sample --&gt; "1" V1p4Tissue : V1p4tissue
+    V1p4Sample --&gt; "0..1" V1p4Tissue : V1p4tissue
     click V1p4Tissue href "../V1p4Tissue"
 
 
@@ -252,37 +252,37 @@
 <tbody>
 <tr>
 <td><a href="../V1p4sample_id/">V1p4sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sample_type/">V1p4sample_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4tissue/">V1p4tissue</a></td>
-<td>1 <br/> <a href="../V1p4Tissue/">V1p4Tissue</a></td>
+<td>0..1 <br/> <a href="../V1p4Tissue/">V1p4Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4anatomic_site/">V1p4anatomic_site</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4disease_state_sample/">V1p4disease_state_sample</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4collection_time_point_relative/">V1p4collection_time_point_relative</a></td>
-<td>1 <br/> <a href="../V1p4TimePoint/">V1p4TimePoint</a></td>
+<td>0..1 <br/> <a href="../V1p4TimePoint/">V1p4TimePoint</a></td>
 <td>Time point at which sample was taken, relative to <code>label</code> event</td>
 <td>direct</td>
 </tr>
@@ -294,7 +294,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4biomaterial_provider/">V1p4biomaterial_provider</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
 </tr>
@@ -364,7 +364,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4sample_type:
     name: V1p4sample_type
     annotations:
@@ -382,7 +381,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4tissue:
     name: V1p4tissue
     annotations:
@@ -398,7 +396,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4Tissue
-    required: true
   V1p4anatomic_site:
     name: V1p4anatomic_site
     annotations:
@@ -414,7 +411,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4disease_state_sample:
     name: V1p4disease_state_sample
     annotations:
@@ -430,7 +426,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4collection_time_point_relative:
     name: V1p4collection_time_point_relative
     annotations:
@@ -446,7 +441,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4TimePoint
-    required: true
   V1p4collection_location:
     name: V1p4collection_location
     annotations:
@@ -462,7 +456,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4CollectionLocation
-    required: false
   V1p4biomaterial_provider:
     name: V1p4biomaterial_provider
     annotations:
@@ -478,7 +471,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
 
 </code></pre>
 </details>

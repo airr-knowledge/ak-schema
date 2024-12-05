@@ -210,7 +210,7 @@
 
 
 
-    V1p5CellExpression --&gt; "1" V1p5Property : V1p5property
+    V1p5CellExpression --&gt; "0..1" V1p5Property : V1p5property
     click V1p5Property href "../V1p5Property"
 
 
@@ -236,7 +236,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5expression_id/">V1p5expression_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier of this expression property measurement</td>
 <td>direct</td>
 </tr>
@@ -260,13 +260,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5property_type/">V1p5property_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Keyword describing the property type and detection method used to measure the...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5property/">V1p5property</a></td>
-<td>1 <br/> <a href="../V1p5Property/">V1p5Property</a></td>
+<td>0..1 <br/> <a href="../V1p5Property/">V1p5Property</a></td>
 <td>Name of the property observed, typically a gene or antibody identifier (and l...</td>
 <td>direct</td>
 </tr>
@@ -338,7 +338,6 @@ attributes:
     domain_of:
     - V1p5CellExpression
     range: string
-    required: true
   V1p5cell_id:
     name: V1p5cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -404,7 +403,6 @@ attributes:
     domain_of:
     - V1p5CellExpression
     range: string
-    required: true
   V1p5property:
     name: V1p5property
     annotations:
@@ -422,7 +420,6 @@ attributes:
     domain_of:
     - V1p5CellExpression
     range: V1p5Property
-    required: true
   V1p5value:
     name: V1p5value
     annotations:

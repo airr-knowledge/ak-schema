@@ -219,7 +219,7 @@
 
 
 
-    V1p5Receptor --&gt; "1" V1p5ReceptorType : V1p5receptor_type
+    V1p5Receptor --&gt; "0..1" V1p5ReceptorType : V1p5receptor_type
     click V1p5ReceptorType href "../V1p5ReceptorType"
 
 
@@ -230,7 +230,7 @@
 
 
 
-    V1p5Receptor --&gt; "1" V1p5ReceptorVariableDomain1Locus : V1p5receptor_variable_domain_1_locus
+    V1p5Receptor --&gt; "0..1" V1p5ReceptorVariableDomain1Locus : V1p5receptor_variable_domain_1_locus
     click V1p5ReceptorVariableDomain1Locus href "../V1p5ReceptorVariableDomain1Locus"
 
 
@@ -241,7 +241,7 @@
 
 
 
-    V1p5Receptor --&gt; "1" V1p5ReceptorVariableDomain2Locus : V1p5receptor_variable_domain_2_locus
+    V1p5Receptor --&gt; "0..1" V1p5ReceptorVariableDomain2Locus : V1p5receptor_variable_domain_2_locus
     click V1p5ReceptorVariableDomain2Locus href "../V1p5ReceptorVariableDomain2Locus"
 
 
@@ -261,43 +261,43 @@
 <tbody>
 <tr>
 <td><a href="../V1p5receptor_id/">V1p5receptor_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>ID of the current Receptor object, unique within the local repository</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5receptor_hash/">V1p5receptor_hash</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The SHA256 hash of the receptor amino acid sequence, calculated on the concat...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5receptor_type/">V1p5receptor_type</a></td>
-<td>1 <br/> <a href="../V1p5ReceptorType/">V1p5ReceptorType</a></td>
+<td>0..1 <br/> <a href="../V1p5ReceptorType/">V1p5ReceptorType</a></td>
 <td>The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (T...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5receptor_variable_domain_1_aa/">V1p5receptor_variable_domain_1_aa</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Complete amino acid sequence of the mature variable domain of the Ig heavy, T...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5receptor_variable_domain_1_locus/">V1p5receptor_variable_domain_1_locus</a></td>
-<td>1 <br/> <a href="../V1p5ReceptorVariableDomain1Locus/">V1p5ReceptorVariableDomain1Locus</a></td>
+<td>0..1 <br/> <a href="../V1p5ReceptorVariableDomain1Locus/">V1p5ReceptorVariableDomain1Locus</a></td>
 <td>Locus from which the variable domain in receptor_variable_domain_1_aa origina...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5receptor_variable_domain_2_aa/">V1p5receptor_variable_domain_2_aa</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Complete amino acid sequence of the mature variable domain of the Ig light, T...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5receptor_variable_domain_2_locus/">V1p5receptor_variable_domain_2_locus</a></td>
-<td>1 <br/> <a href="../V1p5ReceptorVariableDomain2Locus/">V1p5ReceptorVariableDomain2Locus</a></td>
+<td>0..1 <br/> <a href="../V1p5ReceptorVariableDomain2Locus/">V1p5ReceptorVariableDomain2Locus</a></td>
 <td>Locus from which the variable domain in receptor_variable_domain_2_aa origina...</td>
 <td>direct</td>
 </tr>
@@ -377,7 +377,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: string
-    required: true
   V1p5receptor_hash:
     name: V1p5receptor_hash
     annotations:
@@ -394,7 +393,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: string
-    required: true
   V1p5receptor_type:
     name: V1p5receptor_type
     annotations:
@@ -411,7 +409,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: V1p5ReceptorType
-    required: true
   V1p5receptor_variable_domain_1_aa:
     name: V1p5receptor_variable_domain_1_aa
     annotations:
@@ -429,7 +426,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: string
-    required: true
   V1p5receptor_variable_domain_1_locus:
     name: V1p5receptor_variable_domain_1_locus
     annotations:
@@ -445,7 +441,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: V1p5ReceptorVariableDomain1Locus
-    required: true
   V1p5receptor_variable_domain_2_aa:
     name: V1p5receptor_variable_domain_2_aa
     annotations:
@@ -463,7 +458,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: string
-    required: true
   V1p5receptor_variable_domain_2_locus:
     name: V1p5receptor_variable_domain_2_locus
     annotations:
@@ -479,7 +473,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: V1p5ReceptorVariableDomain2Locus
-    required: true
   V1p5receptor_ref:
     name: V1p5receptor_ref
     annotations:
@@ -494,7 +487,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: string
-    required: false
     multivalued: true
   V1p5reactivity_measurements:
     name: V1p5reactivity_measurements
@@ -510,7 +502,6 @@ attributes:
     domain_of:
     - V1p5Receptor
     range: V1p5ReceptorReactivity
-    required: false
     multivalued: true
 
 </code></pre>

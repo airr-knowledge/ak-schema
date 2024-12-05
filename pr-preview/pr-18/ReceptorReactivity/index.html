@@ -209,7 +209,7 @@
 
 
 
-    ReceptorReactivity --&gt; "1" Antigen : antigen
+    ReceptorReactivity --&gt; "0..1" Antigen : antigen
     click Antigen href "../Antigen"
 
 
@@ -227,7 +227,7 @@
 
 
 
-    ReceptorReactivity --&gt; "1" AntigenType : antigen_type
+    ReceptorReactivity --&gt; "0..1" AntigenType : antigen_type
     click AntigenType href "../AntigenType"
 
 
@@ -236,7 +236,7 @@
 
 
 
-    ReceptorReactivity --&gt; "1" LigandType : ligand_type
+    ReceptorReactivity --&gt; "0..1" LigandType : ligand_type
     click LigandType href "../LigandType"
 
 
@@ -280,7 +280,7 @@
 
 
 
-    ReceptorReactivity --&gt; "1" ReactivityMethod : reactivity_method
+    ReceptorReactivity --&gt; "0..1" ReactivityMethod : reactivity_method
     click ReactivityMethod href "../ReactivityMethod"
 
 
@@ -289,7 +289,7 @@
 
 
 
-    ReceptorReactivity --&gt; "1" ReactivityReadout : reactivity_readout
+    ReceptorReactivity --&gt; "0..1" ReactivityReadout : reactivity_readout
     click ReactivityReadout href "../ReactivityReadout"
 
 
@@ -313,19 +313,19 @@
 <tbody>
 <tr>
 <td><a href="../ligand_type/">ligand_type</a></td>
-<td>1 <br/> <a href="../LigandType/">LigandType</a></td>
+<td>0..1 <br/> <a href="../LigandType/">LigandType</a></td>
 <td>Classification of ligand binding to receptor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../antigen_type/">antigen_type</a></td>
-<td>1 <br/> <a href="../AntigenType/">AntigenType</a></td>
+<td>0..1 <br/> <a href="../AntigenType/">AntigenType</a></td>
 <td>The type of antigen before processing by the immune system</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../antigen/">antigen</a></td>
-<td>1 <br/> <a href="../Antigen/">Antigen</a></td>
+<td>0..1 <br/> <a href="../Antigen/">Antigen</a></td>
 <td>The substance against which the receptor was tested</td>
 <td>direct</td>
 </tr>
@@ -379,25 +379,25 @@
 </tr>
 <tr>
 <td><a href="../reactivity_method/">reactivity_method</a></td>
-<td>1 <br/> <a href="../ReactivityMethod/">ReactivityMethod</a></td>
+<td>0..1 <br/> <a href="../ReactivityMethod/">ReactivityMethod</a></td>
 <td>The methodology used to assess expression (assay implemented in experiment)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../reactivity_readout/">reactivity_readout</a></td>
-<td>1 <br/> <a href="../ReactivityReadout/">ReactivityReadout</a></td>
+<td>0..1 <br/> <a href="../ReactivityReadout/">ReactivityReadout</a></td>
 <td>Reactivity measurement read-out</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../reactivity_value/">reactivity_value</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>The absolute (processed) value of the measurement</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../reactivity_unit/">reactivity_unit</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The unit of the measurement</td>
 <td>direct</td>
 </tr>
@@ -491,7 +491,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: LigandType
-    required: true
   antigen_type:
     name: antigen_type
     annotations:
@@ -507,7 +506,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: AntigenType
-    required: true
   antigen:
     name: antigen
     annotations:
@@ -525,7 +523,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: Antigen
-    required: true
   antigen_source_species:
     name: antigen_source_species
     annotations:
@@ -540,7 +537,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: AntigenSourceSpecies
-    required: false
   peptide_start:
     name: peptide_start
     annotations:
@@ -555,7 +551,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: integer
-    required: false
   peptide_end:
     name: peptide_end
     annotations:
@@ -570,7 +565,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: integer
-    required: false
   mhc_class:
     name: mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -595,7 +589,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: MhcGene1
-    required: false
   mhc_allele_1:
     name: mhc_allele_1
     annotations:
@@ -610,7 +603,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: string
-    required: false
   mhc_gene_2:
     name: mhc_gene_2
     annotations:
@@ -625,7 +617,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: MhcGene2
-    required: false
   mhc_allele_2:
     name: mhc_allele_2
     annotations:
@@ -641,7 +632,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: string
-    required: false
   reactivity_method:
     name: reactivity_method
     annotations:
@@ -656,7 +646,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: ReactivityMethod
-    required: true
   reactivity_readout:
     name: reactivity_readout
     annotations:
@@ -671,7 +660,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: ReactivityReadout
-    required: true
   reactivity_value:
     name: reactivity_value
     annotations:
@@ -686,7 +674,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: float
-    required: true
   reactivity_unit:
     name: reactivity_unit
     annotations:
@@ -701,7 +688,6 @@ attributes:
     domain_of:
     - ReceptorReactivity
     range: string
-    required: true
 
 </code></pre>
 </details>

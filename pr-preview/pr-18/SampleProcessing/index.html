@@ -234,7 +234,7 @@
 
 
 
-    SampleProcessing --&gt; "1" CellSubset : cell_subset
+    SampleProcessing --&gt; "0..1" CellSubset : cell_subset
     click CellSubset href "../CellSubset"
 
 
@@ -249,7 +249,7 @@
 
 
 
-    SampleProcessing --&gt; "1" CollectionTimePointRelativeUnit : collection_time_point_relative_unit
+    SampleProcessing --&gt; "0..1" CollectionTimePointRelativeUnit : collection_time_point_relative_unit
     click CollectionTimePointRelativeUnit href "../CollectionTimePointRelativeUnit"
 
 
@@ -258,7 +258,7 @@
 
 
 
-    SampleProcessing --&gt; "1" CompleteSequences : complete_sequences
+    SampleProcessing --&gt; "0..1" CompleteSequences : complete_sequences
     click CompleteSequences href "../CompleteSequences"
 
 
@@ -271,7 +271,7 @@
 
 
 
-    SampleProcessing --&gt; "1" LibraryGenerationMethod : library_generation_method
+    SampleProcessing --&gt; "0..1" LibraryGenerationMethod : library_generation_method
     click LibraryGenerationMethod href "../LibraryGenerationMethod"
 
 
@@ -291,7 +291,7 @@
 
 
 
-    SampleProcessing --&gt; "1" PhysicalLinkage : physical_linkage
+    SampleProcessing --&gt; "0..1" PhysicalLinkage : physical_linkage
     click PhysicalLinkage href "../PhysicalLinkage"
 
 
@@ -329,7 +329,7 @@
 
 
 
-    SampleProcessing --&gt; "1" TemplateAmountUnit : template_amount_unit
+    SampleProcessing --&gt; "0..1" TemplateAmountUnit : template_amount_unit
     click TemplateAmountUnit href "../TemplateAmountUnit"
 
 
@@ -338,7 +338,7 @@
 
 
 
-    SampleProcessing --&gt; "1" TemplateClass : template_class
+    SampleProcessing --&gt; "0..1" TemplateClass : template_class
     click TemplateClass href "../TemplateClass"
 
 
@@ -349,7 +349,7 @@
 
 
 
-    SampleProcessing --&gt; "1" Tissue : tissue
+    SampleProcessing --&gt; "0..1" Tissue : tissue
     click Tissue href "../Tissue"
 
 
@@ -379,73 +379,73 @@
 </tr>
 <tr>
 <td><a href="../sample_id/">sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sample_type/">sample_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>1 <br/> <a href="../Tissue/">Tissue</a></td>
+<td>0..1 <br/> <a href="../Tissue/">Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../anatomic_site/">anatomic_site</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../disease_state_sample/">disease_state_sample</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collection_time_point_relative/">collection_time_point_relative</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Time point at which sample was taken, relative to <code>Collection time event</code></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collection_time_point_relative_unit/">collection_time_point_relative_unit</a></td>
-<td>1 <br/> <a href="../CollectionTimePointRelativeUnit/">CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../CollectionTimePointRelativeUnit/">CollectionTimePointRelativeUnit</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collection_time_point_reference/">collection_time_point_reference</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Event in the study schedule to which <code>Sample collection time</code> relates to</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../biomaterial_provider/">biomaterial_provider</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../tissue_processing/">tissue_processing</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_subset/">cell_subset</a></td>
-<td>1 <br/> <a href="../CellSubset/">CellSubset</a></td>
+<td>0..1 <br/> <a href="../CellSubset/">CellSubset</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_phenotype/">cell_phenotype</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of cellular markers and their expression levels used to isolate the cell...</td>
 <td>direct</td>
 </tr>
@@ -457,85 +457,85 @@
 </tr>
 <tr>
 <td><a href="../single_cell/">single_cell</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_number/">cell_number</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cells_per_reaction/">cells_per_reaction</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_storage/">cell_storage</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_quality/">cell_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_isolation/">cell_isolation</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_processing_protocol/">cell_processing_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../template_class/">template_class</a></td>
-<td>1 <br/> <a href="../TemplateClass/">TemplateClass</a></td>
+<td>0..1 <br/> <a href="../TemplateClass/">TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../template_quality/">template_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../template_amount/">template_amount</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../template_amount_unit/">template_amount_unit</a></td>
-<td>1 <br/> <a href="../TemplateAmountUnit/">TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../TemplateAmountUnit/">TemplateAmountUnit</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_method/">library_generation_method</a></td>
-<td>1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_protocol/">library_generation_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_kit_version/">library_generation_kit_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
@@ -547,49 +547,49 @@
 </tr>
 <tr>
 <td><a href="../complete_sequences/">complete_sequences</a></td>
-<td>1 <br/> <a href="../CompleteSequences/">CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../CompleteSequences/">CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../physical_linkage/">physical_linkage</a></td>
-<td>1 <br/> <a href="../PhysicalLinkage/">PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../PhysicalLinkage/">PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_run_id/">sequencing_run_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>ID of sequencing run assigned by the sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../total_reads_passing_qc_filter/">total_reads_passing_qc_filter</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of usable reads for analysis</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_platform/">sequencing_platform</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Designation of sequencing instrument used</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_facility/">sequencing_facility</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_run_date/">sequencing_run_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_kit/">sequencing_kit</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name, manufacturer, order and lot numbers of sequencing kit</td>
 <td>direct</td>
 </tr>
@@ -711,7 +711,6 @@ attributes:
     - Rearrangement
     - SampleProcessing
     range: string
-    required: false
   sample_id:
     name: sample_id
     annotations:
@@ -729,7 +728,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   sample_type:
     name: sample_type
     annotations:
@@ -747,7 +745,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   tissue:
     name: tissue
     annotations:
@@ -764,7 +761,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: Tissue
-    required: true
   anatomic_site:
     name: anatomic_site
     annotations:
@@ -780,7 +776,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   disease_state_sample:
     name: disease_state_sample
     annotations:
@@ -796,7 +791,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   collection_time_point_relative:
     name: collection_time_point_relative
     annotations:
@@ -813,7 +807,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: float
-    required: true
   collection_time_point_relative_unit:
     name: collection_time_point_relative_unit
     annotations:
@@ -829,7 +822,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: CollectionTimePointRelativeUnit
-    required: true
   collection_time_point_reference:
     name: collection_time_point_reference
     annotations:
@@ -846,7 +838,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   biomaterial_provider:
     name: biomaterial_provider
     annotations:
@@ -862,7 +853,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   tissue_processing:
     name: tissue_processing
     annotations:
@@ -880,7 +870,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_subset:
     name: cell_subset
     annotations:
@@ -897,7 +886,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: CellSubset
-    required: true
   cell_phenotype:
     name: cell_phenotype
     annotations:
@@ -915,7 +903,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_species:
     name: cell_species
     annotations:
@@ -937,7 +924,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: CellSpecies
-    required: false
   single_cell:
     name: single_cell
     annotations:
@@ -954,7 +940,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: boolean
-    required: true
   cell_number:
     name: cell_number
     annotations:
@@ -971,7 +956,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: integer
-    required: true
   cells_per_reaction:
     name: cells_per_reaction
     annotations:
@@ -988,7 +972,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: integer
-    required: true
   cell_storage:
     name: cell_storage
     annotations:
@@ -1005,7 +988,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: boolean
-    required: true
   cell_quality:
     name: cell_quality
     annotations:
@@ -1023,7 +1005,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_isolation:
     name: cell_isolation
     annotations:
@@ -1041,7 +1022,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_processing_protocol:
     name: cell_processing_protocol
     annotations:
@@ -1060,7 +1040,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   template_class:
     name: template_class
     annotations:
@@ -1077,7 +1056,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: TemplateClass
-    required: true
   template_quality:
     name: template_quality
     annotations:
@@ -1094,7 +1072,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: string
-    required: true
   template_amount:
     name: template_amount
     annotations:
@@ -1110,7 +1087,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: float
-    required: true
   template_amount_unit:
     name: template_amount_unit
     annotations:
@@ -1126,7 +1102,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: TemplateAmountUnit
-    required: true
   library_generation_method:
     name: library_generation_method
     annotations:
@@ -1142,7 +1117,6 @@ attributes:
     - LibraryPreparationProcessing
     - SampleProcessing
     range: LibraryGenerationMethod
-    required: true
   library_generation_protocol:
     name: library_generation_protocol
     annotations:
@@ -1159,7 +1133,6 @@ attributes:
     - LibraryPreparationProcessing
     - SampleProcessing
     range: string
-    required: true
   library_generation_kit_version:
     name: library_generation_kit_version
     annotations:
@@ -1176,7 +1149,6 @@ attributes:
     - LibraryPreparationProcessing
     - SampleProcessing
     range: string
-    required: true
   pcr_target:
     name: pcr_target
     annotations:
@@ -1197,7 +1169,6 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - SampleProcessing
     range: PCRTarget
-    required: false
     multivalued: true
   complete_sequences:
     name: complete_sequences
@@ -1224,7 +1195,6 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - SampleProcessing
     range: CompleteSequences
-    required: true
   physical_linkage:
     name: physical_linkage
     annotations:
@@ -1249,7 +1219,6 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - SampleProcessing
     range: PhysicalLinkage
-    required: true
   sequencing_run_id:
     name: sequencing_run_id
     annotations:
@@ -1265,7 +1234,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   total_reads_passing_qc_filter:
     name: total_reads_passing_qc_filter
     annotations:
@@ -1281,7 +1249,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: integer
-    required: true
   sequencing_platform:
     name: sequencing_platform
     annotations:
@@ -1297,7 +1264,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   sequencing_facility:
     name: sequencing_facility
     annotations:
@@ -1313,7 +1279,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   sequencing_run_date:
     name: sequencing_run_date
     annotations:
@@ -1329,7 +1294,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: datetime
-    required: true
   sequencing_kit:
     name: sequencing_kit
     annotations:
@@ -1345,7 +1309,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   sequencing_files:
     name: sequencing_files
     annotations:
@@ -1361,7 +1324,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: SequencingData
-    required: false
 
 </code></pre>
 </details>

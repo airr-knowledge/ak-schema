@@ -223,7 +223,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5repertoire_group_id/">V1p5repertoire_group_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for this repertoire collection</td>
 <td>direct</td>
 </tr>
@@ -241,7 +241,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5repertoires/">V1p5repertoires</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>List of repertoires in this collection with an associated description and tim...</td>
 <td>direct</td>
 </tr>
@@ -304,7 +304,6 @@ attributes:
     domain_of:
     - V1p5RepertoireGroup
     range: string
-    required: true
   V1p5repertoire_group_name:
     name: V1p5repertoire_group_name
     annotations:
@@ -319,7 +318,6 @@ attributes:
     domain_of:
     - V1p5RepertoireGroup
     range: string
-    required: false
   V1p5repertoire_group_description:
     name: V1p5repertoire_group_description
     annotations:
@@ -334,7 +332,6 @@ attributes:
     domain_of:
     - V1p5RepertoireGroup
     range: string
-    required: false
   V1p5repertoires:
     name: V1p5repertoires
     annotations:
@@ -350,7 +347,6 @@ attributes:
     domain_of:
     - V1p5RepertoireGroup
     range: string
-    required: true
     multivalued: true
 
 </code></pre>

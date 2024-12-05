@@ -229,7 +229,7 @@
 
 
 
-    NucleicAcidProcessing --&gt; "1" TemplateAmountUnit : template_amount_unit
+    NucleicAcidProcessing --&gt; "0..1" TemplateAmountUnit : template_amount_unit
     click TemplateAmountUnit href "../TemplateAmountUnit"
 
 
@@ -238,7 +238,7 @@
 
 
 
-    NucleicAcidProcessing --&gt; "1" TemplateClass : template_class
+    NucleicAcidProcessing --&gt; "0..1" TemplateClass : template_class
     click TemplateClass href "../TemplateClass"
 
 
@@ -275,25 +275,25 @@
 <tbody>
 <tr>
 <td><a href="../template_class/">template_class</a></td>
-<td>1 <br/> <a href="../TemplateClass/">TemplateClass</a></td>
+<td>0..1 <br/> <a href="../TemplateClass/">TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../template_quality/">template_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../template_amount/">template_amount</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../template_amount_unit/">template_amount_unit</a></td>
-<td>1 <br/> <a href="../TemplateAmountUnit/">TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../TemplateAmountUnit/">TemplateAmountUnit</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
@@ -385,7 +385,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: TemplateClass
-    required: true
   template_quality:
     name: template_quality
     annotations:
@@ -402,7 +401,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: string
-    required: true
   template_amount:
     name: template_amount
     annotations:
@@ -418,7 +416,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: float
-    required: true
   template_amount_unit:
     name: template_amount_unit
     annotations:
@@ -434,7 +431,6 @@ attributes:
     - NucleicAcidProcessing
     - SampleProcessing
     range: TemplateAmountUnit
-    required: true
   specimen:
     name: specimen
     description: The specimen that was input for an assay

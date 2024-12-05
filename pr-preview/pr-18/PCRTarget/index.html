@@ -211,7 +211,7 @@
 
 
 
-    PCRTarget --&gt; "1" PcrTargetLocus : pcr_target_locus
+    PCRTarget --&gt; "0..1" PcrTargetLocus : pcr_target_locus
     click PcrTargetLocus href "../PcrTargetLocus"
 
 
@@ -233,19 +233,19 @@
 <tbody>
 <tr>
 <td><a href="../pcr_target_locus/">pcr_target_locus</a></td>
-<td>1 <br/> <a href="../PcrTargetLocus/">PcrTargetLocus</a></td>
+<td>0..1 <br/> <a href="../PcrTargetLocus/">PcrTargetLocus</a></td>
 <td>Designation of the target locus</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../forward_pcr_primer_target_location/">forward_pcr_primer_target_location</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Position of the most distal nucleotide templated by the forward primer or pri...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../reverse_pcr_primer_target_location/">reverse_pcr_primer_target_location</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Position of the most proximal nucleotide templated by the reverse primer or p...</td>
 <td>direct</td>
 </tr>
@@ -334,7 +334,6 @@ attributes:
     domain_of:
     - PCRTarget
     range: PcrTargetLocus
-    required: true
   forward_pcr_primer_target_location:
     name: forward_pcr_primer_target_location
     annotations:
@@ -350,7 +349,6 @@ attributes:
     domain_of:
     - PCRTarget
     range: string
-    required: true
   reverse_pcr_primer_target_location:
     name: reverse_pcr_primer_target_location
     annotations:
@@ -366,7 +364,6 @@ attributes:
     domain_of:
     - PCRTarget
     range: string
-    required: true
 
 </code></pre>
 </details>

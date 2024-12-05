@@ -218,7 +218,7 @@
 
 
 
-    V1p4Diagnosis --&gt; "1" V1p4DiseaseDiagnosis : V1p4disease_diagnosis
+    V1p4Diagnosis --&gt; "0..1" V1p4DiseaseDiagnosis : V1p4disease_diagnosis
     click V1p4DiseaseDiagnosis href "../V1p4DiseaseDiagnosis"
 
 
@@ -227,7 +227,7 @@
 
 
 
-    V1p4Diagnosis --&gt; "1" V1p4TimeQuantity : V1p4disease_length
+    V1p4Diagnosis --&gt; "0..1" V1p4TimeQuantity : V1p4disease_length
     click V1p4TimeQuantity href "../V1p4TimeQuantity"
 
 
@@ -259,7 +259,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4study_group_description/">V1p4study_group_description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Designation of study arm to which the subject is assigned to</td>
 <td>direct</td>
 </tr>
@@ -271,43 +271,43 @@
 </tr>
 <tr>
 <td><a href="../V1p4disease_diagnosis/">V1p4disease_diagnosis</a></td>
-<td>1 <br/> <a href="../V1p4DiseaseDiagnosis/">V1p4DiseaseDiagnosis</a></td>
+<td>0..1 <br/> <a href="../V1p4DiseaseDiagnosis/">V1p4DiseaseDiagnosis</a></td>
 <td>Diagnosis of subject</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4disease_length/">V1p4disease_length</a></td>
-<td>1 <br/> <a href="../V1p4TimeQuantity/">V1p4TimeQuantity</a></td>
+<td>0..1 <br/> <a href="../V1p4TimeQuantity/">V1p4TimeQuantity</a></td>
 <td>Time duration between initial diagnosis and current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4disease_stage/">V1p4disease_stage</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Stage of disease at current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4prior_therapies/">V1p4prior_therapies</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of all relevant previous therapies applied to subject for treatment of `...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4immunogen/">V1p4immunogen</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Antigen, vaccine or drug applied to subject at this intervention</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4intervention/">V1p4intervention</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of intervention</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4medical_history/">V1p4medical_history</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Medical history of subject that is relevant to assess the course of disease a...</td>
 <td>direct</td>
 </tr>
@@ -394,7 +394,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: string
-    required: true
   V1p4diagnosis_timepoint:
     name: V1p4diagnosis_timepoint
     annotations:
@@ -409,7 +408,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: V1p4TimePoint
-    required: false
   V1p4disease_diagnosis:
     name: V1p4disease_diagnosis
     annotations:
@@ -424,7 +422,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: V1p4DiseaseDiagnosis
-    required: true
   V1p4disease_length:
     name: V1p4disease_length
     annotations:
@@ -439,7 +436,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: V1p4TimeQuantity
-    required: true
   V1p4disease_stage:
     name: V1p4disease_stage
     annotations:
@@ -454,7 +450,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: string
-    required: true
   V1p4prior_therapies:
     name: V1p4prior_therapies
     annotations:
@@ -470,7 +465,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: string
-    required: true
   V1p4immunogen:
     name: V1p4immunogen
     annotations:
@@ -485,7 +479,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: string
-    required: true
   V1p4intervention:
     name: V1p4intervention
     annotations:
@@ -500,7 +493,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: string
-    required: true
   V1p4medical_history:
     name: V1p4medical_history
     annotations:
@@ -516,7 +508,6 @@ attributes:
     domain_of:
     - V1p4Diagnosis
     range: string
-    required: true
 
 </code></pre>
 </details>

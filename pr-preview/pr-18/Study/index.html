@@ -219,7 +219,7 @@
 
 
 
-    Study --&gt; "1..*" KeywordsStudy : keywords_study
+    Study --&gt; "*" KeywordsStudy : keywords_study
     click KeywordsStudy href "../KeywordsStudy"
 
 
@@ -242,7 +242,7 @@
 
 
 
-    Study --&gt; "1" StudyType : study_type
+    Study --&gt; "0..1" StudyType : study_type
     click StudyType href "../StudyType"
 
 
@@ -264,19 +264,19 @@
 <tbody>
 <tr>
 <td><a href="../study_id/">study_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique ID assigned by study registry such as one of the International Nucleot...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../study_title/">study_title</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Descriptive study title</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../study_type/">study_type</a></td>
-<td>1 <br/> <a href="../StudyType/">StudyType</a></td>
+<td>0..1 <br/> <a href="../StudyType/">StudyType</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -288,13 +288,13 @@
 </tr>
 <tr>
 <td><a href="../inclusion_exclusion_criteria/">inclusion_exclusion_criteria</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of criteria for inclusion/exclusion for the study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../grants/">grants</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Funding agencies and grant numbers</td>
 <td>direct</td>
 </tr>
@@ -306,25 +306,25 @@
 </tr>
 <tr>
 <td><a href="../collected_by/">collected_by</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Full contact information of the data collector, i</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../lab_name/">lab_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../lab_address/">lab_address</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../submitted_by/">submitted_by</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Full contact information of the data depositor, i</td>
 <td>direct</td>
 </tr>
@@ -336,7 +336,7 @@
 </tr>
 <tr>
 <td><a href="../keywords_study/">keywords_study</a></td>
-<td>1..* <br/> <a href="../KeywordsStudy/">KeywordsStudy</a></td>
+<td>* <br/> <a href="../KeywordsStudy/">KeywordsStudy</a></td>
 <td>Keywords describing properties of one or more data sets in a study</td>
 <td>direct</td>
 </tr>
@@ -442,7 +442,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: true
   study_title:
     name: study_title
     annotations:
@@ -457,7 +456,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: true
   study_type:
     name: study_type
     annotations:
@@ -474,7 +472,6 @@ attributes:
     - Investigation
     - Study
     range: StudyType
-    required: true
   study_description:
     name: study_description
     annotations:
@@ -489,7 +486,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: false
   inclusion_exclusion_criteria:
     name: inclusion_exclusion_criteria
     annotations:
@@ -504,7 +500,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: true
   grants:
     name: grants
     annotations:
@@ -519,7 +514,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: true
   study_contact:
     name: study_contact
     annotations:
@@ -536,7 +530,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: false
   collected_by:
     name: collected_by
     annotations:
@@ -553,7 +546,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: true
   lab_name:
     name: lab_name
     annotations:
@@ -568,7 +560,6 @@ attributes:
     - GermlineSet
     - Study
     range: string
-    required: true
   lab_address:
     name: lab_address
     annotations:
@@ -584,7 +575,6 @@ attributes:
     - GermlineSet
     - Study
     range: string
-    required: true
   submitted_by:
     name: submitted_by
     annotations:
@@ -602,7 +592,6 @@ attributes:
     domain_of:
     - Study
     range: string
-    required: true
   pub_ids:
     name: pub_ids
     annotations:
@@ -636,7 +625,6 @@ attributes:
     domain_of:
     - Study
     range: KeywordsStudy
-    required: true
     multivalued: true
   adc_publish_date:
     name: adc_publish_date
@@ -652,7 +640,6 @@ attributes:
     domain_of:
     - Study
     range: datetime
-    required: false
   adc_update_date:
     name: adc_update_date
     annotations:
@@ -667,7 +654,6 @@ attributes:
     domain_of:
     - Study
     range: datetime
-    required: false
 
 </code></pre>
 </details>

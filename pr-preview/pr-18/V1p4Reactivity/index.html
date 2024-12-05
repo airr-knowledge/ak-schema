@@ -204,7 +204,7 @@
 
 
 
-    V1p4Reactivity --&gt; "1" V1p4Antigen : V1p4antigen
+    V1p4Reactivity --&gt; "0..1" V1p4Antigen : V1p4antigen
     click V1p4Antigen href "../V1p4Antigen"
 
 
@@ -222,7 +222,7 @@
 
 
 
-    V1p4Reactivity --&gt; "1" V1p4AntigenType : V1p4antigen_type
+    V1p4Reactivity --&gt; "0..1" V1p4AntigenType : V1p4antigen_type
     click V1p4AntigenType href "../V1p4AntigenType"
 
 
@@ -235,7 +235,7 @@
 
 
 
-    V1p4Reactivity --&gt; "1" V1p4LigandType : V1p4ligand_type
+    V1p4Reactivity --&gt; "0..1" V1p4LigandType : V1p4ligand_type
     click V1p4LigandType href "../V1p4LigandType"
 
 
@@ -330,19 +330,19 @@
 </tr>
 <tr>
 <td><a href="../V1p4ligand_type/">V1p4ligand_type</a></td>
-<td>1 <br/> <a href="../V1p4LigandType/">V1p4LigandType</a></td>
+<td>0..1 <br/> <a href="../V1p4LigandType/">V1p4LigandType</a></td>
 <td>Classification of ligand binding to the cell</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4antigen_type/">V1p4antigen_type</a></td>
-<td>1 <br/> <a href="../V1p4AntigenType/">V1p4AntigenType</a></td>
+<td>0..1 <br/> <a href="../V1p4AntigenType/">V1p4AntigenType</a></td>
 <td>The type of antigen before processing by the immune system</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4antigen/">V1p4antigen</a></td>
-<td>1 <br/> <a href="../V1p4Antigen/">V1p4Antigen</a></td>
+<td>0..1 <br/> <a href="../V1p4Antigen/">V1p4Antigen</a></td>
 <td>The substance against which the receptor was tested</td>
 <td>direct</td>
 </tr>
@@ -402,25 +402,25 @@
 </tr>
 <tr>
 <td><a href="../V1p4reactivity_method/">V1p4reactivity_method</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The methodology used to assess/classify reactivity</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4reactivity_readout/">V1p4reactivity_readout</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Reactivity measurement read-out</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4reactivity_value/">V1p4reactivity_value</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>The absolute (processed) value of the measurement</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4reactivity_unit/">V1p4reactivity_unit</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The unit of the measurement</td>
 <td>direct</td>
 </tr>
@@ -566,7 +566,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: V1p4LigandType
-    required: true
   V1p4antigen_type:
     name: V1p4antigen_type
     annotations:
@@ -582,7 +581,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: V1p4AntigenType
-    required: true
   V1p4antigen:
     name: V1p4antigen
     annotations:
@@ -600,7 +598,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: V1p4Antigen
-    required: true
   V1p4antigen_source_species:
     name: V1p4antigen_source_species
     annotations:
@@ -615,7 +612,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: V1p4AntigenSourceSpecies
-    required: false
   V1p4peptide_start:
     name: V1p4peptide_start
     annotations:
@@ -630,7 +626,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: integer
-    required: false
   V1p4peptide_end:
     name: V1p4peptide_end
     annotations:
@@ -645,7 +640,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: integer
-    required: false
   V1p4peptide_sequence_aa:
     name: V1p4peptide_sequence_aa
     annotations:
@@ -662,7 +656,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: string
-    required: false
   V1p4mhc_class:
     name: V1p4mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -687,7 +680,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: V1p4MhcGene1
-    required: false
   V1p4mhc_allele_1:
     name: V1p4mhc_allele_1
     annotations:
@@ -702,7 +694,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: string
-    required: false
   V1p4mhc_gene_2:
     name: V1p4mhc_gene_2
     annotations:
@@ -717,7 +708,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: V1p4MhcGene2
-    required: false
   V1p4mhc_allele_2:
     name: V1p4mhc_allele_2
     annotations:
@@ -733,7 +723,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: string
-    required: false
   V1p4reactivity_method:
     name: V1p4reactivity_method
     annotations:
@@ -754,7 +743,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: string
-    required: true
   V1p4reactivity_readout:
     name: V1p4reactivity_readout
     annotations:
@@ -774,7 +762,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: string
-    required: true
   V1p4reactivity_value:
     name: V1p4reactivity_value
     annotations:
@@ -789,7 +776,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: float
-    required: true
   V1p4reactivity_unit:
     name: V1p4reactivity_unit
     annotations:
@@ -804,7 +790,6 @@ attributes:
     domain_of:
     - V1p4Reactivity
     range: string
-    required: true
   V1p4reactivity_ref:
     name: V1p4reactivity_ref
     annotations:
@@ -819,7 +804,6 @@ attributes:
     - V1p4Rearrangement
     - V1p4Reactivity
     range: string
-    required: false
 
 </code></pre>
 </details>

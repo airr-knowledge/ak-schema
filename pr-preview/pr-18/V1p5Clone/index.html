@@ -329,7 +329,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5germline_alignment/">V1p5germline_alignment</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -535,7 +535,6 @@ attributes:
     domain_of:
     - V1p5Clone
     range: string
-    required: false
     multivalued: true
   V1p5v_call:
     name: V1p5v_call
@@ -624,7 +623,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5junction_aa_length:
     name: V1p5junction_aa_length
     annotations:
@@ -639,7 +637,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5germline_alignment:
     name: V1p5germline_alignment
     annotations:
@@ -654,7 +651,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: string
-    required: true
   V1p5germline_alignment_aa:
     name: V1p5germline_alignment_aa
     annotations:
@@ -669,7 +665,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: string
-    required: false
   V1p5v_alignment_start:
     name: V1p5v_alignment_start
     annotations:
@@ -684,7 +679,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5v_alignment_end:
     name: V1p5v_alignment_end
     annotations:
@@ -699,7 +693,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5d_alignment_start:
     name: V1p5d_alignment_start
     annotations:
@@ -714,7 +707,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5d_alignment_end:
     name: V1p5d_alignment_end
     annotations:
@@ -729,7 +721,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5j_alignment_start:
     name: V1p5j_alignment_start
     annotations:
@@ -746,7 +737,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5j_alignment_end:
     name: V1p5j_alignment_end
     annotations:
@@ -763,7 +753,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5junction_start:
     name: V1p5junction_start
     annotations:
@@ -778,7 +767,6 @@ attributes:
     domain_of:
     - V1p5Clone
     range: integer
-    required: false
   V1p5junction_end:
     name: V1p5junction_end
     annotations:
@@ -793,7 +781,6 @@ attributes:
     domain_of:
     - V1p5Clone
     range: integer
-    required: false
   V1p5umi_count:
     name: V1p5umi_count
     annotations:
@@ -808,7 +795,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5clone_count:
     name: V1p5clone_count
     annotations:
@@ -828,7 +814,6 @@ attributes:
     domain_of:
     - V1p5Clone
     range: integer
-    required: false
   V1p5seed_id:
     name: V1p5seed_id
     annotations:
@@ -844,7 +829,6 @@ attributes:
     domain_of:
     - V1p5Clone
     range: string
-    required: false
 
 </code></pre>
 </details>

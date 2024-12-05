@@ -236,37 +236,37 @@
 <tbody>
 <tr>
 <td><a href="../sequencing_run_id/">sequencing_run_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>ID of sequencing run assigned by the sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../total_reads_passing_qc_filter/">total_reads_passing_qc_filter</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of usable reads for analysis</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_platform/">sequencing_platform</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Designation of sequencing instrument used</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_facility/">sequencing_facility</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_run_date/">sequencing_run_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequencing_kit/">sequencing_kit</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name, manufacturer, order and lot numbers of sequencing kit</td>
 <td>direct</td>
 </tr>
@@ -339,7 +339,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   total_reads_passing_qc_filter:
     name: total_reads_passing_qc_filter
     annotations:
@@ -355,7 +354,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: integer
-    required: true
   sequencing_platform:
     name: sequencing_platform
     annotations:
@@ -371,7 +369,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   sequencing_facility:
     name: sequencing_facility
     annotations:
@@ -387,7 +384,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   sequencing_run_date:
     name: sequencing_run_date
     annotations:
@@ -403,7 +399,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: datetime
-    required: true
   sequencing_kit:
     name: sequencing_kit
     annotations:
@@ -419,7 +414,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: string
-    required: true
   sequencing_files:
     name: sequencing_files
     annotations:
@@ -435,7 +429,6 @@ attributes:
     - SequencingRun
     - SampleProcessing
     range: SequencingData
-    required: false
 
 </code></pre>
 </details>

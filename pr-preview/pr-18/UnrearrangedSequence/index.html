@@ -227,7 +227,7 @@
 
 
 
-    UnrearrangedSequence --&gt; "1" Strand : strand
+    UnrearrangedSequence --&gt; "0..1" Strand : strand
     click Strand href "../Strand"
 
 
@@ -247,13 +247,13 @@
 <tbody>
 <tr>
 <td><a href="../sequence_id/">sequence_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequence/">sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -265,7 +265,7 @@
 </tr>
 <tr>
 <td><a href="../repository_name/">repository_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -283,25 +283,25 @@
 </tr>
 <tr>
 <td><a href="../gff_seqid/">gff_seqid</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sequence (from the assembly) of a window including the gene and preferably al...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../gff_start/">gff_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Genomic co-ordinates of the start of the sequence of interest described in th...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../gff_end/">gff_end</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Genomic co-ordinates of the end of the sequence of interest described in this...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../strand/">strand</a></td>
-<td>1 <br/> <a href="../Strand/">Strand</a></td>
+<td>0..1 <br/> <a href="../Strand/">Strand</a></td>
 <td>sense (+ or -)</td>
 <td>direct</td>
 </tr>
@@ -392,7 +392,6 @@ attributes:
     - Rearrangement
     - Node
     range: string
-    required: true
   sequence:
     name: sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -407,7 +406,6 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
-    required: true
   curation:
     name: curation
     annotations:
@@ -424,7 +422,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: false
   repository_name:
     name: repository_name
     annotations:
@@ -439,7 +436,6 @@ attributes:
     - RearrangedSequence
     - UnrearrangedSequence
     range: string
-    required: true
   repository_ref:
     name: repository_ref
     annotations:
@@ -456,7 +452,6 @@ attributes:
     - RearrangedSequence
     - UnrearrangedSequence
     range: string
-    required: false
   patch_no:
     name: patch_no
     annotations:
@@ -471,7 +466,6 @@ attributes:
     domain_of:
     - UnrearrangedSequence
     range: string
-    required: false
   gff_seqid:
     name: gff_seqid
     annotations:
@@ -487,7 +481,6 @@ attributes:
     domain_of:
     - UnrearrangedSequence
     range: string
-    required: true
   gff_start:
     name: gff_start
     annotations:
@@ -503,7 +496,6 @@ attributes:
     domain_of:
     - UnrearrangedSequence
     range: integer
-    required: true
   gff_end:
     name: gff_end
     annotations:
@@ -519,7 +511,6 @@ attributes:
     domain_of:
     - UnrearrangedSequence
     range: integer
-    required: true
   strand:
     name: strand
     annotations:
@@ -534,7 +525,6 @@ attributes:
     domain_of:
     - UnrearrangedSequence
     range: Strand
-    required: true
 
 </code></pre>
 </details>

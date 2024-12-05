@@ -209,7 +209,7 @@
 
 
 
-    V1p4Subject --&gt; "1" V1p4TimeInterval : V1p4age
+    V1p4Subject --&gt; "0..1" V1p4TimeInterval : V1p4age
     click V1p4TimeInterval href "../V1p4TimeInterval"
 
 
@@ -220,7 +220,7 @@
 
 
 
-    V1p4Subject --&gt; "1" V1p4AncestryPopulation : V1p4ancestry_population
+    V1p4Subject --&gt; "0..1" V1p4AncestryPopulation : V1p4ancestry_population
     click V1p4AncestryPopulation href "../V1p4AncestryPopulation"
 
 
@@ -264,7 +264,7 @@
 
 
 
-    V1p4Subject --&gt; "1" V1p4Sex : V1p4sex
+    V1p4Subject --&gt; "0..1" V1p4Sex : V1p4sex
     click V1p4Sex href "../V1p4Sex"
 
 
@@ -273,7 +273,7 @@
 
 
 
-    V1p4Subject --&gt; "1" V1p4Species : V1p4species
+    V1p4Subject --&gt; "0..1" V1p4Species : V1p4species
     click V1p4Species href "../V1p4Species"
 
 
@@ -299,43 +299,43 @@
 <tbody>
 <tr>
 <td><a href="../V1p4subject_id/">V1p4subject_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Subject ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4synthetic/">V1p4synthetic</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE for libraries in which the diversity has been synthetically generated (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4species/">V1p4species</a></td>
-<td>1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
+<td>0..1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sex/">V1p4sex</a></td>
-<td>1 <br/> <a href="../V1p4Sex/">V1p4Sex</a></td>
+<td>0..1 <br/> <a href="../V1p4Sex/">V1p4Sex</a></td>
 <td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4age/">V1p4age</a></td>
-<td>1 <br/> <a href="../V1p4TimeInterval/">V1p4TimeInterval</a></td>
+<td>0..1 <br/> <a href="../V1p4TimeInterval/">V1p4TimeInterval</a></td>
 <td>Age of subject expressed as a time interval</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4age_event/">V1p4age_event</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Event in the study schedule to which <code>Age</code> refers</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4ancestry_population/">V1p4ancestry_population</a></td>
-<td>1 <br/> <a href="../V1p4AncestryPopulation/">V1p4AncestryPopulation</a></td>
+<td>0..1 <br/> <a href="../V1p4AncestryPopulation/">V1p4AncestryPopulation</a></td>
 <td>Broad geographic origin of ancestry (continent)</td>
 <td>direct</td>
 </tr>
@@ -347,31 +347,31 @@
 </tr>
 <tr>
 <td><a href="../V1p4ethnicity/">V1p4ethnicity</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Ethnic group of subject (defined as cultural/language-based membership)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4race/">V1p4race</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Racial group of subject (as defined by NIH)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4strain_name/">V1p4strain_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Non-human designation of the strain or breed of animal used</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4linked_subjects/">V1p4linked_subjects</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Subject ID to which <code>Relation type</code> refers</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4link_type/">V1p4link_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relation between subject and <code>linked_subjects</code>, can be genetic or environment...</td>
 <td>direct</td>
 </tr>
@@ -478,7 +478,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: string
-    required: true
   V1p4synthetic:
     name: V1p4synthetic
     annotations:
@@ -494,7 +493,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: boolean
-    required: true
   V1p4species:
     name: V1p4species
     annotations:
@@ -511,7 +509,6 @@ attributes:
     - V1p4GermlineSet
     - V1p4Subject
     range: V1p4Species
-    required: true
   V1p4sex:
     name: V1p4sex
     annotations:
@@ -526,7 +523,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: V1p4Sex
-    required: true
   V1p4age:
     name: V1p4age
     annotations:
@@ -542,7 +538,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: V1p4TimeInterval
-    required: true
   V1p4age_event:
     name: V1p4age_event
     annotations:
@@ -561,7 +556,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: string
-    required: true
   V1p4ancestry_population:
     name: V1p4ancestry_population
     annotations:
@@ -576,7 +570,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: V1p4AncestryPopulation
-    required: true
   V1p4location_birth:
     name: V1p4location_birth
     annotations:
@@ -592,7 +585,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: V1p4LocationBirth
-    required: false
   V1p4ethnicity:
     name: V1p4ethnicity
     annotations:
@@ -607,7 +599,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: string
-    required: true
   V1p4race:
     name: V1p4race
     annotations:
@@ -622,7 +613,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: string
-    required: true
   V1p4strain_name:
     name: V1p4strain_name
     annotations:
@@ -637,7 +627,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: string
-    required: true
   V1p4linked_subjects:
     name: V1p4linked_subjects
     annotations:
@@ -652,7 +641,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: string
-    required: true
   V1p4link_type:
     name: V1p4link_type
     annotations:
@@ -669,7 +657,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: string
-    required: true
   V1p4diagnosis:
     name: V1p4diagnosis
     annotations:
@@ -684,7 +671,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: V1p4Diagnosis
-    required: false
     multivalued: true
   V1p4genotype:
     name: V1p4genotype
@@ -700,7 +686,6 @@ attributes:
     domain_of:
     - V1p4Subject
     range: V1p4SubjectGenotype
-    required: false
 
 </code></pre>
 </details>

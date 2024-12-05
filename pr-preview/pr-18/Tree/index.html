@@ -230,7 +230,7 @@
 <tbody>
 <tr>
 <td><a href="../tree_id/">tree_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the tree</td>
 <td>direct</td>
 </tr>
@@ -242,7 +242,7 @@
 </tr>
 <tr>
 <td><a href="../newick/">newick</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Newick string of the tree edges</td>
 <td>direct</td>
 </tr>
@@ -311,7 +311,6 @@ attributes:
     domain_of:
     - Tree
     range: string
-    required: true
   clone_id:
     name: clone_id
     annotations:
@@ -341,7 +340,6 @@ attributes:
     domain_of:
     - Tree
     range: string
-    required: true
   nodes:
     name: nodes
     annotations:
@@ -356,7 +354,6 @@ attributes:
     domain_of:
     - Tree
     range: Node
-    required: false
     multivalued: true
 
 </code></pre>

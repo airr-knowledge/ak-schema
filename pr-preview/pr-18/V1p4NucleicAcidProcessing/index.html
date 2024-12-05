@@ -204,7 +204,7 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4CompleteSequences : V1p4complete_sequences
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4CompleteSequences : V1p4complete_sequences
     click V1p4CompleteSequences href "../V1p4CompleteSequences"
 
 
@@ -215,7 +215,7 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4LibraryGenerationMethod : V1p4library_generation_method
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4LibraryGenerationMethod : V1p4library_generation_method
     click V1p4LibraryGenerationMethod href "../V1p4LibraryGenerationMethod"
 
 
@@ -235,7 +235,7 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4PhysicalLinkage : V1p4physical_linkage
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4PhysicalLinkage : V1p4physical_linkage
     click V1p4PhysicalLinkage href "../V1p4PhysicalLinkage"
 
 
@@ -244,7 +244,7 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4PhysicalQuantity : V1p4template_amount
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4PhysicalQuantity : V1p4template_amount
     click V1p4PhysicalQuantity href "../V1p4PhysicalQuantity"
 
 
@@ -253,7 +253,7 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "1" V1p4TemplateClass : V1p4template_class
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4TemplateClass : V1p4template_class
     click V1p4TemplateClass href "../V1p4TemplateClass"
 
 
@@ -275,37 +275,37 @@
 <tbody>
 <tr>
 <td><a href="../V1p4template_class/">V1p4template_class</a></td>
-<td>1 <br/> <a href="../V1p4TemplateClass/">V1p4TemplateClass</a></td>
+<td>0..1 <br/> <a href="../V1p4TemplateClass/">V1p4TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4template_quality/">V1p4template_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4template_amount/">V1p4template_amount</a></td>
-<td>1 <br/> <a href="../V1p4PhysicalQuantity/">V1p4PhysicalQuantity</a></td>
+<td>0..1 <br/> <a href="../V1p4PhysicalQuantity/">V1p4PhysicalQuantity</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4library_generation_method/">V1p4library_generation_method</a></td>
-<td>1 <br/> <a href="../V1p4LibraryGenerationMethod/">V1p4LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../V1p4LibraryGenerationMethod/">V1p4LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4library_generation_protocol/">V1p4library_generation_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4library_generation_kit_version/">V1p4library_generation_kit_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
@@ -317,13 +317,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4complete_sequences/">V1p4complete_sequences</a></td>
-<td>1 <br/> <a href="../V1p4CompleteSequences/">V1p4CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../V1p4CompleteSequences/">V1p4CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4physical_linkage/">V1p4physical_linkage</a></td>
-<td>1 <br/> <a href="../V1p4PhysicalLinkage/">V1p4PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../V1p4PhysicalLinkage/">V1p4PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -393,7 +393,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4TemplateClass
-    required: true
   V1p4template_quality:
     name: V1p4template_quality
     annotations:
@@ -410,7 +409,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4template_amount:
     name: V1p4template_amount
     annotations:
@@ -426,7 +424,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PhysicalQuantity
-    required: true
   V1p4library_generation_method:
     name: V1p4library_generation_method
     annotations:
@@ -442,7 +439,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4LibraryGenerationMethod
-    required: true
   V1p4library_generation_protocol:
     name: V1p4library_generation_protocol
     annotations:
@@ -459,7 +455,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4library_generation_kit_version:
     name: V1p4library_generation_kit_version
     annotations:
@@ -476,7 +471,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4pcr_target:
     name: V1p4pcr_target
     annotations:
@@ -497,7 +491,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PCRTarget
-    required: false
     multivalued: true
   V1p4complete_sequences:
     name: V1p4complete_sequences
@@ -524,7 +517,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4CompleteSequences
-    required: true
   V1p4physical_linkage:
     name: V1p4physical_linkage
     annotations:
@@ -549,7 +541,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PhysicalLinkage
-    required: true
 
 </code></pre>
 </details>

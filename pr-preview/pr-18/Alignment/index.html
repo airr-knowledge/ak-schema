@@ -243,13 +243,13 @@
 <tbody>
 <tr>
 <td><a href="../sequence_id/">sequence_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../segment/">segment</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The segment for this alignment</td>
 <td>direct</td>
 </tr>
@@ -261,13 +261,13 @@
 </tr>
 <tr>
 <td><a href="../call/">call</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Gene assignment with allele</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../score/">score</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Alignment score</td>
 <td>direct</td>
 </tr>
@@ -285,7 +285,7 @@
 </tr>
 <tr>
 <td><a href="../cigar/">cigar</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Alignment CIGAR string</td>
 <td>direct</td>
 </tr>
@@ -397,7 +397,6 @@ attributes:
     - Rearrangement
     - Node
     range: string
-    required: true
   segment:
     name: segment
     annotations:
@@ -412,7 +411,6 @@ attributes:
     domain_of:
     - Alignment
     range: string
-    required: true
   rev_comp:
     name: rev_comp
     annotations:
@@ -441,7 +439,6 @@ attributes:
     domain_of:
     - Alignment
     range: string
-    required: true
   score:
     name: score
     annotations:
@@ -456,7 +453,6 @@ attributes:
     domain_of:
     - Alignment
     range: float
-    required: true
   identity:
     name: identity
     annotations:
@@ -471,7 +467,6 @@ attributes:
     domain_of:
     - Alignment
     range: float
-    required: false
   support:
     name: support
     annotations:
@@ -487,7 +482,6 @@ attributes:
     domain_of:
     - Alignment
     range: float
-    required: false
   cigar:
     name: cigar
     annotations:
@@ -502,7 +496,6 @@ attributes:
     domain_of:
     - Alignment
     range: string
-    required: true
   sequence_start:
     name: sequence_start
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -513,7 +506,6 @@ attributes:
     - RearrangedSequence
     - Alignment
     range: integer
-    required: false
   sequence_end:
     name: sequence_end
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -524,7 +516,6 @@ attributes:
     - RearrangedSequence
     - Alignment
     range: integer
-    required: false
   germline_start:
     name: germline_start
     annotations:
@@ -540,7 +531,6 @@ attributes:
     domain_of:
     - Alignment
     range: integer
-    required: false
   germline_end:
     name: germline_end
     annotations:
@@ -556,7 +546,6 @@ attributes:
     domain_of:
     - Alignment
     range: integer
-    required: false
   rank:
     name: rank
     annotations:
@@ -571,7 +560,6 @@ attributes:
     domain_of:
     - Alignment
     range: integer
-    required: false
   data_processing_id:
     name: data_processing_id
     annotations:

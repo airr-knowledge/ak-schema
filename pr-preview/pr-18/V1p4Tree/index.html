@@ -230,7 +230,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4tree_id/">V1p4tree_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Identifier for the tree</td>
 <td>direct</td>
 </tr>
@@ -242,7 +242,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4newick/">V1p4newick</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Newick string of the tree edges</td>
 <td>direct</td>
 </tr>
@@ -311,7 +311,6 @@ attributes:
     domain_of:
     - V1p4Tree
     range: string
-    required: true
   V1p4clone_id:
     name: V1p4clone_id
     annotations:
@@ -341,7 +340,6 @@ attributes:
     domain_of:
     - V1p4Tree
     range: string
-    required: true
   V1p4nodes:
     name: V1p4nodes
     annotations:
@@ -356,7 +354,6 @@ attributes:
     domain_of:
     - V1p4Tree
     range: V1p4Node
-    required: false
     multivalued: true
 
 </code></pre>

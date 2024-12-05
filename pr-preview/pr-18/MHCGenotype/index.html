@@ -209,7 +209,7 @@
 
 
 
-    MHCGenotype --&gt; "1..*" MHCAllele : mhc_alleles
+    MHCGenotype --&gt; "*" MHCAllele : mhc_alleles
     click MHCAllele href "../MHCAllele"
 
 
@@ -242,7 +242,7 @@
 <tbody>
 <tr>
 <td><a href="../mhc_genotype_id/">mhc_genotype_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for this MHCGenotype, assumed to be unique in the context...</td>
 <td>direct</td>
 </tr>
@@ -254,7 +254,7 @@
 </tr>
 <tr>
 <td><a href="../mhc_alleles/">mhc_alleles</a></td>
-<td>1..* <br/> <a href="../MHCAllele/">MHCAllele</a></td>
+<td>* <br/> <a href="../MHCAllele/">MHCAllele</a></td>
 <td>List of MHC alleles of the indicated mhc_class identified in an individual</td>
 <td>direct</td>
 </tr>
@@ -343,7 +343,6 @@ attributes:
     domain_of:
     - MHCGenotype
     range: string
-    required: true
   mhc_class:
     name: mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -368,7 +367,6 @@ attributes:
     domain_of:
     - MHCGenotype
     range: MHCAllele
-    required: true
     multivalued: true
   mhc_genotyping_method:
     name: mhc_genotyping_method
@@ -386,7 +384,6 @@ attributes:
     domain_of:
     - MHCGenotype
     range: string
-    required: false
 
 </code></pre>
 </details>

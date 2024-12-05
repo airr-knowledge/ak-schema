@@ -235,7 +235,7 @@
 
 
 
-    CellIsolationProcessing --&gt; "1" CellSubset : cell_subset
+    CellIsolationProcessing --&gt; "0..1" CellSubset : cell_subset
     click CellSubset href "../CellSubset"
 
 
@@ -289,19 +289,19 @@
 <tbody>
 <tr>
 <td><a href="../tissue_processing/">tissue_processing</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_subset/">cell_subset</a></td>
-<td>1 <br/> <a href="../CellSubset/">CellSubset</a></td>
+<td>0..1 <br/> <a href="../CellSubset/">CellSubset</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_phenotype/">cell_phenotype</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of cellular markers and their expression levels used to isolate the cell...</td>
 <td>direct</td>
 </tr>
@@ -313,43 +313,43 @@
 </tr>
 <tr>
 <td><a href="../single_cell/">single_cell</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_number/">cell_number</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cells_per_reaction/">cells_per_reaction</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_storage/">cell_storage</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_quality/">cell_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_isolation/">cell_isolation</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_processing_protocol/">cell_processing_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
 </tr>
@@ -449,7 +449,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_subset:
     name: cell_subset
     annotations:
@@ -466,7 +465,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: CellSubset
-    required: true
   cell_phenotype:
     name: cell_phenotype
     annotations:
@@ -484,7 +482,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_species:
     name: cell_species
     annotations:
@@ -506,7 +503,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: CellSpecies
-    required: false
   single_cell:
     name: single_cell
     annotations:
@@ -523,7 +519,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: boolean
-    required: true
   cell_number:
     name: cell_number
     annotations:
@@ -540,7 +535,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: integer
-    required: true
   cells_per_reaction:
     name: cells_per_reaction
     annotations:
@@ -557,7 +551,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: integer
-    required: true
   cell_storage:
     name: cell_storage
     annotations:
@@ -574,7 +567,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: boolean
-    required: true
   cell_quality:
     name: cell_quality
     annotations:
@@ -592,7 +584,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_isolation:
     name: cell_isolation
     annotations:
@@ -610,7 +601,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   cell_processing_protocol:
     name: cell_processing_protocol
     annotations:
@@ -629,7 +619,6 @@ attributes:
     - CellProcessing
     - SampleProcessing
     range: string
-    required: true
   specimen:
     name: specimen
     description: The specimen that was input for an assay

@@ -226,13 +226,13 @@
 <tbody>
 <tr>
 <td><a href="../allele_name/">allele_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Allele name as allocated by the inference pipeline</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequence/">sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -319,7 +319,6 @@ attributes:
     domain_of:
     - UndocumentedAllele
     range: string
-    required: true
   sequence:
     name: sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -334,7 +333,6 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
-    required: true
   phasing:
     name: phasing
     annotations:
@@ -352,7 +350,6 @@ attributes:
     - UndocumentedAllele
     - DeletedGene
     range: integer
-    required: false
 
 </code></pre>
 </details>

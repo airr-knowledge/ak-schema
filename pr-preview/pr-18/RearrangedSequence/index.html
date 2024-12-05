@@ -213,7 +213,7 @@
 
 
 
-    RearrangedSequence --&gt; "1" Derivation : derivation
+    RearrangedSequence --&gt; "0..1" Derivation : derivation
     click Derivation href "../Derivation"
 
 
@@ -222,7 +222,7 @@
 
 
 
-    RearrangedSequence --&gt; "1" ObservationType : observation_type
+    RearrangedSequence --&gt; "0..1" ObservationType : observation_type
     click ObservationType href "../ObservationType"
 
 
@@ -254,25 +254,25 @@
 <tbody>
 <tr>
 <td><a href="../sequence_id/">sequence_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequence/">sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../derivation/">derivation</a></td>
-<td>1 <br/> <a href="../Derivation/">Derivation</a></td>
+<td>0..1 <br/> <a href="../Derivation/">Derivation</a></td>
 <td>The class of nucleic acid that was used as primary starting material</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../observation_type/">observation_type</a></td>
-<td>1 <br/> <a href="../ObservationType/">ObservationType</a></td>
+<td>0..1 <br/> <a href="../ObservationType/">ObservationType</a></td>
 <td>The type of observation from which this sequence was drawn, such as direct se...</td>
 <td>direct</td>
 </tr>
@@ -284,7 +284,7 @@
 </tr>
 <tr>
 <td><a href="../repository_name/">repository_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -296,7 +296,7 @@
 </tr>
 <tr>
 <td><a href="../deposited_version/">deposited_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Version number of the sequence within the repository</td>
 <td>direct</td>
 </tr>
@@ -399,7 +399,6 @@ attributes:
     - Rearrangement
     - Node
     range: string
-    required: true
   sequence:
     name: sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -414,7 +413,6 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
-    required: true
   derivation:
     name: derivation
     annotations:
@@ -429,7 +427,6 @@ attributes:
     domain_of:
     - RearrangedSequence
     range: Derivation
-    required: true
   observation_type:
     name: observation_type
     annotations:
@@ -446,7 +443,6 @@ attributes:
     domain_of:
     - RearrangedSequence
     range: ObservationType
-    required: true
   curation:
     name: curation
     annotations:
@@ -463,7 +459,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: false
   repository_name:
     name: repository_name
     annotations:
@@ -478,7 +473,6 @@ attributes:
     - RearrangedSequence
     - UnrearrangedSequence
     range: string
-    required: true
   repository_ref:
     name: repository_ref
     annotations:
@@ -495,7 +489,6 @@ attributes:
     - RearrangedSequence
     - UnrearrangedSequence
     range: string
-    required: false
   deposited_version:
     name: deposited_version
     annotations:
@@ -510,7 +503,6 @@ attributes:
     domain_of:
     - RearrangedSequence
     range: string
-    required: true
   sequence_start:
     name: sequence_start
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -521,7 +513,6 @@ attributes:
     - RearrangedSequence
     - Alignment
     range: integer
-    required: false
   sequence_end:
     name: sequence_end
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -532,7 +523,6 @@ attributes:
     - RearrangedSequence
     - Alignment
     range: integer
-    required: false
 
 </code></pre>
 </details>

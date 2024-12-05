@@ -226,13 +226,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p4allele_name/">V1p4allele_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Allele name as allocated by the inference pipeline</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequence/">V1p4sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -319,7 +319,6 @@ attributes:
     domain_of:
     - V1p4UndocumentedAllele
     range: string
-    required: true
   V1p4sequence:
     name: V1p4sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -333,7 +332,6 @@ attributes:
     - V1p4UndocumentedAllele
     - V1p4Rearrangement
     range: string
-    required: true
   V1p4phasing:
     name: V1p4phasing
     annotations:
@@ -351,7 +349,6 @@ attributes:
     - V1p4UndocumentedAllele
     - V1p4DeletedGene
     range: integer
-    required: false
 
 </code></pre>
 </details>

@@ -209,7 +209,7 @@
 
 
 
-    SequencingData --&gt; "1" FileType : file_type
+    SequencingData --&gt; "0..1" FileType : file_type
     click FileType href "../FileType"
 
 
@@ -226,7 +226,7 @@
 
 
 
-    SequencingData --&gt; "1" PairedReadDirection : paired_read_direction
+    SequencingData --&gt; "0..1" PairedReadDirection : paired_read_direction
     click PairedReadDirection href "../PairedReadDirection"
 
 
@@ -237,7 +237,7 @@
 
 
 
-    SequencingData --&gt; "1" ReadDirection : read_direction
+    SequencingData --&gt; "0..1" ReadDirection : read_direction
     click ReadDirection href "../ReadDirection"
 
 
@@ -261,49 +261,49 @@
 <tbody>
 <tr>
 <td><a href="../sequencing_data_id/">sequencing_data_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Persistent identifier of raw data stored in an archive (e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../file_type/">file_type</a></td>
-<td>1 <br/> <a href="../FileType/">FileType</a></td>
+<td>0..1 <br/> <a href="../FileType/">FileType</a></td>
 <td>File format for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../filename/">filename</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>File name for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../read_direction/">read_direction</a></td>
-<td>1 <br/> <a href="../ReadDirection/">ReadDirection</a></td>
+<td>0..1 <br/> <a href="../ReadDirection/">ReadDirection</a></td>
 <td>Read direction for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../read_length/">read_length</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Read length in bases for the first file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../paired_filename/">paired_filename</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>File name for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../paired_read_direction/">paired_read_direction</a></td>
-<td>1 <br/> <a href="../PairedReadDirection/">PairedReadDirection</a></td>
+<td>0..1 <br/> <a href="../PairedReadDirection/">PairedReadDirection</a></td>
 <td>Read direction for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../paired_read_length/">paired_read_length</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Read length in bases for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
@@ -410,7 +410,6 @@ attributes:
     domain_of:
     - SequencingData
     range: string
-    required: true
   file_type:
     name: file_type
     annotations:
@@ -426,7 +425,6 @@ attributes:
     domain_of:
     - SequencingData
     range: FileType
-    required: true
   filename:
     name: filename
     annotations:
@@ -442,7 +440,6 @@ attributes:
     domain_of:
     - SequencingData
     range: string
-    required: true
   read_direction:
     name: read_direction
     annotations:
@@ -458,7 +455,6 @@ attributes:
     domain_of:
     - SequencingData
     range: ReadDirection
-    required: true
   read_length:
     name: read_length
     annotations:
@@ -473,7 +469,6 @@ attributes:
     domain_of:
     - SequencingData
     range: integer
-    required: true
   paired_filename:
     name: paired_filename
     annotations:
@@ -488,7 +483,6 @@ attributes:
     domain_of:
     - SequencingData
     range: string
-    required: true
   paired_read_direction:
     name: paired_read_direction
     annotations:
@@ -503,7 +497,6 @@ attributes:
     domain_of:
     - SequencingData
     range: PairedReadDirection
-    required: true
   paired_read_length:
     name: paired_read_length
     annotations:
@@ -518,7 +511,6 @@ attributes:
     domain_of:
     - SequencingData
     range: integer
-    required: true
   index_filename:
     name: index_filename
     annotations:
@@ -533,7 +525,6 @@ attributes:
     domain_of:
     - SequencingData
     range: string
-    required: false
   index_length:
     name: index_length
     annotations:
@@ -548,7 +539,6 @@ attributes:
     domain_of:
     - SequencingData
     range: integer
-    required: false
 
 </code></pre>
 </details>

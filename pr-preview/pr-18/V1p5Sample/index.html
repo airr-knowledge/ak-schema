@@ -212,7 +212,7 @@
 
 
 
-    V1p5Sample --&gt; "1" V1p5CollectionTimePointRelativeUnit : V1p5collection_time_point_relative_unit
+    V1p5Sample --&gt; "0..1" V1p5CollectionTimePointRelativeUnit : V1p5collection_time_point_relative_unit
     click V1p5CollectionTimePointRelativeUnit href "../V1p5CollectionTimePointRelativeUnit"
 
 
@@ -227,7 +227,7 @@
 
 
 
-    V1p5Sample --&gt; "1" V1p5Tissue : V1p5tissue
+    V1p5Sample --&gt; "0..1" V1p5Tissue : V1p5tissue
     click V1p5Tissue href "../V1p5Tissue"
 
 
@@ -247,55 +247,55 @@
 <tbody>
 <tr>
 <td><a href="../V1p5sample_id/">V1p5sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sample_type/">V1p5sample_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5tissue/">V1p5tissue</a></td>
-<td>1 <br/> <a href="../V1p5Tissue/">V1p5Tissue</a></td>
+<td>0..1 <br/> <a href="../V1p5Tissue/">V1p5Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5anatomic_site/">V1p5anatomic_site</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5disease_state_sample/">V1p5disease_state_sample</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_relative/">V1p5collection_time_point_relative</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Time point at which sample was taken, relative to <code>Collection time event</code></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_relative_unit/">V1p5collection_time_point_relative_unit</a></td>
-<td>1 <br/> <a href="../V1p5CollectionTimePointRelativeUnit/">V1p5CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5CollectionTimePointRelativeUnit/">V1p5CollectionTimePointRelativeUnit</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_reference/">V1p5collection_time_point_reference</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Event in the study schedule to which <code>Sample collection time</code> relates to</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5biomaterial_provider/">V1p5biomaterial_provider</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
 </tr>
@@ -366,7 +366,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5sample_type:
     name: V1p5sample_type
     annotations:
@@ -384,7 +383,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5tissue:
     name: V1p5tissue
     annotations:
@@ -400,7 +398,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: V1p5Tissue
-    required: true
   V1p5anatomic_site:
     name: V1p5anatomic_site
     annotations:
@@ -416,7 +413,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5disease_state_sample:
     name: V1p5disease_state_sample
     annotations:
@@ -432,7 +428,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5collection_time_point_relative:
     name: V1p5collection_time_point_relative
     annotations:
@@ -449,7 +444,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: float
-    required: true
   V1p5collection_time_point_relative_unit:
     name: V1p5collection_time_point_relative_unit
     annotations:
@@ -465,7 +459,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: V1p5CollectionTimePointRelativeUnit
-    required: true
   V1p5collection_time_point_reference:
     name: V1p5collection_time_point_reference
     annotations:
@@ -482,7 +475,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5biomaterial_provider:
     name: V1p5biomaterial_provider
     annotations:
@@ -498,7 +490,6 @@ attributes:
     - V1p5Sample
     - V1p5SampleProcessing
     range: string
-    required: true
 
 </code></pre>
 </details>

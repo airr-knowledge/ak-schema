@@ -204,7 +204,7 @@
 
 
 
-    V1p4Repertoire --&gt; "1..*" V1p4DataProcessing : V1p4data_processing
+    V1p4Repertoire --&gt; "*" V1p4DataProcessing : V1p4data_processing
     click V1p4DataProcessing href "../V1p4DataProcessing"
 
 
@@ -219,7 +219,7 @@
 
 
 
-    V1p4Repertoire --&gt; "1..*" V1p4SampleProcessing : V1p4sample
+    V1p4Repertoire --&gt; "*" V1p4SampleProcessing : V1p4sample
     click V1p4SampleProcessing href "../V1p4SampleProcessing"
 
 
@@ -228,7 +228,7 @@
 
 
 
-    V1p4Repertoire --&gt; "1" V1p4Study : V1p4study
+    V1p4Repertoire --&gt; "0..1" V1p4Study : V1p4study
     click V1p4Study href "../V1p4Study"
 
 
@@ -237,7 +237,7 @@
 
 
 
-    V1p4Repertoire --&gt; "1" V1p4Subject : V1p4subject
+    V1p4Repertoire --&gt; "0..1" V1p4Subject : V1p4subject
     click V1p4Subject href "../V1p4Subject"
 
 
@@ -275,25 +275,25 @@
 </tr>
 <tr>
 <td><a href="../V1p4study/">V1p4study</a></td>
-<td>1 <br/> <a href="../V1p4Study/">V1p4Study</a></td>
+<td>0..1 <br/> <a href="../V1p4Study/">V1p4Study</a></td>
 <td>Study object</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4subject/">V1p4subject</a></td>
-<td>1 <br/> <a href="../V1p4Subject/">V1p4Subject</a></td>
+<td>0..1 <br/> <a href="../V1p4Subject/">V1p4Subject</a></td>
 <td>Subject object</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sample/">V1p4sample</a></td>
-<td>1..* <br/> <a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
+<td>* <br/> <a href="../V1p4SampleProcessing/">V1p4SampleProcessing</a></td>
 <td>List of Sample Processing objects</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4data_processing/">V1p4data_processing</a></td>
-<td>1..* <br/> <a href="../V1p4DataProcessing/">V1p4DataProcessing</a></td>
+<td>* <br/> <a href="../V1p4DataProcessing/">V1p4DataProcessing</a></td>
 <td>List of Data Processing objects</td>
 <td>direct</td>
 </tr>
@@ -377,7 +377,6 @@ attributes:
     domain_of:
     - V1p4Repertoire
     range: string
-    required: false
   V1p4repertoire_description:
     name: V1p4repertoire_description
     annotations:
@@ -392,7 +391,6 @@ attributes:
     domain_of:
     - V1p4Repertoire
     range: string
-    required: false
   V1p4study:
     name: V1p4study
     annotations:
@@ -407,7 +405,6 @@ attributes:
     domain_of:
     - V1p4Repertoire
     range: V1p4Study
-    required: true
   V1p4subject:
     name: V1p4subject
     annotations:
@@ -422,7 +419,6 @@ attributes:
     domain_of:
     - V1p4Repertoire
     range: V1p4Subject
-    required: true
   V1p4sample:
     name: V1p4sample
     annotations:
@@ -437,7 +433,6 @@ attributes:
     domain_of:
     - V1p4Repertoire
     range: V1p4SampleProcessing
-    required: true
     multivalued: true
   V1p4data_processing:
     name: V1p4data_processing
@@ -453,7 +448,6 @@ attributes:
     domain_of:
     - V1p4Repertoire
     range: V1p4DataProcessing
-    required: true
     multivalued: true
 
 </code></pre>

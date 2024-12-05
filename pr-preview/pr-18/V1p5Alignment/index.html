@@ -243,13 +243,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p5sequence_id/">V1p5sequence_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5segment/">V1p5segment</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The segment for this alignment</td>
 <td>direct</td>
 </tr>
@@ -261,13 +261,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5call/">V1p5call</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Gene assignment with allele</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5score/">V1p5score</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Alignment score</td>
 <td>direct</td>
 </tr>
@@ -285,7 +285,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5cigar/">V1p5cigar</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Alignment CIGAR string</td>
 <td>direct</td>
 </tr>
@@ -397,7 +397,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Node
     range: string
-    required: true
   V1p5segment:
     name: V1p5segment
     annotations:
@@ -412,7 +411,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: string
-    required: true
   V1p5rev_comp:
     name: V1p5rev_comp
     annotations:
@@ -441,7 +439,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: string
-    required: true
   V1p5score:
     name: V1p5score
     annotations:
@@ -456,7 +453,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: float
-    required: true
   V1p5identity:
     name: V1p5identity
     annotations:
@@ -471,7 +467,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: float
-    required: false
   V1p5support:
     name: V1p5support
     annotations:
@@ -487,7 +482,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: float
-    required: false
   V1p5cigar:
     name: V1p5cigar
     annotations:
@@ -502,7 +496,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: string
-    required: true
   V1p5sequence_start:
     name: V1p5sequence_start
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -513,7 +506,6 @@ attributes:
     - V1p5RearrangedSequence
     - V1p5Alignment
     range: integer
-    required: false
   V1p5sequence_end:
     name: V1p5sequence_end
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -524,7 +516,6 @@ attributes:
     - V1p5RearrangedSequence
     - V1p5Alignment
     range: integer
-    required: false
   V1p5germline_start:
     name: V1p5germline_start
     annotations:
@@ -540,7 +531,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: integer
-    required: false
   V1p5germline_end:
     name: V1p5germline_end
     annotations:
@@ -556,7 +546,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: integer
-    required: false
   V1p5rank:
     name: V1p5rank
     annotations:
@@ -571,7 +560,6 @@ attributes:
     domain_of:
     - V1p5Alignment
     range: integer
-    required: false
   V1p5data_processing_id:
     name: V1p5data_processing_id
     annotations:

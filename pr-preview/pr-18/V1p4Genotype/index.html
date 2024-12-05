@@ -267,7 +267,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4receptor_genotype_id/">V1p4receptor_genotype_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier within the file for this Receptor Genotype, typically gen...</td>
 <td>direct</td>
 </tr>
@@ -383,7 +383,6 @@ attributes:
     domain_of:
     - V1p4Genotype
     range: string
-    required: true
   V1p4locus:
     name: V1p4locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -410,7 +409,6 @@ attributes:
     domain_of:
     - V1p4Genotype
     range: V1p4DocumentedAllele
-    required: false
     multivalued: true
   V1p4undocumented_alleles:
     name: V1p4undocumented_alleles
@@ -427,7 +425,6 @@ attributes:
     domain_of:
     - V1p4Genotype
     range: V1p4UndocumentedAllele
-    required: false
     multivalued: true
   V1p4deleted_genes:
     name: V1p4deleted_genes
@@ -443,7 +440,6 @@ attributes:
     domain_of:
     - V1p4Genotype
     range: V1p4DeletedGene
-    required: false
     multivalued: true
   V1p4inference_process:
     name: V1p4inference_process
@@ -459,7 +455,6 @@ attributes:
     domain_of:
     - V1p4Genotype
     range: V1p4InferenceProcess
-    required: false
 
 </code></pre>
 </details>

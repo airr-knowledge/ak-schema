@@ -284,7 +284,7 @@
 <tbody>
 <tr>
 <td><a href="../sequence/">sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -561,7 +561,6 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
-    required: true
   sequence_aa:
     name: sequence_aa
     annotations:
@@ -578,7 +577,6 @@ attributes:
     - PeptidicEpitope
     - Rearrangement
     range: string
-    required: false
   chain_type:
     name: chain_type
     description: Gene locus (chain type).
@@ -651,7 +649,6 @@ attributes:
     - Chain
     - Rearrangement
     range: string
-    required: false
   junction_aa:
     name: junction_aa
     annotations:
@@ -684,7 +681,6 @@ attributes:
     - Chain
     - Rearrangement
     range: string
-    required: false
   cdr2_aa:
     name: cdr2_aa
     annotations:
@@ -700,7 +696,6 @@ attributes:
     - Chain
     - Rearrangement
     range: string
-    required: false
   cdr3_aa:
     name: cdr3_aa
     annotations:
@@ -716,7 +711,6 @@ attributes:
     - Chain
     - Rearrangement
     range: string
-    required: false
   cdr1_start:
     name: cdr1_start
     annotations:
@@ -807,7 +801,6 @@ attributes:
     - Chain
     - Rearrangement
     range: integer
-    required: false
   name:
     name: name
     description: A human-readable name for a thing

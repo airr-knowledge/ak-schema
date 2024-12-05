@@ -329,7 +329,7 @@
 </tr>
 <tr>
 <td><a href="../germline_alignment/">germline_alignment</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -533,7 +533,6 @@ attributes:
     domain_of:
     - Clone
     range: string
-    required: false
     multivalued: true
   v_call:
     name: v_call
@@ -626,7 +625,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   junction_aa_length:
     name: junction_aa_length
     annotations:
@@ -641,7 +639,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   germline_alignment:
     name: germline_alignment
     annotations:
@@ -656,7 +653,6 @@ attributes:
     - Rearrangement
     - Clone
     range: string
-    required: true
   germline_alignment_aa:
     name: germline_alignment_aa
     annotations:
@@ -671,7 +667,6 @@ attributes:
     - Rearrangement
     - Clone
     range: string
-    required: false
   v_alignment_start:
     name: v_alignment_start
     annotations:
@@ -686,7 +681,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   v_alignment_end:
     name: v_alignment_end
     annotations:
@@ -701,7 +695,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   d_alignment_start:
     name: d_alignment_start
     annotations:
@@ -716,7 +709,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   d_alignment_end:
     name: d_alignment_end
     annotations:
@@ -731,7 +723,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   j_alignment_start:
     name: j_alignment_start
     annotations:
@@ -748,7 +739,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   j_alignment_end:
     name: j_alignment_end
     annotations:
@@ -765,7 +755,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   junction_start:
     name: junction_start
     annotations:
@@ -780,7 +769,6 @@ attributes:
     domain_of:
     - Clone
     range: integer
-    required: false
   junction_end:
     name: junction_end
     annotations:
@@ -795,7 +783,6 @@ attributes:
     domain_of:
     - Clone
     range: integer
-    required: false
   umi_count:
     name: umi_count
     annotations:
@@ -810,7 +797,6 @@ attributes:
     - Rearrangement
     - Clone
     range: integer
-    required: false
   clone_count:
     name: clone_count
     annotations:
@@ -830,7 +816,6 @@ attributes:
     domain_of:
     - Clone
     range: integer
-    required: false
   seed_id:
     name: seed_id
     annotations:
@@ -846,7 +831,6 @@ attributes:
     domain_of:
     - Clone
     range: string
-    required: false
 
 </code></pre>
 </details>

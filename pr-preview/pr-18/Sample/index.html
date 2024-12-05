@@ -212,7 +212,7 @@
 
 
 
-    Sample --&gt; "1" CollectionTimePointRelativeUnit : collection_time_point_relative_unit
+    Sample --&gt; "0..1" CollectionTimePointRelativeUnit : collection_time_point_relative_unit
     click CollectionTimePointRelativeUnit href "../CollectionTimePointRelativeUnit"
 
 
@@ -227,7 +227,7 @@
 
 
 
-    Sample --&gt; "1" Tissue : tissue
+    Sample --&gt; "0..1" Tissue : tissue
     click Tissue href "../Tissue"
 
 
@@ -247,55 +247,55 @@
 <tbody>
 <tr>
 <td><a href="../sample_id/">sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sample_type/">sample_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>1 <br/> <a href="../Tissue/">Tissue</a></td>
+<td>0..1 <br/> <a href="../Tissue/">Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../anatomic_site/">anatomic_site</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../disease_state_sample/">disease_state_sample</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collection_time_point_relative/">collection_time_point_relative</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Time point at which sample was taken, relative to <code>Collection time event</code></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collection_time_point_relative_unit/">collection_time_point_relative_unit</a></td>
-<td>1 <br/> <a href="../CollectionTimePointRelativeUnit/">CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../CollectionTimePointRelativeUnit/">CollectionTimePointRelativeUnit</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../collection_time_point_reference/">collection_time_point_reference</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Event in the study schedule to which <code>Sample collection time</code> relates to</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../biomaterial_provider/">biomaterial_provider</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
 </tr>
@@ -366,7 +366,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   sample_type:
     name: sample_type
     annotations:
@@ -384,7 +383,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   tissue:
     name: tissue
     annotations:
@@ -401,7 +399,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: Tissue
-    required: true
   anatomic_site:
     name: anatomic_site
     annotations:
@@ -417,7 +414,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   disease_state_sample:
     name: disease_state_sample
     annotations:
@@ -433,7 +429,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   collection_time_point_relative:
     name: collection_time_point_relative
     annotations:
@@ -450,7 +445,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: float
-    required: true
   collection_time_point_relative_unit:
     name: collection_time_point_relative_unit
     annotations:
@@ -466,7 +460,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: CollectionTimePointRelativeUnit
-    required: true
   collection_time_point_reference:
     name: collection_time_point_reference
     annotations:
@@ -483,7 +476,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
   biomaterial_provider:
     name: biomaterial_provider
     annotations:
@@ -499,7 +491,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: string
-    required: true
 
 </code></pre>
 </details>

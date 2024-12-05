@@ -246,7 +246,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5rearrangements/">V1p5rearrangements</a></td>
-<td>1..* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>Array of sequence identifiers defined for the Rearrangement object</td>
 <td>direct</td>
 </tr>
@@ -288,7 +288,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5virtual_pairing/">V1p5virtual_pairing</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>boolean to indicate if pairing was inferred</td>
 <td>direct</td>
 </tr>
@@ -367,7 +367,6 @@ attributes:
     domain_of:
     - V1p5Cell
     range: string
-    required: true
     multivalued: true
   V1p5receptors:
     name: V1p5receptors
@@ -383,7 +382,6 @@ attributes:
     domain_of:
     - V1p5Cell
     range: string
-    required: false
     multivalued: true
   V1p5repertoire_id:
     name: V1p5repertoire_id
@@ -435,7 +433,6 @@ attributes:
     domain_of:
     - V1p5Cell
     range: V1p5ExpressionStudyMethod
-    required: false
   V1p5expression_raw_doi:
     name: V1p5expression_raw_doi
     annotations:
@@ -450,7 +447,6 @@ attributes:
     domain_of:
     - V1p5Cell
     range: string
-    required: false
   V1p5expression_index:
     name: V1p5expression_index
     annotations:
@@ -465,7 +461,6 @@ attributes:
     domain_of:
     - V1p5Cell
     range: string
-    required: false
   V1p5virtual_pairing:
     name: V1p5virtual_pairing
     annotations:
@@ -480,7 +475,6 @@ attributes:
     domain_of:
     - V1p5Cell
     range: boolean
-    required: true
 
 </code></pre>
 </details>

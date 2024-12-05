@@ -213,7 +213,7 @@
 
 
 
-    V1p4RearrangedSequence --&gt; "1" V1p4Derivation : V1p4derivation
+    V1p4RearrangedSequence --&gt; "0..1" V1p4Derivation : V1p4derivation
     click V1p4Derivation href "../V1p4Derivation"
 
 
@@ -222,7 +222,7 @@
 
 
 
-    V1p4RearrangedSequence --&gt; "1" V1p4ObservationType : V1p4observation_type
+    V1p4RearrangedSequence --&gt; "0..1" V1p4ObservationType : V1p4observation_type
     click V1p4ObservationType href "../V1p4ObservationType"
 
 
@@ -254,25 +254,25 @@
 <tbody>
 <tr>
 <td><a href="../V1p4sequence_id/">V1p4sequence_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequence/">V1p4sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4derivation/">V1p4derivation</a></td>
-<td>1 <br/> <a href="../V1p4Derivation/">V1p4Derivation</a></td>
+<td>0..1 <br/> <a href="../V1p4Derivation/">V1p4Derivation</a></td>
 <td>The class of nucleic acid that was used as primary starting material</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4observation_type/">V1p4observation_type</a></td>
-<td>1 <br/> <a href="../V1p4ObservationType/">V1p4ObservationType</a></td>
+<td>0..1 <br/> <a href="../V1p4ObservationType/">V1p4ObservationType</a></td>
 <td>The type of observation from which this sequence was drawn, such as direct se...</td>
 <td>direct</td>
 </tr>
@@ -284,7 +284,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4repository_name/">V1p4repository_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -296,7 +296,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4deposited_version/">V1p4deposited_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Version number of the sequence within the repository</td>
 <td>direct</td>
 </tr>
@@ -399,7 +399,6 @@ attributes:
     - V1p4Rearrangement
     - V1p4Node
     range: string
-    required: true
   V1p4sequence:
     name: V1p4sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -413,7 +412,6 @@ attributes:
     - V1p4UndocumentedAllele
     - V1p4Rearrangement
     range: string
-    required: true
   V1p4derivation:
     name: V1p4derivation
     annotations:
@@ -428,7 +426,6 @@ attributes:
     domain_of:
     - V1p4RearrangedSequence
     range: V1p4Derivation
-    required: true
   V1p4observation_type:
     name: V1p4observation_type
     annotations:
@@ -445,7 +442,6 @@ attributes:
     domain_of:
     - V1p4RearrangedSequence
     range: V1p4ObservationType
-    required: true
   V1p4curation:
     name: V1p4curation
     annotations:
@@ -462,7 +458,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: false
   V1p4repository_name:
     name: V1p4repository_name
     annotations:
@@ -477,7 +472,6 @@ attributes:
     - V1p4RearrangedSequence
     - V1p4UnrearrangedSequence
     range: string
-    required: true
   V1p4repository_ref:
     name: V1p4repository_ref
     annotations:
@@ -494,7 +488,6 @@ attributes:
     - V1p4RearrangedSequence
     - V1p4UnrearrangedSequence
     range: string
-    required: false
   V1p4deposited_version:
     name: V1p4deposited_version
     annotations:
@@ -509,7 +502,6 @@ attributes:
     domain_of:
     - V1p4RearrangedSequence
     range: string
-    required: true
   V1p4sequence_start:
     name: V1p4sequence_start
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -520,7 +512,6 @@ attributes:
     - V1p4RearrangedSequence
     - V1p4Alignment
     range: integer
-    required: false
   V1p4sequence_end:
     name: V1p4sequence_end
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -531,7 +522,6 @@ attributes:
     - V1p4RearrangedSequence
     - V1p4Alignment
     range: integer
-    required: false
 
 </code></pre>
 </details>

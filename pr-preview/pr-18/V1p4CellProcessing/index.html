@@ -253,7 +253,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4tissue_processing/">V1p4tissue_processing</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
@@ -283,43 +283,43 @@
 </tr>
 <tr>
 <td><a href="../V1p4single_cell/">V1p4single_cell</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_number/">V1p4cell_number</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cells_per_reaction/">V1p4cells_per_reaction</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_storage/">V1p4cell_storage</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_quality/">V1p4cell_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_isolation/">V1p4cell_isolation</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_processing_protocol/">V1p4cell_processing_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
 </tr>
@@ -392,7 +392,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4cell_subset:
     name: V1p4cell_subset
     annotations:
@@ -442,7 +441,6 @@ attributes:
     - V1p4Cell
     - V1p4SampleProcessing
     range: string
-    required: false
   V1p4cell_species:
     name: V1p4cell_species
     annotations:
@@ -463,7 +461,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: V1p4CellSpecies
-    required: false
   V1p4single_cell:
     name: V1p4single_cell
     annotations:
@@ -479,7 +476,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: boolean
-    required: true
   V1p4cell_number:
     name: V1p4cell_number
     annotations:
@@ -495,7 +491,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: integer
-    required: true
   V1p4cells_per_reaction:
     name: V1p4cells_per_reaction
     annotations:
@@ -511,7 +506,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: integer
-    required: true
   V1p4cell_storage:
     name: V1p4cell_storage
     annotations:
@@ -527,7 +521,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: boolean
-    required: true
   V1p4cell_quality:
     name: V1p4cell_quality
     annotations:
@@ -544,7 +537,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4cell_isolation:
     name: V1p4cell_isolation
     annotations:
@@ -561,7 +553,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4cell_processing_protocol:
     name: V1p4cell_processing_protocol
     annotations:
@@ -579,7 +570,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
 
 </code></pre>
 </details>

@@ -267,7 +267,7 @@
 <tbody>
 <tr>
 <td><a href="../receptor_genotype_id/">receptor_genotype_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier within the file for this Receptor Genotype, typically gen...</td>
 <td>direct</td>
 </tr>
@@ -383,7 +383,6 @@ attributes:
     domain_of:
     - Genotype
     range: string
-    required: true
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -410,7 +409,6 @@ attributes:
     domain_of:
     - Genotype
     range: DocumentedAllele
-    required: false
     multivalued: true
   undocumented_alleles:
     name: undocumented_alleles
@@ -427,7 +425,6 @@ attributes:
     domain_of:
     - Genotype
     range: UndocumentedAllele
-    required: false
     multivalued: true
   deleted_genes:
     name: deleted_genes
@@ -443,7 +440,6 @@ attributes:
     domain_of:
     - Genotype
     range: DeletedGene
-    required: false
     multivalued: true
   inference_process:
     name: inference_process
@@ -459,7 +455,6 @@ attributes:
     domain_of:
     - Genotype
     range: InferenceProcess
-    required: false
 
 </code></pre>
 </details>

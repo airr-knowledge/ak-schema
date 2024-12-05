@@ -218,7 +218,7 @@
 
 
 
-    LibraryPreparationProcessing --&gt; "1" LibraryGenerationMethod : library_generation_method
+    LibraryPreparationProcessing --&gt; "0..1" LibraryGenerationMethod : library_generation_method
     click LibraryGenerationMethod href "../LibraryGenerationMethod"
 
 
@@ -266,19 +266,19 @@
 <tbody>
 <tr>
 <td><a href="../library_generation_method/">library_generation_method</a></td>
-<td>1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_protocol/">library_generation_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_kit_version/">library_generation_kit_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
@@ -368,7 +368,6 @@ attributes:
     - LibraryPreparationProcessing
     - SampleProcessing
     range: LibraryGenerationMethod
-    required: true
   library_generation_protocol:
     name: library_generation_protocol
     annotations:
@@ -385,7 +384,6 @@ attributes:
     - LibraryPreparationProcessing
     - SampleProcessing
     range: string
-    required: true
   library_generation_kit_version:
     name: library_generation_kit_version
     annotations:
@@ -402,7 +400,6 @@ attributes:
     - LibraryPreparationProcessing
     - SampleProcessing
     range: string
-    required: true
   specimen:
     name: specimen
     description: The specimen that was input for an assay

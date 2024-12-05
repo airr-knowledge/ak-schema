@@ -236,7 +236,7 @@
 
 
 
-    Specimen --&gt; "1" Tissue : tissue
+    Specimen --&gt; "0..1" Tissue : tissue
     click Tissue href "../Tissue"
 
 
@@ -277,7 +277,7 @@
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>1 <br/> <a href="../Tissue/">Tissue</a></td>
+<td>0..1 <br/> <a href="../Tissue/">Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
@@ -459,7 +459,6 @@ attributes:
     - Sample
     - SampleProcessing
     range: Tissue
-    required: true
   process:
     name: process
     description: The type of specimen collection process that resulted in this specimen

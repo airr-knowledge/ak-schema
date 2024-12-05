@@ -227,7 +227,7 @@
 
 
 
-    V1p4UnrearrangedSequence --&gt; "1" V1p4Strand : V1p4strand
+    V1p4UnrearrangedSequence --&gt; "0..1" V1p4Strand : V1p4strand
     click V1p4Strand href "../V1p4Strand"
 
 
@@ -247,13 +247,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p4sequence_id/">V1p4sequence_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequence/">V1p4sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -265,7 +265,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4repository_name/">V1p4repository_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -283,25 +283,25 @@
 </tr>
 <tr>
 <td><a href="../V1p4gff_seqid/">V1p4gff_seqid</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sequence (from the assembly) of a window including the gene and preferably al...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4gff_start/">V1p4gff_start</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Genomic co-ordinates of the start of the sequence of interest described in th...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4gff_end/">V1p4gff_end</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Genomic co-ordinates of the end of the sequence of interest described in this...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4strand/">V1p4strand</a></td>
-<td>1 <br/> <a href="../V1p4Strand/">V1p4Strand</a></td>
+<td>0..1 <br/> <a href="../V1p4Strand/">V1p4Strand</a></td>
 <td>sense (+ or -)</td>
 <td>direct</td>
 </tr>
@@ -392,7 +392,6 @@ attributes:
     - V1p4Rearrangement
     - V1p4Node
     range: string
-    required: true
   V1p4sequence:
     name: V1p4sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -406,7 +405,6 @@ attributes:
     - V1p4UndocumentedAllele
     - V1p4Rearrangement
     range: string
-    required: true
   V1p4curation:
     name: V1p4curation
     annotations:
@@ -423,7 +421,6 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     range: string
-    required: false
   V1p4repository_name:
     name: V1p4repository_name
     annotations:
@@ -438,7 +435,6 @@ attributes:
     - V1p4RearrangedSequence
     - V1p4UnrearrangedSequence
     range: string
-    required: true
   V1p4repository_ref:
     name: V1p4repository_ref
     annotations:
@@ -455,7 +451,6 @@ attributes:
     - V1p4RearrangedSequence
     - V1p4UnrearrangedSequence
     range: string
-    required: false
   V1p4patch_no:
     name: V1p4patch_no
     annotations:
@@ -470,7 +465,6 @@ attributes:
     domain_of:
     - V1p4UnrearrangedSequence
     range: string
-    required: false
   V1p4gff_seqid:
     name: V1p4gff_seqid
     annotations:
@@ -486,7 +480,6 @@ attributes:
     domain_of:
     - V1p4UnrearrangedSequence
     range: string
-    required: true
   V1p4gff_start:
     name: V1p4gff_start
     annotations:
@@ -502,7 +495,6 @@ attributes:
     domain_of:
     - V1p4UnrearrangedSequence
     range: integer
-    required: true
   V1p4gff_end:
     name: V1p4gff_end
     annotations:
@@ -518,7 +510,6 @@ attributes:
     domain_of:
     - V1p4UnrearrangedSequence
     range: integer
-    required: true
   V1p4strand:
     name: V1p4strand
     annotations:
@@ -533,7 +524,6 @@ attributes:
     domain_of:
     - V1p4UnrearrangedSequence
     range: V1p4Strand
-    required: true
 
 </code></pre>
 </details>

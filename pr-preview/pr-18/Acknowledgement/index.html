@@ -228,7 +228,7 @@
 <tbody>
 <tr>
 <td><a href="../acknowledgement_id/">acknowledgement_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>unique identifier of this Acknowledgement within the file</td>
 <td>direct</td>
 </tr>
@@ -240,7 +240,7 @@
 </tr>
 <tr>
 <td><a href="../institution_name/">institution_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Individual's department and institution name</td>
 <td>direct</td>
 </tr>
@@ -334,7 +334,6 @@ attributes:
     domain_of:
     - Acknowledgement
     range: string
-    required: true
   name:
     name: name
     description: A human-readable name for a thing
@@ -361,7 +360,6 @@ attributes:
     domain_of:
     - Acknowledgement
     range: string
-    required: true
   orcid_id:
     name: orcid_id
     annotations:
@@ -376,7 +374,6 @@ attributes:
     domain_of:
     - Acknowledgement
     range: string
-    required: false
 
 </code></pre>
 </details>

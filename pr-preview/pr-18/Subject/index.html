@@ -222,7 +222,7 @@
 
 
 
-    Subject --&gt; "1" AgeUnit : age_unit
+    Subject --&gt; "0..1" AgeUnit : age_unit
     click AgeUnit href "../AgeUnit"
 
 
@@ -273,7 +273,7 @@
 
 
 
-    Subject --&gt; "1" Sex : sex
+    Subject --&gt; "0..1" Sex : sex
     click Sex href "../Sex"
 
 
@@ -308,13 +308,13 @@
 <tbody>
 <tr>
 <td><a href="../subject_id/">subject_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Subject ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../synthetic/">synthetic</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE for libraries in which the diversity has been synthetically generated (e</td>
 <td>direct</td>
 </tr>
@@ -326,25 +326,25 @@
 </tr>
 <tr>
 <td><a href="../sex/">sex</a></td>
-<td>1 <br/> <a href="../Sex/">Sex</a></td>
+<td>0..1 <br/> <a href="../Sex/">Sex</a></td>
 <td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../age_min/">age_min</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Specific age or lower boundary of age range</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../age_max/">age_max</a></td>
-<td>1 <br/> <a href="../Float/">Float</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
 <td>Upper boundary of age range or equal to age_min for specific age</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../age_unit/">age_unit</a></td>
-<td>1 <br/> <a href="../AgeUnit/">AgeUnit</a></td>
+<td>0..1 <br/> <a href="../AgeUnit/">AgeUnit</a></td>
 <td>Unit of age range</td>
 <td>direct</td>
 </tr>
@@ -356,7 +356,7 @@
 </tr>
 <tr>
 <td><a href="../ancestry_population/">ancestry_population</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Broad geographic origin of ancestry (continent)</td>
 <td>direct</td>
 </tr>
@@ -374,19 +374,19 @@
 </tr>
 <tr>
 <td><a href="../strain_name/">strain_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Non-human designation of the strain or breed of animal used</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../linked_subjects/">linked_subjects</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Subject ID to which <code>Relation type</code> refers</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../link_type/">link_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relation between subject and <code>linked_subjects</code>, can be genetic or environment...</td>
 <td>direct</td>
 </tr>
@@ -494,7 +494,6 @@ attributes:
     domain_of:
     - Subject
     range: string
-    required: true
   synthetic:
     name: synthetic
     annotations:
@@ -510,7 +509,6 @@ attributes:
     domain_of:
     - Subject
     range: boolean
-    required: true
   species:
     name: species
     description: The species of a participant
@@ -539,7 +537,6 @@ attributes:
     domain_of:
     - Subject
     range: Sex
-    required: true
   age_min:
     name: age_min
     annotations:
@@ -554,7 +551,6 @@ attributes:
     domain_of:
     - Subject
     range: float
-    required: true
   age_max:
     name: age_max
     annotations:
@@ -570,7 +566,6 @@ attributes:
     domain_of:
     - Subject
     range: float
-    required: true
   age_unit:
     name: age_unit
     annotations:
@@ -586,7 +581,6 @@ attributes:
     - Participant
     - Subject
     range: AgeUnit
-    required: true
   age_event:
     name: age_event
     description: The event to which the age is relative
@@ -612,7 +606,6 @@ attributes:
     domain_of:
     - Subject
     range: string
-    required: true
   ethnicity:
     name: ethnicity
     description: The ethnicity of a participant
@@ -649,7 +642,6 @@ attributes:
     domain_of:
     - Subject
     range: string
-    required: true
   linked_subjects:
     name: linked_subjects
     annotations:
@@ -664,7 +656,6 @@ attributes:
     domain_of:
     - Subject
     range: string
-    required: true
   link_type:
     name: link_type
     annotations:
@@ -681,7 +672,6 @@ attributes:
     domain_of:
     - Subject
     range: string
-    required: true
   diagnosis:
     name: diagnosis
     annotations:
@@ -696,7 +686,6 @@ attributes:
     domain_of:
     - Subject
     range: Diagnosis
-    required: false
     multivalued: true
   genotype:
     name: genotype
@@ -712,7 +701,6 @@ attributes:
     domain_of:
     - Subject
     range: SubjectGenotype
-    required: false
 
 </code></pre>
 </details>

@@ -209,7 +209,7 @@
 
 
 
-    MHCGenotypeSet --&gt; "1..*" MHCGenotype : mhc_genotype_list
+    MHCGenotypeSet --&gt; "*" MHCGenotype : mhc_genotype_list
     click MHCGenotype href "../MHCGenotype"
 
 
@@ -231,13 +231,13 @@
 <tbody>
 <tr>
 <td><a href="../mhc_genotype_set_id/">mhc_genotype_set_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for this MHCGenotypeSet</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../mhc_genotype_list/">mhc_genotype_list</a></td>
-<td>1..* <br/> <a href="../MHCGenotype/">MHCGenotype</a></td>
+<td>* <br/> <a href="../MHCGenotype/">MHCGenotype</a></td>
 <td>List of MHCGenotypes included in this set</td>
 <td>direct</td>
 </tr>
@@ -317,7 +317,6 @@ attributes:
     domain_of:
     - MHCGenotypeSet
     range: string
-    required: true
   mhc_genotype_list:
     name: mhc_genotype_list
     annotations:
@@ -332,7 +331,6 @@ attributes:
     domain_of:
     - MHCGenotypeSet
     range: MHCGenotype
-    required: true
     multivalued: true
 
 </code></pre>

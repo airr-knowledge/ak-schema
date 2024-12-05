@@ -213,7 +213,7 @@
 
 
 
-    GermlineSet --&gt; "1..*" AlleleDescription : allele_descriptions
+    GermlineSet --&gt; "*" AlleleDescription : allele_descriptions
     click AlleleDescription href "../AlleleDescription"
 
 
@@ -284,25 +284,25 @@
 <tbody>
 <tr>
 <td><a href="../germline_set_id/">germline_set_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of the GermlineSet within this file</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../author/">author</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Corresponding author</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../lab_name/">lab_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../lab_address/">lab_address</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -314,25 +314,25 @@
 </tr>
 <tr>
 <td><a href="../release_version/">release_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../release_description/">release_description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../release_date/">release_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../germline_set_name/">germline_set_name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>descriptive name of this germline set</td>
 <td>direct</td>
 </tr>
@@ -374,7 +374,7 @@
 </tr>
 <tr>
 <td><a href="../allele_descriptions/">allele_descriptions</a></td>
-<td>1..* <br/> <a href="../AlleleDescription/">AlleleDescription</a></td>
+<td>* <br/> <a href="../AlleleDescription/">AlleleDescription</a></td>
 <td>list of allele_descriptions in the germline set</td>
 <td>direct</td>
 </tr>
@@ -457,7 +457,6 @@ attributes:
     domain_of:
     - GermlineSet
     range: string
-    required: true
   author:
     name: author
     annotations:
@@ -472,7 +471,6 @@ attributes:
     domain_of:
     - GermlineSet
     range: string
-    required: true
   lab_name:
     name: lab_name
     annotations:
@@ -487,7 +485,6 @@ attributes:
     - GermlineSet
     - Study
     range: string
-    required: true
   lab_address:
     name: lab_address
     annotations:
@@ -503,7 +500,6 @@ attributes:
     - GermlineSet
     - Study
     range: string
-    required: true
   acknowledgements:
     name: acknowledgements
     annotations:
@@ -518,7 +514,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: Acknowledgement
-    required: false
     multivalued: true
   release_version:
     name: release_version
@@ -534,7 +529,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: true
   release_description:
     name: release_description
     annotations:
@@ -551,7 +545,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: true
   release_date:
     name: release_date
     annotations:
@@ -568,7 +561,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: datetime
-    required: true
   germline_set_name:
     name: germline_set_name
     annotations:
@@ -583,7 +575,6 @@ attributes:
     domain_of:
     - GermlineSet
     range: string
-    required: true
   germline_set_ref:
     name: germline_set_ref
     annotations:
@@ -643,7 +634,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: false
   species_subgroup_type:
     name: species_subgroup_type
     annotations:
@@ -660,7 +650,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: SpeciesSubgroupType
-    required: false
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -687,7 +676,6 @@ attributes:
     domain_of:
     - GermlineSet
     range: AlleleDescription
-    required: true
     multivalued: true
   curation:
     name: curation
@@ -705,7 +693,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: false
 
 </code></pre>
 </details>

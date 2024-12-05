@@ -526,13 +526,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p5sequence_id/">V1p5sequence_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sequence/">V1p5sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -556,7 +556,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5productive/">V1p5productive</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>True if the V(D)J sequence is predicted to be productive</td>
 <td>direct</td>
 </tr>
@@ -634,7 +634,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5germline_alignment/">V1p5germline_alignment</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -796,7 +796,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5v_cigar/">V1p5v_cigar</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>CIGAR string for the V gene alignment</td>
 <td>direct</td>
 </tr>
@@ -820,7 +820,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5d_cigar/">V1p5d_cigar</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>CIGAR string for the first or only D gene alignment</td>
 <td>direct</td>
 </tr>
@@ -868,7 +868,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5j_cigar/">V1p5j_cigar</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>CIGAR string for the J gene alignment</td>
 <td>direct</td>
 </tr>
@@ -1646,7 +1646,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Node
     range: string
-    required: true
   V1p5sequence:
     name: V1p5sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1660,7 +1659,6 @@ attributes:
     - V1p5UndocumentedAllele
     - V1p5Rearrangement
     range: string
-    required: true
   V1p5quality:
     name: V1p5quality
     annotations:
@@ -1677,7 +1675,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5sequence_aa:
     name: V1p5sequence_aa
     annotations:
@@ -1692,7 +1689,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5rev_comp:
     name: V1p5rev_comp
     annotations:
@@ -1721,7 +1717,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: boolean
-    required: true
   V1p5vj_in_frame:
     name: V1p5vj_in_frame
     annotations:
@@ -1736,7 +1731,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: boolean
-    required: false
   V1p5stop_codon:
     name: V1p5stop_codon
     annotations:
@@ -1751,7 +1745,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: boolean
-    required: false
   V1p5complete_vdj:
     name: V1p5complete_vdj
     annotations:
@@ -1770,7 +1763,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: boolean
-    required: false
   V1p5locus:
     name: V1p5locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1827,7 +1819,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5j_call:
     name: V1p5j_call
     annotations:
@@ -1858,7 +1849,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5sequence_alignment:
     name: V1p5sequence_alignment
     annotations:
@@ -1889,7 +1879,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5sequence_alignment_aa:
     name: V1p5sequence_alignment_aa
     annotations:
@@ -1904,7 +1893,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5germline_alignment:
     name: V1p5germline_alignment
     annotations:
@@ -1919,7 +1907,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: string
-    required: true
   V1p5germline_alignment_aa:
     name: V1p5germline_alignment_aa
     annotations:
@@ -1934,7 +1921,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: string
-    required: false
   V1p5junction:
     name: V1p5junction
     annotations:
@@ -1981,7 +1967,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5np1_aa:
     name: V1p5np1_aa
     annotations:
@@ -1996,7 +1981,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5np2:
     name: V1p5np2
     annotations:
@@ -2012,7 +1996,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5np2_aa:
     name: V1p5np2_aa
     annotations:
@@ -2027,7 +2010,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5np3:
     name: V1p5np3
     annotations:
@@ -2043,7 +2025,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5np3_aa:
     name: V1p5np3_aa
     annotations:
@@ -2058,7 +2039,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5cdr1:
     name: V1p5cdr1
     annotations:
@@ -2073,7 +2053,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5cdr1_aa:
     name: V1p5cdr1_aa
     annotations:
@@ -2088,7 +2067,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5cdr2:
     name: V1p5cdr2
     annotations:
@@ -2103,7 +2081,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5cdr2_aa:
     name: V1p5cdr2_aa
     annotations:
@@ -2118,7 +2095,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5cdr3:
     name: V1p5cdr3
     annotations:
@@ -2133,7 +2109,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5cdr3_aa:
     name: V1p5cdr3_aa
     annotations:
@@ -2148,7 +2123,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr1:
     name: V1p5fwr1
     annotations:
@@ -2163,7 +2137,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr1_aa:
     name: V1p5fwr1_aa
     annotations:
@@ -2178,7 +2151,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr2:
     name: V1p5fwr2
     annotations:
@@ -2193,7 +2165,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr2_aa:
     name: V1p5fwr2_aa
     annotations:
@@ -2208,7 +2179,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr3:
     name: V1p5fwr3
     annotations:
@@ -2223,7 +2193,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr3_aa:
     name: V1p5fwr3_aa
     annotations:
@@ -2238,7 +2207,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr4:
     name: V1p5fwr4
     annotations:
@@ -2253,7 +2221,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5fwr4_aa:
     name: V1p5fwr4_aa
     annotations:
@@ -2268,7 +2235,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5v_score:
     name: V1p5v_score
     annotations:
@@ -2283,7 +2249,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5v_identity:
     name: V1p5v_identity
     annotations:
@@ -2298,7 +2263,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5v_support:
     name: V1p5v_support
     annotations:
@@ -2315,7 +2279,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5v_cigar:
     name: V1p5v_cigar
     annotations:
@@ -2330,7 +2293,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: true
   V1p5d_score:
     name: V1p5d_score
     annotations:
@@ -2345,7 +2307,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5d_identity:
     name: V1p5d_identity
     annotations:
@@ -2360,7 +2321,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5d_support:
     name: V1p5d_support
     annotations:
@@ -2377,7 +2337,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5d_cigar:
     name: V1p5d_cigar
     annotations:
@@ -2392,7 +2351,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: true
   V1p5d2_score:
     name: V1p5d2_score
     annotations:
@@ -2407,7 +2365,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5d2_identity:
     name: V1p5d2_identity
     annotations:
@@ -2422,7 +2379,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5d2_support:
     name: V1p5d2_support
     annotations:
@@ -2439,7 +2395,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5d2_cigar:
     name: V1p5d2_cigar
     annotations:
@@ -2454,7 +2409,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5j_score:
     name: V1p5j_score
     annotations:
@@ -2469,7 +2423,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5j_identity:
     name: V1p5j_identity
     annotations:
@@ -2484,7 +2437,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5j_support:
     name: V1p5j_support
     annotations:
@@ -2501,7 +2453,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5j_cigar:
     name: V1p5j_cigar
     annotations:
@@ -2516,7 +2467,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: true
   V1p5c_score:
     name: V1p5c_score
     annotations:
@@ -2531,7 +2481,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5c_identity:
     name: V1p5c_identity
     annotations:
@@ -2546,7 +2495,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5c_support:
     name: V1p5c_support
     annotations:
@@ -2563,7 +2511,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: float
-    required: false
   V1p5c_cigar:
     name: V1p5c_cigar
     annotations:
@@ -2578,7 +2525,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5v_sequence_start:
     name: V1p5v_sequence_start
     annotations:
@@ -2594,7 +2540,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5v_sequence_end:
     name: V1p5v_sequence_end
     annotations:
@@ -2610,7 +2555,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5v_germline_start:
     name: V1p5v_germline_start
     annotations:
@@ -2626,7 +2570,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5v_germline_end:
     name: V1p5v_germline_end
     annotations:
@@ -2642,7 +2585,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5v_alignment_start:
     name: V1p5v_alignment_start
     annotations:
@@ -2657,7 +2599,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5v_alignment_end:
     name: V1p5v_alignment_end
     annotations:
@@ -2672,7 +2613,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5d_sequence_start:
     name: V1p5d_sequence_start
     annotations:
@@ -2688,7 +2628,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d_sequence_end:
     name: V1p5d_sequence_end
     annotations:
@@ -2704,7 +2643,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d_germline_start:
     name: V1p5d_germline_start
     annotations:
@@ -2720,7 +2658,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d_germline_end:
     name: V1p5d_germline_end
     annotations:
@@ -2736,7 +2673,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d_alignment_start:
     name: V1p5d_alignment_start
     annotations:
@@ -2751,7 +2687,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5d_alignment_end:
     name: V1p5d_alignment_end
     annotations:
@@ -2766,7 +2701,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5d2_sequence_start:
     name: V1p5d2_sequence_start
     annotations:
@@ -2782,7 +2716,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d2_sequence_end:
     name: V1p5d2_sequence_end
     annotations:
@@ -2798,7 +2731,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d2_germline_start:
     name: V1p5d2_germline_start
     annotations:
@@ -2814,7 +2746,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d2_germline_end:
     name: V1p5d2_germline_end
     annotations:
@@ -2830,7 +2761,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d2_alignment_start:
     name: V1p5d2_alignment_start
     annotations:
@@ -2846,7 +2776,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d2_alignment_end:
     name: V1p5d2_alignment_end
     annotations:
@@ -2862,7 +2791,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5j_sequence_start:
     name: V1p5j_sequence_start
     annotations:
@@ -2878,7 +2806,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5j_sequence_end:
     name: V1p5j_sequence_end
     annotations:
@@ -2894,7 +2821,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5j_germline_start:
     name: V1p5j_germline_start
     annotations:
@@ -2910,7 +2836,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5j_germline_end:
     name: V1p5j_germline_end
     annotations:
@@ -2926,7 +2851,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5j_alignment_start:
     name: V1p5j_alignment_start
     annotations:
@@ -2943,7 +2867,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5j_alignment_end:
     name: V1p5j_alignment_end
     annotations:
@@ -2960,7 +2883,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5c_sequence_start:
     name: V1p5c_sequence_start
     annotations:
@@ -2976,7 +2898,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5c_sequence_end:
     name: V1p5c_sequence_end
     annotations:
@@ -2992,7 +2913,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5c_germline_start:
     name: V1p5c_germline_start
     annotations:
@@ -3008,7 +2928,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5c_germline_end:
     name: V1p5c_germline_end
     annotations:
@@ -3024,7 +2943,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5c_alignment_start:
     name: V1p5c_alignment_start
     annotations:
@@ -3040,7 +2958,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5c_alignment_end:
     name: V1p5c_alignment_end
     annotations:
@@ -3056,7 +2973,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5cdr1_start:
     name: V1p5cdr1_start
     annotations:
@@ -3141,7 +3057,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5fwr1_start:
     name: V1p5fwr1_start
     annotations:
@@ -3240,7 +3155,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5fwr4_end:
     name: V1p5fwr4_end
     annotations:
@@ -3255,7 +3169,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5v_sequence_alignment:
     name: V1p5v_sequence_alignment
     annotations:
@@ -3271,7 +3184,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5v_sequence_alignment_aa:
     name: V1p5v_sequence_alignment_aa
     annotations:
@@ -3286,7 +3198,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d_sequence_alignment:
     name: V1p5d_sequence_alignment
     annotations:
@@ -3302,7 +3213,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d_sequence_alignment_aa:
     name: V1p5d_sequence_alignment_aa
     annotations:
@@ -3317,7 +3227,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d2_sequence_alignment:
     name: V1p5d2_sequence_alignment
     annotations:
@@ -3333,7 +3242,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d2_sequence_alignment_aa:
     name: V1p5d2_sequence_alignment_aa
     annotations:
@@ -3348,7 +3256,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5j_sequence_alignment:
     name: V1p5j_sequence_alignment
     annotations:
@@ -3364,7 +3271,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5j_sequence_alignment_aa:
     name: V1p5j_sequence_alignment_aa
     annotations:
@@ -3379,7 +3285,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5c_sequence_alignment:
     name: V1p5c_sequence_alignment
     annotations:
@@ -3395,7 +3300,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5c_sequence_alignment_aa:
     name: V1p5c_sequence_alignment_aa
     annotations:
@@ -3410,7 +3314,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5v_germline_alignment:
     name: V1p5v_germline_alignment
     annotations:
@@ -3427,7 +3330,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5v_germline_alignment_aa:
     name: V1p5v_germline_alignment_aa
     annotations:
@@ -3442,7 +3344,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d_germline_alignment:
     name: V1p5d_germline_alignment
     annotations:
@@ -3459,7 +3360,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d_germline_alignment_aa:
     name: V1p5d_germline_alignment_aa
     annotations:
@@ -3474,7 +3374,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d2_germline_alignment:
     name: V1p5d2_germline_alignment
     annotations:
@@ -3491,7 +3390,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5d2_germline_alignment_aa:
     name: V1p5d2_germline_alignment_aa
     annotations:
@@ -3506,7 +3404,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5j_germline_alignment:
     name: V1p5j_germline_alignment
     annotations:
@@ -3523,7 +3420,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5j_germline_alignment_aa:
     name: V1p5j_germline_alignment_aa
     annotations:
@@ -3538,7 +3434,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5c_germline_alignment:
     name: V1p5c_germline_alignment
     annotations:
@@ -3555,7 +3450,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5c_germline_alignment_aa:
     name: V1p5c_germline_alignment_aa
     annotations:
@@ -3570,7 +3464,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: string
-    required: false
   V1p5junction_length:
     name: V1p5junction_length
     annotations:
@@ -3585,7 +3478,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5junction_aa_length:
     name: V1p5junction_aa_length
     annotations:
@@ -3600,7 +3492,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5np1_length:
     name: V1p5np1_length
     annotations:
@@ -3616,7 +3507,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5np2_length:
     name: V1p5np2_length
     annotations:
@@ -3632,7 +3522,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5np3_length:
     name: V1p5np3_length
     annotations:
@@ -3647,7 +3536,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5n1_length:
     name: V1p5n1_length
     annotations:
@@ -3663,7 +3551,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5n2_length:
     name: V1p5n2_length
     annotations:
@@ -3679,7 +3566,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5n3_length:
     name: V1p5n3_length
     annotations:
@@ -3694,7 +3580,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5p3v_length:
     name: V1p5p3v_length
     annotations:
@@ -3709,7 +3594,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5p5d_length:
     name: V1p5p5d_length
     annotations:
@@ -3725,7 +3609,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5p3d_length:
     name: V1p5p3d_length
     annotations:
@@ -3741,7 +3624,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5p5d2_length:
     name: V1p5p5d2_length
     annotations:
@@ -3756,7 +3638,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5p3d2_length:
     name: V1p5p3d2_length
     annotations:
@@ -3771,7 +3652,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5p5j_length:
     name: V1p5p5j_length
     annotations:
@@ -3786,7 +3666,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5v_frameshift:
     name: V1p5v_frameshift
     annotations:
@@ -3802,7 +3681,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: boolean
-    required: false
   V1p5j_frameshift:
     name: V1p5j_frameshift
     annotations:
@@ -3818,7 +3696,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: boolean
-    required: false
   V1p5d_frame:
     name: V1p5d_frame
     annotations:
@@ -3835,7 +3712,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5d2_frame:
     name: V1p5d2_frame
     annotations:
@@ -3852,7 +3728,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5consensus_count:
     name: V1p5consensus_count
     annotations:
@@ -3869,7 +3744,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5duplicate_count:
     name: V1p5duplicate_count
     annotations:
@@ -3885,7 +3759,6 @@ attributes:
     domain_of:
     - V1p5Rearrangement
     range: integer
-    required: false
   V1p5umi_count:
     name: V1p5umi_count
     annotations:
@@ -3900,7 +3773,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5Clone
     range: integer
-    required: false
   V1p5cell_id:
     name: V1p5cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -3958,7 +3830,6 @@ attributes:
     - V1p5Rearrangement
     - V1p5SampleProcessing
     range: string
-    required: false
   V1p5data_processing_id:
     name: V1p5data_processing_id
     annotations:

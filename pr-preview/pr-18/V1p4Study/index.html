@@ -213,7 +213,7 @@
 
 
 
-    V1p4Study --&gt; "1..*" V1p4Contributor : V1p4contributors
+    V1p4Study --&gt; "*" V1p4Contributor : V1p4contributors
     click V1p4Contributor href "../V1p4Contributor"
 
 
@@ -226,7 +226,7 @@
 
 
 
-    V1p4Study --&gt; "1..*" V1p4KeywordsStudy : V1p4keywords_study
+    V1p4Study --&gt; "*" V1p4KeywordsStudy : V1p4keywords_study
     click V1p4KeywordsStudy href "../V1p4KeywordsStudy"
 
 
@@ -243,7 +243,7 @@
 
 
 
-    V1p4Study --&gt; "1" V1p4StudyType : V1p4study_type
+    V1p4Study --&gt; "0..1" V1p4StudyType : V1p4study_type
     click V1p4StudyType href "../V1p4StudyType"
 
 
@@ -263,19 +263,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p4study_id/">V1p4study_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique ID assigned by study registry such as one of the International Nucleot...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4study_title/">V1p4study_title</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Descriptive study title</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4study_type/">V1p4study_type</a></td>
-<td>1 <br/> <a href="../V1p4StudyType/">V1p4StudyType</a></td>
+<td>0..1 <br/> <a href="../V1p4StudyType/">V1p4StudyType</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -287,19 +287,19 @@
 </tr>
 <tr>
 <td><a href="../V1p4inclusion_exclusion_criteria/">V1p4inclusion_exclusion_criteria</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of criteria for inclusion/exclusion for the study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4grants/">V1p4grants</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Funding agencies and grant numbers</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4contributors/">V1p4contributors</a></td>
-<td>1..* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
+<td>* <br/> <a href="../V1p4Contributor/">V1p4Contributor</a></td>
 <td>List of individuals who contributed to the study</td>
 <td>direct</td>
 </tr>
@@ -311,7 +311,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4keywords_study/">V1p4keywords_study</a></td>
-<td>1..* <br/> <a href="../V1p4KeywordsStudy/">V1p4KeywordsStudy</a></td>
+<td>* <br/> <a href="../V1p4KeywordsStudy/">V1p4KeywordsStudy</a></td>
 <td>Keywords describing properties of one or more data sets in a study</td>
 <td>direct</td>
 </tr>
@@ -413,7 +413,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: string
-    required: true
   V1p4study_title:
     name: V1p4study_title
     annotations:
@@ -428,7 +427,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: string
-    required: true
   V1p4study_type:
     name: V1p4study_type
     annotations:
@@ -444,7 +442,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: V1p4StudyType
-    required: true
   V1p4study_description:
     name: V1p4study_description
     annotations:
@@ -459,7 +456,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: string
-    required: false
   V1p4inclusion_exclusion_criteria:
     name: V1p4inclusion_exclusion_criteria
     annotations:
@@ -474,7 +470,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: string
-    required: true
   V1p4grants:
     name: V1p4grants
     annotations:
@@ -489,7 +484,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: string
-    required: true
   V1p4contributors:
     name: V1p4contributors
     annotations:
@@ -508,7 +502,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: V1p4Contributor
-    required: true
     multivalued: true
   V1p4pub_ids:
     name: V1p4pub_ids
@@ -544,7 +537,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: V1p4KeywordsStudy
-    required: true
     multivalued: true
   V1p4adc_publish_date:
     name: V1p4adc_publish_date
@@ -560,7 +552,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: datetime
-    required: false
   V1p4adc_update_date:
     name: V1p4adc_update_date
     annotations:
@@ -575,7 +566,6 @@ attributes:
     domain_of:
     - V1p4Study
     range: datetime
-    required: false
 
 </code></pre>
 </details>

@@ -261,7 +261,7 @@
 
 
 
-    V1p5AlleleDescription --&gt; "1" V1p5InferenceType : V1p5inference_type
+    V1p5AlleleDescription --&gt; "0..1" V1p5InferenceType : V1p5inference_type
     click V1p5InferenceType href "../V1p5InferenceType"
 
 
@@ -329,7 +329,7 @@
 
 
 
-    V1p5AlleleDescription --&gt; "1" V1p5SequenceType : V1p5sequence_type
+    V1p5AlleleDescription --&gt; "0..1" V1p5SequenceType : V1p5sequence_type
     click V1p5SequenceType href "../V1p5SequenceType"
 
 
@@ -338,7 +338,7 @@
 
 
 
-    V1p5AlleleDescription --&gt; "1" V1p5Species : V1p5species
+    V1p5AlleleDescription --&gt; "0..1" V1p5Species : V1p5species
     click V1p5Species href "../V1p5Species"
 
 
@@ -406,7 +406,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5allele_description_id/">V1p5allele_description_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this AlleleDescription within the file</td>
 <td>direct</td>
 </tr>
@@ -418,7 +418,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5maintainer/">V1p5maintainer</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Maintainer of this sequence record</td>
 <td>direct</td>
 </tr>
@@ -430,25 +430,25 @@
 </tr>
 <tr>
 <td><a href="../V1p5lab_address/">V1p5lab_address</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5release_version/">V1p5release_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5release_date/">V1p5release_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5release_description/">V1p5release_description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
@@ -460,13 +460,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5sequence/">V1p5sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5coding_sequence/">V1p5coding_sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Nucleotide sequence of the core coding region, such as the coding region of a...</td>
 <td>direct</td>
 </tr>
@@ -490,25 +490,25 @@
 </tr>
 <tr>
 <td><a href="../V1p5sequence_type/">V1p5sequence_type</a></td>
-<td>1 <br/> <a href="../V1p5SequenceType/">V1p5SequenceType</a></td>
+<td>0..1 <br/> <a href="../V1p5SequenceType/">V1p5SequenceType</a></td>
 <td>Sequence type (V, D, J, C)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5functional/">V1p5functional</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>True if the gene is functional, false if it is a pseudogene</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5inference_type/">V1p5inference_type</a></td>
-<td>1 <br/> <a href="../V1p5InferenceType/">V1p5InferenceType</a></td>
+<td>0..1 <br/> <a href="../V1p5InferenceType/">V1p5InferenceType</a></td>
 <td>Type of inference(s) from which this gene sequence was inferred</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5species/">V1p5species</a></td>
-<td>1 <br/> <a href="../V1p5Species/">V1p5Species</a></td>
+<td>0..1 <br/> <a href="../V1p5Species/">V1p5Species</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -836,7 +836,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: true
   V1p5allele_description_ref:
     name: V1p5allele_description_ref
     annotations:
@@ -852,7 +851,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: false
   V1p5maintainer:
     name: V1p5maintainer
     annotations:
@@ -867,7 +865,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: true
   V1p5acknowledgements:
     name: V1p5acknowledgements
     annotations:
@@ -882,7 +879,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     range: V1p5Acknowledgement
-    required: false
     multivalued: true
   V1p5lab_address:
     name: V1p5lab_address
@@ -899,7 +895,6 @@ attributes:
     - V1p5GermlineSet
     - V1p5Study
     range: string
-    required: true
   V1p5release_version:
     name: V1p5release_version
     annotations:
@@ -914,7 +909,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     range: string
-    required: true
   V1p5release_date:
     name: V1p5release_date
     annotations:
@@ -930,7 +924,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     range: datetime
-    required: true
   V1p5release_description:
     name: V1p5release_description
     annotations:
@@ -947,7 +940,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     range: string
-    required: true
   V1p5label:
     name: V1p5label
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -973,7 +965,6 @@ attributes:
     - V1p5UndocumentedAllele
     - V1p5Rearrangement
     range: string
-    required: true
   V1p5coding_sequence:
     name: V1p5coding_sequence
     annotations:
@@ -990,7 +981,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: true
   V1p5aliases:
     name: V1p5aliases
     annotations:
@@ -1005,7 +995,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: false
     multivalued: true
   V1p5locus:
     name: V1p5locus
@@ -1033,7 +1022,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5sequence_type:
     name: V1p5sequence_type
     annotations:
@@ -1049,7 +1037,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5SequenceType
-    required: true
   V1p5functional:
     name: V1p5functional
     annotations:
@@ -1064,7 +1051,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: boolean
-    required: true
   V1p5inference_type:
     name: V1p5inference_type
     annotations:
@@ -1080,7 +1066,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5InferenceType
-    required: true
   V1p5species:
     name: V1p5species
     annotations:
@@ -1097,7 +1082,6 @@ attributes:
     - V1p5GermlineSet
     - V1p5Subject
     range: V1p5Species
-    required: true
   V1p5species_subgroup:
     name: V1p5species_subgroup
     annotations:
@@ -1113,7 +1097,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     range: string
-    required: false
   V1p5species_subgroup_type:
     name: V1p5species_subgroup_type
     annotations:
@@ -1130,7 +1113,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     range: V1p5SpeciesSubgroupType
-    required: false
   V1p5status:
     name: V1p5status
     annotations:
@@ -1145,7 +1127,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5Status
-    required: false
   V1p5subgroup_designation:
     name: V1p5subgroup_designation
     annotations:
@@ -1160,7 +1141,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: false
   V1p5gene_designation:
     name: V1p5gene_designation
     annotations:
@@ -1175,7 +1155,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: false
   V1p5allele_designation:
     name: V1p5allele_designation
     annotations:
@@ -1190,7 +1169,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5MHCAllele
     range: string
-    required: false
   V1p5allele_similarity_cluster_designation:
     name: V1p5allele_similarity_cluster_designation
     annotations:
@@ -1205,7 +1183,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: false
   V1p5allele_similarity_cluster_member_id:
     name: V1p5allele_similarity_cluster_member_id
     annotations:
@@ -1221,7 +1198,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: false
   V1p5j_codon_frame:
     name: V1p5j_codon_frame
     annotations:
@@ -1239,7 +1215,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5JCodonFrame
-    required: false
   V1p5gene_start:
     name: V1p5gene_start
     annotations:
@@ -1255,7 +1230,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5gene_end:
     name: V1p5gene_end
     annotations:
@@ -1271,7 +1245,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5utr_5_prime_start:
     name: V1p5utr_5_prime_start
     annotations:
@@ -1287,7 +1260,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5utr_5_prime_end:
     name: V1p5utr_5_prime_end
     annotations:
@@ -1303,7 +1275,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5leader_1_start:
     name: V1p5leader_1_start
     annotations:
@@ -1318,7 +1289,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5leader_1_end:
     name: V1p5leader_1_end
     annotations:
@@ -1333,7 +1303,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5leader_2_start:
     name: V1p5leader_2_start
     annotations:
@@ -1348,7 +1317,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5leader_2_end:
     name: V1p5leader_2_end
     annotations:
@@ -1363,7 +1331,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5v_rs_start:
     name: V1p5v_rs_start
     annotations:
@@ -1379,7 +1346,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5v_rs_end:
     name: V1p5v_rs_end
     annotations:
@@ -1395,7 +1361,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5d_rs_3_prime_start:
     name: V1p5d_rs_3_prime_start
     annotations:
@@ -1411,7 +1376,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5d_rs_3_prime_end:
     name: V1p5d_rs_3_prime_end
     annotations:
@@ -1427,7 +1391,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5d_rs_5_prime_start:
     name: V1p5d_rs_5_prime_start
     annotations:
@@ -1443,7 +1406,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5d_rs_5_prime_end:
     name: V1p5d_rs_5_prime_end
     annotations:
@@ -1459,7 +1421,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5j_cdr3_end:
     name: V1p5j_cdr3_end
     annotations:
@@ -1475,7 +1436,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5j_rs_start:
     name: V1p5j_rs_start
     annotations:
@@ -1491,7 +1451,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5j_rs_end:
     name: V1p5j_rs_end
     annotations:
@@ -1507,7 +1466,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5j_donor_splice:
     name: V1p5j_donor_splice
     annotations:
@@ -1523,7 +1481,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: integer
-    required: false
   V1p5v_gene_delineations:
     name: V1p5v_gene_delineations
     annotations:
@@ -1538,7 +1495,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5SequenceDelineationV
-    required: false
     multivalued: true
   V1p5unrearranged_support:
     name: V1p5unrearranged_support
@@ -1554,7 +1510,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5UnrearrangedSequence
-    required: false
     multivalued: true
   V1p5rearranged_support:
     name: V1p5rearranged_support
@@ -1570,7 +1525,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5RearrangedSequence
-    required: false
     multivalued: true
   V1p5paralogs:
     name: V1p5paralogs
@@ -1586,7 +1540,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: string
-    required: false
     multivalued: true
   V1p5curation:
     name: V1p5curation
@@ -1604,7 +1557,6 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     range: string
-    required: false
   V1p5curational_tags:
     name: V1p5curational_tags
     annotations:
@@ -1619,7 +1571,6 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     range: V1p5CurationalTags
-    required: false
     multivalued: true
 
 </code></pre>

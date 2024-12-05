@@ -225,7 +225,7 @@
 
 
 
-    V1p5CellProcessing --&gt; "1" V1p5CellSubset : V1p5cell_subset
+    V1p5CellProcessing --&gt; "0..1" V1p5CellSubset : V1p5cell_subset
     click V1p5CellSubset href "../V1p5CellSubset"
 
 
@@ -251,19 +251,19 @@
 <tbody>
 <tr>
 <td><a href="../V1p5tissue_processing/">V1p5tissue_processing</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_subset/">V1p5cell_subset</a></td>
-<td>1 <br/> <a href="../V1p5CellSubset/">V1p5CellSubset</a></td>
+<td>0..1 <br/> <a href="../V1p5CellSubset/">V1p5CellSubset</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_phenotype/">V1p5cell_phenotype</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>List of cellular markers and their expression levels used to isolate the cell...</td>
 <td>direct</td>
 </tr>
@@ -275,43 +275,43 @@
 </tr>
 <tr>
 <td><a href="../V1p5single_cell/">V1p5single_cell</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_number/">V1p5cell_number</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cells_per_reaction/">V1p5cells_per_reaction</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_storage/">V1p5cell_storage</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_quality/">V1p5cell_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_isolation/">V1p5cell_isolation</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5cell_processing_protocol/">V1p5cell_processing_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
 </tr>
@@ -383,7 +383,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_subset:
     name: V1p5cell_subset
     annotations:
@@ -399,7 +398,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: V1p5CellSubset
-    required: true
   V1p5cell_phenotype:
     name: V1p5cell_phenotype
     annotations:
@@ -416,7 +414,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_species:
     name: V1p5cell_species
     annotations:
@@ -437,7 +434,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: V1p5CellSpecies
-    required: false
   V1p5single_cell:
     name: V1p5single_cell
     annotations:
@@ -453,7 +449,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: boolean
-    required: true
   V1p5cell_number:
     name: V1p5cell_number
     annotations:
@@ -469,7 +464,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: integer
-    required: true
   V1p5cells_per_reaction:
     name: V1p5cells_per_reaction
     annotations:
@@ -485,7 +479,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: integer
-    required: true
   V1p5cell_storage:
     name: V1p5cell_storage
     annotations:
@@ -501,7 +494,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: boolean
-    required: true
   V1p5cell_quality:
     name: V1p5cell_quality
     annotations:
@@ -518,7 +510,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_isolation:
     name: V1p5cell_isolation
     annotations:
@@ -535,7 +526,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
   V1p5cell_processing_protocol:
     name: V1p5cell_processing_protocol
     annotations:
@@ -553,7 +543,6 @@ attributes:
     - V1p5CellProcessing
     - V1p5SampleProcessing
     range: string
-    required: true
 
 </code></pre>
 </details>

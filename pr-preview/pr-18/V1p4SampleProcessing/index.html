@@ -256,7 +256,7 @@
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4TimePoint : V1p4collection_time_point_relative
+    V1p4SampleProcessing --&gt; "0..1" V1p4TimePoint : V1p4collection_time_point_relative
     click V1p4TimePoint href "../V1p4TimePoint"
 
 
@@ -265,7 +265,7 @@
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4CompleteSequences : V1p4complete_sequences
+    V1p4SampleProcessing --&gt; "0..1" V1p4CompleteSequences : V1p4complete_sequences
     click V1p4CompleteSequences href "../V1p4CompleteSequences"
 
 
@@ -278,7 +278,7 @@
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4LibraryGenerationMethod : V1p4library_generation_method
+    V1p4SampleProcessing --&gt; "0..1" V1p4LibraryGenerationMethod : V1p4library_generation_method
     click V1p4LibraryGenerationMethod href "../V1p4LibraryGenerationMethod"
 
 
@@ -298,7 +298,7 @@
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4PhysicalLinkage : V1p4physical_linkage
+    V1p4SampleProcessing --&gt; "0..1" V1p4PhysicalLinkage : V1p4physical_linkage
     click V1p4PhysicalLinkage href "../V1p4PhysicalLinkage"
 
 
@@ -334,7 +334,7 @@
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4PhysicalQuantity : V1p4template_amount
+    V1p4SampleProcessing --&gt; "0..1" V1p4PhysicalQuantity : V1p4template_amount
     click V1p4PhysicalQuantity href "../V1p4PhysicalQuantity"
 
 
@@ -343,7 +343,7 @@
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4TemplateClass : V1p4template_class
+    V1p4SampleProcessing --&gt; "0..1" V1p4TemplateClass : V1p4template_class
     click V1p4TemplateClass href "../V1p4TemplateClass"
 
 
@@ -354,7 +354,7 @@
 
 
 
-    V1p4SampleProcessing --&gt; "1" V1p4Tissue : V1p4tissue
+    V1p4SampleProcessing --&gt; "0..1" V1p4Tissue : V1p4tissue
     click V1p4Tissue href "../V1p4Tissue"
 
 
@@ -384,37 +384,37 @@
 </tr>
 <tr>
 <td><a href="../V1p4sample_id/">V1p4sample_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Sample ID assigned by submitter, unique within study</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sample_type/">V1p4sample_type</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The way the sample was obtained, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4tissue/">V1p4tissue</a></td>
-<td>1 <br/> <a href="../V1p4Tissue/">V1p4Tissue</a></td>
+<td>0..1 <br/> <a href="../V1p4Tissue/">V1p4Tissue</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4anatomic_site/">V1p4anatomic_site</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The anatomic location of the tissue, e</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4disease_state_sample/">V1p4disease_state_sample</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Histopathologic evaluation of the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4collection_time_point_relative/">V1p4collection_time_point_relative</a></td>
-<td>1 <br/> <a href="../V1p4TimePoint/">V1p4TimePoint</a></td>
+<td>0..1 <br/> <a href="../V1p4TimePoint/">V1p4TimePoint</a></td>
 <td>Time point at which sample was taken, relative to <code>label</code> event</td>
 <td>direct</td>
 </tr>
@@ -426,13 +426,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4biomaterial_provider/">V1p4biomaterial_provider</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of the entity providing the sample</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4tissue_processing/">V1p4tissue_processing</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Enzymatic digestion and/or physical methods used to isolate cells from sample</td>
 <td>direct</td>
 </tr>
@@ -462,79 +462,79 @@
 </tr>
 <tr>
 <td><a href="../V1p4single_cell/">V1p4single_cell</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_number/">V1p4cell_number</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cells_per_reaction/">V1p4cells_per_reaction</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_storage/">V1p4cell_storage</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_quality/">V1p4cell_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Relative amount of viable cells after preparation and (if applicable) thawing</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_isolation/">V1p4cell_isolation</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the procedure used for marker-based isolation or enrich cells</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4cell_processing_protocol/">V1p4cell_processing_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of the methods applied to the sample including cell preparation/ ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4template_class/">V1p4template_class</a></td>
-<td>1 <br/> <a href="../V1p4TemplateClass/">V1p4TemplateClass</a></td>
+<td>0..1 <br/> <a href="../V1p4TemplateClass/">V1p4TemplateClass</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4template_quality/">V1p4template_quality</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4template_amount/">V1p4template_amount</a></td>
-<td>1 <br/> <a href="../V1p4PhysicalQuantity/">V1p4PhysicalQuantity</a></td>
+<td>0..1 <br/> <a href="../V1p4PhysicalQuantity/">V1p4PhysicalQuantity</a></td>
 <td>Amount of template that went into the process</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4library_generation_method/">V1p4library_generation_method</a></td>
-<td>1 <br/> <a href="../V1p4LibraryGenerationMethod/">V1p4LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../V1p4LibraryGenerationMethod/">V1p4LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4library_generation_protocol/">V1p4library_generation_protocol</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4library_generation_kit_version/">V1p4library_generation_kit_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
@@ -546,49 +546,49 @@
 </tr>
 <tr>
 <td><a href="../V1p4complete_sequences/">V1p4complete_sequences</a></td>
-<td>1 <br/> <a href="../V1p4CompleteSequences/">V1p4CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../V1p4CompleteSequences/">V1p4CompleteSequences</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4physical_linkage/">V1p4physical_linkage</a></td>
-<td>1 <br/> <a href="../V1p4PhysicalLinkage/">V1p4PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../V1p4PhysicalLinkage/">V1p4PhysicalLinkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequencing_run_id/">V1p4sequencing_run_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>ID of sequencing run assigned by the sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4total_reads_passing_qc_filter/">V1p4total_reads_passing_qc_filter</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of usable reads for analysis</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequencing_platform/">V1p4sequencing_platform</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Designation of sequencing instrument used</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequencing_facility/">V1p4sequencing_facility</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name and address of sequencing facility</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequencing_run_date/">V1p4sequencing_run_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sequencing_kit/">V1p4sequencing_kit</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name, manufacturer, order and lot numbers of sequencing kit</td>
 <td>direct</td>
 </tr>
@@ -709,7 +709,6 @@ attributes:
     - V1p4Rearrangement
     - V1p4SampleProcessing
     range: string
-    required: false
   V1p4sample_id:
     name: V1p4sample_id
     annotations:
@@ -727,7 +726,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4sample_type:
     name: V1p4sample_type
     annotations:
@@ -745,7 +743,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4tissue:
     name: V1p4tissue
     annotations:
@@ -761,7 +758,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4Tissue
-    required: true
   V1p4anatomic_site:
     name: V1p4anatomic_site
     annotations:
@@ -777,7 +773,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4disease_state_sample:
     name: V1p4disease_state_sample
     annotations:
@@ -793,7 +788,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4collection_time_point_relative:
     name: V1p4collection_time_point_relative
     annotations:
@@ -809,7 +803,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4TimePoint
-    required: true
   V1p4collection_location:
     name: V1p4collection_location
     annotations:
@@ -825,7 +818,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: V1p4CollectionLocation
-    required: false
   V1p4biomaterial_provider:
     name: V1p4biomaterial_provider
     annotations:
@@ -841,7 +833,6 @@ attributes:
     - V1p4Sample
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4tissue_processing:
     name: V1p4tissue_processing
     annotations:
@@ -858,7 +849,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4cell_subset:
     name: V1p4cell_subset
     annotations:
@@ -908,7 +898,6 @@ attributes:
     - V1p4Cell
     - V1p4SampleProcessing
     range: string
-    required: false
   V1p4cell_species:
     name: V1p4cell_species
     annotations:
@@ -929,7 +918,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: V1p4CellSpecies
-    required: false
   V1p4single_cell:
     name: V1p4single_cell
     annotations:
@@ -945,7 +933,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: boolean
-    required: true
   V1p4cell_number:
     name: V1p4cell_number
     annotations:
@@ -961,7 +948,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: integer
-    required: true
   V1p4cells_per_reaction:
     name: V1p4cells_per_reaction
     annotations:
@@ -977,7 +963,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: integer
-    required: true
   V1p4cell_storage:
     name: V1p4cell_storage
     annotations:
@@ -993,7 +978,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: boolean
-    required: true
   V1p4cell_quality:
     name: V1p4cell_quality
     annotations:
@@ -1010,7 +994,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4cell_isolation:
     name: V1p4cell_isolation
     annotations:
@@ -1027,7 +1010,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4cell_processing_protocol:
     name: V1p4cell_processing_protocol
     annotations:
@@ -1045,7 +1027,6 @@ attributes:
     - V1p4CellProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4template_class:
     name: V1p4template_class
     annotations:
@@ -1062,7 +1043,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4TemplateClass
-    required: true
   V1p4template_quality:
     name: V1p4template_quality
     annotations:
@@ -1079,7 +1059,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4template_amount:
     name: V1p4template_amount
     annotations:
@@ -1095,7 +1074,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PhysicalQuantity
-    required: true
   V1p4library_generation_method:
     name: V1p4library_generation_method
     annotations:
@@ -1111,7 +1089,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4LibraryGenerationMethod
-    required: true
   V1p4library_generation_protocol:
     name: V1p4library_generation_protocol
     annotations:
@@ -1128,7 +1105,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4library_generation_kit_version:
     name: V1p4library_generation_kit_version
     annotations:
@@ -1145,7 +1121,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4pcr_target:
     name: V1p4pcr_target
     annotations:
@@ -1166,7 +1141,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PCRTarget
-    required: false
     multivalued: true
   V1p4complete_sequences:
     name: V1p4complete_sequences
@@ -1193,7 +1167,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4CompleteSequences
-    required: true
   V1p4physical_linkage:
     name: V1p4physical_linkage
     annotations:
@@ -1218,7 +1191,6 @@ attributes:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
     range: V1p4PhysicalLinkage
-    required: true
   V1p4sequencing_run_id:
     name: V1p4sequencing_run_id
     annotations:
@@ -1234,7 +1206,6 @@ attributes:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4total_reads_passing_qc_filter:
     name: V1p4total_reads_passing_qc_filter
     annotations:
@@ -1250,7 +1221,6 @@ attributes:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: integer
-    required: true
   V1p4sequencing_platform:
     name: V1p4sequencing_platform
     annotations:
@@ -1266,7 +1236,6 @@ attributes:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4sequencing_facility:
     name: V1p4sequencing_facility
     annotations:
@@ -1282,7 +1251,6 @@ attributes:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4sequencing_run_date:
     name: V1p4sequencing_run_date
     annotations:
@@ -1298,7 +1266,6 @@ attributes:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: datetime
-    required: true
   V1p4sequencing_kit:
     name: V1p4sequencing_kit
     annotations:
@@ -1314,7 +1281,6 @@ attributes:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: string
-    required: true
   V1p4sequencing_files:
     name: V1p4sequencing_files
     annotations:
@@ -1330,7 +1296,6 @@ attributes:
     - V1p4SequencingRun
     - V1p4SampleProcessing
     range: V1p4SequencingData
-    required: false
 
 </code></pre>
 </details>

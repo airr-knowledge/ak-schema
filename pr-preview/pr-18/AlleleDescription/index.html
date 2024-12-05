@@ -261,7 +261,7 @@
 
 
 
-    AlleleDescription --&gt; "1" InferenceType : inference_type
+    AlleleDescription --&gt; "0..1" InferenceType : inference_type
     click InferenceType href "../InferenceType"
 
 
@@ -329,7 +329,7 @@
 
 
 
-    AlleleDescription --&gt; "1" SequenceType : sequence_type
+    AlleleDescription --&gt; "0..1" SequenceType : sequence_type
     click SequenceType href "../SequenceType"
 
 
@@ -406,7 +406,7 @@
 <tbody>
 <tr>
 <td><a href="../allele_description_id/">allele_description_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this AlleleDescription within the file</td>
 <td>direct</td>
 </tr>
@@ -418,7 +418,7 @@
 </tr>
 <tr>
 <td><a href="../maintainer/">maintainer</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Maintainer of this sequence record</td>
 <td>direct</td>
 </tr>
@@ -430,25 +430,25 @@
 </tr>
 <tr>
 <td><a href="../lab_address/">lab_address</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../release_version/">release_version</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../release_date/">release_date</a></td>
-<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../release_description/">release_description</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Brief descriptive notes of the reason for this release and the changes embodi...</td>
 <td>direct</td>
 </tr>
@@ -460,13 +460,13 @@
 </tr>
 <tr>
 <td><a href="../sequence/">sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../coding_sequence/">coding_sequence</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Nucleotide sequence of the core coding region, such as the coding region of a...</td>
 <td>direct</td>
 </tr>
@@ -490,19 +490,19 @@
 </tr>
 <tr>
 <td><a href="../sequence_type/">sequence_type</a></td>
-<td>1 <br/> <a href="../SequenceType/">SequenceType</a></td>
+<td>0..1 <br/> <a href="../SequenceType/">SequenceType</a></td>
 <td>Sequence type (V, D, J, C)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../functional/">functional</a></td>
-<td>1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>True if the gene is functional, false if it is a pseudogene</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../inference_type/">inference_type</a></td>
-<td>1 <br/> <a href="../InferenceType/">InferenceType</a></td>
+<td>0..1 <br/> <a href="../InferenceType/">InferenceType</a></td>
 <td>Type of inference(s) from which this gene sequence was inferred</td>
 <td>direct</td>
 </tr>
@@ -836,7 +836,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: true
   allele_description_ref:
     name: allele_description_ref
     annotations:
@@ -852,7 +851,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: false
   maintainer:
     name: maintainer
     annotations:
@@ -867,7 +865,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: true
   acknowledgements:
     name: acknowledgements
     annotations:
@@ -882,7 +879,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: Acknowledgement
-    required: false
     multivalued: true
   lab_address:
     name: lab_address
@@ -899,7 +895,6 @@ attributes:
     - GermlineSet
     - Study
     range: string
-    required: true
   release_version:
     name: release_version
     annotations:
@@ -914,7 +909,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: true
   release_date:
     name: release_date
     annotations:
@@ -931,7 +925,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: datetime
-    required: true
   release_description:
     name: release_description
     annotations:
@@ -948,7 +941,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: true
   label:
     name: label
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -975,7 +967,6 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
-    required: true
   coding_sequence:
     name: coding_sequence
     annotations:
@@ -992,7 +983,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: true
   aliases:
     name: aliases
     annotations:
@@ -1007,7 +997,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: false
     multivalued: true
   locus:
     name: locus
@@ -1035,7 +1024,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   sequence_type:
     name: sequence_type
     annotations:
@@ -1051,7 +1039,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: SequenceType
-    required: true
   functional:
     name: functional
     annotations:
@@ -1066,7 +1053,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: boolean
-    required: true
   inference_type:
     name: inference_type
     annotations:
@@ -1082,7 +1068,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: InferenceType
-    required: true
   species:
     name: species
     description: The species of a participant
@@ -1112,7 +1097,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: false
   species_subgroup_type:
     name: species_subgroup_type
     annotations:
@@ -1129,7 +1113,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: SpeciesSubgroupType
-    required: false
   status:
     name: status
     annotations:
@@ -1144,7 +1127,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: Status
-    required: false
   subgroup_designation:
     name: subgroup_designation
     annotations:
@@ -1159,7 +1141,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: false
   gene_designation:
     name: gene_designation
     annotations:
@@ -1174,7 +1155,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: false
   allele_designation:
     name: allele_designation
     annotations:
@@ -1189,7 +1169,6 @@ attributes:
     - AlleleDescription
     - MHCAllele
     range: string
-    required: false
   allele_similarity_cluster_designation:
     name: allele_similarity_cluster_designation
     annotations:
@@ -1204,7 +1183,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: false
   allele_similarity_cluster_member_id:
     name: allele_similarity_cluster_member_id
     annotations:
@@ -1220,7 +1198,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: false
   j_codon_frame:
     name: j_codon_frame
     annotations:
@@ -1238,7 +1215,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: JCodonFrame
-    required: false
   gene_start:
     name: gene_start
     annotations:
@@ -1254,7 +1230,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   gene_end:
     name: gene_end
     annotations:
@@ -1270,7 +1245,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   utr_5_prime_start:
     name: utr_5_prime_start
     annotations:
@@ -1286,7 +1260,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   utr_5_prime_end:
     name: utr_5_prime_end
     annotations:
@@ -1302,7 +1275,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   leader_1_start:
     name: leader_1_start
     annotations:
@@ -1317,7 +1289,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   leader_1_end:
     name: leader_1_end
     annotations:
@@ -1332,7 +1303,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   leader_2_start:
     name: leader_2_start
     annotations:
@@ -1347,7 +1317,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   leader_2_end:
     name: leader_2_end
     annotations:
@@ -1362,7 +1331,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   v_rs_start:
     name: v_rs_start
     annotations:
@@ -1378,7 +1346,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   v_rs_end:
     name: v_rs_end
     annotations:
@@ -1394,7 +1361,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   d_rs_3_prime_start:
     name: d_rs_3_prime_start
     annotations:
@@ -1410,7 +1376,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   d_rs_3_prime_end:
     name: d_rs_3_prime_end
     annotations:
@@ -1426,7 +1391,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   d_rs_5_prime_start:
     name: d_rs_5_prime_start
     annotations:
@@ -1442,7 +1406,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   d_rs_5_prime_end:
     name: d_rs_5_prime_end
     annotations:
@@ -1458,7 +1421,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   j_cdr3_end:
     name: j_cdr3_end
     annotations:
@@ -1474,7 +1436,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   j_rs_start:
     name: j_rs_start
     annotations:
@@ -1490,7 +1451,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   j_rs_end:
     name: j_rs_end
     annotations:
@@ -1506,7 +1466,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   j_donor_splice:
     name: j_donor_splice
     annotations:
@@ -1522,7 +1481,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: integer
-    required: false
   v_gene_delineations:
     name: v_gene_delineations
     annotations:
@@ -1537,7 +1495,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: SequenceDelineationV
-    required: false
     multivalued: true
   unrearranged_support:
     name: unrearranged_support
@@ -1553,7 +1510,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: UnrearrangedSequence
-    required: false
     multivalued: true
   rearranged_support:
     name: rearranged_support
@@ -1569,7 +1525,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: RearrangedSequence
-    required: false
     multivalued: true
   paralogs:
     name: paralogs
@@ -1585,7 +1540,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: string
-    required: false
     multivalued: true
   curation:
     name: curation
@@ -1603,7 +1557,6 @@ attributes:
     - AlleleDescription
     - GermlineSet
     range: string
-    required: false
   curational_tags:
     name: curational_tags
     annotations:
@@ -1618,7 +1571,6 @@ attributes:
     domain_of:
     - AlleleDescription
     range: CurationalTags
-    required: false
     multivalued: true
 
 </code></pre>

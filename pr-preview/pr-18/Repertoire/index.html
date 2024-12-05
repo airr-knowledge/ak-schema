@@ -204,7 +204,7 @@
 
 
 
-    Repertoire --&gt; "1..*" DataProcessing : data_processing
+    Repertoire --&gt; "*" DataProcessing : data_processing
     click DataProcessing href "../DataProcessing"
 
 
@@ -219,7 +219,7 @@
 
 
 
-    Repertoire --&gt; "1..*" SampleProcessing : sample
+    Repertoire --&gt; "*" SampleProcessing : sample
     click SampleProcessing href "../SampleProcessing"
 
 
@@ -228,7 +228,7 @@
 
 
 
-    Repertoire --&gt; "1" Study : study
+    Repertoire --&gt; "0..1" Study : study
     click Study href "../Study"
 
 
@@ -237,7 +237,7 @@
 
 
 
-    Repertoire --&gt; "1" Subject : subject
+    Repertoire --&gt; "0..1" Subject : subject
     click Subject href "../Subject"
 
 
@@ -275,25 +275,25 @@
 </tr>
 <tr>
 <td><a href="../study/">study</a></td>
-<td>1 <br/> <a href="../Study/">Study</a></td>
+<td>0..1 <br/> <a href="../Study/">Study</a></td>
 <td>Study object</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../subject/">subject</a></td>
-<td>1 <br/> <a href="../Subject/">Subject</a></td>
+<td>0..1 <br/> <a href="../Subject/">Subject</a></td>
 <td>Subject object</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sample/">sample</a></td>
-<td>1..* <br/> <a href="../SampleProcessing/">SampleProcessing</a></td>
+<td>* <br/> <a href="../SampleProcessing/">SampleProcessing</a></td>
 <td>List of Sample Processing objects</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../data_processing/">data_processing</a></td>
-<td>1..* <br/> <a href="../DataProcessing/">DataProcessing</a></td>
+<td>* <br/> <a href="../DataProcessing/">DataProcessing</a></td>
 <td>List of Data Processing objects</td>
 <td>direct</td>
 </tr>
@@ -375,7 +375,6 @@ attributes:
     domain_of:
     - Repertoire
     range: string
-    required: false
   repertoire_description:
     name: repertoire_description
     annotations:
@@ -390,7 +389,6 @@ attributes:
     domain_of:
     - Repertoire
     range: string
-    required: false
   study:
     name: study
     annotations:
@@ -405,7 +403,6 @@ attributes:
     domain_of:
     - Repertoire
     range: Study
-    required: true
   subject:
     name: subject
     annotations:
@@ -420,7 +417,6 @@ attributes:
     domain_of:
     - Repertoire
     range: Subject
-    required: true
   sample:
     name: sample
     annotations:
@@ -435,7 +431,6 @@ attributes:
     domain_of:
     - Repertoire
     range: SampleProcessing
-    required: true
     multivalued: true
   data_processing:
     name: data_processing
@@ -451,7 +446,6 @@ attributes:
     domain_of:
     - Repertoire
     range: DataProcessing
-    required: true
     multivalued: true
 
 </code></pre>

@@ -253,13 +253,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p4contributor_id/">V1p4contributor_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Unique identifier of this contributor within the file</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4name/">V1p4name</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Full name of contributor</td>
 <td>direct</td>
 </tr>
@@ -379,7 +379,6 @@ attributes:
     domain_of:
     - V1p4Contributor
     range: string
-    required: true
   V1p4name:
     name: V1p4name
     annotations:
@@ -394,7 +393,6 @@ attributes:
     domain_of:
     - V1p4Contributor
     range: string
-    required: true
   V1p4orcid_id:
     name: V1p4orcid_id
     annotations:
@@ -411,7 +409,6 @@ attributes:
     domain_of:
     - V1p4Contributor
     range: V1p4OrcidId
-    required: false
   V1p4affiliation:
     name: V1p4affiliation
     annotations:
@@ -427,7 +424,6 @@ attributes:
     domain_of:
     - V1p4Contributor
     range: V1p4Affiliation
-    required: false
   V1p4affiliation_department:
     name: V1p4affiliation_department
     annotations:
@@ -443,7 +439,6 @@ attributes:
     domain_of:
     - V1p4Contributor
     range: string
-    required: false
   V1p4contributions:
     name: V1p4contributions
     annotations:
@@ -458,7 +453,6 @@ attributes:
     domain_of:
     - V1p4Contributor
     range: V1p4ContributorContribution
-    required: false
     multivalued: true
 
 </code></pre>

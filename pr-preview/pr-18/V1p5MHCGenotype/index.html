@@ -209,7 +209,7 @@
 
 
 
-    V1p5MHCGenotype --&gt; "1..*" V1p5MHCAllele : V1p5mhc_alleles
+    V1p5MHCGenotype --&gt; "*" V1p5MHCAllele : V1p5mhc_alleles
     click V1p5MHCAllele href "../V1p5MHCAllele"
 
 
@@ -242,7 +242,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5mhc_genotype_id/">V1p5mhc_genotype_id</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A unique identifier for this MHCGenotype, assumed to be unique in the context...</td>
 <td>direct</td>
 </tr>
@@ -254,7 +254,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5mhc_alleles/">V1p5mhc_alleles</a></td>
-<td>1..* <br/> <a href="../V1p5MHCAllele/">V1p5MHCAllele</a></td>
+<td>* <br/> <a href="../V1p5MHCAllele/">V1p5MHCAllele</a></td>
 <td>List of MHC alleles of the indicated mhc_class identified in an individual</td>
 <td>direct</td>
 </tr>
@@ -343,7 +343,6 @@ attributes:
     domain_of:
     - V1p5MHCGenotype
     range: string
-    required: true
   V1p5mhc_class:
     name: V1p5mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -368,7 +367,6 @@ attributes:
     domain_of:
     - V1p5MHCGenotype
     range: V1p5MHCAllele
-    required: true
     multivalued: true
   V1p5mhc_genotyping_method:
     name: V1p5mhc_genotyping_method
@@ -386,7 +384,6 @@ attributes:
     domain_of:
     - V1p5MHCGenotype
     range: string
-    required: false
 
 </code></pre>
 </details>
