@@ -336,16 +336,6 @@ types:
     uri: xsd:string
     repr: str
 enums:
-  StudyType:
-    name: StudyType
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_ontology: obo:ncit
-      source_nodes:
-      - NCIT:C63536
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
   Species:
     name: Species
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -719,6 +709,491 @@ enums:
         text: cdr3_exact_aa_match
       cdr3_exact_aa_and_vj_match:
         text: cdr3_exact_aa_and_vj_match
+  Unit:
+    name: Unit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000003
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  Derivation:
+    name: Derivation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      DNA:
+        text: DNA
+      RNA:
+        text: RNA
+  ObservationType:
+    name: ObservationType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      direct_sequencing:
+        text: direct_sequencing
+      inference_from_repertoire:
+        text: inference_from_repertoire
+  Strand:
+    name: Strand
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      +:
+        text: +
+      '-':
+        text: '-'
+  Locus:
+    name: Locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGH:
+        text: IGH
+      IGI:
+        text: IGI
+      IGK:
+        text: IGK
+      IGL:
+        text: IGL
+      TRA:
+        text: TRA
+      TRB:
+        text: TRB
+      TRG:
+        text: TRG
+      TRD:
+        text: TRD
+  SequenceType:
+    name: SequenceType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      V:
+        text: V
+      D:
+        text: D
+      J:
+        text: J
+      C:
+        text: C
+  InferenceType:
+    name: InferenceType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      genomic_and_rearranged:
+        text: genomic_and_rearranged
+      genomic_only:
+        text: genomic_only
+      rearranged_only:
+        text: rearranged_only
+  SpeciesSubgroupType:
+    name: SpeciesSubgroupType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      breed:
+        text: breed
+      strain:
+        text: strain
+      inbred:
+        text: inbred
+      outbred:
+        text: outbred
+      locational:
+        text: locational
+  Status:
+    name: Status
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      active:
+        text: active
+      draft:
+        text: draft
+      retired:
+        text: retired
+      withdrawn:
+        text: withdrawn
+  JCodonFrame:
+    name: JCodonFrame
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      '1':
+        text: '1'
+      '2':
+        text: '2'
+      '3':
+        text: '3'
+  CurationalTags:
+    name: CurationalTags
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      likely_truncated:
+        text: likely_truncated
+      likely_full_length:
+        text: likely_full_length
+  InferenceProcess:
+    name: InferenceProcess
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      genomic_sequencing:
+        text: genomic_sequencing
+      repertoire_sequencing:
+        text: repertoire_sequencing
+  MhcClass:
+    name: MhcClass
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      MHC-I:
+        text: MHC-I
+      MHC-II:
+        text: MHC-II
+      MHC-nonclassical:
+        text: MHC-nonclassical
+  Gene:
+    name: Gene
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - MRO:0000004
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  StudyType:
+    name: StudyType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCIT:C63536
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  KeywordsStudy:
+    name: KeywordsStudy
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      contains_ig:
+        text: contains_ig
+      contains_tr:
+        text: contains_tr
+      contains_paired_chain:
+        text: contains_paired_chain
+      contains_schema_rearrangement:
+        text: contains_schema_rearrangement
+      contains_schema_clone:
+        text: contains_schema_clone
+      contains_schema_cell:
+        text: contains_schema_cell
+      contains_schema_receptor:
+        text: contains_schema_receptor
+  Sex:
+    name: Sex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      male:
+        text: male
+      female:
+        text: female
+      pooled:
+        text: pooled
+      hermaphrodite:
+        text: hermaphrodite
+      intersex:
+        text: intersex
+  AgeUnit:
+    name: AgeUnit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000003
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  DiseaseDiagnosis:
+    name: DiseaseDiagnosis
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - DOID:4
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  Tissue:
+    name: Tissue
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UBERON:0010000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  CollectionTimePointRelativeUnit:
+    name: CollectionTimePointRelativeUnit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000003
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  CellSubset:
+    name: CellSubset
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - CL:0000542
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  CellSpecies:
+    name: CellSpecies
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  PcrTargetLocus:
+    name: PcrTargetLocus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGH:
+        text: IGH
+      IGI:
+        text: IGI
+      IGK:
+        text: IGK
+      IGL:
+        text: IGL
+      TRA:
+        text: TRA
+      TRB:
+        text: TRB
+      TRD:
+        text: TRD
+      TRG:
+        text: TRG
+  TemplateClass:
+    name: TemplateClass
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      DNA:
+        text: DNA
+      RNA:
+        text: RNA
+  TemplateAmountUnit:
+    name: TemplateAmountUnit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000002
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  LibraryGenerationMethod:
+    name: LibraryGenerationMethod
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      PCR:
+        text: PCR
+      RT(RHP)+PCR:
+        text: RT(RHP)+PCR
+      RT(oligo-dT)+PCR:
+        text: RT(oligo-dT)+PCR
+      RT(oligo-dT)+TS+PCR:
+        text: RT(oligo-dT)+TS+PCR
+      RT(oligo-dT)+TS(UMI)+PCR:
+        text: RT(oligo-dT)+TS(UMI)+PCR
+      RT(specific)+PCR:
+        text: RT(specific)+PCR
+      RT(specific)+TS+PCR:
+        text: RT(specific)+TS+PCR
+      RT(specific)+TS(UMI)+PCR:
+        text: RT(specific)+TS(UMI)+PCR
+      RT(specific+UMI)+PCR:
+        text: RT(specific+UMI)+PCR
+      RT(specific+UMI)+TS+PCR:
+        text: RT(specific+UMI)+TS+PCR
+      RT(specific)+TS:
+        text: RT(specific)+TS
+      other:
+        text: other
+  CompleteSequences:
+    name: CompleteSequences
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      partial:
+        text: partial
+      complete:
+        text: complete
+      complete+untemplated:
+        text: complete+untemplated
+      mixed:
+        text: mixed
+  PhysicalLinkage:
+    name: PhysicalLinkage
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      none:
+        text: none
+      hetero_head-head:
+        text: hetero_head-head
+      hetero_tail-head:
+        text: hetero_tail-head
+      hetero_prelinked:
+        text: hetero_prelinked
+  FileType:
+    name: FileType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      fasta:
+        text: fasta
+      fastq:
+        text: fastq
+  ReadDirection:
+    name: ReadDirection
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      forward:
+        text: forward
+      reverse:
+        text: reverse
+      mixed:
+        text: mixed
+  PairedReadDirection:
+    name: PairedReadDirection
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      forward:
+        text: forward
+      reverse:
+        text: reverse
+      mixed:
+        text: mixed
+  ExpressionStudyMethod:
+    name: ExpressionStudyMethod
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      flow_cytometry:
+        text: flow_cytometry
+      single-cell_transcriptome:
+        text: single-cell_transcriptome
+  Property:
+    name: Property
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  ReceptorType:
+    name: ReceptorType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      Ig:
+        text: Ig
+      TCR:
+        text: TCR
+  ReceptorVariableDomain1Locus:
+    name: ReceptorVariableDomain1Locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGH:
+        text: IGH
+      TRB:
+        text: TRB
+      TRD:
+        text: TRD
+  ReceptorVariableDomain2Locus:
+    name: ReceptorVariableDomain2Locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      IGI:
+        text: IGI
+      IGK:
+        text: IGK
+      IGL:
+        text: IGL
+      TRA:
+        text: TRA
+      TRG:
+        text: TRG
+  LigandType:
+    name: LigandType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      MHC:peptide:
+        text: MHC:peptide
+      MHC:non-peptide:
+        text: MHC:non-peptide
+      protein:
+        text: protein
+      peptide:
+        text: peptide
+      non-peptidic:
+        text: non-peptidic
+  AntigenType:
+    name: AntigenType
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      protein:
+        text: protein
+      peptide:
+        text: peptide
+      non-peptidic:
+        text: non-peptidic
+  Antigen:
+    name: Antigen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+  AntigenSourceSpecies:
+    name: AntigenSourceSpecies
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:1
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  MhcGene1:
+    name: MhcGene1
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - MRO:0000004
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  MhcGene2:
+    name: MhcGene2
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - MRO:0000004
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  ReactivityMethod:
+    name: ReactivityMethod
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      SPR:
+        text: SPR
+      ITC:
+        text: ITC
+      ELISA:
+        text: ELISA
+      cytometry:
+        text: cytometry
+      biological_activity:
+        text: biological_activity
+  ReactivityReadout:
+    name: ReactivityReadout
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      binding_strength:
+        text: binding_strength
+      cytokine_release:
+        text: cytokine_release
+      dissociation_constant_kd:
+        text: dissociation_constant_kd
+      on_rate:
+        text: on_rate
+      off_rate:
+        text: off_rate
+      pathogen_inhibition:
+        text: pathogen_inhibition
   V1p5Unit:
     name: V1p5Unit
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -797,12 +1272,6 @@ enums:
   V1p5Species:
     name: V1p5Species
     from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - NCBITAXON:7776
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
   V1p5SpeciesSubgroupType:
     name: V1p5SpeciesSubgroupType
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1337,12 +1806,6 @@ enums:
   V1p4Species:
     name: V1p4Species
     from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - NCBITAXON:7776
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
   V1p4SpeciesSubgroupType:
     name: V1p4SpeciesSubgroupType
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1762,12 +2225,6 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: schema:identifier
     range: uriorcurie
-  study_type:
-    name: study_type
-    description: Type of study design
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: rdf:type
-    range: StudyType
   inclusion_criteria:
     name: inclusion_criteria
     description: Participants in an investigation must meet this criteria
@@ -1779,11 +2236,6 @@ slots:
       criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  release_date:
-    name: release_date
-    description: Initial release of the investigation and its data
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: datetime
   update_date:
     name: update_date
     description: Subsequence updates to the investigation or its data
@@ -1902,10 +2354,6 @@ slots:
     name: age
     description: The age of a participant relative to age_event
     from_schema: https://github.com/airr-knowledge/ak-schema
-  age_unit:
-    name: age_unit
-    description: Units used to describe the age
-    from_schema: https://github.com/airr-knowledge/ak-schema
   age_event:
     name: age_event
     description: The event to which the age is relative
@@ -2013,68 +2461,9 @@ slots:
     description: The type of this specimen
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-  tissue:
-    name: tissue
-    description: The tissue from which this specimen was taken
-    from_schema: https://github.com/airr-knowledge/ak-schema
   process:
     name: process
     description: The type of specimen collection process that resulted in this specimen
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  tissue_processing:
-    name: tissue_processing
-    description: Enzymatic digestion and/or physical methods used to isolate cells
-      from sample
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_subset:
-    name: cell_subset
-    description: Commonly-used designation of isolated cell population
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_phenotype:
-    name: cell_phenotype
-    description: List of cellular markers and their expression levels used to isolate
-      the cell population
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_species:
-    name: cell_species
-    description: Binomial designation of the species from which the analyzed cells
-      originate. Typically, this value should be identical to `species`, in which
-      case it SHOULD NOT be set explicitly. However, there are valid experimental
-      setups in which the two might differ, e.g., chimeric animal models. If set,
-      this key will overwrite the `species` information for all lower layers of the
-      schema.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  single_cell:
-    name: single_cell
-    description: TRUE if single cells were isolated into separate compartments
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_number:
-    name: cell_number
-    description: Total number of cells that went into the experiment
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cells_per_reaction:
-    name: cells_per_reaction
-    description: Number of cells for each biological replicate
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_storage:
-    name: cell_storage
-    description: TRUE if cells were cryo-preserved between isolation and further processing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_quality:
-    name: cell_quality
-    description: Relative amount of viable cells after preparation and (if applicable)
-      thawing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_isolation:
-    name: cell_isolation
-    description: Description of the procedure used for marker-based isolation or enrich
-      cells
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  cell_processing_protocol:
-    name: cell_processing_protocol
-    description: Description of the methods applied to the sample including cell preparation/
-      isolation/enrichment and nucleic acid extraction. This should closely mirror
-      the Materials and methods section in the manuscript.
     from_schema: https://github.com/airr-knowledge/ak-schema
   specimen:
     name: specimen
@@ -2098,70 +2487,6 @@ slots:
   target_entity_type:
     name: target_entity_type
     description: The type of the entity being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  template_class:
-    name: template_class
-    description: The class of nucleic acid that was used as primary starting material
-      for the following procedures
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  template_quality:
-    name: template_quality
-    description: Description and results of the quality control performed on the template
-      material
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  template_amount:
-    name: template_amount
-    description: Amount of template that went into the process
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  template_amount_unit:
-    name: template_amount_unit
-    description: Unit of template amount
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  library_generation_method:
-    name: library_generation_method
-    description: Generic type of library generation
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  library_generation_protocol:
-    name: library_generation_protocol
-    description: Description of processes applied to substrate to obtain a library
-      that is ready for sequencing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  library_generation_kit_version:
-    name: library_generation_kit_version
-    description: When using a library generation protocol from a commercial provider,
-      provide the protocol version number
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  pcr_target:
-    name: pcr_target
-    description: Target locus for PCR
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    multivalued: true
-  complete_sequences:
-    name: complete_sequences
-    description: To be considered `complete`, the procedure used for library construction
-      MUST generate sequences that 1) include the first V gene codon that encodes
-      the mature polypeptide chain (i.e. after the leader sequence) and 2) include
-      the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site)
-      and 3) provide sequence information for all positions between 1) and 2). To
-      be considered `complete & untemplated`, the sections of the sequences defined
-      in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT
-      overlap with the primers used in library preparation. `mixed` should only be
-      used if the procedure used for library construction will likely produce multiple
-      categories of sequences in the given experiment. It SHOULD NOT be used as a
-      replacement of a NULL value.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  physical_linkage:
-    name: physical_linkage
-    description: In case an experimental setup is used that physically links nucleic
-      acids derived from distinct `Rearrangements` before library preparation, this
-      field describes the mode of that linkage. All `hetero_*` terms indicate that
-      in case of paired-read sequencing, the two reads should be expected to map to
-      distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends
-      of transcripts in a single-cell context. `*_tail-head` refers to techniques
-      that link the 3' end of one transcript to the 5' end of another one in a single-cell
-      context. This term does not provide any information whether a continuous reading-frame
-      between the two is generated. `*_prelinked` refers to constructs in which the
-      linkage was already present on the DNA level (e.g. scFv).
     from_schema: https://github.com/airr-knowledge/ak-schema
   epitope:
     name: epitope
@@ -2222,99 +2547,11 @@ slots:
     description: The specific type of an assessment
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-  sequence:
-    name: sequence
-    description: Nucleotide sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  sequence_aa:
-    name: sequence_aa
-    description: Amino acid sequence.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
   chain_type:
     name: chain_type
     description: Gene locus (chain type).
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: ChainType
-  v_call:
-    name: v_call
-    description: V gene with allele. If referring to a known reference sequence in
-      a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01
-      if using IMGT/GENE-DB).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  d_call:
-    name: d_call
-    description: First or only D gene with allele. If referring to a known reference
-      sequence in a database the relevant gene/allele nomenclature should be followed
-      (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  j_call:
-    name: j_call
-    description: J gene with allele. If referring to a known reference sequence in
-      a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02
-      if using IMGT/GENE-DB).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  c_call:
-    name: c_call
-    description: Constant region gene with allele. If referring to a known reference
-      sequence in a database the relevant gene/allele nomenclature should be followed
-      (e.g., IGHG1*01 if using IMGT/GENE-DB).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  junction_aa:
-    name: junction_aa
-    description: Amino acid form of the junction.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  cdr1_aa:
-    name: cdr1_aa
-    description: Amino acid translation of the cdr1 field.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  cdr2_aa:
-    name: cdr2_aa
-    description: Amino acid translation of the cdr2 field.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  cdr3_aa:
-    name: cdr3_aa
-    description: Amino acid translation of the cdr3 field.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  cdr1_start:
-    name: cdr1_start
-    description: CDR1 start position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
-  cdr1_end:
-    name: cdr1_end
-    description: CDR1 end position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
-  cdr2_start:
-    name: cdr2_start
-    description: CDR2 start position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
-  cdr2_end:
-    name: cdr2_end
-    description: CDR2 end position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
-  cdr3_start:
-    name: cdr3_start
-    description: CDR3 start position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
-  cdr3_end:
-    name: cdr3_end
-    description: CDR3 end position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
   isotype:
     name: isotype
     description: The isotype of the chain
@@ -2379,6 +2616,4133 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
     range: ChainSimilarityType
+  label:
+    name: label
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  acknowledgement_id:
+    name: acknowledgement_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: unique identifier of this Acknowledgement within the file
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  institution_name:
+    name: institution_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Individual's department and institution name
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  orcid_id:
+    name: orcid_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Individual's ORCID identifier
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  sequence_id:
+    name: sequence_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  sequence:
+    name: sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  derivation:
+    name: derivation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The class of nucleic acid that was used as primary starting material
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Derivation
+    required: true
+  observation_type:
+    name: observation_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The type of observation from which this sequence was drawn, such
+      as direct sequencing or  inference from repertoire sequencing data.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: ObservationType
+    required: true
+  curation:
+    name: curation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  repository_name:
+    name: repository_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  repository_ref:
+    name: repository_ref
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Queryable id or accession number of the sequence published by the
+      repository
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  deposited_version:
+    name: deposited_version
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Version number of the sequence within the repository
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  sequence_start:
+    name: sequence_start
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  sequence_end:
+    name: sequence_end
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  patch_no:
+    name: patch_no
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Genome assembly patch number in which this gene was determined
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  gff_seqid:
+    name: gff_seqid
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Sequence (from the assembly) of a window including the gene and preferably
+      also the promoter region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  gff_start:
+    name: gff_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Genomic co-ordinates of the start of the sequence of interest described
+      in this record in  Ensemble GFF version 3.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: true
+  gff_end:
+    name: gff_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Genomic co-ordinates of the end of the sequence of interest described
+      in this record in  Ensemble GFF version 3.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: true
+  strand:
+    name: strand
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: sense (+ or -)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Strand
+    required: true
+  sequence_delineation_id:
+    name: sequence_delineation_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unique identifier of this SequenceDelineationV within the file. Typically,
+      generated by the  repository hosting the record.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  delineation_scheme:
+    name: delineation_scheme
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Name of the delineation scheme
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  unaligned_sequence:
+    name: unaligned_sequence
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: entire V-sequence covered by this delineation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  aligned_sequence:
+    name: aligned_sequence
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned sequence if this delineation provides an alignment. An aligned
+      sequence should always be  provided for IMGT delineations.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr1_start:
+    name: fwr1_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr1_end:
+    name: fwr1_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cdr1_start:
+    name: cdr1_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cdr1_end:
+    name: cdr1_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr2_start:
+    name: fwr2_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr2_end:
+    name: fwr2_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cdr2_start:
+    name: cdr2_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cdr2_end:
+    name: cdr2_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr3_start:
+    name: fwr3_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  fwr3_end:
+    name: fwr3_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  cdr3_start:
+    name: cdr3_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+  alignment_labels:
+    name: alignment_labels
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: One string for each codon in the aligned_sequence indicating the
+      label of that codon according to  the numbering of the delineation scheme if
+      it provides one.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+    multivalued: true
+  allele_description_id:
+    name: allele_description_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unique identifier of this AlleleDescription within the file. Typically,
+      generated by the  repository hosting the record.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  allele_description_ref:
+    name: allele_description_ref
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unique reference to the allele description, in standardized form
+      (Repo:Label:Version)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  maintainer:
+    name: maintainer
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Maintainer of this sequence record
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  acknowledgements:
+    name: acknowledgements
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Acknowledgement
+    required: false
+    multivalued: true
+  lab_address:
+    name: lab_address
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  release_version:
+    name: release_version
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    required: true
+  release_date:
+    name: release_date
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Date of this release
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: datetime
+    required: true
+  release_description:
+    name: release_description
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Brief descriptive notes of the reason for this release and the changes
+      embodied
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  coding_sequence:
+    name: coding_sequence
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the core coding region, such as the coding
+      region of a D-, J- or C- gene  or the coding region of a V-gene excluding the
+      leader.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  aliases:
+    name: aliases
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alternative names for this sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+    multivalued: true
+  locus:
+    name: locus
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Locus
+  chromosome:
+    name: chromosome
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: chromosome on which the gene is located
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  sequence_type:
+    name: sequence_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Sequence type (V, D, J, C)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: SequenceType
+    required: true
+  functional:
+    name: functional
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the gene is functional, false if it is a pseudogene
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: true
+  inference_type:
+    name: inference_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Type of inference(s) from which this gene sequence was inferred
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: InferenceType
+    required: true
+  species_subgroup:
+    name: species_subgroup
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Race, strain or other species subgroup to which this subject belongs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  species_subgroup_type:
+    name: species_subgroup_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: ''
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: SpeciesSubgroupType
+    required: false
+  status:
+    name: status
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Status of record, assumed active if the field is not present
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Status
+    required: false
+  subgroup_designation:
+    name: subgroup_designation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier of the gene subgroup or clade, as (and if) defined
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  gene_designation:
+    name: gene_designation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Gene number or other identifier, as (and if) defined
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  allele_designation:
+    name: allele_designation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  allele_similarity_cluster_designation:
+    name: allele_similarity_cluster_designation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: ID of the similarity cluster used in this germline set, if designated
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  allele_similarity_cluster_member_id:
+    name: allele_similarity_cluster_member_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Membership ID of the allele within the similarity cluster, if a cluster
+      is designated
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  j_codon_frame:
+    name: j_codon_frame
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Codon position of the first nucleotide in the 'coding_sequence' field.
+      Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is
+      in-frame, '2' means that the first bp is  missing from the first codon, and
+      '3' means that the first 2 bp are missing.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: JCodonFrame
+    required: false
+  gene_start:
+    name: gene_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Co-ordinate in the sequence field of the first nucleotide in the
+      coding_sequence field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  gene_end:
+    name: gene_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Co-ordinate in the sequence field of the last gene-coding nucleotide
+      in the coding_sequence field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  utr_5_prime_start:
+    name: utr_5_prime_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start co-ordinate in the sequence field of the 5 prime UTR (V-genes
+      only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  utr_5_prime_end:
+    name: utr_5_prime_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End co-ordinate in the sequence field of the 5 prime UTR (V-genes
+      only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  leader_1_start:
+    name: leader_1_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start co-ordinate in the sequence field of L-PART1 (V-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  leader_1_end:
+    name: leader_1_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End co-ordinate in the sequence field of L-PART1 (V-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  leader_2_start:
+    name: leader_2_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start co-ordinate in the sequence field of L-PART2 (V-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  leader_2_end:
+    name: leader_2_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End co-ordinate in the sequence field of L-PART2 (V-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_rs_start:
+    name: v_rs_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start co-ordinate in the sequence field of the V recombination site
+      (V-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_rs_end:
+    name: v_rs_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End co-ordinate in the sequence field of the V recombination site
+      (V-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_rs_3_prime_start:
+    name: d_rs_3_prime_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start co-ordinate in the sequence field of the 3 prime D recombination
+      site (D-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_rs_3_prime_end:
+    name: d_rs_3_prime_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End co-ordinate in the sequence field of the 3 prime D recombination
+      site (D-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_rs_5_prime_start:
+    name: d_rs_5_prime_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start co-ordinate in the sequence field of the 5 prime D recombination
+      site (D-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_rs_5_prime_end:
+    name: d_rs_5_prime_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End co-ordinate in the sequence field of 5 the prime D recombination
+      site (D-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_cdr3_end:
+    name: j_cdr3_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: In the case of a J-gene, the co-ordinate in the sequence field of
+      the first nucelotide of the  conserved PHE or TRP (IMGT codon position 118).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_rs_start:
+    name: j_rs_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start co-ordinate in the sequence field of J recombination site (J-genes
+      only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_rs_end:
+    name: j_rs_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End co-ordinate in the sequence field of J recombination site (J-genes
+      only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_donor_splice:
+    name: j_donor_splice
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Co-ordinate in the sequence field of the final 3' nucleotide of the
+      J-REGION (J-genes only).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_gene_delineations:
+    name: v_gene_delineations
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: ''
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: SequenceDelineationV
+    required: false
+    multivalued: true
+  unrearranged_support:
+    name: unrearranged_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: ''
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: UnrearrangedSequence
+    required: false
+    multivalued: true
+  rearranged_support:
+    name: rearranged_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: ''
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: RearrangedSequence
+    required: false
+    multivalued: true
+  paralogs:
+    name: paralogs
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Gene symbols of any paralogs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+    multivalued: true
+  curational_tags:
+    name: curational_tags
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Controlled-vocabulary tags applied to this description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: CurationalTags
+    required: false
+    multivalued: true
+  germline_set_id:
+    name: germline_set_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unique identifier of the GermlineSet within this file. Typically,
+      generated by the  repository hosting the record.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  author:
+    name: author
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Corresponding author
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  lab_name:
+    name: lab_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  germline_set_name:
+    name: germline_set_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: descriptive name of this germline set
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  germline_set_ref:
+    name: germline_set_ref
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  pub_ids:
+    name: pub_ids
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  allele_descriptions:
+    name: allele_descriptions
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: list of allele_descriptions in the germline set
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AlleleDescription
+    required: true
+    multivalued: true
+  receptor_genotype_set_id:
+    name: receptor_genotype_set_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: A unique identifier for this Receptor Genotype Set, typically generated
+      by the repository  hosting the schema, for example from the underlying ID of
+      the database record.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  genotype_class_list:
+    name: genotype_class_list
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of Genotypes included in this Receptor Genotype Set.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Genotype
+    required: false
+    multivalued: true
+  receptor_genotype_id:
+    name: receptor_genotype_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: A unique identifier within the file for this Receptor Genotype, typically
+      generated by the  repository hosting the schema, for example from the underlying
+      ID of the database record.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  documented_alleles:
+    name: documented_alleles
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of alleles documented in reference set(s)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: DocumentedAllele
+    required: false
+    multivalued: true
+  undocumented_alleles:
+    name: undocumented_alleles
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of alleles inferred to be present and not documented in an identified
+      GermlineSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: UndocumentedAllele
+    required: false
+    multivalued: true
+  deleted_genes:
+    name: deleted_genes
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of genes identified as being deleted in this genotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: DeletedGene
+    required: false
+    multivalued: true
+  inference_process:
+    name: inference_process
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Information on how the genotype was acquired. Controlled vocabulary.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: InferenceProcess
+    required: false
+  phasing:
+    name: phasing
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Chromosomal phasing indicator. Alleles with the same value are inferred
+      to be located on the  same chromosome.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  allele_name:
+    name: allele_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Allele name as allocated by the inference pipeline
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  mhc_genotype_set_id:
+    name: mhc_genotype_set_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: A unique identifier for this MHCGenotypeSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  mhc_genotype_list:
+    name: mhc_genotype_list
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of MHCGenotypes included in this set
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MHCGenotype
+    required: true
+    multivalued: true
+  mhc_genotype_id:
+    name: mhc_genotype_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: A unique identifier for this MHCGenotype, assumed to be unique in
+      the context of the study
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  mhc_class:
+    name: mhc_class
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MhcClass
+  mhc_alleles:
+    name: mhc_alleles
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of MHC alleles of the indicated mhc_class identified in an individual
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MHCAllele
+    required: true
+    multivalued: true
+  mhc_genotyping_method:
+    name: mhc_genotyping_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Information on how the genotype was determined. The content of this
+      field should come from a list of recommended terms provided in the AIRR Schema
+      documentation.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  gene:
+    name: gene
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The MHC gene to which the described allele belongs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Gene
+    required: false
+  reference_set_ref:
+    name: reference_set_ref
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Repository and list from which it was taken (issuer/name/version)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  receptor_genotype_set:
+    name: receptor_genotype_set
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Immune receptor genotype set for this subject.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: GenotypeSet
+    required: false
+  mhc_genotype_set:
+    name: mhc_genotype_set
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: MHC genotype set for this subject.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MHCGenotypeSet
+    required: false
+  study_id:
+    name: study_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unique ID assigned by study registry such as one of the International
+      Nucleotide Sequence Database Collaboration (INSDC) repositories.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  study_title:
+    name: study_title
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Descriptive study title
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  study_type:
+    name: study_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Type of study design
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: StudyType
+    required: true
+  study_description:
+    name: study_description
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Generic study description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  inclusion_exclusion_criteria:
+    name: inclusion_exclusion_criteria
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of criteria for inclusion/exclusion for the study
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  grants:
+    name: grants
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Funding agencies and grant numbers
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  study_contact:
+    name: study_contact
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Full contact information of the contact persons for this study This
+      should include an e-mail address and a persistent identifier such as an ORCID
+      ID.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  collected_by:
+    name: collected_by
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Full contact information of the data collector, i.e. the person who
+      is legally responsible for data collection and release. This should include
+      an e-mail address and a persistent identifier such as an ORCID ID.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  submitted_by:
+    name: submitted_by
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Full contact information of the data depositor, i.e., the person
+      submitting the data to a repository. This should include an e-mail address and
+      a persistent identifier such as an ORCID ID. This is supposed to be a short-lived
+      and technical role until the submission is relased.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  keywords_study:
+    name: keywords_study
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Keywords describing properties of one or more data sets in a study.
+      "contains_schema" keywords indicate that the study contains data objects from
+      the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the
+      other keywords indicate that the study design considers the type of data indicated
+      (e.g. it is possible to have a study that "contains_paired_chain" but does not
+      "contains_schema_cell").
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: KeywordsStudy
+    required: true
+    multivalued: true
+  adc_publish_date:
+    name: adc_publish_date
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Date the study was first published in the AIRR Data Commons.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: datetime
+    required: false
+  adc_update_date:
+    name: adc_update_date
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Date the study data was updated in the AIRR Data Commons.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: datetime
+    required: false
+  subject_id:
+    name: subject_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Subject ID assigned by submitter, unique within study. If possible,
+      a persistent subject ID linked to an INSDC or similar repository study should
+      be used.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  synthetic:
+    name: synthetic
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: TRUE for libraries in which the diversity has been synthetically
+      generated (e.g. phage display)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: true
+  sex:
+    name: sex
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Biological sex of subject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Sex
+    required: true
+  age_min:
+    name: age_min
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Specific age or lower boundary of age range.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: true
+  age_max:
+    name: age_max
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Upper boundary of age range or equal to age_min for specific age.
+      This field should only be null if age_min is null.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: true
+  age_unit:
+    name: age_unit
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unit of age range
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AgeUnit
+    required: true
+  ancestry_population:
+    name: ancestry_population
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Broad geographic origin of ancestry (continent)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  strain_name:
+    name: strain_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Non-human designation of the strain or breed of animal used
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  linked_subjects:
+    name: linked_subjects
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Subject ID to which `Relation type` refers
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  link_type:
+    name: link_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Relation between subject and `linked_subjects`, can be genetic or
+      environmental (e.g.exposure)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: string
+    required: true
+  diagnosis:
+    name: diagnosis
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Diagnosis information for subject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Diagnosis
+    required: false
+    multivalued: true
+  genotype:
+    name: genotype
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: ''
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: SubjectGenotype
+    required: false
+  study_group_description:
+    name: study_group_description
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Designation of study arm to which the subject is assigned to
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  disease_diagnosis:
+    name: disease_diagnosis
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Diagnosis of subject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: DiseaseDiagnosis
+    required: true
+  disease_length:
+    name: disease_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Time duration between initial diagnosis and current intervention
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  prior_therapies:
+    name: prior_therapies
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of all relevant previous therapies applied to subject for treatment
+      of `Diagnosis`
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  immunogen:
+    name: immunogen
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Antigen, vaccine or drug applied to subject at this intervention
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  intervention:
+    name: intervention
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Description of intervention
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  medical_history:
+    name: medical_history
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Medical history of subject that is relevant to assess the course
+      of disease and/or treatment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  sample_id:
+    name: sample_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Sample ID assigned by submitter, unique within study. If possible,
+      a persistent sample ID linked to INSDC or similar repository study should be
+      used.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  sample_type:
+    name: sample_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The way the sample was obtained, e.g. fine-needle aspirate, organ
+      harvest, peripheral venous puncture
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: string
+    required: true
+  tissue:
+    name: tissue
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Tissue
+    required: true
+  anatomic_site:
+    name: anatomic_site
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The anatomic location of the tissue, e.g. Inguinal, femur
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  disease_state_sample:
+    name: disease_state_sample
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Histopathologic evaluation of the sample
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  collection_time_point_relative:
+    name: collection_time_point_relative
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Time point at which sample was taken, relative to `Collection time
+      event`
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: true
+  collection_time_point_relative_unit:
+    name: collection_time_point_relative_unit
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unit of Sample collection time
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: CollectionTimePointRelativeUnit
+    required: true
+  collection_time_point_reference:
+    name: collection_time_point_reference
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Event in the study schedule to which `Sample collection time` relates
+      to
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  biomaterial_provider:
+    name: biomaterial_provider
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Name and address of the entity providing the sample
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  tissue_processing:
+    name: tissue_processing
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Enzymatic digestion and/or physical methods used to isolate cells
+      from sample
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  cell_subset:
+    name: cell_subset
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Commonly-used designation of isolated cell population
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: CellSubset
+    required: true
+  cell_phenotype:
+    name: cell_phenotype
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of cellular markers and their expression levels used to isolate
+      the cell population
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  cell_species:
+    name: cell_species
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Binomial designation of the species from which the analyzed cells
+      originate. Typically, this value should be identical to `species`, in which
+      case it SHOULD NOT be set explicitly. However, there are valid experimental
+      setups in which the two might differ, e.g., chimeric animal models. If set,
+      this key will overwrite the `species` information for all lower layers of the
+      schema.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: CellSpecies
+    required: false
+  single_cell:
+    name: single_cell
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: TRUE if single cells were isolated into separate compartments
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: true
+  cell_number:
+    name: cell_number
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Total number of cells that went into the experiment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: true
+  cells_per_reaction:
+    name: cells_per_reaction
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of cells for each biological replicate
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: true
+  cell_storage:
+    name: cell_storage
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: TRUE if cells were cryo-preserved between isolation and further processing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: true
+  cell_quality:
+    name: cell_quality
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Relative amount of viable cells after preparation and (if applicable)
+      thawing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  cell_isolation:
+    name: cell_isolation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Description of the procedure used for marker-based isolation or enrich
+      cells
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  cell_processing_protocol:
+    name: cell_processing_protocol
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Description of the methods applied to the sample including cell preparation/
+      isolation/enrichment and nucleic acid extraction. This should closely mirror
+      the Materials and methods section in the manuscript.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  pcr_target_locus:
+    name: pcr_target_locus
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Designation of the target locus. Note that this field uses a controlled
+      vocubulary that is meant to provide a generic classification of the locus, not
+      necessarily the correct designation according to a specific nomenclature.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: PcrTargetLocus
+    required: true
+  forward_pcr_primer_target_location:
+    name: forward_pcr_primer_target_location
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Position of the most distal nucleotide templated by the forward primer
+      or primer mix
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  reverse_pcr_primer_target_location:
+    name: reverse_pcr_primer_target_location
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Position of the most proximal nucleotide templated by the reverse
+      primer or primer mix
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  template_class:
+    name: template_class
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The class of nucleic acid that was used as primary starting material
+      for the following procedures
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TemplateClass
+    required: true
+  template_quality:
+    name: template_quality
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Description and results of the quality control performed on the template
+      material
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  template_amount:
+    name: template_amount
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amount of template that went into the process
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: true
+  template_amount_unit:
+    name: template_amount_unit
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unit of template amount
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TemplateAmountUnit
+    required: true
+  library_generation_method:
+    name: library_generation_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Generic type of library generation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: LibraryGenerationMethod
+    required: true
+  library_generation_protocol:
+    name: library_generation_protocol
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Description of processes applied to substrate to obtain a library
+      that is ready for sequencing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  library_generation_kit_version:
+    name: library_generation_kit_version
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: When using a library generation protocol from a commercial provider,
+      provide the protocol version number
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  pcr_target:
+    name: pcr_target
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: If a PCR step was performed that specifically targets the IG/TR loci,
+      the target and primer locations need to be provided here. This field holds an
+      array of PCRTarget objects, so that multiplex PCR setups amplifying multiple
+      loci at the same time can be annotated using one record per locus. PCR setups
+      not targeting any specific locus must not annotate this field but select the
+      appropriate library_generation_method instead.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: PCRTarget
+    required: false
+    multivalued: true
+  complete_sequences:
+    name: complete_sequences
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: To be considered `complete`, the procedure used for library construction
+      MUST generate sequences that 1) include the first V gene codon that encodes
+      the mature polypeptide chain (i.e. after the leader sequence) and 2) include
+      the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site)
+      and 3) provide sequence information for all positions between 1) and 2). To
+      be considered `complete & untemplated`, the sections of the sequences defined
+      in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT
+      overlap with the primers used in library preparation. `mixed` should only be
+      used if the procedure used for library construction will likely produce multiple
+      categories of sequences in the given experiment. It SHOULD NOT be used as a
+      replacement of a NULL value.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: CompleteSequences
+    required: true
+  physical_linkage:
+    name: physical_linkage
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: In case an experimental setup is used that physically links nucleic
+      acids derived from distinct `Rearrangements` before library preparation, this
+      field describes the mode of that linkage. All `hetero_*` terms indicate that
+      in case of paired-read sequencing, the two reads should be expected to map to
+      distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends
+      of transcripts in a single-cell context. `*_tail-head` refers to techniques
+      that link the 3' end of one transcript to the 5' end of another one in a single-cell
+      context. This term does not provide any information whether a continuous reading-frame
+      between the two is generated. `*_prelinked` refers to constructs in which the
+      linkage was already present on the DNA level (e.g. scFv).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: PhysicalLinkage
+    required: true
+  sequencing_run_id:
+    name: sequencing_run_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: ID of sequencing run assigned by the sequencing facility
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  total_reads_passing_qc_filter:
+    name: total_reads_passing_qc_filter
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of usable reads for analysis
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: true
+  sequencing_platform:
+    name: sequencing_platform
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Designation of sequencing instrument used
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  sequencing_facility:
+    name: sequencing_facility
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Name and address of sequencing facility
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  sequencing_run_date:
+    name: sequencing_run_date
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Date of sequencing run
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: datetime
+    required: true
+  sequencing_kit:
+    name: sequencing_kit
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Name, manufacturer, order and lot numbers of sequencing kit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  sequencing_files:
+    name: sequencing_files
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Set of sequencing files produced by the sequencing run
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: SequencingData
+    required: false
+  sequencing_data_id:
+    name: sequencing_data_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Persistent identifier of raw data stored in an archive (e.g. INSDC
+      run ID). Data archive should  be identified in the CURIE prefix.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  file_type:
+    name: file_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: File format for the raw reads or sequences
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: FileType
+    required: true
+  filename:
+    name: filename
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: File name for the raw reads or sequences. The first file in paired-read
+      sequencing.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  read_direction:
+    name: read_direction
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Read direction for the raw reads or sequences. The first file in
+      paired-read sequencing.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ReadDirection
+    required: true
+  read_length:
+    name: read_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Read length in bases for the first file in paired-read sequencing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: true
+  paired_filename:
+    name: paired_filename
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: File name for the second file in paired-read sequencing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  paired_read_direction:
+    name: paired_read_direction
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Read direction for the second file in paired-read sequencing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: PairedReadDirection
+    required: true
+  paired_read_length:
+    name: paired_read_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Read length in bases for the second file in paired-read sequencing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: true
+  index_filename:
+    name: index_filename
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: File name for the index file
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  index_length:
+    name: index_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Read length in bases for the index file
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  data_processing_id:
+    name: data_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  primary_annotation:
+    name: primary_annotation
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: If true, indicates this is the primary or default data processing
+      for the repertoire and its rearrangements. If false, indicates this is a secondary
+      or additional data processing.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: false
+  software_versions:
+    name: software_versions
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Version number and / or date, include company pipelines
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  paired_reads_assembly:
+    name: paired_reads_assembly
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: How paired end reads were assembled into a single receptor sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  quality_thresholds:
+    name: quality_thresholds
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: How/if sequences were removed from (4) based on base quality scores
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  primer_match_cutoffs:
+    name: primer_match_cutoffs
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: How primers were identified in the sequences, were they removed/masked/etc?
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  collapsing_method:
+    name: collapsing_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The method used for combining multiple sequences from (4) into a
+      single sequence in (5)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  data_processing_protocols:
+    name: data_processing_protocols
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: General description of how QC is performed
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  data_processing_files:
+    name: data_processing_files
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of file names for data produced by this data processing.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+    multivalued: true
+  germline_database:
+    name: germline_database
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Source of germline V(D)J genes with version number or date accessed.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  analysis_provenance_id:
+    name: analysis_provenance_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier for machine-readable PROV model of analysis provenance
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  repertoire_id:
+    name: repertoire_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  repertoire_name:
+    name: repertoire_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Short generic display name for the repertoire
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  repertoire_description:
+    name: repertoire_description
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Generic repertoire description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  study:
+    name: study
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Study object
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Study
+    required: true
+  subject:
+    name: subject
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Subject object
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Subject
+    required: true
+  sample:
+    name: sample
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: List of Sample Processing objects
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: SampleProcessing
+    required: true
+    multivalued: true
+  data_processing:
+    name: data_processing
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: List of Data Processing objects
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: DataProcessing
+    required: true
+    multivalued: true
+  repertoire_group_id:
+    name: repertoire_group_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier for this repertoire collection
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  repertoire_group_name:
+    name: repertoire_group_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Short display name for this repertoire collection
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  repertoire_group_description:
+    name: repertoire_group_description
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Repertoire collection description
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  repertoires:
+    name: repertoires
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of repertoires in this collection with an associated description
+      and time point designation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    required: true
+    multivalued: true
+  segment:
+    name: segment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The segment for this alignment. One of V, D, J or C.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  rev_comp:
+    name: rev_comp
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  call:
+    name: call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Gene assignment with allele.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  score:
+    name: score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: true
+  identity:
+    name: identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment fractional identity.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  support:
+    name: support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment E-value, p-value, likelihood, probability or other similar
+      measure of support for the gene assignment as defined by the alignment tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  cigar:
+    name: cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment CIGAR string.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  germline_start:
+    name: germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the reference sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  germline_end:
+    name: germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the reference sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  rank:
+    name: rank
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment rank.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  quality:
+    name: quality
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The Sanger/Phred quality scores for assessment of sequence quality.
+      Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126 (Used by
+      Illumina from v1.8.)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  sequence_aa:
+    name: sequence_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the query nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  productive:
+    name: productive
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the V(D)J sequence is predicted to be productive.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: true
+  vj_in_frame:
+    name: vj_in_frame
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the V and J gene alignments are in-frame.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: false
+  stop_codon:
+    name: stop_codon
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the aligned sequence contains a stop codon.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: false
+  complete_vdj:
+    name: complete_vdj
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the sequence alignment spans the entire V(D)J region. Meaning,
+      sequence_alignment includes both the first V gene codon that encodes the mature
+      polypeptide chain (i.e., after the leader sequence) and the last complete codon
+      of the J gene (i.e., before the J-C splice site). This does not require an absence
+      of deletions within the internal FWR and CDR regions of the alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: false
+  v_call:
+    name: v_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d_call:
+    name: d_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  d2_call:
+    name: d2_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Second D gene with allele. If referring to a known reference sequence
+      in a database the relevant gene/allele nomenclature should be followed (e.g.,
+      IGHD3-10*01 if using IMGT/GENE-DB).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  j_call:
+    name: j_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  c_call:
+    name: c_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Constant region gene with allele. If referring to a known reference
+      sequence in a database the relevant gene/allele nomenclature should be followed
+      (e.g., IGHG1*01 if using IMGT/GENE-DB).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  sequence_alignment:
+    name: sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  quality_alignment:
+    name: quality_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Sanger/Phred quality scores for assessment of sequence_alignment
+      quality. Phred quality scores from 0 to 93 are encoded using ASCII 33 to 126
+      (Used by Illumina from v1.8.)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  sequence_alignment_aa:
+    name: sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the aligned query sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  germline_alignment:
+    name: germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  germline_alignment_aa:
+    name: germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  junction:
+    name: junction
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  junction_aa:
+    name: junction_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the junction.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  np1:
+    name: np1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the combined N/P region between the V gene
+      and first D gene alignment or between the V gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  np1_aa:
+    name: np1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the np1 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  np2:
+    name: np2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the combined N/P region between either the
+      first D gene and J gene alignments or the first D gene and second D gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  np2_aa:
+    name: np2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the np2 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  np3:
+    name: np3
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the combined N/P region between the second
+      D gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  np3_aa:
+    name: np3_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the np3 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  cdr1:
+    name: cdr1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned CDR1 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  cdr1_aa:
+    name: cdr1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the cdr1 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  cdr2:
+    name: cdr2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned CDR2 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  cdr2_aa:
+    name: cdr2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the cdr2 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  cdr3:
+    name: cdr3
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned CDR3 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  cdr3_aa:
+    name: cdr3_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the cdr3 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr1:
+    name: fwr1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR1 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr1_aa:
+    name: fwr1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr1 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr2:
+    name: fwr2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR2 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr2_aa:
+    name: fwr2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr2 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr3:
+    name: fwr3
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR3 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr3_aa:
+    name: fwr3_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr3 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr4:
+    name: fwr4
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Nucleotide sequence of the aligned FWR4 region.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  fwr4_aa:
+    name: fwr4_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the fwr4 field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  v_score:
+    name: v_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the V gene.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  v_identity:
+    name: v_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the V gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  v_support:
+    name: v_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: V gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the V gene assignment as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  v_cigar:
+    name: v_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the V gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  d_score:
+    name: d_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the first or only D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  d_identity:
+    name: d_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the first or only D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  d_support:
+    name: d_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: D gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the first or only D gene as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  d_cigar:
+    name: d_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the first or only D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  d2_score:
+    name: d2_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  d2_identity:
+    name: d2_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  d2_support:
+    name: d2_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: D gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the second D gene as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  d2_cigar:
+    name: d2_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  j_score:
+    name: j_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  j_identity:
+    name: j_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  j_support:
+    name: j_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: J gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the J gene assignment as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  j_cigar:
+    name: j_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  c_score:
+    name: c_score
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment score for the C gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  c_identity:
+    name: c_identity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Fractional identity for the C gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  c_support:
+    name: c_support
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: C gene alignment E-value, p-value, likelihood, probability or other
+      similar measure of support for the C gene assignment as defined by the alignment
+      tool.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: false
+  c_cigar:
+    name: c_cigar
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CIGAR string for the C gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  v_sequence_start:
+    name: v_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the V gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_sequence_end:
+    name: v_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the V gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_germline_start:
+    name: v_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the V gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_germline_end:
+    name: v_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the V gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_alignment_start:
+    name: v_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_alignment_end:
+    name: v_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_sequence_start:
+    name: d_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the first or only D gene in the query sequence.
+      (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_sequence_end:
+    name: d_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the first or only D gene in the query sequence. (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_germline_start:
+    name: d_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the D gene reference sequence for the
+      first or only D gene (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_germline_end:
+    name: d_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the D gene reference sequence for the first
+      or only D gene (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_alignment_start:
+    name: d_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d_alignment_end:
+    name: d_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d2_sequence_start:
+    name: d2_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the second D gene in the query sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d2_sequence_end:
+    name: d2_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the second D gene in the query sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d2_germline_start:
+    name: d2_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the second D gene reference sequence
+      (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d2_germline_end:
+    name: d2_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the second D gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d2_alignment_start:
+    name: d2_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the second D gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d2_alignment_end:
+    name: d2_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the second D gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_sequence_start:
+    name: j_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the J gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_sequence_end:
+    name: j_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the J gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_germline_start:
+    name: j_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the J gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_germline_end:
+    name: j_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the J gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_alignment_start:
+    name: j_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the J gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  j_alignment_end:
+    name: j_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the J gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  c_sequence_start:
+    name: c_sequence_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the C gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  c_sequence_end:
+    name: c_sequence_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the C gene in the query sequence (1-based closed
+      interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  c_germline_start:
+    name: c_germline_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment start position in the C gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  c_germline_end:
+    name: c_germline_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Alignment end position in the C gene reference sequence (1-based
+      closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  c_alignment_start:
+    name: c_alignment_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the C gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  c_alignment_end:
+    name: c_alignment_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the C gene alignment in both the sequence_alignment
+      and germline_alignment fields (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  cdr3_end:
+    name: cdr3_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: CDR3 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  fwr4_start:
+    name: fwr4_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR4 start position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  fwr4_end:
+    name: fwr4_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: FWR4 end position in the query sequence (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_sequence_alignment:
+    name: v_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the V gene, including
+      any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  v_sequence_alignment_aa:
+    name: v_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the v_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d_sequence_alignment:
+    name: d_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the first or only D
+      gene, including any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d_sequence_alignment_aa:
+    name: d_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d2_sequence_alignment:
+    name: d2_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the second D gene,
+      including any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d2_sequence_alignment_aa:
+    name: d2_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d2_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  j_sequence_alignment:
+    name: j_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the J gene, including
+      any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  j_sequence_alignment_aa:
+    name: j_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the j_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  c_sequence_alignment:
+    name: c_sequence_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned portion of query sequence assigned to the constant region,
+      including any indel corrections or numbering spacers.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  c_sequence_alignment_aa:
+    name: c_sequence_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the c_sequence_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  v_germline_alignment:
+    name: v_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned V gene germline sequence spanning the same region as the
+      v_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  v_germline_alignment_aa:
+    name: v_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the v_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d_germline_alignment:
+    name: d_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned D gene germline sequence spanning the same region as the
+      d_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d_germline_alignment_aa:
+    name: d_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d2_germline_alignment:
+    name: d2_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned D gene germline sequence spanning the same region as the
+      d2_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  d2_germline_alignment_aa:
+    name: d2_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the d2_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  j_germline_alignment:
+    name: j_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned J gene germline sequence spanning the same region as the
+      j_sequence_alignment field and including the same set of corrections and spacers
+      (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  j_germline_alignment_aa:
+    name: j_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the j_germline_alignment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  c_germline_alignment:
+    name: c_germline_alignment
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Aligned constant region germline sequence spanning the same region
+      as the c_sequence_alignment field and including the same set of corrections
+      and spacers (if any).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  c_germline_alignment_aa:
+    name: c_germline_alignment_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the c_germline_aligment field.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  junction_length:
+    name: junction_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  junction_aa_length:
+    name: junction_aa_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  np1_length:
+    name: np1_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of nucleotides between the V gene and first D gene alignments
+      or between the V gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  np2_length:
+    name: np2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of nucleotides between either the first D gene and J gene
+      alignments or the first D gene and second D gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  np3_length:
+    name: np3_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of nucleotides between the second D gene and J gene alignments.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  n1_length:
+    name: n1_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of untemplated nucleotides 5' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  n2_length:
+    name: n2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of untemplated nucleotides 3' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  n3_length:
+    name: n3_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of untemplated nucleotides 3' of the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  p3v_length:
+    name: p3v_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 3' of the V gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  p5d_length:
+    name: p5d_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 5' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  p3d_length:
+    name: p3d_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 3' of the first or only D gene
+      alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  p5d2_length:
+    name: p5d2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 5' of the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  p3d2_length:
+    name: p3d2_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 3' of the second D gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  p5j_length:
+    name: p5j_length
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of palindromic nucleotides 5' of the J gene alignment.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  v_frameshift:
+    name: v_frameshift
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the V gene in the query nucleotide sequence contains a translational
+      frameshift relative to the frame of the V gene reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: false
+  j_frameshift:
+    name: j_frameshift
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: True if the J gene in the query nucleotide sequence contains a translational
+      frameshift relative to the frame of the J gene reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: false
+  d_frame:
+    name: d_frame
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Numerical reading frame (1, 2, 3) of the first or only D gene in
+      the query nucleotide sequence, where frame 1 is relative to the first codon
+      of D gene reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  d2_frame:
+    name: d2_frame
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Numerical reading frame (1, 2, 3) of the second D gene in the query
+      nucleotide sequence, where frame 1 is relative to the first codon of D gene
+      reference sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  consensus_count:
+    name: consensus_count
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Number of reads contributing to the UMI consensus or contig assembly
+      for this sequence. For example, the sum of the number of reads for all UMIs
+      that contribute to the query sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  duplicate_count:
+    name: duplicate_count
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Copy number or number of duplicate observations for the query sequence.
+      For example, the number of identical reads observed for this sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  umi_count:
+    name: umi_count
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  cell_id:
+    name: cell_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  clone_id:
+    name: clone_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  sample_processing_id:
+    name: sample_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  sequences:
+    name: sequences
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List sequence_id strings that act as keys to the Rearrangement records
+      for members of the clone.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+    multivalued: true
+  junction_start:
+    name: junction_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Junction region start position in the alignment (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  junction_end:
+    name: junction_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Junction region end position in the alignment (1-based closed interval).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  clone_count:
+    name: clone_count
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Absolute count of the size (number of members) of this clone in the
+      repertoire. This could simply be the number of sequences (Rearrangement records)
+      observed in this clone, the number of distinct cell barcodes (unique cell_id
+      values), or a more sophisticated calculation appropriate to the experimental
+      protocol. Absolute count is provided versus a frequency so that downstream analysis
+      tools can perform their own normalization.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  seed_id:
+    name: seed_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: sequence_id of the seed sequence. Empty string (or null) if there
+      is no seed sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  tree_id:
+    name: tree_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Identifier for the tree.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  newick:
+    name: newick
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Newick string of the tree edges.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  nodes:
+    name: nodes
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Dictionary of nodes in the tree, keyed by sequence_id string
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Node
+    required: false
+    multivalued: true
+  rearrangements:
+    name: rearrangements
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of sequence identifiers defined for the Rearrangement object
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+    multivalued: true
+  receptors:
+    name: receptors
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of receptor identifiers defined for the Receptor object
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+    multivalued: true
+  expression_study_method:
+    name: expression_study_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Keyword describing the methodology used to assess expression. This
+      values for this field MUST  come from a controlled vocabulary.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ExpressionStudyMethod
+    required: false
+  expression_raw_doi:
+    name: expression_raw_doi
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: DOI of raw data set containing the current event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  expression_index:
+    name: expression_index
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Index addressing the current event within the raw data set.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  virtual_pairing:
+    name: virtual_pairing
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: boolean to indicate if pairing was inferred.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+    required: true
+  expression_id:
+    name: expression_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Identifier of this expression property measurement.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  property_type:
+    name: property_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: 'Keyword describing the property type and detection method used to
+      measure the property value. The following keywords are recommended, but custom
+      property types are also valid: "mrna_expression_by_read_count", "protein_expression_by_fluorescence_intensity",
+      "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count"
+      and "antigen_bait_binding_by_dna_barcode_count".'
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: string
+    required: true
+  property:
+    name: property
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Name of the property observed, typically a gene or antibody identifier
+      (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747,
+      IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human
+      CD27 antibody).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Property
+    required: true
+  receptor_id:
+    name: receptor_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: ID of the current Receptor object, unique within the local repository.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  receptor_hash:
+    name: receptor_hash
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The SHA256 hash of the receptor amino acid sequence, calculated on
+      the concatenated ``receptor_variable_domain_*_aa`` sequences and represented
+      as base16-encoded string.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  receptor_type:
+    name: receptor_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell
+      Receptor (TCR).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: ReceptorType
+    required: true
+  receptor_variable_domain_1_aa:
+    name: receptor_variable_domain_1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Complete amino acid sequence of the mature variable domain of the
+      Ig heavy, TCR beta or TCR delta chain. The mature variable domain is defined
+      as encompassing all AA from and including first AA after the the signal peptide
+      to and including the last AA that is completely encoded by the J gene.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  receptor_variable_domain_1_locus:
+    name: receptor_variable_domain_1_locus
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Locus from which the variable domain in receptor_variable_domain_1_aa
+      originates
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ReceptorVariableDomain1Locus
+    required: true
+  receptor_variable_domain_2_aa:
+    name: receptor_variable_domain_2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Complete amino acid sequence of the mature variable domain of the
+      Ig light, TCR alpha or TCR gamma chain. The mature variable domain is defined
+      as encompassing all AA from and including first AA after the the signal peptide
+      to and including the last AA that is completely encoded by the J gene.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
+  receptor_variable_domain_2_locus:
+    name: receptor_variable_domain_2_locus
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Locus from which the variable domain in receptor_variable_domain_2_aa
+      originates
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ReceptorVariableDomain2Locus
+    required: true
+  receptor_ref:
+    name: receptor_ref
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of receptor identifiers defined for the Receptor object
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+    multivalued: true
+  reactivity_measurements:
+    name: reactivity_measurements
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Records of reactivity measurement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ReceptorReactivity
+    required: false
+    multivalued: true
+  ligand_type:
+    name: ligand_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Classification of ligand binding to receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: LigandType
+    required: true
+  antigen_type:
+    name: antigen_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The type of antigen before processing by the immune system.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
+    range: AntigenType
+    required: true
+  antigen:
+    name: antigen
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The substance against which the receptor was tested. This can be
+      any substance that stimulates an adaptive immune response in the host, either
+      through antibody production or by T cell activation after presentation via an
+      MHC molecule.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Antigen
+    required: true
+  antigen_source_species:
+    name: antigen_source_species
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The species from which the antigen was isolated
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AntigenSourceSpecies
+    required: false
+  peptide_start:
+    name: peptide_start
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Start position of the peptide within the reference protein sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  peptide_end:
+    name: peptide_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: End position of the peptide within the reference protein sequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
+    required: false
+  mhc_gene_1:
+    name: mhc_gene_1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The MHC gene to which the mhc_allele_1 belongs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MhcGene1
+    required: false
+  mhc_allele_1:
+    name: mhc_allele_1
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Allele designation of the MHC alpha chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  mhc_gene_2:
+    name: mhc_gene_2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The MHC gene to which the mhc_allele_2 belongs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MhcGene2
+    required: false
+  mhc_allele_2:
+    name: mhc_allele_2
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Allele designation of the MHC class II beta chain or the invariant
+      beta2-microglobin chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: false
+  reactivity_method:
+    name: reactivity_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The methodology used to assess expression (assay implemented in experiment)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ReactivityMethod
+    required: true
+  reactivity_readout:
+    name: reactivity_readout
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Reactivity measurement read-out
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ReactivityReadout
+    required: true
+  reactivity_value:
+    name: reactivity_value
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The absolute (processed) value of the measurement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+    required: true
+  reactivity_unit:
+    name: reactivity_unit
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The unit of the measurement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+    required: true
   V1p5label:
     name: V1p5label
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -2474,6 +6838,7 @@ slots:
     description: The type of observation from which this sequence was drawn, such
       as direct sequencing or  inference from repertoire sequencing data.
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5ObservationType
     required: true
   V1p5curation:
@@ -2779,7 +7144,6 @@ slots:
         tag: nullable
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
     required: true
   V1p5release_date:
     name: V1p5release_date
@@ -2789,7 +7153,7 @@ slots:
         value: true
     description: Date of this release
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: true
   V1p5release_description:
     name: V1p5release_description
@@ -2847,6 +7211,7 @@ slots:
         value: false
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5SequenceType
     required: true
   V1p5functional:
@@ -2867,6 +7232,7 @@ slots:
         value: true
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5InferenceType
     required: true
   V1p5species:
@@ -2897,6 +7263,7 @@ slots:
         value: true
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5SpeciesSubgroupType
     required: false
   V1p5status:
@@ -3516,6 +7883,7 @@ slots:
         value: true
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5StudyType
     required: true
   V1p5study_description:
@@ -3609,7 +7977,7 @@ slots:
         value: true
     description: Date the study was first published in the AIRR Data Commons.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: false
   V1p5adc_update_date:
     name: V1p5adc_update_date
@@ -3619,7 +7987,7 @@ slots:
         value: true
     description: Date the study data was updated in the AIRR Data Commons.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: false
   V1p5subject_id:
     name: V1p5subject_id
@@ -3758,6 +8126,7 @@ slots:
     description: Relation between subject and `linked_subjects`, can be genetic or
       environmental (e.g.exposure)
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: string
     required: true
   V1p5diagnosis:
@@ -3884,6 +8253,7 @@ slots:
     description: The way the sample was obtained, e.g. fine-needle aspirate, organ
       harvest, peripheral venous puncture
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: string
     required: true
   V1p5tissue:
@@ -4290,7 +8660,7 @@ slots:
         value: true
     description: Date of sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: true
   V1p5sequencing_kit:
     name: V1p5sequencing_kit
@@ -4331,6 +8701,7 @@ slots:
         value: true
     description: File format for the raw reads or sequences
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5FileType
     required: true
   V1p5filename:
@@ -4529,6 +8900,10 @@ slots:
     required: false
   V1p5repertoire_id:
     name: V1p5repertoire_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   V1p5repertoire_name:
@@ -4547,6 +8922,7 @@ slots:
       nullable:
         tag: nullable
         value: true
+    description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
     required: false
@@ -4592,16 +8968,6 @@ slots:
     range: V1p5DataProcessing
     required: true
     multivalued: true
-  V1p5time_point:
-    name: V1p5time_point
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: Time point designation for this repertoire within the group
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5TimePoint
-    required: false
   V1p5repertoire_group_id:
     name: V1p5repertoire_group_id
     annotations:
@@ -4641,7 +9007,6 @@ slots:
     description: List of repertoires in this collection with an associated description
       and time point designation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5RepertoireGroupDetail
     required: true
     multivalued: true
   V1p5segment:
@@ -6321,6 +10686,7 @@ slots:
       "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count"
       and "antigen_bait_binding_by_dna_barcode_count".'
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: string
     required: true
   V1p5property:
@@ -6367,6 +10733,7 @@ slots:
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell
       Receptor (TCR).
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5ReceptorType
     required: true
   V1p5receptor_variable_domain_1_aa:
@@ -6447,6 +10814,7 @@ slots:
         value: false
     description: Classification of ligand binding to receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5LigandType
     required: true
   V1p5antigen_type:
@@ -6457,6 +10825,7 @@ slots:
         value: false
     description: The type of antigen before processing by the immune system.
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p5AntigenType
     required: true
   V1p5antigen:
@@ -6748,6 +11117,7 @@ slots:
     description: The type of observation from which this sequence was drawn, such
       as direct sequencing or  inference from repertoire sequencing data.
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4ObservationType
     required: true
   V1p4curation:
@@ -7034,7 +11404,6 @@ slots:
         tag: nullable
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: integer
     required: true
   V1p4release_date:
     name: V1p4release_date
@@ -7044,7 +11413,7 @@ slots:
         value: true
     description: Date of this release
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: true
   V1p4release_description:
     name: V1p4release_description
@@ -7102,6 +11471,7 @@ slots:
         value: false
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4SequenceType
     required: true
   V1p4functional:
@@ -7122,6 +11492,7 @@ slots:
         value: true
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4InferenceType
     required: true
   V1p4species:
@@ -7152,6 +11523,7 @@ slots:
         value: true
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4SpeciesSubgroupType
     required: false
   V1p4status:
@@ -7753,6 +12125,7 @@ slots:
         value: true
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4StudyType
     required: true
   V1p4study_description:
@@ -7824,7 +12197,7 @@ slots:
         value: true
     description: Date the study was first published in the AIRR Data Commons.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: false
   V1p4adc_update_date:
     name: V1p4adc_update_date
@@ -7834,7 +12207,7 @@ slots:
         value: true
     description: Date the study data was updated in the AIRR Data Commons.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: false
   V1p4subject_id:
     name: V1p4subject_id
@@ -7964,6 +12337,7 @@ slots:
     description: Relation between subject and `linked_subjects`, can be genetic or
       environmental (e.g.exposure)
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: string
     required: true
   V1p4diagnosis:
@@ -8100,6 +12474,7 @@ slots:
     description: The way the sample was obtained, e.g. fine-needle aspirate, organ
       harvest, peripheral venous puncture
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: string
     required: true
   V1p4tissue:
@@ -8492,7 +12867,7 @@ slots:
         value: true
     description: Date of sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: datetime
     required: true
   V1p4sequencing_kit:
     name: V1p4sequencing_kit
@@ -8533,6 +12908,7 @@ slots:
         value: true
     description: File format for the raw reads or sequences
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4FileType
     required: true
   V1p4filename:
@@ -10505,6 +14881,7 @@ slots:
       "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count"
       and "antigen_bait_binding_by_dna_barcode_count".'
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: string
     required: true
   V1p4property:
@@ -10553,6 +14930,7 @@ slots:
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell
       Receptor (TCR).
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4ReceptorType
     required: true
   V1p4receptor_variable_domain_1_aa:
@@ -10622,6 +15000,7 @@ slots:
         value: false
     description: Classification of ligand binding to the cell
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4LigandType
     required: true
   V1p4antigen_type:
@@ -10632,6 +15011,7 @@ slots:
         value: false
     description: The type of antigen before processing by the immune system.
     from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
     range: V1p4AntigenType
     required: true
   V1p4antigen:
@@ -11150,8 +15530,8 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
     class_uri: CL:0000000
-  Tissue:
-    name: Tissue
+  TissuePortion:
+    name: TissuePortion
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
     class_uri: UBERON:0000479
@@ -11272,6 +15652,658 @@ classes:
     is_a: SimilarityCalculation
     slots:
     - chain_similarity_type
+  TimePoint:
+    name: TimePoint
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - label
+    - value
+    - unit
+  Acknowledgement:
+    name: Acknowledgement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - acknowledgement_id
+    - name
+    - institution_name
+    - orcid_id
+  RearrangedSequence:
+    name: RearrangedSequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence
+    - derivation
+    - observation_type
+    - curation
+    - repository_name
+    - repository_ref
+    - deposited_version
+    - sequence_start
+    - sequence_end
+  UnrearrangedSequence:
+    name: UnrearrangedSequence
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence
+    - curation
+    - repository_name
+    - repository_ref
+    - patch_no
+    - gff_seqid
+    - gff_start
+    - gff_end
+    - strand
+  SequenceDelineationV:
+    name: SequenceDelineationV
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_delineation_id
+    - delineation_scheme
+    - unaligned_sequence
+    - aligned_sequence
+    - fwr1_start
+    - fwr1_end
+    - cdr1_start
+    - cdr1_end
+    - fwr2_start
+    - fwr2_end
+    - cdr2_start
+    - cdr2_end
+    - fwr3_start
+    - fwr3_end
+    - cdr3_start
+    - alignment_labels
+  AlleleDescription:
+    name: AlleleDescription
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - allele_description_id
+    - allele_description_ref
+    - maintainer
+    - acknowledgements
+    - lab_address
+    - release_version
+    - release_date
+    - release_description
+    - label
+    - sequence
+    - coding_sequence
+    - aliases
+    - locus
+    - chromosome
+    - sequence_type
+    - functional
+    - inference_type
+    - species
+    - species_subgroup
+    - species_subgroup_type
+    - status
+    - subgroup_designation
+    - gene_designation
+    - allele_designation
+    - allele_similarity_cluster_designation
+    - allele_similarity_cluster_member_id
+    - j_codon_frame
+    - gene_start
+    - gene_end
+    - utr_5_prime_start
+    - utr_5_prime_end
+    - leader_1_start
+    - leader_1_end
+    - leader_2_start
+    - leader_2_end
+    - v_rs_start
+    - v_rs_end
+    - d_rs_3_prime_start
+    - d_rs_3_prime_end
+    - d_rs_5_prime_start
+    - d_rs_5_prime_end
+    - j_cdr3_end
+    - j_rs_start
+    - j_rs_end
+    - j_donor_splice
+    - v_gene_delineations
+    - unrearranged_support
+    - rearranged_support
+    - paralogs
+    - curation
+    - curational_tags
+  GermlineSet:
+    name: GermlineSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - germline_set_id
+    - author
+    - lab_name
+    - lab_address
+    - acknowledgements
+    - release_version
+    - release_description
+    - release_date
+    - germline_set_name
+    - germline_set_ref
+    - pub_ids
+    - species
+    - species_subgroup
+    - species_subgroup_type
+    - locus
+    - allele_descriptions
+    - curation
+  GenotypeSet:
+    name: GenotypeSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_genotype_set_id
+    - genotype_class_list
+  Genotype:
+    name: Genotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_genotype_id
+    - locus
+    - documented_alleles
+    - undocumented_alleles
+    - deleted_genes
+    - inference_process
+  DocumentedAllele:
+    name: DocumentedAllele
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - label
+    - germline_set_ref
+    - phasing
+  UndocumentedAllele:
+    name: UndocumentedAllele
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - allele_name
+    - sequence
+    - phasing
+  DeletedGene:
+    name: DeletedGene
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - label
+    - germline_set_ref
+    - phasing
+  MHCGenotypeSet:
+    name: MHCGenotypeSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - mhc_genotype_set_id
+    - mhc_genotype_list
+  MHCGenotype:
+    name: MHCGenotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - mhc_genotype_id
+    - mhc_class
+    - mhc_alleles
+    - mhc_genotyping_method
+  MHCAllele:
+    name: MHCAllele
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - allele_designation
+    - gene
+    - reference_set_ref
+  SubjectGenotype:
+    name: SubjectGenotype
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_genotype_set
+    - mhc_genotype_set
+  Study:
+    name: Study
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - study_id
+    - study_title
+    - study_type
+    - study_description
+    - inclusion_exclusion_criteria
+    - grants
+    - study_contact
+    - collected_by
+    - lab_name
+    - lab_address
+    - submitted_by
+    - pub_ids
+    - keywords_study
+    - adc_publish_date
+    - adc_update_date
+  Subject:
+    name: Subject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - subject_id
+    - synthetic
+    - species
+    - sex
+    - age_min
+    - age_max
+    - age_unit
+    - age_event
+    - ancestry_population
+    - ethnicity
+    - race
+    - strain_name
+    - linked_subjects
+    - link_type
+    - diagnosis
+    - genotype
+  Diagnosis:
+    name: Diagnosis
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - study_group_description
+    - disease_diagnosis
+    - disease_length
+    - disease_stage
+    - prior_therapies
+    - immunogen
+    - intervention
+    - medical_history
+  Sample:
+    name: Sample
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sample_id
+    - sample_type
+    - tissue
+    - anatomic_site
+    - disease_state_sample
+    - collection_time_point_relative
+    - collection_time_point_relative_unit
+    - collection_time_point_reference
+    - biomaterial_provider
+  CellProcessing:
+    name: CellProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - tissue_processing
+    - cell_subset
+    - cell_phenotype
+    - cell_species
+    - single_cell
+    - cell_number
+    - cells_per_reaction
+    - cell_storage
+    - cell_quality
+    - cell_isolation
+    - cell_processing_protocol
+  PCRTarget:
+    name: PCRTarget
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - pcr_target_locus
+    - forward_pcr_primer_target_location
+    - reverse_pcr_primer_target_location
+  SequencingRun:
+    name: SequencingRun
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequencing_run_id
+    - total_reads_passing_qc_filter
+    - sequencing_platform
+    - sequencing_facility
+    - sequencing_run_date
+    - sequencing_kit
+    - sequencing_files
+  SequencingData:
+    name: SequencingData
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequencing_data_id
+    - file_type
+    - filename
+    - read_direction
+    - read_length
+    - paired_filename
+    - paired_read_direction
+    - paired_read_length
+    - index_filename
+    - index_length
+  DataProcessing:
+    name: DataProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - data_processing_id
+    - primary_annotation
+    - software_versions
+    - paired_reads_assembly
+    - quality_thresholds
+    - primer_match_cutoffs
+    - collapsing_method
+    - data_processing_protocols
+    - data_processing_files
+    - germline_database
+    - germline_set_ref
+    - analysis_provenance_id
+  Repertoire:
+    name: Repertoire
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - repertoire_id
+    - repertoire_name
+    - repertoire_description
+    - study
+    - subject
+    - sample
+    - data_processing
+  RepertoireGroup:
+    name: RepertoireGroup
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - repertoire_group_id
+    - repertoire_group_name
+    - repertoire_group_description
+    - repertoires
+  Alignment:
+    name: Alignment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - segment
+    - rev_comp
+    - call
+    - score
+    - identity
+    - support
+    - cigar
+    - sequence_start
+    - sequence_end
+    - germline_start
+    - germline_end
+    - rank
+    - data_processing_id
+  Rearrangement:
+    name: Rearrangement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence
+    - quality
+    - sequence_aa
+    - rev_comp
+    - productive
+    - vj_in_frame
+    - stop_codon
+    - complete_vdj
+    - locus
+    - v_call
+    - d_call
+    - d2_call
+    - j_call
+    - c_call
+    - sequence_alignment
+    - quality_alignment
+    - sequence_alignment_aa
+    - germline_alignment
+    - germline_alignment_aa
+    - junction
+    - junction_aa
+    - np1
+    - np1_aa
+    - np2
+    - np2_aa
+    - np3
+    - np3_aa
+    - cdr1
+    - cdr1_aa
+    - cdr2
+    - cdr2_aa
+    - cdr3
+    - cdr3_aa
+    - fwr1
+    - fwr1_aa
+    - fwr2
+    - fwr2_aa
+    - fwr3
+    - fwr3_aa
+    - fwr4
+    - fwr4_aa
+    - v_score
+    - v_identity
+    - v_support
+    - v_cigar
+    - d_score
+    - d_identity
+    - d_support
+    - d_cigar
+    - d2_score
+    - d2_identity
+    - d2_support
+    - d2_cigar
+    - j_score
+    - j_identity
+    - j_support
+    - j_cigar
+    - c_score
+    - c_identity
+    - c_support
+    - c_cigar
+    - v_sequence_start
+    - v_sequence_end
+    - v_germline_start
+    - v_germline_end
+    - v_alignment_start
+    - v_alignment_end
+    - d_sequence_start
+    - d_sequence_end
+    - d_germline_start
+    - d_germline_end
+    - d_alignment_start
+    - d_alignment_end
+    - d2_sequence_start
+    - d2_sequence_end
+    - d2_germline_start
+    - d2_germline_end
+    - d2_alignment_start
+    - d2_alignment_end
+    - j_sequence_start
+    - j_sequence_end
+    - j_germline_start
+    - j_germline_end
+    - j_alignment_start
+    - j_alignment_end
+    - c_sequence_start
+    - c_sequence_end
+    - c_germline_start
+    - c_germline_end
+    - c_alignment_start
+    - c_alignment_end
+    - cdr1_start
+    - cdr1_end
+    - cdr2_start
+    - cdr2_end
+    - cdr3_start
+    - cdr3_end
+    - fwr1_start
+    - fwr1_end
+    - fwr2_start
+    - fwr2_end
+    - fwr3_start
+    - fwr3_end
+    - fwr4_start
+    - fwr4_end
+    - v_sequence_alignment
+    - v_sequence_alignment_aa
+    - d_sequence_alignment
+    - d_sequence_alignment_aa
+    - d2_sequence_alignment
+    - d2_sequence_alignment_aa
+    - j_sequence_alignment
+    - j_sequence_alignment_aa
+    - c_sequence_alignment
+    - c_sequence_alignment_aa
+    - v_germline_alignment
+    - v_germline_alignment_aa
+    - d_germline_alignment
+    - d_germline_alignment_aa
+    - d2_germline_alignment
+    - d2_germline_alignment_aa
+    - j_germline_alignment
+    - j_germline_alignment_aa
+    - c_germline_alignment
+    - c_germline_alignment_aa
+    - junction_length
+    - junction_aa_length
+    - np1_length
+    - np2_length
+    - np3_length
+    - n1_length
+    - n2_length
+    - n3_length
+    - p3v_length
+    - p5d_length
+    - p3d_length
+    - p5d2_length
+    - p3d2_length
+    - p5j_length
+    - v_frameshift
+    - j_frameshift
+    - d_frame
+    - d2_frame
+    - consensus_count
+    - duplicate_count
+    - umi_count
+    - cell_id
+    - clone_id
+    - repertoire_id
+    - sample_processing_id
+    - data_processing_id
+  Clone:
+    name: Clone
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - clone_id
+    - repertoire_id
+    - data_processing_id
+    - sequences
+    - v_call
+    - d_call
+    - j_call
+    - junction
+    - junction_aa
+    - junction_length
+    - junction_aa_length
+    - germline_alignment
+    - germline_alignment_aa
+    - v_alignment_start
+    - v_alignment_end
+    - d_alignment_start
+    - d_alignment_end
+    - j_alignment_start
+    - j_alignment_end
+    - junction_start
+    - junction_end
+    - umi_count
+    - clone_count
+    - seed_id
+  Tree:
+    name: Tree
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - tree_id
+    - clone_id
+    - newick
+    - nodes
+  Node:
+    name: Node
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sequence_id
+    - sequence_alignment
+    - junction
+    - junction_aa
+  CellExpression:
+    name: CellExpression
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - expression_id
+    - cell_id
+    - repertoire_id
+    - data_processing_id
+    - property_type
+    - property
+    - value
+  Receptor:
+    name: Receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - receptor_id
+    - receptor_hash
+    - receptor_type
+    - receptor_variable_domain_1_aa
+    - receptor_variable_domain_1_locus
+    - receptor_variable_domain_2_aa
+    - receptor_variable_domain_2_locus
+    - receptor_ref
+    - reactivity_measurements
+  ReceptorReactivity:
+    name: ReceptorReactivity
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - ligand_type
+    - antigen_type
+    - antigen
+    - antigen_source_species
+    - peptide_start
+    - peptide_end
+    - mhc_class
+    - mhc_gene_1
+    - mhc_allele_1
+    - mhc_gene_2
+    - mhc_allele_2
+    - reactivity_method
+    - reactivity_readout
+    - reactivity_value
+    - reactivity_unit
+  SampleProcessing:
+    name: SampleProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - sample_processing_id
+    - sample_id
+    - sample_type
+    - tissue
+    - anatomic_site
+    - disease_state_sample
+    - collection_time_point_relative
+    - collection_time_point_relative_unit
+    - collection_time_point_reference
+    - biomaterial_provider
+    - tissue_processing
+    - cell_subset
+    - cell_phenotype
+    - cell_species
+    - single_cell
+    - cell_number
+    - cells_per_reaction
+    - cell_storage
+    - cell_quality
+    - cell_isolation
+    - cell_processing_protocol
+    - template_class
+    - template_quality
+    - template_amount
+    - template_amount_unit
+    - library_generation_method
+    - library_generation_protocol
+    - library_generation_kit_version
+    - pcr_target
+    - complete_sequences
+    - physical_linkage
+    - sequencing_run_id
+    - total_reads_passing_qc_filter
+    - sequencing_platform
+    - sequencing_facility
+    - sequencing_run_date
+    - sequencing_kit
+    - sequencing_files
   V1p5TimePoint:
     name: V1p5TimePoint
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -11627,13 +16659,6 @@ classes:
     - V1p5subject
     - V1p5sample
     - V1p5data_processing
-  V1p5RepertoireGroupDetail:
-    name: V1p5RepertoireGroupDetail
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slots:
-    - V1p5repertoire_id
-    - V1p5repertoire_description
-    - V1p5time_point
   V1p5RepertoireGroup:
     name: V1p5RepertoireGroup
     from_schema: https://github.com/airr-knowledge/ak-schema

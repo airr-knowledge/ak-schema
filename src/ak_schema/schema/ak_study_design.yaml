@@ -110,19 +110,12 @@ slots:
     description: Identifier for external archival resource for the investigation, e.g., BioProject
     slot_uri: schema:identifier
     range: uriorcurie
-  study_type:
-    description: Type of study design
-    slot_uri: rdf:type
-    range: StudyType
   inclusion_criteria:
     description: Participants in an investigation must meet this criteria
     range: string
   exclusion_criteria:
     description: Participants are excluded from an investigation if they meet this criteria
     range: string
-  release_date:
-    description: Initial release of the investigation and its data
-    range: datetime
   update_date:
     description: Subsequence updates to the investigation or its data
     range: datetime
@@ -203,8 +196,6 @@ slots:
     slot_uri: RO:0000053 # has_characteristic
   age:
     description: The age of a participant relative to age_event
-  age_unit:
-    description: Units used to describe the age
   age_event:
     description: The event to which the age is relative
     range: LifeEvent
@@ -271,14 +262,6 @@ slots:
     # TODO: range: DiseaseSeverity
 
 enums:
-  StudyType:
-    reachable_from:
-      source_ontology: obo:ncit
-      source_nodes:
-        - NCIT:C63536 ## study
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
 
   Species:
     permissible_values:

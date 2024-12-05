@@ -45,7 +45,10 @@ def get_slot_range(slot_name, slot_yaml, version_prefix):
         else:
             slot_range = f"{version_prefix}{slot_yaml['$ref'].lstrip('#/')}"
     elif "type" in slot_yaml and slot_yaml["type"] in ("string", "float", "integer", "boolean", "number"):
-        slot_range = slot_yaml["type"]
+        if slot_yaml["type"] == "string" and "format" in slot_yaml and slot_yaml["format"] in ("date", "date-time"):
+            slot_range = "datetime"
+        else:
+            slot_range = slot_yaml["type"]
     # elif "x-airr" in slot_yaml and "format" in slot_yaml["x-airr"]:
     #     slot_range = slot_yaml["x-airr"]["format"]  #
     elif "type" in slot_yaml and slot_yaml["type"] == "object":
@@ -99,6 +102,9 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
                 "name": pr_slot_name,
                 "description": slot_yaml["description"].strip() if "description" in slot_yaml else "",
                 }}
+
+    if orig_slot_name.endswith("_type"):
+        slot[pr_slot_name]["slot_uri"] = "rdf:type"
 
     slot_range = get_slot_range(orig_slot_name, slot_yaml, version_prefix)
     if slot_range is not None:

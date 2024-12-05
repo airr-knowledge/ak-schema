@@ -306,11 +306,6 @@ classes:
       - V1p5subject
       - V1p5sample
       - V1p5data_processing
-  V1p5RepertoireGroupDetail:
-    slots:
-      - V1p5repertoire_id
-      - V1p5repertoire_description
-      - V1p5time_point
   V1p5RepertoireGroup:
     slots:
       - V1p5repertoire_group_id
@@ -678,6 +673,7 @@ slots:
   V1p5observation_type:
     name: V1p5observation_type
     description: The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.
+    slot_uri: rdf:type
     range: V1p5ObservationType
     required: true
     annotations:
@@ -878,14 +874,13 @@ slots:
       nullable: true
   V1p5release_version:
     name: V1p5release_version
-    range: integer
     required: true
     annotations:
       nullable: true
   V1p5release_date:
     name: V1p5release_date
     description: Date of this release
-    range: string
+    range: datetime
     required: true
     annotations:
       nullable: true
@@ -924,6 +919,7 @@ slots:
   V1p5sequence_type:
     name: V1p5sequence_type
     description: Sequence type (V, D, J, C)
+    slot_uri: rdf:type
     range: V1p5SequenceType
     required: true
     annotations:
@@ -938,6 +934,7 @@ slots:
   V1p5inference_type:
     name: V1p5inference_type
     description: Type of inference(s) from which this gene sequence was inferred
+    slot_uri: rdf:type
     range: V1p5InferenceType
     required: true
     annotations:
@@ -959,6 +956,7 @@ slots:
   V1p5species_subgroup_type:
     name: V1p5species_subgroup_type
     description: ''
+    slot_uri: rdf:type
     range: V1p5SpeciesSubgroupType
     required: false
     annotations:
@@ -1374,6 +1372,7 @@ slots:
   V1p5study_type:
     name: V1p5study_type
     description: Type of study design
+    slot_uri: rdf:type
     range: V1p5StudyType
     required: true
     annotations:
@@ -1431,14 +1430,14 @@ slots:
   V1p5adc_publish_date:
     name: V1p5adc_publish_date
     description: Date the study was first published in the AIRR Data Commons.
-    range: string
+    range: datetime
     required: false
     annotations:
       nullable: true
   V1p5adc_update_date:
     name: V1p5adc_update_date
     description: Date the study data was updated in the AIRR Data Commons.
-    range: string
+    range: datetime
     required: false
     annotations:
       nullable: true
@@ -1529,6 +1528,7 @@ slots:
   V1p5link_type:
     name: V1p5link_type
     description: Relation between subject and `linked_subjects`, can be genetic or environmental (e.g.exposure)
+    slot_uri: rdf:type
     range: string
     required: true
     annotations:
@@ -1614,6 +1614,7 @@ slots:
   V1p5sample_type:
     name: V1p5sample_type
     description: The way the sample was obtained, e.g. fine-needle aspirate, organ harvest, peripheral venous puncture
+    slot_uri: rdf:type
     range: string
     required: true
     annotations:
@@ -1867,7 +1868,7 @@ slots:
   V1p5sequencing_run_date:
     name: V1p5sequencing_run_date
     description: Date of sequencing run
-    range: string
+    range: datetime
     required: true
     annotations:
       nullable: true
@@ -1895,6 +1896,7 @@ slots:
   V1p5file_type:
     name: V1p5file_type
     description: File format for the raw reads or sequences
+    slot_uri: rdf:type
     range: V1p5FileType
     required: true
     annotations:
@@ -2034,6 +2036,8 @@ slots:
   V1p5repertoire_id:
     name: V1p5repertoire_id
     range: string
+    annotations:
+      nullable: true
   V1p5repertoire_name:
     name: V1p5repertoire_name
     description: Short generic display name for the repertoire
@@ -2043,6 +2047,7 @@ slots:
       nullable: true
   V1p5repertoire_description:
     name: V1p5repertoire_description
+    description: Generic repertoire description
     range: string
     required: false
     annotations:
@@ -2077,13 +2082,6 @@ slots:
     required: true
     annotations:
       nullable: false
-  V1p5time_point:
-    name: V1p5time_point
-    description: Time point designation for this repertoire within the group
-    range: V1p5TimePoint
-    required: false
-    annotations:
-      nullable: true
   V1p5repertoire_group_id:
     name: V1p5repertoire_group_id
     description: Identifier for this repertoire collection
@@ -2108,7 +2106,6 @@ slots:
   V1p5repertoires:
     name: V1p5repertoires
     description: List of repertoires in this collection with an associated description and time point designation
-    range: V1p5RepertoireGroupDetail
     multivalued: true
     required: true
     annotations:
@@ -3211,6 +3208,7 @@ slots:
   V1p5property_type:
     name: V1p5property_type
     description: 'Keyword describing the property type and detection method used to measure the property value. The following keywords are recommended, but custom property types are also valid: "mrna_expression_by_read_count", "protein_expression_by_fluorescence_intensity", "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count" and "antigen_bait_binding_by_dna_barcode_count".'
+    slot_uri: rdf:type
     range: string
     required: true
     annotations:
@@ -3239,6 +3237,7 @@ slots:
   V1p5receptor_type:
     name: V1p5receptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
+    slot_uri: rdf:type
     range: V1p5ReceptorType
     required: true
     annotations:
@@ -3290,6 +3289,7 @@ slots:
   V1p5ligand_type:
     name: V1p5ligand_type
     description: Classification of ligand binding to receptor
+    slot_uri: rdf:type
     range: V1p5LigandType
     required: true
     annotations:
@@ -3297,6 +3297,7 @@ slots:
   V1p5antigen_type:
     name: V1p5antigen_type
     description: The type of antigen before processing by the immune system.
+    slot_uri: rdf:type
     range: V1p5AntigenType
     required: true
     annotations:
@@ -3436,12 +3437,6 @@ enums:
       rearranged_only:
   V1p5Species:
     name: V1p5Species
-    reachable_from:
-      source_nodes:
-        - NCBITAXON:7776
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
   V1p5SpeciesSubgroupType:
     name: V1p5SpeciesSubgroupType
     permissible_values:

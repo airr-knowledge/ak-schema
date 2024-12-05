@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-02T21:13:38
+# Generation date: 2024-12-05T11:10:29
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -320,7 +320,7 @@ class CellAkcId(NamedThingAkcId):
     pass
 
 
-class TissueAkcId(NamedThingAkcId):
+class TissuePortionAkcId(NamedThingAkcId):
     pass
 
 
@@ -569,11 +569,11 @@ class Investigation(PlannedProcess):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     akc_id: Union[str, InvestigationAkcId] = None
-    study_type: Optional[Union[str, "StudyType"]] = None
+    study_type: Union[str, "StudyType"] = None
+    release_date: Union[str, XSDDateTime] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
     inclusion_criteria: Optional[str] = None
     exclusion_criteria: Optional[str] = None
-    release_date: Optional[Union[str, XSDDateTime]] = None
     update_date: Optional[Union[str, XSDDateTime]] = None
     participants: Optional[Union[Union[str, ParticipantAkcId], List[Union[str, ParticipantAkcId]]]] = empty_list()
     assays: Optional[Union[Union[str, AssayAkcId], List[Union[str, AssayAkcId]]]] = empty_list()
@@ -587,6 +587,11 @@ class Investigation(PlannedProcess):
         if not isinstance(self.akc_id, InvestigationAkcId):
             self.akc_id = InvestigationAkcId(self.akc_id)
 
+        if self._is_empty(self.release_date):
+            self.MissingRequiredField("release_date")
+        if not isinstance(self.release_date, XSDDateTime):
+            self.release_date = XSDDateTime(self.release_date)
+
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
 
@@ -595,9 +600,6 @@ class Investigation(PlannedProcess):
 
         if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
             self.exclusion_criteria = str(self.exclusion_criteria)
-
-        if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
-            self.release_date = XSDDateTime(self.release_date)
 
         if self.update_date is not None and not isinstance(self.update_date, XSDDateTime):
             self.update_date = XSDDateTime(self.update_date)
@@ -735,12 +737,12 @@ class Participant(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Participant
 
     akc_id: Union[str, ParticipantAkcId] = None
+    age_unit: Union[str, "AgeUnit"] = None
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
     species: Optional[Union[str, "Species"]] = None
     biological_sex: Optional[Union[str, "BiologicalSex"]] = None
     phenotypic_sex: Optional[Union[str, "PhenotypicSex"]] = None
     age: Optional[str] = None
-    age_unit: Optional[str] = None
     age_event: Optional[Union[str, LifeEventAkcId]] = None
     race: Optional[Union[str, "Race"]] = None
     ethnicity: Optional[Union[str, "Ethnicity"]] = None
@@ -767,9 +769,6 @@ class Participant(NamedThing):
 
         if self.age is not None and not isinstance(self.age, str):
             self.age = str(self.age)
-
-        if self.age_unit is not None and not isinstance(self.age_unit, str):
-            self.age_unit = str(self.age_unit)
 
         if self.age_event is not None and not isinstance(self.age_event, LifeEventAkcId):
             self.age_event = LifeEventAkcId(self.age_event)
@@ -929,9 +928,9 @@ class Specimen(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Specimen
 
     akc_id: Union[str, SpecimenAkcId] = None
+    tissue: Union[str, "Tissue"] = None
     life_event: Optional[Union[str, LifeEventAkcId]] = None
     specimen_type: Optional[str] = None
-    tissue: Optional[str] = None
     process: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -945,9 +944,6 @@ class Specimen(NamedThing):
 
         if self.specimen_type is not None and not isinstance(self.specimen_type, str):
             self.specimen_type = str(self.specimen_type)
-
-        if self.tissue is not None and not isinstance(self.tissue, str):
-            self.tissue = str(self.tissue)
 
         if self.process is not None and not isinstance(self.process, str):
             self.process = str(self.process)
@@ -1013,17 +1009,17 @@ class CellIsolationProcessing(SpecimenProcessing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellIsolationProcessing
 
     akc_id: Union[str, CellIsolationProcessingAkcId] = None
-    tissue_processing: Optional[str] = None
-    cell_subset: Optional[str] = None
-    cell_phenotype: Optional[str] = None
-    cell_species: Optional[str] = None
-    single_cell: Optional[str] = None
-    cell_number: Optional[str] = None
-    cells_per_reaction: Optional[str] = None
-    cell_storage: Optional[str] = None
-    cell_quality: Optional[str] = None
-    cell_isolation: Optional[str] = None
-    cell_processing_protocol: Optional[str] = None
+    tissue_processing: str = None
+    cell_subset: Union[str, "CellSubset"] = None
+    cell_phenotype: str = None
+    single_cell: Union[bool, Bool] = None
+    cell_number: int = None
+    cells_per_reaction: int = None
+    cell_storage: Union[bool, Bool] = None
+    cell_quality: str = None
+    cell_isolation: str = None
+    cell_processing_protocol: str = None
+    cell_species: Optional[Union[str, "CellSpecies"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1031,37 +1027,49 @@ class CellIsolationProcessing(SpecimenProcessing):
         if not isinstance(self.akc_id, CellIsolationProcessingAkcId):
             self.akc_id = CellIsolationProcessingAkcId(self.akc_id)
 
-        if self.tissue_processing is not None and not isinstance(self.tissue_processing, str):
+        if self._is_empty(self.tissue_processing):
+            self.MissingRequiredField("tissue_processing")
+        if not isinstance(self.tissue_processing, str):
             self.tissue_processing = str(self.tissue_processing)
 
-        if self.cell_subset is not None and not isinstance(self.cell_subset, str):
-            self.cell_subset = str(self.cell_subset)
-
-        if self.cell_phenotype is not None and not isinstance(self.cell_phenotype, str):
+        if self._is_empty(self.cell_phenotype):
+            self.MissingRequiredField("cell_phenotype")
+        if not isinstance(self.cell_phenotype, str):
             self.cell_phenotype = str(self.cell_phenotype)
 
-        if self.cell_species is not None and not isinstance(self.cell_species, str):
-            self.cell_species = str(self.cell_species)
+        if self._is_empty(self.single_cell):
+            self.MissingRequiredField("single_cell")
+        if not isinstance(self.single_cell, Bool):
+            self.single_cell = Bool(self.single_cell)
 
-        if self.single_cell is not None and not isinstance(self.single_cell, str):
-            self.single_cell = str(self.single_cell)
+        if self._is_empty(self.cell_number):
+            self.MissingRequiredField("cell_number")
+        if not isinstance(self.cell_number, int):
+            self.cell_number = int(self.cell_number)
 
-        if self.cell_number is not None and not isinstance(self.cell_number, str):
-            self.cell_number = str(self.cell_number)
+        if self._is_empty(self.cells_per_reaction):
+            self.MissingRequiredField("cells_per_reaction")
+        if not isinstance(self.cells_per_reaction, int):
+            self.cells_per_reaction = int(self.cells_per_reaction)
 
-        if self.cells_per_reaction is not None and not isinstance(self.cells_per_reaction, str):
-            self.cells_per_reaction = str(self.cells_per_reaction)
+        if self._is_empty(self.cell_storage):
+            self.MissingRequiredField("cell_storage")
+        if not isinstance(self.cell_storage, Bool):
+            self.cell_storage = Bool(self.cell_storage)
 
-        if self.cell_storage is not None and not isinstance(self.cell_storage, str):
-            self.cell_storage = str(self.cell_storage)
-
-        if self.cell_quality is not None and not isinstance(self.cell_quality, str):
+        if self._is_empty(self.cell_quality):
+            self.MissingRequiredField("cell_quality")
+        if not isinstance(self.cell_quality, str):
             self.cell_quality = str(self.cell_quality)
 
-        if self.cell_isolation is not None and not isinstance(self.cell_isolation, str):
+        if self._is_empty(self.cell_isolation):
+            self.MissingRequiredField("cell_isolation")
+        if not isinstance(self.cell_isolation, str):
             self.cell_isolation = str(self.cell_isolation)
 
-        if self.cell_processing_protocol is not None and not isinstance(self.cell_processing_protocol, str):
+        if self._is_empty(self.cell_processing_protocol):
+            self.MissingRequiredField("cell_processing_protocol")
+        if not isinstance(self.cell_processing_protocol, str):
             self.cell_processing_protocol = str(self.cell_processing_protocol)
 
         super().__post_init__(**kwargs)
@@ -1077,10 +1085,10 @@ class NucleicAcidProcessing(SpecimenProcessing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.NucleicAcidProcessing
 
     akc_id: Union[str, NucleicAcidProcessingAkcId] = None
-    template_class: Optional[str] = None
-    template_quality: Optional[str] = None
-    template_amount: Optional[str] = None
-    template_amount_unit: Optional[str] = None
+    template_class: Union[str, "TemplateClass"] = None
+    template_quality: str = None
+    template_amount: float = None
+    template_amount_unit: Union[str, "TemplateAmountUnit"] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1088,17 +1096,20 @@ class NucleicAcidProcessing(SpecimenProcessing):
         if not isinstance(self.akc_id, NucleicAcidProcessingAkcId):
             self.akc_id = NucleicAcidProcessingAkcId(self.akc_id)
 
-        if self.template_class is not None and not isinstance(self.template_class, str):
-            self.template_class = str(self.template_class)
+        if self._is_empty(self.template_class):
+            self.MissingRequiredField("template_class")
+        if not isinstance(self.template_class, TemplateClass):
+            self.template_class = TemplateClass(self.template_class)
 
-        if self.template_quality is not None and not isinstance(self.template_quality, str):
+        if self._is_empty(self.template_quality):
+            self.MissingRequiredField("template_quality")
+        if not isinstance(self.template_quality, str):
             self.template_quality = str(self.template_quality)
 
-        if self.template_amount is not None and not isinstance(self.template_amount, str):
-            self.template_amount = str(self.template_amount)
-
-        if self.template_amount_unit is not None and not isinstance(self.template_amount_unit, str):
-            self.template_amount_unit = str(self.template_amount_unit)
+        if self._is_empty(self.template_amount):
+            self.MissingRequiredField("template_amount")
+        if not isinstance(self.template_amount, float):
+            self.template_amount = float(self.template_amount)
 
         super().__post_init__(**kwargs)
 
@@ -1113,9 +1124,9 @@ class LibraryPreparationProcessing(SpecimenProcessing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.LibraryPreparationProcessing
 
     akc_id: Union[str, LibraryPreparationProcessingAkcId] = None
-    library_generation_method: Optional[str] = None
-    library_generation_protocol: Optional[str] = None
-    library_generation_kit_version: Optional[str] = None
+    library_generation_method: Union[str, "LibraryGenerationMethod"] = None
+    library_generation_protocol: str = None
+    library_generation_kit_version: str = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1123,13 +1134,19 @@ class LibraryPreparationProcessing(SpecimenProcessing):
         if not isinstance(self.akc_id, LibraryPreparationProcessingAkcId):
             self.akc_id = LibraryPreparationProcessingAkcId(self.akc_id)
 
-        if self.library_generation_method is not None and not isinstance(self.library_generation_method, str):
-            self.library_generation_method = str(self.library_generation_method)
+        if self._is_empty(self.library_generation_method):
+            self.MissingRequiredField("library_generation_method")
+        if not isinstance(self.library_generation_method, LibraryGenerationMethod):
+            self.library_generation_method = LibraryGenerationMethod(self.library_generation_method)
 
-        if self.library_generation_protocol is not None and not isinstance(self.library_generation_protocol, str):
+        if self._is_empty(self.library_generation_protocol):
+            self.MissingRequiredField("library_generation_protocol")
+        if not isinstance(self.library_generation_protocol, str):
             self.library_generation_protocol = str(self.library_generation_protocol)
 
-        if self.library_generation_kit_version is not None and not isinstance(self.library_generation_kit_version, str):
+        if self._is_empty(self.library_generation_kit_version):
+            self.MissingRequiredField("library_generation_kit_version")
+        if not isinstance(self.library_generation_kit_version, str):
             self.library_generation_kit_version = str(self.library_generation_kit_version)
 
         super().__post_init__(**kwargs)
@@ -1202,9 +1219,9 @@ class ReceptorRepertoireSequencingAssay(Assay):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorRepertoireSequencingAssay
 
     akc_id: Union[str, ReceptorRepertoireSequencingAssayAkcId] = None
-    pcr_target: Optional[Union[str, List[str]]] = empty_list()
-    complete_sequences: Optional[str] = None
-    physical_linkage: Optional[str] = None
+    complete_sequences: Union[str, "CompleteSequences"] = None
+    physical_linkage: Union[str, "PhysicalLinkage"] = None
+    pcr_target: Optional[Union[Union[dict, "PCRTarget"], List[Union[dict, "PCRTarget"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1212,15 +1229,17 @@ class ReceptorRepertoireSequencingAssay(Assay):
         if not isinstance(self.akc_id, ReceptorRepertoireSequencingAssayAkcId):
             self.akc_id = ReceptorRepertoireSequencingAssayAkcId(self.akc_id)
 
-        if not isinstance(self.pcr_target, list):
-            self.pcr_target = [self.pcr_target] if self.pcr_target is not None else []
-        self.pcr_target = [v if isinstance(v, str) else str(v) for v in self.pcr_target]
+        if self._is_empty(self.complete_sequences):
+            self.MissingRequiredField("complete_sequences")
+        if not isinstance(self.complete_sequences, CompleteSequences):
+            self.complete_sequences = CompleteSequences(self.complete_sequences)
 
-        if self.complete_sequences is not None and not isinstance(self.complete_sequences, str):
-            self.complete_sequences = str(self.complete_sequences)
+        if self._is_empty(self.physical_linkage):
+            self.MissingRequiredField("physical_linkage")
+        if not isinstance(self.physical_linkage, PhysicalLinkage):
+            self.physical_linkage = PhysicalLinkage(self.physical_linkage)
 
-        if self.physical_linkage is not None and not isinstance(self.physical_linkage, str):
-            self.physical_linkage = str(self.physical_linkage)
+        self._normalize_inlined_as_dict(slot_name="pcr_target", slot_type=PCRTarget, key_name="pcr_target_locus", keyed=False)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1405,21 +1424,21 @@ class Cell(NamedThing):
 
 
 @dataclass(repr=False)
-class Tissue(NamedThing):
+class TissuePortion(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = UBERON["0000479"]
     class_class_curie: ClassVar[str] = "UBERON:0000479"
-    class_name: ClassVar[str] = "Tissue"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Tissue
+    class_name: ClassVar[str] = "TissuePortion"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TissuePortion
 
-    akc_id: Union[str, TissueAkcId] = None
+    akc_id: Union[str, TissuePortionAkcId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, TissueAkcId):
-            self.akc_id = TissueAkcId(self.akc_id)
+        if not isinstance(self.akc_id, TissuePortionAkcId):
+            self.akc_id = TissuePortionAkcId(self.akc_id)
 
         super().__post_init__(**kwargs)
 
@@ -1454,7 +1473,7 @@ class Chain(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Chain
 
     akc_id: Union[str, ChainAkcId] = None
-    sequence: Optional[str] = None
+    sequence: str = None
     sequence_aa: Optional[str] = None
     chain_type: Optional[Union[str, "ChainType"]] = None
     v_call: Optional[str] = None
@@ -1478,7 +1497,9 @@ class Chain(NamedThing):
         if not isinstance(self.akc_id, ChainAkcId):
             self.akc_id = ChainAkcId(self.akc_id)
 
-        if self.sequence is not None and not isinstance(self.sequence, str):
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
 
         if self.sequence_aa is not None and not isinstance(self.sequence_aa, str):
@@ -1881,6 +1902,2837 @@ class ChainSimilarity(SimilarityCalculation):
 
 
 @dataclass(repr=False)
+class TimePoint(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["TimePoint"]
+    class_class_curie: ClassVar[str] = "ak_schema:TimePoint"
+    class_name: ClassVar[str] = "TimePoint"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TimePoint
+
+    label: Optional[str] = None
+    value: Optional[str] = None
+    unit: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.label is not None and not isinstance(self.label, str):
+            self.label = str(self.label)
+
+        if self.value is not None and not isinstance(self.value, str):
+            self.value = str(self.value)
+
+        if self.unit is not None and not isinstance(self.unit, str):
+            self.unit = str(self.unit)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Acknowledgement(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Acknowledgement"]
+    class_class_curie: ClassVar[str] = "ak_schema:Acknowledgement"
+    class_name: ClassVar[str] = "Acknowledgement"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Acknowledgement
+
+    acknowledgement_id: str = None
+    institution_name: str = None
+    name: Optional[str] = None
+    orcid_id: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.acknowledgement_id):
+            self.MissingRequiredField("acknowledgement_id")
+        if not isinstance(self.acknowledgement_id, str):
+            self.acknowledgement_id = str(self.acknowledgement_id)
+
+        if self._is_empty(self.institution_name):
+            self.MissingRequiredField("institution_name")
+        if not isinstance(self.institution_name, str):
+            self.institution_name = str(self.institution_name)
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.orcid_id is not None and not isinstance(self.orcid_id, str):
+            self.orcid_id = str(self.orcid_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class RearrangedSequence(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RearrangedSequence"]
+    class_class_curie: ClassVar[str] = "ak_schema:RearrangedSequence"
+    class_name: ClassVar[str] = "RearrangedSequence"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RearrangedSequence
+
+    sequence_id: str = None
+    sequence: str = None
+    derivation: Union[str, "Derivation"] = None
+    observation_type: Union[str, "ObservationType"] = None
+    repository_name: str = None
+    deposited_version: str = None
+    curation: Optional[str] = None
+    repository_ref: Optional[str] = None
+    sequence_start: Optional[int] = None
+    sequence_end: Optional[int] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequence_id):
+            self.MissingRequiredField("sequence_id")
+        if not isinstance(self.sequence_id, str):
+            self.sequence_id = str(self.sequence_id)
+
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, str):
+            self.sequence = str(self.sequence)
+
+        if self._is_empty(self.derivation):
+            self.MissingRequiredField("derivation")
+        if not isinstance(self.derivation, Derivation):
+            self.derivation = Derivation(self.derivation)
+
+        if self._is_empty(self.observation_type):
+            self.MissingRequiredField("observation_type")
+        if not isinstance(self.observation_type, ObservationType):
+            self.observation_type = ObservationType(self.observation_type)
+
+        if self._is_empty(self.repository_name):
+            self.MissingRequiredField("repository_name")
+        if not isinstance(self.repository_name, str):
+            self.repository_name = str(self.repository_name)
+
+        if self._is_empty(self.deposited_version):
+            self.MissingRequiredField("deposited_version")
+        if not isinstance(self.deposited_version, str):
+            self.deposited_version = str(self.deposited_version)
+
+        if self.curation is not None and not isinstance(self.curation, str):
+            self.curation = str(self.curation)
+
+        if self.repository_ref is not None and not isinstance(self.repository_ref, str):
+            self.repository_ref = str(self.repository_ref)
+
+        if self.sequence_start is not None and not isinstance(self.sequence_start, int):
+            self.sequence_start = int(self.sequence_start)
+
+        if self.sequence_end is not None and not isinstance(self.sequence_end, int):
+            self.sequence_end = int(self.sequence_end)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class UnrearrangedSequence(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UnrearrangedSequence"]
+    class_class_curie: ClassVar[str] = "ak_schema:UnrearrangedSequence"
+    class_name: ClassVar[str] = "UnrearrangedSequence"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UnrearrangedSequence
+
+    sequence_id: str = None
+    sequence: str = None
+    repository_name: str = None
+    gff_seqid: str = None
+    gff_start: int = None
+    gff_end: int = None
+    strand: Union[str, "Strand"] = None
+    curation: Optional[str] = None
+    repository_ref: Optional[str] = None
+    patch_no: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequence_id):
+            self.MissingRequiredField("sequence_id")
+        if not isinstance(self.sequence_id, str):
+            self.sequence_id = str(self.sequence_id)
+
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, str):
+            self.sequence = str(self.sequence)
+
+        if self._is_empty(self.repository_name):
+            self.MissingRequiredField("repository_name")
+        if not isinstance(self.repository_name, str):
+            self.repository_name = str(self.repository_name)
+
+        if self._is_empty(self.gff_seqid):
+            self.MissingRequiredField("gff_seqid")
+        if not isinstance(self.gff_seqid, str):
+            self.gff_seqid = str(self.gff_seqid)
+
+        if self._is_empty(self.gff_start):
+            self.MissingRequiredField("gff_start")
+        if not isinstance(self.gff_start, int):
+            self.gff_start = int(self.gff_start)
+
+        if self._is_empty(self.gff_end):
+            self.MissingRequiredField("gff_end")
+        if not isinstance(self.gff_end, int):
+            self.gff_end = int(self.gff_end)
+
+        if self._is_empty(self.strand):
+            self.MissingRequiredField("strand")
+        if not isinstance(self.strand, Strand):
+            self.strand = Strand(self.strand)
+
+        if self.curation is not None and not isinstance(self.curation, str):
+            self.curation = str(self.curation)
+
+        if self.repository_ref is not None and not isinstance(self.repository_ref, str):
+            self.repository_ref = str(self.repository_ref)
+
+        if self.patch_no is not None and not isinstance(self.patch_no, str):
+            self.patch_no = str(self.patch_no)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SequenceDelineationV(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequenceDelineationV"]
+    class_class_curie: ClassVar[str] = "ak_schema:SequenceDelineationV"
+    class_name: ClassVar[str] = "SequenceDelineationV"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequenceDelineationV
+
+    sequence_delineation_id: str = None
+    delineation_scheme: str = None
+    unaligned_sequence: Optional[str] = None
+    aligned_sequence: Optional[str] = None
+    fwr1_start: Optional[int] = None
+    fwr1_end: Optional[int] = None
+    cdr1_start: Optional[int] = None
+    cdr1_end: Optional[int] = None
+    fwr2_start: Optional[int] = None
+    fwr2_end: Optional[int] = None
+    cdr2_start: Optional[int] = None
+    cdr2_end: Optional[int] = None
+    fwr3_start: Optional[int] = None
+    fwr3_end: Optional[int] = None
+    cdr3_start: Optional[int] = None
+    alignment_labels: Optional[Union[str, List[str]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequence_delineation_id):
+            self.MissingRequiredField("sequence_delineation_id")
+        if not isinstance(self.sequence_delineation_id, str):
+            self.sequence_delineation_id = str(self.sequence_delineation_id)
+
+        if self._is_empty(self.delineation_scheme):
+            self.MissingRequiredField("delineation_scheme")
+        if not isinstance(self.delineation_scheme, str):
+            self.delineation_scheme = str(self.delineation_scheme)
+
+        if self.unaligned_sequence is not None and not isinstance(self.unaligned_sequence, str):
+            self.unaligned_sequence = str(self.unaligned_sequence)
+
+        if self.aligned_sequence is not None and not isinstance(self.aligned_sequence, str):
+            self.aligned_sequence = str(self.aligned_sequence)
+
+        if self.fwr1_start is not None and not isinstance(self.fwr1_start, int):
+            self.fwr1_start = int(self.fwr1_start)
+
+        if self.fwr1_end is not None and not isinstance(self.fwr1_end, int):
+            self.fwr1_end = int(self.fwr1_end)
+
+        if self.cdr1_start is not None and not isinstance(self.cdr1_start, int):
+            self.cdr1_start = int(self.cdr1_start)
+
+        if self.cdr1_end is not None and not isinstance(self.cdr1_end, int):
+            self.cdr1_end = int(self.cdr1_end)
+
+        if self.fwr2_start is not None and not isinstance(self.fwr2_start, int):
+            self.fwr2_start = int(self.fwr2_start)
+
+        if self.fwr2_end is not None and not isinstance(self.fwr2_end, int):
+            self.fwr2_end = int(self.fwr2_end)
+
+        if self.cdr2_start is not None and not isinstance(self.cdr2_start, int):
+            self.cdr2_start = int(self.cdr2_start)
+
+        if self.cdr2_end is not None and not isinstance(self.cdr2_end, int):
+            self.cdr2_end = int(self.cdr2_end)
+
+        if self.fwr3_start is not None and not isinstance(self.fwr3_start, int):
+            self.fwr3_start = int(self.fwr3_start)
+
+        if self.fwr3_end is not None and not isinstance(self.fwr3_end, int):
+            self.fwr3_end = int(self.fwr3_end)
+
+        if self.cdr3_start is not None and not isinstance(self.cdr3_start, int):
+            self.cdr3_start = int(self.cdr3_start)
+
+        if not isinstance(self.alignment_labels, list):
+            self.alignment_labels = [self.alignment_labels] if self.alignment_labels is not None else []
+        self.alignment_labels = [v if isinstance(v, str) else str(v) for v in self.alignment_labels]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class AlleleDescription(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AlleleDescription"]
+    class_class_curie: ClassVar[str] = "ak_schema:AlleleDescription"
+    class_name: ClassVar[str] = "AlleleDescription"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AlleleDescription
+
+    allele_description_id: str = None
+    maintainer: str = None
+    lab_address: str = None
+    release_version: str = None
+    release_date: Union[str, XSDDateTime] = None
+    release_description: str = None
+    sequence: str = None
+    coding_sequence: str = None
+    sequence_type: Union[str, "SequenceType"] = None
+    functional: Union[bool, Bool] = None
+    inference_type: Union[str, "InferenceType"] = None
+    allele_description_ref: Optional[str] = None
+    acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
+    label: Optional[str] = None
+    aliases: Optional[Union[str, List[str]]] = empty_list()
+    locus: Optional[Union[str, "Locus"]] = None
+    chromosome: Optional[int] = None
+    species: Optional[Union[str, "Species"]] = None
+    species_subgroup: Optional[str] = None
+    species_subgroup_type: Optional[Union[str, "SpeciesSubgroupType"]] = None
+    status: Optional[Union[str, "Status"]] = None
+    subgroup_designation: Optional[str] = None
+    gene_designation: Optional[str] = None
+    allele_designation: Optional[str] = None
+    allele_similarity_cluster_designation: Optional[str] = None
+    allele_similarity_cluster_member_id: Optional[str] = None
+    j_codon_frame: Optional[Union[str, "JCodonFrame"]] = None
+    gene_start: Optional[int] = None
+    gene_end: Optional[int] = None
+    utr_5_prime_start: Optional[int] = None
+    utr_5_prime_end: Optional[int] = None
+    leader_1_start: Optional[int] = None
+    leader_1_end: Optional[int] = None
+    leader_2_start: Optional[int] = None
+    leader_2_end: Optional[int] = None
+    v_rs_start: Optional[int] = None
+    v_rs_end: Optional[int] = None
+    d_rs_3_prime_start: Optional[int] = None
+    d_rs_3_prime_end: Optional[int] = None
+    d_rs_5_prime_start: Optional[int] = None
+    d_rs_5_prime_end: Optional[int] = None
+    j_cdr3_end: Optional[int] = None
+    j_rs_start: Optional[int] = None
+    j_rs_end: Optional[int] = None
+    j_donor_splice: Optional[int] = None
+    v_gene_delineations: Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]] = empty_list()
+    unrearranged_support: Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]] = empty_list()
+    rearranged_support: Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]] = empty_list()
+    paralogs: Optional[Union[str, List[str]]] = empty_list()
+    curation: Optional[str] = None
+    curational_tags: Optional[Union[Union[str, "CurationalTags"], List[Union[str, "CurationalTags"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.allele_description_id):
+            self.MissingRequiredField("allele_description_id")
+        if not isinstance(self.allele_description_id, str):
+            self.allele_description_id = str(self.allele_description_id)
+
+        if self._is_empty(self.maintainer):
+            self.MissingRequiredField("maintainer")
+        if not isinstance(self.maintainer, str):
+            self.maintainer = str(self.maintainer)
+
+        if self._is_empty(self.lab_address):
+            self.MissingRequiredField("lab_address")
+        if not isinstance(self.lab_address, str):
+            self.lab_address = str(self.lab_address)
+
+        if self._is_empty(self.release_version):
+            self.MissingRequiredField("release_version")
+        if not isinstance(self.release_version, str):
+            self.release_version = str(self.release_version)
+
+        if self._is_empty(self.release_date):
+            self.MissingRequiredField("release_date")
+        if not isinstance(self.release_date, XSDDateTime):
+            self.release_date = XSDDateTime(self.release_date)
+
+        if self._is_empty(self.release_description):
+            self.MissingRequiredField("release_description")
+        if not isinstance(self.release_description, str):
+            self.release_description = str(self.release_description)
+
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, str):
+            self.sequence = str(self.sequence)
+
+        if self._is_empty(self.coding_sequence):
+            self.MissingRequiredField("coding_sequence")
+        if not isinstance(self.coding_sequence, str):
+            self.coding_sequence = str(self.coding_sequence)
+
+        if self._is_empty(self.sequence_type):
+            self.MissingRequiredField("sequence_type")
+        if not isinstance(self.sequence_type, SequenceType):
+            self.sequence_type = SequenceType(self.sequence_type)
+
+        if self._is_empty(self.functional):
+            self.MissingRequiredField("functional")
+        if not isinstance(self.functional, Bool):
+            self.functional = Bool(self.functional)
+
+        if self._is_empty(self.inference_type):
+            self.MissingRequiredField("inference_type")
+        if not isinstance(self.inference_type, InferenceType):
+            self.inference_type = InferenceType(self.inference_type)
+
+        if self.allele_description_ref is not None and not isinstance(self.allele_description_ref, str):
+            self.allele_description_ref = str(self.allele_description_ref)
+
+        self._normalize_inlined_as_dict(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=False)
+
+        if self.label is not None and not isinstance(self.label, str):
+            self.label = str(self.label)
+
+        if not isinstance(self.aliases, list):
+            self.aliases = [self.aliases] if self.aliases is not None else []
+        self.aliases = [v if isinstance(v, str) else str(v) for v in self.aliases]
+
+        if self.locus is not None and not isinstance(self.locus, Locus):
+            self.locus = Locus(self.locus)
+
+        if self.chromosome is not None and not isinstance(self.chromosome, int):
+            self.chromosome = int(self.chromosome)
+
+        if self.species is not None and not isinstance(self.species, Species):
+            self.species = Species(self.species)
+
+        if self.species_subgroup is not None and not isinstance(self.species_subgroup, str):
+            self.species_subgroup = str(self.species_subgroup)
+
+        if self.species_subgroup_type is not None and not isinstance(self.species_subgroup_type, SpeciesSubgroupType):
+            self.species_subgroup_type = SpeciesSubgroupType(self.species_subgroup_type)
+
+        if self.status is not None and not isinstance(self.status, Status):
+            self.status = Status(self.status)
+
+        if self.subgroup_designation is not None and not isinstance(self.subgroup_designation, str):
+            self.subgroup_designation = str(self.subgroup_designation)
+
+        if self.gene_designation is not None and not isinstance(self.gene_designation, str):
+            self.gene_designation = str(self.gene_designation)
+
+        if self.allele_designation is not None and not isinstance(self.allele_designation, str):
+            self.allele_designation = str(self.allele_designation)
+
+        if self.allele_similarity_cluster_designation is not None and not isinstance(self.allele_similarity_cluster_designation, str):
+            self.allele_similarity_cluster_designation = str(self.allele_similarity_cluster_designation)
+
+        if self.allele_similarity_cluster_member_id is not None and not isinstance(self.allele_similarity_cluster_member_id, str):
+            self.allele_similarity_cluster_member_id = str(self.allele_similarity_cluster_member_id)
+
+        if self.j_codon_frame is not None and not isinstance(self.j_codon_frame, JCodonFrame):
+            self.j_codon_frame = JCodonFrame(self.j_codon_frame)
+
+        if self.gene_start is not None and not isinstance(self.gene_start, int):
+            self.gene_start = int(self.gene_start)
+
+        if self.gene_end is not None and not isinstance(self.gene_end, int):
+            self.gene_end = int(self.gene_end)
+
+        if self.utr_5_prime_start is not None and not isinstance(self.utr_5_prime_start, int):
+            self.utr_5_prime_start = int(self.utr_5_prime_start)
+
+        if self.utr_5_prime_end is not None and not isinstance(self.utr_5_prime_end, int):
+            self.utr_5_prime_end = int(self.utr_5_prime_end)
+
+        if self.leader_1_start is not None and not isinstance(self.leader_1_start, int):
+            self.leader_1_start = int(self.leader_1_start)
+
+        if self.leader_1_end is not None and not isinstance(self.leader_1_end, int):
+            self.leader_1_end = int(self.leader_1_end)
+
+        if self.leader_2_start is not None and not isinstance(self.leader_2_start, int):
+            self.leader_2_start = int(self.leader_2_start)
+
+        if self.leader_2_end is not None and not isinstance(self.leader_2_end, int):
+            self.leader_2_end = int(self.leader_2_end)
+
+        if self.v_rs_start is not None and not isinstance(self.v_rs_start, int):
+            self.v_rs_start = int(self.v_rs_start)
+
+        if self.v_rs_end is not None and not isinstance(self.v_rs_end, int):
+            self.v_rs_end = int(self.v_rs_end)
+
+        if self.d_rs_3_prime_start is not None and not isinstance(self.d_rs_3_prime_start, int):
+            self.d_rs_3_prime_start = int(self.d_rs_3_prime_start)
+
+        if self.d_rs_3_prime_end is not None and not isinstance(self.d_rs_3_prime_end, int):
+            self.d_rs_3_prime_end = int(self.d_rs_3_prime_end)
+
+        if self.d_rs_5_prime_start is not None and not isinstance(self.d_rs_5_prime_start, int):
+            self.d_rs_5_prime_start = int(self.d_rs_5_prime_start)
+
+        if self.d_rs_5_prime_end is not None and not isinstance(self.d_rs_5_prime_end, int):
+            self.d_rs_5_prime_end = int(self.d_rs_5_prime_end)
+
+        if self.j_cdr3_end is not None and not isinstance(self.j_cdr3_end, int):
+            self.j_cdr3_end = int(self.j_cdr3_end)
+
+        if self.j_rs_start is not None and not isinstance(self.j_rs_start, int):
+            self.j_rs_start = int(self.j_rs_start)
+
+        if self.j_rs_end is not None and not isinstance(self.j_rs_end, int):
+            self.j_rs_end = int(self.j_rs_end)
+
+        if self.j_donor_splice is not None and not isinstance(self.j_donor_splice, int):
+            self.j_donor_splice = int(self.j_donor_splice)
+
+        self._normalize_inlined_as_dict(slot_name="v_gene_delineations", slot_type=SequenceDelineationV, key_name="sequence_delineation_id", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="unrearranged_support", slot_type=UnrearrangedSequence, key_name="sequence_id", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="rearranged_support", slot_type=RearrangedSequence, key_name="sequence_id", keyed=False)
+
+        if not isinstance(self.paralogs, list):
+            self.paralogs = [self.paralogs] if self.paralogs is not None else []
+        self.paralogs = [v if isinstance(v, str) else str(v) for v in self.paralogs]
+
+        if self.curation is not None and not isinstance(self.curation, str):
+            self.curation = str(self.curation)
+
+        if not isinstance(self.curational_tags, list):
+            self.curational_tags = [self.curational_tags] if self.curational_tags is not None else []
+        self.curational_tags = [v if isinstance(v, CurationalTags) else CurationalTags(v) for v in self.curational_tags]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class GermlineSet(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GermlineSet"]
+    class_class_curie: ClassVar[str] = "ak_schema:GermlineSet"
+    class_name: ClassVar[str] = "GermlineSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GermlineSet
+
+    germline_set_id: str = None
+    author: str = None
+    lab_name: str = None
+    lab_address: str = None
+    release_version: str = None
+    release_description: str = None
+    release_date: Union[str, XSDDateTime] = None
+    germline_set_name: str = None
+    allele_descriptions: Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]] = None
+    acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
+    germline_set_ref: Optional[str] = None
+    pub_ids: Optional[str] = None
+    species: Optional[Union[str, "Species"]] = None
+    species_subgroup: Optional[str] = None
+    species_subgroup_type: Optional[Union[str, "SpeciesSubgroupType"]] = None
+    locus: Optional[Union[str, "Locus"]] = None
+    curation: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.germline_set_id):
+            self.MissingRequiredField("germline_set_id")
+        if not isinstance(self.germline_set_id, str):
+            self.germline_set_id = str(self.germline_set_id)
+
+        if self._is_empty(self.author):
+            self.MissingRequiredField("author")
+        if not isinstance(self.author, str):
+            self.author = str(self.author)
+
+        if self._is_empty(self.lab_name):
+            self.MissingRequiredField("lab_name")
+        if not isinstance(self.lab_name, str):
+            self.lab_name = str(self.lab_name)
+
+        if self._is_empty(self.lab_address):
+            self.MissingRequiredField("lab_address")
+        if not isinstance(self.lab_address, str):
+            self.lab_address = str(self.lab_address)
+
+        if self._is_empty(self.release_version):
+            self.MissingRequiredField("release_version")
+        if not isinstance(self.release_version, str):
+            self.release_version = str(self.release_version)
+
+        if self._is_empty(self.release_description):
+            self.MissingRequiredField("release_description")
+        if not isinstance(self.release_description, str):
+            self.release_description = str(self.release_description)
+
+        if self._is_empty(self.release_date):
+            self.MissingRequiredField("release_date")
+        if not isinstance(self.release_date, XSDDateTime):
+            self.release_date = XSDDateTime(self.release_date)
+
+        if self._is_empty(self.germline_set_name):
+            self.MissingRequiredField("germline_set_name")
+        if not isinstance(self.germline_set_name, str):
+            self.germline_set_name = str(self.germline_set_name)
+
+        if self._is_empty(self.allele_descriptions):
+            self.MissingRequiredField("allele_descriptions")
+        self._normalize_inlined_as_dict(slot_name="allele_descriptions", slot_type=AlleleDescription, key_name="allele_description_id", keyed=False)
+
+        self._normalize_inlined_as_dict(slot_name="acknowledgements", slot_type=Acknowledgement, key_name="acknowledgement_id", keyed=False)
+
+        if self.germline_set_ref is not None and not isinstance(self.germline_set_ref, str):
+            self.germline_set_ref = str(self.germline_set_ref)
+
+        if self.pub_ids is not None and not isinstance(self.pub_ids, str):
+            self.pub_ids = str(self.pub_ids)
+
+        if self.species is not None and not isinstance(self.species, Species):
+            self.species = Species(self.species)
+
+        if self.species_subgroup is not None and not isinstance(self.species_subgroup, str):
+            self.species_subgroup = str(self.species_subgroup)
+
+        if self.species_subgroup_type is not None and not isinstance(self.species_subgroup_type, SpeciesSubgroupType):
+            self.species_subgroup_type = SpeciesSubgroupType(self.species_subgroup_type)
+
+        if self.locus is not None and not isinstance(self.locus, Locus):
+            self.locus = Locus(self.locus)
+
+        if self.curation is not None and not isinstance(self.curation, str):
+            self.curation = str(self.curation)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class GenotypeSet(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GenotypeSet"]
+    class_class_curie: ClassVar[str] = "ak_schema:GenotypeSet"
+    class_name: ClassVar[str] = "GenotypeSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GenotypeSet
+
+    receptor_genotype_set_id: str = None
+    genotype_class_list: Optional[Union[Union[dict, "Genotype"], List[Union[dict, "Genotype"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.receptor_genotype_set_id):
+            self.MissingRequiredField("receptor_genotype_set_id")
+        if not isinstance(self.receptor_genotype_set_id, str):
+            self.receptor_genotype_set_id = str(self.receptor_genotype_set_id)
+
+        self._normalize_inlined_as_dict(slot_name="genotype_class_list", slot_type=Genotype, key_name="receptor_genotype_id", keyed=False)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Genotype(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Genotype"]
+    class_class_curie: ClassVar[str] = "ak_schema:Genotype"
+    class_name: ClassVar[str] = "Genotype"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Genotype
+
+    receptor_genotype_id: str = None
+    locus: Optional[Union[str, "Locus"]] = None
+    documented_alleles: Optional[Union[Union[dict, "DocumentedAllele"], List[Union[dict, "DocumentedAllele"]]]] = empty_list()
+    undocumented_alleles: Optional[Union[Union[dict, "UndocumentedAllele"], List[Union[dict, "UndocumentedAllele"]]]] = empty_list()
+    deleted_genes: Optional[Union[Union[dict, "DeletedGene"], List[Union[dict, "DeletedGene"]]]] = empty_list()
+    inference_process: Optional[Union[str, "InferenceProcess"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.receptor_genotype_id):
+            self.MissingRequiredField("receptor_genotype_id")
+        if not isinstance(self.receptor_genotype_id, str):
+            self.receptor_genotype_id = str(self.receptor_genotype_id)
+
+        if self.locus is not None and not isinstance(self.locus, Locus):
+            self.locus = Locus(self.locus)
+
+        if not isinstance(self.documented_alleles, list):
+            self.documented_alleles = [self.documented_alleles] if self.documented_alleles is not None else []
+        self.documented_alleles = [v if isinstance(v, DocumentedAllele) else DocumentedAllele(**as_dict(v)) for v in self.documented_alleles]
+
+        self._normalize_inlined_as_dict(slot_name="undocumented_alleles", slot_type=UndocumentedAllele, key_name="allele_name", keyed=False)
+
+        if not isinstance(self.deleted_genes, list):
+            self.deleted_genes = [self.deleted_genes] if self.deleted_genes is not None else []
+        self.deleted_genes = [v if isinstance(v, DeletedGene) else DeletedGene(**as_dict(v)) for v in self.deleted_genes]
+
+        if self.inference_process is not None and not isinstance(self.inference_process, InferenceProcess):
+            self.inference_process = InferenceProcess(self.inference_process)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DocumentedAllele(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DocumentedAllele"]
+    class_class_curie: ClassVar[str] = "ak_schema:DocumentedAllele"
+    class_name: ClassVar[str] = "DocumentedAllele"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DocumentedAllele
+
+    label: Optional[str] = None
+    germline_set_ref: Optional[str] = None
+    phasing: Optional[int] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.label is not None and not isinstance(self.label, str):
+            self.label = str(self.label)
+
+        if self.germline_set_ref is not None and not isinstance(self.germline_set_ref, str):
+            self.germline_set_ref = str(self.germline_set_ref)
+
+        if self.phasing is not None and not isinstance(self.phasing, int):
+            self.phasing = int(self.phasing)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class UndocumentedAllele(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UndocumentedAllele"]
+    class_class_curie: ClassVar[str] = "ak_schema:UndocumentedAllele"
+    class_name: ClassVar[str] = "UndocumentedAllele"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UndocumentedAllele
+
+    allele_name: str = None
+    sequence: str = None
+    phasing: Optional[int] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.allele_name):
+            self.MissingRequiredField("allele_name")
+        if not isinstance(self.allele_name, str):
+            self.allele_name = str(self.allele_name)
+
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, str):
+            self.sequence = str(self.sequence)
+
+        if self.phasing is not None and not isinstance(self.phasing, int):
+            self.phasing = int(self.phasing)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DeletedGene(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DeletedGene"]
+    class_class_curie: ClassVar[str] = "ak_schema:DeletedGene"
+    class_name: ClassVar[str] = "DeletedGene"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DeletedGene
+
+    label: Optional[str] = None
+    germline_set_ref: Optional[str] = None
+    phasing: Optional[int] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.label is not None and not isinstance(self.label, str):
+            self.label = str(self.label)
+
+        if self.germline_set_ref is not None and not isinstance(self.germline_set_ref, str):
+            self.germline_set_ref = str(self.germline_set_ref)
+
+        if self.phasing is not None and not isinstance(self.phasing, int):
+            self.phasing = int(self.phasing)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MHCGenotypeSet(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotypeSet"]
+    class_class_curie: ClassVar[str] = "ak_schema:MHCGenotypeSet"
+    class_name: ClassVar[str] = "MHCGenotypeSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCGenotypeSet
+
+    mhc_genotype_set_id: str = None
+    mhc_genotype_list: Union[Union[dict, "MHCGenotype"], List[Union[dict, "MHCGenotype"]]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.mhc_genotype_set_id):
+            self.MissingRequiredField("mhc_genotype_set_id")
+        if not isinstance(self.mhc_genotype_set_id, str):
+            self.mhc_genotype_set_id = str(self.mhc_genotype_set_id)
+
+        if self._is_empty(self.mhc_genotype_list):
+            self.MissingRequiredField("mhc_genotype_list")
+        self._normalize_inlined_as_dict(slot_name="mhc_genotype_list", slot_type=MHCGenotype, key_name="mhc_genotype_id", keyed=False)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MHCGenotype(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotype"]
+    class_class_curie: ClassVar[str] = "ak_schema:MHCGenotype"
+    class_name: ClassVar[str] = "MHCGenotype"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCGenotype
+
+    mhc_genotype_id: str = None
+    mhc_alleles: Union[Union[dict, "MHCAllele"], List[Union[dict, "MHCAllele"]]] = None
+    mhc_class: Optional[Union[str, "MhcClass"]] = None
+    mhc_genotyping_method: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.mhc_genotype_id):
+            self.MissingRequiredField("mhc_genotype_id")
+        if not isinstance(self.mhc_genotype_id, str):
+            self.mhc_genotype_id = str(self.mhc_genotype_id)
+
+        if self._is_empty(self.mhc_alleles):
+            self.MissingRequiredField("mhc_alleles")
+        if not isinstance(self.mhc_alleles, list):
+            self.mhc_alleles = [self.mhc_alleles] if self.mhc_alleles is not None else []
+        self.mhc_alleles = [v if isinstance(v, MHCAllele) else MHCAllele(**as_dict(v)) for v in self.mhc_alleles]
+
+        if self.mhc_class is not None and not isinstance(self.mhc_class, MhcClass):
+            self.mhc_class = MhcClass(self.mhc_class)
+
+        if self.mhc_genotyping_method is not None and not isinstance(self.mhc_genotyping_method, str):
+            self.mhc_genotyping_method = str(self.mhc_genotyping_method)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MHCAllele(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCAllele"]
+    class_class_curie: ClassVar[str] = "ak_schema:MHCAllele"
+    class_name: ClassVar[str] = "MHCAllele"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCAllele
+
+    allele_designation: Optional[str] = None
+    gene: Optional[Union[str, "Gene"]] = None
+    reference_set_ref: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.allele_designation is not None and not isinstance(self.allele_designation, str):
+            self.allele_designation = str(self.allele_designation)
+
+        if self.reference_set_ref is not None and not isinstance(self.reference_set_ref, str):
+            self.reference_set_ref = str(self.reference_set_ref)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SubjectGenotype(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SubjectGenotype"]
+    class_class_curie: ClassVar[str] = "ak_schema:SubjectGenotype"
+    class_name: ClassVar[str] = "SubjectGenotype"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SubjectGenotype
+
+    receptor_genotype_set: Optional[Union[dict, GenotypeSet]] = None
+    mhc_genotype_set: Optional[Union[dict, MHCGenotypeSet]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.receptor_genotype_set is not None and not isinstance(self.receptor_genotype_set, GenotypeSet):
+            self.receptor_genotype_set = GenotypeSet(**as_dict(self.receptor_genotype_set))
+
+        if self.mhc_genotype_set is not None and not isinstance(self.mhc_genotype_set, MHCGenotypeSet):
+            self.mhc_genotype_set = MHCGenotypeSet(**as_dict(self.mhc_genotype_set))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Study(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Study"]
+    class_class_curie: ClassVar[str] = "ak_schema:Study"
+    class_name: ClassVar[str] = "Study"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Study
+
+    study_id: str = None
+    study_title: str = None
+    study_type: Union[str, "StudyType"] = None
+    inclusion_exclusion_criteria: str = None
+    grants: str = None
+    collected_by: str = None
+    lab_name: str = None
+    lab_address: str = None
+    submitted_by: str = None
+    keywords_study: Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]] = None
+    study_description: Optional[str] = None
+    study_contact: Optional[str] = None
+    pub_ids: Optional[str] = None
+    adc_publish_date: Optional[Union[str, XSDDateTime]] = None
+    adc_update_date: Optional[Union[str, XSDDateTime]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.study_id):
+            self.MissingRequiredField("study_id")
+        if not isinstance(self.study_id, str):
+            self.study_id = str(self.study_id)
+
+        if self._is_empty(self.study_title):
+            self.MissingRequiredField("study_title")
+        if not isinstance(self.study_title, str):
+            self.study_title = str(self.study_title)
+
+        if self._is_empty(self.inclusion_exclusion_criteria):
+            self.MissingRequiredField("inclusion_exclusion_criteria")
+        if not isinstance(self.inclusion_exclusion_criteria, str):
+            self.inclusion_exclusion_criteria = str(self.inclusion_exclusion_criteria)
+
+        if self._is_empty(self.grants):
+            self.MissingRequiredField("grants")
+        if not isinstance(self.grants, str):
+            self.grants = str(self.grants)
+
+        if self._is_empty(self.collected_by):
+            self.MissingRequiredField("collected_by")
+        if not isinstance(self.collected_by, str):
+            self.collected_by = str(self.collected_by)
+
+        if self._is_empty(self.lab_name):
+            self.MissingRequiredField("lab_name")
+        if not isinstance(self.lab_name, str):
+            self.lab_name = str(self.lab_name)
+
+        if self._is_empty(self.lab_address):
+            self.MissingRequiredField("lab_address")
+        if not isinstance(self.lab_address, str):
+            self.lab_address = str(self.lab_address)
+
+        if self._is_empty(self.submitted_by):
+            self.MissingRequiredField("submitted_by")
+        if not isinstance(self.submitted_by, str):
+            self.submitted_by = str(self.submitted_by)
+
+        if self._is_empty(self.keywords_study):
+            self.MissingRequiredField("keywords_study")
+        if not isinstance(self.keywords_study, list):
+            self.keywords_study = [self.keywords_study] if self.keywords_study is not None else []
+        self.keywords_study = [v if isinstance(v, KeywordsStudy) else KeywordsStudy(v) for v in self.keywords_study]
+
+        if self.study_description is not None and not isinstance(self.study_description, str):
+            self.study_description = str(self.study_description)
+
+        if self.study_contact is not None and not isinstance(self.study_contact, str):
+            self.study_contact = str(self.study_contact)
+
+        if self.pub_ids is not None and not isinstance(self.pub_ids, str):
+            self.pub_ids = str(self.pub_ids)
+
+        if self.adc_publish_date is not None and not isinstance(self.adc_publish_date, XSDDateTime):
+            self.adc_publish_date = XSDDateTime(self.adc_publish_date)
+
+        if self.adc_update_date is not None and not isinstance(self.adc_update_date, XSDDateTime):
+            self.adc_update_date = XSDDateTime(self.adc_update_date)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Subject(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Subject"]
+    class_class_curie: ClassVar[str] = "ak_schema:Subject"
+    class_name: ClassVar[str] = "Subject"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Subject
+
+    subject_id: str = None
+    synthetic: Union[bool, Bool] = None
+    sex: Union[str, "Sex"] = None
+    age_min: float = None
+    age_max: float = None
+    age_unit: Union[str, "AgeUnit"] = None
+    ancestry_population: str = None
+    strain_name: str = None
+    linked_subjects: str = None
+    link_type: str = None
+    species: Optional[Union[str, "Species"]] = None
+    age_event: Optional[Union[str, LifeEventAkcId]] = None
+    ethnicity: Optional[Union[str, "Ethnicity"]] = None
+    race: Optional[Union[str, "Race"]] = None
+    diagnosis: Optional[Union[Union[dict, "Diagnosis"], List[Union[dict, "Diagnosis"]]]] = empty_list()
+    genotype: Optional[Union[dict, SubjectGenotype]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.subject_id):
+            self.MissingRequiredField("subject_id")
+        if not isinstance(self.subject_id, str):
+            self.subject_id = str(self.subject_id)
+
+        if self._is_empty(self.synthetic):
+            self.MissingRequiredField("synthetic")
+        if not isinstance(self.synthetic, Bool):
+            self.synthetic = Bool(self.synthetic)
+
+        if self._is_empty(self.sex):
+            self.MissingRequiredField("sex")
+        if not isinstance(self.sex, Sex):
+            self.sex = Sex(self.sex)
+
+        if self._is_empty(self.age_min):
+            self.MissingRequiredField("age_min")
+        if not isinstance(self.age_min, float):
+            self.age_min = float(self.age_min)
+
+        if self._is_empty(self.age_max):
+            self.MissingRequiredField("age_max")
+        if not isinstance(self.age_max, float):
+            self.age_max = float(self.age_max)
+
+        if self._is_empty(self.ancestry_population):
+            self.MissingRequiredField("ancestry_population")
+        if not isinstance(self.ancestry_population, str):
+            self.ancestry_population = str(self.ancestry_population)
+
+        if self._is_empty(self.strain_name):
+            self.MissingRequiredField("strain_name")
+        if not isinstance(self.strain_name, str):
+            self.strain_name = str(self.strain_name)
+
+        if self._is_empty(self.linked_subjects):
+            self.MissingRequiredField("linked_subjects")
+        if not isinstance(self.linked_subjects, str):
+            self.linked_subjects = str(self.linked_subjects)
+
+        if self._is_empty(self.link_type):
+            self.MissingRequiredField("link_type")
+        if not isinstance(self.link_type, str):
+            self.link_type = str(self.link_type)
+
+        if self.species is not None and not isinstance(self.species, Species):
+            self.species = Species(self.species)
+
+        if self.age_event is not None and not isinstance(self.age_event, LifeEventAkcId):
+            self.age_event = LifeEventAkcId(self.age_event)
+
+        if self.ethnicity is not None and not isinstance(self.ethnicity, Ethnicity):
+            self.ethnicity = Ethnicity(self.ethnicity)
+
+        if self.race is not None and not isinstance(self.race, Race):
+            self.race = Race(self.race)
+
+        self._normalize_inlined_as_dict(slot_name="diagnosis", slot_type=Diagnosis, key_name="study_group_description", keyed=False)
+
+        if self.genotype is not None and not isinstance(self.genotype, SubjectGenotype):
+            self.genotype = SubjectGenotype(**as_dict(self.genotype))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Diagnosis(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Diagnosis"]
+    class_class_curie: ClassVar[str] = "ak_schema:Diagnosis"
+    class_name: ClassVar[str] = "Diagnosis"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Diagnosis
+
+    study_group_description: str = None
+    disease_diagnosis: Union[str, "DiseaseDiagnosis"] = None
+    disease_length: str = None
+    prior_therapies: str = None
+    immunogen: str = None
+    intervention: str = None
+    medical_history: str = None
+    disease_stage: Optional[Union[str, "DiseaseStage"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.study_group_description):
+            self.MissingRequiredField("study_group_description")
+        if not isinstance(self.study_group_description, str):
+            self.study_group_description = str(self.study_group_description)
+
+        if self._is_empty(self.disease_length):
+            self.MissingRequiredField("disease_length")
+        if not isinstance(self.disease_length, str):
+            self.disease_length = str(self.disease_length)
+
+        if self._is_empty(self.prior_therapies):
+            self.MissingRequiredField("prior_therapies")
+        if not isinstance(self.prior_therapies, str):
+            self.prior_therapies = str(self.prior_therapies)
+
+        if self._is_empty(self.immunogen):
+            self.MissingRequiredField("immunogen")
+        if not isinstance(self.immunogen, str):
+            self.immunogen = str(self.immunogen)
+
+        if self._is_empty(self.intervention):
+            self.MissingRequiredField("intervention")
+        if not isinstance(self.intervention, str):
+            self.intervention = str(self.intervention)
+
+        if self._is_empty(self.medical_history):
+            self.MissingRequiredField("medical_history")
+        if not isinstance(self.medical_history, str):
+            self.medical_history = str(self.medical_history)
+
+        if self.disease_stage is not None and not isinstance(self.disease_stage, DiseaseStage):
+            self.disease_stage = DiseaseStage(self.disease_stage)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Sample(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Sample"]
+    class_class_curie: ClassVar[str] = "ak_schema:Sample"
+    class_name: ClassVar[str] = "Sample"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Sample
+
+    sample_id: str = None
+    sample_type: str = None
+    tissue: Union[str, "Tissue"] = None
+    anatomic_site: str = None
+    disease_state_sample: str = None
+    collection_time_point_relative: float = None
+    collection_time_point_relative_unit: Union[str, "CollectionTimePointRelativeUnit"] = None
+    collection_time_point_reference: str = None
+    biomaterial_provider: str = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sample_id):
+            self.MissingRequiredField("sample_id")
+        if not isinstance(self.sample_id, str):
+            self.sample_id = str(self.sample_id)
+
+        if self._is_empty(self.sample_type):
+            self.MissingRequiredField("sample_type")
+        if not isinstance(self.sample_type, str):
+            self.sample_type = str(self.sample_type)
+
+        if self._is_empty(self.anatomic_site):
+            self.MissingRequiredField("anatomic_site")
+        if not isinstance(self.anatomic_site, str):
+            self.anatomic_site = str(self.anatomic_site)
+
+        if self._is_empty(self.disease_state_sample):
+            self.MissingRequiredField("disease_state_sample")
+        if not isinstance(self.disease_state_sample, str):
+            self.disease_state_sample = str(self.disease_state_sample)
+
+        if self._is_empty(self.collection_time_point_relative):
+            self.MissingRequiredField("collection_time_point_relative")
+        if not isinstance(self.collection_time_point_relative, float):
+            self.collection_time_point_relative = float(self.collection_time_point_relative)
+
+        if self._is_empty(self.collection_time_point_reference):
+            self.MissingRequiredField("collection_time_point_reference")
+        if not isinstance(self.collection_time_point_reference, str):
+            self.collection_time_point_reference = str(self.collection_time_point_reference)
+
+        if self._is_empty(self.biomaterial_provider):
+            self.MissingRequiredField("biomaterial_provider")
+        if not isinstance(self.biomaterial_provider, str):
+            self.biomaterial_provider = str(self.biomaterial_provider)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CellProcessing(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:CellProcessing"
+    class_name: ClassVar[str] = "CellProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellProcessing
+
+    tissue_processing: str = None
+    cell_subset: Union[str, "CellSubset"] = None
+    cell_phenotype: str = None
+    single_cell: Union[bool, Bool] = None
+    cell_number: int = None
+    cells_per_reaction: int = None
+    cell_storage: Union[bool, Bool] = None
+    cell_quality: str = None
+    cell_isolation: str = None
+    cell_processing_protocol: str = None
+    cell_species: Optional[Union[str, "CellSpecies"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.tissue_processing):
+            self.MissingRequiredField("tissue_processing")
+        if not isinstance(self.tissue_processing, str):
+            self.tissue_processing = str(self.tissue_processing)
+
+        if self._is_empty(self.cell_phenotype):
+            self.MissingRequiredField("cell_phenotype")
+        if not isinstance(self.cell_phenotype, str):
+            self.cell_phenotype = str(self.cell_phenotype)
+
+        if self._is_empty(self.single_cell):
+            self.MissingRequiredField("single_cell")
+        if not isinstance(self.single_cell, Bool):
+            self.single_cell = Bool(self.single_cell)
+
+        if self._is_empty(self.cell_number):
+            self.MissingRequiredField("cell_number")
+        if not isinstance(self.cell_number, int):
+            self.cell_number = int(self.cell_number)
+
+        if self._is_empty(self.cells_per_reaction):
+            self.MissingRequiredField("cells_per_reaction")
+        if not isinstance(self.cells_per_reaction, int):
+            self.cells_per_reaction = int(self.cells_per_reaction)
+
+        if self._is_empty(self.cell_storage):
+            self.MissingRequiredField("cell_storage")
+        if not isinstance(self.cell_storage, Bool):
+            self.cell_storage = Bool(self.cell_storage)
+
+        if self._is_empty(self.cell_quality):
+            self.MissingRequiredField("cell_quality")
+        if not isinstance(self.cell_quality, str):
+            self.cell_quality = str(self.cell_quality)
+
+        if self._is_empty(self.cell_isolation):
+            self.MissingRequiredField("cell_isolation")
+        if not isinstance(self.cell_isolation, str):
+            self.cell_isolation = str(self.cell_isolation)
+
+        if self._is_empty(self.cell_processing_protocol):
+            self.MissingRequiredField("cell_processing_protocol")
+        if not isinstance(self.cell_processing_protocol, str):
+            self.cell_processing_protocol = str(self.cell_processing_protocol)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class PCRTarget(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PCRTarget"]
+    class_class_curie: ClassVar[str] = "ak_schema:PCRTarget"
+    class_name: ClassVar[str] = "PCRTarget"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PCRTarget
+
+    pcr_target_locus: Union[str, "PcrTargetLocus"] = None
+    forward_pcr_primer_target_location: str = None
+    reverse_pcr_primer_target_location: str = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.pcr_target_locus):
+            self.MissingRequiredField("pcr_target_locus")
+        if not isinstance(self.pcr_target_locus, PcrTargetLocus):
+            self.pcr_target_locus = PcrTargetLocus(self.pcr_target_locus)
+
+        if self._is_empty(self.forward_pcr_primer_target_location):
+            self.MissingRequiredField("forward_pcr_primer_target_location")
+        if not isinstance(self.forward_pcr_primer_target_location, str):
+            self.forward_pcr_primer_target_location = str(self.forward_pcr_primer_target_location)
+
+        if self._is_empty(self.reverse_pcr_primer_target_location):
+            self.MissingRequiredField("reverse_pcr_primer_target_location")
+        if not isinstance(self.reverse_pcr_primer_target_location, str):
+            self.reverse_pcr_primer_target_location = str(self.reverse_pcr_primer_target_location)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SequencingRun(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingRun"]
+    class_class_curie: ClassVar[str] = "ak_schema:SequencingRun"
+    class_name: ClassVar[str] = "SequencingRun"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequencingRun
+
+    sequencing_run_id: str = None
+    total_reads_passing_qc_filter: int = None
+    sequencing_platform: str = None
+    sequencing_facility: str = None
+    sequencing_run_date: Union[str, XSDDateTime] = None
+    sequencing_kit: str = None
+    sequencing_files: Optional[Union[dict, "SequencingData"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequencing_run_id):
+            self.MissingRequiredField("sequencing_run_id")
+        if not isinstance(self.sequencing_run_id, str):
+            self.sequencing_run_id = str(self.sequencing_run_id)
+
+        if self._is_empty(self.total_reads_passing_qc_filter):
+            self.MissingRequiredField("total_reads_passing_qc_filter")
+        if not isinstance(self.total_reads_passing_qc_filter, int):
+            self.total_reads_passing_qc_filter = int(self.total_reads_passing_qc_filter)
+
+        if self._is_empty(self.sequencing_platform):
+            self.MissingRequiredField("sequencing_platform")
+        if not isinstance(self.sequencing_platform, str):
+            self.sequencing_platform = str(self.sequencing_platform)
+
+        if self._is_empty(self.sequencing_facility):
+            self.MissingRequiredField("sequencing_facility")
+        if not isinstance(self.sequencing_facility, str):
+            self.sequencing_facility = str(self.sequencing_facility)
+
+        if self._is_empty(self.sequencing_run_date):
+            self.MissingRequiredField("sequencing_run_date")
+        if not isinstance(self.sequencing_run_date, XSDDateTime):
+            self.sequencing_run_date = XSDDateTime(self.sequencing_run_date)
+
+        if self._is_empty(self.sequencing_kit):
+            self.MissingRequiredField("sequencing_kit")
+        if not isinstance(self.sequencing_kit, str):
+            self.sequencing_kit = str(self.sequencing_kit)
+
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
+            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SequencingData(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingData"]
+    class_class_curie: ClassVar[str] = "ak_schema:SequencingData"
+    class_name: ClassVar[str] = "SequencingData"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequencingData
+
+    sequencing_data_id: str = None
+    file_type: Union[str, "FileType"] = None
+    filename: str = None
+    read_direction: Union[str, "ReadDirection"] = None
+    read_length: int = None
+    paired_filename: str = None
+    paired_read_direction: Union[str, "PairedReadDirection"] = None
+    paired_read_length: int = None
+    index_filename: Optional[str] = None
+    index_length: Optional[int] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequencing_data_id):
+            self.MissingRequiredField("sequencing_data_id")
+        if not isinstance(self.sequencing_data_id, str):
+            self.sequencing_data_id = str(self.sequencing_data_id)
+
+        if self._is_empty(self.file_type):
+            self.MissingRequiredField("file_type")
+        if not isinstance(self.file_type, FileType):
+            self.file_type = FileType(self.file_type)
+
+        if self._is_empty(self.filename):
+            self.MissingRequiredField("filename")
+        if not isinstance(self.filename, str):
+            self.filename = str(self.filename)
+
+        if self._is_empty(self.read_direction):
+            self.MissingRequiredField("read_direction")
+        if not isinstance(self.read_direction, ReadDirection):
+            self.read_direction = ReadDirection(self.read_direction)
+
+        if self._is_empty(self.read_length):
+            self.MissingRequiredField("read_length")
+        if not isinstance(self.read_length, int):
+            self.read_length = int(self.read_length)
+
+        if self._is_empty(self.paired_filename):
+            self.MissingRequiredField("paired_filename")
+        if not isinstance(self.paired_filename, str):
+            self.paired_filename = str(self.paired_filename)
+
+        if self._is_empty(self.paired_read_direction):
+            self.MissingRequiredField("paired_read_direction")
+        if not isinstance(self.paired_read_direction, PairedReadDirection):
+            self.paired_read_direction = PairedReadDirection(self.paired_read_direction)
+
+        if self._is_empty(self.paired_read_length):
+            self.MissingRequiredField("paired_read_length")
+        if not isinstance(self.paired_read_length, int):
+            self.paired_read_length = int(self.paired_read_length)
+
+        if self.index_filename is not None and not isinstance(self.index_filename, str):
+            self.index_filename = str(self.index_filename)
+
+        if self.index_length is not None and not isinstance(self.index_length, int):
+            self.index_length = int(self.index_length)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataProcessing(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DataProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:DataProcessing"
+    class_name: ClassVar[str] = "DataProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DataProcessing
+
+    software_versions: str = None
+    paired_reads_assembly: str = None
+    quality_thresholds: str = None
+    primer_match_cutoffs: str = None
+    collapsing_method: str = None
+    data_processing_protocols: str = None
+    germline_database: str = None
+    data_processing_id: Optional[str] = None
+    primary_annotation: Optional[Union[bool, Bool]] = None
+    data_processing_files: Optional[Union[str, List[str]]] = empty_list()
+    germline_set_ref: Optional[str] = None
+    analysis_provenance_id: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.software_versions):
+            self.MissingRequiredField("software_versions")
+        if not isinstance(self.software_versions, str):
+            self.software_versions = str(self.software_versions)
+
+        if self._is_empty(self.paired_reads_assembly):
+            self.MissingRequiredField("paired_reads_assembly")
+        if not isinstance(self.paired_reads_assembly, str):
+            self.paired_reads_assembly = str(self.paired_reads_assembly)
+
+        if self._is_empty(self.quality_thresholds):
+            self.MissingRequiredField("quality_thresholds")
+        if not isinstance(self.quality_thresholds, str):
+            self.quality_thresholds = str(self.quality_thresholds)
+
+        if self._is_empty(self.primer_match_cutoffs):
+            self.MissingRequiredField("primer_match_cutoffs")
+        if not isinstance(self.primer_match_cutoffs, str):
+            self.primer_match_cutoffs = str(self.primer_match_cutoffs)
+
+        if self._is_empty(self.collapsing_method):
+            self.MissingRequiredField("collapsing_method")
+        if not isinstance(self.collapsing_method, str):
+            self.collapsing_method = str(self.collapsing_method)
+
+        if self._is_empty(self.data_processing_protocols):
+            self.MissingRequiredField("data_processing_protocols")
+        if not isinstance(self.data_processing_protocols, str):
+            self.data_processing_protocols = str(self.data_processing_protocols)
+
+        if self._is_empty(self.germline_database):
+            self.MissingRequiredField("germline_database")
+        if not isinstance(self.germline_database, str):
+            self.germline_database = str(self.germline_database)
+
+        if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
+            self.data_processing_id = str(self.data_processing_id)
+
+        if self.primary_annotation is not None and not isinstance(self.primary_annotation, Bool):
+            self.primary_annotation = Bool(self.primary_annotation)
+
+        if not isinstance(self.data_processing_files, list):
+            self.data_processing_files = [self.data_processing_files] if self.data_processing_files is not None else []
+        self.data_processing_files = [v if isinstance(v, str) else str(v) for v in self.data_processing_files]
+
+        if self.germline_set_ref is not None and not isinstance(self.germline_set_ref, str):
+            self.germline_set_ref = str(self.germline_set_ref)
+
+        if self.analysis_provenance_id is not None and not isinstance(self.analysis_provenance_id, str):
+            self.analysis_provenance_id = str(self.analysis_provenance_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Repertoire(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Repertoire"]
+    class_class_curie: ClassVar[str] = "ak_schema:Repertoire"
+    class_name: ClassVar[str] = "Repertoire"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Repertoire
+
+    study: Union[dict, Study] = None
+    subject: Union[dict, Subject] = None
+    sample: Union[Union[dict, "SampleProcessing"], List[Union[dict, "SampleProcessing"]]] = None
+    data_processing: Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]] = None
+    repertoire_id: Optional[str] = None
+    repertoire_name: Optional[str] = None
+    repertoire_description: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.study):
+            self.MissingRequiredField("study")
+        if not isinstance(self.study, Study):
+            self.study = Study(**as_dict(self.study))
+
+        if self._is_empty(self.subject):
+            self.MissingRequiredField("subject")
+        if not isinstance(self.subject, Subject):
+            self.subject = Subject(**as_dict(self.subject))
+
+        if self._is_empty(self.sample):
+            self.MissingRequiredField("sample")
+        self._normalize_inlined_as_dict(slot_name="sample", slot_type=SampleProcessing, key_name="sample_id", keyed=False)
+
+        if self._is_empty(self.data_processing):
+            self.MissingRequiredField("data_processing")
+        self._normalize_inlined_as_dict(slot_name="data_processing", slot_type=DataProcessing, key_name="software_versions", keyed=False)
+
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
+
+        if self.repertoire_name is not None and not isinstance(self.repertoire_name, str):
+            self.repertoire_name = str(self.repertoire_name)
+
+        if self.repertoire_description is not None and not isinstance(self.repertoire_description, str):
+            self.repertoire_description = str(self.repertoire_description)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class RepertoireGroup(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroup"]
+    class_class_curie: ClassVar[str] = "ak_schema:RepertoireGroup"
+    class_name: ClassVar[str] = "RepertoireGroup"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireGroup
+
+    repertoire_group_id: str = None
+    repertoires: Union[str, List[str]] = None
+    repertoire_group_name: Optional[str] = None
+    repertoire_group_description: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.repertoire_group_id):
+            self.MissingRequiredField("repertoire_group_id")
+        if not isinstance(self.repertoire_group_id, str):
+            self.repertoire_group_id = str(self.repertoire_group_id)
+
+        if self._is_empty(self.repertoires):
+            self.MissingRequiredField("repertoires")
+        if not isinstance(self.repertoires, list):
+            self.repertoires = [self.repertoires] if self.repertoires is not None else []
+        self.repertoires = [v if isinstance(v, str) else str(v) for v in self.repertoires]
+
+        if self.repertoire_group_name is not None and not isinstance(self.repertoire_group_name, str):
+            self.repertoire_group_name = str(self.repertoire_group_name)
+
+        if self.repertoire_group_description is not None and not isinstance(self.repertoire_group_description, str):
+            self.repertoire_group_description = str(self.repertoire_group_description)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Alignment(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Alignment"]
+    class_class_curie: ClassVar[str] = "ak_schema:Alignment"
+    class_name: ClassVar[str] = "Alignment"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Alignment
+
+    sequence_id: str = None
+    segment: str = None
+    call: str = None
+    score: float = None
+    cigar: str = None
+    rev_comp: Optional[Union[bool, Bool]] = None
+    identity: Optional[float] = None
+    support: Optional[float] = None
+    sequence_start: Optional[int] = None
+    sequence_end: Optional[int] = None
+    germline_start: Optional[int] = None
+    germline_end: Optional[int] = None
+    rank: Optional[int] = None
+    data_processing_id: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequence_id):
+            self.MissingRequiredField("sequence_id")
+        if not isinstance(self.sequence_id, str):
+            self.sequence_id = str(self.sequence_id)
+
+        if self._is_empty(self.segment):
+            self.MissingRequiredField("segment")
+        if not isinstance(self.segment, str):
+            self.segment = str(self.segment)
+
+        if self._is_empty(self.call):
+            self.MissingRequiredField("call")
+        if not isinstance(self.call, str):
+            self.call = str(self.call)
+
+        if self._is_empty(self.score):
+            self.MissingRequiredField("score")
+        if not isinstance(self.score, float):
+            self.score = float(self.score)
+
+        if self._is_empty(self.cigar):
+            self.MissingRequiredField("cigar")
+        if not isinstance(self.cigar, str):
+            self.cigar = str(self.cigar)
+
+        if self.rev_comp is not None and not isinstance(self.rev_comp, Bool):
+            self.rev_comp = Bool(self.rev_comp)
+
+        if self.identity is not None and not isinstance(self.identity, float):
+            self.identity = float(self.identity)
+
+        if self.support is not None and not isinstance(self.support, float):
+            self.support = float(self.support)
+
+        if self.sequence_start is not None and not isinstance(self.sequence_start, int):
+            self.sequence_start = int(self.sequence_start)
+
+        if self.sequence_end is not None and not isinstance(self.sequence_end, int):
+            self.sequence_end = int(self.sequence_end)
+
+        if self.germline_start is not None and not isinstance(self.germline_start, int):
+            self.germline_start = int(self.germline_start)
+
+        if self.germline_end is not None and not isinstance(self.germline_end, int):
+            self.germline_end = int(self.germline_end)
+
+        if self.rank is not None and not isinstance(self.rank, int):
+            self.rank = int(self.rank)
+
+        if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
+            self.data_processing_id = str(self.data_processing_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Rearrangement(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Rearrangement"]
+    class_class_curie: ClassVar[str] = "ak_schema:Rearrangement"
+    class_name: ClassVar[str] = "Rearrangement"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Rearrangement
+
+    sequence_id: str = None
+    sequence: str = None
+    productive: Union[bool, Bool] = None
+    germline_alignment: str = None
+    v_cigar: str = None
+    d_cigar: str = None
+    j_cigar: str = None
+    quality: Optional[str] = None
+    sequence_aa: Optional[str] = None
+    rev_comp: Optional[Union[bool, Bool]] = None
+    vj_in_frame: Optional[Union[bool, Bool]] = None
+    stop_codon: Optional[Union[bool, Bool]] = None
+    complete_vdj: Optional[Union[bool, Bool]] = None
+    locus: Optional[Union[str, "Locus"]] = None
+    v_call: Optional[str] = None
+    d_call: Optional[str] = None
+    d2_call: Optional[str] = None
+    j_call: Optional[str] = None
+    c_call: Optional[str] = None
+    sequence_alignment: Optional[str] = None
+    quality_alignment: Optional[str] = None
+    sequence_alignment_aa: Optional[str] = None
+    germline_alignment_aa: Optional[str] = None
+    junction: Optional[str] = None
+    junction_aa: Optional[str] = None
+    np1: Optional[str] = None
+    np1_aa: Optional[str] = None
+    np2: Optional[str] = None
+    np2_aa: Optional[str] = None
+    np3: Optional[str] = None
+    np3_aa: Optional[str] = None
+    cdr1: Optional[str] = None
+    cdr1_aa: Optional[str] = None
+    cdr2: Optional[str] = None
+    cdr2_aa: Optional[str] = None
+    cdr3: Optional[str] = None
+    cdr3_aa: Optional[str] = None
+    fwr1: Optional[str] = None
+    fwr1_aa: Optional[str] = None
+    fwr2: Optional[str] = None
+    fwr2_aa: Optional[str] = None
+    fwr3: Optional[str] = None
+    fwr3_aa: Optional[str] = None
+    fwr4: Optional[str] = None
+    fwr4_aa: Optional[str] = None
+    v_score: Optional[float] = None
+    v_identity: Optional[float] = None
+    v_support: Optional[float] = None
+    d_score: Optional[float] = None
+    d_identity: Optional[float] = None
+    d_support: Optional[float] = None
+    d2_score: Optional[float] = None
+    d2_identity: Optional[float] = None
+    d2_support: Optional[float] = None
+    d2_cigar: Optional[str] = None
+    j_score: Optional[float] = None
+    j_identity: Optional[float] = None
+    j_support: Optional[float] = None
+    c_score: Optional[float] = None
+    c_identity: Optional[float] = None
+    c_support: Optional[float] = None
+    c_cigar: Optional[str] = None
+    v_sequence_start: Optional[int] = None
+    v_sequence_end: Optional[int] = None
+    v_germline_start: Optional[int] = None
+    v_germline_end: Optional[int] = None
+    v_alignment_start: Optional[int] = None
+    v_alignment_end: Optional[int] = None
+    d_sequence_start: Optional[int] = None
+    d_sequence_end: Optional[int] = None
+    d_germline_start: Optional[int] = None
+    d_germline_end: Optional[int] = None
+    d_alignment_start: Optional[int] = None
+    d_alignment_end: Optional[int] = None
+    d2_sequence_start: Optional[int] = None
+    d2_sequence_end: Optional[int] = None
+    d2_germline_start: Optional[int] = None
+    d2_germline_end: Optional[int] = None
+    d2_alignment_start: Optional[int] = None
+    d2_alignment_end: Optional[int] = None
+    j_sequence_start: Optional[int] = None
+    j_sequence_end: Optional[int] = None
+    j_germline_start: Optional[int] = None
+    j_germline_end: Optional[int] = None
+    j_alignment_start: Optional[int] = None
+    j_alignment_end: Optional[int] = None
+    c_sequence_start: Optional[int] = None
+    c_sequence_end: Optional[int] = None
+    c_germline_start: Optional[int] = None
+    c_germline_end: Optional[int] = None
+    c_alignment_start: Optional[int] = None
+    c_alignment_end: Optional[int] = None
+    cdr1_start: Optional[int] = None
+    cdr1_end: Optional[int] = None
+    cdr2_start: Optional[int] = None
+    cdr2_end: Optional[int] = None
+    cdr3_start: Optional[int] = None
+    cdr3_end: Optional[int] = None
+    fwr1_start: Optional[int] = None
+    fwr1_end: Optional[int] = None
+    fwr2_start: Optional[int] = None
+    fwr2_end: Optional[int] = None
+    fwr3_start: Optional[int] = None
+    fwr3_end: Optional[int] = None
+    fwr4_start: Optional[int] = None
+    fwr4_end: Optional[int] = None
+    v_sequence_alignment: Optional[str] = None
+    v_sequence_alignment_aa: Optional[str] = None
+    d_sequence_alignment: Optional[str] = None
+    d_sequence_alignment_aa: Optional[str] = None
+    d2_sequence_alignment: Optional[str] = None
+    d2_sequence_alignment_aa: Optional[str] = None
+    j_sequence_alignment: Optional[str] = None
+    j_sequence_alignment_aa: Optional[str] = None
+    c_sequence_alignment: Optional[str] = None
+    c_sequence_alignment_aa: Optional[str] = None
+    v_germline_alignment: Optional[str] = None
+    v_germline_alignment_aa: Optional[str] = None
+    d_germline_alignment: Optional[str] = None
+    d_germline_alignment_aa: Optional[str] = None
+    d2_germline_alignment: Optional[str] = None
+    d2_germline_alignment_aa: Optional[str] = None
+    j_germline_alignment: Optional[str] = None
+    j_germline_alignment_aa: Optional[str] = None
+    c_germline_alignment: Optional[str] = None
+    c_germline_alignment_aa: Optional[str] = None
+    junction_length: Optional[int] = None
+    junction_aa_length: Optional[int] = None
+    np1_length: Optional[int] = None
+    np2_length: Optional[int] = None
+    np3_length: Optional[int] = None
+    n1_length: Optional[int] = None
+    n2_length: Optional[int] = None
+    n3_length: Optional[int] = None
+    p3v_length: Optional[int] = None
+    p5d_length: Optional[int] = None
+    p3d_length: Optional[int] = None
+    p5d2_length: Optional[int] = None
+    p3d2_length: Optional[int] = None
+    p5j_length: Optional[int] = None
+    v_frameshift: Optional[Union[bool, Bool]] = None
+    j_frameshift: Optional[Union[bool, Bool]] = None
+    d_frame: Optional[int] = None
+    d2_frame: Optional[int] = None
+    consensus_count: Optional[int] = None
+    duplicate_count: Optional[int] = None
+    umi_count: Optional[int] = None
+    cell_id: Optional[str] = None
+    clone_id: Optional[str] = None
+    repertoire_id: Optional[str] = None
+    sample_processing_id: Optional[str] = None
+    data_processing_id: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequence_id):
+            self.MissingRequiredField("sequence_id")
+        if not isinstance(self.sequence_id, str):
+            self.sequence_id = str(self.sequence_id)
+
+        if self._is_empty(self.sequence):
+            self.MissingRequiredField("sequence")
+        if not isinstance(self.sequence, str):
+            self.sequence = str(self.sequence)
+
+        if self._is_empty(self.productive):
+            self.MissingRequiredField("productive")
+        if not isinstance(self.productive, Bool):
+            self.productive = Bool(self.productive)
+
+        if self._is_empty(self.germline_alignment):
+            self.MissingRequiredField("germline_alignment")
+        if not isinstance(self.germline_alignment, str):
+            self.germline_alignment = str(self.germline_alignment)
+
+        if self._is_empty(self.v_cigar):
+            self.MissingRequiredField("v_cigar")
+        if not isinstance(self.v_cigar, str):
+            self.v_cigar = str(self.v_cigar)
+
+        if self._is_empty(self.d_cigar):
+            self.MissingRequiredField("d_cigar")
+        if not isinstance(self.d_cigar, str):
+            self.d_cigar = str(self.d_cigar)
+
+        if self._is_empty(self.j_cigar):
+            self.MissingRequiredField("j_cigar")
+        if not isinstance(self.j_cigar, str):
+            self.j_cigar = str(self.j_cigar)
+
+        if self.quality is not None and not isinstance(self.quality, str):
+            self.quality = str(self.quality)
+
+        if self.sequence_aa is not None and not isinstance(self.sequence_aa, str):
+            self.sequence_aa = str(self.sequence_aa)
+
+        if self.rev_comp is not None and not isinstance(self.rev_comp, Bool):
+            self.rev_comp = Bool(self.rev_comp)
+
+        if self.vj_in_frame is not None and not isinstance(self.vj_in_frame, Bool):
+            self.vj_in_frame = Bool(self.vj_in_frame)
+
+        if self.stop_codon is not None and not isinstance(self.stop_codon, Bool):
+            self.stop_codon = Bool(self.stop_codon)
+
+        if self.complete_vdj is not None and not isinstance(self.complete_vdj, Bool):
+            self.complete_vdj = Bool(self.complete_vdj)
+
+        if self.locus is not None and not isinstance(self.locus, Locus):
+            self.locus = Locus(self.locus)
+
+        if self.v_call is not None and not isinstance(self.v_call, str):
+            self.v_call = str(self.v_call)
+
+        if self.d_call is not None and not isinstance(self.d_call, str):
+            self.d_call = str(self.d_call)
+
+        if self.d2_call is not None and not isinstance(self.d2_call, str):
+            self.d2_call = str(self.d2_call)
+
+        if self.j_call is not None and not isinstance(self.j_call, str):
+            self.j_call = str(self.j_call)
+
+        if self.c_call is not None and not isinstance(self.c_call, str):
+            self.c_call = str(self.c_call)
+
+        if self.sequence_alignment is not None and not isinstance(self.sequence_alignment, str):
+            self.sequence_alignment = str(self.sequence_alignment)
+
+        if self.quality_alignment is not None and not isinstance(self.quality_alignment, str):
+            self.quality_alignment = str(self.quality_alignment)
+
+        if self.sequence_alignment_aa is not None and not isinstance(self.sequence_alignment_aa, str):
+            self.sequence_alignment_aa = str(self.sequence_alignment_aa)
+
+        if self.germline_alignment_aa is not None and not isinstance(self.germline_alignment_aa, str):
+            self.germline_alignment_aa = str(self.germline_alignment_aa)
+
+        if self.junction is not None and not isinstance(self.junction, str):
+            self.junction = str(self.junction)
+
+        if self.junction_aa is not None and not isinstance(self.junction_aa, str):
+            self.junction_aa = str(self.junction_aa)
+
+        if self.np1 is not None and not isinstance(self.np1, str):
+            self.np1 = str(self.np1)
+
+        if self.np1_aa is not None and not isinstance(self.np1_aa, str):
+            self.np1_aa = str(self.np1_aa)
+
+        if self.np2 is not None and not isinstance(self.np2, str):
+            self.np2 = str(self.np2)
+
+        if self.np2_aa is not None and not isinstance(self.np2_aa, str):
+            self.np2_aa = str(self.np2_aa)
+
+        if self.np3 is not None and not isinstance(self.np3, str):
+            self.np3 = str(self.np3)
+
+        if self.np3_aa is not None and not isinstance(self.np3_aa, str):
+            self.np3_aa = str(self.np3_aa)
+
+        if self.cdr1 is not None and not isinstance(self.cdr1, str):
+            self.cdr1 = str(self.cdr1)
+
+        if self.cdr1_aa is not None and not isinstance(self.cdr1_aa, str):
+            self.cdr1_aa = str(self.cdr1_aa)
+
+        if self.cdr2 is not None and not isinstance(self.cdr2, str):
+            self.cdr2 = str(self.cdr2)
+
+        if self.cdr2_aa is not None and not isinstance(self.cdr2_aa, str):
+            self.cdr2_aa = str(self.cdr2_aa)
+
+        if self.cdr3 is not None and not isinstance(self.cdr3, str):
+            self.cdr3 = str(self.cdr3)
+
+        if self.cdr3_aa is not None and not isinstance(self.cdr3_aa, str):
+            self.cdr3_aa = str(self.cdr3_aa)
+
+        if self.fwr1 is not None and not isinstance(self.fwr1, str):
+            self.fwr1 = str(self.fwr1)
+
+        if self.fwr1_aa is not None and not isinstance(self.fwr1_aa, str):
+            self.fwr1_aa = str(self.fwr1_aa)
+
+        if self.fwr2 is not None and not isinstance(self.fwr2, str):
+            self.fwr2 = str(self.fwr2)
+
+        if self.fwr2_aa is not None and not isinstance(self.fwr2_aa, str):
+            self.fwr2_aa = str(self.fwr2_aa)
+
+        if self.fwr3 is not None and not isinstance(self.fwr3, str):
+            self.fwr3 = str(self.fwr3)
+
+        if self.fwr3_aa is not None and not isinstance(self.fwr3_aa, str):
+            self.fwr3_aa = str(self.fwr3_aa)
+
+        if self.fwr4 is not None and not isinstance(self.fwr4, str):
+            self.fwr4 = str(self.fwr4)
+
+        if self.fwr4_aa is not None and not isinstance(self.fwr4_aa, str):
+            self.fwr4_aa = str(self.fwr4_aa)
+
+        if self.v_score is not None and not isinstance(self.v_score, float):
+            self.v_score = float(self.v_score)
+
+        if self.v_identity is not None and not isinstance(self.v_identity, float):
+            self.v_identity = float(self.v_identity)
+
+        if self.v_support is not None and not isinstance(self.v_support, float):
+            self.v_support = float(self.v_support)
+
+        if self.d_score is not None and not isinstance(self.d_score, float):
+            self.d_score = float(self.d_score)
+
+        if self.d_identity is not None and not isinstance(self.d_identity, float):
+            self.d_identity = float(self.d_identity)
+
+        if self.d_support is not None and not isinstance(self.d_support, float):
+            self.d_support = float(self.d_support)
+
+        if self.d2_score is not None and not isinstance(self.d2_score, float):
+            self.d2_score = float(self.d2_score)
+
+        if self.d2_identity is not None and not isinstance(self.d2_identity, float):
+            self.d2_identity = float(self.d2_identity)
+
+        if self.d2_support is not None and not isinstance(self.d2_support, float):
+            self.d2_support = float(self.d2_support)
+
+        if self.d2_cigar is not None and not isinstance(self.d2_cigar, str):
+            self.d2_cigar = str(self.d2_cigar)
+
+        if self.j_score is not None and not isinstance(self.j_score, float):
+            self.j_score = float(self.j_score)
+
+        if self.j_identity is not None and not isinstance(self.j_identity, float):
+            self.j_identity = float(self.j_identity)
+
+        if self.j_support is not None and not isinstance(self.j_support, float):
+            self.j_support = float(self.j_support)
+
+        if self.c_score is not None and not isinstance(self.c_score, float):
+            self.c_score = float(self.c_score)
+
+        if self.c_identity is not None and not isinstance(self.c_identity, float):
+            self.c_identity = float(self.c_identity)
+
+        if self.c_support is not None and not isinstance(self.c_support, float):
+            self.c_support = float(self.c_support)
+
+        if self.c_cigar is not None and not isinstance(self.c_cigar, str):
+            self.c_cigar = str(self.c_cigar)
+
+        if self.v_sequence_start is not None and not isinstance(self.v_sequence_start, int):
+            self.v_sequence_start = int(self.v_sequence_start)
+
+        if self.v_sequence_end is not None and not isinstance(self.v_sequence_end, int):
+            self.v_sequence_end = int(self.v_sequence_end)
+
+        if self.v_germline_start is not None and not isinstance(self.v_germline_start, int):
+            self.v_germline_start = int(self.v_germline_start)
+
+        if self.v_germline_end is not None and not isinstance(self.v_germline_end, int):
+            self.v_germline_end = int(self.v_germline_end)
+
+        if self.v_alignment_start is not None and not isinstance(self.v_alignment_start, int):
+            self.v_alignment_start = int(self.v_alignment_start)
+
+        if self.v_alignment_end is not None and not isinstance(self.v_alignment_end, int):
+            self.v_alignment_end = int(self.v_alignment_end)
+
+        if self.d_sequence_start is not None and not isinstance(self.d_sequence_start, int):
+            self.d_sequence_start = int(self.d_sequence_start)
+
+        if self.d_sequence_end is not None and not isinstance(self.d_sequence_end, int):
+            self.d_sequence_end = int(self.d_sequence_end)
+
+        if self.d_germline_start is not None and not isinstance(self.d_germline_start, int):
+            self.d_germline_start = int(self.d_germline_start)
+
+        if self.d_germline_end is not None and not isinstance(self.d_germline_end, int):
+            self.d_germline_end = int(self.d_germline_end)
+
+        if self.d_alignment_start is not None and not isinstance(self.d_alignment_start, int):
+            self.d_alignment_start = int(self.d_alignment_start)
+
+        if self.d_alignment_end is not None and not isinstance(self.d_alignment_end, int):
+            self.d_alignment_end = int(self.d_alignment_end)
+
+        if self.d2_sequence_start is not None and not isinstance(self.d2_sequence_start, int):
+            self.d2_sequence_start = int(self.d2_sequence_start)
+
+        if self.d2_sequence_end is not None and not isinstance(self.d2_sequence_end, int):
+            self.d2_sequence_end = int(self.d2_sequence_end)
+
+        if self.d2_germline_start is not None and not isinstance(self.d2_germline_start, int):
+            self.d2_germline_start = int(self.d2_germline_start)
+
+        if self.d2_germline_end is not None and not isinstance(self.d2_germline_end, int):
+            self.d2_germline_end = int(self.d2_germline_end)
+
+        if self.d2_alignment_start is not None and not isinstance(self.d2_alignment_start, int):
+            self.d2_alignment_start = int(self.d2_alignment_start)
+
+        if self.d2_alignment_end is not None and not isinstance(self.d2_alignment_end, int):
+            self.d2_alignment_end = int(self.d2_alignment_end)
+
+        if self.j_sequence_start is not None and not isinstance(self.j_sequence_start, int):
+            self.j_sequence_start = int(self.j_sequence_start)
+
+        if self.j_sequence_end is not None and not isinstance(self.j_sequence_end, int):
+            self.j_sequence_end = int(self.j_sequence_end)
+
+        if self.j_germline_start is not None and not isinstance(self.j_germline_start, int):
+            self.j_germline_start = int(self.j_germline_start)
+
+        if self.j_germline_end is not None and not isinstance(self.j_germline_end, int):
+            self.j_germline_end = int(self.j_germline_end)
+
+        if self.j_alignment_start is not None and not isinstance(self.j_alignment_start, int):
+            self.j_alignment_start = int(self.j_alignment_start)
+
+        if self.j_alignment_end is not None and not isinstance(self.j_alignment_end, int):
+            self.j_alignment_end = int(self.j_alignment_end)
+
+        if self.c_sequence_start is not None and not isinstance(self.c_sequence_start, int):
+            self.c_sequence_start = int(self.c_sequence_start)
+
+        if self.c_sequence_end is not None and not isinstance(self.c_sequence_end, int):
+            self.c_sequence_end = int(self.c_sequence_end)
+
+        if self.c_germline_start is not None and not isinstance(self.c_germline_start, int):
+            self.c_germline_start = int(self.c_germline_start)
+
+        if self.c_germline_end is not None and not isinstance(self.c_germline_end, int):
+            self.c_germline_end = int(self.c_germline_end)
+
+        if self.c_alignment_start is not None and not isinstance(self.c_alignment_start, int):
+            self.c_alignment_start = int(self.c_alignment_start)
+
+        if self.c_alignment_end is not None and not isinstance(self.c_alignment_end, int):
+            self.c_alignment_end = int(self.c_alignment_end)
+
+        if self.cdr1_start is not None and not isinstance(self.cdr1_start, int):
+            self.cdr1_start = int(self.cdr1_start)
+
+        if self.cdr1_end is not None and not isinstance(self.cdr1_end, int):
+            self.cdr1_end = int(self.cdr1_end)
+
+        if self.cdr2_start is not None and not isinstance(self.cdr2_start, int):
+            self.cdr2_start = int(self.cdr2_start)
+
+        if self.cdr2_end is not None and not isinstance(self.cdr2_end, int):
+            self.cdr2_end = int(self.cdr2_end)
+
+        if self.cdr3_start is not None and not isinstance(self.cdr3_start, int):
+            self.cdr3_start = int(self.cdr3_start)
+
+        if self.cdr3_end is not None and not isinstance(self.cdr3_end, int):
+            self.cdr3_end = int(self.cdr3_end)
+
+        if self.fwr1_start is not None and not isinstance(self.fwr1_start, int):
+            self.fwr1_start = int(self.fwr1_start)
+
+        if self.fwr1_end is not None and not isinstance(self.fwr1_end, int):
+            self.fwr1_end = int(self.fwr1_end)
+
+        if self.fwr2_start is not None and not isinstance(self.fwr2_start, int):
+            self.fwr2_start = int(self.fwr2_start)
+
+        if self.fwr2_end is not None and not isinstance(self.fwr2_end, int):
+            self.fwr2_end = int(self.fwr2_end)
+
+        if self.fwr3_start is not None and not isinstance(self.fwr3_start, int):
+            self.fwr3_start = int(self.fwr3_start)
+
+        if self.fwr3_end is not None and not isinstance(self.fwr3_end, int):
+            self.fwr3_end = int(self.fwr3_end)
+
+        if self.fwr4_start is not None and not isinstance(self.fwr4_start, int):
+            self.fwr4_start = int(self.fwr4_start)
+
+        if self.fwr4_end is not None and not isinstance(self.fwr4_end, int):
+            self.fwr4_end = int(self.fwr4_end)
+
+        if self.v_sequence_alignment is not None and not isinstance(self.v_sequence_alignment, str):
+            self.v_sequence_alignment = str(self.v_sequence_alignment)
+
+        if self.v_sequence_alignment_aa is not None and not isinstance(self.v_sequence_alignment_aa, str):
+            self.v_sequence_alignment_aa = str(self.v_sequence_alignment_aa)
+
+        if self.d_sequence_alignment is not None and not isinstance(self.d_sequence_alignment, str):
+            self.d_sequence_alignment = str(self.d_sequence_alignment)
+
+        if self.d_sequence_alignment_aa is not None and not isinstance(self.d_sequence_alignment_aa, str):
+            self.d_sequence_alignment_aa = str(self.d_sequence_alignment_aa)
+
+        if self.d2_sequence_alignment is not None and not isinstance(self.d2_sequence_alignment, str):
+            self.d2_sequence_alignment = str(self.d2_sequence_alignment)
+
+        if self.d2_sequence_alignment_aa is not None and not isinstance(self.d2_sequence_alignment_aa, str):
+            self.d2_sequence_alignment_aa = str(self.d2_sequence_alignment_aa)
+
+        if self.j_sequence_alignment is not None and not isinstance(self.j_sequence_alignment, str):
+            self.j_sequence_alignment = str(self.j_sequence_alignment)
+
+        if self.j_sequence_alignment_aa is not None and not isinstance(self.j_sequence_alignment_aa, str):
+            self.j_sequence_alignment_aa = str(self.j_sequence_alignment_aa)
+
+        if self.c_sequence_alignment is not None and not isinstance(self.c_sequence_alignment, str):
+            self.c_sequence_alignment = str(self.c_sequence_alignment)
+
+        if self.c_sequence_alignment_aa is not None and not isinstance(self.c_sequence_alignment_aa, str):
+            self.c_sequence_alignment_aa = str(self.c_sequence_alignment_aa)
+
+        if self.v_germline_alignment is not None and not isinstance(self.v_germline_alignment, str):
+            self.v_germline_alignment = str(self.v_germline_alignment)
+
+        if self.v_germline_alignment_aa is not None and not isinstance(self.v_germline_alignment_aa, str):
+            self.v_germline_alignment_aa = str(self.v_germline_alignment_aa)
+
+        if self.d_germline_alignment is not None and not isinstance(self.d_germline_alignment, str):
+            self.d_germline_alignment = str(self.d_germline_alignment)
+
+        if self.d_germline_alignment_aa is not None and not isinstance(self.d_germline_alignment_aa, str):
+            self.d_germline_alignment_aa = str(self.d_germline_alignment_aa)
+
+        if self.d2_germline_alignment is not None and not isinstance(self.d2_germline_alignment, str):
+            self.d2_germline_alignment = str(self.d2_germline_alignment)
+
+        if self.d2_germline_alignment_aa is not None and not isinstance(self.d2_germline_alignment_aa, str):
+            self.d2_germline_alignment_aa = str(self.d2_germline_alignment_aa)
+
+        if self.j_germline_alignment is not None and not isinstance(self.j_germline_alignment, str):
+            self.j_germline_alignment = str(self.j_germline_alignment)
+
+        if self.j_germline_alignment_aa is not None and not isinstance(self.j_germline_alignment_aa, str):
+            self.j_germline_alignment_aa = str(self.j_germline_alignment_aa)
+
+        if self.c_germline_alignment is not None and not isinstance(self.c_germline_alignment, str):
+            self.c_germline_alignment = str(self.c_germline_alignment)
+
+        if self.c_germline_alignment_aa is not None and not isinstance(self.c_germline_alignment_aa, str):
+            self.c_germline_alignment_aa = str(self.c_germline_alignment_aa)
+
+        if self.junction_length is not None and not isinstance(self.junction_length, int):
+            self.junction_length = int(self.junction_length)
+
+        if self.junction_aa_length is not None and not isinstance(self.junction_aa_length, int):
+            self.junction_aa_length = int(self.junction_aa_length)
+
+        if self.np1_length is not None and not isinstance(self.np1_length, int):
+            self.np1_length = int(self.np1_length)
+
+        if self.np2_length is not None and not isinstance(self.np2_length, int):
+            self.np2_length = int(self.np2_length)
+
+        if self.np3_length is not None and not isinstance(self.np3_length, int):
+            self.np3_length = int(self.np3_length)
+
+        if self.n1_length is not None and not isinstance(self.n1_length, int):
+            self.n1_length = int(self.n1_length)
+
+        if self.n2_length is not None and not isinstance(self.n2_length, int):
+            self.n2_length = int(self.n2_length)
+
+        if self.n3_length is not None and not isinstance(self.n3_length, int):
+            self.n3_length = int(self.n3_length)
+
+        if self.p3v_length is not None and not isinstance(self.p3v_length, int):
+            self.p3v_length = int(self.p3v_length)
+
+        if self.p5d_length is not None and not isinstance(self.p5d_length, int):
+            self.p5d_length = int(self.p5d_length)
+
+        if self.p3d_length is not None and not isinstance(self.p3d_length, int):
+            self.p3d_length = int(self.p3d_length)
+
+        if self.p5d2_length is not None and not isinstance(self.p5d2_length, int):
+            self.p5d2_length = int(self.p5d2_length)
+
+        if self.p3d2_length is not None and not isinstance(self.p3d2_length, int):
+            self.p3d2_length = int(self.p3d2_length)
+
+        if self.p5j_length is not None and not isinstance(self.p5j_length, int):
+            self.p5j_length = int(self.p5j_length)
+
+        if self.v_frameshift is not None and not isinstance(self.v_frameshift, Bool):
+            self.v_frameshift = Bool(self.v_frameshift)
+
+        if self.j_frameshift is not None and not isinstance(self.j_frameshift, Bool):
+            self.j_frameshift = Bool(self.j_frameshift)
+
+        if self.d_frame is not None and not isinstance(self.d_frame, int):
+            self.d_frame = int(self.d_frame)
+
+        if self.d2_frame is not None and not isinstance(self.d2_frame, int):
+            self.d2_frame = int(self.d2_frame)
+
+        if self.consensus_count is not None and not isinstance(self.consensus_count, int):
+            self.consensus_count = int(self.consensus_count)
+
+        if self.duplicate_count is not None and not isinstance(self.duplicate_count, int):
+            self.duplicate_count = int(self.duplicate_count)
+
+        if self.umi_count is not None and not isinstance(self.umi_count, int):
+            self.umi_count = int(self.umi_count)
+
+        if self.cell_id is not None and not isinstance(self.cell_id, str):
+            self.cell_id = str(self.cell_id)
+
+        if self.clone_id is not None and not isinstance(self.clone_id, str):
+            self.clone_id = str(self.clone_id)
+
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
+
+        if self.sample_processing_id is not None and not isinstance(self.sample_processing_id, str):
+            self.sample_processing_id = str(self.sample_processing_id)
+
+        if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
+            self.data_processing_id = str(self.data_processing_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Clone(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Clone"]
+    class_class_curie: ClassVar[str] = "ak_schema:Clone"
+    class_name: ClassVar[str] = "Clone"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Clone
+
+    germline_alignment: str = None
+    clone_id: Optional[str] = None
+    repertoire_id: Optional[str] = None
+    data_processing_id: Optional[str] = None
+    sequences: Optional[Union[str, List[str]]] = empty_list()
+    v_call: Optional[str] = None
+    d_call: Optional[str] = None
+    j_call: Optional[str] = None
+    junction: Optional[str] = None
+    junction_aa: Optional[str] = None
+    junction_length: Optional[int] = None
+    junction_aa_length: Optional[int] = None
+    germline_alignment_aa: Optional[str] = None
+    v_alignment_start: Optional[int] = None
+    v_alignment_end: Optional[int] = None
+    d_alignment_start: Optional[int] = None
+    d_alignment_end: Optional[int] = None
+    j_alignment_start: Optional[int] = None
+    j_alignment_end: Optional[int] = None
+    junction_start: Optional[int] = None
+    junction_end: Optional[int] = None
+    umi_count: Optional[int] = None
+    clone_count: Optional[int] = None
+    seed_id: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.germline_alignment):
+            self.MissingRequiredField("germline_alignment")
+        if not isinstance(self.germline_alignment, str):
+            self.germline_alignment = str(self.germline_alignment)
+
+        if self.clone_id is not None and not isinstance(self.clone_id, str):
+            self.clone_id = str(self.clone_id)
+
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
+
+        if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
+            self.data_processing_id = str(self.data_processing_id)
+
+        if not isinstance(self.sequences, list):
+            self.sequences = [self.sequences] if self.sequences is not None else []
+        self.sequences = [v if isinstance(v, str) else str(v) for v in self.sequences]
+
+        if self.v_call is not None and not isinstance(self.v_call, str):
+            self.v_call = str(self.v_call)
+
+        if self.d_call is not None and not isinstance(self.d_call, str):
+            self.d_call = str(self.d_call)
+
+        if self.j_call is not None and not isinstance(self.j_call, str):
+            self.j_call = str(self.j_call)
+
+        if self.junction is not None and not isinstance(self.junction, str):
+            self.junction = str(self.junction)
+
+        if self.junction_aa is not None and not isinstance(self.junction_aa, str):
+            self.junction_aa = str(self.junction_aa)
+
+        if self.junction_length is not None and not isinstance(self.junction_length, int):
+            self.junction_length = int(self.junction_length)
+
+        if self.junction_aa_length is not None and not isinstance(self.junction_aa_length, int):
+            self.junction_aa_length = int(self.junction_aa_length)
+
+        if self.germline_alignment_aa is not None and not isinstance(self.germline_alignment_aa, str):
+            self.germline_alignment_aa = str(self.germline_alignment_aa)
+
+        if self.v_alignment_start is not None and not isinstance(self.v_alignment_start, int):
+            self.v_alignment_start = int(self.v_alignment_start)
+
+        if self.v_alignment_end is not None and not isinstance(self.v_alignment_end, int):
+            self.v_alignment_end = int(self.v_alignment_end)
+
+        if self.d_alignment_start is not None and not isinstance(self.d_alignment_start, int):
+            self.d_alignment_start = int(self.d_alignment_start)
+
+        if self.d_alignment_end is not None and not isinstance(self.d_alignment_end, int):
+            self.d_alignment_end = int(self.d_alignment_end)
+
+        if self.j_alignment_start is not None and not isinstance(self.j_alignment_start, int):
+            self.j_alignment_start = int(self.j_alignment_start)
+
+        if self.j_alignment_end is not None and not isinstance(self.j_alignment_end, int):
+            self.j_alignment_end = int(self.j_alignment_end)
+
+        if self.junction_start is not None and not isinstance(self.junction_start, int):
+            self.junction_start = int(self.junction_start)
+
+        if self.junction_end is not None and not isinstance(self.junction_end, int):
+            self.junction_end = int(self.junction_end)
+
+        if self.umi_count is not None and not isinstance(self.umi_count, int):
+            self.umi_count = int(self.umi_count)
+
+        if self.clone_count is not None and not isinstance(self.clone_count, int):
+            self.clone_count = int(self.clone_count)
+
+        if self.seed_id is not None and not isinstance(self.seed_id, str):
+            self.seed_id = str(self.seed_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Tree(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Tree"]
+    class_class_curie: ClassVar[str] = "ak_schema:Tree"
+    class_name: ClassVar[str] = "Tree"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Tree
+
+    tree_id: str = None
+    newick: str = None
+    clone_id: Optional[str] = None
+    nodes: Optional[Union[Union[dict, "Node"], List[Union[dict, "Node"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.tree_id):
+            self.MissingRequiredField("tree_id")
+        if not isinstance(self.tree_id, str):
+            self.tree_id = str(self.tree_id)
+
+        if self._is_empty(self.newick):
+            self.MissingRequiredField("newick")
+        if not isinstance(self.newick, str):
+            self.newick = str(self.newick)
+
+        if self.clone_id is not None and not isinstance(self.clone_id, str):
+            self.clone_id = str(self.clone_id)
+
+        self._normalize_inlined_as_dict(slot_name="nodes", slot_type=Node, key_name="sequence_id", keyed=False)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Node(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Node"]
+    class_class_curie: ClassVar[str] = "ak_schema:Node"
+    class_name: ClassVar[str] = "Node"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Node
+
+    sequence_id: str = None
+    sequence_alignment: Optional[str] = None
+    junction: Optional[str] = None
+    junction_aa: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sequence_id):
+            self.MissingRequiredField("sequence_id")
+        if not isinstance(self.sequence_id, str):
+            self.sequence_id = str(self.sequence_id)
+
+        if self.sequence_alignment is not None and not isinstance(self.sequence_alignment, str):
+            self.sequence_alignment = str(self.sequence_alignment)
+
+        if self.junction is not None and not isinstance(self.junction, str):
+            self.junction = str(self.junction)
+
+        if self.junction_aa is not None and not isinstance(self.junction_aa, str):
+            self.junction_aa = str(self.junction_aa)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class CellExpression(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellExpression"]
+    class_class_curie: ClassVar[str] = "ak_schema:CellExpression"
+    class_name: ClassVar[str] = "CellExpression"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.CellExpression
+
+    expression_id: str = None
+    property_type: str = None
+    property: Union[str, "Property"] = None
+    cell_id: Optional[str] = None
+    repertoire_id: Optional[str] = None
+    data_processing_id: Optional[str] = None
+    value: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.expression_id):
+            self.MissingRequiredField("expression_id")
+        if not isinstance(self.expression_id, str):
+            self.expression_id = str(self.expression_id)
+
+        if self._is_empty(self.property_type):
+            self.MissingRequiredField("property_type")
+        if not isinstance(self.property_type, str):
+            self.property_type = str(self.property_type)
+
+        if self.cell_id is not None and not isinstance(self.cell_id, str):
+            self.cell_id = str(self.cell_id)
+
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
+
+        if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
+            self.data_processing_id = str(self.data_processing_id)
+
+        if self.value is not None and not isinstance(self.value, str):
+            self.value = str(self.value)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Receptor(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Receptor"]
+    class_class_curie: ClassVar[str] = "ak_schema:Receptor"
+    class_name: ClassVar[str] = "Receptor"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Receptor
+
+    receptor_id: str = None
+    receptor_hash: str = None
+    receptor_type: Union[str, "ReceptorType"] = None
+    receptor_variable_domain_1_aa: str = None
+    receptor_variable_domain_1_locus: Union[str, "ReceptorVariableDomain1Locus"] = None
+    receptor_variable_domain_2_aa: str = None
+    receptor_variable_domain_2_locus: Union[str, "ReceptorVariableDomain2Locus"] = None
+    receptor_ref: Optional[Union[str, List[str]]] = empty_list()
+    reactivity_measurements: Optional[Union[Union[dict, "ReceptorReactivity"], List[Union[dict, "ReceptorReactivity"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.receptor_id):
+            self.MissingRequiredField("receptor_id")
+        if not isinstance(self.receptor_id, str):
+            self.receptor_id = str(self.receptor_id)
+
+        if self._is_empty(self.receptor_hash):
+            self.MissingRequiredField("receptor_hash")
+        if not isinstance(self.receptor_hash, str):
+            self.receptor_hash = str(self.receptor_hash)
+
+        if self._is_empty(self.receptor_type):
+            self.MissingRequiredField("receptor_type")
+        if not isinstance(self.receptor_type, ReceptorType):
+            self.receptor_type = ReceptorType(self.receptor_type)
+
+        if self._is_empty(self.receptor_variable_domain_1_aa):
+            self.MissingRequiredField("receptor_variable_domain_1_aa")
+        if not isinstance(self.receptor_variable_domain_1_aa, str):
+            self.receptor_variable_domain_1_aa = str(self.receptor_variable_domain_1_aa)
+
+        if self._is_empty(self.receptor_variable_domain_1_locus):
+            self.MissingRequiredField("receptor_variable_domain_1_locus")
+        if not isinstance(self.receptor_variable_domain_1_locus, ReceptorVariableDomain1Locus):
+            self.receptor_variable_domain_1_locus = ReceptorVariableDomain1Locus(self.receptor_variable_domain_1_locus)
+
+        if self._is_empty(self.receptor_variable_domain_2_aa):
+            self.MissingRequiredField("receptor_variable_domain_2_aa")
+        if not isinstance(self.receptor_variable_domain_2_aa, str):
+            self.receptor_variable_domain_2_aa = str(self.receptor_variable_domain_2_aa)
+
+        if self._is_empty(self.receptor_variable_domain_2_locus):
+            self.MissingRequiredField("receptor_variable_domain_2_locus")
+        if not isinstance(self.receptor_variable_domain_2_locus, ReceptorVariableDomain2Locus):
+            self.receptor_variable_domain_2_locus = ReceptorVariableDomain2Locus(self.receptor_variable_domain_2_locus)
+
+        if not isinstance(self.receptor_ref, list):
+            self.receptor_ref = [self.receptor_ref] if self.receptor_ref is not None else []
+        self.receptor_ref = [v if isinstance(v, str) else str(v) for v in self.receptor_ref]
+
+        self._normalize_inlined_as_dict(slot_name="reactivity_measurements", slot_type=ReceptorReactivity, key_name="ligand_type", keyed=False)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class ReceptorReactivity(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ReceptorReactivity"]
+    class_class_curie: ClassVar[str] = "ak_schema:ReceptorReactivity"
+    class_name: ClassVar[str] = "ReceptorReactivity"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorReactivity
+
+    ligand_type: Union[str, "LigandType"] = None
+    antigen_type: Union[str, "AntigenType"] = None
+    antigen: Union[str, "Antigen"] = None
+    reactivity_method: Union[str, "ReactivityMethod"] = None
+    reactivity_readout: Union[str, "ReactivityReadout"] = None
+    reactivity_value: float = None
+    reactivity_unit: str = None
+    antigen_source_species: Optional[Union[str, "AntigenSourceSpecies"]] = None
+    peptide_start: Optional[int] = None
+    peptide_end: Optional[int] = None
+    mhc_class: Optional[Union[str, "MhcClass"]] = None
+    mhc_gene_1: Optional[Union[str, "MhcGene1"]] = None
+    mhc_allele_1: Optional[str] = None
+    mhc_gene_2: Optional[Union[str, "MhcGene2"]] = None
+    mhc_allele_2: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.ligand_type):
+            self.MissingRequiredField("ligand_type")
+        if not isinstance(self.ligand_type, LigandType):
+            self.ligand_type = LigandType(self.ligand_type)
+
+        if self._is_empty(self.antigen_type):
+            self.MissingRequiredField("antigen_type")
+        if not isinstance(self.antigen_type, AntigenType):
+            self.antigen_type = AntigenType(self.antigen_type)
+
+        if self._is_empty(self.reactivity_method):
+            self.MissingRequiredField("reactivity_method")
+        if not isinstance(self.reactivity_method, ReactivityMethod):
+            self.reactivity_method = ReactivityMethod(self.reactivity_method)
+
+        if self._is_empty(self.reactivity_readout):
+            self.MissingRequiredField("reactivity_readout")
+        if not isinstance(self.reactivity_readout, ReactivityReadout):
+            self.reactivity_readout = ReactivityReadout(self.reactivity_readout)
+
+        if self._is_empty(self.reactivity_value):
+            self.MissingRequiredField("reactivity_value")
+        if not isinstance(self.reactivity_value, float):
+            self.reactivity_value = float(self.reactivity_value)
+
+        if self._is_empty(self.reactivity_unit):
+            self.MissingRequiredField("reactivity_unit")
+        if not isinstance(self.reactivity_unit, str):
+            self.reactivity_unit = str(self.reactivity_unit)
+
+        if self.peptide_start is not None and not isinstance(self.peptide_start, int):
+            self.peptide_start = int(self.peptide_start)
+
+        if self.peptide_end is not None and not isinstance(self.peptide_end, int):
+            self.peptide_end = int(self.peptide_end)
+
+        if self.mhc_class is not None and not isinstance(self.mhc_class, MhcClass):
+            self.mhc_class = MhcClass(self.mhc_class)
+
+        if self.mhc_allele_1 is not None and not isinstance(self.mhc_allele_1, str):
+            self.mhc_allele_1 = str(self.mhc_allele_1)
+
+        if self.mhc_allele_2 is not None and not isinstance(self.mhc_allele_2, str):
+            self.mhc_allele_2 = str(self.mhc_allele_2)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class SampleProcessing(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SampleProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:SampleProcessing"
+    class_name: ClassVar[str] = "SampleProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SampleProcessing
+
+    sample_id: str = None
+    sample_type: str = None
+    tissue: Union[str, "Tissue"] = None
+    anatomic_site: str = None
+    disease_state_sample: str = None
+    collection_time_point_relative: float = None
+    collection_time_point_relative_unit: Union[str, "CollectionTimePointRelativeUnit"] = None
+    collection_time_point_reference: str = None
+    biomaterial_provider: str = None
+    tissue_processing: str = None
+    cell_subset: Union[str, "CellSubset"] = None
+    cell_phenotype: str = None
+    single_cell: Union[bool, Bool] = None
+    cell_number: int = None
+    cells_per_reaction: int = None
+    cell_storage: Union[bool, Bool] = None
+    cell_quality: str = None
+    cell_isolation: str = None
+    cell_processing_protocol: str = None
+    template_class: Union[str, "TemplateClass"] = None
+    template_quality: str = None
+    template_amount: float = None
+    template_amount_unit: Union[str, "TemplateAmountUnit"] = None
+    library_generation_method: Union[str, "LibraryGenerationMethod"] = None
+    library_generation_protocol: str = None
+    library_generation_kit_version: str = None
+    complete_sequences: Union[str, "CompleteSequences"] = None
+    physical_linkage: Union[str, "PhysicalLinkage"] = None
+    sequencing_run_id: str = None
+    total_reads_passing_qc_filter: int = None
+    sequencing_platform: str = None
+    sequencing_facility: str = None
+    sequencing_run_date: Union[str, XSDDateTime] = None
+    sequencing_kit: str = None
+    sample_processing_id: Optional[str] = None
+    cell_species: Optional[Union[str, "CellSpecies"]] = None
+    pcr_target: Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]] = empty_list()
+    sequencing_files: Optional[Union[dict, SequencingData]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.sample_id):
+            self.MissingRequiredField("sample_id")
+        if not isinstance(self.sample_id, str):
+            self.sample_id = str(self.sample_id)
+
+        if self._is_empty(self.sample_type):
+            self.MissingRequiredField("sample_type")
+        if not isinstance(self.sample_type, str):
+            self.sample_type = str(self.sample_type)
+
+        if self._is_empty(self.anatomic_site):
+            self.MissingRequiredField("anatomic_site")
+        if not isinstance(self.anatomic_site, str):
+            self.anatomic_site = str(self.anatomic_site)
+
+        if self._is_empty(self.disease_state_sample):
+            self.MissingRequiredField("disease_state_sample")
+        if not isinstance(self.disease_state_sample, str):
+            self.disease_state_sample = str(self.disease_state_sample)
+
+        if self._is_empty(self.collection_time_point_relative):
+            self.MissingRequiredField("collection_time_point_relative")
+        if not isinstance(self.collection_time_point_relative, float):
+            self.collection_time_point_relative = float(self.collection_time_point_relative)
+
+        if self._is_empty(self.collection_time_point_reference):
+            self.MissingRequiredField("collection_time_point_reference")
+        if not isinstance(self.collection_time_point_reference, str):
+            self.collection_time_point_reference = str(self.collection_time_point_reference)
+
+        if self._is_empty(self.biomaterial_provider):
+            self.MissingRequiredField("biomaterial_provider")
+        if not isinstance(self.biomaterial_provider, str):
+            self.biomaterial_provider = str(self.biomaterial_provider)
+
+        if self._is_empty(self.tissue_processing):
+            self.MissingRequiredField("tissue_processing")
+        if not isinstance(self.tissue_processing, str):
+            self.tissue_processing = str(self.tissue_processing)
+
+        if self._is_empty(self.cell_phenotype):
+            self.MissingRequiredField("cell_phenotype")
+        if not isinstance(self.cell_phenotype, str):
+            self.cell_phenotype = str(self.cell_phenotype)
+
+        if self._is_empty(self.single_cell):
+            self.MissingRequiredField("single_cell")
+        if not isinstance(self.single_cell, Bool):
+            self.single_cell = Bool(self.single_cell)
+
+        if self._is_empty(self.cell_number):
+            self.MissingRequiredField("cell_number")
+        if not isinstance(self.cell_number, int):
+            self.cell_number = int(self.cell_number)
+
+        if self._is_empty(self.cells_per_reaction):
+            self.MissingRequiredField("cells_per_reaction")
+        if not isinstance(self.cells_per_reaction, int):
+            self.cells_per_reaction = int(self.cells_per_reaction)
+
+        if self._is_empty(self.cell_storage):
+            self.MissingRequiredField("cell_storage")
+        if not isinstance(self.cell_storage, Bool):
+            self.cell_storage = Bool(self.cell_storage)
+
+        if self._is_empty(self.cell_quality):
+            self.MissingRequiredField("cell_quality")
+        if not isinstance(self.cell_quality, str):
+            self.cell_quality = str(self.cell_quality)
+
+        if self._is_empty(self.cell_isolation):
+            self.MissingRequiredField("cell_isolation")
+        if not isinstance(self.cell_isolation, str):
+            self.cell_isolation = str(self.cell_isolation)
+
+        if self._is_empty(self.cell_processing_protocol):
+            self.MissingRequiredField("cell_processing_protocol")
+        if not isinstance(self.cell_processing_protocol, str):
+            self.cell_processing_protocol = str(self.cell_processing_protocol)
+
+        if self._is_empty(self.template_class):
+            self.MissingRequiredField("template_class")
+        if not isinstance(self.template_class, TemplateClass):
+            self.template_class = TemplateClass(self.template_class)
+
+        if self._is_empty(self.template_quality):
+            self.MissingRequiredField("template_quality")
+        if not isinstance(self.template_quality, str):
+            self.template_quality = str(self.template_quality)
+
+        if self._is_empty(self.template_amount):
+            self.MissingRequiredField("template_amount")
+        if not isinstance(self.template_amount, float):
+            self.template_amount = float(self.template_amount)
+
+        if self._is_empty(self.library_generation_method):
+            self.MissingRequiredField("library_generation_method")
+        if not isinstance(self.library_generation_method, LibraryGenerationMethod):
+            self.library_generation_method = LibraryGenerationMethod(self.library_generation_method)
+
+        if self._is_empty(self.library_generation_protocol):
+            self.MissingRequiredField("library_generation_protocol")
+        if not isinstance(self.library_generation_protocol, str):
+            self.library_generation_protocol = str(self.library_generation_protocol)
+
+        if self._is_empty(self.library_generation_kit_version):
+            self.MissingRequiredField("library_generation_kit_version")
+        if not isinstance(self.library_generation_kit_version, str):
+            self.library_generation_kit_version = str(self.library_generation_kit_version)
+
+        if self._is_empty(self.complete_sequences):
+            self.MissingRequiredField("complete_sequences")
+        if not isinstance(self.complete_sequences, CompleteSequences):
+            self.complete_sequences = CompleteSequences(self.complete_sequences)
+
+        if self._is_empty(self.physical_linkage):
+            self.MissingRequiredField("physical_linkage")
+        if not isinstance(self.physical_linkage, PhysicalLinkage):
+            self.physical_linkage = PhysicalLinkage(self.physical_linkage)
+
+        if self._is_empty(self.sequencing_run_id):
+            self.MissingRequiredField("sequencing_run_id")
+        if not isinstance(self.sequencing_run_id, str):
+            self.sequencing_run_id = str(self.sequencing_run_id)
+
+        if self._is_empty(self.total_reads_passing_qc_filter):
+            self.MissingRequiredField("total_reads_passing_qc_filter")
+        if not isinstance(self.total_reads_passing_qc_filter, int):
+            self.total_reads_passing_qc_filter = int(self.total_reads_passing_qc_filter)
+
+        if self._is_empty(self.sequencing_platform):
+            self.MissingRequiredField("sequencing_platform")
+        if not isinstance(self.sequencing_platform, str):
+            self.sequencing_platform = str(self.sequencing_platform)
+
+        if self._is_empty(self.sequencing_facility):
+            self.MissingRequiredField("sequencing_facility")
+        if not isinstance(self.sequencing_facility, str):
+            self.sequencing_facility = str(self.sequencing_facility)
+
+        if self._is_empty(self.sequencing_run_date):
+            self.MissingRequiredField("sequencing_run_date")
+        if not isinstance(self.sequencing_run_date, XSDDateTime):
+            self.sequencing_run_date = XSDDateTime(self.sequencing_run_date)
+
+        if self._is_empty(self.sequencing_kit):
+            self.MissingRequiredField("sequencing_kit")
+        if not isinstance(self.sequencing_kit, str):
+            self.sequencing_kit = str(self.sequencing_kit)
+
+        if self.sample_processing_id is not None and not isinstance(self.sample_processing_id, str):
+            self.sample_processing_id = str(self.sample_processing_id)
+
+        self._normalize_inlined_as_dict(slot_name="pcr_target", slot_type=PCRTarget, key_name="pcr_target_locus", keyed=False)
+
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
+            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class V1p5TimePoint(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -2168,8 +5020,8 @@ class V1p5AlleleDescription(YAMLRoot):
     V1p5allele_description_id: str = None
     V1p5maintainer: str = None
     V1p5lab_address: str = None
-    V1p5release_version: int = None
-    V1p5release_date: str = None
+    V1p5release_version: str = None
+    V1p5release_date: Union[str, XSDDateTime] = None
     V1p5release_description: str = None
     V1p5sequence: str = None
     V1p5coding_sequence: str = None
@@ -2235,13 +5087,13 @@ class V1p5AlleleDescription(YAMLRoot):
 
         if self._is_empty(self.V1p5release_version):
             self.MissingRequiredField("V1p5release_version")
-        if not isinstance(self.V1p5release_version, int):
-            self.V1p5release_version = int(self.V1p5release_version)
+        if not isinstance(self.V1p5release_version, str):
+            self.V1p5release_version = str(self.V1p5release_version)
 
         if self._is_empty(self.V1p5release_date):
             self.MissingRequiredField("V1p5release_date")
-        if not isinstance(self.V1p5release_date, str):
-            self.V1p5release_date = str(self.V1p5release_date)
+        if not isinstance(self.V1p5release_date, XSDDateTime):
+            self.V1p5release_date = XSDDateTime(self.V1p5release_date)
 
         if self._is_empty(self.V1p5release_description):
             self.MissingRequiredField("V1p5release_description")
@@ -2405,9 +5257,9 @@ class V1p5GermlineSet(YAMLRoot):
     V1p5author: str = None
     V1p5lab_name: str = None
     V1p5lab_address: str = None
-    V1p5release_version: int = None
+    V1p5release_version: str = None
     V1p5release_description: str = None
-    V1p5release_date: str = None
+    V1p5release_date: Union[str, XSDDateTime] = None
     V1p5germline_set_name: str = None
     V1p5species: Union[str, "V1p5Species"] = None
     V1p5allele_descriptions: Union[Union[dict, V1p5AlleleDescription], List[Union[dict, V1p5AlleleDescription]]] = None
@@ -2442,8 +5294,8 @@ class V1p5GermlineSet(YAMLRoot):
 
         if self._is_empty(self.V1p5release_version):
             self.MissingRequiredField("V1p5release_version")
-        if not isinstance(self.V1p5release_version, int):
-            self.V1p5release_version = int(self.V1p5release_version)
+        if not isinstance(self.V1p5release_version, str):
+            self.V1p5release_version = str(self.V1p5release_version)
 
         if self._is_empty(self.V1p5release_description):
             self.MissingRequiredField("V1p5release_description")
@@ -2452,8 +5304,8 @@ class V1p5GermlineSet(YAMLRoot):
 
         if self._is_empty(self.V1p5release_date):
             self.MissingRequiredField("V1p5release_date")
-        if not isinstance(self.V1p5release_date, str):
-            self.V1p5release_date = str(self.V1p5release_date)
+        if not isinstance(self.V1p5release_date, XSDDateTime):
+            self.V1p5release_date = XSDDateTime(self.V1p5release_date)
 
         if self._is_empty(self.V1p5germline_set_name):
             self.MissingRequiredField("V1p5germline_set_name")
@@ -2760,8 +5612,8 @@ class V1p5Study(YAMLRoot):
     V1p5study_description: Optional[str] = None
     V1p5study_contact: Optional[str] = None
     V1p5pub_ids: Optional[str] = None
-    V1p5adc_publish_date: Optional[str] = None
-    V1p5adc_update_date: Optional[str] = None
+    V1p5adc_publish_date: Optional[Union[str, XSDDateTime]] = None
+    V1p5adc_update_date: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.V1p5study_id):
@@ -2819,11 +5671,11 @@ class V1p5Study(YAMLRoot):
         if self.V1p5pub_ids is not None and not isinstance(self.V1p5pub_ids, str):
             self.V1p5pub_ids = str(self.V1p5pub_ids)
 
-        if self.V1p5adc_publish_date is not None and not isinstance(self.V1p5adc_publish_date, str):
-            self.V1p5adc_publish_date = str(self.V1p5adc_publish_date)
+        if self.V1p5adc_publish_date is not None and not isinstance(self.V1p5adc_publish_date, XSDDateTime):
+            self.V1p5adc_publish_date = XSDDateTime(self.V1p5adc_publish_date)
 
-        if self.V1p5adc_update_date is not None and not isinstance(self.V1p5adc_update_date, str):
-            self.V1p5adc_update_date = str(self.V1p5adc_update_date)
+        if self.V1p5adc_update_date is not None and not isinstance(self.V1p5adc_update_date, XSDDateTime):
+            self.V1p5adc_update_date = XSDDateTime(self.V1p5adc_update_date)
 
         super().__post_init__(**kwargs)
 
@@ -3219,7 +6071,7 @@ class V1p5SequencingRun(YAMLRoot):
     V1p5total_reads_passing_qc_filter: int = None
     V1p5sequencing_platform: str = None
     V1p5sequencing_facility: str = None
-    V1p5sequencing_run_date: str = None
+    V1p5sequencing_run_date: Union[str, XSDDateTime] = None
     V1p5sequencing_kit: str = None
     V1p5sequencing_files: Optional[Union[dict, "V1p5SequencingData"]] = None
 
@@ -3246,8 +6098,8 @@ class V1p5SequencingRun(YAMLRoot):
 
         if self._is_empty(self.V1p5sequencing_run_date):
             self.MissingRequiredField("V1p5sequencing_run_date")
-        if not isinstance(self.V1p5sequencing_run_date, str):
-            self.V1p5sequencing_run_date = str(self.V1p5sequencing_run_date)
+        if not isinstance(self.V1p5sequencing_run_date, XSDDateTime):
+            self.V1p5sequencing_run_date = XSDDateTime(self.V1p5sequencing_run_date)
 
         if self._is_empty(self.V1p5sequencing_kit):
             self.MissingRequiredField("V1p5sequencing_kit")
@@ -3456,32 +6308,6 @@ class V1p5Repertoire(YAMLRoot):
 
 
 @dataclass(repr=False)
-class V1p5RepertoireGroupDetail(YAMLRoot):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["V1p5RepertoireGroupDetail"]
-    class_class_curie: ClassVar[str] = "ak_schema:V1p5RepertoireGroupDetail"
-    class_name: ClassVar[str] = "V1p5RepertoireGroupDetail"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5RepertoireGroupDetail
-
-    V1p5repertoire_id: Optional[str] = None
-    V1p5repertoire_description: Optional[str] = None
-    V1p5time_point: Optional[Union[dict, V1p5TimePoint]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.V1p5repertoire_id is not None and not isinstance(self.V1p5repertoire_id, str):
-            self.V1p5repertoire_id = str(self.V1p5repertoire_id)
-
-        if self.V1p5repertoire_description is not None and not isinstance(self.V1p5repertoire_description, str):
-            self.V1p5repertoire_description = str(self.V1p5repertoire_description)
-
-        if self.V1p5time_point is not None and not isinstance(self.V1p5time_point, V1p5TimePoint):
-            self.V1p5time_point = V1p5TimePoint(**as_dict(self.V1p5time_point))
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class V1p5RepertoireGroup(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3491,7 +6317,7 @@ class V1p5RepertoireGroup(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.V1p5RepertoireGroup
 
     V1p5repertoire_group_id: str = None
-    V1p5repertoires: Union[Union[dict, V1p5RepertoireGroupDetail], List[Union[dict, V1p5RepertoireGroupDetail]]] = None
+    V1p5repertoires: Union[str, List[str]] = None
     V1p5repertoire_group_name: Optional[str] = None
     V1p5repertoire_group_description: Optional[str] = None
 
@@ -3505,7 +6331,7 @@ class V1p5RepertoireGroup(YAMLRoot):
             self.MissingRequiredField("V1p5repertoires")
         if not isinstance(self.V1p5repertoires, list):
             self.V1p5repertoires = [self.V1p5repertoires] if self.V1p5repertoires is not None else []
-        self.V1p5repertoires = [v if isinstance(v, V1p5RepertoireGroupDetail) else V1p5RepertoireGroupDetail(**as_dict(v)) for v in self.V1p5repertoires]
+        self.V1p5repertoires = [v if isinstance(v, str) else str(v) for v in self.V1p5repertoires]
 
         if self.V1p5repertoire_group_name is not None and not isinstance(self.V1p5repertoire_group_name, str):
             self.V1p5repertoire_group_name = str(self.V1p5repertoire_group_name)
@@ -4688,7 +7514,7 @@ class V1p5SampleProcessing(YAMLRoot):
     V1p5total_reads_passing_qc_filter: int = None
     V1p5sequencing_platform: str = None
     V1p5sequencing_facility: str = None
-    V1p5sequencing_run_date: str = None
+    V1p5sequencing_run_date: Union[str, XSDDateTime] = None
     V1p5sequencing_kit: str = None
     V1p5sample_processing_id: Optional[str] = None
     V1p5cell_species: Optional[Union[str, "V1p5CellSpecies"]] = None
@@ -4838,8 +7664,8 @@ class V1p5SampleProcessing(YAMLRoot):
 
         if self._is_empty(self.V1p5sequencing_run_date):
             self.MissingRequiredField("V1p5sequencing_run_date")
-        if not isinstance(self.V1p5sequencing_run_date, str):
-            self.V1p5sequencing_run_date = str(self.V1p5sequencing_run_date)
+        if not isinstance(self.V1p5sequencing_run_date, XSDDateTime):
+            self.V1p5sequencing_run_date = XSDDateTime(self.V1p5sequencing_run_date)
 
         if self._is_empty(self.V1p5sequencing_kit):
             self.MissingRequiredField("V1p5sequencing_kit")
@@ -5228,8 +8054,8 @@ class V1p4AlleleDescription(YAMLRoot):
 
     V1p4allele_description_id: str = None
     V1p4acknowledgements: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    V1p4release_version: int = None
-    V1p4release_date: str = None
+    V1p4release_version: str = None
+    V1p4release_date: Union[str, XSDDateTime] = None
     V1p4release_description: str = None
     V1p4sequence: str = None
     V1p4coding_sequence: str = None
@@ -5288,13 +8114,13 @@ class V1p4AlleleDescription(YAMLRoot):
 
         if self._is_empty(self.V1p4release_version):
             self.MissingRequiredField("V1p4release_version")
-        if not isinstance(self.V1p4release_version, int):
-            self.V1p4release_version = int(self.V1p4release_version)
+        if not isinstance(self.V1p4release_version, str):
+            self.V1p4release_version = str(self.V1p4release_version)
 
         if self._is_empty(self.V1p4release_date):
             self.MissingRequiredField("V1p4release_date")
-        if not isinstance(self.V1p4release_date, str):
-            self.V1p4release_date = str(self.V1p4release_date)
+        if not isinstance(self.V1p4release_date, XSDDateTime):
+            self.V1p4release_date = XSDDateTime(self.V1p4release_date)
 
         if self._is_empty(self.V1p4release_description):
             self.MissingRequiredField("V1p4release_description")
@@ -5454,9 +8280,9 @@ class V1p4GermlineSet(YAMLRoot):
 
     V1p4germline_set_id: str = None
     V1p4acknowledgements: Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]] = None
-    V1p4release_version: int = None
+    V1p4release_version: str = None
     V1p4release_description: str = None
-    V1p4release_date: str = None
+    V1p4release_date: Union[str, XSDDateTime] = None
     V1p4germline_set_name: str = None
     V1p4species: Union[str, "V1p4Species"] = None
     V1p4allele_descriptions: Union[Union[dict, V1p4AlleleDescription], List[Union[dict, V1p4AlleleDescription]]] = None
@@ -5479,8 +8305,8 @@ class V1p4GermlineSet(YAMLRoot):
 
         if self._is_empty(self.V1p4release_version):
             self.MissingRequiredField("V1p4release_version")
-        if not isinstance(self.V1p4release_version, int):
-            self.V1p4release_version = int(self.V1p4release_version)
+        if not isinstance(self.V1p4release_version, str):
+            self.V1p4release_version = str(self.V1p4release_version)
 
         if self._is_empty(self.V1p4release_description):
             self.MissingRequiredField("V1p4release_description")
@@ -5489,8 +8315,8 @@ class V1p4GermlineSet(YAMLRoot):
 
         if self._is_empty(self.V1p4release_date):
             self.MissingRequiredField("V1p4release_date")
-        if not isinstance(self.V1p4release_date, str):
-            self.V1p4release_date = str(self.V1p4release_date)
+        if not isinstance(self.V1p4release_date, XSDDateTime):
+            self.V1p4release_date = XSDDateTime(self.V1p4release_date)
 
         if self._is_empty(self.V1p4germline_set_name):
             self.MissingRequiredField("V1p4germline_set_name")
@@ -5792,8 +8618,8 @@ class V1p4Study(YAMLRoot):
     V1p4keywords_study: Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]] = None
     V1p4study_description: Optional[str] = None
     V1p4pub_ids: Optional[Union[str, List[str]]] = empty_list()
-    V1p4adc_publish_date: Optional[str] = None
-    V1p4adc_update_date: Optional[str] = None
+    V1p4adc_publish_date: Optional[Union[str, XSDDateTime]] = None
+    V1p4adc_update_date: Optional[Union[str, XSDDateTime]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.V1p4study_id):
@@ -5833,11 +8659,11 @@ class V1p4Study(YAMLRoot):
             self.V1p4pub_ids = [self.V1p4pub_ids] if self.V1p4pub_ids is not None else []
         self.V1p4pub_ids = [v if isinstance(v, str) else str(v) for v in self.V1p4pub_ids]
 
-        if self.V1p4adc_publish_date is not None and not isinstance(self.V1p4adc_publish_date, str):
-            self.V1p4adc_publish_date = str(self.V1p4adc_publish_date)
+        if self.V1p4adc_publish_date is not None and not isinstance(self.V1p4adc_publish_date, XSDDateTime):
+            self.V1p4adc_publish_date = XSDDateTime(self.V1p4adc_publish_date)
 
-        if self.V1p4adc_update_date is not None and not isinstance(self.V1p4adc_update_date, str):
-            self.V1p4adc_update_date = str(self.V1p4adc_update_date)
+        if self.V1p4adc_update_date is not None and not isinstance(self.V1p4adc_update_date, XSDDateTime):
+            self.V1p4adc_update_date = XSDDateTime(self.V1p4adc_update_date)
 
         super().__post_init__(**kwargs)
 
@@ -6221,7 +9047,7 @@ class V1p4SequencingRun(YAMLRoot):
     V1p4total_reads_passing_qc_filter: int = None
     V1p4sequencing_platform: str = None
     V1p4sequencing_facility: str = None
-    V1p4sequencing_run_date: str = None
+    V1p4sequencing_run_date: Union[str, XSDDateTime] = None
     V1p4sequencing_kit: str = None
     V1p4sequencing_files: Optional[Union[dict, "V1p4SequencingData"]] = None
 
@@ -6248,8 +9074,8 @@ class V1p4SequencingRun(YAMLRoot):
 
         if self._is_empty(self.V1p4sequencing_run_date):
             self.MissingRequiredField("V1p4sequencing_run_date")
-        if not isinstance(self.V1p4sequencing_run_date, str):
-            self.V1p4sequencing_run_date = str(self.V1p4sequencing_run_date)
+        if not isinstance(self.V1p4sequencing_run_date, XSDDateTime):
+            self.V1p4sequencing_run_date = XSDDateTime(self.V1p4sequencing_run_date)
 
         if self._is_empty(self.V1p4sequencing_kit):
             self.MissingRequiredField("V1p4sequencing_kit")
@@ -7679,7 +10505,7 @@ class V1p4SampleProcessing(YAMLRoot):
     V1p4total_reads_passing_qc_filter: int = None
     V1p4sequencing_platform: str = None
     V1p4sequencing_facility: str = None
-    V1p4sequencing_run_date: str = None
+    V1p4sequencing_run_date: Union[str, XSDDateTime] = None
     V1p4sequencing_kit: str = None
     V1p4sample_processing_id: Optional[str] = None
     V1p4collection_location: Optional[Union[str, "V1p4CollectionLocation"]] = None
@@ -7823,8 +10649,8 @@ class V1p4SampleProcessing(YAMLRoot):
 
         if self._is_empty(self.V1p4sequencing_run_date):
             self.MissingRequiredField("V1p4sequencing_run_date")
-        if not isinstance(self.V1p4sequencing_run_date, str):
-            self.V1p4sequencing_run_date = str(self.V1p4sequencing_run_date)
+        if not isinstance(self.V1p4sequencing_run_date, XSDDateTime):
+            self.V1p4sequencing_run_date = XSDDateTime(self.V1p4sequencing_run_date)
 
         if self._is_empty(self.V1p4sequencing_kit):
             self.MissingRequiredField("V1p4sequencing_kit")
@@ -7849,12 +10675,6 @@ class V1p4SampleProcessing(YAMLRoot):
 
 
 # Enumerations
-class StudyType(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="StudyType",
-    )
-
 class Species(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -8296,6 +11116,477 @@ class ChainSimilarityType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="ChainSimilarityType",
+    )
+
+class Unit(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Unit",
+    )
+
+class Derivation(EnumDefinitionImpl):
+
+    DNA = PermissibleValue(text="DNA")
+    RNA = PermissibleValue(text="RNA")
+
+    _defn = EnumDefinition(
+        name="Derivation",
+    )
+
+class ObservationType(EnumDefinitionImpl):
+
+    direct_sequencing = PermissibleValue(text="direct_sequencing")
+    inference_from_repertoire = PermissibleValue(text="inference_from_repertoire")
+
+    _defn = EnumDefinition(
+        name="ObservationType",
+    )
+
+class Strand(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Strand",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "+",
+            PermissibleValue(text="+"))
+        setattr(cls, "-",
+            PermissibleValue(text="-"))
+
+class Locus(EnumDefinitionImpl):
+
+    IGH = PermissibleValue(text="IGH")
+    IGI = PermissibleValue(text="IGI")
+    IGK = PermissibleValue(text="IGK")
+    IGL = PermissibleValue(text="IGL")
+    TRA = PermissibleValue(text="TRA")
+    TRB = PermissibleValue(text="TRB")
+    TRG = PermissibleValue(text="TRG")
+    TRD = PermissibleValue(text="TRD")
+
+    _defn = EnumDefinition(
+        name="Locus",
+    )
+
+class SequenceType(EnumDefinitionImpl):
+
+    V = PermissibleValue(text="V")
+    D = PermissibleValue(text="D")
+    J = PermissibleValue(text="J")
+    C = PermissibleValue(text="C")
+
+    _defn = EnumDefinition(
+        name="SequenceType",
+    )
+
+class InferenceType(EnumDefinitionImpl):
+
+    genomic_and_rearranged = PermissibleValue(text="genomic_and_rearranged")
+    genomic_only = PermissibleValue(text="genomic_only")
+    rearranged_only = PermissibleValue(text="rearranged_only")
+
+    _defn = EnumDefinition(
+        name="InferenceType",
+    )
+
+class SpeciesSubgroupType(EnumDefinitionImpl):
+
+    breed = PermissibleValue(text="breed")
+    strain = PermissibleValue(text="strain")
+    inbred = PermissibleValue(text="inbred")
+    outbred = PermissibleValue(text="outbred")
+    locational = PermissibleValue(text="locational")
+
+    _defn = EnumDefinition(
+        name="SpeciesSubgroupType",
+    )
+
+class Status(EnumDefinitionImpl):
+
+    active = PermissibleValue(text="active")
+    draft = PermissibleValue(text="draft")
+    retired = PermissibleValue(text="retired")
+    withdrawn = PermissibleValue(text="withdrawn")
+
+    _defn = EnumDefinition(
+        name="Status",
+    )
+
+class JCodonFrame(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="JCodonFrame",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "1",
+            PermissibleValue(text="1"))
+        setattr(cls, "2",
+            PermissibleValue(text="2"))
+        setattr(cls, "3",
+            PermissibleValue(text="3"))
+
+class CurationalTags(EnumDefinitionImpl):
+
+    likely_truncated = PermissibleValue(text="likely_truncated")
+    likely_full_length = PermissibleValue(text="likely_full_length")
+
+    _defn = EnumDefinition(
+        name="CurationalTags",
+    )
+
+class InferenceProcess(EnumDefinitionImpl):
+
+    genomic_sequencing = PermissibleValue(text="genomic_sequencing")
+    repertoire_sequencing = PermissibleValue(text="repertoire_sequencing")
+
+    _defn = EnumDefinition(
+        name="InferenceProcess",
+    )
+
+class MhcClass(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="MhcClass",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "MHC-I",
+            PermissibleValue(text="MHC-I"))
+        setattr(cls, "MHC-II",
+            PermissibleValue(text="MHC-II"))
+        setattr(cls, "MHC-nonclassical",
+            PermissibleValue(text="MHC-nonclassical"))
+
+class Gene(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Gene",
+    )
+
+class StudyType(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="StudyType",
+    )
+
+class KeywordsStudy(EnumDefinitionImpl):
+
+    contains_ig = PermissibleValue(text="contains_ig")
+    contains_tr = PermissibleValue(text="contains_tr")
+    contains_paired_chain = PermissibleValue(text="contains_paired_chain")
+    contains_schema_rearrangement = PermissibleValue(text="contains_schema_rearrangement")
+    contains_schema_clone = PermissibleValue(text="contains_schema_clone")
+    contains_schema_cell = PermissibleValue(text="contains_schema_cell")
+    contains_schema_receptor = PermissibleValue(text="contains_schema_receptor")
+
+    _defn = EnumDefinition(
+        name="KeywordsStudy",
+    )
+
+class Sex(EnumDefinitionImpl):
+
+    male = PermissibleValue(text="male")
+    female = PermissibleValue(text="female")
+    pooled = PermissibleValue(text="pooled")
+    hermaphrodite = PermissibleValue(text="hermaphrodite")
+    intersex = PermissibleValue(text="intersex")
+
+    _defn = EnumDefinition(
+        name="Sex",
+    )
+
+class AgeUnit(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="AgeUnit",
+    )
+
+class DiseaseDiagnosis(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="DiseaseDiagnosis",
+    )
+
+class Tissue(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Tissue",
+    )
+
+class CollectionTimePointRelativeUnit(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="CollectionTimePointRelativeUnit",
+    )
+
+class CellSubset(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="CellSubset",
+    )
+
+class CellSpecies(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="CellSpecies",
+    )
+
+class PcrTargetLocus(EnumDefinitionImpl):
+
+    IGH = PermissibleValue(text="IGH")
+    IGI = PermissibleValue(text="IGI")
+    IGK = PermissibleValue(text="IGK")
+    IGL = PermissibleValue(text="IGL")
+    TRA = PermissibleValue(text="TRA")
+    TRB = PermissibleValue(text="TRB")
+    TRD = PermissibleValue(text="TRD")
+    TRG = PermissibleValue(text="TRG")
+
+    _defn = EnumDefinition(
+        name="PcrTargetLocus",
+    )
+
+class TemplateClass(EnumDefinitionImpl):
+
+    DNA = PermissibleValue(text="DNA")
+    RNA = PermissibleValue(text="RNA")
+
+    _defn = EnumDefinition(
+        name="TemplateClass",
+    )
+
+class TemplateAmountUnit(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="TemplateAmountUnit",
+    )
+
+class LibraryGenerationMethod(EnumDefinitionImpl):
+
+    PCR = PermissibleValue(text="PCR")
+    other = PermissibleValue(text="other")
+
+    _defn = EnumDefinition(
+        name="LibraryGenerationMethod",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "RT(RHP)+PCR",
+            PermissibleValue(text="RT(RHP)+PCR"))
+        setattr(cls, "RT(oligo-dT)+PCR",
+            PermissibleValue(text="RT(oligo-dT)+PCR"))
+        setattr(cls, "RT(oligo-dT)+TS+PCR",
+            PermissibleValue(text="RT(oligo-dT)+TS+PCR"))
+        setattr(cls, "RT(oligo-dT)+TS(UMI)+PCR",
+            PermissibleValue(text="RT(oligo-dT)+TS(UMI)+PCR"))
+        setattr(cls, "RT(specific)+PCR",
+            PermissibleValue(text="RT(specific)+PCR"))
+        setattr(cls, "RT(specific)+TS+PCR",
+            PermissibleValue(text="RT(specific)+TS+PCR"))
+        setattr(cls, "RT(specific)+TS(UMI)+PCR",
+            PermissibleValue(text="RT(specific)+TS(UMI)+PCR"))
+        setattr(cls, "RT(specific+UMI)+PCR",
+            PermissibleValue(text="RT(specific+UMI)+PCR"))
+        setattr(cls, "RT(specific+UMI)+TS+PCR",
+            PermissibleValue(text="RT(specific+UMI)+TS+PCR"))
+        setattr(cls, "RT(specific)+TS",
+            PermissibleValue(text="RT(specific)+TS"))
+
+class CompleteSequences(EnumDefinitionImpl):
+
+    partial = PermissibleValue(text="partial")
+    complete = PermissibleValue(text="complete")
+    mixed = PermissibleValue(text="mixed")
+
+    _defn = EnumDefinition(
+        name="CompleteSequences",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "complete+untemplated",
+            PermissibleValue(text="complete+untemplated"))
+
+class PhysicalLinkage(EnumDefinitionImpl):
+
+    none = PermissibleValue(text="none")
+    hetero_prelinked = PermissibleValue(text="hetero_prelinked")
+
+    _defn = EnumDefinition(
+        name="PhysicalLinkage",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "hetero_head-head",
+            PermissibleValue(text="hetero_head-head"))
+        setattr(cls, "hetero_tail-head",
+            PermissibleValue(text="hetero_tail-head"))
+
+class FileType(EnumDefinitionImpl):
+
+    fasta = PermissibleValue(text="fasta")
+    fastq = PermissibleValue(text="fastq")
+
+    _defn = EnumDefinition(
+        name="FileType",
+    )
+
+class ReadDirection(EnumDefinitionImpl):
+
+    forward = PermissibleValue(text="forward")
+    reverse = PermissibleValue(text="reverse")
+    mixed = PermissibleValue(text="mixed")
+
+    _defn = EnumDefinition(
+        name="ReadDirection",
+    )
+
+class PairedReadDirection(EnumDefinitionImpl):
+
+    forward = PermissibleValue(text="forward")
+    reverse = PermissibleValue(text="reverse")
+    mixed = PermissibleValue(text="mixed")
+
+    _defn = EnumDefinition(
+        name="PairedReadDirection",
+    )
+
+class ExpressionStudyMethod(EnumDefinitionImpl):
+
+    flow_cytometry = PermissibleValue(text="flow_cytometry")
+
+    _defn = EnumDefinition(
+        name="ExpressionStudyMethod",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "single-cell_transcriptome",
+            PermissibleValue(text="single-cell_transcriptome"))
+
+class Property(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Property",
+    )
+
+class ReceptorType(EnumDefinitionImpl):
+
+    Ig = PermissibleValue(text="Ig")
+    TCR = PermissibleValue(text="TCR")
+
+    _defn = EnumDefinition(
+        name="ReceptorType",
+    )
+
+class ReceptorVariableDomain1Locus(EnumDefinitionImpl):
+
+    IGH = PermissibleValue(text="IGH")
+    TRB = PermissibleValue(text="TRB")
+    TRD = PermissibleValue(text="TRD")
+
+    _defn = EnumDefinition(
+        name="ReceptorVariableDomain1Locus",
+    )
+
+class ReceptorVariableDomain2Locus(EnumDefinitionImpl):
+
+    IGI = PermissibleValue(text="IGI")
+    IGK = PermissibleValue(text="IGK")
+    IGL = PermissibleValue(text="IGL")
+    TRA = PermissibleValue(text="TRA")
+    TRG = PermissibleValue(text="TRG")
+
+    _defn = EnumDefinition(
+        name="ReceptorVariableDomain2Locus",
+    )
+
+class LigandType(EnumDefinitionImpl):
+
+    protein = PermissibleValue(text="protein")
+    peptide = PermissibleValue(text="peptide")
+
+    _defn = EnumDefinition(
+        name="LigandType",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "MHC:peptide",
+            PermissibleValue(text="MHC:peptide"))
+        setattr(cls, "MHC:non-peptide",
+            PermissibleValue(text="MHC:non-peptide"))
+        setattr(cls, "non-peptidic",
+            PermissibleValue(text="non-peptidic"))
+
+class AntigenType(EnumDefinitionImpl):
+
+    protein = PermissibleValue(text="protein")
+    peptide = PermissibleValue(text="peptide")
+
+    _defn = EnumDefinition(
+        name="AntigenType",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "non-peptidic",
+            PermissibleValue(text="non-peptidic"))
+
+class Antigen(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Antigen",
+    )
+
+class AntigenSourceSpecies(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="AntigenSourceSpecies",
+    )
+
+class MhcGene1(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="MhcGene1",
+    )
+
+class MhcGene2(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="MhcGene2",
+    )
+
+class ReactivityMethod(EnumDefinitionImpl):
+
+    SPR = PermissibleValue(text="SPR")
+    ITC = PermissibleValue(text="ITC")
+    ELISA = PermissibleValue(text="ELISA")
+    cytometry = PermissibleValue(text="cytometry")
+    biological_activity = PermissibleValue(text="biological_activity")
+
+    _defn = EnumDefinition(
+        name="ReactivityMethod",
+    )
+
+class ReactivityReadout(EnumDefinitionImpl):
+
+    binding_strength = PermissibleValue(text="binding_strength")
+    cytokine_release = PermissibleValue(text="cytokine_release")
+    dissociation_constant_kd = PermissibleValue(text="dissociation_constant_kd")
+    on_rate = PermissibleValue(text="on_rate")
+    off_rate = PermissibleValue(text="off_rate")
+    pathogen_inhibition = PermissibleValue(text="pathogen_inhibition")
+
+    _defn = EnumDefinition(
+        name="ReactivityReadout",
     )
 
 class V1p5Unit(EnumDefinitionImpl):
@@ -9293,17 +12584,11 @@ slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEM
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
 
-slots.study_type = Slot(uri=RDF.type, name="study_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.study_type, domain=None, range=Optional[Union[str, "StudyType"]])
-
 slots.inclusion_criteria = Slot(uri=AK_SCHEMA.inclusion_criteria, name="inclusion_criteria", curie=AK_SCHEMA.curie('inclusion_criteria'),
                    model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[str])
 
 slots.exclusion_criteria = Slot(uri=AK_SCHEMA.exclusion_criteria, name="exclusion_criteria", curie=AK_SCHEMA.curie('exclusion_criteria'),
                    model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[str])
-
-slots.release_date = Slot(uri=AK_SCHEMA.release_date, name="release_date", curie=AK_SCHEMA.curie('release_date'),
-                   model_uri=AK_SCHEMA.release_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.update_date = Slot(uri=AK_SCHEMA.update_date, name="update_date", curie=AK_SCHEMA.curie('update_date'),
                    model_uri=AK_SCHEMA.update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
@@ -9369,9 +12654,6 @@ slots.phenotypic_sex = Slot(uri=RO['0000053'], name="phenotypic_sex", curie=RO.c
 slots.age = Slot(uri=AK_SCHEMA.age, name="age", curie=AK_SCHEMA.curie('age'),
                    model_uri=AK_SCHEMA.age, domain=None, range=Optional[str])
 
-slots.age_unit = Slot(uri=AK_SCHEMA.age_unit, name="age_unit", curie=AK_SCHEMA.curie('age_unit'),
-                   model_uri=AK_SCHEMA.age_unit, domain=None, range=Optional[str])
-
 slots.age_event = Slot(uri=AK_SCHEMA.age_event, name="age_event", curie=AK_SCHEMA.curie('age_event'),
                    model_uri=AK_SCHEMA.age_event, domain=None, range=Optional[Union[str, LifeEventAkcId]])
 
@@ -9435,44 +12717,8 @@ slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type')
 slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
 
-slots.tissue = Slot(uri=AK_SCHEMA.tissue, name="tissue", curie=AK_SCHEMA.curie('tissue'),
-                   model_uri=AK_SCHEMA.tissue, domain=None, range=Optional[str])
-
 slots.process = Slot(uri=AK_SCHEMA.process, name="process", curie=AK_SCHEMA.curie('process'),
                    model_uri=AK_SCHEMA.process, domain=None, range=Optional[str])
-
-slots.tissue_processing = Slot(uri=AK_SCHEMA.tissue_processing, name="tissue_processing", curie=AK_SCHEMA.curie('tissue_processing'),
-                   model_uri=AK_SCHEMA.tissue_processing, domain=None, range=Optional[str])
-
-slots.cell_subset = Slot(uri=AK_SCHEMA.cell_subset, name="cell_subset", curie=AK_SCHEMA.curie('cell_subset'),
-                   model_uri=AK_SCHEMA.cell_subset, domain=None, range=Optional[str])
-
-slots.cell_phenotype = Slot(uri=AK_SCHEMA.cell_phenotype, name="cell_phenotype", curie=AK_SCHEMA.curie('cell_phenotype'),
-                   model_uri=AK_SCHEMA.cell_phenotype, domain=None, range=Optional[str])
-
-slots.cell_species = Slot(uri=AK_SCHEMA.cell_species, name="cell_species", curie=AK_SCHEMA.curie('cell_species'),
-                   model_uri=AK_SCHEMA.cell_species, domain=None, range=Optional[str])
-
-slots.single_cell = Slot(uri=AK_SCHEMA.single_cell, name="single_cell", curie=AK_SCHEMA.curie('single_cell'),
-                   model_uri=AK_SCHEMA.single_cell, domain=None, range=Optional[str])
-
-slots.cell_number = Slot(uri=AK_SCHEMA.cell_number, name="cell_number", curie=AK_SCHEMA.curie('cell_number'),
-                   model_uri=AK_SCHEMA.cell_number, domain=None, range=Optional[str])
-
-slots.cells_per_reaction = Slot(uri=AK_SCHEMA.cells_per_reaction, name="cells_per_reaction", curie=AK_SCHEMA.curie('cells_per_reaction'),
-                   model_uri=AK_SCHEMA.cells_per_reaction, domain=None, range=Optional[str])
-
-slots.cell_storage = Slot(uri=AK_SCHEMA.cell_storage, name="cell_storage", curie=AK_SCHEMA.curie('cell_storage'),
-                   model_uri=AK_SCHEMA.cell_storage, domain=None, range=Optional[str])
-
-slots.cell_quality = Slot(uri=AK_SCHEMA.cell_quality, name="cell_quality", curie=AK_SCHEMA.curie('cell_quality'),
-                   model_uri=AK_SCHEMA.cell_quality, domain=None, range=Optional[str])
-
-slots.cell_isolation = Slot(uri=AK_SCHEMA.cell_isolation, name="cell_isolation", curie=AK_SCHEMA.curie('cell_isolation'),
-                   model_uri=AK_SCHEMA.cell_isolation, domain=None, range=Optional[str])
-
-slots.cell_processing_protocol = Slot(uri=AK_SCHEMA.cell_processing_protocol, name="cell_processing_protocol", curie=AK_SCHEMA.curie('cell_processing_protocol'),
-                   model_uri=AK_SCHEMA.cell_processing_protocol, domain=None, range=Optional[str])
 
 slots.specimen = Slot(uri=OBI['0000293'], name="specimen", curie=OBI.curie('0000293'),
                    model_uri=AK_SCHEMA.specimen, domain=None, range=Optional[Union[str, SpecimenAkcId]])
@@ -9485,36 +12731,6 @@ slots.assay_type = Slot(uri=RDF.type, name="assay_type", curie=RDF.curie('type')
 
 slots.target_entity_type = Slot(uri=AK_SCHEMA.target_entity_type, name="target_entity_type", curie=AK_SCHEMA.curie('target_entity_type'),
                    model_uri=AK_SCHEMA.target_entity_type, domain=None, range=Optional[str])
-
-slots.template_class = Slot(uri=AK_SCHEMA.template_class, name="template_class", curie=AK_SCHEMA.curie('template_class'),
-                   model_uri=AK_SCHEMA.template_class, domain=None, range=Optional[str])
-
-slots.template_quality = Slot(uri=AK_SCHEMA.template_quality, name="template_quality", curie=AK_SCHEMA.curie('template_quality'),
-                   model_uri=AK_SCHEMA.template_quality, domain=None, range=Optional[str])
-
-slots.template_amount = Slot(uri=AK_SCHEMA.template_amount, name="template_amount", curie=AK_SCHEMA.curie('template_amount'),
-                   model_uri=AK_SCHEMA.template_amount, domain=None, range=Optional[str])
-
-slots.template_amount_unit = Slot(uri=AK_SCHEMA.template_amount_unit, name="template_amount_unit", curie=AK_SCHEMA.curie('template_amount_unit'),
-                   model_uri=AK_SCHEMA.template_amount_unit, domain=None, range=Optional[str])
-
-slots.library_generation_method = Slot(uri=AK_SCHEMA.library_generation_method, name="library_generation_method", curie=AK_SCHEMA.curie('library_generation_method'),
-                   model_uri=AK_SCHEMA.library_generation_method, domain=None, range=Optional[str])
-
-slots.library_generation_protocol = Slot(uri=AK_SCHEMA.library_generation_protocol, name="library_generation_protocol", curie=AK_SCHEMA.curie('library_generation_protocol'),
-                   model_uri=AK_SCHEMA.library_generation_protocol, domain=None, range=Optional[str])
-
-slots.library_generation_kit_version = Slot(uri=AK_SCHEMA.library_generation_kit_version, name="library_generation_kit_version", curie=AK_SCHEMA.curie('library_generation_kit_version'),
-                   model_uri=AK_SCHEMA.library_generation_kit_version, domain=None, range=Optional[str])
-
-slots.pcr_target = Slot(uri=AK_SCHEMA.pcr_target, name="pcr_target", curie=AK_SCHEMA.curie('pcr_target'),
-                   model_uri=AK_SCHEMA.pcr_target, domain=None, range=Optional[Union[str, List[str]]])
-
-slots.complete_sequences = Slot(uri=AK_SCHEMA.complete_sequences, name="complete_sequences", curie=AK_SCHEMA.curie('complete_sequences'),
-                   model_uri=AK_SCHEMA.complete_sequences, domain=None, range=Optional[str])
-
-slots.physical_linkage = Slot(uri=AK_SCHEMA.physical_linkage, name="physical_linkage", curie=AK_SCHEMA.curie('physical_linkage'),
-                   model_uri=AK_SCHEMA.physical_linkage, domain=None, range=Optional[str])
 
 slots.epitope = Slot(uri=AK_SCHEMA.epitope, name="epitope", curie=AK_SCHEMA.curie('epitope'),
                    model_uri=AK_SCHEMA.epitope, domain=None, range=Optional[Union[str, EpitopeAkcId]])
@@ -9552,56 +12768,8 @@ slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_typ
 slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
 
-slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
-                   model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
-
-slots.sequence_aa = Slot(uri=AK_SCHEMA.sequence_aa, name="sequence_aa", curie=AK_SCHEMA.curie('sequence_aa'),
-                   model_uri=AK_SCHEMA.sequence_aa, domain=None, range=Optional[str])
-
 slots.chain_type = Slot(uri=AK_SCHEMA.chain_type, name="chain_type", curie=AK_SCHEMA.curie('chain_type'),
                    model_uri=AK_SCHEMA.chain_type, domain=None, range=Optional[Union[str, "ChainType"]])
-
-slots.v_call = Slot(uri=AK_SCHEMA.v_call, name="v_call", curie=AK_SCHEMA.curie('v_call'),
-                   model_uri=AK_SCHEMA.v_call, domain=None, range=Optional[str])
-
-slots.d_call = Slot(uri=AK_SCHEMA.d_call, name="d_call", curie=AK_SCHEMA.curie('d_call'),
-                   model_uri=AK_SCHEMA.d_call, domain=None, range=Optional[str])
-
-slots.j_call = Slot(uri=AK_SCHEMA.j_call, name="j_call", curie=AK_SCHEMA.curie('j_call'),
-                   model_uri=AK_SCHEMA.j_call, domain=None, range=Optional[str])
-
-slots.c_call = Slot(uri=AK_SCHEMA.c_call, name="c_call", curie=AK_SCHEMA.curie('c_call'),
-                   model_uri=AK_SCHEMA.c_call, domain=None, range=Optional[str])
-
-slots.junction_aa = Slot(uri=AK_SCHEMA.junction_aa, name="junction_aa", curie=AK_SCHEMA.curie('junction_aa'),
-                   model_uri=AK_SCHEMA.junction_aa, domain=None, range=Optional[str])
-
-slots.cdr1_aa = Slot(uri=AK_SCHEMA.cdr1_aa, name="cdr1_aa", curie=AK_SCHEMA.curie('cdr1_aa'),
-                   model_uri=AK_SCHEMA.cdr1_aa, domain=None, range=Optional[str])
-
-slots.cdr2_aa = Slot(uri=AK_SCHEMA.cdr2_aa, name="cdr2_aa", curie=AK_SCHEMA.curie('cdr2_aa'),
-                   model_uri=AK_SCHEMA.cdr2_aa, domain=None, range=Optional[str])
-
-slots.cdr3_aa = Slot(uri=AK_SCHEMA.cdr3_aa, name="cdr3_aa", curie=AK_SCHEMA.curie('cdr3_aa'),
-                   model_uri=AK_SCHEMA.cdr3_aa, domain=None, range=Optional[str])
-
-slots.cdr1_start = Slot(uri=AK_SCHEMA.cdr1_start, name="cdr1_start", curie=AK_SCHEMA.curie('cdr1_start'),
-                   model_uri=AK_SCHEMA.cdr1_start, domain=None, range=Optional[int])
-
-slots.cdr1_end = Slot(uri=AK_SCHEMA.cdr1_end, name="cdr1_end", curie=AK_SCHEMA.curie('cdr1_end'),
-                   model_uri=AK_SCHEMA.cdr1_end, domain=None, range=Optional[int])
-
-slots.cdr2_start = Slot(uri=AK_SCHEMA.cdr2_start, name="cdr2_start", curie=AK_SCHEMA.curie('cdr2_start'),
-                   model_uri=AK_SCHEMA.cdr2_start, domain=None, range=Optional[int])
-
-slots.cdr2_end = Slot(uri=AK_SCHEMA.cdr2_end, name="cdr2_end", curie=AK_SCHEMA.curie('cdr2_end'),
-                   model_uri=AK_SCHEMA.cdr2_end, domain=None, range=Optional[int])
-
-slots.cdr3_start = Slot(uri=AK_SCHEMA.cdr3_start, name="cdr3_start", curie=AK_SCHEMA.curie('cdr3_start'),
-                   model_uri=AK_SCHEMA.cdr3_start, domain=None, range=Optional[int])
-
-slots.cdr3_end = Slot(uri=AK_SCHEMA.cdr3_end, name="cdr3_end", curie=AK_SCHEMA.curie('cdr3_end'),
-                   model_uri=AK_SCHEMA.cdr3_end, domain=None, range=Optional[int])
 
 slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curie('isotype'),
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])
@@ -9642,6 +12810,1194 @@ slots.chain_codomain = Slot(uri=AK_SCHEMA.chain_codomain, name="chain_codomain",
 slots.chain_similarity_type = Slot(uri=RDF.type, name="chain_similarity_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.chain_similarity_type, domain=None, range=Optional[Union[str, "ChainSimilarityType"]])
 
+slots.label = Slot(uri=AK_SCHEMA.label, name="label", curie=AK_SCHEMA.curie('label'),
+                   model_uri=AK_SCHEMA.label, domain=None, range=Optional[str])
+
+slots.acknowledgement_id = Slot(uri=AK_SCHEMA.acknowledgement_id, name="acknowledgement_id", curie=AK_SCHEMA.curie('acknowledgement_id'),
+                   model_uri=AK_SCHEMA.acknowledgement_id, domain=None, range=str)
+
+slots.institution_name = Slot(uri=AK_SCHEMA.institution_name, name="institution_name", curie=AK_SCHEMA.curie('institution_name'),
+                   model_uri=AK_SCHEMA.institution_name, domain=None, range=str)
+
+slots.orcid_id = Slot(uri=AK_SCHEMA.orcid_id, name="orcid_id", curie=AK_SCHEMA.curie('orcid_id'),
+                   model_uri=AK_SCHEMA.orcid_id, domain=None, range=Optional[str])
+
+slots.sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
+                   model_uri=AK_SCHEMA.sequence_id, domain=None, range=str)
+
+slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
+                   model_uri=AK_SCHEMA.sequence, domain=None, range=str)
+
+slots.derivation = Slot(uri=AK_SCHEMA.derivation, name="derivation", curie=AK_SCHEMA.curie('derivation'),
+                   model_uri=AK_SCHEMA.derivation, domain=None, range=Union[str, "Derivation"])
+
+slots.observation_type = Slot(uri=RDF.type, name="observation_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.observation_type, domain=None, range=Union[str, "ObservationType"])
+
+slots.curation = Slot(uri=AK_SCHEMA.curation, name="curation", curie=AK_SCHEMA.curie('curation'),
+                   model_uri=AK_SCHEMA.curation, domain=None, range=Optional[str])
+
+slots.repository_name = Slot(uri=AK_SCHEMA.repository_name, name="repository_name", curie=AK_SCHEMA.curie('repository_name'),
+                   model_uri=AK_SCHEMA.repository_name, domain=None, range=str)
+
+slots.repository_ref = Slot(uri=AK_SCHEMA.repository_ref, name="repository_ref", curie=AK_SCHEMA.curie('repository_ref'),
+                   model_uri=AK_SCHEMA.repository_ref, domain=None, range=Optional[str])
+
+slots.deposited_version = Slot(uri=AK_SCHEMA.deposited_version, name="deposited_version", curie=AK_SCHEMA.curie('deposited_version'),
+                   model_uri=AK_SCHEMA.deposited_version, domain=None, range=str)
+
+slots.sequence_start = Slot(uri=AK_SCHEMA.sequence_start, name="sequence_start", curie=AK_SCHEMA.curie('sequence_start'),
+                   model_uri=AK_SCHEMA.sequence_start, domain=None, range=Optional[int])
+
+slots.sequence_end = Slot(uri=AK_SCHEMA.sequence_end, name="sequence_end", curie=AK_SCHEMA.curie('sequence_end'),
+                   model_uri=AK_SCHEMA.sequence_end, domain=None, range=Optional[int])
+
+slots.patch_no = Slot(uri=AK_SCHEMA.patch_no, name="patch_no", curie=AK_SCHEMA.curie('patch_no'),
+                   model_uri=AK_SCHEMA.patch_no, domain=None, range=Optional[str])
+
+slots.gff_seqid = Slot(uri=AK_SCHEMA.gff_seqid, name="gff_seqid", curie=AK_SCHEMA.curie('gff_seqid'),
+                   model_uri=AK_SCHEMA.gff_seqid, domain=None, range=str)
+
+slots.gff_start = Slot(uri=AK_SCHEMA.gff_start, name="gff_start", curie=AK_SCHEMA.curie('gff_start'),
+                   model_uri=AK_SCHEMA.gff_start, domain=None, range=int)
+
+slots.gff_end = Slot(uri=AK_SCHEMA.gff_end, name="gff_end", curie=AK_SCHEMA.curie('gff_end'),
+                   model_uri=AK_SCHEMA.gff_end, domain=None, range=int)
+
+slots.strand = Slot(uri=AK_SCHEMA.strand, name="strand", curie=AK_SCHEMA.curie('strand'),
+                   model_uri=AK_SCHEMA.strand, domain=None, range=Union[str, "Strand"])
+
+slots.sequence_delineation_id = Slot(uri=AK_SCHEMA.sequence_delineation_id, name="sequence_delineation_id", curie=AK_SCHEMA.curie('sequence_delineation_id'),
+                   model_uri=AK_SCHEMA.sequence_delineation_id, domain=None, range=str)
+
+slots.delineation_scheme = Slot(uri=AK_SCHEMA.delineation_scheme, name="delineation_scheme", curie=AK_SCHEMA.curie('delineation_scheme'),
+                   model_uri=AK_SCHEMA.delineation_scheme, domain=None, range=str)
+
+slots.unaligned_sequence = Slot(uri=AK_SCHEMA.unaligned_sequence, name="unaligned_sequence", curie=AK_SCHEMA.curie('unaligned_sequence'),
+                   model_uri=AK_SCHEMA.unaligned_sequence, domain=None, range=Optional[str])
+
+slots.aligned_sequence = Slot(uri=AK_SCHEMA.aligned_sequence, name="aligned_sequence", curie=AK_SCHEMA.curie('aligned_sequence'),
+                   model_uri=AK_SCHEMA.aligned_sequence, domain=None, range=Optional[str])
+
+slots.fwr1_start = Slot(uri=AK_SCHEMA.fwr1_start, name="fwr1_start", curie=AK_SCHEMA.curie('fwr1_start'),
+                   model_uri=AK_SCHEMA.fwr1_start, domain=None, range=Optional[int])
+
+slots.fwr1_end = Slot(uri=AK_SCHEMA.fwr1_end, name="fwr1_end", curie=AK_SCHEMA.curie('fwr1_end'),
+                   model_uri=AK_SCHEMA.fwr1_end, domain=None, range=Optional[int])
+
+slots.cdr1_start = Slot(uri=AK_SCHEMA.cdr1_start, name="cdr1_start", curie=AK_SCHEMA.curie('cdr1_start'),
+                   model_uri=AK_SCHEMA.cdr1_start, domain=None, range=Optional[int])
+
+slots.cdr1_end = Slot(uri=AK_SCHEMA.cdr1_end, name="cdr1_end", curie=AK_SCHEMA.curie('cdr1_end'),
+                   model_uri=AK_SCHEMA.cdr1_end, domain=None, range=Optional[int])
+
+slots.fwr2_start = Slot(uri=AK_SCHEMA.fwr2_start, name="fwr2_start", curie=AK_SCHEMA.curie('fwr2_start'),
+                   model_uri=AK_SCHEMA.fwr2_start, domain=None, range=Optional[int])
+
+slots.fwr2_end = Slot(uri=AK_SCHEMA.fwr2_end, name="fwr2_end", curie=AK_SCHEMA.curie('fwr2_end'),
+                   model_uri=AK_SCHEMA.fwr2_end, domain=None, range=Optional[int])
+
+slots.cdr2_start = Slot(uri=AK_SCHEMA.cdr2_start, name="cdr2_start", curie=AK_SCHEMA.curie('cdr2_start'),
+                   model_uri=AK_SCHEMA.cdr2_start, domain=None, range=Optional[int])
+
+slots.cdr2_end = Slot(uri=AK_SCHEMA.cdr2_end, name="cdr2_end", curie=AK_SCHEMA.curie('cdr2_end'),
+                   model_uri=AK_SCHEMA.cdr2_end, domain=None, range=Optional[int])
+
+slots.fwr3_start = Slot(uri=AK_SCHEMA.fwr3_start, name="fwr3_start", curie=AK_SCHEMA.curie('fwr3_start'),
+                   model_uri=AK_SCHEMA.fwr3_start, domain=None, range=Optional[int])
+
+slots.fwr3_end = Slot(uri=AK_SCHEMA.fwr3_end, name="fwr3_end", curie=AK_SCHEMA.curie('fwr3_end'),
+                   model_uri=AK_SCHEMA.fwr3_end, domain=None, range=Optional[int])
+
+slots.cdr3_start = Slot(uri=AK_SCHEMA.cdr3_start, name="cdr3_start", curie=AK_SCHEMA.curie('cdr3_start'),
+                   model_uri=AK_SCHEMA.cdr3_start, domain=None, range=Optional[int])
+
+slots.alignment_labels = Slot(uri=AK_SCHEMA.alignment_labels, name="alignment_labels", curie=AK_SCHEMA.curie('alignment_labels'),
+                   model_uri=AK_SCHEMA.alignment_labels, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.allele_description_id = Slot(uri=AK_SCHEMA.allele_description_id, name="allele_description_id", curie=AK_SCHEMA.curie('allele_description_id'),
+                   model_uri=AK_SCHEMA.allele_description_id, domain=None, range=str)
+
+slots.allele_description_ref = Slot(uri=AK_SCHEMA.allele_description_ref, name="allele_description_ref", curie=AK_SCHEMA.curie('allele_description_ref'),
+                   model_uri=AK_SCHEMA.allele_description_ref, domain=None, range=Optional[str])
+
+slots.maintainer = Slot(uri=AK_SCHEMA.maintainer, name="maintainer", curie=AK_SCHEMA.curie('maintainer'),
+                   model_uri=AK_SCHEMA.maintainer, domain=None, range=str)
+
+slots.acknowledgements = Slot(uri=AK_SCHEMA.acknowledgements, name="acknowledgements", curie=AK_SCHEMA.curie('acknowledgements'),
+                   model_uri=AK_SCHEMA.acknowledgements, domain=None, range=Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]])
+
+slots.lab_address = Slot(uri=AK_SCHEMA.lab_address, name="lab_address", curie=AK_SCHEMA.curie('lab_address'),
+                   model_uri=AK_SCHEMA.lab_address, domain=None, range=str)
+
+slots.release_version = Slot(uri=AK_SCHEMA.release_version, name="release_version", curie=AK_SCHEMA.curie('release_version'),
+                   model_uri=AK_SCHEMA.release_version, domain=None, range=str)
+
+slots.release_date = Slot(uri=AK_SCHEMA.release_date, name="release_date", curie=AK_SCHEMA.curie('release_date'),
+                   model_uri=AK_SCHEMA.release_date, domain=None, range=Union[str, XSDDateTime])
+
+slots.release_description = Slot(uri=AK_SCHEMA.release_description, name="release_description", curie=AK_SCHEMA.curie('release_description'),
+                   model_uri=AK_SCHEMA.release_description, domain=None, range=str)
+
+slots.coding_sequence = Slot(uri=AK_SCHEMA.coding_sequence, name="coding_sequence", curie=AK_SCHEMA.curie('coding_sequence'),
+                   model_uri=AK_SCHEMA.coding_sequence, domain=None, range=str)
+
+slots.aliases = Slot(uri=AK_SCHEMA.aliases, name="aliases", curie=AK_SCHEMA.curie('aliases'),
+                   model_uri=AK_SCHEMA.aliases, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.locus = Slot(uri=AK_SCHEMA.locus, name="locus", curie=AK_SCHEMA.curie('locus'),
+                   model_uri=AK_SCHEMA.locus, domain=None, range=Optional[Union[str, "Locus"]])
+
+slots.chromosome = Slot(uri=AK_SCHEMA.chromosome, name="chromosome", curie=AK_SCHEMA.curie('chromosome'),
+                   model_uri=AK_SCHEMA.chromosome, domain=None, range=Optional[int])
+
+slots.sequence_type = Slot(uri=RDF.type, name="sequence_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.sequence_type, domain=None, range=Union[str, "SequenceType"])
+
+slots.functional = Slot(uri=AK_SCHEMA.functional, name="functional", curie=AK_SCHEMA.curie('functional'),
+                   model_uri=AK_SCHEMA.functional, domain=None, range=Union[bool, Bool])
+
+slots.inference_type = Slot(uri=RDF.type, name="inference_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.inference_type, domain=None, range=Union[str, "InferenceType"])
+
+slots.species_subgroup = Slot(uri=AK_SCHEMA.species_subgroup, name="species_subgroup", curie=AK_SCHEMA.curie('species_subgroup'),
+                   model_uri=AK_SCHEMA.species_subgroup, domain=None, range=Optional[str])
+
+slots.species_subgroup_type = Slot(uri=RDF.type, name="species_subgroup_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.species_subgroup_type, domain=None, range=Optional[Union[str, "SpeciesSubgroupType"]])
+
+slots.status = Slot(uri=AK_SCHEMA.status, name="status", curie=AK_SCHEMA.curie('status'),
+                   model_uri=AK_SCHEMA.status, domain=None, range=Optional[Union[str, "Status"]])
+
+slots.subgroup_designation = Slot(uri=AK_SCHEMA.subgroup_designation, name="subgroup_designation", curie=AK_SCHEMA.curie('subgroup_designation'),
+                   model_uri=AK_SCHEMA.subgroup_designation, domain=None, range=Optional[str])
+
+slots.gene_designation = Slot(uri=AK_SCHEMA.gene_designation, name="gene_designation", curie=AK_SCHEMA.curie('gene_designation'),
+                   model_uri=AK_SCHEMA.gene_designation, domain=None, range=Optional[str])
+
+slots.allele_designation = Slot(uri=AK_SCHEMA.allele_designation, name="allele_designation", curie=AK_SCHEMA.curie('allele_designation'),
+                   model_uri=AK_SCHEMA.allele_designation, domain=None, range=Optional[str])
+
+slots.allele_similarity_cluster_designation = Slot(uri=AK_SCHEMA.allele_similarity_cluster_designation, name="allele_similarity_cluster_designation", curie=AK_SCHEMA.curie('allele_similarity_cluster_designation'),
+                   model_uri=AK_SCHEMA.allele_similarity_cluster_designation, domain=None, range=Optional[str])
+
+slots.allele_similarity_cluster_member_id = Slot(uri=AK_SCHEMA.allele_similarity_cluster_member_id, name="allele_similarity_cluster_member_id", curie=AK_SCHEMA.curie('allele_similarity_cluster_member_id'),
+                   model_uri=AK_SCHEMA.allele_similarity_cluster_member_id, domain=None, range=Optional[str])
+
+slots.j_codon_frame = Slot(uri=AK_SCHEMA.j_codon_frame, name="j_codon_frame", curie=AK_SCHEMA.curie('j_codon_frame'),
+                   model_uri=AK_SCHEMA.j_codon_frame, domain=None, range=Optional[Union[str, "JCodonFrame"]])
+
+slots.gene_start = Slot(uri=AK_SCHEMA.gene_start, name="gene_start", curie=AK_SCHEMA.curie('gene_start'),
+                   model_uri=AK_SCHEMA.gene_start, domain=None, range=Optional[int])
+
+slots.gene_end = Slot(uri=AK_SCHEMA.gene_end, name="gene_end", curie=AK_SCHEMA.curie('gene_end'),
+                   model_uri=AK_SCHEMA.gene_end, domain=None, range=Optional[int])
+
+slots.utr_5_prime_start = Slot(uri=AK_SCHEMA.utr_5_prime_start, name="utr_5_prime_start", curie=AK_SCHEMA.curie('utr_5_prime_start'),
+                   model_uri=AK_SCHEMA.utr_5_prime_start, domain=None, range=Optional[int])
+
+slots.utr_5_prime_end = Slot(uri=AK_SCHEMA.utr_5_prime_end, name="utr_5_prime_end", curie=AK_SCHEMA.curie('utr_5_prime_end'),
+                   model_uri=AK_SCHEMA.utr_5_prime_end, domain=None, range=Optional[int])
+
+slots.leader_1_start = Slot(uri=AK_SCHEMA.leader_1_start, name="leader_1_start", curie=AK_SCHEMA.curie('leader_1_start'),
+                   model_uri=AK_SCHEMA.leader_1_start, domain=None, range=Optional[int])
+
+slots.leader_1_end = Slot(uri=AK_SCHEMA.leader_1_end, name="leader_1_end", curie=AK_SCHEMA.curie('leader_1_end'),
+                   model_uri=AK_SCHEMA.leader_1_end, domain=None, range=Optional[int])
+
+slots.leader_2_start = Slot(uri=AK_SCHEMA.leader_2_start, name="leader_2_start", curie=AK_SCHEMA.curie('leader_2_start'),
+                   model_uri=AK_SCHEMA.leader_2_start, domain=None, range=Optional[int])
+
+slots.leader_2_end = Slot(uri=AK_SCHEMA.leader_2_end, name="leader_2_end", curie=AK_SCHEMA.curie('leader_2_end'),
+                   model_uri=AK_SCHEMA.leader_2_end, domain=None, range=Optional[int])
+
+slots.v_rs_start = Slot(uri=AK_SCHEMA.v_rs_start, name="v_rs_start", curie=AK_SCHEMA.curie('v_rs_start'),
+                   model_uri=AK_SCHEMA.v_rs_start, domain=None, range=Optional[int])
+
+slots.v_rs_end = Slot(uri=AK_SCHEMA.v_rs_end, name="v_rs_end", curie=AK_SCHEMA.curie('v_rs_end'),
+                   model_uri=AK_SCHEMA.v_rs_end, domain=None, range=Optional[int])
+
+slots.d_rs_3_prime_start = Slot(uri=AK_SCHEMA.d_rs_3_prime_start, name="d_rs_3_prime_start", curie=AK_SCHEMA.curie('d_rs_3_prime_start'),
+                   model_uri=AK_SCHEMA.d_rs_3_prime_start, domain=None, range=Optional[int])
+
+slots.d_rs_3_prime_end = Slot(uri=AK_SCHEMA.d_rs_3_prime_end, name="d_rs_3_prime_end", curie=AK_SCHEMA.curie('d_rs_3_prime_end'),
+                   model_uri=AK_SCHEMA.d_rs_3_prime_end, domain=None, range=Optional[int])
+
+slots.d_rs_5_prime_start = Slot(uri=AK_SCHEMA.d_rs_5_prime_start, name="d_rs_5_prime_start", curie=AK_SCHEMA.curie('d_rs_5_prime_start'),
+                   model_uri=AK_SCHEMA.d_rs_5_prime_start, domain=None, range=Optional[int])
+
+slots.d_rs_5_prime_end = Slot(uri=AK_SCHEMA.d_rs_5_prime_end, name="d_rs_5_prime_end", curie=AK_SCHEMA.curie('d_rs_5_prime_end'),
+                   model_uri=AK_SCHEMA.d_rs_5_prime_end, domain=None, range=Optional[int])
+
+slots.j_cdr3_end = Slot(uri=AK_SCHEMA.j_cdr3_end, name="j_cdr3_end", curie=AK_SCHEMA.curie('j_cdr3_end'),
+                   model_uri=AK_SCHEMA.j_cdr3_end, domain=None, range=Optional[int])
+
+slots.j_rs_start = Slot(uri=AK_SCHEMA.j_rs_start, name="j_rs_start", curie=AK_SCHEMA.curie('j_rs_start'),
+                   model_uri=AK_SCHEMA.j_rs_start, domain=None, range=Optional[int])
+
+slots.j_rs_end = Slot(uri=AK_SCHEMA.j_rs_end, name="j_rs_end", curie=AK_SCHEMA.curie('j_rs_end'),
+                   model_uri=AK_SCHEMA.j_rs_end, domain=None, range=Optional[int])
+
+slots.j_donor_splice = Slot(uri=AK_SCHEMA.j_donor_splice, name="j_donor_splice", curie=AK_SCHEMA.curie('j_donor_splice'),
+                   model_uri=AK_SCHEMA.j_donor_splice, domain=None, range=Optional[int])
+
+slots.v_gene_delineations = Slot(uri=AK_SCHEMA.v_gene_delineations, name="v_gene_delineations", curie=AK_SCHEMA.curie('v_gene_delineations'),
+                   model_uri=AK_SCHEMA.v_gene_delineations, domain=None, range=Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]])
+
+slots.unrearranged_support = Slot(uri=AK_SCHEMA.unrearranged_support, name="unrearranged_support", curie=AK_SCHEMA.curie('unrearranged_support'),
+                   model_uri=AK_SCHEMA.unrearranged_support, domain=None, range=Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]])
+
+slots.rearranged_support = Slot(uri=AK_SCHEMA.rearranged_support, name="rearranged_support", curie=AK_SCHEMA.curie('rearranged_support'),
+                   model_uri=AK_SCHEMA.rearranged_support, domain=None, range=Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]])
+
+slots.paralogs = Slot(uri=AK_SCHEMA.paralogs, name="paralogs", curie=AK_SCHEMA.curie('paralogs'),
+                   model_uri=AK_SCHEMA.paralogs, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.curational_tags = Slot(uri=AK_SCHEMA.curational_tags, name="curational_tags", curie=AK_SCHEMA.curie('curational_tags'),
+                   model_uri=AK_SCHEMA.curational_tags, domain=None, range=Optional[Union[Union[str, "CurationalTags"], List[Union[str, "CurationalTags"]]]])
+
+slots.germline_set_id = Slot(uri=AK_SCHEMA.germline_set_id, name="germline_set_id", curie=AK_SCHEMA.curie('germline_set_id'),
+                   model_uri=AK_SCHEMA.germline_set_id, domain=None, range=str)
+
+slots.author = Slot(uri=AK_SCHEMA.author, name="author", curie=AK_SCHEMA.curie('author'),
+                   model_uri=AK_SCHEMA.author, domain=None, range=str)
+
+slots.lab_name = Slot(uri=AK_SCHEMA.lab_name, name="lab_name", curie=AK_SCHEMA.curie('lab_name'),
+                   model_uri=AK_SCHEMA.lab_name, domain=None, range=str)
+
+slots.germline_set_name = Slot(uri=AK_SCHEMA.germline_set_name, name="germline_set_name", curie=AK_SCHEMA.curie('germline_set_name'),
+                   model_uri=AK_SCHEMA.germline_set_name, domain=None, range=str)
+
+slots.germline_set_ref = Slot(uri=AK_SCHEMA.germline_set_ref, name="germline_set_ref", curie=AK_SCHEMA.curie('germline_set_ref'),
+                   model_uri=AK_SCHEMA.germline_set_ref, domain=None, range=Optional[str])
+
+slots.pub_ids = Slot(uri=AK_SCHEMA.pub_ids, name="pub_ids", curie=AK_SCHEMA.curie('pub_ids'),
+                   model_uri=AK_SCHEMA.pub_ids, domain=None, range=Optional[str])
+
+slots.allele_descriptions = Slot(uri=AK_SCHEMA.allele_descriptions, name="allele_descriptions", curie=AK_SCHEMA.curie('allele_descriptions'),
+                   model_uri=AK_SCHEMA.allele_descriptions, domain=None, range=Union[Union[dict, AlleleDescription], List[Union[dict, AlleleDescription]]])
+
+slots.receptor_genotype_set_id = Slot(uri=AK_SCHEMA.receptor_genotype_set_id, name="receptor_genotype_set_id", curie=AK_SCHEMA.curie('receptor_genotype_set_id'),
+                   model_uri=AK_SCHEMA.receptor_genotype_set_id, domain=None, range=str)
+
+slots.genotype_class_list = Slot(uri=AK_SCHEMA.genotype_class_list, name="genotype_class_list", curie=AK_SCHEMA.curie('genotype_class_list'),
+                   model_uri=AK_SCHEMA.genotype_class_list, domain=None, range=Optional[Union[Union[dict, Genotype], List[Union[dict, Genotype]]]])
+
+slots.receptor_genotype_id = Slot(uri=AK_SCHEMA.receptor_genotype_id, name="receptor_genotype_id", curie=AK_SCHEMA.curie('receptor_genotype_id'),
+                   model_uri=AK_SCHEMA.receptor_genotype_id, domain=None, range=str)
+
+slots.documented_alleles = Slot(uri=AK_SCHEMA.documented_alleles, name="documented_alleles", curie=AK_SCHEMA.curie('documented_alleles'),
+                   model_uri=AK_SCHEMA.documented_alleles, domain=None, range=Optional[Union[Union[dict, DocumentedAllele], List[Union[dict, DocumentedAllele]]]])
+
+slots.undocumented_alleles = Slot(uri=AK_SCHEMA.undocumented_alleles, name="undocumented_alleles", curie=AK_SCHEMA.curie('undocumented_alleles'),
+                   model_uri=AK_SCHEMA.undocumented_alleles, domain=None, range=Optional[Union[Union[dict, UndocumentedAllele], List[Union[dict, UndocumentedAllele]]]])
+
+slots.deleted_genes = Slot(uri=AK_SCHEMA.deleted_genes, name="deleted_genes", curie=AK_SCHEMA.curie('deleted_genes'),
+                   model_uri=AK_SCHEMA.deleted_genes, domain=None, range=Optional[Union[Union[dict, DeletedGene], List[Union[dict, DeletedGene]]]])
+
+slots.inference_process = Slot(uri=AK_SCHEMA.inference_process, name="inference_process", curie=AK_SCHEMA.curie('inference_process'),
+                   model_uri=AK_SCHEMA.inference_process, domain=None, range=Optional[Union[str, "InferenceProcess"]])
+
+slots.phasing = Slot(uri=AK_SCHEMA.phasing, name="phasing", curie=AK_SCHEMA.curie('phasing'),
+                   model_uri=AK_SCHEMA.phasing, domain=None, range=Optional[int])
+
+slots.allele_name = Slot(uri=AK_SCHEMA.allele_name, name="allele_name", curie=AK_SCHEMA.curie('allele_name'),
+                   model_uri=AK_SCHEMA.allele_name, domain=None, range=str)
+
+slots.mhc_genotype_set_id = Slot(uri=AK_SCHEMA.mhc_genotype_set_id, name="mhc_genotype_set_id", curie=AK_SCHEMA.curie('mhc_genotype_set_id'),
+                   model_uri=AK_SCHEMA.mhc_genotype_set_id, domain=None, range=str)
+
+slots.mhc_genotype_list = Slot(uri=AK_SCHEMA.mhc_genotype_list, name="mhc_genotype_list", curie=AK_SCHEMA.curie('mhc_genotype_list'),
+                   model_uri=AK_SCHEMA.mhc_genotype_list, domain=None, range=Union[Union[dict, MHCGenotype], List[Union[dict, MHCGenotype]]])
+
+slots.mhc_genotype_id = Slot(uri=AK_SCHEMA.mhc_genotype_id, name="mhc_genotype_id", curie=AK_SCHEMA.curie('mhc_genotype_id'),
+                   model_uri=AK_SCHEMA.mhc_genotype_id, domain=None, range=str)
+
+slots.mhc_class = Slot(uri=AK_SCHEMA.mhc_class, name="mhc_class", curie=AK_SCHEMA.curie('mhc_class'),
+                   model_uri=AK_SCHEMA.mhc_class, domain=None, range=Optional[Union[str, "MhcClass"]])
+
+slots.mhc_alleles = Slot(uri=AK_SCHEMA.mhc_alleles, name="mhc_alleles", curie=AK_SCHEMA.curie('mhc_alleles'),
+                   model_uri=AK_SCHEMA.mhc_alleles, domain=None, range=Union[Union[dict, MHCAllele], List[Union[dict, MHCAllele]]])
+
+slots.mhc_genotyping_method = Slot(uri=AK_SCHEMA.mhc_genotyping_method, name="mhc_genotyping_method", curie=AK_SCHEMA.curie('mhc_genotyping_method'),
+                   model_uri=AK_SCHEMA.mhc_genotyping_method, domain=None, range=Optional[str])
+
+slots.gene = Slot(uri=AK_SCHEMA.gene, name="gene", curie=AK_SCHEMA.curie('gene'),
+                   model_uri=AK_SCHEMA.gene, domain=None, range=Optional[Union[str, "Gene"]])
+
+slots.reference_set_ref = Slot(uri=AK_SCHEMA.reference_set_ref, name="reference_set_ref", curie=AK_SCHEMA.curie('reference_set_ref'),
+                   model_uri=AK_SCHEMA.reference_set_ref, domain=None, range=Optional[str])
+
+slots.receptor_genotype_set = Slot(uri=AK_SCHEMA.receptor_genotype_set, name="receptor_genotype_set", curie=AK_SCHEMA.curie('receptor_genotype_set'),
+                   model_uri=AK_SCHEMA.receptor_genotype_set, domain=None, range=Optional[Union[dict, GenotypeSet]])
+
+slots.mhc_genotype_set = Slot(uri=AK_SCHEMA.mhc_genotype_set, name="mhc_genotype_set", curie=AK_SCHEMA.curie('mhc_genotype_set'),
+                   model_uri=AK_SCHEMA.mhc_genotype_set, domain=None, range=Optional[Union[dict, MHCGenotypeSet]])
+
+slots.study_id = Slot(uri=AK_SCHEMA.study_id, name="study_id", curie=AK_SCHEMA.curie('study_id'),
+                   model_uri=AK_SCHEMA.study_id, domain=None, range=str)
+
+slots.study_title = Slot(uri=AK_SCHEMA.study_title, name="study_title", curie=AK_SCHEMA.curie('study_title'),
+                   model_uri=AK_SCHEMA.study_title, domain=None, range=str)
+
+slots.study_type = Slot(uri=RDF.type, name="study_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.study_type, domain=None, range=Union[str, "StudyType"])
+
+slots.study_description = Slot(uri=AK_SCHEMA.study_description, name="study_description", curie=AK_SCHEMA.curie('study_description'),
+                   model_uri=AK_SCHEMA.study_description, domain=None, range=Optional[str])
+
+slots.inclusion_exclusion_criteria = Slot(uri=AK_SCHEMA.inclusion_exclusion_criteria, name="inclusion_exclusion_criteria", curie=AK_SCHEMA.curie('inclusion_exclusion_criteria'),
+                   model_uri=AK_SCHEMA.inclusion_exclusion_criteria, domain=None, range=str)
+
+slots.grants = Slot(uri=AK_SCHEMA.grants, name="grants", curie=AK_SCHEMA.curie('grants'),
+                   model_uri=AK_SCHEMA.grants, domain=None, range=str)
+
+slots.study_contact = Slot(uri=AK_SCHEMA.study_contact, name="study_contact", curie=AK_SCHEMA.curie('study_contact'),
+                   model_uri=AK_SCHEMA.study_contact, domain=None, range=Optional[str])
+
+slots.collected_by = Slot(uri=AK_SCHEMA.collected_by, name="collected_by", curie=AK_SCHEMA.curie('collected_by'),
+                   model_uri=AK_SCHEMA.collected_by, domain=None, range=str)
+
+slots.submitted_by = Slot(uri=AK_SCHEMA.submitted_by, name="submitted_by", curie=AK_SCHEMA.curie('submitted_by'),
+                   model_uri=AK_SCHEMA.submitted_by, domain=None, range=str)
+
+slots.keywords_study = Slot(uri=AK_SCHEMA.keywords_study, name="keywords_study", curie=AK_SCHEMA.curie('keywords_study'),
+                   model_uri=AK_SCHEMA.keywords_study, domain=None, range=Union[Union[str, "KeywordsStudy"], List[Union[str, "KeywordsStudy"]]])
+
+slots.adc_publish_date = Slot(uri=AK_SCHEMA.adc_publish_date, name="adc_publish_date", curie=AK_SCHEMA.curie('adc_publish_date'),
+                   model_uri=AK_SCHEMA.adc_publish_date, domain=None, range=Optional[Union[str, XSDDateTime]])
+
+slots.adc_update_date = Slot(uri=AK_SCHEMA.adc_update_date, name="adc_update_date", curie=AK_SCHEMA.curie('adc_update_date'),
+                   model_uri=AK_SCHEMA.adc_update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
+
+slots.subject_id = Slot(uri=AK_SCHEMA.subject_id, name="subject_id", curie=AK_SCHEMA.curie('subject_id'),
+                   model_uri=AK_SCHEMA.subject_id, domain=None, range=str)
+
+slots.synthetic = Slot(uri=AK_SCHEMA.synthetic, name="synthetic", curie=AK_SCHEMA.curie('synthetic'),
+                   model_uri=AK_SCHEMA.synthetic, domain=None, range=Union[bool, Bool])
+
+slots.sex = Slot(uri=AK_SCHEMA.sex, name="sex", curie=AK_SCHEMA.curie('sex'),
+                   model_uri=AK_SCHEMA.sex, domain=None, range=Union[str, "Sex"])
+
+slots.age_min = Slot(uri=AK_SCHEMA.age_min, name="age_min", curie=AK_SCHEMA.curie('age_min'),
+                   model_uri=AK_SCHEMA.age_min, domain=None, range=float)
+
+slots.age_max = Slot(uri=AK_SCHEMA.age_max, name="age_max", curie=AK_SCHEMA.curie('age_max'),
+                   model_uri=AK_SCHEMA.age_max, domain=None, range=float)
+
+slots.age_unit = Slot(uri=AK_SCHEMA.age_unit, name="age_unit", curie=AK_SCHEMA.curie('age_unit'),
+                   model_uri=AK_SCHEMA.age_unit, domain=None, range=Union[str, "AgeUnit"])
+
+slots.ancestry_population = Slot(uri=AK_SCHEMA.ancestry_population, name="ancestry_population", curie=AK_SCHEMA.curie('ancestry_population'),
+                   model_uri=AK_SCHEMA.ancestry_population, domain=None, range=str)
+
+slots.strain_name = Slot(uri=AK_SCHEMA.strain_name, name="strain_name", curie=AK_SCHEMA.curie('strain_name'),
+                   model_uri=AK_SCHEMA.strain_name, domain=None, range=str)
+
+slots.linked_subjects = Slot(uri=AK_SCHEMA.linked_subjects, name="linked_subjects", curie=AK_SCHEMA.curie('linked_subjects'),
+                   model_uri=AK_SCHEMA.linked_subjects, domain=None, range=str)
+
+slots.link_type = Slot(uri=RDF.type, name="link_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.link_type, domain=None, range=str)
+
+slots.diagnosis = Slot(uri=AK_SCHEMA.diagnosis, name="diagnosis", curie=AK_SCHEMA.curie('diagnosis'),
+                   model_uri=AK_SCHEMA.diagnosis, domain=None, range=Optional[Union[Union[dict, Diagnosis], List[Union[dict, Diagnosis]]]])
+
+slots.genotype = Slot(uri=AK_SCHEMA.genotype, name="genotype", curie=AK_SCHEMA.curie('genotype'),
+                   model_uri=AK_SCHEMA.genotype, domain=None, range=Optional[Union[dict, SubjectGenotype]])
+
+slots.study_group_description = Slot(uri=AK_SCHEMA.study_group_description, name="study_group_description", curie=AK_SCHEMA.curie('study_group_description'),
+                   model_uri=AK_SCHEMA.study_group_description, domain=None, range=str)
+
+slots.disease_diagnosis = Slot(uri=AK_SCHEMA.disease_diagnosis, name="disease_diagnosis", curie=AK_SCHEMA.curie('disease_diagnosis'),
+                   model_uri=AK_SCHEMA.disease_diagnosis, domain=None, range=Union[str, "DiseaseDiagnosis"])
+
+slots.disease_length = Slot(uri=AK_SCHEMA.disease_length, name="disease_length", curie=AK_SCHEMA.curie('disease_length'),
+                   model_uri=AK_SCHEMA.disease_length, domain=None, range=str)
+
+slots.prior_therapies = Slot(uri=AK_SCHEMA.prior_therapies, name="prior_therapies", curie=AK_SCHEMA.curie('prior_therapies'),
+                   model_uri=AK_SCHEMA.prior_therapies, domain=None, range=str)
+
+slots.immunogen = Slot(uri=AK_SCHEMA.immunogen, name="immunogen", curie=AK_SCHEMA.curie('immunogen'),
+                   model_uri=AK_SCHEMA.immunogen, domain=None, range=str)
+
+slots.intervention = Slot(uri=AK_SCHEMA.intervention, name="intervention", curie=AK_SCHEMA.curie('intervention'),
+                   model_uri=AK_SCHEMA.intervention, domain=None, range=str)
+
+slots.medical_history = Slot(uri=AK_SCHEMA.medical_history, name="medical_history", curie=AK_SCHEMA.curie('medical_history'),
+                   model_uri=AK_SCHEMA.medical_history, domain=None, range=str)
+
+slots.sample_id = Slot(uri=AK_SCHEMA.sample_id, name="sample_id", curie=AK_SCHEMA.curie('sample_id'),
+                   model_uri=AK_SCHEMA.sample_id, domain=None, range=str)
+
+slots.sample_type = Slot(uri=RDF.type, name="sample_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.sample_type, domain=None, range=str)
+
+slots.tissue = Slot(uri=AK_SCHEMA.tissue, name="tissue", curie=AK_SCHEMA.curie('tissue'),
+                   model_uri=AK_SCHEMA.tissue, domain=None, range=Union[str, "Tissue"])
+
+slots.anatomic_site = Slot(uri=AK_SCHEMA.anatomic_site, name="anatomic_site", curie=AK_SCHEMA.curie('anatomic_site'),
+                   model_uri=AK_SCHEMA.anatomic_site, domain=None, range=str)
+
+slots.disease_state_sample = Slot(uri=AK_SCHEMA.disease_state_sample, name="disease_state_sample", curie=AK_SCHEMA.curie('disease_state_sample'),
+                   model_uri=AK_SCHEMA.disease_state_sample, domain=None, range=str)
+
+slots.collection_time_point_relative = Slot(uri=AK_SCHEMA.collection_time_point_relative, name="collection_time_point_relative", curie=AK_SCHEMA.curie('collection_time_point_relative'),
+                   model_uri=AK_SCHEMA.collection_time_point_relative, domain=None, range=float)
+
+slots.collection_time_point_relative_unit = Slot(uri=AK_SCHEMA.collection_time_point_relative_unit, name="collection_time_point_relative_unit", curie=AK_SCHEMA.curie('collection_time_point_relative_unit'),
+                   model_uri=AK_SCHEMA.collection_time_point_relative_unit, domain=None, range=Union[str, "CollectionTimePointRelativeUnit"])
+
+slots.collection_time_point_reference = Slot(uri=AK_SCHEMA.collection_time_point_reference, name="collection_time_point_reference", curie=AK_SCHEMA.curie('collection_time_point_reference'),
+                   model_uri=AK_SCHEMA.collection_time_point_reference, domain=None, range=str)
+
+slots.biomaterial_provider = Slot(uri=AK_SCHEMA.biomaterial_provider, name="biomaterial_provider", curie=AK_SCHEMA.curie('biomaterial_provider'),
+                   model_uri=AK_SCHEMA.biomaterial_provider, domain=None, range=str)
+
+slots.tissue_processing = Slot(uri=AK_SCHEMA.tissue_processing, name="tissue_processing", curie=AK_SCHEMA.curie('tissue_processing'),
+                   model_uri=AK_SCHEMA.tissue_processing, domain=None, range=str)
+
+slots.cell_subset = Slot(uri=AK_SCHEMA.cell_subset, name="cell_subset", curie=AK_SCHEMA.curie('cell_subset'),
+                   model_uri=AK_SCHEMA.cell_subset, domain=None, range=Union[str, "CellSubset"])
+
+slots.cell_phenotype = Slot(uri=AK_SCHEMA.cell_phenotype, name="cell_phenotype", curie=AK_SCHEMA.curie('cell_phenotype'),
+                   model_uri=AK_SCHEMA.cell_phenotype, domain=None, range=str)
+
+slots.cell_species = Slot(uri=AK_SCHEMA.cell_species, name="cell_species", curie=AK_SCHEMA.curie('cell_species'),
+                   model_uri=AK_SCHEMA.cell_species, domain=None, range=Optional[Union[str, "CellSpecies"]])
+
+slots.single_cell = Slot(uri=AK_SCHEMA.single_cell, name="single_cell", curie=AK_SCHEMA.curie('single_cell'),
+                   model_uri=AK_SCHEMA.single_cell, domain=None, range=Union[bool, Bool])
+
+slots.cell_number = Slot(uri=AK_SCHEMA.cell_number, name="cell_number", curie=AK_SCHEMA.curie('cell_number'),
+                   model_uri=AK_SCHEMA.cell_number, domain=None, range=int)
+
+slots.cells_per_reaction = Slot(uri=AK_SCHEMA.cells_per_reaction, name="cells_per_reaction", curie=AK_SCHEMA.curie('cells_per_reaction'),
+                   model_uri=AK_SCHEMA.cells_per_reaction, domain=None, range=int)
+
+slots.cell_storage = Slot(uri=AK_SCHEMA.cell_storage, name="cell_storage", curie=AK_SCHEMA.curie('cell_storage'),
+                   model_uri=AK_SCHEMA.cell_storage, domain=None, range=Union[bool, Bool])
+
+slots.cell_quality = Slot(uri=AK_SCHEMA.cell_quality, name="cell_quality", curie=AK_SCHEMA.curie('cell_quality'),
+                   model_uri=AK_SCHEMA.cell_quality, domain=None, range=str)
+
+slots.cell_isolation = Slot(uri=AK_SCHEMA.cell_isolation, name="cell_isolation", curie=AK_SCHEMA.curie('cell_isolation'),
+                   model_uri=AK_SCHEMA.cell_isolation, domain=None, range=str)
+
+slots.cell_processing_protocol = Slot(uri=AK_SCHEMA.cell_processing_protocol, name="cell_processing_protocol", curie=AK_SCHEMA.curie('cell_processing_protocol'),
+                   model_uri=AK_SCHEMA.cell_processing_protocol, domain=None, range=str)
+
+slots.pcr_target_locus = Slot(uri=AK_SCHEMA.pcr_target_locus, name="pcr_target_locus", curie=AK_SCHEMA.curie('pcr_target_locus'),
+                   model_uri=AK_SCHEMA.pcr_target_locus, domain=None, range=Union[str, "PcrTargetLocus"])
+
+slots.forward_pcr_primer_target_location = Slot(uri=AK_SCHEMA.forward_pcr_primer_target_location, name="forward_pcr_primer_target_location", curie=AK_SCHEMA.curie('forward_pcr_primer_target_location'),
+                   model_uri=AK_SCHEMA.forward_pcr_primer_target_location, domain=None, range=str)
+
+slots.reverse_pcr_primer_target_location = Slot(uri=AK_SCHEMA.reverse_pcr_primer_target_location, name="reverse_pcr_primer_target_location", curie=AK_SCHEMA.curie('reverse_pcr_primer_target_location'),
+                   model_uri=AK_SCHEMA.reverse_pcr_primer_target_location, domain=None, range=str)
+
+slots.template_class = Slot(uri=AK_SCHEMA.template_class, name="template_class", curie=AK_SCHEMA.curie('template_class'),
+                   model_uri=AK_SCHEMA.template_class, domain=None, range=Union[str, "TemplateClass"])
+
+slots.template_quality = Slot(uri=AK_SCHEMA.template_quality, name="template_quality", curie=AK_SCHEMA.curie('template_quality'),
+                   model_uri=AK_SCHEMA.template_quality, domain=None, range=str)
+
+slots.template_amount = Slot(uri=AK_SCHEMA.template_amount, name="template_amount", curie=AK_SCHEMA.curie('template_amount'),
+                   model_uri=AK_SCHEMA.template_amount, domain=None, range=float)
+
+slots.template_amount_unit = Slot(uri=AK_SCHEMA.template_amount_unit, name="template_amount_unit", curie=AK_SCHEMA.curie('template_amount_unit'),
+                   model_uri=AK_SCHEMA.template_amount_unit, domain=None, range=Union[str, "TemplateAmountUnit"])
+
+slots.library_generation_method = Slot(uri=AK_SCHEMA.library_generation_method, name="library_generation_method", curie=AK_SCHEMA.curie('library_generation_method'),
+                   model_uri=AK_SCHEMA.library_generation_method, domain=None, range=Union[str, "LibraryGenerationMethod"])
+
+slots.library_generation_protocol = Slot(uri=AK_SCHEMA.library_generation_protocol, name="library_generation_protocol", curie=AK_SCHEMA.curie('library_generation_protocol'),
+                   model_uri=AK_SCHEMA.library_generation_protocol, domain=None, range=str)
+
+slots.library_generation_kit_version = Slot(uri=AK_SCHEMA.library_generation_kit_version, name="library_generation_kit_version", curie=AK_SCHEMA.curie('library_generation_kit_version'),
+                   model_uri=AK_SCHEMA.library_generation_kit_version, domain=None, range=str)
+
+slots.pcr_target = Slot(uri=AK_SCHEMA.pcr_target, name="pcr_target", curie=AK_SCHEMA.curie('pcr_target'),
+                   model_uri=AK_SCHEMA.pcr_target, domain=None, range=Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]])
+
+slots.complete_sequences = Slot(uri=AK_SCHEMA.complete_sequences, name="complete_sequences", curie=AK_SCHEMA.curie('complete_sequences'),
+                   model_uri=AK_SCHEMA.complete_sequences, domain=None, range=Union[str, "CompleteSequences"])
+
+slots.physical_linkage = Slot(uri=AK_SCHEMA.physical_linkage, name="physical_linkage", curie=AK_SCHEMA.curie('physical_linkage'),
+                   model_uri=AK_SCHEMA.physical_linkage, domain=None, range=Union[str, "PhysicalLinkage"])
+
+slots.sequencing_run_id = Slot(uri=AK_SCHEMA.sequencing_run_id, name="sequencing_run_id", curie=AK_SCHEMA.curie('sequencing_run_id'),
+                   model_uri=AK_SCHEMA.sequencing_run_id, domain=None, range=str)
+
+slots.total_reads_passing_qc_filter = Slot(uri=AK_SCHEMA.total_reads_passing_qc_filter, name="total_reads_passing_qc_filter", curie=AK_SCHEMA.curie('total_reads_passing_qc_filter'),
+                   model_uri=AK_SCHEMA.total_reads_passing_qc_filter, domain=None, range=int)
+
+slots.sequencing_platform = Slot(uri=AK_SCHEMA.sequencing_platform, name="sequencing_platform", curie=AK_SCHEMA.curie('sequencing_platform'),
+                   model_uri=AK_SCHEMA.sequencing_platform, domain=None, range=str)
+
+slots.sequencing_facility = Slot(uri=AK_SCHEMA.sequencing_facility, name="sequencing_facility", curie=AK_SCHEMA.curie('sequencing_facility'),
+                   model_uri=AK_SCHEMA.sequencing_facility, domain=None, range=str)
+
+slots.sequencing_run_date = Slot(uri=AK_SCHEMA.sequencing_run_date, name="sequencing_run_date", curie=AK_SCHEMA.curie('sequencing_run_date'),
+                   model_uri=AK_SCHEMA.sequencing_run_date, domain=None, range=Union[str, XSDDateTime])
+
+slots.sequencing_kit = Slot(uri=AK_SCHEMA.sequencing_kit, name="sequencing_kit", curie=AK_SCHEMA.curie('sequencing_kit'),
+                   model_uri=AK_SCHEMA.sequencing_kit, domain=None, range=str)
+
+slots.sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files, name="sequencing_files", curie=AK_SCHEMA.curie('sequencing_files'),
+                   model_uri=AK_SCHEMA.sequencing_files, domain=None, range=Optional[Union[dict, SequencingData]])
+
+slots.sequencing_data_id = Slot(uri=AK_SCHEMA.sequencing_data_id, name="sequencing_data_id", curie=AK_SCHEMA.curie('sequencing_data_id'),
+                   model_uri=AK_SCHEMA.sequencing_data_id, domain=None, range=str)
+
+slots.file_type = Slot(uri=RDF.type, name="file_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.file_type, domain=None, range=Union[str, "FileType"])
+
+slots.filename = Slot(uri=AK_SCHEMA.filename, name="filename", curie=AK_SCHEMA.curie('filename'),
+                   model_uri=AK_SCHEMA.filename, domain=None, range=str)
+
+slots.read_direction = Slot(uri=AK_SCHEMA.read_direction, name="read_direction", curie=AK_SCHEMA.curie('read_direction'),
+                   model_uri=AK_SCHEMA.read_direction, domain=None, range=Union[str, "ReadDirection"])
+
+slots.read_length = Slot(uri=AK_SCHEMA.read_length, name="read_length", curie=AK_SCHEMA.curie('read_length'),
+                   model_uri=AK_SCHEMA.read_length, domain=None, range=int)
+
+slots.paired_filename = Slot(uri=AK_SCHEMA.paired_filename, name="paired_filename", curie=AK_SCHEMA.curie('paired_filename'),
+                   model_uri=AK_SCHEMA.paired_filename, domain=None, range=str)
+
+slots.paired_read_direction = Slot(uri=AK_SCHEMA.paired_read_direction, name="paired_read_direction", curie=AK_SCHEMA.curie('paired_read_direction'),
+                   model_uri=AK_SCHEMA.paired_read_direction, domain=None, range=Union[str, "PairedReadDirection"])
+
+slots.paired_read_length = Slot(uri=AK_SCHEMA.paired_read_length, name="paired_read_length", curie=AK_SCHEMA.curie('paired_read_length'),
+                   model_uri=AK_SCHEMA.paired_read_length, domain=None, range=int)
+
+slots.index_filename = Slot(uri=AK_SCHEMA.index_filename, name="index_filename", curie=AK_SCHEMA.curie('index_filename'),
+                   model_uri=AK_SCHEMA.index_filename, domain=None, range=Optional[str])
+
+slots.index_length = Slot(uri=AK_SCHEMA.index_length, name="index_length", curie=AK_SCHEMA.curie('index_length'),
+                   model_uri=AK_SCHEMA.index_length, domain=None, range=Optional[int])
+
+slots.data_processing_id = Slot(uri=AK_SCHEMA.data_processing_id, name="data_processing_id", curie=AK_SCHEMA.curie('data_processing_id'),
+                   model_uri=AK_SCHEMA.data_processing_id, domain=None, range=Optional[str])
+
+slots.primary_annotation = Slot(uri=AK_SCHEMA.primary_annotation, name="primary_annotation", curie=AK_SCHEMA.curie('primary_annotation'),
+                   model_uri=AK_SCHEMA.primary_annotation, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.software_versions = Slot(uri=AK_SCHEMA.software_versions, name="software_versions", curie=AK_SCHEMA.curie('software_versions'),
+                   model_uri=AK_SCHEMA.software_versions, domain=None, range=str)
+
+slots.paired_reads_assembly = Slot(uri=AK_SCHEMA.paired_reads_assembly, name="paired_reads_assembly", curie=AK_SCHEMA.curie('paired_reads_assembly'),
+                   model_uri=AK_SCHEMA.paired_reads_assembly, domain=None, range=str)
+
+slots.quality_thresholds = Slot(uri=AK_SCHEMA.quality_thresholds, name="quality_thresholds", curie=AK_SCHEMA.curie('quality_thresholds'),
+                   model_uri=AK_SCHEMA.quality_thresholds, domain=None, range=str)
+
+slots.primer_match_cutoffs = Slot(uri=AK_SCHEMA.primer_match_cutoffs, name="primer_match_cutoffs", curie=AK_SCHEMA.curie('primer_match_cutoffs'),
+                   model_uri=AK_SCHEMA.primer_match_cutoffs, domain=None, range=str)
+
+slots.collapsing_method = Slot(uri=AK_SCHEMA.collapsing_method, name="collapsing_method", curie=AK_SCHEMA.curie('collapsing_method'),
+                   model_uri=AK_SCHEMA.collapsing_method, domain=None, range=str)
+
+slots.data_processing_protocols = Slot(uri=AK_SCHEMA.data_processing_protocols, name="data_processing_protocols", curie=AK_SCHEMA.curie('data_processing_protocols'),
+                   model_uri=AK_SCHEMA.data_processing_protocols, domain=None, range=str)
+
+slots.data_processing_files = Slot(uri=AK_SCHEMA.data_processing_files, name="data_processing_files", curie=AK_SCHEMA.curie('data_processing_files'),
+                   model_uri=AK_SCHEMA.data_processing_files, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.germline_database = Slot(uri=AK_SCHEMA.germline_database, name="germline_database", curie=AK_SCHEMA.curie('germline_database'),
+                   model_uri=AK_SCHEMA.germline_database, domain=None, range=str)
+
+slots.analysis_provenance_id = Slot(uri=AK_SCHEMA.analysis_provenance_id, name="analysis_provenance_id", curie=AK_SCHEMA.curie('analysis_provenance_id'),
+                   model_uri=AK_SCHEMA.analysis_provenance_id, domain=None, range=Optional[str])
+
+slots.repertoire_id = Slot(uri=AK_SCHEMA.repertoire_id, name="repertoire_id", curie=AK_SCHEMA.curie('repertoire_id'),
+                   model_uri=AK_SCHEMA.repertoire_id, domain=None, range=Optional[str])
+
+slots.repertoire_name = Slot(uri=AK_SCHEMA.repertoire_name, name="repertoire_name", curie=AK_SCHEMA.curie('repertoire_name'),
+                   model_uri=AK_SCHEMA.repertoire_name, domain=None, range=Optional[str])
+
+slots.repertoire_description = Slot(uri=AK_SCHEMA.repertoire_description, name="repertoire_description", curie=AK_SCHEMA.curie('repertoire_description'),
+                   model_uri=AK_SCHEMA.repertoire_description, domain=None, range=Optional[str])
+
+slots.study = Slot(uri=AK_SCHEMA.study, name="study", curie=AK_SCHEMA.curie('study'),
+                   model_uri=AK_SCHEMA.study, domain=None, range=Union[dict, Study])
+
+slots.subject = Slot(uri=AK_SCHEMA.subject, name="subject", curie=AK_SCHEMA.curie('subject'),
+                   model_uri=AK_SCHEMA.subject, domain=None, range=Union[dict, Subject])
+
+slots.sample = Slot(uri=AK_SCHEMA.sample, name="sample", curie=AK_SCHEMA.curie('sample'),
+                   model_uri=AK_SCHEMA.sample, domain=None, range=Union[Union[dict, SampleProcessing], List[Union[dict, SampleProcessing]]])
+
+slots.data_processing = Slot(uri=AK_SCHEMA.data_processing, name="data_processing", curie=AK_SCHEMA.curie('data_processing'),
+                   model_uri=AK_SCHEMA.data_processing, domain=None, range=Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]])
+
+slots.repertoire_group_id = Slot(uri=AK_SCHEMA.repertoire_group_id, name="repertoire_group_id", curie=AK_SCHEMA.curie('repertoire_group_id'),
+                   model_uri=AK_SCHEMA.repertoire_group_id, domain=None, range=str)
+
+slots.repertoire_group_name = Slot(uri=AK_SCHEMA.repertoire_group_name, name="repertoire_group_name", curie=AK_SCHEMA.curie('repertoire_group_name'),
+                   model_uri=AK_SCHEMA.repertoire_group_name, domain=None, range=Optional[str])
+
+slots.repertoire_group_description = Slot(uri=AK_SCHEMA.repertoire_group_description, name="repertoire_group_description", curie=AK_SCHEMA.curie('repertoire_group_description'),
+                   model_uri=AK_SCHEMA.repertoire_group_description, domain=None, range=Optional[str])
+
+slots.repertoires = Slot(uri=AK_SCHEMA.repertoires, name="repertoires", curie=AK_SCHEMA.curie('repertoires'),
+                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Union[str, List[str]])
+
+slots.segment = Slot(uri=AK_SCHEMA.segment, name="segment", curie=AK_SCHEMA.curie('segment'),
+                   model_uri=AK_SCHEMA.segment, domain=None, range=str)
+
+slots.rev_comp = Slot(uri=AK_SCHEMA.rev_comp, name="rev_comp", curie=AK_SCHEMA.curie('rev_comp'),
+                   model_uri=AK_SCHEMA.rev_comp, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.call = Slot(uri=AK_SCHEMA.call, name="call", curie=AK_SCHEMA.curie('call'),
+                   model_uri=AK_SCHEMA.call, domain=None, range=str)
+
+slots.score = Slot(uri=AK_SCHEMA.score, name="score", curie=AK_SCHEMA.curie('score'),
+                   model_uri=AK_SCHEMA.score, domain=None, range=float)
+
+slots.identity = Slot(uri=AK_SCHEMA.identity, name="identity", curie=AK_SCHEMA.curie('identity'),
+                   model_uri=AK_SCHEMA.identity, domain=None, range=Optional[float])
+
+slots.support = Slot(uri=AK_SCHEMA.support, name="support", curie=AK_SCHEMA.curie('support'),
+                   model_uri=AK_SCHEMA.support, domain=None, range=Optional[float])
+
+slots.cigar = Slot(uri=AK_SCHEMA.cigar, name="cigar", curie=AK_SCHEMA.curie('cigar'),
+                   model_uri=AK_SCHEMA.cigar, domain=None, range=str)
+
+slots.germline_start = Slot(uri=AK_SCHEMA.germline_start, name="germline_start", curie=AK_SCHEMA.curie('germline_start'),
+                   model_uri=AK_SCHEMA.germline_start, domain=None, range=Optional[int])
+
+slots.germline_end = Slot(uri=AK_SCHEMA.germline_end, name="germline_end", curie=AK_SCHEMA.curie('germline_end'),
+                   model_uri=AK_SCHEMA.germline_end, domain=None, range=Optional[int])
+
+slots.rank = Slot(uri=AK_SCHEMA.rank, name="rank", curie=AK_SCHEMA.curie('rank'),
+                   model_uri=AK_SCHEMA.rank, domain=None, range=Optional[int])
+
+slots.quality = Slot(uri=AK_SCHEMA.quality, name="quality", curie=AK_SCHEMA.curie('quality'),
+                   model_uri=AK_SCHEMA.quality, domain=None, range=Optional[str])
+
+slots.sequence_aa = Slot(uri=AK_SCHEMA.sequence_aa, name="sequence_aa", curie=AK_SCHEMA.curie('sequence_aa'),
+                   model_uri=AK_SCHEMA.sequence_aa, domain=None, range=Optional[str])
+
+slots.productive = Slot(uri=AK_SCHEMA.productive, name="productive", curie=AK_SCHEMA.curie('productive'),
+                   model_uri=AK_SCHEMA.productive, domain=None, range=Union[bool, Bool])
+
+slots.vj_in_frame = Slot(uri=AK_SCHEMA.vj_in_frame, name="vj_in_frame", curie=AK_SCHEMA.curie('vj_in_frame'),
+                   model_uri=AK_SCHEMA.vj_in_frame, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.stop_codon = Slot(uri=AK_SCHEMA.stop_codon, name="stop_codon", curie=AK_SCHEMA.curie('stop_codon'),
+                   model_uri=AK_SCHEMA.stop_codon, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie=AK_SCHEMA.curie('complete_vdj'),
+                   model_uri=AK_SCHEMA.complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.v_call = Slot(uri=AK_SCHEMA.v_call, name="v_call", curie=AK_SCHEMA.curie('v_call'),
+                   model_uri=AK_SCHEMA.v_call, domain=None, range=Optional[str])
+
+slots.d_call = Slot(uri=AK_SCHEMA.d_call, name="d_call", curie=AK_SCHEMA.curie('d_call'),
+                   model_uri=AK_SCHEMA.d_call, domain=None, range=Optional[str])
+
+slots.d2_call = Slot(uri=AK_SCHEMA.d2_call, name="d2_call", curie=AK_SCHEMA.curie('d2_call'),
+                   model_uri=AK_SCHEMA.d2_call, domain=None, range=Optional[str])
+
+slots.j_call = Slot(uri=AK_SCHEMA.j_call, name="j_call", curie=AK_SCHEMA.curie('j_call'),
+                   model_uri=AK_SCHEMA.j_call, domain=None, range=Optional[str])
+
+slots.c_call = Slot(uri=AK_SCHEMA.c_call, name="c_call", curie=AK_SCHEMA.curie('c_call'),
+                   model_uri=AK_SCHEMA.c_call, domain=None, range=Optional[str])
+
+slots.sequence_alignment = Slot(uri=AK_SCHEMA.sequence_alignment, name="sequence_alignment", curie=AK_SCHEMA.curie('sequence_alignment'),
+                   model_uri=AK_SCHEMA.sequence_alignment, domain=None, range=Optional[str])
+
+slots.quality_alignment = Slot(uri=AK_SCHEMA.quality_alignment, name="quality_alignment", curie=AK_SCHEMA.curie('quality_alignment'),
+                   model_uri=AK_SCHEMA.quality_alignment, domain=None, range=Optional[str])
+
+slots.sequence_alignment_aa = Slot(uri=AK_SCHEMA.sequence_alignment_aa, name="sequence_alignment_aa", curie=AK_SCHEMA.curie('sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.sequence_alignment_aa, domain=None, range=Optional[str])
+
+slots.germline_alignment = Slot(uri=AK_SCHEMA.germline_alignment, name="germline_alignment", curie=AK_SCHEMA.curie('germline_alignment'),
+                   model_uri=AK_SCHEMA.germline_alignment, domain=None, range=str)
+
+slots.germline_alignment_aa = Slot(uri=AK_SCHEMA.germline_alignment_aa, name="germline_alignment_aa", curie=AK_SCHEMA.curie('germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.germline_alignment_aa, domain=None, range=Optional[str])
+
+slots.junction = Slot(uri=AK_SCHEMA.junction, name="junction", curie=AK_SCHEMA.curie('junction'),
+                   model_uri=AK_SCHEMA.junction, domain=None, range=Optional[str])
+
+slots.junction_aa = Slot(uri=AK_SCHEMA.junction_aa, name="junction_aa", curie=AK_SCHEMA.curie('junction_aa'),
+                   model_uri=AK_SCHEMA.junction_aa, domain=None, range=Optional[str])
+
+slots.np1 = Slot(uri=AK_SCHEMA.np1, name="np1", curie=AK_SCHEMA.curie('np1'),
+                   model_uri=AK_SCHEMA.np1, domain=None, range=Optional[str])
+
+slots.np1_aa = Slot(uri=AK_SCHEMA.np1_aa, name="np1_aa", curie=AK_SCHEMA.curie('np1_aa'),
+                   model_uri=AK_SCHEMA.np1_aa, domain=None, range=Optional[str])
+
+slots.np2 = Slot(uri=AK_SCHEMA.np2, name="np2", curie=AK_SCHEMA.curie('np2'),
+                   model_uri=AK_SCHEMA.np2, domain=None, range=Optional[str])
+
+slots.np2_aa = Slot(uri=AK_SCHEMA.np2_aa, name="np2_aa", curie=AK_SCHEMA.curie('np2_aa'),
+                   model_uri=AK_SCHEMA.np2_aa, domain=None, range=Optional[str])
+
+slots.np3 = Slot(uri=AK_SCHEMA.np3, name="np3", curie=AK_SCHEMA.curie('np3'),
+                   model_uri=AK_SCHEMA.np3, domain=None, range=Optional[str])
+
+slots.np3_aa = Slot(uri=AK_SCHEMA.np3_aa, name="np3_aa", curie=AK_SCHEMA.curie('np3_aa'),
+                   model_uri=AK_SCHEMA.np3_aa, domain=None, range=Optional[str])
+
+slots.cdr1 = Slot(uri=AK_SCHEMA.cdr1, name="cdr1", curie=AK_SCHEMA.curie('cdr1'),
+                   model_uri=AK_SCHEMA.cdr1, domain=None, range=Optional[str])
+
+slots.cdr1_aa = Slot(uri=AK_SCHEMA.cdr1_aa, name="cdr1_aa", curie=AK_SCHEMA.curie('cdr1_aa'),
+                   model_uri=AK_SCHEMA.cdr1_aa, domain=None, range=Optional[str])
+
+slots.cdr2 = Slot(uri=AK_SCHEMA.cdr2, name="cdr2", curie=AK_SCHEMA.curie('cdr2'),
+                   model_uri=AK_SCHEMA.cdr2, domain=None, range=Optional[str])
+
+slots.cdr2_aa = Slot(uri=AK_SCHEMA.cdr2_aa, name="cdr2_aa", curie=AK_SCHEMA.curie('cdr2_aa'),
+                   model_uri=AK_SCHEMA.cdr2_aa, domain=None, range=Optional[str])
+
+slots.cdr3 = Slot(uri=AK_SCHEMA.cdr3, name="cdr3", curie=AK_SCHEMA.curie('cdr3'),
+                   model_uri=AK_SCHEMA.cdr3, domain=None, range=Optional[str])
+
+slots.cdr3_aa = Slot(uri=AK_SCHEMA.cdr3_aa, name="cdr3_aa", curie=AK_SCHEMA.curie('cdr3_aa'),
+                   model_uri=AK_SCHEMA.cdr3_aa, domain=None, range=Optional[str])
+
+slots.fwr1 = Slot(uri=AK_SCHEMA.fwr1, name="fwr1", curie=AK_SCHEMA.curie('fwr1'),
+                   model_uri=AK_SCHEMA.fwr1, domain=None, range=Optional[str])
+
+slots.fwr1_aa = Slot(uri=AK_SCHEMA.fwr1_aa, name="fwr1_aa", curie=AK_SCHEMA.curie('fwr1_aa'),
+                   model_uri=AK_SCHEMA.fwr1_aa, domain=None, range=Optional[str])
+
+slots.fwr2 = Slot(uri=AK_SCHEMA.fwr2, name="fwr2", curie=AK_SCHEMA.curie('fwr2'),
+                   model_uri=AK_SCHEMA.fwr2, domain=None, range=Optional[str])
+
+slots.fwr2_aa = Slot(uri=AK_SCHEMA.fwr2_aa, name="fwr2_aa", curie=AK_SCHEMA.curie('fwr2_aa'),
+                   model_uri=AK_SCHEMA.fwr2_aa, domain=None, range=Optional[str])
+
+slots.fwr3 = Slot(uri=AK_SCHEMA.fwr3, name="fwr3", curie=AK_SCHEMA.curie('fwr3'),
+                   model_uri=AK_SCHEMA.fwr3, domain=None, range=Optional[str])
+
+slots.fwr3_aa = Slot(uri=AK_SCHEMA.fwr3_aa, name="fwr3_aa", curie=AK_SCHEMA.curie('fwr3_aa'),
+                   model_uri=AK_SCHEMA.fwr3_aa, domain=None, range=Optional[str])
+
+slots.fwr4 = Slot(uri=AK_SCHEMA.fwr4, name="fwr4", curie=AK_SCHEMA.curie('fwr4'),
+                   model_uri=AK_SCHEMA.fwr4, domain=None, range=Optional[str])
+
+slots.fwr4_aa = Slot(uri=AK_SCHEMA.fwr4_aa, name="fwr4_aa", curie=AK_SCHEMA.curie('fwr4_aa'),
+                   model_uri=AK_SCHEMA.fwr4_aa, domain=None, range=Optional[str])
+
+slots.v_score = Slot(uri=AK_SCHEMA.v_score, name="v_score", curie=AK_SCHEMA.curie('v_score'),
+                   model_uri=AK_SCHEMA.v_score, domain=None, range=Optional[float])
+
+slots.v_identity = Slot(uri=AK_SCHEMA.v_identity, name="v_identity", curie=AK_SCHEMA.curie('v_identity'),
+                   model_uri=AK_SCHEMA.v_identity, domain=None, range=Optional[float])
+
+slots.v_support = Slot(uri=AK_SCHEMA.v_support, name="v_support", curie=AK_SCHEMA.curie('v_support'),
+                   model_uri=AK_SCHEMA.v_support, domain=None, range=Optional[float])
+
+slots.v_cigar = Slot(uri=AK_SCHEMA.v_cigar, name="v_cigar", curie=AK_SCHEMA.curie('v_cigar'),
+                   model_uri=AK_SCHEMA.v_cigar, domain=None, range=str)
+
+slots.d_score = Slot(uri=AK_SCHEMA.d_score, name="d_score", curie=AK_SCHEMA.curie('d_score'),
+                   model_uri=AK_SCHEMA.d_score, domain=None, range=Optional[float])
+
+slots.d_identity = Slot(uri=AK_SCHEMA.d_identity, name="d_identity", curie=AK_SCHEMA.curie('d_identity'),
+                   model_uri=AK_SCHEMA.d_identity, domain=None, range=Optional[float])
+
+slots.d_support = Slot(uri=AK_SCHEMA.d_support, name="d_support", curie=AK_SCHEMA.curie('d_support'),
+                   model_uri=AK_SCHEMA.d_support, domain=None, range=Optional[float])
+
+slots.d_cigar = Slot(uri=AK_SCHEMA.d_cigar, name="d_cigar", curie=AK_SCHEMA.curie('d_cigar'),
+                   model_uri=AK_SCHEMA.d_cigar, domain=None, range=str)
+
+slots.d2_score = Slot(uri=AK_SCHEMA.d2_score, name="d2_score", curie=AK_SCHEMA.curie('d2_score'),
+                   model_uri=AK_SCHEMA.d2_score, domain=None, range=Optional[float])
+
+slots.d2_identity = Slot(uri=AK_SCHEMA.d2_identity, name="d2_identity", curie=AK_SCHEMA.curie('d2_identity'),
+                   model_uri=AK_SCHEMA.d2_identity, domain=None, range=Optional[float])
+
+slots.d2_support = Slot(uri=AK_SCHEMA.d2_support, name="d2_support", curie=AK_SCHEMA.curie('d2_support'),
+                   model_uri=AK_SCHEMA.d2_support, domain=None, range=Optional[float])
+
+slots.d2_cigar = Slot(uri=AK_SCHEMA.d2_cigar, name="d2_cigar", curie=AK_SCHEMA.curie('d2_cigar'),
+                   model_uri=AK_SCHEMA.d2_cigar, domain=None, range=Optional[str])
+
+slots.j_score = Slot(uri=AK_SCHEMA.j_score, name="j_score", curie=AK_SCHEMA.curie('j_score'),
+                   model_uri=AK_SCHEMA.j_score, domain=None, range=Optional[float])
+
+slots.j_identity = Slot(uri=AK_SCHEMA.j_identity, name="j_identity", curie=AK_SCHEMA.curie('j_identity'),
+                   model_uri=AK_SCHEMA.j_identity, domain=None, range=Optional[float])
+
+slots.j_support = Slot(uri=AK_SCHEMA.j_support, name="j_support", curie=AK_SCHEMA.curie('j_support'),
+                   model_uri=AK_SCHEMA.j_support, domain=None, range=Optional[float])
+
+slots.j_cigar = Slot(uri=AK_SCHEMA.j_cigar, name="j_cigar", curie=AK_SCHEMA.curie('j_cigar'),
+                   model_uri=AK_SCHEMA.j_cigar, domain=None, range=str)
+
+slots.c_score = Slot(uri=AK_SCHEMA.c_score, name="c_score", curie=AK_SCHEMA.curie('c_score'),
+                   model_uri=AK_SCHEMA.c_score, domain=None, range=Optional[float])
+
+slots.c_identity = Slot(uri=AK_SCHEMA.c_identity, name="c_identity", curie=AK_SCHEMA.curie('c_identity'),
+                   model_uri=AK_SCHEMA.c_identity, domain=None, range=Optional[float])
+
+slots.c_support = Slot(uri=AK_SCHEMA.c_support, name="c_support", curie=AK_SCHEMA.curie('c_support'),
+                   model_uri=AK_SCHEMA.c_support, domain=None, range=Optional[float])
+
+slots.c_cigar = Slot(uri=AK_SCHEMA.c_cigar, name="c_cigar", curie=AK_SCHEMA.curie('c_cigar'),
+                   model_uri=AK_SCHEMA.c_cigar, domain=None, range=Optional[str])
+
+slots.v_sequence_start = Slot(uri=AK_SCHEMA.v_sequence_start, name="v_sequence_start", curie=AK_SCHEMA.curie('v_sequence_start'),
+                   model_uri=AK_SCHEMA.v_sequence_start, domain=None, range=Optional[int])
+
+slots.v_sequence_end = Slot(uri=AK_SCHEMA.v_sequence_end, name="v_sequence_end", curie=AK_SCHEMA.curie('v_sequence_end'),
+                   model_uri=AK_SCHEMA.v_sequence_end, domain=None, range=Optional[int])
+
+slots.v_germline_start = Slot(uri=AK_SCHEMA.v_germline_start, name="v_germline_start", curie=AK_SCHEMA.curie('v_germline_start'),
+                   model_uri=AK_SCHEMA.v_germline_start, domain=None, range=Optional[int])
+
+slots.v_germline_end = Slot(uri=AK_SCHEMA.v_germline_end, name="v_germline_end", curie=AK_SCHEMA.curie('v_germline_end'),
+                   model_uri=AK_SCHEMA.v_germline_end, domain=None, range=Optional[int])
+
+slots.v_alignment_start = Slot(uri=AK_SCHEMA.v_alignment_start, name="v_alignment_start", curie=AK_SCHEMA.curie('v_alignment_start'),
+                   model_uri=AK_SCHEMA.v_alignment_start, domain=None, range=Optional[int])
+
+slots.v_alignment_end = Slot(uri=AK_SCHEMA.v_alignment_end, name="v_alignment_end", curie=AK_SCHEMA.curie('v_alignment_end'),
+                   model_uri=AK_SCHEMA.v_alignment_end, domain=None, range=Optional[int])
+
+slots.d_sequence_start = Slot(uri=AK_SCHEMA.d_sequence_start, name="d_sequence_start", curie=AK_SCHEMA.curie('d_sequence_start'),
+                   model_uri=AK_SCHEMA.d_sequence_start, domain=None, range=Optional[int])
+
+slots.d_sequence_end = Slot(uri=AK_SCHEMA.d_sequence_end, name="d_sequence_end", curie=AK_SCHEMA.curie('d_sequence_end'),
+                   model_uri=AK_SCHEMA.d_sequence_end, domain=None, range=Optional[int])
+
+slots.d_germline_start = Slot(uri=AK_SCHEMA.d_germline_start, name="d_germline_start", curie=AK_SCHEMA.curie('d_germline_start'),
+                   model_uri=AK_SCHEMA.d_germline_start, domain=None, range=Optional[int])
+
+slots.d_germline_end = Slot(uri=AK_SCHEMA.d_germline_end, name="d_germline_end", curie=AK_SCHEMA.curie('d_germline_end'),
+                   model_uri=AK_SCHEMA.d_germline_end, domain=None, range=Optional[int])
+
+slots.d_alignment_start = Slot(uri=AK_SCHEMA.d_alignment_start, name="d_alignment_start", curie=AK_SCHEMA.curie('d_alignment_start'),
+                   model_uri=AK_SCHEMA.d_alignment_start, domain=None, range=Optional[int])
+
+slots.d_alignment_end = Slot(uri=AK_SCHEMA.d_alignment_end, name="d_alignment_end", curie=AK_SCHEMA.curie('d_alignment_end'),
+                   model_uri=AK_SCHEMA.d_alignment_end, domain=None, range=Optional[int])
+
+slots.d2_sequence_start = Slot(uri=AK_SCHEMA.d2_sequence_start, name="d2_sequence_start", curie=AK_SCHEMA.curie('d2_sequence_start'),
+                   model_uri=AK_SCHEMA.d2_sequence_start, domain=None, range=Optional[int])
+
+slots.d2_sequence_end = Slot(uri=AK_SCHEMA.d2_sequence_end, name="d2_sequence_end", curie=AK_SCHEMA.curie('d2_sequence_end'),
+                   model_uri=AK_SCHEMA.d2_sequence_end, domain=None, range=Optional[int])
+
+slots.d2_germline_start = Slot(uri=AK_SCHEMA.d2_germline_start, name="d2_germline_start", curie=AK_SCHEMA.curie('d2_germline_start'),
+                   model_uri=AK_SCHEMA.d2_germline_start, domain=None, range=Optional[int])
+
+slots.d2_germline_end = Slot(uri=AK_SCHEMA.d2_germline_end, name="d2_germline_end", curie=AK_SCHEMA.curie('d2_germline_end'),
+                   model_uri=AK_SCHEMA.d2_germline_end, domain=None, range=Optional[int])
+
+slots.d2_alignment_start = Slot(uri=AK_SCHEMA.d2_alignment_start, name="d2_alignment_start", curie=AK_SCHEMA.curie('d2_alignment_start'),
+                   model_uri=AK_SCHEMA.d2_alignment_start, domain=None, range=Optional[int])
+
+slots.d2_alignment_end = Slot(uri=AK_SCHEMA.d2_alignment_end, name="d2_alignment_end", curie=AK_SCHEMA.curie('d2_alignment_end'),
+                   model_uri=AK_SCHEMA.d2_alignment_end, domain=None, range=Optional[int])
+
+slots.j_sequence_start = Slot(uri=AK_SCHEMA.j_sequence_start, name="j_sequence_start", curie=AK_SCHEMA.curie('j_sequence_start'),
+                   model_uri=AK_SCHEMA.j_sequence_start, domain=None, range=Optional[int])
+
+slots.j_sequence_end = Slot(uri=AK_SCHEMA.j_sequence_end, name="j_sequence_end", curie=AK_SCHEMA.curie('j_sequence_end'),
+                   model_uri=AK_SCHEMA.j_sequence_end, domain=None, range=Optional[int])
+
+slots.j_germline_start = Slot(uri=AK_SCHEMA.j_germline_start, name="j_germline_start", curie=AK_SCHEMA.curie('j_germline_start'),
+                   model_uri=AK_SCHEMA.j_germline_start, domain=None, range=Optional[int])
+
+slots.j_germline_end = Slot(uri=AK_SCHEMA.j_germline_end, name="j_germline_end", curie=AK_SCHEMA.curie('j_germline_end'),
+                   model_uri=AK_SCHEMA.j_germline_end, domain=None, range=Optional[int])
+
+slots.j_alignment_start = Slot(uri=AK_SCHEMA.j_alignment_start, name="j_alignment_start", curie=AK_SCHEMA.curie('j_alignment_start'),
+                   model_uri=AK_SCHEMA.j_alignment_start, domain=None, range=Optional[int])
+
+slots.j_alignment_end = Slot(uri=AK_SCHEMA.j_alignment_end, name="j_alignment_end", curie=AK_SCHEMA.curie('j_alignment_end'),
+                   model_uri=AK_SCHEMA.j_alignment_end, domain=None, range=Optional[int])
+
+slots.c_sequence_start = Slot(uri=AK_SCHEMA.c_sequence_start, name="c_sequence_start", curie=AK_SCHEMA.curie('c_sequence_start'),
+                   model_uri=AK_SCHEMA.c_sequence_start, domain=None, range=Optional[int])
+
+slots.c_sequence_end = Slot(uri=AK_SCHEMA.c_sequence_end, name="c_sequence_end", curie=AK_SCHEMA.curie('c_sequence_end'),
+                   model_uri=AK_SCHEMA.c_sequence_end, domain=None, range=Optional[int])
+
+slots.c_germline_start = Slot(uri=AK_SCHEMA.c_germline_start, name="c_germline_start", curie=AK_SCHEMA.curie('c_germline_start'),
+                   model_uri=AK_SCHEMA.c_germline_start, domain=None, range=Optional[int])
+
+slots.c_germline_end = Slot(uri=AK_SCHEMA.c_germline_end, name="c_germline_end", curie=AK_SCHEMA.curie('c_germline_end'),
+                   model_uri=AK_SCHEMA.c_germline_end, domain=None, range=Optional[int])
+
+slots.c_alignment_start = Slot(uri=AK_SCHEMA.c_alignment_start, name="c_alignment_start", curie=AK_SCHEMA.curie('c_alignment_start'),
+                   model_uri=AK_SCHEMA.c_alignment_start, domain=None, range=Optional[int])
+
+slots.c_alignment_end = Slot(uri=AK_SCHEMA.c_alignment_end, name="c_alignment_end", curie=AK_SCHEMA.curie('c_alignment_end'),
+                   model_uri=AK_SCHEMA.c_alignment_end, domain=None, range=Optional[int])
+
+slots.cdr3_end = Slot(uri=AK_SCHEMA.cdr3_end, name="cdr3_end", curie=AK_SCHEMA.curie('cdr3_end'),
+                   model_uri=AK_SCHEMA.cdr3_end, domain=None, range=Optional[int])
+
+slots.fwr4_start = Slot(uri=AK_SCHEMA.fwr4_start, name="fwr4_start", curie=AK_SCHEMA.curie('fwr4_start'),
+                   model_uri=AK_SCHEMA.fwr4_start, domain=None, range=Optional[int])
+
+slots.fwr4_end = Slot(uri=AK_SCHEMA.fwr4_end, name="fwr4_end", curie=AK_SCHEMA.curie('fwr4_end'),
+                   model_uri=AK_SCHEMA.fwr4_end, domain=None, range=Optional[int])
+
+slots.v_sequence_alignment = Slot(uri=AK_SCHEMA.v_sequence_alignment, name="v_sequence_alignment", curie=AK_SCHEMA.curie('v_sequence_alignment'),
+                   model_uri=AK_SCHEMA.v_sequence_alignment, domain=None, range=Optional[str])
+
+slots.v_sequence_alignment_aa = Slot(uri=AK_SCHEMA.v_sequence_alignment_aa, name="v_sequence_alignment_aa", curie=AK_SCHEMA.curie('v_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.v_sequence_alignment_aa, domain=None, range=Optional[str])
+
+slots.d_sequence_alignment = Slot(uri=AK_SCHEMA.d_sequence_alignment, name="d_sequence_alignment", curie=AK_SCHEMA.curie('d_sequence_alignment'),
+                   model_uri=AK_SCHEMA.d_sequence_alignment, domain=None, range=Optional[str])
+
+slots.d_sequence_alignment_aa = Slot(uri=AK_SCHEMA.d_sequence_alignment_aa, name="d_sequence_alignment_aa", curie=AK_SCHEMA.curie('d_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.d_sequence_alignment_aa, domain=None, range=Optional[str])
+
+slots.d2_sequence_alignment = Slot(uri=AK_SCHEMA.d2_sequence_alignment, name="d2_sequence_alignment", curie=AK_SCHEMA.curie('d2_sequence_alignment'),
+                   model_uri=AK_SCHEMA.d2_sequence_alignment, domain=None, range=Optional[str])
+
+slots.d2_sequence_alignment_aa = Slot(uri=AK_SCHEMA.d2_sequence_alignment_aa, name="d2_sequence_alignment_aa", curie=AK_SCHEMA.curie('d2_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.d2_sequence_alignment_aa, domain=None, range=Optional[str])
+
+slots.j_sequence_alignment = Slot(uri=AK_SCHEMA.j_sequence_alignment, name="j_sequence_alignment", curie=AK_SCHEMA.curie('j_sequence_alignment'),
+                   model_uri=AK_SCHEMA.j_sequence_alignment, domain=None, range=Optional[str])
+
+slots.j_sequence_alignment_aa = Slot(uri=AK_SCHEMA.j_sequence_alignment_aa, name="j_sequence_alignment_aa", curie=AK_SCHEMA.curie('j_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.j_sequence_alignment_aa, domain=None, range=Optional[str])
+
+slots.c_sequence_alignment = Slot(uri=AK_SCHEMA.c_sequence_alignment, name="c_sequence_alignment", curie=AK_SCHEMA.curie('c_sequence_alignment'),
+                   model_uri=AK_SCHEMA.c_sequence_alignment, domain=None, range=Optional[str])
+
+slots.c_sequence_alignment_aa = Slot(uri=AK_SCHEMA.c_sequence_alignment_aa, name="c_sequence_alignment_aa", curie=AK_SCHEMA.curie('c_sequence_alignment_aa'),
+                   model_uri=AK_SCHEMA.c_sequence_alignment_aa, domain=None, range=Optional[str])
+
+slots.v_germline_alignment = Slot(uri=AK_SCHEMA.v_germline_alignment, name="v_germline_alignment", curie=AK_SCHEMA.curie('v_germline_alignment'),
+                   model_uri=AK_SCHEMA.v_germline_alignment, domain=None, range=Optional[str])
+
+slots.v_germline_alignment_aa = Slot(uri=AK_SCHEMA.v_germline_alignment_aa, name="v_germline_alignment_aa", curie=AK_SCHEMA.curie('v_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.v_germline_alignment_aa, domain=None, range=Optional[str])
+
+slots.d_germline_alignment = Slot(uri=AK_SCHEMA.d_germline_alignment, name="d_germline_alignment", curie=AK_SCHEMA.curie('d_germline_alignment'),
+                   model_uri=AK_SCHEMA.d_germline_alignment, domain=None, range=Optional[str])
+
+slots.d_germline_alignment_aa = Slot(uri=AK_SCHEMA.d_germline_alignment_aa, name="d_germline_alignment_aa", curie=AK_SCHEMA.curie('d_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.d_germline_alignment_aa, domain=None, range=Optional[str])
+
+slots.d2_germline_alignment = Slot(uri=AK_SCHEMA.d2_germline_alignment, name="d2_germline_alignment", curie=AK_SCHEMA.curie('d2_germline_alignment'),
+                   model_uri=AK_SCHEMA.d2_germline_alignment, domain=None, range=Optional[str])
+
+slots.d2_germline_alignment_aa = Slot(uri=AK_SCHEMA.d2_germline_alignment_aa, name="d2_germline_alignment_aa", curie=AK_SCHEMA.curie('d2_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.d2_germline_alignment_aa, domain=None, range=Optional[str])
+
+slots.j_germline_alignment = Slot(uri=AK_SCHEMA.j_germline_alignment, name="j_germline_alignment", curie=AK_SCHEMA.curie('j_germline_alignment'),
+                   model_uri=AK_SCHEMA.j_germline_alignment, domain=None, range=Optional[str])
+
+slots.j_germline_alignment_aa = Slot(uri=AK_SCHEMA.j_germline_alignment_aa, name="j_germline_alignment_aa", curie=AK_SCHEMA.curie('j_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.j_germline_alignment_aa, domain=None, range=Optional[str])
+
+slots.c_germline_alignment = Slot(uri=AK_SCHEMA.c_germline_alignment, name="c_germline_alignment", curie=AK_SCHEMA.curie('c_germline_alignment'),
+                   model_uri=AK_SCHEMA.c_germline_alignment, domain=None, range=Optional[str])
+
+slots.c_germline_alignment_aa = Slot(uri=AK_SCHEMA.c_germline_alignment_aa, name="c_germline_alignment_aa", curie=AK_SCHEMA.curie('c_germline_alignment_aa'),
+                   model_uri=AK_SCHEMA.c_germline_alignment_aa, domain=None, range=Optional[str])
+
+slots.junction_length = Slot(uri=AK_SCHEMA.junction_length, name="junction_length", curie=AK_SCHEMA.curie('junction_length'),
+                   model_uri=AK_SCHEMA.junction_length, domain=None, range=Optional[int])
+
+slots.junction_aa_length = Slot(uri=AK_SCHEMA.junction_aa_length, name="junction_aa_length", curie=AK_SCHEMA.curie('junction_aa_length'),
+                   model_uri=AK_SCHEMA.junction_aa_length, domain=None, range=Optional[int])
+
+slots.np1_length = Slot(uri=AK_SCHEMA.np1_length, name="np1_length", curie=AK_SCHEMA.curie('np1_length'),
+                   model_uri=AK_SCHEMA.np1_length, domain=None, range=Optional[int])
+
+slots.np2_length = Slot(uri=AK_SCHEMA.np2_length, name="np2_length", curie=AK_SCHEMA.curie('np2_length'),
+                   model_uri=AK_SCHEMA.np2_length, domain=None, range=Optional[int])
+
+slots.np3_length = Slot(uri=AK_SCHEMA.np3_length, name="np3_length", curie=AK_SCHEMA.curie('np3_length'),
+                   model_uri=AK_SCHEMA.np3_length, domain=None, range=Optional[int])
+
+slots.n1_length = Slot(uri=AK_SCHEMA.n1_length, name="n1_length", curie=AK_SCHEMA.curie('n1_length'),
+                   model_uri=AK_SCHEMA.n1_length, domain=None, range=Optional[int])
+
+slots.n2_length = Slot(uri=AK_SCHEMA.n2_length, name="n2_length", curie=AK_SCHEMA.curie('n2_length'),
+                   model_uri=AK_SCHEMA.n2_length, domain=None, range=Optional[int])
+
+slots.n3_length = Slot(uri=AK_SCHEMA.n3_length, name="n3_length", curie=AK_SCHEMA.curie('n3_length'),
+                   model_uri=AK_SCHEMA.n3_length, domain=None, range=Optional[int])
+
+slots.p3v_length = Slot(uri=AK_SCHEMA.p3v_length, name="p3v_length", curie=AK_SCHEMA.curie('p3v_length'),
+                   model_uri=AK_SCHEMA.p3v_length, domain=None, range=Optional[int])
+
+slots.p5d_length = Slot(uri=AK_SCHEMA.p5d_length, name="p5d_length", curie=AK_SCHEMA.curie('p5d_length'),
+                   model_uri=AK_SCHEMA.p5d_length, domain=None, range=Optional[int])
+
+slots.p3d_length = Slot(uri=AK_SCHEMA.p3d_length, name="p3d_length", curie=AK_SCHEMA.curie('p3d_length'),
+                   model_uri=AK_SCHEMA.p3d_length, domain=None, range=Optional[int])
+
+slots.p5d2_length = Slot(uri=AK_SCHEMA.p5d2_length, name="p5d2_length", curie=AK_SCHEMA.curie('p5d2_length'),
+                   model_uri=AK_SCHEMA.p5d2_length, domain=None, range=Optional[int])
+
+slots.p3d2_length = Slot(uri=AK_SCHEMA.p3d2_length, name="p3d2_length", curie=AK_SCHEMA.curie('p3d2_length'),
+                   model_uri=AK_SCHEMA.p3d2_length, domain=None, range=Optional[int])
+
+slots.p5j_length = Slot(uri=AK_SCHEMA.p5j_length, name="p5j_length", curie=AK_SCHEMA.curie('p5j_length'),
+                   model_uri=AK_SCHEMA.p5j_length, domain=None, range=Optional[int])
+
+slots.v_frameshift = Slot(uri=AK_SCHEMA.v_frameshift, name="v_frameshift", curie=AK_SCHEMA.curie('v_frameshift'),
+                   model_uri=AK_SCHEMA.v_frameshift, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.j_frameshift = Slot(uri=AK_SCHEMA.j_frameshift, name="j_frameshift", curie=AK_SCHEMA.curie('j_frameshift'),
+                   model_uri=AK_SCHEMA.j_frameshift, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.d_frame = Slot(uri=AK_SCHEMA.d_frame, name="d_frame", curie=AK_SCHEMA.curie('d_frame'),
+                   model_uri=AK_SCHEMA.d_frame, domain=None, range=Optional[int])
+
+slots.d2_frame = Slot(uri=AK_SCHEMA.d2_frame, name="d2_frame", curie=AK_SCHEMA.curie('d2_frame'),
+                   model_uri=AK_SCHEMA.d2_frame, domain=None, range=Optional[int])
+
+slots.consensus_count = Slot(uri=AK_SCHEMA.consensus_count, name="consensus_count", curie=AK_SCHEMA.curie('consensus_count'),
+                   model_uri=AK_SCHEMA.consensus_count, domain=None, range=Optional[int])
+
+slots.duplicate_count = Slot(uri=AK_SCHEMA.duplicate_count, name="duplicate_count", curie=AK_SCHEMA.curie('duplicate_count'),
+                   model_uri=AK_SCHEMA.duplicate_count, domain=None, range=Optional[int])
+
+slots.umi_count = Slot(uri=AK_SCHEMA.umi_count, name="umi_count", curie=AK_SCHEMA.curie('umi_count'),
+                   model_uri=AK_SCHEMA.umi_count, domain=None, range=Optional[int])
+
+slots.cell_id = Slot(uri=AK_SCHEMA.cell_id, name="cell_id", curie=AK_SCHEMA.curie('cell_id'),
+                   model_uri=AK_SCHEMA.cell_id, domain=None, range=Optional[str])
+
+slots.clone_id = Slot(uri=AK_SCHEMA.clone_id, name="clone_id", curie=AK_SCHEMA.curie('clone_id'),
+                   model_uri=AK_SCHEMA.clone_id, domain=None, range=Optional[str])
+
+slots.sample_processing_id = Slot(uri=AK_SCHEMA.sample_processing_id, name="sample_processing_id", curie=AK_SCHEMA.curie('sample_processing_id'),
+                   model_uri=AK_SCHEMA.sample_processing_id, domain=None, range=Optional[str])
+
+slots.sequences = Slot(uri=AK_SCHEMA.sequences, name="sequences", curie=AK_SCHEMA.curie('sequences'),
+                   model_uri=AK_SCHEMA.sequences, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.junction_start = Slot(uri=AK_SCHEMA.junction_start, name="junction_start", curie=AK_SCHEMA.curie('junction_start'),
+                   model_uri=AK_SCHEMA.junction_start, domain=None, range=Optional[int])
+
+slots.junction_end = Slot(uri=AK_SCHEMA.junction_end, name="junction_end", curie=AK_SCHEMA.curie('junction_end'),
+                   model_uri=AK_SCHEMA.junction_end, domain=None, range=Optional[int])
+
+slots.clone_count = Slot(uri=AK_SCHEMA.clone_count, name="clone_count", curie=AK_SCHEMA.curie('clone_count'),
+                   model_uri=AK_SCHEMA.clone_count, domain=None, range=Optional[int])
+
+slots.seed_id = Slot(uri=AK_SCHEMA.seed_id, name="seed_id", curie=AK_SCHEMA.curie('seed_id'),
+                   model_uri=AK_SCHEMA.seed_id, domain=None, range=Optional[str])
+
+slots.tree_id = Slot(uri=AK_SCHEMA.tree_id, name="tree_id", curie=AK_SCHEMA.curie('tree_id'),
+                   model_uri=AK_SCHEMA.tree_id, domain=None, range=str)
+
+slots.newick = Slot(uri=AK_SCHEMA.newick, name="newick", curie=AK_SCHEMA.curie('newick'),
+                   model_uri=AK_SCHEMA.newick, domain=None, range=str)
+
+slots.nodes = Slot(uri=AK_SCHEMA.nodes, name="nodes", curie=AK_SCHEMA.curie('nodes'),
+                   model_uri=AK_SCHEMA.nodes, domain=None, range=Optional[Union[Union[dict, Node], List[Union[dict, Node]]]])
+
+slots.rearrangements = Slot(uri=AK_SCHEMA.rearrangements, name="rearrangements", curie=AK_SCHEMA.curie('rearrangements'),
+                   model_uri=AK_SCHEMA.rearrangements, domain=None, range=Union[str, List[str]])
+
+slots.receptors = Slot(uri=AK_SCHEMA.receptors, name="receptors", curie=AK_SCHEMA.curie('receptors'),
+                   model_uri=AK_SCHEMA.receptors, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.expression_study_method = Slot(uri=AK_SCHEMA.expression_study_method, name="expression_study_method", curie=AK_SCHEMA.curie('expression_study_method'),
+                   model_uri=AK_SCHEMA.expression_study_method, domain=None, range=Optional[Union[str, "ExpressionStudyMethod"]])
+
+slots.expression_raw_doi = Slot(uri=AK_SCHEMA.expression_raw_doi, name="expression_raw_doi", curie=AK_SCHEMA.curie('expression_raw_doi'),
+                   model_uri=AK_SCHEMA.expression_raw_doi, domain=None, range=Optional[str])
+
+slots.expression_index = Slot(uri=AK_SCHEMA.expression_index, name="expression_index", curie=AK_SCHEMA.curie('expression_index'),
+                   model_uri=AK_SCHEMA.expression_index, domain=None, range=Optional[str])
+
+slots.virtual_pairing = Slot(uri=AK_SCHEMA.virtual_pairing, name="virtual_pairing", curie=AK_SCHEMA.curie('virtual_pairing'),
+                   model_uri=AK_SCHEMA.virtual_pairing, domain=None, range=Union[bool, Bool])
+
+slots.expression_id = Slot(uri=AK_SCHEMA.expression_id, name="expression_id", curie=AK_SCHEMA.curie('expression_id'),
+                   model_uri=AK_SCHEMA.expression_id, domain=None, range=str)
+
+slots.property_type = Slot(uri=RDF.type, name="property_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.property_type, domain=None, range=str)
+
+slots.property = Slot(uri=AK_SCHEMA.property, name="property", curie=AK_SCHEMA.curie('property'),
+                   model_uri=AK_SCHEMA.property, domain=None, range=Union[str, "Property"])
+
+slots.receptor_id = Slot(uri=AK_SCHEMA.receptor_id, name="receptor_id", curie=AK_SCHEMA.curie('receptor_id'),
+                   model_uri=AK_SCHEMA.receptor_id, domain=None, range=str)
+
+slots.receptor_hash = Slot(uri=AK_SCHEMA.receptor_hash, name="receptor_hash", curie=AK_SCHEMA.curie('receptor_hash'),
+                   model_uri=AK_SCHEMA.receptor_hash, domain=None, range=str)
+
+slots.receptor_type = Slot(uri=RDF.type, name="receptor_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.receptor_type, domain=None, range=Union[str, "ReceptorType"])
+
+slots.receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.receptor_variable_domain_1_aa, name="receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('receptor_variable_domain_1_aa'),
+                   model_uri=AK_SCHEMA.receptor_variable_domain_1_aa, domain=None, range=str)
+
+slots.receptor_variable_domain_1_locus = Slot(uri=AK_SCHEMA.receptor_variable_domain_1_locus, name="receptor_variable_domain_1_locus", curie=AK_SCHEMA.curie('receptor_variable_domain_1_locus'),
+                   model_uri=AK_SCHEMA.receptor_variable_domain_1_locus, domain=None, range=Union[str, "ReceptorVariableDomain1Locus"])
+
+slots.receptor_variable_domain_2_aa = Slot(uri=AK_SCHEMA.receptor_variable_domain_2_aa, name="receptor_variable_domain_2_aa", curie=AK_SCHEMA.curie('receptor_variable_domain_2_aa'),
+                   model_uri=AK_SCHEMA.receptor_variable_domain_2_aa, domain=None, range=str)
+
+slots.receptor_variable_domain_2_locus = Slot(uri=AK_SCHEMA.receptor_variable_domain_2_locus, name="receptor_variable_domain_2_locus", curie=AK_SCHEMA.curie('receptor_variable_domain_2_locus'),
+                   model_uri=AK_SCHEMA.receptor_variable_domain_2_locus, domain=None, range=Union[str, "ReceptorVariableDomain2Locus"])
+
+slots.receptor_ref = Slot(uri=AK_SCHEMA.receptor_ref, name="receptor_ref", curie=AK_SCHEMA.curie('receptor_ref'),
+                   model_uri=AK_SCHEMA.receptor_ref, domain=None, range=Optional[Union[str, List[str]]])
+
+slots.reactivity_measurements = Slot(uri=AK_SCHEMA.reactivity_measurements, name="reactivity_measurements", curie=AK_SCHEMA.curie('reactivity_measurements'),
+                   model_uri=AK_SCHEMA.reactivity_measurements, domain=None, range=Optional[Union[Union[dict, ReceptorReactivity], List[Union[dict, ReceptorReactivity]]]])
+
+slots.ligand_type = Slot(uri=RDF.type, name="ligand_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.ligand_type, domain=None, range=Union[str, "LigandType"])
+
+slots.antigen_type = Slot(uri=RDF.type, name="antigen_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.antigen_type, domain=None, range=Union[str, "AntigenType"])
+
+slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curie('antigen'),
+                   model_uri=AK_SCHEMA.antigen, domain=None, range=Union[str, "Antigen"])
+
+slots.antigen_source_species = Slot(uri=AK_SCHEMA.antigen_source_species, name="antigen_source_species", curie=AK_SCHEMA.curie('antigen_source_species'),
+                   model_uri=AK_SCHEMA.antigen_source_species, domain=None, range=Optional[Union[str, "AntigenSourceSpecies"]])
+
+slots.peptide_start = Slot(uri=AK_SCHEMA.peptide_start, name="peptide_start", curie=AK_SCHEMA.curie('peptide_start'),
+                   model_uri=AK_SCHEMA.peptide_start, domain=None, range=Optional[int])
+
+slots.peptide_end = Slot(uri=AK_SCHEMA.peptide_end, name="peptide_end", curie=AK_SCHEMA.curie('peptide_end'),
+                   model_uri=AK_SCHEMA.peptide_end, domain=None, range=Optional[int])
+
+slots.mhc_gene_1 = Slot(uri=AK_SCHEMA.mhc_gene_1, name="mhc_gene_1", curie=AK_SCHEMA.curie('mhc_gene_1'),
+                   model_uri=AK_SCHEMA.mhc_gene_1, domain=None, range=Optional[Union[str, "MhcGene1"]])
+
+slots.mhc_allele_1 = Slot(uri=AK_SCHEMA.mhc_allele_1, name="mhc_allele_1", curie=AK_SCHEMA.curie('mhc_allele_1'),
+                   model_uri=AK_SCHEMA.mhc_allele_1, domain=None, range=Optional[str])
+
+slots.mhc_gene_2 = Slot(uri=AK_SCHEMA.mhc_gene_2, name="mhc_gene_2", curie=AK_SCHEMA.curie('mhc_gene_2'),
+                   model_uri=AK_SCHEMA.mhc_gene_2, domain=None, range=Optional[Union[str, "MhcGene2"]])
+
+slots.mhc_allele_2 = Slot(uri=AK_SCHEMA.mhc_allele_2, name="mhc_allele_2", curie=AK_SCHEMA.curie('mhc_allele_2'),
+                   model_uri=AK_SCHEMA.mhc_allele_2, domain=None, range=Optional[str])
+
+slots.reactivity_method = Slot(uri=AK_SCHEMA.reactivity_method, name="reactivity_method", curie=AK_SCHEMA.curie('reactivity_method'),
+                   model_uri=AK_SCHEMA.reactivity_method, domain=None, range=Union[str, "ReactivityMethod"])
+
+slots.reactivity_readout = Slot(uri=AK_SCHEMA.reactivity_readout, name="reactivity_readout", curie=AK_SCHEMA.curie('reactivity_readout'),
+                   model_uri=AK_SCHEMA.reactivity_readout, domain=None, range=Union[str, "ReactivityReadout"])
+
+slots.reactivity_value = Slot(uri=AK_SCHEMA.reactivity_value, name="reactivity_value", curie=AK_SCHEMA.curie('reactivity_value'),
+                   model_uri=AK_SCHEMA.reactivity_value, domain=None, range=float)
+
+slots.reactivity_unit = Slot(uri=AK_SCHEMA.reactivity_unit, name="reactivity_unit", curie=AK_SCHEMA.curie('reactivity_unit'),
+                   model_uri=AK_SCHEMA.reactivity_unit, domain=None, range=str)
+
 slots.V1p5label = Slot(uri=AK_SCHEMA.V1p5label, name="V1p5label", curie=AK_SCHEMA.curie('V1p5label'),
                    model_uri=AK_SCHEMA.V1p5label, domain=None, range=Optional[str])
 
@@ -9672,7 +14028,7 @@ slots.V1p5sequence = Slot(uri=AK_SCHEMA.V1p5sequence, name="V1p5sequence", curie
 slots.V1p5derivation = Slot(uri=AK_SCHEMA.V1p5derivation, name="V1p5derivation", curie=AK_SCHEMA.curie('V1p5derivation'),
                    model_uri=AK_SCHEMA.V1p5derivation, domain=None, range=Union[str, "V1p5Derivation"])
 
-slots.V1p5observation_type = Slot(uri=AK_SCHEMA.V1p5observation_type, name="V1p5observation_type", curie=AK_SCHEMA.curie('V1p5observation_type'),
+slots.V1p5observation_type = Slot(uri=RDF.type, name="V1p5observation_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5observation_type, domain=None, range=Union[str, "V1p5ObservationType"])
 
 slots.V1p5curation = Slot(uri=AK_SCHEMA.V1p5curation, name="V1p5curation", curie=AK_SCHEMA.curie('V1p5curation'),
@@ -9772,10 +14128,10 @@ slots.V1p5lab_address = Slot(uri=AK_SCHEMA.V1p5lab_address, name="V1p5lab_addres
                    model_uri=AK_SCHEMA.V1p5lab_address, domain=None, range=str)
 
 slots.V1p5release_version = Slot(uri=AK_SCHEMA.V1p5release_version, name="V1p5release_version", curie=AK_SCHEMA.curie('V1p5release_version'),
-                   model_uri=AK_SCHEMA.V1p5release_version, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p5release_version, domain=None, range=str)
 
 slots.V1p5release_date = Slot(uri=AK_SCHEMA.V1p5release_date, name="V1p5release_date", curie=AK_SCHEMA.curie('V1p5release_date'),
-                   model_uri=AK_SCHEMA.V1p5release_date, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5release_date, domain=None, range=Union[str, XSDDateTime])
 
 slots.V1p5release_description = Slot(uri=AK_SCHEMA.V1p5release_description, name="V1p5release_description", curie=AK_SCHEMA.curie('V1p5release_description'),
                    model_uri=AK_SCHEMA.V1p5release_description, domain=None, range=str)
@@ -9792,13 +14148,13 @@ slots.V1p5locus = Slot(uri=AK_SCHEMA.V1p5locus, name="V1p5locus", curie=AK_SCHEM
 slots.V1p5chromosome = Slot(uri=AK_SCHEMA.V1p5chromosome, name="V1p5chromosome", curie=AK_SCHEMA.curie('V1p5chromosome'),
                    model_uri=AK_SCHEMA.V1p5chromosome, domain=None, range=Optional[int])
 
-slots.V1p5sequence_type = Slot(uri=AK_SCHEMA.V1p5sequence_type, name="V1p5sequence_type", curie=AK_SCHEMA.curie('V1p5sequence_type'),
+slots.V1p5sequence_type = Slot(uri=RDF.type, name="V1p5sequence_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5sequence_type, domain=None, range=Union[str, "V1p5SequenceType"])
 
 slots.V1p5functional = Slot(uri=AK_SCHEMA.V1p5functional, name="V1p5functional", curie=AK_SCHEMA.curie('V1p5functional'),
                    model_uri=AK_SCHEMA.V1p5functional, domain=None, range=Union[bool, Bool])
 
-slots.V1p5inference_type = Slot(uri=AK_SCHEMA.V1p5inference_type, name="V1p5inference_type", curie=AK_SCHEMA.curie('V1p5inference_type'),
+slots.V1p5inference_type = Slot(uri=RDF.type, name="V1p5inference_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5inference_type, domain=None, range=Union[str, "V1p5InferenceType"])
 
 slots.V1p5species = Slot(uri=AK_SCHEMA.V1p5species, name="V1p5species", curie=AK_SCHEMA.curie('V1p5species'),
@@ -9807,7 +14163,7 @@ slots.V1p5species = Slot(uri=AK_SCHEMA.V1p5species, name="V1p5species", curie=AK
 slots.V1p5species_subgroup = Slot(uri=AK_SCHEMA.V1p5species_subgroup, name="V1p5species_subgroup", curie=AK_SCHEMA.curie('V1p5species_subgroup'),
                    model_uri=AK_SCHEMA.V1p5species_subgroup, domain=None, range=Optional[str])
 
-slots.V1p5species_subgroup_type = Slot(uri=AK_SCHEMA.V1p5species_subgroup_type, name="V1p5species_subgroup_type", curie=AK_SCHEMA.curie('V1p5species_subgroup_type'),
+slots.V1p5species_subgroup_type = Slot(uri=RDF.type, name="V1p5species_subgroup_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5species_subgroup_type, domain=None, range=Optional[Union[str, "V1p5SpeciesSubgroupType"]])
 
 slots.V1p5status = Slot(uri=AK_SCHEMA.V1p5status, name="V1p5status", curie=AK_SCHEMA.curie('V1p5status'),
@@ -9984,7 +14340,7 @@ slots.V1p5study_id = Slot(uri=AK_SCHEMA.V1p5study_id, name="V1p5study_id", curie
 slots.V1p5study_title = Slot(uri=AK_SCHEMA.V1p5study_title, name="V1p5study_title", curie=AK_SCHEMA.curie('V1p5study_title'),
                    model_uri=AK_SCHEMA.V1p5study_title, domain=None, range=str)
 
-slots.V1p5study_type = Slot(uri=AK_SCHEMA.V1p5study_type, name="V1p5study_type", curie=AK_SCHEMA.curie('V1p5study_type'),
+slots.V1p5study_type = Slot(uri=RDF.type, name="V1p5study_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5study_type, domain=None, range=Union[str, "V1p5StudyType"])
 
 slots.V1p5study_description = Slot(uri=AK_SCHEMA.V1p5study_description, name="V1p5study_description", curie=AK_SCHEMA.curie('V1p5study_description'),
@@ -10009,10 +14365,10 @@ slots.V1p5keywords_study = Slot(uri=AK_SCHEMA.V1p5keywords_study, name="V1p5keyw
                    model_uri=AK_SCHEMA.V1p5keywords_study, domain=None, range=Union[Union[str, "V1p5KeywordsStudy"], List[Union[str, "V1p5KeywordsStudy"]]])
 
 slots.V1p5adc_publish_date = Slot(uri=AK_SCHEMA.V1p5adc_publish_date, name="V1p5adc_publish_date", curie=AK_SCHEMA.curie('V1p5adc_publish_date'),
-                   model_uri=AK_SCHEMA.V1p5adc_publish_date, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.V1p5adc_publish_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p5adc_update_date = Slot(uri=AK_SCHEMA.V1p5adc_update_date, name="V1p5adc_update_date", curie=AK_SCHEMA.curie('V1p5adc_update_date'),
-                   model_uri=AK_SCHEMA.V1p5adc_update_date, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.V1p5adc_update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p5subject_id = Slot(uri=AK_SCHEMA.V1p5subject_id, name="V1p5subject_id", curie=AK_SCHEMA.curie('V1p5subject_id'),
                    model_uri=AK_SCHEMA.V1p5subject_id, domain=None, range=str)
@@ -10050,7 +14406,7 @@ slots.V1p5strain_name = Slot(uri=AK_SCHEMA.V1p5strain_name, name="V1p5strain_nam
 slots.V1p5linked_subjects = Slot(uri=AK_SCHEMA.V1p5linked_subjects, name="V1p5linked_subjects", curie=AK_SCHEMA.curie('V1p5linked_subjects'),
                    model_uri=AK_SCHEMA.V1p5linked_subjects, domain=None, range=str)
 
-slots.V1p5link_type = Slot(uri=AK_SCHEMA.V1p5link_type, name="V1p5link_type", curie=AK_SCHEMA.curie('V1p5link_type'),
+slots.V1p5link_type = Slot(uri=RDF.type, name="V1p5link_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5link_type, domain=None, range=str)
 
 slots.V1p5diagnosis = Slot(uri=AK_SCHEMA.V1p5diagnosis, name="V1p5diagnosis", curie=AK_SCHEMA.curie('V1p5diagnosis'),
@@ -10086,7 +14442,7 @@ slots.V1p5medical_history = Slot(uri=AK_SCHEMA.V1p5medical_history, name="V1p5me
 slots.V1p5sample_id = Slot(uri=AK_SCHEMA.V1p5sample_id, name="V1p5sample_id", curie=AK_SCHEMA.curie('V1p5sample_id'),
                    model_uri=AK_SCHEMA.V1p5sample_id, domain=None, range=str)
 
-slots.V1p5sample_type = Slot(uri=AK_SCHEMA.V1p5sample_type, name="V1p5sample_type", curie=AK_SCHEMA.curie('V1p5sample_type'),
+slots.V1p5sample_type = Slot(uri=RDF.type, name="V1p5sample_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5sample_type, domain=None, range=str)
 
 slots.V1p5tissue = Slot(uri=AK_SCHEMA.V1p5tissue, name="V1p5tissue", curie=AK_SCHEMA.curie('V1p5tissue'),
@@ -10195,7 +14551,7 @@ slots.V1p5sequencing_facility = Slot(uri=AK_SCHEMA.V1p5sequencing_facility, name
                    model_uri=AK_SCHEMA.V1p5sequencing_facility, domain=None, range=str)
 
 slots.V1p5sequencing_run_date = Slot(uri=AK_SCHEMA.V1p5sequencing_run_date, name="V1p5sequencing_run_date", curie=AK_SCHEMA.curie('V1p5sequencing_run_date'),
-                   model_uri=AK_SCHEMA.V1p5sequencing_run_date, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p5sequencing_run_date, domain=None, range=Union[str, XSDDateTime])
 
 slots.V1p5sequencing_kit = Slot(uri=AK_SCHEMA.V1p5sequencing_kit, name="V1p5sequencing_kit", curie=AK_SCHEMA.curie('V1p5sequencing_kit'),
                    model_uri=AK_SCHEMA.V1p5sequencing_kit, domain=None, range=str)
@@ -10206,7 +14562,7 @@ slots.V1p5sequencing_files = Slot(uri=AK_SCHEMA.V1p5sequencing_files, name="V1p5
 slots.V1p5sequencing_data_id = Slot(uri=AK_SCHEMA.V1p5sequencing_data_id, name="V1p5sequencing_data_id", curie=AK_SCHEMA.curie('V1p5sequencing_data_id'),
                    model_uri=AK_SCHEMA.V1p5sequencing_data_id, domain=None, range=str)
 
-slots.V1p5file_type = Slot(uri=AK_SCHEMA.V1p5file_type, name="V1p5file_type", curie=AK_SCHEMA.curie('V1p5file_type'),
+slots.V1p5file_type = Slot(uri=RDF.type, name="V1p5file_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5file_type, domain=None, range=Union[str, "V1p5FileType"])
 
 slots.V1p5filename = Slot(uri=AK_SCHEMA.V1p5filename, name="V1p5filename", curie=AK_SCHEMA.curie('V1p5filename'),
@@ -10287,9 +14643,6 @@ slots.V1p5sample = Slot(uri=AK_SCHEMA.V1p5sample, name="V1p5sample", curie=AK_SC
 slots.V1p5data_processing = Slot(uri=AK_SCHEMA.V1p5data_processing, name="V1p5data_processing", curie=AK_SCHEMA.curie('V1p5data_processing'),
                    model_uri=AK_SCHEMA.V1p5data_processing, domain=None, range=Union[Union[dict, V1p5DataProcessing], List[Union[dict, V1p5DataProcessing]]])
 
-slots.V1p5time_point = Slot(uri=AK_SCHEMA.V1p5time_point, name="V1p5time_point", curie=AK_SCHEMA.curie('V1p5time_point'),
-                   model_uri=AK_SCHEMA.V1p5time_point, domain=None, range=Optional[Union[dict, V1p5TimePoint]])
-
 slots.V1p5repertoire_group_id = Slot(uri=AK_SCHEMA.V1p5repertoire_group_id, name="V1p5repertoire_group_id", curie=AK_SCHEMA.curie('V1p5repertoire_group_id'),
                    model_uri=AK_SCHEMA.V1p5repertoire_group_id, domain=None, range=str)
 
@@ -10300,7 +14653,7 @@ slots.V1p5repertoire_group_description = Slot(uri=AK_SCHEMA.V1p5repertoire_group
                    model_uri=AK_SCHEMA.V1p5repertoire_group_description, domain=None, range=Optional[str])
 
 slots.V1p5repertoires = Slot(uri=AK_SCHEMA.V1p5repertoires, name="V1p5repertoires", curie=AK_SCHEMA.curie('V1p5repertoires'),
-                   model_uri=AK_SCHEMA.V1p5repertoires, domain=None, range=Union[Union[dict, V1p5RepertoireGroupDetail], List[Union[dict, V1p5RepertoireGroupDetail]]])
+                   model_uri=AK_SCHEMA.V1p5repertoires, domain=None, range=Union[str, List[str]])
 
 slots.V1p5segment = Slot(uri=AK_SCHEMA.V1p5segment, name="V1p5segment", curie=AK_SCHEMA.curie('V1p5segment'),
                    model_uri=AK_SCHEMA.V1p5segment, domain=None, range=str)
@@ -10782,7 +15135,7 @@ slots.V1p5virtual_pairing = Slot(uri=AK_SCHEMA.V1p5virtual_pairing, name="V1p5vi
 slots.V1p5expression_id = Slot(uri=AK_SCHEMA.V1p5expression_id, name="V1p5expression_id", curie=AK_SCHEMA.curie('V1p5expression_id'),
                    model_uri=AK_SCHEMA.V1p5expression_id, domain=None, range=str)
 
-slots.V1p5property_type = Slot(uri=AK_SCHEMA.V1p5property_type, name="V1p5property_type", curie=AK_SCHEMA.curie('V1p5property_type'),
+slots.V1p5property_type = Slot(uri=RDF.type, name="V1p5property_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5property_type, domain=None, range=str)
 
 slots.V1p5property = Slot(uri=AK_SCHEMA.V1p5property, name="V1p5property", curie=AK_SCHEMA.curie('V1p5property'),
@@ -10794,7 +15147,7 @@ slots.V1p5receptor_id = Slot(uri=AK_SCHEMA.V1p5receptor_id, name="V1p5receptor_i
 slots.V1p5receptor_hash = Slot(uri=AK_SCHEMA.V1p5receptor_hash, name="V1p5receptor_hash", curie=AK_SCHEMA.curie('V1p5receptor_hash'),
                    model_uri=AK_SCHEMA.V1p5receptor_hash, domain=None, range=str)
 
-slots.V1p5receptor_type = Slot(uri=AK_SCHEMA.V1p5receptor_type, name="V1p5receptor_type", curie=AK_SCHEMA.curie('V1p5receptor_type'),
+slots.V1p5receptor_type = Slot(uri=RDF.type, name="V1p5receptor_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5receptor_type, domain=None, range=Union[str, "V1p5ReceptorType"])
 
 slots.V1p5receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.V1p5receptor_variable_domain_1_aa, name="V1p5receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('V1p5receptor_variable_domain_1_aa'),
@@ -10815,10 +15168,10 @@ slots.V1p5receptor_ref = Slot(uri=AK_SCHEMA.V1p5receptor_ref, name="V1p5receptor
 slots.V1p5reactivity_measurements = Slot(uri=AK_SCHEMA.V1p5reactivity_measurements, name="V1p5reactivity_measurements", curie=AK_SCHEMA.curie('V1p5reactivity_measurements'),
                    model_uri=AK_SCHEMA.V1p5reactivity_measurements, domain=None, range=Optional[Union[Union[dict, V1p5ReceptorReactivity], List[Union[dict, V1p5ReceptorReactivity]]]])
 
-slots.V1p5ligand_type = Slot(uri=AK_SCHEMA.V1p5ligand_type, name="V1p5ligand_type", curie=AK_SCHEMA.curie('V1p5ligand_type'),
+slots.V1p5ligand_type = Slot(uri=RDF.type, name="V1p5ligand_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5ligand_type, domain=None, range=Union[str, "V1p5LigandType"])
 
-slots.V1p5antigen_type = Slot(uri=AK_SCHEMA.V1p5antigen_type, name="V1p5antigen_type", curie=AK_SCHEMA.curie('V1p5antigen_type'),
+slots.V1p5antigen_type = Slot(uri=RDF.type, name="V1p5antigen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p5antigen_type, domain=None, range=Union[str, "V1p5AntigenType"])
 
 slots.V1p5antigen = Slot(uri=AK_SCHEMA.V1p5antigen, name="V1p5antigen", curie=AK_SCHEMA.curie('V1p5antigen'),
@@ -10908,7 +15261,7 @@ slots.V1p4sequence = Slot(uri=AK_SCHEMA.V1p4sequence, name="V1p4sequence", curie
 slots.V1p4derivation = Slot(uri=AK_SCHEMA.V1p4derivation, name="V1p4derivation", curie=AK_SCHEMA.curie('V1p4derivation'),
                    model_uri=AK_SCHEMA.V1p4derivation, domain=None, range=Union[str, "V1p4Derivation"])
 
-slots.V1p4observation_type = Slot(uri=AK_SCHEMA.V1p4observation_type, name="V1p4observation_type", curie=AK_SCHEMA.curie('V1p4observation_type'),
+slots.V1p4observation_type = Slot(uri=RDF.type, name="V1p4observation_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4observation_type, domain=None, range=Union[str, "V1p4ObservationType"])
 
 slots.V1p4curation = Slot(uri=AK_SCHEMA.V1p4curation, name="V1p4curation", curie=AK_SCHEMA.curie('V1p4curation'),
@@ -11002,10 +15355,10 @@ slots.V1p4acknowledgements = Slot(uri=AK_SCHEMA.V1p4acknowledgements, name="V1p4
                    model_uri=AK_SCHEMA.V1p4acknowledgements, domain=None, range=Union[Union[dict, V1p4Contributor], List[Union[dict, V1p4Contributor]]])
 
 slots.V1p4release_version = Slot(uri=AK_SCHEMA.V1p4release_version, name="V1p4release_version", curie=AK_SCHEMA.curie('V1p4release_version'),
-                   model_uri=AK_SCHEMA.V1p4release_version, domain=None, range=int)
+                   model_uri=AK_SCHEMA.V1p4release_version, domain=None, range=str)
 
 slots.V1p4release_date = Slot(uri=AK_SCHEMA.V1p4release_date, name="V1p4release_date", curie=AK_SCHEMA.curie('V1p4release_date'),
-                   model_uri=AK_SCHEMA.V1p4release_date, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4release_date, domain=None, range=Union[str, XSDDateTime])
 
 slots.V1p4release_description = Slot(uri=AK_SCHEMA.V1p4release_description, name="V1p4release_description", curie=AK_SCHEMA.curie('V1p4release_description'),
                    model_uri=AK_SCHEMA.V1p4release_description, domain=None, range=str)
@@ -11022,13 +15375,13 @@ slots.V1p4locus = Slot(uri=AK_SCHEMA.V1p4locus, name="V1p4locus", curie=AK_SCHEM
 slots.V1p4chromosome = Slot(uri=AK_SCHEMA.V1p4chromosome, name="V1p4chromosome", curie=AK_SCHEMA.curie('V1p4chromosome'),
                    model_uri=AK_SCHEMA.V1p4chromosome, domain=None, range=Optional[int])
 
-slots.V1p4sequence_type = Slot(uri=AK_SCHEMA.V1p4sequence_type, name="V1p4sequence_type", curie=AK_SCHEMA.curie('V1p4sequence_type'),
+slots.V1p4sequence_type = Slot(uri=RDF.type, name="V1p4sequence_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4sequence_type, domain=None, range=Union[str, "V1p4SequenceType"])
 
 slots.V1p4functional = Slot(uri=AK_SCHEMA.V1p4functional, name="V1p4functional", curie=AK_SCHEMA.curie('V1p4functional'),
                    model_uri=AK_SCHEMA.V1p4functional, domain=None, range=Union[bool, Bool])
 
-slots.V1p4inference_type = Slot(uri=AK_SCHEMA.V1p4inference_type, name="V1p4inference_type", curie=AK_SCHEMA.curie('V1p4inference_type'),
+slots.V1p4inference_type = Slot(uri=RDF.type, name="V1p4inference_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4inference_type, domain=None, range=Union[str, "V1p4InferenceType"])
 
 slots.V1p4species = Slot(uri=AK_SCHEMA.V1p4species, name="V1p4species", curie=AK_SCHEMA.curie('V1p4species'),
@@ -11037,7 +15390,7 @@ slots.V1p4species = Slot(uri=AK_SCHEMA.V1p4species, name="V1p4species", curie=AK
 slots.V1p4species_subgroup = Slot(uri=AK_SCHEMA.V1p4species_subgroup, name="V1p4species_subgroup", curie=AK_SCHEMA.curie('V1p4species_subgroup'),
                    model_uri=AK_SCHEMA.V1p4species_subgroup, domain=None, range=Optional[str])
 
-slots.V1p4species_subgroup_type = Slot(uri=AK_SCHEMA.V1p4species_subgroup_type, name="V1p4species_subgroup_type", curie=AK_SCHEMA.curie('V1p4species_subgroup_type'),
+slots.V1p4species_subgroup_type = Slot(uri=RDF.type, name="V1p4species_subgroup_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4species_subgroup_type, domain=None, range=Optional[Union[str, "V1p4SpeciesSubgroupType"]])
 
 slots.V1p4status = Slot(uri=AK_SCHEMA.V1p4status, name="V1p4status", curie=AK_SCHEMA.curie('V1p4status'),
@@ -11208,7 +15561,7 @@ slots.V1p4study_id = Slot(uri=AK_SCHEMA.V1p4study_id, name="V1p4study_id", curie
 slots.V1p4study_title = Slot(uri=AK_SCHEMA.V1p4study_title, name="V1p4study_title", curie=AK_SCHEMA.curie('V1p4study_title'),
                    model_uri=AK_SCHEMA.V1p4study_title, domain=None, range=str)
 
-slots.V1p4study_type = Slot(uri=AK_SCHEMA.V1p4study_type, name="V1p4study_type", curie=AK_SCHEMA.curie('V1p4study_type'),
+slots.V1p4study_type = Slot(uri=RDF.type, name="V1p4study_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4study_type, domain=None, range=Union[str, "V1p4StudyType"])
 
 slots.V1p4study_description = Slot(uri=AK_SCHEMA.V1p4study_description, name="V1p4study_description", curie=AK_SCHEMA.curie('V1p4study_description'),
@@ -11227,10 +15580,10 @@ slots.V1p4keywords_study = Slot(uri=AK_SCHEMA.V1p4keywords_study, name="V1p4keyw
                    model_uri=AK_SCHEMA.V1p4keywords_study, domain=None, range=Union[Union[str, "V1p4KeywordsStudy"], List[Union[str, "V1p4KeywordsStudy"]]])
 
 slots.V1p4adc_publish_date = Slot(uri=AK_SCHEMA.V1p4adc_publish_date, name="V1p4adc_publish_date", curie=AK_SCHEMA.curie('V1p4adc_publish_date'),
-                   model_uri=AK_SCHEMA.V1p4adc_publish_date, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.V1p4adc_publish_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p4adc_update_date = Slot(uri=AK_SCHEMA.V1p4adc_update_date, name="V1p4adc_update_date", curie=AK_SCHEMA.curie('V1p4adc_update_date'),
-                   model_uri=AK_SCHEMA.V1p4adc_update_date, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.V1p4adc_update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.V1p4subject_id = Slot(uri=AK_SCHEMA.V1p4subject_id, name="V1p4subject_id", curie=AK_SCHEMA.curie('V1p4subject_id'),
                    model_uri=AK_SCHEMA.V1p4subject_id, domain=None, range=str)
@@ -11265,7 +15618,7 @@ slots.V1p4strain_name = Slot(uri=AK_SCHEMA.V1p4strain_name, name="V1p4strain_nam
 slots.V1p4linked_subjects = Slot(uri=AK_SCHEMA.V1p4linked_subjects, name="V1p4linked_subjects", curie=AK_SCHEMA.curie('V1p4linked_subjects'),
                    model_uri=AK_SCHEMA.V1p4linked_subjects, domain=None, range=str)
 
-slots.V1p4link_type = Slot(uri=AK_SCHEMA.V1p4link_type, name="V1p4link_type", curie=AK_SCHEMA.curie('V1p4link_type'),
+slots.V1p4link_type = Slot(uri=RDF.type, name="V1p4link_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4link_type, domain=None, range=str)
 
 slots.V1p4diagnosis = Slot(uri=AK_SCHEMA.V1p4diagnosis, name="V1p4diagnosis", curie=AK_SCHEMA.curie('V1p4diagnosis'),
@@ -11304,7 +15657,7 @@ slots.V1p4medical_history = Slot(uri=AK_SCHEMA.V1p4medical_history, name="V1p4me
 slots.V1p4sample_id = Slot(uri=AK_SCHEMA.V1p4sample_id, name="V1p4sample_id", curie=AK_SCHEMA.curie('V1p4sample_id'),
                    model_uri=AK_SCHEMA.V1p4sample_id, domain=None, range=str)
 
-slots.V1p4sample_type = Slot(uri=AK_SCHEMA.V1p4sample_type, name="V1p4sample_type", curie=AK_SCHEMA.curie('V1p4sample_type'),
+slots.V1p4sample_type = Slot(uri=RDF.type, name="V1p4sample_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4sample_type, domain=None, range=str)
 
 slots.V1p4tissue = Slot(uri=AK_SCHEMA.V1p4tissue, name="V1p4tissue", curie=AK_SCHEMA.curie('V1p4tissue'),
@@ -11410,7 +15763,7 @@ slots.V1p4sequencing_facility = Slot(uri=AK_SCHEMA.V1p4sequencing_facility, name
                    model_uri=AK_SCHEMA.V1p4sequencing_facility, domain=None, range=str)
 
 slots.V1p4sequencing_run_date = Slot(uri=AK_SCHEMA.V1p4sequencing_run_date, name="V1p4sequencing_run_date", curie=AK_SCHEMA.curie('V1p4sequencing_run_date'),
-                   model_uri=AK_SCHEMA.V1p4sequencing_run_date, domain=None, range=str)
+                   model_uri=AK_SCHEMA.V1p4sequencing_run_date, domain=None, range=Union[str, XSDDateTime])
 
 slots.V1p4sequencing_kit = Slot(uri=AK_SCHEMA.V1p4sequencing_kit, name="V1p4sequencing_kit", curie=AK_SCHEMA.curie('V1p4sequencing_kit'),
                    model_uri=AK_SCHEMA.V1p4sequencing_kit, domain=None, range=str)
@@ -11421,7 +15774,7 @@ slots.V1p4sequencing_files = Slot(uri=AK_SCHEMA.V1p4sequencing_files, name="V1p4
 slots.V1p4sequencing_data_id = Slot(uri=AK_SCHEMA.V1p4sequencing_data_id, name="V1p4sequencing_data_id", curie=AK_SCHEMA.curie('V1p4sequencing_data_id'),
                    model_uri=AK_SCHEMA.V1p4sequencing_data_id, domain=None, range=str)
 
-slots.V1p4file_type = Slot(uri=AK_SCHEMA.V1p4file_type, name="V1p4file_type", curie=AK_SCHEMA.curie('V1p4file_type'),
+slots.V1p4file_type = Slot(uri=RDF.type, name="V1p4file_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4file_type, domain=None, range=Union[str, "V1p4FileType"])
 
 slots.V1p4filename = Slot(uri=AK_SCHEMA.V1p4filename, name="V1p4filename", curie=AK_SCHEMA.curie('V1p4filename'),
@@ -11991,7 +16344,7 @@ slots.V1p4virtual_pairing = Slot(uri=AK_SCHEMA.V1p4virtual_pairing, name="V1p4vi
 slots.V1p4expression_id = Slot(uri=AK_SCHEMA.V1p4expression_id, name="V1p4expression_id", curie=AK_SCHEMA.curie('V1p4expression_id'),
                    model_uri=AK_SCHEMA.V1p4expression_id, domain=None, range=str)
 
-slots.V1p4property_type = Slot(uri=AK_SCHEMA.V1p4property_type, name="V1p4property_type", curie=AK_SCHEMA.curie('V1p4property_type'),
+slots.V1p4property_type = Slot(uri=RDF.type, name="V1p4property_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4property_type, domain=None, range=str)
 
 slots.V1p4property = Slot(uri=AK_SCHEMA.V1p4property, name="V1p4property", curie=AK_SCHEMA.curie('V1p4property'),
@@ -12003,7 +16356,7 @@ slots.V1p4receptor_id = Slot(uri=AK_SCHEMA.V1p4receptor_id, name="V1p4receptor_i
 slots.V1p4receptor_hash = Slot(uri=AK_SCHEMA.V1p4receptor_hash, name="V1p4receptor_hash", curie=AK_SCHEMA.curie('V1p4receptor_hash'),
                    model_uri=AK_SCHEMA.V1p4receptor_hash, domain=None, range=str)
 
-slots.V1p4receptor_type = Slot(uri=AK_SCHEMA.V1p4receptor_type, name="V1p4receptor_type", curie=AK_SCHEMA.curie('V1p4receptor_type'),
+slots.V1p4receptor_type = Slot(uri=RDF.type, name="V1p4receptor_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4receptor_type, domain=None, range=Union[str, "V1p4ReceptorType"])
 
 slots.V1p4receptor_variable_domain_1_aa = Slot(uri=AK_SCHEMA.V1p4receptor_variable_domain_1_aa, name="V1p4receptor_variable_domain_1_aa", curie=AK_SCHEMA.curie('V1p4receptor_variable_domain_1_aa'),
@@ -12021,10 +16374,10 @@ slots.V1p4receptor_variable_domain_2_locus = Slot(uri=AK_SCHEMA.V1p4receptor_var
 slots.V1p4receptor_ref = Slot(uri=AK_SCHEMA.V1p4receptor_ref, name="V1p4receptor_ref", curie=AK_SCHEMA.curie('V1p4receptor_ref'),
                    model_uri=AK_SCHEMA.V1p4receptor_ref, domain=None, range=Optional[Union[str, List[str]]])
 
-slots.V1p4ligand_type = Slot(uri=AK_SCHEMA.V1p4ligand_type, name="V1p4ligand_type", curie=AK_SCHEMA.curie('V1p4ligand_type'),
+slots.V1p4ligand_type = Slot(uri=RDF.type, name="V1p4ligand_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4ligand_type, domain=None, range=Union[str, "V1p4LigandType"])
 
-slots.V1p4antigen_type = Slot(uri=AK_SCHEMA.V1p4antigen_type, name="V1p4antigen_type", curie=AK_SCHEMA.curie('V1p4antigen_type'),
+slots.V1p4antigen_type = Slot(uri=RDF.type, name="V1p4antigen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.V1p4antigen_type, domain=None, range=Union[str, "V1p4AntigenType"])
 
 slots.V1p4antigen = Slot(uri=AK_SCHEMA.V1p4antigen, name="V1p4antigen", curie=AK_SCHEMA.curie('V1p4antigen'),

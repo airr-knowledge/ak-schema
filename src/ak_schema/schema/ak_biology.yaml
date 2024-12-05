@@ -8,7 +8,7 @@ classes:
     is_a: NamedThing
     class_uri: CL:0000000 # cell
 
-  Tissue:
+  TissuePortion:
     is_a: NamedThing
     class_uri: UBERON:0000479 # tissue
 
