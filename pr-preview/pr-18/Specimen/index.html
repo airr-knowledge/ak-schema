@@ -234,6 +234,13 @@
       Specimen : tissue
 
 
+
+
+    Specimen --&gt; "1" Tissue : tissue
+    click Tissue href "../Tissue"
+
+
+
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
@@ -270,8 +277,8 @@
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The tissue from which this specimen was taken</td>
+<td>1 <br/> <a href="../Tissue/">Tissue</a></td>
+<td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -438,14 +445,21 @@ attributes:
     range: string
   tissue:
     name: tissue
-    description: The tissue from which this specimen was taken
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: tissue
     owner: Specimen
     domain_of:
     - Specimen
-    range: string
+    - Sample
+    - SampleProcessing
+    range: Tissue
+    required: true
   process:
     name: process
     description: The type of specimen collection process that resulted in this specimen
@@ -466,6 +480,7 @@ attributes:
     owner: Specimen
     domain_of:
     - NamedThing
+    - Acknowledgement
     range: string
   description:
     name: description

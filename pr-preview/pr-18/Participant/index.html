@@ -226,6 +226,13 @@
 
       Participant : age_unit
 
+
+
+
+    Participant --&gt; "1" AgeUnit : age_unit
+    click AgeUnit href "../AgeUnit"
+
+
       Participant : akc_id
 
       Participant : biological_sex
@@ -359,8 +366,8 @@
 </tr>
 <tr>
 <td><a href="../age_unit/">age_unit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Units used to describe the age</td>
+<td>1 <br/> <a href="../AgeUnit/">AgeUnit</a></td>
+<td>Unit of age range</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -520,6 +527,9 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    - AlleleDescription
+    - GermlineSet
+    - Subject
     range: Species
   biological_sex:
     name: biological_sex
@@ -555,14 +565,20 @@ attributes:
     range: string
   age_unit:
     name: age_unit
-    description: Units used to describe the age
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unit of age range
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: age_unit
     owner: Participant
     domain_of:
     - Participant
-    range: string
+    - Subject
+    range: AgeUnit
+    required: true
   age_event:
     name: age_event
     description: The event to which the age is relative
@@ -572,6 +588,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    - Subject
     range: LifeEvent
   race:
     name: race
@@ -582,6 +599,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    - Subject
     range: Race
   ethnicity:
     name: ethnicity
@@ -592,6 +610,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    - Subject
     range: Ethnicity
   geolocation:
     name: geolocation
@@ -625,6 +644,7 @@ attributes:
     owner: Participant
     domain_of:
     - NamedThing
+    - Acknowledgement
     range: string
   description:
     name: description

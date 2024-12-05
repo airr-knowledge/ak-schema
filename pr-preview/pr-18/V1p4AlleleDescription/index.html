@@ -420,13 +420,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4release_version/">V1p4release_version</a></td>
-<td>1 <br/> <a href="../Integer/">Integer</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4release_date/">V1p4release_date</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of this release</td>
 <td>direct</td>
 </tr>
@@ -864,7 +864,7 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     - V1p4GermlineSet
-    range: integer
+    range: string
     required: true
   V1p4release_date:
     name: V1p4release_date
@@ -880,7 +880,7 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     - V1p4GermlineSet
-    range: string
+    range: datetime
     required: true
   V1p4release_description:
     name: V1p4release_description
@@ -994,6 +994,7 @@ attributes:
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    slot_uri: rdf:type
     alias: V1p4sequence_type
     owner: V1p4AlleleDescription
     domain_of:
@@ -1024,6 +1025,7 @@ attributes:
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    slot_uri: rdf:type
     alias: V1p4inference_type
     owner: V1p4AlleleDescription
     domain_of:
@@ -1072,6 +1074,7 @@ attributes:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    slot_uri: rdf:type
     alias: V1p4species_subgroup_type
     owner: V1p4AlleleDescription
     domain_of:

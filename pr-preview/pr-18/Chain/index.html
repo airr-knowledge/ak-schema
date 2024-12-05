@@ -284,14 +284,14 @@
 <tbody>
 <tr>
 <td><a href="../sequence/">sequence</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Nucleotide sequence</td>
+<td>1 <br/> <a href="../String/">String</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../sequence_aa/">sequence_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Amino acid sequence</td>
+<td>Amino acid translation of the query nucleotide sequence</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -303,19 +303,19 @@
 <tr>
 <td><a href="../v_call/">v_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>V gene with allele</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../d_call/">d_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>First or only D gene with allele</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../j_call/">j_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>J gene with allele</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -327,7 +327,7 @@
 <tr>
 <td><a href="../junction_aa/">junction_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Amino acid form of the junction</td>
+<td>Amino acid translation of the junction</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -351,31 +351,31 @@
 <tr>
 <td><a href="../cdr1_start/">cdr1_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR1 start position in the query sequence (1-based closed interval)</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cdr1_end/">cdr1_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR1 end position in the query sequence (1-based closed interval)</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cdr2_start/">cdr2_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR2 start position in the query sequence (1-based closed interval)</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cdr2_end/">cdr2_end</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR2 end position in the query sequence (1-based closed interval)</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cdr3_start/">cdr3_start</a></td>
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR3 start position in the query sequence (1-based closed interval)</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -549,17 +549,26 @@ is_a: NamedThing
 attributes:
   sequence:
     name: sequence
-    description: Nucleotide sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: sequence
     owner: Chain
     domain_of:
     - Chain
+    - RearrangedSequence
+    - UnrearrangedSequence
+    - AlleleDescription
+    - UndocumentedAllele
+    - Rearrangement
     range: string
+    required: true
   sequence_aa:
     name: sequence_aa
-    description: Amino acid sequence.
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the query nucleotide sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: sequence_aa
@@ -567,7 +576,9 @@ attributes:
     domain_of:
     - Chain
     - PeptidicEpitope
+    - Rearrangement
     range: string
+    required: false
   chain_type:
     name: chain_type
     description: Gene locus (chain type).
@@ -580,42 +591,55 @@ attributes:
     range: ChainType
   v_call:
     name: v_call
-    description: V gene with allele. If referring to a known reference sequence in
-      a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01
-      if using IMGT/GENE-DB).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: v_call
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
+    - Clone
     range: string
   d_call:
     name: d_call
-    description: First or only D gene with allele. If referring to a known reference
-      sequence in a database the relevant gene/allele nomenclature should be followed
-      (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: d_call
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
+    - Clone
     range: string
   j_call:
     name: j_call
-    description: J gene with allele. If referring to a known reference sequence in
-      a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02
-      if using IMGT/GENE-DB).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: j_call
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
+    - Clone
     range: string
   c_call:
     name: c_call
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Constant region gene with allele. If referring to a known reference
       sequence in a database the relevant gene/allele nomenclature should be followed
       (e.g., IGHG1*01 if using IMGT/GENE-DB).
@@ -625,19 +649,32 @@ attributes:
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
     range: string
+    required: false
   junction_aa:
     name: junction_aa
-    description: Amino acid form of the junction.
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the junction.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: junction_aa
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
+    - Clone
+    - Node
     range: string
   cdr1_aa:
     name: cdr1_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Amino acid translation of the cdr1 field.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -645,9 +682,15 @@ attributes:
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
     range: string
+    required: false
   cdr2_aa:
     name: cdr2_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Amino acid translation of the cdr2 field.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -655,9 +698,15 @@ attributes:
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
     range: string
+    required: false
   cdr3_aa:
     name: cdr3_aa
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Amino acid translation of the cdr3 field.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -665,59 +714,90 @@ attributes:
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
     range: string
+    required: false
   cdr1_start:
     name: cdr1_start
-    description: CDR1 start position in the query sequence (1-based closed interval).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: cdr1_start
     owner: Chain
     domain_of:
     - Chain
+    - SequenceDelineationV
+    - Rearrangement
     range: integer
   cdr1_end:
     name: cdr1_end
-    description: CDR1 end position in the query sequence (1-based closed interval).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: cdr1_end
     owner: Chain
     domain_of:
     - Chain
+    - SequenceDelineationV
+    - Rearrangement
     range: integer
   cdr2_start:
     name: cdr2_start
-    description: CDR2 start position in the query sequence (1-based closed interval).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: cdr2_start
     owner: Chain
     domain_of:
     - Chain
+    - SequenceDelineationV
+    - Rearrangement
     range: integer
   cdr2_end:
     name: cdr2_end
-    description: CDR2 end position in the query sequence (1-based closed interval).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: cdr2_end
     owner: Chain
     domain_of:
     - Chain
+    - SequenceDelineationV
+    - Rearrangement
     range: integer
   cdr3_start:
     name: cdr3_start
-    description: CDR3 start position in the query sequence (1-based closed interval).
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: cdr3_start
     owner: Chain
     domain_of:
     - Chain
+    - SequenceDelineationV
+    - Rearrangement
     range: integer
   cdr3_end:
     name: cdr3_end
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: CDR3 end position in the query sequence (1-based closed interval).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -725,7 +805,9 @@ attributes:
     owner: Chain
     domain_of:
     - Chain
+    - Rearrangement
     range: integer
+    required: false
   name:
     name: name
     description: A human-readable name for a thing
@@ -736,6 +818,7 @@ attributes:
     owner: Chain
     domain_of:
     - NamedThing
+    - Acknowledgement
     range: string
   description:
     name: description

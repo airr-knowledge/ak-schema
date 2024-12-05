@@ -342,13 +342,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5adc_publish_date/">V1p5adc_publish_date</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date the study was first published in the AIRR Data Commons</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5adc_update_date/">V1p5adc_update_date</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date the study data was updated in the AIRR Data Commons</td>
 <td>direct</td>
 </tr>
@@ -467,6 +467,7 @@ attributes:
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    slot_uri: rdf:type
     alias: V1p5study_type
     owner: V1p5Study
     domain_of:
@@ -649,7 +650,7 @@ attributes:
     owner: V1p5Study
     domain_of:
     - V1p5Study
-    range: string
+    range: datetime
     required: false
   V1p5adc_update_date:
     name: V1p5adc_update_date
@@ -664,7 +665,7 @@ attributes:
     owner: V1p5Study
     domain_of:
     - V1p5Study
-    range: string
+    range: datetime
     required: false
 
 </code></pre>

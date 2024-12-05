@@ -215,6 +215,13 @@
 
       LibraryPreparationProcessing : library_generation_method
 
+
+
+
+    LibraryPreparationProcessing --&gt; "1" LibraryGenerationMethod : library_generation_method
+    click LibraryGenerationMethod href "../LibraryGenerationMethod"
+
+
       LibraryPreparationProcessing : library_generation_protocol
 
       LibraryPreparationProcessing : name
@@ -259,19 +266,19 @@
 <tbody>
 <tr>
 <td><a href="../library_generation_method/">library_generation_method</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_protocol/">library_generation_protocol</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_kit_version/">library_generation_kit_version</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
 <td>direct</td>
 </tr>
@@ -348,6 +355,10 @@ is_a: SpecimenProcessing
 attributes:
   library_generation_method:
     name: library_generation_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -355,9 +366,15 @@ attributes:
     owner: LibraryPreparationProcessing
     domain_of:
     - LibraryPreparationProcessing
-    range: string
+    - SampleProcessing
+    range: LibraryGenerationMethod
+    required: true
   library_generation_protocol:
     name: library_generation_protocol
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Description of processes applied to substrate to obtain a library
       that is ready for sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -366,9 +383,15 @@ attributes:
     owner: LibraryPreparationProcessing
     domain_of:
     - LibraryPreparationProcessing
+    - SampleProcessing
     range: string
+    required: true
   library_generation_kit_version:
     name: library_generation_kit_version
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: When using a library generation protocol from a commercial provider,
       provide the protocol version number
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -377,7 +400,9 @@ attributes:
     owner: LibraryPreparationProcessing
     domain_of:
     - LibraryPreparationProcessing
+    - SampleProcessing
     range: string
+    required: true
   specimen:
     name: specimen
     description: The specimen that was input for an assay
@@ -401,6 +426,7 @@ attributes:
     owner: LibraryPreparationProcessing
     domain_of:
     - NamedThing
+    - Acknowledgement
     range: string
   description:
     name: description

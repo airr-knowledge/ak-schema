@@ -582,7 +582,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4sequencing_run_date/">V1p4sequencing_run_date</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
@@ -738,6 +738,7 @@ attributes:
       harvest, peripheral venous puncture
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    slot_uri: rdf:type
     alias: V1p4sample_type
     owner: V1p4SampleProcessing
     domain_of:
@@ -1296,7 +1297,7 @@ attributes:
     domain_of:
     - V1p4SequencingRun
     - V1p4SampleProcessing
-    range: string
+    range: datetime
     required: true
   V1p4sequencing_kit:
     name: V1p4sequencing_kit

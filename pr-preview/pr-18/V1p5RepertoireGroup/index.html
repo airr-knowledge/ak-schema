@@ -208,13 +208,6 @@
       V1p5RepertoireGroup : V1p5repertoires
 
 
-
-
-    V1p5RepertoireGroup --&gt; "1..*" V1p5RepertoireGroupDetail : V1p5repertoires
-    click V1p5RepertoireGroupDetail href "../V1p5RepertoireGroupDetail"
-
-
-
 </div>
 <!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
@@ -248,7 +241,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5repertoires/">V1p5repertoires</a></td>
-<td>1..* <br/> <a href="../V1p5RepertoireGroupDetail/">V1p5RepertoireGroupDetail</a></td>
+<td>1..* <br/> <a href="../String/">String</a></td>
 <td>List of repertoires in this collection with an associated description and tim...</td>
 <td>direct</td>
 </tr>
@@ -356,7 +349,7 @@ attributes:
     owner: V1p5RepertoireGroup
     domain_of:
     - V1p5RepertoireGroup
-    range: V1p5RepertoireGroupDetail
+    range: string
     required: true
     multivalued: true
 

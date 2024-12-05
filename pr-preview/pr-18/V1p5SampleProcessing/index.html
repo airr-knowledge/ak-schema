@@ -583,7 +583,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5sequencing_run_date/">V1p5sequencing_run_date</a></td>
-<td>1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../Datetime/">Datetime</a></td>
 <td>Date of sequencing run</td>
 <td>direct</td>
 </tr>
@@ -740,6 +740,7 @@ attributes:
       harvest, peripheral venous puncture
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    slot_uri: rdf:type
     alias: V1p5sample_type
     owner: V1p5SampleProcessing
     domain_of:
@@ -1315,7 +1316,7 @@ attributes:
     domain_of:
     - V1p5SequencingRun
     - V1p5SampleProcessing
-    range: string
+    range: datetime
     required: true
   V1p5sequencing_kit:
     name: V1p5sequencing_kit
