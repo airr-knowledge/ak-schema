@@ -278,6 +278,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -324,7 +331,7 @@
 
 
 <h1 id="slot-ethnicity">Slot: ethnicity</h1>
-<p><em>The ethnicity of a participant</em></p>
+<p><em>Ethnic group of subject (defined as cultural/language-based membership)</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/ethnicity">ak_schema:ethnicity</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -339,22 +346,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Subject/">Subject</a></td>
-<td></td>
+<td><a href="../Participant/">Participant</a></td>
+<td>A participant in an investigation</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../Participant/">Participant</a></td>
-<td>A participant in an investigation</td>
+<td><a href="../Subject/">Subject</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Ethnicity/">Ethnicity</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullable</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -382,14 +404,18 @@
 <details>
 
 <pre><code class="language-yaml">name: ethnicity
-description: The ethnicity of a participant
+annotations:
+  nullable:
+    tag: nullable
+    value: true
+description: Ethnic group of subject (defined as cultural/language-based membership)
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: ethnicity
 domain_of:
 - Participant
 - Subject
-range: Ethnicity
+range: string
 
 </code></pre>
 

@@ -206,13 +206,6 @@
     click Subject href "../Subject"
       Subject : age_event
 
-
-
-
-    Subject --&gt; "0..1" LifeEvent : age_event
-    click LifeEvent href "../LifeEvent"
-
-
       Subject : age_max
 
       Subject : age_min
@@ -239,13 +232,6 @@
 
       Subject : ethnicity
 
-
-
-
-    Subject --&gt; "0..1" Ethnicity : ethnicity
-    click Ethnicity href "../Ethnicity"
-
-
       Subject : genotype
 
 
@@ -260,13 +246,6 @@
       Subject : linked_subjects
 
       Subject : race
-
-
-
-
-    Subject --&gt; "0..1" Race : race
-    click Race href "../Race"
-
 
       Subject : sex
 
@@ -321,7 +300,7 @@
 <tr>
 <td><a href="../species/">species</a></td>
 <td>0..1 <br/> <a href="../Species/">Species</a></td>
-<td>The species of a participant</td>
+<td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -350,8 +329,8 @@
 </tr>
 <tr>
 <td><a href="../age_event/">age_event</a></td>
-<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
-<td>The event to which the age is relative</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Event in the study schedule to which <code>Age</code> refers</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -362,14 +341,14 @@
 </tr>
 <tr>
 <td><a href="../ethnicity/">ethnicity</a></td>
-<td>0..1 <br/> <a href="../Ethnicity/">Ethnicity</a></td>
-<td>The ethnicity of a participant</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Ethnic group of subject (defined as cultural/language-based membership)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../race/">race</a></td>
-<td>0..1 <br/> <a href="../Race/">Race</a></td>
-<td>The race of a participant</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Racial group of subject (as defined by NIH)</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -511,10 +490,13 @@ attributes:
     range: boolean
   species:
     name: species
-    description: The species of a participant
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: rdf:type
     alias: species
     owner: Subject
     domain_of:
@@ -583,7 +565,15 @@ attributes:
     range: AgeUnit
   age_event:
     name: age_event
-    description: The event to which the age is relative
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Event in the study schedule to which `Age` refers. For NCBI BioSample
+      this MUST be `sampling`. For other implementations submitters need to be aware
+      that there is currently no mechanism to encode to potential delta between `Age
+      event` and `Sample collection time`, hence the chosen events should be in temporal
+      proximity.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: age_event
@@ -591,7 +581,7 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: LifeEvent
+    range: string
   ancestry_population:
     name: ancestry_population
     annotations:
@@ -608,7 +598,11 @@ attributes:
     range: string
   ethnicity:
     name: ethnicity
-    description: The ethnicity of a participant
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Ethnic group of subject (defined as cultural/language-based membership)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: ethnicity
@@ -616,10 +610,14 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: Ethnicity
+    range: string
   race:
     name: race
-    description: The race of a participant
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Racial group of subject (as defined by NIH)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: race
@@ -627,7 +625,7 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: Race
+    range: string
   strain_name:
     name: strain_name
     annotations:

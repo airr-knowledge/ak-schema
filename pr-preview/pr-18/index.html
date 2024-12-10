@@ -413,10 +413,6 @@
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Cell/">Cell</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Chain/">Chain</a></td>
 <td>None</td>
 </tr>
@@ -513,10 +509,6 @@
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PlanSpecification/">PlanSpecification</a></td>
 <td>A plan with specified actions to meet some objectives.</td>
 </tr>
@@ -549,10 +541,6 @@
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TissuePortion/">TissuePortion</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SimilarityCalculation/">SimilarityCalculation</a></td>
 <td>None</td>
 </tr>
@@ -566,6 +554,10 @@
 </tr>
 <tr>
 <td><a href="AlleleDescription/">AlleleDescription</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="Cell/">Cell</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -633,6 +625,10 @@
 <td>None</td>
 </tr>
 <tr>
+<td><a href="NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td><a href="PCRTarget/">PCRTarget</a></td>
 <td>None</td>
 </tr>
@@ -658,6 +654,10 @@
 </tr>
 <tr>
 <td><a href="RepertoireGroup/">RepertoireGroup</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="RepertoireGroupDetail/">RepertoireGroupDetail</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -1061,7 +1061,7 @@
 </tr>
 <tr>
 <td><a href="age_event/">age_event</a></td>
-<td>The event to which the age is relative</td>
+<td>Event in the study schedule to which <code>Age</code> refers</td>
 </tr>
 <tr>
 <td><a href="age_max/">age_max</a></td>
@@ -1629,7 +1629,7 @@
 </tr>
 <tr>
 <td><a href="disease_stage/">disease_stage</a></td>
-<td>The stage of the disease relevant to an immune exposure</td>
+<td>Stage of disease at current intervention</td>
 </tr>
 <tr>
 <td><a href="disease_state_sample/">disease_state_sample</a></td>
@@ -1661,7 +1661,7 @@
 </tr>
 <tr>
 <td><a href="ethnicity/">ethnicity</a></td>
-<td>The ethnicity of a participant</td>
+<td>Ethnic group of subject (defined as cultural/language-based membership)</td>
 </tr>
 <tr>
 <td><a href="exclusion_criteria/">exclusion_criteria</a></td>
@@ -1886,6 +1886,10 @@
 <tr>
 <td><a href="index_length/">index_length</a></td>
 <td>Read length in bases for the index file</td>
+</tr>
+<tr>
+<td><a href="individual_full_name/">individual_full_name</a></td>
+<td>Full name of individual</td>
 </tr>
 <tr>
 <td><a href="inference_process/">inference_process</a></td>
@@ -2348,6 +2352,10 @@
 <td>Keyword describing the property type and detection method used to measure the...</td>
 </tr>
 <tr>
+<td><a href="property_value/">property_value</a></td>
+<td>Level at which the property was observed in the experiment (non-normalized)</td>
+</tr>
+<tr>
 <td><a href="pub_ids/">pub_ids</a></td>
 <td></td>
 </tr>
@@ -2365,7 +2373,7 @@
 </tr>
 <tr>
 <td><a href="race/">race</a></td>
-<td>The race of a participant</td>
+<td>Racial group of subject (as defined by NIH)</td>
 </tr>
 <tr>
 <td><a href="rank/">rank</a></td>
@@ -2477,7 +2485,7 @@
 </tr>
 <tr>
 <td><a href="repertoire_description/">repertoire_description</a></td>
-<td>Generic repertoire description</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="repertoire_group_description/">repertoire_group_description</a></td>
@@ -2653,7 +2661,7 @@
 </tr>
 <tr>
 <td><a href="species/">species</a></td>
-<td>The species of a participant</td>
+<td>Binomial designation of subject's species</td>
 </tr>
 <tr>
 <td><a href="species_subgroup/">species_subgroup</a></td>
@@ -2810,6 +2818,22 @@
 <tr>
 <td><a href="template_quality/">template_quality</a></td>
 <td>Description and results of the quality control performed on the template mate...</td>
+</tr>
+<tr>
+<td><a href="time_point/">time_point</a></td>
+<td>Time point designation for this repertoire within the group</td>
+</tr>
+<tr>
+<td><a href="time_point_label/">time_point_label</a></td>
+<td>Informative label for the time point</td>
+</tr>
+<tr>
+<td><a href="time_point_unit/">time_point_unit</a></td>
+<td>Unit of the time point</td>
+</tr>
+<tr>
+<td><a href="time_point_value/">time_point_value</a></td>
+<td>Value of the time point</td>
 </tr>
 <tr>
 <td><a href="time_unit/">time_unit</a></td>
@@ -6235,7 +6259,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="BiologicalSex/">BiologicalSex</a></td>
+<td><a href="BiologicalSexOntology/">BiologicalSexOntology</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6247,11 +6271,11 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="ChainSimilarityType/">ChainSimilarityType</a></td>
+<td><a href="ChainSimilarityTypeEnum/">ChainSimilarityTypeEnum</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="ChainType/">ChainType</a></td>
+<td><a href="ChainTypeEnum/">ChainTypeEnum</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6271,23 +6295,23 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="Disease/">Disease</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="DiseaseDiagnosis/">DiseaseDiagnosis</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="DiseaseStage/">DiseaseStage</a></td>
+<td><a href="DiseaseOntology/">DiseaseOntology</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="Ethnicity/">Ethnicity</a></td>
+<td><a href="DiseaseStageOntology/">DiseaseStageOntology</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="ExposureMaterial/">ExposureMaterial</a></td>
+<td><a href="EthnicityOntology/">EthnicityOntology</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="ExposureMaterialOntology/">ExposureMaterialOntology</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6303,7 +6327,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="Geolocation/">Geolocation</a></td>
+<td><a href="GeolocationOntology/">GeolocationOntology</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6327,7 +6351,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="LifeEventProcess/">LifeEventProcess</a></td>
+<td><a href="LifeEventProcessOntology/">LifeEventProcessOntology</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6363,7 +6387,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="PhenotypicSex/">PhenotypicSex</a></td>
+<td><a href="PhenotypicSexOntology/">PhenotypicSexOntology</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6375,7 +6399,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="Race/">Race</a></td>
+<td><a href="RaceOntology/">RaceOntology</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6415,6 +6439,10 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="SpeciesOntology/">SpeciesOntology</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="SpeciesSubgroupType/">SpeciesSubgroupType</a></td>
 <td></td>
 </tr>
@@ -6423,7 +6451,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="Strain/">Strain</a></td>
+<td><a href="StrainEnum/">StrainEnum</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6443,11 +6471,11 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="Tissue/">Tissue</a></td>
+<td><a href="TimePointUnit/">TimePointUnit</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="Unit/">Unit</a></td>
+<td><a href="Tissue/">Tissue</a></td>
 <td></td>
 </tr>
 <tr>

@@ -142,11 +142,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#inheritance">
-    Inheritance
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -200,31 +195,38 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-cell">Class: Cell</h1>
-<p>URI: <a href="http://purl.obolibrary.org/obo/CL_0000000">CL:0000000</a></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/Cell">ak_schema:Cell</a></p>
 <div class="mermaid"> classDiagram
     class Cell
     click Cell href "../Cell"
-      NamedThing &lt;|-- Cell
-        click NamedThing href "../NamedThing"
+      Cell : cell_id
 
-      Cell : akc_id
+      Cell : data_processing_id
 
-      Cell : description
+      Cell : expression_index
 
-      Cell : name
+      Cell : expression_raw_doi
+
+      Cell : expression_study_method
+
+
+
+
+    Cell --&gt; "0..1" ExpressionStudyMethod : expression_study_method
+    click ExpressionStudyMethod href "../ExpressionStudyMethod"
+
+
+      Cell : rearrangements
+
+      Cell : receptors
+
+      Cell : repertoire_id
+
+      Cell : virtual_pairing
 
 
 </div>
-<h2 id="inheritance">Inheritance</h2>
-<ul>
-<li><a href="../AKObject/">AKObject</a><ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
-<li><strong>Cell</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -237,22 +239,58 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../name/">name</a></td>
+<td><a href="../cell_id/">cell_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td></td>
+<td>direct</td>
 </tr>
 <tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../rearrangements/">rearrangements</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Array of sequence identifiers defined for the Rearrangement object</td>
+<td>direct</td>
 </tr>
 <tr>
-<td><a href="../akc_id/">akc_id</a></td>
-<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing in the AKC</td>
-<td><a href="../AKObject/">AKObject</a></td>
+<td><a href="../receptors/">receptors</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
+<td>Array of receptor identifiers defined for the Receptor object</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../repertoire_id/">repertoire_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../data_processing_id/">data_processing_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../expression_study_method/">expression_study_method</a></td>
+<td>0..1 <br/> <a href="../ExpressionStudyMethod/">ExpressionStudyMethod</a></td>
+<td>Keyword describing the methodology used to assess expression</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../expression_raw_doi/">expression_raw_doi</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>DOI of raw data set containing the current event</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../expression_index/">expression_index</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Index addressing the current event within the raw data set</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../virtual_pairing/">virtual_pairing</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>boolean to indicate if pairing was inferred</td>
+<td>direct</td>
 </tr>
 </tbody>
 </table>
@@ -272,7 +310,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>CL:0000000</td>
+<td>ak_schema:Cell</td>
 </tr>
 <tr>
 <td>native</td>
@@ -286,8 +324,16 @@
 <details>
 <pre><code class="language-yaml">name: Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
-class_uri: CL:0000000
+slots:
+- cell_id
+- rearrangements
+- receptors
+- repertoire_id
+- data_processing_id
+- expression_study_method
+- expression_raw_doi
+- expression_index
+- virtual_pairing
 
 </code></pre>
 </details>
@@ -295,45 +341,137 @@ class_uri: CL:0000000
 <details>
 <pre><code class="language-yaml">name: Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
 attributes:
-  name:
-    name: name
-    description: A human-readable name for a thing
+  cell_id:
+    name: cell_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: schema:name
-    alias: name
+    alias: cell_id
     owner: Cell
     domain_of:
-    - NamedThing
-    - Acknowledgement
+    - Rearrangement
+    - Cell
+    - CellExpression
     range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
+  rearrangements:
+    name: rearrangements
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of sequence identifiers defined for the Rearrangement object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: schema:description
-    alias: description
+    alias: rearrangements
     owner: Cell
     domain_of:
-    - NamedThing
+    - Cell
     range: string
-  akc_id:
-    name: akc_id
-    description: A unique identifier for a thing in the AKC.
+    multivalued: true
+  receptors:
+    name: receptors
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Array of receptor identifiers defined for the Receptor object
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: schema:identifier
-    identifier: true
-    alias: akc_id
+    alias: receptors
     owner: Cell
     domain_of:
-    - AKObject
-    range: uriorcurie
-    required: true
-class_uri: CL:0000000
+    - Cell
+    range: string
+    multivalued: true
+  repertoire_id:
+    name: repertoire_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: repertoire_id
+    owner: Cell
+    domain_of:
+    - Repertoire
+    - RepertoireGroupDetail
+    - Rearrangement
+    - Clone
+    - Cell
+    - CellExpression
+    range: string
+  data_processing_id:
+    name: data_processing_id
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: data_processing_id
+    owner: Cell
+    domain_of:
+    - DataProcessing
+    - Alignment
+    - Rearrangement
+    - Clone
+    - Cell
+    - CellExpression
+    range: string
+  expression_study_method:
+    name: expression_study_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Keyword describing the methodology used to assess expression. This
+      values for this field MUST  come from a controlled vocabulary.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: expression_study_method
+    owner: Cell
+    domain_of:
+    - Cell
+    range: ExpressionStudyMethod
+  expression_raw_doi:
+    name: expression_raw_doi
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: DOI of raw data set containing the current event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: expression_raw_doi
+    owner: Cell
+    domain_of:
+    - Cell
+    range: string
+  expression_index:
+    name: expression_index
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Index addressing the current event within the raw data set.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: expression_index
+    owner: Cell
+    domain_of:
+    - Cell
+    range: string
+  virtual_pairing:
+    name: virtual_pairing
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: boolean to indicate if pairing was inferred.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: virtual_pairing
+    owner: Cell
+    domain_of:
+    - Cell
+    range: boolean
 
 </code></pre>
 </details>

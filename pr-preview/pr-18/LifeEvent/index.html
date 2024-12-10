@@ -224,8 +224,8 @@
 
 
 
-    LifeEvent --&gt; "0..1" Geolocation : geolocation
-    click Geolocation href "../Geolocation"
+    LifeEvent --&gt; "0..1" GeolocationOntology : geolocation
+    click GeolocationOntology href "../GeolocationOntology"
 
 
       LifeEvent : life_event_type
@@ -233,8 +233,8 @@
 
 
 
-    LifeEvent --&gt; "0..1" LifeEventProcess : life_event_type
-    click LifeEventProcess href "../LifeEventProcess"
+    LifeEvent --&gt; "0..1" LifeEventProcessOntology : life_event_type
+    click LifeEventProcessOntology href "../LifeEventProcessOntology"
 
 
       LifeEvent : name
@@ -302,13 +302,13 @@
 </tr>
 <tr>
 <td><a href="../life_event_type/">life_event_type</a></td>
-<td>0..1 <br/> <a href="../LifeEventProcess/">LifeEventProcess</a></td>
+<td>0..1 <br/> <a href="../LifeEventProcessOntology/">LifeEventProcessOntology</a></td>
 <td>The specific type of a life event</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../geolocation/">geolocation</a></td>
-<td>0..1 <br/> <a href="../Geolocation/">Geolocation</a></td>
+<td>0..1 <br/> <a href="../GeolocationOntology/">GeolocationOntology</a></td>
 <td>The geolocation of a participant at birth</td>
 <td>direct</td>
 </tr>
@@ -380,12 +380,6 @@
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
-<td><a href="../Participant/">Participant</a></td>
-<td><a href="../age_event/">age_event</a></td>
-<td>range</td>
-<td><a href="./">LifeEvent</a></td>
-</tr>
-<tr>
 <td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
 <td><a href="../life_event/">life_event</a></td>
 <td>range</td>
@@ -400,12 +394,6 @@
 <tr>
 <td><a href="../Assessment/">Assessment</a></td>
 <td><a href="../life_event/">life_event</a></td>
-<td>range</td>
-<td><a href="./">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../Subject/">Subject</a></td>
-<td><a href="../age_event/">age_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
 </tr>
@@ -495,7 +483,7 @@ attributes:
     owner: LifeEvent
     domain_of:
     - LifeEvent
-    range: LifeEventProcess
+    range: LifeEventProcessOntology
   geolocation:
     name: geolocation
     description: The geolocation of a participant at birth
@@ -507,7 +495,7 @@ attributes:
     domain_of:
     - Participant
     - LifeEvent
-    range: Geolocation
+    range: GeolocationOntology
   t0_event:
     name: t0_event
     description: The T0 event used to specify the time of this life event
@@ -569,7 +557,6 @@ attributes:
     owner: LifeEvent
     domain_of:
     - NamedThing
-    - Acknowledgement
     range: string
   description:
     name: description

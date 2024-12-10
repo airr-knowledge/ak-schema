@@ -208,6 +208,13 @@
       RepertoireGroup : repertoires
 
 
+
+
+    RepertoireGroup --&gt; "*" RepertoireGroupDetail : repertoires
+    click RepertoireGroupDetail href "../RepertoireGroupDetail"
+
+
+
 </div>
 <!-- no inheritance hierarchy -->
 <h2 id="slots">Slots</h2>
@@ -241,7 +248,7 @@
 </tr>
 <tr>
 <td><a href="../repertoires/">repertoires</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../RepertoireGroupDetail/">RepertoireGroupDetail</a></td>
 <td>List of repertoires in this collection with an associated description and tim...</td>
 <td>direct</td>
 </tr>
@@ -346,7 +353,7 @@ attributes:
     owner: RepertoireGroup
     domain_of:
     - RepertoireGroup
-    range: string
+    range: RepertoireGroupDetail
     multivalued: true
 
 </code></pre>

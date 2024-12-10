@@ -216,9 +216,9 @@
 
       CellExpression : property_type
 
-      CellExpression : repertoire_id
+      CellExpression : property_value
 
-      CellExpression : value
+      CellExpression : repertoire_id
 
 
 </div>
@@ -271,9 +271,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The measurement result value</td>
+<td><a href="../property_value/">property_value</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Level at which the property was observed in the experiment (non-normalized)</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -315,7 +315,7 @@ slots:
 - data_processing_id
 - property_type
 - property
-- value
+- property_value
 
 </code></pre>
 </details>
@@ -346,22 +346,21 @@ attributes:
     owner: CellExpression
     domain_of:
     - Rearrangement
+    - Cell
     - CellExpression
     range: string
   repertoire_id:
     name: repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: repertoire_id
     owner: CellExpression
     domain_of:
     - Repertoire
+    - RepertoireGroupDetail
     - Rearrangement
     - Clone
+    - Cell
     - CellExpression
     range: string
   data_processing_id:
@@ -379,6 +378,7 @@ attributes:
     - Alignment
     - Rearrangement
     - Clone
+    - Cell
     - CellExpression
     range: string
   property_type:
@@ -417,19 +417,20 @@ attributes:
     domain_of:
     - CellExpression
     range: Property
-  value:
-    name: value
-    description: The measurement result value
+  property_value:
+    name: property_value
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Level at which the property was observed in the experiment (non-normalized).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: value
+    alias: property_value
     owner: CellExpression
     domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    - TimePoint
     - CellExpression
-    range: string
+    range: float
 
 </code></pre>
 </details>

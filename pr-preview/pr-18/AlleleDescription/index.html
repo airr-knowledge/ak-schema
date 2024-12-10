@@ -436,7 +436,7 @@
 </tr>
 <tr>
 <td><a href="../release_version/">release_version</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -509,7 +509,7 @@
 <tr>
 <td><a href="../species/">species</a></td>
 <td>0..1 <br/> <a href="../Species/">Species</a></td>
-<td>The species of a participant</td>
+<td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -908,7 +908,7 @@ attributes:
     domain_of:
     - AlleleDescription
     - GermlineSet
-    range: string
+    range: integer
   release_date:
     name: release_date
     annotations:
@@ -948,7 +948,6 @@ attributes:
     alias: label
     owner: AlleleDescription
     domain_of:
-    - TimePoint
     - AlleleDescription
     - DocumentedAllele
     - DeletedGene
@@ -1070,10 +1069,13 @@ attributes:
     range: InferenceType
   species:
     name: species
-    description: The species of a participant
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: rdf:type
     alias: species
     owner: AlleleDescription
     domain_of:

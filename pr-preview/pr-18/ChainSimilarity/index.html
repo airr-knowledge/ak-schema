@@ -232,8 +232,8 @@
 
 
 
-    ChainSimilarity --&gt; "0..1" ChainSimilarityType : chain_similarity_type
-    click ChainSimilarityType href "../ChainSimilarityType"
+    ChainSimilarity --&gt; "0..1" ChainSimilarityTypeEnum : chain_similarity_type
+    click ChainSimilarityTypeEnum href "../ChainSimilarityTypeEnum"
 
 
 
@@ -261,7 +261,7 @@
 <tbody>
 <tr>
 <td><a href="../chain_similarity_type/">chain_similarity_type</a></td>
-<td>0..1 <br/> <a href="../ChainSimilarityType/">ChainSimilarityType</a></td>
+<td>0..1 <br/> <a href="../ChainSimilarityTypeEnum/">ChainSimilarityTypeEnum</a></td>
 <td>Type of similarity calculation between two immune receptor chains</td>
 <td>direct</td>
 </tr>
@@ -337,7 +337,7 @@ attributes:
     owner: ChainSimilarity
     domain_of:
     - ChainSimilarity
-    range: ChainSimilarityType
+    range: ChainSimilarityTypeEnum
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain

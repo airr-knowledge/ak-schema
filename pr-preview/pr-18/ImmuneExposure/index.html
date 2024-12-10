@@ -222,28 +222,21 @@
 
 
 
-    ImmuneExposure --&gt; "0..1" Disease : disease
-    click Disease href "../Disease"
+    ImmuneExposure --&gt; "0..1" DiseaseOntology : disease
+    click DiseaseOntology href "../DiseaseOntology"
 
 
       ImmuneExposure : disease_severity
 
       ImmuneExposure : disease_stage
 
-
-
-
-    ImmuneExposure --&gt; "0..1" DiseaseStage : disease_stage
-    click DiseaseStage href "../DiseaseStage"
-
-
       ImmuneExposure : exposure_material
 
 
 
 
-    ImmuneExposure --&gt; "0..1" ExposureMaterial : exposure_material
-    click ExposureMaterial href "../ExposureMaterial"
+    ImmuneExposure --&gt; "0..1" ExposureMaterialOntology : exposure_material
+    click ExposureMaterialOntology href "../ExposureMaterialOntology"
 
 
       ImmuneExposure : life_event
@@ -288,20 +281,20 @@
 </tr>
 <tr>
 <td><a href="../exposure_material/">exposure_material</a></td>
-<td>0..1 <br/> <a href="../ExposureMaterial/">ExposureMaterial</a></td>
+<td>0..1 <br/> <a href="../ExposureMaterialOntology/">ExposureMaterialOntology</a></td>
 <td>The material relevant to an immune exposure</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../disease/">disease</a></td>
-<td>0..1 <br/> <a href="../Disease/">Disease</a></td>
+<td>0..1 <br/> <a href="../DiseaseOntology/">DiseaseOntology</a></td>
 <td>The disease relevant to an immune exposure</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../disease_stage/">disease_stage</a></td>
-<td>0..1 <br/> <a href="../DiseaseStage/">DiseaseStage</a></td>
-<td>The stage of the disease relevant to an immune exposure</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Stage of disease at current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -420,7 +413,7 @@ attributes:
     owner: ImmuneExposure
     domain_of:
     - ImmuneExposure
-    range: ExposureMaterial
+    range: ExposureMaterialOntology
   disease:
     name: disease
     description: The disease relevant to an immune exposure
@@ -430,10 +423,14 @@ attributes:
     owner: ImmuneExposure
     domain_of:
     - ImmuneExposure
-    range: Disease
+    range: DiseaseOntology
   disease_stage:
     name: disease_stage
-    description: The stage of the disease relevant to an immune exposure
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Stage of disease at current intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: disease_stage
@@ -441,7 +438,7 @@ attributes:
     domain_of:
     - ImmuneExposure
     - Diagnosis
-    range: DiseaseStage
+    range: string
   disease_severity:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
@@ -462,7 +459,6 @@ attributes:
     owner: ImmuneExposure
     domain_of:
     - NamedThing
-    - Acknowledgement
     range: string
   description:
     name: description

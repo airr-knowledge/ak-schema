@@ -239,8 +239,8 @@
 
 
 
-    Chain --&gt; "0..1" ChainType : chain_type
-    click ChainType href "../ChainType"
+    Chain --&gt; "0..1" ChainTypeEnum : chain_type
+    click ChainTypeEnum href "../ChainTypeEnum"
 
 
       Chain : d_call
@@ -296,7 +296,7 @@
 </tr>
 <tr>
 <td><a href="../chain_type/">chain_type</a></td>
-<td>0..1 <br/> <a href="../ChainType/">ChainType</a></td>
+<td>0..1 <br/> <a href="../ChainTypeEnum/">ChainTypeEnum</a></td>
 <td>Gene locus (chain type)</td>
 <td>direct</td>
 </tr>
@@ -586,7 +586,7 @@ attributes:
     owner: Chain
     domain_of:
     - Chain
-    range: ChainType
+    range: ChainTypeEnum
   v_call:
     name: v_call
     annotations:
@@ -811,7 +811,6 @@ attributes:
     owner: Chain
     domain_of:
     - NamedThing
-    - Acknowledgement
     range: string
   description:
     name: description

@@ -215,8 +215,6 @@
 
       SpecimenProcessing &lt;|-- CellIsolationProcessing
         click CellIsolationProcessing href "../CellIsolationProcessing"
-      SpecimenProcessing &lt;|-- NucleicAcidProcessing
-        click NucleicAcidProcessing href "../NucleicAcidProcessing"
       SpecimenProcessing &lt;|-- LibraryPreparationProcessing
         click LibraryPreparationProcessing href "../LibraryPreparationProcessing"
 
@@ -245,7 +243,6 @@
 <li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>SpecimenProcessing</strong><ul>
 <li><a href="../CellIsolationProcessing/">CellIsolationProcessing</a></li>
-<li><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></li>
 <li><a href="../LibraryPreparationProcessing/">LibraryPreparationProcessing</a></li>
 </ul>
 </li>
@@ -396,7 +393,6 @@ attributes:
     owner: SpecimenProcessing
     domain_of:
     - NamedThing
-    - Acknowledgement
     range: string
   description:
     name: description

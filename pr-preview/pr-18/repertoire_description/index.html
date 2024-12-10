@@ -331,7 +331,6 @@
 
 
 <h1 id="slot-repertoire_description">Slot: repertoire_description</h1>
-<p><em>Generic repertoire description</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/repertoire_description">ak_schema:repertoire_description</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -347,6 +346,11 @@
 <tbody>
 <tr>
 <td><a href="../Repertoire/">Repertoire</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RepertoireGroupDetail/">RepertoireGroupDetail</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -403,12 +407,12 @@ annotations:
   nullable:
     tag: nullable
     value: true
-description: Generic repertoire description
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: repertoire_description
 domain_of:
 - Repertoire
+- RepertoireGroupDetail
 range: string
 
 </code></pre>

@@ -217,13 +217,6 @@
 
       Diagnosis : disease_stage
 
-
-
-
-    Diagnosis --&gt; "0..1" DiseaseStage : disease_stage
-    click DiseaseStage href "../DiseaseStage"
-
-
       Diagnosis : immunogen
 
       Diagnosis : intervention
@@ -268,8 +261,8 @@
 </tr>
 <tr>
 <td><a href="../disease_stage/">disease_stage</a></td>
-<td>0..1 <br/> <a href="../DiseaseStage/">DiseaseStage</a></td>
-<td>The stage of the disease relevant to an immune exposure</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Stage of disease at current intervention</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -408,7 +401,11 @@ attributes:
     range: string
   disease_stage:
     name: disease_stage
-    description: The stage of the disease relevant to an immune exposure
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Stage of disease at current intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: disease_stage
@@ -416,7 +413,7 @@ attributes:
     domain_of:
     - ImmuneExposure
     - Diagnosis
-    range: DiseaseStage
+    range: string
   prior_therapies:
     name: prior_therapies
     annotations:

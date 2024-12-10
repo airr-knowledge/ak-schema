@@ -270,7 +270,7 @@
 <tr>
 <td><a href="../repertoire_description/">repertoire_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Generic repertoire description</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -347,18 +347,16 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
   repertoire_id:
     name: repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: repertoire_id
     owner: Repertoire
     domain_of:
     - Repertoire
+    - RepertoireGroupDetail
     - Rearrangement
     - Clone
+    - Cell
     - CellExpression
     range: string
   repertoire_name:
@@ -381,13 +379,13 @@ attributes:
       nullable:
         tag: nullable
         value: true
-    description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: repertoire_description
     owner: Repertoire
     domain_of:
     - Repertoire
+    - RepertoireGroupDetail
     range: string
   study:
     name: study
