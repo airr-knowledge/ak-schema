@@ -432,8 +432,8 @@
   ],
   "enums": [
     {
-      "name": "Species",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Species",
+      "name": "SpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -447,8 +447,8 @@
       ]
     },
     {
-      "name": "BiologicalSex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/BiologicalSex",
+      "name": "BiologicalSexOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/BiologicalSexOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -462,8 +462,8 @@
       ]
     },
     {
-      "name": "PhenotypicSex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PhenotypicSex",
+      "name": "PhenotypicSexOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PhenotypicSexOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -490,8 +490,8 @@
       ]
     },
     {
-      "name": "Race",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Race",
+      "name": "RaceOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/RaceOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -590,8 +590,8 @@
       ]
     },
     {
-      "name": "Ethnicity",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Ethnicity",
+      "name": "EthnicityOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/EthnicityOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -669,8 +669,8 @@
       ]
     },
     {
-      "name": "Geolocation",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Geolocation",
+      "name": "GeolocationOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/GeolocationOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -780,8 +780,8 @@
       ]
     },
     {
-      "name": "Strain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Strain",
+      "name": "StrainEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StrainEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -814,8 +814,8 @@
       ]
     },
     {
-      "name": "LifeEventProcess",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEventProcess",
+      "name": "LifeEventProcessOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEventProcessOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -837,8 +837,8 @@
       ]
     },
     {
-      "name": "ExposureMaterial",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExposureMaterial",
+      "name": "ExposureMaterialOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExposureMaterialOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -872,8 +872,8 @@
       ]
     },
     {
-      "name": "Disease",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Disease",
+      "name": "DiseaseOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -895,8 +895,8 @@
       ]
     },
     {
-      "name": "DiseaseStage",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseStage",
+      "name": "DiseaseStageOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseStageOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -922,8 +922,8 @@
       ]
     },
     {
-      "name": "ChainType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ChainType",
+      "name": "ChainTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ChainTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -950,8 +950,8 @@
       ]
     },
     {
-      "name": "ChainSimilarityType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ChainSimilarityType",
+      "name": "ChainSimilarityTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ChainSimilarityTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -972,8 +972,8 @@
       ]
     },
     {
-      "name": "Unit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Unit",
+      "name": "TimePointUnit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TimePointUnit",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1089,6 +1089,20 @@
           "text": "rearranged_only"
         }
       ]
+    },
+    {
+      "name": "Species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Species",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "NCBITAXON:7776"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ],
+        "include_self": true
+      }
     },
     {
       "name": "SpeciesSubgroupType",
@@ -3355,10 +3369,9 @@
         "http://schema.org/name"
       ],
       "slot_uri": "http://schema.org/name",
-      "owner": "Acknowledgement",
+      "owner": "NamedThing",
       "domain_of": [
-        "NamedThing",
-        "Acknowledgement"
+        "NamedThing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -3680,25 +3693,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "species",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/species",
-      "description": "The species of a participant",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Subject",
-      "domain_of": [
-        "Participant",
-        "AlleleDescription",
-        "GermlineSet",
-        "Subject"
-      ],
-      "range": "Species",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "biological_sex",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/biological_sex",
       "description": "The biological sex of a participant",
@@ -3711,7 +3705,7 @@
       "domain_of": [
         "Participant"
       ],
-      "range": "BiologicalSex",
+      "range": "BiologicalSexOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -3727,7 +3721,7 @@
       "domain_of": [
         "Participant"
       ],
-      "range": "PhenotypicSex",
+      "range": "PhenotypicSexOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -3744,48 +3738,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "age_event",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/age_event",
-      "description": "The event to which the age is relative",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/age_event",
-      "owner": "Subject",
-      "domain_of": [
-        "Participant",
-        "Subject"
-      ],
-      "range": "LifeEvent",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "race",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/race",
-      "description": "The race of a participant",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/race",
-      "owner": "Subject",
-      "domain_of": [
-        "Participant",
-        "Subject"
-      ],
-      "range": "Race",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "ethnicity",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ethnicity",
-      "description": "The ethnicity of a participant",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/ethnicity",
-      "owner": "Subject",
-      "domain_of": [
-        "Participant",
-        "Subject"
-      ],
-      "range": "Ethnicity",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "geolocation",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/geolocation",
       "description": "The geolocation of a participant at birth",
@@ -3799,7 +3751,7 @@
         "Participant",
         "LifeEvent"
       ],
-      "range": "Geolocation",
+      "range": "GeolocationOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -3812,7 +3764,7 @@
       "domain_of": [
         "Participant"
       ],
-      "range": "Strain",
+      "range": "StrainEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -3871,7 +3823,7 @@
       "domain_of": [
         "LifeEvent"
       ],
-      "range": "LifeEventProcess",
+      "range": "LifeEventProcessOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -3967,7 +3919,7 @@
       "domain_of": [
         "ImmuneExposure"
       ],
-      "range": "ExposureMaterial",
+      "range": "ExposureMaterialOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -3980,21 +3932,7 @@
       "domain_of": [
         "ImmuneExposure"
       ],
-      "range": "Disease",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "disease_stage",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
-      "description": "The stage of the disease relevant to an immune exposure",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
-      "owner": "Diagnosis",
-      "domain_of": [
-        "ImmuneExposure",
-        "Diagnosis"
-      ],
-      "range": "DiseaseStage",
+      "range": "DiseaseOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -4152,12 +4090,10 @@
       "description": "The measurement result value",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/value",
-      "owner": "CellExpression",
+      "owner": "Assessment",
       "domain_of": [
         "TCellReceptorEpitopeBindingAssay",
-        "Assessment",
-        "TimePoint",
-        "CellExpression"
+        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -4168,11 +4104,10 @@
       "description": "The measurement result value unit",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/unit",
-      "owner": "TimePoint",
+      "owner": "Assessment",
       "domain_of": [
         "TCellReceptorEpitopeBindingAssay",
-        "Assessment",
-        "TimePoint"
+        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -4302,7 +4237,7 @@
       "domain_of": [
         "Chain"
       ],
-      "range": "ChainType",
+      "range": "ChainTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -4470,22 +4405,67 @@
       "domain_of": [
         "ChainSimilarity"
       ],
-      "range": "ChainSimilarityType",
+      "range": "ChainSimilarityTypeEnum",
       "@type": "SlotDefinition"
     },
     {
-      "name": "label",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/label",
+      "name": "time_point_label",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/time_point_label",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Informative label for the time point",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/label",
-      "owner": "DeletedGene",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/time_point_label",
+      "owner": "TimePoint",
       "domain_of": [
-        "TimePoint",
-        "AlleleDescription",
-        "DocumentedAllele",
-        "DeletedGene"
+        "TimePoint"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "time_point_value",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/time_point_value",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Value of the time point",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/time_point_value",
+      "owner": "TimePoint",
+      "domain_of": [
+        "TimePoint"
+      ],
+      "range": "float",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "time_point_unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/time_point_unit",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Unit of the time point",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/time_point_unit",
+      "owner": "TimePoint",
+      "domain_of": [
+        "TimePoint"
+      ],
+      "range": "TimePointUnit",
       "@type": "SlotDefinition"
     },
     {
@@ -4501,6 +4481,26 @@
       "description": "unique identifier of this Acknowledgement within the file",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/acknowledgement_id",
+      "owner": "Acknowledgement",
+      "domain_of": [
+        "Acknowledgement"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "individual_full_name",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/individual_full_name",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Full name of individual",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/individual_full_name",
       "owner": "Acknowledgement",
       "domain_of": [
         "Acknowledgement"
@@ -5285,7 +5285,7 @@
         "AlleleDescription",
         "GermlineSet"
       ],
-      "range": "string",
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
@@ -5327,6 +5327,20 @@
       "domain_of": [
         "AlleleDescription",
         "GermlineSet"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "label",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/label",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/label",
+      "owner": "DeletedGene",
+      "domain_of": [
+        "AlleleDescription",
+        "DocumentedAllele",
+        "DeletedGene"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -5470,6 +5484,28 @@
         "AlleleDescription"
       ],
       "range": "InferenceType",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/species",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Binomial designation of subject's species",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/species",
+      "owner": "Subject",
+      "domain_of": [
+        "Participant",
+        "AlleleDescription",
+        "GermlineSet",
+        "Subject"
+      ],
+      "range": "Species",
       "@type": "SlotDefinition"
     },
     {
@@ -7024,6 +7060,27 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "age_event",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/age_event",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/age_event",
+      "owner": "Subject",
+      "domain_of": [
+        "Participant",
+        "Subject"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "ancestry_population",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ancestry_population",
       "annotations": [
@@ -7038,6 +7095,48 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/ancestry_population",
       "owner": "Subject",
       "domain_of": [
+        "Subject"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "ethnicity",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ethnicity",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Ethnic group of subject (defined as cultural/language-based membership)",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/ethnicity",
+      "owner": "Subject",
+      "domain_of": [
+        "Participant",
+        "Subject"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "race",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/race",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Racial group of subject (as defined by NIH)",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/race",
+      "owner": "Subject",
+      "domain_of": [
+        "Participant",
         "Subject"
       ],
       "range": "string",
@@ -7203,6 +7302,27 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_length",
       "owner": "Diagnosis",
       "domain_of": [
+        "Diagnosis"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "disease_stage",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Stage of disease at current intervention",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/disease_stage",
+      "owner": "Diagnosis",
+      "domain_of": [
+        "ImmuneExposure",
         "Diagnosis"
       ],
       "range": "string",
@@ -7881,6 +8001,7 @@
       "owner": "SampleProcessing",
       "domain_of": [
         "LibraryPreparationProcessing",
+        "NucleicAcidProcessing",
         "SampleProcessing"
       ],
       "range": "LibraryGenerationMethod",
@@ -7902,6 +8023,7 @@
       "owner": "SampleProcessing",
       "domain_of": [
         "LibraryPreparationProcessing",
+        "NucleicAcidProcessing",
         "SampleProcessing"
       ],
       "range": "string",
@@ -7923,6 +8045,7 @@
       "owner": "SampleProcessing",
       "domain_of": [
         "LibraryPreparationProcessing",
+        "NucleicAcidProcessing",
         "SampleProcessing"
       ],
       "range": "string",
@@ -7943,6 +8066,7 @@
       "owner": "SampleProcessing",
       "domain_of": [
         "ReceptorRepertoireSequencingAssay",
+        "NucleicAcidProcessing",
         "SampleProcessing"
       ],
       "range": "PCRTarget",
@@ -7965,6 +8089,7 @@
       "owner": "SampleProcessing",
       "domain_of": [
         "ReceptorRepertoireSequencingAssay",
+        "NucleicAcidProcessing",
         "SampleProcessing"
       ],
       "range": "CompleteSequences",
@@ -7985,6 +8110,7 @@
       "owner": "SampleProcessing",
       "domain_of": [
         "ReceptorRepertoireSequencingAssay",
+        "NucleicAcidProcessing",
         "SampleProcessing"
       ],
       "range": "PhysicalLinkage",
@@ -8358,6 +8484,7 @@
         "Alignment",
         "Rearrangement",
         "Clone",
+        "Cell",
         "CellExpression"
       ],
       "range": "string",
@@ -8566,20 +8693,15 @@
     {
       "name": "repertoire_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
-      "annotations": [
-        {
-          "tag": "nullable",
-          "value": true,
-          "@type": "Annotation"
-        }
-      ],
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
       "owner": "CellExpression",
       "domain_of": [
         "Repertoire",
+        "RepertoireGroupDetail",
         "Rearrangement",
         "Clone",
+        "Cell",
         "CellExpression"
       ],
       "range": "string",
@@ -8615,12 +8737,12 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Generic repertoire description",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_description",
-      "owner": "Repertoire",
+      "owner": "RepertoireGroupDetail",
       "domain_of": [
-        "Repertoire"
+        "Repertoire",
+        "RepertoireGroupDetail"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -8708,6 +8830,27 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "time_point",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/time_point",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Time point designation for this repertoire within the group",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/time_point",
+      "owner": "RepertoireGroupDetail",
+      "domain_of": [
+        "RepertoireGroupDetail"
+      ],
+      "range": "TimePoint",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "repertoire_group_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_group_id",
       "annotations": [
@@ -8784,8 +8927,9 @@
       "domain_of": [
         "RepertoireGroup"
       ],
-      "range": "string",
+      "range": "RepertoireGroupDetail",
       "multivalued": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11652,6 +11796,7 @@
       "owner": "CellExpression",
       "domain_of": [
         "Rearrangement",
+        "Cell",
         "CellExpression"
       ],
       "range": "string",
@@ -11874,6 +12019,10 @@
       "description": "Array of sequence identifiers defined for the Rearrangement object",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/rearrangements",
+      "owner": "Cell",
+      "domain_of": [
+        "Cell"
+      ],
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -11891,6 +12040,10 @@
       "description": "Array of receptor identifiers defined for the Receptor object",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptors",
+      "owner": "Cell",
+      "domain_of": [
+        "Cell"
+      ],
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -11908,6 +12061,10 @@
       "description": "Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/expression_study_method",
+      "owner": "Cell",
+      "domain_of": [
+        "Cell"
+      ],
       "range": "ExpressionStudyMethod",
       "@type": "SlotDefinition"
     },
@@ -11924,6 +12081,10 @@
       "description": "DOI of raw data set containing the current event",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/expression_raw_doi",
+      "owner": "Cell",
+      "domain_of": [
+        "Cell"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -11940,6 +12101,10 @@
       "description": "Index addressing the current event within the raw data set.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/expression_index",
+      "owner": "Cell",
+      "domain_of": [
+        "Cell"
+      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -11956,6 +12121,10 @@
       "description": "boolean to indicate if pairing was inferred.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/virtual_pairing",
+      "owner": "Cell",
+      "domain_of": [
+        "Cell"
+      ],
       "range": "boolean",
       "@type": "SlotDefinition"
     },
@@ -12018,6 +12187,26 @@
         "CellExpression"
       ],
       "range": "Property",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "property_value",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/property_value",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Level at which the property was observed in the experiment (non-normalized).",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/property_value",
+      "owner": "CellExpression",
+      "domain_of": [
+        "CellExpression"
+      ],
+      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -29512,28 +29701,6 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "NucleicAcidProcessing",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/NucleicAcidProcessing",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "OBI:00001902"
-      ],
-      "is_a": "SpecimenProcessing",
-      "slots": [
-        "akc_id",
-        "name",
-        "description",
-        "specimen",
-        "template_class",
-        "template_quality",
-        "template_amount",
-        "template_amount_unit"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_00001902",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "LibraryPreparationProcessing",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/LibraryPreparationProcessing",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -29690,40 +29857,6 @@
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0002441",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "Cell",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Cell",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "CL:0000000"
-      ],
-      "is_a": "NamedThing",
-      "slots": [
-        "akc_id",
-        "name",
-        "description"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/CL_0000000",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "TissuePortion",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TissuePortion",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "UBERON:0000479"
-      ],
-      "is_a": "NamedThing",
-      "slots": [
-        "akc_id",
-        "name",
-        "description"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/UBERON_0000479",
       "@type": "ClassDefinition"
     },
     {
@@ -30018,9 +30151,9 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/TimePoint",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slots": [
-        "label",
-        "value",
-        "unit"
+        "time_point_label",
+        "time_point_value",
+        "time_point_unit"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/TimePoint",
@@ -30032,7 +30165,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slots": [
         "acknowledgement_id",
-        "name",
+        "individual_full_name",
         "institution_name",
         "orcid_id"
       ],
@@ -30435,6 +30568,26 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "NucleicAcidProcessing",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/NucleicAcidProcessing",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "template_class",
+        "template_quality",
+        "template_amount",
+        "template_amount_unit",
+        "library_generation_method",
+        "library_generation_protocol",
+        "library_generation_kit_version",
+        "pcr_target",
+        "complete_sequences",
+        "physical_linkage"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/NucleicAcidProcessing",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "SequencingRun",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/SequencingRun",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -30508,6 +30661,19 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/Repertoire",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RepertoireGroupDetail",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireGroupDetail",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "repertoire_id",
+        "repertoire_description",
+        "time_point"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireGroupDetail",
       "@type": "ClassDefinition"
     },
     {
@@ -30773,6 +30939,25 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "Cell",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Cell",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "cell_id",
+        "rearrangements",
+        "receptors",
+        "repertoire_id",
+        "data_processing_id",
+        "expression_study_method",
+        "expression_raw_doi",
+        "expression_index",
+        "virtual_pairing"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/Cell",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "CellExpression",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/CellExpression",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -30783,7 +30968,7 @@
         "data_processing_id",
         "property_type",
         "property",
-        "value"
+        "property_value"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/CellExpression",
@@ -32745,9 +32930,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-12-05T14:08:25",
-  "source_file_size": 499415,
-  "generation_date": "2024-12-05T14:08:26",
+  "source_file_date": "2024-12-10T18:24:27",
+  "source_file_size": 502463,
+  "generation_date": "2024-12-10T18:24:30",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

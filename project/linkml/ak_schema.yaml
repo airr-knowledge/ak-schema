@@ -336,8 +336,8 @@ types:
     uri: xsd:string
     repr: str
 enums:
-  Species:
-    name: Species
+  SpeciesOntology:
+    name: SpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       Homo sapiens (human):
@@ -346,8 +346,8 @@ enums:
       Mus musculus (mouse):
         text: Mus musculus (mouse)
         meaning: NCBITaxon:10090
-  BiologicalSex:
-    name: BiologicalSex
+  BiologicalSexOntology:
+    name: BiologicalSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       female:
@@ -356,8 +356,8 @@ enums:
       male:
         text: male
         meaning: PATO:0020001
-  PhenotypicSex:
-    name: PhenotypicSex
+  PhenotypicSexOntology:
+    name: PhenotypicSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       female:
@@ -375,8 +375,8 @@ enums:
         text: pooled
       not collected:
         text: not collected
-  Race:
-    name: Race
+  RaceOntology:
+    name: RaceOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       American Indian or Alaska Native:
@@ -443,8 +443,8 @@ enums:
         text: White, Caucasian
       White-British:
         text: White-British
-  Ethnicity:
-    name: Ethnicity
+  EthnicityOntology:
+    name: EthnicityOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       Hispanic or Latino:
@@ -496,8 +496,8 @@ enums:
         text: Unknown Ethnicity
       White:
         text: White
-  Geolocation:
-    name: Geolocation
+  GeolocationOntology:
+    name: GeolocationOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       'US: New York':
@@ -578,8 +578,8 @@ enums:
       'US: Kansas':
         text: 'US: Kansas'
         meaning: GAZ:00004435
-  Strain:
-    name: Strain
+  StrainEnum:
+    name: StrainEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       1D2beta:
@@ -600,8 +600,8 @@ enums:
         text: LDLR-/-
       pet shop mouse:
         text: pet shop mouse
-  LifeEventProcess:
-    name: LifeEventProcess
+  LifeEventProcessOntology:
+    name: LifeEventProcessOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       Documented exposure without evidence for disease:
@@ -617,8 +617,8 @@ enums:
       specimen collection:
         text: specimen collection
         meaning: OBI:0000659
-  ExposureMaterial:
-    name: ExposureMaterial
+  ExposureMaterialOntology:
+    name: ExposureMaterialOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       Influenza A virus:
@@ -642,8 +642,8 @@ enums:
       Dryvax:
         text: Dryvax
         meaning: VO:0000035
-  Disease:
-    name: Disease
+  DiseaseOntology:
+    name: DiseaseOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       healthy:
@@ -658,8 +658,8 @@ enums:
       dengue hemorrhagic fever:
         text: dengue hemorrhagic fever
         meaning: DOID:12206
-  DiseaseStage:
-    name: DiseaseStage
+  DiseaseStageOntology:
+    name: DiseaseStageOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       acute disease course:
@@ -677,8 +677,8 @@ enums:
       other disease course:
         text: other disease course
         meaning: ONTIE:0003547
-  ChainType:
-    name: ChainType
+  ChainTypeEnum:
+    name: ChainTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -695,8 +695,8 @@ enums:
         text: TRD
       TRG:
         text: TRG
-  ChainSimilarityType:
-    name: ChainSimilarityType
+  ChainSimilarityTypeEnum:
+    name: ChainSimilarityTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       exact_match:
@@ -709,8 +709,8 @@ enums:
         text: cdr3_exact_aa_match
       cdr3_exact_aa_and_vj_match:
         text: cdr3_exact_aa_and_vj_match
-  Unit:
-    name: Unit
+  TimePointUnit:
+    name: TimePointUnit
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -784,6 +784,15 @@ enums:
         text: genomic_only
       rearranged_only:
         text: rearranged_only
+  Species:
+    name: Species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   SpeciesSubgroupType:
     name: SpeciesSubgroupType
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -2332,54 +2341,33 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0002350
     range: StudyArm
-  species:
-    name: species
-    description: The species of a participant
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: rdf:type
-    range: Species
   biological_sex:
     name: biological_sex
     description: The biological sex of a participant
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0000053
-    range: BiologicalSex
+    range: BiologicalSexOntology
   phenotypic_sex:
     name: phenotypic_sex
     description: The phenotypic sex of a participant
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0000053
-    range: PhenotypicSex
+    range: PhenotypicSexOntology
   age:
     name: age
     description: The age of a participant relative to age_event
     from_schema: https://github.com/airr-knowledge/ak-schema
-  age_event:
-    name: age_event
-    description: The event to which the age is relative
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: LifeEvent
-  race:
-    name: race
-    description: The race of a participant
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Race
-  ethnicity:
-    name: ethnicity
-    description: The ethnicity of a participant
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Ethnicity
   geolocation:
     name: geolocation
     description: The geolocation of a participant at birth
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0001025
-    range: Geolocation
+    range: GeolocationOntology
   strain:
     name: strain
     description: The strain of the participant (non-human study participants)
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Strain
+    range: StrainEnum
   study_arms:
     name: study_arms
     description: The study arms that are relevant for a study event
@@ -2402,7 +2390,7 @@ slots:
     description: The specific type of a life event
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: LifeEventProcess
+    range: LifeEventProcessOntology
   t0_event:
     name: t0_event
     description: The T0 event used to specify the time of this life event
@@ -2436,17 +2424,12 @@ slots:
     description: The material relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0000057
-    range: ExposureMaterial
+    range: ExposureMaterialOntology
   disease:
     name: disease
     description: The disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Disease
-  disease_stage:
-    name: disease_stage
-    description: The stage of the disease relevant to an immune exposure
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DiseaseStage
+    range: DiseaseOntology
   disease_severity:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
@@ -2551,7 +2534,7 @@ slots:
     name: chain_type
     description: Gene locus (chain type).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ChainType
+    range: ChainTypeEnum
   isotype:
     name: isotype
     description: The isotype of the chain
@@ -2615,11 +2598,34 @@ slots:
     description: Type of similarity calculation between two immune receptor chains
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: ChainSimilarityType
-  label:
-    name: label
+    range: ChainSimilarityTypeEnum
+  time_point_label:
+    name: time_point_label
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Informative label for the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+  time_point_value:
+    name: time_point_value
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Value of the time point
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
+  time_point_unit:
+    name: time_point_unit
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unit of the time point
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TimePointUnit
   acknowledgement_id:
     name: acknowledgement_id
     annotations:
@@ -2627,6 +2633,15 @@ slots:
         tag: nullable
         value: true
     description: unique identifier of this Acknowledgement within the file
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  individual_full_name:
+    name: individual_full_name
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Full name of individual
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   institution_name:
@@ -2961,6 +2976,7 @@ slots:
         tag: nullable
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
   release_date:
     name: release_date
     annotations:
@@ -2978,6 +2994,10 @@ slots:
         value: true
     description: Brief descriptive notes of the reason for this release and the changes
       embodied
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  label:
+    name: label
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   coding_sequence:
@@ -3043,6 +3063,15 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
     range: InferenceType
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Species
   species_subgroup:
     name: species_subgroup
     annotations:
@@ -3778,6 +3807,19 @@ slots:
     description: Unit of age range
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: AgeUnit
+  age_event:
+    name: age_event
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Event in the study schedule to which `Age` refers. For NCBI BioSample
+      this MUST be `sampling`. For other implementations submitters need to be aware
+      that there is currently no mechanism to encode to potential delta between `Age
+      event` and `Sample collection time`, hence the chosen events should be in temporal
+      proximity.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
   ancestry_population:
     name: ancestry_population
     annotations:
@@ -3785,6 +3827,24 @@ slots:
         tag: nullable
         value: true
     description: Broad geographic origin of ancestry (continent)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  ethnicity:
+    name: ethnicity
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Ethnic group of subject (defined as cultural/language-based membership)
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  race:
+    name: race
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Racial group of subject (as defined by NIH)
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   strain_name:
@@ -3860,6 +3920,15 @@ slots:
         tag: nullable
         value: true
     description: Time duration between initial diagnosis and current intervention
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  disease_stage:
+    name: disease_stage
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Stage of disease at current intervention
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   prior_therapies:
@@ -4508,10 +4577,6 @@ slots:
     range: string
   repertoire_id:
     name: repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   repertoire_name:
@@ -4529,7 +4594,6 @@ slots:
       nullable:
         tag: nullable
         value: true
-    description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   study:
@@ -4570,6 +4634,15 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: DataProcessing
     multivalued: true
+  time_point:
+    name: time_point
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Time point designation for this repertoire within the group
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TimePoint
   repertoire_group_id:
     name: repertoire_group_id
     annotations:
@@ -4606,6 +4679,7 @@ slots:
     description: List of repertoires in this collection with an associated description
       and time point designation
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: RepertoireGroupDetail
     multivalued: true
   segment:
     name: segment
@@ -6147,6 +6221,15 @@ slots:
       CD27 antibody).
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Property
+  property_value:
+    name: property_value
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Level at which the property was observed in the experiment (non-normalized).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
   receptor_id:
     name: receptor_id
     annotations:
@@ -14327,16 +14410,6 @@ classes:
     - cell_isolation
     - cell_processing_protocol
     class_uri: OBI:00000512
-  NucleicAcidProcessing:
-    name: NucleicAcidProcessing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: SpecimenProcessing
-    slots:
-    - template_class
-    - template_quality
-    - template_amount
-    - template_amount_unit
-    class_uri: OBI:00001902
   LibraryPreparationProcessing:
     name: LibraryPreparationProcessing
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -14408,16 +14481,6 @@ classes:
     - value
     - unit
     class_uri: OBI:0002441
-  Cell:
-    name: Cell
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    class_uri: CL:0000000
-  TissuePortion:
-    name: TissuePortion
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
-    class_uri: UBERON:0000479
   ImmuneSystem:
     name: ImmuneSystem
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -14539,15 +14602,15 @@ classes:
     name: TimePoint
     from_schema: https://github.com/airr-knowledge/ak-schema
     slots:
-    - label
-    - value
-    - unit
+    - time_point_label
+    - time_point_value
+    - time_point_unit
   Acknowledgement:
     name: Acknowledgement
     from_schema: https://github.com/airr-knowledge/ak-schema
     slots:
     - acknowledgement_id
-    - name
+    - individual_full_name
     - institution_name
     - orcid_id
   RearrangedSequence:
@@ -14824,6 +14887,20 @@ classes:
     - pcr_target_locus
     - forward_pcr_primer_target_location
     - reverse_pcr_primer_target_location
+  NucleicAcidProcessing:
+    name: NucleicAcidProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - template_class
+    - template_quality
+    - template_amount
+    - template_amount_unit
+    - library_generation_method
+    - library_generation_protocol
+    - library_generation_kit_version
+    - pcr_target
+    - complete_sequences
+    - physical_linkage
   SequencingRun:
     name: SequencingRun
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -14876,6 +14953,13 @@ classes:
     - subject
     - sample
     - data_processing
+  RepertoireGroupDetail:
+    name: RepertoireGroupDetail
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - repertoire_id
+    - repertoire_description
+    - time_point
   RepertoireGroup:
     name: RepertoireGroup
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -15102,6 +15186,19 @@ classes:
     - sequence_alignment
     - junction
     - junction_aa
+  Cell:
+    name: Cell
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - cell_id
+    - rearrangements
+    - receptors
+    - repertoire_id
+    - data_processing_id
+    - expression_study_method
+    - expression_raw_doi
+    - expression_index
+    - virtual_pairing
   CellExpression:
     name: CellExpression
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -15112,7 +15209,7 @@ classes:
     - data_processing_id
     - property_type
     - property
-    - value
+    - property_value
   Receptor:
     name: Receptor
     from_schema: https://github.com/airr-knowledge/ak-schema

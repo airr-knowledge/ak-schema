@@ -4,11 +4,13 @@ name: ak-schema
 
 classes:
 
-  Cell:
-    is_a: NamedThing
-    class_uri: CL:0000000 # cell
+# TODO: comment for now until harmonized with AIRR
+#  Cell:
+#    is_a: NamedThing
+#    class_uri: CL:0000000 # cell
 
-  TissuePortion:
-    is_a: NamedThing
-    class_uri: UBERON:0000479 # tissue
+# TODO: comment for now until harmonized with AIRR
+#  Tissue:
+#    is_a: NamedThing
+#    class_uri: UBERON:0000479 # tissue
 

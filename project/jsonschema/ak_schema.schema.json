@@ -318,15 +318,15 @@
                         "null"
                     ]
                 },
-                "institution_name": {
-                    "description": "Individual's department and institution name",
+                "individual_full_name": {
+                    "description": "Full name of individual",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                "institution_name": {
+                    "description": "Individual's department and institution name",
                     "type": [
                         "string",
                         "null"
@@ -715,7 +715,7 @@
                 },
                 "release_version": {
                     "type": [
-                        "string",
+                        "integer",
                         "null"
                     ]
                 },
@@ -731,7 +731,7 @@
                 },
                 "species": {
                     "$ref": "#/$defs/Species",
-                    "description": "The species of a participant"
+                    "description": "Binomial designation of subject's species"
                 },
                 "species_subgroup": {
                     "description": "Race, strain or other species subgroup to which this subject belongs",
@@ -1241,41 +1241,83 @@
             "title": "BCellReceptor",
             "type": "object"
         },
-        "BiologicalSex": {
+        "BiologicalSexOntology": {
             "description": "",
             "enum": [
                 "female",
                 "male"
             ],
-            "title": "BiologicalSex",
+            "title": "BiologicalSexOntology",
             "type": "string"
         },
         "Cell": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "cell_id": {
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                "data_processing_id": {
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "expression_index": {
+                    "description": "Index addressing the current event within the raw data set.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expression_raw_doi": {
+                    "description": "DOI of raw data set containing the current event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "expression_study_method": {
+                    "$ref": "#/$defs/ExpressionStudyMethod",
+                    "description": "Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary."
+                },
+                "rearrangements": {
+                    "description": "Array of sequence identifiers defined for the Rearrangement object",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "receptors": {
+                    "description": "Array of receptor identifiers defined for the Receptor object",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "virtual_pairing": {
+                    "description": "boolean to indicate if pairing was inferred.",
+                    "type": [
+                        "boolean",
                         "null"
                     ]
                 }
             },
-            "required": [
-                "akc_id"
-            ],
             "title": "Cell",
             "type": "object"
         },
@@ -1313,14 +1355,14 @@
                         "null"
                     ]
                 },
-                "repertoire_id": {
+                "property_value": {
+                    "description": "Level at which the property was observed in the experiment (non-normalized).",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
-                "value": {
-                    "description": "The measurement result value",
+                "repertoire_id": {
                     "type": [
                         "string",
                         "null"
@@ -1600,7 +1642,7 @@
                     ]
                 },
                 "chain_type": {
-                    "$ref": "#/$defs/ChainType",
+                    "$ref": "#/$defs/ChainTypeEnum",
                     "description": "Gene locus (chain type)."
                 },
                 "d_call": {
@@ -1685,7 +1727,7 @@
                     ]
                 },
                 "chain_similarity_type": {
-                    "$ref": "#/$defs/ChainSimilarityType",
+                    "$ref": "#/$defs/ChainSimilarityTypeEnum",
                     "description": "Type of similarity calculation between two immune receptor chains"
                 }
             },
@@ -1695,7 +1737,7 @@
             "title": "ChainSimilarity",
             "type": "object"
         },
-        "ChainSimilarityType": {
+        "ChainSimilarityTypeEnum": {
             "description": "",
             "enum": [
                 "exact_match",
@@ -1704,10 +1746,10 @@
                 "cdr3_exact_aa_match",
                 "cdr3_exact_aa_and_vj_match"
             ],
-            "title": "ChainSimilarityType",
+            "title": "ChainSimilarityTypeEnum",
             "type": "string"
         },
-        "ChainType": {
+        "ChainTypeEnum": {
             "description": "",
             "enum": [
                 "IGH",
@@ -1718,7 +1760,7 @@
                 "TRD",
                 "TRG"
             ],
-            "title": "ChainType",
+            "title": "ChainTypeEnum",
             "type": "string"
         },
         "Chain__identifier_optional": {
@@ -1795,7 +1837,7 @@
                     ]
                 },
                 "chain_type": {
-                    "$ref": "#/$defs/ChainType",
+                    "$ref": "#/$defs/ChainTypeEnum",
                     "description": "Gene locus (chain type)."
                 },
                 "d_call": {
@@ -2444,8 +2486,11 @@
                     ]
                 },
                 "disease_stage": {
-                    "$ref": "#/$defs/DiseaseStage",
-                    "description": "The stage of the disease relevant to an immune exposure"
+                    "description": "Stage of disease at current intervention",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "immunogen": {
                     "description": "Antigen, vaccine or drug applied to subject at this intervention",
@@ -2486,7 +2531,12 @@
             "title": "Diagnosis",
             "type": "object"
         },
-        "Disease": {
+        "DiseaseDiagnosis": {
+            "description": "",
+            "title": "DiseaseDiagnosis",
+            "type": "string"
+        },
+        "DiseaseOntology": {
             "description": "",
             "enum": [
                 "healthy",
@@ -2494,15 +2544,10 @@
                 "Plasmodium falciparum malaria",
                 "dengue hemorrhagic fever"
             ],
-            "title": "Disease",
+            "title": "DiseaseOntology",
             "type": "string"
         },
-        "DiseaseDiagnosis": {
-            "description": "",
-            "title": "DiseaseDiagnosis",
-            "type": "string"
-        },
-        "DiseaseStage": {
+        "DiseaseStageOntology": {
             "description": "",
             "enum": [
                 "acute disease course",
@@ -2511,7 +2556,7 @@
                 "chronic disease course",
                 "other disease course"
             ],
-            "title": "DiseaseStage",
+            "title": "DiseaseStageOntology",
             "type": "string"
         },
         "DocumentedAllele": {
@@ -2615,7 +2660,7 @@
             "title": "Epitope",
             "type": "object"
         },
-        "Ethnicity": {
+        "EthnicityOntology": {
             "description": "",
             "enum": [
                 "Hispanic or Latino",
@@ -2642,10 +2687,10 @@
                 "Unknown Ethnicity",
                 "White"
             ],
-            "title": "Ethnicity",
+            "title": "EthnicityOntology",
             "type": "string"
         },
-        "ExposureMaterial": {
+        "ExposureMaterialOntology": {
             "description": "",
             "enum": [
                 "Influenza A virus",
@@ -2656,7 +2701,7 @@
                 "Diphtheria-Tetanus-Pertussis vaccine",
                 "Dryvax"
             ],
-            "title": "ExposureMaterial",
+            "title": "ExposureMaterialOntology",
             "type": "string"
         },
         "ExpressionStudyMethod": {
@@ -2861,7 +2906,7 @@
             "title": "GenotypeSet",
             "type": "object"
         },
-        "Geolocation": {
+        "GeolocationOntology": {
             "description": "",
             "enum": [
                 "US: New York",
@@ -2891,7 +2936,7 @@
                 "US: Florida",
                 "US: Kansas"
             ],
-            "title": "Geolocation",
+            "title": "GeolocationOntology",
             "type": "string"
         },
         "GermlineSet": {
@@ -2988,13 +3033,13 @@
                 },
                 "release_version": {
                     "type": [
-                        "string",
+                        "integer",
                         "null"
                     ]
                 },
                 "species": {
                     "$ref": "#/$defs/Species",
-                    "description": "The species of a participant"
+                    "description": "Binomial designation of subject's species"
                 },
                 "species_subgroup": {
                     "description": "Race, strain or other species subgroup to which this subject belongs",
@@ -3027,7 +3072,7 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/Disease",
+                    "$ref": "#/$defs/DiseaseOntology",
                     "description": "The disease relevant to an immune exposure"
                 },
                 "disease_severity": {
@@ -3038,11 +3083,14 @@
                     ]
                 },
                 "disease_stage": {
-                    "$ref": "#/$defs/DiseaseStage",
-                    "description": "The stage of the disease relevant to an immune exposure"
+                    "description": "Stage of disease at current intervention",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "exposure_material": {
-                    "$ref": "#/$defs/ExposureMaterial",
+                    "$ref": "#/$defs/ExposureMaterialOntology",
                     "description": "The material relevant to an immune exposure"
                 },
                 "life_event": {
@@ -3082,7 +3130,7 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/Disease",
+                    "$ref": "#/$defs/DiseaseOntology",
                     "description": "The disease relevant to an immune exposure"
                 },
                 "disease_severity": {
@@ -3093,11 +3141,14 @@
                     ]
                 },
                 "disease_stage": {
-                    "$ref": "#/$defs/DiseaseStage",
-                    "description": "The stage of the disease relevant to an immune exposure"
+                    "description": "Stage of disease at current intervention",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "exposure_material": {
-                    "$ref": "#/$defs/ExposureMaterial",
+                    "$ref": "#/$defs/ExposureMaterialOntology",
                     "description": "The material relevant to an immune exposure"
                 },
                 "life_event": {
@@ -3525,11 +3576,11 @@
                     ]
                 },
                 "geolocation": {
-                    "$ref": "#/$defs/Geolocation",
+                    "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
                 },
                 "life_event_type": {
-                    "$ref": "#/$defs/LifeEventProcess",
+                    "$ref": "#/$defs/LifeEventProcessOntology",
                     "description": "The specific type of a life event"
                 },
                 "name": {
@@ -3588,7 +3639,7 @@
             "title": "LifeEvent",
             "type": "object"
         },
-        "LifeEventProcess": {
+        "LifeEventProcessOntology": {
             "description": "",
             "enum": [
                 "Documented exposure without evidence for disease",
@@ -3596,7 +3647,7 @@
                 "Exposure with existing immune reactivity without evidence for disease",
                 "specimen collection"
             ],
-            "title": "LifeEventProcess",
+            "title": "LifeEventProcessOntology",
             "type": "string"
         },
         "LifeEvent__identifier_optional": {
@@ -3622,11 +3673,11 @@
                     ]
                 },
                 "geolocation": {
-                    "$ref": "#/$defs/Geolocation",
+                    "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
                 },
                 "life_event_type": {
-                    "$ref": "#/$defs/LifeEventProcess",
+                    "$ref": "#/$defs/LifeEventProcessOntology",
                     "description": "The specific type of a life event"
                 },
                 "name": {
@@ -3910,30 +3961,41 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
+                "complete_sequences": {
+                    "$ref": "#/$defs/CompleteSequences",
+                    "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "library_generation_kit_version": {
+                    "description": "When using a library generation protocol from a commercial provider, provide the protocol version number",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                "library_generation_method": {
+                    "$ref": "#/$defs/LibraryGenerationMethod",
+                    "description": "Generic type of library generation"
+                },
+                "library_generation_protocol": {
+                    "description": "Description of processes applied to substrate to obtain a library that is ready for sequencing",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "specimen": {
-                    "description": "The specimen that was input for an assay",
+                "pcr_target": {
+                    "description": "If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.",
+                    "items": {
+                        "$ref": "#/$defs/PCRTarget"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
+                },
+                "physical_linkage": {
+                    "$ref": "#/$defs/PhysicalLinkage",
+                    "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "template_amount": {
                     "description": "Amount of template that went into the process",
@@ -3958,9 +4020,6 @@
                     ]
                 }
             },
-            "required": [
-                "akc_id"
-            ],
             "title": "NucleicAcidProcessing",
             "type": "object"
         },
@@ -4021,7 +4080,7 @@
                     ]
                 },
                 "age_event": {
-                    "description": "The event to which the age is relative",
+                    "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
                     "type": [
                         "string",
                         "null"
@@ -4036,7 +4095,7 @@
                     "type": "string"
                 },
                 "biological_sex": {
-                    "$ref": "#/$defs/BiologicalSex",
+                    "$ref": "#/$defs/BiologicalSexOntology",
                     "description": "The biological sex of a participant"
                 },
                 "description": {
@@ -4047,11 +4106,14 @@
                     ]
                 },
                 "ethnicity": {
-                    "$ref": "#/$defs/Ethnicity",
-                    "description": "The ethnicity of a participant"
+                    "description": "Ethnic group of subject (defined as cultural/language-based membership)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "geolocation": {
-                    "$ref": "#/$defs/Geolocation",
+                    "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
                 },
                 "name": {
@@ -4062,19 +4124,22 @@
                     ]
                 },
                 "phenotypic_sex": {
-                    "$ref": "#/$defs/PhenotypicSex",
+                    "$ref": "#/$defs/PhenotypicSexOntology",
                     "description": "The phenotypic sex of a participant"
                 },
                 "race": {
-                    "$ref": "#/$defs/Race",
-                    "description": "The race of a participant"
+                    "description": "Racial group of subject (as defined by NIH)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/Species",
-                    "description": "The species of a participant"
+                    "description": "Binomial designation of subject's species"
                 },
                 "strain": {
-                    "$ref": "#/$defs/Strain",
+                    "$ref": "#/$defs/StrainEnum",
                     "description": "The strain of the participant (non-human study participants)"
                 },
                 "study_arm": {
@@ -4103,7 +4168,7 @@
                     ]
                 },
                 "age_event": {
-                    "description": "The event to which the age is relative",
+                    "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
                     "type": [
                         "string",
                         "null"
@@ -4118,7 +4183,7 @@
                     "type": "string"
                 },
                 "biological_sex": {
-                    "$ref": "#/$defs/BiologicalSex",
+                    "$ref": "#/$defs/BiologicalSexOntology",
                     "description": "The biological sex of a participant"
                 },
                 "description": {
@@ -4129,11 +4194,14 @@
                     ]
                 },
                 "ethnicity": {
-                    "$ref": "#/$defs/Ethnicity",
-                    "description": "The ethnicity of a participant"
+                    "description": "Ethnic group of subject (defined as cultural/language-based membership)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "geolocation": {
-                    "$ref": "#/$defs/Geolocation",
+                    "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
                 },
                 "name": {
@@ -4144,19 +4212,22 @@
                     ]
                 },
                 "phenotypic_sex": {
-                    "$ref": "#/$defs/PhenotypicSex",
+                    "$ref": "#/$defs/PhenotypicSexOntology",
                     "description": "The phenotypic sex of a participant"
                 },
                 "race": {
-                    "$ref": "#/$defs/Race",
-                    "description": "The race of a participant"
+                    "description": "Racial group of subject (as defined by NIH)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/Species",
-                    "description": "The species of a participant"
+                    "description": "Binomial designation of subject's species"
                 },
                 "strain": {
-                    "$ref": "#/$defs/Strain",
+                    "$ref": "#/$defs/StrainEnum",
                     "description": "The strain of the participant (non-human study participants)"
                 },
                 "study_arm": {
@@ -4302,7 +4373,7 @@
             "title": "PeptidicEpitope",
             "type": "object"
         },
-        "PhenotypicSex": {
+        "PhenotypicSexOntology": {
             "description": "",
             "enum": [
                 "female",
@@ -4312,7 +4383,7 @@
                 "pooled",
                 "not collected"
             ],
-            "title": "PhenotypicSex",
+            "title": "PhenotypicSexOntology",
             "type": "string"
         },
         "PhysicalLinkage": {
@@ -4331,7 +4402,7 @@
             "title": "Property",
             "type": "string"
         },
-        "Race": {
+        "RaceOntology": {
             "description": "",
             "enum": [
                 "American Indian or Alaska Native",
@@ -4364,7 +4435,7 @@
                 "White, Caucasian",
                 "White-British"
             ],
-            "title": "Race",
+            "title": "RaceOntology",
             "type": "string"
         },
         "ReactivityMethod": {
@@ -6048,7 +6119,6 @@
                     ]
                 },
                 "repertoire_description": {
-                    "description": "Generic repertoire description",
                     "type": [
                         "string",
                         "null"
@@ -6131,7 +6201,7 @@
                 "repertoires": {
                     "description": "List of repertoires in this collection with an associated description and time point designation",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/RepertoireGroupDetail"
                     },
                     "type": [
                         "array",
@@ -6140,6 +6210,37 @@
                 }
             },
             "title": "RepertoireGroup",
+            "type": "object"
+        },
+        "RepertoireGroupDetail": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "repertoire_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time_point": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/TimePoint"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Time point designation for this repertoire within the group"
+                }
+            },
+            "title": "RepertoireGroupDetail",
             "type": "object"
         },
         "Sample": {
@@ -6787,11 +6888,16 @@
         },
         "Species": {
             "description": "",
+            "title": "Species",
+            "type": "string"
+        },
+        "SpeciesOntology": {
+            "description": "",
             "enum": [
                 "Homo sapiens (human)",
                 "Mus musculus (mouse)"
             ],
-            "title": "Species",
+            "title": "SpeciesOntology",
             "type": "string"
         },
         "SpeciesSubgroupType": {
@@ -7063,7 +7169,7 @@
             "title": "Status",
             "type": "string"
         },
-        "Strain": {
+        "StrainEnum": {
             "description": "",
             "enum": [
                 "1D2beta",
@@ -7076,7 +7182,7 @@
                 "LDLR-/-",
                 "pet shop mouse"
             ],
-            "title": "Strain",
+            "title": "StrainEnum",
             "type": "string"
         },
         "Strand": {
@@ -7384,7 +7490,7 @@
             "description": "",
             "properties": {
                 "age_event": {
-                    "description": "The event to which the age is relative",
+                    "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
                     "type": [
                         "string",
                         "null"
@@ -7426,8 +7532,11 @@
                     ]
                 },
                 "ethnicity": {
-                    "$ref": "#/$defs/Ethnicity",
-                    "description": "The ethnicity of a participant"
+                    "description": "Ethnic group of subject (defined as cultural/language-based membership)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "genotype": {
                     "anyOf": [
@@ -7455,8 +7564,11 @@
                     ]
                 },
                 "race": {
-                    "$ref": "#/$defs/Race",
-                    "description": "The race of a participant"
+                    "description": "Racial group of subject (as defined by NIH)",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "sex": {
                     "$ref": "#/$defs/Sex",
@@ -7464,7 +7576,7 @@
                 },
                 "species": {
                     "$ref": "#/$defs/Species",
-                    "description": "The species of a participant"
+                    "description": "Binomial designation of subject's species"
                 },
                 "strain_name": {
                     "description": "Non-human designation of the strain or breed of animal used",
@@ -7811,23 +7923,21 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "label": {
+                "time_point_label": {
+                    "description": "Informative label for the time point",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "unit": {
-                    "description": "The measurement result value unit",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                "time_point_unit": {
+                    "$ref": "#/$defs/TimePointUnit",
+                    "description": "Unit of the time point"
                 },
-                "value": {
-                    "description": "The measurement result value",
+                "time_point_value": {
+                    "description": "Value of the time point",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 }
@@ -7835,39 +7945,15 @@
             "title": "TimePoint",
             "type": "object"
         },
+        "TimePointUnit": {
+            "description": "",
+            "title": "TimePointUnit",
+            "type": "string"
+        },
         "Tissue": {
             "description": "",
             "title": "Tissue",
             "type": "string"
-        },
-        "TissuePortion": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "TissuePortion",
-            "type": "object"
         },
         "Tree": {
             "additionalProperties": false,
@@ -7934,11 +8020,6 @@
             },
             "title": "UndocumentedAllele",
             "type": "object"
-        },
-        "Unit": {
-            "description": "",
-            "title": "Unit",
-            "type": "string"
         },
         "UnrearrangedSequence": {
             "additionalProperties": false,

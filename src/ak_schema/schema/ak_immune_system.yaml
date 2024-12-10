@@ -73,7 +73,7 @@ slots:
   chain_type:
     name: chain_type
     description: Gene locus (chain type).
-    range: ChainType
+    range: ChainTypeEnum
 
   isotype:
     name: isotype
@@ -116,8 +116,7 @@ slots:
 
 
 enums:
-  ChainType:
-    name: ChainType
+  ChainTypeEnum:
     permissible_values:
       IGH:
       IGK:

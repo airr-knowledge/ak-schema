@@ -39,14 +39,15 @@ classes:
       - cell_quality
       - cell_isolation
       - cell_processing_protocol
-  NucleicAcidProcessing:
-    is_a: SpecimenProcessing
-    class_uri: OBI:00001902 # sample preparation for sequencing assay
-    slots:
-      - template_class # From ADC NucleicAcidProcessing
-      - template_quality
-      - template_amount
-      - template_amount_unit
+# TODO: comment for now until harmonized with AIRR
+#  NucleicAcidProcessing:
+#    is_a: SpecimenProcessing
+#    class_uri: OBI:00001902 # sample preparation for sequencing assay
+#    slots:
+#      - template_class # From ADC NucleicAcidProcessing
+#      - template_quality
+#      - template_amount
+#      - template_amount_unit
   LibraryPreparationProcessing:
     is_a: SpecimenProcessing
     class_uri: OBI:00000711 # library preparation

@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-05T14:08:28
+# Generation date: 2024-12-10T18:24:40
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -284,10 +284,6 @@ class CellIsolationProcessingAkcId(SpecimenProcessingAkcId):
     pass
 
 
-class NucleicAcidProcessingAkcId(SpecimenProcessingAkcId):
-    pass
-
-
 class LibraryPreparationProcessingAkcId(SpecimenProcessingAkcId):
     pass
 
@@ -313,14 +309,6 @@ class ConclusionAkcId(NamedThingAkcId):
 
 
 class AssessmentAkcId(PlannedProcessAkcId):
-    pass
-
-
-class CellAkcId(NamedThingAkcId):
-    pass
-
-
-class TissuePortionAkcId(NamedThingAkcId):
     pass
 
 
@@ -737,15 +725,15 @@ class Participant(NamedThing):
     akc_id: Union[str, ParticipantAkcId] = None
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
     species: Optional[Union[str, "Species"]] = None
-    biological_sex: Optional[Union[str, "BiologicalSex"]] = None
-    phenotypic_sex: Optional[Union[str, "PhenotypicSex"]] = None
+    biological_sex: Optional[Union[str, "BiologicalSexOntology"]] = None
+    phenotypic_sex: Optional[Union[str, "PhenotypicSexOntology"]] = None
     age: Optional[str] = None
     age_unit: Optional[Union[str, "AgeUnit"]] = None
-    age_event: Optional[Union[str, LifeEventAkcId]] = None
-    race: Optional[Union[str, "Race"]] = None
-    ethnicity: Optional[Union[str, "Ethnicity"]] = None
-    geolocation: Optional[Union[str, "Geolocation"]] = None
-    strain: Optional[Union[str, "Strain"]] = None
+    age_event: Optional[str] = None
+    race: Optional[str] = None
+    ethnicity: Optional[str] = None
+    geolocation: Optional[Union[str, "GeolocationOntology"]] = None
+    strain: Optional[Union[str, "StrainEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -756,32 +744,29 @@ class Participant(NamedThing):
         if self.study_arm is not None and not isinstance(self.study_arm, StudyArmAkcId):
             self.study_arm = StudyArmAkcId(self.study_arm)
 
-        if self.species is not None and not isinstance(self.species, Species):
-            self.species = Species(self.species)
+        if self.biological_sex is not None and not isinstance(self.biological_sex, BiologicalSexOntology):
+            self.biological_sex = BiologicalSexOntology(self.biological_sex)
 
-        if self.biological_sex is not None and not isinstance(self.biological_sex, BiologicalSex):
-            self.biological_sex = BiologicalSex(self.biological_sex)
-
-        if self.phenotypic_sex is not None and not isinstance(self.phenotypic_sex, PhenotypicSex):
-            self.phenotypic_sex = PhenotypicSex(self.phenotypic_sex)
+        if self.phenotypic_sex is not None and not isinstance(self.phenotypic_sex, PhenotypicSexOntology):
+            self.phenotypic_sex = PhenotypicSexOntology(self.phenotypic_sex)
 
         if self.age is not None and not isinstance(self.age, str):
             self.age = str(self.age)
 
-        if self.age_event is not None and not isinstance(self.age_event, LifeEventAkcId):
-            self.age_event = LifeEventAkcId(self.age_event)
+        if self.age_event is not None and not isinstance(self.age_event, str):
+            self.age_event = str(self.age_event)
 
-        if self.race is not None and not isinstance(self.race, Race):
-            self.race = Race(self.race)
+        if self.race is not None and not isinstance(self.race, str):
+            self.race = str(self.race)
 
-        if self.ethnicity is not None and not isinstance(self.ethnicity, Ethnicity):
-            self.ethnicity = Ethnicity(self.ethnicity)
+        if self.ethnicity is not None and not isinstance(self.ethnicity, str):
+            self.ethnicity = str(self.ethnicity)
 
-        if self.geolocation is not None and not isinstance(self.geolocation, Geolocation):
-            self.geolocation = Geolocation(self.geolocation)
+        if self.geolocation is not None and not isinstance(self.geolocation, GeolocationOntology):
+            self.geolocation = GeolocationOntology(self.geolocation)
 
-        if self.strain is not None and not isinstance(self.strain, Strain):
-            self.strain = Strain(self.strain)
+        if self.strain is not None and not isinstance(self.strain, StrainEnum):
+            self.strain = StrainEnum(self.strain)
 
         super().__post_init__(**kwargs)
 
@@ -829,8 +814,8 @@ class LifeEvent(NamedThing):
     akc_id: Union[str, LifeEventAkcId] = None
     participant: Optional[Union[str, ParticipantAkcId]] = None
     study_event: Optional[Union[str, StudyEventAkcId]] = None
-    life_event_type: Optional[Union[str, "LifeEventProcess"]] = None
-    geolocation: Optional[Union[str, "Geolocation"]] = None
+    life_event_type: Optional[Union[str, "LifeEventProcessOntology"]] = None
+    geolocation: Optional[Union[str, "GeolocationOntology"]] = None
     t0_event: Optional[str] = None
     t0_event_type: Optional[str] = None
     start: Optional[Decimal] = None
@@ -849,11 +834,11 @@ class LifeEvent(NamedThing):
         if self.study_event is not None and not isinstance(self.study_event, StudyEventAkcId):
             self.study_event = StudyEventAkcId(self.study_event)
 
-        if self.life_event_type is not None and not isinstance(self.life_event_type, LifeEventProcess):
-            self.life_event_type = LifeEventProcess(self.life_event_type)
+        if self.life_event_type is not None and not isinstance(self.life_event_type, LifeEventProcessOntology):
+            self.life_event_type = LifeEventProcessOntology(self.life_event_type)
 
-        if self.geolocation is not None and not isinstance(self.geolocation, Geolocation):
-            self.geolocation = Geolocation(self.geolocation)
+        if self.geolocation is not None and not isinstance(self.geolocation, GeolocationOntology):
+            self.geolocation = GeolocationOntology(self.geolocation)
 
         if self.t0_event is not None and not isinstance(self.t0_event, str):
             self.t0_event = str(self.t0_event)
@@ -887,9 +872,9 @@ class ImmuneExposure(NamedThing):
 
     akc_id: Union[str, ImmuneExposureAkcId] = None
     life_event: Optional[Union[str, LifeEventAkcId]] = None
-    exposure_material: Optional[Union[str, "ExposureMaterial"]] = None
-    disease: Optional[Union[str, "Disease"]] = None
-    disease_stage: Optional[Union[str, "DiseaseStage"]] = None
+    exposure_material: Optional[Union[str, "ExposureMaterialOntology"]] = None
+    disease: Optional[Union[str, "DiseaseOntology"]] = None
+    disease_stage: Optional[str] = None
     disease_severity: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -901,14 +886,14 @@ class ImmuneExposure(NamedThing):
         if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
             self.life_event = LifeEventAkcId(self.life_event)
 
-        if self.exposure_material is not None and not isinstance(self.exposure_material, ExposureMaterial):
-            self.exposure_material = ExposureMaterial(self.exposure_material)
+        if self.exposure_material is not None and not isinstance(self.exposure_material, ExposureMaterialOntology):
+            self.exposure_material = ExposureMaterialOntology(self.exposure_material)
 
-        if self.disease is not None and not isinstance(self.disease, Disease):
-            self.disease = Disease(self.disease)
+        if self.disease is not None and not isinstance(self.disease, DiseaseOntology):
+            self.disease = DiseaseOntology(self.disease)
 
-        if self.disease_stage is not None and not isinstance(self.disease_stage, DiseaseStage):
-            self.disease_stage = DiseaseStage(self.disease_stage)
+        if self.disease_stage is not None and not isinstance(self.disease_stage, str):
+            self.disease_stage = str(self.disease_stage)
 
         if self.disease_severity is not None and not isinstance(self.disease_severity, str):
             self.disease_severity = str(self.disease_severity)
@@ -1051,39 +1036,6 @@ class CellIsolationProcessing(SpecimenProcessing):
 
         if self.cell_processing_protocol is not None and not isinstance(self.cell_processing_protocol, str):
             self.cell_processing_protocol = str(self.cell_processing_protocol)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class NucleicAcidProcessing(SpecimenProcessing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["00001902"]
-    class_class_curie: ClassVar[str] = "OBI:00001902"
-    class_name: ClassVar[str] = "NucleicAcidProcessing"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.NucleicAcidProcessing
-
-    akc_id: Union[str, NucleicAcidProcessingAkcId] = None
-    template_class: Optional[Union[str, "TemplateClass"]] = None
-    template_quality: Optional[str] = None
-    template_amount: Optional[float] = None
-    template_amount_unit: Optional[Union[str, "TemplateAmountUnit"]] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, NucleicAcidProcessingAkcId):
-            self.akc_id = NucleicAcidProcessingAkcId(self.akc_id)
-
-        if self.template_class is not None and not isinstance(self.template_class, TemplateClass):
-            self.template_class = TemplateClass(self.template_class)
-
-        if self.template_quality is not None and not isinstance(self.template_quality, str):
-            self.template_quality = str(self.template_quality)
-
-        if self.template_amount is not None and not isinstance(self.template_amount, float):
-            self.template_amount = float(self.template_amount)
 
         super().__post_init__(**kwargs)
 
@@ -1320,9 +1272,6 @@ class Conclusion(NamedThing):
         if self.data_location_value is not None and not isinstance(self.data_location_value, str):
             self.data_location_value = str(self.data_location_value)
 
-        if self.organism is not None and not isinstance(self.organism, Species):
-            self.organism = Species(self.organism)
-
         if self.experiment_type is not None and not isinstance(self.experiment_type, str):
             self.experiment_type = str(self.experiment_type)
 
@@ -1370,46 +1319,6 @@ class Assessment(PlannedProcess):
 
 
 @dataclass(repr=False)
-class Cell(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = CL["0000000"]
-    class_class_curie: ClassVar[str] = "CL:0000000"
-    class_name: ClassVar[str] = "Cell"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Cell
-
-    akc_id: Union[str, CellAkcId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, CellAkcId):
-            self.akc_id = CellAkcId(self.akc_id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class TissuePortion(NamedThing):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = UBERON["0000479"]
-    class_class_curie: ClassVar[str] = "UBERON:0000479"
-    class_name: ClassVar[str] = "TissuePortion"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TissuePortion
-
-    akc_id: Union[str, TissuePortionAkcId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, TissuePortionAkcId):
-            self.akc_id = TissuePortionAkcId(self.akc_id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class ImmuneSystem(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1441,7 +1350,7 @@ class Chain(NamedThing):
     akc_id: Union[str, ChainAkcId] = None
     sequence: Optional[str] = None
     sequence_aa: Optional[str] = None
-    chain_type: Optional[Union[str, "ChainType"]] = None
+    chain_type: Optional[Union[str, "ChainTypeEnum"]] = None
     v_call: Optional[str] = None
     d_call: Optional[str] = None
     j_call: Optional[str] = None
@@ -1469,8 +1378,8 @@ class Chain(NamedThing):
         if self.sequence_aa is not None and not isinstance(self.sequence_aa, str):
             self.sequence_aa = str(self.sequence_aa)
 
-        if self.chain_type is not None and not isinstance(self.chain_type, ChainType):
-            self.chain_type = ChainType(self.chain_type)
+        if self.chain_type is not None and not isinstance(self.chain_type, ChainTypeEnum):
+            self.chain_type = ChainTypeEnum(self.chain_type)
 
         if self.v_call is not None and not isinstance(self.v_call, str):
             self.v_call = str(self.v_call)
@@ -1851,7 +1760,7 @@ class ChainSimilarity(SimilarityCalculation):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ChainSimilarity
 
     akc_id: Union[str, ChainSimilarityAkcId] = None
-    chain_similarity_type: Optional[Union[str, "ChainSimilarityType"]] = None
+    chain_similarity_type: Optional[Union[str, "ChainSimilarityTypeEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1859,8 +1768,8 @@ class ChainSimilarity(SimilarityCalculation):
         if not isinstance(self.akc_id, ChainSimilarityAkcId):
             self.akc_id = ChainSimilarityAkcId(self.akc_id)
 
-        if self.chain_similarity_type is not None and not isinstance(self.chain_similarity_type, ChainSimilarityType):
-            self.chain_similarity_type = ChainSimilarityType(self.chain_similarity_type)
+        if self.chain_similarity_type is not None and not isinstance(self.chain_similarity_type, ChainSimilarityTypeEnum):
+            self.chain_similarity_type = ChainSimilarityTypeEnum(self.chain_similarity_type)
 
         super().__post_init__(**kwargs)
 
@@ -1874,19 +1783,16 @@ class TimePoint(YAMLRoot):
     class_name: ClassVar[str] = "TimePoint"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TimePoint
 
-    label: Optional[str] = None
-    value: Optional[str] = None
-    unit: Optional[str] = None
+    time_point_label: Optional[str] = None
+    time_point_value: Optional[float] = None
+    time_point_unit: Optional[Union[str, "TimePointUnit"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.label is not None and not isinstance(self.label, str):
-            self.label = str(self.label)
+        if self.time_point_label is not None and not isinstance(self.time_point_label, str):
+            self.time_point_label = str(self.time_point_label)
 
-        if self.value is not None and not isinstance(self.value, str):
-            self.value = str(self.value)
-
-        if self.unit is not None and not isinstance(self.unit, str):
-            self.unit = str(self.unit)
+        if self.time_point_value is not None and not isinstance(self.time_point_value, float):
+            self.time_point_value = float(self.time_point_value)
 
         super().__post_init__(**kwargs)
 
@@ -1901,7 +1807,7 @@ class Acknowledgement(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Acknowledgement
 
     acknowledgement_id: Optional[str] = None
-    name: Optional[str] = None
+    individual_full_name: Optional[str] = None
     institution_name: Optional[str] = None
     orcid_id: Optional[str] = None
 
@@ -1909,8 +1815,8 @@ class Acknowledgement(YAMLRoot):
         if self.acknowledgement_id is not None and not isinstance(self.acknowledgement_id, str):
             self.acknowledgement_id = str(self.acknowledgement_id)
 
-        if self.name is not None and not isinstance(self.name, str):
-            self.name = str(self.name)
+        if self.individual_full_name is not None and not isinstance(self.individual_full_name, str):
+            self.individual_full_name = str(self.individual_full_name)
 
         if self.institution_name is not None and not isinstance(self.institution_name, str):
             self.institution_name = str(self.institution_name)
@@ -2122,7 +2028,7 @@ class AlleleDescription(YAMLRoot):
     maintainer: Optional[str] = None
     acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
     lab_address: Optional[str] = None
-    release_version: Optional[str] = None
+    release_version: Optional[int] = None
     release_date: Optional[Union[str, XSDDateTime]] = None
     release_description: Optional[str] = None
     label: Optional[str] = None
@@ -2186,8 +2092,8 @@ class AlleleDescription(YAMLRoot):
         if self.lab_address is not None and not isinstance(self.lab_address, str):
             self.lab_address = str(self.lab_address)
 
-        if self.release_version is not None and not isinstance(self.release_version, str):
-            self.release_version = str(self.release_version)
+        if self.release_version is not None and not isinstance(self.release_version, int):
+            self.release_version = int(self.release_version)
 
         if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
             self.release_date = XSDDateTime(self.release_date)
@@ -2222,9 +2128,6 @@ class AlleleDescription(YAMLRoot):
 
         if self.inference_type is not None and not isinstance(self.inference_type, InferenceType):
             self.inference_type = InferenceType(self.inference_type)
-
-        if self.species is not None and not isinstance(self.species, Species):
-            self.species = Species(self.species)
 
         if self.species_subgroup is not None and not isinstance(self.species_subgroup, str):
             self.species_subgroup = str(self.species_subgroup)
@@ -2347,7 +2250,7 @@ class GermlineSet(YAMLRoot):
     lab_name: Optional[str] = None
     lab_address: Optional[str] = None
     acknowledgements: Optional[Union[Union[dict, Acknowledgement], List[Union[dict, Acknowledgement]]]] = empty_list()
-    release_version: Optional[str] = None
+    release_version: Optional[int] = None
     release_description: Optional[str] = None
     release_date: Optional[Union[str, XSDDateTime]] = None
     germline_set_name: Optional[str] = None
@@ -2377,8 +2280,8 @@ class GermlineSet(YAMLRoot):
             self.acknowledgements = [self.acknowledgements] if self.acknowledgements is not None else []
         self.acknowledgements = [v if isinstance(v, Acknowledgement) else Acknowledgement(**as_dict(v)) for v in self.acknowledgements]
 
-        if self.release_version is not None and not isinstance(self.release_version, str):
-            self.release_version = str(self.release_version)
+        if self.release_version is not None and not isinstance(self.release_version, int):
+            self.release_version = int(self.release_version)
 
         if self.release_description is not None and not isinstance(self.release_description, str):
             self.release_description = str(self.release_description)
@@ -2394,9 +2297,6 @@ class GermlineSet(YAMLRoot):
 
         if self.pub_ids is not None and not isinstance(self.pub_ids, str):
             self.pub_ids = str(self.pub_ids)
-
-        if self.species is not None and not isinstance(self.species, Species):
-            self.species = Species(self.species)
 
         if self.species_subgroup is not None and not isinstance(self.species_subgroup, str):
             self.species_subgroup = str(self.species_subgroup)
@@ -2746,10 +2646,10 @@ class Subject(YAMLRoot):
     age_min: Optional[float] = None
     age_max: Optional[float] = None
     age_unit: Optional[Union[str, "AgeUnit"]] = None
-    age_event: Optional[Union[str, LifeEventAkcId]] = None
+    age_event: Optional[str] = None
     ancestry_population: Optional[str] = None
-    ethnicity: Optional[Union[str, "Ethnicity"]] = None
-    race: Optional[Union[str, "Race"]] = None
+    ethnicity: Optional[str] = None
+    race: Optional[str] = None
     strain_name: Optional[str] = None
     linked_subjects: Optional[str] = None
     link_type: Optional[str] = None
@@ -2763,9 +2663,6 @@ class Subject(YAMLRoot):
         if self.synthetic is not None and not isinstance(self.synthetic, Bool):
             self.synthetic = Bool(self.synthetic)
 
-        if self.species is not None and not isinstance(self.species, Species):
-            self.species = Species(self.species)
-
         if self.sex is not None and not isinstance(self.sex, Sex):
             self.sex = Sex(self.sex)
 
@@ -2775,17 +2672,17 @@ class Subject(YAMLRoot):
         if self.age_max is not None and not isinstance(self.age_max, float):
             self.age_max = float(self.age_max)
 
-        if self.age_event is not None and not isinstance(self.age_event, LifeEventAkcId):
-            self.age_event = LifeEventAkcId(self.age_event)
+        if self.age_event is not None and not isinstance(self.age_event, str):
+            self.age_event = str(self.age_event)
 
         if self.ancestry_population is not None and not isinstance(self.ancestry_population, str):
             self.ancestry_population = str(self.ancestry_population)
 
-        if self.ethnicity is not None and not isinstance(self.ethnicity, Ethnicity):
-            self.ethnicity = Ethnicity(self.ethnicity)
+        if self.ethnicity is not None and not isinstance(self.ethnicity, str):
+            self.ethnicity = str(self.ethnicity)
 
-        if self.race is not None and not isinstance(self.race, Race):
-            self.race = Race(self.race)
+        if self.race is not None and not isinstance(self.race, str):
+            self.race = str(self.race)
 
         if self.strain_name is not None and not isinstance(self.strain_name, str):
             self.strain_name = str(self.strain_name)
@@ -2818,7 +2715,7 @@ class Diagnosis(YAMLRoot):
     study_group_description: Optional[str] = None
     disease_diagnosis: Optional[Union[str, "DiseaseDiagnosis"]] = None
     disease_length: Optional[str] = None
-    disease_stage: Optional[Union[str, "DiseaseStage"]] = None
+    disease_stage: Optional[str] = None
     prior_therapies: Optional[str] = None
     immunogen: Optional[str] = None
     intervention: Optional[str] = None
@@ -2831,8 +2728,8 @@ class Diagnosis(YAMLRoot):
         if self.disease_length is not None and not isinstance(self.disease_length, str):
             self.disease_length = str(self.disease_length)
 
-        if self.disease_stage is not None and not isinstance(self.disease_stage, DiseaseStage):
-            self.disease_stage = DiseaseStage(self.disease_stage)
+        if self.disease_stage is not None and not isinstance(self.disease_stage, str):
+            self.disease_stage = str(self.disease_stage)
 
         if self.prior_therapies is not None and not isinstance(self.prior_therapies, str):
             self.prior_therapies = str(self.prior_therapies)
@@ -2967,6 +2864,58 @@ class PCRTarget(YAMLRoot):
 
         if self.reverse_pcr_primer_target_location is not None and not isinstance(self.reverse_pcr_primer_target_location, str):
             self.reverse_pcr_primer_target_location = str(self.reverse_pcr_primer_target_location)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class NucleicAcidProcessing(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["NucleicAcidProcessing"]
+    class_class_curie: ClassVar[str] = "ak_schema:NucleicAcidProcessing"
+    class_name: ClassVar[str] = "NucleicAcidProcessing"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.NucleicAcidProcessing
+
+    template_class: Optional[Union[str, "TemplateClass"]] = None
+    template_quality: Optional[str] = None
+    template_amount: Optional[float] = None
+    template_amount_unit: Optional[Union[str, "TemplateAmountUnit"]] = None
+    library_generation_method: Optional[Union[str, "LibraryGenerationMethod"]] = None
+    library_generation_protocol: Optional[str] = None
+    library_generation_kit_version: Optional[str] = None
+    pcr_target: Optional[Union[Union[dict, PCRTarget], List[Union[dict, PCRTarget]]]] = empty_list()
+    complete_sequences: Optional[Union[str, "CompleteSequences"]] = None
+    physical_linkage: Optional[Union[str, "PhysicalLinkage"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.template_class is not None and not isinstance(self.template_class, TemplateClass):
+            self.template_class = TemplateClass(self.template_class)
+
+        if self.template_quality is not None and not isinstance(self.template_quality, str):
+            self.template_quality = str(self.template_quality)
+
+        if self.template_amount is not None and not isinstance(self.template_amount, float):
+            self.template_amount = float(self.template_amount)
+
+        if self.library_generation_method is not None and not isinstance(self.library_generation_method, LibraryGenerationMethod):
+            self.library_generation_method = LibraryGenerationMethod(self.library_generation_method)
+
+        if self.library_generation_protocol is not None and not isinstance(self.library_generation_protocol, str):
+            self.library_generation_protocol = str(self.library_generation_protocol)
+
+        if self.library_generation_kit_version is not None and not isinstance(self.library_generation_kit_version, str):
+            self.library_generation_kit_version = str(self.library_generation_kit_version)
+
+        if not isinstance(self.pcr_target, list):
+            self.pcr_target = [self.pcr_target] if self.pcr_target is not None else []
+        self.pcr_target = [v if isinstance(v, PCRTarget) else PCRTarget(**as_dict(v)) for v in self.pcr_target]
+
+        if self.complete_sequences is not None and not isinstance(self.complete_sequences, CompleteSequences):
+            self.complete_sequences = CompleteSequences(self.complete_sequences)
+
+        if self.physical_linkage is not None and not isinstance(self.physical_linkage, PhysicalLinkage):
+            self.physical_linkage = PhysicalLinkage(self.physical_linkage)
 
         super().__post_init__(**kwargs)
 
@@ -3175,6 +3124,32 @@ class Repertoire(YAMLRoot):
 
 
 @dataclass(repr=False)
+class RepertoireGroupDetail(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroupDetail"]
+    class_class_curie: ClassVar[str] = "ak_schema:RepertoireGroupDetail"
+    class_name: ClassVar[str] = "RepertoireGroupDetail"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireGroupDetail
+
+    repertoire_id: Optional[str] = None
+    repertoire_description: Optional[str] = None
+    time_point: Optional[Union[dict, TimePoint]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
+
+        if self.repertoire_description is not None and not isinstance(self.repertoire_description, str):
+            self.repertoire_description = str(self.repertoire_description)
+
+        if self.time_point is not None and not isinstance(self.time_point, TimePoint):
+            self.time_point = TimePoint(**as_dict(self.time_point))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class RepertoireGroup(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -3186,7 +3161,7 @@ class RepertoireGroup(YAMLRoot):
     repertoire_group_id: Optional[str] = None
     repertoire_group_name: Optional[str] = None
     repertoire_group_description: Optional[str] = None
-    repertoires: Optional[Union[str, List[str]]] = empty_list()
+    repertoires: Optional[Union[Union[dict, RepertoireGroupDetail], List[Union[dict, RepertoireGroupDetail]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.repertoire_group_id is not None and not isinstance(self.repertoire_group_id, str):
@@ -3200,7 +3175,7 @@ class RepertoireGroup(YAMLRoot):
 
         if not isinstance(self.repertoires, list):
             self.repertoires = [self.repertoires] if self.repertoires is not None else []
-        self.repertoires = [v if isinstance(v, str) else str(v) for v in self.repertoires]
+        self.repertoires = [v if isinstance(v, RepertoireGroupDetail) else RepertoireGroupDetail(**as_dict(v)) for v in self.repertoires]
 
         super().__post_init__(**kwargs)
 
@@ -4070,6 +4045,58 @@ class Node(YAMLRoot):
 
 
 @dataclass(repr=False)
+class Cell(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Cell"]
+    class_class_curie: ClassVar[str] = "ak_schema:Cell"
+    class_name: ClassVar[str] = "Cell"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Cell
+
+    cell_id: Optional[str] = None
+    rearrangements: Optional[Union[str, List[str]]] = empty_list()
+    receptors: Optional[Union[str, List[str]]] = empty_list()
+    repertoire_id: Optional[str] = None
+    data_processing_id: Optional[str] = None
+    expression_study_method: Optional[Union[str, "ExpressionStudyMethod"]] = None
+    expression_raw_doi: Optional[str] = None
+    expression_index: Optional[str] = None
+    virtual_pairing: Optional[Union[bool, Bool]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.cell_id is not None and not isinstance(self.cell_id, str):
+            self.cell_id = str(self.cell_id)
+
+        if not isinstance(self.rearrangements, list):
+            self.rearrangements = [self.rearrangements] if self.rearrangements is not None else []
+        self.rearrangements = [v if isinstance(v, str) else str(v) for v in self.rearrangements]
+
+        if not isinstance(self.receptors, list):
+            self.receptors = [self.receptors] if self.receptors is not None else []
+        self.receptors = [v if isinstance(v, str) else str(v) for v in self.receptors]
+
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
+
+        if self.data_processing_id is not None and not isinstance(self.data_processing_id, str):
+            self.data_processing_id = str(self.data_processing_id)
+
+        if self.expression_study_method is not None and not isinstance(self.expression_study_method, ExpressionStudyMethod):
+            self.expression_study_method = ExpressionStudyMethod(self.expression_study_method)
+
+        if self.expression_raw_doi is not None and not isinstance(self.expression_raw_doi, str):
+            self.expression_raw_doi = str(self.expression_raw_doi)
+
+        if self.expression_index is not None and not isinstance(self.expression_index, str):
+            self.expression_index = str(self.expression_index)
+
+        if self.virtual_pairing is not None and not isinstance(self.virtual_pairing, Bool):
+            self.virtual_pairing = Bool(self.virtual_pairing)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class CellExpression(YAMLRoot):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -4084,7 +4111,7 @@ class CellExpression(YAMLRoot):
     data_processing_id: Optional[str] = None
     property_type: Optional[str] = None
     property: Optional[Union[str, "Property"]] = None
-    value: Optional[str] = None
+    property_value: Optional[float] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.expression_id is not None and not isinstance(self.expression_id, str):
@@ -4102,8 +4129,8 @@ class CellExpression(YAMLRoot):
         if self.property_type is not None and not isinstance(self.property_type, str):
             self.property_type = str(self.property_type)
 
-        if self.value is not None and not isinstance(self.value, str):
-            self.value = str(self.value)
+        if self.property_value is not None and not isinstance(self.property_value, float):
+            self.property_value = float(self.property_value)
 
         super().__post_init__(**kwargs)
 
@@ -9645,10 +9672,10 @@ class V1p4SampleProcessing(YAMLRoot):
 
 
 # Enumerations
-class Species(EnumDefinitionImpl):
+class SpeciesOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="Species",
+        name="SpeciesOntology",
     )
 
     @classmethod
@@ -9662,7 +9689,7 @@ class Species(EnumDefinitionImpl):
                 text="Mus musculus (mouse)",
                 meaning=NCBITAXON["10090"]))
 
-class BiologicalSex(EnumDefinitionImpl):
+class BiologicalSexOntology(EnumDefinitionImpl):
 
     female = PermissibleValue(
         text="female",
@@ -9672,10 +9699,10 @@ class BiologicalSex(EnumDefinitionImpl):
         meaning=PATO["0020001"])
 
     _defn = EnumDefinition(
-        name="BiologicalSex",
+        name="BiologicalSexOntology",
     )
 
-class PhenotypicSex(EnumDefinitionImpl):
+class PhenotypicSexOntology(EnumDefinitionImpl):
 
     female = PermissibleValue(
         text="female",
@@ -9690,7 +9717,7 @@ class PhenotypicSex(EnumDefinitionImpl):
     pooled = PermissibleValue(text="pooled")
 
     _defn = EnumDefinition(
-        name="PhenotypicSex",
+        name="PhenotypicSexOntology",
     )
 
     @classmethod
@@ -9698,7 +9725,7 @@ class PhenotypicSex(EnumDefinitionImpl):
         setattr(cls, "not collected",
             PermissibleValue(text="not collected"))
 
-class Race(EnumDefinitionImpl):
+class RaceOntology(EnumDefinitionImpl):
 
     Asian = PermissibleValue(
         text="Asian",
@@ -9720,7 +9747,7 @@ class Race(EnumDefinitionImpl):
     Native = PermissibleValue(text="Native")
 
     _defn = EnumDefinition(
-        name="Race",
+        name="RaceOntology",
     )
 
     @classmethod
@@ -9766,7 +9793,7 @@ class Race(EnumDefinitionImpl):
         setattr(cls, "White-British",
             PermissibleValue(text="White-British"))
 
-class Ethnicity(EnumDefinitionImpl):
+class EthnicityOntology(EnumDefinitionImpl):
 
     Other = PermissibleValue(
         text="Other",
@@ -9786,7 +9813,7 @@ class Ethnicity(EnumDefinitionImpl):
     White = PermissibleValue(text="White")
 
     _defn = EnumDefinition(
-        name="Ethnicity",
+        name="EthnicityOntology",
     )
 
     @classmethod
@@ -9814,7 +9841,7 @@ class Ethnicity(EnumDefinitionImpl):
         setattr(cls, "Unknown Ethnicity",
             PermissibleValue(text="Unknown Ethnicity"))
 
-class Geolocation(EnumDefinitionImpl):
+class GeolocationOntology(EnumDefinitionImpl):
 
     Canada = PermissibleValue(
         text="Canada",
@@ -9845,7 +9872,7 @@ class Geolocation(EnumDefinitionImpl):
         meaning=GAZ["00002929"])
 
     _defn = EnumDefinition(
-        name="Geolocation",
+        name="GeolocationOntology",
     )
 
     @classmethod
@@ -9919,10 +9946,10 @@ class Geolocation(EnumDefinitionImpl):
                 text="US: Kansas",
                 meaning=GAZ["00004435"]))
 
-class Strain(EnumDefinitionImpl):
+class StrainEnum(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="Strain",
+        name="StrainEnum",
     )
 
     @classmethod
@@ -9946,10 +9973,10 @@ class Strain(EnumDefinitionImpl):
         setattr(cls, "pet shop mouse",
             PermissibleValue(text="pet shop mouse"))
 
-class LifeEventProcess(EnumDefinitionImpl):
+class LifeEventProcessOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="LifeEventProcess",
+        name="LifeEventProcessOntology",
     )
 
     @classmethod
@@ -9971,14 +9998,14 @@ class LifeEventProcess(EnumDefinitionImpl):
                 text="specimen collection",
                 meaning=OBI["0000659"]))
 
-class ExposureMaterial(EnumDefinitionImpl):
+class ExposureMaterialOntology(EnumDefinitionImpl):
 
     Dryvax = PermissibleValue(
         text="Dryvax",
         meaning=VO["0000035"])
 
     _defn = EnumDefinition(
-        name="ExposureMaterial",
+        name="ExposureMaterialOntology",
     )
 
     @classmethod
@@ -10008,14 +10035,14 @@ class ExposureMaterial(EnumDefinitionImpl):
                 text="Diphtheria-Tetanus-Pertussis vaccine",
                 meaning=VO["0000738"]))
 
-class Disease(EnumDefinitionImpl):
+class DiseaseOntology(EnumDefinitionImpl):
 
     healthy = PermissibleValue(
         text="healthy",
         meaning=ONTIE["000342"])
 
     _defn = EnumDefinition(
-        name="Disease",
+        name="DiseaseOntology",
     )
 
     @classmethod
@@ -10033,10 +10060,10 @@ class Disease(EnumDefinitionImpl):
                 text="dengue hemorrhagic fever",
                 meaning=DOID["12206"]))
 
-class DiseaseStage(EnumDefinitionImpl):
+class DiseaseStageOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="DiseaseStage",
+        name="DiseaseStageOntology",
     )
 
     @classmethod
@@ -10062,7 +10089,7 @@ class DiseaseStage(EnumDefinitionImpl):
                 text="other disease course",
                 meaning=ONTIE["0003547"]))
 
-class ChainType(EnumDefinitionImpl):
+class ChainTypeEnum(EnumDefinitionImpl):
 
     IGH = PermissibleValue(text="IGH")
     IGK = PermissibleValue(text="IGK")
@@ -10073,10 +10100,10 @@ class ChainType(EnumDefinitionImpl):
     TRG = PermissibleValue(text="TRG")
 
     _defn = EnumDefinition(
-        name="ChainType",
+        name="ChainTypeEnum",
     )
 
-class ChainSimilarityType(EnumDefinitionImpl):
+class ChainSimilarityTypeEnum(EnumDefinitionImpl):
 
     exact_match = PermissibleValue(text="exact_match")
     exact_aa_match = PermissibleValue(text="exact_aa_match")
@@ -10085,13 +10112,13 @@ class ChainSimilarityType(EnumDefinitionImpl):
     cdr3_exact_aa_and_vj_match = PermissibleValue(text="cdr3_exact_aa_and_vj_match")
 
     _defn = EnumDefinition(
-        name="ChainSimilarityType",
+        name="ChainSimilarityTypeEnum",
     )
 
-class Unit(EnumDefinitionImpl):
+class TimePointUnit(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="Unit",
+        name="TimePointUnit",
     )
 
 class Derivation(EnumDefinitionImpl):
@@ -10159,6 +10186,12 @@ class InferenceType(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="InferenceType",
+    )
+
+class Species(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="Species",
     )
 
 class SpeciesSubgroupType(EnumDefinitionImpl):
@@ -11612,32 +11645,20 @@ slots.investigation = Slot(uri=RO['0000056'], name="investigation", curie=RO.cur
 slots.study_arm = Slot(uri=RO['0002350'], name="study_arm", curie=RO.curie('0002350'),
                    model_uri=AK_SCHEMA.study_arm, domain=None, range=Optional[Union[str, StudyArmAkcId]])
 
-slots.species = Slot(uri=RDF.type, name="species", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.species, domain=None, range=Optional[Union[str, "Species"]])
-
 slots.biological_sex = Slot(uri=RO['0000053'], name="biological_sex", curie=RO.curie('0000053'),
-                   model_uri=AK_SCHEMA.biological_sex, domain=None, range=Optional[Union[str, "BiologicalSex"]])
+                   model_uri=AK_SCHEMA.biological_sex, domain=None, range=Optional[Union[str, "BiologicalSexOntology"]])
 
 slots.phenotypic_sex = Slot(uri=RO['0000053'], name="phenotypic_sex", curie=RO.curie('0000053'),
-                   model_uri=AK_SCHEMA.phenotypic_sex, domain=None, range=Optional[Union[str, "PhenotypicSex"]])
+                   model_uri=AK_SCHEMA.phenotypic_sex, domain=None, range=Optional[Union[str, "PhenotypicSexOntology"]])
 
 slots.age = Slot(uri=AK_SCHEMA.age, name="age", curie=AK_SCHEMA.curie('age'),
                    model_uri=AK_SCHEMA.age, domain=None, range=Optional[str])
 
-slots.age_event = Slot(uri=AK_SCHEMA.age_event, name="age_event", curie=AK_SCHEMA.curie('age_event'),
-                   model_uri=AK_SCHEMA.age_event, domain=None, range=Optional[Union[str, LifeEventAkcId]])
-
-slots.race = Slot(uri=AK_SCHEMA.race, name="race", curie=AK_SCHEMA.curie('race'),
-                   model_uri=AK_SCHEMA.race, domain=None, range=Optional[Union[str, "Race"]])
-
-slots.ethnicity = Slot(uri=AK_SCHEMA.ethnicity, name="ethnicity", curie=AK_SCHEMA.curie('ethnicity'),
-                   model_uri=AK_SCHEMA.ethnicity, domain=None, range=Optional[Union[str, "Ethnicity"]])
-
 slots.geolocation = Slot(uri=RO['0001025'], name="geolocation", curie=RO.curie('0001025'),
-                   model_uri=AK_SCHEMA.geolocation, domain=None, range=Optional[Union[str, "Geolocation"]])
+                   model_uri=AK_SCHEMA.geolocation, domain=None, range=Optional[Union[str, "GeolocationOntology"]])
 
 slots.strain = Slot(uri=AK_SCHEMA.strain, name="strain", curie=AK_SCHEMA.curie('strain'),
-                   model_uri=AK_SCHEMA.strain, domain=None, range=Optional[Union[str, "Strain"]])
+                   model_uri=AK_SCHEMA.strain, domain=None, range=Optional[Union[str, "StrainEnum"]])
 
 slots.study_arms = Slot(uri=AK_SCHEMA.study_arms, name="study_arms", curie=AK_SCHEMA.curie('study_arms'),
                    model_uri=AK_SCHEMA.study_arms, domain=None, range=Optional[Union[Union[str, StudyArmAkcId], List[Union[str, StudyArmAkcId]]]])
@@ -11649,7 +11670,7 @@ slots.study_event = Slot(uri=AK_SCHEMA.study_event, name="study_event", curie=AK
                    model_uri=AK_SCHEMA.study_event, domain=None, range=Optional[Union[str, StudyEventAkcId]])
 
 slots.life_event_type = Slot(uri=RDF.type, name="life_event_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.life_event_type, domain=None, range=Optional[Union[str, "LifeEventProcess"]])
+                   model_uri=AK_SCHEMA.life_event_type, domain=None, range=Optional[Union[str, "LifeEventProcessOntology"]])
 
 slots.t0_event = Slot(uri=AK_SCHEMA.t0_event, name="t0_event", curie=AK_SCHEMA.curie('t0_event'),
                    model_uri=AK_SCHEMA.t0_event, domain=None, range=Optional[str])
@@ -11670,13 +11691,10 @@ slots.life_event = Slot(uri=AK_SCHEMA.life_event, name="life_event", curie=AK_SC
                    model_uri=AK_SCHEMA.life_event, domain=None, range=Optional[Union[str, LifeEventAkcId]])
 
 slots.exposure_material = Slot(uri=RO['0000057'], name="exposure_material", curie=RO.curie('0000057'),
-                   model_uri=AK_SCHEMA.exposure_material, domain=None, range=Optional[Union[str, "ExposureMaterial"]])
+                   model_uri=AK_SCHEMA.exposure_material, domain=None, range=Optional[Union[str, "ExposureMaterialOntology"]])
 
 slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curie('disease'),
-                   model_uri=AK_SCHEMA.disease, domain=None, range=Optional[Union[str, "Disease"]])
-
-slots.disease_stage = Slot(uri=AK_SCHEMA.disease_stage, name="disease_stage", curie=AK_SCHEMA.curie('disease_stage'),
-                   model_uri=AK_SCHEMA.disease_stage, domain=None, range=Optional[Union[str, "DiseaseStage"]])
+                   model_uri=AK_SCHEMA.disease, domain=None, range=Optional[Union[str, "DiseaseOntology"]])
 
 slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
                    model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
@@ -11739,7 +11757,7 @@ slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.cur
                    model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
 
 slots.chain_type = Slot(uri=AK_SCHEMA.chain_type, name="chain_type", curie=AK_SCHEMA.curie('chain_type'),
-                   model_uri=AK_SCHEMA.chain_type, domain=None, range=Optional[Union[str, "ChainType"]])
+                   model_uri=AK_SCHEMA.chain_type, domain=None, range=Optional[Union[str, "ChainTypeEnum"]])
 
 slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curie('isotype'),
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])
@@ -11778,13 +11796,22 @@ slots.chain_codomain = Slot(uri=AK_SCHEMA.chain_codomain, name="chain_codomain",
                    model_uri=AK_SCHEMA.chain_codomain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
 slots.chain_similarity_type = Slot(uri=RDF.type, name="chain_similarity_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.chain_similarity_type, domain=None, range=Optional[Union[str, "ChainSimilarityType"]])
+                   model_uri=AK_SCHEMA.chain_similarity_type, domain=None, range=Optional[Union[str, "ChainSimilarityTypeEnum"]])
 
-slots.label = Slot(uri=AK_SCHEMA.label, name="label", curie=AK_SCHEMA.curie('label'),
-                   model_uri=AK_SCHEMA.label, domain=None, range=Optional[str])
+slots.time_point_label = Slot(uri=AK_SCHEMA.time_point_label, name="time_point_label", curie=AK_SCHEMA.curie('time_point_label'),
+                   model_uri=AK_SCHEMA.time_point_label, domain=None, range=Optional[str])
+
+slots.time_point_value = Slot(uri=AK_SCHEMA.time_point_value, name="time_point_value", curie=AK_SCHEMA.curie('time_point_value'),
+                   model_uri=AK_SCHEMA.time_point_value, domain=None, range=Optional[float])
+
+slots.time_point_unit = Slot(uri=AK_SCHEMA.time_point_unit, name="time_point_unit", curie=AK_SCHEMA.curie('time_point_unit'),
+                   model_uri=AK_SCHEMA.time_point_unit, domain=None, range=Optional[Union[str, "TimePointUnit"]])
 
 slots.acknowledgement_id = Slot(uri=AK_SCHEMA.acknowledgement_id, name="acknowledgement_id", curie=AK_SCHEMA.curie('acknowledgement_id'),
                    model_uri=AK_SCHEMA.acknowledgement_id, domain=None, range=Optional[str])
+
+slots.individual_full_name = Slot(uri=AK_SCHEMA.individual_full_name, name="individual_full_name", curie=AK_SCHEMA.curie('individual_full_name'),
+                   model_uri=AK_SCHEMA.individual_full_name, domain=None, range=Optional[str])
 
 slots.institution_name = Slot(uri=AK_SCHEMA.institution_name, name="institution_name", curie=AK_SCHEMA.curie('institution_name'),
                    model_uri=AK_SCHEMA.institution_name, domain=None, range=Optional[str])
@@ -11901,13 +11928,16 @@ slots.lab_address = Slot(uri=AK_SCHEMA.lab_address, name="lab_address", curie=AK
                    model_uri=AK_SCHEMA.lab_address, domain=None, range=Optional[str])
 
 slots.release_version = Slot(uri=AK_SCHEMA.release_version, name="release_version", curie=AK_SCHEMA.curie('release_version'),
-                   model_uri=AK_SCHEMA.release_version, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.release_version, domain=None, range=Optional[int])
 
 slots.release_date = Slot(uri=AK_SCHEMA.release_date, name="release_date", curie=AK_SCHEMA.curie('release_date'),
                    model_uri=AK_SCHEMA.release_date, domain=None, range=Optional[Union[str, XSDDateTime]])
 
 slots.release_description = Slot(uri=AK_SCHEMA.release_description, name="release_description", curie=AK_SCHEMA.curie('release_description'),
                    model_uri=AK_SCHEMA.release_description, domain=None, range=Optional[str])
+
+slots.label = Slot(uri=AK_SCHEMA.label, name="label", curie=AK_SCHEMA.curie('label'),
+                   model_uri=AK_SCHEMA.label, domain=None, range=Optional[str])
 
 slots.coding_sequence = Slot(uri=AK_SCHEMA.coding_sequence, name="coding_sequence", curie=AK_SCHEMA.curie('coding_sequence'),
                    model_uri=AK_SCHEMA.coding_sequence, domain=None, range=Optional[str])
@@ -11929,6 +11959,9 @@ slots.functional = Slot(uri=AK_SCHEMA.functional, name="functional", curie=AK_SC
 
 slots.inference_type = Slot(uri=RDF.type, name="inference_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.inference_type, domain=None, range=Optional[Union[str, "InferenceType"]])
+
+slots.species = Slot(uri=AK_SCHEMA.species, name="species", curie=AK_SCHEMA.curie('species'),
+                   model_uri=AK_SCHEMA.species, domain=None, range=Optional[Union[str, "Species"]])
 
 slots.species_subgroup = Slot(uri=AK_SCHEMA.species_subgroup, name="species_subgroup", curie=AK_SCHEMA.curie('species_subgroup'),
                    model_uri=AK_SCHEMA.species_subgroup, domain=None, range=Optional[str])
@@ -12158,8 +12191,17 @@ slots.age_max = Slot(uri=AK_SCHEMA.age_max, name="age_max", curie=AK_SCHEMA.curi
 slots.age_unit = Slot(uri=AK_SCHEMA.age_unit, name="age_unit", curie=AK_SCHEMA.curie('age_unit'),
                    model_uri=AK_SCHEMA.age_unit, domain=None, range=Optional[Union[str, "AgeUnit"]])
 
+slots.age_event = Slot(uri=AK_SCHEMA.age_event, name="age_event", curie=AK_SCHEMA.curie('age_event'),
+                   model_uri=AK_SCHEMA.age_event, domain=None, range=Optional[str])
+
 slots.ancestry_population = Slot(uri=AK_SCHEMA.ancestry_population, name="ancestry_population", curie=AK_SCHEMA.curie('ancestry_population'),
                    model_uri=AK_SCHEMA.ancestry_population, domain=None, range=Optional[str])
+
+slots.ethnicity = Slot(uri=AK_SCHEMA.ethnicity, name="ethnicity", curie=AK_SCHEMA.curie('ethnicity'),
+                   model_uri=AK_SCHEMA.ethnicity, domain=None, range=Optional[str])
+
+slots.race = Slot(uri=AK_SCHEMA.race, name="race", curie=AK_SCHEMA.curie('race'),
+                   model_uri=AK_SCHEMA.race, domain=None, range=Optional[str])
 
 slots.strain_name = Slot(uri=AK_SCHEMA.strain_name, name="strain_name", curie=AK_SCHEMA.curie('strain_name'),
                    model_uri=AK_SCHEMA.strain_name, domain=None, range=Optional[str])
@@ -12184,6 +12226,9 @@ slots.disease_diagnosis = Slot(uri=AK_SCHEMA.disease_diagnosis, name="disease_di
 
 slots.disease_length = Slot(uri=AK_SCHEMA.disease_length, name="disease_length", curie=AK_SCHEMA.curie('disease_length'),
                    model_uri=AK_SCHEMA.disease_length, domain=None, range=Optional[str])
+
+slots.disease_stage = Slot(uri=AK_SCHEMA.disease_stage, name="disease_stage", curie=AK_SCHEMA.curie('disease_stage'),
+                   model_uri=AK_SCHEMA.disease_stage, domain=None, range=Optional[str])
 
 slots.prior_therapies = Slot(uri=AK_SCHEMA.prior_therapies, name="prior_therapies", curie=AK_SCHEMA.curie('prior_therapies'),
                    model_uri=AK_SCHEMA.prior_therapies, domain=None, range=Optional[str])
@@ -12401,6 +12446,9 @@ slots.sample = Slot(uri=AK_SCHEMA.sample, name="sample", curie=AK_SCHEMA.curie('
 slots.data_processing = Slot(uri=AK_SCHEMA.data_processing, name="data_processing", curie=AK_SCHEMA.curie('data_processing'),
                    model_uri=AK_SCHEMA.data_processing, domain=None, range=Optional[Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]]])
 
+slots.time_point = Slot(uri=AK_SCHEMA.time_point, name="time_point", curie=AK_SCHEMA.curie('time_point'),
+                   model_uri=AK_SCHEMA.time_point, domain=None, range=Optional[Union[dict, TimePoint]])
+
 slots.repertoire_group_id = Slot(uri=AK_SCHEMA.repertoire_group_id, name="repertoire_group_id", curie=AK_SCHEMA.curie('repertoire_group_id'),
                    model_uri=AK_SCHEMA.repertoire_group_id, domain=None, range=Optional[str])
 
@@ -12411,7 +12459,7 @@ slots.repertoire_group_description = Slot(uri=AK_SCHEMA.repertoire_group_descrip
                    model_uri=AK_SCHEMA.repertoire_group_description, domain=None, range=Optional[str])
 
 slots.repertoires = Slot(uri=AK_SCHEMA.repertoires, name="repertoires", curie=AK_SCHEMA.curie('repertoires'),
-                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Optional[Union[str, List[str]]])
+                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Optional[Union[Union[dict, RepertoireGroupDetail], List[Union[dict, RepertoireGroupDetail]]]])
 
 slots.segment = Slot(uri=AK_SCHEMA.segment, name="segment", curie=AK_SCHEMA.curie('segment'),
                    model_uri=AK_SCHEMA.segment, domain=None, range=Optional[str])
@@ -12898,6 +12946,9 @@ slots.property_type = Slot(uri=RDF.type, name="property_type", curie=RDF.curie('
 
 slots.property = Slot(uri=AK_SCHEMA.property, name="property", curie=AK_SCHEMA.curie('property'),
                    model_uri=AK_SCHEMA.property, domain=None, range=Optional[Union[str, "Property"]])
+
+slots.property_value = Slot(uri=AK_SCHEMA.property_value, name="property_value", curie=AK_SCHEMA.curie('property_value'),
+                   model_uri=AK_SCHEMA.property_value, domain=None, range=Optional[float])
 
 slots.receptor_id = Slot(uri=AK_SCHEMA.receptor_id, name="receptor_id", curie=AK_SCHEMA.curie('receptor_id'),
                    model_uri=AK_SCHEMA.receptor_id, domain=None, range=Optional[str])
