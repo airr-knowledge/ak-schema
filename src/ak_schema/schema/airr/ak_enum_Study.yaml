@@ -1,6 +1,0 @@
-StudyType:
-  name: StudyType
-  permissible_values:
-    Study:
-      text: Study
-      meaning: NCIT:C63536
