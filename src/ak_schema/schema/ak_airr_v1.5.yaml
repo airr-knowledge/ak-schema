@@ -7,13 +7,13 @@ name: ak-schema
 classes:
   V1p5TimePoint:
     slots:
-      - V1p5label
-      - V1p5value
-      - V1p5unit
+      - V1p5time_point_label
+      - V1p5time_point_value
+      - V1p5time_point_unit
   V1p5Acknowledgement:
     slots:
       - V1p5acknowledgement_id
-      - V1p5name
+      - V1p5individual_full_name
       - V1p5institution_name
       - V1p5orcid_id
   V1p5RearrangedSequence:
@@ -306,6 +306,11 @@ classes:
       - V1p5subject
       - V1p5sample
       - V1p5data_processing
+  V1p5RepertoireGroupDetail:
+    slots:
+      - V1p5repertoire_id
+      - V1p5repertoire_description
+      - V1p5time_point
   V1p5RepertoireGroup:
     slots:
       - V1p5repertoire_group_id
@@ -539,7 +544,7 @@ classes:
       - V1p5data_processing_id
       - V1p5property_type
       - V1p5property
-      - V1p5value
+      - V1p5property_value
   V1p5Receptor:
     slots:
       - V1p5receptor_id
@@ -610,18 +615,22 @@ classes:
       - V1p5sequencing_files
 
 slots:
-  V1p5label:
-    name: V1p5label
+  V1p5time_point_label:
+    name: V1p5time_point_label
+    description: Informative label for the time point
     range: string
-  V1p5value:
-    name: V1p5value
+    annotations:
+      nullable: true
+  V1p5time_point_value:
+    name: V1p5time_point_value
+    description: Value of the time point
     range: float
     annotations:
       nullable: true
-  V1p5unit:
-    name: V1p5unit
+  V1p5time_point_unit:
+    name: V1p5time_point_unit
     description: Unit of the time point
-    range: V1p5Unit
+    range: V1p5TimePointUnitOntology
     annotations:
       nullable: true
   V1p5acknowledgement_id:
@@ -630,8 +639,8 @@ slots:
     range: string
     annotations:
       nullable: true
-  V1p5name:
-    name: V1p5name
+  V1p5individual_full_name:
+    name: V1p5individual_full_name
     description: Full name of individual
     range: string
     annotations:
@@ -659,14 +668,14 @@ slots:
   V1p5derivation:
     name: V1p5derivation
     description: The class of nucleic acid that was used as primary starting material
-    range: V1p5Derivation
+    range: V1p5DerivationEnum
     annotations:
       nullable: true
   V1p5observation_type:
     name: V1p5observation_type
     description: The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.
     slot_uri: rdf:type
-    range: V1p5ObservationType
+    range: V1p5ObservationTypeEnum
     annotations:
       nullable: false
   V1p5curation:
@@ -724,7 +733,7 @@ slots:
   V1p5strand:
     name: V1p5strand
     description: sense (+ or -)
-    range: V1p5Strand
+    range: V1p5StrandEnum
     annotations:
       nullable: true
   V1p5sequence_delineation_id:
@@ -844,6 +853,7 @@ slots:
       nullable: true
   V1p5release_version:
     name: V1p5release_version
+    range: integer
     annotations:
       nullable: true
   V1p5release_date:
@@ -858,6 +868,9 @@ slots:
     range: string
     annotations:
       nullable: true
+  V1p5label:
+    name: V1p5label
+    range: string
   V1p5coding_sequence:
     name: V1p5coding_sequence
     description: Nucleotide sequence of the core coding region, such as the coding region of a D-, J- or C- gene  or the coding region of a V-gene excluding the leader.
@@ -873,7 +886,7 @@ slots:
       nullable: true
   V1p5locus:
     name: V1p5locus
-    range: V1p5Locus
+    range: V1p5LocusEnum
   V1p5chromosome:
     name: V1p5chromosome
     description: chromosome on which the gene is located
@@ -884,7 +897,7 @@ slots:
     name: V1p5sequence_type
     description: Sequence type (V, D, J, C)
     slot_uri: rdf:type
-    range: V1p5SequenceType
+    range: V1p5SequenceTypeEnum
     annotations:
       nullable: false
   V1p5functional:
@@ -897,13 +910,13 @@ slots:
     name: V1p5inference_type
     description: Type of inference(s) from which this gene sequence was inferred
     slot_uri: rdf:type
-    range: V1p5InferenceType
+    range: V1p5InferenceTypeEnum
     annotations:
       nullable: true
   V1p5species:
     name: V1p5species
     description: Binomial designation of subject's species
-    range: V1p5Species
+    range: V1p5SpeciesOntology
     annotations:
       nullable: false
   V1p5species_subgroup:
@@ -916,13 +929,13 @@ slots:
     name: V1p5species_subgroup_type
     description: ''
     slot_uri: rdf:type
-    range: V1p5SpeciesSubgroupType
+    range: V1p5SpeciesSubgroupTypeEnum
     annotations:
       nullable: true
   V1p5status:
     name: V1p5status
     description: Status of record, assumed active if the field is not present
-    range: V1p5Status
+    range: V1p5StatusEnum
     annotations:
       nullable: true
   V1p5subgroup_designation:
@@ -957,7 +970,7 @@ slots:
   V1p5j_codon_frame:
     name: V1p5j_codon_frame
     description: Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing.
-    range: V1p5JCodonFrame
+    range: V1p5JCodonFrameEnum
     annotations:
       nullable: true
   V1p5gene_start:
@@ -1099,7 +1112,7 @@ slots:
   V1p5curational_tags:
     name: V1p5curational_tags
     description: Controlled-vocabulary tags applied to this description
-    range: V1p5CurationalTags
+    range: V1p5CurationalTagsEnum
     multivalued: true
     annotations:
       nullable: true
@@ -1186,7 +1199,7 @@ slots:
   V1p5inference_process:
     name: V1p5inference_process
     description: Information on how the genotype was acquired. Controlled vocabulary.
-    range: V1p5InferenceProcess
+    range: V1p5InferenceProcessEnum
     annotations:
       nullable: true
   V1p5phasing:
@@ -1222,7 +1235,7 @@ slots:
       nullable: true
   V1p5mhc_class:
     name: V1p5mhc_class
-    range: V1p5MhcClass
+    range: V1p5MhcClassEnum
   V1p5mhc_alleles:
     name: V1p5mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
@@ -1239,7 +1252,7 @@ slots:
   V1p5gene:
     name: V1p5gene
     description: The MHC gene to which the described allele belongs
-    range: V1p5Gene
+    range: V1p5GeneOntology
     annotations:
       nullable: true
   V1p5reference_set_ref:
@@ -1276,7 +1289,7 @@ slots:
     name: V1p5study_type
     description: Type of study design
     slot_uri: rdf:type
-    range: V1p5StudyType
+    range: V1p5StudyTypeOntology
     annotations:
       nullable: true
   V1p5study_description:
@@ -1318,7 +1331,7 @@ slots:
   V1p5keywords_study:
     name: V1p5keywords_study
     description: Keywords describing properties of one or more data sets in a study. "contains_schema" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that "contains_paired_chain" but does not "contains_schema_cell").
-    range: V1p5KeywordsStudy
+    range: V1p5KeywordsStudyEnum
     multivalued: true
     annotations:
       nullable: true
@@ -1349,7 +1362,7 @@ slots:
   V1p5sex:
     name: V1p5sex
     description: Biological sex of subject
-    range: V1p5Sex
+    range: V1p5SexEnum
     annotations:
       nullable: true
   V1p5age_min:
@@ -1367,7 +1380,7 @@ slots:
   V1p5age_unit:
     name: V1p5age_unit
     description: Unit of age range
-    range: V1p5AgeUnit
+    range: V1p5AgeUnitOntology
     annotations:
       nullable: true
   V1p5age_event:
@@ -1435,7 +1448,7 @@ slots:
   V1p5disease_diagnosis:
     name: V1p5disease_diagnosis
     description: Diagnosis of subject
-    range: V1p5DiseaseDiagnosis
+    range: V1p5DiseaseDiagnosisOntology
     annotations:
       nullable: true
   V1p5disease_length:
@@ -1490,7 +1503,7 @@ slots:
   V1p5tissue:
     name: V1p5tissue
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
-    range: V1p5Tissue
+    range: V1p5TissueOntology
     annotations:
       nullable: true
   V1p5anatomic_site:
@@ -1514,7 +1527,7 @@ slots:
   V1p5collection_time_point_relative_unit:
     name: V1p5collection_time_point_relative_unit
     description: Unit of Sample collection time
-    range: V1p5CollectionTimePointRelativeUnit
+    range: V1p5CollectionTimePointRelativeUnitOntology
     annotations:
       nullable: true
   V1p5collection_time_point_reference:
@@ -1538,7 +1551,7 @@ slots:
   V1p5cell_subset:
     name: V1p5cell_subset
     description: Commonly-used designation of isolated cell population
-    range: V1p5CellSubset
+    range: V1p5CellSubsetOntology
     annotations:
       nullable: true
   V1p5cell_phenotype:
@@ -1550,7 +1563,7 @@ slots:
   V1p5cell_species:
     name: V1p5cell_species
     description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
-    range: V1p5CellSpecies
+    range: V1p5CellSpeciesOntology
     annotations:
       nullable: true
   V1p5single_cell:
@@ -1598,7 +1611,7 @@ slots:
   V1p5pcr_target_locus:
     name: V1p5pcr_target_locus
     description: Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
-    range: V1p5PcrTargetLocus
+    range: V1p5PcrTargetLocusEnum
     annotations:
       nullable: true
   V1p5forward_pcr_primer_target_location:
@@ -1616,7 +1629,7 @@ slots:
   V1p5template_class:
     name: V1p5template_class
     description: The class of nucleic acid that was used as primary starting material for the following procedures
-    range: V1p5TemplateClass
+    range: V1p5TemplateClassEnum
     annotations:
       nullable: false
   V1p5template_quality:
@@ -1634,13 +1647,13 @@ slots:
   V1p5template_amount_unit:
     name: V1p5template_amount_unit
     description: Unit of template amount
-    range: V1p5TemplateAmountUnit
+    range: V1p5TemplateAmountUnitOntology
     annotations:
       nullable: true
   V1p5library_generation_method:
     name: V1p5library_generation_method
     description: Generic type of library generation
-    range: V1p5LibraryGenerationMethod
+    range: V1p5LibraryGenerationMethodEnum
     annotations:
       nullable: false
   V1p5library_generation_protocol:
@@ -1665,13 +1678,13 @@ slots:
   V1p5complete_sequences:
     name: V1p5complete_sequences
     description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
-    range: V1p5CompleteSequences
+    range: V1p5CompleteSequencesEnum
     annotations:
       nullable: false
   V1p5physical_linkage:
     name: V1p5physical_linkage
     description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
-    range: V1p5PhysicalLinkage
+    range: V1p5PhysicalLinkageEnum
     annotations:
       nullable: false
   V1p5sequencing_run_id:
@@ -1726,7 +1739,7 @@ slots:
     name: V1p5file_type
     description: File format for the raw reads or sequences
     slot_uri: rdf:type
-    range: V1p5FileType
+    range: V1p5FileTypeEnum
     annotations:
       nullable: true
   V1p5filename:
@@ -1738,7 +1751,7 @@ slots:
   V1p5read_direction:
     name: V1p5read_direction
     description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
-    range: V1p5ReadDirection
+    range: V1p5ReadDirectionEnum
     annotations:
       nullable: true
   V1p5read_length:
@@ -1756,7 +1769,7 @@ slots:
   V1p5paired_read_direction:
     name: V1p5paired_read_direction
     description: Read direction for the second file in paired-read sequencing
-    range: V1p5PairedReadDirection
+    range: V1p5PairedReadDirectionEnum
     annotations:
       nullable: true
   V1p5paired_read_length:
@@ -1846,8 +1859,6 @@ slots:
   V1p5repertoire_id:
     name: V1p5repertoire_id
     range: string
-    annotations:
-      nullable: true
   V1p5repertoire_name:
     name: V1p5repertoire_name
     description: Short generic display name for the repertoire
@@ -1856,7 +1867,6 @@ slots:
       nullable: true
   V1p5repertoire_description:
     name: V1p5repertoire_description
-    description: Generic repertoire description
     range: string
     annotations:
       nullable: true
@@ -1886,6 +1896,12 @@ slots:
     multivalued: true
     annotations:
       nullable: false
+  V1p5time_point:
+    name: V1p5time_point
+    description: Time point designation for this repertoire within the group
+    range: V1p5TimePoint
+    annotations:
+      nullable: true
   V1p5repertoire_group_id:
     name: V1p5repertoire_group_id
     description: Identifier for this repertoire collection
@@ -1907,6 +1923,7 @@ slots:
   V1p5repertoires:
     name: V1p5repertoires
     description: List of repertoires in this collection with an associated description and time point designation
+    range: V1p5RepertoireGroupDetail
     multivalued: true
     annotations:
       nullable: true
@@ -2827,7 +2844,7 @@ slots:
   V1p5expression_study_method:
     name: V1p5expression_study_method
     description: Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary.
-    range: V1p5ExpressionStudyMethod
+    range: V1p5ExpressionStudyMethodEnum
     annotations:
       nullable: true
   V1p5expression_raw_doi:
@@ -2864,7 +2881,13 @@ slots:
   V1p5property:
     name: V1p5property
     description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
-    range: V1p5Property
+    range: V1p5PropertyOntology
+    annotations:
+      nullable: true
+  V1p5property_value:
+    name: V1p5property_value
+    description: Level at which the property was observed in the experiment (non-normalized).
+    range: float
     annotations:
       nullable: true
   V1p5receptor_id:
@@ -2883,7 +2906,7 @@ slots:
     name: V1p5receptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
     slot_uri: rdf:type
-    range: V1p5ReceptorType
+    range: V1p5ReceptorTypeEnum
     annotations:
       nullable: false
   V1p5receptor_variable_domain_1_aa:
@@ -2895,7 +2918,7 @@ slots:
   V1p5receptor_variable_domain_1_locus:
     name: V1p5receptor_variable_domain_1_locus
     description: Locus from which the variable domain in receptor_variable_domain_1_aa originates
-    range: V1p5ReceptorVariableDomain1Locus
+    range: V1p5ReceptorVariableDomain1LocusEnum
     annotations:
       nullable: false
   V1p5receptor_variable_domain_2_aa:
@@ -2907,7 +2930,7 @@ slots:
   V1p5receptor_variable_domain_2_locus:
     name: V1p5receptor_variable_domain_2_locus
     description: Locus from which the variable domain in receptor_variable_domain_2_aa originates
-    range: V1p5ReceptorVariableDomain2Locus
+    range: V1p5ReceptorVariableDomain2LocusEnum
     annotations:
       nullable: false
   V1p5receptor_ref:
@@ -2928,26 +2951,26 @@ slots:
     name: V1p5ligand_type
     description: Classification of ligand binding to receptor
     slot_uri: rdf:type
-    range: V1p5LigandType
+    range: V1p5LigandTypeEnum
     annotations:
       nullable: false
   V1p5antigen_type:
     name: V1p5antigen_type
     description: The type of antigen before processing by the immune system.
     slot_uri: rdf:type
-    range: V1p5AntigenType
+    range: V1p5AntigenTypeEnum
     annotations:
       nullable: false
   V1p5antigen:
     name: V1p5antigen
     description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
-    range: V1p5Antigen
+    range: V1p5AntigenOntology
     annotations:
       nullable: false
   V1p5antigen_source_species:
     name: V1p5antigen_source_species
     description: The species from which the antigen was isolated
-    range: V1p5AntigenSourceSpecies
+    range: V1p5AntigenSourceSpeciesOntology
     annotations:
       nullable: true
   V1p5peptide_start:
@@ -2965,7 +2988,7 @@ slots:
   V1p5mhc_gene_1:
     name: V1p5mhc_gene_1
     description: The MHC gene to which the mhc_allele_1 belongs
-    range: V1p5MhcGene1
+    range: V1p5MhcGene1Ontology
     annotations:
       nullable: true
   V1p5mhc_allele_1:
@@ -2977,7 +3000,7 @@ slots:
   V1p5mhc_gene_2:
     name: V1p5mhc_gene_2
     description: The MHC gene to which the mhc_allele_2 belongs
-    range: V1p5MhcGene2
+    range: V1p5MhcGene2Ontology
     annotations:
       nullable: true
   V1p5mhc_allele_2:
@@ -2989,13 +3012,13 @@ slots:
   V1p5reactivity_method:
     name: V1p5reactivity_method
     description: The methodology used to assess expression (assay implemented in experiment)
-    range: V1p5ReactivityMethod
+    range: V1p5ReactivityMethodEnum
     annotations:
       nullable: false
   V1p5reactivity_readout:
     name: V1p5reactivity_readout
     description: Reactivity measurement read-out
-    range: V1p5ReactivityReadout
+    range: V1p5ReactivityReadoutEnum
     annotations:
       nullable: false
   V1p5reactivity_value:
@@ -3012,31 +3035,31 @@ slots:
       nullable: false
 
 enums:
-  V1p5Unit:
-    name: V1p5Unit
+  V1p5TimePointUnitOntology:
+    name: V1p5TimePointUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000003
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5Derivation:
-    name: V1p5Derivation
+  V1p5DerivationEnum:
+    name: V1p5DerivationEnum
     permissible_values:
       DNA:
       RNA:
-  V1p5ObservationType:
-    name: V1p5ObservationType
+  V1p5ObservationTypeEnum:
+    name: V1p5ObservationTypeEnum
     permissible_values:
       direct_sequencing:
       inference_from_repertoire:
-  V1p5Strand:
-    name: V1p5Strand
+  V1p5StrandEnum:
+    name: V1p5StrandEnum
     permissible_values:
       +:
       '-':
-  V1p5Locus:
-    name: V1p5Locus
+  V1p5LocusEnum:
+    name: V1p5LocusEnum
     permissible_values:
       IGH:
       IGI:
@@ -3046,76 +3069,82 @@ enums:
       TRB:
       TRG:
       TRD:
-  V1p5SequenceType:
-    name: V1p5SequenceType
+  V1p5SequenceTypeEnum:
+    name: V1p5SequenceTypeEnum
     permissible_values:
       V:
       D:
       J:
       C:
-  V1p5InferenceType:
-    name: V1p5InferenceType
+  V1p5InferenceTypeEnum:
+    name: V1p5InferenceTypeEnum
     permissible_values:
       genomic_and_rearranged:
       genomic_only:
       rearranged_only:
-  V1p5Species:
-    name: V1p5Species
-  V1p5SpeciesSubgroupType:
-    name: V1p5SpeciesSubgroupType
+  V1p5SpeciesOntology:
+    name: V1p5SpeciesOntology
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+  V1p5SpeciesSubgroupTypeEnum:
+    name: V1p5SpeciesSubgroupTypeEnum
     permissible_values:
       breed:
       strain:
       inbred:
       outbred:
       locational:
-  V1p5Status:
-    name: V1p5Status
+  V1p5StatusEnum:
+    name: V1p5StatusEnum
     permissible_values:
       active:
       draft:
       retired:
       withdrawn:
-  V1p5JCodonFrame:
-    name: V1p5JCodonFrame
+  V1p5JCodonFrameEnum:
+    name: V1p5JCodonFrameEnum
     permissible_values:
       1:
       2:
       3:
-  V1p5CurationalTags:
-    name: V1p5CurationalTags
+  V1p5CurationalTagsEnum:
+    name: V1p5CurationalTagsEnum
     permissible_values:
       likely_truncated:
       likely_full_length:
-  V1p5InferenceProcess:
-    name: V1p5InferenceProcess
+  V1p5InferenceProcessEnum:
+    name: V1p5InferenceProcessEnum
     permissible_values:
       genomic_sequencing:
       repertoire_sequencing:
-  V1p5MhcClass:
-    name: V1p5MhcClass
+  V1p5MhcClassEnum:
+    name: V1p5MhcClassEnum
     permissible_values:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
-  V1p5Gene:
-    name: V1p5Gene
+  V1p5GeneOntology:
+    name: V1p5GeneOntology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5StudyType:
-    name: V1p5StudyType
+  V1p5StudyTypeOntology:
+    name: V1p5StudyTypeOntology
     reachable_from:
       source_nodes:
         - NCIT:C63536
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5KeywordsStudy:
-    name: V1p5KeywordsStudy
+  V1p5KeywordsStudyEnum:
+    name: V1p5KeywordsStudyEnum
     permissible_values:
       contains_ig:
       contains_tr:
@@ -3124,64 +3153,64 @@ enums:
       contains_schema_clone:
       contains_schema_cell:
       contains_schema_receptor:
-  V1p5Sex:
-    name: V1p5Sex
+  V1p5SexEnum:
+    name: V1p5SexEnum
     permissible_values:
       male:
       female:
       pooled:
       hermaphrodite:
       intersex:
-  V1p5AgeUnit:
-    name: V1p5AgeUnit
+  V1p5AgeUnitOntology:
+    name: V1p5AgeUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000003
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5DiseaseDiagnosis:
-    name: V1p5DiseaseDiagnosis
+  V1p5DiseaseDiagnosisOntology:
+    name: V1p5DiseaseDiagnosisOntology
     reachable_from:
       source_nodes:
         - DOID:4
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5Tissue:
-    name: V1p5Tissue
+  V1p5TissueOntology:
+    name: V1p5TissueOntology
     reachable_from:
       source_nodes:
         - UBERON:0010000
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5CollectionTimePointRelativeUnit:
-    name: V1p5CollectionTimePointRelativeUnit
+  V1p5CollectionTimePointRelativeUnitOntology:
+    name: V1p5CollectionTimePointRelativeUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000003
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5CellSubset:
-    name: V1p5CellSubset
+  V1p5CellSubsetOntology:
+    name: V1p5CellSubsetOntology
     reachable_from:
       source_nodes:
         - CL:0000542
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5CellSpecies:
-    name: V1p5CellSpecies
+  V1p5CellSpeciesOntology:
+    name: V1p5CellSpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5PcrTargetLocus:
-    name: V1p5PcrTargetLocus
+  V1p5PcrTargetLocusEnum:
+    name: V1p5PcrTargetLocusEnum
     permissible_values:
       IGH:
       IGI:
@@ -3191,21 +3220,21 @@ enums:
       TRB:
       TRD:
       TRG:
-  V1p5TemplateClass:
-    name: V1p5TemplateClass
+  V1p5TemplateClassEnum:
+    name: V1p5TemplateClassEnum
     permissible_values:
       DNA:
       RNA:
-  V1p5TemplateAmountUnit:
-    name: V1p5TemplateAmountUnit
+  V1p5TemplateAmountUnitOntology:
+    name: V1p5TemplateAmountUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000002
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5LibraryGenerationMethod:
-    name: V1p5LibraryGenerationMethod
+  V1p5LibraryGenerationMethodEnum:
+    name: V1p5LibraryGenerationMethodEnum
     permissible_values:
       PCR:
       RT(RHP)+PCR:
@@ -3219,113 +3248,113 @@ enums:
       RT(specific+UMI)+TS+PCR:
       RT(specific)+TS:
       other:
-  V1p5CompleteSequences:
-    name: V1p5CompleteSequences
+  V1p5CompleteSequencesEnum:
+    name: V1p5CompleteSequencesEnum
     permissible_values:
       partial:
       complete:
       complete+untemplated:
       mixed:
-  V1p5PhysicalLinkage:
-    name: V1p5PhysicalLinkage
+  V1p5PhysicalLinkageEnum:
+    name: V1p5PhysicalLinkageEnum
     permissible_values:
       none:
       hetero_head-head:
       hetero_tail-head:
       hetero_prelinked:
-  V1p5FileType:
-    name: V1p5FileType
+  V1p5FileTypeEnum:
+    name: V1p5FileTypeEnum
     permissible_values:
       fasta:
       fastq:
-  V1p5ReadDirection:
-    name: V1p5ReadDirection
+  V1p5ReadDirectionEnum:
+    name: V1p5ReadDirectionEnum
     permissible_values:
       forward:
       reverse:
       mixed:
-  V1p5PairedReadDirection:
-    name: V1p5PairedReadDirection
+  V1p5PairedReadDirectionEnum:
+    name: V1p5PairedReadDirectionEnum
     permissible_values:
       forward:
       reverse:
       mixed:
-  V1p5ExpressionStudyMethod:
-    name: V1p5ExpressionStudyMethod
+  V1p5ExpressionStudyMethodEnum:
+    name: V1p5ExpressionStudyMethodEnum
     permissible_values:
       flow_cytometry:
       single-cell_transcriptome:
-  V1p5Property:
-    name: V1p5Property
-  V1p5ReceptorType:
-    name: V1p5ReceptorType
+  V1p5PropertyOntology:
+    name: V1p5PropertyOntology
+  V1p5ReceptorTypeEnum:
+    name: V1p5ReceptorTypeEnum
     permissible_values:
       Ig:
       TCR:
-  V1p5ReceptorVariableDomain1Locus:
-    name: V1p5ReceptorVariableDomain1Locus
+  V1p5ReceptorVariableDomain1LocusEnum:
+    name: V1p5ReceptorVariableDomain1LocusEnum
     permissible_values:
       IGH:
       TRB:
       TRD:
-  V1p5ReceptorVariableDomain2Locus:
-    name: V1p5ReceptorVariableDomain2Locus
+  V1p5ReceptorVariableDomain2LocusEnum:
+    name: V1p5ReceptorVariableDomain2LocusEnum
     permissible_values:
       IGI:
       IGK:
       IGL:
       TRA:
       TRG:
-  V1p5LigandType:
-    name: V1p5LigandType
+  V1p5LigandTypeEnum:
+    name: V1p5LigandTypeEnum
     permissible_values:
       MHC:peptide:
       MHC:non-peptide:
       protein:
       peptide:
       non-peptidic:
-  V1p5AntigenType:
-    name: V1p5AntigenType
+  V1p5AntigenTypeEnum:
+    name: V1p5AntigenTypeEnum
     permissible_values:
       protein:
       peptide:
       non-peptidic:
-  V1p5Antigen:
-    name: V1p5Antigen
-  V1p5AntigenSourceSpecies:
-    name: V1p5AntigenSourceSpecies
+  V1p5AntigenOntology:
+    name: V1p5AntigenOntology
+  V1p5AntigenSourceSpeciesOntology:
+    name: V1p5AntigenSourceSpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:1
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5MhcGene1:
-    name: V1p5MhcGene1
+  V1p5MhcGene1Ontology:
+    name: V1p5MhcGene1Ontology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5MhcGene2:
-    name: V1p5MhcGene2
+  V1p5MhcGene2Ontology:
+    name: V1p5MhcGene2Ontology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p5ReactivityMethod:
-    name: V1p5ReactivityMethod
+  V1p5ReactivityMethodEnum:
+    name: V1p5ReactivityMethodEnum
     permissible_values:
       SPR:
       ITC:
       ELISA:
       cytometry:
       biological_activity:
-  V1p5ReactivityReadout:
-    name: V1p5ReactivityReadout
+  V1p5ReactivityReadoutEnum:
+    name: V1p5ReactivityReadoutEnum
     permissible_values:
       binding_strength:
       cytokine_release:

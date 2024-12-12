@@ -38,10 +38,10 @@ def get_slot_range(slot_name, slot_yaml, version_prefix):
     if "type" in slot_yaml and slot_yaml["type"] == "array":
         slot_range = get_slot_range(slot_name, slot_yaml["items"], version_prefix)
     elif "enum" in slot_yaml:
-        slot_range = f"{version_prefix}{snake_to_camel_case(slot_name)}"
+        slot_range = f"{version_prefix}{snake_to_camel_case(slot_name)}Enum"
     elif "$ref" in slot_yaml:
         if slot_yaml["$ref"] == "#/Ontology":
-            slot_range = f"{version_prefix}{snake_to_camel_case(slot_name)}"
+            slot_range = f"{version_prefix}{snake_to_camel_case(slot_name)}Ontology"
         else:
             slot_range = f"{version_prefix}{slot_yaml['$ref'].lstrip('#/')}"
     elif "type" in slot_yaml and slot_yaml["type"] in ("string", "float", "integer", "boolean", "number"):
@@ -132,44 +132,46 @@ def get_all_slots(airr_yaml, keyword, version_prefix) -> dict:
 
     return all_slots
 
-def get_ontology_enum(name, slot_yaml, keyword, version_prefix):
+def get_ontology_enum(base_name, slot_yaml, keyword, version_prefix):
+    ontology_name = f"{version_prefix}{base_name}Ontology"
+
     if "ontology" in slot_yaml["x-airr"]:
         source_node = slot_yaml["x-airr"]["ontology"]["top_node"]["id"]
 
         if source_node is not None:
-            return {"name": f"{version_prefix}{name}",
+            return {"name": ontology_name,
                     "reachable_from":
                         {"source_nodes": [source_node],
                          "include_self": True,
                          "relationship_types": ["rdfs:subClassOf"]}}
         else:
             logging.error(f"**\n"
-                          f"** Error: Source node for ontology '{name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
+                          f"** Error: Source node for ontology '{base_name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
                           f"**   Expected to find some value in the field: x-airr/ontology/top_node/id\n"
                           f"**   Instead found these fields: {slot_yaml}\n"
                           f"**")
     else:
         logging.error(f"**\n"
-                      f"** Error: Ontology '{name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
+                      f"** Error: Ontology '{base_name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
                       f"**   Expected to find the field: x-airr/ontology/top_node/id\n"
                       f"**   Instead found these fields: {slot_yaml}\n"
                       f"**")
 
-    return {"name": f"{version_prefix}{name}"}
+    return {"name": ontology_name}
 
-def get_closed_vocabulary_enum(name, slot_yaml, keyword, version_prefix):
-    return {"name": f"{version_prefix}{name}",
+def get_closed_vocabulary_enum(base_name, slot_yaml, keyword, version_prefix):
+    return {"name": f"{version_prefix}{base_name}Enum",
             "permissible_values": {enum_val: None for enum_val in slot_yaml["enum"] if enum_val is not None}}
 
-def get_enum(name, slot_yaml, keyword, version_prefix):
+def get_enum(base_name, slot_yaml, keyword, version_prefix):
     if "type" in slot_yaml and slot_yaml["type"] == "array":
-        return get_enum(name, slot_yaml["items"], keyword, version_prefix)
+        return get_enum(base_name, slot_yaml["items"], keyword, version_prefix)
 
     if "$ref" in slot_yaml and slot_yaml["$ref"] == "#/Ontology":
-        return get_ontology_enum(name, slot_yaml, keyword, version_prefix)
+        return get_ontology_enum(base_name, slot_yaml, keyword, version_prefix)
 
     elif "enum" in slot_yaml:
-        return get_closed_vocabulary_enum(name, slot_yaml, keyword, version_prefix)
+        return get_closed_vocabulary_enum(base_name, slot_yaml, keyword, version_prefix)
 
 
 def get_all_enums(keyword_yaml, keyword, version_prefix):
@@ -177,27 +179,16 @@ def get_all_enums(keyword_yaml, keyword, version_prefix):
 
     for slot_name, slot_yaml in keyword_yaml["properties"].items():
         if not is_deprecated(slot_yaml):
-            name = snake_to_camel_case(slot_name)
-            new_enum = get_enum(name, slot_yaml, keyword, version_prefix)
+            base_name = snake_to_camel_case(slot_name)
+            if base_name == "Property":
+                pass
+            new_enum = get_enum(base_name, slot_yaml, keyword, version_prefix)
 
             if new_enum is not None:
-                all_enums[f"{version_prefix}{name}"] = new_enum
+                all_enums[new_enum["name"]] = new_enum
 
     return all_enums
 
-
-# def getAdditionalKeywords(keyword_yaml):
-#     additional_keywords = []
-#
-#     for slot_yaml in keyword_yaml["properties"].values():
-#         if not isDeprecated(slot_yaml):
-#             if "$ref" in slot_yaml:
-#                 additional_keywords.append(slot_yaml["$ref"].lstrip("#/"))
-#             elif "items" in slot_yaml:
-#                 if "$ref" in slot_yaml["items"]:
-#                     additional_keywords.append(slot_yaml["items"]["$ref"].lstrip("#/"))
-#
-#     return additional_keywords
 
 def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix):
     # keyword_yaml = airr_yaml[keyword]
@@ -363,7 +354,7 @@ def check_conflicts_with_akc_file(output_yaml, ak_data, file_path):
         for airr_name in output_yaml[airr_key]:
             for ak_key in ak_data.keys():
                 if ak_key in base_keys:
-                    if airr_name in ak_data[ak_key]:
+                    if ak_data[ak_key] is not None and airr_name in ak_data[ak_key]:
                         logging.warning(f"Warning: Overlapping namespace between AIRR and AKC LinkML ({file_path}): {airr_name} occurs in AIRR {airr_key} and AKC {ak_key}")
                         overlapping_names.append(airr_name)
 

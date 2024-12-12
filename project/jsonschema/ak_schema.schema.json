@@ -343,9 +343,9 @@
             "title": "Acknowledgement",
             "type": "object"
         },
-        "AgeUnit": {
+        "AgeUnitOntology": {
             "description": "",
-            "title": "AgeUnit",
+            "title": "AgeUnitOntology",
             "type": "string"
         },
         "Alignment": {
@@ -529,7 +529,7 @@
                 "curational_tags": {
                     "description": "Controlled-vocabulary tags applied to this description",
                     "items": {
-                        "$ref": "#/$defs/CurationalTags"
+                        "$ref": "#/$defs/CurationalTagsEnum"
                     },
                     "type": [
                         "array",
@@ -593,7 +593,7 @@
                     ]
                 },
                 "inference_type": {
-                    "$ref": "#/$defs/InferenceType",
+                    "$ref": "#/$defs/InferenceTypeEnum",
                     "description": "Type of inference(s) from which this gene sequence was inferred"
                 },
                 "j_cdr3_end": {
@@ -604,7 +604,7 @@
                     ]
                 },
                 "j_codon_frame": {
-                    "$ref": "#/$defs/JCodonFrame",
+                    "$ref": "#/$defs/JCodonFrameEnum",
                     "description": "Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing."
                 },
                 "j_donor_splice": {
@@ -669,7 +669,7 @@
                     ]
                 },
                 "locus": {
-                    "$ref": "#/$defs/Locus"
+                    "$ref": "#/$defs/LocusEnum"
                 },
                 "maintainer": {
                     "description": "Maintainer of this sequence record",
@@ -726,11 +726,11 @@
                     ]
                 },
                 "sequence_type": {
-                    "$ref": "#/$defs/SequenceType",
+                    "$ref": "#/$defs/SequenceTypeEnum",
                     "description": "Sequence type (V, D, J, C)"
                 },
                 "species": {
-                    "$ref": "#/$defs/Species",
+                    "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "species_subgroup": {
@@ -741,11 +741,11 @@
                     ]
                 },
                 "species_subgroup_type": {
-                    "$ref": "#/$defs/SpeciesSubgroupType",
+                    "$ref": "#/$defs/SpeciesSubgroupTypeEnum",
                     "description": ""
                 },
                 "status": {
-                    "$ref": "#/$defs/Status",
+                    "$ref": "#/$defs/StatusEnum",
                     "description": "Status of record, assumed active if the field is not present"
                 },
                 "subgroup_designation": {
@@ -909,24 +909,24 @@
             "title": "AlphaBetaTCR",
             "type": "object"
         },
-        "Antigen": {
+        "AntigenOntology": {
             "description": "",
-            "title": "Antigen",
+            "title": "AntigenOntology",
             "type": "string"
         },
-        "AntigenSourceSpecies": {
+        "AntigenSourceSpeciesOntology": {
             "description": "",
-            "title": "AntigenSourceSpecies",
+            "title": "AntigenSourceSpeciesOntology",
             "type": "string"
         },
-        "AntigenType": {
+        "AntigenTypeEnum": {
             "description": "",
             "enum": [
                 "protein",
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "AntigenType",
+            "title": "AntigenTypeEnum",
             "type": "string"
         },
         "Assay": {
@@ -1281,7 +1281,7 @@
                     ]
                 },
                 "expression_study_method": {
-                    "$ref": "#/$defs/ExpressionStudyMethod",
+                    "$ref": "#/$defs/ExpressionStudyMethodEnum",
                     "description": "Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary."
                 },
                 "rearrangements": {
@@ -1345,7 +1345,7 @@
                     ]
                 },
                 "property": {
-                    "$ref": "#/$defs/Property",
+                    "$ref": "#/$defs/PropertyOntology",
                     "description": "Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody)."
                 },
                 "property_type": {
@@ -1416,7 +1416,7 @@
                     ]
                 },
                 "cell_species": {
-                    "$ref": "#/$defs/CellSpecies",
+                    "$ref": "#/$defs/CellSpeciesOntology",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "cell_storage": {
@@ -1427,7 +1427,7 @@
                     ]
                 },
                 "cell_subset": {
-                    "$ref": "#/$defs/CellSubset",
+                    "$ref": "#/$defs/CellSubsetOntology",
                     "description": "Commonly-used designation of isolated cell population"
                 },
                 "cells_per_reaction": {
@@ -1519,7 +1519,7 @@
                     ]
                 },
                 "cell_species": {
-                    "$ref": "#/$defs/CellSpecies",
+                    "$ref": "#/$defs/CellSpeciesOntology",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "cell_storage": {
@@ -1530,7 +1530,7 @@
                     ]
                 },
                 "cell_subset": {
-                    "$ref": "#/$defs/CellSubset",
+                    "$ref": "#/$defs/CellSubsetOntology",
                     "description": "Commonly-used designation of isolated cell population"
                 },
                 "cells_per_reaction": {
@@ -1558,14 +1558,14 @@
             "title": "CellProcessing",
             "type": "object"
         },
-        "CellSpecies": {
+        "CellSpeciesOntology": {
             "description": "",
-            "title": "CellSpecies",
+            "title": "CellSpeciesOntology",
             "type": "string"
         },
-        "CellSubset": {
+        "CellSubsetOntology": {
             "description": "",
-            "title": "CellSubset",
+            "title": "CellSubsetOntology",
             "type": "string"
         },
         "Chain": {
@@ -2060,12 +2060,12 @@
             "title": "Clone",
             "type": "object"
         },
-        "CollectionTimePointRelativeUnit": {
+        "CollectionTimePointRelativeUnitOntology": {
             "description": "",
-            "title": "CollectionTimePointRelativeUnit",
+            "title": "CollectionTimePointRelativeUnitOntology",
             "type": "string"
         },
-        "CompleteSequences": {
+        "CompleteSequencesEnum": {
             "description": "",
             "enum": [
                 "partial",
@@ -2073,7 +2073,7 @@
                 "complete+untemplated",
                 "mixed"
             ],
-            "title": "CompleteSequences",
+            "title": "CompleteSequencesEnum",
             "type": "string"
         },
         "Conclusion": {
@@ -2140,7 +2140,7 @@
                     ]
                 },
                 "organism": {
-                    "$ref": "#/$defs/Species",
+                    "$ref": "#/$defs/SpeciesOntology",
                     "description": "The type of organism that the conclusion is about"
                 },
                 "result": {
@@ -2221,7 +2221,7 @@
                     ]
                 },
                 "organism": {
-                    "$ref": "#/$defs/Species",
+                    "$ref": "#/$defs/SpeciesOntology",
                     "description": "The type of organism that the conclusion is about"
                 },
                 "result": {
@@ -2236,13 +2236,13 @@
             "title": "Conclusion",
             "type": "object"
         },
-        "CurationalTags": {
+        "CurationalTagsEnum": {
             "description": "",
             "enum": [
                 "likely_truncated",
                 "likely_full_length"
             ],
-            "title": "CurationalTags",
+            "title": "CurationalTagsEnum",
             "type": "string"
         },
         "DataProcessing": {
@@ -2461,13 +2461,13 @@
             "title": "DeletedGene",
             "type": "object"
         },
-        "Derivation": {
+        "DerivationEnum": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA"
             ],
-            "title": "Derivation",
+            "title": "DerivationEnum",
             "type": "string"
         },
         "Diagnosis": {
@@ -2475,7 +2475,7 @@
             "description": "",
             "properties": {
                 "disease_diagnosis": {
-                    "$ref": "#/$defs/DiseaseDiagnosis",
+                    "$ref": "#/$defs/DiseaseDiagnosisOntology",
                     "description": "Diagnosis of subject"
                 },
                 "disease_length": {
@@ -2531,9 +2531,9 @@
             "title": "Diagnosis",
             "type": "object"
         },
-        "DiseaseDiagnosis": {
+        "DiseaseDiagnosisOntology": {
             "description": "",
-            "title": "DiseaseDiagnosis",
+            "title": "DiseaseDiagnosisOntology",
             "type": "string"
         },
         "DiseaseOntology": {
@@ -2704,22 +2704,22 @@
             "title": "ExposureMaterialOntology",
             "type": "string"
         },
-        "ExpressionStudyMethod": {
+        "ExpressionStudyMethodEnum": {
             "description": "",
             "enum": [
                 "flow_cytometry",
                 "single-cell_transcriptome"
             ],
-            "title": "ExpressionStudyMethod",
+            "title": "ExpressionStudyMethodEnum",
             "type": "string"
         },
-        "FileType": {
+        "FileTypeEnum": {
             "description": "",
             "enum": [
                 "fasta",
                 "fastq"
             ],
-            "title": "FileType",
+            "title": "FileTypeEnum",
             "type": "string"
         },
         "GammaDeltaTCR": {
@@ -2824,9 +2824,9 @@
             "title": "GammaDeltaTCR",
             "type": "object"
         },
-        "Gene": {
+        "GeneOntology": {
             "description": "",
-            "title": "Gene",
+            "title": "GeneOntology",
             "type": "string"
         },
         "Genotype": {
@@ -2854,11 +2854,11 @@
                     ]
                 },
                 "inference_process": {
-                    "$ref": "#/$defs/InferenceProcess",
+                    "$ref": "#/$defs/InferenceProcessEnum",
                     "description": "Information on how the genotype was acquired. Controlled vocabulary."
                 },
                 "locus": {
-                    "$ref": "#/$defs/Locus"
+                    "$ref": "#/$defs/LocusEnum"
                 },
                 "receptor_genotype_id": {
                     "description": "A unique identifier within the file for this Receptor Genotype, typically generated by the  repository hosting the schema, for example from the underlying ID of the database record.",
@@ -3008,7 +3008,7 @@
                     ]
                 },
                 "locus": {
-                    "$ref": "#/$defs/Locus"
+                    "$ref": "#/$defs/LocusEnum"
                 },
                 "pub_ids": {
                     "type": [
@@ -3038,7 +3038,7 @@
                     ]
                 },
                 "species": {
-                    "$ref": "#/$defs/Species",
+                    "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "species_subgroup": {
@@ -3049,7 +3049,7 @@
                     ]
                 },
                 "species_subgroup_type": {
-                    "$ref": "#/$defs/SpeciesSubgroupType",
+                    "$ref": "#/$defs/SpeciesSubgroupTypeEnum",
                     "description": ""
                 }
             },
@@ -3199,23 +3199,23 @@
             "title": "ImmuneSystem",
             "type": "object"
         },
-        "InferenceProcess": {
+        "InferenceProcessEnum": {
             "description": "",
             "enum": [
                 "genomic_sequencing",
                 "repertoire_sequencing"
             ],
-            "title": "InferenceProcess",
+            "title": "InferenceProcessEnum",
             "type": "string"
         },
-        "InferenceType": {
+        "InferenceTypeEnum": {
             "description": "",
             "enum": [
                 "genomic_and_rearranged",
                 "genomic_only",
                 "rearranged_only"
             ],
-            "title": "InferenceType",
+            "title": "InferenceTypeEnum",
             "type": "string"
         },
         "Investigation": {
@@ -3320,7 +3320,7 @@
                     ]
                 },
                 "study_type": {
-                    "$ref": "#/$defs/StudyType",
+                    "$ref": "#/$defs/StudyTypeOntology",
                     "description": "Type of study design"
                 },
                 "update_date": {
@@ -3440,7 +3440,7 @@
                     ]
                 },
                 "study_type": {
-                    "$ref": "#/$defs/StudyType",
+                    "$ref": "#/$defs/StudyTypeOntology",
                     "description": "Type of study design"
                 },
                 "update_date": {
@@ -3456,17 +3456,17 @@
             "title": "Investigation",
             "type": "object"
         },
-        "JCodonFrame": {
+        "JCodonFrameEnum": {
             "description": "",
             "enum": [
                 "1",
                 "2",
                 "3"
             ],
-            "title": "JCodonFrame",
+            "title": "JCodonFrameEnum",
             "type": "string"
         },
-        "KeywordsStudy": {
+        "KeywordsStudyEnum": {
             "description": "",
             "enum": [
                 "contains_ig",
@@ -3477,10 +3477,10 @@
                 "contains_schema_cell",
                 "contains_schema_receptor"
             ],
-            "title": "KeywordsStudy",
+            "title": "KeywordsStudyEnum",
             "type": "string"
         },
-        "LibraryGenerationMethod": {
+        "LibraryGenerationMethodEnum": {
             "description": "",
             "enum": [
                 "PCR",
@@ -3496,7 +3496,7 @@
                 "RT(specific)+TS",
                 "other"
             ],
-            "title": "LibraryGenerationMethod",
+            "title": "LibraryGenerationMethodEnum",
             "type": "string"
         },
         "LibraryPreparationProcessing": {
@@ -3522,7 +3522,7 @@
                     ]
                 },
                 "library_generation_method": {
-                    "$ref": "#/$defs/LibraryGenerationMethod",
+                    "$ref": "#/$defs/LibraryGenerationMethodEnum",
                     "description": "Generic type of library generation"
                 },
                 "library_generation_protocol": {
@@ -3734,7 +3734,7 @@
             "title": "LifeEvent",
             "type": "object"
         },
-        "LigandType": {
+        "LigandTypeEnum": {
             "description": "",
             "enum": [
                 "MHC:peptide",
@@ -3743,10 +3743,10 @@
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "LigandType",
+            "title": "LigandTypeEnum",
             "type": "string"
         },
-        "Locus": {
+        "LocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
@@ -3758,7 +3758,7 @@
                 "TRG",
                 "TRD"
             ],
-            "title": "Locus",
+            "title": "LocusEnum",
             "type": "string"
         },
         "MHCAllele": {
@@ -3772,7 +3772,7 @@
                     ]
                 },
                 "gene": {
-                    "$ref": "#/$defs/Gene",
+                    "$ref": "#/$defs/GeneOntology",
                     "description": "The MHC gene to which the described allele belongs"
                 },
                 "reference_set_ref": {
@@ -3801,7 +3801,7 @@
                     ]
                 },
                 "mhc_class": {
-                    "$ref": "#/$defs/MhcClass"
+                    "$ref": "#/$defs/MhcClassEnum"
                 },
                 "mhc_genotype_id": {
                     "description": "A unique identifier for this MHCGenotype, assumed to be unique in the context of the study",
@@ -3846,24 +3846,24 @@
             "title": "MHCGenotypeSet",
             "type": "object"
         },
-        "MhcClass": {
+        "MhcClassEnum": {
             "description": "",
             "enum": [
                 "MHC-I",
                 "MHC-II",
                 "MHC-nonclassical"
             ],
-            "title": "MhcClass",
+            "title": "MhcClassEnum",
             "type": "string"
         },
-        "MhcGene1": {
+        "MhcGene1Ontology": {
             "description": "",
-            "title": "MhcGene1",
+            "title": "MhcGene1Ontology",
             "type": "string"
         },
-        "MhcGene2": {
+        "MhcGene2Ontology": {
             "description": "",
-            "title": "MhcGene2",
+            "title": "MhcGene2Ontology",
             "type": "string"
         },
         "ModelSpecification": {
@@ -3962,7 +3962,7 @@
             "description": "",
             "properties": {
                 "complete_sequences": {
-                    "$ref": "#/$defs/CompleteSequences",
+                    "$ref": "#/$defs/CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "library_generation_kit_version": {
@@ -3973,7 +3973,7 @@
                     ]
                 },
                 "library_generation_method": {
-                    "$ref": "#/$defs/LibraryGenerationMethod",
+                    "$ref": "#/$defs/LibraryGenerationMethodEnum",
                     "description": "Generic type of library generation"
                 },
                 "library_generation_protocol": {
@@ -3994,7 +3994,7 @@
                     ]
                 },
                 "physical_linkage": {
-                    "$ref": "#/$defs/PhysicalLinkage",
+                    "$ref": "#/$defs/PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "template_amount": {
@@ -4005,11 +4005,11 @@
                     ]
                 },
                 "template_amount_unit": {
-                    "$ref": "#/$defs/TemplateAmountUnit",
+                    "$ref": "#/$defs/TemplateAmountUnitOntology",
                     "description": "Unit of template amount"
                 },
                 "template_class": {
-                    "$ref": "#/$defs/TemplateClass",
+                    "$ref": "#/$defs/TemplateClassEnum",
                     "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
                 },
                 "template_quality": {
@@ -4023,13 +4023,13 @@
             "title": "NucleicAcidProcessing",
             "type": "object"
         },
-        "ObservationType": {
+        "ObservationTypeEnum": {
             "description": "",
             "enum": [
                 "direct_sequencing",
                 "inference_from_repertoire"
             ],
-            "title": "ObservationType",
+            "title": "ObservationTypeEnum",
             "type": "string"
         },
         "PCRTarget": {
@@ -4044,7 +4044,7 @@
                     ]
                 },
                 "pcr_target_locus": {
-                    "$ref": "#/$defs/PcrTargetLocus",
+                    "$ref": "#/$defs/PcrTargetLocusEnum",
                     "description": "Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature."
                 },
                 "reverse_pcr_primer_target_location": {
@@ -4058,14 +4058,14 @@
             "title": "PCRTarget",
             "type": "object"
         },
-        "PairedReadDirection": {
+        "PairedReadDirectionEnum": {
             "description": "",
             "enum": [
                 "forward",
                 "reverse",
                 "mixed"
             ],
-            "title": "PairedReadDirection",
+            "title": "PairedReadDirectionEnum",
             "type": "string"
         },
         "Participant": {
@@ -4087,7 +4087,7 @@
                     ]
                 },
                 "age_unit": {
-                    "$ref": "#/$defs/AgeUnit",
+                    "$ref": "#/$defs/AgeUnitOntology",
                     "description": "Unit of age range"
                 },
                 "akc_id": {
@@ -4135,7 +4135,7 @@
                     ]
                 },
                 "species": {
-                    "$ref": "#/$defs/Species",
+                    "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "strain": {
@@ -4175,7 +4175,7 @@
                     ]
                 },
                 "age_unit": {
-                    "$ref": "#/$defs/AgeUnit",
+                    "$ref": "#/$defs/AgeUnitOntology",
                     "description": "Unit of age range"
                 },
                 "akc_id": {
@@ -4223,7 +4223,7 @@
                     ]
                 },
                 "species": {
-                    "$ref": "#/$defs/Species",
+                    "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "strain": {
@@ -4242,7 +4242,7 @@
             "title": "Participant",
             "type": "object"
         },
-        "PcrTargetLocus": {
+        "PcrTargetLocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
@@ -4254,7 +4254,7 @@
                 "TRD",
                 "TRG"
             ],
-            "title": "PcrTargetLocus",
+            "title": "PcrTargetLocusEnum",
             "type": "string"
         },
         "PeptidicEpitope": {
@@ -4386,7 +4386,7 @@
             "title": "PhenotypicSexOntology",
             "type": "string"
         },
-        "PhysicalLinkage": {
+        "PhysicalLinkageEnum": {
             "description": "",
             "enum": [
                 "none",
@@ -4394,12 +4394,12 @@
                 "hetero_tail-head",
                 "hetero_prelinked"
             ],
-            "title": "PhysicalLinkage",
+            "title": "PhysicalLinkageEnum",
             "type": "string"
         },
-        "Property": {
+        "PropertyOntology": {
             "description": "",
-            "title": "Property",
+            "title": "PropertyOntology",
             "type": "string"
         },
         "RaceOntology": {
@@ -4438,7 +4438,7 @@
             "title": "RaceOntology",
             "type": "string"
         },
-        "ReactivityMethod": {
+        "ReactivityMethodEnum": {
             "description": "",
             "enum": [
                 "SPR",
@@ -4447,10 +4447,10 @@
                 "cytometry",
                 "biological_activity"
             ],
-            "title": "ReactivityMethod",
+            "title": "ReactivityMethodEnum",
             "type": "string"
         },
-        "ReactivityReadout": {
+        "ReactivityReadoutEnum": {
             "description": "",
             "enum": [
                 "binding_strength",
@@ -4460,17 +4460,17 @@
                 "off_rate",
                 "pathogen_inhibition"
             ],
-            "title": "ReactivityReadout",
+            "title": "ReactivityReadoutEnum",
             "type": "string"
         },
-        "ReadDirection": {
+        "ReadDirectionEnum": {
             "description": "",
             "enum": [
                 "forward",
                 "reverse",
                 "mixed"
             ],
-            "title": "ReadDirection",
+            "title": "ReadDirectionEnum",
             "type": "string"
         },
         "RearrangedSequence": {
@@ -4491,11 +4491,11 @@
                     ]
                 },
                 "derivation": {
-                    "$ref": "#/$defs/Derivation",
+                    "$ref": "#/$defs/DerivationEnum",
                     "description": "The class of nucleic acid that was used as primary starting material"
                 },
                 "observation_type": {
-                    "$ref": "#/$defs/ObservationType",
+                    "$ref": "#/$defs/ObservationTypeEnum",
                     "description": "The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data."
                 },
                 "repository_name": {
@@ -5242,7 +5242,7 @@
                     ]
                 },
                 "locus": {
-                    "$ref": "#/$defs/Locus"
+                    "$ref": "#/$defs/LocusEnum"
                 },
                 "n1_length": {
                     "description": "Number of untemplated nucleotides 5' of the first or only D gene alignment.",
@@ -5613,7 +5613,7 @@
                     ]
                 },
                 "receptor_type": {
-                    "$ref": "#/$defs/ReceptorType",
+                    "$ref": "#/$defs/ReceptorTypeEnum",
                     "description": "The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR)."
                 },
                 "receptor_variable_domain_1_aa": {
@@ -5624,7 +5624,7 @@
                     ]
                 },
                 "receptor_variable_domain_1_locus": {
-                    "$ref": "#/$defs/ReceptorVariableDomain1Locus",
+                    "$ref": "#/$defs/ReceptorVariableDomain1LocusEnum",
                     "description": "Locus from which the variable domain in receptor_variable_domain_1_aa originates"
                 },
                 "receptor_variable_domain_2_aa": {
@@ -5635,7 +5635,7 @@
                     ]
                 },
                 "receptor_variable_domain_2_locus": {
-                    "$ref": "#/$defs/ReceptorVariableDomain2Locus",
+                    "$ref": "#/$defs/ReceptorVariableDomain2LocusEnum",
                     "description": "Locus from which the variable domain in receptor_variable_domain_2_aa originates"
                 }
             },
@@ -5647,19 +5647,19 @@
             "description": "",
             "properties": {
                 "antigen": {
-                    "$ref": "#/$defs/Antigen",
+                    "$ref": "#/$defs/AntigenOntology",
                     "description": "The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule."
                 },
                 "antigen_source_species": {
-                    "$ref": "#/$defs/AntigenSourceSpecies",
+                    "$ref": "#/$defs/AntigenSourceSpeciesOntology",
                     "description": "The species from which the antigen was isolated"
                 },
                 "antigen_type": {
-                    "$ref": "#/$defs/AntigenType",
+                    "$ref": "#/$defs/AntigenTypeEnum",
                     "description": "The type of antigen before processing by the immune system."
                 },
                 "ligand_type": {
-                    "$ref": "#/$defs/LigandType",
+                    "$ref": "#/$defs/LigandTypeEnum",
                     "description": "Classification of ligand binding to receptor"
                 },
                 "mhc_allele_1": {
@@ -5677,14 +5677,14 @@
                     ]
                 },
                 "mhc_class": {
-                    "$ref": "#/$defs/MhcClass"
+                    "$ref": "#/$defs/MhcClassEnum"
                 },
                 "mhc_gene_1": {
-                    "$ref": "#/$defs/MhcGene1",
+                    "$ref": "#/$defs/MhcGene1Ontology",
                     "description": "The MHC gene to which the mhc_allele_1 belongs"
                 },
                 "mhc_gene_2": {
-                    "$ref": "#/$defs/MhcGene2",
+                    "$ref": "#/$defs/MhcGene2Ontology",
                     "description": "The MHC gene to which the mhc_allele_2 belongs"
                 },
                 "peptide_end": {
@@ -5702,11 +5702,11 @@
                     ]
                 },
                 "reactivity_method": {
-                    "$ref": "#/$defs/ReactivityMethod",
+                    "$ref": "#/$defs/ReactivityMethodEnum",
                     "description": "The methodology used to assess expression (assay implemented in experiment)"
                 },
                 "reactivity_readout": {
-                    "$ref": "#/$defs/ReactivityReadout",
+                    "$ref": "#/$defs/ReactivityReadoutEnum",
                     "description": "Reactivity measurement read-out"
                 },
                 "reactivity_unit": {
@@ -5743,7 +5743,7 @@
                     ]
                 },
                 "complete_sequences": {
-                    "$ref": "#/$defs/CompleteSequences",
+                    "$ref": "#/$defs/CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "description": {
@@ -5771,7 +5771,7 @@
                     ]
                 },
                 "physical_linkage": {
-                    "$ref": "#/$defs/PhysicalLinkage",
+                    "$ref": "#/$defs/PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "specimen": {
@@ -5830,7 +5830,7 @@
                     ]
                 },
                 "complete_sequences": {
-                    "$ref": "#/$defs/CompleteSequences",
+                    "$ref": "#/$defs/CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "description": {
@@ -5858,7 +5858,7 @@
                     ]
                 },
                 "physical_linkage": {
-                    "$ref": "#/$defs/PhysicalLinkage",
+                    "$ref": "#/$defs/PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "specimen": {
@@ -5899,26 +5899,26 @@
             "title": "ReceptorRepertoireSequencingAssay",
             "type": "object"
         },
-        "ReceptorType": {
+        "ReceptorTypeEnum": {
             "description": "",
             "enum": [
                 "Ig",
                 "TCR"
             ],
-            "title": "ReceptorType",
+            "title": "ReceptorTypeEnum",
             "type": "string"
         },
-        "ReceptorVariableDomain1Locus": {
+        "ReceptorVariableDomain1LocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
                 "TRB",
                 "TRD"
             ],
-            "title": "ReceptorVariableDomain1Locus",
+            "title": "ReceptorVariableDomain1LocusEnum",
             "type": "string"
         },
-        "ReceptorVariableDomain2Locus": {
+        "ReceptorVariableDomain2LocusEnum": {
             "description": "",
             "enum": [
                 "IGI",
@@ -5927,7 +5927,7 @@
                 "TRA",
                 "TRG"
             ],
-            "title": "ReceptorVariableDomain2Locus",
+            "title": "ReceptorVariableDomain2LocusEnum",
             "type": "string"
         },
         "Reference": {
@@ -6276,7 +6276,7 @@
                     ]
                 },
                 "collection_time_point_relative_unit": {
-                    "$ref": "#/$defs/CollectionTimePointRelativeUnit",
+                    "$ref": "#/$defs/CollectionTimePointRelativeUnitOntology",
                     "description": "Unit of Sample collection time"
                 },
                 "disease_state_sample": {
@@ -6301,7 +6301,7 @@
                     ]
                 },
                 "tissue": {
-                    "$ref": "#/$defs/Tissue",
+                    "$ref": "#/$defs/TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 }
             },
@@ -6362,7 +6362,7 @@
                     ]
                 },
                 "cell_species": {
-                    "$ref": "#/$defs/CellSpecies",
+                    "$ref": "#/$defs/CellSpeciesOntology",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "cell_storage": {
@@ -6373,7 +6373,7 @@
                     ]
                 },
                 "cell_subset": {
-                    "$ref": "#/$defs/CellSubset",
+                    "$ref": "#/$defs/CellSubsetOntology",
                     "description": "Commonly-used designation of isolated cell population"
                 },
                 "cells_per_reaction": {
@@ -6398,11 +6398,11 @@
                     ]
                 },
                 "collection_time_point_relative_unit": {
-                    "$ref": "#/$defs/CollectionTimePointRelativeUnit",
+                    "$ref": "#/$defs/CollectionTimePointRelativeUnitOntology",
                     "description": "Unit of Sample collection time"
                 },
                 "complete_sequences": {
-                    "$ref": "#/$defs/CompleteSequences",
+                    "$ref": "#/$defs/CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "disease_state_sample": {
@@ -6420,7 +6420,7 @@
                     ]
                 },
                 "library_generation_method": {
-                    "$ref": "#/$defs/LibraryGenerationMethod",
+                    "$ref": "#/$defs/LibraryGenerationMethodEnum",
                     "description": "Generic type of library generation"
                 },
                 "library_generation_protocol": {
@@ -6441,7 +6441,7 @@
                     ]
                 },
                 "physical_linkage": {
-                    "$ref": "#/$defs/PhysicalLinkage",
+                    "$ref": "#/$defs/PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "sample_id": {
@@ -6526,11 +6526,11 @@
                     ]
                 },
                 "template_amount_unit": {
-                    "$ref": "#/$defs/TemplateAmountUnit",
+                    "$ref": "#/$defs/TemplateAmountUnitOntology",
                     "description": "Unit of template amount"
                 },
                 "template_class": {
-                    "$ref": "#/$defs/TemplateClass",
+                    "$ref": "#/$defs/TemplateClassEnum",
                     "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
                 },
                 "template_quality": {
@@ -6541,7 +6541,7 @@
                     ]
                 },
                 "tissue": {
-                    "$ref": "#/$defs/Tissue",
+                    "$ref": "#/$defs/TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 },
                 "tissue_processing": {
@@ -6674,7 +6674,7 @@
             "title": "SequenceDelineationV",
             "type": "object"
         },
-        "SequenceType": {
+        "SequenceTypeEnum": {
             "description": "",
             "enum": [
                 "V",
@@ -6682,7 +6682,7 @@
                 "J",
                 "C"
             ],
-            "title": "SequenceType",
+            "title": "SequenceTypeEnum",
             "type": "string"
         },
         "SequencingData": {
@@ -6690,7 +6690,7 @@
             "description": "",
             "properties": {
                 "file_type": {
-                    "$ref": "#/$defs/FileType",
+                    "$ref": "#/$defs/FileTypeEnum",
                     "description": "File format for the raw reads or sequences"
                 },
                 "filename": {
@@ -6722,7 +6722,7 @@
                     ]
                 },
                 "paired_read_direction": {
-                    "$ref": "#/$defs/PairedReadDirection",
+                    "$ref": "#/$defs/PairedReadDirectionEnum",
                     "description": "Read direction for the second file in paired-read sequencing"
                 },
                 "paired_read_length": {
@@ -6733,7 +6733,7 @@
                     ]
                 },
                 "read_direction": {
-                    "$ref": "#/$defs/ReadDirection",
+                    "$ref": "#/$defs/ReadDirectionEnum",
                     "description": "Read direction for the raw reads or sequences. The first file in paired-read sequencing."
                 },
                 "read_length": {
@@ -6816,7 +6816,7 @@
             "title": "SequencingRun",
             "type": "object"
         },
-        "Sex": {
+        "SexEnum": {
             "description": "",
             "enum": [
                 "male",
@@ -6825,7 +6825,7 @@
                 "hermaphrodite",
                 "intersex"
             ],
-            "title": "Sex",
+            "title": "SexEnum",
             "type": "string"
         },
         "SimilarityCalculation": {
@@ -6886,21 +6886,12 @@
             "title": "Simulation",
             "type": "object"
         },
-        "Species": {
-            "description": "",
-            "title": "Species",
-            "type": "string"
-        },
         "SpeciesOntology": {
             "description": "",
-            "enum": [
-                "Homo sapiens (human)",
-                "Mus musculus (mouse)"
-            ],
             "title": "SpeciesOntology",
             "type": "string"
         },
-        "SpeciesSubgroupType": {
+        "SpeciesSubgroupTypeEnum": {
             "description": "",
             "enum": [
                 "breed",
@@ -6909,7 +6900,7 @@
                 "outbred",
                 "locational"
             ],
-            "title": "SpeciesSubgroupType",
+            "title": "SpeciesSubgroupTypeEnum",
             "type": "string"
         },
         "Specimen": {
@@ -6956,7 +6947,7 @@
                     ]
                 },
                 "tissue": {
-                    "$ref": "#/$defs/Tissue",
+                    "$ref": "#/$defs/TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 }
             },
@@ -7150,7 +7141,7 @@
                     ]
                 },
                 "tissue": {
-                    "$ref": "#/$defs/Tissue",
+                    "$ref": "#/$defs/TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 }
             },
@@ -7158,7 +7149,7 @@
             "title": "Specimen",
             "type": "object"
         },
-        "Status": {
+        "StatusEnum": {
             "description": "",
             "enum": [
                 "active",
@@ -7166,7 +7157,7 @@
                 "retired",
                 "withdrawn"
             ],
-            "title": "Status",
+            "title": "StatusEnum",
             "type": "string"
         },
         "StrainEnum": {
@@ -7185,13 +7176,13 @@
             "title": "StrainEnum",
             "type": "string"
         },
-        "Strand": {
+        "StrandEnum": {
             "description": "",
             "enum": [
                 "+",
                 "-"
             ],
-            "title": "Strand",
+            "title": "StrandEnum",
             "type": "string"
         },
         "Study": {
@@ -7238,7 +7229,7 @@
                 "keywords_study": {
                     "description": "Keywords describing properties of one or more data sets in a study. \"contains_schema\" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that \"contains_paired_chain\" but does not \"contains_schema_cell\").",
                     "items": {
-                        "$ref": "#/$defs/KeywordsStudy"
+                        "$ref": "#/$defs/KeywordsStudyEnum"
                     },
                     "type": [
                         "array",
@@ -7292,7 +7283,7 @@
                     ]
                 },
                 "study_type": {
-                    "$ref": "#/$defs/StudyType",
+                    "$ref": "#/$defs/StudyTypeOntology",
                     "description": "Type of study design"
                 },
                 "submitted_by": {
@@ -7480,9 +7471,9 @@
             "title": "StudyEvent",
             "type": "object"
         },
-        "StudyType": {
+        "StudyTypeOntology": {
             "description": "",
-            "title": "StudyType",
+            "title": "StudyTypeOntology",
             "type": "string"
         },
         "Subject": {
@@ -7511,7 +7502,7 @@
                     ]
                 },
                 "age_unit": {
-                    "$ref": "#/$defs/AgeUnit",
+                    "$ref": "#/$defs/AgeUnitOntology",
                     "description": "Unit of age range"
                 },
                 "ancestry_population": {
@@ -7571,11 +7562,11 @@
                     ]
                 },
                 "sex": {
-                    "$ref": "#/$defs/Sex",
+                    "$ref": "#/$defs/SexEnum",
                     "description": "Biological sex of subject"
                 },
                 "species": {
-                    "$ref": "#/$defs/Species",
+                    "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "strain_name": {
@@ -7905,18 +7896,18 @@
             "title": "TCellReceptor",
             "type": "object"
         },
-        "TemplateAmountUnit": {
+        "TemplateAmountUnitOntology": {
             "description": "",
-            "title": "TemplateAmountUnit",
+            "title": "TemplateAmountUnitOntology",
             "type": "string"
         },
-        "TemplateClass": {
+        "TemplateClassEnum": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA"
             ],
-            "title": "TemplateClass",
+            "title": "TemplateClassEnum",
             "type": "string"
         },
         "TimePoint": {
@@ -7931,7 +7922,7 @@
                     ]
                 },
                 "time_point_unit": {
-                    "$ref": "#/$defs/TimePointUnit",
+                    "$ref": "#/$defs/TimePointUnitOntology",
                     "description": "Unit of the time point"
                 },
                 "time_point_value": {
@@ -7945,14 +7936,14 @@
             "title": "TimePoint",
             "type": "object"
         },
-        "TimePointUnit": {
+        "TimePointUnitOntology": {
             "description": "",
-            "title": "TimePointUnit",
+            "title": "TimePointUnitOntology",
             "type": "string"
         },
-        "Tissue": {
+        "TissueOntology": {
             "description": "",
-            "title": "Tissue",
+            "title": "TissueOntology",
             "type": "string"
         },
         "Tree": {
@@ -8085,16 +8076,16 @@
                     ]
                 },
                 "strand": {
-                    "$ref": "#/$defs/Strand",
+                    "$ref": "#/$defs/StrandEnum",
                     "description": "sense (+ or -)"
                 }
             },
             "title": "UnrearrangedSequence",
             "type": "object"
         },
-        "V1p4Affiliation": {
+        "V1p4AffiliationOntology": {
             "description": "",
-            "title": "V1p4Affiliation",
+            "title": "V1p4AffiliationOntology",
             "type": "string"
         },
         "V1p4Alignment": {
@@ -8278,7 +8269,7 @@
                 "V1p4curational_tags": {
                     "description": "Controlled-vocabulary tags applied to this description",
                     "items": {
-                        "$ref": "#/$defs/V1p4CurationalTags"
+                        "$ref": "#/$defs/V1p4CurationalTagsEnum"
                     },
                     "type": [
                         "array",
@@ -8342,7 +8333,7 @@
                     ]
                 },
                 "V1p4inference_type": {
-                    "$ref": "#/$defs/V1p4InferenceType",
+                    "$ref": "#/$defs/V1p4InferenceTypeEnum",
                     "description": "Type of inference(s) from which this gene sequence was inferred"
                 },
                 "V1p4j_cdr3_end": {
@@ -8353,7 +8344,7 @@
                     ]
                 },
                 "V1p4j_codon_frame": {
-                    "$ref": "#/$defs/V1p4JCodonFrame",
+                    "$ref": "#/$defs/V1p4JCodonFrameEnum",
                     "description": "Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing."
                 },
                 "V1p4j_donor_splice": {
@@ -8412,7 +8403,7 @@
                     ]
                 },
                 "V1p4locus": {
-                    "$ref": "#/$defs/V1p4Locus"
+                    "$ref": "#/$defs/V1p4LocusEnum"
                 },
                 "V1p4paralogs": {
                     "description": "Gene symbols of any paralogs",
@@ -8462,11 +8453,11 @@
                     ]
                 },
                 "V1p4sequence_type": {
-                    "$ref": "#/$defs/V1p4SequenceType",
+                    "$ref": "#/$defs/V1p4SequenceTypeEnum",
                     "description": "Sequence type (V, D, J, C)"
                 },
                 "V1p4species": {
-                    "$ref": "#/$defs/V1p4Species",
+                    "$ref": "#/$defs/V1p4SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "V1p4species_subgroup": {
@@ -8477,11 +8468,11 @@
                     ]
                 },
                 "V1p4species_subgroup_type": {
-                    "$ref": "#/$defs/V1p4SpeciesSubgroupType",
+                    "$ref": "#/$defs/V1p4SpeciesSubgroupTypeEnum",
                     "description": ""
                 },
                 "V1p4status": {
-                    "$ref": "#/$defs/V1p4Status",
+                    "$ref": "#/$defs/V1p4StatusEnum",
                     "description": "Status of record, assumed active if the field is not present"
                 },
                 "V1p4subgroup_designation": {
@@ -8543,29 +8534,29 @@
             "title": "V1p4AlleleDescription",
             "type": "object"
         },
-        "V1p4AncestryPopulation": {
+        "V1p4AncestryPopulationOntology": {
             "description": "",
-            "title": "V1p4AncestryPopulation",
+            "title": "V1p4AncestryPopulationOntology",
             "type": "string"
         },
-        "V1p4Antigen": {
+        "V1p4AntigenOntology": {
             "description": "",
-            "title": "V1p4Antigen",
+            "title": "V1p4AntigenOntology",
             "type": "string"
         },
-        "V1p4AntigenSourceSpecies": {
+        "V1p4AntigenSourceSpeciesOntology": {
             "description": "",
-            "title": "V1p4AntigenSourceSpecies",
+            "title": "V1p4AntigenSourceSpeciesOntology",
             "type": "string"
         },
-        "V1p4AntigenType": {
+        "V1p4AntigenTypeEnum": {
             "description": "",
             "enum": [
                 "protein",
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "V1p4AntigenType",
+            "title": "V1p4AntigenTypeEnum",
             "type": "string"
         },
         "V1p4Cell": {
@@ -8593,7 +8584,7 @@
                     ]
                 },
                 "V1p4cell_subset": {
-                    "$ref": "#/$defs/V1p4CellSubset"
+                    "$ref": "#/$defs/V1p4CellSubsetOntology"
                 },
                 "V1p4data_processing_id": {
                     "type": [
@@ -8675,7 +8666,7 @@
                     ]
                 },
                 "V1p4cell_species": {
-                    "$ref": "#/$defs/V1p4CellSpecies",
+                    "$ref": "#/$defs/V1p4CellSpeciesOntology",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "V1p4cell_storage": {
@@ -8686,7 +8677,7 @@
                     ]
                 },
                 "V1p4cell_subset": {
-                    "$ref": "#/$defs/V1p4CellSubset"
+                    "$ref": "#/$defs/V1p4CellSubsetOntology"
                 },
                 "V1p4cells_per_reaction": {
                     "description": "Number of cells for each biological replicate",
@@ -8713,14 +8704,14 @@
             "title": "V1p4CellProcessing",
             "type": "object"
         },
-        "V1p4CellSpecies": {
+        "V1p4CellSpeciesOntology": {
             "description": "",
-            "title": "V1p4CellSpecies",
+            "title": "V1p4CellSpeciesOntology",
             "type": "string"
         },
-        "V1p4CellSubset": {
+        "V1p4CellSubsetOntology": {
             "description": "",
-            "title": "V1p4CellSubset",
+            "title": "V1p4CellSubsetOntology",
             "type": "string"
         },
         "V1p4Clone": {
@@ -8886,12 +8877,12 @@
             "title": "V1p4Clone",
             "type": "object"
         },
-        "V1p4CollectionLocation": {
+        "V1p4CollectionLocationOntology": {
             "description": "",
-            "title": "V1p4CollectionLocation",
+            "title": "V1p4CollectionLocationOntology",
             "type": "string"
         },
-        "V1p4CompleteSequences": {
+        "V1p4CompleteSequencesEnum": {
             "description": "",
             "enum": [
                 "partial",
@@ -8899,7 +8890,7 @@
                 "complete+untemplated",
                 "mixed"
             ],
-            "title": "V1p4CompleteSequences",
+            "title": "V1p4CompleteSequencesEnum",
             "type": "string"
         },
         "V1p4Contributor": {
@@ -8907,7 +8898,7 @@
             "description": "",
             "properties": {
                 "V1p4affiliation": {
-                    "$ref": "#/$defs/V1p4Affiliation",
+                    "$ref": "#/$defs/V1p4AffiliationOntology",
                     "description": "ROR of the contributor's primary affiliation. Note that ROR are only minted for institutions, not from individuals institutes, divisions or departments."
                 },
                 "V1p4affiliation_department": {
@@ -8942,7 +8933,7 @@
                     ]
                 },
                 "V1p4orcid_id": {
-                    "$ref": "#/$defs/V1p4OrcidId",
+                    "$ref": "#/$defs/V1p4OrcidIdOntology",
                     "description": "ORCID identifier of the contributor. Note that if present, the label of the ORCID record should take precedence over the name reported in the `name` property."
                 }
             },
@@ -8954,24 +8945,24 @@
             "description": "",
             "properties": {
                 "V1p4degree": {
-                    "$ref": "#/$defs/V1p4Degree",
+                    "$ref": "#/$defs/V1p4DegreeEnum",
                     "description": "Optional specification of the degree of contribution, should be used if multiple individuals serve the same role."
                 },
                 "V1p4role": {
-                    "$ref": "#/$defs/V1p4Role",
+                    "$ref": "#/$defs/V1p4RoleEnum",
                     "description": "Role according to CRediT taxonomy"
                 }
             },
             "title": "V1p4ContributorContribution",
             "type": "object"
         },
-        "V1p4CurationalTags": {
+        "V1p4CurationalTagsEnum": {
             "description": "",
             "enum": [
                 "likely_truncated",
                 "likely_full_length"
             ],
-            "title": "V1p4CurationalTags",
+            "title": "V1p4CurationalTagsEnum",
             "type": "string"
         },
         "V1p4DataProcessing": {
@@ -9067,14 +9058,14 @@
             "title": "V1p4DataProcessing",
             "type": "object"
         },
-        "V1p4Degree": {
+        "V1p4DegreeEnum": {
             "description": "",
             "enum": [
                 "lead",
                 "equal",
                 "supporting"
             ],
-            "title": "V1p4Degree",
+            "title": "V1p4DegreeEnum",
             "type": "string"
         },
         "V1p4DeletedGene": {
@@ -9104,13 +9095,13 @@
             "title": "V1p4DeletedGene",
             "type": "object"
         },
-        "V1p4Derivation": {
+        "V1p4DerivationEnum": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA"
             ],
-            "title": "V1p4Derivation",
+            "title": "V1p4DerivationEnum",
             "type": "string"
         },
         "V1p4Diagnosis": {
@@ -9129,7 +9120,7 @@
                     "description": "Time point for the diagnosis"
                 },
                 "V1p4disease_diagnosis": {
-                    "$ref": "#/$defs/V1p4DiseaseDiagnosis",
+                    "$ref": "#/$defs/V1p4DiseaseDiagnosisOntology",
                     "description": "Diagnosis of subject"
                 },
                 "V1p4disease_length": {
@@ -9189,9 +9180,9 @@
             "title": "V1p4Diagnosis",
             "type": "object"
         },
-        "V1p4DiseaseDiagnosis": {
+        "V1p4DiseaseDiagnosisOntology": {
             "description": "",
-            "title": "V1p4DiseaseDiagnosis",
+            "title": "V1p4DiseaseDiagnosisOntology",
             "type": "string"
         },
         "V1p4DocumentedAllele": {
@@ -9245,7 +9236,7 @@
                     ]
                 },
                 "V1p4property": {
-                    "$ref": "#/$defs/V1p4Property",
+                    "$ref": "#/$defs/V1p4PropertyOntology",
                     "description": "Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody)."
                 },
                 "V1p4property_type": {
@@ -9271,18 +9262,18 @@
             "title": "V1p4Expression",
             "type": "object"
         },
-        "V1p4FileType": {
+        "V1p4FileTypeEnum": {
             "description": "",
             "enum": [
                 "fasta",
                 "fastq"
             ],
-            "title": "V1p4FileType",
+            "title": "V1p4FileTypeEnum",
             "type": "string"
         },
-        "V1p4Gene": {
+        "V1p4GeneOntology": {
             "description": "",
-            "title": "V1p4Gene",
+            "title": "V1p4GeneOntology",
             "type": "string"
         },
         "V1p4Genotype": {
@@ -9310,11 +9301,11 @@
                     ]
                 },
                 "V1p4inference_process": {
-                    "$ref": "#/$defs/V1p4InferenceProcess",
+                    "$ref": "#/$defs/V1p4InferenceProcessEnum",
                     "description": "Information on how the genotype was acquired. Controlled vocabulary."
                 },
                 "V1p4locus": {
-                    "$ref": "#/$defs/V1p4Locus"
+                    "$ref": "#/$defs/V1p4LocusEnum"
                 },
                 "V1p4receptor_genotype_id": {
                     "description": "A unique identifier within the file for this Receptor Genotype, typically generated by the  repository hosting the schema, for example from the underlying ID of the database record.",
@@ -9412,7 +9403,7 @@
                     ]
                 },
                 "V1p4locus": {
-                    "$ref": "#/$defs/V1p4Locus"
+                    "$ref": "#/$defs/V1p4LocusEnum"
                 },
                 "V1p4pub_ids": {
                     "items": {
@@ -9445,7 +9436,7 @@
                     ]
                 },
                 "V1p4species": {
-                    "$ref": "#/$defs/V1p4Species",
+                    "$ref": "#/$defs/V1p4SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "V1p4species_subgroup": {
@@ -9456,43 +9447,43 @@
                     ]
                 },
                 "V1p4species_subgroup_type": {
-                    "$ref": "#/$defs/V1p4SpeciesSubgroupType",
+                    "$ref": "#/$defs/V1p4SpeciesSubgroupTypeEnum",
                     "description": ""
                 }
             },
             "title": "V1p4GermlineSet",
             "type": "object"
         },
-        "V1p4InferenceProcess": {
+        "V1p4InferenceProcessEnum": {
             "description": "",
             "enum": [
                 "genomic_sequencing",
                 "repertoire_sequencing"
             ],
-            "title": "V1p4InferenceProcess",
+            "title": "V1p4InferenceProcessEnum",
             "type": "string"
         },
-        "V1p4InferenceType": {
+        "V1p4InferenceTypeEnum": {
             "description": "",
             "enum": [
                 "genomic_and_rearranged",
                 "genomic_only",
                 "rearranged_only"
             ],
-            "title": "V1p4InferenceType",
+            "title": "V1p4InferenceTypeEnum",
             "type": "string"
         },
-        "V1p4JCodonFrame": {
+        "V1p4JCodonFrameEnum": {
             "description": "",
             "enum": [
                 "1",
                 "2",
                 "3"
             ],
-            "title": "V1p4JCodonFrame",
+            "title": "V1p4JCodonFrameEnum",
             "type": "string"
         },
-        "V1p4KeywordsStudy": {
+        "V1p4KeywordsStudyEnum": {
             "description": "",
             "enum": [
                 "contains_ig",
@@ -9505,10 +9496,10 @@
                 "contains_schema_cellexpression",
                 "contains_schema_receptorreactivity"
             ],
-            "title": "V1p4KeywordsStudy",
+            "title": "V1p4KeywordsStudyEnum",
             "type": "string"
         },
-        "V1p4LibraryGenerationMethod": {
+        "V1p4LibraryGenerationMethodEnum": {
             "description": "",
             "enum": [
                 "PCR",
@@ -9524,10 +9515,10 @@
                 "RT(specific)+TS",
                 "other"
             ],
-            "title": "V1p4LibraryGenerationMethod",
+            "title": "V1p4LibraryGenerationMethodEnum",
             "type": "string"
         },
-        "V1p4LigandType": {
+        "V1p4LigandTypeEnum": {
             "description": "",
             "enum": [
                 "MHC:peptide",
@@ -9536,15 +9527,15 @@
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "V1p4LigandType",
+            "title": "V1p4LigandTypeEnum",
             "type": "string"
         },
-        "V1p4LocationBirth": {
+        "V1p4LocationBirthOntology": {
             "description": "",
-            "title": "V1p4LocationBirth",
+            "title": "V1p4LocationBirthOntology",
             "type": "string"
         },
-        "V1p4Locus": {
+        "V1p4LocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
@@ -9556,12 +9547,12 @@
                 "TRG",
                 "TRD"
             ],
-            "title": "V1p4Locus",
+            "title": "V1p4LocusEnum",
             "type": "string"
         },
-        "V1p4LocusSpecies": {
+        "V1p4LocusSpeciesOntology": {
             "description": "",
-            "title": "V1p4LocusSpecies",
+            "title": "V1p4LocusSpeciesOntology",
             "type": "string"
         },
         "V1p4MHCAllele": {
@@ -9575,7 +9566,7 @@
                     ]
                 },
                 "V1p4gene": {
-                    "$ref": "#/$defs/V1p4Gene",
+                    "$ref": "#/$defs/V1p4GeneOntology",
                     "description": "The MHC gene to which the described allele belongs"
                 },
                 "V1p4reference_set_ref": {
@@ -9604,7 +9595,7 @@
                     ]
                 },
                 "V1p4mhc_class": {
-                    "$ref": "#/$defs/V1p4MhcClass"
+                    "$ref": "#/$defs/V1p4MhcClassEnum"
                 },
                 "V1p4mhc_genotype_id": {
                     "description": "A unique identifier for this MHCGenotype, assumed to be unique in the context of the study",
@@ -9649,24 +9640,24 @@
             "title": "V1p4MHCGenotypeSet",
             "type": "object"
         },
-        "V1p4MhcClass": {
+        "V1p4MhcClassEnum": {
             "description": "",
             "enum": [
                 "MHC-I",
                 "MHC-II",
                 "MHC-nonclassical"
             ],
-            "title": "V1p4MhcClass",
+            "title": "V1p4MhcClassEnum",
             "type": "string"
         },
-        "V1p4MhcGene1": {
+        "V1p4MhcGene1Ontology": {
             "description": "",
-            "title": "V1p4MhcGene1",
+            "title": "V1p4MhcGene1Ontology",
             "type": "string"
         },
-        "V1p4MhcGene2": {
+        "V1p4MhcGene2Ontology": {
             "description": "",
-            "title": "V1p4MhcGene2",
+            "title": "V1p4MhcGene2Ontology",
             "type": "string"
         },
         "V1p4Node": {
@@ -9707,7 +9698,7 @@
             "description": "",
             "properties": {
                 "V1p4complete_sequences": {
-                    "$ref": "#/$defs/V1p4CompleteSequences",
+                    "$ref": "#/$defs/V1p4CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "V1p4library_generation_kit_version": {
@@ -9718,7 +9709,7 @@
                     ]
                 },
                 "V1p4library_generation_method": {
-                    "$ref": "#/$defs/V1p4LibraryGenerationMethod",
+                    "$ref": "#/$defs/V1p4LibraryGenerationMethodEnum",
                     "description": "Generic type of library generation"
                 },
                 "V1p4library_generation_protocol": {
@@ -9739,7 +9730,7 @@
                     ]
                 },
                 "V1p4physical_linkage": {
-                    "$ref": "#/$defs/V1p4PhysicalLinkage",
+                    "$ref": "#/$defs/V1p4PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "V1p4template_amount": {
@@ -9754,7 +9745,7 @@
                     "description": "Amount of template that went into the process"
                 },
                 "V1p4template_class": {
-                    "$ref": "#/$defs/V1p4TemplateClass",
+                    "$ref": "#/$defs/V1p4TemplateClassEnum",
                     "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
                 },
                 "V1p4template_quality": {
@@ -9768,18 +9759,18 @@
             "title": "V1p4NucleicAcidProcessing",
             "type": "object"
         },
-        "V1p4ObservationType": {
+        "V1p4ObservationTypeEnum": {
             "description": "",
             "enum": [
                 "direct_sequencing",
                 "inference_from_repertoire"
             ],
-            "title": "V1p4ObservationType",
+            "title": "V1p4ObservationTypeEnum",
             "type": "string"
         },
-        "V1p4OrcidId": {
+        "V1p4OrcidIdOntology": {
             "description": "",
-            "title": "V1p4OrcidId",
+            "title": "V1p4OrcidIdOntology",
             "type": "string"
         },
         "V1p4PCRTarget": {
@@ -9794,7 +9785,7 @@
                     ]
                 },
                 "V1p4pcr_target_locus": {
-                    "$ref": "#/$defs/V1p4PcrTargetLocus",
+                    "$ref": "#/$defs/V1p4PcrTargetLocusEnum",
                     "description": "Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature."
                 },
                 "V1p4reverse_pcr_primer_target_location": {
@@ -9808,17 +9799,17 @@
             "title": "V1p4PCRTarget",
             "type": "object"
         },
-        "V1p4PairedReadDirection": {
+        "V1p4PairedReadDirectionEnum": {
             "description": "",
             "enum": [
                 "forward",
                 "reverse",
                 "mixed"
             ],
-            "title": "V1p4PairedReadDirection",
+            "title": "V1p4PairedReadDirectionEnum",
             "type": "string"
         },
-        "V1p4PcrTargetLocus": {
+        "V1p4PcrTargetLocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
@@ -9830,10 +9821,10 @@
                 "TRD",
                 "TRG"
             ],
-            "title": "V1p4PcrTargetLocus",
+            "title": "V1p4PcrTargetLocusEnum",
             "type": "string"
         },
-        "V1p4PhysicalLinkage": {
+        "V1p4PhysicalLinkageEnum": {
             "description": "",
             "enum": [
                 "none",
@@ -9841,7 +9832,7 @@
                 "hetero_tail-head",
                 "hetero_prelinked"
             ],
-            "title": "V1p4PhysicalLinkage",
+            "title": "V1p4PhysicalLinkageEnum",
             "type": "string"
         },
         "V1p4PhysicalQuantity": {
@@ -9855,15 +9846,15 @@
                     ]
                 },
                 "V1p4unit": {
-                    "$ref": "#/$defs/V1p4Unit"
+                    "$ref": "#/$defs/V1p4UnitOntology"
                 }
             },
             "title": "V1p4PhysicalQuantity",
             "type": "object"
         },
-        "V1p4Property": {
+        "V1p4PropertyOntology": {
             "description": "",
-            "title": "V1p4Property",
+            "title": "V1p4PropertyOntology",
             "type": "string"
         },
         "V1p4Reactivity": {
@@ -9871,15 +9862,15 @@
             "description": "",
             "properties": {
                 "V1p4antigen": {
-                    "$ref": "#/$defs/V1p4Antigen",
+                    "$ref": "#/$defs/V1p4AntigenOntology",
                     "description": "The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule."
                 },
                 "V1p4antigen_source_species": {
-                    "$ref": "#/$defs/V1p4AntigenSourceSpecies",
+                    "$ref": "#/$defs/V1p4AntigenSourceSpeciesOntology",
                     "description": "The species from which the antigen was isolated"
                 },
                 "V1p4antigen_type": {
-                    "$ref": "#/$defs/V1p4AntigenType",
+                    "$ref": "#/$defs/V1p4AntigenTypeEnum",
                     "description": "The type of antigen before processing by the immune system."
                 },
                 "V1p4cell_id": {
@@ -9895,7 +9886,7 @@
                     ]
                 },
                 "V1p4ligand_type": {
-                    "$ref": "#/$defs/V1p4LigandType",
+                    "$ref": "#/$defs/V1p4LigandTypeEnum",
                     "description": "Classification of ligand binding to the cell"
                 },
                 "V1p4mhc_allele_1": {
@@ -9913,14 +9904,14 @@
                     ]
                 },
                 "V1p4mhc_class": {
-                    "$ref": "#/$defs/V1p4MhcClass"
+                    "$ref": "#/$defs/V1p4MhcClassEnum"
                 },
                 "V1p4mhc_gene_1": {
-                    "$ref": "#/$defs/V1p4MhcGene1",
+                    "$ref": "#/$defs/V1p4MhcGene1Ontology",
                     "description": "The MHC gene to which the mhc_allele_1 belongs"
                 },
                 "V1p4mhc_gene_2": {
-                    "$ref": "#/$defs/V1p4MhcGene2",
+                    "$ref": "#/$defs/V1p4MhcGene2Ontology",
                     "description": "The MHC gene to which the mhc_allele_2 belongs"
                 },
                 "V1p4peptide_end": {
@@ -9994,14 +9985,14 @@
             "title": "V1p4Reactivity",
             "type": "object"
         },
-        "V1p4ReadDirection": {
+        "V1p4ReadDirectionEnum": {
             "description": "",
             "enum": [
                 "forward",
                 "reverse",
                 "mixed"
             ],
-            "title": "V1p4ReadDirection",
+            "title": "V1p4ReadDirectionEnum",
             "type": "string"
         },
         "V1p4RearrangedSequence": {
@@ -10022,11 +10013,11 @@
                     ]
                 },
                 "V1p4derivation": {
-                    "$ref": "#/$defs/V1p4Derivation",
+                    "$ref": "#/$defs/V1p4DerivationEnum",
                     "description": "The class of nucleic acid that was used as primary starting material"
                 },
                 "V1p4observation_type": {
-                    "$ref": "#/$defs/V1p4ObservationType",
+                    "$ref": "#/$defs/V1p4ObservationTypeEnum",
                     "description": "The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data."
                 },
                 "V1p4repository_name": {
@@ -10773,10 +10764,10 @@
                     ]
                 },
                 "V1p4locus": {
-                    "$ref": "#/$defs/V1p4Locus"
+                    "$ref": "#/$defs/V1p4LocusEnum"
                 },
                 "V1p4locus_species": {
-                    "$ref": "#/$defs/V1p4LocusSpecies",
+                    "$ref": "#/$defs/V1p4LocusSpeciesOntology",
                     "description": "Binomial designation of the species from which the locus originates. Typically, this value should be identical to `organism`, if which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g. transgenic animal models. If set, this key will overwrite the `organism` information for all lower layers of the schema."
                 },
                 "V1p4n1_length": {
@@ -11150,7 +11141,7 @@
                     ]
                 },
                 "V1p4receptor_type": {
-                    "$ref": "#/$defs/V1p4ReceptorType",
+                    "$ref": "#/$defs/V1p4ReceptorTypeEnum",
                     "description": "The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR)."
                 },
                 "V1p4receptor_variable_domain_1_aa": {
@@ -11161,7 +11152,7 @@
                     ]
                 },
                 "V1p4receptor_variable_domain_1_locus": {
-                    "$ref": "#/$defs/V1p4ReceptorVariableDomain1Locus",
+                    "$ref": "#/$defs/V1p4ReceptorVariableDomain1LocusEnum",
                     "description": "Locus from which the variable domain in receptor_variable_domain_1_aa originates"
                 },
                 "V1p4receptor_variable_domain_2_aa": {
@@ -11172,33 +11163,33 @@
                     ]
                 },
                 "V1p4receptor_variable_domain_2_locus": {
-                    "$ref": "#/$defs/V1p4ReceptorVariableDomain2Locus",
+                    "$ref": "#/$defs/V1p4ReceptorVariableDomain2LocusEnum",
                     "description": "Locus from which the variable domain in receptor_variable_domain_2_aa originates"
                 }
             },
             "title": "V1p4Receptor",
             "type": "object"
         },
-        "V1p4ReceptorType": {
+        "V1p4ReceptorTypeEnum": {
             "description": "",
             "enum": [
                 "Ig",
                 "TCR"
             ],
-            "title": "V1p4ReceptorType",
+            "title": "V1p4ReceptorTypeEnum",
             "type": "string"
         },
-        "V1p4ReceptorVariableDomain1Locus": {
+        "V1p4ReceptorVariableDomain1LocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
                 "TRB",
                 "TRD"
             ],
-            "title": "V1p4ReceptorVariableDomain1Locus",
+            "title": "V1p4ReceptorVariableDomain1LocusEnum",
             "type": "string"
         },
-        "V1p4ReceptorVariableDomain2Locus": {
+        "V1p4ReceptorVariableDomain2LocusEnum": {
             "description": "",
             "enum": [
                 "IGI",
@@ -11207,7 +11198,7 @@
                 "TRA",
                 "TRG"
             ],
-            "title": "V1p4ReceptorVariableDomain2Locus",
+            "title": "V1p4ReceptorVariableDomain2LocusEnum",
             "type": "string"
         },
         "V1p4Repertoire": {
@@ -11319,7 +11310,7 @@
             "title": "V1p4RepertoireGroup",
             "type": "object"
         },
-        "V1p4Role": {
+        "V1p4RoleEnum": {
             "description": "",
             "enum": [
                 "conceptualization",
@@ -11337,7 +11328,7 @@
                 "writing - original draft",
                 "writing - review & editing"
             ],
-            "title": "V1p4Role",
+            "title": "V1p4RoleEnum",
             "type": "string"
         },
         "V1p4Sample": {
@@ -11359,7 +11350,7 @@
                     ]
                 },
                 "V1p4collection_location": {
-                    "$ref": "#/$defs/V1p4CollectionLocation",
+                    "$ref": "#/$defs/V1p4CollectionLocationOntology",
                     "description": "Location where the sample was taken, preferred granularity is country-level"
                 },
                 "V1p4collection_time_point_relative": {
@@ -11395,7 +11386,7 @@
                     ]
                 },
                 "V1p4tissue": {
-                    "$ref": "#/$defs/V1p4Tissue",
+                    "$ref": "#/$defs/V1p4TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 }
             },
@@ -11463,7 +11454,7 @@
                     ]
                 },
                 "V1p4cell_species": {
-                    "$ref": "#/$defs/V1p4CellSpecies",
+                    "$ref": "#/$defs/V1p4CellSpeciesOntology",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "V1p4cell_storage": {
@@ -11474,7 +11465,7 @@
                     ]
                 },
                 "V1p4cell_subset": {
-                    "$ref": "#/$defs/V1p4CellSubset"
+                    "$ref": "#/$defs/V1p4CellSubsetOntology"
                 },
                 "V1p4cells_per_reaction": {
                     "description": "Number of cells for each biological replicate",
@@ -11484,7 +11475,7 @@
                     ]
                 },
                 "V1p4collection_location": {
-                    "$ref": "#/$defs/V1p4CollectionLocation",
+                    "$ref": "#/$defs/V1p4CollectionLocationOntology",
                     "description": "Location where the sample was taken, preferred granularity is country-level"
                 },
                 "V1p4collection_time_point_relative": {
@@ -11499,7 +11490,7 @@
                     "description": "Time point at which sample was taken, relative to `label` event"
                 },
                 "V1p4complete_sequences": {
-                    "$ref": "#/$defs/V1p4CompleteSequences",
+                    "$ref": "#/$defs/V1p4CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "V1p4disease_state_sample": {
@@ -11517,7 +11508,7 @@
                     ]
                 },
                 "V1p4library_generation_method": {
-                    "$ref": "#/$defs/V1p4LibraryGenerationMethod",
+                    "$ref": "#/$defs/V1p4LibraryGenerationMethodEnum",
                     "description": "Generic type of library generation"
                 },
                 "V1p4library_generation_protocol": {
@@ -11538,7 +11529,7 @@
                     ]
                 },
                 "V1p4physical_linkage": {
-                    "$ref": "#/$defs/V1p4PhysicalLinkage",
+                    "$ref": "#/$defs/V1p4PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "V1p4sample_id": {
@@ -11627,7 +11618,7 @@
                     "description": "Amount of template that went into the process"
                 },
                 "V1p4template_class": {
-                    "$ref": "#/$defs/V1p4TemplateClass",
+                    "$ref": "#/$defs/V1p4TemplateClassEnum",
                     "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
                 },
                 "V1p4template_quality": {
@@ -11638,7 +11629,7 @@
                     ]
                 },
                 "V1p4tissue": {
-                    "$ref": "#/$defs/V1p4Tissue",
+                    "$ref": "#/$defs/V1p4TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 },
                 "V1p4tissue_processing": {
@@ -11771,7 +11762,7 @@
             "title": "V1p4SequenceDelineationV",
             "type": "object"
         },
-        "V1p4SequenceType": {
+        "V1p4SequenceTypeEnum": {
             "description": "",
             "enum": [
                 "V",
@@ -11779,7 +11770,7 @@
                 "J",
                 "C"
             ],
-            "title": "V1p4SequenceType",
+            "title": "V1p4SequenceTypeEnum",
             "type": "string"
         },
         "V1p4SequencingData": {
@@ -11787,7 +11778,7 @@
             "description": "",
             "properties": {
                 "V1p4file_type": {
-                    "$ref": "#/$defs/V1p4FileType",
+                    "$ref": "#/$defs/V1p4FileTypeEnum",
                     "description": "File format for the raw reads or sequences"
                 },
                 "V1p4filename": {
@@ -11819,7 +11810,7 @@
                     ]
                 },
                 "V1p4paired_read_direction": {
-                    "$ref": "#/$defs/V1p4PairedReadDirection",
+                    "$ref": "#/$defs/V1p4PairedReadDirectionEnum",
                     "description": "Read direction for the second file in paired-read sequencing"
                 },
                 "V1p4paired_read_length": {
@@ -11830,7 +11821,7 @@
                     ]
                 },
                 "V1p4read_direction": {
-                    "$ref": "#/$defs/V1p4ReadDirection",
+                    "$ref": "#/$defs/V1p4ReadDirectionEnum",
                     "description": "Read direction for the raw reads or sequences. The first file in paired-read sequencing."
                 },
                 "V1p4read_length": {
@@ -11913,7 +11904,7 @@
             "title": "V1p4SequencingRun",
             "type": "object"
         },
-        "V1p4Sex": {
+        "V1p4SexEnum": {
             "description": "",
             "enum": [
                 "male",
@@ -11922,15 +11913,15 @@
                 "hermaphrodite",
                 "intersex"
             ],
-            "title": "V1p4Sex",
+            "title": "V1p4SexEnum",
             "type": "string"
         },
-        "V1p4Species": {
+        "V1p4SpeciesOntology": {
             "description": "",
-            "title": "V1p4Species",
+            "title": "V1p4SpeciesOntology",
             "type": "string"
         },
-        "V1p4SpeciesSubgroupType": {
+        "V1p4SpeciesSubgroupTypeEnum": {
             "description": "",
             "enum": [
                 "breed",
@@ -11939,10 +11930,10 @@
                 "outbred",
                 "locational"
             ],
-            "title": "V1p4SpeciesSubgroupType",
+            "title": "V1p4SpeciesSubgroupTypeEnum",
             "type": "string"
         },
-        "V1p4Status": {
+        "V1p4StatusEnum": {
             "description": "",
             "enum": [
                 "active",
@@ -11950,16 +11941,16 @@
                 "retired",
                 "withdrawn"
             ],
-            "title": "V1p4Status",
+            "title": "V1p4StatusEnum",
             "type": "string"
         },
-        "V1p4Strand": {
+        "V1p4StrandEnum": {
             "description": "",
             "enum": [
                 "+",
                 "-"
             ],
-            "title": "V1p4Strand",
+            "title": "V1p4StrandEnum",
             "type": "string"
         },
         "V1p4Study": {
@@ -12009,7 +12000,7 @@
                 "V1p4keywords_study": {
                     "description": "Keywords describing properties of one or more data sets in a study. \"contains_schema\" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that \"contains_paired_chain\" but does not \"contains_schema_cell\").",
                     "items": {
-                        "$ref": "#/$defs/V1p4KeywordsStudy"
+                        "$ref": "#/$defs/V1p4KeywordsStudyEnum"
                     },
                     "type": [
                         "array",
@@ -12047,16 +12038,16 @@
                     ]
                 },
                 "V1p4study_type": {
-                    "$ref": "#/$defs/V1p4StudyType",
+                    "$ref": "#/$defs/V1p4StudyTypeOntology",
                     "description": "Type of study design"
                 }
             },
             "title": "V1p4Study",
             "type": "object"
         },
-        "V1p4StudyType": {
+        "V1p4StudyTypeOntology": {
             "description": "",
-            "title": "V1p4StudyType",
+            "title": "V1p4StudyTypeOntology",
             "type": "string"
         },
         "V1p4Subject": {
@@ -12082,7 +12073,7 @@
                     ]
                 },
                 "V1p4ancestry_population": {
-                    "$ref": "#/$defs/V1p4AncestryPopulation",
+                    "$ref": "#/$defs/V1p4AncestryPopulationOntology",
                     "description": "Broad geographic origin of ancestry (continent)"
                 },
                 "V1p4diagnosis": {
@@ -12128,7 +12119,7 @@
                     ]
                 },
                 "V1p4location_birth": {
-                    "$ref": "#/$defs/V1p4LocationBirth",
+                    "$ref": "#/$defs/V1p4LocationBirthOntology",
                     "description": "Self-reported location of birth of the subject, preferred granularity is country-level"
                 },
                 "V1p4race": {
@@ -12139,11 +12130,11 @@
                     ]
                 },
                 "V1p4sex": {
-                    "$ref": "#/$defs/V1p4Sex",
+                    "$ref": "#/$defs/V1p4SexEnum",
                     "description": "Biological sex of subject"
                 },
                 "V1p4species": {
-                    "$ref": "#/$defs/V1p4Species",
+                    "$ref": "#/$defs/V1p4SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "V1p4strain_name": {
@@ -12201,13 +12192,13 @@
             "title": "V1p4SubjectGenotype",
             "type": "object"
         },
-        "V1p4TemplateClass": {
+        "V1p4TemplateClassEnum": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA"
             ],
-            "title": "V1p4TemplateClass",
+            "title": "V1p4TemplateClassEnum",
             "type": "string"
         },
         "V1p4TimeInterval": {
@@ -12229,7 +12220,7 @@
                     ]
                 },
                 "V1p4unit": {
-                    "$ref": "#/$defs/V1p4Unit"
+                    "$ref": "#/$defs/V1p4UnitOntology"
                 }
             },
             "title": "V1p4TimeInterval",
@@ -12246,7 +12237,7 @@
                     ]
                 },
                 "V1p4unit": {
-                    "$ref": "#/$defs/V1p4Unit"
+                    "$ref": "#/$defs/V1p4UnitOntology"
                 },
                 "V1p4value": {
                     "type": [
@@ -12269,15 +12260,15 @@
                     ]
                 },
                 "V1p4unit": {
-                    "$ref": "#/$defs/V1p4Unit"
+                    "$ref": "#/$defs/V1p4UnitOntology"
                 }
             },
             "title": "V1p4TimeQuantity",
             "type": "object"
         },
-        "V1p4Tissue": {
+        "V1p4TissueOntology": {
             "description": "",
-            "title": "V1p4Tissue",
+            "title": "V1p4TissueOntology",
             "type": "string"
         },
         "V1p4Tree": {
@@ -12346,9 +12337,9 @@
             "title": "V1p4UndocumentedAllele",
             "type": "object"
         },
-        "V1p4Unit": {
+        "V1p4UnitOntology": {
             "description": "",
-            "title": "V1p4Unit",
+            "title": "V1p4UnitOntology",
             "type": "string"
         },
         "V1p4UnrearrangedSequence": {
@@ -12415,7 +12406,7 @@
                     ]
                 },
                 "V1p4strand": {
-                    "$ref": "#/$defs/V1p4Strand",
+                    "$ref": "#/$defs/V1p4StrandEnum",
                     "description": "sense (+ or -)"
                 }
             },
@@ -12433,15 +12424,15 @@
                         "null"
                     ]
                 },
-                "V1p5institution_name": {
-                    "description": "Individual's department and institution name",
+                "V1p5individual_full_name": {
+                    "description": "Full name of individual",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "V1p5name": {
-                    "description": "Full name of individual",
+                "V1p5institution_name": {
+                    "description": "Individual's department and institution name",
                     "type": [
                         "string",
                         "null"
@@ -12458,9 +12449,9 @@
             "title": "V1p5Acknowledgement",
             "type": "object"
         },
-        "V1p5AgeUnit": {
+        "V1p5AgeUnitOntology": {
             "description": "",
-            "title": "V1p5AgeUnit",
+            "title": "V1p5AgeUnitOntology",
             "type": "string"
         },
         "V1p5Alignment": {
@@ -12644,7 +12635,7 @@
                 "V1p5curational_tags": {
                     "description": "Controlled-vocabulary tags applied to this description",
                     "items": {
-                        "$ref": "#/$defs/V1p5CurationalTags"
+                        "$ref": "#/$defs/V1p5CurationalTagsEnum"
                     },
                     "type": [
                         "array",
@@ -12708,7 +12699,7 @@
                     ]
                 },
                 "V1p5inference_type": {
-                    "$ref": "#/$defs/V1p5InferenceType",
+                    "$ref": "#/$defs/V1p5InferenceTypeEnum",
                     "description": "Type of inference(s) from which this gene sequence was inferred"
                 },
                 "V1p5j_cdr3_end": {
@@ -12719,7 +12710,7 @@
                     ]
                 },
                 "V1p5j_codon_frame": {
-                    "$ref": "#/$defs/V1p5JCodonFrame",
+                    "$ref": "#/$defs/V1p5JCodonFrameEnum",
                     "description": "Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing."
                 },
                 "V1p5j_donor_splice": {
@@ -12784,7 +12775,7 @@
                     ]
                 },
                 "V1p5locus": {
-                    "$ref": "#/$defs/V1p5Locus"
+                    "$ref": "#/$defs/V1p5LocusEnum"
                 },
                 "V1p5maintainer": {
                     "description": "Maintainer of this sequence record",
@@ -12830,7 +12821,7 @@
                 },
                 "V1p5release_version": {
                     "type": [
-                        "string",
+                        "integer",
                         "null"
                     ]
                 },
@@ -12841,11 +12832,11 @@
                     ]
                 },
                 "V1p5sequence_type": {
-                    "$ref": "#/$defs/V1p5SequenceType",
+                    "$ref": "#/$defs/V1p5SequenceTypeEnum",
                     "description": "Sequence type (V, D, J, C)"
                 },
                 "V1p5species": {
-                    "$ref": "#/$defs/V1p5Species",
+                    "$ref": "#/$defs/V1p5SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "V1p5species_subgroup": {
@@ -12856,11 +12847,11 @@
                     ]
                 },
                 "V1p5species_subgroup_type": {
-                    "$ref": "#/$defs/V1p5SpeciesSubgroupType",
+                    "$ref": "#/$defs/V1p5SpeciesSubgroupTypeEnum",
                     "description": ""
                 },
                 "V1p5status": {
-                    "$ref": "#/$defs/V1p5Status",
+                    "$ref": "#/$defs/V1p5StatusEnum",
                     "description": "Status of record, assumed active if the field is not present"
                 },
                 "V1p5subgroup_designation": {
@@ -12922,24 +12913,24 @@
             "title": "V1p5AlleleDescription",
             "type": "object"
         },
-        "V1p5Antigen": {
+        "V1p5AntigenOntology": {
             "description": "",
-            "title": "V1p5Antigen",
+            "title": "V1p5AntigenOntology",
             "type": "string"
         },
-        "V1p5AntigenSourceSpecies": {
+        "V1p5AntigenSourceSpeciesOntology": {
             "description": "",
-            "title": "V1p5AntigenSourceSpecies",
+            "title": "V1p5AntigenSourceSpeciesOntology",
             "type": "string"
         },
-        "V1p5AntigenType": {
+        "V1p5AntigenTypeEnum": {
             "description": "",
             "enum": [
                 "protein",
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "V1p5AntigenType",
+            "title": "V1p5AntigenTypeEnum",
             "type": "string"
         },
         "V1p5Cell": {
@@ -12973,7 +12964,7 @@
                     ]
                 },
                 "V1p5expression_study_method": {
-                    "$ref": "#/$defs/V1p5ExpressionStudyMethod",
+                    "$ref": "#/$defs/V1p5ExpressionStudyMethodEnum",
                     "description": "Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary."
                 },
                 "V1p5rearrangements": {
@@ -13037,7 +13028,7 @@
                     ]
                 },
                 "V1p5property": {
-                    "$ref": "#/$defs/V1p5Property",
+                    "$ref": "#/$defs/V1p5PropertyOntology",
                     "description": "Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody)."
                 },
                 "V1p5property_type": {
@@ -13047,15 +13038,16 @@
                         "null"
                     ]
                 },
-                "V1p5repertoire_id": {
+                "V1p5property_value": {
+                    "description": "Level at which the property was observed in the experiment (non-normalized).",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
-                "V1p5value": {
+                "V1p5repertoire_id": {
                     "type": [
-                        "number",
+                        "string",
                         "null"
                     ]
                 }
@@ -13103,7 +13095,7 @@
                     ]
                 },
                 "V1p5cell_species": {
-                    "$ref": "#/$defs/V1p5CellSpecies",
+                    "$ref": "#/$defs/V1p5CellSpeciesOntology",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "V1p5cell_storage": {
@@ -13114,7 +13106,7 @@
                     ]
                 },
                 "V1p5cell_subset": {
-                    "$ref": "#/$defs/V1p5CellSubset",
+                    "$ref": "#/$defs/V1p5CellSubsetOntology",
                     "description": "Commonly-used designation of isolated cell population"
                 },
                 "V1p5cells_per_reaction": {
@@ -13142,14 +13134,14 @@
             "title": "V1p5CellProcessing",
             "type": "object"
         },
-        "V1p5CellSpecies": {
+        "V1p5CellSpeciesOntology": {
             "description": "",
-            "title": "V1p5CellSpecies",
+            "title": "V1p5CellSpeciesOntology",
             "type": "string"
         },
-        "V1p5CellSubset": {
+        "V1p5CellSubsetOntology": {
             "description": "",
-            "title": "V1p5CellSubset",
+            "title": "V1p5CellSubsetOntology",
             "type": "string"
         },
         "V1p5Clone": {
@@ -13315,12 +13307,12 @@
             "title": "V1p5Clone",
             "type": "object"
         },
-        "V1p5CollectionTimePointRelativeUnit": {
+        "V1p5CollectionTimePointRelativeUnitOntology": {
             "description": "",
-            "title": "V1p5CollectionTimePointRelativeUnit",
+            "title": "V1p5CollectionTimePointRelativeUnitOntology",
             "type": "string"
         },
-        "V1p5CompleteSequences": {
+        "V1p5CompleteSequencesEnum": {
             "description": "",
             "enum": [
                 "partial",
@@ -13328,16 +13320,16 @@
                 "complete+untemplated",
                 "mixed"
             ],
-            "title": "V1p5CompleteSequences",
+            "title": "V1p5CompleteSequencesEnum",
             "type": "string"
         },
-        "V1p5CurationalTags": {
+        "V1p5CurationalTagsEnum": {
             "description": "",
             "enum": [
                 "likely_truncated",
                 "likely_full_length"
             ],
-            "title": "V1p5CurationalTags",
+            "title": "V1p5CurationalTagsEnum",
             "type": "string"
         },
         "V1p5DataProcessing": {
@@ -13460,13 +13452,13 @@
             "title": "V1p5DeletedGene",
             "type": "object"
         },
-        "V1p5Derivation": {
+        "V1p5DerivationEnum": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA"
             ],
-            "title": "V1p5Derivation",
+            "title": "V1p5DerivationEnum",
             "type": "string"
         },
         "V1p5Diagnosis": {
@@ -13474,7 +13466,7 @@
             "description": "",
             "properties": {
                 "V1p5disease_diagnosis": {
-                    "$ref": "#/$defs/V1p5DiseaseDiagnosis",
+                    "$ref": "#/$defs/V1p5DiseaseDiagnosisOntology",
                     "description": "Diagnosis of subject"
                 },
                 "V1p5disease_length": {
@@ -13530,9 +13522,9 @@
             "title": "V1p5Diagnosis",
             "type": "object"
         },
-        "V1p5DiseaseDiagnosis": {
+        "V1p5DiseaseDiagnosisOntology": {
             "description": "",
-            "title": "V1p5DiseaseDiagnosis",
+            "title": "V1p5DiseaseDiagnosisOntology",
             "type": "string"
         },
         "V1p5DocumentedAllele": {
@@ -13562,27 +13554,27 @@
             "title": "V1p5DocumentedAllele",
             "type": "object"
         },
-        "V1p5ExpressionStudyMethod": {
+        "V1p5ExpressionStudyMethodEnum": {
             "description": "",
             "enum": [
                 "flow_cytometry",
                 "single-cell_transcriptome"
             ],
-            "title": "V1p5ExpressionStudyMethod",
+            "title": "V1p5ExpressionStudyMethodEnum",
             "type": "string"
         },
-        "V1p5FileType": {
+        "V1p5FileTypeEnum": {
             "description": "",
             "enum": [
                 "fasta",
                 "fastq"
             ],
-            "title": "V1p5FileType",
+            "title": "V1p5FileTypeEnum",
             "type": "string"
         },
-        "V1p5Gene": {
+        "V1p5GeneOntology": {
             "description": "",
-            "title": "V1p5Gene",
+            "title": "V1p5GeneOntology",
             "type": "string"
         },
         "V1p5Genotype": {
@@ -13610,11 +13602,11 @@
                     ]
                 },
                 "V1p5inference_process": {
-                    "$ref": "#/$defs/V1p5InferenceProcess",
+                    "$ref": "#/$defs/V1p5InferenceProcessEnum",
                     "description": "Information on how the genotype was acquired. Controlled vocabulary."
                 },
                 "V1p5locus": {
-                    "$ref": "#/$defs/V1p5Locus"
+                    "$ref": "#/$defs/V1p5LocusEnum"
                 },
                 "V1p5receptor_genotype_id": {
                     "description": "A unique identifier within the file for this Receptor Genotype, typically generated by the  repository hosting the schema, for example from the underlying ID of the database record.",
@@ -13731,7 +13723,7 @@
                     ]
                 },
                 "V1p5locus": {
-                    "$ref": "#/$defs/V1p5Locus"
+                    "$ref": "#/$defs/V1p5LocusEnum"
                 },
                 "V1p5pub_ids": {
                     "type": [
@@ -13756,12 +13748,12 @@
                 },
                 "V1p5release_version": {
                     "type": [
-                        "string",
+                        "integer",
                         "null"
                     ]
                 },
                 "V1p5species": {
-                    "$ref": "#/$defs/V1p5Species",
+                    "$ref": "#/$defs/V1p5SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "V1p5species_subgroup": {
@@ -13772,43 +13764,43 @@
                     ]
                 },
                 "V1p5species_subgroup_type": {
-                    "$ref": "#/$defs/V1p5SpeciesSubgroupType",
+                    "$ref": "#/$defs/V1p5SpeciesSubgroupTypeEnum",
                     "description": ""
                 }
             },
             "title": "V1p5GermlineSet",
             "type": "object"
         },
-        "V1p5InferenceProcess": {
+        "V1p5InferenceProcessEnum": {
             "description": "",
             "enum": [
                 "genomic_sequencing",
                 "repertoire_sequencing"
             ],
-            "title": "V1p5InferenceProcess",
+            "title": "V1p5InferenceProcessEnum",
             "type": "string"
         },
-        "V1p5InferenceType": {
+        "V1p5InferenceTypeEnum": {
             "description": "",
             "enum": [
                 "genomic_and_rearranged",
                 "genomic_only",
                 "rearranged_only"
             ],
-            "title": "V1p5InferenceType",
+            "title": "V1p5InferenceTypeEnum",
             "type": "string"
         },
-        "V1p5JCodonFrame": {
+        "V1p5JCodonFrameEnum": {
             "description": "",
             "enum": [
                 "1",
                 "2",
                 "3"
             ],
-            "title": "V1p5JCodonFrame",
+            "title": "V1p5JCodonFrameEnum",
             "type": "string"
         },
-        "V1p5KeywordsStudy": {
+        "V1p5KeywordsStudyEnum": {
             "description": "",
             "enum": [
                 "contains_ig",
@@ -13819,10 +13811,10 @@
                 "contains_schema_cell",
                 "contains_schema_receptor"
             ],
-            "title": "V1p5KeywordsStudy",
+            "title": "V1p5KeywordsStudyEnum",
             "type": "string"
         },
-        "V1p5LibraryGenerationMethod": {
+        "V1p5LibraryGenerationMethodEnum": {
             "description": "",
             "enum": [
                 "PCR",
@@ -13838,10 +13830,10 @@
                 "RT(specific)+TS",
                 "other"
             ],
-            "title": "V1p5LibraryGenerationMethod",
+            "title": "V1p5LibraryGenerationMethodEnum",
             "type": "string"
         },
-        "V1p5LigandType": {
+        "V1p5LigandTypeEnum": {
             "description": "",
             "enum": [
                 "MHC:peptide",
@@ -13850,10 +13842,10 @@
                 "peptide",
                 "non-peptidic"
             ],
-            "title": "V1p5LigandType",
+            "title": "V1p5LigandTypeEnum",
             "type": "string"
         },
-        "V1p5Locus": {
+        "V1p5LocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
@@ -13865,7 +13857,7 @@
                 "TRG",
                 "TRD"
             ],
-            "title": "V1p5Locus",
+            "title": "V1p5LocusEnum",
             "type": "string"
         },
         "V1p5MHCAllele": {
@@ -13879,7 +13871,7 @@
                     ]
                 },
                 "V1p5gene": {
-                    "$ref": "#/$defs/V1p5Gene",
+                    "$ref": "#/$defs/V1p5GeneOntology",
                     "description": "The MHC gene to which the described allele belongs"
                 },
                 "V1p5reference_set_ref": {
@@ -13908,7 +13900,7 @@
                     ]
                 },
                 "V1p5mhc_class": {
-                    "$ref": "#/$defs/V1p5MhcClass"
+                    "$ref": "#/$defs/V1p5MhcClassEnum"
                 },
                 "V1p5mhc_genotype_id": {
                     "description": "A unique identifier for this MHCGenotype, assumed to be unique in the context of the study",
@@ -13953,24 +13945,24 @@
             "title": "V1p5MHCGenotypeSet",
             "type": "object"
         },
-        "V1p5MhcClass": {
+        "V1p5MhcClassEnum": {
             "description": "",
             "enum": [
                 "MHC-I",
                 "MHC-II",
                 "MHC-nonclassical"
             ],
-            "title": "V1p5MhcClass",
+            "title": "V1p5MhcClassEnum",
             "type": "string"
         },
-        "V1p5MhcGene1": {
+        "V1p5MhcGene1Ontology": {
             "description": "",
-            "title": "V1p5MhcGene1",
+            "title": "V1p5MhcGene1Ontology",
             "type": "string"
         },
-        "V1p5MhcGene2": {
+        "V1p5MhcGene2Ontology": {
             "description": "",
-            "title": "V1p5MhcGene2",
+            "title": "V1p5MhcGene2Ontology",
             "type": "string"
         },
         "V1p5Node": {
@@ -14011,7 +14003,7 @@
             "description": "",
             "properties": {
                 "V1p5complete_sequences": {
-                    "$ref": "#/$defs/V1p5CompleteSequences",
+                    "$ref": "#/$defs/V1p5CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "V1p5library_generation_kit_version": {
@@ -14022,7 +14014,7 @@
                     ]
                 },
                 "V1p5library_generation_method": {
-                    "$ref": "#/$defs/V1p5LibraryGenerationMethod",
+                    "$ref": "#/$defs/V1p5LibraryGenerationMethodEnum",
                     "description": "Generic type of library generation"
                 },
                 "V1p5library_generation_protocol": {
@@ -14043,7 +14035,7 @@
                     ]
                 },
                 "V1p5physical_linkage": {
-                    "$ref": "#/$defs/V1p5PhysicalLinkage",
+                    "$ref": "#/$defs/V1p5PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "V1p5template_amount": {
@@ -14054,11 +14046,11 @@
                     ]
                 },
                 "V1p5template_amount_unit": {
-                    "$ref": "#/$defs/V1p5TemplateAmountUnit",
+                    "$ref": "#/$defs/V1p5TemplateAmountUnitOntology",
                     "description": "Unit of template amount"
                 },
                 "V1p5template_class": {
-                    "$ref": "#/$defs/V1p5TemplateClass",
+                    "$ref": "#/$defs/V1p5TemplateClassEnum",
                     "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
                 },
                 "V1p5template_quality": {
@@ -14072,13 +14064,13 @@
             "title": "V1p5NucleicAcidProcessing",
             "type": "object"
         },
-        "V1p5ObservationType": {
+        "V1p5ObservationTypeEnum": {
             "description": "",
             "enum": [
                 "direct_sequencing",
                 "inference_from_repertoire"
             ],
-            "title": "V1p5ObservationType",
+            "title": "V1p5ObservationTypeEnum",
             "type": "string"
         },
         "V1p5PCRTarget": {
@@ -14093,7 +14085,7 @@
                     ]
                 },
                 "V1p5pcr_target_locus": {
-                    "$ref": "#/$defs/V1p5PcrTargetLocus",
+                    "$ref": "#/$defs/V1p5PcrTargetLocusEnum",
                     "description": "Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature."
                 },
                 "V1p5reverse_pcr_primer_target_location": {
@@ -14107,17 +14099,17 @@
             "title": "V1p5PCRTarget",
             "type": "object"
         },
-        "V1p5PairedReadDirection": {
+        "V1p5PairedReadDirectionEnum": {
             "description": "",
             "enum": [
                 "forward",
                 "reverse",
                 "mixed"
             ],
-            "title": "V1p5PairedReadDirection",
+            "title": "V1p5PairedReadDirectionEnum",
             "type": "string"
         },
-        "V1p5PcrTargetLocus": {
+        "V1p5PcrTargetLocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
@@ -14129,10 +14121,10 @@
                 "TRD",
                 "TRG"
             ],
-            "title": "V1p5PcrTargetLocus",
+            "title": "V1p5PcrTargetLocusEnum",
             "type": "string"
         },
-        "V1p5PhysicalLinkage": {
+        "V1p5PhysicalLinkageEnum": {
             "description": "",
             "enum": [
                 "none",
@@ -14140,15 +14132,15 @@
                 "hetero_tail-head",
                 "hetero_prelinked"
             ],
-            "title": "V1p5PhysicalLinkage",
+            "title": "V1p5PhysicalLinkageEnum",
             "type": "string"
         },
-        "V1p5Property": {
+        "V1p5PropertyOntology": {
             "description": "",
-            "title": "V1p5Property",
+            "title": "V1p5PropertyOntology",
             "type": "string"
         },
-        "V1p5ReactivityMethod": {
+        "V1p5ReactivityMethodEnum": {
             "description": "",
             "enum": [
                 "SPR",
@@ -14157,10 +14149,10 @@
                 "cytometry",
                 "biological_activity"
             ],
-            "title": "V1p5ReactivityMethod",
+            "title": "V1p5ReactivityMethodEnum",
             "type": "string"
         },
-        "V1p5ReactivityReadout": {
+        "V1p5ReactivityReadoutEnum": {
             "description": "",
             "enum": [
                 "binding_strength",
@@ -14170,17 +14162,17 @@
                 "off_rate",
                 "pathogen_inhibition"
             ],
-            "title": "V1p5ReactivityReadout",
+            "title": "V1p5ReactivityReadoutEnum",
             "type": "string"
         },
-        "V1p5ReadDirection": {
+        "V1p5ReadDirectionEnum": {
             "description": "",
             "enum": [
                 "forward",
                 "reverse",
                 "mixed"
             ],
-            "title": "V1p5ReadDirection",
+            "title": "V1p5ReadDirectionEnum",
             "type": "string"
         },
         "V1p5RearrangedSequence": {
@@ -14201,11 +14193,11 @@
                     ]
                 },
                 "V1p5derivation": {
-                    "$ref": "#/$defs/V1p5Derivation",
+                    "$ref": "#/$defs/V1p5DerivationEnum",
                     "description": "The class of nucleic acid that was used as primary starting material"
                 },
                 "V1p5observation_type": {
-                    "$ref": "#/$defs/V1p5ObservationType",
+                    "$ref": "#/$defs/V1p5ObservationTypeEnum",
                     "description": "The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data."
                 },
                 "V1p5repository_name": {
@@ -14952,7 +14944,7 @@
                     ]
                 },
                 "V1p5locus": {
-                    "$ref": "#/$defs/V1p5Locus"
+                    "$ref": "#/$defs/V1p5LocusEnum"
                 },
                 "V1p5n1_length": {
                     "description": "Number of untemplated nucleotides 5' of the first or only D gene alignment.",
@@ -15323,7 +15315,7 @@
                     ]
                 },
                 "V1p5receptor_type": {
-                    "$ref": "#/$defs/V1p5ReceptorType",
+                    "$ref": "#/$defs/V1p5ReceptorTypeEnum",
                     "description": "The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR)."
                 },
                 "V1p5receptor_variable_domain_1_aa": {
@@ -15334,7 +15326,7 @@
                     ]
                 },
                 "V1p5receptor_variable_domain_1_locus": {
-                    "$ref": "#/$defs/V1p5ReceptorVariableDomain1Locus",
+                    "$ref": "#/$defs/V1p5ReceptorVariableDomain1LocusEnum",
                     "description": "Locus from which the variable domain in receptor_variable_domain_1_aa originates"
                 },
                 "V1p5receptor_variable_domain_2_aa": {
@@ -15345,7 +15337,7 @@
                     ]
                 },
                 "V1p5receptor_variable_domain_2_locus": {
-                    "$ref": "#/$defs/V1p5ReceptorVariableDomain2Locus",
+                    "$ref": "#/$defs/V1p5ReceptorVariableDomain2LocusEnum",
                     "description": "Locus from which the variable domain in receptor_variable_domain_2_aa originates"
                 }
             },
@@ -15357,19 +15349,19 @@
             "description": "",
             "properties": {
                 "V1p5antigen": {
-                    "$ref": "#/$defs/V1p5Antigen",
+                    "$ref": "#/$defs/V1p5AntigenOntology",
                     "description": "The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule."
                 },
                 "V1p5antigen_source_species": {
-                    "$ref": "#/$defs/V1p5AntigenSourceSpecies",
+                    "$ref": "#/$defs/V1p5AntigenSourceSpeciesOntology",
                     "description": "The species from which the antigen was isolated"
                 },
                 "V1p5antigen_type": {
-                    "$ref": "#/$defs/V1p5AntigenType",
+                    "$ref": "#/$defs/V1p5AntigenTypeEnum",
                     "description": "The type of antigen before processing by the immune system."
                 },
                 "V1p5ligand_type": {
-                    "$ref": "#/$defs/V1p5LigandType",
+                    "$ref": "#/$defs/V1p5LigandTypeEnum",
                     "description": "Classification of ligand binding to receptor"
                 },
                 "V1p5mhc_allele_1": {
@@ -15387,14 +15379,14 @@
                     ]
                 },
                 "V1p5mhc_class": {
-                    "$ref": "#/$defs/V1p5MhcClass"
+                    "$ref": "#/$defs/V1p5MhcClassEnum"
                 },
                 "V1p5mhc_gene_1": {
-                    "$ref": "#/$defs/V1p5MhcGene1",
+                    "$ref": "#/$defs/V1p5MhcGene1Ontology",
                     "description": "The MHC gene to which the mhc_allele_1 belongs"
                 },
                 "V1p5mhc_gene_2": {
-                    "$ref": "#/$defs/V1p5MhcGene2",
+                    "$ref": "#/$defs/V1p5MhcGene2Ontology",
                     "description": "The MHC gene to which the mhc_allele_2 belongs"
                 },
                 "V1p5peptide_end": {
@@ -15412,11 +15404,11 @@
                     ]
                 },
                 "V1p5reactivity_method": {
-                    "$ref": "#/$defs/V1p5ReactivityMethod",
+                    "$ref": "#/$defs/V1p5ReactivityMethodEnum",
                     "description": "The methodology used to assess expression (assay implemented in experiment)"
                 },
                 "V1p5reactivity_readout": {
-                    "$ref": "#/$defs/V1p5ReactivityReadout",
+                    "$ref": "#/$defs/V1p5ReactivityReadoutEnum",
                     "description": "Reactivity measurement read-out"
                 },
                 "V1p5reactivity_unit": {
@@ -15437,26 +15429,26 @@
             "title": "V1p5ReceptorReactivity",
             "type": "object"
         },
-        "V1p5ReceptorType": {
+        "V1p5ReceptorTypeEnum": {
             "description": "",
             "enum": [
                 "Ig",
                 "TCR"
             ],
-            "title": "V1p5ReceptorType",
+            "title": "V1p5ReceptorTypeEnum",
             "type": "string"
         },
-        "V1p5ReceptorVariableDomain1Locus": {
+        "V1p5ReceptorVariableDomain1LocusEnum": {
             "description": "",
             "enum": [
                 "IGH",
                 "TRB",
                 "TRD"
             ],
-            "title": "V1p5ReceptorVariableDomain1Locus",
+            "title": "V1p5ReceptorVariableDomain1LocusEnum",
             "type": "string"
         },
-        "V1p5ReceptorVariableDomain2Locus": {
+        "V1p5ReceptorVariableDomain2LocusEnum": {
             "description": "",
             "enum": [
                 "IGI",
@@ -15465,7 +15457,7 @@
                 "TRA",
                 "TRG"
             ],
-            "title": "V1p5ReceptorVariableDomain2Locus",
+            "title": "V1p5ReceptorVariableDomain2LocusEnum",
             "type": "string"
         },
         "V1p5Repertoire": {
@@ -15483,7 +15475,6 @@
                     ]
                 },
                 "V1p5repertoire_description": {
-                    "description": "Generic repertoire description",
                     "type": [
                         "string",
                         "null"
@@ -15566,7 +15557,7 @@
                 "V1p5repertoires": {
                     "description": "List of repertoires in this collection with an associated description and time point designation",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/V1p5RepertoireGroupDetail"
                     },
                     "type": [
                         "array",
@@ -15575,6 +15566,37 @@
                 }
             },
             "title": "V1p5RepertoireGroup",
+            "type": "object"
+        },
+        "V1p5RepertoireGroupDetail": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "V1p5repertoire_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "V1p5repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "V1p5time_point": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/V1p5TimePoint"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Time point designation for this repertoire within the group"
+                }
+            },
+            "title": "V1p5RepertoireGroupDetail",
             "type": "object"
         },
         "V1p5Sample": {
@@ -15610,7 +15632,7 @@
                     ]
                 },
                 "V1p5collection_time_point_relative_unit": {
-                    "$ref": "#/$defs/V1p5CollectionTimePointRelativeUnit",
+                    "$ref": "#/$defs/V1p5CollectionTimePointRelativeUnitOntology",
                     "description": "Unit of Sample collection time"
                 },
                 "V1p5disease_state_sample": {
@@ -15635,7 +15657,7 @@
                     ]
                 },
                 "V1p5tissue": {
-                    "$ref": "#/$defs/V1p5Tissue",
+                    "$ref": "#/$defs/V1p5TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 }
             },
@@ -15696,7 +15718,7 @@
                     ]
                 },
                 "V1p5cell_species": {
-                    "$ref": "#/$defs/V1p5CellSpecies",
+                    "$ref": "#/$defs/V1p5CellSpeciesOntology",
                     "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
                 },
                 "V1p5cell_storage": {
@@ -15707,7 +15729,7 @@
                     ]
                 },
                 "V1p5cell_subset": {
-                    "$ref": "#/$defs/V1p5CellSubset",
+                    "$ref": "#/$defs/V1p5CellSubsetOntology",
                     "description": "Commonly-used designation of isolated cell population"
                 },
                 "V1p5cells_per_reaction": {
@@ -15732,11 +15754,11 @@
                     ]
                 },
                 "V1p5collection_time_point_relative_unit": {
-                    "$ref": "#/$defs/V1p5CollectionTimePointRelativeUnit",
+                    "$ref": "#/$defs/V1p5CollectionTimePointRelativeUnitOntology",
                     "description": "Unit of Sample collection time"
                 },
                 "V1p5complete_sequences": {
-                    "$ref": "#/$defs/V1p5CompleteSequences",
+                    "$ref": "#/$defs/V1p5CompleteSequencesEnum",
                     "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
                 },
                 "V1p5disease_state_sample": {
@@ -15754,7 +15776,7 @@
                     ]
                 },
                 "V1p5library_generation_method": {
-                    "$ref": "#/$defs/V1p5LibraryGenerationMethod",
+                    "$ref": "#/$defs/V1p5LibraryGenerationMethodEnum",
                     "description": "Generic type of library generation"
                 },
                 "V1p5library_generation_protocol": {
@@ -15775,7 +15797,7 @@
                     ]
                 },
                 "V1p5physical_linkage": {
-                    "$ref": "#/$defs/V1p5PhysicalLinkage",
+                    "$ref": "#/$defs/V1p5PhysicalLinkageEnum",
                     "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
                 },
                 "V1p5sample_id": {
@@ -15860,11 +15882,11 @@
                     ]
                 },
                 "V1p5template_amount_unit": {
-                    "$ref": "#/$defs/V1p5TemplateAmountUnit",
+                    "$ref": "#/$defs/V1p5TemplateAmountUnitOntology",
                     "description": "Unit of template amount"
                 },
                 "V1p5template_class": {
-                    "$ref": "#/$defs/V1p5TemplateClass",
+                    "$ref": "#/$defs/V1p5TemplateClassEnum",
                     "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
                 },
                 "V1p5template_quality": {
@@ -15875,7 +15897,7 @@
                     ]
                 },
                 "V1p5tissue": {
-                    "$ref": "#/$defs/V1p5Tissue",
+                    "$ref": "#/$defs/V1p5TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
                 },
                 "V1p5tissue_processing": {
@@ -16008,7 +16030,7 @@
             "title": "V1p5SequenceDelineationV",
             "type": "object"
         },
-        "V1p5SequenceType": {
+        "V1p5SequenceTypeEnum": {
             "description": "",
             "enum": [
                 "V",
@@ -16016,7 +16038,7 @@
                 "J",
                 "C"
             ],
-            "title": "V1p5SequenceType",
+            "title": "V1p5SequenceTypeEnum",
             "type": "string"
         },
         "V1p5SequencingData": {
@@ -16024,7 +16046,7 @@
             "description": "",
             "properties": {
                 "V1p5file_type": {
-                    "$ref": "#/$defs/V1p5FileType",
+                    "$ref": "#/$defs/V1p5FileTypeEnum",
                     "description": "File format for the raw reads or sequences"
                 },
                 "V1p5filename": {
@@ -16056,7 +16078,7 @@
                     ]
                 },
                 "V1p5paired_read_direction": {
-                    "$ref": "#/$defs/V1p5PairedReadDirection",
+                    "$ref": "#/$defs/V1p5PairedReadDirectionEnum",
                     "description": "Read direction for the second file in paired-read sequencing"
                 },
                 "V1p5paired_read_length": {
@@ -16067,7 +16089,7 @@
                     ]
                 },
                 "V1p5read_direction": {
-                    "$ref": "#/$defs/V1p5ReadDirection",
+                    "$ref": "#/$defs/V1p5ReadDirectionEnum",
                     "description": "Read direction for the raw reads or sequences. The first file in paired-read sequencing."
                 },
                 "V1p5read_length": {
@@ -16150,7 +16172,7 @@
             "title": "V1p5SequencingRun",
             "type": "object"
         },
-        "V1p5Sex": {
+        "V1p5SexEnum": {
             "description": "",
             "enum": [
                 "male",
@@ -16159,15 +16181,15 @@
                 "hermaphrodite",
                 "intersex"
             ],
-            "title": "V1p5Sex",
+            "title": "V1p5SexEnum",
             "type": "string"
         },
-        "V1p5Species": {
+        "V1p5SpeciesOntology": {
             "description": "",
-            "title": "V1p5Species",
+            "title": "V1p5SpeciesOntology",
             "type": "string"
         },
-        "V1p5SpeciesSubgroupType": {
+        "V1p5SpeciesSubgroupTypeEnum": {
             "description": "",
             "enum": [
                 "breed",
@@ -16176,10 +16198,10 @@
                 "outbred",
                 "locational"
             ],
-            "title": "V1p5SpeciesSubgroupType",
+            "title": "V1p5SpeciesSubgroupTypeEnum",
             "type": "string"
         },
-        "V1p5Status": {
+        "V1p5StatusEnum": {
             "description": "",
             "enum": [
                 "active",
@@ -16187,16 +16209,16 @@
                 "retired",
                 "withdrawn"
             ],
-            "title": "V1p5Status",
+            "title": "V1p5StatusEnum",
             "type": "string"
         },
-        "V1p5Strand": {
+        "V1p5StrandEnum": {
             "description": "",
             "enum": [
                 "+",
                 "-"
             ],
-            "title": "V1p5Strand",
+            "title": "V1p5StrandEnum",
             "type": "string"
         },
         "V1p5Study": {
@@ -16243,7 +16265,7 @@
                 "V1p5keywords_study": {
                     "description": "Keywords describing properties of one or more data sets in a study. \"contains_schema\" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that \"contains_paired_chain\" but does not \"contains_schema_cell\").",
                     "items": {
-                        "$ref": "#/$defs/V1p5KeywordsStudy"
+                        "$ref": "#/$defs/V1p5KeywordsStudyEnum"
                     },
                     "type": [
                         "array",
@@ -16297,7 +16319,7 @@
                     ]
                 },
                 "V1p5study_type": {
-                    "$ref": "#/$defs/V1p5StudyType",
+                    "$ref": "#/$defs/V1p5StudyTypeOntology",
                     "description": "Type of study design"
                 },
                 "V1p5submitted_by": {
@@ -16311,9 +16333,9 @@
             "title": "V1p5Study",
             "type": "object"
         },
-        "V1p5StudyType": {
+        "V1p5StudyTypeOntology": {
             "description": "",
-            "title": "V1p5StudyType",
+            "title": "V1p5StudyTypeOntology",
             "type": "string"
         },
         "V1p5Subject": {
@@ -16342,7 +16364,7 @@
                     ]
                 },
                 "V1p5age_unit": {
-                    "$ref": "#/$defs/V1p5AgeUnit",
+                    "$ref": "#/$defs/V1p5AgeUnitOntology",
                     "description": "Unit of age range"
                 },
                 "V1p5ancestry_population": {
@@ -16402,11 +16424,11 @@
                     ]
                 },
                 "V1p5sex": {
-                    "$ref": "#/$defs/V1p5Sex",
+                    "$ref": "#/$defs/V1p5SexEnum",
                     "description": "Biological sex of subject"
                 },
                 "V1p5species": {
-                    "$ref": "#/$defs/V1p5Species",
+                    "$ref": "#/$defs/V1p5SpeciesOntology",
                     "description": "Binomial designation of subject's species"
                 },
                 "V1p5strain_name": {
@@ -16464,35 +16486,37 @@
             "title": "V1p5SubjectGenotype",
             "type": "object"
         },
-        "V1p5TemplateAmountUnit": {
+        "V1p5TemplateAmountUnitOntology": {
             "description": "",
-            "title": "V1p5TemplateAmountUnit",
+            "title": "V1p5TemplateAmountUnitOntology",
             "type": "string"
         },
-        "V1p5TemplateClass": {
+        "V1p5TemplateClassEnum": {
             "description": "",
             "enum": [
                 "DNA",
                 "RNA"
             ],
-            "title": "V1p5TemplateClass",
+            "title": "V1p5TemplateClassEnum",
             "type": "string"
         },
         "V1p5TimePoint": {
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "V1p5label": {
+                "V1p5time_point_label": {
+                    "description": "Informative label for the time point",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "V1p5unit": {
-                    "$ref": "#/$defs/V1p5Unit",
+                "V1p5time_point_unit": {
+                    "$ref": "#/$defs/V1p5TimePointUnitOntology",
                     "description": "Unit of the time point"
                 },
-                "V1p5value": {
+                "V1p5time_point_value": {
+                    "description": "Value of the time point",
                     "type": [
                         "number",
                         "null"
@@ -16502,9 +16526,14 @@
             "title": "V1p5TimePoint",
             "type": "object"
         },
-        "V1p5Tissue": {
+        "V1p5TimePointUnitOntology": {
             "description": "",
-            "title": "V1p5Tissue",
+            "title": "V1p5TimePointUnitOntology",
+            "type": "string"
+        },
+        "V1p5TissueOntology": {
+            "description": "",
+            "title": "V1p5TissueOntology",
             "type": "string"
         },
         "V1p5Tree": {
@@ -16573,11 +16602,6 @@
             "title": "V1p5UndocumentedAllele",
             "type": "object"
         },
-        "V1p5Unit": {
-            "description": "",
-            "title": "V1p5Unit",
-            "type": "string"
-        },
         "V1p5UnrearrangedSequence": {
             "additionalProperties": false,
             "description": "",
@@ -16642,7 +16666,7 @@
                     ]
                 },
                 "V1p5strand": {
-                    "$ref": "#/$defs/V1p5Strand",
+                    "$ref": "#/$defs/V1p5StrandEnum",
                     "description": "sense (+ or -)"
                 }
             },

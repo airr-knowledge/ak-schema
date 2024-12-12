@@ -263,12 +263,13 @@ slots:
 
 enums:
 
-  SpeciesOntology:
-    permissible_values:
-      Homo sapiens (human):
-        meaning: NCBITaxon:9606
-      Mus musculus (mouse):
-        meaning: NCBITaxon:10090
+#
+#  SpeciesOntology:  # now in ak_airr
+#    permissible_values:
+#      Homo sapiens (human):
+#        meaning: NCBITaxon:9606
+#      Mus musculus (mouse):
+#        meaning: NCBITaxon:10090
   BiologicalSexOntology:
     permissible_values:
       female:

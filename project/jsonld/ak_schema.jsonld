@@ -432,21 +432,6 @@
   ],
   "enums": [
     {
-      "name": "SpeciesOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SpeciesOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "permissible_values": [
-        {
-          "text": "Homo sapiens (human)",
-          "meaning": "NCBITaxon:9606"
-        },
-        {
-          "text": "Mus musculus (mouse)",
-          "meaning": "NCBITaxon:10090"
-        }
-      ]
-    },
-    {
       "name": "BiologicalSexOntology",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/BiologicalSexOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -972,8 +957,8 @@
       ]
     },
     {
-      "name": "TimePointUnit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TimePointUnit",
+      "name": "TimePointUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TimePointUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -986,8 +971,8 @@
       }
     },
     {
-      "name": "Derivation",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Derivation",
+      "name": "DerivationEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DerivationEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -999,8 +984,8 @@
       ]
     },
     {
-      "name": "ObservationType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ObservationType",
+      "name": "ObservationTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ObservationTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1012,8 +997,8 @@
       ]
     },
     {
-      "name": "Strand",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Strand",
+      "name": "StrandEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StrandEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1025,8 +1010,8 @@
       ]
     },
     {
-      "name": "Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Locus",
+      "name": "LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1056,8 +1041,8 @@
       ]
     },
     {
-      "name": "SequenceType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SequenceType",
+      "name": "SequenceTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SequenceTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1075,8 +1060,8 @@
       ]
     },
     {
-      "name": "InferenceType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InferenceType",
+      "name": "InferenceTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InferenceTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1091,8 +1076,8 @@
       ]
     },
     {
-      "name": "Species",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Species",
+      "name": "SpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1105,8 +1090,8 @@
       }
     },
     {
-      "name": "SpeciesSubgroupType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SpeciesSubgroupType",
+      "name": "SpeciesSubgroupTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SpeciesSubgroupTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1127,8 +1112,8 @@
       ]
     },
     {
-      "name": "Status",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Status",
+      "name": "StatusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StatusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1146,8 +1131,8 @@
       ]
     },
     {
-      "name": "JCodonFrame",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/JCodonFrame",
+      "name": "JCodonFrameEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/JCodonFrameEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1162,8 +1147,8 @@
       ]
     },
     {
-      "name": "CurationalTags",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CurationalTags",
+      "name": "CurationalTagsEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CurationalTagsEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1175,8 +1160,8 @@
       ]
     },
     {
-      "name": "InferenceProcess",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InferenceProcess",
+      "name": "InferenceProcessEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InferenceProcessEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1188,8 +1173,8 @@
       ]
     },
     {
-      "name": "MhcClass",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MhcClass",
+      "name": "MhcClassEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MhcClassEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1204,8 +1189,8 @@
       ]
     },
     {
-      "name": "Gene",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Gene",
+      "name": "GeneOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/GeneOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1218,8 +1203,8 @@
       }
     },
     {
-      "name": "StudyType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StudyType",
+      "name": "StudyTypeOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/StudyTypeOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1232,8 +1217,8 @@
       }
     },
     {
-      "name": "KeywordsStudy",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/KeywordsStudy",
+      "name": "KeywordsStudyEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/KeywordsStudyEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1260,8 +1245,8 @@
       ]
     },
     {
-      "name": "Sex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Sex",
+      "name": "SexEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SexEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1282,8 +1267,8 @@
       ]
     },
     {
-      "name": "AgeUnit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AgeUnit",
+      "name": "AgeUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AgeUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1296,8 +1281,8 @@
       }
     },
     {
-      "name": "DiseaseDiagnosis",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseDiagnosis",
+      "name": "DiseaseDiagnosisOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseDiagnosisOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1310,8 +1295,8 @@
       }
     },
     {
-      "name": "Tissue",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Tissue",
+      "name": "TissueOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TissueOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1324,8 +1309,8 @@
       }
     },
     {
-      "name": "CollectionTimePointRelativeUnit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CollectionTimePointRelativeUnit",
+      "name": "CollectionTimePointRelativeUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CollectionTimePointRelativeUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1338,8 +1323,8 @@
       }
     },
     {
-      "name": "CellSubset",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CellSubset",
+      "name": "CellSubsetOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CellSubsetOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1352,8 +1337,8 @@
       }
     },
     {
-      "name": "CellSpecies",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CellSpecies",
+      "name": "CellSpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CellSpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1366,8 +1351,8 @@
       }
     },
     {
-      "name": "PcrTargetLocus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PcrTargetLocus",
+      "name": "PcrTargetLocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PcrTargetLocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1397,8 +1382,8 @@
       ]
     },
     {
-      "name": "TemplateClass",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TemplateClass",
+      "name": "TemplateClassEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TemplateClassEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1410,8 +1395,8 @@
       ]
     },
     {
-      "name": "TemplateAmountUnit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TemplateAmountUnit",
+      "name": "TemplateAmountUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TemplateAmountUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1424,8 +1409,8 @@
       }
     },
     {
-      "name": "LibraryGenerationMethod",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LibraryGenerationMethod",
+      "name": "LibraryGenerationMethodEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LibraryGenerationMethodEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1467,8 +1452,8 @@
       ]
     },
     {
-      "name": "CompleteSequences",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CompleteSequences",
+      "name": "CompleteSequencesEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CompleteSequencesEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1486,8 +1471,8 @@
       ]
     },
     {
-      "name": "PhysicalLinkage",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PhysicalLinkage",
+      "name": "PhysicalLinkageEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PhysicalLinkageEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1505,8 +1490,8 @@
       ]
     },
     {
-      "name": "FileType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/FileType",
+      "name": "FileTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/FileTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1518,8 +1503,8 @@
       ]
     },
     {
-      "name": "ReadDirection",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReadDirection",
+      "name": "ReadDirectionEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReadDirectionEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1534,8 +1519,8 @@
       ]
     },
     {
-      "name": "PairedReadDirection",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PairedReadDirection",
+      "name": "PairedReadDirectionEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PairedReadDirectionEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1550,8 +1535,8 @@
       ]
     },
     {
-      "name": "ExpressionStudyMethod",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExpressionStudyMethod",
+      "name": "ExpressionStudyMethodEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExpressionStudyMethodEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1563,13 +1548,13 @@
       ]
     },
     {
-      "name": "Property",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Property",
+      "name": "PropertyOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PropertyOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "ReceptorType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorType",
+      "name": "ReceptorTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1581,8 +1566,8 @@
       ]
     },
     {
-      "name": "ReceptorVariableDomain1Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorVariableDomain1Locus",
+      "name": "ReceptorVariableDomain1LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorVariableDomain1LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1597,8 +1582,8 @@
       ]
     },
     {
-      "name": "ReceptorVariableDomain2Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorVariableDomain2Locus",
+      "name": "ReceptorVariableDomain2LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorVariableDomain2LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1619,8 +1604,8 @@
       ]
     },
     {
-      "name": "LigandType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LigandType",
+      "name": "LigandTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LigandTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1641,8 +1626,8 @@
       ]
     },
     {
-      "name": "AntigenType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntigenType",
+      "name": "AntigenTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntigenTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1657,13 +1642,13 @@
       ]
     },
     {
-      "name": "Antigen",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Antigen",
+      "name": "AntigenOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntigenOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "AntigenSourceSpecies",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntigenSourceSpecies",
+      "name": "AntigenSourceSpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntigenSourceSpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1676,8 +1661,8 @@
       }
     },
     {
-      "name": "MhcGene1",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MhcGene1",
+      "name": "MhcGene1Ontology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MhcGene1Ontology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1690,8 +1675,8 @@
       }
     },
     {
-      "name": "MhcGene2",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MhcGene2",
+      "name": "MhcGene2Ontology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MhcGene2Ontology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1704,8 +1689,8 @@
       }
     },
     {
-      "name": "ReactivityMethod",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReactivityMethod",
+      "name": "ReactivityMethodEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReactivityMethodEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1726,8 +1711,8 @@
       ]
     },
     {
-      "name": "ReactivityReadout",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReactivityReadout",
+      "name": "ReactivityReadoutEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReactivityReadoutEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1751,8 +1736,8 @@
       ]
     },
     {
-      "name": "V1p5Unit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Unit",
+      "name": "V1p5TimePointUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TimePointUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1765,8 +1750,8 @@
       }
     },
     {
-      "name": "V1p5Derivation",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Derivation",
+      "name": "V1p5DerivationEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5DerivationEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1778,8 +1763,8 @@
       ]
     },
     {
-      "name": "V1p5ObservationType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ObservationType",
+      "name": "V1p5ObservationTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ObservationTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1791,8 +1776,8 @@
       ]
     },
     {
-      "name": "V1p5Strand",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Strand",
+      "name": "V1p5StrandEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5StrandEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1804,8 +1789,8 @@
       ]
     },
     {
-      "name": "V1p5Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Locus",
+      "name": "V1p5LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1835,8 +1820,8 @@
       ]
     },
     {
-      "name": "V1p5SequenceType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5SequenceType",
+      "name": "V1p5SequenceTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5SequenceTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1854,8 +1839,8 @@
       ]
     },
     {
-      "name": "V1p5InferenceType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5InferenceType",
+      "name": "V1p5InferenceTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5InferenceTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1870,13 +1855,22 @@
       ]
     },
     {
-      "name": "V1p5Species",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Species",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema"
+      "name": "V1p5SpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5SpeciesOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "NCBITAXON:7776"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ],
+        "include_self": true
+      }
     },
     {
-      "name": "V1p5SpeciesSubgroupType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5SpeciesSubgroupType",
+      "name": "V1p5SpeciesSubgroupTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5SpeciesSubgroupTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1897,8 +1891,8 @@
       ]
     },
     {
-      "name": "V1p5Status",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Status",
+      "name": "V1p5StatusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5StatusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1916,8 +1910,8 @@
       ]
     },
     {
-      "name": "V1p5JCodonFrame",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5JCodonFrame",
+      "name": "V1p5JCodonFrameEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5JCodonFrameEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1932,8 +1926,8 @@
       ]
     },
     {
-      "name": "V1p5CurationalTags",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CurationalTags",
+      "name": "V1p5CurationalTagsEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CurationalTagsEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1945,8 +1939,8 @@
       ]
     },
     {
-      "name": "V1p5InferenceProcess",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5InferenceProcess",
+      "name": "V1p5InferenceProcessEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5InferenceProcessEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1958,8 +1952,8 @@
       ]
     },
     {
-      "name": "V1p5MhcClass",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5MhcClass",
+      "name": "V1p5MhcClassEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5MhcClassEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -1974,8 +1968,8 @@
       ]
     },
     {
-      "name": "V1p5Gene",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Gene",
+      "name": "V1p5GeneOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5GeneOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -1988,8 +1982,8 @@
       }
     },
     {
-      "name": "V1p5StudyType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5StudyType",
+      "name": "V1p5StudyTypeOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5StudyTypeOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2002,8 +1996,8 @@
       }
     },
     {
-      "name": "V1p5KeywordsStudy",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5KeywordsStudy",
+      "name": "V1p5KeywordsStudyEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5KeywordsStudyEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2030,8 +2024,8 @@
       ]
     },
     {
-      "name": "V1p5Sex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Sex",
+      "name": "V1p5SexEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5SexEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2052,8 +2046,8 @@
       ]
     },
     {
-      "name": "V1p5AgeUnit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5AgeUnit",
+      "name": "V1p5AgeUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5AgeUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2066,8 +2060,8 @@
       }
     },
     {
-      "name": "V1p5DiseaseDiagnosis",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5DiseaseDiagnosis",
+      "name": "V1p5DiseaseDiagnosisOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5DiseaseDiagnosisOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2080,8 +2074,8 @@
       }
     },
     {
-      "name": "V1p5Tissue",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Tissue",
+      "name": "V1p5TissueOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TissueOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2094,8 +2088,8 @@
       }
     },
     {
-      "name": "V1p5CollectionTimePointRelativeUnit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CollectionTimePointRelativeUnit",
+      "name": "V1p5CollectionTimePointRelativeUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CollectionTimePointRelativeUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2108,8 +2102,8 @@
       }
     },
     {
-      "name": "V1p5CellSubset",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CellSubset",
+      "name": "V1p5CellSubsetOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CellSubsetOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2122,8 +2116,8 @@
       }
     },
     {
-      "name": "V1p5CellSpecies",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CellSpecies",
+      "name": "V1p5CellSpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CellSpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2136,8 +2130,8 @@
       }
     },
     {
-      "name": "V1p5PcrTargetLocus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5PcrTargetLocus",
+      "name": "V1p5PcrTargetLocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5PcrTargetLocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2167,8 +2161,8 @@
       ]
     },
     {
-      "name": "V1p5TemplateClass",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TemplateClass",
+      "name": "V1p5TemplateClassEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TemplateClassEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2180,8 +2174,8 @@
       ]
     },
     {
-      "name": "V1p5TemplateAmountUnit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TemplateAmountUnit",
+      "name": "V1p5TemplateAmountUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TemplateAmountUnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2194,8 +2188,8 @@
       }
     },
     {
-      "name": "V1p5LibraryGenerationMethod",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5LibraryGenerationMethod",
+      "name": "V1p5LibraryGenerationMethodEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5LibraryGenerationMethodEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2237,8 +2231,8 @@
       ]
     },
     {
-      "name": "V1p5CompleteSequences",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CompleteSequences",
+      "name": "V1p5CompleteSequencesEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CompleteSequencesEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2256,8 +2250,8 @@
       ]
     },
     {
-      "name": "V1p5PhysicalLinkage",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5PhysicalLinkage",
+      "name": "V1p5PhysicalLinkageEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5PhysicalLinkageEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2275,8 +2269,8 @@
       ]
     },
     {
-      "name": "V1p5FileType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5FileType",
+      "name": "V1p5FileTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5FileTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2288,8 +2282,8 @@
       ]
     },
     {
-      "name": "V1p5ReadDirection",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReadDirection",
+      "name": "V1p5ReadDirectionEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReadDirectionEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2304,8 +2298,8 @@
       ]
     },
     {
-      "name": "V1p5PairedReadDirection",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5PairedReadDirection",
+      "name": "V1p5PairedReadDirectionEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5PairedReadDirectionEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2320,8 +2314,8 @@
       ]
     },
     {
-      "name": "V1p5ExpressionStudyMethod",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ExpressionStudyMethod",
+      "name": "V1p5ExpressionStudyMethodEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ExpressionStudyMethodEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2333,13 +2327,13 @@
       ]
     },
     {
-      "name": "V1p5Property",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Property",
+      "name": "V1p5PropertyOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5PropertyOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "V1p5ReceptorType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReceptorType",
+      "name": "V1p5ReceptorTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReceptorTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2351,8 +2345,8 @@
       ]
     },
     {
-      "name": "V1p5ReceptorVariableDomain1Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReceptorVariableDomain1Locus",
+      "name": "V1p5ReceptorVariableDomain1LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReceptorVariableDomain1LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2367,8 +2361,8 @@
       ]
     },
     {
-      "name": "V1p5ReceptorVariableDomain2Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReceptorVariableDomain2Locus",
+      "name": "V1p5ReceptorVariableDomain2LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReceptorVariableDomain2LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2389,8 +2383,8 @@
       ]
     },
     {
-      "name": "V1p5LigandType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5LigandType",
+      "name": "V1p5LigandTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5LigandTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2411,8 +2405,8 @@
       ]
     },
     {
-      "name": "V1p5AntigenType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5AntigenType",
+      "name": "V1p5AntigenTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5AntigenTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2427,13 +2421,13 @@
       ]
     },
     {
-      "name": "V1p5Antigen",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5Antigen",
+      "name": "V1p5AntigenOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5AntigenOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "V1p5AntigenSourceSpecies",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5AntigenSourceSpecies",
+      "name": "V1p5AntigenSourceSpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5AntigenSourceSpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2446,8 +2440,8 @@
       }
     },
     {
-      "name": "V1p5MhcGene1",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5MhcGene1",
+      "name": "V1p5MhcGene1Ontology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5MhcGene1Ontology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2460,8 +2454,8 @@
       }
     },
     {
-      "name": "V1p5MhcGene2",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5MhcGene2",
+      "name": "V1p5MhcGene2Ontology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5MhcGene2Ontology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2474,8 +2468,8 @@
       }
     },
     {
-      "name": "V1p5ReactivityMethod",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReactivityMethod",
+      "name": "V1p5ReactivityMethodEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReactivityMethodEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2496,8 +2490,8 @@
       ]
     },
     {
-      "name": "V1p5ReactivityReadout",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReactivityReadout",
+      "name": "V1p5ReactivityReadoutEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5ReactivityReadoutEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2521,8 +2515,8 @@
       ]
     },
     {
-      "name": "V1p4Unit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Unit",
+      "name": "V1p4UnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4UnitOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "relationship_types": [
@@ -2532,18 +2526,18 @@
       }
     },
     {
-      "name": "V1p4OrcidId",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4OrcidId",
+      "name": "V1p4OrcidIdOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4OrcidIdOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "V1p4Affiliation",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Affiliation",
+      "name": "V1p4AffiliationOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AffiliationOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "V1p4Role",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Role",
+      "name": "V1p4RoleEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4RoleEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2591,8 +2585,8 @@
       ]
     },
     {
-      "name": "V1p4Degree",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Degree",
+      "name": "V1p4DegreeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4DegreeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2607,8 +2601,8 @@
       ]
     },
     {
-      "name": "V1p4Derivation",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Derivation",
+      "name": "V1p4DerivationEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4DerivationEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2620,8 +2614,8 @@
       ]
     },
     {
-      "name": "V1p4ObservationType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ObservationType",
+      "name": "V1p4ObservationTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ObservationTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2633,8 +2627,8 @@
       ]
     },
     {
-      "name": "V1p4Strand",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Strand",
+      "name": "V1p4StrandEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4StrandEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2646,8 +2640,8 @@
       ]
     },
     {
-      "name": "V1p4Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Locus",
+      "name": "V1p4LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2677,8 +2671,8 @@
       ]
     },
     {
-      "name": "V1p4SequenceType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4SequenceType",
+      "name": "V1p4SequenceTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4SequenceTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2696,8 +2690,8 @@
       ]
     },
     {
-      "name": "V1p4InferenceType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4InferenceType",
+      "name": "V1p4InferenceTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4InferenceTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2712,13 +2706,13 @@
       ]
     },
     {
-      "name": "V1p4Species",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Species",
+      "name": "V1p4SpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4SpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "V1p4SpeciesSubgroupType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4SpeciesSubgroupType",
+      "name": "V1p4SpeciesSubgroupTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4SpeciesSubgroupTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2739,8 +2733,8 @@
       ]
     },
     {
-      "name": "V1p4Status",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Status",
+      "name": "V1p4StatusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4StatusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2758,8 +2752,8 @@
       ]
     },
     {
-      "name": "V1p4JCodonFrame",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4JCodonFrame",
+      "name": "V1p4JCodonFrameEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4JCodonFrameEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2774,8 +2768,8 @@
       ]
     },
     {
-      "name": "V1p4CurationalTags",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CurationalTags",
+      "name": "V1p4CurationalTagsEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CurationalTagsEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2787,8 +2781,8 @@
       ]
     },
     {
-      "name": "V1p4InferenceProcess",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4InferenceProcess",
+      "name": "V1p4InferenceProcessEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4InferenceProcessEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2800,8 +2794,8 @@
       ]
     },
     {
-      "name": "V1p4MhcClass",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4MhcClass",
+      "name": "V1p4MhcClassEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4MhcClassEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2816,8 +2810,8 @@
       ]
     },
     {
-      "name": "V1p4Gene",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Gene",
+      "name": "V1p4GeneOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4GeneOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2830,8 +2824,8 @@
       }
     },
     {
-      "name": "V1p4StudyType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4StudyType",
+      "name": "V1p4StudyTypeOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4StudyTypeOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2844,8 +2838,8 @@
       }
     },
     {
-      "name": "V1p4KeywordsStudy",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4KeywordsStudy",
+      "name": "V1p4KeywordsStudyEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4KeywordsStudyEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2878,8 +2872,8 @@
       ]
     },
     {
-      "name": "V1p4Sex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Sex",
+      "name": "V1p4SexEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4SexEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -2900,8 +2894,8 @@
       ]
     },
     {
-      "name": "V1p4AncestryPopulation",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AncestryPopulation",
+      "name": "V1p4AncestryPopulationOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AncestryPopulationOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2914,8 +2908,8 @@
       }
     },
     {
-      "name": "V1p4LocationBirth",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LocationBirth",
+      "name": "V1p4LocationBirthOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LocationBirthOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2928,8 +2922,8 @@
       }
     },
     {
-      "name": "V1p4DiseaseDiagnosis",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4DiseaseDiagnosis",
+      "name": "V1p4DiseaseDiagnosisOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4DiseaseDiagnosisOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2942,8 +2936,8 @@
       }
     },
     {
-      "name": "V1p4Tissue",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Tissue",
+      "name": "V1p4TissueOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4TissueOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2956,8 +2950,8 @@
       }
     },
     {
-      "name": "V1p4CollectionLocation",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CollectionLocation",
+      "name": "V1p4CollectionLocationOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CollectionLocationOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2970,8 +2964,8 @@
       }
     },
     {
-      "name": "V1p4CellSubset",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CellSubset",
+      "name": "V1p4CellSubsetOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CellSubsetOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2984,8 +2978,8 @@
       }
     },
     {
-      "name": "V1p4CellSpecies",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CellSpecies",
+      "name": "V1p4CellSpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CellSpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -2998,8 +2992,8 @@
       }
     },
     {
-      "name": "V1p4PcrTargetLocus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4PcrTargetLocus",
+      "name": "V1p4PcrTargetLocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4PcrTargetLocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3029,8 +3023,8 @@
       ]
     },
     {
-      "name": "V1p4TemplateClass",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4TemplateClass",
+      "name": "V1p4TemplateClassEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4TemplateClassEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3042,8 +3036,8 @@
       ]
     },
     {
-      "name": "V1p4LibraryGenerationMethod",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LibraryGenerationMethod",
+      "name": "V1p4LibraryGenerationMethodEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LibraryGenerationMethodEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3085,8 +3079,8 @@
       ]
     },
     {
-      "name": "V1p4CompleteSequences",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CompleteSequences",
+      "name": "V1p4CompleteSequencesEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4CompleteSequencesEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3104,8 +3098,8 @@
       ]
     },
     {
-      "name": "V1p4PhysicalLinkage",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4PhysicalLinkage",
+      "name": "V1p4PhysicalLinkageEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4PhysicalLinkageEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3123,8 +3117,8 @@
       ]
     },
     {
-      "name": "V1p4FileType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4FileType",
+      "name": "V1p4FileTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4FileTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3136,8 +3130,8 @@
       ]
     },
     {
-      "name": "V1p4ReadDirection",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReadDirection",
+      "name": "V1p4ReadDirectionEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReadDirectionEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3152,8 +3146,8 @@
       ]
     },
     {
-      "name": "V1p4PairedReadDirection",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4PairedReadDirection",
+      "name": "V1p4PairedReadDirectionEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4PairedReadDirectionEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3168,8 +3162,8 @@
       ]
     },
     {
-      "name": "V1p4LocusSpecies",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LocusSpecies",
+      "name": "V1p4LocusSpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LocusSpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -3182,13 +3176,13 @@
       }
     },
     {
-      "name": "V1p4Property",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Property",
+      "name": "V1p4PropertyOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4PropertyOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "V1p4ReceptorType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReceptorType",
+      "name": "V1p4ReceptorTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReceptorTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3200,8 +3194,8 @@
       ]
     },
     {
-      "name": "V1p4ReceptorVariableDomain1Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReceptorVariableDomain1Locus",
+      "name": "V1p4ReceptorVariableDomain1LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReceptorVariableDomain1LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3216,8 +3210,8 @@
       ]
     },
     {
-      "name": "V1p4ReceptorVariableDomain2Locus",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReceptorVariableDomain2Locus",
+      "name": "V1p4ReceptorVariableDomain2LocusEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4ReceptorVariableDomain2LocusEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3238,8 +3232,8 @@
       ]
     },
     {
-      "name": "V1p4LigandType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LigandType",
+      "name": "V1p4LigandTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4LigandTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3260,8 +3254,8 @@
       ]
     },
     {
-      "name": "V1p4AntigenType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AntigenType",
+      "name": "V1p4AntigenTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AntigenTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
@@ -3276,13 +3270,13 @@
       ]
     },
     {
-      "name": "V1p4Antigen",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4Antigen",
+      "name": "V1p4AntigenOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AntigenOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
-      "name": "V1p4AntigenSourceSpecies",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AntigenSourceSpecies",
+      "name": "V1p4AntigenSourceSpeciesOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4AntigenSourceSpeciesOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -3295,8 +3289,8 @@
       }
     },
     {
-      "name": "V1p4MhcGene1",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4MhcGene1",
+      "name": "V1p4MhcGene1Ontology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4MhcGene1Ontology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -3309,8 +3303,8 @@
       }
     },
     {
-      "name": "V1p4MhcGene2",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4MhcGene2",
+      "name": "V1p4MhcGene2Ontology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p4MhcGene2Ontology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -4195,7 +4189,7 @@
       "domain_of": [
         "Conclusion"
       ],
-      "range": "Species",
+      "range": "SpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -4465,7 +4459,7 @@
       "domain_of": [
         "TimePoint"
       ],
-      "range": "TimePointUnit",
+      "range": "TimePointUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -4605,7 +4599,7 @@
       "domain_of": [
         "RearrangedSequence"
       ],
-      "range": "Derivation",
+      "range": "DerivationEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -4627,7 +4621,7 @@
       "domain_of": [
         "RearrangedSequence"
       ],
-      "range": "ObservationType",
+      "range": "ObservationTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -4836,7 +4830,7 @@
       "domain_of": [
         "UnrearrangedSequence"
       ],
-      "range": "Strand",
+      "range": "StrandEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5398,7 +5392,7 @@
         "Genotype",
         "Rearrangement"
       ],
-      "range": "Locus",
+      "range": "LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5440,7 +5434,7 @@
       "domain_of": [
         "AlleleDescription"
       ],
-      "range": "SequenceType",
+      "range": "SequenceTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5483,7 +5477,7 @@
       "domain_of": [
         "AlleleDescription"
       ],
-      "range": "InferenceType",
+      "range": "InferenceTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5505,7 +5499,7 @@
         "GermlineSet",
         "Subject"
       ],
-      "range": "Species",
+      "range": "SpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -5550,7 +5544,7 @@
         "AlleleDescription",
         "GermlineSet"
       ],
-      "range": "SpeciesSubgroupType",
+      "range": "SpeciesSubgroupTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5570,7 +5564,7 @@
       "domain_of": [
         "AlleleDescription"
       ],
-      "range": "Status",
+      "range": "StatusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -5690,7 +5684,7 @@
       "domain_of": [
         "AlleleDescription"
       ],
-      "range": "JCodonFrame",
+      "range": "JCodonFrameEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -6157,7 +6151,7 @@
       "domain_of": [
         "AlleleDescription"
       ],
-      "range": "CurationalTags",
+      "range": "CurationalTagsEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -6450,7 +6444,7 @@
       "domain_of": [
         "Genotype"
       ],
-      "range": "InferenceProcess",
+      "range": "InferenceProcessEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -6567,7 +6561,7 @@
         "MHCGenotype",
         "ReceptorReactivity"
       ],
-      "range": "MhcClass",
+      "range": "MhcClassEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -6629,7 +6623,7 @@
       "domain_of": [
         "MHCAllele"
       ],
-      "range": "Gene",
+      "range": "GeneOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -6755,7 +6749,7 @@
         "Investigation",
         "Study"
       ],
-      "range": "StudyType",
+      "range": "StudyTypeOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -6895,7 +6889,7 @@
       "domain_of": [
         "Study"
       ],
-      "range": "KeywordsStudy",
+      "range": "KeywordsStudyEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -6995,7 +6989,7 @@
       "domain_of": [
         "Subject"
       ],
-      "range": "Sex",
+      "range": "SexEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -7056,7 +7050,7 @@
         "Participant",
         "Subject"
       ],
-      "range": "AgeUnit",
+      "range": "AgeUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -7284,7 +7278,7 @@
       "domain_of": [
         "Diagnosis"
       ],
-      "range": "DiseaseDiagnosis",
+      "range": "DiseaseDiagnosisOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -7472,7 +7466,7 @@
         "Sample",
         "SampleProcessing"
       ],
-      "range": "Tissue",
+      "range": "TissueOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -7556,7 +7550,7 @@
         "Sample",
         "SampleProcessing"
       ],
-      "range": "CollectionTimePointRelativeUnit",
+      "range": "CollectionTimePointRelativeUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -7642,7 +7636,7 @@
         "CellProcessing",
         "SampleProcessing"
       ],
-      "range": "CellSubset",
+      "range": "CellSubsetOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -7686,7 +7680,7 @@
         "CellProcessing",
         "SampleProcessing"
       ],
-      "range": "CellSpecies",
+      "range": "CellSpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -7860,7 +7854,7 @@
       "domain_of": [
         "PCRTarget"
       ],
-      "range": "PcrTargetLocus",
+      "range": "PcrTargetLocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -7920,7 +7914,7 @@
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
-      "range": "TemplateClass",
+      "range": "TemplateClassEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -7983,7 +7977,7 @@
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
-      "range": "TemplateAmountUnit",
+      "range": "TemplateAmountUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -8004,7 +7998,7 @@
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
-      "range": "LibraryGenerationMethod",
+      "range": "LibraryGenerationMethodEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -8092,7 +8086,7 @@
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
-      "range": "CompleteSequences",
+      "range": "CompleteSequencesEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -8113,7 +8107,7 @@
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
-      "range": "PhysicalLinkage",
+      "range": "PhysicalLinkageEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -8303,7 +8297,7 @@
       "domain_of": [
         "SequencingData"
       ],
-      "range": "FileType",
+      "range": "FileTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -8343,7 +8337,7 @@
       "domain_of": [
         "SequencingData"
       ],
-      "range": "ReadDirection",
+      "range": "ReadDirectionEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -8403,7 +8397,7 @@
       "domain_of": [
         "SequencingData"
       ],
-      "range": "PairedReadDirection",
+      "range": "PairedReadDirectionEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12065,7 +12059,7 @@
       "domain_of": [
         "Cell"
       ],
-      "range": "ExpressionStudyMethod",
+      "range": "ExpressionStudyMethodEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12186,7 +12180,7 @@
       "domain_of": [
         "CellExpression"
       ],
-      "range": "Property",
+      "range": "PropertyOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -12266,7 +12260,7 @@
       "domain_of": [
         "Receptor"
       ],
-      "range": "ReceptorType",
+      "range": "ReceptorTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12304,7 +12298,7 @@
       "domain_of": [
         "Receptor"
       ],
-      "range": "ReceptorVariableDomain1Locus",
+      "range": "ReceptorVariableDomain1LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12342,7 +12336,7 @@
       "domain_of": [
         "Receptor"
       ],
-      "range": "ReceptorVariableDomain2Locus",
+      "range": "ReceptorVariableDomain2LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12407,7 +12401,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "LigandType",
+      "range": "LigandTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12429,7 +12423,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "AntigenType",
+      "range": "AntigenTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12448,7 +12442,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "Antigen",
+      "range": "AntigenOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -12468,7 +12462,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "AntigenSourceSpecies",
+      "range": "AntigenSourceSpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -12528,7 +12522,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "MhcGene1",
+      "range": "MhcGene1Ontology",
       "@type": "SlotDefinition"
     },
     {
@@ -12568,7 +12562,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "MhcGene2",
+      "range": "MhcGene2Ontology",
       "@type": "SlotDefinition"
     },
     {
@@ -12607,7 +12601,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "ReactivityMethod",
+      "range": "ReactivityMethodEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12626,7 +12620,7 @@
       "domain_of": [
         "ReceptorReactivity"
       ],
-      "range": "ReactivityReadout",
+      "range": "ReactivityReadoutEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12668,23 +12662,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "V1p5label",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5label",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5label",
-      "owner": "V1p5DeletedGene",
-      "domain_of": [
-        "V1p5TimePoint",
-        "V1p5AlleleDescription",
-        "V1p5DocumentedAllele",
-        "V1p5DeletedGene"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "V1p5value",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5value",
+      "name": "V1p5time_point_label",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point_label",
       "annotations": [
         {
           "tag": "nullable",
@@ -12692,19 +12671,39 @@
           "@type": "Annotation"
         }
       ],
+      "description": "Informative label for the time point",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5value",
-      "owner": "V1p5CellExpression",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point_label",
+      "owner": "V1p5TimePoint",
       "domain_of": [
-        "V1p5TimePoint",
-        "V1p5CellExpression"
+        "V1p5TimePoint"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "V1p5time_point_value",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point_value",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Value of the time point",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point_value",
+      "owner": "V1p5TimePoint",
+      "domain_of": [
+        "V1p5TimePoint"
       ],
       "range": "float",
       "@type": "SlotDefinition"
     },
     {
-      "name": "V1p5unit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5unit",
+      "name": "V1p5time_point_unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point_unit",
       "annotations": [
         {
           "tag": "nullable",
@@ -12714,12 +12713,12 @@
       ],
       "description": "Unit of the time point",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5unit",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point_unit",
       "owner": "V1p5TimePoint",
       "domain_of": [
         "V1p5TimePoint"
       ],
-      "range": "V1p5Unit",
+      "range": "V1p5TimePointUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -12743,8 +12742,8 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "V1p5name",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5name",
+      "name": "V1p5individual_full_name",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5individual_full_name",
       "annotations": [
         {
           "tag": "nullable",
@@ -12754,7 +12753,7 @@
       ],
       "description": "Full name of individual",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5name",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5individual_full_name",
       "owner": "V1p5Acknowledgement",
       "domain_of": [
         "V1p5Acknowledgement"
@@ -12858,7 +12857,7 @@
       "domain_of": [
         "V1p5RearrangedSequence"
       ],
-      "range": "V1p5Derivation",
+      "range": "V1p5DerivationEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -12880,7 +12879,7 @@
       "domain_of": [
         "V1p5RearrangedSequence"
       ],
-      "range": "V1p5ObservationType",
+      "range": "V1p5ObservationTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -13089,7 +13088,7 @@
       "domain_of": [
         "V1p5UnrearrangedSequence"
       ],
-      "range": "V1p5Strand",
+      "range": "V1p5StrandEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -13533,7 +13532,7 @@
         "V1p5AlleleDescription",
         "V1p5GermlineSet"
       ],
-      "range": "string",
+      "range": "integer",
       "@type": "SlotDefinition"
     },
     {
@@ -13574,6 +13573,20 @@
       "domain_of": [
         "V1p5AlleleDescription",
         "V1p5GermlineSet"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "V1p5label",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5label",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5label",
+      "owner": "V1p5DeletedGene",
+      "domain_of": [
+        "V1p5AlleleDescription",
+        "V1p5DocumentedAllele",
+        "V1p5DeletedGene"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -13631,7 +13644,7 @@
         "V1p5Genotype",
         "V1p5Rearrangement"
       ],
-      "range": "V1p5Locus",
+      "range": "V1p5LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -13673,7 +13686,7 @@
       "domain_of": [
         "V1p5AlleleDescription"
       ],
-      "range": "V1p5SequenceType",
+      "range": "V1p5SequenceTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -13716,7 +13729,7 @@
       "domain_of": [
         "V1p5AlleleDescription"
       ],
-      "range": "V1p5InferenceType",
+      "range": "V1p5InferenceTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -13737,7 +13750,7 @@
         "V1p5GermlineSet",
         "V1p5Subject"
       ],
-      "range": "V1p5Species",
+      "range": "V1p5SpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -13782,7 +13795,7 @@
         "V1p5AlleleDescription",
         "V1p5GermlineSet"
       ],
-      "range": "V1p5SpeciesSubgroupType",
+      "range": "V1p5SpeciesSubgroupTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -13802,7 +13815,7 @@
       "domain_of": [
         "V1p5AlleleDescription"
       ],
-      "range": "V1p5Status",
+      "range": "V1p5StatusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -13922,7 +13935,7 @@
       "domain_of": [
         "V1p5AlleleDescription"
       ],
-      "range": "V1p5JCodonFrame",
+      "range": "V1p5JCodonFrameEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -14389,7 +14402,7 @@
       "domain_of": [
         "V1p5AlleleDescription"
       ],
-      "range": "V1p5CurationalTags",
+      "range": "V1p5CurationalTagsEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -14682,7 +14695,7 @@
       "domain_of": [
         "V1p5Genotype"
       ],
-      "range": "V1p5InferenceProcess",
+      "range": "V1p5InferenceProcessEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -14799,7 +14812,7 @@
         "V1p5MHCGenotype",
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5MhcClass",
+      "range": "V1p5MhcClassEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -14861,7 +14874,7 @@
       "domain_of": [
         "V1p5MHCAllele"
       ],
-      "range": "V1p5Gene",
+      "range": "V1p5GeneOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -14986,7 +14999,7 @@
       "domain_of": [
         "V1p5Study"
       ],
-      "range": "V1p5StudyType",
+      "range": "V1p5StudyTypeOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -15126,7 +15139,7 @@
       "domain_of": [
         "V1p5Study"
       ],
-      "range": "V1p5KeywordsStudy",
+      "range": "V1p5KeywordsStudyEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -15226,7 +15239,7 @@
       "domain_of": [
         "V1p5Subject"
       ],
-      "range": "V1p5Sex",
+      "range": "V1p5SexEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -15286,7 +15299,7 @@
       "domain_of": [
         "V1p5Subject"
       ],
-      "range": "V1p5AgeUnit",
+      "range": "V1p5AgeUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -15511,7 +15524,7 @@
       "domain_of": [
         "V1p5Diagnosis"
       ],
-      "range": "V1p5DiseaseDiagnosis",
+      "range": "V1p5DiseaseDiagnosisOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -15697,7 +15710,7 @@
         "V1p5Sample",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5Tissue",
+      "range": "V1p5TissueOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -15781,7 +15794,7 @@
         "V1p5Sample",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5CollectionTimePointRelativeUnit",
+      "range": "V1p5CollectionTimePointRelativeUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -15865,7 +15878,7 @@
         "V1p5CellProcessing",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5CellSubset",
+      "range": "V1p5CellSubsetOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -15907,7 +15920,7 @@
         "V1p5CellProcessing",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5CellSpecies",
+      "range": "V1p5CellSpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -16074,7 +16087,7 @@
       "domain_of": [
         "V1p5PCRTarget"
       ],
-      "range": "V1p5PcrTargetLocus",
+      "range": "V1p5PcrTargetLocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16134,7 +16147,7 @@
         "V1p5NucleicAcidProcessing",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5TemplateClass",
+      "range": "V1p5TemplateClassEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16197,7 +16210,7 @@
         "V1p5NucleicAcidProcessing",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5TemplateAmountUnit",
+      "range": "V1p5TemplateAmountUnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -16217,7 +16230,7 @@
         "V1p5NucleicAcidProcessing",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5LibraryGenerationMethod",
+      "range": "V1p5LibraryGenerationMethodEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16301,7 +16314,7 @@
         "V1p5NucleicAcidProcessing",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5CompleteSequences",
+      "range": "V1p5CompleteSequencesEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16321,7 +16334,7 @@
         "V1p5NucleicAcidProcessing",
         "V1p5SampleProcessing"
       ],
-      "range": "V1p5PhysicalLinkage",
+      "range": "V1p5PhysicalLinkageEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16511,7 +16524,7 @@
       "domain_of": [
         "V1p5SequencingData"
       ],
-      "range": "V1p5FileType",
+      "range": "V1p5FileTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16551,7 +16564,7 @@
       "domain_of": [
         "V1p5SequencingData"
       ],
-      "range": "V1p5ReadDirection",
+      "range": "V1p5ReadDirectionEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16611,7 +16624,7 @@
       "domain_of": [
         "V1p5SequencingData"
       ],
-      "range": "V1p5PairedReadDirection",
+      "range": "V1p5PairedReadDirectionEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -16901,18 +16914,12 @@
     {
       "name": "V1p5repertoire_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5repertoire_id",
-      "annotations": [
-        {
-          "tag": "nullable",
-          "value": true,
-          "@type": "Annotation"
-        }
-      ],
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5repertoire_id",
       "owner": "V1p5CellExpression",
       "domain_of": [
         "V1p5Repertoire",
+        "V1p5RepertoireGroupDetail",
         "V1p5Rearrangement",
         "V1p5Clone",
         "V1p5Cell",
@@ -16951,12 +16958,12 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Generic repertoire description",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5repertoire_description",
-      "owner": "V1p5Repertoire",
+      "owner": "V1p5RepertoireGroupDetail",
       "domain_of": [
-        "V1p5Repertoire"
+        "V1p5Repertoire",
+        "V1p5RepertoireGroupDetail"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -17044,6 +17051,27 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "V1p5time_point",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Time point designation for this repertoire within the group",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5time_point",
+      "owner": "V1p5RepertoireGroupDetail",
+      "domain_of": [
+        "V1p5RepertoireGroupDetail"
+      ],
+      "range": "V1p5TimePoint",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "V1p5repertoire_group_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5repertoire_group_id",
       "annotations": [
@@ -17120,8 +17148,9 @@
       "domain_of": [
         "V1p5RepertoireGroup"
       ],
-      "range": "string",
+      "range": "V1p5RepertoireGroupDetail",
       "multivalued": true,
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -20246,7 +20275,7 @@
       "domain_of": [
         "V1p5Cell"
       ],
-      "range": "V1p5ExpressionStudyMethod",
+      "range": "V1p5ExpressionStudyMethodEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20367,7 +20396,27 @@
       "domain_of": [
         "V1p5CellExpression"
       ],
-      "range": "V1p5Property",
+      "range": "V1p5PropertyOntology",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "V1p5property_value",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5property_value",
+      "annotations": [
+        {
+          "tag": "nullable",
+          "value": true,
+          "@type": "Annotation"
+        }
+      ],
+      "description": "Level at which the property was observed in the experiment (non-normalized).",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/V1p5property_value",
+      "owner": "V1p5CellExpression",
+      "domain_of": [
+        "V1p5CellExpression"
+      ],
+      "range": "float",
       "@type": "SlotDefinition"
     },
     {
@@ -20427,7 +20476,7 @@
       "domain_of": [
         "V1p5Receptor"
       ],
-      "range": "V1p5ReceptorType",
+      "range": "V1p5ReceptorTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20465,7 +20514,7 @@
       "domain_of": [
         "V1p5Receptor"
       ],
-      "range": "V1p5ReceptorVariableDomain1Locus",
+      "range": "V1p5ReceptorVariableDomain1LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20503,7 +20552,7 @@
       "domain_of": [
         "V1p5Receptor"
       ],
-      "range": "V1p5ReceptorVariableDomain2Locus",
+      "range": "V1p5ReceptorVariableDomain2LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20568,7 +20617,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5LigandType",
+      "range": "V1p5LigandTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20590,7 +20639,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5AntigenType",
+      "range": "V1p5AntigenTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20609,7 +20658,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5Antigen",
+      "range": "V1p5AntigenOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -20629,7 +20678,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5AntigenSourceSpecies",
+      "range": "V1p5AntigenSourceSpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -20689,7 +20738,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5MhcGene1",
+      "range": "V1p5MhcGene1Ontology",
       "@type": "SlotDefinition"
     },
     {
@@ -20729,7 +20778,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5MhcGene2",
+      "range": "V1p5MhcGene2Ontology",
       "@type": "SlotDefinition"
     },
     {
@@ -20768,7 +20817,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5ReactivityMethod",
+      "range": "V1p5ReactivityMethodEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20787,7 +20836,7 @@
       "domain_of": [
         "V1p5ReceptorReactivity"
       ],
-      "range": "V1p5ReactivityReadout",
+      "range": "V1p5ReactivityReadoutEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -20874,7 +20923,7 @@
         "V1p4PhysicalQuantity",
         "V1p4TimeQuantity"
       ],
-      "range": "V1p4Unit",
+      "range": "V1p4UnitOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -20990,7 +21039,7 @@
       "domain_of": [
         "V1p4Contributor"
       ],
-      "range": "V1p4OrcidId",
+      "range": "V1p4OrcidIdOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -21010,7 +21059,7 @@
       "domain_of": [
         "V1p4Contributor"
       ],
-      "range": "V1p4Affiliation",
+      "range": "V1p4AffiliationOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -21071,7 +21120,7 @@
       "domain_of": [
         "V1p4ContributorContribution"
       ],
-      "range": "V1p4Role",
+      "range": "V1p4RoleEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21091,7 +21140,7 @@
       "domain_of": [
         "V1p4ContributorContribution"
       ],
-      "range": "V1p4Degree",
+      "range": "V1p4DegreeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21150,7 +21199,7 @@
       "domain_of": [
         "V1p4RearrangedSequence"
       ],
-      "range": "V1p4Derivation",
+      "range": "V1p4DerivationEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21172,7 +21221,7 @@
       "domain_of": [
         "V1p4RearrangedSequence"
       ],
-      "range": "V1p4ObservationType",
+      "range": "V1p4ObservationTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21381,7 +21430,7 @@
       "domain_of": [
         "V1p4UnrearrangedSequence"
       ],
-      "range": "V1p4Strand",
+      "range": "V1p4StrandEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21882,7 +21931,7 @@
         "V1p4Genotype",
         "V1p4Rearrangement"
       ],
-      "range": "V1p4Locus",
+      "range": "V1p4LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21924,7 +21973,7 @@
       "domain_of": [
         "V1p4AlleleDescription"
       ],
-      "range": "V1p4SequenceType",
+      "range": "V1p4SequenceTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21967,7 +22016,7 @@
       "domain_of": [
         "V1p4AlleleDescription"
       ],
-      "range": "V1p4InferenceType",
+      "range": "V1p4InferenceTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -21988,7 +22037,7 @@
         "V1p4GermlineSet",
         "V1p4Subject"
       ],
-      "range": "V1p4Species",
+      "range": "V1p4SpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -22033,7 +22082,7 @@
         "V1p4AlleleDescription",
         "V1p4GermlineSet"
       ],
-      "range": "V1p4SpeciesSubgroupType",
+      "range": "V1p4SpeciesSubgroupTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -22053,7 +22102,7 @@
       "domain_of": [
         "V1p4AlleleDescription"
       ],
-      "range": "V1p4Status",
+      "range": "V1p4StatusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -22173,7 +22222,7 @@
       "domain_of": [
         "V1p4AlleleDescription"
       ],
-      "range": "V1p4JCodonFrame",
+      "range": "V1p4JCodonFrameEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -22640,7 +22689,7 @@
       "domain_of": [
         "V1p4AlleleDescription"
       ],
-      "range": "V1p4CurationalTags",
+      "range": "V1p4CurationalTagsEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -22894,7 +22943,7 @@
       "domain_of": [
         "V1p4Genotype"
       ],
-      "range": "V1p4InferenceProcess",
+      "range": "V1p4InferenceProcessEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -23011,7 +23060,7 @@
         "V1p4MHCGenotype",
         "V1p4Reactivity"
       ],
-      "range": "V1p4MhcClass",
+      "range": "V1p4MhcClassEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -23073,7 +23122,7 @@
       "domain_of": [
         "V1p4MHCAllele"
       ],
-      "range": "V1p4Gene",
+      "range": "V1p4GeneOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -23198,7 +23247,7 @@
       "domain_of": [
         "V1p4Study"
       ],
-      "range": "V1p4StudyType",
+      "range": "V1p4StudyTypeOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -23299,7 +23348,7 @@
       "domain_of": [
         "V1p4Study"
       ],
-      "range": "V1p4KeywordsStudy",
+      "range": "V1p4KeywordsStudyEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -23399,7 +23448,7 @@
       "domain_of": [
         "V1p4Subject"
       ],
-      "range": "V1p4Sex",
+      "range": "V1p4SexEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -23460,7 +23509,7 @@
       "domain_of": [
         "V1p4Subject"
       ],
-      "range": "V1p4AncestryPopulation",
+      "range": "V1p4AncestryPopulationOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -23480,7 +23529,7 @@
       "domain_of": [
         "V1p4Subject"
       ],
-      "range": "V1p4LocationBirth",
+      "range": "V1p4LocationBirthOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -23686,7 +23735,7 @@
       "domain_of": [
         "V1p4Diagnosis"
       ],
-      "range": "V1p4DiseaseDiagnosis",
+      "range": "V1p4DiseaseDiagnosisOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -23873,7 +23922,7 @@
         "V1p4Sample",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4Tissue",
+      "range": "V1p4TissueOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -23958,7 +24007,7 @@
         "V1p4Sample",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4CollectionLocation",
+      "range": "V1p4CollectionLocationOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -24021,7 +24070,7 @@
         "V1p4Cell",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4CellSubset",
+      "range": "V1p4CellSubsetOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -24086,7 +24135,7 @@
         "V1p4CellProcessing",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4CellSpecies",
+      "range": "V1p4CellSpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -24253,7 +24302,7 @@
       "domain_of": [
         "V1p4PCRTarget"
       ],
-      "range": "V1p4PcrTargetLocus",
+      "range": "V1p4PcrTargetLocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -24313,7 +24362,7 @@
         "V1p4NucleicAcidProcessing",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4TemplateClass",
+      "range": "V1p4TemplateClassEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -24376,7 +24425,7 @@
         "V1p4NucleicAcidProcessing",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4LibraryGenerationMethod",
+      "range": "V1p4LibraryGenerationMethodEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -24460,7 +24509,7 @@
         "V1p4NucleicAcidProcessing",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4CompleteSequences",
+      "range": "V1p4CompleteSequencesEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -24480,7 +24529,7 @@
         "V1p4NucleicAcidProcessing",
         "V1p4SampleProcessing"
       ],
-      "range": "V1p4PhysicalLinkage",
+      "range": "V1p4PhysicalLinkageEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -24670,7 +24719,7 @@
       "domain_of": [
         "V1p4SequencingData"
       ],
-      "range": "V1p4FileType",
+      "range": "V1p4FileTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -24710,7 +24759,7 @@
       "domain_of": [
         "V1p4SequencingData"
       ],
-      "range": "V1p4ReadDirection",
+      "range": "V1p4ReadDirectionEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -24770,7 +24819,7 @@
       "domain_of": [
         "V1p4SequencingData"
       ],
-      "range": "V1p4PairedReadDirection",
+      "range": "V1p4PairedReadDirectionEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -25622,7 +25671,7 @@
       "domain_of": [
         "V1p4Rearrangement"
       ],
-      "range": "V1p4LocusSpecies",
+      "range": "V1p4LocusSpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -28501,7 +28550,7 @@
       "domain_of": [
         "V1p4Expression"
       ],
-      "range": "V1p4Property",
+      "range": "V1p4PropertyOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -28561,7 +28610,7 @@
       "domain_of": [
         "V1p4Receptor"
       ],
-      "range": "V1p4ReceptorType",
+      "range": "V1p4ReceptorTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -28599,7 +28648,7 @@
       "domain_of": [
         "V1p4Receptor"
       ],
-      "range": "V1p4ReceptorVariableDomain1Locus",
+      "range": "V1p4ReceptorVariableDomain1LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -28637,7 +28686,7 @@
       "domain_of": [
         "V1p4Receptor"
       ],
-      "range": "V1p4ReceptorVariableDomain2Locus",
+      "range": "V1p4ReceptorVariableDomain2LocusEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -28680,7 +28729,7 @@
       "domain_of": [
         "V1p4Reactivity"
       ],
-      "range": "V1p4LigandType",
+      "range": "V1p4LigandTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -28702,7 +28751,7 @@
       "domain_of": [
         "V1p4Reactivity"
       ],
-      "range": "V1p4AntigenType",
+      "range": "V1p4AntigenTypeEnum",
       "@type": "SlotDefinition"
     },
     {
@@ -28721,7 +28770,7 @@
       "domain_of": [
         "V1p4Reactivity"
       ],
-      "range": "V1p4Antigen",
+      "range": "V1p4AntigenOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -28741,7 +28790,7 @@
       "domain_of": [
         "V1p4Reactivity"
       ],
-      "range": "V1p4AntigenSourceSpecies",
+      "range": "V1p4AntigenSourceSpeciesOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -28821,7 +28870,7 @@
       "domain_of": [
         "V1p4Reactivity"
       ],
-      "range": "V1p4MhcGene1",
+      "range": "V1p4MhcGene1Ontology",
       "@type": "SlotDefinition"
     },
     {
@@ -28861,7 +28910,7 @@
       "domain_of": [
         "V1p4Reactivity"
       ],
-      "range": "V1p4MhcGene2",
+      "range": "V1p4MhcGene2Ontology",
       "@type": "SlotDefinition"
     },
     {
@@ -31071,9 +31120,9 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TimePoint",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slots": [
-        "V1p5label",
-        "V1p5value",
-        "V1p5unit"
+        "V1p5time_point_label",
+        "V1p5time_point_value",
+        "V1p5time_point_unit"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/V1p5TimePoint",
@@ -31085,7 +31134,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slots": [
         "V1p5acknowledgement_id",
-        "V1p5name",
+        "V1p5individual_full_name",
         "V1p5institution_name",
         "V1p5orcid_id"
       ],
@@ -31584,6 +31633,19 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "V1p5RepertoireGroupDetail",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5RepertoireGroupDetail",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "V1p5repertoire_id",
+        "V1p5repertoire_description",
+        "V1p5time_point"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/V1p5RepertoireGroupDetail",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "V1p5RepertoireGroup",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/V1p5RepertoireGroup",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -31875,7 +31937,7 @@
         "V1p5data_processing_id",
         "V1p5property_type",
         "V1p5property",
-        "V1p5value"
+        "V1p5property_value"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/V1p5CellExpression",
@@ -32930,9 +32992,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-12-10T18:24:27",
-  "source_file_size": 502463,
-  "generation_date": "2024-12-10T18:24:30",
+  "source_file_date": "2024-12-12T14:06:59",
+  "source_file_size": 505772,
+  "generation_date": "2024-12-12T14:07:00",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

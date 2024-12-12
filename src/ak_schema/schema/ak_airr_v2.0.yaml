@@ -633,7 +633,7 @@ slots:
     range: float
   V1p4unit:
     name: V1p4unit
-    range: V1p4Unit
+    range: V1p4UnitOntology
     annotations:
       nullable: false
   V1p4min:
@@ -668,13 +668,13 @@ slots:
   V1p4orcid_id:
     name: V1p4orcid_id
     description: ORCID identifier of the contributor. Note that if present, the label of the ORCID record should take precedence over the name reported in the `name` property.
-    range: V1p4OrcidId
+    range: V1p4OrcidIdOntology
     annotations:
       nullable: true
   V1p4affiliation:
     name: V1p4affiliation
     description: ROR of the contributor's primary affiliation. Note that ROR are only minted for institutions, not from individuals institutes, divisions or departments.
-    range: V1p4Affiliation
+    range: V1p4AffiliationOntology
     annotations:
       nullable: true
   V1p4affiliation_department:
@@ -693,13 +693,13 @@ slots:
   V1p4role:
     name: V1p4role
     description: Role according to CRediT taxonomy
-    range: V1p4Role
+    range: V1p4RoleEnum
     annotations:
       nullable: false
   V1p4degree:
     name: V1p4degree
     description: Optional specification of the degree of contribution, should be used if multiple individuals serve the same role.
-    range: V1p4Degree
+    range: V1p4DegreeEnum
     annotations:
       nullable: true
   V1p4sequence_id:
@@ -713,14 +713,14 @@ slots:
   V1p4derivation:
     name: V1p4derivation
     description: The class of nucleic acid that was used as primary starting material
-    range: V1p4Derivation
+    range: V1p4DerivationEnum
     annotations:
       nullable: true
   V1p4observation_type:
     name: V1p4observation_type
     description: The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.
     slot_uri: rdf:type
-    range: V1p4ObservationType
+    range: V1p4ObservationTypeEnum
     annotations:
       nullable: false
   V1p4curation:
@@ -778,7 +778,7 @@ slots:
   V1p4strand:
     name: V1p4strand
     description: sense (+ or -)
-    range: V1p4Strand
+    range: V1p4StrandEnum
     annotations:
       nullable: true
   V1p4sequence_delineation_id:
@@ -916,7 +916,7 @@ slots:
       nullable: true
   V1p4locus:
     name: V1p4locus
-    range: V1p4Locus
+    range: V1p4LocusEnum
   V1p4chromosome:
     name: V1p4chromosome
     description: chromosome on which the gene is located
@@ -927,7 +927,7 @@ slots:
     name: V1p4sequence_type
     description: Sequence type (V, D, J, C)
     slot_uri: rdf:type
-    range: V1p4SequenceType
+    range: V1p4SequenceTypeEnum
     annotations:
       nullable: false
   V1p4functional:
@@ -940,13 +940,13 @@ slots:
     name: V1p4inference_type
     description: Type of inference(s) from which this gene sequence was inferred
     slot_uri: rdf:type
-    range: V1p4InferenceType
+    range: V1p4InferenceTypeEnum
     annotations:
       nullable: true
   V1p4species:
     name: V1p4species
     description: Binomial designation of subject's species
-    range: V1p4Species
+    range: V1p4SpeciesOntology
     annotations:
       nullable: false
   V1p4species_subgroup:
@@ -959,13 +959,13 @@ slots:
     name: V1p4species_subgroup_type
     description: ''
     slot_uri: rdf:type
-    range: V1p4SpeciesSubgroupType
+    range: V1p4SpeciesSubgroupTypeEnum
     annotations:
       nullable: true
   V1p4status:
     name: V1p4status
     description: Status of record, assumed active if the field is not present
-    range: V1p4Status
+    range: V1p4StatusEnum
     annotations:
       nullable: true
   V1p4subgroup_designation:
@@ -1000,7 +1000,7 @@ slots:
   V1p4j_codon_frame:
     name: V1p4j_codon_frame
     description: Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing.
-    range: V1p4JCodonFrame
+    range: V1p4JCodonFrameEnum
     annotations:
       nullable: true
   V1p4gene_start:
@@ -1142,7 +1142,7 @@ slots:
   V1p4curational_tags:
     name: V1p4curational_tags
     description: Controlled-vocabulary tags applied to this description
-    range: V1p4CurationalTags
+    range: V1p4CurationalTagsEnum
     multivalued: true
     annotations:
       nullable: true
@@ -1219,7 +1219,7 @@ slots:
   V1p4inference_process:
     name: V1p4inference_process
     description: Information on how the genotype was acquired. Controlled vocabulary.
-    range: V1p4InferenceProcess
+    range: V1p4InferenceProcessEnum
     annotations:
       nullable: true
   V1p4phasing:
@@ -1255,7 +1255,7 @@ slots:
       nullable: true
   V1p4mhc_class:
     name: V1p4mhc_class
-    range: V1p4MhcClass
+    range: V1p4MhcClassEnum
   V1p4mhc_alleles:
     name: V1p4mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
@@ -1272,7 +1272,7 @@ slots:
   V1p4gene:
     name: V1p4gene
     description: The MHC gene to which the described allele belongs
-    range: V1p4Gene
+    range: V1p4GeneOntology
     annotations:
       nullable: true
   V1p4reference_set_ref:
@@ -1309,7 +1309,7 @@ slots:
     name: V1p4study_type
     description: Type of study design
     slot_uri: rdf:type
-    range: V1p4StudyType
+    range: V1p4StudyTypeOntology
     annotations:
       nullable: true
   V1p4study_description:
@@ -1340,7 +1340,7 @@ slots:
   V1p4keywords_study:
     name: V1p4keywords_study
     description: Keywords describing properties of one or more data sets in a study. "contains_schema" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that "contains_paired_chain" but does not "contains_schema_cell").
-    range: V1p4KeywordsStudy
+    range: V1p4KeywordsStudyEnum
     multivalued: true
     annotations:
       nullable: true
@@ -1371,7 +1371,7 @@ slots:
   V1p4sex:
     name: V1p4sex
     description: Biological sex of subject
-    range: V1p4Sex
+    range: V1p4SexEnum
     annotations:
       nullable: true
   V1p4age:
@@ -1389,13 +1389,13 @@ slots:
   V1p4ancestry_population:
     name: V1p4ancestry_population
     description: Broad geographic origin of ancestry (continent)
-    range: V1p4AncestryPopulation
+    range: V1p4AncestryPopulationOntology
     annotations:
       nullable: true
   V1p4location_birth:
     name: V1p4location_birth
     description: Self-reported location of birth of the subject, preferred granularity is country-level
-    range: V1p4LocationBirth
+    range: V1p4LocationBirthOntology
     annotations:
       nullable: true
   V1p4ethnicity:
@@ -1457,7 +1457,7 @@ slots:
   V1p4disease_diagnosis:
     name: V1p4disease_diagnosis
     description: Diagnosis of subject
-    range: V1p4DiseaseDiagnosis
+    range: V1p4DiseaseDiagnosisOntology
     annotations:
       nullable: true
   V1p4disease_length:
@@ -1512,7 +1512,7 @@ slots:
   V1p4tissue:
     name: V1p4tissue
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
-    range: V1p4Tissue
+    range: V1p4TissueOntology
     annotations:
       nullable: true
   V1p4anatomic_site:
@@ -1536,7 +1536,7 @@ slots:
   V1p4collection_location:
     name: V1p4collection_location
     description: Location where the sample was taken, preferred granularity is country-level
-    range: V1p4CollectionLocation
+    range: V1p4CollectionLocationOntology
     annotations:
       nullable: true
   V1p4biomaterial_provider:
@@ -1553,7 +1553,7 @@ slots:
       nullable: true
   V1p4cell_subset:
     name: V1p4cell_subset
-    range: V1p4CellSubset
+    range: V1p4CellSubsetOntology
     annotations:
       nullable: true
   V1p4cell_phenotype:
@@ -1571,7 +1571,7 @@ slots:
   V1p4cell_species:
     name: V1p4cell_species
     description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
-    range: V1p4CellSpecies
+    range: V1p4CellSpeciesOntology
     annotations:
       nullable: true
   V1p4single_cell:
@@ -1619,7 +1619,7 @@ slots:
   V1p4pcr_target_locus:
     name: V1p4pcr_target_locus
     description: Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
-    range: V1p4PcrTargetLocus
+    range: V1p4PcrTargetLocusEnum
     annotations:
       nullable: true
   V1p4forward_pcr_primer_target_location:
@@ -1637,7 +1637,7 @@ slots:
   V1p4template_class:
     name: V1p4template_class
     description: The class of nucleic acid that was used as primary starting material for the following procedures
-    range: V1p4TemplateClass
+    range: V1p4TemplateClassEnum
     annotations:
       nullable: false
   V1p4template_quality:
@@ -1655,7 +1655,7 @@ slots:
   V1p4library_generation_method:
     name: V1p4library_generation_method
     description: Generic type of library generation
-    range: V1p4LibraryGenerationMethod
+    range: V1p4LibraryGenerationMethodEnum
     annotations:
       nullable: false
   V1p4library_generation_protocol:
@@ -1680,13 +1680,13 @@ slots:
   V1p4complete_sequences:
     name: V1p4complete_sequences
     description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
-    range: V1p4CompleteSequences
+    range: V1p4CompleteSequencesEnum
     annotations:
       nullable: false
   V1p4physical_linkage:
     name: V1p4physical_linkage
     description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
-    range: V1p4PhysicalLinkage
+    range: V1p4PhysicalLinkageEnum
     annotations:
       nullable: false
   V1p4sequencing_run_id:
@@ -1741,7 +1741,7 @@ slots:
     name: V1p4file_type
     description: File format for the raw reads or sequences
     slot_uri: rdf:type
-    range: V1p4FileType
+    range: V1p4FileTypeEnum
     annotations:
       nullable: true
   V1p4filename:
@@ -1753,7 +1753,7 @@ slots:
   V1p4read_direction:
     name: V1p4read_direction
     description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
-    range: V1p4ReadDirection
+    range: V1p4ReadDirectionEnum
     annotations:
       nullable: true
   V1p4read_length:
@@ -1771,7 +1771,7 @@ slots:
   V1p4paired_read_direction:
     name: V1p4paired_read_direction
     description: Read direction for the second file in paired-read sequencing
-    range: V1p4PairedReadDirection
+    range: V1p4PairedReadDirectionEnum
     annotations:
       nullable: true
   V1p4paired_read_length:
@@ -2023,7 +2023,7 @@ slots:
   V1p4locus_species:
     name: V1p4locus_species
     description: Binomial designation of the species from which the locus originates. Typically, this value should be identical to `organism`, if which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g. transgenic animal models. If set, this key will overwrite the `organism` information for all lower layers of the schema.
-    range: V1p4LocusSpecies
+    range: V1p4LocusSpeciesOntology
     annotations:
       nullable: true
   V1p4v_call:
@@ -2868,7 +2868,7 @@ slots:
   V1p4property:
     name: V1p4property
     description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
-    range: V1p4Property
+    range: V1p4PropertyOntology
     annotations:
       nullable: true
   V1p4receptor_id:
@@ -2887,7 +2887,7 @@ slots:
     name: V1p4receptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
     slot_uri: rdf:type
-    range: V1p4ReceptorType
+    range: V1p4ReceptorTypeEnum
     annotations:
       nullable: false
   V1p4receptor_variable_domain_1_aa:
@@ -2899,7 +2899,7 @@ slots:
   V1p4receptor_variable_domain_1_locus:
     name: V1p4receptor_variable_domain_1_locus
     description: Locus from which the variable domain in receptor_variable_domain_1_aa originates
-    range: V1p4ReceptorVariableDomain1Locus
+    range: V1p4ReceptorVariableDomain1LocusEnum
     annotations:
       nullable: false
   V1p4receptor_variable_domain_2_aa:
@@ -2911,7 +2911,7 @@ slots:
   V1p4receptor_variable_domain_2_locus:
     name: V1p4receptor_variable_domain_2_locus
     description: Locus from which the variable domain in receptor_variable_domain_2_aa originates
-    range: V1p4ReceptorVariableDomain2Locus
+    range: V1p4ReceptorVariableDomain2LocusEnum
     annotations:
       nullable: false
   V1p4receptor_ref:
@@ -2925,26 +2925,26 @@ slots:
     name: V1p4ligand_type
     description: Classification of ligand binding to the cell
     slot_uri: rdf:type
-    range: V1p4LigandType
+    range: V1p4LigandTypeEnum
     annotations:
       nullable: false
   V1p4antigen_type:
     name: V1p4antigen_type
     description: The type of antigen before processing by the immune system.
     slot_uri: rdf:type
-    range: V1p4AntigenType
+    range: V1p4AntigenTypeEnum
     annotations:
       nullable: false
   V1p4antigen:
     name: V1p4antigen
     description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
-    range: V1p4Antigen
+    range: V1p4AntigenOntology
     annotations:
       nullable: false
   V1p4antigen_source_species:
     name: V1p4antigen_source_species
     description: The species from which the antigen was isolated
-    range: V1p4AntigenSourceSpecies
+    range: V1p4AntigenSourceSpeciesOntology
     annotations:
       nullable: true
   V1p4peptide_start:
@@ -2968,7 +2968,7 @@ slots:
   V1p4mhc_gene_1:
     name: V1p4mhc_gene_1
     description: The MHC gene to which the mhc_allele_1 belongs
-    range: V1p4MhcGene1
+    range: V1p4MhcGene1Ontology
     annotations:
       nullable: true
   V1p4mhc_allele_1:
@@ -2980,7 +2980,7 @@ slots:
   V1p4mhc_gene_2:
     name: V1p4mhc_gene_2
     description: The MHC gene to which the mhc_allele_2 belongs
-    range: V1p4MhcGene2
+    range: V1p4MhcGene2Ontology
     annotations:
       nullable: true
   V1p4mhc_allele_2:
@@ -3015,18 +3015,18 @@ slots:
       nullable: false
 
 enums:
-  V1p4Unit:
-    name: V1p4Unit
+  V1p4UnitOntology:
+    name: V1p4UnitOntology
     reachable_from:
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4OrcidId:
-    name: V1p4OrcidId
-  V1p4Affiliation:
-    name: V1p4Affiliation
-  V1p4Role:
-    name: V1p4Role
+  V1p4OrcidIdOntology:
+    name: V1p4OrcidIdOntology
+  V1p4AffiliationOntology:
+    name: V1p4AffiliationOntology
+  V1p4RoleEnum:
+    name: V1p4RoleEnum
     permissible_values:
       conceptualization:
       data curation:
@@ -3042,29 +3042,29 @@ enums:
       visualization:
       writing - original draft:
       writing - review & editing:
-  V1p4Degree:
-    name: V1p4Degree
+  V1p4DegreeEnum:
+    name: V1p4DegreeEnum
     permissible_values:
       lead:
       equal:
       supporting:
-  V1p4Derivation:
-    name: V1p4Derivation
+  V1p4DerivationEnum:
+    name: V1p4DerivationEnum
     permissible_values:
       DNA:
       RNA:
-  V1p4ObservationType:
-    name: V1p4ObservationType
+  V1p4ObservationTypeEnum:
+    name: V1p4ObservationTypeEnum
     permissible_values:
       direct_sequencing:
       inference_from_repertoire:
-  V1p4Strand:
-    name: V1p4Strand
+  V1p4StrandEnum:
+    name: V1p4StrandEnum
     permissible_values:
       +:
       '-':
-  V1p4Locus:
-    name: V1p4Locus
+  V1p4LocusEnum:
+    name: V1p4LocusEnum
     permissible_values:
       IGH:
       IGI:
@@ -3074,76 +3074,76 @@ enums:
       TRB:
       TRG:
       TRD:
-  V1p4SequenceType:
-    name: V1p4SequenceType
+  V1p4SequenceTypeEnum:
+    name: V1p4SequenceTypeEnum
     permissible_values:
       V:
       D:
       J:
       C:
-  V1p4InferenceType:
-    name: V1p4InferenceType
+  V1p4InferenceTypeEnum:
+    name: V1p4InferenceTypeEnum
     permissible_values:
       genomic_and_rearranged:
       genomic_only:
       rearranged_only:
-  V1p4Species:
-    name: V1p4Species
-  V1p4SpeciesSubgroupType:
-    name: V1p4SpeciesSubgroupType
+  V1p4SpeciesOntology:
+    name: V1p4SpeciesOntology
+  V1p4SpeciesSubgroupTypeEnum:
+    name: V1p4SpeciesSubgroupTypeEnum
     permissible_values:
       breed:
       strain:
       inbred:
       outbred:
       locational:
-  V1p4Status:
-    name: V1p4Status
+  V1p4StatusEnum:
+    name: V1p4StatusEnum
     permissible_values:
       active:
       draft:
       retired:
       withdrawn:
-  V1p4JCodonFrame:
-    name: V1p4JCodonFrame
+  V1p4JCodonFrameEnum:
+    name: V1p4JCodonFrameEnum
     permissible_values:
       1:
       2:
       3:
-  V1p4CurationalTags:
-    name: V1p4CurationalTags
+  V1p4CurationalTagsEnum:
+    name: V1p4CurationalTagsEnum
     permissible_values:
       likely_truncated:
       likely_full_length:
-  V1p4InferenceProcess:
-    name: V1p4InferenceProcess
+  V1p4InferenceProcessEnum:
+    name: V1p4InferenceProcessEnum
     permissible_values:
       genomic_sequencing:
       repertoire_sequencing:
-  V1p4MhcClass:
-    name: V1p4MhcClass
+  V1p4MhcClassEnum:
+    name: V1p4MhcClassEnum
     permissible_values:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
-  V1p4Gene:
-    name: V1p4Gene
+  V1p4GeneOntology:
+    name: V1p4GeneOntology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4StudyType:
-    name: V1p4StudyType
+  V1p4StudyTypeOntology:
+    name: V1p4StudyTypeOntology
     reachable_from:
       source_nodes:
         - NCIT:C63536
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4KeywordsStudy:
-    name: V1p4KeywordsStudy
+  V1p4KeywordsStudyEnum:
+    name: V1p4KeywordsStudyEnum
     permissible_values:
       contains_ig:
       contains_tr:
@@ -3154,72 +3154,72 @@ enums:
       contains_schema_receptor:
       contains_schema_cellexpression:
       contains_schema_receptorreactivity:
-  V1p4Sex:
-    name: V1p4Sex
+  V1p4SexEnum:
+    name: V1p4SexEnum
     permissible_values:
       male:
       female:
       pooled:
       hermaphrodite:
       intersex:
-  V1p4AncestryPopulation:
-    name: V1p4AncestryPopulation
+  V1p4AncestryPopulationOntology:
+    name: V1p4AncestryPopulationOntology
     reachable_from:
       source_nodes:
         - GAZ:00000448
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4LocationBirth:
-    name: V1p4LocationBirth
+  V1p4LocationBirthOntology:
+    name: V1p4LocationBirthOntology
     reachable_from:
       source_nodes:
         - GAZ:00000448
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4DiseaseDiagnosis:
-    name: V1p4DiseaseDiagnosis
+  V1p4DiseaseDiagnosisOntology:
+    name: V1p4DiseaseDiagnosisOntology
     reachable_from:
       source_nodes:
         - DOID:4
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4Tissue:
-    name: V1p4Tissue
+  V1p4TissueOntology:
+    name: V1p4TissueOntology
     reachable_from:
       source_nodes:
         - UBERON:0010000
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4CollectionLocation:
-    name: V1p4CollectionLocation
+  V1p4CollectionLocationOntology:
+    name: V1p4CollectionLocationOntology
     reachable_from:
       source_nodes:
         - GAZ:00000448
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4CellSubset:
-    name: V1p4CellSubset
+  V1p4CellSubsetOntology:
+    name: V1p4CellSubsetOntology
     reachable_from:
       source_nodes:
         - CL:0000542
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4CellSpecies:
-    name: V1p4CellSpecies
+  V1p4CellSpeciesOntology:
+    name: V1p4CellSpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4PcrTargetLocus:
-    name: V1p4PcrTargetLocus
+  V1p4PcrTargetLocusEnum:
+    name: V1p4PcrTargetLocusEnum
     permissible_values:
       IGH:
       IGI:
@@ -3229,13 +3229,13 @@ enums:
       TRB:
       TRD:
       TRG:
-  V1p4TemplateClass:
-    name: V1p4TemplateClass
+  V1p4TemplateClassEnum:
+    name: V1p4TemplateClassEnum
     permissible_values:
       DNA:
       RNA:
-  V1p4LibraryGenerationMethod:
-    name: V1p4LibraryGenerationMethod
+  V1p4LibraryGenerationMethodEnum:
+    name: V1p4LibraryGenerationMethodEnum
     permissible_values:
       PCR:
       RT(RHP)+PCR:
@@ -3249,100 +3249,100 @@ enums:
       RT(specific+UMI)+TS+PCR:
       RT(specific)+TS:
       other:
-  V1p4CompleteSequences:
-    name: V1p4CompleteSequences
+  V1p4CompleteSequencesEnum:
+    name: V1p4CompleteSequencesEnum
     permissible_values:
       partial:
       complete:
       complete+untemplated:
       mixed:
-  V1p4PhysicalLinkage:
-    name: V1p4PhysicalLinkage
+  V1p4PhysicalLinkageEnum:
+    name: V1p4PhysicalLinkageEnum
     permissible_values:
       none:
       hetero_head-head:
       hetero_tail-head:
       hetero_prelinked:
-  V1p4FileType:
-    name: V1p4FileType
+  V1p4FileTypeEnum:
+    name: V1p4FileTypeEnum
     permissible_values:
       fasta:
       fastq:
-  V1p4ReadDirection:
-    name: V1p4ReadDirection
+  V1p4ReadDirectionEnum:
+    name: V1p4ReadDirectionEnum
     permissible_values:
       forward:
       reverse:
       mixed:
-  V1p4PairedReadDirection:
-    name: V1p4PairedReadDirection
+  V1p4PairedReadDirectionEnum:
+    name: V1p4PairedReadDirectionEnum
     permissible_values:
       forward:
       reverse:
       mixed:
-  V1p4LocusSpecies:
-    name: V1p4LocusSpecies
+  V1p4LocusSpeciesOntology:
+    name: V1p4LocusSpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4Property:
-    name: V1p4Property
-  V1p4ReceptorType:
-    name: V1p4ReceptorType
+  V1p4PropertyOntology:
+    name: V1p4PropertyOntology
+  V1p4ReceptorTypeEnum:
+    name: V1p4ReceptorTypeEnum
     permissible_values:
       Ig:
       TCR:
-  V1p4ReceptorVariableDomain1Locus:
-    name: V1p4ReceptorVariableDomain1Locus
+  V1p4ReceptorVariableDomain1LocusEnum:
+    name: V1p4ReceptorVariableDomain1LocusEnum
     permissible_values:
       IGH:
       TRB:
       TRD:
-  V1p4ReceptorVariableDomain2Locus:
-    name: V1p4ReceptorVariableDomain2Locus
+  V1p4ReceptorVariableDomain2LocusEnum:
+    name: V1p4ReceptorVariableDomain2LocusEnum
     permissible_values:
       IGI:
       IGK:
       IGL:
       TRA:
       TRG:
-  V1p4LigandType:
-    name: V1p4LigandType
+  V1p4LigandTypeEnum:
+    name: V1p4LigandTypeEnum
     permissible_values:
       MHC:peptide:
       MHC:non-peptide:
       protein:
       peptide:
       non-peptidic:
-  V1p4AntigenType:
-    name: V1p4AntigenType
+  V1p4AntigenTypeEnum:
+    name: V1p4AntigenTypeEnum
     permissible_values:
       protein:
       peptide:
       non-peptidic:
-  V1p4Antigen:
-    name: V1p4Antigen
-  V1p4AntigenSourceSpecies:
-    name: V1p4AntigenSourceSpecies
+  V1p4AntigenOntology:
+    name: V1p4AntigenOntology
+  V1p4AntigenSourceSpeciesOntology:
+    name: V1p4AntigenSourceSpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:1
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4MhcGene1:
-    name: V1p4MhcGene1
+  V1p4MhcGene1Ontology:
+    name: V1p4MhcGene1Ontology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  V1p4MhcGene2:
-    name: V1p4MhcGene2
+  V1p4MhcGene2Ontology:
+    name: V1p4MhcGene2Ontology
     reachable_from:
       source_nodes:
         - MRO:0000004

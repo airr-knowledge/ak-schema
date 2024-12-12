@@ -630,7 +630,7 @@ slots:
   time_point_unit:
     name: time_point_unit
     description: Unit of the time point
-    range: TimePointUnit
+    range: TimePointUnitOntology
     annotations:
       nullable: true
   acknowledgement_id:
@@ -668,14 +668,14 @@ slots:
   derivation:
     name: derivation
     description: The class of nucleic acid that was used as primary starting material
-    range: Derivation
+    range: DerivationEnum
     annotations:
       nullable: true
   observation_type:
     name: observation_type
     description: The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.
     slot_uri: rdf:type
-    range: ObservationType
+    range: ObservationTypeEnum
     annotations:
       nullable: false
   curation:
@@ -733,7 +733,7 @@ slots:
   strand:
     name: strand
     description: sense (+ or -)
-    range: Strand
+    range: StrandEnum
     annotations:
       nullable: true
   sequence_delineation_id:
@@ -886,7 +886,7 @@ slots:
       nullable: true
   locus:
     name: locus
-    range: Locus
+    range: LocusEnum
   chromosome:
     name: chromosome
     description: chromosome on which the gene is located
@@ -897,7 +897,7 @@ slots:
     name: sequence_type
     description: Sequence type (V, D, J, C)
     slot_uri: rdf:type
-    range: SequenceType
+    range: SequenceTypeEnum
     annotations:
       nullable: false
   functional:
@@ -910,13 +910,13 @@ slots:
     name: inference_type
     description: Type of inference(s) from which this gene sequence was inferred
     slot_uri: rdf:type
-    range: InferenceType
+    range: InferenceTypeEnum
     annotations:
       nullable: true
   species:
     name: species
     description: Binomial designation of subject's species
-    range: Species
+    range: SpeciesOntology
     annotations:
       nullable: false
   species_subgroup:
@@ -929,13 +929,13 @@ slots:
     name: species_subgroup_type
     description: ''
     slot_uri: rdf:type
-    range: SpeciesSubgroupType
+    range: SpeciesSubgroupTypeEnum
     annotations:
       nullable: true
   status:
     name: status
     description: Status of record, assumed active if the field is not present
-    range: Status
+    range: StatusEnum
     annotations:
       nullable: true
   subgroup_designation:
@@ -970,7 +970,7 @@ slots:
   j_codon_frame:
     name: j_codon_frame
     description: Codon position of the first nucleotide in the 'coding_sequence' field. Mandatory for J genes.  Not used for V or D genes. '1' means the sequence is in-frame, '2' means that the first bp is  missing from the first codon, and '3' means that the first 2 bp are missing.
-    range: JCodonFrame
+    range: JCodonFrameEnum
     annotations:
       nullable: true
   gene_start:
@@ -1112,7 +1112,7 @@ slots:
   curational_tags:
     name: curational_tags
     description: Controlled-vocabulary tags applied to this description
-    range: CurationalTags
+    range: CurationalTagsEnum
     multivalued: true
     annotations:
       nullable: true
@@ -1199,7 +1199,7 @@ slots:
   inference_process:
     name: inference_process
     description: Information on how the genotype was acquired. Controlled vocabulary.
-    range: InferenceProcess
+    range: InferenceProcessEnum
     annotations:
       nullable: true
   phasing:
@@ -1235,7 +1235,7 @@ slots:
       nullable: true
   mhc_class:
     name: mhc_class
-    range: MhcClass
+    range: MhcClassEnum
   mhc_alleles:
     name: mhc_alleles
     description: List of MHC alleles of the indicated mhc_class identified in an individual
@@ -1252,7 +1252,7 @@ slots:
   gene:
     name: gene
     description: The MHC gene to which the described allele belongs
-    range: Gene
+    range: GeneOntology
     annotations:
       nullable: true
   reference_set_ref:
@@ -1289,7 +1289,7 @@ slots:
     name: study_type
     description: Type of study design
     slot_uri: rdf:type
-    range: StudyType
+    range: StudyTypeOntology
     annotations:
       nullable: true
   study_description:
@@ -1331,7 +1331,7 @@ slots:
   keywords_study:
     name: keywords_study
     description: Keywords describing properties of one or more data sets in a study. "contains_schema" keywords indicate that the study contains data objects from the AIRR Schema of that type (Rearrangement, Clone, Cell, Receptor) while the other keywords indicate that the study design considers the type of data indicated (e.g. it is possible to have a study that "contains_paired_chain" but does not "contains_schema_cell").
-    range: KeywordsStudy
+    range: KeywordsStudyEnum
     multivalued: true
     annotations:
       nullable: true
@@ -1362,7 +1362,7 @@ slots:
   sex:
     name: sex
     description: Biological sex of subject
-    range: Sex
+    range: SexEnum
     annotations:
       nullable: true
   age_min:
@@ -1380,7 +1380,7 @@ slots:
   age_unit:
     name: age_unit
     description: Unit of age range
-    range: AgeUnit
+    range: AgeUnitOntology
     annotations:
       nullable: true
   age_event:
@@ -1448,7 +1448,7 @@ slots:
   disease_diagnosis:
     name: disease_diagnosis
     description: Diagnosis of subject
-    range: DiseaseDiagnosis
+    range: DiseaseDiagnosisOntology
     annotations:
       nullable: true
   disease_length:
@@ -1503,7 +1503,7 @@ slots:
   tissue:
     name: tissue
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
-    range: Tissue
+    range: TissueOntology
     annotations:
       nullable: true
   anatomic_site:
@@ -1527,7 +1527,7 @@ slots:
   collection_time_point_relative_unit:
     name: collection_time_point_relative_unit
     description: Unit of Sample collection time
-    range: CollectionTimePointRelativeUnit
+    range: CollectionTimePointRelativeUnitOntology
     annotations:
       nullable: true
   collection_time_point_reference:
@@ -1551,7 +1551,7 @@ slots:
   cell_subset:
     name: cell_subset
     description: Commonly-used designation of isolated cell population
-    range: CellSubset
+    range: CellSubsetOntology
     annotations:
       nullable: true
   cell_phenotype:
@@ -1563,7 +1563,7 @@ slots:
   cell_species:
     name: cell_species
     description: Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.
-    range: CellSpecies
+    range: CellSpeciesOntology
     annotations:
       nullable: true
   single_cell:
@@ -1611,7 +1611,7 @@ slots:
   pcr_target_locus:
     name: pcr_target_locus
     description: Designation of the target locus. Note that this field uses a controlled vocubulary that is meant to provide a generic classification of the locus, not necessarily the correct designation according to a specific nomenclature.
-    range: PcrTargetLocus
+    range: PcrTargetLocusEnum
     annotations:
       nullable: true
   forward_pcr_primer_target_location:
@@ -1629,7 +1629,7 @@ slots:
   template_class:
     name: template_class
     description: The class of nucleic acid that was used as primary starting material for the following procedures
-    range: TemplateClass
+    range: TemplateClassEnum
     annotations:
       nullable: false
   template_quality:
@@ -1647,13 +1647,13 @@ slots:
   template_amount_unit:
     name: template_amount_unit
     description: Unit of template amount
-    range: TemplateAmountUnit
+    range: TemplateAmountUnitOntology
     annotations:
       nullable: true
   library_generation_method:
     name: library_generation_method
     description: Generic type of library generation
-    range: LibraryGenerationMethod
+    range: LibraryGenerationMethodEnum
     annotations:
       nullable: false
   library_generation_protocol:
@@ -1678,13 +1678,13 @@ slots:
   complete_sequences:
     name: complete_sequences
     description: To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value.
-    range: CompleteSequences
+    range: CompleteSequencesEnum
     annotations:
       nullable: false
   physical_linkage:
     name: physical_linkage
     description: In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv).
-    range: PhysicalLinkage
+    range: PhysicalLinkageEnum
     annotations:
       nullable: false
   sequencing_run_id:
@@ -1739,7 +1739,7 @@ slots:
     name: file_type
     description: File format for the raw reads or sequences
     slot_uri: rdf:type
-    range: FileType
+    range: FileTypeEnum
     annotations:
       nullable: true
   filename:
@@ -1751,7 +1751,7 @@ slots:
   read_direction:
     name: read_direction
     description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
-    range: ReadDirection
+    range: ReadDirectionEnum
     annotations:
       nullable: true
   read_length:
@@ -1769,7 +1769,7 @@ slots:
   paired_read_direction:
     name: paired_read_direction
     description: Read direction for the second file in paired-read sequencing
-    range: PairedReadDirection
+    range: PairedReadDirectionEnum
     annotations:
       nullable: true
   paired_read_length:
@@ -2844,7 +2844,7 @@ slots:
   expression_study_method:
     name: expression_study_method
     description: Keyword describing the methodology used to assess expression. This values for this field MUST  come from a controlled vocabulary.
-    range: ExpressionStudyMethod
+    range: ExpressionStudyMethodEnum
     annotations:
       nullable: true
   expression_raw_doi:
@@ -2881,7 +2881,7 @@ slots:
   property:
     name: property
     description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
-    range: Property
+    range: PropertyOntology
     annotations:
       nullable: true
   property_value:
@@ -2906,7 +2906,7 @@ slots:
     name: receptor_type
     description: The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).
     slot_uri: rdf:type
-    range: ReceptorType
+    range: ReceptorTypeEnum
     annotations:
       nullable: false
   receptor_variable_domain_1_aa:
@@ -2918,7 +2918,7 @@ slots:
   receptor_variable_domain_1_locus:
     name: receptor_variable_domain_1_locus
     description: Locus from which the variable domain in receptor_variable_domain_1_aa originates
-    range: ReceptorVariableDomain1Locus
+    range: ReceptorVariableDomain1LocusEnum
     annotations:
       nullable: false
   receptor_variable_domain_2_aa:
@@ -2930,7 +2930,7 @@ slots:
   receptor_variable_domain_2_locus:
     name: receptor_variable_domain_2_locus
     description: Locus from which the variable domain in receptor_variable_domain_2_aa originates
-    range: ReceptorVariableDomain2Locus
+    range: ReceptorVariableDomain2LocusEnum
     annotations:
       nullable: false
   receptor_ref:
@@ -2951,26 +2951,26 @@ slots:
     name: ligand_type
     description: Classification of ligand binding to receptor
     slot_uri: rdf:type
-    range: LigandType
+    range: LigandTypeEnum
     annotations:
       nullable: false
   antigen_type:
     name: antigen_type
     description: The type of antigen before processing by the immune system.
     slot_uri: rdf:type
-    range: AntigenType
+    range: AntigenTypeEnum
     annotations:
       nullable: false
   antigen:
     name: antigen
     description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
-    range: Antigen
+    range: AntigenOntology
     annotations:
       nullable: false
   antigen_source_species:
     name: antigen_source_species
     description: The species from which the antigen was isolated
-    range: AntigenSourceSpecies
+    range: AntigenSourceSpeciesOntology
     annotations:
       nullable: true
   peptide_start:
@@ -2988,7 +2988,7 @@ slots:
   mhc_gene_1:
     name: mhc_gene_1
     description: The MHC gene to which the mhc_allele_1 belongs
-    range: MhcGene1
+    range: MhcGene1Ontology
     annotations:
       nullable: true
   mhc_allele_1:
@@ -3000,7 +3000,7 @@ slots:
   mhc_gene_2:
     name: mhc_gene_2
     description: The MHC gene to which the mhc_allele_2 belongs
-    range: MhcGene2
+    range: MhcGene2Ontology
     annotations:
       nullable: true
   mhc_allele_2:
@@ -3012,13 +3012,13 @@ slots:
   reactivity_method:
     name: reactivity_method
     description: The methodology used to assess expression (assay implemented in experiment)
-    range: ReactivityMethod
+    range: ReactivityMethodEnum
     annotations:
       nullable: false
   reactivity_readout:
     name: reactivity_readout
     description: Reactivity measurement read-out
-    range: ReactivityReadout
+    range: ReactivityReadoutEnum
     annotations:
       nullable: false
   reactivity_value:
@@ -3035,31 +3035,31 @@ slots:
       nullable: false
 
 enums:
-  TimePointUnit:
-    name: TimePointUnit
+  TimePointUnitOntology:
+    name: TimePointUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000003
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  Derivation:
-    name: Derivation
+  DerivationEnum:
+    name: DerivationEnum
     permissible_values:
       DNA:
       RNA:
-  ObservationType:
-    name: ObservationType
+  ObservationTypeEnum:
+    name: ObservationTypeEnum
     permissible_values:
       direct_sequencing:
       inference_from_repertoire:
-  Strand:
-    name: Strand
+  StrandEnum:
+    name: StrandEnum
     permissible_values:
       +:
       '-':
-  Locus:
-    name: Locus
+  LocusEnum:
+    name: LocusEnum
     permissible_values:
       IGH:
       IGI:
@@ -3069,82 +3069,82 @@ enums:
       TRB:
       TRG:
       TRD:
-  SequenceType:
-    name: SequenceType
+  SequenceTypeEnum:
+    name: SequenceTypeEnum
     permissible_values:
       V:
       D:
       J:
       C:
-  InferenceType:
-    name: InferenceType
+  InferenceTypeEnum:
+    name: InferenceTypeEnum
     permissible_values:
       genomic_and_rearranged:
       genomic_only:
       rearranged_only:
-  Species:
-    name: Species
+  SpeciesOntology:
+    name: SpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  SpeciesSubgroupType:
-    name: SpeciesSubgroupType
+  SpeciesSubgroupTypeEnum:
+    name: SpeciesSubgroupTypeEnum
     permissible_values:
       breed:
       strain:
       inbred:
       outbred:
       locational:
-  Status:
-    name: Status
+  StatusEnum:
+    name: StatusEnum
     permissible_values:
       active:
       draft:
       retired:
       withdrawn:
-  JCodonFrame:
-    name: JCodonFrame
+  JCodonFrameEnum:
+    name: JCodonFrameEnum
     permissible_values:
       1:
       2:
       3:
-  CurationalTags:
-    name: CurationalTags
+  CurationalTagsEnum:
+    name: CurationalTagsEnum
     permissible_values:
       likely_truncated:
       likely_full_length:
-  InferenceProcess:
-    name: InferenceProcess
+  InferenceProcessEnum:
+    name: InferenceProcessEnum
     permissible_values:
       genomic_sequencing:
       repertoire_sequencing:
-  MhcClass:
-    name: MhcClass
+  MhcClassEnum:
+    name: MhcClassEnum
     permissible_values:
       MHC-I:
       MHC-II:
       MHC-nonclassical:
-  Gene:
-    name: Gene
+  GeneOntology:
+    name: GeneOntology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  StudyType:
-    name: StudyType
+  StudyTypeOntology:
+    name: StudyTypeOntology
     reachable_from:
       source_nodes:
         - NCIT:C63536
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  KeywordsStudy:
-    name: KeywordsStudy
+  KeywordsStudyEnum:
+    name: KeywordsStudyEnum
     permissible_values:
       contains_ig:
       contains_tr:
@@ -3153,64 +3153,64 @@ enums:
       contains_schema_clone:
       contains_schema_cell:
       contains_schema_receptor:
-  Sex:
-    name: Sex
+  SexEnum:
+    name: SexEnum
     permissible_values:
       male:
       female:
       pooled:
       hermaphrodite:
       intersex:
-  AgeUnit:
-    name: AgeUnit
+  AgeUnitOntology:
+    name: AgeUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000003
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  DiseaseDiagnosis:
-    name: DiseaseDiagnosis
+  DiseaseDiagnosisOntology:
+    name: DiseaseDiagnosisOntology
     reachable_from:
       source_nodes:
         - DOID:4
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  Tissue:
-    name: Tissue
+  TissueOntology:
+    name: TissueOntology
     reachable_from:
       source_nodes:
         - UBERON:0010000
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  CollectionTimePointRelativeUnit:
-    name: CollectionTimePointRelativeUnit
+  CollectionTimePointRelativeUnitOntology:
+    name: CollectionTimePointRelativeUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000003
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  CellSubset:
-    name: CellSubset
+  CellSubsetOntology:
+    name: CellSubsetOntology
     reachable_from:
       source_nodes:
         - CL:0000542
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  CellSpecies:
-    name: CellSpecies
+  CellSpeciesOntology:
+    name: CellSpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  PcrTargetLocus:
-    name: PcrTargetLocus
+  PcrTargetLocusEnum:
+    name: PcrTargetLocusEnum
     permissible_values:
       IGH:
       IGI:
@@ -3220,21 +3220,21 @@ enums:
       TRB:
       TRD:
       TRG:
-  TemplateClass:
-    name: TemplateClass
+  TemplateClassEnum:
+    name: TemplateClassEnum
     permissible_values:
       DNA:
       RNA:
-  TemplateAmountUnit:
-    name: TemplateAmountUnit
+  TemplateAmountUnitOntology:
+    name: TemplateAmountUnitOntology
     reachable_from:
       source_nodes:
         - UO:0000002
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  LibraryGenerationMethod:
-    name: LibraryGenerationMethod
+  LibraryGenerationMethodEnum:
+    name: LibraryGenerationMethodEnum
     permissible_values:
       PCR:
       RT(RHP)+PCR:
@@ -3248,113 +3248,113 @@ enums:
       RT(specific+UMI)+TS+PCR:
       RT(specific)+TS:
       other:
-  CompleteSequences:
-    name: CompleteSequences
+  CompleteSequencesEnum:
+    name: CompleteSequencesEnum
     permissible_values:
       partial:
       complete:
       complete+untemplated:
       mixed:
-  PhysicalLinkage:
-    name: PhysicalLinkage
+  PhysicalLinkageEnum:
+    name: PhysicalLinkageEnum
     permissible_values:
       none:
       hetero_head-head:
       hetero_tail-head:
       hetero_prelinked:
-  FileType:
-    name: FileType
+  FileTypeEnum:
+    name: FileTypeEnum
     permissible_values:
       fasta:
       fastq:
-  ReadDirection:
-    name: ReadDirection
+  ReadDirectionEnum:
+    name: ReadDirectionEnum
     permissible_values:
       forward:
       reverse:
       mixed:
-  PairedReadDirection:
-    name: PairedReadDirection
+  PairedReadDirectionEnum:
+    name: PairedReadDirectionEnum
     permissible_values:
       forward:
       reverse:
       mixed:
-  ExpressionStudyMethod:
-    name: ExpressionStudyMethod
+  ExpressionStudyMethodEnum:
+    name: ExpressionStudyMethodEnum
     permissible_values:
       flow_cytometry:
       single-cell_transcriptome:
-  Property:
-    name: Property
-  ReceptorType:
-    name: ReceptorType
+  PropertyOntology:
+    name: PropertyOntology
+  ReceptorTypeEnum:
+    name: ReceptorTypeEnum
     permissible_values:
       Ig:
       TCR:
-  ReceptorVariableDomain1Locus:
-    name: ReceptorVariableDomain1Locus
+  ReceptorVariableDomain1LocusEnum:
+    name: ReceptorVariableDomain1LocusEnum
     permissible_values:
       IGH:
       TRB:
       TRD:
-  ReceptorVariableDomain2Locus:
-    name: ReceptorVariableDomain2Locus
+  ReceptorVariableDomain2LocusEnum:
+    name: ReceptorVariableDomain2LocusEnum
     permissible_values:
       IGI:
       IGK:
       IGL:
       TRA:
       TRG:
-  LigandType:
-    name: LigandType
+  LigandTypeEnum:
+    name: LigandTypeEnum
     permissible_values:
       MHC:peptide:
       MHC:non-peptide:
       protein:
       peptide:
       non-peptidic:
-  AntigenType:
-    name: AntigenType
+  AntigenTypeEnum:
+    name: AntigenTypeEnum
     permissible_values:
       protein:
       peptide:
       non-peptidic:
-  Antigen:
-    name: Antigen
-  AntigenSourceSpecies:
-    name: AntigenSourceSpecies
+  AntigenOntology:
+    name: AntigenOntology
+  AntigenSourceSpeciesOntology:
+    name: AntigenSourceSpeciesOntology
     reachable_from:
       source_nodes:
         - NCBITAXON:1
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  MhcGene1:
-    name: MhcGene1
+  MhcGene1Ontology:
+    name: MhcGene1Ontology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  MhcGene2:
-    name: MhcGene2
+  MhcGene2Ontology:
+    name: MhcGene2Ontology
     reachable_from:
       source_nodes:
         - MRO:0000004
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-  ReactivityMethod:
-    name: ReactivityMethod
+  ReactivityMethodEnum:
+    name: ReactivityMethodEnum
     permissible_values:
       SPR:
       ITC:
       ELISA:
       cytometry:
       biological_activity:
-  ReactivityReadout:
-    name: ReactivityReadout
+  ReactivityReadoutEnum:
+    name: ReactivityReadoutEnum
     permissible_values:
       binding_strength:
       cytokine_release:

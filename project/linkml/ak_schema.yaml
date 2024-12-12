@@ -336,16 +336,6 @@ types:
     uri: xsd:string
     repr: str
 enums:
-  SpeciesOntology:
-    name: SpeciesOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      Homo sapiens (human):
-        text: Homo sapiens (human)
-        meaning: NCBITaxon:9606
-      Mus musculus (mouse):
-        text: Mus musculus (mouse)
-        meaning: NCBITaxon:10090
   BiologicalSexOntology:
     name: BiologicalSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -709,8 +699,8 @@ enums:
         text: cdr3_exact_aa_match
       cdr3_exact_aa_and_vj_match:
         text: cdr3_exact_aa_and_vj_match
-  TimePointUnit:
-    name: TimePointUnit
+  TimePointUnitOntology:
+    name: TimePointUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -718,32 +708,32 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  Derivation:
-    name: Derivation
+  DerivationEnum:
+    name: DerivationEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       DNA:
         text: DNA
       RNA:
         text: RNA
-  ObservationType:
-    name: ObservationType
+  ObservationTypeEnum:
+    name: ObservationTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       direct_sequencing:
         text: direct_sequencing
       inference_from_repertoire:
         text: inference_from_repertoire
-  Strand:
-    name: Strand
+  StrandEnum:
+    name: StrandEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       +:
         text: +
       '-':
         text: '-'
-  Locus:
-    name: Locus
+  LocusEnum:
+    name: LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -762,8 +752,8 @@ enums:
         text: TRG
       TRD:
         text: TRD
-  SequenceType:
-    name: SequenceType
+  SequenceTypeEnum:
+    name: SequenceTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       V:
@@ -774,8 +764,8 @@ enums:
         text: J
       C:
         text: C
-  InferenceType:
-    name: InferenceType
+  InferenceTypeEnum:
+    name: InferenceTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       genomic_and_rearranged:
@@ -784,8 +774,8 @@ enums:
         text: genomic_only
       rearranged_only:
         text: rearranged_only
-  Species:
-    name: Species
+  SpeciesOntology:
+    name: SpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -793,8 +783,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  SpeciesSubgroupType:
-    name: SpeciesSubgroupType
+  SpeciesSubgroupTypeEnum:
+    name: SpeciesSubgroupTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       breed:
@@ -807,8 +797,8 @@ enums:
         text: outbred
       locational:
         text: locational
-  Status:
-    name: Status
+  StatusEnum:
+    name: StatusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       active:
@@ -819,8 +809,8 @@ enums:
         text: retired
       withdrawn:
         text: withdrawn
-  JCodonFrame:
-    name: JCodonFrame
+  JCodonFrameEnum:
+    name: JCodonFrameEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       '1':
@@ -829,24 +819,24 @@ enums:
         text: '2'
       '3':
         text: '3'
-  CurationalTags:
-    name: CurationalTags
+  CurationalTagsEnum:
+    name: CurationalTagsEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       likely_truncated:
         text: likely_truncated
       likely_full_length:
         text: likely_full_length
-  InferenceProcess:
-    name: InferenceProcess
+  InferenceProcessEnum:
+    name: InferenceProcessEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       genomic_sequencing:
         text: genomic_sequencing
       repertoire_sequencing:
         text: repertoire_sequencing
-  MhcClass:
-    name: MhcClass
+  MhcClassEnum:
+    name: MhcClassEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       MHC-I:
@@ -855,8 +845,8 @@ enums:
         text: MHC-II
       MHC-nonclassical:
         text: MHC-nonclassical
-  Gene:
-    name: Gene
+  GeneOntology:
+    name: GeneOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -864,8 +854,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  StudyType:
-    name: StudyType
+  StudyTypeOntology:
+    name: StudyTypeOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -873,8 +863,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  KeywordsStudy:
-    name: KeywordsStudy
+  KeywordsStudyEnum:
+    name: KeywordsStudyEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       contains_ig:
@@ -891,8 +881,8 @@ enums:
         text: contains_schema_cell
       contains_schema_receptor:
         text: contains_schema_receptor
-  Sex:
-    name: Sex
+  SexEnum:
+    name: SexEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       male:
@@ -905,8 +895,8 @@ enums:
         text: hermaphrodite
       intersex:
         text: intersex
-  AgeUnit:
-    name: AgeUnit
+  AgeUnitOntology:
+    name: AgeUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -914,8 +904,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  DiseaseDiagnosis:
-    name: DiseaseDiagnosis
+  DiseaseDiagnosisOntology:
+    name: DiseaseDiagnosisOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -923,8 +913,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  Tissue:
-    name: Tissue
+  TissueOntology:
+    name: TissueOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -932,8 +922,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  CollectionTimePointRelativeUnit:
-    name: CollectionTimePointRelativeUnit
+  CollectionTimePointRelativeUnitOntology:
+    name: CollectionTimePointRelativeUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -941,8 +931,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  CellSubset:
-    name: CellSubset
+  CellSubsetOntology:
+    name: CellSubsetOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -950,8 +940,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  CellSpecies:
-    name: CellSpecies
+  CellSpeciesOntology:
+    name: CellSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -959,8 +949,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  PcrTargetLocus:
-    name: PcrTargetLocus
+  PcrTargetLocusEnum:
+    name: PcrTargetLocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -979,16 +969,16 @@ enums:
         text: TRD
       TRG:
         text: TRG
-  TemplateClass:
-    name: TemplateClass
+  TemplateClassEnum:
+    name: TemplateClassEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       DNA:
         text: DNA
       RNA:
         text: RNA
-  TemplateAmountUnit:
-    name: TemplateAmountUnit
+  TemplateAmountUnitOntology:
+    name: TemplateAmountUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -996,8 +986,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  LibraryGenerationMethod:
-    name: LibraryGenerationMethod
+  LibraryGenerationMethodEnum:
+    name: LibraryGenerationMethodEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       PCR:
@@ -1024,8 +1014,8 @@ enums:
         text: RT(specific)+TS
       other:
         text: other
-  CompleteSequences:
-    name: CompleteSequences
+  CompleteSequencesEnum:
+    name: CompleteSequencesEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       partial:
@@ -1036,8 +1026,8 @@ enums:
         text: complete+untemplated
       mixed:
         text: mixed
-  PhysicalLinkage:
-    name: PhysicalLinkage
+  PhysicalLinkageEnum:
+    name: PhysicalLinkageEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       none:
@@ -1048,16 +1038,16 @@ enums:
         text: hetero_tail-head
       hetero_prelinked:
         text: hetero_prelinked
-  FileType:
-    name: FileType
+  FileTypeEnum:
+    name: FileTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       fasta:
         text: fasta
       fastq:
         text: fastq
-  ReadDirection:
-    name: ReadDirection
+  ReadDirectionEnum:
+    name: ReadDirectionEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       forward:
@@ -1066,8 +1056,8 @@ enums:
         text: reverse
       mixed:
         text: mixed
-  PairedReadDirection:
-    name: PairedReadDirection
+  PairedReadDirectionEnum:
+    name: PairedReadDirectionEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       forward:
@@ -1076,27 +1066,27 @@ enums:
         text: reverse
       mixed:
         text: mixed
-  ExpressionStudyMethod:
-    name: ExpressionStudyMethod
+  ExpressionStudyMethodEnum:
+    name: ExpressionStudyMethodEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       flow_cytometry:
         text: flow_cytometry
       single-cell_transcriptome:
         text: single-cell_transcriptome
-  Property:
-    name: Property
+  PropertyOntology:
+    name: PropertyOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  ReceptorType:
-    name: ReceptorType
+  ReceptorTypeEnum:
+    name: ReceptorTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       Ig:
         text: Ig
       TCR:
         text: TCR
-  ReceptorVariableDomain1Locus:
-    name: ReceptorVariableDomain1Locus
+  ReceptorVariableDomain1LocusEnum:
+    name: ReceptorVariableDomain1LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -1105,8 +1095,8 @@ enums:
         text: TRB
       TRD:
         text: TRD
-  ReceptorVariableDomain2Locus:
-    name: ReceptorVariableDomain2Locus
+  ReceptorVariableDomain2LocusEnum:
+    name: ReceptorVariableDomain2LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGI:
@@ -1119,8 +1109,8 @@ enums:
         text: TRA
       TRG:
         text: TRG
-  LigandType:
-    name: LigandType
+  LigandTypeEnum:
+    name: LigandTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       MHC:peptide:
@@ -1133,8 +1123,8 @@ enums:
         text: peptide
       non-peptidic:
         text: non-peptidic
-  AntigenType:
-    name: AntigenType
+  AntigenTypeEnum:
+    name: AntigenTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       protein:
@@ -1143,11 +1133,11 @@ enums:
         text: peptide
       non-peptidic:
         text: non-peptidic
-  Antigen:
-    name: Antigen
+  AntigenOntology:
+    name: AntigenOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  AntigenSourceSpecies:
-    name: AntigenSourceSpecies
+  AntigenSourceSpeciesOntology:
+    name: AntigenSourceSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1155,8 +1145,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  MhcGene1:
-    name: MhcGene1
+  MhcGene1Ontology:
+    name: MhcGene1Ontology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1164,8 +1154,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  MhcGene2:
-    name: MhcGene2
+  MhcGene2Ontology:
+    name: MhcGene2Ontology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1173,8 +1163,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  ReactivityMethod:
-    name: ReactivityMethod
+  ReactivityMethodEnum:
+    name: ReactivityMethodEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       SPR:
@@ -1187,8 +1177,8 @@ enums:
         text: cytometry
       biological_activity:
         text: biological_activity
-  ReactivityReadout:
-    name: ReactivityReadout
+  ReactivityReadoutEnum:
+    name: ReactivityReadoutEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       binding_strength:
@@ -1203,8 +1193,8 @@ enums:
         text: off_rate
       pathogen_inhibition:
         text: pathogen_inhibition
-  V1p5Unit:
-    name: V1p5Unit
+  V1p5TimePointUnitOntology:
+    name: V1p5TimePointUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1212,32 +1202,32 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5Derivation:
-    name: V1p5Derivation
+  V1p5DerivationEnum:
+    name: V1p5DerivationEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       DNA:
         text: DNA
       RNA:
         text: RNA
-  V1p5ObservationType:
-    name: V1p5ObservationType
+  V1p5ObservationTypeEnum:
+    name: V1p5ObservationTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       direct_sequencing:
         text: direct_sequencing
       inference_from_repertoire:
         text: inference_from_repertoire
-  V1p5Strand:
-    name: V1p5Strand
+  V1p5StrandEnum:
+    name: V1p5StrandEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       +:
         text: +
       '-':
         text: '-'
-  V1p5Locus:
-    name: V1p5Locus
+  V1p5LocusEnum:
+    name: V1p5LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -1256,8 +1246,8 @@ enums:
         text: TRG
       TRD:
         text: TRD
-  V1p5SequenceType:
-    name: V1p5SequenceType
+  V1p5SequenceTypeEnum:
+    name: V1p5SequenceTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       V:
@@ -1268,8 +1258,8 @@ enums:
         text: J
       C:
         text: C
-  V1p5InferenceType:
-    name: V1p5InferenceType
+  V1p5InferenceTypeEnum:
+    name: V1p5InferenceTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       genomic_and_rearranged:
@@ -1278,11 +1268,17 @@ enums:
         text: genomic_only
       rearranged_only:
         text: rearranged_only
-  V1p5Species:
-    name: V1p5Species
+  V1p5SpeciesOntology:
+    name: V1p5SpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p5SpeciesSubgroupType:
-    name: V1p5SpeciesSubgroupType
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  V1p5SpeciesSubgroupTypeEnum:
+    name: V1p5SpeciesSubgroupTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       breed:
@@ -1295,8 +1291,8 @@ enums:
         text: outbred
       locational:
         text: locational
-  V1p5Status:
-    name: V1p5Status
+  V1p5StatusEnum:
+    name: V1p5StatusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       active:
@@ -1307,8 +1303,8 @@ enums:
         text: retired
       withdrawn:
         text: withdrawn
-  V1p5JCodonFrame:
-    name: V1p5JCodonFrame
+  V1p5JCodonFrameEnum:
+    name: V1p5JCodonFrameEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       '1':
@@ -1317,24 +1313,24 @@ enums:
         text: '2'
       '3':
         text: '3'
-  V1p5CurationalTags:
-    name: V1p5CurationalTags
+  V1p5CurationalTagsEnum:
+    name: V1p5CurationalTagsEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       likely_truncated:
         text: likely_truncated
       likely_full_length:
         text: likely_full_length
-  V1p5InferenceProcess:
-    name: V1p5InferenceProcess
+  V1p5InferenceProcessEnum:
+    name: V1p5InferenceProcessEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       genomic_sequencing:
         text: genomic_sequencing
       repertoire_sequencing:
         text: repertoire_sequencing
-  V1p5MhcClass:
-    name: V1p5MhcClass
+  V1p5MhcClassEnum:
+    name: V1p5MhcClassEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       MHC-I:
@@ -1343,8 +1339,8 @@ enums:
         text: MHC-II
       MHC-nonclassical:
         text: MHC-nonclassical
-  V1p5Gene:
-    name: V1p5Gene
+  V1p5GeneOntology:
+    name: V1p5GeneOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1352,8 +1348,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5StudyType:
-    name: V1p5StudyType
+  V1p5StudyTypeOntology:
+    name: V1p5StudyTypeOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1361,8 +1357,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5KeywordsStudy:
-    name: V1p5KeywordsStudy
+  V1p5KeywordsStudyEnum:
+    name: V1p5KeywordsStudyEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       contains_ig:
@@ -1379,8 +1375,8 @@ enums:
         text: contains_schema_cell
       contains_schema_receptor:
         text: contains_schema_receptor
-  V1p5Sex:
-    name: V1p5Sex
+  V1p5SexEnum:
+    name: V1p5SexEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       male:
@@ -1393,8 +1389,8 @@ enums:
         text: hermaphrodite
       intersex:
         text: intersex
-  V1p5AgeUnit:
-    name: V1p5AgeUnit
+  V1p5AgeUnitOntology:
+    name: V1p5AgeUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1402,8 +1398,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5DiseaseDiagnosis:
-    name: V1p5DiseaseDiagnosis
+  V1p5DiseaseDiagnosisOntology:
+    name: V1p5DiseaseDiagnosisOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1411,8 +1407,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5Tissue:
-    name: V1p5Tissue
+  V1p5TissueOntology:
+    name: V1p5TissueOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1420,8 +1416,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5CollectionTimePointRelativeUnit:
-    name: V1p5CollectionTimePointRelativeUnit
+  V1p5CollectionTimePointRelativeUnitOntology:
+    name: V1p5CollectionTimePointRelativeUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1429,8 +1425,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5CellSubset:
-    name: V1p5CellSubset
+  V1p5CellSubsetOntology:
+    name: V1p5CellSubsetOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1438,8 +1434,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5CellSpecies:
-    name: V1p5CellSpecies
+  V1p5CellSpeciesOntology:
+    name: V1p5CellSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1447,8 +1443,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5PcrTargetLocus:
-    name: V1p5PcrTargetLocus
+  V1p5PcrTargetLocusEnum:
+    name: V1p5PcrTargetLocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -1467,16 +1463,16 @@ enums:
         text: TRD
       TRG:
         text: TRG
-  V1p5TemplateClass:
-    name: V1p5TemplateClass
+  V1p5TemplateClassEnum:
+    name: V1p5TemplateClassEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       DNA:
         text: DNA
       RNA:
         text: RNA
-  V1p5TemplateAmountUnit:
-    name: V1p5TemplateAmountUnit
+  V1p5TemplateAmountUnitOntology:
+    name: V1p5TemplateAmountUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1484,8 +1480,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5LibraryGenerationMethod:
-    name: V1p5LibraryGenerationMethod
+  V1p5LibraryGenerationMethodEnum:
+    name: V1p5LibraryGenerationMethodEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       PCR:
@@ -1512,8 +1508,8 @@ enums:
         text: RT(specific)+TS
       other:
         text: other
-  V1p5CompleteSequences:
-    name: V1p5CompleteSequences
+  V1p5CompleteSequencesEnum:
+    name: V1p5CompleteSequencesEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       partial:
@@ -1524,8 +1520,8 @@ enums:
         text: complete+untemplated
       mixed:
         text: mixed
-  V1p5PhysicalLinkage:
-    name: V1p5PhysicalLinkage
+  V1p5PhysicalLinkageEnum:
+    name: V1p5PhysicalLinkageEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       none:
@@ -1536,16 +1532,16 @@ enums:
         text: hetero_tail-head
       hetero_prelinked:
         text: hetero_prelinked
-  V1p5FileType:
-    name: V1p5FileType
+  V1p5FileTypeEnum:
+    name: V1p5FileTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       fasta:
         text: fasta
       fastq:
         text: fastq
-  V1p5ReadDirection:
-    name: V1p5ReadDirection
+  V1p5ReadDirectionEnum:
+    name: V1p5ReadDirectionEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       forward:
@@ -1554,8 +1550,8 @@ enums:
         text: reverse
       mixed:
         text: mixed
-  V1p5PairedReadDirection:
-    name: V1p5PairedReadDirection
+  V1p5PairedReadDirectionEnum:
+    name: V1p5PairedReadDirectionEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       forward:
@@ -1564,27 +1560,27 @@ enums:
         text: reverse
       mixed:
         text: mixed
-  V1p5ExpressionStudyMethod:
-    name: V1p5ExpressionStudyMethod
+  V1p5ExpressionStudyMethodEnum:
+    name: V1p5ExpressionStudyMethodEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       flow_cytometry:
         text: flow_cytometry
       single-cell_transcriptome:
         text: single-cell_transcriptome
-  V1p5Property:
-    name: V1p5Property
+  V1p5PropertyOntology:
+    name: V1p5PropertyOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p5ReceptorType:
-    name: V1p5ReceptorType
+  V1p5ReceptorTypeEnum:
+    name: V1p5ReceptorTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       Ig:
         text: Ig
       TCR:
         text: TCR
-  V1p5ReceptorVariableDomain1Locus:
-    name: V1p5ReceptorVariableDomain1Locus
+  V1p5ReceptorVariableDomain1LocusEnum:
+    name: V1p5ReceptorVariableDomain1LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -1593,8 +1589,8 @@ enums:
         text: TRB
       TRD:
         text: TRD
-  V1p5ReceptorVariableDomain2Locus:
-    name: V1p5ReceptorVariableDomain2Locus
+  V1p5ReceptorVariableDomain2LocusEnum:
+    name: V1p5ReceptorVariableDomain2LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGI:
@@ -1607,8 +1603,8 @@ enums:
         text: TRA
       TRG:
         text: TRG
-  V1p5LigandType:
-    name: V1p5LigandType
+  V1p5LigandTypeEnum:
+    name: V1p5LigandTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       MHC:peptide:
@@ -1621,8 +1617,8 @@ enums:
         text: peptide
       non-peptidic:
         text: non-peptidic
-  V1p5AntigenType:
-    name: V1p5AntigenType
+  V1p5AntigenTypeEnum:
+    name: V1p5AntigenTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       protein:
@@ -1631,11 +1627,11 @@ enums:
         text: peptide
       non-peptidic:
         text: non-peptidic
-  V1p5Antigen:
-    name: V1p5Antigen
+  V1p5AntigenOntology:
+    name: V1p5AntigenOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p5AntigenSourceSpecies:
-    name: V1p5AntigenSourceSpecies
+  V1p5AntigenSourceSpeciesOntology:
+    name: V1p5AntigenSourceSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1643,8 +1639,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5MhcGene1:
-    name: V1p5MhcGene1
+  V1p5MhcGene1Ontology:
+    name: V1p5MhcGene1Ontology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1652,8 +1648,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5MhcGene2:
-    name: V1p5MhcGene2
+  V1p5MhcGene2Ontology:
+    name: V1p5MhcGene2Ontology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1661,8 +1657,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p5ReactivityMethod:
-    name: V1p5ReactivityMethod
+  V1p5ReactivityMethodEnum:
+    name: V1p5ReactivityMethodEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       SPR:
@@ -1675,8 +1671,8 @@ enums:
         text: cytometry
       biological_activity:
         text: biological_activity
-  V1p5ReactivityReadout:
-    name: V1p5ReactivityReadout
+  V1p5ReactivityReadoutEnum:
+    name: V1p5ReactivityReadoutEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       binding_strength:
@@ -1691,21 +1687,21 @@ enums:
         text: off_rate
       pathogen_inhibition:
         text: pathogen_inhibition
-  V1p4Unit:
-    name: V1p4Unit
+  V1p4UnitOntology:
+    name: V1p4UnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4OrcidId:
-    name: V1p4OrcidId
+  V1p4OrcidIdOntology:
+    name: V1p4OrcidIdOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p4Affiliation:
-    name: V1p4Affiliation
+  V1p4AffiliationOntology:
+    name: V1p4AffiliationOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p4Role:
-    name: V1p4Role
+  V1p4RoleEnum:
+    name: V1p4RoleEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       conceptualization:
@@ -1736,8 +1732,8 @@ enums:
         text: writing - original draft
       writing - review & editing:
         text: writing - review & editing
-  V1p4Degree:
-    name: V1p4Degree
+  V1p4DegreeEnum:
+    name: V1p4DegreeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       lead:
@@ -1746,32 +1742,32 @@ enums:
         text: equal
       supporting:
         text: supporting
-  V1p4Derivation:
-    name: V1p4Derivation
+  V1p4DerivationEnum:
+    name: V1p4DerivationEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       DNA:
         text: DNA
       RNA:
         text: RNA
-  V1p4ObservationType:
-    name: V1p4ObservationType
+  V1p4ObservationTypeEnum:
+    name: V1p4ObservationTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       direct_sequencing:
         text: direct_sequencing
       inference_from_repertoire:
         text: inference_from_repertoire
-  V1p4Strand:
-    name: V1p4Strand
+  V1p4StrandEnum:
+    name: V1p4StrandEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       +:
         text: +
       '-':
         text: '-'
-  V1p4Locus:
-    name: V1p4Locus
+  V1p4LocusEnum:
+    name: V1p4LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -1790,8 +1786,8 @@ enums:
         text: TRG
       TRD:
         text: TRD
-  V1p4SequenceType:
-    name: V1p4SequenceType
+  V1p4SequenceTypeEnum:
+    name: V1p4SequenceTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       V:
@@ -1802,8 +1798,8 @@ enums:
         text: J
       C:
         text: C
-  V1p4InferenceType:
-    name: V1p4InferenceType
+  V1p4InferenceTypeEnum:
+    name: V1p4InferenceTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       genomic_and_rearranged:
@@ -1812,11 +1808,11 @@ enums:
         text: genomic_only
       rearranged_only:
         text: rearranged_only
-  V1p4Species:
-    name: V1p4Species
+  V1p4SpeciesOntology:
+    name: V1p4SpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p4SpeciesSubgroupType:
-    name: V1p4SpeciesSubgroupType
+  V1p4SpeciesSubgroupTypeEnum:
+    name: V1p4SpeciesSubgroupTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       breed:
@@ -1829,8 +1825,8 @@ enums:
         text: outbred
       locational:
         text: locational
-  V1p4Status:
-    name: V1p4Status
+  V1p4StatusEnum:
+    name: V1p4StatusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       active:
@@ -1841,8 +1837,8 @@ enums:
         text: retired
       withdrawn:
         text: withdrawn
-  V1p4JCodonFrame:
-    name: V1p4JCodonFrame
+  V1p4JCodonFrameEnum:
+    name: V1p4JCodonFrameEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       '1':
@@ -1851,24 +1847,24 @@ enums:
         text: '2'
       '3':
         text: '3'
-  V1p4CurationalTags:
-    name: V1p4CurationalTags
+  V1p4CurationalTagsEnum:
+    name: V1p4CurationalTagsEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       likely_truncated:
         text: likely_truncated
       likely_full_length:
         text: likely_full_length
-  V1p4InferenceProcess:
-    name: V1p4InferenceProcess
+  V1p4InferenceProcessEnum:
+    name: V1p4InferenceProcessEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       genomic_sequencing:
         text: genomic_sequencing
       repertoire_sequencing:
         text: repertoire_sequencing
-  V1p4MhcClass:
-    name: V1p4MhcClass
+  V1p4MhcClassEnum:
+    name: V1p4MhcClassEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       MHC-I:
@@ -1877,8 +1873,8 @@ enums:
         text: MHC-II
       MHC-nonclassical:
         text: MHC-nonclassical
-  V1p4Gene:
-    name: V1p4Gene
+  V1p4GeneOntology:
+    name: V1p4GeneOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1886,8 +1882,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4StudyType:
-    name: V1p4StudyType
+  V1p4StudyTypeOntology:
+    name: V1p4StudyTypeOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1895,8 +1891,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4KeywordsStudy:
-    name: V1p4KeywordsStudy
+  V1p4KeywordsStudyEnum:
+    name: V1p4KeywordsStudyEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       contains_ig:
@@ -1917,8 +1913,8 @@ enums:
         text: contains_schema_cellexpression
       contains_schema_receptorreactivity:
         text: contains_schema_receptorreactivity
-  V1p4Sex:
-    name: V1p4Sex
+  V1p4SexEnum:
+    name: V1p4SexEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       male:
@@ -1931,8 +1927,8 @@ enums:
         text: hermaphrodite
       intersex:
         text: intersex
-  V1p4AncestryPopulation:
-    name: V1p4AncestryPopulation
+  V1p4AncestryPopulationOntology:
+    name: V1p4AncestryPopulationOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1940,8 +1936,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4LocationBirth:
-    name: V1p4LocationBirth
+  V1p4LocationBirthOntology:
+    name: V1p4LocationBirthOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1949,8 +1945,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4DiseaseDiagnosis:
-    name: V1p4DiseaseDiagnosis
+  V1p4DiseaseDiagnosisOntology:
+    name: V1p4DiseaseDiagnosisOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1958,8 +1954,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4Tissue:
-    name: V1p4Tissue
+  V1p4TissueOntology:
+    name: V1p4TissueOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1967,8 +1963,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4CollectionLocation:
-    name: V1p4CollectionLocation
+  V1p4CollectionLocationOntology:
+    name: V1p4CollectionLocationOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1976,8 +1972,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4CellSubset:
-    name: V1p4CellSubset
+  V1p4CellSubsetOntology:
+    name: V1p4CellSubsetOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1985,8 +1981,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4CellSpecies:
-    name: V1p4CellSpecies
+  V1p4CellSpeciesOntology:
+    name: V1p4CellSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1994,8 +1990,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4PcrTargetLocus:
-    name: V1p4PcrTargetLocus
+  V1p4PcrTargetLocusEnum:
+    name: V1p4PcrTargetLocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -2014,16 +2010,16 @@ enums:
         text: TRD
       TRG:
         text: TRG
-  V1p4TemplateClass:
-    name: V1p4TemplateClass
+  V1p4TemplateClassEnum:
+    name: V1p4TemplateClassEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       DNA:
         text: DNA
       RNA:
         text: RNA
-  V1p4LibraryGenerationMethod:
-    name: V1p4LibraryGenerationMethod
+  V1p4LibraryGenerationMethodEnum:
+    name: V1p4LibraryGenerationMethodEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       PCR:
@@ -2050,8 +2046,8 @@ enums:
         text: RT(specific)+TS
       other:
         text: other
-  V1p4CompleteSequences:
-    name: V1p4CompleteSequences
+  V1p4CompleteSequencesEnum:
+    name: V1p4CompleteSequencesEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       partial:
@@ -2062,8 +2058,8 @@ enums:
         text: complete+untemplated
       mixed:
         text: mixed
-  V1p4PhysicalLinkage:
-    name: V1p4PhysicalLinkage
+  V1p4PhysicalLinkageEnum:
+    name: V1p4PhysicalLinkageEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       none:
@@ -2074,16 +2070,16 @@ enums:
         text: hetero_tail-head
       hetero_prelinked:
         text: hetero_prelinked
-  V1p4FileType:
-    name: V1p4FileType
+  V1p4FileTypeEnum:
+    name: V1p4FileTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       fasta:
         text: fasta
       fastq:
         text: fastq
-  V1p4ReadDirection:
-    name: V1p4ReadDirection
+  V1p4ReadDirectionEnum:
+    name: V1p4ReadDirectionEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       forward:
@@ -2092,8 +2088,8 @@ enums:
         text: reverse
       mixed:
         text: mixed
-  V1p4PairedReadDirection:
-    name: V1p4PairedReadDirection
+  V1p4PairedReadDirectionEnum:
+    name: V1p4PairedReadDirectionEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       forward:
@@ -2102,8 +2098,8 @@ enums:
         text: reverse
       mixed:
         text: mixed
-  V1p4LocusSpecies:
-    name: V1p4LocusSpecies
+  V1p4LocusSpeciesOntology:
+    name: V1p4LocusSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -2111,19 +2107,19 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4Property:
-    name: V1p4Property
+  V1p4PropertyOntology:
+    name: V1p4PropertyOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p4ReceptorType:
-    name: V1p4ReceptorType
+  V1p4ReceptorTypeEnum:
+    name: V1p4ReceptorTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       Ig:
         text: Ig
       TCR:
         text: TCR
-  V1p4ReceptorVariableDomain1Locus:
-    name: V1p4ReceptorVariableDomain1Locus
+  V1p4ReceptorVariableDomain1LocusEnum:
+    name: V1p4ReceptorVariableDomain1LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGH:
@@ -2132,8 +2128,8 @@ enums:
         text: TRB
       TRD:
         text: TRD
-  V1p4ReceptorVariableDomain2Locus:
-    name: V1p4ReceptorVariableDomain2Locus
+  V1p4ReceptorVariableDomain2LocusEnum:
+    name: V1p4ReceptorVariableDomain2LocusEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       IGI:
@@ -2146,8 +2142,8 @@ enums:
         text: TRA
       TRG:
         text: TRG
-  V1p4LigandType:
-    name: V1p4LigandType
+  V1p4LigandTypeEnum:
+    name: V1p4LigandTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       MHC:peptide:
@@ -2160,8 +2156,8 @@ enums:
         text: peptide
       non-peptidic:
         text: non-peptidic
-  V1p4AntigenType:
-    name: V1p4AntigenType
+  V1p4AntigenTypeEnum:
+    name: V1p4AntigenTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
       protein:
@@ -2170,11 +2166,11 @@ enums:
         text: peptide
       non-peptidic:
         text: non-peptidic
-  V1p4Antigen:
-    name: V1p4Antigen
+  V1p4AntigenOntology:
+    name: V1p4AntigenOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-  V1p4AntigenSourceSpecies:
-    name: V1p4AntigenSourceSpecies
+  V1p4AntigenSourceSpeciesOntology:
+    name: V1p4AntigenSourceSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -2182,8 +2178,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4MhcGene1:
-    name: V1p4MhcGene1
+  V1p4MhcGene1Ontology:
+    name: V1p4MhcGene1Ontology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -2191,8 +2187,8 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  V1p4MhcGene2:
-    name: V1p4MhcGene2
+  V1p4MhcGene2Ontology:
+    name: V1p4MhcGene2Ontology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -2520,7 +2516,7 @@ slots:
     description: The type of organism that the conclusion is about
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: IAO:0000136
-    range: Species
+    range: SpeciesOntology
   experiment_type:
     name: experiment_type
     description: The type of experiment that supports the conclusion
@@ -2625,7 +2621,7 @@ slots:
         value: true
     description: Unit of the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: TimePointUnit
+    range: TimePointUnitOntology
   acknowledgement_id:
     name: acknowledgement_id
     annotations:
@@ -2682,7 +2678,7 @@ slots:
         value: true
     description: The class of nucleic acid that was used as primary starting material
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Derivation
+    range: DerivationEnum
   observation_type:
     name: observation_type
     annotations:
@@ -2693,7 +2689,7 @@ slots:
       as direct sequencing or  inference from repertoire sequencing data.
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: ObservationType
+    range: ObservationTypeEnum
   curation:
     name: curation
     annotations:
@@ -2784,7 +2780,7 @@ slots:
         value: true
     description: sense (+ or -)
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Strand
+    range: StrandEnum
   sequence_delineation_id:
     name: sequence_delineation_id
     annotations:
@@ -3024,7 +3020,7 @@ slots:
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Locus
+    range: LocusEnum
   chromosome:
     name: chromosome
     annotations:
@@ -3043,7 +3039,7 @@ slots:
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: SequenceType
+    range: SequenceTypeEnum
   functional:
     name: functional
     annotations:
@@ -3062,7 +3058,7 @@ slots:
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: InferenceType
+    range: InferenceTypeEnum
   species:
     name: species
     annotations:
@@ -3071,7 +3067,7 @@ slots:
         value: false
     description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Species
+    range: SpeciesOntology
   species_subgroup:
     name: species_subgroup
     annotations:
@@ -3090,7 +3086,7 @@ slots:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: SpeciesSubgroupType
+    range: SpeciesSubgroupTypeEnum
   status:
     name: status
     annotations:
@@ -3099,7 +3095,7 @@ slots:
         value: true
     description: Status of record, assumed active if the field is not present
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Status
+    range: StatusEnum
   subgroup_designation:
     name: subgroup_designation
     annotations:
@@ -3156,7 +3152,7 @@ slots:
       in-frame, '2' means that the first bp is  missing from the first codon, and
       '3' means that the first 2 bp are missing.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: JCodonFrame
+    range: JCodonFrameEnum
   gene_start:
     name: gene_start
     annotations:
@@ -3381,7 +3377,7 @@ slots:
         value: true
     description: Controlled-vocabulary tags applied to this description
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: CurationalTags
+    range: CurationalTagsEnum
     multivalued: true
   germline_set_id:
     name: germline_set_id
@@ -3516,7 +3512,7 @@ slots:
         value: true
     description: Information on how the genotype was acquired. Controlled vocabulary.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: InferenceProcess
+    range: InferenceProcessEnum
   phasing:
     name: phasing
     annotations:
@@ -3568,7 +3564,7 @@ slots:
   mhc_class:
     name: mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: MhcClass
+    range: MhcClassEnum
   mhc_alleles:
     name: mhc_alleles
     annotations:
@@ -3598,7 +3594,7 @@ slots:
         value: true
     description: The MHC gene to which the described allele belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Gene
+    range: GeneOntology
   reference_set_ref:
     name: reference_set_ref
     annotations:
@@ -3654,7 +3650,7 @@ slots:
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: StudyType
+    range: StudyTypeOntology
   study_description:
     name: study_description
     annotations:
@@ -3729,7 +3725,7 @@ slots:
       (e.g. it is possible to have a study that "contains_paired_chain" but does not
       "contains_schema_cell").
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: KeywordsStudy
+    range: KeywordsStudyEnum
     multivalued: true
   adc_publish_date:
     name: adc_publish_date
@@ -3778,7 +3774,7 @@ slots:
         value: true
     description: Biological sex of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Sex
+    range: SexEnum
   age_min:
     name: age_min
     annotations:
@@ -3806,7 +3802,7 @@ slots:
         value: true
     description: Unit of age range
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: AgeUnit
+    range: AgeUnitOntology
   age_event:
     name: age_event
     annotations:
@@ -3912,7 +3908,7 @@ slots:
         value: true
     description: Diagnosis of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DiseaseDiagnosis
+    range: DiseaseDiagnosisOntology
   disease_length:
     name: disease_length
     annotations:
@@ -3999,7 +3995,7 @@ slots:
         value: true
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Tissue
+    range: TissueOntology
   anatomic_site:
     name: anatomic_site
     annotations:
@@ -4036,7 +4032,7 @@ slots:
         value: true
     description: Unit of Sample collection time
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: CollectionTimePointRelativeUnit
+    range: CollectionTimePointRelativeUnitOntology
   collection_time_point_reference:
     name: collection_time_point_reference
     annotations:
@@ -4074,7 +4070,7 @@ slots:
         value: true
     description: Commonly-used designation of isolated cell population
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: CellSubset
+    range: CellSubsetOntology
   cell_phenotype:
     name: cell_phenotype
     annotations:
@@ -4098,7 +4094,7 @@ slots:
       this key will overwrite the `species` information for all lower layers of the
       schema.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: CellSpecies
+    range: CellSpeciesOntology
   single_cell:
     name: single_cell
     annotations:
@@ -4176,7 +4172,7 @@ slots:
       vocubulary that is meant to provide a generic classification of the locus, not
       necessarily the correct designation according to a specific nomenclature.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: PcrTargetLocus
+    range: PcrTargetLocusEnum
   forward_pcr_primer_target_location:
     name: forward_pcr_primer_target_location
     annotations:
@@ -4206,7 +4202,7 @@ slots:
     description: The class of nucleic acid that was used as primary starting material
       for the following procedures
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: TemplateClass
+    range: TemplateClassEnum
   template_quality:
     name: template_quality
     annotations:
@@ -4234,7 +4230,7 @@ slots:
         value: true
     description: Unit of template amount
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: TemplateAmountUnit
+    range: TemplateAmountUnitOntology
   library_generation_method:
     name: library_generation_method
     annotations:
@@ -4243,7 +4239,7 @@ slots:
         value: false
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: LibraryGenerationMethod
+    range: LibraryGenerationMethodEnum
   library_generation_protocol:
     name: library_generation_protocol
     annotations:
@@ -4297,7 +4293,7 @@ slots:
       categories of sequences in the given experiment. It SHOULD NOT be used as a
       replacement of a NULL value.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: CompleteSequences
+    range: CompleteSequencesEnum
   physical_linkage:
     name: physical_linkage
     annotations:
@@ -4315,7 +4311,7 @@ slots:
       between the two is generated. `*_prelinked` refers to constructs in which the
       linkage was already present on the DNA level (e.g. scFv).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: PhysicalLinkage
+    range: PhysicalLinkageEnum
   sequencing_run_id:
     name: sequencing_run_id
     annotations:
@@ -4398,7 +4394,7 @@ slots:
     description: File format for the raw reads or sequences
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: FileType
+    range: FileTypeEnum
   filename:
     name: filename
     annotations:
@@ -4418,7 +4414,7 @@ slots:
     description: Read direction for the raw reads or sequences. The first file in
       paired-read sequencing.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ReadDirection
+    range: ReadDirectionEnum
   read_length:
     name: read_length
     annotations:
@@ -4445,7 +4441,7 @@ slots:
         value: true
     description: Read direction for the second file in paired-read sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: PairedReadDirection
+    range: PairedReadDirectionEnum
   paired_read_length:
     name: paired_read_length
     annotations:
@@ -6158,7 +6154,7 @@ slots:
     description: Keyword describing the methodology used to assess expression. This
       values for this field MUST  come from a controlled vocabulary.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ExpressionStudyMethod
+    range: ExpressionStudyMethodEnum
   expression_raw_doi:
     name: expression_raw_doi
     annotations:
@@ -6220,7 +6216,7 @@ slots:
       IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human
       CD27 antibody).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Property
+    range: PropertyOntology
   property_value:
     name: property_value
     annotations:
@@ -6260,7 +6256,7 @@ slots:
       Receptor (TCR).
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: ReceptorType
+    range: ReceptorTypeEnum
   receptor_variable_domain_1_aa:
     name: receptor_variable_domain_1_aa
     annotations:
@@ -6282,7 +6278,7 @@ slots:
     description: Locus from which the variable domain in receptor_variable_domain_1_aa
       originates
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ReceptorVariableDomain1Locus
+    range: ReceptorVariableDomain1LocusEnum
   receptor_variable_domain_2_aa:
     name: receptor_variable_domain_2_aa
     annotations:
@@ -6304,7 +6300,7 @@ slots:
     description: Locus from which the variable domain in receptor_variable_domain_2_aa
       originates
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ReceptorVariableDomain2Locus
+    range: ReceptorVariableDomain2LocusEnum
   receptor_ref:
     name: receptor_ref
     annotations:
@@ -6334,7 +6330,7 @@ slots:
     description: Classification of ligand binding to receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: LigandType
+    range: LigandTypeEnum
   antigen_type:
     name: antigen_type
     annotations:
@@ -6344,7 +6340,7 @@ slots:
     description: The type of antigen before processing by the immune system.
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: AntigenType
+    range: AntigenTypeEnum
   antigen:
     name: antigen
     annotations:
@@ -6356,7 +6352,7 @@ slots:
       through antibody production or by T cell activation after presentation via an
       MHC molecule.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Antigen
+    range: AntigenOntology
   antigen_source_species:
     name: antigen_source_species
     annotations:
@@ -6365,7 +6361,7 @@ slots:
         value: true
     description: The species from which the antigen was isolated
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: AntigenSourceSpecies
+    range: AntigenSourceSpeciesOntology
   peptide_start:
     name: peptide_start
     annotations:
@@ -6392,7 +6388,7 @@ slots:
         value: true
     description: The MHC gene to which the mhc_allele_1 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: MhcGene1
+    range: MhcGene1Ontology
   mhc_allele_1:
     name: mhc_allele_1
     annotations:
@@ -6410,7 +6406,7 @@ slots:
         value: true
     description: The MHC gene to which the mhc_allele_2 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: MhcGene2
+    range: MhcGene2Ontology
   mhc_allele_2:
     name: mhc_allele_2
     annotations:
@@ -6429,7 +6425,7 @@ slots:
         value: false
     description: The methodology used to assess expression (assay implemented in experiment)
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ReactivityMethod
+    range: ReactivityMethodEnum
   reactivity_readout:
     name: reactivity_readout
     annotations:
@@ -6438,7 +6434,7 @@ slots:
         value: false
     description: Reactivity measurement read-out
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ReactivityReadout
+    range: ReactivityReadoutEnum
   reactivity_value:
     name: reactivity_value
     annotations:
@@ -6457,27 +6453,33 @@ slots:
     description: The unit of the measurement
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  V1p5label:
-    name: V1p5label
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  V1p5value:
-    name: V1p5value
+  V1p5time_point_label:
+    name: V1p5time_point_label
     annotations:
       nullable:
         tag: nullable
         value: true
+    description: Informative label for the time point
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  V1p5time_point_value:
+    name: V1p5time_point_value
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Value of the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: float
-  V1p5unit:
-    name: V1p5unit
+  V1p5time_point_unit:
+    name: V1p5time_point_unit
     annotations:
       nullable:
         tag: nullable
         value: true
     description: Unit of the time point
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Unit
+    range: V1p5TimePointUnitOntology
   V1p5acknowledgement_id:
     name: V1p5acknowledgement_id
     annotations:
@@ -6487,8 +6489,8 @@ slots:
     description: unique identifier of this Acknowledgement within the file
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  V1p5name:
-    name: V1p5name
+  V1p5individual_full_name:
+    name: V1p5individual_full_name
     annotations:
       nullable:
         tag: nullable
@@ -6534,7 +6536,7 @@ slots:
         value: true
     description: The class of nucleic acid that was used as primary starting material
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Derivation
+    range: V1p5DerivationEnum
   V1p5observation_type:
     name: V1p5observation_type
     annotations:
@@ -6545,7 +6547,7 @@ slots:
       as direct sequencing or  inference from repertoire sequencing data.
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5ObservationType
+    range: V1p5ObservationTypeEnum
   V1p5curation:
     name: V1p5curation
     annotations:
@@ -6636,7 +6638,7 @@ slots:
         value: true
     description: sense (+ or -)
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Strand
+    range: V1p5StrandEnum
   V1p5sequence_delineation_id:
     name: V1p5sequence_delineation_id
     annotations:
@@ -6828,6 +6830,7 @@ slots:
         tag: nullable
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: integer
   V1p5release_date:
     name: V1p5release_date
     annotations:
@@ -6845,6 +6848,10 @@ slots:
         value: true
     description: Brief descriptive notes of the reason for this release and the changes
       embodied
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  V1p5label:
+    name: V1p5label
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   V1p5coding_sequence:
@@ -6871,7 +6878,7 @@ slots:
   V1p5locus:
     name: V1p5locus
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Locus
+    range: V1p5LocusEnum
   V1p5chromosome:
     name: V1p5chromosome
     annotations:
@@ -6890,7 +6897,7 @@ slots:
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5SequenceType
+    range: V1p5SequenceTypeEnum
   V1p5functional:
     name: V1p5functional
     annotations:
@@ -6909,7 +6916,7 @@ slots:
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5InferenceType
+    range: V1p5InferenceTypeEnum
   V1p5species:
     name: V1p5species
     annotations:
@@ -6918,7 +6925,7 @@ slots:
         value: false
     description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Species
+    range: V1p5SpeciesOntology
   V1p5species_subgroup:
     name: V1p5species_subgroup
     annotations:
@@ -6937,7 +6944,7 @@ slots:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5SpeciesSubgroupType
+    range: V1p5SpeciesSubgroupTypeEnum
   V1p5status:
     name: V1p5status
     annotations:
@@ -6946,7 +6953,7 @@ slots:
         value: true
     description: Status of record, assumed active if the field is not present
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Status
+    range: V1p5StatusEnum
   V1p5subgroup_designation:
     name: V1p5subgroup_designation
     annotations:
@@ -7003,7 +7010,7 @@ slots:
       in-frame, '2' means that the first bp is  missing from the first codon, and
       '3' means that the first 2 bp are missing.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5JCodonFrame
+    range: V1p5JCodonFrameEnum
   V1p5gene_start:
     name: V1p5gene_start
     annotations:
@@ -7228,7 +7235,7 @@ slots:
         value: true
     description: Controlled-vocabulary tags applied to this description
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5CurationalTags
+    range: V1p5CurationalTagsEnum
     multivalued: true
   V1p5germline_set_id:
     name: V1p5germline_set_id
@@ -7363,7 +7370,7 @@ slots:
         value: true
     description: Information on how the genotype was acquired. Controlled vocabulary.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5InferenceProcess
+    range: V1p5InferenceProcessEnum
   V1p5phasing:
     name: V1p5phasing
     annotations:
@@ -7415,7 +7422,7 @@ slots:
   V1p5mhc_class:
     name: V1p5mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5MhcClass
+    range: V1p5MhcClassEnum
   V1p5mhc_alleles:
     name: V1p5mhc_alleles
     annotations:
@@ -7445,7 +7452,7 @@ slots:
         value: true
     description: The MHC gene to which the described allele belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Gene
+    range: V1p5GeneOntology
   V1p5reference_set_ref:
     name: V1p5reference_set_ref
     annotations:
@@ -7501,7 +7508,7 @@ slots:
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5StudyType
+    range: V1p5StudyTypeOntology
   V1p5study_description:
     name: V1p5study_description
     annotations:
@@ -7576,7 +7583,7 @@ slots:
       (e.g. it is possible to have a study that "contains_paired_chain" but does not
       "contains_schema_cell").
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5KeywordsStudy
+    range: V1p5KeywordsStudyEnum
     multivalued: true
   V1p5adc_publish_date:
     name: V1p5adc_publish_date
@@ -7625,7 +7632,7 @@ slots:
         value: true
     description: Biological sex of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Sex
+    range: V1p5SexEnum
   V1p5age_min:
     name: V1p5age_min
     annotations:
@@ -7653,7 +7660,7 @@ slots:
         value: true
     description: Unit of age range
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5AgeUnit
+    range: V1p5AgeUnitOntology
   V1p5age_event:
     name: V1p5age_event
     annotations:
@@ -7759,7 +7766,7 @@ slots:
         value: true
     description: Diagnosis of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5DiseaseDiagnosis
+    range: V1p5DiseaseDiagnosisOntology
   V1p5disease_length:
     name: V1p5disease_length
     annotations:
@@ -7846,7 +7853,7 @@ slots:
         value: true
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Tissue
+    range: V1p5TissueOntology
   V1p5anatomic_site:
     name: V1p5anatomic_site
     annotations:
@@ -7883,7 +7890,7 @@ slots:
         value: true
     description: Unit of Sample collection time
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5CollectionTimePointRelativeUnit
+    range: V1p5CollectionTimePointRelativeUnitOntology
   V1p5collection_time_point_reference:
     name: V1p5collection_time_point_reference
     annotations:
@@ -7921,7 +7928,7 @@ slots:
         value: true
     description: Commonly-used designation of isolated cell population
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5CellSubset
+    range: V1p5CellSubsetOntology
   V1p5cell_phenotype:
     name: V1p5cell_phenotype
     annotations:
@@ -7945,7 +7952,7 @@ slots:
       this key will overwrite the `species` information for all lower layers of the
       schema.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5CellSpecies
+    range: V1p5CellSpeciesOntology
   V1p5single_cell:
     name: V1p5single_cell
     annotations:
@@ -8023,7 +8030,7 @@ slots:
       vocubulary that is meant to provide a generic classification of the locus, not
       necessarily the correct designation according to a specific nomenclature.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5PcrTargetLocus
+    range: V1p5PcrTargetLocusEnum
   V1p5forward_pcr_primer_target_location:
     name: V1p5forward_pcr_primer_target_location
     annotations:
@@ -8053,7 +8060,7 @@ slots:
     description: The class of nucleic acid that was used as primary starting material
       for the following procedures
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5TemplateClass
+    range: V1p5TemplateClassEnum
   V1p5template_quality:
     name: V1p5template_quality
     annotations:
@@ -8081,7 +8088,7 @@ slots:
         value: true
     description: Unit of template amount
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5TemplateAmountUnit
+    range: V1p5TemplateAmountUnitOntology
   V1p5library_generation_method:
     name: V1p5library_generation_method
     annotations:
@@ -8090,7 +8097,7 @@ slots:
         value: false
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5LibraryGenerationMethod
+    range: V1p5LibraryGenerationMethodEnum
   V1p5library_generation_protocol:
     name: V1p5library_generation_protocol
     annotations:
@@ -8144,7 +8151,7 @@ slots:
       categories of sequences in the given experiment. It SHOULD NOT be used as a
       replacement of a NULL value.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5CompleteSequences
+    range: V1p5CompleteSequencesEnum
   V1p5physical_linkage:
     name: V1p5physical_linkage
     annotations:
@@ -8162,7 +8169,7 @@ slots:
       between the two is generated. `*_prelinked` refers to constructs in which the
       linkage was already present on the DNA level (e.g. scFv).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5PhysicalLinkage
+    range: V1p5PhysicalLinkageEnum
   V1p5sequencing_run_id:
     name: V1p5sequencing_run_id
     annotations:
@@ -8245,7 +8252,7 @@ slots:
     description: File format for the raw reads or sequences
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5FileType
+    range: V1p5FileTypeEnum
   V1p5filename:
     name: V1p5filename
     annotations:
@@ -8265,7 +8272,7 @@ slots:
     description: Read direction for the raw reads or sequences. The first file in
       paired-read sequencing.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5ReadDirection
+    range: V1p5ReadDirectionEnum
   V1p5read_length:
     name: V1p5read_length
     annotations:
@@ -8292,7 +8299,7 @@ slots:
         value: true
     description: Read direction for the second file in paired-read sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5PairedReadDirection
+    range: V1p5PairedReadDirectionEnum
   V1p5paired_read_length:
     name: V1p5paired_read_length
     annotations:
@@ -8424,10 +8431,6 @@ slots:
     range: string
   V1p5repertoire_id:
     name: V1p5repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   V1p5repertoire_name:
@@ -8445,7 +8448,6 @@ slots:
       nullable:
         tag: nullable
         value: true
-    description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   V1p5study:
@@ -8486,6 +8488,15 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: V1p5DataProcessing
     multivalued: true
+  V1p5time_point:
+    name: V1p5time_point
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Time point designation for this repertoire within the group
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: V1p5TimePoint
   V1p5repertoire_group_id:
     name: V1p5repertoire_group_id
     annotations:
@@ -8522,6 +8533,7 @@ slots:
     description: List of repertoires in this collection with an associated description
       and time point designation
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: V1p5RepertoireGroupDetail
     multivalued: true
   V1p5segment:
     name: V1p5segment
@@ -10000,7 +10012,7 @@ slots:
     description: Keyword describing the methodology used to assess expression. This
       values for this field MUST  come from a controlled vocabulary.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5ExpressionStudyMethod
+    range: V1p5ExpressionStudyMethodEnum
   V1p5expression_raw_doi:
     name: V1p5expression_raw_doi
     annotations:
@@ -10062,7 +10074,16 @@ slots:
       IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human
       CD27 antibody).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Property
+    range: V1p5PropertyOntology
+  V1p5property_value:
+    name: V1p5property_value
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Level at which the property was observed in the experiment (non-normalized).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: float
   V1p5receptor_id:
     name: V1p5receptor_id
     annotations:
@@ -10093,7 +10114,7 @@ slots:
       Receptor (TCR).
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5ReceptorType
+    range: V1p5ReceptorTypeEnum
   V1p5receptor_variable_domain_1_aa:
     name: V1p5receptor_variable_domain_1_aa
     annotations:
@@ -10115,7 +10136,7 @@ slots:
     description: Locus from which the variable domain in receptor_variable_domain_1_aa
       originates
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5ReceptorVariableDomain1Locus
+    range: V1p5ReceptorVariableDomain1LocusEnum
   V1p5receptor_variable_domain_2_aa:
     name: V1p5receptor_variable_domain_2_aa
     annotations:
@@ -10137,7 +10158,7 @@ slots:
     description: Locus from which the variable domain in receptor_variable_domain_2_aa
       originates
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5ReceptorVariableDomain2Locus
+    range: V1p5ReceptorVariableDomain2LocusEnum
   V1p5receptor_ref:
     name: V1p5receptor_ref
     annotations:
@@ -10167,7 +10188,7 @@ slots:
     description: Classification of ligand binding to receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5LigandType
+    range: V1p5LigandTypeEnum
   V1p5antigen_type:
     name: V1p5antigen_type
     annotations:
@@ -10177,7 +10198,7 @@ slots:
     description: The type of antigen before processing by the immune system.
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p5AntigenType
+    range: V1p5AntigenTypeEnum
   V1p5antigen:
     name: V1p5antigen
     annotations:
@@ -10189,7 +10210,7 @@ slots:
       through antibody production or by T cell activation after presentation via an
       MHC molecule.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5Antigen
+    range: V1p5AntigenOntology
   V1p5antigen_source_species:
     name: V1p5antigen_source_species
     annotations:
@@ -10198,7 +10219,7 @@ slots:
         value: true
     description: The species from which the antigen was isolated
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5AntigenSourceSpecies
+    range: V1p5AntigenSourceSpeciesOntology
   V1p5peptide_start:
     name: V1p5peptide_start
     annotations:
@@ -10225,7 +10246,7 @@ slots:
         value: true
     description: The MHC gene to which the mhc_allele_1 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5MhcGene1
+    range: V1p5MhcGene1Ontology
   V1p5mhc_allele_1:
     name: V1p5mhc_allele_1
     annotations:
@@ -10243,7 +10264,7 @@ slots:
         value: true
     description: The MHC gene to which the mhc_allele_2 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5MhcGene2
+    range: V1p5MhcGene2Ontology
   V1p5mhc_allele_2:
     name: V1p5mhc_allele_2
     annotations:
@@ -10262,7 +10283,7 @@ slots:
         value: false
     description: The methodology used to assess expression (assay implemented in experiment)
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5ReactivityMethod
+    range: V1p5ReactivityMethodEnum
   V1p5reactivity_readout:
     name: V1p5reactivity_readout
     annotations:
@@ -10271,7 +10292,7 @@ slots:
         value: false
     description: Reactivity measurement read-out
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p5ReactivityReadout
+    range: V1p5ReactivityReadoutEnum
   V1p5reactivity_value:
     name: V1p5reactivity_value
     annotations:
@@ -10305,7 +10326,7 @@ slots:
         tag: nullable
         value: false
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Unit
+    range: V1p4UnitOntology
   V1p4min:
     name: V1p4min
     annotations:
@@ -10360,7 +10381,7 @@ slots:
       of the ORCID record should take precedence over the name reported in the `name`
       property.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4OrcidId
+    range: V1p4OrcidIdOntology
   V1p4affiliation:
     name: V1p4affiliation
     annotations:
@@ -10370,7 +10391,7 @@ slots:
     description: ROR of the contributor's primary affiliation. Note that ROR are only
       minted for institutions, not from individuals institutes, divisions or departments.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Affiliation
+    range: V1p4AffiliationOntology
   V1p4affiliation_department:
     name: V1p4affiliation_department
     annotations:
@@ -10399,7 +10420,7 @@ slots:
         value: false
     description: Role according to CRediT taxonomy
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Role
+    range: V1p4RoleEnum
   V1p4degree:
     name: V1p4degree
     annotations:
@@ -10409,7 +10430,7 @@ slots:
     description: Optional specification of the degree of contribution, should be used
       if multiple individuals serve the same role.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Degree
+    range: V1p4DegreeEnum
   V1p4sequence_id:
     name: V1p4sequence_id
     annotations:
@@ -10430,7 +10451,7 @@ slots:
         value: true
     description: The class of nucleic acid that was used as primary starting material
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Derivation
+    range: V1p4DerivationEnum
   V1p4observation_type:
     name: V1p4observation_type
     annotations:
@@ -10441,7 +10462,7 @@ slots:
       as direct sequencing or  inference from repertoire sequencing data.
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4ObservationType
+    range: V1p4ObservationTypeEnum
   V1p4curation:
     name: V1p4curation
     annotations:
@@ -10532,7 +10553,7 @@ slots:
         value: true
     description: sense (+ or -)
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Strand
+    range: V1p4StrandEnum
   V1p4sequence_delineation_id:
     name: V1p4sequence_delineation_id
     annotations:
@@ -10750,7 +10771,7 @@ slots:
   V1p4locus:
     name: V1p4locus
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Locus
+    range: V1p4LocusEnum
   V1p4chromosome:
     name: V1p4chromosome
     annotations:
@@ -10769,7 +10790,7 @@ slots:
     description: Sequence type (V, D, J, C)
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4SequenceType
+    range: V1p4SequenceTypeEnum
   V1p4functional:
     name: V1p4functional
     annotations:
@@ -10788,7 +10809,7 @@ slots:
     description: Type of inference(s) from which this gene sequence was inferred
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4InferenceType
+    range: V1p4InferenceTypeEnum
   V1p4species:
     name: V1p4species
     annotations:
@@ -10797,7 +10818,7 @@ slots:
         value: false
     description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Species
+    range: V1p4SpeciesOntology
   V1p4species_subgroup:
     name: V1p4species_subgroup
     annotations:
@@ -10816,7 +10837,7 @@ slots:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4SpeciesSubgroupType
+    range: V1p4SpeciesSubgroupTypeEnum
   V1p4status:
     name: V1p4status
     annotations:
@@ -10825,7 +10846,7 @@ slots:
         value: true
     description: Status of record, assumed active if the field is not present
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Status
+    range: V1p4StatusEnum
   V1p4subgroup_designation:
     name: V1p4subgroup_designation
     annotations:
@@ -10882,7 +10903,7 @@ slots:
       in-frame, '2' means that the first bp is  missing from the first codon, and
       '3' means that the first 2 bp are missing.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4JCodonFrame
+    range: V1p4JCodonFrameEnum
   V1p4gene_start:
     name: V1p4gene_start
     annotations:
@@ -11107,7 +11128,7 @@ slots:
         value: true
     description: Controlled-vocabulary tags applied to this description
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4CurationalTags
+    range: V1p4CurationalTagsEnum
     multivalued: true
   V1p4germline_set_id:
     name: V1p4germline_set_id
@@ -11226,7 +11247,7 @@ slots:
         value: true
     description: Information on how the genotype was acquired. Controlled vocabulary.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4InferenceProcess
+    range: V1p4InferenceProcessEnum
   V1p4phasing:
     name: V1p4phasing
     annotations:
@@ -11278,7 +11299,7 @@ slots:
   V1p4mhc_class:
     name: V1p4mhc_class
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4MhcClass
+    range: V1p4MhcClassEnum
   V1p4mhc_alleles:
     name: V1p4mhc_alleles
     annotations:
@@ -11308,7 +11329,7 @@ slots:
         value: true
     description: The MHC gene to which the described allele belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Gene
+    range: V1p4GeneOntology
   V1p4reference_set_ref:
     name: V1p4reference_set_ref
     annotations:
@@ -11364,7 +11385,7 @@ slots:
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4StudyType
+    range: V1p4StudyTypeOntology
   V1p4study_description:
     name: V1p4study_description
     annotations:
@@ -11419,7 +11440,7 @@ slots:
       (e.g. it is possible to have a study that "contains_paired_chain" but does not
       "contains_schema_cell").
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4KeywordsStudy
+    range: V1p4KeywordsStudyEnum
     multivalued: true
   V1p4adc_publish_date:
     name: V1p4adc_publish_date
@@ -11468,7 +11489,7 @@ slots:
         value: true
     description: Biological sex of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Sex
+    range: V1p4SexEnum
   V1p4age:
     name: V1p4age
     annotations:
@@ -11500,7 +11521,7 @@ slots:
         value: true
     description: Broad geographic origin of ancestry (continent)
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4AncestryPopulation
+    range: V1p4AncestryPopulationOntology
   V1p4location_birth:
     name: V1p4location_birth
     annotations:
@@ -11510,7 +11531,7 @@ slots:
     description: Self-reported location of birth of the subject, preferred granularity
       is country-level
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4LocationBirth
+    range: V1p4LocationBirthOntology
   V1p4ethnicity:
     name: V1p4ethnicity
     annotations:
@@ -11603,7 +11624,7 @@ slots:
         value: true
     description: Diagnosis of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4DiseaseDiagnosis
+    range: V1p4DiseaseDiagnosisOntology
   V1p4disease_length:
     name: V1p4disease_length
     annotations:
@@ -11690,7 +11711,7 @@ slots:
         value: true
     description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Tissue
+    range: V1p4TissueOntology
   V1p4anatomic_site:
     name: V1p4anatomic_site
     annotations:
@@ -11726,7 +11747,7 @@ slots:
         value: true
     description: Location where the sample was taken, preferred granularity is country-level
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4CollectionLocation
+    range: V1p4CollectionLocationOntology
   V1p4biomaterial_provider:
     name: V1p4biomaterial_provider
     annotations:
@@ -11753,7 +11774,7 @@ slots:
         tag: nullable
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4CellSubset
+    range: V1p4CellSubsetOntology
   V1p4cell_phenotype:
     name: V1p4cell_phenotype
     annotations:
@@ -11787,7 +11808,7 @@ slots:
       this key will overwrite the `species` information for all lower layers of the
       schema.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4CellSpecies
+    range: V1p4CellSpeciesOntology
   V1p4single_cell:
     name: V1p4single_cell
     annotations:
@@ -11865,7 +11886,7 @@ slots:
       vocubulary that is meant to provide a generic classification of the locus, not
       necessarily the correct designation according to a specific nomenclature.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4PcrTargetLocus
+    range: V1p4PcrTargetLocusEnum
   V1p4forward_pcr_primer_target_location:
     name: V1p4forward_pcr_primer_target_location
     annotations:
@@ -11895,7 +11916,7 @@ slots:
     description: The class of nucleic acid that was used as primary starting material
       for the following procedures
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4TemplateClass
+    range: V1p4TemplateClassEnum
   V1p4template_quality:
     name: V1p4template_quality
     annotations:
@@ -11923,7 +11944,7 @@ slots:
         value: false
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4LibraryGenerationMethod
+    range: V1p4LibraryGenerationMethodEnum
   V1p4library_generation_protocol:
     name: V1p4library_generation_protocol
     annotations:
@@ -11977,7 +11998,7 @@ slots:
       categories of sequences in the given experiment. It SHOULD NOT be used as a
       replacement of a NULL value.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4CompleteSequences
+    range: V1p4CompleteSequencesEnum
   V1p4physical_linkage:
     name: V1p4physical_linkage
     annotations:
@@ -11995,7 +12016,7 @@ slots:
       between the two is generated. `*_prelinked` refers to constructs in which the
       linkage was already present on the DNA level (e.g. scFv).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4PhysicalLinkage
+    range: V1p4PhysicalLinkageEnum
   V1p4sequencing_run_id:
     name: V1p4sequencing_run_id
     annotations:
@@ -12078,7 +12099,7 @@ slots:
     description: File format for the raw reads or sequences
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4FileType
+    range: V1p4FileTypeEnum
   V1p4filename:
     name: V1p4filename
     annotations:
@@ -12098,7 +12119,7 @@ slots:
     description: Read direction for the raw reads or sequences. The first file in
       paired-read sequencing.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4ReadDirection
+    range: V1p4ReadDirectionEnum
   V1p4read_length:
     name: V1p4read_length
     annotations:
@@ -12125,7 +12146,7 @@ slots:
         value: true
     description: Read direction for the second file in paired-read sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4PairedReadDirection
+    range: V1p4PairedReadDirectionEnum
   V1p4paired_read_length:
     name: V1p4paired_read_length
     annotations:
@@ -12520,7 +12541,7 @@ slots:
       the two might differ, e.g. transgenic animal models. If set, this key will overwrite
       the `organism` information for all lower layers of the schema.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4LocusSpecies
+    range: V1p4LocusSpeciesOntology
   V1p4v_call:
     name: V1p4v_call
     annotations:
@@ -13885,7 +13906,7 @@ slots:
       IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human
       CD27 antibody).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Property
+    range: V1p4PropertyOntology
   V1p4receptor_id:
     name: V1p4receptor_id
     annotations:
@@ -13918,7 +13939,7 @@ slots:
       Receptor (TCR).
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4ReceptorType
+    range: V1p4ReceptorTypeEnum
   V1p4receptor_variable_domain_1_aa:
     name: V1p4receptor_variable_domain_1_aa
     annotations:
@@ -13940,7 +13961,7 @@ slots:
     description: Locus from which the variable domain in receptor_variable_domain_1_aa
       originates
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4ReceptorVariableDomain1Locus
+    range: V1p4ReceptorVariableDomain1LocusEnum
   V1p4receptor_variable_domain_2_aa:
     name: V1p4receptor_variable_domain_2_aa
     annotations:
@@ -13962,7 +13983,7 @@ slots:
     description: Locus from which the variable domain in receptor_variable_domain_2_aa
       originates
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4ReceptorVariableDomain2Locus
+    range: V1p4ReceptorVariableDomain2LocusEnum
   V1p4receptor_ref:
     name: V1p4receptor_ref
     annotations:
@@ -13982,7 +14003,7 @@ slots:
     description: Classification of ligand binding to the cell
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4LigandType
+    range: V1p4LigandTypeEnum
   V1p4antigen_type:
     name: V1p4antigen_type
     annotations:
@@ -13992,7 +14013,7 @@ slots:
     description: The type of antigen before processing by the immune system.
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-    range: V1p4AntigenType
+    range: V1p4AntigenTypeEnum
   V1p4antigen:
     name: V1p4antigen
     annotations:
@@ -14004,7 +14025,7 @@ slots:
       through antibody production or by T cell activation after presentation via an
       MHC molecule.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4Antigen
+    range: V1p4AntigenOntology
   V1p4antigen_source_species:
     name: V1p4antigen_source_species
     annotations:
@@ -14013,7 +14034,7 @@ slots:
         value: true
     description: The species from which the antigen was isolated
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4AntigenSourceSpecies
+    range: V1p4AntigenSourceSpeciesOntology
   V1p4peptide_start:
     name: V1p4peptide_start
     annotations:
@@ -14051,7 +14072,7 @@ slots:
         value: true
     description: The MHC gene to which the mhc_allele_1 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4MhcGene1
+    range: V1p4MhcGene1Ontology
   V1p4mhc_allele_1:
     name: V1p4mhc_allele_1
     annotations:
@@ -14069,7 +14090,7 @@ slots:
         value: true
     description: The MHC gene to which the mhc_allele_2 belongs
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: V1p4MhcGene2
+    range: V1p4MhcGene2Ontology
   V1p4mhc_allele_2:
     name: V1p4mhc_allele_2
     annotations:
@@ -15288,15 +15309,15 @@ classes:
     name: V1p5TimePoint
     from_schema: https://github.com/airr-knowledge/ak-schema
     slots:
-    - V1p5label
-    - V1p5value
-    - V1p5unit
+    - V1p5time_point_label
+    - V1p5time_point_value
+    - V1p5time_point_unit
   V1p5Acknowledgement:
     name: V1p5Acknowledgement
     from_schema: https://github.com/airr-knowledge/ak-schema
     slots:
     - V1p5acknowledgement_id
-    - V1p5name
+    - V1p5individual_full_name
     - V1p5institution_name
     - V1p5orcid_id
   V1p5RearrangedSequence:
@@ -15639,6 +15660,13 @@ classes:
     - V1p5subject
     - V1p5sample
     - V1p5data_processing
+  V1p5RepertoireGroupDetail:
+    name: V1p5RepertoireGroupDetail
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - V1p5repertoire_id
+    - V1p5repertoire_description
+    - V1p5time_point
   V1p5RepertoireGroup:
     name: V1p5RepertoireGroup
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -15888,7 +15916,7 @@ classes:
     - V1p5data_processing_id
     - V1p5property_type
     - V1p5property
-    - V1p5value
+    - V1p5property_value
   V1p5Receptor:
     name: V1p5Receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
