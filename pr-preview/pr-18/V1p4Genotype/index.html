@@ -227,8 +227,8 @@
 
 
 
-    V1p4Genotype --&gt; "0..1" V1p4InferenceProcess : V1p4inference_process
-    click V1p4InferenceProcess href "../V1p4InferenceProcess"
+    V1p4Genotype --&gt; "0..1" V1p4InferenceProcessEnum : V1p4inference_process
+    click V1p4InferenceProcessEnum href "../V1p4InferenceProcessEnum"
 
 
       V1p4Genotype : V1p4locus
@@ -236,8 +236,8 @@
 
 
 
-    V1p4Genotype --&gt; "0..1" V1p4Locus : V1p4locus
-    click V1p4Locus href "../V1p4Locus"
+    V1p4Genotype --&gt; "0..1" V1p4LocusEnum : V1p4locus
+    click V1p4LocusEnum href "../V1p4LocusEnum"
 
 
       V1p4Genotype : V1p4receptor_genotype_id
@@ -273,7 +273,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4locus/">V1p4locus</a></td>
-<td>0..1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
+<td>0..1 <br/> <a href="../V1p4LocusEnum/">V1p4LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -297,7 +297,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4inference_process/">V1p4inference_process</a></td>
-<td>0..1 <br/> <a href="../V1p4InferenceProcess/">V1p4InferenceProcess</a></td>
+<td>0..1 <br/> <a href="../V1p4InferenceProcessEnum/">V1p4InferenceProcessEnum</a></td>
 <td>Information on how the genotype was acquired</td>
 <td>direct</td>
 </tr>
@@ -394,7 +394,7 @@ attributes:
     - V1p4GermlineSet
     - V1p4Genotype
     - V1p4Rearrangement
-    range: V1p4Locus
+    range: V1p4LocusEnum
   V1p4documented_alleles:
     name: V1p4documented_alleles
     annotations:
@@ -454,7 +454,7 @@ attributes:
     owner: V1p4Genotype
     domain_of:
     - V1p4Genotype
-    range: V1p4InferenceProcess
+    range: V1p4InferenceProcessEnum
 
 </code></pre>
 </details>

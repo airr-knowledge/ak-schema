@@ -215,8 +215,8 @@
 
 
 
-    V1p5Subject --&gt; "0..1" V1p5AgeUnit : V1p5age_unit
-    click V1p5AgeUnit href "../V1p5AgeUnit"
+    V1p5Subject --&gt; "0..1" V1p5AgeUnitOntology : V1p5age_unit
+    click V1p5AgeUnitOntology href "../V1p5AgeUnitOntology"
 
 
       V1p5Subject : V1p5ancestry_population
@@ -252,8 +252,8 @@
 
 
 
-    V1p5Subject --&gt; "0..1" V1p5Sex : V1p5sex
-    click V1p5Sex href "../V1p5Sex"
+    V1p5Subject --&gt; "0..1" V1p5SexEnum : V1p5sex
+    click V1p5SexEnum href "../V1p5SexEnum"
 
 
       V1p5Subject : V1p5species
@@ -261,8 +261,8 @@
 
 
 
-    V1p5Subject --&gt; "0..1" V1p5Species : V1p5species
-    click V1p5Species href "../V1p5Species"
+    V1p5Subject --&gt; "0..1" V1p5SpeciesOntology : V1p5species
+    click V1p5SpeciesOntology href "../V1p5SpeciesOntology"
 
 
       V1p5Subject : V1p5strain_name
@@ -299,13 +299,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5species/">V1p5species</a></td>
-<td>0..1 <br/> <a href="../V1p5Species/">V1p5Species</a></td>
+<td>0..1 <br/> <a href="../V1p5SpeciesOntology/">V1p5SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5sex/">V1p5sex</a></td>
-<td>0..1 <br/> <a href="../V1p5Sex/">V1p5Sex</a></td>
+<td>0..1 <br/> <a href="../V1p5SexEnum/">V1p5SexEnum</a></td>
 <td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
@@ -323,7 +323,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5age_unit/">V1p5age_unit</a></td>
-<td>0..1 <br/> <a href="../V1p5AgeUnit/">V1p5AgeUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5AgeUnitOntology/">V1p5AgeUnitOntology</a></td>
 <td>Unit of age range</td>
 <td>direct</td>
 </tr>
@@ -503,7 +503,7 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     - V1p5Subject
-    range: V1p5Species
+    range: V1p5SpeciesOntology
   V1p5sex:
     name: V1p5sex
     annotations:
@@ -517,7 +517,7 @@ attributes:
     owner: V1p5Subject
     domain_of:
     - V1p5Subject
-    range: V1p5Sex
+    range: V1p5SexEnum
   V1p5age_min:
     name: V1p5age_min
     annotations:
@@ -560,7 +560,7 @@ attributes:
     owner: V1p5Subject
     domain_of:
     - V1p5Subject
-    range: V1p5AgeUnit
+    range: V1p5AgeUnitOntology
   V1p5age_event:
     name: V1p5age_event
     annotations:

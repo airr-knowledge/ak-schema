@@ -218,8 +218,8 @@
 
 
 
-    LibraryPreparationProcessing --&gt; "0..1" LibraryGenerationMethod : library_generation_method
-    click LibraryGenerationMethod href "../LibraryGenerationMethod"
+    LibraryPreparationProcessing --&gt; "0..1" LibraryGenerationMethodEnum : library_generation_method
+    click LibraryGenerationMethodEnum href "../LibraryGenerationMethodEnum"
 
 
       LibraryPreparationProcessing : library_generation_protocol
@@ -266,7 +266,7 @@
 <tbody>
 <tr>
 <td><a href="../library_generation_method/">library_generation_method</a></td>
-<td>0..1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../LibraryGenerationMethodEnum/">LibraryGenerationMethodEnum</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
@@ -368,7 +368,7 @@ attributes:
     - LibraryPreparationProcessing
     - NucleicAcidProcessing
     - SampleProcessing
-    range: LibraryGenerationMethod
+    range: LibraryGenerationMethodEnum
   library_generation_protocol:
     name: library_generation_protocol
     annotations:

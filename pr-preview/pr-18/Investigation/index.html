@@ -277,8 +277,8 @@
 
 
 
-    Investigation --&gt; "0..1" StudyType : study_type
-    click StudyType href "../StudyType"
+    Investigation --&gt; "0..1" StudyTypeOntology : study_type
+    click StudyTypeOntology href "../StudyTypeOntology"
 
 
       Investigation : update_date
@@ -311,7 +311,7 @@
 <tbody>
 <tr>
 <td><a href="../study_type/">study_type</a></td>
-<td>0..1 <br/> <a href="../StudyType/">StudyType</a></td>
+<td>0..1 <br/> <a href="../StudyTypeOntology/">StudyTypeOntology</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -502,7 +502,7 @@ attributes:
     domain_of:
     - Investigation
     - Study
-    range: StudyType
+    range: StudyTypeOntology
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,

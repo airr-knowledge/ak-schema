@@ -204,8 +204,8 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5CompleteSequences : V1p5complete_sequences
-    click V1p5CompleteSequences href "../V1p5CompleteSequences"
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5CompleteSequencesEnum : V1p5complete_sequences
+    click V1p5CompleteSequencesEnum href "../V1p5CompleteSequencesEnum"
 
 
       V1p5NucleicAcidProcessing : V1p5library_generation_kit_version
@@ -215,8 +215,8 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5LibraryGenerationMethod : V1p5library_generation_method
-    click V1p5LibraryGenerationMethod href "../V1p5LibraryGenerationMethod"
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5LibraryGenerationMethodEnum : V1p5library_generation_method
+    click V1p5LibraryGenerationMethodEnum href "../V1p5LibraryGenerationMethodEnum"
 
 
       V1p5NucleicAcidProcessing : V1p5library_generation_protocol
@@ -235,8 +235,8 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5PhysicalLinkage : V1p5physical_linkage
-    click V1p5PhysicalLinkage href "../V1p5PhysicalLinkage"
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5PhysicalLinkageEnum : V1p5physical_linkage
+    click V1p5PhysicalLinkageEnum href "../V1p5PhysicalLinkageEnum"
 
 
       V1p5NucleicAcidProcessing : V1p5template_amount
@@ -246,8 +246,8 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5TemplateAmountUnit : V1p5template_amount_unit
-    click V1p5TemplateAmountUnit href "../V1p5TemplateAmountUnit"
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5TemplateAmountUnitOntology : V1p5template_amount_unit
+    click V1p5TemplateAmountUnitOntology href "../V1p5TemplateAmountUnitOntology"
 
 
       V1p5NucleicAcidProcessing : V1p5template_class
@@ -255,8 +255,8 @@
 
 
 
-    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5TemplateClass : V1p5template_class
-    click V1p5TemplateClass href "../V1p5TemplateClass"
+    V1p5NucleicAcidProcessing --&gt; "0..1" V1p5TemplateClassEnum : V1p5template_class
+    click V1p5TemplateClassEnum href "../V1p5TemplateClassEnum"
 
 
       V1p5NucleicAcidProcessing : V1p5template_quality
@@ -277,7 +277,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5template_class/">V1p5template_class</a></td>
-<td>0..1 <br/> <a href="../V1p5TemplateClass/">V1p5TemplateClass</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateClassEnum/">V1p5TemplateClassEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
@@ -295,13 +295,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5template_amount_unit/">V1p5template_amount_unit</a></td>
-<td>0..1 <br/> <a href="../V1p5TemplateAmountUnit/">V1p5TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateAmountUnitOntology/">V1p5TemplateAmountUnitOntology</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_method/">V1p5library_generation_method</a></td>
-<td>0..1 <br/> <a href="../V1p5LibraryGenerationMethod/">V1p5LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../V1p5LibraryGenerationMethodEnum/">V1p5LibraryGenerationMethodEnum</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
@@ -325,13 +325,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5complete_sequences/">V1p5complete_sequences</a></td>
-<td>0..1 <br/> <a href="../V1p5CompleteSequences/">V1p5CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../V1p5CompleteSequencesEnum/">V1p5CompleteSequencesEnum</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5physical_linkage/">V1p5physical_linkage</a></td>
-<td>0..1 <br/> <a href="../V1p5PhysicalLinkage/">V1p5PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../V1p5PhysicalLinkageEnum/">V1p5PhysicalLinkageEnum</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -401,7 +401,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5TemplateClass
+    range: V1p5TemplateClassEnum
   V1p5template_quality:
     name: V1p5template_quality
     annotations:
@@ -447,7 +447,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5TemplateAmountUnit
+    range: V1p5TemplateAmountUnitOntology
   V1p5library_generation_method:
     name: V1p5library_generation_method
     annotations:
@@ -462,7 +462,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5LibraryGenerationMethod
+    range: V1p5LibraryGenerationMethodEnum
   V1p5library_generation_protocol:
     name: V1p5library_generation_protocol
     annotations:
@@ -540,7 +540,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5CompleteSequences
+    range: V1p5CompleteSequencesEnum
   V1p5physical_linkage:
     name: V1p5physical_linkage
     annotations:
@@ -564,7 +564,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5PhysicalLinkage
+    range: V1p5PhysicalLinkageEnum
 
 </code></pre>
 </details>

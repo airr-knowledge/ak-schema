@@ -236,8 +236,8 @@
 
 
 
-    Specimen --&gt; "0..1" Tissue : tissue
-    click Tissue href "../Tissue"
+    Specimen --&gt; "0..1" TissueOntology : tissue
+    click TissueOntology href "../TissueOntology"
 
 
 
@@ -277,7 +277,7 @@
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>0..1 <br/> <a href="../Tissue/">Tissue</a></td>
+<td>0..1 <br/> <a href="../TissueOntology/">TissueOntology</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
@@ -452,7 +452,7 @@ attributes:
     - Specimen
     - Sample
     - SampleProcessing
-    range: Tissue
+    range: TissueOntology
   process:
     name: process
     description: The type of specimen collection process that resulted in this specimen

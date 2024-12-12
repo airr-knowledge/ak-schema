@@ -209,8 +209,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5Antigen : V1p5antigen
-    click V1p5Antigen href "../V1p5Antigen"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5AntigenOntology : V1p5antigen
+    click V1p5AntigenOntology href "../V1p5AntigenOntology"
 
 
       V1p5ReceptorReactivity : V1p5antigen_source_species
@@ -218,8 +218,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5AntigenSourceSpecies : V1p5antigen_source_species
-    click V1p5AntigenSourceSpecies href "../V1p5AntigenSourceSpecies"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5AntigenSourceSpeciesOntology : V1p5antigen_source_species
+    click V1p5AntigenSourceSpeciesOntology href "../V1p5AntigenSourceSpeciesOntology"
 
 
       V1p5ReceptorReactivity : V1p5antigen_type
@@ -227,8 +227,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5AntigenType : V1p5antigen_type
-    click V1p5AntigenType href "../V1p5AntigenType"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5AntigenTypeEnum : V1p5antigen_type
+    click V1p5AntigenTypeEnum href "../V1p5AntigenTypeEnum"
 
 
       V1p5ReceptorReactivity : V1p5ligand_type
@@ -236,8 +236,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5LigandType : V1p5ligand_type
-    click V1p5LigandType href "../V1p5LigandType"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5LigandTypeEnum : V1p5ligand_type
+    click V1p5LigandTypeEnum href "../V1p5LigandTypeEnum"
 
 
       V1p5ReceptorReactivity : V1p5mhc_allele_1
@@ -249,8 +249,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcClass : V1p5mhc_class
-    click V1p5MhcClass href "../V1p5MhcClass"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcClassEnum : V1p5mhc_class
+    click V1p5MhcClassEnum href "../V1p5MhcClassEnum"
 
 
       V1p5ReceptorReactivity : V1p5mhc_gene_1
@@ -258,8 +258,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene1 : V1p5mhc_gene_1
-    click V1p5MhcGene1 href "../V1p5MhcGene1"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene1Ontology : V1p5mhc_gene_1
+    click V1p5MhcGene1Ontology href "../V1p5MhcGene1Ontology"
 
 
       V1p5ReceptorReactivity : V1p5mhc_gene_2
@@ -267,8 +267,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene2 : V1p5mhc_gene_2
-    click V1p5MhcGene2 href "../V1p5MhcGene2"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5MhcGene2Ontology : V1p5mhc_gene_2
+    click V1p5MhcGene2Ontology href "../V1p5MhcGene2Ontology"
 
 
       V1p5ReceptorReactivity : V1p5peptide_end
@@ -280,8 +280,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5ReactivityMethod : V1p5reactivity_method
-    click V1p5ReactivityMethod href "../V1p5ReactivityMethod"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5ReactivityMethodEnum : V1p5reactivity_method
+    click V1p5ReactivityMethodEnum href "../V1p5ReactivityMethodEnum"
 
 
       V1p5ReceptorReactivity : V1p5reactivity_readout
@@ -289,8 +289,8 @@
 
 
 
-    V1p5ReceptorReactivity --&gt; "0..1" V1p5ReactivityReadout : V1p5reactivity_readout
-    click V1p5ReactivityReadout href "../V1p5ReactivityReadout"
+    V1p5ReceptorReactivity --&gt; "0..1" V1p5ReactivityReadoutEnum : V1p5reactivity_readout
+    click V1p5ReactivityReadoutEnum href "../V1p5ReactivityReadoutEnum"
 
 
       V1p5ReceptorReactivity : V1p5reactivity_unit
@@ -313,25 +313,25 @@
 <tbody>
 <tr>
 <td><a href="../V1p5ligand_type/">V1p5ligand_type</a></td>
-<td>0..1 <br/> <a href="../V1p5LigandType/">V1p5LigandType</a></td>
+<td>0..1 <br/> <a href="../V1p5LigandTypeEnum/">V1p5LigandTypeEnum</a></td>
 <td>Classification of ligand binding to receptor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5antigen_type/">V1p5antigen_type</a></td>
-<td>0..1 <br/> <a href="../V1p5AntigenType/">V1p5AntigenType</a></td>
+<td>0..1 <br/> <a href="../V1p5AntigenTypeEnum/">V1p5AntigenTypeEnum</a></td>
 <td>The type of antigen before processing by the immune system</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5antigen/">V1p5antigen</a></td>
-<td>0..1 <br/> <a href="../V1p5Antigen/">V1p5Antigen</a></td>
+<td>0..1 <br/> <a href="../V1p5AntigenOntology/">V1p5AntigenOntology</a></td>
 <td>The substance against which the receptor was tested</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5antigen_source_species/">V1p5antigen_source_species</a></td>
-<td>0..1 <br/> <a href="../V1p5AntigenSourceSpecies/">V1p5AntigenSourceSpecies</a></td>
+<td>0..1 <br/> <a href="../V1p5AntigenSourceSpeciesOntology/">V1p5AntigenSourceSpeciesOntology</a></td>
 <td>The species from which the antigen was isolated</td>
 <td>direct</td>
 </tr>
@@ -349,13 +349,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5mhc_class/">V1p5mhc_class</a></td>
-<td>0..1 <br/> <a href="../V1p5MhcClass/">V1p5MhcClass</a></td>
+<td>0..1 <br/> <a href="../V1p5MhcClassEnum/">V1p5MhcClassEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5mhc_gene_1/">V1p5mhc_gene_1</a></td>
-<td>0..1 <br/> <a href="../V1p5MhcGene1/">V1p5MhcGene1</a></td>
+<td>0..1 <br/> <a href="../V1p5MhcGene1Ontology/">V1p5MhcGene1Ontology</a></td>
 <td>The MHC gene to which the mhc_allele_1 belongs</td>
 <td>direct</td>
 </tr>
@@ -367,7 +367,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5mhc_gene_2/">V1p5mhc_gene_2</a></td>
-<td>0..1 <br/> <a href="../V1p5MhcGene2/">V1p5MhcGene2</a></td>
+<td>0..1 <br/> <a href="../V1p5MhcGene2Ontology/">V1p5MhcGene2Ontology</a></td>
 <td>The MHC gene to which the mhc_allele_2 belongs</td>
 <td>direct</td>
 </tr>
@@ -379,13 +379,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5reactivity_method/">V1p5reactivity_method</a></td>
-<td>0..1 <br/> <a href="../V1p5ReactivityMethod/">V1p5ReactivityMethod</a></td>
+<td>0..1 <br/> <a href="../V1p5ReactivityMethodEnum/">V1p5ReactivityMethodEnum</a></td>
 <td>The methodology used to assess expression (assay implemented in experiment)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5reactivity_readout/">V1p5reactivity_readout</a></td>
-<td>0..1 <br/> <a href="../V1p5ReactivityReadout/">V1p5ReactivityReadout</a></td>
+<td>0..1 <br/> <a href="../V1p5ReactivityReadoutEnum/">V1p5ReactivityReadoutEnum</a></td>
 <td>Reactivity measurement read-out</td>
 <td>direct</td>
 </tr>
@@ -490,7 +490,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5LigandType
+    range: V1p5LigandTypeEnum
   V1p5antigen_type:
     name: V1p5antigen_type
     annotations:
@@ -505,7 +505,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5AntigenType
+    range: V1p5AntigenTypeEnum
   V1p5antigen:
     name: V1p5antigen
     annotations:
@@ -522,7 +522,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5Antigen
+    range: V1p5AntigenOntology
   V1p5antigen_source_species:
     name: V1p5antigen_source_species
     annotations:
@@ -536,7 +536,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5AntigenSourceSpecies
+    range: V1p5AntigenSourceSpeciesOntology
   V1p5peptide_start:
     name: V1p5peptide_start
     annotations:
@@ -574,7 +574,7 @@ attributes:
     domain_of:
     - V1p5MHCGenotype
     - V1p5ReceptorReactivity
-    range: V1p5MhcClass
+    range: V1p5MhcClassEnum
   V1p5mhc_gene_1:
     name: V1p5mhc_gene_1
     annotations:
@@ -588,7 +588,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5MhcGene1
+    range: V1p5MhcGene1Ontology
   V1p5mhc_allele_1:
     name: V1p5mhc_allele_1
     annotations:
@@ -616,7 +616,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5MhcGene2
+    range: V1p5MhcGene2Ontology
   V1p5mhc_allele_2:
     name: V1p5mhc_allele_2
     annotations:
@@ -645,7 +645,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5ReactivityMethod
+    range: V1p5ReactivityMethodEnum
   V1p5reactivity_readout:
     name: V1p5reactivity_readout
     annotations:
@@ -659,7 +659,7 @@ attributes:
     owner: V1p5ReceptorReactivity
     domain_of:
     - V1p5ReceptorReactivity
-    range: V1p5ReactivityReadout
+    range: V1p5ReactivityReadoutEnum
   V1p5reactivity_value:
     name: V1p5reactivity_value
     annotations:

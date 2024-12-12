@@ -270,7 +270,7 @@
 <tr>
 <td><a href="../V1p5repertoire_description/">V1p5repertoire_description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Generic repertoire description</td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -347,16 +347,13 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 attributes:
   V1p5repertoire_id:
     name: V1p5repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: V1p5repertoire_id
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
     - V1p5Rearrangement
     - V1p5Clone
     - V1p5Cell
@@ -382,13 +379,13 @@ attributes:
       nullable:
         tag: nullable
         value: true
-    description: Generic repertoire description
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: V1p5repertoire_description
     owner: V1p5Repertoire
     domain_of:
     - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
     range: string
   V1p5study:
     name: V1p5study

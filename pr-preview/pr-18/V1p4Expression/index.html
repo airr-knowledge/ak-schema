@@ -210,8 +210,8 @@
 
 
 
-    V1p4Expression --&gt; "0..1" V1p4Property : V1p4property
-    click V1p4Property href "../V1p4Property"
+    V1p4Expression --&gt; "0..1" V1p4PropertyOntology : V1p4property
+    click V1p4PropertyOntology href "../V1p4PropertyOntology"
 
 
       V1p4Expression : V1p4property_type
@@ -266,7 +266,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4property/">V1p4property</a></td>
-<td>0..1 <br/> <a href="../V1p4Property/">V1p4Property</a></td>
+<td>0..1 <br/> <a href="../V1p4PropertyOntology/">V1p4PropertyOntology</a></td>
 <td>Name of the property observed, typically a gene or antibody identifier (and l...</td>
 <td>direct</td>
 </tr>
@@ -424,7 +424,7 @@ attributes:
     owner: V1p4Expression
     domain_of:
     - V1p4Expression
-    range: V1p4Property
+    range: V1p4PropertyOntology
   V1p4value:
     name: V1p4value
     from_schema: https://github.com/airr-knowledge/ak-schema

@@ -227,8 +227,8 @@
 
 
 
-    Genotype --&gt; "0..1" InferenceProcess : inference_process
-    click InferenceProcess href "../InferenceProcess"
+    Genotype --&gt; "0..1" InferenceProcessEnum : inference_process
+    click InferenceProcessEnum href "../InferenceProcessEnum"
 
 
       Genotype : locus
@@ -236,8 +236,8 @@
 
 
 
-    Genotype --&gt; "0..1" Locus : locus
-    click Locus href "../Locus"
+    Genotype --&gt; "0..1" LocusEnum : locus
+    click LocusEnum href "../LocusEnum"
 
 
       Genotype : receptor_genotype_id
@@ -273,7 +273,7 @@
 </tr>
 <tr>
 <td><a href="../locus/">locus</a></td>
-<td>0..1 <br/> <a href="../Locus/">Locus</a></td>
+<td>0..1 <br/> <a href="../LocusEnum/">LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -297,7 +297,7 @@
 </tr>
 <tr>
 <td><a href="../inference_process/">inference_process</a></td>
-<td>0..1 <br/> <a href="../InferenceProcess/">InferenceProcess</a></td>
+<td>0..1 <br/> <a href="../InferenceProcessEnum/">InferenceProcessEnum</a></td>
 <td>Information on how the genotype was acquired</td>
 <td>direct</td>
 </tr>
@@ -394,7 +394,7 @@ attributes:
     - GermlineSet
     - Genotype
     - Rearrangement
-    range: Locus
+    range: LocusEnum
   documented_alleles:
     name: documented_alleles
     annotations:
@@ -454,7 +454,7 @@ attributes:
     owner: Genotype
     domain_of:
     - Genotype
-    range: InferenceProcess
+    range: InferenceProcessEnum
 
 </code></pre>
 </details>

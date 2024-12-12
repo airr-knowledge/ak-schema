@@ -211,8 +211,8 @@
 
 
 
-    V1p5MHCAllele --&gt; "0..1" V1p5Gene : V1p5gene
-    click V1p5Gene href "../V1p5Gene"
+    V1p5MHCAllele --&gt; "0..1" V1p5GeneOntology : V1p5gene
+    click V1p5GeneOntology href "../V1p5GeneOntology"
 
 
       V1p5MHCAllele : V1p5reference_set_ref
@@ -239,7 +239,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5gene/">V1p5gene</a></td>
-<td>0..1 <br/> <a href="../V1p5Gene/">V1p5Gene</a></td>
+<td>0..1 <br/> <a href="../V1p5GeneOntology/">V1p5GeneOntology</a></td>
 <td>The MHC gene to which the described allele belongs</td>
 <td>direct</td>
 </tr>
@@ -339,7 +339,7 @@ attributes:
     owner: V1p5MHCAllele
     domain_of:
     - V1p5MHCAllele
-    range: V1p5Gene
+    range: V1p5GeneOntology
   V1p5reference_set_ref:
     name: V1p5reference_set_ref
     annotations:

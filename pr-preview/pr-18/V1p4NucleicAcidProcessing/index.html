@@ -204,8 +204,8 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4CompleteSequences : V1p4complete_sequences
-    click V1p4CompleteSequences href "../V1p4CompleteSequences"
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4CompleteSequencesEnum : V1p4complete_sequences
+    click V1p4CompleteSequencesEnum href "../V1p4CompleteSequencesEnum"
 
 
       V1p4NucleicAcidProcessing : V1p4library_generation_kit_version
@@ -215,8 +215,8 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4LibraryGenerationMethod : V1p4library_generation_method
-    click V1p4LibraryGenerationMethod href "../V1p4LibraryGenerationMethod"
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4LibraryGenerationMethodEnum : V1p4library_generation_method
+    click V1p4LibraryGenerationMethodEnum href "../V1p4LibraryGenerationMethodEnum"
 
 
       V1p4NucleicAcidProcessing : V1p4library_generation_protocol
@@ -235,8 +235,8 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4PhysicalLinkage : V1p4physical_linkage
-    click V1p4PhysicalLinkage href "../V1p4PhysicalLinkage"
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4PhysicalLinkageEnum : V1p4physical_linkage
+    click V1p4PhysicalLinkageEnum href "../V1p4PhysicalLinkageEnum"
 
 
       V1p4NucleicAcidProcessing : V1p4template_amount
@@ -253,8 +253,8 @@
 
 
 
-    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4TemplateClass : V1p4template_class
-    click V1p4TemplateClass href "../V1p4TemplateClass"
+    V1p4NucleicAcidProcessing --&gt; "0..1" V1p4TemplateClassEnum : V1p4template_class
+    click V1p4TemplateClassEnum href "../V1p4TemplateClassEnum"
 
 
       V1p4NucleicAcidProcessing : V1p4template_quality
@@ -275,7 +275,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p4template_class/">V1p4template_class</a></td>
-<td>0..1 <br/> <a href="../V1p4TemplateClass/">V1p4TemplateClass</a></td>
+<td>0..1 <br/> <a href="../V1p4TemplateClassEnum/">V1p4TemplateClassEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
@@ -293,7 +293,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4library_generation_method/">V1p4library_generation_method</a></td>
-<td>0..1 <br/> <a href="../V1p4LibraryGenerationMethod/">V1p4LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../V1p4LibraryGenerationMethodEnum/">V1p4LibraryGenerationMethodEnum</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
@@ -317,13 +317,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4complete_sequences/">V1p4complete_sequences</a></td>
-<td>0..1 <br/> <a href="../V1p4CompleteSequences/">V1p4CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../V1p4CompleteSequencesEnum/">V1p4CompleteSequencesEnum</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4physical_linkage/">V1p4physical_linkage</a></td>
-<td>0..1 <br/> <a href="../V1p4PhysicalLinkage/">V1p4PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../V1p4PhysicalLinkageEnum/">V1p4PhysicalLinkageEnum</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -392,7 +392,7 @@ attributes:
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
-    range: V1p4TemplateClass
+    range: V1p4TemplateClassEnum
   V1p4template_quality:
     name: V1p4template_quality
     annotations:
@@ -438,7 +438,7 @@ attributes:
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
-    range: V1p4LibraryGenerationMethod
+    range: V1p4LibraryGenerationMethodEnum
   V1p4library_generation_protocol:
     name: V1p4library_generation_protocol
     annotations:
@@ -516,7 +516,7 @@ attributes:
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
-    range: V1p4CompleteSequences
+    range: V1p4CompleteSequencesEnum
   V1p4physical_linkage:
     name: V1p4physical_linkage
     annotations:
@@ -540,7 +540,7 @@ attributes:
     domain_of:
     - V1p4NucleicAcidProcessing
     - V1p4SampleProcessing
-    range: V1p4PhysicalLinkage
+    range: V1p4PhysicalLinkageEnum
 
 </code></pre>
 </details>

@@ -216,8 +216,8 @@
 
 
 
-    ReceptorRepertoireSequencingAssay --&gt; "0..1" CompleteSequences : complete_sequences
-    click CompleteSequences href "../CompleteSequences"
+    ReceptorRepertoireSequencingAssay --&gt; "0..1" CompleteSequencesEnum : complete_sequences
+    click CompleteSequencesEnum href "../CompleteSequencesEnum"
 
 
       ReceptorRepertoireSequencingAssay : description
@@ -238,8 +238,8 @@
 
 
 
-    ReceptorRepertoireSequencingAssay --&gt; "0..1" PhysicalLinkage : physical_linkage
-    click PhysicalLinkage href "../PhysicalLinkage"
+    ReceptorRepertoireSequencingAssay --&gt; "0..1" PhysicalLinkageEnum : physical_linkage
+    click PhysicalLinkageEnum href "../PhysicalLinkageEnum"
 
 
       ReceptorRepertoireSequencingAssay : specimen
@@ -301,13 +301,13 @@
 </tr>
 <tr>
 <td><a href="../complete_sequences/">complete_sequences</a></td>
-<td>0..1 <br/> <a href="../CompleteSequences/">CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../CompleteSequencesEnum/">CompleteSequencesEnum</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../physical_linkage/">physical_linkage</a></td>
-<td>0..1 <br/> <a href="../PhysicalLinkage/">PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../PhysicalLinkageEnum/">PhysicalLinkageEnum</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -453,7 +453,7 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - NucleicAcidProcessing
     - SampleProcessing
-    range: CompleteSequences
+    range: CompleteSequencesEnum
   physical_linkage:
     name: physical_linkage
     annotations:
@@ -478,7 +478,7 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - NucleicAcidProcessing
     - SampleProcessing
-    range: PhysicalLinkage
+    range: PhysicalLinkageEnum
   specimen:
     name: specimen
     description: The specimen that was input for an assay

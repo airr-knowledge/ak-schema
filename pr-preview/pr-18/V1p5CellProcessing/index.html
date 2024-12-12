@@ -214,8 +214,8 @@
 
 
 
-    V1p5CellProcessing --&gt; "0..1" V1p5CellSpecies : V1p5cell_species
-    click V1p5CellSpecies href "../V1p5CellSpecies"
+    V1p5CellProcessing --&gt; "0..1" V1p5CellSpeciesOntology : V1p5cell_species
+    click V1p5CellSpeciesOntology href "../V1p5CellSpeciesOntology"
 
 
       V1p5CellProcessing : V1p5cell_storage
@@ -225,8 +225,8 @@
 
 
 
-    V1p5CellProcessing --&gt; "0..1" V1p5CellSubset : V1p5cell_subset
-    click V1p5CellSubset href "../V1p5CellSubset"
+    V1p5CellProcessing --&gt; "0..1" V1p5CellSubsetOntology : V1p5cell_subset
+    click V1p5CellSubsetOntology href "../V1p5CellSubsetOntology"
 
 
       V1p5CellProcessing : V1p5cells_per_reaction
@@ -257,7 +257,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5cell_subset/">V1p5cell_subset</a></td>
-<td>0..1 <br/> <a href="../V1p5CellSubset/">V1p5CellSubset</a></td>
+<td>0..1 <br/> <a href="../V1p5CellSubsetOntology/">V1p5CellSubsetOntology</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
@@ -269,7 +269,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5cell_species/">V1p5cell_species</a></td>
-<td>0..1 <br/> <a href="../V1p5CellSpecies/">V1p5CellSpecies</a></td>
+<td>0..1 <br/> <a href="../V1p5CellSpeciesOntology/">V1p5CellSpeciesOntology</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
@@ -397,7 +397,7 @@ attributes:
     domain_of:
     - V1p5CellProcessing
     - V1p5SampleProcessing
-    range: V1p5CellSubset
+    range: V1p5CellSubsetOntology
   V1p5cell_phenotype:
     name: V1p5cell_phenotype
     annotations:
@@ -433,7 +433,7 @@ attributes:
     domain_of:
     - V1p5CellProcessing
     - V1p5SampleProcessing
-    range: V1p5CellSpecies
+    range: V1p5CellSpeciesOntology
   V1p5single_cell:
     name: V1p5single_cell
     annotations:

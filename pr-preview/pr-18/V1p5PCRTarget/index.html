@@ -211,8 +211,8 @@
 
 
 
-    V1p5PCRTarget --&gt; "0..1" V1p5PcrTargetLocus : V1p5pcr_target_locus
-    click V1p5PcrTargetLocus href "../V1p5PcrTargetLocus"
+    V1p5PCRTarget --&gt; "0..1" V1p5PcrTargetLocusEnum : V1p5pcr_target_locus
+    click V1p5PcrTargetLocusEnum href "../V1p5PcrTargetLocusEnum"
 
 
       V1p5PCRTarget : V1p5reverse_pcr_primer_target_location
@@ -233,7 +233,7 @@
 <tbody>
 <tr>
 <td><a href="../V1p5pcr_target_locus/">V1p5pcr_target_locus</a></td>
-<td>0..1 <br/> <a href="../V1p5PcrTargetLocus/">V1p5PcrTargetLocus</a></td>
+<td>0..1 <br/> <a href="../V1p5PcrTargetLocusEnum/">V1p5PcrTargetLocusEnum</a></td>
 <td>Designation of the target locus</td>
 <td>direct</td>
 </tr>
@@ -333,7 +333,7 @@ attributes:
     owner: V1p5PCRTarget
     domain_of:
     - V1p5PCRTarget
-    range: V1p5PcrTargetLocus
+    range: V1p5PcrTargetLocusEnum
   V1p5forward_pcr_primer_target_location:
     name: V1p5forward_pcr_primer_target_location
     annotations:

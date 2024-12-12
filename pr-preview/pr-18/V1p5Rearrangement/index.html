@@ -410,8 +410,8 @@
 
 
 
-    V1p5Rearrangement --&gt; "0..1" V1p5Locus : V1p5locus
-    click V1p5Locus href "../V1p5Locus"
+    V1p5Rearrangement --&gt; "0..1" V1p5LocusEnum : V1p5locus
+    click V1p5LocusEnum href "../V1p5LocusEnum"
 
 
       V1p5Rearrangement : V1p5n1_length
@@ -580,7 +580,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5locus/">V1p5locus</a></td>
-<td>0..1 <br/> <a href="../V1p5Locus/">V1p5Locus</a></td>
+<td>0..1 <br/> <a href="../V1p5LocusEnum/">V1p5LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -1774,7 +1774,7 @@ attributes:
     - V1p5GermlineSet
     - V1p5Genotype
     - V1p5Rearrangement
-    range: V1p5Locus
+    range: V1p5LocusEnum
   V1p5v_call:
     name: V1p5v_call
     annotations:
@@ -3801,16 +3801,13 @@ attributes:
     range: string
   V1p5repertoire_id:
     name: V1p5repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: V1p5repertoire_id
     owner: V1p5Rearrangement
     domain_of:
     - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
     - V1p5Rearrangement
     - V1p5Clone
     - V1p5Cell

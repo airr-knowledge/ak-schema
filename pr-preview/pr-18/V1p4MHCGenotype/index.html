@@ -218,8 +218,8 @@
 
 
 
-    V1p4MHCGenotype --&gt; "0..1" V1p4MhcClass : V1p4mhc_class
-    click V1p4MhcClass href "../V1p4MhcClass"
+    V1p4MHCGenotype --&gt; "0..1" V1p4MhcClassEnum : V1p4mhc_class
+    click V1p4MhcClassEnum href "../V1p4MhcClassEnum"
 
 
       V1p4MHCGenotype : V1p4mhc_genotype_id
@@ -248,7 +248,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4mhc_class/">V1p4mhc_class</a></td>
-<td>0..1 <br/> <a href="../V1p4MhcClass/">V1p4MhcClass</a></td>
+<td>0..1 <br/> <a href="../V1p4MhcClassEnum/">V1p4MhcClassEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -352,7 +352,7 @@ attributes:
     domain_of:
     - V1p4MHCGenotype
     - V1p4Reactivity
-    range: V1p4MhcClass
+    range: V1p4MhcClassEnum
   V1p4mhc_alleles:
     name: V1p4mhc_alleles
     annotations:

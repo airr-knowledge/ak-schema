@@ -222,8 +222,8 @@
 
 
 
-    Participant --&gt; "0..1" AgeUnit : age_unit
-    click AgeUnit href "../AgeUnit"
+    Participant --&gt; "0..1" AgeUnitOntology : age_unit
+    click AgeUnitOntology href "../AgeUnitOntology"
 
 
       Participant : akc_id
@@ -268,8 +268,8 @@
 
 
 
-    Participant --&gt; "0..1" Species : species
-    click Species href "../Species"
+    Participant --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
 
 
       Participant : strain
@@ -321,7 +321,7 @@
 </tr>
 <tr>
 <td><a href="../species/">species</a></td>
-<td>0..1 <br/> <a href="../Species/">Species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -345,7 +345,7 @@
 </tr>
 <tr>
 <td><a href="../age_unit/">age_unit</a></td>
-<td>0..1 <br/> <a href="../AgeUnit/">AgeUnit</a></td>
+<td>0..1 <br/> <a href="../AgeUnitOntology/">AgeUnitOntology</a></td>
 <td>Unit of age range</td>
 <td>direct</td>
 </tr>
@@ -512,7 +512,7 @@ attributes:
     - AlleleDescription
     - GermlineSet
     - Subject
-    range: Species
+    range: SpeciesOntology
   biological_sex:
     name: biological_sex
     description: The biological sex of a participant
@@ -559,7 +559,7 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: AgeUnit
+    range: AgeUnitOntology
   age_event:
     name: age_event
     annotations:

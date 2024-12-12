@@ -219,8 +219,8 @@
 
 
 
-    Receptor --&gt; "0..1" ReceptorType : receptor_type
-    click ReceptorType href "../ReceptorType"
+    Receptor --&gt; "0..1" ReceptorTypeEnum : receptor_type
+    click ReceptorTypeEnum href "../ReceptorTypeEnum"
 
 
       Receptor : receptor_variable_domain_1_aa
@@ -230,8 +230,8 @@
 
 
 
-    Receptor --&gt; "0..1" ReceptorVariableDomain1Locus : receptor_variable_domain_1_locus
-    click ReceptorVariableDomain1Locus href "../ReceptorVariableDomain1Locus"
+    Receptor --&gt; "0..1" ReceptorVariableDomain1LocusEnum : receptor_variable_domain_1_locus
+    click ReceptorVariableDomain1LocusEnum href "../ReceptorVariableDomain1LocusEnum"
 
 
       Receptor : receptor_variable_domain_2_aa
@@ -241,8 +241,8 @@
 
 
 
-    Receptor --&gt; "0..1" ReceptorVariableDomain2Locus : receptor_variable_domain_2_locus
-    click ReceptorVariableDomain2Locus href "../ReceptorVariableDomain2Locus"
+    Receptor --&gt; "0..1" ReceptorVariableDomain2LocusEnum : receptor_variable_domain_2_locus
+    click ReceptorVariableDomain2LocusEnum href "../ReceptorVariableDomain2LocusEnum"
 
 
 
@@ -273,7 +273,7 @@
 </tr>
 <tr>
 <td><a href="../receptor_type/">receptor_type</a></td>
-<td>0..1 <br/> <a href="../ReceptorType/">ReceptorType</a></td>
+<td>0..1 <br/> <a href="../ReceptorTypeEnum/">ReceptorTypeEnum</a></td>
 <td>The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (T...</td>
 <td>direct</td>
 </tr>
@@ -285,7 +285,7 @@
 </tr>
 <tr>
 <td><a href="../receptor_variable_domain_1_locus/">receptor_variable_domain_1_locus</a></td>
-<td>0..1 <br/> <a href="../ReceptorVariableDomain1Locus/">ReceptorVariableDomain1Locus</a></td>
+<td>0..1 <br/> <a href="../ReceptorVariableDomain1LocusEnum/">ReceptorVariableDomain1LocusEnum</a></td>
 <td>Locus from which the variable domain in receptor_variable_domain_1_aa origina...</td>
 <td>direct</td>
 </tr>
@@ -297,7 +297,7 @@
 </tr>
 <tr>
 <td><a href="../receptor_variable_domain_2_locus/">receptor_variable_domain_2_locus</a></td>
-<td>0..1 <br/> <a href="../ReceptorVariableDomain2Locus/">ReceptorVariableDomain2Locus</a></td>
+<td>0..1 <br/> <a href="../ReceptorVariableDomain2LocusEnum/">ReceptorVariableDomain2LocusEnum</a></td>
 <td>Locus from which the variable domain in receptor_variable_domain_2_aa origina...</td>
 <td>direct</td>
 </tr>
@@ -408,7 +408,7 @@ attributes:
     owner: Receptor
     domain_of:
     - Receptor
-    range: ReceptorType
+    range: ReceptorTypeEnum
   receptor_variable_domain_1_aa:
     name: receptor_variable_domain_1_aa
     annotations:
@@ -440,7 +440,7 @@ attributes:
     owner: Receptor
     domain_of:
     - Receptor
-    range: ReceptorVariableDomain1Locus
+    range: ReceptorVariableDomain1LocusEnum
   receptor_variable_domain_2_aa:
     name: receptor_variable_domain_2_aa
     annotations:
@@ -472,7 +472,7 @@ attributes:
     owner: Receptor
     domain_of:
     - Receptor
-    range: ReceptorVariableDomain2Locus
+    range: ReceptorVariableDomain2LocusEnum
   receptor_ref:
     name: receptor_ref
     annotations:

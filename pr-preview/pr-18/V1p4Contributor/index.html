@@ -209,8 +209,8 @@
 
 
 
-    V1p4Contributor --&gt; "0..1" V1p4Affiliation : V1p4affiliation
-    click V1p4Affiliation href "../V1p4Affiliation"
+    V1p4Contributor --&gt; "0..1" V1p4AffiliationOntology : V1p4affiliation
+    click V1p4AffiliationOntology href "../V1p4AffiliationOntology"
 
 
       V1p4Contributor : V1p4affiliation_department
@@ -233,8 +233,8 @@
 
 
 
-    V1p4Contributor --&gt; "0..1" V1p4OrcidId : V1p4orcid_id
-    click V1p4OrcidId href "../V1p4OrcidId"
+    V1p4Contributor --&gt; "0..1" V1p4OrcidIdOntology : V1p4orcid_id
+    click V1p4OrcidIdOntology href "../V1p4OrcidIdOntology"
 
 
 
@@ -265,13 +265,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4orcid_id/">V1p4orcid_id</a></td>
-<td>0..1 <br/> <a href="../V1p4OrcidId/">V1p4OrcidId</a></td>
+<td>0..1 <br/> <a href="../V1p4OrcidIdOntology/">V1p4OrcidIdOntology</a></td>
 <td>ORCID identifier of the contributor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4affiliation/">V1p4affiliation</a></td>
-<td>0..1 <br/> <a href="../V1p4Affiliation/">V1p4Affiliation</a></td>
+<td>0..1 <br/> <a href="../V1p4AffiliationOntology/">V1p4AffiliationOntology</a></td>
 <td>ROR of the contributor's primary affiliation</td>
 <td>direct</td>
 </tr>
@@ -408,7 +408,7 @@ attributes:
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor
-    range: V1p4OrcidId
+    range: V1p4OrcidIdOntology
   V1p4affiliation:
     name: V1p4affiliation
     annotations:
@@ -423,7 +423,7 @@ attributes:
     owner: V1p4Contributor
     domain_of:
     - V1p4Contributor
-    range: V1p4Affiliation
+    range: V1p4AffiliationOntology
   V1p4affiliation_department:
     name: V1p4affiliation_department
     annotations:

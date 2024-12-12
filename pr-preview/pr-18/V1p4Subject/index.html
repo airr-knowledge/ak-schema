@@ -220,8 +220,8 @@
 
 
 
-    V1p4Subject --&gt; "0..1" V1p4AncestryPopulation : V1p4ancestry_population
-    click V1p4AncestryPopulation href "../V1p4AncestryPopulation"
+    V1p4Subject --&gt; "0..1" V1p4AncestryPopulationOntology : V1p4ancestry_population
+    click V1p4AncestryPopulationOntology href "../V1p4AncestryPopulationOntology"
 
 
       V1p4Subject : V1p4diagnosis
@@ -253,8 +253,8 @@
 
 
 
-    V1p4Subject --&gt; "0..1" V1p4LocationBirth : V1p4location_birth
-    click V1p4LocationBirth href "../V1p4LocationBirth"
+    V1p4Subject --&gt; "0..1" V1p4LocationBirthOntology : V1p4location_birth
+    click V1p4LocationBirthOntology href "../V1p4LocationBirthOntology"
 
 
       V1p4Subject : V1p4race
@@ -264,8 +264,8 @@
 
 
 
-    V1p4Subject --&gt; "0..1" V1p4Sex : V1p4sex
-    click V1p4Sex href "../V1p4Sex"
+    V1p4Subject --&gt; "0..1" V1p4SexEnum : V1p4sex
+    click V1p4SexEnum href "../V1p4SexEnum"
 
 
       V1p4Subject : V1p4species
@@ -273,8 +273,8 @@
 
 
 
-    V1p4Subject --&gt; "0..1" V1p4Species : V1p4species
-    click V1p4Species href "../V1p4Species"
+    V1p4Subject --&gt; "0..1" V1p4SpeciesOntology : V1p4species
+    click V1p4SpeciesOntology href "../V1p4SpeciesOntology"
 
 
       V1p4Subject : V1p4strain_name
@@ -311,13 +311,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4species/">V1p4species</a></td>
-<td>0..1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
+<td>0..1 <br/> <a href="../V1p4SpeciesOntology/">V1p4SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4sex/">V1p4sex</a></td>
-<td>0..1 <br/> <a href="../V1p4Sex/">V1p4Sex</a></td>
+<td>0..1 <br/> <a href="../V1p4SexEnum/">V1p4SexEnum</a></td>
 <td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
@@ -335,13 +335,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4ancestry_population/">V1p4ancestry_population</a></td>
-<td>0..1 <br/> <a href="../V1p4AncestryPopulation/">V1p4AncestryPopulation</a></td>
+<td>0..1 <br/> <a href="../V1p4AncestryPopulationOntology/">V1p4AncestryPopulationOntology</a></td>
 <td>Broad geographic origin of ancestry (continent)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4location_birth/">V1p4location_birth</a></td>
-<td>0..1 <br/> <a href="../V1p4LocationBirth/">V1p4LocationBirth</a></td>
+<td>0..1 <br/> <a href="../V1p4LocationBirthOntology/">V1p4LocationBirthOntology</a></td>
 <td>Self-reported location of birth of the subject, preferred granularity is coun...</td>
 <td>direct</td>
 </tr>
@@ -508,7 +508,7 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     - V1p4Subject
-    range: V1p4Species
+    range: V1p4SpeciesOntology
   V1p4sex:
     name: V1p4sex
     annotations:
@@ -522,7 +522,7 @@ attributes:
     owner: V1p4Subject
     domain_of:
     - V1p4Subject
-    range: V1p4Sex
+    range: V1p4SexEnum
   V1p4age:
     name: V1p4age
     annotations:
@@ -569,7 +569,7 @@ attributes:
     owner: V1p4Subject
     domain_of:
     - V1p4Subject
-    range: V1p4AncestryPopulation
+    range: V1p4AncestryPopulationOntology
   V1p4location_birth:
     name: V1p4location_birth
     annotations:
@@ -584,7 +584,7 @@ attributes:
     owner: V1p4Subject
     domain_of:
     - V1p4Subject
-    range: V1p4LocationBirth
+    range: V1p4LocationBirthOntology
   V1p4ethnicity:
     name: V1p4ethnicity
     annotations:

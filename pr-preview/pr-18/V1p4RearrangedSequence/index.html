@@ -213,8 +213,8 @@
 
 
 
-    V1p4RearrangedSequence --&gt; "0..1" V1p4Derivation : V1p4derivation
-    click V1p4Derivation href "../V1p4Derivation"
+    V1p4RearrangedSequence --&gt; "0..1" V1p4DerivationEnum : V1p4derivation
+    click V1p4DerivationEnum href "../V1p4DerivationEnum"
 
 
       V1p4RearrangedSequence : V1p4observation_type
@@ -222,8 +222,8 @@
 
 
 
-    V1p4RearrangedSequence --&gt; "0..1" V1p4ObservationType : V1p4observation_type
-    click V1p4ObservationType href "../V1p4ObservationType"
+    V1p4RearrangedSequence --&gt; "0..1" V1p4ObservationTypeEnum : V1p4observation_type
+    click V1p4ObservationTypeEnum href "../V1p4ObservationTypeEnum"
 
 
       V1p4RearrangedSequence : V1p4repository_name
@@ -266,13 +266,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4derivation/">V1p4derivation</a></td>
-<td>0..1 <br/> <a href="../V1p4Derivation/">V1p4Derivation</a></td>
+<td>0..1 <br/> <a href="../V1p4DerivationEnum/">V1p4DerivationEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4observation_type/">V1p4observation_type</a></td>
-<td>0..1 <br/> <a href="../V1p4ObservationType/">V1p4ObservationType</a></td>
+<td>0..1 <br/> <a href="../V1p4ObservationTypeEnum/">V1p4ObservationTypeEnum</a></td>
 <td>The type of observation from which this sequence was drawn, such as direct se...</td>
 <td>direct</td>
 </tr>
@@ -425,7 +425,7 @@ attributes:
     owner: V1p4RearrangedSequence
     domain_of:
     - V1p4RearrangedSequence
-    range: V1p4Derivation
+    range: V1p4DerivationEnum
   V1p4observation_type:
     name: V1p4observation_type
     annotations:
@@ -441,7 +441,7 @@ attributes:
     owner: V1p4RearrangedSequence
     domain_of:
     - V1p4RearrangedSequence
-    range: V1p4ObservationType
+    range: V1p4ObservationTypeEnum
   V1p4curation:
     name: V1p4curation
     annotations:

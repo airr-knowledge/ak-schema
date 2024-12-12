@@ -226,8 +226,8 @@
 
 
 
-    V1p4Study --&gt; "*" V1p4KeywordsStudy : V1p4keywords_study
-    click V1p4KeywordsStudy href "../V1p4KeywordsStudy"
+    V1p4Study --&gt; "*" V1p4KeywordsStudyEnum : V1p4keywords_study
+    click V1p4KeywordsStudyEnum href "../V1p4KeywordsStudyEnum"
 
 
       V1p4Study : V1p4pub_ids
@@ -243,8 +243,8 @@
 
 
 
-    V1p4Study --&gt; "0..1" V1p4StudyType : V1p4study_type
-    click V1p4StudyType href "../V1p4StudyType"
+    V1p4Study --&gt; "0..1" V1p4StudyTypeOntology : V1p4study_type
+    click V1p4StudyTypeOntology href "../V1p4StudyTypeOntology"
 
 
 
@@ -275,7 +275,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4study_type/">V1p4study_type</a></td>
-<td>0..1 <br/> <a href="../V1p4StudyType/">V1p4StudyType</a></td>
+<td>0..1 <br/> <a href="../V1p4StudyTypeOntology/">V1p4StudyTypeOntology</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -311,7 +311,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4keywords_study/">V1p4keywords_study</a></td>
-<td>* <br/> <a href="../V1p4KeywordsStudy/">V1p4KeywordsStudy</a></td>
+<td>* <br/> <a href="../V1p4KeywordsStudyEnum/">V1p4KeywordsStudyEnum</a></td>
 <td>Keywords describing properties of one or more data sets in a study</td>
 <td>direct</td>
 </tr>
@@ -441,7 +441,7 @@ attributes:
     owner: V1p4Study
     domain_of:
     - V1p4Study
-    range: V1p4StudyType
+    range: V1p4StudyTypeOntology
   V1p4study_description:
     name: V1p4study_description
     annotations:
@@ -536,7 +536,7 @@ attributes:
     owner: V1p4Study
     domain_of:
     - V1p4Study
-    range: V1p4KeywordsStudy
+    range: V1p4KeywordsStudyEnum
     multivalued: true
   V1p4adc_publish_date:
     name: V1p4adc_publish_date

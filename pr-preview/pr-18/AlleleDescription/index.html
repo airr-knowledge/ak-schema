@@ -236,8 +236,8 @@
 
 
 
-    AlleleDescription --&gt; "*" CurationalTags : curational_tags
-    click CurationalTags href "../CurationalTags"
+    AlleleDescription --&gt; "*" CurationalTagsEnum : curational_tags
+    click CurationalTagsEnum href "../CurationalTagsEnum"
 
 
       AlleleDescription : d_rs_3_prime_end
@@ -261,8 +261,8 @@
 
 
 
-    AlleleDescription --&gt; "0..1" InferenceType : inference_type
-    click InferenceType href "../InferenceType"
+    AlleleDescription --&gt; "0..1" InferenceTypeEnum : inference_type
+    click InferenceTypeEnum href "../InferenceTypeEnum"
 
 
       AlleleDescription : j_cdr3_end
@@ -272,8 +272,8 @@
 
 
 
-    AlleleDescription --&gt; "0..1" JCodonFrame : j_codon_frame
-    click JCodonFrame href "../JCodonFrame"
+    AlleleDescription --&gt; "0..1" JCodonFrameEnum : j_codon_frame
+    click JCodonFrameEnum href "../JCodonFrameEnum"
 
 
       AlleleDescription : j_donor_splice
@@ -299,8 +299,8 @@
 
 
 
-    AlleleDescription --&gt; "0..1" Locus : locus
-    click Locus href "../Locus"
+    AlleleDescription --&gt; "0..1" LocusEnum : locus
+    click LocusEnum href "../LocusEnum"
 
 
       AlleleDescription : maintainer
@@ -329,8 +329,8 @@
 
 
 
-    AlleleDescription --&gt; "0..1" SequenceType : sequence_type
-    click SequenceType href "../SequenceType"
+    AlleleDescription --&gt; "0..1" SequenceTypeEnum : sequence_type
+    click SequenceTypeEnum href "../SequenceTypeEnum"
 
 
       AlleleDescription : species
@@ -338,8 +338,8 @@
 
 
 
-    AlleleDescription --&gt; "0..1" Species : species
-    click Species href "../Species"
+    AlleleDescription --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
 
 
       AlleleDescription : species_subgroup
@@ -349,8 +349,8 @@
 
 
 
-    AlleleDescription --&gt; "0..1" SpeciesSubgroupType : species_subgroup_type
-    click SpeciesSubgroupType href "../SpeciesSubgroupType"
+    AlleleDescription --&gt; "0..1" SpeciesSubgroupTypeEnum : species_subgroup_type
+    click SpeciesSubgroupTypeEnum href "../SpeciesSubgroupTypeEnum"
 
 
       AlleleDescription : status
@@ -358,8 +358,8 @@
 
 
 
-    AlleleDescription --&gt; "0..1" Status : status
-    click Status href "../Status"
+    AlleleDescription --&gt; "0..1" StatusEnum : status
+    click StatusEnum href "../StatusEnum"
 
 
       AlleleDescription : subgroup_designation
@@ -478,7 +478,7 @@
 </tr>
 <tr>
 <td><a href="../locus/">locus</a></td>
-<td>0..1 <br/> <a href="../Locus/">Locus</a></td>
+<td>0..1 <br/> <a href="../LocusEnum/">LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -490,7 +490,7 @@
 </tr>
 <tr>
 <td><a href="../sequence_type/">sequence_type</a></td>
-<td>0..1 <br/> <a href="../SequenceType/">SequenceType</a></td>
+<td>0..1 <br/> <a href="../SequenceTypeEnum/">SequenceTypeEnum</a></td>
 <td>Sequence type (V, D, J, C)</td>
 <td>direct</td>
 </tr>
@@ -502,13 +502,13 @@
 </tr>
 <tr>
 <td><a href="../inference_type/">inference_type</a></td>
-<td>0..1 <br/> <a href="../InferenceType/">InferenceType</a></td>
+<td>0..1 <br/> <a href="../InferenceTypeEnum/">InferenceTypeEnum</a></td>
 <td>Type of inference(s) from which this gene sequence was inferred</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../species/">species</a></td>
-<td>0..1 <br/> <a href="../Species/">Species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -520,13 +520,13 @@
 </tr>
 <tr>
 <td><a href="../species_subgroup_type/">species_subgroup_type</a></td>
-<td>0..1 <br/> <a href="../SpeciesSubgroupType/">SpeciesSubgroupType</a></td>
+<td>0..1 <br/> <a href="../SpeciesSubgroupTypeEnum/">SpeciesSubgroupTypeEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../status/">status</a></td>
-<td>0..1 <br/> <a href="../Status/">Status</a></td>
+<td>0..1 <br/> <a href="../StatusEnum/">StatusEnum</a></td>
 <td>Status of record, assumed active if the field is not present</td>
 <td>direct</td>
 </tr>
@@ -562,7 +562,7 @@
 </tr>
 <tr>
 <td><a href="../j_codon_frame/">j_codon_frame</a></td>
-<td>0..1 <br/> <a href="../JCodonFrame/">JCodonFrame</a></td>
+<td>0..1 <br/> <a href="../JCodonFrameEnum/">JCodonFrameEnum</a></td>
 <td>Codon position of the first nucleotide in the 'coding_sequence' field</td>
 <td>direct</td>
 </tr>
@@ -706,7 +706,7 @@
 </tr>
 <tr>
 <td><a href="../curational_tags/">curational_tags</a></td>
-<td>* <br/> <a href="../CurationalTags/">CurationalTags</a></td>
+<td>* <br/> <a href="../CurationalTagsEnum/">CurationalTagsEnum</a></td>
 <td>Controlled-vocabulary tags applied to this description</td>
 <td>direct</td>
 </tr>
@@ -1008,7 +1008,7 @@ attributes:
     - GermlineSet
     - Genotype
     - Rearrangement
-    range: Locus
+    range: LocusEnum
   chromosome:
     name: chromosome
     annotations:
@@ -1037,7 +1037,7 @@ attributes:
     owner: AlleleDescription
     domain_of:
     - AlleleDescription
-    range: SequenceType
+    range: SequenceTypeEnum
   functional:
     name: functional
     annotations:
@@ -1066,7 +1066,7 @@ attributes:
     owner: AlleleDescription
     domain_of:
     - AlleleDescription
-    range: InferenceType
+    range: InferenceTypeEnum
   species:
     name: species
     annotations:
@@ -1083,7 +1083,7 @@ attributes:
     - AlleleDescription
     - GermlineSet
     - Subject
-    range: Species
+    range: SpeciesOntology
   species_subgroup:
     name: species_subgroup
     annotations:
@@ -1114,7 +1114,7 @@ attributes:
     domain_of:
     - AlleleDescription
     - GermlineSet
-    range: SpeciesSubgroupType
+    range: SpeciesSubgroupTypeEnum
   status:
     name: status
     annotations:
@@ -1128,7 +1128,7 @@ attributes:
     owner: AlleleDescription
     domain_of:
     - AlleleDescription
-    range: Status
+    range: StatusEnum
   subgroup_designation:
     name: subgroup_designation
     annotations:
@@ -1216,7 +1216,7 @@ attributes:
     owner: AlleleDescription
     domain_of:
     - AlleleDescription
-    range: JCodonFrame
+    range: JCodonFrameEnum
   gene_start:
     name: gene_start
     annotations:
@@ -1572,7 +1572,7 @@ attributes:
     owner: AlleleDescription
     domain_of:
     - AlleleDescription
-    range: CurationalTags
+    range: CurationalTagsEnum
     multivalued: true
 
 </code></pre>

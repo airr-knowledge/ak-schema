@@ -213,8 +213,8 @@
 
 
 
-    RearrangedSequence --&gt; "0..1" Derivation : derivation
-    click Derivation href "../Derivation"
+    RearrangedSequence --&gt; "0..1" DerivationEnum : derivation
+    click DerivationEnum href "../DerivationEnum"
 
 
       RearrangedSequence : observation_type
@@ -222,8 +222,8 @@
 
 
 
-    RearrangedSequence --&gt; "0..1" ObservationType : observation_type
-    click ObservationType href "../ObservationType"
+    RearrangedSequence --&gt; "0..1" ObservationTypeEnum : observation_type
+    click ObservationTypeEnum href "../ObservationTypeEnum"
 
 
       RearrangedSequence : repository_name
@@ -266,13 +266,13 @@
 </tr>
 <tr>
 <td><a href="../derivation/">derivation</a></td>
-<td>0..1 <br/> <a href="../Derivation/">Derivation</a></td>
+<td>0..1 <br/> <a href="../DerivationEnum/">DerivationEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../observation_type/">observation_type</a></td>
-<td>0..1 <br/> <a href="../ObservationType/">ObservationType</a></td>
+<td>0..1 <br/> <a href="../ObservationTypeEnum/">ObservationTypeEnum</a></td>
 <td>The type of observation from which this sequence was drawn, such as direct se...</td>
 <td>direct</td>
 </tr>
@@ -426,7 +426,7 @@ attributes:
     owner: RearrangedSequence
     domain_of:
     - RearrangedSequence
-    range: Derivation
+    range: DerivationEnum
   observation_type:
     name: observation_type
     annotations:
@@ -442,7 +442,7 @@ attributes:
     owner: RearrangedSequence
     domain_of:
     - RearrangedSequence
-    range: ObservationType
+    range: ObservationTypeEnum
   curation:
     name: curation
     annotations:

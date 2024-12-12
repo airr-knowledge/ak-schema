@@ -236,8 +236,8 @@
 
 
 
-    GermlineSet --&gt; "0..1" Locus : locus
-    click Locus href "../Locus"
+    GermlineSet --&gt; "0..1" LocusEnum : locus
+    click LocusEnum href "../LocusEnum"
 
 
       GermlineSet : pub_ids
@@ -253,8 +253,8 @@
 
 
 
-    GermlineSet --&gt; "0..1" Species : species
-    click Species href "../Species"
+    GermlineSet --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
 
 
       GermlineSet : species_subgroup
@@ -264,8 +264,8 @@
 
 
 
-    GermlineSet --&gt; "0..1" SpeciesSubgroupType : species_subgroup_type
-    click SpeciesSubgroupType href "../SpeciesSubgroupType"
+    GermlineSet --&gt; "0..1" SpeciesSubgroupTypeEnum : species_subgroup_type
+    click SpeciesSubgroupTypeEnum href "../SpeciesSubgroupTypeEnum"
 
 
 
@@ -350,7 +350,7 @@
 </tr>
 <tr>
 <td><a href="../species/">species</a></td>
-<td>0..1 <br/> <a href="../Species/">Species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -362,13 +362,13 @@
 </tr>
 <tr>
 <td><a href="../species_subgroup_type/">species_subgroup_type</a></td>
-<td>0..1 <br/> <a href="../SpeciesSubgroupType/">SpeciesSubgroupType</a></td>
+<td>0..1 <br/> <a href="../SpeciesSubgroupTypeEnum/">SpeciesSubgroupTypeEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../locus/">locus</a></td>
-<td>0..1 <br/> <a href="../Locus/">Locus</a></td>
+<td>0..1 <br/> <a href="../LocusEnum/">LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -621,7 +621,7 @@ attributes:
     - AlleleDescription
     - GermlineSet
     - Subject
-    range: Species
+    range: SpeciesOntology
   species_subgroup:
     name: species_subgroup
     annotations:
@@ -652,7 +652,7 @@ attributes:
     domain_of:
     - AlleleDescription
     - GermlineSet
-    range: SpeciesSubgroupType
+    range: SpeciesSubgroupTypeEnum
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -664,7 +664,7 @@ attributes:
     - GermlineSet
     - Genotype
     - Rearrangement
-    range: Locus
+    range: LocusEnum
   allele_descriptions:
     name: allele_descriptions
     annotations:

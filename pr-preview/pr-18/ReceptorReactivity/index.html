@@ -209,8 +209,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" Antigen : antigen
-    click Antigen href "../Antigen"
+    ReceptorReactivity --&gt; "0..1" AntigenOntology : antigen
+    click AntigenOntology href "../AntigenOntology"
 
 
       ReceptorReactivity : antigen_source_species
@@ -218,8 +218,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" AntigenSourceSpecies : antigen_source_species
-    click AntigenSourceSpecies href "../AntigenSourceSpecies"
+    ReceptorReactivity --&gt; "0..1" AntigenSourceSpeciesOntology : antigen_source_species
+    click AntigenSourceSpeciesOntology href "../AntigenSourceSpeciesOntology"
 
 
       ReceptorReactivity : antigen_type
@@ -227,8 +227,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" AntigenType : antigen_type
-    click AntigenType href "../AntigenType"
+    ReceptorReactivity --&gt; "0..1" AntigenTypeEnum : antigen_type
+    click AntigenTypeEnum href "../AntigenTypeEnum"
 
 
       ReceptorReactivity : ligand_type
@@ -236,8 +236,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" LigandType : ligand_type
-    click LigandType href "../LigandType"
+    ReceptorReactivity --&gt; "0..1" LigandTypeEnum : ligand_type
+    click LigandTypeEnum href "../LigandTypeEnum"
 
 
       ReceptorReactivity : mhc_allele_1
@@ -249,8 +249,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" MhcClass : mhc_class
-    click MhcClass href "../MhcClass"
+    ReceptorReactivity --&gt; "0..1" MhcClassEnum : mhc_class
+    click MhcClassEnum href "../MhcClassEnum"
 
 
       ReceptorReactivity : mhc_gene_1
@@ -258,8 +258,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" MhcGene1 : mhc_gene_1
-    click MhcGene1 href "../MhcGene1"
+    ReceptorReactivity --&gt; "0..1" MhcGene1Ontology : mhc_gene_1
+    click MhcGene1Ontology href "../MhcGene1Ontology"
 
 
       ReceptorReactivity : mhc_gene_2
@@ -267,8 +267,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" MhcGene2 : mhc_gene_2
-    click MhcGene2 href "../MhcGene2"
+    ReceptorReactivity --&gt; "0..1" MhcGene2Ontology : mhc_gene_2
+    click MhcGene2Ontology href "../MhcGene2Ontology"
 
 
       ReceptorReactivity : peptide_end
@@ -280,8 +280,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" ReactivityMethod : reactivity_method
-    click ReactivityMethod href "../ReactivityMethod"
+    ReceptorReactivity --&gt; "0..1" ReactivityMethodEnum : reactivity_method
+    click ReactivityMethodEnum href "../ReactivityMethodEnum"
 
 
       ReceptorReactivity : reactivity_readout
@@ -289,8 +289,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" ReactivityReadout : reactivity_readout
-    click ReactivityReadout href "../ReactivityReadout"
+    ReceptorReactivity --&gt; "0..1" ReactivityReadoutEnum : reactivity_readout
+    click ReactivityReadoutEnum href "../ReactivityReadoutEnum"
 
 
       ReceptorReactivity : reactivity_unit
@@ -313,25 +313,25 @@
 <tbody>
 <tr>
 <td><a href="../ligand_type/">ligand_type</a></td>
-<td>0..1 <br/> <a href="../LigandType/">LigandType</a></td>
+<td>0..1 <br/> <a href="../LigandTypeEnum/">LigandTypeEnum</a></td>
 <td>Classification of ligand binding to receptor</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../antigen_type/">antigen_type</a></td>
-<td>0..1 <br/> <a href="../AntigenType/">AntigenType</a></td>
+<td>0..1 <br/> <a href="../AntigenTypeEnum/">AntigenTypeEnum</a></td>
 <td>The type of antigen before processing by the immune system</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../antigen/">antigen</a></td>
-<td>0..1 <br/> <a href="../Antigen/">Antigen</a></td>
+<td>0..1 <br/> <a href="../AntigenOntology/">AntigenOntology</a></td>
 <td>The substance against which the receptor was tested</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../antigen_source_species/">antigen_source_species</a></td>
-<td>0..1 <br/> <a href="../AntigenSourceSpecies/">AntigenSourceSpecies</a></td>
+<td>0..1 <br/> <a href="../AntigenSourceSpeciesOntology/">AntigenSourceSpeciesOntology</a></td>
 <td>The species from which the antigen was isolated</td>
 <td>direct</td>
 </tr>
@@ -349,13 +349,13 @@
 </tr>
 <tr>
 <td><a href="../mhc_class/">mhc_class</a></td>
-<td>0..1 <br/> <a href="../MhcClass/">MhcClass</a></td>
+<td>0..1 <br/> <a href="../MhcClassEnum/">MhcClassEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../mhc_gene_1/">mhc_gene_1</a></td>
-<td>0..1 <br/> <a href="../MhcGene1/">MhcGene1</a></td>
+<td>0..1 <br/> <a href="../MhcGene1Ontology/">MhcGene1Ontology</a></td>
 <td>The MHC gene to which the mhc_allele_1 belongs</td>
 <td>direct</td>
 </tr>
@@ -367,7 +367,7 @@
 </tr>
 <tr>
 <td><a href="../mhc_gene_2/">mhc_gene_2</a></td>
-<td>0..1 <br/> <a href="../MhcGene2/">MhcGene2</a></td>
+<td>0..1 <br/> <a href="../MhcGene2Ontology/">MhcGene2Ontology</a></td>
 <td>The MHC gene to which the mhc_allele_2 belongs</td>
 <td>direct</td>
 </tr>
@@ -379,13 +379,13 @@
 </tr>
 <tr>
 <td><a href="../reactivity_method/">reactivity_method</a></td>
-<td>0..1 <br/> <a href="../ReactivityMethod/">ReactivityMethod</a></td>
+<td>0..1 <br/> <a href="../ReactivityMethodEnum/">ReactivityMethodEnum</a></td>
 <td>The methodology used to assess expression (assay implemented in experiment)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../reactivity_readout/">reactivity_readout</a></td>
-<td>0..1 <br/> <a href="../ReactivityReadout/">ReactivityReadout</a></td>
+<td>0..1 <br/> <a href="../ReactivityReadoutEnum/">ReactivityReadoutEnum</a></td>
 <td>Reactivity measurement read-out</td>
 <td>direct</td>
 </tr>
@@ -490,7 +490,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: LigandType
+    range: LigandTypeEnum
   antigen_type:
     name: antigen_type
     annotations:
@@ -505,7 +505,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: AntigenType
+    range: AntigenTypeEnum
   antigen:
     name: antigen
     annotations:
@@ -522,7 +522,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: Antigen
+    range: AntigenOntology
   antigen_source_species:
     name: antigen_source_species
     annotations:
@@ -536,7 +536,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: AntigenSourceSpecies
+    range: AntigenSourceSpeciesOntology
   peptide_start:
     name: peptide_start
     annotations:
@@ -574,7 +574,7 @@ attributes:
     domain_of:
     - MHCGenotype
     - ReceptorReactivity
-    range: MhcClass
+    range: MhcClassEnum
   mhc_gene_1:
     name: mhc_gene_1
     annotations:
@@ -588,7 +588,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: MhcGene1
+    range: MhcGene1Ontology
   mhc_allele_1:
     name: mhc_allele_1
     annotations:
@@ -616,7 +616,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: MhcGene2
+    range: MhcGene2Ontology
   mhc_allele_2:
     name: mhc_allele_2
     annotations:
@@ -645,7 +645,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: ReactivityMethod
+    range: ReactivityMethodEnum
   reactivity_readout:
     name: reactivity_readout
     annotations:
@@ -659,7 +659,7 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - ReceptorReactivity
-    range: ReactivityReadout
+    range: ReactivityReadoutEnum
   reactivity_value:
     name: reactivity_value
     annotations:

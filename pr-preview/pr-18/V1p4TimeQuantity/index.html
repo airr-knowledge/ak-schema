@@ -211,8 +211,8 @@
 
 
 
-    V1p4TimeQuantity --&gt; "0..1" V1p4Unit : V1p4unit
-    click V1p4Unit href "../V1p4Unit"
+    V1p4TimeQuantity --&gt; "0..1" V1p4UnitOntology : V1p4unit
+    click V1p4UnitOntology href "../V1p4UnitOntology"
 
 
 
@@ -237,7 +237,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4unit/">V1p4unit</a></td>
-<td>0..1 <br/> <a href="../V1p4Unit/">V1p4Unit</a></td>
+<td>0..1 <br/> <a href="../V1p4UnitOntology/">V1p4UnitOntology</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -332,7 +332,7 @@ attributes:
     - V1p4TimeInterval
     - V1p4PhysicalQuantity
     - V1p4TimeQuantity
-    range: V1p4Unit
+    range: V1p4UnitOntology
 
 </code></pre>
 </details>

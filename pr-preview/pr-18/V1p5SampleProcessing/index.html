@@ -223,8 +223,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5CellSpecies : V1p5cell_species
-    click V1p5CellSpecies href "../V1p5CellSpecies"
+    V1p5SampleProcessing --&gt; "0..1" V1p5CellSpeciesOntology : V1p5cell_species
+    click V1p5CellSpeciesOntology href "../V1p5CellSpeciesOntology"
 
 
       V1p5SampleProcessing : V1p5cell_storage
@@ -234,8 +234,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5CellSubset : V1p5cell_subset
-    click V1p5CellSubset href "../V1p5CellSubset"
+    V1p5SampleProcessing --&gt; "0..1" V1p5CellSubsetOntology : V1p5cell_subset
+    click V1p5CellSubsetOntology href "../V1p5CellSubsetOntology"
 
 
       V1p5SampleProcessing : V1p5cells_per_reaction
@@ -249,8 +249,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5CollectionTimePointRelativeUnit : V1p5collection_time_point_relative_unit
-    click V1p5CollectionTimePointRelativeUnit href "../V1p5CollectionTimePointRelativeUnit"
+    V1p5SampleProcessing --&gt; "0..1" V1p5CollectionTimePointRelativeUnitOntology : V1p5collection_time_point_relative_unit
+    click V1p5CollectionTimePointRelativeUnitOntology href "../V1p5CollectionTimePointRelativeUnitOntology"
 
 
       V1p5SampleProcessing : V1p5complete_sequences
@@ -258,8 +258,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5CompleteSequences : V1p5complete_sequences
-    click V1p5CompleteSequences href "../V1p5CompleteSequences"
+    V1p5SampleProcessing --&gt; "0..1" V1p5CompleteSequencesEnum : V1p5complete_sequences
+    click V1p5CompleteSequencesEnum href "../V1p5CompleteSequencesEnum"
 
 
       V1p5SampleProcessing : V1p5disease_state_sample
@@ -271,8 +271,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5LibraryGenerationMethod : V1p5library_generation_method
-    click V1p5LibraryGenerationMethod href "../V1p5LibraryGenerationMethod"
+    V1p5SampleProcessing --&gt; "0..1" V1p5LibraryGenerationMethodEnum : V1p5library_generation_method
+    click V1p5LibraryGenerationMethodEnum href "../V1p5LibraryGenerationMethodEnum"
 
 
       V1p5SampleProcessing : V1p5library_generation_protocol
@@ -291,8 +291,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5PhysicalLinkage : V1p5physical_linkage
-    click V1p5PhysicalLinkage href "../V1p5PhysicalLinkage"
+    V1p5SampleProcessing --&gt; "0..1" V1p5PhysicalLinkageEnum : V1p5physical_linkage
+    click V1p5PhysicalLinkageEnum href "../V1p5PhysicalLinkageEnum"
 
 
       V1p5SampleProcessing : V1p5sample_id
@@ -329,8 +329,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5TemplateAmountUnit : V1p5template_amount_unit
-    click V1p5TemplateAmountUnit href "../V1p5TemplateAmountUnit"
+    V1p5SampleProcessing --&gt; "0..1" V1p5TemplateAmountUnitOntology : V1p5template_amount_unit
+    click V1p5TemplateAmountUnitOntology href "../V1p5TemplateAmountUnitOntology"
 
 
       V1p5SampleProcessing : V1p5template_class
@@ -338,8 +338,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5TemplateClass : V1p5template_class
-    click V1p5TemplateClass href "../V1p5TemplateClass"
+    V1p5SampleProcessing --&gt; "0..1" V1p5TemplateClassEnum : V1p5template_class
+    click V1p5TemplateClassEnum href "../V1p5TemplateClassEnum"
 
 
       V1p5SampleProcessing : V1p5template_quality
@@ -349,8 +349,8 @@
 
 
 
-    V1p5SampleProcessing --&gt; "0..1" V1p5Tissue : V1p5tissue
-    click V1p5Tissue href "../V1p5Tissue"
+    V1p5SampleProcessing --&gt; "0..1" V1p5TissueOntology : V1p5tissue
+    click V1p5TissueOntology href "../V1p5TissueOntology"
 
 
       V1p5SampleProcessing : V1p5tissue_processing
@@ -391,7 +391,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5tissue/">V1p5tissue</a></td>
-<td>0..1 <br/> <a href="../V1p5Tissue/">V1p5Tissue</a></td>
+<td>0..1 <br/> <a href="../V1p5TissueOntology/">V1p5TissueOntology</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
@@ -415,7 +415,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_relative_unit/">V1p5collection_time_point_relative_unit</a></td>
-<td>0..1 <br/> <a href="../V1p5CollectionTimePointRelativeUnit/">V1p5CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5CollectionTimePointRelativeUnitOntology/">V1p5CollectionTimePointRelativeUnitOntology</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
@@ -439,7 +439,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5cell_subset/">V1p5cell_subset</a></td>
-<td>0..1 <br/> <a href="../V1p5CellSubset/">V1p5CellSubset</a></td>
+<td>0..1 <br/> <a href="../V1p5CellSubsetOntology/">V1p5CellSubsetOntology</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
@@ -451,7 +451,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5cell_species/">V1p5cell_species</a></td>
-<td>0..1 <br/> <a href="../V1p5CellSpecies/">V1p5CellSpecies</a></td>
+<td>0..1 <br/> <a href="../V1p5CellSpeciesOntology/">V1p5CellSpeciesOntology</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
@@ -499,7 +499,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5template_class/">V1p5template_class</a></td>
-<td>0..1 <br/> <a href="../V1p5TemplateClass/">V1p5TemplateClass</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateClassEnum/">V1p5TemplateClassEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
@@ -517,13 +517,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5template_amount_unit/">V1p5template_amount_unit</a></td>
-<td>0..1 <br/> <a href="../V1p5TemplateAmountUnit/">V1p5TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5TemplateAmountUnitOntology/">V1p5TemplateAmountUnitOntology</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5library_generation_method/">V1p5library_generation_method</a></td>
-<td>0..1 <br/> <a href="../V1p5LibraryGenerationMethod/">V1p5LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../V1p5LibraryGenerationMethodEnum/">V1p5LibraryGenerationMethodEnum</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
@@ -547,13 +547,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5complete_sequences/">V1p5complete_sequences</a></td>
-<td>0..1 <br/> <a href="../V1p5CompleteSequences/">V1p5CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../V1p5CompleteSequencesEnum/">V1p5CompleteSequencesEnum</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5physical_linkage/">V1p5physical_linkage</a></td>
-<td>0..1 <br/> <a href="../V1p5PhysicalLinkage/">V1p5PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../V1p5PhysicalLinkageEnum/">V1p5PhysicalLinkageEnum</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -759,7 +759,7 @@ attributes:
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
-    range: V1p5Tissue
+    range: V1p5TissueOntology
   V1p5anatomic_site:
     name: V1p5anatomic_site
     annotations:
@@ -820,7 +820,7 @@ attributes:
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
-    range: V1p5CollectionTimePointRelativeUnit
+    range: V1p5CollectionTimePointRelativeUnitOntology
   V1p5collection_time_point_reference:
     name: V1p5collection_time_point_reference
     annotations:
@@ -882,7 +882,7 @@ attributes:
     domain_of:
     - V1p5CellProcessing
     - V1p5SampleProcessing
-    range: V1p5CellSubset
+    range: V1p5CellSubsetOntology
   V1p5cell_phenotype:
     name: V1p5cell_phenotype
     annotations:
@@ -918,7 +918,7 @@ attributes:
     domain_of:
     - V1p5CellProcessing
     - V1p5SampleProcessing
-    range: V1p5CellSpecies
+    range: V1p5CellSpeciesOntology
   V1p5single_cell:
     name: V1p5single_cell
     annotations:
@@ -1043,7 +1043,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5TemplateClass
+    range: V1p5TemplateClassEnum
   V1p5template_quality:
     name: V1p5template_quality
     annotations:
@@ -1089,7 +1089,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5TemplateAmountUnit
+    range: V1p5TemplateAmountUnitOntology
   V1p5library_generation_method:
     name: V1p5library_generation_method
     annotations:
@@ -1104,7 +1104,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5LibraryGenerationMethod
+    range: V1p5LibraryGenerationMethodEnum
   V1p5library_generation_protocol:
     name: V1p5library_generation_protocol
     annotations:
@@ -1182,7 +1182,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5CompleteSequences
+    range: V1p5CompleteSequencesEnum
   V1p5physical_linkage:
     name: V1p5physical_linkage
     annotations:
@@ -1206,7 +1206,7 @@ attributes:
     domain_of:
     - V1p5NucleicAcidProcessing
     - V1p5SampleProcessing
-    range: V1p5PhysicalLinkage
+    range: V1p5PhysicalLinkageEnum
   V1p5sequencing_run_id:
     name: V1p5sequencing_run_id
     annotations:

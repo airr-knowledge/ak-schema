@@ -211,8 +211,8 @@
 
 
 
-    MHCAllele --&gt; "0..1" Gene : gene
-    click Gene href "../Gene"
+    MHCAllele --&gt; "0..1" GeneOntology : gene
+    click GeneOntology href "../GeneOntology"
 
 
       MHCAllele : reference_set_ref
@@ -239,7 +239,7 @@
 </tr>
 <tr>
 <td><a href="../gene/">gene</a></td>
-<td>0..1 <br/> <a href="../Gene/">Gene</a></td>
+<td>0..1 <br/> <a href="../GeneOntology/">GeneOntology</a></td>
 <td>The MHC gene to which the described allele belongs</td>
 <td>direct</td>
 </tr>
@@ -339,7 +339,7 @@ attributes:
     owner: MHCAllele
     domain_of:
     - MHCAllele
-    range: Gene
+    range: GeneOntology
   reference_set_ref:
     name: reference_set_ref
     annotations:

@@ -212,8 +212,8 @@
 
 
 
-    V1p5Sample --&gt; "0..1" V1p5CollectionTimePointRelativeUnit : V1p5collection_time_point_relative_unit
-    click V1p5CollectionTimePointRelativeUnit href "../V1p5CollectionTimePointRelativeUnit"
+    V1p5Sample --&gt; "0..1" V1p5CollectionTimePointRelativeUnitOntology : V1p5collection_time_point_relative_unit
+    click V1p5CollectionTimePointRelativeUnitOntology href "../V1p5CollectionTimePointRelativeUnitOntology"
 
 
       V1p5Sample : V1p5disease_state_sample
@@ -227,8 +227,8 @@
 
 
 
-    V1p5Sample --&gt; "0..1" V1p5Tissue : V1p5tissue
-    click V1p5Tissue href "../V1p5Tissue"
+    V1p5Sample --&gt; "0..1" V1p5TissueOntology : V1p5tissue
+    click V1p5TissueOntology href "../V1p5TissueOntology"
 
 
 
@@ -259,7 +259,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5tissue/">V1p5tissue</a></td>
-<td>0..1 <br/> <a href="../V1p5Tissue/">V1p5Tissue</a></td>
+<td>0..1 <br/> <a href="../V1p5TissueOntology/">V1p5TissueOntology</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
@@ -283,7 +283,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5collection_time_point_relative_unit/">V1p5collection_time_point_relative_unit</a></td>
-<td>0..1 <br/> <a href="../V1p5CollectionTimePointRelativeUnit/">V1p5CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../V1p5CollectionTimePointRelativeUnitOntology/">V1p5CollectionTimePointRelativeUnitOntology</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
@@ -397,7 +397,7 @@ attributes:
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
-    range: V1p5Tissue
+    range: V1p5TissueOntology
   V1p5anatomic_site:
     name: V1p5anatomic_site
     annotations:
@@ -458,7 +458,7 @@ attributes:
     domain_of:
     - V1p5Sample
     - V1p5SampleProcessing
-    range: V1p5CollectionTimePointRelativeUnit
+    range: V1p5CollectionTimePointRelativeUnitOntology
   V1p5collection_time_point_reference:
     name: V1p5collection_time_point_reference
     annotations:

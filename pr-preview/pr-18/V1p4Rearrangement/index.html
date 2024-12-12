@@ -410,8 +410,8 @@
 
 
 
-    V1p4Rearrangement --&gt; "0..1" V1p4Locus : V1p4locus
-    click V1p4Locus href "../V1p4Locus"
+    V1p4Rearrangement --&gt; "0..1" V1p4LocusEnum : V1p4locus
+    click V1p4LocusEnum href "../V1p4LocusEnum"
 
 
       V1p4Rearrangement : V1p4locus_species
@@ -419,8 +419,8 @@
 
 
 
-    V1p4Rearrangement --&gt; "0..1" V1p4LocusSpecies : V1p4locus_species
-    click V1p4LocusSpecies href "../V1p4LocusSpecies"
+    V1p4Rearrangement --&gt; "0..1" V1p4LocusSpeciesOntology : V1p4locus_species
+    click V1p4LocusSpeciesOntology href "../V1p4LocusSpeciesOntology"
 
 
       V1p4Rearrangement : V1p4n1_length
@@ -593,13 +593,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4locus/">V1p4locus</a></td>
-<td>0..1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
+<td>0..1 <br/> <a href="../V1p4LocusEnum/">V1p4LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4locus_species/">V1p4locus_species</a></td>
-<td>0..1 <br/> <a href="../V1p4LocusSpecies/">V1p4LocusSpecies</a></td>
+<td>0..1 <br/> <a href="../V1p4LocusSpeciesOntology/">V1p4LocusSpeciesOntology</a></td>
 <td>Binomial designation of the species from which the locus originates</td>
 <td>direct</td>
 </tr>
@@ -1808,7 +1808,7 @@ attributes:
     - V1p4GermlineSet
     - V1p4Genotype
     - V1p4Rearrangement
-    range: V1p4Locus
+    range: V1p4LocusEnum
   V1p4locus_species:
     name: V1p4locus_species
     annotations:
@@ -1826,7 +1826,7 @@ attributes:
     owner: V1p4Rearrangement
     domain_of:
     - V1p4Rearrangement
-    range: V1p4LocusSpecies
+    range: V1p4LocusSpeciesOntology
   V1p4v_call:
     name: V1p4v_call
     annotations:

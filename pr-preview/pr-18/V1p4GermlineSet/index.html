@@ -230,8 +230,8 @@
 
 
 
-    V1p4GermlineSet --&gt; "0..1" V1p4Locus : V1p4locus
-    click V1p4Locus href "../V1p4Locus"
+    V1p4GermlineSet --&gt; "0..1" V1p4LocusEnum : V1p4locus
+    click V1p4LocusEnum href "../V1p4LocusEnum"
 
 
       V1p4GermlineSet : V1p4pub_ids
@@ -247,8 +247,8 @@
 
 
 
-    V1p4GermlineSet --&gt; "0..1" V1p4Species : V1p4species
-    click V1p4Species href "../V1p4Species"
+    V1p4GermlineSet --&gt; "0..1" V1p4SpeciesOntology : V1p4species
+    click V1p4SpeciesOntology href "../V1p4SpeciesOntology"
 
 
       V1p4GermlineSet : V1p4species_subgroup
@@ -258,8 +258,8 @@
 
 
 
-    V1p4GermlineSet --&gt; "0..1" V1p4SpeciesSubgroupType : V1p4species_subgroup_type
-    click V1p4SpeciesSubgroupType href "../V1p4SpeciesSubgroupType"
+    V1p4GermlineSet --&gt; "0..1" V1p4SpeciesSubgroupTypeEnum : V1p4species_subgroup_type
+    click V1p4SpeciesSubgroupTypeEnum href "../V1p4SpeciesSubgroupTypeEnum"
 
 
 
@@ -326,7 +326,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4species/">V1p4species</a></td>
-<td>0..1 <br/> <a href="../V1p4Species/">V1p4Species</a></td>
+<td>0..1 <br/> <a href="../V1p4SpeciesOntology/">V1p4SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -338,13 +338,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4species_subgroup_type/">V1p4species_subgroup_type</a></td>
-<td>0..1 <br/> <a href="../V1p4SpeciesSubgroupType/">V1p4SpeciesSubgroupType</a></td>
+<td>0..1 <br/> <a href="../V1p4SpeciesSubgroupTypeEnum/">V1p4SpeciesSubgroupTypeEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4locus/">V1p4locus</a></td>
-<td>0..1 <br/> <a href="../V1p4Locus/">V1p4Locus</a></td>
+<td>0..1 <br/> <a href="../V1p4LocusEnum/">V1p4LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -550,7 +550,7 @@ attributes:
     - V1p4AlleleDescription
     - V1p4GermlineSet
     - V1p4Subject
-    range: V1p4Species
+    range: V1p4SpeciesOntology
   V1p4species_subgroup:
     name: V1p4species_subgroup
     annotations:
@@ -581,7 +581,7 @@ attributes:
     domain_of:
     - V1p4AlleleDescription
     - V1p4GermlineSet
-    range: V1p4SpeciesSubgroupType
+    range: V1p4SpeciesSubgroupTypeEnum
   V1p4locus:
     name: V1p4locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -593,7 +593,7 @@ attributes:
     - V1p4GermlineSet
     - V1p4Genotype
     - V1p4Rearrangement
-    range: V1p4Locus
+    range: V1p4LocusEnum
   V1p4allele_descriptions:
     name: V1p4allele_descriptions
     annotations:

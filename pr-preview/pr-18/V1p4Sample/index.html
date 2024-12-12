@@ -208,8 +208,8 @@
 
 
 
-    V1p4Sample --&gt; "0..1" V1p4CollectionLocation : V1p4collection_location
-    click V1p4CollectionLocation href "../V1p4CollectionLocation"
+    V1p4Sample --&gt; "0..1" V1p4CollectionLocationOntology : V1p4collection_location
+    click V1p4CollectionLocationOntology href "../V1p4CollectionLocationOntology"
 
 
       V1p4Sample : V1p4collection_time_point_relative
@@ -232,8 +232,8 @@
 
 
 
-    V1p4Sample --&gt; "0..1" V1p4Tissue : V1p4tissue
-    click V1p4Tissue href "../V1p4Tissue"
+    V1p4Sample --&gt; "0..1" V1p4TissueOntology : V1p4tissue
+    click V1p4TissueOntology href "../V1p4TissueOntology"
 
 
 
@@ -264,7 +264,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4tissue/">V1p4tissue</a></td>
-<td>0..1 <br/> <a href="../V1p4Tissue/">V1p4Tissue</a></td>
+<td>0..1 <br/> <a href="../V1p4TissueOntology/">V1p4TissueOntology</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
@@ -288,7 +288,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4collection_location/">V1p4collection_location</a></td>
-<td>0..1 <br/> <a href="../V1p4CollectionLocation/">V1p4CollectionLocation</a></td>
+<td>0..1 <br/> <a href="../V1p4CollectionLocationOntology/">V1p4CollectionLocationOntology</a></td>
 <td>Location where the sample was taken, preferred granularity is country-level</td>
 <td>direct</td>
 </tr>
@@ -395,7 +395,7 @@ attributes:
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
-    range: V1p4Tissue
+    range: V1p4TissueOntology
   V1p4anatomic_site:
     name: V1p4anatomic_site
     annotations:
@@ -455,7 +455,7 @@ attributes:
     domain_of:
     - V1p4Sample
     - V1p4SampleProcessing
-    range: V1p4CollectionLocation
+    range: V1p4CollectionLocationOntology
   V1p4biomaterial_provider:
     name: V1p4biomaterial_provider
     annotations:

@@ -204,8 +204,8 @@
 
 
 
-    NucleicAcidProcessing --&gt; "0..1" CompleteSequences : complete_sequences
-    click CompleteSequences href "../CompleteSequences"
+    NucleicAcidProcessing --&gt; "0..1" CompleteSequencesEnum : complete_sequences
+    click CompleteSequencesEnum href "../CompleteSequencesEnum"
 
 
       NucleicAcidProcessing : library_generation_kit_version
@@ -215,8 +215,8 @@
 
 
 
-    NucleicAcidProcessing --&gt; "0..1" LibraryGenerationMethod : library_generation_method
-    click LibraryGenerationMethod href "../LibraryGenerationMethod"
+    NucleicAcidProcessing --&gt; "0..1" LibraryGenerationMethodEnum : library_generation_method
+    click LibraryGenerationMethodEnum href "../LibraryGenerationMethodEnum"
 
 
       NucleicAcidProcessing : library_generation_protocol
@@ -235,8 +235,8 @@
 
 
 
-    NucleicAcidProcessing --&gt; "0..1" PhysicalLinkage : physical_linkage
-    click PhysicalLinkage href "../PhysicalLinkage"
+    NucleicAcidProcessing --&gt; "0..1" PhysicalLinkageEnum : physical_linkage
+    click PhysicalLinkageEnum href "../PhysicalLinkageEnum"
 
 
       NucleicAcidProcessing : template_amount
@@ -246,8 +246,8 @@
 
 
 
-    NucleicAcidProcessing --&gt; "0..1" TemplateAmountUnit : template_amount_unit
-    click TemplateAmountUnit href "../TemplateAmountUnit"
+    NucleicAcidProcessing --&gt; "0..1" TemplateAmountUnitOntology : template_amount_unit
+    click TemplateAmountUnitOntology href "../TemplateAmountUnitOntology"
 
 
       NucleicAcidProcessing : template_class
@@ -255,8 +255,8 @@
 
 
 
-    NucleicAcidProcessing --&gt; "0..1" TemplateClass : template_class
-    click TemplateClass href "../TemplateClass"
+    NucleicAcidProcessing --&gt; "0..1" TemplateClassEnum : template_class
+    click TemplateClassEnum href "../TemplateClassEnum"
 
 
       NucleicAcidProcessing : template_quality
@@ -277,7 +277,7 @@
 <tbody>
 <tr>
 <td><a href="../template_class/">template_class</a></td>
-<td>0..1 <br/> <a href="../TemplateClass/">TemplateClass</a></td>
+<td>0..1 <br/> <a href="../TemplateClassEnum/">TemplateClassEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
@@ -295,13 +295,13 @@
 </tr>
 <tr>
 <td><a href="../template_amount_unit/">template_amount_unit</a></td>
-<td>0..1 <br/> <a href="../TemplateAmountUnit/">TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../TemplateAmountUnitOntology/">TemplateAmountUnitOntology</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_method/">library_generation_method</a></td>
-<td>0..1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../LibraryGenerationMethodEnum/">LibraryGenerationMethodEnum</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
@@ -325,13 +325,13 @@
 </tr>
 <tr>
 <td><a href="../complete_sequences/">complete_sequences</a></td>
-<td>0..1 <br/> <a href="../CompleteSequences/">CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../CompleteSequencesEnum/">CompleteSequencesEnum</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../physical_linkage/">physical_linkage</a></td>
-<td>0..1 <br/> <a href="../PhysicalLinkage/">PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../PhysicalLinkageEnum/">PhysicalLinkageEnum</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -401,7 +401,7 @@ attributes:
     domain_of:
     - NucleicAcidProcessing
     - SampleProcessing
-    range: TemplateClass
+    range: TemplateClassEnum
   template_quality:
     name: template_quality
     annotations:
@@ -447,7 +447,7 @@ attributes:
     domain_of:
     - NucleicAcidProcessing
     - SampleProcessing
-    range: TemplateAmountUnit
+    range: TemplateAmountUnitOntology
   library_generation_method:
     name: library_generation_method
     annotations:
@@ -463,7 +463,7 @@ attributes:
     - LibraryPreparationProcessing
     - NucleicAcidProcessing
     - SampleProcessing
-    range: LibraryGenerationMethod
+    range: LibraryGenerationMethodEnum
   library_generation_protocol:
     name: library_generation_protocol
     annotations:
@@ -545,7 +545,7 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - NucleicAcidProcessing
     - SampleProcessing
-    range: CompleteSequences
+    range: CompleteSequencesEnum
   physical_linkage:
     name: physical_linkage
     annotations:
@@ -570,7 +570,7 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - NucleicAcidProcessing
     - SampleProcessing
-    range: PhysicalLinkage
+    range: PhysicalLinkageEnum
 
 </code></pre>
 </details>

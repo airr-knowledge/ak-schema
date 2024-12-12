@@ -206,9 +206,9 @@
     click V1p5Acknowledgement href "../V1p5Acknowledgement"
       V1p5Acknowledgement : V1p5acknowledgement_id
 
-      V1p5Acknowledgement : V1p5institution_name
+      V1p5Acknowledgement : V1p5individual_full_name
 
-      V1p5Acknowledgement : V1p5name
+      V1p5Acknowledgement : V1p5institution_name
 
       V1p5Acknowledgement : V1p5orcid_id
 
@@ -233,7 +233,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5name/">V1p5name</a></td>
+<td><a href="../V1p5individual_full_name/">V1p5individual_full_name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Full name of individual</td>
 <td>direct</td>
@@ -309,7 +309,7 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 slots:
 - V1p5acknowledgement_id
-- V1p5name
+- V1p5individual_full_name
 - V1p5institution_name
 - V1p5orcid_id
 
@@ -334,8 +334,8 @@ attributes:
     domain_of:
     - V1p5Acknowledgement
     range: string
-  V1p5name:
-    name: V1p5name
+  V1p5individual_full_name:
+    name: V1p5individual_full_name
     annotations:
       nullable:
         tag: nullable
@@ -343,7 +343,7 @@ attributes:
     description: Full name of individual
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5name
+    alias: V1p5individual_full_name
     owner: V1p5Acknowledgement
     domain_of:
     - V1p5Acknowledgement

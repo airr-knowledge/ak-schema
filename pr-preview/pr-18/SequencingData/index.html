@@ -209,8 +209,8 @@
 
 
 
-    SequencingData --&gt; "0..1" FileType : file_type
-    click FileType href "../FileType"
+    SequencingData --&gt; "0..1" FileTypeEnum : file_type
+    click FileTypeEnum href "../FileTypeEnum"
 
 
       SequencingData : filename
@@ -226,8 +226,8 @@
 
 
 
-    SequencingData --&gt; "0..1" PairedReadDirection : paired_read_direction
-    click PairedReadDirection href "../PairedReadDirection"
+    SequencingData --&gt; "0..1" PairedReadDirectionEnum : paired_read_direction
+    click PairedReadDirectionEnum href "../PairedReadDirectionEnum"
 
 
       SequencingData : paired_read_length
@@ -237,8 +237,8 @@
 
 
 
-    SequencingData --&gt; "0..1" ReadDirection : read_direction
-    click ReadDirection href "../ReadDirection"
+    SequencingData --&gt; "0..1" ReadDirectionEnum : read_direction
+    click ReadDirectionEnum href "../ReadDirectionEnum"
 
 
       SequencingData : read_length
@@ -267,7 +267,7 @@
 </tr>
 <tr>
 <td><a href="../file_type/">file_type</a></td>
-<td>0..1 <br/> <a href="../FileType/">FileType</a></td>
+<td>0..1 <br/> <a href="../FileTypeEnum/">FileTypeEnum</a></td>
 <td>File format for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
@@ -279,7 +279,7 @@
 </tr>
 <tr>
 <td><a href="../read_direction/">read_direction</a></td>
-<td>0..1 <br/> <a href="../ReadDirection/">ReadDirection</a></td>
+<td>0..1 <br/> <a href="../ReadDirectionEnum/">ReadDirectionEnum</a></td>
 <td>Read direction for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
@@ -297,7 +297,7 @@
 </tr>
 <tr>
 <td><a href="../paired_read_direction/">paired_read_direction</a></td>
-<td>0..1 <br/> <a href="../PairedReadDirection/">PairedReadDirection</a></td>
+<td>0..1 <br/> <a href="../PairedReadDirectionEnum/">PairedReadDirectionEnum</a></td>
 <td>Read direction for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
@@ -424,7 +424,7 @@ attributes:
     owner: SequencingData
     domain_of:
     - SequencingData
-    range: FileType
+    range: FileTypeEnum
   filename:
     name: filename
     annotations:
@@ -454,7 +454,7 @@ attributes:
     owner: SequencingData
     domain_of:
     - SequencingData
-    range: ReadDirection
+    range: ReadDirectionEnum
   read_length:
     name: read_length
     annotations:
@@ -496,7 +496,7 @@ attributes:
     owner: SequencingData
     domain_of:
     - SequencingData
-    range: PairedReadDirection
+    range: PairedReadDirectionEnum
   paired_read_length:
     name: paired_read_length
     annotations:

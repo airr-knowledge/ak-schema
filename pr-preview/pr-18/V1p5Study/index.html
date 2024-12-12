@@ -219,8 +219,8 @@
 
 
 
-    V1p5Study --&gt; "*" V1p5KeywordsStudy : V1p5keywords_study
-    click V1p5KeywordsStudy href "../V1p5KeywordsStudy"
+    V1p5Study --&gt; "*" V1p5KeywordsStudyEnum : V1p5keywords_study
+    click V1p5KeywordsStudyEnum href "../V1p5KeywordsStudyEnum"
 
 
       V1p5Study : V1p5lab_address
@@ -242,8 +242,8 @@
 
 
 
-    V1p5Study --&gt; "0..1" V1p5StudyType : V1p5study_type
-    click V1p5StudyType href "../V1p5StudyType"
+    V1p5Study --&gt; "0..1" V1p5StudyTypeOntology : V1p5study_type
+    click V1p5StudyTypeOntology href "../V1p5StudyTypeOntology"
 
 
       V1p5Study : V1p5submitted_by
@@ -276,7 +276,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5study_type/">V1p5study_type</a></td>
-<td>0..1 <br/> <a href="../V1p5StudyType/">V1p5StudyType</a></td>
+<td>0..1 <br/> <a href="../V1p5StudyTypeOntology/">V1p5StudyTypeOntology</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -336,7 +336,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5keywords_study/">V1p5keywords_study</a></td>
-<td>* <br/> <a href="../V1p5KeywordsStudy/">V1p5KeywordsStudy</a></td>
+<td>* <br/> <a href="../V1p5KeywordsStudyEnum/">V1p5KeywordsStudyEnum</a></td>
 <td>Keywords describing properties of one or more data sets in a study</td>
 <td>direct</td>
 </tr>
@@ -470,7 +470,7 @@ attributes:
     owner: V1p5Study
     domain_of:
     - V1p5Study
-    range: V1p5StudyType
+    range: V1p5StudyTypeOntology
   V1p5study_description:
     name: V1p5study_description
     annotations:
@@ -623,7 +623,7 @@ attributes:
     owner: V1p5Study
     domain_of:
     - V1p5Study
-    range: V1p5KeywordsStudy
+    range: V1p5KeywordsStudyEnum
     multivalued: true
   V1p5adc_publish_date:
     name: V1p5adc_publish_date

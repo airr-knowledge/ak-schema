@@ -212,8 +212,8 @@
 
 
 
-    V1p5Cell --&gt; "0..1" V1p5ExpressionStudyMethod : V1p5expression_study_method
-    click V1p5ExpressionStudyMethod href "../V1p5ExpressionStudyMethod"
+    V1p5Cell --&gt; "0..1" V1p5ExpressionStudyMethodEnum : V1p5expression_study_method
+    click V1p5ExpressionStudyMethodEnum href "../V1p5ExpressionStudyMethodEnum"
 
 
       V1p5Cell : V1p5rearrangements
@@ -270,7 +270,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5expression_study_method/">V1p5expression_study_method</a></td>
-<td>0..1 <br/> <a href="../V1p5ExpressionStudyMethod/">V1p5ExpressionStudyMethod</a></td>
+<td>0..1 <br/> <a href="../V1p5ExpressionStudyMethodEnum/">V1p5ExpressionStudyMethodEnum</a></td>
 <td>Keyword describing the methodology used to assess expression</td>
 <td>direct</td>
 </tr>
@@ -385,16 +385,13 @@ attributes:
     multivalued: true
   V1p5repertoire_id:
     name: V1p5repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: V1p5repertoire_id
     owner: V1p5Cell
     domain_of:
     - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
     - V1p5Rearrangement
     - V1p5Clone
     - V1p5Cell
@@ -432,7 +429,7 @@ attributes:
     owner: V1p5Cell
     domain_of:
     - V1p5Cell
-    range: V1p5ExpressionStudyMethod
+    range: V1p5ExpressionStudyMethodEnum
   V1p5expression_raw_doi:
     name: V1p5expression_raw_doi
     annotations:

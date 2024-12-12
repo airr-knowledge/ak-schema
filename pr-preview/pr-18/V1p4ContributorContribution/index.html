@@ -209,8 +209,8 @@
 
 
 
-    V1p4ContributorContribution --&gt; "0..1" V1p4Degree : V1p4degree
-    click V1p4Degree href "../V1p4Degree"
+    V1p4ContributorContribution --&gt; "0..1" V1p4DegreeEnum : V1p4degree
+    click V1p4DegreeEnum href "../V1p4DegreeEnum"
 
 
       V1p4ContributorContribution : V1p4role
@@ -218,8 +218,8 @@
 
 
 
-    V1p4ContributorContribution --&gt; "0..1" V1p4Role : V1p4role
-    click V1p4Role href "../V1p4Role"
+    V1p4ContributorContribution --&gt; "0..1" V1p4RoleEnum : V1p4role
+    click V1p4RoleEnum href "../V1p4RoleEnum"
 
 
 
@@ -238,13 +238,13 @@
 <tbody>
 <tr>
 <td><a href="../V1p4role/">V1p4role</a></td>
-<td>0..1 <br/> <a href="../V1p4Role/">V1p4Role</a></td>
+<td>0..1 <br/> <a href="../V1p4RoleEnum/">V1p4RoleEnum</a></td>
 <td>Role according to CRediT taxonomy</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4degree/">V1p4degree</a></td>
-<td>0..1 <br/> <a href="../V1p4Degree/">V1p4Degree</a></td>
+<td>0..1 <br/> <a href="../V1p4DegreeEnum/">V1p4DegreeEnum</a></td>
 <td>Optional specification of the degree of contribution, should be used if multi...</td>
 <td>direct</td>
 </tr>
@@ -323,7 +323,7 @@ attributes:
     owner: V1p4ContributorContribution
     domain_of:
     - V1p4ContributorContribution
-    range: V1p4Role
+    range: V1p4RoleEnum
   V1p4degree:
     name: V1p4degree
     annotations:
@@ -338,7 +338,7 @@ attributes:
     owner: V1p4ContributorContribution
     domain_of:
     - V1p4ContributorContribution
-    range: V1p4Degree
+    range: V1p4DegreeEnum
 
 </code></pre>
 </details>

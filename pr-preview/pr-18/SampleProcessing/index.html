@@ -223,8 +223,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" CellSpecies : cell_species
-    click CellSpecies href "../CellSpecies"
+    SampleProcessing --&gt; "0..1" CellSpeciesOntology : cell_species
+    click CellSpeciesOntology href "../CellSpeciesOntology"
 
 
       SampleProcessing : cell_storage
@@ -234,8 +234,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" CellSubset : cell_subset
-    click CellSubset href "../CellSubset"
+    SampleProcessing --&gt; "0..1" CellSubsetOntology : cell_subset
+    click CellSubsetOntology href "../CellSubsetOntology"
 
 
       SampleProcessing : cells_per_reaction
@@ -249,8 +249,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" CollectionTimePointRelativeUnit : collection_time_point_relative_unit
-    click CollectionTimePointRelativeUnit href "../CollectionTimePointRelativeUnit"
+    SampleProcessing --&gt; "0..1" CollectionTimePointRelativeUnitOntology : collection_time_point_relative_unit
+    click CollectionTimePointRelativeUnitOntology href "../CollectionTimePointRelativeUnitOntology"
 
 
       SampleProcessing : complete_sequences
@@ -258,8 +258,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" CompleteSequences : complete_sequences
-    click CompleteSequences href "../CompleteSequences"
+    SampleProcessing --&gt; "0..1" CompleteSequencesEnum : complete_sequences
+    click CompleteSequencesEnum href "../CompleteSequencesEnum"
 
 
       SampleProcessing : disease_state_sample
@@ -271,8 +271,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" LibraryGenerationMethod : library_generation_method
-    click LibraryGenerationMethod href "../LibraryGenerationMethod"
+    SampleProcessing --&gt; "0..1" LibraryGenerationMethodEnum : library_generation_method
+    click LibraryGenerationMethodEnum href "../LibraryGenerationMethodEnum"
 
 
       SampleProcessing : library_generation_protocol
@@ -291,8 +291,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" PhysicalLinkage : physical_linkage
-    click PhysicalLinkage href "../PhysicalLinkage"
+    SampleProcessing --&gt; "0..1" PhysicalLinkageEnum : physical_linkage
+    click PhysicalLinkageEnum href "../PhysicalLinkageEnum"
 
 
       SampleProcessing : sample_id
@@ -329,8 +329,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" TemplateAmountUnit : template_amount_unit
-    click TemplateAmountUnit href "../TemplateAmountUnit"
+    SampleProcessing --&gt; "0..1" TemplateAmountUnitOntology : template_amount_unit
+    click TemplateAmountUnitOntology href "../TemplateAmountUnitOntology"
 
 
       SampleProcessing : template_class
@@ -338,8 +338,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" TemplateClass : template_class
-    click TemplateClass href "../TemplateClass"
+    SampleProcessing --&gt; "0..1" TemplateClassEnum : template_class
+    click TemplateClassEnum href "../TemplateClassEnum"
 
 
       SampleProcessing : template_quality
@@ -349,8 +349,8 @@
 
 
 
-    SampleProcessing --&gt; "0..1" Tissue : tissue
-    click Tissue href "../Tissue"
+    SampleProcessing --&gt; "0..1" TissueOntology : tissue
+    click TissueOntology href "../TissueOntology"
 
 
       SampleProcessing : tissue_processing
@@ -391,7 +391,7 @@
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>0..1 <br/> <a href="../Tissue/">Tissue</a></td>
+<td>0..1 <br/> <a href="../TissueOntology/">TissueOntology</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
@@ -415,7 +415,7 @@
 </tr>
 <tr>
 <td><a href="../collection_time_point_relative_unit/">collection_time_point_relative_unit</a></td>
-<td>0..1 <br/> <a href="../CollectionTimePointRelativeUnit/">CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../CollectionTimePointRelativeUnitOntology/">CollectionTimePointRelativeUnitOntology</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
@@ -439,7 +439,7 @@
 </tr>
 <tr>
 <td><a href="../cell_subset/">cell_subset</a></td>
-<td>0..1 <br/> <a href="../CellSubset/">CellSubset</a></td>
+<td>0..1 <br/> <a href="../CellSubsetOntology/">CellSubsetOntology</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
@@ -451,7 +451,7 @@
 </tr>
 <tr>
 <td><a href="../cell_species/">cell_species</a></td>
-<td>0..1 <br/> <a href="../CellSpecies/">CellSpecies</a></td>
+<td>0..1 <br/> <a href="../CellSpeciesOntology/">CellSpeciesOntology</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
@@ -499,7 +499,7 @@
 </tr>
 <tr>
 <td><a href="../template_class/">template_class</a></td>
-<td>0..1 <br/> <a href="../TemplateClass/">TemplateClass</a></td>
+<td>0..1 <br/> <a href="../TemplateClassEnum/">TemplateClassEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material for the ...</td>
 <td>direct</td>
 </tr>
@@ -517,13 +517,13 @@
 </tr>
 <tr>
 <td><a href="../template_amount_unit/">template_amount_unit</a></td>
-<td>0..1 <br/> <a href="../TemplateAmountUnit/">TemplateAmountUnit</a></td>
+<td>0..1 <br/> <a href="../TemplateAmountUnitOntology/">TemplateAmountUnitOntology</a></td>
 <td>Unit of template amount</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../library_generation_method/">library_generation_method</a></td>
-<td>0..1 <br/> <a href="../LibraryGenerationMethod/">LibraryGenerationMethod</a></td>
+<td>0..1 <br/> <a href="../LibraryGenerationMethodEnum/">LibraryGenerationMethodEnum</a></td>
 <td>Generic type of library generation</td>
 <td>direct</td>
 </tr>
@@ -547,13 +547,13 @@
 </tr>
 <tr>
 <td><a href="../complete_sequences/">complete_sequences</a></td>
-<td>0..1 <br/> <a href="../CompleteSequences/">CompleteSequences</a></td>
+<td>0..1 <br/> <a href="../CompleteSequencesEnum/">CompleteSequencesEnum</a></td>
 <td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../physical_linkage/">physical_linkage</a></td>
-<td>0..1 <br/> <a href="../PhysicalLinkage/">PhysicalLinkage</a></td>
+<td>0..1 <br/> <a href="../PhysicalLinkageEnum/">PhysicalLinkageEnum</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 <td>direct</td>
 </tr>
@@ -760,7 +760,7 @@ attributes:
     - Specimen
     - Sample
     - SampleProcessing
-    range: Tissue
+    range: TissueOntology
   anatomic_site:
     name: anatomic_site
     annotations:
@@ -821,7 +821,7 @@ attributes:
     domain_of:
     - Sample
     - SampleProcessing
-    range: CollectionTimePointRelativeUnit
+    range: CollectionTimePointRelativeUnitOntology
   collection_time_point_reference:
     name: collection_time_point_reference
     annotations:
@@ -885,7 +885,7 @@ attributes:
     - CellIsolationProcessing
     - CellProcessing
     - SampleProcessing
-    range: CellSubset
+    range: CellSubsetOntology
   cell_phenotype:
     name: cell_phenotype
     annotations:
@@ -923,7 +923,7 @@ attributes:
     - CellIsolationProcessing
     - CellProcessing
     - SampleProcessing
-    range: CellSpecies
+    range: CellSpeciesOntology
   single_cell:
     name: single_cell
     annotations:
@@ -1055,7 +1055,7 @@ attributes:
     domain_of:
     - NucleicAcidProcessing
     - SampleProcessing
-    range: TemplateClass
+    range: TemplateClassEnum
   template_quality:
     name: template_quality
     annotations:
@@ -1101,7 +1101,7 @@ attributes:
     domain_of:
     - NucleicAcidProcessing
     - SampleProcessing
-    range: TemplateAmountUnit
+    range: TemplateAmountUnitOntology
   library_generation_method:
     name: library_generation_method
     annotations:
@@ -1117,7 +1117,7 @@ attributes:
     - LibraryPreparationProcessing
     - NucleicAcidProcessing
     - SampleProcessing
-    range: LibraryGenerationMethod
+    range: LibraryGenerationMethodEnum
   library_generation_protocol:
     name: library_generation_protocol
     annotations:
@@ -1199,7 +1199,7 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - NucleicAcidProcessing
     - SampleProcessing
-    range: CompleteSequences
+    range: CompleteSequencesEnum
   physical_linkage:
     name: physical_linkage
     annotations:
@@ -1224,7 +1224,7 @@ attributes:
     - ReceptorRepertoireSequencingAssay
     - NucleicAcidProcessing
     - SampleProcessing
-    range: PhysicalLinkage
+    range: PhysicalLinkageEnum
   sequencing_run_id:
     name: sequencing_run_id
     annotations:

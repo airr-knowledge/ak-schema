@@ -204,8 +204,8 @@
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4Antigen : V1p4antigen
-    click V1p4Antigen href "../V1p4Antigen"
+    V1p4Reactivity --&gt; "0..1" V1p4AntigenOntology : V1p4antigen
+    click V1p4AntigenOntology href "../V1p4AntigenOntology"
 
 
       V1p4Reactivity : V1p4antigen_source_species
@@ -213,8 +213,8 @@
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4AntigenSourceSpecies : V1p4antigen_source_species
-    click V1p4AntigenSourceSpecies href "../V1p4AntigenSourceSpecies"
+    V1p4Reactivity --&gt; "0..1" V1p4AntigenSourceSpeciesOntology : V1p4antigen_source_species
+    click V1p4AntigenSourceSpeciesOntology href "../V1p4AntigenSourceSpeciesOntology"
 
 
       V1p4Reactivity : V1p4antigen_type
@@ -222,8 +222,8 @@
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4AntigenType : V1p4antigen_type
-    click V1p4AntigenType href "../V1p4AntigenType"
+    V1p4Reactivity --&gt; "0..1" V1p4AntigenTypeEnum : V1p4antigen_type
+    click V1p4AntigenTypeEnum href "../V1p4AntigenTypeEnum"
 
 
       V1p4Reactivity : V1p4cell_id
@@ -235,8 +235,8 @@
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4LigandType : V1p4ligand_type
-    click V1p4LigandType href "../V1p4LigandType"
+    V1p4Reactivity --&gt; "0..1" V1p4LigandTypeEnum : V1p4ligand_type
+    click V1p4LigandTypeEnum href "../V1p4LigandTypeEnum"
 
 
       V1p4Reactivity : V1p4mhc_allele_1
@@ -248,8 +248,8 @@
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4MhcClass : V1p4mhc_class
-    click V1p4MhcClass href "../V1p4MhcClass"
+    V1p4Reactivity --&gt; "0..1" V1p4MhcClassEnum : V1p4mhc_class
+    click V1p4MhcClassEnum href "../V1p4MhcClassEnum"
 
 
       V1p4Reactivity : V1p4mhc_gene_1
@@ -257,8 +257,8 @@
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4MhcGene1 : V1p4mhc_gene_1
-    click V1p4MhcGene1 href "../V1p4MhcGene1"
+    V1p4Reactivity --&gt; "0..1" V1p4MhcGene1Ontology : V1p4mhc_gene_1
+    click V1p4MhcGene1Ontology href "../V1p4MhcGene1Ontology"
 
 
       V1p4Reactivity : V1p4mhc_gene_2
@@ -266,8 +266,8 @@
 
 
 
-    V1p4Reactivity --&gt; "0..1" V1p4MhcGene2 : V1p4mhc_gene_2
-    click V1p4MhcGene2 href "../V1p4MhcGene2"
+    V1p4Reactivity --&gt; "0..1" V1p4MhcGene2Ontology : V1p4mhc_gene_2
+    click V1p4MhcGene2Ontology href "../V1p4MhcGene2Ontology"
 
 
       V1p4Reactivity : V1p4peptide_end
@@ -330,25 +330,25 @@
 </tr>
 <tr>
 <td><a href="../V1p4ligand_type/">V1p4ligand_type</a></td>
-<td>0..1 <br/> <a href="../V1p4LigandType/">V1p4LigandType</a></td>
+<td>0..1 <br/> <a href="../V1p4LigandTypeEnum/">V1p4LigandTypeEnum</a></td>
 <td>Classification of ligand binding to the cell</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4antigen_type/">V1p4antigen_type</a></td>
-<td>0..1 <br/> <a href="../V1p4AntigenType/">V1p4AntigenType</a></td>
+<td>0..1 <br/> <a href="../V1p4AntigenTypeEnum/">V1p4AntigenTypeEnum</a></td>
 <td>The type of antigen before processing by the immune system</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4antigen/">V1p4antigen</a></td>
-<td>0..1 <br/> <a href="../V1p4Antigen/">V1p4Antigen</a></td>
+<td>0..1 <br/> <a href="../V1p4AntigenOntology/">V1p4AntigenOntology</a></td>
 <td>The substance against which the receptor was tested</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4antigen_source_species/">V1p4antigen_source_species</a></td>
-<td>0..1 <br/> <a href="../V1p4AntigenSourceSpecies/">V1p4AntigenSourceSpecies</a></td>
+<td>0..1 <br/> <a href="../V1p4AntigenSourceSpeciesOntology/">V1p4AntigenSourceSpeciesOntology</a></td>
 <td>The species from which the antigen was isolated</td>
 <td>direct</td>
 </tr>
@@ -372,13 +372,13 @@
 </tr>
 <tr>
 <td><a href="../V1p4mhc_class/">V1p4mhc_class</a></td>
-<td>0..1 <br/> <a href="../V1p4MhcClass/">V1p4MhcClass</a></td>
+<td>0..1 <br/> <a href="../V1p4MhcClassEnum/">V1p4MhcClassEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p4mhc_gene_1/">V1p4mhc_gene_1</a></td>
-<td>0..1 <br/> <a href="../V1p4MhcGene1/">V1p4MhcGene1</a></td>
+<td>0..1 <br/> <a href="../V1p4MhcGene1Ontology/">V1p4MhcGene1Ontology</a></td>
 <td>The MHC gene to which the mhc_allele_1 belongs</td>
 <td>direct</td>
 </tr>
@@ -390,7 +390,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4mhc_gene_2/">V1p4mhc_gene_2</a></td>
-<td>0..1 <br/> <a href="../V1p4MhcGene2/">V1p4MhcGene2</a></td>
+<td>0..1 <br/> <a href="../V1p4MhcGene2Ontology/">V1p4MhcGene2Ontology</a></td>
 <td>The MHC gene to which the mhc_allele_2 belongs</td>
 <td>direct</td>
 </tr>
@@ -565,7 +565,7 @@ attributes:
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
-    range: V1p4LigandType
+    range: V1p4LigandTypeEnum
   V1p4antigen_type:
     name: V1p4antigen_type
     annotations:
@@ -580,7 +580,7 @@ attributes:
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
-    range: V1p4AntigenType
+    range: V1p4AntigenTypeEnum
   V1p4antigen:
     name: V1p4antigen
     annotations:
@@ -597,7 +597,7 @@ attributes:
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
-    range: V1p4Antigen
+    range: V1p4AntigenOntology
   V1p4antigen_source_species:
     name: V1p4antigen_source_species
     annotations:
@@ -611,7 +611,7 @@ attributes:
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
-    range: V1p4AntigenSourceSpecies
+    range: V1p4AntigenSourceSpeciesOntology
   V1p4peptide_start:
     name: V1p4peptide_start
     annotations:
@@ -665,7 +665,7 @@ attributes:
     domain_of:
     - V1p4MHCGenotype
     - V1p4Reactivity
-    range: V1p4MhcClass
+    range: V1p4MhcClassEnum
   V1p4mhc_gene_1:
     name: V1p4mhc_gene_1
     annotations:
@@ -679,7 +679,7 @@ attributes:
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
-    range: V1p4MhcGene1
+    range: V1p4MhcGene1Ontology
   V1p4mhc_allele_1:
     name: V1p4mhc_allele_1
     annotations:
@@ -707,7 +707,7 @@ attributes:
     owner: V1p4Reactivity
     domain_of:
     - V1p4Reactivity
-    range: V1p4MhcGene2
+    range: V1p4MhcGene2Ontology
   V1p4mhc_allele_2:
     name: V1p4mhc_allele_2
     annotations:

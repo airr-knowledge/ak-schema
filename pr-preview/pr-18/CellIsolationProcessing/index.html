@@ -224,8 +224,8 @@
 
 
 
-    CellIsolationProcessing --&gt; "0..1" CellSpecies : cell_species
-    click CellSpecies href "../CellSpecies"
+    CellIsolationProcessing --&gt; "0..1" CellSpeciesOntology : cell_species
+    click CellSpeciesOntology href "../CellSpeciesOntology"
 
 
       CellIsolationProcessing : cell_storage
@@ -235,8 +235,8 @@
 
 
 
-    CellIsolationProcessing --&gt; "0..1" CellSubset : cell_subset
-    click CellSubset href "../CellSubset"
+    CellIsolationProcessing --&gt; "0..1" CellSubsetOntology : cell_subset
+    click CellSubsetOntology href "../CellSubsetOntology"
 
 
       CellIsolationProcessing : cells_per_reaction
@@ -295,7 +295,7 @@
 </tr>
 <tr>
 <td><a href="../cell_subset/">cell_subset</a></td>
-<td>0..1 <br/> <a href="../CellSubset/">CellSubset</a></td>
+<td>0..1 <br/> <a href="../CellSubsetOntology/">CellSubsetOntology</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
@@ -307,7 +307,7 @@
 </tr>
 <tr>
 <td><a href="../cell_species/">cell_species</a></td>
-<td>0..1 <br/> <a href="../CellSpecies/">CellSpecies</a></td>
+<td>0..1 <br/> <a href="../CellSpeciesOntology/">CellSpeciesOntology</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
@@ -464,7 +464,7 @@ attributes:
     - CellIsolationProcessing
     - CellProcessing
     - SampleProcessing
-    range: CellSubset
+    range: CellSubsetOntology
   cell_phenotype:
     name: cell_phenotype
     annotations:
@@ -502,7 +502,7 @@ attributes:
     - CellIsolationProcessing
     - CellProcessing
     - SampleProcessing
-    range: CellSpecies
+    range: CellSpeciesOntology
   single_cell:
     name: single_cell
     annotations:

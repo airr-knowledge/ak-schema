@@ -218,8 +218,8 @@
 
 
 
-    V1p5MHCGenotype --&gt; "0..1" V1p5MhcClass : V1p5mhc_class
-    click V1p5MhcClass href "../V1p5MhcClass"
+    V1p5MHCGenotype --&gt; "0..1" V1p5MhcClassEnum : V1p5mhc_class
+    click V1p5MhcClassEnum href "../V1p5MhcClassEnum"
 
 
       V1p5MHCGenotype : V1p5mhc_genotype_id
@@ -248,7 +248,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5mhc_class/">V1p5mhc_class</a></td>
-<td>0..1 <br/> <a href="../V1p5MhcClass/">V1p5MhcClass</a></td>
+<td>0..1 <br/> <a href="../V1p5MhcClassEnum/">V1p5MhcClassEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -352,7 +352,7 @@ attributes:
     domain_of:
     - V1p5MHCGenotype
     - V1p5ReceptorReactivity
-    range: V1p5MhcClass
+    range: V1p5MhcClassEnum
   V1p5mhc_alleles:
     name: V1p5mhc_alleles
     annotations:

@@ -209,8 +209,8 @@
 
 
 
-    V1p5Diagnosis --&gt; "0..1" V1p5DiseaseDiagnosis : V1p5disease_diagnosis
-    click V1p5DiseaseDiagnosis href "../V1p5DiseaseDiagnosis"
+    V1p5Diagnosis --&gt; "0..1" V1p5DiseaseDiagnosisOntology : V1p5disease_diagnosis
+    click V1p5DiseaseDiagnosisOntology href "../V1p5DiseaseDiagnosisOntology"
 
 
       V1p5Diagnosis : V1p5disease_length
@@ -249,7 +249,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5disease_diagnosis/">V1p5disease_diagnosis</a></td>
-<td>0..1 <br/> <a href="../V1p5DiseaseDiagnosis/">V1p5DiseaseDiagnosis</a></td>
+<td>0..1 <br/> <a href="../V1p5DiseaseDiagnosisOntology/">V1p5DiseaseDiagnosisOntology</a></td>
 <td>Diagnosis of subject</td>
 <td>direct</td>
 </tr>
@@ -384,7 +384,7 @@ attributes:
     owner: V1p5Diagnosis
     domain_of:
     - V1p5Diagnosis
-    range: V1p5DiseaseDiagnosis
+    range: V1p5DiseaseDiagnosisOntology
   V1p5disease_length:
     name: V1p5disease_length
     annotations:

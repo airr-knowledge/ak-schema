@@ -209,8 +209,8 @@
 
 
 
-    Diagnosis --&gt; "0..1" DiseaseDiagnosis : disease_diagnosis
-    click DiseaseDiagnosis href "../DiseaseDiagnosis"
+    Diagnosis --&gt; "0..1" DiseaseDiagnosisOntology : disease_diagnosis
+    click DiseaseDiagnosisOntology href "../DiseaseDiagnosisOntology"
 
 
       Diagnosis : disease_length
@@ -249,7 +249,7 @@
 </tr>
 <tr>
 <td><a href="../disease_diagnosis/">disease_diagnosis</a></td>
-<td>0..1 <br/> <a href="../DiseaseDiagnosis/">DiseaseDiagnosis</a></td>
+<td>0..1 <br/> <a href="../DiseaseDiagnosisOntology/">DiseaseDiagnosisOntology</a></td>
 <td>Diagnosis of subject</td>
 <td>direct</td>
 </tr>
@@ -384,7 +384,7 @@ attributes:
     owner: Diagnosis
     domain_of:
     - Diagnosis
-    range: DiseaseDiagnosis
+    range: DiseaseDiagnosisOntology
   disease_length:
     name: disease_length
     annotations:

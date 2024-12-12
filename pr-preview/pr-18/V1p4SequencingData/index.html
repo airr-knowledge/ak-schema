@@ -209,8 +209,8 @@
 
 
 
-    V1p4SequencingData --&gt; "0..1" V1p4FileType : V1p4file_type
-    click V1p4FileType href "../V1p4FileType"
+    V1p4SequencingData --&gt; "0..1" V1p4FileTypeEnum : V1p4file_type
+    click V1p4FileTypeEnum href "../V1p4FileTypeEnum"
 
 
       V1p4SequencingData : V1p4filename
@@ -226,8 +226,8 @@
 
 
 
-    V1p4SequencingData --&gt; "0..1" V1p4PairedReadDirection : V1p4paired_read_direction
-    click V1p4PairedReadDirection href "../V1p4PairedReadDirection"
+    V1p4SequencingData --&gt; "0..1" V1p4PairedReadDirectionEnum : V1p4paired_read_direction
+    click V1p4PairedReadDirectionEnum href "../V1p4PairedReadDirectionEnum"
 
 
       V1p4SequencingData : V1p4paired_read_length
@@ -237,8 +237,8 @@
 
 
 
-    V1p4SequencingData --&gt; "0..1" V1p4ReadDirection : V1p4read_direction
-    click V1p4ReadDirection href "../V1p4ReadDirection"
+    V1p4SequencingData --&gt; "0..1" V1p4ReadDirectionEnum : V1p4read_direction
+    click V1p4ReadDirectionEnum href "../V1p4ReadDirectionEnum"
 
 
       V1p4SequencingData : V1p4read_length
@@ -267,7 +267,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4file_type/">V1p4file_type</a></td>
-<td>0..1 <br/> <a href="../V1p4FileType/">V1p4FileType</a></td>
+<td>0..1 <br/> <a href="../V1p4FileTypeEnum/">V1p4FileTypeEnum</a></td>
 <td>File format for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
@@ -279,7 +279,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4read_direction/">V1p4read_direction</a></td>
-<td>0..1 <br/> <a href="../V1p4ReadDirection/">V1p4ReadDirection</a></td>
+<td>0..1 <br/> <a href="../V1p4ReadDirectionEnum/">V1p4ReadDirectionEnum</a></td>
 <td>Read direction for the raw reads or sequences</td>
 <td>direct</td>
 </tr>
@@ -297,7 +297,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4paired_read_direction/">V1p4paired_read_direction</a></td>
-<td>0..1 <br/> <a href="../V1p4PairedReadDirection/">V1p4PairedReadDirection</a></td>
+<td>0..1 <br/> <a href="../V1p4PairedReadDirectionEnum/">V1p4PairedReadDirectionEnum</a></td>
 <td>Read direction for the second file in paired-read sequencing</td>
 <td>direct</td>
 </tr>
@@ -424,7 +424,7 @@ attributes:
     owner: V1p4SequencingData
     domain_of:
     - V1p4SequencingData
-    range: V1p4FileType
+    range: V1p4FileTypeEnum
   V1p4filename:
     name: V1p4filename
     annotations:
@@ -454,7 +454,7 @@ attributes:
     owner: V1p4SequencingData
     domain_of:
     - V1p4SequencingData
-    range: V1p4ReadDirection
+    range: V1p4ReadDirectionEnum
   V1p4read_length:
     name: V1p4read_length
     annotations:
@@ -496,7 +496,7 @@ attributes:
     owner: V1p4SequencingData
     domain_of:
     - V1p4SequencingData
-    range: V1p4PairedReadDirection
+    range: V1p4PairedReadDirectionEnum
   V1p4paired_read_length:
     name: V1p4paired_read_length
     annotations:

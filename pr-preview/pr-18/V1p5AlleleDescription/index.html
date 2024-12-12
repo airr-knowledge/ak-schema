@@ -236,8 +236,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "*" V1p5CurationalTags : V1p5curational_tags
-    click V1p5CurationalTags href "../V1p5CurationalTags"
+    V1p5AlleleDescription --&gt; "*" V1p5CurationalTagsEnum : V1p5curational_tags
+    click V1p5CurationalTagsEnum href "../V1p5CurationalTagsEnum"
 
 
       V1p5AlleleDescription : V1p5d_rs_3_prime_end
@@ -261,8 +261,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5InferenceType : V1p5inference_type
-    click V1p5InferenceType href "../V1p5InferenceType"
+    V1p5AlleleDescription --&gt; "0..1" V1p5InferenceTypeEnum : V1p5inference_type
+    click V1p5InferenceTypeEnum href "../V1p5InferenceTypeEnum"
 
 
       V1p5AlleleDescription : V1p5j_cdr3_end
@@ -272,8 +272,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5JCodonFrame : V1p5j_codon_frame
-    click V1p5JCodonFrame href "../V1p5JCodonFrame"
+    V1p5AlleleDescription --&gt; "0..1" V1p5JCodonFrameEnum : V1p5j_codon_frame
+    click V1p5JCodonFrameEnum href "../V1p5JCodonFrameEnum"
 
 
       V1p5AlleleDescription : V1p5j_donor_splice
@@ -299,8 +299,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5Locus : V1p5locus
-    click V1p5Locus href "../V1p5Locus"
+    V1p5AlleleDescription --&gt; "0..1" V1p5LocusEnum : V1p5locus
+    click V1p5LocusEnum href "../V1p5LocusEnum"
 
 
       V1p5AlleleDescription : V1p5maintainer
@@ -329,8 +329,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5SequenceType : V1p5sequence_type
-    click V1p5SequenceType href "../V1p5SequenceType"
+    V1p5AlleleDescription --&gt; "0..1" V1p5SequenceTypeEnum : V1p5sequence_type
+    click V1p5SequenceTypeEnum href "../V1p5SequenceTypeEnum"
 
 
       V1p5AlleleDescription : V1p5species
@@ -338,8 +338,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5Species : V1p5species
-    click V1p5Species href "../V1p5Species"
+    V1p5AlleleDescription --&gt; "0..1" V1p5SpeciesOntology : V1p5species
+    click V1p5SpeciesOntology href "../V1p5SpeciesOntology"
 
 
       V1p5AlleleDescription : V1p5species_subgroup
@@ -349,8 +349,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5SpeciesSubgroupType : V1p5species_subgroup_type
-    click V1p5SpeciesSubgroupType href "../V1p5SpeciesSubgroupType"
+    V1p5AlleleDescription --&gt; "0..1" V1p5SpeciesSubgroupTypeEnum : V1p5species_subgroup_type
+    click V1p5SpeciesSubgroupTypeEnum href "../V1p5SpeciesSubgroupTypeEnum"
 
 
       V1p5AlleleDescription : V1p5status
@@ -358,8 +358,8 @@
 
 
 
-    V1p5AlleleDescription --&gt; "0..1" V1p5Status : V1p5status
-    click V1p5Status href "../V1p5Status"
+    V1p5AlleleDescription --&gt; "0..1" V1p5StatusEnum : V1p5status
+    click V1p5StatusEnum href "../V1p5StatusEnum"
 
 
       V1p5AlleleDescription : V1p5subgroup_designation
@@ -436,7 +436,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5release_version/">V1p5release_version</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -478,7 +478,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5locus/">V1p5locus</a></td>
-<td>0..1 <br/> <a href="../V1p5Locus/">V1p5Locus</a></td>
+<td>0..1 <br/> <a href="../V1p5LocusEnum/">V1p5LocusEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -490,7 +490,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5sequence_type/">V1p5sequence_type</a></td>
-<td>0..1 <br/> <a href="../V1p5SequenceType/">V1p5SequenceType</a></td>
+<td>0..1 <br/> <a href="../V1p5SequenceTypeEnum/">V1p5SequenceTypeEnum</a></td>
 <td>Sequence type (V, D, J, C)</td>
 <td>direct</td>
 </tr>
@@ -502,13 +502,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5inference_type/">V1p5inference_type</a></td>
-<td>0..1 <br/> <a href="../V1p5InferenceType/">V1p5InferenceType</a></td>
+<td>0..1 <br/> <a href="../V1p5InferenceTypeEnum/">V1p5InferenceTypeEnum</a></td>
 <td>Type of inference(s) from which this gene sequence was inferred</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5species/">V1p5species</a></td>
-<td>0..1 <br/> <a href="../V1p5Species/">V1p5Species</a></td>
+<td>0..1 <br/> <a href="../V1p5SpeciesOntology/">V1p5SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -520,13 +520,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5species_subgroup_type/">V1p5species_subgroup_type</a></td>
-<td>0..1 <br/> <a href="../V1p5SpeciesSubgroupType/">V1p5SpeciesSubgroupType</a></td>
+<td>0..1 <br/> <a href="../V1p5SpeciesSubgroupTypeEnum/">V1p5SpeciesSubgroupTypeEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5status/">V1p5status</a></td>
-<td>0..1 <br/> <a href="../V1p5Status/">V1p5Status</a></td>
+<td>0..1 <br/> <a href="../V1p5StatusEnum/">V1p5StatusEnum</a></td>
 <td>Status of record, assumed active if the field is not present</td>
 <td>direct</td>
 </tr>
@@ -562,7 +562,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5j_codon_frame/">V1p5j_codon_frame</a></td>
-<td>0..1 <br/> <a href="../V1p5JCodonFrame/">V1p5JCodonFrame</a></td>
+<td>0..1 <br/> <a href="../V1p5JCodonFrameEnum/">V1p5JCodonFrameEnum</a></td>
 <td>Codon position of the first nucleotide in the 'coding_sequence' field</td>
 <td>direct</td>
 </tr>
@@ -706,7 +706,7 @@
 </tr>
 <tr>
 <td><a href="../V1p5curational_tags/">V1p5curational_tags</a></td>
-<td>* <br/> <a href="../V1p5CurationalTags/">V1p5CurationalTags</a></td>
+<td>* <br/> <a href="../V1p5CurationalTagsEnum/">V1p5CurationalTagsEnum</a></td>
 <td>Controlled-vocabulary tags applied to this description</td>
 <td>direct</td>
 </tr>
@@ -908,7 +908,7 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     - V1p5GermlineSet
-    range: string
+    range: integer
   V1p5release_date:
     name: V1p5release_date
     annotations:
@@ -947,7 +947,6 @@ attributes:
     alias: V1p5label
     owner: V1p5AlleleDescription
     domain_of:
-    - V1p5TimePoint
     - V1p5AlleleDescription
     - V1p5DocumentedAllele
     - V1p5DeletedGene
@@ -1007,7 +1006,7 @@ attributes:
     - V1p5GermlineSet
     - V1p5Genotype
     - V1p5Rearrangement
-    range: V1p5Locus
+    range: V1p5LocusEnum
   V1p5chromosome:
     name: V1p5chromosome
     annotations:
@@ -1036,7 +1035,7 @@ attributes:
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
-    range: V1p5SequenceType
+    range: V1p5SequenceTypeEnum
   V1p5functional:
     name: V1p5functional
     annotations:
@@ -1065,7 +1064,7 @@ attributes:
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
-    range: V1p5InferenceType
+    range: V1p5InferenceTypeEnum
   V1p5species:
     name: V1p5species
     annotations:
@@ -1081,7 +1080,7 @@ attributes:
     - V1p5AlleleDescription
     - V1p5GermlineSet
     - V1p5Subject
-    range: V1p5Species
+    range: V1p5SpeciesOntology
   V1p5species_subgroup:
     name: V1p5species_subgroup
     annotations:
@@ -1112,7 +1111,7 @@ attributes:
     domain_of:
     - V1p5AlleleDescription
     - V1p5GermlineSet
-    range: V1p5SpeciesSubgroupType
+    range: V1p5SpeciesSubgroupTypeEnum
   V1p5status:
     name: V1p5status
     annotations:
@@ -1126,7 +1125,7 @@ attributes:
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
-    range: V1p5Status
+    range: V1p5StatusEnum
   V1p5subgroup_designation:
     name: V1p5subgroup_designation
     annotations:
@@ -1214,7 +1213,7 @@ attributes:
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
-    range: V1p5JCodonFrame
+    range: V1p5JCodonFrameEnum
   V1p5gene_start:
     name: V1p5gene_start
     annotations:
@@ -1570,7 +1569,7 @@ attributes:
     owner: V1p5AlleleDescription
     domain_of:
     - V1p5AlleleDescription
-    range: V1p5CurationalTags
+    range: V1p5CurationalTagsEnum
     multivalued: true
 
 </code></pre>

@@ -218,8 +218,8 @@
 
 
 
-    MHCGenotype --&gt; "0..1" MhcClass : mhc_class
-    click MhcClass href "../MhcClass"
+    MHCGenotype --&gt; "0..1" MhcClassEnum : mhc_class
+    click MhcClassEnum href "../MhcClassEnum"
 
 
       MHCGenotype : mhc_genotype_id
@@ -248,7 +248,7 @@
 </tr>
 <tr>
 <td><a href="../mhc_class/">mhc_class</a></td>
-<td>0..1 <br/> <a href="../MhcClass/">MhcClass</a></td>
+<td>0..1 <br/> <a href="../MhcClassEnum/">MhcClassEnum</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -352,7 +352,7 @@ attributes:
     domain_of:
     - MHCGenotype
     - ReceptorReactivity
-    range: MhcClass
+    range: MhcClassEnum
   mhc_alleles:
     name: mhc_alleles
     annotations:

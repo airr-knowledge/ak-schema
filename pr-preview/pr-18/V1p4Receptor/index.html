@@ -210,8 +210,8 @@
 
 
 
-    V1p4Receptor --&gt; "0..1" V1p4ReceptorType : V1p4receptor_type
-    click V1p4ReceptorType href "../V1p4ReceptorType"
+    V1p4Receptor --&gt; "0..1" V1p4ReceptorTypeEnum : V1p4receptor_type
+    click V1p4ReceptorTypeEnum href "../V1p4ReceptorTypeEnum"
 
 
       V1p4Receptor : V1p4receptor_variable_domain_1_aa
@@ -221,8 +221,8 @@
 
 
 
-    V1p4Receptor --&gt; "0..1" V1p4ReceptorVariableDomain1Locus : V1p4receptor_variable_domain_1_locus
-    click V1p4ReceptorVariableDomain1Locus href "../V1p4ReceptorVariableDomain1Locus"
+    V1p4Receptor --&gt; "0..1" V1p4ReceptorVariableDomain1LocusEnum : V1p4receptor_variable_domain_1_locus
+    click V1p4ReceptorVariableDomain1LocusEnum href "../V1p4ReceptorVariableDomain1LocusEnum"
 
 
       V1p4Receptor : V1p4receptor_variable_domain_2_aa
@@ -232,8 +232,8 @@
 
 
 
-    V1p4Receptor --&gt; "0..1" V1p4ReceptorVariableDomain2Locus : V1p4receptor_variable_domain_2_locus
-    click V1p4ReceptorVariableDomain2Locus href "../V1p4ReceptorVariableDomain2Locus"
+    V1p4Receptor --&gt; "0..1" V1p4ReceptorVariableDomain2LocusEnum : V1p4receptor_variable_domain_2_locus
+    click V1p4ReceptorVariableDomain2LocusEnum href "../V1p4ReceptorVariableDomain2LocusEnum"
 
 
 
@@ -264,7 +264,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4receptor_type/">V1p4receptor_type</a></td>
-<td>0..1 <br/> <a href="../V1p4ReceptorType/">V1p4ReceptorType</a></td>
+<td>0..1 <br/> <a href="../V1p4ReceptorTypeEnum/">V1p4ReceptorTypeEnum</a></td>
 <td>The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (T...</td>
 <td>direct</td>
 </tr>
@@ -276,7 +276,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4receptor_variable_domain_1_locus/">V1p4receptor_variable_domain_1_locus</a></td>
-<td>0..1 <br/> <a href="../V1p4ReceptorVariableDomain1Locus/">V1p4ReceptorVariableDomain1Locus</a></td>
+<td>0..1 <br/> <a href="../V1p4ReceptorVariableDomain1LocusEnum/">V1p4ReceptorVariableDomain1LocusEnum</a></td>
 <td>Locus from which the variable domain in receptor_variable_domain_1_aa origina...</td>
 <td>direct</td>
 </tr>
@@ -288,7 +288,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4receptor_variable_domain_2_locus/">V1p4receptor_variable_domain_2_locus</a></td>
-<td>0..1 <br/> <a href="../V1p4ReceptorVariableDomain2Locus/">V1p4ReceptorVariableDomain2Locus</a></td>
+<td>0..1 <br/> <a href="../V1p4ReceptorVariableDomain2LocusEnum/">V1p4ReceptorVariableDomain2LocusEnum</a></td>
 <td>Locus from which the variable domain in receptor_variable_domain_2_aa origina...</td>
 <td>direct</td>
 </tr>
@@ -394,7 +394,7 @@ attributes:
     owner: V1p4Receptor
     domain_of:
     - V1p4Receptor
-    range: V1p4ReceptorType
+    range: V1p4ReceptorTypeEnum
   V1p4receptor_variable_domain_1_aa:
     name: V1p4receptor_variable_domain_1_aa
     annotations:
@@ -426,7 +426,7 @@ attributes:
     owner: V1p4Receptor
     domain_of:
     - V1p4Receptor
-    range: V1p4ReceptorVariableDomain1Locus
+    range: V1p4ReceptorVariableDomain1LocusEnum
   V1p4receptor_variable_domain_2_aa:
     name: V1p4receptor_variable_domain_2_aa
     annotations:
@@ -458,7 +458,7 @@ attributes:
     owner: V1p4Receptor
     domain_of:
     - V1p4Receptor
-    range: V1p4ReceptorVariableDomain2Locus
+    range: V1p4ReceptorVariableDomain2LocusEnum
   V1p4receptor_ref:
     name: V1p4receptor_ref
     annotations:

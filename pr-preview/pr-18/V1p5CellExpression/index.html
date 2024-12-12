@@ -210,15 +210,15 @@
 
 
 
-    V1p5CellExpression --&gt; "0..1" V1p5Property : V1p5property
-    click V1p5Property href "../V1p5Property"
+    V1p5CellExpression --&gt; "0..1" V1p5PropertyOntology : V1p5property
+    click V1p5PropertyOntology href "../V1p5PropertyOntology"
 
 
       V1p5CellExpression : V1p5property_type
 
-      V1p5CellExpression : V1p5repertoire_id
+      V1p5CellExpression : V1p5property_value
 
-      V1p5CellExpression : V1p5value
+      V1p5CellExpression : V1p5repertoire_id
 
 
 </div>
@@ -266,14 +266,14 @@
 </tr>
 <tr>
 <td><a href="../V1p5property/">V1p5property</a></td>
-<td>0..1 <br/> <a href="../V1p5Property/">V1p5Property</a></td>
+<td>0..1 <br/> <a href="../V1p5PropertyOntology/">V1p5PropertyOntology</a></td>
 <td>Name of the property observed, typically a gene or antibody identifier (and l...</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../V1p5value/">V1p5value</a></td>
+<td><a href="../V1p5property_value/">V1p5property_value</a></td>
 <td>0..1 <br/> <a href="../Float/">Float</a></td>
-<td></td>
+<td>Level at which the property was observed in the experiment (non-normalized)</td>
 <td>direct</td>
 </tr>
 </tbody>
@@ -315,7 +315,7 @@ slots:
 - V1p5data_processing_id
 - V1p5property_type
 - V1p5property
-- V1p5value
+- V1p5property_value
 
 </code></pre>
 </details>
@@ -351,16 +351,13 @@ attributes:
     range: string
   V1p5repertoire_id:
     name: V1p5repertoire_id
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: V1p5repertoire_id
     owner: V1p5CellExpression
     domain_of:
     - V1p5Repertoire
+    - V1p5RepertoireGroupDetail
     - V1p5Rearrangement
     - V1p5Clone
     - V1p5Cell
@@ -419,19 +416,19 @@ attributes:
     owner: V1p5CellExpression
     domain_of:
     - V1p5CellExpression
-    range: V1p5Property
-  V1p5value:
-    name: V1p5value
+    range: V1p5PropertyOntology
+  V1p5property_value:
+    name: V1p5property_value
     annotations:
       nullable:
         tag: nullable
         value: true
+    description: Level at which the property was observed in the experiment (non-normalized).
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: V1p5value
+    alias: V1p5property_value
     owner: V1p5CellExpression
     domain_of:
-    - V1p5TimePoint
     - V1p5CellExpression
     range: float
 

@@ -212,8 +212,8 @@
 
 
 
-    Sample --&gt; "0..1" CollectionTimePointRelativeUnit : collection_time_point_relative_unit
-    click CollectionTimePointRelativeUnit href "../CollectionTimePointRelativeUnit"
+    Sample --&gt; "0..1" CollectionTimePointRelativeUnitOntology : collection_time_point_relative_unit
+    click CollectionTimePointRelativeUnitOntology href "../CollectionTimePointRelativeUnitOntology"
 
 
       Sample : disease_state_sample
@@ -227,8 +227,8 @@
 
 
 
-    Sample --&gt; "0..1" Tissue : tissue
-    click Tissue href "../Tissue"
+    Sample --&gt; "0..1" TissueOntology : tissue
+    click TissueOntology href "../TissueOntology"
 
 
 
@@ -259,7 +259,7 @@
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>0..1 <br/> <a href="../Tissue/">Tissue</a></td>
+<td>0..1 <br/> <a href="../TissueOntology/">TissueOntology</a></td>
 <td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
@@ -283,7 +283,7 @@
 </tr>
 <tr>
 <td><a href="../collection_time_point_relative_unit/">collection_time_point_relative_unit</a></td>
-<td>0..1 <br/> <a href="../CollectionTimePointRelativeUnit/">CollectionTimePointRelativeUnit</a></td>
+<td>0..1 <br/> <a href="../CollectionTimePointRelativeUnitOntology/">CollectionTimePointRelativeUnitOntology</a></td>
 <td>Unit of Sample collection time</td>
 <td>direct</td>
 </tr>
@@ -398,7 +398,7 @@ attributes:
     - Specimen
     - Sample
     - SampleProcessing
-    range: Tissue
+    range: TissueOntology
   anatomic_site:
     name: anatomic_site
     annotations:
@@ -459,7 +459,7 @@ attributes:
     domain_of:
     - Sample
     - SampleProcessing
-    range: CollectionTimePointRelativeUnit
+    range: CollectionTimePointRelativeUnitOntology
   collection_time_point_reference:
     name: collection_time_point_reference
     annotations:

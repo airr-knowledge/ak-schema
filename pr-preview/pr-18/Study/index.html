@@ -219,8 +219,8 @@
 
 
 
-    Study --&gt; "*" KeywordsStudy : keywords_study
-    click KeywordsStudy href "../KeywordsStudy"
+    Study --&gt; "*" KeywordsStudyEnum : keywords_study
+    click KeywordsStudyEnum href "../KeywordsStudyEnum"
 
 
       Study : lab_address
@@ -242,8 +242,8 @@
 
 
 
-    Study --&gt; "0..1" StudyType : study_type
-    click StudyType href "../StudyType"
+    Study --&gt; "0..1" StudyTypeOntology : study_type
+    click StudyTypeOntology href "../StudyTypeOntology"
 
 
       Study : submitted_by
@@ -276,7 +276,7 @@
 </tr>
 <tr>
 <td><a href="../study_type/">study_type</a></td>
-<td>0..1 <br/> <a href="../StudyType/">StudyType</a></td>
+<td>0..1 <br/> <a href="../StudyTypeOntology/">StudyTypeOntology</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -336,7 +336,7 @@
 </tr>
 <tr>
 <td><a href="../keywords_study/">keywords_study</a></td>
-<td>* <br/> <a href="../KeywordsStudy/">KeywordsStudy</a></td>
+<td>* <br/> <a href="../KeywordsStudyEnum/">KeywordsStudyEnum</a></td>
 <td>Keywords describing properties of one or more data sets in a study</td>
 <td>direct</td>
 </tr>
@@ -471,7 +471,7 @@ attributes:
     domain_of:
     - Investigation
     - Study
-    range: StudyType
+    range: StudyTypeOntology
   study_description:
     name: study_description
     annotations:
@@ -624,7 +624,7 @@ attributes:
     owner: Study
     domain_of:
     - Study
-    range: KeywordsStudy
+    range: KeywordsStudyEnum
     multivalued: true
   adc_publish_date:
     name: adc_publish_date

@@ -210,8 +210,8 @@
 
 
 
-    V1p4Cell --&gt; "0..1" V1p4CellSubset : V1p4cell_subset
-    click V1p4CellSubset href "../V1p4CellSubset"
+    V1p4Cell --&gt; "0..1" V1p4CellSubsetOntology : V1p4cell_subset
+    click V1p4CellSubsetOntology href "../V1p4CellSubsetOntology"
 
 
       V1p4Cell : V1p4data_processing_id
@@ -262,7 +262,7 @@
 </tr>
 <tr>
 <td><a href="../V1p4cell_subset/">V1p4cell_subset</a></td>
-<td>0..1 <br/> <a href="../V1p4CellSubset/">V1p4CellSubset</a></td>
+<td>0..1 <br/> <a href="../V1p4CellSubsetOntology/">V1p4CellSubsetOntology</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -412,7 +412,7 @@ attributes:
     - V1p4CellProcessing
     - V1p4Cell
     - V1p4SampleProcessing
-    range: V1p4CellSubset
+    range: V1p4CellSubsetOntology
   V1p4cell_phenotype:
     name: V1p4cell_phenotype
     annotations:

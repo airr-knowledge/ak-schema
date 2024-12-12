@@ -211,8 +211,8 @@
 
 
 
-    TimePoint --&gt; "0..1" TimePointUnit : time_point_unit
-    click TimePointUnit href "../TimePointUnit"
+    TimePoint --&gt; "0..1" TimePointUnitOntology : time_point_unit
+    click TimePointUnitOntology href "../TimePointUnitOntology"
 
 
       TimePoint : time_point_value
@@ -245,7 +245,7 @@
 </tr>
 <tr>
 <td><a href="../time_point_unit/">time_point_unit</a></td>
-<td>0..1 <br/> <a href="../TimePointUnit/">TimePointUnit</a></td>
+<td>0..1 <br/> <a href="../TimePointUnitOntology/">TimePointUnitOntology</a></td>
 <td>Unit of the time point</td>
 <td>direct</td>
 </tr>
@@ -353,7 +353,7 @@ attributes:
     owner: TimePoint
     domain_of:
     - TimePoint
-    range: TimePointUnit
+    range: TimePointUnitOntology
 
 </code></pre>
 </details>

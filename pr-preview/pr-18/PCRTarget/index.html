@@ -211,8 +211,8 @@
 
 
 
-    PCRTarget --&gt; "0..1" PcrTargetLocus : pcr_target_locus
-    click PcrTargetLocus href "../PcrTargetLocus"
+    PCRTarget --&gt; "0..1" PcrTargetLocusEnum : pcr_target_locus
+    click PcrTargetLocusEnum href "../PcrTargetLocusEnum"
 
 
       PCRTarget : reverse_pcr_primer_target_location
@@ -233,7 +233,7 @@
 <tbody>
 <tr>
 <td><a href="../pcr_target_locus/">pcr_target_locus</a></td>
-<td>0..1 <br/> <a href="../PcrTargetLocus/">PcrTargetLocus</a></td>
+<td>0..1 <br/> <a href="../PcrTargetLocusEnum/">PcrTargetLocusEnum</a></td>
 <td>Designation of the target locus</td>
 <td>direct</td>
 </tr>
@@ -339,7 +339,7 @@ attributes:
     owner: PCRTarget
     domain_of:
     - PCRTarget
-    range: PcrTargetLocus
+    range: PcrTargetLocusEnum
   forward_pcr_primer_target_location:
     name: forward_pcr_primer_target_location
     annotations:

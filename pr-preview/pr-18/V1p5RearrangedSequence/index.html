@@ -213,8 +213,8 @@
 
 
 
-    V1p5RearrangedSequence --&gt; "0..1" V1p5Derivation : V1p5derivation
-    click V1p5Derivation href "../V1p5Derivation"
+    V1p5RearrangedSequence --&gt; "0..1" V1p5DerivationEnum : V1p5derivation
+    click V1p5DerivationEnum href "../V1p5DerivationEnum"
 
 
       V1p5RearrangedSequence : V1p5observation_type
@@ -222,8 +222,8 @@
 
 
 
-    V1p5RearrangedSequence --&gt; "0..1" V1p5ObservationType : V1p5observation_type
-    click V1p5ObservationType href "../V1p5ObservationType"
+    V1p5RearrangedSequence --&gt; "0..1" V1p5ObservationTypeEnum : V1p5observation_type
+    click V1p5ObservationTypeEnum href "../V1p5ObservationTypeEnum"
 
 
       V1p5RearrangedSequence : V1p5repository_name
@@ -266,13 +266,13 @@
 </tr>
 <tr>
 <td><a href="../V1p5derivation/">V1p5derivation</a></td>
-<td>0..1 <br/> <a href="../V1p5Derivation/">V1p5Derivation</a></td>
+<td>0..1 <br/> <a href="../V1p5DerivationEnum/">V1p5DerivationEnum</a></td>
 <td>The class of nucleic acid that was used as primary starting material</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../V1p5observation_type/">V1p5observation_type</a></td>
-<td>0..1 <br/> <a href="../V1p5ObservationType/">V1p5ObservationType</a></td>
+<td>0..1 <br/> <a href="../V1p5ObservationTypeEnum/">V1p5ObservationTypeEnum</a></td>
 <td>The type of observation from which this sequence was drawn, such as direct se...</td>
 <td>direct</td>
 </tr>
@@ -425,7 +425,7 @@ attributes:
     owner: V1p5RearrangedSequence
     domain_of:
     - V1p5RearrangedSequence
-    range: V1p5Derivation
+    range: V1p5DerivationEnum
   V1p5observation_type:
     name: V1p5observation_type
     annotations:
@@ -441,7 +441,7 @@ attributes:
     owner: V1p5RearrangedSequence
     domain_of:
     - V1p5RearrangedSequence
-    range: V1p5ObservationType
+    range: V1p5ObservationTypeEnum
   V1p5curation:
     name: V1p5curation
     annotations:
