@@ -5,16 +5,16 @@ import sys
 import airr
 import uuid
 import numpy as np
-from repertoire import Repertoire
+from repertoire import CRepertoire
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
 
 
-class AIRRRepertoire(Repertoire):
+class AIRRRepertoire(CRepertoire):
     
     # Constructor - call the parent class constructor.
     def __init__(self, verbose, airr_map):
-        Repertoire.__init__(self, verbose, airr_map) 
+        CRepertoire.__init__(self, verbose, airr_map) 
 
     def process(self, filename, out_file):
 

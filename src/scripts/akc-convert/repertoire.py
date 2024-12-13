@@ -11,7 +11,7 @@ from parser import Parser
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
 
-class Repertoire(Parser):
+class CRepertoire(Parser):
     
     def __init__(self, verbose, airr_map):
         Parser.__init__(self, verbose, airr_map)
