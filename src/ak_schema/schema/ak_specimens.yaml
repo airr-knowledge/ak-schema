@@ -50,11 +50,12 @@ classes:
 #      - template_amount_unit
   LibraryPreparationProcessing:
     is_a: SpecimenProcessing
+    mixins: NucleicAcidProcessing # slots from AIRR class
     class_uri: OBI:00000711 # library preparation
-    slots:
-      - library_generation_method # From ADC NucleicAcidProcessing
-      - library_generation_protocol
-      - library_generation_kit_version
+#    slots:
+#      - library_generation_method # From ADC NucleicAcidProcessing
+#      - library_generation_protocol
+#      - library_generation_kit_version
 
   Assay:
     is_a: PlannedProcess
@@ -66,13 +67,14 @@ classes:
       - assay_type # CURIE of OBI name for assay e.g. OBI:1110179
       - target_entity_type
 
-  ReceptorRepertoireSequencingAssay:
+  AIRRSequencingAssay:
     is_a: Assay
+    mixins: SequencingRun
     class_uri: OBI:0600047
-    slots:
-      - pcr_target
-      - complete_sequences
-      - physical_linkage
+#    slots:
+#      - pcr_target
+#      - complete_sequences
+#      - physical_linkage
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
