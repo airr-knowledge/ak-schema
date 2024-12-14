@@ -110,19 +110,12 @@ slots:
     description: Identifier for external archival resource for the investigation, e.g., BioProject
     slot_uri: schema:identifier
     range: uriorcurie
-  study_type:
-    description: Type of study design
-    slot_uri: rdf:type
-    range: StudyType
   inclusion_criteria:
     description: Participants in an investigation must meet this criteria
     range: string
   exclusion_criteria:
     description: Participants are excluded from an investigation if they meet this criteria
     range: string
-  release_date:
-    description: Initial release of the investigation and its data
-    range: datetime
   update_date:
     description: Subsequence updates to the investigation or its data
     range: datetime
@@ -189,38 +182,36 @@ slots:
     description: The study arm that a participant is a member of
     slot_uri: RO:0002350 # member of
     range: StudyArm
-  species:
-    description: The species of a participant
-    slot_uri: rdf:type
-    range: Species
+#  species:
+#    description: The species of a participant
+#    slot_uri: rdf:type
+#    range: SpeciesOntology
   biological_sex:
     description: The biological sex of a participant
-    range: BiologicalSex
+    range: BiologicalSexOntology
     slot_uri: RO:0000053 # has_characteristic
   phenotypic_sex:
     description: The phenotypic sex of a participant
-    range: PhenotypicSex
+    range: PhenotypicSexOntology
     slot_uri: RO:0000053 # has_characteristic
   age:
     description: The age of a participant relative to age_event
-  age_unit:
-    description: Units used to describe the age
-  age_event:
-    description: The event to which the age is relative
-    range: LifeEvent
-  race:
-    description: The race of a participant
-    range: Race
-  ethnicity:
-    description: The ethnicity of a participant
-    range: Ethnicity
+#  age_event:
+#    description: The event to which the age is relative
+#    range: LifeEvent
+#  race:
+#    description: The race of a participant
+#    range: RaceOntology
+#  ethnicity:
+#    description: The ethnicity of a participant
+#    range: EthnicityOntology
   geolocation:
     description: The geolocation of a participant at birth
-    range: Geolocation
+    range: GeolocationOntology
     slot_uri: RO:0001025 # located in
   strain:
     description: The strain of the participant (non-human study participants)
-    range: Strain
+    range: StrainEnum
 
   study_arms:
     description: The study arms that are relevant for a study event
@@ -236,7 +227,7 @@ slots:
     range: StudyEvent
   life_event_type:
     description: The specific type of a life event
-    range: LifeEventProcess
+    range: LifeEventProcessOntology
     slot_uri: rdf:type
     # TODO: enum
   t0_event:
@@ -259,40 +250,33 @@ slots:
   exposure_material:
     description: The material relevant to an immune exposure
     slot_uri: RO:0000057 # has participant
-    range: ExposureMaterial
+    range: ExposureMaterialOntology
   disease:
     description: The disease relevant to an immune exposure
-    range: Disease
-  disease_stage:
-    description: The stage of the disease relevant to an immune exposure
-    range: DiseaseStage
+    range: DiseaseOntology
+#  disease_stage:
+#    description: The stage of the disease relevant to an immune exposure
+#    range: DiseaseStageOntology
   disease_severity:
     description: The severity of the disease relevant to an immune exposure
     # TODO: range: DiseaseSeverity
 
 enums:
-  StudyType:
-    reachable_from:
-      source_ontology: obo:ncit
-      source_nodes:
-        - NCIT:C63536 ## study
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
 
-  Species:
-    permissible_values:
-      Homo sapiens (human):
-        meaning: NCBITaxon:9606
-      Mus musculus (mouse):
-        meaning: NCBITaxon:10090
-  BiologicalSex:
+#
+#  SpeciesOntology:  # now in ak_airr
+#    permissible_values:
+#      Homo sapiens (human):
+#        meaning: NCBITaxon:9606
+#      Mus musculus (mouse):
+#        meaning: NCBITaxon:10090
+  BiologicalSexOntology:
     permissible_values:
       female:
         meaning: PATO:0020002
       male:
         meaning: PATO:0020001
-  PhenotypicSex:
+  PhenotypicSexOntology:
     permissible_values:
       female:
         meaning: PATO:0000383
@@ -303,7 +287,7 @@ enums:
       intersex: # AIRR
       pooled: # AIRR
       not collected: # AIRR
-  Race:
+  RaceOntology:
     permissible_values:
       American Indian or Alaska Native:
         meaning: OMRSE:00000215
@@ -340,7 +324,7 @@ enums:
       White, Asian, Black:
       White, Caucasian:
       White-British:
-  Ethnicity:
+  EthnicityOntology:
     permissible_values:
       Hispanic or Latino:
         meaning: OMRSE:00000207
@@ -368,7 +352,7 @@ enums:
       SE Asian:
       Unknown Ethnicity:
       White:
-  Geolocation:
+  GeolocationOntology:
     permissible_values:
       "US: New York":
         meaning: GAZ:00002514
@@ -422,7 +406,7 @@ enums:
         meaning: GAZ:00002888
       "US: Kansas":
         meaning: GAZ:00004435
-  Strain:
+  StrainEnum:
     permissible_values:
       1D2beta:
       BALB/cByJ:
@@ -433,7 +417,7 @@ enums:
       LDLR+/+:
       LDLR-/-:
       pet shop mouse:
-  LifeEventProcess:
+  LifeEventProcessOntology:
     permissible_values:
       Documented exposure without evidence for disease:
         meaning: ONTIE:0003305
@@ -443,7 +427,7 @@ enums:
         meaning: OBI:1110061
       specimen collection:
         meaning: OBI:0000659
-  ExposureMaterial:
+  ExposureMaterialOntology:
     permissible_values:
       Influenza A virus:
         meaning: NCBITaxon:11320
@@ -460,7 +444,7 @@ enums:
       Dryvax:
         meaning: VO:0000035
       # TODO: more values
-  Disease:
+  DiseaseOntology:
     permissible_values:
       healthy:
         meaning: ONTIE:000342
@@ -471,7 +455,7 @@ enums:
       dengue hemorrhagic fever:
         meaning: DOID:12206
       # TODO: more values
-  DiseaseStage:
+  DiseaseStageOntology:
     permissible_values:
       acute disease course:
         meaning: OGMS:0000094

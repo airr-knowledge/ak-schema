@@ -1,513 +1,472 @@
-# This code is a derivitave of the airr_flatten code found here:
-# https://github.com/sfu-ireceptor/sandbox/tree/master/airr-spec-flatten
-# and is developed under this license:
-# https://github.com/sfu-ireceptor/sandbox/blob/master/LICENSE
-import collections
 import argparse
 import yaml
 import sys
-# This requires the AIRR python module to be installed.
-import airr
-from airr.schema import Schema
-
-def processField(field, field_spec, block, required_fields, field_path,
-                    airr_class, airr_api_query, airr_api_response,
-                    labels, table, verbose):
-
-        # Get the required fields for this schema object
-        if verbose:
-            print("**** processField: Field = %s\n"%(field))
-            print("**** processField: block=%s,path=%s,class=%s,query=%s,respsonse=%s\n"%(block,field_path,airr_class,airr_api_query,airr_api_response))
-            print("**** processField: field spec = %s\n"%(field_spec))
-
-        # Create a new dictionary entry for the field.
-        field_dict = dict()
-        # Set up the basic field mappings for the stanard iReceptor fields.
-        field_dict['airr'] = field
-        field_dict['airr_spec'] = True
-        # If the field is required, set the attribute.
-        if field in required_fields:
-            field_dict['airr_required'] = True
-        else:
-            field_dict['airr_required'] = False
-        field_dict['ir_class'] = airr_class
-        field_dict['ir_subclass'] = block
-        field_dict['ir_adc_api_query'] = airr_api_query + field
-        field_dict['ir_adc_api_response'] = airr_api_response + field
-        field_dict['airr_is_array'] = False
-        field_tag = field_dict['ir_adc_api_query']+"_"+airr_class+"_"+block
-
-        if verbose:
-            print("**** processField: Field spec for %s = %s\n"%(airr_api_query+field,field_spec))
-        # We want to append a field to our table of fields in only those
-        # cases where the field is actually a leaf node in the "tree" of the spec.
-        # By default, we assume we want to add the field.
-        append = True
-        # If the field is a $ref to another object, then it is not a field in and
-        # of itself that we will refer to in the AIRR config file. We later recurse
-        # on the $ref object, to pick up all of the fields within the $ref. The one special
-        # case to this is if the $ref is to the AIRR Ontology object, for which we
-        # have to do some special processing.
-        if '$ref' in field_spec and not field_spec['$ref'] == "#/Ontology":
-            append = True
-            label = 'airr_type'
-            schema_ref = field_spec['$ref']
-            schema = schema_ref.split('/')[1]
-            field_dict[label] = schema
-            if verbose:
-                print("**** processField: No append for $ref - %s\n"%(field_tag))
-        # If the field is an array of objects (the items for the array contain
-        # objects of or multiple fields (allOf)) then we recurse on the $ref objects
-        # and we don't want to add this field to our final field table. If it an array
-        # of basic types (integer, string) then we do want to add it to the field table.
-        if 'type' in field_spec and field_spec['type'] == 'array':
-            if '$ref' in field_spec['items']:
-                append = True
-                field_dict['airr_is_array'] = True
-                label = 'airr_array_schema'
-                if not label in labels:
-                    labels.append(label)
-                # Add the value of the $ref object to the dictionary
-                schema_ref = field_spec['items']['$ref']
-                schema = schema_ref.split('/')[1]
-                field_dict[label] = schema
-                if verbose:
-                    print("**** processField: No append for arrays of $ref - %s\n"%(field_tag))
-            elif 'allOf' in field_spec['items'] or ('type' in field_spec['items'] and field_spec['items']['type'] == 'object'):
-                append = True
-            else:
-                append = True
-                field_dict['airr_is_array'] = True
-
-        # If the field is an object then we recurse on the object's fields and we don't
-        # want to add this field to our field table.
-        if 'type' in field_spec and field_spec['type'] == 'object':
-            append = False
-            if verbose:
-                print("**** processField: No append for objects - %s\n"%(field_tag))
-
-        # Iterate over the fields specs as required to set the fields attributes.
-        for k,v in field_spec.items():
-            if verbose:
-                print("**** processField: Field = %s,%s\n"%(k,v))
-            # A field in the AIRR specification either has "normal" field specs
-            # such as type, description, and example or it has AIRR specific field
-            # specifications in a custom x-airr object. This custom object has things
-            # about the MiAIRR standard and the ADC API. We have to handle both.
-
-            # All fields are by default nullable so we set xairr_nullable here.
-            field_dict['airr_nullable'] = True
-            # Make sure it is in the labels.
-            if not 'airr_nullable' in labels:
-                labels.append('airr_nullable')
-            # Handle the x-airr schema objects
-            if k == 'x-airr':
-                # Iterated over the x-airr schema objects.
-                for xairr_k, xairr_v in v.items():
-                    # If it is an ontology object, record the ID and label
-                    if xairr_k == 'ontology':
-                        label = 'airr_ontology_top_id'
-                        if not label in labels:
-                            labels.append(label)
-                        # Add the value of this field to the column.
-                        field_dict[label] = xairr_v['top_node']['id']
-
-                        label = 'airr_ontology_top_label'
-                        if not label in labels:
-                            labels.append(label)
-                        # Add the value of this field to the column.
-                        field_dict[label] = xairr_v['top_node']['label']
-                    # The miairr tag is a controlled vocabulary of "essential",
-                    # "important", or "defined". It controls the setting of two
-                    # columns in the mapping, airr_miairr and airr_required.
-                    elif xairr_k == 'miairr':
-                        # The miairr tag is a controlled vocabulary of "essential",
-                        # "important", or "defined". If this field exists and is 
-                        # set to one of these, then the airr_miairr label should be
-                        # set to True as it is a MiAIRR field. If it isn't one of these
-                        # values then it is an error.
-                        if xairr_v in ['essential', 'important', 'defined']:
-                            label = 'airr_miairr'
-                            if not label in labels:
-                                labels.append(label)
-                            # Add the value of this field to the column.
-                            field_dict[label] = True
-                        else:
-                            print("Warning: Invalid x_airr:miairr field %s"%(xairr_v))
-                    # AIRR nullable is by default true, so we set overwrite the default
-                    # if we get a value here.
-                    elif xairr_k == 'nullable':
-                        if xairr_v == False:
-                            field_dict['airr_nullable'] = False
-                    else:
-                        # If it is a string value, we want to clean it up, in case
-                        # there is some extra white space...
-                        value = xairr_v
-                        if isinstance(value, str):
-                            value = value.strip()
-                        # Create a new label for this field, as we want to keep track
-                        # of this as a column in our table. We prefic all of the AIRR
-                        # columns with airr_ to differentiate them.
-                        label = 'airr_'+xairr_k
-                        # Only add it if it isn't in the labels already.
-                        if not label in labels:
-                            labels.append(label)
-                        # Add the value if this field to the column.
-                        field_dict[label] = value
-            else:
-                # We are processing normal YAML spec fields.
-                if k == '$ref':
-                    # If the $ref is to an Ontology, mark the type as ontology.
-                    # If the $ref is to another object we don't do anything here.
-                    if v == "#/Ontology":
-                        field_dict["airr_type"] = "ontology"
-                        # We want to add on a .value qualifier to the ADC API variable
-                        # names as we return the value component of the ontology in
-                        # the API.
-                        field_dict['ir_adc_api_query'] = field_dict['ir_adc_api_query'] + '.label'
-                        field_dict['ir_adc_api_response'] = field_dict['ir_adc_api_response'] + '.label'
-                elif k == 'items':
-                    # Handle a list of items, meaning we have an array. In the AIRR
-                    # specification we can have an array of $ref objects or an
-                    # "allOf" directive of $ref objects or a an actual object,
-                    # which means we have to process each element.
-                    
-                    if "type" in v and v["type"] == "object":
-                        properties = v["properties"]
-                        if verbose:
-                            print("**** processField: PROPERTIES2 = %s\n"%(properties))
-                        for prop_k,prop_v in properties.items():
-                            if verbose:
-                                print("**** processField: field, value = %s,%s\n"%(prop_k,prop_v))
-                            # Note the API response has a .0. in it because this
-                            # is an array.
-                            labels, table = processField(prop_k, prop_v, block, required_fields,
-                                                      field,
-                                                      airr_class,
-                                                      airr_api_query+field+".",
-                                                      airr_api_response+field+".0.",
-                                                      labels, table, verbose)
-                    for item_key, item_value in v.items():
-                        if item_key == 'type':
-                            # This is the special case of handling a "type" for an "array". 
-                            # The only arrays that have a type are array fields. If this
-                            # is the case, we want to set the type of the array field.
-                            # First add it to the labels if we don't already have it.
-                            label = 'airr_type'
-                            if not label in labels:
-                                labels.append(label)
-                            # Strip off any whitespace if it is a string...
-                            value = item_value 
-                            if isinstance(v, str):
-                                value = v.strip()
-                            field_dict[label] = value
-                elif k == 'example':
-                    # Processing an example - some special cases...
-                    # First add it to the labels if we don't already have it.
-                    label = 'airr_'+k
-                    if not label in labels:
-                        labels.append(label)
-                    if isinstance(v,dict):
-                        # If it is a dict() then we have an ontology term, process
-                        # the ID and value for the ontology.
-                        field_dict[label] = str(v['id']) + ', ' + v['label']
-                    elif not isinstance(v, str):
-                        # If it isn't a string, store it
-                        field_dict[label] = v
-                    else:
-                        # If it is a string, then we want to strip it in case it has
-                        # odd white space...
-                        field_dict[label] = v.strip()
-                elif k == 'enum':
-                    # First add it to the labels if we don't already have it.
-                    label = 'airr_'+k
-                    if not label in labels:
-                        labels.append(label)
-                    # Handle the enum case, where we concatenante the enum fields so
-                    # we can track them.
-                    value = ''
-                    enum_len = len(v)
-                    count = 0
-                    # Iterate over the enum values and add them to a string.
-                    for enum_val in v:
-                        if count > 0: 
-                            # We need to handle none as this is now a possible
-                            # enum value.
-                            if enum_val is None:
-                                enum_val = 'null'
-                            value = value + ',' + str(enum_val)
-                        else:
-                            value = str(enum_val)
-                        count = count + 1
-                    field_dict[label] = value
-                elif k == 'properties':
-                    if verbose:
-                        print("**** processField: PROPERTIES = %s,%s\n"%(k,v))
-                    for prop_k,prop_v in v.items():
-                        if verbose:
-                            print("**** processField: field, value = %s,%s\n"%(prop_k,prop_v))
-                        labels, table = processField(prop_k, prop_v, block, required_fields,
-                                                  field,
-                                                  airr_class,
-                                                  airr_api_query+field+".",
-                                                  airr_api_response+field+".",
-                                                  labels, table, verbose)
-                else:
-                    if verbose:
-                        print("**** processField: key, value = %s,%s\n"%(k,v))
-                    # If we get here, we are processing "normal" fields...
-                    # First add it to the labels if we don't already have it.
-                    label = 'airr_'+k
-                    if not label in labels:
-                        labels.append(label)
-                    # Strip off any whitespace if it is a string...
-                    value = v
-                    if isinstance(v, str):
-                        value = v.strip()
-                    field_dict[label] = value
-
-        # Finally, if append == True then we are processing a field and we need to add
-        # it to the field table.
-        if append:    
-            # Add the field to the table.
-            if verbose:
-                print("**** processField: Adding dict for field_tag = %s\n"%(field_tag))
-                print("**** processField: Adding dict for ir_adc_api_query = %s\n"%(field_dict['ir_adc_api_query']))
-            table[field_tag] = field_dict
-        else:
-            if verbose:
-                print("**** processField: NOT Adding dict for field_tag = %s\n"%(field_tag))
-                
-        # We are done, return the labels and the table.
-        return labels, table
-
-# Function to extract fields from a AIRR YAML specification into a
-# flat table. The function processes all $ref objects to build up
-# a table of entries with all fields in the YAML definition.
-#
-# Parameters:
-# - block: The schema block to extract.
-# - airr_class: The airr class field. For iReceptor this stays constant through the
-#   hierarchy, and is either "repertoire" or "rearrangement"
-# - airr_api_query: The hierarchical tag for the AIRR API query. This is essentially
-#   the query field that the API requires (e.g. study.study_id) and is built as we 
-#   traverse the heirarchy of the Repertoire object.
-# - airr_api_response: The hierarchical tag for the AIRR API response. This tells us
-#   the hierarchy of the object that this field needs to go in. It is similar to
-#   airr_api_query except for those objects that are arrays they are denoted with a
-#   .0. string (e.g. sample.0.sample_id denotes that sample_id is part of the sample
-#   array response.
-# - labels: An array of labels that have been found thus far in the query. When
-#   a new label is found it should be added to the labels array.
-# - table: An array of dictionaries, each row in the table is a field in the spec, and
-#   each dictionary a key value pair where the labels are the keys and the values
-#   are the field values for those labels. 
-#
-# Returns:
-# - labels: A new set of labels based on the labels provided plus any
-# added by the current object.
-# - table: An array of dictionaries, based on the table provided but with
-# new rows added as per the fields that were found in the current object.
-
-def extractBlock(block, airr_class, airr_api_query, airr_api_response, labels, table, verbose):
-
-    if verbose:
-        print("#### extractBlock %s\n"%(block))
-    # Use the AIRR library to get an AIRR Schema block for the current block.
-    try:
-        schema = Schema(block)
-    except Exception as e:
-        # Print an error message and exit
-        print(e)
-        sys.exit(1)
-
-    if verbose:
-        print("#### got a schema\n")
-
-    # Get the required fields for this schema object
-    required_fields = schema.required
-
-    # For each field in the schema, process it
-    for field in schema.properties:
-        if verbose:
-            print("#### extractBlock: processing property field %s\n"%(field))
-        field_spec = schema.properties[field]
-        if verbose:
-            print("#### extractBlock: field spec %s\n"%(field_spec))
-        labels, table = processField(field, field_spec, block, required_fields,"",
-                                     airr_class, airr_api_query, airr_api_response,
-                                     labels, table, verbose)
-
-    # We are done, return the labels and the table.
-    return labels, table
-
-def getArguments():
-    # Set up the command line parser
-    parser = argparse.ArgumentParser(
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        description=""
-    )
-
-    # The block to process
-    parser.add_argument("airr_block")
-    # Flag as to whether we generate enums or the basic slots
-    parser.add_argument(
-        "-e",
-        "--enums",
-        action="store_true",
-        help="Generate LinkML enums rather than slots.")
-    # Verbosity flag for debugging
-    parser.add_argument(
-        "-v",
-        "--verbose",
-        action="store_true",
-        help="Run the program in verbose mode. This option will generate debug output and may cause a problem with using the config file as a TSV file.")
+import logging
+import glob
+from datetime import datetime
 
 
-    # Parse the command line arguements.
-    options = parser.parse_args()
-    return options
+def get_arguments():
+    parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter, description="Script to convert AIRR openapi3 schema to LinkML")
 
-def convertCamelCase(word):
-    # Change _ to camel case as per LinkML naming. _ _ replaced with _
+    parser.add_argument("-a", "--airr_schema_yaml", type=str, help="Input openapi3 YAML file",
+                        default="../../airr_schema/airr-standards-v1.5/specs/airr-schema-openapi3.yaml")
+    parser.add_argument("-o", "--output_file", type=str, help="Output file to write the LinkML to",
+                        default="../../ak_schema/schema/ak_airr.yaml")
+    parser.add_argument("-f", "--ak_schema_folder", type=str, help="AK schema folder, for checking conflicts with existing schema",
+                        default="../../ak_schema/schema/")
+    parser.add_argument("-l", "--log_file", type=str, help="Log file to write any error occurring while generating LinkML",
+                        default="airr2akc.log")
+
+    parser.add_argument("-v", "--include_version_prefix", action="store_true",
+                        help="When this flag is specified, the AIRR version is included as a class prefix")
+    parser.add_argument("-c", "--include_class_prefix", action="store_true",
+                        help="When this flag is specified, the class name is included as a slot prefix")
+
+    return parser.parse_args()
+
+
+def snake_to_camel_case(word):
     new_word = ''.join('_' if x == '' else x.capitalize() for x in word.split('_'))
     return new_word
 
-if __name__ == "__main__":
-    # Get the command line arguments.
-    options = getArguments()
+def camel_to_snake_case(word):
+    return "".join([char if char.islower() else "_" + char.lower() for char in word]).lstrip("_")
 
-    # Create an empty table. This gets populated by the traversal of the YAML block
-    # that is processed.
-    table = collections.OrderedDict()
-    # Create an initial set of lables for the mapping file. These are mappings
-    # that don't exist in the YAML file but are needed for translation.
-    # TODO: Some of the labels below are not required for AKC LinkML generation,
-    # some of these are holdovers from the original akc_flatten code. Labels that
-    # are no longer needed can be removed.
-    labels = ['airr', 'airr_spec', 'airr_required', 'ir_class', 'ir_subclass',
-              'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
-    initial_labels = ['airr', 'ir_class', 'ir_subclass',
-                      'ir_adc_api_query', 'ir_adc_api_response', 'airr_is_array']
-    # Process the block provided. This will process any
-    # $ref entries in the YAML and build correct entries for each field.
-    # After completion, the labels array will be expanded with any new attribute
-    # labels, and the table will be an array of key, value pairs, one for each
-    # field/slot with the value a dictionary that contains relevant info to 
-    # generate the AKC LinkML slots and enums.
-    labels, table = extractBlock(options.airr_block, options.airr_block,
-                                 '', '', labels, table, options.verbose)
-
-    if options.verbose:
-        # Print out the header labels if in verbose mode.
-        for label in labels:
-            print(label,end='\t')
-        print("")
-
-    # Print out the AKC LinkML header
-    print('id: https://github.com/airr-knowledge/ak-schema')
-    print('name: ak-schema')
-    print('')
-
-    # Print out the appropriate class or enum block.
-    if not options.enums:
-        print('classes:')
-        # Class block has a list of the slots, which are the AIRR fields.
-        print('  %s:'%(options.airr_block))
-        print('    slots:')
-        # Iterate over the fields and print them out
-        for field, field_dict in table.items():
-            if 'airr' in field_dict:
-                if not options.enums:
-                    print('      - %s'%(field_dict['airr']))
-
-        print('')
-        print('slots:')
+def get_slot_range(slot_name, slot_yaml, version_prefix):
+    # if this is an array, get the type of the 'items' in the array
+    if "type" in slot_yaml and slot_yaml["type"] == "array":
+        slot_range = get_slot_range(slot_name, slot_yaml["items"], version_prefix)
+    elif "enum" in slot_yaml:
+        slot_range = f"{version_prefix}{snake_to_camel_case(slot_name)}Enum"
+    elif "$ref" in slot_yaml:
+        if slot_yaml["$ref"] == "#/Ontology":
+            slot_range = f"{version_prefix}{snake_to_camel_case(slot_name)}Ontology"
+        else:
+            slot_range = f"{version_prefix}{slot_yaml['$ref'].lstrip('#/')}"
+    elif "type" in slot_yaml and slot_yaml["type"] in ("string", "float", "integer", "boolean", "number"):
+        if slot_yaml["type"] == "string" and "format" in slot_yaml and slot_yaml["format"] in ("date", "date-time"):
+            slot_range = "datetime"
+        else:
+            slot_range = slot_yaml["type"]
+    # elif "x-airr" in slot_yaml and "format" in slot_yaml["x-airr"]:
+    #     slot_range = slot_yaml["x-airr"]["format"]  #
+    elif "type" in slot_yaml and slot_yaml["type"] == "object":
+        logging.error(f"**\n"
+                      f"** Error: Cannot determine range for slot '{slot_name}', omitting range...\n"
+                      f"**")
+        slot_range = None
     else:
-        print('enums:')
+        raise NotImplementedError(slot_yaml)
 
-    # Now print out the definition for each slot by iterating over the table.
-    for field, field_dict in table.items():
-        # For each row, generate a LinkML specification for the field
-        # Each field has a dictionary that is structured as follows.
-        # {'airr': 'study_id', 'airr_spec': True, 'airr_required': True, 'ir_class': 'Study',
-        #  'ir_subclass': 'Study', 'ir_adc_api_query': 'study_id', 'ir_adc_api_response': 'study_id',
-        #  'airr_is_array': False, 'airr_nullable': True, 'airr_type': 'string',
-        #  'airr_description': 'Unique ID assigned by study registry ...', 'airr_title': 'Study ID',
-        #  'airr_example': 'PRJNA001', 'airr_identifier': True, 'airr_miairr': True,
-        #  'airr_adc-query-support': True, 'airr_set': 1, 'airr_subset': 'study', 'airr_name': 'Study ID'}
-        #
-        # This should be sufficient for each field to build an appropriate AKC LinkML object.
-        if 'airr' in field_dict:
-            # Handle the enum output case
-            if options.enums:
-                # Convert the field to a camel case name as per LinkML standards
-                range_name = convertCamelCase(field_dict['airr'])
-                # If the field is an enum field with a controlled vocabulary, generate the enum
-                if 'airr_enum' in field_dict and 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
-                    print('%s:'%(range_name))
-                    print('  name: %s'%(range_name))
-                    print('  permissible_values:')
+    if slot_range == "number":
+        slot_range = "float"
 
-                    enum_array = field_dict['airr_enum'].split(',')
-                    for enum_str in enum_array:
-                        print('    %s:'%(enum_str))
-                # If the field is an onotology field generate the enum using the LinkML ontology description.
-                if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
-                    print('  %s:'%(range_name))
-                    print('    name: %s'%(range_name))
-                    if 'airr_ontology_top_id' in field_dict:
-                        print('    reachable_from:')
-                        print('      source_nodes:')
-                        print('        - %s'%(field_dict['airr_ontology_top_id']))
-                        print('      include_self: true')
-                        print('      relationship_types:')
-                        print('        - rdfs:subClassOf')
-                    elif 'airr_example' in field_dict:
-                        print('  permissible_values:')
-                        ontology_example_array = field_dict['airr_example'].split(',')
-                        print('    %s:'%(ontology_example_array[1]))
-                        print('      text: %s'%(ontology_example_array[1]))
-                        print('      meaning: %s'%(ontology_example_array[0]))
+    return slot_range
 
-            # Handle the slot output case.
-            else:
-                if options.verbose:
-                    print(field_dict)
-                # Slot name and description fields
-                print('  %s:'%(field_dict['airr']))
-                print('    name: %s'%(field_dict['airr']))
-                if 'airr_description' in field_dict:
-                    print('    description: %s'%(field_dict['airr_description']))
+def get_slot_annotation(slot_yaml):
+    annotations = dict()
 
-                # Handle the range, this is a bit complex depending on the field.
-                if 'airr_format' in field_dict and field_dict['airr_format'] == 'ontology':
-                    # Ontologies have the enum camel case object as the range
-                    print('    range: %s'%(convertCamelCase(field_dict['airr'])))
-                elif 'airr_format' in field_dict and field_dict['airr_format'] == 'controlled_vocabulary':
-                    # Controlled vocabularies have the enum camel case object as the range
-                    range_name = convertCamelCase(field_dict['airr'])
-                    print('    range: %s'%(range_name))
-                elif 'airr_is_array' in field_dict and field_dict['airr_is_array'] == True:
-                    # Arrays can have an object and require the multivalued attribute
-                    if 'airr_array_schema' in field_dict:
-                        print('    range: %s'%(field_dict['airr_array_schema']))
-                    print('    multivalued: true')
-                elif 'airr_type' in field_dict:
-                    # Just a normal field, range is the type
-                    print('    range: %s'%(field_dict['airr_type']))
+    if "nullable" in slot_yaml:
+        annotations["nullable"] = slot_yaml["nullable"]
 
-                # Print out some x-airr attributes such as required, nullable, and identifier
-                if 'airr_required' in field_dict:
-                    print('    required: %s'%(field_dict['airr_required']))
-                if 'airr_nullable' in field_dict:
-                    print('    annotations:')
-                    print('      nullable: %s'%(field_dict['airr_nullable']))
-                if 'airr_identifier' in field_dict:
-                    print('    identifier: %s'%(field_dict['airr_identifier']))
-                print('')
+    if "x-airr" in slot_yaml:
+        if "nullable" in slot_yaml["x-airr"]:
+            assert "nullable" not in annotations or annotations["nullable"] == slot_yaml["x-airr"]["nullable"], \
+                f"Found contradicting values for nullable in: {slot_yaml}"
+            annotations["nullable"] = slot_yaml["x-airr"]["nullable"]
 
-        
-    # We are done, return success
-    sys.exit(0)
+    return annotations
+
+def is_deprecated(slot_yaml):
+    return "x-airr" in slot_yaml and "deprecated" in slot_yaml["x-airr"] and slot_yaml["x-airr"]["deprecated"] == True
+
+def is_array(slot_yaml):
+    return "type" in slot_yaml and slot_yaml["type"] == "array"
+
+def is_multivalued(slot_yaml):
+    return is_array(slot_yaml) or "additionalProperties" in slot_yaml
+
+def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
+    if is_deprecated(slot_yaml):
+        return dict()
+
+    # Used for Tree/nodes only
+    if "additionalProperties" in slot_yaml and type(slot_yaml["additionalProperties"]) == dict:
+        slot_yaml = {**slot_yaml["additionalProperties"], **slot_yaml}
+
+    cls_prefix = cls_keyword + "_" if parsed_args.include_class_prefix else ""
+    pr_slot_name = f"{version_prefix}{cls_prefix}{orig_slot_name}"
+
+    slot = {pr_slot_name: {
+                "name": pr_slot_name,
+                "description": slot_yaml["description"].strip() if "description" in slot_yaml else "",
+                }}
+
+    if orig_slot_name.endswith("_type"):
+        slot[pr_slot_name]["slot_uri"] = "rdf:type"
+
+    slot_range = get_slot_range(orig_slot_name, slot_yaml, version_prefix)
+    if slot_range is not None:
+        slot[pr_slot_name]["range"] = slot_range
+
+    if is_multivalued(slot_yaml):
+        slot[pr_slot_name]["multivalued"] = True
+
+    # is_required = orig_slot_name in required_slots
+    # slot[pr_slot_name]["required"] = is_required
+
+    annotations = get_slot_annotation(slot_yaml)
+    if len(annotations) > 0:
+        slot[pr_slot_name]["annotations"] = annotations
+
+    return slot
+
+def get_all_slots(airr_yaml, keyword, version_prefix) -> dict:
+    all_slots = dict()
+
+    required_slots = airr_yaml[keyword]["required"] if "required" in airr_yaml[keyword] else []
+
+    for slot_name, slot_yaml in airr_yaml[keyword]["properties"].items():
+        all_slots.update(get_slot(slot_name, slot_yaml, required_slots, keyword, version_prefix))
+
+    return all_slots
+
+def get_ontology_enum(base_name, slot_yaml, keyword, version_prefix):
+    ontology_name = f"{version_prefix}{base_name}Ontology"
+
+    if "ontology" in slot_yaml["x-airr"]:
+        source_node = slot_yaml["x-airr"]["ontology"]["top_node"]["id"]
+
+        if source_node is not None:
+            return {"name": ontology_name,
+                    "reachable_from":
+                        {"source_nodes": [source_node],
+                         "include_self": True,
+                         "relationship_types": ["rdfs:subClassOf"]}}
+        else:
+            logging.error(f"**\n"
+                          f"** Error: Source node for ontology '{base_name}' (in '{keyword}') was not defined, omitting 'reachable_from'...\n"
+                          f"**   Expected to find some value in the field: x-airr/ontology/top_node/id\n"
+                          f"**   Instead found these fields: {slot_yaml}\n"
+                          f"**")
+    else:
+        logging.error(f"**\n"
+                      f"** Error: Ontology '{base_name}' (in '{keyword}') does not follow the correct formatting, omitting 'reachable_from'...\n"
+                      f"**   Expected to find the field: x-airr/ontology/top_node/id\n"
+                      f"**   Instead found these fields: {slot_yaml}\n"
+                      f"**")
+
+    return {"name": ontology_name}
+
+def get_closed_vocabulary_enum(base_name, slot_yaml, keyword, version_prefix):
+    return {"name": f"{version_prefix}{base_name}Enum",
+            "permissible_values": {enum_val: None for enum_val in slot_yaml["enum"] if enum_val is not None}}
+
+def get_enum(base_name, slot_yaml, keyword, version_prefix):
+    if "type" in slot_yaml and slot_yaml["type"] == "array":
+        return get_enum(base_name, slot_yaml["items"], keyword, version_prefix)
+
+    if "$ref" in slot_yaml and slot_yaml["$ref"] == "#/Ontology":
+        return get_ontology_enum(base_name, slot_yaml, keyword, version_prefix)
+
+    elif "enum" in slot_yaml:
+        return get_closed_vocabulary_enum(base_name, slot_yaml, keyword, version_prefix)
+
+
+def get_all_enums(keyword_yaml, keyword, version_prefix):
+    all_enums = dict()
+
+    for slot_name, slot_yaml in keyword_yaml["properties"].items():
+        if not is_deprecated(slot_yaml):
+            base_name = snake_to_camel_case(slot_name)
+            if base_name == "Property":
+                pass
+            new_enum = get_enum(base_name, slot_yaml, keyword, version_prefix)
+
+            if new_enum is not None:
+                all_enums[new_enum["name"]] = new_enum
+
+    return all_enums
+
+
+def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix):
+    # keyword_yaml = airr_yaml[keyword]
+    output_slots = get_all_slots(airr_yaml, keyword, version_prefix)
+
+    yaml_output_dict = {"classes": {f"{version_prefix}{keyword}": {"slots": list(output_slots.keys())}},
+                        "slots": output_slots,
+                        "enums": get_all_enums(airr_yaml[keyword], keyword, version_prefix)}
+
+    return yaml_output_dict
+
+def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix):
+    composition_yaml = {"classes": {f"{version_prefix}{keyword}": {"slots": []}},
+                        "slots": {},
+                        "enums": {}}
+
+    for class_yaml in airr_yaml[keyword]["allOf"]:
+        if "$ref" in class_yaml:
+            super_class_name = class_yaml["$ref"].lstrip("/#")
+            composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(
+                output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"])
+        else:
+            new_slots = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
+            new_enums = get_all_enums(class_yaml, keyword, version_prefix)
+            composition_yaml["slots"].update(new_slots)
+            composition_yaml["enums"].update(new_enums)
+
+            composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(list(new_slots.keys()))
+
+    return composition_yaml
+
+
+def new_keys_not_in_existing(existing_keys, new_keys):
+    return all([key not in existing_keys for key in new_keys])
+
+def get_differing_fields(yaml_pt1, yaml_pt2):
+    return ([key for key in yaml_pt1 if key not in yaml_pt2] +
+            [key for key in yaml_pt2 if key not in yaml_pt1] +
+            [key for key in yaml_pt1 if key in yaml_pt2 and yaml_pt1[key] != yaml_pt2[key]])
+
+def get_intersecting_yaml(yaml_pt1, yaml_pt2):
+    final = {}
+
+    for key in yaml_pt1:
+        if key in yaml_pt2:
+            if yaml_pt1[key] == yaml_pt2[key]:
+                final[key] = yaml_pt1[key]
+            elif type(yaml_pt1[key]) == dict and type(yaml_pt2[key]) == dict:
+                sub_params = get_intersecting_yaml(yaml_pt1[key], yaml_pt2[key])
+                if len(sub_params) > 0:
+                    final[key] = sub_params
+
+    return final
+
+def safe_update_yaml_component(output_yaml_part, new_yaml_part, type_name):
+    conflicts = []
+
+    ignore_fields = ["description", "required", "annotations"]
+
+    for key in new_yaml_part:
+        if key in output_yaml_part:
+            if new_yaml_part[key] != output_yaml_part[key]:
+                conflict_fields = get_differing_fields(new_yaml_part[key], output_yaml_part[key])
+                intersecting_yaml = get_intersecting_yaml(new_yaml_part[key], output_yaml_part[key])
+
+                if "permissible_values" in conflict_fields:
+                    if get_differing_fields(new_yaml_part[key]["permissible_values"], output_yaml_part[key]["permissible_values"]) == ['null']:
+                        intersecting_yaml["permissible_values"]["null"] = None
+                        conflict_fields.remove("permissible_values")
+                        logging.warning(f"Warning: Keeping value 'null' in permissible_values for {type_name} '{key}' (only sometimes present in input)")
+
+                if not all([field in ignore_fields for field in conflict_fields]):
+                    conflicts.append(key)
+                    logging.error(f"**\n"
+                                    f"** Error: Conflicting {type_name} '{key}'. Same {type_name} was already found with different content (only 'final' is kept):\n"
+                                    f"**   Existing: {new_yaml_part[key]}\n"
+                                    f"**   New:      {output_yaml_part[key]}\n"
+                                    f"**   Final:    {intersecting_yaml}\n"
+                                    f"**")
+                elif len(conflict_fields) > 0:
+                    logging.warning(f"Warning: Removing fields {conflict_fields} from {type_name} '{key}' due to conflicting values.")
+
+                output_yaml_part[key] = intersecting_yaml
+        else:
+            output_yaml_part[key] = new_yaml_part[key]
+
+    return conflicts
+
+
+def safe_update_yaml(output_yaml, keyword_yaml, conflicts):
+    if "classes" in keyword_yaml:
+        class_conflicts = safe_update_yaml_component(output_yaml["classes"], keyword_yaml["classes"], type_name="class")
+        conflicts["class_conflicts"] += class_conflicts
+
+    if "slots" in keyword_yaml:
+        slot_conflicts = safe_update_yaml_component(output_yaml["slots"], keyword_yaml["slots"], type_name="slot")
+        conflicts["slot_conflicts"] += slot_conflicts
+
+    if "enums" in keyword_yaml:
+        enum_conflicts = safe_update_yaml_component(output_yaml["enums"], keyword_yaml["enums"], type_name="enum")
+        conflicts["enum_conflicts"] += enum_conflicts
+
+def get_airr_yaml(file_location):
+    with open(parsed_args.airr_schema_yaml) as file:
+        airr_yaml = yaml.safe_load(file)
+    return airr_yaml
+
+def get_simple_keywords_to_process(airr_yaml, skip_keywords):
+    return [key for key, value in airr_yaml.items() if "type" in value.keys() and key not in skip_keywords]
+
+def get_composition_keywords_to_process(airr_yaml, skip_keywords):
+    return [key for key, value in airr_yaml.items() if list(value.keys()) == ["allOf"] and key not in skip_keywords]
+
+
+class LinkMLDumper(yaml.Dumper):
+
+    def increase_indent(self, flow=False, indentless=False):
+        # Custom LinkMLDumper ensures lists are always indented (this is non-default behavior specific to LinkML format)
+        return super(LinkMLDumper, self).increase_indent(flow, False)
+
+    def write_line_break(self, data=None):
+        super().write_line_break(data)
+
+        if len(self.indents) == 1:
+            super().write_line_break()
+
+
+def write_yaml_output(yaml_output_dict, yaml_outfile):
+    # This line ensures None values (as in {"key1": None, "key2": None}) do not show up as 'null' in YAML output
+    # This is specific to LinkML format, not valid standard YAML format
+    # it ensures enum values are formatted as follows:
+    # permissible_values:
+    #   key1:
+    #   key2:
+    yaml.add_representer(type(None),
+                         representer=lambda self, _: self.represent_scalar('tag:yaml.org,2002:null', ''))
+
+    with open(yaml_outfile, "w") as file:
+        yaml.dump(yaml_output_dict, file, sort_keys=False, width=float("inf"), default_flow_style=False,
+                  Dumper=LinkMLDumper, explicit_start=True)
+
+
+def log_error_summary(conflicts):
+    flush_log()
+    logging.info("\nSummary of errors during AIRR LinkML generation:")
+
+    logging.info(f"  {ErrorCounter.count} errors occurred while constructing LinkML")
+    for conflict_type in ("class", "slot", "enum"):
+        conflicts_of_type = list(set(conflicts[f"{conflict_type}_conflicts"]))
+        if len(conflicts_of_type) == 0:
+            logging.info(f"  0 {conflict_type} conflicts (overlapping {conflict_type} names with different values)")
+        else:
+            logging.info(f"  {len(conflicts_of_type)} {conflict_type} conflicts (overlapping {conflict_type} names with different values): {', '.join(conflicts_of_type)}")
+
+    logging.info("")
+    flush_log()
+
+def check_conflicts_with_akc_file(output_yaml, ak_data, file_path):
+    overlapping_names = []
+
+    base_keys = ("classes", "slots", "enums")
+    for airr_key in base_keys:
+        for airr_name in output_yaml[airr_key]:
+            for ak_key in ak_data.keys():
+                if ak_key in base_keys:
+                    if ak_data[ak_key] is not None and airr_name in ak_data[ak_key]:
+                        logging.warning(f"Warning: Overlapping namespace between AIRR and AKC LinkML ({file_path}): {airr_name} occurs in AIRR {airr_key} and AKC {ak_key}")
+                        overlapping_names.append(airr_name)
+
+    return overlapping_names
+
+def log_confict_with_akc_summary(overlapping_names_per_file):
+    flush_log()
+    logging.info(f"\nSummary of conflicts between AIRR LinkML and exising AKC LinkML:")
+    if len(overlapping_names_per_file) == 0:
+        logging.info("  No overlapping names found")
+
+    for file_path, overlapping_names in overlapping_names_per_file.items():
+        if len(overlapping_names) > 0:
+            logging.info(
+                f"  Found {len(overlapping_names)} overlapping names between AIRR LinkML and {file_path}: {', '.join(overlapping_names)}")
+    flush_log()
+
+def check_conflicts_with_akc(output_yaml):
+    overlapping_names_per_file = {}
+
+    for file_path in glob.glob(f"{parsed_args.ak_schema_folder}/*.yaml"):
+        if file_path not in glob.glob(f"{parsed_args.ak_schema_folder}/ak_airr*.yaml"):
+
+            with open(file_path, "r") as file:
+                ak_data = yaml.safe_load(file)
+                overlapping_names = check_conflicts_with_akc_file(output_yaml, ak_data, file_path)
+                if len(overlapping_names) > 0:
+                    overlapping_names_per_file[file_path] = overlapping_names
+
+    return overlapping_names_per_file
+
+class ErrorCounter(logging.Filter):
+    count = 0
+    def filter(self, record):
+        if record.levelno == logging.ERROR:
+            self.__class__.count += 1
+        return True
+
+def configure_logger(log_file):
+    # stderr and stdout are both written to the log file
+    # when no issues arise, stderr is empty (but a log summary is written to stdout/log file)
+    # errors are counted to include in error summary
+    logger = logging.getLogger()
+    logger.addFilter(ErrorCounter())
+    logger.setLevel(logging.INFO)
+
+    file_handler = logging.FileHandler(log_file, mode='w')
+    file_handler.setFormatter(logging.Formatter('%(message)s'))
+
+    stdout_handler = logging.StreamHandler(sys.stdout)
+    stdout_handler.setLevel(logging.INFO)
+    stdout_handler.addFilter(lambda record: record.levelno < logging.WARNING)
+
+    stderr_handler = logging.StreamHandler(sys.stderr)
+    stderr_handler.setLevel(logging.WARNING)
+
+    logger.addHandler(file_handler)
+    logger.addHandler(stdout_handler)
+    logger.addHandler(stderr_handler)
+
+def flush_log():
+    for handler in logging.getLogger().handlers:
+        handler.flush()
+
+def process_simple_keywords():
+    pass
+
+def main(parsed_args):
+    airr_yaml = get_airr_yaml(parsed_args.airr_schema_yaml)
+    airr_version = airr_yaml["Info"]["version"]
+    version_prefix = f"V{str(airr_version).replace('.', 'p')}" if parsed_args.include_version_prefix else ""
+
+    logging.info(f"Generating LinkML for AIRR version {airr_version} at {datetime.now()}\n" +
+                 "\n".join([f"  {key}: {value}" for key, value in vars(parsed_args).items()]) + "\n")
+    flush_log()
+
+
+    skip_keywords = ["Info", "Ontology", "CURIEMap", "InformationProvider", "Attributes", "FileObject", "DataSet",
+                                      "Manifest", "DataFile", "InfoObject"]
+
+    output_yaml = {"id": "https://github.com/airr-knowledge/ak-schema",
+                   "name": "ak-schema",
+                   "classes": dict(),
+                   "slots": dict(),
+                   "enums": dict()}
+
+    internal_conflicts = {"class_conflicts": [],
+                          "slot_conflicts": [],
+                          "enum_conflicts": []}
+
+    # Simple keywords: add classes, slots and enums
+    for keyword in get_simple_keywords_to_process(airr_yaml, skip_keywords):
+        keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix)
+        safe_update_yaml(output_yaml, keyword_yaml, internal_conflicts)
+
+    # composition keywords (consisting of 'allOf')
+    for keyword in get_composition_keywords_to_process(airr_yaml, skip_keywords):
+        composition_yaml = get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix)
+        safe_update_yaml(output_yaml, composition_yaml, internal_conflicts)
+
+    write_yaml_output(output_yaml, parsed_args.output_file)
+    akc_conflicts = check_conflicts_with_akc(output_yaml)
+
+    log_error_summary(internal_conflicts)
+    log_confict_with_akc_summary(akc_conflicts)
+
+if __name__ == "__main__":
+    parsed_args = get_arguments()
+
+    configure_logger(parsed_args.log_file)
+    main(parsed_args)
+
+
+
 

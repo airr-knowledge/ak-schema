@@ -1,6 +1,0 @@
-DiseaseDiagnosis:
-  name: DiseaseDiagnosis
-  permissible_values:
-    disease:
-      text: disease
-      meaning: DOID:4

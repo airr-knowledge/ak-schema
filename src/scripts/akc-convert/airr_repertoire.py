@@ -5,16 +5,16 @@ import sys
 import airr
 import uuid
 import numpy as np
-from repertoire import Repertoire
+from repertoire import CRepertoire
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
 
 
-class AIRRRepertoire(Repertoire):
+class AIRRRepertoire(CRepertoire):
     
     # Constructor - call the parent class constructor.
     def __init__(self, verbose, airr_map):
-        Repertoire.__init__(self, verbose, airr_map) 
+        CRepertoire.__init__(self, verbose, airr_map) 
 
     def process(self, filename, out_file):
 
@@ -98,7 +98,7 @@ class AIRRRepertoire(Repertoire):
                 "Investigation" : {
                     "participants" : {"lookup" : "forward", "class" : "Participant", "field" : "adc_study_id", "source" : "Investigation"},
                     "documents" : {"lookup" : "forward", "class" : "Reference", "field" : "adc_study_id", "source" : "Investigation"},
-                    "assays" : {"lookup" : "forward", "class" : "ReceptorRepertoireSequencingAssay", "field" : "adc_study_id", "source" : "Investigation"},
+                    "assays" : {"lookup" : "forward", "class" : "AIRRSequencingAssay", "field" : "adc_study_id", "source" : "Investigation"},
                     "conclusions" : {"lookup" : "forward", "class" : "Conclusion", "field" : "adc_study_id", "source" : "Investigation"},
                     "simulations" : {"lookup" : "forward", "class" : "Simulation", "field" : "adc_study_id", "source" : "Investigation"}
                     },
@@ -130,7 +130,7 @@ class AIRRRepertoire(Repertoire):
                 "LibraryPreparationProcessing" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     },
-                "ReceptorRepertoireSequencingAssay" : {
+                "AIRRSequencingAssay" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     }
                 }
