@@ -27,7 +27,7 @@ class CRepertoire(Parser):
             "Specimen" : { "classes" : ["Specimen"], "fields" : ["subject_id", "sample_id"] },
             "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
             "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id", "disease_diagnosis"] },
-            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "AIRRSequencingAssay" : { "classes" : ["AIRRSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "LibraryPreparationProcessing" : { "classes" : ["LibraryPreparationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "CellIsolationProcessing" : { "classes" : ["CellIsolationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] }
@@ -49,7 +49,7 @@ class CRepertoire(Parser):
                 "CellIsolationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "LibraryPreparationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "AIRRSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "Assay" : [],
                 "TCellReceptorEpitopeBindingAssay" : []
                 }
@@ -72,7 +72,7 @@ class CRepertoire(Parser):
                 'NucleicAcidProcessing':'specimen_processings',
                 'LibraryPreparationProcessing':'specimen_processings',
                 'Assay':'assays',
-                'ReceptorRepertoireSequencingAssay':'assays',
+                'AIRRSequencingAssay':'assays',
                 'TCellReceptorEpitopeBindingAssay':'assays',
                 'Dataset':'datasets',
                 'Conclusion':'conclusions',

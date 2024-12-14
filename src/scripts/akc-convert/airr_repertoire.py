@@ -98,7 +98,7 @@ class AIRRRepertoire(CRepertoire):
                 "Investigation" : {
                     "participants" : {"lookup" : "forward", "class" : "Participant", "field" : "adc_study_id", "source" : "Investigation"},
                     "documents" : {"lookup" : "forward", "class" : "Reference", "field" : "adc_study_id", "source" : "Investigation"},
-                    "assays" : {"lookup" : "forward", "class" : "ReceptorRepertoireSequencingAssay", "field" : "adc_study_id", "source" : "Investigation"},
+                    "assays" : {"lookup" : "forward", "class" : "AIRRSequencingAssay", "field" : "adc_study_id", "source" : "Investigation"},
                     "conclusions" : {"lookup" : "forward", "class" : "Conclusion", "field" : "adc_study_id", "source" : "Investigation"},
                     "simulations" : {"lookup" : "forward", "class" : "Simulation", "field" : "adc_study_id", "source" : "Investigation"}
                     },
@@ -130,7 +130,7 @@ class AIRRRepertoire(CRepertoire):
                 "LibraryPreparationProcessing" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     },
-                "ReceptorRepertoireSequencingAssay" : {
+                "AIRRSequencingAssay" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     }
                 }
