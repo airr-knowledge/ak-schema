@@ -199,6 +199,9 @@
 <div class="mermaid"> classDiagram
     class SequencingRun
     click SequencingRun href "../SequencingRun"
+      SequencingRun &lt;|-- AIRRSequencingAssay
+        click AIRRSequencingAssay href "../AIRRSequencingAssay"
+
       SequencingRun : sequencing_facility
 
       SequencingRun : sequencing_files

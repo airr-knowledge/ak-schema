@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/AIRRSequencingAssay/</loc>
+         <lastmod>2025-01-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/AKObject/</loc>
          <lastmod>2025-01-11</lastmod>
          <changefreq>daily</changefreq>
@@ -567,11 +572,6 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/ReceptorReactivity/</loc>
-         <lastmod>2025-01-11</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/ReceptorRepertoireSequencingAssay/</loc>
          <lastmod>2025-01-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
