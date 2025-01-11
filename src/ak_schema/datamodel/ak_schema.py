@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-12-12T14:07:02
+# Generation date: 2025-01-11T11:34:42
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -292,7 +292,7 @@ class AssayAkcId(PlannedProcessAkcId):
     pass
 
 
-class ReceptorRepertoireSequencingAssayAkcId(AssayAkcId):
+class AIRRSequencingAssayAkcId(AssayAkcId):
     pass
 
 
@@ -1050,15 +1050,31 @@ class LibraryPreparationProcessing(SpecimenProcessing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.LibraryPreparationProcessing
 
     akc_id: Union[str, LibraryPreparationProcessingAkcId] = None
+    template_class: Optional[Union[str, "TemplateClassEnum"]] = None
+    template_quality: Optional[str] = None
+    template_amount: Optional[float] = None
+    template_amount_unit: Optional[Union[str, "TemplateAmountUnitOntology"]] = None
     library_generation_method: Optional[Union[str, "LibraryGenerationMethodEnum"]] = None
     library_generation_protocol: Optional[str] = None
     library_generation_kit_version: Optional[str] = None
+    pcr_target: Optional[Union[Union[dict, "PCRTarget"], List[Union[dict, "PCRTarget"]]]] = empty_list()
+    complete_sequences: Optional[Union[str, "CompleteSequencesEnum"]] = None
+    physical_linkage: Optional[Union[str, "PhysicalLinkageEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, LibraryPreparationProcessingAkcId):
             self.akc_id = LibraryPreparationProcessingAkcId(self.akc_id)
+
+        if self.template_class is not None and not isinstance(self.template_class, TemplateClassEnum):
+            self.template_class = TemplateClassEnum(self.template_class)
+
+        if self.template_quality is not None and not isinstance(self.template_quality, str):
+            self.template_quality = str(self.template_quality)
+
+        if self.template_amount is not None and not isinstance(self.template_amount, float):
+            self.template_amount = float(self.template_amount)
 
         if self.library_generation_method is not None and not isinstance(self.library_generation_method, LibraryGenerationMethodEnum):
             self.library_generation_method = LibraryGenerationMethodEnum(self.library_generation_method)
@@ -1068,6 +1084,16 @@ class LibraryPreparationProcessing(SpecimenProcessing):
 
         if self.library_generation_kit_version is not None and not isinstance(self.library_generation_kit_version, str):
             self.library_generation_kit_version = str(self.library_generation_kit_version)
+
+        if not isinstance(self.pcr_target, list):
+            self.pcr_target = [self.pcr_target] if self.pcr_target is not None else []
+        self.pcr_target = [v if isinstance(v, PCRTarget) else PCRTarget(**as_dict(v)) for v in self.pcr_target]
+
+        if self.complete_sequences is not None and not isinstance(self.complete_sequences, CompleteSequencesEnum):
+            self.complete_sequences = CompleteSequencesEnum(self.complete_sequences)
+
+        if self.physical_linkage is not None and not isinstance(self.physical_linkage, PhysicalLinkageEnum):
+            self.physical_linkage = PhysicalLinkageEnum(self.physical_linkage)
 
         super().__post_init__(**kwargs)
 
@@ -1130,34 +1156,49 @@ class Assay(PlannedProcess):
 
 
 @dataclass(repr=False)
-class ReceptorRepertoireSequencingAssay(Assay):
+class AIRRSequencingAssay(Assay):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0600047"]
     class_class_curie: ClassVar[str] = "OBI:0600047"
-    class_name: ClassVar[str] = "ReceptorRepertoireSequencingAssay"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorRepertoireSequencingAssay
+    class_name: ClassVar[str] = "AIRRSequencingAssay"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRSequencingAssay
 
-    akc_id: Union[str, ReceptorRepertoireSequencingAssayAkcId] = None
-    pcr_target: Optional[Union[Union[dict, "PCRTarget"], List[Union[dict, "PCRTarget"]]]] = empty_list()
-    complete_sequences: Optional[Union[str, "CompleteSequencesEnum"]] = None
-    physical_linkage: Optional[Union[str, "PhysicalLinkageEnum"]] = None
+    akc_id: Union[str, AIRRSequencingAssayAkcId] = None
+    sequencing_run_id: Optional[str] = None
+    total_reads_passing_qc_filter: Optional[int] = None
+    sequencing_platform: Optional[str] = None
+    sequencing_facility: Optional[str] = None
+    sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
+    sequencing_kit: Optional[str] = None
+    sequencing_files: Optional[Union[dict, "SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, ReceptorRepertoireSequencingAssayAkcId):
-            self.akc_id = ReceptorRepertoireSequencingAssayAkcId(self.akc_id)
+        if not isinstance(self.akc_id, AIRRSequencingAssayAkcId):
+            self.akc_id = AIRRSequencingAssayAkcId(self.akc_id)
 
-        if not isinstance(self.pcr_target, list):
-            self.pcr_target = [self.pcr_target] if self.pcr_target is not None else []
-        self.pcr_target = [v if isinstance(v, PCRTarget) else PCRTarget(**as_dict(v)) for v in self.pcr_target]
+        if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
+            self.sequencing_run_id = str(self.sequencing_run_id)
 
-        if self.complete_sequences is not None and not isinstance(self.complete_sequences, CompleteSequencesEnum):
-            self.complete_sequences = CompleteSequencesEnum(self.complete_sequences)
+        if self.total_reads_passing_qc_filter is not None and not isinstance(self.total_reads_passing_qc_filter, int):
+            self.total_reads_passing_qc_filter = int(self.total_reads_passing_qc_filter)
 
-        if self.physical_linkage is not None and not isinstance(self.physical_linkage, PhysicalLinkageEnum):
-            self.physical_linkage = PhysicalLinkageEnum(self.physical_linkage)
+        if self.sequencing_platform is not None and not isinstance(self.sequencing_platform, str):
+            self.sequencing_platform = str(self.sequencing_platform)
+
+        if self.sequencing_facility is not None and not isinstance(self.sequencing_facility, str):
+            self.sequencing_facility = str(self.sequencing_facility)
+
+        if self.sequencing_run_date is not None and not isinstance(self.sequencing_run_date, XSDDateTime):
+            self.sequencing_run_date = XSDDateTime(self.sequencing_run_date)
+
+        if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
+            self.sequencing_kit = str(self.sequencing_kit)
+
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
+            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)

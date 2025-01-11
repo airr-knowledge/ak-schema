@@ -13,7 +13,7 @@
                                         "$ref": "#/$defs/Assay__identifier_optional"
                                     },
                                     {
-                                        "$ref": "#/$defs/ReceptorRepertoireSequencingAssay__identifier_optional"
+                                        "$ref": "#/$defs/AIRRSequencingAssay__identifier_optional"
                                     },
                                     {
                                         "$ref": "#/$defs/TCellReceptorEpitopeBindingAssay__identifier_optional"
@@ -305,6 +305,250 @@
                 }
             },
             "title": "AIRRKnowledgeCommons",
+            "type": "object"
+        },
+        "AIRRSequencingAssay": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "description": "The specific type of an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_facility": {
+                    "description": "Name and address of sequencing facility",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_files": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Set of sequencing files produced by the sequencing run"
+                },
+                "sequencing_kit": {
+                    "description": "Name, manufacturer, order and lot numbers of sequencing kit",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_platform": {
+                    "description": "Designation of sequencing instrument used",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_date": {
+                    "description": "Date of sequencing run",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_id": {
+                    "description": "ID of sequencing run assigned by the sequencing facility",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen_processing": {
+                    "description": "A series of zero or more specimen processing steps that precede an assay",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "target_entity_type": {
+                    "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "total_reads_passing_qc_filter": {
+                    "description": "Number of usable reads for analysis",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AIRRSequencingAssay"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AIRRSequencingAssay",
+            "type": "object"
+        },
+        "AIRRSequencingAssay__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "description": "The specific type of an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_facility": {
+                    "description": "Name and address of sequencing facility",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_files": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/SequencingData"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Set of sequencing files produced by the sequencing run"
+                },
+                "sequencing_kit": {
+                    "description": "Name, manufacturer, order and lot numbers of sequencing kit",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_platform": {
+                    "description": "Designation of sequencing instrument used",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_date": {
+                    "description": "Date of sequencing run",
+                    "format": "date-time",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequencing_run_id": {
+                    "description": "ID of sequencing run assigned by the sequencing facility",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen_processing": {
+                    "description": "A series of zero or more specimen processing steps that precede an assay",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "target_entity_type": {
+                    "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "total_reads_passing_qc_filter": {
+                    "description": "Number of usable reads for analysis",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AIRRSequencingAssay"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "AIRRSequencingAssay",
             "type": "object"
         },
         "Acknowledgement": {
@@ -3507,6 +3751,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "complete_sequences": {
+                    "$ref": "#/$defs/CompleteSequencesEnum",
+                    "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
+                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": [
@@ -3539,8 +3787,44 @@
                         "null"
                     ]
                 },
+                "pcr_target": {
+                    "description": "If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.",
+                    "items": {
+                        "$ref": "#/$defs/PCRTarget"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "physical_linkage": {
+                    "$ref": "#/$defs/PhysicalLinkageEnum",
+                    "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
+                },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "template_amount": {
+                    "description": "Amount of template that went into the process",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "template_amount_unit": {
+                    "$ref": "#/$defs/TemplateAmountUnitOntology",
+                    "description": "Unit of template amount"
+                },
+                "template_class": {
+                    "$ref": "#/$defs/TemplateClassEnum",
+                    "description": "The class of nucleic acid that was used as primary starting material for the following procedures"
+                },
+                "template_quality": {
+                    "description": "Description and results of the quality control performed on the template material",
                     "type": [
                         "string",
                         "null"
@@ -5725,178 +6009,6 @@
                 }
             },
             "title": "ReceptorReactivity",
-            "type": "object"
-        },
-        "ReceptorRepertoireSequencingAssay": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "complete_sequences": {
-                    "$ref": "#/$defs/CompleteSequencesEnum",
-                    "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "pcr_target": {
-                    "description": "If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.",
-                    "items": {
-                        "$ref": "#/$defs/PCRTarget"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "physical_linkage": {
-                    "$ref": "#/$defs/PhysicalLinkageEnum",
-                    "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
-                },
-                "specimen": {
-                    "description": "The specimen that was input for an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "specimen_processing": {
-                    "description": "A series of zero or more specimen processing steps that precede an assay",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "ReceptorRepertoireSequencingAssay"
-                    ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "ReceptorRepertoireSequencingAssay",
-            "type": "object"
-        },
-        "ReceptorRepertoireSequencingAssay__identifier_optional": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "complete_sequences": {
-                    "$ref": "#/$defs/CompleteSequencesEnum",
-                    "description": "To be considered `complete`, the procedure used for library construction MUST generate sequences that 1) include the first V gene codon that encodes the mature polypeptide chain (i.e. after the leader sequence) and 2) include the last complete codon of the J gene (i.e. 1 bp 5' of the J->C splice site) and 3) provide sequence information for all positions between 1) and 2). To be considered `complete & untemplated`, the sections of the sequences defined in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT overlap with the primers used in library preparation. `mixed` should only be used if the procedure used for library construction will likely produce multiple categories of sequences in the given experiment. It SHOULD NOT be used as a replacement of a NULL value."
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "pcr_target": {
-                    "description": "If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.",
-                    "items": {
-                        "$ref": "#/$defs/PCRTarget"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "physical_linkage": {
-                    "$ref": "#/$defs/PhysicalLinkageEnum",
-                    "description": "In case an experimental setup is used that physically links nucleic acids derived from distinct `Rearrangements` before library preparation, this field describes the mode of that linkage. All `hetero_*` terms indicate that in case of paired-read sequencing, the two reads should be expected to map to distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends of transcripts in a single-cell context. `*_tail-head` refers to techniques that link the 3' end of one transcript to the 5' end of another one in a single-cell context. This term does not provide any information whether a continuous reading-frame between the two is generated. `*_prelinked` refers to constructs in which the linkage was already present on the DNA level (e.g. scFv)."
-                },
-                "specimen": {
-                    "description": "The specimen that was input for an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "specimen_processing": {
-                    "description": "A series of zero or more specimen processing steps that precede an assay",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "ReceptorRepertoireSequencingAssay"
-                    ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [],
-            "title": "ReceptorRepertoireSequencingAssay",
             "type": "object"
         },
         "ReceptorTypeEnum": {
@@ -16689,7 +16801,7 @@
                                 "$ref": "#/$defs/Assay__identifier_optional"
                             },
                             {
-                                "$ref": "#/$defs/ReceptorRepertoireSequencingAssay__identifier_optional"
+                                "$ref": "#/$defs/AIRRSequencingAssay__identifier_optional"
                             },
                             {
                                 "$ref": "#/$defs/TCellReceptorEpitopeBindingAssay__identifier_optional"

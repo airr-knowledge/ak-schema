@@ -7994,7 +7994,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_method",
       "owner": "SampleProcessing",
       "domain_of": [
-        "LibraryPreparationProcessing",
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
@@ -8016,7 +8015,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_protocol",
       "owner": "SampleProcessing",
       "domain_of": [
-        "LibraryPreparationProcessing",
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
@@ -8038,7 +8036,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/library_generation_kit_version",
       "owner": "SampleProcessing",
       "domain_of": [
-        "LibraryPreparationProcessing",
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
@@ -8059,7 +8056,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/pcr_target",
       "owner": "SampleProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay",
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
@@ -8082,7 +8078,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/complete_sequences",
       "owner": "SampleProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay",
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
@@ -8103,7 +8098,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/physical_linkage",
       "owner": "SampleProcessing",
       "domain_of": [
-        "ReceptorRepertoireSequencingAssay",
         "NucleicAcidProcessing",
         "SampleProcessing"
       ],
@@ -29757,14 +29751,24 @@
         "OBI:00000711"
       ],
       "is_a": "SpecimenProcessing",
+      "mixins": [
+        "NucleicAcidProcessing"
+      ],
       "slots": [
         "akc_id",
         "name",
         "description",
         "specimen",
+        "template_class",
+        "template_quality",
+        "template_amount",
+        "template_amount_unit",
         "library_generation_method",
         "library_generation_protocol",
-        "library_generation_kit_version"
+        "library_generation_kit_version",
+        "pcr_target",
+        "complete_sequences",
+        "physical_linkage"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_00000711",
@@ -29793,13 +29797,16 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "ReceptorRepertoireSequencingAssay",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorRepertoireSequencingAssay",
+      "name": "AIRRSequencingAssay",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRSequencingAssay",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "OBI:0600047"
       ],
       "is_a": "Assay",
+      "mixins": [
+        "SequencingRun"
+      ],
       "slots": [
         "akc_id",
         "name",
@@ -29809,9 +29816,13 @@
         "type",
         "assay_type",
         "target_entity_type",
-        "pcr_target",
-        "complete_sequences",
-        "physical_linkage"
+        "sequencing_run_id",
+        "total_reads_passing_qc_filter",
+        "sequencing_platform",
+        "sequencing_facility",
+        "sequencing_run_date",
+        "sequencing_kit",
+        "sequencing_files"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0600047",
@@ -32992,9 +33003,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-12-12T14:06:59",
-  "source_file_size": 505772,
-  "generation_date": "2024-12-12T14:07:00",
+  "source_file_date": "2025-01-11T11:34:29",
+  "source_file_size": 505626,
+  "generation_date": "2025-01-11T11:34:31",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

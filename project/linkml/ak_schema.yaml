@@ -14435,10 +14435,8 @@ classes:
     name: LibraryPreparationProcessing
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: SpecimenProcessing
-    slots:
-    - library_generation_method
-    - library_generation_protocol
-    - library_generation_kit_version
+    mixins:
+    - NucleicAcidProcessing
     class_uri: OBI:00000711
   Assay:
     name: Assay
@@ -14451,14 +14449,12 @@ classes:
     - assay_type
     - target_entity_type
     class_uri: OBI:0000070
-  ReceptorRepertoireSequencingAssay:
-    name: ReceptorRepertoireSequencingAssay
+  AIRRSequencingAssay:
+    name: AIRRSequencingAssay
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Assay
-    slots:
-    - pcr_target
-    - complete_sequences
-    - physical_linkage
+    mixins:
+    - SequencingRun
     class_uri: OBI:0600047
   TCellReceptorEpitopeBindingAssay:
     name: TCellReceptorEpitopeBindingAssay
