@@ -1,5 +1,9 @@
 all: studies ak_schema.py convert
 
+clean:
+	rm -rf studies
+	rm ak_schema.py
+
 studies:
 	mkdir studies
 
