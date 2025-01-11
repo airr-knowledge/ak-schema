@@ -247,8 +247,8 @@
 
 
 
-    Conclusion --&gt; "0..1" Species : organism
-    click Species href "../Species"
+    Conclusion --&gt; "0..1" SpeciesOntology : organism
+    click SpeciesOntology href "../SpeciesOntology"
 
 
       Conclusion : result
@@ -308,7 +308,7 @@
 </tr>
 <tr>
 <td><a href="../organism/">organism</a></td>
-<td>0..1 <br/> <a href="../Species/">Species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
 <td>The type of organism that the conclusion is about</td>
 <td>direct</td>
 </tr>
@@ -478,7 +478,7 @@ attributes:
     owner: Conclusion
     domain_of:
     - Conclusion
-    range: Species
+    range: SpeciesOntology
   experiment_type:
     name: experiment_type
     description: The type of experiment that supports the conclusion

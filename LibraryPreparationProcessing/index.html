@@ -204,10 +204,21 @@
 <div class="mermaid"> classDiagram
     class LibraryPreparationProcessing
     click LibraryPreparationProcessing href "../LibraryPreparationProcessing"
+      NucleicAcidProcessing &lt;|-- LibraryPreparationProcessing
+        click NucleicAcidProcessing href "../NucleicAcidProcessing"
       SpecimenProcessing &lt;|-- LibraryPreparationProcessing
         click SpecimenProcessing href "../SpecimenProcessing"
 
       LibraryPreparationProcessing : akc_id
+
+      LibraryPreparationProcessing : complete_sequences
+
+
+
+
+    LibraryPreparationProcessing --&gt; "0..1" CompleteSequencesEnum : complete_sequences
+    click CompleteSequencesEnum href "../CompleteSequencesEnum"
+
 
       LibraryPreparationProcessing : description
 
@@ -215,9 +226,34 @@
 
       LibraryPreparationProcessing : library_generation_method
 
+
+
+
+    LibraryPreparationProcessing --&gt; "0..1" LibraryGenerationMethodEnum : library_generation_method
+    click LibraryGenerationMethodEnum href "../LibraryGenerationMethodEnum"
+
+
       LibraryPreparationProcessing : library_generation_protocol
 
       LibraryPreparationProcessing : name
+
+      LibraryPreparationProcessing : pcr_target
+
+
+
+
+    LibraryPreparationProcessing --&gt; "*" PCRTarget : pcr_target
+    click PCRTarget href "../PCRTarget"
+
+
+      LibraryPreparationProcessing : physical_linkage
+
+
+
+
+    LibraryPreparationProcessing --&gt; "0..1" PhysicalLinkageEnum : physical_linkage
+    click PhysicalLinkageEnum href "../PhysicalLinkageEnum"
+
 
       LibraryPreparationProcessing : specimen
 
@@ -228,6 +264,28 @@
     click Specimen href "../Specimen"
 
 
+      LibraryPreparationProcessing : template_amount
+
+      LibraryPreparationProcessing : template_amount_unit
+
+
+
+
+    LibraryPreparationProcessing --&gt; "0..1" TemplateAmountUnitOntology : template_amount_unit
+    click TemplateAmountUnitOntology href "../TemplateAmountUnitOntology"
+
+
+      LibraryPreparationProcessing : template_class
+
+
+
+
+    LibraryPreparationProcessing --&gt; "0..1" TemplateClassEnum : template_class
+    click TemplateClassEnum href "../TemplateClassEnum"
+
+
+      LibraryPreparationProcessing : template_quality
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -236,7 +294,7 @@
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><a href="../SpecimenProcessing/">SpecimenProcessing</a><ul>
-<li><strong>LibraryPreparationProcessing</strong></li>
+<li><strong>LibraryPreparationProcessing</strong> [ <a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a>]</li>
 </ul>
 </li>
 </ul>
@@ -258,22 +316,64 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../library_generation_method/">library_generation_method</a></td>
+<td><a href="../template_class/">template_class</a></td>
+<td>0..1 <br/> <a href="../TemplateClassEnum/">TemplateClassEnum</a></td>
+<td>The class of nucleic acid that was used as primary starting material for the ...</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../template_quality/">template_quality</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Description and results of the quality control performed on the template mate...</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../template_amount/">template_amount</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Amount of template that went into the process</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../template_amount_unit/">template_amount_unit</a></td>
+<td>0..1 <br/> <a href="../TemplateAmountUnitOntology/">TemplateAmountUnitOntology</a></td>
+<td>Unit of template amount</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../library_generation_method/">library_generation_method</a></td>
+<td>0..1 <br/> <a href="../LibraryGenerationMethodEnum/">LibraryGenerationMethodEnum</a></td>
 <td>Generic type of library generation</td>
-<td>direct</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
 </tr>
 <tr>
 <td><a href="../library_generation_protocol/">library_generation_protocol</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Description of processes applied to substrate to obtain a library that is rea...</td>
-<td>direct</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
 </tr>
 <tr>
 <td><a href="../library_generation_kit_version/">library_generation_kit_version</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>When using a library generation protocol from a commercial provider, provide ...</td>
-<td>direct</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../pcr_target/">pcr_target</a></td>
+<td>* <br/> <a href="../PCRTarget/">PCRTarget</a></td>
+<td>If a PCR step was performed that specifically targets the IG/TR loci, the tar...</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../complete_sequences/">complete_sequences</a></td>
+<td>0..1 <br/> <a href="../CompleteSequencesEnum/">CompleteSequencesEnum</a></td>
+<td>To be considered <code>complete</code>, the procedure used for library construction MUST...</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+</tr>
+<tr>
+<td><a href="../physical_linkage/">physical_linkage</a></td>
+<td>0..1 <br/> <a href="../PhysicalLinkageEnum/">PhysicalLinkageEnum</a></td>
+<td>In case an experimental setup is used that physically links nucleic acids der...</td>
+<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
 </tr>
 <tr>
 <td><a href="../specimen/">specimen</a></td>
@@ -332,10 +432,8 @@
 <pre><code class="language-yaml">name: LibraryPreparationProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: SpecimenProcessing
-slots:
-- library_generation_method
-- library_generation_protocol
-- library_generation_kit_version
+mixins:
+- NucleicAcidProcessing
 class_uri: OBI:00000711
 
 </code></pre>
@@ -345,19 +443,92 @@ class_uri: OBI:00000711
 <pre><code class="language-yaml">name: LibraryPreparationProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: SpecimenProcessing
+mixins:
+- NucleicAcidProcessing
 attributes:
+  template_class:
+    name: template_class
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: The class of nucleic acid that was used as primary starting material
+      for the following procedures
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: template_class
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: TemplateClassEnum
+  template_quality:
+    name: template_quality
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Description and results of the quality control performed on the template
+      material
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: template_quality
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: string
+  template_amount:
+    name: template_amount
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amount of template that went into the process
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: template_amount
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: float
+  template_amount_unit:
+    name: template_amount_unit
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unit of template amount
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: template_amount_unit
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: TemplateAmountUnitOntology
   library_generation_method:
     name: library_generation_method
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
     description: Generic type of library generation
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: library_generation_method
     owner: LibraryPreparationProcessing
     domain_of:
-    - LibraryPreparationProcessing
-    range: string
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: LibraryGenerationMethodEnum
   library_generation_protocol:
     name: library_generation_protocol
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Description of processes applied to substrate to obtain a library
       that is ready for sequencing
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -365,10 +536,15 @@ attributes:
     alias: library_generation_protocol
     owner: LibraryPreparationProcessing
     domain_of:
-    - LibraryPreparationProcessing
+    - NucleicAcidProcessing
+    - SampleProcessing
     range: string
   library_generation_kit_version:
     name: library_generation_kit_version
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: When using a library generation protocol from a commercial provider,
       provide the protocol version number
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -376,8 +552,79 @@ attributes:
     alias: library_generation_kit_version
     owner: LibraryPreparationProcessing
     domain_of:
-    - LibraryPreparationProcessing
+    - NucleicAcidProcessing
+    - SampleProcessing
     range: string
+  pcr_target:
+    name: pcr_target
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: If a PCR step was performed that specifically targets the IG/TR loci,
+      the target and primer locations need to be provided here. This field holds an
+      array of PCRTarget objects, so that multiplex PCR setups amplifying multiple
+      loci at the same time can be annotated using one record per locus. PCR setups
+      not targeting any specific locus must not annotate this field but select the
+      appropriate library_generation_method instead.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: pcr_target
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: PCRTarget
+    multivalued: true
+  complete_sequences:
+    name: complete_sequences
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: To be considered `complete`, the procedure used for library construction
+      MUST generate sequences that 1) include the first V gene codon that encodes
+      the mature polypeptide chain (i.e. after the leader sequence) and 2) include
+      the last complete codon of the J gene (i.e. 1 bp 5' of the J-&gt;C splice site)
+      and 3) provide sequence information for all positions between 1) and 2). To
+      be considered `complete &amp; untemplated`, the sections of the sequences defined
+      in points 1) to 3) of the previous sentence MUST be untemplated, i.e. MUST NOT
+      overlap with the primers used in library preparation. `mixed` should only be
+      used if the procedure used for library construction will likely produce multiple
+      categories of sequences in the given experiment. It SHOULD NOT be used as a
+      replacement of a NULL value.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: complete_sequences
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: CompleteSequencesEnum
+  physical_linkage:
+    name: physical_linkage
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: In case an experimental setup is used that physically links nucleic
+      acids derived from distinct `Rearrangements` before library preparation, this
+      field describes the mode of that linkage. All `hetero_*` terms indicate that
+      in case of paired-read sequencing, the two reads should be expected to map to
+      distinct IG/TR loci. `*_head-head` refers to techniques that link the 5' ends
+      of transcripts in a single-cell context. `*_tail-head` refers to techniques
+      that link the 3' end of one transcript to the 5' end of another one in a single-cell
+      context. This term does not provide any information whether a continuous reading-frame
+      between the two is generated. `*_prelinked` refers to constructs in which the
+      linkage was already present on the DNA level (e.g. scFv).
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: physical_linkage
+    owner: LibraryPreparationProcessing
+    domain_of:
+    - NucleicAcidProcessing
+    - SampleProcessing
+    range: PhysicalLinkageEnum
   specimen:
     name: specimen
     description: The specimen that was input for an assay

@@ -278,6 +278,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -324,7 +331,7 @@
 
 
 <h1 id="slot-release_date">Slot: release_date</h1>
-<p><em>Initial release of the investigation and its data</em></p>
+<p><em>Date of this release</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/release_date">ak_schema:release_date</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -339,8 +346,18 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../AlleleDescription/">AlleleDescription</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Investigation/">Investigation</a></td>
 <td>A scientific investigation</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GermlineSet/">GermlineSet</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -350,6 +367,21 @@
 <li>Range: <a href="../Datetime/">Datetime</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullable</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -377,12 +409,18 @@
 <details>
 
 <pre><code class="language-yaml">name: release_date
-description: Initial release of the investigation and its data
+annotations:
+  nullable:
+    tag: nullable
+    value: true
+description: Date of this release
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: release_date
 domain_of:
 - Investigation
+- AlleleDescription
+- GermlineSet
 range: datetime
 
 </code></pre>

@@ -278,6 +278,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -339,7 +346,17 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../CellProcessing/">CellProcessing</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../CellIsolationProcessing/">CellIsolationProcessing</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../SampleProcessing/">SampleProcessing</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -350,6 +367,21 @@
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullable</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -377,6 +409,10 @@
 <details>
 
 <pre><code class="language-yaml">name: cell_processing_protocol
+annotations:
+  nullable:
+    tag: nullable
+    value: true
 description: Description of the methods applied to the sample including cell preparation/
   isolation/enrichment and nucleic acid extraction. This should closely mirror the
   Materials and methods section in the manuscript.
@@ -385,6 +421,8 @@ rank: 1000
 alias: cell_processing_protocol
 domain_of:
 - CellIsolationProcessing
+- CellProcessing
+- SampleProcessing
 range: string
 
 </code></pre>

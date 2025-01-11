@@ -221,9 +221,23 @@
 
       CellIsolationProcessing : cell_species
 
+
+
+
+    CellIsolationProcessing --&gt; "0..1" CellSpeciesOntology : cell_species
+    click CellSpeciesOntology href "../CellSpeciesOntology"
+
+
       CellIsolationProcessing : cell_storage
 
       CellIsolationProcessing : cell_subset
+
+
+
+
+    CellIsolationProcessing --&gt; "0..1" CellSubsetOntology : cell_subset
+    click CellSubsetOntology href "../CellSubsetOntology"
+
 
       CellIsolationProcessing : cells_per_reaction
 
@@ -281,7 +295,7 @@
 </tr>
 <tr>
 <td><a href="../cell_subset/">cell_subset</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../CellSubsetOntology/">CellSubsetOntology</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
@@ -293,31 +307,31 @@
 </tr>
 <tr>
 <td><a href="../cell_species/">cell_species</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../CellSpeciesOntology/">CellSpeciesOntology</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../single_cell/">single_cell</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if single cells were isolated into separate compartments</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_number/">cell_number</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Total number of cells that went into the experiment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cells_per_reaction/">cells_per_reaction</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>Number of cells for each biological replicate</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../cell_storage/">cell_storage</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>TRUE if cells were cryo-preserved between isolation and further processing</td>
 <td>direct</td>
 </tr>
@@ -420,6 +434,10 @@ is_a: SpecimenProcessing
 attributes:
   tissue_processing:
     name: tissue_processing
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Enzymatic digestion and/or physical methods used to isolate cells
       from sample
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -428,9 +446,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
+    - CellProcessing
+    - SampleProcessing
     range: string
   cell_subset:
     name: cell_subset
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Commonly-used designation of isolated cell population
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -438,9 +462,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
-    range: string
+    - CellProcessing
+    - SampleProcessing
+    range: CellSubsetOntology
   cell_phenotype:
     name: cell_phenotype
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: List of cellular markers and their expression levels used to isolate
       the cell population
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -449,9 +479,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
+    - CellProcessing
+    - SampleProcessing
     range: string
   cell_species:
     name: cell_species
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Binomial designation of the species from which the analyzed cells
       originate. Typically, this value should be identical to `species`, in which
       case it SHOULD NOT be set explicitly. However, there are valid experimental
@@ -464,9 +500,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
-    range: string
+    - CellProcessing
+    - SampleProcessing
+    range: CellSpeciesOntology
   single_cell:
     name: single_cell
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: TRUE if single cells were isolated into separate compartments
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -474,9 +516,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
-    range: string
+    - CellProcessing
+    - SampleProcessing
+    range: boolean
   cell_number:
     name: cell_number
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Total number of cells that went into the experiment
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -484,9 +532,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
-    range: string
+    - CellProcessing
+    - SampleProcessing
+    range: integer
   cells_per_reaction:
     name: cells_per_reaction
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Number of cells for each biological replicate
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -494,9 +548,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
-    range: string
+    - CellProcessing
+    - SampleProcessing
+    range: integer
   cell_storage:
     name: cell_storage
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: TRUE if cells were cryo-preserved between isolation and further processing
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -504,9 +564,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
-    range: string
+    - CellProcessing
+    - SampleProcessing
+    range: boolean
   cell_quality:
     name: cell_quality
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Relative amount of viable cells after preparation and (if applicable)
       thawing
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -515,9 +581,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
+    - CellProcessing
+    - SampleProcessing
     range: string
   cell_isolation:
     name: cell_isolation
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Description of the procedure used for marker-based isolation or enrich
       cells
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -526,9 +598,15 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
+    - CellProcessing
+    - SampleProcessing
     range: string
   cell_processing_protocol:
     name: cell_processing_protocol
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Description of the methods applied to the sample including cell preparation/
       isolation/enrichment and nucleic acid extraction. This should closely mirror
       the Materials and methods section in the manuscript.
@@ -538,6 +616,8 @@ attributes:
     owner: CellIsolationProcessing
     domain_of:
     - CellIsolationProcessing
+    - CellProcessing
+    - SampleProcessing
     range: string
   specimen:
     name: specimen

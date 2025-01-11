@@ -250,7 +250,7 @@
 <tr>
 <td><a href="../sequence_aa/">sequence_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Amino acid sequence</td>
+<td>Amino acid translation of the query nucleotide sequence</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -337,7 +337,11 @@ is_a: Epitope
 attributes:
   sequence_aa:
     name: sequence_aa
-    description: Amino acid sequence.
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Amino acid translation of the query nucleotide sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: sequence_aa
@@ -345,6 +349,7 @@ attributes:
     domain_of:
     - Chain
     - PeptidicEpitope
+    - Rearrangement
     range: string
   source_protein:
     name: source_protein

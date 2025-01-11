@@ -277,8 +277,8 @@
 
 
 
-    Investigation --&gt; "0..1" StudyType : study_type
-    click StudyType href "../StudyType"
+    Investigation --&gt; "0..1" StudyTypeOntology : study_type
+    click StudyTypeOntology href "../StudyTypeOntology"
 
 
       Investigation : update_date
@@ -311,7 +311,7 @@
 <tbody>
 <tr>
 <td><a href="../study_type/">study_type</a></td>
-<td>0..1 <br/> <a href="../StudyType/">StudyType</a></td>
+<td>0..1 <br/> <a href="../StudyTypeOntology/">StudyTypeOntology</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -336,7 +336,7 @@
 <tr>
 <td><a href="../release_date/">release_date</a></td>
 <td>0..1 <br/> <a href="../Datetime/">Datetime</a></td>
-<td>Initial release of the investigation and its data</td>
+<td>Date of this release</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -489,6 +489,10 @@ is_a: PlannedProcess
 attributes:
   study_type:
     name: study_type
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
@@ -497,7 +501,8 @@ attributes:
     owner: Investigation
     domain_of:
     - Investigation
-    range: StudyType
+    - Study
+    range: StudyTypeOntology
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,
@@ -535,13 +540,19 @@ attributes:
     range: string
   release_date:
     name: release_date
-    description: Initial release of the investigation and its data
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Date of this release
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: release_date
     owner: Investigation
     domain_of:
     - Investigation
+    - AlleleDescription
+    - GermlineSet
     range: datetime
   update_date:
     name: update_date

@@ -278,6 +278,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -339,6 +346,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../Study/">Study</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Investigation/">Investigation</a></td>
 <td>A scientific investigation</td>
 <td>no</td>
@@ -347,9 +359,24 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../StudyType/">StudyType</a></li>
+<li>Range: <a href="../StudyTypeOntology/">StudyTypeOntology</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullable</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -377,6 +404,10 @@
 <details>
 
 <pre><code class="language-yaml">name: study_type
+annotations:
+  nullable:
+    tag: nullable
+    value: true
 description: Type of study design
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
@@ -384,7 +415,8 @@ slot_uri: rdf:type
 alias: study_type
 domain_of:
 - Investigation
-range: StudyType
+- Study
+range: StudyTypeOntology
 
 </code></pre>
 

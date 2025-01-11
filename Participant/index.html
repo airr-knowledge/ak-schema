@@ -217,14 +217,14 @@
 
       Participant : age_event
 
-
-
-
-    Participant --&gt; "0..1" LifeEvent : age_event
-    click LifeEvent href "../LifeEvent"
-
-
       Participant : age_unit
+
+
+
+
+    Participant --&gt; "0..1" AgeUnitOntology : age_unit
+    click AgeUnitOntology href "../AgeUnitOntology"
+
 
       Participant : akc_id
 
@@ -233,28 +233,21 @@
 
 
 
-    Participant --&gt; "0..1" BiologicalSex : biological_sex
-    click BiologicalSex href "../BiologicalSex"
+    Participant --&gt; "0..1" BiologicalSexOntology : biological_sex
+    click BiologicalSexOntology href "../BiologicalSexOntology"
 
 
       Participant : description
 
       Participant : ethnicity
 
-
-
-
-    Participant --&gt; "0..1" Ethnicity : ethnicity
-    click Ethnicity href "../Ethnicity"
-
-
       Participant : geolocation
 
 
 
 
-    Participant --&gt; "0..1" Geolocation : geolocation
-    click Geolocation href "../Geolocation"
+    Participant --&gt; "0..1" GeolocationOntology : geolocation
+    click GeolocationOntology href "../GeolocationOntology"
 
 
       Participant : name
@@ -264,26 +257,19 @@
 
 
 
-    Participant --&gt; "0..1" PhenotypicSex : phenotypic_sex
-    click PhenotypicSex href "../PhenotypicSex"
+    Participant --&gt; "0..1" PhenotypicSexOntology : phenotypic_sex
+    click PhenotypicSexOntology href "../PhenotypicSexOntology"
 
 
       Participant : race
-
-
-
-
-    Participant --&gt; "0..1" Race : race
-    click Race href "../Race"
-
 
       Participant : species
 
 
 
 
-    Participant --&gt; "0..1" Species : species
-    click Species href "../Species"
+    Participant --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
 
 
       Participant : strain
@@ -291,8 +277,8 @@
 
 
 
-    Participant --&gt; "0..1" Strain : strain
-    click Strain href "../Strain"
+    Participant --&gt; "0..1" StrainEnum : strain
+    click StrainEnum href "../StrainEnum"
 
 
       Participant : study_arm
@@ -335,19 +321,19 @@
 </tr>
 <tr>
 <td><a href="../species/">species</a></td>
-<td>0..1 <br/> <a href="../Species/">Species</a></td>
-<td>The species of a participant</td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../biological_sex/">biological_sex</a></td>
-<td>0..1 <br/> <a href="../BiologicalSex/">BiologicalSex</a></td>
+<td>0..1 <br/> <a href="../BiologicalSexOntology/">BiologicalSexOntology</a></td>
 <td>The biological sex of a participant</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../phenotypic_sex/">phenotypic_sex</a></td>
-<td>0..1 <br/> <a href="../PhenotypicSex/">PhenotypicSex</a></td>
+<td>0..1 <br/> <a href="../PhenotypicSexOntology/">PhenotypicSexOntology</a></td>
 <td>The phenotypic sex of a participant</td>
 <td>direct</td>
 </tr>
@@ -359,37 +345,37 @@
 </tr>
 <tr>
 <td><a href="../age_unit/">age_unit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>Units used to describe the age</td>
+<td>0..1 <br/> <a href="../AgeUnitOntology/">AgeUnitOntology</a></td>
+<td>Unit of age range</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../age_event/">age_event</a></td>
-<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
-<td>The event to which the age is relative</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Event in the study schedule to which <code>Age</code> refers</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../race/">race</a></td>
-<td>0..1 <br/> <a href="../Race/">Race</a></td>
-<td>The race of a participant</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Racial group of subject (as defined by NIH)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../ethnicity/">ethnicity</a></td>
-<td>0..1 <br/> <a href="../Ethnicity/">Ethnicity</a></td>
-<td>The ethnicity of a participant</td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Ethnic group of subject (defined as cultural/language-based membership)</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../geolocation/">geolocation</a></td>
-<td>0..1 <br/> <a href="../Geolocation/">Geolocation</a></td>
+<td>0..1 <br/> <a href="../GeolocationOntology/">GeolocationOntology</a></td>
 <td>The geolocation of a participant at birth</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../strain/">strain</a></td>
-<td>0..1 <br/> <a href="../Strain/">Strain</a></td>
+<td>0..1 <br/> <a href="../StrainEnum/">StrainEnum</a></td>
 <td>The strain of the participant (non-human study participants)</td>
 <td>direct</td>
 </tr>
@@ -512,15 +498,21 @@ attributes:
     range: StudyArm
   species:
     name: species
-    description: The species of a participant
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: rdf:type
     alias: species
     owner: Participant
     domain_of:
     - Participant
-    range: Species
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   biological_sex:
     name: biological_sex
     description: The biological sex of a participant
@@ -531,7 +523,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
-    range: BiologicalSex
+    range: BiologicalSexOntology
   phenotypic_sex:
     name: phenotypic_sex
     description: The phenotypic sex of a participant
@@ -542,7 +534,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
-    range: PhenotypicSex
+    range: PhenotypicSexOntology
   age:
     name: age
     description: The age of a participant relative to age_event
@@ -555,44 +547,68 @@ attributes:
     range: string
   age_unit:
     name: age_unit
-    description: Units used to describe the age
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Unit of age range
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: age_unit
     owner: Participant
     domain_of:
     - Participant
-    range: string
+    - Subject
+    range: AgeUnitOntology
   age_event:
     name: age_event
-    description: The event to which the age is relative
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Event in the study schedule to which `Age` refers. For NCBI BioSample
+      this MUST be `sampling`. For other implementations submitters need to be aware
+      that there is currently no mechanism to encode to potential delta between `Age
+      event` and `Sample collection time`, hence the chosen events should be in temporal
+      proximity.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: age_event
     owner: Participant
     domain_of:
     - Participant
-    range: LifeEvent
+    - Subject
+    range: string
   race:
     name: race
-    description: The race of a participant
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Racial group of subject (as defined by NIH)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: race
     owner: Participant
     domain_of:
     - Participant
-    range: Race
+    - Subject
+    range: string
   ethnicity:
     name: ethnicity
-    description: The ethnicity of a participant
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Ethnic group of subject (defined as cultural/language-based membership)
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: ethnicity
     owner: Participant
     domain_of:
     - Participant
-    range: Ethnicity
+    - Subject
+    range: string
   geolocation:
     name: geolocation
     description: The geolocation of a participant at birth
@@ -604,7 +620,7 @@ attributes:
     domain_of:
     - Participant
     - LifeEvent
-    range: Geolocation
+    range: GeolocationOntology
   strain:
     name: strain
     description: The strain of the participant (non-human study participants)
@@ -614,7 +630,7 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
-    range: Strain
+    range: StrainEnum
   name:
     name: name
     description: A human-readable name for a thing

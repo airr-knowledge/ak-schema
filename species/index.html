@@ -278,6 +278,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -324,8 +331,8 @@
 
 
 <h1 id="slot-species">Slot: species</h1>
-<p><em>The species of a participant</em></p>
-<p>URI: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a></p>
+<p><em>Binomial designation of subject's species</em></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/species">ak_schema:species</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,6 +346,21 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../Subject/">Subject</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AlleleDescription/">AlleleDescription</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GermlineSet/">GermlineSet</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Participant/">Participant</a></td>
 <td>A participant in an investigation</td>
 <td>no</td>
@@ -347,9 +369,24 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../Species/">Species</a></li>
+<li>Range: <a href="../SpeciesOntology/">SpeciesOntology</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullable</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -365,7 +402,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>rdf:type</td>
+<td>ak_schema:species</td>
 </tr>
 <tr>
 <td>native</td>
@@ -377,14 +414,20 @@
 <details>
 
 <pre><code class="language-yaml">name: species
-description: The species of a participant
+annotations:
+  nullable:
+    tag: nullable
+    value: false
+description: Binomial designation of subject's species
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-slot_uri: rdf:type
 alias: species
 domain_of:
 - Participant
-range: Species
+- AlleleDescription
+- GermlineSet
+- Subject
+range: SpeciesOntology
 
 </code></pre>
 

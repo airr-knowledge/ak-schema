@@ -278,6 +278,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -324,7 +331,7 @@
 
 
 <h1 id="slot-disease_stage">Slot: disease_stage</h1>
-<p><em>The stage of the disease relevant to an immune exposure</em></p>
+<p><em>Stage of disease at current intervention</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/disease_stage">ak_schema:disease_stage</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -339,6 +346,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../Diagnosis/">Diagnosis</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
 <td>An event involving the immune system of a study participant</td>
 <td>no</td>
@@ -347,9 +359,24 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../DiseaseStage/">DiseaseStage</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullable</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -377,13 +404,18 @@
 <details>
 
 <pre><code class="language-yaml">name: disease_stage
-description: The stage of the disease relevant to an immune exposure
+annotations:
+  nullable:
+    tag: nullable
+    value: true
+description: Stage of disease at current intervention
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: disease_stage
 domain_of:
 - ImmuneExposure
-range: DiseaseStage
+- Diagnosis
+range: string
 
 </code></pre>
 

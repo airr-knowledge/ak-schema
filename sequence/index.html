@@ -324,7 +324,6 @@
 
 
 <h1 id="slot-sequence">Slot: sequence</h1>
-<p><em>Nucleotide sequence.</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/sequence">ak_schema:sequence</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -339,7 +338,32 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../AlleleDescription/">AlleleDescription</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../UnrearrangedSequence/">UnrearrangedSequence</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Rearrangement/">Rearrangement</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Chain/">Chain</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../RearrangedSequence/">RearrangedSequence</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../UndocumentedAllele/">UndocumentedAllele</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -377,12 +401,16 @@
 <details>
 
 <pre><code class="language-yaml">name: sequence
-description: Nucleotide sequence.
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: sequence
 domain_of:
 - Chain
+- RearrangedSequence
+- UnrearrangedSequence
+- AlleleDescription
+- UndocumentedAllele
+- Rearrangement
 range: string
 
 </code></pre>

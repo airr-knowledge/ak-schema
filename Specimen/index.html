@@ -234,6 +234,13 @@
       Specimen : tissue
 
 
+
+
+    Specimen --&gt; "0..1" TissueOntology : tissue
+    click TissueOntology href "../TissueOntology"
+
+
+
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
@@ -270,8 +277,8 @@
 </tr>
 <tr>
 <td><a href="../tissue/">tissue</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The tissue from which this specimen was taken</td>
+<td>0..1 <br/> <a href="../TissueOntology/">TissueOntology</a></td>
+<td>The actual tissue sampled, e</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -336,12 +343,6 @@
 <td><a href="./">Specimen</a></td>
 </tr>
 <tr>
-<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
-<td><a href="../specimen/">specimen</a></td>
-<td>range</td>
-<td><a href="./">Specimen</a></td>
-</tr>
-<tr>
 <td><a href="../LibraryPreparationProcessing/">LibraryPreparationProcessing</a></td>
 <td><a href="../specimen/">specimen</a></td>
 <td>range</td>
@@ -354,7 +355,7 @@
 <td><a href="./">Specimen</a></td>
 </tr>
 <tr>
-<td><a href="../ReceptorRepertoireSequencingAssay/">ReceptorRepertoireSequencingAssay</a></td>
+<td><a href="../AIRRSequencingAssay/">AIRRSequencingAssay</a></td>
 <td><a href="../specimen/">specimen</a></td>
 <td>range</td>
 <td><a href="./">Specimen</a></td>
@@ -438,14 +439,20 @@ attributes:
     range: string
   tissue:
     name: tissue
-    description: The tissue from which this specimen was taken
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: tissue
     owner: Specimen
     domain_of:
     - Specimen
-    range: string
+    - Sample
+    - SampleProcessing
+    range: TissueOntology
   process:
     name: process
     description: The type of specimen collection process that resulted in this specimen

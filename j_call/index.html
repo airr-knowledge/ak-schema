@@ -278,6 +278,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    Annotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -324,7 +331,6 @@
 
 
 <h1 id="slot-j_call">Slot: j_call</h1>
-<p><em>J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/j_call">ak_schema:j_call</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -343,6 +349,16 @@
 <td></td>
 <td>no</td>
 </tr>
+<tr>
+<td><a href="../Rearrangement/">Rearrangement</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Clone/">Clone</a></td>
+<td></td>
+<td>no</td>
+</tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
@@ -350,6 +366,21 @@
 <li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
+<h3 id="annotations">Annotations</h3>
+<table>
+<thead>
+<tr>
+<th>property</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullable</td>
+<td>True</td>
+</tr>
+</tbody>
+</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -377,14 +408,17 @@
 <details>
 
 <pre><code class="language-yaml">name: j_call
-description: J gene with allele. If referring to a known reference sequence in a database
-  the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using
-  IMGT/GENE-DB).
+annotations:
+  nullable:
+    tag: nullable
+    value: true
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: j_call
 domain_of:
 - Chain
+- Rearrangement
+- Clone
 range: string
 
 </code></pre>
