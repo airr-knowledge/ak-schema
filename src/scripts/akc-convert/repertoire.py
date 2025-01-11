@@ -28,7 +28,7 @@ class CRepertoire(Parser):
             "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
             "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id", "disease_diagnosis"] },
             "AIRRSequencingAssay" : { "classes" : ["AIRRSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
-            "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+#            "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "LibraryPreparationProcessing" : { "classes" : ["LibraryPreparationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "CellIsolationProcessing" : { "classes" : ["CellIsolationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] }
         }
@@ -47,7 +47,7 @@ class CRepertoire(Parser):
                 "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "CellIsolationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+#                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "LibraryPreparationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "AIRRSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "Assay" : [],
@@ -69,7 +69,7 @@ class CRepertoire(Parser):
                 'SpecimenCollection':'specimen_collections',
                 'SpecimenProcessing':'specimen_processings',
                 'CellIsolationProcessing':'specimen_processings',
-                'NucleicAcidProcessing':'specimen_processings',
+#                'NucleicAcidProcessing':'specimen_processings',
                 'LibraryPreparationProcessing':'specimen_processings',
                 'Assay':'assays',
                 'AIRRSequencingAssay':'assays',
@@ -397,7 +397,11 @@ class CRepertoire(Parser):
                         # The python globals object consists of a list of global entities. This
                         # will include the classes that are part of the AKC data model. So the
                         # line below instantiates an instance of the class with the name provided in akc_class.
-                        akc_object = globals()[akc_class](akc_id=str(uuid.uuid4()))
+                        if akc_class == 'Reference':
+                            uri = repertoire_dict['pub_ids']['value'].replace(' ','')
+                            akc_object = globals()[akc_class](source_uri=uri)
+                        else:
+                            akc_object = globals()[akc_class](akc_id=str(uuid.uuid4()))
                         # Generate a unique ID for this object, add the link tag and related
                         # other info we might need to link objects together later.
                         #akc_object['akc_id'] = str(uuid.uuid4())
