@@ -108,7 +108,6 @@
       "specimen": "example:specimen-3480642",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
-      "value": "Positive",
       "epitope": "iedb_epitope:20788",
       "tcell_receptors": [
         "iedb_receptor:20833",
@@ -800,7 +799,8 @@
         "iedb_receptor:24245",
         "iedb_receptor:24246",
         "iedb_receptor:24247"
-      ]
+      ],
+      "value": "Positive"
     }
   },
   "datasets": {

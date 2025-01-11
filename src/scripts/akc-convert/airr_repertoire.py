@@ -5,16 +5,16 @@ import sys
 import airr
 import uuid
 import numpy as np
-from repertoire import Repertoire
+from repertoire import CRepertoire
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
 
 
-class AIRRRepertoire(Repertoire):
+class AIRRRepertoire(CRepertoire):
     
     # Constructor - call the parent class constructor.
     def __init__(self, verbose, airr_map):
-        Repertoire.__init__(self, verbose, airr_map) 
+        CRepertoire.__init__(self, verbose, airr_map) 
 
     def process(self, filename, out_file):
 
@@ -98,7 +98,7 @@ class AIRRRepertoire(Repertoire):
                 "Investigation" : {
                     "participants" : {"lookup" : "forward", "class" : "Participant", "field" : "adc_study_id", "source" : "Investigation"},
                     "documents" : {"lookup" : "forward", "class" : "Reference", "field" : "adc_study_id", "source" : "Investigation"},
-                    "assays" : {"lookup" : "forward", "class" : "ReceptorRepertoireSequencingAssay", "field" : "adc_study_id", "source" : "Investigation"},
+                    "assays" : {"lookup" : "forward", "class" : "AIRRSequencingAssay", "field" : "adc_study_id", "source" : "Investigation"},
                     "conclusions" : {"lookup" : "forward", "class" : "Conclusion", "field" : "adc_study_id", "source" : "Investigation"},
                     "simulations" : {"lookup" : "forward", "class" : "Simulation", "field" : "adc_study_id", "source" : "Investigation"}
                     },
@@ -124,13 +124,13 @@ class AIRRRepertoire(Repertoire):
                 "CellIsolationProcessing" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     },
-                "NucleicAcidProcessing" : {
-                    "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
-                    },
+#                "NucleicAcidProcessing" : {
+#                    "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
+#                    },
                 "LibraryPreparationProcessing" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     },
-                "ReceptorRepertoireSequencingAssay" : {
+                "AIRRSequencingAssay" : {
                     "specimen" : {"lookup" : "reverse", "class" : "LifeEvent", "field" : "adc_repertoire_id", "source" : "Specimen"},
                     }
                 }
@@ -195,11 +195,17 @@ class AIRRRepertoire(Repertoire):
                                         # If it is an array, then we append the id of the instance being linked, 
                                         # If it isn't an array then we just set the variable.
                                         if row['akc_is_array'] == True:
-                                            change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
+                                            if row['akc_type'] == 'Reference':
+                                                change_class_instance[row['akc_field']].append(source_class_instance['source_uri'])
+                                            else:
+                                                change_class_instance[row['akc_field']].append(source_class_instance['akc_id'])
                                         else:
                                             change_class_instance[row['akc_field']] = source_class_instance['akc_id']
                                         if self.verbose():
-                                            print('            %s.%s in %s = %s (from %s,%s)'%(akc_change_class, row['akc_field'], change_akc_key, source_class_instance['akc_id'],akc_source_class, source_akc_key))
+                                            if row['akc_type'] == 'Reference':
+                                                print('            %s.%s in %s = %s (from %s,%s)'%(akc_change_class, row['akc_field'], change_akc_key, source_class_instance['source_uri'],akc_source_class, source_akc_key))
+                                            else:
+                                                print('            %s.%s in %s = %s (from %s,%s)'%(akc_change_class, row['akc_field'], change_akc_key, source_class_instance['akc_id'],akc_source_class, source_akc_key))
                                 elif field_info['lookup'] == 'reverse':
                                     # Reverse look up means we use the change class information but the source class algorithm to
                                     # generate the tag.
@@ -238,7 +244,11 @@ class AIRRRepertoire(Repertoire):
                     # For each instance of the type contained in the slot
                     for akc_instance, akc_instance_dict in akc_class_slot.items():
                         # Generate a temporary object of the type being processed
-                        tmp_object = globals()[akc_class]('')
+                        if akc_class == 'Reference':
+                            tmp_object = globals()[akc_class](source_uri='')
+                        else:
+                            #print(akc_class)
+                            tmp_object = globals()[akc_class](akc_id=str(uuid.uuid4()))
                         # If the type is the same process it. This avoids needlessly
                         # trying to process different assays from the assays slot
                         # when they are not of the correct subclass. 
@@ -258,7 +268,10 @@ class AIRRRepertoire(Repertoire):
                 # For every instance, add it to the dictionary using the UUID as
                 # the key.
                 for akc_instance, akc_instance_dict in akc_class_slot.items():
-                    new_slot_dict[akc_instance_dict['akc_id']] = akc_instance_dict
+                    if hasattr(akc_instance_dict, 'source_uri'):
+                        new_slot_dict[akc_instance_dict['source_uri']] = akc_instance_dict
+                    else:
+                        new_slot_dict[akc_instance_dict['akc_id']] = akc_instance_dict
 
                 # Replace the old dictionary with the new dictionary
                 akc_object[akc_slot] = new_slot_dict

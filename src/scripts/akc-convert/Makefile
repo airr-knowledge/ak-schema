@@ -1,4 +1,16 @@
-all: PRJNA248411 PRJNA248475 PRJNA300878 PRJNA280743 PRJNA381394 PRJNA509910 PRJNA680539 PRJNA724733 PRJNA472381 PRJNA608742 IR-T1D-000003
+all: studies ak_schema.py convert
+
+clean:
+	rm -rf studies
+	rm ak_schema.py
+
+studies:
+	mkdir studies
+
+ak_schema.py: ../../../project/linkml/ak_schema.yaml
+	gen-python ../../../project/linkml/ak_schema.yaml > ak_schema.py
+
+convert: PRJNA248411 PRJNA248475 PRJNA300878 PRJNA280743 PRJNA381394 PRJNA509910 PRJNA680539 PRJNA724733 PRJNA472381 PRJNA608742 IR-T1D-000003
 
 PRJNA248411:
 	bash akc-convert-study.sh ipa1.ireceptor.org PRJNA248411 studies

@@ -36,7 +36,7 @@ if [ $COUNT -eq 0 ]; then
 fi
 
 # Convert the data to the AKC schema
-python dataloader.py --repertoire -f $OUTPUT_DIR/$REPOSITORY-$STUDY_ID-ADC.json --mapfile ./config/AIRR-iReceptorMapping.txt -o $OUTPUT_DIR/$REPOSITORY-$STUDY_ID-AKC.json
+python dataloader.py --repertoire -f $OUTPUT_DIR/$REPOSITORY-$STUDY_ID-ADC.json --mapfile ./config/AIRR-AKC-Mapping.tsv -o $OUTPUT_DIR/$REPOSITORY-$STUDY_ID-AKC.json
 # If conversion failed, report an error and exit.
 if [ $? -ne 0 ]; then
     echo "Error: Conversion of ADC query response failed"

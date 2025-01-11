@@ -11,7 +11,7 @@ from parser import Parser
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
 
-class Repertoire(Parser):
+class CRepertoire(Parser):
     
     def __init__(self, verbose, airr_map):
         Parser.__init__(self, verbose, airr_map)
@@ -27,8 +27,8 @@ class Repertoire(Parser):
             "Specimen" : { "classes" : ["Specimen"], "fields" : ["subject_id", "sample_id"] },
             "LifeEvent" : { "classes" : ["LifeEvent"], "fields" : ["subject_id", "sample_id"] },
             "ImmuneExposure" : { "classes" : ["ImmuneExposure"], "fields" : ["subject_id", "disease_diagnosis"] },
-            "ReceptorRepertoireSequencingAssay" : { "classes" : ["ReceptorRepertoireSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
-            "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+            "AIRRSequencingAssay" : { "classes" : ["AIRRSequencingAssay"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
+#            "NucleicAcidProcessing" : { "classes" : ["NucleicAcidProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "LibraryPreparationProcessing" : { "classes" : ["LibraryPreparationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] },
             "CellIsolationProcessing" : { "classes" : ["CellIsolationProcessing"], "fields" : ["subject_id", "sample_id","sample_processing_id"] }
         }
@@ -47,9 +47,9 @@ class Repertoire(Parser):
                 "ImmuneExposure" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "Specimen" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "CellIsolationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+#                "NucleicAcidProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "LibraryPreparationProcessing" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
-                "ReceptorRepertoireSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
+                "AIRRSequencingAssay" : ['repertoire_id', 'sample_processing_id', 'data_processing_id', 'study_id', 'subject_id', 'sample_id'],
                 "Assay" : [],
                 "TCellReceptorEpitopeBindingAssay" : []
                 }
@@ -69,10 +69,10 @@ class Repertoire(Parser):
                 'SpecimenCollection':'specimen_collections',
                 'SpecimenProcessing':'specimen_processings',
                 'CellIsolationProcessing':'specimen_processings',
-                'NucleicAcidProcessing':'specimen_processings',
+#                'NucleicAcidProcessing':'specimen_processings',
                 'LibraryPreparationProcessing':'specimen_processings',
                 'Assay':'assays',
-                'ReceptorRepertoireSequencingAssay':'assays',
+                'AIRRSequencingAssay':'assays',
                 'TCellReceptorEpitopeBindingAssay':'assays',
                 'Dataset':'datasets',
                 'Conclusion':'conclusions',
@@ -343,7 +343,7 @@ class Repertoire(Parser):
             investigation = investigation_dict[akc_base_class]
         else:
             # If it doesn't exist we need to create a dict for this study.
-            investigation = globals()[akc_base_class]('')
+            investigation = globals()[akc_base_class]()
 
             # Record the investigation for later use.
             investigation_dict[akc_base_class] = investigation
@@ -397,10 +397,14 @@ class Repertoire(Parser):
                         # The python globals object consists of a list of global entities. This
                         # will include the classes that are part of the AKC data model. So the
                         # line below instantiates an instance of the class with the name provided in akc_class.
-                        akc_object = globals()[akc_class]('')
+                        if akc_class == 'Reference':
+                            uri = repertoire_dict['pub_ids']['value'].replace(' ','')
+                            akc_object = globals()[akc_class](source_uri=uri)
+                        else:
+                            akc_object = globals()[akc_class](akc_id=str(uuid.uuid4()))
                         # Generate a unique ID for this object, add the link tag and related
                         # other info we might need to link objects together later.
-                        akc_object['akc_id'] = str(uuid.uuid4())
+                        #akc_object['akc_id'] = str(uuid.uuid4())
                         akc_object['adc_link_tag'] = airr_link_value
                         akc_object = self.addADCData(akc_object, akc_class, repertoire_dict)
                         # Some classes (akc_link_classes) require the creation of other classes
@@ -430,7 +434,7 @@ class Repertoire(Parser):
                                 if self.verbose():
                                     print('Info: Create instance %s (link Class), link class = %s, target_class = %s'%(class_link_value, link_class, link_class_info['link_target']))
                                 # Create the class instance required.
-                                akc_link_object = globals()[link_class]('')
+                                akc_link_object = globals()[link_class](akc_id=str(uuid.uuid4()))
                                 # Generate a unique ID for this object, add the link tag and related
                                 # other info we might need to link objects together later.
                                 akc_link_object['akc_id'] = str(uuid.uuid4())
@@ -518,8 +522,9 @@ class Repertoire(Parser):
                             if self.verbose():
                                 print('Info: Create instance %s (empty Class), field = %s, value = %s, type = %s'%(class_link_value, value['akc_field'],value['value'], value['akc_type']))
                             # Create the object, set its ID, add its link tag
-                            akc_class_object = globals()[akc_class]('')
-                            akc_class_object['akc_id'] = str(uuid.uuid4())
+                            
+                            akc_class_object = globals()[akc_class](akc_id=str(uuid.uuid4()))
+                            #akc_class_object['akc_id'] = str(uuid.uuid4())
                             akc_class_object['adc_link_tag'] = class_link_value
                             # Add approrpiate extra ADC related data for this type of object.
                             akc_class_object = self.addADCData(akc_class_object, akc_class, repertoire_dict)
