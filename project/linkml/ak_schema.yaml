@@ -84,6 +84,9 @@ prefixes:
   rdf:
     prefix_prefix: rdf
     prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  AKC:
+    prefix_prefix: AKC
+    prefix_reference: https://airr-knowledge.org/akc/api/v1/id/
   xsd:
     prefix_prefix: xsd
     prefix_reference: http://www.w3.org/2001/XMLSchema#
@@ -1058,6 +1061,11 @@ slots:
     description: The specific type of an assessment
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
+  complete_vdj:
+    name: complete_vdj
+    description: Complete VDJ flag.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
   sequence:
     name: sequence
     description: Nucleotide sequence.
@@ -1326,6 +1334,30 @@ classes:
         range: Conclusion
         multivalued: true
         inlined: true
+      chains:
+        name: chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: true
+        inlined: true
+      ab_tcell_receptors:
+        name: ab_tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: AlphaBetaTCR
+        multivalued: true
+        inlined: true
+      gd_tcell_receptors:
+        name: gd_tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: GammaDeltaTCR
+        multivalued: true
+        inlined: true
+      bcell_receptors:
+        name: bcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: BCellReceptor
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation
@@ -1503,8 +1535,9 @@ classes:
   Chain:
     name: Chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
     slots:
+    - complete_vdj
     - sequence
     - sequence_aa
     - chain_type
@@ -1525,7 +1558,8 @@ classes:
   TCellReceptor:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
+    abstract: true
     class_uri: GO:0042101
   AlphaBetaTCR:
     name: AlphaBetaTCR
@@ -1546,7 +1580,7 @@ classes:
   BCellReceptor:
     name: BCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
     slots:
     - IGH_chain
     - IGK_chain

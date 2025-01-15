@@ -4,6 +4,22 @@
             "additionalProperties": false,
             "description": "A container for instances of multiple classes.",
             "properties": {
+                "ab_tcell_receptors": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "assays": {
                     "additionalProperties": {
                         "anyOf": [
@@ -36,6 +52,38 @@
                         "null"
                     ]
                 },
+                "bcell_receptors": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BCellReceptor__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "chains": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/Chain__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "conclusions": {
                     "additionalProperties": {
                         "anyOf": [
@@ -57,6 +105,22 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/Dataset__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "gd_tcell_receptors": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -237,25 +301,38 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
                 "akc_id"
             ],
+            "title": "AlphaBetaTCR",
+            "type": "object"
+        },
+        "AlphaBetaTCR__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "TRA_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TRB_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                }
+            },
+            "required": [],
             "title": "AlphaBetaTCR",
             "type": "object"
         },
@@ -539,25 +616,45 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
                 "akc_id"
             ],
+            "title": "BCellReceptor",
+            "type": "object"
+        },
+        "BCellReceptor__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "IGH_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "IGK_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "IGL_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                }
+            },
+            "required": [],
             "title": "BCellReceptor",
             "type": "object"
         },
@@ -681,15 +778,15 @@
                     "$ref": "#/$defs/ChainType",
                     "description": "Gene locus (chain type)."
                 },
-                "d_call": {
-                    "description": "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).",
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
                     "type": [
-                        "string",
+                        "boolean",
                         "null"
                     ]
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "d_call": {
+                    "description": "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).",
                     "type": [
                         "string",
                         "null"
@@ -704,13 +801,6 @@
                 },
                 "junction_aa": {
                     "description": "Amino acid form of the junction.",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
                     "type": [
                         "string",
                         "null"
@@ -802,6 +892,142 @@
             ],
             "title": "ChainType",
             "type": "string"
+        },
+        "Chain__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "c_call": {
+                    "description": "Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_aa": {
+                    "description": "Amino acid translation of the cdr1 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr1_end": {
+                    "description": "CDR1 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr1_start": {
+                    "description": "CDR1 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_aa": {
+                    "description": "Amino acid translation of the cdr2 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr2_end": {
+                    "description": "CDR2 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr2_start": {
+                    "description": "CDR2 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_aa": {
+                    "description": "Amino acid translation of the cdr3 field.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "cdr3_end": {
+                    "description": "CDR3 end position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "cdr3_start": {
+                    "description": "CDR3 start position in the query sequence (1-based closed interval).",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "chain_type": {
+                    "$ref": "#/$defs/ChainType",
+                    "description": "Gene locus (chain type)."
+                },
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "d_call": {
+                    "description": "First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_call": {
+                    "description": "J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa": {
+                    "description": "Amino acid form of the junction.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence": {
+                    "description": "Nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "sequence_aa": {
+                    "description": "Amino acid sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_call": {
+                    "description": "V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "Chain",
+            "type": "object"
         },
         "Conclusion": {
             "additionalProperties": false,
@@ -1147,25 +1373,38 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
                 "akc_id"
             ],
+            "title": "GammaDeltaTCR",
+            "type": "object"
+        },
+        "GammaDeltaTCR__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "TRD_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "TRG_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                }
+            },
+            "required": [],
             "title": "GammaDeltaTCR",
             "type": "object"
         },
@@ -2651,35 +2890,6 @@
             "title": "StudyType",
             "type": "string"
         },
-        "TCellReceptor": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "TCellReceptor",
-            "type": "object"
-        },
         "Tissue": {
             "additionalProperties": false,
             "description": "",
@@ -2716,6 +2926,22 @@
     "description": "A container for instances of multiple classes.",
     "metamodel_version": "1.7.0",
     "properties": {
+        "ab_tcell_receptors": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
         "assays": {
             "additionalProperties": {
                 "anyOf": [
@@ -2748,6 +2974,38 @@
                 "null"
             ]
         },
+        "bcell_receptors": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/BCellReceptor__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "chains": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/Chain__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
         "conclusions": {
             "additionalProperties": {
                 "anyOf": [
@@ -2769,6 +3027,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Dataset__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "gd_tcell_receptors": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
                     },
                     {
                         "type": "null"

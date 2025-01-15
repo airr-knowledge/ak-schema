@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2024-10-09T17:20:22
+# Generation date: 2024-10-11T21:38:02
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -31,6 +31,7 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+AKC = CurieNamespace('AKC', 'https://airr-knowledge.org/akc/api/v1/id/')
 APOLLO_SV = CurieNamespace('APOLLO_SV', 'http://purl.obolibrary.org/obo/APOLLO_SV_')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
@@ -300,11 +301,11 @@ class ImmuneSystemAkcId(NamedThingAkcId):
     pass
 
 
-class ChainAkcId(NamedThingAkcId):
+class ChainAkcId(AKObjectAkcId):
     pass
 
 
-class TCellReceptorAkcId(NamedThingAkcId):
+class TCellReceptorAkcId(AKObjectAkcId):
     pass
 
 
@@ -316,7 +317,7 @@ class GammaDeltaTCRAkcId(TCellReceptorAkcId):
     pass
 
 
-class BCellReceptorAkcId(NamedThingAkcId):
+class BCellReceptorAkcId(AKObjectAkcId):
     pass
 
 
@@ -477,6 +478,10 @@ class AIRRKnowledgeCommons(YAMLRoot):
     assays: Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, "Assay"]], List[Union[dict, "Assay"]]]] = empty_dict()
     datasets: Optional[Union[Dict[Union[str, DatasetAkcId], Union[dict, "Dataset"]], List[Union[dict, "Dataset"]]]] = empty_dict()
     conclusions: Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, "Conclusion"]], List[Union[dict, "Conclusion"]]]] = empty_dict()
+    chains: Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, "Chain"]], List[Union[dict, "Chain"]]]] = empty_dict()
+    ab_tcell_receptors: Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, "AlphaBetaTCR"]], List[Union[dict, "AlphaBetaTCR"]]]] = empty_dict()
+    gd_tcell_receptors: Optional[Union[Dict[Union[str, GammaDeltaTCRAkcId], Union[dict, "GammaDeltaTCR"]], List[Union[dict, "GammaDeltaTCR"]]]] = empty_dict()
+    bcell_receptors: Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, "BCellReceptor"]], List[Union[dict, "BCellReceptor"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="investigations", slot_type=Investigation, key_name="akc_id", keyed=True)
@@ -504,6 +509,14 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="datasets", slot_type=Dataset, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="conclusions", slot_type=Conclusion, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="chains", slot_type=Chain, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="ab_tcell_receptors", slot_type=AlphaBetaTCR, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="gd_tcell_receptors", slot_type=GammaDeltaTCR, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="bcell_receptors", slot_type=BCellReceptor, key_name="akc_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -1152,7 +1165,7 @@ class ImmuneSystem(NamedThing):
 
 
 @dataclass(repr=False)
-class Chain(NamedThing):
+class Chain(AKObject):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Chain"]
@@ -1161,6 +1174,7 @@ class Chain(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Chain
 
     akc_id: Union[str, ChainAkcId] = None
+    complete_vdj: Optional[Union[bool, Bool]] = None
     sequence: Optional[str] = None
     sequence_aa: Optional[str] = None
     chain_type: Optional[Union[str, "ChainType"]] = None
@@ -1184,6 +1198,9 @@ class Chain(NamedThing):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, ChainAkcId):
             self.akc_id = ChainAkcId(self.akc_id)
+
+        if self.complete_vdj is not None and not isinstance(self.complete_vdj, Bool):
+            self.complete_vdj = Bool(self.complete_vdj)
 
         if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
@@ -1240,7 +1257,7 @@ class Chain(NamedThing):
 
 
 @dataclass(repr=False)
-class TCellReceptor(NamedThing):
+class TCellReceptor(AKObject):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GO["0042101"]
@@ -1249,15 +1266,6 @@ class TCellReceptor(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCellReceptor
 
     akc_id: Union[str, TCellReceptorAkcId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, TCellReceptorAkcId):
-            self.akc_id = TCellReceptorAkcId(self.akc_id)
-
-        super().__post_init__(**kwargs)
-
 
 @dataclass(repr=False)
 class AlphaBetaTCR(TCellReceptor):
@@ -1316,7 +1324,7 @@ class GammaDeltaTCR(TCellReceptor):
 
 
 @dataclass(repr=False)
-class BCellReceptor(NamedThing):
+class BCellReceptor(AKObject):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["BCellReceptor"]
@@ -2145,6 +2153,9 @@ slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_typ
 slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
 
+slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie=AK_SCHEMA.curie('complete_vdj'),
+                   model_uri=AK_SCHEMA.complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
+
 slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
                    model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
 
@@ -2267,3 +2278,15 @@ slots.aIRRKnowledgeCommons__datasets = Slot(uri=AK_SCHEMA.datasets, name="aIRRKn
 
 slots.aIRRKnowledgeCommons__conclusions = Slot(uri=AK_SCHEMA.conclusions, name="aIRRKnowledgeCommons__conclusions", curie=AK_SCHEMA.curie('conclusions'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__conclusions, domain=None, range=Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, Conclusion]], List[Union[dict, Conclusion]]]])
+
+slots.aIRRKnowledgeCommons__chains = Slot(uri=AK_SCHEMA.chains, name="aIRRKnowledgeCommons__chains", curie=AK_SCHEMA.curie('chains'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__chains, domain=None, range=Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, Chain]], List[Union[dict, Chain]]]])
+
+slots.aIRRKnowledgeCommons__ab_tcell_receptors = Slot(uri=AK_SCHEMA.ab_tcell_receptors, name="aIRRKnowledgeCommons__ab_tcell_receptors", curie=AK_SCHEMA.curie('ab_tcell_receptors'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__ab_tcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, AlphaBetaTCR]], List[Union[dict, AlphaBetaTCR]]]])
+
+slots.aIRRKnowledgeCommons__gd_tcell_receptors = Slot(uri=AK_SCHEMA.gd_tcell_receptors, name="aIRRKnowledgeCommons__gd_tcell_receptors", curie=AK_SCHEMA.curie('gd_tcell_receptors'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__gd_tcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, GammaDeltaTCRAkcId], Union[dict, GammaDeltaTCR]], List[Union[dict, GammaDeltaTCR]]]])
+
+slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors, name="aIRRKnowledgeCommons__bcell_receptors", curie=AK_SCHEMA.curie('bcell_receptors'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__bcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, BCellReceptor]], List[Union[dict, BCellReceptor]]]])

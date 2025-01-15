@@ -113,6 +113,10 @@
       "prefix_reference": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     },
     {
+      "prefix_prefix": "AKC",
+      "prefix_reference": "https://airr-knowledge.org/akc/api/v1/id/"
+    },
+    {
       "prefix_prefix": "xsd",
       "prefix_reference": "http://www.w3.org/2001/XMLSchema#"
     },
@@ -1939,6 +1943,19 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "complete_vdj",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/complete_vdj",
+      "description": "Complete VDJ flag.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/complete_vdj",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "boolean",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "sequence",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence",
       "description": "Nucleotide sequence.",
@@ -2482,6 +2499,62 @@
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/chains",
+      "alias": "chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Chain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__ab_tcell_receptors",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/ab_tcell_receptors",
+      "alias": "ab_tcell_receptors",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "AlphaBetaTCR",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__gd_tcell_receptors",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/gd_tcell_receptors",
+      "alias": "gd_tcell_receptors",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "GammaDeltaTCR",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__bcell_receptors",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/bcell_receptors",
+      "alias": "bcell_receptors",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "BCellReceptor",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -2577,7 +2650,11 @@
         "aIRRKnowledgeCommons__specimen_collections",
         "aIRRKnowledgeCommons__assays",
         "aIRRKnowledgeCommons__datasets",
-        "aIRRKnowledgeCommons__conclusions"
+        "aIRRKnowledgeCommons__conclusions",
+        "aIRRKnowledgeCommons__chains",
+        "aIRRKnowledgeCommons__ab_tcell_receptors",
+        "aIRRKnowledgeCommons__gd_tcell_receptors",
+        "aIRRKnowledgeCommons__bcell_receptors"
       ],
       "slot_usage": {},
       "attributes": [
@@ -2681,6 +2758,38 @@
           "name": "conclusions",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "Conclusion",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Chain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "ab_tcell_receptors",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "AlphaBetaTCR",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "gd_tcell_receptors",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "GammaDeltaTCR",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "bcell_receptors",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "BCellReceptor",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -3044,11 +3153,10 @@
       "name": "Chain",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "NamedThing",
+      "is_a": "AKObject",
       "slots": [
         "akc_id",
-        "name",
-        "description",
+        "complete_vdj",
         "sequence",
         "sequence_aa",
         "chain_type",
@@ -3078,11 +3186,10 @@
       "mappings": [
         "GO:0042101"
       ],
-      "is_a": "NamedThing",
+      "is_a": "AKObject",
+      "abstract": true,
       "slots": [
-        "akc_id",
-        "name",
-        "description"
+        "akc_id"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042101",
@@ -3098,8 +3205,6 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "name",
-        "description",
         "TRA_chain",
         "TRB_chain"
       ],
@@ -3117,8 +3222,6 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "name",
-        "description",
         "TRG_chain",
         "TRD_chain"
       ],
@@ -3130,11 +3233,9 @@
       "name": "BCellReceptor",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptor",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "NamedThing",
+      "is_a": "AKObject",
       "slots": [
         "akc_id",
-        "name",
-        "description",
         "IGH_chain",
         "IGK_chain",
         "IGL_chain"
@@ -3277,9 +3378,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2024-10-09T17:20:19",
-  "source_file_size": 49132,
-  "generation_date": "2024-10-09T17:20:21",
+  "source_file_date": "2024-10-11T21:37:59",
+  "source_file_size": 50178,
+  "generation_date": "2024-10-11T21:38:01",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
