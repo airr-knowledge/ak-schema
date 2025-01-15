@@ -34,6 +34,8 @@ classes:
     abstract: true
     is_a: AKObject
     class_uri: GO:0042101
+    slots:
+      - type
 
   AlphaBetaTCR:
     is_a: TCellReceptor
@@ -56,6 +58,18 @@ classes:
       - IGK_chain
       - IGL_chain
 
+  Epitope:
+    is_a: NamedThing
+    slots:
+      - type
+
+  PeptidicEpitope:
+    is_a: Epitope
+    slots:
+      - sequence_aa
+      - source_protein
+      - source_organism
+
 slots:
   complete_vdj:
     name: complete_vdj
@@ -67,85 +81,10 @@ slots:
     description: Nucleotide sequence.
     range: string
 
-  sequence_aa:
-    name: sequence_aa
-    description: Amino acid sequence.
-    range: string
-
   chain_type:
     name: chain_type
     description: Gene locus (chain type).
-    range: ChainType
-
-  v_call:
-    name: v_call
-    description: V gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHV4-59*01 if using IMGT/GENE-DB).
-    range: string
-
-  d_call:
-    name: d_call
-    description: First or only D gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHD3-10*01 if using IMGT/GENE-DB).
-    range: string
-
-  j_call:
-    name: j_call
-    description: J gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHJ4*02 if using IMGT/GENE-DB).
-    range: string
-
-  c_call:
-    name: c_call
-    description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
-    range: string
-
-  junction_aa:
-    name: junction_aa
-    description: Amino acid form of the junction.
-    range: string
-
-  cdr1_aa:
-    name: cdr1_aa
-    description: Amino acid translation of the cdr1 field.
-    range: string
-
-  cdr2_aa:
-    name: cdr2_aa
-    description: Amino acid translation of the cdr2 field.
-    range: string
-
-  cdr3_aa:
-    name: cdr3_aa
-    description: Amino acid translation of the cdr3 field.
-    range: string
-
-  cdr1_start:
-    name: cdr1_start
-    description: CDR1 start position in the query sequence (1-based closed interval).
-    range: integer
-
-  cdr1_end:
-    name: cdr1_end
-    description: CDR1 end position in the query sequence (1-based closed interval).
-    range: integer
-
-  cdr2_start:
-    name: cdr2_start
-    description: CDR2 start position in the query sequence (1-based closed interval).
-    range: integer
-
-  cdr2_end:
-    name: cdr2_end
-    description: CDR2 end position in the query sequence (1-based closed interval).
-    range: integer
-
-  cdr3_start:
-    name: cdr3_start
-    description: CDR3 start position in the query sequence (1-based closed interval).
-    range: integer
-
-  cdr3_end:
-    name: cdr3_end
-    description: CDR3 end position in the query sequence (1-based closed interval).
-    range: integer
+    range: ChainTypeEnum
 
   isotype:
     name: isotype
@@ -180,9 +119,15 @@ slots:
     description: T cell receptor gamma chain
     range: Chain
 
+  source_protein:
+    description: The protein that this epitope comes from
+
+  source_organism:
+    description: The organism that the source protein comes from
+
+
 enums:
-  ChainType:
-    name: ChainType
+  ChainTypeEnum:
     permissible_values:
       IGH:
       IGK:

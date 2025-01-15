@@ -33,6 +33,10 @@ prefixes:
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   VO: http://purl.obolibrary.org/obo/VO_
   ONTIE: https://ontology.iedb.org/ontology/ONTIE_
+  iedb_reference: http://www.iedb.org/reference/
+  iedb_epitope: http://www.iedb.org/epitope/
+  iedb_assay: http://www.iedb.org/assay/
+  iedb_receptor: http://www.iedb.org/receptor/
   example: https://example.org/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 
@@ -44,10 +48,13 @@ default_range: string
 imports:
   - linkml:types
   - ak_core
+#  - ak_commons
   - ak_study_design
   - ak_specimens
   - ak_biology
   - ak_immune_system
   - ak_simulations
-#  - ak_airr
   - ak_metrics
+  - ak_airr
+#  - ak_airr_v1.5
+#  - ak_airr_v2.0

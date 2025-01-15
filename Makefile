@@ -27,6 +27,7 @@ SHEET_MODULE = personinfo_enums
 SHEET_ID = $(LINKML_SCHEMA_GOOGLE_SHEET_ID)
 SHEET_TABS = $(LINKML_SCHEMA_GOOGLE_SHEET_TABS)
 SHEET_MODULE_PATH = $(SOURCE_SCHEMA_DIR)/$(SHEET_MODULE).yaml
+SQL_DDL_PATH = $(DEST)/sqlddl/ak_schema.sql
 
 CONFIG_YAML =
 ifdef LINKML_GENERATORS_CONFIG_YAML
@@ -120,9 +121,13 @@ update-linkml:
 create-data-harmonizer:
 	npm init data-harmonizer $(SOURCE_SCHEMA_PATH)
 
+# generate linkml without imports
+# generate SQL DDL
 $(SOURCE_SCHEMA_PATH): src/ak_schema/schema/ak_top.yaml
 	mkdir -p project/linkml
 	$(RUN) gen-linkml -f yaml --no-materialize-attributes $< -o $@
+	mkdir -p project/sqlddl
+	$(RUN) gen-sqltables project/linkml/ak_schema.yaml > $(SQL_DDL_PATH)
 
 all: site
 site: gen-project gendoc

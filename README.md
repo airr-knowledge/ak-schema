@@ -20,6 +20,15 @@ AIRR Knowledge Data Model
 
 ## Developer Documentation
 
+This repository now contains submodules. When doing a `git clone`, those submodules are
+not automatically populated, and additional command is required.
+
+```
+git clone https://airr-knowledge.github.com/ak-schema
+cd ak-schema
+git submodule update --init --recursive
+```
+
 Use the docker container to have a consistent development environment.
 
 * `docker pull airrknowledge/ak-schema:tag`: pull published container for specific tagged version.

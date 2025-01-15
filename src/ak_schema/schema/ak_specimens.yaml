@@ -19,13 +19,69 @@ classes:
     slots:
       - specimen
 
-  Assay:
-    is_a: NamedThing
-    class_uri: OBI:0000070 # assay
+  SpecimenProcessing:
+    is_a: PlannedProcess
+    class_uri: OBI:0000094 # material processing
     slots:
       - specimen
-      - assay_type
+  CellIsolationProcessing:
+    is_a: SpecimenProcessing
+    class_uri: OBI:00000512 # cell isolation processing
+    slots:
+      - tissue_processing # From ADC CellProcessing
+      - cell_subset 
+      - cell_phenotype
+      - cell_species
+      - single_cell
+      - cell_number
+      - cells_per_reaction
+      - cell_storage
+      - cell_quality
+      - cell_isolation
+      - cell_processing_protocol
+# TODO: comment for now until harmonized with AIRR
+#  NucleicAcidProcessing:
+#    is_a: SpecimenProcessing
+#    class_uri: OBI:00001902 # sample preparation for sequencing assay
+#    slots:
+#      - template_class # From ADC NucleicAcidProcessing
+#      - template_quality
+#      - template_amount
+#      - template_amount_unit
+  LibraryPreparationProcessing:
+    is_a: SpecimenProcessing
+    mixins: NucleicAcidProcessing # slots from AIRR class
+    class_uri: OBI:00000711 # library preparation
+#    slots:
+#      - library_generation_method # From ADC NucleicAcidProcessing
+#      - library_generation_protocol
+#      - library_generation_kit_version
+
+  Assay:
+    is_a: PlannedProcess
+    class_uri: OBI:0000070 # assay
+    slots:
+      - specimen # Specimen that the assay is applied to
+      - specimen_processing # Chain of specimen processing applied to specimen before assay is performed 
+      - type # Name of type of Assay class e.g. TCellReceptorEpitopeBindingAssay
+      - assay_type # CURIE of OBI name for assay e.g. OBI:1110179
       - target_entity_type
+
+  AIRRSequencingAssay:
+    is_a: Assay
+    mixins: SequencingRun
+    class_uri: OBI:0600047
+#    slots:
+#      - pcr_target
+#      - complete_sequences
+#      - physical_linkage
+
+  TCellReceptorEpitopeBindingAssay:
+    is_a: Assay
+    class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
+    slots:
+      - epitope
+      - tcell_receptors
       - value
       - unit
 
@@ -49,8 +105,7 @@ classes:
       - experiment_type
 
   Assessment:
-    # is_a: LifeEvent
-    is_a: NamedThing
+    is_a: PlannedProcess
     class_uri: OBI:0002441 # physical examination of an organism
     slots:
       - life_event
@@ -60,15 +115,16 @@ classes:
       - unit
 
 slots:
+  type:
+    designates_type: true
+    range: string
+
   life_event:
     description: The life event corresponding to an immune exposure
     range: LifeEvent
   specimen_type: # TODO: enum
     description: The type of this specimen
     slot_uri: rdf:type
-  tissue: # TODO: enum
-    description: The tissue from which this specimen was taken
-    # specified input to process
   process: # TODO: enum
     description: The type of specimen collection process that resulted in this specimen
 
@@ -76,12 +132,26 @@ slots:
     description: The specimen that was input for an assay
     range: Specimen
     slot_uri: OBI:0000293 # has specified input
+  specimen_processing:
+    description: A series of zero or more specimen processing steps that precede an assay
+    range: SpecimenProcessing
+    slot_uri: BFO:0000051 # has part
+    multivalued: true
   assay_type:
     description: The specific type of an assay
     slot_uri: rdf:type
     # TODO: enum
   target_entity_type:
     description: The type of the entity being measured
+
+
+  epitope:
+    description: The epitope being measured
+    range: Epitope
+  tcell_receptors:
+    description: The T cell receptors being measured
+    range: TCellReceptor
+    multivalued: true
   value:
     description: The measurement result value
   unit:
@@ -106,7 +176,7 @@ slots:
     description: An identifier for the location of the data, e.g. figure 2
   organism:
     description: The type of organism that the conclusion is about
-    range: Species
+    range: SpeciesOntology
     slot_uri: IAO:0000136 # is about
   experiment_type:
     description: The type of experiment that supports the conclusion
