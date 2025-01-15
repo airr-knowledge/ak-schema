@@ -4,14 +4,28 @@ import click
 import csv
 import airr
 import os
+import sys
+import gzip
 import hashlib
+import itertools
 
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
 
-adc_cache_dir = '/work/data/immune/ADC/cache'
+#adc_cache_dir = '/work/data/immune/ADC/cache'
+adc_cache_dir = '/data/data2/vdjserver-adc-cache/cache'
+
+ipa_list = [ "7245411507393139181-242ac11b-0001-012" ]
+vdjserver_list = [ "6270798281029250580-242ac117-0001-012", "2531647238962745836-242ac114-0001-012", "4507038074455191060-242ac114-0001-012", "2314581927515778580-242ac117-0001-012" ]
+
+ipa_studies = [ "PRJNA248411", "PRJNA280743", "PRJNA381394", "PRJNA280743", "PRJNA509910" ]
+vdjserver_studies = [ "PRJNA248475", "PRJNA300878", "PRJNA680539", "PRJNA724733", "PRJNA472381", "PRJNA608742" ]
 
 def make_chain(container, akc_id, obj):
+    if obj['locus'] not in [ 'TRB', 'TRA', 'TRD', 'TRG', 'IGH', 'IGK', 'IGL' ]:
+        print('unhandled locus:', obj['locus'])
+        return None
+
     chain = Chain(
         f'AKC:{akc_id}',
         complete_vdj = obj['complete_vdj'],
@@ -100,10 +114,50 @@ def make_receptor(container, akc_id, chains):
 
     return receptor
 
+def check_three(chains):
+#    print(chains)
+    if len(chains) != 3:
+        print('ERROR: check_three assumes 3 chains.')
+        return None
+    cnt = { 'TRB': 0, 'TRA': 0 }
+    c = str(chains[0]['chain']['chain_type'])
+    if cnt.get(c) is not None:
+        cnt[c] += 1
+    c = str(chains[1]['chain']['chain_type'])
+    if cnt.get(c) is not None:
+        cnt[c] += 1
+    c = str(chains[2]['chain']['chain_type'])
+    if cnt.get(c) is not None:
+        cnt[c] += 1
+    if cnt['TRA'] == 3:
+        return [ 1, 0, 0, 0 ]
+    if cnt['TRA'] == 2 and cnt['TRB'] == 1:
+        return [ 0, 1, 0, 0 ]
+    if cnt['TRA'] == 1 and cnt['TRB'] == 2:
+        return [ 0, 0, 1, 0 ]
+    if cnt['TRB'] == 3:
+        return [ 0, 0, 0, 1 ]
+    return [ 0, 0, 0, 0]
+
+def to_bool(value):
+    if value in ['True', 'true', 'TRUE', 'T', 't', '1']:
+        return True
+    if value in ['False', 'false', 'FALSE', 'F', 'f', '0']:
+        return False
+    return None
+
+def to_int(value):
+    if value == '' or value is None:
+        return None
+    return int(value)
+
 @click.command()
 @click.argument('output')
 def receptor_integrate(output):
     """Convert ADC rearrangements to AK chains and receptors."""
+
+    fields = [ 'productive', 'junction', 'junction_aa', 'complete_vdj', 'sequence', 'sequence_aa', 'locus', 'v_call', 'j_call', 'duplicate_count', 'cell_id' ]
+    field_types = [ 'bool', 'str', 'str', 'bool', 'str', 'str', 'str', 'str', 'str', 'int', 'str' ]
 
     exact_match = {}
     exact_aa_match = {}
@@ -116,24 +170,92 @@ def receptor_integrate(output):
 
     akc_id = 1
     tot_row_cnt = 0
+    total_rep_cnt = 0
     for study in studies:
         if study == '.DS_Store':
             continue
+#        if study == '2190435173075840530-242ac118-0001-012':
+#            continue
+#        if study == '6590523071159603691-242ac113-0001-012':
+#            continue
+#        if study != '2314581927515778580-242ac117-0001-012':
+#            continue
+#        if study != '6295837940364930580-242ac117-0001-012':
+#            continue
+#        if study != '3860335026075537901-242ac11b-0001-012':
+#            continue
         print('Processing study cache:', study)
 
         # Load the AIRR data
         row_cnt = 0
         data = airr.read_airr(adc_cache_dir + '/' + study + '/repertoires.airr.json')
+
+        # Info within Info is IPA
+        if data['Info'].get('Info') is not None:
+            print('Skipping IPA study')
+            continue
+
         # loop through the repertoires
         for rep in data['Repertoire']:
             print('Processing repertoire:', rep['repertoire_id'])
 
+            if rep['study']['study_id'] not in vdjserver_studies:
+                print('skipping study:', study)
+                break
+                
+#            if "contains_paired_chain" not in rep['study']['keywords_study']:
+#                print('skipping non paired chain study:', study)
+#                break
+
+#            if rep['sample'][0]['physical_linkage'] == 'hetero_head-head':
+#                print('skipping Georgiou study:', study)
+#                break
+
             # match up paired chains using cell_id, but only within the repertoire
             cell_id = {}
 
-            reader = airr.read_rearrangement(adc_cache_dir + '/' + study + '/' + rep['repertoire_id'] + '.airr.tsv')
             prod_cnt = 0
-            for row in reader:
+            line_cnt = 0
+            first = True
+            reader = gzip.open(adc_cache_dir + '/' + study + '/' + rep['repertoire_id'] + '.airr.tsv.gz', 'rt')
+            for line in reader:
+                line_cnt += 1
+                if first:
+                    headers = line.strip().split('\t')
+                    field_idx = []
+                    for f in fields:
+                        try:
+                            idx = headers.index(f)
+                        except ValueError:
+                            idx = None
+                        field_idx.append(idx)
+                    first = False
+                    continue
+
+                row = {}
+                values = line.strip().split('\t')
+                for (f, idx, t) in zip(fields, field_idx, field_types):
+                    if idx is None:
+                        row[f] = None
+                    else:
+                        if idx > len(values):
+                            row[f] = None
+                            continue
+                        if t == 'bool':
+                            row[f] = to_bool(values[idx])
+                        elif t == 'int':
+                            #print(line_cnt, len(values), idx)
+                            row[f] = to_int(values[idx])
+                        else:
+                            row[f] = values[idx]
+#                print(headers)
+#                print(field_idx)
+#                print(values)
+#                print(row)
+#                sys.exit(1)
+
+#            reader = airr.read_rearrangement(adc_cache_dir + '/' + study + '/' + rep['repertoire_id'] + '.airr.tsv.gz')
+#            for row in reader:
                 row_cnt = row_cnt + 1
                 #print(row)
                 #break
@@ -186,7 +308,7 @@ def receptor_integrate(output):
                 else:
                     junction_exact_aa_and_vj_match[h]['chains'].append(chain)
 
-                if row['cell_id'] is not None:
+                if row.get('cell_id') is not None and len(row['cell_id']) != 0:
                     if cell_id.get(row['cell_id']) is None:
                         cell_id[row['cell_id']] = [ chain ]
                     else:
@@ -201,12 +323,18 @@ def receptor_integrate(output):
             # we create the receptors for single chains in the outer loop
             print(len(cell_id), 'unique cell ids')
             dist = [ 0, 0, 0, 0 ]
+            tcr_three = [ 0, 0, 0, 0 ]
             for c in cell_id:
                 lenc = len(cell_id[c])
                 if lenc < 2: # validation error?
                     dist[0] += 1
                 elif lenc == 3:
                     dist[2] += 1
+                    t = check_three(cell_id[c])
+                    tcr_three[0] += t[0]
+                    tcr_three[1] += t[1]
+                    tcr_three[2] += t[2]
+                    tcr_three[3] += t[3]
                 elif lenc > 3:
                     dist[3] += 1
                 else: # 2 chains, obvious case
@@ -215,14 +343,20 @@ def receptor_integrate(output):
                     akc_id += 1
 
             print('cell_id distribution:', dist)
+            print('TCR three chain distribution:', tcr_three)
 
             print(prod_cnt, 'productive rearrangements for repertoire:', rep['repertoire_id'])
             print(row_cnt, 'records for study cache:', study)
-            break
+            total_rep_cnt += 1
 
-    # single chain
+#            break
+#        break
+
+# single chain
 
     print()
+    print(len(studies), 'total studies')
+    print(total_rep_cnt, 'total ADC repertoires')
     print(len(container['chains']), 'total chains')
     print(len(container['ab_tcell_receptors']), 'total alpha/beta TCRs')
     print(len(container['gd_tcell_receptors']), 'total gamma/delta TCRs')
