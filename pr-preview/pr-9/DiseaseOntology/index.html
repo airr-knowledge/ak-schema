@@ -256,13 +256,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#permissible-values" class="md-nav__link">
-    Permissible Values
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#slots" class="md-nav__link">
     Slots
   </a>
@@ -318,38 +311,7 @@
 
 <h1 id="enum-diseaseontology">Enum: DiseaseOntology</h1>
 <p>URI: <a href="./">DiseaseOntology</a></p>
-<h2 id="permissible-values">Permissible Values</h2>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Meaning</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>healthy</td>
-<td>ONTIE:000342</td>
-<td></td>
-</tr>
-<tr>
-<td>COVID-19</td>
-<td>DOID:0080600</td>
-<td></td>
-</tr>
-<tr>
-<td>Plasmodium falciparum malaria</td>
-<td>DOID:14067</td>
-<td></td>
-</tr>
-<tr>
-<td>dengue hemorrhagic fever</td>
-<td>DOID:12206</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p><em>This is a dynamic enum</em></p>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -376,19 +338,12 @@
 <pre><code class="language-yaml">name: DiseaseOntology
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-permissible_values:
-  healthy:
-    text: healthy
-    meaning: ONTIE:000342
-  COVID-19:
-    text: COVID-19
-    meaning: DOID:0080600
-  Plasmodium falciparum malaria:
-    text: Plasmodium falciparum malaria
-    meaning: DOID:14067
-  dengue hemorrhagic fever:
-    text: dengue hemorrhagic fever
-    meaning: DOID:12206
+reachable_from:
+  source_nodes:
+  - DOID:4
+  relationship_types:
+  - rdfs:subClassOf
+  include_self: true
 
 </code></pre>
 
