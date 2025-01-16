@@ -28,6 +28,7 @@ prefixes:
   OGMS: http://purl.obolibrary.org/obo/OGMS_
   OMRSE: http://purl.obolibrary.org/obo/OMRSE_
   PATO: http://purl.obolibrary.org/obo/PATO_
+  PMID: https://pubmed.ncbi.nlm.nih.gov/
   RO: http://purl.obolibrary.org/obo/RO_
   SBO: http://purl.obolibrary.org/obo/SBO_
   UBERON: http://purl.obolibrary.org/obo/UBERON_
@@ -40,7 +41,7 @@ prefixes:
   example: https://example.org/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
 
-  AKC: https://airr-knowledge.org/akc/api/v1/id/
+  AKC: https://airr-knowledge.org/airrkb/api/v1/id/
 
 default_prefix: ak_schema
 default_range: string
@@ -48,7 +49,7 @@ default_range: string
 imports:
   - linkml:types
   - ak_core
-#  - ak_commons
+  - ak_commons
   - ak_study_design
   - ak_specimens
   - ak_biology
