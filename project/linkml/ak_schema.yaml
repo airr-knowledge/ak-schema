@@ -63,6 +63,9 @@ prefixes:
   PATO:
     prefix_prefix: PATO
     prefix_reference: http://purl.obolibrary.org/obo/PATO_
+  PMID:
+    prefix_prefix: PMID
+    prefix_reference: https://pubmed.ncbi.nlm.nih.gov/
   RO:
     prefix_prefix: RO
     prefix_reference: http://purl.obolibrary.org/obo/RO_
@@ -98,7 +101,7 @@ prefixes:
     prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   AKC:
     prefix_prefix: AKC
-    prefix_reference: https://airr-knowledge.org/akc/api/v1/id/
+    prefix_reference: https://airr-knowledge.org/airrkb/api/v1/id/
   xsd:
     prefix_prefix: xsd
     prefix_reference: http://www.w3.org/2001/XMLSchema#
@@ -342,13 +345,12 @@ enums:
   BiologicalSexOntology:
     name: BiologicalSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      female:
-        text: female
-        meaning: PATO:0020002
-      male:
-        text: male
-        meaning: PATO:0020001
+    reachable_from:
+      source_nodes:
+      - PATO:0020000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   PhenotypicSexOntology:
     name: PhenotypicSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -596,61 +598,30 @@ enums:
   LifeEventProcessOntology:
     name: LifeEventProcessOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      Documented exposure without evidence for disease:
-        text: Documented exposure without evidence for disease
-        meaning: ONTIE:0003305
-      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
-        text: Environmental exposure to endemic/ubiquitous agent without evidence
-          for disease
-        meaning: ONTIE:0003308
-      Exposure with existing immune reactivity without evidence for disease:
-        text: Exposure with existing immune reactivity without evidence for disease
-        meaning: OBI:1110061
-      specimen collection:
-        text: specimen collection
-        meaning: OBI:0000659
+    reachable_from:
+      source_nodes:
+      - OBI:0000011
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   ExposureMaterialOntology:
     name: ExposureMaterialOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      Influenza A virus:
-        text: Influenza A virus
-        meaning: NCBITaxon:11320
-      Mycobacterium tuberculosis:
-        text: Mycobacterium tuberculosis
-        meaning: NCBITaxon:1773
-      Plasmodium falciparum:
-        text: Plasmodium falciparum
-        meaning: NCBITaxon:5833
-      Human gammaherpesvirus 4:
-        text: Human gammaherpesvirus 4
-        meaning: NCBITaxon:10376
-      Human betaherpesvirus 5:
-        text: Human betaherpesvirus 5
-        meaning: NCBITaxon:10359
-      Diphtheria-Tetanus-Pertussis vaccine:
-        text: Diphtheria-Tetanus-Pertussis vaccine
-        meaning: VO:0000738
-      Dryvax:
-        text: Dryvax
-        meaning: VO:0000035
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   DiseaseOntology:
     name: DiseaseOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      healthy:
-        text: healthy
-        meaning: ONTIE:000342
-      COVID-19:
-        text: COVID-19
-        meaning: DOID:0080600
-      Plasmodium falciparum malaria:
-        text: Plasmodium falciparum malaria
-        meaning: DOID:14067
-      dengue hemorrhagic fever:
-        text: dengue hemorrhagic fever
-        meaning: DOID:12206
+    reachable_from:
+      source_nodes:
+      - DOID:4
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   DiseaseStageOntology:
     name: DiseaseStageOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5482,6 +5453,114 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
     abstract: true
+  AIRRKnowledgeCommons:
+    name: AIRRKnowledgeCommons
+    description: A container for instances of multiple classes.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      investigations:
+        name: investigations
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Investigation
+        multivalued: true
+        inlined: true
+      references:
+        name: references
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Reference
+        multivalued: true
+        inlined: true
+      study_arms:
+        name: study_arms
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: StudyArm
+        multivalued: true
+        inlined: true
+      study_events:
+        name: study_events
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: StudyEvent
+        multivalued: true
+        inlined: true
+      participants:
+        name: participants
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Participant
+        multivalued: true
+        inlined: true
+      life_events:
+        name: life_events
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: LifeEvent
+        multivalued: true
+        inlined: true
+      immune_exposures:
+        name: immune_exposures
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: ImmuneExposure
+        multivalued: true
+        inlined: true
+      assessments:
+        name: assessments
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Assessment
+        multivalued: true
+        inlined: true
+      specimens:
+        name: specimens
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Specimen
+        multivalued: true
+        inlined: true
+      specimen_collections:
+        name: specimen_collections
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: SpecimenCollection
+        multivalued: true
+        inlined: true
+      specimen_processings:
+        name: specimen_processings
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: SpecimenProcessing
+        multivalued: true
+        inlined: true
+      assays:
+        name: assays
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Assay
+        multivalued: true
+        inlined: true
+      datasets:
+        name: datasets
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Dataset
+        multivalued: true
+        inlined: true
+      conclusions:
+        name: conclusions
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Conclusion
+        multivalued: true
+        inlined: true
+      chains:
+        name: chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: true
+        inlined: true
+      tcell_receptors:
+        name: tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: TCellReceptor
+        multivalued: true
+        inlined: true
+      epitopes:
+        name: epitopes
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Epitope
+        multivalued: true
+        inlined: true
+    tree_root: true
   Investigation:
     name: Investigation
     description: A scientific investigation.
