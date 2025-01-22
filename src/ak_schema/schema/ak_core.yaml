@@ -18,6 +18,21 @@ classes:
     slots:
       - source_uri
 
+  AIRRObject:
+    abstract: true
+    description: >-
+      An object directly converted from the AIRR schema.
+
+  V1p5AIRRObject:
+    abstract: true
+    description: >-
+      An object directly converted from AIRR schema version 1.5.
+
+  V2p0AIRRObject:
+    abstract: true
+    description: >-
+      An object directly converted from AIRR schema version 2.0.
+
   NamedThing:
     abstract: true
     is_a: AKObject
