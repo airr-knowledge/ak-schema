@@ -115,10 +115,6 @@ classes:
       - unit
 
 slots:
-  type:
-    designates_type: true
-    range: string
-
   life_event:
     description: The life event corresponding to an immune exposure
     range: LifeEvent

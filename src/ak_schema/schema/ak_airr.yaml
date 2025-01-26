@@ -6,20 +6,20 @@ name: ak-schema
 
 classes:
   TimePoint:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - time_point_label
       - time_point_value
       - time_point_unit
   Acknowledgement:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - acknowledgement_id
       - individual_full_name
       - institution_name
       - orcid_id
   RearrangedSequence:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequence_id
       - sequence
@@ -32,7 +32,7 @@ classes:
       - sequence_start
       - sequence_end
   UnrearrangedSequence:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequence_id
       - sequence
@@ -45,7 +45,7 @@ classes:
       - gff_end
       - strand
   SequenceDelineationV:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequence_delineation_id
       - delineation_scheme
@@ -64,7 +64,7 @@ classes:
       - cdr3_start
       - alignment_labels
   AlleleDescription:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - allele_description_id
       - allele_description_ref
@@ -118,7 +118,7 @@ classes:
       - curation
       - curational_tags
   GermlineSet:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - germline_set_id
       - author
@@ -138,12 +138,12 @@ classes:
       - allele_descriptions
       - curation
   GenotypeSet:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - receptor_genotype_set_id
       - genotype_class_list
   Genotype:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - receptor_genotype_id
       - locus
@@ -152,48 +152,48 @@ classes:
       - deleted_genes
       - inference_process
   DocumentedAllele:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - label
       - germline_set_ref
       - phasing
   UndocumentedAllele:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - allele_name
       - sequence
       - phasing
   DeletedGene:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - label
       - germline_set_ref
       - phasing
   MHCGenotypeSet:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - mhc_genotype_set_id
       - mhc_genotype_list
   MHCGenotype:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - mhc_genotype_id
       - mhc_class
       - mhc_alleles
       - mhc_genotyping_method
   MHCAllele:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - allele_designation
       - gene
       - reference_set_ref
   SubjectGenotype:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - receptor_genotype_set
       - mhc_genotype_set
   Study:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - study_id
       - study_title
@@ -211,7 +211,7 @@ classes:
       - adc_publish_date
       - adc_update_date
   Subject:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - subject_id
       - synthetic
@@ -230,7 +230,7 @@ classes:
       - diagnosis
       - genotype
   Diagnosis:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - study_group_description
       - disease_diagnosis
@@ -241,7 +241,7 @@ classes:
       - intervention
       - medical_history
   Sample:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sample_id
       - sample_type
@@ -253,7 +253,7 @@ classes:
       - collection_time_point_reference
       - biomaterial_provider
   CellProcessing:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - tissue_processing
       - cell_subset
@@ -267,13 +267,13 @@ classes:
       - cell_isolation
       - cell_processing_protocol
   PCRTarget:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - pcr_target_locus
       - forward_pcr_primer_target_location
       - reverse_pcr_primer_target_location
   NucleicAcidProcessing:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - template_class
       - template_quality
@@ -286,7 +286,7 @@ classes:
       - complete_sequences
       - physical_linkage
   SequencingRun:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequencing_run_id
       - total_reads_passing_qc_filter
@@ -296,7 +296,7 @@ classes:
       - sequencing_kit
       - sequencing_files
   SequencingData:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequencing_data_id
       - file_type
@@ -309,7 +309,7 @@ classes:
       - index_filename
       - index_length
   DataProcessing:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - data_processing_id
       - primary_annotation
@@ -324,7 +324,7 @@ classes:
       - germline_set_ref
       - analysis_provenance_id
   Repertoire:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - repertoire_id
       - repertoire_name
@@ -334,20 +334,20 @@ classes:
       - sample
       - data_processing
   RepertoireGroupDetail:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - repertoire_id
       - repertoire_description
       - time_point
   RepertoireGroup:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - repertoire_group_id
       - repertoire_group_name
       - repertoire_group_description
       - repertoires
   Alignment:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequence_id
       - segment
@@ -364,7 +364,7 @@ classes:
       - rank
       - data_processing_id
   Rearrangement:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequence_id
       - sequence
@@ -519,7 +519,7 @@ classes:
       - sample_processing_id
       - data_processing_id
   Clone:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - clone_id
       - repertoire_id
@@ -546,21 +546,21 @@ classes:
       - clone_count
       - seed_id
   Tree:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - tree_id
       - clone_id
       - newick
       - nodes
   Node:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sequence_id
       - sequence_alignment
       - junction
       - junction_aa
   Cell:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - cell_id
       - rearrangements
@@ -572,7 +572,7 @@ classes:
       - expression_index
       - virtual_pairing
   CellExpression:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - expression_id
       - cell_id
@@ -582,7 +582,7 @@ classes:
       - property
       - property_value
   Receptor:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - receptor_id
       - receptor_hash
@@ -594,7 +594,7 @@ classes:
       - receptor_ref
       - reactivity_measurements
   ReceptorReactivity:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - ligand_type
       - antigen_type
@@ -612,7 +612,7 @@ classes:
       - reactivity_value
       - reactivity_unit
   SampleProcessing:
-    is_a: AIRRObject
+    is_a: AIRRStandards
     slots:
       - sample_processing_id
       - sample_id
