@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -204,6 +209,9 @@
 <div class="mermaid"> classDiagram
     class Acknowledgement
     click Acknowledgement href "../Acknowledgement"
+      AIRRStandards &lt;|-- Acknowledgement
+        click AIRRStandards href "../AIRRStandards"
+
       Acknowledgement : acknowledgement_id
 
       Acknowledgement : individual_full_name
@@ -214,7 +222,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../AIRRStandards/">AIRRStandards</a><ul>
+<li><strong>Acknowledgement</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -307,6 +321,7 @@
 <details>
 <pre><code class="language-yaml">name: Acknowledgement
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 slots:
 - acknowledgement_id
 - individual_full_name
@@ -319,6 +334,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Acknowledgement
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 attributes:
   acknowledgement_id:
     name: acknowledgement_id

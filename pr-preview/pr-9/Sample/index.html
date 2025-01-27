@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -199,6 +204,9 @@
 <div class="mermaid"> classDiagram
     class Sample
     click Sample href "../Sample"
+      AIRRStandards &lt;|-- Sample
+        click AIRRStandards href "../AIRRStandards"
+
       Sample : anatomic_site
 
       Sample : biomaterial_provider
@@ -233,7 +241,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../AIRRStandards/">AIRRStandards</a><ul>
+<li><strong>Sample</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -331,6 +345,7 @@
 <details>
 <pre><code class="language-yaml">name: Sample
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 slots:
 - sample_id
 - sample_type
@@ -348,6 +363,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Sample
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 attributes:
   sample_id:
     name: sample_id

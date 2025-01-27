@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -199,6 +204,9 @@
 <div class="mermaid"> classDiagram
     class Cell
     click Cell href "../Cell"
+      AIRRStandards &lt;|-- Cell
+        click AIRRStandards href "../AIRRStandards"
+
       Cell : cell_id
 
       Cell : data_processing_id
@@ -226,7 +234,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../AIRRStandards/">AIRRStandards</a><ul>
+<li><strong>Cell</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -324,6 +338,7 @@
 <details>
 <pre><code class="language-yaml">name: Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 slots:
 - cell_id
 - rearrangements
@@ -341,6 +356,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Cell
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 attributes:
   cell_id:
     name: cell_id

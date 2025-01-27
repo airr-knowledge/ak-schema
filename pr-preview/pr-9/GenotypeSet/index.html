@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -204,6 +209,9 @@
 <div class="mermaid"> classDiagram
     class GenotypeSet
     click GenotypeSet href "../GenotypeSet"
+      AIRRStandards &lt;|-- GenotypeSet
+        click AIRRStandards href "../AIRRStandards"
+
       GenotypeSet : genotype_class_list
 
 
@@ -217,7 +225,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../AIRRStandards/">AIRRStandards</a><ul>
+<li><strong>GenotypeSet</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -292,6 +306,7 @@
 <details>
 <pre><code class="language-yaml">name: GenotypeSet
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 slots:
 - receptor_genotype_set_id
 - genotype_class_list
@@ -302,6 +317,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: GenotypeSet
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 attributes:
   receptor_genotype_set_id:
     name: receptor_genotype_set_id

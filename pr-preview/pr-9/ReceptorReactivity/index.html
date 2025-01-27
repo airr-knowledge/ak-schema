@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -204,6 +209,9 @@
 <div class="mermaid"> classDiagram
     class ReceptorReactivity
     click ReceptorReactivity href "../ReceptorReactivity"
+      AIRRStandards &lt;|-- ReceptorReactivity
+        click AIRRStandards href "../AIRRStandards"
+
       ReceptorReactivity : antigen
 
 
@@ -299,7 +307,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../AIRRStandards/">AIRRStandards</a><ul>
+<li><strong>ReceptorReactivity</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -452,6 +466,7 @@
 <details>
 <pre><code class="language-yaml">name: ReceptorReactivity
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 slots:
 - ligand_type
 - antigen_type
@@ -475,6 +490,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: ReceptorReactivity
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 attributes:
   ligand_type:
     name: ligand_type
