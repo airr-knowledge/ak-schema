@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-16T04:02:24
+# Generation date: 2025-01-26T20:02:54
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -424,6 +424,42 @@ class ForeignObject(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+class AIRRStandards(YAMLRoot):
+    """
+    An object directly converted from the AIRR schema.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandards"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandards"
+    class_name: ClassVar[str] = "AIRRStandards"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandards
+
+
+class AIRRStandardsV1p5(YAMLRoot):
+    """
+    An object directly converted from AIRR schema version 1.5.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandardsV1p5"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandardsV1p5"
+    class_name: ClassVar[str] = "AIRRStandards_v1p5"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV1p5
+
+
+class AIRRStandardsV2p0(YAMLRoot):
+    """
+    An object directly converted from AIRR schema version 2.0.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandardsV2p0"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandardsV2p0"
+    class_name: ClassVar[str] = "AIRRStandards_v2p0"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV2p0
+
+
 @dataclass(repr=False)
 class NamedThing(AKObject):
     """
@@ -477,74 +513,6 @@ class PlanSpecification(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PlanSpecification
 
     akc_id: Union[str, PlanSpecificationAkcId] = None
-
-@dataclass(repr=False)
-class AIRRKnowledgeCommons(YAMLRoot):
-    """
-    A container for instances of multiple classes.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRKnowledgeCommons"]
-    class_class_curie: ClassVar[str] = "ak_schema:AIRRKnowledgeCommons"
-    class_name: ClassVar[str] = "AIRRKnowledgeCommons"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRKnowledgeCommons
-
-    investigations: Optional[Union[Dict[Union[str, InvestigationAkcId], Union[dict, "Investigation"]], List[Union[dict, "Investigation"]]]] = empty_dict()
-    references: Optional[Union[Dict[Union[str, ReferenceSourceUri], Union[dict, "Reference"]], List[Union[dict, "Reference"]]]] = empty_dict()
-    study_arms: Optional[Union[Dict[Union[str, StudyArmAkcId], Union[dict, "StudyArm"]], List[Union[dict, "StudyArm"]]]] = empty_dict()
-    study_events: Optional[Union[Dict[Union[str, StudyEventAkcId], Union[dict, "StudyEvent"]], List[Union[dict, "StudyEvent"]]]] = empty_dict()
-    participants: Optional[Union[Dict[Union[str, ParticipantAkcId], Union[dict, "Participant"]], List[Union[dict, "Participant"]]]] = empty_dict()
-    life_events: Optional[Union[Dict[Union[str, LifeEventAkcId], Union[dict, "LifeEvent"]], List[Union[dict, "LifeEvent"]]]] = empty_dict()
-    immune_exposures: Optional[Union[Dict[Union[str, ImmuneExposureAkcId], Union[dict, "ImmuneExposure"]], List[Union[dict, "ImmuneExposure"]]]] = empty_dict()
-    assessments: Optional[Union[Dict[Union[str, AssessmentAkcId], Union[dict, "Assessment"]], List[Union[dict, "Assessment"]]]] = empty_dict()
-    specimens: Optional[Union[Dict[Union[str, SpecimenAkcId], Union[dict, "Specimen"]], List[Union[dict, "Specimen"]]]] = empty_dict()
-    specimen_collections: Optional[Union[Dict[Union[str, SpecimenCollectionAkcId], Union[dict, "SpecimenCollection"]], List[Union[dict, "SpecimenCollection"]]]] = empty_dict()
-    specimen_processings: Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, "SpecimenProcessing"]], List[Union[dict, "SpecimenProcessing"]]]] = empty_dict()
-    assays: Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, "Assay"]], List[Union[dict, "Assay"]]]] = empty_dict()
-    datasets: Optional[Union[Dict[Union[str, DatasetAkcId], Union[dict, "Dataset"]], List[Union[dict, "Dataset"]]]] = empty_dict()
-    conclusions: Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, "Conclusion"]], List[Union[dict, "Conclusion"]]]] = empty_dict()
-    chains: Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, "Chain"]], List[Union[dict, "Chain"]]]] = empty_dict()
-    tcell_receptors: Optional[Union[Dict[Union[str, TCellReceptorAkcId], Union[dict, "TCellReceptor"]], List[Union[dict, "TCellReceptor"]]]] = empty_dict()
-    epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        self._normalize_inlined_as_dict(slot_name="investigations", slot_type=Investigation, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="references", slot_type=Reference, key_name="source_uri", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="study_arms", slot_type=StudyArm, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="study_events", slot_type=StudyEvent, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="participants", slot_type=Participant, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="life_events", slot_type=LifeEvent, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="immune_exposures", slot_type=ImmuneExposure, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="assessments", slot_type=Assessment, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="specimens", slot_type=Specimen, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="specimen_collections", slot_type=SpecimenCollection, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="specimen_processings", slot_type=SpecimenProcessing, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="assays", slot_type=Assay, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="datasets", slot_type=Dataset, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="conclusions", slot_type=Conclusion, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="chains", slot_type=Chain, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="tcell_receptors", slot_type=TCellReceptor, key_name="akc_id", keyed=True)
-
-        self._normalize_inlined_as_dict(slot_name="epitopes", slot_type=Epitope, key_name="akc_id", keyed=True)
-
-        super().__post_init__(**kwargs)
-
 
 @dataclass(repr=False)
 class Investigation(PlannedProcess):
@@ -1379,6 +1347,9 @@ class Chain(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Chain
 
     akc_id: Union[str, ChainAkcId] = None
+    aa_hash: Optional[str] = None
+    junction_aa_vj_allele_hash: Optional[str] = None
+    junction_aa_vj_gene_hash: Optional[str] = None
     complete_vdj: Optional[Union[bool, Bool]] = None
     sequence: Optional[str] = None
     sequence_aa: Optional[str] = None
@@ -1403,6 +1374,15 @@ class Chain(AKObject):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, ChainAkcId):
             self.akc_id = ChainAkcId(self.akc_id)
+
+        if self.aa_hash is not None and not isinstance(self.aa_hash, str):
+            self.aa_hash = str(self.aa_hash)
+
+        if self.junction_aa_vj_allele_hash is not None and not isinstance(self.junction_aa_vj_allele_hash, str):
+            self.junction_aa_vj_allele_hash = str(self.junction_aa_vj_allele_hash)
+
+        if self.junction_aa_vj_gene_hash is not None and not isinstance(self.junction_aa_vj_gene_hash, str):
+            self.junction_aa_vj_gene_hash = str(self.junction_aa_vj_gene_hash)
 
         if self.complete_vdj is not None and not isinstance(self.complete_vdj, Bool):
             self.complete_vdj = Bool(self.complete_vdj)
@@ -1805,7 +1785,7 @@ class ChainSimilarity(SimilarityCalculation):
 
 
 @dataclass(repr=False)
-class TimePoint(YAMLRoot):
+class TimePoint(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["TimePoint"]
@@ -1828,7 +1808,7 @@ class TimePoint(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Acknowledgement(YAMLRoot):
+class Acknowledgement(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Acknowledgement"]
@@ -1858,7 +1838,7 @@ class Acknowledgement(YAMLRoot):
 
 
 @dataclass(repr=False)
-class RearrangedSequence(YAMLRoot):
+class RearrangedSequence(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RearrangedSequence"]
@@ -1912,7 +1892,7 @@ class RearrangedSequence(YAMLRoot):
 
 
 @dataclass(repr=False)
-class UnrearrangedSequence(YAMLRoot):
+class UnrearrangedSequence(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UnrearrangedSequence"]
@@ -1966,7 +1946,7 @@ class UnrearrangedSequence(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SequenceDelineationV(YAMLRoot):
+class SequenceDelineationV(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequenceDelineationV"]
@@ -2045,7 +2025,7 @@ class SequenceDelineationV(YAMLRoot):
 
 
 @dataclass(repr=False)
-class AlleleDescription(YAMLRoot):
+class AlleleDescription(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AlleleDescription"]
@@ -2267,7 +2247,7 @@ class AlleleDescription(YAMLRoot):
 
 
 @dataclass(repr=False)
-class GermlineSet(YAMLRoot):
+class GermlineSet(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GermlineSet"]
@@ -2348,7 +2328,7 @@ class GermlineSet(YAMLRoot):
 
 
 @dataclass(repr=False)
-class GenotypeSet(YAMLRoot):
+class GenotypeSet(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GenotypeSet"]
@@ -2371,7 +2351,7 @@ class GenotypeSet(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Genotype(YAMLRoot):
+class Genotype(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Genotype"]
@@ -2412,7 +2392,7 @@ class Genotype(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DocumentedAllele(YAMLRoot):
+class DocumentedAllele(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DocumentedAllele"]
@@ -2438,7 +2418,7 @@ class DocumentedAllele(YAMLRoot):
 
 
 @dataclass(repr=False)
-class UndocumentedAllele(YAMLRoot):
+class UndocumentedAllele(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UndocumentedAllele"]
@@ -2464,7 +2444,7 @@ class UndocumentedAllele(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DeletedGene(YAMLRoot):
+class DeletedGene(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DeletedGene"]
@@ -2490,7 +2470,7 @@ class DeletedGene(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MHCGenotypeSet(YAMLRoot):
+class MHCGenotypeSet(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotypeSet"]
@@ -2513,7 +2493,7 @@ class MHCGenotypeSet(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MHCGenotype(YAMLRoot):
+class MHCGenotype(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotype"]
@@ -2544,7 +2524,7 @@ class MHCGenotype(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MHCAllele(YAMLRoot):
+class MHCAllele(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCAllele"]
@@ -2567,7 +2547,7 @@ class MHCAllele(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SubjectGenotype(YAMLRoot):
+class SubjectGenotype(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SubjectGenotype"]
@@ -2589,7 +2569,7 @@ class SubjectGenotype(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Study(YAMLRoot):
+class Study(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Study"]
@@ -2661,7 +2641,7 @@ class Study(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Subject(YAMLRoot):
+class Subject(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Subject"]
@@ -2734,7 +2714,7 @@ class Subject(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Diagnosis(YAMLRoot):
+class Diagnosis(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Diagnosis"]
@@ -2777,7 +2757,7 @@ class Diagnosis(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Sample(YAMLRoot):
+class Sample(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Sample"]
@@ -2821,7 +2801,7 @@ class Sample(YAMLRoot):
 
 
 @dataclass(repr=False)
-class CellProcessing(YAMLRoot):
+class CellProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellProcessing"]
@@ -2873,7 +2853,7 @@ class CellProcessing(YAMLRoot):
 
 
 @dataclass(repr=False)
-class PCRTarget(YAMLRoot):
+class PCRTarget(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PCRTarget"]
@@ -2899,7 +2879,7 @@ class PCRTarget(YAMLRoot):
 
 
 @dataclass(repr=False)
-class NucleicAcidProcessing(YAMLRoot):
+class NucleicAcidProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["NucleicAcidProcessing"]
@@ -2951,7 +2931,7 @@ class NucleicAcidProcessing(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SequencingRun(YAMLRoot):
+class SequencingRun(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingRun"]
@@ -2993,7 +2973,7 @@ class SequencingRun(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SequencingData(YAMLRoot):
+class SequencingData(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingData"]
@@ -3047,7 +3027,7 @@ class SequencingData(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DataProcessing(YAMLRoot):
+class DataProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DataProcessing"]
@@ -3110,7 +3090,7 @@ class DataProcessing(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Repertoire(YAMLRoot):
+class Repertoire(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Repertoire"]
@@ -3154,7 +3134,7 @@ class Repertoire(YAMLRoot):
 
 
 @dataclass(repr=False)
-class RepertoireGroupDetail(YAMLRoot):
+class RepertoireGroupDetail(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroupDetail"]
@@ -3180,7 +3160,7 @@ class RepertoireGroupDetail(YAMLRoot):
 
 
 @dataclass(repr=False)
-class RepertoireGroup(YAMLRoot):
+class RepertoireGroup(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroup"]
@@ -3211,7 +3191,7 @@ class RepertoireGroup(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Alignment(YAMLRoot):
+class Alignment(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Alignment"]
@@ -3281,7 +3261,7 @@ class Alignment(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Rearrangement(YAMLRoot):
+class Rearrangement(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Rearrangement"]
@@ -3903,7 +3883,7 @@ class Rearrangement(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Clone(YAMLRoot):
+class Clone(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Clone"]
@@ -4014,7 +3994,7 @@ class Clone(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Tree(YAMLRoot):
+class Tree(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Tree"]
@@ -4045,7 +4025,7 @@ class Tree(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Node(YAMLRoot):
+class Node(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Node"]
@@ -4075,7 +4055,7 @@ class Node(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Cell(YAMLRoot):
+class Cell(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Cell"]
@@ -4127,7 +4107,7 @@ class Cell(YAMLRoot):
 
 
 @dataclass(repr=False)
-class CellExpression(YAMLRoot):
+class CellExpression(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellExpression"]
@@ -4166,7 +4146,7 @@ class CellExpression(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Receptor(YAMLRoot):
+class Receptor(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Receptor"]
@@ -4218,7 +4198,7 @@ class Receptor(YAMLRoot):
 
 
 @dataclass(repr=False)
-class ReceptorReactivity(YAMLRoot):
+class ReceptorReactivity(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ReceptorReactivity"]
@@ -4280,7 +4260,7 @@ class ReceptorReactivity(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SampleProcessing(YAMLRoot):
+class SampleProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SampleProcessing"]
@@ -5275,6 +5255,9 @@ slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
 slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEMA.curie('description'),
                    model_uri=AK_SCHEMA.description, domain=None, range=Optional[str])
 
+slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
+                   model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
+
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
 
@@ -5390,9 +5373,6 @@ slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curi
 slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
                    model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
 
-slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
-                   model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
-
 slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
 
@@ -5446,6 +5426,15 @@ slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_typ
 
 slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
+
+slots.aa_hash = Slot(uri=AK_SCHEMA.aa_hash, name="aa_hash", curie=AK_SCHEMA.curie('aa_hash'),
+                   model_uri=AK_SCHEMA.aa_hash, domain=None, range=Optional[str])
+
+slots.junction_aa_vj_allele_hash = Slot(uri=AK_SCHEMA.junction_aa_vj_allele_hash, name="junction_aa_vj_allele_hash", curie=AK_SCHEMA.curie('junction_aa_vj_allele_hash'),
+                   model_uri=AK_SCHEMA.junction_aa_vj_allele_hash, domain=None, range=Optional[str])
+
+slots.junction_aa_vj_gene_hash = Slot(uri=AK_SCHEMA.junction_aa_vj_gene_hash, name="junction_aa_vj_gene_hash", curie=AK_SCHEMA.curie('junction_aa_vj_gene_hash'),
+                   model_uri=AK_SCHEMA.junction_aa_vj_gene_hash, domain=None, range=Optional[str])
 
 slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie=AK_SCHEMA.curie('complete_vdj'),
                    model_uri=AK_SCHEMA.complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
@@ -6709,54 +6698,3 @@ slots.reactivity_value = Slot(uri=AK_SCHEMA.reactivity_value, name="reactivity_v
 
 slots.reactivity_unit = Slot(uri=AK_SCHEMA.reactivity_unit, name="reactivity_unit", curie=AK_SCHEMA.curie('reactivity_unit'),
                    model_uri=AK_SCHEMA.reactivity_unit, domain=None, range=Optional[str])
-
-slots.aIRRKnowledgeCommons__investigations = Slot(uri=AK_SCHEMA.investigations, name="aIRRKnowledgeCommons__investigations", curie=AK_SCHEMA.curie('investigations'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__investigations, domain=None, range=Optional[Union[Dict[Union[str, InvestigationAkcId], Union[dict, Investigation]], List[Union[dict, Investigation]]]])
-
-slots.aIRRKnowledgeCommons__references = Slot(uri=AK_SCHEMA.references, name="aIRRKnowledgeCommons__references", curie=AK_SCHEMA.curie('references'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__references, domain=None, range=Optional[Union[Dict[Union[str, ReferenceSourceUri], Union[dict, Reference]], List[Union[dict, Reference]]]])
-
-slots.aIRRKnowledgeCommons__study_arms = Slot(uri=AK_SCHEMA.study_arms, name="aIRRKnowledgeCommons__study_arms", curie=AK_SCHEMA.curie('study_arms'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__study_arms, domain=None, range=Optional[Union[Dict[Union[str, StudyArmAkcId], Union[dict, StudyArm]], List[Union[dict, StudyArm]]]])
-
-slots.aIRRKnowledgeCommons__study_events = Slot(uri=AK_SCHEMA.study_events, name="aIRRKnowledgeCommons__study_events", curie=AK_SCHEMA.curie('study_events'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__study_events, domain=None, range=Optional[Union[Dict[Union[str, StudyEventAkcId], Union[dict, StudyEvent]], List[Union[dict, StudyEvent]]]])
-
-slots.aIRRKnowledgeCommons__participants = Slot(uri=AK_SCHEMA.participants, name="aIRRKnowledgeCommons__participants", curie=AK_SCHEMA.curie('participants'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__participants, domain=None, range=Optional[Union[Dict[Union[str, ParticipantAkcId], Union[dict, Participant]], List[Union[dict, Participant]]]])
-
-slots.aIRRKnowledgeCommons__life_events = Slot(uri=AK_SCHEMA.life_events, name="aIRRKnowledgeCommons__life_events", curie=AK_SCHEMA.curie('life_events'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__life_events, domain=None, range=Optional[Union[Dict[Union[str, LifeEventAkcId], Union[dict, LifeEvent]], List[Union[dict, LifeEvent]]]])
-
-slots.aIRRKnowledgeCommons__immune_exposures = Slot(uri=AK_SCHEMA.immune_exposures, name="aIRRKnowledgeCommons__immune_exposures", curie=AK_SCHEMA.curie('immune_exposures'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__immune_exposures, domain=None, range=Optional[Union[Dict[Union[str, ImmuneExposureAkcId], Union[dict, ImmuneExposure]], List[Union[dict, ImmuneExposure]]]])
-
-slots.aIRRKnowledgeCommons__assessments = Slot(uri=AK_SCHEMA.assessments, name="aIRRKnowledgeCommons__assessments", curie=AK_SCHEMA.curie('assessments'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__assessments, domain=None, range=Optional[Union[Dict[Union[str, AssessmentAkcId], Union[dict, Assessment]], List[Union[dict, Assessment]]]])
-
-slots.aIRRKnowledgeCommons__specimens = Slot(uri=AK_SCHEMA.specimens, name="aIRRKnowledgeCommons__specimens", curie=AK_SCHEMA.curie('specimens'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__specimens, domain=None, range=Optional[Union[Dict[Union[str, SpecimenAkcId], Union[dict, Specimen]], List[Union[dict, Specimen]]]])
-
-slots.aIRRKnowledgeCommons__specimen_collections = Slot(uri=AK_SCHEMA.specimen_collections, name="aIRRKnowledgeCommons__specimen_collections", curie=AK_SCHEMA.curie('specimen_collections'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__specimen_collections, domain=None, range=Optional[Union[Dict[Union[str, SpecimenCollectionAkcId], Union[dict, SpecimenCollection]], List[Union[dict, SpecimenCollection]]]])
-
-slots.aIRRKnowledgeCommons__specimen_processings = Slot(uri=AK_SCHEMA.specimen_processings, name="aIRRKnowledgeCommons__specimen_processings", curie=AK_SCHEMA.curie('specimen_processings'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__specimen_processings, domain=None, range=Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, SpecimenProcessing]], List[Union[dict, SpecimenProcessing]]]])
-
-slots.aIRRKnowledgeCommons__assays = Slot(uri=AK_SCHEMA.assays, name="aIRRKnowledgeCommons__assays", curie=AK_SCHEMA.curie('assays'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__assays, domain=None, range=Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, Assay]], List[Union[dict, Assay]]]])
-
-slots.aIRRKnowledgeCommons__datasets = Slot(uri=AK_SCHEMA.datasets, name="aIRRKnowledgeCommons__datasets", curie=AK_SCHEMA.curie('datasets'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__datasets, domain=None, range=Optional[Union[Dict[Union[str, DatasetAkcId], Union[dict, Dataset]], List[Union[dict, Dataset]]]])
-
-slots.aIRRKnowledgeCommons__conclusions = Slot(uri=AK_SCHEMA.conclusions, name="aIRRKnowledgeCommons__conclusions", curie=AK_SCHEMA.curie('conclusions'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__conclusions, domain=None, range=Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, Conclusion]], List[Union[dict, Conclusion]]]])
-
-slots.aIRRKnowledgeCommons__chains = Slot(uri=AK_SCHEMA.chains, name="aIRRKnowledgeCommons__chains", curie=AK_SCHEMA.curie('chains'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__chains, domain=None, range=Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, Chain]], List[Union[dict, Chain]]]])
-
-slots.aIRRKnowledgeCommons__tcell_receptors = Slot(uri=AK_SCHEMA.tcell_receptors, name="aIRRKnowledgeCommons__tcell_receptors", curie=AK_SCHEMA.curie('tcell_receptors'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, TCellReceptorAkcId], Union[dict, TCellReceptor]], List[Union[dict, TCellReceptor]]]])
-
-slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
