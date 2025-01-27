@@ -11072,6 +11072,272 @@
       ],
       "range": "string",
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__investigations",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/investigations",
+      "alias": "investigations",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Investigation",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__references",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/references",
+      "alias": "references",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Reference",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__study_arms",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/study_arms",
+      "alias": "study_arms",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "StudyArm",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__study_events",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/study_events",
+      "alias": "study_events",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "StudyEvent",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__participants",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/participants",
+      "alias": "participants",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Participant",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__life_events",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_events",
+      "alias": "life_events",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "LifeEvent",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__immune_exposures",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/immune_exposures",
+      "alias": "immune_exposures",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "ImmuneExposure",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__assessments",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/assessments",
+      "alias": "assessments",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Assessment",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__specimens",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/specimens",
+      "alias": "specimens",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Specimen",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__specimen_collections",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/specimen_collections",
+      "alias": "specimen_collections",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "SpecimenCollection",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__specimen_processings",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/specimen_processings",
+      "alias": "specimen_processings",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "SpecimenProcessing",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__assays",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/assays",
+      "alias": "assays",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Assay",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__datasets",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/datasets",
+      "alias": "datasets",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Dataset",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__conclusions",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/conclusions",
+      "alias": "conclusions",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Conclusion",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__chains",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/chains",
+      "alias": "chains",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Chain",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__ab_tcell_receptors",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/ab_tcell_receptors",
+      "alias": "ab_tcell_receptors",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "AlphaBetaTCR",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__gd_tcell_receptors",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/gd_tcell_receptors",
+      "alias": "gd_tcell_receptors",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "GammaDeltaTCR",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__bcell_receptors",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/bcell_receptors",
+      "alias": "bcell_receptors",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "BCellReceptor",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__epitopes",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitopes",
+      "alias": "epitopes",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "Epitope",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -11177,6 +11443,191 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/PlanSpecification",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AIRRKnowledgeCommons",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRKnowledgeCommons",
+      "description": "A container for instances of multiple classes.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "aIRRKnowledgeCommons__investigations",
+        "aIRRKnowledgeCommons__references",
+        "aIRRKnowledgeCommons__study_arms",
+        "aIRRKnowledgeCommons__study_events",
+        "aIRRKnowledgeCommons__participants",
+        "aIRRKnowledgeCommons__life_events",
+        "aIRRKnowledgeCommons__immune_exposures",
+        "aIRRKnowledgeCommons__assessments",
+        "aIRRKnowledgeCommons__specimens",
+        "aIRRKnowledgeCommons__specimen_collections",
+        "aIRRKnowledgeCommons__specimen_processings",
+        "aIRRKnowledgeCommons__assays",
+        "aIRRKnowledgeCommons__datasets",
+        "aIRRKnowledgeCommons__conclusions",
+        "aIRRKnowledgeCommons__chains",
+        "aIRRKnowledgeCommons__ab_tcell_receptors",
+        "aIRRKnowledgeCommons__gd_tcell_receptors",
+        "aIRRKnowledgeCommons__bcell_receptors",
+        "aIRRKnowledgeCommons__epitopes"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "investigations",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Investigation",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "references",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Reference",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "study_arms",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "StudyArm",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "study_events",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "StudyEvent",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "participants",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Participant",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "life_events",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "LifeEvent",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "immune_exposures",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "ImmuneExposure",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "assessments",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Assessment",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "specimens",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Specimen",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "specimen_collections",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "SpecimenCollection",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "specimen_processings",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "SpecimenProcessing",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "assays",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Assay",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "datasets",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Dataset",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "conclusions",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Conclusion",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "chains",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Chain",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "ab_tcell_receptors",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "AlphaBetaTCR",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "gd_tcell_receptors",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "GammaDeltaTCR",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "bcell_receptors",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "BCellReceptor",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "epitopes",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Epitope",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRKnowledgeCommons",
+      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -12858,9 +13309,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-01-26T20:02:48",
-  "source_file_size": 192685,
-  "generation_date": "2025-01-26T20:02:50",
+  "source_file_date": "2025-01-27T01:08:14",
+  "source_file_size": 196459,
+  "generation_date": "2025-01-27T01:08:16",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

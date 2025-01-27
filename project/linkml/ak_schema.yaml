@@ -5480,6 +5480,126 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
     abstract: true
+  AIRRKnowledgeCommons:
+    name: AIRRKnowledgeCommons
+    description: A container for instances of multiple classes.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      investigations:
+        name: investigations
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Investigation
+        multivalued: true
+        inlined: true
+      references:
+        name: references
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Reference
+        multivalued: true
+        inlined: true
+      study_arms:
+        name: study_arms
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: StudyArm
+        multivalued: true
+        inlined: true
+      study_events:
+        name: study_events
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: StudyEvent
+        multivalued: true
+        inlined: true
+      participants:
+        name: participants
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Participant
+        multivalued: true
+        inlined: true
+      life_events:
+        name: life_events
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: LifeEvent
+        multivalued: true
+        inlined: true
+      immune_exposures:
+        name: immune_exposures
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: ImmuneExposure
+        multivalued: true
+        inlined: true
+      assessments:
+        name: assessments
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Assessment
+        multivalued: true
+        inlined: true
+      specimens:
+        name: specimens
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Specimen
+        multivalued: true
+        inlined: true
+      specimen_collections:
+        name: specimen_collections
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: SpecimenCollection
+        multivalued: true
+        inlined: true
+      specimen_processings:
+        name: specimen_processings
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: SpecimenProcessing
+        multivalued: true
+        inlined: true
+      assays:
+        name: assays
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Assay
+        multivalued: true
+        inlined: true
+      datasets:
+        name: datasets
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Dataset
+        multivalued: true
+        inlined: true
+      conclusions:
+        name: conclusions
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Conclusion
+        multivalued: true
+        inlined: true
+      chains:
+        name: chains
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: true
+        inlined: true
+      ab_tcell_receptors:
+        name: ab_tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: AlphaBetaTCR
+        multivalued: true
+        inlined: true
+      gd_tcell_receptors:
+        name: gd_tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: GammaDeltaTCR
+        multivalued: true
+        inlined: true
+      bcell_receptors:
+        name: bcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: BCellReceptor
+        multivalued: true
+        inlined: true
+      epitopes:
+        name: epitopes
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Epitope
+        multivalued: true
+        inlined: true
+    tree_root: true
   Investigation:
     name: Investigation
     description: A scientific investigation.
