@@ -3,6 +3,12 @@ Skipping virtualenv creation, as specified in config file.
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ForeignObject" Description: "An object held outside of the AK."
 --     * Slot: source_uri Description: AKC reference to a foreign thing.
+-- # Class: "AIRRStandards" Description: "An object directly converted from the AIRR schema."
+--     * Slot: id Description: 
+-- # Class: "AIRRStandards_v1p5" Description: "An object directly converted from AIRR schema version 1.5."
+--     * Slot: id Description: 
+-- # Class: "AIRRStandards_v2p0" Description: "An object directly converted from AIRR schema version 2.0."
+--     * Slot: id Description: 
 -- # Class: "NamedThing" Description: "Name and description for AKC things."
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -190,6 +196,9 @@ Skipping virtualenv creation, as specified in config file.
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Chain" Description: ""
+--     * Slot: aa_hash Description: 
+--     * Slot: junction_aa_vj_allele_hash Description: 
+--     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
@@ -1004,6 +1013,18 @@ CREATE TABLE "ForeignObject" (
 	source_uri TEXT NOT NULL, 
 	PRIMARY KEY (source_uri)
 );
+CREATE TABLE "AIRRStandards" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "AIRRStandards_v1p5" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "AIRRStandards_v2p0" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "NamedThing" (
 	name TEXT, 
 	description TEXT, 
@@ -1074,6 +1095,9 @@ CREATE TABLE "ImmuneSystem" (
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "Chain" (
+	aa_hash TEXT, 
+	junction_aa_vj_allele_hash TEXT, 
+	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
 	sequence_aa TEXT, 
@@ -2063,7 +2087,7 @@ CREATE TABLE "Receptor_reactivity_measurements" (
 CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species VARCHAR, 
-	biological_sex VARCHAR(6), 
+	biological_sex VARCHAR, 
 	phenotypic_sex VARCHAR(13), 
 	age TEXT, 
 	age_unit VARCHAR, 
@@ -2122,7 +2146,7 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 CREATE TABLE "LifeEvent" (
 	participant TEXT, 
 	study_event TEXT, 
-	life_event_type VARCHAR(79), 
+	life_event_type VARCHAR, 
 	geolocation VARCHAR(24), 
 	t0_event TEXT, 
 	t0_event_type TEXT, 
@@ -2163,8 +2187,8 @@ CREATE TABLE "Subject_diagnosis" (
 );
 CREATE TABLE "ImmuneExposure" (
 	life_event TEXT, 
-	exposure_material VARCHAR(36), 
-	disease VARCHAR(29), 
+	exposure_material VARCHAR, 
+	disease VARCHAR, 
 	disease_stage TEXT, 
 	disease_severity TEXT, 
 	name TEXT, 
