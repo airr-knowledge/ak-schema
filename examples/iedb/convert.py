@@ -344,7 +344,7 @@ def convert(tcell_path, tcr_path, yaml_path):
         for chain in chains:
             container.chains[chain.akc_id] = chain
         for tcell_receptor in tcell_receptors:
-            container.tcell_receptors[tcell_receptor.akc_id] = tcell_receptor
+            container.ab_tcell_receptors[tcell_receptor.akc_id] = tcell_receptor
             
         #break
         row_cnt += 1

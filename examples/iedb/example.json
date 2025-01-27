@@ -1,7 +1,7 @@
 {
   "investigations": {
-    "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a": {
-      "akc_id": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a",
+    "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c": {
+      "akc_id": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c",
       "name": "Identifying specificity groups in the T cell receptor repertoire."
     }
   },
@@ -12,7 +12,7 @@
         "PMID:28636589"
       ],
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "title": "Identifying specificity groups in the T cell receptor repertoire.",
       "authors": [
@@ -39,1060 +39,1060 @@
     }
   },
   "study_arms": {
-    "AKC:dd566eb1-5592-4325-a04c-0743ff01a71a": {
-      "akc_id": "AKC:dd566eb1-5592-4325-a04c-0743ff01a71a",
+    "AKC:6d9f992b-5072-42e9-a2cb-e9d8962d30f3": {
+      "akc_id": "AKC:6d9f992b-5072-42e9-a2cb-e9d8962d30f3",
       "name": "arm 1 of 3480642",
       "description": "study arm for assay 3480642",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:bea837af-cd7c-4a7a-ba25-1d2ad3c78943": {
-      "akc_id": "AKC:bea837af-cd7c-4a7a-ba25-1d2ad3c78943",
+    "AKC:15591862-77be-4b5c-bf51-1f3948c41470": {
+      "akc_id": "AKC:15591862-77be-4b5c-bf51-1f3948c41470",
       "name": "arm 1 of 3480639",
       "description": "study arm for assay 3480639",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:7a13eacb-2ce0-4e31-a6bb-993fa4558907": {
-      "akc_id": "AKC:7a13eacb-2ce0-4e31-a6bb-993fa4558907",
+    "AKC:98f218aa-088a-44da-bc1f-22ed8dca872f": {
+      "akc_id": "AKC:98f218aa-088a-44da-bc1f-22ed8dca872f",
       "name": "arm 1 of 3480641",
       "description": "study arm for assay 3480641",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:ab21dc86-07ba-419c-9d6d-bea5b666d2c4": {
-      "akc_id": "AKC:ab21dc86-07ba-419c-9d6d-bea5b666d2c4",
+    "AKC:8e9f6c12-1d79-4061-ba03-68eefbccdec2": {
+      "akc_id": "AKC:8e9f6c12-1d79-4061-ba03-68eefbccdec2",
       "name": "arm 1 of 3480644",
       "description": "study arm for assay 3480644",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:a7d88353-96e3-4f32-8549-c14dd23c0cc8": {
-      "akc_id": "AKC:a7d88353-96e3-4f32-8549-c14dd23c0cc8",
+    "AKC:3b275071-e97c-45f1-ac62-7ae782e77b55": {
+      "akc_id": "AKC:3b275071-e97c-45f1-ac62-7ae782e77b55",
       "name": "arm 1 of 3480640",
       "description": "study arm for assay 3480640",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:8ac0f304-6c44-4fda-b1a1-dd83b327ff77": {
-      "akc_id": "AKC:8ac0f304-6c44-4fda-b1a1-dd83b327ff77",
+    "AKC:77d1babb-c26e-4e28-859a-506781dd9866": {
+      "akc_id": "AKC:77d1babb-c26e-4e28-859a-506781dd9866",
       "name": "arm 1 of 3480643",
       "description": "study arm for assay 3480643",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:6abab480-6dd5-49ac-b45a-85ce674ca37f": {
-      "akc_id": "AKC:6abab480-6dd5-49ac-b45a-85ce674ca37f",
+    "AKC:2f3763f7-e5ed-4dcf-9d67-66a8c8856dac": {
+      "akc_id": "AKC:2f3763f7-e5ed-4dcf-9d67-66a8c8856dac",
       "name": "arm 1 of 3480645",
       "description": "study arm for assay 3480645",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:57679341-7353-4dfd-b0a3-2dd7724e29da": {
-      "akc_id": "AKC:57679341-7353-4dfd-b0a3-2dd7724e29da",
+    "AKC:94c25fff-b9fb-4c94-9aea-ee571c8dd67e": {
+      "akc_id": "AKC:94c25fff-b9fb-4c94-9aea-ee571c8dd67e",
       "name": "arm 1 of 3480646",
       "description": "study arm for assay 3480646",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:50c52706-6ed6-4497-9786-ec1eff5c07c1": {
-      "akc_id": "AKC:50c52706-6ed6-4497-9786-ec1eff5c07c1",
+    "AKC:090408d4-0176-405d-9271-9bb3a364315a": {
+      "akc_id": "AKC:090408d4-0176-405d-9271-9bb3a364315a",
       "name": "arm 1 of 3480647",
       "description": "study arm for assay 3480647",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:2c4f9a07-22c0-451b-bbe7-fa95225a1805": {
-      "akc_id": "AKC:2c4f9a07-22c0-451b-bbe7-fa95225a1805",
+    "AKC:585ccf79-4741-4afc-92d0-d704b27eb94a": {
+      "akc_id": "AKC:585ccf79-4741-4afc-92d0-d704b27eb94a",
       "name": "arm 1 of 3480649",
       "description": "study arm for assay 3480649",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:65698a22-1db1-4e53-84b0-4e2c2ff99ae0": {
-      "akc_id": "AKC:65698a22-1db1-4e53-84b0-4e2c2ff99ae0",
+    "AKC:200ea596-74eb-41ed-9ab9-acc6235f6893": {
+      "akc_id": "AKC:200ea596-74eb-41ed-9ab9-acc6235f6893",
       "name": "arm 1 of 3480650",
       "description": "study arm for assay 3480650",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:c9dcfa6f-5f8e-479d-b2b5-5c1c9362a96e": {
-      "akc_id": "AKC:c9dcfa6f-5f8e-479d-b2b5-5c1c9362a96e",
+    "AKC:ab5185bd-53d5-42b9-b8c8-896e2e6e7b9d": {
+      "akc_id": "AKC:ab5185bd-53d5-42b9-b8c8-896e2e6e7b9d",
       "name": "arm 1 of 3480651",
       "description": "study arm for assay 3480651",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:1a443ce7-2dd6-405e-b502-6ad02ec1c992": {
-      "akc_id": "AKC:1a443ce7-2dd6-405e-b502-6ad02ec1c992",
+    "AKC:111555ee-c613-465b-bfbc-efe75d0bb710": {
+      "akc_id": "AKC:111555ee-c613-465b-bfbc-efe75d0bb710",
       "name": "arm 1 of 3480655",
       "description": "study arm for assay 3480655",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:afa98206-0346-4250-a48a-728bdc2852b6": {
-      "akc_id": "AKC:afa98206-0346-4250-a48a-728bdc2852b6",
+    "AKC:77faa8db-a728-4caf-ab7b-87e7fb5977fd": {
+      "akc_id": "AKC:77faa8db-a728-4caf-ab7b-87e7fb5977fd",
       "name": "arm 1 of 3480656",
       "description": "study arm for assay 3480656",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:1b71724c-9f0f-496a-af87-84bcc40a39a3": {
-      "akc_id": "AKC:1b71724c-9f0f-496a-af87-84bcc40a39a3",
+    "AKC:d3428463-4dc8-4376-9284-aab36f67fdda": {
+      "akc_id": "AKC:d3428463-4dc8-4376-9284-aab36f67fdda",
       "name": "arm 1 of 3480658",
       "description": "study arm for assay 3480658",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:fb46b86e-9dfe-473d-9b70-03f04a50691d": {
-      "akc_id": "AKC:fb46b86e-9dfe-473d-9b70-03f04a50691d",
+    "AKC:e73d971d-366f-4b4a-a9e9-bb0e2740698e": {
+      "akc_id": "AKC:e73d971d-366f-4b4a-a9e9-bb0e2740698e",
       "name": "arm 1 of 3480659",
       "description": "study arm for assay 3480659",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:b1643896-76d2-483c-b88e-a470c99fc156": {
-      "akc_id": "AKC:b1643896-76d2-483c-b88e-a470c99fc156",
+    "AKC:45a981f6-7aea-4102-b3a6-ae6d16dcffd9": {
+      "akc_id": "AKC:45a981f6-7aea-4102-b3a6-ae6d16dcffd9",
       "name": "arm 1 of 3480660",
       "description": "study arm for assay 3480660",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:f0201824-aa43-4eca-9061-6410e237f22c": {
-      "akc_id": "AKC:f0201824-aa43-4eca-9061-6410e237f22c",
+    "AKC:c874830d-fa53-4e3a-a77d-ddfb20d82095": {
+      "akc_id": "AKC:c874830d-fa53-4e3a-a77d-ddfb20d82095",
       "name": "arm 1 of 3480661",
       "description": "study arm for assay 3480661",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:798ff04b-7dae-41d4-a655-a0e4cf2f97cf": {
-      "akc_id": "AKC:798ff04b-7dae-41d4-a655-a0e4cf2f97cf",
+    "AKC:3207c197-cd64-4a38-9637-6585f2dec9f3": {
+      "akc_id": "AKC:3207c197-cd64-4a38-9637-6585f2dec9f3",
       "name": "arm 1 of 3480662",
       "description": "study arm for assay 3480662",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:6b950b64-e084-45cd-93f8-a4248ec11b3a": {
-      "akc_id": "AKC:6b950b64-e084-45cd-93f8-a4248ec11b3a",
+    "AKC:819984f5-0207-494e-b594-b389c143cb02": {
+      "akc_id": "AKC:819984f5-0207-494e-b594-b389c143cb02",
       "name": "arm 1 of 3480663",
       "description": "study arm for assay 3480663",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     },
-    "AKC:637efb90-246a-4fa1-b54c-3f08690df5cf": {
-      "akc_id": "AKC:637efb90-246a-4fa1-b54c-3f08690df5cf",
+    "AKC:3928b699-2fac-4cad-9ddd-5179133242fa": {
+      "akc_id": "AKC:3928b699-2fac-4cad-9ddd-5179133242fa",
       "name": "arm 1 of 3480664",
       "description": "study arm for assay 3480664",
-      "investigation": "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+      "investigation": "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
     }
   },
   "study_events": {
-    "AKC:e445f47a-d61c-4054-8231-6fec14cdaa7b": {
-      "akc_id": "AKC:e445f47a-d61c-4054-8231-6fec14cdaa7b",
+    "AKC:f955b986-e723-4675-8e52-06f6df4f712a": {
+      "akc_id": "AKC:f955b986-e723-4675-8e52-06f6df4f712a",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:dd566eb1-5592-4325-a04c-0743ff01a71a"
+        "AKC:6d9f992b-5072-42e9-a2cb-e9d8962d30f3"
       ]
     },
-    "AKC:fecb7a56-d5ca-45e5-ac91-f4a38319825c": {
-      "akc_id": "AKC:fecb7a56-d5ca-45e5-ac91-f4a38319825c",
+    "AKC:72b88c61-f2a8-43fd-b803-b50b99907f5f": {
+      "akc_id": "AKC:72b88c61-f2a8-43fd-b803-b50b99907f5f",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:bea837af-cd7c-4a7a-ba25-1d2ad3c78943"
+        "AKC:15591862-77be-4b5c-bf51-1f3948c41470"
       ]
     },
-    "AKC:f498de5f-18fe-4736-8754-28f1e24c3e82": {
-      "akc_id": "AKC:f498de5f-18fe-4736-8754-28f1e24c3e82",
+    "AKC:3220e883-3721-41e5-aab2-d214bd7371b1": {
+      "akc_id": "AKC:3220e883-3721-41e5-aab2-d214bd7371b1",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:7a13eacb-2ce0-4e31-a6bb-993fa4558907"
+        "AKC:98f218aa-088a-44da-bc1f-22ed8dca872f"
       ]
     },
-    "AKC:30f29ba3-3bdd-4448-ad68-05535b312967": {
-      "akc_id": "AKC:30f29ba3-3bdd-4448-ad68-05535b312967",
+    "AKC:7876d2e8-539b-4bd4-8b03-b45ca52de888": {
+      "akc_id": "AKC:7876d2e8-539b-4bd4-8b03-b45ca52de888",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:ab21dc86-07ba-419c-9d6d-bea5b666d2c4"
+        "AKC:8e9f6c12-1d79-4061-ba03-68eefbccdec2"
       ]
     },
-    "AKC:ed6810e1-ce8f-41fc-850a-e977cc672bee": {
-      "akc_id": "AKC:ed6810e1-ce8f-41fc-850a-e977cc672bee",
+    "AKC:fc9eba28-ba60-451b-8255-140c6bbff892": {
+      "akc_id": "AKC:fc9eba28-ba60-451b-8255-140c6bbff892",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:a7d88353-96e3-4f32-8549-c14dd23c0cc8"
+        "AKC:3b275071-e97c-45f1-ac62-7ae782e77b55"
       ]
     },
-    "AKC:0ccc708e-f854-483c-aba1-dce48f651745": {
-      "akc_id": "AKC:0ccc708e-f854-483c-aba1-dce48f651745",
+    "AKC:3abe5c22-740f-4373-9eb1-a3b6b90a12c5": {
+      "akc_id": "AKC:3abe5c22-740f-4373-9eb1-a3b6b90a12c5",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:8ac0f304-6c44-4fda-b1a1-dd83b327ff77"
+        "AKC:77d1babb-c26e-4e28-859a-506781dd9866"
       ]
     },
-    "AKC:4ee40894-2d29-4b47-8a5c-6190f20b1b91": {
-      "akc_id": "AKC:4ee40894-2d29-4b47-8a5c-6190f20b1b91",
+    "AKC:d1d647b8-80b5-4868-b3da-f66cd94d30ad": {
+      "akc_id": "AKC:d1d647b8-80b5-4868-b3da-f66cd94d30ad",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:6abab480-6dd5-49ac-b45a-85ce674ca37f"
+        "AKC:2f3763f7-e5ed-4dcf-9d67-66a8c8856dac"
       ]
     },
-    "AKC:4ffff4e8-01a6-4591-aadf-51c98e2b41a6": {
-      "akc_id": "AKC:4ffff4e8-01a6-4591-aadf-51c98e2b41a6",
+    "AKC:4eb51393-6419-4a49-9f1b-d83aebe8684d": {
+      "akc_id": "AKC:4eb51393-6419-4a49-9f1b-d83aebe8684d",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:57679341-7353-4dfd-b0a3-2dd7724e29da"
+        "AKC:94c25fff-b9fb-4c94-9aea-ee571c8dd67e"
       ]
     },
-    "AKC:6e90d8bb-c978-4519-a62f-9daa23e47ea5": {
-      "akc_id": "AKC:6e90d8bb-c978-4519-a62f-9daa23e47ea5",
+    "AKC:0addef9a-4a12-4f2d-8800-c6758f8e06bc": {
+      "akc_id": "AKC:0addef9a-4a12-4f2d-8800-c6758f8e06bc",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:50c52706-6ed6-4497-9786-ec1eff5c07c1"
+        "AKC:090408d4-0176-405d-9271-9bb3a364315a"
       ]
     },
-    "AKC:ba9c0202-a384-42a1-9ffe-5a366c47c97f": {
-      "akc_id": "AKC:ba9c0202-a384-42a1-9ffe-5a366c47c97f",
+    "AKC:7da2f763-2212-496f-aa4f-9b59c38d951a": {
+      "akc_id": "AKC:7da2f763-2212-496f-aa4f-9b59c38d951a",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:2c4f9a07-22c0-451b-bbe7-fa95225a1805"
+        "AKC:585ccf79-4741-4afc-92d0-d704b27eb94a"
       ]
     },
-    "AKC:f607fd8c-e350-4c47-9419-c944a5e3bc31": {
-      "akc_id": "AKC:f607fd8c-e350-4c47-9419-c944a5e3bc31",
+    "AKC:05f9ccfa-566c-4cd1-bbe7-c821e4a7bd41": {
+      "akc_id": "AKC:05f9ccfa-566c-4cd1-bbe7-c821e4a7bd41",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:65698a22-1db1-4e53-84b0-4e2c2ff99ae0"
+        "AKC:200ea596-74eb-41ed-9ab9-acc6235f6893"
       ]
     },
-    "AKC:f65f57dc-f1d4-4cc9-8429-38d27b9ee311": {
-      "akc_id": "AKC:f65f57dc-f1d4-4cc9-8429-38d27b9ee311",
+    "AKC:8ad8cb3f-d67c-43e7-8c24-7f1637faadeb": {
+      "akc_id": "AKC:8ad8cb3f-d67c-43e7-8c24-7f1637faadeb",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:c9dcfa6f-5f8e-479d-b2b5-5c1c9362a96e"
+        "AKC:ab5185bd-53d5-42b9-b8c8-896e2e6e7b9d"
       ]
     },
-    "AKC:d6e0c213-3e5b-4dcb-846d-0dc28bd39978": {
-      "akc_id": "AKC:d6e0c213-3e5b-4dcb-846d-0dc28bd39978",
+    "AKC:ef7391c5-b29b-4fc9-9ec1-2b3450a2874a": {
+      "akc_id": "AKC:ef7391c5-b29b-4fc9-9ec1-2b3450a2874a",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:1a443ce7-2dd6-405e-b502-6ad02ec1c992"
+        "AKC:111555ee-c613-465b-bfbc-efe75d0bb710"
       ]
     },
-    "AKC:7908ef5f-5058-43be-96a6-466c0b260b94": {
-      "akc_id": "AKC:7908ef5f-5058-43be-96a6-466c0b260b94",
+    "AKC:ad6c39fa-447b-471f-a30b-b91131e37140": {
+      "akc_id": "AKC:ad6c39fa-447b-471f-a30b-b91131e37140",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:afa98206-0346-4250-a48a-728bdc2852b6"
+        "AKC:77faa8db-a728-4caf-ab7b-87e7fb5977fd"
       ]
     },
-    "AKC:b53ca63b-6cb2-4720-aef8-aa74072f1507": {
-      "akc_id": "AKC:b53ca63b-6cb2-4720-aef8-aa74072f1507",
+    "AKC:797b9740-3c7e-42a7-92b0-c2a4a382c09d": {
+      "akc_id": "AKC:797b9740-3c7e-42a7-92b0-c2a4a382c09d",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:1b71724c-9f0f-496a-af87-84bcc40a39a3"
+        "AKC:d3428463-4dc8-4376-9284-aab36f67fdda"
       ]
     },
-    "AKC:c357d7d1-fcd5-488a-92e3-2eeb4dd65b24": {
-      "akc_id": "AKC:c357d7d1-fcd5-488a-92e3-2eeb4dd65b24",
+    "AKC:55d0c66a-6753-48ae-80a0-1d8c3bee2a71": {
+      "akc_id": "AKC:55d0c66a-6753-48ae-80a0-1d8c3bee2a71",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:fb46b86e-9dfe-473d-9b70-03f04a50691d"
+        "AKC:e73d971d-366f-4b4a-a9e9-bb0e2740698e"
       ]
     },
-    "AKC:928372b2-83f3-4722-ae69-c07b49902d46": {
-      "akc_id": "AKC:928372b2-83f3-4722-ae69-c07b49902d46",
+    "AKC:f30a5d88-8bba-45cf-9c8d-49e2c436a624": {
+      "akc_id": "AKC:f30a5d88-8bba-45cf-9c8d-49e2c436a624",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:b1643896-76d2-483c-b88e-a470c99fc156"
+        "AKC:45a981f6-7aea-4102-b3a6-ae6d16dcffd9"
       ]
     },
-    "AKC:0ce53874-609a-4914-bf73-f416fa5ee821": {
-      "akc_id": "AKC:0ce53874-609a-4914-bf73-f416fa5ee821",
+    "AKC:ecfd4e67-6030-4e72-8d05-b42f1c99dc6e": {
+      "akc_id": "AKC:ecfd4e67-6030-4e72-8d05-b42f1c99dc6e",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:f0201824-aa43-4eca-9061-6410e237f22c"
+        "AKC:c874830d-fa53-4e3a-a77d-ddfb20d82095"
       ]
     },
-    "AKC:ee9c0b65-cf5e-4a8d-869c-5e5631b1493e": {
-      "akc_id": "AKC:ee9c0b65-cf5e-4a8d-869c-5e5631b1493e",
+    "AKC:d8805b5e-0bb5-455f-88c3-11618c0e2ee2": {
+      "akc_id": "AKC:d8805b5e-0bb5-455f-88c3-11618c0e2ee2",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:798ff04b-7dae-41d4-a655-a0e4cf2f97cf"
+        "AKC:3207c197-cd64-4a38-9637-6585f2dec9f3"
       ]
     },
-    "AKC:34536a2d-553d-42e2-8722-75fe834036a4": {
-      "akc_id": "AKC:34536a2d-553d-42e2-8722-75fe834036a4",
+    "AKC:6460c47c-e7bb-42ae-b0a2-42b963869ea2": {
+      "akc_id": "AKC:6460c47c-e7bb-42ae-b0a2-42b963869ea2",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:6b950b64-e084-45cd-93f8-a4248ec11b3a"
+        "AKC:819984f5-0207-494e-b594-b389c143cb02"
       ]
     },
-    "AKC:ee20ba52-76bb-48ab-8f91-3febc39e140e": {
-      "akc_id": "AKC:ee20ba52-76bb-48ab-8f91-3febc39e140e",
+    "AKC:d1914c84-4321-4a25-bf44-c634554e4822": {
+      "akc_id": "AKC:d1914c84-4321-4a25-bf44-c634554e4822",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:637efb90-246a-4fa1-b54c-3f08690df5cf"
+        "AKC:3928b699-2fac-4cad-9ddd-5179133242fa"
       ]
     }
   },
   "participants": {
-    "AKC:c88a8b45-3bcb-4251-9d7d-b1555578c495": {
-      "akc_id": "AKC:c88a8b45-3bcb-4251-9d7d-b1555578c495",
+    "AKC:885533ef-2c40-4fad-9798-72cffbdee97e": {
+      "akc_id": "AKC:885533ef-2c40-4fad-9798-72cffbdee97e",
       "name": "participant 1 of 3480642",
       "description": "study participant for assay 3480642",
       "species": "Homo sapiens (human)"
     },
-    "AKC:df8805a4-f5a1-450b-ae2b-7d2e0397e4a2": {
-      "akc_id": "AKC:df8805a4-f5a1-450b-ae2b-7d2e0397e4a2",
+    "AKC:7a9724df-21a4-48f4-bd40-7fb8ef728149": {
+      "akc_id": "AKC:7a9724df-21a4-48f4-bd40-7fb8ef728149",
       "name": "participant 1 of 3480639",
       "description": "study participant for assay 3480639",
       "species": "Homo sapiens (human)"
     },
-    "AKC:47cb5221-47de-4d43-81a9-3efaf09d81b8": {
-      "akc_id": "AKC:47cb5221-47de-4d43-81a9-3efaf09d81b8",
+    "AKC:18db3007-a27a-4d84-8733-da00ad9e8a7d": {
+      "akc_id": "AKC:18db3007-a27a-4d84-8733-da00ad9e8a7d",
       "name": "participant 1 of 3480641",
       "description": "study participant for assay 3480641",
       "species": "Homo sapiens (human)"
     },
-    "AKC:c2b40965-570d-465e-9fe8-f6998c8a80e5": {
-      "akc_id": "AKC:c2b40965-570d-465e-9fe8-f6998c8a80e5",
+    "AKC:073967cb-3d4e-4310-a481-a7b1c992c262": {
+      "akc_id": "AKC:073967cb-3d4e-4310-a481-a7b1c992c262",
       "name": "participant 1 of 3480644",
       "description": "study participant for assay 3480644",
       "species": "Homo sapiens (human)"
     },
-    "AKC:fbd6b11c-3704-4529-a7e4-3cae4b09aece": {
-      "akc_id": "AKC:fbd6b11c-3704-4529-a7e4-3cae4b09aece",
+    "AKC:2e5675b9-28d9-4d31-bfa5-f82a1d85347e": {
+      "akc_id": "AKC:2e5675b9-28d9-4d31-bfa5-f82a1d85347e",
       "name": "participant 1 of 3480640",
       "description": "study participant for assay 3480640",
       "species": "Homo sapiens (human)"
     },
-    "AKC:21d4719c-8c59-44ec-80cb-9f5df0d7dd17": {
-      "akc_id": "AKC:21d4719c-8c59-44ec-80cb-9f5df0d7dd17",
+    "AKC:b9a55a48-9f79-4c7a-a127-e7ec7de50442": {
+      "akc_id": "AKC:b9a55a48-9f79-4c7a-a127-e7ec7de50442",
       "name": "participant 1 of 3480643",
       "description": "study participant for assay 3480643",
       "species": "Homo sapiens (human)"
     },
-    "AKC:9b2d5663-91f2-48dd-a1ac-b07618317dfc": {
-      "akc_id": "AKC:9b2d5663-91f2-48dd-a1ac-b07618317dfc",
+    "AKC:36df8dc0-0244-489d-9e3c-58f1425c348c": {
+      "akc_id": "AKC:36df8dc0-0244-489d-9e3c-58f1425c348c",
       "name": "participant 1 of 3480645",
       "description": "study participant for assay 3480645",
       "species": "Homo sapiens (human)"
     },
-    "AKC:f42a5069-c388-49ae-99f9-a858739fac02": {
-      "akc_id": "AKC:f42a5069-c388-49ae-99f9-a858739fac02",
+    "AKC:63a7d6be-028a-42bd-87c1-cc3f400ba6f8": {
+      "akc_id": "AKC:63a7d6be-028a-42bd-87c1-cc3f400ba6f8",
       "name": "participant 1 of 3480646",
       "description": "study participant for assay 3480646",
       "species": "Homo sapiens (human)"
     },
-    "AKC:4f5d436a-47ea-4ca4-894a-1c88d6a5e6b6": {
-      "akc_id": "AKC:4f5d436a-47ea-4ca4-894a-1c88d6a5e6b6",
+    "AKC:03387af0-cbd2-4abb-ac62-b1a682b6a0f2": {
+      "akc_id": "AKC:03387af0-cbd2-4abb-ac62-b1a682b6a0f2",
       "name": "participant 1 of 3480647",
       "description": "study participant for assay 3480647",
       "species": "Homo sapiens (human)"
     },
-    "AKC:a9ba4079-5cfc-44ea-aff0-3a1dd750562e": {
-      "akc_id": "AKC:a9ba4079-5cfc-44ea-aff0-3a1dd750562e",
+    "AKC:5ca84fa6-4a4d-4d05-b8cd-d8320497c3d3": {
+      "akc_id": "AKC:5ca84fa6-4a4d-4d05-b8cd-d8320497c3d3",
       "name": "participant 1 of 3480649",
       "description": "study participant for assay 3480649",
       "species": "Homo sapiens (human)"
     },
-    "AKC:9bfef8dc-8cb4-48b7-9c68-a011a0d2cdfa": {
-      "akc_id": "AKC:9bfef8dc-8cb4-48b7-9c68-a011a0d2cdfa",
+    "AKC:ba7c34c1-df08-49b5-8f3e-c0c554308c4d": {
+      "akc_id": "AKC:ba7c34c1-df08-49b5-8f3e-c0c554308c4d",
       "name": "participant 1 of 3480650",
       "description": "study participant for assay 3480650",
       "species": "Homo sapiens (human)"
     },
-    "AKC:9c62c759-9dfa-4735-a27a-3b2f40d4b4dd": {
-      "akc_id": "AKC:9c62c759-9dfa-4735-a27a-3b2f40d4b4dd",
+    "AKC:2e1b8840-3c97-4a5e-b5b4-a8abc872cb23": {
+      "akc_id": "AKC:2e1b8840-3c97-4a5e-b5b4-a8abc872cb23",
       "name": "participant 1 of 3480651",
       "description": "study participant for assay 3480651",
       "species": "Homo sapiens (human)"
     },
-    "AKC:8399f11a-42d7-44f4-9b97-ccc9584ef141": {
-      "akc_id": "AKC:8399f11a-42d7-44f4-9b97-ccc9584ef141",
+    "AKC:53b7e21e-1b63-43b2-941f-0a5ab1990916": {
+      "akc_id": "AKC:53b7e21e-1b63-43b2-941f-0a5ab1990916",
       "name": "participant 1 of 3480655",
       "description": "study participant for assay 3480655",
       "species": "Homo sapiens (human)"
     },
-    "AKC:6eba57b6-abd2-4696-9e73-f1558e8e5cb1": {
-      "akc_id": "AKC:6eba57b6-abd2-4696-9e73-f1558e8e5cb1",
+    "AKC:5592d411-cd3e-431b-b112-c846b96819f2": {
+      "akc_id": "AKC:5592d411-cd3e-431b-b112-c846b96819f2",
       "name": "participant 1 of 3480656",
       "description": "study participant for assay 3480656",
       "species": "Homo sapiens (human)"
     },
-    "AKC:ffd71cf1-357f-4fad-81a5-ddcae021c923": {
-      "akc_id": "AKC:ffd71cf1-357f-4fad-81a5-ddcae021c923",
+    "AKC:82928c50-ccdb-46c4-a2fc-1d2fca8c2dc2": {
+      "akc_id": "AKC:82928c50-ccdb-46c4-a2fc-1d2fca8c2dc2",
       "name": "participant 1 of 3480658",
       "description": "study participant for assay 3480658",
       "species": "Homo sapiens (human)"
     },
-    "AKC:9c129dc3-bf2f-4bed-ad48-b3828c7bdadb": {
-      "akc_id": "AKC:9c129dc3-bf2f-4bed-ad48-b3828c7bdadb",
+    "AKC:9da4937c-e9ff-4796-beba-25657cbf2eb1": {
+      "akc_id": "AKC:9da4937c-e9ff-4796-beba-25657cbf2eb1",
       "name": "participant 1 of 3480659",
       "description": "study participant for assay 3480659",
       "species": "Homo sapiens (human)"
     },
-    "AKC:4cb8aeda-4cbb-4755-a865-d30eff0b9759": {
-      "akc_id": "AKC:4cb8aeda-4cbb-4755-a865-d30eff0b9759",
+    "AKC:36c6d67a-7078-4c66-8c88-7b2b1555f68d": {
+      "akc_id": "AKC:36c6d67a-7078-4c66-8c88-7b2b1555f68d",
       "name": "participant 1 of 3480660",
       "description": "study participant for assay 3480660",
       "species": "Homo sapiens (human)"
     },
-    "AKC:fa911b96-5ca2-418c-82d6-d1010a4dd391": {
-      "akc_id": "AKC:fa911b96-5ca2-418c-82d6-d1010a4dd391",
+    "AKC:bd5a1561-6bf8-47f6-bc45-53323080304f": {
+      "akc_id": "AKC:bd5a1561-6bf8-47f6-bc45-53323080304f",
       "name": "participant 1 of 3480661",
       "description": "study participant for assay 3480661",
       "species": "Homo sapiens (human)"
     },
-    "AKC:853c3c91-4f75-40dd-a07d-ff8ee93c78b6": {
-      "akc_id": "AKC:853c3c91-4f75-40dd-a07d-ff8ee93c78b6",
+    "AKC:b77ece5b-7929-4f15-986d-8efd1e02f3c7": {
+      "akc_id": "AKC:b77ece5b-7929-4f15-986d-8efd1e02f3c7",
       "name": "participant 1 of 3480662",
       "description": "study participant for assay 3480662",
       "species": "Homo sapiens (human)"
     },
-    "AKC:7db9e3a3-8175-4209-a077-42c5fd48016b": {
-      "akc_id": "AKC:7db9e3a3-8175-4209-a077-42c5fd48016b",
+    "AKC:06f503ad-b642-4919-a521-2053eab30a10": {
+      "akc_id": "AKC:06f503ad-b642-4919-a521-2053eab30a10",
       "name": "participant 1 of 3480663",
       "description": "study participant for assay 3480663",
       "species": "Homo sapiens (human)"
     },
-    "AKC:fbae685a-c07d-409a-95ad-2c31d1077842": {
-      "akc_id": "AKC:fbae685a-c07d-409a-95ad-2c31d1077842",
+    "AKC:3ab6a37e-6d05-4426-858f-096d925f2610": {
+      "akc_id": "AKC:3ab6a37e-6d05-4426-858f-096d925f2610",
       "name": "participant 1 of 3480664",
       "description": "study participant for assay 3480664",
       "species": "Homo sapiens (human)"
     }
   },
   "life_events": {
-    "AKC:99d80797-5036-4b1c-a3e2-eb145ee1aa7e": {
-      "akc_id": "AKC:99d80797-5036-4b1c-a3e2-eb145ee1aa7e",
+    "AKC:1cc7fae7-3534-45fa-94b3-950e6eccc35c": {
+      "akc_id": "AKC:1cc7fae7-3534-45fa-94b3-950e6eccc35c",
       "name": "1st in vivo immune exposure event of assay 3480642",
       "description": "participant 1 of assay 3480642 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:c88a8b45-3bcb-4251-9d7d-b1555578c495",
+      "participant": "AKC:885533ef-2c40-4fad-9798-72cffbdee97e",
       "life_event_type": "Documented exposure without evidence for disease"
     },
-    "AKC:c81f8239-0652-43cb-b44d-4bfd967e8bd1": {
-      "akc_id": "AKC:c81f8239-0652-43cb-b44d-4bfd967e8bd1",
+    "AKC:0b410471-8220-4de5-93b2-660dc4b7170c": {
+      "akc_id": "AKC:0b410471-8220-4de5-93b2-660dc4b7170c",
       "name": "specimen collection event of assay 3480642",
       "description": "specimen 1 was collected from participant 1 of assay 3480642 in this event",
-      "participant": "AKC:c88a8b45-3bcb-4251-9d7d-b1555578c495",
-      "study_event": "AKC:e445f47a-d61c-4054-8231-6fec14cdaa7b",
+      "participant": "AKC:885533ef-2c40-4fad-9798-72cffbdee97e",
+      "study_event": "AKC:f955b986-e723-4675-8e52-06f6df4f712a",
       "life_event_type": "specimen collection"
     },
-    "AKC:0b90eae1-2b85-4562-a7c7-13d8ce0c552c": {
-      "akc_id": "AKC:0b90eae1-2b85-4562-a7c7-13d8ce0c552c",
+    "AKC:28a0a8cc-0b98-4e2f-8f38-513eb8b42c86": {
+      "akc_id": "AKC:28a0a8cc-0b98-4e2f-8f38-513eb8b42c86",
       "name": "1st in vivo immune exposure event of assay 3480639",
       "description": "participant 1 of assay 3480639 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:df8805a4-f5a1-450b-ae2b-7d2e0397e4a2",
+      "participant": "AKC:7a9724df-21a4-48f4-bd40-7fb8ef728149",
       "life_event_type": "Documented exposure without evidence for disease"
     },
-    "AKC:195fc30b-6bc6-4e77-8bc3-0013fb533f0c": {
-      "akc_id": "AKC:195fc30b-6bc6-4e77-8bc3-0013fb533f0c",
+    "AKC:b98b97a3-409b-42c8-925f-8a73329fb7b7": {
+      "akc_id": "AKC:b98b97a3-409b-42c8-925f-8a73329fb7b7",
       "name": "specimen collection event of assay 3480639",
       "description": "specimen 1 was collected from participant 1 of assay 3480639 in this event",
-      "participant": "AKC:df8805a4-f5a1-450b-ae2b-7d2e0397e4a2",
-      "study_event": "AKC:fecb7a56-d5ca-45e5-ac91-f4a38319825c",
+      "participant": "AKC:7a9724df-21a4-48f4-bd40-7fb8ef728149",
+      "study_event": "AKC:72b88c61-f2a8-43fd-b803-b50b99907f5f",
       "life_event_type": "specimen collection"
     },
-    "AKC:7782775a-d795-4f52-8d22-a05bed776fed": {
-      "akc_id": "AKC:7782775a-d795-4f52-8d22-a05bed776fed",
+    "AKC:f0ff46f1-86a8-41f8-906c-d5b421939f3b": {
+      "akc_id": "AKC:f0ff46f1-86a8-41f8-906c-d5b421939f3b",
       "name": "1st in vivo immune exposure event of assay 3480641",
       "description": "participant 1 of assay 3480641 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:47cb5221-47de-4d43-81a9-3efaf09d81b8",
+      "participant": "AKC:18db3007-a27a-4d84-8733-da00ad9e8a7d",
       "life_event_type": "Documented exposure without evidence for disease"
     },
-    "AKC:b2a4e68c-a94c-4d1e-b0d9-3d7f424bbe5a": {
-      "akc_id": "AKC:b2a4e68c-a94c-4d1e-b0d9-3d7f424bbe5a",
+    "AKC:a987f868-322c-46af-8b64-8dfe19041f97": {
+      "akc_id": "AKC:a987f868-322c-46af-8b64-8dfe19041f97",
       "name": "specimen collection event of assay 3480641",
       "description": "specimen 1 was collected from participant 1 of assay 3480641 in this event",
-      "participant": "AKC:47cb5221-47de-4d43-81a9-3efaf09d81b8",
-      "study_event": "AKC:f498de5f-18fe-4736-8754-28f1e24c3e82",
+      "participant": "AKC:18db3007-a27a-4d84-8733-da00ad9e8a7d",
+      "study_event": "AKC:3220e883-3721-41e5-aab2-d214bd7371b1",
       "life_event_type": "specimen collection"
     },
-    "AKC:45d8660b-aec5-4a15-9f42-ce4cb1517ec8": {
-      "akc_id": "AKC:45d8660b-aec5-4a15-9f42-ce4cb1517ec8",
+    "AKC:322f5a41-6b4d-4a82-811f-dba0405548c5": {
+      "akc_id": "AKC:322f5a41-6b4d-4a82-811f-dba0405548c5",
       "name": "1st in vivo immune exposure event of assay 3480644",
       "description": "participant 1 of assay 3480644 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:c2b40965-570d-465e-9fe8-f6998c8a80e5",
+      "participant": "AKC:073967cb-3d4e-4310-a481-a7b1c992c262",
       "life_event_type": "Documented exposure without evidence for disease"
     },
-    "AKC:14b362a5-3015-47f8-af58-d2462c153e07": {
-      "akc_id": "AKC:14b362a5-3015-47f8-af58-d2462c153e07",
+    "AKC:010b2498-f91c-455d-9916-dd9cb8ef7f35": {
+      "akc_id": "AKC:010b2498-f91c-455d-9916-dd9cb8ef7f35",
       "name": "specimen collection event of assay 3480644",
       "description": "specimen 1 was collected from participant 1 of assay 3480644 in this event",
-      "participant": "AKC:c2b40965-570d-465e-9fe8-f6998c8a80e5",
-      "study_event": "AKC:30f29ba3-3bdd-4448-ad68-05535b312967",
+      "participant": "AKC:073967cb-3d4e-4310-a481-a7b1c992c262",
+      "study_event": "AKC:7876d2e8-539b-4bd4-8b03-b45ca52de888",
       "life_event_type": "specimen collection"
     },
-    "AKC:c252dd59-df82-4ac4-a4e5-0abd48e3c3c7": {
-      "akc_id": "AKC:c252dd59-df82-4ac4-a4e5-0abd48e3c3c7",
+    "AKC:7323e1b7-ffbb-4fc5-aaa6-1367ec1913dd": {
+      "akc_id": "AKC:7323e1b7-ffbb-4fc5-aaa6-1367ec1913dd",
       "name": "1st in vivo immune exposure event of assay 3480640",
       "description": "participant 1 of assay 3480640 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:fbd6b11c-3704-4529-a7e4-3cae4b09aece",
+      "participant": "AKC:2e5675b9-28d9-4d31-bfa5-f82a1d85347e",
       "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
     },
-    "AKC:b5693c0d-66cb-4cff-bdda-63e4eaf07856": {
-      "akc_id": "AKC:b5693c0d-66cb-4cff-bdda-63e4eaf07856",
+    "AKC:3cfa3dd5-9caa-441d-bcb9-a4de88f28292": {
+      "akc_id": "AKC:3cfa3dd5-9caa-441d-bcb9-a4de88f28292",
       "name": "specimen collection event of assay 3480640",
       "description": "specimen 1 was collected from participant 1 of assay 3480640 in this event",
-      "participant": "AKC:fbd6b11c-3704-4529-a7e4-3cae4b09aece",
-      "study_event": "AKC:ed6810e1-ce8f-41fc-850a-e977cc672bee",
+      "participant": "AKC:2e5675b9-28d9-4d31-bfa5-f82a1d85347e",
+      "study_event": "AKC:fc9eba28-ba60-451b-8255-140c6bbff892",
       "life_event_type": "specimen collection"
     },
-    "AKC:07c704b5-f2c2-40c4-a942-dd58aa218120": {
-      "akc_id": "AKC:07c704b5-f2c2-40c4-a942-dd58aa218120",
+    "AKC:6f3e4c39-6670-4391-a739-f861f562b311": {
+      "akc_id": "AKC:6f3e4c39-6670-4391-a739-f861f562b311",
       "name": "1st in vivo immune exposure event of assay 3480643",
       "description": "participant 1 of assay 3480643 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:21d4719c-8c59-44ec-80cb-9f5df0d7dd17",
+      "participant": "AKC:b9a55a48-9f79-4c7a-a127-e7ec7de50442",
       "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
     },
-    "AKC:6fb7d7ad-aa89-4a56-a342-75ca7a08c0fa": {
-      "akc_id": "AKC:6fb7d7ad-aa89-4a56-a342-75ca7a08c0fa",
+    "AKC:9417e4dc-6b9a-4f4c-8763-a255d61d6eb6": {
+      "akc_id": "AKC:9417e4dc-6b9a-4f4c-8763-a255d61d6eb6",
       "name": "specimen collection event of assay 3480643",
       "description": "specimen 1 was collected from participant 1 of assay 3480643 in this event",
-      "participant": "AKC:21d4719c-8c59-44ec-80cb-9f5df0d7dd17",
-      "study_event": "AKC:0ccc708e-f854-483c-aba1-dce48f651745",
+      "participant": "AKC:b9a55a48-9f79-4c7a-a127-e7ec7de50442",
+      "study_event": "AKC:3abe5c22-740f-4373-9eb1-a3b6b90a12c5",
       "life_event_type": "specimen collection"
     },
-    "AKC:9adfe749-8a7c-4034-9584-5347c71a1db3": {
-      "akc_id": "AKC:9adfe749-8a7c-4034-9584-5347c71a1db3",
+    "AKC:0e575d91-237b-4d5d-9c58-a88c15c6afbc": {
+      "akc_id": "AKC:0e575d91-237b-4d5d-9c58-a88c15c6afbc",
       "name": "1st in vivo immune exposure event of assay 3480645",
       "description": "participant 1 of assay 3480645 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:9b2d5663-91f2-48dd-a1ac-b07618317dfc",
+      "participant": "AKC:36df8dc0-0244-489d-9e3c-58f1425c348c",
       "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
     },
-    "AKC:33ff4f22-5f96-4244-bdf4-2a25cc5f0ea0": {
-      "akc_id": "AKC:33ff4f22-5f96-4244-bdf4-2a25cc5f0ea0",
+    "AKC:73fe7178-c7a7-47f8-9b2c-7aca336892ac": {
+      "akc_id": "AKC:73fe7178-c7a7-47f8-9b2c-7aca336892ac",
       "name": "specimen collection event of assay 3480645",
       "description": "specimen 1 was collected from participant 1 of assay 3480645 in this event",
-      "participant": "AKC:9b2d5663-91f2-48dd-a1ac-b07618317dfc",
-      "study_event": "AKC:4ee40894-2d29-4b47-8a5c-6190f20b1b91",
+      "participant": "AKC:36df8dc0-0244-489d-9e3c-58f1425c348c",
+      "study_event": "AKC:d1d647b8-80b5-4868-b3da-f66cd94d30ad",
       "life_event_type": "specimen collection"
     },
-    "AKC:e6279217-7ea9-49f0-bd5f-ca2da0d86f10": {
-      "akc_id": "AKC:e6279217-7ea9-49f0-bd5f-ca2da0d86f10",
+    "AKC:2d8fed3b-4309-4c41-b168-04f9e135b92d": {
+      "akc_id": "AKC:2d8fed3b-4309-4c41-b168-04f9e135b92d",
       "name": "1st in vivo immune exposure event of assay 3480646",
       "description": "participant 1 of assay 3480646 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:f42a5069-c388-49ae-99f9-a858739fac02",
+      "participant": "AKC:63a7d6be-028a-42bd-87c1-cc3f400ba6f8",
       "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
     },
-    "AKC:46bf9def-faa2-4558-bf07-8b8b6fc778d2": {
-      "akc_id": "AKC:46bf9def-faa2-4558-bf07-8b8b6fc778d2",
+    "AKC:5db9f7ba-a1f2-40a4-b300-786ad680d7ca": {
+      "akc_id": "AKC:5db9f7ba-a1f2-40a4-b300-786ad680d7ca",
       "name": "specimen collection event of assay 3480646",
       "description": "specimen 1 was collected from participant 1 of assay 3480646 in this event",
-      "participant": "AKC:f42a5069-c388-49ae-99f9-a858739fac02",
-      "study_event": "AKC:4ffff4e8-01a6-4591-aadf-51c98e2b41a6",
+      "participant": "AKC:63a7d6be-028a-42bd-87c1-cc3f400ba6f8",
+      "study_event": "AKC:4eb51393-6419-4a49-9f1b-d83aebe8684d",
       "life_event_type": "specimen collection"
     },
-    "AKC:f450ffd7-eebb-4552-91f3-aa2a5c47534c": {
-      "akc_id": "AKC:f450ffd7-eebb-4552-91f3-aa2a5c47534c",
+    "AKC:94fb0f66-b1ca-4f2d-ae9b-e2bac84ff080": {
+      "akc_id": "AKC:94fb0f66-b1ca-4f2d-ae9b-e2bac84ff080",
       "name": "1st in vivo immune exposure event of assay 3480647",
       "description": "participant 1 of assay 3480647 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:4f5d436a-47ea-4ca4-894a-1c88d6a5e6b6",
+      "participant": "AKC:03387af0-cbd2-4abb-ac62-b1a682b6a0f2",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:0689975a-864a-42eb-9a8b-8e0814063adb": {
-      "akc_id": "AKC:0689975a-864a-42eb-9a8b-8e0814063adb",
+    "AKC:68eaac6d-98f9-42e4-b18f-894408c01cb1": {
+      "akc_id": "AKC:68eaac6d-98f9-42e4-b18f-894408c01cb1",
       "name": "specimen collection event of assay 3480647",
       "description": "specimen 1 was collected from participant 1 of assay 3480647 in this event",
-      "participant": "AKC:4f5d436a-47ea-4ca4-894a-1c88d6a5e6b6",
-      "study_event": "AKC:6e90d8bb-c978-4519-a62f-9daa23e47ea5",
+      "participant": "AKC:03387af0-cbd2-4abb-ac62-b1a682b6a0f2",
+      "study_event": "AKC:0addef9a-4a12-4f2d-8800-c6758f8e06bc",
       "life_event_type": "specimen collection"
     },
-    "AKC:0e4510b4-53a9-488c-b256-d594c080adf7": {
-      "akc_id": "AKC:0e4510b4-53a9-488c-b256-d594c080adf7",
+    "AKC:2a93d677-135f-480a-8fd9-a88a96c734dd": {
+      "akc_id": "AKC:2a93d677-135f-480a-8fd9-a88a96c734dd",
       "name": "1st in vivo immune exposure event of assay 3480649",
       "description": "participant 1 of assay 3480649 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:a9ba4079-5cfc-44ea-aff0-3a1dd750562e",
+      "participant": "AKC:5ca84fa6-4a4d-4d05-b8cd-d8320497c3d3",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:40f53f36-3181-493b-94d5-0ec7a85fb4d2": {
-      "akc_id": "AKC:40f53f36-3181-493b-94d5-0ec7a85fb4d2",
+    "AKC:147043c5-f5a7-4324-bc76-a19df9e5e94f": {
+      "akc_id": "AKC:147043c5-f5a7-4324-bc76-a19df9e5e94f",
       "name": "specimen collection event of assay 3480649",
       "description": "specimen 1 was collected from participant 1 of assay 3480649 in this event",
-      "participant": "AKC:a9ba4079-5cfc-44ea-aff0-3a1dd750562e",
-      "study_event": "AKC:ba9c0202-a384-42a1-9ffe-5a366c47c97f",
+      "participant": "AKC:5ca84fa6-4a4d-4d05-b8cd-d8320497c3d3",
+      "study_event": "AKC:7da2f763-2212-496f-aa4f-9b59c38d951a",
       "life_event_type": "specimen collection"
     },
-    "AKC:ffc1811b-8f16-4043-84e4-893e217dca9a": {
-      "akc_id": "AKC:ffc1811b-8f16-4043-84e4-893e217dca9a",
+    "AKC:aa9f41f3-9772-4eea-96e1-429b98481599": {
+      "akc_id": "AKC:aa9f41f3-9772-4eea-96e1-429b98481599",
       "name": "1st in vivo immune exposure event of assay 3480650",
       "description": "participant 1 of assay 3480650 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:9bfef8dc-8cb4-48b7-9c68-a011a0d2cdfa",
+      "participant": "AKC:ba7c34c1-df08-49b5-8f3e-c0c554308c4d",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:5a4564ce-0962-45ef-9370-e5e880cec45b": {
-      "akc_id": "AKC:5a4564ce-0962-45ef-9370-e5e880cec45b",
+    "AKC:e09e86b2-550e-4b53-b5b2-f28e39ef2756": {
+      "akc_id": "AKC:e09e86b2-550e-4b53-b5b2-f28e39ef2756",
       "name": "specimen collection event of assay 3480650",
       "description": "specimen 1 was collected from participant 1 of assay 3480650 in this event",
-      "participant": "AKC:9bfef8dc-8cb4-48b7-9c68-a011a0d2cdfa",
-      "study_event": "AKC:f607fd8c-e350-4c47-9419-c944a5e3bc31",
+      "participant": "AKC:ba7c34c1-df08-49b5-8f3e-c0c554308c4d",
+      "study_event": "AKC:05f9ccfa-566c-4cd1-bbe7-c821e4a7bd41",
       "life_event_type": "specimen collection"
     },
-    "AKC:519e25f2-5235-4d11-ae81-7b376d83a4ed": {
-      "akc_id": "AKC:519e25f2-5235-4d11-ae81-7b376d83a4ed",
+    "AKC:3d26ceda-3e4a-4097-84cc-e648f601f416": {
+      "akc_id": "AKC:3d26ceda-3e4a-4097-84cc-e648f601f416",
       "name": "1st in vivo immune exposure event of assay 3480651",
       "description": "participant 1 of assay 3480651 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:9c62c759-9dfa-4735-a27a-3b2f40d4b4dd",
+      "participant": "AKC:2e1b8840-3c97-4a5e-b5b4-a8abc872cb23",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:caf97728-cb81-4b54-95a1-eb403ae9daca": {
-      "akc_id": "AKC:caf97728-cb81-4b54-95a1-eb403ae9daca",
+    "AKC:4829fe67-f1f8-409b-a6fd-2d2944e115af": {
+      "akc_id": "AKC:4829fe67-f1f8-409b-a6fd-2d2944e115af",
       "name": "specimen collection event of assay 3480651",
       "description": "specimen 1 was collected from participant 1 of assay 3480651 in this event",
-      "participant": "AKC:9c62c759-9dfa-4735-a27a-3b2f40d4b4dd",
-      "study_event": "AKC:f65f57dc-f1d4-4cc9-8429-38d27b9ee311",
+      "participant": "AKC:2e1b8840-3c97-4a5e-b5b4-a8abc872cb23",
+      "study_event": "AKC:8ad8cb3f-d67c-43e7-8c24-7f1637faadeb",
       "life_event_type": "specimen collection"
     },
-    "AKC:22a9db81-0e3c-4f5c-9b96-51290c102a6d": {
-      "akc_id": "AKC:22a9db81-0e3c-4f5c-9b96-51290c102a6d",
+    "AKC:418aebbf-98ce-427e-9464-dce0bf40f469": {
+      "akc_id": "AKC:418aebbf-98ce-427e-9464-dce0bf40f469",
       "name": "1st in vivo immune exposure event of assay 3480655",
       "description": "participant 1 of assay 3480655 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:8399f11a-42d7-44f4-9b97-ccc9584ef141",
+      "participant": "AKC:53b7e21e-1b63-43b2-941f-0a5ab1990916",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:61a7bfd3-5bf5-42bf-836b-f367f936aee5": {
-      "akc_id": "AKC:61a7bfd3-5bf5-42bf-836b-f367f936aee5",
+    "AKC:0c43ede7-9322-464b-8179-3d9f8537eb4e": {
+      "akc_id": "AKC:0c43ede7-9322-464b-8179-3d9f8537eb4e",
       "name": "specimen collection event of assay 3480655",
       "description": "specimen 1 was collected from participant 1 of assay 3480655 in this event",
-      "participant": "AKC:8399f11a-42d7-44f4-9b97-ccc9584ef141",
-      "study_event": "AKC:d6e0c213-3e5b-4dcb-846d-0dc28bd39978",
+      "participant": "AKC:53b7e21e-1b63-43b2-941f-0a5ab1990916",
+      "study_event": "AKC:ef7391c5-b29b-4fc9-9ec1-2b3450a2874a",
       "life_event_type": "specimen collection"
     },
-    "AKC:44df2fce-8ead-49c1-8890-25907f719c33": {
-      "akc_id": "AKC:44df2fce-8ead-49c1-8890-25907f719c33",
+    "AKC:33b737f3-4461-4d6d-87e2-4b526956d650": {
+      "akc_id": "AKC:33b737f3-4461-4d6d-87e2-4b526956d650",
       "name": "1st in vivo immune exposure event of assay 3480656",
       "description": "participant 1 of assay 3480656 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:6eba57b6-abd2-4696-9e73-f1558e8e5cb1",
+      "participant": "AKC:5592d411-cd3e-431b-b112-c846b96819f2",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:a664f69b-ff35-41f3-b3c1-18b75cebab94": {
-      "akc_id": "AKC:a664f69b-ff35-41f3-b3c1-18b75cebab94",
+    "AKC:f1912e2b-8ed5-4336-8ef1-b128a517b0f9": {
+      "akc_id": "AKC:f1912e2b-8ed5-4336-8ef1-b128a517b0f9",
       "name": "specimen collection event of assay 3480656",
       "description": "specimen 1 was collected from participant 1 of assay 3480656 in this event",
-      "participant": "AKC:6eba57b6-abd2-4696-9e73-f1558e8e5cb1",
-      "study_event": "AKC:7908ef5f-5058-43be-96a6-466c0b260b94",
+      "participant": "AKC:5592d411-cd3e-431b-b112-c846b96819f2",
+      "study_event": "AKC:ad6c39fa-447b-471f-a30b-b91131e37140",
       "life_event_type": "specimen collection"
     },
-    "AKC:266e4d21-a915-4f19-bc30-49f4abaf0f2e": {
-      "akc_id": "AKC:266e4d21-a915-4f19-bc30-49f4abaf0f2e",
+    "AKC:f3c58e36-d4b5-420e-b2a0-be088ff7a195": {
+      "akc_id": "AKC:f3c58e36-d4b5-420e-b2a0-be088ff7a195",
       "name": "1st in vivo immune exposure event of assay 3480658",
       "description": "participant 1 of assay 3480658 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:ffd71cf1-357f-4fad-81a5-ddcae021c923",
+      "participant": "AKC:82928c50-ccdb-46c4-a2fc-1d2fca8c2dc2",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:8c7844fb-5a32-476a-b535-0f10cebc310f": {
-      "akc_id": "AKC:8c7844fb-5a32-476a-b535-0f10cebc310f",
+    "AKC:43a92435-021d-4877-a4ad-b1334ba165e7": {
+      "akc_id": "AKC:43a92435-021d-4877-a4ad-b1334ba165e7",
       "name": "specimen collection event of assay 3480658",
       "description": "specimen 1 was collected from participant 1 of assay 3480658 in this event",
-      "participant": "AKC:ffd71cf1-357f-4fad-81a5-ddcae021c923",
-      "study_event": "AKC:b53ca63b-6cb2-4720-aef8-aa74072f1507",
+      "participant": "AKC:82928c50-ccdb-46c4-a2fc-1d2fca8c2dc2",
+      "study_event": "AKC:797b9740-3c7e-42a7-92b0-c2a4a382c09d",
       "life_event_type": "specimen collection"
     },
-    "AKC:48fb2f9b-63c3-408f-8037-6d9b007142df": {
-      "akc_id": "AKC:48fb2f9b-63c3-408f-8037-6d9b007142df",
+    "AKC:733226da-87d0-4b12-b819-b1fba3b074b6": {
+      "akc_id": "AKC:733226da-87d0-4b12-b819-b1fba3b074b6",
       "name": "1st in vivo immune exposure event of assay 3480659",
       "description": "participant 1 of assay 3480659 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:9c129dc3-bf2f-4bed-ad48-b3828c7bdadb",
+      "participant": "AKC:9da4937c-e9ff-4796-beba-25657cbf2eb1",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:eaf35d1e-32d0-498a-9f64-198d69ccbcfd": {
-      "akc_id": "AKC:eaf35d1e-32d0-498a-9f64-198d69ccbcfd",
+    "AKC:6a3c51f3-564a-48e8-a55d-f27e33e2dfc6": {
+      "akc_id": "AKC:6a3c51f3-564a-48e8-a55d-f27e33e2dfc6",
       "name": "specimen collection event of assay 3480659",
       "description": "specimen 1 was collected from participant 1 of assay 3480659 in this event",
-      "participant": "AKC:9c129dc3-bf2f-4bed-ad48-b3828c7bdadb",
-      "study_event": "AKC:c357d7d1-fcd5-488a-92e3-2eeb4dd65b24",
+      "participant": "AKC:9da4937c-e9ff-4796-beba-25657cbf2eb1",
+      "study_event": "AKC:55d0c66a-6753-48ae-80a0-1d8c3bee2a71",
       "life_event_type": "specimen collection"
     },
-    "AKC:1de92bfb-dbe0-448b-a7f8-e2386e156165": {
-      "akc_id": "AKC:1de92bfb-dbe0-448b-a7f8-e2386e156165",
+    "AKC:75e8990a-2f9f-4258-be03-547aeed0e8cd": {
+      "akc_id": "AKC:75e8990a-2f9f-4258-be03-547aeed0e8cd",
       "name": "1st in vivo immune exposure event of assay 3480660",
       "description": "participant 1 of assay 3480660 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:4cb8aeda-4cbb-4755-a865-d30eff0b9759",
+      "participant": "AKC:36c6d67a-7078-4c66-8c88-7b2b1555f68d",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:7894a63e-40ca-42f4-9e56-4e4f3687ec57": {
-      "akc_id": "AKC:7894a63e-40ca-42f4-9e56-4e4f3687ec57",
+    "AKC:90134097-b89f-4cff-9c31-9eca772087d3": {
+      "akc_id": "AKC:90134097-b89f-4cff-9c31-9eca772087d3",
       "name": "specimen collection event of assay 3480660",
       "description": "specimen 1 was collected from participant 1 of assay 3480660 in this event",
-      "participant": "AKC:4cb8aeda-4cbb-4755-a865-d30eff0b9759",
-      "study_event": "AKC:928372b2-83f3-4722-ae69-c07b49902d46",
+      "participant": "AKC:36c6d67a-7078-4c66-8c88-7b2b1555f68d",
+      "study_event": "AKC:f30a5d88-8bba-45cf-9c8d-49e2c436a624",
       "life_event_type": "specimen collection"
     },
-    "AKC:63fd1743-86fe-40f0-a1e6-02dbe7db93ef": {
-      "akc_id": "AKC:63fd1743-86fe-40f0-a1e6-02dbe7db93ef",
+    "AKC:8934ac7f-ab96-499d-948a-95c70eaf3f2d": {
+      "akc_id": "AKC:8934ac7f-ab96-499d-948a-95c70eaf3f2d",
       "name": "1st in vivo immune exposure event of assay 3480661",
       "description": "participant 1 of assay 3480661 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:fa911b96-5ca2-418c-82d6-d1010a4dd391",
+      "participant": "AKC:bd5a1561-6bf8-47f6-bc45-53323080304f",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:b22ebff9-7769-4fda-a4f5-ecfdbeae0e1c": {
-      "akc_id": "AKC:b22ebff9-7769-4fda-a4f5-ecfdbeae0e1c",
+    "AKC:3eeb0d6f-300d-428d-b6b4-8ad25f07b688": {
+      "akc_id": "AKC:3eeb0d6f-300d-428d-b6b4-8ad25f07b688",
       "name": "specimen collection event of assay 3480661",
       "description": "specimen 1 was collected from participant 1 of assay 3480661 in this event",
-      "participant": "AKC:fa911b96-5ca2-418c-82d6-d1010a4dd391",
-      "study_event": "AKC:0ce53874-609a-4914-bf73-f416fa5ee821",
+      "participant": "AKC:bd5a1561-6bf8-47f6-bc45-53323080304f",
+      "study_event": "AKC:ecfd4e67-6030-4e72-8d05-b42f1c99dc6e",
       "life_event_type": "specimen collection"
     },
-    "AKC:36ee1568-a1b2-4317-97b0-4536f798255d": {
-      "akc_id": "AKC:36ee1568-a1b2-4317-97b0-4536f798255d",
+    "AKC:cf2f2761-3f24-4dd2-bb4e-4312411e1465": {
+      "akc_id": "AKC:cf2f2761-3f24-4dd2-bb4e-4312411e1465",
       "name": "1st in vivo immune exposure event of assay 3480662",
       "description": "participant 1 of assay 3480662 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:853c3c91-4f75-40dd-a07d-ff8ee93c78b6",
+      "participant": "AKC:b77ece5b-7929-4f15-986d-8efd1e02f3c7",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:b9ff8a60-fec8-4c6d-845b-6e0da2ae7025": {
-      "akc_id": "AKC:b9ff8a60-fec8-4c6d-845b-6e0da2ae7025",
+    "AKC:0c385dbb-ac3a-4e8e-9a93-a0fb6e253b10": {
+      "akc_id": "AKC:0c385dbb-ac3a-4e8e-9a93-a0fb6e253b10",
       "name": "specimen collection event of assay 3480662",
       "description": "specimen 1 was collected from participant 1 of assay 3480662 in this event",
-      "participant": "AKC:853c3c91-4f75-40dd-a07d-ff8ee93c78b6",
-      "study_event": "AKC:ee9c0b65-cf5e-4a8d-869c-5e5631b1493e",
+      "participant": "AKC:b77ece5b-7929-4f15-986d-8efd1e02f3c7",
+      "study_event": "AKC:d8805b5e-0bb5-455f-88c3-11618c0e2ee2",
       "life_event_type": "specimen collection"
     },
-    "AKC:c10bd7cd-8e09-4abb-9a6d-d2f1f73ebde7": {
-      "akc_id": "AKC:c10bd7cd-8e09-4abb-9a6d-d2f1f73ebde7",
+    "AKC:6c63fd83-d0eb-40fc-ba8f-c4348d2ea25c": {
+      "akc_id": "AKC:6c63fd83-d0eb-40fc-ba8f-c4348d2ea25c",
       "name": "1st in vivo immune exposure event of assay 3480663",
       "description": "participant 1 of assay 3480663 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:7db9e3a3-8175-4209-a077-42c5fd48016b",
+      "participant": "AKC:06f503ad-b642-4919-a521-2053eab30a10",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:f9d1cfca-725a-41b8-8cf2-3b18eea27f58": {
-      "akc_id": "AKC:f9d1cfca-725a-41b8-8cf2-3b18eea27f58",
+    "AKC:fe253de8-2343-4b7d-8494-c3e709b35cab": {
+      "akc_id": "AKC:fe253de8-2343-4b7d-8494-c3e709b35cab",
       "name": "specimen collection event of assay 3480663",
       "description": "specimen 1 was collected from participant 1 of assay 3480663 in this event",
-      "participant": "AKC:7db9e3a3-8175-4209-a077-42c5fd48016b",
-      "study_event": "AKC:34536a2d-553d-42e2-8722-75fe834036a4",
+      "participant": "AKC:06f503ad-b642-4919-a521-2053eab30a10",
+      "study_event": "AKC:6460c47c-e7bb-42ae-b0a2-42b963869ea2",
       "life_event_type": "specimen collection"
     },
-    "AKC:e2f06221-fbbb-47f5-b6c6-40d8dbb5f1b0": {
-      "akc_id": "AKC:e2f06221-fbbb-47f5-b6c6-40d8dbb5f1b0",
+    "AKC:89a186bb-9eba-46ef-872c-f795fb5957fc": {
+      "akc_id": "AKC:89a186bb-9eba-46ef-872c-f795fb5957fc",
       "name": "1st in vivo immune exposure event of assay 3480664",
       "description": "participant 1 of assay 3480664 participated in this 1st in vivo immune exposure event",
-      "participant": "AKC:fbae685a-c07d-409a-95ad-2c31d1077842",
+      "participant": "AKC:3ab6a37e-6d05-4426-858f-096d925f2610",
       "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
     },
-    "AKC:0b2b1f20-f186-4e69-9267-295a64aa1ca9": {
-      "akc_id": "AKC:0b2b1f20-f186-4e69-9267-295a64aa1ca9",
+    "AKC:38536ca5-ba86-4319-85cb-74b7fc725384": {
+      "akc_id": "AKC:38536ca5-ba86-4319-85cb-74b7fc725384",
       "name": "specimen collection event of assay 3480664",
       "description": "specimen 1 was collected from participant 1 of assay 3480664 in this event",
-      "participant": "AKC:fbae685a-c07d-409a-95ad-2c31d1077842",
-      "study_event": "AKC:ee20ba52-76bb-48ab-8f91-3febc39e140e",
+      "participant": "AKC:3ab6a37e-6d05-4426-858f-096d925f2610",
+      "study_event": "AKC:d1914c84-4321-4a25-bf44-c634554e4822",
       "life_event_type": "specimen collection"
     }
   },
   "immune_exposures": {
-    "AKC:4d9b3b3e-cd62-4f97-9026-8593b607f4b7": {
-      "akc_id": "AKC:4d9b3b3e-cd62-4f97-9026-8593b607f4b7",
+    "AKC:fd38d316-1f45-412d-a793-1d4f47966d76": {
+      "akc_id": "AKC:fd38d316-1f45-412d-a793-1d4f47966d76",
       "name": "details of 1st in vivo immune exposure event of assay 3480642",
       "description": "participant 1 of assay 3480642 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:99d80797-5036-4b1c-a3e2-eb145ee1aa7e",
+      "life_event": "AKC:1cc7fae7-3534-45fa-94b3-950e6eccc35c",
       "exposure_material": "Human gammaherpesvirus 4",
       "disease": "healthy"
     },
-    "AKC:3edcaad4-a8f1-4385-83b8-0b19fd7f0a7d": {
-      "akc_id": "AKC:3edcaad4-a8f1-4385-83b8-0b19fd7f0a7d",
+    "AKC:9f8c9c3f-ff29-468b-a3ad-240a6f5c5a1b": {
+      "akc_id": "AKC:9f8c9c3f-ff29-468b-a3ad-240a6f5c5a1b",
       "name": "details of 1st in vivo immune exposure event of assay 3480639",
       "description": "participant 1 of assay 3480639 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:0b90eae1-2b85-4562-a7c7-13d8ce0c552c",
+      "life_event": "AKC:28a0a8cc-0b98-4e2f-8f38-513eb8b42c86",
       "exposure_material": "Human betaherpesvirus 5",
       "disease": "healthy"
     },
-    "AKC:0b9b1702-5a21-4b57-9c50-ffbe4d45040c": {
-      "akc_id": "AKC:0b9b1702-5a21-4b57-9c50-ffbe4d45040c",
+    "AKC:2b9ae95d-6871-4d36-97e3-9785e373215b": {
+      "akc_id": "AKC:2b9ae95d-6871-4d36-97e3-9785e373215b",
       "name": "details of 1st in vivo immune exposure event of assay 3480641",
       "description": "participant 1 of assay 3480641 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:7782775a-d795-4f52-8d22-a05bed776fed",
+      "life_event": "AKC:f0ff46f1-86a8-41f8-906c-d5b421939f3b",
       "exposure_material": "Human betaherpesvirus 5",
       "disease": "healthy"
     },
-    "AKC:2a5669c8-6922-40e5-b04f-68f4223092eb": {
-      "akc_id": "AKC:2a5669c8-6922-40e5-b04f-68f4223092eb",
+    "AKC:6b0f1664-1510-40f9-894c-162fe7add92f": {
+      "akc_id": "AKC:6b0f1664-1510-40f9-894c-162fe7add92f",
       "name": "details of 1st in vivo immune exposure event of assay 3480644",
       "description": "participant 1 of assay 3480644 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:45d8660b-aec5-4a15-9f42-ce4cb1517ec8",
+      "life_event": "AKC:322f5a41-6b4d-4a82-811f-dba0405548c5",
       "exposure_material": "Human betaherpesvirus 5",
       "disease": "healthy"
     },
-    "AKC:122e4d68-85bf-4dcf-81c3-51cc64565b3c": {
-      "akc_id": "AKC:122e4d68-85bf-4dcf-81c3-51cc64565b3c",
+    "AKC:7c3eda95-29bc-489f-9819-3e7352a10ea6": {
+      "akc_id": "AKC:7c3eda95-29bc-489f-9819-3e7352a10ea6",
       "name": "details of 1st in vivo immune exposure event of assay 3480640",
       "description": "participant 1 of assay 3480640 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:c252dd59-df82-4ac4-a4e5-0abd48e3c3c7",
+      "life_event": "AKC:7323e1b7-ffbb-4fc5-aaa6-1367ec1913dd",
       "exposure_material": "Influenza A virus",
       "disease": "healthy"
     },
-    "AKC:1864e907-d606-4ab5-9f86-978ed9cb9be5": {
-      "akc_id": "AKC:1864e907-d606-4ab5-9f86-978ed9cb9be5",
+    "AKC:3385f6ab-8faf-4c91-be1b-7e2acbce9de7": {
+      "akc_id": "AKC:3385f6ab-8faf-4c91-be1b-7e2acbce9de7",
       "name": "details of 1st in vivo immune exposure event of assay 3480643",
       "description": "participant 1 of assay 3480643 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:07c704b5-f2c2-40c4-a942-dd58aa218120",
+      "life_event": "AKC:6f3e4c39-6670-4391-a739-f861f562b311",
       "exposure_material": "Influenza A virus",
       "disease": "healthy"
     },
-    "AKC:4ba3c451-39f0-443e-9cc1-00d34f04a80c": {
-      "akc_id": "AKC:4ba3c451-39f0-443e-9cc1-00d34f04a80c",
+    "AKC:d3f365b6-d4bd-4741-ba85-addb9b1f8044": {
+      "akc_id": "AKC:d3f365b6-d4bd-4741-ba85-addb9b1f8044",
       "name": "details of 1st in vivo immune exposure event of assay 3480645",
       "description": "participant 1 of assay 3480645 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:9adfe749-8a7c-4034-9584-5347c71a1db3",
+      "life_event": "AKC:0e575d91-237b-4d5d-9c58-a88c15c6afbc",
       "exposure_material": "Influenza A virus",
       "disease": "healthy"
     },
-    "AKC:28ac29d4-6164-4e0d-8d96-9edcf5eb33a7": {
-      "akc_id": "AKC:28ac29d4-6164-4e0d-8d96-9edcf5eb33a7",
+    "AKC:7b7205a3-875e-486d-924d-e41ec2cbfc80": {
+      "akc_id": "AKC:7b7205a3-875e-486d-924d-e41ec2cbfc80",
       "name": "details of 1st in vivo immune exposure event of assay 3480646",
       "description": "participant 1 of assay 3480646 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:e6279217-7ea9-49f0-bd5f-ca2da0d86f10",
+      "life_event": "AKC:2d8fed3b-4309-4c41-b168-04f9e135b92d",
       "exposure_material": "Influenza A virus",
       "disease": "healthy"
     },
-    "AKC:b84bf7b0-18e1-484d-b350-d0c36f41ab19": {
-      "akc_id": "AKC:b84bf7b0-18e1-484d-b350-d0c36f41ab19",
+    "AKC:110b139b-723c-498c-a67d-96537719664b": {
+      "akc_id": "AKC:110b139b-723c-498c-a67d-96537719664b",
       "name": "details of 1st in vivo immune exposure event of assay 3480647",
       "description": "participant 1 of assay 3480647 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:f450ffd7-eebb-4552-91f3-aa2a5c47534c",
+      "life_event": "AKC:94fb0f66-b1ca-4f2d-ae9b-e2bac84ff080",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:77ea9b1f-c326-4efe-93ca-598efc0962ba": {
-      "akc_id": "AKC:77ea9b1f-c326-4efe-93ca-598efc0962ba",
+    "AKC:4b6047fb-838e-46d8-96f7-b117edac2bf7": {
+      "akc_id": "AKC:4b6047fb-838e-46d8-96f7-b117edac2bf7",
       "name": "details of 1st in vivo immune exposure event of assay 3480649",
       "description": "participant 1 of assay 3480649 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:0e4510b4-53a9-488c-b256-d594c080adf7",
+      "life_event": "AKC:2a93d677-135f-480a-8fd9-a88a96c734dd",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:f6c6d5d6-e382-44e9-aa8c-2108aaf635d8": {
-      "akc_id": "AKC:f6c6d5d6-e382-44e9-aa8c-2108aaf635d8",
+    "AKC:9138b7a4-b92c-4652-9249-6fea665ce8ed": {
+      "akc_id": "AKC:9138b7a4-b92c-4652-9249-6fea665ce8ed",
       "name": "details of 1st in vivo immune exposure event of assay 3480650",
       "description": "participant 1 of assay 3480650 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:ffc1811b-8f16-4043-84e4-893e217dca9a",
+      "life_event": "AKC:aa9f41f3-9772-4eea-96e1-429b98481599",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:83ada15a-b772-4e6c-8dc2-b1b2cc1ee0fd": {
-      "akc_id": "AKC:83ada15a-b772-4e6c-8dc2-b1b2cc1ee0fd",
+    "AKC:cdfcbf72-e7c0-4373-a210-0712a9b9fefb": {
+      "akc_id": "AKC:cdfcbf72-e7c0-4373-a210-0712a9b9fefb",
       "name": "details of 1st in vivo immune exposure event of assay 3480651",
       "description": "participant 1 of assay 3480651 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:519e25f2-5235-4d11-ae81-7b376d83a4ed",
+      "life_event": "AKC:3d26ceda-3e4a-4097-84cc-e648f601f416",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:80f88a69-a501-46ee-b18c-32323ac27ed8": {
-      "akc_id": "AKC:80f88a69-a501-46ee-b18c-32323ac27ed8",
+    "AKC:f2d021b7-9e33-4930-8557-ed791f3917cb": {
+      "akc_id": "AKC:f2d021b7-9e33-4930-8557-ed791f3917cb",
       "name": "details of 1st in vivo immune exposure event of assay 3480655",
       "description": "participant 1 of assay 3480655 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:22a9db81-0e3c-4f5c-9b96-51290c102a6d",
+      "life_event": "AKC:418aebbf-98ce-427e-9464-dce0bf40f469",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:5dd3e339-b189-483f-99c8-de99ee3ef916": {
-      "akc_id": "AKC:5dd3e339-b189-483f-99c8-de99ee3ef916",
+    "AKC:2110262f-4906-4131-bec0-3265d3164b1f": {
+      "akc_id": "AKC:2110262f-4906-4131-bec0-3265d3164b1f",
       "name": "details of 1st in vivo immune exposure event of assay 3480656",
       "description": "participant 1 of assay 3480656 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:44df2fce-8ead-49c1-8890-25907f719c33",
+      "life_event": "AKC:33b737f3-4461-4d6d-87e2-4b526956d650",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:19ddc5b5-3a32-40c3-a1ac-16245968439b": {
-      "akc_id": "AKC:19ddc5b5-3a32-40c3-a1ac-16245968439b",
+    "AKC:dc45cb0f-df00-4a5f-b7c9-1d76c4111b38": {
+      "akc_id": "AKC:dc45cb0f-df00-4a5f-b7c9-1d76c4111b38",
       "name": "details of 1st in vivo immune exposure event of assay 3480658",
       "description": "participant 1 of assay 3480658 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:266e4d21-a915-4f19-bc30-49f4abaf0f2e",
+      "life_event": "AKC:f3c58e36-d4b5-420e-b2a0-be088ff7a195",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:ee0f1b6b-1d6d-45b3-96a0-e091037fd22f": {
-      "akc_id": "AKC:ee0f1b6b-1d6d-45b3-96a0-e091037fd22f",
+    "AKC:e8f09e2c-bbb0-4cff-8614-b55cd8ff12ac": {
+      "akc_id": "AKC:e8f09e2c-bbb0-4cff-8614-b55cd8ff12ac",
       "name": "details of 1st in vivo immune exposure event of assay 3480659",
       "description": "participant 1 of assay 3480659 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:48fb2f9b-63c3-408f-8037-6d9b007142df",
+      "life_event": "AKC:733226da-87d0-4b12-b819-b1fba3b074b6",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:5122e0a8-f39a-44f5-84b7-70a5dfe578ab": {
-      "akc_id": "AKC:5122e0a8-f39a-44f5-84b7-70a5dfe578ab",
+    "AKC:27e1eeca-6ef8-4adc-9888-a21efe42fdc7": {
+      "akc_id": "AKC:27e1eeca-6ef8-4adc-9888-a21efe42fdc7",
       "name": "details of 1st in vivo immune exposure event of assay 3480660",
       "description": "participant 1 of assay 3480660 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:1de92bfb-dbe0-448b-a7f8-e2386e156165",
+      "life_event": "AKC:75e8990a-2f9f-4258-be03-547aeed0e8cd",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:e68b41b4-666d-4b52-907e-43dda32c8260": {
-      "akc_id": "AKC:e68b41b4-666d-4b52-907e-43dda32c8260",
+    "AKC:5c139d9f-14f8-450b-91b4-7373d26ab9bd": {
+      "akc_id": "AKC:5c139d9f-14f8-450b-91b4-7373d26ab9bd",
       "name": "details of 1st in vivo immune exposure event of assay 3480661",
       "description": "participant 1 of assay 3480661 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:63fd1743-86fe-40f0-a1e6-02dbe7db93ef",
+      "life_event": "AKC:8934ac7f-ab96-499d-948a-95c70eaf3f2d",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:8a9b18a2-9dcb-487b-8362-ac031a936835": {
-      "akc_id": "AKC:8a9b18a2-9dcb-487b-8362-ac031a936835",
+    "AKC:2f16c970-84fd-4b87-a8ac-b52abd0481d6": {
+      "akc_id": "AKC:2f16c970-84fd-4b87-a8ac-b52abd0481d6",
       "name": "details of 1st in vivo immune exposure event of assay 3480662",
       "description": "participant 1 of assay 3480662 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:36ee1568-a1b2-4317-97b0-4536f798255d",
+      "life_event": "AKC:cf2f2761-3f24-4dd2-bb4e-4312411e1465",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:ced2a693-65ba-4c06-8bd8-b1db464d5c4c": {
-      "akc_id": "AKC:ced2a693-65ba-4c06-8bd8-b1db464d5c4c",
+    "AKC:7d5bd443-a4d7-4e67-a9fb-6a6aa66f5189": {
+      "akc_id": "AKC:7d5bd443-a4d7-4e67-a9fb-6a6aa66f5189",
       "name": "details of 1st in vivo immune exposure event of assay 3480663",
       "description": "participant 1 of assay 3480663 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:c10bd7cd-8e09-4abb-9a6d-d2f1f73ebde7",
+      "life_event": "AKC:6c63fd83-d0eb-40fc-ba8f-c4348d2ea25c",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:ae8261f3-1815-4de2-8c1a-eb16be7006ae": {
-      "akc_id": "AKC:ae8261f3-1815-4de2-8c1a-eb16be7006ae",
+    "AKC:2a812dc3-9821-4d0e-83f0-e6c5aeaa87b4": {
+      "akc_id": "AKC:2a812dc3-9821-4d0e-83f0-e6c5aeaa87b4",
       "name": "details of 1st in vivo immune exposure event of assay 3480664",
       "description": "participant 1 of assay 3480664 participated in this 1st in vivo immune exposure event, with these details",
-      "life_event": "AKC:e2f06221-fbbb-47f5-b6c6-40d8dbb5f1b0",
+      "life_event": "AKC:89a186bb-9eba-46ef-872c-f795fb5957fc",
       "exposure_material": "Mycobacterium tuberculosis"
     }
   },
   "specimens": {
-    "AKC:33cee06c-2140-494b-bd5d-543d56c79465": {
-      "akc_id": "AKC:33cee06c-2140-494b-bd5d-543d56c79465",
+    "AKC:a7f79a92-8c5d-4e2c-95e2-f9e2d4821bde": {
+      "akc_id": "AKC:a7f79a92-8c5d-4e2c-95e2-f9e2d4821bde",
       "name": "specimen 1 of assay 3480642",
       "description": "specimen 1 from participant 1 of assay 3480642",
-      "life_event": "AKC:c81f8239-0652-43cb-b44d-4bfd967e8bd1",
+      "life_event": "AKC:0b410471-8220-4de5-93b2-660dc4b7170c",
       "tissue": "Blood"
     },
-    "AKC:7b625694-cf4c-4ada-a602-073938eb5962": {
-      "akc_id": "AKC:7b625694-cf4c-4ada-a602-073938eb5962",
+    "AKC:8f21a644-766a-492a-993a-5951e032b057": {
+      "akc_id": "AKC:8f21a644-766a-492a-993a-5951e032b057",
       "name": "specimen 1 of assay 3480639",
       "description": "specimen 1 from participant 1 of assay 3480639",
-      "life_event": "AKC:195fc30b-6bc6-4e77-8bc3-0013fb533f0c",
+      "life_event": "AKC:b98b97a3-409b-42c8-925f-8a73329fb7b7",
       "tissue": "Blood"
     },
-    "AKC:b9bb552b-ceb5-4997-9849-4531e7f65f38": {
-      "akc_id": "AKC:b9bb552b-ceb5-4997-9849-4531e7f65f38",
+    "AKC:c134c798-ccd6-4582-8989-b9dacab64464": {
+      "akc_id": "AKC:c134c798-ccd6-4582-8989-b9dacab64464",
       "name": "specimen 1 of assay 3480641",
       "description": "specimen 1 from participant 1 of assay 3480641",
-      "life_event": "AKC:b2a4e68c-a94c-4d1e-b0d9-3d7f424bbe5a",
+      "life_event": "AKC:a987f868-322c-46af-8b64-8dfe19041f97",
       "tissue": "Blood"
     },
-    "AKC:a7be6948-a46d-4284-a92c-10f13aa2ec4f": {
-      "akc_id": "AKC:a7be6948-a46d-4284-a92c-10f13aa2ec4f",
+    "AKC:1720efb7-331c-4726-8fa3-4b652791bd1b": {
+      "akc_id": "AKC:1720efb7-331c-4726-8fa3-4b652791bd1b",
       "name": "specimen 1 of assay 3480644",
       "description": "specimen 1 from participant 1 of assay 3480644",
-      "life_event": "AKC:14b362a5-3015-47f8-af58-d2462c153e07",
+      "life_event": "AKC:010b2498-f91c-455d-9916-dd9cb8ef7f35",
       "tissue": "Blood"
     },
-    "AKC:e2bb8b10-9930-44c6-a86e-a91387b39b59": {
-      "akc_id": "AKC:e2bb8b10-9930-44c6-a86e-a91387b39b59",
+    "AKC:44ed1f9f-a23e-4b12-962c-18bb05f63ce6": {
+      "akc_id": "AKC:44ed1f9f-a23e-4b12-962c-18bb05f63ce6",
       "name": "specimen 1 of assay 3480640",
       "description": "specimen 1 from participant 1 of assay 3480640",
-      "life_event": "AKC:b5693c0d-66cb-4cff-bdda-63e4eaf07856",
+      "life_event": "AKC:3cfa3dd5-9caa-441d-bcb9-a4de88f28292",
       "tissue": "Blood"
     },
-    "AKC:2cd75b5a-0f5d-47f1-a697-9b3109f1b8b8": {
-      "akc_id": "AKC:2cd75b5a-0f5d-47f1-a697-9b3109f1b8b8",
+    "AKC:d4099704-e11e-4ded-be32-651d124b5b62": {
+      "akc_id": "AKC:d4099704-e11e-4ded-be32-651d124b5b62",
       "name": "specimen 1 of assay 3480643",
       "description": "specimen 1 from participant 1 of assay 3480643",
-      "life_event": "AKC:6fb7d7ad-aa89-4a56-a342-75ca7a08c0fa",
+      "life_event": "AKC:9417e4dc-6b9a-4f4c-8763-a255d61d6eb6",
       "tissue": "Blood"
     },
-    "AKC:3760ebc4-dc76-49ca-ace1-8ec243aded1f": {
-      "akc_id": "AKC:3760ebc4-dc76-49ca-ace1-8ec243aded1f",
+    "AKC:5f2d5e4d-1a86-42be-b3ea-0c9c03dd7ef4": {
+      "akc_id": "AKC:5f2d5e4d-1a86-42be-b3ea-0c9c03dd7ef4",
       "name": "specimen 1 of assay 3480645",
       "description": "specimen 1 from participant 1 of assay 3480645",
-      "life_event": "AKC:33ff4f22-5f96-4244-bdf4-2a25cc5f0ea0",
+      "life_event": "AKC:73fe7178-c7a7-47f8-9b2c-7aca336892ac",
       "tissue": "Blood"
     },
-    "AKC:1df9ee87-3f36-4d7d-9e29-662b9aa83571": {
-      "akc_id": "AKC:1df9ee87-3f36-4d7d-9e29-662b9aa83571",
+    "AKC:724f3e05-fa6f-4520-a628-54b3bfe83832": {
+      "akc_id": "AKC:724f3e05-fa6f-4520-a628-54b3bfe83832",
       "name": "specimen 1 of assay 3480646",
       "description": "specimen 1 from participant 1 of assay 3480646",
-      "life_event": "AKC:46bf9def-faa2-4558-bf07-8b8b6fc778d2",
+      "life_event": "AKC:5db9f7ba-a1f2-40a4-b300-786ad680d7ca",
       "tissue": "Lymph Node"
     },
-    "AKC:f1b61b40-8192-4d82-b630-3a99df077960": {
-      "akc_id": "AKC:f1b61b40-8192-4d82-b630-3a99df077960",
+    "AKC:bf039f1e-4afd-4a37-b577-ad07b66599ce": {
+      "akc_id": "AKC:bf039f1e-4afd-4a37-b577-ad07b66599ce",
       "name": "specimen 1 of assay 3480647",
       "description": "specimen 1 from participant 1 of assay 3480647",
-      "life_event": "AKC:0689975a-864a-42eb-9a8b-8e0814063adb",
+      "life_event": "AKC:68eaac6d-98f9-42e4-b18f-894408c01cb1",
       "tissue": "Lymphoid"
     },
-    "AKC:884b4ae5-0f1e-478f-ac70-810798f99bb4": {
-      "akc_id": "AKC:884b4ae5-0f1e-478f-ac70-810798f99bb4",
+    "AKC:6e189e1a-f9e8-4c22-ba23-ef0f0a9d3a97": {
+      "akc_id": "AKC:6e189e1a-f9e8-4c22-ba23-ef0f0a9d3a97",
       "name": "specimen 1 of assay 3480649",
       "description": "specimen 1 from participant 1 of assay 3480649",
-      "life_event": "AKC:40f53f36-3181-493b-94d5-0ec7a85fb4d2",
+      "life_event": "AKC:147043c5-f5a7-4324-bc76-a19df9e5e94f",
       "tissue": "Lymphoid"
     },
-    "AKC:46771c06-9ae6-4e42-8139-ce4d534ea0c6": {
-      "akc_id": "AKC:46771c06-9ae6-4e42-8139-ce4d534ea0c6",
+    "AKC:7cec35c4-2181-4919-8793-53e45404d1a5": {
+      "akc_id": "AKC:7cec35c4-2181-4919-8793-53e45404d1a5",
       "name": "specimen 1 of assay 3480650",
       "description": "specimen 1 from participant 1 of assay 3480650",
-      "life_event": "AKC:5a4564ce-0962-45ef-9370-e5e880cec45b",
+      "life_event": "AKC:e09e86b2-550e-4b53-b5b2-f28e39ef2756",
       "tissue": "Lymphoid"
     },
-    "AKC:f08627ff-c8e1-44eb-b58d-3ea4f7ab86e0": {
-      "akc_id": "AKC:f08627ff-c8e1-44eb-b58d-3ea4f7ab86e0",
+    "AKC:5025fdfa-202b-4e49-ba21-76e711189766": {
+      "akc_id": "AKC:5025fdfa-202b-4e49-ba21-76e711189766",
       "name": "specimen 1 of assay 3480651",
       "description": "specimen 1 from participant 1 of assay 3480651",
-      "life_event": "AKC:caf97728-cb81-4b54-95a1-eb403ae9daca",
+      "life_event": "AKC:4829fe67-f1f8-409b-a6fd-2d2944e115af",
       "tissue": "Lymphoid"
     },
-    "AKC:0807ec11-f391-4048-942e-db860e907cc4": {
-      "akc_id": "AKC:0807ec11-f391-4048-942e-db860e907cc4",
+    "AKC:c78cd32b-77a1-4348-b558-e8c08f6478eb": {
+      "akc_id": "AKC:c78cd32b-77a1-4348-b558-e8c08f6478eb",
       "name": "specimen 1 of assay 3480655",
       "description": "specimen 1 from participant 1 of assay 3480655",
-      "life_event": "AKC:61a7bfd3-5bf5-42bf-836b-f367f936aee5",
+      "life_event": "AKC:0c43ede7-9322-464b-8179-3d9f8537eb4e",
       "tissue": "Lymphoid"
     },
-    "AKC:32314511-b04a-485c-8ec0-a38aefbff754": {
-      "akc_id": "AKC:32314511-b04a-485c-8ec0-a38aefbff754",
+    "AKC:b9d0a0cf-6f98-48ef-a840-e167eeda4b73": {
+      "akc_id": "AKC:b9d0a0cf-6f98-48ef-a840-e167eeda4b73",
       "name": "specimen 1 of assay 3480656",
       "description": "specimen 1 from participant 1 of assay 3480656",
-      "life_event": "AKC:a664f69b-ff35-41f3-b3c1-18b75cebab94",
+      "life_event": "AKC:f1912e2b-8ed5-4336-8ef1-b128a517b0f9",
       "tissue": "Lymphoid"
     },
-    "AKC:62a27cf1-a15f-414b-a774-807f36d4f416": {
-      "akc_id": "AKC:62a27cf1-a15f-414b-a774-807f36d4f416",
+    "AKC:b092dbf8-102c-48cc-a0bd-7d7fd14e7105": {
+      "akc_id": "AKC:b092dbf8-102c-48cc-a0bd-7d7fd14e7105",
       "name": "specimen 1 of assay 3480658",
       "description": "specimen 1 from participant 1 of assay 3480658",
-      "life_event": "AKC:8c7844fb-5a32-476a-b535-0f10cebc310f",
+      "life_event": "AKC:43a92435-021d-4877-a4ad-b1334ba165e7",
       "tissue": "Lymphoid"
     },
-    "AKC:a57981f4-10c5-40dc-b58a-e78598a2f83a": {
-      "akc_id": "AKC:a57981f4-10c5-40dc-b58a-e78598a2f83a",
+    "AKC:87a2d934-42a6-408a-9a39-23e6a3351906": {
+      "akc_id": "AKC:87a2d934-42a6-408a-9a39-23e6a3351906",
       "name": "specimen 1 of assay 3480659",
       "description": "specimen 1 from participant 1 of assay 3480659",
-      "life_event": "AKC:eaf35d1e-32d0-498a-9f64-198d69ccbcfd",
+      "life_event": "AKC:6a3c51f3-564a-48e8-a55d-f27e33e2dfc6",
       "tissue": "Lymphoid"
     },
-    "AKC:599a52f3-9add-4f4c-bc19-b4b715c8fff7": {
-      "akc_id": "AKC:599a52f3-9add-4f4c-bc19-b4b715c8fff7",
+    "AKC:509df7c9-6a51-4396-89ad-be8b15bb1924": {
+      "akc_id": "AKC:509df7c9-6a51-4396-89ad-be8b15bb1924",
       "name": "specimen 1 of assay 3480660",
       "description": "specimen 1 from participant 1 of assay 3480660",
-      "life_event": "AKC:7894a63e-40ca-42f4-9e56-4e4f3687ec57",
+      "life_event": "AKC:90134097-b89f-4cff-9c31-9eca772087d3",
       "tissue": "Lymphoid"
     },
-    "AKC:5545e6ec-8db7-41b7-9fdc-ffb4d7db8501": {
-      "akc_id": "AKC:5545e6ec-8db7-41b7-9fdc-ffb4d7db8501",
+    "AKC:cc528f49-9f35-42f9-af34-1e06daab481b": {
+      "akc_id": "AKC:cc528f49-9f35-42f9-af34-1e06daab481b",
       "name": "specimen 1 of assay 3480661",
       "description": "specimen 1 from participant 1 of assay 3480661",
-      "life_event": "AKC:b22ebff9-7769-4fda-a4f5-ecfdbeae0e1c",
+      "life_event": "AKC:3eeb0d6f-300d-428d-b6b4-8ad25f07b688",
       "tissue": "Lymphoid"
     },
-    "AKC:5dfe277b-9447-44a8-b4df-42230def2cd9": {
-      "akc_id": "AKC:5dfe277b-9447-44a8-b4df-42230def2cd9",
+    "AKC:3917dcdc-4f78-4b0f-bc41-1145c9201ead": {
+      "akc_id": "AKC:3917dcdc-4f78-4b0f-bc41-1145c9201ead",
       "name": "specimen 1 of assay 3480662",
       "description": "specimen 1 from participant 1 of assay 3480662",
-      "life_event": "AKC:b9ff8a60-fec8-4c6d-845b-6e0da2ae7025",
+      "life_event": "AKC:0c385dbb-ac3a-4e8e-9a93-a0fb6e253b10",
       "tissue": "Lymphoid"
     },
-    "AKC:4db61ba7-c9c8-4074-aaf3-ede94f10d2bc": {
-      "akc_id": "AKC:4db61ba7-c9c8-4074-aaf3-ede94f10d2bc",
+    "AKC:f1799a51-fe58-49aa-9694-a64d1ffaf1ab": {
+      "akc_id": "AKC:f1799a51-fe58-49aa-9694-a64d1ffaf1ab",
       "name": "specimen 1 of assay 3480663",
       "description": "specimen 1 from participant 1 of assay 3480663",
-      "life_event": "AKC:f9d1cfca-725a-41b8-8cf2-3b18eea27f58",
+      "life_event": "AKC:fe253de8-2343-4b7d-8494-c3e709b35cab",
       "tissue": "Lymphoid"
     },
-    "AKC:65114aec-d0f6-47a7-b95e-dfc24fbb000e": {
-      "akc_id": "AKC:65114aec-d0f6-47a7-b95e-dfc24fbb000e",
+    "AKC:1ca5a39f-7ec4-4a4b-83ba-2445c19d51f9": {
+      "akc_id": "AKC:1ca5a39f-7ec4-4a4b-83ba-2445c19d51f9",
       "name": "specimen 1 of assay 3480664",
       "description": "specimen 1 from participant 1 of assay 3480664",
-      "life_event": "AKC:0b2b1f20-f186-4e69-9267-295a64aa1ca9",
+      "life_event": "AKC:38536ca5-ba86-4319-85cb-74b7fc725384",
       "tissue": "Lymphoid"
     }
   },
   "assays": {
-    "AKC:781e0e63-2f3b-4f4d-8e15-4ab6f4b000c1": {
-      "akc_id": "AKC:781e0e63-2f3b-4f4d-8e15-4ab6f4b000c1",
+    "AKC:5a328def-77db-4d41-b726-119013cbbe8a": {
+      "akc_id": "AKC:5a328def-77db-4d41-b726-119013cbbe8a",
       "name": "assay 3480642",
       "description": "assay 3480642 has specified input specimen 1",
-      "specimen": "AKC:33cee06c-2140-494b-bd5d-543d56c79465",
+      "specimen": "AKC:a7f79a92-8c5d-4e2c-95e2-f9e2d4821bde",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:20788",
@@ -1789,11 +1789,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:0d142dd3-800f-440c-a518-e9e1296135e5": {
-      "akc_id": "AKC:0d142dd3-800f-440c-a518-e9e1296135e5",
+    "AKC:d1a9405c-ff8f-4cfd-95f0-af5d59390396": {
+      "akc_id": "AKC:d1a9405c-ff8f-4cfd-95f0-af5d59390396",
       "name": "assay 3480639",
       "description": "assay 3480639 has specified input specimen 1",
-      "specimen": "AKC:7b625694-cf4c-4ada-a602-073938eb5962",
+      "specimen": "AKC:8f21a644-766a-492a-993a-5951e032b057",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:71290",
@@ -2079,11 +2079,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:850e62e6-a622-46a4-8e13-5ab8256a6999": {
-      "akc_id": "AKC:850e62e6-a622-46a4-8e13-5ab8256a6999",
+    "AKC:c1ea4b34-7a5b-48fb-a7dc-3f5e04347ce9": {
+      "akc_id": "AKC:c1ea4b34-7a5b-48fb-a7dc-3f5e04347ce9",
       "name": "assay 3480641",
       "description": "assay 3480641 has specified input specimen 1",
-      "specimen": "AKC:b9bb552b-ceb5-4997-9849-4531e7f65f38",
+      "specimen": "AKC:c134c798-ccd6-4582-8989-b9dacab64464",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:44920",
@@ -2207,11 +2207,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:382411b1-8973-4f06-9eb7-c38aec923249": {
-      "akc_id": "AKC:382411b1-8973-4f06-9eb7-c38aec923249",
+    "AKC:5dbd11ed-2ea1-4038-8e17-d18eb00f9731": {
+      "akc_id": "AKC:5dbd11ed-2ea1-4038-8e17-d18eb00f9731",
       "name": "assay 3480644",
       "description": "assay 3480644 has specified input specimen 1",
-      "specimen": "AKC:a7be6948-a46d-4284-a92c-10f13aa2ec4f",
+      "specimen": "AKC:1720efb7-331c-4726-8fa3-4b652791bd1b",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:65748",
@@ -4361,11 +4361,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:6d36fb14-a3cb-4829-8c2a-7e08f8c8f5fe": {
-      "akc_id": "AKC:6d36fb14-a3cb-4829-8c2a-7e08f8c8f5fe",
+    "AKC:66e08d39-0e20-40e1-a14e-6c2b870f8cc7": {
+      "akc_id": "AKC:66e08d39-0e20-40e1-a14e-6c2b870f8cc7",
       "name": "assay 3480640",
       "description": "assay 3480640 has specified input specimen 1",
-      "specimen": "AKC:e2bb8b10-9930-44c6-a86e-a91387b39b59",
+      "specimen": "AKC:44ed1f9f-a23e-4b12-962c-18bb05f63ce6",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:7136",
@@ -4398,11 +4398,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:77faf4e1-7e9c-4c0f-ae68-179e7cb433fa": {
-      "akc_id": "AKC:77faf4e1-7e9c-4c0f-ae68-179e7cb433fa",
+    "AKC:96f226d8-af35-45f4-a86b-fdea77eedf2b": {
+      "akc_id": "AKC:96f226d8-af35-45f4-a86b-fdea77eedf2b",
       "name": "assay 3480643",
       "description": "assay 3480643 has specified input specimen 1",
-      "specimen": "AKC:2cd75b5a-0f5d-47f1-a697-9b3109f1b8b8",
+      "specimen": "AKC:d4099704-e11e-4ded-be32-651d124b5b62",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:20354",
@@ -4999,11 +4999,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:dd9e4e2b-e408-486f-bf16-b368469c2b36": {
-      "akc_id": "AKC:dd9e4e2b-e408-486f-bf16-b368469c2b36",
+    "AKC:0186911d-0cb6-43ae-8663-dc5afa868aef": {
+      "akc_id": "AKC:0186911d-0cb6-43ae-8663-dc5afa868aef",
       "name": "assay 3480645",
       "description": "assay 3480645 has specified input specimen 1",
-      "specimen": "AKC:3760ebc4-dc76-49ca-ace1-8ec243aded1f",
+      "specimen": "AKC:5f2d5e4d-1a86-42be-b3ea-0c9c03dd7ef4",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:38688",
@@ -7153,11 +7153,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:d07d1c20-7eb3-4eab-b717-af917ee8aa2b": {
-      "akc_id": "AKC:d07d1c20-7eb3-4eab-b717-af917ee8aa2b",
+    "AKC:fb2d131c-5671-4000-b59b-b6a0ea1a8536": {
+      "akc_id": "AKC:fb2d131c-5671-4000-b59b-b6a0ea1a8536",
       "name": "assay 3480646",
       "description": "assay 3480646 has specified input specimen 1",
-      "specimen": "AKC:1df9ee87-3f36-4d7d-9e29-662b9aa83571",
+      "specimen": "AKC:724f3e05-fa6f-4520-a628-54b3bfe83832",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:48237",
@@ -7377,11 +7377,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:64435071-dbe6-4640-b3b7-9188d70af2de": {
-      "akc_id": "AKC:64435071-dbe6-4640-b3b7-9188d70af2de",
+    "AKC:a534f854-d61a-4b3d-970f-dbf6f478c96a": {
+      "akc_id": "AKC:a534f854-d61a-4b3d-970f-dbf6f478c96a",
       "name": "assay 3480647",
       "description": "assay 3480647 has specified input specimen 1",
-      "specimen": "AKC:f1b61b40-8192-4d82-b630-3a99df077960",
+      "specimen": "AKC:bf039f1e-4afd-4a37-b577-ad07b66599ce",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:62799",
@@ -7392,11 +7392,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:2786e1d5-58b4-4702-855b-cebe7c8644e3": {
-      "akc_id": "AKC:2786e1d5-58b4-4702-855b-cebe7c8644e3",
+    "AKC:eb85c2a0-ebe2-4585-8403-ae5e3297e4e6": {
+      "akc_id": "AKC:eb85c2a0-ebe2-4585-8403-ae5e3297e4e6",
       "name": "assay 3480649",
       "description": "assay 3480649 has specified input specimen 1",
-      "specimen": "AKC:884b4ae5-0f1e-478f-ac70-810798f99bb4",
+      "specimen": "AKC:6e189e1a-f9e8-4c22-ba23-ef0f0a9d3a97",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179628",
@@ -7414,11 +7414,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:899d55b7-219e-4168-b546-ba04e59f592f": {
-      "akc_id": "AKC:899d55b7-219e-4168-b546-ba04e59f592f",
+    "AKC:84eb22c7-082f-4794-b08e-9f4b2a584052": {
+      "akc_id": "AKC:84eb22c7-082f-4794-b08e-9f4b2a584052",
       "name": "assay 3480650",
       "description": "assay 3480650 has specified input specimen 1",
-      "specimen": "AKC:46771c06-9ae6-4e42-8139-ce4d534ea0c6",
+      "specimen": "AKC:7cec35c4-2181-4919-8793-53e45404d1a5",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179351",
@@ -7430,11 +7430,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:bbaab71c-c3e0-46b6-b7a1-922455a01711": {
-      "akc_id": "AKC:bbaab71c-c3e0-46b6-b7a1-922455a01711",
+    "AKC:1f134e46-716e-4359-8484-7dc99d8ab96c": {
+      "akc_id": "AKC:1f134e46-716e-4359-8484-7dc99d8ab96c",
       "name": "assay 3480651",
       "description": "assay 3480651 has specified input specimen 1",
-      "specimen": "AKC:f08627ff-c8e1-44eb-b58d-3ea4f7ab86e0",
+      "specimen": "AKC:5025fdfa-202b-4e49-ba21-76e711189766",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179254",
@@ -7452,11 +7452,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:6aab6333-8e9d-44d6-9053-d06863f5ead9": {
-      "akc_id": "AKC:6aab6333-8e9d-44d6-9053-d06863f5ead9",
+    "AKC:a8a45874-8ab1-4578-8bc9-a80e1aa3c19b": {
+      "akc_id": "AKC:a8a45874-8ab1-4578-8bc9-a80e1aa3c19b",
       "name": "assay 3480655",
       "description": "assay 3480655 has specified input specimen 1",
-      "specimen": "AKC:0807ec11-f391-4048-942e-db860e907cc4",
+      "specimen": "AKC:c78cd32b-77a1-4348-b558-e8c08f6478eb",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179398",
@@ -7468,11 +7468,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:7a11a1af-29ad-464c-92d8-393944bfc267": {
-      "akc_id": "AKC:7a11a1af-29ad-464c-92d8-393944bfc267",
+    "AKC:6450f2f5-5f7f-47fe-9583-6f56d1e4d922": {
+      "akc_id": "AKC:6450f2f5-5f7f-47fe-9583-6f56d1e4d922",
       "name": "assay 3480656",
       "description": "assay 3480656 has specified input specimen 1",
-      "specimen": "AKC:32314511-b04a-485c-8ec0-a38aefbff754",
+      "specimen": "AKC:b9d0a0cf-6f98-48ef-a840-e167eeda4b73",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:174021",
@@ -7484,11 +7484,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:c2aa8e72-83c4-4694-be83-10a7e784ea01": {
-      "akc_id": "AKC:c2aa8e72-83c4-4694-be83-10a7e784ea01",
+    "AKC:995bf406-5c40-44b4-8a47-693493d521ed": {
+      "akc_id": "AKC:995bf406-5c40-44b4-8a47-693493d521ed",
       "name": "assay 3480658",
       "description": "assay 3480658 has specified input specimen 1",
-      "specimen": "AKC:62a27cf1-a15f-414b-a774-807f36d4f416",
+      "specimen": "AKC:b092dbf8-102c-48cc-a0bd-7d7fd14e7105",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:49440",
@@ -7500,11 +7500,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:7c91a846-7be9-40a8-a4bb-195d108ca58a": {
-      "akc_id": "AKC:7c91a846-7be9-40a8-a4bb-195d108ca58a",
+    "AKC:767d0a70-eaa7-47a2-b66b-1967afcc74ed": {
+      "akc_id": "AKC:767d0a70-eaa7-47a2-b66b-1967afcc74ed",
       "name": "assay 3480659",
       "description": "assay 3480659 has specified input specimen 1",
-      "specimen": "AKC:a57981f4-10c5-40dc-b58a-e78598a2f83a",
+      "specimen": "AKC:87a2d934-42a6-408a-9a39-23e6a3351906",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:173948",
@@ -7516,11 +7516,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:da1a3f63-1890-4bf8-a403-eb4df201dfb2": {
-      "akc_id": "AKC:da1a3f63-1890-4bf8-a403-eb4df201dfb2",
+    "AKC:cb26d815-0e45-4f9b-8db4-40dc3378e073": {
+      "akc_id": "AKC:cb26d815-0e45-4f9b-8db4-40dc3378e073",
       "name": "assay 3480660",
       "description": "assay 3480660 has specified input specimen 1",
-      "specimen": "AKC:599a52f3-9add-4f4c-bc19-b4b715c8fff7",
+      "specimen": "AKC:509df7c9-6a51-4396-89ad-be8b15bb1924",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:106658",
@@ -7530,11 +7530,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:f8df23aa-949e-4eed-931e-e59ce1fe5b7a": {
-      "akc_id": "AKC:f8df23aa-949e-4eed-931e-e59ce1fe5b7a",
+    "AKC:162d22f0-3a8d-4d34-b3cc-d85bfe2b38f5": {
+      "akc_id": "AKC:162d22f0-3a8d-4d34-b3cc-d85bfe2b38f5",
       "name": "assay 3480661",
       "description": "assay 3480661 has specified input specimen 1",
-      "specimen": "AKC:5545e6ec-8db7-41b7-9fdc-ffb4d7db8501",
+      "specimen": "AKC:cc528f49-9f35-42f9-af34-1e06daab481b",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179276",
@@ -7544,11 +7544,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:61dddcda-30ca-447c-a9b2-e37663973d4e": {
-      "akc_id": "AKC:61dddcda-30ca-447c-a9b2-e37663973d4e",
+    "AKC:8e06e701-ee15-455d-bb03-40ebd3704bd7": {
+      "akc_id": "AKC:8e06e701-ee15-455d-bb03-40ebd3704bd7",
       "name": "assay 3480662",
       "description": "assay 3480662 has specified input specimen 1",
-      "specimen": "AKC:5dfe277b-9447-44a8-b4df-42230def2cd9",
+      "specimen": "AKC:3917dcdc-4f78-4b0f-bc41-1145c9201ead",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:501191",
@@ -7558,11 +7558,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:6c6b2e73-75ee-4387-8690-3371aec63e6d": {
-      "akc_id": "AKC:6c6b2e73-75ee-4387-8690-3371aec63e6d",
+    "AKC:e0138315-db7e-4704-86e2-1dab9d4452bc": {
+      "akc_id": "AKC:e0138315-db7e-4704-86e2-1dab9d4452bc",
       "name": "assay 3480663",
       "description": "assay 3480663 has specified input specimen 1",
-      "specimen": "AKC:4db61ba7-c9c8-4074-aaf3-ede94f10d2bc",
+      "specimen": "AKC:f1799a51-fe58-49aa-9694-a64d1ffaf1ab",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:505",
@@ -7572,11 +7572,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:b955251d-1f71-47fc-9ad3-de19f99f6c13": {
-      "akc_id": "AKC:b955251d-1f71-47fc-9ad3-de19f99f6c13",
+    "AKC:8091ff9a-affa-48a0-a9d6-0f1627876102": {
+      "akc_id": "AKC:8091ff9a-affa-48a0-a9d6-0f1627876102",
       "name": "assay 3480664",
       "description": "assay 3480664 has specified input specimen 1",
-      "specimen": "AKC:65114aec-d0f6-47a7-b95e-dfc24fbb000e",
+      "specimen": "AKC:1ca5a39f-7ec4-4a4b-83ba-2445c19d51f9",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:161666",
@@ -7588,485 +7588,485 @@
     }
   },
   "datasets": {
-    "AKC:63dc4375-8ed9-4779-8dba-7bc0af7ef038": {
-      "akc_id": "AKC:63dc4375-8ed9-4779-8dba-7bc0af7ef038",
+    "AKC:e81d49c5-27e2-4f5c-885b-c779fd347089": {
+      "akc_id": "AKC:e81d49c5-27e2-4f5c-885b-c779fd347089",
       "name": "dataset 1 about assay 3480642",
       "description": "dataset 1 is about assay 3480642",
       "assays": [
-        "AKC:781e0e63-2f3b-4f4d-8e15-4ab6f4b000c1"
+        "AKC:5a328def-77db-4d41-b726-119013cbbe8a"
       ]
     },
-    "AKC:12c52b68-e25c-489d-84ee-1bcc7e441556": {
-      "akc_id": "AKC:12c52b68-e25c-489d-84ee-1bcc7e441556",
+    "AKC:f09c7342-e040-41e5-a283-2bc115afdef7": {
+      "akc_id": "AKC:f09c7342-e040-41e5-a283-2bc115afdef7",
       "name": "dataset 1 about assay 3480639",
       "description": "dataset 1 is about assay 3480639",
       "assays": [
-        "AKC:0d142dd3-800f-440c-a518-e9e1296135e5"
+        "AKC:d1a9405c-ff8f-4cfd-95f0-af5d59390396"
       ]
     },
-    "AKC:a5a09cbe-7831-4095-a1d6-9f557177e438": {
-      "akc_id": "AKC:a5a09cbe-7831-4095-a1d6-9f557177e438",
+    "AKC:e7381ccb-3fc5-4371-b663-473b2cf3c933": {
+      "akc_id": "AKC:e7381ccb-3fc5-4371-b663-473b2cf3c933",
       "name": "dataset 1 about assay 3480641",
       "description": "dataset 1 is about assay 3480641",
       "assays": [
-        "AKC:850e62e6-a622-46a4-8e13-5ab8256a6999"
+        "AKC:c1ea4b34-7a5b-48fb-a7dc-3f5e04347ce9"
       ]
     },
-    "AKC:dc7684bc-82dd-47e1-aa36-9ec6e37df6b1": {
-      "akc_id": "AKC:dc7684bc-82dd-47e1-aa36-9ec6e37df6b1",
+    "AKC:f71843d9-188d-42b3-b91f-fbc4169a5371": {
+      "akc_id": "AKC:f71843d9-188d-42b3-b91f-fbc4169a5371",
       "name": "dataset 1 about assay 3480644",
       "description": "dataset 1 is about assay 3480644",
       "assays": [
-        "AKC:382411b1-8973-4f06-9eb7-c38aec923249"
+        "AKC:5dbd11ed-2ea1-4038-8e17-d18eb00f9731"
       ]
     },
-    "AKC:0d7f2060-05a2-4734-bbbb-7a1fc4866def": {
-      "akc_id": "AKC:0d7f2060-05a2-4734-bbbb-7a1fc4866def",
+    "AKC:4a1cb2cc-fb9c-486d-a051-683f49370990": {
+      "akc_id": "AKC:4a1cb2cc-fb9c-486d-a051-683f49370990",
       "name": "dataset 1 about assay 3480640",
       "description": "dataset 1 is about assay 3480640",
       "assays": [
-        "AKC:6d36fb14-a3cb-4829-8c2a-7e08f8c8f5fe"
+        "AKC:66e08d39-0e20-40e1-a14e-6c2b870f8cc7"
       ]
     },
-    "AKC:3f201a4c-e513-4ad1-9e12-80b2f76092f4": {
-      "akc_id": "AKC:3f201a4c-e513-4ad1-9e12-80b2f76092f4",
+    "AKC:10c06e35-4a16-47f5-821b-b2be4401ee03": {
+      "akc_id": "AKC:10c06e35-4a16-47f5-821b-b2be4401ee03",
       "name": "dataset 1 about assay 3480643",
       "description": "dataset 1 is about assay 3480643",
       "assays": [
-        "AKC:77faf4e1-7e9c-4c0f-ae68-179e7cb433fa"
+        "AKC:96f226d8-af35-45f4-a86b-fdea77eedf2b"
       ]
     },
-    "AKC:b46ff0fa-f2a5-4b31-9f32-f587e30f3558": {
-      "akc_id": "AKC:b46ff0fa-f2a5-4b31-9f32-f587e30f3558",
+    "AKC:af995f3a-0fe2-45ab-bb11-b7281e94384a": {
+      "akc_id": "AKC:af995f3a-0fe2-45ab-bb11-b7281e94384a",
       "name": "dataset 1 about assay 3480645",
       "description": "dataset 1 is about assay 3480645",
       "assays": [
-        "AKC:dd9e4e2b-e408-486f-bf16-b368469c2b36"
+        "AKC:0186911d-0cb6-43ae-8663-dc5afa868aef"
       ]
     },
-    "AKC:50e02394-108c-4fda-9e18-e5f6c739072a": {
-      "akc_id": "AKC:50e02394-108c-4fda-9e18-e5f6c739072a",
+    "AKC:f99dc1d8-0183-4001-9e2b-903c9f680026": {
+      "akc_id": "AKC:f99dc1d8-0183-4001-9e2b-903c9f680026",
       "name": "dataset 1 about assay 3480646",
       "description": "dataset 1 is about assay 3480646",
       "assays": [
-        "AKC:d07d1c20-7eb3-4eab-b717-af917ee8aa2b"
+        "AKC:fb2d131c-5671-4000-b59b-b6a0ea1a8536"
       ]
     },
-    "AKC:f0fa300a-94ef-43f8-89d4-d59e2311c1db": {
-      "akc_id": "AKC:f0fa300a-94ef-43f8-89d4-d59e2311c1db",
+    "AKC:5fdd236b-c96d-46f7-8a89-509e6237b765": {
+      "akc_id": "AKC:5fdd236b-c96d-46f7-8a89-509e6237b765",
       "name": "dataset 1 about assay 3480647",
       "description": "dataset 1 is about assay 3480647",
       "assays": [
-        "AKC:64435071-dbe6-4640-b3b7-9188d70af2de"
+        "AKC:a534f854-d61a-4b3d-970f-dbf6f478c96a"
       ]
     },
-    "AKC:acc6b746-e5e9-4993-87c9-393162ab87ea": {
-      "akc_id": "AKC:acc6b746-e5e9-4993-87c9-393162ab87ea",
+    "AKC:c301de51-c69a-4c63-af69-77ab8b17eced": {
+      "akc_id": "AKC:c301de51-c69a-4c63-af69-77ab8b17eced",
       "name": "dataset 1 about assay 3480649",
       "description": "dataset 1 is about assay 3480649",
       "assays": [
-        "AKC:2786e1d5-58b4-4702-855b-cebe7c8644e3"
+        "AKC:eb85c2a0-ebe2-4585-8403-ae5e3297e4e6"
       ]
     },
-    "AKC:f33d0807-c9fe-4adc-b934-e6cefa774844": {
-      "akc_id": "AKC:f33d0807-c9fe-4adc-b934-e6cefa774844",
+    "AKC:6f755b21-96f7-4278-98ef-34b2a1972b33": {
+      "akc_id": "AKC:6f755b21-96f7-4278-98ef-34b2a1972b33",
       "name": "dataset 1 about assay 3480650",
       "description": "dataset 1 is about assay 3480650",
       "assays": [
-        "AKC:899d55b7-219e-4168-b546-ba04e59f592f"
+        "AKC:84eb22c7-082f-4794-b08e-9f4b2a584052"
       ]
     },
-    "AKC:5e914492-8d34-4326-8a5a-9fb388ae181a": {
-      "akc_id": "AKC:5e914492-8d34-4326-8a5a-9fb388ae181a",
+    "AKC:35f6deaf-d0df-418f-9296-69c1d50ecf48": {
+      "akc_id": "AKC:35f6deaf-d0df-418f-9296-69c1d50ecf48",
       "name": "dataset 1 about assay 3480651",
       "description": "dataset 1 is about assay 3480651",
       "assays": [
-        "AKC:bbaab71c-c3e0-46b6-b7a1-922455a01711"
+        "AKC:1f134e46-716e-4359-8484-7dc99d8ab96c"
       ]
     },
-    "AKC:d3a8d9c5-ba8a-4a2f-ac0e-f5f944fc0d22": {
-      "akc_id": "AKC:d3a8d9c5-ba8a-4a2f-ac0e-f5f944fc0d22",
+    "AKC:ed25a288-4450-444e-9f90-b1aa8b3bab75": {
+      "akc_id": "AKC:ed25a288-4450-444e-9f90-b1aa8b3bab75",
       "name": "dataset 1 about assay 3480655",
       "description": "dataset 1 is about assay 3480655",
       "assays": [
-        "AKC:6aab6333-8e9d-44d6-9053-d06863f5ead9"
+        "AKC:a8a45874-8ab1-4578-8bc9-a80e1aa3c19b"
       ]
     },
-    "AKC:47e89564-cae4-402d-81ea-41d37a7ec00b": {
-      "akc_id": "AKC:47e89564-cae4-402d-81ea-41d37a7ec00b",
+    "AKC:a4c27d4c-ac7b-4d4f-ae4e-15dd50eaeaea": {
+      "akc_id": "AKC:a4c27d4c-ac7b-4d4f-ae4e-15dd50eaeaea",
       "name": "dataset 1 about assay 3480656",
       "description": "dataset 1 is about assay 3480656",
       "assays": [
-        "AKC:7a11a1af-29ad-464c-92d8-393944bfc267"
+        "AKC:6450f2f5-5f7f-47fe-9583-6f56d1e4d922"
       ]
     },
-    "AKC:9e572db5-f772-4dea-9e38-5547cd39768d": {
-      "akc_id": "AKC:9e572db5-f772-4dea-9e38-5547cd39768d",
+    "AKC:dce497d3-d881-496f-81e8-9ff2d37979bc": {
+      "akc_id": "AKC:dce497d3-d881-496f-81e8-9ff2d37979bc",
       "name": "dataset 1 about assay 3480658",
       "description": "dataset 1 is about assay 3480658",
       "assays": [
-        "AKC:c2aa8e72-83c4-4694-be83-10a7e784ea01"
+        "AKC:995bf406-5c40-44b4-8a47-693493d521ed"
       ]
     },
-    "AKC:7cd41934-3626-4c57-8c2d-b47d39dc14d9": {
-      "akc_id": "AKC:7cd41934-3626-4c57-8c2d-b47d39dc14d9",
+    "AKC:769284b9-6fae-4fcc-a943-ad791a7e6d22": {
+      "akc_id": "AKC:769284b9-6fae-4fcc-a943-ad791a7e6d22",
       "name": "dataset 1 about assay 3480659",
       "description": "dataset 1 is about assay 3480659",
       "assays": [
-        "AKC:7c91a846-7be9-40a8-a4bb-195d108ca58a"
+        "AKC:767d0a70-eaa7-47a2-b66b-1967afcc74ed"
       ]
     },
-    "AKC:52832d8f-4f0e-4c45-9c94-6ff4b4965453": {
-      "akc_id": "AKC:52832d8f-4f0e-4c45-9c94-6ff4b4965453",
+    "AKC:985d5c15-cabf-4160-a1ed-f7b1fde276f9": {
+      "akc_id": "AKC:985d5c15-cabf-4160-a1ed-f7b1fde276f9",
       "name": "dataset 1 about assay 3480660",
       "description": "dataset 1 is about assay 3480660",
       "assays": [
-        "AKC:da1a3f63-1890-4bf8-a403-eb4df201dfb2"
+        "AKC:cb26d815-0e45-4f9b-8db4-40dc3378e073"
       ]
     },
-    "AKC:2e671046-dd88-4a86-a7fa-825e7d412605": {
-      "akc_id": "AKC:2e671046-dd88-4a86-a7fa-825e7d412605",
+    "AKC:30ea6d4d-81de-4150-99ac-5e83ffaee096": {
+      "akc_id": "AKC:30ea6d4d-81de-4150-99ac-5e83ffaee096",
       "name": "dataset 1 about assay 3480661",
       "description": "dataset 1 is about assay 3480661",
       "assays": [
-        "AKC:f8df23aa-949e-4eed-931e-e59ce1fe5b7a"
+        "AKC:162d22f0-3a8d-4d34-b3cc-d85bfe2b38f5"
       ]
     },
-    "AKC:d53af02a-d96d-4f1e-95e2-379871dcdcae": {
-      "akc_id": "AKC:d53af02a-d96d-4f1e-95e2-379871dcdcae",
+    "AKC:9309b220-ce53-40ee-abbc-b3f0d243191e": {
+      "akc_id": "AKC:9309b220-ce53-40ee-abbc-b3f0d243191e",
       "name": "dataset 1 about assay 3480662",
       "description": "dataset 1 is about assay 3480662",
       "assays": [
-        "AKC:61dddcda-30ca-447c-a9b2-e37663973d4e"
+        "AKC:8e06e701-ee15-455d-bb03-40ebd3704bd7"
       ]
     },
-    "AKC:8abfa17a-825c-40c0-8b2c-938e8b898c06": {
-      "akc_id": "AKC:8abfa17a-825c-40c0-8b2c-938e8b898c06",
+    "AKC:319c253f-c4ca-4cc4-89aa-12225aa21823": {
+      "akc_id": "AKC:319c253f-c4ca-4cc4-89aa-12225aa21823",
       "name": "dataset 1 about assay 3480663",
       "description": "dataset 1 is about assay 3480663",
       "assays": [
-        "AKC:6c6b2e73-75ee-4387-8690-3371aec63e6d"
+        "AKC:e0138315-db7e-4704-86e2-1dab9d4452bc"
       ]
     },
-    "AKC:f675dc13-d242-4ab6-8946-e8a4bdf77e09": {
-      "akc_id": "AKC:f675dc13-d242-4ab6-8946-e8a4bdf77e09",
+    "AKC:f9b41d98-9247-41ee-be6d-caddc4e8c9ea": {
+      "akc_id": "AKC:f9b41d98-9247-41ee-be6d-caddc4e8c9ea",
       "name": "dataset 1 about assay 3480664",
       "description": "dataset 1 is about assay 3480664",
       "assays": [
-        "AKC:b955251d-1f71-47fc-9ad3-de19f99f6c13"
+        "AKC:8091ff9a-affa-48a0-a9d6-0f1627876102"
       ]
     }
   },
   "conclusions": {
-    "AKC:7f12e8dd-a901-4d86-8522-f04e8622498a": {
-      "akc_id": "AKC:7f12e8dd-a901-4d86-8522-f04e8622498a",
+    "AKC:f9965dea-893e-4292-87bd-dcd5a745eea7": {
+      "akc_id": "AKC:f9965dea-893e-4292-87bd-dcd5a745eea7",
       "name": "conclusion 1 about assay 3480642",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480642",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:63dc4375-8ed9-4779-8dba-7bc0af7ef038"
+        "AKC:e81d49c5-27e2-4f5c-885b-c779fd347089"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:b39fed84-d729-449d-bc05-96a6b14863dd": {
-      "akc_id": "AKC:b39fed84-d729-449d-bc05-96a6b14863dd",
+    "AKC:58f79b90-6dcd-4a45-9361-f69bb8668f01": {
+      "akc_id": "AKC:58f79b90-6dcd-4a45-9361-f69bb8668f01",
       "name": "conclusion 1 about assay 3480639",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480639",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:12c52b68-e25c-489d-84ee-1bcc7e441556"
+        "AKC:f09c7342-e040-41e5-a283-2bc115afdef7"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:b7c3de7d-8ad1-47c8-a709-3df945313e2d": {
-      "akc_id": "AKC:b7c3de7d-8ad1-47c8-a709-3df945313e2d",
+    "AKC:e533c009-2eb7-475f-9984-a3a1bb93714f": {
+      "akc_id": "AKC:e533c009-2eb7-475f-9984-a3a1bb93714f",
       "name": "conclusion 1 about assay 3480641",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480641",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:a5a09cbe-7831-4095-a1d6-9f557177e438"
+        "AKC:e7381ccb-3fc5-4371-b663-473b2cf3c933"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:90c0bfe6-59aa-461b-bac7-f292bfe223b6": {
-      "akc_id": "AKC:90c0bfe6-59aa-461b-bac7-f292bfe223b6",
+    "AKC:6f303bc2-60c9-4479-820f-c3468b3fad46": {
+      "akc_id": "AKC:6f303bc2-60c9-4479-820f-c3468b3fad46",
       "name": "conclusion 1 about assay 3480644",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480644",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:dc7684bc-82dd-47e1-aa36-9ec6e37df6b1"
+        "AKC:f71843d9-188d-42b3-b91f-fbc4169a5371"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:0e278393-d63f-480f-b603-7742459c72ef": {
-      "akc_id": "AKC:0e278393-d63f-480f-b603-7742459c72ef",
+    "AKC:b47e4a95-089d-44c0-9cb8-5995e52e8a6c": {
+      "akc_id": "AKC:b47e4a95-089d-44c0-9cb8-5995e52e8a6c",
       "name": "conclusion 1 about assay 3480640",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480640",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:0d7f2060-05a2-4734-bbbb-7a1fc4866def"
+        "AKC:4a1cb2cc-fb9c-486d-a051-683f49370990"
       ],
       "result": "Positive",
       "data_location_value": "Figure 1",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:2e6f7321-bd62-415c-a567-9cecfc6df597": {
-      "akc_id": "AKC:2e6f7321-bd62-415c-a567-9cecfc6df597",
+    "AKC:704f4461-a7ec-46f5-8acc-e4ddd05fa794": {
+      "akc_id": "AKC:704f4461-a7ec-46f5-8acc-e4ddd05fa794",
       "name": "conclusion 1 about assay 3480643",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480643",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:3f201a4c-e513-4ad1-9e12-80b2f76092f4"
+        "AKC:10c06e35-4a16-47f5-821b-b2be4401ee03"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:928ca3a7-0652-40ff-8451-f97147382258": {
-      "akc_id": "AKC:928ca3a7-0652-40ff-8451-f97147382258",
+    "AKC:2bb34f2d-a630-4635-8025-616b42d01990": {
+      "akc_id": "AKC:2bb34f2d-a630-4635-8025-616b42d01990",
       "name": "conclusion 1 about assay 3480645",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480645",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:b46ff0fa-f2a5-4b31-9f32-f587e30f3558"
+        "AKC:af995f3a-0fe2-45ab-bb11-b7281e94384a"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:15772b01-ec6a-48cd-a796-48d78f85f10e": {
-      "akc_id": "AKC:15772b01-ec6a-48cd-a796-48d78f85f10e",
+    "AKC:afbc145f-e9d2-46ab-9643-10b038fbba04": {
+      "akc_id": "AKC:afbc145f-e9d2-46ab-9643-10b038fbba04",
       "name": "conclusion 1 about assay 3480646",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480646",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:50e02394-108c-4fda-9e18-e5f6c739072a"
+        "AKC:f99dc1d8-0183-4001-9e2b-903c9f680026"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figures 2 and 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:30d34a8f-308e-4b02-b1f3-17f04048f692": {
-      "akc_id": "AKC:30d34a8f-308e-4b02-b1f3-17f04048f692",
+    "AKC:77c8ffc5-f951-4b30-9216-2e7dc5186e01": {
+      "akc_id": "AKC:77c8ffc5-f951-4b30-9216-2e7dc5186e01",
       "name": "conclusion 1 about assay 3480647",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480647",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:f0fa300a-94ef-43f8-89d4-d59e2311c1db"
+        "AKC:5fdd236b-c96d-46f7-8a89-509e6237b765"
       ],
       "result": "Positive",
       "data_location_value": "Figures 3 and 4, supplementary table 4.",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:facef861-a3a2-4b02-8bf5-1b26acb21eef": {
-      "akc_id": "AKC:facef861-a3a2-4b02-8bf5-1b26acb21eef",
+    "AKC:d42bcbe1-1aa2-4220-86dc-c2281f230c4b": {
+      "akc_id": "AKC:d42bcbe1-1aa2-4220-86dc-c2281f230c4b",
       "name": "conclusion 1 about assay 3480649",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480649",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:acc6b746-e5e9-4993-87c9-393162ab87ea"
+        "AKC:c301de51-c69a-4c63-af69-77ab8b17eced"
       ],
       "result": "Positive",
       "data_location_value": "Figures 3, 4, 5, extended data figure 8 and  supplementary table 4.",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:aca6b438-7faa-4ccf-829f-6e7562a63a92": {
-      "akc_id": "AKC:aca6b438-7faa-4ccf-829f-6e7562a63a92",
+    "AKC:11b6b985-6e7c-44df-950c-70e95b514f1a": {
+      "akc_id": "AKC:11b6b985-6e7c-44df-950c-70e95b514f1a",
       "name": "conclusion 1 about assay 3480650",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480650",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:f33d0807-c9fe-4adc-b934-e6cefa774844"
+        "AKC:6f755b21-96f7-4278-98ef-34b2a1972b33"
       ],
       "result": "Positive",
       "data_location_value": "Figures 3 and 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:564605c3-5afd-4a9d-9d06-c26127bc40c8": {
-      "akc_id": "AKC:564605c3-5afd-4a9d-9d06-c26127bc40c8",
+    "AKC:66259963-6ae4-429c-bdcc-5933d5dcabc7": {
+      "akc_id": "AKC:66259963-6ae4-429c-bdcc-5933d5dcabc7",
       "name": "conclusion 1 about assay 3480651",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480651",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:5e914492-8d34-4326-8a5a-9fb388ae181a"
+        "AKC:35f6deaf-d0df-418f-9296-69c1d50ecf48"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8,  supplementary table 4.",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:3e95de82-cde6-419a-a997-20d2bc17a920": {
-      "akc_id": "AKC:3e95de82-cde6-419a-a997-20d2bc17a920",
+    "AKC:81851c89-692f-4012-805b-c0415978d727": {
+      "akc_id": "AKC:81851c89-692f-4012-805b-c0415978d727",
       "name": "conclusion 1 about assay 3480655",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480655",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:d3a8d9c5-ba8a-4a2f-ac0e-f5f944fc0d22"
+        "AKC:ed25a288-4450-444e-9f90-b1aa8b3bab75"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:2bccb4a6-41f1-49fa-a893-8d7c8073a593": {
-      "akc_id": "AKC:2bccb4a6-41f1-49fa-a893-8d7c8073a593",
+    "AKC:b3e7cc1b-d256-45af-bf29-c7d6eb276cf5": {
+      "akc_id": "AKC:b3e7cc1b-d256-45af-bf29-c7d6eb276cf5",
       "name": "conclusion 1 about assay 3480656",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480656",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:47e89564-cae4-402d-81ea-41d37a7ec00b"
+        "AKC:a4c27d4c-ac7b-4d4f-ae4e-15dd50eaeaea"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:cffd94db-a062-4be1-b6bf-9307c11f08cc": {
-      "akc_id": "AKC:cffd94db-a062-4be1-b6bf-9307c11f08cc",
+    "AKC:daa4aa1a-ac05-4cd8-a6e5-dc05757cefcf": {
+      "akc_id": "AKC:daa4aa1a-ac05-4cd8-a6e5-dc05757cefcf",
       "name": "conclusion 1 about assay 3480658",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480658",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:9e572db5-f772-4dea-9e38-5547cd39768d"
+        "AKC:dce497d3-d881-496f-81e8-9ff2d37979bc"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:58df797b-3f65-4505-b68d-0af7935230f9": {
-      "akc_id": "AKC:58df797b-3f65-4505-b68d-0af7935230f9",
+    "AKC:99b931ec-e508-4716-a9cd-eb990d03f0db": {
+      "akc_id": "AKC:99b931ec-e508-4716-a9cd-eb990d03f0db",
       "name": "conclusion 1 about assay 3480659",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480659",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:7cd41934-3626-4c57-8c2d-b47d39dc14d9"
+        "AKC:769284b9-6fae-4fcc-a943-ad791a7e6d22"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:c11d6a05-9d83-41db-b616-3dd0f27c8af3": {
-      "akc_id": "AKC:c11d6a05-9d83-41db-b616-3dd0f27c8af3",
+    "AKC:b61bb477-a25c-493e-953d-19dc42743309": {
+      "akc_id": "AKC:b61bb477-a25c-493e-953d-19dc42743309",
       "name": "conclusion 1 about assay 3480660",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480660",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:52832d8f-4f0e-4c45-9c94-6ff4b4965453"
+        "AKC:985d5c15-cabf-4160-a1ed-f7b1fde276f9"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:ab4f2106-5360-4ada-a8d3-120bbed2f3bf": {
-      "akc_id": "AKC:ab4f2106-5360-4ada-a8d3-120bbed2f3bf",
+    "AKC:af5d2519-2e68-4567-bb26-6a3d4c6a275f": {
+      "akc_id": "AKC:af5d2519-2e68-4567-bb26-6a3d4c6a275f",
       "name": "conclusion 1 about assay 3480661",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480661",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:2e671046-dd88-4a86-a7fa-825e7d412605"
+        "AKC:30ea6d4d-81de-4150-99ac-5e83ffaee096"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:ba4fc391-15ca-47ff-8473-4f95706ba21b": {
-      "akc_id": "AKC:ba4fc391-15ca-47ff-8473-4f95706ba21b",
+    "AKC:c4943d55-f57f-414b-9779-c39130e26de3": {
+      "akc_id": "AKC:c4943d55-f57f-414b-9779-c39130e26de3",
       "name": "conclusion 1 about assay 3480662",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480662",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:d53af02a-d96d-4f1e-95e2-379871dcdcae"
+        "AKC:9309b220-ce53-40ee-abbc-b3f0d243191e"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:d01eb8c5-263f-407c-8878-098635dd5293": {
-      "akc_id": "AKC:d01eb8c5-263f-407c-8878-098635dd5293",
+    "AKC:27e182ad-9bc9-455b-a1b2-07aeaf63a2d3": {
+      "akc_id": "AKC:27e182ad-9bc9-455b-a1b2-07aeaf63a2d3",
       "name": "conclusion 1 about assay 3480663",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480663",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:8abfa17a-825c-40c0-8b2c-938e8b898c06"
+        "AKC:319c253f-c4ca-4cc4-89aa-12225aa21823"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:2d472f70-7d77-45a8-8b1a-6220786b18aa": {
-      "akc_id": "AKC:2d472f70-7d77-45a8-8b1a-6220786b18aa",
+    "AKC:0fa02576-514a-4e5b-a50b-491c9f79fa37": {
+      "akc_id": "AKC:0fa02576-514a-4e5b-a50b-491c9f79fa37",
       "name": "conclusion 1 about assay 3480664",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480664",
       "investigations": [
-        "AKC:daf6f9dd-d0a6-4793-81f5-878d6c1d648a"
+        "AKC:99977b58-5a4e-488c-a237-b4ace1ced12c"
       ],
       "datasets": [
-        "AKC:f675dc13-d242-4ab6-8946-e8a4bdf77e09"
+        "AKC:f9b41d98-9247-41ee-be6d-caddc4e8c9ea"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
@@ -47466,7 +47466,7 @@
       "cdr3_aa": "CSARASGGEAKNIQYF"
     }
   },
-  "tcell_receptors": {
+  "ab_tcell_receptors": {
     "iedb_receptor:20833": {
       "akc_id": "iedb_receptor:20833",
       "type": "AlphaBetaTCR",
