@@ -1,4 +1,3 @@
-Skipping virtualenv creation, as specified in config file.
 -- # Class: "AKObject" Description: "Anything uniquely identifiable in the AKC."
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ForeignObject" Description: "An object held outside of the AK."
@@ -1048,8 +1047,8 @@ CREATE TABLE "Investigation" (
 	archival_id TEXT, 
 	inclusion_criteria TEXT, 
 	exclusion_criteria TEXT, 
-	release_date DATETIME, 
-	update_date DATETIME, 
+	release_date TIMESTAMP, 
+	update_date TIMESTAMP, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -1246,7 +1245,7 @@ CREATE TABLE "AlleleDescription" (
 	maintainer TEXT, 
 	lab_address TEXT, 
 	release_version INTEGER, 
-	release_date DATETIME, 
+	release_date TIMESTAMP, 
 	release_description TEXT, 
 	label TEXT, 
 	sequence TEXT, 
@@ -1295,7 +1294,7 @@ CREATE TABLE "GermlineSet" (
 	lab_address TEXT, 
 	release_version INTEGER, 
 	release_description TEXT, 
-	release_date DATETIME, 
+	release_date TIMESTAMP, 
 	germline_set_name TEXT, 
 	germline_set_ref TEXT, 
 	pub_ids TEXT, 
@@ -1372,8 +1371,8 @@ CREATE TABLE "Study" (
 	lab_address TEXT, 
 	submitted_by TEXT, 
 	pub_ids TEXT, 
-	adc_publish_date DATETIME, 
-	adc_update_date DATETIME, 
+	adc_publish_date TIMESTAMP, 
+	adc_update_date TIMESTAMP, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Diagnosis" (
@@ -1809,7 +1808,7 @@ CREATE TABLE "SequencingRun" (
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
-	sequencing_run_date DATETIME, 
+	sequencing_run_date TIMESTAMP, 
 	sequencing_kit TEXT, 
 	sequencing_files_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1859,7 +1858,7 @@ CREATE TABLE "SampleProcessing" (
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
-	sequencing_run_date DATETIME, 
+	sequencing_run_date TIMESTAMP, 
 	sequencing_kit TEXT, 
 	sequencing_files_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -2302,7 +2301,7 @@ CREATE TABLE "AIRRSequencingAssay" (
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
-	sequencing_run_date DATETIME, 
+	sequencing_run_date TIMESTAMP, 
 	sequencing_kit TEXT, 
 	specimen TEXT, 
 	type TEXT, 

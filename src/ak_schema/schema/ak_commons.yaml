@@ -69,8 +69,16 @@ classes:
         range: Chain
         multivalued: true
         inlined: true
-      tcell_receptors:
-        range: TCellReceptor
+      ab_tcell_receptors:
+        range: AlphaBetaTCR
+        multivalued: true
+        inlined: true
+      gd_tcell_receptors:
+        range: GammaDeltaTCR
+        multivalued: true
+        inlined: true
+      bcell_receptors:
+        range: BCellReceptor
         multivalued: true
         inlined: true
       epitopes:

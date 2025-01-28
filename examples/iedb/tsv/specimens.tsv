@@ -1,2 +1,22 @@
 akc_id	name	description	life_event	specimen_type	tissue	process
-example:specimen-3480642	specimen 1 of assay 3480642	specimen 1 from participant 1 of assay 3480642	example:life_event-3480642-2		Blood	
+AKC:a7f79a92-8c5d-4e2c-95e2-f9e2d4821bde	specimen 1 of assay 3480642	specimen 1 from participant 1 of assay 3480642	AKC:0b410471-8220-4de5-93b2-660dc4b7170c		Blood	
+AKC:8f21a644-766a-492a-993a-5951e032b057	specimen 1 of assay 3480639	specimen 1 from participant 1 of assay 3480639	AKC:b98b97a3-409b-42c8-925f-8a73329fb7b7		Blood	
+AKC:c134c798-ccd6-4582-8989-b9dacab64464	specimen 1 of assay 3480641	specimen 1 from participant 1 of assay 3480641	AKC:a987f868-322c-46af-8b64-8dfe19041f97		Blood	
+AKC:1720efb7-331c-4726-8fa3-4b652791bd1b	specimen 1 of assay 3480644	specimen 1 from participant 1 of assay 3480644	AKC:010b2498-f91c-455d-9916-dd9cb8ef7f35		Blood	
+AKC:44ed1f9f-a23e-4b12-962c-18bb05f63ce6	specimen 1 of assay 3480640	specimen 1 from participant 1 of assay 3480640	AKC:3cfa3dd5-9caa-441d-bcb9-a4de88f28292		Blood	
+AKC:d4099704-e11e-4ded-be32-651d124b5b62	specimen 1 of assay 3480643	specimen 1 from participant 1 of assay 3480643	AKC:9417e4dc-6b9a-4f4c-8763-a255d61d6eb6		Blood	
+AKC:5f2d5e4d-1a86-42be-b3ea-0c9c03dd7ef4	specimen 1 of assay 3480645	specimen 1 from participant 1 of assay 3480645	AKC:73fe7178-c7a7-47f8-9b2c-7aca336892ac		Blood	
+AKC:724f3e05-fa6f-4520-a628-54b3bfe83832	specimen 1 of assay 3480646	specimen 1 from participant 1 of assay 3480646	AKC:5db9f7ba-a1f2-40a4-b300-786ad680d7ca		Lymph Node	
+AKC:bf039f1e-4afd-4a37-b577-ad07b66599ce	specimen 1 of assay 3480647	specimen 1 from participant 1 of assay 3480647	AKC:68eaac6d-98f9-42e4-b18f-894408c01cb1		Lymphoid	
+AKC:6e189e1a-f9e8-4c22-ba23-ef0f0a9d3a97	specimen 1 of assay 3480649	specimen 1 from participant 1 of assay 3480649	AKC:147043c5-f5a7-4324-bc76-a19df9e5e94f		Lymphoid	
+AKC:7cec35c4-2181-4919-8793-53e45404d1a5	specimen 1 of assay 3480650	specimen 1 from participant 1 of assay 3480650	AKC:e09e86b2-550e-4b53-b5b2-f28e39ef2756		Lymphoid	
+AKC:5025fdfa-202b-4e49-ba21-76e711189766	specimen 1 of assay 3480651	specimen 1 from participant 1 of assay 3480651	AKC:4829fe67-f1f8-409b-a6fd-2d2944e115af		Lymphoid	
+AKC:c78cd32b-77a1-4348-b558-e8c08f6478eb	specimen 1 of assay 3480655	specimen 1 from participant 1 of assay 3480655	AKC:0c43ede7-9322-464b-8179-3d9f8537eb4e		Lymphoid	
+AKC:b9d0a0cf-6f98-48ef-a840-e167eeda4b73	specimen 1 of assay 3480656	specimen 1 from participant 1 of assay 3480656	AKC:f1912e2b-8ed5-4336-8ef1-b128a517b0f9		Lymphoid	
+AKC:b092dbf8-102c-48cc-a0bd-7d7fd14e7105	specimen 1 of assay 3480658	specimen 1 from participant 1 of assay 3480658	AKC:43a92435-021d-4877-a4ad-b1334ba165e7		Lymphoid	
+AKC:87a2d934-42a6-408a-9a39-23e6a3351906	specimen 1 of assay 3480659	specimen 1 from participant 1 of assay 3480659	AKC:6a3c51f3-564a-48e8-a55d-f27e33e2dfc6		Lymphoid	
+AKC:509df7c9-6a51-4396-89ad-be8b15bb1924	specimen 1 of assay 3480660	specimen 1 from participant 1 of assay 3480660	AKC:90134097-b89f-4cff-9c31-9eca772087d3		Lymphoid	
+AKC:cc528f49-9f35-42f9-af34-1e06daab481b	specimen 1 of assay 3480661	specimen 1 from participant 1 of assay 3480661	AKC:3eeb0d6f-300d-428d-b6b4-8ad25f07b688		Lymphoid	
+AKC:3917dcdc-4f78-4b0f-bc41-1145c9201ead	specimen 1 of assay 3480662	specimen 1 from participant 1 of assay 3480662	AKC:0c385dbb-ac3a-4e8e-9a93-a0fb6e253b10		Lymphoid	
+AKC:f1799a51-fe58-49aa-9694-a64d1ffaf1ab	specimen 1 of assay 3480663	specimen 1 from participant 1 of assay 3480663	AKC:fe253de8-2343-4b7d-8494-c3e709b35cab		Lymphoid	
+AKC:1ca5a39f-7ec4-4a4b-83ba-2445c19d51f9	specimen 1 of assay 3480664	specimen 1 from participant 1 of assay 3480664	AKC:38536ca5-ba86-4319-85cb-74b7fc725384		Lymphoid	

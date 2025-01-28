@@ -18,6 +18,21 @@ classes:
     slots:
       - source_uri
 
+  AIRRStandards:
+    abstract: true
+    description: >-
+      An object directly converted from the AIRR schema.
+
+  AIRRStandards_v1p5:
+    abstract: true
+    description: >-
+      An object directly converted from AIRR schema version 1.5.
+
+  AIRRStandards_v2p0:
+    abstract: true
+    description: >-
+      An object directly converted from AIRR schema version 2.0.
+
   NamedThing:
     abstract: true
     is_a: AKObject
@@ -59,3 +74,7 @@ slots:
   description:
     description: A human-readable description for a thing
     slot_uri: schema:description
+  type:
+    designates_type: true
+    range: string
+
