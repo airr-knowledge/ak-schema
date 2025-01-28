@@ -13,6 +13,7 @@ import dataclasses
 import click
 import csv
 import uuid
+import json
 
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
@@ -354,6 +355,15 @@ def convert(tcell_path, tcr_path, yaml_path):
             break
 
     yaml_dumper.dump(container, yaml_path)
+
+    # Write everything to JSONL
+    container_fields = [x.name for x in dataclasses.fields(container)]
+    for container_field in container_fields:
+        with open(f'jsonl/{container_field}.jsonl', 'w') as f:
+            for key in container[container_field]:
+                s = json.loads(json_dumper.dumps(container[container_field][key]))
+                f.write(json.dumps(s))
+                f.write('\n')
 
     # Write everything to TSV
     container_fields = [x.name for x in dataclasses.fields(container)]
