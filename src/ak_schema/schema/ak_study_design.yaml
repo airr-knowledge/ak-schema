@@ -60,7 +60,7 @@ classes:
       - species
       - biological_sex # IEDB gathers this
       - phenotypic_sex # AIRR gathers this
-      - age # AIRR gathers this
+      - age
       - age_unit # AIRR gathers this
       - age_event # AIRR gathers this
       - race # For human organisms
@@ -229,7 +229,6 @@ slots:
     description: The specific type of a life event
     range: LifeEventProcessOntology
     slot_uri: rdf:type
-    # TODO: enum
   t0_event:
     description: The T0 event used to specify the time of this life event
   t0_event_type:
@@ -418,15 +417,69 @@ enums:
       LDLR-/-:
       pet shop mouse:
   LifeEventProcessOntology:
-    permissible_values:
-      Documented exposure without evidence for disease:
+    permissible_values: # these originate from ImmuneSpace
+      death:
+        meaning: UBERON:0000071
+      unknown exposure:
+        meaning: ONTIE:0003310
+      occurrence of disease:
+        meaning: OGMS:0000063
+      occurrence of infectious disease:
+        meaning: ONTIE:0003317
+      occurrence of allergic disease:
+        meaning: ONTIE:0003318
+      exposure to substance without evidence for disease:
         meaning: ONTIE:0003305
-      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
-        meaning: ONTIE:0003308
-      Exposure with existing immune reactivity without evidence for disease:
+      infection without disease:
+        meaning: ONTIE:0003424
+      documented exposure without evidence for disease:
+        meaning: ONTIE:0003307
+      exposure with existing immune reactivity without evidence for disease:
         meaning: OBI:1110061
+      environmental exposure to endemic/ubiquitous agent without evidence for disease:
+        meaning: ONTIE:0003308
+      administering substance in vivo:
+        meaning: OBI:0600007
+      administration to cause disease:
+        meaning: OBI:0003413
+      pathogen challenge:
+        meaning: OBI:0000712
+      vaccination:
+        meaning: VO:0000002
+      administration to prevent or reduce disease:
+        meaning: OBI:0003414
+      prophylactic vaccination:
+        meaning: VO:0005374
+      therapeutic vaccination:
+        meaning: VO:0005373
+      transplant/transfusion:
+        meaning: OGMS:0000143
+      transfusion:
+        meaning: OGMS:0000145
+      solid organ transplant:
+        meaning: OGMS:0000144
+      no exposure:
+        meaning: ONTIE:0003309
       specimen collection:
         meaning: OBI:0000659
+      study enrollment:
+        meaning: OBI:0600004
+      hospitalization:
+        meaning: OGMS:0000098
+      hospital discharge:
+        meaning:
+      treatment:
+        meaning: OGMS:0000090
+      fertilization:
+        meaning: GO:0009566
+      physical examination:
+        meaning: OGMS:0000057
+#      recovery: # these remain 'to do' in ImmuneSpace
+#        meaning:
+#      birth:
+#        meaning:
+#      exposure to infectious agent:
+#        meaning:
   ExposureMaterialOntology:
     permissible_values:
       Influenza A virus:
