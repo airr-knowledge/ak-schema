@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-02-18T12:57:46
+# Generation date: 2025-02-18T17:41:30
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -561,8 +561,8 @@ class Investigation(PlannedProcess):
     akc_id: Union[str, InvestigationAkcId] = None
     study_type: Optional[Union[str, "StudyTypeOntology"]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
-    inclusion_criteria: Optional[str] = None
-    exclusion_criteria: Optional[str] = None
+    inclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
+    exclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
     release_date: Optional[Union[str, XSDDateTime]] = None
     update_date: Optional[Union[str, XSDDateTime]] = None
     participants: Optional[Union[Union[str, ParticipantAkcId], List[Union[str, ParticipantAkcId]]]] = empty_list()
@@ -580,11 +580,13 @@ class Investigation(PlannedProcess):
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
 
-        if self.inclusion_criteria is not None and not isinstance(self.inclusion_criteria, str):
-            self.inclusion_criteria = str(self.inclusion_criteria)
+        if not isinstance(self.inclusion_criteria, list):
+            self.inclusion_criteria = [self.inclusion_criteria] if self.inclusion_criteria is not None else []
+        self.inclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.inclusion_criteria]
 
-        if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
-            self.exclusion_criteria = str(self.exclusion_criteria)
+        if not isinstance(self.exclusion_criteria, list):
+            self.exclusion_criteria = [self.exclusion_criteria] if self.exclusion_criteria is not None else []
+        self.exclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.exclusion_criteria]
 
         if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
             self.release_date = XSDDateTime(self.release_date)
@@ -691,8 +693,8 @@ class StudyArm(NamedThing):
 
     akc_id: Union[str, StudyArmAkcId] = None
     investigation: Optional[Union[str, InvestigationAkcId]] = None
-    inclusion_criteria: Optional[str] = None
-    exclusion_criteria: Optional[str] = None
+    inclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
+    exclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -703,11 +705,13 @@ class StudyArm(NamedThing):
         if self.investigation is not None and not isinstance(self.investigation, InvestigationAkcId):
             self.investigation = InvestigationAkcId(self.investigation)
 
-        if self.inclusion_criteria is not None and not isinstance(self.inclusion_criteria, str):
-            self.inclusion_criteria = str(self.inclusion_criteria)
+        if not isinstance(self.inclusion_criteria, list):
+            self.inclusion_criteria = [self.inclusion_criteria] if self.inclusion_criteria is not None else []
+        self.inclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.inclusion_criteria]
 
-        if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
-            self.exclusion_criteria = str(self.exclusion_criteria)
+        if not isinstance(self.exclusion_criteria, list):
+            self.exclusion_criteria = [self.exclusion_criteria] if self.exclusion_criteria is not None else []
+        self.exclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.exclusion_criteria]
 
         super().__post_init__(**kwargs)
 
@@ -4520,6 +4524,14 @@ class RaceOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="Native Hawaiian or Other Pacific Islander",
                 meaning=OMRSE["00000218"]))
+        setattr(cls, "race: not specified",
+            PermissibleValue(text="race: not specified"))
+        setattr(cls, "race: other",
+            PermissibleValue(
+                text="race: other",
+                meaning=OMRSE["00000214"]))
+        setattr(cls, "race: unknown",
+            PermissibleValue(text="race: unknown"))
         setattr(cls, "African American",
             PermissibleValue(text="African American"))
         setattr(cls, "Asian or Pacific Islander",
@@ -4582,6 +4594,12 @@ class EthnicityOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="Not Hispanic or Latino",
                 meaning=OMRSE["00000208"]))
+        setattr(cls, "ethnicity: not specified",
+            PermissibleValue(text="ethnicity: not specified"))
+        setattr(cls, "ethnicity: other",
+            PermissibleValue(
+                text="ethnicity: other",
+                meaning=OMRSE["00000206"]))
         setattr(cls, "African-American",
             PermissibleValue(text="African-American"))
         setattr(cls, "Black or Black British - African",
@@ -4749,6 +4767,8 @@ class LifeEventProcessOntology(EnumDefinitionImpl):
     fertilization = PermissibleValue(
         text="fertilization",
         meaning=GO["0009566"])
+    recovery = PermissibleValue(text="recovery")
+    birth = PermissibleValue(text="birth")
 
     _defn = EnumDefinition(
         name="LifeEventProcessOntology",
@@ -4842,12 +4862,80 @@ class LifeEventProcessOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="physical examination",
                 meaning=OGMS["0000057"]))
+        setattr(cls, "exposure to infectious agent",
+            PermissibleValue(text="exposure to infectious agent"))
 
 class ExposureMaterialOntology(EnumDefinitionImpl):
 
+    Alphainfluenzavirus = PermissibleValue(
+        text="Alphainfluenzavirus",
+        meaning=NCBITAXON["197911"])
+    Betainfluenzavirus = PermissibleValue(
+        text="Betainfluenzavirus",
+        meaning=NCBITAXON["197912"])
+    Bordetella = PermissibleValue(
+        text="Bordetella",
+        meaning=NCBITAXON["517"])
+    Cytomegalovirus = PermissibleValue(
+        text="Cytomegalovirus",
+        meaning=NCBITAXON["10358"])
     Dryvax = PermissibleValue(
         text="Dryvax",
         meaning=VO["0000035"])
+    FluMist = PermissibleValue(
+        text="FluMist",
+        meaning=VO["0000044"])
+    Fluarix = PermissibleValue(
+        text="Fluarix",
+        meaning=VO["0000045"])
+    Fluvirin = PermissibleValue(
+        text="Fluvirin",
+        meaning=VO["0000046"])
+    Fluzone = PermissibleValue(
+        text="Fluzone",
+        meaning=VO["0000047"])
+    Gammainfluenzavirus = PermissibleValue(
+        text="Gammainfluenzavirus",
+        meaning=NCBITAXON["197913"])
+    LC16m8 = PermissibleValue(
+        text="LC16m8",
+        meaning=VO["0004091"])
+    MVA85A = PermissibleValue(
+        text="MVA85A",
+        meaning=VO["0003120"])
+    Menactra = PermissibleValue(
+        text="Menactra",
+        meaning=VO["0000071"])
+    Menveo = PermissibleValue(
+        text="Menveo",
+        meaning=VO["0001246"])
+    Orthoebolavirus = PermissibleValue(
+        text="Orthoebolavirus",
+        meaning=NCBITAXON["3044781"])
+    Plasmodium = PermissibleValue(
+        text="Plasmodium",
+        meaning=NCBITAXON["5820"])
+    Stamaril = PermissibleValue(
+        text="Stamaril",
+        meaning=VO["0003139"])
+    Zostavax = PermissibleValue(
+        text="Zostavax",
+        meaning=VO["0000124"])
+    bacterium = PermissibleValue(
+        text="bacterium",
+        meaning=NCBITAXON["2"])
+    eukaryote = PermissibleValue(
+        text="eukaryote",
+        meaning=NCBITAXON["2759"])
+    organism = PermissibleValue(
+        text="organism",
+        meaning=NCBITAXON["1"])
+    vaccine = PermissibleValue(
+        text="vaccine",
+        meaning=VO["0000001"])
+    virus = PermissibleValue(
+        text="virus",
+        meaning=NCBITAXON["10239"])
 
     _defn = EnumDefinition(
         name="ExposureMaterialOntology",
@@ -4855,18 +4943,242 @@ class ExposureMaterialOntology(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
+        setattr(cls, "2008-2009 trivalent influenza vaccine",
+            PermissibleValue(
+                text="2008-2009 trivalent influenza vaccine",
+                meaning=VO["0004809"]))
+        setattr(cls, "2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008)",
+            PermissibleValue(
+                text="2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008)",
+                meaning=VO["0004810"]))
+        setattr(cls, "ACWY Vax",
+            PermissibleValue(
+                text="ACWY Vax",
+                meaning=VO["0003138"]))
+        setattr(cls, "Ad35.CS.01 malaria vaccine",
+            PermissibleValue(
+                text="Ad35.CS.01 malaria vaccine",
+                meaning=VO["0004993"]))
+        setattr(cls, "BCG Vaccine",
+            PermissibleValue(
+                text="BCG Vaccine",
+                meaning=VO["0000771"]))
+        setattr(cls, "Bordetella parapertussis",
+            PermissibleValue(
+                text="Bordetella parapertussis",
+                meaning=NCBITAXON["519"]))
+        setattr(cls, "Bordetella pertussis",
+            PermissibleValue(
+                text="Bordetella pertussis",
+                meaning=NCBITAXON["520"]))
+        setattr(cls, "Bundibugyo virus",
+            PermissibleValue(
+                text="Bundibugyo virus",
+                meaning=NCBITAXON["565995"]))
+        setattr(cls, "Chikungunya virus",
+            PermissibleValue(
+                text="Chikungunya virus",
+                meaning=NCBITAXON["37124"]))
+        setattr(cls, "Clostridium tetani",
+            PermissibleValue(
+                text="Clostridium tetani",
+                meaning=NCBITAXON["1513"]))
+        setattr(cls, "Corynebacterium diphtheriae",
+            PermissibleValue(
+                text="Corynebacterium diphtheriae",
+                meaning=NCBITAXON["1717"]))
+        setattr(cls, "Dengue virus",
+            PermissibleValue(
+                text="Dengue virus",
+                meaning=NCBITAXON["12637"]))
+        setattr(cls, "Diphtheria-Tetanus-Pertussis vaccine",
+            PermissibleValue(
+                text="Diphtheria-Tetanus-Pertussis vaccine",
+                meaning=VO["0000738"]))
+        setattr(cls, "Engerix-B",
+            PermissibleValue(
+                text="Engerix-B",
+                meaning=VO["0010711"]))
+        setattr(cls, "H1N1 subtype",
+            PermissibleValue(
+                text="H1N1 subtype",
+                meaning=NCBITAXON["114727"]))
+        setattr(cls, "HEPLISAV-B",
+            PermissibleValue(
+                text="HEPLISAV-B",
+                meaning=VO["0003152"]))
+        setattr(cls, "Hepacivirus C",
+            PermissibleValue(
+                text="Hepacivirus C",
+                meaning=NCBITAXON["11103"]))
+        setattr(cls, "Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]",
+            PermissibleValue(
+                text="Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]",
+                meaning=VO["0003270"]))
+        setattr(cls, "Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]",
+            PermissibleValue(
+                text="Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]",
+                meaning=VO["0003258"]))
+        setattr(cls, "Hepatitis B virus",
+            PermissibleValue(
+                text="Hepatitis B virus",
+                meaning=NCBITAXON["10407"]))
+        setattr(cls, "Hepatitis B virus vaccine",
+            PermissibleValue(
+                text="Hepatitis B virus vaccine",
+                meaning=VO["0000644"]))
+        setattr(cls, "Hepatovirus A",
+            PermissibleValue(
+                text="Hepatovirus A",
+                meaning=NCBITAXON["12092"]))
+        setattr(cls, "Human alphaherpesvirus 3",
+            PermissibleValue(
+                text="Human alphaherpesvirus 3",
+                meaning=NCBITAXON["10335"]))
+        setattr(cls, "Human immunodeficiency virus",
+            PermissibleValue(
+                text="Human immunodeficiency virus",
+                meaning=NCBITAXON["12721"]))
+        setattr(cls, "Influenza A H1N1 2009 Monovalent Vaccine Novartis",
+            PermissibleValue(
+                text="Influenza A H1N1 2009 Monovalent Vaccine Novartis",
+                meaning=VO["0000081"]))
         setattr(cls, "Influenza A virus",
             PermissibleValue(
                 text="Influenza A virus",
                 meaning=NCBITAXON["11320"]))
+        setattr(cls, "Influenza C virus",
+            PermissibleValue(
+                text="Influenza C virus",
+                meaning=NCBITAXON["11552"]))
+        setattr(cls, "Influenza virus vaccine",
+            PermissibleValue(
+                text="Influenza virus vaccine",
+                meaning=VO["0000642"]))
+        setattr(cls, "MRKAd5 HIV-1 gag/pol/nef",
+            PermissibleValue(
+                text="MRKAd5 HIV-1 gag/pol/nef",
+                meaning=VO["0003133"]))
+        setattr(cls, "Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C",
+            PermissibleValue(
+                text="Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C",
+                meaning=VO["0010725"]))
         setattr(cls, "Mycobacterium tuberculosis",
             PermissibleValue(
                 text="Mycobacterium tuberculosis",
                 meaning=NCBITAXON["1773"]))
+        setattr(cls, "Mycobacterium tuberculosis vaccine",
+            PermissibleValue(
+                text="Mycobacterium tuberculosis vaccine",
+                meaning=VO["0000077"]))
+        setattr(cls, "Neisseria meningitidis",
+            PermissibleValue(
+                text="Neisseria meningitidis",
+                meaning=NCBITAXON["487"]))
+        setattr(cls, "Neisseria meningitidis vaccine",
+            PermissibleValue(
+                text="Neisseria meningitidis vaccine",
+                meaning=VO["0000053"]))
+        setattr(cls, "P. falciparum RTS,S/AS01",
+            PermissibleValue(
+                text="P. falciparum RTS,S/AS01",
+                meaning=VO["0003093"]))
         setattr(cls, "Plasmodium falciparum",
             PermissibleValue(
                 text="Plasmodium falciparum",
                 meaning=NCBITAXON["5833"]))
+        setattr(cls, "Plasmodium falciparum vaccine",
+            PermissibleValue(
+                text="Plasmodium falciparum vaccine",
+                meaning=VO["0000087"]))
+        setattr(cls, "Pneumovax 23",
+            PermissibleValue(
+                text="Pneumovax 23",
+                meaning=VO["0000088"]))
+        setattr(cls, "SARS-CoV-2",
+            PermissibleValue(
+                text="SARS-CoV-2",
+                meaning=NCBITAXON["2697049"]))
+        setattr(cls, "Smallpox virus vaccine",
+            PermissibleValue(
+                text="Smallpox virus vaccine",
+                meaning=VO["0000651"]))
+        setattr(cls, "Streptococcus pneumoniae",
+            PermissibleValue(
+                text="Streptococcus pneumoniae",
+                meaning=NCBITAXON["1313"]))
+        setattr(cls, "Sudan ebolavirus",
+            PermissibleValue(
+                text="Sudan ebolavirus",
+                meaning=NCBITAXON["186540"]))
+        setattr(cls, "Variola virus",
+            PermissibleValue(
+                text="Variola virus",
+                meaning=NCBITAXON["10255"]))
+        setattr(cls, "Vibrio cholerae",
+            PermissibleValue(
+                text="Vibrio cholerae",
+                meaning=NCBITAXON["666"]))
+        setattr(cls, "West Nile virus",
+            PermissibleValue(
+                text="West Nile virus",
+                meaning=NCBITAXON["11082"]))
+        setattr(cls, "YF-Vax",
+            PermissibleValue(
+                text="YF-Vax",
+                meaning=VO["0000121"]))
+        setattr(cls, "Yellow fever 17D vaccine vector",
+            PermissibleValue(
+                text="Yellow fever 17D vaccine vector",
+                meaning=VO["0000122"]))
+        setattr(cls, "Yellow fever virus",
+            PermissibleValue(
+                text="Yellow fever virus",
+                meaning=NCBITAXON["11089"]))
+        setattr(cls, "Zaire ebolavirus",
+            PermissibleValue(
+                text="Zaire ebolavirus",
+                meaning=NCBITAXON["186538"]))
+        setattr(cls, "Zika virus",
+            PermissibleValue(
+                text="Zika virus",
+                meaning=NCBITAXON["64320"]))
+        setattr(cls, "bacterial vaccine",
+            PermissibleValue(
+                text="bacterial vaccine",
+                meaning=VO["0000165"]))
+        setattr(cls, "diphtheria, tetanus and whole cell pertussis vaccine",
+            PermissibleValue(
+                text="diphtheria, tetanus and whole cell pertussis vaccine",
+                meaning=VO["0003106"]))
+        setattr(cls, "live attenuated influenza vaccine",
+            PermissibleValue(
+                text="live attenuated influenza vaccine",
+                meaning=VO["0001178"]))
+        setattr(cls, "microbial eukaryotic vaccine",
+            PermissibleValue(
+                text="microbial eukaryotic vaccine",
+                meaning=VO["0005563"]))
+        setattr(cls, "rVSV-EBOV",
+            PermissibleValue(
+                text="rVSV-EBOV",
+                meaning=VO["0004660"]))
+        setattr(cls, "unidentified influenza virus",
+            PermissibleValue(
+                text="unidentified influenza virus",
+                meaning=NCBITAXON["11309"]))
+        setattr(cls, "unidentified organism",
+            PermissibleValue(
+                text="unidentified organism",
+                meaning=NCBITAXON["32644"]))
+        setattr(cls, "viral vaccine",
+            PermissibleValue(
+                text="viral vaccine",
+                meaning=VO["0000609"]))
+        setattr(cls, "yellow fever virus vaccine",
+            PermissibleValue(
+                text="yellow fever virus vaccine",
+                meaning=VO["0000123"]))
         setattr(cls, "Human gammaherpesvirus 4",
             PermissibleValue(
                 text="Human gammaherpesvirus 4",
@@ -4875,16 +5187,60 @@ class ExposureMaterialOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="Human betaherpesvirus 5",
                 meaning=NCBITAXON["10359"]))
-        setattr(cls, "Diphtheria-Tetanus-Pertussis vaccine",
-            PermissibleValue(
-                text="Diphtheria-Tetanus-Pertussis vaccine",
-                meaning=VO["0000738"]))
 
 class DiseaseOntology(EnumDefinitionImpl):
 
+    chikungunya = PermissibleValue(
+        text="chikungunya",
+        meaning=DOID["0050012"])
+    encephalitis = PermissibleValue(
+        text="encephalitis",
+        meaning=DOID["9588"])
+    meningitis = PermissibleValue(
+        text="meningitis",
+        meaning=DOID["9471"])
     healthy = PermissibleValue(
         text="healthy",
-        meaning=ONTIE["000342"])
+        meaning=ONTIE["0003423"])
+    influenza = PermissibleValue(
+        text="influenza",
+        meaning=DOID["8469"])
+    meningoencephalitis = PermissibleValue(
+        text="meningoencephalitis",
+        meaning=DOID["10554"])
+    pharyngitis = PermissibleValue(
+        text="pharyngitis",
+        meaning=DOID["2275"])
+    malaria = PermissibleValue(
+        text="malaria",
+        meaning=DOID["12365"])
+    tuberculosis = PermissibleValue(
+        text="tuberculosis",
+        meaning=DOID["399"])
+    chickenpox = PermissibleValue(
+        text="chickenpox",
+        meaning=DOID["8659"])
+    psoriasis = PermissibleValue(
+        text="psoriasis",
+        meaning=DOID["8893"])
+    diphtheria = PermissibleValue(
+        text="diphtheria",
+        meaning=DOID["11405"])
+    cholera = PermissibleValue(
+        text="cholera",
+        meaning=DOID["1498"])
+    smallpox = PermissibleValue(
+        text="smallpox",
+        meaning=DOID["8736"])
+    pertussis = PermissibleValue(
+        text="pertussis",
+        meaning=DOID["1116"])
+    tetanus = PermissibleValue(
+        text="tetanus",
+        meaning=DOID["11338"])
+    cystinosis = PermissibleValue(
+        text="cystinosis",
+        meaning=DOID["1064"])
 
     _defn = EnumDefinition(
         name="DiseaseOntology",
@@ -4904,6 +5260,134 @@ class DiseaseOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="dengue hemorrhagic fever",
                 meaning=DOID["12206"]))
+        setattr(cls, "dengue disease",
+            PermissibleValue(
+                text="dengue disease",
+                meaning=DOID["12205"]))
+        setattr(cls, "upper respiratory tract disease",
+            PermissibleValue(
+                text="upper respiratory tract disease",
+                meaning=DOID["974"]))
+        setattr(cls, "West Nile fever",
+            PermissibleValue(
+                text="West Nile fever",
+                meaning=DOID["2366"]))
+        setattr(cls, "Zika fever",
+            PermissibleValue(
+                text="Zika fever",
+                meaning=DOID["0060478"]))
+        setattr(cls, "human cytomegalovirus infection",
+            PermissibleValue(
+                text="human cytomegalovirus infection",
+                meaning=DOID["0080827"]))
+        setattr(cls, "end stage renal disease",
+            PermissibleValue(
+                text="end stage renal disease",
+                meaning=DOID["783"]))
+        setattr(cls, "West Nile encephalitis",
+            PermissibleValue(
+                text="West Nile encephalitis",
+                meaning=DOID["2365"]))
+        setattr(cls, "hepatitis C",
+            PermissibleValue(
+                text="hepatitis C",
+                meaning=DOID["1883"]))
+        setattr(cls, "urinary tract obstruction",
+            PermissibleValue(
+                text="urinary tract obstruction",
+                meaning=DOID["5200"]))
+        setattr(cls, "avian influenza",
+            PermissibleValue(
+                text="avian influenza",
+                meaning=DOID["4492"]))
+        setattr(cls, "herpes zoster",
+            PermissibleValue(
+                text="herpes zoster",
+                meaning=DOID["8536"]))
+        setattr(cls, "intestinal infectious disease",
+            PermissibleValue(
+                text="intestinal infectious disease",
+                meaning=DOID["100"]))
+        setattr(cls, "yellow fever",
+            PermissibleValue(
+                text="yellow fever",
+                meaning=DOID["9682"]))
+        setattr(cls, "focal segmental glomerulosclerosis",
+            PermissibleValue(
+                text="focal segmental glomerulosclerosis",
+                meaning=DOID["1312"]))
+        setattr(cls, "cystic kidney disease",
+            PermissibleValue(
+                text="cystic kidney disease",
+                meaning=DOID["2975"]))
+        setattr(cls, "breast cancer",
+            PermissibleValue(
+                text="breast cancer",
+                meaning=DOID["1612"]))
+        setattr(cls, "celiac disease",
+            PermissibleValue(
+                text="celiac disease",
+                meaning=DOID["10608"]))
+        setattr(cls, "Ebola hemorrhagic fever",
+            PermissibleValue(
+                text="Ebola hemorrhagic fever",
+                meaning=DOID["4325"]))
+        setattr(cls, "childhood type dermatomyositis",
+            PermissibleValue(
+                text="childhood type dermatomyositis",
+                meaning=DOID["14203"]))
+        setattr(cls, "hepatitis B",
+            PermissibleValue(
+                text="hepatitis B",
+                meaning=DOID["2043"]))
+        setattr(cls, "hepatitis A",
+            PermissibleValue(
+                text="hepatitis A",
+                meaning=DOID["12549"]))
+        setattr(cls, "pustulosis of palm and sole",
+            PermissibleValue(
+                text="pustulosis of palm and sole",
+                meaning=DOID["4398"]))
+        setattr(cls, "meningococcal meningitis",
+            PermissibleValue(
+                text="meningococcal meningitis",
+                meaning=DOID["0080176"]))
+        setattr(cls, "type 2 diabetes mellitus",
+            PermissibleValue(
+                text="type 2 diabetes mellitus",
+                meaning=DOID["9352"]))
+        setattr(cls, "Streptococcus pneumonia",
+            PermissibleValue(
+                text="Streptococcus pneumonia",
+                meaning=DOID["0040084"]))
+        setattr(cls, "swine influenza",
+            PermissibleValue(
+                text="swine influenza",
+                meaning=DOID["0050211"]))
+        setattr(cls, "ulcerative colitis",
+            PermissibleValue(
+                text="ulcerative colitis",
+                meaning=DOID["8577"]))
+        setattr(cls, "human immunodeficiency virus infectious disease",
+            PermissibleValue(
+                text="human immunodeficiency virus infectious disease",
+                meaning=DOID["526"]))
+        setattr(cls, "interstitial nephritis",
+            PermissibleValue(
+                text="interstitial nephritis",
+                meaning=DOID["1063"]))
+        setattr(cls, "hemolytic-uremic syndrome",
+            PermissibleValue(
+                text="hemolytic-uremic syndrome",
+                meaning=DOID["12554"]))
+        setattr(cls, "kidney cortex necrosis",
+            PermissibleValue(
+                text="kidney cortex necrosis",
+                meaning=DOID["2973"]))
+        setattr(cls, "food allergy",
+            PermissibleValue(
+                text="food allergy",
+                meaning=DOID["3044"]))
 
 class DiseaseStageOntology(EnumDefinitionImpl):
 
@@ -5457,10 +5941,10 @@ slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.inclusion_criteria = Slot(uri=AK_SCHEMA.inclusion_criteria, name="inclusion_criteria", curie=AK_SCHEMA.curie('inclusion_criteria'),
-                   model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.exclusion_criteria = Slot(uri=AK_SCHEMA.exclusion_criteria, name="exclusion_criteria", curie=AK_SCHEMA.curie('exclusion_criteria'),
-                   model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.update_date = Slot(uri=AK_SCHEMA.update_date, name="update_date", curie=AK_SCHEMA.curie('update_date'),
                    model_uri=AK_SCHEMA.update_date, domain=None, range=Optional[Union[str, XSDDateTime]])

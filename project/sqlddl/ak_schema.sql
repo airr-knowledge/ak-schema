@@ -19,8 +19,6 @@
 -- # Class: "Investigation" Description: "A scientific investigation."
 --     * Slot: study_type Description: Type of study design
 --     * Slot: archival_id Description: Identifier for external archival resource for the investigation, e.g., BioProject
---     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
---     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 --     * Slot: release_date Description: Date of this release
 --     * Slot: update_date Description: Subsequence updates to the investigation or its data
 --     * Slot: name Description: A human-readable name for a thing
@@ -38,8 +36,6 @@
 --     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "StudyArm" Description: "A population of participants of an investigation."
 --     * Slot: investigation Description: An investigation in which the study arm participates
---     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
---     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
@@ -878,6 +874,12 @@
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
 --     * Slot: sequencing_files_id Description: Set of sequencing files produced by the sequencing run
+-- # Class: "Investigation_inclusion_criteria" Description: ""
+--     * Slot: Investigation_akc_id Description: Autocreated FK slot
+--     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
+-- # Class: "Investigation_exclusion_criteria" Description: ""
+--     * Slot: Investigation_akc_id Description: Autocreated FK slot
+--     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 -- # Class: "Investigation_participants" Description: ""
 --     * Slot: Investigation_akc_id Description: Autocreated FK slot
 --     * Slot: participants_akc_id Description: The participants involved with the investigation
@@ -902,6 +904,12 @@
 -- # Class: "Reference_authors" Description: ""
 --     * Slot: Reference_source_uri Description: Autocreated FK slot
 --     * Slot: authors Description: The authors of a reference
+-- # Class: "StudyArm_inclusion_criteria" Description: ""
+--     * Slot: StudyArm_akc_id Description: Autocreated FK slot
+--     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
+-- # Class: "StudyArm_exclusion_criteria" Description: ""
+--     * Slot: StudyArm_akc_id Description: Autocreated FK slot
+--     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 -- # Class: "StudyEvent_study_arms" Description: ""
 --     * Slot: StudyEvent_akc_id Description: Autocreated FK slot
 --     * Slot: study_arms_akc_id Description: The study arms that are relevant for a study event
@@ -1671,8 +1679,6 @@ CREATE TABLE "ReceptorReactivity" (
 CREATE TABLE "Investigation" (
 	study_type VARCHAR, 
 	archival_id TEXT, 
-	inclusion_criteria TEXT, 
-	exclusion_criteria TEXT, 
 	release_date DATETIME, 
 	update_date DATETIME, 
 	name TEXT, 
@@ -2003,8 +2009,6 @@ CREATE TABLE "Receptor_reactivity_measurements" (
 );
 CREATE TABLE "StudyArm" (
 	investigation TEXT, 
-	inclusion_criteria TEXT, 
-	exclusion_criteria TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -2083,6 +2087,18 @@ CREATE TABLE "Subject" (
 	genotype_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(genotype_id) REFERENCES "SubjectGenotype" (id)
+);
+CREATE TABLE "Investigation_inclusion_criteria" (
+	"Investigation_akc_id" TEXT, 
+	inclusion_criteria TEXT, 
+	PRIMARY KEY ("Investigation_akc_id", inclusion_criteria), 
+	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id)
+);
+CREATE TABLE "Investigation_exclusion_criteria" (
+	"Investigation_akc_id" TEXT, 
+	exclusion_criteria TEXT, 
+	PRIMARY KEY ("Investigation_akc_id", exclusion_criteria), 
+	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "Investigation_simulations" (
 	"Investigation_akc_id" TEXT, 
@@ -2183,6 +2199,18 @@ CREATE TABLE "Repertoire" (
 	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
 	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
 );
+CREATE TABLE "StudyArm_inclusion_criteria" (
+	"StudyArm_akc_id" TEXT, 
+	inclusion_criteria TEXT, 
+	PRIMARY KEY ("StudyArm_akc_id", inclusion_criteria), 
+	FOREIGN KEY("StudyArm_akc_id") REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "StudyArm_exclusion_criteria" (
+	"StudyArm_akc_id" TEXT, 
+	exclusion_criteria TEXT, 
+	PRIMARY KEY ("StudyArm_akc_id", exclusion_criteria), 
+	FOREIGN KEY("StudyArm_akc_id") REFERENCES "StudyArm" (akc_id)
+);
 CREATE TABLE "StudyEvent_study_arms" (
 	"StudyEvent_akc_id" TEXT, 
 	study_arms_akc_id TEXT, 
@@ -2239,8 +2267,8 @@ CREATE TABLE "Repertoire_data_processing" (
 );
 CREATE TABLE "ImmuneExposure" (
 	life_event TEXT, 
-	exposure_material VARCHAR(36), 
-	disease VARCHAR(29), 
+	exposure_material VARCHAR(115), 
+	disease VARCHAR(47), 
 	disease_stage TEXT, 
 	disease_severity TEXT, 
 	name TEXT, 

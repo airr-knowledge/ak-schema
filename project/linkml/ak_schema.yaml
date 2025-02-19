@@ -393,6 +393,13 @@ enums:
       Other:
         text: Other
         meaning: OMRSE:00000214
+      'race: not specified':
+        text: 'race: not specified'
+      'race: other':
+        text: 'race: other'
+        meaning: OMRSE:00000214
+      'race: unknown':
+        text: 'race: unknown'
       African American:
         text: African American
       Asian or Pacific Islander:
@@ -451,6 +458,11 @@ enums:
         meaning: OMRSE:00000208
       Other:
         text: Other
+        meaning: OMRSE:00000206
+      'ethnicity: not specified':
+        text: 'ethnicity: not specified'
+      'ethnicity: other':
+        text: 'ethnicity: other'
         meaning: OMRSE:00000206
       African:
         text: African
@@ -684,38 +696,273 @@ enums:
       physical examination:
         text: physical examination
         meaning: OGMS:0000057
+      recovery:
+        text: recovery
+      birth:
+        text: birth
+      exposure to infectious agent:
+        text: exposure to infectious agent
   ExposureMaterialOntology:
     name: ExposureMaterialOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
-      Influenza A virus:
-        text: Influenza A virus
-        meaning: NCBITaxon:11320
-      Mycobacterium tuberculosis:
-        text: Mycobacterium tuberculosis
-        meaning: NCBITaxon:1773
-      Plasmodium falciparum:
-        text: Plasmodium falciparum
-        meaning: NCBITaxon:5833
-      Human gammaherpesvirus 4:
-        text: Human gammaherpesvirus 4
-        meaning: NCBITaxon:10376
-      Human betaherpesvirus 5:
-        text: Human betaherpesvirus 5
-        meaning: NCBITaxon:10359
+      2008-2009 trivalent influenza vaccine:
+        text: 2008-2009 trivalent influenza vaccine
+        meaning: VO:0004809
+      2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008):
+        text: 2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth
+          /16/2009 (H3N2), and B/Brisbane/60/2008)
+        meaning: VO:0004810
+      ACWY Vax:
+        text: ACWY Vax
+        meaning: VO:0003138
+      Ad35.CS.01 malaria vaccine:
+        text: Ad35.CS.01 malaria vaccine
+        meaning: VO:0004993
+      Alphainfluenzavirus:
+        text: Alphainfluenzavirus
+        meaning: NCBITaxon:197911
+      BCG Vaccine:
+        text: BCG Vaccine
+        meaning: VO:0000771
+      Betainfluenzavirus:
+        text: Betainfluenzavirus
+        meaning: NCBITaxon:197912
+      Bordetella:
+        text: Bordetella
+        meaning: NCBITaxon:517
+      Bordetella parapertussis:
+        text: Bordetella parapertussis
+        meaning: NCBITaxon:519
+      Bordetella pertussis:
+        text: Bordetella pertussis
+        meaning: NCBITaxon:520
+      Bundibugyo virus:
+        text: Bundibugyo virus
+        meaning: NCBITaxon:565995
+      Chikungunya virus:
+        text: Chikungunya virus
+        meaning: NCBITaxon:37124
+      Clostridium tetani:
+        text: Clostridium tetani
+        meaning: NCBITaxon:1513
+      Corynebacterium diphtheriae:
+        text: Corynebacterium diphtheriae
+        meaning: NCBITaxon:1717
+      Cytomegalovirus:
+        text: Cytomegalovirus
+        meaning: NCBITaxon:10358
+      Dengue virus:
+        text: Dengue virus
+        meaning: NCBITaxon:12637
       Diphtheria-Tetanus-Pertussis vaccine:
         text: Diphtheria-Tetanus-Pertussis vaccine
         meaning: VO:0000738
       Dryvax:
         text: Dryvax
         meaning: VO:0000035
+      Engerix-B:
+        text: Engerix-B
+        meaning: VO:0010711
+      FluMist:
+        text: FluMist
+        meaning: VO:0000044
+      Fluarix:
+        text: Fluarix
+        meaning: VO:0000045
+      Fluvirin:
+        text: Fluvirin
+        meaning: VO:0000046
+      Fluzone:
+        text: Fluzone
+        meaning: VO:0000047
+      Gammainfluenzavirus:
+        text: Gammainfluenzavirus
+        meaning: NCBITaxon:197913
+      H1N1 subtype:
+        text: H1N1 subtype
+        meaning: NCBITaxon:114727
+      HEPLISAV-B:
+        text: HEPLISAV-B
+        meaning: VO:0003152
+      Hepacivirus C:
+        text: Hepacivirus C
+        meaning: NCBITaxon:11103
+      Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]:
+        text: Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]
+        meaning: VO:0003270
+      Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]:
+        text: Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]
+        meaning: VO:0003258
+      Hepatitis B virus:
+        text: Hepatitis B virus
+        meaning: NCBITaxon:10407
+      Hepatitis B virus vaccine:
+        text: Hepatitis B virus vaccine
+        meaning: VO:0000644
+      Hepatovirus A:
+        text: Hepatovirus A
+        meaning: NCBITaxon:12092
+      Human alphaherpesvirus 3:
+        text: Human alphaherpesvirus 3
+        meaning: NCBITaxon:10335
+      Human immunodeficiency virus:
+        text: Human immunodeficiency virus
+        meaning: NCBITaxon:12721
+      Influenza A H1N1 2009 Monovalent Vaccine Novartis:
+        text: Influenza A H1N1 2009 Monovalent Vaccine Novartis
+        meaning: VO:0000081
+      Influenza A virus:
+        text: Influenza A virus
+        meaning: NCBITaxon:11320
+      Influenza C virus:
+        text: Influenza C virus
+        meaning: NCBITaxon:11552
+      Influenza virus vaccine:
+        text: Influenza virus vaccine
+        meaning: VO:0000642
+      LC16m8:
+        text: LC16m8
+        meaning: VO:0004091
+      MRKAd5 HIV-1 gag/pol/nef:
+        text: MRKAd5 HIV-1 gag/pol/nef
+        meaning: VO:0003133
+      MVA85A:
+        text: MVA85A
+        meaning: VO:0003120
+      Menactra:
+        text: Menactra
+        meaning: VO:0000071
+      Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C:
+        text: Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C
+        meaning: VO:0010725
+      Menveo:
+        text: Menveo
+        meaning: VO:0001246
+      Mycobacterium tuberculosis:
+        text: Mycobacterium tuberculosis
+        meaning: NCBITaxon:1773
+      Mycobacterium tuberculosis vaccine:
+        text: Mycobacterium tuberculosis vaccine
+        meaning: VO:0000077
+      Neisseria meningitidis:
+        text: Neisseria meningitidis
+        meaning: NCBITaxon:487
+      Neisseria meningitidis vaccine:
+        text: Neisseria meningitidis vaccine
+        meaning: VO:0000053
+      Orthoebolavirus:
+        text: Orthoebolavirus
+        meaning: NCBITaxon:3044781
+      P. falciparum RTS,S/AS01:
+        text: P. falciparum RTS,S/AS01
+        meaning: VO:0003093
+      Plasmodium:
+        text: Plasmodium
+        meaning: NCBITaxon:5820
+      Plasmodium falciparum:
+        text: Plasmodium falciparum
+        meaning: NCBITaxon:5833
+      Plasmodium falciparum vaccine:
+        text: Plasmodium falciparum vaccine
+        meaning: VO:0000087
+      Pneumovax 23:
+        text: Pneumovax 23
+        meaning: VO:0000088
+      SARS-CoV-2:
+        text: SARS-CoV-2
+        meaning: NCBITaxon:2697049
+      Smallpox virus vaccine:
+        text: Smallpox virus vaccine
+        meaning: VO:0000651
+      Stamaril:
+        text: Stamaril
+        meaning: VO:0003139
+      Streptococcus pneumoniae:
+        text: Streptococcus pneumoniae
+        meaning: NCBITaxon:1313
+      Sudan ebolavirus:
+        text: Sudan ebolavirus
+        meaning: NCBITaxon:186540
+      Variola virus:
+        text: Variola virus
+        meaning: NCBITaxon:10255
+      Vibrio cholerae:
+        text: Vibrio cholerae
+        meaning: NCBITaxon:666
+      West Nile virus:
+        text: West Nile virus
+        meaning: NCBITaxon:11082
+      YF-Vax:
+        text: YF-Vax
+        meaning: VO:0000121
+      Yellow fever 17D vaccine vector:
+        text: Yellow fever 17D vaccine vector
+        meaning: VO:0000122
+      Yellow fever virus:
+        text: Yellow fever virus
+        meaning: NCBITaxon:11089
+      Zaire ebolavirus:
+        text: Zaire ebolavirus
+        meaning: NCBITaxon:186538
+      Zika virus:
+        text: Zika virus
+        meaning: NCBITaxon:64320
+      Zostavax:
+        text: Zostavax
+        meaning: VO:0000124
+      bacterial vaccine:
+        text: bacterial vaccine
+        meaning: VO:0000165
+      bacterium:
+        text: bacterium
+        meaning: NCBITaxon:2
+      diphtheria, tetanus and whole cell pertussis vaccine:
+        text: diphtheria, tetanus and whole cell pertussis vaccine
+        meaning: VO:0003106
+      eukaryote:
+        text: eukaryote
+        meaning: NCBITaxon:2759
+      live attenuated influenza vaccine:
+        text: live attenuated influenza vaccine
+        meaning: VO:0001178
+      microbial eukaryotic vaccine:
+        text: microbial eukaryotic vaccine
+        meaning: VO:0005563
+      organism:
+        text: organism
+        meaning: NCBITaxon:1
+      rVSV-EBOV:
+        text: rVSV-EBOV
+        meaning: VO:0004660
+      unidentified influenza virus:
+        text: unidentified influenza virus
+        meaning: NCBITaxon:11309
+      unidentified organism:
+        text: unidentified organism
+        meaning: NCBITaxon:32644
+      vaccine:
+        text: vaccine
+        meaning: VO:0000001
+      viral vaccine:
+        text: viral vaccine
+        meaning: VO:0000609
+      virus:
+        text: virus
+        meaning: NCBITaxon:10239
+      yellow fever virus vaccine:
+        text: yellow fever virus vaccine
+        meaning: VO:0000123
+      Human gammaherpesvirus 4:
+        text: Human gammaherpesvirus 4
+        meaning: NCBITaxon:10376
+      Human betaherpesvirus 5:
+        text: Human betaherpesvirus 5
+        meaning: NCBITaxon:10359
   DiseaseOntology:
     name: DiseaseOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     permissible_values:
-      healthy:
-        text: healthy
-        meaning: ONTIE:000342
       COVID-19:
         text: COVID-19
         meaning: DOID:0080600
@@ -725,6 +972,153 @@ enums:
       dengue hemorrhagic fever:
         text: dengue hemorrhagic fever
         meaning: DOID:12206
+      dengue disease:
+        text: dengue disease
+        meaning: DOID:12205
+      chikungunya:
+        text: chikungunya
+        meaning: DOID:0050012
+      upper respiratory tract disease:
+        text: upper respiratory tract disease
+        meaning: DOID:974
+      encephalitis:
+        text: encephalitis
+        meaning: DOID:9588
+      West Nile fever:
+        text: West Nile fever
+        meaning: DOID:2366
+      Zika fever:
+        text: Zika fever
+        meaning: DOID:0060478
+      meningitis:
+        text: meningitis
+        meaning: DOID:9471
+      healthy:
+        text: healthy
+        meaning: ONTIE:0003423
+      influenza:
+        text: influenza
+        meaning: DOID:8469
+      human cytomegalovirus infection:
+        text: human cytomegalovirus infection
+        meaning: DOID:0080827
+      end stage renal disease:
+        text: end stage renal disease
+        meaning: DOID:783
+      West Nile encephalitis:
+        text: West Nile encephalitis
+        meaning: DOID:2365
+      hepatitis C:
+        text: hepatitis C
+        meaning: DOID:1883
+      meningoencephalitis:
+        text: meningoencephalitis
+        meaning: DOID:10554
+      urinary tract obstruction:
+        text: urinary tract obstruction
+        meaning: DOID:5200
+      pharyngitis:
+        text: pharyngitis
+        meaning: DOID:2275
+      malaria:
+        text: malaria
+        meaning: DOID:12365
+      tuberculosis:
+        text: tuberculosis
+        meaning: DOID:399
+      avian influenza:
+        text: avian influenza
+        meaning: DOID:4492
+      herpes zoster:
+        text: herpes zoster
+        meaning: DOID:8536
+      intestinal infectious disease:
+        text: intestinal infectious disease
+        meaning: DOID:100
+      yellow fever:
+        text: yellow fever
+        meaning: DOID:9682
+      focal segmental glomerulosclerosis:
+        text: focal segmental glomerulosclerosis
+        meaning: DOID:1312
+      cystic kidney disease:
+        text: cystic kidney disease
+        meaning: DOID:2975
+      breast cancer:
+        text: breast cancer
+        meaning: DOID:1612
+      celiac disease:
+        text: celiac disease
+        meaning: DOID:10608
+      chickenpox:
+        text: chickenpox
+        meaning: DOID:8659
+      psoriasis:
+        text: psoriasis
+        meaning: DOID:8893
+      diphtheria:
+        text: diphtheria
+        meaning: DOID:11405
+      Ebola hemorrhagic fever:
+        text: Ebola hemorrhagic fever
+        meaning: DOID:4325
+      childhood type dermatomyositis:
+        text: childhood type dermatomyositis
+        meaning: DOID:14203
+      cholera:
+        text: cholera
+        meaning: DOID:1498
+      hepatitis B:
+        text: hepatitis B
+        meaning: DOID:2043
+      hepatitis A:
+        text: hepatitis A
+        meaning: DOID:12549
+      pustulosis of palm and sole:
+        text: pustulosis of palm and sole
+        meaning: DOID:4398
+      meningococcal meningitis:
+        text: meningococcal meningitis
+        meaning: DOID:0080176
+      smallpox:
+        text: smallpox
+        meaning: DOID:8736
+      type 2 diabetes mellitus:
+        text: type 2 diabetes mellitus
+        meaning: DOID:9352
+      pertussis:
+        text: pertussis
+        meaning: DOID:1116
+      Streptococcus pneumonia:
+        text: Streptococcus pneumonia
+        meaning: DOID:0040084
+      swine influenza:
+        text: swine influenza
+        meaning: DOID:0050211
+      tetanus:
+        text: tetanus
+        meaning: DOID:11338
+      ulcerative colitis:
+        text: ulcerative colitis
+        meaning: DOID:8577
+      human immunodeficiency virus infectious disease:
+        text: human immunodeficiency virus infectious disease
+        meaning: DOID:526
+      interstitial nephritis:
+        text: interstitial nephritis
+        meaning: DOID:1063
+      cystinosis:
+        text: cystinosis
+        meaning: DOID:1064
+      hemolytic-uremic syndrome:
+        text: hemolytic-uremic syndrome
+        meaning: DOID:12554
+      kidney cortex necrosis:
+        text: kidney cortex necrosis
+        meaning: DOID:2973
+      food allergy:
+        text: food allergy
+        meaning: DOID:3044
   DiseaseStageOntology:
     name: DiseaseStageOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1309,12 +1703,14 @@ slots:
     description: Participants in an investigation must meet this criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+    multivalued: true
   exclusion_criteria:
     name: exclusion_criteria
     description: Participants are excluded from an investigation if they meet this
       criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+    multivalued: true
   update_date:
     name: update_date
     description: Subsequence updates to the investigation or its data

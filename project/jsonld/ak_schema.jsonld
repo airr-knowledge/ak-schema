@@ -512,6 +512,16 @@
           "meaning": "OMRSE:00000214"
         },
         {
+          "text": "race: not specified"
+        },
+        {
+          "text": "race: other",
+          "meaning": "OMRSE:00000214"
+        },
+        {
+          "text": "race: unknown"
+        },
+        {
           "text": "African American"
         },
         {
@@ -597,6 +607,13 @@
         },
         {
           "text": "Other",
+          "meaning": "OMRSE:00000206"
+        },
+        {
+          "text": "ethnicity: not specified"
+        },
+        {
+          "text": "ethnicity: other",
           "meaning": "OMRSE:00000206"
         },
         {
@@ -921,6 +938,15 @@
         {
           "text": "physical examination",
           "meaning": "OGMS:0000057"
+        },
+        {
+          "text": "recovery"
+        },
+        {
+          "text": "birth"
+        },
+        {
+          "text": "exposure to infectious agent"
         }
       ]
     },
@@ -930,24 +956,68 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
-          "text": "Influenza A virus",
-          "meaning": "NCBITaxon:11320"
+          "text": "2008-2009 trivalent influenza vaccine",
+          "meaning": "VO:0004809"
         },
         {
-          "text": "Mycobacterium tuberculosis",
-          "meaning": "NCBITaxon:1773"
+          "text": "2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008)",
+          "meaning": "VO:0004810"
         },
         {
-          "text": "Plasmodium falciparum",
-          "meaning": "NCBITaxon:5833"
+          "text": "ACWY Vax",
+          "meaning": "VO:0003138"
         },
         {
-          "text": "Human gammaherpesvirus 4",
-          "meaning": "NCBITaxon:10376"
+          "text": "Ad35.CS.01 malaria vaccine",
+          "meaning": "VO:0004993"
         },
         {
-          "text": "Human betaherpesvirus 5",
-          "meaning": "NCBITaxon:10359"
+          "text": "Alphainfluenzavirus",
+          "meaning": "NCBITaxon:197911"
+        },
+        {
+          "text": "BCG Vaccine",
+          "meaning": "VO:0000771"
+        },
+        {
+          "text": "Betainfluenzavirus",
+          "meaning": "NCBITaxon:197912"
+        },
+        {
+          "text": "Bordetella",
+          "meaning": "NCBITaxon:517"
+        },
+        {
+          "text": "Bordetella parapertussis",
+          "meaning": "NCBITaxon:519"
+        },
+        {
+          "text": "Bordetella pertussis",
+          "meaning": "NCBITaxon:520"
+        },
+        {
+          "text": "Bundibugyo virus",
+          "meaning": "NCBITaxon:565995"
+        },
+        {
+          "text": "Chikungunya virus",
+          "meaning": "NCBITaxon:37124"
+        },
+        {
+          "text": "Clostridium tetani",
+          "meaning": "NCBITaxon:1513"
+        },
+        {
+          "text": "Corynebacterium diphtheriae",
+          "meaning": "NCBITaxon:1717"
+        },
+        {
+          "text": "Cytomegalovirus",
+          "meaning": "NCBITaxon:10358"
+        },
+        {
+          "text": "Dengue virus",
+          "meaning": "NCBITaxon:12637"
         },
         {
           "text": "Diphtheria-Tetanus-Pertussis vaccine",
@@ -956,6 +1026,270 @@
         {
           "text": "Dryvax",
           "meaning": "VO:0000035"
+        },
+        {
+          "text": "Engerix-B",
+          "meaning": "VO:0010711"
+        },
+        {
+          "text": "FluMist",
+          "meaning": "VO:0000044"
+        },
+        {
+          "text": "Fluarix",
+          "meaning": "VO:0000045"
+        },
+        {
+          "text": "Fluvirin",
+          "meaning": "VO:0000046"
+        },
+        {
+          "text": "Fluzone",
+          "meaning": "VO:0000047"
+        },
+        {
+          "text": "Gammainfluenzavirus",
+          "meaning": "NCBITaxon:197913"
+        },
+        {
+          "text": "H1N1 subtype",
+          "meaning": "NCBITaxon:114727"
+        },
+        {
+          "text": "HEPLISAV-B",
+          "meaning": "VO:0003152"
+        },
+        {
+          "text": "Hepacivirus C",
+          "meaning": "NCBITaxon:11103"
+        },
+        {
+          "text": "Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]",
+          "meaning": "VO:0003270"
+        },
+        {
+          "text": "Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]",
+          "meaning": "VO:0003258"
+        },
+        {
+          "text": "Hepatitis B virus",
+          "meaning": "NCBITaxon:10407"
+        },
+        {
+          "text": "Hepatitis B virus vaccine",
+          "meaning": "VO:0000644"
+        },
+        {
+          "text": "Hepatovirus A",
+          "meaning": "NCBITaxon:12092"
+        },
+        {
+          "text": "Human alphaherpesvirus 3",
+          "meaning": "NCBITaxon:10335"
+        },
+        {
+          "text": "Human immunodeficiency virus",
+          "meaning": "NCBITaxon:12721"
+        },
+        {
+          "text": "Influenza A H1N1 2009 Monovalent Vaccine Novartis",
+          "meaning": "VO:0000081"
+        },
+        {
+          "text": "Influenza A virus",
+          "meaning": "NCBITaxon:11320"
+        },
+        {
+          "text": "Influenza C virus",
+          "meaning": "NCBITaxon:11552"
+        },
+        {
+          "text": "Influenza virus vaccine",
+          "meaning": "VO:0000642"
+        },
+        {
+          "text": "LC16m8",
+          "meaning": "VO:0004091"
+        },
+        {
+          "text": "MRKAd5 HIV-1 gag/pol/nef",
+          "meaning": "VO:0003133"
+        },
+        {
+          "text": "MVA85A",
+          "meaning": "VO:0003120"
+        },
+        {
+          "text": "Menactra",
+          "meaning": "VO:0000071"
+        },
+        {
+          "text": "Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C",
+          "meaning": "VO:0010725"
+        },
+        {
+          "text": "Menveo",
+          "meaning": "VO:0001246"
+        },
+        {
+          "text": "Mycobacterium tuberculosis",
+          "meaning": "NCBITaxon:1773"
+        },
+        {
+          "text": "Mycobacterium tuberculosis vaccine",
+          "meaning": "VO:0000077"
+        },
+        {
+          "text": "Neisseria meningitidis",
+          "meaning": "NCBITaxon:487"
+        },
+        {
+          "text": "Neisseria meningitidis vaccine",
+          "meaning": "VO:0000053"
+        },
+        {
+          "text": "Orthoebolavirus",
+          "meaning": "NCBITaxon:3044781"
+        },
+        {
+          "text": "P. falciparum RTS,S/AS01",
+          "meaning": "VO:0003093"
+        },
+        {
+          "text": "Plasmodium",
+          "meaning": "NCBITaxon:5820"
+        },
+        {
+          "text": "Plasmodium falciparum",
+          "meaning": "NCBITaxon:5833"
+        },
+        {
+          "text": "Plasmodium falciparum vaccine",
+          "meaning": "VO:0000087"
+        },
+        {
+          "text": "Pneumovax 23",
+          "meaning": "VO:0000088"
+        },
+        {
+          "text": "SARS-CoV-2",
+          "meaning": "NCBITaxon:2697049"
+        },
+        {
+          "text": "Smallpox virus vaccine",
+          "meaning": "VO:0000651"
+        },
+        {
+          "text": "Stamaril",
+          "meaning": "VO:0003139"
+        },
+        {
+          "text": "Streptococcus pneumoniae",
+          "meaning": "NCBITaxon:1313"
+        },
+        {
+          "text": "Sudan ebolavirus",
+          "meaning": "NCBITaxon:186540"
+        },
+        {
+          "text": "Variola virus",
+          "meaning": "NCBITaxon:10255"
+        },
+        {
+          "text": "Vibrio cholerae",
+          "meaning": "NCBITaxon:666"
+        },
+        {
+          "text": "West Nile virus",
+          "meaning": "NCBITaxon:11082"
+        },
+        {
+          "text": "YF-Vax",
+          "meaning": "VO:0000121"
+        },
+        {
+          "text": "Yellow fever 17D vaccine vector",
+          "meaning": "VO:0000122"
+        },
+        {
+          "text": "Yellow fever virus",
+          "meaning": "NCBITaxon:11089"
+        },
+        {
+          "text": "Zaire ebolavirus",
+          "meaning": "NCBITaxon:186538"
+        },
+        {
+          "text": "Zika virus",
+          "meaning": "NCBITaxon:64320"
+        },
+        {
+          "text": "Zostavax",
+          "meaning": "VO:0000124"
+        },
+        {
+          "text": "bacterial vaccine",
+          "meaning": "VO:0000165"
+        },
+        {
+          "text": "bacterium",
+          "meaning": "NCBITaxon:2"
+        },
+        {
+          "text": "diphtheria, tetanus and whole cell pertussis vaccine",
+          "meaning": "VO:0003106"
+        },
+        {
+          "text": "eukaryote",
+          "meaning": "NCBITaxon:2759"
+        },
+        {
+          "text": "live attenuated influenza vaccine",
+          "meaning": "VO:0001178"
+        },
+        {
+          "text": "microbial eukaryotic vaccine",
+          "meaning": "VO:0005563"
+        },
+        {
+          "text": "organism",
+          "meaning": "NCBITaxon:1"
+        },
+        {
+          "text": "rVSV-EBOV",
+          "meaning": "VO:0004660"
+        },
+        {
+          "text": "unidentified influenza virus",
+          "meaning": "NCBITaxon:11309"
+        },
+        {
+          "text": "unidentified organism",
+          "meaning": "NCBITaxon:32644"
+        },
+        {
+          "text": "vaccine",
+          "meaning": "VO:0000001"
+        },
+        {
+          "text": "viral vaccine",
+          "meaning": "VO:0000609"
+        },
+        {
+          "text": "virus",
+          "meaning": "NCBITaxon:10239"
+        },
+        {
+          "text": "yellow fever virus vaccine",
+          "meaning": "VO:0000123"
+        },
+        {
+          "text": "Human gammaherpesvirus 4",
+          "meaning": "NCBITaxon:10376"
+        },
+        {
+          "text": "Human betaherpesvirus 5",
+          "meaning": "NCBITaxon:10359"
         }
       ]
     },
@@ -964,10 +1298,6 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
-        {
-          "text": "healthy",
-          "meaning": "ONTIE:000342"
-        },
         {
           "text": "COVID-19",
           "meaning": "DOID:0080600"
@@ -979,6 +1309,202 @@
         {
           "text": "dengue hemorrhagic fever",
           "meaning": "DOID:12206"
+        },
+        {
+          "text": "dengue disease",
+          "meaning": "DOID:12205"
+        },
+        {
+          "text": "chikungunya",
+          "meaning": "DOID:0050012"
+        },
+        {
+          "text": "upper respiratory tract disease",
+          "meaning": "DOID:974"
+        },
+        {
+          "text": "encephalitis",
+          "meaning": "DOID:9588"
+        },
+        {
+          "text": "West Nile fever",
+          "meaning": "DOID:2366"
+        },
+        {
+          "text": "Zika fever",
+          "meaning": "DOID:0060478"
+        },
+        {
+          "text": "meningitis",
+          "meaning": "DOID:9471"
+        },
+        {
+          "text": "healthy",
+          "meaning": "ONTIE:0003423"
+        },
+        {
+          "text": "influenza",
+          "meaning": "DOID:8469"
+        },
+        {
+          "text": "human cytomegalovirus infection",
+          "meaning": "DOID:0080827"
+        },
+        {
+          "text": "end stage renal disease",
+          "meaning": "DOID:783"
+        },
+        {
+          "text": "West Nile encephalitis",
+          "meaning": "DOID:2365"
+        },
+        {
+          "text": "hepatitis C",
+          "meaning": "DOID:1883"
+        },
+        {
+          "text": "meningoencephalitis",
+          "meaning": "DOID:10554"
+        },
+        {
+          "text": "urinary tract obstruction",
+          "meaning": "DOID:5200"
+        },
+        {
+          "text": "pharyngitis",
+          "meaning": "DOID:2275"
+        },
+        {
+          "text": "malaria",
+          "meaning": "DOID:12365"
+        },
+        {
+          "text": "tuberculosis",
+          "meaning": "DOID:399"
+        },
+        {
+          "text": "avian influenza",
+          "meaning": "DOID:4492"
+        },
+        {
+          "text": "herpes zoster",
+          "meaning": "DOID:8536"
+        },
+        {
+          "text": "intestinal infectious disease",
+          "meaning": "DOID:100"
+        },
+        {
+          "text": "yellow fever",
+          "meaning": "DOID:9682"
+        },
+        {
+          "text": "focal segmental glomerulosclerosis",
+          "meaning": "DOID:1312"
+        },
+        {
+          "text": "cystic kidney disease",
+          "meaning": "DOID:2975"
+        },
+        {
+          "text": "breast cancer",
+          "meaning": "DOID:1612"
+        },
+        {
+          "text": "celiac disease",
+          "meaning": "DOID:10608"
+        },
+        {
+          "text": "chickenpox",
+          "meaning": "DOID:8659"
+        },
+        {
+          "text": "psoriasis",
+          "meaning": "DOID:8893"
+        },
+        {
+          "text": "diphtheria",
+          "meaning": "DOID:11405"
+        },
+        {
+          "text": "Ebola hemorrhagic fever",
+          "meaning": "DOID:4325"
+        },
+        {
+          "text": "childhood type dermatomyositis",
+          "meaning": "DOID:14203"
+        },
+        {
+          "text": "cholera",
+          "meaning": "DOID:1498"
+        },
+        {
+          "text": "hepatitis B",
+          "meaning": "DOID:2043"
+        },
+        {
+          "text": "hepatitis A",
+          "meaning": "DOID:12549"
+        },
+        {
+          "text": "pustulosis of palm and sole",
+          "meaning": "DOID:4398"
+        },
+        {
+          "text": "meningococcal meningitis",
+          "meaning": "DOID:0080176"
+        },
+        {
+          "text": "smallpox",
+          "meaning": "DOID:8736"
+        },
+        {
+          "text": "type 2 diabetes mellitus",
+          "meaning": "DOID:9352"
+        },
+        {
+          "text": "pertussis",
+          "meaning": "DOID:1116"
+        },
+        {
+          "text": "Streptococcus pneumonia",
+          "meaning": "DOID:0040084"
+        },
+        {
+          "text": "swine influenza",
+          "meaning": "DOID:0050211"
+        },
+        {
+          "text": "tetanus",
+          "meaning": "DOID:11338"
+        },
+        {
+          "text": "ulcerative colitis",
+          "meaning": "DOID:8577"
+        },
+        {
+          "text": "human immunodeficiency virus infectious disease",
+          "meaning": "DOID:526"
+        },
+        {
+          "text": "interstitial nephritis",
+          "meaning": "DOID:1063"
+        },
+        {
+          "text": "cystinosis",
+          "meaning": "DOID:1064"
+        },
+        {
+          "text": "hemolytic-uremic syndrome",
+          "meaning": "DOID:12554"
+        },
+        {
+          "text": "kidney cortex necrosis",
+          "meaning": "DOID:2973"
+        },
+        {
+          "text": "food allergy",
+          "meaning": "DOID:3044"
         }
       ]
     },
@@ -1936,6 +2462,7 @@
         "StudyArm"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1950,6 +2477,7 @@
         "StudyArm"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13303,9 +13831,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-02-18T12:57:43",
-  "source_file_size": 198052,
-  "generation_date": "2025-02-18T12:57:45",
+  "source_file_date": "2025-02-18T17:41:27",
+  "source_file_size": 209943,
+  "generation_date": "2025-02-18T17:41:29",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

@@ -2783,10 +2783,58 @@
         "DiseaseOntology": {
             "description": "",
             "enum": [
-                "healthy",
                 "COVID-19",
                 "Plasmodium falciparum malaria",
-                "dengue hemorrhagic fever"
+                "dengue hemorrhagic fever",
+                "dengue disease",
+                "chikungunya",
+                "upper respiratory tract disease",
+                "encephalitis",
+                "West Nile fever",
+                "Zika fever",
+                "meningitis",
+                "healthy",
+                "influenza",
+                "human cytomegalovirus infection",
+                "end stage renal disease",
+                "West Nile encephalitis",
+                "hepatitis C",
+                "meningoencephalitis",
+                "urinary tract obstruction",
+                "pharyngitis",
+                "malaria",
+                "tuberculosis",
+                "avian influenza",
+                "herpes zoster",
+                "intestinal infectious disease",
+                "yellow fever",
+                "focal segmental glomerulosclerosis",
+                "cystic kidney disease",
+                "breast cancer",
+                "celiac disease",
+                "chickenpox",
+                "psoriasis",
+                "diphtheria",
+                "Ebola hemorrhagic fever",
+                "childhood type dermatomyositis",
+                "cholera",
+                "hepatitis B",
+                "hepatitis A",
+                "pustulosis of palm and sole",
+                "meningococcal meningitis",
+                "smallpox",
+                "type 2 diabetes mellitus",
+                "pertussis",
+                "Streptococcus pneumonia",
+                "swine influenza",
+                "tetanus",
+                "ulcerative colitis",
+                "human immunodeficiency virus infectious disease",
+                "interstitial nephritis",
+                "cystinosis",
+                "hemolytic-uremic syndrome",
+                "kidney cortex necrosis",
+                "food allergy"
             ],
             "title": "DiseaseOntology",
             "type": "string"
@@ -2910,6 +2958,8 @@
                 "Hispanic or Latino",
                 "Not Hispanic or Latino",
                 "Other",
+                "ethnicity: not specified",
+                "ethnicity: other",
                 "African",
                 "African-American",
                 "Arab",
@@ -2937,13 +2987,90 @@
         "ExposureMaterialOntology": {
             "description": "",
             "enum": [
-                "Influenza A virus",
-                "Mycobacterium tuberculosis",
-                "Plasmodium falciparum",
-                "Human gammaherpesvirus 4",
-                "Human betaherpesvirus 5",
+                "2008-2009 trivalent influenza vaccine",
+                "2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008)",
+                "ACWY Vax",
+                "Ad35.CS.01 malaria vaccine",
+                "Alphainfluenzavirus",
+                "BCG Vaccine",
+                "Betainfluenzavirus",
+                "Bordetella",
+                "Bordetella parapertussis",
+                "Bordetella pertussis",
+                "Bundibugyo virus",
+                "Chikungunya virus",
+                "Clostridium tetani",
+                "Corynebacterium diphtheriae",
+                "Cytomegalovirus",
+                "Dengue virus",
                 "Diphtheria-Tetanus-Pertussis vaccine",
-                "Dryvax"
+                "Dryvax",
+                "Engerix-B",
+                "FluMist",
+                "Fluarix",
+                "Fluvirin",
+                "Fluzone",
+                "Gammainfluenzavirus",
+                "H1N1 subtype",
+                "HEPLISAV-B",
+                "Hepacivirus C",
+                "Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]",
+                "Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]",
+                "Hepatitis B virus",
+                "Hepatitis B virus vaccine",
+                "Hepatovirus A",
+                "Human alphaherpesvirus 3",
+                "Human immunodeficiency virus",
+                "Influenza A H1N1 2009 Monovalent Vaccine Novartis",
+                "Influenza A virus",
+                "Influenza C virus",
+                "Influenza virus vaccine",
+                "LC16m8",
+                "MRKAd5 HIV-1 gag/pol/nef",
+                "MVA85A",
+                "Menactra",
+                "Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C",
+                "Menveo",
+                "Mycobacterium tuberculosis",
+                "Mycobacterium tuberculosis vaccine",
+                "Neisseria meningitidis",
+                "Neisseria meningitidis vaccine",
+                "Orthoebolavirus",
+                "P. falciparum RTS,S/AS01",
+                "Plasmodium",
+                "Plasmodium falciparum",
+                "Plasmodium falciparum vaccine",
+                "Pneumovax 23",
+                "SARS-CoV-2",
+                "Smallpox virus vaccine",
+                "Stamaril",
+                "Streptococcus pneumoniae",
+                "Sudan ebolavirus",
+                "Variola virus",
+                "Vibrio cholerae",
+                "West Nile virus",
+                "YF-Vax",
+                "Yellow fever 17D vaccine vector",
+                "Yellow fever virus",
+                "Zaire ebolavirus",
+                "Zika virus",
+                "Zostavax",
+                "bacterial vaccine",
+                "bacterium",
+                "diphtheria, tetanus and whole cell pertussis vaccine",
+                "eukaryote",
+                "live attenuated influenza vaccine",
+                "microbial eukaryotic vaccine",
+                "organism",
+                "rVSV-EBOV",
+                "unidentified influenza virus",
+                "unidentified organism",
+                "vaccine",
+                "viral vaccine",
+                "virus",
+                "yellow fever virus vaccine",
+                "Human gammaherpesvirus 4",
+                "Human betaherpesvirus 5"
             ],
             "title": "ExposureMaterialOntology",
             "type": "string"
@@ -3516,15 +3643,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -3636,15 +3769,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -3953,7 +4092,10 @@
                 "hospital discharge",
                 "treatment",
                 "fertilization",
-                "physical examination"
+                "physical examination",
+                "recovery",
+                "birth",
+                "exposure to infectious agent"
             ],
             "title": "LifeEventProcessOntology",
             "type": "string"
@@ -4719,6 +4861,9 @@
                 "Native Hawaiian or Other Pacific Islander",
                 "White",
                 "Other",
+                "race: not specified",
+                "race: other",
+                "race: unknown",
                 "African American",
                 "Asian or Pacific Islander",
                 "Black",
@@ -7450,15 +7595,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -7500,15 +7651,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
