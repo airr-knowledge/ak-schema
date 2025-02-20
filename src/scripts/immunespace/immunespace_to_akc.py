@@ -101,17 +101,8 @@ def get_valid_age_fields(immport_db):
     return list_to_query_repr(age_names)
 
 def get_participants(hcc_db, immport_db, investigation_id):
-    #    akc_id
-    #    study_arm
-    #    species -> always human
-    #    biological_sex
-    # x  phenotypic_sex
-    #    age -> age. in immunespace is at "Age at Study Day 0"
-    #    age_unit
-    #    age_event -> now  "Age at Study Day 0" (alternative could be: e.event_type = vaccination)
+    # x  phenotypic_sex -> not in immunespace/immport
     #    race -> how to deal with race & race_specify?
-    #    ethnicity
-    #    geolocation
     #    strain -> not needed for human
 
     # Valid age fields are determined based on immport db values (age fields defined in lk_age_event, not overlapping with lk_t0_event)
@@ -132,7 +123,7 @@ def get_participants(hcc_db, immport_db, investigation_id):
     participants = []
 
     for index, row in participant_table.iterrows():
-        participants.append(Participant(akc_id=format_id(investigation_id, 'participant', row['participant_id']), # @Scott/James not sure if subject ids are the same across studies or if we'd anyways still want to combine study+subject ID here
+        participants.append(Participant(akc_id=format_id(investigation_id, 'participant', row['participant_id']),
                                         study_arm=format_id(investigation_id, 'arm', row['arm_id']),
                                         species="Homo sapiens (human)", # todo: SpeciesOntology dynamic fields doesnt work yet #"NCBITAXON:9606"
                                         biological_sex=safe_get_ontology(BiologicalSexOntology, row['biological_sex']),
@@ -147,16 +138,7 @@ def get_participants(hcc_db, immport_db, investigation_id):
 
 
 def get_references(hcc_db, investigation_id):
-    #    source_uri: @Scott: difference between source_uri (1) and sources (multiple)? immunespace has doi and pmid
-    #    sources
     #    investigations -> can only list one! there is only one for an immunespace study.
-    #    title
-    #    authors
-    #    journal
-    #    issue
-    #    month
-    #    year
-    #    pages
 
     publications_table = read_db_table_from_name_and_id(hcc_db, "publication", investigation_id, "study_accession")
 
@@ -175,7 +157,7 @@ def get_references(hcc_db, investigation_id):
                                       sources=sources,
                                       investigations=format_id(investigation_id, "investigation", investigation_id), # todo how to deal with multiple investigations if I only know 1?
                                       title=row["title"],
-                                      authors=row["authors"].split(", ") if row["authors"] is not None else None, # @James is the format always the same?
+                                      authors=row["authors"].split(", ") if row["authors"] is not None else None, # todo is the format always the same?
                                       journal=row["journal"],
                                       issue=row["issue"],
                                       month=row["month"],
@@ -200,12 +182,12 @@ def get_udpated_release_data(immport_db, investigation_id):
         return release_date_table["DATA_RELEASE_DATE"][0]
 
 def get_investigation_partial(hcc_db, immport_db, investigation_id):
-    # x   study_type -> @James I do not believe there is a 'study type' that can be inferred from these tables?
-    # x   archival_id -> "Identifier for external archival resource for the investigation, e.g., BioProject" @Scott curie to https://immunespace.org/query/study/SDY460 sufficient? can also retrieve BioProject from linked ImmPort data
+    # x   study_type -> ?
+    # x   archival_id -> "Identifier for external archival resource for the investigation, e.g., BioProject"
     #     inclusion_criteria -> retrieved from immport (should it be in immuneSpace also?). I changed the type of this to 'multivalued'.
     #     exclusion_criteria
     #     release_date -> format: 2016-03-18 00:00:00
-    #     update_date -> @James add to ImmuneSpace? or just retrieve from ImmPort?
+    #     update_date -> add to ImmuneSpace?
     #     participants
     # x   assays -> ! relevant data not in immuneSpace now, should be added?
     # x   simulations -> not needed
