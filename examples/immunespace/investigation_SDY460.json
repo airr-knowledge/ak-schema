@@ -1,0 +1,1605 @@
+{
+  "investigations": {
+    "ImmuneSpace:investigation-SDY460": {
+      "akc_id": "ImmuneSpace:investigation-SDY460",
+      "study_type": "OBI:0000066",
+      "inclusion_criteria": [
+        "Age 18-30, 60-79, or 80-100 years, inclusive at time of initial enrollment",
+        "General good health and ambulatory at time of enrollment",
+        "No acute illness at time of vaccination",
+        "Willing and able to sign Informed Consent",
+        "Available for follow-up for the planned duration of the study",
+        "Acceptable medical history by screening evaluation and brief clinical assessment",
+        "All female subjects of childbearing potential must use an acceptable method of contraception and not become pregnant for the duration of the clinical phase of the study"
+      ],
+      "exclusion_criteria": [
+        "Off-study vaccination during the period of the study",
+        "Allergy to egg or egg products",
+        "Allergy to vaccine components, including thimerosal",
+        "Active systemic or serious concurrent illness, including febrile illness on the day of vaccination",
+        "History of immunodeficiency",
+        "Any chronic disorder which, in the opinion of the investigator, might jeopardize volunteer safety or compliance with the protocol.",
+        "Blood pressure > 150 systolic or > 95 diastolic at Visit 1",
+        "Chronic Hepatitis B or C",
+        "Recent or current use of systemic immunosuppressive medication, including glucocorticoids (corticosteroid nasal sprays and inhaled steroids are permissible). Use of oral steroids (< 20mg predisone - equivalent/day) may be acceptable after review by the investigator.",
+        "Autoimmune disease",
+        "History of blood dyscrasias or hemoglobinopathies requiring regular medical follow up or hospitalization during the preceding year",
+        "Use of anti-coagulation medication such as Coumadin or Lovenox, or anti-platelet agents such as aspirin, Plavix, Aggrenox must be reviewed by investigator to determine if this would affect the volunteer's safety.",
+        "Receipt of blood or blood products within the past 6 months",
+        "Medical or psychiatric condition or occupational responsibilities that preclude subject compliance with the protocol",
+        "Receipt of inactivated vaccine within 14 days prior to vaccination",
+        "Receipt of live, attenuated vaccine within 60 days of vaccination",
+        "History of Guillain-Barre Syndrome.",
+        "Pregnant or lactating woman",
+        "Use of investigational agents within 30 days prior to enrollment",
+        "Donation of the equivalent of a unit of blood within 6 weeks prior to enrollment",
+        "Any condition which, in the opinion of the investigator, might interfere with volunteer safety, study objectives or the ability of the participant to understand or comply with the study protocol."
+      ],
+      "release_date": "2016-03-18T00:00:00",
+      "update_date": "2018-05-10T00:00:00",
+      "participants": [
+        "ImmuneSpace:participant-SUB134236",
+        "ImmuneSpace:participant-SUB134238",
+        "ImmuneSpace:participant-SUB134239",
+        "ImmuneSpace:participant-SUB134241",
+        "ImmuneSpace:participant-SUB134243",
+        "ImmuneSpace:participant-SUB134245",
+        "ImmuneSpace:participant-SUB134246",
+        "ImmuneSpace:participant-SUB134247",
+        "ImmuneSpace:participant-SUB134248",
+        "ImmuneSpace:participant-SUB134249",
+        "ImmuneSpace:participant-SUB134252",
+        "ImmuneSpace:participant-SUB134254",
+        "ImmuneSpace:participant-SUB134256",
+        "ImmuneSpace:participant-SUB134257",
+        "ImmuneSpace:participant-SUB134262",
+        "ImmuneSpace:participant-SUB134263",
+        "ImmuneSpace:participant-SUB134277",
+        "ImmuneSpace:participant-SUB134282",
+        "ImmuneSpace:participant-SUB134291",
+        "ImmuneSpace:participant-SUB134292",
+        "ImmuneSpace:participant-SUB134293",
+        "ImmuneSpace:participant-SUB134301",
+        "ImmuneSpace:participant-SUB134302",
+        "ImmuneSpace:participant-SUB134311",
+        "ImmuneSpace:participant-SUB134321",
+        "ImmuneSpace:participant-SUB134323",
+        "ImmuneSpace:participant-SUB134325"
+      ],
+      "documents": [
+        "PMID:24337376"
+      ]
+    }
+  },
+  "references": {
+    "PMID:24337376": {
+      "source_uri": "PMID:24337376",
+      "sources": [
+        "PMID:24337376",
+        "doi:10.4049/jimmunol.1301384"
+      ],
+      "investigations": [
+        "ImmuneSpace:investigation-SDY460"
+      ],
+      "title": "Effects of aging, cytomegalovirus infection, and EBV infection on human B cell repertoires.",
+      "authors": [
+        "Wang C",
+        "Liu Y",
+        "Xu LT",
+        "Jackson KJ",
+        "Roskin KM",
+        "Pham TD",
+        "Laserson J",
+        "Marshall EL",
+        "Seo K",
+        "Lee JY",
+        "Furman D",
+        "Koller D",
+        "Dekker CL",
+        "Davis MM",
+        "Fire AZ",
+        "Boyd SD"
+      ],
+      "journal": "Journal of immunology (Baltimore, Md. : 1950)",
+      "issue": "192(2)",
+      "month": "Jan",
+      "year": 2014,
+      "pages": "603-11"
+    }
+  },
+  "study_arms": {
+    "ImmuneSpace:arm-ARM2478": {
+      "akc_id": "ImmuneSpace:arm-ARM2478",
+      "name": "Group A 2008",
+      "investigation": "ImmuneSpace:investigation-SDY460",
+      "inclusion_criteria": [
+        "18-30 year old adults"
+      ]
+    },
+    "ImmuneSpace:arm-ARM2479": {
+      "akc_id": "ImmuneSpace:arm-ARM2479",
+      "name": "Group B 2008",
+      "investigation": "ImmuneSpace:investigation-SDY460",
+      "inclusion_criteria": [
+        "60-79 year old adults"
+      ]
+    },
+    "ImmuneSpace:arm-ARM2480": {
+      "akc_id": "ImmuneSpace:arm-ARM2480",
+      "name": "Group C 2008",
+      "investigation": "ImmuneSpace:investigation-SDY460",
+      "inclusion_criteria": [
+        "80-90 year old adults"
+      ]
+    }
+  },
+  "study_events": {
+    "ImmuneSpace:plannedevent-PE0460_01": {
+      "akc_id": "ImmuneSpace:plannedevent-PE0460_01",
+      "name": "study enrollment",
+      "description": "investigation_id = SDY460\nplanned_event_id = PE0460_01\nevent_type = study enrollment\nearliest_start = 0\nlatest_start = nan\ntime_unit = day\nis_T0 = true",
+      "study_arms": [
+        "ImmuneSpace:arm-ARM2478",
+        "ImmuneSpace:arm-ARM2479",
+        "ImmuneSpace:arm-ARM2480"
+      ]
+    },
+    "ImmuneSpace:plannedevent-PV3306": {
+      "akc_id": "ImmuneSpace:plannedevent-PV3306",
+      "name": "specimen collection - blood",
+      "description": "investigation_id = SDY460\nplanned_event_id = PV3306\nevent_type = specimen collection\nevent_subtype = blood\nearliest_start = 0\nlatest_start = nan\ntime_unit = day",
+      "study_arms": [
+        "ImmuneSpace:arm-ARM2478",
+        "ImmuneSpace:arm-ARM2479",
+        "ImmuneSpace:arm-ARM2480"
+      ]
+    },
+    "ImmuneSpace:plannedevent-PV3307": {
+      "akc_id": "ImmuneSpace:plannedevent-PV3307",
+      "name": "specimen collection - blood",
+      "description": "investigation_id = SDY460\nplanned_event_id = PV3307\nevent_type = specimen collection\nevent_subtype = blood\nearliest_start = 365\nlatest_start = nan\ntime_unit = day",
+      "study_arms": [
+        "ImmuneSpace:arm-ARM2478",
+        "ImmuneSpace:arm-ARM2479",
+        "ImmuneSpace:arm-ARM2480"
+      ]
+    },
+    "ImmuneSpace:plannedevent-PE0460_02": {
+      "akc_id": "ImmuneSpace:plannedevent-PE0460_02",
+      "name": "birth",
+      "description": "investigation_id = SDY460\nplanned_event_id = PE0460_02\nevent_type = birth\nearliest_start = -10950\nlatest_start = -6570.0\ntime_unit = day",
+      "study_arms": [
+        "ImmuneSpace:arm-ARM2478"
+      ]
+    },
+    "ImmuneSpace:plannedevent-PE0460_03": {
+      "akc_id": "ImmuneSpace:plannedevent-PE0460_03",
+      "name": "birth",
+      "description": "investigation_id = SDY460\nplanned_event_id = PE0460_03\nevent_type = birth\nearliest_start = -28835\nlatest_start = -21900.0\ntime_unit = day",
+      "study_arms": [
+        "ImmuneSpace:arm-ARM2479"
+      ]
+    },
+    "ImmuneSpace:plannedevent-PE0460_04": {
+      "akc_id": "ImmuneSpace:plannedevent-PE0460_04",
+      "name": "birth",
+      "description": "investigation_id = SDY460\nplanned_event_id = PE0460_04\nevent_type = birth\nearliest_start = -32850\nlatest_start = -29200.0\ntime_unit = day",
+      "study_arms": [
+        "ImmuneSpace:arm-ARM2479"
+      ]
+    }
+  },
+  "participants": {
+    "ImmuneSpace:participant-SUB134236": {
+      "akc_id": "ImmuneSpace:participant-SUB134236",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "24.07",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134238": {
+      "akc_id": "ImmuneSpace:participant-SUB134238",
+      "study_arm": "ImmuneSpace:arm-ARM2480",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "84.06",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134239": {
+      "akc_id": "ImmuneSpace:participant-SUB134239",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "61.84",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134241": {
+      "akc_id": "ImmuneSpace:participant-SUB134241",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "24.92",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134243": {
+      "akc_id": "ImmuneSpace:participant-SUB134243",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "66.01",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134245": {
+      "akc_id": "ImmuneSpace:participant-SUB134245",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "65.52",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134246": {
+      "akc_id": "ImmuneSpace:participant-SUB134246",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "74.99",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134247": {
+      "akc_id": "ImmuneSpace:participant-SUB134247",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "62.46",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134248": {
+      "akc_id": "ImmuneSpace:participant-SUB134248",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "61.62",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134249": {
+      "akc_id": "ImmuneSpace:participant-SUB134249",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "26.01",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "race: other",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134252": {
+      "akc_id": "ImmuneSpace:participant-SUB134252",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "24.15",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "Asian",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134254": {
+      "akc_id": "ImmuneSpace:participant-SUB134254",
+      "study_arm": "ImmuneSpace:arm-ARM2480",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "85.17",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134256": {
+      "akc_id": "ImmuneSpace:participant-SUB134256",
+      "study_arm": "ImmuneSpace:arm-ARM2480",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "83.89",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134257": {
+      "akc_id": "ImmuneSpace:participant-SUB134257",
+      "study_arm": "ImmuneSpace:arm-ARM2480",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "84.51",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134262": {
+      "akc_id": "ImmuneSpace:participant-SUB134262",
+      "study_arm": "ImmuneSpace:arm-ARM2480",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "84.17",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "American Indian or Alaska Native",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134263": {
+      "akc_id": "ImmuneSpace:participant-SUB134263",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "72.98",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134277": {
+      "akc_id": "ImmuneSpace:participant-SUB134277",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "30.75",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "Asian",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134282": {
+      "akc_id": "ImmuneSpace:participant-SUB134282",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "78.72",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134291": {
+      "akc_id": "ImmuneSpace:participant-SUB134291",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "61.49",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134292": {
+      "akc_id": "ImmuneSpace:participant-SUB134292",
+      "study_arm": "ImmuneSpace:arm-ARM2479",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "68.97",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134293": {
+      "akc_id": "ImmuneSpace:participant-SUB134293",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "26.5",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134301": {
+      "akc_id": "ImmuneSpace:participant-SUB134301",
+      "study_arm": "ImmuneSpace:arm-ARM2480",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "88.75",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134302": {
+      "akc_id": "ImmuneSpace:participant-SUB134302",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "21.0",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134311": {
+      "akc_id": "ImmuneSpace:participant-SUB134311",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "27.2",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134321": {
+      "akc_id": "ImmuneSpace:participant-SUB134321",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "male",
+      "age": "23.23",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134323": {
+      "akc_id": "ImmuneSpace:participant-SUB134323",
+      "study_arm": "ImmuneSpace:arm-ARM2478",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "23.82",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "race: other",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "ImmuneSpace:participant-SUB134325": {
+      "akc_id": "ImmuneSpace:participant-SUB134325",
+      "study_arm": "ImmuneSpace:arm-ARM2480",
+      "species": "Homo sapiens (human)",
+      "biological_sex": "female",
+      "age": "84.28",
+      "age_unit": "year",
+      "age_event": "Age at Study Day 0",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino"
+    }
+  },
+  "life_events": {
+    "ImmuneSpace:event-IM21440": {
+      "akc_id": "ImmuneSpace:event-IM21440",
+      "participant": "ImmuneSpace:participant-SUB134236",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 24.07,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21441": {
+      "akc_id": "ImmuneSpace:event-IM21441",
+      "participant": "ImmuneSpace:participant-SUB134241",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 24.92,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21442": {
+      "akc_id": "ImmuneSpace:event-IM21442",
+      "participant": "ImmuneSpace:participant-SUB134249",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 26.01,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21443": {
+      "akc_id": "ImmuneSpace:event-IM21443",
+      "participant": "ImmuneSpace:participant-SUB134252",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 24.15,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21444": {
+      "akc_id": "ImmuneSpace:event-IM21444",
+      "participant": "ImmuneSpace:participant-SUB134277",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 30.75,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21445": {
+      "akc_id": "ImmuneSpace:event-IM21445",
+      "participant": "ImmuneSpace:participant-SUB134293",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 26.5,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21446": {
+      "akc_id": "ImmuneSpace:event-IM21446",
+      "participant": "ImmuneSpace:participant-SUB134302",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 21,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21447": {
+      "akc_id": "ImmuneSpace:event-IM21447",
+      "participant": "ImmuneSpace:participant-SUB134311",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 27.2,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21448": {
+      "akc_id": "ImmuneSpace:event-IM21448",
+      "participant": "ImmuneSpace:participant-SUB134321",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 23.23,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21449": {
+      "akc_id": "ImmuneSpace:event-IM21449",
+      "participant": "ImmuneSpace:participant-SUB134323",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 23.82,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21450": {
+      "akc_id": "ImmuneSpace:event-IM21450",
+      "participant": "ImmuneSpace:participant-SUB134239",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 61.84,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21451": {
+      "akc_id": "ImmuneSpace:event-IM21451",
+      "participant": "ImmuneSpace:participant-SUB134243",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 66.01,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21452": {
+      "akc_id": "ImmuneSpace:event-IM21452",
+      "participant": "ImmuneSpace:participant-SUB134245",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 65.52,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21453": {
+      "akc_id": "ImmuneSpace:event-IM21453",
+      "participant": "ImmuneSpace:participant-SUB134246",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 74.99,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21454": {
+      "akc_id": "ImmuneSpace:event-IM21454",
+      "participant": "ImmuneSpace:participant-SUB134247",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 62.46,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21455": {
+      "akc_id": "ImmuneSpace:event-IM21455",
+      "participant": "ImmuneSpace:participant-SUB134248",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 61.62,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21456": {
+      "akc_id": "ImmuneSpace:event-IM21456",
+      "participant": "ImmuneSpace:participant-SUB134263",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 72.98,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21457": {
+      "akc_id": "ImmuneSpace:event-IM21457",
+      "participant": "ImmuneSpace:participant-SUB134282",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 78.72,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21458": {
+      "akc_id": "ImmuneSpace:event-IM21458",
+      "participant": "ImmuneSpace:participant-SUB134291",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 61.49,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21459": {
+      "akc_id": "ImmuneSpace:event-IM21459",
+      "participant": "ImmuneSpace:participant-SUB134292",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 68.97,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21460": {
+      "akc_id": "ImmuneSpace:event-IM21460",
+      "participant": "ImmuneSpace:participant-SUB134238",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 84.06,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21461": {
+      "akc_id": "ImmuneSpace:event-IM21461",
+      "participant": "ImmuneSpace:participant-SUB134254",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 85.17,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21462": {
+      "akc_id": "ImmuneSpace:event-IM21462",
+      "participant": "ImmuneSpace:participant-SUB134256",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 83.89,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21463": {
+      "akc_id": "ImmuneSpace:event-IM21463",
+      "participant": "ImmuneSpace:participant-SUB134257",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 84.51,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21464": {
+      "akc_id": "ImmuneSpace:event-IM21464",
+      "participant": "ImmuneSpace:participant-SUB134262",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 84.17,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21465": {
+      "akc_id": "ImmuneSpace:event-IM21465",
+      "participant": "ImmuneSpace:participant-SUB134301",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 88.75,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-IM21466": {
+      "akc_id": "ImmuneSpace:event-IM21466",
+      "participant": "ImmuneSpace:participant-SUB134325",
+      "life_event_type": "vaccination",
+      "t0_event_type": "Age at Study Day 0",
+      "start": 84.28,
+      "time_unit": "year"
+    },
+    "ImmuneSpace:event-BS738392": {
+      "akc_id": "ImmuneSpace:event-BS738392",
+      "participant": "ImmuneSpace:participant-SUB134236",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738393": {
+      "akc_id": "ImmuneSpace:event-BS738393",
+      "participant": "ImmuneSpace:participant-SUB134238",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738394": {
+      "akc_id": "ImmuneSpace:event-BS738394",
+      "participant": "ImmuneSpace:participant-SUB134239",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738395": {
+      "akc_id": "ImmuneSpace:event-BS738395",
+      "participant": "ImmuneSpace:participant-SUB134241",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738396": {
+      "akc_id": "ImmuneSpace:event-BS738396",
+      "participant": "ImmuneSpace:participant-SUB134243",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738397": {
+      "akc_id": "ImmuneSpace:event-BS738397",
+      "participant": "ImmuneSpace:participant-SUB134245",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738398": {
+      "akc_id": "ImmuneSpace:event-BS738398",
+      "participant": "ImmuneSpace:participant-SUB134246",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738399": {
+      "akc_id": "ImmuneSpace:event-BS738399",
+      "participant": "ImmuneSpace:participant-SUB134247",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738400": {
+      "akc_id": "ImmuneSpace:event-BS738400",
+      "participant": "ImmuneSpace:participant-SUB134248",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738401": {
+      "akc_id": "ImmuneSpace:event-BS738401",
+      "participant": "ImmuneSpace:participant-SUB134249",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738402": {
+      "akc_id": "ImmuneSpace:event-BS738402",
+      "participant": "ImmuneSpace:participant-SUB134252",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738403": {
+      "akc_id": "ImmuneSpace:event-BS738403",
+      "participant": "ImmuneSpace:participant-SUB134254",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738404": {
+      "akc_id": "ImmuneSpace:event-BS738404",
+      "participant": "ImmuneSpace:participant-SUB134256",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738405": {
+      "akc_id": "ImmuneSpace:event-BS738405",
+      "participant": "ImmuneSpace:participant-SUB134257",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738406": {
+      "akc_id": "ImmuneSpace:event-BS738406",
+      "participant": "ImmuneSpace:participant-SUB134262",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738407": {
+      "akc_id": "ImmuneSpace:event-BS738407",
+      "participant": "ImmuneSpace:participant-SUB134263",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738408": {
+      "akc_id": "ImmuneSpace:event-BS738408",
+      "participant": "ImmuneSpace:participant-SUB134277",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738409": {
+      "akc_id": "ImmuneSpace:event-BS738409",
+      "participant": "ImmuneSpace:participant-SUB134282",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738410": {
+      "akc_id": "ImmuneSpace:event-BS738410",
+      "participant": "ImmuneSpace:participant-SUB134291",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738411": {
+      "akc_id": "ImmuneSpace:event-BS738411",
+      "participant": "ImmuneSpace:participant-SUB134292",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738412": {
+      "akc_id": "ImmuneSpace:event-BS738412",
+      "participant": "ImmuneSpace:participant-SUB134293",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738413": {
+      "akc_id": "ImmuneSpace:event-BS738413",
+      "participant": "ImmuneSpace:participant-SUB134301",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738414": {
+      "akc_id": "ImmuneSpace:event-BS738414",
+      "participant": "ImmuneSpace:participant-SUB134302",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738415": {
+      "akc_id": "ImmuneSpace:event-BS738415",
+      "participant": "ImmuneSpace:participant-SUB134311",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738416": {
+      "akc_id": "ImmuneSpace:event-BS738416",
+      "participant": "ImmuneSpace:participant-SUB134321",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738417": {
+      "akc_id": "ImmuneSpace:event-BS738417",
+      "participant": "ImmuneSpace:participant-SUB134323",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS738418": {
+      "akc_id": "ImmuneSpace:event-BS738418",
+      "participant": "ImmuneSpace:participant-SUB134325",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of initial vaccine administration",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965075": {
+      "akc_id": "ImmuneSpace:event-BS965075",
+      "participant": "ImmuneSpace:participant-SUB134325",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965076": {
+      "akc_id": "ImmuneSpace:event-BS965076",
+      "participant": "ImmuneSpace:participant-SUB134256",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965077": {
+      "akc_id": "ImmuneSpace:event-BS965077",
+      "participant": "ImmuneSpace:participant-SUB134238",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965078": {
+      "akc_id": "ImmuneSpace:event-BS965078",
+      "participant": "ImmuneSpace:participant-SUB134239",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965079": {
+      "akc_id": "ImmuneSpace:event-BS965079",
+      "participant": "ImmuneSpace:participant-SUB134243",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965080": {
+      "akc_id": "ImmuneSpace:event-BS965080",
+      "participant": "ImmuneSpace:participant-SUB134247",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965081": {
+      "akc_id": "ImmuneSpace:event-BS965081",
+      "participant": "ImmuneSpace:participant-SUB134248",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965082": {
+      "akc_id": "ImmuneSpace:event-BS965082",
+      "participant": "ImmuneSpace:participant-SUB134254",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965083": {
+      "akc_id": "ImmuneSpace:event-BS965083",
+      "participant": "ImmuneSpace:participant-SUB134257",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965084": {
+      "akc_id": "ImmuneSpace:event-BS965084",
+      "participant": "ImmuneSpace:participant-SUB134262",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965085": {
+      "akc_id": "ImmuneSpace:event-BS965085",
+      "participant": "ImmuneSpace:participant-SUB134263",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965086": {
+      "akc_id": "ImmuneSpace:event-BS965086",
+      "participant": "ImmuneSpace:participant-SUB134282",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965087": {
+      "akc_id": "ImmuneSpace:event-BS965087",
+      "participant": "ImmuneSpace:participant-SUB134292",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965088": {
+      "akc_id": "ImmuneSpace:event-BS965088",
+      "participant": "ImmuneSpace:participant-SUB134293",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965089": {
+      "akc_id": "ImmuneSpace:event-BS965089",
+      "participant": "ImmuneSpace:participant-SUB134301",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965090": {
+      "akc_id": "ImmuneSpace:event-BS965090",
+      "participant": "ImmuneSpace:participant-SUB134321",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965091": {
+      "akc_id": "ImmuneSpace:event-BS965091",
+      "participant": "ImmuneSpace:participant-SUB134236",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965092": {
+      "akc_id": "ImmuneSpace:event-BS965092",
+      "participant": "ImmuneSpace:participant-SUB134241",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965093": {
+      "akc_id": "ImmuneSpace:event-BS965093",
+      "participant": "ImmuneSpace:participant-SUB134245",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965094": {
+      "akc_id": "ImmuneSpace:event-BS965094",
+      "participant": "ImmuneSpace:participant-SUB134246",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965095": {
+      "akc_id": "ImmuneSpace:event-BS965095",
+      "participant": "ImmuneSpace:participant-SUB134249",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965096": {
+      "akc_id": "ImmuneSpace:event-BS965096",
+      "participant": "ImmuneSpace:participant-SUB134252",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965097": {
+      "akc_id": "ImmuneSpace:event-BS965097",
+      "participant": "ImmuneSpace:participant-SUB134277",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965098": {
+      "akc_id": "ImmuneSpace:event-BS965098",
+      "participant": "ImmuneSpace:participant-SUB134291",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965099": {
+      "akc_id": "ImmuneSpace:event-BS965099",
+      "participant": "ImmuneSpace:participant-SUB134302",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965100": {
+      "akc_id": "ImmuneSpace:event-BS965100",
+      "participant": "ImmuneSpace:participant-SUB134311",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    },
+    "ImmuneSpace:event-BS965101": {
+      "akc_id": "ImmuneSpace:event-BS965101",
+      "participant": "ImmuneSpace:participant-SUB134323",
+      "study_event": "ImmuneSpace:plannedevent-PV3306",
+      "life_event_type": "specimen collection",
+      "t0_event_type": "Time of enrollment",
+      "start": 0,
+      "time_unit": "day"
+    }
+  },
+  "immune_exposures": {
+    "ImmuneSpace:immuneexposure-IM21440": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21440",
+      "life_event": "ImmuneSpace:event-IM21440",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21441": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21441",
+      "life_event": "ImmuneSpace:event-IM21441",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21442": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21442",
+      "life_event": "ImmuneSpace:event-IM21442",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21443": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21443",
+      "life_event": "ImmuneSpace:event-IM21443",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21444": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21444",
+      "life_event": "ImmuneSpace:event-IM21444",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21445": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21445",
+      "life_event": "ImmuneSpace:event-IM21445",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21446": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21446",
+      "life_event": "ImmuneSpace:event-IM21446",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21447": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21447",
+      "life_event": "ImmuneSpace:event-IM21447",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21448": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21448",
+      "life_event": "ImmuneSpace:event-IM21448",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21449": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21449",
+      "life_event": "ImmuneSpace:event-IM21449",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21450": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21450",
+      "life_event": "ImmuneSpace:event-IM21450",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21451": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21451",
+      "life_event": "ImmuneSpace:event-IM21451",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21452": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21452",
+      "life_event": "ImmuneSpace:event-IM21452",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21453": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21453",
+      "life_event": "ImmuneSpace:event-IM21453",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21454": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21454",
+      "life_event": "ImmuneSpace:event-IM21454",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21455": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21455",
+      "life_event": "ImmuneSpace:event-IM21455",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21456": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21456",
+      "life_event": "ImmuneSpace:event-IM21456",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21457": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21457",
+      "life_event": "ImmuneSpace:event-IM21457",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21458": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21458",
+      "life_event": "ImmuneSpace:event-IM21458",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21459": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21459",
+      "life_event": "ImmuneSpace:event-IM21459",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21460": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21460",
+      "life_event": "ImmuneSpace:event-IM21460",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21461": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21461",
+      "life_event": "ImmuneSpace:event-IM21461",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21462": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21462",
+      "life_event": "ImmuneSpace:event-IM21462",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21463": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21463",
+      "life_event": "ImmuneSpace:event-IM21463",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21464": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21464",
+      "life_event": "ImmuneSpace:event-IM21464",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21465": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21465",
+      "life_event": "ImmuneSpace:event-IM21465",
+      "exposure_material": "Fluzone"
+    },
+    "ImmuneSpace:immuneexposure-IM21466": {
+      "akc_id": "ImmuneSpace:immuneexposure-IM21466",
+      "life_event": "ImmuneSpace:event-IM21466",
+      "exposure_material": "Fluzone"
+    }
+  },
+  "specimens": {
+    "ImmuneSpace:specimen-BS738392": {
+      "akc_id": "ImmuneSpace:specimen-BS738392",
+      "life_event": "ImmuneSpace:event-BS738392",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738393": {
+      "akc_id": "ImmuneSpace:specimen-BS738393",
+      "life_event": "ImmuneSpace:event-BS738393",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738394": {
+      "akc_id": "ImmuneSpace:specimen-BS738394",
+      "life_event": "ImmuneSpace:event-BS738394",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738395": {
+      "akc_id": "ImmuneSpace:specimen-BS738395",
+      "life_event": "ImmuneSpace:event-BS738395",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738396": {
+      "akc_id": "ImmuneSpace:specimen-BS738396",
+      "life_event": "ImmuneSpace:event-BS738396",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738397": {
+      "akc_id": "ImmuneSpace:specimen-BS738397",
+      "life_event": "ImmuneSpace:event-BS738397",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738398": {
+      "akc_id": "ImmuneSpace:specimen-BS738398",
+      "life_event": "ImmuneSpace:event-BS738398",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738399": {
+      "akc_id": "ImmuneSpace:specimen-BS738399",
+      "life_event": "ImmuneSpace:event-BS738399",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738400": {
+      "akc_id": "ImmuneSpace:specimen-BS738400",
+      "life_event": "ImmuneSpace:event-BS738400",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738401": {
+      "akc_id": "ImmuneSpace:specimen-BS738401",
+      "life_event": "ImmuneSpace:event-BS738401",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738402": {
+      "akc_id": "ImmuneSpace:specimen-BS738402",
+      "life_event": "ImmuneSpace:event-BS738402",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738403": {
+      "akc_id": "ImmuneSpace:specimen-BS738403",
+      "life_event": "ImmuneSpace:event-BS738403",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738404": {
+      "akc_id": "ImmuneSpace:specimen-BS738404",
+      "life_event": "ImmuneSpace:event-BS738404",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738405": {
+      "akc_id": "ImmuneSpace:specimen-BS738405",
+      "life_event": "ImmuneSpace:event-BS738405",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738406": {
+      "akc_id": "ImmuneSpace:specimen-BS738406",
+      "life_event": "ImmuneSpace:event-BS738406",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738407": {
+      "akc_id": "ImmuneSpace:specimen-BS738407",
+      "life_event": "ImmuneSpace:event-BS738407",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738408": {
+      "akc_id": "ImmuneSpace:specimen-BS738408",
+      "life_event": "ImmuneSpace:event-BS738408",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738409": {
+      "akc_id": "ImmuneSpace:specimen-BS738409",
+      "life_event": "ImmuneSpace:event-BS738409",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738410": {
+      "akc_id": "ImmuneSpace:specimen-BS738410",
+      "life_event": "ImmuneSpace:event-BS738410",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738411": {
+      "akc_id": "ImmuneSpace:specimen-BS738411",
+      "life_event": "ImmuneSpace:event-BS738411",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738412": {
+      "akc_id": "ImmuneSpace:specimen-BS738412",
+      "life_event": "ImmuneSpace:event-BS738412",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738413": {
+      "akc_id": "ImmuneSpace:specimen-BS738413",
+      "life_event": "ImmuneSpace:event-BS738413",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738414": {
+      "akc_id": "ImmuneSpace:specimen-BS738414",
+      "life_event": "ImmuneSpace:event-BS738414",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738415": {
+      "akc_id": "ImmuneSpace:specimen-BS738415",
+      "life_event": "ImmuneSpace:event-BS738415",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738416": {
+      "akc_id": "ImmuneSpace:specimen-BS738416",
+      "life_event": "ImmuneSpace:event-BS738416",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738417": {
+      "akc_id": "ImmuneSpace:specimen-BS738417",
+      "life_event": "ImmuneSpace:event-BS738417",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS738418": {
+      "akc_id": "ImmuneSpace:specimen-BS738418",
+      "life_event": "ImmuneSpace:event-BS738418",
+      "specimen_type": "peripheral blood mononuclear cell"
+    },
+    "ImmuneSpace:specimen-BS965075": {
+      "akc_id": "ImmuneSpace:specimen-BS965075",
+      "life_event": "ImmuneSpace:event-BS965075",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965076": {
+      "akc_id": "ImmuneSpace:specimen-BS965076",
+      "life_event": "ImmuneSpace:event-BS965076",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965077": {
+      "akc_id": "ImmuneSpace:specimen-BS965077",
+      "life_event": "ImmuneSpace:event-BS965077",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965078": {
+      "akc_id": "ImmuneSpace:specimen-BS965078",
+      "life_event": "ImmuneSpace:event-BS965078",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965079": {
+      "akc_id": "ImmuneSpace:specimen-BS965079",
+      "life_event": "ImmuneSpace:event-BS965079",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965080": {
+      "akc_id": "ImmuneSpace:specimen-BS965080",
+      "life_event": "ImmuneSpace:event-BS965080",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965081": {
+      "akc_id": "ImmuneSpace:specimen-BS965081",
+      "life_event": "ImmuneSpace:event-BS965081",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965082": {
+      "akc_id": "ImmuneSpace:specimen-BS965082",
+      "life_event": "ImmuneSpace:event-BS965082",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965083": {
+      "akc_id": "ImmuneSpace:specimen-BS965083",
+      "life_event": "ImmuneSpace:event-BS965083",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965084": {
+      "akc_id": "ImmuneSpace:specimen-BS965084",
+      "life_event": "ImmuneSpace:event-BS965084",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965085": {
+      "akc_id": "ImmuneSpace:specimen-BS965085",
+      "life_event": "ImmuneSpace:event-BS965085",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965086": {
+      "akc_id": "ImmuneSpace:specimen-BS965086",
+      "life_event": "ImmuneSpace:event-BS965086",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965087": {
+      "akc_id": "ImmuneSpace:specimen-BS965087",
+      "life_event": "ImmuneSpace:event-BS965087",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965088": {
+      "akc_id": "ImmuneSpace:specimen-BS965088",
+      "life_event": "ImmuneSpace:event-BS965088",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965089": {
+      "akc_id": "ImmuneSpace:specimen-BS965089",
+      "life_event": "ImmuneSpace:event-BS965089",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965090": {
+      "akc_id": "ImmuneSpace:specimen-BS965090",
+      "life_event": "ImmuneSpace:event-BS965090",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965091": {
+      "akc_id": "ImmuneSpace:specimen-BS965091",
+      "life_event": "ImmuneSpace:event-BS965091",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965092": {
+      "akc_id": "ImmuneSpace:specimen-BS965092",
+      "life_event": "ImmuneSpace:event-BS965092",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965093": {
+      "akc_id": "ImmuneSpace:specimen-BS965093",
+      "life_event": "ImmuneSpace:event-BS965093",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965094": {
+      "akc_id": "ImmuneSpace:specimen-BS965094",
+      "life_event": "ImmuneSpace:event-BS965094",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965095": {
+      "akc_id": "ImmuneSpace:specimen-BS965095",
+      "life_event": "ImmuneSpace:event-BS965095",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965096": {
+      "akc_id": "ImmuneSpace:specimen-BS965096",
+      "life_event": "ImmuneSpace:event-BS965096",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965097": {
+      "akc_id": "ImmuneSpace:specimen-BS965097",
+      "life_event": "ImmuneSpace:event-BS965097",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965098": {
+      "akc_id": "ImmuneSpace:specimen-BS965098",
+      "life_event": "ImmuneSpace:event-BS965098",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965099": {
+      "akc_id": "ImmuneSpace:specimen-BS965099",
+      "life_event": "ImmuneSpace:event-BS965099",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965100": {
+      "akc_id": "ImmuneSpace:specimen-BS965100",
+      "life_event": "ImmuneSpace:event-BS965100",
+      "specimen_type": "blood plasma"
+    },
+    "ImmuneSpace:specimen-BS965101": {
+      "akc_id": "ImmuneSpace:specimen-BS965101",
+      "life_event": "ImmuneSpace:event-BS965101",
+      "specimen_type": "blood plasma"
+    }
+  },
+  "@type": "AIRRKnowledgeCommons"
+}

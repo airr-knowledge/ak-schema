@@ -1,13 +1,10 @@
 from src.ak_schema.datamodel.ak_schema import *
+from linkml_runtime.dumpers import yaml_dumper, json_dumper
 
 import pandas as pd
 import sqlite3
-
-
-pd.set_option('display.max_columns', None)
-
-immport_db = '/Users/lscheffer/PycharmProjects/ak-schema/src/data/immunespace_example_data/immport_nanobot.db'
-hcc_kb_db = '/Users/lscheffer/PycharmProjects/ak-schema/src/data/immunespace_example_data/hcc_kb_nanobot.db'
+import os
+from pathlib import Path
 
 
 def list_tables_from_db(db_path):
@@ -59,29 +56,11 @@ def table_to_permissible_values(hcc_db, table_name, label_name="label", curie_na
         print(f"{offset}  {row[label_name]}:")
         print(f"{offset}    meaning: {row[curie_name]}")
 
-# def read_db_table_from_name_conditional(db_path, table_name, conditional_str):
-#     with sqlite3.connect(db_path) as db_connection:
-#         df = pd.read_sql_query(f"SELECT * FROM {table_name} {conditional_str}", db_connection)
-#
-#     return df
-
-def whereis(field_to_look_for, db_path):
-    '''Utility function for finding tables containing a certain column name'''
-    all_tables = list_tables_from_db(db_path)
-
-    for table_name in all_tables:
-        try:
-            imported_table = read_db_table_from_name(db_path, table_name)
-            if field_to_look_for.upper() in [col.upper() for col in imported_table.columns]:
-                if len(imported_table) > 0:
-                    print("-", table_name)
-                    print(imported_table)
-                else:
-                    print("-", table_name, "(empty)")
-        except Exception:
-            pass
 
 def format_id(investigation_id, item_name, item_id):
+    if item_id is None:
+        return None
+
     # todo: these are not really curie's (only ImmuneSpace:investigation_id would be a valid curie)
     # could include investigation_id
     return f"ImmuneSpace:{item_name}-{item_id}"
@@ -98,7 +77,8 @@ def get_study_arms(hcc_db, investigation_id):
     for index, row in arm_table.iterrows():
         study_arms.append(
             StudyArm(akc_id=format_id(investigation_id, 'arm', row['arm_id']),
-                     investigation=f"ImmuneSpace:{row['investigation_id']}",
+                     investigation=format_id(investigation_id, 'investigation', row['investigation_id']),
+                     name=str(row["arm_name"]),
                      inclusion_criteria=str(row["arm_description"]),
                      exclusion_criteria=None))
 
@@ -153,7 +133,7 @@ def get_participants(hcc_db, immport_db, investigation_id):
 
     for index, row in participant_table.iterrows():
         participants.append(Participant(akc_id=format_id(investigation_id, 'participant', row['participant_id']), # @Scott/James not sure if subject ids are the same across studies or if we'd anyways still want to combine study+subject ID here
-                                        study_arm=f"ImmuneSpace:{row['arm_id']}",
+                                        study_arm=format_id(investigation_id, 'arm', row['arm_id']),
                                         species="Homo sapiens (human)", # todo: SpeciesOntology dynamic fields doesnt work yet #"NCBITAXON:9606"
                                         biological_sex=safe_get_ontology(BiologicalSexOntology, row['biological_sex']),
                                         age=row['start'],
@@ -193,7 +173,7 @@ def get_references(hcc_db, investigation_id):
 
         publications.append(Reference(source_uri=Curie(f"PMID:{row['pubmed_id']}"),
                                       sources=sources,
-                                      investigations=f"ImmuneSpace:{investigation_id}", # todo how to deal with multiple investigations if I only know 1?
+                                      investigations=format_id(investigation_id, "investigation", investigation_id), # todo how to deal with multiple investigations if I only know 1?
                                       title=row["title"],
                                       authors=row["authors"].split(", ") if row["authors"] is not None else None, # @James is the format always the same?
                                       journal=row["journal"],
@@ -303,7 +283,7 @@ def get_life_events(hcc_db, investigation_id):
     for index, row in events_table.iterrows():
         life_events.append(LifeEvent(akc_id=format_id(investigation_id, 'event', row['event_id']),
                                      participant=format_id(investigation_id, 'participant', row['participant_id']),
-                                     study_event=format_id(investigation_id, 'plannedvisit', row['planned_visit_id']),
+                                     study_event=format_id(investigation_id, 'plannedevent', row['planned_visit_id']),
                                      life_event_type=safe_get_ontology(LifeEventProcessOntology, row['event_type']),
                                      geolocation=safe_get_ontology(GeolocationOntology, row['geolocation']),
                                      t0_event=row['t0_event'],
@@ -449,6 +429,22 @@ def get_akc_container(hcc_db, immport_db, investigation_id):
                                 datasets=get_datasets(hcc_db, investigation_id),
                                 conclusions=conclusions)
 
+def main():
+    # todo: much of this stuff should be moved to a make file
+
+    ak_schema_root = Path(os.path.dirname(__file__)) / "../../../"
+
+    investigation_id = "SDY460"
+    immport_db = ak_schema_root / "src/data/immunespace_example_data/immport_nanobot.db"
+    hcc_db = ak_schema_root / "src/data/immunespace_example_data/hcc_kb_nanobot.db"
+    output_file = ak_schema_root / f"examples/immunespace/investigation_{investigation_id}.json"
+
+    akc_container = get_akc_container(hcc_db, immport_db, investigation_id)
+
+    with open(output_file, "w") as file:
+        print(json_dumper.dumps(akc_container), file=file)
+
+# main()
 
 
 # Note: can also get from immPort
