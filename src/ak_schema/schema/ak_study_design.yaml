@@ -430,65 +430,66 @@ enums:
       pet shop mouse:
   LifeEventProcessOntology:
     permissible_values: # these originate from ImmuneSpace
-      death:
+      Death:
         meaning: UBERON:0000071
-      unknown exposure:
+      Unknown exposure:
         meaning: ONTIE:0003310
-      occurrence of disease:
+      Occurrence of disease:
         meaning: OGMS:0000063
-      occurrence of infectious disease:
+      Occurrence of infectious disease:
         meaning: ONTIE:0003317
-      occurrence of allergic disease:
+      Occurrence of allergic disease:
         meaning: ONTIE:0003318
-      exposure to substance without evidence for disease:
+      Exposure to substance without evidence for disease:
         meaning: ONTIE:0003305
-      infection without disease:
+      Infection without disease:
         meaning: ONTIE:0003424
-      documented exposure without evidence for disease:
+      Documented exposure without evidence for disease:
         meaning: ONTIE:0003307
-      exposure with existing immune reactivity without evidence for disease:
+        aliases: [documented exposure without evidence for disease]
+      Exposure with existing immune reactivity without evidence for disease:
         meaning: OBI:1110061
-      environmental exposure to endemic/ubiquitous agent without evidence for disease:
+      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
         meaning: ONTIE:0003308
-      administering substance in vivo:
+      Edministering substance in vivo:
         meaning: OBI:0600007
-      administration to cause disease:
+      Edministration to cause disease:
         meaning: OBI:0003413
-      pathogen challenge:
+      Pathogen challenge:
         meaning: OBI:0000712
-      vaccination:
+      Vaccination:
         meaning: VO:0000002
-      administration to prevent or reduce disease:
+      Administration to prevent or reduce disease:
         meaning: OBI:0003414
-      prophylactic vaccination:
+      Prophylactic vaccination:
         meaning: VO:0005374
-      therapeutic vaccination:
+      Therapeutic vaccination:
         meaning: VO:0005373
-      transplant/transfusion:
+      Transplant/transfusion:
         meaning: OGMS:0000143
-      transfusion:
+      Transfusion:
         meaning: OGMS:0000145
-      solid organ transplant:
+      Solid organ transplant:
         meaning: OGMS:0000144
-      no exposure:
+      No exposure:
         meaning: ONTIE:0003309
-      specimen collection:
+      Specimen collection:
         meaning: OBI:0000659
-      study enrollment:
+      Study enrollment:
         meaning: OBI:0600004
-      hospitalization:
+      Hospitalization:
         meaning: OGMS:0000098
-      hospital discharge:
+      Hospital discharge:
         meaning:
-      treatment:
+      Treatment:
         meaning: OGMS:0000090
-      fertilization:
+      Fertilization:
         meaning: GO:0009566
-      physical examination:
+      Physical examination:
         meaning: OGMS:0000057
-      recovery: # these remain 'to do' in ImmuneSpace
-      birth:
-      exposure to infectious agent:
+      Recovery: # these remain 'to do' in ImmuneSpace
+      Birth:
+      Exposure to infectious agent:
   ExposureMaterialOntology:
     permissible_values: # following values are from ImmuneSpace:
       2008-2009 trivalent influenza vaccine:

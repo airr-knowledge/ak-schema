@@ -829,124 +829,127 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
-          "text": "death",
+          "text": "Death",
           "meaning": "UBERON:0000071"
         },
         {
-          "text": "unknown exposure",
+          "text": "Unknown exposure",
           "meaning": "ONTIE:0003310"
         },
         {
-          "text": "occurrence of disease",
+          "text": "Occurrence of disease",
           "meaning": "OGMS:0000063"
         },
         {
-          "text": "occurrence of infectious disease",
+          "text": "Occurrence of infectious disease",
           "meaning": "ONTIE:0003317"
         },
         {
-          "text": "occurrence of allergic disease",
+          "text": "Occurrence of allergic disease",
           "meaning": "ONTIE:0003318"
         },
         {
-          "text": "exposure to substance without evidence for disease",
+          "text": "Exposure to substance without evidence for disease",
           "meaning": "ONTIE:0003305"
         },
         {
-          "text": "infection without disease",
+          "text": "Infection without disease",
           "meaning": "ONTIE:0003424"
         },
         {
-          "text": "documented exposure without evidence for disease",
-          "meaning": "ONTIE:0003307"
+          "text": "Documented exposure without evidence for disease",
+          "meaning": "ONTIE:0003307",
+          "aliases": [
+            "documented exposure without evidence for disease"
+          ]
         },
         {
-          "text": "exposure with existing immune reactivity without evidence for disease",
+          "text": "Exposure with existing immune reactivity without evidence for disease",
           "meaning": "OBI:1110061"
         },
         {
-          "text": "environmental exposure to endemic/ubiquitous agent without evidence for disease",
+          "text": "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
           "meaning": "ONTIE:0003308"
         },
         {
-          "text": "administering substance in vivo",
+          "text": "Edministering substance in vivo",
           "meaning": "OBI:0600007"
         },
         {
-          "text": "administration to cause disease",
+          "text": "Edministration to cause disease",
           "meaning": "OBI:0003413"
         },
         {
-          "text": "pathogen challenge",
+          "text": "Pathogen challenge",
           "meaning": "OBI:0000712"
         },
         {
-          "text": "vaccination",
+          "text": "Vaccination",
           "meaning": "VO:0000002"
         },
         {
-          "text": "administration to prevent or reduce disease",
+          "text": "Administration to prevent or reduce disease",
           "meaning": "OBI:0003414"
         },
         {
-          "text": "prophylactic vaccination",
+          "text": "Prophylactic vaccination",
           "meaning": "VO:0005374"
         },
         {
-          "text": "therapeutic vaccination",
+          "text": "Therapeutic vaccination",
           "meaning": "VO:0005373"
         },
         {
-          "text": "transplant/transfusion",
+          "text": "Transplant/transfusion",
           "meaning": "OGMS:0000143"
         },
         {
-          "text": "transfusion",
+          "text": "Transfusion",
           "meaning": "OGMS:0000145"
         },
         {
-          "text": "solid organ transplant",
+          "text": "Solid organ transplant",
           "meaning": "OGMS:0000144"
         },
         {
-          "text": "no exposure",
+          "text": "No exposure",
           "meaning": "ONTIE:0003309"
         },
         {
-          "text": "specimen collection",
+          "text": "Specimen collection",
           "meaning": "OBI:0000659"
         },
         {
-          "text": "study enrollment",
+          "text": "Study enrollment",
           "meaning": "OBI:0600004"
         },
         {
-          "text": "hospitalization",
+          "text": "Hospitalization",
           "meaning": "OGMS:0000098"
         },
         {
-          "text": "hospital discharge"
+          "text": "Hospital discharge"
         },
         {
-          "text": "treatment",
+          "text": "Treatment",
           "meaning": "OGMS:0000090"
         },
         {
-          "text": "fertilization",
+          "text": "Fertilization",
           "meaning": "GO:0009566"
         },
         {
-          "text": "physical examination",
+          "text": "Physical examination",
           "meaning": "OGMS:0000057"
         },
         {
-          "text": "recovery"
+          "text": "Recovery"
         },
         {
-          "text": "birth"
+          "text": "Birth"
         },
         {
-          "text": "exposure to infectious agent"
+          "text": "Exposure to infectious agent"
         }
       ]
     },
@@ -13831,9 +13834,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-03-04T15:34:03",
-  "source_file_size": 209943,
-  "generation_date": "2025-03-04T15:34:06",
+  "source_file_date": "2025-03-04T15:43:28",
+  "source_file_size": 210019,
+  "generation_date": "2025-03-04T15:43:30",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-04T15:34:07
+# Generation date: 2025-03-04T15:43:32
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -4749,26 +4749,26 @@ class StrainEnum(EnumDefinitionImpl):
 
 class LifeEventProcessOntology(EnumDefinitionImpl):
 
-    death = PermissibleValue(
-        text="death",
+    Death = PermissibleValue(
+        text="Death",
         meaning=UBERON["0000071"])
-    vaccination = PermissibleValue(
-        text="vaccination",
+    Vaccination = PermissibleValue(
+        text="Vaccination",
         meaning=VO["0000002"])
-    transfusion = PermissibleValue(
-        text="transfusion",
+    Transfusion = PermissibleValue(
+        text="Transfusion",
         meaning=OGMS["0000145"])
-    hospitalization = PermissibleValue(
-        text="hospitalization",
+    Hospitalization = PermissibleValue(
+        text="Hospitalization",
         meaning=OGMS["0000098"])
-    treatment = PermissibleValue(
-        text="treatment",
+    Treatment = PermissibleValue(
+        text="Treatment",
         meaning=OGMS["0000090"])
-    fertilization = PermissibleValue(
-        text="fertilization",
+    Fertilization = PermissibleValue(
+        text="Fertilization",
         meaning=GO["0009566"])
-    recovery = PermissibleValue(text="recovery")
-    birth = PermissibleValue(text="birth")
+    Recovery = PermissibleValue(text="Recovery")
+    Birth = PermissibleValue(text="Birth")
 
     _defn = EnumDefinition(
         name="LifeEventProcessOntology",
@@ -4776,94 +4776,94 @@ class LifeEventProcessOntology(EnumDefinitionImpl):
 
     @classmethod
     def _addvals(cls):
-        setattr(cls, "unknown exposure",
+        setattr(cls, "Unknown exposure",
             PermissibleValue(
-                text="unknown exposure",
+                text="Unknown exposure",
                 meaning=ONTIE["0003310"]))
-        setattr(cls, "occurrence of disease",
+        setattr(cls, "Occurrence of disease",
             PermissibleValue(
-                text="occurrence of disease",
+                text="Occurrence of disease",
                 meaning=OGMS["0000063"]))
-        setattr(cls, "occurrence of infectious disease",
+        setattr(cls, "Occurrence of infectious disease",
             PermissibleValue(
-                text="occurrence of infectious disease",
+                text="Occurrence of infectious disease",
                 meaning=ONTIE["0003317"]))
-        setattr(cls, "occurrence of allergic disease",
+        setattr(cls, "Occurrence of allergic disease",
             PermissibleValue(
-                text="occurrence of allergic disease",
+                text="Occurrence of allergic disease",
                 meaning=ONTIE["0003318"]))
-        setattr(cls, "exposure to substance without evidence for disease",
+        setattr(cls, "Exposure to substance without evidence for disease",
             PermissibleValue(
-                text="exposure to substance without evidence for disease",
+                text="Exposure to substance without evidence for disease",
                 meaning=ONTIE["0003305"]))
-        setattr(cls, "infection without disease",
+        setattr(cls, "Infection without disease",
             PermissibleValue(
-                text="infection without disease",
+                text="Infection without disease",
                 meaning=ONTIE["0003424"]))
-        setattr(cls, "documented exposure without evidence for disease",
+        setattr(cls, "Documented exposure without evidence for disease",
             PermissibleValue(
-                text="documented exposure without evidence for disease",
+                text="Documented exposure without evidence for disease",
                 meaning=ONTIE["0003307"]))
-        setattr(cls, "exposure with existing immune reactivity without evidence for disease",
+        setattr(cls, "Exposure with existing immune reactivity without evidence for disease",
             PermissibleValue(
-                text="exposure with existing immune reactivity without evidence for disease",
+                text="Exposure with existing immune reactivity without evidence for disease",
                 meaning=OBI["1110061"]))
-        setattr(cls, "environmental exposure to endemic/ubiquitous agent without evidence for disease",
+        setattr(cls, "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
             PermissibleValue(
-                text="environmental exposure to endemic/ubiquitous agent without evidence for disease",
+                text="Environmental exposure to endemic/ubiquitous agent without evidence for disease",
                 meaning=ONTIE["0003308"]))
-        setattr(cls, "administering substance in vivo",
+        setattr(cls, "Edministering substance in vivo",
             PermissibleValue(
-                text="administering substance in vivo",
+                text="Edministering substance in vivo",
                 meaning=OBI["0600007"]))
-        setattr(cls, "administration to cause disease",
+        setattr(cls, "Edministration to cause disease",
             PermissibleValue(
-                text="administration to cause disease",
+                text="Edministration to cause disease",
                 meaning=OBI["0003413"]))
-        setattr(cls, "pathogen challenge",
+        setattr(cls, "Pathogen challenge",
             PermissibleValue(
-                text="pathogen challenge",
+                text="Pathogen challenge",
                 meaning=OBI["0000712"]))
-        setattr(cls, "administration to prevent or reduce disease",
+        setattr(cls, "Administration to prevent or reduce disease",
             PermissibleValue(
-                text="administration to prevent or reduce disease",
+                text="Administration to prevent or reduce disease",
                 meaning=OBI["0003414"]))
-        setattr(cls, "prophylactic vaccination",
+        setattr(cls, "Prophylactic vaccination",
             PermissibleValue(
-                text="prophylactic vaccination",
+                text="Prophylactic vaccination",
                 meaning=VO["0005374"]))
-        setattr(cls, "therapeutic vaccination",
+        setattr(cls, "Therapeutic vaccination",
             PermissibleValue(
-                text="therapeutic vaccination",
+                text="Therapeutic vaccination",
                 meaning=VO["0005373"]))
-        setattr(cls, "transplant/transfusion",
+        setattr(cls, "Transplant/transfusion",
             PermissibleValue(
-                text="transplant/transfusion",
+                text="Transplant/transfusion",
                 meaning=OGMS["0000143"]))
-        setattr(cls, "solid organ transplant",
+        setattr(cls, "Solid organ transplant",
             PermissibleValue(
-                text="solid organ transplant",
+                text="Solid organ transplant",
                 meaning=OGMS["0000144"]))
-        setattr(cls, "no exposure",
+        setattr(cls, "No exposure",
             PermissibleValue(
-                text="no exposure",
+                text="No exposure",
                 meaning=ONTIE["0003309"]))
-        setattr(cls, "specimen collection",
+        setattr(cls, "Specimen collection",
             PermissibleValue(
-                text="specimen collection",
+                text="Specimen collection",
                 meaning=OBI["0000659"]))
-        setattr(cls, "study enrollment",
+        setattr(cls, "Study enrollment",
             PermissibleValue(
-                text="study enrollment",
+                text="Study enrollment",
                 meaning=OBI["0600004"]))
-        setattr(cls, "hospital discharge",
-            PermissibleValue(text="hospital discharge"))
-        setattr(cls, "physical examination",
+        setattr(cls, "Hospital discharge",
+            PermissibleValue(text="Hospital discharge"))
+        setattr(cls, "Physical examination",
             PermissibleValue(
-                text="physical examination",
+                text="Physical examination",
                 meaning=OGMS["0000057"]))
-        setattr(cls, "exposure to infectious agent",
-            PermissibleValue(text="exposure to infectious agent"))
+        setattr(cls, "Exposure to infectious agent",
+            PermissibleValue(text="Exposure to infectious agent"))
 
 class ExposureMaterialOntology(EnumDefinitionImpl):
 
