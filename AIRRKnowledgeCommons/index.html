@@ -200,6 +200,15 @@
 <div class="mermaid"> classDiagram
     class AIRRKnowledgeCommons
     click AIRRKnowledgeCommons href "../AIRRKnowledgeCommons"
+      AIRRKnowledgeCommons : ab_tcell_receptors
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" AlphaBetaTCR : ab_tcell_receptors
+    click AlphaBetaTCR href "../AlphaBetaTCR"
+
+
       AIRRKnowledgeCommons : assays
 
 
@@ -216,6 +225,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" Assessment : assessments
     click Assessment href "../Assessment"
+
+
+      AIRRKnowledgeCommons : bcell_receptors
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" BCellReceptor : bcell_receptors
+    click BCellReceptor href "../BCellReceptor"
 
 
       AIRRKnowledgeCommons : chains
@@ -252,6 +270,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" Epitope : epitopes
     click Epitope href "../Epitope"
+
+
+      AIRRKnowledgeCommons : gd_tcell_receptors
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" GammaDeltaTCR : gd_tcell_receptors
+    click GammaDeltaTCR href "../GammaDeltaTCR"
 
 
       AIRRKnowledgeCommons : immune_exposures
@@ -342,15 +369,6 @@
 
     AIRRKnowledgeCommons --&gt; "*" StudyEvent : study_events
     click StudyEvent href "../StudyEvent"
-
-
-      AIRRKnowledgeCommons : tcell_receptors
-
-
-
-
-    AIRRKnowledgeCommons --&gt; "*" TCellReceptor : tcell_receptors
-    click TCellReceptor href "../TCellReceptor"
 
 
 
@@ -458,8 +476,20 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../tcell_receptors/">tcell_receptors</a></td>
-<td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
+<td><a href="../ab_tcell_receptors/">ab_tcell_receptors</a></td>
+<td>* <br/> <a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gd_tcell_receptors/">gd_tcell_receptors</a></td>
+<td>* <br/> <a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bcell_receptors/">bcell_receptors</a></td>
+<td>* <br/> <a href="../BCellReceptor/">BCellReceptor</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -640,13 +670,31 @@ attributes:
     range: Chain
     multivalued: true
     inlined: true
-  tcell_receptors:
-    name: tcell_receptors
+  ab_tcell_receptors:
+    name: ab_tcell_receptors
     from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
-    - TCellReceptorEpitopeBindingAssay
-    range: TCellReceptor
+    range: AlphaBetaTCR
+    multivalued: true
+    inlined: true
+  gd_tcell_receptors:
+    name: gd_tcell_receptors
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaDeltaTCR
+    multivalued: true
+    inlined: true
+  bcell_receptors:
+    name: bcell_receptors
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BCellReceptor
     multivalued: true
     inlined: true
   epitopes:
@@ -835,15 +883,37 @@ attributes:
     range: Chain
     multivalued: true
     inlined: true
-  tcell_receptors:
-    name: tcell_receptors
+  ab_tcell_receptors:
+    name: ab_tcell_receptors
     from_schema: https://github.com/airr-knowledge/ak-schema
-    alias: tcell_receptors
+    rank: 1000
+    alias: ab_tcell_receptors
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
-    - TCellReceptorEpitopeBindingAssay
-    range: TCellReceptor
+    range: AlphaBetaTCR
+    multivalued: true
+    inlined: true
+  gd_tcell_receptors:
+    name: gd_tcell_receptors
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: gd_tcell_receptors
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaDeltaTCR
+    multivalued: true
+    inlined: true
+  bcell_receptors:
+    name: bcell_receptors
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: bcell_receptors
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BCellReceptor
     multivalued: true
     inlined: true
   epitopes:

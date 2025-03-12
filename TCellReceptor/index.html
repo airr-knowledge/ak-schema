@@ -205,12 +205,15 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-tcellreceptor">Class: TCellReceptor</h1>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
 <p>URI: <a href="http://purl.obolibrary.org/obo/GO_0042101">GO:0042101</a></p>
 <div class="mermaid"> classDiagram
     class TCellReceptor
     click TCellReceptor href "../TCellReceptor"
-      NamedThing &lt;|-- TCellReceptor
-        click NamedThing href "../NamedThing"
+      AKObject &lt;|-- TCellReceptor
+        click AKObject href "../AKObject"
 
 
       TCellReceptor &lt;|-- AlphaBetaTCR
@@ -221,10 +224,6 @@
 
       TCellReceptor : akc_id
 
-      TCellReceptor : description
-
-      TCellReceptor : name
-
       TCellReceptor : type
 
 
@@ -232,12 +231,9 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
 <li><strong>TCellReceptor</strong><ul>
 <li><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></li>
 <li><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -261,18 +257,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
 <td><a href="../akc_id/">akc_id</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
@@ -291,12 +275,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td><a href="../tcell_receptors/">tcell_receptors</a></td>
-<td>range</td>
-<td><a href="./">TCellReceptor</a></td>
-</tr>
 <tr>
 <td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
 <td><a href="../tcell_receptors/">tcell_receptors</a></td>
@@ -335,7 +313,8 @@
 <details>
 <pre><code class="language-yaml">name: TCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
+abstract: true
 slots:
 - type
 class_uri: GO:0042101
@@ -346,7 +325,8 @@ class_uri: GO:0042101
 <details>
 <pre><code class="language-yaml">name: TCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
+abstract: true
 attributes:
   type:
     name: type
@@ -359,28 +339,6 @@ attributes:
     - Assay
     - TCellReceptor
     - Epitope
-    range: string
-  name:
-    name: name
-    description: A human-readable name for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:name
-    alias: name
-    owner: TCellReceptor
-    domain_of:
-    - NamedThing
-    range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: TCellReceptor
-    domain_of:
-    - NamedThing
     range: string
   akc_id:
     name: akc_id

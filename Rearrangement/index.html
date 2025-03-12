@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -199,6 +204,9 @@
 <div class="mermaid"> classDiagram
     class Rearrangement
     click Rearrangement href "../Rearrangement"
+      AIRRStandards &lt;|-- Rearrangement
+        click AIRRStandards href "../AIRRStandards"
+
       Rearrangement : c_alignment_end
 
       Rearrangement : c_alignment_start
@@ -512,7 +520,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../AIRRStandards/">AIRRStandards</a><ul>
+<li><strong>Rearrangement</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -533,7 +547,7 @@
 <tr>
 <td><a href="../sequence/">sequence</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>Nucleotide sequence</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -575,7 +589,7 @@
 <tr>
 <td><a href="../complete_vdj/">complete_vdj</a></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
-<td>True if the sequence alignment spans the entire V(D)J region</td>
+<td>Complete VDJ flag</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -1468,6 +1482,7 @@
 <details>
 <pre><code class="language-yaml">name: Rearrangement
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 slots:
 - sequence_id
 - sequence
@@ -1628,6 +1643,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Rearrangement
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 attributes:
   sequence_id:
     name: sequence_id
@@ -1648,6 +1664,7 @@ attributes:
     range: string
   sequence:
     name: sequence
+    description: Nucleotide sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: sequence
@@ -1750,20 +1767,13 @@ attributes:
     range: boolean
   complete_vdj:
     name: complete_vdj
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: True if the sequence alignment spans the entire V(D)J region. Meaning,
-      sequence_alignment includes both the first V gene codon that encodes the mature
-      polypeptide chain (i.e., after the leader sequence) and the last complete codon
-      of the J gene (i.e., before the J-C splice site). This does not require an absence
-      of deletions within the internal FWR and CDR regions of the alignment.
+    description: Complete VDJ flag.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: complete_vdj
     owner: Rearrangement
     domain_of:
+    - Chain
     - Rearrangement
     range: boolean
   locus:

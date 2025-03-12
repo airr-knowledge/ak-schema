@@ -278,13 +278,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -331,7 +324,7 @@
 
 
 <h1 id="slot-complete_vdj">Slot: complete_vdj</h1>
-<p><em>True if the sequence alignment spans the entire V(D)J region. Meaning, sequence_alignment includes both the first V gene codon that encodes the mature polypeptide chain (i.e., after the leader sequence) and the last complete codon of the J gene (i.e., before the J-C splice site). This does not require an absence of deletions within the internal FWR and CDR regions of the alignment.</em></p>
+<p><em>Complete VDJ flag.</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/complete_vdj">ak_schema:complete_vdj</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -346,6 +339,11 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../Chain/">Chain</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../Rearrangement/">Rearrangement</a></td>
 <td></td>
 <td>no</td>
@@ -357,21 +355,6 @@
 <li>Range: <a href="../Boolean/">Boolean</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nullable</td>
-<td>True</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -399,19 +382,12 @@
 <details>
 
 <pre><code class="language-yaml">name: complete_vdj
-annotations:
-  nullable:
-    tag: nullable
-    value: true
-description: True if the sequence alignment spans the entire V(D)J region. Meaning,
-  sequence_alignment includes both the first V gene codon that encodes the mature
-  polypeptide chain (i.e., after the leader sequence) and the last complete codon
-  of the J gene (i.e., before the J-C splice site). This does not require an absence
-  of deletions within the internal FWR and CDR regions of the alignment.
+description: Complete VDJ flag.
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: complete_vdj
 domain_of:
+- Chain
 - Rearrangement
 range: boolean
 

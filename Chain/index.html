@@ -209,8 +209,10 @@
 <div class="mermaid"> classDiagram
     class Chain
     click Chain href "../Chain"
-      NamedThing &lt;|-- Chain
-        click NamedThing href "../NamedThing"
+      AKObject &lt;|-- Chain
+        click AKObject href "../AKObject"
+
+      Chain : aa_hash
 
       Chain : akc_id
 
@@ -243,15 +245,17 @@
     click ChainTypeEnum href "../ChainTypeEnum"
 
 
-      Chain : d_call
+      Chain : complete_vdj
 
-      Chain : description
+      Chain : d_call
 
       Chain : j_call
 
       Chain : junction_aa
 
-      Chain : name
+      Chain : junction_aa_vj_allele_hash
+
+      Chain : junction_aa_vj_gene_hash
 
       Chain : sequence
 
@@ -264,10 +268,7 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
 <li><strong>Chain</strong></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -283,9 +284,33 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../sequence/">sequence</a></td>
+<td><a href="../aa_hash/">aa_hash</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../junction_aa_vj_allele_hash/">junction_aa_vj_allele_hash</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../junction_aa_vj_gene_hash/">junction_aa_vj_gene_hash</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../complete_vdj/">complete_vdj</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Complete VDJ flag</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sequence/">sequence</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Nucleotide sequence</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -383,18 +408,6 @@
 <td>0..1 <br/> <a href="../Integer/">Integer</a></td>
 <td>CDR3 end position in the query sequence (1-based closed interval)</td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -519,8 +532,12 @@
 <details>
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
 slots:
+- aa_hash
+- junction_aa_vj_allele_hash
+- junction_aa_vj_gene_hash
+- complete_vdj
 - sequence
 - sequence_aa
 - chain_type
@@ -545,10 +562,49 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
 attributes:
+  aa_hash:
+    name: aa_hash
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: aa_hash
+    owner: Chain
+    domain_of:
+    - Chain
+    range: string
+  junction_aa_vj_allele_hash:
+    name: junction_aa_vj_allele_hash
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: junction_aa_vj_allele_hash
+    owner: Chain
+    domain_of:
+    - Chain
+    range: string
+  junction_aa_vj_gene_hash:
+    name: junction_aa_vj_gene_hash
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: junction_aa_vj_gene_hash
+    owner: Chain
+    domain_of:
+    - Chain
+    range: string
+  complete_vdj:
+    name: complete_vdj
+    description: Complete VDJ flag.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: complete_vdj
+    owner: Chain
+    domain_of:
+    - Chain
+    - Rearrangement
+    range: boolean
   sequence:
     name: sequence
+    description: Nucleotide sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: sequence
@@ -801,28 +857,6 @@ attributes:
     - Chain
     - Rearrangement
     range: integer
-  name:
-    name: name
-    description: A human-readable name for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:name
-    alias: name
-    owner: Chain
-    domain_of:
-    - NamedThing
-    range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: Chain
-    domain_of:
-    - NamedThing
-    range: string
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

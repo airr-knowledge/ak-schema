@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -199,6 +204,9 @@
 <div class="mermaid"> classDiagram
     class Tree
     click Tree href "../Tree"
+      AIRRStandards &lt;|-- Tree
+        click AIRRStandards href "../AIRRStandards"
+
       Tree : clone_id
 
       Tree : newick
@@ -216,7 +224,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../AIRRStandards/">AIRRStandards</a><ul>
+<li><strong>Tree</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -284,6 +298,7 @@
 <details>
 <pre><code class="language-yaml">name: Tree
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 slots:
 - tree_id
 - clone_id
@@ -296,6 +311,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Tree
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: AIRRStandards
 attributes:
   tree_id:
     name: tree_id
