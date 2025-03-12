@@ -12,8 +12,7 @@ classes:
     slots:
       - study_type
       - archival_id
-      - inclusion_criteria
-      - exclusion_criteria
+      - inclusion_exclusion_criteria
       - release_date
       - update_date
       - participants
@@ -47,8 +46,6 @@ classes:
       A population of participants of an investigation.
     slots:
       - investigation
-      - inclusion_criteria
-      - exclusion_criteria
 
   Participant:
     is_a: NamedThing
