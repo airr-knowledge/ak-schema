@@ -4,6 +4,7 @@ all: example.yaml example.json example.ttl
 
 tsv/:
 	mkdir -p $@
+	mkdir -p $@
 
 ak_schema.py: ../../project/linkml/ak_schema.yaml
 	gen-python $< > $@
