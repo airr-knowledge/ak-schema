@@ -6,17 +6,20 @@ name: ak-schema
 
 classes:
   V1p5TimePoint:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5time_point_label
       - V1p5time_point_value
       - V1p5time_point_unit
   V1p5Acknowledgement:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5acknowledgement_id
       - V1p5individual_full_name
       - V1p5institution_name
       - V1p5orcid_id
   V1p5RearrangedSequence:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequence_id
       - V1p5sequence
@@ -29,6 +32,7 @@ classes:
       - V1p5sequence_start
       - V1p5sequence_end
   V1p5UnrearrangedSequence:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequence_id
       - V1p5sequence
@@ -41,6 +45,7 @@ classes:
       - V1p5gff_end
       - V1p5strand
   V1p5SequenceDelineationV:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequence_delineation_id
       - V1p5delineation_scheme
@@ -59,6 +64,7 @@ classes:
       - V1p5cdr3_start
       - V1p5alignment_labels
   V1p5AlleleDescription:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5allele_description_id
       - V1p5allele_description_ref
@@ -112,6 +118,7 @@ classes:
       - V1p5curation
       - V1p5curational_tags
   V1p5GermlineSet:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5germline_set_id
       - V1p5author
@@ -131,10 +138,12 @@ classes:
       - V1p5allele_descriptions
       - V1p5curation
   V1p5GenotypeSet:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5receptor_genotype_set_id
       - V1p5genotype_class_list
   V1p5Genotype:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5receptor_genotype_id
       - V1p5locus
@@ -143,40 +152,48 @@ classes:
       - V1p5deleted_genes
       - V1p5inference_process
   V1p5DocumentedAllele:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5label
       - V1p5germline_set_ref
       - V1p5phasing
   V1p5UndocumentedAllele:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5allele_name
       - V1p5sequence
       - V1p5phasing
   V1p5DeletedGene:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5label
       - V1p5germline_set_ref
       - V1p5phasing
   V1p5MHCGenotypeSet:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5mhc_genotype_set_id
       - V1p5mhc_genotype_list
   V1p5MHCGenotype:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5mhc_genotype_id
       - V1p5mhc_class
       - V1p5mhc_alleles
       - V1p5mhc_genotyping_method
   V1p5MHCAllele:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5allele_designation
       - V1p5gene
       - V1p5reference_set_ref
   V1p5SubjectGenotype:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5receptor_genotype_set
       - V1p5mhc_genotype_set
   V1p5Study:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5study_id
       - V1p5study_title
@@ -194,6 +211,7 @@ classes:
       - V1p5adc_publish_date
       - V1p5adc_update_date
   V1p5Subject:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5subject_id
       - V1p5synthetic
@@ -212,6 +230,7 @@ classes:
       - V1p5diagnosis
       - V1p5genotype
   V1p5Diagnosis:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5study_group_description
       - V1p5disease_diagnosis
@@ -222,6 +241,7 @@ classes:
       - V1p5intervention
       - V1p5medical_history
   V1p5Sample:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sample_id
       - V1p5sample_type
@@ -233,6 +253,7 @@ classes:
       - V1p5collection_time_point_reference
       - V1p5biomaterial_provider
   V1p5CellProcessing:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5tissue_processing
       - V1p5cell_subset
@@ -246,11 +267,13 @@ classes:
       - V1p5cell_isolation
       - V1p5cell_processing_protocol
   V1p5PCRTarget:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5pcr_target_locus
       - V1p5forward_pcr_primer_target_location
       - V1p5reverse_pcr_primer_target_location
   V1p5NucleicAcidProcessing:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5template_class
       - V1p5template_quality
@@ -263,6 +286,7 @@ classes:
       - V1p5complete_sequences
       - V1p5physical_linkage
   V1p5SequencingRun:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequencing_run_id
       - V1p5total_reads_passing_qc_filter
@@ -272,6 +296,7 @@ classes:
       - V1p5sequencing_kit
       - V1p5sequencing_files
   V1p5SequencingData:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequencing_data_id
       - V1p5file_type
@@ -284,6 +309,7 @@ classes:
       - V1p5index_filename
       - V1p5index_length
   V1p5DataProcessing:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5data_processing_id
       - V1p5primary_annotation
@@ -298,6 +324,7 @@ classes:
       - V1p5germline_set_ref
       - V1p5analysis_provenance_id
   V1p5Repertoire:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5repertoire_id
       - V1p5repertoire_name
@@ -307,17 +334,20 @@ classes:
       - V1p5sample
       - V1p5data_processing
   V1p5RepertoireGroupDetail:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5repertoire_id
       - V1p5repertoire_description
       - V1p5time_point
   V1p5RepertoireGroup:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5repertoire_group_id
       - V1p5repertoire_group_name
       - V1p5repertoire_group_description
       - V1p5repertoires
   V1p5Alignment:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequence_id
       - V1p5segment
@@ -334,6 +364,7 @@ classes:
       - V1p5rank
       - V1p5data_processing_id
   V1p5Rearrangement:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequence_id
       - V1p5sequence
@@ -488,6 +519,7 @@ classes:
       - V1p5sample_processing_id
       - V1p5data_processing_id
   V1p5Clone:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5clone_id
       - V1p5repertoire_id
@@ -514,18 +546,21 @@ classes:
       - V1p5clone_count
       - V1p5seed_id
   V1p5Tree:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5tree_id
       - V1p5clone_id
       - V1p5newick
       - V1p5nodes
   V1p5Node:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sequence_id
       - V1p5sequence_alignment
       - V1p5junction
       - V1p5junction_aa
   V1p5Cell:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5cell_id
       - V1p5rearrangements
@@ -537,6 +572,7 @@ classes:
       - V1p5expression_index
       - V1p5virtual_pairing
   V1p5CellExpression:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5expression_id
       - V1p5cell_id
@@ -546,6 +582,7 @@ classes:
       - V1p5property
       - V1p5property_value
   V1p5Receptor:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5receptor_id
       - V1p5receptor_hash
@@ -557,6 +594,7 @@ classes:
       - V1p5receptor_ref
       - V1p5reactivity_measurements
   V1p5ReceptorReactivity:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5ligand_type
       - V1p5antigen_type
@@ -574,6 +612,7 @@ classes:
       - V1p5reactivity_value
       - V1p5reactivity_unit
   V1p5SampleProcessing:
+    is_a: AIRRStandards_v1p5
     slots:
       - V1p5sample_processing_id
       - V1p5sample_id

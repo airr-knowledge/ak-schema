@@ -9,8 +9,12 @@ classes:
     class_uri: UBERON:0002405 # immune system
 
   Chain:
-    is_a: NamedThing
+    is_a: AKObject
     slots:
+      - aa_hash
+      - junction_aa_vj_allele_hash
+      - junction_aa_vj_gene_hash
+      - complete_vdj
       - sequence
       - sequence_aa
       - chain_type
@@ -30,7 +34,8 @@ classes:
       - cdr3_end
 
   TCellReceptor:
-    is_a: NamedThing
+    abstract: true
+    is_a: AKObject
     class_uri: GO:0042101
     slots:
       - type
@@ -50,7 +55,7 @@ classes:
       - TRD_chain
 
   BCellReceptor:
-    is_a: NamedThing
+    is_a: AKObject
     slots:
       - IGH_chain
       - IGK_chain
@@ -69,6 +74,27 @@ classes:
       - source_organism
 
 slots:
+  aa_hash:
+    name: aa_hash
+    range: string
+
+  junction_aa_vj_allele_hash:
+    name: junction_aa_vj_allele_hash
+    range: string
+
+  junction_aa_vj_gene_hash:
+    name: junction_aa_vj_gene_hash
+    range: string
+
+  complete_vdj:
+    name: complete_vdj
+    description: Complete VDJ flag.
+    range: boolean
+
+  sequence:
+    name: sequence
+    description: Nucleotide sequence.
+    range: string
 
   chain_type:
     name: chain_type

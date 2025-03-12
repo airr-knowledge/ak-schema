@@ -12,6 +12,8 @@
 import dataclasses
 import click
 import csv
+import uuid
+import json
 
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
@@ -28,6 +30,8 @@ prefixes = {
 
 def curie(input):
     """Convert a URL to a CURIE."""
+    if input is None:
+        return input
     for prefix, url in prefixes.items():
         if input.startswith(url):
             return input.replace(url, prefix + ':')
@@ -40,6 +44,15 @@ def id(input):
         if input.startswith(url):
             return input.replace(url, '')
     return input
+
+# this is fake
+# we don't generate new IDs every time the code is run
+akc_id_last = 0
+def akc_id():
+    """Returns a new AKC ID."""
+    global akc_id_last
+    akc_id_last += 1
+    return 'AKC:' + str(akc_id_last)
 
 
 def read_double_header(path):
@@ -115,28 +128,28 @@ def convert(tcell_path, tcr_path, yaml_path):
     tcell_rows = read_double_header(tcell_path)
     tcr_rows = read_double_header(tcr_path)
 
-    ref_id = id(tcell_rows[0]['Reference']['IEDB IRI'])
-
-    investigation = Investigation(
-        f'example:investigation_{ref_id}',
-        name=tcell_rows[0]['Reference']['Title'],
-        description=None
-    )
-    reference = Reference(
-        f'example:reference_{ref_id}',
-        sources=[f"PMID:{tcell_rows[0]['Reference']['PMID']}"],
-        investigations=[investigation.akc_id],
-        title=tcell_rows[0]['Reference']['Title'],
-        authors=tcell_rows[0]['Reference']['Authors'].split('; '),
-        issue=None,
-        journal=tcell_rows[0]['Reference']['Journal'],
-        month=None,
-        year=tcell_rows[0]['Reference']['Date'],
-        pages=None,
-    )
+#     ref_id = id(tcell_rows[0]['Reference']['IEDB IRI'])
+# 
+#     investigation = Investigation(
+#         akc_id(),
+#         name=tcell_rows[0]['Reference']['Title'],
+#         description=None
+#     )
+#     reference = Reference(
+#         f"PMID:{tcell_rows[0]['Reference']['PMID']}",
+#         sources=[f"PMID:{tcell_rows[0]['Reference']['PMID']}"],
+#         investigations=[investigation.akc_id],
+#         title=tcell_rows[0]['Reference']['Title'],
+#         authors=tcell_rows[0]['Reference']['Authors'].split('; '),
+#         issue=None,
+#         journal=tcell_rows[0]['Reference']['Journal'],
+#         month=None,
+#         year=tcell_rows[0]['Reference']['Date'],
+#         pages=None,
+#     )
     container = AIRRKnowledgeCommons(
-        investigations=[investigation],
-        references=[reference]
+#        investigations=[investigation],
+#        references=[reference]
     )
 
     # For each row in the TCell table, generate:
@@ -153,22 +166,47 @@ def convert(tcell_path, tcr_path, yaml_path):
     # 2 chains per TCR
     # 1 dataset
     # 1 conclusion
+    row_cnt = 0
+    current_reference = None
     for row in tcell_rows:
+        if current_reference != row['Reference']['PMID']:
+            current_reference = row['Reference']['PMID']
+            investigation = Investigation(
+                akc_id(),
+                name=row['Reference']['Title'],
+                description=None
+            )
+            ref_id = id(row['Reference']['IEDB IRI'])
+            reference = Reference(
+                f"PMID:{row['Reference']['PMID']}",
+                sources=[f"PMID:{row['Reference']['PMID']}"],
+                investigations=[investigation.akc_id],
+                title=row['Reference']['Title'],
+                authors=row['Reference']['Authors'].split('; '),
+                issue=None,
+                journal=row['Reference']['Journal'],
+                month=None,
+                year=row['Reference']['Date'],
+                pages=None,
+            )
+            container.investigations[investigation.akc_id] = investigation
+            container.references[reference.source_uri] = reference
+
         assay_id = row['Assay ID']['IEDB IRI'].split('/')[-1]
         arm = StudyArm(
-            f'example:arm-{assay_id}',
+            akc_id(),
             name=f'arm 1 of {assay_id}',
             description=f'study arm for assay {assay_id}',
             investigation=investigation.akc_id
         )
         study_event = StudyEvent(
-            f'example:study_event-{assay_id}',
+            akc_id(),
             name=f'',
             description=f'',
             study_arms=[arm.akc_id]
         )
         participant = Participant(
-            f'example:participant-{assay_id}',
+            akc_id(),
             name=f'participant 1 of {assay_id}',
             description=f'study participant for assay {assay_id}',
             species=row['Host']['Name'],
@@ -179,7 +217,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             # geolocation=row['Host']['Geolocation']
         )
         life_event_1 = LifeEvent(
-            f'example:life_event-{assay_id}-1',
+            akc_id(),
             name=f'1st in vivo immune exposure event of assay {assay_id}',
             description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event',
             participant=participant.akc_id,
@@ -193,7 +231,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             time_unit=None
         )
         life_event_2 = LifeEvent(
-            f'example:life_event-{assay_id}-2',
+            akc_id(),
             name=f'specimen collection event of assay {assay_id}',
             description=f'specimen 1 was collected from participant 1 of assay {assay_id} in this event',
             participant=participant.akc_id,
@@ -207,7 +245,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             time_unit=None
         )
         immune_exposure = ImmuneExposure(
-            f'example:immune_exposure-{assay_id}',
+            akc_id(),
             name=f'details of 1st in vivo immune exposure event of assay {assay_id}',
             description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event, with these details',
             life_event=life_event_1.akc_id,
@@ -218,7 +256,7 @@ def convert(tcell_path, tcr_path, yaml_path):
         )
         # assessment
         specimen = Specimen(
-            f'example:specimen-{assay_id}',
+            akc_id(),
             name=f'specimen 1 of assay {assay_id}',
             description=f'specimen 1 from participant 1 of assay {assay_id}',
             life_event=life_event_2.akc_id,
@@ -266,7 +304,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             else:
                 raise Exception(f"Unknown TCR type {tcr_row['Receptor']['Type']}")
         assay = TCellReceptorEpitopeBindingAssay(
-            f'example:assay-{assay_id}',
+            akc_id(),
             name=f'assay {assay_id}',
             description=f'assay {assay_id} has specified input specimen 1',
             specimen=specimen.akc_id,
@@ -277,14 +315,14 @@ def convert(tcell_path, tcr_path, yaml_path):
             unit=None
         )
         dataset = Dataset(
-            f'example:dataset-{assay_id}',
+            akc_id(),
             name=f'dataset 1 about assay {assay_id}',
             description=f'dataset 1 is about assay {assay_id}',
             assessments=None,
             assays=[assay.akc_id]
         )
         conclusion = Conclusion(
-            f'example:conclusion-{assay_id}',
+            akc_id(),
             name=f'conclusion 1 about assay {assay_id}',
             description=f'conclusion 1 about investigation {ref_id} was drawn from dataset 1 of assay {assay_id}',
             investigations=investigation.akc_id,
@@ -311,11 +349,25 @@ def convert(tcell_path, tcr_path, yaml_path):
         for chain in chains:
             container.chains[chain.akc_id] = chain
         for tcell_receptor in tcell_receptors:
-            container.tcell_receptors[tcell_receptor.akc_id] = tcell_receptor
+            container.ab_tcell_receptors[tcell_receptor.akc_id] = tcell_receptor
             
-        break
+        #break
+        row_cnt += 1
+        if row_cnt % 1000 == 0:
+            print(f"Processed {row_cnt} rows from {tcell_path}")
+        if row_cnt == 2000:
+            break
 
     yaml_dumper.dump(container, yaml_path)
+
+    # Write everything to JSONL
+    container_fields = [x.name for x in dataclasses.fields(container)]
+    for container_field in container_fields:
+        with open(f'jsonl/{container_field}.jsonl', 'w') as f:
+            for key in container[container_field]:
+                s = json.loads(json_dumper.dumps(container[container_field][key]))
+                f.write(json.dumps(s))
+                f.write('\n')
 
     # Write everything to TSV
     container_fields = [x.name for x in dataclasses.fields(container)]

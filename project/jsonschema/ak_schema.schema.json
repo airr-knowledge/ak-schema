@@ -4,6 +4,22 @@
             "additionalProperties": false,
             "description": "A container for instances of multiple classes.",
             "properties": {
+                "ab_tcell_receptors": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "assays": {
                     "additionalProperties": {
                         "anyOf": [
@@ -35,6 +51,22 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/Assessment__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "bcell_receptors": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/BCellReceptor__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -106,6 +138,22 @@
                                         "$ref": "#/$defs/PeptidicEpitope__identifier_optional"
                                     }
                                 ]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "gd_tcell_receptors": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -266,32 +314,6 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/StudyEvent__identifier_optional"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": [
-                        "object",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "additionalProperties": {
-                        "anyOf": [
-                            {
-                                "anyOf": [
-                                    {
-                                        "$ref": "#/$defs/TCellReceptor__identifier_optional"
-                                    },
-                                    {
-                                        "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
-                                    },
-                                    {
-                                        "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
-                                    }
-                                ]
                             },
                             {
                                 "type": "null"
@@ -964,6 +986,7 @@
                     ]
                 },
                 "sequence": {
+                    "description": "Nucleotide sequence.",
                     "type": [
                         "string",
                         "null"
@@ -1073,20 +1096,6 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "type": {
                     "enum": [
                         "AlphaBetaTCR"
@@ -1124,20 +1133,6 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 },
                 "type": {
                     "enum": [
@@ -1463,20 +1458,6 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
@@ -1485,12 +1466,42 @@
             "title": "BCellReceptor",
             "type": "object"
         },
+        "BCellReceptor__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "IGH_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "IGK_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "IGL_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                }
+            },
+            "required": [],
+            "title": "BCellReceptor",
+            "type": "object"
+        },
         "BiologicalSexOntology": {
             "description": "",
-            "enum": [
-                "female",
-                "male"
-            ],
             "title": "BiologicalSexOntology",
             "type": "string"
         },
@@ -1816,6 +1827,12 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "aa_hash": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -1889,14 +1906,14 @@
                     "$ref": "#/$defs/ChainTypeEnum",
                     "description": "Gene locus (chain type)."
                 },
-                "d_call": {
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
                     "type": [
-                        "string",
+                        "boolean",
                         "null"
                     ]
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "d_call": {
                     "type": [
                         "string",
                         "null"
@@ -1915,14 +1932,20 @@
                         "null"
                     ]
                 },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                "junction_aa_vj_allele_hash": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "sequence": {
+                    "description": "Nucleotide sequence.",
                     "type": [
                         "string",
                         "null"
@@ -2011,6 +2034,12 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
+                "aa_hash": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -2084,14 +2113,14 @@
                     "$ref": "#/$defs/ChainTypeEnum",
                     "description": "Gene locus (chain type)."
                 },
-                "d_call": {
+                "complete_vdj": {
+                    "description": "Complete VDJ flag.",
                     "type": [
-                        "string",
+                        "boolean",
                         "null"
                     ]
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
+                "d_call": {
                     "type": [
                         "string",
                         "null"
@@ -2110,14 +2139,20 @@
                         "null"
                     ]
                 },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                "junction_aa_vj_allele_hash": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
                     ]
                 },
                 "sequence": {
+                    "description": "Nucleotide sequence.",
                     "type": [
                         "string",
                         "null"
@@ -2782,60 +2817,6 @@
         },
         "DiseaseOntology": {
             "description": "",
-            "enum": [
-                "COVID-19",
-                "Plasmodium falciparum malaria",
-                "dengue hemorrhagic fever",
-                "dengue disease",
-                "chikungunya",
-                "upper respiratory tract disease",
-                "encephalitis",
-                "West Nile fever",
-                "Zika fever",
-                "meningitis",
-                "healthy",
-                "influenza",
-                "human cytomegalovirus infection",
-                "end stage renal disease",
-                "West Nile encephalitis",
-                "hepatitis C",
-                "meningoencephalitis",
-                "urinary tract obstruction",
-                "pharyngitis",
-                "malaria",
-                "tuberculosis",
-                "avian influenza",
-                "herpes zoster",
-                "intestinal infectious disease",
-                "yellow fever",
-                "focal segmental glomerulosclerosis",
-                "cystic kidney disease",
-                "breast cancer",
-                "celiac disease",
-                "chickenpox",
-                "psoriasis",
-                "diphtheria",
-                "Ebola hemorrhagic fever",
-                "childhood type dermatomyositis",
-                "cholera",
-                "hepatitis B",
-                "hepatitis A",
-                "pustulosis of palm and sole",
-                "meningococcal meningitis",
-                "smallpox",
-                "type 2 diabetes mellitus",
-                "pertussis",
-                "Streptococcus pneumonia",
-                "swine influenza",
-                "tetanus",
-                "ulcerative colitis",
-                "human immunodeficiency virus infectious disease",
-                "interstitial nephritis",
-                "cystinosis",
-                "hemolytic-uremic syndrome",
-                "kidney cortex necrosis",
-                "food allergy"
-            ],
             "title": "DiseaseOntology",
             "type": "string"
         },
@@ -2986,92 +2967,6 @@
         },
         "ExposureMaterialOntology": {
             "description": "",
-            "enum": [
-                "2008-2009 trivalent influenza vaccine",
-                "2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008)",
-                "ACWY Vax",
-                "Ad35.CS.01 malaria vaccine",
-                "Alphainfluenzavirus",
-                "BCG Vaccine",
-                "Betainfluenzavirus",
-                "Bordetella",
-                "Bordetella parapertussis",
-                "Bordetella pertussis",
-                "Bundibugyo virus",
-                "Chikungunya virus",
-                "Clostridium tetani",
-                "Corynebacterium diphtheriae",
-                "Cytomegalovirus",
-                "Dengue virus",
-                "Diphtheria-Tetanus-Pertussis vaccine",
-                "Dryvax",
-                "Engerix-B",
-                "FluMist",
-                "Fluarix",
-                "Fluvirin",
-                "Fluzone",
-                "Gammainfluenzavirus",
-                "H1N1 subtype",
-                "HEPLISAV-B",
-                "Hepacivirus C",
-                "Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]",
-                "Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]",
-                "Hepatitis B virus",
-                "Hepatitis B virus vaccine",
-                "Hepatovirus A",
-                "Human alphaherpesvirus 3",
-                "Human immunodeficiency virus",
-                "Influenza A H1N1 2009 Monovalent Vaccine Novartis",
-                "Influenza A virus",
-                "Influenza C virus",
-                "Influenza virus vaccine",
-                "LC16m8",
-                "MRKAd5 HIV-1 gag/pol/nef",
-                "MVA85A",
-                "Menactra",
-                "Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C",
-                "Menveo",
-                "Mycobacterium tuberculosis",
-                "Mycobacterium tuberculosis vaccine",
-                "Neisseria meningitidis",
-                "Neisseria meningitidis vaccine",
-                "Orthoebolavirus",
-                "P. falciparum RTS,S/AS01",
-                "Plasmodium",
-                "Plasmodium falciparum",
-                "Plasmodium falciparum vaccine",
-                "Pneumovax 23",
-                "SARS-CoV-2",
-                "Smallpox virus vaccine",
-                "Stamaril",
-                "Streptococcus pneumoniae",
-                "Sudan ebolavirus",
-                "Variola virus",
-                "Vibrio cholerae",
-                "West Nile virus",
-                "YF-Vax",
-                "Yellow fever 17D vaccine vector",
-                "Yellow fever virus",
-                "Zaire ebolavirus",
-                "Zika virus",
-                "Zostavax",
-                "bacterial vaccine",
-                "bacterium",
-                "diphtheria, tetanus and whole cell pertussis vaccine",
-                "eukaryote",
-                "live attenuated influenza vaccine",
-                "microbial eukaryotic vaccine",
-                "organism",
-                "rVSV-EBOV",
-                "unidentified influenza virus",
-                "unidentified organism",
-                "vaccine",
-                "viral vaccine",
-                "virus",
-                "yellow fever virus vaccine",
-                "Human gammaherpesvirus 4",
-                "Human betaherpesvirus 5"
-            ],
             "title": "ExposureMaterialOntology",
             "type": "string"
         },
@@ -3115,20 +3010,6 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "type": {
                     "enum": [
                         "GammaDeltaTCR"
@@ -3166,20 +3047,6 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 },
                 "type": {
                     "enum": [
@@ -4064,39 +3931,6 @@
         },
         "LifeEventProcessOntology": {
             "description": "",
-            "enum": [
-                "death",
-                "unknown exposure",
-                "occurrence of disease",
-                "occurrence of infectious disease",
-                "occurrence of allergic disease",
-                "exposure to substance without evidence for disease",
-                "infection without disease",
-                "documented exposure without evidence for disease",
-                "exposure with existing immune reactivity without evidence for disease",
-                "environmental exposure to endemic/ubiquitous agent without evidence for disease",
-                "administering substance in vivo",
-                "administration to cause disease",
-                "pathogen challenge",
-                "vaccination",
-                "administration to prevent or reduce disease",
-                "prophylactic vaccination",
-                "therapeutic vaccination",
-                "transplant/transfusion",
-                "transfusion",
-                "solid organ transplant",
-                "no exposure",
-                "specimen collection",
-                "study enrollment",
-                "hospitalization",
-                "hospital discharge",
-                "treatment",
-                "fertilization",
-                "physical examination",
-                "recovery",
-                "birth",
-                "exposure to infectious agent"
-            ],
             "title": "LifeEventProcessOntology",
             "type": "string"
         },
@@ -4965,6 +4799,7 @@
                     ]
                 },
                 "sequence": {
+                    "description": "Nucleotide sequence.",
                     "type": [
                         "string",
                         "null"
@@ -5193,7 +5028,7 @@
                     ]
                 },
                 "complete_vdj": {
-                    "description": "True if the sequence alignment spans the entire V(D)J region. Meaning, sequence_alignment includes both the first V gene codon that encodes the mature polypeptide chain (i.e., after the leader sequence) and the last complete codon of the J gene (i.e., before the J-C splice site). This does not require an absence of deletions within the internal FWR and CDR regions of the alignment.",
+                    "description": "Complete VDJ flag.",
                     "type": [
                         "boolean",
                         "null"
@@ -5863,6 +5698,7 @@
                     ]
                 },
                 "sequence": {
+                    "description": "Nucleotide sequence.",
                     "type": [
                         "string",
                         "null"
@@ -7917,44 +7753,6 @@
             "title": "SubjectGenotype",
             "type": "object"
         },
-        "TCellReceptor": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "TCellReceptor"
-                    ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "TCellReceptor",
-            "type": "object"
-        },
         "TCellReceptorEpitopeBindingAssay": {
             "additionalProperties": false,
             "description": "",
@@ -8153,42 +7951,6 @@
             "title": "TCellReceptorEpitopeBindingAssay",
             "type": "object"
         },
-        "TCellReceptor__identifier_optional": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "TCellReceptor"
-                    ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [],
-            "title": "TCellReceptor",
-            "type": "object"
-        },
         "TemplateAmountUnitOntology": {
             "description": "",
             "title": "TemplateAmountUnitOntology",
@@ -8296,6 +8058,7 @@
                     ]
                 },
                 "sequence": {
+                    "description": "Nucleotide sequence.",
                     "type": [
                         "string",
                         "null"
@@ -8357,6 +8120,7 @@
                     ]
                 },
                 "sequence": {
+                    "description": "Nucleotide sequence.",
                     "type": [
                         "string",
                         "null"
@@ -8383,6 +8147,22 @@
     "description": "A container for instances of multiple classes.",
     "metamodel_version": "1.7.0",
     "properties": {
+        "ab_tcell_receptors": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
         "assays": {
             "additionalProperties": {
                 "anyOf": [
@@ -8414,6 +8194,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Assessment__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "bcell_receptors": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/BCellReceptor__identifier_optional"
                     },
                     {
                         "type": "null"
@@ -8485,6 +8281,22 @@
                                 "$ref": "#/$defs/PeptidicEpitope__identifier_optional"
                             }
                         ]
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "gd_tcell_receptors": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
                     },
                     {
                         "type": "null"
@@ -8645,32 +8457,6 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/StudyEvent__identifier_optional"
-                    },
-                    {
-                        "type": "null"
-                    }
-                ]
-            },
-            "type": [
-                "object",
-                "null"
-            ]
-        },
-        "tcell_receptors": {
-            "additionalProperties": {
-                "anyOf": [
-                    {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/TCellReceptor__identifier_optional"
-                            },
-                            {
-                                "$ref": "#/$defs/AlphaBetaTCR__identifier_optional"
-                            },
-                            {
-                                "$ref": "#/$defs/GammaDeltaTCR__identifier_optional"
-                            }
-                        ]
                     },
                     {
                         "type": "null"

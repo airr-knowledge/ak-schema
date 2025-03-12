@@ -18,6 +18,8 @@ def get_arguments():
     parser.add_argument("-l", "--log_file", type=str, help="Log file to write any error occurring while generating LinkML",
                         default="airr2akc.log")
 
+    parser.add_argument("-s", "--superclass",  type=str, help="Superclass name (will be referenced for each class under 'is_a')", default="AIRRObject")
+
     parser.add_argument("-v", "--include_version_prefix", action="store_true",
                         help="When this flag is specified, the AIRR version is included as a class prefix")
     parser.add_argument("-c", "--include_class_prefix", action="store_true",
@@ -190,18 +192,18 @@ def get_all_enums(keyword_yaml, keyword, version_prefix):
     return all_enums
 
 
-def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix):
+def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, linkml_superclass):
     # keyword_yaml = airr_yaml[keyword]
     output_slots = get_all_slots(airr_yaml, keyword, version_prefix)
 
-    yaml_output_dict = {"classes": {f"{version_prefix}{keyword}": {"slots": list(output_slots.keys())}},
+    yaml_output_dict = {"classes": {f"{version_prefix}{keyword}": {"is_a": linkml_superclass, "slots": list(output_slots.keys())}},
                         "slots": output_slots,
                         "enums": get_all_enums(airr_yaml[keyword], keyword, version_prefix)}
 
     return yaml_output_dict
 
-def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix):
-    composition_yaml = {"classes": {f"{version_prefix}{keyword}": {"slots": []}},
+def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix, linkml_superclass):
+    composition_yaml = {"classes": {f"{version_prefix}{keyword}": {"is_a": linkml_superclass, "slots": []}},
                         "slots": {},
                         "enums": {}}
 
@@ -447,12 +449,12 @@ def main(parsed_args):
 
     # Simple keywords: add classes, slots and enums
     for keyword in get_simple_keywords_to_process(airr_yaml, skip_keywords):
-        keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix)
+        keyword_yaml = get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, parsed_args.superclass)
         safe_update_yaml(output_yaml, keyword_yaml, internal_conflicts)
 
     # composition keywords (consisting of 'allOf')
     for keyword in get_composition_keywords_to_process(airr_yaml, skip_keywords):
-        composition_yaml = get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix)
+        composition_yaml = get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix, parsed_args.superclass)
         safe_update_yaml(output_yaml, composition_yaml, internal_conflicts)
 
     write_yaml_output(output_yaml, parsed_args.output_file)

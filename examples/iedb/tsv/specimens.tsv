@@ -1,2 +1,22 @@
 akc_id	name	description	life_event	specimen_type	tissue	process
-example:specimen-3480642	specimen 1 of assay 3480642	specimen 1 from participant 1 of assay 3480642	example:life_event-3480642-2		Blood	
+AKC:8	specimen 1 of assay 3480642	specimen 1 from participant 1 of assay 3480642	AKC:6		Blood	
+AKC:18	specimen 1 of assay 3480639	specimen 1 from participant 1 of assay 3480639	AKC:16		Blood	
+AKC:28	specimen 1 of assay 3480641	specimen 1 from participant 1 of assay 3480641	AKC:26		Blood	
+AKC:38	specimen 1 of assay 3480644	specimen 1 from participant 1 of assay 3480644	AKC:36		Blood	
+AKC:48	specimen 1 of assay 3480640	specimen 1 from participant 1 of assay 3480640	AKC:46		Blood	
+AKC:58	specimen 1 of assay 3480643	specimen 1 from participant 1 of assay 3480643	AKC:56		Blood	
+AKC:68	specimen 1 of assay 3480645	specimen 1 from participant 1 of assay 3480645	AKC:66		Blood	
+AKC:78	specimen 1 of assay 3480646	specimen 1 from participant 1 of assay 3480646	AKC:76		Lymph Node	
+AKC:88	specimen 1 of assay 3480647	specimen 1 from participant 1 of assay 3480647	AKC:86		Lymphoid	
+AKC:98	specimen 1 of assay 3480649	specimen 1 from participant 1 of assay 3480649	AKC:96		Lymphoid	
+AKC:108	specimen 1 of assay 3480650	specimen 1 from participant 1 of assay 3480650	AKC:106		Lymphoid	
+AKC:118	specimen 1 of assay 3480651	specimen 1 from participant 1 of assay 3480651	AKC:116		Lymphoid	
+AKC:128	specimen 1 of assay 3480655	specimen 1 from participant 1 of assay 3480655	AKC:126		Lymphoid	
+AKC:138	specimen 1 of assay 3480656	specimen 1 from participant 1 of assay 3480656	AKC:136		Lymphoid	
+AKC:148	specimen 1 of assay 3480658	specimen 1 from participant 1 of assay 3480658	AKC:146		Lymphoid	
+AKC:158	specimen 1 of assay 3480659	specimen 1 from participant 1 of assay 3480659	AKC:156		Lymphoid	
+AKC:168	specimen 1 of assay 3480660	specimen 1 from participant 1 of assay 3480660	AKC:166		Lymphoid	
+AKC:178	specimen 1 of assay 3480661	specimen 1 from participant 1 of assay 3480661	AKC:176		Lymphoid	
+AKC:188	specimen 1 of assay 3480662	specimen 1 from participant 1 of assay 3480662	AKC:186		Lymphoid	
+AKC:198	specimen 1 of assay 3480663	specimen 1 from participant 1 of assay 3480663	AKC:196		Lymphoid	
+AKC:208	specimen 1 of assay 3480664	specimen 1 from participant 1 of assay 3480664	AKC:206		Lymphoid	
