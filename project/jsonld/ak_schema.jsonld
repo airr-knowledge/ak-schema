@@ -1831,11 +1831,6 @@
       "description": "Participants in an investigation must meet this criteria",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/inclusion_criteria",
-      "owner": "StudyArm",
-      "domain_of": [
-        "Investigation",
-        "StudyArm"
-      ],
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -1846,11 +1841,6 @@
       "description": "Participants are excluded from an investigation if they meet this criteria",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/exclusion_criteria",
-      "owner": "StudyArm",
-      "domain_of": [
-        "Investigation",
-        "StudyArm"
-      ],
       "range": "string",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -5248,6 +5238,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/inclusion_exclusion_criteria",
       "owner": "Study",
       "domain_of": [
+        "Investigation",
         "Study"
       ],
       "range": "string",
@@ -11668,8 +11659,7 @@
         "description",
         "study_type",
         "archival_id",
-        "inclusion_criteria",
-        "exclusion_criteria",
+        "inclusion_exclusion_criteria",
         "release_date",
         "update_date",
         "participants",
@@ -11720,9 +11710,7 @@
         "akc_id",
         "name",
         "description",
-        "investigation",
-        "inclusion_criteria",
-        "exclusion_criteria"
+        "investigation"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0000181",
@@ -13332,9 +13320,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-03-12T22:22:16",
-  "source_file_size": 196941,
-  "generation_date": "2025-03-12T22:22:18",
+  "source_file_date": "2025-03-12T23:44:04",
+  "source_file_size": 196876,
+  "generation_date": "2025-03-12T23:44:07",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
