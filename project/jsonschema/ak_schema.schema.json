@@ -3508,23 +3508,10 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
+                "inclusion_exclusion_criteria": {
+                    "description": "List of criteria for inclusion/exclusion for the study",
                     "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
+                        "string",
                         "null"
                     ]
                 },
@@ -3634,23 +3621,10 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
+                "inclusion_exclusion_criteria": {
+                    "description": "List of criteria for inclusion/exclusion for the study",
                     "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
+                        "string",
                         "null"
                     ]
                 },
@@ -7429,26 +7403,6 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "investigation": {
                     "description": "An investigation in which the study arm participates",
                     "type": [
@@ -7482,26 +7436,6 @@
                     "description": "A human-readable description for a thing",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
                         "null"
                     ]
                 },

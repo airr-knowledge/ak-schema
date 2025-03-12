@@ -5625,8 +5625,7 @@ classes:
     slots:
     - study_type
     - archival_id
-    - inclusion_criteria
-    - exclusion_criteria
+    - inclusion_exclusion_criteria
     - release_date
     - update_date
     - participants
@@ -5658,8 +5657,6 @@ classes:
     is_a: NamedThing
     slots:
     - investigation
-    - inclusion_criteria
-    - exclusion_criteria
     class_uri: OBI:0000181
   Participant:
     name: Participant
