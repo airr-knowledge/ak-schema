@@ -246,9 +246,7 @@
     click Reference href "../Reference"
 
 
-      Investigation : exclusion_criteria
-
-      Investigation : inclusion_criteria
+      Investigation : inclusion_exclusion_criteria
 
       Investigation : name
 
@@ -322,15 +320,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../inclusion_criteria/">inclusion_criteria</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Participants in an investigation must meet this criteria</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../exclusion_criteria/">exclusion_criteria</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Participants are excluded from an investigation if they meet this criteria</td>
+<td><a href="../inclusion_exclusion_criteria/">inclusion_exclusion_criteria</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>List of criteria for inclusion/exclusion for the study</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -467,8 +459,7 @@ is_a: PlannedProcess
 slots:
 - study_type
 - archival_id
-- inclusion_criteria
-- exclusion_criteria
+- inclusion_exclusion_criteria
 - release_date
 - update_date
 - participants
@@ -515,31 +506,21 @@ attributes:
     domain_of:
     - Investigation
     range: uriorcurie
-  inclusion_criteria:
-    name: inclusion_criteria
-    description: Participants in an investigation must meet this criteria
+  inclusion_exclusion_criteria:
+    name: inclusion_exclusion_criteria
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: List of criteria for inclusion/exclusion for the study
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: inclusion_criteria
+    alias: inclusion_exclusion_criteria
     owner: Investigation
     domain_of:
     - Investigation
-    - StudyArm
+    - Study
     range: string
-    multivalued: true
-  exclusion_criteria:
-    name: exclusion_criteria
-    description: Participants are excluded from an investigation if they meet this
-      criteria
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: exclusion_criteria
-    owner: Investigation
-    domain_of:
-    - Investigation
-    - StudyArm
-    range: string
-    multivalued: true
   release_date:
     name: release_date
     annotations:

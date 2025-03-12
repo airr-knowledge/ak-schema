@@ -217,10 +217,6 @@
 
       StudyArm : description
 
-      StudyArm : exclusion_criteria
-
-      StudyArm : inclusion_criteria
-
       StudyArm : investigation
 
 
@@ -259,18 +255,6 @@
 <td><a href="../investigation/">investigation</a></td>
 <td>0..1 <br/> <a href="../Investigation/">Investigation</a></td>
 <td>An investigation in which the study arm participates</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../inclusion_criteria/">inclusion_criteria</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Participants in an investigation must meet this criteria</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../exclusion_criteria/">exclusion_criteria</a></td>
-<td>* <br/> <a href="../String/">String</a></td>
-<td>Participants are excluded from an investigation if they meet this criteria</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -358,8 +342,6 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slots:
 - investigation
-- inclusion_criteria
-- exclusion_criteria
 class_uri: OBI:0000181
 
 </code></pre>
@@ -382,31 +364,6 @@ attributes:
     domain_of:
     - StudyArm
     range: Investigation
-  inclusion_criteria:
-    name: inclusion_criteria
-    description: Participants in an investigation must meet this criteria
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: inclusion_criteria
-    owner: StudyArm
-    domain_of:
-    - Investigation
-    - StudyArm
-    range: string
-    multivalued: true
-  exclusion_criteria:
-    name: exclusion_criteria
-    description: Participants are excluded from an investigation if they meet this
-      criteria
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: exclusion_criteria
-    owner: StudyArm
-    domain_of:
-    - Investigation
-    - StudyArm
-    range: string
-    multivalued: true
   name:
     name: name
     description: A human-readable name for a thing
