@@ -323,13 +323,13 @@
 </tr>
 <tr>
 <td><a href="../inclusion_criteria/">inclusion_criteria</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>Participants in an investigation must meet this criteria</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../exclusion_criteria/">exclusion_criteria</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>* <br/> <a href="../String/">String</a></td>
 <td>Participants are excluded from an investigation if they meet this criteria</td>
 <td>direct</td>
 </tr>
@@ -526,6 +526,7 @@ attributes:
     - Investigation
     - StudyArm
     range: string
+    multivalued: true
   exclusion_criteria:
     name: exclusion_criteria
     description: Participants are excluded from an investigation if they meet this
@@ -538,6 +539,7 @@ attributes:
     - Investigation
     - StudyArm
     range: string
+    multivalued: true
   release_date:
     name: release_date
     annotations:
