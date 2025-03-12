@@ -45,10 +45,14 @@ def id(input):
             return input.replace(url, '')
     return input
 
-
+# this is fake
+# we don't generate new IDs every time the code is run
+akc_id_last = 0
 def akc_id():
     """Returns a new AKC ID."""
-    return 'AKC:' + str(uuid.uuid4())
+    global akc_id_last
+    akc_id_last += 1
+    return 'AKC:' + str(akc_id_last)
 
 
 def read_double_header(path):

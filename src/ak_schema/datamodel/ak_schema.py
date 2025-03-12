@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-27T01:08:20
+# Generation date: 2025-03-12T22:22:22
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -55,6 +55,7 @@ VO = CurieNamespace('VO', 'http://purl.obolibrary.org/obo/VO_')
 AK_SCHEMA = CurieNamespace('ak_schema', 'https://github.com/airr-knowledge/ak-schema/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
 DC = CurieNamespace('dc', 'http://purl.org/dc/elements/1.1/')
+DOI = CurieNamespace('doi', 'https://www.doi.org/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')
 IEDB_ASSAY = CurieNamespace('iedb_assay', 'http://www.iedb.org/assay/')
 IEDB_EPITOPE = CurieNamespace('iedb_epitope', 'http://www.iedb.org/epitope/')
@@ -603,8 +604,8 @@ class Investigation(PlannedProcess):
     akc_id: Union[str, InvestigationAkcId] = None
     study_type: Optional[Union[str, "StudyTypeOntology"]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
-    inclusion_criteria: Optional[str] = None
-    exclusion_criteria: Optional[str] = None
+    inclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
+    exclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
     release_date: Optional[Union[str, XSDDateTime]] = None
     update_date: Optional[Union[str, XSDDateTime]] = None
     participants: Optional[Union[Union[str, ParticipantAkcId], List[Union[str, ParticipantAkcId]]]] = empty_list()
@@ -622,11 +623,13 @@ class Investigation(PlannedProcess):
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
 
-        if self.inclusion_criteria is not None and not isinstance(self.inclusion_criteria, str):
-            self.inclusion_criteria = str(self.inclusion_criteria)
+        if not isinstance(self.inclusion_criteria, list):
+            self.inclusion_criteria = [self.inclusion_criteria] if self.inclusion_criteria is not None else []
+        self.inclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.inclusion_criteria]
 
-        if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
-            self.exclusion_criteria = str(self.exclusion_criteria)
+        if not isinstance(self.exclusion_criteria, list):
+            self.exclusion_criteria = [self.exclusion_criteria] if self.exclusion_criteria is not None else []
+        self.exclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.exclusion_criteria]
 
         if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
             self.release_date = XSDDateTime(self.release_date)
@@ -733,8 +736,8 @@ class StudyArm(NamedThing):
 
     akc_id: Union[str, StudyArmAkcId] = None
     investigation: Optional[Union[str, InvestigationAkcId]] = None
-    inclusion_criteria: Optional[str] = None
-    exclusion_criteria: Optional[str] = None
+    inclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
+    exclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -745,11 +748,13 @@ class StudyArm(NamedThing):
         if self.investigation is not None and not isinstance(self.investigation, InvestigationAkcId):
             self.investigation = InvestigationAkcId(self.investigation)
 
-        if self.inclusion_criteria is not None and not isinstance(self.inclusion_criteria, str):
-            self.inclusion_criteria = str(self.inclusion_criteria)
+        if not isinstance(self.inclusion_criteria, list):
+            self.inclusion_criteria = [self.inclusion_criteria] if self.inclusion_criteria is not None else []
+        self.inclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.inclusion_criteria]
 
-        if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
-            self.exclusion_criteria = str(self.exclusion_criteria)
+        if not isinstance(self.exclusion_criteria, list):
+            self.exclusion_criteria = [self.exclusion_criteria] if self.exclusion_criteria is not None else []
+        self.exclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.exclusion_criteria]
 
         super().__post_init__(**kwargs)
 
@@ -4554,6 +4559,14 @@ class RaceOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="Native Hawaiian or Other Pacific Islander",
                 meaning=OMRSE["00000218"]))
+        setattr(cls, "race: not specified",
+            PermissibleValue(text="race: not specified"))
+        setattr(cls, "race: other",
+            PermissibleValue(
+                text="race: other",
+                meaning=OMRSE["00000214"]))
+        setattr(cls, "race: unknown",
+            PermissibleValue(text="race: unknown"))
         setattr(cls, "African American",
             PermissibleValue(text="African American"))
         setattr(cls, "Asian or Pacific Islander",
@@ -4616,6 +4629,12 @@ class EthnicityOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="Not Hispanic or Latino",
                 meaning=OMRSE["00000208"]))
+        setattr(cls, "ethnicity: not specified",
+            PermissibleValue(text="ethnicity: not specified"))
+        setattr(cls, "ethnicity: other",
+            PermissibleValue(
+                text="ethnicity: other",
+                meaning=OMRSE["00000206"]))
         setattr(cls, "African-American",
             PermissibleValue(text="African-American"))
         setattr(cls, "Black or Black British - African",
@@ -5336,10 +5355,10 @@ slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.inclusion_criteria = Slot(uri=AK_SCHEMA.inclusion_criteria, name="inclusion_criteria", curie=AK_SCHEMA.curie('inclusion_criteria'),
-                   model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.exclusion_criteria = Slot(uri=AK_SCHEMA.exclusion_criteria, name="exclusion_criteria", curie=AK_SCHEMA.curie('exclusion_criteria'),
-                   model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.update_date = Slot(uri=AK_SCHEMA.update_date, name="update_date", curie=AK_SCHEMA.curie('update_date'),
                    model_uri=AK_SCHEMA.update_date, domain=None, range=Optional[Union[str, XSDDateTime]])

@@ -2939,6 +2939,8 @@
                 "Hispanic or Latino",
                 "Not Hispanic or Latino",
                 "Other",
+                "ethnicity: not specified",
+                "ethnicity: other",
                 "African",
                 "African-American",
                 "Arab",
@@ -3508,15 +3510,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -3628,15 +3636,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -4681,6 +4695,9 @@
                 "Native Hawaiian or Other Pacific Islander",
                 "White",
                 "Other",
+                "race: not specified",
+                "race: other",
+                "race: unknown",
                 "African American",
                 "Asian or Pacific Islander",
                 "Black",
@@ -7414,15 +7431,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -7464,15 +7487,21 @@
                 },
                 "exclusion_criteria": {
                     "description": "Participants are excluded from an investigation if they meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
                 "inclusion_criteria": {
                     "description": "Participants in an investigation must meet this criteria",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },

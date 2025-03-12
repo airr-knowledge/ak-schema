@@ -133,6 +133,10 @@
       "prefix_reference": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     },
     {
+      "prefix_prefix": "doi",
+      "prefix_reference": "https://www.doi.org/"
+    },
+    {
       "prefix_prefix": "AKC",
       "prefix_reference": "https://airr-knowledge.org/airrkb/api/v1/id/"
     },
@@ -511,6 +515,16 @@
           "meaning": "OMRSE:00000214"
         },
         {
+          "text": "race: not specified"
+        },
+        {
+          "text": "race: other",
+          "meaning": "OMRSE:00000214"
+        },
+        {
+          "text": "race: unknown"
+        },
+        {
           "text": "African American"
         },
         {
@@ -596,6 +610,13 @@
         },
         {
           "text": "Other",
+          "meaning": "OMRSE:00000206"
+        },
+        {
+          "text": "ethnicity: not specified"
+        },
+        {
+          "text": "ethnicity: other",
           "meaning": "OMRSE:00000206"
         },
         {
@@ -1816,6 +1837,7 @@
         "StudyArm"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -1830,6 +1852,7 @@
         "StudyArm"
       ],
       "range": "string",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13309,9 +13332,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-01-27T01:08:14",
-  "source_file_size": 196459,
-  "generation_date": "2025-01-27T01:08:16",
+  "source_file_date": "2025-03-12T22:22:16",
+  "source_file_size": 196941,
+  "generation_date": "2025-03-12T22:22:18",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

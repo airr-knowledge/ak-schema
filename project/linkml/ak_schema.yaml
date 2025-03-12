@@ -99,6 +99,9 @@ prefixes:
   rdf:
     prefix_prefix: rdf
     prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  doi:
+    prefix_prefix: doi
+    prefix_reference: https://www.doi.org/
   AKC:
     prefix_prefix: AKC
     prefix_reference: https://airr-knowledge.org/airrkb/api/v1/id/
@@ -392,6 +395,13 @@ enums:
       Other:
         text: Other
         meaning: OMRSE:00000214
+      'race: not specified':
+        text: 'race: not specified'
+      'race: other':
+        text: 'race: other'
+        meaning: OMRSE:00000214
+      'race: unknown':
+        text: 'race: unknown'
       African American:
         text: African American
       Asian or Pacific Islander:
@@ -450,6 +460,11 @@ enums:
         meaning: OMRSE:00000208
       Other:
         text: Other
+        meaning: OMRSE:00000206
+      'ethnicity: not specified':
+        text: 'ethnicity: not specified'
+      'ethnicity: other':
+        text: 'ethnicity: other'
         meaning: OMRSE:00000206
       African:
         text: African
@@ -1211,12 +1226,14 @@ slots:
     description: Participants in an investigation must meet this criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+    multivalued: true
   exclusion_criteria:
     name: exclusion_criteria
     description: Participants are excluded from an investigation if they meet this
       criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+    multivalued: true
   update_date:
     name: update_date
     description: Subsequence updates to the investigation or its data
