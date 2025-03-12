@@ -63,6 +63,9 @@ prefixes:
   PATO:
     prefix_prefix: PATO
     prefix_reference: http://purl.obolibrary.org/obo/PATO_
+  PMID:
+    prefix_prefix: PMID
+    prefix_reference: https://pubmed.ncbi.nlm.nih.gov/
   RO:
     prefix_prefix: RO
     prefix_reference: http://purl.obolibrary.org/obo/RO_
@@ -99,9 +102,9 @@ prefixes:
   doi:
     prefix_prefix: doi
     prefix_reference: https://www.doi.org/
-  PMID:
-    prefix_prefix: PMID
-    prefix_reference: https://pubmed.ncbi.nlm.nih.gov/
+  AKC:
+    prefix_prefix: AKC
+    prefix_reference: https://airr-knowledge.org/airrkb/api/v1/id/
   xsd:
     prefix_prefix: xsd
     prefix_reference: http://www.w3.org/2001/XMLSchema#
@@ -345,13 +348,12 @@ enums:
   BiologicalSexOntology:
     name: BiologicalSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      female:
-        text: female
-        meaning: PATO:0020002
-      male:
-        text: male
-        meaning: PATO:0020001
+    reachable_from:
+      source_nodes:
+      - PATO:0020000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   PhenotypicSexOntology:
     name: PhenotypicSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -611,516 +613,30 @@ enums:
   LifeEventProcessOntology:
     name: LifeEventProcessOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      Death:
-        text: Death
-        meaning: UBERON:0000071
-      Unknown exposure:
-        text: Unknown exposure
-        meaning: ONTIE:0003310
-      Occurrence of disease:
-        text: Occurrence of disease
-        meaning: OGMS:0000063
-      Occurrence of infectious disease:
-        text: Occurrence of infectious disease
-        meaning: ONTIE:0003317
-      Occurrence of allergic disease:
-        text: Occurrence of allergic disease
-        meaning: ONTIE:0003318
-      Exposure to substance without evidence for disease:
-        text: Exposure to substance without evidence for disease
-        meaning: ONTIE:0003305
-      Infection without disease:
-        text: Infection without disease
-        meaning: ONTIE:0003424
-      Documented exposure without evidence for disease:
-        text: Documented exposure without evidence for disease
-        meaning: ONTIE:0003307
-        aliases:
-        - documented exposure without evidence for disease
-      Exposure with existing immune reactivity without evidence for disease:
-        text: Exposure with existing immune reactivity without evidence for disease
-        meaning: OBI:1110061
-      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
-        text: Environmental exposure to endemic/ubiquitous agent without evidence
-          for disease
-        meaning: ONTIE:0003308
-      Edministering substance in vivo:
-        text: Edministering substance in vivo
-        meaning: OBI:0600007
-      Edministration to cause disease:
-        text: Edministration to cause disease
-        meaning: OBI:0003413
-      Pathogen challenge:
-        text: Pathogen challenge
-        meaning: OBI:0000712
-      Vaccination:
-        text: Vaccination
-        meaning: VO:0000002
-      Administration to prevent or reduce disease:
-        text: Administration to prevent or reduce disease
-        meaning: OBI:0003414
-      Prophylactic vaccination:
-        text: Prophylactic vaccination
-        meaning: VO:0005374
-      Therapeutic vaccination:
-        text: Therapeutic vaccination
-        meaning: VO:0005373
-      Transplant/transfusion:
-        text: Transplant/transfusion
-        meaning: OGMS:0000143
-      Transfusion:
-        text: Transfusion
-        meaning: OGMS:0000145
-      Solid organ transplant:
-        text: Solid organ transplant
-        meaning: OGMS:0000144
-      No exposure:
-        text: No exposure
-        meaning: ONTIE:0003309
-      Specimen collection:
-        text: Specimen collection
-        meaning: OBI:0000659
-      Study enrollment:
-        text: Study enrollment
-        meaning: OBI:0600004
-      Hospitalization:
-        text: Hospitalization
-        meaning: OGMS:0000098
-      Hospital discharge:
-        text: Hospital discharge
-      Treatment:
-        text: Treatment
-        meaning: OGMS:0000090
-      Fertilization:
-        text: Fertilization
-        meaning: GO:0009566
-      Physical examination:
-        text: Physical examination
-        meaning: OGMS:0000057
-      Recovery:
-        text: Recovery
-      Birth:
-        text: Birth
-      Exposure to infectious agent:
-        text: Exposure to infectious agent
+    reachable_from:
+      source_nodes:
+      - OBI:0000011
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   ExposureMaterialOntology:
     name: ExposureMaterialOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      2008-2009 trivalent influenza vaccine:
-        text: 2008-2009 trivalent influenza vaccine
-        meaning: VO:0004809
-      2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008):
-        text: 2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth
-          /16/2009 (H3N2), and B/Brisbane/60/2008)
-        meaning: VO:0004810
-      ACWY Vax:
-        text: ACWY Vax
-        meaning: VO:0003138
-      Ad35.CS.01 malaria vaccine:
-        text: Ad35.CS.01 malaria vaccine
-        meaning: VO:0004993
-      Alphainfluenzavirus:
-        text: Alphainfluenzavirus
-        meaning: NCBITaxon:197911
-      BCG Vaccine:
-        text: BCG Vaccine
-        meaning: VO:0000771
-      Betainfluenzavirus:
-        text: Betainfluenzavirus
-        meaning: NCBITaxon:197912
-      Bordetella:
-        text: Bordetella
-        meaning: NCBITaxon:517
-      Bordetella parapertussis:
-        text: Bordetella parapertussis
-        meaning: NCBITaxon:519
-      Bordetella pertussis:
-        text: Bordetella pertussis
-        meaning: NCBITaxon:520
-      Bundibugyo virus:
-        text: Bundibugyo virus
-        meaning: NCBITaxon:565995
-      Chikungunya virus:
-        text: Chikungunya virus
-        meaning: NCBITaxon:37124
-      Clostridium tetani:
-        text: Clostridium tetani
-        meaning: NCBITaxon:1513
-      Corynebacterium diphtheriae:
-        text: Corynebacterium diphtheriae
-        meaning: NCBITaxon:1717
-      Cytomegalovirus:
-        text: Cytomegalovirus
-        meaning: NCBITaxon:10358
-      Dengue virus:
-        text: Dengue virus
-        meaning: NCBITaxon:12637
-      Diphtheria-Tetanus-Pertussis vaccine:
-        text: Diphtheria-Tetanus-Pertussis vaccine
-        meaning: VO:0000738
-      Dryvax:
-        text: Dryvax
-        meaning: VO:0000035
-      Engerix-B:
-        text: Engerix-B
-        meaning: VO:0010711
-      FluMist:
-        text: FluMist
-        meaning: VO:0000044
-      Fluarix:
-        text: Fluarix
-        meaning: VO:0000045
-      Fluvirin:
-        text: Fluvirin
-        meaning: VO:0000046
-      Fluzone:
-        text: Fluzone
-        meaning: VO:0000047
-      Gammainfluenzavirus:
-        text: Gammainfluenzavirus
-        meaning: NCBITaxon:197913
-      H1N1 subtype:
-        text: H1N1 subtype
-        meaning: NCBITaxon:114727
-      HEPLISAV-B:
-        text: HEPLISAV-B
-        meaning: VO:0003152
-      Hepacivirus C:
-        text: Hepacivirus C
-        meaning: NCBITaxon:11103
-      Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]:
-        text: Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]
-        meaning: VO:0003270
-      Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]:
-        text: Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]
-        meaning: VO:0003258
-      Hepatitis B virus:
-        text: Hepatitis B virus
-        meaning: NCBITaxon:10407
-      Hepatitis B virus vaccine:
-        text: Hepatitis B virus vaccine
-        meaning: VO:0000644
-      Hepatovirus A:
-        text: Hepatovirus A
-        meaning: NCBITaxon:12092
-      Human alphaherpesvirus 3:
-        text: Human alphaherpesvirus 3
-        meaning: NCBITaxon:10335
-      Human immunodeficiency virus:
-        text: Human immunodeficiency virus
-        meaning: NCBITaxon:12721
-      Influenza A H1N1 2009 Monovalent Vaccine Novartis:
-        text: Influenza A H1N1 2009 Monovalent Vaccine Novartis
-        meaning: VO:0000081
-      Influenza A virus:
-        text: Influenza A virus
-        meaning: NCBITaxon:11320
-      Influenza C virus:
-        text: Influenza C virus
-        meaning: NCBITaxon:11552
-      Influenza virus vaccine:
-        text: Influenza virus vaccine
-        meaning: VO:0000642
-      LC16m8:
-        text: LC16m8
-        meaning: VO:0004091
-      MRKAd5 HIV-1 gag/pol/nef:
-        text: MRKAd5 HIV-1 gag/pol/nef
-        meaning: VO:0003133
-      MVA85A:
-        text: MVA85A
-        meaning: VO:0003120
-      Menactra:
-        text: Menactra
-        meaning: VO:0000071
-      Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C:
-        text: Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C
-        meaning: VO:0010725
-      Menveo:
-        text: Menveo
-        meaning: VO:0001246
-      Mycobacterium tuberculosis:
-        text: Mycobacterium tuberculosis
-        meaning: NCBITaxon:1773
-      Mycobacterium tuberculosis vaccine:
-        text: Mycobacterium tuberculosis vaccine
-        meaning: VO:0000077
-      Neisseria meningitidis:
-        text: Neisseria meningitidis
-        meaning: NCBITaxon:487
-      Neisseria meningitidis vaccine:
-        text: Neisseria meningitidis vaccine
-        meaning: VO:0000053
-      Orthoebolavirus:
-        text: Orthoebolavirus
-        meaning: NCBITaxon:3044781
-      P. falciparum RTS,S/AS01:
-        text: P. falciparum RTS,S/AS01
-        meaning: VO:0003093
-      Plasmodium:
-        text: Plasmodium
-        meaning: NCBITaxon:5820
-      Plasmodium falciparum:
-        text: Plasmodium falciparum
-        meaning: NCBITaxon:5833
-      Plasmodium falciparum vaccine:
-        text: Plasmodium falciparum vaccine
-        meaning: VO:0000087
-      Pneumovax 23:
-        text: Pneumovax 23
-        meaning: VO:0000088
-      SARS-CoV-2:
-        text: SARS-CoV-2
-        meaning: NCBITaxon:2697049
-      Smallpox virus vaccine:
-        text: Smallpox virus vaccine
-        meaning: VO:0000651
-      Stamaril:
-        text: Stamaril
-        meaning: VO:0003139
-      Streptococcus pneumoniae:
-        text: Streptococcus pneumoniae
-        meaning: NCBITaxon:1313
-      Sudan ebolavirus:
-        text: Sudan ebolavirus
-        meaning: NCBITaxon:186540
-      Variola virus:
-        text: Variola virus
-        meaning: NCBITaxon:10255
-      Vibrio cholerae:
-        text: Vibrio cholerae
-        meaning: NCBITaxon:666
-      West Nile virus:
-        text: West Nile virus
-        meaning: NCBITaxon:11082
-      YF-Vax:
-        text: YF-Vax
-        meaning: VO:0000121
-      Yellow fever 17D vaccine vector:
-        text: Yellow fever 17D vaccine vector
-        meaning: VO:0000122
-      Yellow fever virus:
-        text: Yellow fever virus
-        meaning: NCBITaxon:11089
-      Zaire ebolavirus:
-        text: Zaire ebolavirus
-        meaning: NCBITaxon:186538
-      Zika virus:
-        text: Zika virus
-        meaning: NCBITaxon:64320
-      Zostavax:
-        text: Zostavax
-        meaning: VO:0000124
-      bacterial vaccine:
-        text: bacterial vaccine
-        meaning: VO:0000165
-      bacterium:
-        text: bacterium
-        meaning: NCBITaxon:2
-      diphtheria, tetanus and whole cell pertussis vaccine:
-        text: diphtheria, tetanus and whole cell pertussis vaccine
-        meaning: VO:0003106
-      eukaryote:
-        text: eukaryote
-        meaning: NCBITaxon:2759
-      live attenuated influenza vaccine:
-        text: live attenuated influenza vaccine
-        meaning: VO:0001178
-      microbial eukaryotic vaccine:
-        text: microbial eukaryotic vaccine
-        meaning: VO:0005563
-      organism:
-        text: organism
-        meaning: NCBITaxon:1
-      rVSV-EBOV:
-        text: rVSV-EBOV
-        meaning: VO:0004660
-      unidentified influenza virus:
-        text: unidentified influenza virus
-        meaning: NCBITaxon:11309
-      unidentified organism:
-        text: unidentified organism
-        meaning: NCBITaxon:32644
-      vaccine:
-        text: vaccine
-        meaning: VO:0000001
-      viral vaccine:
-        text: viral vaccine
-        meaning: VO:0000609
-      virus:
-        text: virus
-        meaning: NCBITaxon:10239
-      yellow fever virus vaccine:
-        text: yellow fever virus vaccine
-        meaning: VO:0000123
-      Human gammaherpesvirus 4:
-        text: Human gammaherpesvirus 4
-        meaning: NCBITaxon:10376
-      Human betaherpesvirus 5:
-        text: Human betaherpesvirus 5
-        meaning: NCBITaxon:10359
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   DiseaseOntology:
     name: DiseaseOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      COVID-19:
-        text: COVID-19
-        meaning: DOID:0080600
-      Plasmodium falciparum malaria:
-        text: Plasmodium falciparum malaria
-        meaning: DOID:14067
-      dengue hemorrhagic fever:
-        text: dengue hemorrhagic fever
-        meaning: DOID:12206
-      dengue disease:
-        text: dengue disease
-        meaning: DOID:12205
-      chikungunya:
-        text: chikungunya
-        meaning: DOID:0050012
-      upper respiratory tract disease:
-        text: upper respiratory tract disease
-        meaning: DOID:974
-      encephalitis:
-        text: encephalitis
-        meaning: DOID:9588
-      West Nile fever:
-        text: West Nile fever
-        meaning: DOID:2366
-      Zika fever:
-        text: Zika fever
-        meaning: DOID:0060478
-      meningitis:
-        text: meningitis
-        meaning: DOID:9471
-      healthy:
-        text: healthy
-        meaning: ONTIE:0003423
-      influenza:
-        text: influenza
-        meaning: DOID:8469
-      human cytomegalovirus infection:
-        text: human cytomegalovirus infection
-        meaning: DOID:0080827
-      end stage renal disease:
-        text: end stage renal disease
-        meaning: DOID:783
-      West Nile encephalitis:
-        text: West Nile encephalitis
-        meaning: DOID:2365
-      hepatitis C:
-        text: hepatitis C
-        meaning: DOID:1883
-      meningoencephalitis:
-        text: meningoencephalitis
-        meaning: DOID:10554
-      urinary tract obstruction:
-        text: urinary tract obstruction
-        meaning: DOID:5200
-      pharyngitis:
-        text: pharyngitis
-        meaning: DOID:2275
-      malaria:
-        text: malaria
-        meaning: DOID:12365
-      tuberculosis:
-        text: tuberculosis
-        meaning: DOID:399
-      avian influenza:
-        text: avian influenza
-        meaning: DOID:4492
-      herpes zoster:
-        text: herpes zoster
-        meaning: DOID:8536
-      intestinal infectious disease:
-        text: intestinal infectious disease
-        meaning: DOID:100
-      yellow fever:
-        text: yellow fever
-        meaning: DOID:9682
-      focal segmental glomerulosclerosis:
-        text: focal segmental glomerulosclerosis
-        meaning: DOID:1312
-      cystic kidney disease:
-        text: cystic kidney disease
-        meaning: DOID:2975
-      breast cancer:
-        text: breast cancer
-        meaning: DOID:1612
-      celiac disease:
-        text: celiac disease
-        meaning: DOID:10608
-      chickenpox:
-        text: chickenpox
-        meaning: DOID:8659
-      psoriasis:
-        text: psoriasis
-        meaning: DOID:8893
-      diphtheria:
-        text: diphtheria
-        meaning: DOID:11405
-      Ebola hemorrhagic fever:
-        text: Ebola hemorrhagic fever
-        meaning: DOID:4325
-      childhood type dermatomyositis:
-        text: childhood type dermatomyositis
-        meaning: DOID:14203
-      cholera:
-        text: cholera
-        meaning: DOID:1498
-      hepatitis B:
-        text: hepatitis B
-        meaning: DOID:2043
-      hepatitis A:
-        text: hepatitis A
-        meaning: DOID:12549
-      pustulosis of palm and sole:
-        text: pustulosis of palm and sole
-        meaning: DOID:4398
-      meningococcal meningitis:
-        text: meningococcal meningitis
-        meaning: DOID:0080176
-      smallpox:
-        text: smallpox
-        meaning: DOID:8736
-      type 2 diabetes mellitus:
-        text: type 2 diabetes mellitus
-        meaning: DOID:9352
-      pertussis:
-        text: pertussis
-        meaning: DOID:1116
-      Streptococcus pneumonia:
-        text: Streptococcus pneumonia
-        meaning: DOID:0040084
-      swine influenza:
-        text: swine influenza
-        meaning: DOID:0050211
-      tetanus:
-        text: tetanus
-        meaning: DOID:11338
-      ulcerative colitis:
-        text: ulcerative colitis
-        meaning: DOID:8577
-      human immunodeficiency virus infectious disease:
-        text: human immunodeficiency virus infectious disease
-        meaning: DOID:526
-      interstitial nephritis:
-        text: interstitial nephritis
-        meaning: DOID:1063
-      cystinosis:
-        text: cystinosis
-        meaning: DOID:1064
-      hemolytic-uremic syndrome:
-        text: hemolytic-uremic syndrome
-        meaning: DOID:12554
-      kidney cortex necrosis:
-        text: kidney cortex necrosis
-        meaning: DOID:2973
-      food allergy:
-        text: food allergy
-        meaning: DOID:3044
+    reachable_from:
+      source_nodes:
+      - DOID:4
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   DiseaseStageOntology:
     name: DiseaseStageOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1693,6 +1209,11 @@ slots:
     description: A human-readable description for a thing
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: schema:description
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    designates_type: true
+    range: string
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,
@@ -1902,11 +1423,6 @@ slots:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
-  type:
-    name: type
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    designates_type: true
-    range: string
   specimen_type:
     name: specimen_type
     description: The type of this specimen
@@ -1998,6 +1514,28 @@ slots:
     description: The specific type of an assessment
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
+  aa_hash:
+    name: aa_hash
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  junction_aa_vj_allele_hash:
+    name: junction_aa_vj_allele_hash
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  junction_aa_vj_gene_hash:
+    name: junction_aa_vj_gene_hash
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  complete_vdj:
+    name: complete_vdj
+    description: Complete VDJ flag.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: boolean
+  sequence:
+    name: sequence
+    description: Nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
   chain_type:
     name: chain_type
     description: Gene locus (chain type).
@@ -2136,10 +1674,6 @@ slots:
       nullable:
         tag: nullable
         value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  sequence:
-    name: sequence
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
   derivation:
@@ -4288,19 +3822,6 @@ slots:
     description: True if the aligned sequence contains a stop codon.
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: boolean
-  complete_vdj:
-    name: complete_vdj
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: True if the sequence alignment spans the entire V(D)J region. Meaning,
-      sequence_alignment includes both the first V gene codon that encodes the mature
-      polypeptide chain (i.e., after the leader sequence) and the last complete codon
-      of the J gene (i.e., before the J-C splice site). This does not require an absence
-      of deletions within the internal FWR and CDR regions of the alignment.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: boolean
   v_call:
     name: v_call
     annotations:
@@ -5940,6 +5461,21 @@ classes:
     abstract: true
     slots:
     - source_uri
+  AIRRStandards:
+    name: AIRRStandards
+    description: An object directly converted from the AIRR schema.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
+  AIRRStandards_v1p5:
+    name: AIRRStandards_v1p5
+    description: An object directly converted from AIRR schema version 1.5.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
+  AIRRStandards_v2p0:
+    name: AIRRStandards_v2p0
+    description: An object directly converted from AIRR schema version 2.0.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
   NamedThing:
     name: NamedThing
     description: Name and description for AKC things.
@@ -6056,10 +5592,22 @@ classes:
         range: Chain
         multivalued: true
         inlined: true
-      tcell_receptors:
-        name: tcell_receptors
+      ab_tcell_receptors:
+        name: ab_tcell_receptors
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: TCellReceptor
+        range: AlphaBetaTCR
+        multivalued: true
+        inlined: true
+      gd_tcell_receptors:
+        name: gd_tcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: GammaDeltaTCR
+        multivalued: true
+        inlined: true
+      bcell_receptors:
+        name: bcell_receptors
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: BCellReceptor
         multivalued: true
         inlined: true
       epitopes:
@@ -6283,8 +5831,12 @@ classes:
   Chain:
     name: Chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
     slots:
+    - aa_hash
+    - junction_aa_vj_allele_hash
+    - junction_aa_vj_gene_hash
+    - complete_vdj
     - sequence
     - sequence_aa
     - chain_type
@@ -6305,7 +5857,8 @@ classes:
   TCellReceptor:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
+    abstract: true
     slots:
     - type
     class_uri: GO:0042101
@@ -6328,7 +5881,7 @@ classes:
   BCellReceptor:
     name: BCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
     slots:
     - IGH_chain
     - IGK_chain
@@ -6395,6 +5948,7 @@ classes:
   TimePoint:
     name: TimePoint
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - time_point_label
     - time_point_value
@@ -6402,6 +5956,7 @@ classes:
   Acknowledgement:
     name: Acknowledgement
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - acknowledgement_id
     - individual_full_name
@@ -6410,6 +5965,7 @@ classes:
   RearrangedSequence:
     name: RearrangedSequence
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequence_id
     - sequence
@@ -6424,6 +5980,7 @@ classes:
   UnrearrangedSequence:
     name: UnrearrangedSequence
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequence_id
     - sequence
@@ -6438,6 +5995,7 @@ classes:
   SequenceDelineationV:
     name: SequenceDelineationV
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequence_delineation_id
     - delineation_scheme
@@ -6458,6 +6016,7 @@ classes:
   AlleleDescription:
     name: AlleleDescription
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - allele_description_id
     - allele_description_ref
@@ -6513,6 +6072,7 @@ classes:
   GermlineSet:
     name: GermlineSet
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - germline_set_id
     - author
@@ -6534,12 +6094,14 @@ classes:
   GenotypeSet:
     name: GenotypeSet
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - receptor_genotype_set_id
     - genotype_class_list
   Genotype:
     name: Genotype
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - receptor_genotype_id
     - locus
@@ -6550,6 +6112,7 @@ classes:
   DocumentedAllele:
     name: DocumentedAllele
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - label
     - germline_set_ref
@@ -6557,6 +6120,7 @@ classes:
   UndocumentedAllele:
     name: UndocumentedAllele
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - allele_name
     - sequence
@@ -6564,6 +6128,7 @@ classes:
   DeletedGene:
     name: DeletedGene
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - label
     - germline_set_ref
@@ -6571,12 +6136,14 @@ classes:
   MHCGenotypeSet:
     name: MHCGenotypeSet
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - mhc_genotype_set_id
     - mhc_genotype_list
   MHCGenotype:
     name: MHCGenotype
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - mhc_genotype_id
     - mhc_class
@@ -6585,6 +6152,7 @@ classes:
   MHCAllele:
     name: MHCAllele
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - allele_designation
     - gene
@@ -6592,12 +6160,14 @@ classes:
   SubjectGenotype:
     name: SubjectGenotype
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - receptor_genotype_set
     - mhc_genotype_set
   Study:
     name: Study
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - study_id
     - study_title
@@ -6617,6 +6187,7 @@ classes:
   Subject:
     name: Subject
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - subject_id
     - synthetic
@@ -6637,6 +6208,7 @@ classes:
   Diagnosis:
     name: Diagnosis
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - study_group_description
     - disease_diagnosis
@@ -6649,6 +6221,7 @@ classes:
   Sample:
     name: Sample
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sample_id
     - sample_type
@@ -6662,6 +6235,7 @@ classes:
   CellProcessing:
     name: CellProcessing
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - tissue_processing
     - cell_subset
@@ -6677,6 +6251,7 @@ classes:
   PCRTarget:
     name: PCRTarget
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - pcr_target_locus
     - forward_pcr_primer_target_location
@@ -6684,6 +6259,7 @@ classes:
   NucleicAcidProcessing:
     name: NucleicAcidProcessing
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - template_class
     - template_quality
@@ -6698,6 +6274,7 @@ classes:
   SequencingRun:
     name: SequencingRun
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequencing_run_id
     - total_reads_passing_qc_filter
@@ -6709,6 +6286,7 @@ classes:
   SequencingData:
     name: SequencingData
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequencing_data_id
     - file_type
@@ -6723,6 +6301,7 @@ classes:
   DataProcessing:
     name: DataProcessing
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - data_processing_id
     - primary_annotation
@@ -6739,6 +6318,7 @@ classes:
   Repertoire:
     name: Repertoire
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - repertoire_id
     - repertoire_name
@@ -6750,6 +6330,7 @@ classes:
   RepertoireGroupDetail:
     name: RepertoireGroupDetail
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - repertoire_id
     - repertoire_description
@@ -6757,6 +6338,7 @@ classes:
   RepertoireGroup:
     name: RepertoireGroup
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - repertoire_group_id
     - repertoire_group_name
@@ -6765,6 +6347,7 @@ classes:
   Alignment:
     name: Alignment
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequence_id
     - segment
@@ -6783,6 +6366,7 @@ classes:
   Rearrangement:
     name: Rearrangement
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequence_id
     - sequence
@@ -6939,6 +6523,7 @@ classes:
   Clone:
     name: Clone
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - clone_id
     - repertoire_id
@@ -6967,6 +6552,7 @@ classes:
   Tree:
     name: Tree
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - tree_id
     - clone_id
@@ -6975,6 +6561,7 @@ classes:
   Node:
     name: Node
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sequence_id
     - sequence_alignment
@@ -6983,6 +6570,7 @@ classes:
   Cell:
     name: Cell
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - cell_id
     - rearrangements
@@ -6996,6 +6584,7 @@ classes:
   CellExpression:
     name: CellExpression
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - expression_id
     - cell_id
@@ -7007,6 +6596,7 @@ classes:
   Receptor:
     name: Receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - receptor_id
     - receptor_hash
@@ -7020,6 +6610,7 @@ classes:
   ReceptorReactivity:
     name: ReceptorReactivity
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - ligand_type
     - antigen_type
@@ -7039,6 +6630,7 @@ classes:
   SampleProcessing:
     name: SampleProcessing
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AIRRStandards
     slots:
     - sample_processing_id
     - sample_id

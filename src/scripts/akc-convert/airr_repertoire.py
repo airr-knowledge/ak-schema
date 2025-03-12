@@ -277,7 +277,13 @@ class AIRRRepertoire(CRepertoire):
                 akc_object[akc_slot] = new_slot_dict
 
         # We are done, dump out the JSON to the output file.
+        print('SAVING')
         print(json_dumper.dumps(investigation_dict), file=out_file)
+        yaml_path = out_file.name.replace('.json', '.yaml')
+        print(yaml_path)
+        obj = investigation_dict['AIRRKnowledgeCommons']
+        yaml_dumper.dump(obj, yaml_path)
+        #print(investigation_dict)
 
         # If we made it here we are DONE!
         return True

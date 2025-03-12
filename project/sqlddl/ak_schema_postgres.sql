@@ -20,17 +20,16 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
--- # Class: "AIRRKnowledgeCommons" Description: "A container for instances of multiple classes."
---     * Slot: id Description: 
 -- # Class: "Investigation" Description: "A scientific investigation."
 --     * Slot: study_type Description: Type of study design
 --     * Slot: archival_id Description: Identifier for external archival resource for the investigation, e.g., BioProject
+--     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
+--     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 --     * Slot: release_date Description: Date of this release
 --     * Slot: update_date Description: Subsequence updates to the investigation or its data
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "Reference" Description: "A document about an investigation."
 --     * Slot: title Description: The title of a reference
 --     * Slot: journal Description: The journal in which a reference was published
@@ -39,13 +38,13 @@
 --     * Slot: year Description: The year of the issue of the journal in which a reference was published
 --     * Slot: pages Description: The pages of the issue of the journal in which a reference was published
 --     * Slot: source_uri Description: AKC reference to a foreign thing.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "StudyArm" Description: "A population of participants of an investigation."
 --     * Slot: investigation Description: An investigation in which the study arm participates
+--     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
+--     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "Participant" Description: "A participant in an investigation."
 --     * Slot: study_arm Description: The study arm that a participant is a member of
 --     * Slot: species Description: Binomial designation of subject's species
@@ -61,12 +60,10 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "StudyEvent" Description: "An event that is part of the study design of an investigation."
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "LifeEvent" Description: "An event in which a study participant participates."
 --     * Slot: participant Description: The participant of a life event
 --     * Slot: study_event Description: The study event corresponding to a life event
@@ -80,7 +77,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "ImmuneExposure" Description: "An event involving the immune system of a study participant."
 --     * Slot: life_event Description: The life event corresponding to an immune exposure
 --     * Slot: exposure_material Description: The material relevant to an immune exposure
@@ -90,7 +86,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "Specimen" Description: ""
 --     * Slot: life_event Description: The life event corresponding to an immune exposure
 --     * Slot: specimen_type Description: The type of this specimen
@@ -99,19 +94,16 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "SpecimenCollection" Description: ""
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "SpecimenProcessing" Description: ""
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "CellIsolationProcessing" Description: ""
 --     * Slot: tissue_processing Description: Enzymatic digestion and/or physical methods used to isolate cells from sample
 --     * Slot: cell_subset Description: Commonly-used designation of isolated cell population
@@ -150,7 +142,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "AIRRSequencingAssay" Description: ""
 --     * Slot: sequencing_run_id Description: ID of sequencing run assigned by the sequencing facility
 --     * Slot: total_reads_passing_qc_filter Description: Number of usable reads for analysis
@@ -181,7 +172,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "Conclusion" Description: ""
 --     * Slot: result Description: The content of the conclusion
 --     * Slot: data_location_type Description: The type of location where data was found, e.g. figure, table
@@ -191,7 +181,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "Assessment" Description: ""
 --     * Slot: life_event Description: The life event corresponding to an immune exposure
 --     * Slot: assessment_type Description: The specific type of an assessment
@@ -201,7 +190,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "ImmuneSystem" Description: ""
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -229,11 +217,9 @@
 --     * Slot: cdr3_start Description: 
 --     * Slot: cdr3_end Description: CDR3 end position in the query sequence (1-based closed interval).
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "TCellReceptor" Description: ""
 --     * Slot: type Description: 
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "AlphaBetaTCR" Description: ""
 --     * Slot: TRA_chain Description: T cell receptor alpha chain
 --     * Slot: TRB_chain Description: T cell receptor beta chain
@@ -254,7 +240,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: AIRRKnowledgeCommons_id Description: Autocreated FK slot
 -- # Class: "PeptidicEpitope" Description: ""
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
 --     * Slot: source_protein Description: The protein that this epitope comes from
@@ -874,12 +859,6 @@
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
 --     * Slot: sequencing_files_id Description: Set of sequencing files produced by the sequencing run
--- # Class: "Investigation_inclusion_criteria" Description: ""
---     * Slot: Investigation_akc_id Description: Autocreated FK slot
---     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
--- # Class: "Investigation_exclusion_criteria" Description: ""
---     * Slot: Investigation_akc_id Description: Autocreated FK slot
---     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 -- # Class: "Investigation_participants" Description: ""
 --     * Slot: Investigation_akc_id Description: Autocreated FK slot
 --     * Slot: participants_akc_id Description: The participants involved with the investigation
@@ -904,12 +883,6 @@
 -- # Class: "Reference_authors" Description: ""
 --     * Slot: Reference_source_uri Description: Autocreated FK slot
 --     * Slot: authors Description: The authors of a reference
--- # Class: "StudyArm_inclusion_criteria" Description: ""
---     * Slot: StudyArm_akc_id Description: Autocreated FK slot
---     * Slot: inclusion_criteria Description: Participants in an investigation must meet this criteria
--- # Class: "StudyArm_exclusion_criteria" Description: ""
---     * Slot: StudyArm_akc_id Description: Autocreated FK slot
---     * Slot: exclusion_criteria Description: Participants are excluded from an investigation if they meet this criteria
 -- # Class: "StudyEvent_study_arms" Description: ""
 --     * Slot: StudyEvent_akc_id Description: Autocreated FK slot
 --     * Slot: study_arms_akc_id Description: The study arms that are relevant for a study event
@@ -1069,9 +1042,50 @@ CREATE TABLE "PlanSpecification" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
-CREATE TABLE "AIRRKnowledgeCommons" (
-	id INTEGER NOT NULL, 
-	PRIMARY KEY (id)
+CREATE TABLE "Investigation" (
+	study_type VARCHAR, 
+	archival_id TEXT, 
+	inclusion_criteria TEXT, 
+	exclusion_criteria TEXT, 
+	release_date TIMESTAMP, 
+	update_date TIMESTAMP, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "Reference" (
+	title TEXT, 
+	journal TEXT, 
+	issue TEXT, 
+	month TEXT, 
+	year INTEGER, 
+	pages TEXT, 
+	source_uri TEXT NOT NULL, 
+	PRIMARY KEY (source_uri)
+);
+CREATE TABLE "StudyEvent" (
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "Dataset" (
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "Conclusion" (
+	result TEXT, 
+	data_location_type TEXT, 
+	data_location_value TEXT, 
+	organism VARCHAR, 
+	experiment_type TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "ImmuneSystem" (
 	name TEXT, 
@@ -1079,8 +1093,6 @@ CREATE TABLE "ImmuneSystem" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
-<<<<<<< HEAD
-=======
 CREATE TABLE "Chain" (
 	aa_hash TEXT, 
 	junction_aa_vj_allele_hash TEXT, 
@@ -1118,7 +1130,6 @@ CREATE TABLE "Epitope" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
->>>>>>> main
 CREATE TABLE "PeptidicEpitope" (
 	sequence_aa TEXT, 
 	source_protein TEXT, 
@@ -1234,7 +1245,7 @@ CREATE TABLE "AlleleDescription" (
 	maintainer TEXT, 
 	lab_address TEXT, 
 	release_version INTEGER, 
-	release_date DATETIME, 
+	release_date TIMESTAMP, 
 	release_description TEXT, 
 	label TEXT, 
 	sequence TEXT, 
@@ -1283,7 +1294,7 @@ CREATE TABLE "GermlineSet" (
 	lab_address TEXT, 
 	release_version INTEGER, 
 	release_description TEXT, 
-	release_date DATETIME, 
+	release_date TIMESTAMP, 
 	germline_set_name TEXT, 
 	germline_set_ref TEXT, 
 	pub_ids TEXT, 
@@ -1360,8 +1371,8 @@ CREATE TABLE "Study" (
 	lab_address TEXT, 
 	submitted_by TEXT, 
 	pub_ids TEXT, 
-	adc_publish_date DATETIME, 
-	adc_update_date DATETIME, 
+	adc_publish_date TIMESTAMP, 
+	adc_update_date TIMESTAMP, 
 	PRIMARY KEY (id)
 );
 CREATE TABLE "Diagnosis" (
@@ -1728,99 +1739,31 @@ CREATE TABLE "ReceptorReactivity" (
 	reactivity_unit TEXT, 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "Investigation" (
-	study_type VARCHAR, 
-	archival_id TEXT, 
-	release_date DATETIME, 
-	update_date DATETIME, 
+CREATE TABLE "StudyArm" (
+	investigation TEXT, 
+	inclusion_criteria TEXT, 
+	exclusion_criteria TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );
-CREATE TABLE "Reference" (
-	title TEXT, 
-	journal TEXT, 
-	issue TEXT, 
-	month TEXT, 
-	year INTEGER, 
-	pages TEXT, 
-	source_uri TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (source_uri), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "StudyEvent" (
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "Dataset" (
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "Conclusion" (
-	result TEXT, 
-	data_location_type TEXT, 
-	data_location_value TEXT, 
-	organism VARCHAR, 
-	experiment_type TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "Chain" (
-	sequence TEXT, 
-	sequence_aa TEXT, 
-	chain_type VARCHAR(3), 
-	v_call TEXT, 
-	d_call TEXT, 
-	j_call TEXT, 
-	c_call TEXT, 
-	junction_aa TEXT, 
-	cdr1_aa TEXT, 
-	cdr2_aa TEXT, 
-	cdr3_aa TEXT, 
-	cdr1_start INTEGER, 
-	cdr1_end INTEGER, 
-	cdr2_start INTEGER, 
-	cdr2_end INTEGER, 
-	cdr3_start INTEGER, 
-	cdr3_end INTEGER, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "TCellReceptor" (
+CREATE TABLE "AlphaBetaTCR" (
+	"TRA_chain" TEXT, 
+	"TRB_chain" TEXT, 
 	type TEXT, 
 	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+	FOREIGN KEY("TRA_chain") REFERENCES "Chain" (akc_id), 
+	FOREIGN KEY("TRB_chain") REFERENCES "Chain" (akc_id)
 );
-CREATE TABLE "Epitope" (
+CREATE TABLE "GammaDeltaTCR" (
+	"TRG_chain" TEXT, 
+	"TRD_chain" TEXT, 
 	type TEXT, 
 	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
-<<<<<<< HEAD
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-=======
 	FOREIGN KEY("TRG_chain") REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY("TRD_chain") REFERENCES "Chain" (akc_id)
 );
@@ -1850,7 +1793,6 @@ CREATE TABLE "ChainSimilarity" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(chain_domain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(chain_codomain) REFERENCES "Chain" (akc_id)
->>>>>>> main
 );
 CREATE TABLE "SubjectGenotype" (
 	id INTEGER NOT NULL, 
@@ -1866,7 +1808,7 @@ CREATE TABLE "SequencingRun" (
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
-	sequencing_run_date DATETIME, 
+	sequencing_run_date TIMESTAMP, 
 	sequencing_kit TEXT, 
 	sequencing_files_id INTEGER, 
 	PRIMARY KEY (id), 
@@ -1916,11 +1858,65 @@ CREATE TABLE "SampleProcessing" (
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
-	sequencing_run_date DATETIME, 
+	sequencing_run_date TIMESTAMP, 
 	sequencing_kit TEXT, 
 	sequencing_files_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
+);
+CREATE TABLE "Investigation_simulations" (
+	"Investigation_akc_id" TEXT, 
+	simulations_akc_id TEXT, 
+	PRIMARY KEY ("Investigation_akc_id", simulations_akc_id), 
+	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(simulations_akc_id) REFERENCES "Simulation" (akc_id)
+);
+CREATE TABLE "Investigation_documents" (
+	"Investigation_akc_id" TEXT, 
+	documents_source_uri TEXT, 
+	PRIMARY KEY ("Investigation_akc_id", documents_source_uri), 
+	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(documents_source_uri) REFERENCES "Reference" (source_uri)
+);
+CREATE TABLE "Investigation_conclusions" (
+	"Investigation_akc_id" TEXT, 
+	conclusions_akc_id TEXT, 
+	PRIMARY KEY ("Investigation_akc_id", conclusions_akc_id), 
+	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(conclusions_akc_id) REFERENCES "Conclusion" (akc_id)
+);
+CREATE TABLE "Reference_sources" (
+	"Reference_source_uri" TEXT, 
+	sources TEXT, 
+	PRIMARY KEY ("Reference_source_uri", sources), 
+	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
+);
+CREATE TABLE "Reference_investigations" (
+	"Reference_source_uri" TEXT, 
+	investigations_akc_id TEXT, 
+	PRIMARY KEY ("Reference_source_uri", investigations_akc_id), 
+	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri), 
+	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
+);
+CREATE TABLE "Reference_authors" (
+	"Reference_source_uri" TEXT, 
+	authors TEXT, 
+	PRIMARY KEY ("Reference_source_uri", authors), 
+	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
+);
+CREATE TABLE "Conclusion_investigations" (
+	"Conclusion_akc_id" TEXT, 
+	investigations_akc_id TEXT, 
+	PRIMARY KEY ("Conclusion_akc_id", investigations_akc_id), 
+	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
+	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
+);
+CREATE TABLE "Conclusion_datasets" (
+	"Conclusion_akc_id" TEXT, 
+	datasets_akc_id TEXT, 
+	PRIMARY KEY ("Conclusion_akc_id", datasets_akc_id), 
+	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
+	FOREIGN KEY(datasets_akc_id) REFERENCES "Dataset" (akc_id)
 );
 CREATE TABLE "SequenceDelineationV_alignment_labels" (
 	"SequenceDelineationV_id" INTEGER, 
@@ -2087,22 +2083,6 @@ CREATE TABLE "Receptor_reactivity_measurements" (
 	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id), 
 	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
 );
-<<<<<<< HEAD
-CREATE TABLE "StudyArm" (
-	investigation TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "AlphaBetaTCR" (
-	"TRA_chain" TEXT, 
-	"TRB_chain" TEXT, 
-	type TEXT, 
-=======
 CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species VARCHAR, 
@@ -2115,53 +2095,11 @@ CREATE TABLE "Participant" (
 	ethnicity TEXT, 
 	geolocation VARCHAR(24), 
 	strain VARCHAR(20), 
->>>>>>> main
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("TRA_chain") REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY("TRB_chain") REFERENCES "Chain" (akc_id)
-);
-CREATE TABLE "GammaDeltaTCR" (
-	"TRG_chain" TEXT, 
-	"TRD_chain" TEXT, 
-	type TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("TRG_chain") REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY("TRD_chain") REFERENCES "Chain" (akc_id)
-);
-CREATE TABLE "BCellReceptor" (
-	"IGH_chain" TEXT, 
-	"IGK_chain" TEXT, 
-	"IGL_chain" TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY("IGH_chain") REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY("IGK_chain") REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY("IGL_chain") REFERENCES "Chain" (akc_id)
-);
-CREATE TABLE "SimilarityCalculation" (
-	chain_domain TEXT, 
-	chain_codomain TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(chain_domain) REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY(chain_codomain) REFERENCES "Chain" (akc_id)
-);
-CREATE TABLE "ChainSimilarity" (
-	chain_similarity_type VARCHAR(26), 
-	chain_domain TEXT, 
-	chain_codomain TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(chain_domain) REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY(chain_codomain) REFERENCES "Chain" (akc_id)
+	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id)
 );
 CREATE TABLE "Subject" (
 	id INTEGER NOT NULL, 
@@ -2183,71 +2121,12 @@ CREATE TABLE "Subject" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(genotype_id) REFERENCES "SubjectGenotype" (id)
 );
-CREATE TABLE "Investigation_inclusion_criteria" (
-	"Investigation_akc_id" TEXT, 
-	inclusion_criteria TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", inclusion_criteria), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id)
-);
-CREATE TABLE "Investigation_exclusion_criteria" (
-	"Investigation_akc_id" TEXT, 
-	exclusion_criteria TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", exclusion_criteria), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id)
-);
-CREATE TABLE "Investigation_simulations" (
-	"Investigation_akc_id" TEXT, 
-	simulations_akc_id TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", simulations_akc_id), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(simulations_akc_id) REFERENCES "Simulation" (akc_id)
-);
-CREATE TABLE "Investigation_documents" (
-	"Investigation_akc_id" TEXT, 
-	documents_source_uri TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", documents_source_uri), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(documents_source_uri) REFERENCES "Reference" (source_uri)
-);
-CREATE TABLE "Investigation_conclusions" (
-	"Investigation_akc_id" TEXT, 
-	conclusions_akc_id TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", conclusions_akc_id), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(conclusions_akc_id) REFERENCES "Conclusion" (akc_id)
-);
-CREATE TABLE "Reference_sources" (
-	"Reference_source_uri" TEXT, 
-	sources TEXT, 
-	PRIMARY KEY ("Reference_source_uri", sources), 
-	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
-);
-CREATE TABLE "Reference_investigations" (
-	"Reference_source_uri" TEXT, 
-	investigations_akc_id TEXT, 
-	PRIMARY KEY ("Reference_source_uri", investigations_akc_id), 
-	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri), 
-	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
-);
-CREATE TABLE "Reference_authors" (
-	"Reference_source_uri" TEXT, 
-	authors TEXT, 
-	PRIMARY KEY ("Reference_source_uri", authors), 
-	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
-);
-CREATE TABLE "Conclusion_investigations" (
-	"Conclusion_akc_id" TEXT, 
-	investigations_akc_id TEXT, 
-	PRIMARY KEY ("Conclusion_akc_id", investigations_akc_id), 
-	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
-	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
-);
-CREATE TABLE "Conclusion_datasets" (
-	"Conclusion_akc_id" TEXT, 
-	datasets_akc_id TEXT, 
-	PRIMARY KEY ("Conclusion_akc_id", datasets_akc_id), 
-	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
-	FOREIGN KEY(datasets_akc_id) REFERENCES "Dataset" (akc_id)
+CREATE TABLE "StudyEvent_study_arms" (
+	"StudyEvent_akc_id" TEXT, 
+	study_arms_akc_id TEXT, 
+	PRIMARY KEY ("StudyEvent_akc_id", study_arms_akc_id), 
+	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
 );
 CREATE TABLE "RepertoireGroup_repertoires" (
 	"RepertoireGroup_id" INTEGER, 
@@ -2263,63 +2142,6 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 	FOREIGN KEY("SampleProcessing_id") REFERENCES "SampleProcessing" (id), 
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
 );
-CREATE TABLE "Participant" (
-	study_arm TEXT, 
-	species VARCHAR, 
-	biological_sex VARCHAR(6), 
-	phenotypic_sex VARCHAR(13), 
-	age TEXT, 
-	age_unit VARCHAR, 
-	age_event TEXT, 
-	race TEXT, 
-	ethnicity TEXT, 
-	geolocation VARCHAR(24), 
-	strain VARCHAR(20), 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "Repertoire" (
-	id INTEGER NOT NULL, 
-	repertoire_id TEXT, 
-	repertoire_name TEXT, 
-	repertoire_description TEXT, 
-	study_id INTEGER, 
-	subject_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
-	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
-);
-CREATE TABLE "StudyArm_inclusion_criteria" (
-	"StudyArm_akc_id" TEXT, 
-	inclusion_criteria TEXT, 
-	PRIMARY KEY ("StudyArm_akc_id", inclusion_criteria), 
-	FOREIGN KEY("StudyArm_akc_id") REFERENCES "StudyArm" (akc_id)
-);
-CREATE TABLE "StudyArm_exclusion_criteria" (
-	"StudyArm_akc_id" TEXT, 
-	exclusion_criteria TEXT, 
-	PRIMARY KEY ("StudyArm_akc_id", exclusion_criteria), 
-	FOREIGN KEY("StudyArm_akc_id") REFERENCES "StudyArm" (akc_id)
-);
-CREATE TABLE "StudyEvent_study_arms" (
-	"StudyEvent_akc_id" TEXT, 
-	study_arms_akc_id TEXT, 
-	PRIMARY KEY ("StudyEvent_akc_id", study_arms_akc_id), 
-	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
-	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
-);
-CREATE TABLE "Subject_diagnosis" (
-	"Subject_id" INTEGER, 
-	diagnosis_id INTEGER, 
-	PRIMARY KEY ("Subject_id", diagnosis_id), 
-	FOREIGN KEY("Subject_id") REFERENCES "Subject" (id), 
-	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
-);
 CREATE TABLE "LifeEvent" (
 	participant TEXT, 
 	study_event TEXT, 
@@ -2333,11 +2155,20 @@ CREATE TABLE "LifeEvent" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
-	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id)
+);
+CREATE TABLE "Repertoire" (
+	id INTEGER NOT NULL, 
+	repertoire_id TEXT, 
+	repertoire_name TEXT, 
+	repertoire_description TEXT, 
+	study_id INTEGER, 
+	subject_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
+	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
 );
 CREATE TABLE "Investigation_participants" (
 	"Investigation_akc_id" TEXT, 
@@ -2346,8 +2177,6 @@ CREATE TABLE "Investigation_participants" (
 	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(participants_akc_id) REFERENCES "Participant" (akc_id)
 );
-<<<<<<< HEAD
-=======
 CREATE TABLE "Subject_diagnosis" (
 	"Subject_id" INTEGER, 
 	diagnosis_id INTEGER, 
@@ -2390,7 +2219,6 @@ CREATE TABLE "Assessment" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
 );
->>>>>>> main
 CREATE TABLE "Repertoire_sample" (
 	"Repertoire_id" INTEGER, 
 	sample_id INTEGER, 
@@ -2405,66 +2233,21 @@ CREATE TABLE "Repertoire_data_processing" (
 	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
 	FOREIGN KEY(data_processing_id) REFERENCES "DataProcessing" (id)
 );
-CREATE TABLE "ImmuneExposure" (
-	life_event TEXT, 
-	exposure_material VARCHAR(115), 
-	disease VARCHAR(47), 
-	disease_stage TEXT, 
-	disease_severity TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "Specimen" (
-	life_event TEXT, 
-	specimen_type TEXT, 
-	tissue VARCHAR, 
-	process TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
-CREATE TABLE "Assessment" (
-	life_event TEXT, 
-	assessment_type TEXT, 
-	target_entity_type TEXT, 
-	value TEXT, 
-	unit TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
-);
 CREATE TABLE "SpecimenCollection" (
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "SpecimenProcessing" (
 	specimen TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "CellIsolationProcessing" (
 	tissue_processing TEXT, 
@@ -2510,17 +2293,15 @@ CREATE TABLE "Assay" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "AIRRSequencingAssay" (
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
-	sequencing_run_date DATETIME, 
+	sequencing_run_date TIMESTAMP, 
 	sequencing_kit TEXT, 
 	specimen TEXT, 
 	type TEXT, 

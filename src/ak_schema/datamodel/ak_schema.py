@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-04T15:43:32
+# Generation date: 2025-03-12T22:22:22
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -31,6 +31,7 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
+AKC = CurieNamespace('AKC', 'https://airr-knowledge.org/airrkb/api/v1/id/')
 APOLLO_SV = CurieNamespace('APOLLO_SV', 'http://purl.obolibrary.org/obo/APOLLO_SV_')
 BFO = CurieNamespace('BFO', 'http://purl.obolibrary.org/obo/BFO_')
 CL = CurieNamespace('CL', 'http://purl.obolibrary.org/obo/CL_')
@@ -318,11 +319,11 @@ class ImmuneSystemAkcId(NamedThingAkcId):
     pass
 
 
-class ChainAkcId(NamedThingAkcId):
+class ChainAkcId(AKObjectAkcId):
     pass
 
 
-class TCellReceptorAkcId(NamedThingAkcId):
+class TCellReceptorAkcId(AKObjectAkcId):
     pass
 
 
@@ -334,7 +335,7 @@ class GammaDeltaTCRAkcId(TCellReceptorAkcId):
     pass
 
 
-class BCellReceptorAkcId(NamedThingAkcId):
+class BCellReceptorAkcId(AKObjectAkcId):
     pass
 
 
@@ -424,6 +425,42 @@ class ForeignObject(YAMLRoot):
         super().__post_init__(**kwargs)
 
 
+class AIRRStandards(YAMLRoot):
+    """
+    An object directly converted from the AIRR schema.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandards"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandards"
+    class_name: ClassVar[str] = "AIRRStandards"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandards
+
+
+class AIRRStandardsV1p5(YAMLRoot):
+    """
+    An object directly converted from AIRR schema version 1.5.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandardsV1p5"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandardsV1p5"
+    class_name: ClassVar[str] = "AIRRStandards_v1p5"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV1p5
+
+
+class AIRRStandardsV2p0(YAMLRoot):
+    """
+    An object directly converted from AIRR schema version 2.0.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandardsV2p0"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandardsV2p0"
+    class_name: ClassVar[str] = "AIRRStandards_v2p0"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV2p0
+
+
 @dataclass(repr=False)
 class NamedThing(AKObject):
     """
@@ -505,7 +542,9 @@ class AIRRKnowledgeCommons(YAMLRoot):
     datasets: Optional[Union[Dict[Union[str, DatasetAkcId], Union[dict, "Dataset"]], List[Union[dict, "Dataset"]]]] = empty_dict()
     conclusions: Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, "Conclusion"]], List[Union[dict, "Conclusion"]]]] = empty_dict()
     chains: Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, "Chain"]], List[Union[dict, "Chain"]]]] = empty_dict()
-    tcell_receptors: Optional[Union[Dict[Union[str, TCellReceptorAkcId], Union[dict, "TCellReceptor"]], List[Union[dict, "TCellReceptor"]]]] = empty_dict()
+    ab_tcell_receptors: Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, "AlphaBetaTCR"]], List[Union[dict, "AlphaBetaTCR"]]]] = empty_dict()
+    gd_tcell_receptors: Optional[Union[Dict[Union[str, GammaDeltaTCRAkcId], Union[dict, "GammaDeltaTCR"]], List[Union[dict, "GammaDeltaTCR"]]]] = empty_dict()
+    bcell_receptors: Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, "BCellReceptor"]], List[Union[dict, "BCellReceptor"]]]] = empty_dict()
     epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -539,7 +578,11 @@ class AIRRKnowledgeCommons(YAMLRoot):
 
         self._normalize_inlined_as_dict(slot_name="chains", slot_type=Chain, key_name="akc_id", keyed=True)
 
-        self._normalize_inlined_as_dict(slot_name="tcell_receptors", slot_type=TCellReceptor, key_name="akc_id", keyed=True)
+        self._normalize_inlined_as_dict(slot_name="ab_tcell_receptors", slot_type=AlphaBetaTCR, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="gd_tcell_receptors", slot_type=GammaDeltaTCR, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="bcell_receptors", slot_type=BCellReceptor, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="epitopes", slot_type=Epitope, key_name="akc_id", keyed=True)
 
@@ -750,9 +793,6 @@ class Participant(NamedThing):
         if self.study_arm is not None and not isinstance(self.study_arm, StudyArmAkcId):
             self.study_arm = StudyArmAkcId(self.study_arm)
 
-        if self.biological_sex is not None and not isinstance(self.biological_sex, BiologicalSexOntology):
-            self.biological_sex = BiologicalSexOntology(self.biological_sex)
-
         if self.phenotypic_sex is not None and not isinstance(self.phenotypic_sex, PhenotypicSexOntology):
             self.phenotypic_sex = PhenotypicSexOntology(self.phenotypic_sex)
 
@@ -840,9 +880,6 @@ class LifeEvent(NamedThing):
         if self.study_event is not None and not isinstance(self.study_event, StudyEventAkcId):
             self.study_event = StudyEventAkcId(self.study_event)
 
-        if self.life_event_type is not None and not isinstance(self.life_event_type, LifeEventProcessOntology):
-            self.life_event_type = LifeEventProcessOntology(self.life_event_type)
-
         if self.geolocation is not None and not isinstance(self.geolocation, GeolocationOntology):
             self.geolocation = GeolocationOntology(self.geolocation)
 
@@ -891,12 +928,6 @@ class ImmuneExposure(NamedThing):
 
         if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
             self.life_event = LifeEventAkcId(self.life_event)
-
-        if self.exposure_material is not None and not isinstance(self.exposure_material, ExposureMaterialOntology):
-            self.exposure_material = ExposureMaterialOntology(self.exposure_material)
-
-        if self.disease is not None and not isinstance(self.disease, DiseaseOntology):
-            self.disease = DiseaseOntology(self.disease)
 
         if self.disease_stage is not None and not isinstance(self.disease_stage, str):
             self.disease_stage = str(self.disease_stage)
@@ -1386,7 +1417,7 @@ class ImmuneSystem(NamedThing):
 
 
 @dataclass(repr=False)
-class Chain(NamedThing):
+class Chain(AKObject):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Chain"]
@@ -1395,6 +1426,10 @@ class Chain(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Chain
 
     akc_id: Union[str, ChainAkcId] = None
+    aa_hash: Optional[str] = None
+    junction_aa_vj_allele_hash: Optional[str] = None
+    junction_aa_vj_gene_hash: Optional[str] = None
+    complete_vdj: Optional[Union[bool, Bool]] = None
     sequence: Optional[str] = None
     sequence_aa: Optional[str] = None
     chain_type: Optional[Union[str, "ChainTypeEnum"]] = None
@@ -1418,6 +1453,18 @@ class Chain(NamedThing):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, ChainAkcId):
             self.akc_id = ChainAkcId(self.akc_id)
+
+        if self.aa_hash is not None and not isinstance(self.aa_hash, str):
+            self.aa_hash = str(self.aa_hash)
+
+        if self.junction_aa_vj_allele_hash is not None and not isinstance(self.junction_aa_vj_allele_hash, str):
+            self.junction_aa_vj_allele_hash = str(self.junction_aa_vj_allele_hash)
+
+        if self.junction_aa_vj_gene_hash is not None and not isinstance(self.junction_aa_vj_gene_hash, str):
+            self.junction_aa_vj_gene_hash = str(self.junction_aa_vj_gene_hash)
+
+        if self.complete_vdj is not None and not isinstance(self.complete_vdj, Bool):
+            self.complete_vdj = Bool(self.complete_vdj)
 
         if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
@@ -1474,7 +1521,7 @@ class Chain(NamedThing):
 
 
 @dataclass(repr=False)
-class TCellReceptor(NamedThing):
+class TCellReceptor(AKObject):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GO["0042101"]
@@ -1486,11 +1533,6 @@ class TCellReceptor(NamedThing):
     type: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, TCellReceptorAkcId):
-            self.akc_id = TCellReceptorAkcId(self.akc_id)
-
         self.type = str(self.class_name)
 
         super().__post_init__(**kwargs)
@@ -1572,7 +1614,7 @@ class GammaDeltaTCR(TCellReceptor):
 
 
 @dataclass(repr=False)
-class BCellReceptor(NamedThing):
+class BCellReceptor(AKObject):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["BCellReceptor"]
@@ -1822,7 +1864,7 @@ class ChainSimilarity(SimilarityCalculation):
 
 
 @dataclass(repr=False)
-class TimePoint(YAMLRoot):
+class TimePoint(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["TimePoint"]
@@ -1845,7 +1887,7 @@ class TimePoint(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Acknowledgement(YAMLRoot):
+class Acknowledgement(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Acknowledgement"]
@@ -1875,7 +1917,7 @@ class Acknowledgement(YAMLRoot):
 
 
 @dataclass(repr=False)
-class RearrangedSequence(YAMLRoot):
+class RearrangedSequence(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RearrangedSequence"]
@@ -1929,7 +1971,7 @@ class RearrangedSequence(YAMLRoot):
 
 
 @dataclass(repr=False)
-class UnrearrangedSequence(YAMLRoot):
+class UnrearrangedSequence(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UnrearrangedSequence"]
@@ -1983,7 +2025,7 @@ class UnrearrangedSequence(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SequenceDelineationV(YAMLRoot):
+class SequenceDelineationV(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequenceDelineationV"]
@@ -2062,7 +2104,7 @@ class SequenceDelineationV(YAMLRoot):
 
 
 @dataclass(repr=False)
-class AlleleDescription(YAMLRoot):
+class AlleleDescription(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AlleleDescription"]
@@ -2284,7 +2326,7 @@ class AlleleDescription(YAMLRoot):
 
 
 @dataclass(repr=False)
-class GermlineSet(YAMLRoot):
+class GermlineSet(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GermlineSet"]
@@ -2365,7 +2407,7 @@ class GermlineSet(YAMLRoot):
 
 
 @dataclass(repr=False)
-class GenotypeSet(YAMLRoot):
+class GenotypeSet(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GenotypeSet"]
@@ -2388,7 +2430,7 @@ class GenotypeSet(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Genotype(YAMLRoot):
+class Genotype(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Genotype"]
@@ -2429,7 +2471,7 @@ class Genotype(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DocumentedAllele(YAMLRoot):
+class DocumentedAllele(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DocumentedAllele"]
@@ -2455,7 +2497,7 @@ class DocumentedAllele(YAMLRoot):
 
 
 @dataclass(repr=False)
-class UndocumentedAllele(YAMLRoot):
+class UndocumentedAllele(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UndocumentedAllele"]
@@ -2481,7 +2523,7 @@ class UndocumentedAllele(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DeletedGene(YAMLRoot):
+class DeletedGene(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DeletedGene"]
@@ -2507,7 +2549,7 @@ class DeletedGene(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MHCGenotypeSet(YAMLRoot):
+class MHCGenotypeSet(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotypeSet"]
@@ -2530,7 +2572,7 @@ class MHCGenotypeSet(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MHCGenotype(YAMLRoot):
+class MHCGenotype(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCGenotype"]
@@ -2561,7 +2603,7 @@ class MHCGenotype(YAMLRoot):
 
 
 @dataclass(repr=False)
-class MHCAllele(YAMLRoot):
+class MHCAllele(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["MHCAllele"]
@@ -2584,7 +2626,7 @@ class MHCAllele(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SubjectGenotype(YAMLRoot):
+class SubjectGenotype(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SubjectGenotype"]
@@ -2606,7 +2648,7 @@ class SubjectGenotype(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Study(YAMLRoot):
+class Study(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Study"]
@@ -2678,7 +2720,7 @@ class Study(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Subject(YAMLRoot):
+class Subject(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Subject"]
@@ -2751,7 +2793,7 @@ class Subject(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Diagnosis(YAMLRoot):
+class Diagnosis(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Diagnosis"]
@@ -2794,7 +2836,7 @@ class Diagnosis(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Sample(YAMLRoot):
+class Sample(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Sample"]
@@ -2838,7 +2880,7 @@ class Sample(YAMLRoot):
 
 
 @dataclass(repr=False)
-class CellProcessing(YAMLRoot):
+class CellProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellProcessing"]
@@ -2890,7 +2932,7 @@ class CellProcessing(YAMLRoot):
 
 
 @dataclass(repr=False)
-class PCRTarget(YAMLRoot):
+class PCRTarget(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PCRTarget"]
@@ -2916,7 +2958,7 @@ class PCRTarget(YAMLRoot):
 
 
 @dataclass(repr=False)
-class NucleicAcidProcessing(YAMLRoot):
+class NucleicAcidProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["NucleicAcidProcessing"]
@@ -2968,7 +3010,7 @@ class NucleicAcidProcessing(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SequencingRun(YAMLRoot):
+class SequencingRun(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingRun"]
@@ -3010,7 +3052,7 @@ class SequencingRun(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SequencingData(YAMLRoot):
+class SequencingData(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SequencingData"]
@@ -3064,7 +3106,7 @@ class SequencingData(YAMLRoot):
 
 
 @dataclass(repr=False)
-class DataProcessing(YAMLRoot):
+class DataProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["DataProcessing"]
@@ -3127,7 +3169,7 @@ class DataProcessing(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Repertoire(YAMLRoot):
+class Repertoire(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Repertoire"]
@@ -3171,7 +3213,7 @@ class Repertoire(YAMLRoot):
 
 
 @dataclass(repr=False)
-class RepertoireGroupDetail(YAMLRoot):
+class RepertoireGroupDetail(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroupDetail"]
@@ -3197,7 +3239,7 @@ class RepertoireGroupDetail(YAMLRoot):
 
 
 @dataclass(repr=False)
-class RepertoireGroup(YAMLRoot):
+class RepertoireGroup(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroup"]
@@ -3228,7 +3270,7 @@ class RepertoireGroup(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Alignment(YAMLRoot):
+class Alignment(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Alignment"]
@@ -3298,7 +3340,7 @@ class Alignment(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Rearrangement(YAMLRoot):
+class Rearrangement(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Rearrangement"]
@@ -3920,7 +3962,7 @@ class Rearrangement(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Clone(YAMLRoot):
+class Clone(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Clone"]
@@ -4031,7 +4073,7 @@ class Clone(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Tree(YAMLRoot):
+class Tree(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Tree"]
@@ -4062,7 +4104,7 @@ class Tree(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Node(YAMLRoot):
+class Node(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Node"]
@@ -4092,7 +4134,7 @@ class Node(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Cell(YAMLRoot):
+class Cell(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Cell"]
@@ -4144,7 +4186,7 @@ class Cell(YAMLRoot):
 
 
 @dataclass(repr=False)
-class CellExpression(YAMLRoot):
+class CellExpression(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["CellExpression"]
@@ -4183,7 +4225,7 @@ class CellExpression(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Receptor(YAMLRoot):
+class Receptor(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Receptor"]
@@ -4235,7 +4277,7 @@ class Receptor(YAMLRoot):
 
 
 @dataclass(repr=False)
-class ReceptorReactivity(YAMLRoot):
+class ReceptorReactivity(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ReceptorReactivity"]
@@ -4297,7 +4339,7 @@ class ReceptorReactivity(YAMLRoot):
 
 
 @dataclass(repr=False)
-class SampleProcessing(YAMLRoot):
+class SampleProcessing(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["SampleProcessing"]
@@ -4450,13 +4492,6 @@ class SampleProcessing(YAMLRoot):
 
 # Enumerations
 class BiologicalSexOntology(EnumDefinitionImpl):
-
-    female = PermissibleValue(
-        text="female",
-        meaning=PATO["0020002"])
-    male = PermissibleValue(
-        text="male",
-        meaning=PATO["0020001"])
 
     _defn = EnumDefinition(
         name="BiologicalSexOntology",
@@ -4749,645 +4784,21 @@ class StrainEnum(EnumDefinitionImpl):
 
 class LifeEventProcessOntology(EnumDefinitionImpl):
 
-    Death = PermissibleValue(
-        text="Death",
-        meaning=UBERON["0000071"])
-    Vaccination = PermissibleValue(
-        text="Vaccination",
-        meaning=VO["0000002"])
-    Transfusion = PermissibleValue(
-        text="Transfusion",
-        meaning=OGMS["0000145"])
-    Hospitalization = PermissibleValue(
-        text="Hospitalization",
-        meaning=OGMS["0000098"])
-    Treatment = PermissibleValue(
-        text="Treatment",
-        meaning=OGMS["0000090"])
-    Fertilization = PermissibleValue(
-        text="Fertilization",
-        meaning=GO["0009566"])
-    Recovery = PermissibleValue(text="Recovery")
-    Birth = PermissibleValue(text="Birth")
-
     _defn = EnumDefinition(
         name="LifeEventProcessOntology",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "Unknown exposure",
-            PermissibleValue(
-                text="Unknown exposure",
-                meaning=ONTIE["0003310"]))
-        setattr(cls, "Occurrence of disease",
-            PermissibleValue(
-                text="Occurrence of disease",
-                meaning=OGMS["0000063"]))
-        setattr(cls, "Occurrence of infectious disease",
-            PermissibleValue(
-                text="Occurrence of infectious disease",
-                meaning=ONTIE["0003317"]))
-        setattr(cls, "Occurrence of allergic disease",
-            PermissibleValue(
-                text="Occurrence of allergic disease",
-                meaning=ONTIE["0003318"]))
-        setattr(cls, "Exposure to substance without evidence for disease",
-            PermissibleValue(
-                text="Exposure to substance without evidence for disease",
-                meaning=ONTIE["0003305"]))
-        setattr(cls, "Infection without disease",
-            PermissibleValue(
-                text="Infection without disease",
-                meaning=ONTIE["0003424"]))
-        setattr(cls, "Documented exposure without evidence for disease",
-            PermissibleValue(
-                text="Documented exposure without evidence for disease",
-                meaning=ONTIE["0003307"]))
-        setattr(cls, "Exposure with existing immune reactivity without evidence for disease",
-            PermissibleValue(
-                text="Exposure with existing immune reactivity without evidence for disease",
-                meaning=OBI["1110061"]))
-        setattr(cls, "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
-            PermissibleValue(
-                text="Environmental exposure to endemic/ubiquitous agent without evidence for disease",
-                meaning=ONTIE["0003308"]))
-        setattr(cls, "Edministering substance in vivo",
-            PermissibleValue(
-                text="Edministering substance in vivo",
-                meaning=OBI["0600007"]))
-        setattr(cls, "Edministration to cause disease",
-            PermissibleValue(
-                text="Edministration to cause disease",
-                meaning=OBI["0003413"]))
-        setattr(cls, "Pathogen challenge",
-            PermissibleValue(
-                text="Pathogen challenge",
-                meaning=OBI["0000712"]))
-        setattr(cls, "Administration to prevent or reduce disease",
-            PermissibleValue(
-                text="Administration to prevent or reduce disease",
-                meaning=OBI["0003414"]))
-        setattr(cls, "Prophylactic vaccination",
-            PermissibleValue(
-                text="Prophylactic vaccination",
-                meaning=VO["0005374"]))
-        setattr(cls, "Therapeutic vaccination",
-            PermissibleValue(
-                text="Therapeutic vaccination",
-                meaning=VO["0005373"]))
-        setattr(cls, "Transplant/transfusion",
-            PermissibleValue(
-                text="Transplant/transfusion",
-                meaning=OGMS["0000143"]))
-        setattr(cls, "Solid organ transplant",
-            PermissibleValue(
-                text="Solid organ transplant",
-                meaning=OGMS["0000144"]))
-        setattr(cls, "No exposure",
-            PermissibleValue(
-                text="No exposure",
-                meaning=ONTIE["0003309"]))
-        setattr(cls, "Specimen collection",
-            PermissibleValue(
-                text="Specimen collection",
-                meaning=OBI["0000659"]))
-        setattr(cls, "Study enrollment",
-            PermissibleValue(
-                text="Study enrollment",
-                meaning=OBI["0600004"]))
-        setattr(cls, "Hospital discharge",
-            PermissibleValue(text="Hospital discharge"))
-        setattr(cls, "Physical examination",
-            PermissibleValue(
-                text="Physical examination",
-                meaning=OGMS["0000057"]))
-        setattr(cls, "Exposure to infectious agent",
-            PermissibleValue(text="Exposure to infectious agent"))
-
 class ExposureMaterialOntology(EnumDefinitionImpl):
-
-    Alphainfluenzavirus = PermissibleValue(
-        text="Alphainfluenzavirus",
-        meaning=NCBITAXON["197911"])
-    Betainfluenzavirus = PermissibleValue(
-        text="Betainfluenzavirus",
-        meaning=NCBITAXON["197912"])
-    Bordetella = PermissibleValue(
-        text="Bordetella",
-        meaning=NCBITAXON["517"])
-    Cytomegalovirus = PermissibleValue(
-        text="Cytomegalovirus",
-        meaning=NCBITAXON["10358"])
-    Dryvax = PermissibleValue(
-        text="Dryvax",
-        meaning=VO["0000035"])
-    FluMist = PermissibleValue(
-        text="FluMist",
-        meaning=VO["0000044"])
-    Fluarix = PermissibleValue(
-        text="Fluarix",
-        meaning=VO["0000045"])
-    Fluvirin = PermissibleValue(
-        text="Fluvirin",
-        meaning=VO["0000046"])
-    Fluzone = PermissibleValue(
-        text="Fluzone",
-        meaning=VO["0000047"])
-    Gammainfluenzavirus = PermissibleValue(
-        text="Gammainfluenzavirus",
-        meaning=NCBITAXON["197913"])
-    LC16m8 = PermissibleValue(
-        text="LC16m8",
-        meaning=VO["0004091"])
-    MVA85A = PermissibleValue(
-        text="MVA85A",
-        meaning=VO["0003120"])
-    Menactra = PermissibleValue(
-        text="Menactra",
-        meaning=VO["0000071"])
-    Menveo = PermissibleValue(
-        text="Menveo",
-        meaning=VO["0001246"])
-    Orthoebolavirus = PermissibleValue(
-        text="Orthoebolavirus",
-        meaning=NCBITAXON["3044781"])
-    Plasmodium = PermissibleValue(
-        text="Plasmodium",
-        meaning=NCBITAXON["5820"])
-    Stamaril = PermissibleValue(
-        text="Stamaril",
-        meaning=VO["0003139"])
-    Zostavax = PermissibleValue(
-        text="Zostavax",
-        meaning=VO["0000124"])
-    bacterium = PermissibleValue(
-        text="bacterium",
-        meaning=NCBITAXON["2"])
-    eukaryote = PermissibleValue(
-        text="eukaryote",
-        meaning=NCBITAXON["2759"])
-    organism = PermissibleValue(
-        text="organism",
-        meaning=NCBITAXON["1"])
-    vaccine = PermissibleValue(
-        text="vaccine",
-        meaning=VO["0000001"])
-    virus = PermissibleValue(
-        text="virus",
-        meaning=NCBITAXON["10239"])
 
     _defn = EnumDefinition(
         name="ExposureMaterialOntology",
     )
 
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "2008-2009 trivalent influenza vaccine",
-            PermissibleValue(
-                text="2008-2009 trivalent influenza vaccine",
-                meaning=VO["0004809"]))
-        setattr(cls, "2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008)",
-            PermissibleValue(
-                text="2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008)",
-                meaning=VO["0004810"]))
-        setattr(cls, "ACWY Vax",
-            PermissibleValue(
-                text="ACWY Vax",
-                meaning=VO["0003138"]))
-        setattr(cls, "Ad35.CS.01 malaria vaccine",
-            PermissibleValue(
-                text="Ad35.CS.01 malaria vaccine",
-                meaning=VO["0004993"]))
-        setattr(cls, "BCG Vaccine",
-            PermissibleValue(
-                text="BCG Vaccine",
-                meaning=VO["0000771"]))
-        setattr(cls, "Bordetella parapertussis",
-            PermissibleValue(
-                text="Bordetella parapertussis",
-                meaning=NCBITAXON["519"]))
-        setattr(cls, "Bordetella pertussis",
-            PermissibleValue(
-                text="Bordetella pertussis",
-                meaning=NCBITAXON["520"]))
-        setattr(cls, "Bundibugyo virus",
-            PermissibleValue(
-                text="Bundibugyo virus",
-                meaning=NCBITAXON["565995"]))
-        setattr(cls, "Chikungunya virus",
-            PermissibleValue(
-                text="Chikungunya virus",
-                meaning=NCBITAXON["37124"]))
-        setattr(cls, "Clostridium tetani",
-            PermissibleValue(
-                text="Clostridium tetani",
-                meaning=NCBITAXON["1513"]))
-        setattr(cls, "Corynebacterium diphtheriae",
-            PermissibleValue(
-                text="Corynebacterium diphtheriae",
-                meaning=NCBITAXON["1717"]))
-        setattr(cls, "Dengue virus",
-            PermissibleValue(
-                text="Dengue virus",
-                meaning=NCBITAXON["12637"]))
-        setattr(cls, "Diphtheria-Tetanus-Pertussis vaccine",
-            PermissibleValue(
-                text="Diphtheria-Tetanus-Pertussis vaccine",
-                meaning=VO["0000738"]))
-        setattr(cls, "Engerix-B",
-            PermissibleValue(
-                text="Engerix-B",
-                meaning=VO["0010711"]))
-        setattr(cls, "H1N1 subtype",
-            PermissibleValue(
-                text="H1N1 subtype",
-                meaning=NCBITAXON["114727"]))
-        setattr(cls, "HEPLISAV-B",
-            PermissibleValue(
-                text="HEPLISAV-B",
-                meaning=VO["0003152"]))
-        setattr(cls, "Hepacivirus C",
-            PermissibleValue(
-                text="Hepacivirus C",
-                meaning=NCBITAXON["11103"]))
-        setattr(cls, "Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]",
-            PermissibleValue(
-                text="Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]",
-                meaning=VO["0003270"]))
-        setattr(cls, "Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]",
-            PermissibleValue(
-                text="Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]",
-                meaning=VO["0003258"]))
-        setattr(cls, "Hepatitis B virus",
-            PermissibleValue(
-                text="Hepatitis B virus",
-                meaning=NCBITAXON["10407"]))
-        setattr(cls, "Hepatitis B virus vaccine",
-            PermissibleValue(
-                text="Hepatitis B virus vaccine",
-                meaning=VO["0000644"]))
-        setattr(cls, "Hepatovirus A",
-            PermissibleValue(
-                text="Hepatovirus A",
-                meaning=NCBITAXON["12092"]))
-        setattr(cls, "Human alphaherpesvirus 3",
-            PermissibleValue(
-                text="Human alphaherpesvirus 3",
-                meaning=NCBITAXON["10335"]))
-        setattr(cls, "Human immunodeficiency virus",
-            PermissibleValue(
-                text="Human immunodeficiency virus",
-                meaning=NCBITAXON["12721"]))
-        setattr(cls, "Influenza A H1N1 2009 Monovalent Vaccine Novartis",
-            PermissibleValue(
-                text="Influenza A H1N1 2009 Monovalent Vaccine Novartis",
-                meaning=VO["0000081"]))
-        setattr(cls, "Influenza A virus",
-            PermissibleValue(
-                text="Influenza A virus",
-                meaning=NCBITAXON["11320"]))
-        setattr(cls, "Influenza C virus",
-            PermissibleValue(
-                text="Influenza C virus",
-                meaning=NCBITAXON["11552"]))
-        setattr(cls, "Influenza virus vaccine",
-            PermissibleValue(
-                text="Influenza virus vaccine",
-                meaning=VO["0000642"]))
-        setattr(cls, "MRKAd5 HIV-1 gag/pol/nef",
-            PermissibleValue(
-                text="MRKAd5 HIV-1 gag/pol/nef",
-                meaning=VO["0003133"]))
-        setattr(cls, "Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C",
-            PermissibleValue(
-                text="Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C",
-                meaning=VO["0010725"]))
-        setattr(cls, "Mycobacterium tuberculosis",
-            PermissibleValue(
-                text="Mycobacterium tuberculosis",
-                meaning=NCBITAXON["1773"]))
-        setattr(cls, "Mycobacterium tuberculosis vaccine",
-            PermissibleValue(
-                text="Mycobacterium tuberculosis vaccine",
-                meaning=VO["0000077"]))
-        setattr(cls, "Neisseria meningitidis",
-            PermissibleValue(
-                text="Neisseria meningitidis",
-                meaning=NCBITAXON["487"]))
-        setattr(cls, "Neisseria meningitidis vaccine",
-            PermissibleValue(
-                text="Neisseria meningitidis vaccine",
-                meaning=VO["0000053"]))
-        setattr(cls, "P. falciparum RTS,S/AS01",
-            PermissibleValue(
-                text="P. falciparum RTS,S/AS01",
-                meaning=VO["0003093"]))
-        setattr(cls, "Plasmodium falciparum",
-            PermissibleValue(
-                text="Plasmodium falciparum",
-                meaning=NCBITAXON["5833"]))
-        setattr(cls, "Plasmodium falciparum vaccine",
-            PermissibleValue(
-                text="Plasmodium falciparum vaccine",
-                meaning=VO["0000087"]))
-        setattr(cls, "Pneumovax 23",
-            PermissibleValue(
-                text="Pneumovax 23",
-                meaning=VO["0000088"]))
-        setattr(cls, "SARS-CoV-2",
-            PermissibleValue(
-                text="SARS-CoV-2",
-                meaning=NCBITAXON["2697049"]))
-        setattr(cls, "Smallpox virus vaccine",
-            PermissibleValue(
-                text="Smallpox virus vaccine",
-                meaning=VO["0000651"]))
-        setattr(cls, "Streptococcus pneumoniae",
-            PermissibleValue(
-                text="Streptococcus pneumoniae",
-                meaning=NCBITAXON["1313"]))
-        setattr(cls, "Sudan ebolavirus",
-            PermissibleValue(
-                text="Sudan ebolavirus",
-                meaning=NCBITAXON["186540"]))
-        setattr(cls, "Variola virus",
-            PermissibleValue(
-                text="Variola virus",
-                meaning=NCBITAXON["10255"]))
-        setattr(cls, "Vibrio cholerae",
-            PermissibleValue(
-                text="Vibrio cholerae",
-                meaning=NCBITAXON["666"]))
-        setattr(cls, "West Nile virus",
-            PermissibleValue(
-                text="West Nile virus",
-                meaning=NCBITAXON["11082"]))
-        setattr(cls, "YF-Vax",
-            PermissibleValue(
-                text="YF-Vax",
-                meaning=VO["0000121"]))
-        setattr(cls, "Yellow fever 17D vaccine vector",
-            PermissibleValue(
-                text="Yellow fever 17D vaccine vector",
-                meaning=VO["0000122"]))
-        setattr(cls, "Yellow fever virus",
-            PermissibleValue(
-                text="Yellow fever virus",
-                meaning=NCBITAXON["11089"]))
-        setattr(cls, "Zaire ebolavirus",
-            PermissibleValue(
-                text="Zaire ebolavirus",
-                meaning=NCBITAXON["186538"]))
-        setattr(cls, "Zika virus",
-            PermissibleValue(
-                text="Zika virus",
-                meaning=NCBITAXON["64320"]))
-        setattr(cls, "bacterial vaccine",
-            PermissibleValue(
-                text="bacterial vaccine",
-                meaning=VO["0000165"]))
-        setattr(cls, "diphtheria, tetanus and whole cell pertussis vaccine",
-            PermissibleValue(
-                text="diphtheria, tetanus and whole cell pertussis vaccine",
-                meaning=VO["0003106"]))
-        setattr(cls, "live attenuated influenza vaccine",
-            PermissibleValue(
-                text="live attenuated influenza vaccine",
-                meaning=VO["0001178"]))
-        setattr(cls, "microbial eukaryotic vaccine",
-            PermissibleValue(
-                text="microbial eukaryotic vaccine",
-                meaning=VO["0005563"]))
-        setattr(cls, "rVSV-EBOV",
-            PermissibleValue(
-                text="rVSV-EBOV",
-                meaning=VO["0004660"]))
-        setattr(cls, "unidentified influenza virus",
-            PermissibleValue(
-                text="unidentified influenza virus",
-                meaning=NCBITAXON["11309"]))
-        setattr(cls, "unidentified organism",
-            PermissibleValue(
-                text="unidentified organism",
-                meaning=NCBITAXON["32644"]))
-        setattr(cls, "viral vaccine",
-            PermissibleValue(
-                text="viral vaccine",
-                meaning=VO["0000609"]))
-        setattr(cls, "yellow fever virus vaccine",
-            PermissibleValue(
-                text="yellow fever virus vaccine",
-                meaning=VO["0000123"]))
-        setattr(cls, "Human gammaherpesvirus 4",
-            PermissibleValue(
-                text="Human gammaherpesvirus 4",
-                meaning=NCBITAXON["10376"]))
-        setattr(cls, "Human betaherpesvirus 5",
-            PermissibleValue(
-                text="Human betaherpesvirus 5",
-                meaning=NCBITAXON["10359"]))
-
 class DiseaseOntology(EnumDefinitionImpl):
-
-    chikungunya = PermissibleValue(
-        text="chikungunya",
-        meaning=DOID["0050012"])
-    encephalitis = PermissibleValue(
-        text="encephalitis",
-        meaning=DOID["9588"])
-    meningitis = PermissibleValue(
-        text="meningitis",
-        meaning=DOID["9471"])
-    healthy = PermissibleValue(
-        text="healthy",
-        meaning=ONTIE["0003423"])
-    influenza = PermissibleValue(
-        text="influenza",
-        meaning=DOID["8469"])
-    meningoencephalitis = PermissibleValue(
-        text="meningoencephalitis",
-        meaning=DOID["10554"])
-    pharyngitis = PermissibleValue(
-        text="pharyngitis",
-        meaning=DOID["2275"])
-    malaria = PermissibleValue(
-        text="malaria",
-        meaning=DOID["12365"])
-    tuberculosis = PermissibleValue(
-        text="tuberculosis",
-        meaning=DOID["399"])
-    chickenpox = PermissibleValue(
-        text="chickenpox",
-        meaning=DOID["8659"])
-    psoriasis = PermissibleValue(
-        text="psoriasis",
-        meaning=DOID["8893"])
-    diphtheria = PermissibleValue(
-        text="diphtheria",
-        meaning=DOID["11405"])
-    cholera = PermissibleValue(
-        text="cholera",
-        meaning=DOID["1498"])
-    smallpox = PermissibleValue(
-        text="smallpox",
-        meaning=DOID["8736"])
-    pertussis = PermissibleValue(
-        text="pertussis",
-        meaning=DOID["1116"])
-    tetanus = PermissibleValue(
-        text="tetanus",
-        meaning=DOID["11338"])
-    cystinosis = PermissibleValue(
-        text="cystinosis",
-        meaning=DOID["1064"])
 
     _defn = EnumDefinition(
         name="DiseaseOntology",
     )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "COVID-19",
-            PermissibleValue(
-                text="COVID-19",
-                meaning=DOID["0080600"]))
-        setattr(cls, "Plasmodium falciparum malaria",
-            PermissibleValue(
-                text="Plasmodium falciparum malaria",
-                meaning=DOID["14067"]))
-        setattr(cls, "dengue hemorrhagic fever",
-            PermissibleValue(
-                text="dengue hemorrhagic fever",
-                meaning=DOID["12206"]))
-        setattr(cls, "dengue disease",
-            PermissibleValue(
-                text="dengue disease",
-                meaning=DOID["12205"]))
-        setattr(cls, "upper respiratory tract disease",
-            PermissibleValue(
-                text="upper respiratory tract disease",
-                meaning=DOID["974"]))
-        setattr(cls, "West Nile fever",
-            PermissibleValue(
-                text="West Nile fever",
-                meaning=DOID["2366"]))
-        setattr(cls, "Zika fever",
-            PermissibleValue(
-                text="Zika fever",
-                meaning=DOID["0060478"]))
-        setattr(cls, "human cytomegalovirus infection",
-            PermissibleValue(
-                text="human cytomegalovirus infection",
-                meaning=DOID["0080827"]))
-        setattr(cls, "end stage renal disease",
-            PermissibleValue(
-                text="end stage renal disease",
-                meaning=DOID["783"]))
-        setattr(cls, "West Nile encephalitis",
-            PermissibleValue(
-                text="West Nile encephalitis",
-                meaning=DOID["2365"]))
-        setattr(cls, "hepatitis C",
-            PermissibleValue(
-                text="hepatitis C",
-                meaning=DOID["1883"]))
-        setattr(cls, "urinary tract obstruction",
-            PermissibleValue(
-                text="urinary tract obstruction",
-                meaning=DOID["5200"]))
-        setattr(cls, "avian influenza",
-            PermissibleValue(
-                text="avian influenza",
-                meaning=DOID["4492"]))
-        setattr(cls, "herpes zoster",
-            PermissibleValue(
-                text="herpes zoster",
-                meaning=DOID["8536"]))
-        setattr(cls, "intestinal infectious disease",
-            PermissibleValue(
-                text="intestinal infectious disease",
-                meaning=DOID["100"]))
-        setattr(cls, "yellow fever",
-            PermissibleValue(
-                text="yellow fever",
-                meaning=DOID["9682"]))
-        setattr(cls, "focal segmental glomerulosclerosis",
-            PermissibleValue(
-                text="focal segmental glomerulosclerosis",
-                meaning=DOID["1312"]))
-        setattr(cls, "cystic kidney disease",
-            PermissibleValue(
-                text="cystic kidney disease",
-                meaning=DOID["2975"]))
-        setattr(cls, "breast cancer",
-            PermissibleValue(
-                text="breast cancer",
-                meaning=DOID["1612"]))
-        setattr(cls, "celiac disease",
-            PermissibleValue(
-                text="celiac disease",
-                meaning=DOID["10608"]))
-        setattr(cls, "Ebola hemorrhagic fever",
-            PermissibleValue(
-                text="Ebola hemorrhagic fever",
-                meaning=DOID["4325"]))
-        setattr(cls, "childhood type dermatomyositis",
-            PermissibleValue(
-                text="childhood type dermatomyositis",
-                meaning=DOID["14203"]))
-        setattr(cls, "hepatitis B",
-            PermissibleValue(
-                text="hepatitis B",
-                meaning=DOID["2043"]))
-        setattr(cls, "hepatitis A",
-            PermissibleValue(
-                text="hepatitis A",
-                meaning=DOID["12549"]))
-        setattr(cls, "pustulosis of palm and sole",
-            PermissibleValue(
-                text="pustulosis of palm and sole",
-                meaning=DOID["4398"]))
-        setattr(cls, "meningococcal meningitis",
-            PermissibleValue(
-                text="meningococcal meningitis",
-                meaning=DOID["0080176"]))
-        setattr(cls, "type 2 diabetes mellitus",
-            PermissibleValue(
-                text="type 2 diabetes mellitus",
-                meaning=DOID["9352"]))
-        setattr(cls, "Streptococcus pneumonia",
-            PermissibleValue(
-                text="Streptococcus pneumonia",
-                meaning=DOID["0040084"]))
-        setattr(cls, "swine influenza",
-            PermissibleValue(
-                text="swine influenza",
-                meaning=DOID["0050211"]))
-        setattr(cls, "ulcerative colitis",
-            PermissibleValue(
-                text="ulcerative colitis",
-                meaning=DOID["8577"]))
-        setattr(cls, "human immunodeficiency virus infectious disease",
-            PermissibleValue(
-                text="human immunodeficiency virus infectious disease",
-                meaning=DOID["526"]))
-        setattr(cls, "interstitial nephritis",
-            PermissibleValue(
-                text="interstitial nephritis",
-                meaning=DOID["1063"]))
-        setattr(cls, "hemolytic-uremic syndrome",
-            PermissibleValue(
-                text="hemolytic-uremic syndrome",
-                meaning=DOID["12554"]))
-        setattr(cls, "kidney cortex necrosis",
-            PermissibleValue(
-                text="kidney cortex necrosis",
-                meaning=DOID["2973"]))
-        setattr(cls, "food allergy",
-            PermissibleValue(
-                text="food allergy",
-                meaning=DOID["3044"]))
 
 class DiseaseStageOntology(EnumDefinitionImpl):
 
@@ -5937,6 +5348,9 @@ slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
 slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEMA.curie('description'),
                    model_uri=AK_SCHEMA.description, domain=None, range=Optional[str])
 
+slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
+                   model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
+
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
 
@@ -6052,9 +5466,6 @@ slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curi
 slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
                    model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
 
-slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
-                   model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
-
 slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
 
@@ -6108,6 +5519,21 @@ slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_typ
 
 slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
+
+slots.aa_hash = Slot(uri=AK_SCHEMA.aa_hash, name="aa_hash", curie=AK_SCHEMA.curie('aa_hash'),
+                   model_uri=AK_SCHEMA.aa_hash, domain=None, range=Optional[str])
+
+slots.junction_aa_vj_allele_hash = Slot(uri=AK_SCHEMA.junction_aa_vj_allele_hash, name="junction_aa_vj_allele_hash", curie=AK_SCHEMA.curie('junction_aa_vj_allele_hash'),
+                   model_uri=AK_SCHEMA.junction_aa_vj_allele_hash, domain=None, range=Optional[str])
+
+slots.junction_aa_vj_gene_hash = Slot(uri=AK_SCHEMA.junction_aa_vj_gene_hash, name="junction_aa_vj_gene_hash", curie=AK_SCHEMA.curie('junction_aa_vj_gene_hash'),
+                   model_uri=AK_SCHEMA.junction_aa_vj_gene_hash, domain=None, range=Optional[str])
+
+slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie=AK_SCHEMA.curie('complete_vdj'),
+                   model_uri=AK_SCHEMA.complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
+
+slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
+                   model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
 
 slots.chain_type = Slot(uri=AK_SCHEMA.chain_type, name="chain_type", curie=AK_SCHEMA.curie('chain_type'),
                    model_uri=AK_SCHEMA.chain_type, domain=None, range=Optional[Union[str, "ChainTypeEnum"]])
@@ -6174,9 +5600,6 @@ slots.orcid_id = Slot(uri=AK_SCHEMA.orcid_id, name="orcid_id", curie=AK_SCHEMA.c
 
 slots.sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
                    model_uri=AK_SCHEMA.sequence_id, domain=None, range=Optional[str])
-
-slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
-                   model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
 
 slots.derivation = Slot(uri=AK_SCHEMA.derivation, name="derivation", curie=AK_SCHEMA.curie('derivation'),
                    model_uri=AK_SCHEMA.derivation, domain=None, range=Optional[Union[str, "DerivationEnum"]])
@@ -6859,9 +6282,6 @@ slots.vj_in_frame = Slot(uri=AK_SCHEMA.vj_in_frame, name="vj_in_frame", curie=AK
 slots.stop_codon = Slot(uri=AK_SCHEMA.stop_codon, name="stop_codon", curie=AK_SCHEMA.curie('stop_codon'),
                    model_uri=AK_SCHEMA.stop_codon, domain=None, range=Optional[Union[bool, Bool]])
 
-slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie=AK_SCHEMA.curie('complete_vdj'),
-                   model_uri=AK_SCHEMA.complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
-
 slots.v_call = Slot(uri=AK_SCHEMA.v_call, name="v_call", curie=AK_SCHEMA.curie('v_call'),
                    model_uri=AK_SCHEMA.v_call, domain=None, range=Optional[str])
 
@@ -7417,8 +6837,14 @@ slots.aIRRKnowledgeCommons__conclusions = Slot(uri=AK_SCHEMA.conclusions, name="
 slots.aIRRKnowledgeCommons__chains = Slot(uri=AK_SCHEMA.chains, name="aIRRKnowledgeCommons__chains", curie=AK_SCHEMA.curie('chains'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__chains, domain=None, range=Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, Chain]], List[Union[dict, Chain]]]])
 
-slots.aIRRKnowledgeCommons__tcell_receptors = Slot(uri=AK_SCHEMA.tcell_receptors, name="aIRRKnowledgeCommons__tcell_receptors", curie=AK_SCHEMA.curie('tcell_receptors'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, TCellReceptorAkcId], Union[dict, TCellReceptor]], List[Union[dict, TCellReceptor]]]])
+slots.aIRRKnowledgeCommons__ab_tcell_receptors = Slot(uri=AK_SCHEMA.ab_tcell_receptors, name="aIRRKnowledgeCommons__ab_tcell_receptors", curie=AK_SCHEMA.curie('ab_tcell_receptors'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__ab_tcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, AlphaBetaTCR]], List[Union[dict, AlphaBetaTCR]]]])
+
+slots.aIRRKnowledgeCommons__gd_tcell_receptors = Slot(uri=AK_SCHEMA.gd_tcell_receptors, name="aIRRKnowledgeCommons__gd_tcell_receptors", curie=AK_SCHEMA.curie('gd_tcell_receptors'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__gd_tcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, GammaDeltaTCRAkcId], Union[dict, GammaDeltaTCR]], List[Union[dict, GammaDeltaTCR]]]])
+
+slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors, name="aIRRKnowledgeCommons__bcell_receptors", curie=AK_SCHEMA.curie('bcell_receptors'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__bcell_receptors, domain=None, range=Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, BCellReceptor]], List[Union[dict, BCellReceptor]]]])
 
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
