@@ -94,6 +94,15 @@ def safe_get_ontology(ontology_cls, value):
     #
     # return ontology
 
+def valid_biological_sex(value):
+    if value == 'female':
+        return 'PATO:0020002';
+    elif value == 'male':
+        return 'PATO:0020001';
+    else:
+        print(f"WARNING: Untranslated biological sex: {value}")
+        return None
+
 def get_valid_age_fields(immport_db):
     query = '''SELECT NAME FROM lk_age_event WHERE NAME NOT IN (SELECT NAME FROM lk_t0_event)'''
     age_names = read_db_table_from_query(immport_db, query)["NAME"].tolist()
@@ -123,10 +132,11 @@ def get_participants(hcc_db, immport_db, investigation_id):
     participants = []
 
     for index, row in participant_table.iterrows():
+        print(row)
         participants.append(Participant(akc_id=format_id(investigation_id, 'participant', row['participant_id']),
                                         study_arm=format_id(investigation_id, 'arm', row['arm_id']),
-                                        species="Homo sapiens (human)", # todo: SpeciesOntology dynamic fields doesnt work yet #"NCBITAXON:9606"
-                                        biological_sex=safe_get_ontology(BiologicalSexOntology, row['biological_sex']),
+                                        species="NCBITAXON:9606",
+                                        biological_sex=valid_biological_sex(row['biological_sex']),
                                         age=row['start'],
                                         age_unit=row['unit'], # todo AgeUnitOntology dynamic fields doesnt work yet
                                         age_event=row['t0_event_type'], # "Age at Study Day 0" or "Age at enrollment"
