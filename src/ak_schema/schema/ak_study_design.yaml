@@ -271,11 +271,18 @@ enums:
 #      Mus musculus (mouse):
 #        meaning: NCBITaxon:10090
   BiologicalSexOntology:
-    permissible_values:
-      female:
-        meaning: PATO:0020002
-      male:
-        meaning: PATO:0020001
+    name: BiologicalSexOntology
+    reachable_from:
+      source_nodes:
+        - PATO:0020000
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+#    permissible_values:
+#      female:
+#        meaning: PATO:0020002
+#      male:
+#        meaning: PATO:0020001
   PhenotypicSexOntology:
     permissible_values:
       female:
@@ -418,42 +425,65 @@ enums:
       LDLR-/-:
       pet shop mouse:
   LifeEventProcessOntology:
-    permissible_values:
-      Documented exposure without evidence for disease:
-        meaning: ONTIE:0003305
-      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
-        meaning: ONTIE:0003308
-      Exposure with existing immune reactivity without evidence for disease:
-        meaning: OBI:1110061
-      specimen collection:
-        meaning: OBI:0000659
+    name: LifeEventProcessOntology
+    reachable_from:
+      source_nodes:
+        - OBI:0000011
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+#    permissible_values:
+#      Documented exposure without evidence for disease:
+#        meaning: ONTIE:0003305
+#      Environmental exposure to endemic/ubiquitous agent without evidence for disease:
+#        meaning: ONTIE:0003308
+#      Exposure with existing immune reactivity without evidence for disease:
+#        meaning: OBI:1110061
+#      specimen collection:
+#        meaning: OBI:0000659
+#      Administration in vivo:
+#        meaning: OBI:0600007
   ExposureMaterialOntology:
-    permissible_values:
-      Influenza A virus:
-        meaning: NCBITaxon:11320
-      Mycobacterium tuberculosis:
-        meaning: NCBITaxon:1773
-      Plasmodium falciparum:
-        meaning: NCBITaxon:5833
-      Human gammaherpesvirus 4:
-        meaning: NCBITaxon:10376
-      Human betaherpesvirus 5:
-        meaning: NCBITaxon:10359
-      Diphtheria-Tetanus-Pertussis vaccine:
-        meaning: VO:0000738
-      Dryvax:
-        meaning: VO:0000035
+    name: ExposureMaterialOntology
+    reachable_from:
+      source_nodes:
+        - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+#     permissible_values:
+#       Influenza A virus:
+#         meaning: NCBITaxon:11320
+#       Mycobacterium tuberculosis:
+#         meaning: NCBITaxon:1773
+#       Plasmodium falciparum:
+#         meaning: NCBITaxon:5833
+#       Human gammaherpesvirus 4:
+#         meaning: NCBITaxon:10376
+#       Human betaherpesvirus 5:
+#         meaning: NCBITaxon:10359
+#       Diphtheria-Tetanus-Pertussis vaccine:
+#         meaning: VO:0000738
+#       Dryvax:
+#         meaning: VO:0000035
       # TODO: more values
   DiseaseOntology:
-    permissible_values:
-      healthy:
-        meaning: ONTIE:000342
-      COVID-19:
-        meaning: DOID:0080600
-      Plasmodium falciparum malaria:
-        meaning: DOID:14067
-      dengue hemorrhagic fever:
-        meaning: DOID:12206
+    name: DiseaseOntology
+    reachable_from:
+      source_nodes:
+        - DOID:4
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+#     permissible_values:
+#       healthy:
+#         meaning: ONTIE:000342
+#       COVID-19:
+#         meaning: DOID:0080600
+#       Plasmodium falciparum malaria:
+#         meaning: DOID:14067
+#       dengue hemorrhagic fever:
+#         meaning: DOID:12206
       # TODO: more values
   DiseaseStageOntology:
     permissible_values:

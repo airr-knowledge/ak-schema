@@ -6,24 +6,29 @@ name: ak-schema
 
 classes:
   V1p4TimePoint:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4label
       - V1p4value
       - V1p4unit
   V1p4TimeInterval:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4min
       - V1p4max
       - V1p4unit
   V1p4PhysicalQuantity:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4quantity
       - V1p4unit
   V1p4TimeQuantity:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4quantity
       - V1p4unit
   V1p4Contributor:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4contributor_id
       - V1p4name
@@ -32,10 +37,12 @@ classes:
       - V1p4affiliation_department
       - V1p4contributions
   V1p4ContributorContribution:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4role
       - V1p4degree
   V1p4RearrangedSequence:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequence_id
       - V1p4sequence
@@ -48,6 +55,7 @@ classes:
       - V1p4sequence_start
       - V1p4sequence_end
   V1p4UnrearrangedSequence:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequence_id
       - V1p4sequence
@@ -60,6 +68,7 @@ classes:
       - V1p4gff_end
       - V1p4strand
   V1p4SequenceDelineationV:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequence_delineation_id
       - V1p4delineation_scheme
@@ -78,6 +87,7 @@ classes:
       - V1p4cdr3_start
       - V1p4alignment_labels
   V1p4AlleleDescription:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4allele_description_id
       - V1p4allele_description_ref
@@ -129,6 +139,7 @@ classes:
       - V1p4curation
       - V1p4curational_tags
   V1p4GermlineSet:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4germline_set_id
       - V1p4acknowledgements
@@ -145,10 +156,12 @@ classes:
       - V1p4allele_descriptions
       - V1p4curation
   V1p4GenotypeSet:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4receptor_genotype_set_id
       - V1p4genotype_class_list
   V1p4Genotype:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4receptor_genotype_id
       - V1p4locus
@@ -157,40 +170,48 @@ classes:
       - V1p4deleted_genes
       - V1p4inference_process
   V1p4DocumentedAllele:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4label
       - V1p4germline_set_ref
       - V1p4phasing
   V1p4UndocumentedAllele:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4allele_name
       - V1p4sequence
       - V1p4phasing
   V1p4DeletedGene:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4label
       - V1p4germline_set_ref
       - V1p4phasing
   V1p4MHCGenotypeSet:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4mhc_genotype_set_id
       - V1p4mhc_genotype_list
   V1p4MHCGenotype:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4mhc_genotype_id
       - V1p4mhc_class
       - V1p4mhc_alleles
       - V1p4mhc_genotyping_method
   V1p4MHCAllele:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4allele_designation
       - V1p4gene
       - V1p4reference_set_ref
   V1p4SubjectGenotype:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4receptor_genotype_set
       - V1p4mhc_genotype_set
   V1p4Study:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4study_id
       - V1p4study_title
@@ -204,6 +225,7 @@ classes:
       - V1p4adc_publish_date
       - V1p4adc_update_date
   V1p4Subject:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4subject_id
       - V1p4synthetic
@@ -221,6 +243,7 @@ classes:
       - V1p4diagnosis
       - V1p4genotype
   V1p4Diagnosis:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4study_group_description
       - V1p4diagnosis_timepoint
@@ -232,6 +255,7 @@ classes:
       - V1p4intervention
       - V1p4medical_history
   V1p4Sample:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sample_id
       - V1p4sample_type
@@ -242,6 +266,7 @@ classes:
       - V1p4collection_location
       - V1p4biomaterial_provider
   V1p4CellProcessing:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4tissue_processing
       - V1p4cell_subset
@@ -256,11 +281,13 @@ classes:
       - V1p4cell_isolation
       - V1p4cell_processing_protocol
   V1p4PCRTarget:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4pcr_target_locus
       - V1p4forward_pcr_primer_target_location
       - V1p4reverse_pcr_primer_target_location
   V1p4NucleicAcidProcessing:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4template_class
       - V1p4template_quality
@@ -272,6 +299,7 @@ classes:
       - V1p4complete_sequences
       - V1p4physical_linkage
   V1p4SequencingRun:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequencing_run_id
       - V1p4total_reads_passing_qc_filter
@@ -281,6 +309,7 @@ classes:
       - V1p4sequencing_kit
       - V1p4sequencing_files
   V1p4SequencingData:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequencing_data_id
       - V1p4file_type
@@ -293,6 +322,7 @@ classes:
       - V1p4index_filename
       - V1p4index_length
   V1p4DataProcessing:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4data_processing_id
       - V1p4primary_annotation
@@ -307,6 +337,7 @@ classes:
       - V1p4germline_set_ref
       - V1p4analysis_provenance_id
   V1p4Repertoire:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4repertoire_id
       - V1p4repertoire_name
@@ -316,12 +347,14 @@ classes:
       - V1p4sample
       - V1p4data_processing
   V1p4RepertoireGroup:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4repertoire_group_id
       - V1p4repertoire_group_name
       - V1p4repertoire_group_description
       - V1p4repertoires
   V1p4Alignment:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequence_id
       - V1p4segment
@@ -338,6 +371,7 @@ classes:
       - V1p4rank
       - V1p4data_processing_id
   V1p4Rearrangement:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequence_id
       - V1p4sequence
@@ -495,6 +529,7 @@ classes:
       - V1p4sample_processing_id
       - V1p4data_processing_id
   V1p4Clone:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4clone_id
       - V1p4repertoire_id
@@ -521,18 +556,21 @@ classes:
       - V1p4clone_count
       - V1p4seed_id
   V1p4Tree:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4tree_id
       - V1p4clone_id
       - V1p4newick
       - V1p4nodes
   V1p4Node:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sequence_id
       - V1p4sequence_alignment
       - V1p4junction
       - V1p4junction_aa
   V1p4Cell:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4cell_id
       - V1p4repertoire_id
@@ -543,6 +581,7 @@ classes:
       - V1p4cell_label
       - V1p4virtual_pairing
   V1p4Expression:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4expression_id
       - V1p4cell_id
@@ -552,6 +591,7 @@ classes:
       - V1p4property
       - V1p4value
   V1p4Receptor:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4receptor_id
       - V1p4receptor_hash
@@ -562,6 +602,7 @@ classes:
       - V1p4receptor_variable_domain_2_locus
       - V1p4receptor_ref
   V1p4Reactivity:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4reactivity_id
       - V1p4cell_id
@@ -585,6 +626,7 @@ classes:
       - V1p4reactivity_unit
       - V1p4reactivity_ref
   V1p4SampleProcessing:
+    is_a: AIRRStandards_v2p0
     slots:
       - V1p4sample_processing_id
       - V1p4sample_id

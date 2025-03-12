@@ -1,2 +1,22 @@
 akc_id	name	description	type	sequence_aa	source_protein	source_organism
 iedb_epitope:20788			PeptidicEpitope	GLCTLVAML	http://www.uniprot.org/uniprot/Q04360	http://purl.obolibrary.org/obo/NCBITaxon_10376
+iedb_epitope:71290			PeptidicEpitope	VTEHDTLLY	http://www.uniprot.org/uniprot/F5HC97	http://purl.obolibrary.org/obo/NCBITaxon_10359
+iedb_epitope:44920			PeptidicEpitope	NLVPMVATV	http://www.uniprot.org/uniprot/Q6SW59	http://purl.obolibrary.org/obo/NCBITaxon_10359
+iedb_epitope:65748			PeptidicEpitope	TPRVTGGGAM	http://www.uniprot.org/uniprot/Q6SW59	http://purl.obolibrary.org/obo/NCBITaxon_10359
+iedb_epitope:7136			PeptidicEpitope	CTELKLSDY	http://www.uniprot.org/uniprot/P03466	http://purl.obolibrary.org/obo/NCBITaxon_11320
+iedb_epitope:20354			PeptidicEpitope	GILGFVFTL	http://www.uniprot.org/uniprot/P03485	http://purl.obolibrary.org/obo/NCBITaxon_11320
+iedb_epitope:38688			PeptidicEpitope	LPRRSGAAGA	http://www.uniprot.org/uniprot/P03466	http://purl.obolibrary.org/obo/NCBITaxon_11320
+iedb_epitope:48237			PeptidicEpitope	PKYVKQNTLKLAT	http://www.uniprot.org/uniprot/P03452	http://purl.obolibrary.org/obo/NCBITaxon_11320
+iedb_epitope:62799			PeptidicEpitope	TAAQAAVVRFQEAAN	http://www.uniprot.org/uniprot/P9WNK5	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:179628			PeptidicEpitope	VHVSFVMAYPEMLAA	http://www.uniprot.org/uniprot/Q79FR3	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:179351			PeptidicEpitope	PSPSMGRDIKVQFQS	http://www.uniprot.org/uniprot/P9WQP3	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:179254			PeptidicEpitope	MHVSFVMAYPEMLAA	http://www.uniprot.org/uniprot/Q79FR3	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:179398			PeptidicEpitope	QVPSASMGRDIKVQF	http://www.uniprot.org/uniprot/P9WQN9	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:174021			PeptidicEpitope	VPSPSMGRDIKVQFQ	http://www.uniprot.org/uniprot/P9WQP1	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:49440			PeptidicEpitope	PSMGRDIKVQFQSGG	http://www.uniprot.org/uniprot/P9WQP1	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:173948			PeptidicEpitope	MGRDIKVQFQSGGAN	http://www.uniprot.org/uniprot/P9WQP3	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:106658			PeptidicEpitope	MSQIMYNYPAMMAHA	http://www.uniprot.org/uniprot/P9WNI9	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:179276			PeptidicEpitope	MSQIMYNYPAMRAHA	http://www.uniprot.org/uniprot/P9WNI9	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:501191			PeptidicEpitope	MSQIMYNYPAMLGHA	http://www.uniprot.org/uniprot/P9WNK3	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:505			PeptidicEpitope	AAVVRFQEAANKQKQ	http://www.uniprot.org/uniprot/P9WNK5	http://purl.obolibrary.org/obo/NCBITaxon_1773
+iedb_epitope:161666			PeptidicEpitope	QAAVVRFQEAANKQK	http://www.uniprot.org/uniprot/P9WNK5	http://purl.obolibrary.org/obo/NCBITaxon_1773
