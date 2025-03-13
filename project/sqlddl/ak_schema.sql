@@ -1081,6 +1081,8 @@ CREATE TABLE "ImmuneSystem" (
 );
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 CREATE TABLE "Chain" (
 	aa_hash TEXT, 
 	junction_aa_vj_allele_hash TEXT, 
@@ -1118,6 +1120,7 @@ CREATE TABLE "Epitope" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
+>>>>>>> main
 >>>>>>> main
 CREATE TABLE "PeptidicEpitope" (
 	sequence_aa TEXT, 
@@ -1751,6 +1754,7 @@ CREATE TABLE "Reference" (
 	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (source_uri), 
 	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+<<<<<<< HEAD
 );
 CREATE TABLE "StudyEvent" (
 	name TEXT, 
@@ -1759,6 +1763,76 @@ CREATE TABLE "StudyEvent" (
 	"AIRRKnowledgeCommons_id" INTEGER, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+);
+CREATE TABLE "Dataset" (
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"AIRRKnowledgeCommons_id" INTEGER, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+);
+CREATE TABLE "Conclusion" (
+	result TEXT, 
+	data_location_type TEXT, 
+	data_location_value TEXT, 
+	organism VARCHAR, 
+	experiment_type TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"AIRRKnowledgeCommons_id" INTEGER, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+);
+CREATE TABLE "Chain" (
+	sequence TEXT, 
+	sequence_aa TEXT, 
+	chain_type VARCHAR(3), 
+	v_call TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
+	cdr1_start INTEGER, 
+	cdr1_end INTEGER, 
+	cdr2_start INTEGER, 
+	cdr2_end INTEGER, 
+	cdr3_start INTEGER, 
+	cdr3_end INTEGER, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"AIRRKnowledgeCommons_id" INTEGER, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+);
+CREATE TABLE "TCellReceptor" (
+	type TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"AIRRKnowledgeCommons_id" INTEGER, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+);
+CREATE TABLE "Epitope" (
+	type TEXT, 
+=======
+);
+CREATE TABLE "StudyEvent" (
+>>>>>>> main
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"AIRRKnowledgeCommons_id" INTEGER, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+<<<<<<< HEAD
+=======
 );
 CREATE TABLE "Dataset" (
 	name TEXT, 
@@ -1850,6 +1924,7 @@ CREATE TABLE "ChainSimilarity" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(chain_domain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(chain_codomain) REFERENCES "Chain" (akc_id)
+>>>>>>> main
 >>>>>>> main
 );
 CREATE TABLE "SubjectGenotype" (
@@ -2088,6 +2163,9 @@ CREATE TABLE "Receptor_reactivity_measurements" (
 	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
 );
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> main
 CREATE TABLE "StudyArm" (
 	investigation TEXT, 
 	name TEXT, 
@@ -2102,6 +2180,8 @@ CREATE TABLE "AlphaBetaTCR" (
 	"TRA_chain" TEXT, 
 	"TRB_chain" TEXT, 
 	type TEXT, 
+<<<<<<< HEAD
+=======
 =======
 CREATE TABLE "Participant" (
 	study_arm TEXT, 
@@ -2115,6 +2195,7 @@ CREATE TABLE "Participant" (
 	ethnicity TEXT, 
 	geolocation VARCHAR(24), 
 	strain VARCHAR(20), 
+>>>>>>> main
 >>>>>>> main
 	name TEXT, 
 	description TEXT, 
@@ -2273,6 +2354,7 @@ CREATE TABLE "Participant" (
 	age_event TEXT, 
 	race TEXT, 
 	ethnicity TEXT, 
+<<<<<<< HEAD
 	geolocation VARCHAR(24), 
 	strain VARCHAR(20), 
 	name TEXT, 
@@ -2293,6 +2375,65 @@ CREATE TABLE "Repertoire" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
 	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "StudyArm_inclusion_criteria" (
+	"StudyArm_akc_id" TEXT, 
+	inclusion_criteria TEXT, 
+	PRIMARY KEY ("StudyArm_akc_id", inclusion_criteria), 
+	FOREIGN KEY("StudyArm_akc_id") REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "StudyArm_exclusion_criteria" (
+	"StudyArm_akc_id" TEXT, 
+	exclusion_criteria TEXT, 
+	PRIMARY KEY ("StudyArm_akc_id", exclusion_criteria), 
+	FOREIGN KEY("StudyArm_akc_id") REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "StudyEvent_study_arms" (
+	"StudyEvent_akc_id" TEXT, 
+	study_arms_akc_id TEXT, 
+	PRIMARY KEY ("StudyEvent_akc_id", study_arms_akc_id), 
+	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "Subject_diagnosis" (
+	"Subject_id" INTEGER, 
+	diagnosis_id INTEGER, 
+	PRIMARY KEY ("Subject_id", diagnosis_id), 
+	FOREIGN KEY("Subject_id") REFERENCES "Subject" (id), 
+	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
+);
+CREATE TABLE "LifeEvent" (
+	participant TEXT, 
+	study_event TEXT, 
+	life_event_type VARCHAR(79), 
+=======
+>>>>>>> main
+	geolocation VARCHAR(24), 
+	strain VARCHAR(20), 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"AIRRKnowledgeCommons_id" INTEGER, 
+	PRIMARY KEY (akc_id), 
+<<<<<<< HEAD
+	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+=======
+	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
+	FOREIGN KEY("AIRRKnowledgeCommons_id") REFERENCES "AIRRKnowledgeCommons" (id)
+);
+CREATE TABLE "Repertoire" (
+	id INTEGER NOT NULL, 
+	repertoire_id TEXT, 
+	repertoire_name TEXT, 
+	repertoire_description TEXT, 
+	study_id INTEGER, 
+	subject_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
+	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
+>>>>>>> main
 );
 CREATE TABLE "StudyArm_inclusion_criteria" (
 	"StudyArm_akc_id" TEXT, 
@@ -2348,6 +2489,8 @@ CREATE TABLE "Investigation_participants" (
 );
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 CREATE TABLE "Subject_diagnosis" (
 	"Subject_id" INTEGER, 
 	diagnosis_id INTEGER, 
@@ -2390,6 +2533,7 @@ CREATE TABLE "Assessment" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
 );
+>>>>>>> main
 >>>>>>> main
 CREATE TABLE "Repertoire_sample" (
 	"Repertoire_id" INTEGER, 
