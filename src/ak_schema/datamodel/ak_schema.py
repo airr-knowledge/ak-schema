@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-12T23:08:37
+# Generation date: 2025-03-13T00:46:36
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -602,10 +602,9 @@ class Investigation(PlannedProcess):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     akc_id: Union[str, InvestigationAkcId] = None
-    study_type: Optional[Union[str, "StudyTypeOntology"]] = None
+    investigation_type: Optional[Union[str, "InvestigationTypeOntology"]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
-    inclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
-    exclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
+    inclusion_exclusion_criteria: Optional[str] = None
     release_date: Optional[Union[str, XSDDateTime]] = None
     update_date: Optional[Union[str, XSDDateTime]] = None
     participants: Optional[Union[Union[str, ParticipantAkcId], List[Union[str, ParticipantAkcId]]]] = empty_list()
@@ -623,13 +622,8 @@ class Investigation(PlannedProcess):
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
 
-        if not isinstance(self.inclusion_criteria, list):
-            self.inclusion_criteria = [self.inclusion_criteria] if self.inclusion_criteria is not None else []
-        self.inclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.inclusion_criteria]
-
-        if not isinstance(self.exclusion_criteria, list):
-            self.exclusion_criteria = [self.exclusion_criteria] if self.exclusion_criteria is not None else []
-        self.exclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.exclusion_criteria]
+        if self.inclusion_exclusion_criteria is not None and not isinstance(self.inclusion_exclusion_criteria, str):
+            self.inclusion_exclusion_criteria = str(self.inclusion_exclusion_criteria)
 
         if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
             self.release_date = XSDDateTime(self.release_date)
@@ -736,8 +730,6 @@ class StudyArm(NamedThing):
 
     akc_id: Union[str, StudyArmAkcId] = None
     investigation: Optional[Union[str, InvestigationAkcId]] = None
-    inclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
-    exclusion_criteria: Optional[Union[str, List[str]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -747,14 +739,6 @@ class StudyArm(NamedThing):
 
         if self.investigation is not None and not isinstance(self.investigation, InvestigationAkcId):
             self.investigation = InvestigationAkcId(self.investigation)
-
-        if not isinstance(self.inclusion_criteria, list):
-            self.inclusion_criteria = [self.inclusion_criteria] if self.inclusion_criteria is not None else []
-        self.inclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.inclusion_criteria]
-
-        if not isinstance(self.exclusion_criteria, list):
-            self.exclusion_criteria = [self.exclusion_criteria] if self.exclusion_criteria is not None else []
-        self.exclusion_criteria = [v if isinstance(v, str) else str(v) for v in self.exclusion_criteria]
 
         super().__post_init__(**kwargs)
 
@@ -4491,6 +4475,12 @@ class SampleProcessing(AIRRStandards):
 
 
 # Enumerations
+class InvestigationTypeOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="InvestigationTypeOntology",
+    )
+
 class BiologicalSexOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -5350,6 +5340,9 @@ slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEM
 
 slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
                    model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
+
+slots.investigation_type = Slot(uri=AK_SCHEMA.investigation_type, name="investigation_type", curie=AK_SCHEMA.curie('investigation_type'),
+                   model_uri=AK_SCHEMA.investigation_type, domain=None, range=Optional[Union[str, "InvestigationTypeOntology"]])
 
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])

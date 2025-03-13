@@ -3508,25 +3508,16 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
+                "inclusion_exclusion_criteria": {
+                    "description": "List of criteria for inclusion/exclusion for the study",
                     "type": [
-                        "array",
+                        "string",
                         "null"
                     ]
                 },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                "investigation_type": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "Type of study design"
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -3563,10 +3554,6 @@
                         "null"
                     ]
                 },
-                "study_type": {
-                    "$ref": "#/$defs/StudyTypeOntology",
-                    "description": "Type of study design"
-                },
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",
                     "format": "date-time",
@@ -3581,6 +3568,11 @@
             ],
             "title": "Investigation",
             "type": "object"
+        },
+        "InvestigationTypeOntology": {
+            "description": "",
+            "title": "InvestigationTypeOntology",
+            "type": "string"
         },
         "Investigation__identifier_optional": {
             "additionalProperties": false,
@@ -3634,25 +3626,16 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
+                "inclusion_exclusion_criteria": {
+                    "description": "List of criteria for inclusion/exclusion for the study",
                     "type": [
-                        "array",
+                        "string",
                         "null"
                     ]
                 },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
+                "investigation_type": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "Type of study design"
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -3688,10 +3671,6 @@
                         "array",
                         "null"
                     ]
-                },
-                "study_type": {
-                    "$ref": "#/$defs/StudyTypeOntology",
-                    "description": "Type of study design"
                 },
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",
@@ -7429,26 +7408,6 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "investigation": {
                     "description": "An investigation in which the study arm participates",
                     "type": [
@@ -7482,26 +7441,6 @@
                     "description": "A human-readable description for a thing",
                     "type": [
                         "string",
-                        "null"
-                    ]
-                },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
                         "null"
                     ]
                 },
