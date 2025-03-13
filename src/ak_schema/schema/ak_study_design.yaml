@@ -10,7 +10,7 @@ classes:
     description: >-
       A scientific investigation.
     slots:
-      - study_type
+      - investigation_type
       - archival_id
       - inclusion_exclusion_criteria
       - release_date
@@ -103,6 +103,10 @@ classes:
 
 
 slots:
+  investigation_type:
+    name: investigation_type
+    description: Type of study design
+    range: InvestigationTypeOntology
   archival_id:
     description: Identifier for external archival resource for the investigation, e.g., BioProject
     slot_uri: schema:identifier
@@ -260,6 +264,14 @@ slots:
     # TODO: range: DiseaseSeverity
 
 enums:
+  InvestigationTypeOntology:
+    name: InvestigationTypeOntology
+    reachable_from:
+      source_nodes:
+        - OBI:0500000
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
 
 #
 #  SpeciesOntology:  # now in ak_airr
