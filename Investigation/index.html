@@ -248,6 +248,15 @@
 
       Investigation : inclusion_exclusion_criteria
 
+      Investigation : investigation_type
+
+
+
+
+    Investigation --&gt; "0..1" InvestigationTypeOntology : investigation_type
+    click InvestigationTypeOntology href "../InvestigationTypeOntology"
+
+
       Investigation : name
 
       Investigation : participants
@@ -268,15 +277,6 @@
 
     Investigation --&gt; "*" Simulation : simulations
     click Simulation href "../Simulation"
-
-
-      Investigation : study_type
-
-
-
-
-    Investigation --&gt; "0..1" StudyTypeOntology : study_type
-    click StudyTypeOntology href "../StudyTypeOntology"
 
 
       Investigation : update_date
@@ -308,8 +308,8 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../study_type/">study_type</a></td>
-<td>0..1 <br/> <a href="../StudyTypeOntology/">StudyTypeOntology</a></td>
+<td><a href="../investigation_type/">investigation_type</a></td>
+<td>0..1 <br/> <a href="../InvestigationTypeOntology/">InvestigationTypeOntology</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -457,7 +457,7 @@ description: A scientific investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: PlannedProcess
 slots:
-- study_type
+- investigation_type
 - archival_id
 - inclusion_exclusion_criteria
 - release_date
@@ -478,22 +478,16 @@ description: A scientific investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: PlannedProcess
 attributes:
-  study_type:
-    name: study_type
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
+  investigation_type:
+    name: investigation_type
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: rdf:type
-    alias: study_type
+    alias: investigation_type
     owner: Investigation
     domain_of:
     - Investigation
-    - Study
-    range: StudyTypeOntology
+    range: InvestigationTypeOntology
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,

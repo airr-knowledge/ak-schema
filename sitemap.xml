@@ -371,6 +371,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/InvestigationTypeOntology/</loc>
+         <lastmod>2025-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/JCodonFrameEnum/</loc>
          <lastmod>2025-03-13</lastmod>
          <changefreq>daily</changefreq>
@@ -1937,6 +1942,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/investigation/</loc>
+         <lastmod>2025-03-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/investigation_type/</loc>
          <lastmod>2025-03-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
