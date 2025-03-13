@@ -79,8 +79,7 @@ def get_study_arms(hcc_db, investigation_id):
             StudyArm(akc_id=format_id(investigation_id, 'arm', row['arm_id']),
                      investigation=format_id(investigation_id, 'investigation', row['investigation_id']),
                      name=str(row["arm_name"]),
-                     inclusion_criteria=str(row["arm_description"]),
-                     exclusion_criteria=None))
+                     description=str(row["arm_description"])))
 
     return study_arms
 
@@ -214,10 +213,10 @@ def get_investigation_partial(hcc_db, immport_db, investigation_id):
     exc_criteria = inc_exc_table[inc_exc_table["CRITERION_CATEGORY"] == "Exclusion"]["CRITERION"].tolist()
 
     return Investigation(akc_id=format_id(investigation_id, "investigation", investigation_id), # f"ImmuneSpace:{investigation_table['investigation_id'][0]}",
-                         study_type=Curie("OBI:0000066"), # according to James
+                         investigation_type=Curie("OBI:0000066"), # according to James
                          archival_id=None,
-                         inclusion_criteria=inc_criteria,
-                         exclusion_criteria=exc_criteria,
+                         inclusion_exclusion_criteria=inc_criteria + exc_criteria,
+                         #exclusion_criteria=exc_criteria,
                          release_date=DateOrDatetime(investigation_table["initial_data_release_date"][0]),
                          update_date=DateOrDatetime(get_udpated_release_data(immport_db, investigation_id)))
 
