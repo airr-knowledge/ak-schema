@@ -3515,6 +3515,10 @@
                         "null"
                     ]
                 },
+                "investigation_type": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "Type of study design"
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -3550,10 +3554,6 @@
                         "null"
                     ]
                 },
-                "study_type": {
-                    "$ref": "#/$defs/StudyTypeOntology",
-                    "description": "Type of study design"
-                },
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",
                     "format": "date-time",
@@ -3568,6 +3568,11 @@
             ],
             "title": "Investigation",
             "type": "object"
+        },
+        "InvestigationTypeOntology": {
+            "description": "",
+            "title": "InvestigationTypeOntology",
+            "type": "string"
         },
         "Investigation__identifier_optional": {
             "additionalProperties": false,
@@ -3628,6 +3633,10 @@
                         "null"
                     ]
                 },
+                "investigation_type": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "Type of study design"
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -3662,10 +3671,6 @@
                         "array",
                         "null"
                     ]
-                },
-                "study_type": {
-                    "$ref": "#/$defs/StudyTypeOntology",
-                    "description": "Type of study design"
                 },
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",

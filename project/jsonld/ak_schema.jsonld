@@ -444,6 +444,19 @@
   ],
   "enums": [
     {
+      "name": "InvestigationTypeOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InvestigationTypeOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "OBI:0500000"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ]
+      }
+    },
+    {
       "name": "BiologicalSexOntology",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/BiologicalSexOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -1807,6 +1820,19 @@
         "Epitope"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "investigation_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/investigation_type",
+      "description": "Type of study design",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/investigation_type",
+      "owner": "Investigation",
+      "domain_of": [
+        "Investigation"
+      ],
+      "range": "InvestigationTypeOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -5197,7 +5223,6 @@
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
       "owner": "Study",
       "domain_of": [
-        "Investigation",
         "Study"
       ],
       "range": "StudyTypeOntology",
@@ -11657,7 +11682,7 @@
         "akc_id",
         "name",
         "description",
-        "study_type",
+        "investigation_type",
         "archival_id",
         "inclusion_exclusion_criteria",
         "release_date",
@@ -13320,9 +13345,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-03-12T23:44:04",
-  "source_file_size": 196876,
-  "generation_date": "2025-03-12T23:44:07",
+  "source_file_date": "2025-03-13T00:33:37",
+  "source_file_size": 197333,
+  "generation_date": "2025-03-13T00:33:40",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-12T23:44:11
+# Generation date: 2025-03-13T00:33:44
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -602,7 +602,7 @@ class Investigation(PlannedProcess):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     akc_id: Union[str, InvestigationAkcId] = None
-    study_type: Optional[Union[str, "StudyTypeOntology"]] = None
+    investigation_type: Optional[Union[str, "InvestigationTypeOntology"]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
     inclusion_exclusion_criteria: Optional[str] = None
     release_date: Optional[Union[str, XSDDateTime]] = None
@@ -4475,6 +4475,12 @@ class SampleProcessing(AIRRStandards):
 
 
 # Enumerations
+class InvestigationTypeOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="InvestigationTypeOntology",
+    )
+
 class BiologicalSexOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -5334,6 +5340,9 @@ slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEM
 
 slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
                    model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
+
+slots.investigation_type = Slot(uri=AK_SCHEMA.investigation_type, name="investigation_type", curie=AK_SCHEMA.curie('investigation_type'),
+                   model_uri=AK_SCHEMA.investigation_type, domain=None, range=Optional[Union[str, "InvestigationTypeOntology"]])
 
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])

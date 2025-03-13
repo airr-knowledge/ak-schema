@@ -345,6 +345,15 @@ types:
     uri: xsd:string
     repr: str
 enums:
+  InvestigationTypeOntology:
+    name: InvestigationTypeOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - OBI:0500000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: false
   BiologicalSexOntology:
     name: BiologicalSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1214,6 +1223,11 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     designates_type: true
     range: string
+  investigation_type:
+    name: investigation_type
+    description: Type of study design
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: InvestigationTypeOntology
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,
@@ -5623,7 +5637,7 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: PlannedProcess
     slots:
-    - study_type
+    - investigation_type
     - archival_id
     - inclusion_exclusion_criteria
     - release_date
