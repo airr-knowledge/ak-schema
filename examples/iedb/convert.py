@@ -45,6 +45,15 @@ def id(input):
             return input.replace(url, '')
     return input
 
+# this is fake
+# we don't generate new IDs every time the code is run
+akc_id_last = 0
+def akc_id():
+    """Returns a new AKC ID."""
+    global akc_id_last
+    akc_id_last += 1
+    return 'AKC:' + str(akc_id_last)
+
 
 def akc_id():
     """Returns a new AKC ID."""
@@ -286,15 +295,15 @@ def convert(tcell_path, tcr_path, yaml_path):
             if tcr_row['Receptor']['Type'] == 'alphabeta':
                 tcr = AlphaBetaTCR(
                     tcr_curie,
-                    TRA_chain=chain_1.akc_id if chain_1 else None,
-                    TRB_chain=chain_2.akc_id if chain_2 else None,
+                    tra_chain=chain_1.akc_id if chain_1 else None,
+                    trb_chain=chain_2.akc_id if chain_2 else None,
                 )
                 tcell_receptors.append(tcr)
             elif tcr_row['Receptor']['Type'] == 'gammadelta':
                 tcr = GammaDeltaTCR(
                     tcr_curie,
-                    TRG_chain=chain_1.akc_id if chain_1 else None,
-                    TRD_chain=chain_2.akc_id if chain_2 else None,
+                    trg_chain=chain_1.akc_id if chain_1 else None,
+                    trd_chain=chain_2.akc_id if chain_2 else None,
                 )
                 tcell_receptors.append(tcr)
             else:

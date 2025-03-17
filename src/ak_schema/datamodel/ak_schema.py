@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-01-27T01:08:20
+# Generation date: 2025-03-17T16:36:48
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -55,6 +55,7 @@ VO = CurieNamespace('VO', 'http://purl.obolibrary.org/obo/VO_')
 AK_SCHEMA = CurieNamespace('ak_schema', 'https://github.com/airr-knowledge/ak-schema/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
 DC = CurieNamespace('dc', 'http://purl.org/dc/elements/1.1/')
+DOI = CurieNamespace('doi', 'https://www.doi.org/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')
 IEDB_ASSAY = CurieNamespace('iedb_assay', 'http://www.iedb.org/assay/')
 IEDB_EPITOPE = CurieNamespace('iedb_epitope', 'http://www.iedb.org/epitope/')
@@ -601,10 +602,9 @@ class Investigation(PlannedProcess):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     akc_id: Union[str, InvestigationAkcId] = None
-    study_type: Optional[Union[str, "StudyTypeOntology"]] = None
+    investigation_type: Optional[Union[str, "InvestigationTypeOntology"]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
-    inclusion_criteria: Optional[str] = None
-    exclusion_criteria: Optional[str] = None
+    inclusion_exclusion_criteria: Optional[str] = None
     release_date: Optional[Union[str, XSDDateTime]] = None
     update_date: Optional[Union[str, XSDDateTime]] = None
     participants: Optional[Union[Union[str, ParticipantAkcId], List[Union[str, ParticipantAkcId]]]] = empty_list()
@@ -622,11 +622,8 @@ class Investigation(PlannedProcess):
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
 
-        if self.inclusion_criteria is not None and not isinstance(self.inclusion_criteria, str):
-            self.inclusion_criteria = str(self.inclusion_criteria)
-
-        if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
-            self.exclusion_criteria = str(self.exclusion_criteria)
+        if self.inclusion_exclusion_criteria is not None and not isinstance(self.inclusion_exclusion_criteria, str):
+            self.inclusion_exclusion_criteria = str(self.inclusion_exclusion_criteria)
 
         if self.release_date is not None and not isinstance(self.release_date, XSDDateTime):
             self.release_date = XSDDateTime(self.release_date)
@@ -733,8 +730,6 @@ class StudyArm(NamedThing):
 
     akc_id: Union[str, StudyArmAkcId] = None
     investigation: Optional[Union[str, InvestigationAkcId]] = None
-    inclusion_criteria: Optional[str] = None
-    exclusion_criteria: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -744,12 +739,6 @@ class StudyArm(NamedThing):
 
         if self.investigation is not None and not isinstance(self.investigation, InvestigationAkcId):
             self.investigation = InvestigationAkcId(self.investigation)
-
-        if self.inclusion_criteria is not None and not isinstance(self.inclusion_criteria, str):
-            self.inclusion_criteria = str(self.inclusion_criteria)
-
-        if self.exclusion_criteria is not None and not isinstance(self.exclusion_criteria, str):
-            self.exclusion_criteria = str(self.exclusion_criteria)
 
         super().__post_init__(**kwargs)
 
@@ -1560,8 +1549,8 @@ class AlphaBetaTCR(TCellReceptor):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AlphaBetaTCR
 
     akc_id: Union[str, AlphaBetaTCRAkcId] = None
-    TRA_chain: Optional[Union[str, ChainAkcId]] = None
-    TRB_chain: Optional[Union[str, ChainAkcId]] = None
+    tra_chain: Optional[Union[str, ChainAkcId]] = None
+    trb_chain: Optional[Union[str, ChainAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1569,11 +1558,11 @@ class AlphaBetaTCR(TCellReceptor):
         if not isinstance(self.akc_id, AlphaBetaTCRAkcId):
             self.akc_id = AlphaBetaTCRAkcId(self.akc_id)
 
-        if self.TRA_chain is not None and not isinstance(self.TRA_chain, ChainAkcId):
-            self.TRA_chain = ChainAkcId(self.TRA_chain)
+        if self.tra_chain is not None and not isinstance(self.tra_chain, ChainAkcId):
+            self.tra_chain = ChainAkcId(self.tra_chain)
 
-        if self.TRB_chain is not None and not isinstance(self.TRB_chain, ChainAkcId):
-            self.TRB_chain = ChainAkcId(self.TRB_chain)
+        if self.trb_chain is not None and not isinstance(self.trb_chain, ChainAkcId):
+            self.trb_chain = ChainAkcId(self.trb_chain)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1589,8 +1578,8 @@ class GammaDeltaTCR(TCellReceptor):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GammaDeltaTCR
 
     akc_id: Union[str, GammaDeltaTCRAkcId] = None
-    TRG_chain: Optional[Union[str, ChainAkcId]] = None
-    TRD_chain: Optional[Union[str, ChainAkcId]] = None
+    trg_chain: Optional[Union[str, ChainAkcId]] = None
+    trd_chain: Optional[Union[str, ChainAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1598,11 +1587,11 @@ class GammaDeltaTCR(TCellReceptor):
         if not isinstance(self.akc_id, GammaDeltaTCRAkcId):
             self.akc_id = GammaDeltaTCRAkcId(self.akc_id)
 
-        if self.TRG_chain is not None and not isinstance(self.TRG_chain, ChainAkcId):
-            self.TRG_chain = ChainAkcId(self.TRG_chain)
+        if self.trg_chain is not None and not isinstance(self.trg_chain, ChainAkcId):
+            self.trg_chain = ChainAkcId(self.trg_chain)
 
-        if self.TRD_chain is not None and not isinstance(self.TRD_chain, ChainAkcId):
-            self.TRD_chain = ChainAkcId(self.TRD_chain)
+        if self.trd_chain is not None and not isinstance(self.trd_chain, ChainAkcId):
+            self.trd_chain = ChainAkcId(self.trd_chain)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1618,9 +1607,9 @@ class BCellReceptor(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.BCellReceptor
 
     akc_id: Union[str, BCellReceptorAkcId] = None
-    IGH_chain: Optional[Union[str, ChainAkcId]] = None
-    IGK_chain: Optional[Union[str, ChainAkcId]] = None
-    IGL_chain: Optional[Union[str, ChainAkcId]] = None
+    igh_chain: Optional[Union[str, ChainAkcId]] = None
+    igk_chain: Optional[Union[str, ChainAkcId]] = None
+    igl_chain: Optional[Union[str, ChainAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1628,14 +1617,14 @@ class BCellReceptor(AKObject):
         if not isinstance(self.akc_id, BCellReceptorAkcId):
             self.akc_id = BCellReceptorAkcId(self.akc_id)
 
-        if self.IGH_chain is not None and not isinstance(self.IGH_chain, ChainAkcId):
-            self.IGH_chain = ChainAkcId(self.IGH_chain)
+        if self.igh_chain is not None and not isinstance(self.igh_chain, ChainAkcId):
+            self.igh_chain = ChainAkcId(self.igh_chain)
 
-        if self.IGK_chain is not None and not isinstance(self.IGK_chain, ChainAkcId):
-            self.IGK_chain = ChainAkcId(self.IGK_chain)
+        if self.igk_chain is not None and not isinstance(self.igk_chain, ChainAkcId):
+            self.igk_chain = ChainAkcId(self.igk_chain)
 
-        if self.IGL_chain is not None and not isinstance(self.IGL_chain, ChainAkcId):
-            self.IGL_chain = ChainAkcId(self.IGL_chain)
+        if self.igl_chain is not None and not isinstance(self.igl_chain, ChainAkcId):
+            self.igl_chain = ChainAkcId(self.igl_chain)
 
         super().__post_init__(**kwargs)
 
@@ -4486,6 +4475,12 @@ class SampleProcessing(AIRRStandards):
 
 
 # Enumerations
+class InvestigationTypeOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="InvestigationTypeOntology",
+    )
+
 class BiologicalSexOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
@@ -4554,6 +4549,14 @@ class RaceOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="Native Hawaiian or Other Pacific Islander",
                 meaning=OMRSE["00000218"]))
+        setattr(cls, "race: not specified",
+            PermissibleValue(text="race: not specified"))
+        setattr(cls, "race: other",
+            PermissibleValue(
+                text="race: other",
+                meaning=OMRSE["00000214"]))
+        setattr(cls, "race: unknown",
+            PermissibleValue(text="race: unknown"))
         setattr(cls, "African American",
             PermissibleValue(text="African American"))
         setattr(cls, "Asian or Pacific Islander",
@@ -4616,6 +4619,12 @@ class EthnicityOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="Not Hispanic or Latino",
                 meaning=OMRSE["00000208"]))
+        setattr(cls, "ethnicity: not specified",
+            PermissibleValue(text="ethnicity: not specified"))
+        setattr(cls, "ethnicity: other",
+            PermissibleValue(
+                text="ethnicity: other",
+                meaning=OMRSE["00000206"]))
         setattr(cls, "African-American",
             PermissibleValue(text="African-American"))
         setattr(cls, "Black or Black British - African",
@@ -5332,14 +5341,17 @@ slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEM
 slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
                    model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
 
+slots.investigation_type = Slot(uri=AK_SCHEMA.investigation_type, name="investigation_type", curie=AK_SCHEMA.curie('investigation_type'),
+                   model_uri=AK_SCHEMA.investigation_type, domain=None, range=Optional[Union[str, "InvestigationTypeOntology"]])
+
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.inclusion_criteria = Slot(uri=AK_SCHEMA.inclusion_criteria, name="inclusion_criteria", curie=AK_SCHEMA.curie('inclusion_criteria'),
-                   model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.inclusion_criteria, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.exclusion_criteria = Slot(uri=AK_SCHEMA.exclusion_criteria, name="exclusion_criteria", curie=AK_SCHEMA.curie('exclusion_criteria'),
-                   model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.exclusion_criteria, domain=None, range=Optional[Union[str, List[str]]])
 
 slots.update_date = Slot(uri=AK_SCHEMA.update_date, name="update_date", curie=AK_SCHEMA.curie('update_date'),
                    model_uri=AK_SCHEMA.update_date, domain=None, range=Optional[Union[str, XSDDateTime]])
@@ -5522,26 +5534,26 @@ slots.chain_type = Slot(uri=AK_SCHEMA.chain_type, name="chain_type", curie=AK_SC
 slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curie('isotype'),
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])
 
-slots.IGH_chain = Slot(uri=AK_SCHEMA.IGH_chain, name="IGH_chain", curie=AK_SCHEMA.curie('IGH_chain'),
-                   model_uri=AK_SCHEMA.IGH_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.igh_chain = Slot(uri=AK_SCHEMA.igh_chain, name="igh_chain", curie=AK_SCHEMA.curie('igh_chain'),
+                   model_uri=AK_SCHEMA.igh_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.IGL_chain = Slot(uri=AK_SCHEMA.IGL_chain, name="IGL_chain", curie=AK_SCHEMA.curie('IGL_chain'),
-                   model_uri=AK_SCHEMA.IGL_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.igl_chain = Slot(uri=AK_SCHEMA.igl_chain, name="igl_chain", curie=AK_SCHEMA.curie('igl_chain'),
+                   model_uri=AK_SCHEMA.igl_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.IGK_chain = Slot(uri=AK_SCHEMA.IGK_chain, name="IGK_chain", curie=AK_SCHEMA.curie('IGK_chain'),
-                   model_uri=AK_SCHEMA.IGK_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.igk_chain = Slot(uri=AK_SCHEMA.igk_chain, name="igk_chain", curie=AK_SCHEMA.curie('igk_chain'),
+                   model_uri=AK_SCHEMA.igk_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRA_chain = Slot(uri=AK_SCHEMA.TRA_chain, name="TRA_chain", curie=AK_SCHEMA.curie('TRA_chain'),
-                   model_uri=AK_SCHEMA.TRA_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.tra_chain = Slot(uri=AK_SCHEMA.tra_chain, name="tra_chain", curie=AK_SCHEMA.curie('tra_chain'),
+                   model_uri=AK_SCHEMA.tra_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRB_chain = Slot(uri=AK_SCHEMA.TRB_chain, name="TRB_chain", curie=AK_SCHEMA.curie('TRB_chain'),
-                   model_uri=AK_SCHEMA.TRB_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.trb_chain = Slot(uri=AK_SCHEMA.trb_chain, name="trb_chain", curie=AK_SCHEMA.curie('trb_chain'),
+                   model_uri=AK_SCHEMA.trb_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRD_chain = Slot(uri=AK_SCHEMA.TRD_chain, name="TRD_chain", curie=AK_SCHEMA.curie('TRD_chain'),
-                   model_uri=AK_SCHEMA.TRD_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.trd_chain = Slot(uri=AK_SCHEMA.trd_chain, name="trd_chain", curie=AK_SCHEMA.curie('trd_chain'),
+                   model_uri=AK_SCHEMA.trd_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRG_chain = Slot(uri=AK_SCHEMA.TRG_chain, name="TRG_chain", curie=AK_SCHEMA.curie('TRG_chain'),
-                   model_uri=AK_SCHEMA.TRG_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.trg_chain = Slot(uri=AK_SCHEMA.trg_chain, name="trg_chain", curie=AK_SCHEMA.curie('trg_chain'),
+                   model_uri=AK_SCHEMA.trg_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
 slots.source_protein = Slot(uri=AK_SCHEMA.source_protein, name="source_protein", curie=AK_SCHEMA.curie('source_protein'),
                    model_uri=AK_SCHEMA.source_protein, domain=None, range=Optional[str])

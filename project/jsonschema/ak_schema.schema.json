@@ -1078,23 +1078,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRA_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRB_chain": {
+                "trb_chain": {
                     "description": "T cell receptor beta chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1116,23 +1116,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRA_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRB_chain": {
+                "trb_chain": {
                     "description": "T cell receptor beta chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1434,30 +1434,30 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "IGH_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "igh_chain": {
                     "description": "IG heavy chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGK_chain": {
+                "igk_chain": {
                     "description": "IG kappa light chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGL_chain": {
+                "igl_chain": {
                     "description": "IG lambda light chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 }
             },
             "required": [
@@ -1470,30 +1470,30 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "IGH_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "igh_chain": {
                     "description": "IG heavy chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGK_chain": {
+                "igk_chain": {
                     "description": "IG kappa light chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGL_chain": {
+                "igl_chain": {
                     "description": "IG lambda light chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 }
             },
             "required": [],
@@ -2939,6 +2939,8 @@
                 "Hispanic or Latino",
                 "Not Hispanic or Latino",
                 "Other",
+                "ethnicity: not specified",
+                "ethnicity: other",
                 "African",
                 "African-American",
                 "Arab",
@@ -2990,23 +2992,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRD_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "trd_chain": {
                     "description": "T cell receptor delta chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRG_chain": {
+                "trg_chain": {
                     "description": "T cell receptor gamma chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -3028,23 +3030,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRD_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "trd_chain": {
                     "description": "T cell receptor delta chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRG_chain": {
+                "trg_chain": {
                     "description": "T cell receptor gamma chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -3506,19 +3508,16 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
+                "inclusion_exclusion_criteria": {
+                    "description": "List of criteria for inclusion/exclusion for the study",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                "investigation_type": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "Type of study design"
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -3555,10 +3554,6 @@
                         "null"
                     ]
                 },
-                "study_type": {
-                    "$ref": "#/$defs/StudyTypeOntology",
-                    "description": "Type of study design"
-                },
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",
                     "format": "date-time",
@@ -3573,6 +3568,11 @@
             ],
             "title": "Investigation",
             "type": "object"
+        },
+        "InvestigationTypeOntology": {
+            "description": "",
+            "title": "InvestigationTypeOntology",
+            "type": "string"
         },
         "Investigation__identifier_optional": {
             "additionalProperties": false,
@@ -3626,19 +3626,16 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
+                "inclusion_exclusion_criteria": {
+                    "description": "List of criteria for inclusion/exclusion for the study",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                "investigation_type": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "Type of study design"
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -3674,10 +3671,6 @@
                         "array",
                         "null"
                     ]
-                },
-                "study_type": {
-                    "$ref": "#/$defs/StudyTypeOntology",
-                    "description": "Type of study design"
                 },
                 "update_date": {
                     "description": "Subsequence updates to the investigation or its data",
@@ -4681,6 +4674,9 @@
                 "Native Hawaiian or Other Pacific Islander",
                 "White",
                 "Other",
+                "race: not specified",
+                "race: other",
+                "race: unknown",
                 "African American",
                 "Asian or Pacific Islander",
                 "Black",
@@ -7412,20 +7408,6 @@
                         "null"
                     ]
                 },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "investigation": {
                     "description": "An investigation in which the study arm participates",
                     "type": [
@@ -7457,20 +7439,6 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "exclusion_criteria": {
-                    "description": "Participants are excluded from an investigation if they meet this criteria",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "inclusion_criteria": {
-                    "description": "Participants in an investigation must meet this criteria",
                     "type": [
                         "string",
                         "null"

@@ -99,6 +99,9 @@ prefixes:
   rdf:
     prefix_prefix: rdf
     prefix_reference: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  doi:
+    prefix_prefix: doi
+    prefix_reference: https://www.doi.org/
   AKC:
     prefix_prefix: AKC
     prefix_reference: https://airr-knowledge.org/airrkb/api/v1/id/
@@ -342,6 +345,15 @@ types:
     uri: xsd:string
     repr: str
 enums:
+  InvestigationTypeOntology:
+    name: InvestigationTypeOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - OBI:0500000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: false
   BiologicalSexOntology:
     name: BiologicalSexOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -392,6 +404,13 @@ enums:
       Other:
         text: Other
         meaning: OMRSE:00000214
+      'race: not specified':
+        text: 'race: not specified'
+      'race: other':
+        text: 'race: other'
+        meaning: OMRSE:00000214
+      'race: unknown':
+        text: 'race: unknown'
       African American:
         text: African American
       Asian or Pacific Islander:
@@ -450,6 +469,11 @@ enums:
         meaning: OMRSE:00000208
       Other:
         text: Other
+        meaning: OMRSE:00000206
+      'ethnicity: not specified':
+        text: 'ethnicity: not specified'
+      'ethnicity: other':
+        text: 'ethnicity: other'
         meaning: OMRSE:00000206
       African:
         text: African
@@ -1199,6 +1223,11 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     designates_type: true
     range: string
+  investigation_type:
+    name: investigation_type
+    description: Type of study design
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: InvestigationTypeOntology
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,
@@ -1211,12 +1240,14 @@ slots:
     description: Participants in an investigation must meet this criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+    multivalued: true
   exclusion_criteria:
     name: exclusion_criteria
     description: Participants are excluded from an investigation if they meet this
       criteria
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+    multivalued: true
   update_date:
     name: update_date
     description: Subsequence updates to the investigation or its data
@@ -1529,38 +1560,38 @@ slots:
     description: The isotype of the chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  IGH_chain:
-    name: IGH_chain
+  igh_chain:
+    name: igh_chain
     description: IG heavy chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  IGL_chain:
-    name: IGL_chain
+  igl_chain:
+    name: igl_chain
     description: IG lambda light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  IGK_chain:
-    name: IGK_chain
+  igk_chain:
+    name: igk_chain
     description: IG kappa light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRA_chain:
-    name: TRA_chain
+  tra_chain:
+    name: tra_chain
     description: T cell receptor alpha chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRB_chain:
-    name: TRB_chain
+  trb_chain:
+    name: trb_chain
     description: T cell receptor beta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRD_chain:
-    name: TRD_chain
+  trd_chain:
+    name: trd_chain
     description: T cell receptor delta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRG_chain:
-    name: TRG_chain
+  trg_chain:
+    name: trg_chain
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
@@ -5606,10 +5637,9 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: PlannedProcess
     slots:
-    - study_type
+    - investigation_type
     - archival_id
-    - inclusion_criteria
-    - exclusion_criteria
+    - inclusion_exclusion_criteria
     - release_date
     - update_date
     - participants
@@ -5641,8 +5671,6 @@ classes:
     is_a: NamedThing
     slots:
     - investigation
-    - inclusion_criteria
-    - exclusion_criteria
     class_uri: OBI:0000181
   Participant:
     name: Participant
@@ -5850,25 +5878,25 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: TCellReceptor
     slots:
-    - TRA_chain
-    - TRB_chain
+    - tra_chain
+    - trb_chain
     class_uri: GO:0042105
   GammaDeltaTCR:
     name: GammaDeltaTCR
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: TCellReceptor
     slots:
-    - TRG_chain
-    - TRD_chain
+    - trg_chain
+    - trd_chain
     class_uri: GO:0042106
   BCellReceptor:
     name: BCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     slots:
-    - IGH_chain
-    - IGK_chain
-    - IGL_chain
+    - igh_chain
+    - igk_chain
+    - igl_chain
   Epitope:
     name: Epitope
     from_schema: https://github.com/airr-knowledge/ak-schema
