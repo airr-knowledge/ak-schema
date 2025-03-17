@@ -54,12 +54,6 @@ def akc_id():
     akc_id_last += 1
     return 'AKC:' + str(akc_id_last)
 
-
-def akc_id():
-    """Returns a new AKC ID."""
-    return 'AKC:' + str(uuid.uuid4())
-
-
 def read_double_header(path):
     """Read a TSV file with two header rows,
     and return a list of dictionaries:
