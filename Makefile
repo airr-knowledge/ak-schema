@@ -132,7 +132,7 @@ sqlddl: src/ak_schema/schema/ak_top_sqlddl.yaml
 	mkdir -p project/linkml
 	$(RUN) gen-linkml -f yaml --no-materialize-attributes $< -o $(SOURCE_SCHEMA_PATH)
 	mkdir -p project/sqlddl
-	$(RUN) gen-sqltables project/linkml/ak_schema.yaml > $(SQL_DDL_PATH)
+	$(RUN) gen-sqltables --dialect postgresql project/linkml/ak_schema.yaml > $(SQL_DDL_PATH)
 	$(RUN) gen-linkml -f yaml --no-materialize-attributes src/ak_schema/schema/ak_top.yaml -o $(SOURCE_SCHEMA_PATH)
 
 all: site
