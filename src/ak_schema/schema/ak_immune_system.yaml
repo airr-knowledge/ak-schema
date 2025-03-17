@@ -44,22 +44,22 @@ classes:
     is_a: TCellReceptor
     class_uri: GO:0042105
     slots:
-      - TRA_chain
-      - TRB_chain
+      - tra_chain
+      - trb_chain
 
   GammaDeltaTCR:
     is_a: TCellReceptor
     class_uri: GO:0042106
     slots:
-      - TRG_chain
-      - TRD_chain
+      - trg_chain
+      - trd_chain
 
   BCellReceptor:
     is_a: AKObject
     slots:
-      - IGH_chain
-      - IGK_chain
-      - IGL_chain
+      - igh_chain
+      - igk_chain
+      - igl_chain
 
   Epitope:
     is_a: NamedThing
@@ -106,31 +106,31 @@ slots:
     description: The isotype of the chain
     range: string
 
-  IGH_chain:
+  igh_chain:
     description: IG heavy chain
     range: Chain
 
-  IGL_chain:
+  igl_chain:
     description: IG lambda light chain
     range: Chain
 
-  IGK_chain:
+  igk_chain:
     description: IG kappa light chain
     range: Chain
 
-  TRA_chain:
+  tra_chain:
     description: T cell receptor alpha chain
     range: Chain
 
-  TRB_chain:
+  trb_chain:
     description: T cell receptor beta chain
     range: Chain
 
-  TRD_chain:
+  trd_chain:
     description: T cell receptor delta chain
     range: Chain
 
-  TRG_chain:
+  trg_chain:
     description: T cell receptor gamma chain
     range: Chain
 

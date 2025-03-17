@@ -1560,38 +1560,38 @@ slots:
     description: The isotype of the chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  IGH_chain:
-    name: IGH_chain
+  igh_chain:
+    name: igh_chain
     description: IG heavy chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  IGL_chain:
-    name: IGL_chain
+  igl_chain:
+    name: igl_chain
     description: IG lambda light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  IGK_chain:
-    name: IGK_chain
+  igk_chain:
+    name: igk_chain
     description: IG kappa light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRA_chain:
-    name: TRA_chain
+  tra_chain:
+    name: tra_chain
     description: T cell receptor alpha chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRB_chain:
-    name: TRB_chain
+  trb_chain:
+    name: trb_chain
     description: T cell receptor beta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRD_chain:
-    name: TRD_chain
+  trd_chain:
+    name: trd_chain
     description: T cell receptor delta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
-  TRG_chain:
-    name: TRG_chain
+  trg_chain:
+    name: trg_chain
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
@@ -5878,25 +5878,25 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: TCellReceptor
     slots:
-    - TRA_chain
-    - TRB_chain
+    - tra_chain
+    - trb_chain
     class_uri: GO:0042105
   GammaDeltaTCR:
     name: GammaDeltaTCR
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: TCellReceptor
     slots:
-    - TRG_chain
-    - TRD_chain
+    - trg_chain
+    - trd_chain
     class_uri: GO:0042106
   BCellReceptor:
     name: BCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     slots:
-    - IGH_chain
-    - IGK_chain
-    - IGL_chain
+    - igh_chain
+    - igk_chain
+    - igl_chain
   Epitope:
     name: Epitope
     from_schema: https://github.com/airr-knowledge/ak-schema

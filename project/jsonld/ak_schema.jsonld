@@ -2738,11 +2738,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "IGH_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/IGH_chain",
+      "name": "igh_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/igh_chain",
       "description": "IG heavy chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/IGH_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/igh_chain",
       "owner": "BCellReceptor",
       "domain_of": [
         "BCellReceptor"
@@ -2751,11 +2751,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "IGL_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/IGL_chain",
+      "name": "igl_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/igl_chain",
       "description": "IG lambda light chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/IGL_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/igl_chain",
       "owner": "BCellReceptor",
       "domain_of": [
         "BCellReceptor"
@@ -2764,11 +2764,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "IGK_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/IGK_chain",
+      "name": "igk_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/igk_chain",
       "description": "IG kappa light chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/IGK_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/igk_chain",
       "owner": "BCellReceptor",
       "domain_of": [
         "BCellReceptor"
@@ -2777,11 +2777,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRA_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRA_chain",
+      "name": "tra_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tra_chain",
       "description": "T cell receptor alpha chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRA_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tra_chain",
       "owner": "AlphaBetaTCR",
       "domain_of": [
         "AlphaBetaTCR"
@@ -2790,11 +2790,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRB_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRB_chain",
+      "name": "trb_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/trb_chain",
       "description": "T cell receptor beta chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRB_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/trb_chain",
       "owner": "AlphaBetaTCR",
       "domain_of": [
         "AlphaBetaTCR"
@@ -2803,11 +2803,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRD_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRD_chain",
+      "name": "trd_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/trd_chain",
       "description": "T cell receptor delta chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRD_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/trd_chain",
       "owner": "GammaDeltaTCR",
       "domain_of": [
         "GammaDeltaTCR"
@@ -2816,11 +2816,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRG_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRG_chain",
+      "name": "trg_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/trg_chain",
       "description": "T cell receptor gamma chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRG_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/trg_chain",
       "owner": "GammaDeltaTCR",
       "domain_of": [
         "GammaDeltaTCR"
@@ -12179,8 +12179,8 @@
       "slots": [
         "akc_id",
         "type",
-        "TRA_chain",
-        "TRB_chain"
+        "tra_chain",
+        "trb_chain"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042105",
@@ -12197,8 +12197,8 @@
       "slots": [
         "akc_id",
         "type",
-        "TRG_chain",
-        "TRD_chain"
+        "trg_chain",
+        "trd_chain"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042106",
@@ -12211,9 +12211,9 @@
       "is_a": "AKObject",
       "slots": [
         "akc_id",
-        "IGH_chain",
-        "IGK_chain",
-        "IGL_chain"
+        "igh_chain",
+        "igk_chain",
+        "igl_chain"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptor",
@@ -13345,9 +13345,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-03-13T00:33:37",
+  "source_file_date": "2025-03-17T16:36:42",
   "source_file_size": 197333,
-  "generation_date": "2025-03-13T00:33:40",
+  "generation_date": "2025-03-17T16:36:45",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

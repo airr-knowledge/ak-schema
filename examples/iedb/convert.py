@@ -54,7 +54,6 @@ def akc_id():
     akc_id_last += 1
     return 'AKC:' + str(akc_id_last)
 
-
 def read_double_header(path):
     """Read a TSV file with two header rows,
     and return a list of dictionaries:
@@ -290,15 +289,15 @@ def convert(tcell_path, tcr_path, yaml_path):
             if tcr_row['Receptor']['Type'] == 'alphabeta':
                 tcr = AlphaBetaTCR(
                     tcr_curie,
-                    TRA_chain=chain_1.akc_id if chain_1 else None,
-                    TRB_chain=chain_2.akc_id if chain_2 else None,
+                    tra_chain=chain_1.akc_id if chain_1 else None,
+                    trb_chain=chain_2.akc_id if chain_2 else None,
                 )
                 tcell_receptors.append(tcr)
             elif tcr_row['Receptor']['Type'] == 'gammadelta':
                 tcr = GammaDeltaTCR(
                     tcr_curie,
-                    TRG_chain=chain_1.akc_id if chain_1 else None,
-                    TRD_chain=chain_2.akc_id if chain_2 else None,
+                    trg_chain=chain_1.akc_id if chain_1 else None,
+                    trd_chain=chain_2.akc_id if chain_2 else None,
                 )
                 tcell_receptors.append(tcr)
             else:

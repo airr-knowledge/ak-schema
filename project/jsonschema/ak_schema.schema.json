@@ -1078,23 +1078,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRA_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRB_chain": {
+                "trb_chain": {
                     "description": "T cell receptor beta chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1116,23 +1116,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRA_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRB_chain": {
+                "trb_chain": {
                     "description": "T cell receptor beta chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -1434,30 +1434,30 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "IGH_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "igh_chain": {
                     "description": "IG heavy chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGK_chain": {
+                "igk_chain": {
                     "description": "IG kappa light chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGL_chain": {
+                "igl_chain": {
                     "description": "IG lambda light chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 }
             },
             "required": [
@@ -1470,30 +1470,30 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "IGH_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "igh_chain": {
                     "description": "IG heavy chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGK_chain": {
+                "igk_chain": {
                     "description": "IG kappa light chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "IGL_chain": {
+                "igl_chain": {
                     "description": "IG lambda light chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 }
             },
             "required": [],
@@ -2992,23 +2992,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRD_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "trd_chain": {
                     "description": "T cell receptor delta chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRG_chain": {
+                "trg_chain": {
                     "description": "T cell receptor gamma chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
@@ -3030,23 +3030,23 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "TRD_chain": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "trd_chain": {
                     "description": "T cell receptor delta chain",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "TRG_chain": {
+                "trg_chain": {
                     "description": "T cell receptor gamma chain",
                     "type": [
                         "string",
                         "null"
                     ]
-                },
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
                 },
                 "type": {
                     "enum": [
