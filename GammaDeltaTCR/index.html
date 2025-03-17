@@ -214,21 +214,21 @@
 
       GammaDeltaTCR : akc_id
 
-      GammaDeltaTCR : TRD_chain
+      GammaDeltaTCR : trd_chain
 
 
 
 
-    GammaDeltaTCR --&gt; "0..1" Chain : TRD_chain
+    GammaDeltaTCR --&gt; "0..1" Chain : trd_chain
     click Chain href "../Chain"
 
 
-      GammaDeltaTCR : TRG_chain
+      GammaDeltaTCR : trg_chain
 
 
 
 
-    GammaDeltaTCR --&gt; "0..1" Chain : TRG_chain
+    GammaDeltaTCR --&gt; "0..1" Chain : trg_chain
     click Chain href "../Chain"
 
 
@@ -258,13 +258,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../TRG_chain/">TRG_chain</a></td>
+<td><a href="../trg_chain/">trg_chain</a></td>
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>T cell receptor gamma chain</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../TRD_chain/">TRD_chain</a></td>
+<td><a href="../trd_chain/">trd_chain</a></td>
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>T cell receptor delta chain</td>
 <td>direct</td>
@@ -334,8 +334,8 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: TCellReceptor
 slots:
-- TRG_chain
-- TRD_chain
+- trg_chain
+- trd_chain
 class_uri: GO:0042106
 
 </code></pre>
@@ -346,22 +346,22 @@ class_uri: GO:0042106
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: TCellReceptor
 attributes:
-  TRG_chain:
-    name: TRG_chain
+  trg_chain:
+    name: trg_chain
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: TRG_chain
+    alias: trg_chain
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
     range: Chain
-  TRD_chain:
-    name: TRD_chain
+  trd_chain:
+    name: trd_chain
     description: T cell receptor delta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: TRD_chain
+    alias: trd_chain
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR

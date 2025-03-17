@@ -214,30 +214,30 @@
 
       BCellReceptor : akc_id
 
-      BCellReceptor : IGH_chain
+      BCellReceptor : igh_chain
 
 
 
 
-    BCellReceptor --&gt; "0..1" Chain : IGH_chain
+    BCellReceptor --&gt; "0..1" Chain : igh_chain
     click Chain href "../Chain"
 
 
-      BCellReceptor : IGK_chain
+      BCellReceptor : igk_chain
 
 
 
 
-    BCellReceptor --&gt; "0..1" Chain : IGK_chain
+    BCellReceptor --&gt; "0..1" Chain : igk_chain
     click Chain href "../Chain"
 
 
-      BCellReceptor : IGL_chain
+      BCellReceptor : igl_chain
 
 
 
 
-    BCellReceptor --&gt; "0..1" Chain : IGL_chain
+    BCellReceptor --&gt; "0..1" Chain : igl_chain
     click Chain href "../Chain"
 
 
@@ -262,19 +262,19 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../IGH_chain/">IGH_chain</a></td>
+<td><a href="../igh_chain/">igh_chain</a></td>
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>IG heavy chain</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../IGK_chain/">IGK_chain</a></td>
+<td><a href="../igk_chain/">igk_chain</a></td>
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>IG kappa light chain</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../IGL_chain/">IGL_chain</a></td>
+<td><a href="../igl_chain/">igl_chain</a></td>
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>IG lambda light chain</td>
 <td>direct</td>
@@ -338,9 +338,9 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 slots:
-- IGH_chain
-- IGK_chain
-- IGL_chain
+- igh_chain
+- igk_chain
+- igl_chain
 
 </code></pre>
 </details>
@@ -350,32 +350,32 @@ slots:
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 attributes:
-  IGH_chain:
-    name: IGH_chain
+  igh_chain:
+    name: igh_chain
     description: IG heavy chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: IGH_chain
+    alias: igh_chain
     owner: BCellReceptor
     domain_of:
     - BCellReceptor
     range: Chain
-  IGK_chain:
-    name: IGK_chain
+  igk_chain:
+    name: igk_chain
     description: IG kappa light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: IGK_chain
+    alias: igk_chain
     owner: BCellReceptor
     domain_of:
     - BCellReceptor
     range: Chain
-  IGL_chain:
-    name: IGL_chain
+  igl_chain:
+    name: igl_chain
     description: IG lambda light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: IGL_chain
+    alias: igl_chain
     owner: BCellReceptor
     domain_of:
     - BCellReceptor

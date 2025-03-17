@@ -214,21 +214,21 @@
 
       AlphaBetaTCR : akc_id
 
-      AlphaBetaTCR : TRA_chain
+      AlphaBetaTCR : tra_chain
 
 
 
 
-    AlphaBetaTCR --&gt; "0..1" Chain : TRA_chain
+    AlphaBetaTCR --&gt; "0..1" Chain : tra_chain
     click Chain href "../Chain"
 
 
-      AlphaBetaTCR : TRB_chain
+      AlphaBetaTCR : trb_chain
 
 
 
 
-    AlphaBetaTCR --&gt; "0..1" Chain : TRB_chain
+    AlphaBetaTCR --&gt; "0..1" Chain : trb_chain
     click Chain href "../Chain"
 
 
@@ -258,13 +258,13 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../TRA_chain/">TRA_chain</a></td>
+<td><a href="../tra_chain/">tra_chain</a></td>
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>T cell receptor alpha chain</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../TRB_chain/">TRB_chain</a></td>
+<td><a href="../trb_chain/">trb_chain</a></td>
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>T cell receptor beta chain</td>
 <td>direct</td>
@@ -334,8 +334,8 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: TCellReceptor
 slots:
-- TRA_chain
-- TRB_chain
+- tra_chain
+- trb_chain
 class_uri: GO:0042105
 
 </code></pre>
@@ -346,22 +346,22 @@ class_uri: GO:0042105
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: TCellReceptor
 attributes:
-  TRA_chain:
-    name: TRA_chain
+  tra_chain:
+    name: tra_chain
     description: T cell receptor alpha chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: TRA_chain
+    alias: tra_chain
     owner: AlphaBetaTCR
     domain_of:
     - AlphaBetaTCR
     range: Chain
-  TRB_chain:
-    name: TRB_chain
+  trb_chain:
+    name: trb_chain
     description: T cell receptor beta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: TRB_chain
+    alias: trb_chain
     owner: AlphaBetaTCR
     domain_of:
     - AlphaBetaTCR
