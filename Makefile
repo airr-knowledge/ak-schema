@@ -71,6 +71,7 @@ help: status
 	@echo ""
 	@echo "Build:"
 	@echo "make all -- generates all project artefacts"
+	@echo "make sqlddl -- make SQL DDL"
 	@echo "make site -- makes site locally"
 	@echo "make docker -- build docker image"
 	@echo ""
