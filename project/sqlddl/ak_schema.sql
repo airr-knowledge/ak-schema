@@ -1859,24 +1859,24 @@ CREATE TABLE "SampleProcessing" (
 	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
 );
 CREATE TABLE "Investigation_simulations" (
-	"Investigation_akc_id" TEXT, 
+	investigation_akc_id TEXT, 
 	simulations_akc_id TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", simulations_akc_id), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	PRIMARY KEY (investigation_akc_id, simulations_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(simulations_akc_id) REFERENCES "Simulation" (akc_id)
 );
 CREATE TABLE "Investigation_documents" (
-	"Investigation_akc_id" TEXT, 
+	investigation_akc_id TEXT, 
 	documents_source_uri TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", documents_source_uri), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	PRIMARY KEY (investigation_akc_id, documents_source_uri), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(documents_source_uri) REFERENCES "Reference" (source_uri)
 );
 CREATE TABLE "Investigation_conclusions" (
-	"Investigation_akc_id" TEXT, 
+	investigation_akc_id TEXT, 
 	conclusions_akc_id TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", conclusions_akc_id), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	PRIMARY KEY (investigation_akc_id, conclusions_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(conclusions_akc_id) REFERENCES "Conclusion" (akc_id)
 );
 CREATE TABLE "Reference_sources" (
@@ -2165,10 +2165,10 @@ CREATE TABLE "Repertoire" (
 	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
 );
 CREATE TABLE "Investigation_participants" (
-	"Investigation_akc_id" TEXT, 
+	investigation_akc_id TEXT, 
 	participants_akc_id TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", participants_akc_id), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	PRIMARY KEY (investigation_akc_id, participants_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(participants_akc_id) REFERENCES "Participant" (akc_id)
 );
 CREATE TABLE "Subject_diagnosis" (
@@ -2332,10 +2332,10 @@ CREATE TABLE "Dataset_assessments" (
 	FOREIGN KEY(assessments_akc_id) REFERENCES "Assessment" (akc_id)
 );
 CREATE TABLE "Investigation_assays" (
-	"Investigation_akc_id" TEXT, 
+	investigation_akc_id TEXT, 
 	assays_akc_id TEXT, 
-	PRIMARY KEY ("Investigation_akc_id", assays_akc_id), 
-	FOREIGN KEY("Investigation_akc_id") REFERENCES "Investigation" (akc_id), 
+	PRIMARY KEY (investigation_akc_id, assays_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(assays_akc_id) REFERENCES "Assay" (akc_id)
 );
 CREATE TABLE "LibraryPreparationProcessing_pcr_target" (

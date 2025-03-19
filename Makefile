@@ -136,7 +136,7 @@ sqlddl: src/ak_schema/schema/ak_top_sqlddl.yaml
 	mkdir -p project/sqlddl
 	# default dialect
 	$(RUN) gen-sqltables project/linkml/ak_schema.yaml > $(SQL_DDL_PATH).txt
-	tail --lines=+2 $(SQL_DDL_PATH).txt | sed -e 's/DATETIME/TIMESTAMP WITHOUT TIME ZONE/g' > $(SQL_DDL_PATH)
+	tail --lines=+2 $(SQL_DDL_PATH).txt | sed -e 's/DATETIME/TIMESTAMP WITHOUT TIME ZONE/g' | sed -e 's/"Investigation_akc_id"/investigation_akc_id/g' > $(SQL_DDL_PATH)
 	rm -f $(SQL_DDL_PATH).txt
 	# postgresql dialect
 	$(RUN) gen-sqltables --dialect postgresql project/linkml/ak_schema.yaml > $(POSTGRESQL_DDL_PATH).txt
