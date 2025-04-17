@@ -73,7 +73,7 @@ classes:
     slots:
       - study_arms
 
-  LifeEvent:
+  :
     is_a: NamedThing
     class_uri: BFO:0000015 # process
     description: >-
@@ -201,7 +201,7 @@ slots:
     description: The age of a participant relative to age_event
 #  age_event:
 #    description: The event to which the age is relative
-#    range: LifeEvent
+#    range: 
 #  race:
 #    description: The race of a participant
 #    range: RaceOntology
@@ -788,7 +788,7 @@ enums:
     name: LifeEventProcessOntology
     reachable_from:
       source_nodes:
-        - OBI:0000011
+        - BFO:0000015 # process
       include_self: true
       relationship_types:
         - rdfs:subClassOf
