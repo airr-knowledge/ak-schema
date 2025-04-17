@@ -73,7 +73,7 @@ classes:
     slots:
       - study_arms
 
-  :
+  LifeEvent:
     is_a: NamedThing
     class_uri: BFO:0000015 # process
     description: >-
