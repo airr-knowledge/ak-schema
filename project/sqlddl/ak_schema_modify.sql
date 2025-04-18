@@ -2372,12 +2372,12 @@ CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );
-CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+CREATE TABLE "Assay_tcell_receptors" (
+	assay_akc_id TEXT, 
 	tcell_receptors_akc_id TEXT, 
-	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcell_receptors_akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
+	PRIMARY KEY (assay_akc_id, tcell_receptors_akc_id), 
+	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "AlphaBetaTCR" (akc_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
