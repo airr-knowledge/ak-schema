@@ -81,6 +81,9 @@ prefixes:
   ONTIE:
     prefix_prefix: ONTIE
     prefix_reference: https://ontology.iedb.org/ontology/ONTIE_
+  UNIPROT:
+    prefix_prefix: UNIPROT
+    prefix_reference: http://www.uniprot.org/uniprot/
   iedb_reference:
     prefix_prefix: iedb_reference
     prefix_reference: http://www.iedb.org/reference/
@@ -624,7 +627,7 @@ enums:
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
-      - OBI:0000011
+      - BFO:0000015
       relationship_types:
       - rdfs:subClassOf
       include_self: true

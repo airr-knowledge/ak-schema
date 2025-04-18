@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-17T16:36:48
+# Generation date: 2025-04-17T02:46:54
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -51,6 +51,7 @@ PMID = CurieNamespace('PMID', 'https://pubmed.ncbi.nlm.nih.gov/')
 RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
 SBO = CurieNamespace('SBO', 'http://purl.obolibrary.org/obo/SBO_')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
+UNIPROT = CurieNamespace('UNIPROT', 'http://www.uniprot.org/uniprot/')
 VO = CurieNamespace('VO', 'http://purl.obolibrary.org/obo/VO_')
 AK_SCHEMA = CurieNamespace('ak_schema', 'https://github.com/airr-knowledge/ak-schema/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')

@@ -109,6 +109,10 @@
       "prefix_reference": "https://ontology.iedb.org/ontology/ONTIE_"
     },
     {
+      "prefix_prefix": "UNIPROT",
+      "prefix_reference": "http://www.uniprot.org/uniprot/"
+    },
+    {
       "prefix_prefix": "iedb_reference",
       "prefix_reference": "http://www.iedb.org/reference/"
     },
@@ -845,7 +849,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
-          "OBI:0000011"
+          "BFO:0000015"
         ],
         "relationship_types": [
           "rdfs:subClassOf"
@@ -13345,9 +13349,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-03-17T16:36:42",
-  "source_file_size": 197333,
-  "generation_date": "2025-03-17T16:36:45",
+  "source_file_date": "2025-04-17T02:46:48",
+  "source_file_size": 197425,
+  "generation_date": "2025-04-17T02:46:51",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
