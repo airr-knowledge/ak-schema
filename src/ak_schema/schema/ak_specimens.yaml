@@ -82,6 +82,7 @@ classes:
     slots:
       - epitope
       - tcell_receptors
+      - tcell_chains
       - value
       - unit
 
@@ -147,6 +148,10 @@ slots:
   tcell_receptors:
     description: The T cell receptors being measured
     range: TCellReceptor
+    multivalued: true
+  tcell_chains:
+    description: The T cell receptor chains being measured
+    range: Chain
     multivalued: true
   value:
     description: The measurement result value
