@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/repertoire_id/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/tcell_chains/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: repertoire_id - ak-schema</title>
+        <title>Slot: tcell_chains - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-repertoire_id" class="md-skip">
+        <a href="#slot-tcell_chains" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: repertoire_id
+              Slot: tcell_chains
             
           </span>
         </div>
@@ -317,14 +317,15 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/repertoire_id.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/tcell_chains.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-repertoire_id">Slot: repertoire_id</h1>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/repertoire_id">ak_schema:repertoire_id</a></p>
+<h1 id="slot-tcell_chains">Slot: tcell_chains</h1>
+<p><em>The T cell receptor chains being measured</em></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/tcell_chains">ak_schema:tcell_chains</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -338,32 +339,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Clone/">Clone</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Cell/">Cell</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../RepertoireGroupDetail/">RepertoireGroupDetail</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Rearrangement/">Rearrangement</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Repertoire/">Repertoire</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../CellExpression/">CellExpression</a></td>
+<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -371,7 +347,12 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>
+<p>Range: <a href="../Chain/">Chain</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -389,29 +370,26 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:repertoire_id</td>
+<td>ak_schema:tcell_chains</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:repertoire_id</td>
+<td>ak_schema:tcell_chains</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: repertoire_id
+<pre><code class="language-yaml">name: tcell_chains
+description: The T cell receptor chains being measured
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-alias: repertoire_id
+alias: tcell_chains
 domain_of:
-- Repertoire
-- RepertoireGroupDetail
-- Rearrangement
-- Clone
-- Cell
-- CellExpression
-range: string
+- TCellReceptorEpitopeBindingAssay
+range: Chain
+multivalued: true
 
 </code></pre>
 

@@ -244,6 +244,15 @@
 
       TCellReceptorEpitopeBindingAssay : target_entity_type
 
+      TCellReceptorEpitopeBindingAssay : tcell_chains
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "*" Chain : tcell_chains
+    click Chain href "../Chain"
+
+
       TCellReceptorEpitopeBindingAssay : tcell_receptors
 
 
@@ -298,6 +307,12 @@
 <td><a href="../tcell_receptors/">tcell_receptors</a></td>
 <td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
 <td>The T cell receptors being measured</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tcell_chains/">tcell_chains</a></td>
+<td>* <br/> <a href="../Chain/">Chain</a></td>
+<td>The T cell receptor chains being measured</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -396,6 +411,7 @@ is_a: Assay
 slots:
 - epitope
 - tcell_receptors
+- tcell_chains
 - value
 - unit
 class_uri: OBI:1110037
@@ -428,6 +444,17 @@ attributes:
     domain_of:
     - TCellReceptorEpitopeBindingAssay
     range: TCellReceptor
+    multivalued: true
+  tcell_chains:
+    name: tcell_chains
+    description: The T cell receptor chains being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: tcell_chains
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - TCellReceptorEpitopeBindingAssay
+    range: Chain
     multivalued: true
   value:
     name: value
