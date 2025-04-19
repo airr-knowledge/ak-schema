@@ -1115,9 +1115,17 @@ CREATE TABLE "Chain" (
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "TCellReceptor" (
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
 	type TEXT, 
 	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id)
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tra_chain) REFERENCES "Chain" (akc_id), 
+	FOREIGN KEY(trb_chain) REFERENCES "Chain" (akc_id),
+	FOREIGN KEY(trg_chain) REFERENCES "Chain" (akc_id), 
+	FOREIGN KEY(trd_chain) REFERENCES "Chain" (akc_id)
 );
 CREATE TABLE "Epitope" (
 	sequence_aa TEXT, 
@@ -2377,7 +2385,14 @@ CREATE TABLE "Assay_tcell_receptors" (
 	tcell_receptors_akc_id TEXT, 
 	PRIMARY KEY (assay_akc_id, tcell_receptors_akc_id), 
 	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "AlphaBetaTCR" (akc_id)
+	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
+);
+CREATE TABLE "Assay_tcell_chains" (
+	assay_akc_id TEXT, 
+	tcell_chains_akc_id TEXT, 
+	PRIMARY KEY (assay_akc_id, tcell_chains_akc_id), 
+	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
