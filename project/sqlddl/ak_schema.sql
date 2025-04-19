@@ -895,6 +895,9 @@
 -- # Class: "TCellReceptorEpitopeBindingAssay_tcell_receptors" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcell_receptors_akc_id Description: The T cell receptors being measured
+-- # Class: "TCellReceptorEpitopeBindingAssay_tcell_chains" Description: ""
+--     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: tcell_chains_akc_id Description: The T cell receptor chains being measured
 -- # Class: "TCellReceptorEpitopeBindingAssay_specimen_processing" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
@@ -2365,6 +2368,13 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcell_receptors_akc_id), 
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
+);
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_chains" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	tcell_chains_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcell_chains_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 

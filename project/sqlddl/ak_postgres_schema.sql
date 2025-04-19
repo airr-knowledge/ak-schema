@@ -1364,6 +1364,13 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
 );COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors".tcell_receptors_akc_id IS 'The T cell receptors being measured';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_chains" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	tcell_chains_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcell_chains_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcell_chains" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_chains"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_chains".tcell_chains_akc_id IS 'The T cell receptor chains being measured';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 

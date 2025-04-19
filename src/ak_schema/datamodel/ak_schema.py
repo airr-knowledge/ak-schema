@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-17T02:46:54
+# Generation date: 2025-04-19T00:00:53
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1238,6 +1238,7 @@ class TCellReceptorEpitopeBindingAssay(Assay):
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
+    tcell_chains: Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]] = empty_list()
     value: Optional[str] = None
     unit: Optional[str] = None
 
@@ -1253,6 +1254,10 @@ class TCellReceptorEpitopeBindingAssay(Assay):
         if not isinstance(self.tcell_receptors, list):
             self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
         self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
+
+        if not isinstance(self.tcell_chains, list):
+            self.tcell_chains = [self.tcell_chains] if self.tcell_chains is not None else []
+        self.tcell_chains = [v if isinstance(v, ChainAkcId) else ChainAkcId(v) for v in self.tcell_chains]
 
         if self.value is not None and not isinstance(self.value, str):
             self.value = str(self.value)
@@ -5483,6 +5488,9 @@ slots.epitope = Slot(uri=AK_SCHEMA.epitope, name="epitope", curie=AK_SCHEMA.curi
 
 slots.tcell_receptors = Slot(uri=AK_SCHEMA.tcell_receptors, name="tcell_receptors", curie=AK_SCHEMA.curie('tcell_receptors'),
                    model_uri=AK_SCHEMA.tcell_receptors, domain=None, range=Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]])
+
+slots.tcell_chains = Slot(uri=AK_SCHEMA.tcell_chains, name="tcell_chains", curie=AK_SCHEMA.curie('tcell_chains'),
+                   model_uri=AK_SCHEMA.tcell_chains, domain=None, range=Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]])
 
 slots.value = Slot(uri=AK_SCHEMA.value, name="value", curie=AK_SCHEMA.curie('value'),
                    model_uri=AK_SCHEMA.value, domain=None, range=Optional[str])

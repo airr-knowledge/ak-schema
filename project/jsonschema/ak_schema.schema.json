@@ -7752,6 +7752,16 @@
                         "null"
                     ]
                 },
+                "tcell_chains": {
+                    "description": "The T cell receptor chains being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "tcell_receptors": {
                     "description": "The T cell receptors being measured",
                     "items": {
@@ -7849,6 +7859,16 @@
                     "description": "The type of the entity being measured",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "tcell_chains": {
+                    "description": "The T cell receptor chains being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },

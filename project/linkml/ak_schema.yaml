@@ -1483,6 +1483,12 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TCellReceptor
     multivalued: true
+  tcell_chains:
+    name: tcell_chains
+    description: The T cell receptor chains being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Chain
+    multivalued: true
   value:
     name: value
     description: The measurement result value
@@ -5802,6 +5808,7 @@ classes:
     slots:
     - epitope
     - tcell_receptors
+    - tcell_chains
     - value
     - unit
     class_uri: OBI:1110037

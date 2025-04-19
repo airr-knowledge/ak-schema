@@ -2509,6 +2509,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "tcell_chains",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
+      "description": "The T cell receptor chains being measured",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
+      "owner": "TCellReceptorEpitopeBindingAssay",
+      "domain_of": [
+        "TCellReceptorEpitopeBindingAssay"
+      ],
+      "range": "Chain",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "value",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/value",
       "description": "The measurement result value",
@@ -12033,6 +12047,7 @@
         "target_entity_type",
         "epitope",
         "tcell_receptors",
+        "tcell_chains",
         "value",
         "unit"
       ],
@@ -13349,9 +13364,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-04-17T02:46:48",
-  "source_file_size": 197425,
-  "generation_date": "2025-04-17T02:46:51",
+  "source_file_date": "2025-04-19T00:00:47",
+  "source_file_size": 197642,
+  "generation_date": "2025-04-19T00:00:49",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
