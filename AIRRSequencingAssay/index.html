@@ -217,6 +217,8 @@
 
       AIRRSequencingAssay : name
 
+      AIRRSequencingAssay : repertoire_id
+
       AIRRSequencingAssay : sequencing_facility
 
       AIRRSequencingAssay : sequencing_files
@@ -256,6 +258,24 @@
 
       AIRRSequencingAssay : target_entity_type
 
+      AIRRSequencingAssay : tcell_chains
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" Chain : tcell_chains
+    click Chain href "../Chain"
+
+
+      AIRRSequencingAssay : tcell_receptors
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" TCellReceptor : tcell_receptors
+    click TCellReceptor href "../TCellReceptor"
+
+
       AIRRSequencingAssay : total_reads_passing_qc_filter
 
       AIRRSequencingAssay : type
@@ -289,6 +309,24 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../repertoire_id/">repertoire_id</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tcell_receptors/">tcell_receptors</a></td>
+<td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
+<td>The T cell receptors being measured</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tcell_chains/">tcell_chains</a></td>
+<td>* <br/> <a href="../Chain/">Chain</a></td>
+<td>The T cell receptor chains being measured</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../sequencing_run_id/">sequencing_run_id</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -414,6 +452,10 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
 mixins:
 - SequencingRun
+slots:
+- repertoire_id
+- tcell_receptors
+- tcell_chains
 class_uri: OBI:0600047
 
 </code></pre>
@@ -426,6 +468,45 @@ is_a: Assay
 mixins:
 - SequencingRun
 attributes:
+  repertoire_id:
+    name: repertoire_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: repertoire_id
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRSequencingAssay
+    - Repertoire
+    - RepertoireGroupDetail
+    - Rearrangement
+    - Clone
+    - Cell
+    - CellExpression
+    range: string
+  tcell_receptors:
+    name: tcell_receptors
+    description: The T cell receptors being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: tcell_receptors
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    range: TCellReceptor
+    multivalued: true
+  tcell_chains:
+    name: tcell_chains
+    description: The T cell receptor chains being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: tcell_chains
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    range: Chain
+    multivalued: true
   sequencing_run_id:
     name: sequencing_run_id
     annotations:
