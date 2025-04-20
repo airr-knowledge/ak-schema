@@ -2291,6 +2291,7 @@ CREATE TABLE "LibraryPreparationProcessing" (
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "Assay" (
+	repertoire_id TEXT, 
 	sequencing_files INTEGER, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
@@ -2313,6 +2314,7 @@ CREATE TABLE "Assay" (
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "AIRRSequencingAssay" (
+	repertoire_id TEXT, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
@@ -2408,3 +2410,7 @@ CREATE TABLE "Dataset_assays" (
 	FOREIGN KEY("Dataset_akc_id") REFERENCES "Dataset" (akc_id), 
 	FOREIGN KEY(assays_akc_id) REFERENCES "Assay" (akc_id)
 );
+
+CREATE INDEX "Chain_junction_aa" ON "Chain" ("junction_aa");
+CREATE INDEX "Chain_cdr3_aa" ON "Chain" ("cdr3_aa");
+CREATE INDEX "Chain_aa_hash" ON "Chain" ("aa_hash");
