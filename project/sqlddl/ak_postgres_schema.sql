@@ -1289,6 +1289,7 @@ CREATE TABLE "Assay" (
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );COMMENT ON TABLE "Assay" IS 'None';COMMENT ON COLUMN "Assay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "Assay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "Assay".target_entity_type IS 'The type of the entity being measured';COMMENT ON COLUMN "Assay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Assay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Assay".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "AIRRSequencingAssay" (
+	repertoire_id TEXT, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
@@ -1350,6 +1351,20 @@ CREATE TABLE "Assay_specimen_processing" (
 	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );COMMENT ON TABLE "Assay_specimen_processing" IS 'None';COMMENT ON COLUMN "Assay_specimen_processing"."Assay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Assay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
+CREATE TABLE "AIRRSequencingAssay_tcell_receptors" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	tcell_receptors_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_receptors_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_tcell_receptors" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_receptors"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_receptors".tcell_receptors_akc_id IS 'The T cell receptors being measured';
+CREATE TABLE "AIRRSequencingAssay_tcell_chains" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	tcell_chains_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_chains_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_tcell_chains" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains".tcell_chains_akc_id IS 'The T cell receptor chains being measured';
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 

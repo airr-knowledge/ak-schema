@@ -140,6 +140,7 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AIRRSequencingAssay" Description: ""
+--     * Slot: repertoire_id Description: 
 --     * Slot: sequencing_run_id Description: ID of sequencing run assigned by the sequencing facility
 --     * Slot: total_reads_passing_qc_filter Description: Number of usable reads for analysis
 --     * Slot: sequencing_platform Description: Designation of sequencing instrument used
@@ -889,6 +890,12 @@
 -- # Class: "Assay_specimen_processing" Description: ""
 --     * Slot: Assay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
+-- # Class: "AIRRSequencingAssay_tcell_receptors" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: tcell_receptors_akc_id Description: The T cell receptors being measured
+-- # Class: "AIRRSequencingAssay_tcell_chains" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: tcell_chains_akc_id Description: The T cell receptor chains being measured
 -- # Class: "AIRRSequencingAssay_specimen_processing" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
@@ -2294,6 +2301,7 @@ CREATE TABLE "Assay" (
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "AIRRSequencingAssay" (
+	repertoire_id TEXT, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
@@ -2354,6 +2362,20 @@ CREATE TABLE "Assay_specimen_processing" (
 	PRIMARY KEY ("Assay_akc_id", specimen_processing_akc_id), 
 	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);
+CREATE TABLE "AIRRSequencingAssay_tcell_receptors" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	tcell_receptors_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_receptors_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
+);
+CREATE TABLE "AIRRSequencingAssay_tcell_chains" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	tcell_chains_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_chains_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
 );
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	"AIRRSequencingAssay_akc_id" TEXT, 

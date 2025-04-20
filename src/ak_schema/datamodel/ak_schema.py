@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-19T00:00:53
+# Generation date: 2025-04-20T03:08:59
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1187,6 +1187,7 @@ class AIRRSequencingAssay(Assay):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRSequencingAssay
 
     akc_id: Union[str, AIRRSequencingAssayAkcId] = None
+    repertoire_id: Optional[str] = None
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
     sequencing_platform: Optional[str] = None
@@ -1200,6 +1201,9 @@ class AIRRSequencingAssay(Assay):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, AIRRSequencingAssayAkcId):
             self.akc_id = AIRRSequencingAssayAkcId(self.akc_id)
+
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
 
         if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
             self.sequencing_run_id = str(self.sequencing_run_id)

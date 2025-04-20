@@ -7180,6 +7180,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
       "owner": "CellExpression",
       "domain_of": [
+        "AIRRSequencingAssay",
         "Repertoire",
         "RepertoireGroupDetail",
         "Rearrangement",
@@ -12016,6 +12017,7 @@
         "type",
         "assay_type",
         "target_entity_type",
+        "repertoire_id",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
         "sequencing_platform",
@@ -13364,9 +13366,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-04-19T00:00:47",
-  "source_file_size": 197642,
-  "generation_date": "2025-04-19T00:00:49",
+  "source_file_date": "2025-04-20T03:08:53",
+  "source_file_size": 197673,
+  "generation_date": "2025-04-20T03:08:55",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
