@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-20T03:08:59
+# Generation date: 2025-04-20T18:57:05
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1188,6 +1188,8 @@ class AIRRSequencingAssay(Assay):
 
     akc_id: Union[str, AIRRSequencingAssayAkcId] = None
     repertoire_id: Optional[str] = None
+    tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
+    tcell_chains: Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]] = empty_list()
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
     sequencing_platform: Optional[str] = None
@@ -1204,6 +1206,14 @@ class AIRRSequencingAssay(Assay):
 
         if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
             self.repertoire_id = str(self.repertoire_id)
+
+        if not isinstance(self.tcell_receptors, list):
+            self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
+        self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
+
+        if not isinstance(self.tcell_chains, list):
+            self.tcell_chains = [self.tcell_chains] if self.tcell_chains is not None else []
+        self.tcell_chains = [v if isinstance(v, ChainAkcId) else ChainAkcId(v) for v in self.tcell_chains]
 
         if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
             self.sequencing_run_id = str(self.sequencing_run_id)

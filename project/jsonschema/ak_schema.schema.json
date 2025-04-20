@@ -435,6 +435,26 @@
                         "null"
                     ]
                 },
+                "tcell_chains": {
+                    "description": "The T cell receptor chains being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "tcell_receptors": {
+                    "description": "The T cell receptors being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "total_reads_passing_qc_filter": {
                     "description": "Number of usable reads for analysis",
                     "type": [
@@ -561,6 +581,26 @@
                     "description": "The type of the entity being measured",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "tcell_chains": {
+                    "description": "The T cell receptor chains being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "tcell_receptors": {
+                    "description": "The T cell receptors being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
