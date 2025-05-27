@@ -5,6 +5,7 @@ name: ak-schema
 classes:
 
   ImmuneSystem:
+    abstract: true
     is_a: NamedThing
     class_uri: UBERON:0002405 # immune system
 
@@ -61,6 +62,13 @@ classes:
       - igk_chain
       - igl_chain
 
+  Antigen:
+    is_a: NamedThing
+    class_uri: OBI:1110034 # antigen
+    slots:
+      - source_protein
+      - source_organism
+
   Epitope:
     is_a: NamedThing
     slots:
@@ -72,6 +80,21 @@ classes:
       - sequence_aa
       - source_protein
       - source_organism
+
+  AntibodyAntigenComplex:
+    is_a: NamedThing
+    class_uri: OBI:0003119
+    slots:
+      - antibody
+      - antigen
+
+  TCRpMHCComplex:
+    is_a: NamedThing
+    class_uri: OBI:0003119
+    slots:
+      - tcell_receptor
+      - epitope
+      - mhc
 
 slots:
   aa_hash:
@@ -135,3 +158,18 @@ slots:
   source_organism:
     description: The organism that the source protein comes from
 
+  antibody:
+    description: B cell receptor, immunoglobulin antibody
+    range: BCellReceptor
+
+  antigen:
+    description: A material entity with antigen role
+    range: Antigen
+
+  tcell_receptor:
+    description: T cell receptor
+    range: TCellReceptor
+
+  mhc:
+    description: Major histocompatibility complex
+    range: MHCAllele
