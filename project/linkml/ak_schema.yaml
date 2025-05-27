@@ -1401,10 +1401,7 @@ slots:
     name: t0_event
     description: The T0 event used to specify the time of this life event
     from_schema: https://github.com/airr-knowledge/ak-schema
-  t0_event_type:
-    name: t0_event_type
-    description: The type of the T0 event used to specify the time of this life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: LifeEvent
   start:
     name: start
     description: The start time of this life event, relative to the T0 event
@@ -5727,7 +5724,6 @@ classes:
     - life_event_type
     - geolocation
     - t0_event
-    - t0_event_type
     - start
     - duration
     - time_unit

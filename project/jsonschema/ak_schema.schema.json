@@ -3450,13 +3450,6 @@
                         "null"
                     ]
                 },
-                "t0_event_type": {
-                    "description": "The type of the T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "time_unit": {
                     "description": "The time unit used to measure the start and duration of this life event",
                     "type": [
@@ -3569,13 +3562,6 @@
                 },
                 "t0_event": {
                     "description": "The T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "t0_event_type": {
-                    "description": "The type of the T0 event used to specify the time of this life event",
                     "type": [
                         "string",
                         "null"
@@ -4081,13 +4067,6 @@
                         "null"
                     ]
                 },
-                "t0_event_type": {
-                    "description": "The type of the T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "time_unit": {
                     "description": "The time unit used to measure the start and duration of this life event",
                     "type": [
@@ -4176,13 +4155,6 @@
                 },
                 "t0_event": {
                     "description": "The T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "t0_event_type": {
-                    "description": "The type of the T0 event used to specify the time of this life event",
                     "type": [
                         "string",
                         "null"
@@ -7337,13 +7309,6 @@
                         "null"
                     ]
                 },
-                "t0_event_type": {
-                    "description": "The type of the T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "time_unit": {
                     "description": "The time unit used to measure the start and duration of this life event",
                     "type": [
@@ -7434,13 +7399,6 @@
                 },
                 "t0_event": {
                     "description": "The T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "t0_event_type": {
-                    "description": "The type of the T0 event used to specify the time of this life event",
                     "type": [
                         "string",
                         "null"
