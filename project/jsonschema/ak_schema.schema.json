@@ -33,6 +33,9 @@
                                     },
                                     {
                                         "$ref": "#/$defs/TCellReceptorEpitopeBindingAssay__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/AntibodyAntigenBindingAssay__identifier_optional"
                                     }
                                 ]
                             },
@@ -1208,6 +1211,228 @@
             },
             "required": [],
             "title": "AlphaBetaTCR",
+            "type": "object"
+        },
+        "AntibodyAntigenBindingAssay": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "description": "The specific type of an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen_processing": {
+                    "description": "A series of zero or more specimen processing steps that precede an assay",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "target_entity_type": {
+                    "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AntibodyAntigenBindingAssay"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AntibodyAntigenBindingAssay",
+            "type": "object"
+        },
+        "AntibodyAntigenBindingAssay__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "description": "The specific type of an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen": {
+                    "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "specimen_processing": {
+                    "description": "A series of zero or more specimen processing steps that precede an assay",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "target_entity_type": {
+                    "description": "The type of the entity being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AntibodyAntigenBindingAssay"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "AntibodyAntigenBindingAssay",
+            "type": "object"
+        },
+        "AntibodyAntigenComplex": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antibody": {
+                    "description": "B cell receptor, immunoglobulin antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AntibodyAntigenComplex",
+            "type": "object"
+        },
+        "Antigen": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_organism": {
+                    "description": "The organism that the source protein comes from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "source_protein": {
+                    "description": "The protein that this epitope comes from",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "Antigen",
             "type": "object"
         },
         "AntigenOntology": {
@@ -3570,35 +3795,6 @@
             },
             "required": [],
             "title": "ImmuneExposure",
-            "type": "object"
-        },
-        "ImmuneSystem": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "ImmuneSystem",
             "type": "object"
         },
         "InferenceProcessEnum": {
@@ -6083,8 +6279,11 @@
             "description": "",
             "properties": {
                 "antigen": {
-                    "$ref": "#/$defs/AntigenOntology",
-                    "description": "The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule."
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "antigen_source_species": {
                     "$ref": "#/$defs/AntigenSourceSpeciesOntology",
@@ -7978,6 +8177,60 @@
             "title": "SubjectGenotype",
             "type": "object"
         },
+        "TCRpMHCComplex": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "The epitope being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/MHCAllele"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Major histocompatibility complex"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tcell_receptor": {
+                    "description": "T cell receptor",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "TCRpMHCComplex",
+            "type": "object"
+        },
         "TCellReceptorEpitopeBindingAssay": {
             "additionalProperties": false,
             "description": "",
@@ -8421,6 +8674,9 @@
                             },
                             {
                                 "$ref": "#/$defs/TCellReceptorEpitopeBindingAssay__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/AntibodyAntigenBindingAssay__identifier_optional"
                             }
                         ]
                     },

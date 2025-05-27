@@ -1586,6 +1586,26 @@ slots:
     name: source_organism
     description: The organism that the source protein comes from
     from_schema: https://github.com/airr-knowledge/ak-schema
+  antibody:
+    name: antibody
+    description: B cell receptor, immunoglobulin antibody
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: BCellReceptor
+  antigen:
+    name: antigen
+    description: A material entity with antigen role
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Antigen
+  tcell_receptor:
+    name: tcell_receptor
+    description: T cell receptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TCellReceptor
+  mhc:
+    name: mhc
+    description: Major histocompatibility complex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MHCAllele
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain
@@ -5331,18 +5351,6 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
     range: AntigenTypeEnum
-  antigen:
-    name: antigen
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: The substance against which the receptor was tested. This can be
-      any substance that stimulates an adaptive immune response in the host, either
-      through antibody production or by T cell activation after presentation via an
-      MHC molecule.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: AntigenOntology
   antigen_source_species:
     name: antigen_source_species
     annotations:
@@ -5796,6 +5804,11 @@ classes:
     - value
     - unit
     class_uri: OBI:1110037
+  AntibodyAntigenBindingAssay:
+    name: AntibodyAntigenBindingAssay
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Assay
+    class_uri: OBI:0003127
   Dataset:
     name: Dataset
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5832,6 +5845,7 @@ classes:
     name: ImmuneSystem
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
+    abstract: true
     class_uri: UBERON:0002405
   Chain:
     name: Chain
@@ -5891,6 +5905,14 @@ classes:
     - igh_chain
     - igk_chain
     - igl_chain
+  Antigen:
+    name: Antigen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - source_protein
+    - source_organism
+    class_uri: OBI:1110034
   Epitope:
     name: Epitope
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5905,6 +5927,23 @@ classes:
     - sequence_aa
     - source_protein
     - source_organism
+  AntibodyAntigenComplex:
+    name: AntibodyAntigenComplex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - antibody
+    - antigen
+    class_uri: OBI:0003119
+  TCRpMHCComplex:
+    name: TCRpMHCComplex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    slots:
+    - tcell_receptor
+    - epitope
+    - mhc
+    class_uri: OBI:0003119
   Model:
     name: Model
     from_schema: https://github.com/airr-knowledge/ak-schema
