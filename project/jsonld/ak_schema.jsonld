@@ -1819,6 +1819,7 @@
       "designates_type": true,
       "owner": "Epitope",
       "domain_of": [
+        "LifeEvent",
         "Assay",
         "TCellReceptor",
         "Epitope"
@@ -11474,10 +11475,13 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "PlannedProcess",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PlannedProcess",
-      "description": "A process to realize a plan.",
+      "name": "Process",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Process",
+      "description": "A generic process.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "BFO:0000015"
+      ],
       "is_a": "NamedThing",
       "abstract": true,
       "slots": [
@@ -11486,7 +11490,26 @@
         "description"
       ],
       "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/PlannedProcess",
+      "class_uri": "http://purl.obolibrary.org/obo/BFO_0000015",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PlannedProcess",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PlannedProcess",
+      "description": "A process to realize a plan.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0000011"
+      ],
+      "is_a": "Process",
+      "abstract": true,
+      "slots": [
+        "akc_id",
+        "name",
+        "description"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000011",
       "@type": "ClassDefinition"
     },
     {
@@ -11799,7 +11822,7 @@
       "mappings": [
         "BFO:0000015"
       ],
-      "is_a": "NamedThing",
+      "is_a": "PlannedProcess",
       "slots": [
         "akc_id",
         "name",
@@ -11815,14 +11838,12 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEvent",
       "description": "An event in which a study participant participates.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "BFO:0000015"
-      ],
-      "is_a": "NamedThing",
+      "is_a": "Process",
       "slots": [
         "akc_id",
         "name",
         "description",
+        "type",
         "participant",
         "study_event",
         "life_event_type",
@@ -11834,7 +11855,7 @@
         "time_unit"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/BFO_0000015",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/LifeEvent",
       "@type": "ClassDefinition"
     },
     {
@@ -11842,14 +11863,21 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneExposure",
       "description": "An event involving the immune system of a study participant.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "BFO:0000015"
-      ],
-      "is_a": "NamedThing",
+      "is_a": "LifeEvent",
       "slots": [
         "akc_id",
         "name",
         "description",
+        "type",
+        "participant",
+        "study_event",
+        "life_event_type",
+        "geolocation",
+        "t0_event",
+        "t0_event_type",
+        "start",
+        "duration",
+        "time_unit",
         "life_event",
         "exposure_material",
         "disease",
@@ -11857,7 +11885,7 @@
         "disease_severity"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/BFO_0000015",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneExposure",
       "@type": "ClassDefinition"
     },
     {
@@ -11888,11 +11916,21 @@
       "mappings": [
         "OBI:0000659"
       ],
-      "is_a": "PlannedProcess",
+      "is_a": "LifeEvent",
       "slots": [
         "akc_id",
         "name",
         "description",
+        "type",
+        "participant",
+        "study_event",
+        "life_event_type",
+        "geolocation",
+        "t0_event",
+        "t0_event_type",
+        "start",
+        "duration",
+        "time_unit",
         "specimen"
       ],
       "slot_usage": {},
@@ -13370,9 +13408,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-04-20T19:00:43",
-  "source_file_size": 197714,
-  "generation_date": "2025-04-20T19:00:46",
+  "source_file_date": "2025-05-27T17:02:34",
+  "source_file_size": 197883,
+  "generation_date": "2025-05-27T17:02:36",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

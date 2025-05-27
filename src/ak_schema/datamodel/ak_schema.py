@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-04-20T19:00:49
+# Generation date: 2025-05-27T17:02:41
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -236,7 +236,11 @@ class NamedThingAkcId(AKObjectAkcId):
     pass
 
 
-class PlannedProcessAkcId(NamedThingAkcId):
+class ProcessAkcId(NamedThingAkcId):
+    pass
+
+
+class PlannedProcessAkcId(ProcessAkcId):
     pass
 
 
@@ -260,15 +264,15 @@ class ParticipantAkcId(NamedThingAkcId):
     pass
 
 
-class StudyEventAkcId(NamedThingAkcId):
+class StudyEventAkcId(PlannedProcessAkcId):
     pass
 
 
-class LifeEventAkcId(NamedThingAkcId):
+class LifeEventAkcId(ProcessAkcId):
     pass
 
 
-class ImmuneExposureAkcId(NamedThingAkcId):
+class ImmuneExposureAkcId(LifeEventAkcId):
     pass
 
 
@@ -276,7 +280,7 @@ class SpecimenAkcId(NamedThingAkcId):
     pass
 
 
-class SpecimenCollectionAkcId(PlannedProcessAkcId):
+class SpecimenCollectionAkcId(LifeEventAkcId):
     pass
 
 
@@ -489,14 +493,28 @@ class NamedThing(AKObject):
 
 
 @dataclass(repr=False)
-class PlannedProcess(NamedThing):
+class Process(NamedThing):
+    """
+    A generic process.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = BFO["0000015"]
+    class_class_curie: ClassVar[str] = "BFO:0000015"
+    class_name: ClassVar[str] = "Process"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Process
+
+    akc_id: Union[str, ProcessAkcId] = None
+
+@dataclass(repr=False)
+class PlannedProcess(Process):
     """
     A process to realize a plan.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PlannedProcess"]
-    class_class_curie: ClassVar[str] = "ak_schema:PlannedProcess"
+    class_class_uri: ClassVar[URIRef] = OBI["0000011"]
+    class_class_curie: ClassVar[str] = "OBI:0000011"
     class_name: ClassVar[str] = "PlannedProcess"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PlannedProcess
 
@@ -803,7 +821,7 @@ class Participant(NamedThing):
 
 
 @dataclass(repr=False)
-class StudyEvent(NamedThing):
+class StudyEvent(PlannedProcess):
     """
     An event that is part of the study design of an investigation.
     """
@@ -831,18 +849,19 @@ class StudyEvent(NamedThing):
 
 
 @dataclass(repr=False)
-class LifeEvent(NamedThing):
+class LifeEvent(Process):
     """
     An event in which a study participant participates.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BFO["0000015"]
-    class_class_curie: ClassVar[str] = "BFO:0000015"
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["LifeEvent"]
+    class_class_curie: ClassVar[str] = "ak_schema:LifeEvent"
     class_name: ClassVar[str] = "LifeEvent"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.LifeEvent
 
     akc_id: Union[str, LifeEventAkcId] = None
+    type: Optional[str] = None
     participant: Optional[Union[str, ParticipantAkcId]] = None
     study_event: Optional[Union[str, StudyEventAkcId]] = None
     life_event_type: Optional[Union[str, "LifeEventProcessOntology"]] = None
@@ -858,6 +877,8 @@ class LifeEvent(NamedThing):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, LifeEventAkcId):
             self.akc_id = LifeEventAkcId(self.akc_id)
+
+        self.type = str(self.class_name)
 
         if self.participant is not None and not isinstance(self.participant, ParticipantAkcId):
             self.participant = ParticipantAkcId(self.participant)
@@ -886,15 +907,32 @@ class LifeEvent(NamedThing):
         super().__post_init__(**kwargs)
 
 
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls,*args,**kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_name", type_designator_value)
+
+
+            if target_cls is None:
+                raise ValueError(f"Wrong type designator value: class {cls.__name__} "
+                                 f"has no subclass with ['class_name']='{kwargs[type_designator]}'")
+            return super().__new__(target_cls,*args,**kwargs)
+
+
+
 @dataclass(repr=False)
-class ImmuneExposure(NamedThing):
+class ImmuneExposure(LifeEvent):
     """
     An event involving the immune system of a study participant.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BFO["0000015"]
-    class_class_curie: ClassVar[str] = "BFO:0000015"
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ImmuneExposure"]
+    class_class_curie: ClassVar[str] = "ak_schema:ImmuneExposure"
     class_name: ClassVar[str] = "ImmuneExposure"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneExposure
 
@@ -921,6 +959,7 @@ class ImmuneExposure(NamedThing):
             self.disease_severity = str(self.disease_severity)
 
         super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -957,7 +996,7 @@ class Specimen(NamedThing):
 
 
 @dataclass(repr=False)
-class SpecimenCollection(PlannedProcess):
+class SpecimenCollection(LifeEvent):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000659"]
@@ -978,6 +1017,7 @@ class SpecimenCollection(PlannedProcess):
             self.specimen = SpecimenAkcId(self.specimen)
 
         super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)

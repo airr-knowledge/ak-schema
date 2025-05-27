@@ -201,7 +201,17 @@
                     "additionalProperties": {
                         "anyOf": [
                             {
-                                "$ref": "#/$defs/LifeEvent__identifier_optional"
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/$defs/LifeEvent__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/ImmuneExposure__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/SpecimenCollection__identifier_optional"
+                                    }
+                                ]
                             },
                             {
                                 "type": "null"
@@ -3379,9 +3389,20 @@
                         "null"
                     ]
                 },
+                "duration": {
+                    "description": "The duration of this life event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
                 "exposure_material": {
                     "$ref": "#/$defs/ExposureMaterialOntology",
                     "description": "The material relevant to an immune exposure"
+                },
+                "geolocation": {
+                    "$ref": "#/$defs/GeolocationOntology",
+                    "description": "The geolocation of a participant at birth"
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
@@ -3390,8 +3411,63 @@
                         "null"
                     ]
                 },
+                "life_event_type": {
+                    "$ref": "#/$defs/LifeEventProcessOntology",
+                    "description": "The specific type of a life event"
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "participant": {
+                    "description": "The participant of a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "start": {
+                    "description": "The start time of this life event, relative to the T0 event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "study_event": {
+                    "description": "The study event corresponding to a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event": {
+                    "description": "The T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event_type": {
+                    "description": "The type of the T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time_unit": {
+                    "description": "The time unit used to measure the start and duration of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "ImmuneExposure"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -3437,9 +3513,20 @@
                         "null"
                     ]
                 },
+                "duration": {
+                    "description": "The duration of this life event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
                 "exposure_material": {
                     "$ref": "#/$defs/ExposureMaterialOntology",
                     "description": "The material relevant to an immune exposure"
+                },
+                "geolocation": {
+                    "$ref": "#/$defs/GeolocationOntology",
+                    "description": "The geolocation of a participant at birth"
                 },
                 "life_event": {
                     "description": "The life event corresponding to an immune exposure",
@@ -3448,8 +3535,63 @@
                         "null"
                     ]
                 },
+                "life_event_type": {
+                    "$ref": "#/$defs/LifeEventProcessOntology",
+                    "description": "The specific type of a life event"
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "participant": {
+                    "description": "The participant of a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "start": {
+                    "description": "The start time of this life event, relative to the T0 event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "study_event": {
+                    "description": "The study event corresponding to a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event": {
+                    "description": "The T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event_type": {
+                    "description": "The type of the T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time_unit": {
+                    "description": "The time unit used to measure the start and duration of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "ImmuneExposure"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -3952,6 +4094,15 @@
                         "string",
                         "null"
                     ]
+                },
+                "type": {
+                    "enum": [
+                        "LifeEvent"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -4039,6 +4190,15 @@
                 },
                 "time_unit": {
                     "description": "The time unit used to measure the start and duration of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "LifeEvent"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -7120,6 +7280,21 @@
                         "null"
                     ]
                 },
+                "duration": {
+                    "description": "The duration of this life event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "geolocation": {
+                    "$ref": "#/$defs/GeolocationOntology",
+                    "description": "The geolocation of a participant at birth"
+                },
+                "life_event_type": {
+                    "$ref": "#/$defs/LifeEventProcessOntology",
+                    "description": "The specific type of a life event"
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -7127,8 +7302,59 @@
                         "null"
                     ]
                 },
+                "participant": {
+                    "description": "The participant of a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "start": {
+                    "description": "The start time of this life event, relative to the T0 event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "study_event": {
+                    "description": "The study event corresponding to a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event": {
+                    "description": "The T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event_type": {
+                    "description": "The type of the T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time_unit": {
+                    "description": "The time unit used to measure the start and duration of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "SpecimenCollection"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -7156,6 +7382,21 @@
                         "null"
                     ]
                 },
+                "duration": {
+                    "description": "The duration of this life event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "geolocation": {
+                    "$ref": "#/$defs/GeolocationOntology",
+                    "description": "The geolocation of a participant at birth"
+                },
+                "life_event_type": {
+                    "$ref": "#/$defs/LifeEventProcessOntology",
+                    "description": "The specific type of a life event"
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -7163,8 +7404,59 @@
                         "null"
                     ]
                 },
+                "participant": {
+                    "description": "The participant of a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "start": {
+                    "description": "The start time of this life event, relative to the T0 event",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "study_event": {
+                    "description": "The study event corresponding to a life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event": {
+                    "description": "The T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "t0_event_type": {
+                    "description": "The type of the T0 event used to specify the time of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time_unit": {
+                    "description": "The time unit used to measure the start and duration of this life event",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "SpecimenCollection"
+                    ],
                     "type": [
                         "string",
                         "null"
@@ -8355,7 +8647,17 @@
             "additionalProperties": {
                 "anyOf": [
                     {
-                        "$ref": "#/$defs/LifeEvent__identifier_optional"
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/LifeEvent__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/ImmuneExposure__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/SpecimenCollection__identifier_optional"
+                            }
+                        ]
                     },
                     {
                         "type": "null"

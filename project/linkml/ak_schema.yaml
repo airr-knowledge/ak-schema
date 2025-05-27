@@ -5508,12 +5508,20 @@ classes:
     slots:
     - name
     - description
+  Process:
+    name: Process
+    description: A generic process.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: NamedThing
+    abstract: true
+    class_uri: BFO:0000015
   PlannedProcess:
     name: PlannedProcess
     description: A process to realize a plan.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: Process
     abstract: true
+    class_uri: OBI:0000011
   PlanSpecification:
     name: PlanSpecification
     description: A plan with specified actions to meet some objectives.
@@ -5703,7 +5711,7 @@ classes:
     name: StudyEvent
     description: An event that is part of the study design of an investigation.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: PlannedProcess
     slots:
     - study_arms
     class_uri: BFO:0000015
@@ -5711,8 +5719,9 @@ classes:
     name: LifeEvent
     description: An event in which a study participant participates.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: Process
     slots:
+    - type
     - participant
     - study_event
     - life_event_type
@@ -5722,19 +5731,17 @@ classes:
     - start
     - duration
     - time_unit
-    class_uri: BFO:0000015
   ImmuneExposure:
     name: ImmuneExposure
     description: An event involving the immune system of a study participant.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: LifeEvent
     slots:
     - life_event
     - exposure_material
     - disease
     - disease_stage
     - disease_severity
-    class_uri: BFO:0000015
   Specimen:
     name: Specimen
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5748,7 +5755,7 @@ classes:
   SpecimenCollection:
     name: SpecimenCollection
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlannedProcess
+    is_a: LifeEvent
     slots:
     - specimen
     class_uri: OBI:0000659
