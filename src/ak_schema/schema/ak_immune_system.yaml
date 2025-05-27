@@ -17,7 +17,7 @@ classes:
       - complete_vdj
       - sequence
       - sequence_aa
-      - chain_type
+      - locus
       - v_call
       - d_call
       - j_call
@@ -96,11 +96,6 @@ slots:
     description: Nucleotide sequence.
     range: string
 
-  chain_type:
-    name: chain_type
-    description: Gene locus (chain type).
-    range: ChainTypeEnum
-
   isotype:
     name: isotype
     description: The isotype of the chain
@@ -140,14 +135,3 @@ slots:
   source_organism:
     description: The organism that the source protein comes from
 
-
-enums:
-  ChainTypeEnum:
-    permissible_values:
-      IGH:
-      IGK:
-      IGL:
-      TRA:
-      TRB:
-      TRD:
-      TRG:
