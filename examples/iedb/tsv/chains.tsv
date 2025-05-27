@@ -1,4 +1,4 @@
-akc_id	aa_hash	junction_aa_vj_allele_hash	junction_aa_vj_gene_hash	complete_vdj	sequence	sequence_aa	chain_type	v_call	d_call	j_call	c_call	junction_aa	cdr1_aa	cdr2_aa	cdr3_aa	cdr1_start	cdr1_end	cdr2_start	cdr2_end	cdr3_start	cdr3_end
+akc_id	aa_hash	junction_aa_vj_allele_hash	junction_aa_vj_gene_hash	complete_vdj	sequence	sequence_aa	locus	v_call	d_call	j_call	c_call	junction_aa	cdr1_aa	cdr2_aa	cdr3_aa	cdr1_start	cdr1_end	cdr2_start	cdr2_end	cdr3_start	cdr3_end
 iedb_receptor:20833-alpha							TRA	TRAV14/DV4				CAMREQEDSNYQLIW			CAMREQEDSNYQLIW						
 iedb_receptor:20833-beta							TRB	TRBV6-1				CASSEESYLMNTEAFF	DMNHNSMYW	IYYSASEGTTDKGE	CASSEESYLMNTEAFF						
 iedb_receptor:20834-alpha							TRA	TRAV26-1				CIVSRTRRGNKLVF			CIVSRTRRGNKLVF						
