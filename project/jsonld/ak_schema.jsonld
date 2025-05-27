@@ -2276,20 +2276,7 @@
       "domain_of": [
         "LifeEvent"
       ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "t0_event_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/t0_event_type",
-      "description": "The type of the T0 event used to specify the time of this life event",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/t0_event_type",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "string",
+      "range": "LifeEvent",
       "@type": "SlotDefinition"
     },
     {
@@ -11849,7 +11836,6 @@
         "life_event_type",
         "geolocation",
         "t0_event",
-        "t0_event_type",
         "start",
         "duration",
         "time_unit"
@@ -11874,7 +11860,6 @@
         "life_event_type",
         "geolocation",
         "t0_event",
-        "t0_event_type",
         "start",
         "duration",
         "time_unit",
@@ -11927,7 +11912,6 @@
         "life_event_type",
         "geolocation",
         "t0_event",
-        "t0_event_type",
         "start",
         "duration",
         "time_unit",
@@ -13408,9 +13392,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-05-27T17:02:34",
-  "source_file_size": 197883,
-  "generation_date": "2025-05-27T17:02:36",
+  "source_file_date": "2025-05-27T17:11:50",
+  "source_file_size": 197696,
+  "generation_date": "2025-05-27T17:11:53",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

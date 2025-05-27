@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-27T17:02:41
+# Generation date: 2025-05-27T17:11:57
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -866,8 +866,7 @@ class LifeEvent(Process):
     study_event: Optional[Union[str, StudyEventAkcId]] = None
     life_event_type: Optional[Union[str, "LifeEventProcessOntology"]] = None
     geolocation: Optional[Union[str, "GeolocationOntology"]] = None
-    t0_event: Optional[str] = None
-    t0_event_type: Optional[str] = None
+    t0_event: Optional[Union[str, LifeEventAkcId]] = None
     start: Optional[Decimal] = None
     duration: Optional[Decimal] = None
     time_unit: Optional[str] = None
@@ -889,11 +888,8 @@ class LifeEvent(Process):
         if self.geolocation is not None and not isinstance(self.geolocation, GeolocationOntology):
             self.geolocation = GeolocationOntology(self.geolocation)
 
-        if self.t0_event is not None and not isinstance(self.t0_event, str):
-            self.t0_event = str(self.t0_event)
-
-        if self.t0_event_type is not None and not isinstance(self.t0_event_type, str):
-            self.t0_event_type = str(self.t0_event_type)
+        if self.t0_event is not None and not isinstance(self.t0_event, LifeEventAkcId):
+            self.t0_event = LifeEventAkcId(self.t0_event)
 
         if self.start is not None and not isinstance(self.start, Decimal):
             self.start = Decimal(self.start)
@@ -5493,10 +5489,7 @@ slots.life_event_type = Slot(uri=RDF.type, name="life_event_type", curie=RDF.cur
                    model_uri=AK_SCHEMA.life_event_type, domain=None, range=Optional[Union[str, "LifeEventProcessOntology"]])
 
 slots.t0_event = Slot(uri=AK_SCHEMA.t0_event, name="t0_event", curie=AK_SCHEMA.curie('t0_event'),
-                   model_uri=AK_SCHEMA.t0_event, domain=None, range=Optional[str])
-
-slots.t0_event_type = Slot(uri=AK_SCHEMA.t0_event_type, name="t0_event_type", curie=AK_SCHEMA.curie('t0_event_type'),
-                   model_uri=AK_SCHEMA.t0_event_type, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.t0_event, domain=None, range=Optional[Union[str, LifeEventAkcId]])
 
 slots.start = Slot(uri=AK_SCHEMA.start, name="start", curie=AK_SCHEMA.curie('start'),
                    model_uri=AK_SCHEMA.start, domain=None, range=Optional[Decimal])
