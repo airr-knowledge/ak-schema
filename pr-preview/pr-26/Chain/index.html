@@ -236,15 +236,6 @@
 
       Chain : cdr3_start
 
-      Chain : chain_type
-
-
-
-
-    Chain --&gt; "0..1" ChainTypeEnum : chain_type
-    click ChainTypeEnum href "../ChainTypeEnum"
-
-
       Chain : complete_vdj
 
       Chain : d_call
@@ -256,6 +247,15 @@
       Chain : junction_aa_vj_allele_hash
 
       Chain : junction_aa_vj_gene_hash
+
+      Chain : locus
+
+
+
+
+    Chain --&gt; "0..1" LocusEnum : locus
+    click LocusEnum href "../LocusEnum"
+
 
       Chain : sequence
 
@@ -320,9 +320,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../chain_type/">chain_type</a></td>
-<td>0..1 <br/> <a href="../ChainTypeEnum/">ChainTypeEnum</a></td>
-<td>Gene locus (chain type)</td>
+<td><a href="../locus/">locus</a></td>
+<td>0..1 <br/> <a href="../LocusEnum/">LocusEnum</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -552,7 +552,7 @@ slots:
 - complete_vdj
 - sequence
 - sequence_aa
-- chain_type
+- locus
 - v_call
 - d_call
 - j_call
@@ -645,16 +645,19 @@ attributes:
     - PeptidicEpitope
     - Rearrangement
     range: string
-  chain_type:
-    name: chain_type
-    description: Gene locus (chain type).
+  locus:
+    name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: chain_type
+    alias: locus
     owner: Chain
     domain_of:
     - Chain
-    range: ChainTypeEnum
+    - AlleleDescription
+    - GermlineSet
+    - Genotype
+    - Rearrangement
+    range: LocusEnum
   v_call:
     name: v_call
     annotations:

@@ -146,11 +146,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/ChainTypeEnum/</loc>
-         <lastmod>2025-05-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Clone/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
@@ -1212,11 +1207,6 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/chain_similarity_type/</loc>
-         <lastmod>2025-05-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/chain_type/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
