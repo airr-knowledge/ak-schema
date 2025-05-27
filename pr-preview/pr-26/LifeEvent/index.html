@@ -268,7 +268,12 @@
 
       LifeEvent : t0_event
 
-      LifeEvent : t0_event_type
+
+
+
+    LifeEvent --&gt; "0..1" LifeEvent : t0_event
+    click LifeEvent href "../LifeEvent"
+
 
       LifeEvent : time_unit
 
@@ -336,14 +341,8 @@
 </tr>
 <tr>
 <td><a href="../t0_event/">t0_event</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="./">LifeEvent</a></td>
 <td>The T0 event used to specify the time of this life event</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../t0_event_type/">t0_event_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type of the T0 event used to specify the time of this life event</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -402,14 +401,32 @@
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
+<td><a href="./">LifeEvent</a></td>
+<td><a href="../t0_event/">t0_event</a></td>
+<td>range</td>
+<td><a href="./">LifeEvent</a></td>
+</tr>
+<tr>
 <td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
 <td><a href="../life_event/">life_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
+<td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
+<td><a href="../t0_event/">t0_event</a></td>
+<td>range</td>
+<td><a href="./">LifeEvent</a></td>
+</tr>
+<tr>
 <td><a href="../Specimen/">Specimen</a></td>
 <td><a href="../life_event/">life_event</a></td>
+<td>range</td>
+<td><a href="./">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SpecimenCollection/">SpecimenCollection</a></td>
+<td><a href="../t0_event/">t0_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
 </tr>
@@ -460,7 +477,6 @@ slots:
 - life_event_type
 - geolocation
 - t0_event
-- t0_event_type
 - start
 - duration
 - time_unit
@@ -540,17 +556,7 @@ attributes:
     owner: LifeEvent
     domain_of:
     - LifeEvent
-    range: string
-  t0_event_type:
-    name: t0_event_type
-    description: The type of the T0 event used to specify the time of this life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: t0_event_type
-    owner: LifeEvent
-    domain_of:
-    - LifeEvent
-    range: string
+    range: LifeEvent
   start:
     name: start
     description: The start time of this life event, relative to the T0 event

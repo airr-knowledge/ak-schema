@@ -3046,11 +3046,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/t0_event_type/</loc>
-         <lastmod>2025-05-27</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/target_entity_type/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
