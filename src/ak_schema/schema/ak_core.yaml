@@ -43,9 +43,17 @@ classes:
       - description
 
 # Separate our processes from our plans
-  PlannedProcess:
+  Process:
     abstract: true
     is_a: NamedThing
+    class_uri: BFO:0000015 # process
+    description: >-
+      A generic process.
+
+  PlannedProcess:
+    abstract: true
+    is_a: Process
+    class_uri: OBI:0000011 # planned process
     description: >-
       A process to realize a plan.
 

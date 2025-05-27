@@ -66,7 +66,7 @@ classes:
       - strain # For non-human organisms
 
   StudyEvent:
-    is_a: NamedThing
+    is_a: PlannedProcess
     class_uri: BFO:0000015 # process
     description: >-
       An event that is part of the study design of an investigation.
@@ -74,11 +74,11 @@ classes:
       - study_arms
 
   LifeEvent:
-    is_a: NamedThing
-    class_uri: BFO:0000015 # process
+    is_a: Process
     description: >-
       An event in which a study participant participates.
     slots:
+      - type
       - participant
       - study_event
       - life_event_type
@@ -90,8 +90,7 @@ classes:
       - time_unit
 
   ImmuneExposure:
-    is_a: NamedThing
-    class_uri: BFO:0000015 # process
+    is_a: LifeEvent
     description: >-
       An event involving the immune system of a study participant.
     slots:

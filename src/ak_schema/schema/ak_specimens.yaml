@@ -14,7 +14,7 @@ classes:
       - process
 
   SpecimenCollection:
-    is_a: PlannedProcess
+    is_a: LifeEvent
     class_uri: OBI:0000659 # specimen collection
     slots:
       - specimen
