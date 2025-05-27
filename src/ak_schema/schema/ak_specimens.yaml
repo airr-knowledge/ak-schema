@@ -24,6 +24,7 @@ classes:
     class_uri: OBI:0000094 # material processing
     slots:
       - specimen
+
   CellIsolationProcessing:
     is_a: SpecimenProcessing
     class_uri: OBI:00000512 # cell isolation processing
@@ -39,23 +40,11 @@ classes:
       - cell_quality
       - cell_isolation
       - cell_processing_protocol
-# TODO: comment for now until harmonized with AIRR
-#  NucleicAcidProcessing:
-#    is_a: SpecimenProcessing
-#    class_uri: OBI:00001902 # sample preparation for sequencing assay
-#    slots:
-#      - template_class # From ADC NucleicAcidProcessing
-#      - template_quality
-#      - template_amount
-#      - template_amount_unit
+
   LibraryPreparationProcessing:
     is_a: SpecimenProcessing
     mixins: NucleicAcidProcessing # slots from AIRR class
     class_uri: OBI:00000711 # library preparation
-#    slots:
-#      - library_generation_method # From ADC NucleicAcidProcessing
-#      - library_generation_protocol
-#      - library_generation_kit_version
 
   Assay:
     is_a: PlannedProcess
@@ -85,6 +74,10 @@ classes:
       - tcell_chains
       - value
       - unit
+
+  AntibodyAntigenBindingAssay:
+    is_a: Assay
+    class_uri: OBI:0003127 # B cell epitope assay
 
   Dataset:
     is_a: NamedThing
