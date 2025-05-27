@@ -61,6 +61,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/AntibodyAntigenBindingAssay/</loc>
+         <lastmod>2025-05-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/AntibodyAntigenComplex/</loc>
+         <lastmod>2025-05-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/Antigen/</loc>
+         <lastmod>2025-05-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/AntigenOntology/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
@@ -741,6 +756,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/TCRpMHCComplex/</loc>
+         <lastmod>2025-05-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/TCellReceptor/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
@@ -937,6 +957,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/ancestry_population/</loc>
+         <lastmod>2025-05-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/antibody/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2191,6 +2216,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/mhc/</loc>
+         <lastmod>2025-05-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/mhc_allele_1/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
@@ -3042,6 +3072,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/tcell_chains/</loc>
+         <lastmod>2025-05-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/tcell_receptor/</loc>
          <lastmod>2025-05-27</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -217,8 +217,8 @@
 
 
 
-    ReceptorReactivity --&gt; "0..1" AntigenOntology : antigen
-    click AntigenOntology href "../AntigenOntology"
+    ReceptorReactivity --&gt; "0..1" Antigen : antigen
+    click Antigen href "../Antigen"
 
 
       ReceptorReactivity : antigen_source_species
@@ -339,8 +339,8 @@
 </tr>
 <tr>
 <td><a href="../antigen/">antigen</a></td>
-<td>0..1 <br/> <a href="../AntigenOntology/">AntigenOntology</a></td>
-<td>The substance against which the receptor was tested</td>
+<td>0..1 <br/> <a href="../Antigen/">Antigen</a></td>
+<td>A material entity with antigen role</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -524,21 +524,15 @@ attributes:
     range: AntigenTypeEnum
   antigen:
     name: antigen
-    annotations:
-      nullable:
-        tag: nullable
-        value: false
-    description: The substance against which the receptor was tested. This can be
-      any substance that stimulates an adaptive immune response in the host, either
-      through antibody production or by T cell activation after presentation via an
-      MHC molecule.
+    description: A material entity with antigen role
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: antigen
     owner: ReceptorReactivity
     domain_of:
+    - AntibodyAntigenComplex
     - ReceptorReactivity
-    range: AntigenOntology
+    range: Antigen
   antigen_source_species:
     name: antigen_source_species
     annotations:
