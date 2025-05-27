@@ -1964,10 +1964,6 @@
                         "null"
                     ]
                 },
-                "chain_type": {
-                    "$ref": "#/$defs/ChainTypeEnum",
-                    "description": "Gene locus (chain type)."
-                },
                 "complete_vdj": {
                     "description": "Complete VDJ flag.",
                     "type": [
@@ -2005,6 +2001,9 @@
                         "string",
                         "null"
                     ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
                 },
                 "sequence": {
                     "description": "Nucleotide sequence.",
@@ -2076,20 +2075,6 @@
                 "cdr3_exact_aa_and_vj_match"
             ],
             "title": "ChainSimilarityTypeEnum",
-            "type": "string"
-        },
-        "ChainTypeEnum": {
-            "description": "",
-            "enum": [
-                "IGH",
-                "IGK",
-                "IGL",
-                "TRA",
-                "TRB",
-                "TRD",
-                "TRG"
-            ],
-            "title": "ChainTypeEnum",
             "type": "string"
         },
         "Chain__identifier_optional": {
@@ -2171,10 +2156,6 @@
                         "null"
                     ]
                 },
-                "chain_type": {
-                    "$ref": "#/$defs/ChainTypeEnum",
-                    "description": "Gene locus (chain type)."
-                },
                 "complete_vdj": {
                     "description": "Complete VDJ flag.",
                     "type": [
@@ -2212,6 +2193,9 @@
                         "string",
                         "null"
                     ]
+                },
+                "locus": {
+                    "$ref": "#/$defs/LocusEnum"
                 },
                 "sequence": {
                     "description": "Nucleotide sequence.",

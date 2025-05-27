@@ -668,24 +668,6 @@ enums:
       other disease course:
         text: other disease course
         meaning: ONTIE:0003547
-  ChainTypeEnum:
-    name: ChainTypeEnum
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      IGH:
-        text: IGH
-      IGK:
-        text: IGK
-      IGL:
-        text: IGL
-      TRA:
-        text: TRA
-      TRB:
-        text: TRB
-      TRD:
-        text: TRD
-      TRG:
-        text: TRG
   ChainSimilarityTypeEnum:
     name: ChainSimilarityTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1556,11 +1538,6 @@ slots:
     description: Nucleotide sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  chain_type:
-    name: chain_type
-    description: Gene locus (chain type).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: ChainTypeEnum
   isotype:
     name: isotype
     description: The isotype of the chain
@@ -5867,7 +5844,7 @@ classes:
     - complete_vdj
     - sequence
     - sequence_aa
-    - chain_type
+    - locus
     - v_call
     - d_call
     - j_call

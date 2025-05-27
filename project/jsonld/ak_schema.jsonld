@@ -913,34 +913,6 @@
       ]
     },
     {
-      "name": "ChainTypeEnum",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ChainTypeEnum",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "permissible_values": [
-        {
-          "text": "IGH"
-        },
-        {
-          "text": "IGK"
-        },
-        {
-          "text": "IGL"
-        },
-        {
-          "text": "TRA"
-        },
-        {
-          "text": "TRB"
-        },
-        {
-          "text": "TRD"
-        },
-        {
-          "text": "TRG"
-        }
-      ]
-    },
-    {
       "name": "ChainSimilarityTypeEnum",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ChainSimilarityTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -2724,19 +2696,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chain_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/chain_type",
-      "description": "Gene locus (chain type).",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/chain_type",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
-      "range": "ChainTypeEnum",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "isotype",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/isotype",
       "description": "The isotype of the chain",
@@ -3872,6 +3831,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/locus",
       "owner": "Rearrangement",
       "domain_of": [
+        "Chain",
         "AlleleDescription",
         "GermlineSet",
         "Genotype",
@@ -12178,7 +12138,7 @@
         "complete_vdj",
         "sequence",
         "sequence_aa",
-        "chain_type",
+        "locus",
         "v_call",
         "d_call",
         "j_call",
@@ -13392,9 +13352,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-05-27T17:11:50",
-  "source_file_size": 197696,
-  "generation_date": "2025-05-27T17:11:53",
+  "source_file_date": "2025-05-27T17:15:40",
+  "source_file_size": 197199,
+  "generation_date": "2025-05-27T17:15:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

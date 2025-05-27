@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-27T17:11:57
+# Generation date: 2025-05-27T17:15:47
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1472,7 +1472,7 @@ class Chain(AKObject):
     complete_vdj: Optional[Union[bool, Bool]] = None
     sequence: Optional[str] = None
     sequence_aa: Optional[str] = None
-    chain_type: Optional[Union[str, "ChainTypeEnum"]] = None
+    locus: Optional[Union[str, "LocusEnum"]] = None
     v_call: Optional[str] = None
     d_call: Optional[str] = None
     j_call: Optional[str] = None
@@ -1512,8 +1512,8 @@ class Chain(AKObject):
         if self.sequence_aa is not None and not isinstance(self.sequence_aa, str):
             self.sequence_aa = str(self.sequence_aa)
 
-        if self.chain_type is not None and not isinstance(self.chain_type, ChainTypeEnum):
-            self.chain_type = ChainTypeEnum(self.chain_type)
+        if self.locus is not None and not isinstance(self.locus, LocusEnum):
+            self.locus = LocusEnum(self.locus)
 
         if self.v_call is not None and not isinstance(self.v_call, str):
             self.v_call = str(self.v_call)
@@ -4875,20 +4875,6 @@ class DiseaseStageOntology(EnumDefinitionImpl):
                 text="other disease course",
                 meaning=ONTIE["0003547"]))
 
-class ChainTypeEnum(EnumDefinitionImpl):
-
-    IGH = PermissibleValue(text="IGH")
-    IGK = PermissibleValue(text="IGK")
-    IGL = PermissibleValue(text="IGL")
-    TRA = PermissibleValue(text="TRA")
-    TRB = PermissibleValue(text="TRB")
-    TRD = PermissibleValue(text="TRD")
-    TRG = PermissibleValue(text="TRG")
-
-    _defn = EnumDefinition(
-        name="ChainTypeEnum",
-    )
-
 class ChainSimilarityTypeEnum(EnumDefinitionImpl):
 
     exact_match = PermissibleValue(text="exact_match")
@@ -5583,9 +5569,6 @@ slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie
 
 slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
                    model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
-
-slots.chain_type = Slot(uri=AK_SCHEMA.chain_type, name="chain_type", curie=AK_SCHEMA.curie('chain_type'),
-                   model_uri=AK_SCHEMA.chain_type, domain=None, range=Optional[Union[str, "ChainTypeEnum"]])
 
 slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curie('isotype'),
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])
