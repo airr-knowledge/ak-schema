@@ -2447,9 +2447,10 @@
       "description": "The epitope being measured",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
-      "owner": "TCellReceptorEpitopeBindingAssay",
+      "owner": "TCRpMHCComplex",
       "domain_of": [
-        "TCellReceptorEpitopeBindingAssay"
+        "TCellReceptorEpitopeBindingAssay",
+        "TCRpMHCComplex"
       ],
       "range": "Epitope",
       "@type": "SlotDefinition"
@@ -2803,6 +2804,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_protein",
       "owner": "PeptidicEpitope",
       "domain_of": [
+        "Antigen",
         "PeptidicEpitope"
       ],
       "range": "string",
@@ -2816,9 +2818,64 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
       "owner": "PeptidicEpitope",
       "domain_of": [
+        "Antigen",
         "PeptidicEpitope"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibody",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antibody",
+      "description": "B cell receptor, immunoglobulin antibody",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody",
+      "owner": "AntibodyAntigenComplex",
+      "domain_of": [
+        "AntibodyAntigenComplex"
+      ],
+      "range": "BCellReceptor",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antigen",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
+      "description": "A material entity with antigen role",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
+      "owner": "ReceptorReactivity",
+      "domain_of": [
+        "AntibodyAntigenComplex",
+        "ReceptorReactivity"
+      ],
+      "range": "Antigen",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tcell_receptor",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptor",
+      "description": "T cell receptor",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptor",
+      "owner": "TCRpMHCComplex",
+      "domain_of": [
+        "TCRpMHCComplex"
+      ],
+      "range": "TCellReceptor",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mhc",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc",
+      "description": "Major histocompatibility complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc",
+      "owner": "TCRpMHCComplex",
+      "domain_of": [
+        "TCRpMHCComplex"
+      ],
+      "range": "MHCAllele",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -10847,25 +10904,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "antigen",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
-      "annotations": [
-        {
-          "tag": "nullable",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
-      "owner": "ReceptorReactivity",
-      "domain_of": [
-        "ReceptorReactivity"
-      ],
-      "range": "AntigenOntology",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "antigen_source_species",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/antigen_source_species",
       "annotations": [
@@ -12044,6 +12082,28 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "AntibodyAntigenBindingAssay",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntibodyAntigenBindingAssay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0003127"
+      ],
+      "is_a": "Assay",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "specimen",
+        "specimen_processing",
+        "type",
+        "assay_type",
+        "target_entity_type"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0003127",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Dataset",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Dataset",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12116,6 +12176,7 @@
         "UBERON:0002405"
       ],
       "is_a": "NamedThing",
+      "abstract": true,
       "slots": [
         "akc_id",
         "name",
@@ -12227,6 +12288,25 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "Antigen",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Antigen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:1110034"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "source_protein",
+        "source_organism"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_1110034",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Epitope",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Epitope",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12257,6 +12337,45 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/PeptidicEpitope",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AntibodyAntigenComplex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntibodyAntigenComplex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0003119"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "antibody",
+        "antigen"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0003119",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TCRpMHCComplex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TCRpMHCComplex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0003119"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "tcell_receptor",
+        "epitope",
+        "mhc"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0003119",
       "@type": "ClassDefinition"
     },
     {
@@ -13352,9 +13471,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-05-27T17:15:40",
-  "source_file_size": 197199,
-  "generation_date": "2025-05-27T17:15:42",
+  "source_file_date": "2025-05-27T22:25:35",
+  "source_file_size": 198188,
+  "generation_date": "2025-05-27T22:25:37",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-27T17:15:47
+# Generation date: 2025-05-27T22:25:42
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -308,6 +308,10 @@ class TCellReceptorEpitopeBindingAssayAkcId(AssayAkcId):
     pass
 
 
+class AntibodyAntigenBindingAssayAkcId(AssayAkcId):
+    pass
+
+
 class DatasetAkcId(NamedThingAkcId):
     pass
 
@@ -344,11 +348,23 @@ class BCellReceptorAkcId(AKObjectAkcId):
     pass
 
 
+class AntigenAkcId(NamedThingAkcId):
+    pass
+
+
 class EpitopeAkcId(NamedThingAkcId):
     pass
 
 
 class PeptidicEpitopeAkcId(EpitopeAkcId):
+    pass
+
+
+class AntibodyAntigenComplexAkcId(NamedThingAkcId):
+    pass
+
+
+class TCRpMHCComplexAkcId(NamedThingAkcId):
     pass
 
 
@@ -1320,6 +1336,27 @@ class TCellReceptorEpitopeBindingAssay(Assay):
 
 
 @dataclass(repr=False)
+class AntibodyAntigenBindingAssay(Assay):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0003127"]
+    class_class_curie: ClassVar[str] = "OBI:0003127"
+    class_name: ClassVar[str] = "AntibodyAntigenBindingAssay"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AntibodyAntigenBindingAssay
+
+    akc_id: Union[str, AntibodyAntigenBindingAssayAkcId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AntibodyAntigenBindingAssayAkcId):
+            self.akc_id = AntibodyAntigenBindingAssayAkcId(self.akc_id)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
 class Dataset(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1446,15 +1483,6 @@ class ImmuneSystem(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneSystem
 
     akc_id: Union[str, ImmuneSystemAkcId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, ImmuneSystemAkcId):
-            self.akc_id = ImmuneSystemAkcId(self.akc_id)
-
-        super().__post_init__(**kwargs)
-
 
 @dataclass(repr=False)
 class Chain(AKObject):
@@ -1686,6 +1714,34 @@ class BCellReceptor(AKObject):
 
 
 @dataclass(repr=False)
+class Antigen(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["1110034"]
+    class_class_curie: ClassVar[str] = "OBI:1110034"
+    class_name: ClassVar[str] = "Antigen"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Antigen
+
+    akc_id: Union[str, AntigenAkcId] = None
+    source_protein: Optional[str] = None
+    source_organism: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AntigenAkcId):
+            self.akc_id = AntigenAkcId(self.akc_id)
+
+        if self.source_protein is not None and not isinstance(self.source_protein, str):
+            self.source_protein = str(self.source_protein)
+
+        if self.source_organism is not None and not isinstance(self.source_organism, str):
+            self.source_organism = str(self.source_organism)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class Epitope(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1756,6 +1812,66 @@ class PeptidicEpitope(Epitope):
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class AntibodyAntigenComplex(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0003119"]
+    class_class_curie: ClassVar[str] = "OBI:0003119"
+    class_name: ClassVar[str] = "AntibodyAntigenComplex"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AntibodyAntigenComplex
+
+    akc_id: Union[str, AntibodyAntigenComplexAkcId] = None
+    antibody: Optional[Union[str, BCellReceptorAkcId]] = None
+    antigen: Optional[Union[str, AntigenAkcId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AntibodyAntigenComplexAkcId):
+            self.akc_id = AntibodyAntigenComplexAkcId(self.akc_id)
+
+        if self.antibody is not None and not isinstance(self.antibody, BCellReceptorAkcId):
+            self.antibody = BCellReceptorAkcId(self.antibody)
+
+        if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
+            self.antigen = AntigenAkcId(self.antigen)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class TCRpMHCComplex(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0003119"]
+    class_class_curie: ClassVar[str] = "OBI:0003119"
+    class_name: ClassVar[str] = "TCRpMHCComplex"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCRpMHCComplex
+
+    akc_id: Union[str, TCRpMHCComplexAkcId] = None
+    tcell_receptor: Optional[Union[str, TCellReceptorAkcId]] = None
+    epitope: Optional[Union[str, EpitopeAkcId]] = None
+    mhc: Optional[Union[dict, "MHCAllele"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, TCRpMHCComplexAkcId):
+            self.akc_id = TCRpMHCComplexAkcId(self.akc_id)
+
+        if self.tcell_receptor is not None and not isinstance(self.tcell_receptor, TCellReceptorAkcId):
+            self.tcell_receptor = TCellReceptorAkcId(self.tcell_receptor)
+
+        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
+            self.epitope = EpitopeAkcId(self.epitope)
+
+        if self.mhc is not None and not isinstance(self.mhc, MHCAllele):
+            self.mhc = MHCAllele(**as_dict(self.mhc))
+
+        super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
@@ -4327,7 +4443,7 @@ class ReceptorReactivity(AIRRStandards):
 
     ligand_type: Optional[Union[str, "LigandTypeEnum"]] = None
     antigen_type: Optional[Union[str, "AntigenTypeEnum"]] = None
-    antigen: Optional[Union[str, "AntigenOntology"]] = None
+    antigen: Optional[Union[str, AntigenAkcId]] = None
     antigen_source_species: Optional[Union[str, "AntigenSourceSpeciesOntology"]] = None
     peptide_start: Optional[int] = None
     peptide_end: Optional[int] = None
@@ -4347,6 +4463,9 @@ class ReceptorReactivity(AIRRStandards):
 
         if self.antigen_type is not None and not isinstance(self.antigen_type, AntigenTypeEnum):
             self.antigen_type = AntigenTypeEnum(self.antigen_type)
+
+        if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
+            self.antigen = AntigenAkcId(self.antigen)
 
         if self.peptide_start is not None and not isinstance(self.peptide_start, int):
             self.peptide_start = int(self.peptide_start)
@@ -5600,6 +5719,18 @@ slots.source_protein = Slot(uri=AK_SCHEMA.source_protein, name="source_protein",
 slots.source_organism = Slot(uri=AK_SCHEMA.source_organism, name="source_organism", curie=AK_SCHEMA.curie('source_organism'),
                    model_uri=AK_SCHEMA.source_organism, domain=None, range=Optional[str])
 
+slots.antibody = Slot(uri=AK_SCHEMA.antibody, name="antibody", curie=AK_SCHEMA.curie('antibody'),
+                   model_uri=AK_SCHEMA.antibody, domain=None, range=Optional[Union[str, BCellReceptorAkcId]])
+
+slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curie('antigen'),
+                   model_uri=AK_SCHEMA.antigen, domain=None, range=Optional[Union[str, AntigenAkcId]])
+
+slots.tcell_receptor = Slot(uri=AK_SCHEMA.tcell_receptor, name="tcell_receptor", curie=AK_SCHEMA.curie('tcell_receptor'),
+                   model_uri=AK_SCHEMA.tcell_receptor, domain=None, range=Optional[Union[str, TCellReceptorAkcId]])
+
+slots.mhc = Slot(uri=AK_SCHEMA.mhc, name="mhc", curie=AK_SCHEMA.curie('mhc'),
+                   model_uri=AK_SCHEMA.mhc, domain=None, range=Optional[Union[dict, MHCAllele]])
+
 slots.chain_domain = Slot(uri=AK_SCHEMA.chain_domain, name="chain_domain", curie=AK_SCHEMA.curie('chain_domain'),
                    model_uri=AK_SCHEMA.chain_domain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
@@ -6787,9 +6918,6 @@ slots.ligand_type = Slot(uri=RDF.type, name="ligand_type", curie=RDF.curie('type
 
 slots.antigen_type = Slot(uri=RDF.type, name="antigen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.antigen_type, domain=None, range=Optional[Union[str, "AntigenTypeEnum"]])
-
-slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curie('antigen'),
-                   model_uri=AK_SCHEMA.antigen, domain=None, range=Optional[Union[str, "AntigenOntology"]])
 
 slots.antigen_source_species = Slot(uri=AK_SCHEMA.antigen_source_species, name="antigen_source_species", curie=AK_SCHEMA.curie('antigen_source_species'),
                    model_uri=AK_SCHEMA.antigen_source_species, domain=None, range=Optional[Union[str, "AntigenSourceSpeciesOntology"]])
