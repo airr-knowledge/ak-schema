@@ -96,7 +96,7 @@ def make_chain(row, chain_name):
         tcr_curie + '-' + chain['Type'],
         sequence=chain['Nucleotide Sequence'],
         sequence_aa=chain['Protein Sequence'],
-        chain_type=chain_types[chain['Type']],
+        locus=chain_types[chain['Type']],
         v_call=chain['Calculated V Gene'] or chain['Curated V Gene'],
         d_call=chain['Calculated D Gene'] or chain['Curated D Gene'],
         j_call=chain['Calculated J Gene'] or chain['Curated J Gene'],
@@ -224,7 +224,6 @@ def convert(tcell_path, tcr_path, yaml_path):
             life_event_type=row['1st in vivo Process']['Process Type'],
             geolocation=None,
             t0_event=None,
-            t0_event_type=None,
             start=None,
             duration=None,
             time_unit=None
@@ -238,7 +237,6 @@ def convert(tcell_path, tcr_path, yaml_path):
             life_event_type='specimen collection',
             geolocation=None,
             t0_event=None,
-            t0_event_type=None,
             start=None,
             duration=None,
             time_unit=None
