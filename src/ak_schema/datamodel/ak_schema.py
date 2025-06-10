@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-05-27T22:25:42
+# Generation date: 2025-06-10T20:22:24
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -240,15 +240,11 @@ class ProcessAkcId(NamedThingAkcId):
     pass
 
 
-class PlannedProcessAkcId(ProcessAkcId):
-    pass
-
-
 class PlanSpecificationAkcId(NamedThingAkcId):
     pass
 
 
-class InvestigationAkcId(PlannedProcessAkcId):
+class InvestigationAkcId(ProcessAkcId):
     pass
 
 
@@ -264,7 +260,7 @@ class ParticipantAkcId(NamedThingAkcId):
     pass
 
 
-class StudyEventAkcId(PlannedProcessAkcId):
+class StudyEventAkcId(ProcessAkcId):
     pass
 
 
@@ -276,6 +272,10 @@ class ImmuneExposureAkcId(LifeEventAkcId):
     pass
 
 
+class AssessmentAkcId(LifeEventAkcId):
+    pass
+
+
 class SpecimenAkcId(NamedThingAkcId):
     pass
 
@@ -284,7 +284,7 @@ class SpecimenCollectionAkcId(LifeEventAkcId):
     pass
 
 
-class SpecimenProcessingAkcId(PlannedProcessAkcId):
+class SpecimenProcessingAkcId(ProcessAkcId):
     pass
 
 
@@ -296,7 +296,7 @@ class LibraryPreparationProcessingAkcId(SpecimenProcessingAkcId):
     pass
 
 
-class AssayAkcId(PlannedProcessAkcId):
+class AssayAkcId(ProcessAkcId):
     pass
 
 
@@ -317,10 +317,6 @@ class DatasetAkcId(NamedThingAkcId):
 
 
 class ConclusionAkcId(NamedThingAkcId):
-    pass
-
-
-class AssessmentAkcId(PlannedProcessAkcId):
     pass
 
 
@@ -388,7 +384,7 @@ class ModelingFrameworkAkcId(NamedThingAkcId):
     pass
 
 
-class SimulationAkcId(PlannedProcessAkcId):
+class SimulationAkcId(ProcessAkcId):
     pass
 
 
@@ -523,20 +519,6 @@ class Process(NamedThing):
     akc_id: Union[str, ProcessAkcId] = None
 
 @dataclass(repr=False)
-class PlannedProcess(Process):
-    """
-    A process to realize a plan.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["0000011"]
-    class_class_curie: ClassVar[str] = "OBI:0000011"
-    class_name: ClassVar[str] = "PlannedProcess"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PlannedProcess
-
-    akc_id: Union[str, PlannedProcessAkcId] = None
-
-@dataclass(repr=False)
 class PlanSpecification(NamedThing):
     """
     A plan with specified actions to meet some objectives.
@@ -625,7 +607,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Investigation(PlannedProcess):
+class Investigation(Process):
     """
     A scientific investigation.
     """
@@ -837,7 +819,7 @@ class Participant(NamedThing):
 
 
 @dataclass(repr=False)
-class StudyEvent(PlannedProcess):
+class StudyEvent(Process):
     """
     An event that is part of the study design of an investigation.
     """
@@ -949,7 +931,6 @@ class ImmuneExposure(LifeEvent):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneExposure
 
     akc_id: Union[str, ImmuneExposureAkcId] = None
-    life_event: Optional[Union[str, LifeEventAkcId]] = None
     exposure_material: Optional[Union[str, "ExposureMaterialOntology"]] = None
     disease: Optional[Union[str, "DiseaseOntology"]] = None
     disease_stage: Optional[str] = None
@@ -961,14 +942,48 @@ class ImmuneExposure(LifeEvent):
         if not isinstance(self.akc_id, ImmuneExposureAkcId):
             self.akc_id = ImmuneExposureAkcId(self.akc_id)
 
-        if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
-            self.life_event = LifeEventAkcId(self.life_event)
-
         if self.disease_stage is not None and not isinstance(self.disease_stage, str):
             self.disease_stage = str(self.disease_stage)
 
         if self.disease_severity is not None and not isinstance(self.disease_severity, str):
             self.disease_severity = str(self.disease_severity)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class Assessment(LifeEvent):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0002441"]
+    class_class_curie: ClassVar[str] = "OBI:0002441"
+    class_name: ClassVar[str] = "Assessment"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Assessment
+
+    akc_id: Union[str, AssessmentAkcId] = None
+    assessment_type: Optional[str] = None
+    target_entity_type: Optional[str] = None
+    value: Optional[str] = None
+    unit: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AssessmentAkcId):
+            self.akc_id = AssessmentAkcId(self.akc_id)
+
+        if self.assessment_type is not None and not isinstance(self.assessment_type, str):
+            self.assessment_type = str(self.assessment_type)
+
+        if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
+            self.target_entity_type = str(self.target_entity_type)
+
+        if self.value is not None and not isinstance(self.value, str):
+            self.value = str(self.value)
+
+        if self.unit is not None and not isinstance(self.unit, str):
+            self.unit = str(self.unit)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1033,7 +1048,7 @@ class SpecimenCollection(LifeEvent):
 
 
 @dataclass(repr=False)
-class SpecimenProcessing(PlannedProcess):
+class SpecimenProcessing(Process):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000094"]
@@ -1173,7 +1188,7 @@ class LibraryPreparationProcessing(SpecimenProcessing):
 
 
 @dataclass(repr=False)
-class Assay(PlannedProcess):
+class Assay(Process):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000070"]
@@ -1429,46 +1444,6 @@ class Conclusion(NamedThing):
 
         if self.experiment_type is not None and not isinstance(self.experiment_type, str):
             self.experiment_type = str(self.experiment_type)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
-class Assessment(PlannedProcess):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["0002441"]
-    class_class_curie: ClassVar[str] = "OBI:0002441"
-    class_name: ClassVar[str] = "Assessment"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Assessment
-
-    akc_id: Union[str, AssessmentAkcId] = None
-    life_event: Optional[Union[str, LifeEventAkcId]] = None
-    assessment_type: Optional[str] = None
-    target_entity_type: Optional[str] = None
-    value: Optional[str] = None
-    unit: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, AssessmentAkcId):
-            self.akc_id = AssessmentAkcId(self.akc_id)
-
-        if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
-            self.life_event = LifeEventAkcId(self.life_event)
-
-        if self.assessment_type is not None and not isinstance(self.assessment_type, str):
-            self.assessment_type = str(self.assessment_type)
-
-        if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
-            self.target_entity_type = str(self.target_entity_type)
-
-        if self.value is not None and not isinstance(self.value, str):
-            self.value = str(self.value)
-
-        if self.unit is not None and not isinstance(self.unit, str):
-            self.unit = str(self.unit)
 
         super().__post_init__(**kwargs)
 
@@ -1948,7 +1923,7 @@ class ModelingFramework(NamedThing):
 
 
 @dataclass(repr=False)
-class Simulation(PlannedProcess):
+class Simulation(Process):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = APOLLO_SV["00000070"]
@@ -5617,6 +5592,9 @@ slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curi
 slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
                    model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
 
+slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
+
 slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
 
@@ -5670,9 +5648,6 @@ slots.organism = Slot(uri=IAO['0000136'], name="organism", curie=IAO.curie('0000
 
 slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_type", curie=AK_SCHEMA.curie('experiment_type'),
                    model_uri=AK_SCHEMA.experiment_type, domain=None, range=Optional[str])
-
-slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
 
 slots.aa_hash = Slot(uri=AK_SCHEMA.aa_hash, name="aa_hash", curie=AK_SCHEMA.curie('aa_hash'),
                    model_uri=AK_SCHEMA.aa_hash, domain=None, range=Optional[str])

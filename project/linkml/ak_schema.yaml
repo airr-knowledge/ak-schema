@@ -1419,6 +1419,11 @@ slots:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
+  assessment_type:
+    name: assessment_type
+    description: The specific type of an assessment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slot_uri: rdf:type
   specimen_type:
     name: specimen_type
     description: The type of this specimen
@@ -1511,11 +1516,6 @@ slots:
     name: experiment_type
     description: The type of experiment that supports the conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
-  assessment_type:
-    name: assessment_type
-    description: The specific type of an assessment
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: rdf:type
   aa_hash:
     name: aa_hash
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5497,13 +5497,6 @@ classes:
     is_a: NamedThing
     abstract: true
     class_uri: BFO:0000015
-  PlannedProcess:
-    name: PlannedProcess
-    description: A process to realize a plan.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: Process
-    abstract: true
-    class_uri: OBI:0000011
   PlanSpecification:
     name: PlanSpecification
     description: A plan with specified actions to meet some objectives.
@@ -5634,7 +5627,7 @@ classes:
     name: Investigation
     description: A scientific investigation.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlannedProcess
+    is_a: Process
     slots:
     - investigation_type
     - archival_id
@@ -5693,7 +5686,7 @@ classes:
     name: StudyEvent
     description: An event that is part of the study design of an investigation.
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlannedProcess
+    is_a: Process
     slots:
     - study_arms
     class_uri: BFO:0000015
@@ -5718,11 +5711,20 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: LifeEvent
     slots:
-    - life_event
     - exposure_material
     - disease
     - disease_stage
     - disease_severity
+  Assessment:
+    name: Assessment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: LifeEvent
+    slots:
+    - assessment_type
+    - target_entity_type
+    - value
+    - unit
+    class_uri: OBI:0002441
   Specimen:
     name: Specimen
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5743,7 +5745,7 @@ classes:
   SpecimenProcessing:
     name: SpecimenProcessing
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlannedProcess
+    is_a: Process
     slots:
     - specimen
     class_uri: OBI:0000094
@@ -5774,7 +5776,7 @@ classes:
   Assay:
     name: Assay
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlannedProcess
+    is_a: Process
     slots:
     - specimen
     - specimen_processing
@@ -5830,17 +5832,6 @@ classes:
     - organism
     - experiment_type
     class_uri: OBI:0001909
-  Assessment:
-    name: Assessment
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlannedProcess
-    slots:
-    - life_event
-    - assessment_type
-    - target_entity_type
-    - value
-    - unit
-    class_uri: OBI:0002441
   ImmuneSystem:
     name: ImmuneSystem
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5973,7 +5964,7 @@ classes:
   Simulation:
     name: Simulation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: APOLLO_SV:00000070
   SimilarityCalculation:
     name: SimilarityCalculation
