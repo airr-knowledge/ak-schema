@@ -209,8 +209,8 @@
 <div class="mermaid"> classDiagram
     class SpecimenProcessing
     click SpecimenProcessing href "../SpecimenProcessing"
-      PlannedProcess &lt;|-- SpecimenProcessing
-        click PlannedProcess href "../PlannedProcess"
+      Process &lt;|-- SpecimenProcessing
+        click Process href "../Process"
 
 
       SpecimenProcessing &lt;|-- CellIsolationProcessing
@@ -241,12 +241,9 @@
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../Process/">Process</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>SpecimenProcessing</strong><ul>
 <li><a href="../CellIsolationProcessing/">CellIsolationProcessing</a></li>
 <li><a href="../LibraryPreparationProcessing/">LibraryPreparationProcessing</a> [ <a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a>]</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -366,7 +363,7 @@
 <details>
 <pre><code class="language-yaml">name: SpecimenProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 slots:
 - specimen
 class_uri: OBI:0000094
@@ -377,7 +374,7 @@ class_uri: OBI:0000094
 <details>
 <pre><code class="language-yaml">name: SpecimenProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 attributes:
   specimen:
     name: specimen

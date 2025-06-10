@@ -210,8 +210,8 @@
 <div class="mermaid"> classDiagram
     class Investigation
     click Investigation href "../Investigation"
-      PlannedProcess &lt;|-- Investigation
-        click PlannedProcess href "../PlannedProcess"
+      Process &lt;|-- Investigation
+        click Process href "../Process"
 
       Investigation : akc_id
 
@@ -288,10 +288,7 @@
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../Process/">Process</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>Investigation</strong></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -458,7 +455,7 @@
 <pre><code class="language-yaml">name: Investigation
 description: A scientific investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 slots:
 - investigation_type
 - archival_id
@@ -479,7 +476,7 @@ class_uri: OBI:0000066
 <pre><code class="language-yaml">name: Investigation
 description: A scientific investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 attributes:
   investigation_type:
     name: investigation_type

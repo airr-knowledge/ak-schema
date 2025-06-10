@@ -250,15 +250,6 @@
     click GeolocationOntology href "../GeolocationOntology"
 
 
-      ImmuneExposure : life_event
-
-
-
-
-    ImmuneExposure --&gt; "0..1" LifeEvent : life_event
-    click LifeEvent href "../LifeEvent"
-
-
       ImmuneExposure : life_event_type
 
 
@@ -332,12 +323,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../life_event/">life_event</a></td>
-<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
-<td>The life event corresponding to an immune exposure</td>
-<td>direct</td>
-</tr>
 <tr>
 <td><a href="../exposure_material/">exposure_material</a></td>
 <td>0..1 <br/> <a href="../ExposureMaterialOntology/">ExposureMaterialOntology</a></td>
@@ -488,7 +473,6 @@ description: An event involving the immune system of a study participant.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: LifeEvent
 slots:
-- life_event
 - exposure_material
 - disease
 - disease_stage
@@ -503,18 +487,6 @@ description: An event involving the immune system of a study participant.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: LifeEvent
 attributes:
-  life_event:
-    name: life_event
-    description: The life event corresponding to an immune exposure
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: life_event
-    owner: ImmuneExposure
-    domain_of:
-    - ImmuneExposure
-    - Specimen
-    - Assessment
-    range: LifeEvent
   exposure_material:
     name: exposure_material
     description: The material relevant to an immune exposure

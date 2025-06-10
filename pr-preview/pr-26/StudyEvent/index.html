@@ -210,8 +210,8 @@
 <div class="mermaid"> classDiagram
     class StudyEvent
     click StudyEvent href "../StudyEvent"
-      PlannedProcess &lt;|-- StudyEvent
-        click PlannedProcess href "../PlannedProcess"
+      Process &lt;|-- StudyEvent
+        click Process href "../Process"
 
       StudyEvent : akc_id
 
@@ -235,10 +235,7 @@
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../Process/">Process</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>StudyEvent</strong></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -313,6 +310,12 @@
 <td><a href="./">StudyEvent</a></td>
 </tr>
 <tr>
+<td><a href="../Assessment/">Assessment</a></td>
+<td><a href="../study_event/">study_event</a></td>
+<td>range</td>
+<td><a href="./">StudyEvent</a></td>
+</tr>
+<tr>
 <td><a href="../SpecimenCollection/">SpecimenCollection</a></td>
 <td><a href="../study_event/">study_event</a></td>
 <td>range</td>
@@ -351,7 +354,7 @@
 <pre><code class="language-yaml">name: StudyEvent
 description: An event that is part of the study design of an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 slots:
 - study_arms
 class_uri: BFO:0000015
@@ -363,7 +366,7 @@ class_uri: BFO:0000015
 <pre><code class="language-yaml">name: StudyEvent
 description: An event that is part of the study design of an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 attributes:
   study_arms:
     name: study_arms

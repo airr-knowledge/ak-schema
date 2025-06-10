@@ -209,8 +209,8 @@
 <div class="mermaid"> classDiagram
     class Assay
     click Assay href "../Assay"
-      PlannedProcess &lt;|-- Assay
-        click PlannedProcess href "../PlannedProcess"
+      Process &lt;|-- Assay
+        click Process href "../Process"
 
 
       Assay &lt;|-- AIRRSequencingAssay
@@ -258,13 +258,10 @@
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../Process/">Process</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
 <li><strong>Assay</strong><ul>
 <li><a href="../AIRRSequencingAssay/">AIRRSequencingAssay</a> [ <a href="../SequencingRun/">SequencingRun</a>]</li>
 <li><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></li>
 <li><a href="../AntibodyAntigenBindingAssay/">AntibodyAntigenBindingAssay</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -396,7 +393,7 @@
 <details>
 <pre><code class="language-yaml">name: Assay
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 slots:
 - specimen
 - specimen_processing
@@ -411,7 +408,7 @@ class_uri: OBI:0000070
 <details>
 <pre><code class="language-yaml">name: Assay
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 attributes:
   specimen:
     name: specimen
@@ -471,8 +468,8 @@ attributes:
     alias: target_entity_type
     owner: Assay
     domain_of:
-    - Assay
     - Assessment
+    - Assay
     range: string
   name:
     name: name
