@@ -20,7 +20,7 @@ classes:
       - specimen
 
   SpecimenProcessing:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: OBI:0000094 # material processing
     slots:
       - specimen
@@ -47,7 +47,7 @@ classes:
     class_uri: OBI:00000711 # library preparation
 
   Assay:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: OBI:0000070 # assay
     slots:
       - specimen # Specimen that the assay is applied to
@@ -97,16 +97,6 @@ classes:
       - data_location_value
       - organism
       - experiment_type
-
-  Assessment:
-    is_a: PlannedProcess
-    class_uri: OBI:0002441 # physical examination of an organism
-    slots:
-      - life_event
-      - assessment_type
-      - target_entity_type
-      - value
-      - unit
 
 slots:
   life_event:
@@ -175,6 +165,3 @@ slots:
   experiment_type:
     description: The type of experiment that supports the conclusion
 
-  assessment_type:
-    description: The specific type of an assessment
-    slot_uri: rdf:type

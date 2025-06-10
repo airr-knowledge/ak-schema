@@ -28,6 +28,6 @@ classes:
     class_uri: SBO:0000004 # modeling framework
 
   Simulation:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: APOLLO_SV:00000070 # simulation
 
