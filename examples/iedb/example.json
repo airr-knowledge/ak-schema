@@ -45,122 +45,122 @@
       "description": "study arm for assay 3480642",
       "investigation": "AKC:1"
     },
-    "AKC:12": {
-      "akc_id": "AKC:12",
+    "AKC:11": {
+      "akc_id": "AKC:11",
       "name": "arm 1 of 3480639",
       "description": "study arm for assay 3480639",
       "investigation": "AKC:1"
     },
-    "AKC:22": {
-      "akc_id": "AKC:22",
+    "AKC:20": {
+      "akc_id": "AKC:20",
       "name": "arm 1 of 3480641",
       "description": "study arm for assay 3480641",
       "investigation": "AKC:1"
     },
-    "AKC:32": {
-      "akc_id": "AKC:32",
+    "AKC:29": {
+      "akc_id": "AKC:29",
       "name": "arm 1 of 3480644",
       "description": "study arm for assay 3480644",
       "investigation": "AKC:1"
     },
-    "AKC:42": {
-      "akc_id": "AKC:42",
+    "AKC:38": {
+      "akc_id": "AKC:38",
       "name": "arm 1 of 3480640",
       "description": "study arm for assay 3480640",
       "investigation": "AKC:1"
     },
-    "AKC:52": {
-      "akc_id": "AKC:52",
+    "AKC:47": {
+      "akc_id": "AKC:47",
       "name": "arm 1 of 3480643",
       "description": "study arm for assay 3480643",
       "investigation": "AKC:1"
     },
-    "AKC:62": {
-      "akc_id": "AKC:62",
+    "AKC:56": {
+      "akc_id": "AKC:56",
       "name": "arm 1 of 3480645",
       "description": "study arm for assay 3480645",
       "investigation": "AKC:1"
     },
-    "AKC:72": {
-      "akc_id": "AKC:72",
+    "AKC:65": {
+      "akc_id": "AKC:65",
       "name": "arm 1 of 3480646",
       "description": "study arm for assay 3480646",
       "investigation": "AKC:1"
     },
-    "AKC:82": {
-      "akc_id": "AKC:82",
+    "AKC:74": {
+      "akc_id": "AKC:74",
       "name": "arm 1 of 3480647",
       "description": "study arm for assay 3480647",
       "investigation": "AKC:1"
     },
-    "AKC:92": {
-      "akc_id": "AKC:92",
+    "AKC:83": {
+      "akc_id": "AKC:83",
       "name": "arm 1 of 3480649",
       "description": "study arm for assay 3480649",
       "investigation": "AKC:1"
     },
-    "AKC:102": {
-      "akc_id": "AKC:102",
+    "AKC:92": {
+      "akc_id": "AKC:92",
       "name": "arm 1 of 3480650",
       "description": "study arm for assay 3480650",
       "investigation": "AKC:1"
     },
-    "AKC:112": {
-      "akc_id": "AKC:112",
+    "AKC:101": {
+      "akc_id": "AKC:101",
       "name": "arm 1 of 3480651",
       "description": "study arm for assay 3480651",
       "investigation": "AKC:1"
     },
-    "AKC:122": {
-      "akc_id": "AKC:122",
+    "AKC:110": {
+      "akc_id": "AKC:110",
       "name": "arm 1 of 3480655",
       "description": "study arm for assay 3480655",
       "investigation": "AKC:1"
     },
-    "AKC:132": {
-      "akc_id": "AKC:132",
+    "AKC:119": {
+      "akc_id": "AKC:119",
       "name": "arm 1 of 3480656",
       "description": "study arm for assay 3480656",
       "investigation": "AKC:1"
     },
-    "AKC:142": {
-      "akc_id": "AKC:142",
+    "AKC:128": {
+      "akc_id": "AKC:128",
       "name": "arm 1 of 3480658",
       "description": "study arm for assay 3480658",
       "investigation": "AKC:1"
     },
-    "AKC:152": {
-      "akc_id": "AKC:152",
+    "AKC:137": {
+      "akc_id": "AKC:137",
       "name": "arm 1 of 3480659",
       "description": "study arm for assay 3480659",
       "investigation": "AKC:1"
     },
-    "AKC:162": {
-      "akc_id": "AKC:162",
+    "AKC:146": {
+      "akc_id": "AKC:146",
       "name": "arm 1 of 3480660",
       "description": "study arm for assay 3480660",
       "investigation": "AKC:1"
     },
-    "AKC:172": {
-      "akc_id": "AKC:172",
+    "AKC:155": {
+      "akc_id": "AKC:155",
       "name": "arm 1 of 3480661",
       "description": "study arm for assay 3480661",
       "investigation": "AKC:1"
     },
-    "AKC:182": {
-      "akc_id": "AKC:182",
+    "AKC:164": {
+      "akc_id": "AKC:164",
       "name": "arm 1 of 3480662",
       "description": "study arm for assay 3480662",
       "investigation": "AKC:1"
     },
-    "AKC:192": {
-      "akc_id": "AKC:192",
+    "AKC:173": {
+      "akc_id": "AKC:173",
       "name": "arm 1 of 3480663",
       "description": "study arm for assay 3480663",
       "investigation": "AKC:1"
     },
-    "AKC:202": {
-      "akc_id": "AKC:202",
+    "AKC:182": {
+      "akc_id": "AKC:182",
       "name": "arm 1 of 3480664",
       "description": "study arm for assay 3480664",
       "investigation": "AKC:1"
@@ -175,68 +175,76 @@
         "AKC:2"
       ]
     },
-    "AKC:13": {
-      "akc_id": "AKC:13",
+    "AKC:12": {
+      "akc_id": "AKC:12",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:12"
+        "AKC:11"
       ]
     },
-    "AKC:23": {
-      "akc_id": "AKC:23",
+    "AKC:21": {
+      "akc_id": "AKC:21",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:22"
+        "AKC:20"
       ]
     },
-    "AKC:33": {
-      "akc_id": "AKC:33",
+    "AKC:30": {
+      "akc_id": "AKC:30",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:32"
+        "AKC:29"
       ]
     },
-    "AKC:43": {
-      "akc_id": "AKC:43",
+    "AKC:39": {
+      "akc_id": "AKC:39",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:42"
+        "AKC:38"
       ]
     },
-    "AKC:53": {
-      "akc_id": "AKC:53",
+    "AKC:48": {
+      "akc_id": "AKC:48",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:52"
+        "AKC:47"
       ]
     },
-    "AKC:63": {
-      "akc_id": "AKC:63",
+    "AKC:57": {
+      "akc_id": "AKC:57",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:62"
+        "AKC:56"
       ]
     },
-    "AKC:73": {
-      "akc_id": "AKC:73",
+    "AKC:66": {
+      "akc_id": "AKC:66",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:72"
+        "AKC:65"
       ]
     },
-    "AKC:83": {
-      "akc_id": "AKC:83",
+    "AKC:75": {
+      "akc_id": "AKC:75",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:82"
+        "AKC:74"
+      ]
+    },
+    "AKC:84": {
+      "akc_id": "AKC:84",
+      "name": "",
+      "description": "",
+      "study_arms": [
+        "AKC:83"
       ]
     },
     "AKC:93": {
@@ -247,68 +255,76 @@
         "AKC:92"
       ]
     },
-    "AKC:103": {
-      "akc_id": "AKC:103",
+    "AKC:102": {
+      "akc_id": "AKC:102",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:102"
+        "AKC:101"
       ]
     },
-    "AKC:113": {
-      "akc_id": "AKC:113",
+    "AKC:111": {
+      "akc_id": "AKC:111",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:112"
+        "AKC:110"
       ]
     },
-    "AKC:123": {
-      "akc_id": "AKC:123",
+    "AKC:120": {
+      "akc_id": "AKC:120",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:122"
+        "AKC:119"
       ]
     },
-    "AKC:133": {
-      "akc_id": "AKC:133",
+    "AKC:129": {
+      "akc_id": "AKC:129",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:132"
+        "AKC:128"
       ]
     },
-    "AKC:143": {
-      "akc_id": "AKC:143",
+    "AKC:138": {
+      "akc_id": "AKC:138",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:142"
+        "AKC:137"
       ]
     },
-    "AKC:153": {
-      "akc_id": "AKC:153",
+    "AKC:147": {
+      "akc_id": "AKC:147",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:152"
+        "AKC:146"
       ]
     },
-    "AKC:163": {
-      "akc_id": "AKC:163",
+    "AKC:156": {
+      "akc_id": "AKC:156",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:162"
+        "AKC:155"
       ]
     },
-    "AKC:173": {
-      "akc_id": "AKC:173",
+    "AKC:165": {
+      "akc_id": "AKC:165",
       "name": "",
       "description": "",
       "study_arms": [
-        "AKC:172"
+        "AKC:164"
+      ]
+    },
+    "AKC:174": {
+      "akc_id": "AKC:174",
+      "name": "",
+      "description": "",
+      "study_arms": [
+        "AKC:173"
       ]
     },
     "AKC:183": {
@@ -317,22 +333,6 @@
       "description": "",
       "study_arms": [
         "AKC:182"
-      ]
-    },
-    "AKC:193": {
-      "akc_id": "AKC:193",
-      "name": "",
-      "description": "",
-      "study_arms": [
-        "AKC:192"
-      ]
-    },
-    "AKC:203": {
-      "akc_id": "AKC:203",
-      "name": "",
-      "description": "",
-      "study_arms": [
-        "AKC:202"
       ]
     }
   },
@@ -343,122 +343,122 @@
       "description": "study participant for assay 3480642",
       "species": "Homo sapiens (human)"
     },
-    "AKC:14": {
-      "akc_id": "AKC:14",
+    "AKC:13": {
+      "akc_id": "AKC:13",
       "name": "participant 1 of 3480639",
       "description": "study participant for assay 3480639",
       "species": "Homo sapiens (human)"
     },
-    "AKC:24": {
-      "akc_id": "AKC:24",
+    "AKC:22": {
+      "akc_id": "AKC:22",
       "name": "participant 1 of 3480641",
       "description": "study participant for assay 3480641",
       "species": "Homo sapiens (human)"
     },
-    "AKC:34": {
-      "akc_id": "AKC:34",
+    "AKC:31": {
+      "akc_id": "AKC:31",
       "name": "participant 1 of 3480644",
       "description": "study participant for assay 3480644",
       "species": "Homo sapiens (human)"
     },
-    "AKC:44": {
-      "akc_id": "AKC:44",
+    "AKC:40": {
+      "akc_id": "AKC:40",
       "name": "participant 1 of 3480640",
       "description": "study participant for assay 3480640",
       "species": "Homo sapiens (human)"
     },
-    "AKC:54": {
-      "akc_id": "AKC:54",
+    "AKC:49": {
+      "akc_id": "AKC:49",
       "name": "participant 1 of 3480643",
       "description": "study participant for assay 3480643",
       "species": "Homo sapiens (human)"
     },
-    "AKC:64": {
-      "akc_id": "AKC:64",
+    "AKC:58": {
+      "akc_id": "AKC:58",
       "name": "participant 1 of 3480645",
       "description": "study participant for assay 3480645",
       "species": "Homo sapiens (human)"
     },
-    "AKC:74": {
-      "akc_id": "AKC:74",
+    "AKC:67": {
+      "akc_id": "AKC:67",
       "name": "participant 1 of 3480646",
       "description": "study participant for assay 3480646",
       "species": "Homo sapiens (human)"
     },
-    "AKC:84": {
-      "akc_id": "AKC:84",
+    "AKC:76": {
+      "akc_id": "AKC:76",
       "name": "participant 1 of 3480647",
       "description": "study participant for assay 3480647",
       "species": "Homo sapiens (human)"
     },
-    "AKC:94": {
-      "akc_id": "AKC:94",
+    "AKC:85": {
+      "akc_id": "AKC:85",
       "name": "participant 1 of 3480649",
       "description": "study participant for assay 3480649",
       "species": "Homo sapiens (human)"
     },
-    "AKC:104": {
-      "akc_id": "AKC:104",
+    "AKC:94": {
+      "akc_id": "AKC:94",
       "name": "participant 1 of 3480650",
       "description": "study participant for assay 3480650",
       "species": "Homo sapiens (human)"
     },
-    "AKC:114": {
-      "akc_id": "AKC:114",
+    "AKC:103": {
+      "akc_id": "AKC:103",
       "name": "participant 1 of 3480651",
       "description": "study participant for assay 3480651",
       "species": "Homo sapiens (human)"
     },
-    "AKC:124": {
-      "akc_id": "AKC:124",
+    "AKC:112": {
+      "akc_id": "AKC:112",
       "name": "participant 1 of 3480655",
       "description": "study participant for assay 3480655",
       "species": "Homo sapiens (human)"
     },
-    "AKC:134": {
-      "akc_id": "AKC:134",
+    "AKC:121": {
+      "akc_id": "AKC:121",
       "name": "participant 1 of 3480656",
       "description": "study participant for assay 3480656",
       "species": "Homo sapiens (human)"
     },
-    "AKC:144": {
-      "akc_id": "AKC:144",
+    "AKC:130": {
+      "akc_id": "AKC:130",
       "name": "participant 1 of 3480658",
       "description": "study participant for assay 3480658",
       "species": "Homo sapiens (human)"
     },
-    "AKC:154": {
-      "akc_id": "AKC:154",
+    "AKC:139": {
+      "akc_id": "AKC:139",
       "name": "participant 1 of 3480659",
       "description": "study participant for assay 3480659",
       "species": "Homo sapiens (human)"
     },
-    "AKC:164": {
-      "akc_id": "AKC:164",
+    "AKC:148": {
+      "akc_id": "AKC:148",
       "name": "participant 1 of 3480660",
       "description": "study participant for assay 3480660",
       "species": "Homo sapiens (human)"
     },
-    "AKC:174": {
-      "akc_id": "AKC:174",
+    "AKC:157": {
+      "akc_id": "AKC:157",
       "name": "participant 1 of 3480661",
       "description": "study participant for assay 3480661",
       "species": "Homo sapiens (human)"
     },
-    "AKC:184": {
-      "akc_id": "AKC:184",
+    "AKC:166": {
+      "akc_id": "AKC:166",
       "name": "participant 1 of 3480662",
       "description": "study participant for assay 3480662",
       "species": "Homo sapiens (human)"
     },
-    "AKC:194": {
-      "akc_id": "AKC:194",
+    "AKC:175": {
+      "akc_id": "AKC:175",
       "name": "participant 1 of 3480663",
       "description": "study participant for assay 3480663",
       "species": "Homo sapiens (human)"
     },
-    "AKC:204": {
-      "akc_id": "AKC:204",
+    "AKC:184": {
+      "akc_id": "AKC:184",
       "name": "participant 1 of 3480664",
       "description": "study participant for assay 3480664",
       "species": "Homo sapiens (human)"
@@ -467,695 +467,462 @@
   "life_events": {
     "AKC:5": {
       "akc_id": "AKC:5",
-      "name": "1st in vivo immune exposure event of assay 3480642",
-      "description": "participant 1 of assay 3480642 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
+      "type": "ImmuneExposure",
       "participant": "AKC:4",
-      "life_event_type": "Documented exposure without evidence for disease"
+      "life_event_type": "Documented exposure without evidence for disease",
+      "exposure_material": "Human gammaherpesvirus 4",
+      "disease": "healthy"
     },
     "AKC:6": {
       "akc_id": "AKC:6",
-      "name": "specimen collection event of assay 3480642",
-      "description": "specimen 1 was collected from participant 1 of assay 3480642 in this event",
-      "type": "LifeEvent",
+      "type": "SpecimenCollection",
       "participant": "AKC:4",
       "study_event": "AKC:3",
       "life_event_type": "specimen collection"
     },
+    "AKC:14": {
+      "akc_id": "AKC:14",
+      "type": "ImmuneExposure",
+      "participant": "AKC:13",
+      "life_event_type": "Documented exposure without evidence for disease",
+      "exposure_material": "Human betaherpesvirus 5",
+      "disease": "healthy"
+    },
     "AKC:15": {
       "akc_id": "AKC:15",
-      "name": "1st in vivo immune exposure event of assay 3480639",
-      "description": "participant 1 of assay 3480639 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:14",
-      "life_event_type": "Documented exposure without evidence for disease"
-    },
-    "AKC:16": {
-      "akc_id": "AKC:16",
-      "name": "specimen collection event of assay 3480639",
-      "description": "specimen 1 was collected from participant 1 of assay 3480639 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:14",
-      "study_event": "AKC:13",
+      "type": "SpecimenCollection",
+      "participant": "AKC:13",
+      "study_event": "AKC:12",
       "life_event_type": "specimen collection"
     },
-    "AKC:25": {
-      "akc_id": "AKC:25",
-      "name": "1st in vivo immune exposure event of assay 3480641",
-      "description": "participant 1 of assay 3480641 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:24",
-      "life_event_type": "Documented exposure without evidence for disease"
+    "AKC:23": {
+      "akc_id": "AKC:23",
+      "type": "ImmuneExposure",
+      "participant": "AKC:22",
+      "life_event_type": "Documented exposure without evidence for disease",
+      "exposure_material": "Human betaherpesvirus 5",
+      "disease": "healthy"
     },
-    "AKC:26": {
-      "akc_id": "AKC:26",
-      "name": "specimen collection event of assay 3480641",
-      "description": "specimen 1 was collected from participant 1 of assay 3480641 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:24",
-      "study_event": "AKC:23",
+    "AKC:24": {
+      "akc_id": "AKC:24",
+      "type": "SpecimenCollection",
+      "participant": "AKC:22",
+      "study_event": "AKC:21",
       "life_event_type": "specimen collection"
     },
-    "AKC:35": {
-      "akc_id": "AKC:35",
-      "name": "1st in vivo immune exposure event of assay 3480644",
-      "description": "participant 1 of assay 3480644 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:34",
-      "life_event_type": "Documented exposure without evidence for disease"
+    "AKC:32": {
+      "akc_id": "AKC:32",
+      "type": "ImmuneExposure",
+      "participant": "AKC:31",
+      "life_event_type": "Documented exposure without evidence for disease",
+      "exposure_material": "Human betaherpesvirus 5",
+      "disease": "healthy"
     },
-    "AKC:36": {
-      "akc_id": "AKC:36",
-      "name": "specimen collection event of assay 3480644",
-      "description": "specimen 1 was collected from participant 1 of assay 3480644 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:34",
-      "study_event": "AKC:33",
+    "AKC:33": {
+      "akc_id": "AKC:33",
+      "type": "SpecimenCollection",
+      "participant": "AKC:31",
+      "study_event": "AKC:30",
       "life_event_type": "specimen collection"
     },
-    "AKC:45": {
-      "akc_id": "AKC:45",
-      "name": "1st in vivo immune exposure event of assay 3480640",
-      "description": "participant 1 of assay 3480640 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:44",
-      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
+    "AKC:41": {
+      "akc_id": "AKC:41",
+      "type": "ImmuneExposure",
+      "participant": "AKC:40",
+      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
+      "exposure_material": "Influenza A virus",
+      "disease": "healthy"
     },
-    "AKC:46": {
-      "akc_id": "AKC:46",
-      "name": "specimen collection event of assay 3480640",
-      "description": "specimen 1 was collected from participant 1 of assay 3480640 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:44",
-      "study_event": "AKC:43",
+    "AKC:42": {
+      "akc_id": "AKC:42",
+      "type": "SpecimenCollection",
+      "participant": "AKC:40",
+      "study_event": "AKC:39",
       "life_event_type": "specimen collection"
     },
-    "AKC:55": {
-      "akc_id": "AKC:55",
-      "name": "1st in vivo immune exposure event of assay 3480643",
-      "description": "participant 1 of assay 3480643 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:54",
-      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
+    "AKC:50": {
+      "akc_id": "AKC:50",
+      "type": "ImmuneExposure",
+      "participant": "AKC:49",
+      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
+      "exposure_material": "Influenza A virus",
+      "disease": "healthy"
     },
-    "AKC:56": {
-      "akc_id": "AKC:56",
-      "name": "specimen collection event of assay 3480643",
-      "description": "specimen 1 was collected from participant 1 of assay 3480643 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:54",
-      "study_event": "AKC:53",
+    "AKC:51": {
+      "akc_id": "AKC:51",
+      "type": "SpecimenCollection",
+      "participant": "AKC:49",
+      "study_event": "AKC:48",
       "life_event_type": "specimen collection"
     },
-    "AKC:65": {
-      "akc_id": "AKC:65",
-      "name": "1st in vivo immune exposure event of assay 3480645",
-      "description": "participant 1 of assay 3480645 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:64",
-      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
+    "AKC:59": {
+      "akc_id": "AKC:59",
+      "type": "ImmuneExposure",
+      "participant": "AKC:58",
+      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
+      "exposure_material": "Influenza A virus",
+      "disease": "healthy"
     },
-    "AKC:66": {
-      "akc_id": "AKC:66",
-      "name": "specimen collection event of assay 3480645",
-      "description": "specimen 1 was collected from participant 1 of assay 3480645 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:64",
-      "study_event": "AKC:63",
+    "AKC:60": {
+      "akc_id": "AKC:60",
+      "type": "SpecimenCollection",
+      "participant": "AKC:58",
+      "study_event": "AKC:57",
       "life_event_type": "specimen collection"
     },
-    "AKC:75": {
-      "akc_id": "AKC:75",
-      "name": "1st in vivo immune exposure event of assay 3480646",
-      "description": "participant 1 of assay 3480646 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:74",
-      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease"
+    "AKC:68": {
+      "akc_id": "AKC:68",
+      "type": "ImmuneExposure",
+      "participant": "AKC:67",
+      "life_event_type": "Environmental exposure to endemic/ubiquitous agent without evidence for disease",
+      "exposure_material": "Influenza A virus",
+      "disease": "healthy"
     },
-    "AKC:76": {
-      "akc_id": "AKC:76",
-      "name": "specimen collection event of assay 3480646",
-      "description": "specimen 1 was collected from participant 1 of assay 3480646 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:74",
-      "study_event": "AKC:73",
+    "AKC:69": {
+      "akc_id": "AKC:69",
+      "type": "SpecimenCollection",
+      "participant": "AKC:67",
+      "study_event": "AKC:66",
       "life_event_type": "specimen collection"
     },
-    "AKC:85": {
-      "akc_id": "AKC:85",
-      "name": "1st in vivo immune exposure event of assay 3480647",
-      "description": "participant 1 of assay 3480647 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:84",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
+    "AKC:77": {
+      "akc_id": "AKC:77",
+      "type": "ImmuneExposure",
+      "participant": "AKC:76",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
+      "exposure_material": "Mycobacterium tuberculosis"
+    },
+    "AKC:78": {
+      "akc_id": "AKC:78",
+      "type": "SpecimenCollection",
+      "participant": "AKC:76",
+      "study_event": "AKC:75",
+      "life_event_type": "specimen collection"
     },
     "AKC:86": {
       "akc_id": "AKC:86",
-      "name": "specimen collection event of assay 3480647",
-      "description": "specimen 1 was collected from participant 1 of assay 3480647 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:84",
-      "study_event": "AKC:83",
+      "type": "ImmuneExposure",
+      "participant": "AKC:85",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
+      "exposure_material": "Mycobacterium tuberculosis"
+    },
+    "AKC:87": {
+      "akc_id": "AKC:87",
+      "type": "SpecimenCollection",
+      "participant": "AKC:85",
+      "study_event": "AKC:84",
       "life_event_type": "specimen collection"
     },
     "AKC:95": {
       "akc_id": "AKC:95",
-      "name": "1st in vivo immune exposure event of assay 3480649",
-      "description": "participant 1 of assay 3480649 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
+      "type": "ImmuneExposure",
       "participant": "AKC:94",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
+      "exposure_material": "Mycobacterium tuberculosis"
     },
     "AKC:96": {
       "akc_id": "AKC:96",
-      "name": "specimen collection event of assay 3480649",
-      "description": "specimen 1 was collected from participant 1 of assay 3480649 in this event",
-      "type": "LifeEvent",
+      "type": "SpecimenCollection",
       "participant": "AKC:94",
       "study_event": "AKC:93",
       "life_event_type": "specimen collection"
     },
+    "AKC:104": {
+      "akc_id": "AKC:104",
+      "type": "ImmuneExposure",
+      "participant": "AKC:103",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
+      "exposure_material": "Mycobacterium tuberculosis"
+    },
     "AKC:105": {
       "akc_id": "AKC:105",
-      "name": "1st in vivo immune exposure event of assay 3480650",
-      "description": "participant 1 of assay 3480650 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:104",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:106": {
-      "akc_id": "AKC:106",
-      "name": "specimen collection event of assay 3480650",
-      "description": "specimen 1 was collected from participant 1 of assay 3480650 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:104",
-      "study_event": "AKC:103",
+      "type": "SpecimenCollection",
+      "participant": "AKC:103",
+      "study_event": "AKC:102",
       "life_event_type": "specimen collection"
     },
-    "AKC:115": {
-      "akc_id": "AKC:115",
-      "name": "1st in vivo immune exposure event of assay 3480651",
-      "description": "participant 1 of assay 3480651 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:114",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:116": {
-      "akc_id": "AKC:116",
-      "name": "specimen collection event of assay 3480651",
-      "description": "specimen 1 was collected from participant 1 of assay 3480651 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:114",
-      "study_event": "AKC:113",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:125": {
-      "akc_id": "AKC:125",
-      "name": "1st in vivo immune exposure event of assay 3480655",
-      "description": "participant 1 of assay 3480655 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:124",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:126": {
-      "akc_id": "AKC:126",
-      "name": "specimen collection event of assay 3480655",
-      "description": "specimen 1 was collected from participant 1 of assay 3480655 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:124",
-      "study_event": "AKC:123",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:135": {
-      "akc_id": "AKC:135",
-      "name": "1st in vivo immune exposure event of assay 3480656",
-      "description": "participant 1 of assay 3480656 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:134",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:136": {
-      "akc_id": "AKC:136",
-      "name": "specimen collection event of assay 3480656",
-      "description": "specimen 1 was collected from participant 1 of assay 3480656 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:134",
-      "study_event": "AKC:133",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:145": {
-      "akc_id": "AKC:145",
-      "name": "1st in vivo immune exposure event of assay 3480658",
-      "description": "participant 1 of assay 3480658 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:144",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:146": {
-      "akc_id": "AKC:146",
-      "name": "specimen collection event of assay 3480658",
-      "description": "specimen 1 was collected from participant 1 of assay 3480658 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:144",
-      "study_event": "AKC:143",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:155": {
-      "akc_id": "AKC:155",
-      "name": "1st in vivo immune exposure event of assay 3480659",
-      "description": "participant 1 of assay 3480659 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:154",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:156": {
-      "akc_id": "AKC:156",
-      "name": "specimen collection event of assay 3480659",
-      "description": "specimen 1 was collected from participant 1 of assay 3480659 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:154",
-      "study_event": "AKC:153",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:165": {
-      "akc_id": "AKC:165",
-      "name": "1st in vivo immune exposure event of assay 3480660",
-      "description": "participant 1 of assay 3480660 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:164",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:166": {
-      "akc_id": "AKC:166",
-      "name": "specimen collection event of assay 3480660",
-      "description": "specimen 1 was collected from participant 1 of assay 3480660 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:164",
-      "study_event": "AKC:163",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:175": {
-      "akc_id": "AKC:175",
-      "name": "1st in vivo immune exposure event of assay 3480661",
-      "description": "participant 1 of assay 3480661 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:174",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:176": {
-      "akc_id": "AKC:176",
-      "name": "specimen collection event of assay 3480661",
-      "description": "specimen 1 was collected from participant 1 of assay 3480661 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:174",
-      "study_event": "AKC:173",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:185": {
-      "akc_id": "AKC:185",
-      "name": "1st in vivo immune exposure event of assay 3480662",
-      "description": "participant 1 of assay 3480662 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:184",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:186": {
-      "akc_id": "AKC:186",
-      "name": "specimen collection event of assay 3480662",
-      "description": "specimen 1 was collected from participant 1 of assay 3480662 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:184",
-      "study_event": "AKC:183",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:195": {
-      "akc_id": "AKC:195",
-      "name": "1st in vivo immune exposure event of assay 3480663",
-      "description": "participant 1 of assay 3480663 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:194",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:196": {
-      "akc_id": "AKC:196",
-      "name": "specimen collection event of assay 3480663",
-      "description": "specimen 1 was collected from participant 1 of assay 3480663 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:194",
-      "study_event": "AKC:193",
-      "life_event_type": "specimen collection"
-    },
-    "AKC:205": {
-      "akc_id": "AKC:205",
-      "name": "1st in vivo immune exposure event of assay 3480664",
-      "description": "participant 1 of assay 3480664 participated in this 1st in vivo immune exposure event",
-      "type": "LifeEvent",
-      "participant": "AKC:204",
-      "life_event_type": "Exposure with existing immune reactivity without evidence for disease"
-    },
-    "AKC:206": {
-      "akc_id": "AKC:206",
-      "name": "specimen collection event of assay 3480664",
-      "description": "specimen 1 was collected from participant 1 of assay 3480664 in this event",
-      "type": "LifeEvent",
-      "participant": "AKC:204",
-      "study_event": "AKC:203",
-      "life_event_type": "specimen collection"
-    }
-  },
-  "immune_exposures": {
-    "AKC:7": {
-      "akc_id": "AKC:7",
-      "name": "details of 1st in vivo immune exposure event of assay 3480642",
-      "description": "participant 1 of assay 3480642 participated in this 1st in vivo immune exposure event, with these details",
+    "AKC:113": {
+      "akc_id": "AKC:113",
       "type": "ImmuneExposure",
-      "life_event": "AKC:5",
-      "exposure_material": "Human gammaherpesvirus 4",
-      "disease": "healthy"
-    },
-    "AKC:17": {
-      "akc_id": "AKC:17",
-      "name": "details of 1st in vivo immune exposure event of assay 3480639",
-      "description": "participant 1 of assay 3480639 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:15",
-      "exposure_material": "Human betaherpesvirus 5",
-      "disease": "healthy"
-    },
-    "AKC:27": {
-      "akc_id": "AKC:27",
-      "name": "details of 1st in vivo immune exposure event of assay 3480641",
-      "description": "participant 1 of assay 3480641 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:25",
-      "exposure_material": "Human betaherpesvirus 5",
-      "disease": "healthy"
-    },
-    "AKC:37": {
-      "akc_id": "AKC:37",
-      "name": "details of 1st in vivo immune exposure event of assay 3480644",
-      "description": "participant 1 of assay 3480644 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:35",
-      "exposure_material": "Human betaherpesvirus 5",
-      "disease": "healthy"
-    },
-    "AKC:47": {
-      "akc_id": "AKC:47",
-      "name": "details of 1st in vivo immune exposure event of assay 3480640",
-      "description": "participant 1 of assay 3480640 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:45",
-      "exposure_material": "Influenza A virus",
-      "disease": "healthy"
-    },
-    "AKC:57": {
-      "akc_id": "AKC:57",
-      "name": "details of 1st in vivo immune exposure event of assay 3480643",
-      "description": "participant 1 of assay 3480643 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:55",
-      "exposure_material": "Influenza A virus",
-      "disease": "healthy"
-    },
-    "AKC:67": {
-      "akc_id": "AKC:67",
-      "name": "details of 1st in vivo immune exposure event of assay 3480645",
-      "description": "participant 1 of assay 3480645 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:65",
-      "exposure_material": "Influenza A virus",
-      "disease": "healthy"
-    },
-    "AKC:77": {
-      "akc_id": "AKC:77",
-      "name": "details of 1st in vivo immune exposure event of assay 3480646",
-      "description": "participant 1 of assay 3480646 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:75",
-      "exposure_material": "Influenza A virus",
-      "disease": "healthy"
-    },
-    "AKC:87": {
-      "akc_id": "AKC:87",
-      "name": "details of 1st in vivo immune exposure event of assay 3480647",
-      "description": "participant 1 of assay 3480647 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:85",
+      "participant": "AKC:112",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:97": {
-      "akc_id": "AKC:97",
-      "name": "details of 1st in vivo immune exposure event of assay 3480649",
-      "description": "participant 1 of assay 3480649 participated in this 1st in vivo immune exposure event, with these details",
+    "AKC:114": {
+      "akc_id": "AKC:114",
+      "type": "SpecimenCollection",
+      "participant": "AKC:112",
+      "study_event": "AKC:111",
+      "life_event_type": "specimen collection"
+    },
+    "AKC:122": {
+      "akc_id": "AKC:122",
       "type": "ImmuneExposure",
-      "life_event": "AKC:95",
+      "participant": "AKC:121",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:107": {
-      "akc_id": "AKC:107",
-      "name": "details of 1st in vivo immune exposure event of assay 3480650",
-      "description": "participant 1 of assay 3480650 participated in this 1st in vivo immune exposure event, with these details",
+    "AKC:123": {
+      "akc_id": "AKC:123",
+      "type": "SpecimenCollection",
+      "participant": "AKC:121",
+      "study_event": "AKC:120",
+      "life_event_type": "specimen collection"
+    },
+    "AKC:131": {
+      "akc_id": "AKC:131",
       "type": "ImmuneExposure",
-      "life_event": "AKC:105",
+      "participant": "AKC:130",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:117": {
-      "akc_id": "AKC:117",
-      "name": "details of 1st in vivo immune exposure event of assay 3480651",
-      "description": "participant 1 of assay 3480651 participated in this 1st in vivo immune exposure event, with these details",
+    "AKC:132": {
+      "akc_id": "AKC:132",
+      "type": "SpecimenCollection",
+      "participant": "AKC:130",
+      "study_event": "AKC:129",
+      "life_event_type": "specimen collection"
+    },
+    "AKC:140": {
+      "akc_id": "AKC:140",
       "type": "ImmuneExposure",
-      "life_event": "AKC:115",
+      "participant": "AKC:139",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:127": {
-      "akc_id": "AKC:127",
-      "name": "details of 1st in vivo immune exposure event of assay 3480655",
-      "description": "participant 1 of assay 3480655 participated in this 1st in vivo immune exposure event, with these details",
+    "AKC:141": {
+      "akc_id": "AKC:141",
+      "type": "SpecimenCollection",
+      "participant": "AKC:139",
+      "study_event": "AKC:138",
+      "life_event_type": "specimen collection"
+    },
+    "AKC:149": {
+      "akc_id": "AKC:149",
       "type": "ImmuneExposure",
-      "life_event": "AKC:125",
+      "participant": "AKC:148",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:137": {
-      "akc_id": "AKC:137",
-      "name": "details of 1st in vivo immune exposure event of assay 3480656",
-      "description": "participant 1 of assay 3480656 participated in this 1st in vivo immune exposure event, with these details",
+    "AKC:150": {
+      "akc_id": "AKC:150",
+      "type": "SpecimenCollection",
+      "participant": "AKC:148",
+      "study_event": "AKC:147",
+      "life_event_type": "specimen collection"
+    },
+    "AKC:158": {
+      "akc_id": "AKC:158",
       "type": "ImmuneExposure",
-      "life_event": "AKC:135",
+      "participant": "AKC:157",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:147": {
-      "akc_id": "AKC:147",
-      "name": "details of 1st in vivo immune exposure event of assay 3480658",
-      "description": "participant 1 of assay 3480658 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:145",
-      "exposure_material": "Mycobacterium tuberculosis"
-    },
-    "AKC:157": {
-      "akc_id": "AKC:157",
-      "name": "details of 1st in vivo immune exposure event of assay 3480659",
-      "description": "participant 1 of assay 3480659 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:155",
-      "exposure_material": "Mycobacterium tuberculosis"
+    "AKC:159": {
+      "akc_id": "AKC:159",
+      "type": "SpecimenCollection",
+      "participant": "AKC:157",
+      "study_event": "AKC:156",
+      "life_event_type": "specimen collection"
     },
     "AKC:167": {
       "akc_id": "AKC:167",
-      "name": "details of 1st in vivo immune exposure event of assay 3480660",
-      "description": "participant 1 of assay 3480660 participated in this 1st in vivo immune exposure event, with these details",
       "type": "ImmuneExposure",
-      "life_event": "AKC:165",
+      "participant": "AKC:166",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
+      "exposure_material": "Mycobacterium tuberculosis"
+    },
+    "AKC:168": {
+      "akc_id": "AKC:168",
+      "type": "SpecimenCollection",
+      "participant": "AKC:166",
+      "study_event": "AKC:165",
+      "life_event_type": "specimen collection"
+    },
+    "AKC:176": {
+      "akc_id": "AKC:176",
+      "type": "ImmuneExposure",
+      "participant": "AKC:175",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
     "AKC:177": {
       "akc_id": "AKC:177",
-      "name": "details of 1st in vivo immune exposure event of assay 3480661",
-      "description": "participant 1 of assay 3480661 participated in this 1st in vivo immune exposure event, with these details",
+      "type": "SpecimenCollection",
+      "participant": "AKC:175",
+      "study_event": "AKC:174",
+      "life_event_type": "specimen collection"
+    },
+    "AKC:185": {
+      "akc_id": "AKC:185",
       "type": "ImmuneExposure",
-      "life_event": "AKC:175",
+      "participant": "AKC:184",
+      "life_event_type": "Exposure with existing immune reactivity without evidence for disease",
       "exposure_material": "Mycobacterium tuberculosis"
     },
-    "AKC:187": {
-      "akc_id": "AKC:187",
-      "name": "details of 1st in vivo immune exposure event of assay 3480662",
-      "description": "participant 1 of assay 3480662 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:185",
-      "exposure_material": "Mycobacterium tuberculosis"
-    },
-    "AKC:197": {
-      "akc_id": "AKC:197",
-      "name": "details of 1st in vivo immune exposure event of assay 3480663",
-      "description": "participant 1 of assay 3480663 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:195",
-      "exposure_material": "Mycobacterium tuberculosis"
-    },
-    "AKC:207": {
-      "akc_id": "AKC:207",
-      "name": "details of 1st in vivo immune exposure event of assay 3480664",
-      "description": "participant 1 of assay 3480664 participated in this 1st in vivo immune exposure event, with these details",
-      "type": "ImmuneExposure",
-      "life_event": "AKC:205",
-      "exposure_material": "Mycobacterium tuberculosis"
+    "AKC:186": {
+      "akc_id": "AKC:186",
+      "type": "SpecimenCollection",
+      "participant": "AKC:184",
+      "study_event": "AKC:183",
+      "life_event_type": "specimen collection"
     }
   },
   "specimens": {
-    "AKC:8": {
-      "akc_id": "AKC:8",
+    "AKC:7": {
+      "akc_id": "AKC:7",
       "name": "specimen 1 of assay 3480642",
       "description": "specimen 1 from participant 1 of assay 3480642",
       "life_event": "AKC:6",
       "tissue": "Blood"
     },
-    "AKC:18": {
-      "akc_id": "AKC:18",
+    "AKC:16": {
+      "akc_id": "AKC:16",
       "name": "specimen 1 of assay 3480639",
       "description": "specimen 1 from participant 1 of assay 3480639",
-      "life_event": "AKC:16",
+      "life_event": "AKC:15",
       "tissue": "Blood"
     },
-    "AKC:28": {
-      "akc_id": "AKC:28",
+    "AKC:25": {
+      "akc_id": "AKC:25",
       "name": "specimen 1 of assay 3480641",
       "description": "specimen 1 from participant 1 of assay 3480641",
-      "life_event": "AKC:26",
+      "life_event": "AKC:24",
       "tissue": "Blood"
     },
-    "AKC:38": {
-      "akc_id": "AKC:38",
+    "AKC:34": {
+      "akc_id": "AKC:34",
       "name": "specimen 1 of assay 3480644",
       "description": "specimen 1 from participant 1 of assay 3480644",
-      "life_event": "AKC:36",
+      "life_event": "AKC:33",
       "tissue": "Blood"
     },
-    "AKC:48": {
-      "akc_id": "AKC:48",
+    "AKC:43": {
+      "akc_id": "AKC:43",
       "name": "specimen 1 of assay 3480640",
       "description": "specimen 1 from participant 1 of assay 3480640",
-      "life_event": "AKC:46",
+      "life_event": "AKC:42",
       "tissue": "Blood"
     },
-    "AKC:58": {
-      "akc_id": "AKC:58",
+    "AKC:52": {
+      "akc_id": "AKC:52",
       "name": "specimen 1 of assay 3480643",
       "description": "specimen 1 from participant 1 of assay 3480643",
-      "life_event": "AKC:56",
+      "life_event": "AKC:51",
       "tissue": "Blood"
     },
-    "AKC:68": {
-      "akc_id": "AKC:68",
+    "AKC:61": {
+      "akc_id": "AKC:61",
       "name": "specimen 1 of assay 3480645",
       "description": "specimen 1 from participant 1 of assay 3480645",
-      "life_event": "AKC:66",
+      "life_event": "AKC:60",
       "tissue": "Blood"
     },
-    "AKC:78": {
-      "akc_id": "AKC:78",
+    "AKC:70": {
+      "akc_id": "AKC:70",
       "name": "specimen 1 of assay 3480646",
       "description": "specimen 1 from participant 1 of assay 3480646",
-      "life_event": "AKC:76",
+      "life_event": "AKC:69",
       "tissue": "Lymph Node"
+    },
+    "AKC:79": {
+      "akc_id": "AKC:79",
+      "name": "specimen 1 of assay 3480647",
+      "description": "specimen 1 from participant 1 of assay 3480647",
+      "life_event": "AKC:78",
+      "tissue": "Lymphoid"
     },
     "AKC:88": {
       "akc_id": "AKC:88",
-      "name": "specimen 1 of assay 3480647",
-      "description": "specimen 1 from participant 1 of assay 3480647",
-      "life_event": "AKC:86",
-      "tissue": "Lymphoid"
-    },
-    "AKC:98": {
-      "akc_id": "AKC:98",
       "name": "specimen 1 of assay 3480649",
       "description": "specimen 1 from participant 1 of assay 3480649",
+      "life_event": "AKC:87",
+      "tissue": "Lymphoid"
+    },
+    "AKC:97": {
+      "akc_id": "AKC:97",
+      "name": "specimen 1 of assay 3480650",
+      "description": "specimen 1 from participant 1 of assay 3480650",
       "life_event": "AKC:96",
       "tissue": "Lymphoid"
     },
-    "AKC:108": {
-      "akc_id": "AKC:108",
-      "name": "specimen 1 of assay 3480650",
-      "description": "specimen 1 from participant 1 of assay 3480650",
-      "life_event": "AKC:106",
-      "tissue": "Lymphoid"
-    },
-    "AKC:118": {
-      "akc_id": "AKC:118",
+    "AKC:106": {
+      "akc_id": "AKC:106",
       "name": "specimen 1 of assay 3480651",
       "description": "specimen 1 from participant 1 of assay 3480651",
-      "life_event": "AKC:116",
+      "life_event": "AKC:105",
       "tissue": "Lymphoid"
     },
-    "AKC:128": {
-      "akc_id": "AKC:128",
+    "AKC:115": {
+      "akc_id": "AKC:115",
       "name": "specimen 1 of assay 3480655",
       "description": "specimen 1 from participant 1 of assay 3480655",
-      "life_event": "AKC:126",
+      "life_event": "AKC:114",
       "tissue": "Lymphoid"
     },
-    "AKC:138": {
-      "akc_id": "AKC:138",
+    "AKC:124": {
+      "akc_id": "AKC:124",
       "name": "specimen 1 of assay 3480656",
       "description": "specimen 1 from participant 1 of assay 3480656",
-      "life_event": "AKC:136",
+      "life_event": "AKC:123",
       "tissue": "Lymphoid"
     },
-    "AKC:148": {
-      "akc_id": "AKC:148",
+    "AKC:133": {
+      "akc_id": "AKC:133",
       "name": "specimen 1 of assay 3480658",
       "description": "specimen 1 from participant 1 of assay 3480658",
-      "life_event": "AKC:146",
+      "life_event": "AKC:132",
       "tissue": "Lymphoid"
     },
-    "AKC:158": {
-      "akc_id": "AKC:158",
+    "AKC:142": {
+      "akc_id": "AKC:142",
       "name": "specimen 1 of assay 3480659",
       "description": "specimen 1 from participant 1 of assay 3480659",
-      "life_event": "AKC:156",
+      "life_event": "AKC:141",
       "tissue": "Lymphoid"
     },
-    "AKC:168": {
-      "akc_id": "AKC:168",
+    "AKC:151": {
+      "akc_id": "AKC:151",
       "name": "specimen 1 of assay 3480660",
       "description": "specimen 1 from participant 1 of assay 3480660",
-      "life_event": "AKC:166",
+      "life_event": "AKC:150",
+      "tissue": "Lymphoid"
+    },
+    "AKC:160": {
+      "akc_id": "AKC:160",
+      "name": "specimen 1 of assay 3480661",
+      "description": "specimen 1 from participant 1 of assay 3480661",
+      "life_event": "AKC:159",
+      "tissue": "Lymphoid"
+    },
+    "AKC:169": {
+      "akc_id": "AKC:169",
+      "name": "specimen 1 of assay 3480662",
+      "description": "specimen 1 from participant 1 of assay 3480662",
+      "life_event": "AKC:168",
       "tissue": "Lymphoid"
     },
     "AKC:178": {
       "akc_id": "AKC:178",
-      "name": "specimen 1 of assay 3480661",
-      "description": "specimen 1 from participant 1 of assay 3480661",
-      "life_event": "AKC:176",
-      "tissue": "Lymphoid"
-    },
-    "AKC:188": {
-      "akc_id": "AKC:188",
-      "name": "specimen 1 of assay 3480662",
-      "description": "specimen 1 from participant 1 of assay 3480662",
-      "life_event": "AKC:186",
-      "tissue": "Lymphoid"
-    },
-    "AKC:198": {
-      "akc_id": "AKC:198",
       "name": "specimen 1 of assay 3480663",
       "description": "specimen 1 from participant 1 of assay 3480663",
-      "life_event": "AKC:196",
+      "life_event": "AKC:177",
       "tissue": "Lymphoid"
     },
-    "AKC:208": {
-      "akc_id": "AKC:208",
+    "AKC:187": {
+      "akc_id": "AKC:187",
       "name": "specimen 1 of assay 3480664",
       "description": "specimen 1 from participant 1 of assay 3480664",
-      "life_event": "AKC:206",
+      "life_event": "AKC:186",
       "tissue": "Lymphoid"
     }
   },
   "assays": {
-    "AKC:9": {
-      "akc_id": "AKC:9",
+    "AKC:8": {
+      "akc_id": "AKC:8",
       "name": "assay 3480642",
       "description": "assay 3480642 has specified input specimen 1",
-      "specimen": "AKC:8",
+      "specimen": "AKC:7",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:20788",
@@ -1852,11 +1619,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:19": {
-      "akc_id": "AKC:19",
+    "AKC:17": {
+      "akc_id": "AKC:17",
       "name": "assay 3480639",
       "description": "assay 3480639 has specified input specimen 1",
-      "specimen": "AKC:18",
+      "specimen": "AKC:16",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:71290",
@@ -2142,11 +1909,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:29": {
-      "akc_id": "AKC:29",
+    "AKC:26": {
+      "akc_id": "AKC:26",
       "name": "assay 3480641",
       "description": "assay 3480641 has specified input specimen 1",
-      "specimen": "AKC:28",
+      "specimen": "AKC:25",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:44920",
@@ -2270,11 +2037,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:39": {
-      "akc_id": "AKC:39",
+    "AKC:35": {
+      "akc_id": "AKC:35",
       "name": "assay 3480644",
       "description": "assay 3480644 has specified input specimen 1",
-      "specimen": "AKC:38",
+      "specimen": "AKC:34",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:65748",
@@ -4424,11 +4191,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:49": {
-      "akc_id": "AKC:49",
+    "AKC:44": {
+      "akc_id": "AKC:44",
       "name": "assay 3480640",
       "description": "assay 3480640 has specified input specimen 1",
-      "specimen": "AKC:48",
+      "specimen": "AKC:43",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:7136",
@@ -4461,11 +4228,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:59": {
-      "akc_id": "AKC:59",
+    "AKC:53": {
+      "akc_id": "AKC:53",
       "name": "assay 3480643",
       "description": "assay 3480643 has specified input specimen 1",
-      "specimen": "AKC:58",
+      "specimen": "AKC:52",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:20354",
@@ -5062,11 +4829,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:69": {
-      "akc_id": "AKC:69",
+    "AKC:62": {
+      "akc_id": "AKC:62",
       "name": "assay 3480645",
       "description": "assay 3480645 has specified input specimen 1",
-      "specimen": "AKC:68",
+      "specimen": "AKC:61",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:38688",
@@ -7216,11 +6983,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:79": {
-      "akc_id": "AKC:79",
+    "AKC:71": {
+      "akc_id": "AKC:71",
       "name": "assay 3480646",
       "description": "assay 3480646 has specified input specimen 1",
-      "specimen": "AKC:78",
+      "specimen": "AKC:70",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:1110179",
       "epitope": "iedb_epitope:48237",
@@ -7440,11 +7207,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:89": {
-      "akc_id": "AKC:89",
+    "AKC:80": {
+      "akc_id": "AKC:80",
       "name": "assay 3480647",
       "description": "assay 3480647 has specified input specimen 1",
-      "specimen": "AKC:88",
+      "specimen": "AKC:79",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:62799",
@@ -7455,11 +7222,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:99": {
-      "akc_id": "AKC:99",
+    "AKC:89": {
+      "akc_id": "AKC:89",
       "name": "assay 3480649",
       "description": "assay 3480649 has specified input specimen 1",
-      "specimen": "AKC:98",
+      "specimen": "AKC:88",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179628",
@@ -7477,11 +7244,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:109": {
-      "akc_id": "AKC:109",
+    "AKC:98": {
+      "akc_id": "AKC:98",
       "name": "assay 3480650",
       "description": "assay 3480650 has specified input specimen 1",
-      "specimen": "AKC:108",
+      "specimen": "AKC:97",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179351",
@@ -7493,11 +7260,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:119": {
-      "akc_id": "AKC:119",
+    "AKC:107": {
+      "akc_id": "AKC:107",
       "name": "assay 3480651",
       "description": "assay 3480651 has specified input specimen 1",
-      "specimen": "AKC:118",
+      "specimen": "AKC:106",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179254",
@@ -7515,11 +7282,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:129": {
-      "akc_id": "AKC:129",
+    "AKC:116": {
+      "akc_id": "AKC:116",
       "name": "assay 3480655",
       "description": "assay 3480655 has specified input specimen 1",
-      "specimen": "AKC:128",
+      "specimen": "AKC:115",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179398",
@@ -7531,11 +7298,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:139": {
-      "akc_id": "AKC:139",
+    "AKC:125": {
+      "akc_id": "AKC:125",
       "name": "assay 3480656",
       "description": "assay 3480656 has specified input specimen 1",
-      "specimen": "AKC:138",
+      "specimen": "AKC:124",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:174021",
@@ -7547,11 +7314,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:149": {
-      "akc_id": "AKC:149",
+    "AKC:134": {
+      "akc_id": "AKC:134",
       "name": "assay 3480658",
       "description": "assay 3480658 has specified input specimen 1",
-      "specimen": "AKC:148",
+      "specimen": "AKC:133",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:49440",
@@ -7563,11 +7330,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:159": {
-      "akc_id": "AKC:159",
+    "AKC:143": {
+      "akc_id": "AKC:143",
       "name": "assay 3480659",
       "description": "assay 3480659 has specified input specimen 1",
-      "specimen": "AKC:158",
+      "specimen": "AKC:142",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:173948",
@@ -7579,11 +7346,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:169": {
-      "akc_id": "AKC:169",
+    "AKC:152": {
+      "akc_id": "AKC:152",
       "name": "assay 3480660",
       "description": "assay 3480660 has specified input specimen 1",
-      "specimen": "AKC:168",
+      "specimen": "AKC:151",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:106658",
@@ -7593,11 +7360,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:179": {
-      "akc_id": "AKC:179",
+    "AKC:161": {
+      "akc_id": "AKC:161",
       "name": "assay 3480661",
       "description": "assay 3480661 has specified input specimen 1",
-      "specimen": "AKC:178",
+      "specimen": "AKC:160",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:179276",
@@ -7607,11 +7374,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:189": {
-      "akc_id": "AKC:189",
+    "AKC:170": {
+      "akc_id": "AKC:170",
       "name": "assay 3480662",
       "description": "assay 3480662 has specified input specimen 1",
-      "specimen": "AKC:188",
+      "specimen": "AKC:169",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:501191",
@@ -7621,11 +7388,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:199": {
-      "akc_id": "AKC:199",
+    "AKC:179": {
+      "akc_id": "AKC:179",
       "name": "assay 3480663",
       "description": "assay 3480663 has specified input specimen 1",
-      "specimen": "AKC:198",
+      "specimen": "AKC:178",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:505",
@@ -7635,11 +7402,11 @@
       ],
       "value": "Positive"
     },
-    "AKC:209": {
-      "akc_id": "AKC:209",
+    "AKC:188": {
+      "akc_id": "AKC:188",
       "name": "assay 3480664",
       "description": "assay 3480664 has specified input specimen 1",
-      "specimen": "AKC:208",
+      "specimen": "AKC:187",
       "type": "TCellReceptorEpitopeBindingAssay",
       "assay_type": "OBI:0001407",
       "epitope": "iedb_epitope:161666",
@@ -7651,300 +7418,315 @@
     }
   },
   "datasets": {
-    "AKC:10": {
-      "akc_id": "AKC:10",
+    "AKC:9": {
+      "akc_id": "AKC:9",
       "name": "dataset 1 about assay 3480642",
       "description": "dataset 1 is about assay 3480642",
       "assays": [
-        "AKC:9"
+        "AKC:8"
       ]
     },
-    "AKC:20": {
-      "akc_id": "AKC:20",
+    "AKC:18": {
+      "akc_id": "AKC:18",
       "name": "dataset 1 about assay 3480639",
       "description": "dataset 1 is about assay 3480639",
       "assays": [
-        "AKC:19"
+        "AKC:17"
       ]
     },
-    "AKC:30": {
-      "akc_id": "AKC:30",
+    "AKC:27": {
+      "akc_id": "AKC:27",
       "name": "dataset 1 about assay 3480641",
       "description": "dataset 1 is about assay 3480641",
       "assays": [
-        "AKC:29"
+        "AKC:26"
       ]
     },
-    "AKC:40": {
-      "akc_id": "AKC:40",
+    "AKC:36": {
+      "akc_id": "AKC:36",
       "name": "dataset 1 about assay 3480644",
       "description": "dataset 1 is about assay 3480644",
       "assays": [
-        "AKC:39"
+        "AKC:35"
       ]
     },
-    "AKC:50": {
-      "akc_id": "AKC:50",
+    "AKC:45": {
+      "akc_id": "AKC:45",
       "name": "dataset 1 about assay 3480640",
       "description": "dataset 1 is about assay 3480640",
       "assays": [
-        "AKC:49"
+        "AKC:44"
       ]
     },
-    "AKC:60": {
-      "akc_id": "AKC:60",
+    "AKC:54": {
+      "akc_id": "AKC:54",
       "name": "dataset 1 about assay 3480643",
       "description": "dataset 1 is about assay 3480643",
       "assays": [
-        "AKC:59"
+        "AKC:53"
       ]
     },
-    "AKC:70": {
-      "akc_id": "AKC:70",
+    "AKC:63": {
+      "akc_id": "AKC:63",
       "name": "dataset 1 about assay 3480645",
       "description": "dataset 1 is about assay 3480645",
       "assays": [
-        "AKC:69"
+        "AKC:62"
       ]
     },
-    "AKC:80": {
-      "akc_id": "AKC:80",
+    "AKC:72": {
+      "akc_id": "AKC:72",
       "name": "dataset 1 about assay 3480646",
       "description": "dataset 1 is about assay 3480646",
       "assays": [
-        "AKC:79"
+        "AKC:71"
+      ]
+    },
+    "AKC:81": {
+      "akc_id": "AKC:81",
+      "name": "dataset 1 about assay 3480647",
+      "description": "dataset 1 is about assay 3480647",
+      "assays": [
+        "AKC:80"
       ]
     },
     "AKC:90": {
       "akc_id": "AKC:90",
-      "name": "dataset 1 about assay 3480647",
-      "description": "dataset 1 is about assay 3480647",
+      "name": "dataset 1 about assay 3480649",
+      "description": "dataset 1 is about assay 3480649",
       "assays": [
         "AKC:89"
       ]
     },
-    "AKC:100": {
-      "akc_id": "AKC:100",
-      "name": "dataset 1 about assay 3480649",
-      "description": "dataset 1 is about assay 3480649",
-      "assays": [
-        "AKC:99"
-      ]
-    },
-    "AKC:110": {
-      "akc_id": "AKC:110",
+    "AKC:99": {
+      "akc_id": "AKC:99",
       "name": "dataset 1 about assay 3480650",
       "description": "dataset 1 is about assay 3480650",
       "assays": [
-        "AKC:109"
+        "AKC:98"
       ]
     },
-    "AKC:120": {
-      "akc_id": "AKC:120",
+    "AKC:108": {
+      "akc_id": "AKC:108",
       "name": "dataset 1 about assay 3480651",
       "description": "dataset 1 is about assay 3480651",
       "assays": [
-        "AKC:119"
+        "AKC:107"
       ]
     },
-    "AKC:130": {
-      "akc_id": "AKC:130",
+    "AKC:117": {
+      "akc_id": "AKC:117",
       "name": "dataset 1 about assay 3480655",
       "description": "dataset 1 is about assay 3480655",
       "assays": [
-        "AKC:129"
+        "AKC:116"
       ]
     },
-    "AKC:140": {
-      "akc_id": "AKC:140",
+    "AKC:126": {
+      "akc_id": "AKC:126",
       "name": "dataset 1 about assay 3480656",
       "description": "dataset 1 is about assay 3480656",
       "assays": [
-        "AKC:139"
+        "AKC:125"
       ]
     },
-    "AKC:150": {
-      "akc_id": "AKC:150",
+    "AKC:135": {
+      "akc_id": "AKC:135",
       "name": "dataset 1 about assay 3480658",
       "description": "dataset 1 is about assay 3480658",
       "assays": [
-        "AKC:149"
+        "AKC:134"
       ]
     },
-    "AKC:160": {
-      "akc_id": "AKC:160",
+    "AKC:144": {
+      "akc_id": "AKC:144",
       "name": "dataset 1 about assay 3480659",
       "description": "dataset 1 is about assay 3480659",
       "assays": [
-        "AKC:159"
+        "AKC:143"
       ]
     },
-    "AKC:170": {
-      "akc_id": "AKC:170",
+    "AKC:153": {
+      "akc_id": "AKC:153",
       "name": "dataset 1 about assay 3480660",
       "description": "dataset 1 is about assay 3480660",
       "assays": [
-        "AKC:169"
+        "AKC:152"
+      ]
+    },
+    "AKC:162": {
+      "akc_id": "AKC:162",
+      "name": "dataset 1 about assay 3480661",
+      "description": "dataset 1 is about assay 3480661",
+      "assays": [
+        "AKC:161"
+      ]
+    },
+    "AKC:171": {
+      "akc_id": "AKC:171",
+      "name": "dataset 1 about assay 3480662",
+      "description": "dataset 1 is about assay 3480662",
+      "assays": [
+        "AKC:170"
       ]
     },
     "AKC:180": {
       "akc_id": "AKC:180",
-      "name": "dataset 1 about assay 3480661",
-      "description": "dataset 1 is about assay 3480661",
+      "name": "dataset 1 about assay 3480663",
+      "description": "dataset 1 is about assay 3480663",
       "assays": [
         "AKC:179"
       ]
     },
-    "AKC:190": {
-      "akc_id": "AKC:190",
-      "name": "dataset 1 about assay 3480662",
-      "description": "dataset 1 is about assay 3480662",
-      "assays": [
-        "AKC:189"
-      ]
-    },
-    "AKC:200": {
-      "akc_id": "AKC:200",
-      "name": "dataset 1 about assay 3480663",
-      "description": "dataset 1 is about assay 3480663",
-      "assays": [
-        "AKC:199"
-      ]
-    },
-    "AKC:210": {
-      "akc_id": "AKC:210",
+    "AKC:189": {
+      "akc_id": "AKC:189",
       "name": "dataset 1 about assay 3480664",
       "description": "dataset 1 is about assay 3480664",
       "assays": [
-        "AKC:209"
+        "AKC:188"
       ]
     }
   },
   "conclusions": {
-    "AKC:11": {
-      "akc_id": "AKC:11",
+    "AKC:10": {
+      "akc_id": "AKC:10",
       "name": "conclusion 1 about assay 3480642",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480642",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:10"
+        "AKC:9"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:21": {
-      "akc_id": "AKC:21",
+    "AKC:19": {
+      "akc_id": "AKC:19",
       "name": "conclusion 1 about assay 3480639",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480639",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:20"
+        "AKC:18"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:31": {
-      "akc_id": "AKC:31",
+    "AKC:28": {
+      "akc_id": "AKC:28",
       "name": "conclusion 1 about assay 3480641",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480641",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:30"
+        "AKC:27"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:41": {
-      "akc_id": "AKC:41",
+    "AKC:37": {
+      "akc_id": "AKC:37",
       "name": "conclusion 1 about assay 3480644",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480644",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:40"
+        "AKC:36"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:51": {
-      "akc_id": "AKC:51",
+    "AKC:46": {
+      "akc_id": "AKC:46",
       "name": "conclusion 1 about assay 3480640",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480640",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:50"
+        "AKC:45"
       ],
       "result": "Positive",
       "data_location_value": "Figure 1",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:61": {
-      "akc_id": "AKC:61",
+    "AKC:55": {
+      "akc_id": "AKC:55",
       "name": "conclusion 1 about assay 3480643",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480643",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:60"
+        "AKC:54"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:71": {
-      "akc_id": "AKC:71",
+    "AKC:64": {
+      "akc_id": "AKC:64",
       "name": "conclusion 1 about assay 3480645",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480645",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:70"
+        "AKC:63"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figure 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:81": {
-      "akc_id": "AKC:81",
+    "AKC:73": {
+      "akc_id": "AKC:73",
       "name": "conclusion 1 about assay 3480646",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480646",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:80"
+        "AKC:72"
       ],
       "result": "Positive",
       "data_location_value": "Figures 1 and extended data figures 2 and 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:1110179"
     },
-    "AKC:91": {
-      "akc_id": "AKC:91",
+    "AKC:82": {
+      "akc_id": "AKC:82",
       "name": "conclusion 1 about assay 3480647",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480647",
+      "investigations": [
+        "AKC:1"
+      ],
+      "datasets": [
+        "AKC:81"
+      ],
+      "result": "Positive",
+      "data_location_value": "Figures 3 and 4, supplementary table 4.",
+      "organism": "Homo sapiens (human)",
+      "experiment_type": "OBI:0001407"
+    },
+    "AKC:91": {
+      "akc_id": "AKC:91",
+      "name": "conclusion 1 about assay 3480649",
+      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480649",
       "investigations": [
         "AKC:1"
       ],
@@ -7952,124 +7734,139 @@
         "AKC:90"
       ],
       "result": "Positive",
-      "data_location_value": "Figures 3 and 4, supplementary table 4.",
-      "organism": "Homo sapiens (human)",
-      "experiment_type": "OBI:0001407"
-    },
-    "AKC:101": {
-      "akc_id": "AKC:101",
-      "name": "conclusion 1 about assay 3480649",
-      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480649",
-      "investigations": [
-        "AKC:1"
-      ],
-      "datasets": [
-        "AKC:100"
-      ],
-      "result": "Positive",
       "data_location_value": "Figures 3, 4, 5, extended data figure 8 and  supplementary table 4.",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:111": {
-      "akc_id": "AKC:111",
+    "AKC:100": {
+      "akc_id": "AKC:100",
       "name": "conclusion 1 about assay 3480650",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480650",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:110"
+        "AKC:99"
       ],
       "result": "Positive",
       "data_location_value": "Figures 3 and 4",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:121": {
-      "akc_id": "AKC:121",
+    "AKC:109": {
+      "akc_id": "AKC:109",
       "name": "conclusion 1 about assay 3480651",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480651",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:120"
+        "AKC:108"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8,  supplementary table 4.",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:131": {
-      "akc_id": "AKC:131",
+    "AKC:118": {
+      "akc_id": "AKC:118",
       "name": "conclusion 1 about assay 3480655",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480655",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:130"
+        "AKC:117"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:141": {
-      "akc_id": "AKC:141",
+    "AKC:127": {
+      "akc_id": "AKC:127",
       "name": "conclusion 1 about assay 3480656",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480656",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:140"
+        "AKC:126"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:151": {
-      "akc_id": "AKC:151",
+    "AKC:136": {
+      "akc_id": "AKC:136",
       "name": "conclusion 1 about assay 3480658",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480658",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:150"
+        "AKC:135"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:161": {
-      "akc_id": "AKC:161",
+    "AKC:145": {
+      "akc_id": "AKC:145",
       "name": "conclusion 1 about assay 3480659",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480659",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:160"
+        "AKC:144"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:171": {
-      "akc_id": "AKC:171",
+    "AKC:154": {
+      "akc_id": "AKC:154",
       "name": "conclusion 1 about assay 3480660",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480660",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:170"
+        "AKC:153"
+      ],
+      "result": "Positive",
+      "data_location_value": "Extended Data Figure 8",
+      "organism": "Homo sapiens (human)",
+      "experiment_type": "OBI:0001407"
+    },
+    "AKC:163": {
+      "akc_id": "AKC:163",
+      "name": "conclusion 1 about assay 3480661",
+      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480661",
+      "investigations": [
+        "AKC:1"
+      ],
+      "datasets": [
+        "AKC:162"
+      ],
+      "result": "Positive",
+      "data_location_value": "Extended Data Figure 8",
+      "organism": "Homo sapiens (human)",
+      "experiment_type": "OBI:0001407"
+    },
+    "AKC:172": {
+      "akc_id": "AKC:172",
+      "name": "conclusion 1 about assay 3480662",
+      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480662",
+      "investigations": [
+        "AKC:1"
+      ],
+      "datasets": [
+        "AKC:171"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
@@ -8078,8 +7875,8 @@
     },
     "AKC:181": {
       "akc_id": "AKC:181",
-      "name": "conclusion 1 about assay 3480661",
-      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480661",
+      "name": "conclusion 1 about assay 3480663",
+      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480663",
       "investigations": [
         "AKC:1"
       ],
@@ -8091,45 +7888,15 @@
       "organism": "Homo sapiens (human)",
       "experiment_type": "OBI:0001407"
     },
-    "AKC:191": {
-      "akc_id": "AKC:191",
-      "name": "conclusion 1 about assay 3480662",
-      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480662",
-      "investigations": [
-        "AKC:1"
-      ],
-      "datasets": [
-        "AKC:190"
-      ],
-      "result": "Positive",
-      "data_location_value": "Extended Data Figure 8",
-      "organism": "Homo sapiens (human)",
-      "experiment_type": "OBI:0001407"
-    },
-    "AKC:201": {
-      "akc_id": "AKC:201",
-      "name": "conclusion 1 about assay 3480663",
-      "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480663",
-      "investigations": [
-        "AKC:1"
-      ],
-      "datasets": [
-        "AKC:200"
-      ],
-      "result": "Positive",
-      "data_location_value": "Extended Data Figure 8",
-      "organism": "Homo sapiens (human)",
-      "experiment_type": "OBI:0001407"
-    },
-    "AKC:211": {
-      "akc_id": "AKC:211",
+    "AKC:190": {
+      "akc_id": "AKC:190",
       "name": "conclusion 1 about assay 3480664",
       "description": "conclusion 1 about investigation 1031861 was drawn from dataset 1 of assay 3480664",
       "investigations": [
         "AKC:1"
       ],
       "datasets": [
-        "AKC:210"
+        "AKC:189"
       ],
       "result": "Positive",
       "data_location_value": "Extended Data Figure 8",
