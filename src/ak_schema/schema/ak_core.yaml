@@ -50,13 +50,6 @@ classes:
     description: >-
       A generic process.
 
-  PlannedProcess:
-    abstract: true
-    is_a: Process
-    class_uri: OBI:0000011 # planned process
-    description: >-
-      A process to realize a plan.
-
   PlanSpecification:
     abstract: true
     is_a: NamedThing

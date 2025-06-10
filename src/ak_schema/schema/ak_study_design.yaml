@@ -5,7 +5,7 @@ name: ak-schema
 classes:
 
   Investigation:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: OBI:0000066 # investigation
     description: >-
       A scientific investigation.
@@ -66,7 +66,7 @@ classes:
       - strain # For non-human organisms
 
   StudyEvent:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: BFO:0000015 # process
     description: >-
       An event that is part of the study design of an investigation.
@@ -93,11 +93,19 @@ classes:
     description: >-
       An event involving the immune system of a study participant.
     slots:
-      - life_event
       - exposure_material
       - disease
       - disease_stage
       - disease_severity
+
+  Assessment:
+    is_a: LifeEvent
+    class_uri: OBI:0002441 # physical examination of an organism
+    slots:
+      - assessment_type
+      - target_entity_type
+      - value
+      - unit
 
 
 slots:
@@ -259,6 +267,9 @@ slots:
   disease_severity:
     description: The severity of the disease relevant to an immune exposure
     # TODO: range: DiseaseSeverity
+  assessment_type:
+    description: The specific type of an assessment
+    slot_uri: rdf:type
 
 enums:
   InvestigationTypeOntology:
