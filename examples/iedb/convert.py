@@ -215,23 +215,47 @@ def convert(tcell_path, tcr_path, yaml_path):
             geolocation=None
             # geolocation=row['Host']['Geolocation']
         )
-        life_event_1 = LifeEvent(
+#         life_event_1 = LifeEvent(
+#             akc_id(),
+#             name=f'1st in vivo immune exposure event of assay {assay_id}',
+#             description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event',
+#             participant=participant.akc_id,
+#             study_event=None,
+#             life_event_type=row['1st in vivo Process']['Process Type'],
+#             geolocation=None,
+#             t0_event=None,
+#             start=None,
+#             duration=None,
+#             time_unit=None
+#         )
+#         life_event_2 = LifeEvent(
+#             akc_id(),
+#             name=f'specimen collection event of assay {assay_id}',
+#             description=f'specimen 1 was collected from participant 1 of assay {assay_id} in this event',
+#             participant=participant.akc_id,
+#             study_event=study_event.akc_id,
+#             life_event_type='specimen collection',
+#             geolocation=None,
+#             t0_event=None,
+#             start=None,
+#             duration=None,
+#             time_unit=None
+#         )
+        life_event_1 = ImmuneExposure(
             akc_id(),
-            name=f'1st in vivo immune exposure event of assay {assay_id}',
-            description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event',
+            name=None,
+            description=None,
             participant=participant.akc_id,
-            study_event=None,
             life_event_type=row['1st in vivo Process']['Process Type'],
-            geolocation=None,
-            t0_event=None,
-            start=None,
-            duration=None,
-            time_unit=None
+            exposure_material=row['1st immunogen']['Source Organism'],
+            disease=row['1st in vivo Process']['Disease'],
+            disease_stage=row['1st in vivo Process']['Disease Stage'],
+            disease_severity=None
         )
-        life_event_2 = LifeEvent(
+        life_event_2 = SpecimenCollection(
             akc_id(),
-            name=f'specimen collection event of assay {assay_id}',
-            description=f'specimen 1 was collected from participant 1 of assay {assay_id} in this event',
+            name=None,
+            description=None,
             participant=participant.akc_id,
             study_event=study_event.akc_id,
             life_event_type='specimen collection',
@@ -240,16 +264,6 @@ def convert(tcell_path, tcr_path, yaml_path):
             start=None,
             duration=None,
             time_unit=None
-        )
-        immune_exposure = ImmuneExposure(
-            akc_id(),
-            name=f'details of 1st in vivo immune exposure event of assay {assay_id}',
-            description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event, with these details',
-            life_event=life_event_1.akc_id,
-            exposure_material=row['1st immunogen']['Source Organism'],
-            disease=row['1st in vivo Process']['Disease'],
-            disease_stage=row['1st in vivo Process']['Disease Stage'],
-            disease_severity=None
         )
         # assessment
         specimen = Specimen(
@@ -336,7 +350,7 @@ def convert(tcell_path, tcr_path, yaml_path):
         container.participants[participant.akc_id] = participant
         container.life_events[life_event_1.akc_id] = life_event_1
         container.life_events[life_event_2.akc_id] = life_event_2
-        container.immune_exposures[immune_exposure.akc_id] = immune_exposure
+        #container.immune_exposures[immune_exposure.akc_id] = immune_exposure
         # container.assessments[assessment.id] = assessment
         container.specimens[specimen.akc_id] = specimen
         container.assays[assay.akc_id] = assay
@@ -367,17 +381,18 @@ def convert(tcell_path, tcr_path, yaml_path):
                 f.write('\n')
 
     # Write everything to TSV
-    container_fields = [x.name for x in dataclasses.fields(container)]
-    for container_field in container_fields:
-        rows = list(container[container_field].values())
-        if len(rows) < 1:
-            continue
-        with open(f'tsv/{container_field}.tsv', 'w') as f:
-            fieldnames = [x.name for x in dataclasses.fields(rows[0])]
-            w = csv.DictWriter(f, fieldnames, delimiter='\t', lineterminator='\n')
-            w.writeheader()
-            for row in rows:
-                w.writerow(row.__dict__)
+#     container_fields = [x.name for x in dataclasses.fields(container)]
+#     for container_field in container_fields:
+#         rows = list(container[container_field].values())
+#         if len(rows) < 1:
+#             continue
+#         print(f"Writing tsv for {container_field}")
+#         with open(f'tsv/{container_field}.tsv', 'w') as f:
+#             fieldnames = [x.name for x in dataclasses.fields(rows[0])]
+#             w = csv.DictWriter(f, fieldnames, delimiter='\t', lineterminator='\n')
+#             w.writeheader()
+#             for row in rows:
+#                 w.writerow(row.__dict__)
 
 
 if __name__ == "__main__":
