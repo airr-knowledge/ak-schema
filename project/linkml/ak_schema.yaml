@@ -668,6 +668,118 @@ enums:
       other disease course:
         text: other disease course
         meaning: ONTIE:0003547
+  MeasurementUnitOntology:
+    name: MeasurementUnitOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000002
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  DataItemTypeEnum:
+    name: DataItemTypeEnum
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      sequence_reads:
+        text: sequence_reads
+      sequence_quality:
+        text: sequence_quality
+      sequence_forward_paired_reads:
+        text: sequence_forward_paired_reads
+      sequence_reverse_paired_reads:
+        text: sequence_reverse_paired_reads
+      sequence:
+        text: sequence
+      primer_sequence:
+        text: primer_sequence
+      forward_primer_sequence:
+        text: forward_primer_sequence
+      reverse_primer_sequence:
+        text: reverse_primer_sequence
+      barcode_sequence:
+        text: barcode_sequence
+      vdj_sequence_annotation:
+        text: vdj_sequence_annotation
+      quality_statistics:
+        text: quality_statistics
+      annotation_statistics:
+        text: annotation_statistics
+      assigned_clones:
+        text: assigned_clones
+      physiochemical_annotation:
+        text: physiochemical_annotation
+      gene_usage:
+        text: gene_usage
+      gene_combo_usage:
+        text: gene_combo_usage
+      length_distribution:
+        text: length_distribution
+      diversity_profile:
+        text: diversity_profile
+      mutational_profile:
+        text: mutational_profile
+      similarity_comparison:
+        text: similarity_comparison
+      study_arm_comparison:
+        text: study_arm_comparison
+      archive:
+        text: archive
+      compressed:
+        text: compressed
+  DataTransformationTypeEnum:
+    name: DataTransformationTypeEnum
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      merge_reads:
+        text: merge_reads
+      barcode_matching:
+        text: barcode_matching
+      primer_matching:
+        text: primer_matching
+      length_filter:
+        text: length_filter
+      quality_filter:
+        text: quality_filter
+      homopolymer_filter:
+        text: homopolymer_filter
+      collapse_unique_sequences:
+        text: collapse_unique_sequences
+      vdj_annotation:
+        text: vdj_annotation
+      clonal_assignment:
+        text: clonal_assignment
+      germline_allele_inference:
+        text: germline_allele_inference
+      gene_usage:
+        text: gene_usage
+      gene_combo_usage:
+        text: gene_combo_usage
+      length_distribution:
+        text: length_distribution
+      diversity:
+        text: diversity
+      observed_mutations:
+        text: observed_mutations
+  AKFileFormatEnum:
+    name: AKFileFormatEnum
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: FileTypeEnum
+    permissible_values:
+      tsv:
+        text: tsv
+      csv:
+        text: csv
+      json:
+        text: json
+      jsonl:
+        text: jsonl
+      airr_tsv:
+        text: airr_tsv
+      airr_json:
+        text: airr_json
+      airr_jsonl:
+        text: airr_jsonl
   ChainSimilarityTypeEnum:
     name: ChainSimilarityTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1481,18 +1593,65 @@ slots:
     name: unit
     description: The measurement result value unit
     from_schema: https://github.com/airr-knowledge/ak-schema
-  assessments:
-    name: assessments
-    description: The assessment that a dataset is about
+  measurement_value:
+    name: measurement_value
+    description: The measurement result value
     from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: IAO:0000136
-    range: Assessment
+  measurement_unit:
+    name: measurement_unit
+    description: The measurement result value unit
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: MeasurementUnitOntology
+  data_items:
+    name: data_items
+    description: set of data items
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AKDataItem
+    multivalued: true
+  data_item_types:
+    name: data_item_types
+    description: semantic types of the data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: DataItemTypeEnum
+    multivalued: true
+  file_format:
+    name: file_format
+    description: Format and organization of the data in the file
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AKFileFormatEnum
+  data_transformation:
+    name: data_transformation
+    description: a process that transforms input data into output data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: DataTransformation
+  has_specified_input:
+    name: has_specified_input
+    description: input data item
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AKDataItem
+  has_specified_output:
+    name: has_specified_output
+    description: output data item
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AKDataItem
+  was_generated_by:
+    name: was_generated_by
+    description: direct provenance link of one entity (input) to another (output)
+      for a data transformation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: InputOutputDataMap
+    multivalued: true
+  data_transformation_types:
+    name: data_transformation_types
+    description: semantic types of the data transformation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: DataItemTypeEnum
     multivalued: true
   datasets:
     name: datasets
     description: The datasets that support a conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Dataset
+    range: AKDataSet
     multivalued: true
   result:
     name: result
@@ -5583,7 +5742,7 @@ classes:
       datasets:
         name: datasets
         from_schema: https://github.com/airr-knowledge/ak-schema
-        range: Dataset
+        range: AKDataSet
         multivalued: true
         inlined: true
       conclusions:
@@ -5672,8 +5831,7 @@ classes:
     slots:
     - study_arm
     - species
-    - biological_sex
-    - phenotypic_sex
+    - sex
     - age
     - age_unit
     - age_event
@@ -5719,11 +5877,11 @@ classes:
     name: Assessment
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: LifeEvent
+    mixins:
+    - MeasurementDatum
     slots:
     - assessment_type
     - target_entity_type
-    - value
-    - unit
     class_uri: OBI:0002441
   Specimen:
     name: Specimen
@@ -5783,6 +5941,7 @@ classes:
     - type
     - assay_type
     - target_entity_type
+    - has_specified_output
     class_uri: OBI:0000070
   AIRRSequencingAssay:
     name: AIRRSequencingAssay
@@ -5799,26 +5958,89 @@ classes:
     name: TCellReceptorEpitopeBindingAssay
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Assay
+    mixins:
+    - MeasurementDatum
     slots:
     - epitope
     - tcell_receptors
-    - tcell_chains
-    - value
-    - unit
     class_uri: OBI:1110037
   AntibodyAntigenBindingAssay:
     name: AntibodyAntigenBindingAssay
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Assay
     class_uri: OBI:0003127
-  Dataset:
-    name: Dataset
+  DataItem:
+    name: DataItem
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    abstract: true
+    class_uri: IAO:0000027
+  MeasurementDatum:
+    name: MeasurementDatum
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: DataItem
+    abstract: true
     slots:
-    - assessments
-    - assays
+    - measurement_value
+    - measurement_unit
+    class_uri: IAO:0000109
+  DataSet:
+    name: DataSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: DataItem
+    abstract: true
+    slots:
+    - data_items
     class_uri: IAO:0000100
+  AKDataItem:
+    name: AKDataItem
+    description: data item with an akc_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    slots:
+    - type
+    - data_item_types
+  AKDataSet:
+    name: AKDataSet
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKDataItem
+    mixins:
+    - DataSet
+    class_uri: IAO:0000100
+  SequenceData:
+    name: SequenceData
+    description: sequence data items are given an akc_id
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKDataItem
+    class_uri: OBI:0000973
+  AIRRSequencingData:
+    name: AIRRSequencingData
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: SequenceData
+    mixins:
+    - SequencingData
+  RNATranscriptomeData:
+    name: RNATranscriptomeData
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: SequenceData
+  DataTransformation:
+    name: DataTransformation
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: Process
+    slots:
+    - was_generated_by
+    - data_transformation_types
+    class_uri: OBI:0200000
+  InputOutputDataMap:
+    name: InputOutputDataMap
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - data_transformation
+    - has_specified_input
+    - has_specified_output
+  AIRRDataProcessing:
+    name: AIRRDataProcessing
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: DataTransformation
   Conclusion:
     name: Conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
