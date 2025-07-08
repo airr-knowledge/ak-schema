@@ -1,21 +1,21 @@
-{"akc_id": "AKC:9", "name": "dataset 1 about assay 3480642", "description": "dataset 1 is about assay 3480642", "assays": ["AKC:8"], "@type": "Dataset"}
-{"akc_id": "AKC:18", "name": "dataset 1 about assay 3480639", "description": "dataset 1 is about assay 3480639", "assays": ["AKC:17"], "@type": "Dataset"}
-{"akc_id": "AKC:27", "name": "dataset 1 about assay 3480641", "description": "dataset 1 is about assay 3480641", "assays": ["AKC:26"], "@type": "Dataset"}
-{"akc_id": "AKC:36", "name": "dataset 1 about assay 3480644", "description": "dataset 1 is about assay 3480644", "assays": ["AKC:35"], "@type": "Dataset"}
-{"akc_id": "AKC:45", "name": "dataset 1 about assay 3480640", "description": "dataset 1 is about assay 3480640", "assays": ["AKC:44"], "@type": "Dataset"}
-{"akc_id": "AKC:54", "name": "dataset 1 about assay 3480643", "description": "dataset 1 is about assay 3480643", "assays": ["AKC:53"], "@type": "Dataset"}
-{"akc_id": "AKC:63", "name": "dataset 1 about assay 3480645", "description": "dataset 1 is about assay 3480645", "assays": ["AKC:62"], "@type": "Dataset"}
-{"akc_id": "AKC:72", "name": "dataset 1 about assay 3480646", "description": "dataset 1 is about assay 3480646", "assays": ["AKC:71"], "@type": "Dataset"}
-{"akc_id": "AKC:81", "name": "dataset 1 about assay 3480647", "description": "dataset 1 is about assay 3480647", "assays": ["AKC:80"], "@type": "Dataset"}
-{"akc_id": "AKC:90", "name": "dataset 1 about assay 3480649", "description": "dataset 1 is about assay 3480649", "assays": ["AKC:89"], "@type": "Dataset"}
-{"akc_id": "AKC:99", "name": "dataset 1 about assay 3480650", "description": "dataset 1 is about assay 3480650", "assays": ["AKC:98"], "@type": "Dataset"}
-{"akc_id": "AKC:108", "name": "dataset 1 about assay 3480651", "description": "dataset 1 is about assay 3480651", "assays": ["AKC:107"], "@type": "Dataset"}
-{"akc_id": "AKC:117", "name": "dataset 1 about assay 3480655", "description": "dataset 1 is about assay 3480655", "assays": ["AKC:116"], "@type": "Dataset"}
-{"akc_id": "AKC:126", "name": "dataset 1 about assay 3480656", "description": "dataset 1 is about assay 3480656", "assays": ["AKC:125"], "@type": "Dataset"}
-{"akc_id": "AKC:135", "name": "dataset 1 about assay 3480658", "description": "dataset 1 is about assay 3480658", "assays": ["AKC:134"], "@type": "Dataset"}
-{"akc_id": "AKC:144", "name": "dataset 1 about assay 3480659", "description": "dataset 1 is about assay 3480659", "assays": ["AKC:143"], "@type": "Dataset"}
-{"akc_id": "AKC:153", "name": "dataset 1 about assay 3480660", "description": "dataset 1 is about assay 3480660", "assays": ["AKC:152"], "@type": "Dataset"}
-{"akc_id": "AKC:162", "name": "dataset 1 about assay 3480661", "description": "dataset 1 is about assay 3480661", "assays": ["AKC:161"], "@type": "Dataset"}
-{"akc_id": "AKC:171", "name": "dataset 1 about assay 3480662", "description": "dataset 1 is about assay 3480662", "assays": ["AKC:170"], "@type": "Dataset"}
-{"akc_id": "AKC:180", "name": "dataset 1 about assay 3480663", "description": "dataset 1 is about assay 3480663", "assays": ["AKC:179"], "@type": "Dataset"}
-{"akc_id": "AKC:189", "name": "dataset 1 about assay 3480664", "description": "dataset 1 is about assay 3480664", "assays": ["AKC:188"], "@type": "Dataset"}
+{"akc_id": "AKC:9", "type": "AKDataSet", "data_items": ["AKC:8"], "@type": "AKDataSet"}
+{"akc_id": "AKC:18", "type": "AKDataSet", "data_items": ["AKC:17"], "@type": "AKDataSet"}
+{"akc_id": "AKC:27", "type": "AKDataSet", "data_items": ["AKC:26"], "@type": "AKDataSet"}
+{"akc_id": "AKC:36", "type": "AKDataSet", "data_items": ["AKC:35"], "@type": "AKDataSet"}
+{"akc_id": "AKC:45", "type": "AKDataSet", "data_items": ["AKC:44"], "@type": "AKDataSet"}
+{"akc_id": "AKC:54", "type": "AKDataSet", "data_items": ["AKC:53"], "@type": "AKDataSet"}
+{"akc_id": "AKC:63", "type": "AKDataSet", "data_items": ["AKC:62"], "@type": "AKDataSet"}
+{"akc_id": "AKC:72", "type": "AKDataSet", "data_items": ["AKC:71"], "@type": "AKDataSet"}
+{"akc_id": "AKC:81", "type": "AKDataSet", "data_items": ["AKC:80"], "@type": "AKDataSet"}
+{"akc_id": "AKC:90", "type": "AKDataSet", "data_items": ["AKC:89"], "@type": "AKDataSet"}
+{"akc_id": "AKC:99", "type": "AKDataSet", "data_items": ["AKC:98"], "@type": "AKDataSet"}
+{"akc_id": "AKC:108", "type": "AKDataSet", "data_items": ["AKC:107"], "@type": "AKDataSet"}
+{"akc_id": "AKC:117", "type": "AKDataSet", "data_items": ["AKC:116"], "@type": "AKDataSet"}
+{"akc_id": "AKC:126", "type": "AKDataSet", "data_items": ["AKC:125"], "@type": "AKDataSet"}
+{"akc_id": "AKC:135", "type": "AKDataSet", "data_items": ["AKC:134"], "@type": "AKDataSet"}
+{"akc_id": "AKC:144", "type": "AKDataSet", "data_items": ["AKC:143"], "@type": "AKDataSet"}
+{"akc_id": "AKC:153", "type": "AKDataSet", "data_items": ["AKC:152"], "@type": "AKDataSet"}
+{"akc_id": "AKC:162", "type": "AKDataSet", "data_items": ["AKC:161"], "@type": "AKDataSet"}
+{"akc_id": "AKC:171", "type": "AKDataSet", "data_items": ["AKC:170"], "@type": "AKDataSet"}
+{"akc_id": "AKC:180", "type": "AKDataSet", "data_items": ["AKC:179"], "@type": "AKDataSet"}
+{"akc_id": "AKC:189", "type": "AKDataSet", "data_items": ["AKC:188"], "@type": "AKDataSet"}

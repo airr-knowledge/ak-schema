@@ -209,7 +209,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             name=f'participant 1 of {assay_id}',
             description=f'study participant for assay {assay_id}',
             species=row['Host']['Name'],
-            biological_sex=row['Host']['Sex'],
+            sex=row['Host']['Sex'],
             race=None,
             ethnicity=None,
             geolocation=None
@@ -322,15 +322,12 @@ def convert(tcell_path, tcr_path, yaml_path):
             assay_type=curie(row['Assay']['IRI']), # TODO: use label
             epitope=epitope.akc_id,
             tcell_receptors=[t.akc_id for t in tcell_receptors],
-            value=row['Assay']['Qualitative Measurement'],
-            unit=None
+            measurement_value=row['Assay']['Qualitative Measurement'],
+            measurement_unit=None
         )
-        dataset = Dataset(
+        dataset = AKDataSet(
             akc_id(),
-            name=f'dataset 1 about assay {assay_id}',
-            description=f'dataset 1 is about assay {assay_id}',
-            assessments=None,
-            assays=[assay.akc_id]
+            data_items=[assay.akc_id]
         )
         conclusion = Conclusion(
             akc_id(),
