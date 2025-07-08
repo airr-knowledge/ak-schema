@@ -1,5 +1,54 @@
 {
     "$defs": {
+        "AIRRDataProcessing": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_transformation_types": {
+                    "description": "semantic types of the data transformation",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "description": "direct provenance link of one entity (input) to another (output) for a data transformation",
+                    "items": {
+                        "$ref": "#/$defs/InputOutputDataMap"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AIRRDataProcessing",
+            "type": "object"
+        },
         "AIRRKnowledgeCommons": {
             "additionalProperties": false,
             "description": "A container for instances of multiple classes.",
@@ -117,7 +166,7 @@
                     "additionalProperties": {
                         "anyOf": [
                             {
-                                "$ref": "#/$defs/Dataset__identifier_optional"
+                                "$ref": "#/$defs/AKDataSet__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -367,6 +416,13 @@
                         "null"
                     ]
                 },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -516,6 +572,13 @@
                         "null"
                     ]
                 },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -640,6 +703,235 @@
             "required": [],
             "title": "AIRRSequencingAssay",
             "type": "object"
+        },
+        "AIRRSequencingData": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "file_type": {
+                    "$ref": "#/$defs/FileTypeEnum",
+                    "description": "File format for the raw reads or sequences"
+                },
+                "filename": {
+                    "description": "File name for the raw reads or sequences. The first file in paired-read sequencing.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "index_filename": {
+                    "description": "File name for the index file",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "index_length": {
+                    "description": "Read length in bases for the index file",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "paired_filename": {
+                    "description": "File name for the second file in paired-read sequencing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_read_direction": {
+                    "$ref": "#/$defs/PairedReadDirectionEnum",
+                    "description": "Read direction for the second file in paired-read sequencing"
+                },
+                "paired_read_length": {
+                    "description": "Read length in bases for the second file in paired-read sequencing",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "read_direction": {
+                    "$ref": "#/$defs/ReadDirectionEnum",
+                    "description": "Read direction for the raw reads or sequences. The first file in paired-read sequencing."
+                },
+                "read_length": {
+                    "description": "Read length in bases for the first file in paired-read sequencing",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequencing_data_id": {
+                    "description": "Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AIRRSequencingData"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AIRRSequencingData",
+            "type": "object"
+        },
+        "AKDataItem": {
+            "additionalProperties": false,
+            "description": "data item with an akc_id",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AKDataItem"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AKDataItem",
+            "type": "object"
+        },
+        "AKDataSet": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "data_items": {
+                    "description": "set of data items",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AKDataSet"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AKDataSet",
+            "type": "object"
+        },
+        "AKDataSet__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "data_items": {
+                    "description": "set of data items",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AKDataSet"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "AKDataSet",
+            "type": "object"
+        },
+        "AKFileFormatEnum": {
+            "description": "",
+            "enum": [
+                "tsv",
+                "csv",
+                "json",
+                "jsonl",
+                "airr_tsv",
+                "airr_json",
+                "airr_jsonl"
+            ],
+            "title": "AKFileFormatEnum",
+            "type": "string"
         },
         "Acknowledgement": {
             "additionalProperties": false,
@@ -1238,6 +1530,13 @@
                         "null"
                     ]
                 },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -1302,6 +1601,13 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_specified_output": {
+                    "description": "output data item",
                     "type": [
                         "string",
                         "null"
@@ -1480,6 +1786,13 @@
                         "null"
                     ]
                 },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -1544,6 +1857,13 @@
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_specified_output": {
+                    "description": "output data item",
                     "type": [
                         "string",
                         "null"
@@ -1631,6 +1951,17 @@
                     "$ref": "#/$defs/LifeEventProcessOntology",
                     "description": "The specific type of a life event"
                 },
+                "measurement_unit": {
+                    "$ref": "#/$defs/MeasurementUnitOntology",
+                    "description": "The measurement result value unit"
+                },
+                "measurement_value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -1684,20 +2015,6 @@
                     "enum": [
                         "Assessment"
                     ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "unit": {
-                    "description": "The measurement result value unit",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "value": {
-                    "description": "The measurement result value",
                     "type": [
                         "string",
                         "null"
@@ -1747,6 +2064,17 @@
                     "$ref": "#/$defs/LifeEventProcessOntology",
                     "description": "The specific type of a life event"
                 },
+                "measurement_unit": {
+                    "$ref": "#/$defs/MeasurementUnitOntology",
+                    "description": "The measurement result value unit"
+                },
+                "measurement_value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -1800,20 +2128,6 @@
                     "enum": [
                         "Assessment"
                     ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "unit": {
-                    "description": "The measurement result value unit",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "value": {
-                    "description": "The measurement result value",
                     "type": [
                         "string",
                         "null"
@@ -2902,6 +3216,36 @@
             "title": "CurationalTagsEnum",
             "type": "string"
         },
+        "DataItemTypeEnum": {
+            "description": "",
+            "enum": [
+                "sequence_reads",
+                "sequence_quality",
+                "sequence_forward_paired_reads",
+                "sequence_reverse_paired_reads",
+                "sequence",
+                "primer_sequence",
+                "forward_primer_sequence",
+                "reverse_primer_sequence",
+                "barcode_sequence",
+                "vdj_sequence_annotation",
+                "quality_statistics",
+                "annotation_statistics",
+                "assigned_clones",
+                "physiochemical_annotation",
+                "gene_usage",
+                "gene_combo_usage",
+                "length_distribution",
+                "diversity_profile",
+                "mutational_profile",
+                "similarity_comparison",
+                "study_arm_comparison",
+                "archive",
+                "compressed"
+            ],
+            "title": "DataItemTypeEnum",
+            "type": "string"
+        },
         "DataProcessing": {
             "additionalProperties": false,
             "description": "",
@@ -2995,7 +3339,7 @@
             "title": "DataProcessing",
             "type": "object"
         },
-        "Dataset": {
+        "DataTransformation": {
             "additionalProperties": false,
             "description": "",
             "properties": {
@@ -3003,20 +3347,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "assays": {
-                    "description": "The assays performed by the investigation",
+                "data_transformation_types": {
+                    "description": "semantic types of the data transformation",
                     "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "assessments": {
-                    "description": "The assessment that a dataset is about",
-                    "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/DataItemTypeEnum"
                     },
                     "type": [
                         "array",
@@ -3034,6 +3368,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "description": "direct provenance link of one entity (input) to another (output) for a data transformation",
+                    "items": {
+                        "$ref": "#/$defs/InputOutputDataMap"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 }
@@ -3041,55 +3385,30 @@
             "required": [
                 "akc_id"
             ],
-            "title": "Dataset",
+            "title": "DataTransformation",
             "type": "object"
         },
-        "Dataset__identifier_optional": {
-            "additionalProperties": false,
+        "DataTransformationTypeEnum": {
             "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "assays": {
-                    "description": "The assays performed by the investigation",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "assessments": {
-                    "description": "The assessment that a dataset is about",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [],
-            "title": "Dataset",
-            "type": "object"
+            "enum": [
+                "merge_reads",
+                "barcode_matching",
+                "primer_matching",
+                "length_filter",
+                "quality_filter",
+                "homopolymer_filter",
+                "collapse_unique_sequences",
+                "vdj_annotation",
+                "clonal_assignment",
+                "germline_allele_inference",
+                "gene_usage",
+                "gene_combo_usage",
+                "length_distribution",
+                "diversity",
+                "observed_mutations"
+            ],
+            "title": "DataTransformationTypeEnum",
+            "type": "string"
         },
         "DeletedGene": {
             "additionalProperties": false,
@@ -3909,6 +4228,35 @@
             "title": "InferenceTypeEnum",
             "type": "string"
         },
+        "InputOutputDataMap": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "data_transformation": {
+                    "description": "a process that transforms input data into output data",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_specified_input": {
+                    "description": "input data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "title": "InputOutputDataMap",
+            "type": "object"
+        },
         "Investigation": {
             "additionalProperties": false,
             "description": "A scientific investigation.",
@@ -4566,6 +4914,11 @@
             "title": "MHCGenotypeSet",
             "type": "object"
         },
+        "MeasurementUnitOntology": {
+            "description": "",
+            "title": "MeasurementUnitOntology",
+            "type": "string"
+        },
         "MhcClassEnum": {
             "description": "",
             "enum": [
@@ -4814,10 +5167,6 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "biological_sex": {
-                    "$ref": "#/$defs/BiologicalSexOntology",
-                    "description": "The biological sex of a participant"
-                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": [
@@ -4843,16 +5192,16 @@
                         "null"
                     ]
                 },
-                "phenotypic_sex": {
-                    "$ref": "#/$defs/PhenotypicSexOntology",
-                    "description": "The phenotypic sex of a participant"
-                },
                 "race": {
                     "description": "Racial group of subject (as defined by NIH)",
                     "type": [
                         "string",
                         "null"
                     ]
+                },
+                "sex": {
+                    "$ref": "#/$defs/SexEnum",
+                    "description": "Biological sex of subject"
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -4902,10 +5251,6 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "biological_sex": {
-                    "$ref": "#/$defs/BiologicalSexOntology",
-                    "description": "The biological sex of a participant"
-                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": [
@@ -4931,16 +5276,16 @@
                         "null"
                     ]
                 },
-                "phenotypic_sex": {
-                    "$ref": "#/$defs/PhenotypicSexOntology",
-                    "description": "The phenotypic sex of a participant"
-                },
                 "race": {
                     "description": "Racial group of subject (as defined by NIH)",
                     "type": [
                         "string",
                         "null"
                     ]
+                },
+                "sex": {
+                    "$ref": "#/$defs/SexEnum",
+                    "description": "Biological sex of subject"
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -5121,6 +5466,40 @@
             "description": "",
             "title": "PropertyOntology",
             "type": "string"
+        },
+        "RNATranscriptomeData": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "RNATranscriptomeData"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "RNATranscriptomeData",
+            "type": "object"
         },
         "RaceOntology": {
             "description": "",
@@ -7118,6 +7497,40 @@
             "title": "SampleProcessing",
             "type": "object"
         },
+        "SequenceData": {
+            "additionalProperties": false,
+            "description": "sequence data items are given an akc_id",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "SequenceData"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "SequenceData",
+            "type": "object"
+        },
         "SequenceDelineationV": {
             "additionalProperties": false,
             "description": "",
@@ -8353,6 +8766,24 @@
                         "null"
                     ]
                 },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "measurement_unit": {
+                    "$ref": "#/$defs/MeasurementUnitOntology",
+                    "description": "The measurement result value unit"
+                },
+                "measurement_value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -8384,16 +8815,6 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "tcell_receptors": {
                     "description": "The T cell receptors being measured",
                     "items": {
@@ -8408,20 +8829,6 @@
                     "enum": [
                         "TCellReceptorEpitopeBindingAssay"
                     ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "unit": {
-                    "description": "The measurement result value unit",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "value": {
-                    "description": "The measurement result value",
                     "type": [
                         "string",
                         "null"
@@ -8463,6 +8870,24 @@
                         "null"
                     ]
                 },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "measurement_unit": {
+                    "$ref": "#/$defs/MeasurementUnitOntology",
+                    "description": "The measurement result value unit"
+                },
+                "measurement_value": {
+                    "description": "The measurement result value",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -8494,16 +8919,6 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "tcell_receptors": {
                     "description": "The T cell receptors being measured",
                     "items": {
@@ -8518,20 +8933,6 @@
                     "enum": [
                         "TCellReceptorEpitopeBindingAssay"
                     ],
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "unit": {
-                    "description": "The measurement result value unit",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "value": {
-                    "description": "The measurement result value",
                     "type": [
                         "string",
                         "null"
@@ -8851,7 +9252,7 @@
             "additionalProperties": {
                 "anyOf": [
                     {
-                        "$ref": "#/$defs/Dataset__identifier_optional"
+                        "$ref": "#/$defs/AKDataSet__identifier_optional"
                     },
                     {
                         "type": "null"
