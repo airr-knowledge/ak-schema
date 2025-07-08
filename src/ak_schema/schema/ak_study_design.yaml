@@ -55,8 +55,7 @@ classes:
     slots:
       - study_arm
       - species
-      - biological_sex # IEDB gathers this
-      - phenotypic_sex # AIRR gathers this
+      - sex # AIRR Standard
       - age
       - age_unit # AIRR gathers this
       - age_event # AIRR gathers this
@@ -100,12 +99,11 @@ classes:
 
   Assessment:
     is_a: LifeEvent
+    mixins: MeasurementDatum
     class_uri: OBI:0002441 # physical examination of an organism
     slots:
       - assessment_type
       - target_entity_type
-      - value
-      - unit
 
 
 slots:

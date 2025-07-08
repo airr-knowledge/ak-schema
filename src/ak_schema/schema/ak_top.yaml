@@ -54,6 +54,7 @@ imports:
   - ak_commons
   - ak_study_design
   - ak_specimens
+  - ak_data
   - ak_biology
   - ak_immune_system
   - ak_simulations
