@@ -1473,7 +1473,7 @@ assays:
     - iedb_receptor:24245
     - iedb_receptor:24246
     - iedb_receptor:24247
-    value: Positive
+    measurement_value: Positive
   AKC:17:
     akc_id: AKC:17
     name: assay 3480639
@@ -1761,7 +1761,7 @@ assays:
     - iedb_receptor:21534
     - iedb_receptor:21531
     - iedb_receptor:21532
-    value: Positive
+    measurement_value: Positive
   AKC:26:
     akc_id: AKC:26
     name: assay 3480641
@@ -1887,7 +1887,7 @@ assays:
     - iedb_receptor:21599
     - iedb_receptor:21600
     - iedb_receptor:21601
-    value: Positive
+    measurement_value: Positive
   AKC:35:
     akc_id: AKC:35
     name: assay 3480644
@@ -4039,7 +4039,7 @@ assays:
     - iedb_receptor:24571
     - iedb_receptor:24572
     - iedb_receptor:24573
-    value: Positive
+    measurement_value: Positive
   AKC:44:
     akc_id: AKC:44
     name: assay 3480640
@@ -4074,7 +4074,7 @@ assays:
     - iedb_receptor:21556
     - iedb_receptor:21557
     - iedb_receptor:21558
-    value: Positive
+    measurement_value: Positive
   AKC:53:
     akc_id: AKC:53
     name: assay 3480643
@@ -4673,7 +4673,7 @@ assays:
     - iedb_receptor:24602
     - iedb_receptor:24603
     - iedb_receptor:24604
-    value: Positive
+    measurement_value: Positive
   AKC:62:
     akc_id: AKC:62
     name: assay 3480645
@@ -6825,7 +6825,7 @@ assays:
     - iedb_receptor:24571
     - iedb_receptor:24572
     - iedb_receptor:24573
-    value: Positive
+    measurement_value: Positive
   AKC:71:
     akc_id: AKC:71
     name: assay 3480646
@@ -7047,7 +7047,7 @@ assays:
     - iedb_receptor:24739
     - iedb_receptor:24740
     - iedb_receptor:24741
-    value: Positive
+    measurement_value: Positive
   AKC:80:
     akc_id: AKC:80
     name: assay 3480647
@@ -7060,7 +7060,7 @@ assays:
     - iedb_receptor:21071
     - iedb_receptor:21072
     - iedb_receptor:21073
-    value: Positive
+    measurement_value: Positive
   AKC:89:
     akc_id: AKC:89
     name: assay 3480649
@@ -7080,7 +7080,7 @@ assays:
     - iedb_receptor:20967
     - iedb_receptor:20968
     - iedb_receptor:20969
-    value: Positive
+    measurement_value: Positive
   AKC:98:
     akc_id: AKC:98
     name: assay 3480650
@@ -7094,7 +7094,7 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    value: Positive
+    measurement_value: Positive
   AKC:107:
     akc_id: AKC:107
     name: assay 3480651
@@ -7114,7 +7114,7 @@ assays:
     - iedb_receptor:20967
     - iedb_receptor:20968
     - iedb_receptor:20969
-    value: Positive
+    measurement_value: Positive
   AKC:116:
     akc_id: AKC:116
     name: assay 3480655
@@ -7128,7 +7128,7 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    value: Positive
+    measurement_value: Positive
   AKC:125:
     akc_id: AKC:125
     name: assay 3480656
@@ -7142,7 +7142,7 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    value: Positive
+    measurement_value: Positive
   AKC:134:
     akc_id: AKC:134
     name: assay 3480658
@@ -7156,7 +7156,7 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    value: Positive
+    measurement_value: Positive
   AKC:143:
     akc_id: AKC:143
     name: assay 3480659
@@ -7170,7 +7170,7 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    value: Positive
+    measurement_value: Positive
   AKC:152:
     akc_id: AKC:152
     name: assay 3480660
@@ -7182,7 +7182,7 @@ assays:
     tcell_receptors:
     - iedb_receptor:20974
     - iedb_receptor:20975
-    value: Positive
+    measurement_value: Positive
   AKC:161:
     akc_id: AKC:161
     name: assay 3480661
@@ -7194,7 +7194,7 @@ assays:
     tcell_receptors:
     - iedb_receptor:20974
     - iedb_receptor:20975
-    value: Positive
+    measurement_value: Positive
   AKC:170:
     akc_id: AKC:170
     name: assay 3480662
@@ -7206,7 +7206,7 @@ assays:
     tcell_receptors:
     - iedb_receptor:20974
     - iedb_receptor:20975
-    value: Positive
+    measurement_value: Positive
   AKC:179:
     akc_id: AKC:179
     name: assay 3480663
@@ -7218,7 +7218,7 @@ assays:
     tcell_receptors:
     - iedb_receptor:20976
     - iedb_receptor:20977
-    value: Positive
+    measurement_value: Positive
   AKC:188:
     akc_id: AKC:188
     name: assay 3480664
@@ -7230,133 +7230,112 @@ assays:
     tcell_receptors:
     - iedb_receptor:20976
     - iedb_receptor:20977
-    value: Positive
+    measurement_value: Positive
 datasets:
   AKC:9:
     akc_id: AKC:9
-    name: dataset 1 about assay 3480642
-    description: dataset 1 is about assay 3480642
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:8
   AKC:18:
     akc_id: AKC:18
-    name: dataset 1 about assay 3480639
-    description: dataset 1 is about assay 3480639
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:17
   AKC:27:
     akc_id: AKC:27
-    name: dataset 1 about assay 3480641
-    description: dataset 1 is about assay 3480641
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:26
   AKC:36:
     akc_id: AKC:36
-    name: dataset 1 about assay 3480644
-    description: dataset 1 is about assay 3480644
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:35
   AKC:45:
     akc_id: AKC:45
-    name: dataset 1 about assay 3480640
-    description: dataset 1 is about assay 3480640
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:44
   AKC:54:
     akc_id: AKC:54
-    name: dataset 1 about assay 3480643
-    description: dataset 1 is about assay 3480643
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:53
   AKC:63:
     akc_id: AKC:63
-    name: dataset 1 about assay 3480645
-    description: dataset 1 is about assay 3480645
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:62
   AKC:72:
     akc_id: AKC:72
-    name: dataset 1 about assay 3480646
-    description: dataset 1 is about assay 3480646
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:71
   AKC:81:
     akc_id: AKC:81
-    name: dataset 1 about assay 3480647
-    description: dataset 1 is about assay 3480647
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:80
   AKC:90:
     akc_id: AKC:90
-    name: dataset 1 about assay 3480649
-    description: dataset 1 is about assay 3480649
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:89
   AKC:99:
     akc_id: AKC:99
-    name: dataset 1 about assay 3480650
-    description: dataset 1 is about assay 3480650
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:98
   AKC:108:
     akc_id: AKC:108
-    name: dataset 1 about assay 3480651
-    description: dataset 1 is about assay 3480651
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:107
   AKC:117:
     akc_id: AKC:117
-    name: dataset 1 about assay 3480655
-    description: dataset 1 is about assay 3480655
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:116
   AKC:126:
     akc_id: AKC:126
-    name: dataset 1 about assay 3480656
-    description: dataset 1 is about assay 3480656
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:125
   AKC:135:
     akc_id: AKC:135
-    name: dataset 1 about assay 3480658
-    description: dataset 1 is about assay 3480658
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:134
   AKC:144:
     akc_id: AKC:144
-    name: dataset 1 about assay 3480659
-    description: dataset 1 is about assay 3480659
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:143
   AKC:153:
     akc_id: AKC:153
-    name: dataset 1 about assay 3480660
-    description: dataset 1 is about assay 3480660
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:152
   AKC:162:
     akc_id: AKC:162
-    name: dataset 1 about assay 3480661
-    description: dataset 1 is about assay 3480661
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:161
   AKC:171:
     akc_id: AKC:171
-    name: dataset 1 about assay 3480662
-    description: dataset 1 is about assay 3480662
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:170
   AKC:180:
     akc_id: AKC:180
-    name: dataset 1 about assay 3480663
-    description: dataset 1 is about assay 3480663
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:179
   AKC:189:
     akc_id: AKC:189
-    name: dataset 1 about assay 3480664
-    description: dataset 1 is about assay 3480664
-    assays:
+    type: AKDataSet
+    data_items:
     - AKC:188
 conclusions:
   AKC:10:
