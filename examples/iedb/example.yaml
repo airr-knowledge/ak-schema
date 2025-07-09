@@ -1473,7 +1473,8 @@ assays:
     - iedb_receptor:24245
     - iedb_receptor:24246
     - iedb_receptor:24247
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:17:
     akc_id: AKC:17
     name: assay 3480639
@@ -1761,7 +1762,8 @@ assays:
     - iedb_receptor:21534
     - iedb_receptor:21531
     - iedb_receptor:21532
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:26:
     akc_id: AKC:26
     name: assay 3480641
@@ -1887,7 +1889,8 @@ assays:
     - iedb_receptor:21599
     - iedb_receptor:21600
     - iedb_receptor:21601
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:35:
     akc_id: AKC:35
     name: assay 3480644
@@ -4039,7 +4042,8 @@ assays:
     - iedb_receptor:24571
     - iedb_receptor:24572
     - iedb_receptor:24573
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:44:
     akc_id: AKC:44
     name: assay 3480640
@@ -4074,7 +4078,8 @@ assays:
     - iedb_receptor:21556
     - iedb_receptor:21557
     - iedb_receptor:21558
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:53:
     akc_id: AKC:53
     name: assay 3480643
@@ -4673,7 +4678,8 @@ assays:
     - iedb_receptor:24602
     - iedb_receptor:24603
     - iedb_receptor:24604
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:62:
     akc_id: AKC:62
     name: assay 3480645
@@ -6825,7 +6831,8 @@ assays:
     - iedb_receptor:24571
     - iedb_receptor:24572
     - iedb_receptor:24573
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:71:
     akc_id: AKC:71
     name: assay 3480646
@@ -7047,7 +7054,8 @@ assays:
     - iedb_receptor:24739
     - iedb_receptor:24740
     - iedb_receptor:24741
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:80:
     akc_id: AKC:80
     name: assay 3480647
@@ -7060,7 +7068,8 @@ assays:
     - iedb_receptor:21071
     - iedb_receptor:21072
     - iedb_receptor:21073
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:89:
     akc_id: AKC:89
     name: assay 3480649
@@ -7080,7 +7089,8 @@ assays:
     - iedb_receptor:20967
     - iedb_receptor:20968
     - iedb_receptor:20969
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:98:
     akc_id: AKC:98
     name: assay 3480650
@@ -7094,7 +7104,8 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:107:
     akc_id: AKC:107
     name: assay 3480651
@@ -7114,7 +7125,8 @@ assays:
     - iedb_receptor:20967
     - iedb_receptor:20968
     - iedb_receptor:20969
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:116:
     akc_id: AKC:116
     name: assay 3480655
@@ -7128,7 +7140,8 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:125:
     akc_id: AKC:125
     name: assay 3480656
@@ -7142,7 +7155,8 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:134:
     akc_id: AKC:134
     name: assay 3480658
@@ -7156,7 +7170,8 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:143:
     akc_id: AKC:143
     name: assay 3480659
@@ -7170,7 +7185,8 @@ assays:
     - iedb_receptor:20971
     - iedb_receptor:20972
     - iedb_receptor:20973
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:152:
     akc_id: AKC:152
     name: assay 3480660
@@ -7182,7 +7198,8 @@ assays:
     tcell_receptors:
     - iedb_receptor:20974
     - iedb_receptor:20975
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:161:
     akc_id: AKC:161
     name: assay 3480661
@@ -7194,7 +7211,8 @@ assays:
     tcell_receptors:
     - iedb_receptor:20974
     - iedb_receptor:20975
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:170:
     akc_id: AKC:170
     name: assay 3480662
@@ -7206,7 +7224,8 @@ assays:
     tcell_receptors:
     - iedb_receptor:20974
     - iedb_receptor:20975
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:179:
     akc_id: AKC:179
     name: assay 3480663
@@ -7218,7 +7237,8 @@ assays:
     tcell_receptors:
     - iedb_receptor:20976
     - iedb_receptor:20977
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
   AKC:188:
     akc_id: AKC:188
     name: assay 3480664
@@ -7230,7 +7250,8 @@ assays:
     tcell_receptors:
     - iedb_receptor:20976
     - iedb_receptor:20977
-    measurement_value: Positive
+    measurement_value: 1
+    measurement_unit: UO:0000232
 datasets:
   AKC:9:
     akc_id: AKC:9
