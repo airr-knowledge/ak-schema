@@ -209,8 +209,8 @@
 <div class="mermaid"> classDiagram
     class BCellReceptor
     click BCellReceptor href "../BCellReceptor"
-      AKObject &lt;|-- BCellReceptor
-        click AKObject href "../AKObject"
+      ImmuneReceptor &lt;|-- BCellReceptor
+        click ImmuneReceptor href "../ImmuneReceptor"
 
       BCellReceptor : akc_id
 
@@ -241,12 +241,24 @@
     click Chain href "../Chain"
 
 
+      BCellReceptor : species
+
+
+
+
+    BCellReceptor --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
+<li><a href="../ImmuneReceptor/">ImmuneReceptor</a><ul>
 <li><strong>BCellReceptor</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -278,6 +290,12 @@
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td>IG lambda light chain</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -342,7 +360,7 @@
 <details>
 <pre><code class="language-yaml">name: BCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: AKObject
+is_a: ImmuneReceptor
 slots:
 - igh_chain
 - igk_chain
@@ -354,7 +372,7 @@ slots:
 <details>
 <pre><code class="language-yaml">name: BCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: AKObject
+is_a: ImmuneReceptor
 attributes:
   igh_chain:
     name: igh_chain
@@ -386,6 +404,24 @@ attributes:
     domain_of:
     - BCellReceptor
     range: Chain
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: BCellReceptor
+    domain_of:
+    - Participant
+    - ImmuneReceptor
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

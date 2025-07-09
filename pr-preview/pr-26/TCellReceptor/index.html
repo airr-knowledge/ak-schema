@@ -212,8 +212,8 @@
 <div class="mermaid"> classDiagram
     class TCellReceptor
     click TCellReceptor href "../TCellReceptor"
-      AKObject &lt;|-- TCellReceptor
-        click AKObject href "../AKObject"
+      ImmuneReceptor &lt;|-- TCellReceptor
+        click ImmuneReceptor href "../ImmuneReceptor"
 
 
       TCellReceptor &lt;|-- AlphaBetaTCR
@@ -224,6 +224,15 @@
 
       TCellReceptor : akc_id
 
+      TCellReceptor : species
+
+
+
+
+    TCellReceptor --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
       TCellReceptor : type
 
 
@@ -231,9 +240,12 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
+<li><a href="../ImmuneReceptor/">ImmuneReceptor</a><ul>
 <li><strong>TCellReceptor</strong><ul>
 <li><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></li>
 <li><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -255,6 +267,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -325,7 +343,7 @@
 <details>
 <pre><code class="language-yaml">name: TCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: AKObject
+is_a: ImmuneReceptor
 abstract: true
 slots:
 - type
@@ -337,7 +355,7 @@ class_uri: GO:0042101
 <details>
 <pre><code class="language-yaml">name: TCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: AKObject
+is_a: ImmuneReceptor
 abstract: true
 attributes:
   type:
@@ -354,6 +372,24 @@ attributes:
     - TCellReceptor
     - Epitope
     range: string
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: TCellReceptor
+    domain_of:
+    - Participant
+    - ImmuneReceptor
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

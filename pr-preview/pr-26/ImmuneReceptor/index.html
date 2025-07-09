@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://airr-knowledge.github.io/ak-schema/AIRRDataProcessing/" rel="canonical"/>
+<link href="https://airr-knowledge.github.io/ak-schema/ImmuneReceptor/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: AIRRDataProcessing - ak-schema</title>
+<title>Class: ImmuneReceptor - ak-schema</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-airrdataprocessing">
+<a class="md-skip" href="#class-immunereceptor">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: AIRRDataProcessing
+              Class: ImmuneReceptor
             
           </span>
 </div>
@@ -196,39 +196,36 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/AIRRDataProcessing.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/ImmuneReceptor.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-airrdataprocessing">Class: AIRRDataProcessing</h1>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/AIRRDataProcessing">ak_schema:AIRRDataProcessing</a></p>
+<h1 id="class-immunereceptor">Class: ImmuneReceptor</h1>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/ImmuneReceptor">ak_schema:ImmuneReceptor</a></p>
 <div class="mermaid"> classDiagram
-    class AIRRDataProcessing
-    click AIRRDataProcessing href "../AIRRDataProcessing"
-      DataTransformation &lt;|-- AIRRDataProcessing
-        click DataTransformation href "../DataTransformation"
-
-      AIRRDataProcessing : akc_id
-
-      AIRRDataProcessing : data_transformation_types
+    class ImmuneReceptor
+    click ImmuneReceptor href "../ImmuneReceptor"
+      AKObject &lt;|-- ImmuneReceptor
+        click AKObject href "../AKObject"
 
 
+      ImmuneReceptor &lt;|-- TCellReceptor
+        click TCellReceptor href "../TCellReceptor"
+      ImmuneReceptor &lt;|-- BCellReceptor
+        click BCellReceptor href "../BCellReceptor"
 
 
-    AIRRDataProcessing --&gt; "*" DataItemTypeEnum : data_transformation_types
-    click DataItemTypeEnum href "../DataItemTypeEnum"
+      ImmuneReceptor : akc_id
 
-
-      AIRRDataProcessing : description
-
-      AIRRDataProcessing : name
-
-      AIRRDataProcessing : was_generated_by
+      ImmuneReceptor : species
 
 
 
 
-    AIRRDataProcessing --&gt; "*" InputOutputDataMap : was_generated_by
-    click InputOutputDataMap href "../InputOutputDataMap"
+    ImmuneReceptor --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
 
 
 
@@ -236,14 +233,9 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../Process/">Process</a><ul>
-<li><a href="../DataTransformation/">DataTransformation</a><ul>
-<li><strong>AIRRDataProcessing</strong></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><strong>ImmuneReceptor</strong><ul>
+<li><a href="../TCellReceptor/">TCellReceptor</a></li>
+<li><a href="../BCellReceptor/">BCellReceptor</a></li>
 </ul>
 </li>
 </ul>
@@ -261,28 +253,10 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../was_generated_by/">was_generated_by</a></td>
-<td>* <br/> <a href="../InputOutputDataMap/">InputOutputDataMap</a></td>
-<td>direct provenance link of one entity (input) to another (output) for a data t...</td>
-<td><a href="../DataTransformation/">DataTransformation</a></td>
-</tr>
-<tr>
-<td><a href="../data_transformation_types/">data_transformation_types</a></td>
-<td>* <br/> <a href="../DataItemTypeEnum/">DataItemTypeEnum</a></td>
-<td>semantic types of the data transformation</td>
-<td><a href="../DataTransformation/">DataTransformation</a></td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td>direct</td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -308,11 +282,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:AIRRDataProcessing</td>
+<td>ak_schema:ImmuneReceptor</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:AIRRDataProcessing</td>
+<td>ak_schema:ImmuneReceptor</td>
 </tr>
 </tbody>
 </table>
@@ -320,63 +294,40 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: AIRRDataProcessing
+<pre><code class="language-yaml">name: ImmuneReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: DataTransformation
+is_a: AKObject
+abstract: true
+slots:
+- species
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: AIRRDataProcessing
+<pre><code class="language-yaml">name: ImmuneReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: DataTransformation
+is_a: AKObject
+abstract: true
 attributes:
-  was_generated_by:
-    name: was_generated_by
-    description: direct provenance link of one entity (input) to another (output)
-      for a data transformation
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: was_generated_by
-    owner: AIRRDataProcessing
+    alias: species
+    owner: ImmuneReceptor
     domain_of:
-    - DataTransformation
-    range: InputOutputDataMap
-    multivalued: true
-  data_transformation_types:
-    name: data_transformation_types
-    description: semantic types of the data transformation
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: data_transformation_types
-    owner: AIRRDataProcessing
-    domain_of:
-    - DataTransformation
-    range: DataItemTypeEnum
-    multivalued: true
-  name:
-    name: name
-    description: A human-readable name for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:name
-    alias: name
-    owner: AIRRDataProcessing
-    domain_of:
-    - NamedThing
-    range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: AIRRDataProcessing
-    domain_of:
-    - NamedThing
-    range: string
+    - Participant
+    - ImmuneReceptor
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.
@@ -385,7 +336,7 @@ attributes:
     slot_uri: schema:identifier
     identifier: true
     alias: akc_id
-    owner: AIRRDataProcessing
+    owner: ImmuneReceptor
     domain_of:
     - AKObject
     range: uriorcurie
