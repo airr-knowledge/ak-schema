@@ -1,54 +1,5 @@
 {
     "$defs": {
-        "AIRRDataProcessing": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "akc_id": {
-                    "description": "A unique identifier for a thing in the AKC.",
-                    "type": "string"
-                },
-                "data_transformation_types": {
-                    "description": "semantic types of the data transformation",
-                    "items": {
-                        "$ref": "#/$defs/DataItemTypeEnum"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "was_generated_by": {
-                    "description": "direct provenance link of one entity (input) to another (output) for a data transformation",
-                    "items": {
-                        "$ref": "#/$defs/InputOutputDataMap"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "akc_id"
-            ],
-            "title": "AIRRDataProcessing",
-            "type": "object"
-        },
         "AIRRKnowledgeCommons": {
             "additionalProperties": false,
             "description": "A container for instances of multiple classes.",
@@ -1442,6 +1393,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
@@ -1479,6 +1434,10 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 },
                 "tra_chain": {
                     "description": "T cell receptor alpha chain",
@@ -1958,7 +1917,7 @@
                 "measurement_value": {
                     "description": "The measurement result value",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -2071,7 +2030,7 @@
                 "measurement_value": {
                     "description": "The measurement result value",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -2166,6 +2125,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 }
             },
             "required": [
@@ -2202,6 +2165,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 }
             },
             "required": [],
@@ -3693,6 +3660,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "trd_chain": {
                     "description": "T cell receptor delta chain",
                     "type": [
@@ -3730,6 +3701,10 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 },
                 "trd_chain": {
                     "description": "T cell receptor delta chain",
@@ -8780,7 +8755,7 @@
                 "measurement_value": {
                     "description": "The measurement result value",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },
@@ -8884,7 +8859,7 @@
                 "measurement_value": {
                     "description": "The measurement result value",
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ]
                 },

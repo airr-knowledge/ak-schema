@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-08T00:43:20
+# Generation date: 2025-07-09T19:09:23
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -336,10 +336,6 @@ class DataTransformationAkcId(ProcessAkcId):
     pass
 
 
-class AIRRDataProcessingAkcId(DataTransformationAkcId):
-    pass
-
-
 class ConclusionAkcId(NamedThingAkcId):
     pass
 
@@ -352,7 +348,11 @@ class ChainAkcId(AKObjectAkcId):
     pass
 
 
-class TCellReceptorAkcId(AKObjectAkcId):
+class ImmuneReceptorAkcId(AKObjectAkcId):
+    pass
+
+
+class TCellReceptorAkcId(ImmuneReceptorAkcId):
     pass
 
 
@@ -364,7 +364,7 @@ class GammaDeltaTCRAkcId(TCellReceptorAkcId):
     pass
 
 
-class BCellReceptorAkcId(AKObjectAkcId):
+class BCellReceptorAkcId(ImmuneReceptorAkcId):
     pass
 
 
@@ -987,7 +987,7 @@ class Assessment(LifeEvent):
     akc_id: Union[str, AssessmentAkcId] = None
     assessment_type: Optional[str] = None
     target_entity_type: Optional[str] = None
-    measurement_value: Optional[str] = None
+    measurement_value: Optional[Decimal] = None
     measurement_unit: Optional[Union[str, "MeasurementUnitOntology"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1002,8 +1002,8 @@ class Assessment(LifeEvent):
         if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
             self.target_entity_type = str(self.target_entity_type)
 
-        if self.measurement_value is not None and not isinstance(self.measurement_value, str):
-            self.measurement_value = str(self.measurement_value)
+        if self.measurement_value is not None and not isinstance(self.measurement_value, Decimal):
+            self.measurement_value = Decimal(self.measurement_value)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1343,7 +1343,7 @@ class TCellReceptorEpitopeBindingAssay(Assay):
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
-    measurement_value: Optional[str] = None
+    measurement_value: Optional[Decimal] = None
     measurement_unit: Optional[Union[str, "MeasurementUnitOntology"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1359,8 +1359,8 @@ class TCellReceptorEpitopeBindingAssay(Assay):
             self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
         self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
 
-        if self.measurement_value is not None and not isinstance(self.measurement_value, str):
-            self.measurement_value = str(self.measurement_value)
+        if self.measurement_value is not None and not isinstance(self.measurement_value, Decimal):
+            self.measurement_value = Decimal(self.measurement_value)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1405,12 +1405,12 @@ class MeasurementDatum(DataItem):
     class_name: ClassVar[str] = "MeasurementDatum"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MeasurementDatum
 
-    measurement_value: Optional[str] = None
+    measurement_value: Optional[Decimal] = None
     measurement_unit: Optional[Union[str, "MeasurementUnitOntology"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.measurement_value is not None and not isinstance(self.measurement_value, str):
-            self.measurement_value = str(self.measurement_value)
+        if self.measurement_value is not None and not isinstance(self.measurement_value, Decimal):
+            self.measurement_value = Decimal(self.measurement_value)
 
         super().__post_init__(**kwargs)
 
@@ -1671,26 +1671,6 @@ class InputOutputDataMap(YAMLRoot):
 
 
 @dataclass(repr=False)
-class AIRRDataProcessing(DataTransformation):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRDataProcessing"]
-    class_class_curie: ClassVar[str] = "ak_schema:AIRRDataProcessing"
-    class_name: ClassVar[str] = "AIRRDataProcessing"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRDataProcessing
-
-    akc_id: Union[str, AIRRDataProcessingAkcId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, AIRRDataProcessingAkcId):
-            self.akc_id = AIRRDataProcessingAkcId(self.akc_id)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class Conclusion(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1853,7 +1833,19 @@ class Chain(AKObject):
 
 
 @dataclass(repr=False)
-class TCellReceptor(AKObject):
+class ImmuneReceptor(AKObject):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ImmuneReceptor"]
+    class_class_curie: ClassVar[str] = "ak_schema:ImmuneReceptor"
+    class_name: ClassVar[str] = "ImmuneReceptor"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneReceptor
+
+    akc_id: Union[str, ImmuneReceptorAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
+
+@dataclass(repr=False)
+class TCellReceptor(ImmuneReceptor):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GO["0042101"]
@@ -1946,7 +1938,7 @@ class GammaDeltaTCR(TCellReceptor):
 
 
 @dataclass(repr=False)
-class BCellReceptor(AKObject):
+class BCellReceptor(ImmuneReceptor):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["BCellReceptor"]
@@ -5990,7 +5982,7 @@ slots.unit = Slot(uri=AK_SCHEMA.unit, name="unit", curie=AK_SCHEMA.curie('unit')
                    model_uri=AK_SCHEMA.unit, domain=None, range=Optional[str])
 
 slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measurement_value", curie=AK_SCHEMA.curie('measurement_value'),
-                   model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[Decimal])
 
 slots.measurement_unit = Slot(uri=AK_SCHEMA.measurement_unit, name="measurement_unit", curie=AK_SCHEMA.curie('measurement_unit'),
                    model_uri=AK_SCHEMA.measurement_unit, domain=None, range=Optional[Union[str, "MeasurementUnitOntology"]])
