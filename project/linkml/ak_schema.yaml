@@ -1597,6 +1597,7 @@ slots:
     name: measurement_value
     description: The measurement result value
     from_schema: https://github.com/airr-knowledge/ak-schema
+    range: decimal
   measurement_unit:
     name: measurement_unit
     description: The measurement result value unit
@@ -6037,10 +6038,6 @@ classes:
     - data_transformation
     - has_specified_input
     - has_specified_output
-  AIRRDataProcessing:
-    name: AIRRDataProcessing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: DataTransformation
   Conclusion:
     name: Conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6086,10 +6083,17 @@ classes:
     - cdr2_end
     - cdr3_start
     - cdr3_end
+  ImmuneReceptor:
+    name: ImmuneReceptor
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    abstract: true
+    slots:
+    - species
   TCellReceptor:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: AKObject
+    is_a: ImmuneReceptor
     abstract: true
     slots:
     - type
@@ -6113,7 +6117,7 @@ classes:
   BCellReceptor:
     name: BCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: AKObject
+    is_a: ImmuneReceptor
     slots:
     - igh_chain
     - igk_chain

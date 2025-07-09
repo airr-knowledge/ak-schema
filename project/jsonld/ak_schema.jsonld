@@ -2689,7 +2689,7 @@
       "domain_of": [
         "MeasurementDatum"
       ],
-      "range": "string",
+      "range": "decimal",
       "@type": "SlotDefinition"
     },
     {
@@ -4262,6 +4262,7 @@
       "owner": "Subject",
       "domain_of": [
         "Participant",
+        "ImmuneReceptor",
         "AlleleDescription",
         "GermlineSet",
         "Subject"
@@ -12560,22 +12561,6 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "AIRRDataProcessing",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRDataProcessing",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "DataTransformation",
-      "slots": [
-        "akc_id",
-        "name",
-        "description",
-        "was_generated_by",
-        "data_transformation_types"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRDataProcessing",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "Conclusion",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Conclusion",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12651,16 +12636,31 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ImmuneReceptor",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKObject",
+      "abstract": true,
+      "slots": [
+        "akc_id",
+        "species"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "TCellReceptor",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/TCellReceptor",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "GO:0042101"
       ],
-      "is_a": "AKObject",
+      "is_a": "ImmuneReceptor",
       "abstract": true,
       "slots": [
         "akc_id",
+        "species",
         "type"
       ],
       "slot_usage": {},
@@ -12677,6 +12677,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
+        "species",
         "type",
         "tra_chain",
         "trb_chain"
@@ -12695,6 +12696,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
+        "species",
         "type",
         "trg_chain",
         "trd_chain"
@@ -12707,9 +12709,10 @@
       "name": "BCellReceptor",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptor",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "AKObject",
+      "is_a": "ImmuneReceptor",
       "slots": [
         "akc_id",
+        "species",
         "igh_chain",
         "igk_chain",
         "igl_chain"
@@ -13902,9 +13905,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-08T00:43:13",
-  "source_file_size": 204600,
-  "generation_date": "2025-07-08T00:43:16",
+  "source_file_date": "2025-07-09T19:09:16",
+  "source_file_size": 204657,
+  "generation_date": "2025-07-09T19:09:18",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
