@@ -73,10 +73,6 @@ classes:
       - has_specified_input
       - has_specified_output
 
-  AIRRDataProcessing:
-    is_a: DataTransformation
-    slots:
-
   Conclusion:
     is_a: NamedThing
     class_uri: OBI:0001909 # conclusion based on data
@@ -92,6 +88,7 @@ classes:
 slots:
   measurement_value:
     description: The measurement result value
+    range: decimal
   measurement_unit:
     description: The measurement result value unit
     range: MeasurementUnitOntology
