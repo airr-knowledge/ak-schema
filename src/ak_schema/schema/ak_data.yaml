@@ -11,7 +11,7 @@ classes:
 
   MeasurementDatum:
     is_a: DataItem
-    class_uri: IAO:0000109 # measurement datum
+    class_uri: IAO:0000032 # scalar measurement datum
     abstract: true
     slots:
       - measurement_value
