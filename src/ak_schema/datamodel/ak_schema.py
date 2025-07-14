@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-09T19:09:23
+# Generation date: 2025-07-14T18:00:42
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -799,7 +799,7 @@ class Participant(NamedThing):
     akc_id: Union[str, ParticipantAkcId] = None
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
     species: Optional[Union[str, "SpeciesOntology"]] = None
-    sex: Optional[Union[str, "SexEnum"]] = None
+    sex: Optional[Union[str, "BiologicalSexOntology"]] = None
     age: Optional[str] = None
     age_unit: Optional[Union[str, "AgeUnitOntology"]] = None
     age_event: Optional[str] = None
@@ -816,9 +816,6 @@ class Participant(NamedThing):
 
         if self.study_arm is not None and not isinstance(self.study_arm, StudyArmAkcId):
             self.study_arm = StudyArmAkcId(self.study_arm)
-
-        if self.sex is not None and not isinstance(self.sex, SexEnum):
-            self.sex = SexEnum(self.sex)
 
         if self.age is not None and not isinstance(self.age, str):
             self.age = str(self.age)
@@ -1343,8 +1340,7 @@ class TCellReceptorEpitopeBindingAssay(Assay):
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
-    measurement_value: Optional[Decimal] = None
-    measurement_unit: Optional[Union[str, "MeasurementUnitOntology"]] = None
+    measurement_category: Optional[Union[str, "CategoricalSpecificityEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1359,8 +1355,8 @@ class TCellReceptorEpitopeBindingAssay(Assay):
             self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
         self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
 
-        if self.measurement_value is not None and not isinstance(self.measurement_value, Decimal):
-            self.measurement_value = Decimal(self.measurement_value)
+        if self.measurement_category is not None and not isinstance(self.measurement_category, CategoricalSpecificityEnum):
+            self.measurement_category = CategoricalSpecificityEnum(self.measurement_category)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1416,6 +1412,42 @@ class MeasurementDatum(DataItem):
 
 
 @dataclass(repr=False)
+class MeasurementCategory(DataItem):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0001930"]
+    class_class_curie: ClassVar[str] = "OBI:0001930"
+    class_name: ClassVar[str] = "MeasurementCategory"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MeasurementCategory
+
+    measurement_category: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.measurement_category is not None and not isinstance(self.measurement_category, str):
+            self.measurement_category = str(self.measurement_category)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class TCellReceptorEpitopeSpecificityMeasurement(MeasurementCategory):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["TCellReceptorEpitopeSpecificityMeasurement"]
+    class_class_curie: ClassVar[str] = "ak_schema:TCellReceptorEpitopeSpecificityMeasurement"
+    class_name: ClassVar[str] = "TCellReceptorEpitopeSpecificityMeasurement"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement
+
+    measurement_category: Optional[Union[str, "CategoricalSpecificityEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.measurement_category is not None and not isinstance(self.measurement_category, CategoricalSpecificityEnum):
+            self.measurement_category = CategoricalSpecificityEnum(self.measurement_category)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class DataSet(DataItem):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1424,12 +1456,12 @@ class DataSet(DataItem):
     class_name: ClassVar[str] = "DataSet"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DataSet
 
-    data_items: Optional[Union[Union[str, AKDataItemAkcId], List[Union[str, AKDataItemAkcId]]]] = empty_list()
+    data_items: Optional[Union[Union[str, AKObjectAkcId], List[Union[str, AKObjectAkcId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if not isinstance(self.data_items, list):
             self.data_items = [self.data_items] if self.data_items is not None else []
-        self.data_items = [v if isinstance(v, AKDataItemAkcId) else AKDataItemAkcId(v) for v in self.data_items]
+        self.data_items = [v if isinstance(v, AKObjectAkcId) else AKObjectAkcId(v) for v in self.data_items]
 
         super().__post_init__(**kwargs)
 
@@ -1492,7 +1524,7 @@ class AKDataSet(AKDataItem):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AKDataSet
 
     akc_id: Union[str, AKDataSetAkcId] = None
-    data_items: Optional[Union[Union[str, AKDataItemAkcId], List[Union[str, AKDataItemAkcId]]]] = empty_list()
+    data_items: Optional[Union[Union[str, AKObjectAkcId], List[Union[str, AKObjectAkcId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1502,7 +1534,7 @@ class AKDataSet(AKDataItem):
 
         if not isinstance(self.data_items, list):
             self.data_items = [self.data_items] if self.data_items is not None else []
-        self.data_items = [v if isinstance(v, AKDataItemAkcId) else AKDataItemAkcId(v) for v in self.data_items]
+        self.data_items = [v if isinstance(v, AKObjectAkcId) else AKObjectAkcId(v) for v in self.data_items]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -5256,6 +5288,24 @@ class MeasurementUnitOntology(EnumDefinitionImpl):
         name="MeasurementUnitOntology",
     )
 
+class CategoricalSpecificityEnum(EnumDefinitionImpl):
+
+    Positive = PermissibleValue(text="Positive")
+    Negative = PermissibleValue(text="Negative")
+
+    _defn = EnumDefinition(
+        name="CategoricalSpecificityEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Positive-Low",
+            PermissibleValue(text="Positive-Low"))
+        setattr(cls, "Positive-High",
+            PermissibleValue(text="Positive-High"))
+        setattr(cls, "Positive-Intermediate",
+            PermissibleValue(text="Positive-Intermediate"))
+
 class DataItemTypeEnum(EnumDefinitionImpl):
 
     sequence_reads = PermissibleValue(text="sequence_reads")
@@ -5987,8 +6037,11 @@ slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measuremen
 slots.measurement_unit = Slot(uri=AK_SCHEMA.measurement_unit, name="measurement_unit", curie=AK_SCHEMA.curie('measurement_unit'),
                    model_uri=AK_SCHEMA.measurement_unit, domain=None, range=Optional[Union[str, "MeasurementUnitOntology"]])
 
+slots.measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
+                   model_uri=AK_SCHEMA.measurement_category, domain=None, range=Optional[str])
+
 slots.data_items = Slot(uri=AK_SCHEMA.data_items, name="data_items", curie=AK_SCHEMA.curie('data_items'),
-                   model_uri=AK_SCHEMA.data_items, domain=None, range=Optional[Union[Union[str, AKDataItemAkcId], List[Union[str, AKDataItemAkcId]]]])
+                   model_uri=AK_SCHEMA.data_items, domain=None, range=Optional[Union[Union[str, AKObjectAkcId], List[Union[str, AKObjectAkcId]]]])
 
 slots.data_item_types = Slot(uri=AK_SCHEMA.data_item_types, name="data_item_types", curie=AK_SCHEMA.curie('data_item_types'),
                    model_uri=AK_SCHEMA.data_item_types, domain=None, range=Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]])
@@ -7363,3 +7416,9 @@ slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors
 
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
+
+slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
+                   model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, "BiologicalSexOntology"]])
+
+slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
+                   model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])
