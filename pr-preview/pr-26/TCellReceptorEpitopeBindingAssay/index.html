@@ -204,8 +204,8 @@
 <div class="mermaid"> classDiagram
     class TCellReceptorEpitopeBindingAssay
     click TCellReceptorEpitopeBindingAssay href "../TCellReceptorEpitopeBindingAssay"
-      MeasurementDatum &lt;|-- TCellReceptorEpitopeBindingAssay
-        click MeasurementDatum href "../MeasurementDatum"
+      TCellReceptorEpitopeSpecificityMeasurement &lt;|-- TCellReceptorEpitopeBindingAssay
+        click TCellReceptorEpitopeSpecificityMeasurement href "../TCellReceptorEpitopeSpecificityMeasurement"
       Assay &lt;|-- TCellReceptorEpitopeBindingAssay
         click Assay href "../Assay"
 
@@ -233,16 +233,14 @@
     click AKDataItem href "../AKDataItem"
 
 
-      TCellReceptorEpitopeBindingAssay : measurement_unit
+      TCellReceptorEpitopeBindingAssay : measurement_category
 
 
 
 
-    TCellReceptorEpitopeBindingAssay --&gt; "0..1" MeasurementUnitOntology : measurement_unit
-    click MeasurementUnitOntology href "../MeasurementUnitOntology"
+    TCellReceptorEpitopeBindingAssay --&gt; "0..1" CategoricalSpecificityEnum : measurement_category
+    click CategoricalSpecificityEnum href "../CategoricalSpecificityEnum"
 
-
-      TCellReceptorEpitopeBindingAssay : measurement_value
 
       TCellReceptorEpitopeBindingAssay : name
 
@@ -285,7 +283,7 @@
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../Process/">Process</a><ul>
 <li><a href="../Assay/">Assay</a><ul>
-<li><strong>TCellReceptorEpitopeBindingAssay</strong> [ <a href="../MeasurementDatum/">MeasurementDatum</a>]</li>
+<li><strong>TCellReceptorEpitopeBindingAssay</strong> [ <a href="../TCellReceptorEpitopeSpecificityMeasurement/">TCellReceptorEpitopeSpecificityMeasurement</a>]</li>
 </ul>
 </li>
 </ul>
@@ -317,18 +315,6 @@
 <td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
 <td>The T cell receptors being measured</td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../measurement_value/">measurement_value</a></td>
-<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
-<td>The measurement result value</td>
-<td><a href="../MeasurementDatum/">MeasurementDatum</a></td>
-</tr>
-<tr>
-<td><a href="../measurement_unit/">measurement_unit</a></td>
-<td>0..1 <br/> <a href="../MeasurementUnitOntology/">MeasurementUnitOntology</a></td>
-<td>The measurement result value unit</td>
-<td><a href="../MeasurementDatum/">MeasurementDatum</a></td>
 </tr>
 <tr>
 <td><a href="../specimen/">specimen</a></td>
@@ -384,6 +370,12 @@
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
 </tr>
+<tr>
+<td><a href="../measurement_category/">measurement_category</a></td>
+<td>0..1 <br/> <a href="../CategoricalSpecificityEnum/">CategoricalSpecificityEnum</a></td>
+<td>The measurement result category</td>
+<td><a href="../MeasurementCategory/">MeasurementCategory</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -418,7 +410,7 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
 mixins:
-- MeasurementDatum
+- TCellReceptorEpitopeSpecificityMeasurement
 slots:
 - epitope
 - tcell_receptors
@@ -432,7 +424,7 @@ class_uri: OBI:1110037
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
 mixins:
-- MeasurementDatum
+- TCellReceptorEpitopeSpecificityMeasurement
 attributes:
   epitope:
     name: epitope
@@ -457,26 +449,6 @@ attributes:
     - TCellReceptorEpitopeBindingAssay
     range: TCellReceptor
     multivalued: true
-  measurement_value:
-    name: measurement_value
-    description: The measurement result value
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: measurement_value
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - MeasurementDatum
-    range: decimal
-  measurement_unit:
-    name: measurement_unit
-    description: The measurement result value unit
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: measurement_unit
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - MeasurementDatum
-    range: MeasurementUnitOntology
   specimen:
     name: specimen
     description: The specimen that was input for an assay
@@ -585,6 +557,16 @@ attributes:
     - AKObject
     range: uriorcurie
     required: true
+  measurement_category:
+    name: measurement_category
+    description: The measurement result category
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: measurement_category
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - MeasurementCategory
+    range: CategoricalSpecificityEnum
 class_uri: OBI:1110037
 
 </code></pre>

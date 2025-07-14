@@ -250,8 +250,8 @@
 
 
 
-    Participant --&gt; "0..1" SexEnum : sex
-    click SexEnum href "../SexEnum"
+    Participant --&gt; "0..1" BiologicalSexOntology : sex
+    click BiologicalSexOntology href "../BiologicalSexOntology"
 
 
       Participant : species
@@ -318,7 +318,7 @@
 </tr>
 <tr>
 <td><a href="../sex/">sex</a></td>
-<td>0..1 <br/> <a href="../SexEnum/">SexEnum</a></td>
+<td>0..1 <br/> <a href="../BiologicalSexOntology/">BiologicalSexOntology</a></td>
 <td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
@@ -476,6 +476,10 @@ slots:
 - ethnicity
 - geolocation
 - strain
+slot_usage:
+  sex:
+    name: sex
+    range: BiologicalSexOntology
 class_uri: OBI:0100026
 
 </code></pre>
@@ -486,6 +490,10 @@ class_uri: OBI:0100026
 description: A participant in an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
+slot_usage:
+  sex:
+    name: sex
+    range: BiologicalSexOntology
 attributes:
   study_arm:
     name: study_arm
@@ -530,7 +538,7 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: SexEnum
+    range: BiologicalSexOntology
   age:
     name: age
     description: The age of a participant relative to age_event

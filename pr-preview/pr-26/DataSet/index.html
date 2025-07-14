@@ -220,8 +220,8 @@
 
 
 
-    DataSet --&gt; "*" AKDataItem : data_items
-    click AKDataItem href "../AKDataItem"
+    DataSet --&gt; "*" AKObject : data_items
+    click AKObject href "../AKObject"
 
 
 
@@ -246,7 +246,7 @@
 <tbody>
 <tr>
 <td><a href="../data_items/">data_items</a></td>
-<td>* <br/> <a href="../AKDataItem/">AKDataItem</a></td>
+<td>* <br/> <a href="../AKObject/">AKObject</a></td>
 <td>set of data items</td>
 <td>direct</td>
 </tr>
@@ -306,7 +306,7 @@ attributes:
     owner: DataSet
     domain_of:
     - DataSet
-    range: AKDataItem
+    range: AKObject
     multivalued: true
 class_uri: IAO:0000100
 
