@@ -29,6 +29,7 @@ SHEET_TABS = $(LINKML_SCHEMA_GOOGLE_SHEET_TABS)
 SHEET_MODULE_PATH = $(SOURCE_SCHEMA_DIR)/$(SHEET_MODULE).yaml
 SQL_DDL_PATH = $(DEST)/sqlddl/ak_schema.sql
 POSTGRESQL_DDL_PATH = $(DEST)/sqlddl/ak_postgres_schema.sql
+LINKML_VERSION = $(shell linkml --version)
 
 CONFIG_YAML =
 ifdef LINKML_GENERATORS_CONFIG_YAML
@@ -84,6 +85,7 @@ help: status
 	@echo ""
 
 status: check-config
+	@echo "$(LINKML_VERSION)"
 	@echo "Project: $(SCHEMA_NAME)"
 	@echo "Source: $(SOURCE_SCHEMA_PATH)"
 
