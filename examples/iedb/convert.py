@@ -113,14 +113,6 @@ def make_chain(row, chain_name):
         cdr3_end=chain['CDR3 End Calculated'] or chain['CDR3 End Curated']
     )
 
-def convert_assay_measurement(assay_value):
-    if assay_value == 'Positive':
-        return 1
-    if assay_value == 'Negative':
-        return 0
-    print(f'Unknown value {assay_value}')
-    return None
-
 @click.command()
 @click.argument('tcell_path')
 @click.argument('tcr_path')
@@ -329,8 +321,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             assay_type=curie(row['Assay']['IRI']), # TODO: use label
             epitope=epitope.akc_id,
             tcell_receptors=[t.akc_id for t in tcell_receptors],
-            measurement_value=convert_assay_measurement(row['Assay']['Qualitative Measurement']),
-            measurement_unit='UO:0000232'
+            measurement_category=row['Assay']['Qualitative Measurement']
         )
         dataset = AKDataSet(
             akc_id(),

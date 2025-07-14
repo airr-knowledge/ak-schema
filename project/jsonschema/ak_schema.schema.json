@@ -2180,6 +2180,18 @@
             "title": "BiologicalSexOntology",
             "type": "string"
         },
+        "CategoricalSpecificityEnum": {
+            "description": "",
+            "enum": [
+                "Positive",
+                "Negative",
+                "Positive-Low",
+                "Positive-High",
+                "Positive-Intermediate"
+            ],
+            "title": "CategoricalSpecificityEnum",
+            "type": "string"
+        },
         "Cell": {
             "additionalProperties": false,
             "description": "",
@@ -5175,7 +5187,7 @@
                     ]
                 },
                 "sex": {
-                    "$ref": "#/$defs/SexEnum",
+                    "$ref": "#/$defs/BiologicalSexOntology",
                     "description": "Biological sex of subject"
                 },
                 "species": {
@@ -5259,7 +5271,7 @@
                     ]
                 },
                 "sex": {
-                    "$ref": "#/$defs/SexEnum",
+                    "$ref": "#/$defs/BiologicalSexOntology",
                     "description": "Biological sex of subject"
                 },
                 "species": {
@@ -8748,16 +8760,9 @@
                         "null"
                     ]
                 },
-                "measurement_unit": {
-                    "$ref": "#/$defs/MeasurementUnitOntology",
-                    "description": "The measurement result value unit"
-                },
-                "measurement_value": {
-                    "description": "The measurement result value",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
+                "measurement_category": {
+                    "$ref": "#/$defs/CategoricalSpecificityEnum",
+                    "description": "The measurement result category"
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -8852,16 +8857,9 @@
                         "null"
                     ]
                 },
-                "measurement_unit": {
-                    "$ref": "#/$defs/MeasurementUnitOntology",
-                    "description": "The measurement result value unit"
-                },
-                "measurement_value": {
-                    "description": "The measurement result value",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
+                "measurement_category": {
+                    "$ref": "#/$defs/CategoricalSpecificityEnum",
+                    "description": "The measurement result category"
                 },
                 "name": {
                     "description": "A human-readable name for a thing",

@@ -677,6 +677,20 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
+  CategoricalSpecificityEnum:
+    name: CategoricalSpecificityEnum
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    permissible_values:
+      Positive:
+        text: Positive
+      Negative:
+        text: Negative
+      Positive-Low:
+        text: Positive-Low
+      Positive-High:
+        text: Positive-High
+      Positive-Intermediate:
+        text: Positive-Intermediate
   DataItemTypeEnum:
     name: DataItemTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1603,11 +1617,16 @@ slots:
     description: The measurement result value unit
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MeasurementUnitOntology
+  measurement_category:
+    name: measurement_category
+    description: The measurement result category
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
   data_items:
     name: data_items
     description: set of data items
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: AKDataItem
+    range: AKObject
     multivalued: true
   data_item_types:
     name: data_item_types
@@ -5840,6 +5859,10 @@ classes:
     - ethnicity
     - geolocation
     - strain
+    slot_usage:
+      sex:
+        name: sex
+        range: BiologicalSexOntology
     class_uri: OBI:0100026
   StudyEvent:
     name: StudyEvent
@@ -5960,7 +5983,7 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: Assay
     mixins:
-    - MeasurementDatum
+    - TCellReceptorEpitopeSpecificityMeasurement
     slots:
     - epitope
     - tcell_receptors
@@ -5984,6 +6007,23 @@ classes:
     - measurement_value
     - measurement_unit
     class_uri: IAO:0000109
+  MeasurementCategory:
+    name: MeasurementCategory
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: DataItem
+    abstract: true
+    slots:
+    - measurement_category
+    class_uri: OBI:0001930
+  TCellReceptorEpitopeSpecificityMeasurement:
+    name: TCellReceptorEpitopeSpecificityMeasurement
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: MeasurementCategory
+    abstract: true
+    slot_usage:
+      measurement_category:
+        name: measurement_category
+        range: CategoricalSpecificityEnum
   DataSet:
     name: DataSet
     from_schema: https://github.com/airr-knowledge/ak-schema
