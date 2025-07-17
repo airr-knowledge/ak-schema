@@ -1617,8 +1617,7 @@
         "iedb_receptor:24246",
         "iedb_receptor:24247"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:17": {
       "akc_id": "AKC:17",
@@ -1908,8 +1907,7 @@
         "iedb_receptor:21531",
         "iedb_receptor:21532"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:26": {
       "akc_id": "AKC:26",
@@ -2037,8 +2035,7 @@
         "iedb_receptor:21600",
         "iedb_receptor:21601"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:35": {
       "akc_id": "AKC:35",
@@ -4192,8 +4189,7 @@
         "iedb_receptor:24572",
         "iedb_receptor:24573"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:44": {
       "akc_id": "AKC:44",
@@ -4230,8 +4226,7 @@
         "iedb_receptor:21557",
         "iedb_receptor:21558"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:53": {
       "akc_id": "AKC:53",
@@ -4832,8 +4827,7 @@
         "iedb_receptor:24603",
         "iedb_receptor:24604"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:62": {
       "akc_id": "AKC:62",
@@ -6987,8 +6981,7 @@
         "iedb_receptor:24572",
         "iedb_receptor:24573"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:71": {
       "akc_id": "AKC:71",
@@ -7212,8 +7205,7 @@
         "iedb_receptor:24740",
         "iedb_receptor:24741"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:80": {
       "akc_id": "AKC:80",
@@ -7228,8 +7220,7 @@
         "iedb_receptor:21072",
         "iedb_receptor:21073"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:89": {
       "akc_id": "AKC:89",
@@ -7251,8 +7242,7 @@
         "iedb_receptor:20968",
         "iedb_receptor:20969"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:98": {
       "akc_id": "AKC:98",
@@ -7268,8 +7258,7 @@
         "iedb_receptor:20972",
         "iedb_receptor:20973"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:107": {
       "akc_id": "AKC:107",
@@ -7291,8 +7280,7 @@
         "iedb_receptor:20968",
         "iedb_receptor:20969"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:116": {
       "akc_id": "AKC:116",
@@ -7308,8 +7296,7 @@
         "iedb_receptor:20972",
         "iedb_receptor:20973"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:125": {
       "akc_id": "AKC:125",
@@ -7325,8 +7312,7 @@
         "iedb_receptor:20972",
         "iedb_receptor:20973"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:134": {
       "akc_id": "AKC:134",
@@ -7342,8 +7328,7 @@
         "iedb_receptor:20972",
         "iedb_receptor:20973"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:143": {
       "akc_id": "AKC:143",
@@ -7359,8 +7344,7 @@
         "iedb_receptor:20972",
         "iedb_receptor:20973"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:152": {
       "akc_id": "AKC:152",
@@ -7374,8 +7358,7 @@
         "iedb_receptor:20974",
         "iedb_receptor:20975"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:161": {
       "akc_id": "AKC:161",
@@ -7389,8 +7372,7 @@
         "iedb_receptor:20974",
         "iedb_receptor:20975"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:170": {
       "akc_id": "AKC:170",
@@ -7404,8 +7386,7 @@
         "iedb_receptor:20974",
         "iedb_receptor:20975"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:179": {
       "akc_id": "AKC:179",
@@ -7419,8 +7400,7 @@
         "iedb_receptor:20976",
         "iedb_receptor:20977"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     },
     "AKC:188": {
       "akc_id": "AKC:188",
@@ -7434,8 +7414,7 @@
         "iedb_receptor:20976",
         "iedb_receptor:20977"
       ],
-      "measurement_value": 1,
-      "measurement_unit": "UO:0000232"
+      "measurement_category": "Positive"
     }
   },
   "datasets": {

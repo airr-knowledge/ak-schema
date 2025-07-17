@@ -61,7 +61,7 @@
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     },
     {
-      "prefix_prefix": "NCBITaxon",
+      "prefix_prefix": "NCBITAXON",
       "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
     },
     {
@@ -925,6 +925,28 @@
         ],
         "include_self": true
       }
+    },
+    {
+      "name": "CategoricalSpecificityEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CategoricalSpecificityEnum",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "permissible_values": [
+        {
+          "text": "Positive"
+        },
+        {
+          "text": "Negative"
+        },
+        {
+          "text": "Positive-Low"
+        },
+        {
+          "text": "Positive-High"
+        },
+        {
+          "text": "Positive-Intermediate"
+        }
+      ]
     },
     {
       "name": "DataItemTypeEnum",
@@ -2706,6 +2728,19 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "measurement_category",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "description": "The measurement result category",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "owner": "MeasurementCategory",
+      "domain_of": [
+        "MeasurementCategory"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "data_items",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_items",
       "description": "set of data items",
@@ -2715,7 +2750,7 @@
       "domain_of": [
         "DataSet"
       ],
-      "range": "AKDataItem",
+      "range": "AKObject",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -4262,7 +4297,7 @@
       "owner": "Subject",
       "domain_of": [
         "Participant",
-        "ImmuneReceptor",
+        "Chain",
         "AlleleDescription",
         "GermlineSet",
         "Subject"
@@ -11651,6 +11686,50 @@
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_sex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sex",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Biological sex of subject",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sex",
+      "domain": "Participant",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sex",
+      "alias": "sex",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sex",
+      "range": "BiologicalSexOntology",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "TCellReceptorEpitopeSpecificityMeasurement_measurement_category",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "description": "The measurement result category",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "measurement_category",
+      "domain": "TCellReceptorEpitopeSpecificityMeasurement",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "alias": "measurement_category",
+      "owner": "TCellReceptorEpitopeSpecificityMeasurement",
+      "domain_of": [
+        "TCellReceptorEpitopeSpecificityMeasurement"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "measurement_category",
+      "range": "CategoricalSpecificityEnum",
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -12033,7 +12112,7 @@
         "description",
         "study_arm",
         "species",
-        "sex",
+        "Participant_sex",
         "age",
         "age_unit",
         "age_event",
@@ -12344,7 +12423,7 @@
       ],
       "is_a": "Assay",
       "mixins": [
-        "MeasurementDatum"
+        "TCellReceptorEpitopeSpecificityMeasurement"
       ],
       "slots": [
         "akc_id",
@@ -12358,8 +12437,7 @@
         "has_specified_output",
         "epitope",
         "tcell_receptors",
-        "measurement_value",
-        "measurement_unit"
+        "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_1110037",
@@ -12405,7 +12483,7 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/MeasurementDatum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
-        "IAO:0000109"
+        "IAO:0000032"
       ],
       "is_a": "DataItem",
       "abstract": true,
@@ -12414,7 +12492,36 @@
         "measurement_unit"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000109",
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000032",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MeasurementCategory",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MeasurementCategory",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0001930"
+      ],
+      "is_a": "DataItem",
+      "abstract": true,
+      "slots": [
+        "measurement_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0001930",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TCellReceptorEpitopeSpecificityMeasurement",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TCellReceptorEpitopeSpecificityMeasurement",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "MeasurementCategory",
+      "abstract": true,
+      "slots": [
+        "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/TCellReceptorEpitopeSpecificityMeasurement",
       "@type": "ClassDefinition"
     },
     {
@@ -12609,6 +12716,7 @@
       "is_a": "AKObject",
       "slots": [
         "akc_id",
+        "species",
         "aa_hash",
         "junction_aa_vj_allele_hash",
         "junction_aa_vj_gene_hash",
@@ -12642,8 +12750,7 @@
       "is_a": "AKObject",
       "abstract": true,
       "slots": [
-        "akc_id",
-        "species"
+        "akc_id"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
@@ -12660,7 +12767,6 @@
       "abstract": true,
       "slots": [
         "akc_id",
-        "species",
         "type"
       ],
       "slot_usage": {},
@@ -12677,7 +12783,6 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "species",
         "type",
         "tra_chain",
         "trb_chain"
@@ -12696,7 +12801,6 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "species",
         "type",
         "trg_chain",
         "trd_chain"
@@ -12712,7 +12816,6 @@
       "is_a": "ImmuneReceptor",
       "slots": [
         "akc_id",
-        "species",
         "igh_chain",
         "igk_chain",
         "igl_chain"
@@ -13905,9 +14008,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-09T19:09:16",
-  "source_file_size": 204657,
-  "generation_date": "2025-07-09T19:09:18",
+  "source_file_date": "2025-07-17T18:58:08",
+  "source_file_size": 205873,
+  "generation_date": "2025-07-17T18:58:10",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

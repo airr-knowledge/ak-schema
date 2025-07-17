@@ -65,7 +65,7 @@ classes:
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
-    mixins: MeasurementDatum
+    mixins: TCellReceptorEpitopeSpecificityMeasurement
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
       - epitope

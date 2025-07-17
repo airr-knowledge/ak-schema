@@ -11,13 +11,27 @@ classes:
 
   MeasurementDatum:
     is_a: DataItem
-    class_uri: IAO:0000109 # measurement datum
+    class_uri: IAO:0000032 # scalar measurement datum
     abstract: true
     slots:
       - measurement_value
       - measurement_unit
       # - value
       # - unit
+
+  MeasurementCategory:
+    is_a: DataItem
+    class_uri: OBI:0001930 # categorical value
+    abstract: true
+    slots:
+      - measurement_category
+
+  TCellReceptorEpitopeSpecificityMeasurement:
+    is_a: MeasurementCategory
+    abstract: true
+    slot_usage:
+      measurement_category:
+        range: CategoricalSpecificityEnum
 
 #   DataFile:
 #     is_a: DataItem
@@ -92,9 +106,12 @@ slots:
   measurement_unit:
     description: The measurement result value unit
     range: MeasurementUnitOntology
+  measurement_category:
+    description: The measurement result category
+    range: string
   data_items:
     description: set of data items
-    range: AKDataItem
+    range: AKObject
     multivalued: true
   data_item_types:
     description: semantic types of the data
@@ -152,6 +169,14 @@ enums:
       relationship_types:
         - rdfs:subClassOf
 
+  CategoricalSpecificityEnum:
+    permissible_values:
+      Positive:
+      Negative:
+      Positive-Low:
+      Positive-High:
+      Positive-Intermediate:
+    
   DataItemTypeEnum:
     permissible_values:
       sequence_reads:
