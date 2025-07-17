@@ -366,25 +366,6 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
-  PhenotypicSexOntology:
-    name: PhenotypicSexOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    permissible_values:
-      female:
-        text: female
-        meaning: PATO:0000383
-      male:
-        text: male
-        meaning: PATO:0000384
-      hermaphrodite:
-        text: hermaphrodite
-        meaning: PATO:0001340
-      intersex:
-        text: intersex
-      pooled:
-        text: pooled
-      not collected:
-        text: not collected
   RaceOntology:
     name: RaceOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -668,6 +649,15 @@ enums:
       other disease course:
         text: other disease course
         meaning: ONTIE:0003547
+  AssayTypeOntology:
+    name: AssayTypeOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - OBI:0000070
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: false
   MeasurementUnitOntology:
     name: MeasurementUnitOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1455,18 +1445,6 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: RO:0002350
     range: StudyArm
-  biological_sex:
-    name: biological_sex
-    description: The biological sex of a participant
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: RO:0000053
-    range: BiologicalSexOntology
-  phenotypic_sex:
-    name: phenotypic_sex
-    description: The phenotypic sex of a participant
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: RO:0000053
-    range: PhenotypicSexOntology
   age:
     name: age
     description: The age of a participant relative to age_event
@@ -1550,15 +1528,6 @@ slots:
     description: The specific type of an assessment
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
-  specimen_type:
-    name: specimen_type
-    description: The type of this specimen
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    slot_uri: rdf:type
-  process:
-    name: process
-    description: The type of specimen collection process that resulted in this specimen
-    from_schema: https://github.com/airr-knowledge/ak-schema
   specimen:
     name: specimen
     description: The specimen that was input for an assay
@@ -1573,11 +1542,13 @@ slots:
     slot_uri: BFO:0000051
     range: SpecimenProcessing
     multivalued: true
+    inlined_as_list: true
   assay_type:
     name: assay_type
     description: The specific type of an assay
     from_schema: https://github.com/airr-knowledge/ak-schema
     slot_uri: rdf:type
+    range: AssayTypeOntology
   target_entity_type:
     name: target_entity_type
     description: The type of the entity being measured
@@ -1599,14 +1570,6 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Chain
     multivalued: true
-  value:
-    name: value
-    description: The measurement result value
-    from_schema: https://github.com/airr-knowledge/ak-schema
-  unit:
-    name: unit
-    description: The measurement result value unit
-    from_schema: https://github.com/airr-knowledge/ak-schema
   measurement_value:
     name: measurement_value
     description: The measurement result value
@@ -5900,10 +5863,11 @@ classes:
   Assessment:
     name: Assessment
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: LifeEvent
+    is_a: Process
     mixins:
     - MeasurementDatum
     slots:
+    - life_event
     - assessment_type
     - target_entity_type
     class_uri: OBI:0002441
@@ -5913,9 +5877,7 @@ classes:
     is_a: NamedThing
     slots:
     - life_event
-    - specimen_type
     - tissue
-    - process
     class_uri: OBI:0100051
   SpecimenCollection:
     name: SpecimenCollection
@@ -5964,7 +5926,6 @@ classes:
     - specimen_processing
     - type
     - assay_type
-    - target_entity_type
     - has_specified_output
     class_uri: OBI:0000070
   AIRRSequencingAssay:

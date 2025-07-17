@@ -475,34 +475,6 @@
       }
     },
     {
-      "name": "PhenotypicSexOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PhenotypicSexOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "permissible_values": [
-        {
-          "text": "female",
-          "meaning": "PATO:0000383"
-        },
-        {
-          "text": "male",
-          "meaning": "PATO:0000384"
-        },
-        {
-          "text": "hermaphrodite",
-          "meaning": "PATO:0001340"
-        },
-        {
-          "text": "intersex"
-        },
-        {
-          "text": "pooled"
-        },
-        {
-          "text": "not collected"
-        }
-      ]
-    },
-    {
       "name": "RaceOntology",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/RaceOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -911,6 +883,19 @@
           "meaning": "ONTIE:0003547"
         }
       ]
+    },
+    {
+      "name": "AssayTypeOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AssayTypeOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "OBI:0000070"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ]
+      }
     },
     {
       "name": "MeasurementUnitOntology",
@@ -2298,30 +2283,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "biological_sex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/biological_sex",
-      "description": "The biological sex of a participant",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000053"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000053",
-      "range": "BiologicalSexOntology",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "phenotypic_sex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/phenotypic_sex",
-      "description": "The phenotypic sex of a participant",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000053"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000053",
-      "range": "PhenotypicSexOntology",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "age",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/age",
       "description": "The age of a participant relative to age_event",
@@ -2483,6 +2444,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_event",
       "owner": "Specimen",
       "domain_of": [
+        "Assessment",
         "Specimen"
       ],
       "range": "LifeEvent",
@@ -2547,35 +2509,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "specimen_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_type",
-      "description": "The type of this specimen",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Specimen",
-      "domain_of": [
-        "Specimen"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "process",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/process",
-      "description": "The type of specimen collection process that resulted in this specimen",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/process",
-      "owner": "Specimen",
-      "domain_of": [
-        "Specimen"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "specimen",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen",
       "description": "The specimen that was input for an assay",
@@ -2608,6 +2541,8 @@
       ],
       "range": "SpecimenProcessing",
       "multivalued": true,
+      "inlined": true,
+      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2623,7 +2558,7 @@
       "domain_of": [
         "Assay"
       ],
-      "range": "string",
+      "range": "AssayTypeOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -2632,10 +2567,9 @@
       "description": "The type of the entity being measured",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/target_entity_type",
-      "owner": "Assay",
+      "owner": "Assessment",
       "domain_of": [
-        "Assessment",
-        "Assay"
+        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -2681,24 +2615,6 @@
       ],
       "range": "Chain",
       "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "value",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/value",
-      "description": "The measurement result value",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/value",
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "unit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/unit",
-      "description": "The measurement result value unit",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/unit",
-      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -12203,7 +12119,7 @@
       "mappings": [
         "OBI:0002441"
       ],
-      "is_a": "LifeEvent",
+      "is_a": "Process",
       "mixins": [
         "MeasurementDatum"
       ],
@@ -12211,15 +12127,7 @@
         "akc_id",
         "name",
         "description",
-        "type",
-        "participant",
-        "study_event",
-        "life_event_type",
-        "geolocation",
-        "t0_event",
-        "start",
-        "duration",
-        "time_unit",
+        "life_event",
         "assessment_type",
         "target_entity_type",
         "measurement_value",
@@ -12242,9 +12150,7 @@
         "name",
         "description",
         "life_event",
-        "specimen_type",
-        "tissue",
-        "process"
+        "tissue"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0100051",
@@ -12371,7 +12277,6 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type",
         "has_specified_output"
       ],
       "slot_usage": {},
@@ -12397,7 +12302,6 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type",
         "has_specified_output",
         "repertoire_id",
         "tcell_receptors",
@@ -12433,7 +12337,6 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type",
         "has_specified_output",
         "epitope",
         "tcell_receptors",
@@ -12459,7 +12362,6 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type",
         "has_specified_output"
       ],
       "slot_usage": {},
@@ -14008,9 +13910,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-17T18:58:08",
-  "source_file_size": 205873,
-  "generation_date": "2025-07-17T18:58:10",
+  "source_file_date": "2025-07-17T19:10:33",
+  "source_file_size": 204617,
+  "generation_date": "2025-07-17T19:10:36",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
