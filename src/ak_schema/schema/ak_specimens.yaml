@@ -9,9 +9,7 @@ classes:
     class_uri: OBI:0100051 # specimen
     slots:
       - life_event
-      - specimen_type
-      - tissue
-      - process
+      - tissue # AIRR standard
 
   SpecimenCollection:
     is_a: LifeEvent
@@ -54,7 +52,6 @@ classes:
       - specimen_processing # Chain of specimen processing applied to specimen before assay is performed 
       - type # Name of type of Assay class e.g. TCellReceptorEpitopeBindingAssay
       - assay_type # CURIE of OBI name for assay e.g. OBI:1110179
-      - target_entity_type
       - has_specified_output
 
   AIRRSequencingAssay:
@@ -82,11 +79,6 @@ slots:
   life_event:
     description: The life event corresponding to an immune exposure
     range: LifeEvent
-  specimen_type: # TODO: enum
-    description: The type of this specimen
-    slot_uri: rdf:type
-  process: # TODO: enum
-    description: The type of specimen collection process that resulted in this specimen
 
   specimen:
     description: The specimen that was input for an assay
@@ -97,10 +89,11 @@ slots:
     range: SpecimenProcessing
     slot_uri: BFO:0000051 # has part
     multivalued: true
+    inlined_as_list: true
   assay_type:
     description: The specific type of an assay
     slot_uri: rdf:type
-    # TODO: enum
+    range: AssayTypeOntology
   target_entity_type:
     description: The type of the entity being measured
 
@@ -116,8 +109,13 @@ slots:
     description: The T cell receptor chains being measured
     range: Chain
     multivalued: true
-  value:
-    description: The measurement result value
-  unit:
-    description: The measurement result value unit
 
+enums:
+  AssayTypeOntology:
+    name: AssayTypeOntology
+    reachable_from:
+      source_nodes:
+        - OBI:0000070
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
