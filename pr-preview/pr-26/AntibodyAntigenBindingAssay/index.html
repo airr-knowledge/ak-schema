@@ -211,6 +211,13 @@
 
       AntibodyAntigenBindingAssay : assay_type
 
+
+
+
+    AntibodyAntigenBindingAssay --&gt; "0..1" AssayTypeOntology : assay_type
+    click AssayTypeOntology href "../AssayTypeOntology"
+
+
       AntibodyAntigenBindingAssay : description
 
       AntibodyAntigenBindingAssay : has_specified_output
@@ -241,8 +248,6 @@
     AntibodyAntigenBindingAssay --&gt; "*" SpecimenProcessing : specimen_processing
     click SpecimenProcessing href "../SpecimenProcessing"
 
-
-      AntibodyAntigenBindingAssay : target_entity_type
 
       AntibodyAntigenBindingAssay : type
 
@@ -295,14 +300,8 @@
 </tr>
 <tr>
 <td><a href="../assay_type/">assay_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../AssayTypeOntology/">AssayTypeOntology</a></td>
 <td>The specific type of an assay</td>
-<td><a href="../Assay/">Assay</a></td>
-</tr>
-<tr>
-<td><a href="../target_entity_type/">target_entity_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type of the entity being measured</td>
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
@@ -398,6 +397,8 @@ attributes:
     - Assay
     range: SpecimenProcessing
     multivalued: true
+    inlined: true
+    inlined_as_list: true
   type:
     name: type
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -422,18 +423,7 @@ attributes:
     owner: AntibodyAntigenBindingAssay
     domain_of:
     - Assay
-    range: string
-  target_entity_type:
-    name: target_entity_type
-    description: The type of the entity being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: target_entity_type
-    owner: AntibodyAntigenBindingAssay
-    domain_of:
-    - Assessment
-    - Assay
-    range: string
+    range: AssayTypeOntology
   has_specified_output:
     name: has_specified_output
     description: output data item

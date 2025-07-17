@@ -116,6 +116,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/AssayTypeOntology/</loc>
+         <lastmod>2025-07-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/Assessment/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
@@ -592,11 +597,6 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/PeptidicEpitope/</loc>
-         <lastmod>2025-07-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/PhenotypicSexOntology/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1097,11 +1097,6 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/bcell_receptors/</loc>
-         <lastmod>2025-07-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/biological_sex/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2601,11 +2596,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/phenotypic_sex/</loc>
-         <lastmod>2025-07-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/physical_linkage/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
@@ -2622,11 +2612,6 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/prior_therapies/</loc>
-         <lastmod>2025-07-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/process/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -3066,11 +3051,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/specimen_type/</loc>
-         <lastmod>2025-07-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/specimens/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
@@ -3326,11 +3306,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/unit/</loc>
-         <lastmod>2025-07-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/unrearranged_support/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
@@ -3442,11 +3417,6 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/v_support/</loc>
-         <lastmod>2025-07-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/value/</loc>
          <lastmod>2025-07-17</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/specimen_type/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/AssayTypeOntology/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: specimen_type - ak-schema</title>
+        <title>Enum: AssayTypeOntology - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-specimen_type" class="md-skip">
+        <a href="#enum-assaytypeontology" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: specimen_type
+              Enum: AssayTypeOntology
             
           </span>
         </div>
@@ -256,15 +256,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#applicable-classes" class="md-nav__link">
-    Applicable Classes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
-    Properties
+  <a href="#slots" class="md-nav__link">
+    Slots
   </a>
   
 </li>
@@ -290,13 +283,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    Mappings
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#linkml-source" class="md-nav__link">
     LinkML Source
   </a>
@@ -317,74 +303,47 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/specimen_type.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/AssayTypeOntology.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-specimen_type">Slot: specimen_type</h1>
-<p><em>The type of this specimen</em></p>
-<p>URI: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">rdf:type</a></p>
-<!-- no inheritance hierarchy -->
-
-<h2 id="applicable-classes">Applicable Classes</h2>
+<h1 id="enum-assaytypeontology">Enum: AssayTypeOntology</h1>
+<p>URI: <a href="./">AssayTypeOntology</a></p>
+<p><em>This is a dynamic enum</em></p>
+<h2 id="slots">Slots</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
-<th>Modifies Slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="../Specimen/">Specimen</a></td>
-<td></td>
-<td>no</td>
+<td><a href="../assay_type/">assay_type</a></td>
+<td>The specific type of an assay</td>
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<ul>
-<li>Range: <a href="../String/">String</a></li>
-</ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>rdf:type</td>
-</tr>
-<tr>
-<td>native</td>
-<td>ak_schema:specimen_type</td>
-</tr>
-</tbody>
-</table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: specimen_type
-description: The type of this specimen
+<pre><code class="language-yaml">name: AssayTypeOntology
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-slot_uri: rdf:type
-alias: specimen_type
-domain_of:
-- Specimen
-range: string
+reachable_from:
+  source_nodes:
+  - OBI:0000070
+  relationship_types:
+  - rdfs:subClassOf
+  include_self: false
 
 </code></pre>
 

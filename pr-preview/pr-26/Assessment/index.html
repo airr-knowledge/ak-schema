@@ -211,8 +211,8 @@
     click Assessment href "../Assessment"
       MeasurementDatum &lt;|-- Assessment
         click MeasurementDatum href "../MeasurementDatum"
-      LifeEvent &lt;|-- Assessment
-        click LifeEvent href "../LifeEvent"
+      Process &lt;|-- Assessment
+        click Process href "../Process"
 
       Assessment : akc_id
 
@@ -220,24 +220,13 @@
 
       Assessment : description
 
-      Assessment : duration
-
-      Assessment : geolocation
+      Assessment : life_event
 
 
 
 
-    Assessment --&gt; "0..1" GeolocationOntology : geolocation
-    click GeolocationOntology href "../GeolocationOntology"
-
-
-      Assessment : life_event_type
-
-
-
-
-    Assessment --&gt; "0..1" LifeEventProcessOntology : life_event_type
-    click LifeEventProcessOntology href "../LifeEventProcessOntology"
+    Assessment --&gt; "0..1" LifeEvent : life_event
+    click LifeEvent href "../LifeEvent"
 
 
       Assessment : measurement_unit
@@ -253,40 +242,7 @@
 
       Assessment : name
 
-      Assessment : participant
-
-
-
-
-    Assessment --&gt; "0..1" Participant : participant
-    click Participant href "../Participant"
-
-
-      Assessment : start
-
-      Assessment : study_event
-
-
-
-
-    Assessment --&gt; "0..1" StudyEvent : study_event
-    click StudyEvent href "../StudyEvent"
-
-
-      Assessment : t0_event
-
-
-
-
-    Assessment --&gt; "0..1" LifeEvent : t0_event
-    click LifeEvent href "../LifeEvent"
-
-
       Assessment : target_entity_type
-
-      Assessment : time_unit
-
-      Assessment : type
 
 
 </div>
@@ -295,10 +251,7 @@
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
 <li><a href="../Process/">Process</a><ul>
-<li><a href="../LifeEvent/">LifeEvent</a><ul>
 <li><strong>Assessment</strong> [ <a href="../MeasurementDatum/">MeasurementDatum</a>]</li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -317,6 +270,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../life_event/">life_event</a></td>
+<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
+<td>The life event corresponding to an immune exposure</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../assessment_type/">assessment_type</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -340,60 +299,6 @@
 <td>0..1 <br/> <a href="../MeasurementUnitOntology/">MeasurementUnitOntology</a></td>
 <td>The measurement result value unit</td>
 <td><a href="../MeasurementDatum/">MeasurementDatum</a></td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../participant/">participant</a></td>
-<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
-<td>The participant of a life event</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../study_event/">study_event</a></td>
-<td>0..1 <br/> <a href="../StudyEvent/">StudyEvent</a></td>
-<td>The study event corresponding to a life event</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../life_event_type/">life_event_type</a></td>
-<td>0..1 <br/> <a href="../LifeEventProcessOntology/">LifeEventProcessOntology</a></td>
-<td>The specific type of a life event</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../geolocation/">geolocation</a></td>
-<td>0..1 <br/> <a href="../GeolocationOntology/">GeolocationOntology</a></td>
-<td>The geolocation of a participant at birth</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../t0_event/">t0_event</a></td>
-<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
-<td>The T0 event used to specify the time of this life event</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../start/">start</a></td>
-<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
-<td>The start time of this life event, relative to the T0 event</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../duration/">duration</a></td>
-<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
-<td>The duration of this life event</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
-</tr>
-<tr>
-<td><a href="../time_unit/">time_unit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The time unit used to measure the start and duration of this life event</td>
-<td><a href="../LifeEvent/">LifeEvent</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -464,10 +369,11 @@
 <details>
 <pre><code class="language-yaml">name: Assessment
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: LifeEvent
+is_a: Process
 mixins:
 - MeasurementDatum
 slots:
+- life_event
 - assessment_type
 - target_entity_type
 class_uri: OBI:0002441
@@ -478,10 +384,21 @@ class_uri: OBI:0002441
 <details>
 <pre><code class="language-yaml">name: Assessment
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: LifeEvent
+is_a: Process
 mixins:
 - MeasurementDatum
 attributes:
+  life_event:
+    name: life_event
+    description: The life event corresponding to an immune exposure
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: life_event
+    owner: Assessment
+    domain_of:
+    - Assessment
+    - Specimen
+    range: LifeEvent
   assessment_type:
     name: assessment_type
     description: The specific type of an assessment
@@ -502,7 +419,6 @@ attributes:
     owner: Assessment
     domain_of:
     - Assessment
-    - Assay
     range: string
   measurement_value:
     name: measurement_value
@@ -524,105 +440,6 @@ attributes:
     domain_of:
     - MeasurementDatum
     range: MeasurementUnitOntology
-  type:
-    name: type
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    designates_type: true
-    alias: type
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    - Assay
-    - AKDataItem
-    - TCellReceptor
-    - Epitope
-    range: string
-  participant:
-    name: participant
-    description: The participant of a life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: RO:0000057
-    alias: participant
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    range: Participant
-  study_event:
-    name: study_event
-    description: The study event corresponding to a life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: study_event
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    range: StudyEvent
-  life_event_type:
-    name: life_event_type
-    description: The specific type of a life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: rdf:type
-    alias: life_event_type
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    range: LifeEventProcessOntology
-  geolocation:
-    name: geolocation
-    description: The geolocation of a participant at birth
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: RO:0001025
-    alias: geolocation
-    owner: Assessment
-    domain_of:
-    - Participant
-    - LifeEvent
-    range: GeolocationOntology
-  t0_event:
-    name: t0_event
-    description: The T0 event used to specify the time of this life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: t0_event
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    range: LifeEvent
-  start:
-    name: start
-    description: The start time of this life event, relative to the T0 event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: start
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    range: decimal
-  duration:
-    name: duration
-    description: The duration of this life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: duration
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    range: decimal
-  time_unit:
-    name: time_unit
-    description: The time unit used to measure the start and duration of this life
-      event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: time_unit
-    owner: Assessment
-    domain_of:
-    - LifeEvent
-    range: string
   name:
     name: name
     description: A human-readable name for a thing
