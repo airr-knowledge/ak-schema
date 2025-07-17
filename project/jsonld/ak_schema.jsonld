@@ -61,7 +61,7 @@
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     },
     {
-      "prefix_prefix": "NCBITaxon",
+      "prefix_prefix": "NCBITAXON",
       "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
     },
     {
@@ -4297,7 +4297,7 @@
       "owner": "Subject",
       "domain_of": [
         "Participant",
-        "ImmuneReceptor",
+        "Chain",
         "AlleleDescription",
         "GermlineSet",
         "Subject"
@@ -12483,7 +12483,7 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/MeasurementDatum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
-        "IAO:0000109"
+        "IAO:0000032"
       ],
       "is_a": "DataItem",
       "abstract": true,
@@ -12492,7 +12492,7 @@
         "measurement_unit"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000109",
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000032",
       "@type": "ClassDefinition"
     },
     {
@@ -12716,6 +12716,7 @@
       "is_a": "AKObject",
       "slots": [
         "akc_id",
+        "species",
         "aa_hash",
         "junction_aa_vj_allele_hash",
         "junction_aa_vj_gene_hash",
@@ -12749,8 +12750,7 @@
       "is_a": "AKObject",
       "abstract": true,
       "slots": [
-        "akc_id",
-        "species"
+        "akc_id"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
@@ -12767,7 +12767,6 @@
       "abstract": true,
       "slots": [
         "akc_id",
-        "species",
         "type"
       ],
       "slot_usage": {},
@@ -12784,7 +12783,6 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "species",
         "type",
         "tra_chain",
         "trb_chain"
@@ -12803,7 +12801,6 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
-        "species",
         "type",
         "trg_chain",
         "trd_chain"
@@ -12819,7 +12816,6 @@
       "is_a": "ImmuneReceptor",
       "slots": [
         "akc_id",
-        "species",
         "igh_chain",
         "igk_chain",
         "igl_chain"
@@ -14012,9 +14008,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-14T18:00:37",
-  "source_file_size": 205884,
-  "generation_date": "2025-07-14T18:00:39",
+  "source_file_date": "2025-07-17T18:58:08",
+  "source_file_size": 205873,
+  "generation_date": "2025-07-17T18:58:10",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

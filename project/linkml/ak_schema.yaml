@@ -45,8 +45,8 @@ prefixes:
   IAO:
     prefix_prefix: IAO
     prefix_reference: http://purl.obolibrary.org/obo/IAO_
-  NCBITaxon:
-    prefix_prefix: NCBITaxon
+  NCBITAXON:
+    prefix_prefix: NCBITAXON
     prefix_reference: http://purl.obolibrary.org/obo/NCBITaxon_
   NCIT:
     prefix_prefix: NCIT
@@ -6006,7 +6006,7 @@ classes:
     slots:
     - measurement_value
     - measurement_unit
-    class_uri: IAO:0000109
+    class_uri: IAO:0000032
   MeasurementCategory:
     name: MeasurementCategory
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6102,6 +6102,7 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     slots:
+    - species
     - aa_hash
     - junction_aa_vj_allele_hash
     - junction_aa_vj_gene_hash
@@ -6128,8 +6129,6 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     abstract: true
-    slots:
-    - species
   TCellReceptor:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
