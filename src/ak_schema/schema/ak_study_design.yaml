@@ -52,9 +52,6 @@ classes:
     class_uri: OBI:0100026 # organism
     description: >-
       A participant in an investigation.
-    slot_usage:
-      sex:
-        range: BiologicalSexOntology
     slots:
       - study_arm
       - species
