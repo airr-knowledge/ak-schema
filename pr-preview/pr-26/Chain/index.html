@@ -261,6 +261,15 @@
 
       Chain : sequence_aa
 
+      Chain : species
+
+
+
+
+    Chain --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
       Chain : v_call
 
 
@@ -283,6 +292,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../aa_hash/">aa_hash</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -540,6 +555,7 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 slots:
+- species
 - aa_hash
 - junction_aa_vj_allele_hash
 - junction_aa_vj_gene_hash
@@ -570,6 +586,24 @@ slots:
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 attributes:
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: Chain
+    domain_of:
+    - Participant
+    - Chain
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   aa_hash:
     name: aa_hash
     from_schema: https://github.com/airr-knowledge/ak-schema
