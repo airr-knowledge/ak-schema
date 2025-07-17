@@ -278,9 +278,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             name=f'specimen 1 of assay {assay_id}',
             description=f'specimen 1 from participant 1 of assay {assay_id}',
             life_event=life_event_2.akc_id,
-            specimen_type=None,
-            tissue=row['Effector Cell']['Source Tissue'],
-            process=None
+            tissue=row['Effector Cell']['Source Tissue']
         )
         epitope = PeptidicEpitope(
             curie(row['Epitope']['IEDB IRI']),
