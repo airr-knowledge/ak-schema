@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-17T18:58:13
+# Generation date: 2025-07-17T19:10:40
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -272,7 +272,7 @@ class ImmuneExposureAkcId(LifeEventAkcId):
     pass
 
 
-class AssessmentAkcId(LifeEventAkcId):
+class AssessmentAkcId(ProcessAkcId):
     pass
 
 
@@ -973,7 +973,7 @@ class ImmuneExposure(LifeEvent):
 
 
 @dataclass(repr=False)
-class Assessment(LifeEvent):
+class Assessment(Process):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0002441"]
@@ -982,6 +982,7 @@ class Assessment(LifeEvent):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Assessment
 
     akc_id: Union[str, AssessmentAkcId] = None
+    life_event: Optional[Union[str, LifeEventAkcId]] = None
     assessment_type: Optional[str] = None
     target_entity_type: Optional[str] = None
     measurement_value: Optional[Decimal] = None
@@ -993,6 +994,9 @@ class Assessment(LifeEvent):
         if not isinstance(self.akc_id, AssessmentAkcId):
             self.akc_id = AssessmentAkcId(self.akc_id)
 
+        if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
+            self.life_event = LifeEventAkcId(self.life_event)
+
         if self.assessment_type is not None and not isinstance(self.assessment_type, str):
             self.assessment_type = str(self.assessment_type)
 
@@ -1003,7 +1007,6 @@ class Assessment(LifeEvent):
             self.measurement_value = Decimal(self.measurement_value)
 
         super().__post_init__(**kwargs)
-        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
@@ -1017,9 +1020,7 @@ class Specimen(NamedThing):
 
     akc_id: Union[str, SpecimenAkcId] = None
     life_event: Optional[Union[str, LifeEventAkcId]] = None
-    specimen_type: Optional[str] = None
     tissue: Optional[Union[str, "TissueOntology"]] = None
-    process: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1029,12 +1030,6 @@ class Specimen(NamedThing):
 
         if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
             self.life_event = LifeEventAkcId(self.life_event)
-
-        if self.specimen_type is not None and not isinstance(self.specimen_type, str):
-            self.specimen_type = str(self.specimen_type)
-
-        if self.process is not None and not isinstance(self.process, str):
-            self.process = str(self.process)
 
         super().__post_init__(**kwargs)
 
@@ -1215,10 +1210,9 @@ class Assay(Process):
 
     akc_id: Union[str, AssayAkcId] = None
     specimen: Optional[Union[str, SpecimenAkcId]] = None
-    specimen_processing: Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]] = empty_list()
+    specimen_processing: Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, SpecimenProcessing]], List[Union[dict, SpecimenProcessing]]]] = empty_dict()
     type: Optional[str] = None
-    assay_type: Optional[str] = None
-    target_entity_type: Optional[str] = None
+    assay_type: Optional[Union[str, "AssayTypeOntology"]] = None
     has_specified_output: Optional[Union[str, AKDataItemAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1230,17 +1224,9 @@ class Assay(Process):
         if self.specimen is not None and not isinstance(self.specimen, SpecimenAkcId):
             self.specimen = SpecimenAkcId(self.specimen)
 
-        if not isinstance(self.specimen_processing, list):
-            self.specimen_processing = [self.specimen_processing] if self.specimen_processing is not None else []
-        self.specimen_processing = [v if isinstance(v, SpecimenProcessingAkcId) else SpecimenProcessingAkcId(v) for v in self.specimen_processing]
+        self._normalize_inlined_as_list(slot_name="specimen_processing", slot_type=SpecimenProcessing, key_name="akc_id", keyed=True)
 
         self.type = str(self.class_name)
-
-        if self.assay_type is not None and not isinstance(self.assay_type, str):
-            self.assay_type = str(self.assay_type)
-
-        if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
-            self.target_entity_type = str(self.target_entity_type)
 
         if self.has_specified_output is not None and not isinstance(self.has_specified_output, AKDataItemAkcId):
             self.has_specified_output = AKDataItemAkcId(self.has_specified_output)
@@ -4950,29 +4936,6 @@ class BiologicalSexOntology(EnumDefinitionImpl):
         name="BiologicalSexOntology",
     )
 
-class PhenotypicSexOntology(EnumDefinitionImpl):
-
-    female = PermissibleValue(
-        text="female",
-        meaning=PATO["0000383"])
-    male = PermissibleValue(
-        text="male",
-        meaning=PATO["0000384"])
-    hermaphrodite = PermissibleValue(
-        text="hermaphrodite",
-        meaning=PATO["0001340"])
-    intersex = PermissibleValue(text="intersex")
-    pooled = PermissibleValue(text="pooled")
-
-    _defn = EnumDefinition(
-        name="PhenotypicSexOntology",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "not collected",
-            PermissibleValue(text="not collected"))
-
 class RaceOntology(EnumDefinitionImpl):
 
     Asian = PermissibleValue(
@@ -5281,6 +5244,12 @@ class DiseaseStageOntology(EnumDefinitionImpl):
             PermissibleValue(
                 text="other disease course",
                 meaning=ONTIE["0003547"]))
+
+class AssayTypeOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="AssayTypeOntology",
+    )
 
 class MeasurementUnitOntology(EnumDefinitionImpl):
 
@@ -5944,12 +5913,6 @@ slots.investigation = Slot(uri=RO['0000056'], name="investigation", curie=RO.cur
 slots.study_arm = Slot(uri=RO['0002350'], name="study_arm", curie=RO.curie('0002350'),
                    model_uri=AK_SCHEMA.study_arm, domain=None, range=Optional[Union[str, StudyArmAkcId]])
 
-slots.biological_sex = Slot(uri=RO['0000053'], name="biological_sex", curie=RO.curie('0000053'),
-                   model_uri=AK_SCHEMA.biological_sex, domain=None, range=Optional[Union[str, "BiologicalSexOntology"]])
-
-slots.phenotypic_sex = Slot(uri=RO['0000053'], name="phenotypic_sex", curie=RO.curie('0000053'),
-                   model_uri=AK_SCHEMA.phenotypic_sex, domain=None, range=Optional[Union[str, "PhenotypicSexOntology"]])
-
 slots.age = Slot(uri=AK_SCHEMA.age, name="age", curie=AK_SCHEMA.curie('age'),
                    model_uri=AK_SCHEMA.age, domain=None, range=Optional[str])
 
@@ -5998,20 +5961,14 @@ slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_seve
 slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
 
-slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
-
-slots.process = Slot(uri=AK_SCHEMA.process, name="process", curie=AK_SCHEMA.curie('process'),
-                   model_uri=AK_SCHEMA.process, domain=None, range=Optional[str])
-
 slots.specimen = Slot(uri=OBI['0000293'], name="specimen", curie=OBI.curie('0000293'),
                    model_uri=AK_SCHEMA.specimen, domain=None, range=Optional[Union[str, SpecimenAkcId]])
 
 slots.specimen_processing = Slot(uri=BFO['0000051'], name="specimen_processing", curie=BFO.curie('0000051'),
-                   model_uri=AK_SCHEMA.specimen_processing, domain=None, range=Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]])
+                   model_uri=AK_SCHEMA.specimen_processing, domain=None, range=Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, SpecimenProcessing]], List[Union[dict, SpecimenProcessing]]]])
 
 slots.assay_type = Slot(uri=RDF.type, name="assay_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.assay_type, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.assay_type, domain=None, range=Optional[Union[str, "AssayTypeOntology"]])
 
 slots.target_entity_type = Slot(uri=AK_SCHEMA.target_entity_type, name="target_entity_type", curie=AK_SCHEMA.curie('target_entity_type'),
                    model_uri=AK_SCHEMA.target_entity_type, domain=None, range=Optional[str])
@@ -6024,12 +5981,6 @@ slots.tcell_receptors = Slot(uri=AK_SCHEMA.tcell_receptors, name="tcell_receptor
 
 slots.tcell_chains = Slot(uri=AK_SCHEMA.tcell_chains, name="tcell_chains", curie=AK_SCHEMA.curie('tcell_chains'),
                    model_uri=AK_SCHEMA.tcell_chains, domain=None, range=Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]])
-
-slots.value = Slot(uri=AK_SCHEMA.value, name="value", curie=AK_SCHEMA.curie('value'),
-                   model_uri=AK_SCHEMA.value, domain=None, range=Optional[str])
-
-slots.unit = Slot(uri=AK_SCHEMA.unit, name="unit", curie=AK_SCHEMA.curie('unit'),
-                   model_uri=AK_SCHEMA.unit, domain=None, range=Optional[str])
 
 slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measurement_value", curie=AK_SCHEMA.curie('measurement_value'),
                    model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[Decimal])

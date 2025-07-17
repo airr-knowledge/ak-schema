@@ -212,9 +212,6 @@
                                         "$ref": "#/$defs/ImmuneExposure__identifier_optional"
                                     },
                                     {
-                                        "$ref": "#/$defs/Assessment__identifier_optional"
-                                    },
-                                    {
                                         "$ref": "#/$defs/SpecimenCollection__identifier_optional"
                                     }
                                 ]
@@ -354,11 +351,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -444,17 +438,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -510,11 +497,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -600,17 +584,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -1468,11 +1445,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -1505,17 +1479,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -1544,11 +1511,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -1581,17 +1545,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -1724,11 +1681,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -1761,17 +1715,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -1791,6 +1738,11 @@
             "title": "Assay",
             "type": "object"
         },
+        "AssayTypeOntology": {
+            "description": "",
+            "title": "AssayTypeOntology",
+            "type": "string"
+        },
         "Assay__identifier_optional": {
             "additionalProperties": false,
             "description": "",
@@ -1800,11 +1752,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -1837,17 +1786,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -1887,20 +1829,12 @@
                         "null"
                     ]
                 },
-                "duration": {
-                    "description": "The duration of this life event",
+                "life_event": {
+                    "description": "The life event corresponding to an immune exposure",
                     "type": [
-                        "number",
+                        "string",
                         "null"
                     ]
-                },
-                "geolocation": {
-                    "$ref": "#/$defs/GeolocationOntology",
-                    "description": "The geolocation of a participant at birth"
-                },
-                "life_event_type": {
-                    "$ref": "#/$defs/LifeEventProcessOntology",
-                    "description": "The specific type of a life event"
                 },
                 "measurement_unit": {
                     "$ref": "#/$defs/MeasurementUnitOntology",
@@ -1920,52 +1854,8 @@
                         "null"
                     ]
                 },
-                "participant": {
-                    "description": "The participant of a life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "start": {
-                    "description": "The start time of this life event, relative to the T0 event",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "study_event": {
-                    "description": "The study event corresponding to a life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "t0_event": {
-                    "description": "The T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "time_unit": {
-                    "description": "The time unit used to measure the start and duration of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "Assessment"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -2000,20 +1890,12 @@
                         "null"
                     ]
                 },
-                "duration": {
-                    "description": "The duration of this life event",
+                "life_event": {
+                    "description": "The life event corresponding to an immune exposure",
                     "type": [
-                        "number",
+                        "string",
                         "null"
                     ]
-                },
-                "geolocation": {
-                    "$ref": "#/$defs/GeolocationOntology",
-                    "description": "The geolocation of a participant at birth"
-                },
-                "life_event_type": {
-                    "$ref": "#/$defs/LifeEventProcessOntology",
-                    "description": "The specific type of a life event"
                 },
                 "measurement_unit": {
                     "$ref": "#/$defs/MeasurementUnitOntology",
@@ -2033,52 +1915,8 @@
                         "null"
                     ]
                 },
-                "participant": {
-                    "description": "The participant of a life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "start": {
-                    "description": "The start time of this life event, relative to the T0 event",
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
-                "study_event": {
-                    "description": "The study event corresponding to a life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "t0_event": {
-                    "description": "The T0 event used to specify the time of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "target_entity_type": {
                     "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "time_unit": {
-                    "description": "The time unit used to measure the start and duration of this life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "type": {
-                    "enum": [
-                        "Assessment"
-                    ],
                     "type": [
                         "string",
                         "null"
@@ -5409,19 +5247,6 @@
             "title": "PeptidicEpitope",
             "type": "object"
         },
-        "PhenotypicSexOntology": {
-            "description": "",
-            "enum": [
-                "female",
-                "male",
-                "hermaphrodite",
-                "intersex",
-                "pooled",
-                "not collected"
-            ],
-            "title": "PhenotypicSexOntology",
-            "type": "string"
-        },
         "PhysicalLinkageEnum": {
             "description": "",
             "enum": [
@@ -7872,20 +7697,6 @@
                         "null"
                     ]
                 },
-                "process": {
-                    "description": "The type of specimen collection process that resulted in this specimen",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "specimen_type": {
-                    "description": "The type of this specimen",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "tissue": {
                     "$ref": "#/$defs/TissueOntology",
                     "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
@@ -8179,20 +7990,6 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "process": {
-                    "description": "The type of specimen collection process that resulted in this specimen",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "specimen_type": {
-                    "description": "The type of this specimen",
                     "type": [
                         "string",
                         "null"
@@ -8717,11 +8514,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -8765,17 +8559,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -8814,11 +8601,8 @@
                     "type": "string"
                 },
                 "assay_type": {
-                    "description": "The specific type of an assay",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
                 },
                 "description": {
                     "description": "A human-readable description for a thing",
@@ -8862,17 +8646,10 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "type": "string"
+                        "$ref": "#/$defs/SpecimenProcessing"
                     },
                     "type": [
                         "array",
-                        "null"
-                    ]
-                },
-                "target_entity_type": {
-                    "description": "The type of the entity being measured",
-                    "type": [
-                        "string",
                         "null"
                     ]
                 },
@@ -9302,9 +9079,6 @@
                             },
                             {
                                 "$ref": "#/$defs/ImmuneExposure__identifier_optional"
-                            },
-                            {
-                                "$ref": "#/$defs/Assessment__identifier_optional"
                             },
                             {
                                 "$ref": "#/$defs/SpecimenCollection__identifier_optional"
