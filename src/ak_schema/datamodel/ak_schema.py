@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-14T18:00:42
+# Generation date: 2025-07-17T18:58:13
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -40,7 +40,7 @@ EXO = CurieNamespace('EXO', 'http://purl.obolibrary.org/obo/EXO_')
 GAZ = CurieNamespace('GAZ', 'http://purl.obolibrary.org/obo/GAZ_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
-NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
+NCBITAXON = CurieNamespace('NCBITAXON', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
@@ -1396,8 +1396,8 @@ class DataItem(YAMLRoot):
 class MeasurementDatum(DataItem):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = IAO["0000109"]
-    class_class_curie: ClassVar[str] = "IAO:0000109"
+    class_class_uri: ClassVar[URIRef] = IAO["0000032"]
+    class_class_curie: ClassVar[str] = "IAO:0000032"
     class_name: ClassVar[str] = "MeasurementDatum"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MeasurementDatum
 
@@ -1770,6 +1770,7 @@ class Chain(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Chain
 
     akc_id: Union[str, ChainAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
     aa_hash: Optional[str] = None
     junction_aa_vj_allele_hash: Optional[str] = None
     junction_aa_vj_gene_hash: Optional[str] = None
@@ -1874,7 +1875,6 @@ class ImmuneReceptor(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneReceptor
 
     akc_id: Union[str, ImmuneReceptorAkcId] = None
-    species: Optional[Union[str, "SpeciesOntology"]] = None
 
 @dataclass(repr=False)
 class TCellReceptor(ImmuneReceptor):
