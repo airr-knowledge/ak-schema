@@ -12,7 +12,7 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
--- # Class: "PlannedProcess" Description: "A process to realize a plan."
+-- # Class: "Process" Description: "A generic process."
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
@@ -45,8 +45,7 @@
 -- # Class: "Participant" Description: "A participant in an investigation."
 --     * Slot: study_arm Description: The study arm that a participant is a member of
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: biological_sex Description: The biological sex of a participant
---     * Slot: phenotypic_sex Description: The phenotypic sex of a participant
+--     * Slot: sex Description: Biological sex of subject
 --     * Slot: age Description: The age of a participant relative to age_event
 --     * Slot: age_unit Description: Unit of age range
 --     * Slot: age_event Description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
@@ -62,12 +61,12 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "LifeEvent" Description: "An event in which a study participant participates."
+--     * Slot: type Description: 
 --     * Slot: participant Description: The participant of a life event
 --     * Slot: study_event Description: The study event corresponding to a life event
 --     * Slot: life_event_type Description: The specific type of a life event
 --     * Slot: geolocation Description: The geolocation of a participant at birth
 --     * Slot: t0_event Description: The T0 event used to specify the time of this life event
---     * Slot: t0_event_type Description: The type of the T0 event used to specify the time of this life event
 --     * Slot: start Description: The start time of this life event, relative to the T0 event
 --     * Slot: duration Description: The duration of this life event
 --     * Slot: time_unit Description: The time unit used to measure the start and duration of this life event
@@ -75,24 +74,48 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ImmuneExposure" Description: "An event involving the immune system of a study participant."
---     * Slot: life_event Description: The life event corresponding to an immune exposure
 --     * Slot: exposure_material Description: The material relevant to an immune exposure
 --     * Slot: disease Description: The disease relevant to an immune exposure
 --     * Slot: disease_stage Description: Stage of disease at current intervention
 --     * Slot: disease_severity Description: The severity of the disease relevant to an immune exposure
+--     * Slot: type Description: 
+--     * Slot: participant Description: The participant of a life event
+--     * Slot: study_event Description: The study event corresponding to a life event
+--     * Slot: life_event_type Description: The specific type of a life event
+--     * Slot: geolocation Description: The geolocation of a participant at birth
+--     * Slot: t0_event Description: The T0 event used to specify the time of this life event
+--     * Slot: start Description: The start time of this life event, relative to the T0 event
+--     * Slot: duration Description: The duration of this life event
+--     * Slot: time_unit Description: The time unit used to measure the start and duration of this life event
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: description Description: A human-readable description for a thing
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "Assessment" Description: ""
+--     * Slot: life_event Description: The life event corresponding to an immune exposure
+--     * Slot: assessment_type Description: The specific type of an assessment
+--     * Slot: target_entity_type Description: The type of the entity being measured
+--     * Slot: measurement_value Description: The measurement result value
+--     * Slot: measurement_unit Description: The measurement result value unit
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Specimen" Description: ""
 --     * Slot: life_event Description: The life event corresponding to an immune exposure
---     * Slot: specimen_type Description: The type of this specimen
 --     * Slot: tissue Description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
---     * Slot: process Description: The type of specimen collection process that resulted in this specimen
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "SpecimenCollection" Description: ""
 --     * Slot: specimen Description: The specimen that was input for an assay
+--     * Slot: type Description: 
+--     * Slot: participant Description: The participant of a life event
+--     * Slot: study_event Description: The study event corresponding to a life event
+--     * Slot: life_event_type Description: The specific type of a life event
+--     * Slot: geolocation Description: The geolocation of a participant at birth
+--     * Slot: t0_event Description: The T0 event used to specify the time of this life event
+--     * Slot: start Description: The start time of this life event, relative to the T0 event
+--     * Slot: duration Description: The duration of this life event
+--     * Slot: time_unit Description: The time unit used to measure the start and duration of this life event
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
@@ -101,6 +124,10 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: Assay_akc_id Description: Autocreated FK slot
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
 -- # Class: "CellIsolationProcessing" Description: ""
 --     * Slot: tissue_processing Description: Enzymatic digestion and/or physical methods used to isolate cells from sample
 --     * Slot: cell_subset Description: Commonly-used designation of isolated cell population
@@ -135,11 +162,12 @@
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: assay_type Description: The specific type of an assay
---     * Slot: target_entity_type Description: The type of the entity being measured
+--     * Slot: has_specified_output Description: output data item
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AIRRSequencingAssay" Description: ""
+--     * Slot: repertoire_id Description: 
 --     * Slot: sequencing_run_id Description: ID of sequencing run assigned by the sequencing facility
 --     * Slot: total_reads_passing_qc_filter Description: Number of usable reads for analysis
 --     * Slot: sequencing_platform Description: Designation of sequencing instrument used
@@ -149,26 +177,77 @@
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: assay_type Description: The specific type of an assay
---     * Slot: target_entity_type Description: The type of the entity being measured
+--     * Slot: has_specified_output Description: output data item
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 --     * Slot: sequencing_files_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "TCellReceptorEpitopeBindingAssay" Description: ""
 --     * Slot: epitope Description: The epitope being measured
---     * Slot: value Description: The measurement result value
---     * Slot: unit Description: The measurement result value unit
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: assay_type Description: The specific type of an assay
---     * Slot: target_entity_type Description: The type of the entity being measured
+--     * Slot: has_specified_output Description: output data item
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
--- # Class: "Dataset" Description: ""
+--     * Slot: measurement_category Description: The measurement result category
+-- # Class: "AntibodyAntigenBindingAssay" Description: ""
+--     * Slot: specimen Description: The specimen that was input for an assay
+--     * Slot: type Description: 
+--     * Slot: assay_type Description: The specific type of an assay
+--     * Slot: has_specified_output Description: output data item
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "DataItem" Description: ""
+--     * Slot: id Description: 
+-- # Class: "MeasurementDatum" Description: ""
+--     * Slot: id Description: 
+--     * Slot: measurement_value Description: The measurement result value
+--     * Slot: measurement_unit Description: The measurement result value unit
+-- # Class: "MeasurementCategory" Description: ""
+--     * Slot: id Description: 
+--     * Slot: measurement_category Description: The measurement result category
+-- # Class: "TCellReceptorEpitopeSpecificityMeasurement" Description: ""
+--     * Slot: id Description: 
+--     * Slot: measurement_category Description: The measurement result category
+-- # Class: "DataSet" Description: ""
+--     * Slot: id Description: 
+-- # Class: "AKDataItem" Description: "data item with an akc_id"
+--     * Slot: type Description: 
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "AKDataSet" Description: ""
+--     * Slot: type Description: 
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "SequenceData" Description: "sequence data items are given an akc_id"
+--     * Slot: type Description: 
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "AIRRSequencingData" Description: ""
+--     * Slot: sequencing_data_id Description: Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.
+--     * Slot: file_type Description: File format for the raw reads or sequences
+--     * Slot: filename Description: File name for the raw reads or sequences. The first file in paired-read sequencing.
+--     * Slot: read_direction Description: Read direction for the raw reads or sequences. The first file in paired-read sequencing.
+--     * Slot: read_length Description: Read length in bases for the first file in paired-read sequencing
+--     * Slot: paired_filename Description: File name for the second file in paired-read sequencing
+--     * Slot: paired_read_direction Description: Read direction for the second file in paired-read sequencing
+--     * Slot: paired_read_length Description: Read length in bases for the second file in paired-read sequencing
+--     * Slot: index_filename Description: File name for the index file
+--     * Slot: index_length Description: Read length in bases for the index file
+--     * Slot: type Description: 
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "RNATranscriptomeData" Description: ""
+--     * Slot: type Description: 
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "DataTransformation" Description: ""
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: description Description: A human-readable description for a thing
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "InputOutputDataMap" Description: ""
+--     * Slot: id Description: 
+--     * Slot: data_transformation Description: a process that transforms input data into output data
+--     * Slot: has_specified_input Description: input data item
+--     * Slot: has_specified_output Description: output data item
 -- # Class: "Conclusion" Description: ""
 --     * Slot: result Description: The content of the conclusion
 --     * Slot: data_location_type Description: The type of location where data was found, e.g. figure, table
@@ -178,27 +257,19 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
--- # Class: "Assessment" Description: ""
---     * Slot: life_event Description: The life event corresponding to an immune exposure
---     * Slot: assessment_type Description: The specific type of an assessment
---     * Slot: target_entity_type Description: The type of the entity being measured
---     * Slot: value Description: The measurement result value
---     * Slot: unit Description: The measurement result value unit
---     * Slot: name Description: A human-readable name for a thing
---     * Slot: description Description: A human-readable description for a thing
---     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ImmuneSystem" Description: ""
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Chain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: aa_hash Description: 
 --     * Slot: junction_aa_vj_allele_hash Description: 
 --     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
---     * Slot: chain_type Description: Gene locus (chain type).
+--     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
@@ -213,6 +284,8 @@
 --     * Slot: cdr2_end Description: 
 --     * Slot: cdr3_start Description: 
 --     * Slot: cdr3_end Description: CDR3 end position in the query sequence (1-based closed interval).
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "ImmuneReceptor" Description: ""
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCellReceptor" Description: ""
 --     * Slot: type Description: 
@@ -232,6 +305,12 @@
 --     * Slot: igk_chain Description: IG kappa light chain
 --     * Slot: igl_chain Description: IG lambda light chain
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "Antigen" Description: ""
+--     * Slot: source_protein Description: The protein that this epitope comes from
+--     * Slot: source_organism Description: The organism that the source protein comes from
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: description Description: A human-readable description for a thing
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Epitope" Description: ""
 --     * Slot: type Description: 
 --     * Slot: name Description: A human-readable name for a thing
@@ -245,6 +324,19 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "AntibodyAntigenComplex" Description: ""
+--     * Slot: antibody Description: B cell receptor, immunoglobulin antibody
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: description Description: A human-readable description for a thing
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "TCRpMHCComplex" Description: ""
+--     * Slot: tcell_receptor Description: T cell receptor
+--     * Slot: epitope Description: The epitope being measured
+--     * Slot: name Description: A human-readable name for a thing
+--     * Slot: description Description: A human-readable description for a thing
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: mhc_id Description: Major histocompatibility complex
 -- # Class: "Model" Description: ""
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -804,7 +896,7 @@
 --     * Slot: id Description: 
 --     * Slot: ligand_type Description: Classification of ligand binding to receptor
 --     * Slot: antigen_type Description: The type of antigen before processing by the immune system.
---     * Slot: antigen Description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
+--     * Slot: antigen Description: A material entity with antigen role
 --     * Slot: antigen_source_species Description: The species from which the antigen was isolated
 --     * Slot: peptide_start Description: Start position of the peptide within the reference protein sequence
 --     * Slot: peptide_end Description: End position of the peptide within the reference protein sequence
@@ -886,24 +978,42 @@
 -- # Class: "LibraryPreparationProcessing_pcr_target" Description: ""
 --     * Slot: LibraryPreparationProcessing_akc_id Description: Autocreated FK slot
 --     * Slot: pcr_target_id Description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
--- # Class: "Assay_specimen_processing" Description: ""
---     * Slot: Assay_akc_id Description: Autocreated FK slot
---     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
--- # Class: "AIRRSequencingAssay_specimen_processing" Description: ""
+-- # Class: "AIRRSequencingAssay_tcell_receptors" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
---     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
+--     * Slot: tcell_receptors_akc_id Description: The T cell receptors being measured
+-- # Class: "AIRRSequencingAssay_tcell_chains" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: tcell_chains_akc_id Description: The T cell receptor chains being measured
 -- # Class: "TCellReceptorEpitopeBindingAssay_tcell_receptors" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcell_receptors_akc_id Description: The T cell receptors being measured
--- # Class: "TCellReceptorEpitopeBindingAssay_specimen_processing" Description: ""
---     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
---     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
--- # Class: "Dataset_assessments" Description: ""
---     * Slot: Dataset_akc_id Description: Autocreated FK slot
---     * Slot: assessments_akc_id Description: The assessment that a dataset is about
--- # Class: "Dataset_assays" Description: ""
---     * Slot: Dataset_akc_id Description: Autocreated FK slot
---     * Slot: assays_akc_id Description: The assays performed by the investigation
+-- # Class: "DataSet_data_items" Description: ""
+--     * Slot: DataSet_id Description: Autocreated FK slot
+--     * Slot: data_items_akc_id Description: set of data items
+-- # Class: "AKDataItem_data_item_types" Description: ""
+--     * Slot: AKDataItem_akc_id Description: Autocreated FK slot
+--     * Slot: data_item_types Description: semantic types of the data
+-- # Class: "AKDataSet_data_items" Description: ""
+--     * Slot: AKDataSet_akc_id Description: Autocreated FK slot
+--     * Slot: data_items_akc_id Description: set of data items
+-- # Class: "AKDataSet_data_item_types" Description: ""
+--     * Slot: AKDataSet_akc_id Description: Autocreated FK slot
+--     * Slot: data_item_types Description: semantic types of the data
+-- # Class: "SequenceData_data_item_types" Description: ""
+--     * Slot: SequenceData_akc_id Description: Autocreated FK slot
+--     * Slot: data_item_types Description: semantic types of the data
+-- # Class: "AIRRSequencingData_data_item_types" Description: ""
+--     * Slot: AIRRSequencingData_akc_id Description: Autocreated FK slot
+--     * Slot: data_item_types Description: semantic types of the data
+-- # Class: "RNATranscriptomeData_data_item_types" Description: ""
+--     * Slot: RNATranscriptomeData_akc_id Description: Autocreated FK slot
+--     * Slot: data_item_types Description: semantic types of the data
+-- # Class: "DataTransformation_was_generated_by" Description: ""
+--     * Slot: DataTransformation_akc_id Description: Autocreated FK slot
+--     * Slot: was_generated_by_id Description: direct provenance link of one entity (input) to another (output) for a data transformation
+-- # Class: "DataTransformation_data_transformation_types" Description: ""
+--     * Slot: DataTransformation_akc_id Description: Autocreated FK slot
+--     * Slot: data_transformation_types Description: semantic types of the data transformation
 -- # Class: "Conclusion_investigations" Description: ""
 --     * Slot: Conclusion_akc_id Description: Autocreated FK slot
 --     * Slot: investigations_akc_id Description: The investigations that a reference or conclusion are about
@@ -1027,7 +1137,7 @@ CREATE TABLE "NamedThing" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
-CREATE TABLE "PlannedProcess" (
+CREATE TABLE "Process" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -1066,7 +1176,66 @@ CREATE TABLE "StudyEvent" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
-CREATE TABLE "Dataset" (
+CREATE TABLE "DataItem" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "MeasurementDatum" (
+	id INTEGER NOT NULL, 
+	measurement_value INTEGER, 
+	measurement_unit VARCHAR, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "MeasurementCategory" (
+	id INTEGER NOT NULL, 
+	measurement_category TEXT, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "TCellReceptorEpitopeSpecificityMeasurement" (
+	id INTEGER NOT NULL, 
+	measurement_category VARCHAR(21), 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "DataSet" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
+CREATE TABLE "AKDataItem" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "AKDataSet" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "SequenceData" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "AIRRSequencingData" (
+	sequencing_data_id TEXT, 
+	file_type VARCHAR(5), 
+	filename TEXT, 
+	read_direction VARCHAR(7), 
+	read_length INTEGER, 
+	paired_filename TEXT, 
+	paired_read_direction VARCHAR(7), 
+	paired_read_length INTEGER, 
+	index_filename TEXT, 
+	index_length INTEGER, 
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "RNATranscriptomeData" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "DataTransformation" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -1090,13 +1259,14 @@ CREATE TABLE "ImmuneSystem" (
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "Chain" (
+	species VARCHAR, 
 	aa_hash TEXT, 
 	junction_aa_vj_allele_hash TEXT, 
 	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
 	sequence_aa TEXT, 
-	chain_type VARCHAR(3), 
+	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
@@ -1114,6 +1284,10 @@ CREATE TABLE "Chain" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
+CREATE TABLE "ImmuneReceptor" (
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
 CREATE TABLE "TCellReceptor" (
 	tra_chain TEXT, 
 	trb_chain TEXT, 
@@ -1126,6 +1300,14 @@ CREATE TABLE "TCellReceptor" (
 	FOREIGN KEY(trb_chain) REFERENCES "Chain" (akc_id),
 	FOREIGN KEY(trg_chain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(trd_chain) REFERENCES "Chain" (akc_id)
+);
+CREATE TABLE "Antigen" (
+	source_protein TEXT, 
+	source_organism TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "Epitope" (
 	sequence_aa TEXT, 
@@ -1727,25 +1909,6 @@ CREATE TABLE "Receptor" (
 	receptor_variable_domain_2_locus VARCHAR(3), 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "ReceptorReactivity" (
-	id INTEGER NOT NULL, 
-	ligand_type VARCHAR(15), 
-	antigen_type VARCHAR(12), 
-	antigen VARCHAR, 
-	antigen_source_species VARCHAR, 
-	peptide_start INTEGER, 
-	peptide_end INTEGER, 
-	mhc_class VARCHAR(16), 
-	mhc_gene_1 VARCHAR, 
-	mhc_allele_1 TEXT, 
-	mhc_gene_2 VARCHAR, 
-	mhc_allele_2 TEXT, 
-	reactivity_method VARCHAR(19), 
-	reactivity_readout VARCHAR(24), 
-	reactivity_value FLOAT, 
-	reactivity_unit TEXT, 
-	PRIMARY KEY (id)
-);
 CREATE TABLE "StudyArm" (
 	investigation TEXT, 
 	name TEXT, 
@@ -1753,6 +1916,16 @@ CREATE TABLE "StudyArm" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
+);
+CREATE TABLE "InputOutputDataMap" (
+	id INTEGER NOT NULL, 
+	data_transformation TEXT, 
+	has_specified_input TEXT, 
+	has_specified_output TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(data_transformation) REFERENCES "DataTransformation" (akc_id), 
+	FOREIGN KEY(has_specified_input) REFERENCES "AKDataItem" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
 CREATE TABLE "AlphaBetaTCR" (
 	tra_chain TEXT, 
@@ -1781,6 +1954,18 @@ CREATE TABLE "BCellReceptor" (
 	FOREIGN KEY(igh_chain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(igk_chain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(igl_chain) REFERENCES "Chain" (akc_id)
+);
+CREATE TABLE "TCRpMHCComplex" (
+	tcell_receptor TEXT, 
+	epitope TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	mhc_id INTEGER, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcell_receptor) REFERENCES "TCellReceptor" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc_id) REFERENCES "MHCAllele" (id)
 );
 CREATE TABLE "SimilarityCalculation" (
 	chain_domain TEXT, 
@@ -1826,6 +2011,26 @@ CREATE TABLE "RepertoireGroupDetail" (
 	time_point_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(time_point_id) REFERENCES "TimePoint" (id)
+);
+CREATE TABLE "ReceptorReactivity" (
+	id INTEGER NOT NULL, 
+	ligand_type VARCHAR(15), 
+	antigen_type VARCHAR(12), 
+	antigen TEXT, 
+	antigen_source_species VARCHAR, 
+	peptide_start INTEGER, 
+	peptide_end INTEGER, 
+	mhc_class VARCHAR(16), 
+	mhc_gene_1 VARCHAR, 
+	mhc_allele_1 TEXT, 
+	mhc_gene_2 VARCHAR, 
+	mhc_allele_2 TEXT, 
+	reactivity_method VARCHAR(19), 
+	reactivity_readout VARCHAR(24), 
+	reactivity_value FLOAT, 
+	reactivity_unit TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
 );
 CREATE TABLE "SampleProcessing" (
 	id INTEGER NOT NULL, 
@@ -1909,6 +2114,56 @@ CREATE TABLE "Reference_authors" (
 	PRIMARY KEY ("Reference_source_uri", authors), 
 	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
 );
+CREATE TABLE "DataSet_data_items" (
+	"DataSet_id" INTEGER, 
+	data_items_akc_id TEXT, 
+	PRIMARY KEY ("DataSet_id", data_items_akc_id), 
+	FOREIGN KEY("DataSet_id") REFERENCES "DataSet" (id), 
+	FOREIGN KEY(data_items_akc_id) REFERENCES "AKObject" (akc_id)
+);
+CREATE TABLE "AKDataItem_data_item_types" (
+	"AKDataItem_akc_id" TEXT, 
+	data_item_types VARCHAR(29), 
+	PRIMARY KEY ("AKDataItem_akc_id", data_item_types), 
+	FOREIGN KEY("AKDataItem_akc_id") REFERENCES "AKDataItem" (akc_id)
+);
+CREATE TABLE "AKDataSet_data_items" (
+	"AKDataSet_akc_id" TEXT, 
+	data_items_akc_id TEXT, 
+	PRIMARY KEY ("AKDataSet_akc_id", data_items_akc_id), 
+	FOREIGN KEY("AKDataSet_akc_id") REFERENCES "AKDataSet" (akc_id), 
+	FOREIGN KEY(data_items_akc_id) REFERENCES "AKObject" (akc_id)
+);
+CREATE TABLE "AKDataSet_data_item_types" (
+	"AKDataSet_akc_id" TEXT, 
+	data_item_types VARCHAR(29), 
+	PRIMARY KEY ("AKDataSet_akc_id", data_item_types), 
+	FOREIGN KEY("AKDataSet_akc_id") REFERENCES "AKDataSet" (akc_id)
+);
+CREATE TABLE "SequenceData_data_item_types" (
+	"SequenceData_akc_id" TEXT, 
+	data_item_types VARCHAR(29), 
+	PRIMARY KEY ("SequenceData_akc_id", data_item_types), 
+	FOREIGN KEY("SequenceData_akc_id") REFERENCES "SequenceData" (akc_id)
+);
+CREATE TABLE "AIRRSequencingData_data_item_types" (
+	"AIRRSequencingData_akc_id" TEXT, 
+	data_item_types VARCHAR(29), 
+	PRIMARY KEY ("AIRRSequencingData_akc_id", data_item_types), 
+	FOREIGN KEY("AIRRSequencingData_akc_id") REFERENCES "AIRRSequencingData" (akc_id)
+);
+CREATE TABLE "RNATranscriptomeData_data_item_types" (
+	"RNATranscriptomeData_akc_id" TEXT, 
+	data_item_types VARCHAR(29), 
+	PRIMARY KEY ("RNATranscriptomeData_akc_id", data_item_types), 
+	FOREIGN KEY("RNATranscriptomeData_akc_id") REFERENCES "RNATranscriptomeData" (akc_id)
+);
+CREATE TABLE "DataTransformation_data_transformation_types" (
+	"DataTransformation_akc_id" TEXT, 
+	data_transformation_types VARCHAR(29), 
+	PRIMARY KEY ("DataTransformation_akc_id", data_transformation_types), 
+	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id)
+);
 CREATE TABLE "Conclusion_investigations" (
 	"Conclusion_akc_id" TEXT, 
 	investigations_akc_id TEXT, 
@@ -1921,7 +2176,7 @@ CREATE TABLE "Conclusion_datasets" (
 	datasets_akc_id TEXT, 
 	PRIMARY KEY ("Conclusion_akc_id", datasets_akc_id), 
 	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
-	FOREIGN KEY(datasets_akc_id) REFERENCES "Dataset" (akc_id)
+	FOREIGN KEY(datasets_akc_id) REFERENCES "AKDataSet" (akc_id)
 );
 CREATE TABLE "SequenceDelineationV_alignment_labels" (
 	"SequenceDelineationV_id" INTEGER, 
@@ -2081,18 +2336,10 @@ CREATE TABLE "Receptor_receptor_ref" (
 	PRIMARY KEY ("Receptor_id", receptor_ref), 
 	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id)
 );
-CREATE TABLE "Receptor_reactivity_measurements" (
-	"Receptor_id" INTEGER, 
-	reactivity_measurements_id INTEGER, 
-	PRIMARY KEY ("Receptor_id", reactivity_measurements_id), 
-	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id), 
-	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
-);
 CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species VARCHAR, 
-	biological_sex VARCHAR, 
-	phenotypic_sex VARCHAR(13), 
+	sex VARCHAR, 
 	age TEXT, 
 	age_unit VARCHAR, 
 	age_event TEXT, 
@@ -2105,6 +2352,16 @@ CREATE TABLE "Participant" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "AntibodyAntigenComplex" (
+	antibody TEXT, 
+	antigen TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antibody) REFERENCES "BCellReceptor" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
 );
 CREATE TABLE "Subject" (
 	id INTEGER NOT NULL, 
@@ -2133,12 +2390,26 @@ CREATE TABLE "StudyEvent_study_arms" (
 	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
 );
+CREATE TABLE "DataTransformation_was_generated_by" (
+	"DataTransformation_akc_id" TEXT, 
+	was_generated_by_id INTEGER, 
+	PRIMARY KEY ("DataTransformation_akc_id", was_generated_by_id), 
+	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id), 
+	FOREIGN KEY(was_generated_by_id) REFERENCES "InputOutputDataMap" (id)
+);
 CREATE TABLE "RepertoireGroup_repertoires" (
 	"RepertoireGroup_id" INTEGER, 
 	repertoires_id INTEGER, 
 	PRIMARY KEY ("RepertoireGroup_id", repertoires_id), 
 	FOREIGN KEY("RepertoireGroup_id") REFERENCES "RepertoireGroup" (id), 
 	FOREIGN KEY(repertoires_id) REFERENCES "RepertoireGroupDetail" (id)
+);
+CREATE TABLE "Receptor_reactivity_measurements" (
+	"Receptor_id" INTEGER, 
+	reactivity_measurements_id INTEGER, 
+	PRIMARY KEY ("Receptor_id", reactivity_measurements_id), 
+	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id), 
+	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
 );
 CREATE TABLE "SampleProcessing_pcr_target" (
 	"SampleProcessing_id" INTEGER, 
@@ -2148,12 +2419,12 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
 );
 CREATE TABLE "LifeEvent" (
+	type TEXT, 
 	participant TEXT, 
 	study_event TEXT, 
 	life_event_type VARCHAR, 
 	geolocation VARCHAR(24), 
 	t0_event TEXT, 
-	t0_event_type TEXT, 
 	start INTEGER, 
 	duration INTEGER, 
 	time_unit TEXT, 
@@ -2162,7 +2433,8 @@ CREATE TABLE "LifeEvent" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
-	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id)
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
 );
 CREATE TABLE "Repertoire" (
 	id INTEGER NOT NULL, 
@@ -2190,11 +2462,33 @@ CREATE TABLE "Subject_diagnosis" (
 	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
 );
 CREATE TABLE "ImmuneExposure" (
-	life_event TEXT, 
 	exposure_material VARCHAR, 
 	disease VARCHAR, 
 	disease_stage TEXT, 
 	disease_severity TEXT, 
+	type TEXT, 
+	participant TEXT, 
+	study_event TEXT, 
+	life_event_type VARCHAR, 
+	geolocation VARCHAR(24), 
+	t0_event TEXT, 
+	start INTEGER, 
+	duration INTEGER, 
+	time_unit TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
+);
+CREATE TABLE "Assessment" (
+	life_event TEXT, 
+	assessment_type TEXT, 
+	target_entity_type TEXT, 
+	measurement_value INTEGER, 
+	measurement_unit VARCHAR, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -2203,21 +2497,7 @@ CREATE TABLE "ImmuneExposure" (
 );
 CREATE TABLE "Specimen" (
 	life_event TEXT, 
-	specimen_type TEXT, 
 	tissue VARCHAR, 
-	process TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
-);
-CREATE TABLE "Assessment" (
-	life_event TEXT, 
-	assessment_type TEXT, 
-	target_entity_type TEXT, 
-	value TEXT, 
-	unit TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -2240,19 +2520,23 @@ CREATE TABLE "Repertoire_data_processing" (
 );
 CREATE TABLE "SpecimenCollection" (
 	specimen TEXT, 
+	type TEXT, 
+	participant TEXT, 
+	study_event TEXT, 
+	life_event_type VARCHAR, 
+	geolocation VARCHAR(24), 
+	t0_event TEXT, 
+	start INTEGER, 
+	duration INTEGER, 
+	time_unit TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
-);
-CREATE TABLE "SpecimenProcessing" (
-	specimen TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
 );
 CREATE TABLE "CellIsolationProcessing" (
 	tissue_processing TEXT, 
@@ -2292,26 +2576,29 @@ CREATE TABLE "LibraryPreparationProcessing" (
 );
 CREATE TABLE "Assay" (
 	repertoire_id TEXT, 
-	sequencing_files INTEGER, 
 	sequencing_run_id TEXT, 
 	total_reads_passing_qc_filter INTEGER, 
 	sequencing_platform TEXT, 
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
+	sequencing_files_id INTEGER, 
+
 	epitope TEXT, 
-	value TEXT, 
-	unit TEXT, 
+	measurement_category VARCHAR(21), 
+
 	specimen TEXT, 
 	type TEXT, 
-	assay_type TEXT, 
-	target_entity_type TEXT, 
+	assay_type VARCHAR, 
+	has_specified_output TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id),
+	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id),
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
 );
 CREATE TABLE "AIRRSequencingAssay" (
 	repertoire_id TEXT, 
@@ -2323,36 +2610,59 @@ CREATE TABLE "AIRRSequencingAssay" (
 	sequencing_kit TEXT, 
 	specimen TEXT, 
 	type TEXT, 
-	assay_type TEXT, 
-	target_entity_type TEXT, 
+	assay_type VARCHAR, 
+	has_specified_output TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	sequencing_files INTEGER, 
+	sequencing_files_id INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
+	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	epitope TEXT, 
-	value TEXT, 
-	unit TEXT, 
 	specimen TEXT, 
 	type TEXT, 
-	assay_type TEXT, 
-	target_entity_type TEXT, 
+	assay_type VARCHAR, 
+	has_specified_output TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	measurement_category VARCHAR(21), 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+);
+CREATE TABLE "AntibodyAntigenBindingAssay" (
+	specimen TEXT, 
+	type TEXT, 
+	assay_type VARCHAR, 
+	has_specified_output TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
-CREATE TABLE "Dataset_assessments" (
-	"Dataset_akc_id" TEXT, 
-	assessments_akc_id TEXT, 
-	PRIMARY KEY ("Dataset_akc_id", assessments_akc_id), 
-	FOREIGN KEY("Dataset_akc_id") REFERENCES "Dataset" (akc_id), 
-	FOREIGN KEY(assessments_akc_id) REFERENCES "Assessment" (akc_id)
+CREATE TABLE "SpecimenProcessing" (
+	specimen TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"Assay_akc_id" TEXT, 
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id)
 );
 CREATE TABLE "Investigation_assays" (
 	investigation_akc_id TEXT, 
@@ -2368,47 +2678,34 @@ CREATE TABLE "LibraryPreparationProcessing_pcr_target" (
 	FOREIGN KEY("LibraryPreparationProcessing_akc_id") REFERENCES "LibraryPreparationProcessing" (akc_id), 
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
 );
-CREATE TABLE "Assay_specimen_processing" (
-	"Assay_akc_id" TEXT, 
-	specimen_processing_akc_id TEXT, 
-	PRIMARY KEY ("Assay_akc_id", specimen_processing_akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
-);
-CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
+CREATE TABLE "AIRRSequencingAssay_tcell_receptors" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
-	specimen_processing_akc_id TEXT, 
-	PRIMARY KEY ("AIRRSequencingAssay_akc_id", specimen_processing_akc_id), 
+	tcell_receptors_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_receptors_akc_id), 
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
 );
+CREATE TABLE "AIRRSequencingAssay_tcell_chains" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	tcell_chains_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_chains_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
+);
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	tcell_receptors_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcell_receptors_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
+);
+
 CREATE TABLE "Assay_tcell_receptors" (
 	assay_akc_id TEXT, 
 	tcell_receptors_akc_id TEXT, 
 	PRIMARY KEY (assay_akc_id, tcell_receptors_akc_id), 
 	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
-);
-CREATE TABLE "Assay_tcell_chains" (
-	assay_akc_id TEXT, 
-	tcell_chains_akc_id TEXT, 
-	PRIMARY KEY (assay_akc_id, tcell_chains_akc_id), 
-	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
-);
-CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	specimen_processing_akc_id TEXT, 
-	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", specimen_processing_akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
-);
-CREATE TABLE "Dataset_assays" (
-	"Dataset_akc_id" TEXT, 
-	assays_akc_id TEXT, 
-	PRIMARY KEY ("Dataset_akc_id", assays_akc_id), 
-	FOREIGN KEY("Dataset_akc_id") REFERENCES "Dataset" (akc_id), 
-	FOREIGN KEY(assays_akc_id) REFERENCES "Assay" (akc_id)
 );
 
 CREATE INDEX "Chain_junction_aa" ON "Chain" ("junction_aa");

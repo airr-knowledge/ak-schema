@@ -1,4 +1,4 @@
-CREATE TYPE "InvestigationTypeOntology" AS ENUM ();CREATE TYPE "SpeciesOntology" AS ENUM ();CREATE TYPE "BiologicalSexOntology" AS ENUM ();CREATE TYPE "AgeUnitOntology" AS ENUM ();CREATE TYPE "GeolocationOntology" AS ENUM ('US: New York', 'US: California', 'US: Connecticut', 'US: Georgia', 'US: Texas', 'Canada', 'Nicaragua', 'US: Maryland', 'US: Minnesota', 'United States of America', 'Uganda', 'China', 'England', 'India', 'US: Massachusetts', 'US: Colorado', 'Gambia', 'Papua New Guinea', 'Metropolitan France', 'Sri Lanka', 'Switzerland', 'US: Washington', 'geographic location', 'Colombia', 'US: Florida', 'US: Kansas');CREATE TYPE "StrainEnum" AS ENUM ('1D2beta', 'BALB/cByJ', 'Balb/c', 'C57BL/6', 'C57BL/6J', 'JHD-/- MRL/MpJ-Faslp', 'LDLR+/+', 'LDLR-/-', 'pet shop mouse');CREATE TYPE "LifeEventProcessOntology" AS ENUM ();CREATE TYPE "ExposureMaterialOntology" AS ENUM ();CREATE TYPE "DiseaseOntology" AS ENUM ();CREATE TYPE "MeasurementUnitOntology" AS ENUM ();CREATE TYPE "TissueOntology" AS ENUM ();CREATE TYPE "CellSubsetOntology" AS ENUM ();CREATE TYPE "CellSpeciesOntology" AS ENUM ();CREATE TYPE "TemplateClassEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "TemplateAmountUnitOntology" AS ENUM ();CREATE TYPE "LibraryGenerationMethodEnum" AS ENUM ('PCR', 'RT(RHP)+PCR', 'RT(oligo-dT)+PCR', 'RT(oligo-dT)+TS+PCR', 'RT(oligo-dT)+TS(UMI)+PCR', 'RT(specific)+PCR', 'RT(specific)+TS+PCR', 'RT(specific)+TS(UMI)+PCR', 'RT(specific+UMI)+PCR', 'RT(specific+UMI)+TS+PCR', 'RT(specific)+TS', 'other');CREATE TYPE "CompleteSequencesEnum" AS ENUM ('partial', 'complete', 'complete+untemplated', 'mixed');CREATE TYPE "PhysicalLinkageEnum" AS ENUM ('none', 'hetero_head-head', 'hetero_tail-head', 'hetero_prelinked');CREATE TYPE "AssayTypeOntology" AS ENUM ();CREATE TYPE "CategoricalSpecificityEnum" AS ENUM ('Positive', 'Negative', 'Positive-Low', 'Positive-High', 'Positive-Intermediate');CREATE TYPE "FileTypeEnum" AS ENUM ('fasta', 'fastq');CREATE TYPE "ReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "PairedReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "LocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRG', 'TRD');CREATE TYPE "ChainSimilarityTypeEnum" AS ENUM ('exact_match', 'exact_aa_match', 'cdr3_exact_match', 'cdr3_exact_aa_match', 'cdr3_exact_aa_and_vj_match');CREATE TYPE "TimePointUnitOntology" AS ENUM ();CREATE TYPE "DerivationEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "ObservationTypeEnum" AS ENUM ('direct_sequencing', 'inference_from_repertoire');CREATE TYPE "StrandEnum" AS ENUM ('+', '-');CREATE TYPE "SequenceTypeEnum" AS ENUM ('V', 'D', 'J', 'C');CREATE TYPE "InferenceTypeEnum" AS ENUM ('genomic_and_rearranged', 'genomic_only', 'rearranged_only');CREATE TYPE "SpeciesSubgroupTypeEnum" AS ENUM ('breed', 'strain', 'inbred', 'outbred', 'locational');CREATE TYPE "StatusEnum" AS ENUM ('active', 'draft', 'retired', 'withdrawn');CREATE TYPE "JCodonFrameEnum" AS ENUM ('1', '2', '3');CREATE TYPE "InferenceProcessEnum" AS ENUM ('genomic_sequencing', 'repertoire_sequencing');CREATE TYPE "MhcClassEnum" AS ENUM ('MHC-I', 'MHC-II', 'MHC-nonclassical');CREATE TYPE "GeneOntology" AS ENUM ();CREATE TYPE "StudyTypeOntology" AS ENUM ();CREATE TYPE "SexEnum" AS ENUM ('male', 'female', 'pooled', 'hermaphrodite', 'intersex');CREATE TYPE "DiseaseDiagnosisOntology" AS ENUM ();CREATE TYPE "CollectionTimePointRelativeUnitOntology" AS ENUM ();CREATE TYPE "PcrTargetLocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRD', 'TRG');CREATE TYPE "ExpressionStudyMethodEnum" AS ENUM ('flow_cytometry', 'single-cell_transcriptome');CREATE TYPE "PropertyOntology" AS ENUM ();CREATE TYPE "ReceptorTypeEnum" AS ENUM ('Ig', 'TCR');CREATE TYPE "ReceptorVariableDomain1LocusEnum" AS ENUM ('IGH', 'TRB', 'TRD');CREATE TYPE "ReceptorVariableDomain2LocusEnum" AS ENUM ('IGI', 'IGK', 'IGL', 'TRA', 'TRG');CREATE TYPE "LigandTypeEnum" AS ENUM ('MHC:peptide', 'MHC:non-peptide', 'protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenTypeEnum" AS ENUM ('protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenSourceSpeciesOntology" AS ENUM ();CREATE TYPE "MhcGene1Ontology" AS ENUM ();CREATE TYPE "MhcGene2Ontology" AS ENUM ();CREATE TYPE "ReactivityMethodEnum" AS ENUM ('SPR', 'ITC', 'ELISA', 'cytometry', 'biological_activity');CREATE TYPE "ReactivityReadoutEnum" AS ENUM ('binding_strength', 'cytokine_release', 'dissociation_constant_kd', 'on_rate', 'off_rate', 'pathogen_inhibition');CREATE TYPE "DataItemTypeEnum" AS ENUM ('sequence_reads', 'sequence_quality', 'sequence_forward_paired_reads', 'sequence_reverse_paired_reads', 'sequence', 'primer_sequence', 'forward_primer_sequence', 'reverse_primer_sequence', 'barcode_sequence', 'vdj_sequence_annotation', 'quality_statistics', 'annotation_statistics', 'assigned_clones', 'physiochemical_annotation', 'gene_usage', 'gene_combo_usage', 'length_distribution', 'diversity_profile', 'mutational_profile', 'similarity_comparison', 'study_arm_comparison', 'archive', 'compressed');CREATE TYPE "CurationalTagsEnum" AS ENUM ('likely_truncated', 'likely_full_length');CREATE TYPE "KeywordsStudyEnum" AS ENUM ('contains_ig', 'contains_tr', 'contains_paired_chain', 'contains_schema_rearrangement', 'contains_schema_clone', 'contains_schema_cell', 'contains_schema_receptor');
+CREATE TYPE "InvestigationTypeOntology" AS ENUM ();CREATE TYPE "SpeciesOntology" AS ENUM ();CREATE TYPE "BiologicalSexOntology" AS ENUM ();CREATE TYPE "AgeUnitOntology" AS ENUM ();CREATE TYPE "GeolocationOntology" AS ENUM ('US: New York', 'US: California', 'US: Connecticut', 'US: Georgia', 'US: Texas', 'Canada', 'Nicaragua', 'US: Maryland', 'US: Minnesota', 'United States of America', 'Uganda', 'China', 'England', 'India', 'US: Massachusetts', 'US: Colorado', 'Gambia', 'Papua New Guinea', 'Metropolitan France', 'Sri Lanka', 'Switzerland', 'US: Washington', 'geographic location', 'Colombia', 'US: Florida', 'US: Kansas');CREATE TYPE "StrainEnum" AS ENUM ('1D2beta', 'BALB/cByJ', 'Balb/c', 'C57BL/6', 'C57BL/6J', 'JHD-/- MRL/MpJ-Faslp', 'LDLR+/+', 'LDLR-/-', 'pet shop mouse');CREATE TYPE "LifeEventProcessOntology" AS ENUM ();CREATE TYPE "ExposureMaterialOntology" AS ENUM ();CREATE TYPE "DiseaseOntology" AS ENUM ();CREATE TYPE "MeasurementUnitOntology" AS ENUM ();CREATE TYPE "TissueOntology" AS ENUM ();CREATE TYPE "CellSubsetOntology" AS ENUM ();CREATE TYPE "CellSpeciesOntology" AS ENUM ();CREATE TYPE "TemplateClassEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "TemplateAmountUnitOntology" AS ENUM ();CREATE TYPE "LibraryGenerationMethodEnum" AS ENUM ('PCR', 'RT(RHP)+PCR', 'RT(oligo-dT)+PCR', 'RT(oligo-dT)+TS+PCR', 'RT(oligo-dT)+TS(UMI)+PCR', 'RT(specific)+PCR', 'RT(specific)+TS+PCR', 'RT(specific)+TS(UMI)+PCR', 'RT(specific+UMI)+PCR', 'RT(specific+UMI)+TS+PCR', 'RT(specific)+TS', 'other');CREATE TYPE "CompleteSequencesEnum" AS ENUM ('partial', 'complete', 'complete+untemplated', 'mixed');CREATE TYPE "PhysicalLinkageEnum" AS ENUM ('none', 'hetero_head-head', 'hetero_tail-head', 'hetero_prelinked');CREATE TYPE "AssayTypeOntology" AS ENUM ();CREATE TYPE "CategoricalSpecificityEnum" AS ENUM ('Positive', 'Negative', 'Positive-Low', 'Positive-High', 'Positive-Intermediate');CREATE TYPE "FileTypeEnum" AS ENUM ('fasta', 'fastq');CREATE TYPE "ReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "PairedReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "LocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRG', 'TRD');CREATE TYPE "ChainSimilarityTypeEnum" AS ENUM ('exact_match', 'exact_aa_match', 'cdr3_exact_match', 'cdr3_exact_aa_match', 'cdr3_exact_aa_and_vj_match');CREATE TYPE "TimePointUnitOntology" AS ENUM ();CREATE TYPE "DerivationEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "ObservationTypeEnum" AS ENUM ('direct_sequencing', 'inference_from_repertoire');CREATE TYPE "StrandEnum" AS ENUM ('+', '-');CREATE TYPE "SequenceTypeEnum" AS ENUM ('V', 'D', 'J', 'C');CREATE TYPE "InferenceTypeEnum" AS ENUM ('genomic_and_rearranged', 'genomic_only', 'rearranged_only');CREATE TYPE "SpeciesSubgroupTypeEnum" AS ENUM ('breed', 'strain', 'inbred', 'outbred', 'locational');CREATE TYPE "StatusEnum" AS ENUM ('active', 'draft', 'retired', 'withdrawn');CREATE TYPE "JCodonFrameEnum" AS ENUM ('1', '2', '3');CREATE TYPE "InferenceProcessEnum" AS ENUM ('genomic_sequencing', 'repertoire_sequencing');CREATE TYPE "MhcClassEnum" AS ENUM ('MHC-I', 'MHC-II', 'MHC-nonclassical');CREATE TYPE "GeneOntology" AS ENUM ();CREATE TYPE "StudyTypeOntology" AS ENUM ();CREATE TYPE "SexEnum" AS ENUM ('male', 'female', 'pooled', 'hermaphrodite', 'intersex');CREATE TYPE "DiseaseDiagnosisOntology" AS ENUM ();CREATE TYPE "CollectionTimePointRelativeUnitOntology" AS ENUM ();CREATE TYPE "PcrTargetLocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRD', 'TRG');CREATE TYPE "ExpressionStudyMethodEnum" AS ENUM ('flow_cytometry', 'single-cell_transcriptome');CREATE TYPE "ReceptorTypeEnum" AS ENUM ('Ig', 'TCR');CREATE TYPE "ReceptorVariableDomain1LocusEnum" AS ENUM ('IGH', 'TRB', 'TRD');CREATE TYPE "ReceptorVariableDomain2LocusEnum" AS ENUM ('IGI', 'IGK', 'IGL', 'TRA', 'TRG');CREATE TYPE "LigandTypeEnum" AS ENUM ('MHC:peptide', 'MHC:non-peptide', 'protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenTypeEnum" AS ENUM ('protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenSourceSpeciesOntology" AS ENUM ();CREATE TYPE "MhcGene1Ontology" AS ENUM ();CREATE TYPE "MhcGene2Ontology" AS ENUM ();CREATE TYPE "ReactivityMethodEnum" AS ENUM ('SPR', 'ITC', 'ELISA', 'cytometry', 'biological_activity');CREATE TYPE "ReactivityReadoutEnum" AS ENUM ('binding_strength', 'cytokine_release', 'dissociation_constant_kd', 'on_rate', 'off_rate', 'pathogen_inhibition');CREATE TYPE "DataItemTypeEnum" AS ENUM ('sequence_reads', 'sequence_quality', 'sequence_forward_paired_reads', 'sequence_reverse_paired_reads', 'sequence', 'primer_sequence', 'forward_primer_sequence', 'reverse_primer_sequence', 'barcode_sequence', 'vdj_sequence_annotation', 'quality_statistics', 'annotation_statistics', 'assigned_clones', 'physiochemical_annotation', 'gene_usage', 'gene_combo_usage', 'length_distribution', 'diversity_profile', 'mutational_profile', 'similarity_comparison', 'study_arm_comparison', 'archive', 'compressed');CREATE TYPE "CurationalTagsEnum" AS ENUM ('likely_truncated', 'likely_full_length');CREATE TYPE "KeywordsStudyEnum" AS ENUM ('contains_ig', 'contains_tr', 'contains_paired_chain', 'contains_schema_rearrangement', 'contains_schema_clone', 'contains_schema_cell', 'contains_schema_receptor');
 CREATE TABLE "AKObject" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
@@ -771,7 +771,7 @@ CREATE TABLE "CellExpression" (
 	repertoire_id TEXT, 
 	data_processing_id TEXT, 
 	property_type TEXT, 
-	property "PropertyOntology", 
+	property TEXT, 
 	property_value FLOAT, 
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "CellExpression" IS 'None';COMMENT ON COLUMN "CellExpression".expression_id IS 'Identifier of this expression property measurement.';COMMENT ON COLUMN "CellExpression".property_type IS 'Keyword describing the property type and detection method used to measure the property value. The following keywords are recommended, but custom property types are also valid: "mrna_expression_by_read_count", "protein_expression_by_fluorescence_intensity", "antigen_bait_binding_by_fluorescence_intensity", "protein_expression_by_dna_barcode_count" and "antigen_bait_binding_by_dna_barcode_count".';COMMENT ON COLUMN "CellExpression".property IS 'Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).';COMMENT ON COLUMN "CellExpression".property_value IS 'Level at which the property was observed in the experiment (non-normalized).';
@@ -881,14 +881,14 @@ CREATE TABLE "SequencingRun" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
 );COMMENT ON TABLE "SequencingRun" IS 'None';COMMENT ON COLUMN "SequencingRun".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "SequencingRun".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "SequencingRun".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "SequencingRun".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "SequencingRun".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "SequencingRun".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "SequencingRun".sequencing_files_id IS 'Set of sequencing files produced by the sequencing run';
-CREATE TABLE "RepertoireGroupDetail" (
+CREATE TABLE "RepertoireFilter" (
 	id SERIAL NOT NULL, 
 	repertoire_id TEXT, 
 	repertoire_description TEXT, 
 	time_point_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(time_point_id) REFERENCES "TimePoint" (id)
-);COMMENT ON TABLE "RepertoireGroupDetail" IS 'None';COMMENT ON COLUMN "RepertoireGroupDetail".time_point_id IS 'Time point designation for this repertoire within the group';
+);COMMENT ON TABLE "RepertoireFilter" IS 'None';COMMENT ON COLUMN "RepertoireFilter".time_point_id IS 'Time point designation for this repertoire within the group';
 CREATE TABLE "ReceptorReactivity" (
 	id SERIAL NOT NULL, 
 	ligand_type "LigandTypeEnum", 
@@ -1279,7 +1279,7 @@ CREATE TABLE "RepertoireGroup_repertoires" (
 	repertoires_id INTEGER, 
 	PRIMARY KEY ("RepertoireGroup_id", repertoires_id), 
 	FOREIGN KEY("RepertoireGroup_id") REFERENCES "RepertoireGroup" (id), 
-	FOREIGN KEY(repertoires_id) REFERENCES "RepertoireGroupDetail" (id)
+	FOREIGN KEY(repertoires_id) REFERENCES "RepertoireFilter" (id)
 );COMMENT ON TABLE "RepertoireGroup_repertoires" IS 'None';COMMENT ON COLUMN "RepertoireGroup_repertoires"."RepertoireGroup_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "RepertoireGroup_repertoires".repertoires_id IS 'List of repertoires in this collection with an associated description and time point designation';
 CREATE TABLE "Receptor_reactivity_measurements" (
 	"Receptor_id" INTEGER, 
@@ -1415,6 +1415,14 @@ CREATE TABLE "SpecimenCollection" (
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
 );COMMENT ON TABLE "SpecimenCollection" IS 'None';COMMENT ON COLUMN "SpecimenCollection".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "SpecimenCollection".participant IS 'The participant of a life event';COMMENT ON COLUMN "SpecimenCollection".study_event IS 'The study event corresponding to a life event';COMMENT ON COLUMN "SpecimenCollection".life_event_type IS 'The specific type of a life event';COMMENT ON COLUMN "SpecimenCollection".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "SpecimenCollection".t0_event IS 'The T0 event used to specify the time of this life event';COMMENT ON COLUMN "SpecimenCollection".start IS 'The start time of this life event, relative to the T0 event';COMMENT ON COLUMN "SpecimenCollection".duration IS 'The duration of this life event';COMMENT ON COLUMN "SpecimenCollection".time_unit IS 'The time unit used to measure the start and duration of this life event';COMMENT ON COLUMN "SpecimenCollection".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "SpecimenCollection".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "SpecimenCollection".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "SpecimenProcessing" (
+	specimen TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
+);COMMENT ON TABLE "SpecimenProcessing" IS 'None';COMMENT ON COLUMN "SpecimenProcessing".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "SpecimenProcessing".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "SpecimenProcessing".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "SpecimenProcessing".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "CellIsolationProcessing" (
 	tissue_processing TEXT, 
 	cell_subset "CellSubsetOntology", 
@@ -1511,22 +1519,6 @@ CREATE TABLE "AntibodyAntigenBindingAssay" (
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );COMMENT ON TABLE "AntibodyAntigenBindingAssay" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "SpecimenProcessing" (
-	specimen TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"Assay_akc_id" TEXT, 
-	"AIRRSequencingAssay_akc_id" TEXT, 
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id)
-);COMMENT ON TABLE "SpecimenProcessing" IS 'None';COMMENT ON COLUMN "SpecimenProcessing".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "SpecimenProcessing".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "SpecimenProcessing".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "SpecimenProcessing".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "SpecimenProcessing"."Assay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SpecimenProcessing"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SpecimenProcessing"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SpecimenProcessing"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';
 CREATE TABLE "Investigation_assays" (
 	"Investigation_akc_id" TEXT, 
 	assays_akc_id TEXT, 
@@ -1541,6 +1533,13 @@ CREATE TABLE "LibraryPreparationProcessing_pcr_target" (
 	FOREIGN KEY("LibraryPreparationProcessing_akc_id") REFERENCES "LibraryPreparationProcessing" (akc_id), 
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
 );COMMENT ON TABLE "LibraryPreparationProcessing_pcr_target" IS 'None';COMMENT ON COLUMN "LibraryPreparationProcessing_pcr_target"."LibraryPreparationProcessing_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "LibraryPreparationProcessing_pcr_target".pcr_target_id IS 'If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.';
+CREATE TABLE "Assay_specimen_processing" (
+	"Assay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("Assay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);COMMENT ON TABLE "Assay_specimen_processing" IS 'None';COMMENT ON COLUMN "Assay_specimen_processing"."Assay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Assay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
 CREATE TABLE "AIRRSequencingAssay_tcell_receptors" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	tcell_receptors_akc_id TEXT, 
@@ -1555,6 +1554,13 @@ CREATE TABLE "AIRRSequencingAssay_tcell_chains" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
 );COMMENT ON TABLE "AIRRSequencingAssay_tcell_chains" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains".tcell_chains_akc_id IS 'The T cell receptor chains being measured';
+CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	tcell_receptors_akc_id TEXT, 
@@ -1562,3 +1568,17 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
 );COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors".tcell_receptors_akc_id IS 'The T cell receptors being measured';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_specimen_processing"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
+CREATE TABLE "AntibodyAntigenBindingAssay_specimen_processing" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenBindingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_specimen_processing"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
