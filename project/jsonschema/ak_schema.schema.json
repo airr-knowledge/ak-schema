@@ -1652,11 +1652,6 @@
             "title": "Antigen",
             "type": "object"
         },
-        "AntigenOntology": {
-            "description": "",
-            "title": "AntigenOntology",
-            "type": "string"
-        },
         "AntigenSourceSpeciesOntology": {
             "description": "",
             "title": "AntigenSourceSpeciesOntology",
@@ -2109,8 +2104,11 @@
                     ]
                 },
                 "property": {
-                    "$ref": "#/$defs/PropertyOntology",
-                    "description": "Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody)."
+                    "description": "Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "property_type": {
                     "description": "Keyword describing the property type and detection method used to measure the property value. The following keywords are recommended, but custom property types are also valid: \"mrna_expression_by_read_count\", \"protein_expression_by_fluorescence_intensity\", \"antigen_bait_binding_by_fluorescence_intensity\", \"protein_expression_by_dna_barcode_count\" and \"antigen_bait_binding_by_dna_barcode_count\".",
@@ -5258,11 +5256,6 @@
             "title": "PhysicalLinkageEnum",
             "type": "string"
         },
-        "PropertyOntology": {
-            "description": "",
-            "title": "PropertyOntology",
-            "type": "string"
-        },
         "RNATranscriptomeData": {
             "additionalProperties": false,
             "description": "",
@@ -6904,6 +6897,37 @@
             "title": "Repertoire",
             "type": "object"
         },
+        "RepertoireFilter": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "repertoire_description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "repertoire_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "time_point": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/TimePoint"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Time point designation for this repertoire within the group"
+                }
+            },
+            "title": "RepertoireFilter",
+            "type": "object"
+        },
         "RepertoireGroup": {
             "additionalProperties": false,
             "description": "",
@@ -6932,7 +6956,7 @@
                 "repertoires": {
                     "description": "List of repertoires in this collection with an associated description and time point designation",
                     "items": {
-                        "$ref": "#/$defs/RepertoireGroupDetail"
+                        "$ref": "#/$defs/RepertoireFilter"
                     },
                     "type": [
                         "array",
@@ -6941,37 +6965,6 @@
                 }
             },
             "title": "RepertoireGroup",
-            "type": "object"
-        },
-        "RepertoireGroupDetail": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "repertoire_description": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "repertoire_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "time_point": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/TimePoint"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Time point designation for this repertoire within the group"
-                }
-            },
-            "title": "RepertoireGroupDetail",
             "type": "object"
         },
         "Sample": {

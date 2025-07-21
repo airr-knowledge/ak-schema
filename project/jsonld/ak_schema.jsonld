@@ -1704,11 +1704,6 @@
       ]
     },
     {
-      "name": "PropertyOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PropertyOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema"
-    },
-    {
       "name": "ReceptorTypeEnum",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -1796,11 +1791,6 @@
           "text": "non-peptidic"
         }
       ]
-    },
-    {
-      "name": "AntigenOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntigenOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
       "name": "AntigenSourceSpeciesOntology",
@@ -7405,7 +7395,7 @@
       "domain_of": [
         "AIRRSequencingAssay",
         "Repertoire",
-        "RepertoireGroupDetail",
+        "RepertoireFilter",
         "Rearrangement",
         "Clone",
         "Cell",
@@ -7446,10 +7436,10 @@
       ],
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_description",
-      "owner": "RepertoireGroupDetail",
+      "owner": "RepertoireFilter",
       "domain_of": [
         "Repertoire",
-        "RepertoireGroupDetail"
+        "RepertoireFilter"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -7549,9 +7539,9 @@
       "description": "Time point designation for this repertoire within the group",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/time_point",
-      "owner": "RepertoireGroupDetail",
+      "owner": "RepertoireFilter",
       "domain_of": [
-        "RepertoireGroupDetail"
+        "RepertoireFilter"
       ],
       "range": "TimePoint",
       "inlined": true,
@@ -7634,7 +7624,7 @@
       "domain_of": [
         "RepertoireGroup"
       ],
-      "range": "RepertoireGroupDetail",
+      "range": "RepertoireFilter",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -10873,7 +10863,7 @@
       "domain_of": [
         "CellExpression"
       ],
-      "range": "PropertyOntology",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -13491,8 +13481,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "RepertoireGroupDetail",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireGroupDetail",
+      "name": "RepertoireFilter",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireFilter",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
@@ -13501,7 +13491,7 @@
         "time_point"
       ],
       "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireGroupDetail",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireFilter",
       "@type": "ClassDefinition"
     },
     {
@@ -13908,9 +13898,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-17T19:58:45",
-  "source_file_size": 204591,
-  "generation_date": "2025-07-17T19:58:47",
+  "source_file_date": "2025-07-21T20:16:06",
+  "source_file_size": 204352,
+  "generation_date": "2025-07-21T20:16:08",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

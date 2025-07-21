@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-17T19:58:50
+# Generation date: 2025-07-21T20:16:11
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -3645,13 +3645,13 @@ class Repertoire(AIRRStandards):
 
 
 @dataclass(repr=False)
-class RepertoireGroupDetail(AIRRStandards):
+class RepertoireFilter(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroupDetail"]
-    class_class_curie: ClassVar[str] = "ak_schema:RepertoireGroupDetail"
-    class_name: ClassVar[str] = "RepertoireGroupDetail"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireGroupDetail
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireFilter"]
+    class_class_curie: ClassVar[str] = "ak_schema:RepertoireFilter"
+    class_name: ClassVar[str] = "RepertoireFilter"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireFilter
 
     repertoire_id: Optional[str] = None
     repertoire_description: Optional[str] = None
@@ -3682,7 +3682,7 @@ class RepertoireGroup(AIRRStandards):
     repertoire_group_id: Optional[str] = None
     repertoire_group_name: Optional[str] = None
     repertoire_group_description: Optional[str] = None
-    repertoires: Optional[Union[Union[dict, RepertoireGroupDetail], List[Union[dict, RepertoireGroupDetail]]]] = empty_list()
+    repertoires: Optional[Union[Union[dict, RepertoireFilter], List[Union[dict, RepertoireFilter]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.repertoire_group_id is not None and not isinstance(self.repertoire_group_id, str):
@@ -3696,7 +3696,7 @@ class RepertoireGroup(AIRRStandards):
 
         if not isinstance(self.repertoires, list):
             self.repertoires = [self.repertoires] if self.repertoires is not None else []
-        self.repertoires = [v if isinstance(v, RepertoireGroupDetail) else RepertoireGroupDetail(**as_dict(v)) for v in self.repertoires]
+        self.repertoires = [v if isinstance(v, RepertoireFilter) else RepertoireFilter(**as_dict(v)) for v in self.repertoires]
 
         super().__post_init__(**kwargs)
 
@@ -4631,7 +4631,7 @@ class CellExpression(AIRRStandards):
     repertoire_id: Optional[str] = None
     data_processing_id: Optional[str] = None
     property_type: Optional[str] = None
-    property: Optional[Union[str, "PropertyOntology"]] = None
+    property: Optional[str] = None
     property_value: Optional[float] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4649,6 +4649,9 @@ class CellExpression(AIRRStandards):
 
         if self.property_type is not None and not isinstance(self.property_type, str):
             self.property_type = str(self.property_type)
+
+        if self.property is not None and not isinstance(self.property, str):
+            self.property = str(self.property)
 
         if self.property_value is not None and not isinstance(self.property_value, float):
             self.property_value = float(self.property_value)
@@ -5714,12 +5717,6 @@ class ExpressionStudyMethodEnum(EnumDefinitionImpl):
         setattr(cls, "single-cell_transcriptome",
             PermissibleValue(text="single-cell_transcriptome"))
 
-class PropertyOntology(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="PropertyOntology",
-    )
-
 class ReceptorTypeEnum(EnumDefinitionImpl):
 
     Ig = PermissibleValue(text="Ig")
@@ -5782,12 +5779,6 @@ class AntigenTypeEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "non-peptidic",
             PermissibleValue(text="non-peptidic"))
-
-class AntigenOntology(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="AntigenOntology",
-    )
 
 class AntigenSourceSpeciesOntology(EnumDefinitionImpl):
 
@@ -6759,7 +6750,7 @@ slots.repertoire_group_description = Slot(uri=AK_SCHEMA.repertoire_group_descrip
                    model_uri=AK_SCHEMA.repertoire_group_description, domain=None, range=Optional[str])
 
 slots.repertoires = Slot(uri=AK_SCHEMA.repertoires, name="repertoires", curie=AK_SCHEMA.curie('repertoires'),
-                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Optional[Union[Union[dict, RepertoireGroupDetail], List[Union[dict, RepertoireGroupDetail]]]])
+                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Optional[Union[Union[dict, RepertoireFilter], List[Union[dict, RepertoireFilter]]]])
 
 slots.segment = Slot(uri=AK_SCHEMA.segment, name="segment", curie=AK_SCHEMA.curie('segment'),
                    model_uri=AK_SCHEMA.segment, domain=None, range=Optional[str])
@@ -7242,7 +7233,7 @@ slots.property_type = Slot(uri=RDF.type, name="property_type", curie=RDF.curie('
                    model_uri=AK_SCHEMA.property_type, domain=None, range=Optional[str])
 
 slots.property = Slot(uri=AK_SCHEMA.property, name="property", curie=AK_SCHEMA.curie('property'),
-                   model_uri=AK_SCHEMA.property, domain=None, range=Optional[Union[str, "PropertyOntology"]])
+                   model_uri=AK_SCHEMA.property, domain=None, range=Optional[str])
 
 slots.property_value = Slot(uri=AK_SCHEMA.property_value, name="property_value", curie=AK_SCHEMA.curie('property_value'),
                    model_uri=AK_SCHEMA.property_value, domain=None, range=Optional[float])
