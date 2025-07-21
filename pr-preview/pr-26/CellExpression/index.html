@@ -215,13 +215,6 @@
 
       CellExpression : property
 
-
-
-
-    CellExpression --&gt; "0..1" PropertyOntology : property
-    click PropertyOntology href "../PropertyOntology"
-
-
       CellExpression : property_type
 
       CellExpression : property_value
@@ -280,7 +273,7 @@
 </tr>
 <tr>
 <td><a href="../property/">property</a></td>
-<td>0..1 <br/> <a href="../PropertyOntology/">PropertyOntology</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name of the property observed, typically a gene or antibody identifier (and l...</td>
 <td>direct</td>
 </tr>
@@ -374,7 +367,7 @@ attributes:
     domain_of:
     - AIRRSequencingAssay
     - Repertoire
-    - RepertoireGroupDetail
+    - RepertoireFilter
     - Rearrangement
     - Clone
     - Cell
@@ -433,7 +426,7 @@ attributes:
     owner: CellExpression
     domain_of:
     - CellExpression
-    range: PropertyOntology
+    range: string
   property_value:
     name: property_value
     annotations:

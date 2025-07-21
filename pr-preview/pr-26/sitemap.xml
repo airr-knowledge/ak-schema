@@ -96,11 +96,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/AntigenOntology/</loc>
-         <lastmod>2025-07-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/AntigenSourceSpeciesOntology/</loc>
          <lastmod>2025-07-21</lastmod>
          <changefreq>daily</changefreq>
@@ -616,11 +611,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/PropertyOntology/</loc>
-         <lastmod>2025-07-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/RNATranscriptomeData/</loc>
          <lastmod>2025-07-21</lastmod>
          <changefreq>daily</changefreq>
@@ -691,12 +681,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/RepertoireGroup/</loc>
+         <loc>https://airr-knowledge.github.io/ak-schema/RepertoireFilter/</loc>
          <lastmod>2025-07-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/RepertoireGroupDetail/</loc>
+         <loc>https://airr-knowledge.github.io/ak-schema/RepertoireGroup/</loc>
          <lastmod>2025-07-21</lastmod>
          <changefreq>daily</changefreq>
     </url>

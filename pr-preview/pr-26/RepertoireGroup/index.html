@@ -218,8 +218,8 @@
 
 
 
-    RepertoireGroup --&gt; "*" RepertoireGroupDetail : repertoires
-    click RepertoireGroupDetail href "../RepertoireGroupDetail"
+    RepertoireGroup --&gt; "*" RepertoireFilter : repertoires
+    click RepertoireFilter href "../RepertoireFilter"
 
 
 
@@ -262,7 +262,7 @@
 </tr>
 <tr>
 <td><a href="../repertoires/">repertoires</a></td>
-<td>* <br/> <a href="../RepertoireGroupDetail/">RepertoireGroupDetail</a></td>
+<td>* <br/> <a href="../RepertoireFilter/">RepertoireFilter</a></td>
 <td>List of repertoires in this collection with an associated description and tim...</td>
 <td>direct</td>
 </tr>
@@ -369,7 +369,7 @@ attributes:
     owner: RepertoireGroup
     domain_of:
     - RepertoireGroup
-    range: RepertoireGroupDetail
+    range: RepertoireFilter
     multivalued: true
 
 </code></pre>
