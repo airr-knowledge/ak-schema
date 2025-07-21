@@ -4,3 +4,6 @@
 [submodule "src/airr_schema/airr-standards-v2.0"]
 	path = src/airr_schema/airr-standards-v2.0
 	url = https://github.com/airr-community/airr-standards.git
+[submodule "src/airr_schema/airr-standards-v1.6"]
+	path = src/airr_schema/airr-standards-v1.6
+	url = https://github.com/airr-community/airr-standards.git
