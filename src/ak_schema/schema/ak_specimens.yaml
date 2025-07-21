@@ -89,7 +89,6 @@ slots:
     range: SpecimenProcessing
     slot_uri: BFO:0000051 # has part
     multivalued: true
-    inlined_as_list: true
   assay_type:
     description: The specific type of an assay
     slot_uri: rdf:type

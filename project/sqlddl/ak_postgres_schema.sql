@@ -1,4 +1,4 @@
-CREATE TYPE "InvestigationTypeOntology" AS ENUM ();CREATE TYPE "SpeciesOntology" AS ENUM ();CREATE TYPE "BiologicalSexOntology" AS ENUM ();CREATE TYPE "PhenotypicSexOntology" AS ENUM ('female', 'male', 'hermaphrodite', 'intersex', 'pooled', 'not collected');CREATE TYPE "AgeUnitOntology" AS ENUM ();CREATE TYPE "GeolocationOntology" AS ENUM ('US: New York', 'US: California', 'US: Connecticut', 'US: Georgia', 'US: Texas', 'Canada', 'Nicaragua', 'US: Maryland', 'US: Minnesota', 'United States of America', 'Uganda', 'China', 'England', 'India', 'US: Massachusetts', 'US: Colorado', 'Gambia', 'Papua New Guinea', 'Metropolitan France', 'Sri Lanka', 'Switzerland', 'US: Washington', 'geographic location', 'Colombia', 'US: Florida', 'US: Kansas');CREATE TYPE "StrainEnum" AS ENUM ('1D2beta', 'BALB/cByJ', 'Balb/c', 'C57BL/6', 'C57BL/6J', 'JHD-/- MRL/MpJ-Faslp', 'LDLR+/+', 'LDLR-/-', 'pet shop mouse');CREATE TYPE "LifeEventProcessOntology" AS ENUM ();CREATE TYPE "ExposureMaterialOntology" AS ENUM ();CREATE TYPE "DiseaseOntology" AS ENUM ();CREATE TYPE "TissueOntology" AS ENUM ();CREATE TYPE "CellSubsetOntology" AS ENUM ();CREATE TYPE "CellSpeciesOntology" AS ENUM ();CREATE TYPE "TemplateClassEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "TemplateAmountUnitOntology" AS ENUM ();CREATE TYPE "LibraryGenerationMethodEnum" AS ENUM ('PCR', 'RT(RHP)+PCR', 'RT(oligo-dT)+PCR', 'RT(oligo-dT)+TS+PCR', 'RT(oligo-dT)+TS(UMI)+PCR', 'RT(specific)+PCR', 'RT(specific)+TS+PCR', 'RT(specific)+TS(UMI)+PCR', 'RT(specific+UMI)+PCR', 'RT(specific+UMI)+TS+PCR', 'RT(specific)+TS', 'other');CREATE TYPE "CompleteSequencesEnum" AS ENUM ('partial', 'complete', 'complete+untemplated', 'mixed');CREATE TYPE "PhysicalLinkageEnum" AS ENUM ('none', 'hetero_head-head', 'hetero_tail-head', 'hetero_prelinked');CREATE TYPE "ChainTypeEnum" AS ENUM ('IGH', 'IGK', 'IGL', 'TRA', 'TRB', 'TRD', 'TRG');CREATE TYPE "ChainSimilarityTypeEnum" AS ENUM ('exact_match', 'exact_aa_match', 'cdr3_exact_match', 'cdr3_exact_aa_match', 'cdr3_exact_aa_and_vj_match');CREATE TYPE "TimePointUnitOntology" AS ENUM ();CREATE TYPE "DerivationEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "ObservationTypeEnum" AS ENUM ('direct_sequencing', 'inference_from_repertoire');CREATE TYPE "StrandEnum" AS ENUM ('+', '-');CREATE TYPE "LocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRG', 'TRD');CREATE TYPE "SequenceTypeEnum" AS ENUM ('V', 'D', 'J', 'C');CREATE TYPE "InferenceTypeEnum" AS ENUM ('genomic_and_rearranged', 'genomic_only', 'rearranged_only');CREATE TYPE "SpeciesSubgroupTypeEnum" AS ENUM ('breed', 'strain', 'inbred', 'outbred', 'locational');CREATE TYPE "StatusEnum" AS ENUM ('active', 'draft', 'retired', 'withdrawn');CREATE TYPE "JCodonFrameEnum" AS ENUM ('1', '2', '3');CREATE TYPE "InferenceProcessEnum" AS ENUM ('genomic_sequencing', 'repertoire_sequencing');CREATE TYPE "MhcClassEnum" AS ENUM ('MHC-I', 'MHC-II', 'MHC-nonclassical');CREATE TYPE "GeneOntology" AS ENUM ();CREATE TYPE "StudyTypeOntology" AS ENUM ();CREATE TYPE "SexEnum" AS ENUM ('male', 'female', 'pooled', 'hermaphrodite', 'intersex');CREATE TYPE "DiseaseDiagnosisOntology" AS ENUM ();CREATE TYPE "CollectionTimePointRelativeUnitOntology" AS ENUM ();CREATE TYPE "PcrTargetLocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRD', 'TRG');CREATE TYPE "FileTypeEnum" AS ENUM ('fasta', 'fastq');CREATE TYPE "ReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "PairedReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "ExpressionStudyMethodEnum" AS ENUM ('flow_cytometry', 'single-cell_transcriptome');CREATE TYPE "PropertyOntology" AS ENUM ();CREATE TYPE "ReceptorTypeEnum" AS ENUM ('Ig', 'TCR');CREATE TYPE "ReceptorVariableDomain1LocusEnum" AS ENUM ('IGH', 'TRB', 'TRD');CREATE TYPE "ReceptorVariableDomain2LocusEnum" AS ENUM ('IGI', 'IGK', 'IGL', 'TRA', 'TRG');CREATE TYPE "LigandTypeEnum" AS ENUM ('MHC:peptide', 'MHC:non-peptide', 'protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenTypeEnum" AS ENUM ('protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenOntology" AS ENUM ();CREATE TYPE "AntigenSourceSpeciesOntology" AS ENUM ();CREATE TYPE "MhcGene1Ontology" AS ENUM ();CREATE TYPE "MhcGene2Ontology" AS ENUM ();CREATE TYPE "ReactivityMethodEnum" AS ENUM ('SPR', 'ITC', 'ELISA', 'cytometry', 'biological_activity');CREATE TYPE "ReactivityReadoutEnum" AS ENUM ('binding_strength', 'cytokine_release', 'dissociation_constant_kd', 'on_rate', 'off_rate', 'pathogen_inhibition');CREATE TYPE "CurationalTagsEnum" AS ENUM ('likely_truncated', 'likely_full_length');CREATE TYPE "KeywordsStudyEnum" AS ENUM ('contains_ig', 'contains_tr', 'contains_paired_chain', 'contains_schema_rearrangement', 'contains_schema_clone', 'contains_schema_cell', 'contains_schema_receptor');
+CREATE TYPE "InvestigationTypeOntology" AS ENUM ();CREATE TYPE "SpeciesOntology" AS ENUM ();CREATE TYPE "BiologicalSexOntology" AS ENUM ();CREATE TYPE "AgeUnitOntology" AS ENUM ();CREATE TYPE "GeolocationOntology" AS ENUM ('US: New York', 'US: California', 'US: Connecticut', 'US: Georgia', 'US: Texas', 'Canada', 'Nicaragua', 'US: Maryland', 'US: Minnesota', 'United States of America', 'Uganda', 'China', 'England', 'India', 'US: Massachusetts', 'US: Colorado', 'Gambia', 'Papua New Guinea', 'Metropolitan France', 'Sri Lanka', 'Switzerland', 'US: Washington', 'geographic location', 'Colombia', 'US: Florida', 'US: Kansas');CREATE TYPE "StrainEnum" AS ENUM ('1D2beta', 'BALB/cByJ', 'Balb/c', 'C57BL/6', 'C57BL/6J', 'JHD-/- MRL/MpJ-Faslp', 'LDLR+/+', 'LDLR-/-', 'pet shop mouse');CREATE TYPE "LifeEventProcessOntology" AS ENUM ();CREATE TYPE "ExposureMaterialOntology" AS ENUM ();CREATE TYPE "DiseaseOntology" AS ENUM ();CREATE TYPE "MeasurementUnitOntology" AS ENUM ();CREATE TYPE "TissueOntology" AS ENUM ();CREATE TYPE "CellSubsetOntology" AS ENUM ();CREATE TYPE "CellSpeciesOntology" AS ENUM ();CREATE TYPE "TemplateClassEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "TemplateAmountUnitOntology" AS ENUM ();CREATE TYPE "LibraryGenerationMethodEnum" AS ENUM ('PCR', 'RT(RHP)+PCR', 'RT(oligo-dT)+PCR', 'RT(oligo-dT)+TS+PCR', 'RT(oligo-dT)+TS(UMI)+PCR', 'RT(specific)+PCR', 'RT(specific)+TS+PCR', 'RT(specific)+TS(UMI)+PCR', 'RT(specific+UMI)+PCR', 'RT(specific+UMI)+TS+PCR', 'RT(specific)+TS', 'other');CREATE TYPE "CompleteSequencesEnum" AS ENUM ('partial', 'complete', 'complete+untemplated', 'mixed');CREATE TYPE "PhysicalLinkageEnum" AS ENUM ('none', 'hetero_head-head', 'hetero_tail-head', 'hetero_prelinked');CREATE TYPE "AssayTypeOntology" AS ENUM ();CREATE TYPE "CategoricalSpecificityEnum" AS ENUM ('Positive', 'Negative', 'Positive-Low', 'Positive-High', 'Positive-Intermediate');CREATE TYPE "FileTypeEnum" AS ENUM ('fasta', 'fastq');CREATE TYPE "ReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "PairedReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "LocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRG', 'TRD');CREATE TYPE "ChainSimilarityTypeEnum" AS ENUM ('exact_match', 'exact_aa_match', 'cdr3_exact_match', 'cdr3_exact_aa_match', 'cdr3_exact_aa_and_vj_match');CREATE TYPE "TimePointUnitOntology" AS ENUM ();CREATE TYPE "DerivationEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "ObservationTypeEnum" AS ENUM ('direct_sequencing', 'inference_from_repertoire');CREATE TYPE "StrandEnum" AS ENUM ('+', '-');CREATE TYPE "SequenceTypeEnum" AS ENUM ('V', 'D', 'J', 'C');CREATE TYPE "InferenceTypeEnum" AS ENUM ('genomic_and_rearranged', 'genomic_only', 'rearranged_only');CREATE TYPE "SpeciesSubgroupTypeEnum" AS ENUM ('breed', 'strain', 'inbred', 'outbred', 'locational');CREATE TYPE "StatusEnum" AS ENUM ('active', 'draft', 'retired', 'withdrawn');CREATE TYPE "JCodonFrameEnum" AS ENUM ('1', '2', '3');CREATE TYPE "InferenceProcessEnum" AS ENUM ('genomic_sequencing', 'repertoire_sequencing');CREATE TYPE "MhcClassEnum" AS ENUM ('MHC-I', 'MHC-II', 'MHC-nonclassical');CREATE TYPE "GeneOntology" AS ENUM ();CREATE TYPE "StudyTypeOntology" AS ENUM ();CREATE TYPE "SexEnum" AS ENUM ('male', 'female', 'pooled', 'hermaphrodite', 'intersex');CREATE TYPE "DiseaseDiagnosisOntology" AS ENUM ();CREATE TYPE "CollectionTimePointRelativeUnitOntology" AS ENUM ();CREATE TYPE "PcrTargetLocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRD', 'TRG');CREATE TYPE "ExpressionStudyMethodEnum" AS ENUM ('flow_cytometry', 'single-cell_transcriptome');CREATE TYPE "PropertyOntology" AS ENUM ();CREATE TYPE "ReceptorTypeEnum" AS ENUM ('Ig', 'TCR');CREATE TYPE "ReceptorVariableDomain1LocusEnum" AS ENUM ('IGH', 'TRB', 'TRD');CREATE TYPE "ReceptorVariableDomain2LocusEnum" AS ENUM ('IGI', 'IGK', 'IGL', 'TRA', 'TRG');CREATE TYPE "LigandTypeEnum" AS ENUM ('MHC:peptide', 'MHC:non-peptide', 'protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenTypeEnum" AS ENUM ('protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenSourceSpeciesOntology" AS ENUM ();CREATE TYPE "MhcGene1Ontology" AS ENUM ();CREATE TYPE "MhcGene2Ontology" AS ENUM ();CREATE TYPE "ReactivityMethodEnum" AS ENUM ('SPR', 'ITC', 'ELISA', 'cytometry', 'biological_activity');CREATE TYPE "ReactivityReadoutEnum" AS ENUM ('binding_strength', 'cytokine_release', 'dissociation_constant_kd', 'on_rate', 'off_rate', 'pathogen_inhibition');CREATE TYPE "DataItemTypeEnum" AS ENUM ('sequence_reads', 'sequence_quality', 'sequence_forward_paired_reads', 'sequence_reverse_paired_reads', 'sequence', 'primer_sequence', 'forward_primer_sequence', 'reverse_primer_sequence', 'barcode_sequence', 'vdj_sequence_annotation', 'quality_statistics', 'annotation_statistics', 'assigned_clones', 'physiochemical_annotation', 'gene_usage', 'gene_combo_usage', 'length_distribution', 'diversity_profile', 'mutational_profile', 'similarity_comparison', 'study_arm_comparison', 'archive', 'compressed');CREATE TYPE "CurationalTagsEnum" AS ENUM ('likely_truncated', 'likely_full_length');CREATE TYPE "KeywordsStudyEnum" AS ENUM ('contains_ig', 'contains_tr', 'contains_paired_chain', 'contains_schema_rearrangement', 'contains_schema_clone', 'contains_schema_cell', 'contains_schema_receptor');
 CREATE TABLE "AKObject" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
@@ -25,12 +25,12 @@ CREATE TABLE "NamedThing" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "NamedThing" IS 'Name and description for AKC things.';COMMENT ON COLUMN "NamedThing".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "NamedThing".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "NamedThing".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "PlannedProcess" (
+CREATE TABLE "Process" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "PlannedProcess" IS 'A process to realize a plan.';COMMENT ON COLUMN "PlannedProcess".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "PlannedProcess".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "PlannedProcess".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Process" IS 'A generic process.';COMMENT ON COLUMN "Process".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Process".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Process".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "PlanSpecification" (
 	name TEXT, 
 	description TEXT, 
@@ -64,12 +64,71 @@ CREATE TABLE "StudyEvent" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "StudyEvent" IS 'An event that is part of the study design of an investigation.';COMMENT ON COLUMN "StudyEvent".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "StudyEvent".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "StudyEvent".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "Dataset" (
+CREATE TABLE "DataItem" (
+	id SERIAL NOT NULL, 
+	PRIMARY KEY (id)
+);COMMENT ON TABLE "DataItem" IS 'None';
+CREATE TABLE "MeasurementDatum" (
+	id SERIAL NOT NULL, 
+	measurement_value INTEGER, 
+	measurement_unit "MeasurementUnitOntology", 
+	PRIMARY KEY (id)
+);COMMENT ON TABLE "MeasurementDatum" IS 'None';COMMENT ON COLUMN "MeasurementDatum".measurement_value IS 'The measurement result value';COMMENT ON COLUMN "MeasurementDatum".measurement_unit IS 'The measurement result value unit';
+CREATE TABLE "MeasurementCategory" (
+	id SERIAL NOT NULL, 
+	measurement_category TEXT, 
+	PRIMARY KEY (id)
+);COMMENT ON TABLE "MeasurementCategory" IS 'None';COMMENT ON COLUMN "MeasurementCategory".measurement_category IS 'The measurement result category';
+CREATE TABLE "TCellReceptorEpitopeSpecificityMeasurement" (
+	id SERIAL NOT NULL, 
+	measurement_category "CategoricalSpecificityEnum", 
+	PRIMARY KEY (id)
+);COMMENT ON TABLE "TCellReceptorEpitopeSpecificityMeasurement" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeSpecificityMeasurement".measurement_category IS 'The measurement result category';
+CREATE TABLE "DataSet" (
+	id SERIAL NOT NULL, 
+	PRIMARY KEY (id)
+);COMMENT ON TABLE "DataSet" IS 'None';
+CREATE TABLE "AKDataItem" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "AKDataItem" IS 'data item with an akc_id';COMMENT ON COLUMN "AKDataItem".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AKDataSet" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "AKDataSet" IS 'None';COMMENT ON COLUMN "AKDataSet".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "SequenceData" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "SequenceData" IS 'sequence data items are given an akc_id';COMMENT ON COLUMN "SequenceData".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AIRRSequencingData" (
+	sequencing_data_id TEXT, 
+	file_type "FileTypeEnum", 
+	filename TEXT, 
+	read_direction "ReadDirectionEnum", 
+	read_length INTEGER, 
+	paired_filename TEXT, 
+	paired_read_direction "PairedReadDirectionEnum", 
+	paired_read_length INTEGER, 
+	index_filename TEXT, 
+	index_length INTEGER, 
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "AIRRSequencingData" IS 'None';COMMENT ON COLUMN "AIRRSequencingData".sequencing_data_id IS 'Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.';COMMENT ON COLUMN "AIRRSequencingData".file_type IS 'File format for the raw reads or sequences';COMMENT ON COLUMN "AIRRSequencingData".filename IS 'File name for the raw reads or sequences. The first file in paired-read sequencing.';COMMENT ON COLUMN "AIRRSequencingData".read_direction IS 'Read direction for the raw reads or sequences. The first file in paired-read sequencing.';COMMENT ON COLUMN "AIRRSequencingData".read_length IS 'Read length in bases for the first file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_filename IS 'File name for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_read_direction IS 'Read direction for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_read_length IS 'Read length in bases for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".index_filename IS 'File name for the index file';COMMENT ON COLUMN "AIRRSequencingData".index_length IS 'Read length in bases for the index file';COMMENT ON COLUMN "AIRRSequencingData".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "RNATranscriptomeData" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "RNATranscriptomeData" IS 'None';COMMENT ON COLUMN "RNATranscriptomeData".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "DataTransformation" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "Dataset" IS 'None';COMMENT ON COLUMN "Dataset".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Dataset".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Dataset".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "DataTransformation" IS 'None';COMMENT ON COLUMN "DataTransformation".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "DataTransformation".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "DataTransformation".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Conclusion" (
 	result TEXT, 
 	data_location_type TEXT, 
@@ -88,13 +147,14 @@ CREATE TABLE "ImmuneSystem" (
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "ImmuneSystem" IS 'None';COMMENT ON COLUMN "ImmuneSystem".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "ImmuneSystem".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "ImmuneSystem".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Chain" (
+	species "SpeciesOntology", 
 	aa_hash TEXT, 
 	junction_aa_vj_allele_hash TEXT, 
 	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
 	sequence_aa TEXT, 
-	chain_type "ChainTypeEnum", 
+	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
@@ -111,12 +171,24 @@ CREATE TABLE "Chain" (
 	cdr3_end INTEGER, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "Chain" IS 'None';COMMENT ON COLUMN "Chain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "Chain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "Chain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "Chain".chain_type IS 'Gene locus (chain type).';COMMENT ON COLUMN "Chain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "Chain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "Chain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "Chain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "Chain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "Chain".cdr3_end IS 'CDR3 end position in the query sequence (1-based closed interval).';COMMENT ON COLUMN "Chain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Chain" IS 'None';COMMENT ON COLUMN "Chain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Chain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "Chain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "Chain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "Chain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "Chain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "Chain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "Chain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "Chain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "Chain".cdr3_end IS 'CDR3 end position in the query sequence (1-based closed interval).';COMMENT ON COLUMN "Chain".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "ImmuneReceptor" (
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "ImmuneReceptor" IS 'None';COMMENT ON COLUMN "ImmuneReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "TCellReceptor" (
 	type TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "TCellReceptor" IS 'None';COMMENT ON COLUMN "TCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "Antigen" (
+	source_protein TEXT, 
+	source_organism TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "Antigen" IS 'None';COMMENT ON COLUMN "Antigen".source_protein IS 'The protein that this epitope comes from';COMMENT ON COLUMN "Antigen".source_organism IS 'The organism that the source protein comes from';COMMENT ON COLUMN "Antigen".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Antigen".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Antigen".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Epitope" (
 	type TEXT, 
 	name TEXT, 
@@ -714,25 +786,6 @@ CREATE TABLE "Receptor" (
 	receptor_variable_domain_2_locus "ReceptorVariableDomain2LocusEnum", 
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "Receptor" IS 'None';COMMENT ON COLUMN "Receptor".receptor_id IS 'ID of the current Receptor object, unique within the local repository.';COMMENT ON COLUMN "Receptor".receptor_hash IS 'The SHA256 hash of the receptor amino acid sequence, calculated on the concatenated ``receptor_variable_domain_*_aa`` sequences and represented as base16-encoded string.';COMMENT ON COLUMN "Receptor".receptor_type IS 'The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).';COMMENT ON COLUMN "Receptor".receptor_variable_domain_1_aa IS 'Complete amino acid sequence of the mature variable domain of the Ig heavy, TCR beta or TCR delta chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.';COMMENT ON COLUMN "Receptor".receptor_variable_domain_1_locus IS 'Locus from which the variable domain in receptor_variable_domain_1_aa originates';COMMENT ON COLUMN "Receptor".receptor_variable_domain_2_aa IS 'Complete amino acid sequence of the mature variable domain of the Ig light, TCR alpha or TCR gamma chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.';COMMENT ON COLUMN "Receptor".receptor_variable_domain_2_locus IS 'Locus from which the variable domain in receptor_variable_domain_2_aa originates';
-CREATE TABLE "ReceptorReactivity" (
-	id SERIAL NOT NULL, 
-	ligand_type "LigandTypeEnum", 
-	antigen_type "AntigenTypeEnum", 
-	antigen "AntigenOntology", 
-	antigen_source_species "AntigenSourceSpeciesOntology", 
-	peptide_start INTEGER, 
-	peptide_end INTEGER, 
-	mhc_class "MhcClassEnum", 
-	mhc_gene_1 "MhcGene1Ontology", 
-	mhc_allele_1 TEXT, 
-	mhc_gene_2 "MhcGene2Ontology", 
-	mhc_allele_2 TEXT, 
-	reactivity_method "ReactivityMethodEnum", 
-	reactivity_readout "ReactivityReadoutEnum", 
-	reactivity_value FLOAT, 
-	reactivity_unit TEXT, 
-	PRIMARY KEY (id)
-);COMMENT ON TABLE "ReceptorReactivity" IS 'None';COMMENT ON COLUMN "ReceptorReactivity".ligand_type IS 'Classification of ligand binding to receptor';COMMENT ON COLUMN "ReceptorReactivity".antigen_type IS 'The type of antigen before processing by the immune system.';COMMENT ON COLUMN "ReceptorReactivity".antigen IS 'The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.';COMMENT ON COLUMN "ReceptorReactivity".antigen_source_species IS 'The species from which the antigen was isolated';COMMENT ON COLUMN "ReceptorReactivity".peptide_start IS 'Start position of the peptide within the reference protein sequence';COMMENT ON COLUMN "ReceptorReactivity".peptide_end IS 'End position of the peptide within the reference protein sequence';COMMENT ON COLUMN "ReceptorReactivity".mhc_gene_1 IS 'The MHC gene to which the mhc_allele_1 belongs';COMMENT ON COLUMN "ReceptorReactivity".mhc_allele_1 IS 'Allele designation of the MHC alpha chain';COMMENT ON COLUMN "ReceptorReactivity".mhc_gene_2 IS 'The MHC gene to which the mhc_allele_2 belongs';COMMENT ON COLUMN "ReceptorReactivity".mhc_allele_2 IS 'Allele designation of the MHC class II beta chain or the invariant beta2-microglobin chain';COMMENT ON COLUMN "ReceptorReactivity".reactivity_method IS 'The methodology used to assess expression (assay implemented in experiment)';COMMENT ON COLUMN "ReceptorReactivity".reactivity_readout IS 'Reactivity measurement read-out';COMMENT ON COLUMN "ReceptorReactivity".reactivity_value IS 'The absolute (processed) value of the measurement';COMMENT ON COLUMN "ReceptorReactivity".reactivity_unit IS 'The unit of the measurement';
 CREATE TABLE "StudyArm" (
 	investigation TEXT, 
 	name TEXT, 
@@ -741,6 +794,16 @@ CREATE TABLE "StudyArm" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );COMMENT ON TABLE "StudyArm" IS 'A population of participants of an investigation.';COMMENT ON COLUMN "StudyArm".investigation IS 'An investigation in which the study arm participates';COMMENT ON COLUMN "StudyArm".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "StudyArm".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "StudyArm".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "InputOutputDataMap" (
+	id SERIAL NOT NULL, 
+	data_transformation TEXT, 
+	has_specified_input TEXT, 
+	has_specified_output TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(data_transformation) REFERENCES "DataTransformation" (akc_id), 
+	FOREIGN KEY(has_specified_input) REFERENCES "AKDataItem" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+);COMMENT ON TABLE "InputOutputDataMap" IS 'None';COMMENT ON COLUMN "InputOutputDataMap".data_transformation IS 'a process that transforms input data into output data';COMMENT ON COLUMN "InputOutputDataMap".has_specified_input IS 'input data item';COMMENT ON COLUMN "InputOutputDataMap".has_specified_output IS 'output data item';
 CREATE TABLE "AlphaBetaTCR" (
 	tra_chain TEXT, 
 	trb_chain TEXT, 
@@ -769,6 +832,18 @@ CREATE TABLE "BCellReceptor" (
 	FOREIGN KEY(igk_chain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(igl_chain) REFERENCES "Chain" (akc_id)
 );COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "TCRpMHCComplex" (
+	tcell_receptor TEXT, 
+	epitope TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	mhc_id INTEGER, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcell_receptor) REFERENCES "TCellReceptor" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc_id) REFERENCES "MHCAllele" (id)
+);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".tcell_receptor IS 'T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".epitope IS 'The epitope being measured';COMMENT ON COLUMN "TCRpMHCComplex".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "TCRpMHCComplex".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "TCRpMHCComplex".mhc_id IS 'Major histocompatibility complex';
 CREATE TABLE "SimilarityCalculation" (
 	chain_domain TEXT, 
 	chain_codomain TEXT, 
@@ -814,6 +889,26 @@ CREATE TABLE "RepertoireGroupDetail" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(time_point_id) REFERENCES "TimePoint" (id)
 );COMMENT ON TABLE "RepertoireGroupDetail" IS 'None';COMMENT ON COLUMN "RepertoireGroupDetail".time_point_id IS 'Time point designation for this repertoire within the group';
+CREATE TABLE "ReceptorReactivity" (
+	id SERIAL NOT NULL, 
+	ligand_type "LigandTypeEnum", 
+	antigen_type "AntigenTypeEnum", 
+	antigen TEXT, 
+	antigen_source_species "AntigenSourceSpeciesOntology", 
+	peptide_start INTEGER, 
+	peptide_end INTEGER, 
+	mhc_class "MhcClassEnum", 
+	mhc_gene_1 "MhcGene1Ontology", 
+	mhc_allele_1 TEXT, 
+	mhc_gene_2 "MhcGene2Ontology", 
+	mhc_allele_2 TEXT, 
+	reactivity_method "ReactivityMethodEnum", 
+	reactivity_readout "ReactivityReadoutEnum", 
+	reactivity_value FLOAT, 
+	reactivity_unit TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
+);COMMENT ON TABLE "ReceptorReactivity" IS 'None';COMMENT ON COLUMN "ReceptorReactivity".ligand_type IS 'Classification of ligand binding to receptor';COMMENT ON COLUMN "ReceptorReactivity".antigen_type IS 'The type of antigen before processing by the immune system.';COMMENT ON COLUMN "ReceptorReactivity".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "ReceptorReactivity".antigen_source_species IS 'The species from which the antigen was isolated';COMMENT ON COLUMN "ReceptorReactivity".peptide_start IS 'Start position of the peptide within the reference protein sequence';COMMENT ON COLUMN "ReceptorReactivity".peptide_end IS 'End position of the peptide within the reference protein sequence';COMMENT ON COLUMN "ReceptorReactivity".mhc_gene_1 IS 'The MHC gene to which the mhc_allele_1 belongs';COMMENT ON COLUMN "ReceptorReactivity".mhc_allele_1 IS 'Allele designation of the MHC alpha chain';COMMENT ON COLUMN "ReceptorReactivity".mhc_gene_2 IS 'The MHC gene to which the mhc_allele_2 belongs';COMMENT ON COLUMN "ReceptorReactivity".mhc_allele_2 IS 'Allele designation of the MHC class II beta chain or the invariant beta2-microglobin chain';COMMENT ON COLUMN "ReceptorReactivity".reactivity_method IS 'The methodology used to assess expression (assay implemented in experiment)';COMMENT ON COLUMN "ReceptorReactivity".reactivity_readout IS 'Reactivity measurement read-out';COMMENT ON COLUMN "ReceptorReactivity".reactivity_value IS 'The absolute (processed) value of the measurement';COMMENT ON COLUMN "ReceptorReactivity".reactivity_unit IS 'The unit of the measurement';
 CREATE TABLE "SampleProcessing" (
 	id SERIAL NOT NULL, 
 	sample_processing_id TEXT, 
@@ -896,6 +991,56 @@ CREATE TABLE "Reference_authors" (
 	PRIMARY KEY ("Reference_source_uri", authors), 
 	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
 );COMMENT ON TABLE "Reference_authors" IS 'None';COMMENT ON COLUMN "Reference_authors"."Reference_source_uri" IS 'Autocreated FK slot';COMMENT ON COLUMN "Reference_authors".authors IS 'The authors of a reference';
+CREATE TABLE "DataSet_data_items" (
+	"DataSet_id" INTEGER, 
+	data_items_akc_id TEXT, 
+	PRIMARY KEY ("DataSet_id", data_items_akc_id), 
+	FOREIGN KEY("DataSet_id") REFERENCES "DataSet" (id), 
+	FOREIGN KEY(data_items_akc_id) REFERENCES "AKObject" (akc_id)
+);COMMENT ON TABLE "DataSet_data_items" IS 'None';COMMENT ON COLUMN "DataSet_data_items"."DataSet_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "DataSet_data_items".data_items_akc_id IS 'set of data items';
+CREATE TABLE "AKDataItem_data_item_types" (
+	"AKDataItem_akc_id" TEXT, 
+	data_item_types "DataItemTypeEnum", 
+	PRIMARY KEY ("AKDataItem_akc_id", data_item_types), 
+	FOREIGN KEY("AKDataItem_akc_id") REFERENCES "AKDataItem" (akc_id)
+);COMMENT ON TABLE "AKDataItem_data_item_types" IS 'None';COMMENT ON COLUMN "AKDataItem_data_item_types"."AKDataItem_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AKDataItem_data_item_types".data_item_types IS 'semantic types of the data';
+CREATE TABLE "AKDataSet_data_items" (
+	"AKDataSet_akc_id" TEXT, 
+	data_items_akc_id TEXT, 
+	PRIMARY KEY ("AKDataSet_akc_id", data_items_akc_id), 
+	FOREIGN KEY("AKDataSet_akc_id") REFERENCES "AKDataSet" (akc_id), 
+	FOREIGN KEY(data_items_akc_id) REFERENCES "AKObject" (akc_id)
+);COMMENT ON TABLE "AKDataSet_data_items" IS 'None';COMMENT ON COLUMN "AKDataSet_data_items"."AKDataSet_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AKDataSet_data_items".data_items_akc_id IS 'set of data items';
+CREATE TABLE "AKDataSet_data_item_types" (
+	"AKDataSet_akc_id" TEXT, 
+	data_item_types "DataItemTypeEnum", 
+	PRIMARY KEY ("AKDataSet_akc_id", data_item_types), 
+	FOREIGN KEY("AKDataSet_akc_id") REFERENCES "AKDataSet" (akc_id)
+);COMMENT ON TABLE "AKDataSet_data_item_types" IS 'None';COMMENT ON COLUMN "AKDataSet_data_item_types"."AKDataSet_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AKDataSet_data_item_types".data_item_types IS 'semantic types of the data';
+CREATE TABLE "SequenceData_data_item_types" (
+	"SequenceData_akc_id" TEXT, 
+	data_item_types "DataItemTypeEnum", 
+	PRIMARY KEY ("SequenceData_akc_id", data_item_types), 
+	FOREIGN KEY("SequenceData_akc_id") REFERENCES "SequenceData" (akc_id)
+);COMMENT ON TABLE "SequenceData_data_item_types" IS 'None';COMMENT ON COLUMN "SequenceData_data_item_types"."SequenceData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SequenceData_data_item_types".data_item_types IS 'semantic types of the data';
+CREATE TABLE "AIRRSequencingData_data_item_types" (
+	"AIRRSequencingData_akc_id" TEXT, 
+	data_item_types "DataItemTypeEnum", 
+	PRIMARY KEY ("AIRRSequencingData_akc_id", data_item_types), 
+	FOREIGN KEY("AIRRSequencingData_akc_id") REFERENCES "AIRRSequencingData" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingData_data_item_types" IS 'None';COMMENT ON COLUMN "AIRRSequencingData_data_item_types"."AIRRSequencingData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingData_data_item_types".data_item_types IS 'semantic types of the data';
+CREATE TABLE "RNATranscriptomeData_data_item_types" (
+	"RNATranscriptomeData_akc_id" TEXT, 
+	data_item_types "DataItemTypeEnum", 
+	PRIMARY KEY ("RNATranscriptomeData_akc_id", data_item_types), 
+	FOREIGN KEY("RNATranscriptomeData_akc_id") REFERENCES "RNATranscriptomeData" (akc_id)
+);COMMENT ON TABLE "RNATranscriptomeData_data_item_types" IS 'None';COMMENT ON COLUMN "RNATranscriptomeData_data_item_types"."RNATranscriptomeData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "RNATranscriptomeData_data_item_types".data_item_types IS 'semantic types of the data';
+CREATE TABLE "DataTransformation_data_transformation_types" (
+	"DataTransformation_akc_id" TEXT, 
+	data_transformation_types "DataItemTypeEnum", 
+	PRIMARY KEY ("DataTransformation_akc_id", data_transformation_types), 
+	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id)
+);COMMENT ON TABLE "DataTransformation_data_transformation_types" IS 'None';COMMENT ON COLUMN "DataTransformation_data_transformation_types"."DataTransformation_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "DataTransformation_data_transformation_types".data_transformation_types IS 'semantic types of the data transformation';
 CREATE TABLE "Conclusion_investigations" (
 	"Conclusion_akc_id" TEXT, 
 	investigations_akc_id TEXT, 
@@ -908,7 +1053,7 @@ CREATE TABLE "Conclusion_datasets" (
 	datasets_akc_id TEXT, 
 	PRIMARY KEY ("Conclusion_akc_id", datasets_akc_id), 
 	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
-	FOREIGN KEY(datasets_akc_id) REFERENCES "Dataset" (akc_id)
+	FOREIGN KEY(datasets_akc_id) REFERENCES "AKDataSet" (akc_id)
 );COMMENT ON TABLE "Conclusion_datasets" IS 'None';COMMENT ON COLUMN "Conclusion_datasets"."Conclusion_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Conclusion_datasets".datasets_akc_id IS 'The datasets that support a conclusion';
 CREATE TABLE "SequenceDelineationV_alignment_labels" (
 	"SequenceDelineationV_id" INTEGER, 
@@ -1068,18 +1213,10 @@ CREATE TABLE "Receptor_receptor_ref" (
 	PRIMARY KEY ("Receptor_id", receptor_ref), 
 	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id)
 );COMMENT ON TABLE "Receptor_receptor_ref" IS 'None';COMMENT ON COLUMN "Receptor_receptor_ref"."Receptor_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Receptor_receptor_ref".receptor_ref IS 'Array of receptor identifiers defined for the Receptor object';
-CREATE TABLE "Receptor_reactivity_measurements" (
-	"Receptor_id" INTEGER, 
-	reactivity_measurements_id INTEGER, 
-	PRIMARY KEY ("Receptor_id", reactivity_measurements_id), 
-	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id), 
-	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
-);COMMENT ON TABLE "Receptor_reactivity_measurements" IS 'None';COMMENT ON COLUMN "Receptor_reactivity_measurements"."Receptor_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Receptor_reactivity_measurements".reactivity_measurements_id IS 'Records of reactivity measurement';
 CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species "SpeciesOntology", 
-	biological_sex "BiologicalSexOntology", 
-	phenotypic_sex "PhenotypicSexOntology", 
+	sex "BiologicalSexOntology", 
 	age TEXT, 
 	age_unit "AgeUnitOntology", 
 	age_event TEXT, 
@@ -1092,7 +1229,17 @@ CREATE TABLE "Participant" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id)
-);COMMENT ON TABLE "Participant" IS 'A participant in an investigation.';COMMENT ON COLUMN "Participant".study_arm IS 'The study arm that a participant is a member of';COMMENT ON COLUMN "Participant".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Participant".biological_sex IS 'The biological sex of a participant';COMMENT ON COLUMN "Participant".phenotypic_sex IS 'The phenotypic sex of a participant';COMMENT ON COLUMN "Participant".age IS 'The age of a participant relative to age_event';COMMENT ON COLUMN "Participant".age_unit IS 'Unit of age range';COMMENT ON COLUMN "Participant".age_event IS 'Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.';COMMENT ON COLUMN "Participant".race IS 'Racial group of subject (as defined by NIH)';COMMENT ON COLUMN "Participant".ethnicity IS 'Ethnic group of subject (defined as cultural/language-based membership)';COMMENT ON COLUMN "Participant".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "Participant".strain IS 'The strain of the participant (non-human study participants)';COMMENT ON COLUMN "Participant".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Participant".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Participant".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Participant" IS 'A participant in an investigation.';COMMENT ON COLUMN "Participant".study_arm IS 'The study arm that a participant is a member of';COMMENT ON COLUMN "Participant".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Participant".sex IS 'Biological sex of subject';COMMENT ON COLUMN "Participant".age IS 'The age of a participant relative to age_event';COMMENT ON COLUMN "Participant".age_unit IS 'Unit of age range';COMMENT ON COLUMN "Participant".age_event IS 'Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.';COMMENT ON COLUMN "Participant".race IS 'Racial group of subject (as defined by NIH)';COMMENT ON COLUMN "Participant".ethnicity IS 'Ethnic group of subject (defined as cultural/language-based membership)';COMMENT ON COLUMN "Participant".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "Participant".strain IS 'The strain of the participant (non-human study participants)';COMMENT ON COLUMN "Participant".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Participant".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Participant".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AntibodyAntigenComplex" (
+	antibody TEXT, 
+	antigen TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antibody) REFERENCES "BCellReceptor" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenComplex" IS 'None';COMMENT ON COLUMN "AntibodyAntigenComplex".antibody IS 'B cell receptor, immunoglobulin antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AntibodyAntigenComplex".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AntibodyAntigenComplex".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AntibodyAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Subject" (
 	id SERIAL NOT NULL, 
 	subject_id TEXT, 
@@ -1120,6 +1267,13 @@ CREATE TABLE "StudyEvent_study_arms" (
 	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
 );COMMENT ON TABLE "StudyEvent_study_arms" IS 'None';COMMENT ON COLUMN "StudyEvent_study_arms"."StudyEvent_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "StudyEvent_study_arms".study_arms_akc_id IS 'The study arms that are relevant for a study event';
+CREATE TABLE "DataTransformation_was_generated_by" (
+	"DataTransformation_akc_id" TEXT, 
+	was_generated_by_id INTEGER, 
+	PRIMARY KEY ("DataTransformation_akc_id", was_generated_by_id), 
+	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id), 
+	FOREIGN KEY(was_generated_by_id) REFERENCES "InputOutputDataMap" (id)
+);COMMENT ON TABLE "DataTransformation_was_generated_by" IS 'None';COMMENT ON COLUMN "DataTransformation_was_generated_by"."DataTransformation_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "DataTransformation_was_generated_by".was_generated_by_id IS 'direct provenance link of one entity (input) to another (output) for a data transformation';
 CREATE TABLE "RepertoireGroup_repertoires" (
 	"RepertoireGroup_id" INTEGER, 
 	repertoires_id INTEGER, 
@@ -1127,6 +1281,13 @@ CREATE TABLE "RepertoireGroup_repertoires" (
 	FOREIGN KEY("RepertoireGroup_id") REFERENCES "RepertoireGroup" (id), 
 	FOREIGN KEY(repertoires_id) REFERENCES "RepertoireGroupDetail" (id)
 );COMMENT ON TABLE "RepertoireGroup_repertoires" IS 'None';COMMENT ON COLUMN "RepertoireGroup_repertoires"."RepertoireGroup_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "RepertoireGroup_repertoires".repertoires_id IS 'List of repertoires in this collection with an associated description and time point designation';
+CREATE TABLE "Receptor_reactivity_measurements" (
+	"Receptor_id" INTEGER, 
+	reactivity_measurements_id INTEGER, 
+	PRIMARY KEY ("Receptor_id", reactivity_measurements_id), 
+	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id), 
+	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
+);COMMENT ON TABLE "Receptor_reactivity_measurements" IS 'None';COMMENT ON COLUMN "Receptor_reactivity_measurements"."Receptor_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Receptor_reactivity_measurements".reactivity_measurements_id IS 'Records of reactivity measurement';
 CREATE TABLE "SampleProcessing_pcr_target" (
 	"SampleProcessing_id" INTEGER, 
 	pcr_target_id INTEGER, 
@@ -1135,12 +1296,12 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
 );COMMENT ON TABLE "SampleProcessing_pcr_target" IS 'None';COMMENT ON COLUMN "SampleProcessing_pcr_target"."SampleProcessing_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SampleProcessing_pcr_target".pcr_target_id IS 'If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.';
 CREATE TABLE "LifeEvent" (
+	type TEXT, 
 	participant TEXT, 
 	study_event TEXT, 
 	life_event_type "LifeEventProcessOntology", 
 	geolocation "GeolocationOntology", 
 	t0_event TEXT, 
-	t0_event_type TEXT, 
 	start INTEGER, 
 	duration INTEGER, 
 	time_unit TEXT, 
@@ -1149,8 +1310,9 @@ CREATE TABLE "LifeEvent" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
-	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id)
-);COMMENT ON TABLE "LifeEvent" IS 'An event in which a study participant participates.';COMMENT ON COLUMN "LifeEvent".participant IS 'The participant of a life event';COMMENT ON COLUMN "LifeEvent".study_event IS 'The study event corresponding to a life event';COMMENT ON COLUMN "LifeEvent".life_event_type IS 'The specific type of a life event';COMMENT ON COLUMN "LifeEvent".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "LifeEvent".t0_event IS 'The T0 event used to specify the time of this life event';COMMENT ON COLUMN "LifeEvent".t0_event_type IS 'The type of the T0 event used to specify the time of this life event';COMMENT ON COLUMN "LifeEvent".start IS 'The start time of this life event, relative to the T0 event';COMMENT ON COLUMN "LifeEvent".duration IS 'The duration of this life event';COMMENT ON COLUMN "LifeEvent".time_unit IS 'The time unit used to measure the start and duration of this life event';COMMENT ON COLUMN "LifeEvent".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "LifeEvent".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "LifeEvent".akc_id IS 'A unique identifier for a thing in the AKC.';
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
+);COMMENT ON TABLE "LifeEvent" IS 'An event in which a study participant participates.';COMMENT ON COLUMN "LifeEvent".participant IS 'The participant of a life event';COMMENT ON COLUMN "LifeEvent".study_event IS 'The study event corresponding to a life event';COMMENT ON COLUMN "LifeEvent".life_event_type IS 'The specific type of a life event';COMMENT ON COLUMN "LifeEvent".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "LifeEvent".t0_event IS 'The T0 event used to specify the time of this life event';COMMENT ON COLUMN "LifeEvent".start IS 'The start time of this life event, relative to the T0 event';COMMENT ON COLUMN "LifeEvent".duration IS 'The duration of this life event';COMMENT ON COLUMN "LifeEvent".time_unit IS 'The time unit used to measure the start and duration of this life event';COMMENT ON COLUMN "LifeEvent".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "LifeEvent".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "LifeEvent".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Repertoire" (
 	id SERIAL NOT NULL, 
 	repertoire_id TEXT, 
@@ -1177,40 +1339,48 @@ CREATE TABLE "Subject_diagnosis" (
 	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
 );COMMENT ON TABLE "Subject_diagnosis" IS 'None';COMMENT ON COLUMN "Subject_diagnosis"."Subject_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Subject_diagnosis".diagnosis_id IS 'Diagnosis information for subject';
 CREATE TABLE "ImmuneExposure" (
-	life_event TEXT, 
 	exposure_material "ExposureMaterialOntology", 
 	disease "DiseaseOntology", 
 	disease_stage TEXT, 
 	disease_severity TEXT, 
+	type TEXT, 
+	participant TEXT, 
+	study_event TEXT, 
+	life_event_type "LifeEventProcessOntology", 
+	geolocation "GeolocationOntology", 
+	t0_event TEXT, 
+	start INTEGER, 
+	duration INTEGER, 
+	time_unit TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
-);COMMENT ON TABLE "ImmuneExposure" IS 'An event involving the immune system of a study participant.';COMMENT ON COLUMN "ImmuneExposure".life_event IS 'The life event corresponding to an immune exposure';COMMENT ON COLUMN "ImmuneExposure".exposure_material IS 'The material relevant to an immune exposure';COMMENT ON COLUMN "ImmuneExposure".disease IS 'The disease relevant to an immune exposure';COMMENT ON COLUMN "ImmuneExposure".disease_stage IS 'Stage of disease at current intervention';COMMENT ON COLUMN "ImmuneExposure".disease_severity IS 'The severity of the disease relevant to an immune exposure';COMMENT ON COLUMN "ImmuneExposure".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "ImmuneExposure".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "ImmuneExposure".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "Specimen" (
-	life_event TEXT, 
-	specimen_type TEXT, 
-	tissue "TissueOntology", 
-	process TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
-);COMMENT ON TABLE "Specimen" IS 'None';COMMENT ON COLUMN "Specimen".life_event IS 'The life event corresponding to an immune exposure';COMMENT ON COLUMN "Specimen".specimen_type IS 'The type of this specimen';COMMENT ON COLUMN "Specimen".tissue IS 'The actual tissue sampled, e.g. lymph node, liver, peripheral blood';COMMENT ON COLUMN "Specimen".process IS 'The type of specimen collection process that resulted in this specimen';COMMENT ON COLUMN "Specimen".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Specimen".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Specimen".akc_id IS 'A unique identifier for a thing in the AKC.';
+	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
+);COMMENT ON TABLE "ImmuneExposure" IS 'An event involving the immune system of a study participant.';COMMENT ON COLUMN "ImmuneExposure".exposure_material IS 'The material relevant to an immune exposure';COMMENT ON COLUMN "ImmuneExposure".disease IS 'The disease relevant to an immune exposure';COMMENT ON COLUMN "ImmuneExposure".disease_stage IS 'Stage of disease at current intervention';COMMENT ON COLUMN "ImmuneExposure".disease_severity IS 'The severity of the disease relevant to an immune exposure';COMMENT ON COLUMN "ImmuneExposure".participant IS 'The participant of a life event';COMMENT ON COLUMN "ImmuneExposure".study_event IS 'The study event corresponding to a life event';COMMENT ON COLUMN "ImmuneExposure".life_event_type IS 'The specific type of a life event';COMMENT ON COLUMN "ImmuneExposure".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "ImmuneExposure".t0_event IS 'The T0 event used to specify the time of this life event';COMMENT ON COLUMN "ImmuneExposure".start IS 'The start time of this life event, relative to the T0 event';COMMENT ON COLUMN "ImmuneExposure".duration IS 'The duration of this life event';COMMENT ON COLUMN "ImmuneExposure".time_unit IS 'The time unit used to measure the start and duration of this life event';COMMENT ON COLUMN "ImmuneExposure".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "ImmuneExposure".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "ImmuneExposure".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Assessment" (
 	life_event TEXT, 
 	assessment_type TEXT, 
 	target_entity_type TEXT, 
-	value TEXT, 
-	unit TEXT, 
+	measurement_value INTEGER, 
+	measurement_unit "MeasurementUnitOntology", 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
-);COMMENT ON TABLE "Assessment" IS 'None';COMMENT ON COLUMN "Assessment".life_event IS 'The life event corresponding to an immune exposure';COMMENT ON COLUMN "Assessment".assessment_type IS 'The specific type of an assessment';COMMENT ON COLUMN "Assessment".target_entity_type IS 'The type of the entity being measured';COMMENT ON COLUMN "Assessment".value IS 'The measurement result value';COMMENT ON COLUMN "Assessment".unit IS 'The measurement result value unit';COMMENT ON COLUMN "Assessment".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Assessment".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Assessment".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Assessment" IS 'None';COMMENT ON COLUMN "Assessment".life_event IS 'The life event corresponding to an immune exposure';COMMENT ON COLUMN "Assessment".assessment_type IS 'The specific type of an assessment';COMMENT ON COLUMN "Assessment".target_entity_type IS 'The type of the entity being measured';COMMENT ON COLUMN "Assessment".measurement_value IS 'The measurement result value';COMMENT ON COLUMN "Assessment".measurement_unit IS 'The measurement result value unit';COMMENT ON COLUMN "Assessment".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Assessment".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Assessment".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "Specimen" (
+	life_event TEXT, 
+	tissue "TissueOntology", 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
+);COMMENT ON TABLE "Specimen" IS 'None';COMMENT ON COLUMN "Specimen".life_event IS 'The life event corresponding to an immune exposure';COMMENT ON COLUMN "Specimen".tissue IS 'The actual tissue sampled, e.g. lymph node, liver, peripheral blood';COMMENT ON COLUMN "Specimen".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Specimen".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Specimen".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Repertoire_sample" (
 	"Repertoire_id" INTEGER, 
 	sample_id INTEGER, 
@@ -1227,20 +1397,24 @@ CREATE TABLE "Repertoire_data_processing" (
 );COMMENT ON TABLE "Repertoire_data_processing" IS 'None';COMMENT ON COLUMN "Repertoire_data_processing"."Repertoire_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Repertoire_data_processing".data_processing_id IS 'List of Data Processing objects';
 CREATE TABLE "SpecimenCollection" (
 	specimen TEXT, 
+	type TEXT, 
+	participant TEXT, 
+	study_event TEXT, 
+	life_event_type "LifeEventProcessOntology", 
+	geolocation "GeolocationOntology", 
+	t0_event TEXT, 
+	start INTEGER, 
+	duration INTEGER, 
+	time_unit TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
-);COMMENT ON TABLE "SpecimenCollection" IS 'None';COMMENT ON COLUMN "SpecimenCollection".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "SpecimenCollection".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "SpecimenCollection".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "SpecimenCollection".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "SpecimenProcessing" (
-	specimen TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
-);COMMENT ON TABLE "SpecimenProcessing" IS 'None';COMMENT ON COLUMN "SpecimenProcessing".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "SpecimenProcessing".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "SpecimenProcessing".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "SpecimenProcessing".akc_id IS 'A unique identifier for a thing in the AKC.';
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
+);COMMENT ON TABLE "SpecimenCollection" IS 'None';COMMENT ON COLUMN "SpecimenCollection".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "SpecimenCollection".participant IS 'The participant of a life event';COMMENT ON COLUMN "SpecimenCollection".study_event IS 'The study event corresponding to a life event';COMMENT ON COLUMN "SpecimenCollection".life_event_type IS 'The specific type of a life event';COMMENT ON COLUMN "SpecimenCollection".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "SpecimenCollection".t0_event IS 'The T0 event used to specify the time of this life event';COMMENT ON COLUMN "SpecimenCollection".start IS 'The start time of this life event, relative to the T0 event';COMMENT ON COLUMN "SpecimenCollection".duration IS 'The duration of this life event';COMMENT ON COLUMN "SpecimenCollection".time_unit IS 'The time unit used to measure the start and duration of this life event';COMMENT ON COLUMN "SpecimenCollection".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "SpecimenCollection".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "SpecimenCollection".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "CellIsolationProcessing" (
 	tissue_processing TEXT, 
 	cell_subset "CellSubsetOntology", 
@@ -1280,14 +1454,15 @@ CREATE TABLE "LibraryPreparationProcessing" (
 CREATE TABLE "Assay" (
 	specimen TEXT, 
 	type TEXT, 
-	assay_type TEXT, 
-	target_entity_type TEXT, 
+	assay_type "AssayTypeOntology", 
+	has_specified_output TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
-);COMMENT ON TABLE "Assay" IS 'None';COMMENT ON COLUMN "Assay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "Assay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "Assay".target_entity_type IS 'The type of the entity being measured';COMMENT ON COLUMN "Assay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Assay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Assay".akc_id IS 'A unique identifier for a thing in the AKC.';
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+);COMMENT ON TABLE "Assay" IS 'None';COMMENT ON COLUMN "Assay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "Assay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "Assay".has_specified_output IS 'output data item';COMMENT ON COLUMN "Assay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Assay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Assay".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "AIRRSequencingAssay" (
 	repertoire_id TEXT, 
 	sequencing_run_id TEXT, 
@@ -1298,38 +1473,60 @@ CREATE TABLE "AIRRSequencingAssay" (
 	sequencing_kit TEXT, 
 	specimen TEXT, 
 	type TEXT, 
-	assay_type TEXT, 
-	target_entity_type TEXT, 
+	assay_type "AssayTypeOntology", 
+	has_specified_output TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	sequencing_files_id INTEGER, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
 	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
-);COMMENT ON TABLE "AIRRSequencingAssay" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "AIRRSequencingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AIRRSequencingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AIRRSequencingAssay".target_entity_type IS 'The type of the entity being measured';COMMENT ON COLUMN "AIRRSequencingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_files_id IS 'Set of sequencing files produced by the sequencing run';
+);COMMENT ON TABLE "AIRRSequencingAssay" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "AIRRSequencingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AIRRSequencingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AIRRSequencingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "AIRRSequencingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_files_id IS 'Set of sequencing files produced by the sequencing run';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	epitope TEXT, 
-	value TEXT, 
-	unit TEXT, 
 	specimen TEXT, 
 	type TEXT, 
-	assay_type TEXT, 
-	target_entity_type TEXT, 
+	assay_type "AssayTypeOntology", 
+	has_specified_output TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	measurement_category "CategoricalSpecificityEnum", 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".epitope IS 'The epitope being measured';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".measurement_category IS 'The measurement result category';
+CREATE TABLE "AntibodyAntigenBindingAssay" (
+	specimen TEXT, 
+	type TEXT, 
+	assay_type "AssayTypeOntology", 
+	has_specified_output TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
-);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".epitope IS 'The epitope being measured';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".value IS 'The measurement result value';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".unit IS 'The measurement result value unit';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".target_entity_type IS 'The type of the entity being measured';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "Dataset_assessments" (
-	"Dataset_akc_id" TEXT, 
-	assessments_akc_id TEXT, 
-	PRIMARY KEY ("Dataset_akc_id", assessments_akc_id), 
-	FOREIGN KEY("Dataset_akc_id") REFERENCES "Dataset" (akc_id), 
-	FOREIGN KEY(assessments_akc_id) REFERENCES "Assessment" (akc_id)
-);COMMENT ON TABLE "Dataset_assessments" IS 'None';COMMENT ON COLUMN "Dataset_assessments"."Dataset_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Dataset_assessments".assessments_akc_id IS 'The assessment that a dataset is about';
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenBindingAssay" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AntibodyAntigenBindingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "SpecimenProcessing" (
+	specimen TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	"Assay_akc_id" TEXT, 
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id)
+);COMMENT ON TABLE "SpecimenProcessing" IS 'None';COMMENT ON COLUMN "SpecimenProcessing".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "SpecimenProcessing".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "SpecimenProcessing".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "SpecimenProcessing".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "SpecimenProcessing"."Assay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SpecimenProcessing"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SpecimenProcessing"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "SpecimenProcessing"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';
 CREATE TABLE "Investigation_assays" (
 	"Investigation_akc_id" TEXT, 
 	assays_akc_id TEXT, 
@@ -1344,13 +1541,6 @@ CREATE TABLE "LibraryPreparationProcessing_pcr_target" (
 	FOREIGN KEY("LibraryPreparationProcessing_akc_id") REFERENCES "LibraryPreparationProcessing" (akc_id), 
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
 );COMMENT ON TABLE "LibraryPreparationProcessing_pcr_target" IS 'None';COMMENT ON COLUMN "LibraryPreparationProcessing_pcr_target"."LibraryPreparationProcessing_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "LibraryPreparationProcessing_pcr_target".pcr_target_id IS 'If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.';
-CREATE TABLE "Assay_specimen_processing" (
-	"Assay_akc_id" TEXT, 
-	specimen_processing_akc_id TEXT, 
-	PRIMARY KEY ("Assay_akc_id", specimen_processing_akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
-);COMMENT ON TABLE "Assay_specimen_processing" IS 'None';COMMENT ON COLUMN "Assay_specimen_processing"."Assay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Assay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
 CREATE TABLE "AIRRSequencingAssay_tcell_receptors" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	tcell_receptors_akc_id TEXT, 
@@ -1365,13 +1555,6 @@ CREATE TABLE "AIRRSequencingAssay_tcell_chains" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
 );COMMENT ON TABLE "AIRRSequencingAssay_tcell_chains" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains".tcell_chains_akc_id IS 'The T cell receptor chains being measured';
-CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
-	"AIRRSequencingAssay_akc_id" TEXT, 
-	specimen_processing_akc_id TEXT, 
-	PRIMARY KEY ("AIRRSequencingAssay_akc_id", specimen_processing_akc_id), 
-	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
-);COMMENT ON TABLE "AIRRSequencingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	tcell_receptors_akc_id TEXT, 
@@ -1379,24 +1562,3 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
 );COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors".tcell_receptors_akc_id IS 'The T cell receptors being measured';
-CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_chains" (
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	tcell_chains_akc_id TEXT, 
-	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcell_chains_akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
-);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcell_chains" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_chains"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_chains".tcell_chains_akc_id IS 'The T cell receptor chains being measured';
-CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	specimen_processing_akc_id TEXT, 
-	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", specimen_processing_akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
-);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_specimen_processing"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
-CREATE TABLE "Dataset_assays" (
-	"Dataset_akc_id" TEXT, 
-	assays_akc_id TEXT, 
-	PRIMARY KEY ("Dataset_akc_id", assays_akc_id), 
-	FOREIGN KEY("Dataset_akc_id") REFERENCES "Dataset" (akc_id), 
-	FOREIGN KEY(assays_akc_id) REFERENCES "Assay" (akc_id)
-);COMMENT ON TABLE "Dataset_assays" IS 'None';COMMENT ON COLUMN "Dataset_assays"."Dataset_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Dataset_assays".assays_akc_id IS 'The assays performed by the investigation';
