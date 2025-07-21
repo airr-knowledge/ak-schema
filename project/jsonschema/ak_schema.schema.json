@@ -438,7 +438,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -584,7 +584,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -1479,7 +1479,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -1545,7 +1545,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -1715,7 +1715,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -1786,7 +1786,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -8559,7 +8559,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -8646,7 +8646,7 @@
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
                     "items": {
-                        "$ref": "#/$defs/SpecimenProcessing"
+                        "type": "string"
                     },
                     "type": [
                         "array",
