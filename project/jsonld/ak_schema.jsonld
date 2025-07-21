@@ -2541,8 +2541,6 @@
       ],
       "range": "SpecimenProcessing",
       "multivalued": true,
-      "inlined": true,
-      "inlined_as_list": true,
       "@type": "SlotDefinition"
     },
     {
@@ -13910,9 +13908,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-17T19:10:33",
-  "source_file_size": 204617,
-  "generation_date": "2025-07-17T19:10:36",
+  "source_file_date": "2025-07-17T19:58:45",
+  "source_file_size": 204591,
+  "generation_date": "2025-07-17T19:58:47",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

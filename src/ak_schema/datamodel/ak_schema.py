@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-17T19:10:40
+# Generation date: 2025-07-17T19:58:50
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1210,7 +1210,7 @@ class Assay(Process):
 
     akc_id: Union[str, AssayAkcId] = None
     specimen: Optional[Union[str, SpecimenAkcId]] = None
-    specimen_processing: Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, SpecimenProcessing]], List[Union[dict, SpecimenProcessing]]]] = empty_dict()
+    specimen_processing: Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]] = empty_list()
     type: Optional[str] = None
     assay_type: Optional[Union[str, "AssayTypeOntology"]] = None
     has_specified_output: Optional[Union[str, AKDataItemAkcId]] = None
@@ -1224,7 +1224,9 @@ class Assay(Process):
         if self.specimen is not None and not isinstance(self.specimen, SpecimenAkcId):
             self.specimen = SpecimenAkcId(self.specimen)
 
-        self._normalize_inlined_as_list(slot_name="specimen_processing", slot_type=SpecimenProcessing, key_name="akc_id", keyed=True)
+        if not isinstance(self.specimen_processing, list):
+            self.specimen_processing = [self.specimen_processing] if self.specimen_processing is not None else []
+        self.specimen_processing = [v if isinstance(v, SpecimenProcessingAkcId) else SpecimenProcessingAkcId(v) for v in self.specimen_processing]
 
         self.type = str(self.class_name)
 
@@ -5965,7 +5967,7 @@ slots.specimen = Slot(uri=OBI['0000293'], name="specimen", curie=OBI.curie('0000
                    model_uri=AK_SCHEMA.specimen, domain=None, range=Optional[Union[str, SpecimenAkcId]])
 
 slots.specimen_processing = Slot(uri=BFO['0000051'], name="specimen_processing", curie=BFO.curie('0000051'),
-                   model_uri=AK_SCHEMA.specimen_processing, domain=None, range=Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, SpecimenProcessing]], List[Union[dict, SpecimenProcessing]]]])
+                   model_uri=AK_SCHEMA.specimen_processing, domain=None, range=Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]])
 
 slots.assay_type = Slot(uri=RDF.type, name="assay_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.assay_type, domain=None, range=Optional[Union[str, "AssayTypeOntology"]])

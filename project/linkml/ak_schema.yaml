@@ -1542,7 +1542,6 @@ slots:
     slot_uri: BFO:0000051
     range: SpecimenProcessing
     multivalued: true
-    inlined_as_list: true
   assay_type:
     name: assay_type
     description: The specific type of an assay
