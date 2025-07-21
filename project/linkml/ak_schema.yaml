@@ -1173,9 +1173,6 @@ enums:
         text: flow_cytometry
       single-cell_transcriptome:
         text: single-cell_transcriptome
-  PropertyOntology:
-    name: PropertyOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
   ReceptorTypeEnum:
     name: ReceptorTypeEnum
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1232,9 +1229,6 @@ enums:
         text: peptide
       non-peptidic:
         text: non-peptidic
-  AntigenOntology:
-    name: AntigenOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
   AntigenSourceSpeciesOntology:
     name: AntigenSourceSpeciesOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -3839,7 +3833,7 @@ slots:
     description: List of repertoires in this collection with an associated description
       and time point designation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: RepertoireGroupDetail
+    range: RepertoireFilter
     multivalued: true
   segment:
     name: segment
@@ -5367,7 +5361,7 @@ slots:
       IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human
       CD27 antibody).
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: PropertyOntology
+    range: string
   property_value:
     name: property_value
     annotations:
@@ -6587,8 +6581,8 @@ classes:
     - subject
     - sample
     - data_processing
-  RepertoireGroupDetail:
-    name: RepertoireGroupDetail
+  RepertoireFilter:
+    name: RepertoireFilter
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AIRRStandards
     slots:
