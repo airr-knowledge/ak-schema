@@ -206,12 +206,12 @@
 </a>
 <h1 id="class-immuneexposure">Class: ImmuneExposure</h1>
 <p><em>An event involving the immune system of a study participant.</em></p>
-<p>URI: <a href="http://purl.obolibrary.org/obo/BFO_0000015">BFO:0000015</a></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/ImmuneExposure">ak_schema:ImmuneExposure</a></p>
 <div class="mermaid"> classDiagram
     class ImmuneExposure
     click ImmuneExposure href "../ImmuneExposure"
-      NamedThing &lt;|-- ImmuneExposure
-        click NamedThing href "../NamedThing"
+      LifeEvent &lt;|-- ImmuneExposure
+        click LifeEvent href "../LifeEvent"
 
       ImmuneExposure : akc_id
 
@@ -230,6 +230,8 @@
 
       ImmuneExposure : disease_stage
 
+      ImmuneExposure : duration
+
       ImmuneExposure : exposure_material
 
 
@@ -239,16 +241,58 @@
     click ExposureMaterialOntology href "../ExposureMaterialOntology"
 
 
-      ImmuneExposure : life_event
+      ImmuneExposure : geolocation
 
 
 
 
-    ImmuneExposure --&gt; "0..1" LifeEvent : life_event
-    click LifeEvent href "../LifeEvent"
+    ImmuneExposure --&gt; "0..1" GeolocationOntology : geolocation
+    click GeolocationOntology href "../GeolocationOntology"
+
+
+      ImmuneExposure : life_event_type
+
+
+
+
+    ImmuneExposure --&gt; "0..1" LifeEventProcessOntology : life_event_type
+    click LifeEventProcessOntology href "../LifeEventProcessOntology"
 
 
       ImmuneExposure : name
+
+      ImmuneExposure : participant
+
+
+
+
+    ImmuneExposure --&gt; "0..1" Participant : participant
+    click Participant href "../Participant"
+
+
+      ImmuneExposure : start
+
+      ImmuneExposure : study_event
+
+
+
+
+    ImmuneExposure --&gt; "0..1" StudyEvent : study_event
+    click StudyEvent href "../StudyEvent"
+
+
+      ImmuneExposure : t0_event
+
+
+
+
+    ImmuneExposure --&gt; "0..1" LifeEvent : t0_event
+    click LifeEvent href "../LifeEvent"
+
+
+      ImmuneExposure : time_unit
+
+      ImmuneExposure : type
 
 
 </div>
@@ -256,7 +300,13 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
+<li><a href="../Process/">Process</a><ul>
+<li><a href="../LifeEvent/">LifeEvent</a><ul>
 <li><strong>ImmuneExposure</strong></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -273,12 +323,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../life_event/">life_event</a></td>
-<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
-<td>The life event corresponding to an immune exposure</td>
-<td>direct</td>
-</tr>
 <tr>
 <td><a href="../exposure_material/">exposure_material</a></td>
 <td>0..1 <br/> <a href="../ExposureMaterialOntology/">ExposureMaterialOntology</a></td>
@@ -302,6 +346,60 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>The severity of the disease relevant to an immune exposure</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../participant/">participant</a></td>
+<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
+<td>The participant of a life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../study_event/">study_event</a></td>
+<td>0..1 <br/> <a href="../StudyEvent/">StudyEvent</a></td>
+<td>The study event corresponding to a life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../life_event_type/">life_event_type</a></td>
+<td>0..1 <br/> <a href="../LifeEventProcessOntology/">LifeEventProcessOntology</a></td>
+<td>The specific type of a life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../geolocation/">geolocation</a></td>
+<td>0..1 <br/> <a href="../GeolocationOntology/">GeolocationOntology</a></td>
+<td>The geolocation of a participant at birth</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../t0_event/">t0_event</a></td>
+<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
+<td>The T0 event used to specify the time of this life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../start/">start</a></td>
+<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
+<td>The start time of this life event, relative to the T0 event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../duration/">duration</a></td>
+<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
+<td>The duration of this life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../time_unit/">time_unit</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The time unit used to measure the start and duration of this life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -358,7 +456,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>BFO:0000015</td>
+<td>ak_schema:ImmuneExposure</td>
 </tr>
 <tr>
 <td>native</td>
@@ -373,14 +471,12 @@
 <pre><code class="language-yaml">name: ImmuneExposure
 description: An event involving the immune system of a study participant.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: LifeEvent
 slots:
-- life_event
 - exposure_material
 - disease
 - disease_stage
 - disease_severity
-class_uri: BFO:0000015
 
 </code></pre>
 </details>
@@ -389,20 +485,8 @@ class_uri: BFO:0000015
 <pre><code class="language-yaml">name: ImmuneExposure
 description: An event involving the immune system of a study participant.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: LifeEvent
 attributes:
-  life_event:
-    name: life_event
-    description: The life event corresponding to an immune exposure
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: life_event
-    owner: ImmuneExposure
-    domain_of:
-    - ImmuneExposure
-    - Specimen
-    - Assessment
-    range: LifeEvent
   exposure_material:
     name: exposure_material
     description: The material relevant to an immune exposure
@@ -449,6 +533,105 @@ attributes:
     domain_of:
     - ImmuneExposure
     range: string
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    - Assay
+    - AKDataItem
+    - TCellReceptor
+    - Epitope
+    range: string
+  participant:
+    name: participant
+    description: The participant of a life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: RO:0000057
+    alias: participant
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    range: Participant
+  study_event:
+    name: study_event
+    description: The study event corresponding to a life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: study_event
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    range: StudyEvent
+  life_event_type:
+    name: life_event_type
+    description: The specific type of a life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: rdf:type
+    alias: life_event_type
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    range: LifeEventProcessOntology
+  geolocation:
+    name: geolocation
+    description: The geolocation of a participant at birth
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: RO:0001025
+    alias: geolocation
+    owner: ImmuneExposure
+    domain_of:
+    - Participant
+    - LifeEvent
+    range: GeolocationOntology
+  t0_event:
+    name: t0_event
+    description: The T0 event used to specify the time of this life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: t0_event
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    range: LifeEvent
+  start:
+    name: start
+    description: The start time of this life event, relative to the T0 event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: start
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    range: decimal
+  duration:
+    name: duration
+    description: The duration of this life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: duration
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    range: decimal
+  time_unit:
+    name: time_unit
+    description: The time unit used to measure the start and duration of this life
+      event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: time_unit
+    owner: ImmuneExposure
+    domain_of:
+    - LifeEvent
+    range: string
   name:
     name: name
     description: A human-readable name for a thing
@@ -484,7 +667,6 @@ attributes:
     - AKObject
     range: uriorcurie
     required: true
-class_uri: BFO:0000015
 
 </code></pre>
 </details>

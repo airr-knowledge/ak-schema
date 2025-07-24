@@ -228,15 +228,6 @@
 
       Participant : akc_id
 
-      Participant : biological_sex
-
-
-
-
-    Participant --&gt; "0..1" BiologicalSexOntology : biological_sex
-    click BiologicalSexOntology href "../BiologicalSexOntology"
-
-
       Participant : description
 
       Participant : ethnicity
@@ -252,16 +243,16 @@
 
       Participant : name
 
-      Participant : phenotypic_sex
-
-
-
-
-    Participant --&gt; "0..1" PhenotypicSexOntology : phenotypic_sex
-    click PhenotypicSexOntology href "../PhenotypicSexOntology"
-
-
       Participant : race
+
+      Participant : sex
+
+
+
+
+    Participant --&gt; "0..1" BiologicalSexOntology : sex
+    click BiologicalSexOntology href "../BiologicalSexOntology"
+
 
       Participant : species
 
@@ -326,15 +317,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../biological_sex/">biological_sex</a></td>
+<td><a href="../sex/">sex</a></td>
 <td>0..1 <br/> <a href="../BiologicalSexOntology/">BiologicalSexOntology</a></td>
-<td>The biological sex of a participant</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../phenotypic_sex/">phenotypic_sex</a></td>
-<td>0..1 <br/> <a href="../PhenotypicSexOntology/">PhenotypicSexOntology</a></td>
-<td>The phenotypic sex of a participant</td>
+<td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -428,6 +413,18 @@
 <td>range</td>
 <td><a href="./">Participant</a></td>
 </tr>
+<tr>
+<td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
+<td><a href="../participant/">participant</a></td>
+<td>range</td>
+<td><a href="./">Participant</a></td>
+</tr>
+<tr>
+<td><a href="../SpecimenCollection/">SpecimenCollection</a></td>
+<td><a href="../participant/">participant</a></td>
+<td>range</td>
+<td><a href="./">Participant</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -465,8 +462,7 @@ is_a: NamedThing
 slots:
 - study_arm
 - species
-- biological_sex
-- phenotypic_sex
+- sex
 - age
 - age_unit
 - age_event
@@ -474,6 +470,10 @@ slots:
 - ethnicity
 - geolocation
 - strain
+slot_usage:
+  sex:
+    name: sex
+    range: BiologicalSexOntology
 class_uri: OBI:0100026
 
 </code></pre>
@@ -484,6 +484,10 @@ class_uri: OBI:0100026
 description: A participant in an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
+slot_usage:
+  sex:
+    name: sex
+    range: BiologicalSexOntology
 attributes:
   study_arm:
     name: study_arm
@@ -509,32 +513,26 @@ attributes:
     owner: Participant
     domain_of:
     - Participant
+    - Chain
     - AlleleDescription
     - GermlineSet
     - Subject
     range: SpeciesOntology
-  biological_sex:
-    name: biological_sex
-    description: The biological sex of a participant
+  sex:
+    name: sex
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Biological sex of subject
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: RO:0000053
-    alias: biological_sex
+    alias: sex
     owner: Participant
     domain_of:
     - Participant
+    - Subject
     range: BiologicalSexOntology
-  phenotypic_sex:
-    name: phenotypic_sex
-    description: The phenotypic sex of a participant
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: RO:0000053
-    alias: phenotypic_sex
-    owner: Participant
-    domain_of:
-    - Participant
-    range: PhenotypicSexOntology
   age:
     name: age
     description: The age of a participant relative to age_event

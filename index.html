@@ -501,11 +501,11 @@
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RepertoireGroup/">RepertoireGroup</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RepertoireFilter/">RepertoireFilter</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RepertoireGroupDetail/">RepertoireGroupDetail</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RepertoireGroup/">RepertoireGroup</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -569,7 +569,23 @@
 <td>Anything uniquely identifiable in the AKC.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="BCellReceptor/">BCellReceptor</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AKDataItem/">AKDataItem</a></td>
+<td>data item with an akc_id</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AKDataSet/">AKDataSet</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SequenceData/">SequenceData</a></td>
+<td>sequence data items are given an akc_id</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AIRRSequencingData/">AIRRSequencingData</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="RNATranscriptomeData/">RNATranscriptomeData</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -577,15 +593,39 @@
 <td>None</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ImmuneReceptor/">ImmuneReceptor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="BCellReceptor/">BCellReceptor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCellReceptor/">TCellReceptor</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AlphaBetaTCR/">AlphaBetaTCR</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="NamedThing/">NamedThing</a></td>
 <td>Name and description for AKC things.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Conclusion/">Conclusion</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Dataset/">Dataset</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Antigen/">Antigen</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Conclusion/">Conclusion</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -597,16 +637,8 @@
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ImmuneExposure/">ImmuneExposure</a></td>
-<td>An event involving the immune system of a study participant.</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ImmuneSystem/">ImmuneSystem</a></td>
 <td>None</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LifeEvent/">LifeEvent</a></td>
-<td>An event in which a study participant participates.</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Model/">Model</a></td>
@@ -629,8 +661,16 @@
 <td>A participant in an investigation.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PlannedProcess/">PlannedProcess</a></td>
-<td>A process to realize a plan.</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PlanSpecification/">PlanSpecification</a></td>
+<td>A plan with specified actions to meet some objectives.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ModelSpecification/">ModelSpecification</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Process/">Process</a></td>
+<td>A generic process.</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Assay/">Assay</a></td>
@@ -638,6 +678,10 @@
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AIRRSequencingAssay/">AIRRSequencingAssay</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AntibodyAntigenBindingAssay/">AntibodyAntigenBindingAssay</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -649,15 +693,27 @@
 <td>None</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DataTransformation/">DataTransformation</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Investigation/">Investigation</a></td>
 <td>A scientific investigation.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Simulation/">Simulation</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LifeEvent/">LifeEvent</a></td>
+<td>An event in which a study participant participates.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ImmuneExposure/">ImmuneExposure</a></td>
+<td>An event involving the immune system of a study participant.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SpecimenCollection/">SpecimenCollection</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SpecimenCollection/">SpecimenCollection</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Simulation/">Simulation</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -673,12 +729,8 @@
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PlanSpecification/">PlanSpecification</a></td>
-<td>A plan with specified actions to meet some objectives.</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ModelSpecification/">ModelSpecification</a></td>
-<td>None</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StudyEvent/">StudyEvent</a></td>
+<td>An event that is part of the study design of an investigation.</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Specimen/">Specimen</a></td>
@@ -689,8 +741,8 @@
 <td>A population of participants of an investigation.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StudyEvent/">StudyEvent</a></td>
-<td>An event that is part of the study design of an investigation.</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td>None</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SimilarityCalculation/">SimilarityCalculation</a></td>
@@ -701,15 +753,23 @@
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCellReceptor/">TCellReceptor</a></td>
+<td><a href="DataItem/">DataItem</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AlphaBetaTCR/">AlphaBetaTCR</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DataSet/">DataSet</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementCategory/">MeasurementCategory</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCellReceptorEpitopeSpecificityMeasurement/">TCellReceptorEpitopeSpecificityMeasurement</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="MeasurementDatum/">MeasurementDatum</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -719,6 +779,10 @@
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Reference/">Reference</a></td>
 <td>A document about an investigation.</td>
+</tr>
+<tr>
+<td><a href="InputOutputDataMap/">InputOutputDataMap</a></td>
+<td>None</td>
 </tr>
 </tbody>
 </table>
@@ -832,8 +896,12 @@
 <td>Broad geographic origin of ancestry (continent)</td>
 </tr>
 <tr>
+<td><a href="antibody/">antibody</a></td>
+<td>B cell receptor, immunoglobulin antibody</td>
+</tr>
+<tr>
 <td><a href="antigen/">antigen</a></td>
-<td>The substance against which the receptor was tested</td>
+<td>A material entity with antigen role</td>
 </tr>
 <tr>
 <td><a href="antigen_source_species/">antigen_source_species</a></td>
@@ -861,7 +929,7 @@
 </tr>
 <tr>
 <td><a href="assessments/">assessments</a></td>
-<td>The assessment that a dataset is about</td>
+<td></td>
 </tr>
 <tr>
 <td><a href="author/">author</a></td>
@@ -874,10 +942,6 @@
 <tr>
 <td><a href="bcell_receptors/">bcell_receptors</a></td>
 <td></td>
-</tr>
-<tr>
-<td><a href="biological_sex/">biological_sex</a></td>
-<td>The biological sex of a participant</td>
 </tr>
 <tr>
 <td><a href="biomaterial_provider/">biomaterial_provider</a></td>
@@ -1046,10 +1110,6 @@
 <tr>
 <td><a href="chain_similarity_type/">chain_similarity_type</a></td>
 <td>Type of similarity calculation between two immune receptor chains</td>
-</tr>
-<tr>
-<td><a href="chain_type/">chain_type</a></td>
-<td>Gene locus (chain type)</td>
 </tr>
 <tr>
 <td><a href="chains/">chains</a></td>
@@ -1264,6 +1324,14 @@
 <td>D gene alignment E-value, p-value, likelihood, probability or other similar m...</td>
 </tr>
 <tr>
+<td><a href="data_item_types/">data_item_types</a></td>
+<td>semantic types of the data</td>
+</tr>
+<tr>
+<td><a href="data_items/">data_items</a></td>
+<td>set of data items</td>
+</tr>
+<tr>
 <td><a href="data_location_type/">data_location_type</a></td>
 <td>The type of location where data was found, e</td>
 </tr>
@@ -1286,6 +1354,14 @@
 <tr>
 <td><a href="data_processing_protocols/">data_processing_protocols</a></td>
 <td>General description of how QC is performed</td>
+</tr>
+<tr>
+<td><a href="data_transformation/">data_transformation</a></td>
+<td>a process that transforms input data into output data</td>
+</tr>
+<tr>
+<td><a href="data_transformation_types/">data_transformation_types</a></td>
+<td>semantic types of the data transformation</td>
 </tr>
 <tr>
 <td><a href="datasets/">datasets</a></td>
@@ -1394,6 +1470,10 @@
 <tr>
 <td><a href="expression_study_method/">expression_study_method</a></td>
 <td>Keyword describing the methodology used to assess expression</td>
+</tr>
+<tr>
+<td><a href="file_format/">file_format</a></td>
+<td>Format and organization of the data in the file</td>
 </tr>
 <tr>
 <td><a href="file_type/">file_type</a></td>
@@ -1554,6 +1634,14 @@
 <tr>
 <td><a href="grants/">grants</a></td>
 <td>Funding agencies and grant numbers</td>
+</tr>
+<tr>
+<td><a href="has_specified_input/">has_specified_input</a></td>
+<td>input data item</td>
+</tr>
+<tr>
+<td><a href="has_specified_output/">has_specified_output</a></td>
+<td>output data item</td>
 </tr>
 <tr>
 <td><a href="identity/">identity</a></td>
@@ -1832,8 +1920,24 @@
 <td>Maintainer of this sequence record</td>
 </tr>
 <tr>
+<td><a href="measurement_category/">measurement_category</a></td>
+<td>The measurement result category</td>
+</tr>
+<tr>
+<td><a href="measurement_unit/">measurement_unit</a></td>
+<td>The measurement result value unit</td>
+</tr>
+<tr>
+<td><a href="measurement_value/">measurement_value</a></td>
+<td>The measurement result value</td>
+</tr>
+<tr>
 <td><a href="medical_history/">medical_history</a></td>
 <td>Medical history of subject that is relevant to assess the course of disease a...</td>
+</tr>
+<tr>
+<td><a href="mhc/">mhc</a></td>
+<td>Major histocompatibility complex</td>
 </tr>
 <tr>
 <td><a href="mhc_allele_1/">mhc_allele_1</a></td>
@@ -2036,10 +2140,6 @@
 <td>Chromosomal phasing indicator</td>
 </tr>
 <tr>
-<td><a href="phenotypic_sex/">phenotypic_sex</a></td>
-<td>The phenotypic sex of a participant</td>
-</tr>
-<tr>
 <td><a href="physical_linkage/">physical_linkage</a></td>
 <td>In case an experimental setup is used that physically links nucleic acids der...</td>
 </tr>
@@ -2054,10 +2154,6 @@
 <tr>
 <td><a href="prior_therapies/">prior_therapies</a></td>
 <td>List of all relevant previous therapies applied to subject for treatment of `...</td>
-</tr>
-<tr>
-<td><a href="process/">process</a></td>
-<td>The type of specimen collection process that resulted in this specimen</td>
 </tr>
 <tr>
 <td><a href="productive/">productive</a></td>
@@ -2408,10 +2504,6 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="specimen_type/">specimen_type</a></td>
-<td>The type of this specimen</td>
-</tr>
-<tr>
 <td><a href="specimens/">specimens</a></td>
 <td></td>
 </tr>
@@ -2512,16 +2604,16 @@
 <td>The T0 event used to specify the time of this life event</td>
 </tr>
 <tr>
-<td><a href="t0_event_type/">t0_event_type</a></td>
-<td>The type of the T0 event used to specify the time of this life event</td>
-</tr>
-<tr>
 <td><a href="target_entity_type/">target_entity_type</a></td>
 <td>The type of the entity being measured</td>
 </tr>
 <tr>
 <td><a href="tcell_chains/">tcell_chains</a></td>
 <td>The T cell receptor chains being measured</td>
+</tr>
+<tr>
+<td><a href="tcell_receptor/">tcell_receptor</a></td>
+<td>T cell receptor</td>
 </tr>
 <tr>
 <td><a href="tcell_receptors/">tcell_receptors</a></td>
@@ -2616,10 +2708,6 @@
 <td>List of alleles inferred to be present and not documented in an identified Ge...</td>
 </tr>
 <tr>
-<td><a href="unit/">unit</a></td>
-<td>The measurement result value unit</td>
-</tr>
-<tr>
 <td><a href="unrearranged_support/">unrearranged_support</a></td>
 <td></td>
 </tr>
@@ -2712,16 +2800,16 @@
 <td>V gene alignment E-value, p-value, likelihood, probability or other similar m...</td>
 </tr>
 <tr>
-<td><a href="value/">value</a></td>
-<td>The measurement result value</td>
-</tr>
-<tr>
 <td><a href="virtual_pairing/">virtual_pairing</a></td>
 <td>boolean to indicate if pairing was inferred</td>
 </tr>
 <tr>
 <td><a href="vj_in_frame/">vj_in_frame</a></td>
 <td>True if the V and J gene alignments are in-frame</td>
+</tr>
+<tr>
+<td><a href="was_generated_by/">was_generated_by</a></td>
+<td>direct provenance link of one entity (input) to another (output) for a data t...</td>
 </tr>
 <tr>
 <td><a href="year/">year</a></td>
@@ -2743,7 +2831,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="AntigenOntology/">AntigenOntology</a></td>
+<td><a href="AKFileFormatEnum/">AKFileFormatEnum</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2755,7 +2843,15 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="AssayTypeOntology/">AssayTypeOntology</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="BiologicalSexOntology/">BiologicalSexOntology</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="CategoricalSpecificityEnum/">CategoricalSpecificityEnum</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2771,10 +2867,6 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="ChainTypeEnum/">ChainTypeEnum</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="CollectionTimePointRelativeUnitOntology/">CollectionTimePointRelativeUnitOntology</a></td>
 <td></td>
 </tr>
@@ -2784,6 +2876,14 @@
 </tr>
 <tr>
 <td><a href="CurationalTagsEnum/">CurationalTagsEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="DataItemTypeEnum/">DataItemTypeEnum</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="DataTransformationTypeEnum/">DataTransformationTypeEnum</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2863,6 +2963,10 @@
 <td></td>
 </tr>
 <tr>
+<td><a href="MeasurementUnitOntology/">MeasurementUnitOntology</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="MhcClassEnum/">MhcClassEnum</a></td>
 <td></td>
 </tr>
@@ -2887,15 +2991,7 @@
 <td></td>
 </tr>
 <tr>
-<td><a href="PhenotypicSexOntology/">PhenotypicSexOntology</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="PhysicalLinkageEnum/">PhysicalLinkageEnum</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="PropertyOntology/">PropertyOntology</a></td>
 <td></td>
 </tr>
 <tr>

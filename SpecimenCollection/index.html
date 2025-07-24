@@ -209,14 +209,43 @@
 <div class="mermaid"> classDiagram
     class SpecimenCollection
     click SpecimenCollection href "../SpecimenCollection"
-      PlannedProcess &lt;|-- SpecimenCollection
-        click PlannedProcess href "../PlannedProcess"
+      LifeEvent &lt;|-- SpecimenCollection
+        click LifeEvent href "../LifeEvent"
 
       SpecimenCollection : akc_id
 
       SpecimenCollection : description
 
+      SpecimenCollection : duration
+
+      SpecimenCollection : geolocation
+
+
+
+
+    SpecimenCollection --&gt; "0..1" GeolocationOntology : geolocation
+    click GeolocationOntology href "../GeolocationOntology"
+
+
+      SpecimenCollection : life_event_type
+
+
+
+
+    SpecimenCollection --&gt; "0..1" LifeEventProcessOntology : life_event_type
+    click LifeEventProcessOntology href "../LifeEventProcessOntology"
+
+
       SpecimenCollection : name
+
+      SpecimenCollection : participant
+
+
+
+
+    SpecimenCollection --&gt; "0..1" Participant : participant
+    click Participant href "../Participant"
+
 
       SpecimenCollection : specimen
 
@@ -227,14 +256,41 @@
     click Specimen href "../Specimen"
 
 
+      SpecimenCollection : start
+
+      SpecimenCollection : study_event
+
+
+
+
+    SpecimenCollection --&gt; "0..1" StudyEvent : study_event
+    click StudyEvent href "../StudyEvent"
+
+
+      SpecimenCollection : t0_event
+
+
+
+
+    SpecimenCollection --&gt; "0..1" LifeEvent : t0_event
+    click LifeEvent href "../LifeEvent"
+
+
+      SpecimenCollection : time_unit
+
+      SpecimenCollection : type
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
+<li><a href="../Process/">Process</a><ul>
+<li><a href="../LifeEvent/">LifeEvent</a><ul>
 <li><strong>SpecimenCollection</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -258,6 +314,60 @@
 <td>0..1 <br/> <a href="../Specimen/">Specimen</a></td>
 <td>The specimen that was input for an assay</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../participant/">participant</a></td>
+<td>0..1 <br/> <a href="../Participant/">Participant</a></td>
+<td>The participant of a life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../study_event/">study_event</a></td>
+<td>0..1 <br/> <a href="../StudyEvent/">StudyEvent</a></td>
+<td>The study event corresponding to a life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../life_event_type/">life_event_type</a></td>
+<td>0..1 <br/> <a href="../LifeEventProcessOntology/">LifeEventProcessOntology</a></td>
+<td>The specific type of a life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../geolocation/">geolocation</a></td>
+<td>0..1 <br/> <a href="../GeolocationOntology/">GeolocationOntology</a></td>
+<td>The geolocation of a participant at birth</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../t0_event/">t0_event</a></td>
+<td>0..1 <br/> <a href="../LifeEvent/">LifeEvent</a></td>
+<td>The T0 event used to specify the time of this life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../start/">start</a></td>
+<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
+<td>The start time of this life event, relative to the T0 event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../duration/">duration</a></td>
+<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
+<td>The duration of this life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../time_unit/">time_unit</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>The time unit used to measure the start and duration of this life event</td>
+<td><a href="../LifeEvent/">LifeEvent</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -328,7 +438,7 @@
 <details>
 <pre><code class="language-yaml">name: SpecimenCollection
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: LifeEvent
 slots:
 - specimen
 class_uri: OBI:0000659
@@ -339,7 +449,7 @@ class_uri: OBI:0000659
 <details>
 <pre><code class="language-yaml">name: SpecimenCollection
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: LifeEvent
 attributes:
   specimen:
     name: specimen
@@ -354,6 +464,105 @@ attributes:
     - SpecimenProcessing
     - Assay
     range: Specimen
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    - Assay
+    - AKDataItem
+    - TCellReceptor
+    - Epitope
+    range: string
+  participant:
+    name: participant
+    description: The participant of a life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: RO:0000057
+    alias: participant
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    range: Participant
+  study_event:
+    name: study_event
+    description: The study event corresponding to a life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: study_event
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    range: StudyEvent
+  life_event_type:
+    name: life_event_type
+    description: The specific type of a life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: rdf:type
+    alias: life_event_type
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    range: LifeEventProcessOntology
+  geolocation:
+    name: geolocation
+    description: The geolocation of a participant at birth
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    slot_uri: RO:0001025
+    alias: geolocation
+    owner: SpecimenCollection
+    domain_of:
+    - Participant
+    - LifeEvent
+    range: GeolocationOntology
+  t0_event:
+    name: t0_event
+    description: The T0 event used to specify the time of this life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: t0_event
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    range: LifeEvent
+  start:
+    name: start
+    description: The start time of this life event, relative to the T0 event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: start
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    range: decimal
+  duration:
+    name: duration
+    description: The duration of this life event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: duration
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    range: decimal
+  time_unit:
+    name: time_unit
+    description: The time unit used to measure the start and duration of this life
+      event
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: time_unit
+    owner: SpecimenCollection
+    domain_of:
+    - LifeEvent
+    range: string
   name:
     name: name
     description: A human-readable name for a thing

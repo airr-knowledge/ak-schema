@@ -212,8 +212,8 @@
 <div class="mermaid"> classDiagram
     class TCellReceptor
     click TCellReceptor href "../TCellReceptor"
-      AKObject &lt;|-- TCellReceptor
-        click AKObject href "../AKObject"
+      ImmuneReceptor &lt;|-- TCellReceptor
+        click ImmuneReceptor href "../ImmuneReceptor"
 
 
       TCellReceptor &lt;|-- AlphaBetaTCR
@@ -231,9 +231,12 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
+<li><a href="../ImmuneReceptor/">ImmuneReceptor</a><ul>
 <li><strong>TCellReceptor</strong><ul>
 <li><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></li>
 <li><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -287,6 +290,12 @@
 <td>range</td>
 <td><a href="./">TCellReceptor</a></td>
 </tr>
+<tr>
+<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../tcell_receptor/">tcell_receptor</a></td>
+<td>range</td>
+<td><a href="./">TCellReceptor</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -319,7 +328,7 @@
 <details>
 <pre><code class="language-yaml">name: TCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: AKObject
+is_a: ImmuneReceptor
 abstract: true
 slots:
 - type
@@ -331,7 +340,7 @@ class_uri: GO:0042101
 <details>
 <pre><code class="language-yaml">name: TCellReceptor
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: AKObject
+is_a: ImmuneReceptor
 abstract: true
 attributes:
   type:
@@ -342,7 +351,9 @@ attributes:
     alias: type
     owner: TCellReceptor
     domain_of:
+    - LifeEvent
     - Assay
+    - AKDataItem
     - TCellReceptor
     - Epitope
     range: string

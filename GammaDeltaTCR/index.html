@@ -239,8 +239,11 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
+<li><a href="../ImmuneReceptor/">ImmuneReceptor</a><ul>
 <li><a href="../TCellReceptor/">TCellReceptor</a><ul>
 <li><strong>GammaDeltaTCR</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -374,7 +377,9 @@ attributes:
     alias: type
     owner: GammaDeltaTCR
     domain_of:
+    - LifeEvent
     - Assay
+    - AKDataItem
     - TCellReceptor
     - Epitope
     range: string

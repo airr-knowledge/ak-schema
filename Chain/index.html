@@ -236,15 +236,6 @@
 
       Chain : cdr3_start
 
-      Chain : chain_type
-
-
-
-
-    Chain --&gt; "0..1" ChainTypeEnum : chain_type
-    click ChainTypeEnum href "../ChainTypeEnum"
-
-
       Chain : complete_vdj
 
       Chain : d_call
@@ -257,9 +248,27 @@
 
       Chain : junction_aa_vj_gene_hash
 
+      Chain : locus
+
+
+
+
+    Chain --&gt; "0..1" LocusEnum : locus
+    click LocusEnum href "../LocusEnum"
+
+
       Chain : sequence
 
       Chain : sequence_aa
+
+      Chain : species
+
+
+
+
+    Chain --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
 
       Chain : v_call
 
@@ -283,6 +292,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../aa_hash/">aa_hash</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -320,9 +335,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../chain_type/">chain_type</a></td>
-<td>0..1 <br/> <a href="../ChainTypeEnum/">ChainTypeEnum</a></td>
-<td>Gene locus (chain type)</td>
+<td><a href="../locus/">locus</a></td>
+<td>0..1 <br/> <a href="../LocusEnum/">LocusEnum</a></td>
+<td></td>
 <td>direct</td>
 </tr>
 <tr>
@@ -441,12 +456,6 @@
 <td><a href="./">Chain</a></td>
 </tr>
 <tr>
-<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
-<td><a href="../tcell_chains/">tcell_chains</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
 <td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
 <td><a href="../tra_chain/">tra_chain</a></td>
 <td>range</td>
@@ -546,13 +555,14 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 slots:
+- species
 - aa_hash
 - junction_aa_vj_allele_hash
 - junction_aa_vj_gene_hash
 - complete_vdj
 - sequence
 - sequence_aa
-- chain_type
+- locus
 - v_call
 - d_call
 - j_call
@@ -576,6 +586,24 @@ slots:
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 attributes:
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: Chain
+    domain_of:
+    - Participant
+    - Chain
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   aa_hash:
     name: aa_hash
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -645,16 +673,19 @@ attributes:
     - PeptidicEpitope
     - Rearrangement
     range: string
-  chain_type:
-    name: chain_type
-    description: Gene locus (chain type).
+  locus:
+    name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: chain_type
+    alias: locus
     owner: Chain
     domain_of:
     - Chain
-    range: ChainTypeEnum
+    - AlleleDescription
+    - GermlineSet
+    - Genotype
+    - Rearrangement
+    range: LocusEnum
   v_call:
     name: v_call
     annotations:

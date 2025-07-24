@@ -209,8 +209,8 @@
 <div class="mermaid"> classDiagram
     class Simulation
     click Simulation href "../Simulation"
-      PlannedProcess &lt;|-- Simulation
-        click PlannedProcess href "../PlannedProcess"
+      Process &lt;|-- Simulation
+        click Process href "../Process"
 
       Simulation : akc_id
 
@@ -224,7 +224,7 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
+<li><a href="../Process/">Process</a><ul>
 <li><strong>Simulation</strong></li>
 </ul>
 </li>
@@ -313,7 +313,7 @@
 <details>
 <pre><code class="language-yaml">name: Simulation
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 class_uri: APOLLO_SV:00000070
 
 </code></pre>
@@ -322,7 +322,7 @@ class_uri: APOLLO_SV:00000070
 <details>
 <pre><code class="language-yaml">name: Simulation
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 attributes:
   name:
     name: name

@@ -259,8 +259,8 @@
 
 
 
-    AIRRKnowledgeCommons --&gt; "*" Dataset : datasets
-    click Dataset href "../Dataset"
+    AIRRKnowledgeCommons --&gt; "*" AKDataSet : datasets
+    click AKDataSet href "../AKDataSet"
 
 
       AIRRKnowledgeCommons : epitopes
@@ -459,7 +459,7 @@
 </tr>
 <tr>
 <td><a href="../datasets/">datasets</a></td>
-<td>* <br/> <a href="../Dataset/">Dataset</a></td>
+<td>* <br/> <a href="../AKDataSet/">AKDataSet</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -600,9 +600,9 @@ attributes:
   assessments:
     name: assessments
     from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
-    - Dataset
     range: Assessment
     multivalued: true
     inlined: true
@@ -639,7 +639,6 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     - Investigation
-    - Dataset
     range: Assay
     multivalued: true
     inlined: true
@@ -649,7 +648,7 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     - Conclusion
-    range: Dataset
+    range: AKDataSet
     multivalued: true
     inlined: true
   conclusions:
@@ -797,11 +796,11 @@ attributes:
   assessments:
     name: assessments
     from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
     alias: assessments
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
-    - Dataset
     range: Assessment
     multivalued: true
     inlined: true
@@ -846,7 +845,6 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     - Investigation
-    - Dataset
     range: Assay
     multivalued: true
     inlined: true
@@ -858,7 +856,7 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     - Conclusion
-    range: Dataset
+    range: AKDataSet
     multivalued: true
     inlined: true
   conclusions:

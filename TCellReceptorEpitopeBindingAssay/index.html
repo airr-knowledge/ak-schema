@@ -204,12 +204,21 @@
 <div class="mermaid"> classDiagram
     class TCellReceptorEpitopeBindingAssay
     click TCellReceptorEpitopeBindingAssay href "../TCellReceptorEpitopeBindingAssay"
+      TCellReceptorEpitopeSpecificityMeasurement &lt;|-- TCellReceptorEpitopeBindingAssay
+        click TCellReceptorEpitopeSpecificityMeasurement href "../TCellReceptorEpitopeSpecificityMeasurement"
       Assay &lt;|-- TCellReceptorEpitopeBindingAssay
         click Assay href "../Assay"
 
       TCellReceptorEpitopeBindingAssay : akc_id
 
       TCellReceptorEpitopeBindingAssay : assay_type
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "0..1" AssayTypeOntology : assay_type
+    click AssayTypeOntology href "../AssayTypeOntology"
+
 
       TCellReceptorEpitopeBindingAssay : description
 
@@ -220,6 +229,24 @@
 
     TCellReceptorEpitopeBindingAssay --&gt; "0..1" Epitope : epitope
     click Epitope href "../Epitope"
+
+
+      TCellReceptorEpitopeBindingAssay : has_specified_output
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "0..1" AKDataItem : has_specified_output
+    click AKDataItem href "../AKDataItem"
+
+
+      TCellReceptorEpitopeBindingAssay : measurement_category
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "0..1" CategoricalSpecificityEnum : measurement_category
+    click CategoricalSpecificityEnum href "../CategoricalSpecificityEnum"
 
 
       TCellReceptorEpitopeBindingAssay : name
@@ -242,17 +269,6 @@
     click SpecimenProcessing href "../SpecimenProcessing"
 
 
-      TCellReceptorEpitopeBindingAssay : target_entity_type
-
-      TCellReceptorEpitopeBindingAssay : tcell_chains
-
-
-
-
-    TCellReceptorEpitopeBindingAssay --&gt; "*" Chain : tcell_chains
-    click Chain href "../Chain"
-
-
       TCellReceptorEpitopeBindingAssay : tcell_receptors
 
 
@@ -264,19 +280,15 @@
 
       TCellReceptorEpitopeBindingAssay : type
 
-      TCellReceptorEpitopeBindingAssay : unit
-
-      TCellReceptorEpitopeBindingAssay : value
-
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
+<li><a href="../Process/">Process</a><ul>
 <li><a href="../Assay/">Assay</a><ul>
-<li><strong>TCellReceptorEpitopeBindingAssay</strong></li>
+<li><strong>TCellReceptorEpitopeBindingAssay</strong> [ <a href="../TCellReceptorEpitopeSpecificityMeasurement/">TCellReceptorEpitopeSpecificityMeasurement</a>]</li>
 </ul>
 </li>
 </ul>
@@ -310,24 +322,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../tcell_chains/">tcell_chains</a></td>
-<td>* <br/> <a href="../Chain/">Chain</a></td>
-<td>The T cell receptor chains being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The measurement result value</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../unit/">unit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The measurement result value unit</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../specimen/">specimen</a></td>
 <td>0..1 <br/> <a href="../Specimen/">Specimen</a></td>
 <td>The specimen that was input for an assay</td>
@@ -347,14 +341,14 @@
 </tr>
 <tr>
 <td><a href="../assay_type/">assay_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../AssayTypeOntology/">AssayTypeOntology</a></td>
 <td>The specific type of an assay</td>
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
-<td><a href="../target_entity_type/">target_entity_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type of the entity being measured</td>
+<td><a href="../has_specified_output/">has_specified_output</a></td>
+<td>0..1 <br/> <a href="../AKDataItem/">AKDataItem</a></td>
+<td>output data item</td>
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
@@ -374,6 +368,12 @@
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
+</tr>
+<tr>
+<td><a href="../measurement_category/">measurement_category</a></td>
+<td>0..1 <br/> <a href="../CategoricalSpecificityEnum/">CategoricalSpecificityEnum</a></td>
+<td>The measurement result category</td>
+<td><a href="../MeasurementCategory/">MeasurementCategory</a></td>
 </tr>
 </tbody>
 </table>
@@ -408,12 +408,11 @@
 <pre><code class="language-yaml">name: TCellReceptorEpitopeBindingAssay
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
+mixins:
+- TCellReceptorEpitopeSpecificityMeasurement
 slots:
 - epitope
 - tcell_receptors
-- tcell_chains
-- value
-- unit
 class_uri: OBI:1110037
 
 </code></pre>
@@ -423,6 +422,8 @@ class_uri: OBI:1110037
 <pre><code class="language-yaml">name: TCellReceptorEpitopeBindingAssay
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
+mixins:
+- TCellReceptorEpitopeSpecificityMeasurement
 attributes:
   epitope:
     name: epitope
@@ -433,6 +434,7 @@ attributes:
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
     - TCellReceptorEpitopeBindingAssay
+    - TCRpMHCComplex
     range: Epitope
   tcell_receptors:
     name: tcell_receptors
@@ -446,40 +448,6 @@ attributes:
     - TCellReceptorEpitopeBindingAssay
     range: TCellReceptor
     multivalued: true
-  tcell_chains:
-    name: tcell_chains
-    description: The T cell receptor chains being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: tcell_chains
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - AIRRSequencingAssay
-    - TCellReceptorEpitopeBindingAssay
-    range: Chain
-    multivalued: true
-  value:
-    name: value
-    description: The measurement result value
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: value
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    range: string
-  unit:
-    name: unit
-    description: The measurement result value unit
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: unit
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    range: string
   specimen:
     name: specimen
     description: The specimen that was input for an assay
@@ -514,7 +482,9 @@ attributes:
     alias: type
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
+    - LifeEvent
     - Assay
+    - AKDataItem
     - TCellReceptor
     - Epitope
     range: string
@@ -528,18 +498,18 @@ attributes:
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
     - Assay
-    range: string
-  target_entity_type:
-    name: target_entity_type
-    description: The type of the entity being measured
+    range: AssayTypeOntology
+  has_specified_output:
+    name: has_specified_output
+    description: output data item
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: target_entity_type
+    alias: has_specified_output
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
     - Assay
-    - Assessment
-    range: string
+    - InputOutputDataMap
+    range: AKDataItem
   name:
     name: name
     description: A human-readable name for a thing
@@ -575,6 +545,16 @@ attributes:
     - AKObject
     range: uriorcurie
     required: true
+  measurement_category:
+    name: measurement_category
+    description: The measurement result category
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: measurement_category
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - MeasurementCategory
+    range: CategoricalSpecificityEnum
 class_uri: OBI:1110037
 
 </code></pre>

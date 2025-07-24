@@ -210,8 +210,8 @@
 <div class="mermaid"> classDiagram
     class StudyEvent
     click StudyEvent href "../StudyEvent"
-      NamedThing &lt;|-- StudyEvent
-        click NamedThing href "../NamedThing"
+      Process &lt;|-- StudyEvent
+        click Process href "../Process"
 
       StudyEvent : akc_id
 
@@ -234,7 +234,10 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
+<li><a href="../Process/">Process</a><ul>
 <li><strong>StudyEvent</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -300,6 +303,18 @@
 <td>range</td>
 <td><a href="./">StudyEvent</a></td>
 </tr>
+<tr>
+<td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
+<td><a href="../study_event/">study_event</a></td>
+<td>range</td>
+<td><a href="./">StudyEvent</a></td>
+</tr>
+<tr>
+<td><a href="../SpecimenCollection/">SpecimenCollection</a></td>
+<td><a href="../study_event/">study_event</a></td>
+<td>range</td>
+<td><a href="./">StudyEvent</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -333,7 +348,7 @@
 <pre><code class="language-yaml">name: StudyEvent
 description: An event that is part of the study design of an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: Process
 slots:
 - study_arms
 class_uri: BFO:0000015
@@ -345,7 +360,7 @@ class_uri: BFO:0000015
 <pre><code class="language-yaml">name: StudyEvent
 description: An event that is part of the study design of an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: Process
 attributes:
   study_arms:
     name: study_arms

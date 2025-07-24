@@ -213,7 +213,23 @@
 
       AIRRSequencingAssay : assay_type
 
+
+
+
+    AIRRSequencingAssay --&gt; "0..1" AssayTypeOntology : assay_type
+    click AssayTypeOntology href "../AssayTypeOntology"
+
+
       AIRRSequencingAssay : description
+
+      AIRRSequencingAssay : has_specified_output
+
+
+
+
+    AIRRSequencingAssay --&gt; "0..1" AKDataItem : has_specified_output
+    click AKDataItem href "../AKDataItem"
+
 
       AIRRSequencingAssay : name
 
@@ -256,8 +272,6 @@
     click SpecimenProcessing href "../SpecimenProcessing"
 
 
-      AIRRSequencingAssay : target_entity_type
-
       AIRRSequencingAssay : tcell_chains
 
 
@@ -286,7 +300,7 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
+<li><a href="../Process/">Process</a><ul>
 <li><a href="../Assay/">Assay</a><ul>
 <li><strong>AIRRSequencingAssay</strong> [ <a href="../SequencingRun/">SequencingRun</a>]</li>
 </ul>
@@ -389,14 +403,14 @@
 </tr>
 <tr>
 <td><a href="../assay_type/">assay_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../AssayTypeOntology/">AssayTypeOntology</a></td>
 <td>The specific type of an assay</td>
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
-<td><a href="../target_entity_type/">target_entity_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type of the entity being measured</td>
+<td><a href="../has_specified_output/">has_specified_output</a></td>
+<td>0..1 <br/> <a href="../AKDataItem/">AKDataItem</a></td>
+<td>output data item</td>
 <td><a href="../Assay/">Assay</a></td>
 </tr>
 <tr>
@@ -477,7 +491,7 @@ attributes:
     domain_of:
     - AIRRSequencingAssay
     - Repertoire
-    - RepertoireGroupDetail
+    - RepertoireFilter
     - Rearrangement
     - Clone
     - Cell
@@ -504,7 +518,6 @@ attributes:
     owner: AIRRSequencingAssay
     domain_of:
     - AIRRSequencingAssay
-    - TCellReceptorEpitopeBindingAssay
     range: Chain
     multivalued: true
   sequencing_run_id:
@@ -646,7 +659,9 @@ attributes:
     alias: type
     owner: AIRRSequencingAssay
     domain_of:
+    - LifeEvent
     - Assay
+    - AKDataItem
     - TCellReceptor
     - Epitope
     range: string
@@ -660,18 +675,18 @@ attributes:
     owner: AIRRSequencingAssay
     domain_of:
     - Assay
-    range: string
-  target_entity_type:
-    name: target_entity_type
-    description: The type of the entity being measured
+    range: AssayTypeOntology
+  has_specified_output:
+    name: has_specified_output
+    description: output data item
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: target_entity_type
+    alias: has_specified_output
     owner: AIRRSequencingAssay
     domain_of:
     - Assay
-    - Assessment
-    range: string
+    - InputOutputDataMap
+    range: AKDataItem
   name:
     name: name
     description: A human-readable name for a thing

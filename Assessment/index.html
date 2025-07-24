@@ -209,8 +209,10 @@
 <div class="mermaid"> classDiagram
     class Assessment
     click Assessment href "../Assessment"
-      PlannedProcess &lt;|-- Assessment
-        click PlannedProcess href "../PlannedProcess"
+      MeasurementDatum &lt;|-- Assessment
+        click MeasurementDatum href "../MeasurementDatum"
+      Process &lt;|-- Assessment
+        click Process href "../Process"
 
       Assessment : akc_id
 
@@ -227,13 +229,20 @@
     click LifeEvent href "../LifeEvent"
 
 
+      Assessment : measurement_unit
+
+
+
+
+    Assessment --&gt; "0..1" MeasurementUnitOntology : measurement_unit
+    click MeasurementUnitOntology href "../MeasurementUnitOntology"
+
+
+      Assessment : measurement_value
+
       Assessment : name
 
       Assessment : target_entity_type
-
-      Assessment : unit
-
-      Assessment : value
 
 
 </div>
@@ -241,8 +250,8 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
-<li><strong>Assessment</strong></li>
+<li><a href="../Process/">Process</a><ul>
+<li><strong>Assessment</strong> [ <a href="../MeasurementDatum/">MeasurementDatum</a>]</li>
 </ul>
 </li>
 </ul>
@@ -280,16 +289,16 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../value/">value</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../measurement_value/">measurement_value</a></td>
+<td>0..1 <br/> <a href="../Decimal/">Decimal</a></td>
 <td>The measurement result value</td>
-<td>direct</td>
+<td><a href="../MeasurementDatum/">MeasurementDatum</a></td>
 </tr>
 <tr>
-<td><a href="../unit/">unit</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td><a href="../measurement_unit/">measurement_unit</a></td>
+<td>0..1 <br/> <a href="../MeasurementUnitOntology/">MeasurementUnitOntology</a></td>
 <td>The measurement result value unit</td>
-<td>direct</td>
+<td><a href="../MeasurementDatum/">MeasurementDatum</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
@@ -328,12 +337,6 @@
 <td>range</td>
 <td><a href="./">Assessment</a></td>
 </tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td><a href="../assessments/">assessments</a></td>
-<td>range</td>
-<td><a href="./">Assessment</a></td>
-</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -366,13 +369,13 @@
 <details>
 <pre><code class="language-yaml">name: Assessment
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
+mixins:
+- MeasurementDatum
 slots:
 - life_event
 - assessment_type
 - target_entity_type
-- value
-- unit
 class_uri: OBI:0002441
 
 </code></pre>
@@ -381,7 +384,9 @@ class_uri: OBI:0002441
 <details>
 <pre><code class="language-yaml">name: Assessment
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
+mixins:
+- MeasurementDatum
 attributes:
   life_event:
     name: life_event
@@ -391,9 +396,8 @@ attributes:
     alias: life_event
     owner: Assessment
     domain_of:
-    - ImmuneExposure
-    - Specimen
     - Assessment
+    - Specimen
     range: LifeEvent
   assessment_type:
     name: assessment_type
@@ -414,31 +418,28 @@ attributes:
     alias: target_entity_type
     owner: Assessment
     domain_of:
-    - Assay
     - Assessment
     range: string
-  value:
-    name: value
+  measurement_value:
+    name: measurement_value
     description: The measurement result value
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: value
+    alias: measurement_value
     owner: Assessment
     domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    range: string
-  unit:
-    name: unit
+    - MeasurementDatum
+    range: decimal
+  measurement_unit:
+    name: measurement_unit
     description: The measurement result value unit
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: unit
+    alias: measurement_unit
     owner: Assessment
     domain_of:
-    - TCellReceptorEpitopeBindingAssay
-    - Assessment
-    range: string
+    - MeasurementDatum
+    range: MeasurementUnitOntology
   name:
     name: name
     description: A human-readable name for a thing

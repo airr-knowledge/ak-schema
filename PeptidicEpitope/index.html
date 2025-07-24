@@ -359,6 +359,7 @@ attributes:
     alias: source_protein
     owner: PeptidicEpitope
     domain_of:
+    - Antigen
     - PeptidicEpitope
     range: string
   source_organism:
@@ -369,6 +370,7 @@ attributes:
     alias: source_organism
     owner: PeptidicEpitope
     domain_of:
+    - Antigen
     - PeptidicEpitope
     range: string
   type:
@@ -379,7 +381,9 @@ attributes:
     alias: type
     owner: PeptidicEpitope
     domain_of:
+    - LifeEvent
     - Assay
+    - AKDataItem
     - TCellReceptor
     - Epitope
     range: string

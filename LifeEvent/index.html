@@ -206,12 +206,19 @@
 </a>
 <h1 id="class-lifeevent">Class: LifeEvent</h1>
 <p><em>An event in which a study participant participates.</em></p>
-<p>URI: <a href="http://purl.obolibrary.org/obo/BFO_0000015">BFO:0000015</a></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/LifeEvent">ak_schema:LifeEvent</a></p>
 <div class="mermaid"> classDiagram
     class LifeEvent
     click LifeEvent href "../LifeEvent"
-      NamedThing &lt;|-- LifeEvent
-        click NamedThing href "../NamedThing"
+      Process &lt;|-- LifeEvent
+        click Process href "../Process"
+
+
+      LifeEvent &lt;|-- ImmuneExposure
+        click ImmuneExposure href "../ImmuneExposure"
+      LifeEvent &lt;|-- SpecimenCollection
+        click SpecimenCollection href "../SpecimenCollection"
+
 
       LifeEvent : akc_id
 
@@ -261,9 +268,16 @@
 
       LifeEvent : t0_event
 
-      LifeEvent : t0_event_type
+
+
+
+    LifeEvent --&gt; "0..1" LifeEvent : t0_event
+    click LifeEvent href "../LifeEvent"
+
 
       LifeEvent : time_unit
+
+      LifeEvent : type
 
 
 </div>
@@ -271,7 +285,14 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><strong>LifeEvent</strong></li>
+<li><a href="../Process/">Process</a><ul>
+<li><strong>LifeEvent</strong><ul>
+<li><a href="../ImmuneExposure/">ImmuneExposure</a></li>
+<li><a href="../SpecimenCollection/">SpecimenCollection</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -288,6 +309,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../type/">type</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td></td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../participant/">participant</a></td>
 <td>0..1 <br/> <a href="../Participant/">Participant</a></td>
@@ -314,14 +341,8 @@
 </tr>
 <tr>
 <td><a href="../t0_event/">t0_event</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="./">LifeEvent</a></td>
 <td>The T0 event used to specify the time of this life event</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../t0_event_type/">t0_event_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type of the T0 event used to specify the time of this life event</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -380,7 +401,19 @@
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
+<td><a href="./">LifeEvent</a></td>
+<td><a href="../t0_event/">t0_event</a></td>
+<td>range</td>
+<td><a href="./">LifeEvent</a></td>
+</tr>
+<tr>
 <td><a href="../ImmuneExposure/">ImmuneExposure</a></td>
+<td><a href="../t0_event/">t0_event</a></td>
+<td>range</td>
+<td><a href="./">LifeEvent</a></td>
+</tr>
+<tr>
+<td><a href="../Assessment/">Assessment</a></td>
 <td><a href="../life_event/">life_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
@@ -392,8 +425,8 @@
 <td><a href="./">LifeEvent</a></td>
 </tr>
 <tr>
-<td><a href="../Assessment/">Assessment</a></td>
-<td><a href="../life_event/">life_event</a></td>
+<td><a href="../SpecimenCollection/">SpecimenCollection</a></td>
+<td><a href="../t0_event/">t0_event</a></td>
 <td>range</td>
 <td><a href="./">LifeEvent</a></td>
 </tr>
@@ -415,7 +448,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>BFO:0000015</td>
+<td>ak_schema:LifeEvent</td>
 </tr>
 <tr>
 <td>native</td>
@@ -430,18 +463,17 @@
 <pre><code class="language-yaml">name: LifeEvent
 description: An event in which a study participant participates.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: Process
 slots:
+- type
 - participant
 - study_event
 - life_event_type
 - geolocation
 - t0_event
-- t0_event_type
 - start
 - duration
 - time_unit
-class_uri: BFO:0000015
 
 </code></pre>
 </details>
@@ -450,8 +482,22 @@ class_uri: BFO:0000015
 <pre><code class="language-yaml">name: LifeEvent
 description: An event in which a study participant participates.
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: Process
 attributes:
+  type:
+    name: type
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    designates_type: true
+    alias: type
+    owner: LifeEvent
+    domain_of:
+    - LifeEvent
+    - Assay
+    - AKDataItem
+    - TCellReceptor
+    - Epitope
+    range: string
   participant:
     name: participant
     description: The participant of a life event
@@ -505,17 +551,7 @@ attributes:
     owner: LifeEvent
     domain_of:
     - LifeEvent
-    range: string
-  t0_event_type:
-    name: t0_event_type
-    description: The type of the T0 event used to specify the time of this life event
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: t0_event_type
-    owner: LifeEvent
-    domain_of:
-    - LifeEvent
-    range: string
+    range: LifeEvent
   start:
     name: start
     description: The start time of this life event, relative to the T0 event
@@ -582,7 +618,6 @@ attributes:
     - AKObject
     range: uriorcurie
     required: true
-class_uri: BFO:0000015
 
 </code></pre>
 </details>

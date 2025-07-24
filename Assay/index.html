@@ -209,21 +209,39 @@
 <div class="mermaid"> classDiagram
     class Assay
     click Assay href "../Assay"
-      PlannedProcess &lt;|-- Assay
-        click PlannedProcess href "../PlannedProcess"
+      Process &lt;|-- Assay
+        click Process href "../Process"
 
 
       Assay &lt;|-- AIRRSequencingAssay
         click AIRRSequencingAssay href "../AIRRSequencingAssay"
       Assay &lt;|-- TCellReceptorEpitopeBindingAssay
         click TCellReceptorEpitopeBindingAssay href "../TCellReceptorEpitopeBindingAssay"
+      Assay &lt;|-- AntibodyAntigenBindingAssay
+        click AntibodyAntigenBindingAssay href "../AntibodyAntigenBindingAssay"
 
 
       Assay : akc_id
 
       Assay : assay_type
 
+
+
+
+    Assay --&gt; "0..1" AssayTypeOntology : assay_type
+    click AssayTypeOntology href "../AssayTypeOntology"
+
+
       Assay : description
+
+      Assay : has_specified_output
+
+
+
+
+    Assay --&gt; "0..1" AKDataItem : has_specified_output
+    click AKDataItem href "../AKDataItem"
+
 
       Assay : name
 
@@ -245,8 +263,6 @@
     click SpecimenProcessing href "../SpecimenProcessing"
 
 
-      Assay : target_entity_type
-
       Assay : type
 
 
@@ -255,10 +271,11 @@
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
 <li><a href="../NamedThing/">NamedThing</a><ul>
-<li><a href="../PlannedProcess/">PlannedProcess</a><ul>
+<li><a href="../Process/">Process</a><ul>
 <li><strong>Assay</strong><ul>
 <li><a href="../AIRRSequencingAssay/">AIRRSequencingAssay</a> [ <a href="../SequencingRun/">SequencingRun</a>]</li>
-<li><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></li>
+<li><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a> [ <a href="../TCellReceptorEpitopeSpecificityMeasurement/">TCellReceptorEpitopeSpecificityMeasurement</a>]</li>
+<li><a href="../AntibodyAntigenBindingAssay/">AntibodyAntigenBindingAssay</a></li>
 </ul>
 </li>
 </ul>
@@ -299,14 +316,14 @@
 </tr>
 <tr>
 <td><a href="../assay_type/">assay_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../AssayTypeOntology/">AssayTypeOntology</a></td>
 <td>The specific type of an assay</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../target_entity_type/">target_entity_type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The type of the entity being measured</td>
+<td><a href="../has_specified_output/">has_specified_output</a></td>
+<td>0..1 <br/> <a href="../AKDataItem/">AKDataItem</a></td>
+<td>output data item</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -352,12 +369,6 @@
 <td>range</td>
 <td><a href="./">Assay</a></td>
 </tr>
-<tr>
-<td><a href="../Dataset/">Dataset</a></td>
-<td><a href="../assays/">assays</a></td>
-<td>range</td>
-<td><a href="./">Assay</a></td>
-</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -390,13 +401,13 @@
 <details>
 <pre><code class="language-yaml">name: Assay
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 slots:
 - specimen
 - specimen_processing
 - type
 - assay_type
-- target_entity_type
+- has_specified_output
 class_uri: OBI:0000070
 
 </code></pre>
@@ -405,7 +416,7 @@ class_uri: OBI:0000070
 <details>
 <pre><code class="language-yaml">name: Assay
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: PlannedProcess
+is_a: Process
 attributes:
   specimen:
     name: specimen
@@ -441,7 +452,9 @@ attributes:
     alias: type
     owner: Assay
     domain_of:
+    - LifeEvent
     - Assay
+    - AKDataItem
     - TCellReceptor
     - Epitope
     range: string
@@ -455,18 +468,18 @@ attributes:
     owner: Assay
     domain_of:
     - Assay
-    range: string
-  target_entity_type:
-    name: target_entity_type
-    description: The type of the entity being measured
+    range: AssayTypeOntology
+  has_specified_output:
+    name: has_specified_output
+    description: output data item
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: target_entity_type
+    alias: has_specified_output
     owner: Assay
     domain_of:
     - Assay
-    - Assessment
-    range: string
+    - InputOutputDataMap
+    range: AKDataItem
   name:
     name: name
     description: A human-readable name for a thing
