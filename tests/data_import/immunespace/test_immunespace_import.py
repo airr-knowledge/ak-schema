@@ -68,10 +68,11 @@ class TestImmuneSpaceToAKC(unittest.TestCase):
 
         assert len(immune_exposures) == 27  # immune_exposures table length
 
-        life_event_keys = [life_event.akc_id for life_event in i2a.get_life_events(HCC_DB_FILE, STUDY_ID)]
-
-        for immune_exposure in immune_exposures:
-            assert immune_exposure.life_event in life_event_keys
+        ### life event keys no longer in immune exposure object
+        # life_event_keys = [life_event.akc_id for life_event in i2a.get_life_events(HCC_DB_FILE, STUDY_ID)]
+        #
+        # for immune_exposure in immune_exposures:
+        #     assert immune_exposure.life_event in life_event_keys
 
     def test_get_assessments(self):
         result = i2a.get_assessments(HCC_DB_FILE, STUDY_ID)

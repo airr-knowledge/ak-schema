@@ -82,22 +82,16 @@ def get_study_arms(hcc_db, investigation_id):
                      description=str(row["arm_description"])))
 
     return study_arms
+#
+# def safe_get_ontology(ontology_cls, value):
+#     return None if value is None else ontology_cls(value)
 
-def safe_get_ontology(ontology_cls, value):
-    return None if value is None else ontology_cls(value)
-
-    # try:
-    #     ontology = ontology_cls(value)
-    # except ValueError:
-    #     ontology = value
-    #
-    # return ontology
 
 def valid_biological_sex(value):
     if value == 'female':
-        return 'PATO:0020002';
+        return 'PATO:0020002'
     elif value == 'male':
-        return 'PATO:0020001';
+        return 'PATO:0020001'
     else:
         print(f"WARNING: Untranslated biological sex: {value}")
         return None
@@ -134,14 +128,14 @@ def get_participants(hcc_db, immport_db, investigation_id):
         print(row)
         participants.append(Participant(akc_id=format_id(investigation_id, 'participant', row['participant_id']),
                                         study_arm=format_id(investigation_id, 'arm', row['arm_id']),
-                                        species="NCBITAXON:9606",
-                                        biological_sex=valid_biological_sex(row['biological_sex']),
+                                        species="NCBITAXON:9606", # for now always human
+                                        sex=valid_biological_sex(row['biological_sex']),
                                         age=row['start'],
                                         age_unit=row['unit'], # todo AgeUnitOntology dynamic fields doesnt work yet
                                         age_event=row['t0_event_type'], # "Age at Study Day 0" or "Age at enrollment"
-                                        race=safe_get_ontology(RaceOntology, row['race']),
-                                        ethnicity=safe_get_ontology(EthnicityOntology, row['ethnicity']),
-                                        geolocation=safe_get_ontology(GeolocationOntology, row['geolocation'])))
+                                        race=row['race'],
+                                        ethnicity=row['ethnicity'],
+                                        geolocation=row['geolocation'])) # GeolocationOntology,
 
     return participants
 
@@ -216,7 +210,6 @@ def get_investigation_partial(hcc_db, immport_db, investigation_id):
                          investigation_type=Curie("OBI:0000066"), # according to James
                          archival_id=None,
                          inclusion_exclusion_criteria=inc_criteria + exc_criteria,
-                         #exclusion_criteria=exc_criteria,
                          release_date=DateOrDatetime(investigation_table["initial_data_release_date"][0]),
                          update_date=DateOrDatetime(get_udpated_release_data(immport_db, investigation_id)))
 
@@ -271,14 +264,15 @@ def get_life_events(hcc_db, investigation_id):
 
     life_events = []
 
+
     for index, row in events_table.iterrows():
         life_events.append(LifeEvent(akc_id=format_id(investigation_id, 'event', row['event_id']),
                                      participant=format_id(investigation_id, 'participant', row['participant_id']),
                                      study_event=format_id(investigation_id, 'plannedevent', row['planned_visit_id']),
-                                     life_event_type=safe_get_ontology(LifeEventProcessOntology, row['event_type']),
-                                     geolocation=safe_get_ontology(GeolocationOntology, row['geolocation']),
+                                     life_event_type=row['event_type'], # LifeEventProcessOntology
+                                     geolocation=row['geolocation'], # GeolocationOntology
                                      t0_event=row['t0_event'],
-                                     t0_event_type=row['t0_event_type'],
+                                     # t0_event_type=row['t0_event_type'], # field that formerly existed, the value is for instance 'Age at study day 0'
                                      start=row['start'],
                                      duration=row['duration'],
                                      time_unit=row['unit']))
@@ -294,9 +288,9 @@ def get_immune_exposures(hcc_db, investigation_id):
 
     for index, row in immune_exposures_table.iterrows():
         immune_exposures.append(ImmuneExposure(akc_id=format_id(investigation_id, 'immuneexposure', row['event_id']),
-                                               life_event=format_id(investigation_id, 'event', row['event_id']),
-                                               exposure_material=safe_get_ontology(ExposureMaterialOntology, row['exposure_material']),
-                                               disease=safe_get_ontology(DiseaseOntology, row['disease']),
+                                               # life_event=format_id(investigation_id, 'event', row['event_id']),
+                                               exposure_material=row['exposure_material'],
+                                               disease=row['disease'],
                                                disease_stage=row['disease_stage'],
                                                disease_severity=row['disease_severity']))
 
@@ -330,9 +324,8 @@ def get_specimens(hcc_db, investigation_id):
     for index, row in specimen_table.iterrows():
         specimens.append(Specimen(akc_id=format_id(investigation_id, 'specimen', row['specimen_id']),
                                   life_event=format_id(investigation_id, 'event', row['event_id']),
-                                  specimen_type=row['specimen_type'],
-                                  tissue=safe_get_ontology(TissueOntology, row['tissue']),
-                                  process=row['process']))
+                                  # specimen_type=row['specimen_type'], # no longer in AKC, but could be useful somewhere? 'peripheral blood mononuclear cell'
+                                  tissue=row['tissue']))
 
 
     return specimens
