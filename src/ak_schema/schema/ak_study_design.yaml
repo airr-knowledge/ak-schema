@@ -5,7 +5,7 @@ name: ak-schema
 classes:
 
   Investigation:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: OBI:0000066 # investigation
     description: >-
       A scientific investigation.
@@ -55,8 +55,7 @@ classes:
     slots:
       - study_arm
       - species
-      - biological_sex # IEDB gathers this
-      - phenotypic_sex # AIRR gathers this
+      - sex
       - age
       - age_unit # AIRR gathers this
       - age_event # AIRR gathers this
@@ -64,9 +63,12 @@ classes:
       - ethnicity # For human organisms
       - geolocation # at birth
       - strain # For non-human organisms
+    slot_usage:
+      sex:
+        range: BiologicalSexOntology
 
   StudyEvent:
-    is_a: NamedThing
+    is_a: Process
     class_uri: BFO:0000015 # process
     description: >-
       An event that is part of the study design of an investigation.
@@ -74,32 +76,38 @@ classes:
       - study_arms
 
   LifeEvent:
-    is_a: NamedThing
-    class_uri: BFO:0000015 # process
+    is_a: Process
     description: >-
       An event in which a study participant participates.
     slots:
+      - type
       - participant
       - study_event
       - life_event_type
       - geolocation
       - t0_event
-      - t0_event_type
       - start
       - duration
       - time_unit
 
   ImmuneExposure:
-    is_a: NamedThing
-    class_uri: BFO:0000015 # process
+    is_a: LifeEvent
     description: >-
       An event involving the immune system of a study participant.
     slots:
-      - life_event
       - exposure_material
       - disease
       - disease_stage
       - disease_severity
+
+  Assessment:
+    is_a: Process
+    mixins: MeasurementDatum
+    class_uri: OBI:0002441 # physical examination of an organism
+    slots:
+      - life_event
+      - assessment_type
+      - target_entity_type
 
 
 slots:
@@ -185,23 +193,11 @@ slots:
     description: The study arm that a participant is a member of
     slot_uri: RO:0002350 # member of
     range: StudyArm
-#  species:
-#    description: The species of a participant
-#    slot_uri: rdf:type
-#    range: SpeciesOntology
-  biological_sex:
-    description: The biological sex of a participant
-    range: BiologicalSexOntology
-    slot_uri: RO:0000053 # has_characteristic
-  phenotypic_sex:
-    description: The phenotypic sex of a participant
-    range: PhenotypicSexOntology
-    slot_uri: RO:0000053 # has_characteristic
   age:
     description: The age of a participant relative to age_event
 #  age_event:
 #    description: The event to which the age is relative
-#    range: LifeEvent
+#    range: 
 #  race:
 #    description: The race of a participant
 #    range: RaceOntology
@@ -234,8 +230,7 @@ slots:
     slot_uri: rdf:type
   t0_event:
     description: The T0 event used to specify the time of this life event
-  t0_event_type:
-    description: The type of the T0 event used to specify the time of this life event
+    range: LifeEvent
   start:
     description: The start time of this life event, relative to the T0 event
     range: decimal
@@ -262,6 +257,9 @@ slots:
   disease_severity:
     description: The severity of the disease relevant to an immune exposure
     # TODO: range: DiseaseSeverity
+  assessment_type:
+    description: The specific type of an assessment
+    slot_uri: rdf:type
 
 enums:
   InvestigationTypeOntology:
@@ -273,13 +271,6 @@ enums:
       relationship_types:
         - rdfs:subClassOf
 
-#
-#  SpeciesOntology:  # now in ak_airr
-#    permissible_values:
-#      Homo sapiens (human):
-#        meaning: NCBITaxon:9606
-#      Mus musculus (mouse):
-#        meaning: NCBITaxon:10090
   BiologicalSexOntology:
     name: BiologicalSexOntology
     reachable_from:
@@ -288,22 +279,7 @@ enums:
       include_self: true
       relationship_types:
         - rdfs:subClassOf
-#    permissible_values:
-#      female:
-#        meaning: PATO:0020002
-#      male:
-#        meaning: PATO:0020001
-  PhenotypicSexOntology:
-    permissible_values:
-      female:
-        meaning: PATO:0000383
-      male:
-        meaning: PATO:0000384
-      hermaphrodite: #AIRR
-        meaning: PATO:0001340
-      intersex: # AIRR
-      pooled: # AIRR
-      not collected: # AIRR
+
   RaceOntology:
     permissible_values:
       American Indian or Alaska Native:
@@ -444,351 +420,12 @@ enums:
       LDLR+/+:
       LDLR-/-:
       pet shop mouse:
-#   LifeEventProcessOntology:
-#     permissible_values: # these originate from ImmuneSpace
-#       Death:
-#         meaning: UBERON:0000071
-#       Unknown exposure:
-#         meaning: ONTIE:0003310
-#       Occurrence of disease:
-#         meaning: OGMS:0000063
-#       Occurrence of infectious disease:
-#         meaning: ONTIE:0003317
-#       Occurrence of allergic disease:
-#         meaning: ONTIE:0003318
-#       Exposure to substance without evidence for disease:
-#         meaning: ONTIE:0003305
-#       Infection without disease:
-#         meaning: ONTIE:0003424
-#       Documented exposure without evidence for disease:
-#         meaning: ONTIE:0003307
-#         aliases: [documented exposure without evidence for disease]
-#       Exposure with existing immune reactivity without evidence for disease:
-#         meaning: OBI:1110061
-#       Environmental exposure to endemic/ubiquitous agent without evidence for disease:
-#         meaning: ONTIE:0003308
-#       Edministering substance in vivo:
-#         meaning: OBI:0600007
-#       Edministration to cause disease:
-#         meaning: OBI:0003413
-#       Pathogen challenge:
-#         meaning: OBI:0000712
-#       Vaccination:
-#         meaning: VO:0000002
-#       Administration to prevent or reduce disease:
-#         meaning: OBI:0003414
-#       Prophylactic vaccination:
-#         meaning: VO:0005374
-#       Therapeutic vaccination:
-#         meaning: VO:0005373
-#       Transplant/transfusion:
-#         meaning: OGMS:0000143
-#       Transfusion:
-#         meaning: OGMS:0000145
-#       Solid organ transplant:
-#         meaning: OGMS:0000144
-#       No exposure:
-#         meaning: ONTIE:0003309
-#       Specimen collection:
-#         meaning: OBI:0000659
-#       Study enrollment:
-#         meaning: OBI:0600004
-#       Hospitalization:
-#         meaning: OGMS:0000098
-#       Hospital discharge:
-#         meaning:
-#       Treatment:
-#         meaning: OGMS:0000090
-#       Fertilization:
-#         meaning: GO:0009566
-#       Physical examination:
-#         meaning: OGMS:0000057
-#       Recovery: # these remain 'to do' in ImmuneSpace
-#       Birth:
-#       Exposure to infectious agent:
-#   ExposureMaterialOntology:
-#     permissible_values: # following values are from ImmuneSpace:
-#       2008-2009 trivalent influenza vaccine:
-#         meaning: VO:0004809
-#       2011-2012 trivalent inactivated vaccine (A/California/7/09 (H1N1), A/Perth /16/2009 (H3N2), and B/Brisbane/60/2008):
-#         meaning: VO:0004810
-#       ACWY Vax:
-#         meaning: VO:0003138
-#       Ad35.CS.01 malaria vaccine:
-#         meaning: VO:0004993
-#       Alphainfluenzavirus:
-#         meaning: NCBITaxon:197911
-#       BCG Vaccine:
-#         meaning: VO:0000771
-#       Betainfluenzavirus:
-#         meaning: NCBITaxon:197912
-#       Bordetella:
-#         meaning: NCBITaxon:517
-#       Bordetella parapertussis:
-#         meaning: NCBITaxon:519
-#       Bordetella pertussis:
-#         meaning: NCBITaxon:520
-#       Bundibugyo virus:
-#         meaning: NCBITaxon:565995
-#       Chikungunya virus:
-#         meaning: NCBITaxon:37124
-#       Clostridium tetani:
-#         meaning: NCBITaxon:1513
-#       Corynebacterium diphtheriae:
-#         meaning: NCBITaxon:1717
-#       Cytomegalovirus:
-#         meaning: NCBITaxon:10358
-#       Dengue virus:
-#         meaning: NCBITaxon:12637
-#       Diphtheria-Tetanus-Pertussis vaccine:
-#         meaning: VO:0000738
-#       Dryvax:
-#         meaning: VO:0000035
-#       Engerix-B:
-#         meaning: VO:0010711
-#       FluMist:
-#         meaning: VO:0000044
-#       Fluarix:
-#         meaning: VO:0000045
-#       Fluvirin:
-#         meaning: VO:0000046
-#       Fluzone:
-#         meaning: VO:0000047
-#       Gammainfluenzavirus:
-#         meaning: NCBITaxon:197913
-#       H1N1 subtype:
-#         meaning: NCBITaxon:114727
-#       HEPLISAV-B:
-#         meaning: VO:0003152
-#       Hepacivirus C:
-#         meaning: NCBITaxon:11103
-#       Hepatitis B Surface Antigen Vaccine Injection [Heplisav-B]:
-#         meaning: VO:0003270
-#       Hepatitis B Surface Antigen Vaccine Prefilled Syringe [Engerix-B]:
-#         meaning: VO:0003258
-#       Hepatitis B virus:
-#         meaning: NCBITaxon:10407
-#       Hepatitis B virus vaccine:
-#         meaning: VO:0000644
-#       Hepatovirus A:
-#         meaning: NCBITaxon:12092
-#       Human alphaherpesvirus 3:
-#         meaning: NCBITaxon:10335
-#       Human immunodeficiency virus:
-#         meaning: NCBITaxon:12721
-#       Influenza A H1N1 2009 Monovalent Vaccine Novartis:
-#         meaning: VO:0000081
-#       Influenza A virus:
-#         meaning: NCBITaxon:11320
-#       Influenza C virus:
-#         meaning: NCBITaxon:11552
-#       Influenza virus vaccine:
-#         meaning: VO:0000642
-#       LC16m8:
-#         meaning: VO:0004091
-#       MRKAd5 HIV-1 gag/pol/nef:
-#         meaning: VO:0003133
-#       MVA85A:
-#         meaning: VO:0003120
-#       Menactra:
-#         meaning: VO:0000071
-#       Meningococcal Polysaccharide Vaccine, Groups A & C, Menomune A/C:
-#         meaning: VO:0010725
-#       Menveo:
-#         meaning: VO:0001246
-#       Mycobacterium tuberculosis:
-#         meaning: NCBITaxon:1773
-#       Mycobacterium tuberculosis vaccine:
-#         meaning: VO:0000077
-#       Neisseria meningitidis:
-#         meaning: NCBITaxon:487
-#       Neisseria meningitidis vaccine:
-#         meaning: VO:0000053
-#       Orthoebolavirus:
-#         meaning: NCBITaxon:3044781
-#       P. falciparum RTS,S/AS01:
-#         meaning: VO:0003093
-#       Plasmodium:
-#         meaning: NCBITaxon:5820
-#       Plasmodium falciparum:
-#         meaning: NCBITaxon:5833
-#       Plasmodium falciparum vaccine:
-#         meaning: VO:0000087
-#       Pneumovax 23:
-#         meaning: VO:0000088
-#       SARS-CoV-2:
-#         meaning: NCBITaxon:2697049
-#       Smallpox virus vaccine:
-#         meaning: VO:0000651
-#       Stamaril:
-#         meaning: VO:0003139
-#       Streptococcus pneumoniae:
-#         meaning: NCBITaxon:1313
-#       Sudan ebolavirus:
-#         meaning: NCBITaxon:186540
-#       Variola virus:
-#         meaning: NCBITaxon:10255
-#       Vibrio cholerae:
-#         meaning: NCBITaxon:666
-#       West Nile virus:
-#         meaning: NCBITaxon:11082
-#       YF-Vax:
-#         meaning: VO:0000121
-#       Yellow fever 17D vaccine vector:
-#         meaning: VO:0000122
-#       Yellow fever virus:
-#         meaning: NCBITaxon:11089
-#       Zaire ebolavirus:
-#         meaning: NCBITaxon:186538
-#       Zika virus:
-#         meaning: NCBITaxon:64320
-#       Zostavax:
-#         meaning: VO:0000124
-#       bacterial vaccine:
-#         meaning: VO:0000165
-#       bacterium:
-#         meaning: NCBITaxon:2
-#       diphtheria, tetanus and whole cell pertussis vaccine:
-#         meaning: VO:0003106
-#       eukaryote:
-#         meaning: NCBITaxon:2759
-#       live attenuated influenza vaccine:
-#         meaning: VO:0001178
-#       microbial eukaryotic vaccine:
-#         meaning: VO:0005563
-#       organism:
-#         meaning: NCBITaxon:1 # manually converted from COB:0000022
-#       rVSV-EBOV:
-#         meaning: VO:0004660
-#       unidentified influenza virus:
-#         meaning: NCBITaxon:11309
-#       unidentified organism:
-#         meaning: NCBITaxon:32644
-#       vaccine:
-#         meaning: VO:0000001
-#       viral vaccine:
-#         meaning: VO:0000609
-#       virus:
-#         meaning: NCBITaxon:10239
-#       yellow fever virus vaccine:
-#         meaning: VO:0000123
-#       # following values are not from ImmuneSpace:
-#       Human gammaherpesvirus 4:
-#         meaning: NCBITaxon:10376
-#       Human betaherpesvirus 5:
-#         meaning: NCBITaxon:10359
-#   DiseaseOntology: # following values are from ImmuneSpace:
-#     permissible_values:
-#       COVID-19:
-#         meaning: DOID:0080600
-#       Plasmodium falciparum malaria:
-#         meaning: DOID:14067
-#       dengue hemorrhagic fever:
-#         meaning: DOID:12206
-#       dengue disease:
-#         meaning: DOID:12205
-#       chikungunya:
-#         meaning: DOID:0050012
-#       upper respiratory tract disease:
-#         meaning: DOID:974
-#       encephalitis:
-#         meaning: DOID:9588
-#       West Nile fever:
-#         meaning: DOID:2366
-#       Zika fever:
-#         meaning: DOID:0060478
-#       meningitis:
-#         meaning: DOID:9471
-#       healthy:
-#         meaning: ONTIE:0003423
-#       influenza:
-#         meaning: DOID:8469
-#       human cytomegalovirus infection:
-#         meaning: DOID:0080827
-#       end stage renal disease:
-#         meaning: DOID:783
-#       West Nile encephalitis:
-#         meaning: DOID:2365
-#       hepatitis C:
-#         meaning: DOID:1883
-#       meningoencephalitis:
-#         meaning: DOID:10554
-#       urinary tract obstruction:
-#         meaning: DOID:5200
-#       pharyngitis:
-#         meaning: DOID:2275
-#       malaria:
-#         meaning: DOID:12365
-#       tuberculosis:
-#         meaning: DOID:399
-#       avian influenza:
-#         meaning: DOID:4492
-#       herpes zoster:
-#         meaning: DOID:8536
-#       intestinal infectious disease:
-#         meaning: DOID:100
-#       yellow fever:
-#         meaning: DOID:9682
-#       focal segmental glomerulosclerosis:
-#         meaning: DOID:1312
-#       cystic kidney disease:
-#         meaning: DOID:2975
-#       breast cancer:
-#         meaning: DOID:1612
-#       celiac disease:
-#         meaning: DOID:10608
-#       chickenpox:
-#         meaning: DOID:8659
-#       psoriasis:
-#         meaning: DOID:8893
-#       diphtheria:
-#         meaning: DOID:11405
-#       Ebola hemorrhagic fever:
-#         meaning: DOID:4325
-#       childhood type dermatomyositis:
-#         meaning: DOID:14203
-#       cholera:
-#         meaning: DOID:1498
-#       hepatitis B:
-#         meaning: DOID:2043
-#       hepatitis A:
-#         meaning: DOID:12549
-#       pustulosis of palm and sole:
-#         meaning: DOID:4398
-#       meningococcal meningitis:
-#         meaning: DOID:0080176
-#       smallpox:
-#         meaning: DOID:8736
-#       type 2 diabetes mellitus:
-#         meaning: DOID:9352
-#       pertussis:
-#         meaning: DOID:1116
-#       Streptococcus pneumonia:
-#         meaning: DOID:0040084
-#       swine influenza:
-#         meaning: DOID:0050211
-#       tetanus:
-#         meaning: DOID:11338
-#       ulcerative colitis:
-#         meaning: DOID:8577
-#       human immunodeficiency virus infectious disease:
-#         meaning: DOID:526
-#       interstitial nephritis:
-#         meaning: DOID:1063
-#       cystinosis:
-#         meaning: DOID:1064
-#       hemolytic-uremic syndrome:
-#         meaning: DOID:12554
-#       kidney cortex necrosis:
-#         meaning: DOID:2973
-#       food allergy:
-#         meaning: DOID:3044
 
   LifeEventProcessOntology:
     name: LifeEventProcessOntology
     reachable_from:
       source_nodes:
-        - OBI:0000011
+        - BFO:0000015 # process
       include_self: true
       relationship_types:
         - rdfs:subClassOf

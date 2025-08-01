@@ -28,6 +28,7 @@ SHEET_ID = $(LINKML_SCHEMA_GOOGLE_SHEET_ID)
 SHEET_TABS = $(LINKML_SCHEMA_GOOGLE_SHEET_TABS)
 SHEET_MODULE_PATH = $(SOURCE_SCHEMA_DIR)/$(SHEET_MODULE).yaml
 SQL_DDL_PATH = $(DEST)/sqlddl/ak_schema.sql
+POSTGRESQL_DDL_PATH = $(DEST)/sqlddl/ak_postgres_schema.sql
 
 CONFIG_YAML =
 ifdef LINKML_GENERATORS_CONFIG_YAML
@@ -71,6 +72,7 @@ help: status
 	@echo ""
 	@echo "Build:"
 	@echo "make all -- generates all project artefacts"
+	@echo "make sqlddl -- make SQL DDL"
 	@echo "make site -- makes site locally"
 	@echo "make docker -- build docker image"
 	@echo ""
@@ -127,12 +129,20 @@ $(SOURCE_SCHEMA_PATH): src/ak_schema/schema/ak_top.yaml
 	$(RUN) gen-linkml -f yaml --no-materialize-attributes $< -o $@
 
 # generate SQL DDL
-# generate with the global container
 sqlddl: src/ak_schema/schema/ak_top_sqlddl.yaml
 	mkdir -p project/linkml
+	# generate schema without the global container (would be better if gen-sqltables supported a schema subset)
 	$(RUN) gen-linkml -f yaml --no-materialize-attributes $< -o $(SOURCE_SCHEMA_PATH)
 	mkdir -p project/sqlddl
-	$(RUN) gen-sqltables project/linkml/ak_schema.yaml > $(SQL_DDL_PATH)
+	# default dialect
+	$(RUN) gen-sqltables project/linkml/ak_schema.yaml > $(SQL_DDL_PATH).txt
+	tail --lines=+2 $(SQL_DDL_PATH).txt | sed -e 's/DATETIME/TIMESTAMP WITHOUT TIME ZONE/g' | sed -e 's/"Investigation_akc_id"/investigation_akc_id/g' > $(SQL_DDL_PATH)
+	rm -f $(SQL_DDL_PATH).txt
+	# postgresql dialect
+	$(RUN) gen-sqltables --dialect postgresql project/linkml/ak_schema.yaml > $(POSTGRESQL_DDL_PATH).txt
+	tail --lines=+2 $(POSTGRESQL_DDL_PATH).txt > $(POSTGRESQL_DDL_PATH)
+	rm -f $(POSTGRESQL_DDL_PATH).txt
+	# regenerate original schema
 	$(RUN) gen-linkml -f yaml --no-materialize-attributes src/ak_schema/schema/ak_top.yaml -o $(SOURCE_SCHEMA_PATH)
 
 all: site

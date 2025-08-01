@@ -22,7 +22,7 @@ prefixes:
   GAZ: http://purl.obolibrary.org/obo/GAZ_
   GO: http://purl.obolibrary.org/obo/GO_
   IAO: http://purl.obolibrary.org/obo/IAO_
-  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
+  NCBITAXON: http://purl.obolibrary.org/obo/NCBITaxon_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   OBI: http://purl.obolibrary.org/obo/OBI_
   OGMS: http://purl.obolibrary.org/obo/OGMS_
@@ -34,6 +34,7 @@ prefixes:
   UBERON: http://purl.obolibrary.org/obo/UBERON_
   VO: http://purl.obolibrary.org/obo/VO_
   ONTIE: https://ontology.iedb.org/ontology/ONTIE_
+  UNIPROT: http://www.uniprot.org/uniprot/
   iedb_reference: http://www.iedb.org/reference/
   iedb_epitope: http://www.iedb.org/epitope/
   iedb_assay: http://www.iedb.org/assay/
@@ -53,6 +54,7 @@ imports:
   - ak_commons
   - ak_study_design
   - ak_specimens
+  - ak_data
   - ak_biology
   - ak_immune_system
   - ak_simulations

@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-03-13T00:46:36
+# Generation date: 2025-07-21T20:16:11
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -40,7 +40,7 @@ EXO = CurieNamespace('EXO', 'http://purl.obolibrary.org/obo/EXO_')
 GAZ = CurieNamespace('GAZ', 'http://purl.obolibrary.org/obo/GAZ_')
 GO = CurieNamespace('GO', 'http://purl.obolibrary.org/obo/GO_')
 IAO = CurieNamespace('IAO', 'http://purl.obolibrary.org/obo/IAO_')
-NCBITAXON = CurieNamespace('NCBITaxon', 'http://purl.obolibrary.org/obo/NCBITaxon_')
+NCBITAXON = CurieNamespace('NCBITAXON', 'http://purl.obolibrary.org/obo/NCBITaxon_')
 NCIT = CurieNamespace('NCIT', 'http://purl.obolibrary.org/obo/NCIT_')
 OBI = CurieNamespace('OBI', 'http://purl.obolibrary.org/obo/OBI_')
 OGMS = CurieNamespace('OGMS', 'http://purl.obolibrary.org/obo/OGMS_')
@@ -51,6 +51,7 @@ PMID = CurieNamespace('PMID', 'https://pubmed.ncbi.nlm.nih.gov/')
 RO = CurieNamespace('RO', 'http://purl.obolibrary.org/obo/RO_')
 SBO = CurieNamespace('SBO', 'http://purl.obolibrary.org/obo/SBO_')
 UBERON = CurieNamespace('UBERON', 'http://purl.obolibrary.org/obo/UBERON_')
+UNIPROT = CurieNamespace('UNIPROT', 'http://www.uniprot.org/uniprot/')
 VO = CurieNamespace('VO', 'http://purl.obolibrary.org/obo/VO_')
 AK_SCHEMA = CurieNamespace('ak_schema', 'https://github.com/airr-knowledge/ak-schema/')
 BIOLINK = CurieNamespace('biolink', 'https://w3id.org/biolink/')
@@ -235,7 +236,7 @@ class NamedThingAkcId(AKObjectAkcId):
     pass
 
 
-class PlannedProcessAkcId(NamedThingAkcId):
+class ProcessAkcId(NamedThingAkcId):
     pass
 
 
@@ -243,7 +244,7 @@ class PlanSpecificationAkcId(NamedThingAkcId):
     pass
 
 
-class InvestigationAkcId(PlannedProcessAkcId):
+class InvestigationAkcId(ProcessAkcId):
     pass
 
 
@@ -259,15 +260,19 @@ class ParticipantAkcId(NamedThingAkcId):
     pass
 
 
-class StudyEventAkcId(NamedThingAkcId):
+class StudyEventAkcId(ProcessAkcId):
     pass
 
 
-class LifeEventAkcId(NamedThingAkcId):
+class LifeEventAkcId(ProcessAkcId):
     pass
 
 
-class ImmuneExposureAkcId(NamedThingAkcId):
+class ImmuneExposureAkcId(LifeEventAkcId):
+    pass
+
+
+class AssessmentAkcId(ProcessAkcId):
     pass
 
 
@@ -275,11 +280,11 @@ class SpecimenAkcId(NamedThingAkcId):
     pass
 
 
-class SpecimenCollectionAkcId(PlannedProcessAkcId):
+class SpecimenCollectionAkcId(LifeEventAkcId):
     pass
 
 
-class SpecimenProcessingAkcId(PlannedProcessAkcId):
+class SpecimenProcessingAkcId(ProcessAkcId):
     pass
 
 
@@ -291,7 +296,7 @@ class LibraryPreparationProcessingAkcId(SpecimenProcessingAkcId):
     pass
 
 
-class AssayAkcId(PlannedProcessAkcId):
+class AssayAkcId(ProcessAkcId):
     pass
 
 
@@ -303,15 +308,35 @@ class TCellReceptorEpitopeBindingAssayAkcId(AssayAkcId):
     pass
 
 
-class DatasetAkcId(NamedThingAkcId):
+class AntibodyAntigenBindingAssayAkcId(AssayAkcId):
+    pass
+
+
+class AKDataItemAkcId(AKObjectAkcId):
+    pass
+
+
+class AKDataSetAkcId(AKDataItemAkcId):
+    pass
+
+
+class SequenceDataAkcId(AKDataItemAkcId):
+    pass
+
+
+class AIRRSequencingDataAkcId(SequenceDataAkcId):
+    pass
+
+
+class RNATranscriptomeDataAkcId(SequenceDataAkcId):
+    pass
+
+
+class DataTransformationAkcId(ProcessAkcId):
     pass
 
 
 class ConclusionAkcId(NamedThingAkcId):
-    pass
-
-
-class AssessmentAkcId(PlannedProcessAkcId):
     pass
 
 
@@ -323,7 +348,11 @@ class ChainAkcId(AKObjectAkcId):
     pass
 
 
-class TCellReceptorAkcId(AKObjectAkcId):
+class ImmuneReceptorAkcId(AKObjectAkcId):
+    pass
+
+
+class TCellReceptorAkcId(ImmuneReceptorAkcId):
     pass
 
 
@@ -335,7 +364,11 @@ class GammaDeltaTCRAkcId(TCellReceptorAkcId):
     pass
 
 
-class BCellReceptorAkcId(AKObjectAkcId):
+class BCellReceptorAkcId(ImmuneReceptorAkcId):
+    pass
+
+
+class AntigenAkcId(NamedThingAkcId):
     pass
 
 
@@ -344,6 +377,14 @@ class EpitopeAkcId(NamedThingAkcId):
 
 
 class PeptidicEpitopeAkcId(EpitopeAkcId):
+    pass
+
+
+class AntibodyAntigenComplexAkcId(NamedThingAkcId):
+    pass
+
+
+class TCRpMHCComplexAkcId(NamedThingAkcId):
     pass
 
 
@@ -367,7 +408,7 @@ class ModelingFrameworkAkcId(NamedThingAkcId):
     pass
 
 
-class SimulationAkcId(PlannedProcessAkcId):
+class SimulationAkcId(ProcessAkcId):
     pass
 
 
@@ -488,18 +529,18 @@ class NamedThing(AKObject):
 
 
 @dataclass(repr=False)
-class PlannedProcess(NamedThing):
+class Process(NamedThing):
     """
-    A process to realize a plan.
+    A generic process.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PlannedProcess"]
-    class_class_curie: ClassVar[str] = "ak_schema:PlannedProcess"
-    class_name: ClassVar[str] = "PlannedProcess"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PlannedProcess
+    class_class_uri: ClassVar[URIRef] = BFO["0000015"]
+    class_class_curie: ClassVar[str] = "BFO:0000015"
+    class_name: ClassVar[str] = "Process"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Process
 
-    akc_id: Union[str, PlannedProcessAkcId] = None
+    akc_id: Union[str, ProcessAkcId] = None
 
 @dataclass(repr=False)
 class PlanSpecification(NamedThing):
@@ -539,7 +580,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     specimen_collections: Optional[Union[Dict[Union[str, SpecimenCollectionAkcId], Union[dict, "SpecimenCollection"]], List[Union[dict, "SpecimenCollection"]]]] = empty_dict()
     specimen_processings: Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, "SpecimenProcessing"]], List[Union[dict, "SpecimenProcessing"]]]] = empty_dict()
     assays: Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, "Assay"]], List[Union[dict, "Assay"]]]] = empty_dict()
-    datasets: Optional[Union[Dict[Union[str, DatasetAkcId], Union[dict, "Dataset"]], List[Union[dict, "Dataset"]]]] = empty_dict()
+    datasets: Optional[Union[Dict[Union[str, AKDataSetAkcId], Union[dict, "AKDataSet"]], List[Union[dict, "AKDataSet"]]]] = empty_dict()
     conclusions: Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, "Conclusion"]], List[Union[dict, "Conclusion"]]]] = empty_dict()
     chains: Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, "Chain"]], List[Union[dict, "Chain"]]]] = empty_dict()
     ab_tcell_receptors: Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, "AlphaBetaTCR"]], List[Union[dict, "AlphaBetaTCR"]]]] = empty_dict()
@@ -572,7 +613,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
 
         self._normalize_inlined_as_dict(slot_name="assays", slot_type=Assay, key_name="akc_id", keyed=True)
 
-        self._normalize_inlined_as_dict(slot_name="datasets", slot_type=Dataset, key_name="akc_id", keyed=True)
+        self._normalize_inlined_as_dict(slot_name="datasets", slot_type=AKDataSet, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="conclusions", slot_type=Conclusion, key_name="akc_id", keyed=True)
 
@@ -590,7 +631,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
 
 
 @dataclass(repr=False)
-class Investigation(PlannedProcess):
+class Investigation(Process):
     """
     A scientific investigation.
     """
@@ -758,8 +799,7 @@ class Participant(NamedThing):
     akc_id: Union[str, ParticipantAkcId] = None
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
     species: Optional[Union[str, "SpeciesOntology"]] = None
-    biological_sex: Optional[Union[str, "BiologicalSexOntology"]] = None
-    phenotypic_sex: Optional[Union[str, "PhenotypicSexOntology"]] = None
+    sex: Optional[Union[str, "BiologicalSexOntology"]] = None
     age: Optional[str] = None
     age_unit: Optional[Union[str, "AgeUnitOntology"]] = None
     age_event: Optional[str] = None
@@ -776,9 +816,6 @@ class Participant(NamedThing):
 
         if self.study_arm is not None and not isinstance(self.study_arm, StudyArmAkcId):
             self.study_arm = StudyArmAkcId(self.study_arm)
-
-        if self.phenotypic_sex is not None and not isinstance(self.phenotypic_sex, PhenotypicSexOntology):
-            self.phenotypic_sex = PhenotypicSexOntology(self.phenotypic_sex)
 
         if self.age is not None and not isinstance(self.age, str):
             self.age = str(self.age)
@@ -802,7 +839,7 @@ class Participant(NamedThing):
 
 
 @dataclass(repr=False)
-class StudyEvent(NamedThing):
+class StudyEvent(Process):
     """
     An event that is part of the study design of an investigation.
     """
@@ -830,24 +867,24 @@ class StudyEvent(NamedThing):
 
 
 @dataclass(repr=False)
-class LifeEvent(NamedThing):
+class LifeEvent(Process):
     """
     An event in which a study participant participates.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BFO["0000015"]
-    class_class_curie: ClassVar[str] = "BFO:0000015"
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["LifeEvent"]
+    class_class_curie: ClassVar[str] = "ak_schema:LifeEvent"
     class_name: ClassVar[str] = "LifeEvent"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.LifeEvent
 
     akc_id: Union[str, LifeEventAkcId] = None
+    type: Optional[str] = None
     participant: Optional[Union[str, ParticipantAkcId]] = None
     study_event: Optional[Union[str, StudyEventAkcId]] = None
     life_event_type: Optional[Union[str, "LifeEventProcessOntology"]] = None
     geolocation: Optional[Union[str, "GeolocationOntology"]] = None
-    t0_event: Optional[str] = None
-    t0_event_type: Optional[str] = None
+    t0_event: Optional[Union[str, LifeEventAkcId]] = None
     start: Optional[Decimal] = None
     duration: Optional[Decimal] = None
     time_unit: Optional[str] = None
@@ -858,6 +895,8 @@ class LifeEvent(NamedThing):
         if not isinstance(self.akc_id, LifeEventAkcId):
             self.akc_id = LifeEventAkcId(self.akc_id)
 
+        self.type = str(self.class_name)
+
         if self.participant is not None and not isinstance(self.participant, ParticipantAkcId):
             self.participant = ParticipantAkcId(self.participant)
 
@@ -867,11 +906,8 @@ class LifeEvent(NamedThing):
         if self.geolocation is not None and not isinstance(self.geolocation, GeolocationOntology):
             self.geolocation = GeolocationOntology(self.geolocation)
 
-        if self.t0_event is not None and not isinstance(self.t0_event, str):
-            self.t0_event = str(self.t0_event)
-
-        if self.t0_event_type is not None and not isinstance(self.t0_event_type, str):
-            self.t0_event_type = str(self.t0_event_type)
+        if self.t0_event is not None and not isinstance(self.t0_event, LifeEventAkcId):
+            self.t0_event = LifeEventAkcId(self.t0_event)
 
         if self.start is not None and not isinstance(self.start, Decimal):
             self.start = Decimal(self.start)
@@ -885,20 +921,36 @@ class LifeEvent(NamedThing):
         super().__post_init__(**kwargs)
 
 
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls,*args,**kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_name", type_designator_value)
+
+
+            if target_cls is None:
+                raise ValueError(f"Wrong type designator value: class {cls.__name__} "
+                                 f"has no subclass with ['class_name']='{kwargs[type_designator]}'")
+            return super().__new__(target_cls,*args,**kwargs)
+
+
+
 @dataclass(repr=False)
-class ImmuneExposure(NamedThing):
+class ImmuneExposure(LifeEvent):
     """
     An event involving the immune system of a study participant.
     """
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = BFO["0000015"]
-    class_class_curie: ClassVar[str] = "BFO:0000015"
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ImmuneExposure"]
+    class_class_curie: ClassVar[str] = "ak_schema:ImmuneExposure"
     class_name: ClassVar[str] = "ImmuneExposure"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneExposure
 
     akc_id: Union[str, ImmuneExposureAkcId] = None
-    life_event: Optional[Union[str, LifeEventAkcId]] = None
     exposure_material: Optional[Union[str, "ExposureMaterialOntology"]] = None
     disease: Optional[Union[str, "DiseaseOntology"]] = None
     disease_stage: Optional[str] = None
@@ -910,14 +962,49 @@ class ImmuneExposure(NamedThing):
         if not isinstance(self.akc_id, ImmuneExposureAkcId):
             self.akc_id = ImmuneExposureAkcId(self.akc_id)
 
-        if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
-            self.life_event = LifeEventAkcId(self.life_event)
-
         if self.disease_stage is not None and not isinstance(self.disease_stage, str):
             self.disease_stage = str(self.disease_stage)
 
         if self.disease_severity is not None and not isinstance(self.disease_severity, str):
             self.disease_severity = str(self.disease_severity)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class Assessment(Process):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0002441"]
+    class_class_curie: ClassVar[str] = "OBI:0002441"
+    class_name: ClassVar[str] = "Assessment"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Assessment
+
+    akc_id: Union[str, AssessmentAkcId] = None
+    life_event: Optional[Union[str, LifeEventAkcId]] = None
+    assessment_type: Optional[str] = None
+    target_entity_type: Optional[str] = None
+    measurement_value: Optional[Decimal] = None
+    measurement_unit: Optional[Union[str, "MeasurementUnitOntology"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AssessmentAkcId):
+            self.akc_id = AssessmentAkcId(self.akc_id)
+
+        if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
+            self.life_event = LifeEventAkcId(self.life_event)
+
+        if self.assessment_type is not None and not isinstance(self.assessment_type, str):
+            self.assessment_type = str(self.assessment_type)
+
+        if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
+            self.target_entity_type = str(self.target_entity_type)
+
+        if self.measurement_value is not None and not isinstance(self.measurement_value, Decimal):
+            self.measurement_value = Decimal(self.measurement_value)
 
         super().__post_init__(**kwargs)
 
@@ -933,9 +1020,7 @@ class Specimen(NamedThing):
 
     akc_id: Union[str, SpecimenAkcId] = None
     life_event: Optional[Union[str, LifeEventAkcId]] = None
-    specimen_type: Optional[str] = None
     tissue: Optional[Union[str, "TissueOntology"]] = None
-    process: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -946,17 +1031,11 @@ class Specimen(NamedThing):
         if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
             self.life_event = LifeEventAkcId(self.life_event)
 
-        if self.specimen_type is not None and not isinstance(self.specimen_type, str):
-            self.specimen_type = str(self.specimen_type)
-
-        if self.process is not None and not isinstance(self.process, str):
-            self.process = str(self.process)
-
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class SpecimenCollection(PlannedProcess):
+class SpecimenCollection(LifeEvent):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000659"]
@@ -977,10 +1056,11 @@ class SpecimenCollection(PlannedProcess):
             self.specimen = SpecimenAkcId(self.specimen)
 
         super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
-class SpecimenProcessing(PlannedProcess):
+class SpecimenProcessing(Process):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000094"]
@@ -1120,7 +1200,7 @@ class LibraryPreparationProcessing(SpecimenProcessing):
 
 
 @dataclass(repr=False)
-class Assay(PlannedProcess):
+class Assay(Process):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0000070"]
@@ -1132,8 +1212,8 @@ class Assay(PlannedProcess):
     specimen: Optional[Union[str, SpecimenAkcId]] = None
     specimen_processing: Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]] = empty_list()
     type: Optional[str] = None
-    assay_type: Optional[str] = None
-    target_entity_type: Optional[str] = None
+    assay_type: Optional[Union[str, "AssayTypeOntology"]] = None
+    has_specified_output: Optional[Union[str, AKDataItemAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1150,11 +1230,8 @@ class Assay(PlannedProcess):
 
         self.type = str(self.class_name)
 
-        if self.assay_type is not None and not isinstance(self.assay_type, str):
-            self.assay_type = str(self.assay_type)
-
-        if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
-            self.target_entity_type = str(self.target_entity_type)
+        if self.has_specified_output is not None and not isinstance(self.has_specified_output, AKDataItemAkcId):
+            self.has_specified_output = AKDataItemAkcId(self.has_specified_output)
 
         super().__post_init__(**kwargs)
 
@@ -1186,6 +1263,9 @@ class AIRRSequencingAssay(Assay):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRSequencingAssay
 
     akc_id: Union[str, AIRRSequencingAssayAkcId] = None
+    repertoire_id: Optional[str] = None
+    tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
+    tcell_chains: Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]] = empty_list()
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
     sequencing_platform: Optional[str] = None
@@ -1199,6 +1279,17 @@ class AIRRSequencingAssay(Assay):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, AIRRSequencingAssayAkcId):
             self.akc_id = AIRRSequencingAssayAkcId(self.akc_id)
+
+        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
+            self.repertoire_id = str(self.repertoire_id)
+
+        if not isinstance(self.tcell_receptors, list):
+            self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
+        self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
+
+        if not isinstance(self.tcell_chains, list):
+            self.tcell_chains = [self.tcell_chains] if self.tcell_chains is not None else []
+        self.tcell_chains = [v if isinstance(v, ChainAkcId) else ChainAkcId(v) for v in self.tcell_chains]
 
         if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
             self.sequencing_run_id = str(self.sequencing_run_id)
@@ -1237,8 +1328,7 @@ class TCellReceptorEpitopeBindingAssay(Assay):
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
-    value: Optional[str] = None
-    unit: Optional[str] = None
+    measurement_category: Optional[Union[str, "CategoricalSpecificityEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1253,42 +1343,349 @@ class TCellReceptorEpitopeBindingAssay(Assay):
             self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
         self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
 
-        if self.value is not None and not isinstance(self.value, str):
-            self.value = str(self.value)
-
-        if self.unit is not None and not isinstance(self.unit, str):
-            self.unit = str(self.unit)
+        if self.measurement_category is not None and not isinstance(self.measurement_category, CategoricalSpecificityEnum):
+            self.measurement_category = CategoricalSpecificityEnum(self.measurement_category)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
-class Dataset(NamedThing):
+class AntibodyAntigenBindingAssay(Assay):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = IAO["0000100"]
-    class_class_curie: ClassVar[str] = "IAO:0000100"
-    class_name: ClassVar[str] = "Dataset"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Dataset
+    class_class_uri: ClassVar[URIRef] = OBI["0003127"]
+    class_class_curie: ClassVar[str] = "OBI:0003127"
+    class_name: ClassVar[str] = "AntibodyAntigenBindingAssay"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AntibodyAntigenBindingAssay
 
-    akc_id: Union[str, DatasetAkcId] = None
-    assessments: Optional[Union[Union[str, AssessmentAkcId], List[Union[str, AssessmentAkcId]]]] = empty_list()
-    assays: Optional[Union[Union[str, AssayAkcId], List[Union[str, AssayAkcId]]]] = empty_list()
+    akc_id: Union[str, AntibodyAntigenBindingAssayAkcId] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, DatasetAkcId):
-            self.akc_id = DatasetAkcId(self.akc_id)
+        if not isinstance(self.akc_id, AntibodyAntigenBindingAssayAkcId):
+            self.akc_id = AntibodyAntigenBindingAssayAkcId(self.akc_id)
 
-        if not isinstance(self.assessments, list):
-            self.assessments = [self.assessments] if self.assessments is not None else []
-        self.assessments = [v if isinstance(v, AssessmentAkcId) else AssessmentAkcId(v) for v in self.assessments]
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
 
-        if not isinstance(self.assays, list):
-            self.assays = [self.assays] if self.assays is not None else []
-        self.assays = [v if isinstance(v, AssayAkcId) else AssayAkcId(v) for v in self.assays]
+
+class DataItem(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = IAO["0000027"]
+    class_class_curie: ClassVar[str] = "IAO:0000027"
+    class_name: ClassVar[str] = "DataItem"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DataItem
+
+
+@dataclass(repr=False)
+class MeasurementDatum(DataItem):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = IAO["0000032"]
+    class_class_curie: ClassVar[str] = "IAO:0000032"
+    class_name: ClassVar[str] = "MeasurementDatum"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MeasurementDatum
+
+    measurement_value: Optional[Decimal] = None
+    measurement_unit: Optional[Union[str, "MeasurementUnitOntology"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.measurement_value is not None and not isinstance(self.measurement_value, Decimal):
+            self.measurement_value = Decimal(self.measurement_value)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class MeasurementCategory(DataItem):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0001930"]
+    class_class_curie: ClassVar[str] = "OBI:0001930"
+    class_name: ClassVar[str] = "MeasurementCategory"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MeasurementCategory
+
+    measurement_category: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.measurement_category is not None and not isinstance(self.measurement_category, str):
+            self.measurement_category = str(self.measurement_category)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class TCellReceptorEpitopeSpecificityMeasurement(MeasurementCategory):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["TCellReceptorEpitopeSpecificityMeasurement"]
+    class_class_curie: ClassVar[str] = "ak_schema:TCellReceptorEpitopeSpecificityMeasurement"
+    class_name: ClassVar[str] = "TCellReceptorEpitopeSpecificityMeasurement"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement
+
+    measurement_category: Optional[Union[str, "CategoricalSpecificityEnum"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.measurement_category is not None and not isinstance(self.measurement_category, CategoricalSpecificityEnum):
+            self.measurement_category = CategoricalSpecificityEnum(self.measurement_category)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class DataSet(DataItem):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = IAO["0000100"]
+    class_class_curie: ClassVar[str] = "IAO:0000100"
+    class_name: ClassVar[str] = "DataSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DataSet
+
+    data_items: Optional[Union[Union[str, AKObjectAkcId], List[Union[str, AKObjectAkcId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.data_items, list):
+            self.data_items = [self.data_items] if self.data_items is not None else []
+        self.data_items = [v if isinstance(v, AKObjectAkcId) else AKObjectAkcId(v) for v in self.data_items]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class AKDataItem(AKObject):
+    """
+    data item with an akc_id
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AKDataItem"]
+    class_class_curie: ClassVar[str] = "ak_schema:AKDataItem"
+    class_name: ClassVar[str] = "AKDataItem"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AKDataItem
+
+    akc_id: Union[str, AKDataItemAkcId] = None
+    type: Optional[str] = None
+    data_item_types: Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AKDataItemAkcId):
+            self.akc_id = AKDataItemAkcId(self.akc_id)
+
+        self.type = str(self.class_name)
+
+        if not isinstance(self.data_item_types, list):
+            self.data_item_types = [self.data_item_types] if self.data_item_types is not None else []
+        self.data_item_types = [v if isinstance(v, DataItemTypeEnum) else DataItemTypeEnum(v) for v in self.data_item_types]
+
+        super().__post_init__(**kwargs)
+
+
+    def __new__(cls, *args, **kwargs):
+
+        type_designator = "type"
+        if not type_designator in kwargs:
+            return super().__new__(cls,*args,**kwargs)
+        else:
+            type_designator_value = kwargs[type_designator]
+            target_cls = cls._class_for("class_name", type_designator_value)
+
+
+            if target_cls is None:
+                raise ValueError(f"Wrong type designator value: class {cls.__name__} "
+                                 f"has no subclass with ['class_name']='{kwargs[type_designator]}'")
+            return super().__new__(target_cls,*args,**kwargs)
+
+
+
+@dataclass(repr=False)
+class AKDataSet(AKDataItem):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = IAO["0000100"]
+    class_class_curie: ClassVar[str] = "IAO:0000100"
+    class_name: ClassVar[str] = "AKDataSet"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AKDataSet
+
+    akc_id: Union[str, AKDataSetAkcId] = None
+    data_items: Optional[Union[Union[str, AKObjectAkcId], List[Union[str, AKObjectAkcId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AKDataSetAkcId):
+            self.akc_id = AKDataSetAkcId(self.akc_id)
+
+        if not isinstance(self.data_items, list):
+            self.data_items = [self.data_items] if self.data_items is not None else []
+        self.data_items = [v if isinstance(v, AKObjectAkcId) else AKObjectAkcId(v) for v in self.data_items]
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class SequenceData(AKDataItem):
+    """
+    sequence data items are given an akc_id
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0000973"]
+    class_class_curie: ClassVar[str] = "OBI:0000973"
+    class_name: ClassVar[str] = "SequenceData"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SequenceData
+
+    akc_id: Union[str, SequenceDataAkcId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, SequenceDataAkcId):
+            self.akc_id = SequenceDataAkcId(self.akc_id)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class AIRRSequencingData(SequenceData):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRSequencingData"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRSequencingData"
+    class_name: ClassVar[str] = "AIRRSequencingData"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRSequencingData
+
+    akc_id: Union[str, AIRRSequencingDataAkcId] = None
+    sequencing_data_id: Optional[str] = None
+    file_type: Optional[Union[str, "FileTypeEnum"]] = None
+    filename: Optional[str] = None
+    read_direction: Optional[Union[str, "ReadDirectionEnum"]] = None
+    read_length: Optional[int] = None
+    paired_filename: Optional[str] = None
+    paired_read_direction: Optional[Union[str, "PairedReadDirectionEnum"]] = None
+    paired_read_length: Optional[int] = None
+    index_filename: Optional[str] = None
+    index_length: Optional[int] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AIRRSequencingDataAkcId):
+            self.akc_id = AIRRSequencingDataAkcId(self.akc_id)
+
+        if self.sequencing_data_id is not None and not isinstance(self.sequencing_data_id, str):
+            self.sequencing_data_id = str(self.sequencing_data_id)
+
+        if self.file_type is not None and not isinstance(self.file_type, FileTypeEnum):
+            self.file_type = FileTypeEnum(self.file_type)
+
+        if self.filename is not None and not isinstance(self.filename, str):
+            self.filename = str(self.filename)
+
+        if self.read_direction is not None and not isinstance(self.read_direction, ReadDirectionEnum):
+            self.read_direction = ReadDirectionEnum(self.read_direction)
+
+        if self.read_length is not None and not isinstance(self.read_length, int):
+            self.read_length = int(self.read_length)
+
+        if self.paired_filename is not None and not isinstance(self.paired_filename, str):
+            self.paired_filename = str(self.paired_filename)
+
+        if self.paired_read_direction is not None and not isinstance(self.paired_read_direction, PairedReadDirectionEnum):
+            self.paired_read_direction = PairedReadDirectionEnum(self.paired_read_direction)
+
+        if self.paired_read_length is not None and not isinstance(self.paired_read_length, int):
+            self.paired_read_length = int(self.paired_read_length)
+
+        if self.index_filename is not None and not isinstance(self.index_filename, str):
+            self.index_filename = str(self.index_filename)
+
+        if self.index_length is not None and not isinstance(self.index_length, int):
+            self.index_length = int(self.index_length)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class RNATranscriptomeData(SequenceData):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RNATranscriptomeData"]
+    class_class_curie: ClassVar[str] = "ak_schema:RNATranscriptomeData"
+    class_name: ClassVar[str] = "RNATranscriptomeData"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RNATranscriptomeData
+
+    akc_id: Union[str, RNATranscriptomeDataAkcId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, RNATranscriptomeDataAkcId):
+            self.akc_id = RNATranscriptomeDataAkcId(self.akc_id)
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
+class DataTransformation(Process):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0200000"]
+    class_class_curie: ClassVar[str] = "OBI:0200000"
+    class_name: ClassVar[str] = "DataTransformation"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.DataTransformation
+
+    akc_id: Union[str, DataTransformationAkcId] = None
+    was_generated_by: Optional[Union[Union[dict, "InputOutputDataMap"], List[Union[dict, "InputOutputDataMap"]]]] = empty_list()
+    data_transformation_types: Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, DataTransformationAkcId):
+            self.akc_id = DataTransformationAkcId(self.akc_id)
+
+        if not isinstance(self.was_generated_by, list):
+            self.was_generated_by = [self.was_generated_by] if self.was_generated_by is not None else []
+        self.was_generated_by = [v if isinstance(v, InputOutputDataMap) else InputOutputDataMap(**as_dict(v)) for v in self.was_generated_by]
+
+        if not isinstance(self.data_transformation_types, list):
+            self.data_transformation_types = [self.data_transformation_types] if self.data_transformation_types is not None else []
+        self.data_transformation_types = [v if isinstance(v, DataItemTypeEnum) else DataItemTypeEnum(v) for v in self.data_transformation_types]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class InputOutputDataMap(YAMLRoot):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["InputOutputDataMap"]
+    class_class_curie: ClassVar[str] = "ak_schema:InputOutputDataMap"
+    class_name: ClassVar[str] = "InputOutputDataMap"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.InputOutputDataMap
+
+    data_transformation: Optional[Union[str, DataTransformationAkcId]] = None
+    has_specified_input: Optional[Union[str, AKDataItemAkcId]] = None
+    has_specified_output: Optional[Union[str, AKDataItemAkcId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.data_transformation is not None and not isinstance(self.data_transformation, DataTransformationAkcId):
+            self.data_transformation = DataTransformationAkcId(self.data_transformation)
+
+        if self.has_specified_input is not None and not isinstance(self.has_specified_input, AKDataItemAkcId):
+            self.has_specified_input = AKDataItemAkcId(self.has_specified_input)
+
+        if self.has_specified_output is not None and not isinstance(self.has_specified_output, AKDataItemAkcId):
+            self.has_specified_output = AKDataItemAkcId(self.has_specified_output)
 
         super().__post_init__(**kwargs)
 
@@ -1304,7 +1701,7 @@ class Conclusion(NamedThing):
 
     akc_id: Union[str, ConclusionAkcId] = None
     investigations: Optional[Union[Union[str, InvestigationAkcId], List[Union[str, InvestigationAkcId]]]] = empty_list()
-    datasets: Optional[Union[Union[str, DatasetAkcId], List[Union[str, DatasetAkcId]]]] = empty_list()
+    datasets: Optional[Union[Union[str, AKDataSetAkcId], List[Union[str, AKDataSetAkcId]]]] = empty_list()
     result: Optional[str] = None
     data_location_type: Optional[str] = None
     data_location_value: Optional[str] = None
@@ -1323,7 +1720,7 @@ class Conclusion(NamedThing):
 
         if not isinstance(self.datasets, list):
             self.datasets = [self.datasets] if self.datasets is not None else []
-        self.datasets = [v if isinstance(v, DatasetAkcId) else DatasetAkcId(v) for v in self.datasets]
+        self.datasets = [v if isinstance(v, AKDataSetAkcId) else AKDataSetAkcId(v) for v in self.datasets]
 
         if self.result is not None and not isinstance(self.result, str):
             self.result = str(self.result)
@@ -1341,46 +1738,6 @@ class Conclusion(NamedThing):
 
 
 @dataclass(repr=False)
-class Assessment(PlannedProcess):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = OBI["0002441"]
-    class_class_curie: ClassVar[str] = "OBI:0002441"
-    class_name: ClassVar[str] = "Assessment"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Assessment
-
-    akc_id: Union[str, AssessmentAkcId] = None
-    life_event: Optional[Union[str, LifeEventAkcId]] = None
-    assessment_type: Optional[str] = None
-    target_entity_type: Optional[str] = None
-    value: Optional[str] = None
-    unit: Optional[str] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, AssessmentAkcId):
-            self.akc_id = AssessmentAkcId(self.akc_id)
-
-        if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
-            self.life_event = LifeEventAkcId(self.life_event)
-
-        if self.assessment_type is not None and not isinstance(self.assessment_type, str):
-            self.assessment_type = str(self.assessment_type)
-
-        if self.target_entity_type is not None and not isinstance(self.target_entity_type, str):
-            self.target_entity_type = str(self.target_entity_type)
-
-        if self.value is not None and not isinstance(self.value, str):
-            self.value = str(self.value)
-
-        if self.unit is not None and not isinstance(self.unit, str):
-            self.unit = str(self.unit)
-
-        super().__post_init__(**kwargs)
-
-
-@dataclass(repr=False)
 class ImmuneSystem(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1390,15 +1747,6 @@ class ImmuneSystem(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneSystem
 
     akc_id: Union[str, ImmuneSystemAkcId] = None
-
-    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.akc_id):
-            self.MissingRequiredField("akc_id")
-        if not isinstance(self.akc_id, ImmuneSystemAkcId):
-            self.akc_id = ImmuneSystemAkcId(self.akc_id)
-
-        super().__post_init__(**kwargs)
-
 
 @dataclass(repr=False)
 class Chain(AKObject):
@@ -1410,13 +1758,14 @@ class Chain(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Chain
 
     akc_id: Union[str, ChainAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
     aa_hash: Optional[str] = None
     junction_aa_vj_allele_hash: Optional[str] = None
     junction_aa_vj_gene_hash: Optional[str] = None
     complete_vdj: Optional[Union[bool, Bool]] = None
     sequence: Optional[str] = None
     sequence_aa: Optional[str] = None
-    chain_type: Optional[Union[str, "ChainTypeEnum"]] = None
+    locus: Optional[Union[str, "LocusEnum"]] = None
     v_call: Optional[str] = None
     d_call: Optional[str] = None
     j_call: Optional[str] = None
@@ -1456,8 +1805,8 @@ class Chain(AKObject):
         if self.sequence_aa is not None and not isinstance(self.sequence_aa, str):
             self.sequence_aa = str(self.sequence_aa)
 
-        if self.chain_type is not None and not isinstance(self.chain_type, ChainTypeEnum):
-            self.chain_type = ChainTypeEnum(self.chain_type)
+        if self.locus is not None and not isinstance(self.locus, LocusEnum):
+            self.locus = LocusEnum(self.locus)
 
         if self.v_call is not None and not isinstance(self.v_call, str):
             self.v_call = str(self.v_call)
@@ -1505,7 +1854,18 @@ class Chain(AKObject):
 
 
 @dataclass(repr=False)
-class TCellReceptor(AKObject):
+class ImmuneReceptor(AKObject):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["ImmuneReceptor"]
+    class_class_curie: ClassVar[str] = "ak_schema:ImmuneReceptor"
+    class_name: ClassVar[str] = "ImmuneReceptor"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneReceptor
+
+    akc_id: Union[str, ImmuneReceptorAkcId] = None
+
+@dataclass(repr=False)
+class TCellReceptor(ImmuneReceptor):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = GO["0042101"]
@@ -1549,8 +1909,8 @@ class AlphaBetaTCR(TCellReceptor):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AlphaBetaTCR
 
     akc_id: Union[str, AlphaBetaTCRAkcId] = None
-    TRA_chain: Optional[Union[str, ChainAkcId]] = None
-    TRB_chain: Optional[Union[str, ChainAkcId]] = None
+    tra_chain: Optional[Union[str, ChainAkcId]] = None
+    trb_chain: Optional[Union[str, ChainAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1558,11 +1918,11 @@ class AlphaBetaTCR(TCellReceptor):
         if not isinstance(self.akc_id, AlphaBetaTCRAkcId):
             self.akc_id = AlphaBetaTCRAkcId(self.akc_id)
 
-        if self.TRA_chain is not None and not isinstance(self.TRA_chain, ChainAkcId):
-            self.TRA_chain = ChainAkcId(self.TRA_chain)
+        if self.tra_chain is not None and not isinstance(self.tra_chain, ChainAkcId):
+            self.tra_chain = ChainAkcId(self.tra_chain)
 
-        if self.TRB_chain is not None and not isinstance(self.TRB_chain, ChainAkcId):
-            self.TRB_chain = ChainAkcId(self.TRB_chain)
+        if self.trb_chain is not None and not isinstance(self.trb_chain, ChainAkcId):
+            self.trb_chain = ChainAkcId(self.trb_chain)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1578,8 +1938,8 @@ class GammaDeltaTCR(TCellReceptor):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GammaDeltaTCR
 
     akc_id: Union[str, GammaDeltaTCRAkcId] = None
-    TRG_chain: Optional[Union[str, ChainAkcId]] = None
-    TRD_chain: Optional[Union[str, ChainAkcId]] = None
+    trg_chain: Optional[Union[str, ChainAkcId]] = None
+    trd_chain: Optional[Union[str, ChainAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1587,18 +1947,18 @@ class GammaDeltaTCR(TCellReceptor):
         if not isinstance(self.akc_id, GammaDeltaTCRAkcId):
             self.akc_id = GammaDeltaTCRAkcId(self.akc_id)
 
-        if self.TRG_chain is not None and not isinstance(self.TRG_chain, ChainAkcId):
-            self.TRG_chain = ChainAkcId(self.TRG_chain)
+        if self.trg_chain is not None and not isinstance(self.trg_chain, ChainAkcId):
+            self.trg_chain = ChainAkcId(self.trg_chain)
 
-        if self.TRD_chain is not None and not isinstance(self.TRD_chain, ChainAkcId):
-            self.TRD_chain = ChainAkcId(self.TRD_chain)
+        if self.trd_chain is not None and not isinstance(self.trd_chain, ChainAkcId):
+            self.trd_chain = ChainAkcId(self.trd_chain)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
 
 
 @dataclass(repr=False)
-class BCellReceptor(AKObject):
+class BCellReceptor(ImmuneReceptor):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["BCellReceptor"]
@@ -1607,9 +1967,9 @@ class BCellReceptor(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.BCellReceptor
 
     akc_id: Union[str, BCellReceptorAkcId] = None
-    IGH_chain: Optional[Union[str, ChainAkcId]] = None
-    IGK_chain: Optional[Union[str, ChainAkcId]] = None
-    IGL_chain: Optional[Union[str, ChainAkcId]] = None
+    igh_chain: Optional[Union[str, ChainAkcId]] = None
+    igk_chain: Optional[Union[str, ChainAkcId]] = None
+    igl_chain: Optional[Union[str, ChainAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1617,14 +1977,42 @@ class BCellReceptor(AKObject):
         if not isinstance(self.akc_id, BCellReceptorAkcId):
             self.akc_id = BCellReceptorAkcId(self.akc_id)
 
-        if self.IGH_chain is not None and not isinstance(self.IGH_chain, ChainAkcId):
-            self.IGH_chain = ChainAkcId(self.IGH_chain)
+        if self.igh_chain is not None and not isinstance(self.igh_chain, ChainAkcId):
+            self.igh_chain = ChainAkcId(self.igh_chain)
 
-        if self.IGK_chain is not None and not isinstance(self.IGK_chain, ChainAkcId):
-            self.IGK_chain = ChainAkcId(self.IGK_chain)
+        if self.igk_chain is not None and not isinstance(self.igk_chain, ChainAkcId):
+            self.igk_chain = ChainAkcId(self.igk_chain)
 
-        if self.IGL_chain is not None and not isinstance(self.IGL_chain, ChainAkcId):
-            self.IGL_chain = ChainAkcId(self.IGL_chain)
+        if self.igl_chain is not None and not isinstance(self.igl_chain, ChainAkcId):
+            self.igl_chain = ChainAkcId(self.igl_chain)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Antigen(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["1110034"]
+    class_class_curie: ClassVar[str] = "OBI:1110034"
+    class_name: ClassVar[str] = "Antigen"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Antigen
+
+    akc_id: Union[str, AntigenAkcId] = None
+    source_protein: Optional[str] = None
+    source_organism: Optional[str] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AntigenAkcId):
+            self.akc_id = AntigenAkcId(self.akc_id)
+
+        if self.source_protein is not None and not isinstance(self.source_protein, str):
+            self.source_protein = str(self.source_protein)
+
+        if self.source_organism is not None and not isinstance(self.source_organism, str):
+            self.source_organism = str(self.source_organism)
 
         super().__post_init__(**kwargs)
 
@@ -1703,6 +2091,66 @@ class PeptidicEpitope(Epitope):
 
 
 @dataclass(repr=False)
+class AntibodyAntigenComplex(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0003119"]
+    class_class_curie: ClassVar[str] = "OBI:0003119"
+    class_name: ClassVar[str] = "AntibodyAntigenComplex"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AntibodyAntigenComplex
+
+    akc_id: Union[str, AntibodyAntigenComplexAkcId] = None
+    antibody: Optional[Union[str, BCellReceptorAkcId]] = None
+    antigen: Optional[Union[str, AntigenAkcId]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AntibodyAntigenComplexAkcId):
+            self.akc_id = AntibodyAntigenComplexAkcId(self.akc_id)
+
+        if self.antibody is not None and not isinstance(self.antibody, BCellReceptorAkcId):
+            self.antibody = BCellReceptorAkcId(self.antibody)
+
+        if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
+            self.antigen = AntigenAkcId(self.antigen)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class TCRpMHCComplex(NamedThing):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = OBI["0003119"]
+    class_class_curie: ClassVar[str] = "OBI:0003119"
+    class_name: ClassVar[str] = "TCRpMHCComplex"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCRpMHCComplex
+
+    akc_id: Union[str, TCRpMHCComplexAkcId] = None
+    tcell_receptor: Optional[Union[str, TCellReceptorAkcId]] = None
+    epitope: Optional[Union[str, EpitopeAkcId]] = None
+    mhc: Optional[Union[dict, "MHCAllele"]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, TCRpMHCComplexAkcId):
+            self.akc_id = TCRpMHCComplexAkcId(self.akc_id)
+
+        if self.tcell_receptor is not None and not isinstance(self.tcell_receptor, TCellReceptorAkcId):
+            self.tcell_receptor = TCellReceptorAkcId(self.tcell_receptor)
+
+        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
+            self.epitope = EpitopeAkcId(self.epitope)
+
+        if self.mhc is not None and not isinstance(self.mhc, MHCAllele):
+            self.mhc = MHCAllele(**as_dict(self.mhc))
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class Model(NamedThing):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1776,7 +2224,7 @@ class ModelingFramework(NamedThing):
 
 
 @dataclass(repr=False)
-class Simulation(PlannedProcess):
+class Simulation(Process):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = APOLLO_SV["00000070"]
@@ -3197,13 +3645,13 @@ class Repertoire(AIRRStandards):
 
 
 @dataclass(repr=False)
-class RepertoireGroupDetail(AIRRStandards):
+class RepertoireFilter(AIRRStandards):
     _inherited_slots: ClassVar[List[str]] = []
 
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireGroupDetail"]
-    class_class_curie: ClassVar[str] = "ak_schema:RepertoireGroupDetail"
-    class_name: ClassVar[str] = "RepertoireGroupDetail"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireGroupDetail
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["RepertoireFilter"]
+    class_class_curie: ClassVar[str] = "ak_schema:RepertoireFilter"
+    class_name: ClassVar[str] = "RepertoireFilter"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.RepertoireFilter
 
     repertoire_id: Optional[str] = None
     repertoire_description: Optional[str] = None
@@ -3234,7 +3682,7 @@ class RepertoireGroup(AIRRStandards):
     repertoire_group_id: Optional[str] = None
     repertoire_group_name: Optional[str] = None
     repertoire_group_description: Optional[str] = None
-    repertoires: Optional[Union[Union[dict, RepertoireGroupDetail], List[Union[dict, RepertoireGroupDetail]]]] = empty_list()
+    repertoires: Optional[Union[Union[dict, RepertoireFilter], List[Union[dict, RepertoireFilter]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.repertoire_group_id is not None and not isinstance(self.repertoire_group_id, str):
@@ -3248,7 +3696,7 @@ class RepertoireGroup(AIRRStandards):
 
         if not isinstance(self.repertoires, list):
             self.repertoires = [self.repertoires] if self.repertoires is not None else []
-        self.repertoires = [v if isinstance(v, RepertoireGroupDetail) else RepertoireGroupDetail(**as_dict(v)) for v in self.repertoires]
+        self.repertoires = [v if isinstance(v, RepertoireFilter) else RepertoireFilter(**as_dict(v)) for v in self.repertoires]
 
         super().__post_init__(**kwargs)
 
@@ -4183,7 +4631,7 @@ class CellExpression(AIRRStandards):
     repertoire_id: Optional[str] = None
     data_processing_id: Optional[str] = None
     property_type: Optional[str] = None
-    property: Optional[Union[str, "PropertyOntology"]] = None
+    property: Optional[str] = None
     property_value: Optional[float] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -4201,6 +4649,9 @@ class CellExpression(AIRRStandards):
 
         if self.property_type is not None and not isinstance(self.property_type, str):
             self.property_type = str(self.property_type)
+
+        if self.property is not None and not isinstance(self.property, str):
+            self.property = str(self.property)
 
         if self.property_value is not None and not isinstance(self.property_value, float):
             self.property_value = float(self.property_value)
@@ -4271,7 +4722,7 @@ class ReceptorReactivity(AIRRStandards):
 
     ligand_type: Optional[Union[str, "LigandTypeEnum"]] = None
     antigen_type: Optional[Union[str, "AntigenTypeEnum"]] = None
-    antigen: Optional[Union[str, "AntigenOntology"]] = None
+    antigen: Optional[Union[str, AntigenAkcId]] = None
     antigen_source_species: Optional[Union[str, "AntigenSourceSpeciesOntology"]] = None
     peptide_start: Optional[int] = None
     peptide_end: Optional[int] = None
@@ -4291,6 +4742,9 @@ class ReceptorReactivity(AIRRStandards):
 
         if self.antigen_type is not None and not isinstance(self.antigen_type, AntigenTypeEnum):
             self.antigen_type = AntigenTypeEnum(self.antigen_type)
+
+        if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
+            self.antigen = AntigenAkcId(self.antigen)
 
         if self.peptide_start is not None and not isinstance(self.peptide_start, int):
             self.peptide_start = int(self.peptide_start)
@@ -4486,29 +4940,6 @@ class BiologicalSexOntology(EnumDefinitionImpl):
     _defn = EnumDefinition(
         name="BiologicalSexOntology",
     )
-
-class PhenotypicSexOntology(EnumDefinitionImpl):
-
-    female = PermissibleValue(
-        text="female",
-        meaning=PATO["0000383"])
-    male = PermissibleValue(
-        text="male",
-        meaning=PATO["0000384"])
-    hermaphrodite = PermissibleValue(
-        text="hermaphrodite",
-        meaning=PATO["0001340"])
-    intersex = PermissibleValue(text="intersex")
-    pooled = PermissibleValue(text="pooled")
-
-    _defn = EnumDefinition(
-        name="PhenotypicSexOntology",
-    )
-
-    @classmethod
-    def _addvals(cls):
-        setattr(cls, "not collected",
-            PermissibleValue(text="not collected"))
 
 class RaceOntology(EnumDefinitionImpl):
 
@@ -4819,18 +5250,100 @@ class DiseaseStageOntology(EnumDefinitionImpl):
                 text="other disease course",
                 meaning=ONTIE["0003547"]))
 
-class ChainTypeEnum(EnumDefinitionImpl):
-
-    IGH = PermissibleValue(text="IGH")
-    IGK = PermissibleValue(text="IGK")
-    IGL = PermissibleValue(text="IGL")
-    TRA = PermissibleValue(text="TRA")
-    TRB = PermissibleValue(text="TRB")
-    TRD = PermissibleValue(text="TRD")
-    TRG = PermissibleValue(text="TRG")
+class AssayTypeOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="ChainTypeEnum",
+        name="AssayTypeOntology",
+    )
+
+class MeasurementUnitOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="MeasurementUnitOntology",
+    )
+
+class CategoricalSpecificityEnum(EnumDefinitionImpl):
+
+    Positive = PermissibleValue(text="Positive")
+    Negative = PermissibleValue(text="Negative")
+
+    _defn = EnumDefinition(
+        name="CategoricalSpecificityEnum",
+    )
+
+    @classmethod
+    def _addvals(cls):
+        setattr(cls, "Positive-Low",
+            PermissibleValue(text="Positive-Low"))
+        setattr(cls, "Positive-High",
+            PermissibleValue(text="Positive-High"))
+        setattr(cls, "Positive-Intermediate",
+            PermissibleValue(text="Positive-Intermediate"))
+
+class DataItemTypeEnum(EnumDefinitionImpl):
+
+    sequence_reads = PermissibleValue(text="sequence_reads")
+    sequence_quality = PermissibleValue(text="sequence_quality")
+    sequence_forward_paired_reads = PermissibleValue(text="sequence_forward_paired_reads")
+    sequence_reverse_paired_reads = PermissibleValue(text="sequence_reverse_paired_reads")
+    sequence = PermissibleValue(text="sequence")
+    primer_sequence = PermissibleValue(text="primer_sequence")
+    forward_primer_sequence = PermissibleValue(text="forward_primer_sequence")
+    reverse_primer_sequence = PermissibleValue(text="reverse_primer_sequence")
+    barcode_sequence = PermissibleValue(text="barcode_sequence")
+    vdj_sequence_annotation = PermissibleValue(text="vdj_sequence_annotation")
+    quality_statistics = PermissibleValue(text="quality_statistics")
+    annotation_statistics = PermissibleValue(text="annotation_statistics")
+    assigned_clones = PermissibleValue(text="assigned_clones")
+    physiochemical_annotation = PermissibleValue(text="physiochemical_annotation")
+    gene_usage = PermissibleValue(text="gene_usage")
+    gene_combo_usage = PermissibleValue(text="gene_combo_usage")
+    length_distribution = PermissibleValue(text="length_distribution")
+    diversity_profile = PermissibleValue(text="diversity_profile")
+    mutational_profile = PermissibleValue(text="mutational_profile")
+    similarity_comparison = PermissibleValue(text="similarity_comparison")
+    study_arm_comparison = PermissibleValue(text="study_arm_comparison")
+    archive = PermissibleValue(text="archive")
+    compressed = PermissibleValue(text="compressed")
+
+    _defn = EnumDefinition(
+        name="DataItemTypeEnum",
+    )
+
+class DataTransformationTypeEnum(EnumDefinitionImpl):
+
+    merge_reads = PermissibleValue(text="merge_reads")
+    barcode_matching = PermissibleValue(text="barcode_matching")
+    primer_matching = PermissibleValue(text="primer_matching")
+    length_filter = PermissibleValue(text="length_filter")
+    quality_filter = PermissibleValue(text="quality_filter")
+    homopolymer_filter = PermissibleValue(text="homopolymer_filter")
+    collapse_unique_sequences = PermissibleValue(text="collapse_unique_sequences")
+    vdj_annotation = PermissibleValue(text="vdj_annotation")
+    clonal_assignment = PermissibleValue(text="clonal_assignment")
+    germline_allele_inference = PermissibleValue(text="germline_allele_inference")
+    gene_usage = PermissibleValue(text="gene_usage")
+    gene_combo_usage = PermissibleValue(text="gene_combo_usage")
+    length_distribution = PermissibleValue(text="length_distribution")
+    diversity = PermissibleValue(text="diversity")
+    observed_mutations = PermissibleValue(text="observed_mutations")
+
+    _defn = EnumDefinition(
+        name="DataTransformationTypeEnum",
+    )
+
+class AKFileFormatEnum(EnumDefinitionImpl):
+
+    tsv = PermissibleValue(text="tsv")
+    csv = PermissibleValue(text="csv")
+    json = PermissibleValue(text="json")
+    jsonl = PermissibleValue(text="jsonl")
+    airr_tsv = PermissibleValue(text="airr_tsv")
+    airr_json = PermissibleValue(text="airr_json")
+    airr_jsonl = PermissibleValue(text="airr_jsonl")
+
+    _defn = EnumDefinition(
+        name="AKFileFormatEnum",
     )
 
 class ChainSimilarityTypeEnum(EnumDefinitionImpl):
@@ -5204,12 +5717,6 @@ class ExpressionStudyMethodEnum(EnumDefinitionImpl):
         setattr(cls, "single-cell_transcriptome",
             PermissibleValue(text="single-cell_transcriptome"))
 
-class PropertyOntology(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="PropertyOntology",
-    )
-
 class ReceptorTypeEnum(EnumDefinitionImpl):
 
     Ig = PermissibleValue(text="Ig")
@@ -5272,12 +5779,6 @@ class AntigenTypeEnum(EnumDefinitionImpl):
     def _addvals(cls):
         setattr(cls, "non-peptidic",
             PermissibleValue(text="non-peptidic"))
-
-class AntigenOntology(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="AntigenOntology",
-    )
 
 class AntigenSourceSpeciesOntology(EnumDefinitionImpl):
 
@@ -5405,12 +5906,6 @@ slots.investigation = Slot(uri=RO['0000056'], name="investigation", curie=RO.cur
 slots.study_arm = Slot(uri=RO['0002350'], name="study_arm", curie=RO.curie('0002350'),
                    model_uri=AK_SCHEMA.study_arm, domain=None, range=Optional[Union[str, StudyArmAkcId]])
 
-slots.biological_sex = Slot(uri=RO['0000053'], name="biological_sex", curie=RO.curie('0000053'),
-                   model_uri=AK_SCHEMA.biological_sex, domain=None, range=Optional[Union[str, "BiologicalSexOntology"]])
-
-slots.phenotypic_sex = Slot(uri=RO['0000053'], name="phenotypic_sex", curie=RO.curie('0000053'),
-                   model_uri=AK_SCHEMA.phenotypic_sex, domain=None, range=Optional[Union[str, "PhenotypicSexOntology"]])
-
 slots.age = Slot(uri=AK_SCHEMA.age, name="age", curie=AK_SCHEMA.curie('age'),
                    model_uri=AK_SCHEMA.age, domain=None, range=Optional[str])
 
@@ -5433,10 +5928,7 @@ slots.life_event_type = Slot(uri=RDF.type, name="life_event_type", curie=RDF.cur
                    model_uri=AK_SCHEMA.life_event_type, domain=None, range=Optional[Union[str, "LifeEventProcessOntology"]])
 
 slots.t0_event = Slot(uri=AK_SCHEMA.t0_event, name="t0_event", curie=AK_SCHEMA.curie('t0_event'),
-                   model_uri=AK_SCHEMA.t0_event, domain=None, range=Optional[str])
-
-slots.t0_event_type = Slot(uri=AK_SCHEMA.t0_event_type, name="t0_event_type", curie=AK_SCHEMA.curie('t0_event_type'),
-                   model_uri=AK_SCHEMA.t0_event_type, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.t0_event, domain=None, range=Optional[Union[str, LifeEventAkcId]])
 
 slots.start = Slot(uri=AK_SCHEMA.start, name="start", curie=AK_SCHEMA.curie('start'),
                    model_uri=AK_SCHEMA.start, domain=None, range=Optional[Decimal])
@@ -5459,11 +5951,8 @@ slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curi
 slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
                    model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
 
-slots.specimen_type = Slot(uri=RDF.type, name="specimen_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.specimen_type, domain=None, range=Optional[str])
-
-slots.process = Slot(uri=AK_SCHEMA.process, name="process", curie=AK_SCHEMA.curie('process'),
-                   model_uri=AK_SCHEMA.process, domain=None, range=Optional[str])
+slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
+                   model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
 
 slots.specimen = Slot(uri=OBI['0000293'], name="specimen", curie=OBI.curie('0000293'),
                    model_uri=AK_SCHEMA.specimen, domain=None, range=Optional[Union[str, SpecimenAkcId]])
@@ -5472,7 +5961,7 @@ slots.specimen_processing = Slot(uri=BFO['0000051'], name="specimen_processing",
                    model_uri=AK_SCHEMA.specimen_processing, domain=None, range=Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]])
 
 slots.assay_type = Slot(uri=RDF.type, name="assay_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.assay_type, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.assay_type, domain=None, range=Optional[Union[str, "AssayTypeOntology"]])
 
 slots.target_entity_type = Slot(uri=AK_SCHEMA.target_entity_type, name="target_entity_type", curie=AK_SCHEMA.curie('target_entity_type'),
                    model_uri=AK_SCHEMA.target_entity_type, domain=None, range=Optional[str])
@@ -5483,17 +5972,44 @@ slots.epitope = Slot(uri=AK_SCHEMA.epitope, name="epitope", curie=AK_SCHEMA.curi
 slots.tcell_receptors = Slot(uri=AK_SCHEMA.tcell_receptors, name="tcell_receptors", curie=AK_SCHEMA.curie('tcell_receptors'),
                    model_uri=AK_SCHEMA.tcell_receptors, domain=None, range=Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]])
 
-slots.value = Slot(uri=AK_SCHEMA.value, name="value", curie=AK_SCHEMA.curie('value'),
-                   model_uri=AK_SCHEMA.value, domain=None, range=Optional[str])
+slots.tcell_chains = Slot(uri=AK_SCHEMA.tcell_chains, name="tcell_chains", curie=AK_SCHEMA.curie('tcell_chains'),
+                   model_uri=AK_SCHEMA.tcell_chains, domain=None, range=Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]])
 
-slots.unit = Slot(uri=AK_SCHEMA.unit, name="unit", curie=AK_SCHEMA.curie('unit'),
-                   model_uri=AK_SCHEMA.unit, domain=None, range=Optional[str])
+slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measurement_value", curie=AK_SCHEMA.curie('measurement_value'),
+                   model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[Decimal])
 
-slots.assessments = Slot(uri=IAO['0000136'], name="assessments", curie=IAO.curie('0000136'),
-                   model_uri=AK_SCHEMA.assessments, domain=None, range=Optional[Union[Union[str, AssessmentAkcId], List[Union[str, AssessmentAkcId]]]])
+slots.measurement_unit = Slot(uri=AK_SCHEMA.measurement_unit, name="measurement_unit", curie=AK_SCHEMA.curie('measurement_unit'),
+                   model_uri=AK_SCHEMA.measurement_unit, domain=None, range=Optional[Union[str, "MeasurementUnitOntology"]])
+
+slots.measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
+                   model_uri=AK_SCHEMA.measurement_category, domain=None, range=Optional[str])
+
+slots.data_items = Slot(uri=AK_SCHEMA.data_items, name="data_items", curie=AK_SCHEMA.curie('data_items'),
+                   model_uri=AK_SCHEMA.data_items, domain=None, range=Optional[Union[Union[str, AKObjectAkcId], List[Union[str, AKObjectAkcId]]]])
+
+slots.data_item_types = Slot(uri=AK_SCHEMA.data_item_types, name="data_item_types", curie=AK_SCHEMA.curie('data_item_types'),
+                   model_uri=AK_SCHEMA.data_item_types, domain=None, range=Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]])
+
+slots.file_format = Slot(uri=AK_SCHEMA.file_format, name="file_format", curie=AK_SCHEMA.curie('file_format'),
+                   model_uri=AK_SCHEMA.file_format, domain=None, range=Optional[Union[str, "AKFileFormatEnum"]])
+
+slots.data_transformation = Slot(uri=AK_SCHEMA.data_transformation, name="data_transformation", curie=AK_SCHEMA.curie('data_transformation'),
+                   model_uri=AK_SCHEMA.data_transformation, domain=None, range=Optional[Union[str, DataTransformationAkcId]])
+
+slots.has_specified_input = Slot(uri=AK_SCHEMA.has_specified_input, name="has_specified_input", curie=AK_SCHEMA.curie('has_specified_input'),
+                   model_uri=AK_SCHEMA.has_specified_input, domain=None, range=Optional[Union[str, AKDataItemAkcId]])
+
+slots.has_specified_output = Slot(uri=AK_SCHEMA.has_specified_output, name="has_specified_output", curie=AK_SCHEMA.curie('has_specified_output'),
+                   model_uri=AK_SCHEMA.has_specified_output, domain=None, range=Optional[Union[str, AKDataItemAkcId]])
+
+slots.was_generated_by = Slot(uri=AK_SCHEMA.was_generated_by, name="was_generated_by", curie=AK_SCHEMA.curie('was_generated_by'),
+                   model_uri=AK_SCHEMA.was_generated_by, domain=None, range=Optional[Union[Union[dict, InputOutputDataMap], List[Union[dict, InputOutputDataMap]]]])
+
+slots.data_transformation_types = Slot(uri=AK_SCHEMA.data_transformation_types, name="data_transformation_types", curie=AK_SCHEMA.curie('data_transformation_types'),
+                   model_uri=AK_SCHEMA.data_transformation_types, domain=None, range=Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]])
 
 slots.datasets = Slot(uri=AK_SCHEMA.datasets, name="datasets", curie=AK_SCHEMA.curie('datasets'),
-                   model_uri=AK_SCHEMA.datasets, domain=None, range=Optional[Union[Union[str, DatasetAkcId], List[Union[str, DatasetAkcId]]]])
+                   model_uri=AK_SCHEMA.datasets, domain=None, range=Optional[Union[Union[str, AKDataSetAkcId], List[Union[str, AKDataSetAkcId]]]])
 
 slots.result = Slot(uri=AK_SCHEMA.result, name="result", curie=AK_SCHEMA.curie('result'),
                    model_uri=AK_SCHEMA.result, domain=None, range=Optional[str])
@@ -5510,9 +6026,6 @@ slots.organism = Slot(uri=IAO['0000136'], name="organism", curie=IAO.curie('0000
 slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_type", curie=AK_SCHEMA.curie('experiment_type'),
                    model_uri=AK_SCHEMA.experiment_type, domain=None, range=Optional[str])
 
-slots.assessment_type = Slot(uri=RDF.type, name="assessment_type", curie=RDF.curie('type'),
-                   model_uri=AK_SCHEMA.assessment_type, domain=None, range=Optional[str])
-
 slots.aa_hash = Slot(uri=AK_SCHEMA.aa_hash, name="aa_hash", curie=AK_SCHEMA.curie('aa_hash'),
                    model_uri=AK_SCHEMA.aa_hash, domain=None, range=Optional[str])
 
@@ -5528,38 +6041,47 @@ slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie
 slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
                    model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
 
-slots.chain_type = Slot(uri=AK_SCHEMA.chain_type, name="chain_type", curie=AK_SCHEMA.curie('chain_type'),
-                   model_uri=AK_SCHEMA.chain_type, domain=None, range=Optional[Union[str, "ChainTypeEnum"]])
-
 slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curie('isotype'),
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])
 
-slots.IGH_chain = Slot(uri=AK_SCHEMA.IGH_chain, name="IGH_chain", curie=AK_SCHEMA.curie('IGH_chain'),
-                   model_uri=AK_SCHEMA.IGH_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.igh_chain = Slot(uri=AK_SCHEMA.igh_chain, name="igh_chain", curie=AK_SCHEMA.curie('igh_chain'),
+                   model_uri=AK_SCHEMA.igh_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.IGL_chain = Slot(uri=AK_SCHEMA.IGL_chain, name="IGL_chain", curie=AK_SCHEMA.curie('IGL_chain'),
-                   model_uri=AK_SCHEMA.IGL_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.igl_chain = Slot(uri=AK_SCHEMA.igl_chain, name="igl_chain", curie=AK_SCHEMA.curie('igl_chain'),
+                   model_uri=AK_SCHEMA.igl_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.IGK_chain = Slot(uri=AK_SCHEMA.IGK_chain, name="IGK_chain", curie=AK_SCHEMA.curie('IGK_chain'),
-                   model_uri=AK_SCHEMA.IGK_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.igk_chain = Slot(uri=AK_SCHEMA.igk_chain, name="igk_chain", curie=AK_SCHEMA.curie('igk_chain'),
+                   model_uri=AK_SCHEMA.igk_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRA_chain = Slot(uri=AK_SCHEMA.TRA_chain, name="TRA_chain", curie=AK_SCHEMA.curie('TRA_chain'),
-                   model_uri=AK_SCHEMA.TRA_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.tra_chain = Slot(uri=AK_SCHEMA.tra_chain, name="tra_chain", curie=AK_SCHEMA.curie('tra_chain'),
+                   model_uri=AK_SCHEMA.tra_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRB_chain = Slot(uri=AK_SCHEMA.TRB_chain, name="TRB_chain", curie=AK_SCHEMA.curie('TRB_chain'),
-                   model_uri=AK_SCHEMA.TRB_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.trb_chain = Slot(uri=AK_SCHEMA.trb_chain, name="trb_chain", curie=AK_SCHEMA.curie('trb_chain'),
+                   model_uri=AK_SCHEMA.trb_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRD_chain = Slot(uri=AK_SCHEMA.TRD_chain, name="TRD_chain", curie=AK_SCHEMA.curie('TRD_chain'),
-                   model_uri=AK_SCHEMA.TRD_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.trd_chain = Slot(uri=AK_SCHEMA.trd_chain, name="trd_chain", curie=AK_SCHEMA.curie('trd_chain'),
+                   model_uri=AK_SCHEMA.trd_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
-slots.TRG_chain = Slot(uri=AK_SCHEMA.TRG_chain, name="TRG_chain", curie=AK_SCHEMA.curie('TRG_chain'),
-                   model_uri=AK_SCHEMA.TRG_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
+slots.trg_chain = Slot(uri=AK_SCHEMA.trg_chain, name="trg_chain", curie=AK_SCHEMA.curie('trg_chain'),
+                   model_uri=AK_SCHEMA.trg_chain, domain=None, range=Optional[Union[str, ChainAkcId]])
 
 slots.source_protein = Slot(uri=AK_SCHEMA.source_protein, name="source_protein", curie=AK_SCHEMA.curie('source_protein'),
                    model_uri=AK_SCHEMA.source_protein, domain=None, range=Optional[str])
 
 slots.source_organism = Slot(uri=AK_SCHEMA.source_organism, name="source_organism", curie=AK_SCHEMA.curie('source_organism'),
                    model_uri=AK_SCHEMA.source_organism, domain=None, range=Optional[str])
+
+slots.antibody = Slot(uri=AK_SCHEMA.antibody, name="antibody", curie=AK_SCHEMA.curie('antibody'),
+                   model_uri=AK_SCHEMA.antibody, domain=None, range=Optional[Union[str, BCellReceptorAkcId]])
+
+slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curie('antigen'),
+                   model_uri=AK_SCHEMA.antigen, domain=None, range=Optional[Union[str, AntigenAkcId]])
+
+slots.tcell_receptor = Slot(uri=AK_SCHEMA.tcell_receptor, name="tcell_receptor", curie=AK_SCHEMA.curie('tcell_receptor'),
+                   model_uri=AK_SCHEMA.tcell_receptor, domain=None, range=Optional[Union[str, TCellReceptorAkcId]])
+
+slots.mhc = Slot(uri=AK_SCHEMA.mhc, name="mhc", curie=AK_SCHEMA.curie('mhc'),
+                   model_uri=AK_SCHEMA.mhc, domain=None, range=Optional[Union[dict, MHCAllele]])
 
 slots.chain_domain = Slot(uri=AK_SCHEMA.chain_domain, name="chain_domain", curie=AK_SCHEMA.curie('chain_domain'),
                    model_uri=AK_SCHEMA.chain_domain, domain=None, range=Optional[Union[str, ChainAkcId]])
@@ -6228,7 +6750,7 @@ slots.repertoire_group_description = Slot(uri=AK_SCHEMA.repertoire_group_descrip
                    model_uri=AK_SCHEMA.repertoire_group_description, domain=None, range=Optional[str])
 
 slots.repertoires = Slot(uri=AK_SCHEMA.repertoires, name="repertoires", curie=AK_SCHEMA.curie('repertoires'),
-                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Optional[Union[Union[dict, RepertoireGroupDetail], List[Union[dict, RepertoireGroupDetail]]]])
+                   model_uri=AK_SCHEMA.repertoires, domain=None, range=Optional[Union[Union[dict, RepertoireFilter], List[Union[dict, RepertoireFilter]]]])
 
 slots.segment = Slot(uri=AK_SCHEMA.segment, name="segment", curie=AK_SCHEMA.curie('segment'),
                    model_uri=AK_SCHEMA.segment, domain=None, range=Optional[str])
@@ -6711,7 +7233,7 @@ slots.property_type = Slot(uri=RDF.type, name="property_type", curie=RDF.curie('
                    model_uri=AK_SCHEMA.property_type, domain=None, range=Optional[str])
 
 slots.property = Slot(uri=AK_SCHEMA.property, name="property", curie=AK_SCHEMA.curie('property'),
-                   model_uri=AK_SCHEMA.property, domain=None, range=Optional[Union[str, "PropertyOntology"]])
+                   model_uri=AK_SCHEMA.property, domain=None, range=Optional[str])
 
 slots.property_value = Slot(uri=AK_SCHEMA.property_value, name="property_value", curie=AK_SCHEMA.curie('property_value'),
                    model_uri=AK_SCHEMA.property_value, domain=None, range=Optional[float])
@@ -6748,9 +7270,6 @@ slots.ligand_type = Slot(uri=RDF.type, name="ligand_type", curie=RDF.curie('type
 
 slots.antigen_type = Slot(uri=RDF.type, name="antigen_type", curie=RDF.curie('type'),
                    model_uri=AK_SCHEMA.antigen_type, domain=None, range=Optional[Union[str, "AntigenTypeEnum"]])
-
-slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curie('antigen'),
-                   model_uri=AK_SCHEMA.antigen, domain=None, range=Optional[Union[str, "AntigenOntology"]])
 
 slots.antigen_source_species = Slot(uri=AK_SCHEMA.antigen_source_species, name="antigen_source_species", curie=AK_SCHEMA.curie('antigen_source_species'),
                    model_uri=AK_SCHEMA.antigen_source_species, domain=None, range=Optional[Union[str, "AntigenSourceSpeciesOntology"]])
@@ -6822,7 +7341,7 @@ slots.aIRRKnowledgeCommons__assays = Slot(uri=AK_SCHEMA.assays, name="aIRRKnowle
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__assays, domain=None, range=Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, Assay]], List[Union[dict, Assay]]]])
 
 slots.aIRRKnowledgeCommons__datasets = Slot(uri=AK_SCHEMA.datasets, name="aIRRKnowledgeCommons__datasets", curie=AK_SCHEMA.curie('datasets'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__datasets, domain=None, range=Optional[Union[Dict[Union[str, DatasetAkcId], Union[dict, Dataset]], List[Union[dict, Dataset]]]])
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__datasets, domain=None, range=Optional[Union[Dict[Union[str, AKDataSetAkcId], Union[dict, AKDataSet]], List[Union[dict, AKDataSet]]]])
 
 slots.aIRRKnowledgeCommons__conclusions = Slot(uri=AK_SCHEMA.conclusions, name="aIRRKnowledgeCommons__conclusions", curie=AK_SCHEMA.curie('conclusions'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__conclusions, domain=None, range=Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, Conclusion]], List[Union[dict, Conclusion]]]])
@@ -6841,3 +7360,9 @@ slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors
 
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
+
+slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
+                   model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, "BiologicalSexOntology"]])
+
+slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
+                   model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])

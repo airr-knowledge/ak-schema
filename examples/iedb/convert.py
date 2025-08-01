@@ -54,7 +54,6 @@ def akc_id():
     akc_id_last += 1
     return 'AKC:' + str(akc_id_last)
 
-
 def read_double_header(path):
     """Read a TSV file with two header rows,
     and return a list of dictionaries:
@@ -97,7 +96,7 @@ def make_chain(row, chain_name):
         tcr_curie + '-' + chain['Type'],
         sequence=chain['Nucleotide Sequence'],
         sequence_aa=chain['Protein Sequence'],
-        chain_type=chain_types[chain['Type']],
+        locus=chain_types[chain['Type']],
         v_call=chain['Calculated V Gene'] or chain['Curated V Gene'],
         d_call=chain['Calculated D Gene'] or chain['Curated D Gene'],
         j_call=chain['Calculated J Gene'] or chain['Curated J Gene'],
@@ -113,7 +112,6 @@ def make_chain(row, chain_name):
         cdr3_start=chain['CDR3 Start Calculated'] or chain['CDR3 Start Curated'],
         cdr3_end=chain['CDR3 End Calculated'] or chain['CDR3 End Curated']
     )
-
 
 @click.command()
 @click.argument('tcell_path')
@@ -210,49 +208,61 @@ def convert(tcell_path, tcr_path, yaml_path):
             name=f'participant 1 of {assay_id}',
             description=f'study participant for assay {assay_id}',
             species=row['Host']['Name'],
-            biological_sex=row['Host']['Sex'],
+            sex=row['Host']['Sex'],
             race=None,
             ethnicity=None,
             geolocation=None
             # geolocation=row['Host']['Geolocation']
         )
-        life_event_1 = LifeEvent(
+#         life_event_1 = LifeEvent(
+#             akc_id(),
+#             name=f'1st in vivo immune exposure event of assay {assay_id}',
+#             description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event',
+#             participant=participant.akc_id,
+#             study_event=None,
+#             life_event_type=row['1st in vivo Process']['Process Type'],
+#             geolocation=None,
+#             t0_event=None,
+#             start=None,
+#             duration=None,
+#             time_unit=None
+#         )
+#         life_event_2 = LifeEvent(
+#             akc_id(),
+#             name=f'specimen collection event of assay {assay_id}',
+#             description=f'specimen 1 was collected from participant 1 of assay {assay_id} in this event',
+#             participant=participant.akc_id,
+#             study_event=study_event.akc_id,
+#             life_event_type='specimen collection',
+#             geolocation=None,
+#             t0_event=None,
+#             start=None,
+#             duration=None,
+#             time_unit=None
+#         )
+        life_event_1 = ImmuneExposure(
             akc_id(),
-            name=f'1st in vivo immune exposure event of assay {assay_id}',
-            description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event',
+            name=None,
+            description=None,
             participant=participant.akc_id,
-            study_event=None,
             life_event_type=row['1st in vivo Process']['Process Type'],
-            geolocation=None,
-            t0_event=None,
-            t0_event_type=None,
-            start=None,
-            duration=None,
-            time_unit=None
+            exposure_material=row['1st immunogen']['Source Organism'],
+            disease=row['1st in vivo Process']['Disease'],
+            disease_stage=row['1st in vivo Process']['Disease Stage'],
+            disease_severity=None
         )
-        life_event_2 = LifeEvent(
+        life_event_2 = SpecimenCollection(
             akc_id(),
-            name=f'specimen collection event of assay {assay_id}',
-            description=f'specimen 1 was collected from participant 1 of assay {assay_id} in this event',
+            name=None,
+            description=None,
             participant=participant.akc_id,
             study_event=study_event.akc_id,
             life_event_type='specimen collection',
             geolocation=None,
             t0_event=None,
-            t0_event_type=None,
             start=None,
             duration=None,
             time_unit=None
-        )
-        immune_exposure = ImmuneExposure(
-            akc_id(),
-            name=f'details of 1st in vivo immune exposure event of assay {assay_id}',
-            description=f'participant 1 of assay {assay_id} participated in this 1st in vivo immune exposure event, with these details',
-            life_event=life_event_1.akc_id,
-            exposure_material=row['1st immunogen']['Source Organism'],
-            disease=row['1st in vivo Process']['Disease'],
-            disease_stage=row['1st in vivo Process']['Disease Stage'],
-            disease_severity=None
         )
         # assessment
         specimen = Specimen(
@@ -260,9 +270,7 @@ def convert(tcell_path, tcr_path, yaml_path):
             name=f'specimen 1 of assay {assay_id}',
             description=f'specimen 1 from participant 1 of assay {assay_id}',
             life_event=life_event_2.akc_id,
-            specimen_type=None,
-            tissue=row['Effector Cell']['Source Tissue'],
-            process=None
+            tissue=row['Effector Cell']['Source Tissue']
         )
         epitope = PeptidicEpitope(
             curie(row['Epitope']['IEDB IRI']),
@@ -290,15 +298,15 @@ def convert(tcell_path, tcr_path, yaml_path):
             if tcr_row['Receptor']['Type'] == 'alphabeta':
                 tcr = AlphaBetaTCR(
                     tcr_curie,
-                    TRA_chain=chain_1.akc_id if chain_1 else None,
-                    TRB_chain=chain_2.akc_id if chain_2 else None,
+                    tra_chain=chain_1.akc_id if chain_1 else None,
+                    trb_chain=chain_2.akc_id if chain_2 else None,
                 )
                 tcell_receptors.append(tcr)
             elif tcr_row['Receptor']['Type'] == 'gammadelta':
                 tcr = GammaDeltaTCR(
                     tcr_curie,
-                    TRG_chain=chain_1.akc_id if chain_1 else None,
-                    TRD_chain=chain_2.akc_id if chain_2 else None,
+                    trg_chain=chain_1.akc_id if chain_1 else None,
+                    trd_chain=chain_2.akc_id if chain_2 else None,
                 )
                 tcell_receptors.append(tcr)
             else:
@@ -311,15 +319,11 @@ def convert(tcell_path, tcr_path, yaml_path):
             assay_type=curie(row['Assay']['IRI']), # TODO: use label
             epitope=epitope.akc_id,
             tcell_receptors=[t.akc_id for t in tcell_receptors],
-            value=row['Assay']['Qualitative Measurement'],
-            unit=None
+            measurement_category=row['Assay']['Qualitative Measurement']
         )
-        dataset = Dataset(
+        dataset = AKDataSet(
             akc_id(),
-            name=f'dataset 1 about assay {assay_id}',
-            description=f'dataset 1 is about assay {assay_id}',
-            assessments=None,
-            assays=[assay.akc_id]
+            data_items=[assay.akc_id]
         )
         conclusion = Conclusion(
             akc_id(),
@@ -339,7 +343,7 @@ def convert(tcell_path, tcr_path, yaml_path):
         container.participants[participant.akc_id] = participant
         container.life_events[life_event_1.akc_id] = life_event_1
         container.life_events[life_event_2.akc_id] = life_event_2
-        container.immune_exposures[immune_exposure.akc_id] = immune_exposure
+        #container.immune_exposures[immune_exposure.akc_id] = immune_exposure
         # container.assessments[assessment.id] = assessment
         container.specimens[specimen.akc_id] = specimen
         container.assays[assay.akc_id] = assay
@@ -370,17 +374,18 @@ def convert(tcell_path, tcr_path, yaml_path):
                 f.write('\n')
 
     # Write everything to TSV
-    container_fields = [x.name for x in dataclasses.fields(container)]
-    for container_field in container_fields:
-        rows = list(container[container_field].values())
-        if len(rows) < 1:
-            continue
-        with open(f'tsv/{container_field}.tsv', 'w') as f:
-            fieldnames = [x.name for x in dataclasses.fields(rows[0])]
-            w = csv.DictWriter(f, fieldnames, delimiter='\t', lineterminator='\n')
-            w.writeheader()
-            for row in rows:
-                w.writerow(row.__dict__)
+#     container_fields = [x.name for x in dataclasses.fields(container)]
+#     for container_field in container_fields:
+#         rows = list(container[container_field].values())
+#         if len(rows) < 1:
+#             continue
+#         print(f"Writing tsv for {container_field}")
+#         with open(f'tsv/{container_field}.tsv', 'w') as f:
+#             fieldnames = [x.name for x in dataclasses.fields(rows[0])]
+#             w = csv.DictWriter(f, fieldnames, delimiter='\t', lineterminator='\n')
+#             w.writeheader()
+#             for row in rows:
+#                 w.writerow(row.__dict__)
 
 
 if __name__ == "__main__":

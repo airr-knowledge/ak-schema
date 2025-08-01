@@ -61,7 +61,7 @@
       "prefix_reference": "http://purl.obolibrary.org/obo/IAO_"
     },
     {
-      "prefix_prefix": "NCBITaxon",
+      "prefix_prefix": "NCBITAXON",
       "prefix_reference": "http://purl.obolibrary.org/obo/NCBITaxon_"
     },
     {
@@ -107,6 +107,10 @@
     {
       "prefix_prefix": "ONTIE",
       "prefix_reference": "https://ontology.iedb.org/ontology/ONTIE_"
+    },
+    {
+      "prefix_prefix": "UNIPROT",
+      "prefix_reference": "http://www.uniprot.org/uniprot/"
     },
     {
       "prefix_prefix": "iedb_reference",
@@ -471,34 +475,6 @@
       }
     },
     {
-      "name": "PhenotypicSexOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PhenotypicSexOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "permissible_values": [
-        {
-          "text": "female",
-          "meaning": "PATO:0000383"
-        },
-        {
-          "text": "male",
-          "meaning": "PATO:0000384"
-        },
-        {
-          "text": "hermaphrodite",
-          "meaning": "PATO:0001340"
-        },
-        {
-          "text": "intersex"
-        },
-        {
-          "text": "pooled"
-        },
-        {
-          "text": "not collected"
-        }
-      ]
-    },
-    {
       "name": "RaceOntology",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/RaceOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -845,7 +821,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
-          "OBI:0000011"
+          "BFO:0000015"
         ],
         "relationship_types": [
           "rdfs:subClassOf"
@@ -909,30 +885,208 @@
       ]
     },
     {
-      "name": "ChainTypeEnum",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ChainTypeEnum",
+      "name": "AssayTypeOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AssayTypeOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "OBI:0000070"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ]
+      }
+    },
+    {
+      "name": "MeasurementUnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MeasurementUnitOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "UO:0000002"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ],
+        "include_self": true
+      }
+    },
+    {
+      "name": "CategoricalSpecificityEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/CategoricalSpecificityEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "permissible_values": [
         {
-          "text": "IGH"
+          "text": "Positive"
         },
         {
-          "text": "IGK"
+          "text": "Negative"
         },
         {
-          "text": "IGL"
+          "text": "Positive-Low"
         },
         {
-          "text": "TRA"
+          "text": "Positive-High"
         },
         {
-          "text": "TRB"
+          "text": "Positive-Intermediate"
+        }
+      ]
+    },
+    {
+      "name": "DataItemTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DataItemTypeEnum",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "permissible_values": [
+        {
+          "text": "sequence_reads"
         },
         {
-          "text": "TRD"
+          "text": "sequence_quality"
         },
         {
-          "text": "TRG"
+          "text": "sequence_forward_paired_reads"
+        },
+        {
+          "text": "sequence_reverse_paired_reads"
+        },
+        {
+          "text": "sequence"
+        },
+        {
+          "text": "primer_sequence"
+        },
+        {
+          "text": "forward_primer_sequence"
+        },
+        {
+          "text": "reverse_primer_sequence"
+        },
+        {
+          "text": "barcode_sequence"
+        },
+        {
+          "text": "vdj_sequence_annotation"
+        },
+        {
+          "text": "quality_statistics"
+        },
+        {
+          "text": "annotation_statistics"
+        },
+        {
+          "text": "assigned_clones"
+        },
+        {
+          "text": "physiochemical_annotation"
+        },
+        {
+          "text": "gene_usage"
+        },
+        {
+          "text": "gene_combo_usage"
+        },
+        {
+          "text": "length_distribution"
+        },
+        {
+          "text": "diversity_profile"
+        },
+        {
+          "text": "mutational_profile"
+        },
+        {
+          "text": "similarity_comparison"
+        },
+        {
+          "text": "study_arm_comparison"
+        },
+        {
+          "text": "archive"
+        },
+        {
+          "text": "compressed"
+        }
+      ]
+    },
+    {
+      "name": "DataTransformationTypeEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DataTransformationTypeEnum",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "permissible_values": [
+        {
+          "text": "merge_reads"
+        },
+        {
+          "text": "barcode_matching"
+        },
+        {
+          "text": "primer_matching"
+        },
+        {
+          "text": "length_filter"
+        },
+        {
+          "text": "quality_filter"
+        },
+        {
+          "text": "homopolymer_filter"
+        },
+        {
+          "text": "collapse_unique_sequences"
+        },
+        {
+          "text": "vdj_annotation"
+        },
+        {
+          "text": "clonal_assignment"
+        },
+        {
+          "text": "germline_allele_inference"
+        },
+        {
+          "text": "gene_usage"
+        },
+        {
+          "text": "gene_combo_usage"
+        },
+        {
+          "text": "length_distribution"
+        },
+        {
+          "text": "diversity"
+        },
+        {
+          "text": "observed_mutations"
+        }
+      ]
+    },
+    {
+      "name": "AKFileFormatEnum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AKFileFormatEnum",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "FileTypeEnum",
+      "permissible_values": [
+        {
+          "text": "tsv"
+        },
+        {
+          "text": "csv"
+        },
+        {
+          "text": "json"
+        },
+        {
+          "text": "jsonl"
+        },
+        {
+          "text": "airr_tsv"
+        },
+        {
+          "text": "airr_json"
+        },
+        {
+          "text": "airr_jsonl"
         }
       ]
     },
@@ -1550,11 +1704,6 @@
       ]
     },
     {
-      "name": "PropertyOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PropertyOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema"
-    },
-    {
       "name": "ReceptorTypeEnum",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorTypeEnum",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -1642,11 +1791,6 @@
           "text": "non-peptidic"
         }
       ]
-    },
-    {
-      "name": "AntigenOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntigenOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema"
     },
     {
       "name": "AntigenSourceSpeciesOntology",
@@ -1815,7 +1959,9 @@
       "designates_type": true,
       "owner": "Epitope",
       "domain_of": [
+        "LifeEvent",
         "Assay",
+        "AKDataItem",
         "TCellReceptor",
         "Epitope"
       ],
@@ -1907,10 +2053,9 @@
       "description": "The assays performed by the investigation",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/assays",
-      "owner": "Dataset",
+      "owner": "Investigation",
       "domain_of": [
-        "Investigation",
-        "Dataset"
+        "Investigation"
       ],
       "range": "Assay",
       "multivalued": true,
@@ -2128,38 +2273,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "biological_sex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/biological_sex",
-      "description": "The biological sex of a participant",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000053"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000053",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "BiologicalSexOntology",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "phenotypic_sex",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/phenotypic_sex",
-      "description": "The phenotypic sex of a participant",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/RO_0000053"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/RO_0000053",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
-      "range": "PhenotypicSexOntology",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "age",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/age",
       "description": "The age of a participant relative to age_event",
@@ -2271,20 +2384,7 @@
       "domain_of": [
         "LifeEvent"
       ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "t0_event_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/t0_event_type",
-      "description": "The type of the T0 event used to specify the time of this life event",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/t0_event_type",
-      "owner": "LifeEvent",
-      "domain_of": [
-        "LifeEvent"
-      ],
-      "range": "string",
+      "range": "LifeEvent",
       "@type": "SlotDefinition"
     },
     {
@@ -2332,11 +2432,10 @@
       "description": "The life event corresponding to an immune exposure",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_event",
-      "owner": "Assessment",
+      "owner": "Specimen",
       "domain_of": [
-        "ImmuneExposure",
-        "Specimen",
-        "Assessment"
+        "Assessment",
+        "Specimen"
       ],
       "range": "LifeEvent",
       "@type": "SlotDefinition"
@@ -2384,30 +2483,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "specimen_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/specimen_type",
-      "description": "The type of this specimen",
+      "name": "assessment_type",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessment_type",
+      "description": "The specific type of an assessment",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
       ],
       "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Specimen",
+      "owner": "Assessment",
       "domain_of": [
-        "Specimen"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "process",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/process",
-      "description": "The type of specimen collection process that resulted in this specimen",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/process",
-      "owner": "Specimen",
-      "domain_of": [
-        "Specimen"
+        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -2460,7 +2546,7 @@
       "domain_of": [
         "Assay"
       ],
-      "range": "string",
+      "range": "AssayTypeOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -2471,7 +2557,6 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/target_entity_type",
       "owner": "Assessment",
       "domain_of": [
-        "Assay",
         "Assessment"
       ],
       "range": "string",
@@ -2483,9 +2568,10 @@
       "description": "The epitope being measured",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
-      "owner": "TCellReceptorEpitopeBindingAssay",
+      "owner": "TCRpMHCComplex",
       "domain_of": [
-        "TCellReceptorEpitopeBindingAssay"
+        "TCellReceptorEpitopeBindingAssay",
+        "TCRpMHCComplex"
       ],
       "range": "Epitope",
       "@type": "SlotDefinition"
@@ -2498,6 +2584,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptors",
       "owner": "TCellReceptorEpitopeBindingAssay",
       "domain_of": [
+        "AIRRSequencingAssay",
         "TCellReceptorEpitopeBindingAssay"
       ],
       "range": "TCellReceptor",
@@ -2505,47 +2592,161 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "value",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/value",
+      "name": "tcell_chains",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
+      "description": "The T cell receptor chains being measured",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
+      "owner": "AIRRSequencingAssay",
+      "domain_of": [
+        "AIRRSequencingAssay"
+      ],
+      "range": "Chain",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "measurement_value",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_value",
       "description": "The measurement result value",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/value",
-      "owner": "Assessment",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/measurement_value",
+      "owner": "MeasurementDatum",
       "domain_of": [
-        "TCellReceptorEpitopeBindingAssay",
-        "Assessment"
+        "MeasurementDatum"
       ],
-      "range": "string",
+      "range": "decimal",
       "@type": "SlotDefinition"
     },
     {
-      "name": "unit",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/unit",
+      "name": "measurement_unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_unit",
       "description": "The measurement result value unit",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/unit",
-      "owner": "Assessment",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/measurement_unit",
+      "owner": "MeasurementDatum",
       "domain_of": [
-        "TCellReceptorEpitopeBindingAssay",
-        "Assessment"
+        "MeasurementDatum"
+      ],
+      "range": "MeasurementUnitOntology",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "measurement_category",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "description": "The measurement result category",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "owner": "MeasurementCategory",
+      "domain_of": [
+        "MeasurementCategory"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "assessments",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessments",
-      "description": "The assessment that a dataset is about",
+      "name": "data_items",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_items",
+      "description": "set of data items",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://purl.obolibrary.org/obo/IAO_0000136"
-      ],
-      "slot_uri": "http://purl.obolibrary.org/obo/IAO_0000136",
-      "owner": "Dataset",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/data_items",
+      "owner": "DataSet",
       "domain_of": [
-        "Dataset"
+        "DataSet"
       ],
-      "range": "Assessment",
+      "range": "AKObject",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "data_item_types",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_item_types",
+      "description": "semantic types of the data",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/data_item_types",
+      "owner": "AKDataItem",
+      "domain_of": [
+        "AKDataItem"
+      ],
+      "range": "DataItemTypeEnum",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "file_format",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/file_format",
+      "description": "Format and organization of the data in the file",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/file_format",
+      "range": "AKFileFormatEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "data_transformation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_transformation",
+      "description": "a process that transforms input data into output data",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/data_transformation",
+      "owner": "InputOutputDataMap",
+      "domain_of": [
+        "InputOutputDataMap"
+      ],
+      "range": "DataTransformation",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_specified_input",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/has_specified_input",
+      "description": "input data item",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/has_specified_input",
+      "owner": "InputOutputDataMap",
+      "domain_of": [
+        "InputOutputDataMap"
+      ],
+      "range": "AKDataItem",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "has_specified_output",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/has_specified_output",
+      "description": "output data item",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/has_specified_output",
+      "owner": "InputOutputDataMap",
+      "domain_of": [
+        "Assay",
+        "InputOutputDataMap"
+      ],
+      "range": "AKDataItem",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "was_generated_by",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/was_generated_by",
+      "description": "direct provenance link of one entity (input) to another (output) for a data transformation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/was_generated_by",
+      "owner": "DataTransformation",
+      "domain_of": [
+        "DataTransformation"
+      ],
+      "range": "InputOutputDataMap",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "data_transformation_types",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/data_transformation_types",
+      "description": "semantic types of the data transformation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/data_transformation_types",
+      "owner": "DataTransformation",
+      "domain_of": [
+        "DataTransformation"
+      ],
+      "range": "DataItemTypeEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -2559,7 +2760,7 @@
       "domain_of": [
         "Conclusion"
       ],
-      "range": "Dataset",
+      "range": "AKDataSet",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -2627,22 +2828,6 @@
       "owner": "Conclusion",
       "domain_of": [
         "Conclusion"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "assessment_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/assessment_type",
-      "description": "The specific type of an assessment",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
-      ],
-      "slot_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-      "owner": "Assessment",
-      "domain_of": [
-        "Assessment"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -2716,19 +2901,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "chain_type",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/chain_type",
-      "description": "Gene locus (chain type).",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/chain_type",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
-      "range": "ChainTypeEnum",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "isotype",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/isotype",
       "description": "The isotype of the chain",
@@ -2738,11 +2910,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "IGH_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/IGH_chain",
+      "name": "igh_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/igh_chain",
       "description": "IG heavy chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/IGH_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/igh_chain",
       "owner": "BCellReceptor",
       "domain_of": [
         "BCellReceptor"
@@ -2751,11 +2923,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "IGL_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/IGL_chain",
+      "name": "igl_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/igl_chain",
       "description": "IG lambda light chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/IGL_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/igl_chain",
       "owner": "BCellReceptor",
       "domain_of": [
         "BCellReceptor"
@@ -2764,11 +2936,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "IGK_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/IGK_chain",
+      "name": "igk_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/igk_chain",
       "description": "IG kappa light chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/IGK_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/igk_chain",
       "owner": "BCellReceptor",
       "domain_of": [
         "BCellReceptor"
@@ -2777,11 +2949,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRA_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRA_chain",
+      "name": "tra_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tra_chain",
       "description": "T cell receptor alpha chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRA_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tra_chain",
       "owner": "AlphaBetaTCR",
       "domain_of": [
         "AlphaBetaTCR"
@@ -2790,11 +2962,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRB_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRB_chain",
+      "name": "trb_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/trb_chain",
       "description": "T cell receptor beta chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRB_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/trb_chain",
       "owner": "AlphaBetaTCR",
       "domain_of": [
         "AlphaBetaTCR"
@@ -2803,11 +2975,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRD_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRD_chain",
+      "name": "trd_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/trd_chain",
       "description": "T cell receptor delta chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRD_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/trd_chain",
       "owner": "GammaDeltaTCR",
       "domain_of": [
         "GammaDeltaTCR"
@@ -2816,11 +2988,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "TRG_chain",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TRG_chain",
+      "name": "trg_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/trg_chain",
       "description": "T cell receptor gamma chain",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/TRG_chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/trg_chain",
       "owner": "GammaDeltaTCR",
       "domain_of": [
         "GammaDeltaTCR"
@@ -2836,6 +3008,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_protein",
       "owner": "PeptidicEpitope",
       "domain_of": [
+        "Antigen",
         "PeptidicEpitope"
       ],
       "range": "string",
@@ -2849,9 +3022,64 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
       "owner": "PeptidicEpitope",
       "domain_of": [
+        "Antigen",
         "PeptidicEpitope"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibody",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antibody",
+      "description": "B cell receptor, immunoglobulin antibody",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody",
+      "owner": "AntibodyAntigenComplex",
+      "domain_of": [
+        "AntibodyAntigenComplex"
+      ],
+      "range": "BCellReceptor",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antigen",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
+      "description": "A material entity with antigen role",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
+      "owner": "ReceptorReactivity",
+      "domain_of": [
+        "AntibodyAntigenComplex",
+        "ReceptorReactivity"
+      ],
+      "range": "Antigen",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tcell_receptor",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptor",
+      "description": "T cell receptor",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptor",
+      "owner": "TCRpMHCComplex",
+      "domain_of": [
+        "TCRpMHCComplex"
+      ],
+      "range": "TCellReceptor",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "mhc",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc",
+      "description": "Major histocompatibility complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc",
+      "owner": "TCRpMHCComplex",
+      "domain_of": [
+        "TCRpMHCComplex"
+      ],
+      "range": "MHCAllele",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3864,6 +4092,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/locus",
       "owner": "Rearrangement",
       "domain_of": [
+        "Chain",
         "AlleleDescription",
         "GermlineSet",
         "Genotype",
@@ -3972,6 +4201,7 @@
       "owner": "Subject",
       "domain_of": [
         "Participant",
+        "Chain",
         "AlleleDescription",
         "GermlineSet",
         "Subject"
@@ -5464,6 +5694,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/sex",
       "owner": "Subject",
       "domain_of": [
+        "Participant",
         "Subject"
       ],
       "range": "SexEnum",
@@ -7162,8 +7393,9 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
       "owner": "CellExpression",
       "domain_of": [
+        "AIRRSequencingAssay",
         "Repertoire",
-        "RepertoireGroupDetail",
+        "RepertoireFilter",
         "Rearrangement",
         "Clone",
         "Cell",
@@ -7204,10 +7436,10 @@
       ],
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_description",
-      "owner": "RepertoireGroupDetail",
+      "owner": "RepertoireFilter",
       "domain_of": [
         "Repertoire",
-        "RepertoireGroupDetail"
+        "RepertoireFilter"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -7307,9 +7539,9 @@
       "description": "Time point designation for this repertoire within the group",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/time_point",
-      "owner": "RepertoireGroupDetail",
+      "owner": "RepertoireFilter",
       "domain_of": [
-        "RepertoireGroupDetail"
+        "RepertoireFilter"
       ],
       "range": "TimePoint",
       "inlined": true,
@@ -7392,7 +7624,7 @@
       "domain_of": [
         "RepertoireGroup"
       ],
-      "range": "RepertoireGroupDetail",
+      "range": "RepertoireFilter",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -10631,7 +10863,7 @@
       "domain_of": [
         "CellExpression"
       ],
-      "range": "PropertyOntology",
+      "range": "string",
       "@type": "SlotDefinition"
     },
     {
@@ -10875,25 +11107,6 @@
         "ReceptorReactivity"
       ],
       "range": "AntigenTypeEnum",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "antigen",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
-      "annotations": [
-        {
-          "tag": "nullable",
-          "@type": "Annotation"
-        }
-      ],
-      "description": "The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
-      "owner": "ReceptorReactivity",
-      "domain_of": [
-        "ReceptorReactivity"
-      ],
-      "range": "AntigenOntology",
       "@type": "SlotDefinition"
     },
     {
@@ -11289,7 +11502,7 @@
       "domain_of": [
         "AIRRKnowledgeCommons"
       ],
-      "range": "Dataset",
+      "range": "AKDataSet",
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
@@ -11377,6 +11590,50 @@
       "multivalued": true,
       "inlined": true,
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_sex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sex",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Biological sex of subject",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sex",
+      "domain": "Participant",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sex",
+      "alias": "sex",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sex",
+      "range": "BiologicalSexOntology",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "TCellReceptorEpitopeSpecificityMeasurement_measurement_category",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "description": "The measurement result category",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "measurement_category",
+      "domain": "TCellReceptorEpitopeSpecificityMeasurement",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
+      "alias": "measurement_category",
+      "owner": "TCellReceptorEpitopeSpecificityMeasurement",
+      "domain_of": [
+        "TCellReceptorEpitopeSpecificityMeasurement"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "measurement_category",
+      "range": "CategoricalSpecificityEnum",
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -11453,10 +11710,13 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "PlannedProcess",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PlannedProcess",
-      "description": "A process to realize a plan.",
+      "name": "Process",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Process",
+      "description": "A generic process.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "BFO:0000015"
+      ],
       "is_a": "NamedThing",
       "abstract": true,
       "slots": [
@@ -11465,7 +11725,7 @@
         "description"
       ],
       "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/PlannedProcess",
+      "class_uri": "http://purl.obolibrary.org/obo/BFO_0000015",
       "@type": "ClassDefinition"
     },
     {
@@ -11611,7 +11871,7 @@
         {
           "name": "datasets",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
-          "range": "Dataset",
+          "range": "AKDataSet",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -11677,7 +11937,7 @@
       "mappings": [
         "OBI:0000066"
       ],
-      "is_a": "PlannedProcess",
+      "is_a": "Process",
       "slots": [
         "akc_id",
         "name",
@@ -11756,8 +12016,7 @@
         "description",
         "study_arm",
         "species",
-        "biological_sex",
-        "phenotypic_sex",
+        "Participant_sex",
         "age",
         "age_unit",
         "age_event",
@@ -11778,7 +12037,7 @@
       "mappings": [
         "BFO:0000015"
       ],
-      "is_a": "NamedThing",
+      "is_a": "Process",
       "slots": [
         "akc_id",
         "name",
@@ -11794,26 +12053,23 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEvent",
       "description": "An event in which a study participant participates.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "BFO:0000015"
-      ],
-      "is_a": "NamedThing",
+      "is_a": "Process",
       "slots": [
         "akc_id",
         "name",
         "description",
+        "type",
         "participant",
         "study_event",
         "life_event_type",
         "geolocation",
         "t0_event",
-        "t0_event_type",
         "start",
         "duration",
         "time_unit"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/BFO_0000015",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/LifeEvent",
       "@type": "ClassDefinition"
     },
     {
@@ -11821,22 +12077,52 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneExposure",
       "description": "An event involving the immune system of a study participant.",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "BFO:0000015"
-      ],
-      "is_a": "NamedThing",
+      "is_a": "LifeEvent",
       "slots": [
         "akc_id",
         "name",
         "description",
-        "life_event",
+        "type",
+        "participant",
+        "study_event",
+        "life_event_type",
+        "geolocation",
+        "t0_event",
+        "start",
+        "duration",
+        "time_unit",
         "exposure_material",
         "disease",
         "disease_stage",
         "disease_severity"
       ],
       "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/BFO_0000015",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneExposure",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Assessment",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Assessment",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0002441"
+      ],
+      "is_a": "Process",
+      "mixins": [
+        "MeasurementDatum"
+      ],
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "life_event",
+        "assessment_type",
+        "target_entity_type",
+        "measurement_value",
+        "measurement_unit"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0002441",
       "@type": "ClassDefinition"
     },
     {
@@ -11852,9 +12138,7 @@
         "name",
         "description",
         "life_event",
-        "specimen_type",
-        "tissue",
-        "process"
+        "tissue"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0100051",
@@ -11867,11 +12151,20 @@
       "mappings": [
         "OBI:0000659"
       ],
-      "is_a": "PlannedProcess",
+      "is_a": "LifeEvent",
       "slots": [
         "akc_id",
         "name",
         "description",
+        "type",
+        "participant",
+        "study_event",
+        "life_event_type",
+        "geolocation",
+        "t0_event",
+        "start",
+        "duration",
+        "time_unit",
         "specimen"
       ],
       "slot_usage": {},
@@ -11885,7 +12178,7 @@
       "mappings": [
         "OBI:0000094"
       ],
-      "is_a": "PlannedProcess",
+      "is_a": "Process",
       "slots": [
         "akc_id",
         "name",
@@ -11963,7 +12256,7 @@
       "mappings": [
         "OBI:0000070"
       ],
-      "is_a": "PlannedProcess",
+      "is_a": "Process",
       "slots": [
         "akc_id",
         "name",
@@ -11972,7 +12265,7 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type"
+        "has_specified_output"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0000070",
@@ -11997,7 +12290,10 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type",
+        "has_specified_output",
+        "repertoire_id",
+        "tcell_receptors",
+        "tcell_chains",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
         "sequencing_platform",
@@ -12018,6 +12314,9 @@
         "OBI:1110037"
       ],
       "is_a": "Assay",
+      "mixins": [
+        "TCellReceptorEpitopeSpecificityMeasurement"
+      ],
       "slots": [
         "akc_id",
         "name",
@@ -12026,33 +12325,236 @@
         "specimen_processing",
         "type",
         "assay_type",
-        "target_entity_type",
+        "has_specified_output",
         "epitope",
         "tcell_receptors",
-        "value",
-        "unit"
+        "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_1110037",
       "@type": "ClassDefinition"
     },
     {
-      "name": "Dataset",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Dataset",
+      "name": "AntibodyAntigenBindingAssay",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntibodyAntigenBindingAssay",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
-        "IAO:0000100"
+        "OBI:0003127"
       ],
-      "is_a": "NamedThing",
+      "is_a": "Assay",
       "slots": [
         "akc_id",
         "name",
         "description",
-        "assessments",
-        "assays"
+        "specimen",
+        "specimen_processing",
+        "type",
+        "assay_type",
+        "has_specified_output"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0003127",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataItem",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DataItem",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "IAO:0000027"
+      ],
+      "abstract": true,
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000027",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MeasurementDatum",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MeasurementDatum",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "IAO:0000032"
+      ],
+      "is_a": "DataItem",
+      "abstract": true,
+      "slots": [
+        "measurement_value",
+        "measurement_unit"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000032",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "MeasurementCategory",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/MeasurementCategory",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0001930"
+      ],
+      "is_a": "DataItem",
+      "abstract": true,
+      "slots": [
+        "measurement_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0001930",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TCellReceptorEpitopeSpecificityMeasurement",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TCellReceptorEpitopeSpecificityMeasurement",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "MeasurementCategory",
+      "abstract": true,
+      "slots": [
+        "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/TCellReceptorEpitopeSpecificityMeasurement",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataSet",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DataSet",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "IAO:0000100"
+      ],
+      "is_a": "DataItem",
+      "abstract": true,
+      "slots": [
+        "data_items"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/IAO_0000100",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AKDataItem",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AKDataItem",
+      "description": "data item with an akc_id",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKObject",
+      "slots": [
+        "akc_id",
+        "type",
+        "data_item_types"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AKDataItem",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AKDataSet",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AKDataSet",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "IAO:0000100"
+      ],
+      "is_a": "AKDataItem",
+      "mixins": [
+        "DataSet"
+      ],
+      "slots": [
+        "akc_id",
+        "type",
+        "data_item_types",
+        "data_items"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/IAO_0000100",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "SequenceData",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/SequenceData",
+      "description": "sequence data items are given an akc_id",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0000973"
+      ],
+      "is_a": "AKDataItem",
+      "slots": [
+        "akc_id",
+        "type",
+        "data_item_types"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0000973",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AIRRSequencingData",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRSequencingData",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "SequenceData",
+      "mixins": [
+        "SequencingData"
+      ],
+      "slots": [
+        "akc_id",
+        "type",
+        "data_item_types",
+        "sequencing_data_id",
+        "file_type",
+        "filename",
+        "read_direction",
+        "read_length",
+        "paired_filename",
+        "paired_read_direction",
+        "paired_read_length",
+        "index_filename",
+        "index_length"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRSequencingData",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "RNATranscriptomeData",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/RNATranscriptomeData",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "SequenceData",
+      "slots": [
+        "akc_id",
+        "type",
+        "data_item_types"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/RNATranscriptomeData",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DataTransformation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DataTransformation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0200000"
+      ],
+      "is_a": "Process",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "was_generated_by",
+        "data_transformation_types"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0200000",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "InputOutputDataMap",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InputOutputDataMap",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "data_transformation",
+        "has_specified_input",
+        "has_specified_output"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/InputOutputDataMap",
       "@type": "ClassDefinition"
     },
     {
@@ -12080,28 +12582,6 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "Assessment",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Assessment",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "mappings": [
-        "OBI:0002441"
-      ],
-      "is_a": "PlannedProcess",
-      "slots": [
-        "akc_id",
-        "name",
-        "description",
-        "life_event",
-        "assessment_type",
-        "target_entity_type",
-        "value",
-        "unit"
-      ],
-      "slot_usage": {},
-      "class_uri": "http://purl.obolibrary.org/obo/OBI_0002441",
-      "@type": "ClassDefinition"
-    },
-    {
       "name": "ImmuneSystem",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneSystem",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12109,6 +12589,7 @@
         "UBERON:0002405"
       ],
       "is_a": "NamedThing",
+      "abstract": true,
       "slots": [
         "akc_id",
         "name",
@@ -12125,13 +12606,14 @@
       "is_a": "AKObject",
       "slots": [
         "akc_id",
+        "species",
         "aa_hash",
         "junction_aa_vj_allele_hash",
         "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
         "sequence_aa",
-        "chain_type",
+        "locus",
         "v_call",
         "d_call",
         "j_call",
@@ -12152,13 +12634,26 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "ImmuneReceptor",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKObject",
+      "abstract": true,
+      "slots": [
+        "akc_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "TCellReceptor",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/TCellReceptor",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "mappings": [
         "GO:0042101"
       ],
-      "is_a": "AKObject",
+      "is_a": "ImmuneReceptor",
       "abstract": true,
       "slots": [
         "akc_id",
@@ -12179,8 +12674,8 @@
       "slots": [
         "akc_id",
         "type",
-        "TRA_chain",
-        "TRB_chain"
+        "tra_chain",
+        "trb_chain"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042105",
@@ -12197,8 +12692,8 @@
       "slots": [
         "akc_id",
         "type",
-        "TRG_chain",
-        "TRD_chain"
+        "trg_chain",
+        "trd_chain"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042106",
@@ -12208,15 +12703,34 @@
       "name": "BCellReceptor",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptor",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "AKObject",
+      "is_a": "ImmuneReceptor",
       "slots": [
         "akc_id",
-        "IGH_chain",
-        "IGK_chain",
-        "IGL_chain"
+        "igh_chain",
+        "igk_chain",
+        "igl_chain"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptor",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Antigen",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Antigen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:1110034"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "source_protein",
+        "source_organism"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_1110034",
       "@type": "ClassDefinition"
     },
     {
@@ -12250,6 +12764,45 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/PeptidicEpitope",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AntibodyAntigenComplex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AntibodyAntigenComplex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0003119"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "antibody",
+        "antigen"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0003119",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "TCRpMHCComplex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TCRpMHCComplex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "mappings": [
+        "OBI:0003119"
+      ],
+      "is_a": "NamedThing",
+      "slots": [
+        "akc_id",
+        "name",
+        "description",
+        "tcell_receptor",
+        "epitope",
+        "mhc"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://purl.obolibrary.org/obo/OBI_0003119",
       "@type": "ClassDefinition"
     },
     {
@@ -12341,7 +12894,7 @@
       "mappings": [
         "APOLLO_SV:00000070"
       ],
-      "is_a": "PlannedProcess",
+      "is_a": "Process",
       "slots": [
         "akc_id",
         "name",
@@ -12928,8 +13481,8 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "RepertoireGroupDetail",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireGroupDetail",
+      "name": "RepertoireFilter",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireFilter",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
@@ -12938,7 +13491,7 @@
         "time_point"
       ],
       "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireGroupDetail",
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/RepertoireFilter",
       "@type": "ClassDefinition"
     },
     {
@@ -13345,9 +13898,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-03-13T00:46:30",
-  "source_file_size": 197333,
-  "generation_date": "2025-03-13T00:46:32",
+  "source_file_date": "2025-07-21T20:16:06",
+  "source_file_size": 204352,
+  "generation_date": "2025-07-21T20:16:08",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

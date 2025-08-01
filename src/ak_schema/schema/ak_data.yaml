@@ -1,0 +1,234 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  # protocol for mixins
+  DataItem:
+    class_uri: IAO:0000027 # data item
+    abstract: true
+
+  MeasurementDatum:
+    is_a: DataItem
+    class_uri: IAO:0000032 # scalar measurement datum
+    abstract: true
+    slots:
+      - measurement_value
+      - measurement_unit
+      # - value
+      # - unit
+
+  MeasurementCategory:
+    is_a: DataItem
+    class_uri: OBI:0001930 # categorical value
+    abstract: true
+    slots:
+      - measurement_category
+
+  TCellReceptorEpitopeSpecificityMeasurement:
+    is_a: MeasurementCategory
+    abstract: true
+    slot_usage:
+      measurement_category:
+        range: CategoricalSpecificityEnum
+
+#   DataFile:
+#     is_a: DataItem
+#     abstract: true
+#     slots:
+#       - name
+#       - file_type
+#       - file_format
+# 
+  DataSet:
+    is_a: DataItem
+    class_uri: IAO:0000100 # data set
+    abstract: true
+    slots:
+      - data_items
+
+  # root for single table inheritance
+  AKDataItem:
+    is_a: AKObject
+    description: data item with an akc_id
+    slots:
+      - type # designates: type
+      - data_item_types
+
+  AKDataSet:
+    is_a: AKDataItem
+    mixins: DataSet
+    class_uri: IAO:0000100 # data set
+
+  SequenceData:
+    is_a: AKDataItem
+    description: sequence data items are given an akc_id
+    class_uri: OBI:0000973 # sequence data
+
+  AIRRSequencingData:
+    is_a: SequenceData
+    mixins: SequencingData # slots from AIRR class
+
+  RNATranscriptomeData:
+    is_a: SequenceData
+
+  DataTransformation:
+    is_a: Process # has akc_id
+    class_uri: OBI:0200000 # data transformation
+    slots:
+      - was_generated_by
+      - data_transformation_types
+
+  # the data model is essentially n-by-n for inputs/outputs
+  InputOutputDataMap:
+    slots:
+      - data_transformation
+      - has_specified_input
+      - has_specified_output
+
+  Conclusion:
+    is_a: NamedThing
+    class_uri: OBI:0001909 # conclusion based on data
+    slots:
+      - investigations
+      - datasets
+      - result
+      - data_location_type
+      - data_location_value
+      - organism
+      - experiment_type
+
+slots:
+  measurement_value:
+    description: The measurement result value
+    range: decimal
+  measurement_unit:
+    description: The measurement result value unit
+    range: MeasurementUnitOntology
+  measurement_category:
+    description: The measurement result category
+    range: string
+  data_items:
+    description: set of data items
+    range: AKObject
+    multivalued: true
+  data_item_types:
+    description: semantic types of the data
+    range: DataItemTypeEnum
+    multivalued: true
+
+  file_format:
+    description: Format and organization of the data in the file
+    range: AKFileFormatEnum
+
+  data_transformation:
+    description: a process that transforms input data into output data
+    range: DataTransformation
+  has_specified_input:
+    description: input data item
+    range: AKDataItem
+  has_specified_output:
+    description: output data item
+    range: AKDataItem
+
+  was_generated_by:
+    description: direct provenance link of one entity (input) to another (output) for a data transformation
+    range: InputOutputDataMap
+    multivalued: true
+  data_transformation_types:
+    description: semantic types of the data transformation
+    range: DataItemTypeEnum
+    multivalued: true
+
+  datasets:
+    description: The datasets that support a conclusion
+    # input of a drawing a conclusion process
+    range: AKDataSet
+    multivalued: true
+  result:
+    description: The content of the conclusion
+  data_location_type:
+    description: The type of location where data was found, e.g. figure, table
+  data_location_value:
+    description: An identifier for the location of the data, e.g. figure 2
+  organism:
+    description: The type of organism that the conclusion is about
+    range: SpeciesOntology
+    slot_uri: IAO:0000136 # is about
+  experiment_type:
+    description: The type of experiment that supports the conclusion
+
+enums:
+  MeasurementUnitOntology:
+    name: MeasurementUnitOntology
+    reachable_from:
+      source_nodes:
+        - UO:0000002
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  CategoricalSpecificityEnum:
+    permissible_values:
+      Positive:
+      Negative:
+      Positive-Low:
+      Positive-High:
+      Positive-Intermediate:
+    
+  DataItemTypeEnum:
+    permissible_values:
+      sequence_reads:
+      sequence_quality:
+      # forward/reverse are VDJ conventions
+      sequence_forward_paired_reads:
+      sequence_reverse_paired_reads:
+      sequence:
+      primer_sequence:
+      forward_primer_sequence:
+      reverse_primer_sequence:
+      barcode_sequence:
+      vdj_sequence_annotation:
+      quality_statistics:
+      annotation_statistics:
+      assigned_clones:
+      physiochemical_annotation:
+      gene_usage:
+      gene_combo_usage:
+      length_distribution:
+      diversity_profile:
+      mutational_profile:
+      similarity_comparison:
+      study_arm_comparison:
+      archive:
+      compressed:
+
+  DataTransformationTypeEnum:
+    permissible_values:
+      merge_reads:
+      barcode_matching:
+      primer_matching:
+      length_filter:
+      quality_filter:
+      homopolymer_filter:
+      collapse_unique_sequences:
+      vdj_annotation:
+      clonal_assignment:
+      germline_allele_inference:
+      gene_usage:
+      gene_combo_usage:
+      length_distribution:
+      diversity:
+      observed_mutations:
+
+  AKFileFormatEnum:
+    is_a: FileTypeEnum
+    permissible_values:
+      tsv:
+      csv:
+      json:
+      jsonl:
+      airr_tsv:
+      airr_json:
+      airr_jsonl:

@@ -333,7 +333,7 @@ classes:
       - subject
       - sample
       - data_processing
-  RepertoireGroupDetail:
+  RepertoireFilter:
     is_a: AIRRStandards
     slots:
       - repertoire_id
@@ -1962,7 +1962,7 @@ slots:
   repertoires:
     name: repertoires
     description: List of repertoires in this collection with an associated description and time point designation
-    range: RepertoireGroupDetail
+    range: RepertoireFilter
     multivalued: true
     annotations:
       nullable: true
@@ -2920,7 +2920,7 @@ slots:
   property:
     name: property
     description: Name of the property observed, typically a gene or antibody identifier (and label) from a  canonical resource such as Ensembl (e.g. ENSG00000275747, IGHV3-79) or  Antibody Registry (ABREG:1236456, Purified anti-mouse/rat/human CD27 antibody).
-    range: PropertyOntology
+    range: string
     annotations:
       nullable: true
   property_value:
@@ -3003,7 +3003,7 @@ slots:
   antigen:
     name: antigen
     description: The substance against which the receptor was tested. This can be any substance that stimulates an adaptive immune response in the host, either through antibody production or by T cell activation after presentation via an MHC molecule.
-    range: AntigenOntology
+    range: string
     annotations:
       nullable: false
   antigen_source_species:
@@ -3323,8 +3323,6 @@ enums:
     permissible_values:
       flow_cytometry:
       single-cell_transcriptome:
-  PropertyOntology:
-    name: PropertyOntology
   ReceptorTypeEnum:
     name: ReceptorTypeEnum
     permissible_values:
@@ -3358,8 +3356,6 @@ enums:
       protein:
       peptide:
       non-peptidic:
-  AntigenOntology:
-    name: AntigenOntology
   AntigenSourceSpeciesOntology:
     name: AntigenSourceSpeciesOntology
     reachable_from:

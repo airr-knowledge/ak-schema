@@ -5,19 +5,21 @@ name: ak-schema
 classes:
 
   ImmuneSystem:
+    abstract: true
     is_a: NamedThing
     class_uri: UBERON:0002405 # immune system
 
   Chain:
     is_a: AKObject
     slots:
+      - species
       - aa_hash
       - junction_aa_vj_allele_hash
       - junction_aa_vj_gene_hash
       - complete_vdj
       - sequence
       - sequence_aa
-      - chain_type
+      - locus
       - v_call
       - d_call
       - j_call
@@ -33,9 +35,13 @@ classes:
       - cdr3_start
       - cdr3_end
 
-  TCellReceptor:
+  ImmuneReceptor:
     abstract: true
     is_a: AKObject
+
+  TCellReceptor:
+    abstract: true
+    is_a: ImmuneReceptor
     class_uri: GO:0042101
     slots:
       - type
@@ -44,22 +50,29 @@ classes:
     is_a: TCellReceptor
     class_uri: GO:0042105
     slots:
-      - TRA_chain
-      - TRB_chain
+      - tra_chain
+      - trb_chain
 
   GammaDeltaTCR:
     is_a: TCellReceptor
     class_uri: GO:0042106
     slots:
-      - TRG_chain
-      - TRD_chain
+      - trg_chain
+      - trd_chain
 
   BCellReceptor:
-    is_a: AKObject
+    is_a: ImmuneReceptor
     slots:
-      - IGH_chain
-      - IGK_chain
-      - IGL_chain
+      - igh_chain
+      - igk_chain
+      - igl_chain
+
+  Antigen:
+    is_a: NamedThing
+    class_uri: OBI:1110034 # antigen
+    slots:
+      - source_protein
+      - source_organism
 
   Epitope:
     is_a: NamedThing
@@ -72,6 +85,21 @@ classes:
       - sequence_aa
       - source_protein
       - source_organism
+
+  AntibodyAntigenComplex:
+    is_a: NamedThing
+    class_uri: OBI:0003119
+    slots:
+      - antibody
+      - antigen
+
+  TCRpMHCComplex:
+    is_a: NamedThing
+    class_uri: OBI:0003119
+    slots:
+      - tcell_receptor
+      - epitope
+      - mhc
 
 slots:
   aa_hash:
@@ -96,41 +124,36 @@ slots:
     description: Nucleotide sequence.
     range: string
 
-  chain_type:
-    name: chain_type
-    description: Gene locus (chain type).
-    range: ChainTypeEnum
-
   isotype:
     name: isotype
     description: The isotype of the chain
     range: string
 
-  IGH_chain:
+  igh_chain:
     description: IG heavy chain
     range: Chain
 
-  IGL_chain:
+  igl_chain:
     description: IG lambda light chain
     range: Chain
 
-  IGK_chain:
+  igk_chain:
     description: IG kappa light chain
     range: Chain
 
-  TRA_chain:
+  tra_chain:
     description: T cell receptor alpha chain
     range: Chain
 
-  TRB_chain:
+  trb_chain:
     description: T cell receptor beta chain
     range: Chain
 
-  TRD_chain:
+  trd_chain:
     description: T cell receptor delta chain
     range: Chain
 
-  TRG_chain:
+  trg_chain:
     description: T cell receptor gamma chain
     range: Chain
 
@@ -140,14 +163,18 @@ slots:
   source_organism:
     description: The organism that the source protein comes from
 
+  antibody:
+    description: B cell receptor, immunoglobulin antibody
+    range: BCellReceptor
 
-enums:
-  ChainTypeEnum:
-    permissible_values:
-      IGH:
-      IGK:
-      IGL:
-      TRA:
-      TRB:
-      TRD:
-      TRG:
+  antigen:
+    description: A material entity with antigen role
+    range: Antigen
+
+  tcell_receptor:
+    description: T cell receptor
+    range: TCellReceptor
+
+  mhc:
+    description: Major histocompatibility complex
+    range: MHCAllele

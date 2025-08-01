@@ -1,4 +1,4 @@
-akc_id	type	TRA_chain	TRB_chain
+akc_id	type	tra_chain	trb_chain
 iedb_receptor:20833	AlphaBetaTCR	iedb_receptor:20833-alpha	iedb_receptor:20833-beta
 iedb_receptor:20834	AlphaBetaTCR	iedb_receptor:20834-alpha	iedb_receptor:20834-beta
 iedb_receptor:20835	AlphaBetaTCR	iedb_receptor:20835-alpha	iedb_receptor:20835-beta

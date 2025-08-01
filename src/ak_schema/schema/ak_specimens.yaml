@@ -9,21 +9,20 @@ classes:
     class_uri: OBI:0100051 # specimen
     slots:
       - life_event
-      - specimen_type
-      - tissue
-      - process
+      - tissue # AIRR standard
 
   SpecimenCollection:
-    is_a: PlannedProcess
+    is_a: LifeEvent
     class_uri: OBI:0000659 # specimen collection
     slots:
       - specimen
 
   SpecimenProcessing:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: OBI:0000094 # material processing
     slots:
       - specimen
+
   CellIsolationProcessing:
     is_a: SpecimenProcessing
     class_uri: OBI:00000512 # cell isolation processing
@@ -39,90 +38,47 @@ classes:
       - cell_quality
       - cell_isolation
       - cell_processing_protocol
-# TODO: comment for now until harmonized with AIRR
-#  NucleicAcidProcessing:
-#    is_a: SpecimenProcessing
-#    class_uri: OBI:00001902 # sample preparation for sequencing assay
-#    slots:
-#      - template_class # From ADC NucleicAcidProcessing
-#      - template_quality
-#      - template_amount
-#      - template_amount_unit
+
   LibraryPreparationProcessing:
     is_a: SpecimenProcessing
     mixins: NucleicAcidProcessing # slots from AIRR class
     class_uri: OBI:00000711 # library preparation
-#    slots:
-#      - library_generation_method # From ADC NucleicAcidProcessing
-#      - library_generation_protocol
-#      - library_generation_kit_version
 
   Assay:
-    is_a: PlannedProcess
+    is_a: Process
     class_uri: OBI:0000070 # assay
     slots:
       - specimen # Specimen that the assay is applied to
       - specimen_processing # Chain of specimen processing applied to specimen before assay is performed 
       - type # Name of type of Assay class e.g. TCellReceptorEpitopeBindingAssay
       - assay_type # CURIE of OBI name for assay e.g. OBI:1110179
-      - target_entity_type
+      - has_specified_output
 
   AIRRSequencingAssay:
     is_a: Assay
     mixins: SequencingRun
     class_uri: OBI:0600047
-#    slots:
-#      - pcr_target
-#      - complete_sequences
-#      - physical_linkage
+    slots:
+      - repertoire_id
+      - tcell_receptors
+      - tcell_chains
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
+    mixins: TCellReceptorEpitopeSpecificityMeasurement
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
       - epitope
       - tcell_receptors
-      - value
-      - unit
 
-  Dataset:
-    is_a: NamedThing
-    class_uri: IAO:0000100 # data set
-    slots:
-      - assessments
-      - assays
-
-  Conclusion:
-    is_a: NamedThing
-    class_uri: OBI:0001909 # conclusion based on data
-    slots:
-      - investigations
-      - datasets
-      - result
-      - data_location_type
-      - data_location_value
-      - organism
-      - experiment_type
-
-  Assessment:
-    is_a: PlannedProcess
-    class_uri: OBI:0002441 # physical examination of an organism
-    slots:
-      - life_event
-      - assessment_type
-      - target_entity_type
-      - value
-      - unit
+  AntibodyAntigenBindingAssay:
+    is_a: Assay
+    class_uri: OBI:0003127 # B cell epitope assay
 
 slots:
   life_event:
     description: The life event corresponding to an immune exposure
     range: LifeEvent
-  specimen_type: # TODO: enum
-    description: The type of this specimen
-    slot_uri: rdf:type
-  process: # TODO: enum
-    description: The type of specimen collection process that resulted in this specimen
 
   specimen:
     description: The specimen that was input for an assay
@@ -136,7 +92,7 @@ slots:
   assay_type:
     description: The specific type of an assay
     slot_uri: rdf:type
-    # TODO: enum
+    range: AssayTypeOntology
   target_entity_type:
     description: The type of the entity being measured
 
@@ -148,35 +104,17 @@ slots:
     description: The T cell receptors being measured
     range: TCellReceptor
     multivalued: true
-  value:
-    description: The measurement result value
-  unit:
-    description: The measurement result value unit
-
-  assessments:
-    description: The assessment that a dataset is about
-    slot_uri: IAO:0000136 # is about
-    range: Assessment
+  tcell_chains:
+    description: The T cell receptor chains being measured
+    range: Chain
     multivalued: true
 
-  datasets:
-    description: The datasets that support a conclusion
-    # input of a drawing a conclusion process
-    range: Dataset
-    multivalued: true
-  result:
-    description: The content of the conclusion
-  data_location_type:
-    description: The type of location where data was found, e.g. figure, table
-  data_location_value:
-    description: An identifier for the location of the data, e.g. figure 2
-  organism:
-    description: The type of organism that the conclusion is about
-    range: SpeciesOntology
-    slot_uri: IAO:0000136 # is about
-  experiment_type:
-    description: The type of experiment that supports the conclusion
-
-  assessment_type:
-    description: The specific type of an assessment
-    slot_uri: rdf:type
+enums:
+  AssayTypeOntology:
+    name: AssayTypeOntology
+    reachable_from:
+      source_nodes:
+        - OBI:0000070
+      include_self: false
+      relationship_types:
+        - rdfs:subClassOf
