@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-21T20:16:11
+# Generation date: 2025-08-05T19:01:55
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -490,6 +490,18 @@ class AIRRStandardsV1p5(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV1p5
 
 
+class AIRRStandardsV1p6(YAMLRoot):
+    """
+    An object directly converted from AIRR schema version 1.6.
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandardsV1p6"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandardsV1p6"
+    class_name: ClassVar[str] = "AIRRStandards_v1p6"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV1p6
+
+
 class AIRRStandardsV2p0(YAMLRoot):
     """
     An object directly converted from AIRR schema version 2.0.
@@ -555,6 +567,37 @@ class PlanSpecification(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PlanSpecification
 
     akc_id: Union[str, PlanSpecificationAkcId] = None
+
+@dataclass(repr=False)
+class OntologyTable(YAMLRoot):
+    """
+    standard schema for an ontology table
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["OntologyTable"]
+    class_class_curie: ClassVar[str] = "ak_schema:OntologyTable"
+    class_name: ClassVar[str] = "OntologyTable"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.OntologyTable
+
+    term_id: Union[str, URIorCURIE] = None
+    term_label: Optional[str] = None
+    parent_term_id: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, URIorCURIE):
+            self.term_id = URIorCURIE(self.term_id)
+
+        if self.term_label is not None and not isinstance(self.term_label, str):
+            self.term_label = str(self.term_label)
+
+        if self.parent_term_id is not None and not isinstance(self.parent_term_id, URIorCURIE):
+            self.parent_term_id = URIorCURIE(self.parent_term_id)
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass(repr=False)
 class AIRRKnowledgeCommons(YAMLRoot):
@@ -643,7 +686,7 @@ class Investigation(Process):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     akc_id: Union[str, InvestigationAkcId] = None
-    investigation_type: Optional[Union[str, "InvestigationTypeOntology"]] = None
+    investigation_type: Optional[Union[dict, "InvestigationType"]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
     inclusion_exclusion_criteria: Optional[str] = None
     release_date: Optional[Union[str, XSDDateTime]] = None
@@ -659,6 +702,9 @@ class Investigation(Process):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, InvestigationAkcId):
             self.akc_id = InvestigationAkcId(self.akc_id)
+
+        if self.investigation_type is not None and not isinstance(self.investigation_type, InvestigationType):
+            self.investigation_type = InvestigationType(**as_dict(self.investigation_type))
 
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
@@ -1008,6 +1054,18 @@ class Assessment(Process):
 
         super().__post_init__(**kwargs)
 
+
+@dataclass(repr=False)
+class InvestigationType(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["InvestigationType"]
+    class_class_curie: ClassVar[str] = "ak_schema:InvestigationType"
+    class_name: ClassVar[str] = "InvestigationType"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.InvestigationType
+
+    term_id: Union[str, "InvestigationTypeOntology"] = None
+    parent_term_id: Optional[Union[str, "InvestigationTypeOntology"]] = None
 
 @dataclass(repr=False)
 class Specimen(NamedThing):
@@ -5842,8 +5900,17 @@ slots.description = Slot(uri=SCHEMA.description, name="description", curie=SCHEM
 slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type'),
                    model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
 
+slots.term_id = Slot(uri=AK_SCHEMA.term_id, name="term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.term_id, domain=None, range=Union[str, URIorCURIE])
+
+slots.term_label = Slot(uri=AK_SCHEMA.term_label, name="term_label", curie=AK_SCHEMA.curie('term_label'),
+                   model_uri=AK_SCHEMA.term_label, domain=None, range=Optional[str])
+
+slots.parent_term_id = Slot(uri=AK_SCHEMA.parent_term_id, name="parent_term_id", curie=AK_SCHEMA.curie('parent_term_id'),
+                   model_uri=AK_SCHEMA.parent_term_id, domain=None, range=Optional[Union[str, URIorCURIE]])
+
 slots.investigation_type = Slot(uri=AK_SCHEMA.investigation_type, name="investigation_type", curie=AK_SCHEMA.curie('investigation_type'),
-                   model_uri=AK_SCHEMA.investigation_type, domain=None, range=Optional[Union[str, "InvestigationTypeOntology"]])
+                   model_uri=AK_SCHEMA.investigation_type, domain=None, range=Optional[Union[dict, InvestigationType]])
 
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
@@ -7363,6 +7430,12 @@ slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKn
 
 slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
                    model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, "BiologicalSexOntology"]])
+
+slots.InvestigationType_term_id = Slot(uri=AK_SCHEMA.term_id, name="InvestigationType_term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.InvestigationType_term_id, domain=InvestigationType, range=Union[str, "InvestigationTypeOntology"])
+
+slots.InvestigationType_parent_term_id = Slot(uri=AK_SCHEMA.parent_term_id, name="InvestigationType_parent_term_id", curie=AK_SCHEMA.curie('parent_term_id'),
+                   model_uri=AK_SCHEMA.InvestigationType_parent_term_id, domain=InvestigationType, range=Optional[Union[str, "InvestigationTypeOntology"]])
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])
