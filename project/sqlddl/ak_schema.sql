@@ -6,6 +6,8 @@
 --     * Slot: id Description: 
 -- # Class: "AIRRStandards_v1p5" Description: "An object directly converted from AIRR schema version 1.5."
 --     * Slot: id Description: 
+-- # Class: "AIRRStandards_v1p6" Description: "An object directly converted from AIRR schema version 1.6."
+--     * Slot: id Description: 
 -- # Class: "AIRRStandards_v2p0" Description: "An object directly converted from AIRR schema version 2.0."
 --     * Slot: id Description: 
 -- # Class: "NamedThing" Description: "Name and description for AKC things."
@@ -20,8 +22,12 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "OntologyTable" Description: "standard schema for an ontology table"
+--     * Slot: id Description: 
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+--     * Slot: parent_term_id Description: parent ID for ontology term
 -- # Class: "Investigation" Description: "A scientific investigation."
---     * Slot: investigation_type Description: Type of study design
 --     * Slot: archival_id Description: Identifier for external archival resource for the investigation, e.g., BioProject
 --     * Slot: inclusion_exclusion_criteria Description: List of criteria for inclusion/exclusion for the study
 --     * Slot: release_date Description: Date of this release
@@ -29,6 +35,7 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: investigation_type_id Description: Type of study design
 -- # Class: "Reference" Description: "A document about an investigation."
 --     * Slot: title Description: The title of a reference
 --     * Slot: journal Description: The journal in which a reference was published
@@ -99,6 +106,11 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "InvestigationType" Description: ""
+--     * Slot: id Description: 
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+--     * Slot: parent_term_id Description: parent ID for ontology term
 -- # Class: "Specimen" Description: ""
 --     * Slot: life_event Description: The life event corresponding to an immune exposure
 --     * Slot: tissue Description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
@@ -1135,6 +1147,10 @@ CREATE TABLE "AIRRStandards_v1p5" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
 );
+CREATE TABLE "AIRRStandards_v1p6" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "AIRRStandards_v2p0" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
@@ -1157,16 +1173,12 @@ CREATE TABLE "PlanSpecification" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
-CREATE TABLE "Investigation" (
-	investigation_type VARCHAR, 
-	archival_id TEXT, 
-	inclusion_exclusion_criteria TEXT, 
-	release_date TIMESTAMP WITHOUT TIME ZONE, 
-	update_date TIMESTAMP WITHOUT TIME ZONE, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id)
+CREATE TABLE "OntologyTable" (
+	id INTEGER NOT NULL, 
+	term_id TEXT NOT NULL, 
+	term_label TEXT, 
+	parent_term_id TEXT, 
+	PRIMARY KEY (id)
 );
 CREATE TABLE "Reference" (
 	title TEXT, 
@@ -1183,6 +1195,13 @@ CREATE TABLE "StudyEvent" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "InvestigationType" (
+	id INTEGER NOT NULL, 
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY (id)
 );
 CREATE TABLE "DataItem" (
 	id INTEGER NOT NULL, 
@@ -1906,13 +1925,17 @@ CREATE TABLE "Receptor" (
 	receptor_variable_domain_2_locus VARCHAR(3), 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "StudyArm" (
-	investigation TEXT, 
+CREATE TABLE "Investigation" (
+	archival_id TEXT, 
+	inclusion_exclusion_criteria TEXT, 
+	release_date TIMESTAMP WITHOUT TIME ZONE, 
+	update_date TIMESTAMP WITHOUT TIME ZONE, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
+	investigation_type_id INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
+	FOREIGN KEY(investigation_type_id) REFERENCES "InvestigationType" (id)
 );
 CREATE TABLE "InputOutputDataMap" (
 	id INTEGER NOT NULL, 
@@ -2071,39 +2094,11 @@ CREATE TABLE "SampleProcessing" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
 );
-CREATE TABLE "Investigation_simulations" (
-	investigation_akc_id TEXT, 
-	simulations_akc_id TEXT, 
-	PRIMARY KEY (investigation_akc_id, simulations_akc_id), 
-	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(simulations_akc_id) REFERENCES "Simulation" (akc_id)
-);
-CREATE TABLE "Investigation_documents" (
-	investigation_akc_id TEXT, 
-	documents_source_uri TEXT, 
-	PRIMARY KEY (investigation_akc_id, documents_source_uri), 
-	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(documents_source_uri) REFERENCES "Reference" (source_uri)
-);
-CREATE TABLE "Investigation_conclusions" (
-	investigation_akc_id TEXT, 
-	conclusions_akc_id TEXT, 
-	PRIMARY KEY (investigation_akc_id, conclusions_akc_id), 
-	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(conclusions_akc_id) REFERENCES "Conclusion" (akc_id)
-);
 CREATE TABLE "Reference_sources" (
 	"Reference_source_uri" TEXT, 
 	sources TEXT, 
 	PRIMARY KEY ("Reference_source_uri", sources), 
 	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
-);
-CREATE TABLE "Reference_investigations" (
-	"Reference_source_uri" TEXT, 
-	investigations_akc_id TEXT, 
-	PRIMARY KEY ("Reference_source_uri", investigations_akc_id), 
-	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri), 
-	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "Reference_authors" (
 	"Reference_source_uri" TEXT, 
@@ -2160,13 +2155,6 @@ CREATE TABLE "DataTransformation_data_transformation_types" (
 	data_transformation_types VARCHAR(29), 
 	PRIMARY KEY ("DataTransformation_akc_id", data_transformation_types), 
 	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id)
-);
-CREATE TABLE "Conclusion_investigations" (
-	"Conclusion_akc_id" TEXT, 
-	investigations_akc_id TEXT, 
-	PRIMARY KEY ("Conclusion_akc_id", investigations_akc_id), 
-	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
-	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "Conclusion_datasets" (
 	"Conclusion_akc_id" TEXT, 
@@ -2333,22 +2321,13 @@ CREATE TABLE "Receptor_receptor_ref" (
 	PRIMARY KEY ("Receptor_id", receptor_ref), 
 	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id)
 );
-CREATE TABLE "Participant" (
-	study_arm TEXT, 
-	species VARCHAR, 
-	sex VARCHAR, 
-	age TEXT, 
-	age_unit VARCHAR, 
-	age_event TEXT, 
-	race TEXT, 
-	ethnicity TEXT, 
-	geolocation VARCHAR(24), 
-	strain VARCHAR(20), 
+CREATE TABLE "StudyArm" (
+	investigation TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id)
+	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "AntibodyAntigenComplex" (
 	antibody TEXT, 
@@ -2380,12 +2359,33 @@ CREATE TABLE "Subject" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(genotype_id) REFERENCES "SubjectGenotype" (id)
 );
-CREATE TABLE "StudyEvent_study_arms" (
-	"StudyEvent_akc_id" TEXT, 
-	study_arms_akc_id TEXT, 
-	PRIMARY KEY ("StudyEvent_akc_id", study_arms_akc_id), 
-	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
-	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
+CREATE TABLE "Investigation_simulations" (
+	investigation_akc_id TEXT, 
+	simulations_akc_id TEXT, 
+	PRIMARY KEY (investigation_akc_id, simulations_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(simulations_akc_id) REFERENCES "Simulation" (akc_id)
+);
+CREATE TABLE "Investigation_documents" (
+	investigation_akc_id TEXT, 
+	documents_source_uri TEXT, 
+	PRIMARY KEY (investigation_akc_id, documents_source_uri), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(documents_source_uri) REFERENCES "Reference" (source_uri)
+);
+CREATE TABLE "Investigation_conclusions" (
+	investigation_akc_id TEXT, 
+	conclusions_akc_id TEXT, 
+	PRIMARY KEY (investigation_akc_id, conclusions_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(conclusions_akc_id) REFERENCES "Conclusion" (akc_id)
+);
+CREATE TABLE "Reference_investigations" (
+	"Reference_source_uri" TEXT, 
+	investigations_akc_id TEXT, 
+	PRIMARY KEY ("Reference_source_uri", investigations_akc_id), 
+	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri), 
+	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "DataTransformation_was_generated_by" (
 	"DataTransformation_akc_id" TEXT, 
@@ -2393,6 +2393,13 @@ CREATE TABLE "DataTransformation_was_generated_by" (
 	PRIMARY KEY ("DataTransformation_akc_id", was_generated_by_id), 
 	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id), 
 	FOREIGN KEY(was_generated_by_id) REFERENCES "InputOutputDataMap" (id)
+);
+CREATE TABLE "Conclusion_investigations" (
+	"Conclusion_akc_id" TEXT, 
+	investigations_akc_id TEXT, 
+	PRIMARY KEY ("Conclusion_akc_id", investigations_akc_id), 
+	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
+	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "RepertoireGroup_repertoires" (
 	"RepertoireGroup_id" INTEGER, 
@@ -2415,6 +2422,48 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 	FOREIGN KEY("SampleProcessing_id") REFERENCES "SampleProcessing" (id), 
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
 );
+CREATE TABLE "Participant" (
+	study_arm TEXT, 
+	species VARCHAR, 
+	sex VARCHAR, 
+	age TEXT, 
+	age_unit VARCHAR, 
+	age_event TEXT, 
+	race TEXT, 
+	ethnicity TEXT, 
+	geolocation VARCHAR(24), 
+	strain VARCHAR(20), 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "Repertoire" (
+	id INTEGER NOT NULL, 
+	repertoire_id TEXT, 
+	repertoire_name TEXT, 
+	repertoire_description TEXT, 
+	study_id INTEGER, 
+	subject_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
+	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "StudyEvent_study_arms" (
+	"StudyEvent_akc_id" TEXT, 
+	study_arms_akc_id TEXT, 
+	PRIMARY KEY ("StudyEvent_akc_id", study_arms_akc_id), 
+	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "Subject_diagnosis" (
+	"Subject_id" INTEGER, 
+	diagnosis_id INTEGER, 
+	PRIMARY KEY ("Subject_id", diagnosis_id), 
+	FOREIGN KEY("Subject_id") REFERENCES "Subject" (id), 
+	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
+);
 CREATE TABLE "LifeEvent" (
 	type TEXT, 
 	participant TEXT, 
@@ -2433,17 +2482,6 @@ CREATE TABLE "LifeEvent" (
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
 );
-CREATE TABLE "Repertoire" (
-	id INTEGER NOT NULL, 
-	repertoire_id TEXT, 
-	repertoire_name TEXT, 
-	repertoire_description TEXT, 
-	study_id INTEGER, 
-	subject_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
-	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
-);
 CREATE TABLE "Investigation_participants" (
 	investigation_akc_id TEXT, 
 	participants_akc_id TEXT, 
@@ -2451,12 +2489,19 @@ CREATE TABLE "Investigation_participants" (
 	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(participants_akc_id) REFERENCES "Participant" (akc_id)
 );
-CREATE TABLE "Subject_diagnosis" (
-	"Subject_id" INTEGER, 
-	diagnosis_id INTEGER, 
-	PRIMARY KEY ("Subject_id", diagnosis_id), 
-	FOREIGN KEY("Subject_id") REFERENCES "Subject" (id), 
-	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
+CREATE TABLE "Repertoire_sample" (
+	"Repertoire_id" INTEGER, 
+	sample_id INTEGER, 
+	PRIMARY KEY ("Repertoire_id", sample_id), 
+	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	FOREIGN KEY(sample_id) REFERENCES "SampleProcessing" (id)
+);
+CREATE TABLE "Repertoire_data_processing" (
+	"Repertoire_id" INTEGER, 
+	data_processing_id INTEGER, 
+	PRIMARY KEY ("Repertoire_id", data_processing_id), 
+	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	FOREIGN KEY(data_processing_id) REFERENCES "DataProcessing" (id)
 );
 CREATE TABLE "ImmuneExposure" (
 	exposure_material VARCHAR, 
@@ -2500,20 +2545,6 @@ CREATE TABLE "Specimen" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
-);
-CREATE TABLE "Repertoire_sample" (
-	"Repertoire_id" INTEGER, 
-	sample_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", sample_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
-	FOREIGN KEY(sample_id) REFERENCES "SampleProcessing" (id)
-);
-CREATE TABLE "Repertoire_data_processing" (
-	"Repertoire_id" INTEGER, 
-	data_processing_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", data_processing_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
-	FOREIGN KEY(data_processing_id) REFERENCES "DataProcessing" (id)
 );
 CREATE TABLE "SpecimenCollection" (
 	specimen TEXT, 

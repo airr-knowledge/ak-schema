@@ -1969,6 +1969,46 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "owner": "OntologyTable",
+      "domain_of": [
+        "OntologyTable"
+      ],
+      "range": "uriorcurie",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "term_label",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_label",
+      "description": "ontology term descriptive label",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_label",
+      "owner": "OntologyTable",
+      "domain_of": [
+        "OntologyTable"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "parent_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
+      "description": "parent ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
+      "owner": "OntologyTable",
+      "domain_of": [
+        "OntologyTable"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "investigation_type",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/investigation_type",
       "description": "Type of study design",
@@ -1978,7 +2018,8 @@
       "domain_of": [
         "Investigation"
       ],
-      "range": "InvestigationTypeOntology",
+      "range": "InvestigationType",
+      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11618,6 +11659,43 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "InvestigationType_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "term_id",
+      "domain": "InvestigationType",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "alias": "term_id",
+      "owner": "InvestigationType",
+      "domain_of": [
+        "InvestigationType"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_id",
+      "range": "InvestigationTypeOntology",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "InvestigationType_parent_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
+      "description": "parent ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent_term_id",
+      "domain": "InvestigationType",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
+      "alias": "parent_term_id",
+      "owner": "InvestigationType",
+      "domain_of": [
+        "InvestigationType"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent_term_id",
+      "range": "InvestigationTypeOntology",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "TCellReceptorEpitopeSpecificityMeasurement_measurement_category",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
       "description": "The measurement result category",
@@ -11684,6 +11762,16 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "AIRRStandardsV1p6",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandardsV1p6",
+      "description": "An object directly converted from AIRR schema version 1.6.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "abstract": true,
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandardsV1p6",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "AIRRStandardsV2p0",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandardsV2p0",
       "description": "An object directly converted from AIRR schema version 2.0.",
@@ -11742,6 +11830,21 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/PlanSpecification",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "OntologyTable",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/OntologyTable",
+      "description": "standard schema for an ontology table",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "abstract": true,
+      "slots": [
+        "term_id",
+        "term_label",
+        "parent_term_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/OntologyTable",
       "@type": "ClassDefinition"
     },
     {
@@ -12123,6 +12226,20 @@
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0002441",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "InvestigationType",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InvestigationType",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_label",
+        "InvestigationType_term_id",
+        "InvestigationType_parent_term_id"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/InvestigationType",
       "@type": "ClassDefinition"
     },
     {
@@ -13898,9 +14015,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-21T20:16:06",
-  "source_file_size": 204352,
-  "generation_date": "2025-07-21T20:16:08",
+  "source_file_date": "2025-08-05T19:01:48",
+  "source_file_size": 205609,
+  "generation_date": "2025-08-05T19:01:50",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

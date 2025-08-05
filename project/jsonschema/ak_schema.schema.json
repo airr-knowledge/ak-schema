@@ -4124,7 +4124,14 @@
                     ]
                 },
                 "investigation_type": {
-                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/InvestigationType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Type of study design"
                 },
                 "name": {
@@ -4175,6 +4182,32 @@
                 "akc_id"
             ],
             "title": "Investigation",
+            "type": "object"
+        },
+        "InvestigationType": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent_term_id": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "parent ID for ontology term"
+                },
+                "term_id": {
+                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "description": "ontology term ID"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "InvestigationType",
             "type": "object"
         },
         "InvestigationTypeOntology": {
@@ -4242,7 +4275,14 @@
                     ]
                 },
                 "investigation_type": {
-                    "$ref": "#/$defs/InvestigationTypeOntology",
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/InvestigationType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
                     "description": "Type of study design"
                 },
                 "name": {
