@@ -28,6 +28,11 @@ classes:
     description: >-
       An object directly converted from AIRR schema version 1.5.
 
+  AIRRStandards_v1p6:
+    abstract: true
+    description: >-
+      An object directly converted from AIRR schema version 1.6.
+
   AIRRStandards_v2p0:
     abstract: true
     description: >-
@@ -56,6 +61,16 @@ classes:
     description: >-
       A plan with specified actions to meet some objectives.
 
+# ontology tables
+# subclass for specific ontologies and define slot_usage for the IDs
+  OntologyTable:
+    abstract: true
+    description: standard schema for an ontology table
+    slots:
+      - term_id
+      - term_label
+      - parent_term_id
+
 slots:
   akc_id:
     description: A unique identifier for a thing in the AKC.
@@ -79,3 +94,13 @@ slots:
     designates_type: true
     range: string
 
+  term_id:
+    description: ontology term ID
+    required: true
+    range: uriorcurie
+  term_label:
+    description: ontology term descriptive label
+    range: string
+  parent_term_id:
+    description: parent ID for ontology term
+    range: uriorcurie

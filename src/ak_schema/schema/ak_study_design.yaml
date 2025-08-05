@@ -109,12 +109,19 @@ classes:
       - assessment_type
       - target_entity_type
 
+  InvestigationType:
+    is_a: OntologyTable
+    slot_usage:
+      term_id:
+        range: InvestigationTypeOntology
+      parent_term_id:
+        range: InvestigationTypeOntology
 
 slots:
   investigation_type:
     name: investigation_type
     description: Type of study design
-    range: InvestigationTypeOntology
+    range: InvestigationType
   archival_id:
     description: Identifier for external archival resource for the investigation, e.g., BioProject
     slot_uri: schema:identifier
