@@ -1,4 +1,4 @@
-# ak-schema
+# ak-schema 
 
 AIRR Knowledge Data Model
 
