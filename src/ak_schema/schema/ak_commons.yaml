@@ -61,6 +61,10 @@ classes:
         range: AKDataSet
         multivalued: true
         inlined: true
+      sequence_data:
+        range: SequenceData
+        multivalued: true
+        inlined: true
       conclusions:
         range: Conclusion
         multivalued: true

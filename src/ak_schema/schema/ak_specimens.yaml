@@ -62,6 +62,9 @@ classes:
       - repertoire_id
       - tcell_receptors
       - tcell_chains
+    slot_usage:
+      sequencing_files:
+        range: AIRRSequencingData
 
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
