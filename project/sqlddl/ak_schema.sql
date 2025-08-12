@@ -170,6 +170,7 @@
 --     * Slot: sequencing_facility Description: Name and address of sequencing facility
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
+--     * Slot: sequencing_files Description: Set of sequencing files produced by the sequencing run
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: assay_type Description: The specific type of an assay
@@ -177,7 +178,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: sequencing_files_id Description: Set of sequencing files produced by the sequencing run
 -- # Class: "TCellReceptorEpitopeBindingAssay" Description: ""
 --     * Slot: epitope Description: The epitope being measured
 --     * Slot: specimen Description: The specimen that was input for an assay
@@ -2599,6 +2599,7 @@ CREATE TABLE "AIRRSequencingAssay" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
+	sequencing_files TEXT, 
 	specimen TEXT, 
 	type TEXT, 
 	assay_type VARCHAR, 
@@ -2606,11 +2607,10 @@ CREATE TABLE "AIRRSequencingAssay" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	sequencing_files_id INTEGER, 
 	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(sequencing_files) REFERENCES "AIRRSequencingData" (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
-	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	epitope TEXT, 
