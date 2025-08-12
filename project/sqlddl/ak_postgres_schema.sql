@@ -1479,6 +1479,7 @@ CREATE TABLE "AIRRSequencingAssay" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
+	sequencing_files TEXT, 
 	specimen TEXT, 
 	type TEXT, 
 	assay_type "AssayTypeOntology", 
@@ -1486,12 +1487,11 @@ CREATE TABLE "AIRRSequencingAssay" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	sequencing_files_id INTEGER, 
 	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(sequencing_files) REFERENCES "AIRRSequencingData" (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
-	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
-);COMMENT ON TABLE "AIRRSequencingAssay" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "AIRRSequencingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AIRRSequencingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AIRRSequencingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "AIRRSequencingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_files_id IS 'Set of sequencing files produced by the sequencing run';
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_id IS 'ID of sequencing run assigned by the sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".total_reads_passing_qc_filter IS 'Number of usable reads for analysis';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_platform IS 'Designation of sequencing instrument used';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_facility IS 'Name and address of sequencing facility';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_run_date IS 'Date of sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_kit IS 'Name, manufacturer, order and lot numbers of sequencing kit';COMMENT ON COLUMN "AIRRSequencingAssay".sequencing_files IS 'Set of sequencing files produced by the sequencing run';COMMENT ON COLUMN "AIRRSequencingAssay".specimen IS 'The specimen that was input for an assay';COMMENT ON COLUMN "AIRRSequencingAssay".assay_type IS 'The specific type of an assay';COMMENT ON COLUMN "AIRRSequencingAssay".has_specified_output IS 'output data item';COMMENT ON COLUMN "AIRRSequencingAssay".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "AIRRSequencingAssay".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	epitope TEXT, 
 	specimen TEXT, 
