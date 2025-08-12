@@ -258,6 +258,32 @@
                         "null"
                     ]
                 },
+                "sequence_data": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/$defs/SequenceData__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/AIRRSequencingData__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/RNATranscriptomeData__identifier_optional"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "specimen_collections": {
                     "additionalProperties": {
                         "anyOf": [
@@ -389,15 +415,11 @@
                     ]
                 },
                 "sequencing_files": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/SequencingData"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Set of sequencing files produced by the sequencing run"
+                    "description": "Set of sequencing files produced by the sequencing run",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "sequencing_kit": {
                     "description": "Name, manufacturer, order and lot numbers of sequencing kit",
@@ -535,15 +557,11 @@
                     ]
                 },
                 "sequencing_files": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/SequencingData"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Set of sequencing files produced by the sequencing run"
+                    "description": "Set of sequencing files produced by the sequencing run",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "sequencing_kit": {
                     "description": "Name, manufacturer, order and lot numbers of sequencing kit",
@@ -724,6 +742,99 @@
             "required": [
                 "akc_id"
             ],
+            "title": "AIRRSequencingData",
+            "type": "object"
+        },
+        "AIRRSequencingData__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "file_type": {
+                    "$ref": "#/$defs/FileTypeEnum",
+                    "description": "File format for the raw reads or sequences"
+                },
+                "filename": {
+                    "description": "File name for the raw reads or sequences. The first file in paired-read sequencing.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "index_filename": {
+                    "description": "File name for the index file",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "index_length": {
+                    "description": "Read length in bases for the index file",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "paired_filename": {
+                    "description": "File name for the second file in paired-read sequencing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_read_direction": {
+                    "$ref": "#/$defs/PairedReadDirectionEnum",
+                    "description": "Read direction for the second file in paired-read sequencing"
+                },
+                "paired_read_length": {
+                    "description": "Read length in bases for the second file in paired-read sequencing",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "read_direction": {
+                    "$ref": "#/$defs/ReadDirectionEnum",
+                    "description": "Read direction for the raw reads or sequences. The first file in paired-read sequencing."
+                },
+                "read_length": {
+                    "description": "Read length in bases for the first file in paired-read sequencing",
+                    "type": [
+                        "integer",
+                        "null"
+                    ]
+                },
+                "sequencing_data_id": {
+                    "description": "Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AIRRSequencingData"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
             "title": "AIRRSequencingData",
             "type": "object"
         },
@@ -5290,6 +5401,38 @@
             "title": "RNATranscriptomeData",
             "type": "object"
         },
+        "RNATranscriptomeData__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "RNATranscriptomeData"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "RNATranscriptomeData",
+            "type": "object"
+        },
         "RaceOntology": {
             "description": "",
             "enum": [
@@ -7320,6 +7463,38 @@
             "title": "SequenceData",
             "type": "object"
         },
+        "SequenceData__identifier_optional": {
+            "additionalProperties": false,
+            "description": "sequence data items are given an akc_id",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "SequenceData"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "SequenceData",
+            "type": "object"
+        },
         "SequenceDelineationV": {
             "additionalProperties": false,
             "description": "",
@@ -9109,6 +9284,32 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Reference__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "sequence_data": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/SequenceData__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/AIRRSequencingData__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/RNATranscriptomeData__identifier_optional"
+                            }
+                        ]
                     },
                     {
                         "type": "null"

@@ -11508,6 +11508,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__sequence_data",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_data",
+      "alias": "sequence_data",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "SequenceData",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aIRRKnowledgeCommons__conclusions",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/conclusions",
@@ -11615,6 +11629,32 @@
       "is_usage_slot": true,
       "usage_slot_name": "sex",
       "range": "BiologicalSexOntology",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "AIRRSequencingAssay_sequencing_files",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_files",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": false,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Set of sequencing files produced by the sequencing run",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequencing_files",
+      "domain": "AIRRSequencingAssay",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_files",
+      "alias": "sequencing_files",
+      "owner": "AIRRSequencingAssay",
+      "domain_of": [
+        "AIRRSequencingAssay"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequencing_files",
+      "range": "AIRRSequencingData",
       "@type": "SlotDefinition"
     },
     {
@@ -11763,6 +11803,7 @@
         "aIRRKnowledgeCommons__specimen_processings",
         "aIRRKnowledgeCommons__assays",
         "aIRRKnowledgeCommons__datasets",
+        "aIRRKnowledgeCommons__sequence_data",
         "aIRRKnowledgeCommons__conclusions",
         "aIRRKnowledgeCommons__chains",
         "aIRRKnowledgeCommons__ab_tcell_receptors",
@@ -11872,6 +11913,14 @@
           "name": "datasets",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "AKDataSet",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "sequence_data",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "SequenceData",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -12294,13 +12343,13 @@
         "repertoire_id",
         "tcell_receptors",
         "tcell_chains",
+        "AIRRSequencingAssay_sequencing_files",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
         "sequencing_platform",
         "sequencing_facility",
         "sequencing_run_date",
-        "sequencing_kit",
-        "sequencing_files"
+        "sequencing_kit"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0600047",
@@ -13898,9 +13947,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-07-21T20:16:06",
-  "source_file_size": 204352,
-  "generation_date": "2025-07-21T20:16:08",
+  "source_file_date": "2025-08-12T20:59:17",
+  "source_file_size": 204647,
+  "generation_date": "2025-08-12T20:59:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
