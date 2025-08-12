@@ -242,8 +242,8 @@
 
 
 
-    AIRRSequencingAssay --&gt; "0..1" SequencingData : sequencing_files
-    click SequencingData href "../SequencingData"
+    AIRRSequencingAssay --&gt; "0..1" AIRRSequencingData : sequencing_files
+    click AIRRSequencingData href "../AIRRSequencingData"
 
 
       AIRRSequencingAssay : sequencing_kit
@@ -379,7 +379,7 @@
 </tr>
 <tr>
 <td><a href="../sequencing_files/">sequencing_files</a></td>
-<td>0..1 <br/> <a href="../SequencingData/">SequencingData</a></td>
+<td>0..1 <br/> <a href="../AIRRSequencingData/">AIRRSequencingData</a></td>
 <td>Set of sequencing files produced by the sequencing run</td>
 <td><a href="../SequencingRun/">SequencingRun</a></td>
 </tr>
@@ -470,6 +470,10 @@ slots:
 - repertoire_id
 - tcell_receptors
 - tcell_chains
+slot_usage:
+  sequencing_files:
+    name: sequencing_files
+    range: AIRRSequencingData
 class_uri: OBI:0600047
 
 </code></pre>
@@ -481,6 +485,10 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
 mixins:
 - SequencingRun
+slot_usage:
+  sequencing_files:
+    name: sequencing_files
+    range: AIRRSequencingData
 attributes:
   repertoire_id:
     name: repertoire_id
@@ -624,7 +632,7 @@ attributes:
     domain_of:
     - SequencingRun
     - SampleProcessing
-    range: SequencingData
+    range: AIRRSequencingData
   specimen:
     name: specimen
     description: The specimen that was input for an assay

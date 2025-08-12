@@ -326,6 +326,15 @@
     click Reference href "../Reference"
 
 
+      AIRRKnowledgeCommons : sequence_data
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" SequenceData : sequence_data
+    click SequenceData href "../SequenceData"
+
+
       AIRRKnowledgeCommons : specimen_collections
 
 
@@ -460,6 +469,12 @@
 <tr>
 <td><a href="../datasets/">datasets</a></td>
 <td>* <br/> <a href="../AKDataSet/">AKDataSet</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../sequence_data/">sequence_data</a></td>
+<td>* <br/> <a href="../SequenceData/">SequenceData</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -649,6 +664,15 @@ attributes:
     - AIRRKnowledgeCommons
     - Conclusion
     range: AKDataSet
+    multivalued: true
+    inlined: true
+  sequence_data:
+    name: sequence_data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: SequenceData
     multivalued: true
     inlined: true
   conclusions:
@@ -857,6 +881,17 @@ attributes:
     - AIRRKnowledgeCommons
     - Conclusion
     range: AKDataSet
+    multivalued: true
+    inlined: true
+  sequence_data:
+    name: sequence_data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: sequence_data
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: SequenceData
     multivalued: true
     inlined: true
   conclusions:
