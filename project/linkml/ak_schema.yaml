@@ -5721,6 +5721,12 @@ classes:
         range: AKDataSet
         multivalued: true
         inlined: true
+      sequence_data:
+        name: sequence_data
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: SequenceData
+        multivalued: true
+        inlined: true
       conclusions:
         name: conclusions
         from_schema: https://github.com/airr-knowledge/ak-schema
@@ -5931,6 +5937,10 @@ classes:
     - repertoire_id
     - tcell_receptors
     - tcell_chains
+    slot_usage:
+      sequencing_files:
+        name: sequencing_files
+        range: AIRRSequencingData
     class_uri: OBI:0600047
   TCellReceptorEpitopeBindingAssay:
     name: TCellReceptorEpitopeBindingAssay

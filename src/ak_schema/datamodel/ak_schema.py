@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-07-21T20:16:11
+# Generation date: 2025-08-12T23:36:52
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -581,6 +581,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     specimen_processings: Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, "SpecimenProcessing"]], List[Union[dict, "SpecimenProcessing"]]]] = empty_dict()
     assays: Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, "Assay"]], List[Union[dict, "Assay"]]]] = empty_dict()
     datasets: Optional[Union[Dict[Union[str, AKDataSetAkcId], Union[dict, "AKDataSet"]], List[Union[dict, "AKDataSet"]]]] = empty_dict()
+    sequence_data: Optional[Union[Dict[Union[str, SequenceDataAkcId], Union[dict, "SequenceData"]], List[Union[dict, "SequenceData"]]]] = empty_dict()
     conclusions: Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, "Conclusion"]], List[Union[dict, "Conclusion"]]]] = empty_dict()
     chains: Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, "Chain"]], List[Union[dict, "Chain"]]]] = empty_dict()
     ab_tcell_receptors: Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, "AlphaBetaTCR"]], List[Union[dict, "AlphaBetaTCR"]]]] = empty_dict()
@@ -614,6 +615,8 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="assays", slot_type=Assay, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="datasets", slot_type=AKDataSet, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="sequence_data", slot_type=SequenceData, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="conclusions", slot_type=Conclusion, key_name="akc_id", keyed=True)
 
@@ -1266,13 +1269,13 @@ class AIRRSequencingAssay(Assay):
     repertoire_id: Optional[str] = None
     tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
     tcell_chains: Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]] = empty_list()
+    sequencing_files: Optional[Union[str, AIRRSequencingDataAkcId]] = None
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
     sequencing_platform: Optional[str] = None
     sequencing_facility: Optional[str] = None
     sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
     sequencing_kit: Optional[str] = None
-    sequencing_files: Optional[Union[dict, "SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1291,6 +1294,9 @@ class AIRRSequencingAssay(Assay):
             self.tcell_chains = [self.tcell_chains] if self.tcell_chains is not None else []
         self.tcell_chains = [v if isinstance(v, ChainAkcId) else ChainAkcId(v) for v in self.tcell_chains]
 
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, AIRRSequencingDataAkcId):
+            self.sequencing_files = AIRRSequencingDataAkcId(self.sequencing_files)
+
         if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
             self.sequencing_run_id = str(self.sequencing_run_id)
 
@@ -1308,9 +1314,6 @@ class AIRRSequencingAssay(Assay):
 
         if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
             self.sequencing_kit = str(self.sequencing_kit)
-
-        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
-            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -7343,6 +7346,9 @@ slots.aIRRKnowledgeCommons__assays = Slot(uri=AK_SCHEMA.assays, name="aIRRKnowle
 slots.aIRRKnowledgeCommons__datasets = Slot(uri=AK_SCHEMA.datasets, name="aIRRKnowledgeCommons__datasets", curie=AK_SCHEMA.curie('datasets'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__datasets, domain=None, range=Optional[Union[Dict[Union[str, AKDataSetAkcId], Union[dict, AKDataSet]], List[Union[dict, AKDataSet]]]])
 
+slots.aIRRKnowledgeCommons__sequence_data = Slot(uri=AK_SCHEMA.sequence_data, name="aIRRKnowledgeCommons__sequence_data", curie=AK_SCHEMA.curie('sequence_data'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__sequence_data, domain=None, range=Optional[Union[Dict[Union[str, SequenceDataAkcId], Union[dict, SequenceData]], List[Union[dict, SequenceData]]]])
+
 slots.aIRRKnowledgeCommons__conclusions = Slot(uri=AK_SCHEMA.conclusions, name="aIRRKnowledgeCommons__conclusions", curie=AK_SCHEMA.curie('conclusions'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__conclusions, domain=None, range=Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, Conclusion]], List[Union[dict, Conclusion]]]])
 
@@ -7363,6 +7369,9 @@ slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKn
 
 slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
                    model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, "BiologicalSexOntology"]])
+
+slots.AIRRSequencingAssay_sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files, name="AIRRSequencingAssay_sequencing_files", curie=AK_SCHEMA.curie('sequencing_files'),
+                   model_uri=AK_SCHEMA.AIRRSequencingAssay_sequencing_files, domain=AIRRSequencingAssay, range=Optional[Union[str, AIRRSequencingDataAkcId]])
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])
