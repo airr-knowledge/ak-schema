@@ -969,6 +969,9 @@
           "text": "vdj_sequence_annotation"
         },
         {
+          "text": "genotype"
+        },
+        {
           "text": "quality_statistics"
         },
         {
@@ -1043,6 +1046,9 @@
         },
         {
           "text": "germline_allele_inference"
+        },
+        {
+          "text": "genotype_inference"
         },
         {
           "text": "gene_usage"
@@ -2746,7 +2752,7 @@
       "domain_of": [
         "DataTransformation"
       ],
-      "range": "DataItemTypeEnum",
+      "range": "DataTransformationTypeEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -12561,6 +12567,25 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "AIRRGenotypeData",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRGenotypeData",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKDataItem",
+      "mixins": [
+        "GenotypeSet"
+      ],
+      "slots": [
+        "akc_id",
+        "type",
+        "data_item_types",
+        "receptor_genotype_set_id",
+        "genotype_class_list"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRGenotypeData",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "RNATranscriptomeData",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/RNATranscriptomeData",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -13947,9 +13972,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-08-12T23:36:47",
-  "source_file_size": 204647,
-  "generation_date": "2025-08-12T23:36:49",
+  "source_file_date": "2025-09-24T21:32:19",
+  "source_file_size": 204914,
+  "generation_date": "2025-09-24T21:32:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
