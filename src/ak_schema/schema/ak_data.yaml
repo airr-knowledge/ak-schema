@@ -70,6 +70,10 @@ classes:
     is_a: SequenceData
     mixins: SequencingData # slots from AIRR class
 
+  AIRRGenotypeData:
+    is_a: AKDataItem
+    mixins: GenotypeSet # slots from AIRR class
+
   RNATranscriptomeData:
     is_a: SequenceData
 
