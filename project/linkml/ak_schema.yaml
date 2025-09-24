@@ -705,6 +705,8 @@ enums:
         text: barcode_sequence
       vdj_sequence_annotation:
         text: vdj_sequence_annotation
+      genotype:
+        text: genotype
       quality_statistics:
         text: quality_statistics
       annotation_statistics:
@@ -755,6 +757,8 @@ enums:
         text: clonal_assignment
       germline_allele_inference:
         text: germline_allele_inference
+      genotype_inference:
+        text: genotype_inference
       gene_usage:
         text: gene_usage
       gene_combo_usage:
@@ -1621,7 +1625,7 @@ slots:
     name: data_transformation_types
     description: semantic types of the data transformation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DataItemTypeEnum
+    range: DataTransformationTypeEnum
     multivalued: true
   datasets:
     name: datasets
@@ -6023,6 +6027,12 @@ classes:
     is_a: SequenceData
     mixins:
     - SequencingData
+  AIRRGenotypeData:
+    name: AIRRGenotypeData
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKDataItem
+    mixins:
+    - GenotypeSet
   RNATranscriptomeData:
     name: RNATranscriptomeData
     from_schema: https://github.com/airr-knowledge/ak-schema

@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-08-12T23:36:52
+# Generation date: 2025-09-24T21:32:25
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -325,6 +325,10 @@ class SequenceDataAkcId(AKDataItemAkcId):
 
 
 class AIRRSequencingDataAkcId(SequenceDataAkcId):
+    pass
+
+
+class AIRRGenotypeDataAkcId(AKDataItemAkcId):
     pass
 
 
@@ -1617,6 +1621,36 @@ class AIRRSequencingData(SequenceData):
 
 
 @dataclass(repr=False)
+class AIRRGenotypeData(AKDataItem):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRGenotypeData"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRGenotypeData"
+    class_name: ClassVar[str] = "AIRRGenotypeData"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRGenotypeData
+
+    akc_id: Union[str, AIRRGenotypeDataAkcId] = None
+    receptor_genotype_set_id: Optional[str] = None
+    genotype_class_list: Optional[Union[Union[dict, "Genotype"], List[Union[dict, "Genotype"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AIRRGenotypeDataAkcId):
+            self.akc_id = AIRRGenotypeDataAkcId(self.akc_id)
+
+        if self.receptor_genotype_set_id is not None and not isinstance(self.receptor_genotype_set_id, str):
+            self.receptor_genotype_set_id = str(self.receptor_genotype_set_id)
+
+        if not isinstance(self.genotype_class_list, list):
+            self.genotype_class_list = [self.genotype_class_list] if self.genotype_class_list is not None else []
+        self.genotype_class_list = [v if isinstance(v, Genotype) else Genotype(**as_dict(v)) for v in self.genotype_class_list]
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
 class RNATranscriptomeData(SequenceData):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1648,7 +1682,7 @@ class DataTransformation(Process):
 
     akc_id: Union[str, DataTransformationAkcId] = None
     was_generated_by: Optional[Union[Union[dict, "InputOutputDataMap"], List[Union[dict, "InputOutputDataMap"]]]] = empty_list()
-    data_transformation_types: Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]] = empty_list()
+    data_transformation_types: Optional[Union[Union[str, "DataTransformationTypeEnum"], List[Union[str, "DataTransformationTypeEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1662,7 +1696,7 @@ class DataTransformation(Process):
 
         if not isinstance(self.data_transformation_types, list):
             self.data_transformation_types = [self.data_transformation_types] if self.data_transformation_types is not None else []
-        self.data_transformation_types = [v if isinstance(v, DataItemTypeEnum) else DataItemTypeEnum(v) for v in self.data_transformation_types]
+        self.data_transformation_types = [v if isinstance(v, DataTransformationTypeEnum) else DataTransformationTypeEnum(v) for v in self.data_transformation_types]
 
         super().__post_init__(**kwargs)
 
@@ -5295,6 +5329,7 @@ class DataItemTypeEnum(EnumDefinitionImpl):
     reverse_primer_sequence = PermissibleValue(text="reverse_primer_sequence")
     barcode_sequence = PermissibleValue(text="barcode_sequence")
     vdj_sequence_annotation = PermissibleValue(text="vdj_sequence_annotation")
+    genotype = PermissibleValue(text="genotype")
     quality_statistics = PermissibleValue(text="quality_statistics")
     annotation_statistics = PermissibleValue(text="annotation_statistics")
     assigned_clones = PermissibleValue(text="assigned_clones")
@@ -5325,6 +5360,7 @@ class DataTransformationTypeEnum(EnumDefinitionImpl):
     vdj_annotation = PermissibleValue(text="vdj_annotation")
     clonal_assignment = PermissibleValue(text="clonal_assignment")
     germline_allele_inference = PermissibleValue(text="germline_allele_inference")
+    genotype_inference = PermissibleValue(text="genotype_inference")
     gene_usage = PermissibleValue(text="gene_usage")
     gene_combo_usage = PermissibleValue(text="gene_combo_usage")
     length_distribution = PermissibleValue(text="length_distribution")
@@ -6009,7 +6045,7 @@ slots.was_generated_by = Slot(uri=AK_SCHEMA.was_generated_by, name="was_generate
                    model_uri=AK_SCHEMA.was_generated_by, domain=None, range=Optional[Union[Union[dict, InputOutputDataMap], List[Union[dict, InputOutputDataMap]]]])
 
 slots.data_transformation_types = Slot(uri=AK_SCHEMA.data_transformation_types, name="data_transformation_types", curie=AK_SCHEMA.curie('data_transformation_types'),
-                   model_uri=AK_SCHEMA.data_transformation_types, domain=None, range=Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]])
+                   model_uri=AK_SCHEMA.data_transformation_types, domain=None, range=Optional[Union[Union[str, "DataTransformationTypeEnum"], List[Union[str, "DataTransformationTypeEnum"]]]])
 
 slots.datasets = Slot(uri=AK_SCHEMA.datasets, name="datasets", curie=AK_SCHEMA.curie('datasets'),
                    model_uri=AK_SCHEMA.datasets, domain=None, range=Optional[Union[Union[str, AKDataSetAkcId], List[Union[str, AKDataSetAkcId]]]])
