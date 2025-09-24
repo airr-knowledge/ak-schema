@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/AIRRGenotypeData/</loc>
+         <lastmod>2025-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/AIRRKnowledgeCommons/</loc>
          <lastmod>2025-09-24</lastmod>
          <changefreq>daily</changefreq>
