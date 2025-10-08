@@ -90,6 +90,12 @@ classes:
       - data_transformation
       - has_specified_input
       - has_specified_output
+    unique_keys:
+      data_map:
+        unique_key_slots:
+          - data_transformation
+          - has_specified_input
+          - has_specified_output
 
   Conclusion:
     is_a: NamedThing
