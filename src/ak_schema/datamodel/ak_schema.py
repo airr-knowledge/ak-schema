@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-09-24T21:32:25
+# Generation date: 2025-10-08T14:44:53
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -586,6 +586,8 @@ class AIRRKnowledgeCommons(YAMLRoot):
     assays: Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, "Assay"]], List[Union[dict, "Assay"]]]] = empty_dict()
     datasets: Optional[Union[Dict[Union[str, AKDataSetAkcId], Union[dict, "AKDataSet"]], List[Union[dict, "AKDataSet"]]]] = empty_dict()
     sequence_data: Optional[Union[Dict[Union[str, SequenceDataAkcId], Union[dict, "SequenceData"]], List[Union[dict, "SequenceData"]]]] = empty_dict()
+    transformations: Optional[Union[Dict[Union[str, DataTransformationAkcId], Union[dict, "DataTransformation"]], List[Union[dict, "DataTransformation"]]]] = empty_dict()
+    input_output_map: Optional[Union[Union[dict, "InputOutputDataMap"], List[Union[dict, "InputOutputDataMap"]]]] = empty_list()
     conclusions: Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, "Conclusion"]], List[Union[dict, "Conclusion"]]]] = empty_dict()
     chains: Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, "Chain"]], List[Union[dict, "Chain"]]]] = empty_dict()
     ab_tcell_receptors: Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, "AlphaBetaTCR"]], List[Union[dict, "AlphaBetaTCR"]]]] = empty_dict()
@@ -621,6 +623,12 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="datasets", slot_type=AKDataSet, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="sequence_data", slot_type=SequenceData, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="transformations", slot_type=DataTransformation, key_name="akc_id", keyed=True)
+
+        if not isinstance(self.input_output_map, list):
+            self.input_output_map = [self.input_output_map] if self.input_output_map is not None else []
+        self.input_output_map = [v if isinstance(v, InputOutputDataMap) else InputOutputDataMap(**as_dict(v)) for v in self.input_output_map]
 
         self._normalize_inlined_as_dict(slot_name="conclusions", slot_type=Conclusion, key_name="akc_id", keyed=True)
 
@@ -7384,6 +7392,12 @@ slots.aIRRKnowledgeCommons__datasets = Slot(uri=AK_SCHEMA.datasets, name="aIRRKn
 
 slots.aIRRKnowledgeCommons__sequence_data = Slot(uri=AK_SCHEMA.sequence_data, name="aIRRKnowledgeCommons__sequence_data", curie=AK_SCHEMA.curie('sequence_data'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__sequence_data, domain=None, range=Optional[Union[Dict[Union[str, SequenceDataAkcId], Union[dict, SequenceData]], List[Union[dict, SequenceData]]]])
+
+slots.aIRRKnowledgeCommons__transformations = Slot(uri=AK_SCHEMA.transformations, name="aIRRKnowledgeCommons__transformations", curie=AK_SCHEMA.curie('transformations'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__transformations, domain=None, range=Optional[Union[Dict[Union[str, DataTransformationAkcId], Union[dict, DataTransformation]], List[Union[dict, DataTransformation]]]])
+
+slots.aIRRKnowledgeCommons__input_output_map = Slot(uri=AK_SCHEMA.input_output_map, name="aIRRKnowledgeCommons__input_output_map", curie=AK_SCHEMA.curie('input_output_map'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__input_output_map, domain=None, range=Optional[Union[Union[dict, InputOutputDataMap], List[Union[dict, InputOutputDataMap]]]])
 
 slots.aIRRKnowledgeCommons__conclusions = Slot(uri=AK_SCHEMA.conclusions, name="aIRRKnowledgeCommons__conclusions", curie=AK_SCHEMA.curie('conclusions'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__conclusions, domain=None, range=Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, Conclusion]], List[Union[dict, Conclusion]]]])

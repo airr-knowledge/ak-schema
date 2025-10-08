@@ -5731,6 +5731,18 @@ classes:
         range: SequenceData
         multivalued: true
         inlined: true
+      transformations:
+        name: transformations
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: DataTransformation
+        multivalued: true
+        inlined: true
+      input_output_map:
+        name: input_output_map
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: InputOutputDataMap
+        multivalued: true
+        inlined: true
       conclusions:
         name: conclusions
         from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6052,6 +6064,13 @@ classes:
     - data_transformation
     - has_specified_input
     - has_specified_output
+    unique_keys:
+      data_map:
+        unique_key_name: data_map
+        unique_key_slots:
+        - data_transformation
+        - has_specified_input
+        - has_specified_output
   Conclusion:
     name: Conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
