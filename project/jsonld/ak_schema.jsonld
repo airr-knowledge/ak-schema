@@ -11528,6 +11528,34 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__transformations",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/transformations",
+      "alias": "transformations",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "DataTransformation",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__input_output_map",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/input_output_map",
+      "alias": "input_output_map",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "InputOutputDataMap",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aIRRKnowledgeCommons__conclusions",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/conclusions",
@@ -11810,6 +11838,8 @@
         "aIRRKnowledgeCommons__assays",
         "aIRRKnowledgeCommons__datasets",
         "aIRRKnowledgeCommons__sequence_data",
+        "aIRRKnowledgeCommons__transformations",
+        "aIRRKnowledgeCommons__input_output_map",
         "aIRRKnowledgeCommons__conclusions",
         "aIRRKnowledgeCommons__chains",
         "aIRRKnowledgeCommons__ab_tcell_receptors",
@@ -11927,6 +11957,22 @@
           "name": "sequence_data",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "SequenceData",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "transformations",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "DataTransformation",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "input_output_map",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "InputOutputDataMap",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -12629,6 +12675,17 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/InputOutputDataMap",
+      "unique_keys": [
+        {
+          "unique_key_name": "data_map",
+          "unique_key_slots": [
+            "data_transformation",
+            "has_specified_input",
+            "has_specified_output"
+          ],
+          "@type": "UniqueKey"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -13972,9 +14029,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-09-24T21:32:19",
-  "source_file_size": 204914,
-  "generation_date": "2025-09-24T21:32:21",
+  "source_file_date": "2025-10-08T14:44:46",
+  "source_file_size": 205500,
+  "generation_date": "2025-10-08T14:44:49",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

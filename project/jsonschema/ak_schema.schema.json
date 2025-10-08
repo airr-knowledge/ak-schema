@@ -235,6 +235,15 @@
                         "null"
                     ]
                 },
+                "input_output_map": {
+                    "items": {
+                        "$ref": "#/$defs/InputOutputDataMap"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "investigations": {
                     "additionalProperties": {
                         "anyOf": [
@@ -404,6 +413,22 @@
                         "anyOf": [
                             {
                                 "$ref": "#/$defs/StudyEvent__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "transformations": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/DataTransformation__identifier_optional"
                             },
                             {
                                 "type": "null"
@@ -3380,6 +3405,53 @@
             ],
             "title": "DataTransformationTypeEnum",
             "type": "string"
+        },
+        "DataTransformation__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_transformation_types": {
+                    "description": "semantic types of the data transformation",
+                    "items": {
+                        "$ref": "#/$defs/DataTransformationTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "was_generated_by": {
+                    "description": "direct provenance link of one entity (input) to another (output) for a data transformation",
+                    "items": {
+                        "$ref": "#/$defs/InputOutputDataMap"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "DataTransformation",
+            "type": "object"
         },
         "DeletedGene": {
             "additionalProperties": false,
@@ -9274,6 +9346,15 @@
                 "null"
             ]
         },
+        "input_output_map": {
+            "items": {
+                "$ref": "#/$defs/InputOutputDataMap"
+            },
+            "type": [
+                "array",
+                "null"
+            ]
+        },
         "investigations": {
             "additionalProperties": {
                 "anyOf": [
@@ -9443,6 +9524,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/StudyEvent__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "transformations": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/DataTransformation__identifier_optional"
                     },
                     {
                         "type": "null"
