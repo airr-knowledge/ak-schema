@@ -1,6 +1,12 @@
-/docs/
-/project/docs/
-/tmp/
+# generated part of documentation
+/docs/elements/*.md
+# linkml-run-examples output (not useful to have in git in its current form)
+/examples/output/
+
+# Derived schemas, generated from the schema.yaml
+tmp/
+project/
+!project/README.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -132,4 +138,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-examples/iedb/ak_schema.py
+# pycharm
+.idea
+# Local vscode editor config
+.vscode
