@@ -219,8 +219,8 @@
 
 
 
-    DataTransformation --&gt; "*" DataItemTypeEnum : data_transformation_types
-    click DataItemTypeEnum href "../DataItemTypeEnum"
+    DataTransformation --&gt; "*" DataTransformationTypeEnum : data_transformation_types
+    click DataTransformationTypeEnum href "../DataTransformationTypeEnum"
 
 
       DataTransformation : description
@@ -270,7 +270,7 @@
 </tr>
 <tr>
 <td><a href="../data_transformation_types/">data_transformation_types</a></td>
-<td>* <br/> <a href="../DataItemTypeEnum/">DataItemTypeEnum</a></td>
+<td>* <br/> <a href="../DataTransformationTypeEnum/">DataTransformationTypeEnum</a></td>
 <td>semantic types of the data transformation</td>
 <td>direct</td>
 </tr>
@@ -305,6 +305,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../transformations/">transformations</a></td>
+<td>range</td>
+<td><a href="./">DataTransformation</a></td>
+</tr>
 <tr>
 <td><a href="../InputOutputDataMap/">InputOutputDataMap</a></td>
 <td><a href="../data_transformation/">data_transformation</a></td>
@@ -378,7 +384,7 @@ attributes:
     owner: DataTransformation
     domain_of:
     - DataTransformation
-    range: DataItemTypeEnum
+    range: DataTransformationTypeEnum
     multivalued: true
   name:
     name: name

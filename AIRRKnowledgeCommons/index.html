@@ -290,6 +290,15 @@
     click ImmuneExposure href "../ImmuneExposure"
 
 
+      AIRRKnowledgeCommons : input_output_map
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" InputOutputDataMap : input_output_map
+    click InputOutputDataMap href "../InputOutputDataMap"
+
+
       AIRRKnowledgeCommons : investigations
 
 
@@ -378,6 +387,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" StudyEvent : study_events
     click StudyEvent href "../StudyEvent"
+
+
+      AIRRKnowledgeCommons : transformations
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" DataTransformation : transformations
+    click DataTransformation href "../DataTransformation"
 
 
 
@@ -475,6 +493,18 @@
 <tr>
 <td><a href="../sequence_data/">sequence_data</a></td>
 <td>* <br/> <a href="../SequenceData/">SequenceData</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../transformations/">transformations</a></td>
+<td>* <br/> <a href="../DataTransformation/">DataTransformation</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../input_output_map/">input_output_map</a></td>
+<td>* <br/> <a href="../InputOutputDataMap/">InputOutputDataMap</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -673,6 +703,24 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: SequenceData
+    multivalued: true
+    inlined: true
+  transformations:
+    name: transformations
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: DataTransformation
+    multivalued: true
+    inlined: true
+  input_output_map:
+    name: input_output_map
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: InputOutputDataMap
     multivalued: true
     inlined: true
   conclusions:
@@ -892,6 +940,28 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: SequenceData
+    multivalued: true
+    inlined: true
+  transformations:
+    name: transformations
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: transformations
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: DataTransformation
+    multivalued: true
+    inlined: true
+  input_output_map:
+    name: input_output_map
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: input_output_map
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: InputOutputDataMap
     multivalued: true
     inlined: true
   conclusions:

@@ -277,6 +277,12 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../input_output_map/">input_output_map</a></td>
+<td>range</td>
+<td><a href="./">InputOutputDataMap</a></td>
+</tr>
+<tr>
 <td><a href="../DataTransformation/">DataTransformation</a></td>
 <td><a href="../was_generated_by/">was_generated_by</a></td>
 <td>range</td>
@@ -318,6 +324,13 @@ slots:
 - data_transformation
 - has_specified_input
 - has_specified_output
+unique_keys:
+  data_map:
+    unique_key_name: data_map
+    unique_key_slots:
+    - data_transformation
+    - has_specified_input
+    - has_specified_output
 
 </code></pre>
 </details>
@@ -357,6 +370,13 @@ attributes:
     - Assay
     - InputOutputDataMap
     range: AKDataItem
+unique_keys:
+  data_map:
+    unique_key_name: data_map
+    unique_key_slots:
+    - data_transformation
+    - has_specified_input
+    - has_specified_output
 
 </code></pre>
 </details>
