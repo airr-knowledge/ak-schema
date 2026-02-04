@@ -348,8 +348,8 @@ types:
     uri: xsd:string
     repr: str
 enums:
-  InvestigationTypeOntology:
-    name: InvestigationTypeOntology
+  BiomedicalInvestigationsOntology:
+    name: BiomedicalInvestigationsOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -1322,6 +1322,7 @@ slots:
     name: term_id
     description: ontology term ID
     from_schema: https://github.com/airr-knowledge/ak-schema
+    identifier: true
     range: uriorcurie
     required: true
   term_label:
@@ -1329,16 +1330,18 @@ slots:
     description: ontology term descriptive label
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
-  parent_term_id:
-    name: parent_term_id
-    description: parent ID for ontology term
+  parent:
+    name: parent
+    description: parent term ID for ontology term
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: uriorcurie
+    range: OntologyTable
+    required: false
+    multivalued: true
   investigation_type:
     name: investigation_type
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: InvestigationType
+    range: BiomedicalInvestigations
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,
@@ -5667,7 +5670,7 @@ classes:
     slots:
     - term_id
     - term_label
-    - parent_term_id
+    - parent
   AIRRKnowledgeCommons:
     name: AIRRKnowledgeCommons
     description: A container for instances of multiple classes.
@@ -5894,17 +5897,17 @@ classes:
     - assessment_type
     - target_entity_type
     class_uri: OBI:0002441
-  InvestigationType:
-    name: InvestigationType
+  BiomedicalInvestigations:
+    name: BiomedicalInvestigations
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: OntologyTable
     slot_usage:
       term_id:
         name: term_id
-        range: InvestigationTypeOntology
-      parent_term_id:
-        name: parent_term_id
-        range: InvestigationTypeOntology
+        range: BiomedicalInvestigationsOntology
+      parent:
+        name: parent
+        range: BiomedicalInvestigations
   Specimen:
     name: Specimen
     from_schema: https://github.com/airr-knowledge/ak-schema

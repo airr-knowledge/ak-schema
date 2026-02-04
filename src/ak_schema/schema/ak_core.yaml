@@ -69,7 +69,7 @@ classes:
     slots:
       - term_id
       - term_label
-      - parent_term_id
+      - parent
 
 slots:
   akc_id:
@@ -96,11 +96,14 @@ slots:
 
   term_id:
     description: ontology term ID
+    identifier: true
     required: true
     range: uriorcurie
   term_label:
     description: ontology term descriptive label
     range: string
-  parent_term_id:
-    description: parent ID for ontology term
-    range: uriorcurie
+  parent:
+    description: parent term ID for ontology term
+    range: OntologyTable
+    multivalued: true
+    required: false
