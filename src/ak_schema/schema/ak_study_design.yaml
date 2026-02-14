@@ -65,7 +65,7 @@ classes:
       - strain # For non-human organisms
     slot_usage:
       sex:
-        range: BiologicalSexOntology
+        range: PhenotypeAndTraits
 
   StudyEvent:
     is_a: Process
@@ -108,15 +108,6 @@ classes:
       - life_event
       - assessment_type
       - target_entity_type
-
-  # InvestigationType:
-  BiomedicalInvestigations:
-    is_a: OntologyTable
-    slot_usage:
-      term_id:
-        range: BiomedicalInvestigationsOntology
-      parent:
-        range: BiomedicalInvestigations
 
 slots:
   investigation_type:
@@ -258,7 +249,7 @@ slots:
     range: ExposureMaterialOntology
   disease:
     description: The disease relevant to an immune exposure
-    range: DiseaseOntology
+    range: Diseases
 #  disease_stage:
 #    description: The stage of the disease relevant to an immune exposure
 #    range: DiseaseStageOntology
@@ -270,24 +261,6 @@ slots:
     slot_uri: rdf:type
 
 enums:
-  BiomedicalInvestigationsOntology:
-    name: BiomedicalInvestigationsOntology
-    reachable_from:
-      source_nodes:
-        - OBI:0500000
-      include_self: false
-      relationship_types:
-        - rdfs:subClassOf
-
-  BiologicalSexOntology:
-    name: BiologicalSexOntology
-    reachable_from:
-      source_nodes:
-        - PATO:0020000
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
-
   RaceOntology:
     permissible_values:
       American Indian or Alaska Native:
@@ -429,30 +402,6 @@ enums:
       LDLR-/-:
       pet shop mouse:
 
-  LifeEventProcessOntology:
-    name: LifeEventProcessOntology
-    reachable_from:
-      source_nodes:
-        - BFO:0000015 # process
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
-  ExposureMaterialOntology:
-    name: ExposureMaterialOntology
-    reachable_from:
-      source_nodes:
-        - NCBITAXON:7776
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
-  DiseaseOntology:
-    name: DiseaseOntology
-    reachable_from:
-      source_nodes:
-        - DOID:4
-      include_self: true
-      relationship_types:
-        - rdfs:subClassOf
   DiseaseStageOntology:
     permissible_values:
       acute disease course:

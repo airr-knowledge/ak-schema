@@ -61,15 +61,6 @@ classes:
     description: >-
       A plan with specified actions to meet some objectives.
 
-# ontology tables
-# subclass for specific ontologies and define slot_usage for the IDs
-  OntologyTable:
-    abstract: true
-    description: standard schema for an ontology table
-    slots:
-      - term_id
-      - term_label
-      - parent
 
 slots:
   akc_id:
@@ -94,16 +85,3 @@ slots:
     designates_type: true
     range: string
 
-  term_id:
-    description: ontology term ID
-    identifier: true
-    required: true
-    range: uriorcurie
-  term_label:
-    description: ontology term descriptive label
-    range: string
-  parent:
-    description: parent term ID for ontology term
-    range: OntologyTable
-    multivalued: true
-    required: false
