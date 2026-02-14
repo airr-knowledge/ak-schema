@@ -448,8 +448,8 @@
   ],
   "enums": [
     {
-      "name": "InvestigationTypeOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InvestigationTypeOntology",
+      "name": "BiomedicalInvestigationsOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/BiomedicalInvestigationsOntology",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "reachable_from": {
         "source_nodes": [
@@ -467,6 +467,48 @@
       "reachable_from": {
         "source_nodes": [
           "PATO:0020000"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ],
+        "include_self": true
+      }
+    },
+    {
+      "name": "LifeEventProcessOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEventProcessOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "BFO:0000015"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ],
+        "include_self": true
+      }
+    },
+    {
+      "name": "ExposureMaterialOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExposureMaterialOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "NCBITAXON:7776"
+        ],
+        "relationship_types": [
+          "rdfs:subClassOf"
+        ],
+        "include_self": true
+      }
+    },
+    {
+      "name": "UnitOntology",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/UnitOntology",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "reachable_from": {
+        "source_nodes": [
+          "UO:0000000"
         ],
         "relationship_types": [
           "rdfs:subClassOf"
@@ -814,48 +856,6 @@
           "text": "pet shop mouse"
         }
       ]
-    },
-    {
-      "name": "LifeEventProcessOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/LifeEventProcessOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "reachable_from": {
-        "source_nodes": [
-          "BFO:0000015"
-        ],
-        "relationship_types": [
-          "rdfs:subClassOf"
-        ],
-        "include_self": true
-      }
-    },
-    {
-      "name": "ExposureMaterialOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/ExposureMaterialOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "reachable_from": {
-        "source_nodes": [
-          "NCBITAXON:7776"
-        ],
-        "relationship_types": [
-          "rdfs:subClassOf"
-        ],
-        "include_self": true
-      }
-    },
-    {
-      "name": "DiseaseOntology",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/DiseaseOntology",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "reachable_from": {
-        "source_nodes": [
-          "DOID:4"
-        ],
-        "relationship_types": [
-          "rdfs:subClassOf"
-        ],
-        "include_self": true
-      }
     },
     {
       "name": "DiseaseStageOntology",
@@ -1974,6 +1974,7 @@
       "description": "ontology term ID",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "identifier": true,
       "owner": "OntologyTable",
       "domain_of": [
         "OntologyTable"
@@ -1996,16 +1997,17 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "parent_term_id",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
-      "description": "parent ID for ontology term",
+      "name": "parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
       "owner": "OntologyTable",
       "domain_of": [
         "OntologyTable"
       ],
-      "range": "uriorcurie",
+      "range": "OntologyTable",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -2018,8 +2020,7 @@
       "domain_of": [
         "Investigation"
       ],
-      "range": "InvestigationType",
-      "inlined": true,
+      "range": "BiomedicalInvestigations",
       "@type": "SlotDefinition"
     },
     {
@@ -2507,7 +2508,7 @@
       "domain_of": [
         "ImmuneExposure"
       ],
-      "range": "DiseaseOntology",
+      "range": "Diseases",
       "@type": "SlotDefinition"
     },
     {
@@ -11633,6 +11634,240 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "BiomedicalInvestigations_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "term_id",
+      "domain": "BiomedicalInvestigations",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "identifier": true,
+      "alias": "term_id",
+      "owner": "BiomedicalInvestigations",
+      "domain_of": [
+        "BiomedicalInvestigations"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_id",
+      "range": "BiomedicalInvestigationsOntology",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "BiomedicalInvestigations_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "BiomedicalInvestigations",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "BiomedicalInvestigations",
+      "domain_of": [
+        "BiomedicalInvestigations"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "BiomedicalInvestigations",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PhenotypeAndTraits_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "term_id",
+      "domain": "PhenotypeAndTraits",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "identifier": true,
+      "alias": "term_id",
+      "owner": "PhenotypeAndTraits",
+      "domain_of": [
+        "PhenotypeAndTraits"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_id",
+      "range": "BiologicalSexOntology",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PhenotypeAndTraits_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "PhenotypeAndTraits",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "PhenotypeAndTraits",
+      "domain_of": [
+        "PhenotypeAndTraits"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "PhenotypeAndTraits",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Diseases_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "term_id",
+      "domain": "Diseases",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "identifier": true,
+      "alias": "term_id",
+      "owner": "Diseases",
+      "domain_of": [
+        "Diseases"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_id",
+      "range": "DiseaseDiagnosisOntology",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Diseases_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "Diseases",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "Diseases",
+      "domain_of": [
+        "Diseases"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "Diseases",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Cells_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "term_id",
+      "domain": "Cells",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "identifier": true,
+      "alias": "term_id",
+      "owner": "Cells",
+      "domain_of": [
+        "Cells"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_id",
+      "range": "CellSubsetOntology",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Cells_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "Cells",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "Cells",
+      "domain_of": [
+        "Cells"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "Cells",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "UberAnatomy_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "term_id",
+      "domain": "UberAnatomy",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "identifier": true,
+      "alias": "term_id",
+      "owner": "UberAnatomy",
+      "domain_of": [
+        "UberAnatomy"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_id",
+      "range": "TissueOntology",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "UberAnatomy_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "UberAnatomy",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "UberAnatomy",
+      "domain_of": [
+        "UberAnatomy"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "UberAnatomy",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Units_term_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "description": "ontology term ID",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "term_id",
+      "domain": "Units",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
+      "identifier": true,
+      "alias": "term_id",
+      "owner": "Units",
+      "domain_of": [
+        "Units"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "term_id",
+      "range": "UnitOntology",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Units_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "Units",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "Units",
+      "domain_of": [
+        "Units"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "Units",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Participant_sex",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sex",
       "annotations": {
@@ -11655,44 +11890,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "sex",
-      "range": "BiologicalSexOntology",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "InvestigationType_term_id",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
-      "description": "ontology term ID",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "term_id",
-      "domain": "InvestigationType",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/term_id",
-      "alias": "term_id",
-      "owner": "InvestigationType",
-      "domain_of": [
-        "InvestigationType"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "term_id",
-      "range": "InvestigationTypeOntology",
-      "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "InvestigationType_parent_term_id",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
-      "description": "parent ID for ontology term",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "parent_term_id",
-      "domain": "InvestigationType",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent_term_id",
-      "alias": "parent_term_id",
-      "owner": "InvestigationType",
-      "domain_of": [
-        "InvestigationType"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "parent_term_id",
-      "range": "InvestigationTypeOntology",
+      "range": "PhenotypeAndTraits",
       "@type": "SlotDefinition"
     },
     {
@@ -11841,10 +12039,94 @@
       "slots": [
         "term_id",
         "term_label",
-        "parent_term_id"
+        "parent"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/OntologyTable",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BiomedicalInvestigations",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/BiomedicalInvestigations",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_label",
+        "BiomedicalInvestigations_term_id",
+        "BiomedicalInvestigations_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/BiomedicalInvestigations",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PhenotypeAndTraits",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PhenotypeAndTraits",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_label",
+        "PhenotypeAndTraits_term_id",
+        "PhenotypeAndTraits_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PhenotypeAndTraits",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Diseases",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Diseases",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_label",
+        "Diseases_term_id",
+        "Diseases_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/Diseases",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Cells",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Cells",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_label",
+        "Cells_term_id",
+        "Cells_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/Cells",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "UberAnatomy",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/UberAnatomy",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_label",
+        "UberAnatomy_term_id",
+        "UberAnatomy_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/UberAnatomy",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "Units",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/Units",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_label",
+        "Units_term_id",
+        "Units_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/Units",
       "@type": "ClassDefinition"
     },
     {
@@ -12226,20 +12508,6 @@
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0002441",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "InvestigationType",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/InvestigationType",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "is_a": "OntologyTable",
-      "slots": [
-        "term_label",
-        "InvestigationType_term_id",
-        "InvestigationType_parent_term_id"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/InvestigationType",
       "@type": "ClassDefinition"
     },
     {
@@ -14015,9 +14283,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-08-05T19:01:48",
-  "source_file_size": 205609,
-  "generation_date": "2025-08-05T19:01:50",
+  "source_file_date": "2026-02-13T22:15:23",
+  "source_file_size": 206999,
+  "generation_date": "2026-02-13T22:15:24",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

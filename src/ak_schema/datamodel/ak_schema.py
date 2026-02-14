@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2025-08-05T19:01:55
+# Generation date: 2026-02-13T22:15:27
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -241,6 +241,34 @@ class ProcessAkcId(NamedThingAkcId):
 
 
 class PlanSpecificationAkcId(NamedThingAkcId):
+    pass
+
+
+class OntologyTableTermId(URIorCURIE):
+    pass
+
+
+class BiomedicalInvestigationsTermId(BiomedicalInvestigationsOntology):
+    pass
+
+
+class PhenotypeAndTraitsTermId(BiologicalSexOntology):
+    pass
+
+
+class DiseasesTermId(DiseaseDiagnosisOntology):
+    pass
+
+
+class CellsTermId(CellSubsetOntology):
+    pass
+
+
+class UberAnatomyTermId(TissueOntology):
+    pass
+
+
+class UnitsTermId(UnitOntology):
     pass
 
 
@@ -580,21 +608,142 @@ class OntologyTable(YAMLRoot):
     class_name: ClassVar[str] = "OntologyTable"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.OntologyTable
 
-    term_id: Union[str, URIorCURIE] = None
+    term_id: Union[str, OntologyTableTermId] = None
     term_label: Optional[str] = None
-    parent_term_id: Optional[Union[str, URIorCURIE]] = None
+    parent: Optional[Union[Union[str, OntologyTableTermId], List[Union[str, OntologyTableTermId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.term_id):
             self.MissingRequiredField("term_id")
-        if not isinstance(self.term_id, URIorCURIE):
-            self.term_id = URIorCURIE(self.term_id)
+        if not isinstance(self.term_id, OntologyTableTermId):
+            self.term_id = OntologyTableTermId(self.term_id)
 
         if self.term_label is not None and not isinstance(self.term_label, str):
             self.term_label = str(self.term_label)
 
-        if self.parent_term_id is not None and not isinstance(self.parent_term_id, URIorCURIE):
-            self.parent_term_id = URIorCURIE(self.parent_term_id)
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, OntologyTableTermId) else OntologyTableTermId(v) for v in self.parent]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class BiomedicalInvestigations(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["BiomedicalInvestigations"]
+    class_class_curie: ClassVar[str] = "ak_schema:BiomedicalInvestigations"
+    class_name: ClassVar[str] = "BiomedicalInvestigations"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.BiomedicalInvestigations
+
+    term_id: Union[str, "BiomedicalInvestigationsTermId"] = None
+    parent: Optional[Union[Union[str, BiomedicalInvestigationsTermId], List[Union[str, BiomedicalInvestigationsTermId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, BiomedicalInvestigationsTermId) else BiomedicalInvestigationsTermId(v) for v in self.parent]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class PhenotypeAndTraits(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PhenotypeAndTraits"]
+    class_class_curie: ClassVar[str] = "ak_schema:PhenotypeAndTraits"
+    class_name: ClassVar[str] = "PhenotypeAndTraits"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PhenotypeAndTraits
+
+    term_id: Union[str, "PhenotypeAndTraitsTermId"] = None
+    parent: Optional[Union[Union[str, PhenotypeAndTraitsTermId], List[Union[str, PhenotypeAndTraitsTermId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, PhenotypeAndTraitsTermId) else PhenotypeAndTraitsTermId(v) for v in self.parent]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Diseases(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Diseases"]
+    class_class_curie: ClassVar[str] = "ak_schema:Diseases"
+    class_name: ClassVar[str] = "Diseases"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Diseases
+
+    term_id: Union[str, "DiseasesTermId"] = None
+    parent: Optional[Union[Union[str, DiseasesTermId], List[Union[str, DiseasesTermId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, DiseasesTermId) else DiseasesTermId(v) for v in self.parent]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Cells(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Cells"]
+    class_class_curie: ClassVar[str] = "ak_schema:Cells"
+    class_name: ClassVar[str] = "Cells"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Cells
+
+    term_id: Union[str, "CellsTermId"] = None
+    parent: Optional[Union[Union[str, CellsTermId], List[Union[str, CellsTermId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, CellsTermId) else CellsTermId(v) for v in self.parent]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class UberAnatomy(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["UberAnatomy"]
+    class_class_curie: ClassVar[str] = "ak_schema:UberAnatomy"
+    class_name: ClassVar[str] = "UberAnatomy"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UberAnatomy
+
+    term_id: Union[str, "UberAnatomyTermId"] = None
+    parent: Optional[Union[Union[str, UberAnatomyTermId], List[Union[str, UberAnatomyTermId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, UberAnatomyTermId) else UberAnatomyTermId(v) for v in self.parent]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class Units(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["Units"]
+    class_class_curie: ClassVar[str] = "ak_schema:Units"
+    class_name: ClassVar[str] = "Units"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Units
+
+    term_id: Union[str, "UnitsTermId"] = None
+    parent: Optional[Union[Union[str, UnitsTermId], List[Union[str, UnitsTermId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, UnitsTermId) else UnitsTermId(v) for v in self.parent]
 
         super().__post_init__(**kwargs)
 
@@ -686,7 +835,7 @@ class Investigation(Process):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Investigation
 
     akc_id: Union[str, InvestigationAkcId] = None
-    investigation_type: Optional[Union[dict, "InvestigationType"]] = None
+    investigation_type: Optional[Union[str, BiomedicalInvestigationsTermId]] = None
     archival_id: Optional[Union[str, URIorCURIE]] = None
     inclusion_exclusion_criteria: Optional[str] = None
     release_date: Optional[Union[str, XSDDateTime]] = None
@@ -703,8 +852,8 @@ class Investigation(Process):
         if not isinstance(self.akc_id, InvestigationAkcId):
             self.akc_id = InvestigationAkcId(self.akc_id)
 
-        if self.investigation_type is not None and not isinstance(self.investigation_type, InvestigationType):
-            self.investigation_type = InvestigationType(**as_dict(self.investigation_type))
+        if self.investigation_type is not None and not isinstance(self.investigation_type, BiomedicalInvestigationsTermId):
+            self.investigation_type = BiomedicalInvestigationsTermId(self.investigation_type)
 
         if self.archival_id is not None and not isinstance(self.archival_id, URIorCURIE):
             self.archival_id = URIorCURIE(self.archival_id)
@@ -845,7 +994,7 @@ class Participant(NamedThing):
     akc_id: Union[str, ParticipantAkcId] = None
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
     species: Optional[Union[str, "SpeciesOntology"]] = None
-    sex: Optional[Union[str, "BiologicalSexOntology"]] = None
+    sex: Optional[Union[str, PhenotypeAndTraitsTermId]] = None
     age: Optional[str] = None
     age_unit: Optional[Union[str, "AgeUnitOntology"]] = None
     age_event: Optional[str] = None
@@ -862,6 +1011,9 @@ class Participant(NamedThing):
 
         if self.study_arm is not None and not isinstance(self.study_arm, StudyArmAkcId):
             self.study_arm = StudyArmAkcId(self.study_arm)
+
+        if self.sex is not None and not isinstance(self.sex, PhenotypeAndTraitsTermId):
+            self.sex = PhenotypeAndTraitsTermId(self.sex)
 
         if self.age is not None and not isinstance(self.age, str):
             self.age = str(self.age)
@@ -998,7 +1150,7 @@ class ImmuneExposure(LifeEvent):
 
     akc_id: Union[str, ImmuneExposureAkcId] = None
     exposure_material: Optional[Union[str, "ExposureMaterialOntology"]] = None
-    disease: Optional[Union[str, "DiseaseOntology"]] = None
+    disease: Optional[Union[str, DiseasesTermId]] = None
     disease_stage: Optional[str] = None
     disease_severity: Optional[str] = None
 
@@ -1007,6 +1159,9 @@ class ImmuneExposure(LifeEvent):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, ImmuneExposureAkcId):
             self.akc_id = ImmuneExposureAkcId(self.akc_id)
+
+        if self.disease is not None and not isinstance(self.disease, DiseasesTermId):
+            self.disease = DiseasesTermId(self.disease)
 
         if self.disease_stage is not None and not isinstance(self.disease_stage, str):
             self.disease_stage = str(self.disease_stage)
@@ -1054,18 +1209,6 @@ class Assessment(Process):
 
         super().__post_init__(**kwargs)
 
-
-@dataclass(repr=False)
-class InvestigationType(OntologyTable):
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["InvestigationType"]
-    class_class_curie: ClassVar[str] = "ak_schema:InvestigationType"
-    class_name: ClassVar[str] = "InvestigationType"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.InvestigationType
-
-    term_id: Union[str, "InvestigationTypeOntology"] = None
-    parent_term_id: Optional[Union[str, "InvestigationTypeOntology"]] = None
 
 @dataclass(repr=False)
 class Specimen(NamedThing):
@@ -4987,16 +5130,34 @@ class SampleProcessing(AIRRStandards):
 
 
 # Enumerations
-class InvestigationTypeOntology(EnumDefinitionImpl):
+class BiomedicalInvestigationsOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
-        name="InvestigationTypeOntology",
+        name="BiomedicalInvestigationsOntology",
     )
 
 class BiologicalSexOntology(EnumDefinitionImpl):
 
     _defn = EnumDefinition(
         name="BiologicalSexOntology",
+    )
+
+class LifeEventProcessOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="LifeEventProcessOntology",
+    )
+
+class ExposureMaterialOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="ExposureMaterialOntology",
+    )
+
+class UnitOntology(EnumDefinitionImpl):
+
+    _defn = EnumDefinition(
+        name="UnitOntology",
     )
 
 class RaceOntology(EnumDefinitionImpl):
@@ -5260,24 +5421,6 @@ class StrainEnum(EnumDefinitionImpl):
             PermissibleValue(text="LDLR-/-"))
         setattr(cls, "pet shop mouse",
             PermissibleValue(text="pet shop mouse"))
-
-class LifeEventProcessOntology(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="LifeEventProcessOntology",
-    )
-
-class ExposureMaterialOntology(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="ExposureMaterialOntology",
-    )
-
-class DiseaseOntology(EnumDefinitionImpl):
-
-    _defn = EnumDefinition(
-        name="DiseaseOntology",
-    )
 
 class DiseaseStageOntology(EnumDefinitionImpl):
 
@@ -5901,16 +6044,16 @@ slots.type = Slot(uri=AK_SCHEMA.type, name="type", curie=AK_SCHEMA.curie('type')
                    model_uri=AK_SCHEMA.type, domain=None, range=Optional[str])
 
 slots.term_id = Slot(uri=AK_SCHEMA.term_id, name="term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.term_id, domain=None, range=Union[str, URIorCURIE])
+                   model_uri=AK_SCHEMA.term_id, domain=None, range=URIRef)
 
 slots.term_label = Slot(uri=AK_SCHEMA.term_label, name="term_label", curie=AK_SCHEMA.curie('term_label'),
                    model_uri=AK_SCHEMA.term_label, domain=None, range=Optional[str])
 
-slots.parent_term_id = Slot(uri=AK_SCHEMA.parent_term_id, name="parent_term_id", curie=AK_SCHEMA.curie('parent_term_id'),
-                   model_uri=AK_SCHEMA.parent_term_id, domain=None, range=Optional[Union[str, URIorCURIE]])
+slots.parent = Slot(uri=AK_SCHEMA.parent, name="parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.parent, domain=None, range=Optional[Union[Union[str, OntologyTableTermId], List[Union[str, OntologyTableTermId]]]])
 
 slots.investigation_type = Slot(uri=AK_SCHEMA.investigation_type, name="investigation_type", curie=AK_SCHEMA.curie('investigation_type'),
-                   model_uri=AK_SCHEMA.investigation_type, domain=None, range=Optional[Union[dict, InvestigationType]])
+                   model_uri=AK_SCHEMA.investigation_type, domain=None, range=Optional[Union[str, BiomedicalInvestigationsTermId]])
 
 slots.archival_id = Slot(uri=SCHEMA.identifier, name="archival_id", curie=SCHEMA.curie('identifier'),
                    model_uri=AK_SCHEMA.archival_id, domain=None, range=Optional[Union[str, URIorCURIE]])
@@ -6013,7 +6156,7 @@ slots.exposure_material = Slot(uri=RO['0000057'], name="exposure_material", curi
                    model_uri=AK_SCHEMA.exposure_material, domain=None, range=Optional[Union[str, "ExposureMaterialOntology"]])
 
 slots.disease = Slot(uri=AK_SCHEMA.disease, name="disease", curie=AK_SCHEMA.curie('disease'),
-                   model_uri=AK_SCHEMA.disease, domain=None, range=Optional[Union[str, "DiseaseOntology"]])
+                   model_uri=AK_SCHEMA.disease, domain=None, range=Optional[Union[str, DiseasesTermId]])
 
 slots.disease_severity = Slot(uri=AK_SCHEMA.disease_severity, name="disease_severity", curie=AK_SCHEMA.curie('disease_severity'),
                    model_uri=AK_SCHEMA.disease_severity, domain=None, range=Optional[str])
@@ -7428,14 +7571,44 @@ slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
 
+slots.BiomedicalInvestigations_term_id = Slot(uri=AK_SCHEMA.term_id, name="BiomedicalInvestigations_term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.BiomedicalInvestigations_term_id, domain=BiomedicalInvestigations, range=Union[str, "BiomedicalInvestigationsTermId"])
+
+slots.BiomedicalInvestigations_parent = Slot(uri=AK_SCHEMA.parent, name="BiomedicalInvestigations_parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.BiomedicalInvestigations_parent, domain=BiomedicalInvestigations, range=Optional[Union[Union[str, BiomedicalInvestigationsTermId], List[Union[str, BiomedicalInvestigationsTermId]]]])
+
+slots.PhenotypeAndTraits_term_id = Slot(uri=AK_SCHEMA.term_id, name="PhenotypeAndTraits_term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.PhenotypeAndTraits_term_id, domain=PhenotypeAndTraits, range=Union[str, "PhenotypeAndTraitsTermId"])
+
+slots.PhenotypeAndTraits_parent = Slot(uri=AK_SCHEMA.parent, name="PhenotypeAndTraits_parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.PhenotypeAndTraits_parent, domain=PhenotypeAndTraits, range=Optional[Union[Union[str, PhenotypeAndTraitsTermId], List[Union[str, PhenotypeAndTraitsTermId]]]])
+
+slots.Diseases_term_id = Slot(uri=AK_SCHEMA.term_id, name="Diseases_term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.Diseases_term_id, domain=Diseases, range=Union[str, "DiseasesTermId"])
+
+slots.Diseases_parent = Slot(uri=AK_SCHEMA.parent, name="Diseases_parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.Diseases_parent, domain=Diseases, range=Optional[Union[Union[str, DiseasesTermId], List[Union[str, DiseasesTermId]]]])
+
+slots.Cells_term_id = Slot(uri=AK_SCHEMA.term_id, name="Cells_term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.Cells_term_id, domain=Cells, range=Union[str, "CellsTermId"])
+
+slots.Cells_parent = Slot(uri=AK_SCHEMA.parent, name="Cells_parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.Cells_parent, domain=Cells, range=Optional[Union[Union[str, CellsTermId], List[Union[str, CellsTermId]]]])
+
+slots.UberAnatomy_term_id = Slot(uri=AK_SCHEMA.term_id, name="UberAnatomy_term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.UberAnatomy_term_id, domain=UberAnatomy, range=Union[str, "UberAnatomyTermId"])
+
+slots.UberAnatomy_parent = Slot(uri=AK_SCHEMA.parent, name="UberAnatomy_parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.UberAnatomy_parent, domain=UberAnatomy, range=Optional[Union[Union[str, UberAnatomyTermId], List[Union[str, UberAnatomyTermId]]]])
+
+slots.Units_term_id = Slot(uri=AK_SCHEMA.term_id, name="Units_term_id", curie=AK_SCHEMA.curie('term_id'),
+                   model_uri=AK_SCHEMA.Units_term_id, domain=Units, range=Union[str, "UnitsTermId"])
+
+slots.Units_parent = Slot(uri=AK_SCHEMA.parent, name="Units_parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.Units_parent, domain=Units, range=Optional[Union[Union[str, UnitsTermId], List[Union[str, UnitsTermId]]]])
+
 slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
-                   model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, "BiologicalSexOntology"]])
-
-slots.InvestigationType_term_id = Slot(uri=AK_SCHEMA.term_id, name="InvestigationType_term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.InvestigationType_term_id, domain=InvestigationType, range=Union[str, "InvestigationTypeOntology"])
-
-slots.InvestigationType_parent_term_id = Slot(uri=AK_SCHEMA.parent_term_id, name="InvestigationType_parent_term_id", curie=AK_SCHEMA.curie('parent_term_id'),
-                   model_uri=AK_SCHEMA.InvestigationType_parent_term_id, domain=InvestigationType, range=Optional[Union[str, "InvestigationTypeOntology"]])
+                   model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, PhenotypeAndTraitsTermId]])
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])

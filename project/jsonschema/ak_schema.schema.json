@@ -1997,6 +1997,43 @@
             "title": "BiologicalSexOntology",
             "type": "string"
         },
+        "BiomedicalInvestigations": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "$ref": "#/$defs/BiomedicalInvestigationsOntology"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "$ref": "#/$defs/BiomedicalInvestigationsOntology",
+                    "description": "ontology term ID"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "BiomedicalInvestigations",
+            "type": "object"
+        },
+        "BiomedicalInvestigationsOntology": {
+            "description": "",
+            "title": "BiomedicalInvestigationsOntology",
+            "type": "string"
+        },
         "CategoricalSpecificityEnum": {
             "description": "",
             "enum": [
@@ -2329,6 +2366,38 @@
             "description": "",
             "title": "CellSubsetOntology",
             "type": "string"
+        },
+        "Cells": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "$ref": "#/$defs/CellSubsetOntology"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "$ref": "#/$defs/CellSubsetOntology",
+                    "description": "ontology term ID"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "Cells",
+            "type": "object"
         },
         "Chain": {
             "additionalProperties": false,
@@ -3319,11 +3388,6 @@
             "title": "DiseaseDiagnosisOntology",
             "type": "string"
         },
-        "DiseaseOntology": {
-            "description": "",
-            "title": "DiseaseOntology",
-            "type": "string"
-        },
         "DiseaseStageOntology": {
             "description": "",
             "enum": [
@@ -3335,6 +3399,38 @@
             ],
             "title": "DiseaseStageOntology",
             "type": "string"
+        },
+        "Diseases": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "$ref": "#/$defs/DiseaseDiagnosisOntology"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "$ref": "#/$defs/DiseaseDiagnosisOntology",
+                    "description": "ontology term ID"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "Diseases",
+            "type": "object"
         },
         "DocumentedAllele": {
             "additionalProperties": false,
@@ -3814,7 +3910,7 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/DiseaseOntology",
+                    "$ref": "#/$defs/DiseaseDiagnosisOntology",
                     "description": "The disease relevant to an immune exposure"
                 },
                 "disease_severity": {
@@ -3924,7 +4020,7 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/DiseaseOntology",
+                    "$ref": "#/$defs/DiseaseDiagnosisOntology",
                     "description": "The disease relevant to an immune exposure"
                 },
                 "disease_severity": {
@@ -4124,14 +4220,7 @@
                     ]
                 },
                 "investigation_type": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/InvestigationType"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "#/$defs/BiomedicalInvestigationsOntology",
                     "description": "Type of study design"
                 },
                 "name": {
@@ -4183,37 +4272,6 @@
             ],
             "title": "Investigation",
             "type": "object"
-        },
-        "InvestigationType": {
-            "additionalProperties": false,
-            "description": "",
-            "properties": {
-                "parent_term_id": {
-                    "$ref": "#/$defs/InvestigationTypeOntology",
-                    "description": "parent ID for ontology term"
-                },
-                "term_id": {
-                    "$ref": "#/$defs/InvestigationTypeOntology",
-                    "description": "ontology term ID"
-                },
-                "term_label": {
-                    "description": "ontology term descriptive label",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                }
-            },
-            "required": [
-                "term_id"
-            ],
-            "title": "InvestigationType",
-            "type": "object"
-        },
-        "InvestigationTypeOntology": {
-            "description": "",
-            "title": "InvestigationTypeOntology",
-            "type": "string"
         },
         "Investigation__identifier_optional": {
             "additionalProperties": false,
@@ -4275,14 +4333,7 @@
                     ]
                 },
                 "investigation_type": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/InvestigationType"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "#/$defs/BiomedicalInvestigationsOntology",
                     "description": "Type of study design"
                 },
                 "name": {
@@ -5283,6 +5334,38 @@
             },
             "required": [],
             "title": "PeptidicEpitope",
+            "type": "object"
+        },
+        "PhenotypeAndTraits": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "$ref": "#/$defs/BiologicalSexOntology"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "$ref": "#/$defs/BiologicalSexOntology",
+                    "description": "ontology term ID"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "PhenotypeAndTraits",
             "type": "object"
         },
         "PhysicalLinkageEnum": {
@@ -8798,6 +8881,38 @@
             "title": "Tree",
             "type": "object"
         },
+        "UberAnatomy": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "$ref": "#/$defs/TissueOntology"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "$ref": "#/$defs/TissueOntology",
+                    "description": "ontology term ID"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "UberAnatomy",
+            "type": "object"
+        },
         "UndocumentedAllele": {
             "additionalProperties": false,
             "description": "",
@@ -8825,6 +8940,43 @@
                 }
             },
             "title": "UndocumentedAllele",
+            "type": "object"
+        },
+        "UnitOntology": {
+            "description": "",
+            "title": "UnitOntology",
+            "type": "string"
+        },
+        "Units": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "$ref": "#/$defs/UnitOntology"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "$ref": "#/$defs/UnitOntology",
+                    "description": "ontology term ID"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "Units",
             "type": "object"
         },
         "UnrearrangedSequence": {

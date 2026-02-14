@@ -366,6 +366,33 @@ enums:
       relationship_types:
       - rdfs:subClassOf
       include_self: true
+  LifeEventProcessOntology:
+    name: LifeEventProcessOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - BFO:0000015
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  ExposureMaterialOntology:
+    name: ExposureMaterialOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  UnitOntology:
+    name: UnitOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
   RaceOntology:
     name: RaceOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -603,33 +630,6 @@ enums:
         text: LDLR-/-
       pet shop mouse:
         text: pet shop mouse
-  LifeEventProcessOntology:
-    name: LifeEventProcessOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - BFO:0000015
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
-  ExposureMaterialOntology:
-    name: ExposureMaterialOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - NCBITAXON:7776
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
-  DiseaseOntology:
-    name: DiseaseOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - DOID:4
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
   DiseaseStageOntology:
     name: DiseaseStageOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -1531,7 +1531,7 @@ slots:
     name: disease
     description: The disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DiseaseOntology
+    range: Diseases
   disease_severity:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
@@ -5671,6 +5671,72 @@ classes:
     - term_id
     - term_label
     - parent
+  BiomedicalInvestigations:
+    name: BiomedicalInvestigations
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      term_id:
+        name: term_id
+        range: BiomedicalInvestigationsOntology
+      parent:
+        name: parent
+        range: BiomedicalInvestigations
+  PhenotypeAndTraits:
+    name: PhenotypeAndTraits
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      term_id:
+        name: term_id
+        range: BiologicalSexOntology
+      parent:
+        name: parent
+        range: PhenotypeAndTraits
+  Diseases:
+    name: Diseases
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      term_id:
+        name: term_id
+        range: DiseaseDiagnosisOntology
+      parent:
+        name: parent
+        range: Diseases
+  Cells:
+    name: Cells
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      term_id:
+        name: term_id
+        range: CellSubsetOntology
+      parent:
+        name: parent
+        range: Cells
+  UberAnatomy:
+    name: UberAnatomy
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      term_id:
+        name: term_id
+        range: TissueOntology
+      parent:
+        name: parent
+        range: UberAnatomy
+  Units:
+    name: Units
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      term_id:
+        name: term_id
+        range: UnitOntology
+      parent:
+        name: parent
+        range: Units
   AIRRKnowledgeCommons:
     name: AIRRKnowledgeCommons
     description: A container for instances of multiple classes.
@@ -5851,7 +5917,7 @@ classes:
     slot_usage:
       sex:
         name: sex
-        range: BiologicalSexOntology
+        range: PhenotypeAndTraits
     class_uri: OBI:0100026
   StudyEvent:
     name: StudyEvent
@@ -5897,17 +5963,6 @@ classes:
     - assessment_type
     - target_entity_type
     class_uri: OBI:0002441
-  BiomedicalInvestigations:
-    name: BiomedicalInvestigations
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: OntologyTable
-    slot_usage:
-      term_id:
-        name: term_id
-        range: BiomedicalInvestigationsOntology
-      parent:
-        name: parent
-        range: BiomedicalInvestigations
   Specimen:
     name: Specimen
     from_schema: https://github.com/airr-knowledge/ak-schema

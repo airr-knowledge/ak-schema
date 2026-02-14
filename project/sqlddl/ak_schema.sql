@@ -25,6 +25,24 @@
 -- # Class: "OntologyTable" Description: "standard schema for an ontology table"
 --     * Slot: term_id Description: ontology term ID
 --     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "BiomedicalInvestigations" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "PhenotypeAndTraits" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "Diseases" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "Cells" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "UberAnatomy" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "Units" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
 -- # Class: "Investigation" Description: "A scientific investigation."
 --     * Slot: investigation_type Description: Type of study design
 --     * Slot: archival_id Description: Identifier for external archival resource for the investigation, e.g., BioProject
@@ -104,9 +122,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
--- # Class: "BiomedicalInvestigations" Description: ""
---     * Slot: term_id Description: ontology term ID
---     * Slot: term_label Description: ontology term descriptive label
 -- # Class: "Specimen" Description: ""
 --     * Slot: life_event Description: The life event corresponding to an immune exposure
 --     * Slot: tissue Description: The actual tissue sampled, e.g. lymph node, liver, peripheral blood
@@ -955,6 +970,24 @@
 -- # Class: "OntologyTable_parent" Description: ""
 --     * Slot: OntologyTable_term_id Description: Autocreated FK slot
 --     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "BiomedicalInvestigations_parent" Description: ""
+--     * Slot: BiomedicalInvestigations_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "PhenotypeAndTraits_parent" Description: ""
+--     * Slot: PhenotypeAndTraits_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "Diseases_parent" Description: ""
+--     * Slot: Diseases_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "Cells_parent" Description: ""
+--     * Slot: Cells_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "UberAnatomy_parent" Description: ""
+--     * Slot: UberAnatomy_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "Units_parent" Description: ""
+--     * Slot: Units_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
 -- # Class: "Investigation_participants" Description: ""
 --     * Slot: Investigation_akc_id Description: Autocreated FK slot
 --     * Slot: participants_akc_id Description: The participants involved with the investigation
@@ -982,9 +1015,6 @@
 -- # Class: "StudyEvent_study_arms" Description: ""
 --     * Slot: StudyEvent_akc_id Description: Autocreated FK slot
 --     * Slot: study_arms_akc_id Description: The study arms that are relevant for a study event
--- # Class: "BiomedicalInvestigations_parent" Description: ""
---     * Slot: BiomedicalInvestigations_term_id Description: Autocreated FK slot
---     * Slot: parent_term_id Description: parent term ID for ontology term
 -- # Class: "LibraryPreparationProcessing_pcr_target" Description: ""
 --     * Slot: LibraryPreparationProcessing_akc_id Description: Autocreated FK slot
 --     * Slot: pcr_target_id Description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
@@ -1180,6 +1210,36 @@ CREATE TABLE "OntologyTable" (
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );
+CREATE TABLE "BiomedicalInvestigations" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "PhenotypeAndTraits" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "Diseases" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "Cells" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "UberAnatomy" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "Units" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
 CREATE TABLE "Reference" (
 	title TEXT, 
 	journal TEXT, 
@@ -1195,11 +1255,6 @@ CREATE TABLE "StudyEvent" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);
-CREATE TABLE "BiomedicalInvestigations" (
-	term_id VARCHAR NOT NULL, 
-	term_label TEXT, 
-	PRIMARY KEY (term_id)
 );
 CREATE TABLE "DataItem" (
 	id INTEGER NOT NULL, 
@@ -2099,6 +2154,48 @@ CREATE TABLE "OntologyTable_parent" (
 	FOREIGN KEY("OntologyTable_term_id") REFERENCES "OntologyTable" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "OntologyTable" (term_id)
 );
+CREATE TABLE "BiomedicalInvestigations_parent" (
+	"BiomedicalInvestigations_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("BiomedicalInvestigations_term_id", parent_term_id), 
+	FOREIGN KEY("BiomedicalInvestigations_term_id") REFERENCES "BiomedicalInvestigations" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "BiomedicalInvestigations" (term_id)
+);
+CREATE TABLE "PhenotypeAndTraits_parent" (
+	"PhenotypeAndTraits_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("PhenotypeAndTraits_term_id", parent_term_id), 
+	FOREIGN KEY("PhenotypeAndTraits_term_id") REFERENCES "PhenotypeAndTraits" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "PhenotypeAndTraits" (term_id)
+);
+CREATE TABLE "Diseases_parent" (
+	"Diseases_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("Diseases_term_id", parent_term_id), 
+	FOREIGN KEY("Diseases_term_id") REFERENCES "Diseases" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "Diseases" (term_id)
+);
+CREATE TABLE "Cells_parent" (
+	"Cells_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("Cells_term_id", parent_term_id), 
+	FOREIGN KEY("Cells_term_id") REFERENCES "Cells" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "Cells" (term_id)
+);
+CREATE TABLE "UberAnatomy_parent" (
+	"UberAnatomy_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("UberAnatomy_term_id", parent_term_id), 
+	FOREIGN KEY("UberAnatomy_term_id") REFERENCES "UberAnatomy" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "UberAnatomy" (term_id)
+);
+CREATE TABLE "Units_parent" (
+	"Units_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("Units_term_id", parent_term_id), 
+	FOREIGN KEY("Units_term_id") REFERENCES "Units" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "Units" (term_id)
+);
 CREATE TABLE "Reference_sources" (
 	"Reference_source_uri" TEXT, 
 	sources TEXT, 
@@ -2110,13 +2207,6 @@ CREATE TABLE "Reference_authors" (
 	authors TEXT, 
 	PRIMARY KEY ("Reference_source_uri", authors), 
 	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
-);
-CREATE TABLE "BiomedicalInvestigations_parent" (
-	"BiomedicalInvestigations_term_id" VARCHAR, 
-	parent_term_id VARCHAR, 
-	PRIMARY KEY ("BiomedicalInvestigations_term_id", parent_term_id), 
-	FOREIGN KEY("BiomedicalInvestigations_term_id") REFERENCES "BiomedicalInvestigations" (term_id), 
-	FOREIGN KEY(parent_term_id) REFERENCES "BiomedicalInvestigations" (term_id)
 );
 CREATE TABLE "DataSet_data_items" (
 	"DataSet_id" INTEGER, 
@@ -2449,7 +2539,8 @@ CREATE TABLE "Participant" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id)
+	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
+	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
 );
 CREATE TABLE "Repertoire" (
 	id INTEGER NOT NULL, 
@@ -2533,6 +2624,7 @@ CREATE TABLE "ImmuneExposure" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(disease) REFERENCES "Diseases" (term_id), 
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
