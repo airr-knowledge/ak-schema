@@ -223,13 +223,6 @@
 
       UberAnatomy : term_id
 
-
-
-
-    UberAnatomy --&gt; "1" TissueOntology : term_id
-    click TissueOntology href "../TissueOntology"
-
-
       UberAnatomy : term_label
 
 
@@ -254,7 +247,7 @@
 <tbody>
 <tr>
 <td><a href="../term_id/">term_id</a></td>
-<td>1 <br/> <a href="../TissueOntology/">TissueOntology</a></td>
+<td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>ontology term ID</td>
 <td><a href="../OntologyTable/">OntologyTable</a></td>
 </tr>
@@ -323,9 +316,6 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: OntologyTable
 slot_usage:
-  term_id:
-    name: term_id
-    range: TissueOntology
   parent:
     name: parent
     range: UberAnatomy
@@ -338,9 +328,6 @@ slot_usage:
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: OntologyTable
 slot_usage:
-  term_id:
-    name: term_id
-    range: TissueOntology
   parent:
     name: parent
     range: UberAnatomy
@@ -355,7 +342,7 @@ attributes:
     owner: UberAnatomy
     domain_of:
     - OntologyTable
-    range: TissueOntology
+    range: uriorcurie
     required: true
   term_label:
     name: term_label
