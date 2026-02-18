@@ -1,0 +1,77 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+classes:
+
+  QueryObject:
+    attributes:
+      tcr:
+        range: QueryTCR
+        multivalued: false
+        inlined: true
+      bcr:
+        range: QueryIG
+        multivalued: false
+        inlined: true
+      assay:
+        range: QueryIG
+        multivalued: false
+        inlined: true
+
+  QueryTCR:
+    attributes:
+      receptor:
+        range: TCellReceptor
+        multivalued: false
+        inlined: true
+      mhc:
+      epitope:
+      antigen:
+
+  QueryBCR:
+    attributes:
+      receptor:
+        range: BCellReceptor
+        multivalued: false
+        inlined: true
+      antigen:
+
+  QueryAssay:
+    attributes:
+      investigation:
+        range: Investigation
+        multivalued: false
+        inlined: true
+      participant:
+        range: Participant
+        multivalued: false
+        inlined: true
+      specimen:
+        range: Specimen
+        multivalued: false
+        inlined: true
+
+#  QueryInvestigation:
+#    slots:
+#      - investigation_type
+#      - archival_id
+#      - inclusion_exclusion_criteria
+#      - release_date
+#      - update_date
+#      - documents
+#      - conclusions
+
+#  QueryParticipant:
+#    slots:
+#      - study_arm
+#      - species
+#      - sex
+#      - age
+#      - age_unit
+#      - age_event
+#      - race
+#      - ethnicity
+#      - geolocation
+#      - strain
+#      - life_events
