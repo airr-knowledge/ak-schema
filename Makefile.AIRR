@@ -3,6 +3,7 @@ SCRIPT_DIR=src/scripts/airr2akc
 AIRR_SCHEMA_V1.5_INPUT=src/airr_schema/airr-standards-v1.5/specs/airr-schema-openapi3.yaml
 AIRR_SCHEMA_V1.6_INPUT=src/airr_schema/airr-standards-v1.6/specs/airr-schema-openapi3.yaml
 AIRR_SCHEMA_V2.0_INPUT=src/airr_schema/airr-standards-v2.0/specs/airr-schema-openapi3.yaml
+VDJSERVER_SCHEMA_INPUT=src/vdjserver_schema/vdjserver-schema/vdjserver-schema-deref.yaml
 LOGFILE_DIR=logs
 
 all: airr_schema airr_schema_1.5 airr_schema_1.6 airr_schema_2.0
@@ -18,4 +19,7 @@ airr_schema_1.6:
 
 airr_schema_2.0:
 	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_airr_v2.0.yaml -a $(AIRR_SCHEMA_V2.0_INPUT) -f $(AIRR_SCHEMA_OUTPUT_DIR) -l $(LOGFILE_DIR)/airr2akc_v2.0.log -v -s AIRRStandards_v2p0
+
+vdjserver_schema:
+	python $(SCRIPT_DIR)/airr2akc.py -o $(AIRR_SCHEMA_OUTPUT_DIR)/ak_vdjserver.yaml -a $(VDJSERVER_SCHEMA_INPUT) -f $(AIRR_SCHEMA_OUTPUT_DIR) -l $(LOGFILE_DIR)/vdjserver2akc.log -s VDJServer
 

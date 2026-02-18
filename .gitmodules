@@ -7,3 +7,6 @@
 [submodule "src/airr_schema/airr-standards-v1.6"]
 	path = src/airr_schema/airr-standards-v1.6
 	url = https://github.com/airr-community/airr-standards.git
+[submodule "src/vdjserver_schema/vdjserver-schema"]
+	path = src/vdjserver_schema/vdjserver-schema
+	url = https://github.com/vdjserver/vdjserver-schema.git
