@@ -2184,6 +2184,43 @@
             "title": "BiologicalSexOntology",
             "type": "string"
         },
+        "BiomedicalInvestigations": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "BiomedicalInvestigations",
+            "type": "object"
+        },
+        "BiomedicalInvestigationsOntology": {
+            "description": "",
+            "title": "BiomedicalInvestigationsOntology",
+            "type": "string"
+        },
         "CategoricalSpecificityEnum": {
             "description": "",
             "enum": [
@@ -2516,6 +2553,38 @@
             "description": "",
             "title": "CellSubsetOntology",
             "type": "string"
+        },
+        "Cells": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "Cells",
+            "type": "object"
         },
         "Chain": {
             "additionalProperties": false,
@@ -3555,11 +3624,6 @@
             "title": "DiseaseDiagnosisOntology",
             "type": "string"
         },
-        "DiseaseOntology": {
-            "description": "",
-            "title": "DiseaseOntology",
-            "type": "string"
-        },
         "DiseaseStageOntology": {
             "description": "",
             "enum": [
@@ -3571,6 +3635,38 @@
             ],
             "title": "DiseaseStageOntology",
             "type": "string"
+        },
+        "Diseases": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "Diseases",
+            "type": "object"
         },
         "DocumentedAllele": {
             "additionalProperties": false,
@@ -4050,8 +4146,11 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/DiseaseOntology",
-                    "description": "The disease relevant to an immune exposure"
+                    "description": "The disease relevant to an immune exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease_severity": {
                     "description": "The severity of the disease relevant to an immune exposure",
@@ -4160,8 +4259,11 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/DiseaseOntology",
-                    "description": "The disease relevant to an immune exposure"
+                    "description": "The disease relevant to an immune exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease_severity": {
                     "description": "The severity of the disease relevant to an immune exposure",
@@ -4360,8 +4462,11 @@
                     ]
                 },
                 "investigation_type": {
-                    "$ref": "#/$defs/InvestigationTypeOntology",
-                    "description": "Type of study design"
+                    "description": "Type of study design",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -4412,11 +4517,6 @@
             ],
             "title": "Investigation",
             "type": "object"
-        },
-        "InvestigationTypeOntology": {
-            "description": "",
-            "title": "InvestigationTypeOntology",
-            "type": "string"
         },
         "Investigation__identifier_optional": {
             "additionalProperties": false,
@@ -4478,8 +4578,11 @@
                     ]
                 },
                 "investigation_type": {
-                    "$ref": "#/$defs/InvestigationTypeOntology",
-                    "description": "Type of study design"
+                    "description": "Type of study design",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -5243,8 +5346,11 @@
                     ]
                 },
                 "sex": {
-                    "$ref": "#/$defs/BiologicalSexOntology",
-                    "description": "Biological sex of subject"
+                    "description": "Biological sex of subject",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -5327,8 +5433,11 @@
                     ]
                 },
                 "sex": {
-                    "$ref": "#/$defs/BiologicalSexOntology",
-                    "description": "Biological sex of subject"
+                    "description": "Biological sex of subject",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -5479,6 +5588,38 @@
             },
             "required": [],
             "title": "PeptidicEpitope",
+            "type": "object"
+        },
+        "PhenotypeAndTraits": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "PhenotypeAndTraits",
             "type": "object"
         },
         "PhysicalLinkageEnum": {
@@ -9058,6 +9199,38 @@
             "title": "Tree",
             "type": "object"
         },
+        "UberAnatomy": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "UberAnatomy",
+            "type": "object"
+        },
         "UndocumentedAllele": {
             "additionalProperties": false,
             "description": "",
@@ -9085,6 +9258,43 @@
                 }
             },
             "title": "UndocumentedAllele",
+            "type": "object"
+        },
+        "UnitOntology": {
+            "description": "",
+            "title": "UnitOntology",
+            "type": "string"
+        },
+        "Units": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "Units",
             "type": "object"
         },
         "UnrearrangedSequence": {

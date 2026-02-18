@@ -28,6 +28,11 @@ classes:
     description: >-
       An object directly converted from AIRR schema version 1.5.
 
+  AIRRStandards_v1p6:
+    abstract: true
+    description: >-
+      An object directly converted from AIRR schema version 1.6.
+
   AIRRStandards_v2p0:
     abstract: true
     description: >-
@@ -55,6 +60,7 @@ classes:
     is_a: NamedThing
     description: >-
       A plan with specified actions to meet some objectives.
+
 
 slots:
   akc_id:
