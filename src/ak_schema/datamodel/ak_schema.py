@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-18T02:20:24
+# Generation date: 2026-02-18T03:10:05
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -248,27 +248,27 @@ class OntologyTableTermId(URIorCURIE):
     pass
 
 
-class BiomedicalInvestigationsTermId(BiomedicalInvestigationsOntology):
+class BiomedicalInvestigationsTermId(OntologyTableTermId):
     pass
 
 
-class PhenotypeAndTraitsTermId(BiologicalSexOntology):
+class PhenotypeAndTraitsTermId(OntologyTableTermId):
     pass
 
 
-class DiseasesTermId(DiseaseDiagnosisOntology):
+class DiseasesTermId(OntologyTableTermId):
     pass
 
 
-class CellsTermId(CellSubsetOntology):
+class CellsTermId(OntologyTableTermId):
     pass
 
 
-class UberAnatomyTermId(TissueOntology):
+class UberAnatomyTermId(OntologyTableTermId):
     pass
 
 
-class UnitsTermId(UnitOntology):
+class UnitsTermId(OntologyTableTermId):
     pass
 
 
@@ -641,10 +641,15 @@ class BiomedicalInvestigations(OntologyTable):
     class_name: ClassVar[str] = "BiomedicalInvestigations"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.BiomedicalInvestigations
 
-    term_id: Union[str, "BiomedicalInvestigationsTermId"] = None
+    term_id: Union[str, BiomedicalInvestigationsTermId] = None
     parent: Optional[Union[Union[str, BiomedicalInvestigationsTermId], List[Union[str, BiomedicalInvestigationsTermId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, BiomedicalInvestigationsTermId):
+            self.term_id = BiomedicalInvestigationsTermId(self.term_id)
+
         if not isinstance(self.parent, list):
             self.parent = [self.parent] if self.parent is not None else []
         self.parent = [v if isinstance(v, BiomedicalInvestigationsTermId) else BiomedicalInvestigationsTermId(v) for v in self.parent]
@@ -661,10 +666,15 @@ class PhenotypeAndTraits(OntologyTable):
     class_name: ClassVar[str] = "PhenotypeAndTraits"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PhenotypeAndTraits
 
-    term_id: Union[str, "PhenotypeAndTraitsTermId"] = None
+    term_id: Union[str, PhenotypeAndTraitsTermId] = None
     parent: Optional[Union[Union[str, PhenotypeAndTraitsTermId], List[Union[str, PhenotypeAndTraitsTermId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, PhenotypeAndTraitsTermId):
+            self.term_id = PhenotypeAndTraitsTermId(self.term_id)
+
         if not isinstance(self.parent, list):
             self.parent = [self.parent] if self.parent is not None else []
         self.parent = [v if isinstance(v, PhenotypeAndTraitsTermId) else PhenotypeAndTraitsTermId(v) for v in self.parent]
@@ -681,10 +691,15 @@ class Diseases(OntologyTable):
     class_name: ClassVar[str] = "Diseases"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Diseases
 
-    term_id: Union[str, "DiseasesTermId"] = None
+    term_id: Union[str, DiseasesTermId] = None
     parent: Optional[Union[Union[str, DiseasesTermId], List[Union[str, DiseasesTermId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, DiseasesTermId):
+            self.term_id = DiseasesTermId(self.term_id)
+
         if not isinstance(self.parent, list):
             self.parent = [self.parent] if self.parent is not None else []
         self.parent = [v if isinstance(v, DiseasesTermId) else DiseasesTermId(v) for v in self.parent]
@@ -701,10 +716,15 @@ class Cells(OntologyTable):
     class_name: ClassVar[str] = "Cells"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Cells
 
-    term_id: Union[str, "CellsTermId"] = None
+    term_id: Union[str, CellsTermId] = None
     parent: Optional[Union[Union[str, CellsTermId], List[Union[str, CellsTermId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, CellsTermId):
+            self.term_id = CellsTermId(self.term_id)
+
         if not isinstance(self.parent, list):
             self.parent = [self.parent] if self.parent is not None else []
         self.parent = [v if isinstance(v, CellsTermId) else CellsTermId(v) for v in self.parent]
@@ -721,10 +741,15 @@ class UberAnatomy(OntologyTable):
     class_name: ClassVar[str] = "UberAnatomy"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UberAnatomy
 
-    term_id: Union[str, "UberAnatomyTermId"] = None
+    term_id: Union[str, UberAnatomyTermId] = None
     parent: Optional[Union[Union[str, UberAnatomyTermId], List[Union[str, UberAnatomyTermId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, UberAnatomyTermId):
+            self.term_id = UberAnatomyTermId(self.term_id)
+
         if not isinstance(self.parent, list):
             self.parent = [self.parent] if self.parent is not None else []
         self.parent = [v if isinstance(v, UberAnatomyTermId) else UberAnatomyTermId(v) for v in self.parent]
@@ -741,10 +766,15 @@ class Units(OntologyTable):
     class_name: ClassVar[str] = "Units"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Units
 
-    term_id: Union[str, "UnitsTermId"] = None
+    term_id: Union[str, UnitsTermId] = None
     parent: Optional[Union[Union[str, UnitsTermId], List[Union[str, UnitsTermId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, UnitsTermId):
+            self.term_id = UnitsTermId(self.term_id)
+
         if not isinstance(self.parent, list):
             self.parent = [self.parent] if self.parent is not None else []
         self.parent = [v if isinstance(v, UnitsTermId) else UnitsTermId(v) for v in self.parent]
@@ -7627,38 +7657,20 @@ slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
 
-slots.BiomedicalInvestigations_term_id = Slot(uri=AK_SCHEMA.term_id, name="BiomedicalInvestigations_term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.BiomedicalInvestigations_term_id, domain=BiomedicalInvestigations, range=Union[str, "BiomedicalInvestigationsTermId"])
-
 slots.BiomedicalInvestigations_parent = Slot(uri=AK_SCHEMA.parent, name="BiomedicalInvestigations_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.BiomedicalInvestigations_parent, domain=BiomedicalInvestigations, range=Optional[Union[Union[str, BiomedicalInvestigationsTermId], List[Union[str, BiomedicalInvestigationsTermId]]]])
-
-slots.PhenotypeAndTraits_term_id = Slot(uri=AK_SCHEMA.term_id, name="PhenotypeAndTraits_term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.PhenotypeAndTraits_term_id, domain=PhenotypeAndTraits, range=Union[str, "PhenotypeAndTraitsTermId"])
 
 slots.PhenotypeAndTraits_parent = Slot(uri=AK_SCHEMA.parent, name="PhenotypeAndTraits_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.PhenotypeAndTraits_parent, domain=PhenotypeAndTraits, range=Optional[Union[Union[str, PhenotypeAndTraitsTermId], List[Union[str, PhenotypeAndTraitsTermId]]]])
 
-slots.Diseases_term_id = Slot(uri=AK_SCHEMA.term_id, name="Diseases_term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.Diseases_term_id, domain=Diseases, range=Union[str, "DiseasesTermId"])
-
 slots.Diseases_parent = Slot(uri=AK_SCHEMA.parent, name="Diseases_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.Diseases_parent, domain=Diseases, range=Optional[Union[Union[str, DiseasesTermId], List[Union[str, DiseasesTermId]]]])
-
-slots.Cells_term_id = Slot(uri=AK_SCHEMA.term_id, name="Cells_term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.Cells_term_id, domain=Cells, range=Union[str, "CellsTermId"])
 
 slots.Cells_parent = Slot(uri=AK_SCHEMA.parent, name="Cells_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.Cells_parent, domain=Cells, range=Optional[Union[Union[str, CellsTermId], List[Union[str, CellsTermId]]]])
 
-slots.UberAnatomy_term_id = Slot(uri=AK_SCHEMA.term_id, name="UberAnatomy_term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.UberAnatomy_term_id, domain=UberAnatomy, range=Union[str, "UberAnatomyTermId"])
-
 slots.UberAnatomy_parent = Slot(uri=AK_SCHEMA.parent, name="UberAnatomy_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.UberAnatomy_parent, domain=UberAnatomy, range=Optional[Union[Union[str, UberAnatomyTermId], List[Union[str, UberAnatomyTermId]]]])
-
-slots.Units_term_id = Slot(uri=AK_SCHEMA.term_id, name="Units_term_id", curie=AK_SCHEMA.curie('term_id'),
-                   model_uri=AK_SCHEMA.Units_term_id, domain=Units, range=Union[str, "UnitsTermId"])
 
 slots.Units_parent = Slot(uri=AK_SCHEMA.parent, name="Units_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.Units_parent, domain=Units, range=Optional[Union[Union[str, UnitsTermId], List[Union[str, UnitsTermId]]]])

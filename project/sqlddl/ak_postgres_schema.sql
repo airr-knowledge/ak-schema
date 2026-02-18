@@ -1,4 +1,4 @@
-CREATE TYPE "BiomedicalInvestigationsOntology" AS ENUM ();CREATE TYPE "BiologicalSexOntology" AS ENUM ();CREATE TYPE "DiseaseDiagnosisOntology" AS ENUM ();CREATE TYPE "CellSubsetOntology" AS ENUM ();CREATE TYPE "TissueOntology" AS ENUM ();CREATE TYPE "UnitOntology" AS ENUM ();CREATE TYPE "SpeciesOntology" AS ENUM ();CREATE TYPE "AgeUnitOntology" AS ENUM ();CREATE TYPE "GeolocationOntology" AS ENUM ('US: New York', 'US: California', 'US: Connecticut', 'US: Georgia', 'US: Texas', 'Canada', 'Nicaragua', 'US: Maryland', 'US: Minnesota', 'United States of America', 'Uganda', 'China', 'England', 'India', 'US: Massachusetts', 'US: Colorado', 'Gambia', 'Papua New Guinea', 'Metropolitan France', 'Sri Lanka', 'Switzerland', 'US: Washington', 'geographic location', 'Colombia', 'US: Florida', 'US: Kansas');CREATE TYPE "StrainEnum" AS ENUM ('1D2beta', 'BALB/cByJ', 'Balb/c', 'C57BL/6', 'C57BL/6J', 'JHD-/- MRL/MpJ-Faslp', 'LDLR+/+', 'LDLR-/-', 'pet shop mouse');CREATE TYPE "LifeEventProcessOntology" AS ENUM ();CREATE TYPE "ExposureMaterialOntology" AS ENUM ();CREATE TYPE "MeasurementUnitOntology" AS ENUM ();CREATE TYPE "CellSpeciesOntology" AS ENUM ();CREATE TYPE "TemplateClassEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "TemplateAmountUnitOntology" AS ENUM ();CREATE TYPE "LibraryGenerationMethodEnum" AS ENUM ('PCR', 'RT(RHP)+PCR', 'RT(oligo-dT)+PCR', 'RT(oligo-dT)+TS+PCR', 'RT(oligo-dT)+TS(UMI)+PCR', 'RT(specific)+PCR', 'RT(specific)+TS+PCR', 'RT(specific)+TS(UMI)+PCR', 'RT(specific+UMI)+PCR', 'RT(specific+UMI)+TS+PCR', 'RT(specific)+TS', 'other');CREATE TYPE "CompleteSequencesEnum" AS ENUM ('partial', 'complete', 'complete+untemplated', 'mixed');CREATE TYPE "PhysicalLinkageEnum" AS ENUM ('none', 'hetero_head-head', 'hetero_tail-head', 'hetero_prelinked');CREATE TYPE "AssayTypeOntology" AS ENUM ();CREATE TYPE "CategoricalSpecificityEnum" AS ENUM ('Positive', 'Negative', 'Positive-Low', 'Positive-High', 'Positive-Intermediate');CREATE TYPE "FileTypeEnum" AS ENUM ('fasta', 'fastq');CREATE TYPE "ReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "PairedReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "LocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRG', 'TRD');CREATE TYPE "ChainSimilarityTypeEnum" AS ENUM ('exact_match', 'exact_aa_match', 'cdr3_exact_match', 'cdr3_exact_aa_match', 'cdr3_exact_aa_and_vj_match');CREATE TYPE "TimePointUnitOntology" AS ENUM ();CREATE TYPE "DerivationEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "ObservationTypeEnum" AS ENUM ('direct_sequencing', 'inference_from_repertoire');CREATE TYPE "StrandEnum" AS ENUM ('+', '-');CREATE TYPE "SequenceTypeEnum" AS ENUM ('V', 'D', 'J', 'C');CREATE TYPE "InferenceTypeEnum" AS ENUM ('genomic_and_rearranged', 'genomic_only', 'rearranged_only');CREATE TYPE "SpeciesSubgroupTypeEnum" AS ENUM ('breed', 'strain', 'inbred', 'outbred', 'locational');CREATE TYPE "StatusEnum" AS ENUM ('active', 'draft', 'retired', 'withdrawn');CREATE TYPE "JCodonFrameEnum" AS ENUM ('1', '2', '3');CREATE TYPE "InferenceProcessEnum" AS ENUM ('genomic_sequencing', 'repertoire_sequencing');CREATE TYPE "MhcClassEnum" AS ENUM ('MHC-I', 'MHC-II', 'MHC-nonclassical');CREATE TYPE "GeneOntology" AS ENUM ();CREATE TYPE "StudyTypeOntology" AS ENUM ();CREATE TYPE "SexEnum" AS ENUM ('male', 'female', 'pooled', 'hermaphrodite', 'intersex');CREATE TYPE "CollectionTimePointRelativeUnitOntology" AS ENUM ();CREATE TYPE "PcrTargetLocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRD', 'TRG');CREATE TYPE "ExpressionStudyMethodEnum" AS ENUM ('flow_cytometry', 'single-cell_transcriptome');CREATE TYPE "ReceptorTypeEnum" AS ENUM ('Ig', 'TCR');CREATE TYPE "ReceptorVariableDomain1LocusEnum" AS ENUM ('IGH', 'TRB', 'TRD');CREATE TYPE "ReceptorVariableDomain2LocusEnum" AS ENUM ('IGI', 'IGK', 'IGL', 'TRA', 'TRG');CREATE TYPE "LigandTypeEnum" AS ENUM ('MHC:peptide', 'MHC:non-peptide', 'protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenTypeEnum" AS ENUM ('protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenSourceSpeciesOntology" AS ENUM ();CREATE TYPE "MhcGene1Ontology" AS ENUM ();CREATE TYPE "MhcGene2Ontology" AS ENUM ();CREATE TYPE "ReactivityMethodEnum" AS ENUM ('SPR', 'ITC', 'ELISA', 'cytometry', 'biological_activity');CREATE TYPE "ReactivityReadoutEnum" AS ENUM ('binding_strength', 'cytokine_release', 'dissociation_constant_kd', 'on_rate', 'off_rate', 'pathogen_inhibition');CREATE TYPE "DataItemTypeEnum" AS ENUM ('sequence_reads', 'sequence_quality', 'sequence_forward_paired_reads', 'sequence_reverse_paired_reads', 'sequence', 'primer_sequence', 'forward_primer_sequence', 'reverse_primer_sequence', 'barcode_sequence', 'vdj_sequence_annotation', 'quality_statistics', 'annotation_statistics', 'assigned_clones', 'physiochemical_annotation', 'gene_usage', 'gene_combo_usage', 'length_distribution', 'diversity_profile', 'mutational_profile', 'similarity_comparison', 'study_arm_comparison', 'archive', 'compressed');CREATE TYPE "CurationalTagsEnum" AS ENUM ('likely_truncated', 'likely_full_length');CREATE TYPE "KeywordsStudyEnum" AS ENUM ('contains_ig', 'contains_tr', 'contains_paired_chain', 'contains_schema_rearrangement', 'contains_schema_clone', 'contains_schema_cell', 'contains_schema_receptor');
+CREATE TYPE "SpeciesOntology" AS ENUM ();CREATE TYPE "AgeUnitOntology" AS ENUM ();CREATE TYPE "GeolocationOntology" AS ENUM ('US: New York', 'US: California', 'US: Connecticut', 'US: Georgia', 'US: Texas', 'Canada', 'Nicaragua', 'US: Maryland', 'US: Minnesota', 'United States of America', 'Uganda', 'China', 'England', 'India', 'US: Massachusetts', 'US: Colorado', 'Gambia', 'Papua New Guinea', 'Metropolitan France', 'Sri Lanka', 'Switzerland', 'US: Washington', 'geographic location', 'Colombia', 'US: Florida', 'US: Kansas');CREATE TYPE "StrainEnum" AS ENUM ('1D2beta', 'BALB/cByJ', 'Balb/c', 'C57BL/6', 'C57BL/6J', 'JHD-/- MRL/MpJ-Faslp', 'LDLR+/+', 'LDLR-/-', 'pet shop mouse');CREATE TYPE "LifeEventProcessOntology" AS ENUM ();CREATE TYPE "ExposureMaterialOntology" AS ENUM ();CREATE TYPE "MeasurementUnitOntology" AS ENUM ();CREATE TYPE "TissueOntology" AS ENUM ();CREATE TYPE "CellSubsetOntology" AS ENUM ();CREATE TYPE "CellSpeciesOntology" AS ENUM ();CREATE TYPE "TemplateClassEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "TemplateAmountUnitOntology" AS ENUM ();CREATE TYPE "LibraryGenerationMethodEnum" AS ENUM ('PCR', 'RT(RHP)+PCR', 'RT(oligo-dT)+PCR', 'RT(oligo-dT)+TS+PCR', 'RT(oligo-dT)+TS(UMI)+PCR', 'RT(specific)+PCR', 'RT(specific)+TS+PCR', 'RT(specific)+TS(UMI)+PCR', 'RT(specific+UMI)+PCR', 'RT(specific+UMI)+TS+PCR', 'RT(specific)+TS', 'other');CREATE TYPE "CompleteSequencesEnum" AS ENUM ('partial', 'complete', 'complete+untemplated', 'mixed');CREATE TYPE "PhysicalLinkageEnum" AS ENUM ('none', 'hetero_head-head', 'hetero_tail-head', 'hetero_prelinked');CREATE TYPE "AssayTypeOntology" AS ENUM ();CREATE TYPE "CategoricalSpecificityEnum" AS ENUM ('Positive', 'Negative', 'Positive-Low', 'Positive-High', 'Positive-Intermediate');CREATE TYPE "FileTypeEnum" AS ENUM ('fasta', 'fastq');CREATE TYPE "ReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "PairedReadDirectionEnum" AS ENUM ('forward', 'reverse', 'mixed');CREATE TYPE "LocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRG', 'TRD');CREATE TYPE "ChainSimilarityTypeEnum" AS ENUM ('exact_match', 'exact_aa_match', 'cdr3_exact_match', 'cdr3_exact_aa_match', 'cdr3_exact_aa_and_vj_match');CREATE TYPE "TimePointUnitOntology" AS ENUM ();CREATE TYPE "DerivationEnum" AS ENUM ('DNA', 'RNA');CREATE TYPE "ObservationTypeEnum" AS ENUM ('direct_sequencing', 'inference_from_repertoire');CREATE TYPE "StrandEnum" AS ENUM ('+', '-');CREATE TYPE "SequenceTypeEnum" AS ENUM ('V', 'D', 'J', 'C');CREATE TYPE "InferenceTypeEnum" AS ENUM ('genomic_and_rearranged', 'genomic_only', 'rearranged_only');CREATE TYPE "SpeciesSubgroupTypeEnum" AS ENUM ('breed', 'strain', 'inbred', 'outbred', 'locational');CREATE TYPE "StatusEnum" AS ENUM ('active', 'draft', 'retired', 'withdrawn');CREATE TYPE "JCodonFrameEnum" AS ENUM ('1', '2', '3');CREATE TYPE "InferenceProcessEnum" AS ENUM ('genomic_sequencing', 'repertoire_sequencing');CREATE TYPE "MhcClassEnum" AS ENUM ('MHC-I', 'MHC-II', 'MHC-nonclassical');CREATE TYPE "GeneOntology" AS ENUM ();CREATE TYPE "StudyTypeOntology" AS ENUM ();CREATE TYPE "SexEnum" AS ENUM ('male', 'female', 'pooled', 'hermaphrodite', 'intersex');CREATE TYPE "DiseaseDiagnosisOntology" AS ENUM ();CREATE TYPE "CollectionTimePointRelativeUnitOntology" AS ENUM ();CREATE TYPE "PcrTargetLocusEnum" AS ENUM ('IGH', 'IGI', 'IGK', 'IGL', 'TRA', 'TRB', 'TRD', 'TRG');CREATE TYPE "ExpressionStudyMethodEnum" AS ENUM ('flow_cytometry', 'single-cell_transcriptome');CREATE TYPE "ReceptorTypeEnum" AS ENUM ('Ig', 'TCR');CREATE TYPE "ReceptorVariableDomain1LocusEnum" AS ENUM ('IGH', 'TRB', 'TRD');CREATE TYPE "ReceptorVariableDomain2LocusEnum" AS ENUM ('IGI', 'IGK', 'IGL', 'TRA', 'TRG');CREATE TYPE "LigandTypeEnum" AS ENUM ('MHC:peptide', 'MHC:non-peptide', 'protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenTypeEnum" AS ENUM ('protein', 'peptide', 'non-peptidic');CREATE TYPE "AntigenSourceSpeciesOntology" AS ENUM ();CREATE TYPE "MhcGene1Ontology" AS ENUM ();CREATE TYPE "MhcGene2Ontology" AS ENUM ();CREATE TYPE "ReactivityMethodEnum" AS ENUM ('SPR', 'ITC', 'ELISA', 'cytometry', 'biological_activity');CREATE TYPE "ReactivityReadoutEnum" AS ENUM ('binding_strength', 'cytokine_release', 'dissociation_constant_kd', 'on_rate', 'off_rate', 'pathogen_inhibition');CREATE TYPE "DataItemTypeEnum" AS ENUM ('sequence_reads', 'sequence_quality', 'sequence_forward_paired_reads', 'sequence_reverse_paired_reads', 'sequence', 'primer_sequence', 'forward_primer_sequence', 'reverse_primer_sequence', 'barcode_sequence', 'vdj_sequence_annotation', 'genotype', 'quality_statistics', 'annotation_statistics', 'assigned_clones', 'physiochemical_annotation', 'gene_usage', 'gene_combo_usage', 'length_distribution', 'diversity_profile', 'mutational_profile', 'similarity_comparison', 'study_arm_comparison', 'archive', 'compressed');CREATE TYPE "DataTransformationTypeEnum" AS ENUM ('merge_reads', 'barcode_matching', 'primer_matching', 'length_filter', 'quality_filter', 'homopolymer_filter', 'collapse_unique_sequences', 'vdj_annotation', 'clonal_assignment', 'germline_allele_inference', 'genotype_inference', 'gene_usage', 'gene_combo_usage', 'length_distribution', 'diversity', 'observed_mutations');CREATE TYPE "CurationalTagsEnum" AS ENUM ('likely_truncated', 'likely_full_length');CREATE TYPE "KeywordsStudyEnum" AS ENUM ('contains_ig', 'contains_tr', 'contains_paired_chain', 'contains_schema_rearrangement', 'contains_schema_clone', 'contains_schema_cell', 'contains_schema_receptor');
 CREATE TABLE "AKObject" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
@@ -47,32 +47,32 @@ CREATE TABLE "OntologyTable" (
 	PRIMARY KEY (term_id)
 );COMMENT ON TABLE "OntologyTable" IS 'standard schema for an ontology table';COMMENT ON COLUMN "OntologyTable".term_id IS 'ontology term ID';COMMENT ON COLUMN "OntologyTable".term_label IS 'ontology term descriptive label';
 CREATE TABLE "BiomedicalInvestigations" (
-	term_id "BiomedicalInvestigationsOntology" NOT NULL, 
+	term_id TEXT NOT NULL, 
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );COMMENT ON TABLE "BiomedicalInvestigations" IS 'None';COMMENT ON COLUMN "BiomedicalInvestigations".term_id IS 'ontology term ID';COMMENT ON COLUMN "BiomedicalInvestigations".term_label IS 'ontology term descriptive label';
 CREATE TABLE "PhenotypeAndTraits" (
-	term_id "BiologicalSexOntology" NOT NULL, 
+	term_id TEXT NOT NULL, 
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );COMMENT ON TABLE "PhenotypeAndTraits" IS 'None';COMMENT ON COLUMN "PhenotypeAndTraits".term_id IS 'ontology term ID';COMMENT ON COLUMN "PhenotypeAndTraits".term_label IS 'ontology term descriptive label';
 CREATE TABLE "Diseases" (
-	term_id "DiseaseDiagnosisOntology" NOT NULL, 
+	term_id TEXT NOT NULL, 
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );COMMENT ON TABLE "Diseases" IS 'None';COMMENT ON COLUMN "Diseases".term_id IS 'ontology term ID';COMMENT ON COLUMN "Diseases".term_label IS 'ontology term descriptive label';
 CREATE TABLE "Cells" (
-	term_id "CellSubsetOntology" NOT NULL, 
+	term_id TEXT NOT NULL, 
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );COMMENT ON TABLE "Cells" IS 'None';COMMENT ON COLUMN "Cells".term_id IS 'ontology term ID';COMMENT ON COLUMN "Cells".term_label IS 'ontology term descriptive label';
 CREATE TABLE "UberAnatomy" (
-	term_id "TissueOntology" NOT NULL, 
+	term_id TEXT NOT NULL, 
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );COMMENT ON TABLE "UberAnatomy" IS 'None';COMMENT ON COLUMN "UberAnatomy".term_id IS 'ontology term ID';COMMENT ON COLUMN "UberAnatomy".term_label IS 'ontology term descriptive label';
 CREATE TABLE "Units" (
-	term_id "UnitOntology" NOT NULL, 
+	term_id TEXT NOT NULL, 
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );COMMENT ON TABLE "Units" IS 'None';COMMENT ON COLUMN "Units".term_id IS 'ontology term ID';COMMENT ON COLUMN "Units".term_label IS 'ontology term descriptive label';
@@ -146,6 +146,12 @@ CREATE TABLE "AIRRSequencingData" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "AIRRSequencingData" IS 'None';COMMENT ON COLUMN "AIRRSequencingData".sequencing_data_id IS 'Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.';COMMENT ON COLUMN "AIRRSequencingData".file_type IS 'File format for the raw reads or sequences';COMMENT ON COLUMN "AIRRSequencingData".filename IS 'File name for the raw reads or sequences. The first file in paired-read sequencing.';COMMENT ON COLUMN "AIRRSequencingData".read_direction IS 'Read direction for the raw reads or sequences. The first file in paired-read sequencing.';COMMENT ON COLUMN "AIRRSequencingData".read_length IS 'Read length in bases for the first file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_filename IS 'File name for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_read_direction IS 'Read direction for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_read_length IS 'Read length in bases for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".index_filename IS 'File name for the index file';COMMENT ON COLUMN "AIRRSequencingData".index_length IS 'Read length in bases for the index file';COMMENT ON COLUMN "AIRRSequencingData".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AIRRGenotypeData" (
+	receptor_genotype_set_id TEXT, 
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "AIRRGenotypeData" IS 'None';COMMENT ON COLUMN "AIRRGenotypeData".receptor_genotype_set_id IS 'A unique identifier for this Receptor Genotype Set, typically generated by the repository  hosting the schema, for example from the underlying ID of the database record.';COMMENT ON COLUMN "AIRRGenotypeData".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "RNATranscriptomeData" (
 	type TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -815,7 +821,7 @@ CREATE TABLE "Receptor" (
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "Receptor" IS 'None';COMMENT ON COLUMN "Receptor".receptor_id IS 'ID of the current Receptor object, unique within the local repository.';COMMENT ON COLUMN "Receptor".receptor_hash IS 'The SHA256 hash of the receptor amino acid sequence, calculated on the concatenated ``receptor_variable_domain_*_aa`` sequences and represented as base16-encoded string.';COMMENT ON COLUMN "Receptor".receptor_type IS 'The top-level receptor type, either Immunoglobulin (Ig) or T Cell Receptor (TCR).';COMMENT ON COLUMN "Receptor".receptor_variable_domain_1_aa IS 'Complete amino acid sequence of the mature variable domain of the Ig heavy, TCR beta or TCR delta chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.';COMMENT ON COLUMN "Receptor".receptor_variable_domain_1_locus IS 'Locus from which the variable domain in receptor_variable_domain_1_aa originates';COMMENT ON COLUMN "Receptor".receptor_variable_domain_2_aa IS 'Complete amino acid sequence of the mature variable domain of the Ig light, TCR alpha or TCR gamma chain. The mature variable domain is defined as encompassing all AA from and including first AA after the the signal peptide to and including the last AA that is completely encoded by the J gene.';COMMENT ON COLUMN "Receptor".receptor_variable_domain_2_locus IS 'Locus from which the variable domain in receptor_variable_domain_2_aa originates';
 CREATE TABLE "Investigation" (
-	investigation_type "BiomedicalInvestigationsOntology", 
+	investigation_type TEXT, 
 	archival_id TEXT, 
 	inclusion_exclusion_criteria TEXT, 
 	release_date TIMESTAMP WITHOUT TIME ZONE, 
@@ -832,6 +838,7 @@ CREATE TABLE "InputOutputDataMap" (
 	has_specified_input TEXT, 
 	has_specified_output TEXT, 
 	PRIMARY KEY (id), 
+	UNIQUE (data_transformation, has_specified_input, has_specified_output), 
 	FOREIGN KEY(data_transformation) REFERENCES "DataTransformation" (akc_id), 
 	FOREIGN KEY(has_specified_input) REFERENCES "AKDataItem" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
@@ -991,43 +998,43 @@ CREATE TABLE "OntologyTable_parent" (
 	FOREIGN KEY(parent_term_id) REFERENCES "OntologyTable" (term_id)
 );COMMENT ON TABLE "OntologyTable_parent" IS 'None';COMMENT ON COLUMN "OntologyTable_parent"."OntologyTable_term_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "OntologyTable_parent".parent_term_id IS 'parent term ID for ontology term';
 CREATE TABLE "BiomedicalInvestigations_parent" (
-	"BiomedicalInvestigations_term_id" "BiomedicalInvestigationsOntology", 
-	parent_term_id "BiomedicalInvestigationsOntology", 
+	"BiomedicalInvestigations_term_id" TEXT, 
+	parent_term_id TEXT, 
 	PRIMARY KEY ("BiomedicalInvestigations_term_id", parent_term_id), 
 	FOREIGN KEY("BiomedicalInvestigations_term_id") REFERENCES "BiomedicalInvestigations" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "BiomedicalInvestigations" (term_id)
 );COMMENT ON TABLE "BiomedicalInvestigations_parent" IS 'None';COMMENT ON COLUMN "BiomedicalInvestigations_parent"."BiomedicalInvestigations_term_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "BiomedicalInvestigations_parent".parent_term_id IS 'parent term ID for ontology term';
 CREATE TABLE "PhenotypeAndTraits_parent" (
-	"PhenotypeAndTraits_term_id" "BiologicalSexOntology", 
-	parent_term_id "BiologicalSexOntology", 
+	"PhenotypeAndTraits_term_id" TEXT, 
+	parent_term_id TEXT, 
 	PRIMARY KEY ("PhenotypeAndTraits_term_id", parent_term_id), 
 	FOREIGN KEY("PhenotypeAndTraits_term_id") REFERENCES "PhenotypeAndTraits" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "PhenotypeAndTraits" (term_id)
 );COMMENT ON TABLE "PhenotypeAndTraits_parent" IS 'None';COMMENT ON COLUMN "PhenotypeAndTraits_parent"."PhenotypeAndTraits_term_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "PhenotypeAndTraits_parent".parent_term_id IS 'parent term ID for ontology term';
 CREATE TABLE "Diseases_parent" (
-	"Diseases_term_id" "DiseaseDiagnosisOntology", 
-	parent_term_id "DiseaseDiagnosisOntology", 
+	"Diseases_term_id" TEXT, 
+	parent_term_id TEXT, 
 	PRIMARY KEY ("Diseases_term_id", parent_term_id), 
 	FOREIGN KEY("Diseases_term_id") REFERENCES "Diseases" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "Diseases" (term_id)
 );COMMENT ON TABLE "Diseases_parent" IS 'None';COMMENT ON COLUMN "Diseases_parent"."Diseases_term_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Diseases_parent".parent_term_id IS 'parent term ID for ontology term';
 CREATE TABLE "Cells_parent" (
-	"Cells_term_id" "CellSubsetOntology", 
-	parent_term_id "CellSubsetOntology", 
+	"Cells_term_id" TEXT, 
+	parent_term_id TEXT, 
 	PRIMARY KEY ("Cells_term_id", parent_term_id), 
 	FOREIGN KEY("Cells_term_id") REFERENCES "Cells" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "Cells" (term_id)
 );COMMENT ON TABLE "Cells_parent" IS 'None';COMMENT ON COLUMN "Cells_parent"."Cells_term_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Cells_parent".parent_term_id IS 'parent term ID for ontology term';
 CREATE TABLE "UberAnatomy_parent" (
-	"UberAnatomy_term_id" "TissueOntology", 
-	parent_term_id "TissueOntology", 
+	"UberAnatomy_term_id" TEXT, 
+	parent_term_id TEXT, 
 	PRIMARY KEY ("UberAnatomy_term_id", parent_term_id), 
 	FOREIGN KEY("UberAnatomy_term_id") REFERENCES "UberAnatomy" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "UberAnatomy" (term_id)
 );COMMENT ON TABLE "UberAnatomy_parent" IS 'None';COMMENT ON COLUMN "UberAnatomy_parent"."UberAnatomy_term_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "UberAnatomy_parent".parent_term_id IS 'parent term ID for ontology term';
 CREATE TABLE "Units_parent" (
-	"Units_term_id" "UnitOntology", 
-	parent_term_id "UnitOntology", 
+	"Units_term_id" TEXT, 
+	parent_term_id TEXT, 
 	PRIMARY KEY ("Units_term_id", parent_term_id), 
 	FOREIGN KEY("Units_term_id") REFERENCES "Units" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "Units" (term_id)
@@ -1082,6 +1089,19 @@ CREATE TABLE "AIRRSequencingData_data_item_types" (
 	PRIMARY KEY ("AIRRSequencingData_akc_id", data_item_types), 
 	FOREIGN KEY("AIRRSequencingData_akc_id") REFERENCES "AIRRSequencingData" (akc_id)
 );COMMENT ON TABLE "AIRRSequencingData_data_item_types" IS 'None';COMMENT ON COLUMN "AIRRSequencingData_data_item_types"."AIRRSequencingData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingData_data_item_types".data_item_types IS 'semantic types of the data';
+CREATE TABLE "AIRRGenotypeData_genotype_class_list" (
+	"AIRRGenotypeData_akc_id" TEXT, 
+	genotype_class_list_id INTEGER, 
+	PRIMARY KEY ("AIRRGenotypeData_akc_id", genotype_class_list_id), 
+	FOREIGN KEY("AIRRGenotypeData_akc_id") REFERENCES "AIRRGenotypeData" (akc_id), 
+	FOREIGN KEY(genotype_class_list_id) REFERENCES "Genotype" (id)
+);COMMENT ON TABLE "AIRRGenotypeData_genotype_class_list" IS 'None';COMMENT ON COLUMN "AIRRGenotypeData_genotype_class_list"."AIRRGenotypeData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRGenotypeData_genotype_class_list".genotype_class_list_id IS 'List of Genotypes included in this Receptor Genotype Set.';
+CREATE TABLE "AIRRGenotypeData_data_item_types" (
+	"AIRRGenotypeData_akc_id" TEXT, 
+	data_item_types "DataItemTypeEnum", 
+	PRIMARY KEY ("AIRRGenotypeData_akc_id", data_item_types), 
+	FOREIGN KEY("AIRRGenotypeData_akc_id") REFERENCES "AIRRGenotypeData" (akc_id)
+);COMMENT ON TABLE "AIRRGenotypeData_data_item_types" IS 'None';COMMENT ON COLUMN "AIRRGenotypeData_data_item_types"."AIRRGenotypeData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRGenotypeData_data_item_types".data_item_types IS 'semantic types of the data';
 CREATE TABLE "RNATranscriptomeData_data_item_types" (
 	"RNATranscriptomeData_akc_id" TEXT, 
 	data_item_types "DataItemTypeEnum", 
@@ -1090,7 +1110,7 @@ CREATE TABLE "RNATranscriptomeData_data_item_types" (
 );COMMENT ON TABLE "RNATranscriptomeData_data_item_types" IS 'None';COMMENT ON COLUMN "RNATranscriptomeData_data_item_types"."RNATranscriptomeData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "RNATranscriptomeData_data_item_types".data_item_types IS 'semantic types of the data';
 CREATE TABLE "DataTransformation_data_transformation_types" (
 	"DataTransformation_akc_id" TEXT, 
-	data_transformation_types "DataItemTypeEnum", 
+	data_transformation_types "DataTransformationTypeEnum", 
 	PRIMARY KEY ("DataTransformation_akc_id", data_transformation_types), 
 	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id)
 );COMMENT ON TABLE "DataTransformation_data_transformation_types" IS 'None';COMMENT ON COLUMN "DataTransformation_data_transformation_types"."DataTransformation_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "DataTransformation_data_transformation_types".data_transformation_types IS 'semantic types of the data transformation';
@@ -1363,7 +1383,7 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species "SpeciesOntology", 
-	sex "BiologicalSexOntology", 
+	sex TEXT, 
 	age TEXT, 
 	age_unit "AgeUnitOntology", 
 	age_event TEXT, 
@@ -1444,7 +1464,7 @@ CREATE TABLE "Repertoire_data_processing" (
 );COMMENT ON TABLE "Repertoire_data_processing" IS 'None';COMMENT ON COLUMN "Repertoire_data_processing"."Repertoire_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Repertoire_data_processing".data_processing_id IS 'List of Data Processing objects';
 CREATE TABLE "ImmuneExposure" (
 	exposure_material "ExposureMaterialOntology", 
-	disease "DiseaseDiagnosisOntology", 
+	disease TEXT, 
 	disease_stage TEXT, 
 	disease_severity TEXT, 
 	type TEXT, 

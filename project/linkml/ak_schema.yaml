@@ -5680,9 +5680,6 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        name: term_id
-        range: BiomedicalInvestigationsOntology
       parent:
         name: parent
         range: BiomedicalInvestigations
@@ -5691,9 +5688,6 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        name: term_id
-        range: BiologicalSexOntology
       parent:
         name: parent
         range: PhenotypeAndTraits
@@ -5702,9 +5696,6 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        name: term_id
-        range: DiseaseDiagnosisOntology
       parent:
         name: parent
         range: Diseases
@@ -5713,9 +5704,6 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        name: term_id
-        range: CellSubsetOntology
       parent:
         name: parent
         range: Cells
@@ -5724,9 +5712,6 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        name: term_id
-        range: TissueOntology
       parent:
         name: parent
         range: UberAnatomy
@@ -5735,9 +5720,6 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        name: term_id
-        range: UnitOntology
       parent:
         name: parent
         range: Units

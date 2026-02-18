@@ -2191,7 +2191,7 @@
                 "parent": {
                     "description": "parent term ID for ontology term",
                     "items": {
-                        "$ref": "#/$defs/BiomedicalInvestigationsOntology"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -2199,8 +2199,8 @@
                     ]
                 },
                 "term_id": {
-                    "$ref": "#/$defs/BiomedicalInvestigationsOntology",
-                    "description": "ontology term ID"
+                    "description": "ontology term ID",
+                    "type": "string"
                 },
                 "term_label": {
                     "description": "ontology term descriptive label",
@@ -2561,7 +2561,7 @@
                 "parent": {
                     "description": "parent term ID for ontology term",
                     "items": {
-                        "$ref": "#/$defs/CellSubsetOntology"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -2569,8 +2569,8 @@
                     ]
                 },
                 "term_id": {
-                    "$ref": "#/$defs/CellSubsetOntology",
-                    "description": "ontology term ID"
+                    "description": "ontology term ID",
+                    "type": "string"
                 },
                 "term_label": {
                     "description": "ontology term descriptive label",
@@ -3643,7 +3643,7 @@
                 "parent": {
                     "description": "parent term ID for ontology term",
                     "items": {
-                        "$ref": "#/$defs/DiseaseDiagnosisOntology"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -3651,8 +3651,8 @@
                     ]
                 },
                 "term_id": {
-                    "$ref": "#/$defs/DiseaseDiagnosisOntology",
-                    "description": "ontology term ID"
+                    "description": "ontology term ID",
+                    "type": "string"
                 },
                 "term_label": {
                     "description": "ontology term descriptive label",
@@ -4146,8 +4146,11 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/DiseaseDiagnosisOntology",
-                    "description": "The disease relevant to an immune exposure"
+                    "description": "The disease relevant to an immune exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease_severity": {
                     "description": "The severity of the disease relevant to an immune exposure",
@@ -4256,8 +4259,11 @@
                     ]
                 },
                 "disease": {
-                    "$ref": "#/$defs/DiseaseDiagnosisOntology",
-                    "description": "The disease relevant to an immune exposure"
+                    "description": "The disease relevant to an immune exposure",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "disease_severity": {
                     "description": "The severity of the disease relevant to an immune exposure",
@@ -4456,8 +4462,11 @@
                     ]
                 },
                 "investigation_type": {
-                    "$ref": "#/$defs/BiomedicalInvestigationsOntology",
-                    "description": "Type of study design"
+                    "description": "Type of study design",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -4569,8 +4578,11 @@
                     ]
                 },
                 "investigation_type": {
-                    "$ref": "#/$defs/BiomedicalInvestigationsOntology",
-                    "description": "Type of study design"
+                    "description": "Type of study design",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
@@ -5334,8 +5346,11 @@
                     ]
                 },
                 "sex": {
-                    "$ref": "#/$defs/BiologicalSexOntology",
-                    "description": "Biological sex of subject"
+                    "description": "Biological sex of subject",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -5418,8 +5433,11 @@
                     ]
                 },
                 "sex": {
-                    "$ref": "#/$defs/BiologicalSexOntology",
-                    "description": "Biological sex of subject"
+                    "description": "Biological sex of subject",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -5579,7 +5597,7 @@
                 "parent": {
                     "description": "parent term ID for ontology term",
                     "items": {
-                        "$ref": "#/$defs/BiologicalSexOntology"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -5587,8 +5605,8 @@
                     ]
                 },
                 "term_id": {
-                    "$ref": "#/$defs/BiologicalSexOntology",
-                    "description": "ontology term ID"
+                    "description": "ontology term ID",
+                    "type": "string"
                 },
                 "term_label": {
                     "description": "ontology term descriptive label",
@@ -9188,7 +9206,7 @@
                 "parent": {
                     "description": "parent term ID for ontology term",
                     "items": {
-                        "$ref": "#/$defs/TissueOntology"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -9196,8 +9214,8 @@
                     ]
                 },
                 "term_id": {
-                    "$ref": "#/$defs/TissueOntology",
-                    "description": "ontology term ID"
+                    "description": "ontology term ID",
+                    "type": "string"
                 },
                 "term_label": {
                     "description": "ontology term descriptive label",
@@ -9254,7 +9272,7 @@
                 "parent": {
                     "description": "parent term ID for ontology term",
                     "items": {
-                        "$ref": "#/$defs/UnitOntology"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -9262,8 +9280,8 @@
                     ]
                 },
                 "term_id": {
-                    "$ref": "#/$defs/UnitOntology",
-                    "description": "ontology term ID"
+                    "description": "ontology term ID",
+                    "type": "string"
                 },
                 "term_label": {
                     "description": "ontology term descriptive label",
