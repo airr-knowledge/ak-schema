@@ -250,8 +250,8 @@
 
 
 
-    Participant --&gt; "0..1" BiologicalSexOntology : sex
-    click BiologicalSexOntology href "../BiologicalSexOntology"
+    Participant --&gt; "0..1" PhenotypeAndTraits : sex
+    click PhenotypeAndTraits href "../PhenotypeAndTraits"
 
 
       Participant : species
@@ -318,7 +318,7 @@
 </tr>
 <tr>
 <td><a href="../sex/">sex</a></td>
-<td>0..1 <br/> <a href="../BiologicalSexOntology/">BiologicalSexOntology</a></td>
+<td>0..1 <br/> <a href="../PhenotypeAndTraits/">PhenotypeAndTraits</a></td>
 <td>Biological sex of subject</td>
 <td>direct</td>
 </tr>
@@ -473,7 +473,7 @@ slots:
 slot_usage:
   sex:
     name: sex
-    range: BiologicalSexOntology
+    range: PhenotypeAndTraits
 class_uri: OBI:0100026
 
 </code></pre>
@@ -487,7 +487,7 @@ is_a: NamedThing
 slot_usage:
   sex:
     name: sex
-    range: BiologicalSexOntology
+    range: PhenotypeAndTraits
 attributes:
   study_arm:
     name: study_arm
@@ -532,7 +532,7 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: BiologicalSexOntology
+    range: PhenotypeAndTraits
   age:
     name: age
     description: The age of a participant relative to age_event

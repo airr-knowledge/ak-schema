@@ -253,8 +253,8 @@
 
 
 
-    Investigation --&gt; "0..1" InvestigationTypeOntology : investigation_type
-    click InvestigationTypeOntology href "../InvestigationTypeOntology"
+    Investigation --&gt; "0..1" BiomedicalInvestigations : investigation_type
+    click BiomedicalInvestigations href "../BiomedicalInvestigations"
 
 
       Investigation : name
@@ -309,7 +309,7 @@
 <tbody>
 <tr>
 <td><a href="../investigation_type/">investigation_type</a></td>
-<td>0..1 <br/> <a href="../InvestigationTypeOntology/">InvestigationTypeOntology</a></td>
+<td>0..1 <br/> <a href="../BiomedicalInvestigations/">BiomedicalInvestigations</a></td>
 <td>Type of study design</td>
 <td>direct</td>
 </tr>
@@ -487,7 +487,7 @@ attributes:
     owner: Investigation
     domain_of:
     - Investigation
-    range: InvestigationTypeOntology
+    range: BiomedicalInvestigations
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,

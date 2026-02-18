@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/library_generation_method/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/term_label/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: library_generation_method - ak-schema</title>
+        <title>Slot: term_label - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-library_generation_method" class="md-skip">
+        <a href="#slot-term_label" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: library_generation_method
+              Slot: term_label
             
           </span>
         </div>
@@ -278,13 +278,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#annotations" class="md-nav__link">
-    Annotations
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#schema-source" class="md-nav__link">
     Schema Source
   </a>
@@ -324,15 +317,15 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/library_generation_method.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/term_label.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-library_generation_method">Slot: library_generation_method</h1>
-<p><em>Generic type of library generation</em></p>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/library_generation_method">ak_schema:library_generation_method</a></p>
+<h1 id="slot-term_label">Slot: term_label</h1>
+<p><em>ontology term descriptive label</em></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/term_label">ak_schema:term_label</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -346,17 +339,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../LibraryPreparationProcessing/">LibraryPreparationProcessing</a></td>
+<td><a href="../OntologyTable/">OntologyTable</a></td>
+<td>standard schema for an ontology table</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../PhenotypeAndTraits/">PhenotypeAndTraits</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NucleicAcidProcessing/">NucleicAcidProcessing</a></td>
+<td><a href="../UberAnatomy/">UberAnatomy</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../SampleProcessing/">SampleProcessing</a></td>
+<td><a href="../Diseases/">Diseases</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Units/">Units</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Cells/">Cells</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BiomedicalInvestigations/">BiomedicalInvestigations</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -364,24 +377,9 @@
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../LibraryGenerationMethodEnum/">LibraryGenerationMethodEnum</a></li>
+<li>Range: <a href="../String/">String</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
-<h3 id="annotations">Annotations</h3>
-<table>
-<thead>
-<tr>
-<th>property</th>
-<th>value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>nullable</td>
-<td>False</td>
-</tr>
-</tbody>
-</table>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
 <li>from schema: https://github.com/airr-knowledge/ak-schema</li>
@@ -397,30 +395,25 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:library_generation_method</td>
+<td>ak_schema:term_label</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:library_generation_method</td>
+<td>ak_schema:term_label</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: library_generation_method
-annotations:
-  nullable:
-    tag: nullable
-    value: false
-description: Generic type of library generation
+<pre><code class="language-yaml">name: term_label
+description: ontology term descriptive label
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-alias: library_generation_method
+alias: term_label
 domain_of:
-- NucleicAcidProcessing
-- SampleProcessing
-range: LibraryGenerationMethodEnum
+- OntologyTable
+range: string
 
 </code></pre>
 

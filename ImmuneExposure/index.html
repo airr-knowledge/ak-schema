@@ -222,8 +222,8 @@
 
 
 
-    ImmuneExposure --&gt; "0..1" DiseaseOntology : disease
-    click DiseaseOntology href "../DiseaseOntology"
+    ImmuneExposure --&gt; "0..1" Diseases : disease
+    click Diseases href "../Diseases"
 
 
       ImmuneExposure : disease_severity
@@ -331,7 +331,7 @@
 </tr>
 <tr>
 <td><a href="../disease/">disease</a></td>
-<td>0..1 <br/> <a href="../DiseaseOntology/">DiseaseOntology</a></td>
+<td>0..1 <br/> <a href="../Diseases/">Diseases</a></td>
 <td>The disease relevant to an immune exposure</td>
 <td>direct</td>
 </tr>
@@ -507,7 +507,7 @@ attributes:
     owner: ImmuneExposure
     domain_of:
     - ImmuneExposure
-    range: DiseaseOntology
+    range: Diseases
   disease_stage:
     name: disease_stage
     annotations:
