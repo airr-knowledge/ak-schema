@@ -17,40 +17,42 @@ classes:
   BiomedicalInvestigations:
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        range: BiomedicalInvestigationsOntology
+# BUG: linkml is not recognizing term_id range as an enum, which creates
+# invalid python dataclasses code. We leave with default range for now.
+#      term_id:
+#        range: BiomedicalInvestigationsOntology
       parent:
         range: BiomedicalInvestigations
 
   PhenotypeAndTraits:
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        range: BiologicalSexOntology
+#      term_id:
+#        range: BiologicalSexOntology
       parent:
         range: PhenotypeAndTraits
 
   Diseases:
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        range: DiseaseDiagnosisOntology # defined by AIRR
+#      term_id:
+#        range: DiseaseDiagnosisOntology # defined by AIRR
       parent:
         range: Diseases
 
   Cells:
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        range: CellSubsetOntology # defined by AIRR
+#      term_id:
+#        range: CellSubsetOntology # defined by AIRR
       parent:
         range: Cells
 
   UberAnatomy:
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        range: TissueOntology # defined by AIRR
+#      term_id:
+#        range: TissueOntology # defined by AIRR
       parent:
         range: UberAnatomy
 
@@ -58,8 +60,8 @@ classes:
   Units:
     is_a: OntologyTable
     slot_usage:
-      term_id:
-        range: UnitOntology
+#      term_id:
+#        range: UnitOntology
       parent:
         range: Units
 
