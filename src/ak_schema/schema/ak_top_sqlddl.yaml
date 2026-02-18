@@ -50,6 +50,7 @@ default_range: string
 imports:
   - linkml:types
   - ak_core
+  - ak_ontology
 #  - ak_commons
   - ak_study_design
   - ak_specimens

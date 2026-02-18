@@ -6,6 +6,8 @@
 --     * Slot: id Description: 
 -- # Class: "AIRRStandards_v1p5" Description: "An object directly converted from AIRR schema version 1.5."
 --     * Slot: id Description: 
+-- # Class: "AIRRStandards_v1p6" Description: "An object directly converted from AIRR schema version 1.6."
+--     * Slot: id Description: 
 -- # Class: "AIRRStandards_v2p0" Description: "An object directly converted from AIRR schema version 2.0."
 --     * Slot: id Description: 
 -- # Class: "NamedThing" Description: "Name and description for AKC things."
@@ -20,6 +22,27 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "OntologyTable" Description: "standard schema for an ontology table"
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "BiomedicalInvestigations" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "PhenotypeAndTraits" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "Diseases" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "Cells" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "UberAnatomy" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "Units" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
 -- # Class: "Investigation" Description: "A scientific investigation."
 --     * Slot: investigation_type Description: Type of study design
 --     * Slot: archival_id Description: Identifier for external archival resource for the investigation, e.g., BioProject
@@ -124,10 +147,6 @@
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
---     * Slot: Assay_akc_id Description: Autocreated FK slot
---     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
---     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
---     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
 -- # Class: "CellIsolationProcessing" Description: ""
 --     * Slot: tissue_processing Description: Enzymatic digestion and/or physical methods used to isolate cells from sample
 --     * Slot: cell_subset Description: Commonly-used designation of isolated cell population
@@ -649,7 +668,7 @@
 --     * Slot: repertoire_description Description: 
 --     * Slot: study_id Description: Study object
 --     * Slot: subject_id Description: Subject object
--- # Class: "RepertoireGroupDetail" Description: ""
+-- # Class: "RepertoireFilter" Description: ""
 --     * Slot: id Description: 
 --     * Slot: repertoire_id Description: 
 --     * Slot: repertoire_description Description: 
@@ -948,6 +967,27 @@
 --     * Slot: sequencing_run_date Description: Date of sequencing run
 --     * Slot: sequencing_kit Description: Name, manufacturer, order and lot numbers of sequencing kit
 --     * Slot: sequencing_files_id Description: Set of sequencing files produced by the sequencing run
+-- # Class: "OntologyTable_parent" Description: ""
+--     * Slot: OntologyTable_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "BiomedicalInvestigations_parent" Description: ""
+--     * Slot: BiomedicalInvestigations_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "PhenotypeAndTraits_parent" Description: ""
+--     * Slot: PhenotypeAndTraits_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "Diseases_parent" Description: ""
+--     * Slot: Diseases_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "Cells_parent" Description: ""
+--     * Slot: Cells_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "UberAnatomy_parent" Description: ""
+--     * Slot: UberAnatomy_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "Units_parent" Description: ""
+--     * Slot: Units_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
 -- # Class: "Investigation_participants" Description: ""
 --     * Slot: Investigation_akc_id Description: Autocreated FK slot
 --     * Slot: participants_akc_id Description: The participants involved with the investigation
@@ -978,15 +1018,27 @@
 -- # Class: "LibraryPreparationProcessing_pcr_target" Description: ""
 --     * Slot: LibraryPreparationProcessing_akc_id Description: Autocreated FK slot
 --     * Slot: pcr_target_id Description: If a PCR step was performed that specifically targets the IG/TR loci, the target and primer locations need to be provided here. This field holds an array of PCRTarget objects, so that multiplex PCR setups amplifying multiple loci at the same time can be annotated using one record per locus. PCR setups not targeting any specific locus must not annotate this field but select the appropriate library_generation_method instead.
+-- # Class: "Assay_specimen_processing" Description: ""
+--     * Slot: Assay_akc_id Description: Autocreated FK slot
+--     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
 -- # Class: "AIRRSequencingAssay_tcell_receptors" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcell_receptors_akc_id Description: The T cell receptors being measured
 -- # Class: "AIRRSequencingAssay_tcell_chains" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcell_chains_akc_id Description: The T cell receptor chains being measured
+-- # Class: "AIRRSequencingAssay_specimen_processing" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
 -- # Class: "TCellReceptorEpitopeBindingAssay_tcell_receptors" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcell_receptors_akc_id Description: The T cell receptors being measured
+-- # Class: "TCellReceptorEpitopeBindingAssay_specimen_processing" Description: ""
+--     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
+-- # Class: "AntibodyAntigenBindingAssay_specimen_processing" Description: ""
+--     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
 -- # Class: "DataSet_data_items" Description: ""
 --     * Slot: DataSet_id Description: Autocreated FK slot
 --     * Slot: data_items_akc_id Description: set of data items
@@ -1127,6 +1179,10 @@ CREATE TABLE "AIRRStandards_v1p5" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
 );
+CREATE TABLE "AIRRStandards_v1p6" (
+	id INTEGER NOT NULL, 
+	PRIMARY KEY (id)
+);
 CREATE TABLE "AIRRStandards_v2p0" (
 	id INTEGER NOT NULL, 
 	PRIMARY KEY (id)
@@ -1149,16 +1205,40 @@ CREATE TABLE "PlanSpecification" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
-CREATE TABLE "Investigation" (
-	investigation_type VARCHAR, 
-	archival_id TEXT, 
-	inclusion_exclusion_criteria TEXT, 
-	release_date TIMESTAMP WITHOUT TIME ZONE, 
-	update_date TIMESTAMP WITHOUT TIME ZONE, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id)
+CREATE TABLE "OntologyTable" (
+	term_id TEXT NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "BiomedicalInvestigations" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "PhenotypeAndTraits" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "Diseases" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "Cells" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "UberAnatomy" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
+CREATE TABLE "Units" (
+	term_id VARCHAR NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
 );
 CREATE TABLE "Reference" (
 	title TEXT, 
@@ -1298,6 +1378,8 @@ CREATE TABLE "ImmuneReceptor" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
+-- MODIFY: We manually roll-up fields from AlphaBetaTCR and GammaDeltaTCR
+-- until we can use single table inheritance with linkml
 CREATE TABLE "TCellReceptor" (
 	tra_chain TEXT, 
 	trb_chain TEXT, 
@@ -1311,6 +1393,7 @@ CREATE TABLE "TCellReceptor" (
 	FOREIGN KEY(trg_chain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(trd_chain) REFERENCES "Chain" (akc_id)
 );
+-- END MODIFY
 CREATE TABLE "Antigen" (
 	source_protein TEXT, 
 	source_organism TEXT, 
@@ -1319,6 +1402,8 @@ CREATE TABLE "Antigen" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
+-- MODIFY: We manually roll-up fields from PeptidicEpitope
+-- until we can use single table inheritance with linkml
 CREATE TABLE "Epitope" (
 	sequence_aa TEXT, 
 	source_protein TEXT, 
@@ -1329,6 +1414,7 @@ CREATE TABLE "Epitope" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
+-- END MODIFY
 CREATE TABLE "PeptidicEpitope" (
 	sequence_aa TEXT, 
 	source_protein TEXT, 
@@ -1919,13 +2005,17 @@ CREATE TABLE "Receptor" (
 	receptor_variable_domain_2_locus VARCHAR(3), 
 	PRIMARY KEY (id)
 );
-CREATE TABLE "StudyArm" (
-	investigation TEXT, 
+CREATE TABLE "Investigation" (
+	investigation_type VARCHAR, 
+	archival_id TEXT, 
+	inclusion_exclusion_criteria TEXT, 
+	release_date TIMESTAMP WITHOUT TIME ZONE, 
+	update_date TIMESTAMP WITHOUT TIME ZONE, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
+	FOREIGN KEY(investigation_type) REFERENCES "BiomedicalInvestigations" (term_id)
 );
 CREATE TABLE "InputOutputDataMap" (
 	id INTEGER NOT NULL, 
@@ -2014,7 +2104,7 @@ CREATE TABLE "SequencingRun" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
 );
-CREATE TABLE "RepertoireGroupDetail" (
+CREATE TABLE "RepertoireFilter" (
 	id INTEGER NOT NULL, 
 	repertoire_id TEXT, 
 	repertoire_description TEXT, 
@@ -2084,39 +2174,60 @@ CREATE TABLE "SampleProcessing" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
 );
-CREATE TABLE "Investigation_simulations" (
-	investigation_akc_id TEXT, 
-	simulations_akc_id TEXT, 
-	PRIMARY KEY (investigation_akc_id, simulations_akc_id), 
-	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(simulations_akc_id) REFERENCES "Simulation" (akc_id)
+CREATE TABLE "OntologyTable_parent" (
+	"OntologyTable_term_id" TEXT, 
+	parent_term_id TEXT, 
+	PRIMARY KEY ("OntologyTable_term_id", parent_term_id), 
+	FOREIGN KEY("OntologyTable_term_id") REFERENCES "OntologyTable" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "OntologyTable" (term_id)
 );
-CREATE TABLE "Investigation_documents" (
-	investigation_akc_id TEXT, 
-	documents_source_uri TEXT, 
-	PRIMARY KEY (investigation_akc_id, documents_source_uri), 
-	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(documents_source_uri) REFERENCES "Reference" (source_uri)
+CREATE TABLE "BiomedicalInvestigations_parent" (
+	"BiomedicalInvestigations_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("BiomedicalInvestigations_term_id", parent_term_id), 
+	FOREIGN KEY("BiomedicalInvestigations_term_id") REFERENCES "BiomedicalInvestigations" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "BiomedicalInvestigations" (term_id)
 );
-CREATE TABLE "Investigation_conclusions" (
-	investigation_akc_id TEXT, 
-	conclusions_akc_id TEXT, 
-	PRIMARY KEY (investigation_akc_id, conclusions_akc_id), 
-	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
-	FOREIGN KEY(conclusions_akc_id) REFERENCES "Conclusion" (akc_id)
+CREATE TABLE "PhenotypeAndTraits_parent" (
+	"PhenotypeAndTraits_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("PhenotypeAndTraits_term_id", parent_term_id), 
+	FOREIGN KEY("PhenotypeAndTraits_term_id") REFERENCES "PhenotypeAndTraits" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "PhenotypeAndTraits" (term_id)
+);
+CREATE TABLE "Diseases_parent" (
+	"Diseases_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("Diseases_term_id", parent_term_id), 
+	FOREIGN KEY("Diseases_term_id") REFERENCES "Diseases" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "Diseases" (term_id)
+);
+CREATE TABLE "Cells_parent" (
+	"Cells_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("Cells_term_id", parent_term_id), 
+	FOREIGN KEY("Cells_term_id") REFERENCES "Cells" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "Cells" (term_id)
+);
+CREATE TABLE "UberAnatomy_parent" (
+	"UberAnatomy_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("UberAnatomy_term_id", parent_term_id), 
+	FOREIGN KEY("UberAnatomy_term_id") REFERENCES "UberAnatomy" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "UberAnatomy" (term_id)
+);
+CREATE TABLE "Units_parent" (
+	"Units_term_id" VARCHAR, 
+	parent_term_id VARCHAR, 
+	PRIMARY KEY ("Units_term_id", parent_term_id), 
+	FOREIGN KEY("Units_term_id") REFERENCES "Units" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "Units" (term_id)
 );
 CREATE TABLE "Reference_sources" (
 	"Reference_source_uri" TEXT, 
 	sources TEXT, 
 	PRIMARY KEY ("Reference_source_uri", sources), 
 	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri)
-);
-CREATE TABLE "Reference_investigations" (
-	"Reference_source_uri" TEXT, 
-	investigations_akc_id TEXT, 
-	PRIMARY KEY ("Reference_source_uri", investigations_akc_id), 
-	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri), 
-	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "Reference_authors" (
 	"Reference_source_uri" TEXT, 
@@ -2173,13 +2284,6 @@ CREATE TABLE "DataTransformation_data_transformation_types" (
 	data_transformation_types VARCHAR(29), 
 	PRIMARY KEY ("DataTransformation_akc_id", data_transformation_types), 
 	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id)
-);
-CREATE TABLE "Conclusion_investigations" (
-	"Conclusion_akc_id" TEXT, 
-	investigations_akc_id TEXT, 
-	PRIMARY KEY ("Conclusion_akc_id", investigations_akc_id), 
-	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
-	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "Conclusion_datasets" (
 	"Conclusion_akc_id" TEXT, 
@@ -2346,22 +2450,13 @@ CREATE TABLE "Receptor_receptor_ref" (
 	PRIMARY KEY ("Receptor_id", receptor_ref), 
 	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id)
 );
-CREATE TABLE "Participant" (
-	study_arm TEXT, 
-	species VARCHAR, 
-	sex VARCHAR, 
-	age TEXT, 
-	age_unit VARCHAR, 
-	age_event TEXT, 
-	race TEXT, 
-	ethnicity TEXT, 
-	geolocation VARCHAR(24), 
-	strain VARCHAR(20), 
+CREATE TABLE "StudyArm" (
+	investigation TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id)
+	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "AntibodyAntigenComplex" (
 	antibody TEXT, 
@@ -2393,12 +2488,33 @@ CREATE TABLE "Subject" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(genotype_id) REFERENCES "SubjectGenotype" (id)
 );
-CREATE TABLE "StudyEvent_study_arms" (
-	"StudyEvent_akc_id" TEXT, 
-	study_arms_akc_id TEXT, 
-	PRIMARY KEY ("StudyEvent_akc_id", study_arms_akc_id), 
-	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
-	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
+CREATE TABLE "Investigation_simulations" (
+	investigation_akc_id TEXT, 
+	simulations_akc_id TEXT, 
+	PRIMARY KEY (investigation_akc_id, simulations_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(simulations_akc_id) REFERENCES "Simulation" (akc_id)
+);
+CREATE TABLE "Investigation_documents" (
+	investigation_akc_id TEXT, 
+	documents_source_uri TEXT, 
+	PRIMARY KEY (investigation_akc_id, documents_source_uri), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(documents_source_uri) REFERENCES "Reference" (source_uri)
+);
+CREATE TABLE "Investigation_conclusions" (
+	investigation_akc_id TEXT, 
+	conclusions_akc_id TEXT, 
+	PRIMARY KEY (investigation_akc_id, conclusions_akc_id), 
+	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
+	FOREIGN KEY(conclusions_akc_id) REFERENCES "Conclusion" (akc_id)
+);
+CREATE TABLE "Reference_investigations" (
+	"Reference_source_uri" TEXT, 
+	investigations_akc_id TEXT, 
+	PRIMARY KEY ("Reference_source_uri", investigations_akc_id), 
+	FOREIGN KEY("Reference_source_uri") REFERENCES "Reference" (source_uri), 
+	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "DataTransformation_was_generated_by" (
 	"DataTransformation_akc_id" TEXT, 
@@ -2407,12 +2523,19 @@ CREATE TABLE "DataTransformation_was_generated_by" (
 	FOREIGN KEY("DataTransformation_akc_id") REFERENCES "DataTransformation" (akc_id), 
 	FOREIGN KEY(was_generated_by_id) REFERENCES "InputOutputDataMap" (id)
 );
+CREATE TABLE "Conclusion_investigations" (
+	"Conclusion_akc_id" TEXT, 
+	investigations_akc_id TEXT, 
+	PRIMARY KEY ("Conclusion_akc_id", investigations_akc_id), 
+	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
+	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
+);
 CREATE TABLE "RepertoireGroup_repertoires" (
 	"RepertoireGroup_id" INTEGER, 
 	repertoires_id INTEGER, 
 	PRIMARY KEY ("RepertoireGroup_id", repertoires_id), 
 	FOREIGN KEY("RepertoireGroup_id") REFERENCES "RepertoireGroup" (id), 
-	FOREIGN KEY(repertoires_id) REFERENCES "RepertoireGroupDetail" (id)
+	FOREIGN KEY(repertoires_id) REFERENCES "RepertoireFilter" (id)
 );
 CREATE TABLE "Receptor_reactivity_measurements" (
 	"Receptor_id" INTEGER, 
@@ -2427,6 +2550,49 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 	PRIMARY KEY ("SampleProcessing_id", pcr_target_id), 
 	FOREIGN KEY("SampleProcessing_id") REFERENCES "SampleProcessing" (id), 
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
+);
+CREATE TABLE "Participant" (
+	study_arm TEXT, 
+	species VARCHAR, 
+	sex VARCHAR, 
+	age TEXT, 
+	age_unit VARCHAR, 
+	age_event TEXT, 
+	race TEXT, 
+	ethnicity TEXT, 
+	geolocation VARCHAR(24), 
+	strain VARCHAR(20), 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
+	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
+);
+CREATE TABLE "Repertoire" (
+	id INTEGER NOT NULL, 
+	repertoire_id TEXT, 
+	repertoire_name TEXT, 
+	repertoire_description TEXT, 
+	study_id INTEGER, 
+	subject_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
+	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
+);
+CREATE TABLE "StudyEvent_study_arms" (
+	"StudyEvent_akc_id" TEXT, 
+	study_arms_akc_id TEXT, 
+	PRIMARY KEY ("StudyEvent_akc_id", study_arms_akc_id), 
+	FOREIGN KEY("StudyEvent_akc_id") REFERENCES "StudyEvent" (akc_id), 
+	FOREIGN KEY(study_arms_akc_id) REFERENCES "StudyArm" (akc_id)
+);
+CREATE TABLE "Subject_diagnosis" (
+	"Subject_id" INTEGER, 
+	diagnosis_id INTEGER, 
+	PRIMARY KEY ("Subject_id", diagnosis_id), 
+	FOREIGN KEY("Subject_id") REFERENCES "Subject" (id), 
+	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
 );
 CREATE TABLE "LifeEvent" (
 	type TEXT, 
@@ -2446,17 +2612,6 @@ CREATE TABLE "LifeEvent" (
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
 );
-CREATE TABLE "Repertoire" (
-	id INTEGER NOT NULL, 
-	repertoire_id TEXT, 
-	repertoire_name TEXT, 
-	repertoire_description TEXT, 
-	study_id INTEGER, 
-	subject_id INTEGER, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
-	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
-);
 CREATE TABLE "Investigation_participants" (
 	investigation_akc_id TEXT, 
 	participants_akc_id TEXT, 
@@ -2464,12 +2619,19 @@ CREATE TABLE "Investigation_participants" (
 	FOREIGN KEY(investigation_akc_id) REFERENCES "Investigation" (akc_id), 
 	FOREIGN KEY(participants_akc_id) REFERENCES "Participant" (akc_id)
 );
-CREATE TABLE "Subject_diagnosis" (
-	"Subject_id" INTEGER, 
-	diagnosis_id INTEGER, 
-	PRIMARY KEY ("Subject_id", diagnosis_id), 
-	FOREIGN KEY("Subject_id") REFERENCES "Subject" (id), 
-	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
+CREATE TABLE "Repertoire_sample" (
+	"Repertoire_id" INTEGER, 
+	sample_id INTEGER, 
+	PRIMARY KEY ("Repertoire_id", sample_id), 
+	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	FOREIGN KEY(sample_id) REFERENCES "SampleProcessing" (id)
+);
+CREATE TABLE "Repertoire_data_processing" (
+	"Repertoire_id" INTEGER, 
+	data_processing_id INTEGER, 
+	PRIMARY KEY ("Repertoire_id", data_processing_id), 
+	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	FOREIGN KEY(data_processing_id) REFERENCES "DataProcessing" (id)
 );
 CREATE TABLE "ImmuneExposure" (
 	exposure_material VARCHAR, 
@@ -2489,6 +2651,7 @@ CREATE TABLE "ImmuneExposure" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(disease) REFERENCES "Diseases" (term_id), 
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
@@ -2514,20 +2677,6 @@ CREATE TABLE "Specimen" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
 );
-CREATE TABLE "Repertoire_sample" (
-	"Repertoire_id" INTEGER, 
-	sample_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", sample_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
-	FOREIGN KEY(sample_id) REFERENCES "SampleProcessing" (id)
-);
-CREATE TABLE "Repertoire_data_processing" (
-	"Repertoire_id" INTEGER, 
-	data_processing_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", data_processing_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
-	FOREIGN KEY(data_processing_id) REFERENCES "DataProcessing" (id)
-);
 CREATE TABLE "SpecimenCollection" (
 	specimen TEXT, 
 	type TEXT, 
@@ -2547,6 +2696,14 @@ CREATE TABLE "SpecimenCollection" (
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
+);
+CREATE TABLE "SpecimenProcessing" (
+	specimen TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "CellIsolationProcessing" (
 	tissue_processing TEXT, 
@@ -2584,6 +2741,8 @@ CREATE TABLE "LibraryPreparationProcessing" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
+-- MODIFY: We roll-up fields from AIRRSequencingAssay and TCellReceptorEpitopeBindingAssay
+-- until we can use single table inheritance with linkml
 CREATE TABLE "Assay" (
 	repertoire_id TEXT, 
 	sequencing_run_id TEXT, 
@@ -2610,6 +2769,7 @@ CREATE TABLE "Assay" (
 	FOREIGN KEY(sequencing_files) REFERENCES "SequenceData" (akc_id),
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
 );
+-- END MODIFY
 CREATE TABLE "AIRRSequencingAssay" (
 	repertoire_id TEXT, 
 	sequencing_run_id TEXT, 
@@ -2658,22 +2818,6 @@ CREATE TABLE "AntibodyAntigenBindingAssay" (
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
-CREATE TABLE "SpecimenProcessing" (
-	specimen TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	"Assay_akc_id" TEXT, 
-	"AIRRSequencingAssay_akc_id" TEXT, 
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id)
-);
 CREATE TABLE "Investigation_assays" (
 	investigation_akc_id TEXT, 
 	assays_akc_id TEXT, 
@@ -2687,6 +2831,13 @@ CREATE TABLE "LibraryPreparationProcessing_pcr_target" (
 	PRIMARY KEY ("LibraryPreparationProcessing_akc_id", pcr_target_id), 
 	FOREIGN KEY("LibraryPreparationProcessing_akc_id") REFERENCES "LibraryPreparationProcessing" (akc_id), 
 	FOREIGN KEY(pcr_target_id) REFERENCES "PCRTarget" (id)
+);
+CREATE TABLE "Assay_specimen_processing" (
+	"Assay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("Assay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );
 CREATE TABLE "AIRRSequencingAssay_tcell_receptors" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
@@ -2702,6 +2853,13 @@ CREATE TABLE "AIRRSequencingAssay_tcell_chains" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
 );
+CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	tcell_receptors_akc_id TEXT, 
@@ -2709,7 +2867,22 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
 );
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);
+CREATE TABLE "AntibodyAntigenBindingAssay_specimen_processing" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	specimen_processing_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", specimen_processing_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);
 
+-- MODIFY: custom mapping table
 CREATE TABLE "Assay_tcell_receptors" (
 	assay_akc_id TEXT, 
 	tcell_receptors_akc_id TEXT, 
@@ -2717,6 +2890,7 @@ CREATE TABLE "Assay_tcell_receptors" (
 	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
 );
+-- END MODIFY
 
 CREATE INDEX "Chain_junction_aa" ON "Chain" ("junction_aa");
 CREATE INDEX "Chain_cdr3_aa" ON "Chain" ("cdr3_aa");
