@@ -61,6 +61,18 @@ classes:
         range: AKDataSet
         multivalued: true
         inlined: true
+      sequence_data:
+        range: SequenceData
+        multivalued: true
+        inlined: true
+      transformations:
+        range: DataTransformation
+        multivalued: true
+        inlined: true
+      input_output_map:
+        range: InputOutputDataMap
+        multivalued: true
+        inlined: true
       conclusions:
         range: Conclusion
         multivalued: true

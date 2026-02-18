@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-13T22:15:27
+# Generation date: 2026-02-18T02:20:24
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -353,6 +353,10 @@ class SequenceDataAkcId(AKDataItemAkcId):
 
 
 class AIRRSequencingDataAkcId(SequenceDataAkcId):
+    pass
+
+
+class AIRRGenotypeDataAkcId(AKDataItemAkcId):
     pass
 
 
@@ -773,6 +777,9 @@ class AIRRKnowledgeCommons(YAMLRoot):
     specimen_processings: Optional[Union[Dict[Union[str, SpecimenProcessingAkcId], Union[dict, "SpecimenProcessing"]], List[Union[dict, "SpecimenProcessing"]]]] = empty_dict()
     assays: Optional[Union[Dict[Union[str, AssayAkcId], Union[dict, "Assay"]], List[Union[dict, "Assay"]]]] = empty_dict()
     datasets: Optional[Union[Dict[Union[str, AKDataSetAkcId], Union[dict, "AKDataSet"]], List[Union[dict, "AKDataSet"]]]] = empty_dict()
+    sequence_data: Optional[Union[Dict[Union[str, SequenceDataAkcId], Union[dict, "SequenceData"]], List[Union[dict, "SequenceData"]]]] = empty_dict()
+    transformations: Optional[Union[Dict[Union[str, DataTransformationAkcId], Union[dict, "DataTransformation"]], List[Union[dict, "DataTransformation"]]]] = empty_dict()
+    input_output_map: Optional[Union[Union[dict, "InputOutputDataMap"], List[Union[dict, "InputOutputDataMap"]]]] = empty_list()
     conclusions: Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, "Conclusion"]], List[Union[dict, "Conclusion"]]]] = empty_dict()
     chains: Optional[Union[Dict[Union[str, ChainAkcId], Union[dict, "Chain"]], List[Union[dict, "Chain"]]]] = empty_dict()
     ab_tcell_receptors: Optional[Union[Dict[Union[str, AlphaBetaTCRAkcId], Union[dict, "AlphaBetaTCR"]], List[Union[dict, "AlphaBetaTCR"]]]] = empty_dict()
@@ -806,6 +813,14 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="assays", slot_type=Assay, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="datasets", slot_type=AKDataSet, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="sequence_data", slot_type=SequenceData, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="transformations", slot_type=DataTransformation, key_name="akc_id", keyed=True)
+
+        if not isinstance(self.input_output_map, list):
+            self.input_output_map = [self.input_output_map] if self.input_output_map is not None else []
+        self.input_output_map = [v if isinstance(v, InputOutputDataMap) else InputOutputDataMap(**as_dict(v)) for v in self.input_output_map]
 
         self._normalize_inlined_as_dict(slot_name="conclusions", slot_type=Conclusion, key_name="akc_id", keyed=True)
 
@@ -1467,13 +1482,13 @@ class AIRRSequencingAssay(Assay):
     repertoire_id: Optional[str] = None
     tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
     tcell_chains: Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]] = empty_list()
+    sequencing_files: Optional[Union[str, AIRRSequencingDataAkcId]] = None
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
     sequencing_platform: Optional[str] = None
     sequencing_facility: Optional[str] = None
     sequencing_run_date: Optional[Union[str, XSDDateTime]] = None
     sequencing_kit: Optional[str] = None
-    sequencing_files: Optional[Union[dict, "SequencingData"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1492,6 +1507,9 @@ class AIRRSequencingAssay(Assay):
             self.tcell_chains = [self.tcell_chains] if self.tcell_chains is not None else []
         self.tcell_chains = [v if isinstance(v, ChainAkcId) else ChainAkcId(v) for v in self.tcell_chains]
 
+        if self.sequencing_files is not None and not isinstance(self.sequencing_files, AIRRSequencingDataAkcId):
+            self.sequencing_files = AIRRSequencingDataAkcId(self.sequencing_files)
+
         if self.sequencing_run_id is not None and not isinstance(self.sequencing_run_id, str):
             self.sequencing_run_id = str(self.sequencing_run_id)
 
@@ -1509,9 +1527,6 @@ class AIRRSequencingAssay(Assay):
 
         if self.sequencing_kit is not None and not isinstance(self.sequencing_kit, str):
             self.sequencing_kit = str(self.sequencing_kit)
-
-        if self.sequencing_files is not None and not isinstance(self.sequencing_files, SequencingData):
-            self.sequencing_files = SequencingData(**as_dict(self.sequencing_files))
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1815,6 +1830,36 @@ class AIRRSequencingData(SequenceData):
 
 
 @dataclass(repr=False)
+class AIRRGenotypeData(AKDataItem):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRGenotypeData"]
+    class_class_curie: ClassVar[str] = "ak_schema:AIRRGenotypeData"
+    class_name: ClassVar[str] = "AIRRGenotypeData"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRGenotypeData
+
+    akc_id: Union[str, AIRRGenotypeDataAkcId] = None
+    receptor_genotype_set_id: Optional[str] = None
+    genotype_class_list: Optional[Union[Union[dict, "Genotype"], List[Union[dict, "Genotype"]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AIRRGenotypeDataAkcId):
+            self.akc_id = AIRRGenotypeDataAkcId(self.akc_id)
+
+        if self.receptor_genotype_set_id is not None and not isinstance(self.receptor_genotype_set_id, str):
+            self.receptor_genotype_set_id = str(self.receptor_genotype_set_id)
+
+        if not isinstance(self.genotype_class_list, list):
+            self.genotype_class_list = [self.genotype_class_list] if self.genotype_class_list is not None else []
+        self.genotype_class_list = [v if isinstance(v, Genotype) else Genotype(**as_dict(v)) for v in self.genotype_class_list]
+
+        super().__post_init__(**kwargs)
+        self.type = str(self.class_name)
+
+
+@dataclass(repr=False)
 class RNATranscriptomeData(SequenceData):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1846,7 +1891,7 @@ class DataTransformation(Process):
 
     akc_id: Union[str, DataTransformationAkcId] = None
     was_generated_by: Optional[Union[Union[dict, "InputOutputDataMap"], List[Union[dict, "InputOutputDataMap"]]]] = empty_list()
-    data_transformation_types: Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]] = empty_list()
+    data_transformation_types: Optional[Union[Union[str, "DataTransformationTypeEnum"], List[Union[str, "DataTransformationTypeEnum"]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1860,7 +1905,7 @@ class DataTransformation(Process):
 
         if not isinstance(self.data_transformation_types, list):
             self.data_transformation_types = [self.data_transformation_types] if self.data_transformation_types is not None else []
-        self.data_transformation_types = [v if isinstance(v, DataItemTypeEnum) else DataItemTypeEnum(v) for v in self.data_transformation_types]
+        self.data_transformation_types = [v if isinstance(v, DataTransformationTypeEnum) else DataTransformationTypeEnum(v) for v in self.data_transformation_types]
 
         super().__post_init__(**kwargs)
 
@@ -5493,6 +5538,7 @@ class DataItemTypeEnum(EnumDefinitionImpl):
     reverse_primer_sequence = PermissibleValue(text="reverse_primer_sequence")
     barcode_sequence = PermissibleValue(text="barcode_sequence")
     vdj_sequence_annotation = PermissibleValue(text="vdj_sequence_annotation")
+    genotype = PermissibleValue(text="genotype")
     quality_statistics = PermissibleValue(text="quality_statistics")
     annotation_statistics = PermissibleValue(text="annotation_statistics")
     assigned_clones = PermissibleValue(text="assigned_clones")
@@ -5523,6 +5569,7 @@ class DataTransformationTypeEnum(EnumDefinitionImpl):
     vdj_annotation = PermissibleValue(text="vdj_annotation")
     clonal_assignment = PermissibleValue(text="clonal_assignment")
     germline_allele_inference = PermissibleValue(text="germline_allele_inference")
+    genotype_inference = PermissibleValue(text="genotype_inference")
     gene_usage = PermissibleValue(text="gene_usage")
     gene_combo_usage = PermissibleValue(text="gene_combo_usage")
     length_distribution = PermissibleValue(text="length_distribution")
@@ -6216,7 +6263,7 @@ slots.was_generated_by = Slot(uri=AK_SCHEMA.was_generated_by, name="was_generate
                    model_uri=AK_SCHEMA.was_generated_by, domain=None, range=Optional[Union[Union[dict, InputOutputDataMap], List[Union[dict, InputOutputDataMap]]]])
 
 slots.data_transformation_types = Slot(uri=AK_SCHEMA.data_transformation_types, name="data_transformation_types", curie=AK_SCHEMA.curie('data_transformation_types'),
-                   model_uri=AK_SCHEMA.data_transformation_types, domain=None, range=Optional[Union[Union[str, "DataItemTypeEnum"], List[Union[str, "DataItemTypeEnum"]]]])
+                   model_uri=AK_SCHEMA.data_transformation_types, domain=None, range=Optional[Union[Union[str, "DataTransformationTypeEnum"], List[Union[str, "DataTransformationTypeEnum"]]]])
 
 slots.datasets = Slot(uri=AK_SCHEMA.datasets, name="datasets", curie=AK_SCHEMA.curie('datasets'),
                    model_uri=AK_SCHEMA.datasets, domain=None, range=Optional[Union[Union[str, AKDataSetAkcId], List[Union[str, AKDataSetAkcId]]]])
@@ -7553,6 +7600,15 @@ slots.aIRRKnowledgeCommons__assays = Slot(uri=AK_SCHEMA.assays, name="aIRRKnowle
 slots.aIRRKnowledgeCommons__datasets = Slot(uri=AK_SCHEMA.datasets, name="aIRRKnowledgeCommons__datasets", curie=AK_SCHEMA.curie('datasets'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__datasets, domain=None, range=Optional[Union[Dict[Union[str, AKDataSetAkcId], Union[dict, AKDataSet]], List[Union[dict, AKDataSet]]]])
 
+slots.aIRRKnowledgeCommons__sequence_data = Slot(uri=AK_SCHEMA.sequence_data, name="aIRRKnowledgeCommons__sequence_data", curie=AK_SCHEMA.curie('sequence_data'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__sequence_data, domain=None, range=Optional[Union[Dict[Union[str, SequenceDataAkcId], Union[dict, SequenceData]], List[Union[dict, SequenceData]]]])
+
+slots.aIRRKnowledgeCommons__transformations = Slot(uri=AK_SCHEMA.transformations, name="aIRRKnowledgeCommons__transformations", curie=AK_SCHEMA.curie('transformations'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__transformations, domain=None, range=Optional[Union[Dict[Union[str, DataTransformationAkcId], Union[dict, DataTransformation]], List[Union[dict, DataTransformation]]]])
+
+slots.aIRRKnowledgeCommons__input_output_map = Slot(uri=AK_SCHEMA.input_output_map, name="aIRRKnowledgeCommons__input_output_map", curie=AK_SCHEMA.curie('input_output_map'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__input_output_map, domain=None, range=Optional[Union[Union[dict, InputOutputDataMap], List[Union[dict, InputOutputDataMap]]]])
+
 slots.aIRRKnowledgeCommons__conclusions = Slot(uri=AK_SCHEMA.conclusions, name="aIRRKnowledgeCommons__conclusions", curie=AK_SCHEMA.curie('conclusions'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__conclusions, domain=None, range=Optional[Union[Dict[Union[str, ConclusionAkcId], Union[dict, Conclusion]], List[Union[dict, Conclusion]]]])
 
@@ -7609,6 +7665,9 @@ slots.Units_parent = Slot(uri=AK_SCHEMA.parent, name="Units_parent", curie=AK_SC
 
 slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
                    model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, PhenotypeAndTraitsTermId]])
+
+slots.AIRRSequencingAssay_sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files, name="AIRRSequencingAssay_sequencing_files", curie=AK_SCHEMA.curie('sequencing_files'),
+                   model_uri=AK_SCHEMA.AIRRSequencingAssay_sequencing_files, domain=AIRRSequencingAssay, range=Optional[Union[str, AIRRSequencingDataAkcId]])
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])

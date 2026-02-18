@@ -705,6 +705,8 @@ enums:
         text: barcode_sequence
       vdj_sequence_annotation:
         text: vdj_sequence_annotation
+      genotype:
+        text: genotype
       quality_statistics:
         text: quality_statistics
       annotation_statistics:
@@ -755,6 +757,8 @@ enums:
         text: clonal_assignment
       germline_allele_inference:
         text: germline_allele_inference
+      genotype_inference:
+        text: genotype_inference
       gene_usage:
         text: gene_usage
       gene_combo_usage:
@@ -1640,7 +1644,7 @@ slots:
     name: data_transformation_types
     description: semantic types of the data transformation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DataItemTypeEnum
+    range: DataTransformationTypeEnum
     multivalued: true
   datasets:
     name: datasets
@@ -5820,6 +5824,24 @@ classes:
         range: AKDataSet
         multivalued: true
         inlined: true
+      sequence_data:
+        name: sequence_data
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: SequenceData
+        multivalued: true
+        inlined: true
+      transformations:
+        name: transformations
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: DataTransformation
+        multivalued: true
+        inlined: true
+      input_output_map:
+        name: input_output_map
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: InputOutputDataMap
+        multivalued: true
+        inlined: true
       conclusions:
         name: conclusions
         from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6030,6 +6052,10 @@ classes:
     - repertoire_id
     - tcell_receptors
     - tcell_chains
+    slot_usage:
+      sequencing_files:
+        name: sequencing_files
+        range: AIRRSequencingData
     class_uri: OBI:0600047
   TCellReceptorEpitopeBindingAssay:
     name: TCellReceptorEpitopeBindingAssay
@@ -6112,6 +6138,12 @@ classes:
     is_a: SequenceData
     mixins:
     - SequencingData
+  AIRRGenotypeData:
+    name: AIRRGenotypeData
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKDataItem
+    mixins:
+    - GenotypeSet
   RNATranscriptomeData:
     name: RNATranscriptomeData
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6131,6 +6163,13 @@ classes:
     - data_transformation
     - has_specified_input
     - has_specified_output
+    unique_keys:
+      data_map:
+        unique_key_name: data_map
+        unique_key_slots:
+        - data_transformation
+        - has_specified_input
+        - has_specified_output
   Conclusion:
     name: Conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema

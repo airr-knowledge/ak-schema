@@ -969,6 +969,9 @@
           "text": "vdj_sequence_annotation"
         },
         {
+          "text": "genotype"
+        },
+        {
           "text": "quality_statistics"
         },
         {
@@ -1043,6 +1046,9 @@
         },
         {
           "text": "germline_allele_inference"
+        },
+        {
+          "text": "genotype_inference"
         },
         {
           "text": "gene_usage"
@@ -2788,7 +2794,7 @@
       "domain_of": [
         "DataTransformation"
       ],
-      "range": "DataItemTypeEnum",
+      "range": "DataTransformationTypeEnum",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -11550,6 +11556,48 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__sequence_data",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_data",
+      "alias": "sequence_data",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "SequenceData",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__transformations",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/transformations",
+      "alias": "transformations",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "DataTransformation",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__input_output_map",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/input_output_map",
+      "alias": "input_output_map",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "InputOutputDataMap",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aIRRKnowledgeCommons__conclusions",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/conclusions",
@@ -11894,6 +11942,32 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "AIRRSequencingAssay_sequencing_files",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_files",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": false,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Set of sequencing files produced by the sequencing run",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequencing_files",
+      "domain": "AIRRSequencingAssay",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_files",
+      "alias": "sequencing_files",
+      "owner": "AIRRSequencingAssay",
+      "domain_of": [
+        "AIRRSequencingAssay"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequencing_files",
+      "range": "AIRRSequencingData",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "TCellReceptorEpitopeSpecificityMeasurement_measurement_category",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/measurement_category",
       "description": "The measurement result category",
@@ -12148,6 +12222,9 @@
         "aIRRKnowledgeCommons__specimen_processings",
         "aIRRKnowledgeCommons__assays",
         "aIRRKnowledgeCommons__datasets",
+        "aIRRKnowledgeCommons__sequence_data",
+        "aIRRKnowledgeCommons__transformations",
+        "aIRRKnowledgeCommons__input_output_map",
         "aIRRKnowledgeCommons__conclusions",
         "aIRRKnowledgeCommons__chains",
         "aIRRKnowledgeCommons__ab_tcell_receptors",
@@ -12257,6 +12334,30 @@
           "name": "datasets",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "AKDataSet",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "sequence_data",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "SequenceData",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "transformations",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "DataTransformation",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "input_output_map",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "InputOutputDataMap",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -12679,13 +12780,13 @@
         "repertoire_id",
         "tcell_receptors",
         "tcell_chains",
+        "AIRRSequencingAssay_sequencing_files",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
         "sequencing_platform",
         "sequencing_facility",
         "sequencing_run_date",
-        "sequencing_kit",
-        "sequencing_files"
+        "sequencing_kit"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0600047",
@@ -12897,6 +12998,25 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "AIRRGenotypeData",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRGenotypeData",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKDataItem",
+      "mixins": [
+        "GenotypeSet"
+      ],
+      "slots": [
+        "akc_id",
+        "type",
+        "data_item_types",
+        "receptor_genotype_set_id",
+        "genotype_class_list"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRGenotypeData",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "RNATranscriptomeData",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/RNATranscriptomeData",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12940,6 +13060,17 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/InputOutputDataMap",
+      "unique_keys": [
+        {
+          "unique_key_name": "data_map",
+          "unique_key_slots": [
+            "data_transformation",
+            "has_specified_input",
+            "has_specified_output"
+          ],
+          "@type": "UniqueKey"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -14283,9 +14414,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-02-13T22:15:23",
-  "source_file_size": 206999,
-  "generation_date": "2026-02-13T22:15:24",
+  "source_file_date": "2026-02-18T02:20:11",
+  "source_file_size": 208147,
+  "generation_date": "2026-02-18T02:20:17",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

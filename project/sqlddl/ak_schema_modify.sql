@@ -1291,6 +1291,16 @@ CREATE TABLE "AKDataSet" (
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "SequenceData" (
+	sequencing_data_id TEXT, 
+	file_type VARCHAR(5), 
+	filename TEXT, 
+	read_direction VARCHAR(7), 
+	read_length INTEGER, 
+	paired_filename TEXT, 
+	paired_read_direction VARCHAR(7), 
+	paired_read_length INTEGER, 
+	index_filename TEXT, 
+	index_length INTEGER, 
 	type TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
@@ -2741,7 +2751,7 @@ CREATE TABLE "Assay" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
-	sequencing_files_id INTEGER, 
+	sequencing_files TEXT, 
 
 	epitope TEXT, 
 	measurement_category VARCHAR(21), 
@@ -2756,7 +2766,7 @@ CREATE TABLE "Assay" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id),
-	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id),
+	FOREIGN KEY(sequencing_files) REFERENCES "SequenceData" (akc_id),
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
 );
 -- END MODIFY
@@ -2768,6 +2778,7 @@ CREATE TABLE "AIRRSequencingAssay" (
 	sequencing_facility TEXT, 
 	sequencing_run_date TIMESTAMP WITHOUT TIME ZONE, 
 	sequencing_kit TEXT, 
+	sequencing_files TEXT, 
 	specimen TEXT, 
 	type TEXT, 
 	assay_type VARCHAR, 
@@ -2775,11 +2786,10 @@ CREATE TABLE "AIRRSequencingAssay" (
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
-	sequencing_files_id INTEGER, 
 	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(sequencing_files) REFERENCES "AIRRSequencingData" (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
-	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id), 
-	FOREIGN KEY(sequencing_files_id) REFERENCES "SequencingData" (id)
+	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	epitope TEXT, 
