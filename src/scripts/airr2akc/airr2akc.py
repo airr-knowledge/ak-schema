@@ -91,20 +91,26 @@ def is_multivalued(slot_yaml):
 
 def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_prefix):
     if is_deprecated(slot_yaml):
-        return dict()
+        return dict(), None
 
     # Used for Tree/nodes only
     if "additionalProperties" in slot_yaml and type(slot_yaml["additionalProperties"]) == dict:
         slot_yaml = {**slot_yaml["additionalProperties"], **slot_yaml}
-
+    
     cls_prefix = cls_keyword + "_" if parsed_args.include_class_prefix else ""
     pr_slot_name = f"{version_prefix}{cls_prefix}{orig_slot_name}"
-
+    
+    # Get identifier slot name. Should be at most 1
+    identifier_slot = None
+    if "x-airr" in slot_yaml:  
+        if slot_yaml["x-airr"].get("class-identifier") is True:
+            identifier_slot = pr_slot_name
+    
     slot = {pr_slot_name: {
                 "name": pr_slot_name,
                 "description": slot_yaml["description"].strip() if "description" in slot_yaml else "",
                 }}
-
+    
     if orig_slot_name.endswith("_type"):
         slot[pr_slot_name]["slot_uri"] = "rdf:type"
 
@@ -122,17 +128,25 @@ def get_slot(orig_slot_name, slot_yaml, required_slots, cls_keyword, version_pre
     if len(annotations) > 0:
         slot[pr_slot_name]["annotations"] = annotations
 
-    return slot
+    return slot, identifier_slot
+    
 
 def get_all_slots(airr_yaml, keyword, version_prefix) -> dict:
     all_slots = dict()
-
+    identifier_slot = None
     required_slots = airr_yaml[keyword]["required"] if "required" in airr_yaml[keyword] else []
 
     for slot_name, slot_yaml in airr_yaml[keyword]["properties"].items():
-        all_slots.update(get_slot(slot_name, slot_yaml, required_slots, keyword, version_prefix))
-
-    return all_slots
+        slot, id_slot = get_slot(slot_name, slot_yaml, required_slots, keyword, version_prefix)
+        all_slots.update(slot)
+        
+        if id_slot:
+            if identifier_slot is not None:
+                raise ValueError(
+                    f"Multiple class identifiers found for {keyword}"
+                )
+            identifier_slot = id_slot
+    return all_slots, identifier_slot
 
 def get_ontology_enum(base_name, slot_yaml, keyword, version_prefix):
     ontology_name = f"{version_prefix}{base_name}Ontology"
@@ -192,36 +206,55 @@ def get_all_enums(keyword_yaml, keyword, version_prefix):
     return all_enums
 
 
+
 def get_yaml_output_for_keyword(airr_yaml, keyword, version_prefix, linkml_superclass):
     # keyword_yaml = airr_yaml[keyword]
-    output_slots = get_all_slots(airr_yaml, keyword, version_prefix)
-
-    yaml_output_dict = {"classes": {f"{version_prefix}{keyword}": {"is_a": linkml_superclass, "slots": list(output_slots.keys())}},
+    output_slots, identifier_slot= get_all_slots(airr_yaml, keyword, version_prefix)
+    class_name = f"{version_prefix}{keyword}"
+    class_def = {"is_a": linkml_superclass, "slots": list(output_slots.keys())}
+    # Inject slot_usage if identifier exists
+    if identifier_slot:
+        class_def["slot_usage"] = {identifier_slot: {"identifier": True,"required": True}}
+        
+    yaml_output_dict = {"classes": {class_name: class_def},
                         "slots": output_slots,
                         "enums": get_all_enums(airr_yaml[keyword], keyword, version_prefix)}
 
     return yaml_output_dict
 
+
 def get_yaml_output_for_composition_keyword(airr_yaml, output_yaml, keyword, version_prefix, linkml_superclass):
-    composition_yaml = {"classes": {f"{version_prefix}{keyword}": {"is_a": linkml_superclass, "slots": []}},
+
+    class_name = f"{version_prefix}{keyword}"
+    composition_yaml = {"classes": {class_name: {"is_a": linkml_superclass,"slots": []}},
                         "slots": {},
                         "enums": {}}
 
+    # Track class-level identifier
+    identifier_slot = None  
     for class_yaml in airr_yaml[keyword]["allOf"]:
         if "$ref" in class_yaml:
             super_class_name = class_yaml["$ref"].lstrip("/#")
-            composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(
-                output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"])
+
+            composition_yaml["classes"][class_name]["slots"].extend(
+                output_yaml["classes"][f"{version_prefix}{super_class_name}"]["slots"]
+            )
+
         else:
-            new_slots = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
+            new_slots, new_identifier = get_all_slots({keyword: class_yaml}, keyword, version_prefix)
+
             new_enums = get_all_enums(class_yaml, keyword, version_prefix)
             composition_yaml["slots"].update(new_slots)
             composition_yaml["enums"].update(new_enums)
-
-            composition_yaml["classes"][f"{version_prefix}{keyword}"]["slots"].extend(list(new_slots.keys()))
+            composition_yaml["classes"][class_name]["slots"].extend(list(new_slots.keys()))
+            # Check for multiple new identifier
+            if new_identifier:
+                identifier_slot = new_identifier
+    # Inject slot_usage if identifier exists
+    if identifier_slot:
+        composition_yaml["classes"][class_name]["slot_usage"] = {identifier_slot: {"identifier": True,"required": True}}
 
     return composition_yaml
-
 
 def new_keys_not_in_existing(existing_keys, new_keys):
     return all([key not in existing_keys for key in new_keys])
