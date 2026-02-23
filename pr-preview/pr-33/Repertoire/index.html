@@ -271,7 +271,7 @@
 <tbody>
 <tr>
 <td><a href="../repertoire_id/">repertoire_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -352,6 +352,11 @@ slots:
 - subject
 - sample
 - data_processing
+slot_usage:
+  repertoire_id:
+    name: repertoire_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -360,11 +365,17 @@ slots:
 <pre><code class="language-yaml">name: Repertoire
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  repertoire_id:
+    name: repertoire_id
+    identifier: true
+    required: true
 attributes:
   repertoire_id:
     name: repertoire_id
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: repertoire_id
     owner: Repertoire
     domain_of:
@@ -376,6 +387,7 @@ attributes:
     - Cell
     - CellExpression
     range: string
+    required: true
   repertoire_name:
     name: repertoire_name
     annotations:
