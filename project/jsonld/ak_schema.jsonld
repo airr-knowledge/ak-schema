@@ -1893,9 +1893,10 @@
       ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "AKObject",
+      "owner": "QueryExperiment",
       "domain_of": [
-        "AKObject"
+        "AKObject",
+        "QueryExperiment"
       ],
       "range": "uriorcurie",
       "required": true,
@@ -11606,6 +11607,198 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "queryObject__tcr",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr",
+      "alias": "tcr",
+      "owner": "QueryObject",
+      "domain_of": [
+        "QueryObject"
+      ],
+      "range": "QueryTCR",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryObject__bcr",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/bcr",
+      "alias": "bcr",
+      "owner": "QueryObject",
+      "domain_of": [
+        "QueryObject"
+      ],
+      "range": "QueryIG",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryObject__experiment",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/experiment",
+      "alias": "experiment",
+      "owner": "QueryObject",
+      "domain_of": [
+        "QueryObject"
+      ],
+      "range": "QueryExperiment",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryTCR__receptor",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor",
+      "alias": "receptor",
+      "owner": "QueryTCR",
+      "domain_of": [
+        "QueryTCR"
+      ],
+      "range": "TCellReceptor",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryTCR__mhc",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc",
+      "alias": "mhc",
+      "owner": "QueryTCR",
+      "domain_of": [
+        "QueryTCR"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryTCR__epitope",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
+      "alias": "epitope",
+      "owner": "QueryTCR",
+      "domain_of": [
+        "QueryTCR"
+      ],
+      "range": "Epitope",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryTCR__antigen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
+      "alias": "antigen",
+      "owner": "QueryTCR",
+      "domain_of": [
+        "QueryTCR"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryAlphaBetaTCR__tra_chain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tra_chain",
+      "alias": "tra_chain",
+      "owner": "QueryAlphaBetaTCR",
+      "domain_of": [
+        "QueryAlphaBetaTCR"
+      ],
+      "range": "Chain",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryAlphaBetaTCR__trb_chain",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/trb_chain",
+      "alias": "trb_chain",
+      "owner": "QueryAlphaBetaTCR",
+      "domain_of": [
+        "QueryAlphaBetaTCR"
+      ],
+      "range": "Chain",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryIG__receptor",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor",
+      "alias": "receptor",
+      "owner": "QueryIG",
+      "domain_of": [
+        "QueryIG"
+      ],
+      "range": "BCellReceptor",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryIG__antigen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigen",
+      "alias": "antigen",
+      "owner": "QueryIG",
+      "domain_of": [
+        "QueryIG"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryExperiment__assay",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/assay",
+      "alias": "assay",
+      "owner": "QueryExperiment",
+      "domain_of": [
+        "QueryExperiment"
+      ],
+      "range": "Assay",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryExperiment__specimen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/specimen",
+      "alias": "specimen",
+      "owner": "QueryExperiment",
+      "domain_of": [
+        "QueryExperiment"
+      ],
+      "range": "Specimen",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryExperiment__participant",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/participant",
+      "alias": "participant",
+      "owner": "QueryExperiment",
+      "domain_of": [
+        "QueryExperiment"
+      ],
+      "range": "Participant",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "queryExperiment__investigation",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/investigation",
+      "alias": "investigation",
+      "owner": "QueryExperiment",
+      "domain_of": [
+        "QueryExperiment"
+      ],
+      "range": "Investigation",
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Participant_sex",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sex",
       "annotations": {
@@ -13943,13 +14136,191 @@
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/SampleProcessing",
       "@type": "ClassDefinition"
+    },
+    {
+      "name": "QueryObject",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/QueryObject",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "queryObject__tcr",
+        "queryObject__bcr",
+        "queryObject__experiment"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "tcr",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "QueryTCR",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "bcr",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "QueryIG",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "experiment",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "QueryExperiment",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/QueryObject",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QueryTCR",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/QueryTCR",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "queryTCR__receptor",
+        "queryTCR__mhc",
+        "queryTCR__epitope",
+        "queryTCR__antigen"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "receptor",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "TCellReceptor",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "mhc",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "epitope",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Epitope",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "antigen",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/QueryTCR",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QueryAlphaBetaTCR",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/QueryAlphaBetaTCR",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "TCellReceptor",
+      "slots": [
+        "akc_id",
+        "type",
+        "queryAlphaBetaTCR__tra_chain",
+        "queryAlphaBetaTCR__trb_chain"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "tra_chain",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Chain",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "trb_chain",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Chain",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/QueryAlphaBetaTCR",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QueryIG",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/QueryIG",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "queryIG__receptor",
+        "queryIG__antigen"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "receptor",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "BCellReceptor",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "antigen",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/QueryIG",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "QueryExperiment",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/QueryExperiment",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slots": [
+        "akc_id",
+        "queryExperiment__assay",
+        "queryExperiment__specimen",
+        "queryExperiment__participant",
+        "queryExperiment__investigation"
+      ],
+      "slot_usage": {},
+      "attributes": [
+        {
+          "name": "assay",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Assay",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "specimen",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Specimen",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "participant",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Participant",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "investigation",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "Investigation",
+          "inlined": true,
+          "@type": "SlotDefinition"
+        }
+      ],
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/QueryExperiment",
+      "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2025-08-12T23:36:47",
-  "source_file_size": 204647,
-  "generation_date": "2025-08-12T23:36:49",
+  "source_file_date": "2026-02-19T01:30:45",
+  "source_file_size": 207703,
+  "generation_date": "2026-02-19T01:30:47",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

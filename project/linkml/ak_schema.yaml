@@ -6934,4 +6934,108 @@ classes:
     - sequencing_run_date
     - sequencing_kit
     - sequencing_files
+  QueryObject:
+    name: QueryObject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      tcr:
+        name: tcr
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: QueryTCR
+        multivalued: false
+        inlined: true
+      bcr:
+        name: bcr
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: QueryIG
+        multivalued: false
+        inlined: true
+      experiment:
+        name: experiment
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: QueryExperiment
+        multivalued: false
+        inlined: true
+  QueryTCR:
+    name: QueryTCR
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      receptor:
+        name: receptor
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: TCellReceptor
+        multivalued: false
+        inlined: true
+      mhc:
+        name: mhc
+        from_schema: https://github.com/airr-knowledge/ak-schema
+      epitope:
+        name: epitope
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Epitope
+        multivalued: false
+        inlined: true
+      antigen:
+        name: antigen
+        from_schema: https://github.com/airr-knowledge/ak-schema
+  QueryAlphaBetaTCR:
+    name: QueryAlphaBetaTCR
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: TCellReceptor
+    attributes:
+      tra_chain:
+        name: tra_chain
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: false
+        inlined: true
+      trb_chain:
+        name: trb_chain
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: false
+        inlined: true
+  QueryIG:
+    name: QueryIG
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      receptor:
+        name: receptor
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: BCellReceptor
+        multivalued: false
+        inlined: true
+      antigen:
+        name: antigen
+        from_schema: https://github.com/airr-knowledge/ak-schema
+  QueryExperiment:
+    name: QueryExperiment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - akc_id
+    attributes:
+      assay:
+        name: assay
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Assay
+        multivalued: false
+        inlined: true
+      specimen:
+        name: specimen
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Specimen
+        multivalued: false
+        inlined: true
+      participant:
+        name: participant
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Participant
+        multivalued: false
+        inlined: true
+      investigation:
+        name: investigation
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Investigation
+        multivalued: false
+        inlined: true
 source_file: src/ak_schema/schema/ak_top.yaml

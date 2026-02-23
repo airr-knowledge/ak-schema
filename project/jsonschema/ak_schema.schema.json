@@ -5367,6 +5367,225 @@
             "title": "PhysicalLinkageEnum",
             "type": "string"
         },
+        "QueryAlphaBetaTCR": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "tra_chain": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Chain"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "trb_chain": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Chain"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "QueryAlphaBetaTCR"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "QueryAlphaBetaTCR",
+            "type": "object"
+        },
+        "QueryExperiment": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Assay"
+                        },
+                        {
+                            "$ref": "#/$defs/AIRRSequencingAssay"
+                        },
+                        {
+                            "$ref": "#/$defs/TCellReceptorEpitopeBindingAssay"
+                        },
+                        {
+                            "$ref": "#/$defs/AntibodyAntigenBindingAssay"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "investigation": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Investigation"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "participant": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Participant"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "specimen": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Specimen"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "QueryExperiment",
+            "type": "object"
+        },
+        "QueryIG": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "antigen": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/BCellReceptor"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "QueryIG",
+            "type": "object"
+        },
+        "QueryObject": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "bcr": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QueryIG"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "experiment": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QueryExperiment"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "tcr": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QueryTCR"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "QueryObject",
+            "type": "object"
+        },
+        "QueryTCR": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "antigen": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Epitope"
+                        },
+                        {
+                            "$ref": "#/$defs/PeptidicEpitope"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mhc": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AlphaBetaTCR"
+                        },
+                        {
+                            "$ref": "#/$defs/GammaDeltaTCR"
+                        },
+                        {
+                            "$ref": "#/$defs/QueryAlphaBetaTCR"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "QueryTCR",
+            "type": "object"
+        },
         "RNATranscriptomeData": {
             "additionalProperties": false,
             "description": "",
