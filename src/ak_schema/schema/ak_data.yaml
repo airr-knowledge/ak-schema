@@ -70,6 +70,14 @@ classes:
     is_a: SequenceData
     mixins: SequencingData # slots from AIRR class
 
+  AIRRSequenceAnnotationData:
+    is_a: AKDataItem
+    description: annotated VDJ sequence data
+
+  AIRRGenotypeData:
+    is_a: AKDataItem
+    mixins: GenotypeSet # slots from AIRR class
+
   RNATranscriptomeData:
     is_a: SequenceData
 
@@ -86,6 +94,12 @@ classes:
       - data_transformation
       - has_specified_input
       - has_specified_output
+    unique_keys:
+      data_map:
+        unique_key_slots:
+          - data_transformation
+          - has_specified_input
+          - has_specified_output
 
   Conclusion:
     is_a: NamedThing
@@ -138,7 +152,7 @@ slots:
     multivalued: true
   data_transformation_types:
     description: semantic types of the data transformation
-    range: DataItemTypeEnum
+    range: DataTransformationTypeEnum
     multivalued: true
 
   datasets:
@@ -190,6 +204,7 @@ enums:
       reverse_primer_sequence:
       barcode_sequence:
       vdj_sequence_annotation:
+      genotype:
       quality_statistics:
       annotation_statistics:
       assigned_clones:
@@ -216,6 +231,7 @@ enums:
       vdj_annotation:
       clonal_assignment:
       germline_allele_inference:
+      genotype_inference:
       gene_usage:
       gene_combo_usage:
       length_distribution:

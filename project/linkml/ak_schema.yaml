@@ -348,8 +348,8 @@ types:
     uri: xsd:string
     repr: str
 enums:
-  InvestigationTypeOntology:
-    name: InvestigationTypeOntology
+  BiomedicalInvestigationsOntology:
+    name: BiomedicalInvestigationsOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
     reachable_from:
       source_nodes:
@@ -363,6 +363,33 @@ enums:
     reachable_from:
       source_nodes:
       - PATO:0020000
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  LifeEventProcessOntology:
+    name: LifeEventProcessOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - BFO:0000015
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  ExposureMaterialOntology:
+    name: ExposureMaterialOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - NCBITAXON:7776
+      relationship_types:
+      - rdfs:subClassOf
+      include_self: true
+  UnitOntology:
+    name: UnitOntology
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    reachable_from:
+      source_nodes:
+      - UO:0000000
       relationship_types:
       - rdfs:subClassOf
       include_self: true
@@ -603,33 +630,6 @@ enums:
         text: LDLR-/-
       pet shop mouse:
         text: pet shop mouse
-  LifeEventProcessOntology:
-    name: LifeEventProcessOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - BFO:0000015
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
-  ExposureMaterialOntology:
-    name: ExposureMaterialOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - NCBITAXON:7776
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
-  DiseaseOntology:
-    name: DiseaseOntology
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    reachable_from:
-      source_nodes:
-      - DOID:4
-      relationship_types:
-      - rdfs:subClassOf
-      include_self: true
   DiseaseStageOntology:
     name: DiseaseStageOntology
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -705,6 +705,8 @@ enums:
         text: barcode_sequence
       vdj_sequence_annotation:
         text: vdj_sequence_annotation
+      genotype:
+        text: genotype
       quality_statistics:
         text: quality_statistics
       annotation_statistics:
@@ -755,6 +757,8 @@ enums:
         text: clonal_assignment
       germline_allele_inference:
         text: germline_allele_inference
+      genotype_inference:
+        text: genotype_inference
       gene_usage:
         text: gene_usage
       gene_combo_usage:
@@ -1318,11 +1322,30 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     designates_type: true
     range: string
+  term_id:
+    name: term_id
+    description: ontology term ID
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    identifier: true
+    range: uriorcurie
+    required: true
+  term_label:
+    name: term_label
+    description: ontology term descriptive label
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  parent:
+    name: parent
+    description: parent term ID for ontology term
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: OntologyTable
+    required: false
+    multivalued: true
   investigation_type:
     name: investigation_type
     description: Type of study design
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: InvestigationTypeOntology
+    range: BiomedicalInvestigations
   archival_id:
     name: archival_id
     description: Identifier for external archival resource for the investigation,
@@ -1512,7 +1535,7 @@ slots:
     name: disease
     description: The disease relevant to an immune exposure
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DiseaseOntology
+    range: Diseases
   disease_severity:
     name: disease_severity
     description: The severity of the disease relevant to an immune exposure
@@ -1621,7 +1644,7 @@ slots:
     name: data_transformation_types
     description: semantic types of the data transformation
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DataItemTypeEnum
+    range: DataTransformationTypeEnum
     multivalued: true
   datasets:
     name: datasets
@@ -5611,6 +5634,11 @@ classes:
     description: An object directly converted from AIRR schema version 1.5.
     from_schema: https://github.com/airr-knowledge/ak-schema
     abstract: true
+  AIRRStandards_v1p6:
+    name: AIRRStandards_v1p6
+    description: An object directly converted from AIRR schema version 1.6.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
   AIRRStandards_v2p0:
     name: AIRRStandards_v2p0
     description: An object directly converted from AIRR schema version 2.0.
@@ -5638,6 +5666,63 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: NamedThing
     abstract: true
+  OntologyTable:
+    name: OntologyTable
+    description: standard schema for an ontology table
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
+    slots:
+    - term_id
+    - term_label
+    - parent
+  BiomedicalInvestigations:
+    name: BiomedicalInvestigations
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      parent:
+        name: parent
+        range: BiomedicalInvestigations
+  PhenotypeAndTraits:
+    name: PhenotypeAndTraits
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      parent:
+        name: parent
+        range: PhenotypeAndTraits
+  Diseases:
+    name: Diseases
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      parent:
+        name: parent
+        range: Diseases
+  Cells:
+    name: Cells
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      parent:
+        name: parent
+        range: Cells
+  UberAnatomy:
+    name: UberAnatomy
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      parent:
+        name: parent
+        range: UberAnatomy
+  Units:
+    name: Units
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: OntologyTable
+    slot_usage:
+      parent:
+        name: parent
+        range: Units
   AIRRKnowledgeCommons:
     name: AIRRKnowledgeCommons
     description: A container for instances of multiple classes.
@@ -5725,6 +5810,18 @@ classes:
         name: sequence_data
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: SequenceData
+        multivalued: true
+        inlined: true
+      transformations:
+        name: transformations
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: DataTransformation
+        multivalued: true
+        inlined: true
+      input_output_map:
+        name: input_output_map
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: InputOutputDataMap
         multivalued: true
         inlined: true
       conclusions:
@@ -5824,7 +5921,7 @@ classes:
     slot_usage:
       sex:
         name: sex
-        range: BiologicalSexOntology
+        range: PhenotypeAndTraits
     class_uri: OBI:0100026
   StudyEvent:
     name: StudyEvent
@@ -6023,6 +6120,17 @@ classes:
     is_a: SequenceData
     mixins:
     - SequencingData
+  AIRRSequenceAnnotationData:
+    name: AIRRSequenceAnnotationData
+    description: annotated VDJ sequence data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKDataItem
+  AIRRGenotypeData:
+    name: AIRRGenotypeData
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKDataItem
+    mixins:
+    - GenotypeSet
   RNATranscriptomeData:
     name: RNATranscriptomeData
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6042,6 +6150,13 @@ classes:
     - data_transformation
     - has_specified_input
     - has_specified_output
+    unique_keys:
+      data_map:
+        unique_key_name: data_map
+        unique_key_slots:
+        - data_transformation
+        - has_specified_input
+        - has_specified_output
   Conclusion:
     name: Conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
