@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-18T03:10:05
+# Generation date: 2026-02-19T17:22:22
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -449,6 +449,14 @@ class SimilarityCalculationAkcId(AKObjectAkcId):
 
 
 class ChainSimilarityAkcId(SimilarityCalculationAkcId):
+    pass
+
+
+class UnrearrangedSequenceSequenceId(extended_str):
+    pass
+
+
+class RepertoireRepertoireId(extended_str):
     pass
 
 
@@ -2687,7 +2695,7 @@ class UnrearrangedSequence(AIRRStandards):
     class_name: ClassVar[str] = "UnrearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UnrearrangedSequence
 
-    sequence_id: Optional[str] = None
+    sequence_id: Union[str, UnrearrangedSequenceSequenceId] = None
     sequence: Optional[str] = None
     curation: Optional[str] = None
     repository_name: Optional[str] = None
@@ -2699,8 +2707,10 @@ class UnrearrangedSequence(AIRRStandards):
     strand: Optional[Union[str, "StrandEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.sequence_id is not None and not isinstance(self.sequence_id, str):
-            self.sequence_id = str(self.sequence_id)
+        if self._is_empty(self.sequence_id):
+            self.MissingRequiredField("sequence_id")
+        if not isinstance(self.sequence_id, UnrearrangedSequenceSequenceId):
+            self.sequence_id = UnrearrangedSequenceSequenceId(self.sequence_id)
 
         if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
@@ -2866,7 +2876,7 @@ class AlleleDescription(AIRRStandards):
     j_rs_end: Optional[int] = None
     j_donor_splice: Optional[int] = None
     v_gene_delineations: Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]] = empty_list()
-    unrearranged_support: Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]] = empty_list()
+    unrearranged_support: Optional[Union[Union[str, UnrearrangedSequenceSequenceId], List[Union[str, UnrearrangedSequenceSequenceId]]]] = empty_list()
     rearranged_support: Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]] = empty_list()
     paralogs: Optional[Union[str, List[str]]] = empty_list()
     curation: Optional[str] = None
@@ -3013,7 +3023,7 @@ class AlleleDescription(AIRRStandards):
 
         if not isinstance(self.unrearranged_support, list):
             self.unrearranged_support = [self.unrearranged_support] if self.unrearranged_support is not None else []
-        self.unrearranged_support = [v if isinstance(v, UnrearrangedSequence) else UnrearrangedSequence(**as_dict(v)) for v in self.unrearranged_support]
+        self.unrearranged_support = [v if isinstance(v, UnrearrangedSequenceSequenceId) else UnrearrangedSequenceSequenceId(v) for v in self.unrearranged_support]
 
         if not isinstance(self.rearranged_support, list):
             self.rearranged_support = [self.rearranged_support] if self.rearranged_support is not None else []
@@ -3885,7 +3895,7 @@ class Repertoire(AIRRStandards):
     class_name: ClassVar[str] = "Repertoire"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Repertoire
 
-    repertoire_id: Optional[str] = None
+    repertoire_id: Union[str, RepertoireRepertoireId] = None
     repertoire_name: Optional[str] = None
     repertoire_description: Optional[str] = None
     study: Optional[Union[dict, Study]] = None
@@ -3894,8 +3904,10 @@ class Repertoire(AIRRStandards):
     data_processing: Optional[Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
-            self.repertoire_id = str(self.repertoire_id)
+        if self._is_empty(self.repertoire_id):
+            self.MissingRequiredField("repertoire_id")
+        if not isinstance(self.repertoire_id, RepertoireRepertoireId):
+            self.repertoire_id = RepertoireRepertoireId(self.repertoire_id)
 
         if self.repertoire_name is not None and not isinstance(self.repertoire_name, str):
             self.repertoire_name = str(self.repertoire_name)
@@ -6626,7 +6638,7 @@ slots.v_gene_delineations = Slot(uri=AK_SCHEMA.v_gene_delineations, name="v_gene
                    model_uri=AK_SCHEMA.v_gene_delineations, domain=None, range=Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]])
 
 slots.unrearranged_support = Slot(uri=AK_SCHEMA.unrearranged_support, name="unrearranged_support", curie=AK_SCHEMA.curie('unrearranged_support'),
-                   model_uri=AK_SCHEMA.unrearranged_support, domain=None, range=Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]])
+                   model_uri=AK_SCHEMA.unrearranged_support, domain=None, range=Optional[Union[Union[str, UnrearrangedSequenceSequenceId], List[Union[str, UnrearrangedSequenceSequenceId]]]])
 
 slots.rearranged_support = Slot(uri=AK_SCHEMA.rearranged_support, name="rearranged_support", curie=AK_SCHEMA.curie('rearranged_support'),
                    model_uri=AK_SCHEMA.rearranged_support, domain=None, range=Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]])
@@ -7683,3 +7695,9 @@ slots.AIRRSequencingAssay_sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])
+
+slots.UnrearrangedSequence_sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="UnrearrangedSequence_sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_sequence_id, domain=UnrearrangedSequence, range=Union[str, UnrearrangedSequenceSequenceId])
+
+slots.Repertoire_repertoire_id = Slot(uri=AK_SCHEMA.repertoire_id, name="Repertoire_repertoire_id", curie=AK_SCHEMA.curie('repertoire_id'),
+                   model_uri=AK_SCHEMA.Repertoire_repertoire_id, domain=Repertoire, range=Union[str, RepertoireRepertoireId])

@@ -4843,7 +4843,6 @@
       ],
       "range": "UnrearrangedSequence",
       "multivalued": true,
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11864,6 +11863,52 @@
       "usage_slot_name": "measurement_category",
       "range": "CategoricalSpecificityEnum",
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "UnrearrangedSequence_sequence_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_id",
+      "domain": "UnrearrangedSequence",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "identifier": true,
+      "alias": "sequence_id",
+      "owner": "UnrearrangedSequence",
+      "domain_of": [
+        "UnrearrangedSequence"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Repertoire_repertoire_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "repertoire_id",
+      "domain": "Repertoire",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
+      "identifier": true,
+      "alias": "repertoire_id",
+      "owner": "Repertoire",
+      "domain_of": [
+        "Repertoire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "repertoire_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -13388,7 +13433,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sequence_id",
+        "UnrearrangedSequence_sequence_id",
         "sequence",
         "curation",
         "repository_name",
@@ -13864,7 +13909,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "repertoire_id",
+        "Repertoire_repertoire_id",
         "repertoire_name",
         "repertoire_description",
         "study",
@@ -14294,9 +14339,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-02-18T03:09:58",
-  "source_file_size": 207708,
-  "generation_date": "2026-02-18T03:10:01",
+  "source_file_date": "2026-02-19T17:22:17",
+  "source_file_size": 207930,
+  "generation_date": "2026-02-19T17:22:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
