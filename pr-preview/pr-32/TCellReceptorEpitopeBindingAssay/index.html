@@ -435,6 +435,7 @@ attributes:
     domain_of:
     - TCellReceptorEpitopeBindingAssay
     - TCRpMHCComplex
+    - QueryTCR
     range: Epitope
   tcell_receptors:
     name: tcell_receptors
@@ -460,6 +461,7 @@ attributes:
     - SpecimenCollection
     - SpecimenProcessing
     - Assay
+    - QueryExperiment
     range: Specimen
   specimen_processing:
     name: specimen_processing
@@ -543,6 +545,7 @@ attributes:
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
     - AKObject
+    - QueryExperiment
     range: uriorcurie
     required: true
   measurement_category:

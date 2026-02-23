@@ -218,6 +218,8 @@
         click AKDataSet href "../AKDataSet"
       AKDataItem &lt;|-- SequenceData
         click SequenceData href "../SequenceData"
+      AKDataItem &lt;|-- AIRRSequenceAnnotationData
+        click AIRRSequenceAnnotationData href "../AIRRSequenceAnnotationData"
       AKDataItem &lt;|-- AIRRGenotypeData
         click AIRRGenotypeData href "../AIRRGenotypeData"
 
@@ -243,6 +245,7 @@
 <li><strong>AKDataItem</strong><ul>
 <li><a href="../AKDataSet/">AKDataSet</a> [ <a href="../DataSet/">DataSet</a>]</li>
 <li><a href="../SequenceData/">SequenceData</a></li>
+<li><a href="../AIRRSequenceAnnotationData/">AIRRSequenceAnnotationData</a></li>
 <li><a href="../AIRRGenotypeData/">AIRRGenotypeData</a> [ <a href="../GenotypeSet/">GenotypeSet</a>]</li>
 </ul>
 </li>
@@ -410,6 +413,7 @@ attributes:
     owner: AKDataItem
     domain_of:
     - AKObject
+    - QueryExperiment
     range: uriorcurie
     required: true
 

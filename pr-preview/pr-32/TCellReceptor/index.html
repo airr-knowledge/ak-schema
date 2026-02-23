@@ -220,6 +220,8 @@
         click AlphaBetaTCR href "../AlphaBetaTCR"
       TCellReceptor &lt;|-- GammaDeltaTCR
         click GammaDeltaTCR href "../GammaDeltaTCR"
+      TCellReceptor &lt;|-- QueryAlphaBetaTCR
+        click QueryAlphaBetaTCR href "../QueryAlphaBetaTCR"
 
 
       TCellReceptor : akc_id
@@ -235,6 +237,7 @@
 <li><strong>TCellReceptor</strong><ul>
 <li><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></li>
 <li><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></li>
+<li><a href="../QueryAlphaBetaTCR/">QueryAlphaBetaTCR</a></li>
 </ul>
 </li>
 </ul>
@@ -293,6 +296,12 @@
 <tr>
 <td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
 <td><a href="../tcell_receptor/">tcell_receptor</a></td>
+<td>range</td>
+<td><a href="./">TCellReceptor</a></td>
+</tr>
+<tr>
+<td><a href="../QueryTCR/">QueryTCR</a></td>
+<td><a href="../receptor/">receptor</a></td>
 <td>range</td>
 <td><a href="./">TCellReceptor</a></td>
 </tr>
@@ -368,6 +377,7 @@ attributes:
     owner: TCellReceptor
     domain_of:
     - AKObject
+    - QueryExperiment
     range: uriorcurie
     required: true
 class_uri: GO:0042101

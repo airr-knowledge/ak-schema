@@ -369,6 +369,12 @@
 <td>range</td>
 <td><a href="./">Assay</a></td>
 </tr>
+<tr>
+<td><a href="../QueryExperiment/">QueryExperiment</a></td>
+<td><a href="../assay/">assay</a></td>
+<td>range</td>
+<td><a href="./">Assay</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -430,6 +436,7 @@ attributes:
     - SpecimenCollection
     - SpecimenProcessing
     - Assay
+    - QueryExperiment
     range: Specimen
   specimen_processing:
     name: specimen_processing
@@ -513,6 +520,7 @@ attributes:
     owner: Assay
     domain_of:
     - AKObject
+    - QueryExperiment
     range: uriorcurie
     required: true
 class_uri: OBI:0000070
