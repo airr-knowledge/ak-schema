@@ -405,7 +405,6 @@
 --     * Slot: institution_name Description: Individual's department and institution name
 --     * Slot: orcid_id Description: Individual's ORCID identifier
 -- # Class: "RearrangedSequence" Description: ""
---     * Slot: id Description: 
 --     * Slot: sequence_id Description: 
 --     * Slot: sequence Description: Nucleotide sequence.
 --     * Slot: derivation Description: The class of nucleic acid that was used as primary starting material
@@ -417,7 +416,6 @@
 --     * Slot: sequence_start Description: 
 --     * Slot: sequence_end Description: 
 -- # Class: "UnrearrangedSequence" Description: ""
---     * Slot: id Description: 
 --     * Slot: sequence_id Description: 
 --     * Slot: sequence Description: Nucleotide sequence.
 --     * Slot: curation Description: 
@@ -666,7 +664,6 @@
 --     * Slot: germline_set_ref Description: 
 --     * Slot: analysis_provenance_id Description: Identifier for machine-readable PROV model of analysis provenance
 -- # Class: "Repertoire" Description: ""
---     * Slot: id Description: 
 --     * Slot: repertoire_id Description: 
 --     * Slot: repertoire_name Description: Short generic display name for the repertoire
 --     * Slot: repertoire_description Description: 
@@ -1096,10 +1093,10 @@
 --     * Slot: v_gene_delineations_id Description: 
 -- # Class: "AlleleDescription_unrearranged_support" Description: ""
 --     * Slot: AlleleDescription_id Description: Autocreated FK slot
---     * Slot: unrearranged_support_id Description: 
+--     * Slot: unrearranged_support_sequence_id Description: 
 -- # Class: "AlleleDescription_rearranged_support" Description: ""
 --     * Slot: AlleleDescription_id Description: Autocreated FK slot
---     * Slot: rearranged_support_id Description: 
+--     * Slot: rearranged_support_derivation Description: 
 -- # Class: "AlleleDescription_paralogs" Description: ""
 --     * Slot: AlleleDescription_id Description: Autocreated FK slot
 --     * Slot: paralogs Description: Gene symbols of any paralogs
@@ -1143,10 +1140,10 @@
 --     * Slot: DataProcessing_id Description: Autocreated FK slot
 --     * Slot: data_processing_files Description: Array of file names for data produced by this data processing.
 -- # Class: "Repertoire_sample" Description: ""
---     * Slot: Repertoire_id Description: Autocreated FK slot
+--     * Slot: Repertoire_repertoire_id Description: Autocreated FK slot
 --     * Slot: sample_id Description: List of Sample Processing objects
 -- # Class: "Repertoire_data_processing" Description: ""
---     * Slot: Repertoire_id Description: Autocreated FK slot
+--     * Slot: Repertoire_repertoire_id Description: Autocreated FK slot
 --     * Slot: data_processing_id Description: List of Data Processing objects
 -- # Class: "RepertoireGroup_repertoires" Description: ""
 --     * Slot: RepertoireGroup_id Description: Autocreated FK slot
@@ -1466,10 +1463,9 @@ CREATE TABLE "Acknowledgement" (
 	PRIMARY KEY (id)
 );
 CREATE TABLE "RearrangedSequence" (
-	id INTEGER NOT NULL, 
 	sequence_id TEXT, 
 	sequence TEXT, 
-	derivation VARCHAR(3), 
+	derivation VARCHAR(3) NOT NULL, 
 	observation_type VARCHAR(25), 
 	curation TEXT, 
 	repository_name TEXT, 
@@ -1477,11 +1473,10 @@ CREATE TABLE "RearrangedSequence" (
 	deposited_version TEXT, 
 	sequence_start INTEGER, 
 	sequence_end INTEGER, 
-	PRIMARY KEY (id)
+	PRIMARY KEY (derivation)
 );
 CREATE TABLE "UnrearrangedSequence" (
-	id INTEGER NOT NULL, 
-	sequence_id TEXT, 
+	sequence_id TEXT NOT NULL, 
 	sequence TEXT, 
 	curation TEXT, 
 	repository_name TEXT, 
@@ -1491,7 +1486,7 @@ CREATE TABLE "UnrearrangedSequence" (
 	gff_start INTEGER, 
 	gff_end INTEGER, 
 	strand VARCHAR(1), 
-	PRIMARY KEY (id)
+	PRIMARY KEY (sequence_id)
 );
 CREATE TABLE "SequenceDelineationV" (
 	id INTEGER NOT NULL, 
@@ -2323,17 +2318,17 @@ CREATE TABLE "AlleleDescription_v_gene_delineations" (
 );
 CREATE TABLE "AlleleDescription_unrearranged_support" (
 	"AlleleDescription_id" INTEGER, 
-	unrearranged_support_id INTEGER, 
-	PRIMARY KEY ("AlleleDescription_id", unrearranged_support_id), 
+	unrearranged_support_sequence_id TEXT, 
+	PRIMARY KEY ("AlleleDescription_id", unrearranged_support_sequence_id), 
 	FOREIGN KEY("AlleleDescription_id") REFERENCES "AlleleDescription" (id), 
-	FOREIGN KEY(unrearranged_support_id) REFERENCES "UnrearrangedSequence" (id)
+	FOREIGN KEY(unrearranged_support_sequence_id) REFERENCES "UnrearrangedSequence" (sequence_id)
 );
 CREATE TABLE "AlleleDescription_rearranged_support" (
 	"AlleleDescription_id" INTEGER, 
-	rearranged_support_id INTEGER, 
-	PRIMARY KEY ("AlleleDescription_id", rearranged_support_id), 
+	rearranged_support_derivation VARCHAR(3), 
+	PRIMARY KEY ("AlleleDescription_id", rearranged_support_derivation), 
 	FOREIGN KEY("AlleleDescription_id") REFERENCES "AlleleDescription" (id), 
-	FOREIGN KEY(rearranged_support_id) REFERENCES "RearrangedSequence" (id)
+	FOREIGN KEY(rearranged_support_derivation) REFERENCES "RearrangedSequence" (derivation)
 );
 CREATE TABLE "AlleleDescription_paralogs" (
 	"AlleleDescription_id" INTEGER, 
@@ -2573,13 +2568,12 @@ CREATE TABLE "Participant" (
 	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
 );
 CREATE TABLE "Repertoire" (
-	id INTEGER NOT NULL, 
-	repertoire_id TEXT, 
+	repertoire_id TEXT NOT NULL, 
 	repertoire_name TEXT, 
 	repertoire_description TEXT, 
 	study_id INTEGER, 
 	subject_id INTEGER, 
-	PRIMARY KEY (id), 
+	PRIMARY KEY (repertoire_id), 
 	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
 	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
 );
@@ -2623,17 +2617,17 @@ CREATE TABLE "Investigation_participants" (
 	FOREIGN KEY(participants_akc_id) REFERENCES "Participant" (akc_id)
 );
 CREATE TABLE "Repertoire_sample" (
-	"Repertoire_id" INTEGER, 
+	"Repertoire_repertoire_id" TEXT, 
 	sample_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", sample_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	PRIMARY KEY ("Repertoire_repertoire_id", sample_id), 
+	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id), 
 	FOREIGN KEY(sample_id) REFERENCES "SampleProcessing" (id)
 );
 CREATE TABLE "Repertoire_data_processing" (
-	"Repertoire_id" INTEGER, 
+	"Repertoire_repertoire_id" TEXT, 
 	data_processing_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", data_processing_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	PRIMARY KEY ("Repertoire_repertoire_id", data_processing_id), 
+	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id), 
 	FOREIGN KEY(data_processing_id) REFERENCES "DataProcessing" (id)
 );
 CREATE TABLE "ImmuneExposure" (
