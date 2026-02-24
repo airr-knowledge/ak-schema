@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-23T20:01:30
+# Generation date: 2026-02-24T03:50:59
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -420,7 +420,7 @@ class AntibodyAntigenComplexAkcId(NamedThingAkcId):
     pass
 
 
-class TCRpMHCComplexAkcId(NamedThingAkcId):
+class TCRpMHCComplexAkcId(AKObjectAkcId):
     pass
 
 
@@ -828,6 +828,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     gd_tcell_receptors: Optional[Union[Dict[Union[str, GammaDeltaTCRAkcId], Union[dict, "GammaDeltaTCR"]], List[Union[dict, "GammaDeltaTCR"]]]] = empty_dict()
     bcell_receptors: Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, "BCellReceptor"]], List[Union[dict, "BCellReceptor"]]]] = empty_dict()
     epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
+    tcr_complex: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="investigations", slot_type=Investigation, key_name="akc_id", keyed=True)
@@ -875,6 +876,8 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="bcell_receptors", slot_type=BCellReceptor, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="epitopes", slot_type=Epitope, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="tcr_complex", slot_type=TCRpMHCComplex, key_name="akc_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -2431,7 +2434,7 @@ class AntibodyAntigenComplex(NamedThing):
 
 
 @dataclass(repr=False)
-class TCRpMHCComplex(NamedThing):
+class TCRpMHCComplex(AKObject):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = OBI["0003119"]
@@ -2440,7 +2443,7 @@ class TCRpMHCComplex(NamedThing):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCRpMHCComplex
 
     akc_id: Union[str, TCRpMHCComplexAkcId] = None
-    tcell_receptor: Optional[Union[str, TCellReceptorAkcId]] = None
+    tcr: Optional[Union[str, TCellReceptorAkcId]] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     mhc: Optional[Union[dict, "MHCAllele"]] = None
 
@@ -2450,8 +2453,8 @@ class TCRpMHCComplex(NamedThing):
         if not isinstance(self.akc_id, TCRpMHCComplexAkcId):
             self.akc_id = TCRpMHCComplexAkcId(self.akc_id)
 
-        if self.tcell_receptor is not None and not isinstance(self.tcell_receptor, TCellReceptorAkcId):
-            self.tcell_receptor = TCellReceptorAkcId(self.tcell_receptor)
+        if self.tcr is not None and not isinstance(self.tcr, TCellReceptorAkcId):
+            self.tcr = TCellReceptorAkcId(self.tcr)
 
         if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
             self.epitope = EpitopeAkcId(self.epitope)
@@ -5240,8 +5243,20 @@ class SampleProcessing(AIRRStandards):
         super().__post_init__(**kwargs)
 
 
+class QueryAPI(YAMLRoot):
+    """
+    class hierarchy for ak-web-api
+    """
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["QueryAPI"]
+    class_class_curie: ClassVar[str] = "ak_schema:QueryAPI"
+    class_name: ClassVar[str] = "QueryAPI"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.QueryAPI
+
+
 @dataclass(repr=False)
-class QueryObject(YAMLRoot):
+class QueryObject(QueryAPI):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["QueryObject"]
@@ -5251,7 +5266,7 @@ class QueryObject(YAMLRoot):
 
     tcr: Optional[Union[dict, "QueryTCR"]] = None
     bcr: Optional[Union[dict, "QueryIG"]] = None
-    experiment: Optional[Union[dict, "QueryExperiment"]] = None
+    assay: Optional[Union[dict, "QueryExperiment"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.tcr is not None and not isinstance(self.tcr, QueryTCR):
@@ -5260,14 +5275,14 @@ class QueryObject(YAMLRoot):
         if self.bcr is not None and not isinstance(self.bcr, QueryIG):
             self.bcr = QueryIG(**as_dict(self.bcr))
 
-        if self.experiment is not None and not isinstance(self.experiment, QueryExperiment):
-            self.experiment = QueryExperiment(**as_dict(self.experiment))
+        if self.assay is not None and not isinstance(self.assay, QueryExperiment):
+            self.assay = QueryExperiment(**as_dict(self.assay))
 
         super().__post_init__(**kwargs)
 
 
 @dataclass(repr=False)
-class QueryTCR(YAMLRoot):
+class QueryTCR(QueryAPI):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["QueryTCR"]
@@ -5348,7 +5363,7 @@ class QueryIG(YAMLRoot):
 
 
 @dataclass(repr=False)
-class QueryExperiment(YAMLRoot):
+class QueryExperiment(QueryAPI):
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = AK_SCHEMA["QueryExperiment"]
@@ -5357,19 +5372,21 @@ class QueryExperiment(YAMLRoot):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.QueryExperiment
 
     akc_id: Union[str, QueryExperimentAkcId] = None
-    assay: Optional[Union[dict, Assay]] = None
     specimen: Optional[Union[dict, Specimen]] = None
     participant: Optional[Union[dict, Participant]] = None
     investigation: Optional[Union[dict, Investigation]] = None
+    name: Optional[str] = None
+    description: Optional[str] = None
+    specimen_processing: Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]] = empty_list()
+    type: Optional[str] = None
+    assay_type: Optional[Union[str, "AssayTypeOntology"]] = None
+    has_specified_output: Optional[Union[str, AKDataItemAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, QueryExperimentAkcId):
             self.akc_id = QueryExperimentAkcId(self.akc_id)
-
-        if self.assay is not None and not isinstance(self.assay, Assay):
-            self.assay = Assay(**as_dict(self.assay))
 
         if self.specimen is not None and not isinstance(self.specimen, Specimen):
             self.specimen = Specimen(**as_dict(self.specimen))
@@ -5379,6 +5396,21 @@ class QueryExperiment(YAMLRoot):
 
         if self.investigation is not None and not isinstance(self.investigation, Investigation):
             self.investigation = Investigation(**as_dict(self.investigation))
+
+        if self.name is not None and not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        if self.description is not None and not isinstance(self.description, str):
+            self.description = str(self.description)
+
+        if not isinstance(self.specimen_processing, list):
+            self.specimen_processing = [self.specimen_processing] if self.specimen_processing is not None else []
+        self.specimen_processing = [v if isinstance(v, SpecimenProcessingAkcId) else SpecimenProcessingAkcId(v) for v in self.specimen_processing]
+
+        self.type = str(self.class_name)
+
+        if self.has_specified_output is not None and not isinstance(self.has_specified_output, AKDataItemAkcId):
+            self.has_specified_output = AKDataItemAkcId(self.has_specified_output)
 
         super().__post_init__(**kwargs)
 
@@ -6543,8 +6575,8 @@ slots.antibody = Slot(uri=AK_SCHEMA.antibody, name="antibody", curie=AK_SCHEMA.c
 slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curie('antigen'),
                    model_uri=AK_SCHEMA.antigen, domain=None, range=Optional[Union[str, AntigenAkcId]])
 
-slots.tcell_receptor = Slot(uri=AK_SCHEMA.tcell_receptor, name="tcell_receptor", curie=AK_SCHEMA.curie('tcell_receptor'),
-                   model_uri=AK_SCHEMA.tcell_receptor, domain=None, range=Optional[Union[str, TCellReceptorAkcId]])
+slots.tcr = Slot(uri=AK_SCHEMA.tcr, name="tcr", curie=AK_SCHEMA.curie('tcr'),
+                   model_uri=AK_SCHEMA.tcr, domain=None, range=Optional[Union[str, TCellReceptorAkcId]])
 
 slots.mhc = Slot(uri=AK_SCHEMA.mhc, name="mhc", curie=AK_SCHEMA.curie('mhc'),
                    model_uri=AK_SCHEMA.mhc, domain=None, range=Optional[Union[dict, MHCAllele]])
@@ -7836,14 +7868,17 @@ slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
 
+slots.aIRRKnowledgeCommons__tcr_complex = Slot(uri=AK_SCHEMA.tcr_complex, name="aIRRKnowledgeCommons__tcr_complex", curie=AK_SCHEMA.curie('tcr_complex'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcr_complex, domain=None, range=Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, TCRpMHCComplex]], List[Union[dict, TCRpMHCComplex]]]])
+
 slots.queryObject__tcr = Slot(uri=AK_SCHEMA.tcr, name="queryObject__tcr", curie=AK_SCHEMA.curie('tcr'),
                    model_uri=AK_SCHEMA.queryObject__tcr, domain=None, range=Optional[Union[dict, QueryTCR]])
 
 slots.queryObject__bcr = Slot(uri=AK_SCHEMA.bcr, name="queryObject__bcr", curie=AK_SCHEMA.curie('bcr'),
                    model_uri=AK_SCHEMA.queryObject__bcr, domain=None, range=Optional[Union[dict, QueryIG]])
 
-slots.queryObject__experiment = Slot(uri=AK_SCHEMA.experiment, name="queryObject__experiment", curie=AK_SCHEMA.curie('experiment'),
-                   model_uri=AK_SCHEMA.queryObject__experiment, domain=None, range=Optional[Union[dict, QueryExperiment]])
+slots.queryObject__assay = Slot(uri=AK_SCHEMA.assay, name="queryObject__assay", curie=AK_SCHEMA.curie('assay'),
+                   model_uri=AK_SCHEMA.queryObject__assay, domain=None, range=Optional[Union[dict, QueryExperiment]])
 
 slots.queryTCR__receptor = Slot(uri=AK_SCHEMA.receptor, name="queryTCR__receptor", curie=AK_SCHEMA.curie('receptor'),
                    model_uri=AK_SCHEMA.queryTCR__receptor, domain=None, range=Optional[Union[dict, TCellReceptor]])
@@ -7868,9 +7903,6 @@ slots.queryIG__receptor = Slot(uri=AK_SCHEMA.receptor, name="queryIG__receptor",
 
 slots.queryIG__antigen = Slot(uri=AK_SCHEMA.antigen, name="queryIG__antigen", curie=AK_SCHEMA.curie('antigen'),
                    model_uri=AK_SCHEMA.queryIG__antigen, domain=None, range=Optional[str])
-
-slots.queryExperiment__assay = Slot(uri=AK_SCHEMA.assay, name="queryExperiment__assay", curie=AK_SCHEMA.curie('assay'),
-                   model_uri=AK_SCHEMA.queryExperiment__assay, domain=None, range=Optional[Union[dict, Assay]])
 
 slots.queryExperiment__specimen = Slot(uri=AK_SCHEMA.specimen, name="queryExperiment__specimen", curie=AK_SCHEMA.curie('specimen'),
                    model_uri=AK_SCHEMA.queryExperiment__specimen, domain=None, range=Optional[Union[dict, Specimen]])
