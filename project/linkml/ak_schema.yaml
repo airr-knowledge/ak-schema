@@ -1754,8 +1754,8 @@ slots:
     description: A material entity with antigen role
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Antigen
-  tcell_receptor:
-    name: tcell_receptor
+  tcr:
+    name: tcr
     description: T cell receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TCellReceptor
@@ -5860,6 +5860,12 @@ classes:
         range: Epitope
         multivalued: true
         inlined: true
+      tcr_complex:
+        name: tcr_complex
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: TCRpMHCComplex
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation
@@ -6273,9 +6279,9 @@ classes:
   TCRpMHCComplex:
     name: TCRpMHCComplex
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
     slots:
-    - tcell_receptor
+    - tcr
     - epitope
     - mhc
     class_uri: OBI:0003119
@@ -7049,9 +7055,15 @@ classes:
     - sequencing_run_date
     - sequencing_kit
     - sequencing_files
+  QueryAPI:
+    name: QueryAPI
+    description: class hierarchy for ak-web-api
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
   QueryObject:
     name: QueryObject
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: QueryAPI
     attributes:
       tcr:
         name: tcr
@@ -7065,8 +7077,8 @@ classes:
         range: QueryIG
         multivalued: false
         inlined: true
-      experiment:
-        name: experiment
+      assay:
+        name: assay
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: QueryExperiment
         multivalued: false
@@ -7074,6 +7086,7 @@ classes:
   QueryTCR:
     name: QueryTCR
     from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: QueryAPI
     attributes:
       receptor:
         name: receptor
@@ -7126,15 +7139,10 @@ classes:
   QueryExperiment:
     name: QueryExperiment
     from_schema: https://github.com/airr-knowledge/ak-schema
-    slots:
-    - akc_id
+    is_a: QueryAPI
+    mixins:
+    - Assay
     attributes:
-      assay:
-        name: assay
-        from_schema: https://github.com/airr-knowledge/ak-schema
-        range: Assay
-        multivalued: false
-        inlined: true
       specimen:
         name: specimen
         from_schema: https://github.com/airr-knowledge/ak-schema
