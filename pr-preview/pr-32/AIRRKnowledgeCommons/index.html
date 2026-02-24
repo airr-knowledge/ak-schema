@@ -389,6 +389,15 @@
     click StudyEvent href "../StudyEvent"
 
 
+      AIRRKnowledgeCommons : tcr_complex
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" TCRpMHCComplex : tcr_complex
+    click TCRpMHCComplex href "../TCRpMHCComplex"
+
+
       AIRRKnowledgeCommons : transformations
 
 
@@ -541,6 +550,12 @@
 <tr>
 <td><a href="../epitopes/">epitopes</a></td>
 <td>* <br/> <a href="../Epitope/">Epitope</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>* <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -775,6 +790,15 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: Epitope
+    multivalued: true
+    inlined: true
+  tcr_complex:
+    name: tcr_complex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: TCRpMHCComplex
     multivalued: true
     inlined: true
 tree_root: true
@@ -1028,6 +1052,17 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: Epitope
+    multivalued: true
+    inlined: true
+  tcr_complex:
+    name: tcr_complex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: tcr_complex
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: TCRpMHCComplex
     multivalued: true
     inlined: true
 tree_root: true

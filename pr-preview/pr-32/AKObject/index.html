@@ -221,6 +221,8 @@
         click Chain href "../Chain"
       AKObject &lt;|-- ImmuneReceptor
         click ImmuneReceptor href "../ImmuneReceptor"
+      AKObject &lt;|-- TCRpMHCComplex
+        click TCRpMHCComplex href "../TCRpMHCComplex"
       AKObject &lt;|-- SimilarityCalculation
         click SimilarityCalculation href "../SimilarityCalculation"
 
@@ -235,6 +237,7 @@
 <li><a href="../AKDataItem/">AKDataItem</a></li>
 <li><a href="../Chain/">Chain</a></li>
 <li><a href="../ImmuneReceptor/">ImmuneReceptor</a></li>
+<li><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></li>
 <li><a href="../SimilarityCalculation/">SimilarityCalculation</a></li>
 </ul>
 </li>
@@ -338,7 +341,6 @@ attributes:
     owner: AKObject
     domain_of:
     - AKObject
-    - QueryExperiment
     range: uriorcurie
     required: true
 

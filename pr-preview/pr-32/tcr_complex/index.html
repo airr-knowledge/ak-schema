@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/tcell_receptor/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/tcr_complex/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: tcell_receptor - ak-schema</title>
+        <title>Slot: tcr_complex - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-tcell_receptor" class="md-skip">
+        <a href="#slot-tcr_complex" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: tcell_receptor
+              Slot: tcr_complex
             
           </span>
         </div>
@@ -317,15 +317,14 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/tcell_receptor.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/tcr_complex.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-tcell_receptor">Slot: tcell_receptor</h1>
-<p><em>T cell receptor</em></p>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/tcell_receptor">ak_schema:tcell_receptor</a></p>
+<h1 id="slot-tcr_complex">Slot: tcr_complex</h1>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/tcr_complex">ak_schema:tcr_complex</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,15 +338,20 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
-<td></td>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td>A container for instances of multiple classes</td>
 <td>no</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../TCellReceptor/">TCellReceptor</a></li>
+<li>
+<p>Range: <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></p>
+</li>
+<li>
+<p>Multivalued: True</p>
+</li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -365,25 +369,27 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:tcell_receptor</td>
+<td>ak_schema:tcr_complex</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:tcell_receptor</td>
+<td>ak_schema:tcr_complex</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: tcell_receptor
-description: T cell receptor
+<pre><code class="language-yaml">name: tcr_complex
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-alias: tcell_receptor
+alias: tcr_complex
+owner: AIRRKnowledgeCommons
 domain_of:
-- TCRpMHCComplex
-range: TCellReceptor
+- AIRRKnowledgeCommons
+range: TCRpMHCComplex
+multivalued: true
+inlined: true
 
 </code></pre>
 

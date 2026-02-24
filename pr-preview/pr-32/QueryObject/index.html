@@ -142,6 +142,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#inheritance">
+    Inheritance
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#slots">
     Slots
   </a>
@@ -199,6 +204,18 @@
 <div class="mermaid"> classDiagram
     class QueryObject
     click QueryObject href "../QueryObject"
+      QueryAPI &lt;|-- QueryObject
+        click QueryAPI href "../QueryAPI"
+
+      QueryObject : assay
+
+
+
+
+    QueryObject --&gt; "0..1" QueryExperiment : assay
+    click QueryExperiment href "../QueryExperiment"
+
+
       QueryObject : bcr
 
 
@@ -206,15 +223,6 @@
 
     QueryObject --&gt; "0..1" QueryIG : bcr
     click QueryIG href "../QueryIG"
-
-
-      QueryObject : experiment
-
-
-
-
-    QueryObject --&gt; "0..1" QueryExperiment : experiment
-    click QueryExperiment href "../QueryExperiment"
 
 
       QueryObject : tcr
@@ -228,7 +236,13 @@
 
 
 </div>
-<!-- no inheritance hierarchy -->
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li><a href="../QueryAPI/">QueryAPI</a><ul>
+<li><strong>QueryObject</strong></li>
+</ul>
+</li>
+</ul>
 <h2 id="slots">Slots</h2>
 <table>
 <thead>
@@ -253,7 +267,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../experiment/">experiment</a></td>
+<td><a href="../assay/">assay</a></td>
 <td>0..1 <br/> <a href="../QueryExperiment/">QueryExperiment</a></td>
 <td></td>
 <td>direct</td>
@@ -290,12 +304,13 @@
 <details>
 <pre><code class="language-yaml">name: QueryObject
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: QueryAPI
 attributes:
   tcr:
     name: tcr
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     domain_of:
+    - TCRpMHCComplex
     - QueryObject
     range: QueryTCR
     multivalued: false
@@ -309,8 +324,8 @@ attributes:
     range: QueryIG
     multivalued: false
     inlined: true
-  experiment:
-    name: experiment
+  assay:
+    name: assay
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     domain_of:
@@ -325,14 +340,15 @@ attributes:
 <details>
 <pre><code class="language-yaml">name: QueryObject
 from_schema: https://github.com/airr-knowledge/ak-schema
+is_a: QueryAPI
 attributes:
   tcr:
     name: tcr
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     alias: tcr
     owner: QueryObject
     domain_of:
+    - TCRpMHCComplex
     - QueryObject
     range: QueryTCR
     multivalued: false
@@ -348,11 +364,11 @@ attributes:
     range: QueryIG
     multivalued: false
     inlined: true
-  experiment:
-    name: experiment
+  assay:
+    name: assay
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: experiment
+    alias: assay
     owner: QueryObject
     domain_of:
     - QueryObject

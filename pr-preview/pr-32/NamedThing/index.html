@@ -232,8 +232,6 @@
         click Epitope href "../Epitope"
       NamedThing &lt;|-- AntibodyAntigenComplex
         click AntibodyAntigenComplex href "../AntibodyAntigenComplex"
-      NamedThing &lt;|-- TCRpMHCComplex
-        click TCRpMHCComplex href "../TCRpMHCComplex"
       NamedThing &lt;|-- Model
         click Model href "../Model"
       NamedThing &lt;|-- ModelingFramework
@@ -262,7 +260,6 @@
 <li><a href="../Antigen/">Antigen</a></li>
 <li><a href="../Epitope/">Epitope</a></li>
 <li><a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></li>
-<li><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></li>
 <li><a href="../Model/">Model</a></li>
 <li><a href="../ModelingFramework/">ModelingFramework</a></li>
 </ul>
@@ -381,7 +378,6 @@ attributes:
     owner: NamedThing
     domain_of:
     - AKObject
-    - QueryExperiment
     range: uriorcurie
     required: true
 
