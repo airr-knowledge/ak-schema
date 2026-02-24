@@ -98,7 +98,15 @@ def create_object(yaml_path):
     study_arm = container['study_arms'][participant['study_arm']]
     investigation = container['investigations'][study_arm['investigation']]
     investigation.participants = None
-    experiment = QueryExperiment(akc_id=assay_id, assay=assay, specimen=specimen, participant=participant, investigation=investigation)
+#    experiment = QueryExperiment(akc_id=assay_id, assay=assay, specimen=specimen, participant=participant, investigation=investigation)
+    experiment = QueryExperiment(akc_id=assay_id)
+    for field in dataclasses.fields(assay):
+        print(field.name)
+        setattr(experiment, field.name, getattr(assay, field.name))
+    experiment.specimen = specimen
+    experiment.participant = participant
+    experiment.investigation = investigation
+#    experiment = QueryExperiment(akc_id=assay_id, specimen=specimen, participant=participant, investigation=investigation)
 
     ab_receptor = container['ab_tcell_receptors'][tcr_id]
     #print(container['chains'][ab_receptor.tra_chain])
@@ -112,7 +120,7 @@ def create_object(yaml_path):
 #    tcr = QueryTCR(receptor=container['ab_tcell_receptors'][tcr_id])
 #    tcr['receptor']['tra_chain'] = container['chains'][tcr.receptor.tra_chain]
     tcr = QueryTCR(receptor=receptor)
-    obj = QueryObject(tcr=tcr, experiment=experiment)
+    obj = QueryObject(tcr=tcr, assay=experiment)
     print(obj)
     #print(container['chains'][obj.tcr.receptor.tra_chain])
 
@@ -141,7 +149,14 @@ def create_iedb_object(yaml_path):
     participant = container['participants'][life_event['participant']]
     #study_arm = container['study_arms'][participant['study_arm']]
     #investigation = container['investigations'][study_arm['investigation']]
-    experiment = QueryExperiment(akc_id=assay_id, assay=assay, specimen=specimen, participant=participant)
+    #experiment = QueryExperiment(akc_id=assay_id, assay=assay, specimen=specimen, participant=participant)
+    experiment = QueryExperiment(akc_id=assay_id)
+    for field in dataclasses.fields(assay):
+        print(field.name)
+        setattr(experiment, field.name, getattr(assay, field.name))
+    experiment.specimen = specimen
+    experiment.participant = participant
+    #experiment.investigation = investigation
 
     epitope_id = container['assays'][assay_id]['epitope']
     tcr_id = container['assays'][assay_id]['tcell_receptors'][0]
@@ -155,7 +170,7 @@ def create_iedb_object(yaml_path):
     epitope = container['epitopes'][epitope_id]
     tcr = QueryTCR(receptor=receptor, epitope=epitope)
 
-    obj = QueryObject(tcr=tcr, experiment=experiment)
+    obj = QueryObject(tcr=tcr, assay=experiment)
     print(obj)
     #print(container['chains'][obj.tcr.receptor.tra_chain])
 
@@ -166,5 +181,5 @@ def create_iedb_object(yaml_path):
     json_dumper.dump(obj, json_path)
 
 if __name__ == "__main__":
-    create_object()
-    #create_iedb_object()
+    #create_object()
+    create_iedb_object()
