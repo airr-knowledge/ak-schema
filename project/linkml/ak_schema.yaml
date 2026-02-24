@@ -1754,8 +1754,8 @@ slots:
     description: A material entity with antigen role
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Antigen
-  tcell_receptor:
-    name: tcell_receptor
+  tcr:
+    name: tcr
     description: T cell receptor
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TCellReceptor
@@ -5860,6 +5860,12 @@ classes:
         range: Epitope
         multivalued: true
         inlined: true
+      tcr_complex:
+        name: tcr_complex
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: TCRpMHCComplex
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation
@@ -6120,6 +6126,11 @@ classes:
     is_a: SequenceData
     mixins:
     - SequencingData
+  AIRRSequenceAnnotationData:
+    name: AIRRSequenceAnnotationData
+    description: annotated VDJ sequence data
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKDataItem
   AIRRGenotypeData:
     name: AIRRGenotypeData
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6268,9 +6279,9 @@ classes:
   TCRpMHCComplex:
     name: TCRpMHCComplex
     from_schema: https://github.com/airr-knowledge/ak-schema
-    is_a: NamedThing
+    is_a: AKObject
     slots:
-    - tcell_receptor
+    - tcr
     - epitope
     - mhc
     class_uri: OBI:0003119
@@ -7044,4 +7055,110 @@ classes:
     - sequencing_run_date
     - sequencing_kit
     - sequencing_files
+  QueryAPI:
+    name: QueryAPI
+    description: class hierarchy for ak-web-api
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    abstract: true
+  QueryObject:
+    name: QueryObject
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: QueryAPI
+    attributes:
+      tcr:
+        name: tcr
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: QueryTCR
+        multivalued: false
+        inlined: true
+      bcr:
+        name: bcr
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: QueryIG
+        multivalued: false
+        inlined: true
+      assay:
+        name: assay
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: QueryExperiment
+        multivalued: false
+        inlined: true
+  QueryTCR:
+    name: QueryTCR
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: QueryAPI
+    attributes:
+      receptor:
+        name: receptor
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: TCellReceptor
+        multivalued: false
+        inlined: true
+      mhc:
+        name: mhc
+        from_schema: https://github.com/airr-knowledge/ak-schema
+      epitope:
+        name: epitope
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Epitope
+        multivalued: false
+        inlined: true
+      antigen:
+        name: antigen
+        from_schema: https://github.com/airr-knowledge/ak-schema
+  QueryAlphaBetaTCR:
+    name: QueryAlphaBetaTCR
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: TCellReceptor
+    attributes:
+      tra_chain:
+        name: tra_chain
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: false
+        inlined: true
+      trb_chain:
+        name: trb_chain
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Chain
+        multivalued: false
+        inlined: true
+  QueryIG:
+    name: QueryIG
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      receptor:
+        name: receptor
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: BCellReceptor
+        multivalued: false
+        inlined: true
+      antigen:
+        name: antigen
+        from_schema: https://github.com/airr-knowledge/ak-schema
+  QueryExperiment:
+    name: QueryExperiment
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: QueryAPI
+    mixins:
+    - Assay
+    attributes:
+      specimen:
+        name: specimen
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Specimen
+        multivalued: false
+        inlined: true
+      participant:
+        name: participant
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Participant
+        multivalued: false
+        inlined: true
+      investigation:
+        name: investigation
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Investigation
+        multivalued: false
+        inlined: true
 source_file: src/ak_schema/schema/ak_top.yaml

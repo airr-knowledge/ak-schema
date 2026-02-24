@@ -94,10 +94,10 @@ classes:
       - antigen
 
   TCRpMHCComplex:
-    is_a: NamedThing
+    is_a: AKObject
     class_uri: OBI:0003119
     slots:
-      - tcell_receptor
+      - tcr
       - epitope
       - mhc
 
@@ -171,7 +171,7 @@ slots:
     description: A material entity with antigen role
     range: Antigen
 
-  tcell_receptor:
+  tcr:
     description: T cell receptor
     range: TCellReceptor
 

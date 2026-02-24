@@ -61,5 +61,6 @@ imports:
   - ak_simulations
   - ak_metrics
   - ak_airr
+  - ak_openapi3
 #  - ak_airr_v1.5
 #  - ak_airr_v2.0
