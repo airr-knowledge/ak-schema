@@ -4,7 +4,12 @@ name: ak-schema
 
 classes:
 
+  QueryAPI:
+    abstract: true
+    description: class hierarchy for ak-web-api
+
   QueryObject:
+    is_a: QueryAPI
     attributes:
       tcr:
         range: QueryTCR
@@ -14,12 +19,13 @@ classes:
         range: QueryIG
         multivalued: false
         inlined: true
-      experiment:
+      assay:
         range: QueryExperiment
         multivalued: false
         inlined: true
 
   QueryTCR:
+    is_a: QueryAPI
     attributes:
       receptor:
         range: TCellReceptor
@@ -53,13 +59,13 @@ classes:
       antigen:
 
   QueryExperiment:
-    slots:
-      - akc_id
+    is_a: QueryAPI
+    mixins: Assay
     attributes:
-      assay:
-        range: Assay
-        multivalued: false
-        inlined: true
+#      assay:
+#        range: Assay
+#        multivalued: false
+#        inlined: true
       specimen:
         range: Specimen
         multivalued: false
