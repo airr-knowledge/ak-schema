@@ -17,7 +17,20 @@ import json
 
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
+from jsonschema.exceptions import ValidationError
+from linkml.validator import Validator
+from pydantic import ValidationError
+from jsonschema.exceptions import ValidationError as JSONSchemaValidationError
+from linkml.validator.plugins import PydanticValidationPlugin
+import re
+from linkml.validator import validate
+# validator = Validator("../../project/linkml/ak_schema.yaml")
+validator = Validator(
+    schema="../../project/linkml/ak_schema.yaml",
+    validation_plugins=[PydanticValidationPlugin()]
+)
 
+AA_PATTERN = re.compile(r"^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$")
 
 prefixes = {
     'iedb_reference': 'http://www.iedb.org/reference/',
@@ -88,30 +101,43 @@ def make_chain(row, chain_name):
     Prefer Calculated columns to Curated columns.'''
     tcr_curie = curie(row['Receptor']['Group IRI'])
     chain = row[chain_name]
-    junction_aa = None
     cdr3 = chain['CDR3 Calculated'] or chain['CDR3 Curated']
-    if cdr3 and cdr3.startswith('C') and (cdr3.endswith('F') or cdr3.endswith('W')):
-        junction_aa = cdr3
-    return Chain(
-        tcr_curie + '-' + chain['Type'],
-        sequence=chain['Nucleotide Sequence'],
-        sequence_aa=chain['Protein Sequence'],
-        locus=chain_types[chain['Type']],
-        v_call=chain['Calculated V Gene'] or chain['Curated V Gene'],
-        d_call=chain['Calculated D Gene'] or chain['Curated D Gene'],
-        j_call=chain['Calculated J Gene'] or chain['Curated J Gene'],
-        # c_call='',
-        junction_aa=junction_aa,
-        cdr1_aa=chain['CDR1 Calculated'] or chain['CDR1 Curated'],
-        cdr2_aa=chain['CDR2 Calculated'] or chain['CDR2 Curated'],
-        cdr3_aa=chain['CDR3 Calculated'] or chain['CDR3 Curated'],
-        cdr1_start=chain['CDR1 Start Calculated'] or chain['CDR1 Start Curated'],
-        cdr1_end=chain['CDR1 End Calculated'] or chain['CDR1 End Curated'],
-        cdr2_start=chain['CDR2 Start Calculated'] or chain['CDR2 Start Curated'],
-        cdr2_end=chain['CDR2 End Calculated'] or chain['CDR2 End Curated'],
-        cdr3_start=chain['CDR3 Start Calculated'] or chain['CDR3 Start Curated'],
-        cdr3_end=chain['CDR3 End Calculated'] or chain['CDR3 End Curated']
-    )
+    try:
+        chain_obj = Chain(
+            tcr_curie + '-' + chain['Type'],
+            sequence=chain['Nucleotide Sequence'],
+            sequence_aa=chain['Protein Sequence'],
+            locus=chain_types[chain['Type']],
+            v_call=chain['Calculated V Gene'] or chain['Curated V Gene'],
+            d_call=chain['Calculated D Gene'] or chain['Curated D Gene'],
+            j_call=chain['Calculated J Gene'] or chain['Curated J Gene'],
+            # c_call='',
+            junction_aa=cdr3,
+            cdr1_aa=chain['CDR1 Calculated'] or chain['CDR1 Curated'],
+            cdr2_aa=chain['CDR2 Calculated'] or chain['CDR2 Curated'],
+            cdr3_aa=chain['CDR3 Calculated'] or chain['CDR3 Curated'],
+            cdr1_start=chain['CDR1 Start Calculated'] or chain['CDR1 Start Curated'],
+            cdr1_end=chain['CDR1 End Calculated'] or chain['CDR1 End Curated'],
+            cdr2_start=chain['CDR2 Start Calculated'] or chain['CDR2 Start Curated'],
+            cdr2_end=chain['CDR2 End Calculated'] or chain['CDR2 End Curated'],
+            cdr3_start=chain['CDR3 Start Calculated'] or chain['CDR3 Start Curated'],
+            
+            cdr3_end=chain['CDR3 End Calculated'] or chain['CDR3 End Curated']
+        )
+        s = json.loads(json_dumper.dumps(chain_obj))
+        del s['@type']
+        # report = validate(s, "../../project/linkml/ak_schema.yaml", "Chain")
+        report = validator.validate(s, "Chain")
+        if not report.results:
+            return chain_obj
+            pass
+        else:
+            for result in report.results:
+                print(result.message)
+            return None    
+    except Exception as e:
+        print(f"WARNING: invalid junction_aa for {tcr_curie} : {cdr3}: {e}")
+        return None
 
 @click.command()
 @click.argument('tcell_path')
@@ -272,12 +298,24 @@ def convert(tcell_path, tcr_path, yaml_path):
             life_event=life_event_2.akc_id,
             tissue=row['Effector Cell']['Source Tissue']
         )
-        epitope = PeptidicEpitope(
-            curie(row['Epitope']['IEDB IRI']),
-            sequence_aa=row['Epitope']['Name'],
-            source_protein=curie(row['Epitope']['Molecule Parent IRI']),
-            source_organism=curie(row['Epitope']['Source Organism IRI'])
-        )
+        # epitope = PeptidicEpitope(
+        #     curie(row['Epitope']['IEDB IRI']),
+        #     sequence_aa=row['Epitope']['Name'],
+        #     source_protein=curie(row['Epitope']['Molecule Parent IRI']),
+        #     source_organism=curie(row['Epitope']['Source Organism IRI'])
+        # )
+        
+        try:
+            epitope = PeptidicEpitope(
+                curie(row['Epitope']['IEDB IRI']),
+                sequence_aa=row['Epitope']['Name'],
+                source_protein=curie(row['Epitope']['Molecule Parent IRI']),
+                source_organism=curie(row['Epitope']['Source Organism IRI'])
+            )
+
+        except Exception as e:
+            print(f"WARNING: invalid epitope {row['Epitope']['Name']}: {e}")
+            epitope = None
         # For each row in the TCR table that matches this assay ID, generate:
         # 2 chains
         # 1 receptor: AlphaBetaTCR or GammaDeltaTCR
@@ -291,10 +329,12 @@ def convert(tcell_path, tcr_path, yaml_path):
             chain_2 = None
             if tcr_row['Chain 1']['Type']:
                 chain_1 = make_chain(tcr_row, 'Chain 1')
-                chains.append(chain_1)
+                if chain_1:
+                    chains.append(chain_1)
             if tcr_row['Chain 2']['Type']:
                 chain_2 = make_chain(tcr_row, 'Chain 2')
-                chains.append(chain_2)
+                if chain_2:
+                    chains.append(chain_2)
             if tcr_row['Receptor']['Type'] == 'alphabeta':
                 tcr = AlphaBetaTCR(
                     tcr_curie,
