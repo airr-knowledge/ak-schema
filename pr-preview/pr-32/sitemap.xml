@@ -36,11 +36,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/AIRRStandardsV1p5/</loc>
-         <lastmod>2026-03-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/AIRRStandardsV1p6/</loc>
          <lastmod>2026-03-09</lastmod>
          <changefreq>daily</changefreq>
@@ -3277,11 +3272,6 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/target_entity_type/</loc>
-         <lastmod>2026-03-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/tcell_chains/</loc>
          <lastmod>2026-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>

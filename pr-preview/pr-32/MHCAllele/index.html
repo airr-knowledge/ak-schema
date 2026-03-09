@@ -247,7 +247,7 @@
 <tbody>
 <tr>
 <td><a href="../allele_designation/">allele_designation</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -325,6 +325,11 @@ slots:
 - allele_designation
 - gene
 - reference_set_ref
+slot_usage:
+  allele_designation:
+    name: allele_designation
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -333,6 +338,11 @@ slots:
 <pre><code class="language-yaml">name: MHCAllele
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  allele_designation:
+    name: allele_designation
+    identifier: true
+    required: true
 attributes:
   allele_designation:
     name: allele_designation
@@ -342,12 +352,14 @@ attributes:
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: allele_designation
     owner: MHCAllele
     domain_of:
     - AlleleDescription
     - MHCAllele
     range: string
+    required: true
   gene:
     name: gene
     annotations:

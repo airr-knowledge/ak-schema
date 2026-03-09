@@ -269,15 +269,6 @@
     click SpecimenProcessing href "../SpecimenProcessing"
 
 
-      TCellReceptorEpitopeBindingAssay : tcell_receptors
-
-
-
-
-    TCellReceptorEpitopeBindingAssay --&gt; "*" TCellReceptor : tcell_receptors
-    click TCellReceptor href "../TCellReceptor"
-
-
       TCellReceptorEpitopeBindingAssay : tcr_complexes
 
 
@@ -322,12 +313,6 @@
 <td><a href="../epitope/">epitope</a></td>
 <td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
 <td>The epitope being measured</td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../tcell_receptors/">tcell_receptors</a></td>
-<td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
-<td>The T cell receptors being measured</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -427,7 +412,6 @@ mixins:
 - TCellReceptorEpitopeSpecificityMeasurement
 slots:
 - epitope
-- tcell_receptors
 - tcr_complexes
 class_uri: OBI:1110037
 
@@ -453,18 +437,6 @@ attributes:
     - TCRpMHCComplex
     - QueryTCR
     range: Epitope
-  tcell_receptors:
-    name: tcell_receptors
-    description: The T cell receptors being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: tcell_receptors
-    owner: TCellReceptorEpitopeBindingAssay
-    domain_of:
-    - AIRRSequencingAssay
-    - TCellReceptorEpitopeBindingAssay
-    range: TCellReceptor
-    multivalued: true
   tcr_complexes:
     name: tcr_complexes
     description: The T cell receptor/epitope/mhc complex being measured
@@ -474,6 +446,7 @@ attributes:
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
     - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
     - TCellReceptorEpitopeBindingAssay
     range: TCRpMHCComplex
     multivalued: true
