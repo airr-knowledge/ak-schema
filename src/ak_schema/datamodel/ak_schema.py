@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-09T17:52:06
+# Generation date: 2026-03-09T18:38:29
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -460,6 +460,10 @@ class UnrearrangedSequenceSequenceId(extended_str):
     pass
 
 
+class MHCAlleleAlleleDesignation(extended_str):
+    pass
+
+
 class RepertoireRepertoireId(extended_str):
     pass
 
@@ -528,18 +532,6 @@ class AIRRStandards(YAMLRoot):
     class_class_curie: ClassVar[str] = "ak_schema:AIRRStandards"
     class_name: ClassVar[str] = "AIRRStandards"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandards
-
-
-class AIRRStandardsV1p5(YAMLRoot):
-    """
-    An object directly converted from AIRR schema version 1.5.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandardsV1p5"]
-    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandardsV1p5"
-    class_name: ClassVar[str] = "AIRRStandards_v1p5"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV1p5
 
 
 class AIRRStandardsV1p6(YAMLRoot):
@@ -2458,7 +2450,7 @@ class TCRpMHCComplex(AKObject):
     akc_id: Union[str, TCRpMHCComplexAkcId] = None
     tcr: Optional[Union[str, TCellReceptorAkcId]] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
-    mhc: Optional[Union[dict, "MHCAllele"]] = None
+    mhc: Optional[Union[str, MHCAlleleAlleleDesignation]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2472,8 +2464,8 @@ class TCRpMHCComplex(AKObject):
         if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
             self.epitope = EpitopeAkcId(self.epitope)
 
-        if self.mhc is not None and not isinstance(self.mhc, MHCAllele):
-            self.mhc = MHCAllele(**as_dict(self.mhc))
+        if self.mhc is not None and not isinstance(self.mhc, MHCAlleleAlleleDesignation):
+            self.mhc = MHCAlleleAlleleDesignation(self.mhc)
 
         super().__post_init__(**kwargs)
 
@@ -3344,7 +3336,7 @@ class MHCGenotype(AIRRStandards):
 
     mhc_genotype_id: Optional[str] = None
     mhc_class: Optional[Union[str, "MhcClassEnum"]] = None
-    mhc_alleles: Optional[Union[Union[dict, "MHCAllele"], List[Union[dict, "MHCAllele"]]]] = empty_list()
+    mhc_alleles: Optional[Union[Union[str, MHCAlleleAlleleDesignation], List[Union[str, MHCAlleleAlleleDesignation]]]] = empty_list()
     mhc_genotyping_method: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3356,7 +3348,7 @@ class MHCGenotype(AIRRStandards):
 
         if not isinstance(self.mhc_alleles, list):
             self.mhc_alleles = [self.mhc_alleles] if self.mhc_alleles is not None else []
-        self.mhc_alleles = [v if isinstance(v, MHCAllele) else MHCAllele(**as_dict(v)) for v in self.mhc_alleles]
+        self.mhc_alleles = [v if isinstance(v, MHCAlleleAlleleDesignation) else MHCAlleleAlleleDesignation(v) for v in self.mhc_alleles]
 
         if self.mhc_genotyping_method is not None and not isinstance(self.mhc_genotyping_method, str):
             self.mhc_genotyping_method = str(self.mhc_genotyping_method)
@@ -3373,13 +3365,15 @@ class MHCAllele(AIRRStandards):
     class_name: ClassVar[str] = "MHCAllele"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCAllele
 
-    allele_designation: Optional[str] = None
+    allele_designation: Union[str, MHCAlleleAlleleDesignation] = None
     gene: Optional[Union[str, "GeneOntology"]] = None
     reference_set_ref: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.allele_designation is not None and not isinstance(self.allele_designation, str):
-            self.allele_designation = str(self.allele_designation)
+        if self._is_empty(self.allele_designation):
+            self.MissingRequiredField("allele_designation")
+        if not isinstance(self.allele_designation, MHCAlleleAlleleDesignation):
+            self.allele_designation = MHCAlleleAlleleDesignation(self.allele_designation)
 
         if self.reference_set_ref is not None and not isinstance(self.reference_set_ref, str):
             self.reference_set_ref = str(self.reference_set_ref)
@@ -6599,7 +6593,7 @@ slots.tcr = Slot(uri=AK_SCHEMA.tcr, name="tcr", curie=AK_SCHEMA.curie('tcr'),
                    model_uri=AK_SCHEMA.tcr, domain=None, range=Optional[Union[str, TCellReceptorAkcId]])
 
 slots.mhc = Slot(uri=AK_SCHEMA.mhc, name="mhc", curie=AK_SCHEMA.curie('mhc'),
-                   model_uri=AK_SCHEMA.mhc, domain=None, range=Optional[Union[dict, MHCAllele]])
+                   model_uri=AK_SCHEMA.mhc, domain=None, range=Optional[Union[str, MHCAlleleAlleleDesignation]])
 
 slots.chain_domain = Slot(uri=AK_SCHEMA.chain_domain, name="chain_domain", curie=AK_SCHEMA.curie('chain_domain'),
                    model_uri=AK_SCHEMA.chain_domain, domain=None, range=Optional[Union[str, ChainAkcId]])
@@ -6929,7 +6923,7 @@ slots.mhc_class = Slot(uri=AK_SCHEMA.mhc_class, name="mhc_class", curie=AK_SCHEM
                    model_uri=AK_SCHEMA.mhc_class, domain=None, range=Optional[Union[str, "MhcClassEnum"]])
 
 slots.mhc_alleles = Slot(uri=AK_SCHEMA.mhc_alleles, name="mhc_alleles", curie=AK_SCHEMA.curie('mhc_alleles'),
-                   model_uri=AK_SCHEMA.mhc_alleles, domain=None, range=Optional[Union[Union[dict, MHCAllele], List[Union[dict, MHCAllele]]]])
+                   model_uri=AK_SCHEMA.mhc_alleles, domain=None, range=Optional[Union[Union[str, MHCAlleleAlleleDesignation], List[Union[str, MHCAlleleAlleleDesignation]]]])
 
 slots.mhc_genotyping_method = Slot(uri=AK_SCHEMA.mhc_genotyping_method, name="mhc_genotyping_method", curie=AK_SCHEMA.curie('mhc_genotyping_method'),
                    model_uri=AK_SCHEMA.mhc_genotyping_method, domain=None, range=Optional[str])
@@ -7962,6 +7956,9 @@ slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri
 
 slots.UnrearrangedSequence_sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="UnrearrangedSequence_sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
                    model_uri=AK_SCHEMA.UnrearrangedSequence_sequence_id, domain=UnrearrangedSequence, range=Union[str, UnrearrangedSequenceSequenceId])
+
+slots.MHCAllele_allele_designation = Slot(uri=AK_SCHEMA.allele_designation, name="MHCAllele_allele_designation", curie=AK_SCHEMA.curie('allele_designation'),
+                   model_uri=AK_SCHEMA.MHCAllele_allele_designation, domain=MHCAllele, range=Union[str, MHCAlleleAlleleDesignation])
 
 slots.Repertoire_repertoire_id = Slot(uri=AK_SCHEMA.repertoire_id, name="Repertoire_repertoire_id", curie=AK_SCHEMA.curie('repertoire_id'),
                    model_uri=AK_SCHEMA.Repertoire_repertoire_id, domain=Repertoire, range=Union[str, RepertoireRepertoireId])

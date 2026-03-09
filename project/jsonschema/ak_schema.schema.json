@@ -5033,10 +5033,7 @@
             "description": "",
             "properties": {
                 "allele_designation": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "gene": {
                     "$ref": "#/$defs/GeneOntology",
@@ -5050,6 +5047,9 @@
                     ]
                 }
             },
+            "required": [
+                "allele_designation"
+            ],
             "title": "MHCAllele",
             "type": "object"
         },
@@ -5060,7 +5060,7 @@
                 "mhc_alleles": {
                     "description": "List of MHC alleles of the indicated mhc_class identified in an individual",
                     "items": {
-                        "$ref": "#/$defs/MHCAllele"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -9285,15 +9285,11 @@
                     ]
                 },
                 "mhc": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/MHCAllele"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Major histocompatibility complex"
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "tcr": {
                     "description": "T cell receptor",
@@ -9325,15 +9321,11 @@
                     ]
                 },
                 "mhc": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/MHCAllele"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Major histocompatibility complex"
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "tcr": {
                     "description": "T cell receptor",

@@ -3141,7 +3141,6 @@
         "TCRpMHCComplex"
       ],
       "range": "MHCAllele",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5351,7 +5350,6 @@
       ],
       "range": "MHCAllele",
       "multivalued": true,
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -12099,6 +12097,33 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "MHCAllele_allele_designation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/allele_designation",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "allele_designation",
+      "domain": "MHCAllele",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/allele_designation",
+      "identifier": true,
+      "alias": "allele_designation",
+      "owner": "MHCAllele",
+      "domain_of": [
+        "MHCAllele"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "allele_designation",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "Repertoire_repertoire_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12153,16 +12178,6 @@
       "abstract": true,
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandards",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "AIRRStandardsV1p5",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandardsV1p5",
-      "description": "An object directly converted from AIRR schema version 1.5.",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "abstract": true,
-      "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandardsV1p5",
       "@type": "ClassDefinition"
     },
     {
@@ -13901,7 +13916,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "allele_designation",
+        "MHCAllele_allele_designation",
         "gene",
         "reference_set_ref"
       ],
@@ -14761,9 +14776,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-03-09T17:52:01",
-  "source_file_size": 211617,
-  "generation_date": "2026-03-09T17:52:03",
+  "source_file_date": "2026-03-09T18:38:24",
+  "source_file_size": 211533,
+  "generation_date": "2026-03-09T18:38:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

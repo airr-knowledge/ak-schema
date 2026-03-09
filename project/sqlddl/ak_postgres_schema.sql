@@ -11,10 +11,6 @@ CREATE TABLE "AIRRStandards" (
 	id SERIAL NOT NULL, 
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "AIRRStandards" IS 'An object directly converted from the AIRR schema.';
-CREATE TABLE "AIRRStandards_v1p5" (
-	id SERIAL NOT NULL, 
-	PRIMARY KEY (id)
-);COMMENT ON TABLE "AIRRStandards_v1p5" IS 'An object directly converted from AIRR schema version 1.5.';
 CREATE TABLE "AIRRStandards_v1p6" (
 	id SERIAL NOT NULL, 
 	PRIMARY KEY (id)
@@ -146,6 +142,11 @@ CREATE TABLE "AIRRSequencingData" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "AIRRSequencingData" IS 'None';COMMENT ON COLUMN "AIRRSequencingData".sequencing_data_id IS 'Persistent identifier of raw data stored in an archive (e.g. INSDC run ID). Data archive should  be identified in the CURIE prefix.';COMMENT ON COLUMN "AIRRSequencingData".file_type IS 'File format for the raw reads or sequences';COMMENT ON COLUMN "AIRRSequencingData".filename IS 'File name for the raw reads or sequences. The first file in paired-read sequencing.';COMMENT ON COLUMN "AIRRSequencingData".read_direction IS 'Read direction for the raw reads or sequences. The first file in paired-read sequencing.';COMMENT ON COLUMN "AIRRSequencingData".read_length IS 'Read length in bases for the first file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_filename IS 'File name for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_read_direction IS 'Read direction for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".paired_read_length IS 'Read length in bases for the second file in paired-read sequencing';COMMENT ON COLUMN "AIRRSequencingData".index_filename IS 'File name for the index file';COMMENT ON COLUMN "AIRRSequencingData".index_length IS 'Read length in bases for the index file';COMMENT ON COLUMN "AIRRSequencingData".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AIRRSequenceAnnotationData" (
+	type TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "AIRRSequenceAnnotationData" IS 'annotated VDJ sequence data';COMMENT ON COLUMN "AIRRSequenceAnnotationData".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "AIRRGenotypeData" (
 	receptor_genotype_set_id TEXT, 
 	type TEXT, 
@@ -292,9 +293,10 @@ CREATE TABLE "Acknowledgement" (
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "Acknowledgement" IS 'None';COMMENT ON COLUMN "Acknowledgement".acknowledgement_id IS 'unique identifier of this Acknowledgement within the file';COMMENT ON COLUMN "Acknowledgement".individual_full_name IS 'Full name of individual';COMMENT ON COLUMN "Acknowledgement".institution_name IS 'Individual''s department and institution name';COMMENT ON COLUMN "Acknowledgement".orcid_id IS 'Individual''s ORCID identifier';
 CREATE TABLE "RearrangedSequence" (
+	id SERIAL NOT NULL, 
 	sequence_id TEXT, 
 	sequence TEXT, 
-	derivation "DerivationEnum" NOT NULL, 
+	derivation "DerivationEnum", 
 	observation_type "ObservationTypeEnum", 
 	curation TEXT, 
 	repository_name TEXT, 
@@ -302,7 +304,7 @@ CREATE TABLE "RearrangedSequence" (
 	deposited_version TEXT, 
 	sequence_start INTEGER, 
 	sequence_end INTEGER, 
-	PRIMARY KEY (derivation)
+	PRIMARY KEY (id)
 );COMMENT ON TABLE "RearrangedSequence" IS 'None';COMMENT ON COLUMN "RearrangedSequence".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "RearrangedSequence".derivation IS 'The class of nucleic acid that was used as primary starting material';COMMENT ON COLUMN "RearrangedSequence".observation_type IS 'The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.';COMMENT ON COLUMN "RearrangedSequence".repository_ref IS 'Queryable id or accession number of the sequence published by the repository';COMMENT ON COLUMN "RearrangedSequence".deposited_version IS 'Version number of the sequence within the repository';
 CREATE TABLE "UnrearrangedSequence" (
 	sequence_id TEXT NOT NULL, 
@@ -449,11 +451,10 @@ CREATE TABLE "MHCGenotype" (
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "MHCGenotype" IS 'None';COMMENT ON COLUMN "MHCGenotype".mhc_genotype_id IS 'A unique identifier for this MHCGenotype, assumed to be unique in the context of the study';COMMENT ON COLUMN "MHCGenotype".mhc_genotyping_method IS 'Information on how the genotype was determined. The content of this field should come from a list of recommended terms provided in the AIRR Schema documentation.';
 CREATE TABLE "MHCAllele" (
-	id SERIAL NOT NULL, 
-	allele_designation TEXT, 
+	allele_designation TEXT NOT NULL, 
 	gene "GeneOntology", 
 	reference_set_ref TEXT, 
-	PRIMARY KEY (id)
+	PRIMARY KEY (allele_designation)
 );COMMENT ON TABLE "MHCAllele" IS 'None';COMMENT ON COLUMN "MHCAllele".gene IS 'The MHC gene to which the described allele belongs';COMMENT ON COLUMN "MHCAllele".reference_set_ref IS 'Repository and list from which it was taken (issuer/name/version)';
 CREATE TABLE "Study" (
 	id SERIAL NOT NULL, 
@@ -870,17 +871,15 @@ CREATE TABLE "BCellReceptor" (
 	FOREIGN KEY(igl_chain) REFERENCES "Chain" (akc_id)
 );COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "TCRpMHCComplex" (
-	tcell_receptor TEXT, 
+	tcr TEXT, 
 	epitope TEXT, 
-	name TEXT, 
-	description TEXT, 
+	mhc TEXT, 
 	akc_id TEXT NOT NULL, 
-	mhc_id INTEGER, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcell_receptor) REFERENCES "TCellReceptor" (akc_id), 
+	FOREIGN KEY(tcr) REFERENCES "TCellReceptor" (akc_id), 
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc_id) REFERENCES "MHCAllele" (id)
-);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".tcell_receptor IS 'T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".epitope IS 'The epitope being measured';COMMENT ON COLUMN "TCRpMHCComplex".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "TCRpMHCComplex".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "TCRpMHCComplex".mhc_id IS 'Major histocompatibility complex';
+	FOREIGN KEY(mhc) REFERENCES "MHCAllele" (allele_designation)
+);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".tcr IS 'T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".epitope IS 'The epitope being measured';COMMENT ON COLUMN "TCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "SimilarityCalculation" (
 	chain_domain TEXT, 
 	chain_codomain TEXT, 
@@ -1087,6 +1086,12 @@ CREATE TABLE "AIRRSequencingData_data_item_types" (
 	PRIMARY KEY ("AIRRSequencingData_akc_id", data_item_types), 
 	FOREIGN KEY("AIRRSequencingData_akc_id") REFERENCES "AIRRSequencingData" (akc_id)
 );COMMENT ON TABLE "AIRRSequencingData_data_item_types" IS 'None';COMMENT ON COLUMN "AIRRSequencingData_data_item_types"."AIRRSequencingData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingData_data_item_types".data_item_types IS 'semantic types of the data';
+CREATE TABLE "AIRRSequenceAnnotationData_data_item_types" (
+	"AIRRSequenceAnnotationData_akc_id" TEXT, 
+	data_item_types "DataItemTypeEnum", 
+	PRIMARY KEY ("AIRRSequenceAnnotationData_akc_id", data_item_types), 
+	FOREIGN KEY("AIRRSequenceAnnotationData_akc_id") REFERENCES "AIRRSequenceAnnotationData" (akc_id)
+);COMMENT ON TABLE "AIRRSequenceAnnotationData_data_item_types" IS 'None';COMMENT ON COLUMN "AIRRSequenceAnnotationData_data_item_types"."AIRRSequenceAnnotationData_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequenceAnnotationData_data_item_types".data_item_types IS 'semantic types of the data';
 CREATE TABLE "AIRRGenotypeData_genotype_class_list" (
 	"AIRRGenotypeData_akc_id" TEXT, 
 	genotype_class_list_id INTEGER, 
@@ -1154,10 +1159,10 @@ CREATE TABLE "AlleleDescription_unrearranged_support" (
 );COMMENT ON TABLE "AlleleDescription_unrearranged_support" IS 'None';COMMENT ON COLUMN "AlleleDescription_unrearranged_support"."AlleleDescription_id" IS 'Autocreated FK slot';
 CREATE TABLE "AlleleDescription_rearranged_support" (
 	"AlleleDescription_id" INTEGER, 
-	rearranged_support_derivation "DerivationEnum", 
-	PRIMARY KEY ("AlleleDescription_id", rearranged_support_derivation), 
+	rearranged_support_id INTEGER, 
+	PRIMARY KEY ("AlleleDescription_id", rearranged_support_id), 
 	FOREIGN KEY("AlleleDescription_id") REFERENCES "AlleleDescription" (id), 
-	FOREIGN KEY(rearranged_support_derivation) REFERENCES "RearrangedSequence" (derivation)
+	FOREIGN KEY(rearranged_support_id) REFERENCES "RearrangedSequence" (id)
 );COMMENT ON TABLE "AlleleDescription_rearranged_support" IS 'None';COMMENT ON COLUMN "AlleleDescription_rearranged_support"."AlleleDescription_id" IS 'Autocreated FK slot';
 CREATE TABLE "AlleleDescription_paralogs" (
 	"AlleleDescription_id" INTEGER, 
@@ -1222,11 +1227,11 @@ CREATE TABLE "MHCGenotypeSet_mhc_genotype_list" (
 );COMMENT ON TABLE "MHCGenotypeSet_mhc_genotype_list" IS 'None';COMMENT ON COLUMN "MHCGenotypeSet_mhc_genotype_list"."MHCGenotypeSet_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "MHCGenotypeSet_mhc_genotype_list".mhc_genotype_list_id IS 'List of MHCGenotypes included in this set';
 CREATE TABLE "MHCGenotype_mhc_alleles" (
 	"MHCGenotype_id" INTEGER, 
-	mhc_alleles_id INTEGER, 
-	PRIMARY KEY ("MHCGenotype_id", mhc_alleles_id), 
+	mhc_alleles_allele_designation TEXT, 
+	PRIMARY KEY ("MHCGenotype_id", mhc_alleles_allele_designation), 
 	FOREIGN KEY("MHCGenotype_id") REFERENCES "MHCGenotype" (id), 
-	FOREIGN KEY(mhc_alleles_id) REFERENCES "MHCAllele" (id)
-);COMMENT ON TABLE "MHCGenotype_mhc_alleles" IS 'None';COMMENT ON COLUMN "MHCGenotype_mhc_alleles"."MHCGenotype_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "MHCGenotype_mhc_alleles".mhc_alleles_id IS 'List of MHC alleles of the indicated mhc_class identified in an individual';
+	FOREIGN KEY(mhc_alleles_allele_designation) REFERENCES "MHCAllele" (allele_designation)
+);COMMENT ON TABLE "MHCGenotype_mhc_alleles" IS 'None';COMMENT ON COLUMN "MHCGenotype_mhc_alleles"."MHCGenotype_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "MHCGenotype_mhc_alleles".mhc_alleles_allele_designation IS 'List of MHC alleles of the indicated mhc_class identified in an individual';
 CREATE TABLE "Study_keywords_study" (
 	"Study_id" INTEGER, 
 	keywords_study "KeywordsStudyEnum", 
@@ -1676,6 +1681,13 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
 );COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors".tcell_receptors_akc_id IS 'The T cell receptors being measured';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	tcr_complexes_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcr_complexes_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcr_complexes"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcr_complexes".tcr_complexes_akc_id IS 'The T cell receptor/epitope/mhc complex being measured';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
