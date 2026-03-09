@@ -261,7 +261,7 @@
 <tbody>
 <tr>
 <td><a href="../sequence_id/">sequence_id</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>1 <br/> <a href="../String/">String</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -382,6 +382,11 @@ slots:
 - gff_start
 - gff_end
 - strand
+slot_usage:
+  sequence_id:
+    name: sequence_id
+    identifier: true
+    required: true
 
 </code></pre>
 </details>
@@ -390,6 +395,11 @@ slots:
 <pre><code class="language-yaml">name: UnrearrangedSequence
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AIRRStandards
+slot_usage:
+  sequence_id:
+    name: sequence_id
+    identifier: true
+    required: true
 attributes:
   sequence_id:
     name: sequence_id
@@ -399,6 +409,7 @@ attributes:
         value: true
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
+    identifier: true
     alias: sequence_id
     owner: UnrearrangedSequence
     domain_of:
@@ -408,6 +419,7 @@ attributes:
     - Rearrangement
     - Node
     range: string
+    required: true
   sequence:
     name: sequence
     description: Nucleotide sequence.
