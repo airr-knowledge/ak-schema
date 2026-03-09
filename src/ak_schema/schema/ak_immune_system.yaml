@@ -34,6 +34,11 @@ classes:
       - cdr2_end
       - cdr3_start
       - cdr3_end
+    slot_usage:
+      sequence_aa:
+        pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
+      junction_aa:
+        pattern: "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$"
 
   ImmuneReceptor:
     abstract: true
@@ -85,6 +90,9 @@ classes:
       - sequence_aa
       - source_protein
       - source_organism
+    slot_usage:
+      sequence_aa:
+        pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
 
   AntibodyAntigenComplex:
     is_a: NamedThing
