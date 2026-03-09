@@ -292,10 +292,9 @@ CREATE TABLE "Acknowledgement" (
 	PRIMARY KEY (id)
 );COMMENT ON TABLE "Acknowledgement" IS 'None';COMMENT ON COLUMN "Acknowledgement".acknowledgement_id IS 'unique identifier of this Acknowledgement within the file';COMMENT ON COLUMN "Acknowledgement".individual_full_name IS 'Full name of individual';COMMENT ON COLUMN "Acknowledgement".institution_name IS 'Individual''s department and institution name';COMMENT ON COLUMN "Acknowledgement".orcid_id IS 'Individual''s ORCID identifier';
 CREATE TABLE "RearrangedSequence" (
-	id SERIAL NOT NULL, 
 	sequence_id TEXT, 
 	sequence TEXT, 
-	derivation "DerivationEnum", 
+	derivation "DerivationEnum" NOT NULL, 
 	observation_type "ObservationTypeEnum", 
 	curation TEXT, 
 	repository_name TEXT, 
@@ -303,11 +302,10 @@ CREATE TABLE "RearrangedSequence" (
 	deposited_version TEXT, 
 	sequence_start INTEGER, 
 	sequence_end INTEGER, 
-	PRIMARY KEY (id)
+	PRIMARY KEY (derivation)
 );COMMENT ON TABLE "RearrangedSequence" IS 'None';COMMENT ON COLUMN "RearrangedSequence".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "RearrangedSequence".derivation IS 'The class of nucleic acid that was used as primary starting material';COMMENT ON COLUMN "RearrangedSequence".observation_type IS 'The type of observation from which this sequence was drawn, such as direct sequencing or  inference from repertoire sequencing data.';COMMENT ON COLUMN "RearrangedSequence".repository_ref IS 'Queryable id or accession number of the sequence published by the repository';COMMENT ON COLUMN "RearrangedSequence".deposited_version IS 'Version number of the sequence within the repository';
 CREATE TABLE "UnrearrangedSequence" (
-	id SERIAL NOT NULL, 
-	sequence_id TEXT, 
+	sequence_id TEXT NOT NULL, 
 	sequence TEXT, 
 	curation TEXT, 
 	repository_name TEXT, 
@@ -317,7 +315,7 @@ CREATE TABLE "UnrearrangedSequence" (
 	gff_start INTEGER, 
 	gff_end INTEGER, 
 	strand "StrandEnum", 
-	PRIMARY KEY (id)
+	PRIMARY KEY (sequence_id)
 );COMMENT ON TABLE "UnrearrangedSequence" IS 'None';COMMENT ON COLUMN "UnrearrangedSequence".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "UnrearrangedSequence".repository_ref IS 'Queryable id or accession number of the sequence published by the repository';COMMENT ON COLUMN "UnrearrangedSequence".patch_no IS 'Genome assembly patch number in which this gene was determined';COMMENT ON COLUMN "UnrearrangedSequence".gff_seqid IS 'Sequence (from the assembly) of a window including the gene and preferably also the promoter region.';COMMENT ON COLUMN "UnrearrangedSequence".gff_start IS 'Genomic co-ordinates of the start of the sequence of interest described in this record in  Ensemble GFF version 3.';COMMENT ON COLUMN "UnrearrangedSequence".gff_end IS 'Genomic co-ordinates of the end of the sequence of interest described in this record in  Ensemble GFF version 3.';COMMENT ON COLUMN "UnrearrangedSequence".strand IS 'sense (+ or -)';
 CREATE TABLE "SequenceDelineationV" (
 	id SERIAL NOT NULL, 
@@ -1149,17 +1147,17 @@ CREATE TABLE "AlleleDescription_v_gene_delineations" (
 );COMMENT ON TABLE "AlleleDescription_v_gene_delineations" IS 'None';COMMENT ON COLUMN "AlleleDescription_v_gene_delineations"."AlleleDescription_id" IS 'Autocreated FK slot';
 CREATE TABLE "AlleleDescription_unrearranged_support" (
 	"AlleleDescription_id" INTEGER, 
-	unrearranged_support_id INTEGER, 
-	PRIMARY KEY ("AlleleDescription_id", unrearranged_support_id), 
+	unrearranged_support_sequence_id TEXT, 
+	PRIMARY KEY ("AlleleDescription_id", unrearranged_support_sequence_id), 
 	FOREIGN KEY("AlleleDescription_id") REFERENCES "AlleleDescription" (id), 
-	FOREIGN KEY(unrearranged_support_id) REFERENCES "UnrearrangedSequence" (id)
+	FOREIGN KEY(unrearranged_support_sequence_id) REFERENCES "UnrearrangedSequence" (sequence_id)
 );COMMENT ON TABLE "AlleleDescription_unrearranged_support" IS 'None';COMMENT ON COLUMN "AlleleDescription_unrearranged_support"."AlleleDescription_id" IS 'Autocreated FK slot';
 CREATE TABLE "AlleleDescription_rearranged_support" (
 	"AlleleDescription_id" INTEGER, 
-	rearranged_support_id INTEGER, 
-	PRIMARY KEY ("AlleleDescription_id", rearranged_support_id), 
+	rearranged_support_derivation "DerivationEnum", 
+	PRIMARY KEY ("AlleleDescription_id", rearranged_support_derivation), 
 	FOREIGN KEY("AlleleDescription_id") REFERENCES "AlleleDescription" (id), 
-	FOREIGN KEY(rearranged_support_id) REFERENCES "RearrangedSequence" (id)
+	FOREIGN KEY(rearranged_support_derivation) REFERENCES "RearrangedSequence" (derivation)
 );COMMENT ON TABLE "AlleleDescription_rearranged_support" IS 'None';COMMENT ON COLUMN "AlleleDescription_rearranged_support"."AlleleDescription_id" IS 'Autocreated FK slot';
 CREATE TABLE "AlleleDescription_paralogs" (
 	"AlleleDescription_id" INTEGER, 
@@ -1399,13 +1397,12 @@ CREATE TABLE "Participant" (
 	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
 );COMMENT ON TABLE "Participant" IS 'A participant in an investigation.';COMMENT ON COLUMN "Participant".study_arm IS 'The study arm that a participant is a member of';COMMENT ON COLUMN "Participant".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Participant".sex IS 'Biological sex of subject';COMMENT ON COLUMN "Participant".age IS 'The age of a participant relative to age_event';COMMENT ON COLUMN "Participant".age_unit IS 'Unit of age range';COMMENT ON COLUMN "Participant".age_event IS 'Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.';COMMENT ON COLUMN "Participant".race IS 'Racial group of subject (as defined by NIH)';COMMENT ON COLUMN "Participant".ethnicity IS 'Ethnic group of subject (defined as cultural/language-based membership)';COMMENT ON COLUMN "Participant".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "Participant".strain IS 'The strain of the participant (non-human study participants)';COMMENT ON COLUMN "Participant".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Participant".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Participant".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Repertoire" (
-	id SERIAL NOT NULL, 
-	repertoire_id TEXT, 
+	repertoire_id TEXT NOT NULL, 
 	repertoire_name TEXT, 
 	repertoire_description TEXT, 
 	study_id INTEGER, 
 	subject_id INTEGER, 
-	PRIMARY KEY (id), 
+	PRIMARY KEY (repertoire_id), 
 	FOREIGN KEY(study_id) REFERENCES "Study" (id), 
 	FOREIGN KEY(subject_id) REFERENCES "Subject" (id)
 );COMMENT ON TABLE "Repertoire" IS 'None';COMMENT ON COLUMN "Repertoire".repertoire_name IS 'Short generic display name for the repertoire';COMMENT ON COLUMN "Repertoire".study_id IS 'Study object';COMMENT ON COLUMN "Repertoire".subject_id IS 'Subject object';
@@ -1449,19 +1446,19 @@ CREATE TABLE "Investigation_participants" (
 	FOREIGN KEY(participants_akc_id) REFERENCES "Participant" (akc_id)
 );COMMENT ON TABLE "Investigation_participants" IS 'None';COMMENT ON COLUMN "Investigation_participants"."Investigation_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Investigation_participants".participants_akc_id IS 'The participants involved with the investigation';
 CREATE TABLE "Repertoire_sample" (
-	"Repertoire_id" INTEGER, 
+	"Repertoire_repertoire_id" TEXT, 
 	sample_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", sample_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	PRIMARY KEY ("Repertoire_repertoire_id", sample_id), 
+	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id), 
 	FOREIGN KEY(sample_id) REFERENCES "SampleProcessing" (id)
-);COMMENT ON TABLE "Repertoire_sample" IS 'None';COMMENT ON COLUMN "Repertoire_sample"."Repertoire_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Repertoire_sample".sample_id IS 'List of Sample Processing objects';
+);COMMENT ON TABLE "Repertoire_sample" IS 'None';COMMENT ON COLUMN "Repertoire_sample"."Repertoire_repertoire_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Repertoire_sample".sample_id IS 'List of Sample Processing objects';
 CREATE TABLE "Repertoire_data_processing" (
-	"Repertoire_id" INTEGER, 
+	"Repertoire_repertoire_id" TEXT, 
 	data_processing_id INTEGER, 
-	PRIMARY KEY ("Repertoire_id", data_processing_id), 
-	FOREIGN KEY("Repertoire_id") REFERENCES "Repertoire" (id), 
+	PRIMARY KEY ("Repertoire_repertoire_id", data_processing_id), 
+	FOREIGN KEY("Repertoire_repertoire_id") REFERENCES "Repertoire" (repertoire_id), 
 	FOREIGN KEY(data_processing_id) REFERENCES "DataProcessing" (id)
-);COMMENT ON TABLE "Repertoire_data_processing" IS 'None';COMMENT ON COLUMN "Repertoire_data_processing"."Repertoire_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Repertoire_data_processing".data_processing_id IS 'List of Data Processing objects';
+);COMMENT ON TABLE "Repertoire_data_processing" IS 'None';COMMENT ON COLUMN "Repertoire_data_processing"."Repertoire_repertoire_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Repertoire_data_processing".data_processing_id IS 'List of Data Processing objects';
 CREATE TABLE "ImmuneExposure" (
 	exposure_material "ExposureMaterialOntology", 
 	disease TEXT, 

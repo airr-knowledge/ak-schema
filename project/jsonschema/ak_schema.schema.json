@@ -1553,7 +1553,7 @@
                 "unrearranged_support": {
                     "description": "",
                     "items": {
-                        "$ref": "#/$defs/UnrearrangedSequence"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -7642,10 +7642,7 @@
                     ]
                 },
                 "repertoire_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "repertoire_name": {
                     "description": "Short generic display name for the repertoire",
@@ -7687,6 +7684,9 @@
                     "description": "Subject object"
                 }
             },
+            "required": [
+                "repertoire_id"
+            ],
             "title": "Repertoire",
             "type": "object"
         },
@@ -9764,16 +9764,16 @@
                     ]
                 },
                 "sequence_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "strand": {
                     "$ref": "#/$defs/StrandEnum",
                     "description": "sense (+ or -)"
                 }
             },
+            "required": [
+                "sequence_id"
+            ],
             "title": "UnrearrangedSequence",
             "type": "object"
         }
