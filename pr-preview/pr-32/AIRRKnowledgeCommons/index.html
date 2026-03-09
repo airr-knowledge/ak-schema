@@ -389,12 +389,12 @@
     click StudyEvent href "../StudyEvent"
 
 
-      AIRRKnowledgeCommons : tcr_complex
+      AIRRKnowledgeCommons : tcr_complexes
 
 
 
 
-    AIRRKnowledgeCommons --&gt; "*" TCRpMHCComplex : tcr_complex
+    AIRRKnowledgeCommons --&gt; "*" TCRpMHCComplex : tcr_complexes
     click TCRpMHCComplex href "../TCRpMHCComplex"
 
 
@@ -554,7 +554,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td><a href="../tcr_complexes/">tcr_complexes</a></td>
 <td>* <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
 <td></td>
 <td>direct</td>
@@ -792,12 +792,12 @@ attributes:
     range: Epitope
     multivalued: true
     inlined: true
-  tcr_complex:
-    name: tcr_complex
+  tcr_complexes:
+    name: tcr_complexes
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
+    - TCellReceptorEpitopeBindingAssay
     range: TCRpMHCComplex
     multivalued: true
     inlined: true
@@ -1054,14 +1054,14 @@ attributes:
     range: Epitope
     multivalued: true
     inlined: true
-  tcr_complex:
-    name: tcr_complex
+  tcr_complexes:
+    name: tcr_complexes
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: tcr_complex
+    alias: tcr_complexes
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
+    - TCellReceptorEpitopeBindingAssay
     range: TCRpMHCComplex
     multivalued: true
     inlined: true
