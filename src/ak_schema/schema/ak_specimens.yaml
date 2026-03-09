@@ -73,6 +73,7 @@ classes:
     slots:
       - epitope
       - tcell_receptors
+      - tcr_complexes
 
   AntibodyAntigenBindingAssay:
     is_a: Assay
@@ -106,6 +107,10 @@ slots:
   tcell_receptors:
     description: The T cell receptors being measured
     range: TCellReceptor
+    multivalued: true
+  tcr_complexes:
+    description: The T cell receptor/epitope/mhc complex being measured
+    range: TCRpMHCComplex
     multivalued: true
   tcell_chains:
     description: The T cell receptor chains being measured

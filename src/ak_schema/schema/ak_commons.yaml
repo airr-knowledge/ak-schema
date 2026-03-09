@@ -97,7 +97,7 @@ classes:
         range: Epitope
         multivalued: true
         inlined: true
-      tcr_complex:
+      tcr_complexes:
         range: TCRpMHCComplex
         multivalued: true
         inlined: true
