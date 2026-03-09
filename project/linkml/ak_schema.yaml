@@ -1586,12 +1586,6 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TCRpMHCComplex
     multivalued: true
-  tcell_chains:
-    name: tcell_chains
-    description: The T cell receptor chains being measured
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Chain
-    multivalued: true
   measurement_value:
     name: measurement_value
     description: The measurement result value
@@ -6039,8 +6033,7 @@ classes:
     - SequencingRun
     slots:
     - repertoire_id
-    - tcell_receptors
-    - tcell_chains
+    - tcr_complexes
     slot_usage:
       sequencing_files:
         name: sequencing_files
@@ -6054,7 +6047,6 @@ classes:
     - TCellReceptorEpitopeSpecificityMeasurement
     slots:
     - epitope
-    - tcell_receptors
     - tcr_complexes
     class_uri: OBI:1110037
   AntibodyAntigenBindingAssay:

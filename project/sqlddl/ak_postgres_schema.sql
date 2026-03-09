@@ -1653,20 +1653,13 @@ CREATE TABLE "Assay_specimen_processing" (
 	FOREIGN KEY("Assay_akc_id") REFERENCES "Assay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );COMMENT ON TABLE "Assay_specimen_processing" IS 'None';COMMENT ON COLUMN "Assay_specimen_processing"."Assay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Assay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
-CREATE TABLE "AIRRSequencingAssay_tcell_receptors" (
+CREATE TABLE "AIRRSequencingAssay_tcr_complexes" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
-	tcell_receptors_akc_id TEXT, 
-	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_receptors_akc_id), 
+	tcr_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcr_complexes_akc_id), 
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
-);COMMENT ON TABLE "AIRRSequencingAssay_tcell_receptors" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_receptors"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_receptors".tcell_receptors_akc_id IS 'The T cell receptors being measured';
-CREATE TABLE "AIRRSequencingAssay_tcell_chains" (
-	"AIRRSequencingAssay_akc_id" TEXT, 
-	tcell_chains_akc_id TEXT, 
-	PRIMARY KEY ("AIRRSequencingAssay_akc_id", tcell_chains_akc_id), 
-	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
-	FOREIGN KEY(tcell_chains_akc_id) REFERENCES "Chain" (akc_id)
-);COMMENT ON TABLE "AIRRSequencingAssay_tcell_chains" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcell_chains".tcell_chains_akc_id IS 'The T cell receptor chains being measured';
+	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_tcr_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcr_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcr_complexes".tcr_complexes_akc_id IS 'The T cell receptor/epitope/mhc complex being measured';
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -1674,13 +1667,6 @@ CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
 );COMMENT ON TABLE "AIRRSequencingAssay_specimen_processing" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_specimen_processing".specimen_processing_akc_id IS 'A series of zero or more specimen processing steps that precede an assay';
-CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" (
-	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
-	tcell_receptors_akc_id TEXT, 
-	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", tcell_receptors_akc_id), 
-	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
-	FOREIGN KEY(tcell_receptors_akc_id) REFERENCES "TCellReceptor" (akc_id)
-);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcell_receptors" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcell_receptors".tcell_receptors_akc_id IS 'The T cell receptors being measured';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	tcr_complexes_akc_id TEXT, 

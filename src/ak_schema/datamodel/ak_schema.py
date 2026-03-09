@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-09T18:38:29
+# Generation date: 2026-03-09T20:06:16
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1525,8 +1525,7 @@ class AIRRSequencingAssay(Assay):
 
     akc_id: Union[str, AIRRSequencingAssayAkcId] = None
     repertoire_id: Optional[str] = None
-    tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
-    tcell_chains: Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]] = empty_list()
+    tcr_complexes: Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]] = empty_list()
     sequencing_files: Optional[Union[str, AIRRSequencingDataAkcId]] = None
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
@@ -1544,13 +1543,9 @@ class AIRRSequencingAssay(Assay):
         if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
             self.repertoire_id = str(self.repertoire_id)
 
-        if not isinstance(self.tcell_receptors, list):
-            self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
-        self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
-
-        if not isinstance(self.tcell_chains, list):
-            self.tcell_chains = [self.tcell_chains] if self.tcell_chains is not None else []
-        self.tcell_chains = [v if isinstance(v, ChainAkcId) else ChainAkcId(v) for v in self.tcell_chains]
+        if not isinstance(self.tcr_complexes, list):
+            self.tcr_complexes = [self.tcr_complexes] if self.tcr_complexes is not None else []
+        self.tcr_complexes = [v if isinstance(v, TCRpMHCComplexAkcId) else TCRpMHCComplexAkcId(v) for v in self.tcr_complexes]
 
         if self.sequencing_files is not None and not isinstance(self.sequencing_files, AIRRSequencingDataAkcId):
             self.sequencing_files = AIRRSequencingDataAkcId(self.sequencing_files)
@@ -1588,7 +1583,6 @@ class TCellReceptorEpitopeBindingAssay(Assay):
 
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
-    tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
     tcr_complexes: Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]] = empty_list()
     measurement_category: Optional[Union[str, "CategoricalSpecificityEnum"]] = None
 
@@ -1600,10 +1594,6 @@ class TCellReceptorEpitopeBindingAssay(Assay):
 
         if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
             self.epitope = EpitopeAkcId(self.epitope)
-
-        if not isinstance(self.tcell_receptors, list):
-            self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
-        self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
 
         if not isinstance(self.tcr_complexes, list):
             self.tcr_complexes = [self.tcr_complexes] if self.tcr_complexes is not None else []
@@ -6483,9 +6473,6 @@ slots.tcell_receptors = Slot(uri=AK_SCHEMA.tcell_receptors, name="tcell_receptor
 
 slots.tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, name="tcr_complexes", curie=AK_SCHEMA.curie('tcr_complexes'),
                    model_uri=AK_SCHEMA.tcr_complexes, domain=None, range=Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]])
-
-slots.tcell_chains = Slot(uri=AK_SCHEMA.tcell_chains, name="tcell_chains", curie=AK_SCHEMA.curie('tcell_chains'),
-                   model_uri=AK_SCHEMA.tcell_chains, domain=None, range=Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]])
 
 slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measurement_value", curie=AK_SCHEMA.curie('measurement_value'),
                    model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[Decimal])

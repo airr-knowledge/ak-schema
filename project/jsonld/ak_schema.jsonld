@@ -2630,11 +2630,6 @@
       "description": "The T cell receptors being measured",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptors",
-      "owner": "TCellReceptorEpitopeBindingAssay",
-      "domain_of": [
-        "AIRRSequencingAssay",
-        "TCellReceptorEpitopeBindingAssay"
-      ],
       "range": "TCellReceptor",
       "multivalued": true,
       "@type": "SlotDefinition"
@@ -2647,23 +2642,10 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complexes",
       "owner": "TCellReceptorEpitopeBindingAssay",
       "domain_of": [
+        "AIRRSequencingAssay",
         "TCellReceptorEpitopeBindingAssay"
       ],
       "range": "TCRpMHCComplex",
-      "multivalued": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "tcell_chains",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
-      "description": "The T cell receptor chains being measured",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
-      "owner": "AIRRSequencingAssay",
-      "domain_of": [
-        "AIRRSequencingAssay"
-      ],
-      "range": "Chain",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -12934,8 +12916,7 @@
         "assay_type",
         "has_specified_output",
         "repertoire_id",
-        "tcell_receptors",
-        "tcell_chains",
+        "tcr_complexes",
         "AIRRSequencingAssay_sequencing_files",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
@@ -12969,7 +12950,6 @@
         "assay_type",
         "has_specified_output",
         "epitope",
-        "tcell_receptors",
         "tcr_complexes",
         "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
       ],
@@ -14776,9 +14756,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-03-09T18:38:24",
-  "source_file_size": 211533,
-  "generation_date": "2026-03-09T18:38:26",
+  "source_file_date": "2026-03-09T20:06:11",
+  "source_file_size": 211292,
+  "generation_date": "2026-03-09T20:06:13",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

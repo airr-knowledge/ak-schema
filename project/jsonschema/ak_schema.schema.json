@@ -596,18 +596,8 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -738,18 +728,8 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -9400,16 +9380,6 @@
                         "null"
                     ]
                 },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
                 "tcr_complexes": {
                     "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
@@ -9489,16 +9459,6 @@
                 },
                 "specimen_processing": {
                     "description": "A series of zero or more specimen processing steps that precede an assay",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
                     "items": {
                         "type": "string"
                     },
