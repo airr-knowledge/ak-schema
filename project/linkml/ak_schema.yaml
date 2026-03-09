@@ -1580,11 +1580,11 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TCellReceptor
     multivalued: true
-  tcell_chains:
-    name: tcell_chains
-    description: The T cell receptor chains being measured
+  tcr_complexes:
+    name: tcr_complexes
+    description: The T cell receptor/epitope/mhc complex being measured
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: Chain
+    range: TCRpMHCComplex
     multivalued: true
   measurement_value:
     name: measurement_value
@@ -5629,11 +5629,6 @@ classes:
     description: An object directly converted from the AIRR schema.
     from_schema: https://github.com/airr-knowledge/ak-schema
     abstract: true
-  AIRRStandards_v1p5:
-    name: AIRRStandards_v1p5
-    description: An object directly converted from AIRR schema version 1.5.
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    abstract: true
   AIRRStandards_v1p6:
     name: AIRRStandards_v1p6
     description: An object directly converted from AIRR schema version 1.6.
@@ -5860,8 +5855,8 @@ classes:
         range: Epitope
         multivalued: true
         inlined: true
-      tcr_complex:
-        name: tcr_complex
+      tcr_complexes:
+        name: tcr_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: TCRpMHCComplex
         multivalued: true
@@ -6038,8 +6033,7 @@ classes:
     - SequencingRun
     slots:
     - repertoire_id
-    - tcell_receptors
-    - tcell_chains
+    - tcr_complexes
     slot_usage:
       sequencing_files:
         name: sequencing_files
@@ -6053,7 +6047,7 @@ classes:
     - TCellReceptorEpitopeSpecificityMeasurement
     slots:
     - epitope
-    - tcell_receptors
+    - tcr_complexes
     class_uri: OBI:1110037
   AntibodyAntigenBindingAssay:
     name: AntibodyAntigenBindingAssay
@@ -6377,6 +6371,11 @@ classes:
     - gff_start
     - gff_end
     - strand
+    slot_usage:
+      sequence_id:
+        name: sequence_id
+        identifier: true
+        required: true
   SequenceDelineationV:
     name: SequenceDelineationV
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6542,6 +6541,11 @@ classes:
     - allele_designation
     - gene
     - reference_set_ref
+    slot_usage:
+      allele_designation:
+        name: allele_designation
+        identifier: true
+        required: true
   SubjectGenotype:
     name: SubjectGenotype
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6712,6 +6716,11 @@ classes:
     - subject
     - sample
     - data_processing
+    slot_usage:
+      repertoire_id:
+        name: repertoire_id
+        identifier: true
+        required: true
   RepertoireFilter:
     name: RepertoireFilter
     from_schema: https://github.com/airr-knowledge/ak-schema

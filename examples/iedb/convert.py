@@ -394,6 +394,8 @@ def convert(tcell_path, tcr_path, yaml_path):
             container.chains[chain.akc_id] = chain
         for tcell_receptor in tcell_receptors:
             container.ab_tcell_receptors[tcell_receptor.akc_id] = tcell_receptor
+            tcr_complex = TCRpMHCComplex(akc_id(), tcr=tcell_receptor.akc_id, epitope=epitope.akc_id)
+            container.tcr_complexes[tcr_complex.akc_id] = tcr_complex
             
         #break
         row_cnt += 1

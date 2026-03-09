@@ -44,6 +44,10 @@ classes:
       - gff_start
       - gff_end
       - strand
+    slot_usage:
+      sequence_id:
+        identifier: true
+        required: true
   SequenceDelineationV:
     is_a: AIRRStandards
     slots:
@@ -187,6 +191,10 @@ classes:
       - allele_designation
       - gene
       - reference_set_ref
+    slot_usage:
+      allele_designation:
+        identifier: true
+        required: true
   SubjectGenotype:
     is_a: AIRRStandards
     slots:
@@ -333,6 +341,10 @@ classes:
       - subject
       - sample
       - data_processing
+    slot_usage:
+      repertoire_id:
+        identifier: true
+        required: true
   RepertoireFilter:
     is_a: AIRRStandards
     slots:

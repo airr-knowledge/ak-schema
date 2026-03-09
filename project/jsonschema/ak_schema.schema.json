@@ -427,7 +427,7 @@
                         "null"
                     ]
                 },
-                "tcr_complex": {
+                "tcr_complexes": {
                     "additionalProperties": {
                         "anyOf": [
                             {
@@ -596,18 +596,8 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -738,18 +728,8 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -1553,7 +1533,7 @@
                 "unrearranged_support": {
                     "description": "",
                     "items": {
-                        "$ref": "#/$defs/UnrearrangedSequence"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -5033,10 +5013,7 @@
             "description": "",
             "properties": {
                 "allele_designation": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "gene": {
                     "$ref": "#/$defs/GeneOntology",
@@ -5050,6 +5027,9 @@
                     ]
                 }
             },
+            "required": [
+                "allele_designation"
+            ],
             "title": "MHCAllele",
             "type": "object"
         },
@@ -5060,7 +5040,7 @@
                 "mhc_alleles": {
                     "description": "List of MHC alleles of the indicated mhc_class identified in an individual",
                     "items": {
-                        "$ref": "#/$defs/MHCAllele"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -7642,10 +7622,7 @@
                     ]
                 },
                 "repertoire_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "repertoire_name": {
                     "description": "Short generic display name for the repertoire",
@@ -7687,6 +7664,9 @@
                     "description": "Subject object"
                 }
             },
+            "required": [
+                "repertoire_id"
+            ],
             "title": "Repertoire",
             "type": "object"
         },
@@ -9285,15 +9265,11 @@
                     ]
                 },
                 "mhc": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/MHCAllele"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Major histocompatibility complex"
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "tcr": {
                     "description": "T cell receptor",
@@ -9325,15 +9301,11 @@
                     ]
                 },
                 "mhc": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/MHCAllele"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Major histocompatibility complex"
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "tcr": {
                     "description": "T cell receptor",
@@ -9408,8 +9380,8 @@
                         "null"
                     ]
                 },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -9495,8 +9467,8 @@
                         "null"
                     ]
                 },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -9764,16 +9736,16 @@
                     ]
                 },
                 "sequence_id": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "strand": {
                     "$ref": "#/$defs/StrandEnum",
                     "description": "sense (+ or -)"
                 }
             },
+            "required": [
+                "sequence_id"
+            ],
             "title": "UnrearrangedSequence",
             "type": "object"
         }
@@ -10156,7 +10128,7 @@
                 "null"
             ]
         },
-        "tcr_complex": {
+        "tcr_complexes": {
             "additionalProperties": {
                 "anyOf": [
                     {

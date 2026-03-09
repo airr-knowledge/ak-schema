@@ -2630,26 +2630,22 @@
       "description": "The T cell receptors being measured",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_receptors",
-      "owner": "TCellReceptorEpitopeBindingAssay",
-      "domain_of": [
-        "AIRRSequencingAssay",
-        "TCellReceptorEpitopeBindingAssay"
-      ],
       "range": "TCellReceptor",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
-      "name": "tcell_chains",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
-      "description": "The T cell receptor chains being measured",
+      "name": "tcr_complexes",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complexes",
+      "description": "The T cell receptor/epitope/mhc complex being measured",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcell_chains",
-      "owner": "AIRRSequencingAssay",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complexes",
+      "owner": "TCellReceptorEpitopeBindingAssay",
       "domain_of": [
-        "AIRRSequencingAssay"
+        "AIRRSequencingAssay",
+        "TCellReceptorEpitopeBindingAssay"
       ],
-      "range": "Chain",
+      "range": "TCRpMHCComplex",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -3127,7 +3123,6 @@
         "TCRpMHCComplex"
       ],
       "range": "MHCAllele",
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -4843,7 +4838,6 @@
       ],
       "range": "UnrearrangedSequence",
       "multivalued": true,
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -5338,7 +5332,6 @@
       ],
       "range": "MHCAllele",
       "multivalued": true,
-      "inlined": true,
       "@type": "SlotDefinition"
     },
     {
@@ -11682,10 +11675,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "aIRRKnowledgeCommons__tcr_complex",
+      "name": "aIRRKnowledgeCommons__tcr_complexes",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complex",
-      "alias": "tcr_complex",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complexes",
+      "alias": "tcr_complexes",
       "owner": "AIRRKnowledgeCommons",
       "domain_of": [
         "AIRRKnowledgeCommons"
@@ -12057,6 +12050,79 @@
       "usage_slot_name": "measurement_category",
       "range": "CategoricalSpecificityEnum",
       "@type": "SlotDefinition"
+    },
+    {
+      "name": "UnrearrangedSequence_sequence_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_id",
+      "domain": "UnrearrangedSequence",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
+      "identifier": true,
+      "alias": "sequence_id",
+      "owner": "UnrearrangedSequence",
+      "domain_of": [
+        "UnrearrangedSequence"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "MHCAllele_allele_designation",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/allele_designation",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "allele_designation",
+      "domain": "MHCAllele",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/allele_designation",
+      "identifier": true,
+      "alias": "allele_designation",
+      "owner": "MHCAllele",
+      "domain_of": [
+        "MHCAllele"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "allele_designation",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Repertoire_repertoire_id",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "repertoire_id",
+      "domain": "Repertoire",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/repertoire_id",
+      "identifier": true,
+      "alias": "repertoire_id",
+      "owner": "Repertoire",
+      "domain_of": [
+        "Repertoire"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "repertoire_id",
+      "range": "string",
+      "required": true,
+      "@type": "SlotDefinition"
     }
   ],
   "classes": [
@@ -12094,16 +12160,6 @@
       "abstract": true,
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandards",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "AIRRStandardsV1p5",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandardsV1p5",
-      "description": "An object directly converted from AIRR schema version 1.5.",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "abstract": true,
-      "slot_usage": {},
-      "class_uri": "https://github.com/airr-knowledge/ak-schema/AIRRStandardsV1p5",
       "@type": "ClassDefinition"
     },
     {
@@ -12304,7 +12360,7 @@
         "aIRRKnowledgeCommons__gd_tcell_receptors",
         "aIRRKnowledgeCommons__bcell_receptors",
         "aIRRKnowledgeCommons__epitopes",
-        "aIRRKnowledgeCommons__tcr_complex"
+        "aIRRKnowledgeCommons__tcr_complexes"
       ],
       "slot_usage": {},
       "attributes": [
@@ -12485,7 +12541,7 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "tcr_complex",
+          "name": "tcr_complexes",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "TCRpMHCComplex",
           "multivalued": true,
@@ -12860,8 +12916,7 @@
         "assay_type",
         "has_specified_output",
         "repertoire_id",
-        "tcell_receptors",
-        "tcell_chains",
+        "tcr_complexes",
         "AIRRSequencingAssay_sequencing_files",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
@@ -12895,7 +12950,7 @@
         "assay_type",
         "has_specified_output",
         "epitope",
-        "tcell_receptors",
+        "tcr_complexes",
         "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
       ],
       "slot_usage": {},
@@ -13603,7 +13658,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "sequence_id",
+        "UnrearrangedSequence_sequence_id",
         "sequence",
         "curation",
         "repository_name",
@@ -13841,7 +13896,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "allele_designation",
+        "MHCAllele_allele_designation",
         "gene",
         "reference_set_ref"
       ],
@@ -14079,7 +14134,7 @@
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "is_a": "AIRRStandards",
       "slots": [
-        "repertoire_id",
+        "Repertoire_repertoire_id",
         "repertoire_name",
         "repertoire_description",
         "study",
@@ -14701,9 +14756,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-02-24T03:50:54",
-  "source_file_size": 211149,
-  "generation_date": "2026-02-24T03:50:56",
+  "source_file_date": "2026-03-09T20:06:11",
+  "source_file_size": 211292,
+  "generation_date": "2026-03-09T20:06:13",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

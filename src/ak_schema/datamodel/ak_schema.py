@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-02-24T03:50:59
+# Generation date: 2026-03-09T20:06:16
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -456,6 +456,18 @@ class ChainSimilarityAkcId(SimilarityCalculationAkcId):
     pass
 
 
+class UnrearrangedSequenceSequenceId(extended_str):
+    pass
+
+
+class MHCAlleleAlleleDesignation(extended_str):
+    pass
+
+
+class RepertoireRepertoireId(extended_str):
+    pass
+
+
 class QueryAlphaBetaTCRAkcId(TCellReceptorAkcId):
     pass
 
@@ -520,18 +532,6 @@ class AIRRStandards(YAMLRoot):
     class_class_curie: ClassVar[str] = "ak_schema:AIRRStandards"
     class_name: ClassVar[str] = "AIRRStandards"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandards
-
-
-class AIRRStandardsV1p5(YAMLRoot):
-    """
-    An object directly converted from AIRR schema version 1.5.
-    """
-    _inherited_slots: ClassVar[List[str]] = []
-
-    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AIRRStandardsV1p5"]
-    class_class_curie: ClassVar[str] = "ak_schema:AIRRStandardsV1p5"
-    class_name: ClassVar[str] = "AIRRStandards_v1p5"
-    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AIRRStandardsV1p5
 
 
 class AIRRStandardsV1p6(YAMLRoot):
@@ -828,7 +828,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     gd_tcell_receptors: Optional[Union[Dict[Union[str, GammaDeltaTCRAkcId], Union[dict, "GammaDeltaTCR"]], List[Union[dict, "GammaDeltaTCR"]]]] = empty_dict()
     bcell_receptors: Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, "BCellReceptor"]], List[Union[dict, "BCellReceptor"]]]] = empty_dict()
     epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
-    tcr_complex: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
+    tcr_complexes: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="investigations", slot_type=Investigation, key_name="akc_id", keyed=True)
@@ -877,7 +877,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
 
         self._normalize_inlined_as_dict(slot_name="epitopes", slot_type=Epitope, key_name="akc_id", keyed=True)
 
-        self._normalize_inlined_as_dict(slot_name="tcr_complex", slot_type=TCRpMHCComplex, key_name="akc_id", keyed=True)
+        self._normalize_inlined_as_dict(slot_name="tcr_complexes", slot_type=TCRpMHCComplex, key_name="akc_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -1525,8 +1525,7 @@ class AIRRSequencingAssay(Assay):
 
     akc_id: Union[str, AIRRSequencingAssayAkcId] = None
     repertoire_id: Optional[str] = None
-    tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
-    tcell_chains: Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]] = empty_list()
+    tcr_complexes: Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]] = empty_list()
     sequencing_files: Optional[Union[str, AIRRSequencingDataAkcId]] = None
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
@@ -1544,13 +1543,9 @@ class AIRRSequencingAssay(Assay):
         if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
             self.repertoire_id = str(self.repertoire_id)
 
-        if not isinstance(self.tcell_receptors, list):
-            self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
-        self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
-
-        if not isinstance(self.tcell_chains, list):
-            self.tcell_chains = [self.tcell_chains] if self.tcell_chains is not None else []
-        self.tcell_chains = [v if isinstance(v, ChainAkcId) else ChainAkcId(v) for v in self.tcell_chains]
+        if not isinstance(self.tcr_complexes, list):
+            self.tcr_complexes = [self.tcr_complexes] if self.tcr_complexes is not None else []
+        self.tcr_complexes = [v if isinstance(v, TCRpMHCComplexAkcId) else TCRpMHCComplexAkcId(v) for v in self.tcr_complexes]
 
         if self.sequencing_files is not None and not isinstance(self.sequencing_files, AIRRSequencingDataAkcId):
             self.sequencing_files = AIRRSequencingDataAkcId(self.sequencing_files)
@@ -1588,7 +1583,7 @@ class TCellReceptorEpitopeBindingAssay(Assay):
 
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
-    tcell_receptors: Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]] = empty_list()
+    tcr_complexes: Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]] = empty_list()
     measurement_category: Optional[Union[str, "CategoricalSpecificityEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1600,9 +1595,9 @@ class TCellReceptorEpitopeBindingAssay(Assay):
         if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
             self.epitope = EpitopeAkcId(self.epitope)
 
-        if not isinstance(self.tcell_receptors, list):
-            self.tcell_receptors = [self.tcell_receptors] if self.tcell_receptors is not None else []
-        self.tcell_receptors = [v if isinstance(v, TCellReceptorAkcId) else TCellReceptorAkcId(v) for v in self.tcell_receptors]
+        if not isinstance(self.tcr_complexes, list):
+            self.tcr_complexes = [self.tcr_complexes] if self.tcr_complexes is not None else []
+        self.tcr_complexes = [v if isinstance(v, TCRpMHCComplexAkcId) else TCRpMHCComplexAkcId(v) for v in self.tcr_complexes]
 
         if self.measurement_category is not None and not isinstance(self.measurement_category, CategoricalSpecificityEnum):
             self.measurement_category = CategoricalSpecificityEnum(self.measurement_category)
@@ -2445,7 +2440,7 @@ class TCRpMHCComplex(AKObject):
     akc_id: Union[str, TCRpMHCComplexAkcId] = None
     tcr: Optional[Union[str, TCellReceptorAkcId]] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
-    mhc: Optional[Union[dict, "MHCAllele"]] = None
+    mhc: Optional[Union[str, MHCAlleleAlleleDesignation]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2459,8 +2454,8 @@ class TCRpMHCComplex(AKObject):
         if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
             self.epitope = EpitopeAkcId(self.epitope)
 
-        if self.mhc is not None and not isinstance(self.mhc, MHCAllele):
-            self.mhc = MHCAllele(**as_dict(self.mhc))
+        if self.mhc is not None and not isinstance(self.mhc, MHCAlleleAlleleDesignation):
+            self.mhc = MHCAlleleAlleleDesignation(self.mhc)
 
         super().__post_init__(**kwargs)
 
@@ -2726,7 +2721,7 @@ class UnrearrangedSequence(AIRRStandards):
     class_name: ClassVar[str] = "UnrearrangedSequence"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.UnrearrangedSequence
 
-    sequence_id: Optional[str] = None
+    sequence_id: Union[str, UnrearrangedSequenceSequenceId] = None
     sequence: Optional[str] = None
     curation: Optional[str] = None
     repository_name: Optional[str] = None
@@ -2738,8 +2733,10 @@ class UnrearrangedSequence(AIRRStandards):
     strand: Optional[Union[str, "StrandEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.sequence_id is not None and not isinstance(self.sequence_id, str):
-            self.sequence_id = str(self.sequence_id)
+        if self._is_empty(self.sequence_id):
+            self.MissingRequiredField("sequence_id")
+        if not isinstance(self.sequence_id, UnrearrangedSequenceSequenceId):
+            self.sequence_id = UnrearrangedSequenceSequenceId(self.sequence_id)
 
         if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
@@ -2905,7 +2902,7 @@ class AlleleDescription(AIRRStandards):
     j_rs_end: Optional[int] = None
     j_donor_splice: Optional[int] = None
     v_gene_delineations: Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]] = empty_list()
-    unrearranged_support: Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]] = empty_list()
+    unrearranged_support: Optional[Union[Union[str, UnrearrangedSequenceSequenceId], List[Union[str, UnrearrangedSequenceSequenceId]]]] = empty_list()
     rearranged_support: Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]] = empty_list()
     paralogs: Optional[Union[str, List[str]]] = empty_list()
     curation: Optional[str] = None
@@ -3052,7 +3049,7 @@ class AlleleDescription(AIRRStandards):
 
         if not isinstance(self.unrearranged_support, list):
             self.unrearranged_support = [self.unrearranged_support] if self.unrearranged_support is not None else []
-        self.unrearranged_support = [v if isinstance(v, UnrearrangedSequence) else UnrearrangedSequence(**as_dict(v)) for v in self.unrearranged_support]
+        self.unrearranged_support = [v if isinstance(v, UnrearrangedSequenceSequenceId) else UnrearrangedSequenceSequenceId(v) for v in self.unrearranged_support]
 
         if not isinstance(self.rearranged_support, list):
             self.rearranged_support = [self.rearranged_support] if self.rearranged_support is not None else []
@@ -3329,7 +3326,7 @@ class MHCGenotype(AIRRStandards):
 
     mhc_genotype_id: Optional[str] = None
     mhc_class: Optional[Union[str, "MhcClassEnum"]] = None
-    mhc_alleles: Optional[Union[Union[dict, "MHCAllele"], List[Union[dict, "MHCAllele"]]]] = empty_list()
+    mhc_alleles: Optional[Union[Union[str, MHCAlleleAlleleDesignation], List[Union[str, MHCAlleleAlleleDesignation]]]] = empty_list()
     mhc_genotyping_method: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -3341,7 +3338,7 @@ class MHCGenotype(AIRRStandards):
 
         if not isinstance(self.mhc_alleles, list):
             self.mhc_alleles = [self.mhc_alleles] if self.mhc_alleles is not None else []
-        self.mhc_alleles = [v if isinstance(v, MHCAllele) else MHCAllele(**as_dict(v)) for v in self.mhc_alleles]
+        self.mhc_alleles = [v if isinstance(v, MHCAlleleAlleleDesignation) else MHCAlleleAlleleDesignation(v) for v in self.mhc_alleles]
 
         if self.mhc_genotyping_method is not None and not isinstance(self.mhc_genotyping_method, str):
             self.mhc_genotyping_method = str(self.mhc_genotyping_method)
@@ -3358,13 +3355,15 @@ class MHCAllele(AIRRStandards):
     class_name: ClassVar[str] = "MHCAllele"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.MHCAllele
 
-    allele_designation: Optional[str] = None
+    allele_designation: Union[str, MHCAlleleAlleleDesignation] = None
     gene: Optional[Union[str, "GeneOntology"]] = None
     reference_set_ref: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.allele_designation is not None and not isinstance(self.allele_designation, str):
-            self.allele_designation = str(self.allele_designation)
+        if self._is_empty(self.allele_designation):
+            self.MissingRequiredField("allele_designation")
+        if not isinstance(self.allele_designation, MHCAlleleAlleleDesignation):
+            self.allele_designation = MHCAlleleAlleleDesignation(self.allele_designation)
 
         if self.reference_set_ref is not None and not isinstance(self.reference_set_ref, str):
             self.reference_set_ref = str(self.reference_set_ref)
@@ -3924,7 +3923,7 @@ class Repertoire(AIRRStandards):
     class_name: ClassVar[str] = "Repertoire"
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Repertoire
 
-    repertoire_id: Optional[str] = None
+    repertoire_id: Union[str, RepertoireRepertoireId] = None
     repertoire_name: Optional[str] = None
     repertoire_description: Optional[str] = None
     study: Optional[Union[dict, Study]] = None
@@ -3933,8 +3932,10 @@ class Repertoire(AIRRStandards):
     data_processing: Optional[Union[Union[dict, DataProcessing], List[Union[dict, DataProcessing]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.repertoire_id is not None and not isinstance(self.repertoire_id, str):
-            self.repertoire_id = str(self.repertoire_id)
+        if self._is_empty(self.repertoire_id):
+            self.MissingRequiredField("repertoire_id")
+        if not isinstance(self.repertoire_id, RepertoireRepertoireId):
+            self.repertoire_id = RepertoireRepertoireId(self.repertoire_id)
 
         if self.repertoire_name is not None and not isinstance(self.repertoire_name, str):
             self.repertoire_name = str(self.repertoire_name)
@@ -6470,8 +6471,8 @@ slots.epitope = Slot(uri=AK_SCHEMA.epitope, name="epitope", curie=AK_SCHEMA.curi
 slots.tcell_receptors = Slot(uri=AK_SCHEMA.tcell_receptors, name="tcell_receptors", curie=AK_SCHEMA.curie('tcell_receptors'),
                    model_uri=AK_SCHEMA.tcell_receptors, domain=None, range=Optional[Union[Union[str, TCellReceptorAkcId], List[Union[str, TCellReceptorAkcId]]]])
 
-slots.tcell_chains = Slot(uri=AK_SCHEMA.tcell_chains, name="tcell_chains", curie=AK_SCHEMA.curie('tcell_chains'),
-                   model_uri=AK_SCHEMA.tcell_chains, domain=None, range=Optional[Union[Union[str, ChainAkcId], List[Union[str, ChainAkcId]]]])
+slots.tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, name="tcr_complexes", curie=AK_SCHEMA.curie('tcr_complexes'),
+                   model_uri=AK_SCHEMA.tcr_complexes, domain=None, range=Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]])
 
 slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measurement_value", curie=AK_SCHEMA.curie('measurement_value'),
                    model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[Decimal])
@@ -6579,7 +6580,7 @@ slots.tcr = Slot(uri=AK_SCHEMA.tcr, name="tcr", curie=AK_SCHEMA.curie('tcr'),
                    model_uri=AK_SCHEMA.tcr, domain=None, range=Optional[Union[str, TCellReceptorAkcId]])
 
 slots.mhc = Slot(uri=AK_SCHEMA.mhc, name="mhc", curie=AK_SCHEMA.curie('mhc'),
-                   model_uri=AK_SCHEMA.mhc, domain=None, range=Optional[Union[dict, MHCAllele]])
+                   model_uri=AK_SCHEMA.mhc, domain=None, range=Optional[Union[str, MHCAlleleAlleleDesignation]])
 
 slots.chain_domain = Slot(uri=AK_SCHEMA.chain_domain, name="chain_domain", curie=AK_SCHEMA.curie('chain_domain'),
                    model_uri=AK_SCHEMA.chain_domain, domain=None, range=Optional[Union[str, ChainAkcId]])
@@ -6837,7 +6838,7 @@ slots.v_gene_delineations = Slot(uri=AK_SCHEMA.v_gene_delineations, name="v_gene
                    model_uri=AK_SCHEMA.v_gene_delineations, domain=None, range=Optional[Union[Union[dict, SequenceDelineationV], List[Union[dict, SequenceDelineationV]]]])
 
 slots.unrearranged_support = Slot(uri=AK_SCHEMA.unrearranged_support, name="unrearranged_support", curie=AK_SCHEMA.curie('unrearranged_support'),
-                   model_uri=AK_SCHEMA.unrearranged_support, domain=None, range=Optional[Union[Union[dict, UnrearrangedSequence], List[Union[dict, UnrearrangedSequence]]]])
+                   model_uri=AK_SCHEMA.unrearranged_support, domain=None, range=Optional[Union[Union[str, UnrearrangedSequenceSequenceId], List[Union[str, UnrearrangedSequenceSequenceId]]]])
 
 slots.rearranged_support = Slot(uri=AK_SCHEMA.rearranged_support, name="rearranged_support", curie=AK_SCHEMA.curie('rearranged_support'),
                    model_uri=AK_SCHEMA.rearranged_support, domain=None, range=Optional[Union[Union[dict, RearrangedSequence], List[Union[dict, RearrangedSequence]]]])
@@ -6909,7 +6910,7 @@ slots.mhc_class = Slot(uri=AK_SCHEMA.mhc_class, name="mhc_class", curie=AK_SCHEM
                    model_uri=AK_SCHEMA.mhc_class, domain=None, range=Optional[Union[str, "MhcClassEnum"]])
 
 slots.mhc_alleles = Slot(uri=AK_SCHEMA.mhc_alleles, name="mhc_alleles", curie=AK_SCHEMA.curie('mhc_alleles'),
-                   model_uri=AK_SCHEMA.mhc_alleles, domain=None, range=Optional[Union[Union[dict, MHCAllele], List[Union[dict, MHCAllele]]]])
+                   model_uri=AK_SCHEMA.mhc_alleles, domain=None, range=Optional[Union[Union[str, MHCAlleleAlleleDesignation], List[Union[str, MHCAlleleAlleleDesignation]]]])
 
 slots.mhc_genotyping_method = Slot(uri=AK_SCHEMA.mhc_genotyping_method, name="mhc_genotyping_method", curie=AK_SCHEMA.curie('mhc_genotyping_method'),
                    model_uri=AK_SCHEMA.mhc_genotyping_method, domain=None, range=Optional[str])
@@ -7868,8 +7869,8 @@ slots.aIRRKnowledgeCommons__bcell_receptors = Slot(uri=AK_SCHEMA.bcell_receptors
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
 
-slots.aIRRKnowledgeCommons__tcr_complex = Slot(uri=AK_SCHEMA.tcr_complex, name="aIRRKnowledgeCommons__tcr_complex", curie=AK_SCHEMA.curie('tcr_complex'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcr_complex, domain=None, range=Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, TCRpMHCComplex]], List[Union[dict, TCRpMHCComplex]]]])
+slots.aIRRKnowledgeCommons__tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, name="aIRRKnowledgeCommons__tcr_complexes", curie=AK_SCHEMA.curie('tcr_complexes'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcr_complexes, domain=None, range=Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, TCRpMHCComplex]], List[Union[dict, TCRpMHCComplex]]]])
 
 slots.queryObject__tcr = Slot(uri=AK_SCHEMA.tcr, name="queryObject__tcr", curie=AK_SCHEMA.curie('tcr'),
                    model_uri=AK_SCHEMA.queryObject__tcr, domain=None, range=Optional[Union[dict, QueryTCR]])
@@ -7939,3 +7940,12 @@ slots.AIRRSequencingAssay_sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])
+
+slots.UnrearrangedSequence_sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="UnrearrangedSequence_sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
+                   model_uri=AK_SCHEMA.UnrearrangedSequence_sequence_id, domain=UnrearrangedSequence, range=Union[str, UnrearrangedSequenceSequenceId])
+
+slots.MHCAllele_allele_designation = Slot(uri=AK_SCHEMA.allele_designation, name="MHCAllele_allele_designation", curie=AK_SCHEMA.curie('allele_designation'),
+                   model_uri=AK_SCHEMA.MHCAllele_allele_designation, domain=MHCAllele, range=Union[str, MHCAlleleAlleleDesignation])
+
+slots.Repertoire_repertoire_id = Slot(uri=AK_SCHEMA.repertoire_id, name="Repertoire_repertoire_id", curie=AK_SCHEMA.curie('repertoire_id'),
+                   model_uri=AK_SCHEMA.Repertoire_repertoire_id, domain=Repertoire, range=Union[str, RepertoireRepertoireId])
