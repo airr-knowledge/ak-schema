@@ -191,6 +191,10 @@ classes:
       - allele_designation
       - gene
       - reference_set_ref
+    slot_usage:
+      allele_designation:
+        identifier: true
+        required: true
   SubjectGenotype:
     is_a: AIRRStandards
     slots:
