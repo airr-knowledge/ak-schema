@@ -427,7 +427,7 @@
                         "null"
                     ]
                 },
-                "tcr_complex": {
+                "tcr_complexes": {
                     "additionalProperties": {
                         "anyOf": [
                             {
@@ -9418,6 +9418,16 @@
                         "null"
                     ]
                 },
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "type": {
                     "enum": [
                         "TCellReceptorEpitopeBindingAssay"
@@ -9497,6 +9507,16 @@
                 },
                 "tcell_receptors": {
                     "description": "The T cell receptors being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -10156,7 +10176,7 @@
                 "null"
             ]
         },
-        "tcr_complex": {
+        "tcr_complexes": {
             "additionalProperties": {
                 "anyOf": [
                     {

@@ -1580,6 +1580,12 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TCellReceptor
     multivalued: true
+  tcr_complexes:
+    name: tcr_complexes
+    description: The T cell receptor/epitope/mhc complex being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TCRpMHCComplex
+    multivalued: true
   tcell_chains:
     name: tcell_chains
     description: The T cell receptor chains being measured
@@ -5860,8 +5866,8 @@ classes:
         range: Epitope
         multivalued: true
         inlined: true
-      tcr_complex:
-        name: tcr_complex
+      tcr_complexes:
+        name: tcr_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: TCRpMHCComplex
         multivalued: true
@@ -6054,6 +6060,7 @@ classes:
     slots:
     - epitope
     - tcell_receptors
+    - tcr_complexes
     class_uri: OBI:1110037
   AntibodyAntigenBindingAssay:
     name: AntibodyAntigenBindingAssay
