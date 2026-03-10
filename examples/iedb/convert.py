@@ -17,20 +17,12 @@ import json
 
 from linkml_runtime.dumpers import yaml_dumper, json_dumper, tsv_dumper
 from ak_schema import *
-from jsonschema.exceptions import ValidationError
-from linkml.validator import Validator
-from pydantic import ValidationError
-from jsonschema.exceptions import ValidationError as JSONSchemaValidationError
+from linkml.validator import Validator, validate
 from linkml.validator.plugins import PydanticValidationPlugin
-import re
-from linkml.validator import validate
-# validator = Validator("../../project/linkml/ak_schema.yaml")
 validator = Validator(
     schema="../../project/linkml/ak_schema.yaml",
     validation_plugins=[PydanticValidationPlugin()]
 )
-
-AA_PATTERN = re.compile(r"^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$")
 
 prefixes = {
     'iedb_reference': 'http://www.iedb.org/reference/',
@@ -126,7 +118,6 @@ def make_chain(row, chain_name):
         )
         s = json.loads(json_dumper.dumps(chain_obj))
         del s['@type']
-        # report = validate(s, "../../project/linkml/ak_schema.yaml", "Chain")
         report = validator.validate(s, "Chain")
         if not report.results:
             return chain_obj
@@ -298,24 +289,21 @@ def convert(tcell_path, tcr_path, yaml_path):
             life_event=life_event_2.akc_id,
             tissue=row['Effector Cell']['Source Tissue']
         )
-        # epitope = PeptidicEpitope(
-        #     curie(row['Epitope']['IEDB IRI']),
-        #     sequence_aa=row['Epitope']['Name'],
-        #     source_protein=curie(row['Epitope']['Molecule Parent IRI']),
-        #     source_organism=curie(row['Epitope']['Source Organism IRI'])
-        # )
+        epitope = PeptidicEpitope(
+            curie(row['Epitope']['IEDB IRI']),
+            sequence_aa=row['Epitope']['Name'],
+            source_protein=curie(row['Epitope']['Molecule Parent IRI']),
+            source_organism=curie(row['Epitope']['Source Organism IRI'])
+        )
+        s = json.loads(json_dumper.dumps(epitope))
+        del s['@type']
+        report = validator.validate(s, "PeptidicEpitope")
+        if not report.results:
+            pass
+        else:
+            for result in report.results:
+                print(result.message)
         
-        try:
-            epitope = PeptidicEpitope(
-                curie(row['Epitope']['IEDB IRI']),
-                sequence_aa=row['Epitope']['Name'],
-                source_protein=curie(row['Epitope']['Molecule Parent IRI']),
-                source_organism=curie(row['Epitope']['Source Organism IRI'])
-            )
-
-        except Exception as e:
-            print(f"WARNING: invalid epitope {row['Epitope']['Name']}: {e}")
-            epitope = None
         # For each row in the TCR table that matches this assay ID, generate:
         # 2 chains
         # 1 receptor: AlphaBetaTCR or GammaDeltaTCR
@@ -358,7 +346,6 @@ def convert(tcell_path, tcr_path, yaml_path):
             specimen=specimen.akc_id,
             assay_type=curie(row['Assay']['IRI']), # TODO: use label
             epitope=epitope.akc_id,
-            tcell_receptors=[t.akc_id for t in tcell_receptors],
             measurement_category=row['Assay']['Qualitative Measurement']
         )
         dataset = AKDataSet(
