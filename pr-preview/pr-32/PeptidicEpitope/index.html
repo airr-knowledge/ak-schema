@@ -326,6 +326,10 @@ slots:
 - sequence_aa
 - source_protein
 - source_organism
+slot_usage:
+  sequence_aa:
+    name: sequence_aa
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
 
 </code></pre>
 </details>
@@ -334,6 +338,10 @@ slots:
 <pre><code class="language-yaml">name: PeptidicEpitope
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Epitope
+slot_usage:
+  sequence_aa:
+    name: sequence_aa
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
 attributes:
   sequence_aa:
     name: sequence_aa
@@ -351,6 +359,7 @@ attributes:
     - PeptidicEpitope
     - Rearrangement
     range: string
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
   source_protein:
     name: source_protein
     description: The protein that this epitope comes from

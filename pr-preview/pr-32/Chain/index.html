@@ -583,6 +583,13 @@ slots:
 - cdr2_end
 - cdr3_start
 - cdr3_end
+slot_usage:
+  sequence_aa:
+    name: sequence_aa
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
+  junction_aa:
+    name: junction_aa
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
 
 </code></pre>
 </details>
@@ -591,6 +598,13 @@ slots:
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+slot_usage:
+  sequence_aa:
+    name: sequence_aa
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
+  junction_aa:
+    name: junction_aa
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
 attributes:
   species:
     name: species
@@ -679,6 +693,7 @@ attributes:
     - PeptidicEpitope
     - Rearrangement
     range: string
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -771,6 +786,7 @@ attributes:
     - Clone
     - Node
     range: string
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
   cdr1_aa:
     name: cdr1_aa
     annotations:
