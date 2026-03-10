@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-09T20:06:16
+# Generation date: 2026-03-09T23:34:57
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -7940,6 +7940,18 @@ slots.AIRRSequencingAssay_sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files
 
 slots.TCellReceptorEpitopeSpecificityMeasurement_measurement_category = Slot(uri=AK_SCHEMA.measurement_category, name="TCellReceptorEpitopeSpecificityMeasurement_measurement_category", curie=AK_SCHEMA.curie('measurement_category'),
                    model_uri=AK_SCHEMA.TCellReceptorEpitopeSpecificityMeasurement_measurement_category, domain=TCellReceptorEpitopeSpecificityMeasurement, range=Optional[Union[str, "CategoricalSpecificityEnum"]])
+
+slots.Chain_sequence_aa = Slot(uri=AK_SCHEMA.sequence_aa, name="Chain_sequence_aa", curie=AK_SCHEMA.curie('sequence_aa'),
+                   model_uri=AK_SCHEMA.Chain_sequence_aa, domain=Chain, range=Optional[str],
+                   pattern=re.compile(r'^[ACDEFGHIKLMNPQRSTVWY]+$'))
+
+slots.Chain_junction_aa = Slot(uri=AK_SCHEMA.junction_aa, name="Chain_junction_aa", curie=AK_SCHEMA.curie('junction_aa'),
+                   model_uri=AK_SCHEMA.Chain_junction_aa, domain=Chain, range=Optional[str],
+                   pattern=re.compile(r'^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$'))
+
+slots.PeptidicEpitope_sequence_aa = Slot(uri=AK_SCHEMA.sequence_aa, name="PeptidicEpitope_sequence_aa", curie=AK_SCHEMA.curie('sequence_aa'),
+                   model_uri=AK_SCHEMA.PeptidicEpitope_sequence_aa, domain=PeptidicEpitope, range=Optional[str],
+                   pattern=re.compile(r'^[ACDEFGHIKLMNPQRSTVWY]+$'))
 
 slots.UnrearrangedSequence_sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="UnrearrangedSequence_sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
                    model_uri=AK_SCHEMA.UnrearrangedSequence_sequence_id, domain=UnrearrangedSequence, range=Union[str, UnrearrangedSequenceSequenceId])

@@ -12052,6 +12052,87 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Chain_sequence_aa",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_aa",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Amino acid translation of the query nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_aa",
+      "domain": "Chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_aa",
+      "alias": "sequence_aa",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_aa",
+      "range": "string",
+      "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Chain_junction_aa",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Amino acid translation of the junction.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "junction_aa",
+      "domain": "Chain",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa",
+      "alias": "junction_aa",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "junction_aa",
+      "range": "string",
+      "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "PeptidicEpitope_sequence_aa",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_aa",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Amino acid translation of the query nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "sequence_aa",
+      "domain": "PeptidicEpitope",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/sequence_aa",
+      "alias": "sequence_aa",
+      "owner": "PeptidicEpitope",
+      "domain_of": [
+        "PeptidicEpitope"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "sequence_aa",
+      "range": "string",
+      "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "UnrearrangedSequence_sequence_id",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequence_id",
       "annotations": {
@@ -13280,13 +13361,13 @@
         "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
-        "sequence_aa",
+        "Chain_sequence_aa",
         "locus",
         "v_call",
         "d_call",
         "j_call",
         "c_call",
-        "junction_aa",
+        "Chain_junction_aa",
         "cdr1_aa",
         "cdr2_aa",
         "cdr3_aa",
@@ -13426,7 +13507,7 @@
         "name",
         "description",
         "type",
-        "sequence_aa",
+        "PeptidicEpitope_sequence_aa",
         "source_protein",
         "source_organism"
       ],
@@ -14756,9 +14837,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-03-09T20:06:11",
-  "source_file_size": 211292,
-  "generation_date": "2026-03-09T20:06:13",
+  "source_file_date": "2026-03-09T23:34:51",
+  "source_file_size": 211593,
+  "generation_date": "2026-03-09T23:34:53",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

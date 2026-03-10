@@ -232,8 +232,8 @@
 {"akc_id": "iedb_receptor:21778", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21778-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21779", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21779-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21780", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21780-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21781", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21781-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21782", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21782-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21781", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21782", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21783", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21783-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21784", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21784-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21785", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21785-beta", "@type": "AlphaBetaTCR"}
@@ -259,8 +259,8 @@
 {"akc_id": "iedb_receptor:21805", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21805-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21806", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21806-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21807", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21807-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21808", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21808-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21809", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21809-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21808", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21809", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21810", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21810-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21811", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21811-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21812", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21812-beta", "@type": "AlphaBetaTCR"}
@@ -287,8 +287,8 @@
 {"akc_id": "iedb_receptor:21833", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21833-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21834", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21834-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21835", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21835-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21836", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21836-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21837", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21837-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21836", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21837", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21838", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21838-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21839", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21839-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21840", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21840-beta", "@type": "AlphaBetaTCR"}
@@ -366,8 +366,8 @@
 {"akc_id": "iedb_receptor:21912", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21912-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21913", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21913-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21914", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21914-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21915", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21915-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21916", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21916-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21915", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21916", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21917", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21917-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21918", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21918-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21919", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21919-beta", "@type": "AlphaBetaTCR"}
@@ -407,7 +407,7 @@
 {"akc_id": "iedb_receptor:23586", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23586-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23587", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23587-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23588", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23588-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:23589", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23589-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:23589", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23590", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23590-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23591", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23591-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23592", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23592-beta", "@type": "AlphaBetaTCR"}
@@ -521,7 +521,7 @@
 {"akc_id": "iedb_receptor:23911", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23911-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23956", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23956-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23957", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23957-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:23958", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23958-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:23958", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23959", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23959-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23960", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23960-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23961", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23961-beta", "@type": "AlphaBetaTCR"}
@@ -567,11 +567,11 @@
 {"akc_id": "iedb_receptor:24047", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24047-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24048", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24048-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24049", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24049-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24050", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24050-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24050", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24051", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24051-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24052", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24052-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24053", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24053-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24102", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24102-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24052", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24053", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24102", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24103", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24103-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24104", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24104-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24105", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24105-beta", "@type": "AlphaBetaTCR"}
@@ -613,18 +613,18 @@
 {"akc_id": "iedb_receptor:24180", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24180-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24181", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24181-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24182", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24182-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24183", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24183-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24184", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24184-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24183", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24184", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24185", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24185-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24186", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24186-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24187", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24187-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24188", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24188-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24189", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24189-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24190", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24190-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24191", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24191-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24191", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24192", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24192-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24228", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24228-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24229", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24229-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24228", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24229", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24230", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24230-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24231", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24231-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24232", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24232-beta", "@type": "AlphaBetaTCR"}
@@ -906,7 +906,7 @@
 {"akc_id": "iedb_receptor:21463", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21463-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21464", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21464-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21465", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21465-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21466", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21466-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21466", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21526", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21526-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21527", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21527-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21528", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21528-beta", "@type": "AlphaBetaTCR"}
@@ -937,7 +937,7 @@
 {"akc_id": "iedb_receptor:20796", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20796-alpha", "trb_chain": "iedb_receptor:20796-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20797", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20797-alpha", "trb_chain": "iedb_receptor:20797-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20798", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20798-alpha", "trb_chain": "iedb_receptor:20798-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20799", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20799-alpha", "trb_chain": "iedb_receptor:20799-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20799", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:20799-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20800", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20800-alpha", "trb_chain": "iedb_receptor:20800-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20801", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20801-alpha", "trb_chain": "iedb_receptor:20801-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20802", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20802-alpha", "trb_chain": "iedb_receptor:20802-beta", "@type": "AlphaBetaTCR"}
@@ -983,7 +983,7 @@
 {"akc_id": "iedb_receptor:21478", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21478-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21479", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21479-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21480", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21480-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21481", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21481-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21481", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21559", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21559-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21560", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21560-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21561", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21561-beta", "@type": "AlphaBetaTCR"}
@@ -1135,7 +1135,7 @@
 {"akc_id": "iedb_receptor:22043", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22043-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22044", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22044-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22045", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22045-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:22046", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22046-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:22046", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22064", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22064-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22065", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22065-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22066", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22066-beta", "@type": "AlphaBetaTCR"}
@@ -1404,7 +1404,7 @@
 {"akc_id": "iedb_receptor:22341", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22341-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22342", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22342-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22343", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22343-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:22344", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22344-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:22344", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22345", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22345-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22346", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22346-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:22347", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:22347-beta", "@type": "AlphaBetaTCR"}
@@ -2727,7 +2727,7 @@
 {"akc_id": "iedb_receptor:23984", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23984-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23985", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23985-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23986", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23986-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:23987", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23987-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:23987", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23988", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23988-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23989", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23989-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23990", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23990-beta", "@type": "AlphaBetaTCR"}
@@ -2813,7 +2813,7 @@
 {"akc_id": "iedb_receptor:24209", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24209-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24210", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24210-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24211", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24211-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24212", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24212-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24212", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24213", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24213-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24214", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24214-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24215", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24215-beta", "@type": "AlphaBetaTCR"}
@@ -3040,8 +3040,8 @@
 {"akc_id": "iedb_receptor:20884", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20884-alpha", "trb_chain": "iedb_receptor:20884-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20885", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20885-alpha", "trb_chain": "iedb_receptor:20885-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20886", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20886-alpha", "trb_chain": "iedb_receptor:20886-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20887", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20887-alpha", "trb_chain": "iedb_receptor:20887-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20888", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20888-alpha", "trb_chain": "iedb_receptor:20888-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20887", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:20887-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20888", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:20888-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20889", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20889-alpha", "trb_chain": "iedb_receptor:20889-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20890", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20890-alpha", "trb_chain": "iedb_receptor:20890-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20891", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20891-alpha", "trb_chain": "iedb_receptor:20891-beta", "@type": "AlphaBetaTCR"}
@@ -3069,7 +3069,7 @@
 {"akc_id": "iedb_receptor:20910", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20910-alpha", "trb_chain": "iedb_receptor:20910-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20911", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20911-alpha", "trb_chain": "iedb_receptor:20911-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20912", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20912-alpha", "trb_chain": "iedb_receptor:20912-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20913", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20913-alpha", "trb_chain": "iedb_receptor:20913-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20913", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:20913-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20914", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20914-alpha", "trb_chain": "iedb_receptor:20914-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20915", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20915-alpha", "trb_chain": "iedb_receptor:20915-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20916", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20916-alpha", "trb_chain": "iedb_receptor:20916-beta", "@type": "AlphaBetaTCR"}
@@ -3093,7 +3093,7 @@
 {"akc_id": "iedb_receptor:20934", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20934-alpha", "trb_chain": "iedb_receptor:20934-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20935", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20935-alpha", "trb_chain": "iedb_receptor:20935-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20936", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20936-alpha", "trb_chain": "iedb_receptor:20936-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20937", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20937-alpha", "trb_chain": "iedb_receptor:20937-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20937", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:20937-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20938", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20938-alpha", "trb_chain": "iedb_receptor:20938-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20939", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20939-alpha", "trb_chain": "iedb_receptor:20939-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20940", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20940-alpha", "trb_chain": "iedb_receptor:20940-beta", "@type": "AlphaBetaTCR"}
@@ -3117,7 +3117,7 @@
 {"akc_id": "iedb_receptor:20655", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20655-alpha", "trb_chain": "iedb_receptor:20655-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20954", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20954-alpha", "trb_chain": "iedb_receptor:20954-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20955", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20955-alpha", "trb_chain": "iedb_receptor:20955-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20956", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20956-alpha", "trb_chain": "iedb_receptor:20956-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20956", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:20956-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20957", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20957-alpha", "trb_chain": "iedb_receptor:20957-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20958", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20958-alpha", "trb_chain": "iedb_receptor:20958-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20959", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20959-alpha", "trb_chain": "iedb_receptor:20959-beta", "@type": "AlphaBetaTCR"}
@@ -3203,7 +3203,7 @@
 {"akc_id": "iedb_receptor:23642", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23642-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23643", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23643-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23644", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23644-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:23645", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23645-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:23645", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23704", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23704-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23705", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23705-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:23706", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:23706-beta", "@type": "AlphaBetaTCR"}
@@ -3466,7 +3466,7 @@
 {"akc_id": "iedb_receptor:24428", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24428-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24429", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24429-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24430", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24430-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24431", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24431-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24431", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24432", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24432-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24433", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24433-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24434", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24434-beta", "@type": "AlphaBetaTCR"}
@@ -3600,7 +3600,7 @@
 {"akc_id": "iedb_receptor:21012", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21012-alpha", "trb_chain": "iedb_receptor:21012-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21013", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21013-alpha", "trb_chain": "iedb_receptor:21013-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21014", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21014-alpha", "trb_chain": "iedb_receptor:21014-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21015", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21015-alpha", "trb_chain": "iedb_receptor:21015-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21015", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21015-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21016", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21016-alpha", "trb_chain": "iedb_receptor:21016-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21017", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21017-alpha", "trb_chain": "iedb_receptor:21017-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21018", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21018-alpha", "trb_chain": "iedb_receptor:21018-beta", "@type": "AlphaBetaTCR"}
@@ -3643,7 +3643,7 @@
 {"akc_id": "iedb_receptor:21057", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21057-alpha", "trb_chain": "iedb_receptor:21057-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21058", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21058-alpha", "trb_chain": "iedb_receptor:21058-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21059", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21059-alpha", "trb_chain": "iedb_receptor:21059-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:21060", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21060-alpha", "trb_chain": "iedb_receptor:21060-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:21060", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:21060-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21061", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21061-alpha", "trb_chain": "iedb_receptor:21061-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21062", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21062-alpha", "trb_chain": "iedb_receptor:21062-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21063", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21063-alpha", "trb_chain": "iedb_receptor:21063-beta", "@type": "AlphaBetaTCR"}
@@ -3747,7 +3747,7 @@
 {"akc_id": "iedb_receptor:24695", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24695-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24696", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24696-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24697", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24697-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:24698", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24698-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:24698", "type": "AlphaBetaTCR", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24699", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24699-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24701", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24701-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:24702", "type": "AlphaBetaTCR", "trb_chain": "iedb_receptor:24702-beta", "@type": "AlphaBetaTCR"}
@@ -3793,16 +3793,16 @@
 {"akc_id": "iedb_receptor:21071", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21071-alpha", "trb_chain": "iedb_receptor:21071-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21072", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21072-alpha", "trb_chain": "iedb_receptor:21072-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:21073", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:21073-alpha", "trb_chain": "iedb_receptor:21073-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20960", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20960-alpha", "trb_chain": "iedb_receptor:20960-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20961", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20961-alpha", "trb_chain": "iedb_receptor:20961-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20962", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20962-alpha", "trb_chain": "iedb_receptor:20962-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20963", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20963-alpha", "trb_chain": "iedb_receptor:20963-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20964", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20964-alpha", "trb_chain": "iedb_receptor:20964-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20965", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20965-alpha", "trb_chain": "iedb_receptor:20965-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20966", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20966-alpha", "trb_chain": "iedb_receptor:20966-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20967", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20967-alpha", "trb_chain": "iedb_receptor:20967-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20960", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20960-alpha", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20961", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20961-alpha", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20962", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20962-alpha", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20963", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20963-alpha", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20964", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20964-alpha", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20965", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20965-alpha", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20966", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20966-alpha", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20967", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20967-alpha", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20968", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20968-alpha", "trb_chain": "iedb_receptor:20968-beta", "@type": "AlphaBetaTCR"}
-{"akc_id": "iedb_receptor:20969", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20969-alpha", "trb_chain": "iedb_receptor:20969-beta", "@type": "AlphaBetaTCR"}
+{"akc_id": "iedb_receptor:20969", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20969-alpha", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20970", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20970-alpha", "trb_chain": "iedb_receptor:20970-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20971", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20971-alpha", "trb_chain": "iedb_receptor:20971-beta", "@type": "AlphaBetaTCR"}
 {"akc_id": "iedb_receptor:20972", "type": "AlphaBetaTCR", "tra_chain": "iedb_receptor:20972-alpha", "trb_chain": "iedb_receptor:20972-beta", "@type": "AlphaBetaTCR"}

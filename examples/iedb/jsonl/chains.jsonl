@@ -240,8 +240,6 @@
 {"akc_id": "iedb_receptor:21778-beta", "locus": "TRB", "v_call": "TRBV13", "j_call": "TRBJ2-1", "junction_aa": "CASSQLAVSYNEQFF", "cdr1_aa": "IPRHDTVYW", "cdr2_aa": "FISFYEKMQSDKGS", "cdr3_aa": "CASSQLAVSYNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21779-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ1-2", "junction_aa": "CASSQLIPGLLYGYAF", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQLIPGLLYGYAF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21780-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ1-2", "junction_aa": "CASSQLIPGLLYGYTF", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQLIPGLLYGYTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21781-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ1-2", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQLIPGLLYGYTL", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21782-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ1-2", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQLIPGLLYGYTY", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21783-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ2-7", "junction_aa": "CASSQLTGGVHEQYF", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQLTGGVHEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21784-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-3", "junction_aa": "CASSQPPGGTQYF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQPPGGTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21785-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-6", "junction_aa": "CASSQPQYSGANVLTF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSQPQYSGANVLTF", "@type": "Chain"}
@@ -267,8 +265,6 @@
 {"akc_id": "iedb_receptor:21805-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-3", "junction_aa": "CASSQSPGGTQNF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGGTQNF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21806-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-3", "junction_aa": "CASSQSPGGTQSF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGGTQSF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21807-beta", "locus": "TRB", "v_call": "TRBV14", "junction_aa": "CASSQSPGGTQYF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGGTQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21808-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-3", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGGTQYL", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21809-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-3", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGGTQYS", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21810-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-3", "junction_aa": "CASSQSPGGTRYF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGGTRYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21811-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-7", "junction_aa": "CASSQSPGGVQYF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGGVQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21812-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ2-3", "junction_aa": "CASSQSPGSTQYF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQSPGSTQYF", "@type": "Chain"}
@@ -295,8 +291,6 @@
 {"akc_id": "iedb_receptor:21833-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "junction_aa": "CASSLTDPYEQHF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLTDPYEQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21834-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "junction_aa": "CASSLTDPYEQNF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLTDPYEQNF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21835-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "junction_aa": "CASSLTDPYEQYF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLTDPYEQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21836-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLTDPYEQYL", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21837-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLTDPYEQYS", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21838-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "junction_aa": "CASSLTDSYEQYF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLTDSYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21839-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-3", "junction_aa": "CASSLTGAGTDTQYF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSLTGAGTDTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21840-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "junction_aa": "CASSLTNPYEQYF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLTNPYEQYF", "@type": "Chain"}
@@ -374,8 +368,6 @@
 {"akc_id": "iedb_receptor:21912-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ2-7", "junction_aa": "CASSQDFRGGYEQDF", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQDFRGGYEQDF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21913-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ2-7", "junction_aa": "CASSQDFRGGYEQHF", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQDFRGGYEQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21914-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ2-7", "junction_aa": "CASSQDFRGGYEQYF", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQDFRGGYEQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21915-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ2-7", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQDFRGGYEQYL", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21916-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ2-7", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSQDFRGGYEQYS", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21917-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-1", "junction_aa": "CASSQDGGNEQFF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSQDGGNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21918-beta", "locus": "TRB", "v_call": "TRBV4-3", "j_call": "TRBJ2-7", "junction_aa": "CASSQDGGSPYEQYF", "cdr1_aa": "HLGHNAMYW", "cdr2_aa": "MFVYSLEERVENNS", "cdr3_aa": "CASSQDGGSPYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21919-beta", "locus": "TRB", "v_call": "TRBV4-3", "j_call": "TRBJ2-5", "junction_aa": "CASSQDGLALRETQYF", "cdr1_aa": "HLGHNAMYW", "cdr2_aa": "MFVYSLEERVENNS", "cdr3_aa": "CASSQDGLALRETQYF", "@type": "Chain"}
@@ -415,7 +407,6 @@
 {"akc_id": "iedb_receptor:23586-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-6", "junction_aa": "CASSSGRASGANVLTF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSSGRASGANVLTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23587-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-6", "junction_aa": "CASSSGRDSAANVLTF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSSGRDSAANVLTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23588-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-6", "junction_aa": "CASSSGRDSGANVLTF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSSGRDSGANVLTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:23589-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-6", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSSGRDSGANVLTL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23590-beta", "locus": "TRB", "v_call": "TRBV7-6", "j_call": "TRBJ2-7", "junction_aa": "CASSSGTGDYEQYF", "cdr1_aa": "ISGHVSLYW", "cdr2_aa": "LTYFNYEAQQDKSG", "cdr3_aa": "CASSSGTGDYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23591-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-5", "junction_aa": "CASSSGTSGSVETQYF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSSGTSGSVETQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23592-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-1", "junction_aa": "CASSSKGLVESTTEQFF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSSKGLVESTTEQFF", "@type": "Chain"}
@@ -529,7 +520,6 @@
 {"akc_id": "iedb_receptor:23911-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "junction_aa": "CAWSRGAAEQFF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSRGAAEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23956-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "junction_aa": "CAWSRGAVEPFF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSRGAVEPFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23957-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "junction_aa": "CAWSRGAVEQFF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSRGAVEQFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:23958-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSRGAVEQFL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23959-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "junction_aa": "CAWSRGAVEQLF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSRGAVEQLF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23960-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "junction_aa": "CAWSRGAVEQVF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSRGAVEQVF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23961-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "junction_aa": "CAWSRGAVEQYF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSRGAVEQYF", "@type": "Chain"}
@@ -575,11 +565,7 @@
 {"akc_id": "iedb_receptor:24047-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "junction_aa": "CSARGQAITAKLFF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITAKLFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24048-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "junction_aa": "CSARGQAITDKLFF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITDKLFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24049-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "junction_aa": "CSARGQAITEKLCF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLCF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24050-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLFC", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24051-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "junction_aa": "CSARGQAITEKLFF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24052-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLFL", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24053-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLFS", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24102-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLFV", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24103-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "junction_aa": "CSARGQAITEKLLF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLLF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24104-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "junction_aa": "CSARGQAITEKLSF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKLSF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24105-beta", "locus": "TRB", "v_call": "TRBV20-1", "j_call": "TRBJ1-4", "junction_aa": "CSARGQAITEKPFF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARGQAITEKPFF", "@type": "Chain"}
@@ -621,18 +607,13 @@
 {"akc_id": "iedb_receptor:24180-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-2", "junction_aa": "CSVDGTNTGELFF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVDGTNTGELFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24181-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "junction_aa": "CSVEDAGGNQPQHF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDAGGNQPQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24182-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-1", "junction_aa": "CSVEDFYNEQFF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDFYNEQFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24183-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-1", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDFYNEQFL", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24184-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-1", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDFYNEQFS", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24185-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-1", "junction_aa": "CSVEDFYNEQLF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDFYNEQLF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24186-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-1", "junction_aa": "CSVEDFYNEQSF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDFYNEQSF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24187-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-5", "junction_aa": "CSVEDRAGWTQYF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDRAGWTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24188-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "junction_aa": "CSVEGFQTENNQPQHF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGFQTENNQPQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24189-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "junction_aa": "CSVEGFRTEKNQPQHF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGFRTEKNQPQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24190-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "junction_aa": "CSVEGFRTENKQPQHF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGFRTENKQPQHF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24191-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGFRTENNQPQHC", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24192-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "junction_aa": "CSVEGFRTENNQPQHF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGFRTENNQPQHF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24228-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGFRTENNQPQHL", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24229-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGFRTENNQPQHV", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24230-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-7", "junction_aa": "CSVEGPAGGPYEQYF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGPAGGPYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24231-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-5", "junction_aa": "CSVEGSRTENNQPQHF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGSRTENNQPQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24232-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-1", "junction_aa": "CSVEGTSGRGEQFF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEGTSGRGEQFF", "@type": "Chain"}
@@ -914,7 +895,6 @@
 {"akc_id": "iedb_receptor:21463-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-3", "junction_aa": "CASSWSGGGARATQYF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSWSGGGARATQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21464-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-3", "junction_aa": "CASSWSGGGARDMQYF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSWSGGGARDMQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21465-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-3", "junction_aa": "CASSWSGGGARDTKNF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSWSGGGARDTKNF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21466-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-3", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSWSGGGARDTQDV", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21526-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-6", "junction_aa": "CSVRTGGLGANVLTF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVRTGGLGANVLTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21527-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-1", "junction_aa": "CASRLAGGGGEQFF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASRLAGGGGEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21528-beta", "locus": "TRB", "v_call": "TRBV14", "j_call": "TRBJ1-2", "junction_aa": "CASSQDRVGTIFYGYTF", "cdr1_aa": "ISGHDNLYW", "cdr2_aa": "LLHFVKESKQDESG", "cdr3_aa": "CASSQDRVGTIFYGYTF", "@type": "Chain"}
@@ -968,7 +948,6 @@
 {"akc_id": "iedb_receptor:20797-beta", "locus": "TRB", "v_call": "TRBV29-1", "junction_aa": "CSVGLAGSYNEQFF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVGLAGSYNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20798-alpha", "locus": "TRA", "v_call": "TRAV8-2", "junction_aa": "CVVSAGSIVSGGYNKLIF", "cdr3_aa": "CVVSAGSIVSGGYNKLIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20798-beta", "locus": "TRB", "v_call": "TRBV10-3", "junction_aa": "CAIRDKMNTEAFF", "cdr1_aa": "TENHRYMYW", "cdr2_aa": "IHYSYGVKDTDKGE", "cdr3_aa": "CAIRDKMNTEAFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20799-alpha", "locus": "TRA", "v_call": "TRAV8-2", "cdr3_aa": "CAVRGRSNYGGSQGNLI", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20799-beta", "locus": "TRB", "v_call": "TRBV6-5", "junction_aa": "CASRDTSGTAYEQYF", "cdr1_aa": "DMNHEYMSW", "cdr2_aa": "IHYSVGAGITDQGE", "cdr3_aa": "CASRDTSGTAYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20800-alpha", "locus": "TRA", "v_call": "TRAV8-6", "junction_aa": "CAVSEGVVWDLYGGSQGNLIF", "cdr3_aa": "CAVSEGVVWDLYGGSQGNLIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20800-beta", "locus": "TRB", "v_call": "TRBV6-1", "junction_aa": "CASREDGTEAFF", "cdr1_aa": "DMNHNSMYW", "cdr2_aa": "IYYSASEGTTDKGE", "cdr3_aa": "CASREDGTEAFF", "@type": "Chain"}
@@ -1046,7 +1025,6 @@
 {"akc_id": "iedb_receptor:21478-beta", "locus": "TRB", "v_call": "TRBV20-1", "junction_aa": "CSARSLYSTDTQYF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSARSLYSTDTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21479-beta", "locus": "TRB", "v_call": "TRBV20-1", "junction_aa": "CSASRQSNQPQHF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSASRQSNQPQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21480-beta", "locus": "TRB", "v_call": "TRBV20-1", "junction_aa": "CSGGRGEETQYF", "cdr1_aa": "DFQATTMFW", "cdr2_aa": "MATSNEGSKATYEQG", "cdr3_aa": "CSGGRGEETQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21481-beta", "locus": "TRB", "v_call": "TRBV29-1", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVEDPAGTYEQYL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21559-beta", "locus": "TRB", "v_call": "TRBV10-1", "j_call": "TRBJ2-5", "junction_aa": "CASSDAGFRTQYF", "cdr1_aa": "TWNHNNMFW", "cdr2_aa": "IHYSYGVHDTNKGE", "cdr3_aa": "CASSDAGFRTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21560-beta", "locus": "TRB", "v_call": "TRBV10-3", "junction_aa": "CAISDGGRTDTYEQYF", "cdr1_aa": "TENHRYMYW", "cdr2_aa": "IHYSYGVKDTDKGE", "cdr3_aa": "CAISDGGRTDTYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21561-beta", "locus": "TRB", "v_call": "TRBV12-5", "junction_aa": "CASGLTSGLAGGRGNEQFF", "cdr1_aa": "ILGHNTVFW", "cdr2_aa": "LAYFRNRAPLDDSG", "cdr3_aa": "CASGLTSGLAGGRGNEQFF", "@type": "Chain"}
@@ -1198,7 +1176,6 @@
 {"akc_id": "iedb_receptor:22043-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-1", "junction_aa": "CSVWSGSTEAFF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVWSGSTEAFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22044-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-7", "junction_aa": "CSVYRVGEQYF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVYRVGEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22045-beta", "locus": "TRB", "v_call": "TRBV7-6", "j_call": "TRBJ2-7", "junction_aa": "CVSSQGLASYEQYF", "cdr1_aa": "ISGHVSLYW", "cdr2_aa": "LTYFNYEAQQDKSG", "cdr3_aa": "CVSSQGLASYEQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:22046-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-3", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "RASSSIGGADTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22064-beta", "locus": "TRB", "v_call": "TRBV7-2", "j_call": "TRBJ2-5", "junction_aa": "CASSPDFQETQYF", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGNSAPDKSG", "cdr3_aa": "CASSPDFQETQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22065-beta", "locus": "TRB", "v_call": "TRBV4-3", "j_call": "TRBJ2-1", "junction_aa": "CASSPDGGSYNEQFF", "cdr1_aa": "HLGHNAMYW", "cdr2_aa": "MFVYSLEERVENNS", "cdr3_aa": "CASSPDGGSYNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22066-beta", "locus": "TRB", "v_call": "TRBV7-2", "j_call": "TRBJ2-1", "junction_aa": "CASSPDRGGRDGFEQFF", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGNSAPDKSG", "cdr3_aa": "CASSPDRGGRDGFEQFF", "@type": "Chain"}
@@ -1467,7 +1444,6 @@
 {"akc_id": "iedb_receptor:22341-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-1", "junction_aa": "CAWSLGDEQFF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSLGDEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22342-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ1-6", "junction_aa": "CAWSLGGSPLHF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSLGGSPLHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22343-beta", "locus": "TRB", "v_call": "TRBV30", "j_call": "TRBJ2-7", "junction_aa": "CAWSLTLHPRYEQYF", "cdr1_aa": "GTSNPNLYW", "cdr2_aa": "LFYSIGIDQISSE", "cdr3_aa": "CAWSLTLHPRYEQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:22344-beta", "locus": "TRB", "v_call": "TRBV7-3", "j_call": "TRBJ2-5", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGTGAADDSG", "cdr3_aa": "CASMTGL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22345-beta", "locus": "TRB", "v_call": "TRBV4-2", "j_call": "TRBJ2-2", "junction_aa": "CASNAPGLDPAGELFF", "cdr1_aa": "HLGHNAMYW", "cdr2_aa": "MFVYNFKEQTENNS", "cdr3_aa": "CASNAPGLDPAGELFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22346-beta", "locus": "TRB", "v_call": "TRBV12-3", "j_call": "TRBJ2-5", "junction_aa": "CASNLRGQETQYF", "cdr1_aa": "ISGHNSLFW", "cdr2_aa": "LIYFNNNVPIDDSG", "cdr3_aa": "CASNLRGQETQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:22347-beta", "locus": "TRB", "v_call": "TRBV7-6", "j_call": "TRBJ2-1", "junction_aa": "CASNPAGHNEQFF", "cdr1_aa": "ISGHVSLYW", "cdr2_aa": "LTYFNYEAQQDKSG", "cdr3_aa": "CASNPAGHNEQFF", "@type": "Chain"}
@@ -2790,7 +2766,6 @@
 {"akc_id": "iedb_receptor:23984-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-7", "junction_aa": "CASSLGGNYEQYF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSLGGNYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23985-beta", "locus": "TRB", "v_call": "TRBV28", "j_call": "TRBJ2-5", "junction_aa": "CASSLGGQGAGETQYF", "cdr1_aa": "DMDHENMFW", "cdr2_aa": "IYFSYDVKMKEKGD", "cdr3_aa": "CASSLGGQGAGETQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23986-beta", "locus": "TRB", "v_call": "TRBV7-6", "j_call": "TRBJ2-1", "junction_aa": "CASSLGGRAHNEQFF", "cdr1_aa": "ISGHVSLYW", "cdr2_aa": "LTYFNYEAQQDKSG", "cdr3_aa": "CASSLGGRAHNEQFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:23987-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-7", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSLGGSGYEQYL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23988-beta", "locus": "TRB", "v_call": "TRBV7-3", "j_call": "TRBJ2-3", "junction_aa": "CASSLGGSTDTQYF", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGTGAADDSG", "cdr3_aa": "CASSLGGSTDTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23989-beta", "locus": "TRB", "v_call": "TRBV11-2", "j_call": "TRBJ2-7", "junction_aa": "CASSLGGSYEQYF", "cdr1_aa": "ISGHATLYW", "cdr2_aa": "LIQFQNNGVVDDSQ", "cdr3_aa": "CASSLGGSYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23990-beta", "locus": "TRB", "v_call": "TRBV7-3", "j_call": "TRBJ1-1", "junction_aa": "CASSLGGTEAFF", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGTGAADDSG", "cdr3_aa": "CASSLGGTEAFF", "@type": "Chain"}
@@ -2876,7 +2851,6 @@
 {"akc_id": "iedb_receptor:24209-beta", "locus": "TRB", "v_call": "TRBV12-3", "j_call": "TRBJ2-1", "junction_aa": "CASSLLAPRGNEQFF", "cdr1_aa": "ISGHNSLFW", "cdr2_aa": "LIYFNNNVPIDDSG", "cdr3_aa": "CASSLLAPRGNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24210-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "junction_aa": "CASSLLDRRGRLYEQYF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLLDRRGRLYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24211-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-7", "junction_aa": "CASSLLEIHEQYF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLLEIHEQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24212-beta", "locus": "TRB", "v_call": "TRBV6-2", "j_call": "TRBJ2-7", "cdr1_aa": "DMNHEYMYW", "cdr2_aa": "IHYSVGEGTTAKGE", "cdr3_aa": "CASSLLEYEQYL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24213-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ1-3", "junction_aa": "CASSLLFGLYPGNTIYF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLLFGLYPGNTIYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24214-beta", "locus": "TRB", "v_call": "TRBV7-2", "j_call": "TRBJ2-7", "junction_aa": "CASSLLGGAYEQYF", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGNSAPDKSG", "cdr3_aa": "CASSLLGGAYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24215-beta", "locus": "TRB", "v_call": "TRBV12-5", "j_call": "TRBJ2-2", "junction_aa": "CASSLLGLFTGELFF", "cdr1_aa": "ILGHNTVFW", "cdr2_aa": "LAYFRNRAPLDDSG", "cdr3_aa": "CASSLLGLFTGELFF", "@type": "Chain"}
@@ -3155,9 +3129,7 @@
 {"akc_id": "iedb_receptor:20885-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CATSQGSYGYTF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CATSQGSYGYTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20886-alpha", "locus": "TRA", "v_call": "TRAV21", "junction_aa": "CAVSGYSTLTF", "cdr3_aa": "CAVSGYSTLTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20886-beta", "locus": "TRB", "v_call": "TRBV12-3", "junction_aa": "CASSQLGGISNQPQHF", "cdr1_aa": "ISGHNSLFW", "cdr2_aa": "LIYFNNNVPIDDSG", "cdr3_aa": "CASSQLGGISNQPQHF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20887-alpha", "locus": "TRA", "v_call": "TRAV38-2/DV8", "junction_aa": "CAXRGGSEKLVF", "cdr3_aa": "CAXRGGSEKLVF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20887-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSQRSTDTQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSQRSTDTQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20888-alpha", "locus": "TRA", "v_call": "TRAV12-3", "cdr3_aa": "CAMTNYQLI", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20888-beta", "locus": "TRB", "v_call": "TRBV28", "junction_aa": "CASSSDRGGYNEQFF", "cdr1_aa": "DMDHENMFW", "cdr2_aa": "IYFSYDVKMKEKGD", "cdr3_aa": "CASSSDRGGYNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20889-alpha", "locus": "TRA", "v_call": "TRAV12-2", "junction_aa": "CAVNIAKTSYDKVIF", "cdr3_aa": "CAVNIAKTSYDKVIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20889-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSSHHGSPLGQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSSHHGSPLGQYF", "@type": "Chain"}
@@ -3213,7 +3185,6 @@
 {"akc_id": "iedb_receptor:20911-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSTYSTDTQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSTYSTDTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20912-alpha", "locus": "TRA", "v_call": "TRAV27", "junction_aa": "CAGAYGGSQGNLIF", "cdr3_aa": "CAGAYGGSQGNLIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20912-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSVRSADTQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSVRSADTQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20913-alpha", "locus": "TRA", "v_call": "TRAV9-2", "cdr3_aa": "CALGIGFGNVLHC", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20913-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSVRSTDTQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSVRSTDTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20914-alpha", "locus": "TRA", "v_call": "TRAV16", "junction_aa": "CALGGAQKLVF", "cdr3_aa": "CALGGAQKLVF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20914-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSVRSTGELFF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSVRSTGELFF", "@type": "Chain"}
@@ -3261,7 +3232,6 @@
 {"akc_id": "iedb_receptor:20935-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIFASGNTQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIFASGNTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20936-alpha", "locus": "TRA", "v_call": "TRAV39", "junction_aa": "CAVDMFDRGSTLGRLYF", "cdr3_aa": "CAVDMFDRGSTLGRLYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20936-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIFGGAREQFF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIFGGAREQFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20937-alpha", "locus": "TRA", "v_call": "TRAV41", "cdr3_aa": "CAVLEWGTKETSGSRL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20937-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIFSGQPQHF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIFSGQPQHF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20938-alpha", "locus": "TRA", "v_call": "TRAV19", "junction_aa": "CAPGFYF", "cdr3_aa": "CAPGFYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20938-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIHGADTQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIHGADTQYF", "@type": "Chain"}
@@ -3309,7 +3279,6 @@
 {"akc_id": "iedb_receptor:20954-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIRSSYEQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIRSSYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20955-alpha", "locus": "TRA", "v_call": "TRAV26-1", "junction_aa": "CTDNARLMF", "cdr3_aa": "CTDNARLMF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20955-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIRSSYEQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIRSSYEQYF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20956-alpha", "locus": "TRA", "v_call": "TRAV26-1", "cdr3_aa": "CTDNARLMFT", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20956-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIRSSYEQYF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIRSSYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20957-alpha", "locus": "TRA", "v_call": "TRAV12-2", "junction_aa": "CAVNRPMNYGGATNKLIF", "cdr3_aa": "CAVNRPMNYGGATNKLIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20957-beta", "locus": "TRB", "v_call": "TRBV19", "junction_aa": "CASSIYGLSSYNEQFF", "cdr1_aa": "NLNHDAMYW", "cdr2_aa": "IYYSHIVNDFQKGD", "cdr3_aa": "CASSIYGLSSYNEQFF", "@type": "Chain"}
@@ -3399,7 +3368,6 @@
 {"akc_id": "iedb_receptor:23642-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ2-1", "junction_aa": "CSVVGSERRSSYNEQFF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVVGSERRSSYNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23643-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-1", "junction_aa": "CSVVSGKGLNTEAFF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVVSGKGLNTEAFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23644-beta", "locus": "TRB", "v_call": "TRBV29-1", "j_call": "TRBJ1-2", "junction_aa": "CSVVTENNYGYTF", "cdr1_aa": "DSQVTMIFW", "cdr2_aa": "IATANQGSEATYESG", "cdr3_aa": "CSVVTENNYGYTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:23645-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ2-5", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "RASSPPGETQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23704-beta", "locus": "TRB", "v_call": "TRBV7-3", "j_call": "TRBJ1-2", "junction_aa": "CASSLQGNYGYTF", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGTGAADDSG", "cdr3_aa": "CASSLQGNYGYTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23705-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ1-2", "junction_aa": "CASSLQSVDANGYTF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSLQSVDANGYTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:23706-beta", "locus": "TRB", "v_call": "TRBV4-1", "j_call": "TRBJ2-1", "junction_aa": "CASSLRGVVSYEQFF", "cdr1_aa": "HMGHRAMYW", "cdr2_aa": "MFVYSYEKLSINES", "cdr3_aa": "CASSLRGVVSYEQFF", "@type": "Chain"}
@@ -3662,7 +3630,6 @@
 {"akc_id": "iedb_receptor:24428-beta", "locus": "TRB", "v_call": "TRBV5-4", "j_call": "TRBJ1-2", "junction_aa": "CASSFRGSYTF", "cdr1_aa": "QSGHNTVSW", "cdr2_aa": "IFQYYREEENGRGN", "cdr3_aa": "CASSFRGSYTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24429-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ1-1", "junction_aa": "CASSFSGLSNTEAFF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSFSGLSNTEAFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24430-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ1-1", "junction_aa": "CASSFSGQNTEAFF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSFSGQNTEAFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24431-beta", "locus": "TRB", "v_call": "TRBV7-3", "j_call": "TRBJ1-1", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGTGAADDSG", "cdr3_aa": "CASSFSGQNTEAFY", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24432-beta", "locus": "TRB", "v_call": "TRBV7-8", "j_call": "TRBJ1-1", "junction_aa": "CASSFSGTANTEAFF", "cdr1_aa": "ISGHVSLFW", "cdr2_aa": "LTYFQNEAQLDKSG", "cdr3_aa": "CASSFSGTANTEAFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24433-beta", "locus": "TRB", "v_call": "TRBV7-2", "junction_aa": "CASSFSPSSYNEQFF", "cdr1_aa": "ISGHTALYW", "cdr2_aa": "LIYFQGNSAPDKSG", "cdr3_aa": "CASSFSPSSYNEQFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24434-beta", "locus": "TRB", "v_call": "TRBV7-9", "j_call": "TRBJ2-1", "junction_aa": "CASSFSSSYNEQFF", "cdr1_aa": "ISEHNRLYW", "cdr2_aa": "LTYFQNEAQLEKSG", "cdr3_aa": "CASSFSSSYNEQFF", "@type": "Chain"}
@@ -3800,7 +3767,6 @@
 {"akc_id": "iedb_receptor:21013-beta", "locus": "TRB", "v_call": "TRBV12-3", "j_call": "TRBJ2-3", "junction_aa": "CASSTGTSEADTDTQYF", "cdr3_aa": "CASSTGTSEADTDTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21014-alpha", "locus": "TRA", "v_call": "TRAV10", "junction_aa": "CVVNAQGRDMRF", "cdr3_aa": "CVVNAQGRDMRF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21014-beta", "locus": "TRB", "v_call": "TRBV19", "j_call": "TRBJ1-5", "junction_aa": "CASDRVGSNQPQHF", "cdr3_aa": "CASDRVGSNQPQHF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21015-alpha", "locus": "TRA", "v_call": "TRAV1-1", "cdr3_aa": "GDEAGTALIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21015-beta", "locus": "TRB", "v_call": "TRBV11-3", "j_call": "TRBJ1-2", "junction_aa": "CASSLQGIYTF", "cdr3_aa": "CASSLQGIYTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21016-alpha", "locus": "TRA", "v_call": "TRAV1-2", "junction_aa": "CAVTSMNRDDKIIF", "cdr3_aa": "CAVTSMNRDDKIIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21016-beta", "locus": "TRB", "v_call": "TRBV19", "j_call": "TRBJ1-5", "junction_aa": "CASTLGPGRDQGAQHF", "cdr3_aa": "CASTLGPGRDQGAQHF", "@type": "Chain"}
@@ -3886,7 +3852,6 @@
 {"akc_id": "iedb_receptor:21058-beta", "locus": "TRB", "v_call": "TRBV12-3", "j_call": "TRBJ2-5", "junction_aa": "CASSWGVETQYF", "cdr3_aa": "CASSWGVETQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21059-alpha", "locus": "TRA", "v_call": "TRAV39", "junction_aa": "CAVDDSQGSQGNLIF", "cdr3_aa": "CAVDDSQGSQGNLIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21059-beta", "locus": "TRB", "v_call": "TRBV12-3", "j_call": "TRBJ1-1", "junction_aa": "CASSLISNTEAFF", "cdr3_aa": "CASSLISNTEAFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:21060-alpha", "locus": "TRA", "v_call": "TRAV39", "cdr3_aa": "YGSTDKLIF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21060-beta", "locus": "TRB", "v_call": "TRBV6-5", "j_call": "TRBJ2-2", "junction_aa": "CASSQGGGGGAGELFF", "cdr3_aa": "CASSQGGGGGAGELFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21061-alpha", "locus": "TRA", "v_call": "TRAV4", "junction_aa": "CLVRGTGFQKLVF", "cdr3_aa": "CLVRGTGFQKLVF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21061-beta", "locus": "TRB", "v_call": "TRBV28", "j_call": "TRBJ2-7", "junction_aa": "CASSSQGYEQYF", "cdr3_aa": "CASSSQGYEQYF", "@type": "Chain"}
@@ -4001,7 +3966,6 @@
 {"akc_id": "iedb_receptor:24695-beta", "locus": "TRB", "v_call": "TRBV24-1*01", "j_call": "TRBJ2-7*01", "junction_aa": "CATSDPTSGREDEQYF", "cdr3_aa": "CATSDPTSGREDEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24696-beta", "locus": "TRB", "v_call": "TRBV7-8*01", "j_call": "TRBJ2-7*01", "junction_aa": "CASSLEGQDYEQYF", "cdr3_aa": "CASSLEGQDYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24697-beta", "locus": "TRB", "v_call": "TRBV6-5*01", "j_call": "TRBJ2-2*01", "junction_aa": "CASRPEKETGELFF", "cdr3_aa": "CASRPEKETGELFF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:24698-beta", "locus": "TRB", "v_call": "TRBV7-8*01", "j_call": "TRBJ2-7*01", "cdr3_aa": "CASSLEGQDYEPVL", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24699-beta", "locus": "TRB", "v_call": "TRBV28*01", "j_call": "TRBJ2-7*01", "junction_aa": "CASSPGGGRNTYEQYF", "cdr3_aa": "CASSPGGGRNTYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24701-beta", "locus": "TRB", "v_call": "TRBV28*01", "j_call": "TRBJ2-7*01", "junction_aa": "CASTPSPGVSSIGYEQYF", "cdr3_aa": "CASTPSPGVSSIGYEQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:24702-beta", "locus": "TRB", "v_call": "TRBV28*01", "j_call": "TRBJ2-7*01", "junction_aa": "CASVASPGTSALDYEQYF", "cdr3_aa": "CASVASPGTSALDYEQYF", "@type": "Chain"}
@@ -4051,25 +4015,16 @@
 {"akc_id": "iedb_receptor:21073-alpha", "locus": "TRA", "v_call": "TRAV26-1", "j_call": "TRAJ53", "junction_aa": "CIVHTNSGGSNYKLTF", "cdr3_aa": "CIVHTNSGGSNYKLTF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:21073-beta", "locus": "TRB", "v_call": "TRBV7-2", "j_call": "TRBJ2-5", "junction_aa": "CASSPEETQYF", "cdr3_aa": "CASSPEETQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20960-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20960-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALLGNTQYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALLGNTQY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20961-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20961-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALLGEEQYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALLGEEQY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20962-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20962-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALLGGGQYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALLGGGQY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20963-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20963-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALLGGEIYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALLGGEIY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20964-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20964-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALYGGTQYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALYGGTQY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20965-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20965-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALLGGEQFFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-1*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALLGGEQF", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20966-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20966-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALLGETQYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALLGETQY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20967-alpha", "locus": "TRA", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20967-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALLGGTQYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALLGGTQY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20968-alpha", "locus": "TRA", "v_call": "TRAV27", "j_call": "TRAJ49", "junction_aa": "CAGTNTGNQFYF", "cdr3_aa": "CAGTNTGNQFYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20968-beta", "locus": "TRB", "v_call": "TRBV9", "j_call": "TRBJ2-3", "junction_aa": "CASSVALQGVHTQYF", "cdr3_aa": "CASSVALQGVHTQYF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20969-alpha", "locus": "TRA", "v_call": "TRAV25", "j_call": "TRAJ6", "junction_aa": "CAGPTGGSYIPTF", "cdr3_aa": "CAGPTGGSYIPTF", "@type": "Chain"}
-{"akc_id": "iedb_receptor:20969-beta", "sequence_aa": "DSGVTQTPKHLITATGQRVTLRCSPRSGDLSVYWYQQSLDQGLQFLIQYYNGEERAKGNILERFSAQQFPDLHSELNLSSLELGDSALYFCASSVALATGEQYFGPGTRLTVT", "locus": "TRB", "v_call": "TRBV9*01", "j_call": "TRBJ2-7*01", "cdr1_aa": "SGDLS", "cdr2_aa": "YYNGEE", "cdr3_aa": "ASSVALATGEQY", "cdr1_start": 27, "cdr1_end": 31, "cdr2_start": 49, "cdr2_end": 54, "cdr3_start": 92, "cdr3_end": 103, "@type": "Chain"}
 {"akc_id": "iedb_receptor:20970-alpha", "locus": "TRA", "v_call": "TRAV10", "j_call": "TRAJ20", "junction_aa": "CVVSAITNDYKLSF", "cdr3_aa": "CVVSAITNDYKLSF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20970-beta", "locus": "TRB", "v_call": "TRBV12-3", "j_call": "TRBJ1-1", "junction_aa": "CASSLIEGGTEAFF", "cdr3_aa": "CASSLIEGGTEAFF", "@type": "Chain"}
 {"akc_id": "iedb_receptor:20971-alpha", "locus": "TRA", "v_call": "TRAV20", "j_call": "TRAJ9", "junction_aa": "CAVQPGAGGFKTIF", "cdr3_aa": "CAVQPGAGGFKTIF", "@type": "Chain"}

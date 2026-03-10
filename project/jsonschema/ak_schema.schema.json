@@ -2719,6 +2719,7 @@
                 },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
                     "type": [
                         "string",
                         "null"
@@ -2748,6 +2749,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
@@ -2915,6 +2917,7 @@
                 },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
                     "type": [
                         "string",
                         "null"
@@ -2944,6 +2947,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
@@ -5531,6 +5535,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
@@ -5590,6 +5595,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
