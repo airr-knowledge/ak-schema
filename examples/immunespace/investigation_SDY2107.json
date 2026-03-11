@@ -1,0 +1,1069 @@
+{
+  "investigations": {
+    "b93e9486-473c-4115-b3a7-f0ea1c50d0be": {
+      "akc_id": "b93e9486-473c-4115-b3a7-f0ea1c50d0be",
+      "investigation_type": "OBI:0000066",
+      "release_date": "2023-02-24T00:00:00",
+      "participants": [
+        "c41ad955-a572-4940-9649-bd884b073a85",
+        "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+        "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+        "385426de-69fa-460f-b596-b365da6c95c0",
+        "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+        "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+        "10a76c11-4412-40ac-8866-ee319e793288"
+      ]
+    }
+  },
+  "study_arms": {
+    "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d": {
+      "akc_id": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "name": "Tissues from organ donors",
+      "description": "All tissue samples from organ donors in a single arm",
+      "investigation": "b93e9486-473c-4115-b3a7-f0ea1c50d0be"
+    }
+  },
+  "study_events": {
+    "07b88a87-8502-44d1-bd4c-9d72738931c9": {
+      "akc_id": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "name": "planned_visit",
+      "description": "investigation_id = SDY2107\nplanned_event_id = PV11666\nevent_type = planned_visit\nearliest_start = 1.0\nlatest_start = 1.0\ntime_unit = day"
+    }
+  },
+  "participants": {
+    "c41ad955-a572-4940-9649-bd884b073a85": {
+      "akc_id": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_arm": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "species": "NCBITAXON:9606",
+      "sex": "PATO:0020001",
+      "age": "74.0",
+      "age_unit": "year",
+      "age_event": "Age at enrollment",
+      "race": "race: unknown",
+      "ethnicity": "Hispanic or Latino",
+      "geolocation": "US: New York"
+    },
+    "3e84a4d7-cea2-4180-b56b-47bd4e568ad7": {
+      "akc_id": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_arm": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "species": "NCBITAXON:9606",
+      "sex": "PATO:0020001",
+      "age": "70.0",
+      "age_unit": "year",
+      "age_event": "Age at enrollment",
+      "race": "Black or African American",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229": {
+      "akc_id": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_arm": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "species": "NCBITAXON:9606",
+      "sex": "PATO:0020002",
+      "age": "22.0",
+      "age_unit": "year",
+      "age_event": "Age at enrollment",
+      "race": "race: unknown",
+      "ethnicity": "Hispanic or Latino",
+      "geolocation": "US: New York"
+    },
+    "385426de-69fa-460f-b596-b365da6c95c0": {
+      "akc_id": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_arm": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "species": "NCBITAXON:9606",
+      "sex": "PATO:0020001",
+      "age": "40.0",
+      "age_unit": "year",
+      "age_event": "Age at enrollment",
+      "race": "Asian",
+      "ethnicity": "Not Hispanic or Latino"
+    },
+    "1b04dcfa-e30e-4783-b041-46ee4f82a40b": {
+      "akc_id": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_arm": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "species": "NCBITAXON:9606",
+      "sex": "PATO:0020001",
+      "age": "59.0",
+      "age_unit": "year",
+      "age_event": "Age at enrollment",
+      "race": "White",
+      "ethnicity": "Not Hispanic or Latino",
+      "geolocation": "US: New York"
+    },
+    "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82": {
+      "akc_id": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_arm": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "species": "NCBITAXON:9606",
+      "sex": "PATO:0020001",
+      "age": "63.0",
+      "age_unit": "year",
+      "age_event": "Age at enrollment",
+      "race": "race: unknown",
+      "ethnicity": "Hispanic or Latino",
+      "geolocation": "US: New York"
+    },
+    "10a76c11-4412-40ac-8866-ee319e793288": {
+      "akc_id": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_arm": "4aa7b1d0-e133-41a8-bcf2-408b83d73f2d",
+      "species": "NCBITAXON:9606",
+      "sex": "PATO:0020001",
+      "age": "37.0",
+      "age_unit": "year",
+      "age_event": "Age at enrollment",
+      "race": "race: unknown",
+      "ethnicity": "Hispanic or Latino",
+      "geolocation": "US: New York"
+    }
+  },
+  "life_events": {
+    "c69dcbfa-007d-4af1-b4ae-74457a64080e": {
+      "akc_id": "c69dcbfa-007d-4af1-b4ae-74457a64080e",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "clinical assessment",
+      "start": 1,
+      "time_unit": "day"
+    },
+    "a2379bfb-0228-494a-acb5-61cbca6e875b": {
+      "akc_id": "a2379bfb-0228-494a-acb5-61cbca6e875b",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "clinical assessment",
+      "start": 1,
+      "time_unit": "day"
+    },
+    "b6b37c26-57e0-473b-a89e-f5d8a4277a80": {
+      "akc_id": "b6b37c26-57e0-473b-a89e-f5d8a4277a80",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "clinical assessment",
+      "start": 1,
+      "time_unit": "day"
+    },
+    "49e092d2-5276-463f-93e6-14af9c090b65": {
+      "akc_id": "49e092d2-5276-463f-93e6-14af9c090b65",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "clinical assessment",
+      "start": 1,
+      "time_unit": "day"
+    },
+    "d45033b0-5c97-4d43-b6e7-91ed1be5ab36": {
+      "akc_id": "d45033b0-5c97-4d43-b6e7-91ed1be5ab36",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "clinical assessment",
+      "start": 1,
+      "time_unit": "day"
+    },
+    "cc252e8e-d2a0-4d7c-b4a5-42dcd4bf4917": {
+      "akc_id": "cc252e8e-d2a0-4d7c-b4a5-42dcd4bf4917",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "clinical assessment",
+      "start": 1,
+      "time_unit": "day"
+    },
+    "2fa81812-2a48-4267-a2f2-34cde3f80999": {
+      "akc_id": "2fa81812-2a48-4267-a2f2-34cde3f80999",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "clinical assessment",
+      "start": 1,
+      "time_unit": "day"
+    },
+    "9e5967bf-fe61-4f1e-9851-7b89766ce0b0": {
+      "akc_id": "9e5967bf-fe61-4f1e-9851-7b89766ce0b0",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "0fbccc8c-c69d-4f80-8f5c-85b37c87aa4a": {
+      "akc_id": "0fbccc8c-c69d-4f80-8f5c-85b37c87aa4a",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "bd74d456-f838-4297-bb4f-a2fad52e0b8d": {
+      "akc_id": "bd74d456-f838-4297-bb4f-a2fad52e0b8d",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "d6b848ef-143b-4f0b-a4a7-25091d657f30": {
+      "akc_id": "d6b848ef-143b-4f0b-a4a7-25091d657f30",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "278692ca-a2f5-4dde-9036-b7bf5fc87e13": {
+      "akc_id": "278692ca-a2f5-4dde-9036-b7bf5fc87e13",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "a318dfde-aaf2-4152-b912-d45903f91e84": {
+      "akc_id": "a318dfde-aaf2-4152-b912-d45903f91e84",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "fa039ec0-f60c-4ee3-9c90-42359fe2a6f0": {
+      "akc_id": "fa039ec0-f60c-4ee3-9c90-42359fe2a6f0",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "01b7a4e3-188e-47e3-89e5-ead19556a035": {
+      "akc_id": "01b7a4e3-188e-47e3-89e5-ead19556a035",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "a4bca82b-f268-43b4-80c5-27585c50983b": {
+      "akc_id": "a4bca82b-f268-43b4-80c5-27585c50983b",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "ae7e97cb-0a23-41b1-a17d-4cb377f39d6b": {
+      "akc_id": "ae7e97cb-0a23-41b1-a17d-4cb377f39d6b",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "c9f1c8cc-5459-4442-bd84-704a21637e16": {
+      "akc_id": "c9f1c8cc-5459-4442-bd84-704a21637e16",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "2918e1b6-3b3f-4c7f-93e9-057cf8d649c6": {
+      "akc_id": "2918e1b6-3b3f-4c7f-93e9-057cf8d649c6",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "a35a98c7-7c5b-4109-839c-117906da8a0a": {
+      "akc_id": "a35a98c7-7c5b-4109-839c-117906da8a0a",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "bd894846-6018-4ce9-9e5a-8620edc74d54": {
+      "akc_id": "bd894846-6018-4ce9-9e5a-8620edc74d54",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "3f38756c-8125-4fbd-9b98-521093c8eb93": {
+      "akc_id": "3f38756c-8125-4fbd-9b98-521093c8eb93",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "3dde70ec-140b-4cb4-a988-a2d9a97138c1": {
+      "akc_id": "3dde70ec-140b-4cb4-a988-a2d9a97138c1",
+      "type": "LifeEvent",
+      "participant": "385426de-69fa-460f-b596-b365da6c95c0",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "8045be4d-b218-42cd-8ea5-743d9255ffc5": {
+      "akc_id": "8045be4d-b218-42cd-8ea5-743d9255ffc5",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "fe5242cb-196c-4811-9b75-15051ce6431b": {
+      "akc_id": "fe5242cb-196c-4811-9b75-15051ce6431b",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "432b5a21-93ab-4e57-b573-b7e864ae3a5f": {
+      "akc_id": "432b5a21-93ab-4e57-b573-b7e864ae3a5f",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "22321541-b321-4102-a8c3-e007e6869f41": {
+      "akc_id": "22321541-b321-4102-a8c3-e007e6869f41",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "9143d33e-7983-4c4c-bf4f-757a4196f3f2": {
+      "akc_id": "9143d33e-7983-4c4c-bf4f-757a4196f3f2",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "a3aeb4dc-3401-47bc-951e-ba52c7b6a552": {
+      "akc_id": "a3aeb4dc-3401-47bc-951e-ba52c7b6a552",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "6591f8a4-4c4d-481c-8b97-ae115721305a": {
+      "akc_id": "6591f8a4-4c4d-481c-8b97-ae115721305a",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "798cac20-ca2d-44cc-84fb-608c78bddf1b": {
+      "akc_id": "798cac20-ca2d-44cc-84fb-608c78bddf1b",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "1438ddb1-95a2-45a4-bea1-70d2f249bb4b": {
+      "akc_id": "1438ddb1-95a2-45a4-bea1-70d2f249bb4b",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "db195338-e191-418e-bf08-e4b2d3cfa32a": {
+      "akc_id": "db195338-e191-418e-bf08-e4b2d3cfa32a",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "133e537e-4e3e-4ea6-9699-cb0f79adcb92": {
+      "akc_id": "133e537e-4e3e-4ea6-9699-cb0f79adcb92",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "dccf4685-adfc-4f4e-ae3e-9831d116d90e": {
+      "akc_id": "dccf4685-adfc-4f4e-ae3e-9831d116d90e",
+      "type": "LifeEvent",
+      "participant": "10a76c11-4412-40ac-8866-ee319e793288",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "416d0b8d-fc2b-4dd7-a8f4-2e971f3a1bd2": {
+      "akc_id": "416d0b8d-fc2b-4dd7-a8f4-2e971f3a1bd2",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "e07841cc-217f-4ac4-b80a-040d7861de72": {
+      "akc_id": "e07841cc-217f-4ac4-b80a-040d7861de72",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "2621c109-0231-4482-b5ee-74d1efd17f75": {
+      "akc_id": "2621c109-0231-4482-b5ee-74d1efd17f75",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "0245a918-a142-4d91-9ab5-b50d5e803697": {
+      "akc_id": "0245a918-a142-4d91-9ab5-b50d5e803697",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "78432008-009a-460d-8fdc-40ee95d9e3a0": {
+      "akc_id": "78432008-009a-460d-8fdc-40ee95d9e3a0",
+      "type": "LifeEvent",
+      "participant": "2cf1f18f-67fe-40c9-9163-bfa2a3ef8f82",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "04125230-18dc-413f-857b-675d8ce696e0": {
+      "akc_id": "04125230-18dc-413f-857b-675d8ce696e0",
+      "type": "LifeEvent",
+      "participant": "1b04dcfa-e30e-4783-b041-46ee4f82a40b",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "ee80e1e5-dbd3-4f9c-b07b-bb68ee1f0ef2": {
+      "akc_id": "ee80e1e5-dbd3-4f9c-b07b-bb68ee1f0ef2",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "b005d2b1-7320-4f59-9257-18466304c655": {
+      "akc_id": "b005d2b1-7320-4f59-9257-18466304c655",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "adf23179-27ca-4586-ae06-8d1d294e7d03": {
+      "akc_id": "adf23179-27ca-4586-ae06-8d1d294e7d03",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "d215b822-9df2-4727-bbeb-8bf203a32aaf": {
+      "akc_id": "d215b822-9df2-4727-bbeb-8bf203a32aaf",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "1778ba7e-c3a2-4c73-8533-f7b1bd44e12d": {
+      "akc_id": "1778ba7e-c3a2-4c73-8533-f7b1bd44e12d",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "72601aef-dcab-4886-aef4-9008dea47324": {
+      "akc_id": "72601aef-dcab-4886-aef4-9008dea47324",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "527dc60d-965a-448b-b90b-d5f7f142cda4": {
+      "akc_id": "527dc60d-965a-448b-b90b-d5f7f142cda4",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "49f9478f-900d-4adc-b089-12315e359572": {
+      "akc_id": "49f9478f-900d-4adc-b089-12315e359572",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "f3800b6f-7b67-4ab0-842e-a4ecfc6d1321": {
+      "akc_id": "f3800b6f-7b67-4ab0-842e-a4ecfc6d1321",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "98056ea2-9ffe-45e0-8bbf-73bc87f1fca5": {
+      "akc_id": "98056ea2-9ffe-45e0-8bbf-73bc87f1fca5",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "10b5ce77-0d49-4ab9-ae76-6b17788bffba": {
+      "akc_id": "10b5ce77-0d49-4ab9-ae76-6b17788bffba",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "de81909b-bd9a-47bb-adb5-747341665e0a": {
+      "akc_id": "de81909b-bd9a-47bb-adb5-747341665e0a",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "e2d43b49-ad06-49a6-9f7b-741019d62ffc": {
+      "akc_id": "e2d43b49-ad06-49a6-9f7b-741019d62ffc",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "7a1efac0-6c60-4c8f-99c4-4b2ef62ff713": {
+      "akc_id": "7a1efac0-6c60-4c8f-99c4-4b2ef62ff713",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "95f3439f-3232-4e75-bd9e-f8a6abad12e1": {
+      "akc_id": "95f3439f-3232-4e75-bd9e-f8a6abad12e1",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "a354a389-0d1d-48af-bc2d-6cd0b3145ecd": {
+      "akc_id": "a354a389-0d1d-48af-bc2d-6cd0b3145ecd",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "c8c3433a-8b75-4bc6-97a1-2b2140932b6a": {
+      "akc_id": "c8c3433a-8b75-4bc6-97a1-2b2140932b6a",
+      "type": "LifeEvent",
+      "participant": "fc15e9db-ab9c-45c4-9d0f-875ebcd7b229",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "579a9f21-6b13-40cd-9ffc-2e2fafe0a21a": {
+      "akc_id": "579a9f21-6b13-40cd-9ffc-2e2fafe0a21a",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "9826c7db-c855-4b80-9c5d-9c647222df33": {
+      "akc_id": "9826c7db-c855-4b80-9c5d-9c647222df33",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "e1bd876a-650d-4cbb-b026-98d21b65aaaf": {
+      "akc_id": "e1bd876a-650d-4cbb-b026-98d21b65aaaf",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "664ab525-f5db-443d-b1cc-f715d4b6446b": {
+      "akc_id": "664ab525-f5db-443d-b1cc-f715d4b6446b",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "fdd5d52f-b011-43dd-bab5-3e5686c19a86": {
+      "akc_id": "fdd5d52f-b011-43dd-bab5-3e5686c19a86",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "80a6f74b-a89f-4db3-9f57-12022ba178e2": {
+      "akc_id": "80a6f74b-a89f-4db3-9f57-12022ba178e2",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "171cbbd9-7375-4463-994d-beed4763780a": {
+      "akc_id": "171cbbd9-7375-4463-994d-beed4763780a",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "2860fd0c-b077-442a-af55-cba5b22abf79": {
+      "akc_id": "2860fd0c-b077-442a-af55-cba5b22abf79",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "6ee86e7e-63fa-4427-8745-ae499952adfa": {
+      "akc_id": "6ee86e7e-63fa-4427-8745-ae499952adfa",
+      "type": "LifeEvent",
+      "participant": "c41ad955-a572-4940-9649-bd884b073a85",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "efaa4675-5664-49b6-bc3d-91c2117b6a94": {
+      "akc_id": "efaa4675-5664-49b6-bc3d-91c2117b6a94",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "f0f48ed9-a065-470e-8f03-c243c9b10a7b": {
+      "akc_id": "f0f48ed9-a065-470e-8f03-c243c9b10a7b",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "b98d7efb-9920-48a8-870c-009d56f57e69": {
+      "akc_id": "b98d7efb-9920-48a8-870c-009d56f57e69",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "4038a8e9-e6c7-4c6b-908c-eb03fe26750a": {
+      "akc_id": "4038a8e9-e6c7-4c6b-908c-eb03fe26750a",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "9252b6db-5a07-42a6-ad33-9bd9a05de86c": {
+      "akc_id": "9252b6db-5a07-42a6-ad33-9bd9a05de86c",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "2d4e80e5-6a6c-4323-bf7e-65ab6fc93440": {
+      "akc_id": "2d4e80e5-6a6c-4323-bf7e-65ab6fc93440",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "e88c072a-7986-4a47-93eb-1c359f8755de": {
+      "akc_id": "e88c072a-7986-4a47-93eb-1c359f8755de",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    },
+    "7727c382-87a0-4527-a548-14b981766f36": {
+      "akc_id": "7727c382-87a0-4527-a548-14b981766f36",
+      "type": "LifeEvent",
+      "participant": "3e84a4d7-cea2-4180-b56b-47bd4e568ad7",
+      "study_event": "07b88a87-8502-44d1-bd4c-9d72738931c9",
+      "life_event_type": "specimen collection",
+      "start": 6,
+      "time_unit": "day"
+    }
+  },
+  "specimens": {
+    "5e331ee7-219e-47f8-8dd3-a85a8b6ea28b": {
+      "akc_id": "5e331ee7-219e-47f8-8dd3-a85a8b6ea28b",
+      "life_event": "ee80e1e5-dbd3-4f9c-b07b-bb68ee1f0ef2"
+    },
+    "e367ce96-4215-49a6-86f1-3af0fa6dee25": {
+      "akc_id": "e367ce96-4215-49a6-86f1-3af0fa6dee25",
+      "life_event": "b005d2b1-7320-4f59-9257-18466304c655"
+    },
+    "83f2a150-df26-4dd0-b724-c72ec1b76763": {
+      "akc_id": "83f2a150-df26-4dd0-b724-c72ec1b76763",
+      "life_event": "adf23179-27ca-4586-ae06-8d1d294e7d03"
+    },
+    "f934fecd-5a08-4544-b1ca-244ea691e1a5": {
+      "akc_id": "f934fecd-5a08-4544-b1ca-244ea691e1a5",
+      "life_event": "d215b822-9df2-4727-bbeb-8bf203a32aaf"
+    },
+    "ec965c31-d38e-40a7-86f8-697a3ce0365e": {
+      "akc_id": "ec965c31-d38e-40a7-86f8-697a3ce0365e",
+      "life_event": "1778ba7e-c3a2-4c73-8533-f7b1bd44e12d"
+    },
+    "f4f9b2e7-c493-4d1c-ab7e-17faa18cf569": {
+      "akc_id": "f4f9b2e7-c493-4d1c-ab7e-17faa18cf569",
+      "life_event": "72601aef-dcab-4886-aef4-9008dea47324"
+    },
+    "e465f5c7-05d7-4c2d-bdd3-e02490118483": {
+      "akc_id": "e465f5c7-05d7-4c2d-bdd3-e02490118483",
+      "life_event": "527dc60d-965a-448b-b90b-d5f7f142cda4"
+    },
+    "aeb75408-82cb-4630-9b03-44bb2115f755": {
+      "akc_id": "aeb75408-82cb-4630-9b03-44bb2115f755",
+      "life_event": "49f9478f-900d-4adc-b089-12315e359572"
+    },
+    "c5f5fb84-262a-4746-a2e5-41b54b6b4d90": {
+      "akc_id": "c5f5fb84-262a-4746-a2e5-41b54b6b4d90",
+      "life_event": "133e537e-4e3e-4ea6-9699-cb0f79adcb92"
+    },
+    "35f7a17e-595e-4c85-996e-80608cdee1b4": {
+      "akc_id": "35f7a17e-595e-4c85-996e-80608cdee1b4",
+      "life_event": "dccf4685-adfc-4f4e-ae3e-9831d116d90e"
+    },
+    "e3a7b9e5-f283-4965-96b2-48036ea64551": {
+      "akc_id": "e3a7b9e5-f283-4965-96b2-48036ea64551",
+      "life_event": "db195338-e191-418e-bf08-e4b2d3cfa32a"
+    },
+    "8e4060d8-6fe4-4367-8a74-91383ec3a258": {
+      "akc_id": "8e4060d8-6fe4-4367-8a74-91383ec3a258",
+      "life_event": "6591f8a4-4c4d-481c-8b97-ae115721305a"
+    },
+    "a1641db5-095d-47f5-834a-cc06d221e14c": {
+      "akc_id": "a1641db5-095d-47f5-834a-cc06d221e14c",
+      "life_event": "a3aeb4dc-3401-47bc-951e-ba52c7b6a552"
+    },
+    "998aa46c-ce1b-4c94-9a9a-9fd417f93920": {
+      "akc_id": "998aa46c-ce1b-4c94-9a9a-9fd417f93920",
+      "life_event": "798cac20-ca2d-44cc-84fb-608c78bddf1b"
+    },
+    "1526c14d-8cfa-4bdf-a065-53f15f2db4cf": {
+      "akc_id": "1526c14d-8cfa-4bdf-a065-53f15f2db4cf",
+      "life_event": "9143d33e-7983-4c4c-bf4f-757a4196f3f2"
+    },
+    "4190dae5-47a4-4a25-b813-b3f5eaf301ef": {
+      "akc_id": "4190dae5-47a4-4a25-b813-b3f5eaf301ef",
+      "life_event": "432b5a21-93ab-4e57-b573-b7e864ae3a5f"
+    },
+    "4dbd6e20-c14e-4ae3-a6ec-29f740a8db86": {
+      "akc_id": "4dbd6e20-c14e-4ae3-a6ec-29f740a8db86",
+      "life_event": "f3800b6f-7b67-4ab0-842e-a4ecfc6d1321"
+    },
+    "b89a227f-ec22-4414-864c-ebcb2ee61930": {
+      "akc_id": "b89a227f-ec22-4414-864c-ebcb2ee61930",
+      "life_event": "98056ea2-9ffe-45e0-8bbf-73bc87f1fca5"
+    },
+    "5deef4be-db6e-45c5-bb69-2338d25bb417": {
+      "akc_id": "5deef4be-db6e-45c5-bb69-2338d25bb417",
+      "life_event": "10b5ce77-0d49-4ab9-ae76-6b17788bffba"
+    },
+    "2322318a-528c-4fa9-a682-bd0003abcde5": {
+      "akc_id": "2322318a-528c-4fa9-a682-bd0003abcde5",
+      "life_event": "de81909b-bd9a-47bb-adb5-747341665e0a"
+    },
+    "eb0fe23d-642e-4baf-bb79-0d280737913f": {
+      "akc_id": "eb0fe23d-642e-4baf-bb79-0d280737913f",
+      "life_event": "e2d43b49-ad06-49a6-9f7b-741019d62ffc"
+    },
+    "f48e7153-5cdb-4a09-9403-cc658d1fcd1d": {
+      "akc_id": "f48e7153-5cdb-4a09-9403-cc658d1fcd1d",
+      "life_event": "7a1efac0-6c60-4c8f-99c4-4b2ef62ff713"
+    },
+    "8de2db09-b650-4554-a16a-958c2e87adf9": {
+      "akc_id": "8de2db09-b650-4554-a16a-958c2e87adf9",
+      "life_event": "95f3439f-3232-4e75-bd9e-f8a6abad12e1"
+    },
+    "37567a0e-4655-4296-b96a-644e2970b93e": {
+      "akc_id": "37567a0e-4655-4296-b96a-644e2970b93e",
+      "life_event": "a354a389-0d1d-48af-bc2d-6cd0b3145ecd"
+    },
+    "df7b8778-0578-4823-ad45-2a74bc380d3d": {
+      "akc_id": "df7b8778-0578-4823-ad45-2a74bc380d3d",
+      "life_event": "c8c3433a-8b75-4bc6-97a1-2b2140932b6a"
+    },
+    "494e4f61-6bd6-41c2-8579-3bd9d3d6e8bb": {
+      "akc_id": "494e4f61-6bd6-41c2-8579-3bd9d3d6e8bb",
+      "life_event": "fe5242cb-196c-4811-9b75-15051ce6431b"
+    },
+    "b8fe3b49-9b87-46a2-bd2f-459b183dbc22": {
+      "akc_id": "b8fe3b49-9b87-46a2-bd2f-459b183dbc22",
+      "life_event": "22321541-b321-4102-a8c3-e007e6869f41"
+    },
+    "83d1c048-287d-4a6d-824f-64098a2060c1": {
+      "akc_id": "83d1c048-287d-4a6d-824f-64098a2060c1",
+      "life_event": "1438ddb1-95a2-45a4-bea1-70d2f249bb4b"
+    },
+    "652de4f1-7d5f-4e12-aaa4-e25b3a372a41": {
+      "akc_id": "652de4f1-7d5f-4e12-aaa4-e25b3a372a41",
+      "life_event": "416d0b8d-fc2b-4dd7-a8f4-2e971f3a1bd2"
+    },
+    "87001a62-b590-4be4-9c1d-3380faf3f61e": {
+      "akc_id": "87001a62-b590-4be4-9c1d-3380faf3f61e",
+      "life_event": "3f38756c-8125-4fbd-9b98-521093c8eb93"
+    },
+    "cfcad25b-3d00-4d15-858b-18e8b25d2dbf": {
+      "akc_id": "cfcad25b-3d00-4d15-858b-18e8b25d2dbf",
+      "life_event": "bd894846-6018-4ce9-9e5a-8620edc74d54"
+    },
+    "7ffc565f-0374-4680-b457-3d3c66c3571c": {
+      "akc_id": "7ffc565f-0374-4680-b457-3d3c66c3571c",
+      "life_event": "8045be4d-b218-42cd-8ea5-743d9255ffc5"
+    },
+    "edba0920-62b6-402c-bb3b-c63beabd36b8": {
+      "akc_id": "edba0920-62b6-402c-bb3b-c63beabd36b8",
+      "life_event": "a35a98c7-7c5b-4109-839c-117906da8a0a"
+    },
+    "874b10da-94d4-417f-9ffc-1382ca2a4b5b": {
+      "akc_id": "874b10da-94d4-417f-9ffc-1382ca2a4b5b",
+      "life_event": "04125230-18dc-413f-857b-675d8ce696e0"
+    },
+    "497e39d9-7a31-4d56-b41a-7e38b69a75cd": {
+      "akc_id": "497e39d9-7a31-4d56-b41a-7e38b69a75cd",
+      "life_event": "2918e1b6-3b3f-4c7f-93e9-057cf8d649c6"
+    },
+    "d0eb5afc-1051-422a-ad0f-4123d9da3de1": {
+      "akc_id": "d0eb5afc-1051-422a-ad0f-4123d9da3de1",
+      "life_event": "c9f1c8cc-5459-4442-bd84-704a21637e16"
+    },
+    "32ce97fa-6b3c-4779-81ba-2c9e039f30ce": {
+      "akc_id": "32ce97fa-6b3c-4779-81ba-2c9e039f30ce",
+      "life_event": "0245a918-a142-4d91-9ab5-b50d5e803697"
+    },
+    "d4a21bee-398a-4060-9d48-75b756b0a2c1": {
+      "akc_id": "d4a21bee-398a-4060-9d48-75b756b0a2c1",
+      "life_event": "78432008-009a-460d-8fdc-40ee95d9e3a0"
+    },
+    "ae12c19f-fdcf-4a33-a7d6-5288e953e353": {
+      "akc_id": "ae12c19f-fdcf-4a33-a7d6-5288e953e353",
+      "life_event": "e07841cc-217f-4ac4-b80a-040d7861de72"
+    },
+    "d5af0663-db47-4c32-bea3-7420b38e67ce": {
+      "akc_id": "d5af0663-db47-4c32-bea3-7420b38e67ce",
+      "life_event": "2621c109-0231-4482-b5ee-74d1efd17f75"
+    },
+    "0509b397-2f84-4849-9954-46def6cb50f3": {
+      "akc_id": "0509b397-2f84-4849-9954-46def6cb50f3",
+      "life_event": "ae7e97cb-0a23-41b1-a17d-4cb377f39d6b"
+    },
+    "5108c767-4b13-469c-ad30-6d12ded62bf5": {
+      "akc_id": "5108c767-4b13-469c-ad30-6d12ded62bf5",
+      "life_event": "01b7a4e3-188e-47e3-89e5-ead19556a035"
+    },
+    "b328ab36-3546-4c4b-9be2-b31916b03d99": {
+      "akc_id": "b328ab36-3546-4c4b-9be2-b31916b03d99",
+      "life_event": "a4bca82b-f268-43b4-80c5-27585c50983b"
+    },
+    "cf4ada46-c431-431b-a67a-4f604d942734": {
+      "akc_id": "cf4ada46-c431-431b-a67a-4f604d942734",
+      "life_event": "579a9f21-6b13-40cd-9ffc-2e2fafe0a21a"
+    },
+    "009af72c-4210-421f-a9a4-1505e01028d2": {
+      "akc_id": "009af72c-4210-421f-a9a4-1505e01028d2",
+      "life_event": "9826c7db-c855-4b80-9c5d-9c647222df33"
+    },
+    "86b8e217-9689-4106-a314-3407d06ffce8": {
+      "akc_id": "86b8e217-9689-4106-a314-3407d06ffce8",
+      "life_event": "e1bd876a-650d-4cbb-b026-98d21b65aaaf"
+    },
+    "da0c56b7-7b9c-4f8a-be22-a9994f70693e": {
+      "akc_id": "da0c56b7-7b9c-4f8a-be22-a9994f70693e",
+      "life_event": "664ab525-f5db-443d-b1cc-f715d4b6446b"
+    },
+    "e48994e0-c951-4607-a5a7-060f7d3f45f7": {
+      "akc_id": "e48994e0-c951-4607-a5a7-060f7d3f45f7",
+      "life_event": "fdd5d52f-b011-43dd-bab5-3e5686c19a86"
+    },
+    "09ddd3e7-05f2-4f74-bd8f-2c40d703573b": {
+      "akc_id": "09ddd3e7-05f2-4f74-bd8f-2c40d703573b",
+      "life_event": "80a6f74b-a89f-4db3-9f57-12022ba178e2"
+    },
+    "24e3553b-a315-43c6-bbff-c4108cd285ed": {
+      "akc_id": "24e3553b-a315-43c6-bbff-c4108cd285ed",
+      "life_event": "171cbbd9-7375-4463-994d-beed4763780a"
+    },
+    "c2cbf9c2-4f0a-448a-ae14-b339a19b1493": {
+      "akc_id": "c2cbf9c2-4f0a-448a-ae14-b339a19b1493",
+      "life_event": "2860fd0c-b077-442a-af55-cba5b22abf79"
+    },
+    "37803c2f-1b76-495f-bc84-634a9a57da70": {
+      "akc_id": "37803c2f-1b76-495f-bc84-634a9a57da70",
+      "life_event": "6ee86e7e-63fa-4427-8745-ae499952adfa"
+    },
+    "a148387a-f762-4c71-ada8-c4cf25bed824": {
+      "akc_id": "a148387a-f762-4c71-ada8-c4cf25bed824",
+      "life_event": "efaa4675-5664-49b6-bc3d-91c2117b6a94"
+    },
+    "4e61421b-1db0-4d91-86a1-63a6ce27d853": {
+      "akc_id": "4e61421b-1db0-4d91-86a1-63a6ce27d853",
+      "life_event": "f0f48ed9-a065-470e-8f03-c243c9b10a7b"
+    },
+    "566ef008-26d4-4a93-89ba-e2edd84a5fbf": {
+      "akc_id": "566ef008-26d4-4a93-89ba-e2edd84a5fbf",
+      "life_event": "b98d7efb-9920-48a8-870c-009d56f57e69"
+    },
+    "6db9bd63-6aba-4496-a58a-4cf0384a68bd": {
+      "akc_id": "6db9bd63-6aba-4496-a58a-4cf0384a68bd",
+      "life_event": "4038a8e9-e6c7-4c6b-908c-eb03fe26750a"
+    },
+    "a8811efb-43b3-41e7-bf60-61ffe04c3b1f": {
+      "akc_id": "a8811efb-43b3-41e7-bf60-61ffe04c3b1f",
+      "life_event": "9252b6db-5a07-42a6-ad33-9bd9a05de86c"
+    },
+    "a156cd81-b13b-498f-8cea-9eaeef62b61c": {
+      "akc_id": "a156cd81-b13b-498f-8cea-9eaeef62b61c",
+      "life_event": "2d4e80e5-6a6c-4323-bf7e-65ab6fc93440"
+    },
+    "199af62e-4a31-47bb-83ba-00ea4cfd9fbf": {
+      "akc_id": "199af62e-4a31-47bb-83ba-00ea4cfd9fbf",
+      "life_event": "e88c072a-7986-4a47-93eb-1c359f8755de"
+    },
+    "50598d87-65a1-4a96-8767-93acc1763d1f": {
+      "akc_id": "50598d87-65a1-4a96-8767-93acc1763d1f",
+      "life_event": "7727c382-87a0-4527-a548-14b981766f36"
+    },
+    "c87568a7-29e3-42b6-9fb2-a81b748a8899": {
+      "akc_id": "c87568a7-29e3-42b6-9fb2-a81b748a8899",
+      "life_event": "fa039ec0-f60c-4ee3-9c90-42359fe2a6f0"
+    },
+    "0a501b62-5941-4f61-9b9c-1f4a1fc59a8c": {
+      "akc_id": "0a501b62-5941-4f61-9b9c-1f4a1fc59a8c",
+      "life_event": "a318dfde-aaf2-4152-b912-d45903f91e84"
+    },
+    "3c7839e0-fd1f-419f-9ea3-c88d8bbbda8d": {
+      "akc_id": "3c7839e0-fd1f-419f-9ea3-c88d8bbbda8d",
+      "life_event": "278692ca-a2f5-4dde-9036-b7bf5fc87e13"
+    },
+    "fb3dd752-c87e-4e64-83a3-9f5114918d44": {
+      "akc_id": "fb3dd752-c87e-4e64-83a3-9f5114918d44",
+      "life_event": "d6b848ef-143b-4f0b-a4a7-25091d657f30"
+    },
+    "b30ef04c-d806-43e5-8958-49427c5a480d": {
+      "akc_id": "b30ef04c-d806-43e5-8958-49427c5a480d",
+      "life_event": "bd74d456-f838-4297-bb4f-a2fad52e0b8d"
+    },
+    "166fc880-43bd-4178-936a-06d11396eb66": {
+      "akc_id": "166fc880-43bd-4178-936a-06d11396eb66",
+      "life_event": "0fbccc8c-c69d-4f80-8f5c-85b37c87aa4a"
+    },
+    "88db86af-805f-4373-b75a-0de1541d49b1": {
+      "akc_id": "88db86af-805f-4373-b75a-0de1541d49b1",
+      "life_event": "3dde70ec-140b-4cb4-a988-a2d9a97138c1"
+    },
+    "f85ebe81-54ed-4f99-a58d-3979d1d60c85": {
+      "akc_id": "f85ebe81-54ed-4f99-a58d-3979d1d60c85",
+      "life_event": "9e5967bf-fe61-4f1e-9851-7b89766ce0b0"
+    }
+  },
+  "@type": "AIRRKnowledgeCommons"
+}
