@@ -14,6 +14,19 @@ ADD COLUMN sequence_aa TEXT,
 ADD COLUMN source_protein TEXT,
 ADD COLUMN source_organism TEXT;
 
+-- roll-up fields from AIRRSequencingData
+ALTER TABLE "SequenceData"
+ADD COLUMN sequencing_data_id TEXT, 
+ADD COLUMN file_type VARCHAR(5), 
+ADD COLUMN filename TEXT, 
+ADD COLUMN read_direction VARCHAR(7), 
+ADD COLUMN read_length INTEGER, 
+ADD COLUMN paired_filename TEXT, 
+ADD COLUMN paired_read_direction VARCHAR(7), 
+ADD COLUMN paired_read_length INTEGER, 
+ADD COLUMN index_filename TEXT, 
+ADD COLUMN index_length INTEGER;
+
 -- roll-up fields from AIRRSequencingAssay and TCellReceptorEpitopeBindingAssay
 ALTER TABLE "Assay"
 -- AIRRSequencingAssay
