@@ -51,6 +51,13 @@ CREATE TABLE "Assay_tcr_complexes" (
 	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
 );
 
+-- tables to support the query API
+CREATE TABLE "QueryAssay" (
+       akc_id TEXT,
+       assay_object JSONB,
+       PRIMARY KEY (akc_id)
+);
+
 -- some useful indexes
 CREATE INDEX "Chain_junction_aa" ON "Chain" ("junction_aa");
 CREATE INDEX "Chain_cdr3_aa" ON "Chain" ("cdr3_aa");
