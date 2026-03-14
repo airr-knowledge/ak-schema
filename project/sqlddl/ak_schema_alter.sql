@@ -12,7 +12,7 @@ ADD COLUMN trd_chain TEXT REFERENCES "Chain" (akc_id);
 ALTER TABLE "Epitope"
 ADD COLUMN sequence_aa TEXT,
 ADD COLUMN source_protein TEXT,
-ADD COLUMN source_organism TEXT;
+ADD COLUMN source_organism TEXT REFERENCES "TaxonomicSpecies" (term_id);
 
 -- roll-up fields from AIRRSequencingData
 ALTER TABLE "SequenceData"

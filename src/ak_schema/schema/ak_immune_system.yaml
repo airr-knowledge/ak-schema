@@ -170,6 +170,7 @@ slots:
 
   source_organism:
     description: The organism that the source protein comes from
+    range: TaxonomicSpecies
 
   antibody:
     description: B cell receptor, immunoglobulin antibody

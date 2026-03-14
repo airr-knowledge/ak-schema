@@ -64,6 +64,8 @@ classes:
       - geolocation # at birth
       - strain # For non-human organisms
     slot_usage:
+      species:
+        range: TaxonomicSpecies
       sex:
         range: PhenotypeAndTraits
 
