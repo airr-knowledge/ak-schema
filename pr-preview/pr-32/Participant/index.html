@@ -259,8 +259,8 @@
 
 
 
-    Participant --&gt; "0..1" SpeciesOntology : species
-    click SpeciesOntology href "../SpeciesOntology"
+    Participant --&gt; "0..1" TaxonomicSpecies : species
+    click TaxonomicSpecies href "../TaxonomicSpecies"
 
 
       Participant : strain
@@ -312,7 +312,7 @@
 </tr>
 <tr>
 <td><a href="../species/">species</a></td>
-<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>0..1 <br/> <a href="../TaxonomicSpecies/">TaxonomicSpecies</a></td>
 <td>Binomial designation of subject's species</td>
 <td>direct</td>
 </tr>
@@ -477,6 +477,9 @@ slots:
 - geolocation
 - strain
 slot_usage:
+  species:
+    name: species
+    range: TaxonomicSpecies
   sex:
     name: sex
     range: PhenotypeAndTraits
@@ -491,6 +494,9 @@ description: A participant in an investigation.
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: NamedThing
 slot_usage:
+  species:
+    name: species
+    range: TaxonomicSpecies
   sex:
     name: sex
     range: PhenotypeAndTraits
@@ -523,7 +529,7 @@ attributes:
     - AlleleDescription
     - GermlineSet
     - Subject
-    range: SpeciesOntology
+    range: TaxonomicSpecies
   sex:
     name: sex
     annotations:

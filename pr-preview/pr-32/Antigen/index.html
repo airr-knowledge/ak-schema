@@ -220,6 +220,13 @@
 
       Antigen : source_organism
 
+
+
+
+    Antigen --&gt; "0..1" TaxonomicSpecies : source_organism
+    click TaxonomicSpecies href "../TaxonomicSpecies"
+
+
       Antigen : source_protein
 
 
@@ -253,7 +260,7 @@
 </tr>
 <tr>
 <td><a href="../source_organism/">source_organism</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <br/> <a href="../TaxonomicSpecies/">TaxonomicSpecies</a></td>
 <td>The organism that the source protein comes from</td>
 <td>direct</td>
 </tr>
@@ -367,7 +374,7 @@ attributes:
     domain_of:
     - Antigen
     - PeptidicEpitope
-    range: string
+    range: TaxonomicSpecies
   name:
     name: name
     description: A human-readable name for a thing
