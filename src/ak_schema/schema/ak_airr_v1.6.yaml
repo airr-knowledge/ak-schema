@@ -44,6 +44,10 @@ classes:
       - V1p6gff_start
       - V1p6gff_end
       - V1p6strand
+    slot_usage:
+      V1p6sequence_id:
+        identifier: true
+        required: true
   V1p6SequenceDelineationV:
     is_a: AIRRStandards_v1p6
     slots:
@@ -187,6 +191,10 @@ classes:
       - V1p6allele_designation
       - V1p6gene
       - V1p6reference_set_ref
+    slot_usage:
+      V1p6allele_designation:
+        identifier: true
+        required: true
   V1p6SubjectGenotype:
     is_a: AIRRStandards_v1p6
     slots:
@@ -333,6 +341,10 @@ classes:
       - V1p6subject
       - V1p6sample
       - V1p6data_processing
+    slot_usage:
+      V1p6repertoire_id:
+        identifier: true
+        required: true
   V1p6RepertoireFilter:
     is_a: AIRRStandards_v1p6
     slots:
