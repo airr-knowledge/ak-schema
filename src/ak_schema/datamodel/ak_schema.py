@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-03-09T23:34:57
+# Generation date: 2026-03-14T09:03:35
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -261,6 +261,10 @@ class DiseasesTermId(OntologyTableTermId):
 
 
 class CellsTermId(OntologyTableTermId):
+    pass
+
+
+class TaxonomicSpeciesTermId(OntologyTableTermId):
     pass
 
 
@@ -745,6 +749,31 @@ class Cells(OntologyTable):
 
 
 @dataclass(repr=False)
+class TaxonomicSpecies(OntologyTable):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["TaxonomicSpecies"]
+    class_class_curie: ClassVar[str] = "ak_schema:TaxonomicSpecies"
+    class_name: ClassVar[str] = "TaxonomicSpecies"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TaxonomicSpecies
+
+    term_id: Union[str, TaxonomicSpeciesTermId] = None
+    parent: Optional[Union[Union[str, TaxonomicSpeciesTermId], List[Union[str, TaxonomicSpeciesTermId]]]] = empty_list()
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.term_id):
+            self.MissingRequiredField("term_id")
+        if not isinstance(self.term_id, TaxonomicSpeciesTermId):
+            self.term_id = TaxonomicSpeciesTermId(self.term_id)
+
+        if not isinstance(self.parent, list):
+            self.parent = [self.parent] if self.parent is not None else []
+        self.parent = [v if isinstance(v, TaxonomicSpeciesTermId) else TaxonomicSpeciesTermId(v) for v in self.parent]
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
 class UberAnatomy(OntologyTable):
     _inherited_slots: ClassVar[List[str]] = []
 
@@ -1053,7 +1082,7 @@ class Participant(NamedThing):
 
     akc_id: Union[str, ParticipantAkcId] = None
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
-    species: Optional[Union[str, "SpeciesOntology"]] = None
+    species: Optional[Union[str, TaxonomicSpeciesTermId]] = None
     sex: Optional[Union[str, PhenotypeAndTraitsTermId]] = None
     age: Optional[str] = None
     age_unit: Optional[Union[str, "AgeUnitOntology"]] = None
@@ -1071,6 +1100,9 @@ class Participant(NamedThing):
 
         if self.study_arm is not None and not isinstance(self.study_arm, StudyArmAkcId):
             self.study_arm = StudyArmAkcId(self.study_arm)
+
+        if self.species is not None and not isinstance(self.species, TaxonomicSpeciesTermId):
+            self.species = TaxonomicSpeciesTermId(self.species)
 
         if self.sex is not None and not isinstance(self.sex, PhenotypeAndTraitsTermId):
             self.sex = PhenotypeAndTraitsTermId(self.sex)
@@ -2310,7 +2342,7 @@ class Antigen(NamedThing):
 
     akc_id: Union[str, AntigenAkcId] = None
     source_protein: Optional[str] = None
-    source_organism: Optional[str] = None
+    source_organism: Optional[Union[str, TaxonomicSpeciesTermId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2321,8 +2353,8 @@ class Antigen(NamedThing):
         if self.source_protein is not None and not isinstance(self.source_protein, str):
             self.source_protein = str(self.source_protein)
 
-        if self.source_organism is not None and not isinstance(self.source_organism, str):
-            self.source_organism = str(self.source_organism)
+        if self.source_organism is not None and not isinstance(self.source_organism, TaxonomicSpeciesTermId):
+            self.source_organism = TaxonomicSpeciesTermId(self.source_organism)
 
         super().__post_init__(**kwargs)
 
@@ -2379,7 +2411,7 @@ class PeptidicEpitope(Epitope):
     akc_id: Union[str, PeptidicEpitopeAkcId] = None
     sequence_aa: Optional[str] = None
     source_protein: Optional[str] = None
-    source_organism: Optional[str] = None
+    source_organism: Optional[Union[str, TaxonomicSpeciesTermId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2393,8 +2425,8 @@ class PeptidicEpitope(Epitope):
         if self.source_protein is not None and not isinstance(self.source_protein, str):
             self.source_protein = str(self.source_protein)
 
-        if self.source_organism is not None and not isinstance(self.source_organism, str):
-            self.source_organism = str(self.source_organism)
+        if self.source_organism is not None and not isinstance(self.source_organism, TaxonomicSpeciesTermId):
+            self.source_organism = TaxonomicSpeciesTermId(self.source_organism)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -6568,7 +6600,7 @@ slots.source_protein = Slot(uri=AK_SCHEMA.source_protein, name="source_protein",
                    model_uri=AK_SCHEMA.source_protein, domain=None, range=Optional[str])
 
 slots.source_organism = Slot(uri=AK_SCHEMA.source_organism, name="source_organism", curie=AK_SCHEMA.curie('source_organism'),
-                   model_uri=AK_SCHEMA.source_organism, domain=None, range=Optional[str])
+                   model_uri=AK_SCHEMA.source_organism, domain=None, range=Optional[Union[str, TaxonomicSpeciesTermId]])
 
 slots.antibody = Slot(uri=AK_SCHEMA.antibody, name="antibody", curie=AK_SCHEMA.curie('antibody'),
                    model_uri=AK_SCHEMA.antibody, domain=None, range=Optional[Union[str, BCellReceptorAkcId]])
@@ -7926,11 +7958,17 @@ slots.Diseases_parent = Slot(uri=AK_SCHEMA.parent, name="Diseases_parent", curie
 slots.Cells_parent = Slot(uri=AK_SCHEMA.parent, name="Cells_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.Cells_parent, domain=Cells, range=Optional[Union[Union[str, CellsTermId], List[Union[str, CellsTermId]]]])
 
+slots.TaxonomicSpecies_parent = Slot(uri=AK_SCHEMA.parent, name="TaxonomicSpecies_parent", curie=AK_SCHEMA.curie('parent'),
+                   model_uri=AK_SCHEMA.TaxonomicSpecies_parent, domain=TaxonomicSpecies, range=Optional[Union[Union[str, TaxonomicSpeciesTermId], List[Union[str, TaxonomicSpeciesTermId]]]])
+
 slots.UberAnatomy_parent = Slot(uri=AK_SCHEMA.parent, name="UberAnatomy_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.UberAnatomy_parent, domain=UberAnatomy, range=Optional[Union[Union[str, UberAnatomyTermId], List[Union[str, UberAnatomyTermId]]]])
 
 slots.Units_parent = Slot(uri=AK_SCHEMA.parent, name="Units_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.Units_parent, domain=Units, range=Optional[Union[Union[str, UnitsTermId], List[Union[str, UnitsTermId]]]])
+
+slots.Participant_species = Slot(uri=AK_SCHEMA.species, name="Participant_species", curie=AK_SCHEMA.curie('species'),
+                   model_uri=AK_SCHEMA.Participant_species, domain=Participant, range=Optional[Union[str, TaxonomicSpeciesTermId]])
 
 slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
                    model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, PhenotypeAndTraitsTermId]])

@@ -5390,8 +5390,11 @@
                     ]
                 },
                 "species": {
-                    "$ref": "#/$defs/SpeciesOntology",
-                    "description": "Binomial designation of subject's species"
+                    "description": "Binomial designation of subject's species",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "strain": {
                     "$ref": "#/$defs/StrainEnum",
@@ -5477,8 +5480,11 @@
                     ]
                 },
                 "species": {
-                    "$ref": "#/$defs/SpeciesOntology",
-                    "description": "Binomial designation of subject's species"
+                    "description": "Binomial designation of subject's species",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "strain": {
                     "$ref": "#/$defs/StrainEnum",
@@ -9495,6 +9501,38 @@
             },
             "required": [],
             "title": "TCellReceptorEpitopeBindingAssay",
+            "type": "object"
+        },
+        "TaxonomicSpecies": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "TaxonomicSpecies",
             "type": "object"
         },
         "TemplateAmountUnitOntology": {

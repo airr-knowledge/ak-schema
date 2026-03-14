@@ -35,6 +35,9 @@
 -- # Class: "Cells" Description: ""
 --     * Slot: term_id Description: ontology term ID
 --     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "TaxonomicSpecies" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
 -- # Class: "UberAnatomy" Description: ""
 --     * Slot: term_id Description: ontology term ID
 --     * Slot: term_label Description: ontology term descriptive label
@@ -982,6 +985,9 @@
 -- # Class: "Cells_parent" Description: ""
 --     * Slot: Cells_term_id Description: Autocreated FK slot
 --     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "TaxonomicSpecies_parent" Description: ""
+--     * Slot: TaxonomicSpecies_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
 -- # Class: "UberAnatomy_parent" Description: ""
 --     * Slot: UberAnatomy_term_id Description: Autocreated FK slot
 --     * Slot: parent_term_id Description: parent term ID for ontology term
@@ -1232,6 +1238,11 @@ CREATE TABLE "Cells" (
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );
+CREATE TABLE "TaxonomicSpecies" (
+	term_id TEXT NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
 CREATE TABLE "UberAnatomy" (
 	term_id TEXT NOT NULL, 
 	term_label TEXT, 
@@ -1386,25 +1397,7 @@ CREATE TABLE "TCellReceptor" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
-CREATE TABLE "Antigen" (
-	source_protein TEXT, 
-	source_organism TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id)
-);
 CREATE TABLE "Epitope" (
-	type TEXT, 
-	name TEXT, 
-	description TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id)
-);
-CREATE TABLE "PeptidicEpitope" (
-	sequence_aa TEXT, 
-	source_protein TEXT, 
-	source_organism TEXT, 
 	type TEXT, 
 	name TEXT, 
 	description TEXT, 
@@ -2040,6 +2033,26 @@ CREATE TABLE "BCellReceptor" (
 	FOREIGN KEY(igk_chain) REFERENCES "Chain" (akc_id), 
 	FOREIGN KEY(igl_chain) REFERENCES "Chain" (akc_id)
 );
+CREATE TABLE "Antigen" (
+	source_protein TEXT, 
+	source_organism TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(source_organism) REFERENCES "TaxonomicSpecies" (term_id)
+);
+CREATE TABLE "PeptidicEpitope" (
+	sequence_aa TEXT, 
+	source_protein TEXT, 
+	source_organism TEXT, 
+	type TEXT, 
+	name TEXT, 
+	description TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(source_organism) REFERENCES "TaxonomicSpecies" (term_id)
+);
 CREATE TABLE "TCRpMHCComplex" (
 	tcr TEXT, 
 	epitope TEXT, 
@@ -2094,26 +2107,6 @@ CREATE TABLE "RepertoireFilter" (
 	time_point_id INTEGER, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY(time_point_id) REFERENCES "TimePoint" (id)
-);
-CREATE TABLE "ReceptorReactivity" (
-	id INTEGER NOT NULL, 
-	ligand_type VARCHAR(15), 
-	antigen_type VARCHAR(12), 
-	antigen TEXT, 
-	antigen_source_species VARCHAR, 
-	peptide_start INTEGER, 
-	peptide_end INTEGER, 
-	mhc_class VARCHAR(16), 
-	mhc_gene_1 VARCHAR, 
-	mhc_allele_1 TEXT, 
-	mhc_gene_2 VARCHAR, 
-	mhc_allele_2 TEXT, 
-	reactivity_method VARCHAR(19), 
-	reactivity_readout VARCHAR(24), 
-	reactivity_value FLOAT, 
-	reactivity_unit TEXT, 
-	PRIMARY KEY (id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
 );
 CREATE TABLE "SampleProcessing" (
 	id INTEGER NOT NULL, 
@@ -2191,6 +2184,13 @@ CREATE TABLE "Cells_parent" (
 	PRIMARY KEY ("Cells_term_id", parent_term_id), 
 	FOREIGN KEY("Cells_term_id") REFERENCES "Cells" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "Cells" (term_id)
+);
+CREATE TABLE "TaxonomicSpecies_parent" (
+	"TaxonomicSpecies_term_id" TEXT, 
+	parent_term_id TEXT, 
+	PRIMARY KEY ("TaxonomicSpecies_term_id", parent_term_id), 
+	FOREIGN KEY("TaxonomicSpecies_term_id") REFERENCES "TaxonomicSpecies" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "TaxonomicSpecies" (term_id)
 );
 CREATE TABLE "UberAnatomy_parent" (
 	"UberAnatomy_term_id" TEXT, 
@@ -2490,6 +2490,26 @@ CREATE TABLE "Subject" (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(genotype_id) REFERENCES "SubjectGenotype" (id)
 );
+CREATE TABLE "ReceptorReactivity" (
+	id INTEGER NOT NULL, 
+	ligand_type VARCHAR(15), 
+	antigen_type VARCHAR(12), 
+	antigen TEXT, 
+	antigen_source_species VARCHAR, 
+	peptide_start INTEGER, 
+	peptide_end INTEGER, 
+	mhc_class VARCHAR(16), 
+	mhc_gene_1 VARCHAR, 
+	mhc_allele_1 TEXT, 
+	mhc_gene_2 VARCHAR, 
+	mhc_allele_2 TEXT, 
+	reactivity_method VARCHAR(19), 
+	reactivity_readout VARCHAR(24), 
+	reactivity_value FLOAT, 
+	reactivity_unit TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
+);
 CREATE TABLE "Investigation_simulations" (
 	investigation_akc_id TEXT, 
 	simulations_akc_id TEXT, 
@@ -2539,13 +2559,6 @@ CREATE TABLE "RepertoireGroup_repertoires" (
 	FOREIGN KEY("RepertoireGroup_id") REFERENCES "RepertoireGroup" (id), 
 	FOREIGN KEY(repertoires_id) REFERENCES "RepertoireFilter" (id)
 );
-CREATE TABLE "Receptor_reactivity_measurements" (
-	"Receptor_id" INTEGER, 
-	reactivity_measurements_id INTEGER, 
-	PRIMARY KEY ("Receptor_id", reactivity_measurements_id), 
-	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id), 
-	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
-);
 CREATE TABLE "SampleProcessing_pcr_target" (
 	"SampleProcessing_id" INTEGER, 
 	pcr_target_id INTEGER, 
@@ -2555,7 +2568,7 @@ CREATE TABLE "SampleProcessing_pcr_target" (
 );
 CREATE TABLE "Participant" (
 	study_arm TEXT, 
-	species VARCHAR, 
+	species TEXT, 
 	sex TEXT, 
 	age TEXT, 
 	age_unit VARCHAR, 
@@ -2569,6 +2582,7 @@ CREATE TABLE "Participant" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
+	FOREIGN KEY(species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
 );
 CREATE TABLE "Repertoire" (
@@ -2594,6 +2608,13 @@ CREATE TABLE "Subject_diagnosis" (
 	PRIMARY KEY ("Subject_id", diagnosis_id), 
 	FOREIGN KEY("Subject_id") REFERENCES "Subject" (id), 
 	FOREIGN KEY(diagnosis_id) REFERENCES "Diagnosis" (id)
+);
+CREATE TABLE "Receptor_reactivity_measurements" (
+	"Receptor_id" INTEGER, 
+	reactivity_measurements_id INTEGER, 
+	PRIMARY KEY ("Receptor_id", reactivity_measurements_id), 
+	FOREIGN KEY("Receptor_id") REFERENCES "Receptor" (id), 
+	FOREIGN KEY(reactivity_measurements_id) REFERENCES "ReceptorReactivity" (id)
 );
 CREATE TABLE "LifeEvent" (
 	type TEXT, 

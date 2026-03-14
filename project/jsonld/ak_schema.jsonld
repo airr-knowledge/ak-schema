@@ -3069,7 +3069,7 @@
         "Antigen",
         "PeptidicEpitope"
       ],
-      "range": "string",
+      "range": "TaxonomicSpecies",
       "@type": "SlotDefinition"
     },
     {
@@ -11944,6 +11944,25 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "TaxonomicSpecies_parent",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "description": "parent term ID for ontology term",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "parent",
+      "domain": "TaxonomicSpecies",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/parent",
+      "alias": "parent",
+      "owner": "TaxonomicSpecies",
+      "domain_of": [
+        "TaxonomicSpecies"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "parent",
+      "range": "TaxonomicSpecies",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "UberAnatomy_parent",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
       "description": "parent term ID for ontology term",
@@ -11979,6 +11998,32 @@
       "usage_slot_name": "parent",
       "range": "Units",
       "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Participant_species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/species",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": false,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Binomial designation of subject's species",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "species",
+      "domain": "Participant",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/species",
+      "alias": "species",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "species",
+      "range": "TaxonomicSpecies",
       "@type": "SlotDefinition"
     },
     {
@@ -12386,6 +12431,20 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "TaxonomicSpecies",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/TaxonomicSpecies",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "OntologyTable",
+      "slots": [
+        "term_id",
+        "term_label",
+        "TaxonomicSpecies_parent"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/TaxonomicSpecies",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "UberAnatomy",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/UberAnatomy",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -12720,7 +12779,7 @@
         "name",
         "description",
         "study_arm",
-        "species",
+        "Participant_species",
         "Participant_sex",
         "age",
         "age_unit",
@@ -14837,9 +14896,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-03-09T23:34:51",
-  "source_file_size": 211593,
-  "generation_date": "2026-03-09T23:34:53",
+  "source_file_date": "2026-03-14T09:03:30",
+  "source_file_size": 211905,
+  "generation_date": "2026-03-14T09:03:31",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
