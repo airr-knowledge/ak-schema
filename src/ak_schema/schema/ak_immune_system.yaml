@@ -88,7 +88,7 @@ classes:
 
     slot_usage:
       sequence_aa:
-        pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
+        pattern: '^[ACDEFGHIKLMNPQRSTVWY]+$'
 
   DiscontinuousEpitope:
     is_a: Epitope
@@ -96,7 +96,7 @@ classes:
       - positional_residues
     slot_usage:
       positional_residues:
-        pattern: "^([ACDEFGHIKLMNPQRSTVWY]\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\d{1,}$"
+        pattern: '^([ACDEFGHIKLMNPQRSTVWY]\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\d{1,}$'
 
   NonPeptidicEpitope:
     is_a: Epitope
