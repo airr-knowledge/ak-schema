@@ -65,17 +65,23 @@ classes:
       sequencing_files:
         range: AIRRSequencingData
 
+# todo: for T/B cell assay -> epitope, antigen and MHC are already in the complex, redundant to have in the Assay level?
+
   TCellReceptorEpitopeBindingAssay:
     is_a: Assay
     mixins: TCellReceptorEpitopeSpecificityMeasurement
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
-      - epitope
+#      - epitope
       - tcr_complexes
 
   AntibodyAntigenBindingAssay:
     is_a: Assay
     class_uri: OBI:0003127 # B cell epitope assay
+    slots:
+     # - epitope
+     # - antigen
+      - bcr_complexes
 
 slots:
   life_event:
@@ -99,9 +105,12 @@ slots:
     description: The type of the entity being measured
 
 
-  epitope:
-    description: The epitope being measured
-    range: Epitope
+#  epitope:
+#    description: The epitope being measured
+#    range: Epitope
+#  antigen:
+#    description: The antigen being measured
+#    range: Antigen
   tcell_receptors:
     description: The T cell receptors being measured
     range: TCellReceptor
@@ -109,6 +118,10 @@ slots:
   tcr_complexes:
     description: The T cell receptor/epitope/mhc complex being measured
     range: TCRpMHCComplex
+    multivalued: true
+  antibody_complexes:
+    description: The antibody-antigen complex being measured
+    range: AntibodyAntigenComplex
     multivalued: true
 
 enums:

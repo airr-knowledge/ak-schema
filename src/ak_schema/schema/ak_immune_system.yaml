@@ -28,17 +28,11 @@ classes:
       - cdr1_aa
       - cdr2_aa
       - cdr3_aa
-      - cdr1_start
-      - cdr1_end
-      - cdr2_start
-      - cdr2_end
-      - cdr3_start
-      - cdr3_end
     slot_usage:
       sequence_aa:
         pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
       junction_aa:
-        pattern: "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$"
+        pattern: "^C[ACDEFGHIKLMNPQRSTVWY]+$"
 
   ImmuneReceptor:
     abstract: true
@@ -76,23 +70,38 @@ classes:
     is_a: NamedThing
     class_uri: OBI:1110034 # antigen
     slots:
-      - source_protein
+      - source_molecule
       - source_organism
 
   Epitope:
-    is_a: NamedThing
+    is_a: ForeignObject    # source_uri should point to IEDB CURIE
+    class_uri: OBI:1110001 # epitope
     slots:
-      - type
+      - epitope_ref
+      - antigen
 
   PeptidicEpitope:
     is_a: Epitope
     slots:
       - sequence_aa
-      - source_protein
-      - source_organism
+      - modifications
+
     slot_usage:
       sequence_aa:
         pattern: "^[ACDEFGHIKLMNPQRSTVWY]+$"
+
+  DiscontinuousEpitope:
+    is_a: Epitope
+    slots:
+      - positional_residues
+    slot_usage:
+      positional_residues:
+        pattern: "^([ACDEFGHIKLMNPQRSTVWY]\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\d{1,}$"
+
+  NonPeptidicEpitope:
+    is_a: Epitope
+    slots:
+      - epitope_name
 
   AntibodyAntigenComplex:
     is_a: NamedThing
@@ -100,14 +109,24 @@ classes:
     slots:
       - antibody
       - antigen
+      - epitope
 
   TCRpMHCComplex:
-    is_a: AKObject
-    class_uri: OBI:0003119
+    is_a: TCREpitopeComplex
+    class_uri: OBI:0003120
     slots:
       - tcr
+      - antigen
       - epitope
       - mhc
+      - mhc_evidence
+
+  MHCProteinComplex:
+    is_a: ForeignObject   # source_uri should point to MRO CURIE
+    class_uri: GO:0042611 # MHC protein complex
+    slots:
+      - mhc_name
+      - mhc_class
 
 slots:
   aa_hash:
@@ -165,11 +184,11 @@ slots:
     description: T cell receptor gamma chain
     range: Chain
 
-  source_protein:
-    description: The protein that this epitope comes from
+  source_molecule:
+    description: The protein or other molecule that this antigen represents
 
   source_organism:
-    description: The organism that the source protein comes from
+    description: The organism that the source molecule comes from
     range: TaxonomicSpecies
 
   antibody:
@@ -180,10 +199,47 @@ slots:
     description: A material entity with antigen role
     range: Antigen
 
+  epitope:
+    description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+    range: Epitope
+
+  positional_residues:
+    description: Numbered amino acid residues of a conformational epitope
+    range: string
+
+  modifications:
+    description: Post-translational modifications to the epitope peptide sequence
+    range: string
+
   tcr:
     description: T cell receptor
     range: TCellReceptor
 
   mhc:
     description: Major histocompatibility complex
-    range: MHCAllele
+    range: MHCProteinComplex
+
+  epitope_name:
+    description: Name of the non-peptidic epitope
+    range: string
+
+  mhc_name:
+    description: Human-readable name of the major histocompatibility complex
+    range: string
+
+  mhc_class:
+    description: Class of the major histocompatibility complex
+    range: MHCClasEnum
+
+  mhc_evidence:
+    description: Evidence code for MHC restriction
+    range: uriorcurie
+
+
+enums:
+
+  MHCClasEnum:
+    permissible_values:
+      MHC-I:
+      MHC-II:
+      MHC-nonclassical:
