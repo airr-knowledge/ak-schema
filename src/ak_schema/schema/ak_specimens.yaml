@@ -81,7 +81,7 @@ classes:
     slots:
      # - epitope
      # - antigen
-      - bcr_complexes
+      - antibody_complexes
 
 slots:
   life_event:
