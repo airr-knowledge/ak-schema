@@ -70,6 +70,10 @@ classes:
     is_a: SequenceData
     mixins: SequencingData # slots from AIRR class
 
+  AIRRSequenceAnnotationData:
+    is_a: AKDataItem
+    description: annotated VDJ sequence data
+
   AIRRGenotypeData:
     is_a: AKDataItem
     mixins: GenotypeSet # slots from AIRR class

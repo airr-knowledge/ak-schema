@@ -23,11 +23,6 @@ classes:
     description: >-
       An object directly converted from the AIRR schema.
 
-  AIRRStandards_v1p5:
-    abstract: true
-    description: >-
-      An object directly converted from AIRR schema version 1.5.
-
   AIRRStandards_v1p6:
     abstract: true
     description: >-

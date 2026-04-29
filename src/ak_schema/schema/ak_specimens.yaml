@@ -60,8 +60,7 @@ classes:
     class_uri: OBI:0600047
     slots:
       - repertoire_id
-      - tcell_receptors
-      - tcell_chains
+      - tcr_complexes
     slot_usage:
       sequencing_files:
         range: AIRRSequencingData
@@ -72,7 +71,7 @@ classes:
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
       - epitope
-      - tcell_receptors
+      - tcr_complexes
 
   AntibodyAntigenBindingAssay:
     is_a: Assay
@@ -107,9 +106,9 @@ slots:
     description: The T cell receptors being measured
     range: TCellReceptor
     multivalued: true
-  tcell_chains:
-    description: The T cell receptor chains being measured
-    range: Chain
+  tcr_complexes:
+    description: The T cell receptor/epitope/mhc complex being measured
+    range: TCRpMHCComplex
     multivalued: true
 
 enums:

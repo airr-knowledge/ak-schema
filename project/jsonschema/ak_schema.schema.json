@@ -87,6 +87,9 @@
                                     },
                                     {
                                         "$ref": "#/$defs/AntibodyAntigenBindingAssay__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/QueryExperiment__identifier_optional"
                                     }
                                 ]
                             },
@@ -424,6 +427,22 @@
                         "null"
                     ]
                 },
+                "tcr_complexes": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/TCRpMHCComplex__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "transformations": {
                     "additionalProperties": {
                         "anyOf": [
@@ -442,6 +461,40 @@
                 }
             },
             "title": "AIRRKnowledgeCommons",
+            "type": "object"
+        },
+        "AIRRSequenceAnnotationData": {
+            "additionalProperties": false,
+            "description": "annotated VDJ sequence data",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "data_item_types": {
+                    "description": "semantic types of the data",
+                    "items": {
+                        "$ref": "#/$defs/DataItemTypeEnum"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "AIRRSequenceAnnotationData"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "AIRRSequenceAnnotationData",
             "type": "object"
         },
         "AIRRSequencingAssay": {
@@ -543,18 +596,8 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -685,18 +728,8 @@
                         "null"
                     ]
                 },
-                "tcell_chains": {
-                    "description": "The T cell receptor chains being measured",
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": [
-                        "array",
-                        "null"
-                    ]
-                },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -2686,6 +2719,7 @@
                 },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
                     "type": [
                         "string",
                         "null"
@@ -2715,6 +2749,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
@@ -2882,6 +2917,7 @@
                 },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
+                    "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$",
                     "type": [
                         "string",
                         "null"
@@ -2911,6 +2947,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
@@ -4980,10 +5017,7 @@
             "description": "",
             "properties": {
                 "allele_designation": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
+                    "type": "string"
                 },
                 "gene": {
                     "$ref": "#/$defs/GeneOntology",
@@ -4997,6 +5031,9 @@
                     ]
                 }
             },
+            "required": [
+                "allele_designation"
+            ],
             "title": "MHCAllele",
             "type": "object"
         },
@@ -5007,7 +5044,7 @@
                 "mhc_alleles": {
                     "description": "List of MHC alleles of the indicated mhc_class identified in an individual",
                     "items": {
-                        "$ref": "#/$defs/MHCAllele"
+                        "type": "string"
                     },
                     "type": [
                         "array",
@@ -5353,8 +5390,11 @@
                     ]
                 },
                 "species": {
-                    "$ref": "#/$defs/SpeciesOntology",
-                    "description": "Binomial designation of subject's species"
+                    "description": "Binomial designation of subject's species",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "strain": {
                     "$ref": "#/$defs/StrainEnum",
@@ -5440,8 +5480,11 @@
                     ]
                 },
                 "species": {
-                    "$ref": "#/$defs/SpeciesOntology",
-                    "description": "Binomial designation of subject's species"
+                    "description": "Binomial designation of subject's species",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "strain": {
                     "$ref": "#/$defs/StrainEnum",
@@ -5498,6 +5541,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
@@ -5557,6 +5601,7 @@
                 },
                 "sequence_aa": {
                     "description": "Amino acid translation of the query nucleotide sequence.",
+                    "pattern": "^[ACDEFGHIKLMNPQRSTVWY]+$",
                     "type": [
                         "string",
                         "null"
@@ -5632,6 +5677,337 @@
             ],
             "title": "PhysicalLinkageEnum",
             "type": "string"
+        },
+        "QueryAlphaBetaTCR": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "tra_chain": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Chain"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "trb_chain": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Chain"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "QueryAlphaBetaTCR"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "QueryAlphaBetaTCR",
+            "type": "object"
+        },
+        "QueryExperiment": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "investigation": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Investigation"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "participant": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Participant"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "specimen": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Specimen"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "specimen_processing": {
+                    "description": "A series of zero or more specimen processing steps that precede an assay",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "QueryExperiment"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "QueryExperiment",
+            "type": "object"
+        },
+        "QueryExperiment__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "assay_type": {
+                    "$ref": "#/$defs/AssayTypeOntology",
+                    "description": "The specific type of an assay"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "has_specified_output": {
+                    "description": "output data item",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "investigation": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Investigation"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "participant": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Participant"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "specimen": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Specimen"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "specimen_processing": {
+                    "description": "A series of zero or more specimen processing steps that precede an assay",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "type": {
+                    "enum": [
+                        "QueryExperiment"
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "QueryExperiment",
+            "type": "object"
+        },
+        "QueryIG": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "antigen": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/BCellReceptor"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "QueryIG",
+            "type": "object"
+        },
+        "QueryObject": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "assay": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QueryExperiment"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "bcr": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QueryIG"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "tcr": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/QueryTCR"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "QueryObject",
+            "type": "object"
+        },
+        "QueryTCR": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "antigen": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/Epitope"
+                        },
+                        {
+                            "$ref": "#/$defs/PeptidicEpitope"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mhc": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "receptor": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/AlphaBetaTCR"
+                        },
+                        {
+                            "$ref": "#/$defs/GammaDeltaTCR"
+                        },
+                        {
+                            "$ref": "#/$defs/QueryAlphaBetaTCR"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "title": "QueryTCR",
+            "type": "object"
         },
         "RNATranscriptomeData": {
             "additionalProperties": false,
@@ -8893,13 +9269,6 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "description": {
-                    "description": "A human-readable description for a thing",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "epitope": {
                     "description": "The epitope being measured",
                     "type": [
@@ -8908,24 +9277,13 @@
                     ]
                 },
                 "mhc": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/$defs/MHCAllele"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Major histocompatibility complex"
-                },
-                "name": {
-                    "description": "A human-readable name for a thing",
+                    "description": "Major histocompatibility complex",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "tcell_receptor": {
+                "tcr": {
                     "description": "T cell receptor",
                     "type": [
                         "string",
@@ -8936,6 +9294,40 @@
             "required": [
                 "akc_id"
             ],
+            "title": "TCRpMHCComplex",
+            "type": "object"
+        },
+        "TCRpMHCComplex__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "epitope": {
+                    "description": "The epitope being measured",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tcr": {
+                    "description": "T cell receptor",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
             "title": "TCRpMHCComplex",
             "type": "object"
         },
@@ -9000,8 +9392,8 @@
                         "null"
                     ]
                 },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -9087,8 +9479,8 @@
                         "null"
                     ]
                 },
-                "tcell_receptors": {
-                    "description": "The T cell receptors being measured",
+                "tcr_complexes": {
+                    "description": "The T cell receptor/epitope/mhc complex being measured",
                     "items": {
                         "type": "string"
                     },
@@ -9109,6 +9501,38 @@
             },
             "required": [],
             "title": "TCellReceptorEpitopeBindingAssay",
+            "type": "object"
+        },
+        "TaxonomicSpecies": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "parent": {
+                    "description": "parent term ID for ontology term",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
+                "term_id": {
+                    "description": "ontology term ID",
+                    "type": "string"
+                },
+                "term_label": {
+                    "description": "ontology term descriptive label",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "term_id"
+            ],
+            "title": "TaxonomicSpecies",
             "type": "object"
         },
         "TemplateAmountUnitOntology": {
@@ -9408,6 +9832,9 @@
                             },
                             {
                                 "$ref": "#/$defs/AntibodyAntigenBindingAssay__identifier_optional"
+                            },
+                            {
+                                "$ref": "#/$defs/QueryExperiment__identifier_optional"
                             }
                         ]
                     },
@@ -9734,6 +10161,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/StudyEvent__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "tcr_complexes": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/TCRpMHCComplex__identifier_optional"
                     },
                     {
                         "type": "null"

@@ -1,6 +1,6 @@
 
 .PHONY: all
-all: example.yaml example.json example.ttl
+all: example.yaml example.json
 
 tsv/:
 	mkdir -p $@
