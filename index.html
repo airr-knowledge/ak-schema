@@ -557,10 +557,6 @@
 <td>None</td>
 </tr>
 <tr>
-<td><a href="AIRRStandardsV1p5/">AIRRStandardsV1p5</a></td>
-<td>An object directly converted from AIRR schema version 1.5.</td>
-</tr>
-<tr>
 <td><a href="AIRRStandardsV1p6/">AIRRStandardsV1p6</a></td>
 <td>An object directly converted from AIRR schema version 1.6.</td>
 </tr>
@@ -579,6 +575,10 @@
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AIRRGenotypeData/">AIRRGenotypeData</a></td>
 <td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AIRRSequenceAnnotationData/">AIRRSequenceAnnotationData</a></td>
+<td>annotated VDJ sequence data</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AKDataSet/">AKDataSet</a></td>
@@ -618,6 +618,10 @@
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="QueryAlphaBetaTCR/">QueryAlphaBetaTCR</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -749,15 +753,15 @@
 <td>A population of participants of an investigation.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCRpMHCComplex/">TCRpMHCComplex</a></td>
-<td>None</td>
-</tr>
-<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="SimilarityCalculation/">SimilarityCalculation</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ChainSimilarity/">ChainSimilarity</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TCRpMHCComplex/">TCRpMHCComplex</a></td>
 <td>None</td>
 </tr>
 <tr>
@@ -813,11 +817,35 @@
 <td>None</td>
 </tr>
 <tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="TaxonomicSpecies/">TaxonomicSpecies</a></td>
+<td>None</td>
+</tr>
+<tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="UberAnatomy/">UberAnatomy</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Units/">Units</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="QueryAPI/">QueryAPI</a></td>
+<td>class hierarchy for ak-web-api</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="QueryExperiment/">QueryExperiment</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="QueryObject/">QueryObject</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="QueryTCR/">QueryTCR</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="QueryIG/">QueryIG</a></td>
 <td>None</td>
 </tr>
 </tbody>
@@ -952,6 +980,10 @@
 <td>Identifier for external archival resource for the investigation, e</td>
 </tr>
 <tr>
+<td><a href="assay/">assay</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="assay_type/">assay_type</a></td>
 <td>The specific type of an assay</td>
 </tr>
@@ -977,6 +1009,10 @@
 </tr>
 <tr>
 <td><a href="bcell_receptors/">bcell_receptors</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="bcr/">bcr</a></td>
 <td></td>
 </tr>
 <tr>
@@ -2276,6 +2312,10 @@
 <td>Array of sequence identifiers defined for the Rearrangement object</td>
 </tr>
 <tr>
+<td><a href="receptor/">receptor</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="receptor_genotype_id/">receptor_genotype_id</a></td>
 <td>A unique identifier within the file for this Receptor Genotype, typically gen...</td>
 </tr>
@@ -2656,16 +2696,16 @@
 <td>The type of the entity being measured</td>
 </tr>
 <tr>
-<td><a href="tcell_chains/">tcell_chains</a></td>
-<td>The T cell receptor chains being measured</td>
+<td><a href="tcell_receptors/">tcell_receptors</a></td>
+<td>The T cell receptors being measured</td>
 </tr>
 <tr>
-<td><a href="tcell_receptor/">tcell_receptor</a></td>
+<td><a href="tcr/">tcr</a></td>
 <td>T cell receptor</td>
 </tr>
 <tr>
-<td><a href="tcell_receptors/">tcell_receptors</a></td>
-<td>The T cell receptors being measured</td>
+<td><a href="tcr_complexes/">tcr_complexes</a></td>
+<td>The T cell receptor/epitope/mhc complex being measured</td>
 </tr>
 <tr>
 <td><a href="template_amount/">template_amount</a></td>

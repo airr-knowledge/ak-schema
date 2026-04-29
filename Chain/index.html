@@ -450,12 +450,6 @@
 <td><a href="./">Chain</a></td>
 </tr>
 <tr>
-<td><a href="../AIRRSequencingAssay/">AIRRSequencingAssay</a></td>
-<td><a href="../tcell_chains/">tcell_chains</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
 <td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
 <td><a href="../tra_chain/">tra_chain</a></td>
 <td>range</td>
@@ -521,6 +515,18 @@
 <td>range</td>
 <td><a href="./">Chain</a></td>
 </tr>
+<tr>
+<td><a href="../QueryAlphaBetaTCR/">QueryAlphaBetaTCR</a></td>
+<td><a href="../tra_chain/">tra_chain</a></td>
+<td>range</td>
+<td><a href="./">Chain</a></td>
+</tr>
+<tr>
+<td><a href="../QueryAlphaBetaTCR/">QueryAlphaBetaTCR</a></td>
+<td><a href="../trb_chain/">trb_chain</a></td>
+<td>range</td>
+<td><a href="./">Chain</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -577,6 +583,13 @@ slots:
 - cdr2_end
 - cdr3_start
 - cdr3_end
+slot_usage:
+  sequence_aa:
+    name: sequence_aa
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
+  junction_aa:
+    name: junction_aa
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
 
 </code></pre>
 </details>
@@ -585,6 +598,13 @@ slots:
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+slot_usage:
+  sequence_aa:
+    name: sequence_aa
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
+  junction_aa:
+    name: junction_aa
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
 attributes:
   species:
     name: species
@@ -673,6 +693,7 @@ attributes:
     - PeptidicEpitope
     - Rearrangement
     range: string
+    pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -765,6 +786,7 @@ attributes:
     - Clone
     - Node
     range: string
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
   cdr1_aa:
     name: cdr1_aa
     annotations:

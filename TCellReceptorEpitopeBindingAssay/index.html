@@ -269,13 +269,13 @@
     click SpecimenProcessing href "../SpecimenProcessing"
 
 
-      TCellReceptorEpitopeBindingAssay : tcell_receptors
+      TCellReceptorEpitopeBindingAssay : tcr_complexes
 
 
 
 
-    TCellReceptorEpitopeBindingAssay --&gt; "*" TCellReceptor : tcell_receptors
-    click TCellReceptor href "../TCellReceptor"
+    TCellReceptorEpitopeBindingAssay --&gt; "*" TCRpMHCComplex : tcr_complexes
+    click TCRpMHCComplex href "../TCRpMHCComplex"
 
 
       TCellReceptorEpitopeBindingAssay : type
@@ -316,9 +316,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../tcell_receptors/">tcell_receptors</a></td>
-<td>* <br/> <a href="../TCellReceptor/">TCellReceptor</a></td>
-<td>The T cell receptors being measured</td>
+<td><a href="../tcr_complexes/">tcr_complexes</a></td>
+<td>* <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td>The T cell receptor/epitope/mhc complex being measured</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -412,7 +412,7 @@ mixins:
 - TCellReceptorEpitopeSpecificityMeasurement
 slots:
 - epitope
-- tcell_receptors
+- tcr_complexes
 class_uri: OBI:1110037
 
 </code></pre>
@@ -435,18 +435,20 @@ attributes:
     domain_of:
     - TCellReceptorEpitopeBindingAssay
     - TCRpMHCComplex
+    - QueryTCR
     range: Epitope
-  tcell_receptors:
-    name: tcell_receptors
-    description: The T cell receptors being measured
+  tcr_complexes:
+    name: tcr_complexes
+    description: The T cell receptor/epitope/mhc complex being measured
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: tcell_receptors
+    alias: tcr_complexes
     owner: TCellReceptorEpitopeBindingAssay
     domain_of:
+    - AIRRKnowledgeCommons
     - AIRRSequencingAssay
     - TCellReceptorEpitopeBindingAssay
-    range: TCellReceptor
+    range: TCRpMHCComplex
     multivalued: true
   specimen:
     name: specimen
@@ -460,6 +462,7 @@ attributes:
     - SpecimenCollection
     - SpecimenProcessing
     - Assay
+    - QueryExperiment
     range: Specimen
   specimen_processing:
     name: specimen_processing
