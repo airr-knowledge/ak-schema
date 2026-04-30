@@ -112,8 +112,8 @@ classes:
       - epitope
 
   TCRpMHCComplex:
-    is_a: TCREpitopeComplex
-    class_uri: OBI:0003120
+    is_a: AKObject
+    class_uri: OBI:0003119
     slots:
       - tcr
       - antigen
