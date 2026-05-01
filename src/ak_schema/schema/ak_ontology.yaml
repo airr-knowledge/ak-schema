@@ -48,6 +48,14 @@ classes:
       parent:
         range: Cells
 
+MHCRestriction:
+    is_a: OntologyTable
+    slot_usage:
+#      term_id:
+#        range: MHCRestrictionOntology
+      parent:
+        range: MHCRestriction
+
   TaxonomicSpecies:
     is_a: OntologyTable
     slot_usage:
@@ -122,6 +130,15 @@ enums:
     reachable_from:
       source_nodes:
         - NCBITAXON:7776
+      include_self: true
+      relationship_types:
+        - rdfs:subClassOf
+
+  MHCRestrictionOntology:
+    name: MHCRestrictionOntology
+    reachable_from:
+      source_nodes:
+        - PR:000000001
       include_self: true
       relationship_types:
         - rdfs:subClassOf
