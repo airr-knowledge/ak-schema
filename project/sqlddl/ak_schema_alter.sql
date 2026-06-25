@@ -43,12 +43,12 @@ ADD COLUMN epitope TEXT REFERENCES "Epitope" (akc_id),
 ADD COLUMN measurement_category VARCHAR(21);
 
 -- custom mapping table
-CREATE TABLE "Assay_tcr_complexes" (
+CREATE TABLE "Assay_receptor_composite" (
 	assay_akc_id TEXT, 
-	tcr_complexes_akc_id TEXT, 
-	PRIMARY KEY (assay_akc_id, tcr_complexes_akc_id), 
+	receptor_composite_akc_id TEXT, 
+	PRIMARY KEY (assay_akc_id, receptor_composite_akc_id), 
 	FOREIGN KEY(assay_akc_id) REFERENCES "Assay" (akc_id), 
-	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
+	FOREIGN KEY(receptor_composite_akc_id) REFERENCES "ReceptorComposite" (akc_id)
 );
 
 -- tables to support the query API
@@ -57,6 +57,7 @@ CREATE TABLE "QueryAssay" (
        assay_object JSONB,
        PRIMARY KEY (akc_id)
 );
+CREATE INDEX idx_query_assay_fts ON "QueryAssay" USING GIN (to_tsvector('english', assay_object));
 
 -- some useful indexes
 CREATE INDEX "Chain_junction_aa" ON "Chain" ("junction_aa");

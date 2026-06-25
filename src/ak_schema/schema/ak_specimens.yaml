@@ -73,6 +73,7 @@ classes:
     class_uri: OBI:1110037 # assay measuring binding of a T cell epitope:MHC:TCR complex
     slots:
       - tcr_complexes
+      - mhc_evidence
 
   AntibodyAntigenBindingAssay:
     is_a: Assay
@@ -103,6 +104,9 @@ slots:
   target_entity_type:
     description: The type of the entity being measured
 
+  mhc_evidence:
+    description: Evidence code for MHC restriction
+    range: uriorcurie
 
 #  epitope:
 #    description: The epitope being measured

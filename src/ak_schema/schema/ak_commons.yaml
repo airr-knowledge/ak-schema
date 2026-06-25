@@ -77,20 +77,48 @@ classes:
         range: Conclusion
         multivalued: true
         inlined: true
-      chains:
-        range: Chain
+      alpha_chains:
+        range: AlphaChain
+        multivalued: true
+        inlined: true
+      beta_chains:
+        range: BetaChain
         multivalued: true
         inlined: true
       ab_tcell_receptors:
         range: AlphaBetaTCR
         multivalued: true
         inlined: true
+      gamma_chains:
+        range: GammaChain
+        multivalued: true
+        inlined: true
+      delta_chains:
+        range: DeltaChain
+        multivalued: true
+        inlined: true
       gd_tcell_receptors:
         range: GammaDeltaTCR
         multivalued: true
         inlined: true
+      heavy_chains:
+        range: HeavyChain
+        multivalued: true
+        inlined: true
+      kappa_chains:
+        range: KappaChain
+        multivalued: true
+        inlined: true
+      lambda_chains:
+        range: LambdaChain
+        multivalued: true
+        inlined: true
       bcell_receptors:
         range: BCellReceptor
+        multivalued: true
+        inlined: true
+      antigens:
+        range: Antigen
         multivalued: true
         inlined: true
       epitopes:
@@ -99,5 +127,9 @@ classes:
         inlined: true
       tcr_complexes:
         range: TCRpMHCComplex
+        multivalued: true
+        inlined: true
+      antigen_complexes:
+        range: AntibodyAntigenComplex
         multivalued: true
         inlined: true

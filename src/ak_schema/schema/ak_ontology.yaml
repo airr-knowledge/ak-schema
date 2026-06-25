@@ -48,7 +48,7 @@ classes:
       parent:
         range: Cells
 
-MHCRestriction:
+  MHCRestriction:
     is_a: OntologyTable
     slot_usage:
 #      term_id:

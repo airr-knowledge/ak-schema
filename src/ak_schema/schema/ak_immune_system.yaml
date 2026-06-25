@@ -10,6 +10,7 @@ classes:
     class_uri: UBERON:0002405 # immune system
 
   Chain:
+    abstract: true
     is_a: AKObject
     slots:
       - species
@@ -34,6 +35,27 @@ classes:
       junction_aa:
         pattern: "^C[ACDEFGHIKLMNPQRSTVWY]+$"
 
+  AlphaChain:
+    is_a: Chain
+
+  BetaChain:
+    is_a: Chain
+
+  DeltaChain:
+    is_a: Chain
+
+  GammaChain:
+    is_a: Chain
+
+  HeavyChain:
+    is_a: Chain
+
+  KappaChain:
+    is_a: Chain
+
+  LambdaChain:
+    is_a: Chain
+
   ImmuneReceptor:
     abstract: true
     is_a: AKObject
@@ -42,8 +64,6 @@ classes:
     abstract: true
     is_a: ImmuneReceptor
     class_uri: GO:0042101
-    slots:
-      - type
 
   AlphaBetaTCR:
     is_a: TCellReceptor
@@ -66,26 +86,17 @@ classes:
       - igk_chain
       - igl_chain
 
-  Antigen:
-    is_a: NamedThing
-    class_uri: OBI:1110034 # antigen
-    slots:
-      - source_molecule
-      - source_organism
-
   Epitope:
-    is_a: ForeignObject    # source_uri should point to IEDB CURIE
+    is_a: AKObject
     class_uri: OBI:1110001 # epitope
     slots:
-      - epitope_ref
-      - antigen
+      - epitope_ref # IEDB (or other source) CURIE
 
   PeptidicEpitope:
     is_a: Epitope
     slots:
       - sequence_aa
       - modifications
-
     slot_usage:
       sequence_aa:
         pattern: '^[ACDEFGHIKLMNPQRSTVWY]+$'
@@ -103,30 +114,51 @@ classes:
     slots:
       - epitope_name
 
+  Antigen:
+    is_a: AKObject
+    class_uri: OBI:1110034 # antigen
+    slots:
+      - source_molecule
+      - source_organism
+      - epitope
+
+  MajorHistocompatibilityComplex:
+    is_a: AKObject
+    class_uri: GO:0042611 # MHC protein complex
+    slots:
+      - mhc_ref # MRO CURIE
+      - mhc_class
+      - mhc_label
+
   AntibodyAntigenComplex:
-    is_a: NamedThing
+    abstract: true
+    is_a: AKObject
     class_uri: OBI:0003119
     slots:
       - antibody
       - antigen
-      - epitope
 
   TCRpMHCComplex:
+    abstract: true
     is_a: AKObject
     class_uri: OBI:0003119
     slots:
-      - tcr
+      - ab_tcr
+      - gd_tcr
+      - antigen
+      - mhc
+
+  # class for database optimization
+  ReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - AlphaBetaTCR
+      - GammaDeltaTCR
+      - BCellReceptor
+    slots:
       - antigen
       - epitope
       - mhc
-      - mhc_evidence
-
-  MHCProteinComplex:
-    is_a: ForeignObject   # source_uri should point to MRO CURIE
-    class_uri: GO:0042611 # MHC protein complex
-    slots:
-      - mhc_name
-      - mhc_class
 
 slots:
   aa_hash:
@@ -158,31 +190,39 @@ slots:
 
   igh_chain:
     description: IG heavy chain
-    range: Chain
+    range: HeavyChain
 
   igl_chain:
     description: IG lambda light chain
-    range: Chain
+    range: LambdaChain
 
   igk_chain:
     description: IG kappa light chain
-    range: Chain
+    range: KappaChain
 
   tra_chain:
     description: T cell receptor alpha chain
-    range: Chain
+    range: AlphaChain
 
   trb_chain:
     description: T cell receptor beta chain
-    range: Chain
+    range: BetaChain
 
   trd_chain:
     description: T cell receptor delta chain
-    range: Chain
+    range: DeltaChain
 
   trg_chain:
     description: T cell receptor gamma chain
-    range: Chain
+    range: GammaChain
+
+  ab_tcr:
+    description: alpha/beta T cell receptor
+    range: AlphaBetaTCR
+
+  gd_tcr:
+    description: gamma/delta T cell receptor
+    range: GammaDeltaTCR
 
   source_molecule:
     description: The protein or other molecule that this antigen represents
@@ -203,6 +243,10 @@ slots:
     description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
     range: Epitope
 
+  epitope_ref:
+    description: CURIE identifiers for external epitope records
+    range: uriorcurie
+
   positional_residues:
     description: Numbered amino acid residues of a conformational epitope
     range: string
@@ -211,35 +255,23 @@ slots:
     description: Post-translational modifications to the epitope peptide sequence
     range: string
 
-  tcr:
-    description: T cell receptor
-    range: TCellReceptor
-
   mhc:
     description: Major histocompatibility complex
-    range: MHCProteinComplex
+    range: MajorHistocompatibilityComplex
+
+  mhc_ref:
+    description: MHC Restriction Ontology term id
+    range: MHCRestriction
 
   epitope_name:
     description: Name of the non-peptidic epitope
     range: string
 
-  mhc_name:
-    description: Human-readable name of the major histocompatibility complex
+  mhc_label:
+    description: Human-readable label of the major histocompatibility complex
     range: string
 
   mhc_class:
     description: Class of the major histocompatibility complex
-    range: MHCClasEnum
+    range: MhcClassEnum # from AIRR
 
-  mhc_evidence:
-    description: Evidence code for MHC restriction
-    range: uriorcurie
-
-
-enums:
-
-  MHCClasEnum:
-    permissible_values:
-      MHC-I:
-      MHC-II:
-      MHC-nonclassical:
