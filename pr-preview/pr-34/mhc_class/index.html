@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-mhc_class">Slot: mhc_class</h1>
+<p><em>Class of the major histocompatibility complex</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/mhc_class">ak_schema:mhc_class</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,12 +339,17 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../ReceptorReactivity/">ReceptorReactivity</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../MHCGenotype/">MHCGenotype</a></td>
 <td></td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../ReceptorReactivity/">ReceptorReactivity</a></td>
+<td><a href="../MajorHistocompatibilityComplex/">MajorHistocompatibilityComplex</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -381,10 +387,12 @@
 <details>
 
 <pre><code class="language-yaml">name: mhc_class
+description: Class of the major histocompatibility complex
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: mhc_class
 domain_of:
+- MajorHistocompatibilityComplex
 - MHCGenotype
 - ReceptorReactivity
 range: MhcClassEnum

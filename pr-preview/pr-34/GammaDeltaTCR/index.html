@@ -212,6 +212,11 @@
       TCellReceptor &lt;|-- GammaDeltaTCR
         click TCellReceptor href "../TCellReceptor"
 
+
+      GammaDeltaTCR &lt;|-- ReceptorComposite
+        click ReceptorComposite href "../ReceptorComposite"
+
+
       GammaDeltaTCR : akc_id
 
       GammaDeltaTCR : trd_chain
@@ -219,8 +224,8 @@
 
 
 
-    GammaDeltaTCR --&gt; "0..1" Chain : trd_chain
-    click Chain href "../Chain"
+    GammaDeltaTCR --&gt; "0..1" DeltaChain : trd_chain
+    click DeltaChain href "../DeltaChain"
 
 
       GammaDeltaTCR : trg_chain
@@ -228,11 +233,9 @@
 
 
 
-    GammaDeltaTCR --&gt; "0..1" Chain : trg_chain
-    click Chain href "../Chain"
+    GammaDeltaTCR --&gt; "0..1" GammaChain : trg_chain
+    click GammaChain href "../GammaChain"
 
-
-      GammaDeltaTCR : type
 
 
 </div>
@@ -262,21 +265,15 @@
 <tbody>
 <tr>
 <td><a href="../trg_chain/">trg_chain</a></td>
-<td>0..1 <br/> <a href="../Chain/">Chain</a></td>
+<td>0..1 <br/> <a href="../GammaChain/">GammaChain</a></td>
 <td>T cell receptor gamma chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../trd_chain/">trd_chain</a></td>
-<td>0..1 <br/> <a href="../Chain/">Chain</a></td>
+<td>0..1 <br/> <a href="../DeltaChain/">DeltaChain</a></td>
 <td>T cell receptor delta chain</td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../TCellReceptor/">TCellReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -300,6 +297,12 @@
 <tr>
 <td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td><a href="../gd_tcell_receptors/">gd_tcell_receptors</a></td>
+<td>range</td>
+<td><a href="./">GammaDeltaTCR</a></td>
+</tr>
+<tr>
+<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../gd_tcr/">gd_tcr</a></td>
 <td>range</td>
 <td><a href="./">GammaDeltaTCR</a></td>
 </tr>
@@ -358,7 +361,7 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: Chain
+    range: GammaChain
   trd_chain:
     name: trd_chain
     description: T cell receptor delta chain
@@ -368,21 +371,7 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: Chain
-  type:
-    name: type
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    designates_type: true
-    alias: type
-    owner: GammaDeltaTCR
-    domain_of:
-    - LifeEvent
-    - Assay
-    - AKDataItem
-    - TCellReceptor
-    - Epitope
-    range: string
+    range: DeltaChain
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

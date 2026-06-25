@@ -324,7 +324,7 @@
 
 
 <h1 id="slot-source_organism">Slot: source_organism</h1>
-<p><em>The organism that the source protein comes from</em></p>
+<p><em>The organism that the source molecule comes from</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/source_organism">ak_schema:source_organism</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,11 +338,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../PeptidicEpitope/">PeptidicEpitope</a></td>
-<td></td>
-<td>no</td>
-</tr>
 <tr>
 <td><a href="../Antigen/">Antigen</a></td>
 <td></td>
@@ -382,13 +377,12 @@
 <details>
 
 <pre><code class="language-yaml">name: source_organism
-description: The organism that the source protein comes from
+description: The organism that the source molecule comes from
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: source_organism
 domain_of:
 - Antigen
-- PeptidicEpitope
 range: TaxonomicSpecies
 
 </code></pre>

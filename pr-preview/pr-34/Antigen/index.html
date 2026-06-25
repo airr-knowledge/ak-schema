@@ -209,14 +209,21 @@
 <div class="mermaid"> classDiagram
     class Antigen
     click Antigen href "../Antigen"
-      NamedThing &lt;|-- Antigen
-        click NamedThing href "../NamedThing"
+      AKObject &lt;|-- Antigen
+        click AKObject href "../AKObject"
 
       Antigen : akc_id
 
-      Antigen : description
+      Antigen : epitope
 
-      Antigen : name
+
+
+
+    Antigen --&gt; "0..1" Epitope : epitope
+    click Epitope href "../Epitope"
+
+
+      Antigen : source_molecule
 
       Antigen : source_organism
 
@@ -227,17 +234,12 @@
     click TaxonomicSpecies href "../TaxonomicSpecies"
 
 
-      Antigen : source_protein
-
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
 <li><strong>Antigen</strong></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -253,28 +255,22 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../source_protein/">source_protein</a></td>
+<td><a href="../source_molecule/">source_molecule</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The protein that this epitope comes from</td>
+<td>The protein or other molecule that this antigen represents</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../source_organism/">source_organism</a></td>
 <td>0..1 <br/> <a href="../TaxonomicSpecies/">TaxonomicSpecies</a></td>
-<td>The organism that the source protein comes from</td>
+<td>The organism that the source molecule comes from</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
+<td><a href="../epitope/">epitope</a></td>
+<td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
+<td>Epitope of an antigen, which can be recognized by a T cell receptor or antibo...</td>
+<td>direct</td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -296,7 +292,25 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
+<td><a href="../antigens/">antigens</a></td>
+<td>range</td>
+<td><a href="./">Antigen</a></td>
+</tr>
+<tr>
 <td><a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
+<td><a href="../antigen/">antigen</a></td>
+<td>range</td>
+<td><a href="./">Antigen</a></td>
+</tr>
+<tr>
+<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../antigen/">antigen</a></td>
+<td>range</td>
+<td><a href="./">Antigen</a></td>
+</tr>
+<tr>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
 <td><a href="../antigen/">antigen</a></td>
 <td>range</td>
 <td><a href="./">Antigen</a></td>
@@ -339,10 +353,11 @@
 <details>
 <pre><code class="language-yaml">name: Antigen
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
 slots:
-- source_protein
+- source_molecule
 - source_organism
+- epitope
 class_uri: OBI:1110034
 
 </code></pre>
@@ -351,52 +366,41 @@ class_uri: OBI:1110034
 <details>
 <pre><code class="language-yaml">name: Antigen
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
 attributes:
-  source_protein:
-    name: source_protein
-    description: The protein that this epitope comes from
+  source_molecule:
+    name: source_molecule
+    description: The protein or other molecule that this antigen represents
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: source_protein
+    alias: source_molecule
     owner: Antigen
     domain_of:
     - Antigen
-    - PeptidicEpitope
     range: string
   source_organism:
     name: source_organism
-    description: The organism that the source protein comes from
+    description: The organism that the source molecule comes from
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: source_organism
     owner: Antigen
     domain_of:
     - Antigen
-    - PeptidicEpitope
     range: TaxonomicSpecies
-  name:
-    name: name
-    description: A human-readable name for a thing
+  epitope:
+    name: epitope
+    description: Epitope of an antigen, which can be recognized by a T cell receptor
+      or antibody
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    slot_uri: schema:name
-    alias: name
+    alias: epitope
     owner: Antigen
     domain_of:
-    - NamedThing
-    range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: Antigen
-    domain_of:
-    - NamedThing
-    range: string
+    - Antigen
+    - ReceptorComposite
+    - QueryTCR
+    range: Epitope
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

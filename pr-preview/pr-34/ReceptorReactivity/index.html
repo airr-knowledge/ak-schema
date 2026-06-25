@@ -364,7 +364,7 @@
 <tr>
 <td><a href="../mhc_class/">mhc_class</a></td>
 <td>0..1 <br/> <a href="../MhcClassEnum/">MhcClassEnum</a></td>
-<td></td>
+<td>Class of the major histocompatibility complex</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -531,6 +531,8 @@ attributes:
     owner: ReceptorReactivity
     domain_of:
     - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
     - ReceptorReactivity
     - QueryTCR
     - QueryIG
@@ -579,11 +581,13 @@ attributes:
     range: integer
   mhc_class:
     name: mhc_class
+    description: Class of the major histocompatibility complex
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     alias: mhc_class
     owner: ReceptorReactivity
     domain_of:
+    - MajorHistocompatibilityComplex
     - MHCGenotype
     - ReceptorReactivity
     range: MhcClassEnum

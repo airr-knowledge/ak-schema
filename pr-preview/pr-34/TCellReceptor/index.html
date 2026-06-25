@@ -226,8 +226,6 @@
 
       TCellReceptor : akc_id
 
-      TCellReceptor : type
-
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -257,12 +255,6 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../akc_id/">akc_id</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
@@ -281,12 +273,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
-<td><a href="../tcr/">tcr</a></td>
-<td>range</td>
-<td><a href="./">TCellReceptor</a></td>
-</tr>
 <tr>
 <td><a href="../QueryTCR/">QueryTCR</a></td>
 <td><a href="../receptor/">receptor</a></td>
@@ -327,8 +313,6 @@
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: ImmuneReceptor
 abstract: true
-slots:
-- type
 class_uri: GO:0042101
 
 </code></pre>
@@ -340,20 +324,6 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: ImmuneReceptor
 abstract: true
 attributes:
-  type:
-    name: type
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    designates_type: true
-    alias: type
-    owner: TCellReceptor
-    domain_of:
-    - LifeEvent
-    - Assay
-    - AKDataItem
-    - TCellReceptor
-    - Epitope
-    range: string
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

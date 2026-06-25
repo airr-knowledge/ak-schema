@@ -205,12 +205,32 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-chain">Class: Chain</h1>
+<ul>
+<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
+</ul>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/Chain">ak_schema:Chain</a></p>
 <div class="mermaid"> classDiagram
     class Chain
     click Chain href "../Chain"
       AKObject &lt;|-- Chain
         click AKObject href "../AKObject"
+
+
+      Chain &lt;|-- AlphaChain
+        click AlphaChain href "../AlphaChain"
+      Chain &lt;|-- BetaChain
+        click BetaChain href "../BetaChain"
+      Chain &lt;|-- DeltaChain
+        click DeltaChain href "../DeltaChain"
+      Chain &lt;|-- GammaChain
+        click GammaChain href "../GammaChain"
+      Chain &lt;|-- HeavyChain
+        click HeavyChain href "../HeavyChain"
+      Chain &lt;|-- KappaChain
+        click KappaChain href "../KappaChain"
+      Chain &lt;|-- LambdaChain
+        click LambdaChain href "../LambdaChain"
+
 
       Chain : aa_hash
 
@@ -220,21 +240,9 @@
 
       Chain : cdr1_aa
 
-      Chain : cdr1_end
-
-      Chain : cdr1_start
-
       Chain : cdr2_aa
 
-      Chain : cdr2_end
-
-      Chain : cdr2_start
-
       Chain : cdr3_aa
-
-      Chain : cdr3_end
-
-      Chain : cdr3_start
 
       Chain : complete_vdj
 
@@ -277,7 +285,16 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><strong>Chain</strong></li>
+<li><strong>Chain</strong><ul>
+<li><a href="../AlphaChain/">AlphaChain</a></li>
+<li><a href="../BetaChain/">BetaChain</a></li>
+<li><a href="../DeltaChain/">DeltaChain</a></li>
+<li><a href="../GammaChain/">GammaChain</a></li>
+<li><a href="../HeavyChain/">HeavyChain</a></li>
+<li><a href="../KappaChain/">KappaChain</a></li>
+<li><a href="../LambdaChain/">LambdaChain</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -389,42 +406,6 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../cdr1_start/">cdr1_start</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr1_end/">cdr1_end</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr2_start/">cdr2_start</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr2_end/">cdr2_end</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr3_start/">cdr3_start</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td></td>
-<td>direct</td>
-</tr>
-<tr>
-<td><a href="../cdr3_end/">cdr3_end</a></td>
-<td>0..1 <br/> <a href="../Integer/">Integer</a></td>
-<td>CDR3 end position in the query sequence (1-based closed interval)</td>
-<td>direct</td>
-</tr>
-<tr>
 <td><a href="../akc_id/">akc_id</a></td>
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
@@ -443,54 +424,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
-<td><a href="../chains/">chains</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
-<td><a href="../tra_chain/">tra_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
-<td><a href="../trb_chain/">trb_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
-<td><a href="../trg_chain/">trg_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
-<td><a href="../trd_chain/">trd_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../BCellReceptor/">BCellReceptor</a></td>
-<td><a href="../igh_chain/">igh_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../BCellReceptor/">BCellReceptor</a></td>
-<td><a href="../igk_chain/">igk_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../BCellReceptor/">BCellReceptor</a></td>
-<td><a href="../igl_chain/">igl_chain</a></td>
-<td>range</td>
-<td><a href="./">Chain</a></td>
-</tr>
 <tr>
 <td><a href="../SimilarityCalculation/">SimilarityCalculation</a></td>
 <td><a href="../chain_domain/">chain_domain</a></td>
@@ -560,6 +493,7 @@
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+abstract: true
 slots:
 - species
 - aa_hash
@@ -577,19 +511,13 @@ slots:
 - cdr1_aa
 - cdr2_aa
 - cdr3_aa
-- cdr1_start
-- cdr1_end
-- cdr2_start
-- cdr2_end
-- cdr3_start
-- cdr3_end
 slot_usage:
   sequence_aa:
     name: sequence_aa
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
   junction_aa:
     name: junction_aa
-    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+$
 
 </code></pre>
 </details>
@@ -598,13 +526,14 @@ slot_usage:
 <pre><code class="language-yaml">name: Chain
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
+abstract: true
 slot_usage:
   sequence_aa:
     name: sequence_aa
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
   junction_aa:
     name: junction_aa
-    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+$
 attributes:
   species:
     name: species
@@ -786,7 +715,7 @@ attributes:
     - Clone
     - Node
     range: string
-    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+[FW]$
+    pattern: ^C[ACDEFGHIKLMNPQRSTVWY]+$
   cdr1_aa:
     name: cdr1_aa
     annotations:
@@ -832,96 +761,6 @@ attributes:
     - Chain
     - Rearrangement
     range: string
-  cdr1_start:
-    name: cdr1_start
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr1_start
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr1_end:
-    name: cdr1_end
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr1_end
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr2_start:
-    name: cdr2_start
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr2_start
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr2_end:
-    name: cdr2_end
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr2_end
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr3_start:
-    name: cdr3_start
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr3_start
-    owner: Chain
-    domain_of:
-    - Chain
-    - SequenceDelineationV
-    - Rearrangement
-    range: integer
-  cdr3_end:
-    name: cdr3_end
-    annotations:
-      nullable:
-        tag: nullable
-        value: true
-    description: CDR3 end position in the query sequence (1-based closed interval).
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: cdr3_end
-    owner: Chain
-    domain_of:
-    - Chain
-    - Rearrangement
-    range: integer
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

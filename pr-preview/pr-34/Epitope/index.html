@@ -205,36 +205,35 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-epitope">Class: Epitope</h1>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/Epitope">ak_schema:Epitope</a></p>
+<p>URI: <a href="http://purl.obolibrary.org/obo/OBI_1110001">OBI:1110001</a></p>
 <div class="mermaid"> classDiagram
     class Epitope
     click Epitope href "../Epitope"
-      NamedThing &lt;|-- Epitope
-        click NamedThing href "../NamedThing"
+      AKObject &lt;|-- Epitope
+        click AKObject href "../AKObject"
 
 
       Epitope &lt;|-- PeptidicEpitope
         click PeptidicEpitope href "../PeptidicEpitope"
+      Epitope &lt;|-- DiscontinuousEpitope
+        click DiscontinuousEpitope href "../DiscontinuousEpitope"
+      Epitope &lt;|-- NonPeptidicEpitope
+        click NonPeptidicEpitope href "../NonPeptidicEpitope"
 
 
       Epitope : akc_id
 
-      Epitope : description
-
-      Epitope : name
-
-      Epitope : type
+      Epitope : epitope_ref
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><a href="../NamedThing/">NamedThing</a><ul>
 <li><strong>Epitope</strong><ul>
 <li><a href="../PeptidicEpitope/">PeptidicEpitope</a></li>
-</ul>
-</li>
+<li><a href="../DiscontinuousEpitope/">DiscontinuousEpitope</a></li>
+<li><a href="../NonPeptidicEpitope/">NonPeptidicEpitope</a></li>
 </ul>
 </li>
 </ul>
@@ -252,22 +251,10 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td><a href="../epitope_ref/">epitope_ref</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>CURIE identifiers for external epitope records</td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
-</tr>
-<tr>
-<td><a href="../description/">description</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
-<td><a href="../NamedThing/">NamedThing</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -295,13 +282,13 @@
 <td><a href="./">Epitope</a></td>
 </tr>
 <tr>
-<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td><a href="../Antigen/">Antigen</a></td>
 <td><a href="../epitope/">epitope</a></td>
 <td>range</td>
 <td><a href="./">Epitope</a></td>
 </tr>
 <tr>
-<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
 <td><a href="../epitope/">epitope</a></td>
 <td>range</td>
 <td><a href="./">Epitope</a></td>
@@ -330,7 +317,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:Epitope</td>
+<td>OBI:1110001</td>
 </tr>
 <tr>
 <td>native</td>
@@ -344,9 +331,10 @@
 <details>
 <pre><code class="language-yaml">name: Epitope
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
 slots:
-- type
+- epitope_ref
+class_uri: OBI:1110001
 
 </code></pre>
 </details>
@@ -354,44 +342,18 @@ slots:
 <details>
 <pre><code class="language-yaml">name: Epitope
 from_schema: https://github.com/airr-knowledge/ak-schema
-is_a: NamedThing
+is_a: AKObject
 attributes:
-  type:
-    name: type
+  epitope_ref:
+    name: epitope_ref
+    description: CURIE identifiers for external epitope records
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    designates_type: true
-    alias: type
+    alias: epitope_ref
     owner: Epitope
     domain_of:
-    - LifeEvent
-    - Assay
-    - AKDataItem
-    - TCellReceptor
     - Epitope
-    range: string
-  name:
-    name: name
-    description: A human-readable name for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:name
-    alias: name
-    owner: Epitope
-    domain_of:
-    - NamedThing
-    range: string
-  description:
-    name: description
-    description: A human-readable description for a thing
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: schema:description
-    alias: description
-    owner: Epitope
-    domain_of:
-    - NamedThing
-    range: string
+    range: uriorcurie
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.
@@ -405,6 +367,7 @@ attributes:
     - AKObject
     range: uriorcurie
     required: true
+class_uri: OBI:1110001
 
 </code></pre>
 </details>

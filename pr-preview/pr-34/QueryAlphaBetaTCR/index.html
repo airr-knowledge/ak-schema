@@ -227,8 +227,6 @@
     click Chain href "../Chain"
 
 
-      QueryAlphaBetaTCR : type
-
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -266,12 +264,6 @@
 <td>0..1 <br/> <a href="../Chain/">Chain</a></td>
 <td></td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../type/">type</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../TCellReceptor/">TCellReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -362,20 +354,6 @@ attributes:
     range: Chain
     multivalued: false
     inlined: true
-  type:
-    name: type
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    designates_type: true
-    alias: type
-    owner: QueryAlphaBetaTCR
-    domain_of:
-    - LifeEvent
-    - Assay
-    - AKDataItem
-    - TCellReceptor
-    - Epitope
-    range: string
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

@@ -324,7 +324,7 @@
 
 
 <h1 id="slot-epitope">Slot: epitope</h1>
-<p><em>The epitope being measured</em></p>
+<p><em>Epitope of an antigen, which can be recognized by a T cell receptor or antibody</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/epitope">ak_schema:epitope</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -339,7 +339,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -349,7 +349,7 @@
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td><a href="../Antigen/">Antigen</a></td>
 <td></td>
 <td>no</td>
 </tr>
@@ -387,13 +387,14 @@
 <details>
 
 <pre><code class="language-yaml">name: epitope
-description: The epitope being measured
+description: Epitope of an antigen, which can be recognized by a T cell receptor or
+  antibody
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: epitope
 domain_of:
-- TCellReceptorEpitopeBindingAssay
-- TCRpMHCComplex
+- Antigen
+- ReceptorComposite
 - QueryTCR
 range: Epitope
 
