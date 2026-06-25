@@ -430,6 +430,22 @@
                         "null"
                     ]
                 },
+                "receptor_composite": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/ReceptorComposite__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "references": {
                     "additionalProperties": {
                         "anyOf": [
@@ -8803,6 +8819,89 @@
             "title": "ReceptorComposite",
             "type": "object"
         },
+        "ReceptorComposite__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igh_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igk_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igl_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tra_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trb_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trd_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trg_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "ReceptorComposite",
+            "type": "object"
+        },
         "ReceptorReactivity": {
             "additionalProperties": false,
             "description": "",
@@ -11578,6 +11677,22 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Participant__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "receptor_composite": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/ReceptorComposite__identifier_optional"
                     },
                     {
                         "type": "null"

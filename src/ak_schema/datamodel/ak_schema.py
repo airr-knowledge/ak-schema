@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-25T14:40:40
+# Generation date: 2026-06-25T17:50:15
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -936,6 +936,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
     tcr_complexes: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
     antigen_complexes: Optional[Union[Dict[Union[str, AntibodyAntigenComplexAkcId], Union[dict, "AntibodyAntigenComplex"]], List[Union[dict, "AntibodyAntigenComplex"]]]] = empty_dict()
+    receptor_composite: Optional[Union[Dict[Union[str, ReceptorCompositeAkcId], Union[dict, "ReceptorComposite"]], List[Union[dict, "ReceptorComposite"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="investigations", slot_type=Investigation, key_name="akc_id", keyed=True)
@@ -1001,6 +1002,8 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="tcr_complexes", slot_type=TCRpMHCComplex, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="antigen_complexes", slot_type=AntibodyAntigenComplex, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="receptor_composite", slot_type=ReceptorComposite, key_name="akc_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -8260,6 +8263,9 @@ slots.aIRRKnowledgeCommons__tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, na
 
 slots.aIRRKnowledgeCommons__antigen_complexes = Slot(uri=AK_SCHEMA.antigen_complexes, name="aIRRKnowledgeCommons__antigen_complexes", curie=AK_SCHEMA.curie('antigen_complexes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__antigen_complexes, domain=None, range=Optional[Union[Dict[Union[str, AntibodyAntigenComplexAkcId], Union[dict, AntibodyAntigenComplex]], List[Union[dict, AntibodyAntigenComplex]]]])
+
+slots.aIRRKnowledgeCommons__receptor_composite = Slot(uri=AK_SCHEMA.receptor_composite, name="aIRRKnowledgeCommons__receptor_composite", curie=AK_SCHEMA.curie('receptor_composite'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__receptor_composite, domain=None, range=Optional[Union[Dict[Union[str, ReceptorCompositeAkcId], Union[dict, ReceptorComposite]], List[Union[dict, ReceptorComposite]]]])
 
 slots.queryObject__tcr = Slot(uri=AK_SCHEMA.tcr, name="queryObject__tcr", curie=AK_SCHEMA.curie('tcr'),
                    model_uri=AK_SCHEMA.queryObject__tcr, domain=None, range=Optional[Union[dict, QueryTCR]])

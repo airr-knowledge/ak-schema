@@ -5974,6 +5974,12 @@ classes:
         range: AntibodyAntigenComplex
         multivalued: true
         inlined: true
+      receptor_composite:
+        name: receptor_composite
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: ReceptorComposite
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation

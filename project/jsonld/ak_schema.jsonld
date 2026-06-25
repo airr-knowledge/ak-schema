@@ -11916,6 +11916,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__receptor_composite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composite",
+      "alias": "receptor_composite",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "ReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "queryObject__tcr",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr",
@@ -12787,7 +12801,8 @@
         "aIRRKnowledgeCommons__antigens",
         "aIRRKnowledgeCommons__epitopes",
         "aIRRKnowledgeCommons__tcr_complexes",
-        "aIRRKnowledgeCommons__antigen_complexes"
+        "aIRRKnowledgeCommons__antigen_complexes",
+        "aIRRKnowledgeCommons__receptor_composite"
       ],
       "slot_usage": {},
       "attributes": [
@@ -13035,6 +13050,14 @@
           "name": "antigen_complexes",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "AntibodyAntigenComplex",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "receptor_composite",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "ReceptorComposite",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -15506,9 +15529,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-06-25T14:40:35",
-  "source_file_size": 217252,
-  "generation_date": "2026-06-25T14:40:37",
+  "source_file_date": "2026-06-25T17:50:09",
+  "source_file_size": 217457,
+  "generation_date": "2026-06-25T17:50:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
