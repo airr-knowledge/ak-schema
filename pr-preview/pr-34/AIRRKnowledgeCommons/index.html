@@ -398,6 +398,15 @@
     click Participant href "../Participant"
 
 
+      AIRRKnowledgeCommons : receptor_composite
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" ReceptorComposite : receptor_composite
+    click ReceptorComposite href "../ReceptorComposite"
+
+
       AIRRKnowledgeCommons : references
 
 
@@ -676,6 +685,12 @@
 <tr>
 <td><a href="../antigen_complexes/">antigen_complexes</a></td>
 <td>* <br/> <a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../receptor_composite/">receptor_composite</a></td>
+<td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -992,6 +1007,15 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: AntibodyAntigenComplex
+    multivalued: true
+    inlined: true
+  receptor_composite:
+    name: receptor_composite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: ReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true
@@ -1345,6 +1369,17 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: AntibodyAntigenComplex
+    multivalued: true
+    inlined: true
+  receptor_composite:
+    name: receptor_composite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: receptor_composite
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: ReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true

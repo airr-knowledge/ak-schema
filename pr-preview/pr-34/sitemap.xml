@@ -2961,6 +2961,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/receptor_composite/</loc>
+         <lastmod>2026-06-25</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/receptor_genotype_id/</loc>
          <lastmod>2026-06-25</lastmod>
          <changefreq>daily</changefreq>
