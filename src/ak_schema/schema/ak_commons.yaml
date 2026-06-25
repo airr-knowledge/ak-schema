@@ -133,3 +133,7 @@ classes:
         range: AntibodyAntigenComplex
         multivalued: true
         inlined: true
+      receptor_composite:
+        range: ReceptorComposite
+        multivalued: true
+        inlined: true
