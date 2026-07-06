@@ -218,12 +218,12 @@
     click AlphaChain href "../AlphaChain"
 
 
-      AIRRKnowledgeCommons : antigen_complexes
+      AIRRKnowledgeCommons : antibody_complexes
 
 
 
 
-    AIRRKnowledgeCommons --&gt; "*" AntibodyAntigenComplex : antigen_complexes
+    AIRRKnowledgeCommons --&gt; "*" AntibodyAntigenComplex : antibody_complexes
     click AntibodyAntigenComplex href "../AntibodyAntigenComplex"
 
 
@@ -398,12 +398,12 @@
     click Participant href "../Participant"
 
 
-      AIRRKnowledgeCommons : receptor_composite
+      AIRRKnowledgeCommons : receptor_composites
 
 
 
 
-    AIRRKnowledgeCommons --&gt; "*" ReceptorComposite : receptor_composite
+    AIRRKnowledgeCommons --&gt; "*" ReceptorComposite : receptor_composites
     click ReceptorComposite href "../ReceptorComposite"
 
 
@@ -683,13 +683,13 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../antigen_complexes/">antigen_complexes</a></td>
+<td><a href="../antibody_complexes/">antibody_complexes</a></td>
 <td>* <br/> <a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
 <td></td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../receptor_composite/">receptor_composite</a></td>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
 <td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
 <td></td>
 <td>direct</td>
@@ -1000,17 +1000,17 @@ attributes:
     range: TCRpMHCComplex
     multivalued: true
     inlined: true
-  antigen_complexes:
-    name: antigen_complexes
+  antibody_complexes:
+    name: antibody_complexes
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
+    - AntibodyAntigenBindingAssay
     range: AntibodyAntigenComplex
     multivalued: true
     inlined: true
-  receptor_composite:
-    name: receptor_composite
+  receptor_composites:
+    name: receptor_composites
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
     domain_of:
@@ -1360,22 +1360,22 @@ attributes:
     range: TCRpMHCComplex
     multivalued: true
     inlined: true
-  antigen_complexes:
-    name: antigen_complexes
+  antibody_complexes:
+    name: antibody_complexes
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: antigen_complexes
+    alias: antibody_complexes
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
+    - AntibodyAntigenBindingAssay
     range: AntibodyAntigenComplex
     multivalued: true
     inlined: true
-  receptor_composite:
-    name: receptor_composite
+  receptor_composites:
+    name: receptor_composites
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: receptor_composite
+    alias: receptor_composites
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
