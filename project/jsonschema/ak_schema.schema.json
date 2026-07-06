@@ -87,7 +87,7 @@
                         "null"
                     ]
                 },
-                "antigen_complexes": {
+                "antibody_complexes": {
                     "additionalProperties": {
                         "anyOf": [
                             {
@@ -430,7 +430,7 @@
                         "null"
                     ]
                 },
-                "receptor_composite": {
+                "receptor_composites": {
                     "additionalProperties": {
                         "anyOf": [
                             {
@@ -11345,7 +11345,7 @@
                 "null"
             ]
         },
-        "antigen_complexes": {
+        "antibody_complexes": {
             "additionalProperties": {
                 "anyOf": [
                     {
@@ -11688,7 +11688,7 @@
                 "null"
             ]
         },
-        "receptor_composite": {
+        "receptor_composites": {
             "additionalProperties": {
                 "anyOf": [
                     {

@@ -11902,10 +11902,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "aIRRKnowledgeCommons__antigen_complexes",
+      "name": "aIRRKnowledgeCommons__antibody_complexes",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antigen_complexes",
-      "alias": "antigen_complexes",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complexes",
+      "alias": "antibody_complexes",
       "owner": "AIRRKnowledgeCommons",
       "domain_of": [
         "AIRRKnowledgeCommons"
@@ -11916,10 +11916,10 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "aIRRKnowledgeCommons__receptor_composite",
+      "name": "aIRRKnowledgeCommons__receptor_composites",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composite",
-      "alias": "receptor_composite",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composites",
+      "alias": "receptor_composites",
       "owner": "AIRRKnowledgeCommons",
       "domain_of": [
         "AIRRKnowledgeCommons"
@@ -12801,8 +12801,8 @@
         "aIRRKnowledgeCommons__antigens",
         "aIRRKnowledgeCommons__epitopes",
         "aIRRKnowledgeCommons__tcr_complexes",
-        "aIRRKnowledgeCommons__antigen_complexes",
-        "aIRRKnowledgeCommons__receptor_composite"
+        "aIRRKnowledgeCommons__antibody_complexes",
+        "aIRRKnowledgeCommons__receptor_composites"
       ],
       "slot_usage": {},
       "attributes": [
@@ -13047,7 +13047,7 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "antigen_complexes",
+          "name": "antibody_complexes",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "AntibodyAntigenComplex",
           "multivalued": true,
@@ -13055,7 +13055,7 @@
           "@type": "SlotDefinition"
         },
         {
-          "name": "receptor_composite",
+          "name": "receptor_composites",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "ReceptorComposite",
           "multivalued": true,
@@ -15529,9 +15529,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-06-25T17:50:09",
-  "source_file_size": 217457,
-  "generation_date": "2026-06-25T17:50:11",
+  "source_file_date": "2026-06-27T07:13:31",
+  "source_file_size": 217461,
+  "generation_date": "2026-06-27T07:13:33",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

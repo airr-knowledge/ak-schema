@@ -5968,14 +5968,14 @@ classes:
         range: TCRpMHCComplex
         multivalued: true
         inlined: true
-      antigen_complexes:
-        name: antigen_complexes
+      antibody_complexes:
+        name: antibody_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: AntibodyAntigenComplex
         multivalued: true
         inlined: true
-      receptor_composite:
-        name: receptor_composite
+      receptor_composites:
+        name: receptor_composites
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: ReceptorComposite
         multivalued: true
