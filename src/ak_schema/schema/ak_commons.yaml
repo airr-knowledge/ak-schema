@@ -129,11 +129,11 @@ classes:
         range: TCRpMHCComplex
         multivalued: true
         inlined: true
-      antigen_complexes:
+      antibody_complexes:
         range: AntibodyAntigenComplex
         multivalued: true
         inlined: true
-      receptor_composite:
+      receptor_composites:
         range: ReceptorComposite
         multivalued: true
         inlined: true
