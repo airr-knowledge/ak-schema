@@ -63,6 +63,7 @@ classes:
       - ethnicity # For human organisms
       - geolocation # at birth
       - strain # For non-human organisms
+      - life_events
     slot_usage:
       species:
         range: TaxonomicSpecies
@@ -212,6 +213,10 @@ slots:
   strain:
     description: The strain of the participant (non-human study participants)
     range: StrainEnum
+  life_events:
+    description: The life events for a participant
+    range: LifeEvent
+    multivalued: true
 
   study_arms:
     description: The study arms that are relevant for a study event
