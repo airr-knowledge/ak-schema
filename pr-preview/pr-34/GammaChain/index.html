@@ -212,8 +212,6 @@
       Chain &lt;|-- GammaChain
         click Chain href "../Chain"
 
-      GammaChain : aa_hash
-
       GammaChain : akc_id
 
       GammaChain : c_call
@@ -228,13 +226,17 @@
 
       GammaChain : d_call
 
+      GammaChain : hash_infer_vdj_sequence
+
+      GammaChain : hash_infer_vdj_sequence_aa
+
+      GammaChain : infer_vdj_sequence
+
+      GammaChain : infer_vdj_sequence_aa
+
       GammaChain : j_call
 
       GammaChain : junction_aa
-
-      GammaChain : junction_aa_vj_allele_hash
-
-      GammaChain : junction_aa_vj_gene_hash
 
       GammaChain : locus
 
@@ -290,24 +292,6 @@
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
-<td><a href="../aa_hash/">aa_hash</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../junction_aa_vj_allele_hash/">junction_aa_vj_allele_hash</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
-<td><a href="../junction_aa_vj_gene_hash/">junction_aa_vj_gene_hash</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
-<td><a href="../Chain/">Chain</a></td>
-</tr>
-<tr>
 <td><a href="../complete_vdj/">complete_vdj</a></td>
 <td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
 <td>Complete VDJ flag</td>
@@ -320,9 +304,33 @@
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
+<td><a href="../infer_vdj_sequence/">infer_vdj_sequence</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Inferred complete VDJ nucleotide sequence</td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
+<td><a href="../hash_infer_vdj_sequence/">hash_infer_vdj_sequence</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Hash of the inferred complete VDJ nucleotide sequence</td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
 <td><a href="../sequence_aa/">sequence_aa</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Amino acid translation of the query nucleotide sequence</td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
+<td><a href="../infer_vdj_sequence_aa/">infer_vdj_sequence_aa</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>Translation of inferred complete VDJ nucleotide sequence</td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
+<td><a href="../hash_infer_vdj_sequence_aa/">hash_infer_vdj_sequence_aa</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>Hash of the translation of inferred complete VDJ nucleotide sequence</td>
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
@@ -476,33 +484,6 @@ attributes:
     - GermlineSet
     - Subject
     range: SpeciesOntology
-  aa_hash:
-    name: aa_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: aa_hash
-    owner: GammaChain
-    domain_of:
-    - Chain
-    range: string
-  junction_aa_vj_allele_hash:
-    name: junction_aa_vj_allele_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: junction_aa_vj_allele_hash
-    owner: GammaChain
-    domain_of:
-    - Chain
-    range: string
-  junction_aa_vj_gene_hash:
-    name: junction_aa_vj_gene_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: junction_aa_vj_gene_hash
-    owner: GammaChain
-    domain_of:
-    - Chain
-    range: string
   complete_vdj:
     name: complete_vdj
     description: Complete VDJ flag.
@@ -529,6 +510,26 @@ attributes:
     - UndocumentedAllele
     - Rearrangement
     range: string
+  infer_vdj_sequence:
+    name: infer_vdj_sequence
+    description: Inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: infer_vdj_sequence
+    owner: GammaChain
+    domain_of:
+    - Chain
+    range: string
+  hash_infer_vdj_sequence:
+    name: hash_infer_vdj_sequence
+    description: Hash of the inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hash_infer_vdj_sequence
+    owner: GammaChain
+    domain_of:
+    - Chain
+    range: uriorcurie
   sequence_aa:
     name: sequence_aa
     annotations:
@@ -546,6 +547,26 @@ attributes:
     - Rearrangement
     range: string
     pattern: ^[ACDEFGHIKLMNPQRSTVWY]+$
+  infer_vdj_sequence_aa:
+    name: infer_vdj_sequence_aa
+    description: Translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: infer_vdj_sequence_aa
+    owner: GammaChain
+    domain_of:
+    - Chain
+    range: string
+  hash_infer_vdj_sequence_aa:
+    name: hash_infer_vdj_sequence_aa
+    description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: hash_infer_vdj_sequence_aa
+    owner: GammaChain
+    domain_of:
+    - Chain
+    range: uriorcurie
   locus:
     name: locus
     from_schema: https://github.com/airr-knowledge/ak-schema

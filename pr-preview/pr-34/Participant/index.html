@@ -241,6 +241,15 @@
     click GeolocationOntology href "../GeolocationOntology"
 
 
+      Participant : life_events
+
+
+
+
+    Participant --&gt; "*" LifeEvent : life_events
+    click LifeEvent href "../LifeEvent"
+
+
       Participant : name
 
       Participant : race
@@ -365,6 +374,12 @@
 <td>direct</td>
 </tr>
 <tr>
+<td><a href="../life_events/">life_events</a></td>
+<td>* <br/> <a href="../LifeEvent/">LifeEvent</a></td>
+<td>The life events for a participant</td>
+<td>direct</td>
+</tr>
+<tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable name for a thing</td>
@@ -476,6 +491,7 @@ slots:
 - ethnicity
 - geolocation
 - strain
+- life_events
 slot_usage:
   species:
     name: species
@@ -641,6 +657,18 @@ attributes:
     domain_of:
     - Participant
     range: StrainEnum
+  life_events:
+    name: life_events
+    description: The life events for a participant
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: life_events
+    owner: Participant
+    domain_of:
+    - AIRRKnowledgeCommons
+    - Participant
+    range: LifeEvent
+    multivalued: true
   name:
     name: name
     description: A human-readable name for a thing
