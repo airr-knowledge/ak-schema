@@ -193,12 +193,13 @@ CREATE TABLE "ImmuneSystem" (
 );COMMENT ON TABLE "ImmuneSystem" IS 'None';COMMENT ON COLUMN "ImmuneSystem".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "ImmuneSystem".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "ImmuneSystem".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Chain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -210,15 +211,16 @@ CREATE TABLE "Chain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "Chain" IS 'None';COMMENT ON COLUMN "Chain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Chain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "Chain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "Chain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "Chain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "Chain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "Chain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "Chain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "Chain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "Chain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Chain" IS 'None';COMMENT ON COLUMN "Chain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Chain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "Chain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "Chain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "Chain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "Chain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "Chain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "Chain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "Chain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "Chain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "Chain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "AlphaChain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -230,15 +232,16 @@ CREATE TABLE "AlphaChain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "AlphaChain" IS 'None';COMMENT ON COLUMN "AlphaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "AlphaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "AlphaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "AlphaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "AlphaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "AlphaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "AlphaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "AlphaChain" IS 'None';COMMENT ON COLUMN "AlphaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "AlphaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "AlphaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "AlphaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "AlphaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "AlphaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "AlphaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "AlphaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "BetaChain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -250,15 +253,16 @@ CREATE TABLE "BetaChain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "BetaChain" IS 'None';COMMENT ON COLUMN "BetaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BetaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "BetaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "BetaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "BetaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "BetaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "BetaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "BetaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "BetaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "BetaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "BetaChain" IS 'None';COMMENT ON COLUMN "BetaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BetaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "BetaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "BetaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "BetaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "BetaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "BetaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "BetaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "BetaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "BetaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "BetaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "DeltaChain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -270,15 +274,16 @@ CREATE TABLE "DeltaChain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "DeltaChain" IS 'None';COMMENT ON COLUMN "DeltaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "DeltaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "DeltaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "DeltaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "DeltaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "DeltaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "DeltaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "DeltaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "DeltaChain" IS 'None';COMMENT ON COLUMN "DeltaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "DeltaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "DeltaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "DeltaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "DeltaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "DeltaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "DeltaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "DeltaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "DeltaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "GammaChain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -290,15 +295,16 @@ CREATE TABLE "GammaChain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "GammaChain" IS 'None';COMMENT ON COLUMN "GammaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "GammaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "GammaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "GammaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "GammaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "GammaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "GammaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "GammaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "GammaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "GammaChain" IS 'None';COMMENT ON COLUMN "GammaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "GammaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "GammaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "GammaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "GammaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "GammaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "GammaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "GammaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "GammaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "GammaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "HeavyChain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -310,15 +316,16 @@ CREATE TABLE "HeavyChain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "HeavyChain" IS 'None';COMMENT ON COLUMN "HeavyChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "HeavyChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "HeavyChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "HeavyChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "HeavyChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "HeavyChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "HeavyChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "HeavyChain" IS 'None';COMMENT ON COLUMN "HeavyChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "HeavyChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "HeavyChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "HeavyChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "HeavyChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "HeavyChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "HeavyChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "HeavyChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "HeavyChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "KappaChain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -330,15 +337,16 @@ CREATE TABLE "KappaChain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "KappaChain" IS 'None';COMMENT ON COLUMN "KappaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "KappaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "KappaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "KappaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "KappaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "KappaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "KappaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "KappaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "KappaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "KappaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "KappaChain" IS 'None';COMMENT ON COLUMN "KappaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "KappaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "KappaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "KappaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "KappaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "KappaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "KappaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "KappaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "KappaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "KappaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "KappaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "LambdaChain" (
 	species "SpeciesOntology", 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus "LocusEnum", 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -350,7 +358,7 @@ CREATE TABLE "LambdaChain" (
 	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "LambdaChain" IS 'None';COMMENT ON COLUMN "LambdaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "LambdaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "LambdaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "LambdaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "LambdaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "LambdaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "LambdaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "LambdaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "LambdaChain" IS 'None';COMMENT ON COLUMN "LambdaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "LambdaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "LambdaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "LambdaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "LambdaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "LambdaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "LambdaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "LambdaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "ImmuneReceptor" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
@@ -1704,6 +1712,13 @@ CREATE TABLE "Specimen" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
 );COMMENT ON TABLE "Specimen" IS 'None';COMMENT ON COLUMN "Specimen".life_event IS 'The life event corresponding to an immune exposure';COMMENT ON COLUMN "Specimen".tissue IS 'The actual tissue sampled, e.g. lymph node, liver, peripheral blood';COMMENT ON COLUMN "Specimen".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Specimen".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Specimen".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "Participant_life_events" (
+	"Participant_akc_id" TEXT, 
+	life_events_akc_id TEXT, 
+	PRIMARY KEY ("Participant_akc_id", life_events_akc_id), 
+	FOREIGN KEY("Participant_akc_id") REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(life_events_akc_id) REFERENCES "LifeEvent" (akc_id)
+);COMMENT ON TABLE "Participant_life_events" IS 'None';COMMENT ON COLUMN "Participant_life_events"."Participant_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "Participant_life_events".life_events_akc_id IS 'The life events for a participant';
 CREATE TABLE "SpecimenCollection" (
 	specimen TEXT, 
 	type TEXT, 

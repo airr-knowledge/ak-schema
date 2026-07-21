@@ -1477,6 +1477,12 @@ slots:
     description: The strain of the participant (non-human study participants)
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: StrainEnum
+  life_events:
+    name: life_events
+    description: The life events for a participant
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: LifeEvent
+    multivalued: true
   study_arms:
     name: study_arms
     description: The study arms that are relevant for a study event
@@ -1702,6 +1708,26 @@ slots:
     description: Nucleotide sequence.
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+  infer_vdj_sequence:
+    name: infer_vdj_sequence
+    description: Inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  hash_infer_vdj_sequence:
+    name: hash_infer_vdj_sequence
+    description: Hash of the inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: uriorcurie
+  infer_vdj_sequence_aa:
+    name: infer_vdj_sequence_aa
+    description: Translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  hash_infer_vdj_sequence_aa:
+    name: hash_infer_vdj_sequence_aa
+    description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: uriorcurie
   isotype:
     name: isotype
     description: The isotype of the chain
@@ -6038,6 +6064,7 @@ classes:
     - ethnicity
     - geolocation
     - strain
+    - life_events
     slot_usage:
       species:
         name: species
@@ -6307,12 +6334,13 @@ classes:
     abstract: true
     slots:
     - species
-    - aa_hash
-    - junction_aa_vj_allele_hash
-    - junction_aa_vj_gene_hash
     - complete_vdj
     - sequence
+    - infer_vdj_sequence
+    - hash_infer_vdj_sequence
     - sequence_aa
+    - infer_vdj_sequence_aa
+    - hash_infer_vdj_sequence_aa
     - locus
     - v_call
     - d_call

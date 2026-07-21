@@ -2364,6 +2364,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "life_events",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/life_events",
+      "description": "The life events for a participant",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_events",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "range": "LifeEvent",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "study_arms",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/study_arms",
       "description": "The study arms that are relevant for a study event",
@@ -2894,10 +2908,6 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/aa_hash",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/aa_hash",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2906,10 +2916,6 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_allele_hash",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_allele_hash",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2918,10 +2924,6 @@
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_gene_hash",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_gene_hash",
-      "owner": "Chain",
-      "domain_of": [
-        "Chain"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -2955,6 +2957,58 @@
         "Rearrangement"
       ],
       "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "infer_vdj_sequence",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence",
+      "description": "Inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hash_infer_vdj_sequence",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence",
+      "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "infer_vdj_sequence_aa",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence_aa",
+      "description": "Translation of inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/infer_vdj_sequence_aa",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hash_infer_vdj_sequence_aa",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence_aa",
+      "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/hash_infer_vdj_sequence_aa",
+      "owner": "Chain",
+      "domain_of": [
+        "Chain"
+      ],
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -13161,7 +13215,8 @@
         "race",
         "ethnicity",
         "geolocation",
-        "strain"
+        "strain",
+        "life_events"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0100026",
@@ -13791,12 +13846,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -13819,12 +13875,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -13847,12 +13904,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -13875,12 +13933,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -13903,12 +13962,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -13931,12 +13991,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -13959,12 +14020,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -13987,12 +14049,13 @@
       "slots": [
         "akc_id",
         "species",
-        "aa_hash",
-        "junction_aa_vj_allele_hash",
-        "junction_aa_vj_gene_hash",
         "complete_vdj",
         "sequence",
+        "infer_vdj_sequence",
+        "hash_infer_vdj_sequence",
         "Chain_sequence_aa",
+        "infer_vdj_sequence_aa",
+        "hash_infer_vdj_sequence_aa",
         "locus",
         "v_call",
         "d_call",
@@ -15529,9 +15592,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-06-27T07:13:31",
-  "source_file_size": 217461,
-  "generation_date": "2026-06-27T07:13:33",
+  "source_file_date": "2026-07-21T18:47:56",
+  "source_file_size": 218563,
+  "generation_date": "2026-07-21T18:47:58",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

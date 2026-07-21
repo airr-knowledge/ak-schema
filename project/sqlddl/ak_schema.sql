@@ -293,12 +293,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Chain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -311,12 +312,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AlphaChain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -329,12 +331,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "BetaChain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -347,12 +350,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "DeltaChain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -365,12 +369,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "GammaChain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -383,12 +388,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "HeavyChain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -401,12 +407,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "KappaChain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -419,12 +426,13 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "LambdaChain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
 --     * Slot: d_call Description: 
@@ -1159,6 +1167,9 @@
 -- # Class: "Reference_authors" Description: ""
 --     * Slot: Reference_source_uri Description: Autocreated FK slot
 --     * Slot: authors Description: The authors of a reference
+-- # Class: "Participant_life_events" Description: ""
+--     * Slot: Participant_akc_id Description: Autocreated FK slot
+--     * Slot: life_events_akc_id Description: The life events for a participant
 -- # Class: "StudyEvent_study_arms" Description: ""
 --     * Slot: StudyEvent_akc_id Description: Autocreated FK slot
 --     * Slot: study_arms_akc_id Description: The study arms that are relevant for a study event
@@ -1513,12 +1524,13 @@ CREATE TABLE "ImmuneSystem" (
 );
 CREATE TABLE "Chain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -1533,12 +1545,13 @@ CREATE TABLE "Chain" (
 );
 CREATE TABLE "AlphaChain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -1553,12 +1566,13 @@ CREATE TABLE "AlphaChain" (
 );
 CREATE TABLE "BetaChain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -1573,12 +1587,13 @@ CREATE TABLE "BetaChain" (
 );
 CREATE TABLE "DeltaChain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -1593,12 +1608,13 @@ CREATE TABLE "DeltaChain" (
 );
 CREATE TABLE "GammaChain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -1613,12 +1629,13 @@ CREATE TABLE "GammaChain" (
 );
 CREATE TABLE "HeavyChain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -1633,12 +1650,13 @@ CREATE TABLE "HeavyChain" (
 );
 CREATE TABLE "KappaChain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -1653,12 +1671,13 @@ CREATE TABLE "KappaChain" (
 );
 CREATE TABLE "LambdaChain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
 	d_call TEXT, 
@@ -3023,6 +3042,13 @@ CREATE TABLE "Specimen" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
+);
+CREATE TABLE "Participant_life_events" (
+	"Participant_akc_id" TEXT, 
+	life_events_akc_id TEXT, 
+	PRIMARY KEY ("Participant_akc_id", life_events_akc_id), 
+	FOREIGN KEY("Participant_akc_id") REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(life_events_akc_id) REFERENCES "LifeEvent" (akc_id)
 );
 CREATE TABLE "SpecimenCollection" (
 	specimen TEXT, 

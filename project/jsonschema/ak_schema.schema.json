@@ -1783,12 +1783,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -1834,6 +1828,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -1843,18 +1865,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -1899,12 +1909,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -1950,6 +1954,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -1959,18 +1991,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -2573,12 +2593,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -2624,6 +2638,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -2633,18 +2675,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -2689,12 +2719,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -2740,6 +2764,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -2749,18 +2801,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -3873,12 +3913,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -3924,6 +3958,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -3933,18 +3995,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -3989,12 +4039,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -4040,6 +4084,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -4049,18 +4121,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -4376,12 +4436,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -4427,6 +4481,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -4436,18 +4518,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -4492,12 +4562,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -4543,6 +4607,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -4552,18 +4644,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -4894,12 +4974,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -4945,6 +5019,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -4954,18 +5056,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -5010,12 +5100,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -5061,6 +5145,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -5070,18 +5182,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -5636,12 +5736,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -5687,6 +5781,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -5696,18 +5818,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -5752,12 +5862,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -5803,6 +5907,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -5812,18 +5944,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -5880,12 +6000,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -5931,6 +6045,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -5940,18 +6082,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -5996,12 +6126,6 @@
             "additionalProperties": false,
             "description": "",
             "properties": {
-                "aa_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
@@ -6047,6 +6171,34 @@
                         "null"
                     ]
                 },
+                "hash_infer_vdj_sequence": {
+                    "description": "Hash of the inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "hash_infer_vdj_sequence_aa": {
+                    "description": "Hash of the translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence": {
+                    "description": "Inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "infer_vdj_sequence_aa": {
+                    "description": "Translation of inferred complete VDJ nucleotide sequence.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "j_call": {
                     "type": [
                         "string",
@@ -6056,18 +6208,6 @@
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_allele_hash": {
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "junction_aa_vj_gene_hash": {
                     "type": [
                         "string",
                         "null"
@@ -6881,6 +7021,16 @@
                     "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
                 },
+                "life_events": {
+                    "description": "The life events for a participant",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": [
@@ -6970,6 +7120,16 @@
                 "geolocation": {
                     "$ref": "#/$defs/GeolocationOntology",
                     "description": "The geolocation of a participant at birth"
+                },
+                "life_events": {
+                    "description": "The life events for a participant",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
                 },
                 "name": {
                     "description": "A human-readable name for a thing",

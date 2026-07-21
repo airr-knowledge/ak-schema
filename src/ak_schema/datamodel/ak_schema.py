@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-06-27T07:13:36
+# Generation date: 2026-07-21T18:48:01
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1188,6 +1188,7 @@ class Participant(NamedThing):
     ethnicity: Optional[str] = None
     geolocation: Optional[Union[str, "GeolocationOntology"]] = None
     strain: Optional[Union[str, "StrainEnum"]] = None
+    life_events: Optional[Union[Union[str, LifeEventAkcId], List[Union[str, LifeEventAkcId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1221,6 +1222,10 @@ class Participant(NamedThing):
 
         if self.strain is not None and not isinstance(self.strain, StrainEnum):
             self.strain = StrainEnum(self.strain)
+
+        if not isinstance(self.life_events, list):
+            self.life_events = [self.life_events] if self.life_events is not None else []
+        self.life_events = [v if isinstance(v, LifeEventAkcId) else LifeEventAkcId(v) for v in self.life_events]
 
         super().__post_init__(**kwargs)
 
@@ -2203,12 +2208,13 @@ class Chain(AKObject):
 
     akc_id: Union[str, ChainAkcId] = None
     species: Optional[Union[str, "SpeciesOntology"]] = None
-    aa_hash: Optional[str] = None
-    junction_aa_vj_allele_hash: Optional[str] = None
-    junction_aa_vj_gene_hash: Optional[str] = None
     complete_vdj: Optional[Union[bool, Bool]] = None
     sequence: Optional[str] = None
+    infer_vdj_sequence: Optional[str] = None
+    hash_infer_vdj_sequence: Optional[Union[str, URIorCURIE]] = None
     sequence_aa: Optional[str] = None
+    infer_vdj_sequence_aa: Optional[str] = None
+    hash_infer_vdj_sequence_aa: Optional[Union[str, URIorCURIE]] = None
     locus: Optional[Union[str, "LocusEnum"]] = None
     v_call: Optional[str] = None
     d_call: Optional[str] = None
@@ -2220,23 +2226,26 @@ class Chain(AKObject):
     cdr3_aa: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self.aa_hash is not None and not isinstance(self.aa_hash, str):
-            self.aa_hash = str(self.aa_hash)
-
-        if self.junction_aa_vj_allele_hash is not None and not isinstance(self.junction_aa_vj_allele_hash, str):
-            self.junction_aa_vj_allele_hash = str(self.junction_aa_vj_allele_hash)
-
-        if self.junction_aa_vj_gene_hash is not None and not isinstance(self.junction_aa_vj_gene_hash, str):
-            self.junction_aa_vj_gene_hash = str(self.junction_aa_vj_gene_hash)
-
         if self.complete_vdj is not None and not isinstance(self.complete_vdj, Bool):
             self.complete_vdj = Bool(self.complete_vdj)
 
         if self.sequence is not None and not isinstance(self.sequence, str):
             self.sequence = str(self.sequence)
 
+        if self.infer_vdj_sequence is not None and not isinstance(self.infer_vdj_sequence, str):
+            self.infer_vdj_sequence = str(self.infer_vdj_sequence)
+
+        if self.hash_infer_vdj_sequence is not None and not isinstance(self.hash_infer_vdj_sequence, URIorCURIE):
+            self.hash_infer_vdj_sequence = URIorCURIE(self.hash_infer_vdj_sequence)
+
         if self.sequence_aa is not None and not isinstance(self.sequence_aa, str):
             self.sequence_aa = str(self.sequence_aa)
+
+        if self.infer_vdj_sequence_aa is not None and not isinstance(self.infer_vdj_sequence_aa, str):
+            self.infer_vdj_sequence_aa = str(self.infer_vdj_sequence_aa)
+
+        if self.hash_infer_vdj_sequence_aa is not None and not isinstance(self.hash_infer_vdj_sequence_aa, URIorCURIE):
+            self.hash_infer_vdj_sequence_aa = URIorCURIE(self.hash_infer_vdj_sequence_aa)
 
         if self.locus is not None and not isinstance(self.locus, LocusEnum):
             self.locus = LocusEnum(self.locus)
@@ -6755,6 +6764,9 @@ slots.geolocation = Slot(uri=RO['0001025'], name="geolocation", curie=RO.curie('
 slots.strain = Slot(uri=AK_SCHEMA.strain, name="strain", curie=AK_SCHEMA.curie('strain'),
                    model_uri=AK_SCHEMA.strain, domain=None, range=Optional[Union[str, "StrainEnum"]])
 
+slots.life_events = Slot(uri=AK_SCHEMA.life_events, name="life_events", curie=AK_SCHEMA.curie('life_events'),
+                   model_uri=AK_SCHEMA.life_events, domain=None, range=Optional[Union[Union[str, LifeEventAkcId], List[Union[str, LifeEventAkcId]]]])
+
 slots.study_arms = Slot(uri=AK_SCHEMA.study_arms, name="study_arms", curie=AK_SCHEMA.curie('study_arms'),
                    model_uri=AK_SCHEMA.study_arms, domain=None, range=Optional[Union[Union[str, StudyArmAkcId], List[Union[str, StudyArmAkcId]]]])
 
@@ -6883,6 +6895,18 @@ slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie
 
 slots.sequence = Slot(uri=AK_SCHEMA.sequence, name="sequence", curie=AK_SCHEMA.curie('sequence'),
                    model_uri=AK_SCHEMA.sequence, domain=None, range=Optional[str])
+
+slots.infer_vdj_sequence = Slot(uri=AK_SCHEMA.infer_vdj_sequence, name="infer_vdj_sequence", curie=AK_SCHEMA.curie('infer_vdj_sequence'),
+                   model_uri=AK_SCHEMA.infer_vdj_sequence, domain=None, range=Optional[str])
+
+slots.hash_infer_vdj_sequence = Slot(uri=AK_SCHEMA.hash_infer_vdj_sequence, name="hash_infer_vdj_sequence", curie=AK_SCHEMA.curie('hash_infer_vdj_sequence'),
+                   model_uri=AK_SCHEMA.hash_infer_vdj_sequence, domain=None, range=Optional[Union[str, URIorCURIE]])
+
+slots.infer_vdj_sequence_aa = Slot(uri=AK_SCHEMA.infer_vdj_sequence_aa, name="infer_vdj_sequence_aa", curie=AK_SCHEMA.curie('infer_vdj_sequence_aa'),
+                   model_uri=AK_SCHEMA.infer_vdj_sequence_aa, domain=None, range=Optional[str])
+
+slots.hash_infer_vdj_sequence_aa = Slot(uri=AK_SCHEMA.hash_infer_vdj_sequence_aa, name="hash_infer_vdj_sequence_aa", curie=AK_SCHEMA.curie('hash_infer_vdj_sequence_aa'),
+                   model_uri=AK_SCHEMA.hash_infer_vdj_sequence_aa, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curie('isotype'),
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])
