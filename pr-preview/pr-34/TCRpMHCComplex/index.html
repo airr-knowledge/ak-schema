@@ -253,6 +253,15 @@
     click MajorHistocompatibilityComplex href "../MajorHistocompatibilityComplex"
 
 
+      TCRpMHCComplex : species
+
+
+
+
+    TCRpMHCComplex --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -273,6 +282,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../ab_tcr/">ab_tcr</a></td>
 <td>0..1 <br/> <a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
@@ -334,6 +349,12 @@
 <td>range</td>
 <td><a href="./">TCRpMHCComplex</a></td>
 </tr>
+<tr>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>range</td>
+<td><a href="./">TCRpMHCComplex</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -369,6 +390,7 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 abstract: true
 slots:
+- species
 - ab_tcr
 - gd_tcr
 - antigen
@@ -384,6 +406,28 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 abstract: true
 attributes:
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: TCRpMHCComplex
+    domain_of:
+    - Participant
+    - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   ab_tcr:
     name: ab_tcr
     description: alpha/beta T cell receptor

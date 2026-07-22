@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-receptor_composites">Slot: receptor_composites</h1>
+<p><em>Composite object for database optimization</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/receptor_composites">ak_schema:receptor_composites</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -338,8 +339,23 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AntibodyAntigenBindingAssay/">AntibodyAntigenBindingAssay</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
 <td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td>A container for instances of multiple classes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AIRRSequencingAssay/">AIRRSequencingAssay</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -381,15 +397,17 @@
 <details>
 
 <pre><code class="language-yaml">name: receptor_composites
+description: Composite object for database optimization
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: receptor_composites
-owner: AIRRKnowledgeCommons
 domain_of:
 - AIRRKnowledgeCommons
+- AIRRSequencingAssay
+- TCellReceptorEpitopeBindingAssay
+- AntibodyAntigenBindingAssay
 range: ReceptorComposite
 multivalued: true
-inlined: true
 
 </code></pre>
 

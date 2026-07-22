@@ -220,6 +220,15 @@
 
       ReceptorComposite : akc_id
 
+      ReceptorComposite : antibody_complex
+
+
+
+
+    ReceptorComposite --&gt; "0..1" AntibodyAntigenComplex : antibody_complex
+    click AntibodyAntigenComplex href "../AntibodyAntigenComplex"
+
+
       ReceptorComposite : antigen
 
 
@@ -272,6 +281,24 @@
 
     ReceptorComposite --&gt; "0..1" MajorHistocompatibilityComplex : mhc
     click MajorHistocompatibilityComplex href "../MajorHistocompatibilityComplex"
+
+
+      ReceptorComposite : species
+
+
+
+
+    ReceptorComposite --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
+      ReceptorComposite : tcr_complex
+
+
+
+
+    ReceptorComposite --&gt; "0..1" TCRpMHCComplex : tcr_complex
+    click TCRpMHCComplex href "../TCRpMHCComplex"
 
 
       ReceptorComposite : tra_chain
@@ -330,6 +357,24 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../tcr_complex/">tcr_complex</a></td>
+<td>0..1 <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
+<td>TCR complex</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../antibody_complex/">antibody_complex</a></td>
+<td>0..1 <br/> <a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
+<td>Antibody antigen complex</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../antigen/">antigen</a></td>
 <td>0..1 <br/> <a href="../Antigen/">Antigen</a></td>
@@ -415,6 +460,24 @@
 <td>range</td>
 <td><a href="./">ReceptorComposite</a></td>
 </tr>
+<tr>
+<td><a href="../AIRRSequencingAssay/">AIRRSequencingAssay</a></td>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
+<td>range</td>
+<td><a href="./">ReceptorComposite</a></td>
+</tr>
+<tr>
+<td><a href="../TCellReceptorEpitopeBindingAssay/">TCellReceptorEpitopeBindingAssay</a></td>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
+<td>range</td>
+<td><a href="./">ReceptorComposite</a></td>
+</tr>
+<tr>
+<td><a href="../AntibodyAntigenBindingAssay/">AntibodyAntigenBindingAssay</a></td>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
+<td>range</td>
+<td><a href="./">ReceptorComposite</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -453,6 +516,9 @@ mixins:
 - GammaDeltaTCR
 - BCellReceptor
 slots:
+- species
+- tcr_complex
+- antibody_complex
 - antigen
 - epitope
 - mhc
@@ -469,6 +535,48 @@ mixins:
 - GammaDeltaTCR
 - BCellReceptor
 attributes:
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: ReceptorComposite
+    domain_of:
+    - Participant
+    - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
+  tcr_complex:
+    name: tcr_complex
+    description: TCR complex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: tcr_complex
+    owner: ReceptorComposite
+    domain_of:
+    - ReceptorComposite
+    range: TCRpMHCComplex
+  antibody_complex:
+    name: antibody_complex
+    description: Antibody antigen complex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: antibody_complex
+    owner: ReceptorComposite
+    domain_of:
+    - ReceptorComposite
+    range: AntibodyAntigenComplex
   antigen:
     name: antigen
     description: A material entity with antigen role

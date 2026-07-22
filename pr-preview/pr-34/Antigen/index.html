@@ -225,12 +225,12 @@
 
       Antigen : source_molecule
 
-      Antigen : source_organism
+      Antigen : source_species
 
 
 
 
-    Antigen --&gt; "0..1" TaxonomicSpecies : source_organism
+    Antigen --&gt; "0..1" TaxonomicSpecies : source_species
     click TaxonomicSpecies href "../TaxonomicSpecies"
 
 
@@ -261,9 +261,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../source_organism/">source_organism</a></td>
+<td><a href="../source_species/">source_species</a></td>
 <td>0..1 <br/> <a href="../TaxonomicSpecies/">TaxonomicSpecies</a></td>
-<td>The organism that the source molecule comes from</td>
+<td>The species that the source molecule comes from</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -356,7 +356,7 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 slots:
 - source_molecule
-- source_organism
+- source_species
 - epitope
 class_uri: OBI:1110034
 
@@ -378,12 +378,12 @@ attributes:
     domain_of:
     - Antigen
     range: string
-  source_organism:
-    name: source_organism
-    description: The organism that the source molecule comes from
+  source_species:
+    name: source_species
+    description: The species that the source molecule comes from
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: source_organism
+    alias: source_species
     owner: Antigen
     domain_of:
     - Antigen

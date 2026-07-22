@@ -244,6 +244,15 @@
 
       TCellReceptorEpitopeBindingAssay : name
 
+      TCellReceptorEpitopeBindingAssay : receptor_composites
+
+
+
+
+    TCellReceptorEpitopeBindingAssay --&gt; "*" ReceptorComposite : receptor_composites
+    click ReceptorComposite href "../ReceptorComposite"
+
+
       TCellReceptorEpitopeBindingAssay : specimen
 
 
@@ -312,6 +321,12 @@
 <td><a href="../mhc_evidence/">mhc_evidence</a></td>
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>Evidence code for MHC restriction</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
+<td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td>Composite object for database optimization</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -406,6 +421,7 @@ mixins:
 slots:
 - tcr_complexes
 - mhc_evidence
+- receptor_composites
 class_uri: OBI:1110037
 
 </code></pre>
@@ -441,6 +457,20 @@ attributes:
     domain_of:
     - TCellReceptorEpitopeBindingAssay
     range: uriorcurie
+  receptor_composites:
+    name: receptor_composites
+    description: Composite object for database optimization
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: receptor_composites
+    owner: TCellReceptorEpitopeBindingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenBindingAssay
+    range: ReceptorComposite
+    multivalued: true
   specimen:
     name: specimen
     description: The specimen that was input for an assay

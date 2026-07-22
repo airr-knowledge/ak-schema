@@ -211,6 +211,15 @@
 
       AIRRSequencingAssay : akc_id
 
+      AIRRSequencingAssay : antibody_complexes
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" AntibodyAntigenComplex : antibody_complexes
+    click AntibodyAntigenComplex href "../AntibodyAntigenComplex"
+
+
       AIRRSequencingAssay : assay_type
 
 
@@ -232,6 +241,15 @@
 
 
       AIRRSequencingAssay : name
+
+      AIRRSequencingAssay : receptor_composites
+
+
+
+
+    AIRRSequencingAssay --&gt; "*" ReceptorComposite : receptor_composites
+    click ReceptorComposite href "../ReceptorComposite"
+
 
       AIRRSequencingAssay : repertoire_id
 
@@ -324,6 +342,18 @@
 <td><a href="../tcr_complexes/">tcr_complexes</a></td>
 <td>* <br/> <a href="../TCRpMHCComplex/">TCRpMHCComplex</a></td>
 <td>The T cell receptor/epitope/mhc complex being measured</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../antibody_complexes/">antibody_complexes</a></td>
+<td>* <br/> <a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
+<td>The antibody-antigen complex being measured</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
+<td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td>Composite object for database optimization</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -454,6 +484,8 @@ mixins:
 slots:
 - repertoire_id
 - tcr_complexes
+- antibody_complexes
+- receptor_composites
 slot_usage:
   sequencing_files:
     name: sequencing_files
@@ -501,6 +533,33 @@ attributes:
     - AIRRSequencingAssay
     - TCellReceptorEpitopeBindingAssay
     range: TCRpMHCComplex
+    multivalued: true
+  antibody_complexes:
+    name: antibody_complexes
+    description: The antibody-antigen complex being measured
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: antibody_complexes
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - AntibodyAntigenBindingAssay
+    range: AntibodyAntigenComplex
+    multivalued: true
+  receptor_composites:
+    name: receptor_composites
+    description: Composite object for database optimization
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: receptor_composites
+    owner: AIRRSequencingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenBindingAssay
+    range: ReceptorComposite
     multivalued: true
   sequencing_run_id:
     name: sequencing_run_id

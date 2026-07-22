@@ -235,6 +235,15 @@
     click Antigen href "../Antigen"
 
 
+      AntibodyAntigenComplex : species
+
+
+
+
+    AntibodyAntigenComplex --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -255,6 +264,12 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td>direct</td>
+</tr>
 <tr>
 <td><a href="../antibody/">antibody</a></td>
 <td>0..1 <br/> <a href="../BCellReceptor/">BCellReceptor</a></td>
@@ -293,8 +308,20 @@
 <td><a href="./">AntibodyAntigenComplex</a></td>
 </tr>
 <tr>
+<td><a href="../AIRRSequencingAssay/">AIRRSequencingAssay</a></td>
+<td><a href="../antibody_complexes/">antibody_complexes</a></td>
+<td>range</td>
+<td><a href="./">AntibodyAntigenComplex</a></td>
+</tr>
+<tr>
 <td><a href="../AntibodyAntigenBindingAssay/">AntibodyAntigenBindingAssay</a></td>
 <td><a href="../antibody_complexes/">antibody_complexes</a></td>
+<td>range</td>
+<td><a href="./">AntibodyAntigenComplex</a></td>
+</tr>
+<tr>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td><a href="../antibody_complex/">antibody_complex</a></td>
 <td>range</td>
 <td><a href="./">AntibodyAntigenComplex</a></td>
 </tr>
@@ -333,6 +360,7 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 abstract: true
 slots:
+- species
 - antibody
 - antigen
 class_uri: OBI:0003119
@@ -346,6 +374,28 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: AKObject
 abstract: true
 attributes:
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: AntibodyAntigenComplex
+    domain_of:
+    - Participant
+    - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   antibody:
     name: antibody
     description: B cell receptor, immunoglobulin antibody

@@ -219,6 +219,15 @@
 
       GammaDeltaTCR : akc_id
 
+      GammaDeltaTCR : species
+
+
+
+
+    GammaDeltaTCR --&gt; "0..1" SpeciesOntology : species
+    click SpeciesOntology href "../SpeciesOntology"
+
+
       GammaDeltaTCR : trd_chain
 
 
@@ -274,6 +283,12 @@
 <td>0..1 <br/> <a href="../DeltaChain/">DeltaChain</a></td>
 <td>T cell receptor delta chain</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../species/">species</a></td>
+<td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
+<td>Binomial designation of subject's species</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -372,6 +387,28 @@ attributes:
     domain_of:
     - GammaDeltaTCR
     range: DeltaChain
+  species:
+    name: species
+    annotations:
+      nullable:
+        tag: nullable
+        value: false
+    description: Binomial designation of subject's species
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: species
+    owner: GammaDeltaTCR
+    domain_of:
+    - Participant
+    - Chain
+    - ImmuneReceptor
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - AlleleDescription
+    - GermlineSet
+    - Subject
+    range: SpeciesOntology
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

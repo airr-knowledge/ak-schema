@@ -1005,6 +1005,7 @@ attributes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     domain_of:
     - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
     - AntibodyAntigenBindingAssay
     range: AntibodyAntigenComplex
     multivalued: true
@@ -1012,9 +1013,11 @@ attributes:
   receptor_composites:
     name: receptor_composites
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     domain_of:
     - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenBindingAssay
     range: ReceptorComposite
     multivalued: true
     inlined: true
@@ -1367,6 +1370,7 @@ attributes:
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
     - AntibodyAntigenBindingAssay
     range: AntibodyAntigenComplex
     multivalued: true
@@ -1374,11 +1378,13 @@ attributes:
   receptor_composites:
     name: receptor_composites
     from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
     alias: receptor_composites
     owner: AIRRKnowledgeCommons
     domain_of:
     - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenBindingAssay
     range: ReceptorComposite
     multivalued: true
     inlined: true

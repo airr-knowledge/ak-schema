@@ -240,6 +240,15 @@
 
       AntibodyAntigenBindingAssay : name
 
+      AntibodyAntigenBindingAssay : receptor_composites
+
+
+
+
+    AntibodyAntigenBindingAssay --&gt; "*" ReceptorComposite : receptor_composites
+    click ReceptorComposite href "../ReceptorComposite"
+
+
       AntibodyAntigenBindingAssay : specimen
 
 
@@ -293,6 +302,12 @@
 <td><a href="../antibody_complexes/">antibody_complexes</a></td>
 <td>* <br/> <a href="../AntibodyAntigenComplex/">AntibodyAntigenComplex</a></td>
 <td>The antibody-antigen complex being measured</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../receptor_composites/">receptor_composites</a></td>
+<td>* <br/> <a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td>Composite object for database optimization</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -378,6 +393,7 @@ from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: Assay
 slots:
 - antibody_complexes
+- receptor_composites
 class_uri: OBI:0003127
 
 </code></pre>
@@ -397,8 +413,23 @@ attributes:
     owner: AntibodyAntigenBindingAssay
     domain_of:
     - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
     - AntibodyAntigenBindingAssay
     range: AntibodyAntigenComplex
+    multivalued: true
+  receptor_composites:
+    name: receptor_composites
+    description: Composite object for database optimization
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: receptor_composites
+    owner: AntibodyAntigenBindingAssay
+    domain_of:
+    - AIRRKnowledgeCommons
+    - AIRRSequencingAssay
+    - TCellReceptorEpitopeBindingAssay
+    - AntibodyAntigenBindingAssay
+    range: ReceptorComposite
     multivalued: true
   specimen:
     name: specimen
