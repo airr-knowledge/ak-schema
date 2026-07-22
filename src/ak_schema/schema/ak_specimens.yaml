@@ -61,6 +61,8 @@ classes:
     slots:
       - repertoire_id
       - tcr_complexes
+      - antibody_complexes
+      - receptor_composites
     slot_usage:
       sequencing_files:
         range: AIRRSequencingData
@@ -74,14 +76,14 @@ classes:
     slots:
       - tcr_complexes
       - mhc_evidence
+      - receptor_composites
 
   AntibodyAntigenBindingAssay:
     is_a: Assay
     class_uri: OBI:0003127 # B cell epitope assay
     slots:
-     # - epitope
-     # - antigen
       - antibody_complexes
+      - receptor_composites
 
 slots:
   life_event:
@@ -126,6 +128,11 @@ slots:
     description: The antibody-antigen complex being measured
     range: AntibodyAntigenComplex
     multivalued: true
+  receptor_composites:
+    description: Composite object for database optimization
+    range: ReceptorComposite
+    multivalued: true
+
 
 enums:
   AssayTypeOntology:

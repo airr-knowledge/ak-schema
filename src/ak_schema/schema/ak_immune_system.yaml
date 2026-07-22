@@ -60,6 +60,8 @@ classes:
   ImmuneReceptor:
     abstract: true
     is_a: AKObject
+    slots:
+      - species
 
   TCellReceptor:
     abstract: true
@@ -120,7 +122,7 @@ classes:
     class_uri: OBI:1110034 # antigen
     slots:
       - source_molecule
-      - source_organism
+      - source_species
       - epitope
 
   MajorHistocompatibilityComplex:
@@ -136,6 +138,7 @@ classes:
     is_a: AKObject
     class_uri: OBI:0003119
     slots:
+      - species
       - antibody
       - antigen
 
@@ -144,6 +147,7 @@ classes:
     is_a: AKObject
     class_uri: OBI:0003119
     slots:
+      - species
       - ab_tcr
       - gd_tcr
       - antigen
@@ -157,6 +161,9 @@ classes:
       - GammaDeltaTCR
       - BCellReceptor
     slots:
+      - species
+      - tcr_complex
+      - antibody_complex
       - antigen
       - epitope
       - mhc
@@ -248,8 +255,8 @@ slots:
   source_molecule:
     description: The protein or other molecule that this antigen represents
 
-  source_organism:
-    description: The organism that the source molecule comes from
+  source_species:
+    description: The species that the source molecule comes from
     range: TaxonomicSpecies
 
   antibody:
@@ -296,3 +303,10 @@ slots:
     description: Class of the major histocompatibility complex
     range: MhcClassEnum # from AIRR
 
+  tcr_complex:
+    description: TCR complex
+    range: TCRpMHCComplex
+
+  antibody_complex:
+    description: Antibody antigen complex
+    range: AntibodyAntigenComplex
