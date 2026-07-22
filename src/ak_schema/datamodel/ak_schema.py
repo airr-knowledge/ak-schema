@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-21T18:48:01
+# Generation date: 2026-07-22T21:38:46
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1660,6 +1660,8 @@ class AIRRSequencingAssay(Assay):
     akc_id: Union[str, AIRRSequencingAssayAkcId] = None
     repertoire_id: Optional[str] = None
     tcr_complexes: Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]] = empty_list()
+    antibody_complexes: Optional[Union[Union[str, AntibodyAntigenComplexAkcId], List[Union[str, AntibodyAntigenComplexAkcId]]]] = empty_list()
+    receptor_composites: Optional[Union[Union[str, ReceptorCompositeAkcId], List[Union[str, ReceptorCompositeAkcId]]]] = empty_list()
     sequencing_files: Optional[Union[str, AIRRSequencingDataAkcId]] = None
     sequencing_run_id: Optional[str] = None
     total_reads_passing_qc_filter: Optional[int] = None
@@ -1680,6 +1682,14 @@ class AIRRSequencingAssay(Assay):
         if not isinstance(self.tcr_complexes, list):
             self.tcr_complexes = [self.tcr_complexes] if self.tcr_complexes is not None else []
         self.tcr_complexes = [v if isinstance(v, TCRpMHCComplexAkcId) else TCRpMHCComplexAkcId(v) for v in self.tcr_complexes]
+
+        if not isinstance(self.antibody_complexes, list):
+            self.antibody_complexes = [self.antibody_complexes] if self.antibody_complexes is not None else []
+        self.antibody_complexes = [v if isinstance(v, AntibodyAntigenComplexAkcId) else AntibodyAntigenComplexAkcId(v) for v in self.antibody_complexes]
+
+        if not isinstance(self.receptor_composites, list):
+            self.receptor_composites = [self.receptor_composites] if self.receptor_composites is not None else []
+        self.receptor_composites = [v if isinstance(v, ReceptorCompositeAkcId) else ReceptorCompositeAkcId(v) for v in self.receptor_composites]
 
         if self.sequencing_files is not None and not isinstance(self.sequencing_files, AIRRSequencingDataAkcId):
             self.sequencing_files = AIRRSequencingDataAkcId(self.sequencing_files)
@@ -1718,6 +1728,7 @@ class TCellReceptorEpitopeBindingAssay(Assay):
     akc_id: Union[str, TCellReceptorEpitopeBindingAssayAkcId] = None
     tcr_complexes: Optional[Union[Union[str, TCRpMHCComplexAkcId], List[Union[str, TCRpMHCComplexAkcId]]]] = empty_list()
     mhc_evidence: Optional[Union[str, URIorCURIE]] = None
+    receptor_composites: Optional[Union[Union[str, ReceptorCompositeAkcId], List[Union[str, ReceptorCompositeAkcId]]]] = empty_list()
     measurement_category: Optional[Union[str, "CategoricalSpecificityEnum"]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -1732,6 +1743,10 @@ class TCellReceptorEpitopeBindingAssay(Assay):
 
         if self.mhc_evidence is not None and not isinstance(self.mhc_evidence, URIorCURIE):
             self.mhc_evidence = URIorCURIE(self.mhc_evidence)
+
+        if not isinstance(self.receptor_composites, list):
+            self.receptor_composites = [self.receptor_composites] if self.receptor_composites is not None else []
+        self.receptor_composites = [v if isinstance(v, ReceptorCompositeAkcId) else ReceptorCompositeAkcId(v) for v in self.receptor_composites]
 
         if self.measurement_category is not None and not isinstance(self.measurement_category, CategoricalSpecificityEnum):
             self.measurement_category = CategoricalSpecificityEnum(self.measurement_category)
@@ -1751,6 +1766,7 @@ class AntibodyAntigenBindingAssay(Assay):
 
     akc_id: Union[str, AntibodyAntigenBindingAssayAkcId] = None
     antibody_complexes: Optional[Union[Union[str, AntibodyAntigenComplexAkcId], List[Union[str, AntibodyAntigenComplexAkcId]]]] = empty_list()
+    receptor_composites: Optional[Union[Union[str, ReceptorCompositeAkcId], List[Union[str, ReceptorCompositeAkcId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1761,6 +1777,10 @@ class AntibodyAntigenBindingAssay(Assay):
         if not isinstance(self.antibody_complexes, list):
             self.antibody_complexes = [self.antibody_complexes] if self.antibody_complexes is not None else []
         self.antibody_complexes = [v if isinstance(v, AntibodyAntigenComplexAkcId) else AntibodyAntigenComplexAkcId(v) for v in self.antibody_complexes]
+
+        if not isinstance(self.receptor_composites, list):
+            self.receptor_composites = [self.receptor_composites] if self.receptor_composites is not None else []
+        self.receptor_composites = [v if isinstance(v, ReceptorCompositeAkcId) else ReceptorCompositeAkcId(v) for v in self.receptor_composites]
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -2427,6 +2447,7 @@ class ImmuneReceptor(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ImmuneReceptor
 
     akc_id: Union[str, ImmuneReceptorAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
 
 @dataclass(repr=False)
 class TCellReceptor(ImmuneReceptor):
@@ -2638,7 +2659,7 @@ class Antigen(AKObject):
 
     akc_id: Union[str, AntigenAkcId] = None
     source_molecule: Optional[str] = None
-    source_organism: Optional[Union[str, TaxonomicSpeciesTermId]] = None
+    source_species: Optional[Union[str, TaxonomicSpeciesTermId]] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -2650,8 +2671,8 @@ class Antigen(AKObject):
         if self.source_molecule is not None and not isinstance(self.source_molecule, str):
             self.source_molecule = str(self.source_molecule)
 
-        if self.source_organism is not None and not isinstance(self.source_organism, TaxonomicSpeciesTermId):
-            self.source_organism = TaxonomicSpeciesTermId(self.source_organism)
+        if self.source_species is not None and not isinstance(self.source_species, TaxonomicSpeciesTermId):
+            self.source_species = TaxonomicSpeciesTermId(self.source_species)
 
         if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
             self.epitope = EpitopeAkcId(self.epitope)
@@ -2701,6 +2722,7 @@ class AntibodyAntigenComplex(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AntibodyAntigenComplex
 
     akc_id: Union[str, AntibodyAntigenComplexAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
     antibody: Optional[Union[str, BCellReceptorAkcId]] = None
     antigen: Optional[Union[str, AntigenAkcId]] = None
 
@@ -2724,6 +2746,7 @@ class TCRpMHCComplex(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.TCRpMHCComplex
 
     akc_id: Union[str, TCRpMHCComplexAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
     ab_tcr: Optional[Union[str, AlphaBetaTCRAkcId]] = None
     gd_tcr: Optional[Union[str, GammaDeltaTCRAkcId]] = None
     antigen: Optional[Union[str, AntigenAkcId]] = None
@@ -2755,6 +2778,9 @@ class ReceptorComposite(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.ReceptorComposite
 
     akc_id: Union[str, ReceptorCompositeAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
+    tcr_complex: Optional[Union[str, TCRpMHCComplexAkcId]] = None
+    antibody_complex: Optional[Union[str, AntibodyAntigenComplexAkcId]] = None
     antigen: Optional[Union[str, AntigenAkcId]] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     mhc: Optional[Union[str, MajorHistocompatibilityComplexAkcId]] = None
@@ -2771,6 +2797,12 @@ class ReceptorComposite(AKObject):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, ReceptorCompositeAkcId):
             self.akc_id = ReceptorCompositeAkcId(self.akc_id)
+
+        if self.tcr_complex is not None and not isinstance(self.tcr_complex, TCRpMHCComplexAkcId):
+            self.tcr_complex = TCRpMHCComplexAkcId(self.tcr_complex)
+
+        if self.antibody_complex is not None and not isinstance(self.antibody_complex, AntibodyAntigenComplexAkcId):
+            self.antibody_complex = AntibodyAntigenComplexAkcId(self.antibody_complex)
 
         if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
             self.antigen = AntigenAkcId(self.antigen)
@@ -6830,6 +6862,9 @@ slots.tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, name="tcr_complexes", cu
 slots.antibody_complexes = Slot(uri=AK_SCHEMA.antibody_complexes, name="antibody_complexes", curie=AK_SCHEMA.curie('antibody_complexes'),
                    model_uri=AK_SCHEMA.antibody_complexes, domain=None, range=Optional[Union[Union[str, AntibodyAntigenComplexAkcId], List[Union[str, AntibodyAntigenComplexAkcId]]]])
 
+slots.receptor_composites = Slot(uri=AK_SCHEMA.receptor_composites, name="receptor_composites", curie=AK_SCHEMA.curie('receptor_composites'),
+                   model_uri=AK_SCHEMA.receptor_composites, domain=None, range=Optional[Union[Union[str, ReceptorCompositeAkcId], List[Union[str, ReceptorCompositeAkcId]]]])
+
 slots.measurement_value = Slot(uri=AK_SCHEMA.measurement_value, name="measurement_value", curie=AK_SCHEMA.curie('measurement_value'),
                    model_uri=AK_SCHEMA.measurement_value, domain=None, range=Optional[Decimal])
 
@@ -6941,8 +6976,8 @@ slots.gd_tcr = Slot(uri=AK_SCHEMA.gd_tcr, name="gd_tcr", curie=AK_SCHEMA.curie('
 slots.source_molecule = Slot(uri=AK_SCHEMA.source_molecule, name="source_molecule", curie=AK_SCHEMA.curie('source_molecule'),
                    model_uri=AK_SCHEMA.source_molecule, domain=None, range=Optional[str])
 
-slots.source_organism = Slot(uri=AK_SCHEMA.source_organism, name="source_organism", curie=AK_SCHEMA.curie('source_organism'),
-                   model_uri=AK_SCHEMA.source_organism, domain=None, range=Optional[Union[str, TaxonomicSpeciesTermId]])
+slots.source_species = Slot(uri=AK_SCHEMA.source_species, name="source_species", curie=AK_SCHEMA.curie('source_species'),
+                   model_uri=AK_SCHEMA.source_species, domain=None, range=Optional[Union[str, TaxonomicSpeciesTermId]])
 
 slots.antibody = Slot(uri=AK_SCHEMA.antibody, name="antibody", curie=AK_SCHEMA.curie('antibody'),
                    model_uri=AK_SCHEMA.antibody, domain=None, range=Optional[Union[str, BCellReceptorAkcId]])
@@ -6976,6 +7011,12 @@ slots.mhc_label = Slot(uri=AK_SCHEMA.mhc_label, name="mhc_label", curie=AK_SCHEM
 
 slots.mhc_class = Slot(uri=AK_SCHEMA.mhc_class, name="mhc_class", curie=AK_SCHEMA.curie('mhc_class'),
                    model_uri=AK_SCHEMA.mhc_class, domain=None, range=Optional[Union[str, "MhcClassEnum"]])
+
+slots.tcr_complex = Slot(uri=AK_SCHEMA.tcr_complex, name="tcr_complex", curie=AK_SCHEMA.curie('tcr_complex'),
+                   model_uri=AK_SCHEMA.tcr_complex, domain=None, range=Optional[Union[str, TCRpMHCComplexAkcId]])
+
+slots.antibody_complex = Slot(uri=AK_SCHEMA.antibody_complex, name="antibody_complex", curie=AK_SCHEMA.curie('antibody_complex'),
+                   model_uri=AK_SCHEMA.antibody_complex, domain=None, range=Optional[Union[str, AntibodyAntigenComplexAkcId]])
 
 slots.chain_domain = Slot(uri=AK_SCHEMA.chain_domain, name="chain_domain", curie=AK_SCHEMA.curie('chain_domain'),
                    model_uri=AK_SCHEMA.chain_domain, domain=None, range=Optional[Union[str, ChainAkcId]])

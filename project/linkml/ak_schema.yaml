@@ -1598,6 +1598,12 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: AntibodyAntigenComplex
     multivalued: true
+  receptor_composites:
+    name: receptor_composites
+    description: Composite object for database optimization
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: ReceptorComposite
+    multivalued: true
   measurement_value:
     name: measurement_value
     description: The measurement result value
@@ -1782,9 +1788,9 @@ slots:
     name: source_molecule
     description: The protein or other molecule that this antigen represents
     from_schema: https://github.com/airr-knowledge/ak-schema
-  source_organism:
-    name: source_organism
-    description: The organism that the source molecule comes from
+  source_species:
+    name: source_species
+    description: The species that the source molecule comes from
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TaxonomicSpecies
   antibody:
@@ -1843,6 +1849,16 @@ slots:
     description: Class of the major histocompatibility complex
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MhcClassEnum
+  tcr_complex:
+    name: tcr_complex
+    description: TCR complex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: TCRpMHCComplex
+  antibody_complex:
+    name: antibody_complex
+    description: Antibody antigen complex
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AntibodyAntigenComplex
   chain_domain:
     name: chain_domain
     description: Immune receptor chain element in binary relation domain
@@ -6183,6 +6199,8 @@ classes:
     slots:
     - repertoire_id
     - tcr_complexes
+    - antibody_complexes
+    - receptor_composites
     slot_usage:
       sequencing_files:
         name: sequencing_files
@@ -6197,6 +6215,7 @@ classes:
     slots:
     - tcr_complexes
     - mhc_evidence
+    - receptor_composites
     class_uri: OBI:1110037
   AntibodyAntigenBindingAssay:
     name: AntibodyAntigenBindingAssay
@@ -6204,6 +6223,7 @@ classes:
     is_a: Assay
     slots:
     - antibody_complexes
+    - receptor_composites
     class_uri: OBI:0003127
   DataItem:
     name: DataItem
@@ -6390,6 +6410,8 @@ classes:
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
     abstract: true
+    slots:
+    - species
   TCellReceptor:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6460,7 +6482,7 @@ classes:
     is_a: AKObject
     slots:
     - source_molecule
-    - source_organism
+    - source_species
     - epitope
     class_uri: OBI:1110034
   MajorHistocompatibilityComplex:
@@ -6478,6 +6500,7 @@ classes:
     is_a: AKObject
     abstract: true
     slots:
+    - species
     - antibody
     - antigen
     class_uri: OBI:0003119
@@ -6487,6 +6510,7 @@ classes:
     is_a: AKObject
     abstract: true
     slots:
+    - species
     - ab_tcr
     - gd_tcr
     - antigen
@@ -6501,6 +6525,9 @@ classes:
     - GammaDeltaTCR
     - BCellReceptor
     slots:
+    - species
+    - tcr_complex
+    - antibody_complex
     - antigen
     - epitope
     - mhc

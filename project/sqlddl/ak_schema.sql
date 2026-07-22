@@ -444,21 +444,26 @@
 --     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ImmuneReceptor" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCellReceptor" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AlphaBetaTCR" Description: ""
 --     * Slot: tra_chain Description: T cell receptor alpha chain
 --     * Slot: trb_chain Description: T cell receptor beta chain
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "GammaDeltaTCR" Description: ""
 --     * Slot: trg_chain Description: T cell receptor gamma chain
 --     * Slot: trd_chain Description: T cell receptor delta chain
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "BCellReceptor" Description: ""
 --     * Slot: igh_chain Description: IG heavy chain
 --     * Slot: igk_chain Description: IG kappa light chain
 --     * Slot: igl_chain Description: IG lambda light chain
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Epitope" Description: ""
 --     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
@@ -478,7 +483,7 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Antigen" Description: ""
 --     * Slot: source_molecule Description: The protein or other molecule that this antigen represents
---     * Slot: source_organism Description: The organism that the source molecule comes from
+--     * Slot: source_species Description: The species that the source molecule comes from
 --     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "MajorHistocompatibilityComplex" Description: ""
@@ -487,16 +492,21 @@
 --     * Slot: mhc_label Description: Human-readable label of the major histocompatibility complex
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AntibodyAntigenComplex" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: antibody Description: B cell receptor, immunoglobulin antibody
 --     * Slot: antigen Description: A material entity with antigen role
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCRpMHCComplex" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: ab_tcr Description: alpha/beta T cell receptor
 --     * Slot: gd_tcr Description: gamma/delta T cell receptor
 --     * Slot: antigen Description: A material entity with antigen role
 --     * Slot: mhc Description: Major histocompatibility complex
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antibody_complex Description: Antibody antigen complex
 --     * Slot: antigen Description: A material entity with antigen role
 --     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
 --     * Slot: mhc Description: Major histocompatibility complex
@@ -1182,18 +1192,30 @@
 -- # Class: "AIRRSequencingAssay_tcr_complexes" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcr_complexes_akc_id Description: The T cell receptor/epitope/mhc complex being measured
+-- # Class: "AIRRSequencingAssay_antibody_complexes" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: antibody_complexes_akc_id Description: The antibody-antigen complex being measured
+-- # Class: "AIRRSequencingAssay_receptor_composites" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: receptor_composites_akc_id Description: Composite object for database optimization
 -- # Class: "AIRRSequencingAssay_specimen_processing" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
 -- # Class: "TCellReceptorEpitopeBindingAssay_tcr_complexes" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcr_complexes_akc_id Description: The T cell receptor/epitope/mhc complex being measured
+-- # Class: "TCellReceptorEpitopeBindingAssay_receptor_composites" Description: ""
+--     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: receptor_composites_akc_id Description: Composite object for database optimization
 -- # Class: "TCellReceptorEpitopeBindingAssay_specimen_processing" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
 -- # Class: "AntibodyAntigenBindingAssay_antibody_complexes" Description: ""
 --     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: antibody_complexes_akc_id Description: The antibody-antigen complex being measured
+-- # Class: "AntibodyAntigenBindingAssay_receptor_composites" Description: ""
+--     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: receptor_composites_akc_id Description: Composite object for database optimization
 -- # Class: "AntibodyAntigenBindingAssay_specimen_processing" Description: ""
 --     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
@@ -1691,10 +1713,12 @@ CREATE TABLE "LambdaChain" (
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "ImmuneReceptor" (
+	species VARCHAR, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "TCellReceptor" (
+	species VARCHAR, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
@@ -2326,6 +2350,7 @@ CREATE TABLE "InputOutputDataMap" (
 CREATE TABLE "AlphaBetaTCR" (
 	tra_chain TEXT, 
 	trb_chain TEXT, 
+	species VARCHAR, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
@@ -2334,6 +2359,7 @@ CREATE TABLE "AlphaBetaTCR" (
 CREATE TABLE "GammaDeltaTCR" (
 	trg_chain TEXT, 
 	trd_chain TEXT, 
+	species VARCHAR, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
@@ -2343,6 +2369,7 @@ CREATE TABLE "BCellReceptor" (
 	igh_chain TEXT, 
 	igk_chain TEXT, 
 	igl_chain TEXT, 
+	species VARCHAR, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
@@ -2351,11 +2378,11 @@ CREATE TABLE "BCellReceptor" (
 );
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
-	source_organism TEXT, 
+	source_species TEXT, 
 	epitope TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(source_organism) REFERENCES "TaxonomicSpecies" (term_id), 
+	FOREIGN KEY(source_species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
 );
 CREATE TABLE "MajorHistocompatibilityComplex" (
@@ -2771,6 +2798,7 @@ CREATE TABLE "StudyArm" (
 	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "AntibodyAntigenComplex" (
+	species VARCHAR, 
 	antibody TEXT, 
 	antigen TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -2779,6 +2807,7 @@ CREATE TABLE "AntibodyAntigenComplex" (
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
 );
 CREATE TABLE "TCRpMHCComplex" (
+	species VARCHAR, 
 	ab_tcr TEXT, 
 	gd_tcr TEXT, 
 	antigen TEXT, 
@@ -2789,30 +2818,6 @@ CREATE TABLE "TCRpMHCComplex" (
 	FOREIGN KEY(gd_tcr) REFERENCES "GammaDeltaTCR" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
 	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);
-CREATE TABLE "ReceptorComposite" (
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id), 
-	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
-	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id), 
-	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
-	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id), 
-	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
-	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
-	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
 );
 CREATE TABLE "Subject" (
 	id INTEGER NOT NULL, 
@@ -2928,6 +2933,35 @@ CREATE TABLE "Participant" (
 	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
 	FOREIGN KEY(species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
+);
+CREATE TABLE "ReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id), 
+	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
+	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id), 
+	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
+	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id), 
+	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
+	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
+	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
 );
 CREATE TABLE "Repertoire" (
 	repertoire_id TEXT NOT NULL, 
@@ -3201,6 +3235,20 @@ CREATE TABLE "AIRRSequencingAssay_tcr_complexes" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
 );
+CREATE TABLE "AIRRSequencingAssay_antibody_complexes" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	antibody_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", antibody_complexes_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
+);
+CREATE TABLE "AIRRSequencingAssay_receptor_composites" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
+);
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -3215,6 +3263,13 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
 );
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_receptor_composites" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
+);
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -3228,6 +3283,13 @@ CREATE TABLE "AntibodyAntigenBindingAssay_antibody_complexes" (
 	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", antibody_complexes_akc_id), 
 	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
 	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
+);
+CREATE TABLE "AntibodyAntigenBindingAssay_receptor_composites" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
 );
 CREATE TABLE "AntibodyAntigenBindingAssay_specimen_processing" (
 	"AntibodyAntigenBindingAssay_akc_id" TEXT, 

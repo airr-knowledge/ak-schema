@@ -646,6 +646,16 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "antibody_complexes": {
+                    "description": "The antibody-antigen complex being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "assay_type": {
                     "$ref": "#/$defs/AssayTypeOntology",
                     "description": "The specific type of an assay"
@@ -668,6 +678,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -778,6 +798,16 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "antibody_complexes": {
+                    "description": "The antibody-antigen complex being measured",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "assay_type": {
                     "$ref": "#/$defs/AssayTypeOntology",
                     "description": "The specific type of an assay"
@@ -800,6 +830,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },
@@ -1731,6 +1771,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "tra_chain": {
                     "description": "T cell receptor alpha chain",
                     "type": [
@@ -1759,6 +1803,10 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 },
                 "tra_chain": {
                     "description": "T cell receptor alpha chain",
@@ -2072,6 +2120,16 @@
                         "null"
                     ]
                 },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
                     "type": [
@@ -2148,6 +2206,16 @@
                         "null"
                     ]
                 },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
                     "type": [
@@ -2201,8 +2269,8 @@
                         "null"
                     ]
                 },
-                "source_organism": {
-                    "description": "The organism that the source molecule comes from",
+                "source_species": {
+                    "description": "The species that the source molecule comes from",
                     "type": [
                         "string",
                         "null"
@@ -2252,8 +2320,8 @@
                         "null"
                     ]
                 },
-                "source_organism": {
-                    "description": "The organism that the source molecule comes from",
+                "source_species": {
+                    "description": "The species that the source molecule comes from",
                     "type": [
                         "string",
                         "null"
@@ -2547,6 +2615,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 }
             },
             "required": [
@@ -2583,6 +2655,10 @@
                         "string",
                         "null"
                     ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 }
             },
             "required": [],
@@ -4690,6 +4766,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "trd_chain": {
                     "description": "T cell receptor delta chain",
                     "type": [
@@ -4718,6 +4798,10 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
                 },
                 "trd_chain": {
                     "description": "T cell receptor delta chain",
@@ -7278,6 +7362,10 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
                 "tra_chain": {
                     "anyOf": [
                         {
@@ -8902,6 +8990,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "antigen": {
                     "description": "A material entity with antigen role",
                     "type": [
@@ -8939,6 +9034,17 @@
                 },
                 "mhc": {
                     "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
                     "type": [
                         "string",
                         "null"
@@ -8987,6 +9093,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "antigen": {
                     "description": "A material entity with antigen role",
                     "type": [
@@ -9024,6 +9137,17 @@
                 },
                 "mhc": {
                     "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
                     "type": [
                         "string",
                         "null"
@@ -11048,6 +11172,16 @@
                         "null"
                     ]
                 },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
+                        "null"
+                    ]
+                },
                 "specimen": {
                     "description": "The specimen that was input for an assay",
                     "type": [
@@ -11132,6 +11266,16 @@
                     "description": "A human-readable name for a thing",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "receptor_composites": {
+                    "description": "Composite object for database optimization",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": [
+                        "array",
                         "null"
                     ]
                 },

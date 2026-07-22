@@ -2670,9 +2670,26 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complexes",
       "owner": "AntibodyAntigenBindingAssay",
       "domain_of": [
+        "AIRRSequencingAssay",
         "AntibodyAntigenBindingAssay"
       ],
       "range": "AntibodyAntigenComplex",
+      "multivalued": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "receptor_composites",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composites",
+      "description": "Composite object for database optimization",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/receptor_composites",
+      "owner": "AntibodyAntigenBindingAssay",
+      "domain_of": [
+        "AIRRSequencingAssay",
+        "TCellReceptorEpitopeBindingAssay",
+        "AntibodyAntigenBindingAssay"
+      ],
+      "range": "ReceptorComposite",
       "multivalued": true,
       "@type": "SlotDefinition"
     },
@@ -3151,11 +3168,11 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "source_organism",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
-      "description": "The organism that the source molecule comes from",
+      "name": "source_species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/source_species",
+      "description": "The species that the source molecule comes from",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_organism",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/source_species",
       "owner": "Antigen",
       "domain_of": [
         "Antigen"
@@ -3311,6 +3328,32 @@
         "ReceptorReactivity"
       ],
       "range": "MhcClassEnum",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "tcr_complex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complex",
+      "description": "TCR complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complex",
+      "owner": "ReceptorComposite",
+      "domain_of": [
+        "ReceptorComposite"
+      ],
+      "range": "TCRpMHCComplex",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "antibody_complex",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complex",
+      "description": "Antibody antigen complex",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complex",
+      "owner": "ReceptorComposite",
+      "domain_of": [
+        "ReceptorComposite"
+      ],
+      "range": "AntibodyAntigenComplex",
       "@type": "SlotDefinition"
     },
     {
@@ -4428,6 +4471,10 @@
       "domain_of": [
         "Participant",
         "Chain",
+        "ImmuneReceptor",
+        "AntibodyAntigenComplex",
+        "TCRpMHCComplex",
+        "ReceptorComposite",
         "AlleleDescription",
         "GermlineSet",
         "Subject"
@@ -13486,6 +13533,8 @@
         "has_specified_output",
         "repertoire_id",
         "tcr_complexes",
+        "antibody_complexes",
+        "receptor_composites",
         "AIRRSequencingAssay_sequencing_files",
         "sequencing_run_id",
         "total_reads_passing_qc_filter",
@@ -13520,6 +13569,7 @@
         "has_specified_output",
         "tcr_complexes",
         "mhc_evidence",
+        "receptor_composites",
         "TCellReceptorEpitopeSpecificityMeasurement_measurement_category"
       ],
       "slot_usage": {},
@@ -13543,7 +13593,8 @@
         "type",
         "assay_type",
         "has_specified_output",
-        "antibody_complexes"
+        "antibody_complexes",
+        "receptor_composites"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0003127",
@@ -14077,7 +14128,8 @@
       "is_a": "AKObject",
       "abstract": true,
       "slots": [
-        "akc_id"
+        "akc_id",
+        "species"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
@@ -14093,7 +14145,8 @@
       "is_a": "ImmuneReceptor",
       "abstract": true,
       "slots": [
-        "akc_id"
+        "akc_id",
+        "species"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042101",
@@ -14109,6 +14162,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
+        "species",
         "tra_chain",
         "trb_chain"
       ],
@@ -14126,6 +14180,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
+        "species",
         "trg_chain",
         "trd_chain"
       ],
@@ -14140,6 +14195,7 @@
       "is_a": "ImmuneReceptor",
       "slots": [
         "akc_id",
+        "species",
         "igh_chain",
         "igk_chain",
         "igl_chain"
@@ -14218,7 +14274,7 @@
       "slots": [
         "akc_id",
         "source_molecule",
-        "source_organism",
+        "source_species",
         "epitope"
       ],
       "slot_usage": {},
@@ -14254,6 +14310,7 @@
       "abstract": true,
       "slots": [
         "akc_id",
+        "species",
         "antibody",
         "antigen"
       ],
@@ -14272,6 +14329,7 @@
       "abstract": true,
       "slots": [
         "akc_id",
+        "species",
         "ab_tcr",
         "gd_tcr",
         "antigen",
@@ -14293,6 +14351,9 @@
       ],
       "slots": [
         "akc_id",
+        "species",
+        "tcr_complex",
+        "antibody_complex",
         "antigen",
         "epitope",
         "mhc",
@@ -15493,6 +15554,7 @@
       "is_a": "TCellReceptor",
       "slots": [
         "akc_id",
+        "species",
         "queryAlphaBetaTCR__tra_chain",
         "queryAlphaBetaTCR__trb_chain"
       ],
@@ -15592,9 +15654,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-21T18:47:56",
-  "source_file_size": 218563,
-  "generation_date": "2026-07-21T18:47:58",
+  "source_file_date": "2026-07-22T21:38:40",
+  "source_file_size": 219332,
+  "generation_date": "2026-07-22T21:38:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

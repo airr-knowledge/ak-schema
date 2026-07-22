@@ -360,13 +360,15 @@ CREATE TABLE "LambdaChain" (
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "LambdaChain" IS 'None';COMMENT ON COLUMN "LambdaChain".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "LambdaChain".complete_vdj IS 'Complete VDJ flag.';COMMENT ON COLUMN "LambdaChain".sequence IS 'Nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence IS 'Inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence IS 'Hash of the inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".infer_vdj_sequence_aa IS 'Translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".hash_infer_vdj_sequence_aa IS 'Hash of the translation of inferred complete VDJ nucleotide sequence.';COMMENT ON COLUMN "LambdaChain".c_call IS 'Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).';COMMENT ON COLUMN "LambdaChain".junction_aa IS 'Amino acid translation of the junction.';COMMENT ON COLUMN "LambdaChain".cdr1_aa IS 'Amino acid translation of the cdr1 field.';COMMENT ON COLUMN "LambdaChain".cdr2_aa IS 'Amino acid translation of the cdr2 field.';COMMENT ON COLUMN "LambdaChain".cdr3_aa IS 'Amino acid translation of the cdr3 field.';COMMENT ON COLUMN "LambdaChain".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "ImmuneReceptor" (
+	species "SpeciesOntology", 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "ImmuneReceptor" IS 'None';COMMENT ON COLUMN "ImmuneReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "ImmuneReceptor" IS 'None';COMMENT ON COLUMN "ImmuneReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "ImmuneReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "TCellReceptor" (
+	species "SpeciesOntology", 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "TCellReceptor" IS 'None';COMMENT ON COLUMN "TCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "TCellReceptor" IS 'None';COMMENT ON COLUMN "TCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "TCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Epitope" (
 	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -995,38 +997,41 @@ CREATE TABLE "InputOutputDataMap" (
 CREATE TABLE "AlphaBetaTCR" (
 	tra_chain TEXT, 
 	trb_chain TEXT, 
+	species "SpeciesOntology", 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
 	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id)
-);COMMENT ON TABLE "AlphaBetaTCR" IS 'None';COMMENT ON COLUMN "AlphaBetaTCR".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "AlphaBetaTCR".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "AlphaBetaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "AlphaBetaTCR" IS 'None';COMMENT ON COLUMN "AlphaBetaTCR".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "AlphaBetaTCR".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "AlphaBetaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaBetaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "GammaDeltaTCR" (
 	trg_chain TEXT, 
 	trd_chain TEXT, 
+	species "SpeciesOntology", 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
 	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id)
-);COMMENT ON TABLE "GammaDeltaTCR" IS 'None';COMMENT ON COLUMN "GammaDeltaTCR".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "GammaDeltaTCR".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "GammaDeltaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "GammaDeltaTCR" IS 'None';COMMENT ON COLUMN "GammaDeltaTCR".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "GammaDeltaTCR".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "GammaDeltaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaDeltaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "BCellReceptor" (
 	igh_chain TEXT, 
 	igk_chain TEXT, 
 	igl_chain TEXT, 
+	species "SpeciesOntology", 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
 	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
 	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
-);COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
-	source_organism TEXT, 
+	source_species TEXT, 
 	epitope TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(source_organism) REFERENCES "TaxonomicSpecies" (term_id), 
+	FOREIGN KEY(source_species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
-);COMMENT ON TABLE "Antigen" IS 'None';COMMENT ON COLUMN "Antigen".source_molecule IS 'The protein or other molecule that this antigen represents';COMMENT ON COLUMN "Antigen".source_organism IS 'The organism that the source molecule comes from';COMMENT ON COLUMN "Antigen".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "Antigen".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Antigen" IS 'None';COMMENT ON COLUMN "Antigen".source_molecule IS 'The protein or other molecule that this antigen represents';COMMENT ON COLUMN "Antigen".source_species IS 'The species that the source molecule comes from';COMMENT ON COLUMN "Antigen".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "Antigen".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "MajorHistocompatibilityComplex" (
 	mhc_ref TEXT, 
 	mhc_class "MhcClassEnum", 
@@ -1440,14 +1445,16 @@ CREATE TABLE "StudyArm" (
 	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );COMMENT ON TABLE "StudyArm" IS 'A population of participants of an investigation.';COMMENT ON COLUMN "StudyArm".investigation IS 'An investigation in which the study arm participates';COMMENT ON COLUMN "StudyArm".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "StudyArm".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "StudyArm".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "AntibodyAntigenComplex" (
+	species "SpeciesOntology", 
 	antibody TEXT, 
 	antigen TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(antibody) REFERENCES "BCellReceptor" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
-);COMMENT ON TABLE "AntibodyAntigenComplex" IS 'None';COMMENT ON COLUMN "AntibodyAntigenComplex".antibody IS 'B cell receptor, immunoglobulin antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AntibodyAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "AntibodyAntigenComplex" IS 'None';COMMENT ON COLUMN "AntibodyAntigenComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AntibodyAntigenComplex".antibody IS 'B cell receptor, immunoglobulin antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AntibodyAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "TCRpMHCComplex" (
+	species "SpeciesOntology", 
 	ab_tcr TEXT, 
 	gd_tcr TEXT, 
 	antigen TEXT, 
@@ -1458,31 +1465,7 @@ CREATE TABLE "TCRpMHCComplex" (
 	FOREIGN KEY(gd_tcr) REFERENCES "GammaDeltaTCR" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
 	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".ab_tcr IS 'alpha/beta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".gd_tcr IS 'gamma/delta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "TCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "ReceptorComposite" (
-	antigen TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id), 
-	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
-	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id), 
-	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
-	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id), 
-	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
-	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
-	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
-);COMMENT ON TABLE "ReceptorComposite" IS 'None';COMMENT ON COLUMN "ReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "ReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "ReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "ReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "ReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "ReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "ReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "ReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "ReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "ReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "ReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "TCRpMHCComplex".ab_tcr IS 'alpha/beta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".gd_tcr IS 'gamma/delta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "TCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Subject" (
 	id SERIAL NOT NULL, 
 	subject_id TEXT, 
@@ -1598,6 +1581,35 @@ CREATE TABLE "Participant" (
 	FOREIGN KEY(species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
 );COMMENT ON TABLE "Participant" IS 'A participant in an investigation.';COMMENT ON COLUMN "Participant".study_arm IS 'The study arm that a participant is a member of';COMMENT ON COLUMN "Participant".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Participant".sex IS 'Biological sex of subject';COMMENT ON COLUMN "Participant".age IS 'The age of a participant relative to age_event';COMMENT ON COLUMN "Participant".age_unit IS 'Unit of age range';COMMENT ON COLUMN "Participant".age_event IS 'Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.';COMMENT ON COLUMN "Participant".race IS 'Racial group of subject (as defined by NIH)';COMMENT ON COLUMN "Participant".ethnicity IS 'Ethnic group of subject (defined as cultural/language-based membership)';COMMENT ON COLUMN "Participant".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "Participant".strain IS 'The strain of the participant (non-human study participants)';COMMENT ON COLUMN "Participant".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Participant".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Participant".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "ReceptorComposite" (
+	species "SpeciesOntology", 
+	tcr_complex TEXT, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id), 
+	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
+	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id), 
+	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
+	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id), 
+	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
+	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
+	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
+);COMMENT ON TABLE "ReceptorComposite" IS 'None';COMMENT ON COLUMN "ReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "ReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "ReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "ReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "ReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "ReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "ReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "ReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "ReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "ReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "ReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "ReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "ReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "ReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Repertoire" (
 	repertoire_id TEXT NOT NULL, 
 	repertoire_name TEXT, 
@@ -1870,6 +1882,20 @@ CREATE TABLE "AIRRSequencingAssay_tcr_complexes" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
 );COMMENT ON TABLE "AIRRSequencingAssay_tcr_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_tcr_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_tcr_complexes".tcr_complexes_akc_id IS 'The T cell receptor/epitope/mhc complex being measured';
+CREATE TABLE "AIRRSequencingAssay_antibody_complexes" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	antibody_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", antibody_complexes_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_antibody_complexes" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_antibody_complexes"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_antibody_complexes".antibody_complexes_akc_id IS 'The antibody-antigen complex being measured';
+CREATE TABLE "AIRRSequencingAssay_receptor_composites" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
+);COMMENT ON TABLE "AIRRSequencingAssay_receptor_composites" IS 'None';COMMENT ON COLUMN "AIRRSequencingAssay_receptor_composites"."AIRRSequencingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AIRRSequencingAssay_receptor_composites".receptor_composites_akc_id IS 'Composite object for database optimization';
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -1884,6 +1910,13 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
 );COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcr_complexes"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_tcr_complexes".tcr_complexes_akc_id IS 'The T cell receptor/epitope/mhc complex being measured';
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_receptor_composites" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
+);COMMENT ON TABLE "TCellReceptorEpitopeBindingAssay_receptor_composites" IS 'None';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_receptor_composites"."TCellReceptorEpitopeBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "TCellReceptorEpitopeBindingAssay_receptor_composites".receptor_composites_akc_id IS 'Composite object for database optimization';
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -1898,6 +1931,13 @@ CREATE TABLE "AntibodyAntigenBindingAssay_antibody_complexes" (
 	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
 	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
 );COMMENT ON TABLE "AntibodyAntigenBindingAssay_antibody_complexes" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_antibody_complexes"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_antibody_complexes".antibody_complexes_akc_id IS 'The antibody-antigen complex being measured';
+CREATE TABLE "AntibodyAntigenBindingAssay_receptor_composites" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenBindingAssay_receptor_composites" IS 'None';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_receptor_composites"."AntibodyAntigenBindingAssay_akc_id" IS 'Autocreated FK slot';COMMENT ON COLUMN "AntibodyAntigenBindingAssay_receptor_composites".receptor_composites_akc_id IS 'Composite object for database optimization';
 CREATE TABLE "AntibodyAntigenBindingAssay_specimen_processing" (
 	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
