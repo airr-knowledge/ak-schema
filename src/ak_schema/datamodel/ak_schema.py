@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-22T21:38:46
+# Generation date: 2026-07-23T20:28:29
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -2237,8 +2237,12 @@ class Chain(AKObject):
     hash_infer_vdj_sequence_aa: Optional[Union[str, URIorCURIE]] = None
     locus: Optional[Union[str, "LocusEnum"]] = None
     v_call: Optional[str] = None
+    v_gene: Optional[str] = None
+    v_subgroup: Optional[str] = None
     d_call: Optional[str] = None
     j_call: Optional[str] = None
+    j_gene: Optional[str] = None
+    j_subgroup: Optional[str] = None
     c_call: Optional[str] = None
     junction_aa: Optional[str] = None
     cdr1_aa: Optional[str] = None
@@ -2273,11 +2277,23 @@ class Chain(AKObject):
         if self.v_call is not None and not isinstance(self.v_call, str):
             self.v_call = str(self.v_call)
 
+        if self.v_gene is not None and not isinstance(self.v_gene, str):
+            self.v_gene = str(self.v_gene)
+
+        if self.v_subgroup is not None and not isinstance(self.v_subgroup, str):
+            self.v_subgroup = str(self.v_subgroup)
+
         if self.d_call is not None and not isinstance(self.d_call, str):
             self.d_call = str(self.d_call)
 
         if self.j_call is not None and not isinstance(self.j_call, str):
             self.j_call = str(self.j_call)
+
+        if self.j_gene is not None and not isinstance(self.j_gene, str):
+            self.j_gene = str(self.j_gene)
+
+        if self.j_subgroup is not None and not isinstance(self.j_subgroup, str):
+            self.j_subgroup = str(self.j_subgroup)
 
         if self.c_call is not None and not isinstance(self.c_call, str):
             self.c_call = str(self.c_call)
@@ -6942,6 +6958,18 @@ slots.infer_vdj_sequence_aa = Slot(uri=AK_SCHEMA.infer_vdj_sequence_aa, name="in
 
 slots.hash_infer_vdj_sequence_aa = Slot(uri=AK_SCHEMA.hash_infer_vdj_sequence_aa, name="hash_infer_vdj_sequence_aa", curie=AK_SCHEMA.curie('hash_infer_vdj_sequence_aa'),
                    model_uri=AK_SCHEMA.hash_infer_vdj_sequence_aa, domain=None, range=Optional[Union[str, URIorCURIE]])
+
+slots.v_gene = Slot(uri=AK_SCHEMA.v_gene, name="v_gene", curie=AK_SCHEMA.curie('v_gene'),
+                   model_uri=AK_SCHEMA.v_gene, domain=None, range=Optional[str])
+
+slots.v_subgroup = Slot(uri=AK_SCHEMA.v_subgroup, name="v_subgroup", curie=AK_SCHEMA.curie('v_subgroup'),
+                   model_uri=AK_SCHEMA.v_subgroup, domain=None, range=Optional[str])
+
+slots.j_gene = Slot(uri=AK_SCHEMA.j_gene, name="j_gene", curie=AK_SCHEMA.curie('j_gene'),
+                   model_uri=AK_SCHEMA.j_gene, domain=None, range=Optional[str])
+
+slots.j_subgroup = Slot(uri=AK_SCHEMA.j_subgroup, name="j_subgroup", curie=AK_SCHEMA.curie('j_subgroup'),
+                   model_uri=AK_SCHEMA.j_subgroup, domain=None, range=Optional[str])
 
 slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curie('isotype'),
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])

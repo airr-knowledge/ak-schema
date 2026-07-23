@@ -1910,6 +1910,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -1941,6 +1955,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -2036,6 +2064,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -2067,6 +2109,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -2748,6 +2804,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -2779,6 +2849,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -2874,6 +2958,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -2905,6 +3003,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -4068,6 +4180,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -4099,6 +4225,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -4194,6 +4334,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -4225,6 +4379,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -4591,6 +4759,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -4622,6 +4804,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -4717,6 +4913,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -4748,6 +4958,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -5137,6 +5361,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -5168,6 +5406,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -5263,6 +5515,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -5294,6 +5560,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -5899,6 +6179,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -5930,6 +6224,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -6025,6 +6333,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -6056,6 +6378,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -6163,6 +6499,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -6194,6 +6544,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"
@@ -6289,6 +6653,20 @@
                         "null"
                     ]
                 },
+                "j_gene": {
+                    "description": "J gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "j_subgroup": {
+                    "description": "J gene subgroup/family designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "junction_aa": {
                     "description": "Amino acid translation of the junction.",
                     "pattern": "^C[ACDEFGHIKLMNPQRSTVWY]+$",
@@ -6320,6 +6698,20 @@
                     "description": "Binomial designation of subject's species"
                 },
                 "v_call": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_gene": {
+                    "description": "V gene designation for the chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "v_subgroup": {
+                    "description": "V gene subgroup/family designation for the chain",
                     "type": [
                         "string",
                         "null"

@@ -302,8 +302,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -321,8 +325,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -340,8 +348,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -359,8 +371,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -378,8 +394,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -397,8 +417,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -416,8 +440,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -435,8 +463,12 @@
 --     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
@@ -1555,8 +1587,12 @@ CREATE TABLE "Chain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
@@ -1576,8 +1612,12 @@ CREATE TABLE "AlphaChain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
@@ -1597,8 +1637,12 @@ CREATE TABLE "BetaChain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
@@ -1618,8 +1662,12 @@ CREATE TABLE "DeltaChain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
@@ -1639,8 +1687,12 @@ CREATE TABLE "GammaChain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
@@ -1660,8 +1712,12 @@ CREATE TABLE "HeavyChain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
@@ -1681,8 +1737,12 @@ CREATE TABLE "KappaChain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
@@ -1702,8 +1762,12 @@ CREATE TABLE "LambdaChain" (
 	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
