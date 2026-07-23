@@ -23,8 +23,12 @@ classes:
       - hash_infer_vdj_sequence_aa
       - locus
       - v_call
+      - v_gene
+      - v_subgroup
       - d_call
       - j_call
+      - j_gene
+      - j_subgroup
       - c_call
       - junction_aa
       - cdr1_aa
@@ -210,6 +214,26 @@ slots:
     name: hash_infer_vdj_sequence_aa
     description: Hash of the translation of inferred complete VDJ nucleotide sequence.
     range: uriorcurie
+
+  v_gene:
+    name: v_gene
+    description: V gene designation for the chain
+    range: string
+
+  v_subgroup:
+    name: v_subgroup
+    description: V gene subgroup/family designation for the chain
+    range: string
+
+  j_gene:
+    name: j_gene
+    description: J gene designation for the chain
+    range: string
+
+  j_subgroup:
+    name: j_subgroup
+    description: J gene subgroup/family designation for the chain
+    range: string
 
   isotype:
     name: isotype
