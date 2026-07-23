@@ -236,6 +236,10 @@
 
       LambdaChain : j_call
 
+      LambdaChain : j_gene
+
+      LambdaChain : j_subgroup
+
       LambdaChain : junction_aa
 
       LambdaChain : locus
@@ -261,6 +265,10 @@
 
 
       LambdaChain : v_call
+
+      LambdaChain : v_gene
+
+      LambdaChain : v_subgroup
 
 
 </div>
@@ -346,6 +354,18 @@
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
+<td><a href="../v_gene/">v_gene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>V gene designation for the chain</td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
+<td><a href="../v_subgroup/">v_subgroup</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>V gene subgroup/family designation for the chain</td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
 <td><a href="../d_call/">d_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
@@ -355,6 +375,18 @@
 <td><a href="../j_call/">j_call</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
+<td><a href="../j_gene/">j_gene</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>J gene designation for the chain</td>
+<td><a href="../Chain/">Chain</a></td>
+</tr>
+<tr>
+<td><a href="../j_subgroup/">j_subgroup</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>J gene subgroup/family designation for the chain</td>
 <td><a href="../Chain/">Chain</a></td>
 </tr>
 <tr>
@@ -599,6 +631,26 @@ attributes:
     - Rearrangement
     - Clone
     range: string
+  v_gene:
+    name: v_gene
+    description: V gene designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: v_gene
+    owner: LambdaChain
+    domain_of:
+    - Chain
+    range: string
+  v_subgroup:
+    name: v_subgroup
+    description: V gene subgroup/family designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: v_subgroup
+    owner: LambdaChain
+    domain_of:
+    - Chain
+    range: string
   d_call:
     name: d_call
     annotations:
@@ -628,6 +680,26 @@ attributes:
     - Chain
     - Rearrangement
     - Clone
+    range: string
+  j_gene:
+    name: j_gene
+    description: J gene designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: j_gene
+    owner: LambdaChain
+    domain_of:
+    - Chain
+    range: string
+  j_subgroup:
+    name: j_subgroup
+    description: J gene subgroup/family designation for the chain
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: j_subgroup
+    owner: LambdaChain
+    domain_of:
+    - Chain
     range: string
   c_call:
     name: c_call
