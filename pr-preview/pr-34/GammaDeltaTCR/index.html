@@ -230,21 +230,7 @@
 
       GammaDeltaTCR : trd_chain
 
-
-
-
-    GammaDeltaTCR --&gt; "0..1" DeltaChain : trd_chain
-    click DeltaChain href "../DeltaChain"
-
-
       GammaDeltaTCR : trg_chain
-
-
-
-
-    GammaDeltaTCR --&gt; "0..1" GammaChain : trg_chain
-    click GammaChain href "../GammaChain"
-
 
 
 </div>
@@ -274,13 +260,13 @@
 <tbody>
 <tr>
 <td><a href="../trg_chain/">trg_chain</a></td>
-<td>0..1 <br/> <a href="../GammaChain/">GammaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor gamma chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../trd_chain/">trd_chain</a></td>
-<td>0..1 <br/> <a href="../DeltaChain/">DeltaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor delta chain</td>
 <td>direct</td>
 </tr>
@@ -376,7 +362,7 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: GammaChain
+    range: uriorcurie
   trd_chain:
     name: trd_chain
     description: T cell receptor delta chain
@@ -386,7 +372,7 @@ attributes:
     owner: GammaDeltaTCR
     domain_of:
     - GammaDeltaTCR
-    range: DeltaChain
+    range: uriorcurie
   species:
     name: species
     annotations:

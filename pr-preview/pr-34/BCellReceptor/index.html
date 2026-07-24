@@ -221,30 +221,9 @@
 
       BCellReceptor : igh_chain
 
-
-
-
-    BCellReceptor --&gt; "0..1" HeavyChain : igh_chain
-    click HeavyChain href "../HeavyChain"
-
-
       BCellReceptor : igk_chain
 
-
-
-
-    BCellReceptor --&gt; "0..1" KappaChain : igk_chain
-    click KappaChain href "../KappaChain"
-
-
       BCellReceptor : igl_chain
-
-
-
-
-    BCellReceptor --&gt; "0..1" LambdaChain : igl_chain
-    click LambdaChain href "../LambdaChain"
-
 
       BCellReceptor : species
 
@@ -280,19 +259,19 @@
 <tbody>
 <tr>
 <td><a href="../igh_chain/">igh_chain</a></td>
-<td>0..1 <br/> <a href="../HeavyChain/">HeavyChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>IG heavy chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../igk_chain/">igk_chain</a></td>
-<td>0..1 <br/> <a href="../KappaChain/">KappaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>IG kappa light chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../igl_chain/">igl_chain</a></td>
-<td>0..1 <br/> <a href="../LambdaChain/">LambdaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>IG lambda light chain</td>
 <td>direct</td>
 </tr>
@@ -394,7 +373,7 @@ attributes:
     owner: BCellReceptor
     domain_of:
     - BCellReceptor
-    range: HeavyChain
+    range: uriorcurie
   igk_chain:
     name: igk_chain
     description: IG kappa light chain
@@ -404,7 +383,7 @@ attributes:
     owner: BCellReceptor
     domain_of:
     - BCellReceptor
-    range: KappaChain
+    range: uriorcurie
   igl_chain:
     name: igl_chain
     description: IG lambda light chain
@@ -414,7 +393,7 @@ attributes:
     owner: BCellReceptor
     domain_of:
     - BCellReceptor
-    range: LambdaChain
+    range: uriorcurie
   species:
     name: species
     annotations:

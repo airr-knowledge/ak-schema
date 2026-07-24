@@ -249,30 +249,9 @@
 
       ReceptorComposite : igh_chain
 
-
-
-
-    ReceptorComposite --&gt; "0..1" HeavyChain : igh_chain
-    click HeavyChain href "../HeavyChain"
-
-
       ReceptorComposite : igk_chain
 
-
-
-
-    ReceptorComposite --&gt; "0..1" KappaChain : igk_chain
-    click KappaChain href "../KappaChain"
-
-
       ReceptorComposite : igl_chain
-
-
-
-
-    ReceptorComposite --&gt; "0..1" LambdaChain : igl_chain
-    click LambdaChain href "../LambdaChain"
-
 
       ReceptorComposite : mhc
 
@@ -303,39 +282,11 @@
 
       ReceptorComposite : tra_chain
 
-
-
-
-    ReceptorComposite --&gt; "0..1" AlphaChain : tra_chain
-    click AlphaChain href "../AlphaChain"
-
-
       ReceptorComposite : trb_chain
-
-
-
-
-    ReceptorComposite --&gt; "0..1" BetaChain : trb_chain
-    click BetaChain href "../BetaChain"
-
 
       ReceptorComposite : trd_chain
 
-
-
-
-    ReceptorComposite --&gt; "0..1" DeltaChain : trd_chain
-    click DeltaChain href "../DeltaChain"
-
-
       ReceptorComposite : trg_chain
-
-
-
-
-    ReceptorComposite --&gt; "0..1" GammaChain : trg_chain
-    click GammaChain href "../GammaChain"
-
 
 
 </div>
@@ -395,43 +346,43 @@
 </tr>
 <tr>
 <td><a href="../tra_chain/">tra_chain</a></td>
-<td>0..1 <br/> <a href="../AlphaChain/">AlphaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor alpha chain</td>
 <td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
 </tr>
 <tr>
 <td><a href="../trb_chain/">trb_chain</a></td>
-<td>0..1 <br/> <a href="../BetaChain/">BetaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor beta chain</td>
 <td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
 </tr>
 <tr>
 <td><a href="../trg_chain/">trg_chain</a></td>
-<td>0..1 <br/> <a href="../GammaChain/">GammaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor gamma chain</td>
 <td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
 </tr>
 <tr>
 <td><a href="../trd_chain/">trd_chain</a></td>
-<td>0..1 <br/> <a href="../DeltaChain/">DeltaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor delta chain</td>
 <td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
 </tr>
 <tr>
 <td><a href="../igh_chain/">igh_chain</a></td>
-<td>0..1 <br/> <a href="../HeavyChain/">HeavyChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>IG heavy chain</td>
 <td><a href="../BCellReceptor/">BCellReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../igk_chain/">igk_chain</a></td>
-<td>0..1 <br/> <a href="../KappaChain/">KappaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>IG kappa light chain</td>
 <td><a href="../BCellReceptor/">BCellReceptor</a></td>
 </tr>
 <tr>
 <td><a href="../igl_chain/">igl_chain</a></td>
-<td>0..1 <br/> <a href="../LambdaChain/">LambdaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>IG lambda light chain</td>
 <td><a href="../BCellReceptor/">BCellReceptor</a></td>
 </tr>
@@ -627,7 +578,7 @@ attributes:
     domain_of:
     - AlphaBetaTCR
     - QueryAlphaBetaTCR
-    range: AlphaChain
+    range: uriorcurie
   trb_chain:
     name: trb_chain
     description: T cell receptor beta chain
@@ -638,7 +589,7 @@ attributes:
     domain_of:
     - AlphaBetaTCR
     - QueryAlphaBetaTCR
-    range: BetaChain
+    range: uriorcurie
   trg_chain:
     name: trg_chain
     description: T cell receptor gamma chain
@@ -648,7 +599,7 @@ attributes:
     owner: ReceptorComposite
     domain_of:
     - GammaDeltaTCR
-    range: GammaChain
+    range: uriorcurie
   trd_chain:
     name: trd_chain
     description: T cell receptor delta chain
@@ -658,7 +609,7 @@ attributes:
     owner: ReceptorComposite
     domain_of:
     - GammaDeltaTCR
-    range: DeltaChain
+    range: uriorcurie
   igh_chain:
     name: igh_chain
     description: IG heavy chain
@@ -668,7 +619,7 @@ attributes:
     owner: ReceptorComposite
     domain_of:
     - BCellReceptor
-    range: HeavyChain
+    range: uriorcurie
   igk_chain:
     name: igk_chain
     description: IG kappa light chain
@@ -678,7 +629,7 @@ attributes:
     owner: ReceptorComposite
     domain_of:
     - BCellReceptor
-    range: KappaChain
+    range: uriorcurie
   igl_chain:
     name: igl_chain
     description: IG lambda light chain
@@ -688,7 +639,7 @@ attributes:
     owner: ReceptorComposite
     domain_of:
     - BCellReceptor
-    range: LambdaChain
+    range: uriorcurie
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

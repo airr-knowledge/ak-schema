@@ -230,21 +230,7 @@
 
       AlphaBetaTCR : tra_chain
 
-
-
-
-    AlphaBetaTCR --&gt; "0..1" AlphaChain : tra_chain
-    click AlphaChain href "../AlphaChain"
-
-
       AlphaBetaTCR : trb_chain
-
-
-
-
-    AlphaBetaTCR --&gt; "0..1" BetaChain : trb_chain
-    click BetaChain href "../BetaChain"
-
 
 
 </div>
@@ -274,13 +260,13 @@
 <tbody>
 <tr>
 <td><a href="../tra_chain/">tra_chain</a></td>
-<td>0..1 <br/> <a href="../AlphaChain/">AlphaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor alpha chain</td>
 <td>direct</td>
 </tr>
 <tr>
 <td><a href="../trb_chain/">trb_chain</a></td>
-<td>0..1 <br/> <a href="../BetaChain/">BetaChain</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>T cell receptor beta chain</td>
 <td>direct</td>
 </tr>
@@ -377,7 +363,7 @@ attributes:
     domain_of:
     - AlphaBetaTCR
     - QueryAlphaBetaTCR
-    range: AlphaChain
+    range: uriorcurie
   trb_chain:
     name: trb_chain
     description: T cell receptor beta chain
@@ -388,7 +374,7 @@ attributes:
     domain_of:
     - AlphaBetaTCR
     - QueryAlphaBetaTCR
-    range: BetaChain
+    range: uriorcurie
   species:
     name: species
     annotations:
