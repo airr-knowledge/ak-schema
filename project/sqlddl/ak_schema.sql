@@ -1786,6 +1786,28 @@ CREATE TABLE "TCellReceptor" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
+CREATE TABLE "AlphaBetaTCR" (
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	species VARCHAR, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "GammaDeltaTCR" (
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	species VARCHAR, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "BCellReceptor" (
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	species VARCHAR, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
 CREATE TABLE "Epitope" (
 	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -2411,35 +2433,6 @@ CREATE TABLE "InputOutputDataMap" (
 	FOREIGN KEY(has_specified_input) REFERENCES "AKDataItem" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
-CREATE TABLE "AlphaBetaTCR" (
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	species VARCHAR, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
-	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id)
-);
-CREATE TABLE "GammaDeltaTCR" (
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	species VARCHAR, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
-	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id)
-);
-CREATE TABLE "BCellReceptor" (
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	species VARCHAR, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
-	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
-	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
-);
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
 	source_species TEXT, 
@@ -3018,14 +3011,7 @@ CREATE TABLE "ReceptorComposite" (
 	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id), 
-	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
-	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id), 
-	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
-	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id), 
-	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
-	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
-	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
 );
 CREATE TABLE "Repertoire" (
 	repertoire_id TEXT NOT NULL, 

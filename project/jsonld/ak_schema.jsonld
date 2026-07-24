@@ -3099,7 +3099,7 @@
       "domain_of": [
         "BCellReceptor"
       ],
-      "range": "HeavyChain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3112,7 +3112,7 @@
       "domain_of": [
         "BCellReceptor"
       ],
-      "range": "LambdaChain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3125,7 +3125,7 @@
       "domain_of": [
         "BCellReceptor"
       ],
-      "range": "KappaChain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3138,7 +3138,7 @@
       "domain_of": [
         "AlphaBetaTCR"
       ],
-      "range": "AlphaChain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3151,7 +3151,7 @@
       "domain_of": [
         "AlphaBetaTCR"
       ],
-      "range": "BetaChain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3164,7 +3164,7 @@
       "domain_of": [
         "GammaDeltaTCR"
       ],
-      "range": "DeltaChain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -3177,7 +3177,7 @@
       "domain_of": [
         "GammaDeltaTCR"
       ],
-      "range": "GammaChain",
+      "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
     {
@@ -15738,9 +15738,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-23T20:28:23",
+  "source_file_date": "2026-07-24T21:41:09",
   "source_file_size": 220064,
-  "generation_date": "2026-07-23T20:28:25",
+  "generation_date": "2026-07-24T21:41:11",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

@@ -401,6 +401,28 @@ CREATE TABLE "TCellReceptor" (
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "TCellReceptor" IS 'None';COMMENT ON COLUMN "TCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "TCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "AlphaBetaTCR" (
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "AlphaBetaTCR" IS 'None';COMMENT ON COLUMN "AlphaBetaTCR".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "AlphaBetaTCR".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "AlphaBetaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaBetaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "GammaDeltaTCR" (
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "GammaDeltaTCR" IS 'None';COMMENT ON COLUMN "GammaDeltaTCR".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "GammaDeltaTCR".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "GammaDeltaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaDeltaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
+CREATE TABLE "BCellReceptor" (
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	species "SpeciesOntology", 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Epitope" (
 	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
@@ -1026,35 +1048,6 @@ CREATE TABLE "InputOutputDataMap" (
 	FOREIGN KEY(has_specified_input) REFERENCES "AKDataItem" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );COMMENT ON TABLE "InputOutputDataMap" IS 'None';COMMENT ON COLUMN "InputOutputDataMap".data_transformation IS 'a process that transforms input data into output data';COMMENT ON COLUMN "InputOutputDataMap".has_specified_input IS 'input data item';COMMENT ON COLUMN "InputOutputDataMap".has_specified_output IS 'output data item';
-CREATE TABLE "AlphaBetaTCR" (
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	species "SpeciesOntology", 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
-	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id)
-);COMMENT ON TABLE "AlphaBetaTCR" IS 'None';COMMENT ON COLUMN "AlphaBetaTCR".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "AlphaBetaTCR".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "AlphaBetaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AlphaBetaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "GammaDeltaTCR" (
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	species "SpeciesOntology", 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
-	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id)
-);COMMENT ON TABLE "GammaDeltaTCR" IS 'None';COMMENT ON COLUMN "GammaDeltaTCR".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "GammaDeltaTCR".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "GammaDeltaTCR".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "GammaDeltaTCR".akc_id IS 'A unique identifier for a thing in the AKC.';
-CREATE TABLE "BCellReceptor" (
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	species "SpeciesOntology", 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
-	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
-	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
-);COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
 	source_species TEXT, 
@@ -1633,14 +1626,7 @@ CREATE TABLE "ReceptorComposite" (
 	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id), 
-	FOREIGN KEY(tra_chain) REFERENCES "AlphaChain" (akc_id), 
-	FOREIGN KEY(trb_chain) REFERENCES "BetaChain" (akc_id), 
-	FOREIGN KEY(trg_chain) REFERENCES "GammaChain" (akc_id), 
-	FOREIGN KEY(trd_chain) REFERENCES "DeltaChain" (akc_id), 
-	FOREIGN KEY(igh_chain) REFERENCES "HeavyChain" (akc_id), 
-	FOREIGN KEY(igk_chain) REFERENCES "KappaChain" (akc_id), 
-	FOREIGN KEY(igl_chain) REFERENCES "LambdaChain" (akc_id)
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
 );COMMENT ON TABLE "ReceptorComposite" IS 'None';COMMENT ON COLUMN "ReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "ReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "ReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "ReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "ReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "ReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "ReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "ReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "ReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "ReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "ReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "ReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "ReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "ReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Repertoire" (
 	repertoire_id TEXT NOT NULL, 

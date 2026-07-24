@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-23T20:28:29
+# Generation date: 2026-07-24T21:41:15
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -2486,8 +2486,8 @@ class AlphaBetaTCR(TCellReceptor):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AlphaBetaTCR
 
     akc_id: Union[str, AlphaBetaTCRAkcId] = None
-    tra_chain: Optional[Union[str, AlphaChainAkcId]] = None
-    trb_chain: Optional[Union[str, BetaChainAkcId]] = None
+    tra_chain: Optional[Union[str, URIorCURIE]] = None
+    trb_chain: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2495,11 +2495,11 @@ class AlphaBetaTCR(TCellReceptor):
         if not isinstance(self.akc_id, AlphaBetaTCRAkcId):
             self.akc_id = AlphaBetaTCRAkcId(self.akc_id)
 
-        if self.tra_chain is not None and not isinstance(self.tra_chain, AlphaChainAkcId):
-            self.tra_chain = AlphaChainAkcId(self.tra_chain)
+        if self.tra_chain is not None and not isinstance(self.tra_chain, URIorCURIE):
+            self.tra_chain = URIorCURIE(self.tra_chain)
 
-        if self.trb_chain is not None and not isinstance(self.trb_chain, BetaChainAkcId):
-            self.trb_chain = BetaChainAkcId(self.trb_chain)
+        if self.trb_chain is not None and not isinstance(self.trb_chain, URIorCURIE):
+            self.trb_chain = URIorCURIE(self.trb_chain)
 
         super().__post_init__(**kwargs)
 
@@ -2514,8 +2514,8 @@ class GammaDeltaTCR(TCellReceptor):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GammaDeltaTCR
 
     akc_id: Union[str, GammaDeltaTCRAkcId] = None
-    trg_chain: Optional[Union[str, GammaChainAkcId]] = None
-    trd_chain: Optional[Union[str, DeltaChainAkcId]] = None
+    trg_chain: Optional[Union[str, URIorCURIE]] = None
+    trd_chain: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2523,11 +2523,11 @@ class GammaDeltaTCR(TCellReceptor):
         if not isinstance(self.akc_id, GammaDeltaTCRAkcId):
             self.akc_id = GammaDeltaTCRAkcId(self.akc_id)
 
-        if self.trg_chain is not None and not isinstance(self.trg_chain, GammaChainAkcId):
-            self.trg_chain = GammaChainAkcId(self.trg_chain)
+        if self.trg_chain is not None and not isinstance(self.trg_chain, URIorCURIE):
+            self.trg_chain = URIorCURIE(self.trg_chain)
 
-        if self.trd_chain is not None and not isinstance(self.trd_chain, DeltaChainAkcId):
-            self.trd_chain = DeltaChainAkcId(self.trd_chain)
+        if self.trd_chain is not None and not isinstance(self.trd_chain, URIorCURIE):
+            self.trd_chain = URIorCURIE(self.trd_chain)
 
         super().__post_init__(**kwargs)
 
@@ -2542,9 +2542,9 @@ class BCellReceptor(ImmuneReceptor):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.BCellReceptor
 
     akc_id: Union[str, BCellReceptorAkcId] = None
-    igh_chain: Optional[Union[str, HeavyChainAkcId]] = None
-    igk_chain: Optional[Union[str, KappaChainAkcId]] = None
-    igl_chain: Optional[Union[str, LambdaChainAkcId]] = None
+    igh_chain: Optional[Union[str, URIorCURIE]] = None
+    igk_chain: Optional[Union[str, URIorCURIE]] = None
+    igl_chain: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2552,14 +2552,14 @@ class BCellReceptor(ImmuneReceptor):
         if not isinstance(self.akc_id, BCellReceptorAkcId):
             self.akc_id = BCellReceptorAkcId(self.akc_id)
 
-        if self.igh_chain is not None and not isinstance(self.igh_chain, HeavyChainAkcId):
-            self.igh_chain = HeavyChainAkcId(self.igh_chain)
+        if self.igh_chain is not None and not isinstance(self.igh_chain, URIorCURIE):
+            self.igh_chain = URIorCURIE(self.igh_chain)
 
-        if self.igk_chain is not None and not isinstance(self.igk_chain, KappaChainAkcId):
-            self.igk_chain = KappaChainAkcId(self.igk_chain)
+        if self.igk_chain is not None and not isinstance(self.igk_chain, URIorCURIE):
+            self.igk_chain = URIorCURIE(self.igk_chain)
 
-        if self.igl_chain is not None and not isinstance(self.igl_chain, LambdaChainAkcId):
-            self.igl_chain = LambdaChainAkcId(self.igl_chain)
+        if self.igl_chain is not None and not isinstance(self.igl_chain, URIorCURIE):
+            self.igl_chain = URIorCURIE(self.igl_chain)
 
         super().__post_init__(**kwargs)
 
@@ -2800,13 +2800,13 @@ class ReceptorComposite(AKObject):
     antigen: Optional[Union[str, AntigenAkcId]] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     mhc: Optional[Union[str, MajorHistocompatibilityComplexAkcId]] = None
-    tra_chain: Optional[Union[str, AlphaChainAkcId]] = None
-    trb_chain: Optional[Union[str, BetaChainAkcId]] = None
-    trg_chain: Optional[Union[str, GammaChainAkcId]] = None
-    trd_chain: Optional[Union[str, DeltaChainAkcId]] = None
-    igh_chain: Optional[Union[str, HeavyChainAkcId]] = None
-    igk_chain: Optional[Union[str, KappaChainAkcId]] = None
-    igl_chain: Optional[Union[str, LambdaChainAkcId]] = None
+    tra_chain: Optional[Union[str, URIorCURIE]] = None
+    trb_chain: Optional[Union[str, URIorCURIE]] = None
+    trg_chain: Optional[Union[str, URIorCURIE]] = None
+    trd_chain: Optional[Union[str, URIorCURIE]] = None
+    igh_chain: Optional[Union[str, URIorCURIE]] = None
+    igk_chain: Optional[Union[str, URIorCURIE]] = None
+    igl_chain: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2829,26 +2829,26 @@ class ReceptorComposite(AKObject):
         if self.mhc is not None and not isinstance(self.mhc, MajorHistocompatibilityComplexAkcId):
             self.mhc = MajorHistocompatibilityComplexAkcId(self.mhc)
 
-        if self.tra_chain is not None and not isinstance(self.tra_chain, AlphaChainAkcId):
-            self.tra_chain = AlphaChainAkcId(self.tra_chain)
+        if self.tra_chain is not None and not isinstance(self.tra_chain, URIorCURIE):
+            self.tra_chain = URIorCURIE(self.tra_chain)
 
-        if self.trb_chain is not None and not isinstance(self.trb_chain, BetaChainAkcId):
-            self.trb_chain = BetaChainAkcId(self.trb_chain)
+        if self.trb_chain is not None and not isinstance(self.trb_chain, URIorCURIE):
+            self.trb_chain = URIorCURIE(self.trb_chain)
 
-        if self.trg_chain is not None and not isinstance(self.trg_chain, GammaChainAkcId):
-            self.trg_chain = GammaChainAkcId(self.trg_chain)
+        if self.trg_chain is not None and not isinstance(self.trg_chain, URIorCURIE):
+            self.trg_chain = URIorCURIE(self.trg_chain)
 
-        if self.trd_chain is not None and not isinstance(self.trd_chain, DeltaChainAkcId):
-            self.trd_chain = DeltaChainAkcId(self.trd_chain)
+        if self.trd_chain is not None and not isinstance(self.trd_chain, URIorCURIE):
+            self.trd_chain = URIorCURIE(self.trd_chain)
 
-        if self.igh_chain is not None and not isinstance(self.igh_chain, HeavyChainAkcId):
-            self.igh_chain = HeavyChainAkcId(self.igh_chain)
+        if self.igh_chain is not None and not isinstance(self.igh_chain, URIorCURIE):
+            self.igh_chain = URIorCURIE(self.igh_chain)
 
-        if self.igk_chain is not None and not isinstance(self.igk_chain, KappaChainAkcId):
-            self.igk_chain = KappaChainAkcId(self.igk_chain)
+        if self.igk_chain is not None and not isinstance(self.igk_chain, URIorCURIE):
+            self.igk_chain = URIorCURIE(self.igk_chain)
 
-        if self.igl_chain is not None and not isinstance(self.igl_chain, LambdaChainAkcId):
-            self.igl_chain = LambdaChainAkcId(self.igl_chain)
+        if self.igl_chain is not None and not isinstance(self.igl_chain, URIorCURIE):
+            self.igl_chain = URIorCURIE(self.igl_chain)
 
         super().__post_init__(**kwargs)
 
@@ -6975,25 +6975,25 @@ slots.isotype = Slot(uri=AK_SCHEMA.isotype, name="isotype", curie=AK_SCHEMA.curi
                    model_uri=AK_SCHEMA.isotype, domain=None, range=Optional[str])
 
 slots.igh_chain = Slot(uri=AK_SCHEMA.igh_chain, name="igh_chain", curie=AK_SCHEMA.curie('igh_chain'),
-                   model_uri=AK_SCHEMA.igh_chain, domain=None, range=Optional[Union[str, HeavyChainAkcId]])
+                   model_uri=AK_SCHEMA.igh_chain, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.igl_chain = Slot(uri=AK_SCHEMA.igl_chain, name="igl_chain", curie=AK_SCHEMA.curie('igl_chain'),
-                   model_uri=AK_SCHEMA.igl_chain, domain=None, range=Optional[Union[str, LambdaChainAkcId]])
+                   model_uri=AK_SCHEMA.igl_chain, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.igk_chain = Slot(uri=AK_SCHEMA.igk_chain, name="igk_chain", curie=AK_SCHEMA.curie('igk_chain'),
-                   model_uri=AK_SCHEMA.igk_chain, domain=None, range=Optional[Union[str, KappaChainAkcId]])
+                   model_uri=AK_SCHEMA.igk_chain, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.tra_chain = Slot(uri=AK_SCHEMA.tra_chain, name="tra_chain", curie=AK_SCHEMA.curie('tra_chain'),
-                   model_uri=AK_SCHEMA.tra_chain, domain=None, range=Optional[Union[str, AlphaChainAkcId]])
+                   model_uri=AK_SCHEMA.tra_chain, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.trb_chain = Slot(uri=AK_SCHEMA.trb_chain, name="trb_chain", curie=AK_SCHEMA.curie('trb_chain'),
-                   model_uri=AK_SCHEMA.trb_chain, domain=None, range=Optional[Union[str, BetaChainAkcId]])
+                   model_uri=AK_SCHEMA.trb_chain, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.trd_chain = Slot(uri=AK_SCHEMA.trd_chain, name="trd_chain", curie=AK_SCHEMA.curie('trd_chain'),
-                   model_uri=AK_SCHEMA.trd_chain, domain=None, range=Optional[Union[str, DeltaChainAkcId]])
+                   model_uri=AK_SCHEMA.trd_chain, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.trg_chain = Slot(uri=AK_SCHEMA.trg_chain, name="trg_chain", curie=AK_SCHEMA.curie('trg_chain'),
-                   model_uri=AK_SCHEMA.trg_chain, domain=None, range=Optional[Union[str, GammaChainAkcId]])
+                   model_uri=AK_SCHEMA.trg_chain, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.ab_tcr = Slot(uri=AK_SCHEMA.ab_tcr, name="ab_tcr", curie=AK_SCHEMA.curie('ab_tcr'),
                    model_uri=AK_SCHEMA.ab_tcr, domain=None, range=Optional[Union[str, AlphaBetaTCRAkcId]])

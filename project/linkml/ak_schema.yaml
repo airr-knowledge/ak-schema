@@ -1763,37 +1763,37 @@ slots:
     name: igh_chain
     description: IG heavy chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: HeavyChain
+    range: uriorcurie
   igl_chain:
     name: igl_chain
     description: IG lambda light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: LambdaChain
+    range: uriorcurie
   igk_chain:
     name: igk_chain
     description: IG kappa light chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: KappaChain
+    range: uriorcurie
   tra_chain:
     name: tra_chain
     description: T cell receptor alpha chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: AlphaChain
+    range: uriorcurie
   trb_chain:
     name: trb_chain
     description: T cell receptor beta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: BetaChain
+    range: uriorcurie
   trd_chain:
     name: trd_chain
     description: T cell receptor delta chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: DeltaChain
+    range: uriorcurie
   trg_chain:
     name: trg_chain
     description: T cell receptor gamma chain
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: GammaChain
+    range: uriorcurie
   ab_tcr:
     name: ab_tcr
     description: alpha/beta T cell receptor
