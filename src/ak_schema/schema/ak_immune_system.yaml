@@ -242,31 +242,31 @@ slots:
 
   igh_chain:
     description: IG heavy chain
-    range: HeavyChain
+    range: uriorcurie
 
   igl_chain:
     description: IG lambda light chain
-    range: LambdaChain
+    range: uriorcurie
 
   igk_chain:
     description: IG kappa light chain
-    range: KappaChain
+    range: uriorcurie
 
   tra_chain:
     description: T cell receptor alpha chain
-    range: AlphaChain
+    range: uriorcurie
 
   trb_chain:
     description: T cell receptor beta chain
-    range: BetaChain
+    range: uriorcurie
 
   trd_chain:
     description: T cell receptor delta chain
-    range: DeltaChain
+    range: uriorcurie
 
   trg_chain:
     description: T cell receptor gamma chain
-    range: GammaChain
+    range: uriorcurie
 
   ab_tcr:
     description: alpha/beta T cell receptor
