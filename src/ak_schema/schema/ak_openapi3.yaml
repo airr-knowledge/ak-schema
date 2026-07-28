@@ -78,6 +78,10 @@ classes:
         range: Investigation
         multivalued: false
         inlined: true
+      life_events:
+        range: LifeEvent
+        multivalued: true
+        inlined: true
 
 #  QueryInvestigation:
 #    slots:
