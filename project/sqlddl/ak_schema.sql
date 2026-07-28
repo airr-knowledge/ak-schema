@@ -477,46 +477,46 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ImmuneReceptor" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCellReceptor" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AlphaBetaTCR" Description: ""
 --     * Slot: tra_chain Description: T cell receptor alpha chain
 --     * Slot: trb_chain Description: T cell receptor beta chain
 --     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "GammaDeltaTCR" Description: ""
 --     * Slot: trg_chain Description: T cell receptor gamma chain
 --     * Slot: trd_chain Description: T cell receptor delta chain
 --     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "BCellReceptor" Description: ""
 --     * Slot: igh_chain Description: IG heavy chain
 --     * Slot: igk_chain Description: IG kappa light chain
 --     * Slot: igl_chain Description: IG lambda light chain
 --     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Epitope" Description: ""
---     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "PeptidicEpitope" Description: ""
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
 --     * Slot: modifications Description: Post-translational modifications to the epitope peptide sequence
---     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "DiscontinuousEpitope" Description: ""
 --     * Slot: positional_residues Description: Numbered amino acid residues of a conformational epitope
---     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "NonPeptidicEpitope" Description: ""
 --     * Slot: epitope_name Description: Name of the non-peptidic epitope
---     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Antigen" Description: ""
 --     * Slot: source_molecule Description: The protein or other molecule that this antigen represents
 --     * Slot: source_species Description: The species that the source molecule comes from
---     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "MajorHistocompatibilityComplex" Description: ""
 --     * Slot: mhc_ref Description: MHC Restriction Ontology term id
@@ -550,6 +550,7 @@
 --     * Slot: igk_chain Description: IG kappa light chain
 --     * Slot: igl_chain Description: IG lambda light chain
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 -- # Class: "Model" Description: ""
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -1293,6 +1294,9 @@
 -- # Class: "Conclusion_datasets" Description: ""
 --     * Slot: Conclusion_akc_id Description: Autocreated FK slot
 --     * Slot: datasets_akc_id Description: The datasets that support a conclusion
+-- # Class: "Antigen_epitopes" Description: ""
+--     * Slot: Antigen_akc_id Description: Autocreated FK slot
+--     * Slot: epitopes_akc_id Description: Set of epitopes for an antigen
 -- # Class: "SequenceDelineationV_alignment_labels" Description: ""
 --     * Slot: SequenceDelineationV_id Description: Autocreated FK slot
 --     * Slot: alignment_labels Description: One string for each codon in the aligned_sequence indicating the label of that codon according to  the numbering of the delineation scheme if it provides one.
@@ -1778,11 +1782,13 @@ CREATE TABLE "LambdaChain" (
 );
 CREATE TABLE "ImmuneReceptor" (
 	species VARCHAR, 
+	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "TCellReceptor" (
 	species VARCHAR, 
+	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
@@ -1790,6 +1796,7 @@ CREATE TABLE "AlphaBetaTCR" (
 	tra_chain TEXT, 
 	trb_chain TEXT, 
 	species VARCHAR, 
+	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
@@ -1797,6 +1804,7 @@ CREATE TABLE "GammaDeltaTCR" (
 	trg_chain TEXT, 
 	trd_chain TEXT, 
 	species VARCHAR, 
+	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
@@ -1805,30 +1813,27 @@ CREATE TABLE "BCellReceptor" (
 	igk_chain TEXT, 
 	igl_chain TEXT, 
 	species VARCHAR, 
+	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "Epitope" (
-	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "PeptidicEpitope" (
 	sequence_aa TEXT, 
 	modifications TEXT, 
-	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "DiscontinuousEpitope" (
 	positional_residues TEXT, 
-	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "NonPeptidicEpitope" (
 	epitope_name TEXT, 
-	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
@@ -2436,11 +2441,9 @@ CREATE TABLE "InputOutputDataMap" (
 CREATE TABLE "Antigen" (
 	source_molecule TEXT, 
 	source_species TEXT, 
-	epitope TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(source_species) REFERENCES "TaxonomicSpecies" (term_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+	FOREIGN KEY(source_species) REFERENCES "TaxonomicSpecies" (term_id)
 );
 CREATE TABLE "MajorHistocompatibilityComplex" (
 	mhc_ref TEXT, 
@@ -2958,6 +2961,13 @@ CREATE TABLE "Conclusion_investigations" (
 	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
 	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
+CREATE TABLE "Antigen_epitopes" (
+	"Antigen_akc_id" TEXT, 
+	epitopes_akc_id TEXT, 
+	PRIMARY KEY ("Antigen_akc_id", epitopes_akc_id), 
+	FOREIGN KEY("Antigen_akc_id") REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitopes_akc_id) REFERENCES "Epitope" (akc_id)
+);
 CREATE TABLE "RepertoireGroup_repertoires" (
 	"RepertoireGroup_id" INTEGER, 
 	repertoires_id INTEGER, 
@@ -3006,6 +3016,7 @@ CREATE TABLE "ReceptorComposite" (
 	igk_chain TEXT, 
 	igl_chain TEXT, 
 	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
 	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 

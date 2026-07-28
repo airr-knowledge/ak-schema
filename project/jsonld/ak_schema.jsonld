@@ -2921,27 +2921,16 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "aa_hash",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/aa_hash",
+      "name": "paired_chain",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/paired_chain",
+      "description": "Flag to indicate the receptor object has both chains defined",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/aa_hash",
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "junction_aa_vj_allele_hash",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_allele_hash",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_allele_hash",
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "junction_aa_vj_gene_hash",
-      "definition_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_gene_hash",
-      "from_schema": "https://github.com/airr-knowledge/ak-schema",
-      "slot_uri": "https://github.com/airr-knowledge/ak-schema/junction_aa_vj_gene_hash",
-      "range": "string",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/paired_chain",
+      "owner": "ImmuneReceptor",
+      "domain_of": [
+        "ImmuneReceptor"
+      ],
+      "range": "boolean",
       "@type": "SlotDefinition"
     },
     {
@@ -3269,10 +3258,23 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
       "owner": "ReceptorComposite",
       "domain_of": [
-        "Antigen",
         "ReceptorComposite"
       ],
       "range": "Epitope",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "epitopes",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/epitopes",
+      "description": "Set of epitopes for an antigen",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitopes",
+      "owner": "Antigen",
+      "domain_of": [
+        "Antigen"
+      ],
+      "range": "Epitope",
+      "multivalued": true,
       "@type": "SlotDefinition"
     },
     {
@@ -3281,10 +3283,6 @@
       "description": "CURIE identifiers for external epitope records",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope_ref",
-      "owner": "Epitope",
-      "domain_of": [
-        "Epitope"
-      ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
@@ -12262,6 +12260,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "queryExperiment__life_events",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/life_events",
+      "alias": "life_events",
+      "owner": "QueryExperiment",
+      "domain_of": [
+        "QueryExperiment"
+      ],
+      "range": "LifeEvent",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "BiomedicalInvestigations_parent",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/parent",
       "description": "parent term ID for ontology term",
@@ -14213,7 +14225,8 @@
       "abstract": true,
       "slots": [
         "akc_id",
-        "species"
+        "species",
+        "paired_chain"
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/ImmuneReceptor",
@@ -14230,7 +14243,8 @@
       "abstract": true,
       "slots": [
         "akc_id",
-        "species"
+        "species",
+        "paired_chain"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/GO_0042101",
@@ -14247,6 +14261,7 @@
       "slots": [
         "akc_id",
         "species",
+        "paired_chain",
         "tra_chain",
         "trb_chain"
       ],
@@ -14265,6 +14280,7 @@
       "slots": [
         "akc_id",
         "species",
+        "paired_chain",
         "trg_chain",
         "trd_chain"
       ],
@@ -14280,6 +14296,7 @@
       "slots": [
         "akc_id",
         "species",
+        "paired_chain",
         "igh_chain",
         "igk_chain",
         "igl_chain"
@@ -14297,8 +14314,7 @@
       ],
       "is_a": "AKObject",
       "slots": [
-        "akc_id",
-        "epitope_ref"
+        "akc_id"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_1110001",
@@ -14311,7 +14327,6 @@
       "is_a": "Epitope",
       "slots": [
         "akc_id",
-        "epitope_ref",
         "PeptidicEpitope_sequence_aa",
         "modifications"
       ],
@@ -14326,7 +14341,6 @@
       "is_a": "Epitope",
       "slots": [
         "akc_id",
-        "epitope_ref",
         "DiscontinuousEpitope_positional_residues"
       ],
       "slot_usage": {},
@@ -14340,7 +14354,6 @@
       "is_a": "Epitope",
       "slots": [
         "akc_id",
-        "epitope_ref",
         "epitope_name"
       ],
       "slot_usage": {},
@@ -14359,7 +14372,7 @@
         "akc_id",
         "source_molecule",
         "source_species",
-        "epitope"
+        "epitopes"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_1110034",
@@ -14441,6 +14454,7 @@
         "antigen",
         "epitope",
         "mhc",
+        "paired_chain",
         "tra_chain",
         "trb_chain",
         "trg_chain",
@@ -15639,6 +15653,7 @@
       "slots": [
         "akc_id",
         "species",
+        "paired_chain",
         "queryAlphaBetaTCR__tra_chain",
         "queryAlphaBetaTCR__trb_chain"
       ],
@@ -15700,6 +15715,7 @@
         "queryExperiment__specimen",
         "queryExperiment__participant",
         "queryExperiment__investigation",
+        "queryExperiment__life_events",
         "akc_id",
         "name",
         "description",
@@ -15730,6 +15746,14 @@
           "range": "Investigation",
           "inlined": true,
           "@type": "SlotDefinition"
+        },
+        {
+          "name": "life_events",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "LifeEvent",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
         }
       ],
       "class_uri": "https://github.com/airr-knowledge/ak-schema/QueryExperiment",
@@ -15738,9 +15762,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-24T21:41:09",
-  "source_file_size": 220064,
-  "generation_date": "2026-07-24T21:41:11",
+  "source_file_date": "2026-07-28T19:40:05",
+  "source_file_size": 220220,
+  "generation_date": "2026-07-28T19:40:07",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

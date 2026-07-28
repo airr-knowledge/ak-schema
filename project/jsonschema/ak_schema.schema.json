@@ -254,10 +254,6 @@
                                 "$ref": "#/$defs/Epitope__identifier_optional"
                             },
                             {
-                                "description": "CURIE identifiers for external epitope records",
-                                "type": "string"
-                            },
-                            {
                                 "type": "null"
                             }
                         ]
@@ -1771,6 +1767,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
@@ -1803,6 +1806,13 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -2311,10 +2321,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "epitope": {
-                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                "epitopes": {
+                    "description": "Set of epitopes for an antigen",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -2362,10 +2375,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "epitope": {
-                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                "epitopes": {
+                    "description": "Set of epitopes for an antigen",
+                    "items": {
+                        "type": "string"
+                    },
                     "type": [
-                        "string",
+                        "array",
                         "null"
                     ]
                 },
@@ -2672,6 +2688,13 @@
                         "null"
                     ]
                 },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
@@ -2709,6 +2732,13 @@
                     "description": "IG lambda light chain",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
                         "null"
                     ]
                 },
@@ -4481,13 +4511,6 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "epitope_ref": {
-                    "description": "CURIE identifiers for external epitope records",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "positional_residues": {
                     "description": "Numbered amino acid residues of a conformational epitope",
                     "pattern": "^([ACDEFGHIKLMNPQRSTVWY]\\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\\d{1,}$",
@@ -4586,13 +4609,6 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "epitope_ref": {
-                    "description": "CURIE identifiers for external epitope records",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
@@ -4608,13 +4624,6 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
-                },
-                "epitope_ref": {
-                    "description": "CURIE identifiers for external epitope records",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [],
@@ -4990,6 +4999,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
@@ -5022,6 +5038,13 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
                 },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
@@ -7327,13 +7350,6 @@
                         "string",
                         "null"
                     ]
-                },
-                "epitope_ref": {
-                    "description": "CURIE identifiers for external epitope records",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
                 }
             },
             "required": [
@@ -7674,13 +7690,6 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
-                "epitope_ref": {
-                    "description": "CURIE identifiers for external epitope records",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
                 "modifications": {
                     "description": "Post-translational modifications to the epitope peptide sequence",
                     "type": [
@@ -7754,6 +7763,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
@@ -7819,6 +7835,32 @@
                         {
                             "type": "null"
                         }
+                    ]
+                },
+                "life_events": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/$defs/LifeEvent__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/ImmuneExposure__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/SpecimenCollection__identifier_optional"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
                     ]
                 },
                 "name": {
@@ -7908,6 +7950,32 @@
                         {
                             "type": "null"
                         }
+                    ]
+                },
+                "life_events": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "anyOf": [
+                                    {
+                                        "$ref": "#/$defs/LifeEvent__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/ImmuneExposure__identifier_optional"
+                                    },
+                                    {
+                                        "$ref": "#/$defs/SpecimenCollection__identifier_optional"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
                     ]
                 },
                 "name": {
@@ -9431,6 +9499,13 @@
                         "null"
                     ]
                 },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
                 "species": {
                     "$ref": "#/$defs/SpeciesOntology",
                     "description": "Binomial designation of subject's species"
@@ -9531,6 +9606,13 @@
                     "description": "Major histocompatibility complex",
                     "type": [
                         "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
                         "null"
                     ]
                 },
@@ -12206,10 +12288,6 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Epitope__identifier_optional"
-                    },
-                    {
-                        "description": "CURIE identifiers for external epitope records",
-                        "type": "string"
                     },
                     {
                         "type": "null"

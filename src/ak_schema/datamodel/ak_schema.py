@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-24T21:41:15
+# Generation date: 2026-07-28T19:40:11
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -933,7 +933,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     lambda_chains: Optional[Union[Dict[Union[str, LambdaChainAkcId], Union[dict, "LambdaChain"]], List[Union[dict, "LambdaChain"]]]] = empty_dict()
     bcell_receptors: Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, "BCellReceptor"]], List[Union[dict, "BCellReceptor"]]]] = empty_dict()
     antigens: Optional[Union[Dict[Union[str, AntigenAkcId], Union[dict, "Antigen"]], List[Union[dict, "Antigen"]]]] = empty_dict()
-    epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
+    epitopes: Optional[Union[List[Union[str, EpitopeAkcId]], Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]]]] = empty_dict()
     tcr_complexes: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
     antibody_complexes: Optional[Union[Dict[Union[str, AntibodyAntigenComplexAkcId], Union[dict, "AntibodyAntigenComplex"]], List[Union[dict, "AntibodyAntigenComplex"]]]] = empty_dict()
     receptor_composites: Optional[Union[Dict[Union[str, ReceptorCompositeAkcId], Union[dict, "ReceptorComposite"]], List[Union[dict, "ReceptorComposite"]]]] = empty_dict()
@@ -2464,6 +2464,14 @@ class ImmuneReceptor(AKObject):
 
     akc_id: Union[str, ImmuneReceptorAkcId] = None
     species: Optional[Union[str, "SpeciesOntology"]] = None
+    paired_chain: Optional[Union[bool, Bool]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self.paired_chain is not None and not isinstance(self.paired_chain, Bool):
+            self.paired_chain = Bool(self.paired_chain)
+
+        super().__post_init__(**kwargs)
+
 
 @dataclass(repr=False)
 class TCellReceptor(ImmuneReceptor):
@@ -2574,16 +2582,12 @@ class Epitope(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Epitope
 
     akc_id: Union[str, EpitopeAkcId] = None
-    epitope_ref: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, EpitopeAkcId):
             self.akc_id = EpitopeAkcId(self.akc_id)
-
-        if self.epitope_ref is not None and not isinstance(self.epitope_ref, URIorCURIE):
-            self.epitope_ref = URIorCURIE(self.epitope_ref)
 
         super().__post_init__(**kwargs)
 
@@ -2676,7 +2680,7 @@ class Antigen(AKObject):
     akc_id: Union[str, AntigenAkcId] = None
     source_molecule: Optional[str] = None
     source_species: Optional[Union[str, TaxonomicSpeciesTermId]] = None
-    epitope: Optional[Union[str, EpitopeAkcId]] = None
+    epitopes: Optional[Union[Union[str, EpitopeAkcId], List[Union[str, EpitopeAkcId]]]] = empty_list()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -2690,8 +2694,9 @@ class Antigen(AKObject):
         if self.source_species is not None and not isinstance(self.source_species, TaxonomicSpeciesTermId):
             self.source_species = TaxonomicSpeciesTermId(self.source_species)
 
-        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
-            self.epitope = EpitopeAkcId(self.epitope)
+        if not isinstance(self.epitopes, list):
+            self.epitopes = [self.epitopes] if self.epitopes is not None else []
+        self.epitopes = [v if isinstance(v, EpitopeAkcId) else EpitopeAkcId(v) for v in self.epitopes]
 
         super().__post_init__(**kwargs)
 
@@ -2800,6 +2805,7 @@ class ReceptorComposite(AKObject):
     antigen: Optional[Union[str, AntigenAkcId]] = None
     epitope: Optional[Union[str, EpitopeAkcId]] = None
     mhc: Optional[Union[str, MajorHistocompatibilityComplexAkcId]] = None
+    paired_chain: Optional[Union[bool, Bool]] = None
     tra_chain: Optional[Union[str, URIorCURIE]] = None
     trb_chain: Optional[Union[str, URIorCURIE]] = None
     trg_chain: Optional[Union[str, URIorCURIE]] = None
@@ -2828,6 +2834,9 @@ class ReceptorComposite(AKObject):
 
         if self.mhc is not None and not isinstance(self.mhc, MajorHistocompatibilityComplexAkcId):
             self.mhc = MajorHistocompatibilityComplexAkcId(self.mhc)
+
+        if self.paired_chain is not None and not isinstance(self.paired_chain, Bool):
+            self.paired_chain = Bool(self.paired_chain)
 
         if self.tra_chain is not None and not isinstance(self.tra_chain, URIorCURIE):
             self.tra_chain = URIorCURIE(self.tra_chain)
@@ -5768,6 +5777,7 @@ class QueryExperiment(QueryAPI):
     specimen: Optional[Union[dict, Specimen]] = None
     participant: Optional[Union[dict, Participant]] = None
     investigation: Optional[Union[dict, Investigation]] = None
+    life_events: Optional[Union[Dict[Union[str, LifeEventAkcId], Union[dict, LifeEvent]], List[Union[dict, LifeEvent]]]] = empty_dict()
     name: Optional[str] = None
     description: Optional[str] = None
     specimen_processing: Optional[Union[Union[str, SpecimenProcessingAkcId], List[Union[str, SpecimenProcessingAkcId]]]] = empty_list()
@@ -5789,6 +5799,8 @@ class QueryExperiment(QueryAPI):
 
         if self.investigation is not None and not isinstance(self.investigation, Investigation):
             self.investigation = Investigation(**as_dict(self.investigation))
+
+        self._normalize_inlined_as_dict(slot_name="life_events", slot_type=LifeEvent, key_name="akc_id", keyed=True)
 
         if self.name is not None and not isinstance(self.name, str):
             self.name = str(self.name)
@@ -6932,14 +6944,8 @@ slots.organism = Slot(uri=IAO['0000136'], name="organism", curie=IAO.curie('0000
 slots.experiment_type = Slot(uri=AK_SCHEMA.experiment_type, name="experiment_type", curie=AK_SCHEMA.curie('experiment_type'),
                    model_uri=AK_SCHEMA.experiment_type, domain=None, range=Optional[str])
 
-slots.aa_hash = Slot(uri=AK_SCHEMA.aa_hash, name="aa_hash", curie=AK_SCHEMA.curie('aa_hash'),
-                   model_uri=AK_SCHEMA.aa_hash, domain=None, range=Optional[str])
-
-slots.junction_aa_vj_allele_hash = Slot(uri=AK_SCHEMA.junction_aa_vj_allele_hash, name="junction_aa_vj_allele_hash", curie=AK_SCHEMA.curie('junction_aa_vj_allele_hash'),
-                   model_uri=AK_SCHEMA.junction_aa_vj_allele_hash, domain=None, range=Optional[str])
-
-slots.junction_aa_vj_gene_hash = Slot(uri=AK_SCHEMA.junction_aa_vj_gene_hash, name="junction_aa_vj_gene_hash", curie=AK_SCHEMA.curie('junction_aa_vj_gene_hash'),
-                   model_uri=AK_SCHEMA.junction_aa_vj_gene_hash, domain=None, range=Optional[str])
+slots.paired_chain = Slot(uri=AK_SCHEMA.paired_chain, name="paired_chain", curie=AK_SCHEMA.curie('paired_chain'),
+                   model_uri=AK_SCHEMA.paired_chain, domain=None, range=Optional[Union[bool, Bool]])
 
 slots.complete_vdj = Slot(uri=AK_SCHEMA.complete_vdj, name="complete_vdj", curie=AK_SCHEMA.curie('complete_vdj'),
                    model_uri=AK_SCHEMA.complete_vdj, domain=None, range=Optional[Union[bool, Bool]])
@@ -7015,6 +7021,9 @@ slots.antigen = Slot(uri=AK_SCHEMA.antigen, name="antigen", curie=AK_SCHEMA.curi
 
 slots.epitope = Slot(uri=AK_SCHEMA.epitope, name="epitope", curie=AK_SCHEMA.curie('epitope'),
                    model_uri=AK_SCHEMA.epitope, domain=None, range=Optional[Union[str, EpitopeAkcId]])
+
+slots.epitopes = Slot(uri=AK_SCHEMA.epitopes, name="epitopes", curie=AK_SCHEMA.curie('epitopes'),
+                   model_uri=AK_SCHEMA.epitopes, domain=None, range=Optional[Union[Union[str, EpitopeAkcId], List[Union[str, EpitopeAkcId]]]])
 
 slots.epitope_ref = Slot(uri=AK_SCHEMA.epitope_ref, name="epitope_ref", curie=AK_SCHEMA.curie('epitope_ref'),
                    model_uri=AK_SCHEMA.epitope_ref, domain=None, range=Optional[Union[str, URIorCURIE]])
@@ -8349,7 +8358,7 @@ slots.aIRRKnowledgeCommons__antigens = Slot(uri=AK_SCHEMA.antigens, name="aIRRKn
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__antigens, domain=None, range=Optional[Union[Dict[Union[str, AntigenAkcId], Union[dict, Antigen]], List[Union[dict, Antigen]]]])
 
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[List[Union[str, EpitopeAkcId]], Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]]]])
 
 slots.aIRRKnowledgeCommons__tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, name="aIRRKnowledgeCommons__tcr_complexes", curie=AK_SCHEMA.curie('tcr_complexes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcr_complexes, domain=None, range=Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, TCRpMHCComplex]], List[Union[dict, TCRpMHCComplex]]]])
@@ -8401,6 +8410,9 @@ slots.queryExperiment__participant = Slot(uri=AK_SCHEMA.participant, name="query
 
 slots.queryExperiment__investigation = Slot(uri=AK_SCHEMA.investigation, name="queryExperiment__investigation", curie=AK_SCHEMA.curie('investigation'),
                    model_uri=AK_SCHEMA.queryExperiment__investigation, domain=None, range=Optional[Union[dict, Investigation]])
+
+slots.queryExperiment__life_events = Slot(uri=AK_SCHEMA.life_events, name="queryExperiment__life_events", curie=AK_SCHEMA.curie('life_events'),
+                   model_uri=AK_SCHEMA.queryExperiment__life_events, domain=None, range=Optional[Union[Dict[Union[str, LifeEventAkcId], Union[dict, LifeEvent]], List[Union[dict, LifeEvent]]]])
 
 slots.BiomedicalInvestigations_parent = Slot(uri=AK_SCHEMA.parent, name="BiomedicalInvestigations_parent", curie=AK_SCHEMA.curie('parent'),
                    model_uri=AK_SCHEMA.BiomedicalInvestigations_parent, domain=BiomedicalInvestigations, range=Optional[Union[Union[str, BiomedicalInvestigationsTermId], List[Union[str, BiomedicalInvestigationsTermId]]]])

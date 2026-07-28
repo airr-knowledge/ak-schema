@@ -1692,18 +1692,11 @@ slots:
     name: experiment_type
     description: The type of experiment that supports the conclusion
     from_schema: https://github.com/airr-knowledge/ak-schema
-  aa_hash:
-    name: aa_hash
+  paired_chain:
+    name: paired_chain
+    description: Flag to indicate the receptor object has both chains defined
     from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  junction_aa_vj_allele_hash:
-    name: junction_aa_vj_allele_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
-  junction_aa_vj_gene_hash:
-    name: junction_aa_vj_gene_hash
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    range: string
+    range: boolean
   complete_vdj:
     name: complete_vdj
     description: Complete VDJ flag.
@@ -1829,6 +1822,12 @@ slots:
       or antibody
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Epitope
+  epitopes:
+    name: epitopes
+    description: Set of epitopes for an antigen
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Epitope
+    multivalued: true
   epitope_ref:
     name: epitope_ref
     description: CURIE identifiers for external epitope records
@@ -6436,6 +6435,7 @@ classes:
     abstract: true
     slots:
     - species
+    - paired_chain
   TCellReceptor:
     name: TCellReceptor
     from_schema: https://github.com/airr-knowledge/ak-schema
@@ -6470,8 +6470,6 @@ classes:
     name: Epitope
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
-    slots:
-    - epitope_ref
     class_uri: OBI:1110001
   PeptidicEpitope:
     name: PeptidicEpitope
@@ -6507,7 +6505,7 @@ classes:
     slots:
     - source_molecule
     - source_species
-    - epitope
+    - epitopes
     class_uri: OBI:1110034
   MajorHistocompatibilityComplex:
     name: MajorHistocompatibilityComplex
@@ -7445,5 +7443,11 @@ classes:
         from_schema: https://github.com/airr-knowledge/ak-schema
         range: Investigation
         multivalued: false
+        inlined: true
+      life_events:
+        name: life_events
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: LifeEvent
+        multivalued: true
         inlined: true
 source_file: src/ak_schema/schema/ak_top.yaml
