@@ -3258,6 +3258,8 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
       "owner": "ReceptorComposite",
       "domain_of": [
+        "AntibodyAntigenComplex",
+        "TCRpMHCComplex",
         "ReceptorComposite"
       ],
       "range": "Epitope",
@@ -3283,6 +3285,10 @@
       "description": "CURIE identifiers for external epitope records",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope_ref",
+      "owner": "Epitope",
+      "domain_of": [
+        "Epitope"
+      ],
       "range": "uriorcurie",
       "@type": "SlotDefinition"
     },
@@ -14314,7 +14320,8 @@
       ],
       "is_a": "AKObject",
       "slots": [
-        "akc_id"
+        "akc_id",
+        "epitope_ref"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_1110001",
@@ -14327,6 +14334,7 @@
       "is_a": "Epitope",
       "slots": [
         "akc_id",
+        "epitope_ref",
         "PeptidicEpitope_sequence_aa",
         "modifications"
       ],
@@ -14341,6 +14349,7 @@
       "is_a": "Epitope",
       "slots": [
         "akc_id",
+        "epitope_ref",
         "DiscontinuousEpitope_positional_residues"
       ],
       "slot_usage": {},
@@ -14354,6 +14363,7 @@
       "is_a": "Epitope",
       "slots": [
         "akc_id",
+        "epitope_ref",
         "epitope_name"
       ],
       "slot_usage": {},
@@ -14409,7 +14419,8 @@
         "akc_id",
         "species",
         "antibody",
-        "antigen"
+        "antigen",
+        "epitope"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0003119",
@@ -14430,6 +14441,7 @@
         "ab_tcr",
         "gd_tcr",
         "antigen",
+        "epitope",
         "mhc"
       ],
       "slot_usage": {},
@@ -15762,9 +15774,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-28T19:40:05",
-  "source_file_size": 220220,
-  "generation_date": "2026-07-28T19:40:07",
+  "source_file_date": "2026-07-28T20:10:20",
+  "source_file_size": 220277,
+  "generation_date": "2026-07-28T20:10:21",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

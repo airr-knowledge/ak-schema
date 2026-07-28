@@ -429,25 +429,29 @@ CREATE TABLE "BCellReceptor" (
 	PRIMARY KEY (akc_id)
 );COMMENT ON TABLE "BCellReceptor" IS 'None';COMMENT ON COLUMN "BCellReceptor".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptor".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptor".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptor".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptor".paired_chain IS 'Flag to indicate the receptor object has both chains defined';COMMENT ON COLUMN "BCellReceptor".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Epitope" (
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "Epitope" IS 'None';COMMENT ON COLUMN "Epitope".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Epitope" IS 'None';COMMENT ON COLUMN "Epitope".epitope_ref IS 'CURIE identifiers for external epitope records';COMMENT ON COLUMN "Epitope".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "PeptidicEpitope" (
 	sequence_aa TEXT, 
 	modifications TEXT, 
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "PeptidicEpitope" IS 'None';COMMENT ON COLUMN "PeptidicEpitope".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "PeptidicEpitope".modifications IS 'Post-translational modifications to the epitope peptide sequence';COMMENT ON COLUMN "PeptidicEpitope".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "PeptidicEpitope" IS 'None';COMMENT ON COLUMN "PeptidicEpitope".sequence_aa IS 'Amino acid translation of the query nucleotide sequence.';COMMENT ON COLUMN "PeptidicEpitope".modifications IS 'Post-translational modifications to the epitope peptide sequence';COMMENT ON COLUMN "PeptidicEpitope".epitope_ref IS 'CURIE identifiers for external epitope records';COMMENT ON COLUMN "PeptidicEpitope".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "DiscontinuousEpitope" (
 	positional_residues TEXT, 
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "DiscontinuousEpitope" IS 'None';COMMENT ON COLUMN "DiscontinuousEpitope".positional_residues IS 'Numbered amino acid residues of a conformational epitope';COMMENT ON COLUMN "DiscontinuousEpitope".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "DiscontinuousEpitope" IS 'None';COMMENT ON COLUMN "DiscontinuousEpitope".positional_residues IS 'Numbered amino acid residues of a conformational epitope';COMMENT ON COLUMN "DiscontinuousEpitope".epitope_ref IS 'CURIE identifiers for external epitope records';COMMENT ON COLUMN "DiscontinuousEpitope".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "NonPeptidicEpitope" (
 	epitope_name TEXT, 
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
-);COMMENT ON TABLE "NonPeptidicEpitope" IS 'None';COMMENT ON COLUMN "NonPeptidicEpitope".epitope_name IS 'Name of the non-peptidic epitope';COMMENT ON COLUMN "NonPeptidicEpitope".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "NonPeptidicEpitope" IS 'None';COMMENT ON COLUMN "NonPeptidicEpitope".epitope_name IS 'Name of the non-peptidic epitope';COMMENT ON COLUMN "NonPeptidicEpitope".epitope_ref IS 'CURIE identifiers for external epitope records';COMMENT ON COLUMN "NonPeptidicEpitope".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Model" (
 	name TEXT, 
 	description TEXT, 
@@ -1472,24 +1476,28 @@ CREATE TABLE "AntibodyAntigenComplex" (
 	species "SpeciesOntology", 
 	antibody TEXT, 
 	antigen TEXT, 
+	epitope TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(antibody) REFERENCES "BCellReceptor" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
-);COMMENT ON TABLE "AntibodyAntigenComplex" IS 'None';COMMENT ON COLUMN "AntibodyAntigenComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AntibodyAntigenComplex".antibody IS 'B cell receptor, immunoglobulin antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AntibodyAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+);COMMENT ON TABLE "AntibodyAntigenComplex" IS 'None';COMMENT ON COLUMN "AntibodyAntigenComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "AntibodyAntigenComplex".antibody IS 'B cell receptor, immunoglobulin antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "AntibodyAntigenComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "AntibodyAntigenComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "TCRpMHCComplex" (
 	species "SpeciesOntology", 
 	ab_tcr TEXT, 
 	gd_tcr TEXT, 
 	antigen TEXT, 
+	epitope TEXT, 
 	mhc TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(ab_tcr) REFERENCES "AlphaBetaTCR" (akc_id), 
 	FOREIGN KEY(gd_tcr) REFERENCES "GammaDeltaTCR" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
 	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
-);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "TCRpMHCComplex".ab_tcr IS 'alpha/beta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".gd_tcr IS 'gamma/delta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "TCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "TCRpMHCComplex" IS 'None';COMMENT ON COLUMN "TCRpMHCComplex".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "TCRpMHCComplex".ab_tcr IS 'alpha/beta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".gd_tcr IS 'gamma/delta T cell receptor';COMMENT ON COLUMN "TCRpMHCComplex".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "TCRpMHCComplex".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "TCRpMHCComplex".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "TCRpMHCComplex".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "Subject" (
 	id SERIAL NOT NULL, 
 	subject_id TEXT, 

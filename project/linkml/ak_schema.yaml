@@ -6470,6 +6470,8 @@ classes:
     name: Epitope
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: AKObject
+    slots:
+    - epitope_ref
     class_uri: OBI:1110001
   PeptidicEpitope:
     name: PeptidicEpitope
@@ -6525,6 +6527,7 @@ classes:
     - species
     - antibody
     - antigen
+    - epitope
     class_uri: OBI:0003119
   TCRpMHCComplex:
     name: TCRpMHCComplex
@@ -6536,6 +6539,7 @@ classes:
     - ab_tcr
     - gd_tcr
     - antigen
+    - epitope
     - mhc
     class_uri: OBI:0003119
   ReceptorComposite:

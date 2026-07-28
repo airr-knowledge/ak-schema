@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-28T19:40:11
+# Generation date: 2026-07-28T20:10:25
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -933,7 +933,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     lambda_chains: Optional[Union[Dict[Union[str, LambdaChainAkcId], Union[dict, "LambdaChain"]], List[Union[dict, "LambdaChain"]]]] = empty_dict()
     bcell_receptors: Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, "BCellReceptor"]], List[Union[dict, "BCellReceptor"]]]] = empty_dict()
     antigens: Optional[Union[Dict[Union[str, AntigenAkcId], Union[dict, "Antigen"]], List[Union[dict, "Antigen"]]]] = empty_dict()
-    epitopes: Optional[Union[List[Union[str, EpitopeAkcId]], Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]]]] = empty_dict()
+    epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
     tcr_complexes: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
     antibody_complexes: Optional[Union[Dict[Union[str, AntibodyAntigenComplexAkcId], Union[dict, "AntibodyAntigenComplex"]], List[Union[dict, "AntibodyAntigenComplex"]]]] = empty_dict()
     receptor_composites: Optional[Union[Dict[Union[str, ReceptorCompositeAkcId], Union[dict, "ReceptorComposite"]], List[Union[dict, "ReceptorComposite"]]]] = empty_dict()
@@ -2582,12 +2582,16 @@ class Epitope(AKObject):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.Epitope
 
     akc_id: Union[str, EpitopeAkcId] = None
+    epitope_ref: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, EpitopeAkcId):
             self.akc_id = EpitopeAkcId(self.akc_id)
+
+        if self.epitope_ref is not None and not isinstance(self.epitope_ref, URIorCURIE):
+            self.epitope_ref = URIorCURIE(self.epitope_ref)
 
         super().__post_init__(**kwargs)
 
@@ -2746,6 +2750,7 @@ class AntibodyAntigenComplex(AKObject):
     species: Optional[Union[str, "SpeciesOntology"]] = None
     antibody: Optional[Union[str, BCellReceptorAkcId]] = None
     antigen: Optional[Union[str, AntigenAkcId]] = None
+    epitope: Optional[Union[str, EpitopeAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self.antibody is not None and not isinstance(self.antibody, BCellReceptorAkcId):
@@ -2753,6 +2758,9 @@ class AntibodyAntigenComplex(AKObject):
 
         if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
             self.antigen = AntigenAkcId(self.antigen)
+
+        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
+            self.epitope = EpitopeAkcId(self.epitope)
 
         super().__post_init__(**kwargs)
 
@@ -2771,6 +2779,7 @@ class TCRpMHCComplex(AKObject):
     ab_tcr: Optional[Union[str, AlphaBetaTCRAkcId]] = None
     gd_tcr: Optional[Union[str, GammaDeltaTCRAkcId]] = None
     antigen: Optional[Union[str, AntigenAkcId]] = None
+    epitope: Optional[Union[str, EpitopeAkcId]] = None
     mhc: Optional[Union[str, MajorHistocompatibilityComplexAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -2782,6 +2791,9 @@ class TCRpMHCComplex(AKObject):
 
         if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
             self.antigen = AntigenAkcId(self.antigen)
+
+        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
+            self.epitope = EpitopeAkcId(self.epitope)
 
         if self.mhc is not None and not isinstance(self.mhc, MajorHistocompatibilityComplexAkcId):
             self.mhc = MajorHistocompatibilityComplexAkcId(self.mhc)
@@ -8358,7 +8370,7 @@ slots.aIRRKnowledgeCommons__antigens = Slot(uri=AK_SCHEMA.antigens, name="aIRRKn
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__antigens, domain=None, range=Optional[Union[Dict[Union[str, AntigenAkcId], Union[dict, Antigen]], List[Union[dict, Antigen]]]])
 
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
-                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[List[Union[str, EpitopeAkcId]], Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]]]])
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
 
 slots.aIRRKnowledgeCommons__tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, name="aIRRKnowledgeCommons__tcr_complexes", curie=AK_SCHEMA.curie('tcr_complexes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcr_complexes, domain=None, range=Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, TCRpMHCComplex]], List[Union[dict, TCRpMHCComplex]]]])

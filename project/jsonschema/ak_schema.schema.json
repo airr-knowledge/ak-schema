@@ -254,6 +254,10 @@
                                 "$ref": "#/$defs/Epitope__identifier_optional"
                             },
                             {
+                                "description": "CURIE identifiers for external epitope records",
+                                "type": "string"
+                            },
+                            {
                                 "type": "null"
                             }
                         ]
@@ -4511,6 +4515,13 @@
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
                 },
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
                 "positional_residues": {
                     "description": "Numbered amino acid residues of a conformational epitope",
                     "pattern": "^([ACDEFGHIKLMNPQRSTVWY]\\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\\d{1,}$",
@@ -4609,6 +4620,13 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -4624,6 +4642,13 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],
@@ -7350,6 +7375,13 @@
                         "string",
                         "null"
                     ]
+                },
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -7689,6 +7721,13 @@
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
                     "type": "string"
+                },
+                "epitope_ref": {
+                    "description": "CURIE identifiers for external epitope records",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "modifications": {
                     "description": "Post-translational modifications to the epitope peptide sequence",
@@ -12288,6 +12327,10 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/Epitope__identifier_optional"
+                    },
+                    {
+                        "description": "CURIE identifiers for external epitope records",
+                        "type": "string"
                     },
                     {
                         "type": "null"

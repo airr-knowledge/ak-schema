@@ -503,16 +503,20 @@
 --     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Epitope" Description: ""
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "PeptidicEpitope" Description: ""
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
 --     * Slot: modifications Description: Post-translational modifications to the epitope peptide sequence
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "DiscontinuousEpitope" Description: ""
 --     * Slot: positional_residues Description: Numbered amino acid residues of a conformational epitope
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "NonPeptidicEpitope" Description: ""
 --     * Slot: epitope_name Description: Name of the non-peptidic epitope
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Antigen" Description: ""
 --     * Slot: source_molecule Description: The protein or other molecule that this antigen represents
@@ -527,12 +531,14 @@
 --     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: antibody Description: B cell receptor, immunoglobulin antibody
 --     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCRpMHCComplex" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: ab_tcr Description: alpha/beta T cell receptor
 --     * Slot: gd_tcr Description: gamma/delta T cell receptor
 --     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
 --     * Slot: mhc Description: Major histocompatibility complex
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ReceptorComposite" Description: ""
@@ -1818,22 +1824,26 @@ CREATE TABLE "BCellReceptor" (
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "Epitope" (
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "PeptidicEpitope" (
 	sequence_aa TEXT, 
 	modifications TEXT, 
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "DiscontinuousEpitope" (
 	positional_residues TEXT, 
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "NonPeptidicEpitope" (
 	epitope_name TEXT, 
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
@@ -2861,22 +2871,26 @@ CREATE TABLE "AntibodyAntigenComplex" (
 	species VARCHAR, 
 	antibody TEXT, 
 	antigen TEXT, 
+	epitope TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(antibody) REFERENCES "BCellReceptor" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
 );
 CREATE TABLE "TCRpMHCComplex" (
 	species VARCHAR, 
 	ab_tcr TEXT, 
 	gd_tcr TEXT, 
 	antigen TEXT, 
+	epitope TEXT, 
 	mhc TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(ab_tcr) REFERENCES "AlphaBetaTCR" (akc_id), 
 	FOREIGN KEY(gd_tcr) REFERENCES "GammaDeltaTCR" (akc_id), 
 	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
 	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
 );
 CREATE TABLE "Subject" (
