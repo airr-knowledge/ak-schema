@@ -94,10 +94,12 @@ classes:
       - igk_chain
       - igl_chain
 
-  # the akc_id will be assigned an IEDB_EPITOPE: CURIE
+  # the akc_id is same CURIE as the epitope_ref
   Epitope:
     is_a: AKObject
     class_uri: OBI:1110001 # epitope
+    slots:
+      - epitope_ref
 
   PeptidicEpitope:
     is_a: Epitope
@@ -121,7 +123,7 @@ classes:
     slots:
       - epitope_name
 
-  # the akc_id will be assigned the source molecule ID
+  # the akc_id is same CURIE as the source molecule ID
   Antigen:
     is_a: AKObject
     class_uri: OBI:1110034 # antigen
@@ -146,6 +148,7 @@ classes:
       - species
       - antibody
       - antigen
+      - epitope
 
   TCRpMHCComplex:
     abstract: true
@@ -156,6 +159,7 @@ classes:
       - ab_tcr
       - gd_tcr
       - antigen
+      - epitope
       - mhc
 
   # class for database optimization
