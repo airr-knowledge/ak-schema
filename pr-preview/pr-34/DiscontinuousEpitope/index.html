@@ -209,8 +209,6 @@
 
       DiscontinuousEpitope : akc_id
 
-      DiscontinuousEpitope : epitope_ref
-
       DiscontinuousEpitope : positional_residues
 
 
@@ -241,12 +239,6 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Numbered amino acid residues of a conformational epitope</td>
 <td>direct</td>
-</tr>
-<tr>
-<td><a href="../epitope_ref/">epitope_ref</a></td>
-<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>CURIE identifiers for external epitope records</td>
-<td><a href="../Epitope/">Epitope</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -317,16 +309,6 @@ attributes:
     - DiscontinuousEpitope
     range: string
     pattern: ^([ACDEFGHIKLMNPQRSTVWY]\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\d{1,}$
-  epitope_ref:
-    name: epitope_ref
-    description: CURIE identifiers for external epitope records
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    alias: epitope_ref
-    owner: DiscontinuousEpitope
-    domain_of:
-    - Epitope
-    range: uriorcurie
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

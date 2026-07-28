@@ -1041,11 +1041,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/aa_hash/</loc>
-         <lastmod>2026-07-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/ab_tcell_receptors/</loc>
          <lastmod>2026-07-28</lastmod>
          <changefreq>daily</changefreq>
@@ -2436,16 +2431,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/junction_aa_vj_allele_hash/</loc>
-         <lastmod>2026-07-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://airr-knowledge.github.io/ak-schema/junction_aa_vj_gene_hash/</loc>
-         <lastmod>2026-07-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/junction_end/</loc>
          <lastmod>2026-07-28</lastmod>
          <changefreq>daily</changefreq>
@@ -2792,6 +2777,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/pages/</loc>
+         <lastmod>2026-07-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/paired_chain/</loc>
          <lastmod>2026-07-28</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -214,12 +214,12 @@
 
       Antigen : akc_id
 
-      Antigen : epitope
+      Antigen : epitopes
 
 
 
 
-    Antigen --&gt; "0..1" Epitope : epitope
+    Antigen --&gt; "*" Epitope : epitopes
     click Epitope href "../Epitope"
 
 
@@ -267,9 +267,9 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../epitope/">epitope</a></td>
-<td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
-<td>Epitope of an antigen, which can be recognized by a T cell receptor or antibo...</td>
+<td><a href="../epitopes/">epitopes</a></td>
+<td>* <br/> <a href="../Epitope/">Epitope</a></td>
+<td>Set of epitopes for an antigen</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -357,7 +357,7 @@ is_a: AKObject
 slots:
 - source_molecule
 - source_species
-- epitope
+- epitopes
 class_uri: OBI:1110034
 
 </code></pre>
@@ -388,19 +388,18 @@ attributes:
     domain_of:
     - Antigen
     range: TaxonomicSpecies
-  epitope:
-    name: epitope
-    description: Epitope of an antigen, which can be recognized by a T cell receptor
-      or antibody
+  epitopes:
+    name: epitopes
+    description: Set of epitopes for an antigen
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: epitope
+    alias: epitopes
     owner: Antigen
     domain_of:
+    - AIRRKnowledgeCommons
     - Antigen
-    - ReceptorComposite
-    - QueryTCR
     range: Epitope
+    multivalued: true
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

@@ -219,6 +219,8 @@
 
       ImmuneReceptor : akc_id
 
+      ImmuneReceptor : paired_chain
+
       ImmuneReceptor : species
 
 
@@ -256,6 +258,12 @@
 <td><a href="../species/">species</a></td>
 <td>0..1 <br/> <a href="../SpeciesOntology/">SpeciesOntology</a></td>
 <td>Binomial designation of subject's species</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_chain/">paired_chain</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Flag to indicate the receptor object has both chains defined</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -300,6 +308,7 @@ is_a: AKObject
 abstract: true
 slots:
 - species
+- paired_chain
 
 </code></pre>
 </details>
@@ -332,6 +341,16 @@ attributes:
     - GermlineSet
     - Subject
     range: SpeciesOntology
+  paired_chain:
+    name: paired_chain
+    description: Flag to indicate the receptor object has both chains defined
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_chain
+    owner: ImmuneReceptor
+    domain_of:
+    - ImmuneReceptor
+    range: boolean
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

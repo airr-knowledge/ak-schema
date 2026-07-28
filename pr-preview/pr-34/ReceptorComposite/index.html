@@ -262,6 +262,8 @@
     click MajorHistocompatibilityComplex href "../MajorHistocompatibilityComplex"
 
 
+      ReceptorComposite : paired_chain
+
       ReceptorComposite : species
 
 
@@ -391,6 +393,12 @@
 <td>1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing in the AKC</td>
 <td><a href="../AKObject/">AKObject</a></td>
+</tr>
+<tr>
+<td><a href="../paired_chain/">paired_chain</a></td>
+<td>0..1 <br/> <a href="../Boolean/">Boolean</a></td>
+<td>Flag to indicate the receptor object has both chains defined</td>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
 </tr>
 </tbody>
 </table>
@@ -552,7 +560,6 @@ attributes:
     alias: epitope
     owner: ReceptorComposite
     domain_of:
-    - Antigen
     - ReceptorComposite
     - QueryTCR
     range: Epitope
@@ -653,6 +660,16 @@ attributes:
     - AKObject
     range: uriorcurie
     required: true
+  paired_chain:
+    name: paired_chain
+    description: Flag to indicate the receptor object has both chains defined
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_chain
+    owner: ReceptorComposite
+    domain_of:
+    - ImmuneReceptor
+    range: boolean
 
 </code></pre>
 </details>

@@ -324,6 +324,7 @@
 
 
 <h1 id="slot-epitopes">Slot: epitopes</h1>
+<p><em>Set of epitopes for an antigen</em></p>
 <p>URI: <a href="https://github.com/airr-knowledge/ak-schema/epitopes">ak_schema:epitopes</a></p>
 <!-- no inheritance hierarchy -->
 
@@ -340,6 +341,11 @@
 <tr>
 <td><a href="../AIRRKnowledgeCommons/">AIRRKnowledgeCommons</a></td>
 <td>A container for instances of multiple classes</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Antigen/">Antigen</a></td>
+<td></td>
 <td>no</td>
 </tr>
 </tbody>
@@ -381,15 +387,15 @@
 <details>
 
 <pre><code class="language-yaml">name: epitopes
+description: Set of epitopes for an antigen
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
 alias: epitopes
-owner: AIRRKnowledgeCommons
 domain_of:
 - AIRRKnowledgeCommons
+- Antigen
 range: Epitope
 multivalued: true
-inlined: true
 
 </code></pre>
 

@@ -8,14 +8,14 @@
       
       
       
-        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/aa_hash/">
+        <link rel="canonical" href="https://airr-knowledge.github.io/ak-schema/paired_chain/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-8.5.10">
     
     
       
-        <title>Slot: aa_hash - ak-schema</title>
+        <title>Slot: paired_chain - ak-schema</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slot-aa_hash" class="md-skip">
+        <a href="#slot-paired_chain" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Slot: aa_hash
+              Slot: paired_chain
             
           </span>
         </div>
@@ -256,6 +256,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#applicable-classes" class="md-nav__link">
+    Applicable Classes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#properties" class="md-nav__link">
     Properties
   </a>
@@ -310,19 +317,67 @@
                 
                   
 
-  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/aa_hash.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/airr-knowledge/ak-schema/edit/master/docs/paired_chain.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-<h1 id="slot-aa_hash">Slot: aa_hash</h1>
-<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/aa_hash">ak_schema:aa_hash</a></p>
+<h1 id="slot-paired_chain">Slot: paired_chain</h1>
+<p><em>Flag to indicate the receptor object has both chains defined</em></p>
+<p>URI: <a href="https://github.com/airr-knowledge/ak-schema/paired_chain">ak_schema:paired_chain</a></p>
 <!-- no inheritance hierarchy -->
 
+<h2 id="applicable-classes">Applicable Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Modifies Slot</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../ReceptorComposite/">ReceptorComposite</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AlphaBetaTCR/">AlphaBetaTCR</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../QueryAlphaBetaTCR/">QueryAlphaBetaTCR</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../BCellReceptor/">BCellReceptor</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../GammaDeltaTCR/">GammaDeltaTCR</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../TCellReceptor/">TCellReceptor</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ImmuneReceptor/">ImmuneReceptor</a></td>
+<td></td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>Range: <a href="../String/">String</a></li>
+<li>Range: <a href="../Boolean/">Boolean</a></li>
 </ul>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
@@ -340,22 +395,25 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>ak_schema:aa_hash</td>
+<td>ak_schema:paired_chain</td>
 </tr>
 <tr>
 <td>native</td>
-<td>ak_schema:aa_hash</td>
+<td>ak_schema:paired_chain</td>
 </tr>
 </tbody>
 </table>
 <h2 id="linkml-source">LinkML Source</h2>
 <details>
 
-<pre><code class="language-yaml">name: aa_hash
+<pre><code class="language-yaml">name: paired_chain
+description: Flag to indicate the receptor object has both chains defined
 from_schema: https://github.com/airr-knowledge/ak-schema
 rank: 1000
-alias: aa_hash
-range: string
+alias: paired_chain
+domain_of:
+- ImmuneReceptor
+range: boolean
 
 </code></pre>
 
