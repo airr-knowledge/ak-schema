@@ -235,6 +235,15 @@
     click Antigen href "../Antigen"
 
 
+      TCRpMHCComplex : epitope
+
+
+
+
+    TCRpMHCComplex --&gt; "0..1" Epitope : epitope
+    click Epitope href "../Epitope"
+
+
       TCRpMHCComplex : gd_tcr
 
 
@@ -304,6 +313,12 @@
 <td><a href="../antigen/">antigen</a></td>
 <td>0..1 <br/> <a href="../Antigen/">Antigen</a></td>
 <td>A material entity with antigen role</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../epitope/">epitope</a></td>
+<td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
+<td>Epitope of an antigen, which can be recognized by a T cell receptor or antibo...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -394,6 +409,7 @@ slots:
 - ab_tcr
 - gd_tcr
 - antigen
+- epitope
 - mhc
 class_uri: OBI:0003119
 
@@ -463,6 +479,20 @@ attributes:
     - QueryTCR
     - QueryIG
     range: Antigen
+  epitope:
+    name: epitope
+    description: Epitope of an antigen, which can be recognized by a T cell receptor
+      or antibody
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: epitope
+    owner: TCRpMHCComplex
+    domain_of:
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - QueryTCR
+    range: Epitope
   mhc:
     name: mhc
     description: Major histocompatibility complex

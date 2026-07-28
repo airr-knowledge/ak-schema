@@ -235,6 +235,15 @@
     click Antigen href "../Antigen"
 
 
+      AntibodyAntigenComplex : epitope
+
+
+
+
+    AntibodyAntigenComplex --&gt; "0..1" Epitope : epitope
+    click Epitope href "../Epitope"
+
+
       AntibodyAntigenComplex : species
 
 
@@ -280,6 +289,12 @@
 <td><a href="../antigen/">antigen</a></td>
 <td>0..1 <br/> <a href="../Antigen/">Antigen</a></td>
 <td>A material entity with antigen role</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../epitope/">epitope</a></td>
+<td>0..1 <br/> <a href="../Epitope/">Epitope</a></td>
+<td>Epitope of an antigen, which can be recognized by a T cell receptor or antibo...</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -363,6 +378,7 @@ slots:
 - species
 - antibody
 - antigen
+- epitope
 class_uri: OBI:0003119
 
 </code></pre>
@@ -421,6 +437,20 @@ attributes:
     - QueryTCR
     - QueryIG
     range: Antigen
+  epitope:
+    name: epitope
+    description: Epitope of an antigen, which can be recognized by a T cell receptor
+      or antibody
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: epitope
+    owner: AntibodyAntigenComplex
+    domain_of:
+    - AntibodyAntigenComplex
+    - TCRpMHCComplex
+    - ReceptorComposite
+    - QueryTCR
+    range: Epitope
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.

@@ -211,6 +211,8 @@
 
       NonPeptidicEpitope : epitope_name
 
+      NonPeptidicEpitope : epitope_ref
+
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
@@ -239,6 +241,12 @@
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>Name of the non-peptidic epitope</td>
 <td>direct</td>
+</tr>
+<tr>
+<td><a href="../epitope_ref/">epitope_ref</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>CURIE identifiers for external epitope records</td>
+<td><a href="../Epitope/">Epitope</a></td>
 </tr>
 <tr>
 <td><a href="../akc_id/">akc_id</a></td>
@@ -300,6 +308,16 @@ attributes:
     domain_of:
     - NonPeptidicEpitope
     range: string
+  epitope_ref:
+    name: epitope_ref
+    description: CURIE identifiers for external epitope records
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: epitope_ref
+    owner: NonPeptidicEpitope
+    domain_of:
+    - Epitope
+    range: uriorcurie
   akc_id:
     name: akc_id
     description: A unique identifier for a thing in the AKC.
