@@ -86,6 +86,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/AlphaBetaReceptorComposite/</loc>
+         <lastmod>2026-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/AlphaBetaTCR/</loc>
          <lastmod>2026-07-30</lastmod>
          <changefreq>daily</changefreq>
@@ -137,6 +142,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/BCellReceptor/</loc>
+         <lastmod>2026-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/BCellReceptorComposite/</loc>
          <lastmod>2026-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -397,6 +407,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/GammaChain/</loc>
+         <lastmod>2026-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/GammaDeltaReceptorComposite/</loc>
          <lastmod>2026-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1041,6 +1056,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/ab_receptor_composites/</loc>
+         <lastmod>2026-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://airr-knowledge.github.io/ak-schema/ab_tcell_receptors/</loc>
          <lastmod>2026-07-30</lastmod>
          <changefreq>daily</changefreq>
@@ -1252,6 +1272,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/authors/</loc>
+         <lastmod>2026-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/bcell_receptor_composites/</loc>
          <lastmod>2026-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -2047,6 +2072,11 @@
     </url>
     <url>
          <loc>https://airr-knowledge.github.io/ak-schema/gamma_chains/</loc>
+         <lastmod>2026-07-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://airr-knowledge.github.io/ak-schema/gd_receptor_composites/</loc>
          <lastmod>2026-07-30</lastmod>
          <changefreq>daily</changefreq>
     </url>

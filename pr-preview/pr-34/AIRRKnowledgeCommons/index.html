@@ -200,6 +200,15 @@
 <div class="mermaid"> classDiagram
     class AIRRKnowledgeCommons
     click AIRRKnowledgeCommons href "../AIRRKnowledgeCommons"
+      AIRRKnowledgeCommons : ab_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" AlphaBetaReceptorComposite : ab_receptor_composites
+    click AlphaBetaReceptorComposite href "../AlphaBetaReceptorComposite"
+
+
       AIRRKnowledgeCommons : ab_tcell_receptors
 
 
@@ -252,6 +261,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" Assessment : assessments
     click Assessment href "../Assessment"
+
+
+      AIRRKnowledgeCommons : bcell_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" BCellReceptorComposite : bcell_receptor_composites
+    click BCellReceptorComposite href "../BCellReceptorComposite"
 
 
       AIRRKnowledgeCommons : bcell_receptors
@@ -315,6 +333,15 @@
 
     AIRRKnowledgeCommons --&gt; "*" GammaChain : gamma_chains
     click GammaChain href "../GammaChain"
+
+
+      AIRRKnowledgeCommons : gd_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" GammaDeltaReceptorComposite : gd_receptor_composites
+    click GammaDeltaReceptorComposite href "../GammaDeltaReceptorComposite"
 
 
       AIRRKnowledgeCommons : gd_tcell_receptors
@@ -709,6 +736,24 @@
 <td></td>
 <td>direct</td>
 </tr>
+<tr>
+<td><a href="../ab_receptor_composites/">ab_receptor_composites</a></td>
+<td>* <br/> <a href="../AlphaBetaReceptorComposite/">AlphaBetaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../gd_receptor_composites/">gd_receptor_composites</a></td>
+<td>* <br/> <a href="../GammaDeltaReceptorComposite/">GammaDeltaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../bcell_receptor_composites/">bcell_receptor_composites</a></td>
+<td>* <br/> <a href="../BCellReceptorComposite/">BCellReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
 </tbody>
 </table>
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
@@ -1044,6 +1089,33 @@ attributes:
     - TCellReceptorEpitopeBindingAssay
     - AntibodyAntigenBindingAssay
     range: ReceptorComposite
+    multivalued: true
+    inlined: true
+  ab_receptor_composites:
+    name: ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: AlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  gd_receptor_composites:
+    name: gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  bcell_receptor_composites:
+    name: bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BCellReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true
@@ -1423,6 +1495,39 @@ attributes:
     - TCellReceptorEpitopeBindingAssay
     - AntibodyAntigenBindingAssay
     range: ReceptorComposite
+    multivalued: true
+    inlined: true
+  ab_receptor_composites:
+    name: ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: ab_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: AlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  gd_receptor_composites:
+    name: gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: gd_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: GammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  bcell_receptor_composites:
+    name: bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: bcell_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: BCellReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true

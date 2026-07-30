@@ -512,6 +512,9 @@ attributes:
     - AntibodyAntigenComplex
     - TCRpMHCComplex
     - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - AlleleDescription
     - GermlineSet
     - Subject
@@ -525,6 +528,8 @@ attributes:
     owner: ReceptorComposite
     domain_of:
     - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
     range: TCRpMHCComplex
   antibody_complex:
     name: antibody_complex
@@ -535,6 +540,7 @@ attributes:
     owner: ReceptorComposite
     domain_of:
     - ReceptorComposite
+    - BCellReceptorComposite
     range: AntibodyAntigenComplex
   antigen:
     name: antigen
@@ -547,6 +553,9 @@ attributes:
     - AntibodyAntigenComplex
     - TCRpMHCComplex
     - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - ReceptorReactivity
     - QueryTCR
     - QueryIG
@@ -563,6 +572,9 @@ attributes:
     - AntibodyAntigenComplex
     - TCRpMHCComplex
     - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
     range: Epitope
   mhc:
@@ -575,6 +587,9 @@ attributes:
     domain_of:
     - TCRpMHCComplex
     - ReceptorComposite
+    - AlphaBetaReceptorComposite
+    - GammaDeltaReceptorComposite
+    - BCellReceptorComposite
     - QueryTCR
     range: MajorHistocompatibilityComplex
   tra_chain:
