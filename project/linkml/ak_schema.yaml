@@ -6047,6 +6047,24 @@ classes:
         range: ReceptorComposite
         multivalued: true
         inlined: true
+      ab_receptor_composites:
+        name: ab_receptor_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: AlphaBetaReceptorComposite
+        multivalued: true
+        inlined: true
+      gd_receptor_composites:
+        name: gd_receptor_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: GammaDeltaReceptorComposite
+        multivalued: true
+        inlined: true
+      bcell_receptor_composites:
+        name: bcell_receptor_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: BCellReceptorComposite
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation
@@ -6559,6 +6577,42 @@ classes:
     slots:
     - species
     - tcr_complex
+    - antibody_complex
+    - antigen
+    - epitope
+    - mhc
+  AlphaBetaReceptorComposite:
+    name: AlphaBetaReceptorComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    mixins:
+    - AlphaBetaTCR
+    slots:
+    - species
+    - tcr_complex
+    - antigen
+    - epitope
+    - mhc
+  GammaDeltaReceptorComposite:
+    name: GammaDeltaReceptorComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    mixins:
+    - GammaDeltaTCR
+    slots:
+    - species
+    - tcr_complex
+    - antigen
+    - epitope
+    - mhc
+  BCellReceptorComposite:
+    name: BCellReceptorComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AKObject
+    mixins:
+    - BCellReceptor
+    slots:
+    - species
     - antibody_complex
     - antigen
     - epitope

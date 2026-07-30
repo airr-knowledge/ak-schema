@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-30T17:57:29
+# Generation date: 2026-07-30T20:16:53
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -473,6 +473,18 @@ class ReceptorCompositeAkcId(AKObjectAkcId):
     pass
 
 
+class AlphaBetaReceptorCompositeAkcId(AKObjectAkcId):
+    pass
+
+
+class GammaDeltaReceptorCompositeAkcId(AKObjectAkcId):
+    pass
+
+
+class BCellReceptorCompositeAkcId(AKObjectAkcId):
+    pass
+
+
 class ModelAkcId(NamedThingAkcId):
     pass
 
@@ -938,6 +950,9 @@ class AIRRKnowledgeCommons(YAMLRoot):
     tcr_complexes: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
     antibody_complexes: Optional[Union[Dict[Union[str, AntibodyAntigenComplexAkcId], Union[dict, "AntibodyAntigenComplex"]], List[Union[dict, "AntibodyAntigenComplex"]]]] = empty_dict()
     receptor_composites: Optional[Union[Dict[Union[str, ReceptorCompositeAkcId], Union[dict, "ReceptorComposite"]], List[Union[dict, "ReceptorComposite"]]]] = empty_dict()
+    ab_receptor_composites: Optional[Union[Dict[Union[str, AlphaBetaReceptorCompositeAkcId], Union[dict, "AlphaBetaReceptorComposite"]], List[Union[dict, "AlphaBetaReceptorComposite"]]]] = empty_dict()
+    gd_receptor_composites: Optional[Union[Dict[Union[str, GammaDeltaReceptorCompositeAkcId], Union[dict, "GammaDeltaReceptorComposite"]], List[Union[dict, "GammaDeltaReceptorComposite"]]]] = empty_dict()
+    bcell_receptor_composites: Optional[Union[Dict[Union[str, BCellReceptorCompositeAkcId], Union[dict, "BCellReceptorComposite"]], List[Union[dict, "BCellReceptorComposite"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="investigations", slot_type=Investigation, key_name="akc_id", keyed=True)
@@ -1007,6 +1022,12 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="antibody_complexes", slot_type=AntibodyAntigenComplex, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="receptor_composites", slot_type=ReceptorComposite, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="ab_receptor_composites", slot_type=AlphaBetaReceptorComposite, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="gd_receptor_composites", slot_type=GammaDeltaReceptorComposite, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="bcell_receptor_composites", slot_type=BCellReceptorComposite, key_name="akc_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -2864,6 +2885,157 @@ class ReceptorComposite(AKObject):
 
         if self.trd_chain is not None and not isinstance(self.trd_chain, URIorCURIE):
             self.trd_chain = URIorCURIE(self.trd_chain)
+
+        if self.igh_chain is not None and not isinstance(self.igh_chain, URIorCURIE):
+            self.igh_chain = URIorCURIE(self.igh_chain)
+
+        if self.igk_chain is not None and not isinstance(self.igk_chain, URIorCURIE):
+            self.igk_chain = URIorCURIE(self.igk_chain)
+
+        if self.igl_chain is not None and not isinstance(self.igl_chain, URIorCURIE):
+            self.igl_chain = URIorCURIE(self.igl_chain)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class AlphaBetaReceptorComposite(AKObject):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["AlphaBetaReceptorComposite"]
+    class_class_curie: ClassVar[str] = "ak_schema:AlphaBetaReceptorComposite"
+    class_name: ClassVar[str] = "AlphaBetaReceptorComposite"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.AlphaBetaReceptorComposite
+
+    akc_id: Union[str, AlphaBetaReceptorCompositeAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
+    tcr_complex: Optional[Union[str, TCRpMHCComplexAkcId]] = None
+    antigen: Optional[Union[str, AntigenAkcId]] = None
+    epitope: Optional[Union[str, EpitopeAkcId]] = None
+    mhc: Optional[Union[str, MajorHistocompatibilityComplexAkcId]] = None
+    paired_chain: Optional[Union[bool, Bool]] = None
+    tra_chain: Optional[Union[str, URIorCURIE]] = None
+    trb_chain: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, AlphaBetaReceptorCompositeAkcId):
+            self.akc_id = AlphaBetaReceptorCompositeAkcId(self.akc_id)
+
+        if self.tcr_complex is not None and not isinstance(self.tcr_complex, TCRpMHCComplexAkcId):
+            self.tcr_complex = TCRpMHCComplexAkcId(self.tcr_complex)
+
+        if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
+            self.antigen = AntigenAkcId(self.antigen)
+
+        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
+            self.epitope = EpitopeAkcId(self.epitope)
+
+        if self.mhc is not None and not isinstance(self.mhc, MajorHistocompatibilityComplexAkcId):
+            self.mhc = MajorHistocompatibilityComplexAkcId(self.mhc)
+
+        if self.paired_chain is not None and not isinstance(self.paired_chain, Bool):
+            self.paired_chain = Bool(self.paired_chain)
+
+        if self.tra_chain is not None and not isinstance(self.tra_chain, URIorCURIE):
+            self.tra_chain = URIorCURIE(self.tra_chain)
+
+        if self.trb_chain is not None and not isinstance(self.trb_chain, URIorCURIE):
+            self.trb_chain = URIorCURIE(self.trb_chain)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class GammaDeltaReceptorComposite(AKObject):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["GammaDeltaReceptorComposite"]
+    class_class_curie: ClassVar[str] = "ak_schema:GammaDeltaReceptorComposite"
+    class_name: ClassVar[str] = "GammaDeltaReceptorComposite"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.GammaDeltaReceptorComposite
+
+    akc_id: Union[str, GammaDeltaReceptorCompositeAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
+    tcr_complex: Optional[Union[str, TCRpMHCComplexAkcId]] = None
+    antigen: Optional[Union[str, AntigenAkcId]] = None
+    epitope: Optional[Union[str, EpitopeAkcId]] = None
+    mhc: Optional[Union[str, MajorHistocompatibilityComplexAkcId]] = None
+    paired_chain: Optional[Union[bool, Bool]] = None
+    trg_chain: Optional[Union[str, URIorCURIE]] = None
+    trd_chain: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, GammaDeltaReceptorCompositeAkcId):
+            self.akc_id = GammaDeltaReceptorCompositeAkcId(self.akc_id)
+
+        if self.tcr_complex is not None and not isinstance(self.tcr_complex, TCRpMHCComplexAkcId):
+            self.tcr_complex = TCRpMHCComplexAkcId(self.tcr_complex)
+
+        if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
+            self.antigen = AntigenAkcId(self.antigen)
+
+        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
+            self.epitope = EpitopeAkcId(self.epitope)
+
+        if self.mhc is not None and not isinstance(self.mhc, MajorHistocompatibilityComplexAkcId):
+            self.mhc = MajorHistocompatibilityComplexAkcId(self.mhc)
+
+        if self.paired_chain is not None and not isinstance(self.paired_chain, Bool):
+            self.paired_chain = Bool(self.paired_chain)
+
+        if self.trg_chain is not None and not isinstance(self.trg_chain, URIorCURIE):
+            self.trg_chain = URIorCURIE(self.trg_chain)
+
+        if self.trd_chain is not None and not isinstance(self.trd_chain, URIorCURIE):
+            self.trd_chain = URIorCURIE(self.trd_chain)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class BCellReceptorComposite(AKObject):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["BCellReceptorComposite"]
+    class_class_curie: ClassVar[str] = "ak_schema:BCellReceptorComposite"
+    class_name: ClassVar[str] = "BCellReceptorComposite"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.BCellReceptorComposite
+
+    akc_id: Union[str, BCellReceptorCompositeAkcId] = None
+    species: Optional[Union[str, "SpeciesOntology"]] = None
+    antibody_complex: Optional[Union[str, AntibodyAntigenComplexAkcId]] = None
+    antigen: Optional[Union[str, AntigenAkcId]] = None
+    epitope: Optional[Union[str, EpitopeAkcId]] = None
+    mhc: Optional[Union[str, MajorHistocompatibilityComplexAkcId]] = None
+    paired_chain: Optional[Union[bool, Bool]] = None
+    igh_chain: Optional[Union[str, URIorCURIE]] = None
+    igk_chain: Optional[Union[str, URIorCURIE]] = None
+    igl_chain: Optional[Union[str, URIorCURIE]] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, BCellReceptorCompositeAkcId):
+            self.akc_id = BCellReceptorCompositeAkcId(self.akc_id)
+
+        if self.antibody_complex is not None and not isinstance(self.antibody_complex, AntibodyAntigenComplexAkcId):
+            self.antibody_complex = AntibodyAntigenComplexAkcId(self.antibody_complex)
+
+        if self.antigen is not None and not isinstance(self.antigen, AntigenAkcId):
+            self.antigen = AntigenAkcId(self.antigen)
+
+        if self.epitope is not None and not isinstance(self.epitope, EpitopeAkcId):
+            self.epitope = EpitopeAkcId(self.epitope)
+
+        if self.mhc is not None and not isinstance(self.mhc, MajorHistocompatibilityComplexAkcId):
+            self.mhc = MajorHistocompatibilityComplexAkcId(self.mhc)
+
+        if self.paired_chain is not None and not isinstance(self.paired_chain, Bool):
+            self.paired_chain = Bool(self.paired_chain)
 
         if self.igh_chain is not None and not isinstance(self.igh_chain, URIorCURIE):
             self.igh_chain = URIorCURIE(self.igh_chain)
@@ -8386,6 +8558,15 @@ slots.aIRRKnowledgeCommons__antibody_complexes = Slot(uri=AK_SCHEMA.antibody_com
 
 slots.aIRRKnowledgeCommons__receptor_composites = Slot(uri=AK_SCHEMA.receptor_composites, name="aIRRKnowledgeCommons__receptor_composites", curie=AK_SCHEMA.curie('receptor_composites'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, ReceptorCompositeAkcId], Union[dict, ReceptorComposite]], List[Union[dict, ReceptorComposite]]]])
+
+slots.aIRRKnowledgeCommons__ab_receptor_composites = Slot(uri=AK_SCHEMA.ab_receptor_composites, name="aIRRKnowledgeCommons__ab_receptor_composites", curie=AK_SCHEMA.curie('ab_receptor_composites'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__ab_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, AlphaBetaReceptorCompositeAkcId], Union[dict, AlphaBetaReceptorComposite]], List[Union[dict, AlphaBetaReceptorComposite]]]])
+
+slots.aIRRKnowledgeCommons__gd_receptor_composites = Slot(uri=AK_SCHEMA.gd_receptor_composites, name="aIRRKnowledgeCommons__gd_receptor_composites", curie=AK_SCHEMA.curie('gd_receptor_composites'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__gd_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, GammaDeltaReceptorCompositeAkcId], Union[dict, GammaDeltaReceptorComposite]], List[Union[dict, GammaDeltaReceptorComposite]]]])
+
+slots.aIRRKnowledgeCommons__bcell_receptor_composites = Slot(uri=AK_SCHEMA.bcell_receptor_composites, name="aIRRKnowledgeCommons__bcell_receptor_composites", curie=AK_SCHEMA.curie('bcell_receptor_composites'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__bcell_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, BCellReceptorCompositeAkcId], Union[dict, BCellReceptorComposite]], List[Union[dict, BCellReceptorComposite]]]])
 
 slots.queryObject__tcr = Slot(uri=AK_SCHEMA.tcr, name="queryObject__tcr", curie=AK_SCHEMA.curie('tcr'),
                    model_uri=AK_SCHEMA.queryObject__tcr, domain=None, range=Optional[Union[dict, QueryTCR]])

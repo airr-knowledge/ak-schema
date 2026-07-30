@@ -3245,6 +3245,9 @@
         "AntibodyAntigenComplex",
         "TCRpMHCComplex",
         "ReceptorComposite",
+        "AlphaBetaReceptorComposite",
+        "GammaDeltaReceptorComposite",
+        "BCellReceptorComposite",
         "ReceptorReactivity"
       ],
       "range": "Antigen",
@@ -3256,11 +3259,14 @@
       "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/epitope",
-      "owner": "ReceptorComposite",
+      "owner": "BCellReceptorComposite",
       "domain_of": [
         "AntibodyAntigenComplex",
         "TCRpMHCComplex",
-        "ReceptorComposite"
+        "ReceptorComposite",
+        "AlphaBetaReceptorComposite",
+        "GammaDeltaReceptorComposite",
+        "BCellReceptorComposite"
       ],
       "range": "Epitope",
       "@type": "SlotDefinition"
@@ -3324,10 +3330,13 @@
       "description": "Major histocompatibility complex",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc",
-      "owner": "ReceptorComposite",
+      "owner": "BCellReceptorComposite",
       "domain_of": [
         "TCRpMHCComplex",
-        "ReceptorComposite"
+        "ReceptorComposite",
+        "AlphaBetaReceptorComposite",
+        "GammaDeltaReceptorComposite",
+        "BCellReceptorComposite"
       ],
       "range": "MajorHistocompatibilityComplex",
       "@type": "SlotDefinition"
@@ -3392,9 +3401,11 @@
       "description": "TCR complex",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complex",
-      "owner": "ReceptorComposite",
+      "owner": "GammaDeltaReceptorComposite",
       "domain_of": [
-        "ReceptorComposite"
+        "ReceptorComposite",
+        "AlphaBetaReceptorComposite",
+        "GammaDeltaReceptorComposite"
       ],
       "range": "TCRpMHCComplex",
       "@type": "SlotDefinition"
@@ -3405,9 +3416,10 @@
       "description": "Antibody antigen complex",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/antibody_complex",
-      "owner": "ReceptorComposite",
+      "owner": "BCellReceptorComposite",
       "domain_of": [
-        "ReceptorComposite"
+        "ReceptorComposite",
+        "BCellReceptorComposite"
       ],
       "range": "AntibodyAntigenComplex",
       "@type": "SlotDefinition"
@@ -4531,6 +4543,9 @@
         "AntibodyAntigenComplex",
         "TCRpMHCComplex",
         "ReceptorComposite",
+        "AlphaBetaReceptorComposite",
+        "GammaDeltaReceptorComposite",
+        "BCellReceptorComposite",
         "AlleleDescription",
         "GermlineSet",
         "Subject"
@@ -12101,6 +12116,48 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__ab_receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/ab_receptor_composites",
+      "alias": "ab_receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "AlphaBetaReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__gd_receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/gd_receptor_composites",
+      "alias": "gd_receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "GammaDeltaReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__bcell_receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/bcell_receptor_composites",
+      "alias": "bcell_receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "BCellReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "queryObject__tcr",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr",
@@ -12988,7 +13045,10 @@
         "aIRRKnowledgeCommons__mhcs",
         "aIRRKnowledgeCommons__tcr_complexes",
         "aIRRKnowledgeCommons__antibody_complexes",
-        "aIRRKnowledgeCommons__receptor_composites"
+        "aIRRKnowledgeCommons__receptor_composites",
+        "aIRRKnowledgeCommons__ab_receptor_composites",
+        "aIRRKnowledgeCommons__gd_receptor_composites",
+        "aIRRKnowledgeCommons__bcell_receptor_composites"
       ],
       "slot_usage": {},
       "attributes": [
@@ -13252,6 +13312,30 @@
           "name": "receptor_composites",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "ReceptorComposite",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "ab_receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "AlphaBetaReceptorComposite",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "gd_receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "GammaDeltaReceptorComposite",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "bcell_receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "BCellReceptorComposite",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -14500,6 +14584,76 @@
       ],
       "slot_usage": {},
       "class_uri": "https://github.com/airr-knowledge/ak-schema/ReceptorComposite",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "AlphaBetaReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/AlphaBetaReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKObject",
+      "mixins": [
+        "AlphaBetaTCR"
+      ],
+      "slots": [
+        "akc_id",
+        "species",
+        "tcr_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "paired_chain",
+        "tra_chain",
+        "trb_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/AlphaBetaReceptorComposite",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "GammaDeltaReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/GammaDeltaReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKObject",
+      "mixins": [
+        "GammaDeltaTCR"
+      ],
+      "slots": [
+        "akc_id",
+        "species",
+        "tcr_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "paired_chain",
+        "trg_chain",
+        "trd_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/GammaDeltaReceptorComposite",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "BCellReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AKObject",
+      "mixins": [
+        "BCellReceptor"
+      ],
+      "slots": [
+        "akc_id",
+        "species",
+        "antibody_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "paired_chain",
+        "igh_chain",
+        "igk_chain",
+        "igl_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/BCellReceptorComposite",
       "@type": "ClassDefinition"
     },
     {
@@ -15797,9 +15951,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-30T17:57:24",
-  "source_file_size": 220467,
-  "generation_date": "2026-07-30T17:57:26",
+  "source_file_date": "2026-07-30T20:16:47",
+  "source_file_size": 221914,
+  "generation_date": "2026-07-30T20:16:49",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
