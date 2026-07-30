@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-28T20:10:25
+# Generation date: 2026-07-30T17:57:29
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -934,6 +934,7 @@ class AIRRKnowledgeCommons(YAMLRoot):
     bcell_receptors: Optional[Union[Dict[Union[str, BCellReceptorAkcId], Union[dict, "BCellReceptor"]], List[Union[dict, "BCellReceptor"]]]] = empty_dict()
     antigens: Optional[Union[Dict[Union[str, AntigenAkcId], Union[dict, "Antigen"]], List[Union[dict, "Antigen"]]]] = empty_dict()
     epitopes: Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, "Epitope"]], List[Union[dict, "Epitope"]]]] = empty_dict()
+    mhcs: Optional[Union[Dict[Union[str, MajorHistocompatibilityComplexAkcId], Union[dict, "MajorHistocompatibilityComplex"]], List[Union[dict, "MajorHistocompatibilityComplex"]]]] = empty_dict()
     tcr_complexes: Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, "TCRpMHCComplex"]], List[Union[dict, "TCRpMHCComplex"]]]] = empty_dict()
     antibody_complexes: Optional[Union[Dict[Union[str, AntibodyAntigenComplexAkcId], Union[dict, "AntibodyAntigenComplex"]], List[Union[dict, "AntibodyAntigenComplex"]]]] = empty_dict()
     receptor_composites: Optional[Union[Dict[Union[str, ReceptorCompositeAkcId], Union[dict, "ReceptorComposite"]], List[Union[dict, "ReceptorComposite"]]]] = empty_dict()
@@ -998,6 +999,8 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="antigens", slot_type=Antigen, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="epitopes", slot_type=Epitope, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="mhcs", slot_type=MajorHistocompatibilityComplex, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="tcr_complexes", slot_type=TCRpMHCComplex, key_name="akc_id", keyed=True)
 
@@ -8371,6 +8374,9 @@ slots.aIRRKnowledgeCommons__antigens = Slot(uri=AK_SCHEMA.antigens, name="aIRRKn
 
 slots.aIRRKnowledgeCommons__epitopes = Slot(uri=AK_SCHEMA.epitopes, name="aIRRKnowledgeCommons__epitopes", curie=AK_SCHEMA.curie('epitopes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__epitopes, domain=None, range=Optional[Union[Dict[Union[str, EpitopeAkcId], Union[dict, Epitope]], List[Union[dict, Epitope]]]])
+
+slots.aIRRKnowledgeCommons__mhcs = Slot(uri=AK_SCHEMA.mhcs, name="aIRRKnowledgeCommons__mhcs", curie=AK_SCHEMA.curie('mhcs'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__mhcs, domain=None, range=Optional[Union[Dict[Union[str, MajorHistocompatibilityComplexAkcId], Union[dict, MajorHistocompatibilityComplex]], List[Union[dict, MajorHistocompatibilityComplex]]]])
 
 slots.aIRRKnowledgeCommons__tcr_complexes = Slot(uri=AK_SCHEMA.tcr_complexes, name="aIRRKnowledgeCommons__tcr_complexes", curie=AK_SCHEMA.curie('tcr_complexes'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__tcr_complexes, domain=None, range=Optional[Union[Dict[Union[str, TCRpMHCComplexAkcId], Union[dict, TCRpMHCComplex]], List[Union[dict, TCRpMHCComplex]]]])

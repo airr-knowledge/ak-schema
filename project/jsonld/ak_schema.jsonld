@@ -12045,6 +12045,20 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__mhcs",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhcs",
+      "alias": "mhcs",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "MajorHistocompatibilityComplex",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "aIRRKnowledgeCommons__tcr_complexes",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr_complexes",
@@ -12971,6 +12985,7 @@
         "aIRRKnowledgeCommons__bcell_receptors",
         "aIRRKnowledgeCommons__antigens",
         "aIRRKnowledgeCommons__epitopes",
+        "aIRRKnowledgeCommons__mhcs",
         "aIRRKnowledgeCommons__tcr_complexes",
         "aIRRKnowledgeCommons__antibody_complexes",
         "aIRRKnowledgeCommons__receptor_composites"
@@ -13205,6 +13220,14 @@
           "name": "epitopes",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "Epitope",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "mhcs",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "MajorHistocompatibilityComplex",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -15774,9 +15797,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-28T20:10:20",
-  "source_file_size": 220277,
-  "generation_date": "2026-07-28T20:10:21",
+  "source_file_date": "2026-07-30T17:57:24",
+  "source_file_size": 220467,
+  "generation_date": "2026-07-30T17:57:26",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

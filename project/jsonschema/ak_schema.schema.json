@@ -414,6 +414,22 @@
                         "null"
                     ]
                 },
+                "mhcs": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/MajorHistocompatibilityComplex__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "participants": {
                     "additionalProperties": {
                         "anyOf": [
@@ -7245,6 +7261,37 @@
             "title": "MajorHistocompatibilityComplex",
             "type": "object"
         },
+        "MajorHistocompatibilityComplex__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "mhc_class": {
+                    "$ref": "#/$defs/MhcClassEnum",
+                    "description": "Class of the major histocompatibility complex"
+                },
+                "mhc_label": {
+                    "description": "Human-readable label of the major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc_ref": {
+                    "description": "MHC Restriction Ontology term id",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "MajorHistocompatibilityComplex",
+            "type": "object"
+        },
         "MeasurementUnitOntology": {
             "description": "",
             "title": "MeasurementUnitOntology",
@@ -12478,6 +12525,22 @@
                                 "$ref": "#/$defs/SpecimenCollection__identifier_optional"
                             }
                         ]
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "mhcs": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/MajorHistocompatibilityComplex__identifier_optional"
                     },
                     {
                         "type": "null"

@@ -6023,6 +6023,12 @@ classes:
         range: Epitope
         multivalued: true
         inlined: true
+      mhcs:
+        name: mhcs
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: MajorHistocompatibilityComplex
+        multivalued: true
+        inlined: true
       tcr_complexes:
         name: tcr_complexes
         from_schema: https://github.com/airr-knowledge/ak-schema
