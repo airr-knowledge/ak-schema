@@ -1,0 +1,54 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+# classes for database optimization
+classes:
+
+  # everything together
+  ReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - AlphaBetaTCR
+      - GammaDeltaTCR
+      - BCellReceptor
+    slots:
+      - species
+      - tcr_complex
+      - antibody_complex
+      - antigen
+      - epitope
+      - mhc
+
+  AlphaBetaReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - AlphaBetaTCR
+    slots:
+      - species
+      - tcr_complex
+      - antigen
+      - epitope
+      - mhc
+
+  GammaDeltaReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - GammaDeltaTCR
+    slots:
+      - species
+      - tcr_complex
+      - antigen
+      - epitope
+      - mhc
+
+  BCellReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - BCellReceptor
+    slots:
+      - species
+      - antibody_complex
+      - antigen
+      - epitope
+      - mhc

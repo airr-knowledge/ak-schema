@@ -141,3 +141,15 @@ classes:
         range: ReceptorComposite
         multivalued: true
         inlined: true
+      ab_receptor_composites:
+        range: AlphaBetaReceptorComposite
+        multivalued: true
+        inlined: true
+      gd_receptor_composites:
+        range: GammaDeltaReceptorComposite
+        multivalued: true
+        inlined: true
+      bcell_receptor_composites:
+        range: BCellReceptorComposite
+        multivalued: true
+        inlined: true

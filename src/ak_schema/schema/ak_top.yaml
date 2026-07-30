@@ -58,6 +58,7 @@ imports:
   - ak_data
   - ak_biology
   - ak_immune_system
+  - ak_optimize
   - ak_simulations
   - ak_metrics
   - ak_airr
