@@ -389,6 +389,15 @@
     click LifeEvent href "../LifeEvent"
 
 
+      AIRRKnowledgeCommons : mhcs
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" MajorHistocompatibilityComplex : mhcs
+    click MajorHistocompatibilityComplex href "../MajorHistocompatibilityComplex"
+
+
       AIRRKnowledgeCommons : participants
 
 
@@ -673,6 +682,12 @@
 <tr>
 <td><a href="../epitopes/">epitopes</a></td>
 <td>* <br/> <a href="../Epitope/">Epitope</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../mhcs/">mhcs</a></td>
+<td>* <br/> <a href="../MajorHistocompatibilityComplex/">MajorHistocompatibilityComplex</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -989,6 +1004,15 @@ attributes:
     - AIRRKnowledgeCommons
     - Antigen
     range: Epitope
+    multivalued: true
+    inlined: true
+  mhcs:
+    name: mhcs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: MajorHistocompatibilityComplex
     multivalued: true
     inlined: true
   tcr_complexes:
@@ -1351,6 +1375,17 @@ attributes:
     - AIRRKnowledgeCommons
     - Antigen
     range: Epitope
+    multivalued: true
+    inlined: true
+  mhcs:
+    name: mhcs
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: mhcs
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: MajorHistocompatibilityComplex
     multivalued: true
     inlined: true
   tcr_complexes:
