@@ -125,6 +125,10 @@ classes:
         range: Epitope
         multivalued: true
         inlined: true
+      mhcs:
+        range: MajorHistocompatibilityComplex
+        multivalued: true
+        inlined: true
       tcr_complexes:
         range: TCRpMHCComplex
         multivalued: true
