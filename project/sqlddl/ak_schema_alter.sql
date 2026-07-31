@@ -14,7 +14,7 @@ ALTER TABLE "LifeEvent"
 ADD COLUMN exposure_material VARCHAR, 
 ADD COLUMN disease TEXT REFERENCES "Diseases" (term_id), 
 ADD COLUMN disease_stage TEXT, 
-ADD COLUMN disease_severity TEXT, 
+ADD COLUMN disease_severity TEXT;
 
 -- roll-up fields from AIRRSequencingData
 ALTER TABLE "SequenceData"
