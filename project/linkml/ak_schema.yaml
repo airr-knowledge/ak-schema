@@ -1604,6 +1604,11 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: ReceptorComposite
     multivalued: true
+  sequence_files:
+    name: sequence_files
+    description: Set of sequencing files produced by the sequencing run
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: AIRRSequencingData
   measurement_value:
     name: measurement_value
     description: The measurement result value
@@ -2253,6 +2258,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Acknowledgement
     multivalued: true
+    inlined: true
   lab_address:
     name: lab_address
     annotations:
@@ -2635,6 +2641,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: SequenceDelineationV
     multivalued: true
+    inlined: true
   unrearranged_support:
     name: unrearranged_support
     annotations:
@@ -2645,6 +2652,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: UnrearrangedSequence
     multivalued: true
+    inlined: true
   rearranged_support:
     name: rearranged_support
     annotations:
@@ -2655,6 +2663,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: RearrangedSequence
     multivalued: true
+    inlined: true
   paralogs:
     name: paralogs
     annotations:
@@ -2737,6 +2746,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: AlleleDescription
     multivalued: true
+    inlined: true
   receptor_genotype_set_id:
     name: receptor_genotype_set_id
     annotations:
@@ -2758,6 +2768,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Genotype
     multivalued: true
+    inlined: true
   receptor_genotype_id:
     name: receptor_genotype_id
     annotations:
@@ -2779,6 +2790,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: DocumentedAllele
     multivalued: true
+    inlined: true
   undocumented_alleles:
     name: undocumented_alleles
     annotations:
@@ -2790,6 +2802,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: UndocumentedAllele
     multivalued: true
+    inlined: true
   deleted_genes:
     name: deleted_genes
     annotations:
@@ -2800,6 +2813,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: DeletedGene
     multivalued: true
+    inlined: true
   inference_process:
     name: inference_process
     annotations:
@@ -2847,6 +2861,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MHCGenotype
     multivalued: true
+    inlined: true
   mhc_genotype_id:
     name: mhc_genotype_id
     annotations:
@@ -2867,6 +2882,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MHCAllele
     multivalued: true
+    inlined: true
   mhc_genotyping_method:
     name: mhc_genotyping_method
     annotations:
@@ -2905,6 +2921,7 @@ slots:
     description: Immune receptor genotype set for this subject.
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: GenotypeSet
+    inlined: true
   mhc_genotype_set:
     name: mhc_genotype_set
     annotations:
@@ -2914,6 +2931,7 @@ slots:
     description: MHC genotype set for this subject.
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: MHCGenotypeSet
+    inlined: true
   study_id:
     name: study_id
     annotations:
@@ -3174,6 +3192,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Diagnosis
     multivalued: true
+    inlined: true
   genotype:
     name: genotype
     annotations:
@@ -3183,6 +3202,7 @@ slots:
     description: ''
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: SubjectGenotype
+    inlined: true
   study_group_description:
     name: study_group_description
     annotations:
@@ -3567,6 +3587,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: PCRTarget
     multivalued: true
+    inlined: true
   complete_sequences:
     name: complete_sequences
     annotations:
@@ -3667,6 +3688,7 @@ slots:
     description: Set of sequencing files produced by the sequencing run
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: SequencingData
+    inlined: true
   sequencing_data_id:
     name: sequencing_data_id
     annotations:
@@ -3893,6 +3915,7 @@ slots:
     description: Study object
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Study
+    inlined: true
   subject:
     name: subject
     annotations:
@@ -3902,6 +3925,7 @@ slots:
     description: Subject object
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Subject
+    inlined: true
   sample:
     name: sample
     annotations:
@@ -3912,6 +3936,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: SampleProcessing
     multivalued: true
+    inlined: true
   data_processing:
     name: data_processing
     annotations:
@@ -3922,6 +3947,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: DataProcessing
     multivalued: true
+    inlined: true
   time_point:
     name: time_point
     annotations:
@@ -3931,6 +3957,7 @@ slots:
     description: Time point designation for this repertoire within the group
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: TimePoint
+    inlined: true
   repertoire_group_id:
     name: repertoire_group_id
     annotations:
@@ -3969,6 +3996,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: RepertoireFilter
     multivalued: true
+    inlined: true
   segment:
     name: segment
     annotations:
@@ -5404,6 +5432,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: Node
     multivalued: true
+    inlined: true
   rearrangements:
     name: rearrangements
     annotations:
@@ -5600,6 +5629,7 @@ slots:
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: ReceptorReactivity
     multivalued: true
+    inlined: true
   ligand_type:
     name: ligand_type
     annotations:
@@ -5720,6 +5750,24 @@ slots:
     description: The unit of the measurement
     from_schema: https://github.com/airr-knowledge/ak-schema
     range: string
+  version:
+    name: version
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: string
+  contact:
+    name: contact
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: Contact
+    inlined: true
+  license:
+    name: license
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: License
+    inlined: true
+  url:
+    name: url
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    range: uri
 classes:
   AKObject:
     name: AKObject
@@ -6221,10 +6269,7 @@ classes:
     - tcr_complexes
     - antibody_complexes
     - receptor_composites
-    slot_usage:
-      sequencing_files:
-        name: sequencing_files
-        range: AIRRSequencingData
+    - sequence_files
     class_uri: OBI:0600047
   TCellReceptorEpitopeBindingAssay:
     name: TCellReceptorEpitopeBindingAssay
@@ -7446,4 +7491,40 @@ classes:
         range: Investigation
         multivalued: false
         inlined: true
+  RepertoireDataFile:
+    name: RepertoireDataFile
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    attributes:
+      info:
+        name: info
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Info
+        inlined: true
+      repertoires:
+        name: repertoires
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: Repertoire
+        multivalued: true
+        inlined_as_list: true
+  Info:
+    name: Info
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - title
+    - description
+    - version
+    - contact
+    - license
+  Contact:
+    name: Contact
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - name
+    - url
+  License:
+    name: License
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    slots:
+    - name
+    - url
 source_file: src/ak_schema/schema/ak_top.yaml

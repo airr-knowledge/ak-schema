@@ -63,9 +63,11 @@ classes:
       - tcr_complexes
       - antibody_complexes
       - receptor_composites
-    slot_usage:
-      sequencing_files:
-        range: AIRRSequencingData
+      - sequence_files
+    # slot_usage:
+    #   sequencing_files:
+    #     range: AIRRSequencingData
+    #     inlined: false
 
 # todo: for T/B cell assay -> epitope, antigen and MHC are already in the complex, redundant to have in the Assay level?
 
@@ -132,6 +134,11 @@ slots:
     description: Composite object for database optimization
     range: ReceptorComposite
     multivalued: true
+  
+  sequence_files:
+    name: sequence_files
+    description: Set of sequencing files produced by the sequencing run
+    range: AIRRSequencingData
 
 
 enums:
