@@ -70,6 +70,8 @@ classes:
         range: TaxonomicSpecies
       sex:
         range: PhenotypeAndTraits
+      age_unit:
+        range: Units
 
   StudyEvent:
     is_a: Process

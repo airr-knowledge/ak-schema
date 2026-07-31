@@ -139,6 +139,9 @@ classes:
       - mhc_ref # MRO CURIE
       - mhc_class
       - mhc_label
+    slot_usage:
+      mhc_ref:
+        range: MHCRestriction
 
   AntibodyAntigenComplex:
     abstract: true

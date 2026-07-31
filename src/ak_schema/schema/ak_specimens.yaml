@@ -10,6 +10,9 @@ classes:
     slots:
       - life_event
       - tissue # AIRR standard
+    slot_usage:
+      tissue:
+        range: UberAnatomy
 
   SpecimenCollection:
     is_a: LifeEvent
@@ -38,6 +41,11 @@ classes:
       - cell_quality
       - cell_isolation
       - cell_processing_protocol
+    slot_usage:
+      cell_subset:
+        range: Cells
+      cell_species:
+        range: TaxonomicSpecies
 
   LibraryPreparationProcessing:
     is_a: SpecimenProcessing
