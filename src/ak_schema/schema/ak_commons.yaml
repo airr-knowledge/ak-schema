@@ -137,6 +137,8 @@ classes:
         range: AntibodyAntigenComplex
         multivalued: true
         inlined: true
+
+      # collections for database query optimization
       receptor_composites:
         range: ReceptorComposite
         multivalued: true
@@ -151,5 +153,24 @@ classes:
         inlined: true
       bcell_receptor_composites:
         range: BCellReceptorComposite
+        multivalued: true
+        inlined: true
+
+      # separate out paired chain data
+      # range has to be different
+      paired_receptor_composites:
+        range: PairedReceptorComposite
+        multivalued: true
+        inlined: true
+      paired_ab_receptor_composites:
+        range: PairedAlphaBetaReceptorComposite
+        multivalued: true
+        inlined: true
+      paired_gd_receptor_composites:
+        range: PairedGammaDeltaReceptorComposite
+        multivalued: true
+        inlined: true
+      paired_bcell_receptor_composites:
+        range: PairedBCellReceptorComposite
         multivalued: true
         inlined: true

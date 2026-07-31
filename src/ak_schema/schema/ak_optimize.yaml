@@ -52,3 +52,21 @@ classes:
       - antigen
       - epitope
       - mhc
+
+# The V2 database has issues with efficiently querying just
+# paired chain data amongst the large single chain data.
+# Separating the receptor types might help to a certain degree
+# but we will also separate the paired chain so we can test
+# different optimization strategies.
+
+  PairedReceptorComposite:
+    is_a: ReceptorComposite
+
+  PairedAlphaBetaReceptorComposite:
+    is_a: AlphaBetaReceptorComposite
+
+  PairedGammaDeltaReceptorComposite:
+    is_a: GammaDeltaReceptorComposite
+
+  PairedBCellReceptorComposite:
+    is_a: BCellReceptorComposite
