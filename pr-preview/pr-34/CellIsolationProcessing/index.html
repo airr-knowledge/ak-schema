@@ -224,8 +224,8 @@
 
 
 
-    CellIsolationProcessing --&gt; "0..1" CellSpeciesOntology : cell_species
-    click CellSpeciesOntology href "../CellSpeciesOntology"
+    CellIsolationProcessing --&gt; "0..1" TaxonomicSpecies : cell_species
+    click TaxonomicSpecies href "../TaxonomicSpecies"
 
 
       CellIsolationProcessing : cell_storage
@@ -235,8 +235,8 @@
 
 
 
-    CellIsolationProcessing --&gt; "0..1" CellSubsetOntology : cell_subset
-    click CellSubsetOntology href "../CellSubsetOntology"
+    CellIsolationProcessing --&gt; "0..1" Cells : cell_subset
+    click Cells href "../Cells"
 
 
       CellIsolationProcessing : cells_per_reaction
@@ -295,7 +295,7 @@
 </tr>
 <tr>
 <td><a href="../cell_subset/">cell_subset</a></td>
-<td>0..1 <br/> <a href="../CellSubsetOntology/">CellSubsetOntology</a></td>
+<td>0..1 <br/> <a href="../Cells/">Cells</a></td>
 <td>Commonly-used designation of isolated cell population</td>
 <td>direct</td>
 </tr>
@@ -307,7 +307,7 @@
 </tr>
 <tr>
 <td><a href="../cell_species/">cell_species</a></td>
-<td>0..1 <br/> <a href="../CellSpeciesOntology/">CellSpeciesOntology</a></td>
+<td>0..1 <br/> <a href="../TaxonomicSpecies/">TaxonomicSpecies</a></td>
 <td>Binomial designation of the species from which the analyzed cells originate</td>
 <td>direct</td>
 </tr>
@@ -422,6 +422,13 @@ slots:
 - cell_quality
 - cell_isolation
 - cell_processing_protocol
+slot_usage:
+  cell_subset:
+    name: cell_subset
+    range: Cells
+  cell_species:
+    name: cell_species
+    range: TaxonomicSpecies
 class_uri: OBI:00000512
 
 </code></pre>
@@ -431,6 +438,13 @@ class_uri: OBI:00000512
 <pre><code class="language-yaml">name: CellIsolationProcessing
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: SpecimenProcessing
+slot_usage:
+  cell_subset:
+    name: cell_subset
+    range: Cells
+  cell_species:
+    name: cell_species
+    range: TaxonomicSpecies
 attributes:
   tissue_processing:
     name: tissue_processing
@@ -464,7 +478,7 @@ attributes:
     - CellIsolationProcessing
     - CellProcessing
     - SampleProcessing
-    range: CellSubsetOntology
+    range: Cells
   cell_phenotype:
     name: cell_phenotype
     annotations:
@@ -502,7 +516,7 @@ attributes:
     - CellIsolationProcessing
     - CellProcessing
     - SampleProcessing
-    range: CellSpeciesOntology
+    range: TaxonomicSpecies
   single_cell:
     name: single_cell
     annotations:
@@ -628,7 +642,6 @@ attributes:
     alias: specimen
     owner: CellIsolationProcessing
     domain_of:
-    - SpecimenCollection
     - SpecimenProcessing
     - Assay
     - QueryExperiment

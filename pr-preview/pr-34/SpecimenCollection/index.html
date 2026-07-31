@@ -247,15 +247,6 @@
     click Participant href "../Participant"
 
 
-      SpecimenCollection : specimen
-
-
-
-
-    SpecimenCollection --&gt; "0..1" Specimen : specimen
-    click Specimen href "../Specimen"
-
-
       SpecimenCollection : start
 
       SpecimenCollection : study_event
@@ -309,12 +300,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><a href="../specimen/">specimen</a></td>
-<td>0..1 <br/> <a href="../Specimen/">Specimen</a></td>
-<td>The specimen that was input for an assay</td>
-<td>direct</td>
-</tr>
 <tr>
 <td><a href="../type/">type</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
@@ -439,8 +424,6 @@
 <pre><code class="language-yaml">name: SpecimenCollection
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: LifeEvent
-slots:
-- specimen
 class_uri: OBI:0000659
 
 </code></pre>
@@ -451,20 +434,6 @@ class_uri: OBI:0000659
 from_schema: https://github.com/airr-knowledge/ak-schema
 is_a: LifeEvent
 attributes:
-  specimen:
-    name: specimen
-    description: The specimen that was input for an assay
-    from_schema: https://github.com/airr-knowledge/ak-schema
-    rank: 1000
-    slot_uri: OBI:0000293
-    alias: specimen
-    owner: SpecimenCollection
-    domain_of:
-    - SpecimenCollection
-    - SpecimenProcessing
-    - Assay
-    - QueryExperiment
-    range: Specimen
   type:
     name: type
     from_schema: https://github.com/airr-knowledge/ak-schema

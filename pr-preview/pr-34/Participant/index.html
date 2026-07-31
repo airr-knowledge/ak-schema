@@ -224,8 +224,8 @@
 
 
 
-    Participant --&gt; "0..1" AgeUnitOntology : age_unit
-    click AgeUnitOntology href "../AgeUnitOntology"
+    Participant --&gt; "0..1" Units : age_unit
+    click Units href "../Units"
 
 
       Participant : akc_id
@@ -347,7 +347,7 @@
 </tr>
 <tr>
 <td><a href="../age_unit/">age_unit</a></td>
-<td>0..1 <br/> <a href="../AgeUnitOntology/">AgeUnitOntology</a></td>
+<td>0..1 <br/> <a href="../Units/">Units</a></td>
 <td>Unit of age range</td>
 <td>direct</td>
 </tr>
@@ -508,6 +508,9 @@ slot_usage:
   sex:
     name: sex
     range: PhenotypeAndTraits
+  age_unit:
+    name: age_unit
+    range: Units
 class_uri: OBI:0100026
 
 </code></pre>
@@ -525,6 +528,9 @@ slot_usage:
   sex:
     name: sex
     range: PhenotypeAndTraits
+  age_unit:
+    name: age_unit
+    range: Units
 attributes:
   study_arm:
     name: study_arm
@@ -622,7 +628,7 @@ attributes:
     domain_of:
     - Participant
     - Subject
-    range: AgeUnitOntology
+    range: Units
   age_event:
     name: age_event
     annotations:
