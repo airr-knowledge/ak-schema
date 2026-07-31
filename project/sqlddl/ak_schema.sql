@@ -73,7 +73,8 @@
 --     * Slot: study_arm Description: The study arm that a participant is a member of
 --     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: sex Description: Biological sex of subject
---     * Slot: age Description: The age of a participant relative to age_event
+--     * Slot: age_min Description: Specific age or lower boundary of age range.
+--     * Slot: age_max Description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
 --     * Slot: age_unit Description: Unit of age range
 --     * Slot: age_event Description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
 --     * Slot: race Description: Racial group of subject (as defined by NIH)
@@ -3078,7 +3079,8 @@ CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species TEXT, 
 	sex TEXT, 
-	age TEXT, 
+	age_min FLOAT, 
+	age_max FLOAT, 
 	age_unit VARCHAR, 
 	age_event TEXT, 
 	race TEXT, 

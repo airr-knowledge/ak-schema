@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-31T17:46:07
+# Generation date: 2026-07-31T20:23:46
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1233,7 +1233,8 @@ class Participant(NamedThing):
     study_arm: Optional[Union[str, StudyArmAkcId]] = None
     species: Optional[Union[str, TaxonomicSpeciesTermId]] = None
     sex: Optional[Union[str, PhenotypeAndTraitsTermId]] = None
-    age: Optional[str] = None
+    age_min: Optional[float] = None
+    age_max: Optional[float] = None
     age_unit: Optional[Union[str, "AgeUnitOntology"]] = None
     age_event: Optional[str] = None
     race: Optional[str] = None
@@ -1257,8 +1258,11 @@ class Participant(NamedThing):
         if self.sex is not None and not isinstance(self.sex, PhenotypeAndTraitsTermId):
             self.sex = PhenotypeAndTraitsTermId(self.sex)
 
-        if self.age is not None and not isinstance(self.age, str):
-            self.age = str(self.age)
+        if self.age_min is not None and not isinstance(self.age_min, float):
+            self.age_min = float(self.age_min)
+
+        if self.age_max is not None and not isinstance(self.age_max, float):
+            self.age_max = float(self.age_max)
 
         if self.age_event is not None and not isinstance(self.age_event, str):
             self.age_event = str(self.age_event)

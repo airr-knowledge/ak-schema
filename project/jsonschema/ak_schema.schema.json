@@ -8714,17 +8714,24 @@
             "additionalProperties": false,
             "description": "A participant in an investigation.",
             "properties": {
-                "age": {
-                    "description": "The age of a participant relative to age_event",
+                "age_event": {
+                    "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "age_event": {
-                    "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
+                "age_max": {
+                    "description": "Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.",
                     "type": [
-                        "string",
+                        "number",
+                        "null"
+                    ]
+                },
+                "age_min": {
+                    "description": "Specific age or lower boundary of age range.",
+                    "type": [
+                        "number",
                         "null"
                     ]
                 },
@@ -8814,17 +8821,24 @@
             "additionalProperties": false,
             "description": "A participant in an investigation.",
             "properties": {
-                "age": {
-                    "description": "The age of a participant relative to age_event",
+                "age_event": {
+                    "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
                     "type": [
                         "string",
                         "null"
                     ]
                 },
-                "age_event": {
-                    "description": "Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.",
+                "age_max": {
+                    "description": "Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.",
                     "type": [
-                        "string",
+                        "number",
+                        "null"
+                    ]
+                },
+                "age_min": {
+                    "description": "Specific age or lower boundary of age range.",
+                    "type": [
+                        "number",
                         "null"
                     ]
                 },

@@ -1605,7 +1605,8 @@ CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species TEXT, 
 	sex TEXT, 
-	age TEXT, 
+	age_min FLOAT, 
+	age_max FLOAT, 
 	age_unit "AgeUnitOntology", 
 	age_event TEXT, 
 	race TEXT, 
@@ -1619,7 +1620,7 @@ CREATE TABLE "Participant" (
 	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
 	FOREIGN KEY(species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
-);COMMENT ON TABLE "Participant" IS 'A participant in an investigation.';COMMENT ON COLUMN "Participant".study_arm IS 'The study arm that a participant is a member of';COMMENT ON COLUMN "Participant".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Participant".sex IS 'Biological sex of subject';COMMENT ON COLUMN "Participant".age IS 'The age of a participant relative to age_event';COMMENT ON COLUMN "Participant".age_unit IS 'Unit of age range';COMMENT ON COLUMN "Participant".age_event IS 'Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.';COMMENT ON COLUMN "Participant".race IS 'Racial group of subject (as defined by NIH)';COMMENT ON COLUMN "Participant".ethnicity IS 'Ethnic group of subject (defined as cultural/language-based membership)';COMMENT ON COLUMN "Participant".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "Participant".strain IS 'The strain of the participant (non-human study participants)';COMMENT ON COLUMN "Participant".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Participant".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Participant".akc_id IS 'A unique identifier for a thing in the AKC.';
+);COMMENT ON TABLE "Participant" IS 'A participant in an investigation.';COMMENT ON COLUMN "Participant".study_arm IS 'The study arm that a participant is a member of';COMMENT ON COLUMN "Participant".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "Participant".sex IS 'Biological sex of subject';COMMENT ON COLUMN "Participant".age_min IS 'Specific age or lower boundary of age range.';COMMENT ON COLUMN "Participant".age_max IS 'Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.';COMMENT ON COLUMN "Participant".age_unit IS 'Unit of age range';COMMENT ON COLUMN "Participant".age_event IS 'Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.';COMMENT ON COLUMN "Participant".race IS 'Racial group of subject (as defined by NIH)';COMMENT ON COLUMN "Participant".ethnicity IS 'Ethnic group of subject (defined as cultural/language-based membership)';COMMENT ON COLUMN "Participant".geolocation IS 'The geolocation of a participant at birth';COMMENT ON COLUMN "Participant".strain IS 'The strain of the participant (non-human study participants)';COMMENT ON COLUMN "Participant".name IS 'A human-readable name for a thing';COMMENT ON COLUMN "Participant".description IS 'A human-readable description for a thing';COMMENT ON COLUMN "Participant".akc_id IS 'A unique identifier for a thing in the AKC.';
 CREATE TABLE "ReceptorComposite" (
 	species "SpeciesOntology", 
 	tcr_complex TEXT, 

@@ -6140,7 +6140,8 @@ classes:
     - study_arm
     - species
     - sex
-    - age
+    - age_min
+    - age_max
     - age_unit
     - age_event
     - race

@@ -2326,10 +2326,6 @@
       "description": "The age of a participant relative to age_event",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/age",
-      "owner": "Participant",
-      "domain_of": [
-        "Participant"
-      ],
       "range": "string",
       "@type": "SlotDefinition"
     },
@@ -6044,6 +6040,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/age_min",
       "owner": "Subject",
       "domain_of": [
+        "Participant",
         "Subject"
       ],
       "range": "float",
@@ -6064,6 +6061,7 @@
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/age_max",
       "owner": "Subject",
       "domain_of": [
+        "Participant",
         "Subject"
       ],
       "range": "float",
@@ -13525,7 +13523,8 @@
         "study_arm",
         "Participant_species",
         "Participant_sex",
-        "age",
+        "age_min",
+        "age_max",
         "age_unit",
         "age_event",
         "race",
@@ -16130,9 +16129,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-31T17:46:02",
-  "source_file_size": 223542,
-  "generation_date": "2026-07-31T17:46:04",
+  "source_file_date": "2026-07-31T20:23:40",
+  "source_file_size": 223560,
+  "generation_date": "2026-07-31T20:23:42",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
