@@ -478,6 +478,70 @@
                         "null"
                     ]
                 },
+                "paired_ab_receptor_composites": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/PairedAlphaBetaReceptorComposite__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "paired_bcell_receptor_composites": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/PairedBCellReceptorComposite__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "paired_gd_receptor_composites": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/PairedGammaDeltaReceptorComposite__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
+                "paired_receptor_composites": {
+                    "additionalProperties": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/$defs/PairedReceptorComposite__identifier_optional"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "type": [
+                        "object",
+                        "null"
+                    ]
+                },
                 "participants": {
                     "additionalProperties": {
                         "anyOf": [
@@ -8002,6 +8066,422 @@
             "title": "PCRTarget",
             "type": "object"
         },
+        "PairedAlphaBetaReceptorComposite": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tra_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trb_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "PairedAlphaBetaReceptorComposite",
+            "type": "object"
+        },
+        "PairedAlphaBetaReceptorComposite__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tra_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trb_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "PairedAlphaBetaReceptorComposite",
+            "type": "object"
+        },
+        "PairedBCellReceptorComposite": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igh_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igk_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igl_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "PairedBCellReceptorComposite",
+            "type": "object"
+        },
+        "PairedBCellReceptorComposite__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igh_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igk_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igl_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                }
+            },
+            "required": [],
+            "title": "PairedBCellReceptorComposite",
+            "type": "object"
+        },
+        "PairedGammaDeltaReceptorComposite": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trd_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trg_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "PairedGammaDeltaReceptorComposite",
+            "type": "object"
+        },
+        "PairedGammaDeltaReceptorComposite__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trd_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trg_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "PairedGammaDeltaReceptorComposite",
+            "type": "object"
+        },
         "PairedReadDirectionEnum": {
             "description": "",
             "enum": [
@@ -8011,6 +8491,224 @@
             ],
             "title": "PairedReadDirectionEnum",
             "type": "string"
+        },
+        "PairedReceptorComposite": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igh_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igk_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igl_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tra_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trb_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trd_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trg_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "akc_id"
+            ],
+            "title": "PairedReceptorComposite",
+            "type": "object"
+        },
+        "PairedReceptorComposite__identifier_optional": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "akc_id": {
+                    "description": "A unique identifier for a thing in the AKC.",
+                    "type": "string"
+                },
+                "antibody_complex": {
+                    "description": "Antibody antigen complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "antigen": {
+                    "description": "A material entity with antigen role",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "epitope": {
+                    "description": "Epitope of an antigen, which can be recognized by a T cell receptor or antibody",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igh_chain": {
+                    "description": "IG heavy chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igk_chain": {
+                    "description": "IG kappa light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "igl_chain": {
+                    "description": "IG lambda light chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "mhc": {
+                    "description": "Major histocompatibility complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "paired_chain": {
+                    "description": "Flag to indicate the receptor object has both chains defined",
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                },
+                "species": {
+                    "$ref": "#/$defs/SpeciesOntology",
+                    "description": "Binomial designation of subject's species"
+                },
+                "tcr_complex": {
+                    "description": "TCR complex",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "tra_chain": {
+                    "description": "T cell receptor alpha chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trb_chain": {
+                    "description": "T cell receptor beta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trd_chain": {
+                    "description": "T cell receptor delta chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "trg_chain": {
+                    "description": "T cell receptor gamma chain",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [],
+            "title": "PairedReceptorComposite",
+            "type": "object"
         },
         "Participant": {
             "additionalProperties": false,
@@ -13053,6 +13751,70 @@
                 "anyOf": [
                     {
                         "$ref": "#/$defs/MajorHistocompatibilityComplex__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "paired_ab_receptor_composites": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/PairedAlphaBetaReceptorComposite__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "paired_bcell_receptor_composites": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/PairedBCellReceptorComposite__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "paired_gd_receptor_composites": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/PairedGammaDeltaReceptorComposite__identifier_optional"
+                    },
+                    {
+                        "type": "null"
+                    }
+                ]
+            },
+            "type": [
+                "object",
+                "null"
+            ]
+        },
+        "paired_receptor_composites": {
+            "additionalProperties": {
+                "anyOf": [
+                    {
+                        "$ref": "#/$defs/PairedReceptorComposite__identifier_optional"
                     },
                     {
                         "type": "null"

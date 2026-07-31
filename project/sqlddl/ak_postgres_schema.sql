@@ -1692,6 +1692,78 @@ CREATE TABLE "BCellReceptorComposite" (
 	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
 	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
 );COMMENT ON TABLE "BCellReceptorComposite" IS 'None';COMMENT ON COLUMN "BCellReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "BCellReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "BCellReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "BCellReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "BCellReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "BCellReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "BCellReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "BCellReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "BCellReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "BCellReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
+CREATE TABLE "PairedReceptorComposite" (
+	species "SpeciesOntology", 
+	tcr_complex TEXT, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "PairedReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "PairedReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "PairedReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "PairedReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "PairedReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "PairedReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "PairedReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "PairedReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "PairedReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "PairedReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
+CREATE TABLE "PairedAlphaBetaReceptorComposite" (
+	species "SpeciesOntology", 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "PairedAlphaBetaReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".tra_chain IS 'T cell receptor alpha chain';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".trb_chain IS 'T cell receptor beta chain';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedAlphaBetaReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
+CREATE TABLE "PairedGammaDeltaReceptorComposite" (
+	species "SpeciesOntology", 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "PairedGammaDeltaReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".tcr_complex IS 'TCR complex';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".trg_chain IS 'T cell receptor gamma chain';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".trd_chain IS 'T cell receptor delta chain';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedGammaDeltaReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
+CREATE TABLE "PairedBCellReceptorComposite" (
+	species "SpeciesOntology", 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);COMMENT ON TABLE "PairedBCellReceptorComposite" IS 'None';COMMENT ON COLUMN "PairedBCellReceptorComposite".species IS 'Binomial designation of subject''s species';COMMENT ON COLUMN "PairedBCellReceptorComposite".antibody_complex IS 'Antibody antigen complex';COMMENT ON COLUMN "PairedBCellReceptorComposite".antigen IS 'A material entity with antigen role';COMMENT ON COLUMN "PairedBCellReceptorComposite".epitope IS 'Epitope of an antigen, which can be recognized by a T cell receptor or antibody';COMMENT ON COLUMN "PairedBCellReceptorComposite".mhc IS 'Major histocompatibility complex';COMMENT ON COLUMN "PairedBCellReceptorComposite".igh_chain IS 'IG heavy chain';COMMENT ON COLUMN "PairedBCellReceptorComposite".igk_chain IS 'IG kappa light chain';COMMENT ON COLUMN "PairedBCellReceptorComposite".igl_chain IS 'IG lambda light chain';COMMENT ON COLUMN "PairedBCellReceptorComposite".akc_id IS 'A unique identifier for a thing in the AKC.';COMMENT ON COLUMN "PairedBCellReceptorComposite".paired_chain IS 'Flag to indicate the receptor object has both chains defined';
 CREATE TABLE "Repertoire" (
 	repertoire_id TEXT NOT NULL, 
 	repertoire_name TEXT, 

@@ -588,6 +588,53 @@
 --     * Slot: igl_chain Description: IG lambda light chain
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 --     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antibody_complex Description: Antibody antigen complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: tra_chain Description: T cell receptor alpha chain
+--     * Slot: trb_chain Description: T cell receptor beta chain
+--     * Slot: trg_chain Description: T cell receptor gamma chain
+--     * Slot: trd_chain Description: T cell receptor delta chain
+--     * Slot: igh_chain Description: IG heavy chain
+--     * Slot: igk_chain Description: IG kappa light chain
+--     * Slot: igl_chain Description: IG lambda light chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedAlphaBetaReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: tra_chain Description: T cell receptor alpha chain
+--     * Slot: trb_chain Description: T cell receptor beta chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedGammaDeltaReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: trg_chain Description: T cell receptor gamma chain
+--     * Slot: trd_chain Description: T cell receptor delta chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedBCellReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: antibody_complex Description: Antibody antigen complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: igh_chain Description: IG heavy chain
+--     * Slot: igk_chain Description: IG kappa light chain
+--     * Slot: igl_chain Description: IG lambda light chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 -- # Class: "Model" Description: ""
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -3102,6 +3149,78 @@ CREATE TABLE "GammaDeltaReceptorComposite" (
 	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
 );
 CREATE TABLE "BCellReceptorComposite" (
+	species VARCHAR, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedAlphaBetaReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedGammaDeltaReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedBCellReceptorComposite" (
 	species VARCHAR, 
 	antibody_complex TEXT, 
 	antigen TEXT, 

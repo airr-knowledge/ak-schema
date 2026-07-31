@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-30T20:16:53
+# Generation date: 2026-07-31T17:46:07
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -485,6 +485,22 @@ class BCellReceptorCompositeAkcId(AKObjectAkcId):
     pass
 
 
+class PairedReceptorCompositeAkcId(ReceptorCompositeAkcId):
+    pass
+
+
+class PairedAlphaBetaReceptorCompositeAkcId(AlphaBetaReceptorCompositeAkcId):
+    pass
+
+
+class PairedGammaDeltaReceptorCompositeAkcId(GammaDeltaReceptorCompositeAkcId):
+    pass
+
+
+class PairedBCellReceptorCompositeAkcId(BCellReceptorCompositeAkcId):
+    pass
+
+
 class ModelAkcId(NamedThingAkcId):
     pass
 
@@ -953,6 +969,10 @@ class AIRRKnowledgeCommons(YAMLRoot):
     ab_receptor_composites: Optional[Union[Dict[Union[str, AlphaBetaReceptorCompositeAkcId], Union[dict, "AlphaBetaReceptorComposite"]], List[Union[dict, "AlphaBetaReceptorComposite"]]]] = empty_dict()
     gd_receptor_composites: Optional[Union[Dict[Union[str, GammaDeltaReceptorCompositeAkcId], Union[dict, "GammaDeltaReceptorComposite"]], List[Union[dict, "GammaDeltaReceptorComposite"]]]] = empty_dict()
     bcell_receptor_composites: Optional[Union[Dict[Union[str, BCellReceptorCompositeAkcId], Union[dict, "BCellReceptorComposite"]], List[Union[dict, "BCellReceptorComposite"]]]] = empty_dict()
+    paired_receptor_composites: Optional[Union[Dict[Union[str, PairedReceptorCompositeAkcId], Union[dict, "PairedReceptorComposite"]], List[Union[dict, "PairedReceptorComposite"]]]] = empty_dict()
+    paired_ab_receptor_composites: Optional[Union[Dict[Union[str, PairedAlphaBetaReceptorCompositeAkcId], Union[dict, "PairedAlphaBetaReceptorComposite"]], List[Union[dict, "PairedAlphaBetaReceptorComposite"]]]] = empty_dict()
+    paired_gd_receptor_composites: Optional[Union[Dict[Union[str, PairedGammaDeltaReceptorCompositeAkcId], Union[dict, "PairedGammaDeltaReceptorComposite"]], List[Union[dict, "PairedGammaDeltaReceptorComposite"]]]] = empty_dict()
+    paired_bcell_receptor_composites: Optional[Union[Dict[Union[str, PairedBCellReceptorCompositeAkcId], Union[dict, "PairedBCellReceptorComposite"]], List[Union[dict, "PairedBCellReceptorComposite"]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         self._normalize_inlined_as_dict(slot_name="investigations", slot_type=Investigation, key_name="akc_id", keyed=True)
@@ -1028,6 +1048,14 @@ class AIRRKnowledgeCommons(YAMLRoot):
         self._normalize_inlined_as_dict(slot_name="gd_receptor_composites", slot_type=GammaDeltaReceptorComposite, key_name="akc_id", keyed=True)
 
         self._normalize_inlined_as_dict(slot_name="bcell_receptor_composites", slot_type=BCellReceptorComposite, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="paired_receptor_composites", slot_type=PairedReceptorComposite, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="paired_ab_receptor_composites", slot_type=PairedAlphaBetaReceptorComposite, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="paired_gd_receptor_composites", slot_type=PairedGammaDeltaReceptorComposite, key_name="akc_id", keyed=True)
+
+        self._normalize_inlined_as_dict(slot_name="paired_bcell_receptor_composites", slot_type=PairedBCellReceptorComposite, key_name="akc_id", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -3045,6 +3073,86 @@ class BCellReceptorComposite(AKObject):
 
         if self.igl_chain is not None and not isinstance(self.igl_chain, URIorCURIE):
             self.igl_chain = URIorCURIE(self.igl_chain)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class PairedReceptorComposite(ReceptorComposite):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PairedReceptorComposite"]
+    class_class_curie: ClassVar[str] = "ak_schema:PairedReceptorComposite"
+    class_name: ClassVar[str] = "PairedReceptorComposite"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PairedReceptorComposite
+
+    akc_id: Union[str, PairedReceptorCompositeAkcId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, PairedReceptorCompositeAkcId):
+            self.akc_id = PairedReceptorCompositeAkcId(self.akc_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class PairedAlphaBetaReceptorComposite(AlphaBetaReceptorComposite):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PairedAlphaBetaReceptorComposite"]
+    class_class_curie: ClassVar[str] = "ak_schema:PairedAlphaBetaReceptorComposite"
+    class_name: ClassVar[str] = "PairedAlphaBetaReceptorComposite"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PairedAlphaBetaReceptorComposite
+
+    akc_id: Union[str, PairedAlphaBetaReceptorCompositeAkcId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, PairedAlphaBetaReceptorCompositeAkcId):
+            self.akc_id = PairedAlphaBetaReceptorCompositeAkcId(self.akc_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class PairedGammaDeltaReceptorComposite(GammaDeltaReceptorComposite):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PairedGammaDeltaReceptorComposite"]
+    class_class_curie: ClassVar[str] = "ak_schema:PairedGammaDeltaReceptorComposite"
+    class_name: ClassVar[str] = "PairedGammaDeltaReceptorComposite"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PairedGammaDeltaReceptorComposite
+
+    akc_id: Union[str, PairedGammaDeltaReceptorCompositeAkcId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, PairedGammaDeltaReceptorCompositeAkcId):
+            self.akc_id = PairedGammaDeltaReceptorCompositeAkcId(self.akc_id)
+
+        super().__post_init__(**kwargs)
+
+
+@dataclass(repr=False)
+class PairedBCellReceptorComposite(BCellReceptorComposite):
+    _inherited_slots: ClassVar[List[str]] = []
+
+    class_class_uri: ClassVar[URIRef] = AK_SCHEMA["PairedBCellReceptorComposite"]
+    class_class_curie: ClassVar[str] = "ak_schema:PairedBCellReceptorComposite"
+    class_name: ClassVar[str] = "PairedBCellReceptorComposite"
+    class_model_uri: ClassVar[URIRef] = AK_SCHEMA.PairedBCellReceptorComposite
+
+    akc_id: Union[str, PairedBCellReceptorCompositeAkcId] = None
+
+    def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
+        if self._is_empty(self.akc_id):
+            self.MissingRequiredField("akc_id")
+        if not isinstance(self.akc_id, PairedBCellReceptorCompositeAkcId):
+            self.akc_id = PairedBCellReceptorCompositeAkcId(self.akc_id)
 
         super().__post_init__(**kwargs)
 
@@ -8567,6 +8675,18 @@ slots.aIRRKnowledgeCommons__gd_receptor_composites = Slot(uri=AK_SCHEMA.gd_recep
 
 slots.aIRRKnowledgeCommons__bcell_receptor_composites = Slot(uri=AK_SCHEMA.bcell_receptor_composites, name="aIRRKnowledgeCommons__bcell_receptor_composites", curie=AK_SCHEMA.curie('bcell_receptor_composites'),
                    model_uri=AK_SCHEMA.aIRRKnowledgeCommons__bcell_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, BCellReceptorCompositeAkcId], Union[dict, BCellReceptorComposite]], List[Union[dict, BCellReceptorComposite]]]])
+
+slots.aIRRKnowledgeCommons__paired_receptor_composites = Slot(uri=AK_SCHEMA.paired_receptor_composites, name="aIRRKnowledgeCommons__paired_receptor_composites", curie=AK_SCHEMA.curie('paired_receptor_composites'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__paired_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, PairedReceptorCompositeAkcId], Union[dict, PairedReceptorComposite]], List[Union[dict, PairedReceptorComposite]]]])
+
+slots.aIRRKnowledgeCommons__paired_ab_receptor_composites = Slot(uri=AK_SCHEMA.paired_ab_receptor_composites, name="aIRRKnowledgeCommons__paired_ab_receptor_composites", curie=AK_SCHEMA.curie('paired_ab_receptor_composites'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__paired_ab_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, PairedAlphaBetaReceptorCompositeAkcId], Union[dict, PairedAlphaBetaReceptorComposite]], List[Union[dict, PairedAlphaBetaReceptorComposite]]]])
+
+slots.aIRRKnowledgeCommons__paired_gd_receptor_composites = Slot(uri=AK_SCHEMA.paired_gd_receptor_composites, name="aIRRKnowledgeCommons__paired_gd_receptor_composites", curie=AK_SCHEMA.curie('paired_gd_receptor_composites'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__paired_gd_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, PairedGammaDeltaReceptorCompositeAkcId], Union[dict, PairedGammaDeltaReceptorComposite]], List[Union[dict, PairedGammaDeltaReceptorComposite]]]])
+
+slots.aIRRKnowledgeCommons__paired_bcell_receptor_composites = Slot(uri=AK_SCHEMA.paired_bcell_receptor_composites, name="aIRRKnowledgeCommons__paired_bcell_receptor_composites", curie=AK_SCHEMA.curie('paired_bcell_receptor_composites'),
+                   model_uri=AK_SCHEMA.aIRRKnowledgeCommons__paired_bcell_receptor_composites, domain=None, range=Optional[Union[Dict[Union[str, PairedBCellReceptorCompositeAkcId], Union[dict, PairedBCellReceptorComposite]], List[Union[dict, PairedBCellReceptorComposite]]]])
 
 slots.queryObject__tcr = Slot(uri=AK_SCHEMA.tcr, name="queryObject__tcr", curie=AK_SCHEMA.curie('tcr'),
                    model_uri=AK_SCHEMA.queryObject__tcr, domain=None, range=Optional[Union[dict, QueryTCR]])

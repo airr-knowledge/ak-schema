@@ -6065,6 +6065,30 @@ classes:
         range: BCellReceptorComposite
         multivalued: true
         inlined: true
+      paired_receptor_composites:
+        name: paired_receptor_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: PairedReceptorComposite
+        multivalued: true
+        inlined: true
+      paired_ab_receptor_composites:
+        name: paired_ab_receptor_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: PairedAlphaBetaReceptorComposite
+        multivalued: true
+        inlined: true
+      paired_gd_receptor_composites:
+        name: paired_gd_receptor_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: PairedGammaDeltaReceptorComposite
+        multivalued: true
+        inlined: true
+      paired_bcell_receptor_composites:
+        name: paired_bcell_receptor_composites
+        from_schema: https://github.com/airr-knowledge/ak-schema
+        range: PairedBCellReceptorComposite
+        multivalued: true
+        inlined: true
     tree_root: true
   Investigation:
     name: Investigation
@@ -6617,6 +6641,22 @@ classes:
     - antigen
     - epitope
     - mhc
+  PairedReceptorComposite:
+    name: PairedReceptorComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: ReceptorComposite
+  PairedAlphaBetaReceptorComposite:
+    name: PairedAlphaBetaReceptorComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: AlphaBetaReceptorComposite
+  PairedGammaDeltaReceptorComposite:
+    name: PairedGammaDeltaReceptorComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: GammaDeltaReceptorComposite
+  PairedBCellReceptorComposite:
+    name: PairedBCellReceptorComposite
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    is_a: BCellReceptorComposite
   Model:
     name: Model
     from_schema: https://github.com/airr-knowledge/ak-schema

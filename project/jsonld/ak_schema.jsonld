@@ -12158,6 +12158,62 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "aIRRKnowledgeCommons__paired_receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/paired_receptor_composites",
+      "alias": "paired_receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "PairedReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__paired_ab_receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/paired_ab_receptor_composites",
+      "alias": "paired_ab_receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "PairedAlphaBetaReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__paired_gd_receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/paired_gd_receptor_composites",
+      "alias": "paired_gd_receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "PairedGammaDeltaReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "aIRRKnowledgeCommons__paired_bcell_receptor_composites",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/paired_bcell_receptor_composites",
+      "alias": "paired_bcell_receptor_composites",
+      "owner": "AIRRKnowledgeCommons",
+      "domain_of": [
+        "AIRRKnowledgeCommons"
+      ],
+      "range": "PairedBCellReceptorComposite",
+      "multivalued": true,
+      "inlined": true,
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "queryObject__tcr",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
       "slot_uri": "https://github.com/airr-knowledge/ak-schema/tcr",
@@ -13048,7 +13104,11 @@
         "aIRRKnowledgeCommons__receptor_composites",
         "aIRRKnowledgeCommons__ab_receptor_composites",
         "aIRRKnowledgeCommons__gd_receptor_composites",
-        "aIRRKnowledgeCommons__bcell_receptor_composites"
+        "aIRRKnowledgeCommons__bcell_receptor_composites",
+        "aIRRKnowledgeCommons__paired_receptor_composites",
+        "aIRRKnowledgeCommons__paired_ab_receptor_composites",
+        "aIRRKnowledgeCommons__paired_gd_receptor_composites",
+        "aIRRKnowledgeCommons__paired_bcell_receptor_composites"
       ],
       "slot_usage": {},
       "attributes": [
@@ -13336,6 +13396,38 @@
           "name": "bcell_receptor_composites",
           "from_schema": "https://github.com/airr-knowledge/ak-schema",
           "range": "BCellReceptorComposite",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "paired_receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "PairedReceptorComposite",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "paired_ab_receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "PairedAlphaBetaReceptorComposite",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "paired_gd_receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "PairedGammaDeltaReceptorComposite",
+          "multivalued": true,
+          "inlined": true,
+          "@type": "SlotDefinition"
+        },
+        {
+          "name": "paired_bcell_receptor_composites",
+          "from_schema": "https://github.com/airr-knowledge/ak-schema",
+          "range": "PairedBCellReceptorComposite",
           "multivalued": true,
           "inlined": true,
           "@type": "SlotDefinition"
@@ -14657,6 +14749,93 @@
       "@type": "ClassDefinition"
     },
     {
+      "name": "PairedReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PairedReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "ReceptorComposite",
+      "slots": [
+        "akc_id",
+        "species",
+        "tcr_complex",
+        "antibody_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "paired_chain",
+        "tra_chain",
+        "trb_chain",
+        "trg_chain",
+        "trd_chain",
+        "igh_chain",
+        "igk_chain",
+        "igl_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PairedReceptorComposite",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PairedAlphaBetaReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PairedAlphaBetaReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "AlphaBetaReceptorComposite",
+      "slots": [
+        "akc_id",
+        "species",
+        "tcr_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "paired_chain",
+        "tra_chain",
+        "trb_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PairedAlphaBetaReceptorComposite",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PairedGammaDeltaReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PairedGammaDeltaReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "GammaDeltaReceptorComposite",
+      "slots": [
+        "akc_id",
+        "species",
+        "tcr_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "paired_chain",
+        "trg_chain",
+        "trd_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PairedGammaDeltaReceptorComposite",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "PairedBCellReceptorComposite",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/PairedBCellReceptorComposite",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "BCellReceptorComposite",
+      "slots": [
+        "akc_id",
+        "species",
+        "antibody_complex",
+        "antigen",
+        "epitope",
+        "mhc",
+        "paired_chain",
+        "igh_chain",
+        "igk_chain",
+        "igl_chain"
+      ],
+      "slot_usage": {},
+      "class_uri": "https://github.com/airr-knowledge/ak-schema/PairedBCellReceptorComposite",
+      "@type": "ClassDefinition"
+    },
+    {
       "name": "Model",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/Model",
       "from_schema": "https://github.com/airr-knowledge/ak-schema",
@@ -15951,9 +16130,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-30T20:16:47",
-  "source_file_size": 221914,
-  "generation_date": "2026-07-30T20:16:49",
+  "source_file_date": "2026-07-31T17:46:02",
+  "source_file_size": 223542,
+  "generation_date": "2026-07-31T17:46:04",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",
