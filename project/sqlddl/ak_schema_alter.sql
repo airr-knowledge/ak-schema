@@ -8,6 +8,14 @@
 -- ADD COLUMN source_protein TEXT,
 -- ADD COLUMN source_organism TEXT REFERENCES "TaxonomicSpecies" (term_id);
 
+-- roll-up fields from ImmuneExposure
+ALTER TABLE "LifeEvent"
+-- ImmuneExposure
+ADD COLUMN exposure_material VARCHAR, 
+ADD COLUMN disease TEXT REFERENCES "Diseases" (term_id), 
+ADD COLUMN disease_stage TEXT, 
+ADD COLUMN disease_severity TEXT, 
+
 -- roll-up fields from AIRRSequencingData
 ALTER TABLE "SequenceData"
 ADD COLUMN sequencing_data_id TEXT, 
@@ -21,7 +29,7 @@ ADD COLUMN paired_read_length INTEGER,
 ADD COLUMN index_filename TEXT, 
 ADD COLUMN index_length INTEGER;
 
--- roll-up fields from AIRRSequencingAssay and TCellReceptorEpitopeBindingAssay
+-- roll-up fields from subclasses
 ALTER TABLE "Assay"
 -- AIRRSequencingAssay
 ADD COLUMN repertoire_id TEXT, 
@@ -33,8 +41,8 @@ ADD COLUMN sequencing_run_date TIMESTAMP WITHOUT TIME ZONE,
 ADD COLUMN sequencing_kit TEXT, 
 ADD COLUMN sequencing_files TEXT REFERENCES "SequenceData" (akc_id), 
 -- TCellReceptorEpitopeBindingAssay
-ADD COLUMN epitope TEXT REFERENCES "Epitope" (akc_id), 
 ADD COLUMN measurement_category VARCHAR(21);
+-- AntibodyAntigenBindingAssay
 
 -- custom mapping table
 CREATE TABLE "Assay_receptor_composites" (
