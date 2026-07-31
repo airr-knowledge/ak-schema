@@ -214,6 +214,11 @@
       AKObject &lt;|-- GammaDeltaReceptorComposite
         click AKObject href "../AKObject"
 
+
+      GammaDeltaReceptorComposite &lt;|-- PairedGammaDeltaReceptorComposite
+        click PairedGammaDeltaReceptorComposite href "../PairedGammaDeltaReceptorComposite"
+
+
       GammaDeltaReceptorComposite : akc_id
 
       GammaDeltaReceptorComposite : antigen
@@ -272,7 +277,10 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><strong>GammaDeltaReceptorComposite</strong> [ <a href="../GammaDeltaTCR/">GammaDeltaTCR</a>]</li>
+<li><strong>GammaDeltaReceptorComposite</strong> [ <a href="../GammaDeltaTCR/">GammaDeltaTCR</a>]<ul>
+<li><a href="../PairedGammaDeltaReceptorComposite/">PairedGammaDeltaReceptorComposite</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

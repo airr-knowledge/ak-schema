@@ -425,6 +425,42 @@
     click MajorHistocompatibilityComplex href "../MajorHistocompatibilityComplex"
 
 
+      AIRRKnowledgeCommons : paired_ab_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedAlphaBetaReceptorComposite : paired_ab_receptor_composites
+    click PairedAlphaBetaReceptorComposite href "../PairedAlphaBetaReceptorComposite"
+
+
+      AIRRKnowledgeCommons : paired_bcell_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedBCellReceptorComposite : paired_bcell_receptor_composites
+    click PairedBCellReceptorComposite href "../PairedBCellReceptorComposite"
+
+
+      AIRRKnowledgeCommons : paired_gd_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedGammaDeltaReceptorComposite : paired_gd_receptor_composites
+    click PairedGammaDeltaReceptorComposite href "../PairedGammaDeltaReceptorComposite"
+
+
+      AIRRKnowledgeCommons : paired_receptor_composites
+
+
+
+
+    AIRRKnowledgeCommons --&gt; "*" PairedReceptorComposite : paired_receptor_composites
+    click PairedReceptorComposite href "../PairedReceptorComposite"
+
+
       AIRRKnowledgeCommons : participants
 
 
@@ -751,6 +787,30 @@
 <tr>
 <td><a href="../bcell_receptor_composites/">bcell_receptor_composites</a></td>
 <td>* <br/> <a href="../BCellReceptorComposite/">BCellReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_receptor_composites/">paired_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedReceptorComposite/">PairedReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_ab_receptor_composites/">paired_ab_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedAlphaBetaReceptorComposite/">PairedAlphaBetaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_gd_receptor_composites/">paired_gd_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedGammaDeltaReceptorComposite/">PairedGammaDeltaReceptorComposite</a></td>
+<td></td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../paired_bcell_receptor_composites/">paired_bcell_receptor_composites</a></td>
+<td>* <br/> <a href="../PairedBCellReceptorComposite/">PairedBCellReceptorComposite</a></td>
 <td></td>
 <td>direct</td>
 </tr>
@@ -1116,6 +1176,42 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: BCellReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_receptor_composites:
+    name: paired_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_ab_receptor_composites:
+    name: paired_ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedAlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_gd_receptor_composites:
+    name: paired_gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedGammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_bcell_receptor_composites:
+    name: paired_bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedBCellReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true
@@ -1528,6 +1624,50 @@ attributes:
     domain_of:
     - AIRRKnowledgeCommons
     range: BCellReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_receptor_composites:
+    name: paired_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_ab_receptor_composites:
+    name: paired_ab_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_ab_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedAlphaBetaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_gd_receptor_composites:
+    name: paired_gd_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_gd_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedGammaDeltaReceptorComposite
+    multivalued: true
+    inlined: true
+  paired_bcell_receptor_composites:
+    name: paired_bcell_receptor_composites
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: paired_bcell_receptor_composites
+    owner: AIRRKnowledgeCommons
+    domain_of:
+    - AIRRKnowledgeCommons
+    range: PairedBCellReceptorComposite
     multivalued: true
     inlined: true
 tree_root: true

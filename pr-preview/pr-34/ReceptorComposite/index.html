@@ -218,6 +218,11 @@
       AKObject &lt;|-- ReceptorComposite
         click AKObject href "../AKObject"
 
+
+      ReceptorComposite &lt;|-- PairedReceptorComposite
+        click PairedReceptorComposite href "../PairedReceptorComposite"
+
+
       ReceptorComposite : akc_id
 
       ReceptorComposite : antibody_complex
@@ -295,7 +300,10 @@
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../AKObject/">AKObject</a><ul>
-<li><strong>ReceptorComposite</strong> [ <a href="../AlphaBetaTCR/">AlphaBetaTCR</a> <a href="../GammaDeltaTCR/">GammaDeltaTCR</a> <a href="../BCellReceptor/">BCellReceptor</a>]</li>
+<li><strong>ReceptorComposite</strong> [ <a href="../AlphaBetaTCR/">AlphaBetaTCR</a> <a href="../GammaDeltaTCR/">GammaDeltaTCR</a> <a href="../BCellReceptor/">BCellReceptor</a>]<ul>
+<li><a href="../PairedReceptorComposite/">PairedReceptorComposite</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
