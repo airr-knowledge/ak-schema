@@ -3054,10 +3054,10 @@ CREATE TABLE "Conclusion_investigations" (
 	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "Antigen_epitopes" (
-	"Antigen_akc_id" TEXT, 
+	antigen_akc_id TEXT, 
 	epitopes_akc_id TEXT, 
-	PRIMARY KEY ("Antigen_akc_id", epitopes_akc_id), 
-	FOREIGN KEY("Antigen_akc_id") REFERENCES "Antigen" (akc_id), 
+	PRIMARY KEY (antigen_akc_id, epitopes_akc_id), 
+	FOREIGN KEY(antigen_akc_id) REFERENCES "Antigen" (akc_id), 
 	FOREIGN KEY(epitopes_akc_id) REFERENCES "Epitope" (akc_id)
 );
 CREATE TABLE "RepertoireGroup_repertoires" (
