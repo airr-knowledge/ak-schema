@@ -3694,8 +3694,11 @@
                     ]
                 },
                 "cell_species": {
-                    "$ref": "#/$defs/CellSpeciesOntology",
-                    "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema."
+                    "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "cell_storage": {
                     "description": "TRUE if cells were cryo-preserved between isolation and further processing",
@@ -3705,8 +3708,11 @@
                     ]
                 },
                 "cell_subset": {
-                    "$ref": "#/$defs/CellSubsetOntology",
-                    "description": "Commonly-used designation of isolated cell population"
+                    "description": "Commonly-used designation of isolated cell population",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "cells_per_reaction": {
                     "description": "Number of cells for each biological replicate",
@@ -8736,8 +8742,11 @@
                     ]
                 },
                 "age_unit": {
-                    "$ref": "#/$defs/AgeUnitOntology",
-                    "description": "Unit of age range"
+                    "description": "Unit of age range",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
@@ -8843,8 +8852,11 @@
                     ]
                 },
                 "age_unit": {
-                    "$ref": "#/$defs/AgeUnitOntology",
-                    "description": "Unit of age range"
+                    "description": "Unit of age range",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "akc_id": {
                     "description": "A unique identifier for a thing in the AKC.",
@@ -12111,8 +12123,11 @@
                     ]
                 },
                 "tissue": {
-                    "$ref": "#/$defs/TissueOntology",
-                    "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
+                    "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [
@@ -12160,13 +12175,6 @@
                 },
                 "participant": {
                     "description": "The participant of a life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "specimen": {
-                    "description": "The specimen that was input for an assay",
                     "type": [
                         "string",
                         "null"
@@ -12255,13 +12263,6 @@
                 },
                 "participant": {
                     "description": "The participant of a life event",
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "specimen": {
-                    "description": "The specimen that was input for an assay",
                     "type": [
                         "string",
                         "null"
@@ -12409,8 +12410,11 @@
                     ]
                 },
                 "tissue": {
-                    "$ref": "#/$defs/TissueOntology",
-                    "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood"
+                    "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood",
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             },
             "required": [],

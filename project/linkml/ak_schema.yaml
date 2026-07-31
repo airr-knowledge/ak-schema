@@ -6156,6 +6156,9 @@ classes:
       sex:
         name: sex
         range: PhenotypeAndTraits
+      age_unit:
+        name: age_unit
+        range: Units
     class_uri: OBI:0100026
   StudyEvent:
     name: StudyEvent
@@ -6208,13 +6211,15 @@ classes:
     slots:
     - life_event
     - tissue
+    slot_usage:
+      tissue:
+        name: tissue
+        range: UberAnatomy
     class_uri: OBI:0100051
   SpecimenCollection:
     name: SpecimenCollection
     from_schema: https://github.com/airr-knowledge/ak-schema
     is_a: LifeEvent
-    slots:
-    - specimen
     class_uri: OBI:0000659
   SpecimenProcessing:
     name: SpecimenProcessing
@@ -6239,6 +6244,13 @@ classes:
     - cell_quality
     - cell_isolation
     - cell_processing_protocol
+    slot_usage:
+      cell_subset:
+        name: cell_subset
+        range: Cells
+      cell_species:
+        name: cell_species
+        range: TaxonomicSpecies
     class_uri: OBI:00000512
   LibraryPreparationProcessing:
     name: LibraryPreparationProcessing
@@ -6566,6 +6578,10 @@ classes:
     - mhc_ref
     - mhc_class
     - mhc_label
+    slot_usage:
+      mhc_ref:
+        name: mhc_ref
+        range: MHCRestriction
     class_uri: GO:0042611
   AntibodyAntigenComplex:
     name: AntibodyAntigenComplex

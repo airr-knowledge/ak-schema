@@ -1,5 +1,5 @@
 # Auto generated from ak_schema.yaml by pythongen.py version: 0.0.1
-# Generation date: 2026-07-31T20:23:46
+# Generation date: 2026-07-31T22:30:39
 # Schema: ak-schema
 #
 # id: https://github.com/airr-knowledge/ak-schema
@@ -1235,7 +1235,7 @@ class Participant(NamedThing):
     sex: Optional[Union[str, PhenotypeAndTraitsTermId]] = None
     age_min: Optional[float] = None
     age_max: Optional[float] = None
-    age_unit: Optional[Union[str, "AgeUnitOntology"]] = None
+    age_unit: Optional[Union[str, UnitsTermId]] = None
     age_event: Optional[str] = None
     race: Optional[str] = None
     ethnicity: Optional[str] = None
@@ -1263,6 +1263,9 @@ class Participant(NamedThing):
 
         if self.age_max is not None and not isinstance(self.age_max, float):
             self.age_max = float(self.age_max)
+
+        if self.age_unit is not None and not isinstance(self.age_unit, UnitsTermId):
+            self.age_unit = UnitsTermId(self.age_unit)
 
         if self.age_event is not None and not isinstance(self.age_event, str):
             self.age_event = str(self.age_event)
@@ -1471,7 +1474,7 @@ class Specimen(NamedThing):
 
     akc_id: Union[str, SpecimenAkcId] = None
     life_event: Optional[Union[str, LifeEventAkcId]] = None
-    tissue: Optional[Union[str, "TissueOntology"]] = None
+    tissue: Optional[Union[str, UberAnatomyTermId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
@@ -1481,6 +1484,9 @@ class Specimen(NamedThing):
 
         if self.life_event is not None and not isinstance(self.life_event, LifeEventAkcId):
             self.life_event = LifeEventAkcId(self.life_event)
+
+        if self.tissue is not None and not isinstance(self.tissue, UberAnatomyTermId):
+            self.tissue = UberAnatomyTermId(self.tissue)
 
         super().__post_init__(**kwargs)
 
@@ -1495,16 +1501,12 @@ class SpecimenCollection(LifeEvent):
     class_model_uri: ClassVar[URIRef] = AK_SCHEMA.SpecimenCollection
 
     akc_id: Union[str, SpecimenCollectionAkcId] = None
-    specimen: Optional[Union[str, SpecimenAkcId]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
         if self._is_empty(self.akc_id):
             self.MissingRequiredField("akc_id")
         if not isinstance(self.akc_id, SpecimenCollectionAkcId):
             self.akc_id = SpecimenCollectionAkcId(self.akc_id)
-
-        if self.specimen is not None and not isinstance(self.specimen, SpecimenAkcId):
-            self.specimen = SpecimenAkcId(self.specimen)
 
         super().__post_init__(**kwargs)
         self.type = str(self.class_name)
@@ -1545,9 +1547,9 @@ class CellIsolationProcessing(SpecimenProcessing):
 
     akc_id: Union[str, CellIsolationProcessingAkcId] = None
     tissue_processing: Optional[str] = None
-    cell_subset: Optional[Union[str, "CellSubsetOntology"]] = None
+    cell_subset: Optional[Union[str, CellsTermId]] = None
     cell_phenotype: Optional[str] = None
-    cell_species: Optional[Union[str, "CellSpeciesOntology"]] = None
+    cell_species: Optional[Union[str, TaxonomicSpeciesTermId]] = None
     single_cell: Optional[Union[bool, Bool]] = None
     cell_number: Optional[int] = None
     cells_per_reaction: Optional[int] = None
@@ -1565,8 +1567,14 @@ class CellIsolationProcessing(SpecimenProcessing):
         if self.tissue_processing is not None and not isinstance(self.tissue_processing, str):
             self.tissue_processing = str(self.tissue_processing)
 
+        if self.cell_subset is not None and not isinstance(self.cell_subset, CellsTermId):
+            self.cell_subset = CellsTermId(self.cell_subset)
+
         if self.cell_phenotype is not None and not isinstance(self.cell_phenotype, str):
             self.cell_phenotype = str(self.cell_phenotype)
+
+        if self.cell_species is not None and not isinstance(self.cell_species, TaxonomicSpeciesTermId):
+            self.cell_species = TaxonomicSpeciesTermId(self.cell_species)
 
         if self.single_cell is not None and not isinstance(self.single_cell, Bool):
             self.single_cell = Bool(self.single_cell)
@@ -8767,6 +8775,18 @@ slots.Participant_species = Slot(uri=AK_SCHEMA.species, name="Participant_specie
 slots.Participant_sex = Slot(uri=AK_SCHEMA.sex, name="Participant_sex", curie=AK_SCHEMA.curie('sex'),
                    model_uri=AK_SCHEMA.Participant_sex, domain=Participant, range=Optional[Union[str, PhenotypeAndTraitsTermId]])
 
+slots.Participant_age_unit = Slot(uri=AK_SCHEMA.age_unit, name="Participant_age_unit", curie=AK_SCHEMA.curie('age_unit'),
+                   model_uri=AK_SCHEMA.Participant_age_unit, domain=Participant, range=Optional[Union[str, UnitsTermId]])
+
+slots.Specimen_tissue = Slot(uri=AK_SCHEMA.tissue, name="Specimen_tissue", curie=AK_SCHEMA.curie('tissue'),
+                   model_uri=AK_SCHEMA.Specimen_tissue, domain=Specimen, range=Optional[Union[str, UberAnatomyTermId]])
+
+slots.CellIsolationProcessing_cell_subset = Slot(uri=AK_SCHEMA.cell_subset, name="CellIsolationProcessing_cell_subset", curie=AK_SCHEMA.curie('cell_subset'),
+                   model_uri=AK_SCHEMA.CellIsolationProcessing_cell_subset, domain=CellIsolationProcessing, range=Optional[Union[str, CellsTermId]])
+
+slots.CellIsolationProcessing_cell_species = Slot(uri=AK_SCHEMA.cell_species, name="CellIsolationProcessing_cell_species", curie=AK_SCHEMA.curie('cell_species'),
+                   model_uri=AK_SCHEMA.CellIsolationProcessing_cell_species, domain=CellIsolationProcessing, range=Optional[Union[str, TaxonomicSpeciesTermId]])
+
 slots.AIRRSequencingAssay_sequencing_files = Slot(uri=AK_SCHEMA.sequencing_files, name="AIRRSequencingAssay_sequencing_files", curie=AK_SCHEMA.curie('sequencing_files'),
                    model_uri=AK_SCHEMA.AIRRSequencingAssay_sequencing_files, domain=AIRRSequencingAssay, range=Optional[Union[str, AIRRSequencingDataAkcId]])
 
@@ -8788,6 +8808,9 @@ slots.PeptidicEpitope_sequence_aa = Slot(uri=AK_SCHEMA.sequence_aa, name="Peptid
 slots.DiscontinuousEpitope_positional_residues = Slot(uri=AK_SCHEMA.positional_residues, name="DiscontinuousEpitope_positional_residues", curie=AK_SCHEMA.curie('positional_residues'),
                    model_uri=AK_SCHEMA.DiscontinuousEpitope_positional_residues, domain=DiscontinuousEpitope, range=Optional[str],
                    pattern=re.compile(r'^([ACDEFGHIKLMNPQRSTVWY]\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\d{1,}$'))
+
+slots.MajorHistocompatibilityComplex_mhc_ref = Slot(uri=AK_SCHEMA.mhc_ref, name="MajorHistocompatibilityComplex_mhc_ref", curie=AK_SCHEMA.curie('mhc_ref'),
+                   model_uri=AK_SCHEMA.MajorHistocompatibilityComplex_mhc_ref, domain=MajorHistocompatibilityComplex, range=Optional[Union[str, MHCRestrictionTermId]])
 
 slots.UnrearrangedSequence_sequence_id = Slot(uri=AK_SCHEMA.sequence_id, name="UnrearrangedSequence_sequence_id", curie=AK_SCHEMA.curie('sequence_id'),
                    model_uri=AK_SCHEMA.UnrearrangedSequence_sequence_id, domain=UnrearrangedSequence, range=Union[str, UnrearrangedSequenceSequenceId])

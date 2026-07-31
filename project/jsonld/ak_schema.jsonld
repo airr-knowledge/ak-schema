@@ -2567,7 +2567,6 @@
       "slot_uri": "http://purl.obolibrary.org/obo/OBI_0000293",
       "owner": "Assay",
       "domain_of": [
-        "SpecimenCollection",
         "SpecimenProcessing",
         "Assay"
       ],
@@ -12609,6 +12608,110 @@
       "@type": "SlotDefinition"
     },
     {
+      "name": "Participant_age_unit",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/age_unit",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Unit of age range",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "age_unit",
+      "domain": "Participant",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/age_unit",
+      "alias": "age_unit",
+      "owner": "Participant",
+      "domain_of": [
+        "Participant"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "age_unit",
+      "range": "Units",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "Specimen_tissue",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "The actual tissue sampled, e.g. lymph node, liver, peripheral blood",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "tissue",
+      "domain": "Specimen",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/tissue",
+      "alias": "tissue",
+      "owner": "Specimen",
+      "domain_of": [
+        "Specimen"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "tissue",
+      "range": "UberAnatomy",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CellIsolationProcessing_cell_subset",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_subset",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Commonly-used designation of isolated cell population",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "cell_subset",
+      "domain": "CellIsolationProcessing",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_subset",
+      "alias": "cell_subset",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "cell_subset",
+      "range": "Cells",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "CellIsolationProcessing_cell_species",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/cell_species",
+      "annotations": {
+        "nullable": {
+          "tag": "nullable",
+          "value": true,
+          "extensions": {},
+          "annotations": {}
+        }
+      },
+      "description": "Binomial designation of the species from which the analyzed cells originate. Typically, this value should be identical to `species`, in which case it SHOULD NOT be set explicitly. However, there are valid experimental setups in which the two might differ, e.g., chimeric animal models. If set, this key will overwrite the `species` information for all lower layers of the schema.",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "cell_species",
+      "domain": "CellIsolationProcessing",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/cell_species",
+      "alias": "cell_species",
+      "owner": "CellIsolationProcessing",
+      "domain_of": [
+        "CellIsolationProcessing"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "cell_species",
+      "range": "TaxonomicSpecies",
+      "@type": "SlotDefinition"
+    },
+    {
       "name": "AIRRSequencingAssay_sequencing_files",
       "definition_uri": "https://github.com/airr-knowledge/ak-schema/sequencing_files",
       "annotations": {
@@ -12750,6 +12853,24 @@
       "usage_slot_name": "positional_residues",
       "range": "string",
       "pattern": "^([ACDEFGHIKLMNPQRSTVWY]\\d{1,}, ){0,}[ACDEFGHIKLMNPQRSTVWY]\\d{1,}$",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "MajorHistocompatibilityComplex_mhc_ref",
+      "definition_uri": "https://github.com/airr-knowledge/ak-schema/mhc_ref",
+      "description": "MHC Restriction Ontology term id",
+      "from_schema": "https://github.com/airr-knowledge/ak-schema",
+      "is_a": "mhc_ref",
+      "domain": "MajorHistocompatibilityComplex",
+      "slot_uri": "https://github.com/airr-knowledge/ak-schema/mhc_ref",
+      "alias": "mhc_ref",
+      "owner": "MajorHistocompatibilityComplex",
+      "domain_of": [
+        "MajorHistocompatibilityComplex"
+      ],
+      "is_usage_slot": true,
+      "usage_slot_name": "mhc_ref",
+      "range": "MHCRestriction",
       "@type": "SlotDefinition"
     },
     {
@@ -13525,7 +13646,7 @@
         "Participant_sex",
         "age_min",
         "age_max",
-        "age_unit",
+        "Participant_age_unit",
         "age_event",
         "race",
         "ethnicity",
@@ -13646,7 +13767,7 @@
         "name",
         "description",
         "life_event",
-        "tissue"
+        "Specimen_tissue"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0100051",
@@ -13672,8 +13793,7 @@
         "t0_event",
         "start",
         "duration",
-        "time_unit",
-        "specimen"
+        "time_unit"
       ],
       "slot_usage": {},
       "class_uri": "http://purl.obolibrary.org/obo/OBI_0000659",
@@ -13711,9 +13831,9 @@
         "description",
         "specimen",
         "tissue_processing",
-        "cell_subset",
+        "CellIsolationProcessing_cell_subset",
         "cell_phenotype",
-        "cell_species",
+        "CellIsolationProcessing_cell_species",
         "single_cell",
         "cell_number",
         "cells_per_reaction",
@@ -14596,7 +14716,7 @@
       "is_a": "AKObject",
       "slots": [
         "akc_id",
-        "mhc_ref",
+        "MajorHistocompatibilityComplex_mhc_ref",
         "mhc_class",
         "mhc_label"
       ],
@@ -16129,9 +16249,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "ak_schema.yaml",
-  "source_file_date": "2026-07-31T20:23:40",
-  "source_file_size": 223560,
-  "generation_date": "2026-07-31T20:23:42",
+  "source_file_date": "2026-07-31T22:30:33",
+  "source_file_size": 223916,
+  "generation_date": "2026-07-31T22:30:35",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/ak_schema.context.jsonld",

@@ -134,7 +134,6 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "SpecimenCollection" Description: ""
---     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: participant Description: The participant of a life event
 --     * Slot: study_event Description: The study event corresponding to a life event
@@ -3081,7 +3080,7 @@ CREATE TABLE "Participant" (
 	sex TEXT, 
 	age_min FLOAT, 
 	age_max FLOAT, 
-	age_unit VARCHAR, 
+	age_unit TEXT, 
 	age_event TEXT, 
 	race TEXT, 
 	ethnicity TEXT, 
@@ -3093,7 +3092,8 @@ CREATE TABLE "Participant" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
 	FOREIGN KEY(species) REFERENCES "TaxonomicSpecies" (term_id), 
-	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
+	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id), 
+	FOREIGN KEY(age_unit) REFERENCES "Units" (term_id)
 );
 CREATE TABLE "ReceptorComposite" (
 	species VARCHAR, 
@@ -3346,22 +3346,15 @@ CREATE TABLE "Assessment" (
 );
 CREATE TABLE "Specimen" (
 	life_event TEXT, 
-	tissue VARCHAR, 
+	tissue TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
-);
-CREATE TABLE "Participant_life_events" (
-	"Participant_akc_id" TEXT, 
-	life_events_akc_id TEXT, 
-	PRIMARY KEY ("Participant_akc_id", life_events_akc_id), 
-	FOREIGN KEY("Participant_akc_id") REFERENCES "Participant" (akc_id), 
-	FOREIGN KEY(life_events_akc_id) REFERENCES "LifeEvent" (akc_id)
+	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id), 
+	FOREIGN KEY(tissue) REFERENCES "UberAnatomy" (term_id)
 );
 CREATE TABLE "SpecimenCollection" (
-	specimen TEXT, 
 	type TEXT, 
 	participant TEXT, 
 	study_event TEXT, 
@@ -3375,10 +3368,16 @@ CREATE TABLE "SpecimenCollection" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
+);
+CREATE TABLE "Participant_life_events" (
+	"Participant_akc_id" TEXT, 
+	life_events_akc_id TEXT, 
+	PRIMARY KEY ("Participant_akc_id", life_events_akc_id), 
+	FOREIGN KEY("Participant_akc_id") REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(life_events_akc_id) REFERENCES "LifeEvent" (akc_id)
 );
 CREATE TABLE "SpecimenProcessing" (
 	specimen TEXT, 
@@ -3390,9 +3389,9 @@ CREATE TABLE "SpecimenProcessing" (
 );
 CREATE TABLE "CellIsolationProcessing" (
 	tissue_processing TEXT, 
-	cell_subset VARCHAR, 
+	cell_subset TEXT, 
 	cell_phenotype TEXT, 
-	cell_species VARCHAR, 
+	cell_species TEXT, 
 	single_cell BOOLEAN, 
 	cell_number INTEGER, 
 	cells_per_reaction INTEGER, 
@@ -3405,6 +3404,8 @@ CREATE TABLE "CellIsolationProcessing" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(cell_subset) REFERENCES "Cells" (term_id), 
+	FOREIGN KEY(cell_species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "LibraryPreparationProcessing" (
