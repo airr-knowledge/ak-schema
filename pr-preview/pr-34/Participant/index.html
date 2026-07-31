@@ -213,9 +213,11 @@
       NamedThing &lt;|-- Participant
         click NamedThing href "../NamedThing"
 
-      Participant : age
-
       Participant : age_event
+
+      Participant : age_max
+
+      Participant : age_min
 
       Participant : age_unit
 
@@ -332,9 +334,15 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../age/">age</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>The age of a participant relative to age_event</td>
+<td><a href="../age_min/">age_min</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Specific age or lower boundary of age range</td>
+<td>direct</td>
+</tr>
+<tr>
+<td><a href="../age_max/">age_max</a></td>
+<td>0..1 <br/> <a href="../Float/">Float</a></td>
+<td>Upper boundary of age range or equal to age_min for specific age</td>
 <td>direct</td>
 </tr>
 <tr>
@@ -484,7 +492,8 @@ slots:
 - study_arm
 - species
 - sex
-- age
+- age_min
+- age_max
 - age_unit
 - age_event
 - race
@@ -568,16 +577,37 @@ attributes:
     - Participant
     - Subject
     range: PhenotypeAndTraits
-  age:
-    name: age
-    description: The age of a participant relative to age_event
+  age_min:
+    name: age_min
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Specific age or lower boundary of age range.
     from_schema: https://github.com/airr-knowledge/ak-schema
     rank: 1000
-    alias: age
+    alias: age_min
     owner: Participant
     domain_of:
     - Participant
-    range: string
+    - Subject
+    range: float
+  age_max:
+    name: age_max
+    annotations:
+      nullable:
+        tag: nullable
+        value: true
+    description: Upper boundary of age range or equal to age_min for specific age.
+      This field should only be null if age_min is null.
+    from_schema: https://github.com/airr-knowledge/ak-schema
+    rank: 1000
+    alias: age_max
+    owner: Participant
+    domain_of:
+    - Participant
+    - Subject
+    range: float
   age_unit:
     name: age_unit
     annotations:
