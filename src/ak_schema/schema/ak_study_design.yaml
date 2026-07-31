@@ -56,9 +56,10 @@ classes:
       - study_arm
       - species
       - sex
-      - age
-      - age_unit # AIRR gathers this
-      - age_event # AIRR gathers this
+      - age_min # from AIRR
+      - age_max # from AIRR
+      - age_unit # from AIRR
+      - age_event # from AIRR
       - race # For human organisms
       - ethnicity # For human organisms
       - geolocation # at birth
