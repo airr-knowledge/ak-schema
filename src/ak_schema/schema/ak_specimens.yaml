@@ -17,8 +17,6 @@ classes:
   SpecimenCollection:
     is_a: LifeEvent
     class_uri: OBI:0000659 # specimen collection
-    slots:
-      - specimen
 
   SpecimenProcessing:
     is_a: Process
