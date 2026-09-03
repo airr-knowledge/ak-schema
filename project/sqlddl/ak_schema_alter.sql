@@ -1,12 +1,10 @@
 -- We modify a few tables to roll-up fields
 -- until we can use single table inheritance with linkml
 
--- TODO: not sure this is needed anymore
 -- roll-up fields from PeptidicEpitope
--- ALTER TABLE "Epitope"
--- ADD COLUMN sequence_aa TEXT,
--- ADD COLUMN source_protein TEXT,
--- ADD COLUMN source_organism TEXT REFERENCES "TaxonomicSpecies" (term_id);
+ALTER TABLE "Epitope"
+ADD COLUMN sequence_aa TEXT,
+ADD COLUMN modifications TEXT;
 
 -- roll-up fields from ImmuneExposure
 ALTER TABLE "LifeEvent"
@@ -41,6 +39,7 @@ ADD COLUMN sequencing_run_date TIMESTAMP WITHOUT TIME ZONE,
 ADD COLUMN sequencing_kit TEXT, 
 ADD COLUMN sequencing_files TEXT REFERENCES "SequenceData" (akc_id), 
 -- TCellReceptorEpitopeBindingAssay
+ADD COLUMN mhc_evidence TEXT,
 ADD COLUMN measurement_category VARCHAR(21);
 -- AntibodyAntigenBindingAssay
 
