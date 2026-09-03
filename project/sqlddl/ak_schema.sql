@@ -35,6 +35,9 @@
 -- # Class: "Cells" Description: ""
 --     * Slot: term_id Description: ontology term ID
 --     * Slot: term_label Description: ontology term descriptive label
+-- # Class: "MHCRestriction" Description: ""
+--     * Slot: term_id Description: ontology term ID
+--     * Slot: term_label Description: ontology term descriptive label
 -- # Class: "TaxonomicSpecies" Description: ""
 --     * Slot: term_id Description: ontology term ID
 --     * Slot: term_label Description: ontology term descriptive label
@@ -70,7 +73,8 @@
 --     * Slot: study_arm Description: The study arm that a participant is a member of
 --     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: sex Description: Biological sex of subject
---     * Slot: age Description: The age of a participant relative to age_event
+--     * Slot: age_min Description: Specific age or lower boundary of age range.
+--     * Slot: age_max Description: Upper boundary of age range or equal to age_min for specific age. This field should only be null if age_min is null.
 --     * Slot: age_unit Description: Unit of age range
 --     * Slot: age_event Description: Event in the study schedule to which `Age` refers. For NCBI BioSample this MUST be `sampling`. For other implementations submitters need to be aware that there is currently no mechanism to encode to potential delta between `Age event` and `Sample collection time`, hence the chosen events should be in temporal proximity.
 --     * Slot: race Description: Racial group of subject (as defined by NIH)
@@ -130,7 +134,6 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "SpecimenCollection" Description: ""
---     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: participant Description: The participant of a life event
 --     * Slot: study_event Description: The study event corresponding to a life event
@@ -203,7 +206,7 @@
 --     * Slot: description Description: A human-readable description for a thing
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCellReceptorEpitopeBindingAssay" Description: ""
---     * Slot: epitope Description: The epitope being measured
+--     * Slot: mhc_evidence Description: Evidence code for MHC restriction
 --     * Slot: specimen Description: The specimen that was input for an assay
 --     * Slot: type Description: 
 --     * Slot: assay_type Description: The specific type of an assay
@@ -290,78 +293,348 @@
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Chain" Description: ""
 --     * Slot: species Description: Binomial designation of subject's species
---     * Slot: aa_hash Description: 
---     * Slot: junction_aa_vj_allele_hash Description: 
---     * Slot: junction_aa_vj_gene_hash Description: 
 --     * Slot: complete_vdj Description: Complete VDJ flag.
 --     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
 --     * Slot: locus Description: 
 --     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
 --     * Slot: d_call Description: 
 --     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
 --     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
 --     * Slot: junction_aa Description: Amino acid translation of the junction.
 --     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
 --     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
 --     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
---     * Slot: cdr1_start Description: 
---     * Slot: cdr1_end Description: 
---     * Slot: cdr2_start Description: 
---     * Slot: cdr2_end Description: 
---     * Slot: cdr3_start Description: 
---     * Slot: cdr3_end Description: CDR3 end position in the query sequence (1-based closed interval).
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "AlphaChain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: complete_vdj Description: Complete VDJ flag.
+--     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
+--     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: locus Description: 
+--     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
+--     * Slot: d_call Description: 
+--     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
+--     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+--     * Slot: junction_aa Description: Amino acid translation of the junction.
+--     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
+--     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
+--     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "BetaChain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: complete_vdj Description: Complete VDJ flag.
+--     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
+--     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: locus Description: 
+--     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
+--     * Slot: d_call Description: 
+--     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
+--     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+--     * Slot: junction_aa Description: Amino acid translation of the junction.
+--     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
+--     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
+--     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "DeltaChain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: complete_vdj Description: Complete VDJ flag.
+--     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
+--     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: locus Description: 
+--     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
+--     * Slot: d_call Description: 
+--     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
+--     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+--     * Slot: junction_aa Description: Amino acid translation of the junction.
+--     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
+--     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
+--     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "GammaChain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: complete_vdj Description: Complete VDJ flag.
+--     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
+--     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: locus Description: 
+--     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
+--     * Slot: d_call Description: 
+--     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
+--     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+--     * Slot: junction_aa Description: Amino acid translation of the junction.
+--     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
+--     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
+--     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "HeavyChain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: complete_vdj Description: Complete VDJ flag.
+--     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
+--     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: locus Description: 
+--     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
+--     * Slot: d_call Description: 
+--     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
+--     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+--     * Slot: junction_aa Description: Amino acid translation of the junction.
+--     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
+--     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
+--     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "KappaChain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: complete_vdj Description: Complete VDJ flag.
+--     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
+--     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: locus Description: 
+--     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
+--     * Slot: d_call Description: 
+--     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
+--     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+--     * Slot: junction_aa Description: Amino acid translation of the junction.
+--     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
+--     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
+--     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "LambdaChain" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: complete_vdj Description: Complete VDJ flag.
+--     * Slot: sequence Description: Nucleotide sequence.
+--     * Slot: infer_vdj_sequence Description: Inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence Description: Hash of the inferred complete VDJ nucleotide sequence.
+--     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
+--     * Slot: infer_vdj_sequence_aa Description: Translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: hash_infer_vdj_sequence_aa Description: Hash of the translation of inferred complete VDJ nucleotide sequence.
+--     * Slot: locus Description: 
+--     * Slot: v_call Description: 
+--     * Slot: v_gene Description: V gene designation for the chain
+--     * Slot: v_subgroup Description: V gene subgroup/family designation for the chain
+--     * Slot: d_call Description: 
+--     * Slot: j_call Description: 
+--     * Slot: j_gene Description: J gene designation for the chain
+--     * Slot: j_subgroup Description: J gene subgroup/family designation for the chain
+--     * Slot: c_call Description: Constant region gene with allele. If referring to a known reference sequence in a database the relevant gene/allele nomenclature should be followed (e.g., IGHG1*01 if using IMGT/GENE-DB).
+--     * Slot: junction_aa Description: Amino acid translation of the junction.
+--     * Slot: cdr1_aa Description: Amino acid translation of the cdr1 field.
+--     * Slot: cdr2_aa Description: Amino acid translation of the cdr2 field.
+--     * Slot: cdr3_aa Description: Amino acid translation of the cdr3 field.
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "ImmuneReceptor" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCellReceptor" Description: ""
---     * Slot: type Description: 
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AlphaBetaTCR" Description: ""
 --     * Slot: tra_chain Description: T cell receptor alpha chain
 --     * Slot: trb_chain Description: T cell receptor beta chain
---     * Slot: type Description: 
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "GammaDeltaTCR" Description: ""
 --     * Slot: trg_chain Description: T cell receptor gamma chain
 --     * Slot: trd_chain Description: T cell receptor delta chain
---     * Slot: type Description: 
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "BCellReceptor" Description: ""
 --     * Slot: igh_chain Description: IG heavy chain
 --     * Slot: igk_chain Description: IG kappa light chain
 --     * Slot: igl_chain Description: IG lambda light chain
---     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
--- # Class: "Antigen" Description: ""
---     * Slot: source_protein Description: The protein that this epitope comes from
---     * Slot: source_organism Description: The organism that the source protein comes from
---     * Slot: name Description: A human-readable name for a thing
---     * Slot: description Description: A human-readable description for a thing
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "Epitope" Description: ""
---     * Slot: type Description: 
---     * Slot: name Description: A human-readable name for a thing
---     * Slot: description Description: A human-readable description for a thing
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "PeptidicEpitope" Description: ""
 --     * Slot: sequence_aa Description: Amino acid translation of the query nucleotide sequence.
---     * Slot: source_protein Description: The protein that this epitope comes from
---     * Slot: source_organism Description: The organism that the source protein comes from
---     * Slot: type Description: 
---     * Slot: name Description: A human-readable name for a thing
---     * Slot: description Description: A human-readable description for a thing
+--     * Slot: modifications Description: Post-translational modifications to the epitope peptide sequence
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "DiscontinuousEpitope" Description: ""
+--     * Slot: positional_residues Description: Numbered amino acid residues of a conformational epitope
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "NonPeptidicEpitope" Description: ""
+--     * Slot: epitope_name Description: Name of the non-peptidic epitope
+--     * Slot: epitope_ref Description: CURIE identifiers for external epitope records
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "Antigen" Description: ""
+--     * Slot: source_molecule Description: The protein or other molecule that this antigen represents
+--     * Slot: source_species Description: The species that the source molecule comes from
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "MajorHistocompatibilityComplex" Description: ""
+--     * Slot: mhc_ref Description: MHC Restriction Ontology term id
+--     * Slot: mhc_class Description: Class of the major histocompatibility complex
+--     * Slot: mhc_label Description: Human-readable label of the major histocompatibility complex
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "AntibodyAntigenComplex" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
 --     * Slot: antibody Description: B cell receptor, immunoglobulin antibody
 --     * Slot: antigen Description: A material entity with antigen role
---     * Slot: name Description: A human-readable name for a thing
---     * Slot: description Description: A human-readable description for a thing
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
 -- # Class: "TCRpMHCComplex" Description: ""
---     * Slot: tcr Description: T cell receptor
---     * Slot: epitope Description: The epitope being measured
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: ab_tcr Description: alpha/beta T cell receptor
+--     * Slot: gd_tcr Description: gamma/delta T cell receptor
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
 --     * Slot: mhc Description: Major histocompatibility complex
 --     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+-- # Class: "ReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antibody_complex Description: Antibody antigen complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: tra_chain Description: T cell receptor alpha chain
+--     * Slot: trb_chain Description: T cell receptor beta chain
+--     * Slot: trg_chain Description: T cell receptor gamma chain
+--     * Slot: trd_chain Description: T cell receptor delta chain
+--     * Slot: igh_chain Description: IG heavy chain
+--     * Slot: igk_chain Description: IG kappa light chain
+--     * Slot: igl_chain Description: IG lambda light chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "AlphaBetaReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: tra_chain Description: T cell receptor alpha chain
+--     * Slot: trb_chain Description: T cell receptor beta chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "GammaDeltaReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: trg_chain Description: T cell receptor gamma chain
+--     * Slot: trd_chain Description: T cell receptor delta chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "BCellReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: antibody_complex Description: Antibody antigen complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: igh_chain Description: IG heavy chain
+--     * Slot: igk_chain Description: IG kappa light chain
+--     * Slot: igl_chain Description: IG lambda light chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antibody_complex Description: Antibody antigen complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: tra_chain Description: T cell receptor alpha chain
+--     * Slot: trb_chain Description: T cell receptor beta chain
+--     * Slot: trg_chain Description: T cell receptor gamma chain
+--     * Slot: trd_chain Description: T cell receptor delta chain
+--     * Slot: igh_chain Description: IG heavy chain
+--     * Slot: igk_chain Description: IG kappa light chain
+--     * Slot: igl_chain Description: IG lambda light chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedAlphaBetaReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: tra_chain Description: T cell receptor alpha chain
+--     * Slot: trb_chain Description: T cell receptor beta chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedGammaDeltaReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: tcr_complex Description: TCR complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: trg_chain Description: T cell receptor gamma chain
+--     * Slot: trd_chain Description: T cell receptor delta chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
+-- # Class: "PairedBCellReceptorComposite" Description: ""
+--     * Slot: species Description: Binomial designation of subject's species
+--     * Slot: antibody_complex Description: Antibody antigen complex
+--     * Slot: antigen Description: A material entity with antigen role
+--     * Slot: epitope Description: Epitope of an antigen, which can be recognized by a T cell receptor or antibody
+--     * Slot: mhc Description: Major histocompatibility complex
+--     * Slot: igh_chain Description: IG heavy chain
+--     * Slot: igk_chain Description: IG kappa light chain
+--     * Slot: igl_chain Description: IG lambda light chain
+--     * Slot: akc_id Description: A unique identifier for a thing in the AKC.
+--     * Slot: paired_chain Description: Flag to indicate the receptor object has both chains defined
 -- # Class: "Model" Description: ""
 --     * Slot: name Description: A human-readable name for a thing
 --     * Slot: description Description: A human-readable description for a thing
@@ -538,7 +811,7 @@
 -- # Class: "MHCGenotype" Description: ""
 --     * Slot: id Description: 
 --     * Slot: mhc_genotype_id Description: A unique identifier for this MHCGenotype, assumed to be unique in the context of the study
---     * Slot: mhc_class Description: 
+--     * Slot: mhc_class Description: Class of the major histocompatibility complex
 --     * Slot: mhc_genotyping_method Description: Information on how the genotype was determined. The content of this field should come from a list of recommended terms provided in the AIRR Schema documentation.
 -- # Class: "MHCAllele" Description: ""
 --     * Slot: allele_designation Description: 
@@ -922,7 +1195,7 @@
 --     * Slot: antigen_source_species Description: The species from which the antigen was isolated
 --     * Slot: peptide_start Description: Start position of the peptide within the reference protein sequence
 --     * Slot: peptide_end Description: End position of the peptide within the reference protein sequence
---     * Slot: mhc_class Description: 
+--     * Slot: mhc_class Description: Class of the major histocompatibility complex
 --     * Slot: mhc_gene_1 Description: The MHC gene to which the mhc_allele_1 belongs
 --     * Slot: mhc_allele_1 Description: Allele designation of the MHC alpha chain
 --     * Slot: mhc_gene_2 Description: The MHC gene to which the mhc_allele_2 belongs
@@ -985,6 +1258,9 @@
 -- # Class: "Cells_parent" Description: ""
 --     * Slot: Cells_term_id Description: Autocreated FK slot
 --     * Slot: parent_term_id Description: parent term ID for ontology term
+-- # Class: "MHCRestriction_parent" Description: ""
+--     * Slot: MHCRestriction_term_id Description: Autocreated FK slot
+--     * Slot: parent_term_id Description: parent term ID for ontology term
 -- # Class: "TaxonomicSpecies_parent" Description: ""
 --     * Slot: TaxonomicSpecies_term_id Description: Autocreated FK slot
 --     * Slot: parent_term_id Description: parent term ID for ontology term
@@ -1018,6 +1294,9 @@
 -- # Class: "Reference_authors" Description: ""
 --     * Slot: Reference_source_uri Description: Autocreated FK slot
 --     * Slot: authors Description: The authors of a reference
+-- # Class: "Participant_life_events" Description: ""
+--     * Slot: Participant_akc_id Description: Autocreated FK slot
+--     * Slot: life_events_akc_id Description: The life events for a participant
 -- # Class: "StudyEvent_study_arms" Description: ""
 --     * Slot: StudyEvent_akc_id Description: Autocreated FK slot
 --     * Slot: study_arms_akc_id Description: The study arms that are relevant for a study event
@@ -1030,15 +1309,30 @@
 -- # Class: "AIRRSequencingAssay_tcr_complexes" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcr_complexes_akc_id Description: The T cell receptor/epitope/mhc complex being measured
+-- # Class: "AIRRSequencingAssay_antibody_complexes" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: antibody_complexes_akc_id Description: The antibody-antigen complex being measured
+-- # Class: "AIRRSequencingAssay_receptor_composites" Description: ""
+--     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: receptor_composites_akc_id Description: Composite object for database optimization
 -- # Class: "AIRRSequencingAssay_specimen_processing" Description: ""
 --     * Slot: AIRRSequencingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
 -- # Class: "TCellReceptorEpitopeBindingAssay_tcr_complexes" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: tcr_complexes_akc_id Description: The T cell receptor/epitope/mhc complex being measured
+-- # Class: "TCellReceptorEpitopeBindingAssay_receptor_composites" Description: ""
+--     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: receptor_composites_akc_id Description: Composite object for database optimization
 -- # Class: "TCellReceptorEpitopeBindingAssay_specimen_processing" Description: ""
 --     * Slot: TCellReceptorEpitopeBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
+-- # Class: "AntibodyAntigenBindingAssay_antibody_complexes" Description: ""
+--     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: antibody_complexes_akc_id Description: The antibody-antigen complex being measured
+-- # Class: "AntibodyAntigenBindingAssay_receptor_composites" Description: ""
+--     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
+--     * Slot: receptor_composites_akc_id Description: Composite object for database optimization
 -- # Class: "AntibodyAntigenBindingAssay_specimen_processing" Description: ""
 --     * Slot: AntibodyAntigenBindingAssay_akc_id Description: Autocreated FK slot
 --     * Slot: specimen_processing_akc_id Description: A series of zero or more specimen processing steps that precede an assay
@@ -1084,6 +1378,9 @@
 -- # Class: "Conclusion_datasets" Description: ""
 --     * Slot: Conclusion_akc_id Description: Autocreated FK slot
 --     * Slot: datasets_akc_id Description: The datasets that support a conclusion
+-- # Class: "Antigen_epitopes" Description: ""
+--     * Slot: Antigen_akc_id Description: Autocreated FK slot
+--     * Slot: epitopes_akc_id Description: Set of epitopes for an antigen
 -- # Class: "SequenceDelineationV_alignment_labels" Description: ""
 --     * Slot: SequenceDelineationV_id Description: Autocreated FK slot
 --     * Slot: alignment_labels Description: One string for each codon in the aligned_sequence indicating the label of that codon according to  the numbering of the delineation scheme if it provides one.
@@ -1238,6 +1535,11 @@ CREATE TABLE "Cells" (
 	term_label TEXT, 
 	PRIMARY KEY (term_id)
 );
+CREATE TABLE "MHCRestriction" (
+	term_id TEXT NOT NULL, 
+	term_label TEXT, 
+	PRIMARY KEY (term_id)
+);
 CREATE TABLE "TaxonomicSpecies" (
 	term_id TEXT NOT NULL, 
 	term_label TEXT, 
@@ -1364,43 +1666,262 @@ CREATE TABLE "ImmuneSystem" (
 );
 CREATE TABLE "Chain" (
 	species VARCHAR, 
-	aa_hash TEXT, 
-	junction_aa_vj_allele_hash TEXT, 
-	junction_aa_vj_gene_hash TEXT, 
 	complete_vdj BOOLEAN, 
 	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
 	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
 	locus VARCHAR(3), 
 	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
 	d_call TEXT, 
 	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
 	c_call TEXT, 
 	junction_aa TEXT, 
 	cdr1_aa TEXT, 
 	cdr2_aa TEXT, 
 	cdr3_aa TEXT, 
-	cdr1_start INTEGER, 
-	cdr1_end INTEGER, 
-	cdr2_start INTEGER, 
-	cdr2_end INTEGER, 
-	cdr3_start INTEGER, 
-	cdr3_end INTEGER, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "AlphaChain" (
+	species VARCHAR, 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	locus VARCHAR(3), 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "BetaChain" (
+	species VARCHAR, 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	locus VARCHAR(3), 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "DeltaChain" (
+	species VARCHAR, 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	locus VARCHAR(3), 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "GammaChain" (
+	species VARCHAR, 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	locus VARCHAR(3), 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "HeavyChain" (
+	species VARCHAR, 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	locus VARCHAR(3), 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "KappaChain" (
+	species VARCHAR, 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	locus VARCHAR(3), 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "LambdaChain" (
+	species VARCHAR, 
+	complete_vdj BOOLEAN, 
+	sequence TEXT, 
+	infer_vdj_sequence TEXT, 
+	hash_infer_vdj_sequence TEXT, 
+	sequence_aa TEXT, 
+	infer_vdj_sequence_aa TEXT, 
+	hash_infer_vdj_sequence_aa TEXT, 
+	locus VARCHAR(3), 
+	v_call TEXT, 
+	v_gene TEXT, 
+	v_subgroup TEXT, 
+	d_call TEXT, 
+	j_call TEXT, 
+	j_gene TEXT, 
+	j_subgroup TEXT, 
+	c_call TEXT, 
+	junction_aa TEXT, 
+	cdr1_aa TEXT, 
+	cdr2_aa TEXT, 
+	cdr3_aa TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "ImmuneReceptor" (
+	species VARCHAR, 
+	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "TCellReceptor" (
-	type TEXT, 
+	species VARCHAR, 
+	paired_chain BOOLEAN, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "AlphaBetaTCR" (
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	species VARCHAR, 
+	paired_chain BOOLEAN, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "GammaDeltaTCR" (
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	species VARCHAR, 
+	paired_chain BOOLEAN, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "BCellReceptor" (
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	species VARCHAR, 
+	paired_chain BOOLEAN, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
 CREATE TABLE "Epitope" (
-	type TEXT, 
-	name TEXT, 
-	description TEXT, 
+	epitope_ref TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "PeptidicEpitope" (
+	sequence_aa TEXT, 
+	modifications TEXT, 
+	epitope_ref TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "DiscontinuousEpitope" (
+	positional_residues TEXT, 
+	epitope_ref TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id)
+);
+CREATE TABLE "NonPeptidicEpitope" (
+	epitope_name TEXT, 
+	epitope_ref TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id)
 );
@@ -2005,63 +2526,20 @@ CREATE TABLE "InputOutputDataMap" (
 	FOREIGN KEY(has_specified_input) REFERENCES "AKDataItem" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
-CREATE TABLE "AlphaBetaTCR" (
-	tra_chain TEXT, 
-	trb_chain TEXT, 
-	type TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tra_chain) REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY(trb_chain) REFERENCES "Chain" (akc_id)
-);
-CREATE TABLE "GammaDeltaTCR" (
-	trg_chain TEXT, 
-	trd_chain TEXT, 
-	type TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(trg_chain) REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY(trd_chain) REFERENCES "Chain" (akc_id)
-);
-CREATE TABLE "BCellReceptor" (
-	igh_chain TEXT, 
-	igk_chain TEXT, 
-	igl_chain TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(igh_chain) REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY(igk_chain) REFERENCES "Chain" (akc_id), 
-	FOREIGN KEY(igl_chain) REFERENCES "Chain" (akc_id)
-);
 CREATE TABLE "Antigen" (
-	source_protein TEXT, 
-	source_organism TEXT, 
-	name TEXT, 
-	description TEXT, 
+	source_molecule TEXT, 
+	source_species TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(source_organism) REFERENCES "TaxonomicSpecies" (term_id)
+	FOREIGN KEY(source_species) REFERENCES "TaxonomicSpecies" (term_id)
 );
-CREATE TABLE "PeptidicEpitope" (
-	sequence_aa TEXT, 
-	source_protein TEXT, 
-	source_organism TEXT, 
-	type TEXT, 
-	name TEXT, 
-	description TEXT, 
+CREATE TABLE "MajorHistocompatibilityComplex" (
+	mhc_ref TEXT, 
+	mhc_class VARCHAR(16), 
+	mhc_label TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(source_organism) REFERENCES "TaxonomicSpecies" (term_id)
-);
-CREATE TABLE "TCRpMHCComplex" (
-	tcr TEXT, 
-	epitope TEXT, 
-	mhc TEXT, 
-	akc_id TEXT NOT NULL, 
-	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(tcr) REFERENCES "TCellReceptor" (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
-	FOREIGN KEY(mhc) REFERENCES "MHCAllele" (allele_designation)
+	FOREIGN KEY(mhc_ref) REFERENCES "MHCRestriction" (term_id)
 );
 CREATE TABLE "SimilarityCalculation" (
 	chain_domain TEXT, 
@@ -2184,6 +2662,13 @@ CREATE TABLE "Cells_parent" (
 	PRIMARY KEY ("Cells_term_id", parent_term_id), 
 	FOREIGN KEY("Cells_term_id") REFERENCES "Cells" (term_id), 
 	FOREIGN KEY(parent_term_id) REFERENCES "Cells" (term_id)
+);
+CREATE TABLE "MHCRestriction_parent" (
+	"MHCRestriction_term_id" TEXT, 
+	parent_term_id TEXT, 
+	PRIMARY KEY ("MHCRestriction_term_id", parent_term_id), 
+	FOREIGN KEY("MHCRestriction_term_id") REFERENCES "MHCRestriction" (term_id), 
+	FOREIGN KEY(parent_term_id) REFERENCES "MHCRestriction" (term_id)
 );
 CREATE TABLE "TaxonomicSpecies_parent" (
 	"TaxonomicSpecies_term_id" TEXT, 
@@ -2461,14 +2946,30 @@ CREATE TABLE "StudyArm" (
 	FOREIGN KEY(investigation) REFERENCES "Investigation" (akc_id)
 );
 CREATE TABLE "AntibodyAntigenComplex" (
+	species VARCHAR, 
 	antibody TEXT, 
 	antigen TEXT, 
-	name TEXT, 
-	description TEXT, 
+	epitope TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(antibody) REFERENCES "BCellReceptor" (akc_id), 
-	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id)
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id)
+);
+CREATE TABLE "TCRpMHCComplex" (
+	species VARCHAR, 
+	ab_tcr TEXT, 
+	gd_tcr TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	akc_id TEXT NOT NULL, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(ab_tcr) REFERENCES "AlphaBetaTCR" (akc_id), 
+	FOREIGN KEY(gd_tcr) REFERENCES "GammaDeltaTCR" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
 );
 CREATE TABLE "Subject" (
 	id INTEGER NOT NULL, 
@@ -2552,6 +3053,13 @@ CREATE TABLE "Conclusion_investigations" (
 	FOREIGN KEY("Conclusion_akc_id") REFERENCES "Conclusion" (akc_id), 
 	FOREIGN KEY(investigations_akc_id) REFERENCES "Investigation" (akc_id)
 );
+CREATE TABLE "Antigen_epitopes" (
+	antigen_akc_id TEXT, 
+	epitopes_akc_id TEXT, 
+	PRIMARY KEY (antigen_akc_id, epitopes_akc_id), 
+	FOREIGN KEY(antigen_akc_id) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitopes_akc_id) REFERENCES "Epitope" (akc_id)
+);
 CREATE TABLE "RepertoireGroup_repertoires" (
 	"RepertoireGroup_id" INTEGER, 
 	repertoires_id INTEGER, 
@@ -2570,8 +3078,9 @@ CREATE TABLE "Participant" (
 	study_arm TEXT, 
 	species TEXT, 
 	sex TEXT, 
-	age TEXT, 
-	age_unit VARCHAR, 
+	age_min FLOAT, 
+	age_max FLOAT, 
+	age_unit TEXT, 
 	age_event TEXT, 
 	race TEXT, 
 	ethnicity TEXT, 
@@ -2583,7 +3092,152 @@ CREATE TABLE "Participant" (
 	PRIMARY KEY (akc_id), 
 	FOREIGN KEY(study_arm) REFERENCES "StudyArm" (akc_id), 
 	FOREIGN KEY(species) REFERENCES "TaxonomicSpecies" (term_id), 
-	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id)
+	FOREIGN KEY(sex) REFERENCES "PhenotypeAndTraits" (term_id), 
+	FOREIGN KEY(age_unit) REFERENCES "Units" (term_id)
+);
+CREATE TABLE "ReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "AlphaBetaReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "GammaDeltaReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "BCellReceptorComposite" (
+	species VARCHAR, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedAlphaBetaReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	tra_chain TEXT, 
+	trb_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedGammaDeltaReceptorComposite" (
+	species VARCHAR, 
+	tcr_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	trg_chain TEXT, 
+	trd_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(tcr_complex) REFERENCES "TCRpMHCComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
+);
+CREATE TABLE "PairedBCellReceptorComposite" (
+	species VARCHAR, 
+	antibody_complex TEXT, 
+	antigen TEXT, 
+	epitope TEXT, 
+	mhc TEXT, 
+	igh_chain TEXT, 
+	igk_chain TEXT, 
+	igl_chain TEXT, 
+	akc_id TEXT NOT NULL, 
+	paired_chain BOOLEAN, 
+	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(antibody_complex) REFERENCES "AntibodyAntigenComplex" (akc_id), 
+	FOREIGN KEY(antigen) REFERENCES "Antigen" (akc_id), 
+	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
+	FOREIGN KEY(mhc) REFERENCES "MajorHistocompatibilityComplex" (akc_id)
 );
 CREATE TABLE "Repertoire" (
 	repertoire_id TEXT NOT NULL, 
@@ -2692,15 +3346,15 @@ CREATE TABLE "Assessment" (
 );
 CREATE TABLE "Specimen" (
 	life_event TEXT, 
-	tissue VARCHAR, 
+	tissue TEXT, 
 	name TEXT, 
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id)
+	FOREIGN KEY(life_event) REFERENCES "LifeEvent" (akc_id), 
+	FOREIGN KEY(tissue) REFERENCES "UberAnatomy" (term_id)
 );
 CREATE TABLE "SpecimenCollection" (
-	specimen TEXT, 
 	type TEXT, 
 	participant TEXT, 
 	study_event TEXT, 
@@ -2714,10 +3368,16 @@ CREATE TABLE "SpecimenCollection" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
 	FOREIGN KEY(participant) REFERENCES "Participant" (akc_id), 
 	FOREIGN KEY(study_event) REFERENCES "StudyEvent" (akc_id), 
 	FOREIGN KEY(t0_event) REFERENCES "LifeEvent" (akc_id)
+);
+CREATE TABLE "Participant_life_events" (
+	"Participant_akc_id" TEXT, 
+	life_events_akc_id TEXT, 
+	PRIMARY KEY ("Participant_akc_id", life_events_akc_id), 
+	FOREIGN KEY("Participant_akc_id") REFERENCES "Participant" (akc_id), 
+	FOREIGN KEY(life_events_akc_id) REFERENCES "LifeEvent" (akc_id)
 );
 CREATE TABLE "SpecimenProcessing" (
 	specimen TEXT, 
@@ -2729,9 +3389,9 @@ CREATE TABLE "SpecimenProcessing" (
 );
 CREATE TABLE "CellIsolationProcessing" (
 	tissue_processing TEXT, 
-	cell_subset VARCHAR, 
+	cell_subset TEXT, 
 	cell_phenotype TEXT, 
-	cell_species VARCHAR, 
+	cell_species TEXT, 
 	single_cell BOOLEAN, 
 	cell_number INTEGER, 
 	cells_per_reaction INTEGER, 
@@ -2744,6 +3404,8 @@ CREATE TABLE "CellIsolationProcessing" (
 	description TEXT, 
 	akc_id TEXT NOT NULL, 
 	PRIMARY KEY (akc_id), 
+	FOREIGN KEY(cell_subset) REFERENCES "Cells" (term_id), 
+	FOREIGN KEY(cell_species) REFERENCES "TaxonomicSpecies" (term_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id)
 );
 CREATE TABLE "LibraryPreparationProcessing" (
@@ -2797,7 +3459,7 @@ CREATE TABLE "AIRRSequencingAssay" (
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
 CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
-	epitope TEXT, 
+	mhc_evidence TEXT, 
 	specimen TEXT, 
 	type TEXT, 
 	assay_type VARCHAR, 
@@ -2807,7 +3469,6 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay" (
 	akc_id TEXT NOT NULL, 
 	measurement_category VARCHAR(21), 
 	PRIMARY KEY (akc_id), 
-	FOREIGN KEY(epitope) REFERENCES "Epitope" (akc_id), 
 	FOREIGN KEY(specimen) REFERENCES "Specimen" (akc_id), 
 	FOREIGN KEY(has_specified_output) REFERENCES "AKDataItem" (akc_id)
 );
@@ -2851,6 +3512,20 @@ CREATE TABLE "AIRRSequencingAssay_tcr_complexes" (
 	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
 	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
 );
+CREATE TABLE "AIRRSequencingAssay_antibody_complexes" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	antibody_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", antibody_complexes_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
+);
+CREATE TABLE "AIRRSequencingAssay_receptor_composites" (
+	"AIRRSequencingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("AIRRSequencingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("AIRRSequencingAssay_akc_id") REFERENCES "AIRRSequencingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
+);
 CREATE TABLE "AIRRSequencingAssay_specimen_processing" (
 	"AIRRSequencingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
@@ -2865,12 +3540,33 @@ CREATE TABLE "TCellReceptorEpitopeBindingAssay_tcr_complexes" (
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(tcr_complexes_akc_id) REFERENCES "TCRpMHCComplex" (akc_id)
 );
+CREATE TABLE "TCellReceptorEpitopeBindingAssay_receptor_composites" (
+	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
+);
 CREATE TABLE "TCellReceptorEpitopeBindingAssay_specimen_processing" (
 	"TCellReceptorEpitopeBindingAssay_akc_id" TEXT, 
 	specimen_processing_akc_id TEXT, 
 	PRIMARY KEY ("TCellReceptorEpitopeBindingAssay_akc_id", specimen_processing_akc_id), 
 	FOREIGN KEY("TCellReceptorEpitopeBindingAssay_akc_id") REFERENCES "TCellReceptorEpitopeBindingAssay" (akc_id), 
 	FOREIGN KEY(specimen_processing_akc_id) REFERENCES "SpecimenProcessing" (akc_id)
+);
+CREATE TABLE "AntibodyAntigenBindingAssay_antibody_complexes" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	antibody_complexes_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", antibody_complexes_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(antibody_complexes_akc_id) REFERENCES "AntibodyAntigenComplex" (akc_id)
+);
+CREATE TABLE "AntibodyAntigenBindingAssay_receptor_composites" (
+	"AntibodyAntigenBindingAssay_akc_id" TEXT, 
+	receptor_composites_akc_id TEXT, 
+	PRIMARY KEY ("AntibodyAntigenBindingAssay_akc_id", receptor_composites_akc_id), 
+	FOREIGN KEY("AntibodyAntigenBindingAssay_akc_id") REFERENCES "AntibodyAntigenBindingAssay" (akc_id), 
+	FOREIGN KEY(receptor_composites_akc_id) REFERENCES "ReceptorComposite" (akc_id)
 );
 CREATE TABLE "AntibodyAntigenBindingAssay_specimen_processing" (
 	"AntibodyAntigenBindingAssay_akc_id" TEXT, 

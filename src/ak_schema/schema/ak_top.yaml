@@ -22,6 +22,7 @@ prefixes:
   GAZ: http://purl.obolibrary.org/obo/GAZ_
   GO: http://purl.obolibrary.org/obo/GO_
   IAO: http://purl.obolibrary.org/obo/IAO_
+  MRO: http://purl.obolibrary.org/obo/MRO_
   NCBITAXON: http://purl.obolibrary.org/obo/NCBITaxon_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
   OBI: http://purl.obolibrary.org/obo/OBI_
@@ -35,10 +36,10 @@ prefixes:
   VO: http://purl.obolibrary.org/obo/VO_
   ONTIE: https://ontology.iedb.org/ontology/ONTIE_
   UNIPROT: http://www.uniprot.org/uniprot/
-  iedb_reference: http://www.iedb.org/reference/
-  iedb_epitope: http://www.iedb.org/epitope/
-  iedb_assay: http://www.iedb.org/assay/
-  iedb_receptor: http://www.iedb.org/receptor/
+#  iedb_reference: http://www.iedb.org/reference/
+  IEDB_EPITOPE: http://www.iedb.org/epitope/
+#  iedb_assay: http://www.iedb.org/assay/
+#  iedb_receptor: http://www.iedb.org/receptor/
   example: https://example.org/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   doi: https://www.doi.org/
@@ -58,6 +59,7 @@ imports:
   - ak_data
   - ak_biology
   - ak_immune_system
+  - ak_optimize
   - ak_simulations
   - ak_metrics
   - ak_airr

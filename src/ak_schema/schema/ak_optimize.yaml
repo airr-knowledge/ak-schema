@@ -1,0 +1,72 @@
+---
+id: https://github.com/airr-knowledge/ak-schema
+name: ak-schema
+
+# classes for database optimization
+classes:
+
+  # everything together
+  ReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - AlphaBetaTCR
+      - GammaDeltaTCR
+      - BCellReceptor
+    slots:
+      - species
+      - tcr_complex
+      - antibody_complex
+      - antigen
+      - epitope
+      - mhc
+
+  AlphaBetaReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - AlphaBetaTCR
+    slots:
+      - species
+      - tcr_complex
+      - antigen
+      - epitope
+      - mhc
+
+  GammaDeltaReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - GammaDeltaTCR
+    slots:
+      - species
+      - tcr_complex
+      - antigen
+      - epitope
+      - mhc
+
+  BCellReceptorComposite:
+    is_a: AKObject
+    mixins:
+      - BCellReceptor
+    slots:
+      - species
+      - antibody_complex
+      - antigen
+      - epitope
+      - mhc
+
+# The V2 database has issues with efficiently querying just
+# paired chain data amongst the large single chain data.
+# Separating the receptor types might help to a certain degree
+# but we will also separate the paired chain so we can test
+# different optimization strategies.
+
+  PairedReceptorComposite:
+    is_a: ReceptorComposite
+
+  PairedAlphaBetaReceptorComposite:
+    is_a: AlphaBetaReceptorComposite
+
+  PairedGammaDeltaReceptorComposite:
+    is_a: GammaDeltaReceptorComposite
+
+  PairedBCellReceptorComposite:
+    is_a: BCellReceptorComposite
